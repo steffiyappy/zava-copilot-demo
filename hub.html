@@ -443,14 +443,16 @@ function showIndustry(id){
       </div>
       <div class="tool-prompts" id="tool-prm-${id}-${ti}">
         ${tool.account?`<div class="tool-account-bar">👤 Demo account: <strong>${tool.account}</strong></div>`:''}
-        ${tool.prompts.map((p,pi)=>`
-          <div class="prompt-item">
+        ${tool.prompts.map((p,pi)=>{
+          const key = _pmKey(id, ti, pi);
+          _PM[key] = p.prompt;
+          return `<div class="prompt-item">
             <div class="prompt-title">💬 ${p.title}</div>
-            ${p.fileRef?`<div class="prompt-fileref">${p.fileRef}</div>`:''}
-            <div class="prompt-text">${p.prompt}</div>
-            <button class="copy-btn" onclick="copyPrompt(event,'${escapeAttr(p.prompt)}')">Copy prompt</button>
-          </div>
-        `).join('')}
+            ${p.fileRef?`<div class="prompt-fileref">${escapeHTML(p.fileRef)}</div>`:''}
+            <div class="prompt-text">${escapeHTML(p.prompt)}</div>
+            <button class="copy-btn" onclick="copyById('${key}')">Copy prompt</button>
+          </div>`;
+        }).join('')}
       </div>
     `;
     pEl.appendChild(sec);
@@ -514,16 +516,22 @@ function goHome(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function escapeAttr(s){return s.replace(/'/g,"\\'").replace(/"/g,'&quot;')}
+// Global prompt store - avoids passing prompt text through HTML attributes
+const _PM = {};  // promptMap: key -> text
 
-function copyPrompt(e,text){
-  e.stopPropagation();
-  const decoded=text.replace(/&quot;/g,'"');
-  navigator.clipboard.writeText(decoded).then(()=>{
+function _pmKey(indId, ti, pi){ return indId + '_' + ti + '_' + pi; }
+
+function copyById(key){
+  const text = _PM[key] || '';
+  navigator.clipboard.writeText(text).then(()=>{
     const t=document.getElementById('toast');
     t.classList.add('show');
     setTimeout(()=>t.classList.remove('show'),2500);
   });
+}
+
+function escapeHTML(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 function logout(){
