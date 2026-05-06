@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDMY Copilot Industry Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1F2D55;--blue:#0078D4;--teal:#00A8A8;--accent:#FF6B35;
+  --bg:#F0F4F8;--white:#FFFFFF;--text:#1A1A2E;--muted:#6B7280;
+  --card:#FFFFFF;--border:#E2E8F0;--sidebar:280px;
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ── TOP BAR ── */
+.topbar{
+  background:linear-gradient(135deg,#0F1C3F,#1F2D55);
+  padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,0.3);
+}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.topbar-logo{width:28px;height:28px;background:linear-gradient(135deg,#0078D4,#00A8A8);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.topbar-title{color:#FFFFFF;font-size:15px;font-weight:700;letter-spacing:0.3px}
+.topbar-badge{background:rgba(0,168,168,0.2);border:1px solid rgba(0,168,168,0.4);border-radius:20px;padding:3px 10px;color:#00A8A8;font-size:11px;font-weight:600}
+.topbar-right{display:flex;align-items:center;gap:8px}
+.btn-sm{padding:7px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.btn-sm:hover{background:rgba(255,255,255,0.15);color:#FFFFFF}
+
+/* ── LAYOUT ── */
+.layout{display:flex;min-height:calc(100vh - 56px)}
+
+/* ── SIDEBAR ── */
+.sidebar{
+  width:var(--sidebar);background:#FFFFFF;border-right:1px solid var(--border);
+  position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;flex-shrink:0;
+}
+.sidebar-section{padding:16px 0 8px}
+.sidebar-label{padding:0 16px 6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
+.sidebar-item{
+  display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;
+  transition:all 0.15s;border-left:3px solid transparent;font-size:13px;font-weight:500;color:var(--text);
+  text-decoration:none;
+}
+.sidebar-item:hover{background:#F8FAFC;color:var(--blue)}
+.sidebar-item.active{background:#EEF4FF;border-left-color:var(--blue);color:var(--blue);font-weight:600}
+.sidebar-item .ind-icon{font-size:16px;width:24px;text-align:center}
+.sidebar-item .ind-name{flex:1}
+.sidebar-item .ind-count{background:#F1F5F9;border-radius:10px;padding:2px 7px;font-size:10px;color:var(--muted);font-weight:600}
+.sidebar-divider{height:1px;background:var(--border);margin:8px 16px}
+
+/* ── MAIN CONTENT ── */
+.main{flex:1;overflow:hidden;padding:28px;max-width:calc(100vw - var(--sidebar))}
+
+/* ── WHATS NEW BANNER ── */
+.whats-new{
+  background:linear-gradient(135deg,#0F1C3F,#1F2D55 60%,#0078D4);
+  border-radius:16px;padding:20px 24px;margin-bottom:24px;
+  display:flex;align-items:center;gap:16px;overflow:hidden;position:relative;
+}
+.whats-new::before{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:rgba(0,168,168,0.15)}
+.wn-icon{font-size:28px;flex-shrink:0}
+.wn-content{flex:1;min-width:0}
+.wn-tag{display:inline-block;background:rgba(0,168,168,0.2);border:1px solid rgba(0,168,168,0.4);border-radius:20px;padding:2px 10px;color:#00A8A8;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.wn-title{color:#FFFFFF;font-size:15px;font-weight:700;margin-bottom:3px}
+.wn-desc{color:rgba(255,255,255,0.65);font-size:12px;line-height:1.5}
+.wn-nav{display:flex;gap:6px;flex-shrink:0}
+.wn-btn{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:6px 10px;color:rgba(255,255,255,0.7);cursor:pointer;font-size:14px;transition:all 0.2s}
+.wn-btn:hover{background:rgba(255,255,255,0.2);color:#FFFFFF}
+.wn-dots{display:flex;gap:5px;align-items:center;margin-top:8px}
+.wn-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.2s}
+.wn-dot.active{background:#00A8A8;width:16px;border-radius:3px}
+
+/* ── HOME GRID ── */
+.home-header{margin-bottom:24px}
+.home-title{font-size:24px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.home-subtitle{color:var(--muted);font-size:14px}
+.home-stats{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.stat-chip{background:#FFFFFF;border:1px solid var(--border);border-radius:10px;padding:8px 16px;display:flex;align-items:center;gap:8px;font-size:13px}
+.stat-chip .val{font-weight:700;color:var(--navy)}
+.stat-chip .lbl{color:var(--muted)}
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.ind-card{
+  background:#FFFFFF;border:1px solid var(--border);border-radius:16px;padding:20px;
+  cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;
+}
+.ind-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--ind-color,var(--blue))}
+.ind-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.1);border-color:var(--ind-color,var(--blue))}
+.ind-card.featured{
+  grid-column:1/-1;background:linear-gradient(135deg,#0F1C3F 0%,#1F2D55 60%,#0078D4 100%);
+  border:2px solid #0078D4;color:#FFFFFF;display:flex;align-items:center;gap:28px;
+  padding:24px 32px;
+}
+.ind-card.featured::before{background:linear-gradient(90deg,#00A8A8,#0078D4)}
+.ind-card.featured .ind-card-name{color:#FFFFFF;font-size:18px}
+.ind-card.featured .ind-card-company{color:rgba(255,255,255,0.75)}
+.ind-card.featured .ind-card-prompts{color:rgba(255,255,255,0.7)}
+.ind-card.featured .pill{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9)}
+.ind-card.featured .ind-card-icon{font-size:48px;margin-bottom:0}
+.ind-card.featured .featured-badge{
+  background:linear-gradient(90deg,#FF6B35,#FF8C42);border-radius:20px;
+  padding:4px 12px;font-size:11px;font-weight:700;color:#FFFFFF;margin-bottom:8px;display:inline-block;
+}
+.ind-card.featured .featured-body{flex:1}
+.ind-card-icon{font-size:32px;margin-bottom:12px}
+.ind-card-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.ind-card-company{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.4}
+.ind-card-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.pill{background:#F1F5F9;border-radius:20px;padding:3px 8px;font-size:10px;color:var(--muted);font-weight:600}
+.pill.premium{background:#EEF4FF;color:var(--blue)}
+.pill.basic{background:#F0FDF4;color:#16A34A}
+.ind-card-prompts{font-size:11px;color:var(--muted);margin-top:10px;display:flex;align-items:center;gap:4px}
+.prompt-fileref{margin-top:6px;font-size:11px;color:#0078D4;background:#EEF4FF;border-radius:6px;padding:4px 8px;display:inline-block}
+.prompt-fileref::before{content:"📁 ";}
+
+/* ── INDUSTRY DETAIL VIEW ── */
+.detail-view{display:none}
+.detail-view.active{display:block}
+.detail-hero{
+  background:linear-gradient(135deg,var(--ind-color,var(--navy)),var(--ind-accent,var(--blue)));
+  border-radius:16px;padding:28px;margin-bottom:24px;position:relative;overflow:hidden;
+}
+.detail-hero::after{content:var(--ind-icon,'🏢');position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:80px;opacity:0.15}
+.detail-hero-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;cursor:pointer;margin-bottom:12px;transition:color 0.2s;background:none;border:none;font-family:inherit;padding:0}
+.detail-hero-back:hover{color:#FFFFFF}
+.detail-hero-badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:4px 12px;color:rgba(255,255,255,0.9);font-size:11px;font-weight:600;display:inline-block;margin-bottom:12px}
+.detail-hero-title{color:#FFFFFF;font-size:26px;font-weight:800;margin-bottom:6px}
+.detail-hero-company{color:rgba(255,255,255,0.85);font-size:15px;font-weight:600;margin-bottom:6px}
+.detail-hero-tagline{color:rgba(255,255,255,0.65);font-size:13px;line-height:1.5}
+.detail-body{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+.detail-scenario{background:#FFFFFF;border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:20px}
+.detail-scenario-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.detail-scenario-text{font-size:13px;color:var(--muted);line-height:1.6}
+.tool-section{margin-bottom:20px}
+.tool-header{
+  display:flex;align-items:center;gap:10px;padding:12px 16px;
+  background:#F8FAFC;border:1px solid var(--border);border-radius:12px;
+  cursor:pointer;transition:all 0.2s;user-select:none;
+}
+.tool-header:hover{background:#EEF4FF;border-color:var(--blue)}
+.tool-header.open{background:#EEF4FF;border-color:var(--blue);border-bottom-left-radius:0;border-bottom-right-radius:0}
+.tool-name{font-size:13px;font-weight:700;color:var(--navy);flex:1}
+.tool-license{font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px}
+.tool-license.premium{background:#EEF4FF;color:var(--blue)}
+.tool-license.basic{background:#F0FDF4;color:#16A34A}
+.tool-chevron{color:var(--muted);transition:transform 0.2s;font-size:12px}
+.tool-header.open .tool-chevron{transform:rotate(180deg)}
+.tool-prompts{display:none;border:1px solid var(--blue);border-top:none;border-bottom-left-radius:12px;border-bottom-right-radius:12px;overflow:hidden}
+.tool-prompts.open{display:block}
+.prompt-item{padding:14px 16px;border-bottom:1px solid #F1F5F9;cursor:pointer;transition:background 0.15s;position:relative}
+.prompt-item:last-child{border-bottom:none}
+.prompt-item:hover{background:#F8FAFC}
+.prompt-item:hover .copy-btn{opacity:1}
+.prompt-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.prompt-text{font-size:12px;color:var(--muted);line-height:1.5;font-style:italic}
+.copy-btn{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:var(--blue);color:#FFFFFF;border:none;border-radius:6px;
+  padding:4px 10px;font-size:10px;font-weight:700;cursor:pointer;
+  opacity:0;transition:opacity 0.2s;font-family:inherit;
+}
+.copy-btn:hover{background:#005EA6}
+/* Sidebar (right) */
+.detail-sidebar{}
+.files-card{background:#FFFFFF;border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:16px}
+.files-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.file-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;margin-bottom:6px;font-size:12px;background:#FAFBFC}
+.file-item:last-child{margin-bottom:0}
+.file-ext{font-weight:700;padding:3px 6px;border-radius:4px;font-size:10px;flex-shrink:0}
+.file-ext.xlsx{background:#E8F5E9;color:#2E7D32}
+.file-ext.docx{background:#E3F2FD;color:#1565C0}
+.file-ext.msg{background:#FFF3E0;color:#E65100}
+.file-name{flex:1;color:var(--text);font-weight:500;word-break:break-word;line-height:1.3}
+.tips-card{background:linear-gradient(135deg,#0F1C3F,#1F2D55);border-radius:16px;padding:20px}
+.tips-title{color:#FFFFFF;font-size:13px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.tip-item{display:flex;gap:8px;margin-bottom:10px;font-size:12px;color:rgba(255,255,255,0.75);line-height:1.5}
+.tip-item:last-child{margin-bottom:0}
+.tip-num{background:rgba(0,168,168,0.2);border:1px solid rgba(0,168,168,0.4);color:#00A8A8;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;flex-shrink:0;margin-top:1px}
+/* Toast */
+.toast{position:fixed;bottom:24px;right:24px;background:#1F2D55;color:#FFFFFF;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,0.3);transform:translateY(100px);opacity:0;transition:all 0.3s;z-index:1000;display:flex;align-items:center;gap:8px}
+.toast.show{transform:translateY(0);opacity:1}
+/* Responsive */
+@media(max-width:768px){
+  .sidebar{display:none}
+  .main{padding:16px;max-width:100vw}
+  .detail-body{grid-template-columns:1fr}
+  .detail-sidebar{order:-1}
+  .ind-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+}
+/* Scrollbar */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#F1F5F9}
+::-webkit-scrollbar-thumb{background:#CBD5E1;border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#94A3B8}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<nav class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-logo">🤖</div>
+    <span class="topbar-title">IDMY Copilot Industry Hub</span>
+    <span class="topbar-badge">14 Industries</span>
+  </div>
+  <div class="topbar-right">
+    <button class="btn-sm" onclick="goHome()">🏠 Home</button>
+    <button class="btn-sm" onclick="logout()">🔒 Lock</button>
+  </div>
+</nav>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navigation</div>
+      <a class="sidebar-item active" id="nav-home" onclick="goHome()">
+        <span class="ind-icon">🏠</span>
+        <span class="ind-name">All Industries</span>
+        <span class="ind-count" id="total-count">14</span>
+      </a>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Industries</div>
+      <div id="sidebar-industries"></div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main" id="main">
+
+    <!-- WHATS NEW -->
+    <div class="whats-new" id="whats-new-banner">
+      <div class="wn-icon">✨</div>
+      <div class="wn-content">
+        <div class="wn-tag" id="wn-tag">Loading...</div>
+        <div class="wn-title" id="wn-title">Loading...</div>
+        <div class="wn-desc" id="wn-desc">Loading...</div>
+        <div class="wn-dots" id="wn-dots"></div>
+      </div>
+      <div class="wn-nav">
+        <button class="wn-btn" onclick="wnNav(-1)">‹</button>
+        <button class="wn-btn" onclick="wnNav(1)">›</button>
+      </div>
+    </div>
+
+    <!-- HOME VIEW -->
+    <div id="home-view">
+      <div class="home-header">
+        <div class="home-title">🇲🇾 🇮🇩 IDMY Industry Hub</div>
+        <div class="home-subtitle">Select an industry to explore M365 Copilot demo scenarios, prompts, and reference files</div>
+        <div class="home-stats">
+          <div class="stat-chip"><span class="val">14</span><span class="lbl">Industries</span></div>
+          <div class="stat-chip"><span class="val" id="prompt-count">—</span><span class="lbl">Demo Prompts</span></div>
+          <div class="stat-chip"><span class="val">M365 + Basic</span><span class="lbl">License Coverage</span></div>
+          <div class="stat-chip"><span class="val">Monthly</span><span class="lbl">What's New Updates</span></div>
+        </div>
+      </div>
+      <div class="ind-grid" id="ind-grid"></div>
+    </div>
+
+    <!-- DETAIL VIEW -->
+    <div id="detail-view" class="detail-view">
+      <div class="detail-hero" id="detail-hero">
+        <button class="detail-hero-back" onclick="goHome()">← Back to all industries</button>
+        <div class="detail-hero-badge" id="detail-badge">Industry</div>
+        <div class="detail-hero-title" id="detail-title">Title</div>
+        <div class="detail-hero-company" id="detail-company">Company</div>
+        <div class="detail-hero-tagline" id="detail-tagline">Tagline</div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-main-col" id="detail-main-col">
+          <div class="detail-scenario" id="detail-scenario"></div>
+          <div id="detail-prompts"></div>
+        </div>
+        <div class="detail-sidebar">
+          <div class="files-card" id="detail-files"></div>
+          <div class="tips-card" id="detail-tips"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Prompt copied to clipboard!</div>
+
+<!-- SCRIPTS -->
+<script src="data.js"></script>
+<script>
+// Auth check
+if(sessionStorage.getItem('hub_auth')!=='ok') window.location.href='index.html';
+
+let wnIdx=0;
+const data=window.HUB_DATA;
+
+// ── Build sidebar ──
+function buildSidebar(){
+  const el=document.getElementById('sidebar-industries');
+  el.innerHTML='';
+  let total=0;
+  data.industries.forEach(ind=>{
+    const count=ind.prompts.reduce((a,t)=>a+t.prompts.length,0);
+    total+=count;
+    if(ind.id==='general'){
+      const lbl=document.createElement('div');
+      lbl.className='sidebar-label';lbl.style.color='#FF6B35';
+      lbl.textContent='⭐ Start Here';
+      el.appendChild(lbl);
+    }
+    const a=document.createElement('a');
+    a.className='sidebar-item'; a.id='nav-'+ind.id;
+    a.onclick=()=>showIndustry(ind.id);
+    if(ind.id==='general') a.style.fontWeight='700';
+    a.innerHTML=`<span class="ind-icon">${ind.icon}</span><span class="ind-name">${ind.name}</span><span class="ind-count">${count}</span>`;
+    el.appendChild(a);
+    if(ind.id==='general'){
+      const div=document.createElement('div');div.className='sidebar-divider';
+      el.appendChild(div);
+      const lbl2=document.createElement('div');lbl2.className='sidebar-label';lbl2.textContent='By Industry';
+      el.appendChild(lbl2);
+    }
+  });
+  document.getElementById('prompt-count').textContent=total;
+}
+
+// ── Build home grid ──
+function buildGrid(){
+  const el=document.getElementById('ind-grid');
+  el.innerHTML='';
+  data.industries.forEach(ind=>{
+    const count=ind.prompts.reduce((a,t)=>a+t.prompts.length,0);
+    const tools=[...new Set(ind.prompts.map(t=>t.tool.replace(/^[^\s]+ /,'')))].slice(0,3);
+    const hasBasic=ind.prompts.some(t=>t.license==='Basic (no M365 license)'||t.license==='Basic'||t.license==='Free / Basic');
+    const div=document.createElement('div');
+    div.style.setProperty('--ind-color',ind.color);
+    div.onclick=()=>showIndustry(ind.id);
+    if(ind.id==='general'){
+      div.className='ind-card featured';
+      div.innerHTML=`
+        <div class="ind-card-icon">${ind.icon}</div>
+        <div class="featured-body">
+          <div class="featured-badge">⭐ START HERE — Any Role, Any Industry</div>
+          <div class="ind-card-name">${ind.name}</div>
+          <div class="ind-card-company">${ind.company} · Cross-role everyday scenarios · Suitable for new audiences</div>
+          <div class="ind-card-pills">
+            ${tools.map(t=>`<span class="pill">${t}</span>`).join('')}
+            <span class="pill basic">+ Basic (no license)</span>
+          </div>
+          <div class="ind-card-prompts">💬 ${count} prompts across ${ind.prompts.length} tools · ${ind.files.length} reference files</div>
+        </div>
+      `;
+    } else {
+      div.className='ind-card';
+      div.innerHTML=`
+        <div class="ind-card-icon">${ind.icon}</div>
+        <div class="ind-card-name">${ind.name}</div>
+        <div class="ind-card-company">${ind.company}</div>
+        <div class="ind-card-pills">
+          ${tools.map(t=>`<span class="pill">${t}</span>`).join('')}
+          ${hasBasic?'<span class="pill basic">+ Basic</span>':''}
+        </div>
+        <div class="ind-card-prompts">💬 ${count} prompts</div>
+      `;
+    }
+    el.appendChild(div);
+  });
+}
+
+// ── What's New ──
+function buildWhatsNew(){
+  const items=data.whatsNew;
+  const dots=document.getElementById('wn-dots');
+  dots.innerHTML=items.map((_,i)=>`<div class="wn-dot${i===0?' active':''}" onclick="setWn(${i})"></div>`).join('');
+  setWn(0);
+}
+function setWn(i){
+  wnIdx=i; const item=data.whatsNew[i];
+  document.getElementById('wn-tag').textContent=item.tag+' · '+item.date;
+  document.getElementById('wn-title').textContent=item.title;
+  document.getElementById('wn-desc').textContent=item.desc;
+  document.querySelectorAll('.wn-dot').forEach((d,j)=>{d.classList.toggle('active',j===i)});
+}
+function wnNav(dir){setWn((wnIdx+dir+data.whatsNew.length)%data.whatsNew.length)}
+setInterval(()=>wnNav(1),6000);
+
+// ── Show industry detail ──
+function showIndustry(id){
+  const ind=data.industries.find(i=>i.id===id);
+  if(!ind)return;
+
+  // Hero
+  const hero=document.getElementById('detail-hero');
+  hero.style.background=`linear-gradient(135deg,${ind.color},${ind.accent})`;
+  hero.style.setProperty('--ind-icon',`"${ind.icon}"`);
+  document.getElementById('detail-badge').textContent=ind.name;
+  document.getElementById('detail-title').textContent=ind.company;
+  document.getElementById('detail-company').textContent=ind.company;
+  document.getElementById('detail-tagline').textContent=ind.tagline;
+
+  // Scenario
+  document.getElementById('detail-scenario').innerHTML=`
+    <div class="detail-scenario-title">📋 Demo Scenario</div>
+    <div class="detail-scenario-text">${ind.scenario}</div>
+  `;
+
+  // Prompts
+  const pEl=document.getElementById('detail-prompts');
+  pEl.innerHTML='';
+  ind.prompts.forEach((tool,ti)=>{
+    const isBasic=tool.license==='Basic (no M365 license)'||tool.license==='Basic'||tool.license==='Free / Basic';
+    const sec=document.createElement('div'); sec.className='tool-section';
+    const accountHint=tool.account?`<span class="tool-account" title="Demo account">${tool.account}</span>`:'';
+    sec.innerHTML=`
+      <div class="tool-header" id="tool-hdr-${id}-${ti}" onclick="toggleTool('${id}-${ti}')">
+        <span class="tool-name">${tool.tool}</span>
+        <span class="tool-license ${isBasic?'basic':'premium'}">${isBasic?'Basic (No License)':'M365 Copilot'}</span>
+        <span class="tool-chevron">▼</span>
+      </div>
+      <div class="tool-prompts" id="tool-prm-${id}-${ti}">
+        ${tool.account?`<div style="padding:8px 16px;font-size:11px;color:#6B7280;background:#F8FAFC;border-bottom:1px solid #E2E8F0">👤 Demo account: <strong>${tool.account}</strong></div>`:''}
+        ${tool.prompts.map((p,pi)=>`
+          <div class="prompt-item">
+            <div class="prompt-title">💬 ${p.title}</div>
+            <div class="prompt-text">"${p.prompt}"</div>
+            ${p.fileRef?`<div class="prompt-fileref">${p.fileRef}</div>`:''}
+            <button class="copy-btn" onclick="copyPrompt(event,'${escapeAttr(p.prompt)}')">Copy</button>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    pEl.appendChild(sec);
+  });
+  // Auto-open first tool
+  toggleTool(`${id}-0`);
+
+  // Files
+  const fEl=document.getElementById('detail-files');
+  fEl.innerHTML=`<div class="files-title">📁 Reference Files</div>`+
+    ind.files.map(f=>{
+      const ext=f.split('.').pop().toLowerCase();
+      return `<div class="file-item"><span class="file-ext ${ext}">${ext.toUpperCase()}</span><span class="file-name">${f}</span></div>`;
+    }).join('');
+
+  // Tips
+  const tips=[
+    `Use <strong>admin@ABSx62256373.onmicrosoft.com</strong> for all M365 Copilot premium demos`,
+    `Use <strong>SashaO@ABSx62256373.onmicrosoft.com</strong> for Copilot Chat Basic demos`,
+    `Have the reference Excel/Word files open in the browser before demoing Copilot in that app`,
+    `For Notebook demos, upload all relevant files at once for best multi-document reasoning`
+  ];
+  document.getElementById('detail-tips').innerHTML=`
+    <div class="tips-title" style="color:#FFFFFF">⚡ Demo Tips</div>
+    ${tips.map((t,i)=>`<div class="tip-item"><div class="tip-num">${i+1}</div><div>${t}</div></div>`).join('')}
+  `;
+
+  // Sidebar nav highlight
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navEl=document.getElementById('nav-'+id);
+  if(navEl)navEl.classList.add('active');
+
+  // Show/hide views
+  document.getElementById('home-view').style.display='none';
+  const dv=document.getElementById('detail-view');
+  dv.classList.add('active'); dv.style.display='block';
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleTool(key){
+  const hdr=document.getElementById('tool-hdr-'+key);
+  const prm=document.getElementById('tool-prm-'+key);
+  if(!hdr||!prm)return;
+  const isOpen=hdr.classList.contains('open');
+  hdr.classList.toggle('open',!isOpen);
+  prm.classList.toggle('open',!isOpen);
+}
+
+function goHome(){
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  document.getElementById('nav-home').classList.add('active');
+  document.getElementById('home-view').style.display='block';
+  const dv=document.getElementById('detail-view');
+  dv.classList.remove('active'); dv.style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function escapeAttr(s){return s.replace(/'/g,"\\'").replace(/"/g,'&quot;')}
+
+function copyPrompt(e,text){
+  e.stopPropagation();
+  const decoded=text.replace(/&quot;/g,'"');
+  navigator.clipboard.writeText(decoded).then(()=>{
+    const t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),2500);
+  });
+}
+
+function logout(){
+  sessionStorage.removeItem('hub_auth');
+  window.location.href='index.html';
+}
+
+// ── Init ──
+buildSidebar();
+buildGrid();
+buildWhatsNew();
+</script>
+</body>
+</html>
