@@ -112,8 +112,26 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .pill.premium{background:#EEF4FF;color:var(--blue)}
 .pill.basic{background:#F0FDF4;color:#16A34A}
 .ind-card-prompts{font-size:11px;color:var(--muted);margin-top:10px;display:flex;align-items:center;gap:4px}
-.prompt-fileref{margin-top:6px;font-size:11px;color:#0078D4;background:#EEF4FF;border-radius:6px;padding:4px 8px;display:inline-block}
-.prompt-fileref::before{content:"📁 ";}
+.prompt-fileref{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#EEF4FF;border:1px solid #C7DEFF;border-radius:6px;
+  padding:5px 10px;font-size:11px;color:#0078D4;font-weight:600;
+  margin-bottom:8px;
+}
+.prompt-fileref::before{content:"📁 Open first: ";font-weight:400;color:#555}
+.prompt-account-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:#F0FDF4;border:1px solid #BBF7D0;border-radius:6px;
+  padding:4px 10px;font-size:11px;color:#15803D;font-weight:600;
+  margin-bottom:4px;
+}
+.prompt-account-badge.premium{background:#FFF7ED;border-color:#FED7AA;color:#C2410C}
+.tool-account-bar{
+  padding:8px 16px;font-size:11px;background:#F8FAFC;
+  border-bottom:1px solid #E2E8F0;display:flex;align-items:center;gap:6px;
+  color:#6B7280;
+}
+.tool-account-bar strong{color:#1F2D55}
 
 /* ── INDUSTRY DETAIL VIEW ── */
 .detail-view{display:none}
@@ -154,7 +172,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .prompt-item:hover{background:#F8FAFC}
 .prompt-item:hover .copy-btn{opacity:1}
 .prompt-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px}
-.prompt-text{font-size:12px;color:var(--muted);line-height:1.5;font-style:italic}
+.prompt-text{font-size:13px;color:#2D3748;line-height:1.7;white-space:pre-wrap;background:#F8FAFC;border-left:3px solid #0078D4;padding:12px 14px;border-radius:0 8px 8px 0;margin:6px 0 10px}
 .copy-btn{
   position:absolute;right:12px;top:50%;transform:translateY(-50%);
   background:var(--blue);color:#FFFFFF;border:none;border-radius:6px;
@@ -415,23 +433,22 @@ function showIndustry(id){
   const pEl=document.getElementById('detail-prompts');
   pEl.innerHTML='';
   ind.prompts.forEach((tool,ti)=>{
-    const isBasic=tool.license==='Basic (no M365 license)'||tool.license==='Basic'||tool.license==='Free / Basic';
+    const isBasic=tool.license&&(tool.license.toLowerCase().includes('basic')||tool.license.toLowerCase().includes('free'));
     const sec=document.createElement('div'); sec.className='tool-section';
-    const accountHint=tool.account?`<span class="tool-account" title="Demo account">${tool.account}</span>`:'';
     sec.innerHTML=`
       <div class="tool-header" id="tool-hdr-${id}-${ti}" onclick="toggleTool('${id}-${ti}')">
         <span class="tool-name">${tool.tool}</span>
-        <span class="tool-license ${isBasic?'basic':'premium'}">${isBasic?'Basic (No License)':'M365 Copilot'}</span>
+        <span class="tool-license ${isBasic?'basic':'premium'}">${isBasic?'🆓 No License Required':'✨ M365 Copilot'}</span>
         <span class="tool-chevron">▼</span>
       </div>
       <div class="tool-prompts" id="tool-prm-${id}-${ti}">
-        ${tool.account?`<div style="padding:8px 16px;font-size:11px;color:#6B7280;background:#F8FAFC;border-bottom:1px solid #E2E8F0">👤 Demo account: <strong>${tool.account}</strong></div>`:''}
+        ${tool.account?`<div class="tool-account-bar">👤 Demo account: <strong>${tool.account}</strong></div>`:''}
         ${tool.prompts.map((p,pi)=>`
           <div class="prompt-item">
             <div class="prompt-title">💬 ${p.title}</div>
-            <div class="prompt-text">"${p.prompt}"</div>
             ${p.fileRef?`<div class="prompt-fileref">${p.fileRef}</div>`:''}
-            <button class="copy-btn" onclick="copyPrompt(event,'${escapeAttr(p.prompt)}')">Copy</button>
+            <div class="prompt-text">${p.prompt}</div>
+            <button class="copy-btn" onclick="copyPrompt(event,'${escapeAttr(p.prompt)}')">Copy prompt</button>
           </div>
         `).join('')}
       </div>
