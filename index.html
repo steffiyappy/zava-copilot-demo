@@ -128,7 +128,7 @@ async function unlock(){
   const pw=document.getElementById('pw').value;
   const hash=await sha256(pw);
   // SHA-256 of "ZavaDemo2025"
-  if(hash==='1948fbe8c0cc5c9d0d9d0bba272f86c0a8ed27e098388978c6bef62c8d9447a8'){
+  if(hash==='554da3d8e6d559e8c05c06bb983ac663eae50db47ea9677aa6f07f98474b8d7c'){
     sessionStorage.setItem('hub_auth','ok');
     window.location.href='hub.html';
   } else {
