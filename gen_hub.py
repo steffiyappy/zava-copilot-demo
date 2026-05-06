@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+# gen_hub.py — Generate hub.html with departments tab + sector grouping
+HTML = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -581,4 +583,11 @@ buildDeptGrid();
 buildWhatsNew();
 </script>
 </body>
-</html>
+</html>"""
+
+with open('hub.html','w',encoding='utf-8') as f:
+    f.write(HTML)
+
+import os
+sz=os.path.getsize('hub.html')
+print(f"hub.html written: {sz:,} bytes")
