@@ -442,6 +442,12 @@ function setSidebarTab(tab){
 function showGridTab(tab){
   currentGridTab=tab;
   setSidebarTab(tab);
+  // Always restore the home (gallery) view — clicking "All Industries" or "All
+  // Departments" from a detail page must take the user back to the grid.
+  document.getElementById('home-view').style.display='block';
+  const dv=document.getElementById('detail-view');
+  dv.classList.remove('active'); dv.style.display='none';
+  _currentItem=null;
   document.getElementById('gtab-ind').classList.toggle('active',tab==='ind');
   document.getElementById('gtab-dept').classList.toggle('active',tab==='dept');
   document.getElementById('ind-grid-wrap').style.display=tab==='ind'?'block':'none';
@@ -450,6 +456,7 @@ function showGridTab(tab){
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   if(tab==='ind') document.getElementById('nav-all-ind').classList.add('active');
   else document.getElementById('nav-all-dept').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 // ── Build sidebar industries (sector-grouped) ──
