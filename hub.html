@@ -186,6 +186,55 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .ctx-btn{padding:5px 12px;border:none;background:transparent;color:rgba(255,255,255,0.6);font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit}
 .ctx-btn.active{background:rgba(255,255,255,0.18);color:#FFFFFF}
 .ctx-btn:hover:not(.active){color:rgba(255,255,255,0.85)}
+/* Dept pills row inside scenario */
+.dept-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--border)}
+.dept-pills-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);width:100%;margin-bottom:2px}
+.dept-pill{padding:5px 11px;background:#FFF3E0;border:1px solid #FED7AA;border-radius:14px;font-size:11px;color:#C2410C;font-weight:700;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:4px}
+.dept-pill:hover{background:#FED7AA;color:#9A3412;transform:translateY(-1px)}
+/* Storyboard card */
+.storyboard-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:18px}
+.storyboard-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.storyboard-sub{font-size:11px;color:var(--muted);margin-bottom:14px}
+.sb-exercises{display:flex;flex-direction:column;gap:12px}
+.sb-ex{border-left:3px solid var(--blue);padding:10px 14px;background:#F8FAFC;border-radius:0 8px 8px 0}
+.sb-ex-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.sb-ex-num{font-size:10px;font-weight:800;color:#FFFFFF;background:var(--blue);padding:3px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px}
+.sb-ex-title{font-size:13px;font-weight:700;color:var(--navy);flex:1;min-width:0}
+.sb-ex-meta{font-size:10px;color:var(--muted);font-weight:600;background:#FFFFFF;border:1px solid var(--border);padding:2px 8px;border-radius:10px}
+.sb-ex-summary{font-size:11px;color:#475569;margin-bottom:8px;line-height:1.5;font-style:italic}
+.sb-tasks{display:flex;flex-wrap:wrap;gap:6px}
+.sb-task{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:#FFFFFF;border:1px solid var(--border);border-radius:14px;font-size:10px;color:var(--text);font-weight:600;cursor:pointer;transition:all 0.15s}
+.sb-task:hover{border-color:var(--blue);background:#EEF4FF;transform:translateY(-1px)}
+.sb-task-n{font-weight:800;color:var(--blue);font-size:10px}
+.sb-task-verb{font-weight:600}
+.sb-task-mode{font-size:9px;text-transform:uppercase;padding:1px 6px;border-radius:8px;font-weight:800;letter-spacing:0.4px}
+.sb-task-mode.show{background:#FFF3E0;color:#C2410C}
+.sb-task-mode.hands{background:#F0FDF4;color:#16A34A}
+/* Personas card (right sidebar) */
+.personas-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px}
+.personas-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.persona-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid #F1F5F9}
+.persona-item:last-child{border-bottom:none}
+.persona-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-weight:700;font-size:11px;flex-shrink:0}
+.persona-info{flex:1;min-width:0}
+.persona-name{font-size:12px;font-weight:700;color:var(--navy);line-height:1.3}
+.persona-role{font-size:10.5px;color:var(--muted);margin-top:1px;line-height:1.3}
+.persona-lic{font-size:9px;font-weight:700;color:#0078D4;background:#EEF4FF;padding:2px 7px;border-radius:8px;display:inline-block;margin-top:3px}
+.persona-lic.free{color:#16A34A;background:#F0FDF4}
+/* Researcher callout + mode label */
+.researcher-callout{padding:12px 14px;background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:1px solid #F6CB6F;border-radius:8px;margin:0 0 12px 0;font-size:11.5px;color:#7C5400;line-height:1.65}
+.researcher-callout strong{color:#5C3F00}
+.researcher-callout-row{display:block;margin-top:4px}
+.prompt-mode{display:inline-block;background:#FEF3C7;color:#92400E;font-size:10px;font-weight:800;padding:3px 9px;border-radius:10px;margin-right:8px;letter-spacing:0.3px;text-transform:uppercase;border:1px solid #FCD34D}
+/* Detail tabs (Tools vs Chat) */
+.detail-tabs{display:flex;gap:6px;margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:0}
+.detail-tab{padding:9px 16px;background:transparent;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;color:var(--muted);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.detail-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+.detail-tab:hover:not(.active){color:var(--navy)}
+/* Frontier license badge */
+.tool-license.frontier{background:#FFF3E0;color:#C2410C;border:1px solid #FED7AA}
+/* Persona chip on prompt */
+.prompt-persona{display:inline-block;font-size:10px;font-weight:800;padding:3px 9px;border-radius:10px;margin-right:8px;letter-spacing:0.3px;border:1px solid currentColor;background:#FFFFFF}
 /* Responsive */
 @media(max-width:768px){
   .sidebar{display:none}
@@ -281,7 +330,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
           <div class="stat-chip"><span class="val">29</span><span class="lbl">Industries</span></div>
           <div class="stat-chip"><span class="val">10</span><span class="lbl">Departments</span></div>
           <div class="stat-chip"><span class="val" id="prompt-count">--</span><span class="lbl">Total Prompts</span></div>
-          <div class="stat-chip"><span class="val">15</span><span class="lbl">Copilot Tools</span></div>
+          <div class="stat-chip"><span class="val">14</span><span class="lbl">Copilot Tools</span></div>
         </div>
       </div>
       <!-- Grid tab toggle -->
@@ -311,10 +360,13 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
       <div class="detail-body">
         <div class="detail-main-col" id="detail-main-col">
           <div class="detail-scenario" id="detail-scenario"></div>
+          <div id="detail-storyboard" class="storyboard-card" style="display:none"></div>
+          <div class="detail-tabs" id="detail-tabs" style="display:none"></div>
           <div id="detail-prompts"></div>
         </div>
         <div class="detail-sidebar">
           <div class="files-card" id="detail-files"></div>
+          <div class="personas-card" id="detail-personas" style="display:none"></div>
           <div class="tips-card" id="detail-tips"></div>
         </div>
       </div>
@@ -335,6 +387,8 @@ let wnIdx=0;
 let currentGridTab='ind';
 let currentSidebarTab='ind';
 let _ctx='MY'; // 'MY' or 'ID'
+let _detailTab='tools'; // 'tools' or 'chat'
+let _currentTab='ind'; // 'ind' or 'dept' (which type was last shown)
 const data=window.HUB_DATA;
 
 function setCtx(c){
@@ -343,14 +397,34 @@ function setCtx(c){
   document.getElementById('ctx-id').classList.toggle('active',c==='ID');
   // Rebuild grids and sidebar with new context
   buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar();
-  // If detail view open, refresh company/tagline
-  if(document.getElementById('detail-view').style.display!=='none' && _currentItem){
-    document.getElementById('detail-title').textContent=_getCompany(_currentItem);
-    document.getElementById('detail-tagline').textContent=_getTagline(_currentItem);
+  // If detail view open, fully re-render with new context
+  if(_currentItem && document.getElementById('detail-view').style.display!=='none'){
+    showItem(_currentItem,_currentTab);
   }
 }
 function _getCompany(item){return _ctx==='ID'&&item.companyID?item.companyID:item.company;}
 function _getTagline(item){return _ctx==='ID'&&item.taglineID?item.taglineID:item.tagline;}
+function _getScenario(item){return _ctx==='ID'&&item.scenarioID?item.scenarioID:item.scenario;}
+function _getPrompts(t){return _ctx==='ID'&&t.promptsID&&t.promptsID.length?t.promptsID:t.prompts;}
+function _getPersona(t,pi){
+  const arr=_ctx==='ID'&&t.personaID&&t.personaID.length?t.personaID:(t.persona||[]);
+  return arr[pi]||'';
+}
+function _isResearcher(name){return /Researcher/i.test(name||'')}
+function _isCowork(name){return /Cowork/i.test(name||'')}
+function _isChat(name){return /Copilot Chat/i.test(name||'')&&!/Notebook/i.test(name||'')}
+function _isFrontier(lic){return /Frontier/i.test(lic||'')}
+function _personaColor(name){
+  if(!name) return '#6B7280';
+  if(/Hadar/i.test(name)) return '#1E40AF';
+  if(/Sasha/i.test(name)) return '#7C3AED';
+  if(/Mod/i.test(name)) return '#059669';
+  if(/Daichi/i.test(name)) return '#DC2626';
+  // Departmental fallback by hash
+  let h=0; for(let i=0;i<name.length;i++) h=(h*31+name.charCodeAt(i))|0;
+  const palette=['#1E40AF','#7C3AED','#059669','#DC2626','#0891B2','#CA8A04','#9333EA','#0D9488'];
+  return palette[Math.abs(h)%palette.length];
+}
 let _currentItem=null;
 
 // ── Sidebar tab toggle ──
@@ -478,6 +552,7 @@ setInterval(()=>wnNav(1),6000);
 // ── Show item detail (works for both industries and departments) ──
 function showItem(item,tab){
   _currentItem=item;
+  _currentTab=tab||'ind';
   const id=item.id;
   // Hero
   const hero=document.getElementById('detail-hero');
@@ -490,60 +565,186 @@ function showItem(item,tab){
   document.getElementById('detail-title').textContent=_getCompany(item);
   document.getElementById('detail-company').textContent=item.name;
   document.getElementById('detail-tagline').textContent=_getTagline(item);
-  // Scenario
+  // Scenario + dept pills
+  const scenarioText=_getScenario(item);
+  let pillsHtml='';
+  if(item.relevantDepts && item.relevantDepts.length){
+    const pills=item.relevantDepts.map(did=>{
+      const d=data.departments.find(x=>x.id===did);
+      if(!d) return '';
+      return '<span class="dept-pill" data-did="'+escapeAttr(d.id)+'">'+d.icon+' '+escapeHTML(d.name)+'</span>';
+    }).filter(Boolean).join('');
+    if(pills){
+      pillsHtml='<div class="dept-pills"><div class="dept-pills-label">🏢 Departments most affected — click to drill down</div>'+pills+'</div>';
+    }
+  }
   document.getElementById('detail-scenario').innerHTML=
-    '<div class="detail-scenario-title">&#x1F4CB; Demo Scenario</div>'+
-    '<div class="detail-scenario-text">'+escapeHTML(item.scenario)+'</div>';
+    '<div class="detail-scenario-title">📋 Demo Scenario</div>'+
+    '<div class="detail-scenario-text">'+escapeHTML(scenarioText)+'</div>'+pillsHtml;
+  // Wire dept pills
+  document.querySelectorAll('#detail-scenario .dept-pill').forEach(el=>{
+    el.onclick=()=>{
+      const did=el.getAttribute('data-did');
+      const d=data.departments.find(x=>x.id===did);
+      if(d) showItem(d,'dept');
+    };
+  });
+  // Storyboard
+  const sbWrap=document.getElementById('detail-storyboard');
+  if(item.storyboard && item.storyboard.length){
+    sbWrap.style.display='block';
+    sbWrap.innerHTML=
+      '<div class="storyboard-title">🎬 Storyboard <span style="font-size:11px;font-weight:500;color:var(--muted)">— '+item.storyboard.length+' exercises across one morning</span></div>'+
+      '<div class="storyboard-sub">Run these tools in sequence to deliver an end-to-end demo flow. Click a tool below the storyboard to copy its prompts.</div>'+
+      '<div class="sb-exercises">'+
+      item.storyboard.map(ex=>{
+        const exTitle=_ctx==='ID'&&ex.titleID?ex.titleID:ex.title;
+        const exSummary=_ctx==='ID'&&ex.summaryID?ex.summaryID:(ex.summary||'');
+        const tasks=(ex.tasks||[]).map(t=>{
+          const verb=_ctx==='ID'&&t.verbID?t.verbID:t.verb;
+          const mode=t.mode==='hands'?'hands':'show';
+          const modeLabel=mode==='hands'?'Hands-on':'Show & Tell';
+          return '<span class="sb-task" data-tool="'+escapeAttr(t.tool||'')+'">'+
+            '<span class="sb-task-n">'+escapeHTML(t.n||'')+'</span>'+
+            '<span class="sb-task-verb">'+escapeHTML(verb||'')+'</span>'+
+            '<span class="sb-task-mode '+mode+'">'+modeLabel+'</span>'+
+            '</span>';
+        }).join('');
+        return '<div class="sb-ex">'+
+          '<div class="sb-ex-head">'+
+            '<span class="sb-ex-num">EX '+(ex.ex||'')+'</span>'+
+            '<span class="sb-ex-title">'+escapeHTML(exTitle||'')+'</span>'+
+            '<span class="sb-ex-meta">⏱ '+(ex.minutes||15)+' min · '+escapeHTML(ex.mode||'')+'</span>'+
+          '</div>'+
+          (exSummary?'<div class="sb-ex-summary">'+escapeHTML(exSummary)+'</div>':'')+
+          '<div class="sb-tasks">'+tasks+'</div>'+
+          '</div>';
+      }).join('')+
+      '</div>';
+  } else {
+    sbWrap.style.display='none';
+    sbWrap.innerHTML='';
+  }
+  // Tab toggle (Tools vs Chat) — only show if tool list contains both T_CHAT and other tools
+  const hasChat=item.prompts.some(t=>_isChat(t.tool));
+  const hasOther=item.prompts.some(t=>!_isChat(t.tool));
+  const tabsWrap=document.getElementById('detail-tabs');
+  if(hasChat && hasOther){
+    tabsWrap.style.display='flex';
+    tabsWrap.innerHTML=
+      '<button class="detail-tab '+( _detailTab==='tools'?'active':'')+'" id="dtab-tools" onclick="setDetailTab(\'tools\')">🛠️ M365 Copilot Tools</button>'+
+      '<button class="detail-tab '+( _detailTab==='chat'?'active':'')+'" id="dtab-chat" onclick="setDetailTab(\'chat\')">💬 Copilot Chat Prompts</button>';
+  } else {
+    tabsWrap.style.display='none';
+    tabsWrap.innerHTML='';
+    _detailTab='tools';
+  }
+  // Filter prompts by tab
+  const visibleTools=item.prompts.filter(t=>{
+    if(!hasChat||!hasOther) return true;
+    if(_detailTab==='chat') return _isChat(t.tool);
+    return !_isChat(t.tool);
+  });
   // Prompts
   const pEl=document.getElementById('detail-prompts');
   pEl.innerHTML='';
-  item.prompts.forEach((tool,ti)=>{
+  visibleTools.forEach((tool)=>{
+    const ti=item.prompts.indexOf(tool);
     const isBasic=tool.license&&(tool.license.toLowerCase().includes('basic')||tool.license.toLowerCase().includes('free'));
+    const isFront=_isFrontier(tool.license);
+    const isResearcher=_isResearcher(tool.tool);
     const sec=document.createElement('div'); sec.className='tool-section';
-    const promHtml=tool.prompts.map((p,pi)=>{
+    const promptArr=_getPrompts(tool);
+    const promHtml=promptArr.map((p,pi)=>{
       const key=_pmKey(id,ti,pi);
-      // p is a plain string in data.js
       const txt=typeof p==='string'?p:(p.prompt||'');
       _PM[key]=txt;
+      const persona=_getPersona(tool,pi);
+      const pColor=_personaColor(persona);
+      let modeLbl='';
+      if(isResearcher){
+        modeLbl=pi===0
+          ?'<span class="prompt-mode">🔍 Critique Mode</span>'
+          :'<span class="prompt-mode">⚖️ Model Council</span>';
+      }
+      const personaChip=persona
+        ?'<span class="prompt-persona" style="color:'+pColor+'">👤 '+escapeHTML(persona)+'</span>'
+        :'';
       return '<div class="prompt-item">'+
-        '<div class="prompt-title">&#x1F4AC; Prompt '+(pi+1)+'</div>'+
+        '<div class="prompt-title">'+modeLbl+personaChip+'💬 Prompt '+(pi+1)+'</div>'+
         '<div class="prompt-text">'+escapeHTML(txt)+'</div>'+
         '<button class="copy-btn" onclick="copyById(\''+key+'\')">Copy prompt</button>'+
         '</div>';
     }).join('');
+    let licClass='premium', licLabel='✨ M365 Copilot';
+    if(isBasic){ licClass='basic'; licLabel='🆓 No License Required'; }
+    if(isFront){ licClass='frontier'; licLabel='🔥 M365 + Frontier'; }
+    let researcherCallout='';
+    if(isResearcher){
+      researcherCallout='<div class="researcher-callout">'+
+        '<strong>🔍 Critique Mode</strong> — Researcher self-critiques every source, verifying claims against the originals before including them in the report. Best for getting trustworthy, citation-grounded answers fast.'+
+        '<span class="researcher-callout-row"></span>'+
+        '<strong>⚖️ Model Council</strong> — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced view. Best for high-stakes decisions where you want diverse expert input.'+
+        '</div>';
+    }
     sec.innerHTML=
       '<div class="tool-header" id="tool-hdr-'+id+'-'+ti+'" onclick="toggleTool(\''+id+'-'+ti+'\')">'+
         '<span class="tool-name">'+escapeHTML(tool.tool)+'</span>'+
-        '<span class="tool-license '+(isBasic?'basic':'premium')+'">'+(isBasic?'&#x1F193; No License Required':'&#x2728; M365 Copilot')+'</span>'+
-        '<span class="tool-chevron">&#x25BC;</span>'+
+        '<span class="tool-license '+licClass+'">'+licLabel+'</span>'+
+        '<span class="tool-chevron">▼</span>'+
       '</div>'+
       '<div class="tool-prompts" id="tool-prm-'+id+'-'+ti+'">'+
-        (tool.account?'<div class="tool-account-bar">&#x1F464; Demo account: <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
+        (tool.account?'<div class="tool-account-bar">👤 Demo account: <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
+        researcherCallout+
         promHtml+
       '</div>';
     pEl.appendChild(sec);
   });
-  toggleTool(id+'-0');
+  if(visibleTools.length){ toggleTool(id+'-'+item.prompts.indexOf(visibleTools[0])); }
   // Files
   const fEl=document.getElementById('detail-files');
-  fEl.innerHTML='<div class="files-title">&#x1F4C1; Reference Files <span style="font-size:11px;font-weight:400;color:var(--muted)">— click to download</span></div>'+
+  fEl.innerHTML='<div class="files-title">📁 Reference Files <span style="font-size:11px;font-weight:400;color:var(--muted)">— click to download</span></div>'+
     item.files.map(f=>{
       const ext=f.split('.').pop().toLowerCase();
       return '<a class="file-item" href="files/'+encodeURIComponent(f)+'" download="'+f+'" target="_blank">'+
         '<span class="file-ext '+ext+'">'+ext.toUpperCase()+'</span>'+
         '<span class="file-name">'+escapeHTML(f)+'</span>'+
-        '<span style="margin-left:auto;font-size:11px;color:var(--blue);font-weight:600">&#x2B07; Download</span>'+
+        '<span style="margin-left:auto;font-size:11px;color:var(--blue);font-weight:600">⬇ Download</span>'+
         '</a>';
     }).join('');
+  // Personas card (between files and tips)
+  const personasEl=document.getElementById('detail-personas');
+  if(item.personas && item.personas.length){
+    personasEl.style.display='block';
+    personasEl.innerHTML=
+      '<div class="personas-title">🎭 Personas in this demo</div>'+
+      item.personas.map(p=>{
+        const role=_ctx==='ID'&&p.roleID?p.roleID:p.role;
+        const initials=(p.name||'').split(' ').map(s=>s[0]).join('').slice(0,2).toUpperCase();
+        const isFree=/free/i.test(p.lic||'');
+        return '<div class="persona-item">'+
+          '<div class="persona-avatar" style="background:'+(p.color||_personaColor(p.name))+'">'+initials+'</div>'+
+          '<div class="persona-info">'+
+            '<div class="persona-name">'+escapeHTML(p.name||'')+'</div>'+
+            '<div class="persona-role">'+escapeHTML(role||'')+'</div>'+
+            '<div class="persona-lic '+(isFree?'free':'')+'">'+escapeHTML(p.lic||'')+'</div>'+
+          '</div>'+
+        '</div>';
+      }).join('');
+  } else {
+    personasEl.style.display='none';
+    personasEl.innerHTML='';
+  }
   // Tips
   const tips=[
     'Use <strong>admin@ABSx62256373.onmicrosoft.com</strong> for all M365 Copilot premium demos',
-    'Use <strong>SashaO@ABSx62256373.onmicrosoft.com</strong> for Copilot Chat Basic demos',
+    'Use <strong>SashaO@ABSx62256373.onmicrosoft.com</strong> for Copilot Chat Free demos',
     'Have the reference Excel/Word files open in the browser before demoing Copilot in that app',
-    'For Notebook demos, upload all relevant files at once for best multi-document reasoning'
+    'For Notebook demos, use the <code>@[📝 file]</code> syntax to reference each source file',
+    'For Teams demos, use the demo tenant\'s recorded meetings (New Software Implementation, Potential Merger, Negotiating Marketing Contract)'
   ];
   document.getElementById('detail-tips').innerHTML=
-    '<div class="tips-title" style="color:#FFFFFF">&#x26A1; Demo Tips</div>'+
+    '<div class="tips-title" style="color:#FFFFFF">⚡ Demo Tips</div>'+
     tips.map((t,i)=>'<div class="tip-item"><div class="tip-num">'+(i+1)+'</div><div>'+t+'</div></div>').join('');
   // Sidebar highlight
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
@@ -556,6 +757,13 @@ function showItem(item,tab){
   dv.classList.add('active'); dv.style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+function setDetailTab(t){
+  _detailTab=t;
+  if(_currentItem) showItem(_currentItem,_currentTab);
+}
+
+function escapeAttr(s){return String(s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
 
 function toggleTool(key){
   const hdr=document.getElementById('tool-hdr-'+key);

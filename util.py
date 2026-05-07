@@ -5,32 +5,38 @@ FREE_LIC = 'Free \u2014 no M365 Copilot license needed'
 M365_LIC = 'M365 Copilot'
 FRONTIER_LIC = 'M365 Copilot + Frontier Program'
 
-T_CHAT = '🤖 Copilot Chat (Basic)'
+T_CHAT = '💬 Microsoft 365 Copilot Chat'
 T_RESEARCHER = '🔍 Researcher'
 T_ANALYST = '📊 Analyst'
 T_EXCEL = '📊 Copilot in Excel'
 T_WORD = '📝 Copilot in Word'
 T_PPT = '🎯 Copilot in PowerPoint'
 T_OUTLOOK = '📧 Copilot in Outlook'
-T_TEAMS = '🎙 Copilot in Teams'
+T_TEAMS = '🎙 Copilot in Teams (Recap → Word minutes)'
 T_NOTEBOOK = '📓 Copilot Notebook'
 T_COWORK = '🤝 Cowork (Frontier)'
-T_EDIT_COPILOT = '✏️ Edit with Copilot'
-T_WORD_AGT = '🤖 Word Agent'
-T_PPT_AGT = '🤖 PowerPoint Agent'
-T_XL_AGT = '🤖 Excel Agent'
-T_BUILDER = '🏗 Agent Builder (Copilot Studio)'
+T_WORD_AGT = '📝 Word Agent (Generate document)'
+T_PPT_AGT = '🎯 PowerPoint Agent (Generate deck)'
+T_XL_AGT = '📊 Excel Agent (Generate workbook)'
+T_BUILDER = '🏗 Agent Builder (M365 Copilot Chat)'
 
-DESC_RESEARCHER = 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.'
-DESC_EDIT_COPILOT = 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.'
-DESC_ANALYST = 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.'
-DESC_TEAMS = 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.'
-DESC_NOTEBOOK = 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.'
-DESC_COWORK = 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf \u2014 sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.'
-DESC_WORD_AGT = 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.'
-DESC_PPT_AGT = 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.'
-DESC_XL_AGT = 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.'
-DESC_BUILDER = 'Build a custom declarative agent in Copilot Studio \u2014 no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.'
+DESC_CHAT = 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat \u2014 secure, work-grounded chat. Type a prompt and reference files with @[file]. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).'
+DESC_RESEARCHER = 'Reasoning agent in Microsoft 365 Copilot Chat \u2014 access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) \ud83d\udd0d Critique Mode \u2014 Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) \u2696\ufe0f Model Council \u2014 Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.'
+DESC_ANALYST = 'Reasoning agent in Microsoft 365 Copilot Chat \u2014 access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or @[reference] a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result \u2014 no formula writing required. Show off chart + dashboard generation in the demo.'
+DESC_EXCEL = 'Copilot inside Excel for the Web. Open a workbook > Copilot pane on the right. Two demo angles: (1) inline \"Edit with Copilot\" agent mode that performs multi-step actions across the workbook \u2014 add columns, build pivot tables, build dashboards, conditional formatting; (2) ask grounded questions about the data. Requires M365 Copilot license.'
+DESC_WORD = 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline \"Edit with Copilot\" agent mode that rewrites, restructures or expands sections of the document in one instruction \u2014 great for board minutes/briefs; (2) draft new sections grounded in @[reference] files. Requires M365 Copilot license.'
+DESC_PPT = 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline \"Edit with Copilot\" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in @[reference] files. Requires M365 Copilot license.'
+DESC_OUTLOOK = 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.'
+DESC_TEAMS = 'For this demo we DO NOT type Teams Copilot prompts directly \u2014 instead use the Teams Recap on the demo tenant for one of three meetings: \"New Software Implementation\", \"Potential Merger\", or \"Negotiating Marketing Contract\". Workflow: Open meeting in Teams > Recap tab > review AI summary + chapters > click Export > Open in Word > use Copilot in Word \"Edit with Copilot\" to format into the Group meeting-minutes template. Requires M365 Copilot license.'
+DESC_NOTEBOOK = 'Microsoft 365 Copilot Notebook \u2014 access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) plus a system instruction. Best for synthesising insights across multiple documents at once. Demo prompts MUST start with @[\ud83d\udcdd file] @[\ud83d\udcca file] reference syntax.'
+DESC_COWORK = 'Cowork is the autonomous agent in M365 Copilot \u2014 access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message \u2014 Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.'
+DESC_WORD_AGT = 'Word Agent in M365 Copilot Chat \u2014 do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with @[reference files] context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Requires M365 Copilot license.'
+DESC_PPT_AGT = 'PowerPoint Agent in M365 Copilot Chat \u2014 do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with @[reference files] context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Requires M365 Copilot license.'
+DESC_XL_AGT = 'Excel Agent in M365 Copilot Chat \u2014 do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with @[reference files] context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Requires M365 Copilot license.'
+DESC_BUILDER = 'Agent Builder is INSIDE Microsoft 365 Copilot Chat \u2014 NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe \u2014 type what your agent should do in plain language; (2) Configure \u2014 add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup, no licence beyond M365 Copilot.'
+
+T_EDIT_COPILOT = '\u270f\ufe0f Edit with Copilot (use inside Word/PPT/Excel)'
+DESC_EDIT_COPILOT = 'Edit with Copilot is the inline agent mode inside Copilot in Word, PowerPoint and Excel \u2014 it is NOT a separate product. Use it from Copilot in Word / PPT / Excel sections of this hub.'
 
 def esc(s):
     s = str(s)
@@ -40,18 +46,77 @@ def esc(s):
     s = s.replace('\r', '')
     return s
 
-def tool(name, lic, acct, prompts, desc=''):
-    return {'tool': name, 'license': lic, 'account': acct, 'desc': desc, 'prompts': prompts}
+def tool(name, lic, acct, prompts, desc='', promptsID=None, persona=None, personaID=None):
+    return {
+        'tool': name, 'license': lic, 'account': acct, 'desc': desc,
+        'prompts': prompts,
+        'promptsID': promptsID or [],
+        'persona': persona or [],
+        'personaID': personaID or [],
+    }
 
 def ind(id, sectorId, name, icon, color, accent, company, tagline, scenario, files, tools,
-        companyID='', taglineID='', subsector=''):
+        companyID='', taglineID='', scenarioID='', subsector='',
+        relevantDepts=None, storyboard=None, personas=None):
     return {
         'id': id, 'sectorId': sectorId, 'subsector': subsector,
         'name': name, 'icon': icon, 'color': color, 'accent': accent,
         'company': company, 'tagline': tagline, 'scenario': scenario,
-        'companyID': companyID, 'taglineID': taglineID,
-        'files': files, 'prompts': tools
+        'companyID': companyID, 'taglineID': taglineID, 'scenarioID': scenarioID,
+        'files': files, 'prompts': tools,
+        'relevantDepts': relevantDepts or [],
+        'storyboard': storyboard or [],
+        'personas': personas or [],
     }
+
+def _write_storyboard(f, sb, indent='      '):
+    f.write(f"{indent}storyboard: [\n")
+    for si, s in enumerate(sb):
+        sl = si == len(sb) - 1
+        f.write(f"{indent}  {{\n")
+        f.write(f"{indent}    ex: {s.get('ex', si+1)},\n")
+        f.write(f"{indent}    title: '{esc(s.get('title',''))}',\n")
+        if s.get('titleID'):
+            f.write(f"{indent}    titleID: '{esc(s['titleID'])}',\n")
+        f.write(f"{indent}    minutes: {s.get('minutes', 15)},\n")
+        f.write(f"{indent}    mode: '{esc(s.get('mode',''))}',\n")
+        if s.get('summary'):
+            f.write(f"{indent}    summary: '{esc(s['summary'])}',\n")
+        if s.get('summaryID'):
+            f.write(f"{indent}    summaryID: '{esc(s['summaryID'])}',\n")
+        tasks = s.get('tasks', [])
+        f.write(f"{indent}    tasks: [\n")
+        for ti, t in enumerate(tasks):
+            tl = ti == len(tasks) - 1
+            f.write(f"{indent}      {{")
+            f.write(f"n: '{esc(t.get('n',''))}', ")
+            f.write(f"tool: '{esc(t.get('tool',''))}', ")
+            f.write(f"verb: '{esc(t.get('verb',''))}', ")
+            if t.get('verbID'):
+                f.write(f"verbID: '{esc(t['verbID'])}', ")
+            f.write(f"mode: '{esc(t.get('mode','show'))}'")
+            if t.get('label'):
+                f.write(f", label: '{esc(t['label'])}'")
+            f.write("}" + ('' if tl else ',') + "\n")
+        f.write(f"{indent}    ]\n")
+        f.write(f"{indent}  }}" + ('' if sl else ',') + "\n")
+    f.write(f"{indent}],\n")
+
+def _write_personas(f, ps, indent='      '):
+    f.write(f"{indent}personas: [\n")
+    for pi, p in enumerate(ps):
+        pl = pi == len(ps) - 1
+        f.write(f"{indent}  {{")
+        f.write(f"name: '{esc(p.get('name',''))}', ")
+        f.write(f"role: '{esc(p.get('role',''))}', ")
+        if p.get('roleID'):
+            f.write(f"roleID: '{esc(p['roleID'])}', ")
+        f.write(f"acct: '{esc(p.get('acct',''))}', ")
+        f.write(f"lic: '{esc(p.get('lic',''))}'")
+        if p.get('color'):
+            f.write(f", color: '{esc(p['color'])}'")
+        f.write("}" + ('' if pl else ',') + "\n")
+    f.write(f"{indent}],\n")
 
 def write_entry(f, entry, is_last):
     e = entry
@@ -71,8 +136,17 @@ def write_entry(f, entry, is_last):
     if e.get('taglineID'):
         f.write(f"      taglineID: '{esc(e['taglineID'])}',\n")
     f.write(f"      scenario: '{esc(e['scenario'])}',\n")
+    if e.get('scenarioID'):
+        f.write(f"      scenarioID: '{esc(e['scenarioID'])}',\n")
     files_js = ', '.join(f"'{esc(x)}'" for x in e.get('files', []))
     f.write(f"      files: [{files_js}],\n")
+    if e.get('relevantDepts'):
+        rd = ', '.join(f"'{esc(x)}'" for x in e['relevantDepts'])
+        f.write(f"      relevantDepts: [{rd}],\n")
+    if e.get('personas'):
+        _write_personas(f, e['personas'])
+    if e.get('storyboard'):
+        _write_storyboard(f, e['storyboard'])
     f.write(f"      prompts: [\n")
     tools = e.get('prompts', [])
     for ti, t in enumerate(tools):
@@ -88,7 +162,26 @@ def write_entry(f, entry, is_last):
         for pi, p in enumerate(ps):
             pl = pi == len(ps) - 1
             f.write(f"            '{esc(p)}'" + ('' if pl else ',') + "\n")
-        f.write(f"          ]\n")
+        f.write(f"          ]")
+        if t.get('promptsID'):
+            f.write(",\n")
+            f.write(f"          promptsID: [\n")
+            psID = t['promptsID']
+            for pi, p in enumerate(psID):
+                pl = pi == len(psID) - 1
+                f.write(f"            '{esc(p)}'" + ('' if pl else ',') + "\n")
+            f.write(f"          ]")
+        if t.get('persona'):
+            f.write(",\n")
+            ppl = t['persona']
+            pers = ', '.join(f"'{esc(x)}'" for x in ppl)
+            f.write(f"          persona: [{pers}]")
+        if t.get('personaID'):
+            f.write(",\n")
+            ppl = t['personaID']
+            pers = ', '.join(f"'{esc(x)}'" for x in ppl)
+            f.write(f"          personaID: [{pers}]")
+        f.write("\n")
         f.write(f"        }}" + ('' if tl else ',') + "\n")
     f.write(f"      ]\n")
     f.write(f"    }}" + ('' if is_last else ',') + "\n")

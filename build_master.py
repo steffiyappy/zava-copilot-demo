@@ -129,7 +129,7 @@ lines.append('};')
 
 output = '\n'.join(lines)
 
-with open('data.js', 'w', encoding='utf-8') as f:
+with open('data.js', 'w', encoding='utf-8', errors='replace') as f:
     f.write(output)
 
 import os

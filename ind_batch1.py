@@ -8,14 +8,21 @@ INDUSTRIES_1 = [
 ind('general','general','⭐ General (Any Role)','⭐','#FF6B35','#FF8C42',
     'Zava Group Berhad',
     'FY2025 EBITDA misses budget by 18% — Board emergency review in 48 hours.',
-    'Zava Group Berhad is a Malaysian diversified conglomerate with 11 divisions and about 8,400 employees. FY2025 EBITDA has missed budget by 18%, with 3 divisions now in negative EBITDA and investor confidence starting to wobble. The Group CEO has 48 hours to walk into an emergency Board review with a sharp briefing pack, a defensible variance analysis, and regulatory communications ready to go.',
+    'Zava Group Berhad is a Malaysian diversified conglomerate listed on Bursa Malaysia with 11 operating divisions across chemicals, agribusiness, manufacturing, financial services, properties, BPO, trading, pharma, healthcare, retail and group treasury, and about 8,400 employees. FY2025 EBITDA missed budget by 18%, three divisions are now in negative EBITDA, the Securities Commission has requested a clarification, and lead relationship banks have raised covenant questions. The Group CEO walks into an emergency Board review in 48 hours and needs a defensible briefing pack, divisional variance analysis, regulator and lender holding lines, and a 30-day corrective programme — fast.',
     ['01_Zava_Group_Financial_Performance.xlsx','02_Zava_Group_Policy_Handbook.docx','03_Zava_Group_Strategy_Framework.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
         'You are the Group Chief of Staff at Zava Group Berhad. FY2025 EBITDA is 18% below budget, 3 divisions are in negative EBITDA, and the Board has called an emergency review in 48 hours. Draft a crisp 1-page CEO briefing that explains the situation in plain language, the likely questions directors will ask first, and the 5 decisions that must be ready before the meeting opens. Present as a structured table with columns for Issue, Why It Matters, Board Question, and Recommended Answer.',
         'You are the Group CFO at Zava Group Berhad. The CEO needs a verbal opening script for a high-pressure Board session after an 18% EBITDA miss across an 11-division conglomerate with 8,400 employees. Write a 90-second opening statement that acknowledges the underperformance directly, explains why 3 divisions have fallen into negative EBITDA, and signals immediate corrective action without sounding defensive. End with 3 talking points the CEO can use if directors challenge management credibility.',
         'You are the Head of Corporate Affairs at Zava Group Berhad. Prepare a stakeholder communication map for an 18% FY2025 EBITDA miss, 3 negative-EBITDA divisions, and an emergency Board review in 48 hours. Identify the priority audiences, the message each audience needs, the timing, and the main communication risk if the message is mishandled. Present as a RAG table with Red for immediate same-day communication needs, Amber for 24-hour needs, and Green for monitor-only audiences.'
-      ]),
+      ], DESC_CHAT,
+      promptsID=[
+        'Anda adalah Sasha Ouellet, Kepala Staf Grup di PT Nusantara Raya Investama Tbk. EBITDA FY2025 meleset 21% dari RKAP, dua dari sembilan unit usaha mencatat EBITDA negatif, OJK telah meminta klarifikasi, dan Rapat Direksi darurat akan digelar dalam 36 jam. Susun ringkasan tajam 1 halaman untuk Direktur Utama yang menjelaskan situasi dalam bahasa sederhana, pertanyaan yang kemungkinan akan dilayangkan Direksi pertama-tama, dan 5 keputusan yang harus siap sebelum rapat dibuka. Sajikan sebagai tabel terstruktur dengan kolom Isu, Mengapa Penting, Pertanyaan Direksi, dan Jawaban yang Direkomendasikan.',
+        'Anda adalah Hadar Caspit, Direktur Keuangan Grup di PT Nusantara Raya Investama Tbk. Direktur Utama memerlukan naskah pembukaan lisan untuk sesi Rapat Direksi bertekanan tinggi pasca selisih EBITDA 21% di konglomerat 9 unit usaha dengan 12.000 karyawan. Tulis pernyataan pembukaan 90 detik yang mengakui kinerja kurang secara langsung, menjelaskan mengapa dua unit usaha jatuh ke EBITDA negatif, dan memberikan sinyal tindakan perbaikan langsung tanpa terdengar defensif. Akhiri dengan 3 talking points untuk dipakai Direktur Utama bila Direksi menantang kredibilitas manajemen.',
+        'Anda adalah Daichi Maruyama, Kepala Hubungan Investor di PT Nusantara Raya Investama Tbk. Susun peta komunikasi pemangku kepentingan untuk selisih EBITDA FY2025 21%, dua unit usaha bermasalah, klarifikasi OJK yang berjalan, dan Rapat Direksi darurat dalam 36 jam. Identifikasi audiens prioritas (OJK, BEI, bank utama, Komisaris, investor institusi, karyawan), pesan inti tiap audiens, timing, dan risiko komunikasi utama bila pesan keliru. Sajikan sebagai tabel RAG dengan Merah untuk kebutuhan komunikasi hari ini juga, Kuning untuk 24 jam, dan Hijau untuk audiens monitor saja.'
+      ],
+      persona=['Sasha Ouellet','Hadar Caspit','Daichi Maruyama'],
+      personaID=['Sasha Ouellet','Hadar Caspit','Daichi Maruyama']),
       tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
         'You are the Group Strategy Director at Zava Group Berhad. Research how large diversified conglomerates in Malaysia and Indonesia have responded to EBITDA shortfalls of more than 15% against budget from 2022 to 2025. For at least 3 published case studies, identify the trigger event, the Board response within 30 days, and the financial outcome 12 months later. Cite all sources including publication dates and flag any claim that could not be independently verified against an original source.',
         'You are the Group Company Secretary at Zava Group Berhad. Research the disclosure, governance, and investor communication expectations that listed Malaysian and Indonesian conglomerates typically face after a material earnings miss and emergency Board review. Focus on Bursa Malaysia, OJK, IDX, and comparable listed-company guidance from 2022 to 2025, then distinguish mandatory obligations from market practice. Present as a table with columns for Requirement, Malaysia, Indonesia, Timing, and Practical Implication for Management.',
@@ -61,11 +68,6 @@ ind('general','general','⭐ General (Any Role)','⭐','#FF6B35','#FF8C42',
         'You are the Group Company Secretary at Zava Group Berhad. Do all of the following autonomously: create the emergency Board review meeting invite for 48 hours from now, attach a placeholder agenda, set a reminder 12 hours before the meeting, create a OneDrive folder called "Board Emergency Review - FY2025 EBITDA", and email all directors asking them to expect the final pack within 24 hours. Keep the wording discreet and clearly marked confidential.',
         'You are the Group CFO at Zava Group Berhad. Do all of the following autonomously: draft a lender update email, draft a regulator holding note, create a task list for the finance leadership team covering variance analysis, liquidity review, and divisional recovery plans, then send the task list to the relevant owners and schedule a 20-minute checkpoint meeting for this afternoon. The context is an 18% FY2025 EBITDA miss with 3 divisions in negative EBITDA and an emergency Board review in 48 hours.'
       ], DESC_COWORK),
-      tool(T_EDIT_COPILOT, M365_LIC, M365_ACCT, [
-        'You are the Group Company Secretary at Zava Group Berhad. Using 02_Zava_Group_Policy_Handbook.docx in Word for the web, add an appendix titled "Emergency Earnings Review Governance Protocol" and populate it with a decision-rights table, escalation timeline, and approval matrix for regulator, lender, investor, and employee communications. Keep the language consistent with the existing handbook and add a short note wherever legal review is required before external release.',
-        'Using the Group P&L Summary tab and the Key Financial Ratios tab in 01_Zava_Group_Financial_Performance.xlsx, create a new worksheet called "Board Recovery Tracker" that combines divisional EBITDA variance, RAG status, leverage metrics, and an owner column for each corrective action. Reorder the columns so Board readers see the Red issues first, apply consistent styling, and add formulas that automatically refresh the group summary at the top when divisional values change.',
-        'You are the Group Chief of Staff at Zava Group Berhad. Using the current Board presentation in PowerPoint for the web, restructure the deck so the first 5 slides tell a tighter crisis narrative on the FY2025 EBITDA miss. Consolidate duplicative slides, rewrite slide titles into action-oriented headlines, move detailed backup charts to an appendix, and add a final decisions slide that clearly separates approve today, review next week, and monitor monthly.'
-      ], DESC_EDIT_COPILOT),
       tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
         'You are the Group Company Secretary at Zava Group Berhad. Open 02_Zava_Group_Policy_Handbook.docx in Word for Web and create a new agent called "Zava Governance Guide". Describe it as an assistant that answers questions on governance obligations, escalation rules, disclosure controls, and approval authorities during performance or crisis situations. Set the document as the knowledge source and share it with the CEO office, finance, and corporate affairs teams.',
         'You are the Head of Corporate Affairs at Zava Group Berhad. Demo the Zava Governance Guide agent by asking: "An 18% EBITDA miss has triggered an emergency Board review. What approvals do I need before sending a regulator update, a lender email, and an employee note, and who owns each approval?" Show how the agent responds with policy-grounded guidance that cites the source document.'
@@ -79,12 +81,54 @@ ind('general','general','⭐ General (Any Role)','⭐','#FF6B35','#FF8C42',
         'You are the Group CEO at Zava Group Berhad. Demo the Zava Performance Q&A agent by asking: "Which 3 divisions have the largest unfavourable EBITDA variance in FY2025, what is the group-level miss versus budget, and has liquidity or leverage materially worsened?" Then ask it to classify each answer as Red, Amber, or Green so the CEO gets an instant decision-oriented summary.'
       ], DESC_XL_AGT),
       tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'You are the Group Chief of Staff at Zava Group Berhad. Go to copilotstudio.microsoft.com and create a new agent called "Zava Executive War Room". Describe it as an assistant for Board, CEO, CFO, and corporate affairs teams managing the FY2025 EBITDA miss, and upload 01_Zava_Group_Financial_Performance.xlsx, 02_Zava_Group_Policy_Handbook.docx, and 03_Zava_Group_Strategy_Framework.docx as knowledge sources. Add starter topics for Board Review, Divisional Recovery, Stakeholder Communications, and Governance Approvals, then publish it to Teams for authorised executives only.',
-        'You are the Group CEO at Zava Group Berhad. Demo the published Zava Executive War Room agent in Teams by asking: "Give me the 60-second version of the FY2025 EBITDA problem, the 3 divisions in negative EBITDA, the top governance obligations, and the decisions I must take to the Board in 48 hours." Then ask a second question: "Draft my first message to division CEOs after the Board meeting."'
+        'You are the Group Chief of Staff at Zava Group Berhad. Go to m365.cloud.microsoft/chat, click Agents > + Create an agent, and build a new agent called "Zava Executive War Room". Step 1 Describe: tell Copilot it is an assistant for Board, CEO, CFO, and corporate affairs teams managing the FY2025 18% EBITDA miss. Step 2 Configure: add 01_Zava_Group_Financial_Performance.xlsx, 02_Zava_Group_Policy_Handbook.docx, and 03_Zava_Group_Strategy_Framework.docx as knowledge, and add starter prompts for Board Review, Divisional Recovery, Stakeholder Communications, and Governance Approvals. Step 3 Test in the right pane. Step 4 Create and share with the executive war-room team only.',
+        'You are the Group CEO at Zava Group Berhad. Test the just-created Zava Executive War Room agent inside M365 Copilot Chat by asking: "Give me the 60-second version of the FY2025 EBITDA problem, the 3 divisions in negative EBITDA, the top governance obligations, and the decisions I must take to the Board in 48 hours." Then ask a second question: "Draft my first message to division CEOs after the Board meeting."'
       ], DESC_BUILDER),
     ],
-    'PT Wahana Makmur Nusantara Tbk',
-    'EBITDA FY2025 meleset 18% — review darurat direksi dalam 48 jam.'),
+    companyID='PT Nusantara Raya Investama Tbk',
+    taglineID='EBITDA FY2025 meleset 21% dari RKAP \u2014 Rapat Direksi darurat dalam 36 jam.',
+    scenarioID='PT Nusantara Raya Investama Tbk adalah konglomerat diversifikasi Indonesia yang tercatat di Bursa Efek Indonesia dengan 9 unit usaha lintas kimia, agribisnis, manufaktur, jasa keuangan, properti, BPO, perdagangan, farmasi, dan kesehatan, serta sekitar 12.000 karyawan. EBITDA FY2025 meleset 21% dari RKAP, dua unit usaha kini mencatat EBITDA negatif, OJK telah meminta klarifikasi, dan bank relasi utama mengangkat pertanyaan covenant. Direktur Utama akan menghadapi Rapat Direksi darurat dalam 36 jam dan membutuhkan paket briefing yang dapat dipertahankan, analisis varians per unit usaha, holding lines untuk regulator dan kreditor, serta program perbaikan 30 hari \u2014 secara cepat.',
+    relevantDepts=['finance','strategy','legal','risk','it','hr'],
+    personas=[
+      {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Head of Investor Relations','roleID':'Kepala Hubungan Investor','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+    ],
+    storyboard=[
+      {'ex':1,'title':'Diagnose & Brief','titleID':'Diagnosa & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
+       'summary':'Frame the 18% EBITDA miss and the 3 negative-EBITDA divisions; pull deep market and governance benchmarks to anchor management credibility before the Board walks in.',
+       'summaryID':'Bingkai selisih EBITDA 21% dan dua unit usaha bermasalah; tarik benchmark pasar dan tata kelola untuk menopang kredibilitas manajemen sebelum Rapat Direksi dimulai.',
+       'tasks':[
+         {'n':'01','tool':'chat','verb':'1-page CEO briefing','verbID':'Briefing CEO 1 halaman','mode':'show','label':'Copilot Chat'},
+         {'n':'02','tool':'researcher','verb':'Benchmark conglomerate misses','verbID':'Benchmark selisih konglomerat','mode':'show','label':'Critique'},
+         {'n':'03','tool':'researcher','verb':'Multi-model debate of options','verbID':'Debat multi-model atas opsi','mode':'show','label':'Model Council'}
+       ]},
+      {'ex':2,'title':'Quantify','titleID':'Kuantifikasi','minutes':22,'mode':'Hands-on',
+       'summary':'Analyse the divisional variance, build a Board-ready dashboard in Excel, and synthesise across financial, policy and strategy files in Notebook.',
+       'summaryID':'Analisis selisih per unit usaha, susun dashboard siap Direksi di Excel, dan sintesakan keuangan, kebijakan, dan strategi di Notebook.',
+       'tasks':[
+         {'n':'04','tool':'analyst','verb':'Variance + bridge analysis','verbID':'Analisis selisih + bridge','mode':'hands','label':'Analyst'},
+         {'n':'05','tool':'excel','verb':'Board Variance Dashboard sheet','verbID':'Sheet Dashboard Selisih Direksi','mode':'hands','label':'Copilot in Excel'},
+         {'n':'06','tool':'notebook','verb':'Cross-file war-room synthesis','verbID':'Sintesa war-room lintas-file','mode':'hands','label':'Copilot Notebook'}
+       ]},
+      {'ex':3,'title':'Communicate','titleID':'Komunikasi','minutes':22,'mode':'Hands-on',
+       'summary':'Draft the governance protocol appendix in Word, build the Board deck in PowerPoint, and align lender and director emails in Outlook.',
+       'summaryID':'Susun lampiran protokol tata kelola di Word, bangun deck Direksi di PowerPoint, dan rapikan email kreditor dan Direksi di Outlook.',
+       'tasks':[
+         {'n':'07','tool':'word','verb':'Governance protocol appendix','verbID':'Lampiran protokol tata kelola','mode':'hands','label':'Copilot in Word'},
+         {'n':'08','tool':'ppt','verb':'5-slide Board deck','verbID':'Deck Direksi 5 slide','mode':'hands','label':'Copilot in PowerPoint'},
+         {'n':'09','tool':'outlook','verb':'Lender + Board email pack','verbID':'Paket email kreditor + Direksi','mode':'hands','label':'Copilot in Outlook'}
+       ]},
+      {'ex':4,'title':'Coordinate & Scale','titleID':'Koordinasi & Skalakan','minutes':18,'mode':'Show & Tell',
+       'summary':'Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a War Room agent in M365 Copilot Chat for executives.',
+       'summaryID':'Konversi Teams Recap menjadi notulen formal, delegasikan prep paralel ke Cowork, dan bangun agen War Room di M365 Copilot Chat untuk eksekutif.',
+       'tasks':[
+         {'n':'10','tool':'teams','verb':'Recap \u2192 Word minutes','verbID':'Recap \u2192 Notulen Word','mode':'show','label':'Copilot in Teams'},
+         {'n':'11','tool':'cowork','verb':'Autonomous prep package','verbID':'Paket prep otonom','mode':'show','label':'Cowork (Frontier)'},
+         {'n':'12','tool':'builder','verb':'War Room agent in Copilot Chat','verbID':'Agen War Room di Copilot Chat','mode':'show','label':'Agent Builder'}
+       ]}
+    ]),
 
 # ── COMMERCIAL BANKING ─────────────────────────────────────────────────────
 ind('commercial-banking','banking-fs','Commercial Banking','🏦','#0D47A1','#1976D2',
