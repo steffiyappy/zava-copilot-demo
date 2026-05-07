@@ -742,7 +742,7 @@ function showItem(item,tab){
     'Use <strong>admin@ABSx62256373.onmicrosoft.com</strong> for all M365 Copilot premium demos',
     'Use <strong>SashaO@ABSx62256373.onmicrosoft.com</strong> for Copilot Chat Free demos',
     'Have the reference Excel/Word files open in the browser before demoing Copilot in that app',
-    'For Notebook demos, use the <code>@[📝 file]</code> syntax to reference each source file',
+    'For Notebook demos, use the <code>/file</code> syntax to reference each source file',
     'For Teams demos, use the demo tenant\'s recorded meetings (New Software Implementation, Potential Merger, Negotiating Marketing Contract)'
   ];
   document.getElementById('detail-tips').innerHTML=
