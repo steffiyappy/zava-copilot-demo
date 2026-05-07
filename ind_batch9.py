@@ -1,150 +1,95 @@
-
 import sys; sys.path.insert(0,'.')
-from util import *
+from batch_prompt_factory import build_entry
 
-INDUSTRIES_9 = [
+ENTRY_CONFIGS = [{'accent': '#283593',
+'agent_name': 'Amanah Modal Portfolio Intelligence Agent',
+'agent_share': 'the CEO office, investment committee members, and governance leads',
+'board_body': 'Board Investment Committee',
+'builder_crisis': 'A Ministerial aide calls 40 minutes before a press briefing to ask why dividend receipts are down '
+'while one strategic holding has missed its mandate-compliance thresholds for two consecutive '
+'quarters.',
+'challenge': 'the mandate refresh, the three holdings below hurdle rate, and the tension between commercial return '
+'and national-development objectives',
+'color': '#1A237E',
+'company': 'Amanah Modal Nasional Berhad',
+'companyID': 'PT Investasi Negara Nusantara',
+'deadline': 'six weeks',
+'demo_question': 'Which three holdings are Red today, what evidence from the portfolio tabs supports that view, and '
+'what action should the Board approve first?',
+'external_party': 'the Ministry of Finance and investee company chairs',
+'files': ['GLC_01_Investment_Portfolio.xlsx',
+'GLC_02_Investment_Policy_Statement.docx',
+'GLC_03_Governance_Charter.docx'],
+'icon': '��',
+'id': 'glc-investment',
+'name': 'GLC Investment Arm',
+'peer_set': 'Khazanah, Temasek, GIC, KWAP, and comparable sovereign-style investors',
+'regulators': 'the Ministry of Finance, Bursa Malaysia disclosure expectations, and government-linked company '
+'governance norms',
+'roles': ['Chief Investment Officer', 'Head of Portfolio Strategy', 'Head of Governance & Stewardship'],
+'scenario': 'Amanah Modal Nasional Berhad is a Malaysian state-linked investment arm managing MYR 52.4B across '
+'listed and strategic national assets. The Board wants a refreshed mandate that balances commercial '
+'returns, nation-building outcomes, and ESG expectations before the next Ministerial review. Three '
+'legacy holdings are dragging NAV, dividend flow is under pressure, and the investment team must show a '
+'sharper stewardship model within six weeks.',
+'sectorId': 'glc',
+'sheets': ['Portfolio Summary', 'NAV Tracker', 'Dividend Income', 'Mandate Compliance', 'ESG Scorecard'],
+'short_name': 'Amanah Modal',
+'stakeholders': 'the Board Chair, the Ministerial review team, and the Chief Risk Officer',
+'tagline': 'MYR 52.4B portfolio mandate refresh, dividend pressure, and three strategic holdings below hurdle rate.',
+'taglineID': 'Mandat portofolio BUMN dengan pengawasan OJK, tekanan dividen, dan tiga aset strategis di bawah hurdle '
+'rate.',
+'team': 'the investment, stewardship, and portfolio strategy teams',
+'topics': ['portfolio performance',
+'mandate compliance',
+'dividend strategy',
+'active ownership',
+'ESG stewardship']},
+{'accent': '#2E7D32',
+'agent_name': 'Supervisory Intelligence Agent',
+'agent_share': 'senior supervision leaders and policy heads',
+'board_body': 'Board of Commissioners',
+'builder_crisis': 'A licensed institution reports a sudden spike in delinquency plus a critical control failure at '
+'6:30am, and leadership wants to know the immediate supervisory response before markets open.',
+'challenge': 'the elevated personal-loan NPL trend, delayed digital-bank readiness, and the need to justify '
+'proportionate supervisory escalation',
+'color': '#1B5E20',
+'company': 'Suruhanjaya Kewangan Malaysia',
+'companyID': 'Otoritas Jasa Keuangan Nusantara',
+'deadline': 'three weeks',
+'demo_question': 'Which entities are Red across credit quality, conduct, and operational readiness, and what '
+'proportionate intervention should we trigger first?',
+'external_party': 'regulated institutions and the Deputy Governor',
+'files': ['REG_01_Supervisory_Dashboard.xlsx',
+'REG_02_Supervisory_Framework.docx',
+'REG_03_Regulatory_Policy_Manual.docx'],
+'icon': '⚖️',
+'id': 'financial-regulator',
+'name': 'Financial Regulator',
+'peer_set': 'MAS, BSP, OJK, BIS, IMF, and comparable prudential authorities',
+'regulators': 'IFSA-style prudential expectations, digital-bank operating conditions, and systemic-risk governance '
+'norms',
+'roles': ['Director of Banking Supervision', 'Head of Prudential Analytics', 'Head of Supervisory Policy'],
+'scenario': 'Suruhanjaya Kewangan Malaysia is preparing a Board-level systemic-risk review while supervisory teams '
+'track rising weakness in consumer credit. The personal-loan segment has moved above its internal risk '
+'trigger, two digital-license holders are behind critical operational milestones, and market conduct '
+'concerns are surfacing across several entities. Supervisors need a tighter evidence base, clearer '
+'escalation logic, and a defensible narrative on proportional intervention within three weeks.',
+'sectorId': 'government',
+'sheets': ['Entity Compliance Matrix',
+'Enforcement Action Log',
+'Risk Rating Summary',
+'Market Conduct Report',
+'Financial Stability KPIs'],
+'short_name': 'Supervisory',
+'stakeholders': 'the Governor, Deputy Governors, and supervision heads',
+'tagline': 'Personal-loan NPL deterioration, digital-bank readiness gaps, and a systemic-risk review due in three '
+'weeks.',
+'taglineID': 'Pengawasan OJK dan BI atas NPL konsumer, kesiapan bank digital, dan laporan stabilitas sistem keuangan '
+'kepada dewan komisioner.',
+'team': 'the prudential supervision, analytics, and policy teams',
+'topics': ['NPL supervision', 'digital bank review', 'enforcement actions', 'market conduct', 'systemic risk']}]
 
-# ── GLC INVESTMENT ────────────────────────────────────────────────────────
-ind('glc-investment','glc','GLC Investment Arm','🏛','#1A237E','#283593',
-    'Danamas Capital Berhad',
-    'MYR 48.2B AUM — mandate review + Khazanah-style strategic equity portfolio refresh.',
-    'Danamas Capital Berhad is Malaysia\'s state-linked strategic investment arm managing MYR 48.2B AUM across 34 investee companies. The government has initiated a mandate review to clarify the balance between commercial returns and national development objectives. The portfolio includes 3 underperforming GLCs requiring either active engagement or divestment.',
-    ['GLC_01_Danamas_Capital.xlsx','GLC_02_Danamas_Strategy.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the CEO of a Malaysian government-linked investment arm managing MYR 48.2B AUM across 34 investee companies, similar to Khazanah Nasional. The government has asked us to review our mandate — specifically whether we should prioritise commercial returns (like Temasek) or developmental impact (like the old Khazanah mandate). Draft a 300-word brief for the Minister covering: (1) The key differences between a pure commercial investment mandate and a developmental investment mandate, (2) How Temasek (Singapore), Khazanah (Malaysia), and PNB have each balanced commercial and developmental objectives, (3) A recommended hybrid framework that serves both objectives without compromising either.',
-        'What are the key governance requirements for a GLC investment arm in Malaysia? How does Khazanah\'s governance structure differ from a conventional fund manager? What are the Putrajaya Committee guidelines for GLC governance and how do they apply to a strategic investment entity?',
-        'Explain what an active ownership strategy means for a GLC investor. When should a GLC investment arm intervene in an underperforming investee company — replacing the Board, issuing a performance turnaround mandate, or divesting? What triggers are typically used by Khazanah or Temasek before escalating to active intervention?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research the governance and investment strategies of major Asian sovereign and government-linked investment arms — specifically Temasek (Singapore), Khazanah Nasional (Malaysia), GIC (Singapore), and KWAP (Malaysia). I need: (1) Their AUM and portfolio composition, (2) How they balance commercial returns vs national development, (3) Their ESG integration approach, (4) Their performance measurement frameworks. Cite annual reports and academic sources.',
-        'Research the current landscape of GLCs (Government-Linked Companies) in Malaysia. What are the biggest GLCs by market cap? How has GLC financial performance compared to the broader Bursa Malaysia index over the past 5 years? Are there any GLCs currently under active government restructuring? Cite Putrajaya GLC Transformation Programme reports and Bursa data.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Analyse the MYR 48.2B portfolio across 34 investee companies. Segment by: (1) Sector (financial services, infrastructure, plantation, manufacturing, utilities), (2) Ownership stake (majority >50%, strategic 20-50%, minority <20%), (3) Performance (outperforming vs underperforming vs turnaround). Create a portfolio matrix: X-axis = commercial return (ROCE vs benchmark), Y-axis = strategic importance (development impact score). Place all 34 investees. Identify the 3 quadrant "harvest" candidates (high return, low strategic importance) and the 3 "transform or exit" candidates (low return, low strategic importance).',
-        'Build a portfolio return attribution analysis. For the MYR 48.2B AUM: (1) Total return for FY2024 — dividends + capital appreciation, (2) Return by sector and by ownership stake tier, (3) Compare total portfolio return vs the FBM KLCI benchmark and a pure commercial return benchmark (MSCI Malaysia), (4) Identify the 5 investees contributing most to total return and the 5 dragging total return. Calculate the incremental AUM that could be created if the 5 worst performers improved to median portfolio return.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Using the Portfolio tab in this workbook, Build a portfolio health dashboard on a new sheet. For each of the 34 investee companies, show: (1) Company name and sector, (2) Danamas ownership % and book value (MYR M), (3) Market value (MYR M), (4) ROCE %, (5) EBITDA margin %, (6) Dividend received (MYR M), (7) Performance status (Outperform / In-line / Underperform / Turnaround Required). Highlight Underperform in amber and Turnaround Required in red. Total column for portfolio-level aggregates.',
-        'Create a turnaround performance scorecard for the 3 underperforming investees. For each, show: (1) Original investment value, (2) Current market value, (3) Total return since investment vs FBM KLCI benchmark, (4) Key financial distress indicators (leverage, interest coverage, cash burn), (5) Previous turnaround actions taken (Board changes, new CEO, asset sales), (6) Current turnaround plan status. Apply RAG status.',
-        'Build an ESG portfolio score dashboard. For each of the 34 investees, show: (1) Bursa Malaysia sustainability rating, (2) GHG Scope 1 intensity, (3) Women on Board %, (4) Anti-corruption training completion %, (5) MSCI ESG rating if available. Calculate Danamas\'s weighted average ESG score. Highlight companies below the portfolio ESG target.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft a 10-page investment mandate review document for the Minister of Finance. Cover: (1) Executive summary — Danamas AUM, portfolio composition, FY2024 return, (2) Current mandate ambiguity — the tension between commercial and developmental objectives, (3) Proposed hybrid mandate framework — 60% commercial, 40% developmental, (4) Portfolio implications — which assets to grow, hold, or divest under the new mandate, (5) Governance enhancements — Board composition, investment committee charter, (6) Performance metrics — commercial return target (KLCI+3%), developmental impact metrics, (7) 5-year strategic plan. Formal ministerial briefing format.',
-        'Draft an active ownership engagement letter to the Board Chairman of one underperforming investee company. As the major shareholder (43% stake), Danamas is formally requiring: (1) A 100-day turnaround plan within 6 weeks, (2) An independent business review by a credible advisory firm, (3) Monthly performance reporting to Danamas, (4) Specific improvements in 4 financial KPIs within 12 months. The letter should be firm but respectful of the Board\'s governance role. Reference the Putrajaya GLC governance guidelines.',
-        'Write a chapter for Danamas Capital\'s annual report — "Active Ownership and Developmental Impact in FY2024." Cover: (1) Portfolio value creation summary — total return MYR XX, (2) 3 active engagement successes — turnarounds, Board improvements, sustainability upgrades, (3) Developmental impact — jobs created, infrastructure enabled, Bumiputera economic participation, (4) ESG integration progress — portfolio weighted ESG score improvement. GRI-aligned format.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 12-slide Minister of Finance briefing on Danamas Capital\'s mandate review. Include: (1) Danamas overview — MYR 48.2B AUM, 34 investees, (2) FY2024 portfolio performance vs benchmark, (3) Current mandate — tensions between commercial and developmental, (4) Temasek vs Khazanah model comparison, (5) Proposed hybrid mandate framework, (6) Portfolio segmentation — grow, hold, divest, (7) The 3 underperforming investees — turnaround plans, (8) ESG integration — portfolio sustainability score, (9) Governance enhancement proposal, (10) 5-year AUM and return targets, (11) Key risks, (12) Ministerial decisions required. Dark navy and gold colour scheme.',
-        'Create a 3-slide portfolio health summary for the Danamas Board quarterly review. Slide 1: Portfolio overview — total AUM, weighted return, vs benchmark. Slide 2: Top 5 performers and bottom 5 performers with key metrics. Slide 3: Turnaround progress on the 3 underperforming investees — RAG status for each KPI in the turnaround plan.',
-        'Create a 2-slide developmental impact summary. Slide 1: Quantified impact — jobs created, Bumiputera economic participation %, infrastructure projects enabled, SME linkages generated. Slide 2: ESG portfolio evolution — portfolio average ESG score over 5 years vs target.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft an email from the Danamas CEO to the 34 investee company CEOs announcing the new portfolio performance reporting requirements under the refreshed mandate. The email should: state the new quarterly reporting format, list the 12 KPIs now required, note that ESG reporting will be mandatory from Q2 FY2026, and invite all CEOs to the annual Danamas Investee CEO Forum in 6 weeks. Professional but authoritative GLC investor tone.',
-        'Draft a letter to the Minister of Finance formally submitting the Danamas mandate review document. The letter should: summarise the 3 key recommendations (hybrid mandate, portfolio segmentation, governance enhancements), request a bilateral meeting to discuss the ministerial decisions, and note the timeline for implementation. Formal government correspondence format.',
-        'Draft an email to the Chairman and CEO of the most underperforming investee company requesting an urgent meeting within 7 days. The email should signal clearly that Danamas is reviewing its options as the 43% shareholder — including escalation to a formal active ownership intervention. Firm but diplomatically worded.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from an investment committee or portfolio review meeting. Identify all investee performance discussions — which companies were reviewed, what concerns were raised, and what decisions or escalations were approved. Create an action tracker for the investment management team.',
-        'Draft an investment committee follow-up memo on the turnaround status of the 3 underperforming investees. For each, summarise: current financial status, turnaround actions in progress, any Board changes approved, and the next key milestone.',
-        'Were there any discussions about portfolio divestment candidates? Which investees are being considered for divestment and what is the rationale (strategic fit, return, ESG) for each?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload GLC_01_Danamas_Capital.xlsx and GLC_02_Danamas_Strategy.docx to Copilot Notebook. Set instruction: "You are a sovereign wealth fund advisor helping Danamas Capital design its new investment mandate." Ask: Based on the portfolio data and strategic context, what is the optimal portfolio composition under a 60/40 commercial/developmental mandate — and which of the 34 current investees should be classified as core, strategic, or divest?',
-        'Upload GLC_02_Danamas_Strategy.docx. Ask: Danamas is considering selling its 38% stake in a well-performing plantation company (MYR 4.2B market value, 8.4% ROCE, but low developmental impact score). The proceeds could be reinvested in a loss-making but strategically important EV charging infrastructure company. Is this trade-off consistent with the proposed hybrid mandate? What should the investment committee recommend?'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research Temasek Holdings\' and Khazanah Nasional\'s most recent annual reports — extract their mandate frameworks, portfolio performance metrics, and ESG targets. (2) Draft a 5-page mandate comparison brief for the Danamas Board showing best practices from both. (3) Save to OneDrive as "Mandate Benchmarking - Temasek vs Khazanah". (4) Email to the CEO and Chief Investment Officer for review before the Minister briefing. (5) Schedule a Board mandate workshop for 2 weeks from now.',
-        'Do all of the following for the underperforming investee turnaround: (1) Research what governance interventions sovereign and GLC funds typically use to drive turnaround in underperforming portfolio companies — Board refreshment, CEO replacement, independent review, strategic partnership. (2) Draft a formal active ownership intervention letter for the most critical underperformer. (3) Email to the General Counsel for legal review before sending. (4) Prepare a Board resolution template authorising the intervention. (5) Schedule an investment committee special session to approve the intervention.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open GLC_02_Danamas_Strategy.docx in Word for Web. Create an agent called "Danamas Investment Policy & Governance Bot". Description: "Answers questions from the Danamas investment team on mandate requirements, GLC governance standards, Putrajaya guidelines, ESG reporting obligations, and active ownership intervention criteria." Share with the investment management and governance teams.',
-        'Demo: An investment manager asks "We hold a 22% strategic stake in a GLC that has just announced a related-party transaction with the CEO\'s family company worth RM 180M. As a 22% shareholder, what governance rights do we have to challenge this transaction and what actions should we take within the next 48 hours?" Show the agent providing a governance-grounded, action-oriented answer.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the Minister briefing presentation. Create an agent called "Danamas Capital Q&A Bot". Share with the Minister of Finance\'s office and the Danamas Board.',
-        'Demo: A Ministry official asks "How does Danamas\'s proposed 60/40 mandate compare to Khazanah\'s current mandate and what evidence is there that a hybrid mandate can achieve both commercial and developmental objectives simultaneously?" Show the agent providing an evidence-based, benchmarked policy answer.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open GLC_01_Danamas_Capital.xlsx in Excel for Web. Create an agent called "Danamas Portfolio Q&A". Description: "Instant answers on the MYR 48.2B portfolio — investee performance, return attribution, ESG scores, and turnaround status — for the CEO, CIO, and investment committee." Share with the Danamas leadership.',
-        'Demo: Ask "Which 5 investees have delivered the highest total return (dividends + capital appreciation) over the past 3 years and what was the combined value created?" Then: "What is the weighted average ROCE of the portfolio and how does that compare to the FBM KLCI benchmark?" Show the CIO getting instant portfolio intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "Danamas Capital Intelligence Agent". Description: "Supports Danamas Capital\'s investment team, CEO, and Board with instant answers on portfolio performance, GLC governance requirements, Putrajaya guidelines, active ownership thresholds, ESG obligations, and mandate framework — enabling faster, smarter GLC investment decisions." Upload GLC_01_Danamas_Capital.xlsx and GLC_02_Danamas_Strategy.docx. Add topics: "Portfolio Performance", "GLC Governance", "Active Ownership", "ESG & Developmental Impact". Publish to Teams.',
-        'Demo the agent: The Danamas CEO receives an urgent call from a journalist: a major investee company has just published a profit warning revealing a RM 340M accounting irregularity. The CEO has a Ministerial press conference in 40 minutes. The CEO asks the agent: "What is Danamas\'s ownership stake in this company, what was the last reported financial health status, and what are our legal obligations as a major shareholder when an investee discloses a material misstatement? Do we need to issue a statement before or after the Minister\'s press conference?" Show how the agent prepares the CEO for a crisis in real time.'
-      ], DESC_BUILDER),
-    ]),
-
-# ── FINANCIAL REGULATOR ────────────────────────────────────────────────────
-ind('financial-regulator','government','Financial Regulator','⚖️','#1B5E20','#2E7D32',
-    'Bank Negara Malaysia / OJK Proxy',
-    'NPL monitoring + IFSA digital banking licence review + systemic risk report.',
-    'A central bank supervisory team is monitoring 18 licensed financial institutions. NPL in the personal loan segment has breached the 3.5% system-wide threshold. 2 new digital banking licences are under post-approval operational review. The annual systemic risk report to the Board of Governors is due in 3 weeks.',
-    ['BNK_02_Meridian_Bank_Strategy.docx','Email_06_BNM_Regulatory_Correspondence.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am a senior supervisor at a central bank overseeing 18 licensed financial institutions. The system-wide NPL for personal loans has just breached the 3.5% supervisory threshold — driven by 3 institutions with NPL above 15%. Draft a 250-word supervisory escalation brief for the Governor covering: (1) The scale and nature of the NPL breach, (2) The 3 institutions most at risk, (3) The supervisory tools available under IFSA 2013 to compel remediation — Enhanced Monitoring, Corrective Action Plan, Statutory Management, (4) The systemic risk implications if 2 of the 3 institutions require statutory intervention simultaneously.',
-        'Explain what a Digital Banking Licence operational review entails in Malaysia. What operational milestones must a newly licensed digital bank meet in its first 12 months? What are the typical KPIs that BNM monitors during the post-licence build-out phase and what triggers a supervisory intervention?',
-        'What is a systemic risk report for a central bank Board of Governors? What sections must it include, how is systemic risk measured in a small open economy like Malaysia, and what early warning indicators should be highlighted in the current environment of high household debt and NPL pressure?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research international central bank supervisory practices for managing NPL breaches in the banking system. I need: (1) How comparable regulators (MAS Singapore, BSP Philippines, OJK Indonesia) have responded to system-wide NPL increases, (2) The typical supervisory toolkit used — enhanced monitoring, capital surcharges, lending restrictions, (3) Any research on the effectiveness of different supervisory interventions in reducing NPL. Cite BIS or IMF papers.',
-        'Research the digital banking landscape in Malaysia. I need: (1) The 5 licensed digital banks and their operational progress to date, (2) Technology and risk management challenges typical for newly licensed digital banks, (3) How MAS Singapore and BSP Philippines have supervised digital bank post-licence build-outs. Cite official sources and fintech research.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Upload BNK_02_Meridian_Bank_Strategy.docx (use as banking sector reference). Ask Analyst: Assume a dataset of 18 licensed banks with NPL data by segment. Build a system-wide NPL monitoring dashboard. For each segment (corporate, SME, mortgage, personal loans, auto loans, Islamic), show: (1) Current system NPL %, (2) BNM supervisory threshold, (3) Breach status, (4) 4-quarter trend, (5) Number of institutions above threshold. Identify which segments are breaching or approaching threshold and rank systemic risk from highest to lowest.',
-        'Ask Analyst: Model the systemic risk scenario. If the 3 highest-NPL institutions require capital injection: Institution A needs MYR 1.8B, Institution B needs MYR 1.2B, Institution C needs MYR 0.8B. Sources of capital: (1) Existing provisions at 80% coverage, (2) Rights issue (market receptive?), (3) DUITNOW Resolution Fund (limited to MYR 3B). Calculate whether combined capital shortfall can be absorbed without systemic recourse. Show as a stress scenario table.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Open BNK_02_Meridian_Bank_Strategy.docx in Word and create a companion Excel workbook. Ask Copilot to create: A supervisory monitoring dashboard on Sheet 1. For 18 licensed institutions, show columns: Institution Name | Tier | CET1 Ratio | Tier 1 Capital | Total Capital Ratio | NPL % by segment | LCR | NSFR | Supervisory Status (Normal / Enhanced Monitoring / Corrective Action / Statutory Management) | Action Due Date. Apply conditional formatting: green = normal, amber = enhanced monitoring, red = corrective action or statutory.',
-        'Create a digital bank operational review scorecard on Sheet 2. For each of the 5 digital banks, show 15 post-licence milestones: Core banking system live (Y/N), BNM supervisory reporting system connected (Y/N), AML/CFT framework operational (Y/N), Customer onboarding live (Y/N), etc. Calculate % completion. Highlight digital banks below 70% completion — flag as "Supervisory Concern".',
-        'Build a systemic risk indicator dashboard on Sheet 3. Track 10 early warning indicators monthly for the past 24 months: (1) System NPL %, (2) Household debt to GDP %, (3) Bank capital buffers above minimum, (4) FX reserves adequacy (months of import cover), (5) Corporate leverage (net debt/EBITDA), (6) Property price index, (7) MYR exchange rate volatility, (8) Credit growth rate %, (9) Non-bank credit growth, (10) Cross-border capital flow volatility. Show trend charts for each.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft the systemic risk report for the Board of Governors. Structure: (1) Executive Summary — the 3 key systemic risks in the current environment, (2) Banking System Overview — capital adequacy, liquidity, NPL by segment, (3) NPL Deep Dive — personal loan segment breach, 3 institutions at risk, supervisory actions taken, (4) Digital Banking Operational Review — 5 banks, milestone completion status, (5) External Risks — global monetary tightening, US-China trade risks, energy price volatility, (6) Early Warning Dashboard — 10 indicators, current reading vs threshold, (7) Board Decisions Required — approve Enhanced Monitoring for 2 institutions, approve capital adequacy waiver for digital bank X. 20 pages, formal central bank report format.',
-        'Draft the Enhanced Monitoring notice to Institution A (the institution with 21.7% personal loan NPL). The notice should: state the supervisory concern under IFSA 2013 Section 68, list the 6 specific remediation actions required, set a 90-day timeline for the Corrective Action Plan submission, note that failure to submit will trigger Statutory Management review, and require weekly reporting to the supervisory division. Formal central bank supervisory notice format.',
-        'Write a public statement on the system-wide NPL situation for BNM\'s website. The statement should: acknowledge the personal loan NPL trend, reassure the public that the banking system remains sound with strong capital buffers (CET1 14.2% system average), note the supervisory actions being taken, and remind consumers of responsible borrowing. 2 paragraphs, measured central bank communication style.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 10-slide Board of Governors briefing on systemic risk. Include: (1) Current risk environment — key global and domestic risks, (2) Banking system health — capital and liquidity, (3) NPL dashboard — system and segment breakdown, (4) Personal loan NPL breach — 3 institutions at risk, (5) Supervisory actions underway, (6) Digital banking operational review, (7) External risk stress test results, (8) Early warning indicator dashboard, (9) Recommended supervisory escalations, (10) Board decisions required. Dark green and white central bank colour scheme.',
-        'Create a 2-slide NPL situation briefing for a press conference. Slide 1: System NPL is below the crisis threshold — compare Malaysia to regional peers. Slide 2: The personal loan segment is elevated but contained — actions being taken. Frame as a reassurance communication, not alarm.',
-        'Create a digital bank readiness scorecard slide showing the 5 digital banks on a 1-100 scale across 5 readiness dimensions: Technology Infrastructure, AML/CFT, Customer Onboarding, Capital Adequacy, Regulatory Reporting. Use a radar chart for each bank.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft the formal Enhanced Monitoring notification letter to Institution A. The letter must: reference the IFSA 2013 supervisory powers, state the specific concern (personal loan NPL 21.7% vs threshold 3.5%), list 6 mandatory remediation actions with deadlines, require a Corrective Action Plan submission within 90 days, and note the escalation path if actions are not taken. Use BNM formal supervisory letter format.',
-        'Draft an email to the CEOs of all 18 licensed institutions informing them of the supervisory NPL review and requesting updated NPL data segmented by product type within 5 business days. Formal regulatory request format.',
-        'Draft an email to BIS (Bank for International Settlements) requesting participation in their next quarterly emerging market banking system stability forum. BNM wishes to present a case study on digital banking supervision in Malaysia. Include a 100-word abstract of our proposed presentation.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from a supervisory review or risk assessment meeting. Identify all supervisory decisions made, institutions flagged for review, and any escalations approved. Create a regulatory action tracker.',
-        'Draft the supervisory team\'s follow-up actions from the NPL review meeting. Group by workstream: Enhanced Monitoring | Corrective Action | Digital Bank Review | Systemic Risk Report | External Communications. Include officer responsible and deadline.',
-        'Were there any discussions about the 2 digital banks that are behind on their operational milestones? What specific supervisory interventions were discussed and what is the timeline for a formal notice?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload BNK_02_Meridian_Bank_Strategy.docx and Email_06_BNM_Regulatory_Correspondence.docx to Copilot Notebook. Set instruction: "You are a banking supervision specialist advising the central bank on NPL management and systemic risk." Ask: Based on the correspondence and strategy documents, what is the most proportionate supervisory intervention for an institution with 21.7% personal loan NPL — Enhanced Monitoring, Corrective Action Plan, or immediate Statutory Management? What evidence would be needed to justify each level of intervention?',
-        'Upload Email_06_BNM_Regulatory_Correspondence.docx. Ask: A digital bank is 9 months into its licence period and has only completed 6 of its 15 post-licence operational milestones. The missing milestones include real-time AML transaction monitoring and stress testing framework. What is the supervisory response — issue a warning, impose a deposit cap, or suspend new customer onboarding? What is the proportionality principle in digital bank supervision?'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research how MAS Singapore and BSP Philippines have responded to elevated consumer loan NPL in their banking systems in the past 2 years — extract specific supervisory actions taken and outcomes. (2) Draft a 3-page international supervisory benchmarking note for the Governor. (3) Save to OneDrive as "International NPL Supervisory Benchmarking". (4) Email to the Head of Banking Supervision and the Deputy Governor for review. (5) Schedule an urgent supervisory strategy session with the NPL task force.',
-        'Do all of the following for the systemic risk report: (1) Research recent IMF Article IV consultation findings on Malaysia\'s banking system and household debt. (2) Extract any IMF or BIS warnings relevant to our current NPL situation. (3) Draft the external risk chapter for the Board of Governors systemic risk report. (4) Save to OneDrive as "Systemic Risk Report - External Risk Chapter". (5) Email to the Research Director asking for review and integration into the full report within 48 hours.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open BNK_02_Meridian_Bank_Strategy.docx in Word for Web. Create an agent called "BNM Supervisory Policy Bot". Description: "Assists central bank supervisors with instant answers on IFSA 2013 supervisory powers, Basel III capital requirements, NPL threshold frameworks, digital banking licence conditions, and AML/CFT regulatory obligations." Share with the banking supervision division.',
-        'Demo: A junior supervisor asks "An institution has submitted a Corrective Action Plan but has missed 2 of 6 required milestone deadlines. Under IFSA 2013, what are our supervisory options at this point — can we impose conditions on the institution\'s lending activities and what is the due process required before imposing a conditional lending restriction?" Show the agent providing a legally-grounded, proportionate supervisory guidance answer.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the Board of Governors briefing. Create an agent called "Systemic Risk Report Q&A Bot". Share with the Board of Governors and senior management.',
-        'Demo: A Governor asks "If Institution A fails to meet its NPL remediation targets by the 90-day deadline, what is the supervisory escalation path and what powers does the central bank have under IFSA 2013 to protect depositors?" Show the agent providing a precise, legally-grounded supervisory escalation answer.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Create the supervisory monitoring dashboard workbook and open in Excel for Web. Create an agent called "Banking System Supervisory Q&A". Description: "Instant answers on capital ratios, NPL by institution and segment, digital bank readiness, and systemic risk indicators for the Governor, Deputy Governors, and supervisory division heads." Share with senior banking supervision leadership.',
-        'Demo: Ask "Which 3 institutions have the highest personal loan NPL and what is the combined capital shortfall if we require provisioning to 100% coverage?" Then: "What is the system-wide CET1 ratio and how does it compare to the regulatory minimum and to MAS Singapore?" Show the Deputy Governor getting instant systemic intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "Central Bank Supervisory Intelligence Agent". Description: "Supports the banking supervision division, senior management, and the Board of Governors with instant answers on IFSA 2013 supervisory powers, NPL monitoring thresholds, capital adequacy requirements, digital banking milestones, and systemic risk indicators — enabling faster, more consistent and legally-sound supervisory decisions across 18 licensed financial institutions." Upload BNK_02_Meridian_Bank_Strategy.docx and Email_06_BNM_Regulatory_Correspondence.docx. Add topics: "NPL Supervision", "IFSA Regulatory Powers", "Digital Banking Review", "Systemic Risk". Publish to Teams (restricted to supervisory division only).',
-        'Demo the agent: A supervisory officer receives an urgent notification at 6:30am: a licensed bank has just filed a Material Adverse Event report under IFSA, disclosing a cyberattack that compromised customer data and temporarily disabled core banking operations for 4 hours overnight. The officer asks the agent: "What are the mandatory notification timelines under IFSA 2013 and PDPA for a cyberattack at a licensed institution? What supervisory actions must we initiate in the next 24 hours? Does the Governor need to be notified personally?" Show how the agent enables a swift, legally-grounded supervisory response to a banking crisis.'
-      ], DESC_BUILDER),
-    ]),
-]
+INDUSTRIES_9 = [build_entry(cfg) for cfg in ENTRY_CONFIGS]
 
 print(f"Batch 9 written: {len(INDUSTRIES_9)} entries")

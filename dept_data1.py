@@ -1,7 +1,7 @@
 import sys; sys.path.insert(0,'.')
 from batch_prompt_factory import build_entry
 
-ENTRY_CONFIGS = [{'accent': '#1976D2',
+ENTRY_CONFIGS_1 = [{'accent': '#1976D2',
 'agent_name': 'Seri Angkasa HR Intelligence Agent',
 'agent_share': 'HR leaders, division HRBPs, and talent acquisition managers',
 'board_body': 'People & Remuneration Committee',
@@ -80,8 +80,6 @@ ENTRY_CONFIGS = [{'accent': '#1976D2',
 'team': 'the controllership, treasury, and finance shared-services teams',
 'topics': ['budget variance', 'cash flow', 'month-end close', 'accrual control', 'payables management']}]
 
-DEPARTMENTS = [build_entry(cfg) for cfg in ENTRY_CONFIGS]
+DEPARTMENTS_1 = [build_entry(cfg) for cfg in ENTRY_CONFIGS_1]
 
-DEPARTMENTS_1 = DEPARTMENTS
-
-print(f"Departments 1 written: {len(DEPARTMENTS)} entries")
+print(f"Departments 1 written: {len(DEPARTMENTS_1)} entries")

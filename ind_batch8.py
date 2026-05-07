@@ -1,292 +1,692 @@
-
 import sys; sys.path.insert(0,'.')
 from util import *
 
 INDUSTRIES_8 = [
 
-# ── CONSTRUCTION ──────────────────────────────────────────────────────────
-ind('construction','construction','Construction','🏗','#E65100','#F57C00',
-    'NusaBuild Group Berhad',
-    'LRT 3 delayed 14 weeks — CIDB Green Building certification + ESG tender scoring.',
-    'NusaBuild Group Berhad is Malaysia\'s 3rd largest civil and building contractor with a RM 8.4B order book. The LRT3 package is 14 weeks behind schedule due to ground condition variations. CIDB Green Building Index (GBI) certification is required for 6 upcoming government tenders. ESG scoring now forms 15% of government tender evaluation.',
-    ['14_Zava_Properties_Portfolio.xlsx','12_Zava_Manufacturing_KPIs.xlsx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the CEO of Malaysia\'s 3rd largest construction company. Our LRT3 extension package is 14 weeks behind schedule due to ground condition variations — specifically, 3 pile cap locations encountered unexpected soft clay 8 metres deeper than the site investigation predicted. The JKR extension of time (EOT) application is in progress. Draft a 250-word brief for my Board explaining: (1) The grounds for a valid EOT claim under PAM 2018 contract, (2) What contractual evidence we need to support the claim, (3) The risk that JKR will grant a lesser EOT and we will face liquidated damages of RM 180,000 per week for the remaining 14 weeks.',
-        'What is the CIDB Green Building Index (GBI) in Malaysia? What are the 6 scoring categories, what score is required for GBI certification, and what specific construction practices and materials must be changed to achieve GBI certification vs conventional building?',
-        'How is ESG scoring being incorporated into government construction tenders in Malaysia? What types of ESG evidence do JKR and CIDB evaluate, what weight do they carry in the tender score, and which ESG certifications give the most points?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research the Malaysian construction industry outlook for 2025–2027. I need: (1) Total value of government infrastructure projects in the pipeline, (2) Key competitive dynamics — who are the top contractors and how are they positioned for upcoming tenders, (3) Impact of rising steel, concrete, and labour costs on contractor margins, (4) Government\'s ESG requirements in tender evaluation. Cite official CIDB, JKR, or MITI sources.',
-        'Research the LRT and MRT extension projects in Malaysia — current status, contractor packages, any delays or cost overruns reported publicly, and how the government has managed extension of time claims historically. Cite news sources and official project announcements.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Upload 12_Zava_Manufacturing_KPIs.xlsx (use as project KPI proxy). Ask Analyst: Model the financial impact of the LRT3 delay. Inputs: 14 weeks behind schedule, RM 180,000/week liquidated damages, EOT application filed for 14 weeks (outcome uncertain — 3 scenarios: full grant, 8 weeks granted, 0 weeks granted). For each scenario, calculate: (1) Total LD exposure, (2) Cash flow impact — assuming RM 4.2M per week of construction revenue that is delayed, (3) Impact on contract margin. Show as a scenario table with traffic light status.',
-        'Build a tender pipeline analysis. NusaBuild is targeting 12 government tenders in FY2026 totalling RM 5.8B. ESG scoring is 15% of evaluation. Our current ESG score is estimated at 62 out of 100 vs the estimated winning bid score of 78+. Calculate: if we improve ESG score from 62 to 82 (above winning threshold), what is the increase in probability of winning each tender? What is the expected value of tenders won at each ESG score level?'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Open 12_Zava_Manufacturing_KPIs.xlsx. Navigate to the Capex Tracker sheet (use as project tracker proxy). Build a construction project delay dashboard on a new sheet. For each of NusaBuild\'s 8 active projects, show: (1) Project name and client, (2) Contract value (RM M), (3) Planned completion date, (4) Current forecast completion date, (5) Delay (weeks), (6) EOT filed (Y/N), (7) LD rate (RM/week), (8) Current LD exposure (RM M), (9) Status (On Track / Watch / Critical). Sort by LD exposure, highest first.',
-        'Create a GBI certification gap analysis on a new sheet. For each of the 6 criteria (Energy Efficiency, Indoor Environment Quality, Sustainable Site Planning, Materials & Resources, Water Efficiency, Innovation), show: (1) Current score estimate, (2) Required score for GBI certification, (3) Gap, (4) Specific interventions needed, (5) Cost of intervention (RM M), (6) Timeline to implement.',
-        'Build a tender ESG scoring improvement tracker. For each of the 12 upcoming tenders, show: (1) Tender name and value (RM M), (2) ESG weight in tender evaluation (%), (3) Our current estimated ESG score, (4) Target ESG score, (5) Improvement actions required, (6) Expected score after improvement, (7) Estimated increase in winning probability.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft the Extension of Time (EOT) claim narrative for the LRT3 contract. The narrative should: describe the ground condition variation (soft clay encountered 8m deeper than SI data), provide the 3 pile cap locations affected, calculate the delay to critical path activities, demonstrate that NusaBuild took all reasonable mitigation steps, and quantify the 14-week extension required. Reference the relevant PAM 2018 contract clauses. Attach as supporting narrative to the formal EOT application.',
-        'Draft a GBI certification action plan document. For each of the 6 GBI scoring categories, provide: current practice at NusaBuild, the change required for GBI certification, responsible department, investment required, and timeline. Set the goal of achieving GBI Silver (minimum 50 points) on all 6 upcoming government tenders. 8 pages, formal document format.',
-        'Write an ESG performance section for NusaBuild\'s Bursa Malaysia sustainability report. Cover: (1) Green construction certifications obtained FY2024 (list projects), (2) Carbon intensity per RM M of contract value, (3) Construction waste diversion rate (target: 80% diversion from landfill), (4) Worker safety TRIR score and how it compares to CIDB benchmark, (5) Local subcontractor and supplier spend %. Follow GRI 302, 305, 403, and 413 standards.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 10-slide business development presentation for NusaBuild targeting JKR procurement officers. Include: (1) NusaBuild overview — RM 8.4B order book, track record, (2) ESG leadership — GBI certification, carbon intensity reduction, (3) Safety — TRIR of 0.8 vs industry benchmark, (4) LRT3 experience — project management, (5) Digital construction — BIM, digital site monitoring, (6) Local and Bumiputera content, (7) ESG tender scoring credentials, (8) Current project portfolio, (9) Management team, (10) Why NusaBuild. Dark orange and grey colour scheme.',
-        'Create a 3-slide LRT3 delay briefing for the Board. Slide 1: Delay status — 14 weeks, EOT filed, current LD exposure. Slide 2: Three EOT outcome scenarios and their financial impact. Slide 3: Mitigation actions — acceleration plan, cost absorption vs recovery.',
-        'Create a 2-slide GBI certification journey slide for a tender submission. Slide 1: Our GBI score vs certification target by category (radar chart). Slide 2: The specific green construction initiatives we are implementing for this tender.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft a letter to JKR\'s Project Director formally submitting the Extension of Time claim for the LRT3 package. The letter should: reference the contract number and package, state the basis of the claim (ground condition variation under Clause 23 of PAM 2018), summarise the delay impact, request 14 weeks EOT, and attach the supporting narrative. Use formal JKR correspondence format.',
-        'Draft an email to the CIDB GBI certification office requesting a pre-assessment consultation for 6 upcoming NusaBuild projects. The email should: introduce NusaBuild\'s intention to pursue GBI certification, describe the project types (3 government offices, 2 hospitals, 1 university), ask about the pre-assessment process and timeline, and request a meeting within 3 weeks.',
-        'Draft an internal email from the CEO to all Project Directors announcing the mandatory GBI certification requirement for all new tenders above RM 50M effective from Q3 FY2025. The email should explain why (ESG tender scoring), what is required from each project team, and the training programme being arranged.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from a project or site management meeting. Identify all project delay issues discussed, their root cause, and the actions taken. Flag any project with LD risk and note whether an EOT has been filed.',
-        'Draft follow-up actions from the LRT3 delay review meeting. Group by workstream: EOT Claim | Acceleration Plan | Subcontractor Engagement | Client Communication | Cost Recovery. Include owner and deadline.',
-        'Were there any discussions about subcontractor performance impacting the LRT3 delay? Identify which subcontractors were mentioned and what contractual actions were proposed against them.'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload 14_Zava_Properties_Portfolio.xlsx and 12_Zava_Manufacturing_KPIs.xlsx to Copilot Notebook. Set instruction: "You are a construction contract specialist advising NusaBuild on the LRT3 EOT claim." Ask: Based on the project data and Malaysian construction contract norms (PAM 2018), what is the strongest and weakest element of our EOT claim? What additional evidence should we gather in the next 2 weeks to strengthen the claim?',
-        'NusaBuild is considering an acceleration plan to recover 8 of the 14 delayed weeks. The plan involves adding 2 additional tower crane shifts per day (RM 85,000/week additional cost) and extending working hours to Sundays (15% labour premium). Calculate: (1) Total acceleration cost for 8 weeks, (2) Whether the acceleration saves more in avoided LD than it costs, (3) The break-even point — how many weeks of LD must be avoided to justify the acceleration cost.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research PAM 2018 clauses related to ground condition variations and EOT entitlement — provide the specific clause numbers and the key requirements for a valid claim. (2) Draft a 5-page EOT claim narrative for the LRT3 ground condition variation including all required elements under PAM 2018. (3) Save to OneDrive as "LRT3 EOT Claim Narrative - CONFIDENTIAL". (4) Email to the contracts manager and external legal advisor requesting review within 3 days. (5) Schedule an EOT claim strategy meeting with the legal and contracts team for this week.',
-        'Do all of the following for the GBI certification programme: (1) Research the specific CIDB GBI assessment criteria and scoring methodology for commercial and government buildings. (2) Identify the top 5 highest-scoring interventions that NusaBuild can implement immediately (before construction start) to maximise our GBI score across all 6 projects. (3) Create a GBI certification project plan covering all 6 tenders with timelines and cost estimates. (4) Email to the Head of Engineering and HSE Manager asking for review. (5) Book a GBI certification workshop for all Project Directors next month.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open the GBI certification action plan document in Word for Web. Create an agent called "NusaBuild Green Building & Compliance Bot". Description: "Answers questions from Project Directors and engineers on GBI certification requirements, PAM 2018 contract clauses, ESG tender scoring criteria, and CIDB safety regulations." Share with all Project Directors.',
-        'Demo: A site engineer asks "Our hospital project requires GBI Silver. We are currently at 42 points — 8 short of the 50 required. We have budget for 2 more interventions. What are the highest-scoring GBI interventions we can realistically implement on a running hospital construction site within 90 days?" Show the agent providing specific, score-maximising technical guidance.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the business development presentation. Create an agent called "NusaBuild Tender Q&A Bot". Share with the business development and tender teams.',
-        'Demo: A business development manager is preparing a tender submission and asks "For this JKR government hospital tender, our ESG score is 64 and we estimate the winning threshold is 78. What are the 3 highest-value ESG credentials we can add to our submission that we already have documented?" Show the agent helping win more tenders.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open 12_Zava_Manufacturing_KPIs.xlsx in Excel for Web. Create an agent called "NusaBuild Project Performance Q&A". Description: "Instant answers on project delay status, LD exposure, GBI certification progress, and tender pipeline for the CEO and project directors." Share with the NusaBuild leadership team.',
-        'Demo: Ask "What is our total current LD exposure across all 8 active projects and which 2 projects have the highest risk?" Then: "Across our 12 upcoming tenders, what is the total value at risk if our ESG score stays at 62 vs improves to 82?" Show the CEO getting instant project and commercial intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "NusaBuild Construction Intelligence Agent". Description: "Supports NusaBuild\'s CEO, project directors, and tender teams with instant answers on project delay status, contract entitlements, GBI certification requirements, ESG tender scoring, and Malaysian construction regulations — enabling faster, smarter project and commercial decisions." Upload 14_Zava_Properties_Portfolio.xlsx and 12_Zava_Manufacturing_KPIs.xlsx. Add topics: "Project Delays & EOT", "GBI Certification", "ESG Tender Scoring", "Contract Management". Publish to Teams.',
-        'Demo the agent: The CEO is called into an urgent JKR project review meeting with 15 minutes notice. On the way, the CEO asks the agent: "Give me the LRT3 delay status in 3 sentences, our current LD exposure if EOT is granted for only 8 of 14 weeks, and the 2 strongest contractual arguments for the remaining 6 weeks. Also — are there any other active projects where we have an unacknowledged delay risk that JKR might raise today?" Show how the agent prepares the CEO instantly for a high-pressure government client meeting.'
-      ], DESC_BUILDER),
-    ]),
+    {
+      'id': 'construction',
+      'sectorId': 'construction',
+      'name': 'Construction',
+      'icon': '🏗',
+      'color': '#E65100',
+      'accent': '#F57C00',
+      'company': 'Wawasan Bina Infra Berhad',
+      'tagline': 'Variation orders, site safety, and cash flow now define tender credibility.',
+      'companyID': 'PT Wawasan Konstruksi Nusantara Tbk',
+      'taglineID': 'PUPR-facing delivery risk rises as claims and compliance backlog widen.',
+      'scenario': 'Wawasan Bina Infra Berhad and PT Wawasan Konstruksi Nusantara Tbk deliver civil, building, and infrastructure packages across Malaysia and Indonesia. Variation orders are stacking up, subcontractor performance is uneven, and safety incidents are raising questions about execution discipline on current jobs and upcoming tenders. Management needs tighter project controls and a clearer client narrative before more cash is trapped in disputes.',
+      'files': ['CON_01_Project_Portfolio.xlsx', 'CON_02_Project_Management_Manual.docx', 'CON_03_HSE_Policy.docx'],
+      'prompts': [
+        {
+          'tool': '🤖 Copilot Chat (Basic)',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'prompts': [
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Using CON_01_Project_Portfolio.xlsx, focus on the Project Status Dashboard, Variation Order Log, and Safety Incident Register sheets to assess variation-order disputes, cash-flow strain, and recurring safety incidents. Quantify the immediate downside, name the 3 decisions management must take in the next 30 days, and present the answer as a RAG table with Red, Amber, and Green actions.',
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Using the Cash Flow Tracker and Subcontractor Performance sheets in CON_01_Project_Portfolio.xlsx together with CON_02_Project_Management_Manual.docx, explain how the current operating issue affects strategy, capital allocation, and stakeholder confidence. Present the response as a RAG memo with sections for What We Know, What We Do Not Yet Know, and What We Should Do Next.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Using the Project Status Dashboard and Cash Flow Tracker sheets in CON_01_Project_Portfolio.xlsx, benchmark our current position against the 2024 to 2025 Malaysia and Indonesia infrastructure and building construction market. Summarise the 5 most important leading indicators to watch over the next 2 quarters and show them in a RAG scorecard with a short management implication beside each.'
+          ]
+        },
+        {
+          'tool': '🔍 Researcher',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
+          'prompts': [
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Using CON_01_Project_Portfolio.xlsx, especially the Project Status Dashboard, Variation Order Log, and Cash Flow Tracker sheets, plus CON_02_Project_Management_Manual.docx, research 2024 to 2025 market benchmarks, peer disclosures, and financing or valuation signals relevant to variation-order disputes, cash-flow strain, and recurring safety incidents. Present a RAG table with Red for immediate threats, Amber for watchlist items, and Green for supporting market signals, with citations to every source and a one-line implication for management. Flag any claim that could not be independently verified.',
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Using the Subcontractor Performance and Safety Incident Register sheets in CON_01_Project_Portfolio.xlsx and the policy positions in CON_03_HSE_Policy.docx, research how Kementerian PUPR and SIRIM or comparable published authorities and industry bodies are treating this issue across Malaysia and Indonesia. Separate mandatory requirements from market practice, cite each source, and present the findings as a RAG matrix with columns for Issue, Malaysia, Indonesia, Timing, and Management Action. Flag any claim that could not be independently verified.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Using the Project Status Dashboard, Cash Flow Tracker, and Subcontractor Performance sheets in CON_01_Project_Portfolio.xlsx, research the demand, pricing, and competitor trends that will most influence our next 12 months. Present the answer as a RAG table ranking the top 10 external signals by likely impact and management preparedness, with citations beside every row. Flag any claim that could not be independently verified.'
+          ]
+        },
+        {
+          'tool': '📊 Analyst',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
+          'prompts': [
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Upload CON_01_Project_Portfolio.xlsx to Analyst and use the Project Status Dashboard, Variation Order Log, and Cash Flow Tracker sheets to identify the 5 biggest sources of underperformance or stress in the current plan. Quantify the variance where possible, flag each item Red, Amber, or Green based on financial materiality, and end with one corrective action per Red item.',
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Upload CON_01_Project_Portfolio.xlsx to Analyst and use the Subcontractor Performance and Safety Incident Register sheets to model 3 scenarios for variation-order disputes, cash-flow strain, and recurring safety incidents: downside, base case, and recovery case. Show the impact on revenue, margin or cash, plus the operational trigger that would move an item from Amber to Red.',
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Upload CON_01_Project_Portfolio.xlsx to Analyst and use the Project Status Dashboard, Cash Flow Tracker, and Safety Incident Register sheets to build a 13-week watchlist of the metrics most likely to surprise management. Present the output as a RAG dashboard table with columns for Metric, Current Level, Threshold, Risk Status, and Recommended Owner.'
+          ]
+        },
+        {
+          'tool': '📊 Copilot in Excel',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Using CON_01_Project_Portfolio.xlsx, build a new sheet called \'Wawasan Bina Executive Dashboard\' from the Project Status Dashboard, Variation Order Log, and Cash Flow Tracker sheets. Show the 10 most important KPIs, add a RAG status column driven by clear thresholds, and place an executive summary box at the top that updates automatically.',
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Using CON_01_Project_Portfolio.xlsx, create a risk tracker that pulls from the Variation Order Log, Subcontractor Performance, and Safety Incident Register sheets. For each material issue, show owner, due date, estimated financial exposure, and Red/Amber/Green status, then sort Red issues first.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Using CON_01_Project_Portfolio.xlsx, build a scenario sensitivity sheet using the Project Status Dashboard, Cash Flow Tracker, and Safety Incident Register sheets as inputs. Show downside, base, and upside cases side by side, add conditional formatting for RAG thresholds, and include a short note on the trigger that would require management escalation.'
+          ]
+        },
+        {
+          'tool': '📝 Copilot in Word',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Using CON_02_Project_Management_Manual.docx together with the Project Status Dashboard and Safety Incident Register sheets in CON_01_Project_Portfolio.xlsx, draft a 2-page Board paper on variation-order disputes, cash-flow strain, and recurring safety incidents. Structure it as Situation, Risks, Decisions Required, and Next 30 Days, and place a compact RAG summary at the top.',
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Using CON_03_HSE_Policy.docx and the Variation Order Log and Subcontractor Performance sheets in CON_01_Project_Portfolio.xlsx, draft a policy or action-plan note for the leadership team that translates the data into clear operating actions. Present the recommendations as a RAG table with owners, timing, and expected impact.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Using CON_02_Project_Management_Manual.docx, CON_03_HSE_Policy.docx, and the Project Status Dashboard sheet in CON_01_Project_Portfolio.xlsx, draft an external stakeholder briefing note that explains our position factually and shows what management is doing next. After the draft, add a 3-line RAG risk summary covering timing, evidence strength, and stakeholder reaction.'
+          ]
+        },
+        {
+          'tool': '🎯 Copilot in PowerPoint',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Create a 6-slide executive deck using CON_01_Project_Portfolio.xlsx and CON_02_Project_Management_Manual.docx, grounded in the Project Status Dashboard, Cash Flow Tracker, and Safety Incident Register sheets. Cover construction performance, root causes, key risks, management response, scenario outlook, and decisions required, with one headline takeaway per slide and a visible RAG status marker.',
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Create a 3-slide operating review using the Variation Order Log, Cash Flow Tracker, and Subcontractor Performance sheets in CON_01_Project_Portfolio.xlsx. Show what is Red, what is Amber, and what is Green, then close with the 5 highest-priority actions and owners.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Build a 2-slide stakeholder briefing from CON_01_Project_Portfolio.xlsx and CON_03_HSE_Policy.docx, using the Project Status Dashboard and Safety Incident Register sheets as the fact base. The first slide should summarise the issue and the second should show the recovery path in a RAG timeline.'
+          ]
+        },
+        {
+          'tool': '📧 Copilot in Outlook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Using the Project Status Dashboard and Safety Incident Register sheets in CON_01_Project_Portfolio.xlsx, draft an email to major clients, project lenders, and bond providers explaining the current situation, the evidence supporting our view, and the immediate next step we want from them. After the draft, add a short RAG summary of delivery risk, likely objections, and follow-up timing.',
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Using the Cash Flow Tracker and Subcontractor Performance sheets in CON_01_Project_Portfolio.xlsx plus CON_02_Project_Management_Manual.docx, draft a regulator-ready note for Kementerian PUPR and SIRIM or the most relevant authority. Keep the tone factual, distinguish confirmed facts from assumptions, and end with a RAG table of issues that may require further disclosure.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Using the Project Status Dashboard, Variation Order Log, and Cash Flow Tracker sheets in CON_01_Project_Portfolio.xlsx, draft an internal leadership email that aligns owners around the top 5 actions for the next 14 days. Finish with a RAG checklist titled Do Today, Do This Week, and Monitor.'
+          ]
+        },
+        {
+          'tool': '🎙 Copilot in Teams',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
+          'prompts': [
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Using this recorded Teams meeting recap and the Project Status Dashboard and Cash Flow Tracker sheets in CON_01_Project_Portfolio.xlsx as the operating benchmark, extract all decisions, risks, and unresolved items related to variation-order disputes, cash-flow strain, and recurring safety incidents. Present the result as a RAG table with owners and due dates.',
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Using the Variation Order Log and Safety Incident Register sheets in CON_01_Project_Portfolio.xlsx as reference points, draft follow-up actions from the meeting grouped by Project Controls | Commercial | HSE | Procurement | Client Management. For each action, include owner, deadline, and whether the item is Red, Amber, or Green.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Using this meeting recap and the Subcontractor Performance sheet in CON_01_Project_Portfolio.xlsx as context, identify whether any comments suggest hidden downside not yet reflected in management reporting. Summarise the findings as a RAG note with direct quotes or paraphrased evidence from the recap.'
+          ]
+        },
+        {
+          'tool': '📓 Copilot Notebook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
+          'prompts': [
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Upload CON_01_Project_Portfolio.xlsx, CON_02_Project_Management_Manual.docx, and CON_03_HSE_Policy.docx to Copilot Notebook and focus on the Project Status Dashboard, Cash Flow Tracker, and Safety Incident Register sheets. Ask Notebook to produce a cross-file RAG synthesis of the top risks, the 3 most credible management actions, and the evidence supporting each recommendation, citing the source file for every major point.',
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Upload CON_01_Project_Portfolio.xlsx and CON_02_Project_Management_Manual.docx to Copilot Notebook and focus on the Variation Order Log, Subcontractor Performance, and Safety Incident Register sheets. Ask Notebook to model a downside scenario for variation-order disputes, cash-flow strain, and recurring safety incidents, explain which assumptions matter most, and present the answer as a RAG table with immediate, next-quarter, and monitor-only actions.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Upload CON_01_Project_Portfolio.xlsx, CON_02_Project_Management_Manual.docx, and CON_03_HSE_Policy.docx to Copilot Notebook and focus on the Project Status Dashboard, Variation Order Log, and Subcontractor Performance sheets. Ask Notebook to rank the top 5 opportunities to stabilise performance without creating new compliance or stakeholder risk, and return the answer as a RAG prioritisation table with expected impact and implementation difficulty.'
+          ]
+        },
+        {
+          'tool': '🤝 Cowork (Frontier)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf — sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.',
+          'prompts': [
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Using CON_01_Project_Portfolio.xlsx, CON_02_Project_Management_Manual.docx, and CON_03_HSE_Policy.docx, especially the Project Status Dashboard, Cash Flow Tracker, and Safety Incident Register sheets, research the current market context, draft a 2-page management brief, save it to OneDrive, and email it to the leadership team for review. Then schedule a 30-minute follow-up meeting for next week and label the agenda items Red, Amber, and Green.',
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Using the Variation Order Log, Subcontractor Performance, and Safety Incident Register sheets in CON_01_Project_Portfolio.xlsx, prepare a task tracker, draft the related stakeholder email, store both in SharePoint or OneDrive, and send them to the named owners. Then book a checkpoint meeting and make sure the work is grouped by Project Controls | Commercial | HSE | Procurement | Client Management with clear RAG priorities.'
+          ]
+        },
+        {
+          'tool': '✏️ Edit with Copilot',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.',
+          'prompts': [
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Using CON_02_Project_Management_Manual.docx in Word for the web and the Project Status Dashboard and Safety Incident Register sheets in CON_01_Project_Portfolio.xlsx as the fact base, add a new section that sharpens the narrative around variation-order disputes, cash-flow strain, and recurring safety incidents. Restructure the content into Situation, Key Data, Decisions, and Next Steps, and insert a small RAG summary box at the top.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Using CON_01_Project_Portfolio.xlsx in Excel for the web, redesign the sheets fed by Variation Order Log, Cash Flow Tracker, and Safety Incident Register so executives can see the highest-risk items first. Standardise labels, improve formulas where needed, and add a RAG status column plus a one-row summary that updates automatically.'
+          ]
+        },
+        {
+          'tool': '🤖 Word Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.',
+          'prompts': [
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Open CON_02_Project_Management_Manual.docx in Word for Web and create an agent called \'Wawasan Bina Word Guide\'. Describe it as an assistant that answers questions using CON_02_Project_Management_Manual.docx plus the Project Status Dashboard and Cash Flow Tracker sheets in CON_01_Project_Portfolio.xlsx, then share it with the relevant leadership team.',
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Demo the \'Wawasan Bina Word Guide\' agent by asking: \'What is our most urgent operating risk, what evidence from the Variation Order Log and Safety Incident Register sheets supports it, and what action does CON_02_Project_Management_Manual.docx imply we should take first?\'. Show the answer as a short RAG response with the supporting source references.'
+          ]
+        },
+        {
+          'tool': '🤖 PowerPoint Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.',
+          'prompts': [
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Create the leadership presentation in PowerPoint for Web using CON_01_Project_Portfolio.xlsx and CON_03_HSE_Policy.docx, then create an agent called \'Wawasan Bina Deck Navigator\'. Tell users it can answer questions tied to the Project Status Dashboard, Subcontractor Performance, and Safety Incident Register sheets, then share it with the executive team.',
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Demo the \'Wawasan Bina Deck Navigator\' agent by asking: \'Which slide best explains our Red risks, what does the Safety Incident Register sheet say about exposure, and what decision do leaders need this week?\'. Request a RAG answer in under 120 words.'
+          ]
+        },
+        {
+          'tool': '🤖 Excel Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.',
+          'prompts': [
+            'You are the Chief Financial Officer at Wawasan Bina Infra Berhad. Open CON_01_Project_Portfolio.xlsx in Excel for Web and create an agent called \'Wawasan Bina Data Q&A\'. Describe it as an assistant for the Project Status Dashboard, Variation Order Log, Cash Flow Tracker, Subcontractor Performance, and Safety Incident Register sheets that gives instant Red, Amber, and Green answers on performance and risk, then share it with the leadership team.',
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Demo the \'Wawasan Bina Data Q&A\' agent by asking which 3 items are currently Red in the Project Status Dashboard and Safety Incident Register sheets and what management action each implies. Then ask which single Amber item could become Red fastest and why.'
+          ]
+        },
+        {
+          'tool': '🏗 Agent Builder (Copilot Studio)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Build a custom declarative agent in Copilot Studio — no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.',
+          'prompts': [
+            'You are the Chief Executive Officer at Wawasan Bina Infra Berhad. Go to Copilot Studio and create an agent called \'Wawasan Bina Intelligence Agent\' using CON_01_Project_Portfolio.xlsx, CON_02_Project_Management_Manual.docx, and CON_03_HSE_Policy.docx as knowledge sources. Tell the agent to answer questions across the Project Status Dashboard, Variation Order Log, Cash Flow Tracker, Subcontractor Performance, and Safety Incident Register sheets, add topics for Project Status, Variation Orders, Cash Flow, Safety Incidents, and require every answer to end with a RAG recommendation.',
+            'You are the Head of Projects at Wawasan Bina Infra Berhad. Demo the \'Wawasan Bina Intelligence Agent\' by asking for a 2-minute briefing on the biggest Red issue in the Project Status Dashboard and Safety Incident Register sheets, the best Amber mitigation in CON_03_HSE_Policy.docx, and the Green signals management can still rely on. Ask for the answer in a RAG table with next-step owners.'
+          ]
+        }
+      ]
+    },
 
-# ── AVIATION & AIRPORTS ────────────────────────────────────────────────────
-ind('aviation-airports','aviation','Aviation & Airports','✈️','#01579B','#0277BD',
-    'MAHB / Airport Operator',
-    '73.4M pax FY2024 — KLIA2 MYR 2.8B expansion + aeronautical charge regulatory review.',
-    'Malaysia Airports Holdings Berhad (MAHB) manages 39 airports including KLIA. FY2024 passenger throughput was 73.4M — 94% of pre-COVID levels. KLIA2 is undergoing a MYR 2.8B capacity expansion. A regulatory review of aeronautical charges is due by MAVCOM in Q3 FY2025, which will affect airline relationships and airport revenue.',
-    ['01_Zava_Group_Financial_Performance.xlsx','03_Zava_Group_Strategy_Framework.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the CFO of a major airport group. Our aeronautical charges — passenger service charges (PSC) and landing fees — are under regulatory review by MAVCOM. Airlines are lobbying for a freeze or reduction. Our airport is investing MYR 2.8B in capacity expansion at Terminal 2. Draft a 250-word submission summary for the MAVCOM regulatory review. Cover: (1) The cost base justifying a CPI+ increase in aeronautical charges, (2) The return on invested capital framework for regulated airport assets and why the MYR 2.8B capex must be reflected in the charge base, (3) The precedent from comparable airport regulatory determinations in Singapore (Changi) or Sydney.',
-        'Explain the dual-till vs single-till regulatory model for airports. What is the difference, which model favours the airport vs the airline, and which model does Malaysia use? What would switching from single-till to dual-till mean for MAHB\'s aeronautical revenue?',
-        'What are the key performance indicators for an international airport that MAVCOM or comparable regulators typically monitor? How are passenger satisfaction, flight punctuality, terminal cleanliness, and retail revenue used to evaluate an airport\'s operational performance?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research international airport regulatory frameworks — specifically how aeronautical charges are set for airports of comparable size to KLIA (60–80M passengers per year). I need: (1) How Changi Airport, Dubai International, and Heathrow structure their regulatory charge frameworks, (2) The typical WACC (weighted average cost of capital) used in airport regulatory determinations, (3) How capacity expansion capex is treated in the regulated asset base. Cite regulatory decisions and academic sources.',
-        'Research the Malaysia aviation market recovery in 2024–2025. I need: (1) Passenger volume recovery by route type (domestic, ASEAN, international), (2) The top 10 airlines by passenger volume at KLIA and KLIA2, (3) Any new route announcements or airline capacity additions, (4) Budget airline growth vs full service at Malaysian airports. Cite MAVCOM, MAHB, or ACI sources.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst (use as financial data proxy). Ask: Model the KLIA2 expansion financial impact. Investment: MYR 2.8B over 4 years. Capacity expansion: from 45M pax per year to 60M pax. Aeronautical revenue per pax: MYR 52 (current). Calculate: (1) Revenue increase from additional 15M pax capacity at full utilisation, (2) Additional depreciation and financing cost from MYR 2.8B capex, (3) EBITDA impact — net of revenue gain and additional costs, (4) Return on invested capital (ROIC) at 70% and 85% utilisation of new capacity, (5) Payback period.',
-        'Build a passenger revenue sensitivity model. X-axis: passenger volume (60M to 85M per year in 5M steps). Y-axis: aeronautical charge per pax (MYR 48, 52, 56, 60, 64 — from regulatory freeze to 23% increase). For each cell, calculate total aeronautical revenue. Highlight the cell matching our current position and the target revenue needed to fund the capex at our WACC of 7.8%.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Using the revenue tab in this workbook, Build an airport revenue dashboard on a new sheet. Show monthly data for the past 12 months: (1) Passenger throughput (M pax), (2) Aeronautical revenue (RM M), (3) Non-aeronautical revenue — retail, F&B, car park (RM M), (4) Revenue per passenger (RM), (5) Passenger service charge collected (RM M). Calculate the non-aeronautical revenue as % of total — the target is 40%.',
-        'Build a MAVCOM regulatory submission financial model. Show: (1) Our current aeronautical charge per pax (RM 52), (2) Our total regulated cost base for FY2024, (3) The WACC calculation at 7.8%, (4) The revenue requirement to cover all costs and earn the WACC return, (5) The required charge per pax to meet the revenue requirement. Compare to the airline lobby position (freeze at RM 52) and our proposal (increase to RM 64). Show the gap.',
-        'Create an airline performance scorecard on a new sheet. For the top 20 airlines at KLIA/KLIA2, show: (1) Annual passenger volume, (2) On-time performance rate (%), (3) Average load factor (%), (4) Net PSC collected (RM M), (5) Any outstanding payment disputes. Sort by passenger volume. Highlight airlines with OTP below 80% in amber and outstanding payment disputes in red.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft the MAVCOM regulatory submission for the aeronautical charge review. The submission should cover: (1) Business overview and FY2024 performance, (2) The MYR 2.8B KLIA2 expansion rationale — capacity, connectivity, and passenger experience, (3) The regulated cost base — RM 4.2B total assets, (4) WACC calculation and the required return, (5) The proposed aeronautical charge per pax for the next regulatory period (2026–2029), (6) Response to airline objections — service quality improvements justifying the increase. 15 pages, formal regulatory submission format.',
-        'Draft a stakeholder communication plan for the MAVCOM charge review process. Identify: (1) Key stakeholders — airlines, MAVCOM, Ministry of Transport, tourism associations, (2) Key messages for each stakeholder, (3) Communication channels and timeline, (4) How to address airline media campaigns opposing the charge increase. Format as a 3-page communication plan.',
-        'Write a KLIA2 expansion project brief for the Ministry of Transport\'s Cabinet presentation. Cover: (1) Current capacity constraint — 73.4M pax, terminal operating at 98% during peak hours, (2) Expansion scope — 15M pax additional capacity, international terminal extension, landside development, (3) Investment — MYR 2.8B, funding via government grant MYR 1.0B and own funds MYR 1.8B, (4) Timeline — completion by Q4 2028, (5) Economic impact — direct and induced, (6) Decision required: Cabinet approval for funding commitment.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 12-slide MAVCOM regulatory submission presentation. Include: (1) MAHB business overview — 39 airports, 73.4M pax, (2) FY2024 financial performance, (3) KLIA2 expansion — scope, rationale, investment, (4) Regulated asset base — cost base justification, (5) WACC calculation — 7.8% and the regulated return requirement, (6) Proposed aeronautical charge increase — from RM 52 to RM 64 per pax, (7) Service quality commitments — OTP, passenger satisfaction, (8) Response to airline objections, (9) Comparable international airport charges, (10) Economic contribution of MAHB to Malaysia, (11) Sensitivity analysis, (12) Regulatory determination requested. Dark navy and blue colour scheme.',
-        'Create a passenger experience slide showing our key service quality investments in the KLIA2 expansion: new check-in hall, additional immigration lanes (immigration clearance reduced from 45 to 22 minutes), expanded retail and F&B, smart parking. Use a "Before and After 2028" visual format.',
-        'Create a competitive benchmarking slide showing aeronautical charges per passenger at 10 comparable international airports: Changi, Suvarnabhumi, NAIA, CTICC, Schiphol, Heathrow, Dubai, KLIA (current), KLIA (proposed). Show KLIA proposed charge is still 28% below the Asian regional average.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft a letter to MAVCOM formally submitting the aeronautical charge review submission. The letter should: confirm the submission, highlight the 3 key points of our case, note our willingness to engage in the public consultation process, and request a bilateral meeting with MAVCOM commissioners before the final determination. Formal regulatory submission format.',
-        'Draft an email to the CEOs of the top 5 airlines at KLIA (by passenger volume) ahead of the MAVCOM charge review. The email should: acknowledge their concerns about the proposed charge increase, explain the investment rationale (KLIA2 expansion), offer a phased charge increase over 3 years rather than immediate, and propose a bilateral meeting to discuss the transition plan. Diplomatic but firm commercial tone.',
-        'Draft a press release response to a negative airline industry body media statement claiming our proposed charge increase will increase airfare by RM 18 per ticket and harm Malaysian tourism competitiveness. The response should: correct the claim (PSC is absorbed by airlines, not automatically passed to passengers), explain the investment rationale, note our charges remain below regional averages, and invite media to a briefing on the KLIA2 expansion.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from a regulatory or stakeholder meeting. Identify all MAVCOM regulatory issues discussed, the airlines\' objections, and the agreed response strategy. Create an action log for the regulatory submission team.',
-        'Draft follow-up actions from the aeronautical charge review strategy meeting. Group by workstream: Regulatory Submission | Airline Engagement | Media & Communications | Legal | Financial Modelling. Include owner and deadline.',
-        'Were there any internal concerns raised about the financial sustainability of the MYR 2.8B expansion if MAVCOM does not approve the charge increase? Summarise the risk and the contingency discussed.'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload 01_Zava_Group_Financial_Performance.xlsx and 03_Zava_Group_Strategy_Framework.docx to Copilot Notebook. Set instruction: "You are a regulatory economics advisor helping MAHB prepare its aeronautical charge submission to MAVCOM." Ask: Based on the financial data and strategy, what is the minimum charge increase needed to fund the KLIA2 expansion at our WACC? What happens to our dividend capacity if MAVCOM denies the increase?',
-        'Upload 03_Zava_Group_Strategy_Framework.docx. Ask: Airlines are threatening to reduce capacity at KLIA if charges increase. This would be a commercial own-goal for Malaysia tourism. Design a stakeholder engagement strategy that reframes the charge increase as a shared investment in Malaysia\'s aviation competitiveness — identify 3 allies who would support our case (tourism associations, cargo industry, business council) and what message each should deliver.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research aeronautical charge determination decisions by airport regulators in Singapore, Australia, and the UK in the past 3 years and extract the key precedents that support a charge increase for capacity expansion investment. (2) Draft a 3-page regulatory precedent summary for our MAVCOM submission. (3) Save to OneDrive as "Regulatory Precedent Summary". (4) Email to the Regulatory Affairs Director and external legal counsel for review. (5) Schedule a regulatory submission review meeting with all workstream leaders.',
-        'Do all of the following for airline stakeholder management: (1) Research publicly available statements by AirAsia, Malaysia Airlines, and Batik Air on MAVCOM charge reviews. (2) Draft a bilateral engagement proposal for each of the top 5 airlines — customised to each airline\'s specific concerns. (3) Email each draft to the VP Commercial Airports for review before sending. (4) Schedule bilateral meetings with airline CEOs over the next 3 weeks. (5) Post a MAVCOM submission update in the internal #regulatory-affairs Teams channel.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open 03_Zava_Group_Strategy_Framework.docx in Word for Web. Create an agent called "MAHB Regulatory & Strategy Bot". Description: "Answers questions from MAHB\'s regulatory, commercial, and finance teams on MAVCOM charge framework, KLIA2 expansion milestones, airline contractual terms, and airport regulatory precedents." Share with the regulatory and commercial teams.',
-        'Demo: A regulatory analyst asks "What is the single most important precedent from another airport regulatory determination that we should cite in our MAVCOM submission to justify including the full MYR 2.8B KLIA2 capex in the regulated asset base?" Show the agent providing a regulation-grounded, evidence-based answer.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the MAVCOM submission presentation. Create an agent called "MAHB Regulatory Submission Q&A Bot". Share with the MAVCOM submission team and external advisors.',
-        'Demo: A MAVCOM commissioner (playing devil\'s advocate) asks "Your WACC of 7.8% is 1.2 percentage points above the Changi Airport determination — why should Malaysian passengers fund a higher return for MAHB than Singapore passengers fund for Changi?" Show the agent providing a technically-grounded regulatory economics response.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open 01_Zava_Group_Financial_Performance.xlsx in Excel for Web. Create an agent called "MAHB Financial Performance Q&A". Description: "Instant answers on passenger volumes, aeronautical revenue, non-aeronautical revenue, KLIA2 capex progress, and regulatory financial modelling for the CFO and regulatory team." Share with the finance and regulatory leadership.',
-        'Demo: Ask "What is our current non-aeronautical revenue as a % of total and how does that compare to the 40% target?" Then: "If MAVCOM approves a charge increase to RM 60 (not our proposed RM 64) and KLIA2 reaches 90% utilisation by 2029, what is the ROIC and does it cover our WACC of 7.8%?" Show the CFO getting instant regulatory economics intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "MAHB Airports Intelligence Agent". Description: "Supports MAHB\'s regulatory, commercial, finance, and operations teams with instant answers on aeronautical charge frameworks, KLIA2 expansion status, airline performance, passenger volume trends, and regulatory precedents — enabling faster, smarter airport management decisions." Upload 01_Zava_Group_Financial_Performance.xlsx and 03_Zava_Group_Strategy_Framework.docx. Add topics: "MAVCOM Regulatory Review", "KLIA2 Expansion", "Airline Relations", "Passenger Performance". Publish to Teams.',
-        'Demo the agent: The Group CEO is called into an unscheduled meeting with the Minister of Transport in 20 minutes. The Minister has seen media reports that the aeronautical charge increase will raise airfares and hurt tourism. The CEO asks the agent: "Give me 3 facts that prove our proposed charge increase will NOT increase passenger airfares, 2 data points showing our charges are still below regional competitors even at RM 64, and tell me how many jobs the KLIA2 expansion will create — I need all of this in 90 seconds." Show how the agent prepares the CEO for a high-pressure ministerial meeting.'
-      ], DESC_BUILDER),
-    ]),
+    {
+      'id': 'aviation-airports',
+      'sectorId': 'aviation',
+      'name': 'Aviation & Airports',
+      'icon': '✈️',
+      'color': '#01579B',
+      'accent': '#0277BD',
+      'company': 'Cakrawala Airport Holdings Berhad',
+      'tagline': 'Charge review and terminal expansion timing drive the next earnings cycle.',
+      'companyID': 'PT Cakrawala Bandar Udara Tbk',
+      'taglineID': 'Route recovery is improving, but capex recovery and compliance timing remain tight.',
+      'scenario': 'Cakrawala Airport Holdings Berhad and PT Cakrawala Bandar Udara Tbk manage gateway airports serving business and leisure traffic. Passenger throughput is recovering, but aeronautical charge settings, non-aero monetisation, and expansion timing are all moving at different speeds under close regulatory attention. Management needs a fact-based position for regulators, airlines, and investors before the next tariff and capex review cycle.',
+      'files': ['AVN_01_Airport_Operations.xlsx', 'AVN_02_Airport_Concession_Policy.docx', 'AVN_03_Emergency_Response_Plan.docx'],
+      'prompts': [
+        {
+          'tool': '🤖 Copilot Chat (Basic)',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'prompts': [
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Using AVN_01_Airport_Operations.xlsx, focus on the Passenger Volume, Flight Movement Log, and Safety Compliance Score sheets to assess passenger recovery volatility, aeronautical charge review pressure, and expansion timing risk. Quantify the immediate downside, name the 3 decisions management must take in the next 30 days, and present the answer as a RAG table with Red, Amber, and Green actions.',
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Using the Aeronautical Revenue and Non-Aero Revenue sheets in AVN_01_Airport_Operations.xlsx together with AVN_02_Airport_Concession_Policy.docx, explain how the current operating issue affects strategy, capital allocation, and stakeholder confidence. Present the response as a RAG memo with sections for What We Know, What We Do Not Yet Know, and What We Should Do Next.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Using the Passenger Volume and Aeronautical Revenue sheets in AVN_01_Airport_Operations.xlsx, benchmark our current position against the 2024 to 2025 regional airport and aviation infrastructure market. Summarise the 5 most important leading indicators to watch over the next 2 quarters and show them in a RAG scorecard with a short management implication beside each.'
+          ]
+        },
+        {
+          'tool': '🔍 Researcher',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
+          'prompts': [
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Using AVN_01_Airport_Operations.xlsx, especially the Passenger Volume, Flight Movement Log, and Aeronautical Revenue sheets, plus AVN_02_Airport_Concession_Policy.docx, research 2024 to 2025 market benchmarks, peer disclosures, and financing or valuation signals relevant to passenger recovery volatility, aeronautical charge review pressure, and expansion timing risk. Present a RAG table with Red for immediate threats, Amber for watchlist items, and Green for supporting market signals, with citations to every source and a one-line implication for management. Flag any claim that could not be independently verified.',
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Using the Non-Aero Revenue and Safety Compliance Score sheets in AVN_01_Airport_Operations.xlsx and the policy positions in AVN_03_Emergency_Response_Plan.docx, research how CAAM, MAVCOM, and DGCA/DJPU or comparable published authorities and industry bodies are treating this issue across Malaysia and Indonesia. Separate mandatory requirements from market practice, cite each source, and present the findings as a RAG matrix with columns for Issue, Malaysia, Indonesia, Timing, and Management Action. Flag any claim that could not be independently verified.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Using the Passenger Volume, Aeronautical Revenue, and Non-Aero Revenue sheets in AVN_01_Airport_Operations.xlsx, research the demand, pricing, and competitor trends that will most influence our next 12 months. Present the answer as a RAG table ranking the top 10 external signals by likely impact and management preparedness, with citations beside every row. Flag any claim that could not be independently verified.'
+          ]
+        },
+        {
+          'tool': '📊 Analyst',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
+          'prompts': [
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Upload AVN_01_Airport_Operations.xlsx to Analyst and use the Passenger Volume, Flight Movement Log, and Aeronautical Revenue sheets to identify the 5 biggest sources of underperformance or stress in the current plan. Quantify the variance where possible, flag each item Red, Amber, or Green based on financial materiality, and end with one corrective action per Red item.',
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Upload AVN_01_Airport_Operations.xlsx to Analyst and use the Non-Aero Revenue and Safety Compliance Score sheets to model 3 scenarios for passenger recovery volatility, aeronautical charge review pressure, and expansion timing risk: downside, base case, and recovery case. Show the impact on revenue, margin or cash, plus the operational trigger that would move an item from Amber to Red.',
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Upload AVN_01_Airport_Operations.xlsx to Analyst and use the Passenger Volume, Aeronautical Revenue, and Safety Compliance Score sheets to build a 13-week watchlist of the metrics most likely to surprise management. Present the output as a RAG dashboard table with columns for Metric, Current Level, Threshold, Risk Status, and Recommended Owner.'
+          ]
+        },
+        {
+          'tool': '📊 Copilot in Excel',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Using AVN_01_Airport_Operations.xlsx, build a new sheet called \'Cakrawala Airport Executive Dashboard\' from the Passenger Volume, Flight Movement Log, and Aeronautical Revenue sheets. Show the 10 most important KPIs, add a RAG status column driven by clear thresholds, and place an executive summary box at the top that updates automatically.',
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Using AVN_01_Airport_Operations.xlsx, create a risk tracker that pulls from the Flight Movement Log, Non-Aero Revenue, and Safety Compliance Score sheets. For each material issue, show owner, due date, estimated financial exposure, and Red/Amber/Green status, then sort Red issues first.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Using AVN_01_Airport_Operations.xlsx, build a scenario sensitivity sheet using the Passenger Volume, Aeronautical Revenue, and Safety Compliance Score sheets as inputs. Show downside, base, and upside cases side by side, add conditional formatting for RAG thresholds, and include a short note on the trigger that would require management escalation.'
+          ]
+        },
+        {
+          'tool': '📝 Copilot in Word',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Using AVN_02_Airport_Concession_Policy.docx together with the Passenger Volume and Safety Compliance Score sheets in AVN_01_Airport_Operations.xlsx, draft a 2-page Board paper on passenger recovery volatility, aeronautical charge review pressure, and expansion timing risk. Structure it as Situation, Risks, Decisions Required, and Next 30 Days, and place a compact RAG summary at the top.',
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Using AVN_03_Emergency_Response_Plan.docx and the Flight Movement Log and Non-Aero Revenue sheets in AVN_01_Airport_Operations.xlsx, draft a policy or action-plan note for the leadership team that translates the data into clear operating actions. Present the recommendations as a RAG table with owners, timing, and expected impact.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Using AVN_02_Airport_Concession_Policy.docx, AVN_03_Emergency_Response_Plan.docx, and the Passenger Volume sheet in AVN_01_Airport_Operations.xlsx, draft an external stakeholder briefing note that explains our position factually and shows what management is doing next. After the draft, add a 3-line RAG risk summary covering timing, evidence strength, and stakeholder reaction.'
+          ]
+        },
+        {
+          'tool': '🎯 Copilot in PowerPoint',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Create a 6-slide executive deck using AVN_01_Airport_Operations.xlsx and AVN_02_Airport_Concession_Policy.docx, grounded in the Passenger Volume, Aeronautical Revenue, and Safety Compliance Score sheets. Cover aviation & airports performance, root causes, key risks, management response, scenario outlook, and decisions required, with one headline takeaway per slide and a visible RAG status marker.',
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Create a 3-slide operating review using the Flight Movement Log, Aeronautical Revenue, and Non-Aero Revenue sheets in AVN_01_Airport_Operations.xlsx. Show what is Red, what is Amber, and what is Green, then close with the 5 highest-priority actions and owners.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Build a 2-slide stakeholder briefing from AVN_01_Airport_Operations.xlsx and AVN_03_Emergency_Response_Plan.docx, using the Passenger Volume and Safety Compliance Score sheets as the fact base. The first slide should summarise the issue and the second should show the recovery path in a RAG timeline.'
+          ]
+        },
+        {
+          'tool': '📧 Copilot in Outlook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Using the Passenger Volume and Safety Compliance Score sheets in AVN_01_Airport_Operations.xlsx, draft an email to airlines, regulators, and infrastructure investors explaining the current situation, the evidence supporting our view, and the immediate next step we want from them. After the draft, add a short RAG summary of delivery risk, likely objections, and follow-up timing.',
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Using the Aeronautical Revenue and Non-Aero Revenue sheets in AVN_01_Airport_Operations.xlsx plus AVN_02_Airport_Concession_Policy.docx, draft a regulator-ready note for CAAM, MAVCOM, and DGCA/DJPU or the most relevant authority. Keep the tone factual, distinguish confirmed facts from assumptions, and end with a RAG table of issues that may require further disclosure.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Using the Passenger Volume, Flight Movement Log, and Aeronautical Revenue sheets in AVN_01_Airport_Operations.xlsx, draft an internal leadership email that aligns owners around the top 5 actions for the next 14 days. Finish with a RAG checklist titled Do Today, Do This Week, and Monitor.'
+          ]
+        },
+        {
+          'tool': '🎙 Copilot in Teams',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
+          'prompts': [
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Using this recorded Teams meeting recap and the Passenger Volume and Aeronautical Revenue sheets in AVN_01_Airport_Operations.xlsx as the operating benchmark, extract all decisions, risks, and unresolved items related to passenger recovery volatility, aeronautical charge review pressure, and expansion timing risk. Present the result as a RAG table with owners and due dates.',
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Using the Flight Movement Log and Safety Compliance Score sheets in AVN_01_Airport_Operations.xlsx as reference points, draft follow-up actions from the meeting grouped by Operations | Commercial | Regulatory | Capex | Stakeholder. For each action, include owner, deadline, and whether the item is Red, Amber, or Green.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Using this meeting recap and the Non-Aero Revenue sheet in AVN_01_Airport_Operations.xlsx as context, identify whether any comments suggest hidden downside not yet reflected in management reporting. Summarise the findings as a RAG note with direct quotes or paraphrased evidence from the recap.'
+          ]
+        },
+        {
+          'tool': '📓 Copilot Notebook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
+          'prompts': [
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Upload AVN_01_Airport_Operations.xlsx, AVN_02_Airport_Concession_Policy.docx, and AVN_03_Emergency_Response_Plan.docx to Copilot Notebook and focus on the Passenger Volume, Aeronautical Revenue, and Safety Compliance Score sheets. Ask Notebook to produce a cross-file RAG synthesis of the top risks, the 3 most credible management actions, and the evidence supporting each recommendation, citing the source file for every major point.',
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Upload AVN_01_Airport_Operations.xlsx and AVN_02_Airport_Concession_Policy.docx to Copilot Notebook and focus on the Flight Movement Log, Non-Aero Revenue, and Safety Compliance Score sheets. Ask Notebook to model a downside scenario for passenger recovery volatility, aeronautical charge review pressure, and expansion timing risk, explain which assumptions matter most, and present the answer as a RAG table with immediate, next-quarter, and monitor-only actions.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Upload AVN_01_Airport_Operations.xlsx, AVN_02_Airport_Concession_Policy.docx, and AVN_03_Emergency_Response_Plan.docx to Copilot Notebook and focus on the Passenger Volume, Flight Movement Log, and Non-Aero Revenue sheets. Ask Notebook to rank the top 5 opportunities to stabilise performance without creating new compliance or stakeholder risk, and return the answer as a RAG prioritisation table with expected impact and implementation difficulty.'
+          ]
+        },
+        {
+          'tool': '🤝 Cowork (Frontier)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf — sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.',
+          'prompts': [
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Using AVN_01_Airport_Operations.xlsx, AVN_02_Airport_Concession_Policy.docx, and AVN_03_Emergency_Response_Plan.docx, especially the Passenger Volume, Aeronautical Revenue, and Safety Compliance Score sheets, research the current market context, draft a 2-page management brief, save it to OneDrive, and email it to the leadership team for review. Then schedule a 30-minute follow-up meeting for next week and label the agenda items Red, Amber, and Green.',
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Using the Flight Movement Log, Non-Aero Revenue, and Safety Compliance Score sheets in AVN_01_Airport_Operations.xlsx, prepare a task tracker, draft the related stakeholder email, store both in SharePoint or OneDrive, and send them to the named owners. Then book a checkpoint meeting and make sure the work is grouped by Operations | Commercial | Regulatory | Capex | Stakeholder with clear RAG priorities.'
+          ]
+        },
+        {
+          'tool': '✏️ Edit with Copilot',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.',
+          'prompts': [
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Using AVN_02_Airport_Concession_Policy.docx in Word for the web and the Passenger Volume and Safety Compliance Score sheets in AVN_01_Airport_Operations.xlsx as the fact base, add a new section that sharpens the narrative around passenger recovery volatility, aeronautical charge review pressure, and expansion timing risk. Restructure the content into Situation, Key Data, Decisions, and Next Steps, and insert a small RAG summary box at the top.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Using AVN_01_Airport_Operations.xlsx in Excel for the web, redesign the sheets fed by Flight Movement Log, Aeronautical Revenue, and Safety Compliance Score so executives can see the highest-risk items first. Standardise labels, improve formulas where needed, and add a RAG status column plus a one-row summary that updates automatically.'
+          ]
+        },
+        {
+          'tool': '🤖 Word Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.',
+          'prompts': [
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Open AVN_02_Airport_Concession_Policy.docx in Word for Web and create an agent called \'Cakrawala Airport Word Guide\'. Describe it as an assistant that answers questions using AVN_02_Airport_Concession_Policy.docx plus the Passenger Volume and Aeronautical Revenue sheets in AVN_01_Airport_Operations.xlsx, then share it with the relevant leadership team.',
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Demo the \'Cakrawala Airport Word Guide\' agent by asking: \'What is our most urgent operating risk, what evidence from the Flight Movement Log and Safety Compliance Score sheets supports it, and what action does AVN_02_Airport_Concession_Policy.docx imply we should take first?\'. Show the answer as a short RAG response with the supporting source references.'
+          ]
+        },
+        {
+          'tool': '🤖 PowerPoint Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.',
+          'prompts': [
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Create the leadership presentation in PowerPoint for Web using AVN_01_Airport_Operations.xlsx and AVN_03_Emergency_Response_Plan.docx, then create an agent called \'Cakrawala Airport Deck Navigator\'. Tell users it can answer questions tied to the Passenger Volume, Non-Aero Revenue, and Safety Compliance Score sheets, then share it with the executive team.',
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Demo the \'Cakrawala Airport Deck Navigator\' agent by asking: \'Which slide best explains our Red risks, what does the Safety Compliance Score sheet say about exposure, and what decision do leaders need this week?\'. Request a RAG answer in under 120 words.'
+          ]
+        },
+        {
+          'tool': '🤖 Excel Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.',
+          'prompts': [
+            'You are the Head of Strategy at Cakrawala Airport Holdings Berhad. Open AVN_01_Airport_Operations.xlsx in Excel for Web and create an agent called \'Cakrawala Airport Data Q&A\'. Describe it as an assistant for the Passenger Volume, Flight Movement Log, Aeronautical Revenue, Non-Aero Revenue, and Safety Compliance Score sheets that gives instant Red, Amber, and Green answers on performance and risk, then share it with the leadership team.',
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Demo the \'Cakrawala Airport Data Q&A\' agent by asking which 3 items are currently Red in the Passenger Volume and Safety Compliance Score sheets and what management action each implies. Then ask which single Amber item could become Red fastest and why.'
+          ]
+        },
+        {
+          'tool': '🏗 Agent Builder (Copilot Studio)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Build a custom declarative agent in Copilot Studio — no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.',
+          'prompts': [
+            'You are the Chief Financial Officer at Cakrawala Airport Holdings Berhad. Go to Copilot Studio and create an agent called \'Cakrawala Airport Intelligence Agent\' using AVN_01_Airport_Operations.xlsx, AVN_02_Airport_Concession_Policy.docx, and AVN_03_Emergency_Response_Plan.docx as knowledge sources. Tell the agent to answer questions across the Passenger Volume, Flight Movement Log, Aeronautical Revenue, Non-Aero Revenue, and Safety Compliance Score sheets, add topics for Passenger Volume, Flight Movements, Revenue, Safety Compliance, and require every answer to end with a RAG recommendation.',
+            'You are the Head of Airport Operations at Cakrawala Airport Holdings Berhad. Demo the \'Cakrawala Airport Intelligence Agent\' by asking for a 2-minute briefing on the biggest Red issue in the Passenger Volume and Safety Compliance Score sheets, the best Amber mitigation in AVN_03_Emergency_Response_Plan.docx, and the Green signals management can still rely on. Ask for the answer in a RAG table with next-step owners.'
+          ]
+        }
+      ]
+    },
 
-# ── RETAIL GROCERY ────────────────────────────────────────────────────────
-ind('retail-grocery','retail','Retail & Grocery','🛒','#2E7D32','#388E3C',
-    'BrightMart Group',
-    '148 stores — private label 34% mix target + supply chain shrinkage 2.1% issue.',
-    'BrightMart Group operates 148 grocery stores across Peninsular Malaysia with MYR 4.2B annual gross merchandising value. Private label products are 28% of sales vs a 34% target. Supply chain shrinkage is 2.1% — double the 1.0% industry benchmark. A fresh food expansion is adding 18 stores in FY2025.',
-    ['RT_01_BrightMart_Group.xlsx','RT_02_BrightMart_Strategy.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the CEO of a Malaysian grocery chain with 148 stores and MYR 4.2B GMV. Our supply chain shrinkage is 2.1% vs a 1.0% industry benchmark — representing MYR 46M in annual losses (theft, spoilage, administrative errors). Draft a 250-word shrinkage reduction brief for my operations team. Cover: (1) The 3 main categories of shrinkage and their typical proportion of total losses, (2) The highest-ROI technology investment to reduce shrinkage in a supermarket context (RFID, CCTV analytics, shelf sensors), (3) What a 0.5 percentage point shrinkage reduction would mean in MYR annual savings at our scale.',
-        'What is the business case for increasing private label (own brand) products in a supermarket chain? What are the typical gross margin advantages of private label vs national brand equivalents, what percentage is industry best practice, and what investment is required to develop and quality-control a robust private label range?',
-        'Explain the Retailer-Supplier joint business planning process — how large grocery retailers typically negotiate annual trade terms with FMCG suppliers, what a promotional calendar looks like, and how listing fees, shelf placement, and promotional spend are structured.'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research the Malaysian grocery retail market in 2024–2025. I need: (1) Market size and growth rate — total grocery retail GMV, (2) Key competitive dynamics — Lotus\'s, Giant, Jaya Grocer, AEON, and the rise of convenience stores and online grocery, (3) Consumer trends — health, halal, local brands, (4) Private label penetration rate in Malaysia vs regional benchmarks. Cite Nielsen, Kantar, or Euromonitor sources.',
-        'Research supply chain shrinkage reduction technologies and best practices for grocery retailers. What specific technologies (RFID, computer vision at self-checkout, AI demand forecasting) have delivered the best ROI for mid-size grocery chains? Cite case studies with quantified results.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Analyse the shrinkage data by store category (large hypermarket, supermarket, neighbourhood store) and by product category (fresh food, dry grocery, health & beauty, general merchandise). Which combination of store type and product category has the highest shrinkage rate? Create a heat map: store type on X-axis, product category on Y-axis, shrinkage rate in each cell. Identify the top 5 highest-shrinkage cells — these are our priority intervention areas.',
-        'Build a private label expansion ROI model. Current private label GMV: MYR 1.18B (28% of MYR 4.2B GMV). Target: MYR 1.43B (34% mix). Average private label gross margin: 42% vs national brand equivalent 28%. Calculate: (1) Additional GMV from increasing mix to 34%, (2) Gross margin uplift from shifting GMV from national brands to private label, (3) Required investment in private label development (product design, quality testing, packaging). Calculate payback period.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Using the Store Performance tab in this workbook, Build a shrinkage tracker dashboard on a new sheet. For each of the 148 stores, show: (1) Store name and region, (2) Monthly GMV (RM M), (3) Shrinkage amount (RM M), (4) Shrinkage rate %, (5) Category contributing most to shrinkage, (6) Last security audit date. Highlight stores with shrinkage above 2.5% in red, 1.5–2.5% in amber, below 1.0% in green. Sort by shrinkage rate, highest first. Show top 10 worst stores.',
-        'Create a private label performance dashboard on a new sheet. For each private label category (bread & bakery, dairy, household cleaners, personal care, frozen food, snacks), show: (1) Current GMV (RM M), (2) % of category GMV, (3) Gross margin %, (4) YoY GMV growth, (5) Target mix %, (6) Gap to target (RM M). Calculate total uplift if all categories reach their target mix.',
-        'Build a fresh food expansion tracker for the 18 new stores being opened in FY2025. For each store, show: (1) Location and planned opening date, (2) Fresh food selling area (sq m), (3) Fresh food categories planned (produce, meat, seafood, bakery, deli), (4) Target daily fresh food sales (RM), (5) Supplier partnerships confirmed, (6) Cold chain infrastructure status. Flag any store where cold chain is not yet confirmed 30 days before opening.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft a shrinkage reduction action plan document. Cover: (1) Executive summary — MYR 46M annual loss, target to halve shrinkage to 1.0% in 18 months, (2) Root cause analysis — theft (external and internal) 45%, fresh food spoilage 35%, administrative errors 20%, (3) Technology intervention — CCTV analytics at high-shrinkage stores (investment RM 12M), improved inventory cycle counting system, (4) Process improvements — staff accountability programme, fresh food markdown policy, (5) Supplier accountability — invoice reconciliation process, (6) 18-month implementation timeline. 8 pages, formal action plan format.',
-        'Draft a supplier joint business plan template for BrightMart\'s top 50 FMCG suppliers. The template should cover: (1) Annual volume commitment and growth target, (2) Promotional calendar — 12 months of planned promotions with BrightMart and supplier funding split, (3) New product launches, (4) Private label collaboration — for suppliers willing to co-manufacture BrightMart private label, (5) Supply chain reliability SLA — fill rate target 98.5%. Provide as a Word template.',
-        'Write a private label strategy document for the BrightMart Board. Cover: (1) Current private label performance — 28% mix, 42% margin vs national brand 28%, (2) Target — 34% mix by FY2026, (3) Expansion categories — bread, dairy, cleaning, frozen, (4) Private label development process — product brief, supplier qualification, quality testing, (5) Marketing strategy — shelf placement, own media promotion, (6) Financial impact — MYR XX gross profit improvement. 10 pages.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 10-slide Board presentation for BrightMart. Include: (1) FY2025 snapshot — 148 stores, MYR 4.2B GMV, (2) Shrinkage crisis — MYR 46M loss, root cause, (3) Shrinkage reduction plan — technology and process, (4) Private label strategy — 28% to 34%, (5) Fresh food expansion — 18 new stores, (6) Digital transformation — loyalty app, online grocery, (7) Competitive response — vs Lotus\'s and Jaya Grocer, (8) 3-year financial outlook, (9) Key risks, (10) Board decisions. Green and white colour scheme.',
-        'Create a 3-slide private label pitch for a potential private label manufacturing partner. Slide 1: BrightMart\'s scale — 148 stores, MYR 4.2B GMV, 8M customer transactions/month. Slide 2: Our private label vision — 5 categories we want to launch, target volumes. Slide 3: Partnership model — quality specifications, volume commitment, co-investment in product development.',
-        'Create a competitor positioning slide showing BrightMart vs Lotus\'s, Giant, and Jaya Grocer on 4 dimensions: store count, private label %, price index (relative to market average), and fresh food quality score. Show as a spider/radar chart.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft an email to all 148 Store Managers announcing the shrinkage reduction programme. The email should: state the current shrinkage rate and the MYR impact, announce the 3 key interventions (CCTV analytics upgrade, new inventory cycle counting requirement, staff reporting protocol), set the 12-month target of 1.5% shrinkage, and motivate managers by connecting shrinkage reduction to their annual bonus. Energetic, performance-focused tone.',
-        'Draft a letter to our top 10 FMCG suppliers inviting them to the annual joint business planning workshop. The letter should: confirm the workshop date (3 days), list the agenda topics (promotional calendar, volume targets, private label collaboration), ask suppliers to bring their category sales data, and confirm that fill rate performance data will be reviewed as part of the supplier scorecard. Professional commercial tone.',
-        'Draft a press release announcing the opening of BrightMart\'s expanded fresh food concept at 3 pilot stores. Announce: the enhanced fresh produce section (50% larger), new in-store bakery, halal-certified fresh meat counter, and same-day seafood delivery. Quote the CEO on BrightMart\'s fresh food commitment.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from a retail operations or commercial meeting. Identify all shrinkage-related discussions, store performance concerns, and private label review points. Create an action list for the operations and commercial teams.',
-        'Draft the weekly commercial update for the BrightMart leadership team. Structure: (1) GMV by region vs target, (2) Shrinkage top 5 worst-performing stores this week, (3) Private label GMV vs target, (4) Fresh food expansion status, (5) Top 3 supplier issues.',
-        'From this meeting, which store regions are consistently underperforming on shrinkage and what specific causes have been identified? Has the security team been engaged and what are their proposed interventions?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload RT_01_BrightMart_Group.xlsx and RT_02_BrightMart_Strategy.docx to Copilot Notebook. Set instruction: "You are a retail operations consultant advising BrightMart on shrinkage reduction and private label growth." Ask: Which single intervention would have the highest ROI on shrinkage reduction given our store size mix? Should we invest in CCTV analytics (RM 12M) or in improved fresh food cold chain management (RM 8M)? Provide a data-backed recommendation.',
-        'Upload RT_02_BrightMart_Strategy.docx. Ask: BrightMart wants to launch a private label bread range. We need to identify the right contract manufacturer. Design an RFP scoring matrix with 8 criteria (food safety certification, capacity, pricing, halal certification, delivery reliability, product customisation capability, sustainability practices, financial strength). Weight each criterion and give me a scoring guide for each criterion.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research the top 3 CCTV analytics and anti-theft technology vendors for grocery retail in Malaysia — evaluate their capabilities, pricing, and references. (2) Draft an RFP for shrinkage reduction technology covering CCTV analytics at self-checkout, shelf sensors, and inventory management integration. (3) Save to OneDrive as "Shrinkage Technology RFP". (4) Email to the COO and Head of Loss Prevention asking for review within 1 week. (5) Schedule an RFP vendor briefing for all 3 shortlisted vendors.',
-        'Do all of the following for private label expansion: (1) Research the top 5 contract food manufacturers in Malaysia and Indonesia who could co-manufacture private label dairy and bakery products to FSSC 22000 standards. (2) Draft a private label manufacturing partner evaluation brief with selection criteria. (3) Email to the Head of Private Label asking for review. (4) Schedule a shortlisting meeting with the commercial team next week. (5) Create a private label product launch calendar for FY2026 in SharePoint.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open RT_02_BrightMart_Strategy.docx in Word for Web. Create an agent called "BrightMart Retail Operations Bot". Description: "Answers questions from Store Managers and regional operations teams on shrinkage procedures, private label requirements, fresh food standards, and promotional compliance — ensuring consistent operational excellence across 148 stores." Share with all Store Managers.',
-        'Demo: A Store Manager asks "A supplier\'s delivery today was short by 48 cartons of cooking oil but I already signed the delivery note. Our shrinkage target is at risk this month. What is the BrightMart procedure for raising a delivery variance claim against a supplier after the delivery note is signed, and what is the cut-off time to raise the claim?" Show the agent providing an instant, procedure-grounded answer that helps the manager recover the loss.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the Board presentation. Create an agent called "BrightMart Board & Commercial Q&A Bot". Share with the Board and regional directors.',
-        'Demo: A regional director asks "My region has the second-highest shrinkage rate in the group. What are the 3 specific interventions that have been approved in the shrinkage reduction plan for high-shrinkage stores and when will the CCTV analytics upgrade be deployed to my region?" Show the agent providing a programme-specific, region-relevant answer.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open RT_01_BrightMart_Group.xlsx in Excel for Web. Create an agent called "BrightMart Store Performance Q&A". Description: "Instant answers on store-level GMV, shrinkage rates, private label mix, and fresh food performance for the CEO, COO, and regional directors." Share with operations leadership.',
-        'Demo: Ask "What are the 5 stores with the highest shrinkage rate this month and what is the combined RM loss from these 5 stores?" Then: "What is our current private label mix in the dairy category and how does it compare to the 34% group target?" Show the COO getting instant multi-store intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "BrightMart Retail Intelligence Agent". Description: "Supports BrightMart\'s Store Managers, regional directors, and Group leadership with instant answers on store performance, shrinkage procedures, private label standards, fresh food requirements, and supplier policies — enabling faster, smarter retail decisions across 148 stores." Upload RT_01_BrightMart_Group.xlsx and RT_02_BrightMart_Strategy.docx. Add topics: "Shrinkage Management", "Private Label", "Store Operations", "Supplier Relations". Publish to Teams.',
-        'Demo the agent: A Store Manager calls the regional director on a Saturday evening: "Our self-checkout CCTV flagged 3 potential theft incidents today. One involves a loyalty member who has been shopping with us for 8 years and MYR 42,000 cumulative spend. What is our policy on confronting suspected shoplifters and do I need manager approval before reviewing CCTV footage of a high-value loyalty customer?" Show how the agent provides an instant, policy-grounded answer that protects both the business and the customer relationship.'
-      ], DESC_BUILDER),
-    ]),
+    {
+      'id': 'retail-grocery',
+      'sectorId': 'retail',
+      'name': 'Retail & Grocery',
+      'icon': '🛒',
+      'color': '#2E7D32',
+      'accent': '#388E3C',
+      'company': 'Segar Rakyat Retail Berhad',
+      'tagline': 'Margins leak through shrinkage, promo waste, and stock imbalance.',
+      'companyID': 'PT Ritel Segar Nusantara Tbk',
+      'taglineID': 'Traffic is holding, but inventory losses are masking store productivity.',
+      'scenario': 'Segar Rakyat Retail Berhad and PT Ritel Segar Nusantara Tbk operate supermarkets and neighbourhood stores across Malaysia and Indonesia. Same-store sales are resilient in selected regions, yet category margin pressure, inventory shrinkage, and weak promotion ROI are diluting the benefit. Management must decide how to defend value perception while improving store economics and supplier discipline.',
+      'files': ['RT_01_Store_Performance.xlsx', 'RT_02_Store_Operations_Manual.docx', 'RT_03_Supplier_Management_Policy.docx'],
+      'prompts': [
+        {
+          'tool': '🤖 Copilot Chat (Basic)',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'prompts': [
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Using RT_01_Store_Performance.xlsx, focus on the Store Sales Dashboard, Category Margin Tracker, and Supply Chain KPIs sheets to assess gross margin compression, shrinkage, and promotion inefficiency across the store base. Quantify the immediate downside, name the 3 decisions management must take in the next 30 days, and present the answer as a RAG table with Red, Amber, and Green actions.',
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Using the Inventory Shrinkage and Promotion ROI sheets in RT_01_Store_Performance.xlsx together with RT_02_Store_Operations_Manual.docx, explain how the current operating issue affects strategy, capital allocation, and stakeholder confidence. Present the response as a RAG memo with sections for What We Know, What We Do Not Yet Know, and What We Should Do Next.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Using the Store Sales Dashboard and Inventory Shrinkage sheets in RT_01_Store_Performance.xlsx, benchmark our current position against the 2024 to 2025 Malaysia and Indonesia grocery retail market. Summarise the 5 most important leading indicators to watch over the next 2 quarters and show them in a RAG scorecard with a short management implication beside each.'
+          ]
+        },
+        {
+          'tool': '🔍 Researcher',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
+          'prompts': [
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Using RT_01_Store_Performance.xlsx, especially the Store Sales Dashboard, Category Margin Tracker, and Inventory Shrinkage sheets, plus RT_02_Store_Operations_Manual.docx, research 2024 to 2025 market benchmarks, peer disclosures, and financing or valuation signals relevant to gross margin compression, shrinkage, and promotion inefficiency across the store base. Present a RAG table with Red for immediate threats, Amber for watchlist items, and Green for supporting market signals, with citations to every source and a one-line implication for management. Flag any claim that could not be independently verified.',
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Using the Promotion ROI and Supply Chain KPIs sheets in RT_01_Store_Performance.xlsx and the policy positions in RT_03_Supplier_Management_Policy.docx, research how Kementerian Perdagangan, DOSM, and OJK or comparable published authorities and industry bodies are treating this issue across Malaysia and Indonesia. Separate mandatory requirements from market practice, cite each source, and present the findings as a RAG matrix with columns for Issue, Malaysia, Indonesia, Timing, and Management Action. Flag any claim that could not be independently verified.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Using the Store Sales Dashboard, Inventory Shrinkage, and Promotion ROI sheets in RT_01_Store_Performance.xlsx, research the demand, pricing, and competitor trends that will most influence our next 12 months. Present the answer as a RAG table ranking the top 10 external signals by likely impact and management preparedness, with citations beside every row. Flag any claim that could not be independently verified.'
+          ]
+        },
+        {
+          'tool': '📊 Analyst',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
+          'prompts': [
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Upload RT_01_Store_Performance.xlsx to Analyst and use the Store Sales Dashboard, Category Margin Tracker, and Inventory Shrinkage sheets to identify the 5 biggest sources of underperformance or stress in the current plan. Quantify the variance where possible, flag each item Red, Amber, or Green based on financial materiality, and end with one corrective action per Red item.',
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Upload RT_01_Store_Performance.xlsx to Analyst and use the Promotion ROI and Supply Chain KPIs sheets to model 3 scenarios for gross margin compression, shrinkage, and promotion inefficiency across the store base: downside, base case, and recovery case. Show the impact on revenue, margin or cash, plus the operational trigger that would move an item from Amber to Red.',
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Upload RT_01_Store_Performance.xlsx to Analyst and use the Store Sales Dashboard, Inventory Shrinkage, and Supply Chain KPIs sheets to build a 13-week watchlist of the metrics most likely to surprise management. Present the output as a RAG dashboard table with columns for Metric, Current Level, Threshold, Risk Status, and Recommended Owner.'
+          ]
+        },
+        {
+          'tool': '📊 Copilot in Excel',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Using RT_01_Store_Performance.xlsx, build a new sheet called \'Segar Rakyat Executive Dashboard\' from the Store Sales Dashboard, Category Margin Tracker, and Inventory Shrinkage sheets. Show the 10 most important KPIs, add a RAG status column driven by clear thresholds, and place an executive summary box at the top that updates automatically.',
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Using RT_01_Store_Performance.xlsx, create a risk tracker that pulls from the Category Margin Tracker, Promotion ROI, and Supply Chain KPIs sheets. For each material issue, show owner, due date, estimated financial exposure, and Red/Amber/Green status, then sort Red issues first.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Using RT_01_Store_Performance.xlsx, build a scenario sensitivity sheet using the Store Sales Dashboard, Inventory Shrinkage, and Supply Chain KPIs sheets as inputs. Show downside, base, and upside cases side by side, add conditional formatting for RAG thresholds, and include a short note on the trigger that would require management escalation.'
+          ]
+        },
+        {
+          'tool': '📝 Copilot in Word',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Using RT_02_Store_Operations_Manual.docx together with the Store Sales Dashboard and Supply Chain KPIs sheets in RT_01_Store_Performance.xlsx, draft a 2-page Board paper on gross margin compression, shrinkage, and promotion inefficiency across the store base. Structure it as Situation, Risks, Decisions Required, and Next 30 Days, and place a compact RAG summary at the top.',
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Using RT_03_Supplier_Management_Policy.docx and the Category Margin Tracker and Promotion ROI sheets in RT_01_Store_Performance.xlsx, draft a policy or action-plan note for the leadership team that translates the data into clear operating actions. Present the recommendations as a RAG table with owners, timing, and expected impact.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Using RT_02_Store_Operations_Manual.docx, RT_03_Supplier_Management_Policy.docx, and the Store Sales Dashboard sheet in RT_01_Store_Performance.xlsx, draft an external stakeholder briefing note that explains our position factually and shows what management is doing next. After the draft, add a 3-line RAG risk summary covering timing, evidence strength, and stakeholder reaction.'
+          ]
+        },
+        {
+          'tool': '🎯 Copilot in PowerPoint',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Create a 6-slide executive deck using RT_01_Store_Performance.xlsx and RT_02_Store_Operations_Manual.docx, grounded in the Store Sales Dashboard, Inventory Shrinkage, and Supply Chain KPIs sheets. Cover retail & grocery performance, root causes, key risks, management response, scenario outlook, and decisions required, with one headline takeaway per slide and a visible RAG status marker.',
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Create a 3-slide operating review using the Category Margin Tracker, Inventory Shrinkage, and Promotion ROI sheets in RT_01_Store_Performance.xlsx. Show what is Red, what is Amber, and what is Green, then close with the 5 highest-priority actions and owners.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Build a 2-slide stakeholder briefing from RT_01_Store_Performance.xlsx and RT_03_Supplier_Management_Policy.docx, using the Store Sales Dashboard and Supply Chain KPIs sheets as the fact base. The first slide should summarise the issue and the second should show the recovery path in a RAG timeline.'
+          ]
+        },
+        {
+          'tool': '📧 Copilot in Outlook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Using the Store Sales Dashboard and Supply Chain KPIs sheets in RT_01_Store_Performance.xlsx, draft an email to key suppliers, landlords, and lending banks explaining the current situation, the evidence supporting our view, and the immediate next step we want from them. After the draft, add a short RAG summary of delivery risk, likely objections, and follow-up timing.',
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Using the Inventory Shrinkage and Promotion ROI sheets in RT_01_Store_Performance.xlsx plus RT_02_Store_Operations_Manual.docx, draft a regulator-ready note for Kementerian Perdagangan, DOSM, and OJK or the most relevant authority. Keep the tone factual, distinguish confirmed facts from assumptions, and end with a RAG table of issues that may require further disclosure.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Using the Store Sales Dashboard, Category Margin Tracker, and Inventory Shrinkage sheets in RT_01_Store_Performance.xlsx, draft an internal leadership email that aligns owners around the top 5 actions for the next 14 days. Finish with a RAG checklist titled Do Today, Do This Week, and Monitor.'
+          ]
+        },
+        {
+          'tool': '🎙 Copilot in Teams',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
+          'prompts': [
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Using this recorded Teams meeting recap and the Store Sales Dashboard and Inventory Shrinkage sheets in RT_01_Store_Performance.xlsx as the operating benchmark, extract all decisions, risks, and unresolved items related to gross margin compression, shrinkage, and promotion inefficiency across the store base. Present the result as a RAG table with owners and due dates.',
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Using the Category Margin Tracker and Supply Chain KPIs sheets in RT_01_Store_Performance.xlsx as reference points, draft follow-up actions from the meeting grouped by Merchandising | Store Ops | Supply Chain | Marketing | Finance. For each action, include owner, deadline, and whether the item is Red, Amber, or Green.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Using this meeting recap and the Promotion ROI sheet in RT_01_Store_Performance.xlsx as context, identify whether any comments suggest hidden downside not yet reflected in management reporting. Summarise the findings as a RAG note with direct quotes or paraphrased evidence from the recap.'
+          ]
+        },
+        {
+          'tool': '📓 Copilot Notebook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
+          'prompts': [
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Upload RT_01_Store_Performance.xlsx, RT_02_Store_Operations_Manual.docx, and RT_03_Supplier_Management_Policy.docx to Copilot Notebook and focus on the Store Sales Dashboard, Inventory Shrinkage, and Supply Chain KPIs sheets. Ask Notebook to produce a cross-file RAG synthesis of the top risks, the 3 most credible management actions, and the evidence supporting each recommendation, citing the source file for every major point.',
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Upload RT_01_Store_Performance.xlsx and RT_02_Store_Operations_Manual.docx to Copilot Notebook and focus on the Category Margin Tracker, Promotion ROI, and Supply Chain KPIs sheets. Ask Notebook to model a downside scenario for gross margin compression, shrinkage, and promotion inefficiency across the store base, explain which assumptions matter most, and present the answer as a RAG table with immediate, next-quarter, and monitor-only actions.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Upload RT_01_Store_Performance.xlsx, RT_02_Store_Operations_Manual.docx, and RT_03_Supplier_Management_Policy.docx to Copilot Notebook and focus on the Store Sales Dashboard, Category Margin Tracker, and Promotion ROI sheets. Ask Notebook to rank the top 5 opportunities to stabilise performance without creating new compliance or stakeholder risk, and return the answer as a RAG prioritisation table with expected impact and implementation difficulty.'
+          ]
+        },
+        {
+          'tool': '🤝 Cowork (Frontier)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf — sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.',
+          'prompts': [
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Using RT_01_Store_Performance.xlsx, RT_02_Store_Operations_Manual.docx, and RT_03_Supplier_Management_Policy.docx, especially the Store Sales Dashboard, Inventory Shrinkage, and Supply Chain KPIs sheets, research the current market context, draft a 2-page management brief, save it to OneDrive, and email it to the leadership team for review. Then schedule a 30-minute follow-up meeting for next week and label the agenda items Red, Amber, and Green.',
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Using the Category Margin Tracker, Promotion ROI, and Supply Chain KPIs sheets in RT_01_Store_Performance.xlsx, prepare a task tracker, draft the related stakeholder email, store both in SharePoint or OneDrive, and send them to the named owners. Then book a checkpoint meeting and make sure the work is grouped by Merchandising | Store Ops | Supply Chain | Marketing | Finance with clear RAG priorities.'
+          ]
+        },
+        {
+          'tool': '✏️ Edit with Copilot',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.',
+          'prompts': [
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Using RT_02_Store_Operations_Manual.docx in Word for the web and the Store Sales Dashboard and Supply Chain KPIs sheets in RT_01_Store_Performance.xlsx as the fact base, add a new section that sharpens the narrative around gross margin compression, shrinkage, and promotion inefficiency across the store base. Restructure the content into Situation, Key Data, Decisions, and Next Steps, and insert a small RAG summary box at the top.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Using RT_01_Store_Performance.xlsx in Excel for the web, redesign the sheets fed by Category Margin Tracker, Inventory Shrinkage, and Supply Chain KPIs so executives can see the highest-risk items first. Standardise labels, improve formulas where needed, and add a RAG status column plus a one-row summary that updates automatically.'
+          ]
+        },
+        {
+          'tool': '🤖 Word Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.',
+          'prompts': [
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Open RT_02_Store_Operations_Manual.docx in Word for Web and create an agent called \'Segar Rakyat Word Guide\'. Describe it as an assistant that answers questions using RT_02_Store_Operations_Manual.docx plus the Store Sales Dashboard and Inventory Shrinkage sheets in RT_01_Store_Performance.xlsx, then share it with the relevant leadership team.',
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Demo the \'Segar Rakyat Word Guide\' agent by asking: \'What is our most urgent operating risk, what evidence from the Category Margin Tracker and Supply Chain KPIs sheets supports it, and what action does RT_02_Store_Operations_Manual.docx imply we should take first?\'. Show the answer as a short RAG response with the supporting source references.'
+          ]
+        },
+        {
+          'tool': '🤖 PowerPoint Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.',
+          'prompts': [
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Create the leadership presentation in PowerPoint for Web using RT_01_Store_Performance.xlsx and RT_03_Supplier_Management_Policy.docx, then create an agent called \'Segar Rakyat Deck Navigator\'. Tell users it can answer questions tied to the Store Sales Dashboard, Promotion ROI, and Supply Chain KPIs sheets, then share it with the executive team.',
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Demo the \'Segar Rakyat Deck Navigator\' agent by asking: \'Which slide best explains our Red risks, what does the Supply Chain KPIs sheet say about exposure, and what decision do leaders need this week?\'. Request a RAG answer in under 120 words.'
+          ]
+        },
+        {
+          'tool': '🤖 Excel Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.',
+          'prompts': [
+            'You are the Chief Financial Officer at Segar Rakyat Retail Berhad. Open RT_01_Store_Performance.xlsx in Excel for Web and create an agent called \'Segar Rakyat Data Q&A\'. Describe it as an assistant for the Store Sales Dashboard, Category Margin Tracker, Inventory Shrinkage, Promotion ROI, and Supply Chain KPIs sheets that gives instant Red, Amber, and Green answers on performance and risk, then share it with the leadership team.',
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Demo the \'Segar Rakyat Data Q&A\' agent by asking which 3 items are currently Red in the Store Sales Dashboard and Supply Chain KPIs sheets and what management action each implies. Then ask which single Amber item could become Red fastest and why.'
+          ]
+        },
+        {
+          'tool': '🏗 Agent Builder (Copilot Studio)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Build a custom declarative agent in Copilot Studio — no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.',
+          'prompts': [
+            'You are the Chief Merchandising Officer at Segar Rakyat Retail Berhad. Go to Copilot Studio and create an agent called \'Segar Rakyat Intelligence Agent\' using RT_01_Store_Performance.xlsx, RT_02_Store_Operations_Manual.docx, and RT_03_Supplier_Management_Policy.docx as knowledge sources. Tell the agent to answer questions across the Store Sales Dashboard, Category Margin Tracker, Inventory Shrinkage, Promotion ROI, and Supply Chain KPIs sheets, add topics for Store Sales, Margins & Shrinkage, Promotions, Supply Chain, and require every answer to end with a RAG recommendation.',
+            'You are the Chief Operating Officer at Segar Rakyat Retail Berhad. Demo the \'Segar Rakyat Intelligence Agent\' by asking for a 2-minute briefing on the biggest Red issue in the Store Sales Dashboard and Supply Chain KPIs sheets, the best Amber mitigation in RT_03_Supplier_Management_Policy.docx, and the Green signals management can still rely on. Ask for the answer in a RAG table with next-step owners.'
+          ]
+        }
+      ]
+    },
 
-# ── MEDIA & ENTERTAINMENT ─────────────────────────────────────────────────
-ind('media-entertainment','media','Media & Entertainment','📺','#6A1B9A','#7B1FA2',
-    'Prism Media Group',
-    'Linear TV audience -34% — digital pivot + content IP monetisation strategy.',
-    'Prism Media Group operates 4 free-to-air TV channels, 2 radio networks, an OTT streaming platform (PrismPlay), and a content production studio. Linear TV audience has declined 34% in 5 years. PrismPlay has 2.1M subscribers with 28% annual churn. The content studio has 340 hours of unmonetised IP in its library.',
-    ['TC_01_ClearWave_Communications.xlsx','TC_02_ClearWave_Strategy.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the CEO of a Malaysian free-to-air broadcaster facing a 34% audience decline in 5 years from cord-cutting and digital alternatives. Our OTT platform has 2.1M subscribers but a 28% annual churn rate. Draft a 250-word brief for my Board on the strategic path forward. Cover: (1) The realistic future of free-to-air broadcasting in Malaysia given the demographic trends, (2) Whether we should invest aggressively in OTT to grow PrismPlay or focus on defending the FTA broadcast business, (3) How comparable broadcasters (Astro, TV3, RTM) have adapted their strategies.',
-        'What is a content library monetisation strategy for a broadcasting company? We have 340 hours of unmonetised TV content IP. What are the key revenue streams — streaming licensing, international distribution, format sales, YouTube monetisation — and which typically generate the best return for Malaysian content in regional markets?',
-        'Explain what churn rate means for a streaming platform, what a 28% annual churn rate implies for subscriber lifetime value, and what the 3 most effective tactics to reduce streaming platform churn are. Focus on tactics relevant to a Malaysian OTT platform competing with Netflix, Disney+, and YouTube.'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research the Malaysian media and OTT streaming market in 2024–2025. I need: (1) Total OTT subscribers in Malaysia and growth rate, (2) Competitive landscape — Netflix, Disney+, Astro GO, sooka, YouTube Premium, (3) Content preferences of Malaysian audiences — local vs international, Malay vs English vs Chinese language, (4) Advertising market trends — digital vs broadcast. Cite Nielsen, Kantar, or MCMC data.',
-        'Research content library monetisation strategies for regional broadcasters. I need: (1) How broadcasters like ABS-CBN (Philippines), TVRI (Indonesia), and Thai PBS have monetised their content libraries internationally, (2) The value of Southeast Asian content IP in international markets, (3) YouTube Shorts and short-form video monetisation potential for broadcast content. Cite industry sources.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Upload TC_01_ClearWave_Communications.xlsx to Analyst (use as media company data proxy). Ask: Build a subscriber lifetime value (LTV) model for PrismPlay. Inputs: 2.1M subscribers, monthly ARPU MYR 18, 28% annual churn rate. Calculate: (1) Average subscriber lifetime in months, (2) LTV per subscriber, (3) If churn reduces to 20%, what is the LTV improvement? (4) If ARPU increases to MYR 22, what is the LTV improvement? (5) What is the total subscriber value at risk from the current 28% churn vs industry benchmark 18%? Show as a scenario comparison table.',
-        'Analyse the content library monetisation opportunity. 340 hours of content IP. Estimate potential revenue from 5 channels: (1) Licensing to international OTT (assume USD 8,000 per hour), (2) YouTube channel monetisation (assume 2M views/month at USD 3 CPM), (3) Format sales — 5 show formats at USD 180,000 per format, (4) Domestic streaming rights sale to competitor, (5) Content repackaging for Shorts (assume 40% of content suitable). Calculate total addressable revenue from content library monetisation.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Using the Digital Performance tab in this workbook, Build a PrismPlay subscriber dashboard on a new sheet. Show monthly data for the past 12 months: (1) New subscriber additions, (2) Churned subscribers, (3) Net subscriber change, (4) Total subscribers at month end, (5) Monthly churn rate %, (6) ARPU (MYR), (7) Monthly recurring revenue (MYR M). Add a trendline. Highlight months where churn exceeded 2.5% in red.',
-        'Create a content library value dashboard on a new sheet. For each of the top 50 content titles by estimated market value, show: (1) Title, (2) Genre, (3) Production year, (4) Duration (hours), (5) Language, (6) Awards/recognition, (7) Historical viewing data available (Y/N), (8) Rights status (owned/partial/expired), (9) Estimated streaming license value (RM), (10) Monetisation status (Unexploited/In Progress/Monetised). Calculate total unexploited library value.',
-        'Build a digital pivot investment plan on a new sheet. For each digital investment initiative (PrismPlay content spend increase, app UX upgrade, AI personalisation engine, creator partnership programme, live sports streaming rights), show: investment required (RM M), expected subscriber impact (net new or churn reduction), expected ARPU impact, Year 1 and Year 3 revenue contribution, and ROI at 3 years. Sort by Year 3 ROI, highest first.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft a 10-page digital transformation strategy for Prism Media Group. Cover: (1) Market context — linear TV decline, OTT growth, Malaysian consumer behaviour, (2) PrismPlay growth strategy — subscriber target 5M by FY2027, churn reduction to 18%, ARPU to MYR 22, (3) Content strategy — local content investment, premium originals, live sports, reality formats, (4) Content library monetisation — 3-year plan for the 340 hours of IP, (5) Advertising transformation — programmatic digital, addressable TV, branded content, (6) Technology investment — AI personalisation, recommendation engine, data analytics, (7) Financial projections — 3-year revenue and EBITDA. Formal strategy document format.',
-        'Draft a content licensing proposal to a major regional streaming platform (e.g., WeTV or iQIYI). The proposal should: introduce Prism Media Group and our content credentials, highlight our top 10 content titles available for licensing, describe our content quality (HD, with English/Chinese subtitles), propose a licensing package of 200 hours at USD 8,000 per hour plus a first-look agreement for new productions. Professional content distribution format.',
-        'Write a creator partnership programme brief for PrismPlay\'s new creator economy initiative. The programme invites Malaysian content creators with 100K+ followers to produce short-form content for PrismPlay. Cover: (1) Programme overview and goals, (2) Creator eligibility criteria, (3) Revenue share model (60% creator, 40% PrismPlay), (4) Content guidelines — content types, language, duration, (5) Application process. Format as an attractive creator pitch document.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 12-slide strategy presentation for the Prism Media Group Board. Include: (1) The burning platform — linear TV audience -34%, (2) PrismPlay performance — 2.1M subscribers, 28% churn, (3) Market opportunity — 5M subscriber target, (4) Content strategy — local originals, live sports, creator economy, (5) Content library monetisation — 340 hours, RM XX addressable value, (6) Technology investment — AI personalisation, (7) Advertising transformation, (8) Digital organisation restructuring, (9) 3-year financial projections, (10) Investment required — RM XX, (11) Key risks, (12) Board decisions. Purple and white colour scheme.',
-        'Create a 3-slide churn reduction pitch for the PrismPlay product team. Slide 1: Current churn vs benchmark — 28% vs 18% — and the revenue impact (MYR XX annualised loss). Slide 2: The 3 root causes of churn based on exit surveys — content, price, UX. Slide 3: The 3 targeted interventions and their expected churn reduction impact.',
-        'Create a content library opportunity slide — "Our Hidden Asset". Visual: 340 hours of content IP shown as stacked bars by genre. Table showing: monetisation channel, addressable revenue, time to revenue. Total library value estimate at top right. Key message: "We are sitting on RM XX of unexploited value."'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft an email to the CEOs of WeTV (Tencent) and iQIYI proposing a content licensing partnership for Prism Media Group\'s library. The email should: introduce our 340-hour library, highlight our top 5 drama and reality formats, propose a content preview session at their regional offices, and note our interest in a co-production agreement for new Malaysian content targeting pan-ASEAN audiences.',
-        'Draft an email to PrismPlay\'s top 200 subscribers who have been with the platform for over 24 months and have not engaged in the last 30 days. The email should: acknowledge their loyalty, offer a 2-month plan upgrade at no extra cost, highlight 3 new content titles matching their viewing history, and include a personalised "We miss you" message. Warm, personalised tone.',
-        'Draft a press release announcing Prism Media Group\'s digital pivot strategy. Announce: the 5M PrismPlay subscriber target by FY2027, the RM 180M content investment programme for original local productions, the creator partnership programme launch, and the content library international licensing initiative. Quote the CEO and the Head of Digital.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from an editorial, content, or strategy meeting. Identify all content performance discussions, churn-related concerns, and digital strategy action items. Flag any decisions about content investment or platform development.',
-        'Draft follow-up actions from the PrismPlay churn reduction taskforce meeting. Group by workstream: Content Acquisition | UX & Product | Pricing & Promotions | Personalisation & AI | Customer Success. Include owner and deadline.',
-        'Based on this meeting, what specific content genres are being proposed for the local originals programme? Who are the production partners being considered and what is the indicative budget per episode?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload TC_01_ClearWave_Communications.xlsx and TC_02_ClearWave_Strategy.docx to Copilot Notebook. Set instruction: "You are a digital media strategy advisor helping Prism Media Group prioritise their digital investment." Ask: Given a total investment budget of RM 180M over 3 years, how should we allocate between: local original content, technology (AI personalisation), live sports rights, content library monetisation, and creator economy? Provide a data-backed allocation recommendation with expected subscriber and ARPU impact.',
-        'Upload TC_02_ClearWave_Strategy.docx. Ask: PrismPlay is losing subscribers to YouTube Shorts — 18% of churned subscribers cite short-form video preference as their reason for leaving. Should PrismPlay launch a short-form content platform within the app, or partner with YouTube through a branded channel? Analyse both options and recommend the better path for a Malaysian broadcaster with RM 20M to spend on this initiative.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research the top 5 Malaysian content creators with 100K+ followers across YouTube, TikTok, and Instagram who align with PrismPlay\'s entertainment and lifestyle content strategy. (2) Draft personalised partnership outreach messages for each creator in a friendly, collaborative tone. (3) Save to OneDrive as "PrismPlay Creator Partnership Outreach". (4) Email to the Head of Digital Partnerships for review. (5) Schedule a creator partnership launch event to present the programme to 50 creators next month.',
-        'Do all of the following for the content library: (1) Research WeTV, iQIYI, and Viu\'s content acquisition strategies for Southeast Asian drama and reality content — what types they buy and at what price points. (2) Draft a content catalogue pitch document for our top 50 titles. (3) Email to the Content Distribution Director with a request to review and approve within 3 days. (4) Create a content licensing pipeline tracker in SharePoint. (5) Schedule a content preview screening for regional streaming platforms in Kuala Lumpur next quarter.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open TC_02_ClearWave_Strategy.docx in Word for Web. Create an agent called "Prism Media Digital Strategy Bot". Description: "Answers questions from the PrismPlay product, content, and commercial teams on digital strategy priorities, content investment guidelines, creator programme requirements, and OTT platform targets." Share with the digital and content teams.',
-        'Demo: A content acquisitions manager asks "We have a chance to acquire exclusive streaming rights to a popular Korean drama for RM 2.4M. Our content investment guideline requires a minimum 80,000 new-to-platform subscribers triggered by a single title. Based on comparable Korean drama acquisitions, does this title meet our investment threshold?" Show how the agent provides a content investment framework-grounded answer.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the Board strategy presentation. Create an agent called "Prism Media Board Strategy Q&A Bot". Share with the Board and Group executive leadership.',
-        'Demo: A Board member asks "If we invest RM 180M in digital over 3 years and reach 5M PrismPlay subscribers, what is the projected EBITDA in FY2027 compared to FY2024 — and at what subscriber level does PrismPlay become cash flow positive?" Show the agent providing a financial projection-grounded investment case answer.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open TC_01_ClearWave_Communications.xlsx in Excel for Web. Create an agent called "Prism Media Performance Q&A". Description: "Instant answers on PrismPlay subscriber metrics, churn trends, content library value, digital advertising revenue, and linear TV ratings for the CEO and digital leadership." Share with the senior leadership team.',
-        'Demo: Ask "What is PrismPlay\'s monthly net subscriber change for the past 3 months and is churn accelerating or decelerating?" Then: "What is the current estimated revenue of the unexploited content library and which content genre has the highest international licensing value?" Show the CEO getting instant media business intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "Prism Media Intelligence Agent". Description: "Supports Prism Media Group\'s content, digital, and commercial teams with instant answers on PrismPlay subscriber performance, churn drivers, content investment criteria, creator programme requirements, content library licensing, and digital advertising strategy — enabling faster, smarter media and entertainment decisions." Upload TC_01_ClearWave_Communications.xlsx and TC_02_ClearWave_Strategy.docx. Add topics: "PrismPlay Performance", "Content Strategy", "Creator Economy", "Content Library Licensing". Publish to Teams.',
-        'Demo the agent: A content producer pitches an original Malay drama series to the Head of Content at 8am via Teams. The Head of Content quickly asks the agent before the meeting: "For a 13-episode original Malay drama at RM 280,000 per episode (total RM 3.64M), what is the minimum subscriber acquisition we need to justify the investment, and does this genre typically perform well enough to meet our content ROI threshold? Also, have we licensed any similar drama content internationally and at what price?" Show how the agent enables faster, data-driven content commissioning decisions.'
-      ], DESC_BUILDER),
-    ]),
+    {
+      'id': 'media-entertainment',
+      'sectorId': 'media',
+      'name': 'Media & Entertainment',
+      'icon': '📺',
+      'color': '#6A1B9A',
+      'accent': '#7B1FA2',
+      'company': 'Layar Digital Media Berhad',
+      'tagline': 'Subscriber churn and content ROI pressure are colliding with ad softness.',
+      'companyID': 'PT Layar Hiburan Nusantara Tbk',
+      'taglineID': 'Digital growth is real, but monetisation still trails content spend.',
+      'scenario': 'Layar Digital Media Berhad and PT Layar Hiburan Nusantara Tbk run broadcast, streaming, and advertising businesses across Malaysia and Indonesia. Viewership fragmentation, soft advertising demand, and tighter scrutiny on content monetisation are stretching the economics of the digital pivot. Management needs sharper choices on content mix, subscriber growth, and platform investment before the next slate is commissioned.',
+      'files': ['ME_01_Content_Performance.xlsx', 'ME_02_Content_Policy.docx', 'ME_03_Digital_Strategy_Framework.docx'],
+      'prompts': [
+        {
+          'tool': '🤖 Copilot Chat (Basic)',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'prompts': [
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Using ME_01_Content_Performance.xlsx, focus on the Viewership Ratings, Digital Subscriber Metrics, and Platform KPIs sheets to assess subscriber churn, content ROI pressure, and advertising revenue volatility. Quantify the immediate downside, name the 3 decisions management must take in the next 30 days, and present the answer as a RAG table with Red, Amber, and Green actions.',
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Using the Advertising Revenue and Content Cost Tracker sheets in ME_01_Content_Performance.xlsx together with ME_02_Content_Policy.docx, explain how the current operating issue affects strategy, capital allocation, and stakeholder confidence. Present the response as a RAG memo with sections for What We Know, What We Do Not Yet Know, and What We Should Do Next.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Using the Viewership Ratings and Advertising Revenue sheets in ME_01_Content_Performance.xlsx, benchmark our current position against the 2024 to 2025 Malaysia and Indonesia media, streaming, and advertising market. Summarise the 5 most important leading indicators to watch over the next 2 quarters and show them in a RAG scorecard with a short management implication beside each.'
+          ]
+        },
+        {
+          'tool': '🔍 Researcher',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
+          'prompts': [
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Using ME_01_Content_Performance.xlsx, especially the Viewership Ratings, Digital Subscriber Metrics, and Advertising Revenue sheets, plus ME_02_Content_Policy.docx, research 2024 to 2025 market benchmarks, peer disclosures, and financing or valuation signals relevant to subscriber churn, content ROI pressure, and advertising revenue volatility. Present a RAG table with Red for immediate threats, Amber for watchlist items, and Green for supporting market signals, with citations to every source and a one-line implication for management. Flag any claim that could not be independently verified.',
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Using the Content Cost Tracker and Platform KPIs sheets in ME_01_Content_Performance.xlsx and the policy positions in ME_03_Digital_Strategy_Framework.docx, research how KPI TVRI and DOSM or comparable published authorities and industry bodies are treating this issue across Malaysia and Indonesia. Separate mandatory requirements from market practice, cite each source, and present the findings as a RAG matrix with columns for Issue, Malaysia, Indonesia, Timing, and Management Action. Flag any claim that could not be independently verified.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Using the Viewership Ratings, Advertising Revenue, and Content Cost Tracker sheets in ME_01_Content_Performance.xlsx, research the demand, pricing, and competitor trends that will most influence our next 12 months. Present the answer as a RAG table ranking the top 10 external signals by likely impact and management preparedness, with citations beside every row. Flag any claim that could not be independently verified.'
+          ]
+        },
+        {
+          'tool': '📊 Analyst',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
+          'prompts': [
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Upload ME_01_Content_Performance.xlsx to Analyst and use the Viewership Ratings, Digital Subscriber Metrics, and Advertising Revenue sheets to identify the 5 biggest sources of underperformance or stress in the current plan. Quantify the variance where possible, flag each item Red, Amber, or Green based on financial materiality, and end with one corrective action per Red item.',
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Upload ME_01_Content_Performance.xlsx to Analyst and use the Content Cost Tracker and Platform KPIs sheets to model 3 scenarios for subscriber churn, content ROI pressure, and advertising revenue volatility: downside, base case, and recovery case. Show the impact on revenue, margin or cash, plus the operational trigger that would move an item from Amber to Red.',
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Upload ME_01_Content_Performance.xlsx to Analyst and use the Viewership Ratings, Advertising Revenue, and Platform KPIs sheets to build a 13-week watchlist of the metrics most likely to surprise management. Present the output as a RAG dashboard table with columns for Metric, Current Level, Threshold, Risk Status, and Recommended Owner.'
+          ]
+        },
+        {
+          'tool': '📊 Copilot in Excel',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Using ME_01_Content_Performance.xlsx, build a new sheet called \'Layar Digital Executive Dashboard\' from the Viewership Ratings, Digital Subscriber Metrics, and Advertising Revenue sheets. Show the 10 most important KPIs, add a RAG status column driven by clear thresholds, and place an executive summary box at the top that updates automatically.',
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Using ME_01_Content_Performance.xlsx, create a risk tracker that pulls from the Digital Subscriber Metrics, Content Cost Tracker, and Platform KPIs sheets. For each material issue, show owner, due date, estimated financial exposure, and Red/Amber/Green status, then sort Red issues first.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Using ME_01_Content_Performance.xlsx, build a scenario sensitivity sheet using the Viewership Ratings, Advertising Revenue, and Platform KPIs sheets as inputs. Show downside, base, and upside cases side by side, add conditional formatting for RAG thresholds, and include a short note on the trigger that would require management escalation.'
+          ]
+        },
+        {
+          'tool': '📝 Copilot in Word',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Using ME_02_Content_Policy.docx together with the Viewership Ratings and Platform KPIs sheets in ME_01_Content_Performance.xlsx, draft a 2-page Board paper on subscriber churn, content ROI pressure, and advertising revenue volatility. Structure it as Situation, Risks, Decisions Required, and Next 30 Days, and place a compact RAG summary at the top.',
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Using ME_03_Digital_Strategy_Framework.docx and the Digital Subscriber Metrics and Content Cost Tracker sheets in ME_01_Content_Performance.xlsx, draft a policy or action-plan note for the leadership team that translates the data into clear operating actions. Present the recommendations as a RAG table with owners, timing, and expected impact.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Using ME_02_Content_Policy.docx, ME_03_Digital_Strategy_Framework.docx, and the Viewership Ratings sheet in ME_01_Content_Performance.xlsx, draft an external stakeholder briefing note that explains our position factually and shows what management is doing next. After the draft, add a 3-line RAG risk summary covering timing, evidence strength, and stakeholder reaction.'
+          ]
+        },
+        {
+          'tool': '🎯 Copilot in PowerPoint',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Create a 6-slide executive deck using ME_01_Content_Performance.xlsx and ME_02_Content_Policy.docx, grounded in the Viewership Ratings, Advertising Revenue, and Platform KPIs sheets. Cover media & entertainment performance, root causes, key risks, management response, scenario outlook, and decisions required, with one headline takeaway per slide and a visible RAG status marker.',
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Create a 3-slide operating review using the Digital Subscriber Metrics, Advertising Revenue, and Content Cost Tracker sheets in ME_01_Content_Performance.xlsx. Show what is Red, what is Amber, and what is Green, then close with the 5 highest-priority actions and owners.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Build a 2-slide stakeholder briefing from ME_01_Content_Performance.xlsx and ME_03_Digital_Strategy_Framework.docx, using the Viewership Ratings and Platform KPIs sheets as the fact base. The first slide should summarise the issue and the second should show the recovery path in a RAG timeline.'
+          ]
+        },
+        {
+          'tool': '📧 Copilot in Outlook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Using the Viewership Ratings and Platform KPIs sheets in ME_01_Content_Performance.xlsx, draft an email to advertisers, platform partners, and investors explaining the current situation, the evidence supporting our view, and the immediate next step we want from them. After the draft, add a short RAG summary of delivery risk, likely objections, and follow-up timing.',
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Using the Advertising Revenue and Content Cost Tracker sheets in ME_01_Content_Performance.xlsx plus ME_02_Content_Policy.docx, draft a regulator-ready note for KPI TVRI and DOSM or the most relevant authority. Keep the tone factual, distinguish confirmed facts from assumptions, and end with a RAG table of issues that may require further disclosure.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Using the Viewership Ratings, Digital Subscriber Metrics, and Advertising Revenue sheets in ME_01_Content_Performance.xlsx, draft an internal leadership email that aligns owners around the top 5 actions for the next 14 days. Finish with a RAG checklist titled Do Today, Do This Week, and Monitor.'
+          ]
+        },
+        {
+          'tool': '🎙 Copilot in Teams',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
+          'prompts': [
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Using this recorded Teams meeting recap and the Viewership Ratings and Advertising Revenue sheets in ME_01_Content_Performance.xlsx as the operating benchmark, extract all decisions, risks, and unresolved items related to subscriber churn, content ROI pressure, and advertising revenue volatility. Present the result as a RAG table with owners and due dates.',
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Using the Digital Subscriber Metrics and Platform KPIs sheets in ME_01_Content_Performance.xlsx as reference points, draft follow-up actions from the meeting grouped by Content | Product | Advertising | Partnerships | Finance. For each action, include owner, deadline, and whether the item is Red, Amber, or Green.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Using this meeting recap and the Content Cost Tracker sheet in ME_01_Content_Performance.xlsx as context, identify whether any comments suggest hidden downside not yet reflected in management reporting. Summarise the findings as a RAG note with direct quotes or paraphrased evidence from the recap.'
+          ]
+        },
+        {
+          'tool': '📓 Copilot Notebook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
+          'prompts': [
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Upload ME_01_Content_Performance.xlsx, ME_02_Content_Policy.docx, and ME_03_Digital_Strategy_Framework.docx to Copilot Notebook and focus on the Viewership Ratings, Advertising Revenue, and Platform KPIs sheets. Ask Notebook to produce a cross-file RAG synthesis of the top risks, the 3 most credible management actions, and the evidence supporting each recommendation, citing the source file for every major point.',
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Upload ME_01_Content_Performance.xlsx and ME_02_Content_Policy.docx to Copilot Notebook and focus on the Digital Subscriber Metrics, Content Cost Tracker, and Platform KPIs sheets. Ask Notebook to model a downside scenario for subscriber churn, content ROI pressure, and advertising revenue volatility, explain which assumptions matter most, and present the answer as a RAG table with immediate, next-quarter, and monitor-only actions.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Upload ME_01_Content_Performance.xlsx, ME_02_Content_Policy.docx, and ME_03_Digital_Strategy_Framework.docx to Copilot Notebook and focus on the Viewership Ratings, Digital Subscriber Metrics, and Content Cost Tracker sheets. Ask Notebook to rank the top 5 opportunities to stabilise performance without creating new compliance or stakeholder risk, and return the answer as a RAG prioritisation table with expected impact and implementation difficulty.'
+          ]
+        },
+        {
+          'tool': '🤝 Cowork (Frontier)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf — sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.',
+          'prompts': [
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Using ME_01_Content_Performance.xlsx, ME_02_Content_Policy.docx, and ME_03_Digital_Strategy_Framework.docx, especially the Viewership Ratings, Advertising Revenue, and Platform KPIs sheets, research the current market context, draft a 2-page management brief, save it to OneDrive, and email it to the leadership team for review. Then schedule a 30-minute follow-up meeting for next week and label the agenda items Red, Amber, and Green.',
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Using the Digital Subscriber Metrics, Content Cost Tracker, and Platform KPIs sheets in ME_01_Content_Performance.xlsx, prepare a task tracker, draft the related stakeholder email, store both in SharePoint or OneDrive, and send them to the named owners. Then book a checkpoint meeting and make sure the work is grouped by Content | Product | Advertising | Partnerships | Finance with clear RAG priorities.'
+          ]
+        },
+        {
+          'tool': '✏️ Edit with Copilot',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.',
+          'prompts': [
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Using ME_02_Content_Policy.docx in Word for the web and the Viewership Ratings and Platform KPIs sheets in ME_01_Content_Performance.xlsx as the fact base, add a new section that sharpens the narrative around subscriber churn, content ROI pressure, and advertising revenue volatility. Restructure the content into Situation, Key Data, Decisions, and Next Steps, and insert a small RAG summary box at the top.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Using ME_01_Content_Performance.xlsx in Excel for the web, redesign the sheets fed by Digital Subscriber Metrics, Advertising Revenue, and Platform KPIs so executives can see the highest-risk items first. Standardise labels, improve formulas where needed, and add a RAG status column plus a one-row summary that updates automatically.'
+          ]
+        },
+        {
+          'tool': '🤖 Word Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.',
+          'prompts': [
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Open ME_02_Content_Policy.docx in Word for Web and create an agent called \'Layar Digital Word Guide\'. Describe it as an assistant that answers questions using ME_02_Content_Policy.docx plus the Viewership Ratings and Advertising Revenue sheets in ME_01_Content_Performance.xlsx, then share it with the relevant leadership team.',
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Demo the \'Layar Digital Word Guide\' agent by asking: \'What is our most urgent operating risk, what evidence from the Digital Subscriber Metrics and Platform KPIs sheets supports it, and what action does ME_02_Content_Policy.docx imply we should take first?\'. Show the answer as a short RAG response with the supporting source references.'
+          ]
+        },
+        {
+          'tool': '🤖 PowerPoint Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.',
+          'prompts': [
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Create the leadership presentation in PowerPoint for Web using ME_01_Content_Performance.xlsx and ME_03_Digital_Strategy_Framework.docx, then create an agent called \'Layar Digital Deck Navigator\'. Tell users it can answer questions tied to the Viewership Ratings, Content Cost Tracker, and Platform KPIs sheets, then share it with the executive team.',
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Demo the \'Layar Digital Deck Navigator\' agent by asking: \'Which slide best explains our Red risks, what does the Platform KPIs sheet say about exposure, and what decision do leaders need this week?\'. Request a RAG answer in under 120 words.'
+          ]
+        },
+        {
+          'tool': '🤖 Excel Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.',
+          'prompts': [
+            'You are the Chief Financial Officer at Layar Digital Media Berhad. Open ME_01_Content_Performance.xlsx in Excel for Web and create an agent called \'Layar Digital Data Q&A\'. Describe it as an assistant for the Viewership Ratings, Digital Subscriber Metrics, Advertising Revenue, Content Cost Tracker, and Platform KPIs sheets that gives instant Red, Amber, and Green answers on performance and risk, then share it with the leadership team.',
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Demo the \'Layar Digital Data Q&A\' agent by asking which 3 items are currently Red in the Viewership Ratings and Platform KPIs sheets and what management action each implies. Then ask which single Amber item could become Red fastest and why.'
+          ]
+        },
+        {
+          'tool': '🏗 Agent Builder (Copilot Studio)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Build a custom declarative agent in Copilot Studio — no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.',
+          'prompts': [
+            'You are the Chief Digital Officer at Layar Digital Media Berhad. Go to Copilot Studio and create an agent called \'Layar Digital Intelligence Agent\' using ME_01_Content_Performance.xlsx, ME_02_Content_Policy.docx, and ME_03_Digital_Strategy_Framework.docx as knowledge sources. Tell the agent to answer questions across the Viewership Ratings, Digital Subscriber Metrics, Advertising Revenue, Content Cost Tracker, and Platform KPIs sheets, add topics for Viewership, Subscriber Metrics, Advertising Revenue, Content Costs, and require every answer to end with a RAG recommendation.',
+            'You are the Head of Content Strategy at Layar Digital Media Berhad. Demo the \'Layar Digital Intelligence Agent\' by asking for a 2-minute briefing on the biggest Red issue in the Viewership Ratings and Platform KPIs sheets, the best Amber mitigation in ME_03_Digital_Strategy_Framework.docx, and the Green signals management can still rely on. Ask for the answer in a RAG table with next-step owners.'
+          ]
+        }
+      ]
+    }
 ]
 
 print(f"Batch 8 written: {len(INDUSTRIES_8)} entries")
+

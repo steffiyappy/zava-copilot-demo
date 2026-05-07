@@ -1,292 +1,692 @@
-
 import sys; sys.path.insert(0,'.')
 from util import *
 
 INDUSTRIES_7 = [
 
-# ── PROPERTY & REIT ────────────────────────────────────────────────────────
-ind('property-reit','property','Property & REIT','🏢','#1565C0','#1976D2',
-    'Zava Properties Berhad',
-    'MYR 8.2B REIT injection — Shell anchor lease expiry Dec 2026 + Penang MYR 2.1B GDV.',
-    'Zava Properties Berhad manages a 25-asset commercial, industrial, and hospitality portfolio valued at MYR 8.2B across Malaysia and Indonesia. The group is structuring a REIT IPO in 2026. Menara Zava KL\'s anchor tenant (Shell, 820,000 sq ft) has flagged a potential lease non-renewal in December 2026. A Penang mixed-development with MYR 2.1B GDV has received planning approval.',
-    ['14_Zava_Properties_Portfolio.xlsx','03_Zava_Group_Strategy_Framework.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the CFO of a Malaysian property company preparing for a REIT IPO in 2026. Our largest office building (820,000 sq ft, Grade A) has its anchor tenant — a global oil major — expiring in December 2026, 6 months after our planned REIT IPO. This tenant represents 28% of the building\'s rental income. The building\'s REIT valuation will be significantly impacted if the lease is not renewed before IPO. Draft a 250-word strategic brief covering: (1) How tenant departure risk is typically priced in REIT IPO valuations, (2) The negotiation levers I have to incentivise early lease renewal, (3) Whether I should proceed with the REIT IPO before or after the lease renewal decision.',
-        'What is a REIT-in-trust structure for Malaysian property assets? Explain: how assets are injected into the REIT, how the IPO price is calculated, what the SC (Securities Commission) and Bursa Malaysia requirements are, and how the parent company benefits financially from the REIT IPO.',
-        'What are the current Grade A office market conditions in KL and what is the typical absorption rate for large anchor-tenant vacancies? How long would it realistically take to re-tenant an 820,000 sq ft building if the current anchor leaves?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research the Malaysian REIT market in 2024–2025. I need: (1) Current REIT yield compression trends in Malaysia, (2) Recent REIT IPOs and their pricing — average premium/discount to NAV, (3) The major institutional investors in Malaysian REITs and their investment criteria, (4) How comparable Malaysian REITs (Sunway REIT, IGB REIT, Pavilion REIT) have handled large tenant vacancies. Cite sources.',
-        'Research the Penang property market — specifically the mixed-use development segment. What is the current residential and commercial absorption rate in Georgetown and Batu Kawan? Who are the major developer competitors? What GDV pricing benchmarks apply for a MYR 2.1B mixed-use development? Cite Savills, JLL, or CBRE reports.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Analyse the 25-asset portfolio and identify the top 12 REIT-eligible assets. For each, calculate: (1) NPI yield (Net Property Income ÷ Market Value), (2) Weighted average lease expiry (WALE) in years, (3) Occupancy rate. Rank by NPI yield and highlight assets where occupancy is below 80% or WALE is under 2 years — these represent risk factors for the REIT IPO. Create a portfolio heatmap.',
-        'Model 3 REIT IPO scenarios: (A) Include all 12 REIT-eligible assets at current occupancy, (B) Exclude Menara Zava KL if Shell leaves (worst case), (C) Include Menara Zava KL only if Shell renews. For each scenario, calculate: total portfolio NPI yield, IPO valuation at a 5.5% cap rate, parent company net proceeds after debt transfer, and year-1 distribution per unit (DPU) assuming 90% distribution.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Using the Asset Register tab in this workbook, Add a REIT Readiness Assessment column. For each asset, score it against 5 criteria: (1) REIT-eligible (Y/N), (2) Occupancy >85% (Y/N), (3) WALE >3 years (Y/N), (4) NPI yield >5% (Y/N), (5) Lease documentation current (Y/N). Total the score out of 5. Highlight assets scoring 4–5 in green (ready), 3 in amber (conditional), 0–2 in red (not ready).',
-        'Build a lease expiry schedule on a new sheet. For each REIT-eligible asset, list all major tenants, their current lease expiry, the next rent review date, and the lease area in sq ft. Identify any lease expiring within 18 months — flag as "REIT IPO Risk" if the tenant is >10% of the building NLA. Sort by earliest expiry.',
-        'In the REIT Injection Analysis sheet, build a sensitivity table showing the REIT IPO valuation under different cap rate assumptions (4.5%, 5.0%, 5.5%, 6.0%, 6.5%) and occupancy assumptions (80%, 85%, 90%, 95%, 100%). Show the IPO market capitalisation and the net proceeds to Zava Properties under each cell of the matrix.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft a 3-page REIT IPO strategy paper for the Zava Properties Board. Cover: (1) REIT structure and asset injection plan — 12 assets, MYR 8.2B total, (2) IPO timeline — target Q2 2026, key milestones, (3) Shell anchor lease renewal — negotiation strategy and timeline, (4) Pre-IPO asset enhancements — refurbishment and occupancy improvement plans, (5) Expected IPO proceeds and use of funds. Format as a Board strategy paper.',
-        'Draft a 2-page letter to Shell Malaysia\'s Head of Real Estate requesting an early lease renewal discussion for their Menara Zava KL tenancy. The letter should: acknowledge the December 2026 expiry, express Zava Properties\' strong commitment to the relationship, propose a 5-year renewal with enhanced building management services, and request a meeting within 4 weeks. Professional commercial tone.',
-        'Write a 1-page Penang development launch press release for the new MYR 2.1B mixed-use development in Georgetown. Announce the planning approval, the project highlights (residential units, retail podium, serviced apartments), the target completion in Q4 2028, and the JV partner. Include a quote from the Zava Properties MD.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 12-slide REIT IPO roadshow presentation. Include: (1) Zava Properties — company overview and portfolio highlights, (2) Malaysian REIT market overview — yield trends and investor appetite, (3) Portfolio snapshot — 12 assets, MYR 8.2B, (4) Asset quality — occupancy, NPI yield, WALE, (5) Top 5 assets deep dive, (6) Shell lease situation — risk and mitigation, (7) IPO structure and asset injection plan, (8) Financial projections — Year 1 and Year 3 DPU, (9) Growth pipeline — Penang GDV 2.1B, (10) ESG positioning, (11) IPO timeline and milestones, (12) Investment thesis. Dark navy and gold colour scheme.',
-        'Create a one-pager summary slide: "Why Invest in Zava REIT" — 3 key investment highlights, year-1 DPU yield vs Malaysian REIT peer average, portfolio resilience factors, and a high-quality asset photo collage layout.',
-        'Add an anchor tenant risk slide (slide 6) with a visual showing the 3 scenarios (Shell renews / Shell leaves / partial renewal) and their impact on Year 1 DPU. Show this as a simple scenario table with traffic light status and the DPU range for each.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft an email from the Group CFO to Goldman Sachs and CIMB (the proposed joint lead managers for the REIT IPO) requesting a kick-off meeting. The email should: confirm the target Q2 2026 IPO timeline, request their preliminary views on valuation and investor appetite, and note the Shell lease renewal risk as a key discussion point. Attach the REIT strategy summary.',
-        'Draft a follow-up email to the SC (Securities Commission) Malaysia acknowledging receipt of the preliminary REIT registration guidance and confirming our intended filing timeline. List the 5 key documents we will submit with the prospectus application and ask for clarity on the minimum unit holder spread requirement.',
-        'Draft a letter to the Penang State Government acknowledging receipt of the planning approval for the Georgetown mixed-use development. Express gratitude for the expedited approval, confirm the project commencement date, and propose a groundbreaking ceremony at the Governor\'s convenience.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from a property portfolio or asset management review. Identify all lease renewal discussions, occupancy concerns, and asset performance issues. Flag any tenant at risk and summarise the actions the asset management team has agreed to take.',
-        'Draft follow-up actions from the REIT IPO planning meeting. Group by workstream: Legal & Compliance | Valuation | Asset Management | Marketing & Investor Relations | Finance. Include owner and deadline.',
-        'Were there any discussions about the Penang development project in this meeting? If yes, summarise the planning approval status, JV partner discussions, and financing requirements.'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload 14_Zava_Properties_Portfolio.xlsx and 03_Zava_Group_Strategy_Framework.docx to Copilot Notebook. Set instruction: "You are a REIT structuring advisor helping Zava Properties prepare for their 2026 IPO." Ask: Based on the portfolio data and strategy, what is the single biggest risk to the REIT IPO timeline and what concrete action should be taken in the next 30 days to address it?',
-        'If Shell does not renew and Menara Zava KL drops to 70% occupancy, what is the impact on the REIT\'s projected distribution per unit in Year 1 and Year 2? Is the REIT still investable at a 5.5% yield target? What asset enhancement actions could partially offset the revenue loss within 12 months?'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research current Grade A office vacancy rates in KL Sentral, KLCC, and Bangsar South as context for the Shell lease negotiation. (2) Draft a 2-page Shell lease renewal proposal offering a 5-year renewal at current rate plus CPI escalation plus MYR 12M building enhancement commitment. (3) Save to OneDrive as "Shell Lease Renewal Proposal". (4) Email to the Chief Leasing Officer and the General Counsel for review before sending to Shell. (5) Schedule a Shell meeting prep call with the leasing team for next Monday.',
-        'Do all of the following for the REIT IPO: (1) Research the SC Malaysia\'s most recent guidelines on REIT IPO structuring and the minimum requirements for prospectus filing. (2) Draft a 90-day REIT IPO preparation checklist covering legal, valuation, accounting, and investor roadshow workstreams. (3) Email to the CFO, General Counsel, and Head of Finance for review. (4) Create a REIT IPO project folder in SharePoint with the preparation checklist and the asset injection schedule. (5) Schedule a weekly 1-hour REIT IPO steering committee meeting for 20 weeks starting next Monday.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open 03_Zava_Group_Strategy_Framework.docx in Word for Web. Create an agent called "Zava Properties REIT & Strategy Bot". Description: "Answers questions from the Zava Properties team on the REIT IPO strategy, asset injection criteria, lease management requirements, and Penang development milestones." Share with the Properties executive team.',
-        'Demo: An asset manager asks "We have a 180,000 sq ft industrial warehouse in Nilai with 100% occupancy but a 3.8% NPI yield. Does it qualify for REIT injection and is the yield high enough for institutional REIT investors?" Show how the agent provides a data-grounded, strategy-aligned answer.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the REIT IPO roadshow deck. Create an agent called "Zava REIT IPO Roadshow Q&A Bot". Share with institutional investor relations contacts and joint lead managers.',
-        'Demo: An institutional investor asks "What is the Year 1 DPU yield at the indicative IPO price and how does it compare to the average Malaysian REIT peer yield? Also, what is the WALE of the portfolio and which assets carry the highest lease renewal risk?" Show the agent answering a real investor due diligence question.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open 14_Zava_Properties_Portfolio.xlsx in Excel for Web. Create an agent called "Zava Properties Portfolio Q&A". Description: "Instant answers on the 25-asset portfolio — occupancy, NPI yield, WALE, REIT eligibility, and development pipeline — for the CEO, CFO, and asset management team." Share with the Properties executive team.',
-        'Demo: Ask "Which assets currently have occupancy below 85% and what is the combined revenue impact of those vacancies?" Then: "What is the total NPI from the 12 REIT-eligible assets and what REIT market cap does that imply at a 5.5% cap rate?" Show the CFO getting instant portfolio intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "Zava Properties Intelligence Agent". Description: "Supports the Zava Properties team with instant answers on asset portfolio performance, REIT IPO structuring, tenant management, development project status, and Malaysian property market conditions — helping the team make faster, data-driven asset management decisions." Upload 14_Zava_Properties_Portfolio.xlsx and 03_Zava_Group_Strategy_Framework.docx. Add topics: "REIT IPO", "Portfolio Performance", "Tenant Management", "Development Projects". Publish to Teams.',
-        'Demo the agent: The CEO is preparing for a breakfast meeting with a GIC Singapore institutional investor at 7:30am. At 6:45am the CEO asks the agent: "Give me 3 data points about our portfolio quality that will resonate with a Singaporean institutional REIT investor, and tell me the 2 questions they are most likely to ask about our Shell anchor lease risk and how I should answer them." Show how the agent prepares the CEO for a high-stakes investor meeting in under 2 minutes.'
-      ], DESC_BUILDER),
-    ]),
+    {
+      'id': 'property-reit',
+      'sectorId': 'property',
+      'name': 'Property & REIT',
+      'icon': '🏢',
+      'color': '#1565C0',
+      'accent': '#1976D2',
+      'company': 'Aman Jaya Property Berhad',
+      'tagline': 'Anchor lease rollover threatens REIT launch valuation.',
+      'companyID': 'PT Graha Aman Jaya Tbk',
+      'taglineID': 'Jakarta occupancy softness clouds the dual-market story.',
+      'scenario': 'Aman Jaya Property Berhad manages office, logistics, and mixed-use assets in Malaysia while PT Graha Aman Jaya Tbk operates office and retail assets in Indonesia. The group wants a 2026 REIT launch, but a major Kuala Lumpur anchor lease sits inside the risk window, Jakarta occupancy is softening, and refinancing must stay within covenant guardrails. Management needs a cross-border view of valuation, occupancy, and debt resilience before locking the final asset injection perimeter.',
+      'files': ['PROP_01_Portfolio_Performance.xlsx', 'PROP_02_Asset_Management_Policy.docx', 'PROP_03_Development_Brief.docx'],
+      'prompts': [
+        {
+          'tool': '🤖 Copilot Chat (Basic)',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'prompts': [
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Using PROP_01_Portfolio_Performance.xlsx, focus on the Asset NAV Summary, Rental Yield Tracker, and Debt Covenant Monitor sheets to assess an anchor-tenant rollover, softer occupancy, and covenant sensitivity ahead of a REIT launch. Quantify the immediate downside, name the 3 decisions management must take in the next 30 days, and present the answer as a RAG table with Red, Amber, and Green actions.',
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Using the Occupancy Dashboard and Development Pipeline sheets in PROP_01_Portfolio_Performance.xlsx together with PROP_02_Asset_Management_Policy.docx, explain how the current operating issue affects strategy, capital allocation, and stakeholder confidence. Present the response as a RAG memo with sections for What We Know, What We Do Not Yet Know, and What We Should Do Next.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Using the Asset NAV Summary and Occupancy Dashboard sheets in PROP_01_Portfolio_Performance.xlsx, benchmark our current position against the 2024 to 2025 Malaysian and Indonesian commercial property and REIT market. Summarise the 5 most important leading indicators to watch over the next 2 quarters and show them in a RAG scorecard with a short management implication beside each.'
+          ]
+        },
+        {
+          'tool': '🔍 Researcher',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
+          'prompts': [
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Using PROP_01_Portfolio_Performance.xlsx, especially the Asset NAV Summary, Rental Yield Tracker, and Occupancy Dashboard sheets, plus PROP_02_Asset_Management_Policy.docx, research 2024 to 2025 market benchmarks, peer disclosures, and financing or valuation signals relevant to an anchor-tenant rollover, softer occupancy, and covenant sensitivity ahead of a REIT launch. Present a RAG table with Red for immediate threats, Amber for watchlist items, and Green for supporting market signals, with citations to every source and a one-line implication for management. Flag any claim that could not be independently verified.',
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Using the Development Pipeline and Debt Covenant Monitor sheets in PROP_01_Portfolio_Performance.xlsx and the policy positions in PROP_03_Development_Brief.docx, research how DBKL, NAPIC, and OJK or comparable published authorities and industry bodies are treating this issue across Malaysia and Indonesia. Separate mandatory requirements from market practice, cite each source, and present the findings as a RAG matrix with columns for Issue, Malaysia, Indonesia, Timing, and Management Action. Flag any claim that could not be independently verified.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Using the Asset NAV Summary, Occupancy Dashboard, and Development Pipeline sheets in PROP_01_Portfolio_Performance.xlsx, research the demand, pricing, and competitor trends that will most influence our next 12 months. Present the answer as a RAG table ranking the top 10 external signals by likely impact and management preparedness, with citations beside every row. Flag any claim that could not be independently verified.'
+          ]
+        },
+        {
+          'tool': '📊 Analyst',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
+          'prompts': [
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Upload PROP_01_Portfolio_Performance.xlsx to Analyst and use the Asset NAV Summary, Rental Yield Tracker, and Occupancy Dashboard sheets to identify the 5 biggest sources of underperformance or stress in the current plan. Quantify the variance where possible, flag each item Red, Amber, or Green based on financial materiality, and end with one corrective action per Red item.',
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Upload PROP_01_Portfolio_Performance.xlsx to Analyst and use the Development Pipeline and Debt Covenant Monitor sheets to model 3 scenarios for an anchor-tenant rollover, softer occupancy, and covenant sensitivity ahead of a REIT launch: downside, base case, and recovery case. Show the impact on revenue, margin or cash, plus the operational trigger that would move an item from Amber to Red.',
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Upload PROP_01_Portfolio_Performance.xlsx to Analyst and use the Asset NAV Summary, Occupancy Dashboard, and Debt Covenant Monitor sheets to build a 13-week watchlist of the metrics most likely to surprise management. Present the output as a RAG dashboard table with columns for Metric, Current Level, Threshold, Risk Status, and Recommended Owner.'
+          ]
+        },
+        {
+          'tool': '📊 Copilot in Excel',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Using PROP_01_Portfolio_Performance.xlsx, build a new sheet called \'Aman Jaya Property Executive Dashboard\' from the Asset NAV Summary, Rental Yield Tracker, and Occupancy Dashboard sheets. Show the 10 most important KPIs, add a RAG status column driven by clear thresholds, and place an executive summary box at the top that updates automatically.',
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Using PROP_01_Portfolio_Performance.xlsx, create a risk tracker that pulls from the Rental Yield Tracker, Development Pipeline, and Debt Covenant Monitor sheets. For each material issue, show owner, due date, estimated financial exposure, and Red/Amber/Green status, then sort Red issues first.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Using PROP_01_Portfolio_Performance.xlsx, build a scenario sensitivity sheet using the Asset NAV Summary, Occupancy Dashboard, and Debt Covenant Monitor sheets as inputs. Show downside, base, and upside cases side by side, add conditional formatting for RAG thresholds, and include a short note on the trigger that would require management escalation.'
+          ]
+        },
+        {
+          'tool': '📝 Copilot in Word',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Using PROP_02_Asset_Management_Policy.docx together with the Asset NAV Summary and Debt Covenant Monitor sheets in PROP_01_Portfolio_Performance.xlsx, draft a 2-page Board paper on an anchor-tenant rollover, softer occupancy, and covenant sensitivity ahead of a REIT launch. Structure it as Situation, Risks, Decisions Required, and Next 30 Days, and place a compact RAG summary at the top.',
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Using PROP_03_Development_Brief.docx and the Rental Yield Tracker and Development Pipeline sheets in PROP_01_Portfolio_Performance.xlsx, draft a policy or action-plan note for the leadership team that translates the data into clear operating actions. Present the recommendations as a RAG table with owners, timing, and expected impact.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Using PROP_02_Asset_Management_Policy.docx, PROP_03_Development_Brief.docx, and the Asset NAV Summary sheet in PROP_01_Portfolio_Performance.xlsx, draft an external stakeholder briefing note that explains our position factually and shows what management is doing next. After the draft, add a 3-line RAG risk summary covering timing, evidence strength, and stakeholder reaction.'
+          ]
+        },
+        {
+          'tool': '🎯 Copilot in PowerPoint',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Create a 6-slide executive deck using PROP_01_Portfolio_Performance.xlsx and PROP_02_Asset_Management_Policy.docx, grounded in the Asset NAV Summary, Occupancy Dashboard, and Debt Covenant Monitor sheets. Cover property & reit performance, root causes, key risks, management response, scenario outlook, and decisions required, with one headline takeaway per slide and a visible RAG status marker.',
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Create a 3-slide operating review using the Rental Yield Tracker, Occupancy Dashboard, and Development Pipeline sheets in PROP_01_Portfolio_Performance.xlsx. Show what is Red, what is Amber, and what is Green, then close with the 5 highest-priority actions and owners.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Build a 2-slide stakeholder briefing from PROP_01_Portfolio_Performance.xlsx and PROP_03_Development_Brief.docx, using the Asset NAV Summary and Debt Covenant Monitor sheets as the fact base. The first slide should summarise the issue and the second should show the recovery path in a RAG timeline.'
+          ]
+        },
+        {
+          'tool': '📧 Copilot in Outlook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Using the Asset NAV Summary and Debt Covenant Monitor sheets in PROP_01_Portfolio_Performance.xlsx, draft an email to lead banks and cornerstone investors explaining the current situation, the evidence supporting our view, and the immediate next step we want from them. After the draft, add a short RAG summary of delivery risk, likely objections, and follow-up timing.',
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Using the Occupancy Dashboard and Development Pipeline sheets in PROP_01_Portfolio_Performance.xlsx plus PROP_02_Asset_Management_Policy.docx, draft a regulator-ready note for DBKL, NAPIC, and OJK or the most relevant authority. Keep the tone factual, distinguish confirmed facts from assumptions, and end with a RAG table of issues that may require further disclosure.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Using the Asset NAV Summary, Rental Yield Tracker, and Occupancy Dashboard sheets in PROP_01_Portfolio_Performance.xlsx, draft an internal leadership email that aligns owners around the top 5 actions for the next 14 days. Finish with a RAG checklist titled Do Today, Do This Week, and Monitor.'
+          ]
+        },
+        {
+          'tool': '🎙 Copilot in Teams',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
+          'prompts': [
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Using this recorded Teams meeting recap and the Asset NAV Summary and Occupancy Dashboard sheets in PROP_01_Portfolio_Performance.xlsx as the operating benchmark, extract all decisions, risks, and unresolved items related to an anchor-tenant rollover, softer occupancy, and covenant sensitivity ahead of a REIT launch. Present the result as a RAG table with owners and due dates.',
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Using the Rental Yield Tracker and Debt Covenant Monitor sheets in PROP_01_Portfolio_Performance.xlsx as reference points, draft follow-up actions from the meeting grouped by Leasing | Capital Markets | Development | Treasury | Legal. For each action, include owner, deadline, and whether the item is Red, Amber, or Green.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Using this meeting recap and the Development Pipeline sheet in PROP_01_Portfolio_Performance.xlsx as context, identify whether any comments suggest hidden downside not yet reflected in management reporting. Summarise the findings as a RAG note with direct quotes or paraphrased evidence from the recap.'
+          ]
+        },
+        {
+          'tool': '📓 Copilot Notebook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
+          'prompts': [
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Upload PROP_01_Portfolio_Performance.xlsx, PROP_02_Asset_Management_Policy.docx, and PROP_03_Development_Brief.docx to Copilot Notebook and focus on the Asset NAV Summary, Occupancy Dashboard, and Debt Covenant Monitor sheets. Ask Notebook to produce a cross-file RAG synthesis of the top risks, the 3 most credible management actions, and the evidence supporting each recommendation, citing the source file for every major point.',
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Upload PROP_01_Portfolio_Performance.xlsx and PROP_02_Asset_Management_Policy.docx to Copilot Notebook and focus on the Rental Yield Tracker, Development Pipeline, and Debt Covenant Monitor sheets. Ask Notebook to model a downside scenario for an anchor-tenant rollover, softer occupancy, and covenant sensitivity ahead of a REIT launch, explain which assumptions matter most, and present the answer as a RAG table with immediate, next-quarter, and monitor-only actions.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Upload PROP_01_Portfolio_Performance.xlsx, PROP_02_Asset_Management_Policy.docx, and PROP_03_Development_Brief.docx to Copilot Notebook and focus on the Asset NAV Summary, Rental Yield Tracker, and Development Pipeline sheets. Ask Notebook to rank the top 5 opportunities to stabilise performance without creating new compliance or stakeholder risk, and return the answer as a RAG prioritisation table with expected impact and implementation difficulty.'
+          ]
+        },
+        {
+          'tool': '🤝 Cowork (Frontier)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf — sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.',
+          'prompts': [
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Using PROP_01_Portfolio_Performance.xlsx, PROP_02_Asset_Management_Policy.docx, and PROP_03_Development_Brief.docx, especially the Asset NAV Summary, Occupancy Dashboard, and Debt Covenant Monitor sheets, research the current market context, draft a 2-page management brief, save it to OneDrive, and email it to the leadership team for review. Then schedule a 30-minute follow-up meeting for next week and label the agenda items Red, Amber, and Green.',
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Using the Rental Yield Tracker, Development Pipeline, and Debt Covenant Monitor sheets in PROP_01_Portfolio_Performance.xlsx, prepare a task tracker, draft the related stakeholder email, store both in SharePoint or OneDrive, and send them to the named owners. Then book a checkpoint meeting and make sure the work is grouped by Leasing | Capital Markets | Development | Treasury | Legal with clear RAG priorities.'
+          ]
+        },
+        {
+          'tool': '✏️ Edit with Copilot',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.',
+          'prompts': [
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Using PROP_02_Asset_Management_Policy.docx in Word for the web and the Asset NAV Summary and Debt Covenant Monitor sheets in PROP_01_Portfolio_Performance.xlsx as the fact base, add a new section that sharpens the narrative around an anchor-tenant rollover, softer occupancy, and covenant sensitivity ahead of a REIT launch. Restructure the content into Situation, Key Data, Decisions, and Next Steps, and insert a small RAG summary box at the top.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Using PROP_01_Portfolio_Performance.xlsx in Excel for the web, redesign the sheets fed by Rental Yield Tracker, Occupancy Dashboard, and Debt Covenant Monitor so executives can see the highest-risk items first. Standardise labels, improve formulas where needed, and add a RAG status column plus a one-row summary that updates automatically.'
+          ]
+        },
+        {
+          'tool': '🤖 Word Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.',
+          'prompts': [
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Open PROP_02_Asset_Management_Policy.docx in Word for Web and create an agent called \'Aman Jaya Property Word Guide\'. Describe it as an assistant that answers questions using PROP_02_Asset_Management_Policy.docx plus the Asset NAV Summary and Occupancy Dashboard sheets in PROP_01_Portfolio_Performance.xlsx, then share it with the relevant leadership team.',
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Demo the \'Aman Jaya Property Word Guide\' agent by asking: \'What is our most urgent operating risk, what evidence from the Rental Yield Tracker and Debt Covenant Monitor sheets supports it, and what action does PROP_02_Asset_Management_Policy.docx imply we should take first?\'. Show the answer as a short RAG response with the supporting source references.'
+          ]
+        },
+        {
+          'tool': '🤖 PowerPoint Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.',
+          'prompts': [
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Create the leadership presentation in PowerPoint for Web using PROP_01_Portfolio_Performance.xlsx and PROP_03_Development_Brief.docx, then create an agent called \'Aman Jaya Property Deck Navigator\'. Tell users it can answer questions tied to the Asset NAV Summary, Development Pipeline, and Debt Covenant Monitor sheets, then share it with the executive team.',
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Demo the \'Aman Jaya Property Deck Navigator\' agent by asking: \'Which slide best explains our Red risks, what does the Debt Covenant Monitor sheet say about exposure, and what decision do leaders need this week?\'. Request a RAG answer in under 120 words.'
+          ]
+        },
+        {
+          'tool': '🤖 Excel Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.',
+          'prompts': [
+            'You are the Chief Financial Officer at Aman Jaya Property Berhad. Open PROP_01_Portfolio_Performance.xlsx in Excel for Web and create an agent called \'Aman Jaya Property Data Q&A\'. Describe it as an assistant for the Asset NAV Summary, Rental Yield Tracker, Occupancy Dashboard, Development Pipeline, and Debt Covenant Monitor sheets that gives instant Red, Amber, and Green answers on performance and risk, then share it with the leadership team.',
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Demo the \'Aman Jaya Property Data Q&A\' agent by asking which 3 items are currently Red in the Asset NAV Summary and Debt Covenant Monitor sheets and what management action each implies. Then ask which single Amber item could become Red fastest and why.'
+          ]
+        },
+        {
+          'tool': '🏗 Agent Builder (Copilot Studio)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Build a custom declarative agent in Copilot Studio — no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.',
+          'prompts': [
+            'You are the Chief Investment Officer at Aman Jaya Property Berhad. Go to Copilot Studio and create an agent called \'Aman Jaya Property Intelligence Agent\' using PROP_01_Portfolio_Performance.xlsx, PROP_02_Asset_Management_Policy.docx, and PROP_03_Development_Brief.docx as knowledge sources. Tell the agent to answer questions across the Asset NAV Summary, Rental Yield Tracker, Occupancy Dashboard, Development Pipeline, and Debt Covenant Monitor sheets, add topics for Portfolio Performance, Leasing Risk, Development Pipeline, Debt & REIT Readiness, and require every answer to end with a RAG recommendation.',
+            'You are the Head of Asset Management at Aman Jaya Property Berhad. Demo the \'Aman Jaya Property Intelligence Agent\' by asking for a 2-minute briefing on the biggest Red issue in the Asset NAV Summary and Debt Covenant Monitor sheets, the best Amber mitigation in PROP_03_Development_Brief.docx, and the Green signals management can still rely on. Ask for the answer in a RAG table with next-step owners.'
+          ]
+        }
+      ]
+    },
 
-# ── LOGISTICS & 3PL ────────────────────────────────────────────────────────
-ind('logistics-3pl','logistics','Logistics & 3PL','🚢','#00695C','#00796B',
-    'Samudera Logistics',
-    '48 vessels, IMO 2030 decarbonisation — biofuel pilot + cold chain expansion.',
-    'Samudera Logistics operates 48 vessels across ASEAN corridors and manages 340,000 sq ft of bonded warehousing. IMO 2030 carbon intensity regulations require a 40% fuel efficiency improvement. A biofuel blending pilot on 6 vessels launched in Q1 FY2025. Cold chain logistics expansion into 3 new markets is in progress.',
-    ['15_Zava_BPO_Operations.xlsx','20_Zava_ESG_Sustainability_Framework.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the Chief Operations Officer of an ASEAN regional shipping and logistics company operating 48 vessels. IMO 2030 regulations require us to cut carbon intensity by 40% vs 2008 baseline within 5 years. We have launched a biofuel blending pilot on 6 vessels at USD 28/MT premium over conventional bunker fuel. Draft a 250-word brief for our Board on: (1) What IMO 2030 and Carbon Intensity Indicator (CII) ratings mean for vessel valuations and charter contracts, (2) Whether biofuel blending at USD 28/MT premium is financially viable at scale, (3) Alternative decarbonisation pathways for ASEAN regional shipping (LNG, methanol, electrification).',
-        'Explain what the Carbon Intensity Indicator (CII) rating system is for shipping, how vessels are rated from A to E, and what the consequences are for vessels rated D or E — including potential port restrictions and charter contract penalties.',
-        'What is the business case for expanding cold chain logistics in Southeast Asia? What are the key industries driving demand, the infrastructure requirements, and the typical return on investment for a regional 3PL investing MYR 85M in cold storage and refrigerated transport?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research IMO 2030 decarbonisation requirements for ASEAN shipping operators. I need: (1) The CII rating thresholds and how they change annually, (2) How leading ASEAN shipping companies (MISC, PIL, Wan Hai) are addressing IMO 2030 compliance, (3) The availability and pricing of sustainable marine fuels in ASEAN ports, (4) Any Malaysian government incentives for green shipping. Cite official IMO and industry sources.',
-        'Research the ASEAN cold chain logistics market. I need: (1) Market size and growth rate in Malaysia, Indonesia, and Vietnam, (2) Key demand drivers — pharmaceutical, food & beverage, e-commerce, (3) Top 3PL providers and their cold chain capabilities, (4) Investment requirements for cold storage expansion. Cite logistics industry reports.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Upload 15_Zava_BPO_Operations.xlsx (use as operational data proxy). Ask Analyst: Build a fleet CII rating model. For a fleet of 48 vessels with average age 9 years, calculate the CII rating for each vessel class (container, bulker, tanker) based on current fuel consumption and cargo carried. Project the CII rating trajectory if biofuel blending reduces carbon intensity by 12% per year. Which vessels will reach a D or E rating by 2027 without intervention?',
-        'Build a cold chain expansion ROI model. Investment: MYR 85M across 3 markets (Malaysia MYR 45M, Indonesia MYR 28M, Vietnam MYR 12M). Revenue assumptions: Year 1 capacity 40% utilised at MYR 180/pallet/month, Year 3 capacity 75% utilised. Calculate: NPV at 10% discount rate, IRR, and payback period. Show sensitivity to utilisation rate (50%, 65%, 75%, 85%).'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Using the Operations tab in this workbook, Create a fleet CII monitoring dashboard on a new sheet. For each of the 48 vessels, show: (1) Vessel name and class, (2) Current fuel consumption (tonnes/nautical mile), (3) CII score (calculated), (4) CII rating (A/B/C/D/E), (5) Biofuel pilot status (Y/N), (6) Next dry dock date. Highlight D-rated vessels in amber and E-rated vessels in red.',
-        'Build a biofuel blending cost-benefit tracker. For the 6 pilot vessels, show: Monthly biofuel consumption (MT), biofuel premium cost (USD/MT above conventional), total premium cost per month, carbon intensity improvement achieved (%), and CII rating before/after biofuel. Calculate the cost per CII grade improvement point.',
-        'Create a cold chain expansion project tracker on a new sheet. For each of the 3 markets (Malaysia, Indonesia, Vietnam), show: facility size (sq m), storage capacity (pallets), investment (MYR M), build status (design/construction/commissioning/operational), planned go-live date, pre-committed customers, and projected Year 1 revenue. Add a total row and a portfolio IRR calculation.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft a Green Shipping Strategy section for our ESG report. Cover: (1) Our commitment to IMO 2030 CII targets, (2) Biofuel blending pilot results — 6 vessels, 12 months data, (3) Fleet modernisation plan — 8 vessels to be retired by 2026, replaced with dual-fuel capable vessels, (4) Alternative fuel roadmap — evaluation of LNG, methanol, and green ammonia for ASEAN corridors, (5) Investment plan — USD 240M over 5 years in green fleet. Use GRI 302 (Energy) and GRI 305 (Emissions) reporting standards.',
-        'Draft a customer presentation script for cold chain expansion. The script is for a 30-minute meeting with a pharmaceutical manufacturer who is evaluating cold chain outsourcing. Cover: (1) Our cold chain capabilities across Malaysia, Indonesia, and Vietnam, (2) Good Distribution Practice (GDP) certification and regulatory compliance, (3) Real-time temperature monitoring and SCADA system, (4) Case study from an existing pharma customer, (5) Pricing structure and SLA commitments. Include suggested responses to 3 likely objections.',
-        'Draft an urgent response letter to a key customer whose cargo was delayed 72 hours due to a port congestion issue in Surabaya. The letter should: acknowledge the delay and apologise unequivocally, explain the root cause (berth unavailability due to port authority planning issue — not Samudera\'s operational failure), confirm the cargo has now been delivered safely, propose penalty waiver or credit note as goodwill, and outline the contingency routing we have now put in place.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 10-slide investor presentation for Samudera Logistics. Include: (1) Business overview — 48 vessels, ASEAN network, (2) IMO 2030 compliance plan — biofuel pilot results, (3) Fleet CII rating dashboard, (4) Cold chain expansion — MYR 85M investment, 3 markets, (5) Financial performance — revenue and EBITDA, (6) Technology — real-time vessel tracking and cold chain IoT, (7) Sustainability credentials, (8) Growth outlook, (9) Risk factors, (10) Investment thesis. Teal and white colour scheme.',
-        'Create a 3-slide cold chain pitch deck for pharmaceutical customers. Slide 1: Why outsource cold chain to Samudera — 3 key value propositions. Slide 2: Our cold chain network map across Malaysia, Indonesia, Vietnam. Slide 3: GDP compliance, temperature monitoring, and SLA guarantees.',
-        'Create a 2-slide CII compliance update for the Board. Slide 1: Current fleet CII rating distribution — how many vessels at A, B, C, D, E. Slide 2: The 3-year plan to bring all vessels to CII C or better — biofuel, fleet retirement, and dual-fuel newbuilds.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft a proposal email to a large FMCG manufacturer offering an integrated end-to-end cold chain solution — refrigerated sea freight from Indonesia to Malaysia, bonded cold storage in Port Klang, and last-mile refrigerated delivery to 12 distribution points. Include: key service specifications, GDP certification, real-time temperature visibility, and indicative pricing at MYR 195/pallet/month.',
-        'Draft an internal alert to the fleet operations team: a weather system is forecast in the South China Sea over the next 72 hours affecting our 8 vessels on the MY-Vietnam corridor. The alert should: describe the weather situation, state the routing instruction (alternative route via east coast), confirm the customer notification process, and ask vessel masters to confirm receipt.',
-        'Draft an email to IMO\'s Data Collection System (DCS) reporting team confirming our fleet carbon intensity data submission for FY2024. The email should confirm the 48 vessels covered, the fuel consumption and distance data submitted, and note that 6 vessels on the biofuel pilot have their biodiesel volumes separately identified. Request confirmation of receipt.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from an operations or fleet management meeting. Identify all vessel performance issues discussed — CII rating concerns, maintenance alerts, route delays, and customer complaints. Create an action log with owner and deadline.',
-        'Draft a fleet operations update for the weekly leadership meeting. Structure: (1) Fleet status — vessels operational / off hire / in dry dock, (2) CII compliance — any vessels requiring immediate action, (3) Biofuel pilot update, (4) Cold chain facility status, (5) Top 3 customer issues.',
-        'From the meeting transcript, what decisions were made about the biofuel pilot expansion from 6 to 15 vessels? What concerns were raised about biofuel supply availability in Indonesian ports?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload 15_Zava_BPO_Operations.xlsx and 20_Zava_ESG_Sustainability_Framework.docx to Copilot Notebook. Set instruction: "You are a sustainability advisor helping Samudera Logistics achieve IMO 2030 compliance." Ask: Based on the operational data and ESG framework, what is the fastest path to CII B rating for the 12 vessels currently rated C/D? Quantify the cost and the timeline for each intervention option.',
-        'Upload 20_Zava_ESG_Sustainability_Framework.docx. Ask: Our biofuel blending pilot on 6 vessels has achieved a 9% CII improvement but at a USD 28/MT fuel premium. Customers are pushing back on a proposed 4% surcharge to cover the premium. Draft 3 negotiation arguments I can use with customers to justify the surcharge — using both environmental and commercial angles.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research the latest IMO CII rating thresholds for 2025 and 2026 and identify which vessel classes are most affected. (2) Draft an IMO 2030 compliance roadmap for a 48-vessel ASEAN fleet covering biofuel, fleet retirement, and dual-fuel newbuild options. (3) Save to OneDrive as "IMO 2030 Compliance Roadmap". (4) Email to the COO and Head of Fleet Management for review. (5) Schedule a fleet decarbonisation strategy workshop with the ops and sustainability teams.',
-        'Do all of the following for cold chain expansion: (1) Research Good Distribution Practice (GDP) certification requirements for cold chain operators in Malaysia, Indonesia, and Vietnam. (2) Draft a GDP certification application timeline and checklist for each market. (3) Email to the cold chain operations manager and the compliance team asking for review. (4) Create a cold chain project folder in SharePoint with the GDP requirements for each market. (5) Schedule weekly project review meetings with the construction and operations teams.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open 20_Zava_ESG_Sustainability_Framework.docx in Word for Web. Create an agent called "Samudera Sustainability & Compliance Bot". Description: "Answers fleet managers and operations teams on IMO 2030 CII requirements, biofuel specifications, GDP cold chain regulations, and ESG reporting obligations." Share with the fleet management and operations team.',
-        'Demo: A vessel master radios in asking: "We are at 92% of our annual CII allowance with 3 months remaining. What operational measures can I take immediately — speed reduction, fuel change, route optimisation — to keep within the CII C threshold for the year?" Show how the agent provides immediate, practical decarbonisation guidance.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the investor presentation. Create an agent called "Samudera Investor Q&A Bot". Share with investor relations contacts.',
-        'Demo: An analyst asks "What is your current CII rating distribution across the 48-vessel fleet and how confident are you in achieving all vessels at CII C or better by 2027?" Show the agent providing a fleet-data-grounded compliance outlook.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open 15_Zava_BPO_Operations.xlsx in Excel for Web. Create an agent called "Samudera Fleet & Operations Q&A". Description: "Instant answers on fleet CII ratings, biofuel pilot performance, cold chain utilisation, and customer SLA status for the COO and operations leadership." Share with the operations leadership team.',
-        'Demo: Ask "Which vessels are currently at CII D rating and when is their next dry dock scheduled?" Then: "What is the current utilisation rate of our Malaysia cold storage facility and which customer accounts for the largest volume?" Show the COO getting instant operational intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "Samudera Logistics Operations Intelligence Agent". Description: "Supports Samudera\'s fleet managers, operations team, and COO with instant answers on IMO 2030 CII compliance, biofuel pilot data, cold chain operations, customer SLA status, and regulatory requirements — enabling faster, smarter logistics decisions across the ASEAN fleet." Upload 15_Zava_BPO_Operations.xlsx and 20_Zava_ESG_Sustainability_Framework.docx. Add topics: "CII Compliance", "Biofuel Operations", "Cold Chain", "Customer SLA". Publish to Teams.',
-        'Demo the agent: A customer service manager receives a complaint from a pharmaceutical client: "Our insulin shipment temperature log shows 2 excursions above 8°C lasting 4 hours during transit from Penang to Jakarta. The shipment value is USD 840,000. What is our liability, what GDP investigation is required, and do we need to notify the client\'s quality team immediately?" Show how the agent provides an instant, policy-grounded crisis response path.'
-      ], DESC_BUILDER),
-    ]),
+    {
+      'id': 'logistics-3pl',
+      'sectorId': 'logistics',
+      'name': 'Logistics & 3PL',
+      'icon': '🚢',
+      'color': '#00695C',
+      'accent': '#00796B',
+      'company': 'Rangkaian Logistik Nasional Berhad',
+      'tagline': 'SLA pressure collides with cold-chain expansion spend.',
+      'companyID': 'PT Rantai Logistik Nusantara Tbk',
+      'taglineID': 'Transit delays and reefer capex are squeezing the Indonesia network.',
+      'scenario': 'Rangkaian Logistik Nasional Berhad and PT Rantai Logistik Nusantara Tbk run regional freight, warehousing, and cold-chain operations across Malaysia and Indonesia. On-time delivery is slipping, warehouse utilisation is uneven, and the fleet plan requires capex before several major customer SLA renewals. Management must stabilise service levels and decide where to expand cold-chain capacity without eroding margins.',
+      'files': ['LOG_01_Operations_Dashboard.xlsx', 'LOG_02_Service_Level_Agreement.docx', 'LOG_03_Fleet_Management_Policy.docx'],
+      'prompts': [
+        {
+          'tool': '🤖 Copilot Chat (Basic)',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'prompts': [
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Using LOG_01_Operations_Dashboard.xlsx, focus on the Shipment KPIs, On-Time Delivery, and Customer SLA Report sheets to assess on-time-delivery slippage, uneven warehouse utilisation, and cold-chain expansion risk. Quantify the immediate downside, name the 3 decisions management must take in the next 30 days, and present the answer as a RAG table with Red, Amber, and Green actions.',
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Using the Warehouse Utilisation and Fleet Management sheets in LOG_01_Operations_Dashboard.xlsx together with LOG_02_Service_Level_Agreement.docx, explain how the current operating issue affects strategy, capital allocation, and stakeholder confidence. Present the response as a RAG memo with sections for What We Know, What We Do Not Yet Know, and What We Should Do Next.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Using the Shipment KPIs and Warehouse Utilisation sheets in LOG_01_Operations_Dashboard.xlsx, benchmark our current position against the 2024 to 2025 ASEAN contract logistics and cold-chain market. Summarise the 5 most important leading indicators to watch over the next 2 quarters and show them in a RAG scorecard with a short management implication beside each.'
+          ]
+        },
+        {
+          'tool': '🔍 Researcher',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
+          'prompts': [
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Using LOG_01_Operations_Dashboard.xlsx, especially the Shipment KPIs, On-Time Delivery, and Warehouse Utilisation sheets, plus LOG_02_Service_Level_Agreement.docx, research 2024 to 2025 market benchmarks, peer disclosures, and financing or valuation signals relevant to on-time-delivery slippage, uneven warehouse utilisation, and cold-chain expansion risk. Present a RAG table with Red for immediate threats, Amber for watchlist items, and Green for supporting market signals, with citations to every source and a one-line implication for management. Flag any claim that could not be independently verified.',
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Using the Fleet Management and Customer SLA Report sheets in LOG_01_Operations_Dashboard.xlsx and the policy positions in LOG_03_Fleet_Management_Policy.docx, research how SIRIM, Kementerian Perdagangan, and BKPM or comparable published authorities and industry bodies are treating this issue across Malaysia and Indonesia. Separate mandatory requirements from market practice, cite each source, and present the findings as a RAG matrix with columns for Issue, Malaysia, Indonesia, Timing, and Management Action. Flag any claim that could not be independently verified.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Using the Shipment KPIs, Warehouse Utilisation, and Fleet Management sheets in LOG_01_Operations_Dashboard.xlsx, research the demand, pricing, and competitor trends that will most influence our next 12 months. Present the answer as a RAG table ranking the top 10 external signals by likely impact and management preparedness, with citations beside every row. Flag any claim that could not be independently verified.'
+          ]
+        },
+        {
+          'tool': '📊 Analyst',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
+          'prompts': [
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Upload LOG_01_Operations_Dashboard.xlsx to Analyst and use the Shipment KPIs, On-Time Delivery, and Warehouse Utilisation sheets to identify the 5 biggest sources of underperformance or stress in the current plan. Quantify the variance where possible, flag each item Red, Amber, or Green based on financial materiality, and end with one corrective action per Red item.',
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Upload LOG_01_Operations_Dashboard.xlsx to Analyst and use the Fleet Management and Customer SLA Report sheets to model 3 scenarios for on-time-delivery slippage, uneven warehouse utilisation, and cold-chain expansion risk: downside, base case, and recovery case. Show the impact on revenue, margin or cash, plus the operational trigger that would move an item from Amber to Red.',
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Upload LOG_01_Operations_Dashboard.xlsx to Analyst and use the Shipment KPIs, Warehouse Utilisation, and Customer SLA Report sheets to build a 13-week watchlist of the metrics most likely to surprise management. Present the output as a RAG dashboard table with columns for Metric, Current Level, Threshold, Risk Status, and Recommended Owner.'
+          ]
+        },
+        {
+          'tool': '📊 Copilot in Excel',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Using LOG_01_Operations_Dashboard.xlsx, build a new sheet called \'Rangkaian Logistics Executive Dashboard\' from the Shipment KPIs, On-Time Delivery, and Warehouse Utilisation sheets. Show the 10 most important KPIs, add a RAG status column driven by clear thresholds, and place an executive summary box at the top that updates automatically.',
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Using LOG_01_Operations_Dashboard.xlsx, create a risk tracker that pulls from the On-Time Delivery, Fleet Management, and Customer SLA Report sheets. For each material issue, show owner, due date, estimated financial exposure, and Red/Amber/Green status, then sort Red issues first.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Using LOG_01_Operations_Dashboard.xlsx, build a scenario sensitivity sheet using the Shipment KPIs, Warehouse Utilisation, and Customer SLA Report sheets as inputs. Show downside, base, and upside cases side by side, add conditional formatting for RAG thresholds, and include a short note on the trigger that would require management escalation.'
+          ]
+        },
+        {
+          'tool': '📝 Copilot in Word',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Using LOG_02_Service_Level_Agreement.docx together with the Shipment KPIs and Customer SLA Report sheets in LOG_01_Operations_Dashboard.xlsx, draft a 2-page Board paper on on-time-delivery slippage, uneven warehouse utilisation, and cold-chain expansion risk. Structure it as Situation, Risks, Decisions Required, and Next 30 Days, and place a compact RAG summary at the top.',
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Using LOG_03_Fleet_Management_Policy.docx and the On-Time Delivery and Fleet Management sheets in LOG_01_Operations_Dashboard.xlsx, draft a policy or action-plan note for the leadership team that translates the data into clear operating actions. Present the recommendations as a RAG table with owners, timing, and expected impact.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Using LOG_02_Service_Level_Agreement.docx, LOG_03_Fleet_Management_Policy.docx, and the Shipment KPIs sheet in LOG_01_Operations_Dashboard.xlsx, draft an external stakeholder briefing note that explains our position factually and shows what management is doing next. After the draft, add a 3-line RAG risk summary covering timing, evidence strength, and stakeholder reaction.'
+          ]
+        },
+        {
+          'tool': '🎯 Copilot in PowerPoint',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Create a 6-slide executive deck using LOG_01_Operations_Dashboard.xlsx and LOG_02_Service_Level_Agreement.docx, grounded in the Shipment KPIs, Warehouse Utilisation, and Customer SLA Report sheets. Cover logistics & 3pl performance, root causes, key risks, management response, scenario outlook, and decisions required, with one headline takeaway per slide and a visible RAG status marker.',
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Create a 3-slide operating review using the On-Time Delivery, Warehouse Utilisation, and Fleet Management sheets in LOG_01_Operations_Dashboard.xlsx. Show what is Red, what is Amber, and what is Green, then close with the 5 highest-priority actions and owners.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Build a 2-slide stakeholder briefing from LOG_01_Operations_Dashboard.xlsx and LOG_03_Fleet_Management_Policy.docx, using the Shipment KPIs and Customer SLA Report sheets as the fact base. The first slide should summarise the issue and the second should show the recovery path in a RAG timeline.'
+          ]
+        },
+        {
+          'tool': '📧 Copilot in Outlook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Using the Shipment KPIs and Customer SLA Report sheets in LOG_01_Operations_Dashboard.xlsx, draft an email to top contract customers and lending banks explaining the current situation, the evidence supporting our view, and the immediate next step we want from them. After the draft, add a short RAG summary of delivery risk, likely objections, and follow-up timing.',
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Using the Warehouse Utilisation and Fleet Management sheets in LOG_01_Operations_Dashboard.xlsx plus LOG_02_Service_Level_Agreement.docx, draft a regulator-ready note for SIRIM, Kementerian Perdagangan, and BKPM or the most relevant authority. Keep the tone factual, distinguish confirmed facts from assumptions, and end with a RAG table of issues that may require further disclosure.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Using the Shipment KPIs, On-Time Delivery, and Warehouse Utilisation sheets in LOG_01_Operations_Dashboard.xlsx, draft an internal leadership email that aligns owners around the top 5 actions for the next 14 days. Finish with a RAG checklist titled Do Today, Do This Week, and Monitor.'
+          ]
+        },
+        {
+          'tool': '🎙 Copilot in Teams',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
+          'prompts': [
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Using this recorded Teams meeting recap and the Shipment KPIs and Warehouse Utilisation sheets in LOG_01_Operations_Dashboard.xlsx as the operating benchmark, extract all decisions, risks, and unresolved items related to on-time-delivery slippage, uneven warehouse utilisation, and cold-chain expansion risk. Present the result as a RAG table with owners and due dates.',
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Using the On-Time Delivery and Customer SLA Report sheets in LOG_01_Operations_Dashboard.xlsx as reference points, draft follow-up actions from the meeting grouped by Operations | Fleet | Warehousing | Commercial | Compliance. For each action, include owner, deadline, and whether the item is Red, Amber, or Green.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Using this meeting recap and the Fleet Management sheet in LOG_01_Operations_Dashboard.xlsx as context, identify whether any comments suggest hidden downside not yet reflected in management reporting. Summarise the findings as a RAG note with direct quotes or paraphrased evidence from the recap.'
+          ]
+        },
+        {
+          'tool': '📓 Copilot Notebook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
+          'prompts': [
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Upload LOG_01_Operations_Dashboard.xlsx, LOG_02_Service_Level_Agreement.docx, and LOG_03_Fleet_Management_Policy.docx to Copilot Notebook and focus on the Shipment KPIs, Warehouse Utilisation, and Customer SLA Report sheets. Ask Notebook to produce a cross-file RAG synthesis of the top risks, the 3 most credible management actions, and the evidence supporting each recommendation, citing the source file for every major point.',
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Upload LOG_01_Operations_Dashboard.xlsx and LOG_02_Service_Level_Agreement.docx to Copilot Notebook and focus on the On-Time Delivery, Fleet Management, and Customer SLA Report sheets. Ask Notebook to model a downside scenario for on-time-delivery slippage, uneven warehouse utilisation, and cold-chain expansion risk, explain which assumptions matter most, and present the answer as a RAG table with immediate, next-quarter, and monitor-only actions.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Upload LOG_01_Operations_Dashboard.xlsx, LOG_02_Service_Level_Agreement.docx, and LOG_03_Fleet_Management_Policy.docx to Copilot Notebook and focus on the Shipment KPIs, On-Time Delivery, and Fleet Management sheets. Ask Notebook to rank the top 5 opportunities to stabilise performance without creating new compliance or stakeholder risk, and return the answer as a RAG prioritisation table with expected impact and implementation difficulty.'
+          ]
+        },
+        {
+          'tool': '🤝 Cowork (Frontier)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf — sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.',
+          'prompts': [
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Using LOG_01_Operations_Dashboard.xlsx, LOG_02_Service_Level_Agreement.docx, and LOG_03_Fleet_Management_Policy.docx, especially the Shipment KPIs, Warehouse Utilisation, and Customer SLA Report sheets, research the current market context, draft a 2-page management brief, save it to OneDrive, and email it to the leadership team for review. Then schedule a 30-minute follow-up meeting for next week and label the agenda items Red, Amber, and Green.',
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Using the On-Time Delivery, Fleet Management, and Customer SLA Report sheets in LOG_01_Operations_Dashboard.xlsx, prepare a task tracker, draft the related stakeholder email, store both in SharePoint or OneDrive, and send them to the named owners. Then book a checkpoint meeting and make sure the work is grouped by Operations | Fleet | Warehousing | Commercial | Compliance with clear RAG priorities.'
+          ]
+        },
+        {
+          'tool': '✏️ Edit with Copilot',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.',
+          'prompts': [
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Using LOG_02_Service_Level_Agreement.docx in Word for the web and the Shipment KPIs and Customer SLA Report sheets in LOG_01_Operations_Dashboard.xlsx as the fact base, add a new section that sharpens the narrative around on-time-delivery slippage, uneven warehouse utilisation, and cold-chain expansion risk. Restructure the content into Situation, Key Data, Decisions, and Next Steps, and insert a small RAG summary box at the top.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Using LOG_01_Operations_Dashboard.xlsx in Excel for the web, redesign the sheets fed by On-Time Delivery, Warehouse Utilisation, and Customer SLA Report so executives can see the highest-risk items first. Standardise labels, improve formulas where needed, and add a RAG status column plus a one-row summary that updates automatically.'
+          ]
+        },
+        {
+          'tool': '🤖 Word Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.',
+          'prompts': [
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Open LOG_02_Service_Level_Agreement.docx in Word for Web and create an agent called \'Rangkaian Logistics Word Guide\'. Describe it as an assistant that answers questions using LOG_02_Service_Level_Agreement.docx plus the Shipment KPIs and Warehouse Utilisation sheets in LOG_01_Operations_Dashboard.xlsx, then share it with the relevant leadership team.',
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Demo the \'Rangkaian Logistics Word Guide\' agent by asking: \'What is our most urgent operating risk, what evidence from the On-Time Delivery and Customer SLA Report sheets supports it, and what action does LOG_02_Service_Level_Agreement.docx imply we should take first?\'. Show the answer as a short RAG response with the supporting source references.'
+          ]
+        },
+        {
+          'tool': '🤖 PowerPoint Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.',
+          'prompts': [
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Create the leadership presentation in PowerPoint for Web using LOG_01_Operations_Dashboard.xlsx and LOG_03_Fleet_Management_Policy.docx, then create an agent called \'Rangkaian Logistics Deck Navigator\'. Tell users it can answer questions tied to the Shipment KPIs, Fleet Management, and Customer SLA Report sheets, then share it with the executive team.',
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Demo the \'Rangkaian Logistics Deck Navigator\' agent by asking: \'Which slide best explains our Red risks, what does the Customer SLA Report sheet say about exposure, and what decision do leaders need this week?\'. Request a RAG answer in under 120 words.'
+          ]
+        },
+        {
+          'tool': '🤖 Excel Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.',
+          'prompts': [
+            'You are the Chief Financial Officer at Rangkaian Logistik Nasional Berhad. Open LOG_01_Operations_Dashboard.xlsx in Excel for Web and create an agent called \'Rangkaian Logistics Data Q&A\'. Describe it as an assistant for the Shipment KPIs, On-Time Delivery, Warehouse Utilisation, Fleet Management, and Customer SLA Report sheets that gives instant Red, Amber, and Green answers on performance and risk, then share it with the leadership team.',
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Demo the \'Rangkaian Logistics Data Q&A\' agent by asking which 3 items are currently Red in the Shipment KPIs and Customer SLA Report sheets and what management action each implies. Then ask which single Amber item could become Red fastest and why.'
+          ]
+        },
+        {
+          'tool': '🏗 Agent Builder (Copilot Studio)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Build a custom declarative agent in Copilot Studio — no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.',
+          'prompts': [
+            'You are the Chief Operating Officer at Rangkaian Logistik Nasional Berhad. Go to Copilot Studio and create an agent called \'Rangkaian Logistics Intelligence Agent\' using LOG_01_Operations_Dashboard.xlsx, LOG_02_Service_Level_Agreement.docx, and LOG_03_Fleet_Management_Policy.docx as knowledge sources. Tell the agent to answer questions across the Shipment KPIs, On-Time Delivery, Warehouse Utilisation, Fleet Management, and Customer SLA Report sheets, add topics for Shipment KPIs, On-Time Delivery, Warehouse Utilisation, Fleet Management, and require every answer to end with a RAG recommendation.',
+            'You are the Head of Network Planning at Rangkaian Logistik Nasional Berhad. Demo the \'Rangkaian Logistics Intelligence Agent\' by asking for a 2-minute briefing on the biggest Red issue in the Shipment KPIs and Customer SLA Report sheets, the best Amber mitigation in LOG_03_Fleet_Management_Policy.docx, and the Green signals management can still rely on. Ask for the answer in a RAG table with next-step owners.'
+          ]
+        }
+      ]
+    },
 
-# ── COAL MINING ────────────────────────────────────────────────────────────
-ind('coal-mining','mining','Coal Mining','⛏','#424242','#616161',
-    'PrimaCal Energy Berhad',
-    'ESDM royalty audit + EUDR-adjacent ESG risk — coal exit transition plan FY2026.',
-    'PrimaCal Energy Berhad operates 3 thermal coal concessions in East Kalimantan, Indonesia with 28MT annual production capacity. An ESDM (Indonesian Ministry of Energy) royalty audit is underway covering FY2022–FY2024. ESG pressure from European offtakers is intensifying. The Board has resolved to develop a coal exit and energy transition plan by Q4 FY2025.',
-    ['16_Zava_Trading_Commodities.xlsx','20_Zava_ESG_Sustainability_Framework.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the CEO of a Malaysian-listed coal mining company operating in East Kalimantan, Indonesia. Royalty rates from the Indonesian ESDM have increased and a back-audit covering FY2022-FY2024 is underway. Our external auditors estimate additional royalty exposure of USD 18.4M. Draft a 250-word brief for my CFO covering: (1) How coal production royalties in Indonesia are calculated (IUP vs IUPK structure), (2) Typical outcomes of an ESDM back-audit — what can be challenged vs conceded, (3) The accounting treatment for the contingent royalty liability under MFRS 137.',
-        'European institutional shareholders are pressuring us to publish a coal exit timeline. The Board is divided — some directors want to continue mining until 2035 to maximise shareholder returns; others want to announce a 2030 exit. Draft a 200-word board memo arguing the case for a 2030 coal exit with a managed transition to thermal energy assets.',
-        'What is the current thermal coal market outlook for 2025–2027? Which countries are still buying East Kalimantan coal, what is the current Newcastle benchmark price, and how does Indonesian coal trade policy affect export restrictions?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research ESG requirements for coal mining companies listed on Bursa Malaysia. I need: (1) Bursa Malaysia\'s sustainability reporting requirements for mining companies, (2) Whether any Malaysian-listed coal companies have published coal exit timelines and what the investor reaction was, (3) How comparable companies (Bumi Resources, Indo Tambangraya Megah) are managing ESG pressure. Cite sources.',
-        'Research the energy transition opportunity for coal mine operators in East Kalimantan. What clean energy projects are feasible on coal mining land? Are there any Indonesian government incentives for coal-to-clean-energy transitions? What has been the experience of companies like Adaro in transitioning from coal? Cite industry sources.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Analyse our coal trading position. Show: (1) Current open positions — size, direction, mark-to-market value, (2) Limit utilisation — any positions approaching or breaching limits, (3) Price sensitivity — if Newcastle benchmark drops USD 20/MT, what is the impact on open position values? (4) Counterparty concentration — what % of our coal offtake is with European buyers who have coal exclusion policies? Create a risk summary dashboard.',
-        'Model the coal exit transition scenarios. Scenario A: Continue mining until 2035. Scenario B: Exit coal by 2030 and redeploy capital into solar assets in East Kalimantan. Scenario C: Exit coal by 2028 through asset sale. For each scenario, estimate: NPV of remaining coal reserves, transition cost, projected shareholder return over 10 years. Which scenario maximises long-term shareholder value?'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Using the Open Positions tab in this workbook, Build a royalty audit exposure calculator on a new sheet. For FY2022, FY2023, and FY2024, calculate: total coal production (MT), royalty rate applied (%), royalty paid (USD M), ESDM\'s claimed royalty rate (higher %), additional royalty under audit (USD M), penalty and interest (8% per year), total exposure per year. Sum to total contingent liability. Apply red formatting if total exposure exceeds USD 15M.',
-        'Create a coal export revenue sensitivity table. Rows: Newcastle benchmark price (USD 90/MT to USD 180/MT in USD 10 steps). Columns: Production volume (20MT, 24MT, 28MT). Each cell: annual revenue in USD M. Add a breakeven row showing the minimum price to cover all-in cash costs of USD 88/MT. Highlight cells where margin is negative in red, thin margin (<15%) in amber, healthy margin in green.',
-        'Build an energy transition opportunity dashboard on a new sheet. For each of the 3 concession areas, estimate: (1) Land area available for solar after coal exhaustion (ha), (2) Solar generation potential (MW) at 1.5 MW/ha, (3) Estimated project cost at USD 0.8M/MW, (4) Expected IRR at Indonesian solar feed-in tariff, (5) Earliest development timeline. Calculate total transition portfolio size and aggregate IRR.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft a coal exit and energy transition strategy document for Board approval. Cover: (1) Strategic rationale — ESG pressure, policy risk, capital market access, (2) Exit timeline — coal production to cease by December 2030, (3) Capital redeployment — USD 320M into East Kalimantan solar and geothermal assets 2026–2032, (4) Transition cost and funding plan, (5) Employee transition programme — 4,200 mining workers, (6) Community impact and CSR obligations, (7) Investor communication plan. 10 pages, formal board paper format.',
-        'Draft the ESDM royalty audit response letter. The letter should: acknowledge the audit findings, dispute 3 specific line items where we believe the royalty calculation methodology is incorrect, propose a joint verification process with independent auditors, and request a 90-day extension to compile the disputed documentation. Use formal Indonesian government correspondence format.',
-        'Write a 3-page ESG section for our Bursa Malaysia Annual Report. Cover: (1) Our carbon intensity per tonne of coal produced and the year-on-year improvement, (2) Our commitment to the Paris Agreement and the coal exit timeline, (3) Community investment around the 3 mining concessions — schools, healthcare, infrastructure, (4) Mine rehabilitation progress — area rehabilitated in FY2024 vs requirement. Comply with GRI 302, 305, and 413 standards.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create an 8-slide coal exit and energy transition investor presentation. Include: (1) Why we are transitioning — ESG and capital market rationale, (2) Coal exit timeline — 2030, (3) East Kalimantan solar and geothermal opportunity, (4) Transition investment plan — USD 320M, (5) NPV comparison — coal-to-2035 vs transition scenario, (6) Employee and community transition plan, (7) Near-term (2025–2027) financial performance — coal revenues remain strong, (8) Why this transition creates long-term shareholder value. Dark grey and green colour scheme.',
-        'Create a 2-slide royalty audit situation update for the Audit Committee. Slide 1: Audit status — 3 disputed line items, total contingent liability USD 18.4M, provision taken in accounts USD 8M, unresolved USD 10.4M. Slide 2: The 3 specific items disputed and the legal arguments for each.',
-        'Add a slide showing the carbon intensity trend for PrimaCal over the past 5 years vs the Indonesian mining sector benchmark. Show the trajectory to 2030 exit — when does our carbon intensity from operations go to zero?'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft a letter from the CEO to our 3 largest European coal offtakers (combined 38% of our annual production). The letter should: proactively disclose our 2030 coal exit timeline, explain the managed transition plan, reassure them of continued supply through 2030, and invite them to explore a long-term energy partnership as we develop solar and geothermal assets. Tone: strategic, transparent, and forward-looking.',
-        'Draft an internal email from the CFO to the Audit Committee Chairman disclosing the ESDM royalty audit exposure. The email should: state the nature and scale of the contingent liability, the accounting treatment, the legal strategy for disputing 3 items, and the timeline for resolution. Mark as CONFIDENTIAL.',
-        'Draft a community engagement letter to the village heads (kepala desa) of the 12 communities within 5km of our mining concessions. Inform them of the coal exit plan, the mine rehabilitation commitments, and the energy transition projects that will create new employment opportunities. Use community-appropriate language.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from a management or sustainability committee meeting. Identify all ESG-related action items and any discussions about the coal exit strategy or royalty audit. Flag items that are overdue.',
-        'Draft a management update on the royalty audit status for the weekly operations call. Cover: (1) Audit status, (2) Items disputed and timeline, (3) Provision adequacy, (4) Legal team action items, (5) Next ESDM meeting date.',
-        'Were there any discussions about employee communication regarding the 2030 coal exit? What concerns were raised by HR and how is the transition programme being designed?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload 16_Zava_Trading_Commodities.xlsx and 20_Zava_ESG_Sustainability_Framework.docx to Copilot Notebook. Set instruction: "You are an ESG advisor helping PrimaCal Energy develop its coal exit strategy." Ask: Based on the trading position data and ESG framework, which ESG commitments are currently incompatible with continued coal mining operations? Identify the specific GRI or TCFD disclosures where our coal operations represent the biggest exposure.',
-        'Upload 20_Zava_ESG_Sustainability_Framework.docx. Ask: Our 4,200 mining workers will need retraining and redeployment as we phase out coal operations by 2030. Design a 5-year just transition programme covering: skill assessment, retraining priorities (solar installation, environmental rehabilitation, vocational trades), employment partnerships with renewable energy developers, and the budget required per worker.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research the ESDM royalty calculation methodology for Indonesian coal IUP holders and identify any recent court decisions where companies successfully disputed royalty audit findings. (2) Draft a 3-page legal brief summarising our 3 disputed audit items and the strongest arguments for each. (3) Save to OneDrive as "ESDM Royalty Dispute Brief - CONFIDENTIAL". (4) Email to the General Counsel and external counsel with a request for review within 48 hours. (5) Schedule an urgent legal strategy call for tomorrow at 2pm.',
-        'Do all of the following for ESG investor communication: (1) Research how other coal companies have managed the investor communication around their coal exit announcements — what language worked, what backfired. (2) Draft a 500-word ESG transition press release announcing our 2030 coal exit and energy transition plan. (3) Save to OneDrive as "PrimaCal Coal Exit Press Release". (4) Email to the CEO, CFO, and Head of IR for review. (5) Schedule an investor call for next month to answer questions about the transition plan.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open 20_Zava_ESG_Sustainability_Framework.docx in Word for Web. Create an agent called "PrimaCal ESG & Compliance Bot". Description: "Answers questions from the sustainability, legal, and operations teams about ESG reporting requirements, royalty obligations, mine rehabilitation standards, and energy transition options for East Kalimantan." Share with the ESG and legal teams.',
-        'Demo: A sustainability analyst asks "We need to report our Scope 3 emissions for our coal product — the emissions when customers burn the coal. Is Scope 3 Category 11 reporting required under GRI 305 and what data do we need from our customers to calculate it?" Show how the agent provides a technically accurate GRI compliance answer.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the transition investor presentation. Create an agent called "PrimaCal Transition Strategy Q&A". Share with institutional investor relations contacts.',
-        'Demo: A Scandinavian pension fund analyst asks "What is PrimaCal\'s Scope 1 + Scope 2 carbon intensity per tonne of coal produced and how does this compare to the Indonesian mining sector average? Also, will you commit to interim 2027 emissions reduction targets?" Show the agent providing an ESG data-grounded response.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open 16_Zava_Trading_Commodities.xlsx in Excel for Web. Create an agent called "PrimaCal Commodity & Risk Q&A". Description: "Instant answers on coal trading positions, royalty audit exposure, price sensitivity, and energy transition ROI for the CEO, CFO, and risk team." Share with the executive team.',
-        'Demo: Ask "What is our current coal position mark-to-market if Newcastle falls to USD 95/MT?" Then: "What is the royalty audit contingent liability vs what we have provisioned in the accounts?" Show the CFO getting instant risk intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "PrimaCal Energy Intelligence Agent". Description: "Supports PrimaCal\'s executive team, legal counsel, and operations managers with instant answers on coal royalty obligations, ESDM regulatory requirements, ESG reporting standards, coal market outlook, and energy transition strategy — helping the company navigate a complex multi-year transformation." Upload 16_Zava_Trading_Commodities.xlsx and 20_Zava_ESG_Sustainability_Framework.docx. Add topics: "Royalty Compliance", "ESG Reporting", "Energy Transition", "Coal Market". Publish to Teams.',
-        'Demo the agent: The CEO is travelling to Jakarta for an unplanned meeting with ESDM officials about the royalty audit. On the way to the meeting, the CEO asks the agent: "Give me the 3 key facts I need to defend our royalty calculation methodology to ESDM, and tell me the maximum additional liability we would face if we lose all 3 disputed items. Also — what is our current coal price and how does that affect our ability to settle the audit now vs litigate?" Show how the agent prepares the CEO for a high-stakes regulatory meeting in real time.'
-      ], DESC_BUILDER),
-    ]),
+    {
+      'id': 'coal-mining',
+      'sectorId': 'mining',
+      'name': 'Coal Mining',
+      'icon': '⛏',
+      'color': '#424242',
+      'accent': '#616161',
+      'company': 'Bara Jaya Mining Berhad',
+      'tagline': 'Strip ratio spike and safety incidents threaten export margins.',
+      'companyID': 'PT Bara Jaya Energi Tbk',
+      'taglineID': 'Permit scrutiny rises as haul-road safety and rainfall disrupt output.',
+      'scenario': 'Bara Jaya Mining Berhad and PT Bara Jaya Energi Tbk supply thermal coal into regional utility and industrial markets. The strip ratio is rising, export costs per tonne are climbing, and recent safety incidents are increasing scrutiny on operating discipline and environmental controls. Management needs to defend output, cash generation, and licence-to-operate at the same time.',
+      'files': ['COAL_01_Mining_Operations.xlsx', 'COAL_02_Mine_Safety_Manual.docx', 'COAL_03_Environmental_Management_Plan.docx'],
+      'prompts': [
+        {
+          'tool': '🤖 Copilot Chat (Basic)',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'prompts': [
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Using COAL_01_Mining_Operations.xlsx, focus on the Production Log, Strip Ratio Tracker, and Operating Cost per Tonne sheets to assess a rising strip ratio, recurring safety incidents, and margin pressure on export tonnes. Quantify the immediate downside, name the 3 decisions management must take in the next 30 days, and present the answer as a RAG table with Red, Amber, and Green actions.',
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Using the Safety Incident Register and Export Volume Dashboard sheets in COAL_01_Mining_Operations.xlsx together with COAL_02_Mine_Safety_Manual.docx, explain how the current operating issue affects strategy, capital allocation, and stakeholder confidence. Present the response as a RAG memo with sections for What We Know, What We Do Not Yet Know, and What We Should Do Next.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Using the Production Log and Safety Incident Register sheets in COAL_01_Mining_Operations.xlsx, benchmark our current position against the 2024 to 2025 regional seaborne thermal coal market. Summarise the 5 most important leading indicators to watch over the next 2 quarters and show them in a RAG scorecard with a short management implication beside each.'
+          ]
+        },
+        {
+          'tool': '🔍 Researcher',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
+          'prompts': [
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Using COAL_01_Mining_Operations.xlsx, especially the Production Log, Strip Ratio Tracker, and Safety Incident Register sheets, plus COAL_02_Mine_Safety_Manual.docx, research 2024 to 2025 market benchmarks, peer disclosures, and financing or valuation signals relevant to a rising strip ratio, recurring safety incidents, and margin pressure on export tonnes. Present a RAG table with Red for immediate threats, Amber for watchlist items, and Green for supporting market signals, with citations to every source and a one-line implication for management. Flag any claim that could not be independently verified.',
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Using the Export Volume Dashboard and Operating Cost per Tonne sheets in COAL_01_Mining_Operations.xlsx and the policy positions in COAL_03_Environmental_Management_Plan.docx, research how OJK and BKPM or comparable published authorities and industry bodies are treating this issue across Malaysia and Indonesia. Separate mandatory requirements from market practice, cite each source, and present the findings as a RAG matrix with columns for Issue, Malaysia, Indonesia, Timing, and Management Action. Flag any claim that could not be independently verified.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Using the Production Log, Safety Incident Register, and Export Volume Dashboard sheets in COAL_01_Mining_Operations.xlsx, research the demand, pricing, and competitor trends that will most influence our next 12 months. Present the answer as a RAG table ranking the top 10 external signals by likely impact and management preparedness, with citations beside every row. Flag any claim that could not be independently verified.'
+          ]
+        },
+        {
+          'tool': '📊 Analyst',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
+          'prompts': [
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Upload COAL_01_Mining_Operations.xlsx to Analyst and use the Production Log, Strip Ratio Tracker, and Safety Incident Register sheets to identify the 5 biggest sources of underperformance or stress in the current plan. Quantify the variance where possible, flag each item Red, Amber, or Green based on financial materiality, and end with one corrective action per Red item.',
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Upload COAL_01_Mining_Operations.xlsx to Analyst and use the Export Volume Dashboard and Operating Cost per Tonne sheets to model 3 scenarios for a rising strip ratio, recurring safety incidents, and margin pressure on export tonnes: downside, base case, and recovery case. Show the impact on revenue, margin or cash, plus the operational trigger that would move an item from Amber to Red.',
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Upload COAL_01_Mining_Operations.xlsx to Analyst and use the Production Log, Safety Incident Register, and Operating Cost per Tonne sheets to build a 13-week watchlist of the metrics most likely to surprise management. Present the output as a RAG dashboard table with columns for Metric, Current Level, Threshold, Risk Status, and Recommended Owner.'
+          ]
+        },
+        {
+          'tool': '📊 Copilot in Excel',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Using COAL_01_Mining_Operations.xlsx, build a new sheet called \'Bara Jaya Mining Executive Dashboard\' from the Production Log, Strip Ratio Tracker, and Safety Incident Register sheets. Show the 10 most important KPIs, add a RAG status column driven by clear thresholds, and place an executive summary box at the top that updates automatically.',
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Using COAL_01_Mining_Operations.xlsx, create a risk tracker that pulls from the Strip Ratio Tracker, Export Volume Dashboard, and Operating Cost per Tonne sheets. For each material issue, show owner, due date, estimated financial exposure, and Red/Amber/Green status, then sort Red issues first.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Using COAL_01_Mining_Operations.xlsx, build a scenario sensitivity sheet using the Production Log, Safety Incident Register, and Operating Cost per Tonne sheets as inputs. Show downside, base, and upside cases side by side, add conditional formatting for RAG thresholds, and include a short note on the trigger that would require management escalation.'
+          ]
+        },
+        {
+          'tool': '📝 Copilot in Word',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Using COAL_02_Mine_Safety_Manual.docx together with the Production Log and Operating Cost per Tonne sheets in COAL_01_Mining_Operations.xlsx, draft a 2-page Board paper on a rising strip ratio, recurring safety incidents, and margin pressure on export tonnes. Structure it as Situation, Risks, Decisions Required, and Next 30 Days, and place a compact RAG summary at the top.',
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Using COAL_03_Environmental_Management_Plan.docx and the Strip Ratio Tracker and Export Volume Dashboard sheets in COAL_01_Mining_Operations.xlsx, draft a policy or action-plan note for the leadership team that translates the data into clear operating actions. Present the recommendations as a RAG table with owners, timing, and expected impact.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Using COAL_02_Mine_Safety_Manual.docx, COAL_03_Environmental_Management_Plan.docx, and the Production Log sheet in COAL_01_Mining_Operations.xlsx, draft an external stakeholder briefing note that explains our position factually and shows what management is doing next. After the draft, add a 3-line RAG risk summary covering timing, evidence strength, and stakeholder reaction.'
+          ]
+        },
+        {
+          'tool': '🎯 Copilot in PowerPoint',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Create a 6-slide executive deck using COAL_01_Mining_Operations.xlsx and COAL_02_Mine_Safety_Manual.docx, grounded in the Production Log, Safety Incident Register, and Operating Cost per Tonne sheets. Cover coal mining performance, root causes, key risks, management response, scenario outlook, and decisions required, with one headline takeaway per slide and a visible RAG status marker.',
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Create a 3-slide operating review using the Strip Ratio Tracker, Safety Incident Register, and Export Volume Dashboard sheets in COAL_01_Mining_Operations.xlsx. Show what is Red, what is Amber, and what is Green, then close with the 5 highest-priority actions and owners.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Build a 2-slide stakeholder briefing from COAL_01_Mining_Operations.xlsx and COAL_03_Environmental_Management_Plan.docx, using the Production Log and Operating Cost per Tonne sheets as the fact base. The first slide should summarise the issue and the second should show the recovery path in a RAG timeline.'
+          ]
+        },
+        {
+          'tool': '📧 Copilot in Outlook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Using the Production Log and Operating Cost per Tonne sheets in COAL_01_Mining_Operations.xlsx, draft an email to lenders, insurers, and export offtakers explaining the current situation, the evidence supporting our view, and the immediate next step we want from them. After the draft, add a short RAG summary of delivery risk, likely objections, and follow-up timing.',
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Using the Safety Incident Register and Export Volume Dashboard sheets in COAL_01_Mining_Operations.xlsx plus COAL_02_Mine_Safety_Manual.docx, draft a regulator-ready note for OJK and BKPM or the most relevant authority. Keep the tone factual, distinguish confirmed facts from assumptions, and end with a RAG table of issues that may require further disclosure.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Using the Production Log, Strip Ratio Tracker, and Safety Incident Register sheets in COAL_01_Mining_Operations.xlsx, draft an internal leadership email that aligns owners around the top 5 actions for the next 14 days. Finish with a RAG checklist titled Do Today, Do This Week, and Monitor.'
+          ]
+        },
+        {
+          'tool': '🎙 Copilot in Teams',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
+          'prompts': [
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Using this recorded Teams meeting recap and the Production Log and Safety Incident Register sheets in COAL_01_Mining_Operations.xlsx as the operating benchmark, extract all decisions, risks, and unresolved items related to a rising strip ratio, recurring safety incidents, and margin pressure on export tonnes. Present the result as a RAG table with owners and due dates.',
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Using the Strip Ratio Tracker and Operating Cost per Tonne sheets in COAL_01_Mining_Operations.xlsx as reference points, draft follow-up actions from the meeting grouped by Production | Safety | ESG | Marketing | Treasury. For each action, include owner, deadline, and whether the item is Red, Amber, or Green.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Using this meeting recap and the Export Volume Dashboard sheet in COAL_01_Mining_Operations.xlsx as context, identify whether any comments suggest hidden downside not yet reflected in management reporting. Summarise the findings as a RAG note with direct quotes or paraphrased evidence from the recap.'
+          ]
+        },
+        {
+          'tool': '📓 Copilot Notebook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
+          'prompts': [
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Upload COAL_01_Mining_Operations.xlsx, COAL_02_Mine_Safety_Manual.docx, and COAL_03_Environmental_Management_Plan.docx to Copilot Notebook and focus on the Production Log, Safety Incident Register, and Operating Cost per Tonne sheets. Ask Notebook to produce a cross-file RAG synthesis of the top risks, the 3 most credible management actions, and the evidence supporting each recommendation, citing the source file for every major point.',
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Upload COAL_01_Mining_Operations.xlsx and COAL_02_Mine_Safety_Manual.docx to Copilot Notebook and focus on the Strip Ratio Tracker, Export Volume Dashboard, and Operating Cost per Tonne sheets. Ask Notebook to model a downside scenario for a rising strip ratio, recurring safety incidents, and margin pressure on export tonnes, explain which assumptions matter most, and present the answer as a RAG table with immediate, next-quarter, and monitor-only actions.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Upload COAL_01_Mining_Operations.xlsx, COAL_02_Mine_Safety_Manual.docx, and COAL_03_Environmental_Management_Plan.docx to Copilot Notebook and focus on the Production Log, Strip Ratio Tracker, and Export Volume Dashboard sheets. Ask Notebook to rank the top 5 opportunities to stabilise performance without creating new compliance or stakeholder risk, and return the answer as a RAG prioritisation table with expected impact and implementation difficulty.'
+          ]
+        },
+        {
+          'tool': '🤝 Cowork (Frontier)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf — sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.',
+          'prompts': [
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Using COAL_01_Mining_Operations.xlsx, COAL_02_Mine_Safety_Manual.docx, and COAL_03_Environmental_Management_Plan.docx, especially the Production Log, Safety Incident Register, and Operating Cost per Tonne sheets, research the current market context, draft a 2-page management brief, save it to OneDrive, and email it to the leadership team for review. Then schedule a 30-minute follow-up meeting for next week and label the agenda items Red, Amber, and Green.',
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Using the Strip Ratio Tracker, Export Volume Dashboard, and Operating Cost per Tonne sheets in COAL_01_Mining_Operations.xlsx, prepare a task tracker, draft the related stakeholder email, store both in SharePoint or OneDrive, and send them to the named owners. Then book a checkpoint meeting and make sure the work is grouped by Production | Safety | ESG | Marketing | Treasury with clear RAG priorities.'
+          ]
+        },
+        {
+          'tool': '✏️ Edit with Copilot',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.',
+          'prompts': [
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Using COAL_02_Mine_Safety_Manual.docx in Word for the web and the Production Log and Operating Cost per Tonne sheets in COAL_01_Mining_Operations.xlsx as the fact base, add a new section that sharpens the narrative around a rising strip ratio, recurring safety incidents, and margin pressure on export tonnes. Restructure the content into Situation, Key Data, Decisions, and Next Steps, and insert a small RAG summary box at the top.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Using COAL_01_Mining_Operations.xlsx in Excel for the web, redesign the sheets fed by Strip Ratio Tracker, Safety Incident Register, and Operating Cost per Tonne so executives can see the highest-risk items first. Standardise labels, improve formulas where needed, and add a RAG status column plus a one-row summary that updates automatically.'
+          ]
+        },
+        {
+          'tool': '🤖 Word Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.',
+          'prompts': [
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Open COAL_02_Mine_Safety_Manual.docx in Word for Web and create an agent called \'Bara Jaya Mining Word Guide\'. Describe it as an assistant that answers questions using COAL_02_Mine_Safety_Manual.docx plus the Production Log and Safety Incident Register sheets in COAL_01_Mining_Operations.xlsx, then share it with the relevant leadership team.',
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Demo the \'Bara Jaya Mining Word Guide\' agent by asking: \'What is our most urgent operating risk, what evidence from the Strip Ratio Tracker and Operating Cost per Tonne sheets supports it, and what action does COAL_02_Mine_Safety_Manual.docx imply we should take first?\'. Show the answer as a short RAG response with the supporting source references.'
+          ]
+        },
+        {
+          'tool': '🤖 PowerPoint Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.',
+          'prompts': [
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Create the leadership presentation in PowerPoint for Web using COAL_01_Mining_Operations.xlsx and COAL_03_Environmental_Management_Plan.docx, then create an agent called \'Bara Jaya Mining Deck Navigator\'. Tell users it can answer questions tied to the Production Log, Export Volume Dashboard, and Operating Cost per Tonne sheets, then share it with the executive team.',
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Demo the \'Bara Jaya Mining Deck Navigator\' agent by asking: \'Which slide best explains our Red risks, what does the Operating Cost per Tonne sheet say about exposure, and what decision do leaders need this week?\'. Request a RAG answer in under 120 words.'
+          ]
+        },
+        {
+          'tool': '🤖 Excel Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.',
+          'prompts': [
+            'You are the Chief Financial Officer at Bara Jaya Mining Berhad. Open COAL_01_Mining_Operations.xlsx in Excel for Web and create an agent called \'Bara Jaya Mining Data Q&A\'. Describe it as an assistant for the Production Log, Strip Ratio Tracker, Safety Incident Register, Export Volume Dashboard, and Operating Cost per Tonne sheets that gives instant Red, Amber, and Green answers on performance and risk, then share it with the leadership team.',
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Demo the \'Bara Jaya Mining Data Q&A\' agent by asking which 3 items are currently Red in the Production Log and Operating Cost per Tonne sheets and what management action each implies. Then ask which single Amber item could become Red fastest and why.'
+          ]
+        },
+        {
+          'tool': '🏗 Agent Builder (Copilot Studio)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Build a custom declarative agent in Copilot Studio — no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.',
+          'prompts': [
+            'You are the Chief Operating Officer at Bara Jaya Mining Berhad. Go to Copilot Studio and create an agent called \'Bara Jaya Mining Intelligence Agent\' using COAL_01_Mining_Operations.xlsx, COAL_02_Mine_Safety_Manual.docx, and COAL_03_Environmental_Management_Plan.docx as knowledge sources. Tell the agent to answer questions across the Production Log, Strip Ratio Tracker, Safety Incident Register, Export Volume Dashboard, and Operating Cost per Tonne sheets, add topics for Production, Safety & ESG, Export Volume, Cost per Tonne, and require every answer to end with a RAG recommendation.',
+            'You are the Head of Sustainability at Bara Jaya Mining Berhad. Demo the \'Bara Jaya Mining Intelligence Agent\' by asking for a 2-minute briefing on the biggest Red issue in the Production Log and Operating Cost per Tonne sheets, the best Amber mitigation in COAL_03_Environmental_Management_Plan.docx, and the Green signals management can still rely on. Ask for the answer in a RAG table with next-step owners.'
+          ]
+        }
+      ]
+    },
 
-# ── HOTEL & RESORT ────────────────────────────────────────────────────────
-ind('hotel-resort','hospitality','Hotel & Resort','🏨','#AD1457','#C2185B',
-    'Suria Hotels & Resorts',
-    'RevPAR MYR 284 — F&B margin recovery + staff turnover 32% reduction programme.',
-    'Suria Hotels & Resorts operates 14 properties across Malaysia, Indonesia, and Thailand — 4 five-star city hotels, 6 four-star business hotels, and 4 resort properties. RevPAR stands at MYR 284 vs pre-COVID benchmark of MYR 318. F&B margin has slipped to 18.4% from a target of 26%. Staff turnover is 32% — the industry\'s leading challenge post-COVID.',
-    ['HT_01_Suria_Hotels_Resorts.xlsx','18_Zava_HR_Analytics.xlsx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the Chief Commercial Officer of a regional hotel chain with 14 properties in Malaysia, Indonesia, and Thailand. Our RevPAR is MYR 284 vs our pre-COVID benchmark of MYR 318 — a 10.7% gap. Our occupancy has recovered to 74% but our ADR is still 15% below benchmark. Draft a 250-word strategic brief covering: (1) The 3 most effective strategies to close the ADR gap — segmentation, direct booking incentives, and rate parity management, (2) How OTA dependency (currently 58% of room revenue booked through OTAs) is suppressing net ADR, (3) The target direct booking % we should achieve in 12 months to recover MYR 18/RevPAR.',
-        'Explain what F&B contribution margin is in hotel operations, what a target margin of 26% implies for menu pricing and cost of goods sold, and what the 3 most common reasons why hotel F&B margins slip from 26% to 18% post-COVID.',
-        'What are the best practices for reducing staff turnover in the hospitality industry? We have 32% annual turnover across our 14 properties — above the industry benchmark of 28%. Focus on practical retention strategies that work in Southeast Asian hospitality markets.'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research the hotel and resort market recovery in Malaysia, Indonesia, and Thailand in 2024–2025. I need: (1) Current average occupancy and RevPAR benchmarks by market and hotel class (5-star, 4-star, resort), (2) Key demand drivers — MICE, corporate, leisure, inbound tourism, (3) How leading hotel chains (Marriott, IHG, Shangri-La) are driving ADR recovery. Cite industry sources (STR, JLL, CBRE Hotels).',
-        'Research F&B profitability improvement best practices for hotel F&B operations in Southeast Asia. What menu engineering techniques, supplier renegotiation strategies, and upselling training programmes have delivered the best margin improvements? Are there any relevant technology solutions (revenue management, menu analytics) used by leading Asian hotel groups? Cite sources.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Build a RevPAR recovery dashboard. For each of the 14 properties, show: (1) Current RevPAR vs pre-COVID benchmark, (2) Occupancy rate and ADR, (3) OTA booking mix vs direct channels, (4) Year-on-year RevPAR improvement rate. Identify the 3 properties with the biggest RevPAR gap and the 3 with the fastest recovery rate. Calculate the group-level revenue impact if all properties reach pre-COVID RevPAR by end of FY2026.',
-        'Analyse the staff turnover data for the hospitality division. Which properties have turnover above 35%? Which departments are most affected (F&B, Housekeeping, Front Office)? Calculate the annual replacement cost for each property assuming MYR 8,500 recruitment cost per departing employee. Rank properties by total annual turnover cost and identify the 3 highest-cost properties where a retention investment would have the biggest ROI.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Using the Financial Performance tab in this workbook, Create a F&B margin recovery tracker on a new sheet. For each of the 14 properties, show: (1) Current F&B revenue (MYR M), (2) F&B cost of goods sold (MYR M), (3) Current F&B margin %, (4) Target margin 26%, (5) Gap in percentage points, (6) Revenue required at target margin (MYR M). Calculate the group-level F&B revenue improvement at target margin vs current margin.',
-        'Build an OTA mix optimisation dashboard. For each property, show: (1) OTA bookings as % of total, (2) Average OTA commission rate (%), (3) Net ADR after OTA commission, (4) Direct booking ADR (no commission), (5) Revenue gain if OTA mix reduces by 10 percentage points. Highlight properties where the OTA commission cost exceeds MYR 2M per year.',
-        'Create a staff turnover cost model on a new sheet. For each property, input: total headcount, annual turnover %, recruitment cost per hire (MYR 8,500), training cost per new hire (MYR 3,200), and productivity loss during onboarding (estimated as 60% of monthly salary for 60 days). Calculate total annual turnover cost per property and rank from highest to lowest. Show the savings from reducing turnover by 8 percentage points per property.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Open 18_Zava_HR_Analytics.xlsx. Draft a hospitality staff retention programme proposal for the HR Committee. Cover: (1) Current turnover situation — 32%, 14 properties, cost impact MYR XX per year, (2) Root cause analysis — exit interview data, (3) 4 retention initiatives with budget and expected impact: (a) Career development programme, (b) Enhanced housing and transport benefits for remote resorts, (c) Performance-based retention bonus (12-month cliff vesting), (d) Salary benchmarking and uplift for critical roles. (4) Implementation timeline and total investment. Format as a formal HR Committee paper.',
-        'Draft a menu engineering review guide for F&B managers across all 14 properties. The guide should explain: (1) What menu engineering is, (2) The 4 categories (Stars, Ploughhorses, Puzzles, Dogs) and how to classify each menu item, (3) The 5 actions to improve F&B margin (remove dogs, reprice puzzles, promote stars), (4) How to calculate cost per dish and the minimum selling price for 26% margin. Keep language practical — this is for hotel F&B managers, not accountants.',
-        'Write a guest loyalty programme launch announcement for Suria Hotels — "Suria Privileges" programme. Cover: 3 membership tiers (Suria Silver, Gold, Platinum), points earning rates, tier benefits (room upgrades, F&B discounts, express check-in), partner benefits, and enrollment call-to-action. Format as a press release and as a guest email.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 12-slide performance recovery presentation for the Board. Include: (1) FY2025 snapshot — RevPAR MYR 284, occupancy 74%, F&B margin 18.4%, turnover 32%, (2) RevPAR recovery roadmap — target MYR 318 by FY2027, (3) ADR improvement strategy — direct booking and rate management, (4) OTA mix reduction plan, (5) F&B margin recovery — from 18.4% to 26%, (6) Retention programme — cost and expected impact, (7) Revenue per available employee (RevPAE) improvement, (8) Property-by-property performance league table, (9) Capital investment required, (10) Three-year financial projections, (11) Key risks, (12) Board decisions required. Deep rose and gold colour scheme.',
-        'Create a 3-slide RevPAR recovery pitch for a hotel owner client who is considering whether to continue with Suria as the operator. Slide 1: Where we are today vs benchmark. Slide 2: The recovery actions we are implementing. Slide 3: The projected RevPAR trajectory with Suria vs without.',
-        'Create a staff retention infographic slide for the all-staff town hall. Show: 5 retention initiatives, when they launch, and what benefit each brings to frontline hotel employees. Use warm, motivating visuals — this is an internal communication piece.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft an email to all 14 General Managers announcing the F&B margin recovery programme. The email should: state the group target of 26% margin by Q3 FY2025, explain the 4 key actions each property must take (menu engineering review, supplier renegotiation, portion control, upselling training), set the monthly reporting requirement, and ask GMs to nominate their F&B Manager as the property champion. Tone: energetic and performance-focused.',
-        'Draft an email to our top 3 OTA partners (Booking.com, Expedia, Agoda) proposing a preferred partner programme. The proposal should offer enhanced listing visibility and priority placement in exchange for a reduced commission rate and guaranteed rate parity. Frame as a win-win commercial proposition.',
-        'Draft a personalised renewal email to our top 500 loyalty programme members who have not stayed in the past 12 months. The email should: acknowledge their last stay, offer a "welcome back" rate (15% below BAR), invite them to the new Suria Privileges programme, and include a direct booking link. Tone: warm, personal, and exclusive.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from a revenue management or GM operations call. Identify all RevPAR, occupancy, and ADR discussions. Which properties are behind target? What actions have been committed to by GMs? Create an action tracker.',
-        'Draft follow-up actions from the F&B margin review meeting. Group by area: Menu Engineering | Supplier Negotiation | Staff Training | Portion Control. Include property owner and deadline.',
-        'Based on this meeting, which GMs raised the most concern about staff turnover? What specific causes did they identify and what interventions did they request from Group HR?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload HT_01_Suria_Hotels_Resorts.xlsx and 18_Zava_HR_Analytics.xlsx to Copilot Notebook. Set instruction: "You are a hospitality management consultant advising Suria Hotels on RevPAR recovery and operational improvement." Ask: Which 3 properties should receive the most urgent management attention — considering RevPAR gap, F&B margin underperformance, and staff turnover simultaneously? What is the prioritised action plan for each?',
-        'The Bali resort has the highest F&B revenue of all our properties but the lowest F&B margin (14.2%). The GM believes it is because of high food cost from imported ingredients. Design a 90-day F&B margin improvement plan specifically for a Bali resort context — considering local supplier development, menu localisation, and seasonal menu rotation.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research RevPAR recovery strategies used by comparable Asian hotel groups post-COVID and identify the 3 most impactful ADR improvement tactics. (2) Draft a direct booking acceleration plan including website, loyalty programme, and CRM outreach components. (3) Save to OneDrive as "Suria Direct Booking Strategy". (4) Email to the Chief Commercial Officer and VP Revenue Management for review. (5) Schedule a cross-property revenue management workshop for next month.',
-        'Do all of the following for the retention programme: (1) Research salary benchmarks for hotel department heads and frontline roles in Malaysia, Indonesia, and Thailand — identify where Suria is most underpaying vs market. (2) Draft a 12-month retention programme rollout plan with quarterly milestones. (3) Calculate the total programme investment and ROI from reduced turnover costs. (4) Email to the CHRO asking for an urgent review of salary bands for the 4 most critical roles. (5) Schedule a retention taskforce kickoff meeting with all 14 GMs.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open 18_Zava_HR_Analytics.xlsx in Excel for Web. Create a Word summary document on HR policies for hospitality staff and open in Word for Web. Create an agent called "Suria HR & Operations Policy Bot". Description: "Answers questions from hotel GMs and department heads on Suria Hotels HR policies, staff benefits, retention programme details, F&B margin targets, and operational standards." Share with all 14 GMs.',
-        'Demo: A Housekeeping Manager at Suria Hotel Bangkok asks "We have 6 housekeeping staff who have been with us for 3+ years. Are they eligible for the new retention bonus and when is the first payment date? Also, what training must they complete to be enrolled in the career development programme?" Show how the agent empowers managers to retain their team with instant policy answers.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the Board recovery presentation. Create an agent called "Suria Hotels Performance Q&A Bot". Share with hotel owners and the Board.',
-        'Demo: A hotel owner asks "My Penang property has the second-worst RevPAR gap in the portfolio. What specific actions is Suria implementing at my property to close the gap and by when should I expect RevPAR to reach the pre-COVID benchmark?" Show the agent providing a property-specific, data-grounded recovery plan.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open HT_01_Suria_Hotels_Resorts.xlsx in Excel for Web. Create an agent called "Suria Hotels Revenue & Operations Q&A". Description: "Instant answers on RevPAR, occupancy, ADR, F&B margin, and staff turnover across all 14 Suria properties for the CEO, CCO, and property GMs." Share with the revenue and operations leadership.',
-        'Demo: Ask "Which 3 properties have the worst F&B margin and by how much are they below the 26% group target?" Then: "What is the total annual turnover cost across all 14 properties and which single property has the highest turnover-related cost?" Show the COO getting instant multi-property intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "Suria Hotels Intelligence Agent". Description: "Supports Suria Hotels\' GMs, revenue managers, and Group leadership with instant answers on RevPAR performance, F&B margin improvement, retention programme details, OTA strategy, and operational benchmarks across all 14 properties — enabling faster, smarter hospitality management decisions." Upload HT_01_Suria_Hotels_Resorts.xlsx and 18_Zava_HR_Analytics.xlsx. Add topics: "Revenue Management", "F&B Operations", "Staff Retention", "Direct Booking". Publish to Teams.',
-        'Demo the agent: A GM of the KL city hotel is preparing for a difficult owner call at 9am tomorrow. The property\'s RevPAR is MYR 22 below portfolio benchmark. At 8:45am the GM asks the agent: "Give me the 3 specific actions that will have the biggest RevPAR impact at my property in the next 90 days. Also tell me what our F&B margin gap is vs target and the 2 quickest wins to improve it. I need specific numbers, not general advice." Show how the agent empowers the GM to have a confident, data-backed owner conversation.'
-      ], DESC_BUILDER),
-    ]),
+    {
+      'id': 'hotel-resort',
+      'sectorId': 'hospitality',
+      'name': 'Hotel & Resort',
+      'icon': '🏨',
+      'color': '#AD1457',
+      'accent': '#C2185B',
+      'company': 'Seri Bayu Hotels & Resorts Berhad',
+      'tagline': 'RevPAR softens while guest scores and maintenance costs diverge.',
+      'companyID': 'PT Resor Seri Bayu Indonesia',
+      'taglineID': 'Bali demand holds, but margin leakage is widening.',
+      'scenario': 'Seri Bayu Hotels & Resorts Berhad and PT Resor Seri Bayu Indonesia operate urban hotels and destination resorts across Malaysia and Indonesia. RevPAR momentum is mixed, OTA dependency remains high, guest satisfaction is uneven by property, and deferred maintenance is now visible in owner discussions. Management needs a sharper operating playbook before the next peak season and budgeting cycle.',
+      'files': ['HTL_01_Property_Performance.xlsx', 'HTL_02_Brand_Standards_Manual.docx', 'HTL_03_Revenue_Management_Policy.docx'],
+      'prompts': [
+        {
+          'tool': '🤖 Copilot Chat (Basic)',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'prompts': [
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Using HTL_01_Property_Performance.xlsx, focus on the RevPAR Dashboard, Occupancy Rate, and Maintenance Cost Tracker sheets to assess RevPAR softness, uneven guest satisfaction, and maintenance cost overruns. Quantify the immediate downside, name the 3 decisions management must take in the next 30 days, and present the answer as a RAG table with Red, Amber, and Green actions.',
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Using the F&B Revenue and Guest Satisfaction Scores sheets in HTL_01_Property_Performance.xlsx together with HTL_02_Brand_Standards_Manual.docx, explain how the current operating issue affects strategy, capital allocation, and stakeholder confidence. Present the response as a RAG memo with sections for What We Know, What We Do Not Yet Know, and What We Should Do Next.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Using the RevPAR Dashboard and F&B Revenue sheets in HTL_01_Property_Performance.xlsx, benchmark our current position against the 2024 to 2025 Malaysia and Indonesia hotel and resort market. Summarise the 5 most important leading indicators to watch over the next 2 quarters and show them in a RAG scorecard with a short management implication beside each.'
+          ]
+        },
+        {
+          'tool': '🔍 Researcher',
+          'license': 'Free — no M365 Copilot license needed',
+          'account': 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
+          'prompts': [
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Using HTL_01_Property_Performance.xlsx, especially the RevPAR Dashboard, Occupancy Rate, and F&B Revenue sheets, plus HTL_02_Brand_Standards_Manual.docx, research 2024 to 2025 market benchmarks, peer disclosures, and financing or valuation signals relevant to RevPAR softness, uneven guest satisfaction, and maintenance cost overruns. Present a RAG table with Red for immediate threats, Amber for watchlist items, and Green for supporting market signals, with citations to every source and a one-line implication for management. Flag any claim that could not be independently verified.',
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Using the Guest Satisfaction Scores and Maintenance Cost Tracker sheets in HTL_01_Property_Performance.xlsx and the policy positions in HTL_03_Revenue_Management_Policy.docx, research how MyCEB and DOSM or comparable published authorities and industry bodies are treating this issue across Malaysia and Indonesia. Separate mandatory requirements from market practice, cite each source, and present the findings as a RAG matrix with columns for Issue, Malaysia, Indonesia, Timing, and Management Action. Flag any claim that could not be independently verified.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Using the RevPAR Dashboard, F&B Revenue, and Guest Satisfaction Scores sheets in HTL_01_Property_Performance.xlsx, research the demand, pricing, and competitor trends that will most influence our next 12 months. Present the answer as a RAG table ranking the top 10 external signals by likely impact and management preparedness, with citations beside every row. Flag any claim that could not be independently verified.'
+          ]
+        },
+        {
+          'tool': '📊 Analyst',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
+          'prompts': [
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Upload HTL_01_Property_Performance.xlsx to Analyst and use the RevPAR Dashboard, Occupancy Rate, and F&B Revenue sheets to identify the 5 biggest sources of underperformance or stress in the current plan. Quantify the variance where possible, flag each item Red, Amber, or Green based on financial materiality, and end with one corrective action per Red item.',
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Upload HTL_01_Property_Performance.xlsx to Analyst and use the Guest Satisfaction Scores and Maintenance Cost Tracker sheets to model 3 scenarios for RevPAR softness, uneven guest satisfaction, and maintenance cost overruns: downside, base case, and recovery case. Show the impact on revenue, margin or cash, plus the operational trigger that would move an item from Amber to Red.',
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Upload HTL_01_Property_Performance.xlsx to Analyst and use the RevPAR Dashboard, F&B Revenue, and Maintenance Cost Tracker sheets to build a 13-week watchlist of the metrics most likely to surprise management. Present the output as a RAG dashboard table with columns for Metric, Current Level, Threshold, Risk Status, and Recommended Owner.'
+          ]
+        },
+        {
+          'tool': '📊 Copilot in Excel',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Using HTL_01_Property_Performance.xlsx, build a new sheet called \'Seri Bayu Hotels Executive Dashboard\' from the RevPAR Dashboard, Occupancy Rate, and F&B Revenue sheets. Show the 10 most important KPIs, add a RAG status column driven by clear thresholds, and place an executive summary box at the top that updates automatically.',
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Using HTL_01_Property_Performance.xlsx, create a risk tracker that pulls from the Occupancy Rate, Guest Satisfaction Scores, and Maintenance Cost Tracker sheets. For each material issue, show owner, due date, estimated financial exposure, and Red/Amber/Green status, then sort Red issues first.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Using HTL_01_Property_Performance.xlsx, build a scenario sensitivity sheet using the RevPAR Dashboard, F&B Revenue, and Maintenance Cost Tracker sheets as inputs. Show downside, base, and upside cases side by side, add conditional formatting for RAG thresholds, and include a short note on the trigger that would require management escalation.'
+          ]
+        },
+        {
+          'tool': '📝 Copilot in Word',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Using HTL_02_Brand_Standards_Manual.docx together with the RevPAR Dashboard and Maintenance Cost Tracker sheets in HTL_01_Property_Performance.xlsx, draft a 2-page Board paper on RevPAR softness, uneven guest satisfaction, and maintenance cost overruns. Structure it as Situation, Risks, Decisions Required, and Next 30 Days, and place a compact RAG summary at the top.',
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Using HTL_03_Revenue_Management_Policy.docx and the Occupancy Rate and Guest Satisfaction Scores sheets in HTL_01_Property_Performance.xlsx, draft a policy or action-plan note for the leadership team that translates the data into clear operating actions. Present the recommendations as a RAG table with owners, timing, and expected impact.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Using HTL_02_Brand_Standards_Manual.docx, HTL_03_Revenue_Management_Policy.docx, and the RevPAR Dashboard sheet in HTL_01_Property_Performance.xlsx, draft an external stakeholder briefing note that explains our position factually and shows what management is doing next. After the draft, add a 3-line RAG risk summary covering timing, evidence strength, and stakeholder reaction.'
+          ]
+        },
+        {
+          'tool': '🎯 Copilot in PowerPoint',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Create a 6-slide executive deck using HTL_01_Property_Performance.xlsx and HTL_02_Brand_Standards_Manual.docx, grounded in the RevPAR Dashboard, F&B Revenue, and Maintenance Cost Tracker sheets. Cover hotel & resort performance, root causes, key risks, management response, scenario outlook, and decisions required, with one headline takeaway per slide and a visible RAG status marker.',
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Create a 3-slide operating review using the Occupancy Rate, F&B Revenue, and Guest Satisfaction Scores sheets in HTL_01_Property_Performance.xlsx. Show what is Red, what is Amber, and what is Green, then close with the 5 highest-priority actions and owners.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Build a 2-slide stakeholder briefing from HTL_01_Property_Performance.xlsx and HTL_03_Revenue_Management_Policy.docx, using the RevPAR Dashboard and Maintenance Cost Tracker sheets as the fact base. The first slide should summarise the issue and the second should show the recovery path in a RAG timeline.'
+          ]
+        },
+        {
+          'tool': '📧 Copilot in Outlook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'prompts': [
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Using the RevPAR Dashboard and Maintenance Cost Tracker sheets in HTL_01_Property_Performance.xlsx, draft an email to hotel owners and asset managers explaining the current situation, the evidence supporting our view, and the immediate next step we want from them. After the draft, add a short RAG summary of delivery risk, likely objections, and follow-up timing.',
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Using the F&B Revenue and Guest Satisfaction Scores sheets in HTL_01_Property_Performance.xlsx plus HTL_02_Brand_Standards_Manual.docx, draft a regulator-ready note for MyCEB and DOSM or the most relevant authority. Keep the tone factual, distinguish confirmed facts from assumptions, and end with a RAG table of issues that may require further disclosure.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Using the RevPAR Dashboard, Occupancy Rate, and F&B Revenue sheets in HTL_01_Property_Performance.xlsx, draft an internal leadership email that aligns owners around the top 5 actions for the next 14 days. Finish with a RAG checklist titled Do Today, Do This Week, and Monitor.'
+          ]
+        },
+        {
+          'tool': '🎙 Copilot in Teams',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
+          'prompts': [
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Using this recorded Teams meeting recap and the RevPAR Dashboard and F&B Revenue sheets in HTL_01_Property_Performance.xlsx as the operating benchmark, extract all decisions, risks, and unresolved items related to RevPAR softness, uneven guest satisfaction, and maintenance cost overruns. Present the result as a RAG table with owners and due dates.',
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Using the Occupancy Rate and Maintenance Cost Tracker sheets in HTL_01_Property_Performance.xlsx as reference points, draft follow-up actions from the meeting grouped by Revenue Management | Operations | F&B | Guest Experience | Engineering. For each action, include owner, deadline, and whether the item is Red, Amber, or Green.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Using this meeting recap and the Guest Satisfaction Scores sheet in HTL_01_Property_Performance.xlsx as context, identify whether any comments suggest hidden downside not yet reflected in management reporting. Summarise the findings as a RAG note with direct quotes or paraphrased evidence from the recap.'
+          ]
+        },
+        {
+          'tool': '📓 Copilot Notebook',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
+          'prompts': [
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Upload HTL_01_Property_Performance.xlsx, HTL_02_Brand_Standards_Manual.docx, and HTL_03_Revenue_Management_Policy.docx to Copilot Notebook and focus on the RevPAR Dashboard, F&B Revenue, and Maintenance Cost Tracker sheets. Ask Notebook to produce a cross-file RAG synthesis of the top risks, the 3 most credible management actions, and the evidence supporting each recommendation, citing the source file for every major point.',
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Upload HTL_01_Property_Performance.xlsx and HTL_02_Brand_Standards_Manual.docx to Copilot Notebook and focus on the Occupancy Rate, Guest Satisfaction Scores, and Maintenance Cost Tracker sheets. Ask Notebook to model a downside scenario for RevPAR softness, uneven guest satisfaction, and maintenance cost overruns, explain which assumptions matter most, and present the answer as a RAG table with immediate, next-quarter, and monitor-only actions.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Upload HTL_01_Property_Performance.xlsx, HTL_02_Brand_Standards_Manual.docx, and HTL_03_Revenue_Management_Policy.docx to Copilot Notebook and focus on the RevPAR Dashboard, Occupancy Rate, and Guest Satisfaction Scores sheets. Ask Notebook to rank the top 5 opportunities to stabilise performance without creating new compliance or stakeholder risk, and return the answer as a RAG prioritisation table with expected impact and implementation difficulty.'
+          ]
+        },
+        {
+          'tool': '🤝 Cowork (Frontier)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf — sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.',
+          'prompts': [
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Using HTL_01_Property_Performance.xlsx, HTL_02_Brand_Standards_Manual.docx, and HTL_03_Revenue_Management_Policy.docx, especially the RevPAR Dashboard, F&B Revenue, and Maintenance Cost Tracker sheets, research the current market context, draft a 2-page management brief, save it to OneDrive, and email it to the leadership team for review. Then schedule a 30-minute follow-up meeting for next week and label the agenda items Red, Amber, and Green.',
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Using the Occupancy Rate, Guest Satisfaction Scores, and Maintenance Cost Tracker sheets in HTL_01_Property_Performance.xlsx, prepare a task tracker, draft the related stakeholder email, store both in SharePoint or OneDrive, and send them to the named owners. Then book a checkpoint meeting and make sure the work is grouped by Revenue Management | Operations | F&B | Guest Experience | Engineering with clear RAG priorities.'
+          ]
+        },
+        {
+          'tool': '✏️ Edit with Copilot',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.',
+          'prompts': [
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Using HTL_02_Brand_Standards_Manual.docx in Word for the web and the RevPAR Dashboard and Maintenance Cost Tracker sheets in HTL_01_Property_Performance.xlsx as the fact base, add a new section that sharpens the narrative around RevPAR softness, uneven guest satisfaction, and maintenance cost overruns. Restructure the content into Situation, Key Data, Decisions, and Next Steps, and insert a small RAG summary box at the top.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Using HTL_01_Property_Performance.xlsx in Excel for the web, redesign the sheets fed by Occupancy Rate, F&B Revenue, and Maintenance Cost Tracker so executives can see the highest-risk items first. Standardise labels, improve formulas where needed, and add a RAG status column plus a one-row summary that updates automatically.'
+          ]
+        },
+        {
+          'tool': '🤖 Word Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.',
+          'prompts': [
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Open HTL_02_Brand_Standards_Manual.docx in Word for Web and create an agent called \'Seri Bayu Hotels Word Guide\'. Describe it as an assistant that answers questions using HTL_02_Brand_Standards_Manual.docx plus the RevPAR Dashboard and F&B Revenue sheets in HTL_01_Property_Performance.xlsx, then share it with the relevant leadership team.',
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Demo the \'Seri Bayu Hotels Word Guide\' agent by asking: \'What is our most urgent operating risk, what evidence from the Occupancy Rate and Maintenance Cost Tracker sheets supports it, and what action does HTL_02_Brand_Standards_Manual.docx imply we should take first?\'. Show the answer as a short RAG response with the supporting source references.'
+          ]
+        },
+        {
+          'tool': '🤖 PowerPoint Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.',
+          'prompts': [
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Create the leadership presentation in PowerPoint for Web using HTL_01_Property_Performance.xlsx and HTL_03_Revenue_Management_Policy.docx, then create an agent called \'Seri Bayu Hotels Deck Navigator\'. Tell users it can answer questions tied to the RevPAR Dashboard, Guest Satisfaction Scores, and Maintenance Cost Tracker sheets, then share it with the executive team.',
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Demo the \'Seri Bayu Hotels Deck Navigator\' agent by asking: \'Which slide best explains our Red risks, what does the Maintenance Cost Tracker sheet say about exposure, and what decision do leaders need this week?\'. Request a RAG answer in under 120 words.'
+          ]
+        },
+        {
+          'tool': '🤖 Excel Agent',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.',
+          'prompts': [
+            'You are the Chief Financial Officer at Seri Bayu Hotels & Resorts Berhad. Open HTL_01_Property_Performance.xlsx in Excel for Web and create an agent called \'Seri Bayu Hotels Data Q&A\'. Describe it as an assistant for the RevPAR Dashboard, Occupancy Rate, F&B Revenue, Guest Satisfaction Scores, and Maintenance Cost Tracker sheets that gives instant Red, Amber, and Green answers on performance and risk, then share it with the leadership team.',
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Demo the \'Seri Bayu Hotels Data Q&A\' agent by asking which 3 items are currently Red in the RevPAR Dashboard and Maintenance Cost Tracker sheets and what management action each implies. Then ask which single Amber item could become Red fastest and why.'
+          ]
+        },
+        {
+          'tool': '🏗 Agent Builder (Copilot Studio)',
+          'license': 'M365 Copilot',
+          'account': 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          'desc': 'Build a custom declarative agent in Copilot Studio — no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.',
+          'prompts': [
+            'You are the Chief Commercial Officer at Seri Bayu Hotels & Resorts Berhad. Go to Copilot Studio and create an agent called \'Seri Bayu Hotels Intelligence Agent\' using HTL_01_Property_Performance.xlsx, HTL_02_Brand_Standards_Manual.docx, and HTL_03_Revenue_Management_Policy.docx as knowledge sources. Tell the agent to answer questions across the RevPAR Dashboard, Occupancy Rate, F&B Revenue, Guest Satisfaction Scores, and Maintenance Cost Tracker sheets, add topics for RevPAR & Occupancy, F&B Performance, Guest Experience, Maintenance Costs, and require every answer to end with a RAG recommendation.',
+            'You are the Head of Hotel Operations at Seri Bayu Hotels & Resorts Berhad. Demo the \'Seri Bayu Hotels Intelligence Agent\' by asking for a 2-minute briefing on the biggest Red issue in the RevPAR Dashboard and Maintenance Cost Tracker sheets, the best Amber mitigation in HTL_03_Revenue_Management_Policy.docx, and the Green signals management can still rely on. Ask for the answer in a RAG table with next-step owners.'
+          ]
+        }
+      ]
+    }
 ]
 
 print(f"Batch 7 written: {len(INDUSTRIES_7)} entries")
+

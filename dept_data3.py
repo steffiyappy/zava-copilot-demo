@@ -1,221 +1,133 @@
-
 import sys; sys.path.insert(0,'.')
-from util import *
+from batch_prompt_factory import build_entry
 
-DEPARTMENTS_3 = [
+ENTRY_CONFIGS = [{'accent': '#C2185B',
+'agent_name': 'Seri Angkasa Communications Intelligence Agent',
+'agent_share': 'marketing leaders, communications heads, and campaign managers',
+'board_body': 'Executive Communications Review',
+'builder_crisis': 'A journalist calls during launch week with questions about a negative trend that is already '
+'visible in social sentiment and leadership wants a response recommendation immediately.',
+'challenge': 'the drop in campaign ROI, the mixed brand sentiment, and the need to recover qualified leads without '
+'creating message risk',
+'color': '#AD1457',
+'company': 'Seri Angkasa Holdings Berhad — Brand, Marketing & Communications',
+'companyID': 'PT Seri Angkasa Nusantara — Divisi Pemasaran dan Komunikasi',
+'deadline': 'three weeks',
+'demo_question': 'Which campaigns are Red on ROI and sentiment, what evidence supports that, and which message '
+'should we change first?',
+'external_party': 'the CEO, sales leadership, and key media contacts',
+'files': ['MKT_01_Campaign_Performance.xlsx', 'MKT_02_Brand_Guidelines.docx', 'MKT_03_Communications_Playbook.docx'],
+'icon': '📢',
+'id': 'dept-marketing',
+'name': 'Marketing & Communications',
+'peer_set': 'ASEAN brand teams, investor-day communications practice, and campaign-optimisation benchmarks',
+'regulators': 'advertising standards, disclosure discipline, and reputation-management best practice',
+'roles': ['Chief Marketing Officer', 'Head of Brand Strategy', 'Head of Corporate Communications'],
+'scenario': 'Marketing and Communications is balancing performance pressure with reputation management ahead of a '
+'high-visibility campaign window. Qualified lead conversion has softened, sentiment is uneven across '
+'channels, and leadership wants clearer evidence on what content is working. The team must sharpen its '
+'RAG view of message risk, campaign effectiveness, and launch readiness.',
+'sectorId': 'department',
+'sheets': ['Campaign ROI', 'Brand Tracker', 'Media Sentiment', 'Lead Funnel', 'Content Calendar'],
+'short_name': 'Marketing',
+'stakeholders': 'the CEO, commercial heads, and communications leads',
+'tagline': 'Campaign ROI is slipping, brand sentiment is mixed, and the next launch must recover qualified leads '
+'without creating disclosure risk.',
+'taglineID': 'Komunikasi pasar Indonesia harus mempertimbangkan aturan OJK untuk produk keuangan dan disiplin pesan '
+'lintas kanal digital.',
+'team': 'the marketing, brand, and communications teams',
+'topics': ['campaign ROI', 'brand sentiment', 'lead funnel', 'media handling', 'content planning']},
+{'accent': '#00838F',
+'agent_name': 'Seri Angkasa Digital Control Agent',
+'agent_share': 'IT leaders, programme managers, and cyber incident owners',
+'board_body': 'Technology Steering Committee',
+'builder_crisis': 'At 10:00pm the CIO learns that recovery timelines may slip again after a fresh cyber alert, and '
+'needs a single answer on impact, readiness, and first actions within minutes.',
+'challenge': 'the ERP programme delay, the multi-business-unit cyber incident, and the inconsistent Copilot adoption '
+'story',
+'color': '#006064',
+'company': 'Seri Angkasa Holdings Berhad — Group IT & Digital',
+'companyID': 'PT Seri Angkasa Nusantara — Divisi TI dan Digital',
+'deadline': '30 days',
+'demo_question': 'Which programme or incident is Red today, what is the operational evidence, and what action should '
+'the CIO approve before the next steering call?',
+'external_party': 'the CEO, business-unit CIOs, and critical technology vendors',
+'files': ['IT_01_Transformation_Tracker.xlsx',
+'IT_02_IT_Governance_Manual.docx',
+'IT_03_Cyber_Response_Playbook.docx'],
+'icon': '💻',
+'id': 'dept-it-digital',
+'name': 'IT & Digital',
+'peer_set': 'large-enterprise ERP recovery programmes, cyber-response benchmarks, and Copilot adoption best practice',
+'regulators': 'PDPA discipline, cyber incident reporting norms, and financial-sector technology-risk expectations',
+'roles': ['Chief Information Officer', 'Head of Enterprise Architecture', 'Head of Cybersecurity'],
+'scenario': 'IT & Digital is trying to recover a delayed transformation programme while also proving cyber '
+'resilience and adoption value. Legacy architecture is slowing the ERP transition, three business units '
+'were disrupted by a recent incident, and executives want clearer evidence that Copilot usage is moving '
+'beyond experimentation. The CIO needs one integrated RAG view of programme risk, cyber exposure, and '
+'adoption impact.',
+'sectorId': 'department',
+'sheets': ['ERP Migration Plan',
+'Cyber Incident Log',
+'Service Desk SLA',
+'Application Inventory',
+'Copilot Adoption'],
+'short_name': 'IT',
+'stakeholders': 'the CEO, CFO, and technology steering members',
+'tagline': 'ERP migration is six months late, a cyber incident hit three business units, and Copilot adoption is '
+'uneven.',
+'taglineID': 'Ketahanan siber dan modernisasi digital Indonesia harus memenuhi ekspektasi OJK, BI, dan kewajiban '
+'pelaporan insiden.',
+'team': 'the architecture, cyber, digital workplace, and programme delivery teams',
+'topics': ['ERP migration', 'cyber incidents', 'service levels', 'application rationalisation', 'Copilot adoption']},
+{'accent': '#2E7D32',
+'agent_name': 'Seri Angkasa ESG Intelligence Agent',
+'agent_share': 'ESG leaders, reporting managers, and supply-chain sustainability owners',
+'board_body': 'Board Sustainability Committee',
+'builder_crisis': 'A major customer asks for immediate proof that our supply-chain controls and climate roadmap are '
+'credible before renewing a strategic contract.',
+'challenge': 'the emissions trajectory above glidepath, the supplier due-diligence gaps, and the need to be '
+'assurance-ready for the Board',
+'color': '#1B5E20',
+'company': 'Seri Angkasa Holdings Berhad — Group ESG Office',
+'companyID': 'PT Seri Angkasa Nusantara — Divisi ESG dan Keberlanjutan',
+'deadline': 'five weeks',
+'demo_question': 'Which ESG area is Red, what evidence supports that, and what action moves us fastest toward '
+'assurance-ready status?',
+'external_party': 'the Board Sustainability Committee and priority customers',
+'files': ['ESG_01_Sustainability_Dashboard.xlsx',
+'ESG_02_Sustainability_Framework.docx',
+'ESG_03_Climate_Action_Roadmap.docx'],
+'icon': '🌱',
+'id': 'dept-esg',
+'name': 'ESG & Sustainability',
+'peer_set': 'Bursa-style sustainability reporting leaders, ASEAN climate-disclosure practice, and '
+'supplier-due-diligence programmes',
+'regulators': 'Bursa sustainability expectations, climate-reporting norms, and supply-chain due-diligence frameworks',
+'roles': ['Chief Sustainability Officer', 'Head of Sustainability Reporting', 'Head of Climate & Supply Chain'],
+'scenario': 'The ESG Office is preparing for a tougher reporting and assurance cycle while several operational '
+'indicators are moving in the wrong direction. Emissions intensity is above plan, supplier reviews are '
+'inconsistent, and leadership wants a clearer narrative on what is genuinely on track versus at risk. '
+'The CSO needs a sharper cross-functional story that can stand up to Board scrutiny.',
+'sectorId': 'department',
+'sheets': ['Emissions Tracker',
+'Compliance Obligations',
+'Supplier Due Diligence',
+'Community Projects',
+'Assurance Log'],
+'short_name': 'ESG',
+'stakeholders': 'the CEO, Board Sustainability Chair, and operating-unit ESG leads',
+'tagline': 'Scope 1 emissions are above glidepath, supplier due diligence gaps are visible, and sustainability '
+'assurance must be board-ready.',
+'taglineID': 'Pelaporan keberlanjutan Indonesia harus selaras dengan OJK serta pengendalian uji tuntas pemasok dan '
+'iklim.',
+'team': 'the sustainability reporting, climate, and supply-chain ESG teams',
+'topics': ['emissions',
+'compliance obligations',
+'supplier due diligence',
+'community impact',
+'assurance readiness']}]
 
-# ── MARKETING & COMMUNICATIONS ─────────────────────────────────────────────
-ind('dept-marketing','department','Marketing & Communications','📢','#AD1457','#C2185B',
-    'Zava Group Holdings — Group Marketing & Comms',
-    'Investor Day comms, Zava Bank NPL media risk, Perkebunan Lestari ESG reputation management.',
-    'Group Marketing & Communications manages brand, PR, investor communications, and crisis communications for all 11 Zava divisions and the Group. Three live communications challenges: Investor Day messaging for ZAVA FORWARD 2030, media risk from Zava Bank NPL coverage, and ESG reputation risk from the Perkebunan Lestari RSPO suspension.',
-    ['03_Zava_Group_Strategy_Framework.docx','Email_08_Coal_Trading_Breach.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the Group CCO of a dual-listed ASEAN conglomerate. A financial journalist has written a story headlined "Zava Bank\'s NPL Crisis: Is Malaysia\'s oldest conglomerate running out of road?" The story is factually accurate but sensationalised. We are 3 weeks from our H1 results announcement. Draft a 250-word crisis communications brief: (1) Should we respond proactively or wait for the results announcement, (2) If we respond, what are the 3 key messages to rebut the headline, (3) What stakeholders must be briefed before we issue any public statement.',
-        'What is a stakeholder communications plan for a conglomerate preparing for Investor Day? Which stakeholder groups need to be briefed before, during, and after the Investor Day event? What are the typical confidentiality boundaries before the formal announcement?',
-        'Explain how brand purpose communicates differently for a diversified conglomerate vs a single-brand company. How does Zava Group build a coherent brand narrative when it operates hospitals, palm oil estates, a bank, and a chemicals plant?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research best practices for investor day communications for Asian conglomerates. What are the most effective formats, content elements, and follow-up strategies? How do Sime Darby, IHH, and Axiata structure their investor days? Cite IR best practice resources.',
-        'Research the current media coverage of Malaysian banking NPL issues and ESG controversies in palm oil. What is the media and investor sentiment toward Malaysian conglomerates with diversified exposure in 2024-2025? Are there any specific journalists or publications most influential in this space? Cite media analysis.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Upload 03_Zava_Group_Strategy_Framework.docx (use as reference). Ask Analyst to help structure: Build a stakeholder sentiment mapping model. For 8 key stakeholder groups (institutional investors, retail investors, financial media, ESG rating agencies, regulators, plantation NGOs, employees, communities), score current sentiment (1=very negative, 5=very positive) and our communications effectiveness (1=very poor, 5=excellent). Plot as a matrix. Identify stakeholders where sentiment is negative AND our communications is poor — these are priority focus areas.',
-        'Ask Analyst: Build a media monitoring dashboard. Track sentiment for 5 key topics (Zava Bank NPL, RSPO suspension, Coal trading breach, REIT IPO, ZAVA FORWARD 2030) across 3 media segments (financial media, ESG media, mainstream news). Score 1-5 and show trend over the past 6 months. Identify which topic is most at risk of media escalation.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Open 03_Zava_Group_Strategy_Framework.docx. Create a companion Communications Tracker workbook. Create Sheet 1 with columns for each active communications issue: Issue | Stakeholder | Sentiment (1-5) | Our Response Status | Key Message | Next Action | Owner | Deadline. Populate with 5 current issues. Apply RAG conditional formatting.',
-        'Build an Investor Day content tracker on Sheet 2. For each presentation section, show: Section | Presenter | Key Message | Key Data Point | Draft Status | Approved By | Time Allocated. Track 14 sections. Highlight any section without an approved draft 3 weeks before the event.',
-        'Create a brand monitoring dashboard on Sheet 3. For Zava Group and 3 competitors (Sime Darby, IOI, IJM), show quarterly: (1) Share of Voice in financial media (estimated %), (2) Net sentiment score (-100 to +100), (3) ESG mentions — positive vs negative, (4) Key themes covered. Show trend over 4 quarters.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft the Zava Group Investor Day speech for the Group CEO. The speech (12 minutes / ~1,800 words) should: open with a compelling vision statement for 2030, acknowledge the challenges (Bank NPL, RSPO suspension) honestly, pivot to the strategic opportunity (healthcare, REIT, pharma), present the 5 pillars of ZAVA FORWARD 2030, and close with a personal commitment from the CEO. Energetic, authentic, investor-facing tone.',
-        'Draft the Zava Group holding statement on the coal trading breach for media. The statement should: acknowledge a risk control issue has occurred, state that the matter is being investigated internally, confirm no material financial impact is expected, note that governance enhancements are being implemented, and direct media to the forthcoming H1 results announcement for full disclosure. Measured, factual, no admission of fault language.',
-        'Draft the internal employee communication on the coal trading breach, Zava Bank NPL, and RSPO suspension — 3 separate brief paragraphs for the Group intranet. Each paragraph should: describe the situation in plain language, emphasise management action, reassure employees that Zava Group is financially strong, and note what employees should say if customers or media ask. Honest, reassuring tone.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 5-slide crisis communications playbook for Zava Group. Slide 1: Crisis classification framework (Tier 1/2/3 based on financial, reputational, and legal impact). Slide 2: Response timeline — who must be notified and in what order within 2 hours, 24 hours, 72 hours. Slide 3: Approved spokespersons by crisis type. Slide 4: Holding statement template. Slide 5: Post-crisis reputation recovery actions. Red and white crisis management visual.',
-        'Create the Investor Day visual identity slide deck theme. Design: dark navy (#1F2D55) background, gold accents (#D4AF37), clean sans-serif font, "ZAVA FORWARD 2030" branding on every slide. Apply to a 3-slide sample: title slide, agenda slide, and a content slide. This template will be used for all 14 investor day sections.',
-        'Create a 2-slide ESG reputation recovery plan for the Perkebunan Lestari RSPO suspension. Slide 1: Current media narrative and key stakeholder concerns. Slide 2: 6-month reputation recovery roadmap — proactive ESG announcements, NGO engagement, RSPO reinstatement milestone, CEO community visit.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft the Group CEO\'s personalised letter to the top 15 institutional shareholders ahead of Investor Day. The letter should: acknowledge their continued support, invite them to Investor Day (date, venue, registration link), offer a 30-minute pre-event bilateral meeting, and build anticipation for the ZAVA FORWARD 2030 strategy announcement. Warm, CEO-personal tone.',
-        'Draft a proactive media outreach email to 10 financial journalists proposing a background briefing on ZAVA FORWARD 2030. The briefing will be under embargo until Investor Day. The email should: invite the journalist, note the key themes to be covered, confirm the background-only ground rules, and offer a post-Investor Day exclusive follow-up interview with the CEO.',
-        'Draft the Group CCO\'s email to all 11 Division Communications Heads with the media handling guidelines for the current sensitive period. The guidelines should: list the 4 approved spokespersons for media enquiries, categorise topics as "approved to discuss", "refer to holding statement", or "no comment", and remind them that all media enquiries must be logged in the Communications Tracker within 2 hours.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from a communications, PR, or investor relations meeting. Identify all active media or reputation issues discussed, the agreed response strategies, and any approvals obtained. Create a communications action log.',
-        'Draft the weekly communications status update for the Group CEO. Structure: (1) Key media mentions this week — positive/negative, (2) Active issues and response status, (3) Investor Day preparation progress, (4) Next week\'s scheduled communications activities, (5) Actions needed from CEO.',
-        'From this meeting, what was the debate about whether to respond proactively to the Zava Bank NPL media story? What were the arguments for and against responding before the H1 results?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload 03_Zava_Group_Strategy_Framework.docx and Email_08_Coal_Trading_Breach.docx to Copilot Notebook. Set instruction: "You are a senior communications advisor helping Zava Group manage 3 simultaneous reputation risks." Ask: Given the 3 active reputation risks (Bank NPL, RSPO, coal breach), which one poses the greatest long-term brand damage if not addressed proactively? What is the recommended communications priority order and the single most important action in the next 7 days?',
-        'Upload 03_Zava_Group_Strategy_Framework.docx. Ask: The ZAVA FORWARD 2030 strategy emphasises ESG leadership as Pillar 3. But we have an active RSPO suspension in our plantation division. How do we credibly communicate an ESG leadership position while acknowledging the RSPO failure? Draft the specific language for the Investor Day ESG section that is honest about the challenge but compelling about our commitment.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Monitor Malaysian financial media (The Edge, StarBiz, Reuters) for any Zava Group mentions in the past 48 hours. (2) Draft 2 holding statements — one for NPL enquiries, one for RSPO enquiries. (3) Save to OneDrive as "Media Holding Statements - APPROVED". (4) Email to Group CCO and GC for approval before distribution. (5) Distribute to all 11 Division Communications Heads once approved.',
-        'Do all of the following for Investor Day: (1) Draft the 2-page Investor Day media invitation and pre-event Q&A talking points for journalists. (2) Create the Investor Day registration page on SharePoint. (3) Email invitations to the 25-person media list. (4) Prepare the media briefing room layout and logistics checklist. (5) Schedule a full Investor Day rehearsal with all presenters 2 weeks before the event.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open 03_Zava_Group_Strategy_Framework.docx in Word for Web. Create an agent called "Zava Communications Playbook Bot". Description: "Answers questions from Division Communications Heads on approved messages, holding statements, media handling protocols, spokespersons by issue type, and Investor Day communications guidelines." Share with all 11 Division Communications Heads.',
-        'Demo: A Division Communications Head gets a call from Reuters at 5:30pm asking about the coal trading breach: "Can you confirm that Zava Group\'s coal trading desk exceeded its position limit by USD 2.4M and that a trader has been suspended?" The team member immediately asks the agent: "What is our approved holding statement for the coal trading breach and what topics are we authorised to discuss vs redirect to Group CCO?" Show the agent enabling an instant, policy-consistent media response.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the crisis playbook. Create an agent called "Zava Crisis Communications Q&A Bot". Share with all Communications Heads and senior management.',
-        'Demo: The CCO asks "A Tier 2 crisis has just materialised — a social media post alleging Zava bank mis-sold an investment product to elderly customers has gone viral with 45,000 shares. Under our crisis playbook, what is the mandatory response timeline, who is the approved spokesperson, and what is the Tier 2 holding statement template?" Show the agent providing an instant, playbook-grounded crisis response.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open the Communications Tracker workbook in Excel for Web. Create an agent called "Zava Communications Issue Tracker Q&A". Description: "Instant answers on active media issues, Investor Day preparation status, and stakeholder sentiment for the CCO and Group CEO." Share with communications leadership.',
-        'Demo: Ask "Which active communication issue has the most negative stakeholder sentiment and is our response classified as adequate?" Then: "How many Investor Day presentation sections are still awaiting CEO approval and when is the deadline?" Show the CCO getting instant communications programme intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "Zava Communications Intelligence Agent". Description: "Supports the Group Communications team with instant answers on holding statements, crisis protocols, Investor Day preparation status, media sentiment trends, and stakeholder engagement strategies — enabling faster, consistent, on-brand communications across all 11 Zava divisions." Upload 03_Zava_Group_Strategy_Framework.docx and Email_08_Coal_Trading_Breach.docx. Add topics: "Crisis Communications", "Media Handling", "Investor Day", "Stakeholder Sentiment". Publish to Teams for Communications teams.',
-        'Demo the agent: It is 11pm on a Sunday. The Group CCO sees a tweet going viral: a palm oil NGO has posted satellite images allegedly showing fresh deforestation at Perkebunan Lestari — captioned "Zava Group destroys rainforest while claiming ESG leadership". The tweet has 12,000 retweets in 2 hours. The CCO asks the agent: "What are the facts about Perkebunan Lestari\'s current status, what is our approved holding statement for RSPO-related media, and should I activate a Tier 1 or Tier 2 crisis response given the social media virality?" Show how the agent enables a calm, informed crisis response at 11pm.'
-      ], DESC_BUILDER),
-    ]),
-
-# ── IT & DIGITAL ──────────────────────────────────────────────────────────
-ind('dept-it-digital','department','IT & Digital','💻','#006064','#00838F',
-    'Zava Group Holdings — Group IT Division',
-    'M365 Copilot rollout 87K users, ERP harmonisation, cybersecurity incident response, data lake.',
-    'The Group IT Division leads digital transformation across 87,420 users in 3 countries. Current priorities: Microsoft 365 Copilot rollout (Phase 1: 2,400 licences, Phase 2: full estate), ERP harmonisation (3 ERPs → SAP S/4HANA single platform), shared data lake on Azure, and a cybersecurity posture uplift following a phishing incident at Zava Bank.',
-    ['03_Zava_Group_Strategy_Framework.docx','02_Zava_Group_Policy_Handbook.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the Group CIO of an 87,000-employee Malaysian conglomerate. We are rolling out Microsoft 365 Copilot to 2,400 priority users in Phase 1. The biggest adoption barrier is that most employees have not changed their daily work habits and are using Copilot only for occasional email drafting. Draft a 250-word Copilot adoption acceleration plan covering: (1) How to identify and develop Copilot champions in each division, (2) The 3 highest-value use cases by department that should be demonstrated in the first 30 days, (3) How to measure adoption (daily active usage, time saved, use case diversity).',
-        'What is a shared data lake architecture for a diversified conglomerate? How should we structure the Azure Data Lake Gen2 for a group with 11 divisions across different industries — each with different data formats, governance requirements, and security classifications? What are the key design decisions?',
-        'Explain what the cybersecurity incident response process should be for a financial services institution in Malaysia. What are the BNM reporting obligations after a phishing incident that compromised 48 employee credentials at Zava Bank? What containment and remediation steps should be completed within 24, 48, and 72 hours?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research Microsoft 365 Copilot adoption best practices for large enterprises. What are the proven adoption frameworks — Microsoft\'s own, Gartner, Forrester? What are the key metrics that indicate successful Copilot adoption? How have comparable Asian conglomerates structured their Copilot rollout? Cite Microsoft or analyst reports.',
-        'Research SAP S/4HANA implementation best practices for multi-division conglomerates in ASEAN. What are the common failure modes in large SAP implementations? What is the typical implementation timeline and cost for 87,000 users across MY, ID, and IN? How do successful companies manage the change management challenge? Cite Gartner or SAP partner reports.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Upload 03_Zava_Group_Strategy_Framework.docx (use as reference). Ask Analyst to help structure: Build a Copilot adoption ROI model. Inputs: 2,400 users in Phase 1, MYR 195/user/month licence cost. Savings assumptions from Microsoft benchmark data: email drafting saves 2hrs/week, meeting summaries saves 1.5hrs/week, document drafting saves 3hrs/week. Average cost per employee-hour: MYR 42. Calculate: (1) Weekly time saving per user, (2) Annual cost saving for 2,400 users, (3) Licence cost vs saving, (4) ROI and payback in months. Show sensitivity to adoption rate (30%, 50%, 70% of users actively using).',
-        'Ask Analyst: Build a cybersecurity risk heat map. For 12 attack vectors (phishing, ransomware, insider threat, supply chain, API attack, DDoS, social engineering, credential stuffing, zero-day exploit, physical security, cloud misconfiguration, third-party vendor), score: (1) Likelihood (1-5) based on current controls, (2) Impact (1-5) based on assets at risk. Plot on a 5x5 matrix. For the top 5 risks, calculate the estimated financial impact if a breach occurs (downtime cost + remediation + regulatory fine + reputational damage).'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Open 03_Zava_Group_Strategy_Framework.docx. Create a companion IT Programme Tracker workbook. Create Sheet 1 with columns: Programme | Division Scope | Budget (MYR M) | Spent to Date | % Spent | Timeline | Current Phase | Status | Key Risk | Next Milestone. Populate with 5 IT programmes (Copilot rollout, SAP S/4HANA, Data Lake, Cybersecurity posture, Digital workplace). Apply RAG conditional formatting.',
-        'Build a Copilot adoption dashboard on Sheet 2. For each of the 11 divisions in Phase 1 rollout, show: (1) Licences allocated, (2) Monthly active users, (3) Adoption rate %, (4) Top 3 Copilot use cases by department, (5) Average prompts per user per day, (6) User satisfaction score. Highlight divisions with adoption below 40% in red — these need targeted intervention.',
-        'Create a cybersecurity incident tracker on Sheet 3. For each security incident in the past 12 months: (1) Date, (2) Type, (3) Division affected, (4) Systems compromised, (5) Data at risk, (6) Response time (hours), (7) Containment status, (8) BNM/PDPA notification made (Y/N), (9) Root cause, (10) Remediation completed (Y/N). Calculate average response time and % incidents with BNM notification completed within required timeframe.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Update the Data Privacy & Cybersecurity Policy with a new chapter on M365 Copilot Data Governance. Cover: (1) What data Copilot can access — only Microsoft Graph data within the user\'s permission boundary, (2) What data employees must NOT input into Copilot — PDPA-classified personal data, board-sensitive information, unpublished financial results, (3) How to classify a prompt before sending it, (4) Who is responsible for Copilot-generated content — the employee, not Microsoft, (5) Incident reporting if sensitive data is accidentally shared. 4 pages, policy format.',
-        'Draft the Zava Group Copilot Rollout Communication for all 2,400 Phase 1 users. The communication should: explain what M365 Copilot is in 3 simple sentences, describe the top 5 use cases for each user\'s role (tailored for Finance, HR, Operations, and Senior Management), provide links to the 3 training resources, note the DLP data handling rules, and invite users to the first Copilot Champions session next week. Exciting, accessible tone.',
-        'Draft the SAP S/4HANA Business Case for the Board approval paper. Cover: (1) Current state — 3 ERPs (SAP ECC for manufacturing, Oracle for financial services, Microsoft Dynamics for BPO), (2) The integration pain — monthly intercompany reconciliation takes 22 person-days, (3) Proposed solution — SAP S/4HANA single ERP, 42-month implementation, (4) Investment — MYR 84M total, (5) Benefits — 14-day monthly close reduced to 5 days, real-time group P&L, MYR 22M annual operational saving, (6) Risk — parallel run, data migration complexity. Board paper format.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 10-slide IT Digital Transformation Board update. Include: (1) Digital transformation roadmap overview, (2) M365 Copilot — Phase 1 adoption results and Phase 2 plan, (3) Copilot ROI — time saved and cost avoided, (4) SAP S/4HANA business case, (5) Azure Data Lake — architecture and progress, (6) Cybersecurity posture — phishing incident and remediation, (7) Cybersecurity heat map — top 5 risks, (8) Digital workplace modernisation, (9) IT budget vs spend by programme, (10) FY2026 IT priorities. Teal and white colour scheme.',
-        'Create a 3-slide Copilot adoption showcase for the CEO town hall. Slide 1: What Copilot can do — 5 use cases with before/after time comparison. Slide 2: Adoption results from Phase 1 — which divisions are leading, which are lagging. Slide 3: Phase 2 rollout plan — all 87,420 users by end of FY2026.',
-        'Create a 2-slide cybersecurity incident summary for the Board Audit Committee. Slide 1: The phishing incident — what happened, how many credentials compromised, immediate containment actions. Slide 2: The 5 cybersecurity posture improvements implemented since the incident and the updated risk heat map.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft the Group CIO\'s email to all Division IT Heads announcing the Microsoft 365 Copilot Phase 2 rollout plan. The email should: confirm the Phase 2 timeline (Q3 FY2025 — all remaining users), division-by-division rollout schedule, mandatory Copilot literacy training requirement, and the DLP data governance rules that must be communicated to all users before activation.',
-        'Draft the BNM cybersecurity incident notification letter following the phishing incident at Zava Bank. Under BNM\'s Risk Management in Technology (RMiT) policy, this notification is required within 24 hours of discovering the incident. The letter should: describe the incident (48 credentials compromised via phishing email, no customer data accessed, contained within 6 hours), confirm containment actions, and state the remediation timeline.',
-        'Draft an invitation email to all 2,400 Phase 1 Copilot users for the first "Copilot Champions Showcase" event. The email should: announce the event date and format (2-hour online), note that 5 employees will present their top Copilot use cases and time savings, invite attendees to register, and offer a Copilot productivity toolkit download link. Energetic, community-building tone.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from an IT steering or project meeting. Identify all IT programme delays, adoption blockers, and technical issues discussed. Create an action log with the IT team owner and deadline.',
-        'Draft the IT leadership weekly update for the CIO. Structure: (1) Copilot Phase 1 adoption rate this week vs target, (2) SAP S/4HANA implementation — phase and milestones, (3) Data Lake — datasets onboarded this week, (4) Cybersecurity — any new incidents or alerts, (5) Budget status vs plan.',
-        'From this meeting, what specific concerns did Division MDs raise about the SAP S/4HANA implementation timeline? Was there any discussion about delaying the go-live date?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload 03_Zava_Group_Strategy_Framework.docx and 02_Zava_Group_Policy_Handbook.docx to Copilot Notebook. Set instruction: "You are the Group CIO advising on Copilot adoption and digital transformation." Ask: Based on the strategy and policy documents, which 3 divisions should be prioritised for Phase 2 Copilot rollout to maximise business impact? For each, identify the top 2 use cases that would drive the highest ROI.',
-        'Upload 02_Zava_Group_Policy_Handbook.docx. Ask: Under our current Data Privacy & Cybersecurity Policy, is an employee allowed to paste Zava Bank customer loan data into M365 Copilot to ask it to summarise the NPL trends? If not, what is the policy basis for the prohibition and what alternative approach should the employee use?'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following for Copilot Phase 2 planning: (1) Research Microsoft\'s recommended large-scale Copilot rollout methodology for enterprises with 50K+ users. (2) Draft the Phase 2 rollout plan covering all 11 divisions and 85,000 remaining users — phased over 12 months with division priority, training timeline, and DLP governance. (3) Save to OneDrive as "Copilot Phase 2 Rollout Plan". (4) Email to CIO, CHRO, and all Division IT Heads for review. (5) Schedule a Phase 2 kickoff meeting with all Division IT Heads.',
-        'Do all of the following for cybersecurity: (1) Research the BNM RMiT 2023 requirements for technology risk management at licensed banks — specifically for phishing incident response and multi-factor authentication mandates. (2) Draft a 90-day cybersecurity posture improvement plan for Zava Bank. (3) Email to the Zava Bank CIO and Head of IT Security for review. (4) Create a cybersecurity remediation tracker in SharePoint. (5) Schedule a weekly cybersecurity taskforce meeting until all critical items are resolved.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open 02_Zava_Group_Policy_Handbook.docx in Word for Web. Create an agent called "Zava IT & Digital Policy Bot". Description: "Answers questions from IT teams, Division CIOs, and employees on Copilot data governance rules, cybersecurity policies, acceptable use of IT systems, incident reporting procedures, and the SAP S/4HANA implementation requirements." Share with all Division IT Heads and publish to the employee IT helpdesk portal.',
-        'Demo: An employee asks "I want to use Copilot to summarise the last 3 months of email threads about a confidential M&A deal we are working on. Is this allowed under the Copilot Data Governance Policy and what classification does M&A correspondence fall under?" Show the agent providing a precise, data-governance-grounded answer.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the Board IT update. Create an agent called "IT Digital Transformation Q&A Bot". Share with Board members and the Group CEO.',
-        'Demo: A Board member asks "We approved MYR 84M for the SAP S/4HANA implementation 12 months ago. We\'re 30% through the budget — are we on track and what is the current projected final cost?" Show the agent providing a programme-progress-grounded answer.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open the IT Programme Tracker workbook in Excel for Web. Create an agent called "IT Programme Q&A". Description: "Instant answers on Copilot adoption rates, SAP implementation progress, cybersecurity incidents, and IT budget vs spend for the CIO and Group CEO." Share with IT leadership.',
-        'Demo: Ask "Which division has the lowest Copilot adoption rate and what percentage of their Phase 1 licences are being used daily?" Then: "How many security incidents have occurred in the past 3 months and what is our average containment time vs the BNM requirement?" Show the CIO getting instant IT programme intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "Zava IT Digital Intelligence Agent". Description: "Supports the Group IT Division and Division IT teams with instant answers on Copilot data governance, cybersecurity policies, SAP implementation requirements, data lake standards, and digital transformation programme status — enabling faster, policy-consistent IT decisions across 87,420 users in 11 divisions." Upload 03_Zava_Group_Strategy_Framework.docx and 02_Zava_Group_Policy_Handbook.docx. Add topics: "Copilot Governance", "Cybersecurity Policy", "SAP Implementation", "Data Lake", "Incident Response". Publish to Teams for IT teams.',
-        'Demo the agent: The Zava Bank Head of IT Security calls the Group CIO at 10pm: "We\'ve just detected what appears to be a ransomware payload that has encrypted 12 servers in our Petaling Jaya data centre. Our DR plan requires us to failover to our disaster recovery site in Cyberjaya within 4 hours. What is our BNM notification obligation and timeline, and does this qualify as a Tier 1 crisis that requires immediate Group CEO and Board notification?" Show how the agent enables an instant, policy-grounded cyber crisis response.'
-      ], DESC_BUILDER),
-    ]),
-
-# ── ESG & SUSTAINABILITY ──────────────────────────────────────────────────
-ind('dept-esg','department','ESG & Sustainability','🌱','#1B5E20','#2E7D32',
-    'Zava Group Holdings — Group ESG Division',
-    'RSPO suspension, EUDR non-compliance, Net Zero 2050, Bursa sustainability reporting.',
-    'The Group ESG Division drives sustainability strategy, reporting, and stakeholder engagement. Critical issues: Perkebunan Lestari RSPO suspension (8,200ha peatland), EUDR compliance deadline Q4 2025, Bursa Malaysia enhanced sustainability reporting from FY2025, and the Net Zero 2050 pathway requiring a 40% Scope 1 reduction by 2030.',
-    ['20_Zava_ESG_Sustainability_Framework.docx','22_Zava_Plantation_RSPO_Audit.docx'],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'I am the Group Chief Sustainability Officer of a Malaysian palm oil and diversified conglomerate. Our Perkebunan Lestari estate has had its RSPO certification suspended due to 8,200ha of peatland being cultivated beyond 3 metres depth — a major nonconformance. European CPO buyers are threatening to cancel contracts. Draft a 250-word brief for our Board on: (1) What RSPO suspension means commercially — which markets are now blocked, (2) The remediation options for a peatland nonconformance (rewetting, conservation set-aside, cessation of cultivation), (3) The minimum timeline to achieve RSPO reinstatement and the interim commercial mitigation options.',
-        'Explain what EUDR (EU Deforestation Regulation) requires from a palm oil exporter. What is the due diligence system they must maintain, what supply chain documentation is required, and what are the consequences for failing to comply by the EUDR enforcement date?',
-        'What is a credible Net Zero 2050 pathway for a diversified conglomerate with emissions from chemicals, palm oil, banking, manufacturing, and BPO? How should we set Science-Based Targets (SBTi) when we have 11 different business units with very different emission profiles?'
-      ]),
-      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
-        'Research RSPO suspension remediation requirements. What are the specific steps a palm oil company must take to achieve reinstatement after suspension? Are there any precedent cases of companies successfully reinstating RSPO certification after a peatland nonconformance, and how long did it take? Cite RSPO official documentation.',
-        'Research EUDR compliance requirements for Malaysian palm oil exporters. What is the practical implementation timeline, what systems and certifications are needed, and how are Malaysian exporters responding — MPOA, MPIC, or individual company approaches? Cite official EU, MPOB, or industry sources.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'Upload 20_Zava_ESG_Sustainability_Framework.docx (use as reference). Ask Analyst to help structure: Build an ESG performance dashboard. For Zava Group FY2022-FY2024, track: (1) GHG Scope 1 and Scope 2 (tCO2e), (2) GHG intensity per MYR M revenue, (3) RSPO certified area %, (4) EUDR compliance status by estate, (5) Women in leadership %, (6) TRIR (safety), (7) Community investment (MYR M). Compare against our FY2025 and FY2030 targets. Show as a RAG scorecard.',
-        'Upload 20_Zava_ESG_Sustainability_Framework.docx. Ask: Model 3 Net Zero pathways to 2050. Scenario A: Business as usual — no major decarbonisation investment, reach Net Zero 2050 through offsets only. Scenario B: Managed transition — MYR 1.8B decarbonisation investment over 10 years, achieve 60% Scope 1 reduction by 2040. Scenario C: Accelerated — MYR 3.2B investment, meet SBTi 1.5°C pathway, exit coal by 2028. For each scenario, calculate cumulative emissions, cumulative cost, and carbon offset cost at USD 45/tCO2e. Which is cheapest over 30 years?'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'Open 20_Zava_ESG_Sustainability_Framework.docx. Create a companion ESG Dashboard workbook. Create Sheet 1 with the Group ESG KPI scorecard for FY2024. For each of 18 KPIs (Scope 1-3 emissions, RSPO certified area, EUDR compliance, TRIR, women in leadership, waste diversion, water intensity, community investment, ESG rating), show: (1) FY2022 actual, (2) FY2023 actual, (3) FY2024 actual, (4) FY2025 target, (5) FY2030 target, (6) Status (On Track/At Risk/Missed). Apply RAG formatting.',
-        'Build an EUDR compliance tracker on Sheet 2. For each of the 12 estates, show: (1) Estate name and country, (2) Total area (ha), (3) EUDR-compliant area (ha), (4) Non-compliant area (ha), (5) Non-compliance reason (peatland, HCV overlap, deforestation risk), (6) EUDR compliance action status, (7) Target compliance date. Calculate overall EUDR compliance rate. Highlight non-compliant estates in red.',
-        'Create a RSPO reinstatement roadmap on Sheet 3. For the 4 major nonconformances at Perkebunan Lestari, show: (1) Nonconformance description, (2) Root cause, (3) Required corrective action, (4) Responsible team, (5) Estimated cost (MYR M), (6) Timeline, (7) Evidence required for RSPO reinstatement auditor. Calculate total remediation cost and the earliest possible reinstatement date.'
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'Draft the RSPO Corrective Action Plan (CAP) response document for submission to RSPO. For each of the 4 major nonconformances: (1) NC description and audit finding reference, (2) Root cause analysis (using 5-Why methodology), (3) Specific corrective actions with milestones and deadlines, (4) Evidence to be provided at the re-audit, (5) Responsible team and manager name. Format as a formal RSPO CAP document.',
-        'Draft the EUDR compliance communication for our 14 European CPO buyers. The letter should: acknowledge the EUDR deadline, confirm our EUDR due diligence system is in place for 10 of 12 estates, disclose that Perkebunan Lestari and Perkebunan Nusantara Zava require remediation, explain our EUDR remediation timeline, and propose supply continuity from our 10 fully compliant estates during the remediation period. Professional, transparent tone.',
-        'Write the Bursa Malaysia Sustainability Report climate risk section. Follow TCFD requirements: (1) Governance — who oversees climate risk at Board and management level, (2) Strategy — climate risks and opportunities identified, impact on financial planning, (3) Risk Management — how we identify, assess, and manage climate risks, (4) Metrics and Targets — Scope 1/2/3 emissions data, GHG reduction targets, SBTi status. Use TCFD 2023 framework, with Malaysian Bursa SR guidelines cross-reference.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'Create a 10-slide ESG Board presentation. Include: (1) Group ESG overview — performance vs targets FY2024, (2) RSPO suspension — situation, remediation plan, commercial impact, (3) EUDR compliance — 10/12 estates compliant, 2 requiring action, (4) Net Zero 2050 — 3 pathways, recommended scenario, (5) Scope 1/2 emissions dashboard, (6) Social — safety TRIR trend, DEI progress, community investment, (7) Bursa sustainability reporting — compliance status, (8) MSCI ESG rating — current and improvement actions, (9) ESG-linked financing — green sukuk opportunity, (10) Board decisions required. Green and white ESG colour scheme.',
-        'Create a 3-slide EUDR compliance update for European CPO buyers. Slide 1: Our EUDR compliance status — 10/12 estates compliant (show on map). Slide 2: The 2 non-compliant estates — remediation timeline and interim supply plan. Slide 3: Our long-term EUDR commitment — No Deforestation, No Peat, No Exploitation policy.',
-        'Create a 2-slide Net Zero 2050 pathway comparison. Slide 1: 3 scenarios — cumulative emissions and cost. Slide 2: Our recommended pathway (Scenario B) — key investments, milestone emissions targets, and cumulative offset cost avoided vs Scenario A.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'Draft a letter to RSPO\'s Certification Team formally submitting Zava Agribusiness\'s Corrective Action Plan for the Perkebunan Lestari suspension. The letter should: reference the audit report date and CB (certification body), confirm our commitment to full remediation, highlight the 3 corrective actions already completed, attach the full CAP document, and request a timeline for the re-audit scheduling. Formal RSPO correspondence format.',
-        'Draft a proactive email to our top 6 European CPO buyers (who collectively represent 34% of our export volume) ahead of the EUDR enforcement date. The email should: confirm our EUDR readiness for 10 estates, disclose the 2 non-compliant estates transparently, provide the remediation timeline, and offer a contract amendment for the transitional period to supply only from compliant estates. Transparent, partnership-focused tone.',
-        'Draft the Group CSO\'s email to all 12 estate managers announcing the mandatory EUDR due diligence training programme. The training covers the geolocation mapping requirement, supply chain documentation, and the customer declaration process. All estate managers must complete the training within 30 days. Emphasise that EUDR compliance is not optional — non-compliance puts EU export contracts at risk.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'Open an existing recorded Teams meeting recap from an ESG or sustainability committee meeting. Identify all RSPO, EUDR, and carbon target discussions. Create an action log for the ESG team covering remediation, reporting, and stakeholder engagement.',
-        'Draft the ESG team\'s weekly update for the Group CSO. Structure: (1) RSPO CAP submission status, (2) EUDR compliance progress by estate, (3) Scope 1 emissions tracker — vs target, (4) Bursa Sustainability Report — sections completed, (5) MSCI ESG rating engagement.',
-        'From this meeting, what was the debate about whether to engage an independent third-party consultant to support the RSPO reinstatement process? What were the budget concerns raised?'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'Upload 20_Zava_ESG_Sustainability_Framework.docx and 22_Zava_Plantation_RSPO_Audit.docx to Copilot Notebook. Set instruction: "You are the Group CSO advising the Board on ESG risk management." Ask: Based on the ESG framework and RSPO audit, what is the realistic fastest timeline for RSPO reinstatement at Perkebunan Lestari if we commit maximum resources? What is the commercial cost of every additional month the suspension continues?',
-        'Upload 20_Zava_ESG_Sustainability_Framework.docx. Ask: Zava Group is considering applying for a Green Sukuk to fund our Net Zero transition investments. What ESG credentials must we demonstrate to achieve a Green Sukuk certification under SC Malaysia\'s Sustainable and Responsible Investment (SRI) sukuk framework? What is the gap between our current ESG performance and the required standard?'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
-        'Do all of the following: (1) Research the RSPO CAP (Corrective Action Plan) requirements and download the latest RSPO CAP template from the RSPO website. (2) Draft the full RSPO CAP for Perkebunan Lestari covering all 4 major nonconformances using the official template. (3) Save to OneDrive as "Perkebunan Lestari RSPO CAP - DRAFT". (4) Email to the Group CSO and the estate manager for review within 5 days. (5) Schedule a CAP review meeting with the RSPO certification body representative.',
-        'Do all of the following for the Bursa Sustainability Report: (1) Research Bursa Malaysia\'s FY2025 enhanced sustainability reporting requirements for main market listed companies. (2) Identify any new mandatory disclosures vs FY2024. (3) Draft the new mandatory disclosures for the Group ESG team. (4) Email to Group CSO and the Company Secretary for review. (5) Create a Bursa Sustainability Report tracker in SharePoint with all required sections and deadlines.'
-      ], DESC_COWORK),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'Open 20_Zava_ESG_Sustainability_Framework.docx in Word for Web. Create an agent called "Zava ESG & Sustainability Policy Bot". Description: "Answers questions from estate managers, division sustainability teams, and the Group ESG Division on RSPO requirements, EUDR compliance obligations, GRI reporting standards, Bursa SR requirements, and the Group Net Zero pathway." Share with all Division Sustainability teams and estate managers.',
-        'Demo: An estate manager asks "I have just discovered a new drainage channel was dug in our estate last month — it appears to be within 500 metres of a protected peat area. Under our Group NDPE Policy, is this a reportable incident and do I need to notify the RSPO certification body before our next planned audit?" Show the agent providing a policy-grounded, action-oriented compliance answer.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'Create a PowerPoint from the ESG Board presentation. Create an agent called "Group ESG Board Q&A Bot". Share with Board members and the Group CSO.',
-        'Demo: A Board member asks "If we miss the EUDR enforcement date for the 2 non-compliant estates, what is the estimated volume of CPO exports at risk and what is the MYR revenue impact on our Agribusiness division?" Show the agent providing a commercial-impact-grounded ESG risk answer.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'Open the ESG Dashboard workbook in Excel for Web. Create an agent called "Group ESG Performance Q&A". Description: "Instant answers on GHG emissions, RSPO compliance, EUDR status, safety TRIR, DEI metrics, and Bursa SR requirements for the Group CSO and Board ESG Committee." Share with ESG leadership.',
-        'Demo: Ask "What is our Scope 1 GHG emissions trajectory vs our 2030 reduction target — are we on track?" Then: "What is the total certified RSPO area across all 12 estates and what % of our CPO volume is RSPO-certified?" Show the CSO getting instant ESG performance intelligence.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'Go to copilotstudio.microsoft.com > Create > New Agent. Name it "Zava ESG Intelligence Agent". Description: "Supports the Group ESG Division, Division Sustainability teams, and estate managers with instant answers on RSPO requirements, EUDR compliance, GHG reporting standards, Bursa sustainability disclosures, Net Zero pathway, and NDPE policy obligations — enabling faster, consistent, and credible ESG management across all 11 Zava divisions." Upload 20_Zava_ESG_Sustainability_Framework.docx and 22_Zava_Plantation_RSPO_Audit.docx. Add topics: "RSPO Compliance", "EUDR Requirements", "GHG Reporting", "Bursa SR", "Net Zero Pathway". Publish to Teams.',
-        'Demo the agent: The Group CSO is in a meeting with the Milieudefensie (Dutch environmental NGO) who is threatening to publish a report linking Zava Group\'s Perkebunan Lestari peatland to climate damage and supply chain connections to European FMCG brands. The NGO asks: "What specific peat depth measurements were taken at the 8,200ha area and what does your remediation plan specifically commit to?" The CSO quietly asks the ESG agent: "What do our RSPO audit records show about the peat depth data at Perkebunan Lestari and what are the specific commitments in our Corrective Action Plan?" Show how the agent provides instant, fact-based answers to NGO challenges.'
-      ], DESC_BUILDER),
-    ]),
-]
+DEPARTMENTS_3 = [build_entry(cfg) for cfg in ENTRY_CONFIGS]
 
 print(f"Departments 3 written: {len(DEPARTMENTS_3)} entries")
