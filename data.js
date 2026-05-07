@@ -43,158 +43,158 @@ window.HUB_DATA = {
   ],
   sectors: [
     {
+      id: 'sec-general',
+      label: '⭐ Start Here',
+      industries: [
+        'general'
+      ]
+    },
+    {
       id: 'sec-banking',
       label: 'Banking',
       industries: [
-        'ind-commercial-banking',
-        'ind-islamic-banking',
-        'ind-investment-banking'
+        'commercial-banking',
+        'islamic-banking',
+        'investment-banking'
       ]
     },
     {
       id: 'sec-insurance',
       label: 'Insurance',
       industries: [
-        'ind-general-insurance',
-        'ind-life-insurance',
-        'ind-takaful'
+        'general-insurance',
+        'life-insurance',
+        'takaful'
       ]
     },
     {
       id: 'sec-fintech',
       label: 'Fintech',
       industries: [
-        'ind-fintech'
+        'fintech-payments'
       ]
     },
     {
       id: 'sec-healthcare',
       label: 'Healthcare',
       industries: [
-        'ind-hospital',
-        'ind-pharma'
+        'hospital-network',
+        'pharmaceutical'
       ]
     },
     {
       id: 'sec-og',
       label: 'Oil & Gas',
       industries: [
-        'ind-og-upstream',
-        'ind-og-downstream'
+        'og-upstream',
+        'og-downstream'
       ]
     },
     {
       id: 'sec-energy',
       label: 'Energy',
       industries: [
-        'ind-renewable'
+        'renewable-energy'
       ]
     },
     {
       id: 'sec-mfg',
       label: 'Manufacturing',
       industries: [
-        'ind-industrial-mfg',
-        'ind-construction'
+        'industrial-manufacturing',
+        'construction'
       ]
     },
     {
       id: 'sec-agri',
       label: 'Agriculture',
       industries: [
-        'ind-plantation'
+        'plantation'
       ]
     },
     {
       id: 'sec-bpo',
       label: 'BPO & Tech',
       industries: [
-        'ind-bpo'
+        'bpo-services'
       ]
     },
     {
       id: 'sec-telco',
       label: 'Telco',
       industries: [
-        'ind-telco'
+        'telco'
       ]
     },
     {
       id: 'sec-congl',
       label: 'Conglomerate',
       industries: [
-        'ind-conglomerate'
+        'diversified-conglomerate'
       ]
     },
     {
       id: 'sec-govt',
       label: 'Government',
       industries: [
-        'ind-govt',
-        'ind-regulator'
+        'government-agency',
+        'financial-regulator'
       ]
     },
     {
       id: 'sec-glc',
       label: 'GLC',
       industries: [
-        'ind-glc'
+        'glc-investment'
       ]
     },
     {
       id: 'sec-re',
       label: 'Real Estate',
       industries: [
-        'ind-property-reit'
+        'property-reit'
       ]
     },
     {
       id: 'sec-logistics',
       label: 'Logistics',
       industries: [
-        'ind-logistics'
+        'logistics-3pl'
       ]
     },
     {
       id: 'sec-aviation',
       label: 'Aviation',
       industries: [
-        'ind-aviation'
+        'aviation-airports'
       ]
     },
     {
       id: 'sec-mining',
       label: 'Mining',
       industries: [
-        'ind-coal-mining'
+        'coal-mining'
       ]
     },
     {
       id: 'sec-retail',
       label: 'Retail',
       industries: [
-        'ind-retail-grocery'
+        'retail-grocery'
       ]
     },
     {
       id: 'sec-hospitality',
       label: 'Hospitality',
       industries: [
-        'ind-hotel'
+        'hotel-resort'
       ]
     },
     {
       id: 'sec-media',
       label: 'Media',
       industries: [
-        'ind-media'
-      ]
-    },
-    {
-      id: 'sec-general',
-      label: 'General',
-      industries: [
-        'ind-general'
+        'media-entertainment'
       ]
     }
   ],
