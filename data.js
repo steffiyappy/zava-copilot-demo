@@ -243,8 +243,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Then ask: Analyse the revenue and EBITDA trends across all 11 divisions from FY2022 to FY2025. Which three divisions have shown the steepest decline in EBITDA margin? Calculate the year-on-year change in margin for each and rank them from worst to best. Create a bar chart showing EBITDA margin by division for FY2024 vs FY2025, and flag any division where margin has dropped more than 5 percentage points in a single year.',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx and ask: Perform a variance analysis between the FY2025 budget and actuals for each division. Calculate both the absolute variance in MYR millions and the percentage variance. Identify the top three divisions with the largest unfavourable variances and suggest two plausible business reasons for each based on the data patterns visible in the file. Output as a table ranked by absolute variance, largest first.'
+            'Analyse the revenue and EBITDA trends across all 11 divisions from FY2022 to FY2025. Which three divisions have shown the steepest decline in EBITDA margin? Calculate the year-on-year change in margin for each and rank them from worst to best. Create a bar chart showing EBITDA margin by division for FY2024 vs FY2025, and flag any division where margin has dropped more than 5 percentage points in a single year.',
+            'Perform a variance analysis between the FY2025 budget and actuals for each division. Calculate both the absolute variance in MYR millions and the percentage variance. Identify the top three divisions with the largest unfavourable variances and suggest two plausible business reasons for each based on the data patterns visible in the file. Output as a table ranked by absolute variance, largest first.'
           ]
         },
         {
@@ -253,9 +253,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 01_Zava_Group_Financial_Performance.xlsx. Navigate to the Group Summary sheet. Ask Copilot: Create a formula that calculates the compound annual growth rate (CAGR) of total group revenue from FY2022 to FY2025, then apply the same formula across each division row. Add a conditional formatting rule that highlights any division with a CAGR below 3% in red and above 8% in green.',
-            'In the same workbook, ask Copilot: Add a new sheet called "FY2026 Forecast" that projects each division\'s revenue using linear trend extrapolation from the FY2022–FY2025 data. Include a column showing the assumed growth rate and a column showing the 90% confidence interval range. Format all currency cells in MYR millions with 1 decimal place.',
-            'Ask Copilot in Excel: Identify any cells in this workbook that contain hard-coded numbers where a formula would be more appropriate, and list them with the sheet name and cell reference. Also flag any formula inconsistencies where a formula in a row differs from the pattern used in adjacent rows.'
+            'Using the Group Summary tab in this workbook, Create a formula that calculates the compound annual growth rate (CAGR) of total group revenue from FY2022 to FY2025, then apply the same formula across each division row. Add a conditional formatting rule that highlights any division with a CAGR below 3% in red and above 8% in green.',
+            'Using this workbook, Add a new sheet called "FY2026 Forecast" that projects each division\'s revenue using linear trend extrapolation from the FY2022–FY2025 data. Include a column showing the assumed growth rate and a column showing the 90% confidence interval range. Format all currency cells in MYR millions with 1 decimal place.',
+            'Identify any cells in this workbook that contain hard-coded numbers where a formula would be more appropriate, and list them with the sheet name and cell reference. Also flag any formula inconsistencies where a formula in a row differs from the pattern used in adjacent rows.'
           ]
         },
         {
@@ -264,8 +264,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 02_Zava_Group_Policy_Handbook.docx. Ask Copilot: Summarise this policy handbook into a one-page executive briefing covering the five most critical compliance obligations, the three highest-risk policy areas, and the escalation path for a potential breach. Format as a briefing memo addressed to the Group CEO, with a "Key Actions Required" section at the end.',
-            'In the same document, ask Copilot: Identify all sections that reference regulatory bodies or government agencies. List each reference with the section number, the regulatory body named, and the specific obligation it relates to. Present as a structured table with three columns: Section | Regulatory Body | Obligation Summary.',
+            'Summarise this policy handbook into a one-page executive briefing covering the five most critical compliance obligations, the three highest-risk policy areas, and the escalation path for a potential breach. Format as a briefing memo addressed to the Group CEO, with a "Key Actions Required" section at the end.',
+            'Using this document, Identify all sections that reference regulatory bodies or government agencies. List each reference with the section number, the regulatory body named, and the specific obligation it relates to. Present as a structured table with three columns: Section | Regulatory Body | Obligation Summary.',
             'Ask Copilot to draft a new section for the policy handbook titled "Artificial Intelligence Acceptable Use Policy" covering: permitted uses of AI tools in the workplace, data classification rules (what can and cannot be uploaded to AI tools), employee responsibilities, and the approval process for deploying AI in a business process. Keep it under 600 words, use the same formal tone as the existing document, and flag where legal review is recommended.'
           ]
         },
@@ -275,9 +275,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide presentation titled "Microsoft 365 Copilot — Productivity Unlocked" for a C-suite audience. Include: an executive summary of what Copilot does, a slide on business impact with three metrics (time saved, cost avoidance, employee satisfaction), a demo flow slide showing which tools to show first, a change management slide, and a recommended 90-day rollout roadmap. Use a professional blue and white colour scheme.',
-            'Open any existing strategy presentation. Ask Copilot: Redesign this presentation so each slide follows a "Situation — Complication — Resolution" narrative structure. Rewrite the speaker notes for each slide to be a 30-second verbal script. Flag any slide that is currently text-heavy and suggest a chart or visual to replace it.',
-            'Ask Copilot: Add a new slide titled "AI Governance Principles" to this presentation. The slide should show five principles as icons with one-line descriptions: Responsible, Secure, Transparent, Inclusive, and Accountable. Use the existing slide template and colour palette.'
+            'Create a 10-slide presentation titled "Microsoft 365 Copilot — Productivity Unlocked" for a C-suite audience. Include: an executive summary of what Copilot does, a slide on business impact with three metrics (time saved, cost avoidance, employee satisfaction), a demo flow slide showing which tools to show first, a change management slide, and a recommended 90-day rollout roadmap. Use a professional blue and white colour scheme.',
+            'Open any existing strategy presentation. Redesign this presentation so each slide follows a "Situation — Complication — Resolution" narrative structure. Rewrite the speaker notes for each slide to be a 30-second verbal script. Flag any slide that is currently text-heavy and suggest a chart or visual to replace it.',
+            'Add a new slide titled "AI Governance Principles" to this presentation. The slide should show five principles as icons with one-line descriptions: Responsible, Secure, Transparent, Inclusive, and Accountable. Use the existing slide template and colour palette.'
           ]
         },
         {
@@ -286,9 +286,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Outlook and find the most recent email thread about a project update or budget review. Ask Copilot: Summarise this thread, identify all open action items with the name of the person responsible, and draft a follow-up email to all participants listing the actions, owners, and a proposed deadline of end of this week. Keep the tone professional but direct.',
-            'Ask Copilot in Outlook: Draft a meeting request email to three senior stakeholders requesting a 45-minute strategy alignment session. The email should explain the purpose (reviewing Q2 performance against FY2026 targets), the proposed agenda in three bullet points, and ask them to confirm availability for one of three time slots next week. Keep it concise — under 150 words.',
-            'Ask Copilot: Coach me on this email before I send it. Check the tone, identify anything that could be misinterpreted, suggest a stronger subject line, and recommend whether I should copy or blind-copy anyone based on the content. Show your suggestions as tracked changes.'
+            'Open Outlook and find the most recent email thread about a project update or budget review. Summarise this thread, identify all open action items with the name of the person responsible, and draft a follow-up email to all participants listing the actions, owners, and a proposed deadline of end of this week. Keep the tone professional but direct.',
+            'Draft a meeting request email to three senior stakeholders requesting a 45-minute strategy alignment session. The email should explain the purpose (reviewing Q2 performance against FY2026 targets), the proposed agenda in three bullet points, and ask them to confirm availability for one of three time slots next week. Keep it concise — under 150 words.',
+            'Coach me on this email before I send it. Check the tone, identify anything that could be misinterpreted, suggest a stronger subject line, and recommend whether I should copy or blind-copy anyone based on the content. Show your suggestions as tracked changes.'
           ]
         },
         {
@@ -297,8 +297,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap. Ask Copilot: Generate a full meeting summary with four sections: Key Decisions Made, Open Action Items (with owner and due date), Topics That Need Follow-Up, and a one-paragraph executive summary I can paste into an email to stakeholders who did not attend.',
-            'In the same recap, ask Copilot: Draft a follow-up email to all meeting participants. The email should thank them for attending, list all action items with owners and deadlines, note any decisions that require sign-off from absent stakeholders, and propose a date for the next check-in in two weeks.',
+            'Generate a full meeting summary with four sections: Key Decisions Made, Open Action Items (with owner and due date), Topics That Need Follow-Up, and a one-paragraph executive summary I can paste into an email to stakeholders who did not attend.',
+            'Draft a follow-up email to all meeting participants. The email should thank them for attending, list all action items with owners and deadlines, note any decisions that require sign-off from absent stakeholders, and propose a date for the next check-in in two weeks.',
             'Ask Copilot in the Teams recap: Which discussion points from this meeting are still unresolved? For each unresolved item, identify who raised it, what the proposed next step was, and whether a decision was reached or deferred. Present as a table: Topic | Raised By | Status | Next Step.'
           ]
         },
@@ -409,8 +409,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload BNK_01_Meridian_Bank.xlsx to Analyst. Ask: Analyse the NPL trend across all loan product segments from Q1 FY2023 to Q4 FY2025. Which three product segments are driving the highest NPL increase in absolute MYR terms? Calculate the required provision top-up to reach 80% provision coverage for each segment and show the cumulative impact on pre-tax profit. Present as a ranked table: Segment | Current NPL (MYR M) | Coverage Gap | Provision Top-Up Required | Pre-Tax Profit Impact.',
-            'Upload BNK_01_Meridian_Bank.xlsx. Ask Analyst: Build a scatter plot showing the relationship between loan vintage (year of origination) and default rate across all Personal Financing accounts. Identify whether there is a specific origination cohort that is disproportionately contributing to the NPL problem. If a pattern exists, calculate what percentage of total NPL would be resolved by writing off or restructuring that cohort alone.'
+            'Analyse the NPL trend across all loan product segments from Q1 FY2023 to Q4 FY2025. Which three product segments are driving the highest NPL increase in absolute MYR terms? Calculate the required provision top-up to reach 80% provision coverage for each segment and show the cumulative impact on pre-tax profit. Present as a ranked table: Segment | Current NPL (MYR M) | Coverage Gap | Provision Top-Up Required | Pre-Tax Profit Impact.',
+            'Build a scatter plot showing the relationship between loan vintage (year of origination) and default rate across all Personal Financing accounts. Identify whether there is a specific origination cohort that is disproportionately contributing to the NPL problem. If a pattern exists, calculate what percentage of total NPL would be resolved by writing off or restructuring that cohort alone.'
           ]
         },
         {
@@ -419,10 +419,10 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open BNK_01_Meridian_Bank.xlsx and navigate to the Loan Portfolio sheet. Ask Copilot: Our Personal Financing NPL ratio has climbed from 8.2% in Q1 FY2023 to 14.2% in Q4 FY2025, now 4x BNM\'s supervisory threshold of 3.5%. Analyse the quarterly deterioration trend across all product segments, identify the three sub-segments contributing most to the NPL increase, calculate the additional loan loss provision required to reach 80% provision coverage, and show the resulting impact on pre-tax profit. Present as a 4-column table: Segment | NPL Rate | Provision Shortfall (MYR M) | Recommended Action.',
-            'Ask Copilot in Excel: Create a dynamic NPL stress-test model on a new sheet called "Stress Test". Assume three scenarios — Base (NPL stays at 14.2%), Moderate (NPL rises to 18%), Severe (NPL rises to 22%). For each scenario, calculate the required provision, the impact on Tier 1 capital ratio, and the regulatory capital buffer remaining above BNM\'s 10.5% minimum. Flag in red any scenario where the buffer falls below 1%.',
-            'Ask Copilot: Add a rolling 4-quarter average NPL ratio column next to each product segment row. Then add conditional formatting to flag any segment where the most recent quarter\'s NPL exceeds the 4Q average by more than 2 percentage points — these are the fast-deteriorating segments that need immediate escalation.',
-            'Ask Copilot: Summarise the key risk metrics on the Risk Dashboard sheet into a plain-language paragraph I can paste into the Board pack. Highlight the three metrics that are outside tolerance thresholds and suggest a one-sentence action for each.'
+            'Using the Loan Portfolio tab in this workbook, Our Personal Financing NPL ratio has climbed from 8.2% in Q1 FY2023 to 14.2% in Q4 FY2025, now 4x BNM\'s supervisory threshold of 3.5%. Analyse the quarterly deterioration trend across all product segments, identify the three sub-segments contributing most to the NPL increase, calculate the additional loan loss provision required to reach 80% provision coverage, and show the resulting impact on pre-tax profit. Present as a 4-column table: Segment | NPL Rate | Provision Shortfall (MYR M) | Recommended Action.',
+            'Create a dynamic NPL stress-test model on a new sheet called "Stress Test". Assume three scenarios — Base (NPL stays at 14.2%), Moderate (NPL rises to 18%), Severe (NPL rises to 22%). For each scenario, calculate the required provision, the impact on Tier 1 capital ratio, and the regulatory capital buffer remaining above BNM\'s 10.5% minimum. Flag in red any scenario where the buffer falls below 1%.',
+            'Add a rolling 4-quarter average NPL ratio column next to each product segment row. Then add conditional formatting to flag any segment where the most recent quarter\'s NPL exceeds the 4Q average by more than 2 percentage points — these are the fast-deteriorating segments that need immediate escalation.',
+            'Summarise the key risk metrics on the Risk Dashboard sheet into a plain-language paragraph I can paste into the Board pack. Highlight the three metrics that are outside tolerance thresholds and suggest a one-sentence action for each.'
           ]
         },
         {
@@ -431,9 +431,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open BNK_02_Meridian_Bank_Strategy.docx. Ask Copilot: Draft a 2-page credit risk remediation plan for BNM submission. Structure it as: (1) Executive Summary — current NPL position and root causes, (2) Remediation Actions — three concrete steps with timelines, (3) Governance — who owns each action and how progress will be reported, (4) Milestones — what BNM should expect to see at 30, 60, and 90 days. Use a formal regulatory tone throughout.',
-            'Ask Copilot in Word: Identify all sections in this strategy document that reference credit risk or lending standards. For each section, summarise in one sentence whether the current strategy is consistent with remediation of the NPL problem or whether it may be contributing to it. Present as a gap analysis table.',
-            'Ask Copilot: Rewrite the Executive Summary of this document to reflect the current NPL crisis. The new summary should open with the most critical issue, acknowledge the BNM bilateral review, and end with a clear statement of the bank\'s commitment to reaching 80% provision coverage within 6 months. Keep it under 200 words.'
+            'Draft a 2-page credit risk remediation plan for BNM submission. Structure it as: (1) Executive Summary — current NPL position and root causes, (2) Remediation Actions — three concrete steps with timelines, (3) Governance — who owns each action and how progress will be reported, (4) Milestones — what BNM should expect to see at 30, 60, and 90 days. Use a formal regulatory tone throughout.',
+            'Identify all sections in this strategy document that reference credit risk or lending standards. For each section, summarise in one sentence whether the current strategy is consistent with remediation of the NPL problem or whether it may be contributing to it. Present as a gap analysis table.',
+            'Rewrite the Executive Summary of this document to reflect the current NPL crisis. The new summary should open with the most critical issue, acknowledge the BNM bilateral review, and end with a clear statement of the bank\'s commitment to reaching 80% provision coverage within 6 months. Keep it under 200 words.'
           ]
         },
         {
@@ -442,9 +442,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide Board presentation titled "NPL Remediation Programme — Q4 FY2025 Update" for Meridian Bank. Slides should cover: (1) NPL dashboard — current vs threshold, (2) Root cause analysis, (3) Segment breakdown — top 3 contributors, (4) Provision coverage gap analysis, (5) Remediation plan — 3 initiatives, (6) Timeline and milestones, (7) Capital adequacy impact, (8) BNM engagement strategy, (9) Risk appetite reset, (10) Next steps. Use a professional dark-blue colour scheme.',
-            'Ask Copilot: For each slide in this presentation, generate speaker notes that are a 45-second verbal script. The CFO delivering this has 20 years of banking experience, so avoid over-explaining basics — focus the notes on pre-empting the questions Board members are most likely to ask.',
-            'Ask Copilot: Add a "Key Risks" slide after slide 8 that shows five risks to the remediation plan in a 2×2 risk matrix (likelihood vs impact), with one-line mitigants for each risk.'
+            'Create a 12-slide Board presentation titled "NPL Remediation Programme — Q4 FY2025 Update" for Meridian Bank. Slides should cover: (1) NPL dashboard — current vs threshold, (2) Root cause analysis, (3) Segment breakdown — top 3 contributors, (4) Provision coverage gap analysis, (5) Remediation plan — 3 initiatives, (6) Timeline and milestones, (7) Capital adequacy impact, (8) BNM engagement strategy, (9) Risk appetite reset, (10) Next steps. Use a professional dark-blue colour scheme.',
+            'For each slide in this presentation, generate speaker notes that are a 45-second verbal script. The CFO delivering this has 20 years of banking experience, so avoid over-explaining basics — focus the notes on pre-empting the questions Board members are most likely to ask.',
+            'Add a "Key Risks" slide after slide 8 that shows five risks to the remediation plan in a 2×2 risk matrix (likelihood vs impact), with one-line mitigants for each risk.'
           ]
         },
         {
@@ -453,9 +453,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_06_BNM_Regulatory_Correspondence.docx and review the thread. Open Outlook and ask Copilot: Draft a formal response to BNM\'s latest query. Acknowledge their concerns about the NPL trajectory, outline the three immediate remediation steps we have initiated, confirm the timeline for our next progress report, and request a 30-minute call with the BNM supervision team to discuss the bilateral review agenda. Use the formal salutation style appropriate for BNM correspondence.',
-            'Open Email_01_Zava_Bank_NPL_Thread.docx. Ask Copilot in Outlook: Summarise this internal email thread, identify all commitments made by the credit risk team, and draft a follow-up email to the Chief Credit Officer asking for a status update on each commitment before the BNM meeting on Tuesday. List the commitments as numbered bullet points in the email body.',
-            'Ask Copilot: Draft an all-staff email from the CEO to branch managers and relationship managers explaining the NPL situation without causing alarm. The email should acknowledge the challenge, explain what the bank is doing about it, and give clear guidance on what relationship managers should and should not say to customers who ask about loan restructuring options. Keep it under 300 words.'
+            'Draft a formal response to BNM\'s latest query. Acknowledge their concerns about the NPL trajectory, outline the three immediate remediation steps we have initiated, confirm the timeline for our next progress report, and request a 30-minute call with the BNM supervision team to discuss the bilateral review agenda. Use the formal salutation style appropriate for BNM correspondence.',
+            'Open Email_01_Zava_Bank_NPL_Thread.docx. Summarise this internal email thread, identify all commitments made by the credit risk team, and draft a follow-up email to the Chief Credit Officer asking for a status update on each commitment before the BNM meeting on Tuesday. List the commitments as numbered bullet points in the email body.',
+            'Draft an all-staff email from the CEO to branch managers and relationship managers explaining the NPL situation without causing alarm. The email should acknowledge the challenge, explain what the bank is doing about it, and give clear guidance on what relationship managers should and should not say to customers who ask about loan restructuring options. Keep it under 300 words.'
           ]
         },
         {
@@ -464,9 +464,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a credit or risk committee meeting. Ask Copilot: Generate a structured recap covering: (1) Key credit risk metrics reviewed, (2) Decisions made on provisioning or remediation, (3) Action items with owners and due dates, (4) Any escalation items that need Board or BNM notification. Format for distribution to the Risk Committee.',
-            'In the same meeting recap, ask Copilot: Draft a follow-up email to all Risk Committee members. The email should list all action items with owner names and deadlines, note any decisions that require CFO or Board sign-off, and propose the next Risk Committee meeting date.',
-            'Ask Copilot in Teams: Based on this meeting transcript, identify any statements made about NPL targets or remediation timelines that could be interpreted as commitments to BNM. List each statement with the speaker name and timestamp so the legal team can review before the bilateral meeting.'
+            'Open an existing recorded Teams meeting recap from a credit or risk committee meeting. Generate a structured recap covering: (1) Key credit risk metrics reviewed, (2) Decisions made on provisioning or remediation, (3) Action items with owners and due dates, (4) Any escalation items that need Board or BNM notification. Format for distribution to the Risk Committee.',
+            'Draft a follow-up email to all Risk Committee members. The email should list all action items with owner names and deadlines, note any decisions that require CFO or Board sign-off, and propose the next Risk Committee meeting date.',
+            'Based on this meeting transcript, identify any statements made about NPL targets or remediation timelines that could be interpreted as commitments to BNM. List each statement with the speaker name and timestamp so the legal team can review before the bilateral meeting.'
           ]
         },
         {
@@ -574,8 +574,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload BNK_01_Meridian_Bank.xlsx. Ask Analyst: Analyse the financing asset breakdown by product type (Murabahah, Ijarah, Musharakah, etc.) and calculate the concentration risk — what percentage of total financing is in the top 3 product categories. Create a pie chart showing product mix and a trend chart showing how the mix has shifted over the past 8 quarters. Flag any product category where growth has exceeded 15% quarter-on-quarter.',
-            'Upload BNK_01_Meridian_Bank.xlsx. Ask: Perform a sensitivity analysis on profit income assuming OPR changes of -50bps, flat, +50bps, and +100bps. For each scenario, calculate the impact on Net Financing Income (NFI) in MYR millions and the resulting NFI margin. Present as a 4-scenario sensitivity table with a colour-coded heat map — red for scenarios where NFI margin falls below 2.5%.'
+            'Analyse the financing asset breakdown by product type (Murabahah, Ijarah, Musharakah, etc.) and calculate the concentration risk — what percentage of total financing is in the top 3 product categories. Create a pie chart showing product mix and a trend chart showing how the mix has shifted over the past 8 quarters. Flag any product category where growth has exceeded 15% quarter-on-quarter.',
+            'Perform a sensitivity analysis on profit income assuming OPR changes of -50bps, flat, +50bps, and +100bps. For each scenario, calculate the impact on Net Financing Income (NFI) in MYR millions and the resulting NFI margin. Present as a 4-scenario sensitivity table with a colour-coded heat map — red for scenarios where NFI margin falls below 2.5%.'
           ]
         },
         {
@@ -584,9 +584,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open BNK_01_Meridian_Bank.xlsx and navigate to the Financing Portfolio sheet. Ask Copilot: Create a Shariah compliance monitoring dashboard on a new sheet called "Shariah Dashboard". It should show: (1) Each product type and its Shariah contract structure, (2) The profit rate benchmark used (COF + spread), (3) Any product where the actual rate charged deviates from the approved structure by more than 10bps — flag these in red.',
-            'Ask Copilot: Build a Sukuk issuance impact model on a new sheet. Assume a MYR 3.5B Sukuk Wakalah at 4.2% profit rate for 5 years. Calculate: (1) Annual profit distribution to Sukukholders, (2) Impact on the bank\'s liquidity coverage ratio (LCR), (3) Impact on the net stable funding ratio (NSFR), (4) Breakeven period assuming proceeds are deployed into Murabahah financing at 6.8% profit rate.',
-            'Ask Copilot: In the financing data, identify all accounts where the financing-to-value (FTV) ratio has exceeded 90% and the account is classified as Stage 2 under MFRS 9. List them by product type and calculate the expected credit loss (ECL) for each assuming a 35% loss given default (LGD). Present as a table sorted by ECL amount, largest first.'
+            'Using the Financing Portfolio tab in this workbook, Create a Shariah compliance monitoring dashboard on a new sheet called "Shariah Dashboard". It should show: (1) Each product type and its Shariah contract structure, (2) The profit rate benchmark used (COF + spread), (3) Any product where the actual rate charged deviates from the approved structure by more than 10bps — flag these in red.',
+            'Build a Sukuk issuance impact model on a new sheet. Assume a MYR 3.5B Sukuk Wakalah at 4.2% profit rate for 5 years. Calculate: (1) Annual profit distribution to Sukukholders, (2) Impact on the bank\'s liquidity coverage ratio (LCR), (3) Impact on the net stable funding ratio (NSFR), (4) Breakeven period assuming proceeds are deployed into Murabahah financing at 6.8% profit rate.',
+            'In the financing data, identify all accounts where the financing-to-value (FTV) ratio has exceeded 90% and the account is classified as Stage 2 under MFRS 9. List them by product type and calculate the expected credit loss (ECL) for each assuming a 35% loss given default (LGD). Present as a table sorted by ECL amount, largest first.'
           ]
         },
         {
@@ -595,9 +595,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open BNK_02_Meridian_Bank_Strategy.docx. Ask Copilot: Draft a Shariah compliance remediation memo for the two flagged products. For each product, the memo should include: (1) the Shariah issue identified, (2) the proposed re-structuring to comply with IFSA requirements, (3) the customer impact and communication plan, (4) the timeline for remediation and sign-off by the Shariah Committee. Use a formal regulatory tone.',
-            'Ask Copilot in Word: Summarise the BNM IFSA compliance requirements referenced in this strategy document into a checklist format. For each requirement, add a status column (Compliant / Partial / Gap) and a responsible officer column. This checklist will be used by the compliance team to prepare for the upcoming BNM review.',
-            'Ask Copilot: Draft a Sukuk Wakalah investor briefing document of approximately 500 words. Cover: the structure of the instrument, profit rate and payment schedule, the underlying Wakalah assets, the risk factors, and the use of proceeds. The audience is institutional investors from the GCC who are familiar with Islamic finance but unfamiliar with Malaysian regulatory requirements.'
+            'Draft a Shariah compliance remediation memo for the two flagged products. For each product, the memo should include: (1) the Shariah issue identified, (2) the proposed re-structuring to comply with IFSA requirements, (3) the customer impact and communication plan, (4) the timeline for remediation and sign-off by the Shariah Committee. Use a formal regulatory tone.',
+            'Summarise the BNM IFSA compliance requirements referenced in this strategy document into a checklist format. For each requirement, add a status column (Compliant / Partial / Gap) and a responsible officer column. This checklist will be used by the compliance team to prepare for the upcoming BNM review.',
+            'Draft a Sukuk Wakalah investor briefing document of approximately 500 words. Cover: the structure of the instrument, profit rate and payment schedule, the underlying Wakalah assets, the risk factors, and the use of proceeds. The audience is institutional investors from the GCC who are familiar with Islamic finance but unfamiliar with Malaysian regulatory requirements.'
           ]
         },
         {
@@ -606,9 +606,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide Sukuk Wakalah roadshow presentation for institutional investors. Include slides on: AIBM overview and credit rating, the Sukuk structure diagram, profit rate and tenure, use of proceeds, the Shariah compliance framework, key financial metrics (CAR, NPF ratio, ROAE), risk factors, and a Q&A summary. Use a professional green and gold colour scheme appropriate for an Islamic finance presentation.',
-            'Ask Copilot: Add speaker notes to each slide of this investor presentation. The notes should anticipate the three most likely questions from a GCC sovereign wealth fund and provide brief scripted answers the presenter can deliver naturally.',
-            'Ask Copilot: Create a 2-slide summary of the BNM IFSA compliance status for use in the Board Shariah Committee meeting. Slide 1: Current compliance status (RAG table by requirement). Slide 2: Remediation plan for the two flagged products with a Gantt-style timeline.'
+            'Create a 10-slide Sukuk Wakalah roadshow presentation for institutional investors. Include slides on: AIBM overview and credit rating, the Sukuk structure diagram, profit rate and tenure, use of proceeds, the Shariah compliance framework, key financial metrics (CAR, NPF ratio, ROAE), risk factors, and a Q&A summary. Use a professional green and gold colour scheme appropriate for an Islamic finance presentation.',
+            'Add speaker notes to each slide of this investor presentation. The notes should anticipate the three most likely questions from a GCC sovereign wealth fund and provide brief scripted answers the presenter can deliver naturally.',
+            'Create a 2-slide summary of the BNM IFSA compliance status for use in the Board Shariah Committee meeting. Slide 1: Current compliance status (RAG table by requirement). Slide 2: Remediation plan for the two flagged products with a Gantt-style timeline.'
           ]
         },
         {
@@ -617,9 +617,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_06_BNM_Regulatory_Correspondence.docx. Ask Copilot in Outlook: Draft a formal response to the BNM IFSA review notice. The letter should: acknowledge receipt of the review schedule, confirm our readiness and the documents we will provide, request clarification on two specific requirements relating to Musharakah profit-sharing ratios, and propose a pre-review meeting with the BNM supervision officer to align on expectations.',
-            'Ask Copilot: Draft an email to our Shariah Committee members calling an emergency meeting to address the two flagged products. The email should explain the nature of the Shariah issue without using overly technical language, attach the relevant product term sheets for review, and ask for written confirmation of availability for a 2-hour session this week. Subject line: "Urgent: Shariah Committee Review — Two Product Compliance Issues".',
-            'Ask Copilot: Coach me on the tone of the draft email to BNM. Is it too defensive? Too casual? Does it inadvertently admit any non-compliance? Suggest three edits that would make the letter more confident and regulatory-appropriate without being evasive.'
+            'Open Email_06_BNM_Regulatory_Correspondence.docx. Draft a formal response to the BNM IFSA review notice. The letter should: acknowledge receipt of the review schedule, confirm our readiness and the documents we will provide, request clarification on two specific requirements relating to Musharakah profit-sharing ratios, and propose a pre-review meeting with the BNM supervision officer to align on expectations.',
+            'Draft an email to our Shariah Committee members calling an emergency meeting to address the two flagged products. The email should explain the nature of the Shariah issue without using overly technical language, attach the relevant product term sheets for review, and ask for written confirmation of availability for a 2-hour session this week. Subject line: "Urgent: Shariah Committee Review — Two Product Compliance Issues".',
+            'Coach me on the tone of the draft email to BNM. Is it too defensive? Too casual? Does it inadvertently admit any non-compliance? Suggest three edits that would make the letter more confident and regulatory-appropriate without being evasive.'
           ]
         },
         {
@@ -628,9 +628,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a Shariah Committee or ALCO meeting. Ask Copilot: Identify all Shariah compliance decisions made in this meeting, the rationale provided, and any conditions attached to the approval. Format as a formal Shariah Committee resolution summary suitable for inclusion in the minute book.',
+            'Open an existing recorded Teams meeting recap from a Shariah Committee or ALCO meeting. Identify all Shariah compliance decisions made in this meeting, the rationale provided, and any conditions attached to the approval. Format as a formal Shariah Committee resolution summary suitable for inclusion in the minute book.',
             'Ask Copilot in the recap: Draft follow-up action items for the ALCO based on this meeting. Each action should have a clear owner, a deliverable, and a deadline. Group actions by theme: Profit Rate Risk, Liquidity, Sukuk Issuance, and Shariah Compliance.',
-            'Ask Copilot: Were any profit rate assumptions discussed in this meeting that differ from the assumptions in our Board-approved ALCO policy? If so, flag them with the exact quote from the transcript and the page number of the policy they may conflict with.'
+            'Were any profit rate assumptions discussed in this meeting that differ from the assumptions in our Board-approved ALCO policy? If so, flag them with the exact quote from the transcript and the page number of the policy they may conflict with.'
           ]
         },
         {
@@ -739,8 +739,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload GLC_01_Danamas_Capital.xlsx. Ask Analyst: Analyse the AUM trend across all fund categories (equity, fixed income, ESG, alternative) over the past 8 quarters. Which categories are growing and which are in outflow? Calculate the net flow rate for each category and identify which fund manager or product has the highest alpha generation. Create a bubble chart showing AUM size vs net flow rate vs alpha.',
-            'Upload GLC_01_Danamas_Capital.xlsx. Ask: Perform a peer comparison of Kenanga Capital\'s fee structure against the 4 closest competitors listed in the data. Which fee categories (management fee, performance fee, entry/exit fee) are above or below market median? Show as a heatmap table: Product Category | Our Fee | Market Median | Position (Above/Below/At).'
+            'Analyse the AUM trend across all fund categories (equity, fixed income, ESG, alternative) over the past 8 quarters. Which categories are growing and which are in outflow? Calculate the net flow rate for each category and identify which fund manager or product has the highest alpha generation. Create a bubble chart showing AUM size vs net flow rate vs alpha.',
+            'Perform a peer comparison of Kenanga Capital\'s fee structure against the 4 closest competitors listed in the data. Which fee categories (management fee, performance fee, entry/exit fee) are above or below market median? Show as a heatmap table: Product Category | Our Fee | Market Median | Position (Above/Below/At).'
           ]
         },
         {
@@ -749,9 +749,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open GLC_01_Danamas_Capital.xlsx. Navigate to the IPO Pipeline sheet. Ask Copilot: For each of the three IPO mandates in the pipeline, calculate the estimated deal fee revenue based on the assumed offer price, shares offered, and our advisory fee rate (2.5% of gross proceeds). Show total expected revenue from all three mandates and flag which deal has the highest fee risk if the IPO is withdrawn.',
-            'Ask Copilot: Create an ESG fund performance attribution model on a new sheet. The model should break down fund return into: (1) Market beta contribution, (2) ESG factor premium/discount, (3) Stock selection alpha, (4) Sector allocation effect. Use the returns data in the Fund Performance sheet and show monthly attribution for the last 12 months.',
-            'Ask Copilot: In the Client AUM sheet, identify the top 20 clients by AUM and calculate the revenue concentration risk — what percentage of total management fee revenue comes from the top 5 clients. Highlight in red any client where a 30% AUM withdrawal would reduce our total fee revenue by more than 5%.'
+            'Using the IPO Pipeline tab in this workbook, For each of the three IPO mandates in the pipeline, calculate the estimated deal fee revenue based on the assumed offer price, shares offered, and our advisory fee rate (2.5% of gross proceeds). Show total expected revenue from all three mandates and flag which deal has the highest fee risk if the IPO is withdrawn.',
+            'Create an ESG fund performance attribution model on a new sheet. The model should break down fund return into: (1) Market beta contribution, (2) ESG factor premium/discount, (3) Stock selection alpha, (4) Sector allocation effect. Use the returns data in the Fund Performance sheet and show monthly attribution for the last 12 months.',
+            'In the Client AUM sheet, identify the top 20 clients by AUM and calculate the revenue concentration risk — what percentage of total management fee revenue comes from the top 5 clients. Highlight in red any client where a 30% AUM withdrawal would reduce our total fee revenue by more than 5%.'
           ]
         },
         {
@@ -760,9 +760,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open GLC_02_Danamas_Strategy.docx. Ask Copilot: Draft an ESG fund prospectus introduction of 400 words for the new fund launching in Q2 FY2026. Cover: the fund\'s ESG investment philosophy, the screening methodology (negative exclusions + ESG scoring), the benchmark index, the target investor profile, and the expected distribution yield. Use language that meets SC Malaysia\'s disclosure standards for ESG funds.',
-            'Ask Copilot in Word: Identify all sections in this strategy document related to M&A and corporate advisory. For each section, extract the key strategic rationale and create a one-page M&A pitch template that our advisory team can customise for new mandates. The template should have five sections: Client Situation, Strategic Rationale, Deal Mechanics, Our Credentials, and Proposed Fee Structure.',
-            'Ask Copilot: Draft a 300-word "Chairman\'s Letter to Investors" for the annual fund report. The letter should acknowledge market volatility in FY2025, highlight our top-performing fund (the ESG equity fund returned 14.2%), reaffirm our investment philosophy, and outline our key strategic priorities for FY2026 — growing ESG AUM to MYR 2B and launching two new alternative investment products.'
+            'Draft an ESG fund prospectus introduction of 400 words for the new fund launching in Q2 FY2026. Cover: the fund\'s ESG investment philosophy, the screening methodology (negative exclusions + ESG scoring), the benchmark index, the target investor profile, and the expected distribution yield. Use language that meets SC Malaysia\'s disclosure standards for ESG funds.',
+            'Identify all sections in this strategy document related to M&A and corporate advisory. For each section, extract the key strategic rationale and create a one-page M&A pitch template that our advisory team can customise for new mandates. The template should have five sections: Client Situation, Strategic Rationale, Deal Mechanics, Our Credentials, and Proposed Fee Structure.',
+            'Draft a 300-word "Chairman\'s Letter to Investors" for the annual fund report. The letter should acknowledge market volatility in FY2025, highlight our top-performing fund (the ESG equity fund returned 14.2%), reaffirm our investment philosophy, and outline our key strategic priorities for FY2026 — growing ESG AUM to MYR 2B and launching two new alternative investment products.'
           ]
         },
         {
@@ -771,9 +771,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide IPO pitch deck for a Malaysian tech company targeting a Main Market listing at MYR 420M market cap. Include: company overview, financial highlights (Revenue CAGR 28%, EBITDA margin 22%), industry tailwinds, competitive positioning, IPO structure and use of proceeds, valuation methodology (DCF + comparable companies), Bursa listing timeline, risk factors, and why now is the right time to list. Professional blue and silver theme.',
-            'Ask Copilot: Generate a 6-slide ESG fund investor update presentation. Slides: (1) Portfolio overview and ESG score distribution, (2) Top 10 holdings with ESG ratings, (3) Carbon footprint vs benchmark, (4) Active ownership highlights — engagements and votes, (5) Performance attribution, (6) Outlook and strategy. Include speaker notes for each slide.',
-            'Ask Copilot: Redesign slide 3 of this presentation to replace the text-heavy bullet list with a 2x2 matrix showing deal complexity vs fee potential for our pipeline. Place each of the three IPO mandates in the appropriate quadrant and add a one-line rationale.'
+            'Create a 12-slide IPO pitch deck for a Malaysian tech company targeting a Main Market listing at MYR 420M market cap. Include: company overview, financial highlights (Revenue CAGR 28%, EBITDA margin 22%), industry tailwinds, competitive positioning, IPO structure and use of proceeds, valuation methodology (DCF + comparable companies), Bursa listing timeline, risk factors, and why now is the right time to list. Professional blue and silver theme.',
+            'Generate a 6-slide ESG fund investor update presentation. Slides: (1) Portfolio overview and ESG score distribution, (2) Top 10 holdings with ESG ratings, (3) Carbon footprint vs benchmark, (4) Active ownership highlights — engagements and votes, (5) Performance attribution, (6) Outlook and strategy. Include speaker notes for each slide.',
+            'Redesign slide 3 of this presentation to replace the text-heavy bullet list with a 2x2 matrix showing deal complexity vs fee potential for our pipeline. Place each of the three IPO mandates in the appropriate quadrant and add a one-line rationale.'
           ]
         },
         {
@@ -782,9 +782,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: I have a meeting with a sovereign wealth fund potential investor next week about our ESG fund. Draft a pre-meeting email that introduces our ESG fund, attaches a one-pager (note: attach manually), proposes a 45-minute meeting agenda, and requests information on their typical ESG fund allocation size and return expectations. Keep the tone professional but not overly formal — this is a relationship-building email, not a hard sell.',
-            'Ask Copilot: Draft the Securities Commission quarterly regulatory filing cover letter. The letter should reference the relevant SC circular, confirm the accuracy of the enclosed statements, note any material changes to the fund strategy or fee structure, and request acknowledgement of receipt. Use the formal tone required for SC correspondence.',
-            'Ask Copilot: Summarise my inbox from the past two weeks and flag any emails related to our IPO pipeline mandates. Categorise them as: Urgent (client needs response today), Action Required (needs response this week), and FYI. List each email with sender, subject, and one-line summary.'
+            'I have a meeting with a sovereign wealth fund potential investor next week about our ESG fund. Draft a pre-meeting email that introduces our ESG fund, attaches a one-pager (note: attach manually), proposes a 45-minute meeting agenda, and requests information on their typical ESG fund allocation size and return expectations. Keep the tone professional but not overly formal — this is a relationship-building email, not a hard sell.',
+            'Draft the Securities Commission quarterly regulatory filing cover letter. The letter should reference the relevant SC circular, confirm the accuracy of the enclosed statements, note any material changes to the fund strategy or fee structure, and request acknowledgement of receipt. Use the formal tone required for SC correspondence.',
+            'Summarise my inbox from the past two weeks and flag any emails related to our IPO pipeline mandates. Categorise them as: Urgent (client needs response today), Action Required (needs response this week), and FYI. List each email with sender, subject, and one-line summary.'
           ]
         },
         {
@@ -793,9 +793,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a deal team or investment committee meeting. Ask Copilot: Summarise all investment recommendations made, the key rationale for each, any dissenting views, and the final decision. Format as an investment committee minute suitable for regulatory record-keeping.',
+            'Open an existing recorded Teams meeting recap from a deal team or investment committee meeting. Summarise all investment recommendations made, the key rationale for each, any dissenting views, and the final decision. Format as an investment committee minute suitable for regulatory record-keeping.',
             'Ask Copilot in the recap: Identify all client commitments made in this meeting — any promise to deliver a document, update, or recommendation to a client by a specific date. List each commitment with the staff member who made it and the agreed deadline, so I can follow up before end of week.',
-            'Ask Copilot: Based on this meeting transcript, draft an action item register for the M&A deal team. Include four columns: Action | Owner | Deadline | Dependencies. Sort by deadline, earliest first.'
+            'Based on this meeting transcript, draft an action item register for the M&A deal team. Include four columns: Action | Owner | Deadline | Dependencies. Sort by deadline, earliest first.'
           ]
         },
         {
@@ -903,8 +903,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload INS_01_Pacific_Shield_Insurance.xlsx to Analyst. Ask: Analyse the motor claims data to identify patterns consistent with fraud. Look for: (1) workshops with unusually high average claim values, (2) policyholders with multiple claims in 12 months, (3) claims submitted within 30 days of policy inception, (4) claims where repair cost exceeds 70% of vehicle value. Create a fraud risk score for each workshop and rank the top 10 highest-risk workshops. Show as a table and a bar chart.',
-            'Upload INS_01_Pacific_Shield_Insurance.xlsx. Ask Analyst: Decompose the motor combined ratio of 108% into its component parts: claims frequency, average claims severity, expense ratio, and reinsurance recovery rate. Which component has deteriorated most year-on-year? Show the trend over 8 quarters with a waterfall chart showing how each component has contributed to the combined ratio movement from 95% to 108%.'
+            'Analyse the motor claims data to identify patterns consistent with fraud. Look for: (1) workshops with unusually high average claim values, (2) policyholders with multiple claims in 12 months, (3) claims submitted within 30 days of policy inception, (4) claims where repair cost exceeds 70% of vehicle value. Create a fraud risk score for each workshop and rank the top 10 highest-risk workshops. Show as a table and a bar chart.',
+            'Decompose the motor combined ratio of 108% into its component parts: claims frequency, average claims severity, expense ratio, and reinsurance recovery rate. Which component has deteriorated most year-on-year? Show the trend over 8 quarters with a waterfall chart showing how each component has contributed to the combined ratio movement from 95% to 108%.'
           ]
         },
         {
@@ -913,9 +913,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open INS_01_Pacific_Shield_Insurance.xlsx and navigate to the Claims Analysis sheet. Ask Copilot: Create a fraud detection dashboard on a new sheet. For each motor workshop in the data, calculate: (1) Average claim value vs national average, (2) Claims rejection rate, (3) Percentage of claims submitted by the same loss adjuster, (4) Average repair days vs industry benchmark of 12 days. Highlight in red any workshop that triggers 3 or more of these fraud indicators.',
-            'Ask Copilot: Build a detariffication pricing model on a new sheet. For each motor risk category (private car, commercial vehicle, motorcycle), calculate the breakeven premium rate that achieves a 95% combined ratio target. Assume: current claims frequency, projected 5% claims inflation, and our current expense ratio of 28%. Show the new premium rate and the percentage change from the current tariff rate.',
-            'Ask Copilot: In the Policy Renewal sheet, identify all policies where the renewal date is within the next 30 days, the current premium is below breakeven, and the policyholder has made more than one claim in the past 12 months. These are high-risk renewals we should either reprice or decline. List with policy number, current premium, breakeven premium, and claims history.'
+            'Using the Claims Analysis tab in this workbook, Create a fraud detection dashboard on a new sheet. For each motor workshop in the data, calculate: (1) Average claim value vs national average, (2) Claims rejection rate, (3) Percentage of claims submitted by the same loss adjuster, (4) Average repair days vs industry benchmark of 12 days. Highlight in red any workshop that triggers 3 or more of these fraud indicators.',
+            'Build a detariffication pricing model on a new sheet. For each motor risk category (private car, commercial vehicle, motorcycle), calculate the breakeven premium rate that achieves a 95% combined ratio target. Assume: current claims frequency, projected 5% claims inflation, and our current expense ratio of 28%. Show the new premium rate and the percentage change from the current tariff rate.',
+            'In the Policy Renewal sheet, identify all policies where the renewal date is within the next 30 days, the current premium is below breakeven, and the policyholder has made more than one claim in the past 12 months. These are high-risk renewals we should either reprice or decline. List with policy number, current premium, breakeven premium, and claims history.'
           ]
         },
         {
@@ -924,9 +924,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open INS_02_Pacific_Shield_Strategy.docx. Ask Copilot: Draft a 2-page Project SWIFT CLAIM investigation report for the Board Audit Committee. Structure: (1) Background — fraud suspected based on claims data analysis, (2) Evidence Summary — key data signals identified, (3) Top 5 suspicious workshops with supporting data, (4) Recommended Actions — referral to police, claims suspension, blacklisting, (5) Financial Impact — estimated annual claims leakage of MYR 84M. Use a formal, legally cautious tone that avoids prejudging guilt.',
-            'Ask Copilot in Word: Identify all sections in this strategy document that reference claims management or fraud prevention. Summarise the current fraud prevention commitments and identify any gaps relative to industry best practice. Create a gap analysis table: Current Practice | Best Practice | Gap | Recommended Action.',
-            'Ask Copilot: Draft a customer communication letter that will be sent to policyholders whose claims are being reviewed as part of Project SWIFT CLAIM. The letter must: inform them of the review without alleging fraud, explain that a small delay in claims payment should be expected, provide contact details for queries, and maintain a respectful, non-accusatory tone. Keep it under 250 words.'
+            'Draft a 2-page Project SWIFT CLAIM investigation report for the Board Audit Committee. Structure: (1) Background — fraud suspected based on claims data analysis, (2) Evidence Summary — key data signals identified, (3) Top 5 suspicious workshops with supporting data, (4) Recommended Actions — referral to police, claims suspension, blacklisting, (5) Financial Impact — estimated annual claims leakage of MYR 84M. Use a formal, legally cautious tone that avoids prejudging guilt.',
+            'Identify all sections in this strategy document that reference claims management or fraud prevention. Summarise the current fraud prevention commitments and identify any gaps relative to industry best practice. Create a gap analysis table: Current Practice | Best Practice | Gap | Recommended Action.',
+            'Draft a customer communication letter that will be sent to policyholders whose claims are being reviewed as part of Project SWIFT CLAIM. The letter must: inform them of the review without alleging fraud, explain that a small delay in claims payment should be expected, provide contact details for queries, and maintain a respectful, non-accusatory tone. Keep it under 250 words.'
           ]
         },
         {
@@ -935,9 +935,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide Board presentation on Project SWIFT CLAIM and detariffication strategy. Slides: (1) Executive summary — combined ratio at 108% and key drivers, (2) Fraud analysis — claims leakage breakdown, (3) Top 10 suspicious workshops heat map, (4) Investigation plan and timeline, (5) Detariffication pricing strategy, (6) New premium rates by risk category, (7) Retention vs repricing decision matrix, (8) Financial impact — if fraud reduced by 50% and detariffication implemented, (9) Key risks, (10) Recommended decisions for Board approval. Use navy blue and white colour scheme.',
-            'Ask Copilot: Create speaker notes for each slide. The CEO presenting has a habit of going off-topic — the notes should include a bracketed "[STOP HERE]" marker to help her stay on time. Each slide should be 45 seconds maximum.',
-            'Ask Copilot: Add an appendix slide with a 2x2 risk matrix showing the four key risks to our detariffication strategy: underprice risk, competitor aggression, BNM supervisory scrutiny, and claims inflation. Place each risk in the appropriate quadrant based on likelihood and impact.'
+            'Create a 10-slide Board presentation on Project SWIFT CLAIM and detariffication strategy. Slides: (1) Executive summary — combined ratio at 108% and key drivers, (2) Fraud analysis — claims leakage breakdown, (3) Top 10 suspicious workshops heat map, (4) Investigation plan and timeline, (5) Detariffication pricing strategy, (6) New premium rates by risk category, (7) Retention vs repricing decision matrix, (8) Financial impact — if fraud reduced by 50% and detariffication implemented, (9) Key risks, (10) Recommended decisions for Board approval. Use navy blue and white colour scheme.',
+            'Create speaker notes for each slide. The CEO presenting has a habit of going off-topic — the notes should include a bracketed "[STOP HERE]" marker to help her stay on time. Each slide should be 45 seconds maximum.',
+            'Add an appendix slide with a 2x2 risk matrix showing the four key risks to our detariffication strategy: underprice risk, competitor aggression, BNM supervisory scrutiny, and claims inflation. Place each risk in the appropriate quadrant based on likelihood and impact.'
           ]
         },
         {
@@ -946,9 +946,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a formal notification letter to BNM\'s Insurance Supervision Department regarding the suspected claims fraud syndicate. The letter should: explain the nature and scale of the suspected fraud, describe the internal investigation steps taken, request guidance on whether BNM expects a formal regulatory notification, and propose a meeting to discuss. Use the formal tone required for BNM correspondence.',
-            'Ask Copilot: Draft an internal email to all claims adjusters and investigators briefing them on Project SWIFT CLAIM. The email should explain the investigation without naming specific workshops yet, instruct adjusters to flag any motor claim over MYR 15,000 for secondary review, and ask them to report any unusual patterns they have observed. Remind them of the strict confidentiality requirement.',
-            'Ask Copilot: Summarise the last 10 emails in my inbox related to claims or fraud. Identify any that require a response today, any that contain regulatory communications, and any where a commitment was made that has not yet been fulfilled. Present as a prioritised action list.'
+            'Draft a formal notification letter to BNM\'s Insurance Supervision Department regarding the suspected claims fraud syndicate. The letter should: explain the nature and scale of the suspected fraud, describe the internal investigation steps taken, request guidance on whether BNM expects a formal regulatory notification, and propose a meeting to discuss. Use the formal tone required for BNM correspondence.',
+            'Draft an internal email to all claims adjusters and investigators briefing them on Project SWIFT CLAIM. The email should explain the investigation without naming specific workshops yet, instruct adjusters to flag any motor claim over MYR 15,000 for secondary review, and ask them to report any unusual patterns they have observed. Remind them of the strict confidentiality requirement.',
+            'Summarise the last 10 emails in my inbox related to claims or fraud. Identify any that require a response today, any that contain regulatory communications, and any where a commitment was made that has not yet been fulfilled. Present as a prioritised action list.'
           ]
         },
         {
@@ -957,9 +957,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a claims committee or fraud taskforce meeting. Ask Copilot: Summarise all fraud case updates discussed, decisions made on claims suspension or rejection, and any escalation actions agreed. Format as a fraud committee minute.',
+            'Open an existing recorded Teams meeting recap from a claims committee or fraud taskforce meeting. Summarise all fraud case updates discussed, decisions made on claims suspension or rejection, and any escalation actions agreed. Format as a fraud committee minute.',
             'Ask Copilot in the recap: Draft a follow-up email to the investigation team summarising the actions agreed in this meeting. Include a table: Action | Owner | Deadline | Status (In Progress / Not Started).',
-            'Ask Copilot: Were any specific workshop names or policy numbers discussed in this meeting? List them with the context in which they were mentioned so I can update the fraud watch list.'
+            'Were any specific workshop names or policy numbers discussed in this meeting? List them with the context in which they were mentioned so I can update the fraud watch list.'
           ]
         },
         {
@@ -1067,8 +1067,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload INS_01_Pacific_Shield_Insurance.xlsx. Ask Analyst: Analyse agent productivity data over the past 8 quarters. Calculate new policies per active agent, average premium per policy, and lapse rate by agent tier (Platinum, Gold, Silver, Bronze). Which agent tier has the highest lapse rate and lowest productivity? Create a scatter plot of agent tenure vs productivity score and identify whether newer agents (under 2 years) are performing better or worse than tenured agents.',
-            'Upload INS_01_Pacific_Shield_Insurance.xlsx. Ask: Perform a lapse rate cohort analysis — group policyholders by the year they purchased their policy and calculate the cumulative lapse rate at 1 year, 2 years, 3 years, and 5 years. Which vintage has the highest early lapse rate? Show as a cohort table and a line chart.'
+            'Analyse agent productivity data over the past 8 quarters. Calculate new policies per active agent, average premium per policy, and lapse rate by agent tier (Platinum, Gold, Silver, Bronze). Which agent tier has the highest lapse rate and lowest productivity? Create a scatter plot of agent tenure vs productivity score and identify whether newer agents (under 2 years) are performing better or worse than tenured agents.',
+            'Perform a lapse rate cohort analysis — group policyholders by the year they purchased their policy and calculate the cumulative lapse rate at 1 year, 2 years, 3 years, and 5 years. Which vintage has the highest early lapse rate? Show as a cohort table and a line chart.'
           ]
         },
         {
@@ -1077,9 +1077,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open INS_01_Pacific_Shield_Insurance.xlsx. Navigate to the Agent Performance sheet. Ask Copilot: Create a tier-based productivity dashboard for our 3,200 active agents. For each tier (Platinum, Gold, Silver, Bronze), calculate: (1) Average new annual premium equivalents (APE) per agent, (2) Persistency ratio (13-month), (3) Average income earned. Highlight in red any tier where persistency has dropped below 80%.',
-            'Ask Copilot: In the Product Mix sheet, analyse the shift in product mix from FY2022 to FY2025. Has the proportion of ILP (Investment-Linked Plans) vs traditional life products changed? Calculate the revenue impact of this shift given that ILPs have lower margin than whole life products. Show as a stacked bar chart by year.',
-            'Ask Copilot: Build a digital channel vs agent channel comparison on a new sheet. Compare: (1) Customer acquisition cost, (2) Average premium size, (3) Lapse rate at 12 months, (4) Cross-sell rate. If the digital channel has a 40% lower customer acquisition cost but 25% higher lapse rate, calculate the 5-year lifetime value difference between the two channels.'
+            'Using the Agent Performance tab in this workbook, Create a tier-based productivity dashboard for our 3,200 active agents. For each tier (Platinum, Gold, Silver, Bronze), calculate: (1) Average new annual premium equivalents (APE) per agent, (2) Persistency ratio (13-month), (3) Average income earned. Highlight in red any tier where persistency has dropped below 80%.',
+            'In the Product Mix sheet, analyse the shift in product mix from FY2022 to FY2025. Has the proportion of ILP (Investment-Linked Plans) vs traditional life products changed? Calculate the revenue impact of this shift given that ILPs have lower margin than whole life products. Show as a stacked bar chart by year.',
+            'Build a digital channel vs agent channel comparison on a new sheet. Compare: (1) Customer acquisition cost, (2) Average premium size, (3) Lapse rate at 12 months, (4) Cross-sell rate. If the digital channel has a 40% lower customer acquisition cost but 25% higher lapse rate, calculate the 5-year lifetime value difference between the two channels.'
           ]
         },
         {
@@ -1088,9 +1088,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open INS_02_Pacific_Shield_Strategy.docx. Ask Copilot: Draft a 2-page agent productivity recovery plan. Cover: (1) Root causes of the 18% productivity decline (3 key reasons), (2) Three initiatives to reverse the trend — training uplift, digital tools for agents, performance incentive restructuring, (3) KPIs and targets for 12 months, (4) Investment required and expected ROI. Use an executive memo format.',
-            'Ask Copilot: Identify all product mentions in this strategy document. For each product, determine whether it is positioned for the agent channel, digital channel, or both. Create a product-channel matrix table showing which products are currently channel-appropriate and which may need repositioning as the digital channel grows.',
-            'Ask Copilot: Draft a 400-word internal communication from the CEO to all 3,200 agents explaining the digital initiative. The message should: reassure agents that the digital channel complements rather than replaces them, explain the new digital tools being rolled out to help agents, and invite agents to a town hall session next month. Tone: motivating and honest, not corporate-speak.'
+            'Draft a 2-page agent productivity recovery plan. Cover: (1) Root causes of the 18% productivity decline (3 key reasons), (2) Three initiatives to reverse the trend — training uplift, digital tools for agents, performance incentive restructuring, (3) KPIs and targets for 12 months, (4) Investment required and expected ROI. Use an executive memo format.',
+            'Identify all product mentions in this strategy document. For each product, determine whether it is positioned for the agent channel, digital channel, or both. Create a product-channel matrix table showing which products are currently channel-appropriate and which may need repositioning as the digital channel grows.',
+            'Draft a 400-word internal communication from the CEO to all 3,200 agents explaining the digital initiative. The message should: reassure agents that the digital channel complements rather than replaces them, explain the new digital tools being rolled out to help agents, and invite agents to a town hall session next month. Tone: motivating and honest, not corporate-speak.'
           ]
         },
         {
@@ -1099,9 +1099,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create an 8-slide presentation for the Board on the Digital Distribution Initiative. Include: (1) Problem statement — agent productivity decline and digital competition, (2) Market opportunity — digital life insurance market size, (3) Our proposed digital strategy, (4) Technology platform requirements, (5) Financial projections — APE and margin at Year 1, 2, 3, (6) Risk and mitigation, (7) Change management plan, (8) Decision required. Use a modern teal and white design.',
-            'Ask Copilot: Generate a one-slide agent value proposition that clearly explains to our agent force why the digital initiative helps them rather than threatens them. Use three key messages, each with a supporting statistic. Design it as a simple visual slide they can share with their teams.',
-            'Ask Copilot: Add a competitive landscape slide showing the digital insurtech players in Malaysia, their estimated market share, and the customer segment each targets. Use a simple 2x2 matrix (digital experience vs price) to position each player.'
+            'Create an 8-slide presentation for the Board on the Digital Distribution Initiative. Include: (1) Problem statement — agent productivity decline and digital competition, (2) Market opportunity — digital life insurance market size, (3) Our proposed digital strategy, (4) Technology platform requirements, (5) Financial projections — APE and margin at Year 1, 2, 3, (6) Risk and mitigation, (7) Change management plan, (8) Decision required. Use a modern teal and white design.',
+            'Generate a one-slide agent value proposition that clearly explains to our agent force why the digital initiative helps them rather than threatens them. Use three key messages, each with a supporting statistic. Design it as a simple visual slide they can share with their teams.',
+            'Add a competitive landscape slide showing the digital insurtech players in Malaysia, their estimated market share, and the customer segment each targets. Use a simple 2x2 matrix (digital experience vs price) to position each player.'
           ]
         },
         {
@@ -1110,9 +1110,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft an email to BNM\'s Insurance Supervision Department requesting a pre-consultation meeting regarding our digital distribution platform. The email should describe the initiative at a high level, explain how it will comply with BNM\'s digital insurance guidelines, and request a 45-minute meeting to discuss regulatory expectations before we launch the pilot.',
-            'Ask Copilot: Draft a recruitment email to three potential digital platform technology partners inviting them to submit a proposal for our digital distribution platform. The email should outline our requirements: policy issuance capability, e-KYC integration, BNM takaful separation compliance, and API-first architecture. Request a proposal within 3 weeks.',
-            'Ask Copilot: I have 47 unread emails from my agents in the past week about the digital initiative announcement. Categorise them into: Concerns (worried about job security), Questions (want more information), Positive (supportive), and Suggestions. Draft a single FAQ document that addresses the top 5 concerns and 5 questions raised.'
+            'Draft an email to BNM\'s Insurance Supervision Department requesting a pre-consultation meeting regarding our digital distribution platform. The email should describe the initiative at a high level, explain how it will comply with BNM\'s digital insurance guidelines, and request a 45-minute meeting to discuss regulatory expectations before we launch the pilot.',
+            'Draft a recruitment email to three potential digital platform technology partners inviting them to submit a proposal for our digital distribution platform. The email should outline our requirements: policy issuance capability, e-KYC integration, BNM takaful separation compliance, and API-first architecture. Request a proposal within 3 weeks.',
+            'I have 47 unread emails from my agents in the past week about the digital initiative announcement. Categorise them into: Concerns (worried about job security), Questions (want more information), Positive (supportive), and Suggestions. Draft a single FAQ document that addresses the top 5 concerns and 5 questions raised.'
           ]
         },
         {
@@ -1121,9 +1121,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open a recorded Teams meeting recap from an agent or distribution team meeting. Ask Copilot: Identify all concerns raised about the digital initiative, any specific suggestions agents made for improving the agent toolset, and any commitments the management team made in response. Format as a structured feedback summary for the Digital Transformation team.',
+            'Open a recorded Teams meeting recap from an agent or distribution team meeting. Identify all concerns raised about the digital initiative, any specific suggestions agents made for improving the agent toolset, and any commitments the management team made in response. Format as a structured feedback summary for the Digital Transformation team.',
             'Ask Copilot in the recap: Draft follow-up actions from this town hall meeting. Group actions into three categories: Immediate (this week), Short-term (this month), and Strategic (this quarter). Assign an owner to each.',
-            'Ask Copilot: Based on this meeting, what is the overall sentiment of the agent force toward the digital initiative — positive, neutral, or negative? Identify the three most commonly expressed concerns and the one area where agents expressed the strongest support.'
+            'Based on this meeting, what is the overall sentiment of the agent force toward the digital initiative — positive, neutral, or negative? Identify the three most commonly expressed concerns and the one area where agents expressed the strongest support.'
           ]
         },
         {
@@ -1232,7 +1232,7 @@ window.HUB_DATA = {
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
             'Upload INS_01_Pacific_Shield_Insurance.xlsx (use as takaful portfolio proxy). Ask Analyst: Analyse the tabarru\' fund surplus/deficit trend over the past 8 quarters. Is the fund trending toward deficit? Calculate the required additional contribution rate increase to maintain a 15% surplus buffer. Show as a chart and a sensitivity table under three scenarios: claims stay flat, claims rise 10%, claims rise 20%.',
-            'Upload INS_01_Pacific_Shield_Insurance.xlsx. Ask: Compare lapse rates across the three main family takaful product categories. Which product has the highest lapse rate and at what certificate duration does lapsing peak? Create a lapse rate heat map by product and certificate age (years 1 through 5).'
+            'Compare lapse rates across the three main family takaful product categories. Which product has the highest lapse rate and at what certificate duration does lapsing peak? Create a lapse rate heat map by product and certificate age (years 1 through 5).'
           ]
         },
         {
@@ -1241,9 +1241,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open INS_01_Pacific_Shield_Insurance.xlsx. Navigate to the relevant sheet. Ask Copilot: Build a tabarru\' fund sustainability model on a new sheet. Inputs: current fund balance of MYR 4.2B, annual new contribution inflow, claims outgo, wakalah fee deduction (15% of contributions), and investment income at 4.8% return. Show a 5-year projection under three scenarios: no growth, 5% contribution growth, and 10% lapse increase. Highlight in red any scenario where the fund balance drops below the BNM minimum surplus threshold.',
-            'Ask Copilot: Create a wakalah fee benchmarking table comparing Amanah Takaful\'s 15% wakalah fee against the five largest family takaful operators in Malaysia. For each competitor, show the wakalah fee rate, market share, and 5-year lapse rate trend. Source: use data from the portfolio sheet and add competitor data manually where available.',
-            'Ask Copilot: In the Re-Takaful Arrangements sheet, identify the three largest re-takaful treaties by ceded premium. For each, calculate the cession ratio, the retention after re-takaful, and the expiry date. Flag any treaty expiring within 6 months that has not been marked as "Renewal In Progress".'
+            'Using the relevant tab in this workbook, Build a tabarru\' fund sustainability model on a new sheet. Inputs: current fund balance of MYR 4.2B, annual new contribution inflow, claims outgo, wakalah fee deduction (15% of contributions), and investment income at 4.8% return. Show a 5-year projection under three scenarios: no growth, 5% contribution growth, and 10% lapse increase. Highlight in red any scenario where the fund balance drops below the BNM minimum surplus threshold.',
+            'Create a wakalah fee benchmarking table comparing Amanah Takaful\'s 15% wakalah fee against the five largest family takaful operators in Malaysia. For each competitor, show the wakalah fee rate, market share, and 5-year lapse rate trend. Source: use data from the portfolio sheet and add competitor data manually where available.',
+            'In the Re-Takaful Arrangements sheet, identify the three largest re-takaful treaties by ceded premium. For each, calculate the cession ratio, the retention after re-takaful, and the expiry date. Flag any treaty expiring within 6 months that has not been marked as "Renewal In Progress".'
           ]
         },
         {
@@ -1252,9 +1252,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open INS_02_Pacific_Shield_Strategy.docx. Ask Copilot: Draft a 2-page BNM IFSA Takaful Operational Framework compliance readiness assessment. Structure: (1) Key framework requirements, (2) Our current compliance status for each (Compliant / Partial / Gap), (3) Action plan for the 3 gap areas, (4) Timeline to full compliance before the review in 6 weeks. Use a formal regulatory tone.',
-            'Ask Copilot: Draft a re-takaful renegotiation brief for the CFO. Cover: the three re-takaful treaties being renegotiated, the current terms, our negotiating objectives (target cession ratio reduction from 40% to 32%, maintain catastrophe cover), the walk-away terms, and a BATNA (Best Alternative to a Negotiated Agreement). Keep it to one page.',
-            'Ask Copilot: Write a participant communication explaining the annual tabarru\' fund surplus distribution. The letter should explain how the surplus was calculated, how much each participant will receive based on their contribution, the payment date, and the option to donate their surplus to a waqf fund. Keep it warm and clear, under 300 words.'
+            'Draft a 2-page BNM IFSA Takaful Operational Framework compliance readiness assessment. Structure: (1) Key framework requirements, (2) Our current compliance status for each (Compliant / Partial / Gap), (3) Action plan for the 3 gap areas, (4) Timeline to full compliance before the review in 6 weeks. Use a formal regulatory tone.',
+            'Draft a re-takaful renegotiation brief for the CFO. Cover: the three re-takaful treaties being renegotiated, the current terms, our negotiating objectives (target cession ratio reduction from 40% to 32%, maintain catastrophe cover), the walk-away terms, and a BATNA (Best Alternative to a Negotiated Agreement). Keep it to one page.',
+            'Write a participant communication explaining the annual tabarru\' fund surplus distribution. The letter should explain how the surplus was calculated, how much each participant will receive based on their contribution, the payment date, and the option to donate their surplus to a waqf fund. Keep it warm and clear, under 300 words.'
           ]
         },
         {
@@ -1263,9 +1263,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create an 8-slide BNM IFSA compliance presentation for the Board Shariah and Audit Committee. Include: (1) IFSA framework overview and key changes, (2) Our compliance status — RAG dashboard, (3) Top 3 gap areas and remediation plan, (4) Re-takaful renegotiation update, (5) Tabarru\' fund sustainability — 5-year projection, (6) Lapse rate concern and retention strategy, (7) Key risks and mitigants, (8) Decisions required. Use a teal and gold Islamic-themed design.',
-            'Ask Copilot: Add a one-page Shariah compliance declaration slide that can be included in our annual report. It should confirm that all products and investments comply with the BNM Shariah Advisory Council standards, reference the specific fatwas relied upon, and include a quote from our Shariah Committee Chairman.',
-            'Ask Copilot: Create a 3-slide mini-presentation on our lapse reduction strategy for the agency network. Slides: (1) Current lapse rate by product and agent tier, (2) Root causes — top 3 reasons participants lapse, (3) Retention action plan with agent incentives. Keep it simple — this will be shown at a branch level town hall.'
+            'Create an 8-slide BNM IFSA compliance presentation for the Board Shariah and Audit Committee. Include: (1) IFSA framework overview and key changes, (2) Our compliance status — RAG dashboard, (3) Top 3 gap areas and remediation plan, (4) Re-takaful renegotiation update, (5) Tabarru\' fund sustainability — 5-year projection, (6) Lapse rate concern and retention strategy, (7) Key risks and mitigants, (8) Decisions required. Use a teal and gold Islamic-themed design.',
+            'Add a one-page Shariah compliance declaration slide that can be included in our annual report. It should confirm that all products and investments comply with the BNM Shariah Advisory Council standards, reference the specific fatwas relied upon, and include a quote from our Shariah Committee Chairman.',
+            'Create a 3-slide mini-presentation on our lapse reduction strategy for the agency network. Slides: (1) Current lapse rate by product and agent tier, (2) Root causes — top 3 reasons participants lapse, (3) Retention action plan with agent incentives. Keep it simple — this will be shown at a branch level town hall.'
           ]
         },
         {
@@ -1274,9 +1274,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a formal letter to BNM\'s Takaful Supervision Unit ahead of the IFSA review. The letter should: confirm we have received the review schedule, provide a brief self-assessment of our compliance status, note two areas where we are seeking regulatory guidance, and request a pre-review engagement meeting. Use formal BNM correspondence tone.',
-            'Ask Copilot: Draft a re-takaful renegotiation invitation letter to our three Middle Eastern re-takaful counterparties. The letter should: acknowledge the expiry of the current treaties, propose a face-to-face negotiation meeting in Kuala Lumpur or Dubai, outline our key negotiating priorities, and suggest three available weeks for the meeting.',
-            'Ask Copilot: Summarise the last 3 months of email correspondence with our largest re-takaful counterparty. Identify their key concerns, any commitments we made in writing, and any open items that need to be resolved before treaty renewal.'
+            'Draft a formal letter to BNM\'s Takaful Supervision Unit ahead of the IFSA review. The letter should: confirm we have received the review schedule, provide a brief self-assessment of our compliance status, note two areas where we are seeking regulatory guidance, and request a pre-review engagement meeting. Use formal BNM correspondence tone.',
+            'Draft a re-takaful renegotiation invitation letter to our three Middle Eastern re-takaful counterparties. The letter should: acknowledge the expiry of the current treaties, propose a face-to-face negotiation meeting in Kuala Lumpur or Dubai, outline our key negotiating priorities, and suggest three available weeks for the meeting.',
+            'Summarise the last 3 months of email correspondence with our largest re-takaful counterparty. Identify their key concerns, any commitments we made in writing, and any open items that need to be resolved before treaty renewal.'
           ]
         },
         {
@@ -1285,9 +1285,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a risk or compliance committee. Ask Copilot: Identify all IFSA compliance-related action items discussed. For each, note the owner, the deadline, and whether it was marked as completed or still pending at the time of the meeting.',
-            'Ask Copilot: Draft a post-meeting summary for the Re-Takaful Renegotiation Taskforce based on this meeting. Include: key terms agreed, points still in negotiation, the next negotiation round date, and the escalation path if the parties cannot reach agreement on the cession ratio.',
-            'Ask Copilot: Were any Shariah compliance concerns raised in this meeting? List each concern with the context and the proposed resolution. Flag any that will require Shariah Committee sign-off before implementation.'
+            'Open an existing recorded Teams meeting recap from a risk or compliance committee. Identify all IFSA compliance-related action items discussed. For each, note the owner, the deadline, and whether it was marked as completed or still pending at the time of the meeting.',
+            'Draft a post-meeting summary for the Re-Takaful Renegotiation Taskforce based on this meeting. Include: key terms agreed, points still in negotiation, the next negotiation round date, and the escalation path if the parties cannot reach agreement on the cession ratio.',
+            'Were any Shariah compliance concerns raised in this meeting? List each concern with the context and the proposed resolution. Flag any that will require Shariah Committee sign-off before implementation.'
           ]
         },
         {
@@ -1395,8 +1395,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload HC_01_Apex_Health_Group.xlsx to Analyst. Ask: Analyse nurse attrition data by hospital, department, and seniority band (junior 0-3 years, mid 4-7 years, senior 8+ years). Which hospital has the highest attrition? Which seniority band is leaving fastest? Calculate the annual replacement cost per nurse (assume MYR 18,000 in recruitment and training cost per hire) and the total group-level cost of current attrition. Present as a heat map table and a cost waterfall chart.',
-            'Upload HC_01_Apex_Health_Group.xlsx. Ask Analyst: Analyse the oncology department waiting time data across all 12 hospitals. Which hospitals have the longest average waiting time for first oncologist consultation? Calculate the revenue at risk — assume each week of excess wait costs 1.4% patient leakage to competitor hospitals and each oncology patient generates MYR 85,000 in average annual revenue. Show as a ranked table and a bar chart.'
+            'Analyse nurse attrition data by hospital, department, and seniority band (junior 0-3 years, mid 4-7 years, senior 8+ years). Which hospital has the highest attrition? Which seniority band is leaving fastest? Calculate the annual replacement cost per nurse (assume MYR 18,000 in recruitment and training cost per hire) and the total group-level cost of current attrition. Present as a heat map table and a cost waterfall chart.',
+            'Analyse the oncology department waiting time data across all 12 hospitals. Which hospitals have the longest average waiting time for first oncologist consultation? Calculate the revenue at risk — assume each week of excess wait costs 1.4% patient leakage to competitor hospitals and each oncology patient generates MYR 85,000 in average annual revenue. Show as a ranked table and a bar chart.'
           ]
         },
         {
@@ -1405,9 +1405,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open HC_01_Apex_Health_Group.xlsx. Navigate to the Workforce Planning sheet. Ask Copilot: Create a nurse attrition prediction model. For each hospital, calculate: (1) current attrition rate, (2) projected ward coverage gap if attrition continues at the same rate for 6 more months, (3) the minimum number of new nurse hires required to maintain safe patient-to-nurse ratios. Flag any hospital in red where the coverage gap exceeds 15%.',
-            'Ask Copilot: Build an MOH accreditation readiness tracker on a new sheet. List the 20 key accreditation criteria from the strategy document. For each criterion, add columns: Current Status (Compliant/Gap/Unknown), Evidence Required, Responsible Department, and Target Completion Date. Apply conditional formatting: green for Compliant, yellow for In Progress, red for Gap.',
-            'Ask Copilot: In the Revenue by Specialty sheet, calculate the revenue contribution of oncology, cardiology, and orthopaedics as a percentage of total group revenue for each of the last 4 years. Show the trend as a stacked area chart. Flag any specialty where revenue share has declined more than 3 percentage points year-on-year.'
+            'Using the Workforce Planning tab in this workbook, Create a nurse attrition prediction model. For each hospital, calculate: (1) current attrition rate, (2) projected ward coverage gap if attrition continues at the same rate for 6 more months, (3) the minimum number of new nurse hires required to maintain safe patient-to-nurse ratios. Flag any hospital in red where the coverage gap exceeds 15%.',
+            'Build an MOH accreditation readiness tracker on a new sheet. List the 20 key accreditation criteria from the strategy document. For each criterion, add columns: Current Status (Compliant/Gap/Unknown), Evidence Required, Responsible Department, and Target Completion Date. Apply conditional formatting: green for Compliant, yellow for In Progress, red for Gap.',
+            'In the Revenue by Specialty sheet, calculate the revenue contribution of oncology, cardiology, and orthopaedics as a percentage of total group revenue for each of the last 4 years. Show the trend as a stacked area chart. Flag any specialty where revenue share has declined more than 3 percentage points year-on-year.'
           ]
         },
         {
@@ -1416,9 +1416,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open HC_02_Apex_Health_Strategy.docx. Ask Copilot: Draft a nurse retention action plan of 2 pages. Cover: (1) Current attrition rate and financial impact, (2) Three root causes identified from our exit interview data, (3) Five specific retention interventions with timelines and costs, (4) KPIs: target attrition rate of 12% within 6 months, (5) Governance — who is accountable. Write in a formal healthcare management style.',
-            'Ask Copilot in Word: Identify all sections in this strategy document that reference clinical quality or patient safety. Summarise each section\'s key commitment in one sentence and create a compliance gap table showing which commitments have measurable KPIs and which do not.',
-            'Ask Copilot: Draft a 300-word CEO statement for the group\'s MOH accreditation submission. The statement should demonstrate commitment to patient safety, acknowledge the oncology waiting time challenge and the corrective actions underway, and reaffirm the group\'s investment in clinical excellence and nursing capability.'
+            'Draft a nurse retention action plan of 2 pages. Cover: (1) Current attrition rate and financial impact, (2) Three root causes identified from our exit interview data, (3) Five specific retention interventions with timelines and costs, (4) KPIs: target attrition rate of 12% within 6 months, (5) Governance — who is accountable. Write in a formal healthcare management style.',
+            'Identify all sections in this strategy document that reference clinical quality or patient safety. Summarise each section\'s key commitment in one sentence and create a compliance gap table showing which commitments have measurable KPIs and which do not.',
+            'Draft a 300-word CEO statement for the group\'s MOH accreditation submission. The statement should demonstrate commitment to patient safety, acknowledge the oncology waiting time challenge and the corrective actions underway, and reaffirm the group\'s investment in clinical excellence and nursing capability.'
           ]
         },
         {
@@ -1427,9 +1427,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide Board presentation titled "Clinical Operations Transformation — FY2026 Priorities". Include: (1) Executive summary — key challenges (attrition, oncology wait, accreditation), (2) Nurse attrition dashboard, (3) Root cause analysis, (4) Retention programme — 5 initiatives, (5) Oncology capacity expansion plan, (6) MOH accreditation readiness — RAG status, (7) Financial impact if we solve vs do nothing, (8) Capital investment required, (9) Risk register, (10) Board decisions required. Use a professional green and white colour scheme.',
-            'Ask Copilot: For each slide, write speaker notes that anticipate Board questions. The Chairman has a clinical background, so the notes should go deeper on patient safety implications than on financials.',
-            'Ask Copilot: Create a one-slide oncology waiting time comparison chart showing our 6-week average against the 2-week clinical target and the 3.5-week industry benchmark for private hospitals in Malaysia. Add a call-out box showing the estimated annual revenue at risk from patient leakage.'
+            'Create a 10-slide Board presentation titled "Clinical Operations Transformation — FY2026 Priorities". Include: (1) Executive summary — key challenges (attrition, oncology wait, accreditation), (2) Nurse attrition dashboard, (3) Root cause analysis, (4) Retention programme — 5 initiatives, (5) Oncology capacity expansion plan, (6) MOH accreditation readiness — RAG status, (7) Financial impact if we solve vs do nothing, (8) Capital investment required, (9) Risk register, (10) Board decisions required. Use a professional green and white colour scheme.',
+            'For each slide, write speaker notes that anticipate Board questions. The Chairman has a clinical background, so the notes should go deeper on patient safety implications than on financials.',
+            'Create a one-slide oncology waiting time comparison chart showing our 6-week average against the 2-week clinical target and the 3.5-week industry benchmark for private hospitals in Malaysia. Add a call-out box showing the estimated annual revenue at risk from patient leakage.'
           ]
         },
         {
@@ -1438,9 +1438,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a letter to the MOH accreditation team requesting a 30-day extension on the submission of our clinical staffing compliance documentation. The letter should acknowledge the reason for the delay (nursing staff restructuring in progress), describe the remediation actions we have taken, and provide a specific new submission date. Use the formal tone required for MOH correspondence.',
-            'Ask Copilot: Draft an internal email to all 12 Hospital Directors briefing them on the MOH accreditation review in 10 weeks. The email should: list the 5 highest-risk accreditation criteria based on our gap assessment, assign each Hospital Director specific pre-inspection actions, request confirmation of their hospital\'s readiness status by next Friday, and stress the importance of accurate, consistent documentation.',
-            'Ask Copilot: I have received 3 complaints from oncology patients about their waiting time. Draft personalised, empathetic response emails for each patient that: acknowledge the delay without making legal admissions, explain what steps we are taking to reduce waiting times, and offer to personally expedite their case review. Use a warm, caring tone appropriate for clinical communication.'
+            'Draft a letter to the MOH accreditation team requesting a 30-day extension on the submission of our clinical staffing compliance documentation. The letter should acknowledge the reason for the delay (nursing staff restructuring in progress), describe the remediation actions we have taken, and provide a specific new submission date. Use the formal tone required for MOH correspondence.',
+            'Draft an internal email to all 12 Hospital Directors briefing them on the MOH accreditation review in 10 weeks. The email should: list the 5 highest-risk accreditation criteria based on our gap assessment, assign each Hospital Director specific pre-inspection actions, request confirmation of their hospital\'s readiness status by next Friday, and stress the importance of accurate, consistent documentation.',
+            'I have received 3 complaints from oncology patients about their waiting time. Draft personalised, empathetic response emails for each patient that: acknowledge the delay without making legal admissions, explain what steps we are taking to reduce waiting times, and offer to personally expedite their case review. Use a warm, caring tone appropriate for clinical communication.'
           ]
         },
         {
@@ -1449,9 +1449,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open a recorded Teams meeting recap from a clinical leadership or operations committee meeting. Ask Copilot: Identify all patient safety issues discussed, the corrective actions committed to, and any incidents that require escalation to the MOH or the Medical Advisory Board. Format as a clinical governance meeting summary.',
+            'Open a recorded Teams meeting recap from a clinical leadership or operations committee meeting. Identify all patient safety issues discussed, the corrective actions committed to, and any incidents that require escalation to the MOH or the Medical Advisory Board. Format as a clinical governance meeting summary.',
             'Ask Copilot in the recap: Draft follow-up action items for the nurse retention taskforce. Include: the specific hospital or department where each action applies, the nurse manager responsible, the completion deadline, and the KPI that will confirm the action was effective.',
-            'Ask Copilot: Were any specific financial figures discussed in this meeting related to attrition costs or oncology revenue? Extract and list them with context so I can update the financial impact model.'
+            'Were any specific financial figures discussed in this meeting related to attrition costs or oncology revenue? Extract and list them with context so I can update the financial impact model.'
           ]
         },
         {
@@ -1559,8 +1559,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 17_Zava_Pharma_Pipeline.xlsx to Analyst. Ask: Analyse the clinical trial pipeline — 4 products in Phase II/III. For each product, show the estimated market size, probability of approval (use industry average Phase II→III success rate of 52% and Phase III→approval rate of 68%), and projected revenue at Year 3 post-launch. Rank the pipeline by expected value (market size × approval probability). Present as a ranked table and a bubble chart.',
-            'Upload 17_Zava_Pharma_Pipeline.xlsx. Ask: Build a GMP compliance risk dashboard. For each manufacturing site, show: (1) Last GMP inspection date and outcome, (2) Number of open CAPAs by severity (critical, major, minor), (3) Days until next GMP certification renewal. Highlight in red any site with a critical CAPA open for more than 60 days or a renewal due within 90 days.'
+            'Analyse the clinical trial pipeline — 4 products in Phase II/III. For each product, show the estimated market size, probability of approval (use industry average Phase II→III success rate of 52% and Phase III→approval rate of 68%), and projected revenue at Year 3 post-launch. Rank the pipeline by expected value (market size × approval probability). Present as a ranked table and a bubble chart.',
+            'Build a GMP compliance risk dashboard. For each manufacturing site, show: (1) Last GMP inspection date and outcome, (2) Number of open CAPAs by severity (critical, major, minor), (3) Days until next GMP certification renewal. Highlight in red any site with a critical CAPA open for more than 60 days or a renewal due within 90 days.'
           ]
         },
         {
@@ -1569,9 +1569,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 17_Zava_Pharma_Pipeline.xlsx. Navigate to the Pipeline sheet. Ask Copilot: Create a product launch revenue model for Sitagliptin 100mg assuming BPfK approval in Q3 FY2026. Assume: Year 1 market share 3%, Year 2 5%, Year 3 8% of a MYR 420M total addressable market. Calculate annual revenue, gross margin at 62%, and contribution after regulatory and marketing costs. Show as a 5-year P&L projection.',
-            'Ask Copilot: In the CAPA Tracker sheet, identify all open CAPAs where the target completion date has passed. For each overdue CAPA, calculate the number of days overdue and flag the severity level. Create a summary showing: Total Open CAPAs | Critical Overdue | Major Overdue | Minor Overdue. This summary should be the first thing a BPOM inspector sees.',
-            'Ask Copilot: Build a batch release productivity model on a new sheet. For the Cikarang plant, calculate: (1) Average batch release cycle time (days from manufacturing to QA release), (2) Percentage of batches released within the 14-day SLA, (3) Percentage of batches requiring OOS (Out of Specification) investigation. Flag any trend of increasing OOS rate over the last 6 months.'
+            'Using the Pipeline tab in this workbook, Create a product launch revenue model for Sitagliptin 100mg assuming BPfK approval in Q3 FY2026. Assume: Year 1 market share 3%, Year 2 5%, Year 3 8% of a MYR 420M total addressable market. Calculate annual revenue, gross margin at 62%, and contribution after regulatory and marketing costs. Show as a 5-year P&L projection.',
+            'In the CAPA Tracker sheet, identify all open CAPAs where the target completion date has passed. For each overdue CAPA, calculate the number of days overdue and flag the severity level. Create a summary showing: Total Open CAPAs | Critical Overdue | Major Overdue | Minor Overdue. This summary should be the first thing a BPOM inspector sees.',
+            'Build a batch release productivity model on a new sheet. For the Cikarang plant, calculate: (1) Average batch release cycle time (days from manufacturing to QA release), (2) Percentage of batches released within the 14-day SLA, (3) Percentage of batches requiring OOS (Out of Specification) investigation. Flag any trend of increasing OOS rate over the last 6 months.'
           ]
         },
         {
@@ -1580,9 +1580,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_11_Sitagliptin_BPOM_Registration.docx. Ask Copilot: Draft a BPfK drug registration covering letter for Sitagliptin 100mg. The letter should: identify the product and applicant, reference the CTD (Common Technical Document) dossier being submitted, highlight the key data supporting safety and efficacy (Phase III results: HbA1c reduction 0.82%, placebo-adjusted), note the ASEAN harmonised registration pathway being used, and request acknowledgement of receipt. Use the formal BPfK correspondence format.',
-            'Ask Copilot in Word: Draft a CAPA summary report for submission to BPOM covering the three enforcement notices now closed. For each notice, provide: (1) The original finding, (2) Root cause identified, (3) CAPA implemented, (4) Evidence of effectiveness, (5) Date of closure. Use the BPOM CAPA report format with numbered sections.',
-            'Ask Copilot: Draft a GMP audit readiness checklist in Word format. The checklist should cover the 10 key areas a GMP inspector will review: documentation, personnel training, equipment qualification, environmental monitoring, batch records, QA release procedures, deviation management, CAPA system, product complaints, and change control. For each area, include a self-assessment column and an evidence required column.'
+            'Draft a BPfK drug registration covering letter for Sitagliptin 100mg. The letter should: identify the product and applicant, reference the CTD (Common Technical Document) dossier being submitted, highlight the key data supporting safety and efficacy (Phase III results: HbA1c reduction 0.82%, placebo-adjusted), note the ASEAN harmonised registration pathway being used, and request acknowledgement of receipt. Use the formal BPfK correspondence format.',
+            'Draft a CAPA summary report for submission to BPOM covering the three enforcement notices now closed. For each notice, provide: (1) The original finding, (2) Root cause identified, (3) CAPA implemented, (4) Evidence of effectiveness, (5) Date of closure. Use the BPOM CAPA report format with numbered sections.',
+            'Draft a GMP audit readiness checklist in Word format. The checklist should cover the 10 key areas a GMP inspector will review: documentation, personnel training, equipment qualification, environmental monitoring, batch records, QA release procedures, deviation management, CAPA system, product complaints, and change control. For each area, include a self-assessment column and an evidence required column.'
           ]
         },
         {
@@ -1591,9 +1591,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create an 8-slide pharmaceutical pipeline investor update presentation for ZavaGen. Include: (1) Company overview and manufacturing footprint, (2) Regulatory compliance update — 3 BPOM notices closed, (3) Pipeline overview — 4 products in Phase II/III, (4) Sitagliptin 100mg — BPfK registration status and market opportunity, (5) GMP certification renewal plan, (6) Financial projections — pipeline NPV, (7) Partnerships and licensing opportunities, (8) Investment thesis. Use a professional blue and white design.',
-            'Ask Copilot: Create a 3-slide GMP remediation update for the ZavaGen Cikarang plant. Slides: (1) Before/after — the 3 BPOM enforcement notices and what we fixed, (2) Current GMP compliance scorecard — 10 key criteria with RAG status, (3) GMP certification renewal plan and timeline. Keep it factual and confidence-building for a regulatory audience.',
-            'Ask Copilot: Add a risk matrix slide to the investor presentation showing the top 5 risks to our pipeline — regulatory delay, manufacturing failure, competitor generic launch, IP challenge, and market access — each positioned on a likelihood vs impact matrix with a one-line mitigation.'
+            'Create an 8-slide pharmaceutical pipeline investor update presentation for ZavaGen. Include: (1) Company overview and manufacturing footprint, (2) Regulatory compliance update — 3 BPOM notices closed, (3) Pipeline overview — 4 products in Phase II/III, (4) Sitagliptin 100mg — BPfK registration status and market opportunity, (5) GMP certification renewal plan, (6) Financial projections — pipeline NPV, (7) Partnerships and licensing opportunities, (8) Investment thesis. Use a professional blue and white design.',
+            'Create a 3-slide GMP remediation update for the ZavaGen Cikarang plant. Slides: (1) Before/after — the 3 BPOM enforcement notices and what we fixed, (2) Current GMP compliance scorecard — 10 key criteria with RAG status, (3) GMP certification renewal plan and timeline. Keep it factual and confidence-building for a regulatory audience.',
+            'Add a risk matrix slide to the investor presentation showing the top 5 risks to our pipeline — regulatory delay, manufacturing failure, competitor generic launch, IP challenge, and market access — each positioned on a likelihood vs impact matrix with a one-line mitigation.'
           ]
         },
         {
@@ -1602,9 +1602,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_11_Sitagliptin_BPOM_Registration.docx. Ask Copilot in Outlook: Draft a follow-up email to our BPfK regulatory contact requesting an update on the Sitagliptin 100mg registration status. The submission has been pending for 4 months. The email should be professional and persistent without being aggressive, reference the submission date and dossier reference number, and ask for an estimated review completion timeline.',
-            'Ask Copilot: Draft an email to our GMP consultant requesting a pre-audit inspection simulation for the Cikarang plant ahead of the certification renewal in 3 months. The email should specify the scope of the simulation (all 10 GMP areas), the preferred dates (within the next 4 weeks), and request a quote for the engagement.',
-            'Ask Copilot: Summarise the email thread in Email_11_Sitagliptin_BPOM_Registration.docx. What are the key outstanding documentation gaps identified by BPfK? List each gap with the section of the dossier it refers to and the deadline for submission.'
+            'Open Email_11_Sitagliptin_BPOM_Registration.docx. Draft a follow-up email to our BPfK regulatory contact requesting an update on the Sitagliptin 100mg registration status. The submission has been pending for 4 months. The email should be professional and persistent without being aggressive, reference the submission date and dossier reference number, and ask for an estimated review completion timeline.',
+            'Draft an email to our GMP consultant requesting a pre-audit inspection simulation for the Cikarang plant ahead of the certification renewal in 3 months. The email should specify the scope of the simulation (all 10 GMP areas), the preferred dates (within the next 4 weeks), and request a quote for the engagement.',
+            'Summarise the email thread in Email_11_Sitagliptin_BPOM_Registration.docx. What are the key outstanding documentation gaps identified by BPfK? List each gap with the section of the dossier it refers to and the deadline for submission.'
           ]
         },
         {
@@ -1613,9 +1613,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a regulatory affairs or quality management meeting. Ask Copilot: Identify all regulatory submission milestones discussed, the current status of each, and any at-risk items where the deadline may be missed. Format as a regulatory affairs status report.',
+            'Open an existing recorded Teams meeting recap from a regulatory affairs or quality management meeting. Identify all regulatory submission milestones discussed, the current status of each, and any at-risk items where the deadline may be missed. Format as a regulatory affairs status report.',
             'Ask Copilot in the recap: Draft follow-up actions for the GMP certification renewal project. Include: the specific action, the department responsible, the completion deadline, and the dependency on any other action that must come first. Present as a project task list.',
-            'Ask Copilot: Were any batch manufacturing issues or quality failures discussed in this meeting? List each with: the product, the nature of the issue, the investigation status, and whether BPOM or BPfK notification was discussed.'
+            'Were any batch manufacturing issues or quality failures discussed in this meeting? List each with: the product, the nature of the issue, the investigation status, and whether BPOM or BPfK notification was discussed.'
           ]
         },
         {
@@ -1724,8 +1724,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload OG_01_Nusantara_Energy.xlsx to Analyst. Ask: Analyse the HSE incident data for the past 3 years. What is the trend in Total Recordable Incident Rate (TRIR), Lost Time Incident Rate (LTIR), and Process Safety Events (PSE) by severity tier? Are incidents concentrated at specific offshore platforms or in specific operations (drilling, production, maintenance)? Create a trend chart and an incident heat map by platform.',
-            'Upload OG_01_Nusantara_Energy.xlsx. Ask: Build a GHG emissions analysis. Show Scope 1 and Scope 2 emissions by platform and operating unit for FY2023–FY2025. Calculate the GHG intensity (tCO2e per BOE produced). Identify the 3 highest-emitting platforms and estimate the GHG reduction potential if each implemented the top emission reduction measure appropriate for that platform type. Show as a ranked table with reduction potential in tCO2e and as a percentage of total Scope 1 emissions.'
+            'Analyse the HSE incident data for the past 3 years. What is the trend in Total Recordable Incident Rate (TRIR), Lost Time Incident Rate (LTIR), and Process Safety Events (PSE) by severity tier? Are incidents concentrated at specific offshore platforms or in specific operations (drilling, production, maintenance)? Create a trend chart and an incident heat map by platform.',
+            'Build a GHG emissions analysis. Show Scope 1 and Scope 2 emissions by platform and operating unit for FY2023–FY2025. Calculate the GHG intensity (tCO2e per BOE produced). Identify the 3 highest-emitting platforms and estimate the GHG reduction potential if each implemented the top emission reduction measure appropriate for that platform type. Show as a ranked table with reduction potential in tCO2e and as a percentage of total Scope 1 emissions.'
           ]
         },
         {
@@ -1734,9 +1734,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open OG_01_Nusantara_Energy.xlsx. Navigate to the HSE KPI sheet. Ask Copilot: Create a PETRONAS HSE audit readiness dashboard on a new sheet. For each of the 12 key HSE performance indicators PETRONAS measures, show: (1) Our current performance, (2) PETRONAS threshold, (3) Status (Above/Below threshold), (4) Trend (Improving/Stable/Deteriorating). Highlight in red any indicator that is below threshold and deteriorating.',
-            'Ask Copilot: Build a corrective action plan (CAP) tracker on a new sheet. List all open CAPAs from the Tier 1 PSE investigation and the two spill incidents. For each CAPA, include: Description | Root Cause Category | Priority (Critical/High/Medium) | Owner | Due Date | Status | % Complete. Apply conditional formatting: overdue critical items in red, overdue high items in orange.',
-            'Ask Copilot: In the Production Data sheet, calculate the production uptime percentage for each offshore platform over the past 4 quarters. Identify which platforms have experienced the most unplanned shutdowns and whether there is a correlation between unplanned shutdowns and the incidents in the HSE data sheet. Show as a scatter plot.'
+            'Using the HSE KPI tab in this workbook, Create a PETRONAS HSE audit readiness dashboard on a new sheet. For each of the 12 key HSE performance indicators PETRONAS measures, show: (1) Our current performance, (2) PETRONAS threshold, (3) Status (Above/Below threshold), (4) Trend (Improving/Stable/Deteriorating). Highlight in red any indicator that is below threshold and deteriorating.',
+            'Build a corrective action plan (CAP) tracker on a new sheet. List all open CAPAs from the Tier 1 PSE investigation and the two spill incidents. For each CAPA, include: Description | Root Cause Category | Priority (Critical/High/Medium) | Owner | Due Date | Status | % Complete. Apply conditional formatting: overdue critical items in red, overdue high items in orange.',
+            'In the Production Data sheet, calculate the production uptime percentage for each offshore platform over the past 4 quarters. Identify which platforms have experienced the most unplanned shutdowns and whether there is a correlation between unplanned shutdowns and the incidents in the HSE data sheet. Show as a scatter plot.'
           ]
         },
         {
@@ -1745,9 +1745,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open OG_02_Nusantara_HSE_Report.docx. Ask Copilot: Rewrite the Executive Summary of this HSE report to address the PETRONAS audit team directly. The new summary should: acknowledge the Tier 1 PSE transparently, demonstrate that our incident investigation followed PETRONAS PSM guidelines, highlight the 5 most significant corrective actions implemented, and project our target TRIR for the next 12 months. Use a confident but accountable regulatory tone.',
-            'Ask Copilot in Word: Create a Net Zero 2050 GHG reduction roadmap section for the annual sustainability report. Cover: (1) Our current Scope 1+2 baseline in tCO2e, (2) 5 key reduction levers — flare reduction, electrification, energy efficiency, methane leak detection, and carbon capture feasibility, (3) 2030 interim target: 30% reduction vs 2020 baseline, (4) Investment required and payback period for each lever. Format as a structured narrative with a table.',
-            'Ask Copilot: Draft a PETRONAS pre-audit submission letter. The letter should: confirm our readiness for the scheduled audit, provide a summary of corrective actions since the last audit, highlight our HSE improvement initiatives, and request 30 minutes at the start of the audit for a management presentation. Use the formal correspondence format required for PETRONAS regulatory submissions.'
+            'Rewrite the Executive Summary of this HSE report to address the PETRONAS audit team directly. The new summary should: acknowledge the Tier 1 PSE transparently, demonstrate that our incident investigation followed PETRONAS PSM guidelines, highlight the 5 most significant corrective actions implemented, and project our target TRIR for the next 12 months. Use a confident but accountable regulatory tone.',
+            'Create a Net Zero 2050 GHG reduction roadmap section for the annual sustainability report. Cover: (1) Our current Scope 1+2 baseline in tCO2e, (2) 5 key reduction levers — flare reduction, electrification, energy efficiency, methane leak detection, and carbon capture feasibility, (3) 2030 interim target: 30% reduction vs 2020 baseline, (4) Investment required and payback period for each lever. Format as a structured narrative with a table.',
+            'Draft a PETRONAS pre-audit submission letter. The letter should: confirm our readiness for the scheduled audit, provide a summary of corrective actions since the last audit, highlight our HSE improvement initiatives, and request 30 minutes at the start of the audit for a management presentation. Use the formal correspondence format required for PETRONAS regulatory submissions.'
           ]
         },
         {
@@ -1756,9 +1756,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide PETRONAS HSE audit management presentation. Include: (1) Company overview and operational scope, (2) HSE performance dashboard — 3-year trend, (3) Tier 1 PSE — incident, investigation, root cause, (4) Corrective actions implemented — CAPA tracker summary, (5) Two spill incidents — cause and remediation, (6) HSE management system maturity assessment, (7) Contractor HSE performance, (8) Emergency response readiness, (9) Net Zero 2050 — GHG reduction roadmap, (10) HSE investment plan FY2026, (11) Key risks and mitigants, (12) Our commitment to PETRONAS HSE standards. Use a dark green and white professional colour scheme.',
-            'Ask Copilot: For each slide, generate speaker notes that anticipate the PETRONAS audit team\'s follow-up questions. The audit lead is known to probe hard on root cause analysis quality — the notes should show that we have used structured RCA methodology (such as 5-Why or Bowtie).',
-            'Ask Copilot: Add a bowtie diagram on slide 3 showing the Tier 1 PSE event — the threat on the left, the top event in the middle, the consequences on the right, with prevention barriers on the left side and recovery barriers on the right. Include which barriers failed and which held.'
+            'Create a 12-slide PETRONAS HSE audit management presentation. Include: (1) Company overview and operational scope, (2) HSE performance dashboard — 3-year trend, (3) Tier 1 PSE — incident, investigation, root cause, (4) Corrective actions implemented — CAPA tracker summary, (5) Two spill incidents — cause and remediation, (6) HSE management system maturity assessment, (7) Contractor HSE performance, (8) Emergency response readiness, (9) Net Zero 2050 — GHG reduction roadmap, (10) HSE investment plan FY2026, (11) Key risks and mitigants, (12) Our commitment to PETRONAS HSE standards. Use a dark green and white professional colour scheme.',
+            'For each slide, generate speaker notes that anticipate the PETRONAS audit team\'s follow-up questions. The audit lead is known to probe hard on root cause analysis quality — the notes should show that we have used structured RCA methodology (such as 5-Why or Bowtie).',
+            'Add a bowtie diagram on slide 3 showing the Tier 1 PSE event — the threat on the left, the top event in the middle, the consequences on the right, with prevention barriers on the left side and recovery barriers on the right. Include which barriers failed and which held.'
           ]
         },
         {
@@ -1767,9 +1767,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_04_PETRONAS_Meeting_Prep.docx. Ask Copilot in Outlook: Draft a formal pre-audit meeting request to our PETRONAS account manager. The email should: reference the upcoming HSE audit date, request a 30-minute pre-audit briefing to present our self-assessment and corrective action progress, propose two available dates, and attach the executive summary of our HSE performance report (note: attach separately). Use formal energy industry correspondence tone.',
-            'Ask Copilot: Draft an internal email to the Miri Platform management team briefing them on the PETRONAS HSE audit in 6 weeks. The email should: list the 5 areas the audit team will focus on based on our previous audit findings, assign a responsible person for each area, request that all documentation be ready for review 2 weeks before the audit, and remind the team of the confidentiality requirements during the audit.',
-            'Ask Copilot: Summarise the email thread in Email_04_PETRONAS_Meeting_Prep.docx. What specific documentation has PETRONAS requested for the audit? List each requested document, the section of the PSM framework it relates to, and whether we currently have the document ready.'
+            'Open Email_04_PETRONAS_Meeting_Prep.docx. Draft a formal pre-audit meeting request to our PETRONAS account manager. The email should: reference the upcoming HSE audit date, request a 30-minute pre-audit briefing to present our self-assessment and corrective action progress, propose two available dates, and attach the executive summary of our HSE performance report (note: attach separately). Use formal energy industry correspondence tone.',
+            'Draft an internal email to the Miri Platform management team briefing them on the PETRONAS HSE audit in 6 weeks. The email should: list the 5 areas the audit team will focus on based on our previous audit findings, assign a responsible person for each area, request that all documentation be ready for review 2 weeks before the audit, and remind the team of the confidentiality requirements during the audit.',
+            'Summarise the email thread in Email_04_PETRONAS_Meeting_Prep.docx. What specific documentation has PETRONAS requested for the audit? List each requested document, the section of the PSM framework it relates to, and whether we currently have the document ready.'
           ]
         },
         {
@@ -1778,9 +1778,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from an HSE or operations review meeting. Ask Copilot: Identify all safety-critical action items discussed, the owner of each, and the due date. Flag any action item that is related to the Tier 1 PSE CAPA plan as "Priority". Format as an HSE action register.',
-            'Ask Copilot: Draft a post-incident communication for the Miri platform crew following the Tier 1 PSE. The communication should: acknowledge the incident without assigning blame, explain the immediate corrective actions taken to make the platform safe, outline the lessons-learned review process, and thank the crew for their cooperation. Tone: open, safety-first, respectful.',
-            'Ask Copilot: Based on this meeting transcript, identify any discussion about GHG or emissions topics. List any emissions reduction targets or milestones mentioned and check whether they are consistent with our stated Net Zero 2050 commitment.'
+            'Open an existing recorded Teams meeting recap from an HSE or operations review meeting. Identify all safety-critical action items discussed, the owner of each, and the due date. Flag any action item that is related to the Tier 1 PSE CAPA plan as "Priority". Format as an HSE action register.',
+            'Draft a post-incident communication for the Miri platform crew following the Tier 1 PSE. The communication should: acknowledge the incident without assigning blame, explain the immediate corrective actions taken to make the platform safe, outline the lessons-learned review process, and thank the crew for their cooperation. Tone: open, safety-first, respectful.',
+            'Based on this meeting transcript, identify any discussion about GHG or emissions topics. List any emissions reduction targets or milestones mentioned and check whether they are consistent with our stated Net Zero 2050 commitment.'
           ]
         },
         {
@@ -1889,7 +1889,7 @@ window.HUB_DATA = {
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
             'Upload OG_01_Nusantara_Energy.xlsx (use as refinery operations proxy). Ask Analyst: Analyse refinery margin data over the past 8 quarters. Decompose the margin into: crude differential, product realisation (by product slate), variable operating cost, and fixed cost per barrel. Which component has deteriorated most? Show as a waterfall chart from peak margin to current margin.',
-            'Upload OG_01_Nusantara_Energy.xlsx. Ask: Build a crude slate optimisation analysis. Compare three crude blends available to us — Arab Light, Murban, and Basrah Heavy — showing for each: (1) current spot price vs our long-term contract price, (2) API gravity and sulphur content, (3) estimated product yield by category, (4) net margin contribution per barrel. Recommend the optimal crude slate mix for the next quarter.'
+            'Build a crude slate optimisation analysis. Compare three crude blends available to us — Arab Light, Murban, and Basrah Heavy — showing for each: (1) current spot price vs our long-term contract price, (2) API gravity and sulphur content, (3) estimated product yield by category, (4) net margin contribution per barrel. Recommend the optimal crude slate mix for the next quarter.'
           ]
         },
         {
@@ -1898,9 +1898,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open OG_01_Nusantara_Energy.xlsx. Navigate to the Refinery Operations sheet. Ask Copilot: Build a margin sensitivity model on a new sheet. Show how the refinery margin changes for every USD 1/bbl move in the MOPS crack spread and every USD 0.50/bbl change in crude differential. Create a 6x6 sensitivity table (crack spread vs crude differential) showing the resulting margin and highlight in green cells above breakeven (USD 5.8/bbl) and red cells below.',
-            'Ask Copilot: Create a turnaround planning model on a new sheet. The planned Q3 turnaround will take 28 days and shut down Units 3 and 5. Calculate: (1) Total production loss in barrels assuming 80,000 bbl/day from those units, (2) Revenue loss at current margin of USD 4.2/bbl, (3) Fixed cost absorption loss, (4) Net P&L impact of the turnaround. Compare against the cost of deferring the turnaround by 6 months.',
-            'Ask Copilot: In the CIMAH Compliance sheet, identify all major hazard installations (MHIs) that are due for re-inspection within the next 12 months. For each, show the last inspection date, the next due date, the responsible engineer, and whether the pre-inspection documentation is complete. Flag in red any MHI where documentation is incomplete and the inspection is less than 60 days away.'
+            'Using the Refinery Operations tab in this workbook, Build a margin sensitivity model on a new sheet. Show how the refinery margin changes for every USD 1/bbl move in the MOPS crack spread and every USD 0.50/bbl change in crude differential. Create a 6x6 sensitivity table (crack spread vs crude differential) showing the resulting margin and highlight in green cells above breakeven (USD 5.8/bbl) and red cells below.',
+            'Create a turnaround planning model on a new sheet. The planned Q3 turnaround will take 28 days and shut down Units 3 and 5. Calculate: (1) Total production loss in barrels assuming 80,000 bbl/day from those units, (2) Revenue loss at current margin of USD 4.2/bbl, (3) Fixed cost absorption loss, (4) Net P&L impact of the turnaround. Compare against the cost of deferring the turnaround by 6 months.',
+            'In the CIMAH Compliance sheet, identify all major hazard installations (MHIs) that are due for re-inspection within the next 12 months. For each, show the last inspection date, the next due date, the responsible engineer, and whether the pre-inspection documentation is complete. Flag in red any MHI where documentation is incomplete and the inspection is less than 60 days away.'
           ]
         },
         {
@@ -1909,9 +1909,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open OG_02_Nusantara_HSE_Report.docx. Ask Copilot: Draft a DOSH CIMAH pre-audit submission letter. The letter should: confirm our readiness for the scheduled audit, provide a summary of our major hazard risk assessment updates since the last audit, list the key safety-critical equipment that has been tested and certified in the past 12 months, and request 20 minutes for a management presentation at the start of the audit.',
-            'Ask Copilot: Create a CIMAH Safety Report executive summary of 500 words. Cover: (1) description of the hazardous substances on site and quantities relative to CIMAH thresholds, (2) the major accident scenarios identified in our HAZOP/QRA, (3) the safety systems in place to prevent and mitigate each scenario, (4) the emergency response plan and last drill date. Use formal regulatory language.',
-            'Ask Copilot: Draft the turnaround scope-of-work document for Units 3 and 5. Structure: (1) objective of the turnaround, (2) equipment list for inspection and maintenance, (3) critical path activities, (4) contractor safety requirements, (5) permit-to-work framework during T/A, (6) restoration and recommissioning criteria. Keep it to 3 pages.'
+            'Draft a DOSH CIMAH pre-audit submission letter. The letter should: confirm our readiness for the scheduled audit, provide a summary of our major hazard risk assessment updates since the last audit, list the key safety-critical equipment that has been tested and certified in the past 12 months, and request 20 minutes for a management presentation at the start of the audit.',
+            'Create a CIMAH Safety Report executive summary of 500 words. Cover: (1) description of the hazardous substances on site and quantities relative to CIMAH thresholds, (2) the major accident scenarios identified in our HAZOP/QRA, (3) the safety systems in place to prevent and mitigate each scenario, (4) the emergency response plan and last drill date. Use formal regulatory language.',
+            'Draft the turnaround scope-of-work document for Units 3 and 5. Structure: (1) objective of the turnaround, (2) equipment list for inspection and maintenance, (3) critical path activities, (4) contractor safety requirements, (5) permit-to-work framework during T/A, (6) restoration and recommissioning criteria. Keep it to 3 pages.'
           ]
         },
         {
@@ -1920,9 +1920,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide Board presentation on Refinery Performance and Margin Recovery. Include: (1) Current margin position vs breakeven, (2) Margin decomposition waterfall, (3) MOPS market outlook — 6-month view, (4) Three margin recovery levers with estimated impact, (5) Crude slate optimisation — recommended blend, (6) Q3 turnaround — scope, cost, and margin impact, (7) CIMAH audit readiness — RAG status, (8) Safety performance dashboard, (9) Financial outlook — 12-month margin projection, (10) Board decisions required. Dark red and white colour scheme.',
-            'Ask Copilot: Add a one-slide crude slate decision matrix showing the trade-off between three crude options. Display as a spider chart with 5 axes: Margin Contribution | Sulphur Content | Availability Risk | Price Volatility | Refinery Compatibility.',
-            'Ask Copilot: Create speaker notes for the CFO for slides 1 through 4. The CFO needs to be able to explain the margin compression to non-technical Board members in under 3 minutes using plain language and one analogy.'
+            'Create a 10-slide Board presentation on Refinery Performance and Margin Recovery. Include: (1) Current margin position vs breakeven, (2) Margin decomposition waterfall, (3) MOPS market outlook — 6-month view, (4) Three margin recovery levers with estimated impact, (5) Crude slate optimisation — recommended blend, (6) Q3 turnaround — scope, cost, and margin impact, (7) CIMAH audit readiness — RAG status, (8) Safety performance dashboard, (9) Financial outlook — 12-month margin projection, (10) Board decisions required. Dark red and white colour scheme.',
+            'Add a one-slide crude slate decision matrix showing the trade-off between three crude options. Display as a spider chart with 5 axes: Margin Contribution | Sulphur Content | Availability Risk | Price Volatility | Refinery Compatibility.',
+            'Create speaker notes for the CFO for slides 1 through 4. The CFO needs to be able to explain the margin compression to non-technical Board members in under 3 minutes using plain language and one analogy.'
           ]
         },
         {
@@ -1931,9 +1931,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft an email to our crude oil trading desk requesting a revised crude supply proposal for Q3. The email should specify: (1) our preferred crude API gravity range (32-38 API), (2) maximum sulphur content (0.5%), (3) required delivery window for the turnaround period, (4) target price differential vs Brent, and (5) request for optionality on volumes given the turnaround timing uncertainty.',
-            'Ask Copilot: Draft an internal memo to the operations leadership team briefing them on the DOSH CIMAH audit in 8 weeks. List the 5 areas DOSH will focus on, assign a responsible manager for each area, and set a document readiness deadline of 4 weeks before the audit. Emphasise that DOSH auditors will conduct physical plant walk-rounds and interview operators directly.',
-            'Ask Copilot: Draft a letter to DOSH Malaysia confirming our CIMAH Safety Report has been updated and requesting confirmation that the latest version is on file with DOSH. Reference the relevant CIMAH regulation schedule and our establishment registration number.'
+            'Draft an email to our crude oil trading desk requesting a revised crude supply proposal for Q3. The email should specify: (1) our preferred crude API gravity range (32-38 API), (2) maximum sulphur content (0.5%), (3) required delivery window for the turnaround period, (4) target price differential vs Brent, and (5) request for optionality on volumes given the turnaround timing uncertainty.',
+            'Draft an internal memo to the operations leadership team briefing them on the DOSH CIMAH audit in 8 weeks. List the 5 areas DOSH will focus on, assign a responsible manager for each area, and set a document readiness deadline of 4 weeks before the audit. Emphasise that DOSH auditors will conduct physical plant walk-rounds and interview operators directly.',
+            'Draft a letter to DOSH Malaysia confirming our CIMAH Safety Report has been updated and requesting confirmation that the latest version is on file with DOSH. Reference the relevant CIMAH regulation schedule and our establishment registration number.'
           ]
         },
         {
@@ -1942,9 +1942,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a refinery operations or HSE meeting. Ask Copilot: Identify all CIMAH or process safety topics discussed. List each topic with the key point made, any decision taken, and the follow-up action assigned. Format as a process safety meeting minute.',
-            'Ask Copilot: Draft follow-up actions from this meeting for the turnaround planning team. Group by workstream: Engineering | HSE | Procurement | Contractor Management | Operations Readiness. Include owner and deadline for each action.',
-            'Ask Copilot: Were any near-miss incidents or process deviations mentioned in this meeting? Extract each one with: the unit or equipment involved, the nature of the deviation, and whether a formal incident report was raised.'
+            'Open an existing recorded Teams meeting recap from a refinery operations or HSE meeting. Identify all CIMAH or process safety topics discussed. List each topic with the key point made, any decision taken, and the follow-up action assigned. Format as a process safety meeting minute.',
+            'Draft follow-up actions from this meeting for the turnaround planning team. Group by workstream: Engineering | HSE | Procurement | Contractor Management | Operations Readiness. Include owner and deadline for each action.',
+            'Were any near-miss incidents or process deviations mentioned in this meeting? Extract each one with: the unit or equipment involved, the nature of the deviation, and whether a formal incident report was raised.'
           ]
         },
         {
@@ -2053,7 +2053,7 @@ window.HUB_DATA = {
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
             'Upload OG_01_Nusantara_Energy.xlsx (use as energy portfolio proxy). Ask Analyst: Analyse the hydro portfolio generation data for the past 4 years. What is the capacity factor trend for each dam? Which dams have the highest variability in generation due to rainfall patterns? Calculate the average annual generation in GWh and the revenue sensitivity to a 10% drop in generation. Show as a trend chart and a sensitivity table.',
-            'Upload 20_Zava_ESG_Sustainability_Framework.xlsx. Ask: Build a carbon credit revenue projection for the hydro portfolio. Assume 2.4GW capacity, 45% average capacity factor, grid emission factor of 0.62 tCO2e/MWh. Calculate: (1) Annual carbon credits generated in tCO2e, (2) Revenue at USD 8/tCO2e (current VCS price), (3) Revenue at USD 15/tCO2e (if carbon price rises). Show as a 5-year projection table.'
+            'Build a carbon credit revenue projection for the hydro portfolio. Assume 2.4GW capacity, 45% average capacity factor, grid emission factor of 0.62 tCO2e/MWh. Calculate: (1) Annual carbon credits generated in tCO2e, (2) Revenue at USD 8/tCO2e (current VCS price), (3) Revenue at USD 15/tCO2e (if carbon price rises). Show as a 5-year projection table.'
           ]
         },
         {
@@ -2062,9 +2062,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open OG_01_Nusantara_Energy.xlsx. Navigate to the Renewable Portfolio sheet. Ask Copilot: Build a PPA renegotiation model on a new sheet. Current PPA: 800MW at MYR 0.214/kWh, 25-year remaining term, 2% annual escalation. Proposed new tariff: MYR 0.248/kWh. Calculate: (1) Annual revenue difference, (2) NPV of the tariff increase over the remaining 25 years at an 8% discount rate, (3) The impact on our DSCR (Debt Service Coverage Ratio). Show as a comparison table: Current PPA vs Proposed PPA.',
-            'Ask Copilot: Create a 480MW solar pipeline development tracker on a new sheet. List each solar project with: Project Name | Capacity (MW) | Development Stage | Land Status | Grid Connection Application Status | Expected COD | Estimated Capex (MYR M) | LSS Bid Round. Apply conditional formatting: projects at Financial Close stage in green, at Grid Application stage in yellow, at Land Acquisition stage in orange.',
-            'Ask Copilot: Build a carbon credit generation tracker. For each hydro asset in the portfolio, calculate the estimated annual carbon credits based on generation data and the grid emission factor. Show the cumulative carbon credits generated to date and the estimated revenue at current market prices. Add a chart showing annual carbon credit revenue at three price scenarios: USD 8, USD 12, and USD 18/tCO2e.'
+            'Using the Renewable Portfolio tab in this workbook, Build a PPA renegotiation model on a new sheet. Current PPA: 800MW at MYR 0.214/kWh, 25-year remaining term, 2% annual escalation. Proposed new tariff: MYR 0.248/kWh. Calculate: (1) Annual revenue difference, (2) NPV of the tariff increase over the remaining 25 years at an 8% discount rate, (3) The impact on our DSCR (Debt Service Coverage Ratio). Show as a comparison table: Current PPA vs Proposed PPA.',
+            'Create a 480MW solar pipeline development tracker on a new sheet. List each solar project with: Project Name | Capacity (MW) | Development Stage | Land Status | Grid Connection Application Status | Expected COD | Estimated Capex (MYR M) | LSS Bid Round. Apply conditional formatting: projects at Financial Close stage in green, at Grid Application stage in yellow, at Land Acquisition stage in orange.',
+            'Build a carbon credit generation tracker. For each hydro asset in the portfolio, calculate the estimated annual carbon credits based on generation data and the grid emission factor. Show the cumulative carbon credits generated to date and the estimated revenue at current market prices. Add a chart showing annual carbon credit revenue at three price scenarios: USD 8, USD 12, and USD 18/tCO2e.'
           ]
         },
         {
@@ -2073,9 +2073,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 20_Zava_ESG_Sustainability_Framework.docx. Ask Copilot: Draft a 400-word renewable energy section for our annual sustainability report. Cover: (1) Our renewable energy generation capacity and portfolio overview, (2) Carbon emission avoidance in tCO2e from our hydro and solar assets, (3) Progress on the 480MW solar pipeline, (4) Carbon credit certification update, (5) PPA contribution to Malaysia\'s renewable energy targets under the National Energy Transition Roadmap (NETR). Use an optimistic but factually grounded tone.',
-            'Ask Copilot: Draft the PPA renegotiation position paper for the TNB negotiation. Cover: (1) Market context — new hydro tariffs have risen to MYR 0.26/kWh, (2) Our cost structure justification — OPEX has increased 18% since the original PPA, (3) The long-term supply security value we provide TNB, (4) Our proposal — MYR 0.248/kWh with 2.5% escalation, (5) What we can offer TNB in return — extended term optionality, demand response capability. Keep it to 2 pages.',
-            'Ask Copilot: Write the LSS bid submission executive summary for our 150MW solar project in Sarawak. Cover: project overview, site location, technology (single-axis tracking monofacial), expected capacity factor 19.2%, proposed tariff MYR 0.198/kWh, EPC contractor, connection point, and environmental impact summary. Format to match the Energy Commission LSS bid template structure.'
+            'Draft a 400-word renewable energy section for our annual sustainability report. Cover: (1) Our renewable energy generation capacity and portfolio overview, (2) Carbon emission avoidance in tCO2e from our hydro and solar assets, (3) Progress on the 480MW solar pipeline, (4) Carbon credit certification update, (5) PPA contribution to Malaysia\'s renewable energy targets under the National Energy Transition Roadmap (NETR). Use an optimistic but factually grounded tone.',
+            'Draft the PPA renegotiation position paper for the TNB negotiation. Cover: (1) Market context — new hydro tariffs have risen to MYR 0.26/kWh, (2) Our cost structure justification — OPEX has increased 18% since the original PPA, (3) The long-term supply security value we provide TNB, (4) Our proposal — MYR 0.248/kWh with 2.5% escalation, (5) What we can offer TNB in return — extended term optionality, demand response capability. Keep it to 2 pages.',
+            'Write the LSS bid submission executive summary for our 150MW solar project in Sarawak. Cover: project overview, site location, technology (single-axis tracking monofacial), expected capacity factor 19.2%, proposed tariff MYR 0.198/kWh, EPC contractor, connection point, and environmental impact summary. Format to match the Energy Commission LSS bid template structure.'
           ]
         },
         {
@@ -2084,9 +2084,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide renewable energy investor day presentation. Include: (1) Portfolio overview — 2.4GW hydro + 480MW solar pipeline, (2) Hydro generation performance and revenue, (3) PPA renegotiation — rationale and impact, (4) Solar pipeline — project map and development status, (5) Carbon credit programme — certification update and revenue potential, (6) LSS Round 5 bid — project details, (7) NETR alignment — how our portfolio supports Malaysia\'s 70% renewable target, (8) Financial projections — 5-year revenue and EBITDA, (9) ESG commitment, (10) Investment thesis. Use a green and yellow colour scheme.',
-            'Ask Copilot: Create a 2-slide carbon credit explainer for our Board who are unfamiliar with voluntary carbon markets. Slide 1: How carbon credits are generated, verified (Verra VCS), and sold. Slide 2: Our portfolio\'s carbon credit potential — annual tCO2e generated and revenue at three price scenarios. Use simple visuals, no jargon.',
-            'Ask Copilot: Add a risk matrix slide showing the top 4 risks to our renewable energy business: hydrology risk (rainfall variability), tariff renegotiation risk, LSS bid failure, and carbon price volatility. Position each on a 3x3 likelihood-impact matrix.'
+            'Create a 10-slide renewable energy investor day presentation. Include: (1) Portfolio overview — 2.4GW hydro + 480MW solar pipeline, (2) Hydro generation performance and revenue, (3) PPA renegotiation — rationale and impact, (4) Solar pipeline — project map and development status, (5) Carbon credit programme — certification update and revenue potential, (6) LSS Round 5 bid — project details, (7) NETR alignment — how our portfolio supports Malaysia\'s 70% renewable target, (8) Financial projections — 5-year revenue and EBITDA, (9) ESG commitment, (10) Investment thesis. Use a green and yellow colour scheme.',
+            'Create a 2-slide carbon credit explainer for our Board who are unfamiliar with voluntary carbon markets. Slide 1: How carbon credits are generated, verified (Verra VCS), and sold. Slide 2: Our portfolio\'s carbon credit potential — annual tCO2e generated and revenue at three price scenarios. Use simple visuals, no jargon.',
+            'Add a risk matrix slide showing the top 4 risks to our renewable energy business: hydrology risk (rainfall variability), tariff renegotiation risk, LSS bid failure, and carbon price volatility. Position each on a 3x3 likelihood-impact matrix.'
           ]
         },
         {
@@ -2095,9 +2095,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a formal letter to TNB\'s Power Procurement team requesting a PPA renegotiation meeting. The letter should: reference the existing PPA and its key terms, note that the PPA review clause allows renegotiation at the 10-year mark, outline our position at a high level (seeking a tariff revision to reflect current market rates), and propose a negotiation timeline of 3 months. Use formal utility sector correspondence tone.',
-            'Ask Copilot: Draft an email to the Energy Commission Malaysia submitting our intention to bid in the LSS Round 5 tender. The email should confirm our company eligibility, specify the project name and capacity (150MW), attach the pre-qualification documents checklist (note: attach separately), and request confirmation of the submission portal access.',
-            'Ask Copilot: Draft an update email to our Verra VCS verifier requesting the status of our carbon credit certification for the Bakun Hydro project. The verification has been pending for 5 months. Ask for an estimated completion date and a list of any outstanding documentation required from our side.'
+            'Draft a formal letter to TNB\'s Power Procurement team requesting a PPA renegotiation meeting. The letter should: reference the existing PPA and its key terms, note that the PPA review clause allows renegotiation at the 10-year mark, outline our position at a high level (seeking a tariff revision to reflect current market rates), and propose a negotiation timeline of 3 months. Use formal utility sector correspondence tone.',
+            'Draft an email to the Energy Commission Malaysia submitting our intention to bid in the LSS Round 5 tender. The email should confirm our company eligibility, specify the project name and capacity (150MW), attach the pre-qualification documents checklist (note: attach separately), and request confirmation of the submission portal access.',
+            'Draft an update email to our Verra VCS verifier requesting the status of our carbon credit certification for the Bakun Hydro project. The verification has been pending for 5 months. Ask for an estimated completion date and a list of any outstanding documentation required from our side.'
           ]
         },
         {
@@ -2106,9 +2106,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a project development or commercial meeting. Ask Copilot: Identify all commercial milestones discussed — PPA, LSS bid, carbon credits, and land acquisition. For each, note the current status, the next key milestone, and who is responsible.',
-            'Ask Copilot: Draft follow-up actions for the LSS bid preparation team. Assign each action to a workstream: Technical | Commercial | Legal | Environmental | Grid Connection. Include deadline and the person responsible.',
-            'Ask Copilot: Were any regulatory risks or delays discussed in this meeting? List each risk with the project it affects, the nature of the risk, and the mitigation discussed.'
+            'Open an existing recorded Teams meeting recap from a project development or commercial meeting. Identify all commercial milestones discussed — PPA, LSS bid, carbon credits, and land acquisition. For each, note the current status, the next key milestone, and who is responsible.',
+            'Draft follow-up actions for the LSS bid preparation team. Assign each action to a workstream: Technical | Commercial | Legal | Environmental | Grid Connection. Include deadline and the person responsible.',
+            'Were any regulatory risks or delays discussed in this meeting? List each risk with the project it affects, the nature of the risk, and the mitigation discussed.'
           ]
         },
         {
@@ -2216,8 +2216,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 12_Zava_Manufacturing_KPIs.xlsx to Analyst. Ask: Analyse OEE data for all 12 CNC machines over the past 12 months. Break down OEE into availability, performance, and quality for each machine. Which 3 machines have the lowest OEE? Is the OEE decline driven primarily by availability loss (breakdowns) or performance loss (speed reduction)? Create a machine-level OEE heat map and a trend chart showing the group OEE from 76% to 62%.',
-            'Upload 12_Zava_Manufacturing_KPIs.xlsx. Ask: Analyse the production backlog by customer and product type. Which customer has the largest backlog in units and MYR value? Calculate the financial penalty risk — assume our top 3 automotive customers have SLA penalties of 0.5% of order value per week of delay. Show total penalty exposure at current backlog clearance rate.'
+            'Analyse OEE data for all 12 CNC machines over the past 12 months. Break down OEE into availability, performance, and quality for each machine. Which 3 machines have the lowest OEE? Is the OEE decline driven primarily by availability loss (breakdowns) or performance loss (speed reduction)? Create a machine-level OEE heat map and a trend chart showing the group OEE from 76% to 62%.',
+            'Analyse the production backlog by customer and product type. Which customer has the largest backlog in units and MYR value? Calculate the financial penalty risk — assume our top 3 automotive customers have SLA penalties of 0.5% of order value per week of delay. Show total penalty exposure at current backlog clearance rate.'
           ]
         },
         {
@@ -2226,9 +2226,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 12_Zava_Manufacturing_KPIs.xlsx. Navigate to the Machine Performance sheet. Ask Copilot: Create an OEE recovery simulation model on a new sheet. Show what happens to overall plant OEE if we: (1) Fix the 3 failing spindle motors (assume restores those machines to 82% OEE), (2) Implement 2-shift vs 3-shift production for the backlog clearance, (3) Temporarily defer non-urgent preventive maintenance. Calculate the projected backlog clearance date under each scenario.',
-            'Ask Copilot: Build a SIRIM ISO 9001 audit readiness tracker on a new sheet. List the 10 key ISO 9001 clauses most commonly reviewed in a manufacturing audit. For each clause, add: Current Status (Compliant/Partial/Gap) | Evidence on File (Yes/No) | Responsible Person | Action Required Before Audit. Apply colour coding: green = Compliant with evidence, amber = Partial, red = Gap.',
-            'Ask Copilot: In the Quality Control sheet, calculate the First Pass Yield (FPY) and scrap rate for each product family over the past 6 months. Has the scrap rate increased since the OEE decline began? If scrap has increased, estimate the additional material cost in MYR. Show as a trend chart with a correlation line.'
+            'Using the Machine Performance tab in this workbook, Create an OEE recovery simulation model on a new sheet. Show what happens to overall plant OEE if we: (1) Fix the 3 failing spindle motors (assume restores those machines to 82% OEE), (2) Implement 2-shift vs 3-shift production for the backlog clearance, (3) Temporarily defer non-urgent preventive maintenance. Calculate the projected backlog clearance date under each scenario.',
+            'Build a SIRIM ISO 9001 audit readiness tracker on a new sheet. List the 10 key ISO 9001 clauses most commonly reviewed in a manufacturing audit. For each clause, add: Current Status (Compliant/Partial/Gap) | Evidence on File (Yes/No) | Responsible Person | Action Required Before Audit. Apply colour coding: green = Compliant with evidence, amber = Partial, red = Gap.',
+            'In the Quality Control sheet, calculate the First Pass Yield (FPY) and scrap rate for each product family over the past 6 months. Has the scrap rate increased since the OEE decline began? If scrap has increased, estimate the additional material cost in MYR. Show as a trend chart with a correlation line.'
           ]
         },
         {
@@ -2237,9 +2237,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 21_Zava_Chemical_Safety_HIRARC.docx. Ask Copilot: Draft a CNC spindle motor failure root cause analysis report using the 5-Why methodology. The failures occur predominantly after 8–10 hours of continuous operation and are linked to 3 specific machines (CNC-04, CNC-07, CNC-11). Suspected causes include: insufficient coolant flow to the spindle bearing, inadequate preventive maintenance intervals, and substandard replacement parts. Structure the report: Problem Statement | 5-Why Analysis | Root Cause | Corrective Actions | Preventive Actions | Effectiveness Review Date.',
-            'Ask Copilot: Write a backlog recovery plan of 2 pages for the Managing Director. Cover: (1) Current backlog — 2,800 units, MYR 14.2M value, (2) Customer impact and penalty risk, (3) Recovery plan — 3-shift production, contract machining outsource for 400 units, spindle motor repair timeline, (4) Expected clearance date — 6 weeks, (5) Communication plan for affected customers. Include a week-by-week recovery milestone table.',
-            'Ask Copilot: Draft an ISO 9001 internal audit non-conformance response report. The internal audit found 3 minor non-conformances: (1) calibration records not updated for 2 measurement instruments, (2) operator training records incomplete for 4 new employees, (3) customer complaint response log not updated for 3 complaints. For each non-conformance, write the corrective action and the preventive action in the format required by SIRIM.'
+            'Draft a CNC spindle motor failure root cause analysis report using the 5-Why methodology. The failures occur predominantly after 8–10 hours of continuous operation and are linked to 3 specific machines (CNC-04, CNC-07, CNC-11). Suspected causes include: insufficient coolant flow to the spindle bearing, inadequate preventive maintenance intervals, and substandard replacement parts. Structure the report: Problem Statement | 5-Why Analysis | Root Cause | Corrective Actions | Preventive Actions | Effectiveness Review Date.',
+            'Write a backlog recovery plan of 2 pages for the Managing Director. Cover: (1) Current backlog — 2,800 units, MYR 14.2M value, (2) Customer impact and penalty risk, (3) Recovery plan — 3-shift production, contract machining outsource for 400 units, spindle motor repair timeline, (4) Expected clearance date — 6 weeks, (5) Communication plan for affected customers. Include a week-by-week recovery milestone table.',
+            'Draft an ISO 9001 internal audit non-conformance response report. The internal audit found 3 minor non-conformances: (1) calibration records not updated for 2 measurement instruments, (2) operator training records incomplete for 4 new employees, (3) customer complaint response log not updated for 3 complaints. For each non-conformance, write the corrective action and the preventive action in the format required by SIRIM.'
           ]
         },
         {
@@ -2248,9 +2248,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide operations recovery presentation for the Managing Director and key customers. Include: (1) Situation — OEE decline from 76% to 62%, (2) Root cause — spindle motor analysis, (3) Financial impact — backlog value and penalty risk, (4) Recovery plan — timeline and milestones, (5) SIRIM audit readiness — status dashboard, (6) Resource plan — 3-shift operation and outsourcing, (7) Customer impact by account, (8) Communication plan, (9) OEE target trajectory — 62% to 78% in 6 months, (10) Decisions required. Use a professional dark grey and orange colour scheme.',
-            'Ask Copilot: Create a customer communication slide showing each affected customer, their backlog in units, the expected delivery date under the recovery plan, and whether we are triggering any SLA penalty clauses. Format as a table with a RAG status column.',
-            'Ask Copilot: Add a predictive maintenance roadmap slide showing a phased implementation: Phase 1 — vibration sensors on 3 failing machines (Month 1–2), Phase 2 — IoT dashboard and alerting (Month 3–4), Phase 3 — expand to all 12 machines (Month 5–6). Show estimated cost and OEE improvement for each phase.'
+            'Create a 10-slide operations recovery presentation for the Managing Director and key customers. Include: (1) Situation — OEE decline from 76% to 62%, (2) Root cause — spindle motor analysis, (3) Financial impact — backlog value and penalty risk, (4) Recovery plan — timeline and milestones, (5) SIRIM audit readiness — status dashboard, (6) Resource plan — 3-shift operation and outsourcing, (7) Customer impact by account, (8) Communication plan, (9) OEE target trajectory — 62% to 78% in 6 months, (10) Decisions required. Use a professional dark grey and orange colour scheme.',
+            'Create a customer communication slide showing each affected customer, their backlog in units, the expected delivery date under the recovery plan, and whether we are triggering any SLA penalty clauses. Format as a table with a RAG status column.',
+            'Add a predictive maintenance roadmap slide showing a phased implementation: Phase 1 — vibration sensors on 3 failing machines (Month 1–2), Phase 2 — IoT dashboard and alerting (Month 3–4), Phase 3 — expand to all 12 machines (Month 5–6). Show estimated cost and OEE improvement for each phase.'
           ]
         },
         {
@@ -2259,9 +2259,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a customer communication email to our top 3 automotive customers who are affected by the production backlog. The email should: acknowledge the delay without going into technical detail about the cause, provide the revised delivery schedule for their specific orders, confirm that no quality compromise has occurred, and offer a goodwill gesture (expedited shipping at our cost). Use a professional, accountable but not grovelling tone.',
-            'Ask Copilot: Draft an urgent email to our CNC spindle motor supplier requesting emergency delivery of 3 replacement spindle motor units within 5 business days. The email should cite the criticality of the situation (production backlog, customer SLA risk), reference our existing supply agreement and volume commitment, and ask for a price for expedited delivery. Copy our procurement manager.',
-            'Ask Copilot: Draft an internal email to all shift supervisors briefing them on the 3-shift recovery operation starting next Monday. Cover: the shift rotation schedule, the backlog clearance target per shift (160 units), the quality checkpoint requirements, and the escalation procedure if a machine goes down during the recovery period.'
+            'Draft a customer communication email to our top 3 automotive customers who are affected by the production backlog. The email should: acknowledge the delay without going into technical detail about the cause, provide the revised delivery schedule for their specific orders, confirm that no quality compromise has occurred, and offer a goodwill gesture (expedited shipping at our cost). Use a professional, accountable but not grovelling tone.',
+            'Draft an urgent email to our CNC spindle motor supplier requesting emergency delivery of 3 replacement spindle motor units within 5 business days. The email should cite the criticality of the situation (production backlog, customer SLA risk), reference our existing supply agreement and volume commitment, and ask for a price for expedited delivery. Copy our procurement manager.',
+            'Draft an internal email to all shift supervisors briefing them on the 3-shift recovery operation starting next Monday. Cover: the shift rotation schedule, the backlog clearance target per shift (160 units), the quality checkpoint requirements, and the escalation procedure if a machine goes down during the recovery period.'
           ]
         },
         {
@@ -2270,9 +2270,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from an operations or production review. Ask Copilot: Extract all KPI figures mentioned — OEE, production output, backlog units, scrap rate, and delivery performance. Create a structured operations scorecard from the meeting data.',
-            'Ask Copilot: Draft follow-up actions from this production meeting. Prioritise actions into: Critical (affects backlog clearance this week), High (affects SIRIM audit), Medium (process improvement). Assign owner and deadline to each.',
-            'Ask Copilot: Were any customer escalations or SLA breaches discussed? List each customer, the SLA metric at risk, the current performance, and the recovery commitment made in the meeting.'
+            'Open an existing recorded Teams meeting recap from an operations or production review. Extract all KPI figures mentioned — OEE, production output, backlog units, scrap rate, and delivery performance. Create a structured operations scorecard from the meeting data.',
+            'Draft follow-up actions from this production meeting. Prioritise actions into: Critical (affects backlog clearance this week), High (affects SIRIM audit), Medium (process improvement). Assign owner and deadline to each.',
+            'Were any customer escalations or SLA breaches discussed? List each customer, the SLA metric at risk, the current performance, and the recovery commitment made in the meeting.'
           ]
         },
         {
@@ -2382,7 +2382,7 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 11_Zava_Agribusiness_Plantations.xlsx to Analyst. Ask: Analyse OER trends by mill over the past 8 quarters. Which mills have the lowest OER and what is the variance from the 21.2% industry benchmark? Calculate the revenue impact of the OER gap — if all mills operated at the industry benchmark OER, how much additional CPO would we have produced at current FFB tonnage and what is the MYR revenue impact at MYR 3,800/tonne? Show as a ranked table and a bar chart.',
+            'Analyse OER trends by mill over the past 8 quarters. Which mills have the lowest OER and what is the variance from the 21.2% industry benchmark? Calculate the revenue impact of the OER gap — if all mills operated at the industry benchmark OER, how much additional CPO would we have produced at current FFB tonnage and what is the MYR revenue impact at MYR 3,800/tonne? Show as a ranked table and a bar chart.',
             'Upload 11_Zava_Agribusiness_Plantations.xlsx and 22_Zava_Plantation_RSPO_Audit.docx. Ask: Cross-reference the EUDR compliance status of each estate block against the December 31, 2020 deforestation cutoff. Which estate blocks show land conversion activity after this date? Calculate the total hectarage at risk and the corresponding export volume that cannot be sold to EU buyers until remediation is complete. Present as a heat map.'
           ]
         },
@@ -2392,9 +2392,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 11_Zava_Agribusiness_Plantations.xlsx. Navigate to the Mill Performance sheet. Ask Copilot: Create an EUDR traceability compliance tracker on a new sheet. For each estate block, show: (1) Block ID and hectarage, (2) Geolocation coordinates (latitude/longitude), (3) Land conversion history pre/post December 2020, (4) RSPO certification status, (5) EUDR compliance status (Compliant/At Risk/Non-Compliant). Colour code: green = Compliant, red = Non-Compliant.',
-            'Ask Copilot: In the Financial Performance sheet, model the revenue impact of losing EU market access for 12 months. Assume: 35% of CPO exports go to the EU, average EU premium of MYR 180/tonne over non-EU markets, total CPO production of 280,000 tonnes per year. Calculate: (1) Annual EU premium revenue at risk, (2) Revenue loss if EU volumes are diverted to non-EU markets at lower prices, (3) The cost to implement full EUDR compliance (estimate MYR 12M for satellite monitoring and traceability system). Show as a cost-benefit table.',
-            'Ask Copilot: Create an OER improvement action plan on a new sheet. For the 5 mills with the lowest OER, identify the 3 most impactful improvement actions for each (based on the audit findings in the strategy data). Calculate the projected OER improvement if all actions are implemented and the resulting additional CPO revenue per mill.'
+            'Using the Mill Performance tab in this workbook, Create an EUDR traceability compliance tracker on a new sheet. For each estate block, show: (1) Block ID and hectarage, (2) Geolocation coordinates (latitude/longitude), (3) Land conversion history pre/post December 2020, (4) RSPO certification status, (5) EUDR compliance status (Compliant/At Risk/Non-Compliant). Colour code: green = Compliant, red = Non-Compliant.',
+            'In the Financial Performance sheet, model the revenue impact of losing EU market access for 12 months. Assume: 35% of CPO exports go to the EU, average EU premium of MYR 180/tonne over non-EU markets, total CPO production of 280,000 tonnes per year. Calculate: (1) Annual EU premium revenue at risk, (2) Revenue loss if EU volumes are diverted to non-EU markets at lower prices, (3) The cost to implement full EUDR compliance (estimate MYR 12M for satellite monitoring and traceability system). Show as a cost-benefit table.',
+            'Create an OER improvement action plan on a new sheet. For the 5 mills with the lowest OER, identify the 3 most impactful improvement actions for each (based on the audit findings in the strategy data). Calculate the projected OER improvement if all actions are implemented and the resulting additional CPO revenue per mill.'
           ]
         },
         {
@@ -2403,9 +2403,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 22_Zava_Plantation_RSPO_Audit.docx. Ask Copilot: Draft a 3-page RSPO remediation plan for the two suspended mills. Structure: (1) Summary of audit findings that led to the suspension, (2) Corrective actions for each finding — with responsible person, action description, and completion date, (3) Evidence to be provided to RSPO verifier — list by finding, (4) Stakeholder grievance resolution plan — addressing any community or worker complaints raised in the audit, (5) Timeline to reinstatement — target 4 months. Use formal RSPO reporting language.',
-            'Ask Copilot: Draft an EUDR due diligence statement template for use with our EU customers. The statement should: assert that the palm oil in the specified shipment was produced on land not deforested after December 31, 2020, reference the geolocation data supporting this assertion, confirm RSPO or MSPO certification (where applicable), and provide the name and contact of the responsible officer. Format to meet EU regulatory requirements.',
-            'Ask Copilot: Draft a letter to our top 3 EU customers (who together represent 28% of our CPO sales) explaining our EUDR compliance programme. The letter should: confirm our commitment to full EUDR compliance by January 2026, describe our traceability system implementation, acknowledge the RSPO suspension and the remediation timeline, and assure them that their supply volumes will not be affected. Keep it professional and confidence-building.'
+            'Draft a 3-page RSPO remediation plan for the two suspended mills. Structure: (1) Summary of audit findings that led to the suspension, (2) Corrective actions for each finding — with responsible person, action description, and completion date, (3) Evidence to be provided to RSPO verifier — list by finding, (4) Stakeholder grievance resolution plan — addressing any community or worker complaints raised in the audit, (5) Timeline to reinstatement — target 4 months. Use formal RSPO reporting language.',
+            'Draft an EUDR due diligence statement template for use with our EU customers. The statement should: assert that the palm oil in the specified shipment was produced on land not deforested after December 31, 2020, reference the geolocation data supporting this assertion, confirm RSPO or MSPO certification (where applicable), and provide the name and contact of the responsible officer. Format to meet EU regulatory requirements.',
+            'Draft a letter to our top 3 EU customers (who together represent 28% of our CPO sales) explaining our EUDR compliance programme. The letter should: confirm our commitment to full EUDR compliance by January 2026, describe our traceability system implementation, acknowledge the RSPO suspension and the remediation timeline, and assure them that their supply volumes will not be affected. Keep it professional and confidence-building.'
           ]
         },
         {
@@ -2414,9 +2414,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide sustainability investor briefing presentation. Include: (1) Portfolio overview — 184,200 ha, (2) RSPO suspension — cause, remediation, timeline, (3) EUDR compliance programme — progress dashboard, (4) Traceability system implementation, (5) OER improvement roadmap, (6) ESG rating trajectory, (7) Community and social commitments, (8) Financial impact of EUDR compliance investment, (9) Competitive positioning — sustainability as a market differentiator, (10) Key milestones FY2026, (11) Risks and mitigants, (12) Our Net Zero pathway. Use green and earthy tones.',
-            'Ask Copilot: Create a 2-slide RSPO suspension update for the Board. Slide 1: What happened — the audit findings and suspension notice. Slide 2: What we are doing — remediation plan, timeline, and expected reinstatement date. Keep it factual, accountable, and concise.',
-            'Ask Copilot: Add a geolocation compliance map slide showing our estate blocks colour-coded by EUDR compliance status (green/amber/red). Include statistics: total compliant hectarage, at-risk hectarage, and non-compliant hectarage.'
+            'Create a 12-slide sustainability investor briefing presentation. Include: (1) Portfolio overview — 184,200 ha, (2) RSPO suspension — cause, remediation, timeline, (3) EUDR compliance programme — progress dashboard, (4) Traceability system implementation, (5) OER improvement roadmap, (6) ESG rating trajectory, (7) Community and social commitments, (8) Financial impact of EUDR compliance investment, (9) Competitive positioning — sustainability as a market differentiator, (10) Key milestones FY2026, (11) Risks and mitigants, (12) Our Net Zero pathway. Use green and earthy tones.',
+            'Create a 2-slide RSPO suspension update for the Board. Slide 1: What happened — the audit findings and suspension notice. Slide 2: What we are doing — remediation plan, timeline, and expected reinstatement date. Keep it factual, accountable, and concise.',
+            'Add a geolocation compliance map slide showing our estate blocks colour-coded by EUDR compliance status (green/amber/red). Include statistics: total compliant hectarage, at-risk hectarage, and non-compliant hectarage.'
           ]
         },
         {
@@ -2425,9 +2425,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a formal response to the RSPO complaints panel regarding the two suspended mills. The letter should: acknowledge the suspension, provide a timeline for remediation, note the corrective actions already completed, and request a re-audit within 4 months. Use formal RSPO correspondence language.',
-            'Ask Copilot: Draft an email to the EU customer relations team providing an EUDR compliance update. The email should confirm our traceability system is on track for full deployment by October 2025, attach our current compliance certificate for unaffected estate blocks, and outline the due diligence documentation we will provide with each shipment from November 2025.',
-            'Ask Copilot: Summarise the email thread in Email_03_Cilegon_EHS_Enforcement.docx and identify any findings from the enforcement action that also affect our plantation operations. List each relevant finding with the corrective action required and the deadline.'
+            'Draft a formal response to the RSPO complaints panel regarding the two suspended mills. The letter should: acknowledge the suspension, provide a timeline for remediation, note the corrective actions already completed, and request a re-audit within 4 months. Use formal RSPO correspondence language.',
+            'Draft an email to the EU customer relations team providing an EUDR compliance update. The email should confirm our traceability system is on track for full deployment by October 2025, attach our current compliance certificate for unaffected estate blocks, and outline the due diligence documentation we will provide with each shipment from November 2025.',
+            'Summarise the email thread in Email_03_Cilegon_EHS_Enforcement.docx and identify any findings from the enforcement action that also affect our plantation operations. List each relevant finding with the corrective action required and the deadline.'
           ]
         },
         {
@@ -2436,9 +2436,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a sustainability or RSPO compliance meeting. Ask Copilot: Identify all RSPO remediation commitments made, the responsible mill manager for each, and the evidence submission deadline. Format as a formal RSPO remediation action register.',
-            'Ask Copilot: Draft a follow-up communication to all mill managers and estate supervisors covering the EUDR traceability requirements. Include a simple checklist of what data each manager must collect and submit monthly to the central traceability system.',
-            'Ask Copilot: Were any community or worker grievances mentioned in this meeting? List each with the nature of the grievance, the mill or estate it relates to, and whether it has been formally logged in the RSPO grievance mechanism.'
+            'Open an existing recorded Teams meeting recap from a sustainability or RSPO compliance meeting. Identify all RSPO remediation commitments made, the responsible mill manager for each, and the evidence submission deadline. Format as a formal RSPO remediation action register.',
+            'Draft a follow-up communication to all mill managers and estate supervisors covering the EUDR traceability requirements. Include a simple checklist of what data each manager must collect and submit monthly to the central traceability system.',
+            'Were any community or worker grievances mentioned in this meeting? List each with the nature of the grievance, the mill or estate it relates to, and whether it has been formally logged in the RSPO grievance mechanism.'
           ]
         },
         {
@@ -2548,8 +2548,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 18_Zava_HR_Analytics.xlsx to Analyst. Ask: Analyse attrition data for Zava BPO Bengaluru by department, tenure band, and job level. Which department has the highest attrition? Are employees leaving most within the first 6 months (early attrition) or after 12–24 months (mid-tenure)? Calculate the fully-loaded replacement cost per FTE (assume USD 2,800 per hire including training) and the total annual attrition cost. Show as a heat map and cost waterfall.',
-            'Upload 15_Zava_BPO_Operations.xlsx to Analyst. Ask: Analyse the Bank Mandiri contract SLA performance over the last 12 months. Which SLA metrics — turnaround time, accuracy, escalation rate, CSAT — are below the contract threshold? Calculate the weighted satisfaction score and identify the 3 metrics most correlated with the low CSAT score of 6.8. Show as a correlation matrix and a trend chart.'
+            'Analyse attrition data for Zava BPO Bengaluru by department, tenure band, and job level. Which department has the highest attrition? Are employees leaving most within the first 6 months (early attrition) or after 12–24 months (mid-tenure)? Calculate the fully-loaded replacement cost per FTE (assume USD 2,800 per hire including training) and the total annual attrition cost. Show as a heat map and cost waterfall.',
+            'Analyse the Bank Mandiri contract SLA performance over the last 12 months. Which SLA metrics — turnaround time, accuracy, escalation rate, CSAT — are below the contract threshold? Calculate the weighted satisfaction score and identify the 3 metrics most correlated with the low CSAT score of 6.8. Show as a correlation matrix and a trend chart.'
           ]
         },
         {
@@ -2558,9 +2558,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 15_Zava_BPO_Operations.xlsx. Navigate to the SLA Performance sheet. Ask Copilot: Build a Bank Mandiri account recovery dashboard on a new sheet. For each of the 8 SLA metrics in the contract, show: (1) Contract threshold, (2) Last 3 months actual performance, (3) Status vs threshold (RAG), (4) Trend (Improving/Stable/Declining). Highlight in red any metric that is below threshold AND declining.',
-            'Ask Copilot: Create an attrition cost model on a new sheet. Calculate: (1) Total FTE lost to attrition last 12 months (31.2% of 3,200), (2) Replacement cost per FTE at USD 2,800, (3) Total attrition cost, (4) Productivity loss during new hire ramp-up (assume 60% productivity for first 3 months), (5) Total cost including productivity loss. Compare against the cost of a MYR 2M retention programme. Show the ROI of the retention programme.',
-            'Ask Copilot: In the Contract Pipeline sheet, calculate the total contract renewal value at risk in the next 12 months. For each contract marked "At Risk", show the contract value, the renewal probability (based on current CSAT), and the expected value. Rank by expected value at risk and flag any contract where the CSAT score is below the renewal threshold.'
+            'Using the SLA Performance tab in this workbook, Build a Bank Mandiri account recovery dashboard on a new sheet. For each of the 8 SLA metrics in the contract, show: (1) Contract threshold, (2) Last 3 months actual performance, (3) Status vs threshold (RAG), (4) Trend (Improving/Stable/Declining). Highlight in red any metric that is below threshold AND declining.',
+            'Create an attrition cost model on a new sheet. Calculate: (1) Total FTE lost to attrition last 12 months (31.2% of 3,200), (2) Replacement cost per FTE at USD 2,800, (3) Total attrition cost, (4) Productivity loss during new hire ramp-up (assume 60% productivity for first 3 months), (5) Total cost including productivity loss. Compare against the cost of a MYR 2M retention programme. Show the ROI of the retention programme.',
+            'In the Contract Pipeline sheet, calculate the total contract renewal value at risk in the next 12 months. For each contract marked "At Risk", show the contract value, the renewal probability (based on current CSAT), and the expected value. Rank by expected value at risk and flag any contract where the CSAT score is below the renewal threshold.'
           ]
         },
         {
@@ -2569,9 +2569,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_13_Bengaluru_Attrition_Crisis.docx. Ask Copilot: Draft a comprehensive attrition reduction action plan of 2 pages. Cover: (1) Root cause analysis — 3 key drivers based on exit interview data, (2) Five retention initiatives — retention bonus structure, career pathing programme, flexible work policy, wellness benefits, and manager excellence training, (3) KPIs: target attrition rate of 24% within 6 months, (4) Investment required: MYR 2M, projected ROI through reduced replacement cost and improved client CSAT, (5) Governance: who owns each initiative. Use a business case format.',
-            'Open Email_12_BPO_Contract_Pipeline.docx. Ask Copilot: Draft a Bank Mandiri account recovery plan in the format of a client executive briefing. Cover: (1) Current SLA performance — transparent acknowledgement of the 3 metrics below threshold, (2) Root cause — the attrition impact on experienced staff levels, (3) Recovery plan — 6 specific commitments with measurable targets, (4) DOCUAI deployment — how AI will improve accuracy and turnaround for Mandiri processes, (5) Our investment commitment — dedicated Mandiri team ring-fenced from attrition impact. Keep it confident and specific.',
-            'Ask Copilot: Write a DOCUAI capability one-pager for the Bank Mandiri renewal meeting. The document should explain in client-friendly language: what DOCUAI does (OCR + NLP for financial document processing), the 99.8% accuracy achievement vs the 98.5% industry benchmark, the turnaround time improvement (from 4 hours to 45 minutes for standard forms), and the integration with Mandiri\'s existing document management system.'
+            'Draft a comprehensive attrition reduction action plan of 2 pages. Cover: (1) Root cause analysis — 3 key drivers based on exit interview data, (2) Five retention initiatives — retention bonus structure, career pathing programme, flexible work policy, wellness benefits, and manager excellence training, (3) KPIs: target attrition rate of 24% within 6 months, (4) Investment required: MYR 2M, projected ROI through reduced replacement cost and improved client CSAT, (5) Governance: who owns each initiative. Use a business case format.',
+            'Draft a Bank Mandiri account recovery plan in the format of a client executive briefing. Cover: (1) Current SLA performance — transparent acknowledgement of the 3 metrics below threshold, (2) Root cause — the attrition impact on experienced staff levels, (3) Recovery plan — 6 specific commitments with measurable targets, (4) DOCUAI deployment — how AI will improve accuracy and turnaround for Mandiri processes, (5) Our investment commitment — dedicated Mandiri team ring-fenced from attrition impact. Keep it confident and specific.',
+            'Write a DOCUAI capability one-pager for the Bank Mandiri renewal meeting. The document should explain in client-friendly language: what DOCUAI does (OCR + NLP for financial document processing), the 99.8% accuracy achievement vs the 98.5% industry benchmark, the turnaround time improvement (from 4 hours to 45 minutes for standard forms), and the integration with Mandiri\'s existing document management system.'
           ]
         },
         {
@@ -2580,9 +2580,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide Bank Mandiri contract renewal presentation. Include: (1) Partnership overview — 5 years, 850 FTE dedicated, (2) Service delivery scorecard — 12-month trend, (3) Transparent acknowledgement of 3 below-threshold metrics, (4) Root cause — attrition impact and what we have done, (5) Recovery plan — 6 commitments with targets, (6) DOCUAI — live demo results for Mandiri process types, (7) New value-add proposition — 3 additional services we can offer, (8) Dedicated Mandiri team structure — ring-fenced, (9) Proposed renewal terms, (10) Investment in Mandiri\'s success — our commitments, (11) Testimonials from other banking BPO clients, (12) Recommended next steps. Use navy blue and white.',
-            'Ask Copilot: Create a 2-slide attrition update for the Zava Group Board. Slide 1: The Bengaluru attrition crisis — root causes and financial impact. Slide 2: The retention action plan — 5 initiatives, MYR 2M investment, and projected CSAT recovery impact.',
-            'Ask Copilot: Add a DOCUAI impact slide showing a before/after process flow diagram — how Bank Mandiri\'s loan documentation process worked before DOCUAI (4 hours, 3 manual steps, 2.1% error rate) vs after DOCUAI (45 minutes, 1 review step, 0.2% error rate).'
+            'Create a 12-slide Bank Mandiri contract renewal presentation. Include: (1) Partnership overview — 5 years, 850 FTE dedicated, (2) Service delivery scorecard — 12-month trend, (3) Transparent acknowledgement of 3 below-threshold metrics, (4) Root cause — attrition impact and what we have done, (5) Recovery plan — 6 commitments with targets, (6) DOCUAI — live demo results for Mandiri process types, (7) New value-add proposition — 3 additional services we can offer, (8) Dedicated Mandiri team structure — ring-fenced, (9) Proposed renewal terms, (10) Investment in Mandiri\'s success — our commitments, (11) Testimonials from other banking BPO clients, (12) Recommended next steps. Use navy blue and white.',
+            'Create a 2-slide attrition update for the Zava Group Board. Slide 1: The Bengaluru attrition crisis — root causes and financial impact. Slide 2: The retention action plan — 5 initiatives, MYR 2M investment, and projected CSAT recovery impact.',
+            'Add a DOCUAI impact slide showing a before/after process flow diagram — how Bank Mandiri\'s loan documentation process worked before DOCUAI (4 hours, 3 manual steps, 2.1% error rate) vs after DOCUAI (45 minutes, 1 review step, 0.2% error rate).'
           ]
         },
         {
@@ -2591,9 +2591,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_12_BPO_Contract_Pipeline.docx. Ask Copilot in Outlook: Draft a proactive email to Bank Mandiri\'s procurement lead requesting a contract renewal review meeting. The email should: acknowledge that we are aware the CSAT score fell below threshold in Q3, take accountability and briefly describe what we have done to address it, and request a 90-minute business review meeting 6 weeks before the contract expiry. Tone: confident and relationship-focused, not defensive.',
-            'Ask Copilot: Draft an internal email to the Bengaluru Centre leadership team briefing them on the Bank Mandiri renewal risk and the recovery plan. Be direct about the stakes: losing this contract will result in 850 role reductions. Ask each department head to submit their specific commitments for the account recovery plan within 3 days.',
-            'Open Email_13_Bengaluru_Attrition_Crisis.docx. Ask Copilot: Summarise the key facts and decisions from this email thread. What commitments were made by the Bengaluru HR Director to the Group CEO? List each commitment with the deadline. Draft a status update email from the HR Director to the CEO confirming progress on each commitment.'
+            'Open Email_12_BPO_Contract_Pipeline.docx. Draft a proactive email to Bank Mandiri\'s procurement lead requesting a contract renewal review meeting. The email should: acknowledge that we are aware the CSAT score fell below threshold in Q3, take accountability and briefly describe what we have done to address it, and request a 90-minute business review meeting 6 weeks before the contract expiry. Tone: confident and relationship-focused, not defensive.',
+            'Draft an internal email to the Bengaluru Centre leadership team briefing them on the Bank Mandiri renewal risk and the recovery plan. Be direct about the stakes: losing this contract will result in 850 role reductions. Ask each department head to submit their specific commitments for the account recovery plan within 3 days.',
+            'Summarise the key facts and decisions from this email thread. What commitments were made by the Bengaluru HR Director to the Group CEO? List each commitment with the deadline. Draft a status update email from the HR Director to the CEO confirming progress on each commitment.'
           ]
         },
         {
@@ -2602,9 +2602,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from an account review or operations meeting. Ask Copilot: Identify all client commitments discussed — specific SLA improvements, process changes, or escalation resolutions. List each with owner and deadline. Flag any commitment made to Bank Mandiri that has a deadline within the next 30 days.',
-            'Ask Copilot: Draft follow-up actions for the attrition reduction taskforce based on this meeting. Group by initiative: Retention Bonus | Career Pathing | Manager Training | Wellness | Flexible Work. Include the HR business partner responsible and the target completion date.',
-            'Ask Copilot: Based on this meeting, what is the overall tone regarding the Bank Mandiri renewal — confident, uncertain, or at risk? Identify the 3 most important statements made about the renewal and what they imply about the likelihood of securing it.'
+            'Open an existing recorded Teams meeting recap from an account review or operations meeting. Identify all client commitments discussed — specific SLA improvements, process changes, or escalation resolutions. List each with owner and deadline. Flag any commitment made to Bank Mandiri that has a deadline within the next 30 days.',
+            'Draft follow-up actions for the attrition reduction taskforce based on this meeting. Group by initiative: Retention Bonus | Career Pathing | Manager Training | Wellness | Flexible Work. Include the HR business partner responsible and the target completion date.',
+            'Based on this meeting, what is the overall tone regarding the Bank Mandiri renewal — confident, uncertain, or at risk? Identify the 3 most important statements made about the renewal and what they imply about the likelihood of securing it.'
           ]
         },
         {
@@ -2712,8 +2712,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload TC_01_ClearWave_Communications.xlsx to Analyst. Ask: Analyse 5G rollout progress by region and state. Which states have the largest gap between actual and target coverage? What is the correlation between 5G coverage and postpaid subscriber growth in those states? Create a map-style table showing: State | 5G Coverage % | Target % | Gap | Postpaid Growth Rate. Highlight in red any state where coverage gap exceeds 10 percentage points.',
-            'Upload TC_01_ClearWave_Communications.xlsx. Ask: Analyse ARPU trends for postpaid, prepaid, and home broadband segments over the last 8 quarters. Which segment is declining fastest? Calculate the total ARPU decline impact on annual revenue. Build a churn rate cohort analysis — for the Nexus Home FMC bundle pilot (500 subscribers), what is the 3-month churn rate compared to non-bundle postpaid subscribers? Show as trend charts.'
+            'Analyse 5G rollout progress by region and state. Which states have the largest gap between actual and target coverage? What is the correlation between 5G coverage and postpaid subscriber growth in those states? Create a map-style table showing: State | 5G Coverage % | Target % | Gap | Postpaid Growth Rate. Highlight in red any state where coverage gap exceeds 10 percentage points.',
+            'Analyse ARPU trends for postpaid, prepaid, and home broadband segments over the last 8 quarters. Which segment is declining fastest? Calculate the total ARPU decline impact on annual revenue. Build a churn rate cohort analysis — for the Nexus Home FMC bundle pilot (500 subscribers), what is the 3-month churn rate compared to non-bundle postpaid subscribers? Show as trend charts.'
           ]
         },
         {
@@ -2722,9 +2722,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open TC_01_ClearWave_Communications.xlsx. Navigate to the 5G Rollout Tracker sheet. Ask Copilot: Build a 5G acceleration model showing the monthly site activation required to reach 20% population coverage by December 31, 2026. Current pace is 80 sites/month. Calculate: (1) Sites needed to close the gap, (2) Monthly activation rate required to reach target by December, (3) Additional capex required vs current budget at MYR 1.8M per site. Flag if the required activation rate exceeds our current deployment team capacity.',
-            'Ask Copilot: Create a Nexus Home FMC bundle revenue model on a new sheet. Assume: (1) Target of 180,000 bundle subscribers in Year 1, (2) Bundle ARPU of MYR 158/month vs current postpaid ARPU of MYR 82 and fixed broadband ARPU of MYR 110 separately, (3) Churn rate improvement from 2.1% to 1.4% for bundle subscribers. Calculate: Year 1 incremental revenue, Year 1 churn avoidance revenue, and 3-year NPV of the bundle at 10% discount rate.',
-            'Ask Copilot: In the Network Quality sheet, calculate the average 5G download speed (Mbps) and latency (ms) per region. How do our 5G KPIs compare to our stated commitments to MCMC (100 Mbps download, <20ms latency)? Flag any region where we are below commitment and calculate the impact on the MCMC penalty calculation.'
+            'Using the 5G Rollout Tracker tab in this workbook, Build a 5G acceleration model showing the monthly site activation required to reach 20% population coverage by December 31, 2026. Current pace is 80 sites/month. Calculate: (1) Sites needed to close the gap, (2) Monthly activation rate required to reach target by December, (3) Additional capex required vs current budget at MYR 1.8M per site. Flag if the required activation rate exceeds our current deployment team capacity.',
+            'Create a Nexus Home FMC bundle revenue model on a new sheet. Assume: (1) Target of 180,000 bundle subscribers in Year 1, (2) Bundle ARPU of MYR 158/month vs current postpaid ARPU of MYR 82 and fixed broadband ARPU of MYR 110 separately, (3) Churn rate improvement from 2.1% to 1.4% for bundle subscribers. Calculate: Year 1 incremental revenue, Year 1 churn avoidance revenue, and 3-year NPV of the bundle at 10% discount rate.',
+            'In the Network Quality sheet, calculate the average 5G download speed (Mbps) and latency (ms) per region. How do our 5G KPIs compare to our stated commitments to MCMC (100 Mbps download, <20ms latency)? Flag any region where we are below commitment and calculate the impact on the MCMC penalty calculation.'
           ]
         },
         {
@@ -2733,9 +2733,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open TC_02_ClearWave_Strategy.docx. Ask Copilot: Draft a formal response to the MCMC penalty notice. The response should: acknowledge the coverage shortfall factually, explain the root causes (site acquisition delays, backhaul supply constraints), present a credible revised milestone commitment for 16% coverage by Q3 and 20% by Q4, note the acceleration investments already committed (MYR 280M additional capex), and request a bilateral meeting to discuss the penalty mitigation framework. Use formal regulatory correspondence tone.',
-            'Ask Copilot: Draft the Nexus Home FMC bundle launch go-to-market brief of 2 pages. Cover: (1) Bundle proposition — what is included (postpaid line, home fibre, and 3 OTT subscriptions), (2) Target customer segment — multi-person households currently on separate contracts, (3) Pricing — MYR 158/month vs MYR 192 for equivalent standalone products, (4) Sales channel strategy — direct digital, retail, and retention saves, (5) Key success metrics — 180,000 subscribers Year 1, churn reduction to 1.4%.',
-            'Ask Copilot: Summarise the competitive intelligence section of this strategy document. Who are our top 3 competitors, what are their 5G coverage levels and ARPU positions, and where are we competitively advantaged or disadvantaged? Create a simple competitive matrix.'
+            'Draft a formal response to the MCMC penalty notice. The response should: acknowledge the coverage shortfall factually, explain the root causes (site acquisition delays, backhaul supply constraints), present a credible revised milestone commitment for 16% coverage by Q3 and 20% by Q4, note the acceleration investments already committed (MYR 280M additional capex), and request a bilateral meeting to discuss the penalty mitigation framework. Use formal regulatory correspondence tone.',
+            'Draft the Nexus Home FMC bundle launch go-to-market brief of 2 pages. Cover: (1) Bundle proposition — what is included (postpaid line, home fibre, and 3 OTT subscriptions), (2) Target customer segment — multi-person households currently on separate contracts, (3) Pricing — MYR 158/month vs MYR 192 for equivalent standalone products, (4) Sales channel strategy — direct digital, retail, and retention saves, (5) Key success metrics — 180,000 subscribers Year 1, churn reduction to 1.4%.',
+            'Summarise the competitive intelligence section of this strategy document. Who are our top 3 competitors, what are their 5G coverage levels and ARPU positions, and where are we competitively advantaged or disadvantaged? Create a simple competitive matrix.'
           ]
         },
         {
@@ -2744,9 +2744,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide Board presentation titled "5G Recovery & FMC Growth Strategy". Include: (1) Current situation — 5G at 12.4%, MCMC penalty, ARPU decline, (2) Root cause analysis — 5G rollout blockers, (3) 5G acceleration plan — monthly milestones and capex, (4) MCMC engagement strategy, (5) FMC bundle — product overview and pricing, (6) FMC revenue model — 3-year projection, (7) Subscriber growth outlook — 5G and FMC impact, (8) Competitive positioning, (9) Network quality dashboard, (10) Financial outlook — ARPU recovery, (11) Risk register, (12) Board decisions required. Purple and white colour scheme.',
-            'Ask Copilot: Create a one-slide Nexus Home FMC customer value proposition visual. Show the bundle components as overlapping circles (Venn diagram style): Mobile | Home Broadband | OTT Content. In the overlap area, show the bundle benefits: MYR 34 monthly saving, one bill, shared data pool, priority 5G access.',
-            'Ask Copilot: Add a 5G coverage heat map slide showing coverage by state against MCMC target. Use green (at target), amber (within 5%), red (below by more than 5%). Add a timeline showing the monthly activation plan to reach 20% by December.'
+            'Create a 12-slide Board presentation titled "5G Recovery & FMC Growth Strategy". Include: (1) Current situation — 5G at 12.4%, MCMC penalty, ARPU decline, (2) Root cause analysis — 5G rollout blockers, (3) 5G acceleration plan — monthly milestones and capex, (4) MCMC engagement strategy, (5) FMC bundle — product overview and pricing, (6) FMC revenue model — 3-year projection, (7) Subscriber growth outlook — 5G and FMC impact, (8) Competitive positioning, (9) Network quality dashboard, (10) Financial outlook — ARPU recovery, (11) Risk register, (12) Board decisions required. Purple and white colour scheme.',
+            'Create a one-slide Nexus Home FMC customer value proposition visual. Show the bundle components as overlapping circles (Venn diagram style): Mobile | Home Broadband | OTT Content. In the overlap area, show the bundle benefits: MYR 34 monthly saving, one bill, shared data pool, priority 5G access.',
+            'Add a 5G coverage heat map slide showing coverage by state against MCMC target. Use green (at target), amber (within 5%), red (below by more than 5%). Add a timeline showing the monthly activation plan to reach 20% by December.'
           ]
         },
         {
@@ -2755,9 +2755,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a formal response letter to the MCMC penalty notice. Reference the notice number, acknowledge the coverage shortfall, present our revised milestone commitments (16% by Q3, 20% by Q4), outline the MYR 280M acceleration investment, and request a bilateral meeting. Attach the 5G acceleration plan as an annex (note: attach separately). Use the formal regulatory correspondence format.',
-            'Ask Copilot: Draft an internal brief email to the 5G Rollout Taskforce with 3 action items: (1) prioritise site acquisition in the 5 most under-covered states, (2) escalate backhaul supply chain constraints to the CEO for resolution, (3) submit revised rollout milestone report to MCMC by Friday. Include the urgency context: penalty risk if we do not demonstrate credible progress.',
-            'Ask Copilot: Draft a launch announcement email to our top 500 high-value postpaid customers introducing the Nexus Home FMC bundle. The email should explain the bundle, highlight the MYR 34 monthly saving, include a limited early adopter offer (first 3 months at 50% off), and provide a direct link to upgrade online. Subject line should be compelling and under 10 words.'
+            'Draft a formal response letter to the MCMC penalty notice. Reference the notice number, acknowledge the coverage shortfall, present our revised milestone commitments (16% by Q3, 20% by Q4), outline the MYR 280M acceleration investment, and request a bilateral meeting. Attach the 5G acceleration plan as an annex (note: attach separately). Use the formal regulatory correspondence format.',
+            'Draft an internal brief email to the 5G Rollout Taskforce with 3 action items: (1) prioritise site acquisition in the 5 most under-covered states, (2) escalate backhaul supply chain constraints to the CEO for resolution, (3) submit revised rollout milestone report to MCMC by Friday. Include the urgency context: penalty risk if we do not demonstrate credible progress.',
+            'Draft a launch announcement email to our top 500 high-value postpaid customers introducing the Nexus Home FMC bundle. The email should explain the bundle, highlight the MYR 34 monthly saving, include a limited early adopter offer (first 3 months at 50% off), and provide a direct link to upgrade online. Subject line should be compelling and under 10 words.'
           ]
         },
         {
@@ -2766,9 +2766,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a network or commercial operations meeting. Ask Copilot: Identify all 5G rollout milestones discussed, the current completion status of each, and any blockers mentioned. Format as a 5G programme status report.',
-            'Ask Copilot: Draft follow-up actions for the Nexus Home FMC launch team. Group by workstream: Product | Marketing | Sales | Network | IT Systems | Customer Care. Include owner and deadline for each action.',
-            'Ask Copilot: Based on this meeting, what are the top 3 risks to our MCMC milestone recovery? For each risk, identify who raised it, what mitigation was proposed, and whether a decision was made.'
+            'Open an existing recorded Teams meeting recap from a network or commercial operations meeting. Identify all 5G rollout milestones discussed, the current completion status of each, and any blockers mentioned. Format as a 5G programme status report.',
+            'Draft follow-up actions for the Nexus Home FMC launch team. Group by workstream: Product | Marketing | Sales | Network | IT Systems | Customer Care. Include owner and deadline for each action.',
+            'Based on this meeting, what are the top 3 risks to our MCMC milestone recovery? For each risk, identify who raised it, what mitigation was proposed, and whether a decision was made.'
           ]
         },
         {
@@ -2878,8 +2878,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Ask: Analyse the performance of all 11 divisions against their FY2026 targets. Identify the 3 underperforming divisions — calculate the revenue variance vs target and the EBITDA margin variance. For each underperformer, show the trend over the past 4 quarters and calculate the full-year impact if the current trend continues. Present as a ranked table and a waterfall chart.',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx. Ask: Perform a conglomerate portfolio health assessment. For each division, calculate: (1) Revenue growth rate year-on-year, (2) EBITDA margin trend, (3) Working capital days (if data available), (4) Return on capital employed (ROCE). Rank all 11 divisions from highest to lowest portfolio value contribution. Create a 2x2 matrix: Revenue Growth vs EBITDA Margin — place each division in the appropriate quadrant (Star, Cash Cow, Question Mark, Dog).'
+            'Analyse the performance of all 11 divisions against their FY2026 targets. Identify the 3 underperforming divisions — calculate the revenue variance vs target and the EBITDA margin variance. For each underperformer, show the trend over the past 4 quarters and calculate the full-year impact if the current trend continues. Present as a ranked table and a waterfall chart.',
+            'Perform a conglomerate portfolio health assessment. For each division, calculate: (1) Revenue growth rate year-on-year, (2) EBITDA margin trend, (3) Working capital days (if data available), (4) Return on capital employed (ROCE). Rank all 11 divisions from highest to lowest portfolio value contribution. Create a 2x2 matrix: Revenue Growth vs EBITDA Margin — place each division in the appropriate quadrant (Star, Cash Cow, Question Mark, Dog).'
           ]
         },
         {
@@ -2888,9 +2888,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 01_Zava_Group_Financial_Performance.xlsx. Navigate to the Trading Risk sheet. Ask Copilot: Build an exposure limit monitoring dashboard on a new sheet. For each trading counterparty, show: (1) Current exposure in USD M, (2) Approved limit in USD M, (3) Utilisation % (exposure/limit), (4) Breach status (OK / Warning >80% / BREACH >100%). Highlight breaches in red, warnings in amber. Add a total group exposure row at the bottom.',
-            'Ask Copilot: Create a division performance dashboard on a new sheet. For each of the 11 divisions, show the current FY2026 revenue vs target, EBITDA vs target, and a traffic light status (Green: within 5% of target, Amber: 5–15% below, Red: >15% below). Add a group total row. Sort by largest revenue variance, unfavourable first.',
-            'Ask Copilot: In the Group Cashflow sheet, calculate the group-level free cash flow for FY2025 and project FY2026 assuming the 3 underperforming divisions recover to 90% of target. Calculate the impact on group gearing (net debt/EBITDA) under two scenarios: divisions recover vs divisions continue declining. Show side-by-side.'
+            'Using the Trading Risk tab in this workbook, Build an exposure limit monitoring dashboard on a new sheet. For each trading counterparty, show: (1) Current exposure in USD M, (2) Approved limit in USD M, (3) Utilisation % (exposure/limit), (4) Breach status (OK / Warning >80% / BREACH >100%). Highlight breaches in red, warnings in amber. Add a total group exposure row at the bottom.',
+            'Create a division performance dashboard on a new sheet. For each of the 11 divisions, show the current FY2026 revenue vs target, EBITDA vs target, and a traffic light status (Green: within 5% of target, Amber: 5–15% below, Red: >15% below). Add a group total row. Sort by largest revenue variance, unfavourable first.',
+            'In the Group Cashflow sheet, calculate the group-level free cash flow for FY2025 and project FY2026 assuming the 3 underperforming divisions recover to 90% of target. Calculate the impact on group gearing (net debt/EBITDA) under two scenarios: divisions recover vs divisions continue declining. Show side-by-side.'
           ]
         },
         {
@@ -2899,9 +2899,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_08_Coal_Trading_Breach.docx. Ask Copilot: Draft a 2-page Board paper on the coal trading exposure breach. Structure: (1) Executive Summary — breach description, scale, and immediate status, (2) Background — how the breach occurred, (3) Immediate Actions Taken — exposure reduction steps, counterparty engagement, internal escalation, (4) Financial Exposure — worst-case scenario if counterparty defaults, (5) Governance Enhancement Plan — revised limit structure, daily reporting, real-time monitoring system, (6) Decisions Required from Board. Use formal board paper format.',
-            'Open Email_07_Emergency_Board_Meeting.docx. Ask Copilot: Draft the emergency Board meeting agenda. The meeting is Monday at 9am. Agenda items: (1) Apologies and quorum, (2) Coal Trading Breach — CFO presentation and Board deliberation, (3) FY2026 Performance Review — 3 underperforming divisions, (4) Group Strategy — any adjustments required, (5) Actions and decisions. Allocate time to each item — total meeting is 3 hours. Include a note on what pre-reading documents should be circulated 24 hours before the meeting.',
-            'Open 03_Zava_Group_Strategy_Framework.docx. Ask Copilot: Identify the sections in this strategy document related to risk management and trading. Does the current strategy adequately address commodity trading risk? Highlight any gaps and suggest additions to the risk governance framework that would prevent a recurrence of this type of breach. Create a gap analysis table: Current Policy | Gap | Proposed Enhancement.'
+            'Draft a 2-page Board paper on the coal trading exposure breach. Structure: (1) Executive Summary — breach description, scale, and immediate status, (2) Background — how the breach occurred, (3) Immediate Actions Taken — exposure reduction steps, counterparty engagement, internal escalation, (4) Financial Exposure — worst-case scenario if counterparty defaults, (5) Governance Enhancement Plan — revised limit structure, daily reporting, real-time monitoring system, (6) Decisions Required from Board. Use formal board paper format.',
+            'Draft the emergency Board meeting agenda. The meeting is Monday at 9am. Agenda items: (1) Apologies and quorum, (2) Coal Trading Breach — CFO presentation and Board deliberation, (3) FY2026 Performance Review — 3 underperforming divisions, (4) Group Strategy — any adjustments required, (5) Actions and decisions. Allocate time to each item — total meeting is 3 hours. Include a note on what pre-reading documents should be circulated 24 hours before the meeting.',
+            'Identify the sections in this strategy document related to risk management and trading. Does the current strategy adequately address commodity trading risk? Highlight any gaps and suggest additions to the risk governance framework that would prevent a recurrence of this type of breach. Create a gap analysis table: Current Policy | Gap | Proposed Enhancement.'
           ]
         },
         {
@@ -2910,9 +2910,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 14-slide emergency Board presentation for the Group CFO. Include: (1) Opening — purpose of the emergency meeting, (2) Coal trading breach — facts, scale, and timeline, (3) Root cause — control failure analysis, (4) Immediate actions taken, (5) Financial exposure scenario analysis, (6) Counterparty risk assessment, (7) Governance enhancement plan, (8) FY2026 group performance — 11 divisions dashboard, (9) Top 3 underperforming divisions — root cause and recovery plan, (10) Group cashflow and gearing outlook, (11) Strategic implications — should we divest coal trading?, (12) Regulatory and disclosure obligations, (13) Key risks, (14) Board decisions required. Use a serious dark grey and white colour scheme.',
-            'Ask Copilot: For slides 2 through 5 (the breach narrative), generate detailed speaker notes. The CFO presenting is under significant Board pressure. Notes should be factual, accountable, and help the CFO maintain composure when challenged by Board members who may have already heard about the breach from media.',
-            'Ask Copilot: Create a risk heat map slide showing the top 10 group-level risks, each positioned on a 5x5 likelihood-impact matrix. Flag the coal trading breach as a new risk. Compare this to the risk register from the previous quarter to show which risks have increased.'
+            'Create a 14-slide emergency Board presentation for the Group CFO. Include: (1) Opening — purpose of the emergency meeting, (2) Coal trading breach — facts, scale, and timeline, (3) Root cause — control failure analysis, (4) Immediate actions taken, (5) Financial exposure scenario analysis, (6) Counterparty risk assessment, (7) Governance enhancement plan, (8) FY2026 group performance — 11 divisions dashboard, (9) Top 3 underperforming divisions — root cause and recovery plan, (10) Group cashflow and gearing outlook, (11) Strategic implications — should we divest coal trading?, (12) Regulatory and disclosure obligations, (13) Key risks, (14) Board decisions required. Use a serious dark grey and white colour scheme.',
+            'For slides 2 through 5 (the breach narrative), generate detailed speaker notes. The CFO presenting is under significant Board pressure. Notes should be factual, accountable, and help the CFO maintain composure when challenged by Board members who may have already heard about the breach from media.',
+            'Create a risk heat map slide showing the top 10 group-level risks, each positioned on a 5x5 likelihood-impact matrix. Flag the coal trading breach as a new risk. Compare this to the risk register from the previous quarter to show which risks have increased.'
           ]
         },
         {
@@ -2921,9 +2921,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_07_Emergency_Board_Meeting.docx. Ask Copilot in Outlook: Draft the emergency Board meeting notice to all 9 Board members. The notice should: confirm Monday 9am (specify location and Teams link), attach the meeting agenda, note that pre-reading documents will be circulated by Sunday 6pm, stress the confidentiality of the breach information, and ask for immediate confirmation of attendance. Subject line: "URGENT: Emergency Board Meeting — Monday 9am".',
-            'Open Email_08_Coal_Trading_Breach.docx. Ask Copilot: Draft an internal escalation email from the Group CFO to the Group CEO and Chairman informing them of the breach before the Board meeting. The email should: state the facts of the breach clearly, confirm the immediate containment actions taken, note the regulatory disclosure considerations, and recommend that no external communications be made until after the Board meeting on Monday. Mark as CONFIDENTIAL.',
-            'Ask Copilot: Draft the Bursa Malaysia stock exchange announcement regarding the coal trading breach, to be released after the Board meeting. The announcement should: disclose the nature and financial magnitude of the breach, confirm that internal investigations are underway, state that no material impact on group financials is expected, and note the governance enhancements being implemented. Follow the Bursa Main Market disclosure guidelines.'
+            'Open Email_07_Emergency_Board_Meeting.docx. Draft the emergency Board meeting notice to all 9 Board members. The notice should: confirm Monday 9am (specify location and Teams link), attach the meeting agenda, note that pre-reading documents will be circulated by Sunday 6pm, stress the confidentiality of the breach information, and ask for immediate confirmation of attendance. Subject line: "URGENT: Emergency Board Meeting — Monday 9am".',
+            'Draft an internal escalation email from the Group CFO to the Group CEO and Chairman informing them of the breach before the Board meeting. The email should: state the facts of the breach clearly, confirm the immediate containment actions taken, note the regulatory disclosure considerations, and recommend that no external communications be made until after the Board meeting on Monday. Mark as CONFIDENTIAL.',
+            'Draft the Bursa Malaysia stock exchange announcement regarding the coal trading breach, to be released after the Board meeting. The announcement should: disclose the nature and financial magnitude of the breach, confirm that internal investigations are underway, state that no material impact on group financials is expected, and note the governance enhancements being implemented. Follow the Bursa Main Market disclosure guidelines.'
           ]
         },
         {
@@ -2932,9 +2932,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a group management committee or risk committee meeting. Ask Copilot: Identify all risk-related discussions — any early warning signals about the coal trading exposure, any risk limit updates discussed, and any governance concerns raised. Format as a risk committee minute and flag any discussion point that may be relevant to the current breach investigation.',
-            'Ask Copilot: Draft a post-breach communication for all Division MDs via Teams. The message should: acknowledge that they may have heard about the Board emergency meeting, reassure them that this is isolated to the trading desk, provide clear guidance on what they should and should not say to their teams and external stakeholders, and ask them to continue normal operations.',
-            'Ask Copilot: Based on this meeting transcript, were there any previous discussions about commodity trading risk that should have prompted earlier escalation of the exposure limit? Extract any relevant statements with timestamps that the risk investigation team should review.'
+            'Open an existing recorded Teams meeting recap from a group management committee or risk committee meeting. Identify all risk-related discussions — any early warning signals about the coal trading exposure, any risk limit updates discussed, and any governance concerns raised. Format as a risk committee minute and flag any discussion point that may be relevant to the current breach investigation.',
+            'Draft a post-breach communication for all Division MDs via Teams. The message should: acknowledge that they may have heard about the Board emergency meeting, reassure them that this is isolated to the trading desk, provide clear guidance on what they should and should not say to their teams and external stakeholders, and ask them to continue normal operations.',
+            'Based on this meeting transcript, were there any previous discussions about commodity trading risk that should have prompted earlier escalation of the exposure limit? Extract any relevant statements with timestamps that the risk investigation team should review.'
           ]
         },
         {
@@ -3042,8 +3042,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 13_Zava_Financial_Services.xlsx to Analyst. Ask: Analyse transaction data by remittance corridor. Which 10 corridors have the highest transaction volume? Which have the highest fraud rate? Is there a correlation between high-volume corridors and high fraud rates? Create a bubble chart: X-axis = transaction volume, Y-axis = fraud rate, bubble size = average transaction value. Identify corridors that are high-volume AND high-fraud (top-right quadrant).',
-            'Upload 13_Zava_Financial_Services.xlsx. Ask: Analyse the false positive rate by customer segment (first-time senders, regular senders, high-value senders). Which segment has the highest false positive rate? Calculate the customer dropout rate for transactions incorrectly flagged — if 8% of customers abandon a transaction after a false positive flag, calculate the annual revenue loss from false positives at current transaction volumes and average fee of MYR 18 per transaction.'
+            'Analyse transaction data by remittance corridor. Which 10 corridors have the highest transaction volume? Which have the highest fraud rate? Is there a correlation between high-volume corridors and high fraud rates? Create a bubble chart: X-axis = transaction volume, Y-axis = fraud rate, bubble size = average transaction value. Identify corridors that are high-volume AND high-fraud (top-right quadrant).',
+            'Analyse the false positive rate by customer segment (first-time senders, regular senders, high-value senders). Which segment has the highest false positive rate? Calculate the customer dropout rate for transactions incorrectly flagged — if 8% of customers abandon a transaction after a false positive flag, calculate the annual revenue loss from false positives at current transaction volumes and average fee of MYR 18 per transaction.'
           ]
         },
         {
@@ -3052,9 +3052,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 13_Zava_Financial_Services.xlsx. Navigate to the Compliance sheet. Ask Copilot: Build a BNM e-money licence renewal readiness checklist on a new sheet. List the 15 key BNM renewal criteria. For each, show: Current Status (Met/Partial/Not Met) | Evidence on File (Yes/No) | Responsible Team | Action Required | Deadline. Apply conditional formatting: green = Met, amber = Partial, red = Not Met.',
-            'Ask Copilot: Create a fraud model performance dashboard on a new sheet. Show monthly data for the past 12 months: (1) Detection rate (%), (2) False positive rate (%), (3) Fraud losses prevented (MYR M), (4) Customer complaints due to false positives (count). Add trend lines and flag months where false positive rate exceeded 15%. Calculate the estimated revenue saved by fraud prevention vs the estimated revenue lost due to false positives — show the net benefit.',
-            'Ask Copilot: In the Corridor Performance sheet, build a corridor priority matrix. For each of the top 20 corridors, calculate: (1) Annual fee revenue (MYR M), (2) Transaction volume growth rate, (3) Current fraud rate, (4) APN integration status. Rank corridors by a composite score (revenue × growth ÷ fraud rate) to identify which corridors should receive the most investment in fraud detection improvement.'
+            'Using the Compliance tab in this workbook, Build a BNM e-money licence renewal readiness checklist on a new sheet. List the 15 key BNM renewal criteria. For each, show: Current Status (Met/Partial/Not Met) | Evidence on File (Yes/No) | Responsible Team | Action Required | Deadline. Apply conditional formatting: green = Met, amber = Partial, red = Not Met.',
+            'Create a fraud model performance dashboard on a new sheet. Show monthly data for the past 12 months: (1) Detection rate (%), (2) False positive rate (%), (3) Fraud losses prevented (MYR M), (4) Customer complaints due to false positives (count). Add trend lines and flag months where false positive rate exceeded 15%. Calculate the estimated revenue saved by fraud prevention vs the estimated revenue lost due to false positives — show the net benefit.',
+            'In the Corridor Performance sheet, build a corridor priority matrix. For each of the top 20 corridors, calculate: (1) Annual fee revenue (MYR M), (2) Transaction volume growth rate, (3) Current fraud rate, (4) APN integration status. Rank corridors by a composite score (revenue × growth ÷ fraud rate) to identify which corridors should receive the most investment in fraud detection improvement.'
           ]
         },
         {
@@ -3063,9 +3063,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open BNK_01_Meridian_Bank.xlsx (use as a financial services reference). Ask Copilot: Draft the BNM e-money licence renewal application cover letter. The letter should: reference our existing licence number and expiry date, confirm our continued compliance with the BNM e-money framework, highlight our key operational metrics (8M active wallets, 120+ corridors, 99.97% system uptime), note the ML fraud model upgrade underway, and request a pre-renewal meeting with BNM Supervision. Use formal BNM correspondence format.',
-            'Ask Copilot in Word: Draft a fraud risk management policy document of 3 pages. Cover: (1) Fraud risk appetite statement — acceptable detection rate and false positive rate targets, (2) ML model governance — how the model is trained, validated, and monitored, (3) Manual review process for flagged transactions, (4) Customer dispute resolution process for false positives, (5) Regulatory reporting of fraud incidents to BNM. Format as a formal policy document with version control header.',
-            'Ask Copilot: Draft an APN integration business case for the CFO. Cover: (1) What APN connectivity means for our corridor economics — expected fee compression and volume increase, (2) Technical integration requirements and estimated cost (MYR 8.5M), (3) Revenue impact — net of fee compression, volume uplift, and new corridors unlocked, (4) Risk: if we do not integrate, we lose access to APN-connected corridors to competitors who do. Recommend: proceed vs defer.'
+            'Open BNK_01_Meridian_Bank.xlsx (use as a financial services reference). Draft the BNM e-money licence renewal application cover letter. The letter should: reference our existing licence number and expiry date, confirm our continued compliance with the BNM e-money framework, highlight our key operational metrics (8M active wallets, 120+ corridors, 99.97% system uptime), note the ML fraud model upgrade underway, and request a pre-renewal meeting with BNM Supervision. Use formal BNM correspondence format.',
+            'Draft a fraud risk management policy document of 3 pages. Cover: (1) Fraud risk appetite statement — acceptable detection rate and false positive rate targets, (2) ML model governance — how the model is trained, validated, and monitored, (3) Manual review process for flagged transactions, (4) Customer dispute resolution process for false positives, (5) Regulatory reporting of fraud incidents to BNM. Format as a formal policy document with version control header.',
+            'Draft an APN integration business case for the CFO. Cover: (1) What APN connectivity means for our corridor economics — expected fee compression and volume increase, (2) Technical integration requirements and estimated cost (MYR 8.5M), (3) Revenue impact — net of fee compression, volume uplift, and new corridors unlocked, (4) Risk: if we do not integrate, we lose access to APN-connected corridors to competitors who do. Recommend: proceed vs defer.'
           ]
         },
         {
@@ -3074,9 +3074,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide investor presentation for Tranglo Payments Group. Include: (1) Business overview — 120+ corridors, 8M wallets, (2) Market opportunity — intra-ASEAN remittance growth, (3) Competitive positioning, (4) Fraud detection — current model and ML upgrade roadmap, (5) BNM licence renewal — compliance status, (6) APN integration — timeline and revenue impact, (7) Financial performance — revenue growth and margin, (8) Technology roadmap, (9) ESG — financial inclusion and migrant worker impact, (10) Investment thesis. Purple and white colour scheme.',
-            'Ask Copilot: Create a 2-slide fraud model explainer for a non-technical Board audience. Slide 1: How our ML fraud model works — simple visual with 3 steps (transaction comes in → model scores risk → action taken). Slide 2: Current performance vs target — detection rate and false positive rate shown as gauges, with the improvement target for the upgraded model.',
-            'Ask Copilot: Add a corridor map slide showing our 10 highest-revenue corridors as a world map with connecting lines. Label each corridor with the annual transaction volume and the fraud rate. Use different colours to indicate APN-integrated vs non-APN corridors.'
+            'Create a 10-slide investor presentation for Tranglo Payments Group. Include: (1) Business overview — 120+ corridors, 8M wallets, (2) Market opportunity — intra-ASEAN remittance growth, (3) Competitive positioning, (4) Fraud detection — current model and ML upgrade roadmap, (5) BNM licence renewal — compliance status, (6) APN integration — timeline and revenue impact, (7) Financial performance — revenue growth and margin, (8) Technology roadmap, (9) ESG — financial inclusion and migrant worker impact, (10) Investment thesis. Purple and white colour scheme.',
+            'Create a 2-slide fraud model explainer for a non-technical Board audience. Slide 1: How our ML fraud model works — simple visual with 3 steps (transaction comes in → model scores risk → action taken). Slide 2: Current performance vs target — detection rate and false positive rate shown as gauges, with the improvement target for the upgraded model.',
+            'Add a corridor map slide showing our 10 highest-revenue corridors as a world map with connecting lines. Label each corridor with the annual transaction volume and the fraud rate. Use different colours to indicate APN-integrated vs non-APN corridors.'
           ]
         },
         {
@@ -3085,9 +3085,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a letter to BNM\'s Payment Systems Policy Department requesting a pre-renewal consultation meeting for our e-money licence renewal. The letter should: introduce the purpose of the meeting, summarise our compliance status, highlight the ML fraud model upgrade as a key enhancement since the last renewal, and request a 45-minute meeting within the next 4 weeks.',
-            'Ask Copilot: Draft a customer apology and resolution email for the top 50 customers who were most affected by false positive fraud flags in the past quarter. The email should: acknowledge the inconvenience, explain briefly that our fraud detection system has flagged their transaction incorrectly, confirm the transaction has been approved, and offer a waived fee on their next transaction as a goodwill gesture.',
-            'Ask Copilot: Draft an email to our APN integration technology partner requesting a project status update. The integration is now 6 weeks behind the original schedule. The email should ask for: the root cause of the delay, a revised project timeline, and confirmation of the resources assigned to the integration sprint.'
+            'Draft a letter to BNM\'s Payment Systems Policy Department requesting a pre-renewal consultation meeting for our e-money licence renewal. The letter should: introduce the purpose of the meeting, summarise our compliance status, highlight the ML fraud model upgrade as a key enhancement since the last renewal, and request a 45-minute meeting within the next 4 weeks.',
+            'Draft a customer apology and resolution email for the top 50 customers who were most affected by false positive fraud flags in the past quarter. The email should: acknowledge the inconvenience, explain briefly that our fraud detection system has flagged their transaction incorrectly, confirm the transaction has been approved, and offer a waived fee on their next transaction as a goodwill gesture.',
+            'Draft an email to our APN integration technology partner requesting a project status update. The integration is now 6 weeks behind the original schedule. The email should ask for: the root cause of the delay, a revised project timeline, and confirmation of the resources assigned to the integration sprint.'
           ]
         },
         {
@@ -3096,9 +3096,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a product or compliance meeting. Ask Copilot: Identify all BNM compliance actions discussed — their status, deadline, and responsible team. Flag any action that is overdue or at risk of missing its deadline before the licence renewal in 3 months.',
-            'Ask Copilot: Draft follow-up actions from this meeting for the fraud model upgrade team. Group by workstream: Data Science | Engineering | Compliance | Customer Experience. Include owner and deadline.',
-            'Ask Copilot: Based on this meeting, what is the team\'s confidence level that the ML model upgrade will be completed before the BNM renewal inspection? Identify the top 2 technical or resource risks that could delay the upgrade.'
+            'Open an existing recorded Teams meeting recap from a product or compliance meeting. Identify all BNM compliance actions discussed — their status, deadline, and responsible team. Flag any action that is overdue or at risk of missing its deadline before the licence renewal in 3 months.',
+            'Draft follow-up actions from this meeting for the fraud model upgrade team. Group by workstream: Data Science | Engineering | Compliance | Customer Experience. Include owner and deadline.',
+            'Based on this meeting, what is the team\'s confidence level that the ML model upgrade will be completed before the BNM renewal inspection? Identify the top 2 technical or resource risks that could delay the upgrade.'
           ]
         },
         {
@@ -3108,7 +3108,7 @@ window.HUB_DATA = {
           desc: 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
           prompts: [
             'Upload 13_Zava_Financial_Services.xlsx and BNK_01_Meridian_Bank.xlsx to Copilot Notebook. Set instruction: "You are a fintech regulatory advisor preparing Tranglo for BNM e-money licence renewal." Ask: Based on the transaction data and the financial services framework, what are the 3 areas where our current performance is most likely to draw BNM scrutiny during the renewal assessment? For each area, what specific evidence should we prepare?',
-            'Upload 13_Zava_Financial_Services.xlsx. Ask: Our current false positive rate of 12% is significantly above the industry best practice of 5–7%. If we reduce it to 7% through the ML upgrade, what is the projected impact on: (1) customer retention rate, (2) annual transaction volume, (3) annual fee revenue? Quantify the business case for the ML upgrade investment.'
+            'Our current false positive rate of 12% is significantly above the industry best practice of 5–7%. If we reduce it to 7% through the ML upgrade, what is the projected impact on: (1) customer retention rate, (2) annual transaction volume, (3) annual fee revenue? Quantify the business case for the ML upgrade investment.'
           ]
         },
         {
@@ -3217,8 +3217,8 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             'Open 03_Zava_Group_Strategy_Framework.docx. In Excel, create a new workbook called "Digital Services Migration Tracker.xlsx". Ask Copilot to help structure: Create a sheet with columns: Service Name | Department | Current Mode (Counter/Hybrid/Digital) | MyGovID Integration Required (Y/N) | Development Status | Go-Live Date | Adoption Rate (%) | Monthly Transactions. Populate with 10 sample services. Add conditional formatting: red = not started, amber = in progress, green = live.',
-            'Ask Copilot: Build a constituent adoption dashboard. For each of the 10 sample services, create a chart showing: (1) Monthly transaction volume by channel (digital vs counter) for the past 6 months, (2) Digital adoption trend line, (3) Target adoption rate line at 80%. Flag any service where digital adoption is declining despite being live.',
-            'Ask Copilot: Create an efficiency savings model. For each service, calculate: (1) Annual counter transactions saved if digital adoption reaches 80%, (2) Cost saving at MYR 10 per counter transaction, (3) Officer hours freed for higher-value work. Sum across all 48 services and show the total annual productivity dividend in MYR and officer hours.'
+            'Build a constituent adoption dashboard. For each of the 10 sample services, create a chart showing: (1) Monthly transaction volume by channel (digital vs counter) for the past 6 months, (2) Digital adoption trend line, (3) Target adoption rate line at 80%. Flag any service where digital adoption is declining despite being live.',
+            'Create an efficiency savings model. For each service, calculate: (1) Annual counter transactions saved if digital adoption reaches 80%, (2) Cost saving at MYR 10 per counter transaction, (3) Officer hours freed for higher-value work. Sum across all 48 services and show the total annual productivity dividend in MYR and officer hours.'
           ]
         },
         {
@@ -3227,9 +3227,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 02_Zava_Group_Policy_Handbook.docx. Ask Copilot: Draft a digital government transformation policy for the Selangor State Government. Cover: (1) Vision and mandate — 80% digital adoption within 18 months, (2) Scope — 48 services, (3) MyGovID integration requirements, (4) Data privacy and cybersecurity standards for digital services, (5) Civil servant role in supporting constituent adoption, (6) Performance measurement framework. Keep it to 5 pages, use formal government policy language.',
-            'Ask Copilot: Draft a constituent communication guide for the digital migration of 5 high-volume services. For each service, the guide should: explain the new online process in plain language (Bahasa Malaysia and English), list the documents to prepare before logging in, provide the MyGovID registration link, and note the helpline for constituents who need assistance. Format as a simple infographic script.',
-            'Ask Copilot: Write a Board paper for the State Exco Committee recommending the approval of MYR 6.8M for the digital services migration programme. Cover: strategic rationale, scope, investment breakdown, ROI and payback period, risks and mitigants, and the decision required. Format as a formal Exco submission paper.'
+            'Draft a digital government transformation policy for the Selangor State Government. Cover: (1) Vision and mandate — 80% digital adoption within 18 months, (2) Scope — 48 services, (3) MyGovID integration requirements, (4) Data privacy and cybersecurity standards for digital services, (5) Civil servant role in supporting constituent adoption, (6) Performance measurement framework. Keep it to 5 pages, use formal government policy language.',
+            'Draft a constituent communication guide for the digital migration of 5 high-volume services. For each service, the guide should: explain the new online process in plain language (Bahasa Malaysia and English), list the documents to prepare before logging in, provide the MyGovID registration link, and note the helpline for constituents who need assistance. Format as a simple infographic script.',
+            'Write a Board paper for the State Exco Committee recommending the approval of MYR 6.8M for the digital services migration programme. Cover: strategic rationale, scope, investment breakdown, ROI and payback period, risks and mitigants, and the decision required. Format as a formal Exco submission paper.'
           ]
         },
         {
@@ -3238,9 +3238,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide presentation for the State Exco Committee on the digital transformation programme. Include: (1) Vision — transforming 2.4M annual constituent interactions, (2) Current state — 34% digital adoption, (3) Target state — 80% digital, 60% counter reduction, (4) Service migration roadmap — 48 services, phased over 18 months, (5) MyGovID integration plan, (6) Cost savings — MYR 18M annual by Year 3, (7) Technology architecture — simple diagram, (8) Change management plan — civil servant and constituent engagement, (9) Budget request — MYR 6.8M, (10) Decision required. Use dark blue and gold Malaysian government colour scheme.',
-            'Ask Copilot: Create a one-slide "Before and After" digital journey map showing how a constituent currently obtains a business licence at a counter (7 steps, 45-minute wait, MYR 12 cost) vs the new digital process (4 steps, 10 minutes online, MYR 2 cost). Use a simple flowchart format.',
-            'Ask Copilot: Add a constituent testimonial slide with 3 fictional but realistic quotes from different constituent segments — a millennial entrepreneur, a 55-year-old smallholder farmer, and a SME owner — showing their positive experience with the new digital service.'
+            'Create a 10-slide presentation for the State Exco Committee on the digital transformation programme. Include: (1) Vision — transforming 2.4M annual constituent interactions, (2) Current state — 34% digital adoption, (3) Target state — 80% digital, 60% counter reduction, (4) Service migration roadmap — 48 services, phased over 18 months, (5) MyGovID integration plan, (6) Cost savings — MYR 18M annual by Year 3, (7) Technology architecture — simple diagram, (8) Change management plan — civil servant and constituent engagement, (9) Budget request — MYR 6.8M, (10) Decision required. Use dark blue and gold Malaysian government colour scheme.',
+            'Create a one-slide "Before and After" digital journey map showing how a constituent currently obtains a business licence at a counter (7 steps, 45-minute wait, MYR 12 cost) vs the new digital process (4 steps, 10 minutes online, MYR 2 cost). Use a simple flowchart format.',
+            'Add a constituent testimonial slide with 3 fictional but realistic quotes from different constituent segments — a millennial entrepreneur, a 55-year-old smallholder farmer, and a SME owner — showing their positive experience with the new digital service.'
           ]
         },
         {
@@ -3249,9 +3249,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a letter from the State Digital Director to all 48 department heads whose services are being migrated. The letter should: explain the digital migration mandate, the MyGovID integration requirement, the department\'s responsibilities in the migration project, and the go-live timeline. Ask each department head to nominate a digital champion within 2 weeks. Use formal government correspondence language in Bahasa Malaysia (or bilingual format).',
-            'Ask Copilot: Draft a press release announcing the launch of the Selangor Digital Government Portal. The release should: announce the availability of the first 10 digital services, explain the MyGovID login process, note the constituent support channels, and include a quote from the State Exco member for Digital Affairs. Target audience: Malay and English-language media.',
-            'Ask Copilot: Draft an email to MAMPU (Malaysia Administrative Modernisation and Management Planning Unit) requesting technical support for the MyGovID API integration. The email should specify our integration requirements, the development timeline, and the number of services being integrated. Request a technical onboarding meeting within 2 weeks.'
+            'Draft a letter from the State Digital Director to all 48 department heads whose services are being migrated. The letter should: explain the digital migration mandate, the MyGovID integration requirement, the department\'s responsibilities in the migration project, and the go-live timeline. Ask each department head to nominate a digital champion within 2 weeks. Use formal government correspondence language in Bahasa Malaysia (or bilingual format).',
+            'Draft a press release announcing the launch of the Selangor Digital Government Portal. The release should: announce the availability of the first 10 digital services, explain the MyGovID login process, note the constituent support channels, and include a quote from the State Exco member for Digital Affairs. Target audience: Malay and English-language media.',
+            'Draft an email to MAMPU (Malaysia Administrative Modernisation and Management Planning Unit) requesting technical support for the MyGovID API integration. The email should specify our integration requirements, the development timeline, and the number of services being integrated. Request a technical onboarding meeting within 2 weeks.'
           ]
         },
         {
@@ -3260,9 +3260,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a project or digital transformation steering committee. Ask Copilot: Identify all digital service migration milestones discussed, their current status, and any blockers. Format as a programme status update for the Exco Digital Transformation Committee.',
-            'Ask Copilot: Draft follow-up actions for the digital transformation team. Group by workstream: Technology | Change Management | Constituent Communications | MyGovID Integration | Training. Include department owner and deadline.',
-            'Ask Copilot: Were any constituent complaints or feedback about the digital services discussed? List each with the service type, the nature of the feedback, and whether a resolution was proposed.'
+            'Open an existing recorded Teams meeting recap from a project or digital transformation steering committee. Identify all digital service migration milestones discussed, their current status, and any blockers. Format as a programme status update for the Exco Digital Transformation Committee.',
+            'Draft follow-up actions for the digital transformation team. Group by workstream: Technology | Change Management | Constituent Communications | MyGovID Integration | Training. Include department owner and deadline.',
+            'Were any constituent complaints or feedback about the digital services discussed? List each with the service type, the nature of the feedback, and whether a resolution was proposed.'
           ]
         },
         {
@@ -3370,8 +3370,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 14_Zava_Properties_Portfolio.xlsx to Analyst. Ask: Analyse the 25-asset portfolio and identify the top 12 REIT-eligible assets. For each, calculate: (1) NPI yield (Net Property Income ÷ Market Value), (2) Weighted average lease expiry (WALE) in years, (3) Occupancy rate. Rank by NPI yield and highlight assets where occupancy is below 80% or WALE is under 2 years — these represent risk factors for the REIT IPO. Create a portfolio heatmap.',
-            'Upload 14_Zava_Properties_Portfolio.xlsx. Ask: Model 3 REIT IPO scenarios: (A) Include all 12 REIT-eligible assets at current occupancy, (B) Exclude Menara Zava KL if Shell leaves (worst case), (C) Include Menara Zava KL only if Shell renews. For each scenario, calculate: total portfolio NPI yield, IPO valuation at a 5.5% cap rate, parent company net proceeds after debt transfer, and year-1 distribution per unit (DPU) assuming 90% distribution.'
+            'Analyse the 25-asset portfolio and identify the top 12 REIT-eligible assets. For each, calculate: (1) NPI yield (Net Property Income ÷ Market Value), (2) Weighted average lease expiry (WALE) in years, (3) Occupancy rate. Rank by NPI yield and highlight assets where occupancy is below 80% or WALE is under 2 years — these represent risk factors for the REIT IPO. Create a portfolio heatmap.',
+            'Model 3 REIT IPO scenarios: (A) Include all 12 REIT-eligible assets at current occupancy, (B) Exclude Menara Zava KL if Shell leaves (worst case), (C) Include Menara Zava KL only if Shell renews. For each scenario, calculate: total portfolio NPI yield, IPO valuation at a 5.5% cap rate, parent company net proceeds after debt transfer, and year-1 distribution per unit (DPU) assuming 90% distribution.'
           ]
         },
         {
@@ -3380,9 +3380,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 14_Zava_Properties_Portfolio.xlsx. Navigate to the Asset Register sheet. Ask Copilot: Add a REIT Readiness Assessment column. For each asset, score it against 5 criteria: (1) REIT-eligible (Y/N), (2) Occupancy >85% (Y/N), (3) WALE >3 years (Y/N), (4) NPI yield >5% (Y/N), (5) Lease documentation current (Y/N). Total the score out of 5. Highlight assets scoring 4–5 in green (ready), 3 in amber (conditional), 0–2 in red (not ready).',
-            'Ask Copilot: Build a lease expiry schedule on a new sheet. For each REIT-eligible asset, list all major tenants, their current lease expiry, the next rent review date, and the lease area in sq ft. Identify any lease expiring within 18 months — flag as "REIT IPO Risk" if the tenant is >10% of the building NLA. Sort by earliest expiry.',
-            'Ask Copilot: In the REIT Injection Analysis sheet, build a sensitivity table showing the REIT IPO valuation under different cap rate assumptions (4.5%, 5.0%, 5.5%, 6.0%, 6.5%) and occupancy assumptions (80%, 85%, 90%, 95%, 100%). Show the IPO market capitalisation and the net proceeds to Zava Properties under each cell of the matrix.'
+            'Using the Asset Register tab in this workbook, Add a REIT Readiness Assessment column. For each asset, score it against 5 criteria: (1) REIT-eligible (Y/N), (2) Occupancy >85% (Y/N), (3) WALE >3 years (Y/N), (4) NPI yield >5% (Y/N), (5) Lease documentation current (Y/N). Total the score out of 5. Highlight assets scoring 4–5 in green (ready), 3 in amber (conditional), 0–2 in red (not ready).',
+            'Build a lease expiry schedule on a new sheet. For each REIT-eligible asset, list all major tenants, their current lease expiry, the next rent review date, and the lease area in sq ft. Identify any lease expiring within 18 months — flag as "REIT IPO Risk" if the tenant is >10% of the building NLA. Sort by earliest expiry.',
+            'In the REIT Injection Analysis sheet, build a sensitivity table showing the REIT IPO valuation under different cap rate assumptions (4.5%, 5.0%, 5.5%, 6.0%, 6.5%) and occupancy assumptions (80%, 85%, 90%, 95%, 100%). Show the IPO market capitalisation and the net proceeds to Zava Properties under each cell of the matrix.'
           ]
         },
         {
@@ -3391,9 +3391,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 03_Zava_Group_Strategy_Framework.docx. Ask Copilot: Draft a 3-page REIT IPO strategy paper for the Zava Properties Board. Cover: (1) REIT structure and asset injection plan — 12 assets, MYR 8.2B total, (2) IPO timeline — target Q2 2026, key milestones, (3) Shell anchor lease renewal — negotiation strategy and timeline, (4) Pre-IPO asset enhancements — refurbishment and occupancy improvement plans, (5) Expected IPO proceeds and use of funds. Format as a Board strategy paper.',
-            'Ask Copilot: Draft a 2-page letter to Shell Malaysia\'s Head of Real Estate requesting an early lease renewal discussion for their Menara Zava KL tenancy. The letter should: acknowledge the December 2026 expiry, express Zava Properties\' strong commitment to the relationship, propose a 5-year renewal with enhanced building management services, and request a meeting within 4 weeks. Professional commercial tone.',
-            'Ask Copilot: Write a 1-page Penang development launch press release for the new MYR 2.1B mixed-use development in Georgetown. Announce the planning approval, the project highlights (residential units, retail podium, serviced apartments), the target completion in Q4 2028, and the JV partner. Include a quote from the Zava Properties MD.'
+            'Draft a 3-page REIT IPO strategy paper for the Zava Properties Board. Cover: (1) REIT structure and asset injection plan — 12 assets, MYR 8.2B total, (2) IPO timeline — target Q2 2026, key milestones, (3) Shell anchor lease renewal — negotiation strategy and timeline, (4) Pre-IPO asset enhancements — refurbishment and occupancy improvement plans, (5) Expected IPO proceeds and use of funds. Format as a Board strategy paper.',
+            'Draft a 2-page letter to Shell Malaysia\'s Head of Real Estate requesting an early lease renewal discussion for their Menara Zava KL tenancy. The letter should: acknowledge the December 2026 expiry, express Zava Properties\' strong commitment to the relationship, propose a 5-year renewal with enhanced building management services, and request a meeting within 4 weeks. Professional commercial tone.',
+            'Write a 1-page Penang development launch press release for the new MYR 2.1B mixed-use development in Georgetown. Announce the planning approval, the project highlights (residential units, retail podium, serviced apartments), the target completion in Q4 2028, and the JV partner. Include a quote from the Zava Properties MD.'
           ]
         },
         {
@@ -3402,9 +3402,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide REIT IPO roadshow presentation. Include: (1) Zava Properties — company overview and portfolio highlights, (2) Malaysian REIT market overview — yield trends and investor appetite, (3) Portfolio snapshot — 12 assets, MYR 8.2B, (4) Asset quality — occupancy, NPI yield, WALE, (5) Top 5 assets deep dive, (6) Shell lease situation — risk and mitigation, (7) IPO structure and asset injection plan, (8) Financial projections — Year 1 and Year 3 DPU, (9) Growth pipeline — Penang GDV 2.1B, (10) ESG positioning, (11) IPO timeline and milestones, (12) Investment thesis. Dark navy and gold colour scheme.',
-            'Ask Copilot: Create a one-pager summary slide: "Why Invest in Zava REIT" — 3 key investment highlights, year-1 DPU yield vs Malaysian REIT peer average, portfolio resilience factors, and a high-quality asset photo collage layout.',
-            'Ask Copilot: Add an anchor tenant risk slide (slide 6) with a visual showing the 3 scenarios (Shell renews / Shell leaves / partial renewal) and their impact on Year 1 DPU. Show this as a simple scenario table with traffic light status and the DPU range for each.'
+            'Create a 12-slide REIT IPO roadshow presentation. Include: (1) Zava Properties — company overview and portfolio highlights, (2) Malaysian REIT market overview — yield trends and investor appetite, (3) Portfolio snapshot — 12 assets, MYR 8.2B, (4) Asset quality — occupancy, NPI yield, WALE, (5) Top 5 assets deep dive, (6) Shell lease situation — risk and mitigation, (7) IPO structure and asset injection plan, (8) Financial projections — Year 1 and Year 3 DPU, (9) Growth pipeline — Penang GDV 2.1B, (10) ESG positioning, (11) IPO timeline and milestones, (12) Investment thesis. Dark navy and gold colour scheme.',
+            'Create a one-pager summary slide: "Why Invest in Zava REIT" — 3 key investment highlights, year-1 DPU yield vs Malaysian REIT peer average, portfolio resilience factors, and a high-quality asset photo collage layout.',
+            'Add an anchor tenant risk slide (slide 6) with a visual showing the 3 scenarios (Shell renews / Shell leaves / partial renewal) and their impact on Year 1 DPU. Show this as a simple scenario table with traffic light status and the DPU range for each.'
           ]
         },
         {
@@ -3413,9 +3413,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft an email from the Group CFO to Goldman Sachs and CIMB (the proposed joint lead managers for the REIT IPO) requesting a kick-off meeting. The email should: confirm the target Q2 2026 IPO timeline, request their preliminary views on valuation and investor appetite, and note the Shell lease renewal risk as a key discussion point. Attach the REIT strategy summary.',
-            'Ask Copilot: Draft a follow-up email to the SC (Securities Commission) Malaysia acknowledging receipt of the preliminary REIT registration guidance and confirming our intended filing timeline. List the 5 key documents we will submit with the prospectus application and ask for clarity on the minimum unit holder spread requirement.',
-            'Ask Copilot: Draft a letter to the Penang State Government acknowledging receipt of the planning approval for the Georgetown mixed-use development. Express gratitude for the expedited approval, confirm the project commencement date, and propose a groundbreaking ceremony at the Governor\'s convenience.'
+            'Draft an email from the Group CFO to Goldman Sachs and CIMB (the proposed joint lead managers for the REIT IPO) requesting a kick-off meeting. The email should: confirm the target Q2 2026 IPO timeline, request their preliminary views on valuation and investor appetite, and note the Shell lease renewal risk as a key discussion point. Attach the REIT strategy summary.',
+            'Draft a follow-up email to the SC (Securities Commission) Malaysia acknowledging receipt of the preliminary REIT registration guidance and confirming our intended filing timeline. List the 5 key documents we will submit with the prospectus application and ask for clarity on the minimum unit holder spread requirement.',
+            'Draft a letter to the Penang State Government acknowledging receipt of the planning approval for the Georgetown mixed-use development. Express gratitude for the expedited approval, confirm the project commencement date, and propose a groundbreaking ceremony at the Governor\'s convenience.'
           ]
         },
         {
@@ -3424,9 +3424,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a property portfolio or asset management review. Ask Copilot: Identify all lease renewal discussions, occupancy concerns, and asset performance issues. Flag any tenant at risk and summarise the actions the asset management team has agreed to take.',
-            'Ask Copilot: Draft follow-up actions from the REIT IPO planning meeting. Group by workstream: Legal & Compliance | Valuation | Asset Management | Marketing & Investor Relations | Finance. Include owner and deadline.',
-            'Ask Copilot: Were there any discussions about the Penang development project in this meeting? If yes, summarise the planning approval status, JV partner discussions, and financing requirements.'
+            'Open an existing recorded Teams meeting recap from a property portfolio or asset management review. Identify all lease renewal discussions, occupancy concerns, and asset performance issues. Flag any tenant at risk and summarise the actions the asset management team has agreed to take.',
+            'Draft follow-up actions from the REIT IPO planning meeting. Group by workstream: Legal & Compliance | Valuation | Asset Management | Marketing & Investor Relations | Finance. Include owner and deadline.',
+            'Were there any discussions about the Penang development project in this meeting? If yes, summarise the planning approval status, JV partner discussions, and financing requirements.'
           ]
         },
         {
@@ -3436,7 +3436,7 @@ window.HUB_DATA = {
           desc: 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
           prompts: [
             'Upload 14_Zava_Properties_Portfolio.xlsx and 03_Zava_Group_Strategy_Framework.docx to Copilot Notebook. Set instruction: "You are a REIT structuring advisor helping Zava Properties prepare for their 2026 IPO." Ask: Based on the portfolio data and strategy, what is the single biggest risk to the REIT IPO timeline and what concrete action should be taken in the next 30 days to address it?',
-            'Upload 14_Zava_Properties_Portfolio.xlsx. Ask: If Shell does not renew and Menara Zava KL drops to 70% occupancy, what is the impact on the REIT\'s projected distribution per unit in Year 1 and Year 2? Is the REIT still investable at a 5.5% yield target? What asset enhancement actions could partially offset the revenue loss within 12 months?'
+            'If Shell does not renew and Menara Zava KL drops to 70% occupancy, what is the impact on the REIT\'s projected distribution per unit in Year 1 and Year 2? Is the REIT still investable at a 5.5% yield target? What asset enhancement actions could partially offset the revenue loss within 12 months?'
           ]
         },
         {
@@ -3535,7 +3535,7 @@ window.HUB_DATA = {
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
             'Upload 15_Zava_BPO_Operations.xlsx (use as operational data proxy). Ask Analyst: Build a fleet CII rating model. For a fleet of 48 vessels with average age 9 years, calculate the CII rating for each vessel class (container, bulker, tanker) based on current fuel consumption and cargo carried. Project the CII rating trajectory if biofuel blending reduces carbon intensity by 12% per year. Which vessels will reach a D or E rating by 2027 without intervention?',
-            'Upload 15_Zava_BPO_Operations.xlsx. Ask: Build a cold chain expansion ROI model. Investment: MYR 85M across 3 markets (Malaysia MYR 45M, Indonesia MYR 28M, Vietnam MYR 12M). Revenue assumptions: Year 1 capacity 40% utilised at MYR 180/pallet/month, Year 3 capacity 75% utilised. Calculate: NPV at 10% discount rate, IRR, and payback period. Show sensitivity to utilisation rate (50%, 65%, 75%, 85%).'
+            'Build a cold chain expansion ROI model. Investment: MYR 85M across 3 markets (Malaysia MYR 45M, Indonesia MYR 28M, Vietnam MYR 12M). Revenue assumptions: Year 1 capacity 40% utilised at MYR 180/pallet/month, Year 3 capacity 75% utilised. Calculate: NPV at 10% discount rate, IRR, and payback period. Show sensitivity to utilisation rate (50%, 65%, 75%, 85%).'
           ]
         },
         {
@@ -3544,9 +3544,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 15_Zava_BPO_Operations.xlsx. Navigate to the Operations sheet. Ask Copilot: Create a fleet CII monitoring dashboard on a new sheet. For each of the 48 vessels, show: (1) Vessel name and class, (2) Current fuel consumption (tonnes/nautical mile), (3) CII score (calculated), (4) CII rating (A/B/C/D/E), (5) Biofuel pilot status (Y/N), (6) Next dry dock date. Highlight D-rated vessels in amber and E-rated vessels in red.',
-            'Ask Copilot: Build a biofuel blending cost-benefit tracker. For the 6 pilot vessels, show: Monthly biofuel consumption (MT), biofuel premium cost (USD/MT above conventional), total premium cost per month, carbon intensity improvement achieved (%), and CII rating before/after biofuel. Calculate the cost per CII grade improvement point.',
-            'Ask Copilot: Create a cold chain expansion project tracker on a new sheet. For each of the 3 markets (Malaysia, Indonesia, Vietnam), show: facility size (sq m), storage capacity (pallets), investment (MYR M), build status (design/construction/commissioning/operational), planned go-live date, pre-committed customers, and projected Year 1 revenue. Add a total row and a portfolio IRR calculation.'
+            'Using the Operations tab in this workbook, Create a fleet CII monitoring dashboard on a new sheet. For each of the 48 vessels, show: (1) Vessel name and class, (2) Current fuel consumption (tonnes/nautical mile), (3) CII score (calculated), (4) CII rating (A/B/C/D/E), (5) Biofuel pilot status (Y/N), (6) Next dry dock date. Highlight D-rated vessels in amber and E-rated vessels in red.',
+            'Build a biofuel blending cost-benefit tracker. For the 6 pilot vessels, show: Monthly biofuel consumption (MT), biofuel premium cost (USD/MT above conventional), total premium cost per month, carbon intensity improvement achieved (%), and CII rating before/after biofuel. Calculate the cost per CII grade improvement point.',
+            'Create a cold chain expansion project tracker on a new sheet. For each of the 3 markets (Malaysia, Indonesia, Vietnam), show: facility size (sq m), storage capacity (pallets), investment (MYR M), build status (design/construction/commissioning/operational), planned go-live date, pre-committed customers, and projected Year 1 revenue. Add a total row and a portfolio IRR calculation.'
           ]
         },
         {
@@ -3555,9 +3555,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 20_Zava_ESG_Sustainability_Framework.docx. Ask Copilot: Draft a Green Shipping Strategy section for our ESG report. Cover: (1) Our commitment to IMO 2030 CII targets, (2) Biofuel blending pilot results — 6 vessels, 12 months data, (3) Fleet modernisation plan — 8 vessels to be retired by 2026, replaced with dual-fuel capable vessels, (4) Alternative fuel roadmap — evaluation of LNG, methanol, and green ammonia for ASEAN corridors, (5) Investment plan — USD 240M over 5 years in green fleet. Use GRI 302 (Energy) and GRI 305 (Emissions) reporting standards.',
-            'Ask Copilot: Draft a customer presentation script for cold chain expansion. The script is for a 30-minute meeting with a pharmaceutical manufacturer who is evaluating cold chain outsourcing. Cover: (1) Our cold chain capabilities across Malaysia, Indonesia, and Vietnam, (2) Good Distribution Practice (GDP) certification and regulatory compliance, (3) Real-time temperature monitoring and SCADA system, (4) Case study from an existing pharma customer, (5) Pricing structure and SLA commitments. Include suggested responses to 3 likely objections.',
-            'Ask Copilot: Draft an urgent response letter to a key customer whose cargo was delayed 72 hours due to a port congestion issue in Surabaya. The letter should: acknowledge the delay and apologise unequivocally, explain the root cause (berth unavailability due to port authority planning issue — not Samudera\'s operational failure), confirm the cargo has now been delivered safely, propose penalty waiver or credit note as goodwill, and outline the contingency routing we have now put in place.'
+            'Draft a Green Shipping Strategy section for our ESG report. Cover: (1) Our commitment to IMO 2030 CII targets, (2) Biofuel blending pilot results — 6 vessels, 12 months data, (3) Fleet modernisation plan — 8 vessels to be retired by 2026, replaced with dual-fuel capable vessels, (4) Alternative fuel roadmap — evaluation of LNG, methanol, and green ammonia for ASEAN corridors, (5) Investment plan — USD 240M over 5 years in green fleet. Use GRI 302 (Energy) and GRI 305 (Emissions) reporting standards.',
+            'Draft a customer presentation script for cold chain expansion. The script is for a 30-minute meeting with a pharmaceutical manufacturer who is evaluating cold chain outsourcing. Cover: (1) Our cold chain capabilities across Malaysia, Indonesia, and Vietnam, (2) Good Distribution Practice (GDP) certification and regulatory compliance, (3) Real-time temperature monitoring and SCADA system, (4) Case study from an existing pharma customer, (5) Pricing structure and SLA commitments. Include suggested responses to 3 likely objections.',
+            'Draft an urgent response letter to a key customer whose cargo was delayed 72 hours due to a port congestion issue in Surabaya. The letter should: acknowledge the delay and apologise unequivocally, explain the root cause (berth unavailability due to port authority planning issue — not Samudera\'s operational failure), confirm the cargo has now been delivered safely, propose penalty waiver or credit note as goodwill, and outline the contingency routing we have now put in place.'
           ]
         },
         {
@@ -3566,9 +3566,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide investor presentation for Samudera Logistics. Include: (1) Business overview — 48 vessels, ASEAN network, (2) IMO 2030 compliance plan — biofuel pilot results, (3) Fleet CII rating dashboard, (4) Cold chain expansion — MYR 85M investment, 3 markets, (5) Financial performance — revenue and EBITDA, (6) Technology — real-time vessel tracking and cold chain IoT, (7) Sustainability credentials, (8) Growth outlook, (9) Risk factors, (10) Investment thesis. Teal and white colour scheme.',
-            'Ask Copilot: Create a 3-slide cold chain pitch deck for pharmaceutical customers. Slide 1: Why outsource cold chain to Samudera — 3 key value propositions. Slide 2: Our cold chain network map across Malaysia, Indonesia, Vietnam. Slide 3: GDP compliance, temperature monitoring, and SLA guarantees.',
-            'Ask Copilot: Create a 2-slide CII compliance update for the Board. Slide 1: Current fleet CII rating distribution — how many vessels at A, B, C, D, E. Slide 2: The 3-year plan to bring all vessels to CII C or better — biofuel, fleet retirement, and dual-fuel newbuilds.'
+            'Create a 10-slide investor presentation for Samudera Logistics. Include: (1) Business overview — 48 vessels, ASEAN network, (2) IMO 2030 compliance plan — biofuel pilot results, (3) Fleet CII rating dashboard, (4) Cold chain expansion — MYR 85M investment, 3 markets, (5) Financial performance — revenue and EBITDA, (6) Technology — real-time vessel tracking and cold chain IoT, (7) Sustainability credentials, (8) Growth outlook, (9) Risk factors, (10) Investment thesis. Teal and white colour scheme.',
+            'Create a 3-slide cold chain pitch deck for pharmaceutical customers. Slide 1: Why outsource cold chain to Samudera — 3 key value propositions. Slide 2: Our cold chain network map across Malaysia, Indonesia, Vietnam. Slide 3: GDP compliance, temperature monitoring, and SLA guarantees.',
+            'Create a 2-slide CII compliance update for the Board. Slide 1: Current fleet CII rating distribution — how many vessels at A, B, C, D, E. Slide 2: The 3-year plan to bring all vessels to CII C or better — biofuel, fleet retirement, and dual-fuel newbuilds.'
           ]
         },
         {
@@ -3577,9 +3577,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a proposal email to a large FMCG manufacturer offering an integrated end-to-end cold chain solution — refrigerated sea freight from Indonesia to Malaysia, bonded cold storage in Port Klang, and last-mile refrigerated delivery to 12 distribution points. Include: key service specifications, GDP certification, real-time temperature visibility, and indicative pricing at MYR 195/pallet/month.',
-            'Ask Copilot: Draft an internal alert to the fleet operations team: a weather system is forecast in the South China Sea over the next 72 hours affecting our 8 vessels on the MY-Vietnam corridor. The alert should: describe the weather situation, state the routing instruction (alternative route via east coast), confirm the customer notification process, and ask vessel masters to confirm receipt.',
-            'Ask Copilot: Draft an email to IMO\'s Data Collection System (DCS) reporting team confirming our fleet carbon intensity data submission for FY2024. The email should confirm the 48 vessels covered, the fuel consumption and distance data submitted, and note that 6 vessels on the biofuel pilot have their biodiesel volumes separately identified. Request confirmation of receipt.'
+            'Draft a proposal email to a large FMCG manufacturer offering an integrated end-to-end cold chain solution — refrigerated sea freight from Indonesia to Malaysia, bonded cold storage in Port Klang, and last-mile refrigerated delivery to 12 distribution points. Include: key service specifications, GDP certification, real-time temperature visibility, and indicative pricing at MYR 195/pallet/month.',
+            'Draft an internal alert to the fleet operations team: a weather system is forecast in the South China Sea over the next 72 hours affecting our 8 vessels on the MY-Vietnam corridor. The alert should: describe the weather situation, state the routing instruction (alternative route via east coast), confirm the customer notification process, and ask vessel masters to confirm receipt.',
+            'Draft an email to IMO\'s Data Collection System (DCS) reporting team confirming our fleet carbon intensity data submission for FY2024. The email should confirm the 48 vessels covered, the fuel consumption and distance data submitted, and note that 6 vessels on the biofuel pilot have their biodiesel volumes separately identified. Request confirmation of receipt.'
           ]
         },
         {
@@ -3588,9 +3588,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from an operations or fleet management meeting. Ask Copilot: Identify all vessel performance issues discussed — CII rating concerns, maintenance alerts, route delays, and customer complaints. Create an action log with owner and deadline.',
-            'Ask Copilot: Draft a fleet operations update for the weekly leadership meeting. Structure: (1) Fleet status — vessels operational / off hire / in dry dock, (2) CII compliance — any vessels requiring immediate action, (3) Biofuel pilot update, (4) Cold chain facility status, (5) Top 3 customer issues.',
-            'Ask Copilot: From the meeting transcript, what decisions were made about the biofuel pilot expansion from 6 to 15 vessels? What concerns were raised about biofuel supply availability in Indonesian ports?'
+            'Open an existing recorded Teams meeting recap from an operations or fleet management meeting. Identify all vessel performance issues discussed — CII rating concerns, maintenance alerts, route delays, and customer complaints. Create an action log with owner and deadline.',
+            'Draft a fleet operations update for the weekly leadership meeting. Structure: (1) Fleet status — vessels operational / off hire / in dry dock, (2) CII compliance — any vessels requiring immediate action, (3) Biofuel pilot update, (4) Cold chain facility status, (5) Top 3 customer issues.',
+            'From the meeting transcript, what decisions were made about the biofuel pilot expansion from 6 to 15 vessels? What concerns were raised about biofuel supply availability in Indonesian ports?'
           ]
         },
         {
@@ -3698,8 +3698,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 16_Zava_Trading_Commodities.xlsx to Analyst. Ask: Analyse our coal trading position. Show: (1) Current open positions — size, direction, mark-to-market value, (2) Limit utilisation — any positions approaching or breaching limits, (3) Price sensitivity — if Newcastle benchmark drops USD 20/MT, what is the impact on open position values? (4) Counterparty concentration — what % of our coal offtake is with European buyers who have coal exclusion policies? Create a risk summary dashboard.',
-            'Upload 16_Zava_Trading_Commodities.xlsx. Ask: Model the coal exit transition scenarios. Scenario A: Continue mining until 2035. Scenario B: Exit coal by 2030 and redeploy capital into solar assets in East Kalimantan. Scenario C: Exit coal by 2028 through asset sale. For each scenario, estimate: NPV of remaining coal reserves, transition cost, projected shareholder return over 10 years. Which scenario maximises long-term shareholder value?'
+            'Analyse our coal trading position. Show: (1) Current open positions — size, direction, mark-to-market value, (2) Limit utilisation — any positions approaching or breaching limits, (3) Price sensitivity — if Newcastle benchmark drops USD 20/MT, what is the impact on open position values? (4) Counterparty concentration — what % of our coal offtake is with European buyers who have coal exclusion policies? Create a risk summary dashboard.',
+            'Model the coal exit transition scenarios. Scenario A: Continue mining until 2035. Scenario B: Exit coal by 2030 and redeploy capital into solar assets in East Kalimantan. Scenario C: Exit coal by 2028 through asset sale. For each scenario, estimate: NPV of remaining coal reserves, transition cost, projected shareholder return over 10 years. Which scenario maximises long-term shareholder value?'
           ]
         },
         {
@@ -3708,9 +3708,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 16_Zava_Trading_Commodities.xlsx. Navigate to the Open Positions sheet. Ask Copilot: Build a royalty audit exposure calculator on a new sheet. For FY2022, FY2023, and FY2024, calculate: total coal production (MT), royalty rate applied (%), royalty paid (USD M), ESDM\'s claimed royalty rate (higher %), additional royalty under audit (USD M), penalty and interest (8% per year), total exposure per year. Sum to total contingent liability. Apply red formatting if total exposure exceeds USD 15M.',
-            'Ask Copilot: Create a coal export revenue sensitivity table. Rows: Newcastle benchmark price (USD 90/MT to USD 180/MT in USD 10 steps). Columns: Production volume (20MT, 24MT, 28MT). Each cell: annual revenue in USD M. Add a breakeven row showing the minimum price to cover all-in cash costs of USD 88/MT. Highlight cells where margin is negative in red, thin margin (<15%) in amber, healthy margin in green.',
-            'Ask Copilot: Build an energy transition opportunity dashboard on a new sheet. For each of the 3 concession areas, estimate: (1) Land area available for solar after coal exhaustion (ha), (2) Solar generation potential (MW) at 1.5 MW/ha, (3) Estimated project cost at USD 0.8M/MW, (4) Expected IRR at Indonesian solar feed-in tariff, (5) Earliest development timeline. Calculate total transition portfolio size and aggregate IRR.'
+            'Using the Open Positions tab in this workbook, Build a royalty audit exposure calculator on a new sheet. For FY2022, FY2023, and FY2024, calculate: total coal production (MT), royalty rate applied (%), royalty paid (USD M), ESDM\'s claimed royalty rate (higher %), additional royalty under audit (USD M), penalty and interest (8% per year), total exposure per year. Sum to total contingent liability. Apply red formatting if total exposure exceeds USD 15M.',
+            'Create a coal export revenue sensitivity table. Rows: Newcastle benchmark price (USD 90/MT to USD 180/MT in USD 10 steps). Columns: Production volume (20MT, 24MT, 28MT). Each cell: annual revenue in USD M. Add a breakeven row showing the minimum price to cover all-in cash costs of USD 88/MT. Highlight cells where margin is negative in red, thin margin (<15%) in amber, healthy margin in green.',
+            'Build an energy transition opportunity dashboard on a new sheet. For each of the 3 concession areas, estimate: (1) Land area available for solar after coal exhaustion (ha), (2) Solar generation potential (MW) at 1.5 MW/ha, (3) Estimated project cost at USD 0.8M/MW, (4) Expected IRR at Indonesian solar feed-in tariff, (5) Earliest development timeline. Calculate total transition portfolio size and aggregate IRR.'
           ]
         },
         {
@@ -3719,9 +3719,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 20_Zava_ESG_Sustainability_Framework.docx. Ask Copilot: Draft a coal exit and energy transition strategy document for Board approval. Cover: (1) Strategic rationale — ESG pressure, policy risk, capital market access, (2) Exit timeline — coal production to cease by December 2030, (3) Capital redeployment — USD 320M into East Kalimantan solar and geothermal assets 2026–2032, (4) Transition cost and funding plan, (5) Employee transition programme — 4,200 mining workers, (6) Community impact and CSR obligations, (7) Investor communication plan. 10 pages, formal board paper format.',
-            'Ask Copilot: Draft the ESDM royalty audit response letter. The letter should: acknowledge the audit findings, dispute 3 specific line items where we believe the royalty calculation methodology is incorrect, propose a joint verification process with independent auditors, and request a 90-day extension to compile the disputed documentation. Use formal Indonesian government correspondence format.',
-            'Ask Copilot: Write a 3-page ESG section for our Bursa Malaysia Annual Report. Cover: (1) Our carbon intensity per tonne of coal produced and the year-on-year improvement, (2) Our commitment to the Paris Agreement and the coal exit timeline, (3) Community investment around the 3 mining concessions — schools, healthcare, infrastructure, (4) Mine rehabilitation progress — area rehabilitated in FY2024 vs requirement. Comply with GRI 302, 305, and 413 standards.'
+            'Draft a coal exit and energy transition strategy document for Board approval. Cover: (1) Strategic rationale — ESG pressure, policy risk, capital market access, (2) Exit timeline — coal production to cease by December 2030, (3) Capital redeployment — USD 320M into East Kalimantan solar and geothermal assets 2026–2032, (4) Transition cost and funding plan, (5) Employee transition programme — 4,200 mining workers, (6) Community impact and CSR obligations, (7) Investor communication plan. 10 pages, formal board paper format.',
+            'Draft the ESDM royalty audit response letter. The letter should: acknowledge the audit findings, dispute 3 specific line items where we believe the royalty calculation methodology is incorrect, propose a joint verification process with independent auditors, and request a 90-day extension to compile the disputed documentation. Use formal Indonesian government correspondence format.',
+            'Write a 3-page ESG section for our Bursa Malaysia Annual Report. Cover: (1) Our carbon intensity per tonne of coal produced and the year-on-year improvement, (2) Our commitment to the Paris Agreement and the coal exit timeline, (3) Community investment around the 3 mining concessions — schools, healthcare, infrastructure, (4) Mine rehabilitation progress — area rehabilitated in FY2024 vs requirement. Comply with GRI 302, 305, and 413 standards.'
           ]
         },
         {
@@ -3730,9 +3730,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create an 8-slide coal exit and energy transition investor presentation. Include: (1) Why we are transitioning — ESG and capital market rationale, (2) Coal exit timeline — 2030, (3) East Kalimantan solar and geothermal opportunity, (4) Transition investment plan — USD 320M, (5) NPV comparison — coal-to-2035 vs transition scenario, (6) Employee and community transition plan, (7) Near-term (2025–2027) financial performance — coal revenues remain strong, (8) Why this transition creates long-term shareholder value. Dark grey and green colour scheme.',
-            'Ask Copilot: Create a 2-slide royalty audit situation update for the Audit Committee. Slide 1: Audit status — 3 disputed line items, total contingent liability USD 18.4M, provision taken in accounts USD 8M, unresolved USD 10.4M. Slide 2: The 3 specific items disputed and the legal arguments for each.',
-            'Ask Copilot: Add a slide showing the carbon intensity trend for PrimaCal over the past 5 years vs the Indonesian mining sector benchmark. Show the trajectory to 2030 exit — when does our carbon intensity from operations go to zero?'
+            'Create an 8-slide coal exit and energy transition investor presentation. Include: (1) Why we are transitioning — ESG and capital market rationale, (2) Coal exit timeline — 2030, (3) East Kalimantan solar and geothermal opportunity, (4) Transition investment plan — USD 320M, (5) NPV comparison — coal-to-2035 vs transition scenario, (6) Employee and community transition plan, (7) Near-term (2025–2027) financial performance — coal revenues remain strong, (8) Why this transition creates long-term shareholder value. Dark grey and green colour scheme.',
+            'Create a 2-slide royalty audit situation update for the Audit Committee. Slide 1: Audit status — 3 disputed line items, total contingent liability USD 18.4M, provision taken in accounts USD 8M, unresolved USD 10.4M. Slide 2: The 3 specific items disputed and the legal arguments for each.',
+            'Add a slide showing the carbon intensity trend for PrimaCal over the past 5 years vs the Indonesian mining sector benchmark. Show the trajectory to 2030 exit — when does our carbon intensity from operations go to zero?'
           ]
         },
         {
@@ -3741,9 +3741,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a letter from the CEO to our 3 largest European coal offtakers (combined 38% of our annual production). The letter should: proactively disclose our 2030 coal exit timeline, explain the managed transition plan, reassure them of continued supply through 2030, and invite them to explore a long-term energy partnership as we develop solar and geothermal assets. Tone: strategic, transparent, and forward-looking.',
-            'Ask Copilot: Draft an internal email from the CFO to the Audit Committee Chairman disclosing the ESDM royalty audit exposure. The email should: state the nature and scale of the contingent liability, the accounting treatment, the legal strategy for disputing 3 items, and the timeline for resolution. Mark as CONFIDENTIAL.',
-            'Ask Copilot: Draft a community engagement letter to the village heads (kepala desa) of the 12 communities within 5km of our mining concessions. Inform them of the coal exit plan, the mine rehabilitation commitments, and the energy transition projects that will create new employment opportunities. Use community-appropriate language.'
+            'Draft a letter from the CEO to our 3 largest European coal offtakers (combined 38% of our annual production). The letter should: proactively disclose our 2030 coal exit timeline, explain the managed transition plan, reassure them of continued supply through 2030, and invite them to explore a long-term energy partnership as we develop solar and geothermal assets. Tone: strategic, transparent, and forward-looking.',
+            'Draft an internal email from the CFO to the Audit Committee Chairman disclosing the ESDM royalty audit exposure. The email should: state the nature and scale of the contingent liability, the accounting treatment, the legal strategy for disputing 3 items, and the timeline for resolution. Mark as CONFIDENTIAL.',
+            'Draft a community engagement letter to the village heads (kepala desa) of the 12 communities within 5km of our mining concessions. Inform them of the coal exit plan, the mine rehabilitation commitments, and the energy transition projects that will create new employment opportunities. Use community-appropriate language.'
           ]
         },
         {
@@ -3752,9 +3752,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a management or sustainability committee meeting. Ask Copilot: Identify all ESG-related action items and any discussions about the coal exit strategy or royalty audit. Flag items that are overdue.',
-            'Ask Copilot: Draft a management update on the royalty audit status for the weekly operations call. Cover: (1) Audit status, (2) Items disputed and timeline, (3) Provision adequacy, (4) Legal team action items, (5) Next ESDM meeting date.',
-            'Ask Copilot: Were there any discussions about employee communication regarding the 2030 coal exit? What concerns were raised by HR and how is the transition programme being designed?'
+            'Open an existing recorded Teams meeting recap from a management or sustainability committee meeting. Identify all ESG-related action items and any discussions about the coal exit strategy or royalty audit. Flag items that are overdue.',
+            'Draft a management update on the royalty audit status for the weekly operations call. Cover: (1) Audit status, (2) Items disputed and timeline, (3) Provision adequacy, (4) Legal team action items, (5) Next ESDM meeting date.',
+            'Were there any discussions about employee communication regarding the 2030 coal exit? What concerns were raised by HR and how is the transition programme being designed?'
           ]
         },
         {
@@ -3862,8 +3862,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload HT_01_Suria_Hotels_Resorts.xlsx to Analyst. Ask: Build a RevPAR recovery dashboard. For each of the 14 properties, show: (1) Current RevPAR vs pre-COVID benchmark, (2) Occupancy rate and ADR, (3) OTA booking mix vs direct channels, (4) Year-on-year RevPAR improvement rate. Identify the 3 properties with the biggest RevPAR gap and the 3 with the fastest recovery rate. Calculate the group-level revenue impact if all properties reach pre-COVID RevPAR by end of FY2026.',
-            'Upload 18_Zava_HR_Analytics.xlsx. Ask: Analyse the staff turnover data for the hospitality division. Which properties have turnover above 35%? Which departments are most affected (F&B, Housekeeping, Front Office)? Calculate the annual replacement cost for each property assuming MYR 8,500 recruitment cost per departing employee. Rank properties by total annual turnover cost and identify the 3 highest-cost properties where a retention investment would have the biggest ROI.'
+            'Build a RevPAR recovery dashboard. For each of the 14 properties, show: (1) Current RevPAR vs pre-COVID benchmark, (2) Occupancy rate and ADR, (3) OTA booking mix vs direct channels, (4) Year-on-year RevPAR improvement rate. Identify the 3 properties with the biggest RevPAR gap and the 3 with the fastest recovery rate. Calculate the group-level revenue impact if all properties reach pre-COVID RevPAR by end of FY2026.',
+            'Analyse the staff turnover data for the hospitality division. Which properties have turnover above 35%? Which departments are most affected (F&B, Housekeeping, Front Office)? Calculate the annual replacement cost for each property assuming MYR 8,500 recruitment cost per departing employee. Rank properties by total annual turnover cost and identify the 3 highest-cost properties where a retention investment would have the biggest ROI.'
           ]
         },
         {
@@ -3872,9 +3872,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open HT_01_Suria_Hotels_Resorts.xlsx. Navigate to the Financial Performance sheet. Ask Copilot: Create a F&B margin recovery tracker on a new sheet. For each of the 14 properties, show: (1) Current F&B revenue (MYR M), (2) F&B cost of goods sold (MYR M), (3) Current F&B margin %, (4) Target margin 26%, (5) Gap in percentage points, (6) Revenue required at target margin (MYR M). Calculate the group-level F&B revenue improvement at target margin vs current margin.',
-            'Ask Copilot: Build an OTA mix optimisation dashboard. For each property, show: (1) OTA bookings as % of total, (2) Average OTA commission rate (%), (3) Net ADR after OTA commission, (4) Direct booking ADR (no commission), (5) Revenue gain if OTA mix reduces by 10 percentage points. Highlight properties where the OTA commission cost exceeds MYR 2M per year.',
-            'Ask Copilot: Create a staff turnover cost model on a new sheet. For each property, input: total headcount, annual turnover %, recruitment cost per hire (MYR 8,500), training cost per new hire (MYR 3,200), and productivity loss during onboarding (estimated as 60% of monthly salary for 60 days). Calculate total annual turnover cost per property and rank from highest to lowest. Show the savings from reducing turnover by 8 percentage points per property.'
+            'Using the Financial Performance tab in this workbook, Create a F&B margin recovery tracker on a new sheet. For each of the 14 properties, show: (1) Current F&B revenue (MYR M), (2) F&B cost of goods sold (MYR M), (3) Current F&B margin %, (4) Target margin 26%, (5) Gap in percentage points, (6) Revenue required at target margin (MYR M). Calculate the group-level F&B revenue improvement at target margin vs current margin.',
+            'Build an OTA mix optimisation dashboard. For each property, show: (1) OTA bookings as % of total, (2) Average OTA commission rate (%), (3) Net ADR after OTA commission, (4) Direct booking ADR (no commission), (5) Revenue gain if OTA mix reduces by 10 percentage points. Highlight properties where the OTA commission cost exceeds MYR 2M per year.',
+            'Create a staff turnover cost model on a new sheet. For each property, input: total headcount, annual turnover %, recruitment cost per hire (MYR 8,500), training cost per new hire (MYR 3,200), and productivity loss during onboarding (estimated as 60% of monthly salary for 60 days). Calculate total annual turnover cost per property and rank from highest to lowest. Show the savings from reducing turnover by 8 percentage points per property.'
           ]
         },
         {
@@ -3883,9 +3883,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 18_Zava_HR_Analytics.xlsx. Ask Copilot in Word: Draft a hospitality staff retention programme proposal for the HR Committee. Cover: (1) Current turnover situation — 32%, 14 properties, cost impact MYR XX per year, (2) Root cause analysis — exit interview data, (3) 4 retention initiatives with budget and expected impact: (a) Career development programme, (b) Enhanced housing and transport benefits for remote resorts, (c) Performance-based retention bonus (12-month cliff vesting), (d) Salary benchmarking and uplift for critical roles. (4) Implementation timeline and total investment. Format as a formal HR Committee paper.',
-            'Ask Copilot: Draft a menu engineering review guide for F&B managers across all 14 properties. The guide should explain: (1) What menu engineering is, (2) The 4 categories (Stars, Ploughhorses, Puzzles, Dogs) and how to classify each menu item, (3) The 5 actions to improve F&B margin (remove dogs, reprice puzzles, promote stars), (4) How to calculate cost per dish and the minimum selling price for 26% margin. Keep language practical — this is for hotel F&B managers, not accountants.',
-            'Ask Copilot: Write a guest loyalty programme launch announcement for Suria Hotels — "Suria Privileges" programme. Cover: 3 membership tiers (Suria Silver, Gold, Platinum), points earning rates, tier benefits (room upgrades, F&B discounts, express check-in), partner benefits, and enrollment call-to-action. Format as a press release and as a guest email.'
+            'Open 18_Zava_HR_Analytics.xlsx. Draft a hospitality staff retention programme proposal for the HR Committee. Cover: (1) Current turnover situation — 32%, 14 properties, cost impact MYR XX per year, (2) Root cause analysis — exit interview data, (3) 4 retention initiatives with budget and expected impact: (a) Career development programme, (b) Enhanced housing and transport benefits for remote resorts, (c) Performance-based retention bonus (12-month cliff vesting), (d) Salary benchmarking and uplift for critical roles. (4) Implementation timeline and total investment. Format as a formal HR Committee paper.',
+            'Draft a menu engineering review guide for F&B managers across all 14 properties. The guide should explain: (1) What menu engineering is, (2) The 4 categories (Stars, Ploughhorses, Puzzles, Dogs) and how to classify each menu item, (3) The 5 actions to improve F&B margin (remove dogs, reprice puzzles, promote stars), (4) How to calculate cost per dish and the minimum selling price for 26% margin. Keep language practical — this is for hotel F&B managers, not accountants.',
+            'Write a guest loyalty programme launch announcement for Suria Hotels — "Suria Privileges" programme. Cover: 3 membership tiers (Suria Silver, Gold, Platinum), points earning rates, tier benefits (room upgrades, F&B discounts, express check-in), partner benefits, and enrollment call-to-action. Format as a press release and as a guest email.'
           ]
         },
         {
@@ -3894,9 +3894,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide performance recovery presentation for the Board. Include: (1) FY2025 snapshot — RevPAR MYR 284, occupancy 74%, F&B margin 18.4%, turnover 32%, (2) RevPAR recovery roadmap — target MYR 318 by FY2027, (3) ADR improvement strategy — direct booking and rate management, (4) OTA mix reduction plan, (5) F&B margin recovery — from 18.4% to 26%, (6) Retention programme — cost and expected impact, (7) Revenue per available employee (RevPAE) improvement, (8) Property-by-property performance league table, (9) Capital investment required, (10) Three-year financial projections, (11) Key risks, (12) Board decisions required. Deep rose and gold colour scheme.',
-            'Ask Copilot: Create a 3-slide RevPAR recovery pitch for a hotel owner client who is considering whether to continue with Suria as the operator. Slide 1: Where we are today vs benchmark. Slide 2: The recovery actions we are implementing. Slide 3: The projected RevPAR trajectory with Suria vs without.',
-            'Ask Copilot: Create a staff retention infographic slide for the all-staff town hall. Show: 5 retention initiatives, when they launch, and what benefit each brings to frontline hotel employees. Use warm, motivating visuals — this is an internal communication piece.'
+            'Create a 12-slide performance recovery presentation for the Board. Include: (1) FY2025 snapshot — RevPAR MYR 284, occupancy 74%, F&B margin 18.4%, turnover 32%, (2) RevPAR recovery roadmap — target MYR 318 by FY2027, (3) ADR improvement strategy — direct booking and rate management, (4) OTA mix reduction plan, (5) F&B margin recovery — from 18.4% to 26%, (6) Retention programme — cost and expected impact, (7) Revenue per available employee (RevPAE) improvement, (8) Property-by-property performance league table, (9) Capital investment required, (10) Three-year financial projections, (11) Key risks, (12) Board decisions required. Deep rose and gold colour scheme.',
+            'Create a 3-slide RevPAR recovery pitch for a hotel owner client who is considering whether to continue with Suria as the operator. Slide 1: Where we are today vs benchmark. Slide 2: The recovery actions we are implementing. Slide 3: The projected RevPAR trajectory with Suria vs without.',
+            'Create a staff retention infographic slide for the all-staff town hall. Show: 5 retention initiatives, when they launch, and what benefit each brings to frontline hotel employees. Use warm, motivating visuals — this is an internal communication piece.'
           ]
         },
         {
@@ -3905,9 +3905,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft an email to all 14 General Managers announcing the F&B margin recovery programme. The email should: state the group target of 26% margin by Q3 FY2025, explain the 4 key actions each property must take (menu engineering review, supplier renegotiation, portion control, upselling training), set the monthly reporting requirement, and ask GMs to nominate their F&B Manager as the property champion. Tone: energetic and performance-focused.',
-            'Ask Copilot: Draft an email to our top 3 OTA partners (Booking.com, Expedia, Agoda) proposing a preferred partner programme. The proposal should offer enhanced listing visibility and priority placement in exchange for a reduced commission rate and guaranteed rate parity. Frame as a win-win commercial proposition.',
-            'Ask Copilot: Draft a personalised renewal email to our top 500 loyalty programme members who have not stayed in the past 12 months. The email should: acknowledge their last stay, offer a "welcome back" rate (15% below BAR), invite them to the new Suria Privileges programme, and include a direct booking link. Tone: warm, personal, and exclusive.'
+            'Draft an email to all 14 General Managers announcing the F&B margin recovery programme. The email should: state the group target of 26% margin by Q3 FY2025, explain the 4 key actions each property must take (menu engineering review, supplier renegotiation, portion control, upselling training), set the monthly reporting requirement, and ask GMs to nominate their F&B Manager as the property champion. Tone: energetic and performance-focused.',
+            'Draft an email to our top 3 OTA partners (Booking.com, Expedia, Agoda) proposing a preferred partner programme. The proposal should offer enhanced listing visibility and priority placement in exchange for a reduced commission rate and guaranteed rate parity. Frame as a win-win commercial proposition.',
+            'Draft a personalised renewal email to our top 500 loyalty programme members who have not stayed in the past 12 months. The email should: acknowledge their last stay, offer a "welcome back" rate (15% below BAR), invite them to the new Suria Privileges programme, and include a direct booking link. Tone: warm, personal, and exclusive.'
           ]
         },
         {
@@ -3916,9 +3916,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a revenue management or GM operations call. Ask Copilot: Identify all RevPAR, occupancy, and ADR discussions. Which properties are behind target? What actions have been committed to by GMs? Create an action tracker.',
-            'Ask Copilot: Draft follow-up actions from the F&B margin review meeting. Group by area: Menu Engineering | Supplier Negotiation | Staff Training | Portion Control. Include property owner and deadline.',
-            'Ask Copilot: Based on this meeting, which GMs raised the most concern about staff turnover? What specific causes did they identify and what interventions did they request from Group HR?'
+            'Open an existing recorded Teams meeting recap from a revenue management or GM operations call. Identify all RevPAR, occupancy, and ADR discussions. Which properties are behind target? What actions have been committed to by GMs? Create an action tracker.',
+            'Draft follow-up actions from the F&B margin review meeting. Group by area: Menu Engineering | Supplier Negotiation | Staff Training | Portion Control. Include property owner and deadline.',
+            'Based on this meeting, which GMs raised the most concern about staff turnover? What specific causes did they identify and what interventions did they request from Group HR?'
           ]
         },
         {
@@ -3928,7 +3928,7 @@ window.HUB_DATA = {
           desc: 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
           prompts: [
             'Upload HT_01_Suria_Hotels_Resorts.xlsx and 18_Zava_HR_Analytics.xlsx to Copilot Notebook. Set instruction: "You are a hospitality management consultant advising Suria Hotels on RevPAR recovery and operational improvement." Ask: Which 3 properties should receive the most urgent management attention — considering RevPAR gap, F&B margin underperformance, and staff turnover simultaneously? What is the prioritised action plan for each?',
-            'Upload HT_01_Suria_Hotels_Resorts.xlsx. Ask: The Bali resort has the highest F&B revenue of all our properties but the lowest F&B margin (14.2%). The GM believes it is because of high food cost from imported ingredients. Design a 90-day F&B margin improvement plan specifically for a Bali resort context — considering local supplier development, menu localisation, and seasonal menu rotation.'
+            'The Bali resort has the highest F&B revenue of all our properties but the lowest F&B margin (14.2%). The GM believes it is because of high food cost from imported ingredients. Design a 90-day F&B margin improvement plan specifically for a Bali resort context — considering local supplier development, menu localisation, and seasonal menu rotation.'
           ]
         },
         {
@@ -4027,7 +4027,7 @@ window.HUB_DATA = {
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
             'Upload 12_Zava_Manufacturing_KPIs.xlsx (use as project KPI proxy). Ask Analyst: Model the financial impact of the LRT3 delay. Inputs: 14 weeks behind schedule, RM 180,000/week liquidated damages, EOT application filed for 14 weeks (outcome uncertain — 3 scenarios: full grant, 8 weeks granted, 0 weeks granted). For each scenario, calculate: (1) Total LD exposure, (2) Cash flow impact — assuming RM 4.2M per week of construction revenue that is delayed, (3) Impact on contract margin. Show as a scenario table with traffic light status.',
-            'Upload 12_Zava_Manufacturing_KPIs.xlsx. Ask: Build a tender pipeline analysis. NusaBuild is targeting 12 government tenders in FY2026 totalling RM 5.8B. ESG scoring is 15% of evaluation. Our current ESG score is estimated at 62 out of 100 vs the estimated winning bid score of 78+. Calculate: if we improve ESG score from 62 to 82 (above winning threshold), what is the increase in probability of winning each tender? What is the expected value of tenders won at each ESG score level?'
+            'Build a tender pipeline analysis. NusaBuild is targeting 12 government tenders in FY2026 totalling RM 5.8B. ESG scoring is 15% of evaluation. Our current ESG score is estimated at 62 out of 100 vs the estimated winning bid score of 78+. Calculate: if we improve ESG score from 62 to 82 (above winning threshold), what is the increase in probability of winning each tender? What is the expected value of tenders won at each ESG score level?'
           ]
         },
         {
@@ -4036,9 +4036,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 12_Zava_Manufacturing_KPIs.xlsx. Navigate to the Capex Tracker sheet (use as project tracker proxy). Ask Copilot: Build a construction project delay dashboard on a new sheet. For each of NusaBuild\'s 8 active projects, show: (1) Project name and client, (2) Contract value (RM M), (3) Planned completion date, (4) Current forecast completion date, (5) Delay (weeks), (6) EOT filed (Y/N), (7) LD rate (RM/week), (8) Current LD exposure (RM M), (9) Status (On Track / Watch / Critical). Sort by LD exposure, highest first.',
-            'Ask Copilot: Create a GBI certification gap analysis on a new sheet. For each of the 6 criteria (Energy Efficiency, Indoor Environment Quality, Sustainable Site Planning, Materials & Resources, Water Efficiency, Innovation), show: (1) Current score estimate, (2) Required score for GBI certification, (3) Gap, (4) Specific interventions needed, (5) Cost of intervention (RM M), (6) Timeline to implement.',
-            'Ask Copilot: Build a tender ESG scoring improvement tracker. For each of the 12 upcoming tenders, show: (1) Tender name and value (RM M), (2) ESG weight in tender evaluation (%), (3) Our current estimated ESG score, (4) Target ESG score, (5) Improvement actions required, (6) Expected score after improvement, (7) Estimated increase in winning probability.'
+            'Open 12_Zava_Manufacturing_KPIs.xlsx. Navigate to the Capex Tracker sheet (use as project tracker proxy). Build a construction project delay dashboard on a new sheet. For each of NusaBuild\'s 8 active projects, show: (1) Project name and client, (2) Contract value (RM M), (3) Planned completion date, (4) Current forecast completion date, (5) Delay (weeks), (6) EOT filed (Y/N), (7) LD rate (RM/week), (8) Current LD exposure (RM M), (9) Status (On Track / Watch / Critical). Sort by LD exposure, highest first.',
+            'Create a GBI certification gap analysis on a new sheet. For each of the 6 criteria (Energy Efficiency, Indoor Environment Quality, Sustainable Site Planning, Materials & Resources, Water Efficiency, Innovation), show: (1) Current score estimate, (2) Required score for GBI certification, (3) Gap, (4) Specific interventions needed, (5) Cost of intervention (RM M), (6) Timeline to implement.',
+            'Build a tender ESG scoring improvement tracker. For each of the 12 upcoming tenders, show: (1) Tender name and value (RM M), (2) ESG weight in tender evaluation (%), (3) Our current estimated ESG score, (4) Target ESG score, (5) Improvement actions required, (6) Expected score after improvement, (7) Estimated increase in winning probability.'
           ]
         },
         {
@@ -4047,9 +4047,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Word: Draft the Extension of Time (EOT) claim narrative for the LRT3 contract. The narrative should: describe the ground condition variation (soft clay encountered 8m deeper than SI data), provide the 3 pile cap locations affected, calculate the delay to critical path activities, demonstrate that NusaBuild took all reasonable mitigation steps, and quantify the 14-week extension required. Reference the relevant PAM 2018 contract clauses. Attach as supporting narrative to the formal EOT application.',
-            'Ask Copilot: Draft a GBI certification action plan document. For each of the 6 GBI scoring categories, provide: current practice at NusaBuild, the change required for GBI certification, responsible department, investment required, and timeline. Set the goal of achieving GBI Silver (minimum 50 points) on all 6 upcoming government tenders. 8 pages, formal document format.',
-            'Ask Copilot: Write an ESG performance section for NusaBuild\'s Bursa Malaysia sustainability report. Cover: (1) Green construction certifications obtained FY2024 (list projects), (2) Carbon intensity per RM M of contract value, (3) Construction waste diversion rate (target: 80% diversion from landfill), (4) Worker safety TRIR score and how it compares to CIDB benchmark, (5) Local subcontractor and supplier spend %. Follow GRI 302, 305, 403, and 413 standards.'
+            'Draft the Extension of Time (EOT) claim narrative for the LRT3 contract. The narrative should: describe the ground condition variation (soft clay encountered 8m deeper than SI data), provide the 3 pile cap locations affected, calculate the delay to critical path activities, demonstrate that NusaBuild took all reasonable mitigation steps, and quantify the 14-week extension required. Reference the relevant PAM 2018 contract clauses. Attach as supporting narrative to the formal EOT application.',
+            'Draft a GBI certification action plan document. For each of the 6 GBI scoring categories, provide: current practice at NusaBuild, the change required for GBI certification, responsible department, investment required, and timeline. Set the goal of achieving GBI Silver (minimum 50 points) on all 6 upcoming government tenders. 8 pages, formal document format.',
+            'Write an ESG performance section for NusaBuild\'s Bursa Malaysia sustainability report. Cover: (1) Green construction certifications obtained FY2024 (list projects), (2) Carbon intensity per RM M of contract value, (3) Construction waste diversion rate (target: 80% diversion from landfill), (4) Worker safety TRIR score and how it compares to CIDB benchmark, (5) Local subcontractor and supplier spend %. Follow GRI 302, 305, 403, and 413 standards.'
           ]
         },
         {
@@ -4058,9 +4058,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide business development presentation for NusaBuild targeting JKR procurement officers. Include: (1) NusaBuild overview — RM 8.4B order book, track record, (2) ESG leadership — GBI certification, carbon intensity reduction, (3) Safety — TRIR of 0.8 vs industry benchmark, (4) LRT3 experience — project management, (5) Digital construction — BIM, digital site monitoring, (6) Local and Bumiputera content, (7) ESG tender scoring credentials, (8) Current project portfolio, (9) Management team, (10) Why NusaBuild. Dark orange and grey colour scheme.',
-            'Ask Copilot: Create a 3-slide LRT3 delay briefing for the Board. Slide 1: Delay status — 14 weeks, EOT filed, current LD exposure. Slide 2: Three EOT outcome scenarios and their financial impact. Slide 3: Mitigation actions — acceleration plan, cost absorption vs recovery.',
-            'Ask Copilot: Create a 2-slide GBI certification journey slide for a tender submission. Slide 1: Our GBI score vs certification target by category (radar chart). Slide 2: The specific green construction initiatives we are implementing for this tender.'
+            'Create a 10-slide business development presentation for NusaBuild targeting JKR procurement officers. Include: (1) NusaBuild overview — RM 8.4B order book, track record, (2) ESG leadership — GBI certification, carbon intensity reduction, (3) Safety — TRIR of 0.8 vs industry benchmark, (4) LRT3 experience — project management, (5) Digital construction — BIM, digital site monitoring, (6) Local and Bumiputera content, (7) ESG tender scoring credentials, (8) Current project portfolio, (9) Management team, (10) Why NusaBuild. Dark orange and grey colour scheme.',
+            'Create a 3-slide LRT3 delay briefing for the Board. Slide 1: Delay status — 14 weeks, EOT filed, current LD exposure. Slide 2: Three EOT outcome scenarios and their financial impact. Slide 3: Mitigation actions — acceleration plan, cost absorption vs recovery.',
+            'Create a 2-slide GBI certification journey slide for a tender submission. Slide 1: Our GBI score vs certification target by category (radar chart). Slide 2: The specific green construction initiatives we are implementing for this tender.'
           ]
         },
         {
@@ -4069,9 +4069,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a letter to JKR\'s Project Director formally submitting the Extension of Time claim for the LRT3 package. The letter should: reference the contract number and package, state the basis of the claim (ground condition variation under Clause 23 of PAM 2018), summarise the delay impact, request 14 weeks EOT, and attach the supporting narrative. Use formal JKR correspondence format.',
-            'Ask Copilot: Draft an email to the CIDB GBI certification office requesting a pre-assessment consultation for 6 upcoming NusaBuild projects. The email should: introduce NusaBuild\'s intention to pursue GBI certification, describe the project types (3 government offices, 2 hospitals, 1 university), ask about the pre-assessment process and timeline, and request a meeting within 3 weeks.',
-            'Ask Copilot: Draft an internal email from the CEO to all Project Directors announcing the mandatory GBI certification requirement for all new tenders above RM 50M effective from Q3 FY2025. The email should explain why (ESG tender scoring), what is required from each project team, and the training programme being arranged.'
+            'Draft a letter to JKR\'s Project Director formally submitting the Extension of Time claim for the LRT3 package. The letter should: reference the contract number and package, state the basis of the claim (ground condition variation under Clause 23 of PAM 2018), summarise the delay impact, request 14 weeks EOT, and attach the supporting narrative. Use formal JKR correspondence format.',
+            'Draft an email to the CIDB GBI certification office requesting a pre-assessment consultation for 6 upcoming NusaBuild projects. The email should: introduce NusaBuild\'s intention to pursue GBI certification, describe the project types (3 government offices, 2 hospitals, 1 university), ask about the pre-assessment process and timeline, and request a meeting within 3 weeks.',
+            'Draft an internal email from the CEO to all Project Directors announcing the mandatory GBI certification requirement for all new tenders above RM 50M effective from Q3 FY2025. The email should explain why (ESG tender scoring), what is required from each project team, and the training programme being arranged.'
           ]
         },
         {
@@ -4080,9 +4080,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a project or site management meeting. Ask Copilot: Identify all project delay issues discussed, their root cause, and the actions taken. Flag any project with LD risk and note whether an EOT has been filed.',
-            'Ask Copilot: Draft follow-up actions from the LRT3 delay review meeting. Group by workstream: EOT Claim | Acceleration Plan | Subcontractor Engagement | Client Communication | Cost Recovery. Include owner and deadline.',
-            'Ask Copilot: Were there any discussions about subcontractor performance impacting the LRT3 delay? Identify which subcontractors were mentioned and what contractual actions were proposed against them.'
+            'Open an existing recorded Teams meeting recap from a project or site management meeting. Identify all project delay issues discussed, their root cause, and the actions taken. Flag any project with LD risk and note whether an EOT has been filed.',
+            'Draft follow-up actions from the LRT3 delay review meeting. Group by workstream: EOT Claim | Acceleration Plan | Subcontractor Engagement | Client Communication | Cost Recovery. Include owner and deadline.',
+            'Were there any discussions about subcontractor performance impacting the LRT3 delay? Identify which subcontractors were mentioned and what contractual actions were proposed against them.'
           ]
         },
         {
@@ -4092,7 +4092,7 @@ window.HUB_DATA = {
           desc: 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
           prompts: [
             'Upload 14_Zava_Properties_Portfolio.xlsx and 12_Zava_Manufacturing_KPIs.xlsx to Copilot Notebook. Set instruction: "You are a construction contract specialist advising NusaBuild on the LRT3 EOT claim." Ask: Based on the project data and Malaysian construction contract norms (PAM 2018), what is the strongest and weakest element of our EOT claim? What additional evidence should we gather in the next 2 weeks to strengthen the claim?',
-            'Upload 12_Zava_Manufacturing_KPIs.xlsx. Ask: NusaBuild is considering an acceleration plan to recover 8 of the 14 delayed weeks. The plan involves adding 2 additional tower crane shifts per day (RM 85,000/week additional cost) and extending working hours to Sundays (15% labour premium). Calculate: (1) Total acceleration cost for 8 weeks, (2) Whether the acceleration saves more in avoided LD than it costs, (3) The break-even point — how many weeks of LD must be avoided to justify the acceleration cost.'
+            'NusaBuild is considering an acceleration plan to recover 8 of the 14 delayed weeks. The plan involves adding 2 additional tower crane shifts per day (RM 85,000/week additional cost) and extending working hours to Sundays (15% labour premium). Calculate: (1) Total acceleration cost for 8 weeks, (2) Whether the acceleration saves more in avoided LD than it costs, (3) The break-even point — how many weeks of LD must be avoided to justify the acceleration cost.'
           ]
         },
         {
@@ -4191,7 +4191,7 @@ window.HUB_DATA = {
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
             'Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst (use as financial data proxy). Ask: Model the KLIA2 expansion financial impact. Investment: MYR 2.8B over 4 years. Capacity expansion: from 45M pax per year to 60M pax. Aeronautical revenue per pax: MYR 52 (current). Calculate: (1) Revenue increase from additional 15M pax capacity at full utilisation, (2) Additional depreciation and financing cost from MYR 2.8B capex, (3) EBITDA impact — net of revenue gain and additional costs, (4) Return on invested capital (ROIC) at 70% and 85% utilisation of new capacity, (5) Payback period.',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx. Ask: Build a passenger revenue sensitivity model. X-axis: passenger volume (60M to 85M per year in 5M steps). Y-axis: aeronautical charge per pax (MYR 48, 52, 56, 60, 64 — from regulatory freeze to 23% increase). For each cell, calculate total aeronautical revenue. Highlight the cell matching our current position and the target revenue needed to fund the capex at our WACC of 7.8%.'
+            'Build a passenger revenue sensitivity model. X-axis: passenger volume (60M to 85M per year in 5M steps). Y-axis: aeronautical charge per pax (MYR 48, 52, 56, 60, 64 — from regulatory freeze to 23% increase). For each cell, calculate total aeronautical revenue. Highlight the cell matching our current position and the target revenue needed to fund the capex at our WACC of 7.8%.'
           ]
         },
         {
@@ -4200,9 +4200,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 01_Zava_Group_Financial_Performance.xlsx. Navigate to the revenue sheet. Ask Copilot: Build an airport revenue dashboard on a new sheet. Show monthly data for the past 12 months: (1) Passenger throughput (M pax), (2) Aeronautical revenue (RM M), (3) Non-aeronautical revenue — retail, F&B, car park (RM M), (4) Revenue per passenger (RM), (5) Passenger service charge collected (RM M). Calculate the non-aeronautical revenue as % of total — the target is 40%.',
-            'Ask Copilot: Build a MAVCOM regulatory submission financial model. Show: (1) Our current aeronautical charge per pax (RM 52), (2) Our total regulated cost base for FY2024, (3) The WACC calculation at 7.8%, (4) The revenue requirement to cover all costs and earn the WACC return, (5) The required charge per pax to meet the revenue requirement. Compare to the airline lobby position (freeze at RM 52) and our proposal (increase to RM 64). Show the gap.',
-            'Ask Copilot: Create an airline performance scorecard on a new sheet. For the top 20 airlines at KLIA/KLIA2, show: (1) Annual passenger volume, (2) On-time performance rate (%), (3) Average load factor (%), (4) Net PSC collected (RM M), (5) Any outstanding payment disputes. Sort by passenger volume. Highlight airlines with OTP below 80% in amber and outstanding payment disputes in red.'
+            'Using the revenue tab in this workbook, Build an airport revenue dashboard on a new sheet. Show monthly data for the past 12 months: (1) Passenger throughput (M pax), (2) Aeronautical revenue (RM M), (3) Non-aeronautical revenue — retail, F&B, car park (RM M), (4) Revenue per passenger (RM), (5) Passenger service charge collected (RM M). Calculate the non-aeronautical revenue as % of total — the target is 40%.',
+            'Build a MAVCOM regulatory submission financial model. Show: (1) Our current aeronautical charge per pax (RM 52), (2) Our total regulated cost base for FY2024, (3) The WACC calculation at 7.8%, (4) The revenue requirement to cover all costs and earn the WACC return, (5) The required charge per pax to meet the revenue requirement. Compare to the airline lobby position (freeze at RM 52) and our proposal (increase to RM 64). Show the gap.',
+            'Create an airline performance scorecard on a new sheet. For the top 20 airlines at KLIA/KLIA2, show: (1) Annual passenger volume, (2) On-time performance rate (%), (3) Average load factor (%), (4) Net PSC collected (RM M), (5) Any outstanding payment disputes. Sort by passenger volume. Highlight airlines with OTP below 80% in amber and outstanding payment disputes in red.'
           ]
         },
         {
@@ -4211,9 +4211,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 03_Zava_Group_Strategy_Framework.docx. Ask Copilot: Draft the MAVCOM regulatory submission for the aeronautical charge review. The submission should cover: (1) Business overview and FY2024 performance, (2) The MYR 2.8B KLIA2 expansion rationale — capacity, connectivity, and passenger experience, (3) The regulated cost base — RM 4.2B total assets, (4) WACC calculation and the required return, (5) The proposed aeronautical charge per pax for the next regulatory period (2026–2029), (6) Response to airline objections — service quality improvements justifying the increase. 15 pages, formal regulatory submission format.',
-            'Ask Copilot: Draft a stakeholder communication plan for the MAVCOM charge review process. Identify: (1) Key stakeholders — airlines, MAVCOM, Ministry of Transport, tourism associations, (2) Key messages for each stakeholder, (3) Communication channels and timeline, (4) How to address airline media campaigns opposing the charge increase. Format as a 3-page communication plan.',
-            'Ask Copilot: Write a KLIA2 expansion project brief for the Ministry of Transport\'s Cabinet presentation. Cover: (1) Current capacity constraint — 73.4M pax, terminal operating at 98% during peak hours, (2) Expansion scope — 15M pax additional capacity, international terminal extension, landside development, (3) Investment — MYR 2.8B, funding via government grant MYR 1.0B and own funds MYR 1.8B, (4) Timeline — completion by Q4 2028, (5) Economic impact — direct and induced, (6) Decision required: Cabinet approval for funding commitment.'
+            'Draft the MAVCOM regulatory submission for the aeronautical charge review. The submission should cover: (1) Business overview and FY2024 performance, (2) The MYR 2.8B KLIA2 expansion rationale — capacity, connectivity, and passenger experience, (3) The regulated cost base — RM 4.2B total assets, (4) WACC calculation and the required return, (5) The proposed aeronautical charge per pax for the next regulatory period (2026–2029), (6) Response to airline objections — service quality improvements justifying the increase. 15 pages, formal regulatory submission format.',
+            'Draft a stakeholder communication plan for the MAVCOM charge review process. Identify: (1) Key stakeholders — airlines, MAVCOM, Ministry of Transport, tourism associations, (2) Key messages for each stakeholder, (3) Communication channels and timeline, (4) How to address airline media campaigns opposing the charge increase. Format as a 3-page communication plan.',
+            'Write a KLIA2 expansion project brief for the Ministry of Transport\'s Cabinet presentation. Cover: (1) Current capacity constraint — 73.4M pax, terminal operating at 98% during peak hours, (2) Expansion scope — 15M pax additional capacity, international terminal extension, landside development, (3) Investment — MYR 2.8B, funding via government grant MYR 1.0B and own funds MYR 1.8B, (4) Timeline — completion by Q4 2028, (5) Economic impact — direct and induced, (6) Decision required: Cabinet approval for funding commitment.'
           ]
         },
         {
@@ -4222,9 +4222,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide MAVCOM regulatory submission presentation. Include: (1) MAHB business overview — 39 airports, 73.4M pax, (2) FY2024 financial performance, (3) KLIA2 expansion — scope, rationale, investment, (4) Regulated asset base — cost base justification, (5) WACC calculation — 7.8% and the regulated return requirement, (6) Proposed aeronautical charge increase — from RM 52 to RM 64 per pax, (7) Service quality commitments — OTP, passenger satisfaction, (8) Response to airline objections, (9) Comparable international airport charges, (10) Economic contribution of MAHB to Malaysia, (11) Sensitivity analysis, (12) Regulatory determination requested. Dark navy and blue colour scheme.',
-            'Ask Copilot: Create a passenger experience slide showing our key service quality investments in the KLIA2 expansion: new check-in hall, additional immigration lanes (immigration clearance reduced from 45 to 22 minutes), expanded retail and F&B, smart parking. Use a "Before and After 2028" visual format.',
-            'Ask Copilot: Create a competitive benchmarking slide showing aeronautical charges per passenger at 10 comparable international airports: Changi, Suvarnabhumi, NAIA, CTICC, Schiphol, Heathrow, Dubai, KLIA (current), KLIA (proposed). Show KLIA proposed charge is still 28% below the Asian regional average.'
+            'Create a 12-slide MAVCOM regulatory submission presentation. Include: (1) MAHB business overview — 39 airports, 73.4M pax, (2) FY2024 financial performance, (3) KLIA2 expansion — scope, rationale, investment, (4) Regulated asset base — cost base justification, (5) WACC calculation — 7.8% and the regulated return requirement, (6) Proposed aeronautical charge increase — from RM 52 to RM 64 per pax, (7) Service quality commitments — OTP, passenger satisfaction, (8) Response to airline objections, (9) Comparable international airport charges, (10) Economic contribution of MAHB to Malaysia, (11) Sensitivity analysis, (12) Regulatory determination requested. Dark navy and blue colour scheme.',
+            'Create a passenger experience slide showing our key service quality investments in the KLIA2 expansion: new check-in hall, additional immigration lanes (immigration clearance reduced from 45 to 22 minutes), expanded retail and F&B, smart parking. Use a "Before and After 2028" visual format.',
+            'Create a competitive benchmarking slide showing aeronautical charges per passenger at 10 comparable international airports: Changi, Suvarnabhumi, NAIA, CTICC, Schiphol, Heathrow, Dubai, KLIA (current), KLIA (proposed). Show KLIA proposed charge is still 28% below the Asian regional average.'
           ]
         },
         {
@@ -4233,9 +4233,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a letter to MAVCOM formally submitting the aeronautical charge review submission. The letter should: confirm the submission, highlight the 3 key points of our case, note our willingness to engage in the public consultation process, and request a bilateral meeting with MAVCOM commissioners before the final determination. Formal regulatory submission format.',
-            'Ask Copilot: Draft an email to the CEOs of the top 5 airlines at KLIA (by passenger volume) ahead of the MAVCOM charge review. The email should: acknowledge their concerns about the proposed charge increase, explain the investment rationale (KLIA2 expansion), offer a phased charge increase over 3 years rather than immediate, and propose a bilateral meeting to discuss the transition plan. Diplomatic but firm commercial tone.',
-            'Ask Copilot: Draft a press release response to a negative airline industry body media statement claiming our proposed charge increase will increase airfare by RM 18 per ticket and harm Malaysian tourism competitiveness. The response should: correct the claim (PSC is absorbed by airlines, not automatically passed to passengers), explain the investment rationale, note our charges remain below regional averages, and invite media to a briefing on the KLIA2 expansion.'
+            'Draft a letter to MAVCOM formally submitting the aeronautical charge review submission. The letter should: confirm the submission, highlight the 3 key points of our case, note our willingness to engage in the public consultation process, and request a bilateral meeting with MAVCOM commissioners before the final determination. Formal regulatory submission format.',
+            'Draft an email to the CEOs of the top 5 airlines at KLIA (by passenger volume) ahead of the MAVCOM charge review. The email should: acknowledge their concerns about the proposed charge increase, explain the investment rationale (KLIA2 expansion), offer a phased charge increase over 3 years rather than immediate, and propose a bilateral meeting to discuss the transition plan. Diplomatic but firm commercial tone.',
+            'Draft a press release response to a negative airline industry body media statement claiming our proposed charge increase will increase airfare by RM 18 per ticket and harm Malaysian tourism competitiveness. The response should: correct the claim (PSC is absorbed by airlines, not automatically passed to passengers), explain the investment rationale, note our charges remain below regional averages, and invite media to a briefing on the KLIA2 expansion.'
           ]
         },
         {
@@ -4244,9 +4244,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a regulatory or stakeholder meeting. Ask Copilot: Identify all MAVCOM regulatory issues discussed, the airlines\' objections, and the agreed response strategy. Create an action log for the regulatory submission team.',
-            'Ask Copilot: Draft follow-up actions from the aeronautical charge review strategy meeting. Group by workstream: Regulatory Submission | Airline Engagement | Media & Communications | Legal | Financial Modelling. Include owner and deadline.',
-            'Ask Copilot: Were there any internal concerns raised about the financial sustainability of the MYR 2.8B expansion if MAVCOM does not approve the charge increase? Summarise the risk and the contingency discussed.'
+            'Open an existing recorded Teams meeting recap from a regulatory or stakeholder meeting. Identify all MAVCOM regulatory issues discussed, the airlines\' objections, and the agreed response strategy. Create an action log for the regulatory submission team.',
+            'Draft follow-up actions from the aeronautical charge review strategy meeting. Group by workstream: Regulatory Submission | Airline Engagement | Media & Communications | Legal | Financial Modelling. Include owner and deadline.',
+            'Were there any internal concerns raised about the financial sustainability of the MYR 2.8B expansion if MAVCOM does not approve the charge increase? Summarise the risk and the contingency discussed.'
           ]
         },
         {
@@ -4354,8 +4354,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload RT_01_BrightMart_Group.xlsx to Analyst. Ask: Analyse the shrinkage data by store category (large hypermarket, supermarket, neighbourhood store) and by product category (fresh food, dry grocery, health & beauty, general merchandise). Which combination of store type and product category has the highest shrinkage rate? Create a heat map: store type on X-axis, product category on Y-axis, shrinkage rate in each cell. Identify the top 5 highest-shrinkage cells — these are our priority intervention areas.',
-            'Upload RT_01_BrightMart_Group.xlsx. Ask: Build a private label expansion ROI model. Current private label GMV: MYR 1.18B (28% of MYR 4.2B GMV). Target: MYR 1.43B (34% mix). Average private label gross margin: 42% vs national brand equivalent 28%. Calculate: (1) Additional GMV from increasing mix to 34%, (2) Gross margin uplift from shifting GMV from national brands to private label, (3) Required investment in private label development (product design, quality testing, packaging). Calculate payback period.'
+            'Analyse the shrinkage data by store category (large hypermarket, supermarket, neighbourhood store) and by product category (fresh food, dry grocery, health & beauty, general merchandise). Which combination of store type and product category has the highest shrinkage rate? Create a heat map: store type on X-axis, product category on Y-axis, shrinkage rate in each cell. Identify the top 5 highest-shrinkage cells — these are our priority intervention areas.',
+            'Build a private label expansion ROI model. Current private label GMV: MYR 1.18B (28% of MYR 4.2B GMV). Target: MYR 1.43B (34% mix). Average private label gross margin: 42% vs national brand equivalent 28%. Calculate: (1) Additional GMV from increasing mix to 34%, (2) Gross margin uplift from shifting GMV from national brands to private label, (3) Required investment in private label development (product design, quality testing, packaging). Calculate payback period.'
           ]
         },
         {
@@ -4364,9 +4364,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open RT_01_BrightMart_Group.xlsx. Navigate to the Store Performance sheet. Ask Copilot: Build a shrinkage tracker dashboard on a new sheet. For each of the 148 stores, show: (1) Store name and region, (2) Monthly GMV (RM M), (3) Shrinkage amount (RM M), (4) Shrinkage rate %, (5) Category contributing most to shrinkage, (6) Last security audit date. Highlight stores with shrinkage above 2.5% in red, 1.5–2.5% in amber, below 1.0% in green. Sort by shrinkage rate, highest first. Show top 10 worst stores.',
-            'Ask Copilot: Create a private label performance dashboard on a new sheet. For each private label category (bread & bakery, dairy, household cleaners, personal care, frozen food, snacks), show: (1) Current GMV (RM M), (2) % of category GMV, (3) Gross margin %, (4) YoY GMV growth, (5) Target mix %, (6) Gap to target (RM M). Calculate total uplift if all categories reach their target mix.',
-            'Ask Copilot: Build a fresh food expansion tracker for the 18 new stores being opened in FY2025. For each store, show: (1) Location and planned opening date, (2) Fresh food selling area (sq m), (3) Fresh food categories planned (produce, meat, seafood, bakery, deli), (4) Target daily fresh food sales (RM), (5) Supplier partnerships confirmed, (6) Cold chain infrastructure status. Flag any store where cold chain is not yet confirmed 30 days before opening.'
+            'Using the Store Performance tab in this workbook, Build a shrinkage tracker dashboard on a new sheet. For each of the 148 stores, show: (1) Store name and region, (2) Monthly GMV (RM M), (3) Shrinkage amount (RM M), (4) Shrinkage rate %, (5) Category contributing most to shrinkage, (6) Last security audit date. Highlight stores with shrinkage above 2.5% in red, 1.5–2.5% in amber, below 1.0% in green. Sort by shrinkage rate, highest first. Show top 10 worst stores.',
+            'Create a private label performance dashboard on a new sheet. For each private label category (bread & bakery, dairy, household cleaners, personal care, frozen food, snacks), show: (1) Current GMV (RM M), (2) % of category GMV, (3) Gross margin %, (4) YoY GMV growth, (5) Target mix %, (6) Gap to target (RM M). Calculate total uplift if all categories reach their target mix.',
+            'Build a fresh food expansion tracker for the 18 new stores being opened in FY2025. For each store, show: (1) Location and planned opening date, (2) Fresh food selling area (sq m), (3) Fresh food categories planned (produce, meat, seafood, bakery, deli), (4) Target daily fresh food sales (RM), (5) Supplier partnerships confirmed, (6) Cold chain infrastructure status. Flag any store where cold chain is not yet confirmed 30 days before opening.'
           ]
         },
         {
@@ -4375,9 +4375,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open RT_02_BrightMart_Strategy.docx. Ask Copilot: Draft a shrinkage reduction action plan document. Cover: (1) Executive summary — MYR 46M annual loss, target to halve shrinkage to 1.0% in 18 months, (2) Root cause analysis — theft (external and internal) 45%, fresh food spoilage 35%, administrative errors 20%, (3) Technology intervention — CCTV analytics at high-shrinkage stores (investment RM 12M), improved inventory cycle counting system, (4) Process improvements — staff accountability programme, fresh food markdown policy, (5) Supplier accountability — invoice reconciliation process, (6) 18-month implementation timeline. 8 pages, formal action plan format.',
-            'Ask Copilot: Draft a supplier joint business plan template for BrightMart\'s top 50 FMCG suppliers. The template should cover: (1) Annual volume commitment and growth target, (2) Promotional calendar — 12 months of planned promotions with BrightMart and supplier funding split, (3) New product launches, (4) Private label collaboration — for suppliers willing to co-manufacture BrightMart private label, (5) Supply chain reliability SLA — fill rate target 98.5%. Provide as a Word template.',
-            'Ask Copilot: Write a private label strategy document for the BrightMart Board. Cover: (1) Current private label performance — 28% mix, 42% margin vs national brand 28%, (2) Target — 34% mix by FY2026, (3) Expansion categories — bread, dairy, cleaning, frozen, (4) Private label development process — product brief, supplier qualification, quality testing, (5) Marketing strategy — shelf placement, own media promotion, (6) Financial impact — MYR XX gross profit improvement. 10 pages.'
+            'Draft a shrinkage reduction action plan document. Cover: (1) Executive summary — MYR 46M annual loss, target to halve shrinkage to 1.0% in 18 months, (2) Root cause analysis — theft (external and internal) 45%, fresh food spoilage 35%, administrative errors 20%, (3) Technology intervention — CCTV analytics at high-shrinkage stores (investment RM 12M), improved inventory cycle counting system, (4) Process improvements — staff accountability programme, fresh food markdown policy, (5) Supplier accountability — invoice reconciliation process, (6) 18-month implementation timeline. 8 pages, formal action plan format.',
+            'Draft a supplier joint business plan template for BrightMart\'s top 50 FMCG suppliers. The template should cover: (1) Annual volume commitment and growth target, (2) Promotional calendar — 12 months of planned promotions with BrightMart and supplier funding split, (3) New product launches, (4) Private label collaboration — for suppliers willing to co-manufacture BrightMart private label, (5) Supply chain reliability SLA — fill rate target 98.5%. Provide as a Word template.',
+            'Write a private label strategy document for the BrightMart Board. Cover: (1) Current private label performance — 28% mix, 42% margin vs national brand 28%, (2) Target — 34% mix by FY2026, (3) Expansion categories — bread, dairy, cleaning, frozen, (4) Private label development process — product brief, supplier qualification, quality testing, (5) Marketing strategy — shelf placement, own media promotion, (6) Financial impact — MYR XX gross profit improvement. 10 pages.'
           ]
         },
         {
@@ -4386,9 +4386,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide Board presentation for BrightMart. Include: (1) FY2025 snapshot — 148 stores, MYR 4.2B GMV, (2) Shrinkage crisis — MYR 46M loss, root cause, (3) Shrinkage reduction plan — technology and process, (4) Private label strategy — 28% to 34%, (5) Fresh food expansion — 18 new stores, (6) Digital transformation — loyalty app, online grocery, (7) Competitive response — vs Lotus\'s and Jaya Grocer, (8) 3-year financial outlook, (9) Key risks, (10) Board decisions. Green and white colour scheme.',
-            'Ask Copilot: Create a 3-slide private label pitch for a potential private label manufacturing partner. Slide 1: BrightMart\'s scale — 148 stores, MYR 4.2B GMV, 8M customer transactions/month. Slide 2: Our private label vision — 5 categories we want to launch, target volumes. Slide 3: Partnership model — quality specifications, volume commitment, co-investment in product development.',
-            'Ask Copilot: Create a competitor positioning slide showing BrightMart vs Lotus\'s, Giant, and Jaya Grocer on 4 dimensions: store count, private label %, price index (relative to market average), and fresh food quality score. Show as a spider/radar chart.'
+            'Create a 10-slide Board presentation for BrightMart. Include: (1) FY2025 snapshot — 148 stores, MYR 4.2B GMV, (2) Shrinkage crisis — MYR 46M loss, root cause, (3) Shrinkage reduction plan — technology and process, (4) Private label strategy — 28% to 34%, (5) Fresh food expansion — 18 new stores, (6) Digital transformation — loyalty app, online grocery, (7) Competitive response — vs Lotus\'s and Jaya Grocer, (8) 3-year financial outlook, (9) Key risks, (10) Board decisions. Green and white colour scheme.',
+            'Create a 3-slide private label pitch for a potential private label manufacturing partner. Slide 1: BrightMart\'s scale — 148 stores, MYR 4.2B GMV, 8M customer transactions/month. Slide 2: Our private label vision — 5 categories we want to launch, target volumes. Slide 3: Partnership model — quality specifications, volume commitment, co-investment in product development.',
+            'Create a competitor positioning slide showing BrightMart vs Lotus\'s, Giant, and Jaya Grocer on 4 dimensions: store count, private label %, price index (relative to market average), and fresh food quality score. Show as a spider/radar chart.'
           ]
         },
         {
@@ -4397,9 +4397,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft an email to all 148 Store Managers announcing the shrinkage reduction programme. The email should: state the current shrinkage rate and the MYR impact, announce the 3 key interventions (CCTV analytics upgrade, new inventory cycle counting requirement, staff reporting protocol), set the 12-month target of 1.5% shrinkage, and motivate managers by connecting shrinkage reduction to their annual bonus. Energetic, performance-focused tone.',
-            'Ask Copilot: Draft a letter to our top 10 FMCG suppliers inviting them to the annual joint business planning workshop. The letter should: confirm the workshop date (3 days), list the agenda topics (promotional calendar, volume targets, private label collaboration), ask suppliers to bring their category sales data, and confirm that fill rate performance data will be reviewed as part of the supplier scorecard. Professional commercial tone.',
-            'Ask Copilot: Draft a press release announcing the opening of BrightMart\'s expanded fresh food concept at 3 pilot stores. Announce: the enhanced fresh produce section (50% larger), new in-store bakery, halal-certified fresh meat counter, and same-day seafood delivery. Quote the CEO on BrightMart\'s fresh food commitment.'
+            'Draft an email to all 148 Store Managers announcing the shrinkage reduction programme. The email should: state the current shrinkage rate and the MYR impact, announce the 3 key interventions (CCTV analytics upgrade, new inventory cycle counting requirement, staff reporting protocol), set the 12-month target of 1.5% shrinkage, and motivate managers by connecting shrinkage reduction to their annual bonus. Energetic, performance-focused tone.',
+            'Draft a letter to our top 10 FMCG suppliers inviting them to the annual joint business planning workshop. The letter should: confirm the workshop date (3 days), list the agenda topics (promotional calendar, volume targets, private label collaboration), ask suppliers to bring their category sales data, and confirm that fill rate performance data will be reviewed as part of the supplier scorecard. Professional commercial tone.',
+            'Draft a press release announcing the opening of BrightMart\'s expanded fresh food concept at 3 pilot stores. Announce: the enhanced fresh produce section (50% larger), new in-store bakery, halal-certified fresh meat counter, and same-day seafood delivery. Quote the CEO on BrightMart\'s fresh food commitment.'
           ]
         },
         {
@@ -4408,9 +4408,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a retail operations or commercial meeting. Ask Copilot: Identify all shrinkage-related discussions, store performance concerns, and private label review points. Create an action list for the operations and commercial teams.',
-            'Ask Copilot: Draft the weekly commercial update for the BrightMart leadership team. Structure: (1) GMV by region vs target, (2) Shrinkage top 5 worst-performing stores this week, (3) Private label GMV vs target, (4) Fresh food expansion status, (5) Top 3 supplier issues.',
-            'Ask Copilot: From this meeting, which store regions are consistently underperforming on shrinkage and what specific causes have been identified? Has the security team been engaged and what are their proposed interventions?'
+            'Open an existing recorded Teams meeting recap from a retail operations or commercial meeting. Identify all shrinkage-related discussions, store performance concerns, and private label review points. Create an action list for the operations and commercial teams.',
+            'Draft the weekly commercial update for the BrightMart leadership team. Structure: (1) GMV by region vs target, (2) Shrinkage top 5 worst-performing stores this week, (3) Private label GMV vs target, (4) Fresh food expansion status, (5) Top 3 supplier issues.',
+            'From this meeting, which store regions are consistently underperforming on shrinkage and what specific causes have been identified? Has the security team been engaged and what are their proposed interventions?'
           ]
         },
         {
@@ -4519,7 +4519,7 @@ window.HUB_DATA = {
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
             'Upload TC_01_ClearWave_Communications.xlsx to Analyst (use as media company data proxy). Ask: Build a subscriber lifetime value (LTV) model for PrismPlay. Inputs: 2.1M subscribers, monthly ARPU MYR 18, 28% annual churn rate. Calculate: (1) Average subscriber lifetime in months, (2) LTV per subscriber, (3) If churn reduces to 20%, what is the LTV improvement? (4) If ARPU increases to MYR 22, what is the LTV improvement? (5) What is the total subscriber value at risk from the current 28% churn vs industry benchmark 18%? Show as a scenario comparison table.',
-            'Upload TC_01_ClearWave_Communications.xlsx. Ask: Analyse the content library monetisation opportunity. 340 hours of content IP. Estimate potential revenue from 5 channels: (1) Licensing to international OTT (assume USD 8,000 per hour), (2) YouTube channel monetisation (assume 2M views/month at USD 3 CPM), (3) Format sales — 5 show formats at USD 180,000 per format, (4) Domestic streaming rights sale to competitor, (5) Content repackaging for Shorts (assume 40% of content suitable). Calculate total addressable revenue from content library monetisation.'
+            'Analyse the content library monetisation opportunity. 340 hours of content IP. Estimate potential revenue from 5 channels: (1) Licensing to international OTT (assume USD 8,000 per hour), (2) YouTube channel monetisation (assume 2M views/month at USD 3 CPM), (3) Format sales — 5 show formats at USD 180,000 per format, (4) Domestic streaming rights sale to competitor, (5) Content repackaging for Shorts (assume 40% of content suitable). Calculate total addressable revenue from content library monetisation.'
           ]
         },
         {
@@ -4528,9 +4528,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open TC_01_ClearWave_Communications.xlsx. Navigate to the Digital Performance sheet. Ask Copilot: Build a PrismPlay subscriber dashboard on a new sheet. Show monthly data for the past 12 months: (1) New subscriber additions, (2) Churned subscribers, (3) Net subscriber change, (4) Total subscribers at month end, (5) Monthly churn rate %, (6) ARPU (MYR), (7) Monthly recurring revenue (MYR M). Add a trendline. Highlight months where churn exceeded 2.5% in red.',
-            'Ask Copilot: Create a content library value dashboard on a new sheet. For each of the top 50 content titles by estimated market value, show: (1) Title, (2) Genre, (3) Production year, (4) Duration (hours), (5) Language, (6) Awards/recognition, (7) Historical viewing data available (Y/N), (8) Rights status (owned/partial/expired), (9) Estimated streaming license value (RM), (10) Monetisation status (Unexploited/In Progress/Monetised). Calculate total unexploited library value.',
-            'Ask Copilot: Build a digital pivot investment plan on a new sheet. For each digital investment initiative (PrismPlay content spend increase, app UX upgrade, AI personalisation engine, creator partnership programme, live sports streaming rights), show: investment required (RM M), expected subscriber impact (net new or churn reduction), expected ARPU impact, Year 1 and Year 3 revenue contribution, and ROI at 3 years. Sort by Year 3 ROI, highest first.'
+            'Using the Digital Performance tab in this workbook, Build a PrismPlay subscriber dashboard on a new sheet. Show monthly data for the past 12 months: (1) New subscriber additions, (2) Churned subscribers, (3) Net subscriber change, (4) Total subscribers at month end, (5) Monthly churn rate %, (6) ARPU (MYR), (7) Monthly recurring revenue (MYR M). Add a trendline. Highlight months where churn exceeded 2.5% in red.',
+            'Create a content library value dashboard on a new sheet. For each of the top 50 content titles by estimated market value, show: (1) Title, (2) Genre, (3) Production year, (4) Duration (hours), (5) Language, (6) Awards/recognition, (7) Historical viewing data available (Y/N), (8) Rights status (owned/partial/expired), (9) Estimated streaming license value (RM), (10) Monetisation status (Unexploited/In Progress/Monetised). Calculate total unexploited library value.',
+            'Build a digital pivot investment plan on a new sheet. For each digital investment initiative (PrismPlay content spend increase, app UX upgrade, AI personalisation engine, creator partnership programme, live sports streaming rights), show: investment required (RM M), expected subscriber impact (net new or churn reduction), expected ARPU impact, Year 1 and Year 3 revenue contribution, and ROI at 3 years. Sort by Year 3 ROI, highest first.'
           ]
         },
         {
@@ -4539,9 +4539,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open TC_02_ClearWave_Strategy.docx. Ask Copilot: Draft a 10-page digital transformation strategy for Prism Media Group. Cover: (1) Market context — linear TV decline, OTT growth, Malaysian consumer behaviour, (2) PrismPlay growth strategy — subscriber target 5M by FY2027, churn reduction to 18%, ARPU to MYR 22, (3) Content strategy — local content investment, premium originals, live sports, reality formats, (4) Content library monetisation — 3-year plan for the 340 hours of IP, (5) Advertising transformation — programmatic digital, addressable TV, branded content, (6) Technology investment — AI personalisation, recommendation engine, data analytics, (7) Financial projections — 3-year revenue and EBITDA. Formal strategy document format.',
-            'Ask Copilot: Draft a content licensing proposal to a major regional streaming platform (e.g., WeTV or iQIYI). The proposal should: introduce Prism Media Group and our content credentials, highlight our top 10 content titles available for licensing, describe our content quality (HD, with English/Chinese subtitles), propose a licensing package of 200 hours at USD 8,000 per hour plus a first-look agreement for new productions. Professional content distribution format.',
-            'Ask Copilot: Write a creator partnership programme brief for PrismPlay\'s new creator economy initiative. The programme invites Malaysian content creators with 100K+ followers to produce short-form content for PrismPlay. Cover: (1) Programme overview and goals, (2) Creator eligibility criteria, (3) Revenue share model (60% creator, 40% PrismPlay), (4) Content guidelines — content types, language, duration, (5) Application process. Format as an attractive creator pitch document.'
+            'Draft a 10-page digital transformation strategy for Prism Media Group. Cover: (1) Market context — linear TV decline, OTT growth, Malaysian consumer behaviour, (2) PrismPlay growth strategy — subscriber target 5M by FY2027, churn reduction to 18%, ARPU to MYR 22, (3) Content strategy — local content investment, premium originals, live sports, reality formats, (4) Content library monetisation — 3-year plan for the 340 hours of IP, (5) Advertising transformation — programmatic digital, addressable TV, branded content, (6) Technology investment — AI personalisation, recommendation engine, data analytics, (7) Financial projections — 3-year revenue and EBITDA. Formal strategy document format.',
+            'Draft a content licensing proposal to a major regional streaming platform (e.g., WeTV or iQIYI). The proposal should: introduce Prism Media Group and our content credentials, highlight our top 10 content titles available for licensing, describe our content quality (HD, with English/Chinese subtitles), propose a licensing package of 200 hours at USD 8,000 per hour plus a first-look agreement for new productions. Professional content distribution format.',
+            'Write a creator partnership programme brief for PrismPlay\'s new creator economy initiative. The programme invites Malaysian content creators with 100K+ followers to produce short-form content for PrismPlay. Cover: (1) Programme overview and goals, (2) Creator eligibility criteria, (3) Revenue share model (60% creator, 40% PrismPlay), (4) Content guidelines — content types, language, duration, (5) Application process. Format as an attractive creator pitch document.'
           ]
         },
         {
@@ -4550,9 +4550,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide strategy presentation for the Prism Media Group Board. Include: (1) The burning platform — linear TV audience -34%, (2) PrismPlay performance — 2.1M subscribers, 28% churn, (3) Market opportunity — 5M subscriber target, (4) Content strategy — local originals, live sports, creator economy, (5) Content library monetisation — 340 hours, RM XX addressable value, (6) Technology investment — AI personalisation, (7) Advertising transformation, (8) Digital organisation restructuring, (9) 3-year financial projections, (10) Investment required — RM XX, (11) Key risks, (12) Board decisions. Purple and white colour scheme.',
-            'Ask Copilot: Create a 3-slide churn reduction pitch for the PrismPlay product team. Slide 1: Current churn vs benchmark — 28% vs 18% — and the revenue impact (MYR XX annualised loss). Slide 2: The 3 root causes of churn based on exit surveys — content, price, UX. Slide 3: The 3 targeted interventions and their expected churn reduction impact.',
-            'Ask Copilot: Create a content library opportunity slide — "Our Hidden Asset". Visual: 340 hours of content IP shown as stacked bars by genre. Table showing: monetisation channel, addressable revenue, time to revenue. Total library value estimate at top right. Key message: "We are sitting on RM XX of unexploited value."'
+            'Create a 12-slide strategy presentation for the Prism Media Group Board. Include: (1) The burning platform — linear TV audience -34%, (2) PrismPlay performance — 2.1M subscribers, 28% churn, (3) Market opportunity — 5M subscriber target, (4) Content strategy — local originals, live sports, creator economy, (5) Content library monetisation — 340 hours, RM XX addressable value, (6) Technology investment — AI personalisation, (7) Advertising transformation, (8) Digital organisation restructuring, (9) 3-year financial projections, (10) Investment required — RM XX, (11) Key risks, (12) Board decisions. Purple and white colour scheme.',
+            'Create a 3-slide churn reduction pitch for the PrismPlay product team. Slide 1: Current churn vs benchmark — 28% vs 18% — and the revenue impact (MYR XX annualised loss). Slide 2: The 3 root causes of churn based on exit surveys — content, price, UX. Slide 3: The 3 targeted interventions and their expected churn reduction impact.',
+            'Create a content library opportunity slide — "Our Hidden Asset". Visual: 340 hours of content IP shown as stacked bars by genre. Table showing: monetisation channel, addressable revenue, time to revenue. Total library value estimate at top right. Key message: "We are sitting on RM XX of unexploited value."'
           ]
         },
         {
@@ -4561,9 +4561,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft an email to the CEOs of WeTV (Tencent) and iQIYI proposing a content licensing partnership for Prism Media Group\'s library. The email should: introduce our 340-hour library, highlight our top 5 drama and reality formats, propose a content preview session at their regional offices, and note our interest in a co-production agreement for new Malaysian content targeting pan-ASEAN audiences.',
-            'Ask Copilot: Draft an email to PrismPlay\'s top 200 subscribers who have been with the platform for over 24 months and have not engaged in the last 30 days. The email should: acknowledge their loyalty, offer a 2-month plan upgrade at no extra cost, highlight 3 new content titles matching their viewing history, and include a personalised "We miss you" message. Warm, personalised tone.',
-            'Ask Copilot: Draft a press release announcing Prism Media Group\'s digital pivot strategy. Announce: the 5M PrismPlay subscriber target by FY2027, the RM 180M content investment programme for original local productions, the creator partnership programme launch, and the content library international licensing initiative. Quote the CEO and the Head of Digital.'
+            'Draft an email to the CEOs of WeTV (Tencent) and iQIYI proposing a content licensing partnership for Prism Media Group\'s library. The email should: introduce our 340-hour library, highlight our top 5 drama and reality formats, propose a content preview session at their regional offices, and note our interest in a co-production agreement for new Malaysian content targeting pan-ASEAN audiences.',
+            'Draft an email to PrismPlay\'s top 200 subscribers who have been with the platform for over 24 months and have not engaged in the last 30 days. The email should: acknowledge their loyalty, offer a 2-month plan upgrade at no extra cost, highlight 3 new content titles matching their viewing history, and include a personalised "We miss you" message. Warm, personalised tone.',
+            'Draft a press release announcing Prism Media Group\'s digital pivot strategy. Announce: the 5M PrismPlay subscriber target by FY2027, the RM 180M content investment programme for original local productions, the creator partnership programme launch, and the content library international licensing initiative. Quote the CEO and the Head of Digital.'
           ]
         },
         {
@@ -4572,9 +4572,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from an editorial, content, or strategy meeting. Ask Copilot: Identify all content performance discussions, churn-related concerns, and digital strategy action items. Flag any decisions about content investment or platform development.',
-            'Ask Copilot: Draft follow-up actions from the PrismPlay churn reduction taskforce meeting. Group by workstream: Content Acquisition | UX & Product | Pricing & Promotions | Personalisation & AI | Customer Success. Include owner and deadline.',
-            'Ask Copilot: Based on this meeting, what specific content genres are being proposed for the local originals programme? Who are the production partners being considered and what is the indicative budget per episode?'
+            'Open an existing recorded Teams meeting recap from an editorial, content, or strategy meeting. Identify all content performance discussions, churn-related concerns, and digital strategy action items. Flag any decisions about content investment or platform development.',
+            'Draft follow-up actions from the PrismPlay churn reduction taskforce meeting. Group by workstream: Content Acquisition | UX & Product | Pricing & Promotions | Personalisation & AI | Customer Success. Include owner and deadline.',
+            'Based on this meeting, what specific content genres are being proposed for the local originals programme? Who are the production partners being considered and what is the indicative budget per episode?'
           ]
         },
         {
@@ -4682,8 +4682,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload GLC_01_Danamas_Capital.xlsx to Analyst. Ask: Analyse the MYR 48.2B portfolio across 34 investee companies. Segment by: (1) Sector (financial services, infrastructure, plantation, manufacturing, utilities), (2) Ownership stake (majority >50%, strategic 20-50%, minority <20%), (3) Performance (outperforming vs underperforming vs turnaround). Create a portfolio matrix: X-axis = commercial return (ROCE vs benchmark), Y-axis = strategic importance (development impact score). Place all 34 investees. Identify the 3 quadrant "harvest" candidates (high return, low strategic importance) and the 3 "transform or exit" candidates (low return, low strategic importance).',
-            'Upload GLC_01_Danamas_Capital.xlsx. Ask: Build a portfolio return attribution analysis. For the MYR 48.2B AUM: (1) Total return for FY2024 — dividends + capital appreciation, (2) Return by sector and by ownership stake tier, (3) Compare total portfolio return vs the FBM KLCI benchmark and a pure commercial return benchmark (MSCI Malaysia), (4) Identify the 5 investees contributing most to total return and the 5 dragging total return. Calculate the incremental AUM that could be created if the 5 worst performers improved to median portfolio return.'
+            'Analyse the MYR 48.2B portfolio across 34 investee companies. Segment by: (1) Sector (financial services, infrastructure, plantation, manufacturing, utilities), (2) Ownership stake (majority >50%, strategic 20-50%, minority <20%), (3) Performance (outperforming vs underperforming vs turnaround). Create a portfolio matrix: X-axis = commercial return (ROCE vs benchmark), Y-axis = strategic importance (development impact score). Place all 34 investees. Identify the 3 quadrant "harvest" candidates (high return, low strategic importance) and the 3 "transform or exit" candidates (low return, low strategic importance).',
+            'Build a portfolio return attribution analysis. For the MYR 48.2B AUM: (1) Total return for FY2024 — dividends + capital appreciation, (2) Return by sector and by ownership stake tier, (3) Compare total portfolio return vs the FBM KLCI benchmark and a pure commercial return benchmark (MSCI Malaysia), (4) Identify the 5 investees contributing most to total return and the 5 dragging total return. Calculate the incremental AUM that could be created if the 5 worst performers improved to median portfolio return.'
           ]
         },
         {
@@ -4692,9 +4692,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open GLC_01_Danamas_Capital.xlsx. Navigate to the Portfolio sheet. Ask Copilot: Build a portfolio health dashboard on a new sheet. For each of the 34 investee companies, show: (1) Company name and sector, (2) Danamas ownership % and book value (MYR M), (3) Market value (MYR M), (4) ROCE %, (5) EBITDA margin %, (6) Dividend received (MYR M), (7) Performance status (Outperform / In-line / Underperform / Turnaround Required). Highlight Underperform in amber and Turnaround Required in red. Total column for portfolio-level aggregates.',
-            'Ask Copilot: Create a turnaround performance scorecard for the 3 underperforming investees. For each, show: (1) Original investment value, (2) Current market value, (3) Total return since investment vs FBM KLCI benchmark, (4) Key financial distress indicators (leverage, interest coverage, cash burn), (5) Previous turnaround actions taken (Board changes, new CEO, asset sales), (6) Current turnaround plan status. Apply RAG status.',
-            'Ask Copilot: Build an ESG portfolio score dashboard. For each of the 34 investees, show: (1) Bursa Malaysia sustainability rating, (2) GHG Scope 1 intensity, (3) Women on Board %, (4) Anti-corruption training completion %, (5) MSCI ESG rating if available. Calculate Danamas\'s weighted average ESG score. Highlight companies below the portfolio ESG target.'
+            'Using the Portfolio tab in this workbook, Build a portfolio health dashboard on a new sheet. For each of the 34 investee companies, show: (1) Company name and sector, (2) Danamas ownership % and book value (MYR M), (3) Market value (MYR M), (4) ROCE %, (5) EBITDA margin %, (6) Dividend received (MYR M), (7) Performance status (Outperform / In-line / Underperform / Turnaround Required). Highlight Underperform in amber and Turnaround Required in red. Total column for portfolio-level aggregates.',
+            'Create a turnaround performance scorecard for the 3 underperforming investees. For each, show: (1) Original investment value, (2) Current market value, (3) Total return since investment vs FBM KLCI benchmark, (4) Key financial distress indicators (leverage, interest coverage, cash burn), (5) Previous turnaround actions taken (Board changes, new CEO, asset sales), (6) Current turnaround plan status. Apply RAG status.',
+            'Build an ESG portfolio score dashboard. For each of the 34 investees, show: (1) Bursa Malaysia sustainability rating, (2) GHG Scope 1 intensity, (3) Women on Board %, (4) Anti-corruption training completion %, (5) MSCI ESG rating if available. Calculate Danamas\'s weighted average ESG score. Highlight companies below the portfolio ESG target.'
           ]
         },
         {
@@ -4703,9 +4703,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open GLC_02_Danamas_Strategy.docx. Ask Copilot: Draft a 10-page investment mandate review document for the Minister of Finance. Cover: (1) Executive summary — Danamas AUM, portfolio composition, FY2024 return, (2) Current mandate ambiguity — the tension between commercial and developmental objectives, (3) Proposed hybrid mandate framework — 60% commercial, 40% developmental, (4) Portfolio implications — which assets to grow, hold, or divest under the new mandate, (5) Governance enhancements — Board composition, investment committee charter, (6) Performance metrics — commercial return target (KLCI+3%), developmental impact metrics, (7) 5-year strategic plan. Formal ministerial briefing format.',
-            'Ask Copilot: Draft an active ownership engagement letter to the Board Chairman of one underperforming investee company. As the major shareholder (43% stake), Danamas is formally requiring: (1) A 100-day turnaround plan within 6 weeks, (2) An independent business review by a credible advisory firm, (3) Monthly performance reporting to Danamas, (4) Specific improvements in 4 financial KPIs within 12 months. The letter should be firm but respectful of the Board\'s governance role. Reference the Putrajaya GLC governance guidelines.',
-            'Ask Copilot: Write a chapter for Danamas Capital\'s annual report — "Active Ownership and Developmental Impact in FY2024." Cover: (1) Portfolio value creation summary — total return MYR XX, (2) 3 active engagement successes — turnarounds, Board improvements, sustainability upgrades, (3) Developmental impact — jobs created, infrastructure enabled, Bumiputera economic participation, (4) ESG integration progress — portfolio weighted ESG score improvement. GRI-aligned format.'
+            'Draft a 10-page investment mandate review document for the Minister of Finance. Cover: (1) Executive summary — Danamas AUM, portfolio composition, FY2024 return, (2) Current mandate ambiguity — the tension between commercial and developmental objectives, (3) Proposed hybrid mandate framework — 60% commercial, 40% developmental, (4) Portfolio implications — which assets to grow, hold, or divest under the new mandate, (5) Governance enhancements — Board composition, investment committee charter, (6) Performance metrics — commercial return target (KLCI+3%), developmental impact metrics, (7) 5-year strategic plan. Formal ministerial briefing format.',
+            'Draft an active ownership engagement letter to the Board Chairman of one underperforming investee company. As the major shareholder (43% stake), Danamas is formally requiring: (1) A 100-day turnaround plan within 6 weeks, (2) An independent business review by a credible advisory firm, (3) Monthly performance reporting to Danamas, (4) Specific improvements in 4 financial KPIs within 12 months. The letter should be firm but respectful of the Board\'s governance role. Reference the Putrajaya GLC governance guidelines.',
+            'Write a chapter for Danamas Capital\'s annual report — "Active Ownership and Developmental Impact in FY2024." Cover: (1) Portfolio value creation summary — total return MYR XX, (2) 3 active engagement successes — turnarounds, Board improvements, sustainability upgrades, (3) Developmental impact — jobs created, infrastructure enabled, Bumiputera economic participation, (4) ESG integration progress — portfolio weighted ESG score improvement. GRI-aligned format.'
           ]
         },
         {
@@ -4714,9 +4714,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide Minister of Finance briefing on Danamas Capital\'s mandate review. Include: (1) Danamas overview — MYR 48.2B AUM, 34 investees, (2) FY2024 portfolio performance vs benchmark, (3) Current mandate — tensions between commercial and developmental, (4) Temasek vs Khazanah model comparison, (5) Proposed hybrid mandate framework, (6) Portfolio segmentation — grow, hold, divest, (7) The 3 underperforming investees — turnaround plans, (8) ESG integration — portfolio sustainability score, (9) Governance enhancement proposal, (10) 5-year AUM and return targets, (11) Key risks, (12) Ministerial decisions required. Dark navy and gold colour scheme.',
-            'Ask Copilot: Create a 3-slide portfolio health summary for the Danamas Board quarterly review. Slide 1: Portfolio overview — total AUM, weighted return, vs benchmark. Slide 2: Top 5 performers and bottom 5 performers with key metrics. Slide 3: Turnaround progress on the 3 underperforming investees — RAG status for each KPI in the turnaround plan.',
-            'Ask Copilot: Create a 2-slide developmental impact summary. Slide 1: Quantified impact — jobs created, Bumiputera economic participation %, infrastructure projects enabled, SME linkages generated. Slide 2: ESG portfolio evolution — portfolio average ESG score over 5 years vs target.'
+            'Create a 12-slide Minister of Finance briefing on Danamas Capital\'s mandate review. Include: (1) Danamas overview — MYR 48.2B AUM, 34 investees, (2) FY2024 portfolio performance vs benchmark, (3) Current mandate — tensions between commercial and developmental, (4) Temasek vs Khazanah model comparison, (5) Proposed hybrid mandate framework, (6) Portfolio segmentation — grow, hold, divest, (7) The 3 underperforming investees — turnaround plans, (8) ESG integration — portfolio sustainability score, (9) Governance enhancement proposal, (10) 5-year AUM and return targets, (11) Key risks, (12) Ministerial decisions required. Dark navy and gold colour scheme.',
+            'Create a 3-slide portfolio health summary for the Danamas Board quarterly review. Slide 1: Portfolio overview — total AUM, weighted return, vs benchmark. Slide 2: Top 5 performers and bottom 5 performers with key metrics. Slide 3: Turnaround progress on the 3 underperforming investees — RAG status for each KPI in the turnaround plan.',
+            'Create a 2-slide developmental impact summary. Slide 1: Quantified impact — jobs created, Bumiputera economic participation %, infrastructure projects enabled, SME linkages generated. Slide 2: ESG portfolio evolution — portfolio average ESG score over 5 years vs target.'
           ]
         },
         {
@@ -4725,9 +4725,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft an email from the Danamas CEO to the 34 investee company CEOs announcing the new portfolio performance reporting requirements under the refreshed mandate. The email should: state the new quarterly reporting format, list the 12 KPIs now required, note that ESG reporting will be mandatory from Q2 FY2026, and invite all CEOs to the annual Danamas Investee CEO Forum in 6 weeks. Professional but authoritative GLC investor tone.',
-            'Ask Copilot: Draft a letter to the Minister of Finance formally submitting the Danamas mandate review document. The letter should: summarise the 3 key recommendations (hybrid mandate, portfolio segmentation, governance enhancements), request a bilateral meeting to discuss the ministerial decisions, and note the timeline for implementation. Formal government correspondence format.',
-            'Ask Copilot: Draft an email to the Chairman and CEO of the most underperforming investee company requesting an urgent meeting within 7 days. The email should signal clearly that Danamas is reviewing its options as the 43% shareholder — including escalation to a formal active ownership intervention. Firm but diplomatically worded.'
+            'Draft an email from the Danamas CEO to the 34 investee company CEOs announcing the new portfolio performance reporting requirements under the refreshed mandate. The email should: state the new quarterly reporting format, list the 12 KPIs now required, note that ESG reporting will be mandatory from Q2 FY2026, and invite all CEOs to the annual Danamas Investee CEO Forum in 6 weeks. Professional but authoritative GLC investor tone.',
+            'Draft a letter to the Minister of Finance formally submitting the Danamas mandate review document. The letter should: summarise the 3 key recommendations (hybrid mandate, portfolio segmentation, governance enhancements), request a bilateral meeting to discuss the ministerial decisions, and note the timeline for implementation. Formal government correspondence format.',
+            'Draft an email to the Chairman and CEO of the most underperforming investee company requesting an urgent meeting within 7 days. The email should signal clearly that Danamas is reviewing its options as the 43% shareholder — including escalation to a formal active ownership intervention. Firm but diplomatically worded.'
           ]
         },
         {
@@ -4736,9 +4736,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from an investment committee or portfolio review meeting. Ask Copilot: Identify all investee performance discussions — which companies were reviewed, what concerns were raised, and what decisions or escalations were approved. Create an action tracker for the investment management team.',
-            'Ask Copilot: Draft an investment committee follow-up memo on the turnaround status of the 3 underperforming investees. For each, summarise: current financial status, turnaround actions in progress, any Board changes approved, and the next key milestone.',
-            'Ask Copilot: Were there any discussions about portfolio divestment candidates? Which investees are being considered for divestment and what is the rationale (strategic fit, return, ESG) for each?'
+            'Open an existing recorded Teams meeting recap from an investment committee or portfolio review meeting. Identify all investee performance discussions — which companies were reviewed, what concerns were raised, and what decisions or escalations were approved. Create an action tracker for the investment management team.',
+            'Draft an investment committee follow-up memo on the turnaround status of the 3 underperforming investees. For each, summarise: current financial status, turnaround actions in progress, any Board changes approved, and the next key milestone.',
+            'Were there any discussions about portfolio divestment candidates? Which investees are being considered for divestment and what is the rationale (strategic fit, return, ESG) for each?'
           ]
         },
         {
@@ -4857,8 +4857,8 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             'Open BNK_02_Meridian_Bank_Strategy.docx in Word and create a companion Excel workbook. Ask Copilot to create: A supervisory monitoring dashboard on Sheet 1. For 18 licensed institutions, show columns: Institution Name | Tier | CET1 Ratio | Tier 1 Capital | Total Capital Ratio | NPL % by segment | LCR | NSFR | Supervisory Status (Normal / Enhanced Monitoring / Corrective Action / Statutory Management) | Action Due Date. Apply conditional formatting: green = normal, amber = enhanced monitoring, red = corrective action or statutory.',
-            'Ask Copilot: Create a digital bank operational review scorecard on Sheet 2. For each of the 5 digital banks, show 15 post-licence milestones: Core banking system live (Y/N), BNM supervisory reporting system connected (Y/N), AML/CFT framework operational (Y/N), Customer onboarding live (Y/N), etc. Calculate % completion. Highlight digital banks below 70% completion — flag as "Supervisory Concern".',
-            'Ask Copilot: Build a systemic risk indicator dashboard on Sheet 3. Track 10 early warning indicators monthly for the past 24 months: (1) System NPL %, (2) Household debt to GDP %, (3) Bank capital buffers above minimum, (4) FX reserves adequacy (months of import cover), (5) Corporate leverage (net debt/EBITDA), (6) Property price index, (7) MYR exchange rate volatility, (8) Credit growth rate %, (9) Non-bank credit growth, (10) Cross-border capital flow volatility. Show trend charts for each.'
+            'Create a digital bank operational review scorecard on Sheet 2. For each of the 5 digital banks, show 15 post-licence milestones: Core banking system live (Y/N), BNM supervisory reporting system connected (Y/N), AML/CFT framework operational (Y/N), Customer onboarding live (Y/N), etc. Calculate % completion. Highlight digital banks below 70% completion — flag as "Supervisory Concern".',
+            'Build a systemic risk indicator dashboard on Sheet 3. Track 10 early warning indicators monthly for the past 24 months: (1) System NPL %, (2) Household debt to GDP %, (3) Bank capital buffers above minimum, (4) FX reserves adequacy (months of import cover), (5) Corporate leverage (net debt/EBITDA), (6) Property price index, (7) MYR exchange rate volatility, (8) Credit growth rate %, (9) Non-bank credit growth, (10) Cross-border capital flow volatility. Show trend charts for each.'
           ]
         },
         {
@@ -4867,9 +4867,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_06_BNM_Regulatory_Correspondence.docx. Ask Copilot: Draft the systemic risk report for the Board of Governors. Structure: (1) Executive Summary — the 3 key systemic risks in the current environment, (2) Banking System Overview — capital adequacy, liquidity, NPL by segment, (3) NPL Deep Dive — personal loan segment breach, 3 institutions at risk, supervisory actions taken, (4) Digital Banking Operational Review — 5 banks, milestone completion status, (5) External Risks — global monetary tightening, US-China trade risks, energy price volatility, (6) Early Warning Dashboard — 10 indicators, current reading vs threshold, (7) Board Decisions Required — approve Enhanced Monitoring for 2 institutions, approve capital adequacy waiver for digital bank X. 20 pages, formal central bank report format.',
-            'Ask Copilot: Draft the Enhanced Monitoring notice to Institution A (the institution with 21.7% personal loan NPL). The notice should: state the supervisory concern under IFSA 2013 Section 68, list the 6 specific remediation actions required, set a 90-day timeline for the Corrective Action Plan submission, note that failure to submit will trigger Statutory Management review, and require weekly reporting to the supervisory division. Formal central bank supervisory notice format.',
-            'Ask Copilot: Write a public statement on the system-wide NPL situation for BNM\'s website. The statement should: acknowledge the personal loan NPL trend, reassure the public that the banking system remains sound with strong capital buffers (CET1 14.2% system average), note the supervisory actions being taken, and remind consumers of responsible borrowing. 2 paragraphs, measured central bank communication style.'
+            'Draft the systemic risk report for the Board of Governors. Structure: (1) Executive Summary — the 3 key systemic risks in the current environment, (2) Banking System Overview — capital adequacy, liquidity, NPL by segment, (3) NPL Deep Dive — personal loan segment breach, 3 institutions at risk, supervisory actions taken, (4) Digital Banking Operational Review — 5 banks, milestone completion status, (5) External Risks — global monetary tightening, US-China trade risks, energy price volatility, (6) Early Warning Dashboard — 10 indicators, current reading vs threshold, (7) Board Decisions Required — approve Enhanced Monitoring for 2 institutions, approve capital adequacy waiver for digital bank X. 20 pages, formal central bank report format.',
+            'Draft the Enhanced Monitoring notice to Institution A (the institution with 21.7% personal loan NPL). The notice should: state the supervisory concern under IFSA 2013 Section 68, list the 6 specific remediation actions required, set a 90-day timeline for the Corrective Action Plan submission, note that failure to submit will trigger Statutory Management review, and require weekly reporting to the supervisory division. Formal central bank supervisory notice format.',
+            'Write a public statement on the system-wide NPL situation for BNM\'s website. The statement should: acknowledge the personal loan NPL trend, reassure the public that the banking system remains sound with strong capital buffers (CET1 14.2% system average), note the supervisory actions being taken, and remind consumers of responsible borrowing. 2 paragraphs, measured central bank communication style.'
           ]
         },
         {
@@ -4878,9 +4878,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide Board of Governors briefing on systemic risk. Include: (1) Current risk environment — key global and domestic risks, (2) Banking system health — capital and liquidity, (3) NPL dashboard — system and segment breakdown, (4) Personal loan NPL breach — 3 institutions at risk, (5) Supervisory actions underway, (6) Digital banking operational review, (7) External risk stress test results, (8) Early warning indicator dashboard, (9) Recommended supervisory escalations, (10) Board decisions required. Dark green and white central bank colour scheme.',
-            'Ask Copilot: Create a 2-slide NPL situation briefing for a press conference. Slide 1: System NPL is below the crisis threshold — compare Malaysia to regional peers. Slide 2: The personal loan segment is elevated but contained — actions being taken. Frame as a reassurance communication, not alarm.',
-            'Ask Copilot: Create a digital bank readiness scorecard slide showing the 5 digital banks on a 1-100 scale across 5 readiness dimensions: Technology Infrastructure, AML/CFT, Customer Onboarding, Capital Adequacy, Regulatory Reporting. Use a radar chart for each bank.'
+            'Create a 10-slide Board of Governors briefing on systemic risk. Include: (1) Current risk environment — key global and domestic risks, (2) Banking system health — capital and liquidity, (3) NPL dashboard — system and segment breakdown, (4) Personal loan NPL breach — 3 institutions at risk, (5) Supervisory actions underway, (6) Digital banking operational review, (7) External risk stress test results, (8) Early warning indicator dashboard, (9) Recommended supervisory escalations, (10) Board decisions required. Dark green and white central bank colour scheme.',
+            'Create a 2-slide NPL situation briefing for a press conference. Slide 1: System NPL is below the crisis threshold — compare Malaysia to regional peers. Slide 2: The personal loan segment is elevated but contained — actions being taken. Frame as a reassurance communication, not alarm.',
+            'Create a digital bank readiness scorecard slide showing the 5 digital banks on a 1-100 scale across 5 readiness dimensions: Technology Infrastructure, AML/CFT, Customer Onboarding, Capital Adequacy, Regulatory Reporting. Use a radar chart for each bank.'
           ]
         },
         {
@@ -4889,9 +4889,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_06_BNM_Regulatory_Correspondence.docx. Ask Copilot: Draft the formal Enhanced Monitoring notification letter to Institution A. The letter must: reference the IFSA 2013 supervisory powers, state the specific concern (personal loan NPL 21.7% vs threshold 3.5%), list 6 mandatory remediation actions with deadlines, require a Corrective Action Plan submission within 90 days, and note the escalation path if actions are not taken. Use BNM formal supervisory letter format.',
-            'Ask Copilot: Draft an email to the CEOs of all 18 licensed institutions informing them of the supervisory NPL review and requesting updated NPL data segmented by product type within 5 business days. Formal regulatory request format.',
-            'Ask Copilot: Draft an email to BIS (Bank for International Settlements) requesting participation in their next quarterly emerging market banking system stability forum. BNM wishes to present a case study on digital banking supervision in Malaysia. Include a 100-word abstract of our proposed presentation.'
+            'Draft the formal Enhanced Monitoring notification letter to Institution A. The letter must: reference the IFSA 2013 supervisory powers, state the specific concern (personal loan NPL 21.7% vs threshold 3.5%), list 6 mandatory remediation actions with deadlines, require a Corrective Action Plan submission within 90 days, and note the escalation path if actions are not taken. Use BNM formal supervisory letter format.',
+            'Draft an email to the CEOs of all 18 licensed institutions informing them of the supervisory NPL review and requesting updated NPL data segmented by product type within 5 business days. Formal regulatory request format.',
+            'Draft an email to BIS (Bank for International Settlements) requesting participation in their next quarterly emerging market banking system stability forum. BNM wishes to present a case study on digital banking supervision in Malaysia. Include a 100-word abstract of our proposed presentation.'
           ]
         },
         {
@@ -4900,9 +4900,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a supervisory review or risk assessment meeting. Ask Copilot: Identify all supervisory decisions made, institutions flagged for review, and any escalations approved. Create a regulatory action tracker.',
-            'Ask Copilot: Draft the supervisory team\'s follow-up actions from the NPL review meeting. Group by workstream: Enhanced Monitoring | Corrective Action | Digital Bank Review | Systemic Risk Report | External Communications. Include officer responsible and deadline.',
-            'Ask Copilot: Were there any discussions about the 2 digital banks that are behind on their operational milestones? What specific supervisory interventions were discussed and what is the timeline for a formal notice?'
+            'Open an existing recorded Teams meeting recap from a supervisory review or risk assessment meeting. Identify all supervisory decisions made, institutions flagged for review, and any escalations approved. Create a regulatory action tracker.',
+            'Draft the supervisory team\'s follow-up actions from the NPL review meeting. Group by workstream: Enhanced Monitoring | Corrective Action | Digital Bank Review | Systemic Risk Report | External Communications. Include officer responsible and deadline.',
+            'Were there any discussions about the 2 digital banks that are behind on their operational milestones? What specific supervisory interventions were discussed and what is the timeline for a formal notice?'
           ]
         },
         {
@@ -5012,8 +5012,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 18_Zava_HR_Analytics.xlsx to Analyst. Ask: Run an attrition regression analysis. Which factors (salary vs benchmark, commute distance, team size, manager tenure) correlate most strongly with attrition across divisions? For the BPO Bengaluru centre, identify the 3 highest-risk employee segments — rank by predicted attrition probability. Create a risk heatmap: X-axis = grade, Y-axis = years of service.',
-            'Upload 18_Zava_HR_Analytics.xlsx. Ask: Build a succession planning gap analysis. For C5-C7 grade positions across the 11 divisions, how many have a ready successor identified vs no successor? Calculate the bench strength ratio (successors/positions). Identify the 5 most critical "succession desert" roles — high business impact, no successor. Create a visual showing the succession pipeline strength by division.'
+            'Run an attrition regression analysis. Which factors (salary vs benchmark, commute distance, team size, manager tenure) correlate most strongly with attrition across divisions? For the BPO Bengaluru centre, identify the 3 highest-risk employee segments — rank by predicted attrition probability. Create a risk heatmap: X-axis = grade, Y-axis = years of service.',
+            'Build a succession planning gap analysis. For C5-C7 grade positions across the 11 divisions, how many have a ready successor identified vs no successor? Calculate the bench strength ratio (successors/positions). Identify the 5 most critical "succession desert" roles — high business impact, no successor. Create a visual showing the succession pipeline strength by division.'
           ]
         },
         {
@@ -5022,9 +5022,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 18_Zava_HR_Analytics.xlsx. Navigate to the Attrition Analysis sheet. Ask Copilot: Build a compensation benchmark dashboard on a new sheet. For each grade (C1-C7) and country (MY, ID, IN), show: (1) Current median salary at Zava, (2) Market median salary (sourced from Aon Hewitt or Mercer benchmark), (3) Compa-ratio (our median / market median), (4) % below market, (5) RAG status: green (90-110% of market), amber (80-89%), red (<80%). Highlight any grade/country where we are more than 15% below market.',
-            'Ask Copilot: Create a DEI progress tracker on a new sheet. For each division and each management grade (C5+), show: (1) Total positions, (2) Women in role, (3) Women %, (4) Target %, (5) Gap to target (positions needed). Sum to group level. Calculate how many women need to be promoted to C5+ to reach the 40% target by 2028 — assuming 3% annual promotion pool.',
-            'Ask Copilot: Build a learning & development ROI dashboard. For each training programme in FY2024 (leadership, technical, compliance, DEI), show: (1) Participants, (2) Cost per participant (MYR), (3) Total cost (MYR M), (4) 90-day retention rate post-training vs non-participants, (5) Productivity score change (if measured), (6) Estimated ROI. Rank by ROI and flag any programme with negative ROI.'
+            'Using the Attrition Analysis tab in this workbook, Build a compensation benchmark dashboard on a new sheet. For each grade (C1-C7) and country (MY, ID, IN), show: (1) Current median salary at Zava, (2) Market median salary (sourced from Aon Hewitt or Mercer benchmark), (3) Compa-ratio (our median / market median), (4) % below market, (5) RAG status: green (90-110% of market), amber (80-89%), red (<80%). Highlight any grade/country where we are more than 15% below market.',
+            'Create a DEI progress tracker on a new sheet. For each division and each management grade (C5+), show: (1) Total positions, (2) Women in role, (3) Women %, (4) Target %, (5) Gap to target (positions needed). Sum to group level. Calculate how many women need to be promoted to C5+ to reach the 40% target by 2028 — assuming 3% annual promotion pool.',
+            'Build a learning & development ROI dashboard. For each training programme in FY2024 (leadership, technical, compliance, DEI), show: (1) Participants, (2) Cost per participant (MYR), (3) Total cost (MYR M), (4) 90-day retention rate post-training vs non-participants, (5) Productivity score change (if measured), (6) Estimated ROI. Rank by ROI and flag any programme with negative ROI.'
           ]
         },
         {
@@ -5033,9 +5033,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 02_Zava_Group_Policy_Handbook.docx. Ask Copilot: Draft a new chapter "AI & Copilot Usage Policy" for the Policy Handbook. Cover: (1) Approved AI tools — Microsoft 365 Copilot and its applications, (2) Prohibited uses — sharing confidential data, generating misleading content, bypassing compliance review, (3) Prompt writing guidelines — GCSE framework, (4) Data classification rules — what data may be used as Copilot context, (5) Responsibility — employee accountability for AI-generated output, (6) Training requirement — all employees must complete the Zava AI Literacy module before using Copilot. 4 pages, policy format.',
-            'Ask Copilot: Draft a Group HR communication to all 87,420 employees (filtered for managers C5+) announcing the Microsoft 365 Copilot rollout. The email should: explain what Copilot is in simple terms, note the 3 key benefits for their day-to-day work, announce the training schedule (2-hour mandatory session within 30 days), and share 3 simple use cases from the HR function — drafting JDs, analysing attrition data, and summarising engagement surveys. Engaging, positive tone.',
-            'Ask Copilot: Draft the Zava Group FY2025 Annual Workforce Report (30 pages). Cover all sections: Headcount summary by division and country, Attrition analysis, Compensation benchmarking, DEI progress, L&D investment, Safety statistics, Employee engagement score, Talent pipeline, and People strategy outlook. Use data from the HR Analytics file.'
+            'Draft a new chapter "AI & Copilot Usage Policy" for the Policy Handbook. Cover: (1) Approved AI tools — Microsoft 365 Copilot and its applications, (2) Prohibited uses — sharing confidential data, generating misleading content, bypassing compliance review, (3) Prompt writing guidelines — GCSE framework, (4) Data classification rules — what data may be used as Copilot context, (5) Responsibility — employee accountability for AI-generated output, (6) Training requirement — all employees must complete the Zava AI Literacy module before using Copilot. 4 pages, policy format.',
+            'Draft a Group HR communication to all 87,420 employees (filtered for managers C5+) announcing the Microsoft 365 Copilot rollout. The email should: explain what Copilot is in simple terms, note the 3 key benefits for their day-to-day work, announce the training schedule (2-hour mandatory session within 30 days), and share 3 simple use cases from the HR function — drafting JDs, analysing attrition data, and summarising engagement surveys. Engaging, positive tone.',
+            'Draft the Zava Group FY2025 Annual Workforce Report (30 pages). Cover all sections: Headcount summary by division and country, Attrition analysis, Compensation benchmarking, DEI progress, L&D investment, Safety statistics, Employee engagement score, Talent pipeline, and People strategy outlook. Use data from the HR Analytics file.'
           ]
         },
         {
@@ -5044,9 +5044,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide Group HR presentation for the Board. Include: (1) Workforce overview — 87,420 employees, (2) Attrition crisis — BPO Bengaluru 31.2%, (3) Retention programme — cost and expected impact, (4) Compensation benchmarking — 3 grades below market, (5) DEI progress — 28% women in leadership vs 40% target, (6) L&D investment — ROI by programme, (7) Succession planning — bench strength by division, (8) People analytics upgrade — 3-year roadmap, (9) FY2026 HR priorities, (10) Board decisions. Blue and white colour scheme.',
-            'Ask Copilot: Create a 2-slide M365 Copilot for HR use case pitch. Slide 1: 5 HR use cases with Copilot (JD generation, attrition analysis, engagement survey synthesis, policy update drafting, exit interview summarisation) — each with time saved per month. Slide 2: Investment vs time savings ROI calculation — show payback in months.',
-            'Ask Copilot: Create a DEI roadmap slide showing the 2025-2028 timeline with 4 milestones: 30% women in leadership (FY2025), 35% (FY2026), 38% (FY2027), 40% (FY2028). Show current position at 28% and the specific programmes at each milestone that will drive progress.'
+            'Create a 10-slide Group HR presentation for the Board. Include: (1) Workforce overview — 87,420 employees, (2) Attrition crisis — BPO Bengaluru 31.2%, (3) Retention programme — cost and expected impact, (4) Compensation benchmarking — 3 grades below market, (5) DEI progress — 28% women in leadership vs 40% target, (6) L&D investment — ROI by programme, (7) Succession planning — bench strength by division, (8) People analytics upgrade — 3-year roadmap, (9) FY2026 HR priorities, (10) Board decisions. Blue and white colour scheme.',
+            'Create a 2-slide M365 Copilot for HR use case pitch. Slide 1: 5 HR use cases with Copilot (JD generation, attrition analysis, engagement survey synthesis, policy update drafting, exit interview summarisation) — each with time saved per month. Slide 2: Investment vs time savings ROI calculation — show payback in months.',
+            'Create a DEI roadmap slide showing the 2025-2028 timeline with 4 milestones: 30% women in leadership (FY2025), 35% (FY2026), 38% (FY2027), 40% (FY2028). Show current position at 28% and the specific programmes at each milestone that will drive progress.'
           ]
         },
         {
@@ -5055,9 +5055,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft an email to all BPO Bengaluru team leaders and managers (620 people) announcing the new retention programme. The email should: acknowledge the high attrition and thank existing employees for their commitment, announce the 3 new retention benefits (12-month cliff bonus, remote work 3 days/week, accelerated career track programme), state the effective date (1 month from today), and invite questions at the Q&A session next Friday. Warm, human tone.',
-            'Ask Copilot: Draft a targeted email to our 148 employees at Bengaluru who have been with Zava BPO for 3+ years. The email should: personalise the opening ("You have been with us for over 3 years — and that means a great deal"), announce the senior employee retention benefit (additional 10% salary uplift for C2-C3 staff with 3+ years tenure), and express genuine appreciation. CONFIDENTIAL — only for this segment.',
-            'Ask Copilot: Draft a letter to the estate worker union representatives at Ladang Sri Murni (Sarawak) regarding the replanting programme that will displace 240 workers for 18 months. The letter should: explain the replanting necessity (aging palms, declining yield), outline the 18-month support package (housing maintained, 85% salary retention), describe the retraining options (machinery operation, safety certification), and note the priority re-hire commitment. Empathetic, respectful tone.'
+            'Draft an email to all BPO Bengaluru team leaders and managers (620 people) announcing the new retention programme. The email should: acknowledge the high attrition and thank existing employees for their commitment, announce the 3 new retention benefits (12-month cliff bonus, remote work 3 days/week, accelerated career track programme), state the effective date (1 month from today), and invite questions at the Q&A session next Friday. Warm, human tone.',
+            'Draft a targeted email to our 148 employees at Bengaluru who have been with Zava BPO for 3+ years. The email should: personalise the opening ("You have been with us for over 3 years — and that means a great deal"), announce the senior employee retention benefit (additional 10% salary uplift for C2-C3 staff with 3+ years tenure), and express genuine appreciation. CONFIDENTIAL — only for this segment.',
+            'Draft a letter to the estate worker union representatives at Ladang Sri Murni (Sarawak) regarding the replanting programme that will displace 240 workers for 18 months. The letter should: explain the replanting necessity (aging palms, declining yield), outline the 18-month support package (housing maintained, 85% salary retention), describe the retraining options (machinery operation, safety certification), and note the priority re-hire commitment. Empathetic, respectful tone.'
           ]
         },
         {
@@ -5066,9 +5066,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from an HR leadership or town hall meeting. Ask Copilot: Identify all workforce concerns discussed — attrition, compensation, DEI, L&D. Create an action tracker for the CHRO team with owner and deadline.',
-            'Ask Copilot: Draft follow-up actions from the quarterly HR leadership review. Group by workstream: Attrition & Retention | Compensation Benchmarking | DEI | L&D | People Analytics. Include HRBP owner and deadline.',
-            'Ask Copilot: Were there any discussions about the BNM salary increase for bank officers affecting Zava Bank\'s ability to retain staff? What retention measures were proposed and what is the budget implication?'
+            'Open an existing recorded Teams meeting recap from an HR leadership or town hall meeting. Identify all workforce concerns discussed — attrition, compensation, DEI, L&D. Create an action tracker for the CHRO team with owner and deadline.',
+            'Draft follow-up actions from the quarterly HR leadership review. Group by workstream: Attrition & Retention | Compensation Benchmarking | DEI | L&D | People Analytics. Include HRBP owner and deadline.',
+            'Were there any discussions about the BNM salary increase for bank officers affecting Zava Bank\'s ability to retain staff? What retention measures were proposed and what is the budget implication?'
           ]
         },
         {
@@ -5078,7 +5078,7 @@ window.HUB_DATA = {
           desc: 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
           prompts: [
             'Upload 18_Zava_HR_Analytics.xlsx and 02_Zava_Group_Policy_Handbook.docx to Copilot Notebook. Set instruction: "You are the Group CHRO preparing the people strategy for the Board." Ask: Based on the workforce data and company policies, what is the single biggest talent risk facing Zava Group in FY2026? What is the recommended 90-day action plan to address it?',
-            'Upload 18_Zava_HR_Analytics.xlsx. Ask: Our replacement cost is MYR 1.5x annual salary per departing employee. The Bengaluru BPO has 2,960 staff with 31.2% attrition. Calculate the annual turnover cost. If a retention programme costing MYR 8.4M reduces attrition to 22%, calculate the net saving and the ROI of the retention investment.'
+            'Our replacement cost is MYR 1.5x annual salary per departing employee. The Bengaluru BPO has 2,960 staff with 31.2% attrition. Calculate the annual turnover cost. If a retention programme costing MYR 8.4M reduces attrition to 22%, calculate the net saving and the ROI of the retention investment.'
           ]
         },
         {
@@ -5176,8 +5176,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Ask: Build a group financial performance dashboard. For FY2022, FY2023, FY2024, and FY2025 YTD: (1) Revenue by division, (2) EBITDA by division, (3) EBITDA margin %, (4) PAT, (5) PATAMI. Create a waterfall chart showing the FY2023-to-FY2024 EBITDA bridge by division — show which divisions contributed positively and which negatively to the change. Highlight the Zava Bank provisioning impact in a separate bar.',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx. Ask: Run 3 FY2025 full-year scenarios: (A) Base — all divisions at current trajectory, (B) Bear — Zava Bank NPL worsens by 30%, CPO price -10%, IDR weakens 8% vs MYR, (C) Bull — Zava Bank NPL stabilises, CPO price +15%, IDR stable. For each scenario, calculate: group revenue, EBITDA, PATAMI, EPS, net gearing, and interest coverage ratio. Show as a 3-column comparison table.'
+            'Build a group financial performance dashboard. For FY2022, FY2023, FY2024, and FY2025 YTD: (1) Revenue by division, (2) EBITDA by division, (3) EBITDA margin %, (4) PAT, (5) PATAMI. Create a waterfall chart showing the FY2023-to-FY2024 EBITDA bridge by division — show which divisions contributed positively and which negatively to the change. Highlight the Zava Bank provisioning impact in a separate bar.',
+            'Run 3 FY2025 full-year scenarios: (A) Base — all divisions at current trajectory, (B) Bear — Zava Bank NPL worsens by 30%, CPO price -10%, IDR weakens 8% vs MYR, (C) Bull — Zava Bank NPL stabilises, CPO price +15%, IDR stable. For each scenario, calculate: group revenue, EBITDA, PATAMI, EPS, net gearing, and interest coverage ratio. Show as a 3-column comparison table.'
           ]
         },
         {
@@ -5186,9 +5186,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 01_Zava_Group_Financial_Performance.xlsx. Navigate to the Group P&L sheet. Ask Copilot: Build a FOREX sensitivity analysis on a new sheet. Show the group PATAMI impact of currency movements: MYR/USD ±5%, IDR/MYR ±5%, INR/MYR ±5%, SGD/MYR ±3%. Create a 2-dimensional sensitivity table: Y-axis = MYR/USD movement (-10% to +10%), X-axis = IDR/MYR movement (-10% to +10%). Each cell shows PATAMI impact in MYR M. Highlight cells where PATAMI drops >10% in red.',
-            'Ask Copilot: In the Balance Sheet sheet, calculate the group net gearing under 3 scenarios: (1) REIT IPO proceeds MYR 3.2B used to pay down debt, (2) No REIT IPO, (3) REIT IPO proceeds reinvested in new assets. For each scenario, calculate: net debt, EBITDA, net gearing ratio, and debt covenant headroom. Show side-by-side. Highlight any scenario that breaches the 3.5x covenant.',
-            'Ask Copilot: Build a half-year earnings release model. Using the FY2024 actuals and H1 FY2025 data, draft the P&L for H1 FY2025 showing: revenue growth vs H1 FY2024, EBITDA margin expansion/contraction, exceptional items (Zava Bank provision), and PATAMI. Add analyst consensus comparison column. Flag any line where we are >5% below consensus in red.'
+            'Open 01_Zava_Group_Financial_Performance.xlsx. Navigate to the Group P&L sheet. Build a FOREX sensitivity analysis on a new sheet. Show the group PATAMI impact of currency movements: MYR/USD ±5%, IDR/MYR ±5%, INR/MYR ±5%, SGD/MYR ±3%. Create a 2-dimensional sensitivity table: Y-axis = MYR/USD movement (-10% to +10%), X-axis = IDR/MYR movement (-10% to +10%). Each cell shows PATAMI impact in MYR M. Highlight cells where PATAMI drops >10% in red.',
+            'In the Balance Sheet sheet, calculate the group net gearing under 3 scenarios: (1) REIT IPO proceeds MYR 3.2B used to pay down debt, (2) No REIT IPO, (3) REIT IPO proceeds reinvested in new assets. For each scenario, calculate: net debt, EBITDA, net gearing ratio, and debt covenant headroom. Show side-by-side. Highlight any scenario that breaches the 3.5x covenant.',
+            'Build a half-year earnings release model. Using the FY2024 actuals and H1 FY2025 data, draft the P&L for H1 FY2025 showing: revenue growth vs H1 FY2024, EBITDA margin expansion/contraction, exceptional items (Zava Bank provision), and PATAMI. Add analyst consensus comparison column. Flag any line where we are >5% below consensus in red.'
           ]
         },
         {
@@ -5197,9 +5197,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 03_Zava_Group_Strategy_Framework.docx. Ask Copilot: Draft the Group CFO\'s commentary for the H1 FY2025 financial results announcement. The commentary should: (1) Open with the group headline — revenue, EBITDA, and PATAMI, (2) Explain the Zava Bank provisioning impact — transparent but measured, (3) Comment on CPO price tailwinds for the Agribusiness division, (4) Note the Manufacturing division\'s OEE improvement programme, (5) Provide FY2025 full-year guidance — revenue growth 4-6%, EBITDA margin 15.5-16.5%. Tone: confident, transparent, and forward-looking. Analyst investor communication style.',
-            'Ask Copilot: Draft the Group Treasury Policy update paper for the Finance Committee. Propose: (1) Updated FOREX hedge ratio targets (from current 60% to 75% of 12-month FOREX exposure), (2) Centralisation of IDR hedging — all 5 Indonesian divisions to use the Group Treasury desk, (3) New derivative instruments to be approved — USD put options for plantation USD revenue, (4) Updated counterparty limits for derivative transactions. 5 pages, formal committee paper.',
-            'Ask Copilot: Draft the investor Q&A preparation document for the H1 FY2025 results briefing. Anticipate the 10 most likely analyst questions (Zava Bank NPL, commodity price outlook, REIT IPO timeline, debt reduction plan, FY2025 guidance). For each question, provide a suggested 2-3 sentence answer. This is an internal briefing tool for the CFO and IR team.'
+            'Draft the Group CFO\'s commentary for the H1 FY2025 financial results announcement. The commentary should: (1) Open with the group headline — revenue, EBITDA, and PATAMI, (2) Explain the Zava Bank provisioning impact — transparent but measured, (3) Comment on CPO price tailwinds for the Agribusiness division, (4) Note the Manufacturing division\'s OEE improvement programme, (5) Provide FY2025 full-year guidance — revenue growth 4-6%, EBITDA margin 15.5-16.5%. Tone: confident, transparent, and forward-looking. Analyst investor communication style.',
+            'Draft the Group Treasury Policy update paper for the Finance Committee. Propose: (1) Updated FOREX hedge ratio targets (from current 60% to 75% of 12-month FOREX exposure), (2) Centralisation of IDR hedging — all 5 Indonesian divisions to use the Group Treasury desk, (3) New derivative instruments to be approved — USD put options for plantation USD revenue, (4) Updated counterparty limits for derivative transactions. 5 pages, formal committee paper.',
+            'Draft the investor Q&A preparation document for the H1 FY2025 results briefing. Anticipate the 10 most likely analyst questions (Zava Bank NPL, commodity price outlook, REIT IPO timeline, debt reduction plan, FY2025 guidance). For each question, provide a suggested 2-3 sentence answer. This is an internal briefing tool for the CFO and IR team.'
           ]
         },
         {
@@ -5208,9 +5208,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 14-slide H1 FY2025 results investor presentation. Include: (1) H1 headline — revenue, EBITDA, PATAMI, (2) Group financial highlights, (3) Division performance — revenue and EBITDA by division, (4) Zava Bank — NPL situation and provisioning, (5) Agribusiness — CPO production and price, (6) FOREX exposure and hedge ratio, (7) Balance sheet and gearing, (8) REIT IPO — timeline and expected proceeds, (9) Capital allocation — FY2025-2026 capex, (10) FY2025 full-year guidance, (11) Dividend — DPS and yield, (12) ESG highlight, (13) Analyst consensus vs actual, (14) Q&A slide. Standard investor presentation format.',
-            'Ask Copilot: Create a 3-slide REIT IPO investor teaser. Slide 1: Asset overview — 12 REIT-eligible assets, MYR 8.2B. Slide 2: Key investment highlights — NPI yield, WALE, occupancy. Slide 3: Transaction overview — IPO structure, indicative timeline, expected DPU yield.',
-            'Ask Copilot: Create a slide showing the FY2025 guidance visual — a bridge from H1 actuals to the full-year guidance range. Show the key drivers: Agribusiness CPO second half, Manufacturing recovery, BPO revenue growth, offset by Bank provisioning. Use a waterfall chart format.'
+            'Create a 14-slide H1 FY2025 results investor presentation. Include: (1) H1 headline — revenue, EBITDA, PATAMI, (2) Group financial highlights, (3) Division performance — revenue and EBITDA by division, (4) Zava Bank — NPL situation and provisioning, (5) Agribusiness — CPO production and price, (6) FOREX exposure and hedge ratio, (7) Balance sheet and gearing, (8) REIT IPO — timeline and expected proceeds, (9) Capital allocation — FY2025-2026 capex, (10) FY2025 full-year guidance, (11) Dividend — DPS and yield, (12) ESG highlight, (13) Analyst consensus vs actual, (14) Q&A slide. Standard investor presentation format.',
+            'Create a 3-slide REIT IPO investor teaser. Slide 1: Asset overview — 12 REIT-eligible assets, MYR 8.2B. Slide 2: Key investment highlights — NPI yield, WALE, occupancy. Slide 3: Transaction overview — IPO structure, indicative timeline, expected DPU yield.',
+            'Create a slide showing the FY2025 guidance visual — a bridge from H1 actuals to the full-year guidance range. Show the key drivers: Agribusiness CPO second half, Manufacturing recovery, BPO revenue growth, offset by Bank provisioning. Use a waterfall chart format.'
           ]
         },
         {
@@ -5219,9 +5219,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft the H1 FY2025 results analyst briefing invitation. Send to 48 analysts covering Zava Group on Bursa Malaysia and IDX Jakarta. The invitation should: confirm the date/time/format (in-person KL + virtual), note the pre-results quiet period (no discussion of financial performance), attach the results presentation and press release (redacted — placeholders only), and provide the audio webcast link. Include a Q&A session calendar invite.',
-            'Ask Copilot: Draft the Group CFO\'s email to all Division CFOs ahead of the H1 FY2025 results. The email should: confirm the group financial position, note the 3 key messages for the H1 announcement, remind all Division CFOs that no divisional results should be shared externally before the Bursa announcement, and request final division P&L sign-off by end of business tomorrow.',
-            'Ask Copilot: Draft a letter to the 3 lead relationship banks (CIMB, Maybank, and Hong Leong Bank) providing the semi-annual covenant compliance certificate for the MYR 6.4B revolving credit facility. Confirm: net gearing 0.82x vs covenant 3.5x, interest coverage 4.8x vs covenant 2.5x, EBITDA MYR 7.2B vs minimum MYR 4.8B. All covenants satisfied.'
+            'Draft the H1 FY2025 results analyst briefing invitation. Send to 48 analysts covering Zava Group on Bursa Malaysia and IDX Jakarta. The invitation should: confirm the date/time/format (in-person KL + virtual), note the pre-results quiet period (no discussion of financial performance), attach the results presentation and press release (redacted — placeholders only), and provide the audio webcast link. Include a Q&A session calendar invite.',
+            'Draft the Group CFO\'s email to all Division CFOs ahead of the H1 FY2025 results. The email should: confirm the group financial position, note the 3 key messages for the H1 announcement, remind all Division CFOs that no divisional results should be shared externally before the Bursa announcement, and request final division P&L sign-off by end of business tomorrow.',
+            'Draft a letter to the 3 lead relationship banks (CIMB, Maybank, and Hong Leong Bank) providing the semi-annual covenant compliance certificate for the MYR 6.4B revolving credit facility. Confirm: net gearing 0.82x vs covenant 3.5x, interest coverage 4.8x vs covenant 2.5x, EBITDA MYR 7.2B vs minimum MYR 4.8B. All covenants satisfied.'
           ]
         },
         {
@@ -5230,9 +5230,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a finance or CFO leadership meeting. Ask Copilot: Identify all financial performance concerns discussed, FOREX positions flagged, and decisions made about debt management or investor communications. Create an action tracker.',
-            'Ask Copilot: Draft the Group Finance weekly update for the CFO. Structure: (1) Cash position and liquidity, (2) FOREX movements this week vs hedge positions, (3) Division P&L variance vs budget — top 3 movers, (4) Zava Bank NPL status, (5) REIT IPO progress, (6) Upcoming investor/analyst engagements.',
-            'Ask Copilot: From this meeting transcript, what was decided about the Group Treasury\'s proposed IDR hedge ratio increase? What concerns did the Division CFOs raise about the centralised hedging model?'
+            'Open an existing recorded Teams meeting recap from a finance or CFO leadership meeting. Identify all financial performance concerns discussed, FOREX positions flagged, and decisions made about debt management or investor communications. Create an action tracker.',
+            'Draft the Group Finance weekly update for the CFO. Structure: (1) Cash position and liquidity, (2) FOREX movements this week vs hedge positions, (3) Division P&L variance vs budget — top 3 movers, (4) Zava Bank NPL status, (5) REIT IPO progress, (6) Upcoming investor/analyst engagements.',
+            'From this meeting transcript, what was decided about the Group Treasury\'s proposed IDR hedge ratio increase? What concerns did the Division CFOs raise about the centralised hedging model?'
           ]
         },
         {
@@ -5242,7 +5242,7 @@ window.HUB_DATA = {
           desc: 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
           prompts: [
             'Upload 01_Zava_Group_Financial_Performance.xlsx and 03_Zava_Group_Strategy_Framework.docx to Copilot Notebook. Set instruction: "You are advising the Group CFO on H1 FY2025 results communication." Ask: Based on the financial data and strategy, what is the single most important narrative the CFO must control in the H1 FY2025 analyst briefing? What is the question that analysts will ask that poses the biggest risk and what is the best answer?',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx. Ask: The group is targeting FY2025 PATAMI growth of 8-12%. With Zava Bank provisioning MYR 420M above budget, is this guidance achievable? Which divisions must outperform their H2 budget to offset the Bank shortfall? Quantify the required outperformance for each division.'
+            'The group is targeting FY2025 PATAMI growth of 8-12%. With Zava Bank provisioning MYR 420M above budget, is this guidance achievable? Which divisions must outperform their H2 budget to offset the Bank shortfall? Quantify the required outperformance for each division.'
           ]
         },
         {
@@ -5350,9 +5350,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 02_Zava_Group_Policy_Handbook.docx. Create a companion Legal Matter Tracker workbook. Ask Copilot: Create Sheet 1 with columns: Matter | Type (NDA/JV/Regulatory/Litigation) | Division | Counterparty | Status | Key Risk | Next Action | Deadline | External Counsel | Estimated Cost (MYR M). Add conditional formatting: red = overdue, amber = due within 7 days, green = on track. Sort by deadline.',
-            'Ask Copilot: Create a Bursa Disclosure Calendar on Sheet 2. For each material transaction or event requiring Bursa announcement (REIT IPO circular, JV agreements, Board changes, results announcements, dividend declarations), show: event, Bursa deadline, draft due from Legal, Board approval date, expected announcement date. Highlight any where Legal\'s internal deadline has passed.',
-            'Ask Copilot: Build a contract expiry tracker on Sheet 3. For all major contracts — BPO client agreements, plant offtake agreements, banking facilities, insurance policies — show: contract party, division, value (MYR M), expiry date, auto-renewal clause (Y/N), renegotiation lead time needed (months), action status. Flag contracts expiring within 6 months with no renegotiation started.'
+            'Open 02_Zava_Group_Policy_Handbook.docx. Create a companion Legal Matter Tracker workbook. Create Sheet 1 with columns: Matter | Type (NDA/JV/Regulatory/Litigation) | Division | Counterparty | Status | Key Risk | Next Action | Deadline | External Counsel | Estimated Cost (MYR M). Add conditional formatting: red = overdue, amber = due within 7 days, green = on track. Sort by deadline.',
+            'Create a Bursa Disclosure Calendar on Sheet 2. For each material transaction or event requiring Bursa announcement (REIT IPO circular, JV agreements, Board changes, results announcements, dividend declarations), show: event, Bursa deadline, draft due from Legal, Board approval date, expected announcement date. Highlight any where Legal\'s internal deadline has passed.',
+            'Build a contract expiry tracker on Sheet 3. For all major contracts — BPO client agreements, plant offtake agreements, banking facilities, insurance policies — show: contract party, division, value (MYR M), expiry date, auto-renewal clause (Y/N), renegotiation lead time needed (months), action status. Flag contracts expiring within 6 months with no renegotiation started.'
           ]
         },
         {
@@ -5361,9 +5361,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 02_Zava_Group_Policy_Handbook.docx. Ask Copilot: Review the Data Privacy & Cybersecurity Policy section. Identify: (1) Any gaps vs the new Malaysia PDPA 2024 amendments, (2) Any gaps vs Indonesia\'s UU PDP 2022, (3) Recommended policy updates for each gap. Present as a gap analysis table: Current Policy Clause | Gap | Required Update | Urgency (High/Medium/Low).',
-            'Ask Copilot: Draft a template Non-Disclosure Agreement for Zava Group. The NDA should: cover bilateral confidentiality, define confidential information broadly (including oral disclosures with 48-hour written confirmation), include a 3-year confidentiality period post-termination, specify Malaysian law and KL courts as jurisdiction, and include a specific carve-out for information required by Bursa Malaysia or IDX disclosure obligations. 4-page formal NDA.',
-            'Open Email_07_Emergency_Board_Meeting.docx. Ask Copilot: Draft the Board resolution for the emergency meeting. The resolution should: confirm quorum, approve the 3 decisions required (coal trading breach remediation plan, Zava Bank corrective action plan, REIT IPO timeline approval), and record the Director votes. Use standard Malaysian Board resolution format.'
+            'Review the Data Privacy & Cybersecurity Policy section. Identify: (1) Any gaps vs the new Malaysia PDPA 2024 amendments, (2) Any gaps vs Indonesia\'s UU PDP 2022, (3) Recommended policy updates for each gap. Present as a gap analysis table: Current Policy Clause | Gap | Required Update | Urgency (High/Medium/Low).',
+            'Draft a template Non-Disclosure Agreement for Zava Group. The NDA should: cover bilateral confidentiality, define confidential information broadly (including oral disclosures with 48-hour written confirmation), include a 3-year confidentiality period post-termination, specify Malaysian law and KL courts as jurisdiction, and include a specific carve-out for information required by Bursa Malaysia or IDX disclosure obligations. 4-page formal NDA.',
+            'Draft the Board resolution for the emergency meeting. The resolution should: confirm quorum, approve the 3 decisions required (coal trading breach remediation plan, Zava Bank corrective action plan, REIT IPO timeline approval), and record the Director votes. Use standard Malaysian Board resolution format.'
           ]
         },
         {
@@ -5372,9 +5372,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 5-slide Group Legal & Compliance quarterly update for the Board Audit Committee. Include: (1) Litigation risk register — 8 matters, quantum, and provision status, (2) Regulatory compliance status — BNM, BPOM, Bursa, MACC, (3) M&A legal workstream — 3 JV agreements, status, (4) Data privacy — PDPA/UU PDP compliance rating, (5) Legal spend vs budget. Purple and white colour scheme.',
-            'Ask Copilot: Create a 2-slide MACC Section 17A compliance overview for the Audit Committee. Slide 1: What is "adequate procedures" under Section 17A and our current compliance rating. Slide 2: The 3 actions required to strengthen our anti-corruption programme before the annual compliance assessment.',
-            'Ask Copilot: Create a Bursa Malaysia disclosure timeline slide for the REIT IPO. Show: all required Bursa filings, shareholder circular deadlines, SC application timeline, expected announcement dates, and the final IPO day. As a horizontal timeline visual.'
+            'Create a 5-slide Group Legal & Compliance quarterly update for the Board Audit Committee. Include: (1) Litigation risk register — 8 matters, quantum, and provision status, (2) Regulatory compliance status — BNM, BPOM, Bursa, MACC, (3) M&A legal workstream — 3 JV agreements, status, (4) Data privacy — PDPA/UU PDP compliance rating, (5) Legal spend vs budget. Purple and white colour scheme.',
+            'Create a 2-slide MACC Section 17A compliance overview for the Audit Committee. Slide 1: What is "adequate procedures" under Section 17A and our current compliance rating. Slide 2: The 3 actions required to strengthen our anti-corruption programme before the annual compliance assessment.',
+            'Create a Bursa Malaysia disclosure timeline slide for the REIT IPO. Show: all required Bursa filings, shareholder circular deadlines, SC application timeline, expected announcement dates, and the final IPO day. As a horizontal timeline visual.'
           ]
         },
         {
@@ -5383,9 +5383,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft the legal instruction letter to our external counsel (Skrine & Co) on the Indonesia JV agreement negotiation. The letter should: confirm the commercial terms agreed by the business (50:50 equity, Zava as managing partner, 10-year term), instruct counsel to draft the JV agreement, highlight 3 non-negotiable clauses (drag-along rights, deadlock by third-party arbitration, ASEAN ADRIC rules), and set the first draft deadline at 3 weeks.',
-            'Ask Copilot: Draft a cease-and-desist letter to a competitor who has been using Zava Group\'s registered trademark "ZavaGen" for pharmaceutical products without licence. The letter should: identify the trademark registration details, describe the infringing use, demand immediate cessation within 14 days, and note that legal proceedings will be commenced if the demand is not complied with.',
-            'Ask Copilot: Draft the Group General Counsel\'s email to all Division Legal Heads reminding them of the updated Delegation of Authority for contract signing. Specifically: all JV agreements above MYR 50M require Group GC and Group CEO sign-off; all NDAs may be signed by Division MD. Attach the updated DOA matrix as reference.'
+            'Draft the legal instruction letter to our external counsel (Skrine & Co) on the Indonesia JV agreement negotiation. The letter should: confirm the commercial terms agreed by the business (50:50 equity, Zava as managing partner, 10-year term), instruct counsel to draft the JV agreement, highlight 3 non-negotiable clauses (drag-along rights, deadlock by third-party arbitration, ASEAN ADRIC rules), and set the first draft deadline at 3 weeks.',
+            'Draft a cease-and-desist letter to a competitor who has been using Zava Group\'s registered trademark "ZavaGen" for pharmaceutical products without licence. The letter should: identify the trademark registration details, describe the infringing use, demand immediate cessation within 14 days, and note that legal proceedings will be commenced if the demand is not complied with.',
+            'Draft the Group General Counsel\'s email to all Division Legal Heads reminding them of the updated Delegation of Authority for contract signing. Specifically: all JV agreements above MYR 50M require Group GC and Group CEO sign-off; all NDAs may be signed by Division MD. Attach the updated DOA matrix as reference.'
           ]
         },
         {
@@ -5394,9 +5394,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a legal or risk committee meeting. Ask Copilot: Identify all legal matters discussed — active litigations, regulatory deadlines, JV negotiation issues. Create an action tracker with the legal team owner and deadline for each item.',
-            'Ask Copilot: Draft the post-meeting legal team tasks from the regulatory response review. Group by matter: BNM Response | BPOM Corrective Action | Bursa Circular | MACC Compliance. Include responsible lawyer and deadline.',
-            'Ask Copilot: Were there any discussions about the coal trading breach and potential securities disclosure obligations? What was the General Counsel\'s advice on timing of the Bursa announcement?'
+            'Open an existing recorded Teams meeting recap from a legal or risk committee meeting. Identify all legal matters discussed — active litigations, regulatory deadlines, JV negotiation issues. Create an action tracker with the legal team owner and deadline for each item.',
+            'Draft the post-meeting legal team tasks from the regulatory response review. Group by matter: BNM Response | BPOM Corrective Action | Bursa Circular | MACC Compliance. Include responsible lawyer and deadline.',
+            'Were there any discussions about the coal trading breach and potential securities disclosure obligations? What was the General Counsel\'s advice on timing of the Bursa announcement?'
           ]
         },
         {
@@ -5504,8 +5504,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Ask: Build an enterprise risk heat map. For 15 key risks (commodity price, FOREX, NPL/credit, regulatory/enforcement, ESG/RSPO, operational/OEE, succession, cyber, climate, trading limits), score each on: (1) likelihood (1-5), (2) financial impact (1-5 mapped to MYR M thresholds), (3) velocity (how fast it can materialise). Plot on a 5x5 heat map. Identify the top 5 risks requiring immediate Board attention.',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx. Ask: Stress test the group financials against a combined adverse scenario: CPO -15%, IDR -10% vs MYR, Zava Bank NPL provisions +MYR 600M, Cilegon plant production loss 6 months, coal trading counterparty default (USD 6.8M loss). Calculate: (1) Impact on group EBITDA, (2) Impact on PAT, (3) New net gearing ratio, (4) Whether any debt covenant is breached. Show as a stress scenario table.'
+            'Build an enterprise risk heat map. For 15 key risks (commodity price, FOREX, NPL/credit, regulatory/enforcement, ESG/RSPO, operational/OEE, succession, cyber, climate, trading limits), score each on: (1) likelihood (1-5), (2) financial impact (1-5 mapped to MYR M thresholds), (3) velocity (how fast it can materialise). Plot on a 5x5 heat map. Identify the top 5 risks requiring immediate Board attention.',
+            'Stress test the group financials against a combined adverse scenario: CPO -15%, IDR -10% vs MYR, Zava Bank NPL provisions +MYR 600M, Cilegon plant production loss 6 months, coal trading counterparty default (USD 6.8M loss). Calculate: (1) Impact on group EBITDA, (2) Impact on PAT, (3) New net gearing ratio, (4) Whether any debt covenant is breached. Show as a stress scenario table.'
           ]
         },
         {
@@ -5514,9 +5514,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 01_Zava_Group_Financial_Performance.xlsx. Navigate to the risk data section. Ask Copilot: Build a 4-event risk dashboard on a new sheet. For each of the 4 active risk events (coal trading breach, bank NPL, Cilegon enforcement, RSPO suspension), show: (1) Event description, (2) Financial exposure (MYR M), (3) Provision taken, (4) Unresolved exposure, (5) Remediation status (% complete), (6) Board action required (Y/N), (7) Next deadline. Apply RAG status. Add a total group exposure row.',
-            'Ask Copilot: Create an Internal Audit progress tracker on a new sheet. For each of the 24 internal audit engagements planned for FY2025 (across 11 divisions), show: (1) Entity and area, (2) Planned start and end date, (3) Status, (4) High/medium/low findings count, (5) Management response received (Y/N), (6) Overdue findings from prior audit. Highlight engagements where the management response is overdue.',
-            'Ask Copilot: Build a risk appetite statement dashboard on a new sheet. For each risk category (credit, market, operational, compliance, ESG, strategic), show: (1) Risk appetite statement (one sentence), (2) Key risk metric, (3) Tolerance threshold, (4) Current level, (5) Status (Within / Approaching / Breaching). Flag breaching risks in red.'
+            'Open 01_Zava_Group_Financial_Performance.xlsx. Navigate to the risk data section. Build a 4-event risk dashboard on a new sheet. For each of the 4 active risk events (coal trading breach, bank NPL, Cilegon enforcement, RSPO suspension), show: (1) Event description, (2) Financial exposure (MYR M), (3) Provision taken, (4) Unresolved exposure, (5) Remediation status (% complete), (6) Board action required (Y/N), (7) Next deadline. Apply RAG status. Add a total group exposure row.',
+            'Create an Internal Audit progress tracker on a new sheet. For each of the 24 internal audit engagements planned for FY2025 (across 11 divisions), show: (1) Entity and area, (2) Planned start and end date, (3) Status, (4) High/medium/low findings count, (5) Management response received (Y/N), (6) Overdue findings from prior audit. Highlight engagements where the management response is overdue.',
+            'Build a risk appetite statement dashboard on a new sheet. For each risk category (credit, market, operational, compliance, ESG, strategic), show: (1) Risk appetite statement (one sentence), (2) Key risk metric, (3) Tolerance threshold, (4) Current level, (5) Status (Within / Approaching / Breaching). Flag breaching risks in red.'
           ]
         },
         {
@@ -5525,9 +5525,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 20_Zava_ESG_Sustainability_Framework.docx. Ask Copilot: Draft the Board Risk Committee special meeting report on the 4 concurrent risk events. For each event: (1) 1-paragraph situation summary, (2) Quantified financial exposure, (3) Immediate actions taken, (4) Remediation timeline, (5) Board decision required. Include an opening executive summary covering the aggregate risk exposure and a single recommendation for the Board. 12 pages, formal Board Risk Committee paper format.',
-            'Ask Copilot: Draft an update to Zava Group\'s Risk Appetite Statement. Current appetites are defined for 6 risk categories. The 4 active risk events suggest our risk appetite in operational risk and trading was set too broadly. Propose revised appetite thresholds for: (1) Single counterparty trading exposure (reduce from USD 20M to USD 15M), (2) Regulatory enforcement tolerance (zero tolerance for >2 enforcement notices at any single facility), (3) NPL appetite for Zava Bank consumer loans (reduce from 5% to 3.5% triggering immediate CRO notification). Format as a Risk Appetite Statement amendment paper.',
-            'Ask Copilot: Draft the Internal Audit findings management letter to the Cilegon Plant Manager on the 3 BPOM enforcement notices. The letter should: summarise the audit findings (control failure in EHS compliance monitoring), list 8 required management actions, set a 60-day deadline for each, and note that a follow-up audit will be conducted within 90 days. Formal audit management letter format.'
+            'Draft the Board Risk Committee special meeting report on the 4 concurrent risk events. For each event: (1) 1-paragraph situation summary, (2) Quantified financial exposure, (3) Immediate actions taken, (4) Remediation timeline, (5) Board decision required. Include an opening executive summary covering the aggregate risk exposure and a single recommendation for the Board. 12 pages, formal Board Risk Committee paper format.',
+            'Draft an update to Zava Group\'s Risk Appetite Statement. Current appetites are defined for 6 risk categories. The 4 active risk events suggest our risk appetite in operational risk and trading was set too broadly. Propose revised appetite thresholds for: (1) Single counterparty trading exposure (reduce from USD 20M to USD 15M), (2) Regulatory enforcement tolerance (zero tolerance for >2 enforcement notices at any single facility), (3) NPL appetite for Zava Bank consumer loans (reduce from 5% to 3.5% triggering immediate CRO notification). Format as a Risk Appetite Statement amendment paper.',
+            'Draft the Internal Audit findings management letter to the Cilegon Plant Manager on the 3 BPOM enforcement notices. The letter should: summarise the audit findings (control failure in EHS compliance monitoring), list 8 required management actions, set a 60-day deadline for each, and note that a follow-up audit will be conducted within 90 days. Formal audit management letter format.'
           ]
         },
         {
@@ -5536,9 +5536,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create an 8-slide Board Risk Committee special meeting deck. Include: (1) Agenda — 4 active risk events, (2) Event 1: Coal Trading Breach — situation, exposure, remediation, (3) Event 2: Zava Bank NPL — situation, provisioning, BNM plan, (4) Event 3: Cilegon Enforcement — situation, corrective action, (5) Event 4: RSPO Suspension — situation, remediation, (6) Combined risk exposure — stress test results, (7) ERM framework gap — what control failed in each event, (8) Board decisions required. Red and white colour scheme — this is a crisis meeting.',
-            'Ask Copilot: Create a 2-slide ERM framework gap analysis. Slide 1: For each of the 4 events, identify the specific ERM control that failed — monitoring frequency? Escalation trigger? Risk appetite threshold? Slide 2: The 5 specific ERM enhancements that would have prevented or minimised each event.',
-            'Ask Copilot: Create a group risk heat map slide showing 15 key risks on a 5x5 likelihood-impact matrix. Colour the matrix: green (low), yellow (medium), orange (high), red (critical). Mark the 4 active risk events with a special marker showing they have already materialised.'
+            'Create an 8-slide Board Risk Committee special meeting deck. Include: (1) Agenda — 4 active risk events, (2) Event 1: Coal Trading Breach — situation, exposure, remediation, (3) Event 2: Zava Bank NPL — situation, provisioning, BNM plan, (4) Event 3: Cilegon Enforcement — situation, corrective action, (5) Event 4: RSPO Suspension — situation, remediation, (6) Combined risk exposure — stress test results, (7) ERM framework gap — what control failed in each event, (8) Board decisions required. Red and white colour scheme — this is a crisis meeting.',
+            'Create a 2-slide ERM framework gap analysis. Slide 1: For each of the 4 events, identify the specific ERM control that failed — monitoring frequency? Escalation trigger? Risk appetite threshold? Slide 2: The 5 specific ERM enhancements that would have prevented or minimised each event.',
+            'Create a group risk heat map slide showing 15 key risks on a 5x5 likelihood-impact matrix. Colour the matrix: green (low), yellow (medium), orange (high), red (critical). Mark the 4 active risk events with a special marker showing they have already materialised.'
           ]
         },
         {
@@ -5547,9 +5547,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft the CRO\'s notification email to all Division Risk Officers and CEOs announcing the 4 active risk events at Group level. The email should: state that a special Board Risk Committee meeting has been called, request each division to review their own risk registers for similar exposures, and ask for a written risk status update from each division by end of week. Tone: serious, professional, and urgent.',
-            'Ask Copilot: Draft the Group Risk Division\'s quarterly update letter to KPMG (external auditors) informing them of the 4 active risk events and the related financial provisions. The letter should disclose: coal trading exposure MYR 28.4M, Zava Bank provision MYR 420M additional, Cilegon production loss estimate MYR 85M, RSPO remediation cost estimate MYR 42M. Request their view on any additional audit procedures required.',
-            'Ask Copilot: Draft the CRO\'s email to the internal audit team instructing a special unplanned audit of the Group Trading Desk following the coal trading limit breach. The audit should cover: position limit monitoring controls, daily mark-to-market reporting process, Risk Committee escalation procedures, and the approval process for limit increases. Timeline: 3-week fieldwork, report in 6 weeks.'
+            'Draft the CRO\'s notification email to all Division Risk Officers and CEOs announcing the 4 active risk events at Group level. The email should: state that a special Board Risk Committee meeting has been called, request each division to review their own risk registers for similar exposures, and ask for a written risk status update from each division by end of week. Tone: serious, professional, and urgent.',
+            'Draft the Group Risk Division\'s quarterly update letter to KPMG (external auditors) informing them of the 4 active risk events and the related financial provisions. The letter should disclose: coal trading exposure MYR 28.4M, Zava Bank provision MYR 420M additional, Cilegon production loss estimate MYR 85M, RSPO remediation cost estimate MYR 42M. Request their view on any additional audit procedures required.',
+            'Draft the CRO\'s email to the internal audit team instructing a special unplanned audit of the Group Trading Desk following the coal trading limit breach. The audit should cover: position limit monitoring controls, daily mark-to-market reporting process, Risk Committee escalation procedures, and the approval process for limit increases. Timeline: 3-week fieldwork, report in 6 weeks.'
           ]
         },
         {
@@ -5558,9 +5558,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a risk committee or crisis management meeting. Ask Copilot: Identify all risk events discussed, risk mitigation actions committed, and any decisions made about escalation or disclosure. Create an action tracker.',
-            'Ask Copilot: Draft the post-meeting risk management team follow-up actions. Group by risk event: Trading Breach | Bank NPL | Cilegon Enforcement | RSPO. Include action, owner, and deadline.',
-            'Ask Copilot: From this meeting, which Board members expressed the most concern about the combined risk exposure? What additional information did they request before the next Board meeting?'
+            'Open an existing recorded Teams meeting recap from a risk committee or crisis management meeting. Identify all risk events discussed, risk mitigation actions committed, and any decisions made about escalation or disclosure. Create an action tracker.',
+            'Draft the post-meeting risk management team follow-up actions. Group by risk event: Trading Breach | Bank NPL | Cilegon Enforcement | RSPO. Include action, owner, and deadline.',
+            'From this meeting, which Board members expressed the most concern about the combined risk exposure? What additional information did they request before the next Board meeting?'
           ]
         },
         {
@@ -5668,8 +5668,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 04_Zava_MA_Evaluation_Framework.docx and 01_Zava_Group_Financial_Performance.xlsx. Ask Analyst: Evaluate the 4 healthcare M&A targets against the 7-category framework. Score each target on: (1) Strategic fit (1-5), (2) Financial performance — EBITDA margin and growth, (3) Integration complexity, (4) Price vs comparable transactions, (5) Management quality, (6) Regulatory risk, (7) ESG profile. Rank the 4 targets from most to least attractive. Identify which target best meets our ROIC>WACC threshold by Year 5.',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx. Ask: Build an M&A deal capacity analysis. Current net debt MYR 18.4B, EBITDA MYR 7.2B, gearing 0.82x. Covenant: net debt/EBITDA < 3.5x. Assuming we maintain gearing below 2.5x (conservative target), what is the maximum deal size we can fund with: (1) 100% debt financing, (2) 70% debt / 30% equity (rights issue or new shares), (3) Using REIT IPO proceeds as partial funding? Calculate for each.'
+            'Evaluate the 4 healthcare M&A targets against the 7-category framework. Score each target on: (1) Strategic fit (1-5), (2) Financial performance — EBITDA margin and growth, (3) Integration complexity, (4) Price vs comparable transactions, (5) Management quality, (6) Regulatory risk, (7) ESG profile. Rank the 4 targets from most to least attractive. Identify which target best meets our ROIC>WACC threshold by Year 5.',
+            'Build an M&A deal capacity analysis. Current net debt MYR 18.4B, EBITDA MYR 7.2B, gearing 0.82x. Covenant: net debt/EBITDA < 3.5x. Assuming we maintain gearing below 2.5x (conservative target), what is the maximum deal size we can fund with: (1) 100% debt financing, (2) 70% debt / 30% equity (rights issue or new shares), (3) Using REIT IPO proceeds as partial funding? Calculate for each.'
           ]
         },
         {
@@ -5678,9 +5678,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 01_Zava_Group_Financial_Performance.xlsx. Navigate to the M&A sheet. Ask Copilot: Build a deal scorecard on a new sheet for the 4 healthcare targets. For each target, show: (1) Enterprise value (MYR M), (2) EV/EBITDA multiple paid, (3) Revenue and EBITDA (current year), (4) Projected Year 3 EBITDA with synergies, (5) EPS accretion in Year 3 (bps), (6) ROIC at Year 5 vs WACC 9.2%, (7) Recommended action (Proceed / Further Diligence / Pass). Apply colour coding.',
-            'Ask Copilot: Create a strategic portfolio matrix on a new sheet. For each of the 11 Zava divisions, plot on a 3x3 McKinsey matrix (Industry Attractiveness vs Business Unit Strength). Classify each as Grow (top-right), Hold (diagonal), or Divest (bottom-left). For the 2 non-core assets identified for divestment, calculate estimated divestment proceeds and the use of proceeds.',
-            'Ask Copilot: Build a ZAVA FORWARD 2030 capex tracker. For MYR 12.4B total capex over 5 years, show allocation by: (1) Division (Healthcare expansion MYR 3.2B, Properties REIT MYR 1.4B, Pharma MYR 0.8B, Manufacturing upgrade MYR 1.6B, Digital transformation MYR 0.9B, others), (2) Year, (3) Funding source (own cash, debt, REIT IPO proceeds). Show cumulative capex vs budget by year.'
+            'Open 01_Zava_Group_Financial_Performance.xlsx. Navigate to the M&A sheet. Build a deal scorecard on a new sheet for the 4 healthcare targets. For each target, show: (1) Enterprise value (MYR M), (2) EV/EBITDA multiple paid, (3) Revenue and EBITDA (current year), (4) Projected Year 3 EBITDA with synergies, (5) EPS accretion in Year 3 (bps), (6) ROIC at Year 5 vs WACC 9.2%, (7) Recommended action (Proceed / Further Diligence / Pass). Apply colour coding.',
+            'Create a strategic portfolio matrix on a new sheet. For each of the 11 Zava divisions, plot on a 3x3 McKinsey matrix (Industry Attractiveness vs Business Unit Strength). Classify each as Grow (top-right), Hold (diagonal), or Divest (bottom-left). For the 2 non-core assets identified for divestment, calculate estimated divestment proceeds and the use of proceeds.',
+            'Build a ZAVA FORWARD 2030 capex tracker. For MYR 12.4B total capex over 5 years, show allocation by: (1) Division (Healthcare expansion MYR 3.2B, Properties REIT MYR 1.4B, Pharma MYR 0.8B, Manufacturing upgrade MYR 1.6B, Digital transformation MYR 0.9B, others), (2) Year, (3) Funding source (own cash, debt, REIT IPO proceeds). Show cumulative capex vs budget by year.'
           ]
         },
         {
@@ -5689,9 +5689,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 04_Zava_MA_Evaluation_Framework.docx. Ask Copilot: Update the M&A Evaluation Framework to add a new ESG scoring category. The new category should include: (1) GHG Scope 1/2 intensity vs sector benchmark, (2) RSPO/ISPO certification status if plantation involved, (3) Labour practices and human rights screening, (4) Governance quality — independent directors, related party transaction history, (5) EUDR compliance if applicable. Assign a 15% weight to ESG in the overall deal score. Revise the framework document accordingly.',
-            'Ask Copilot: Draft the Executive Summary of the PrimeCare Holdings M&A Information Memorandum. The IM should cover: (1) Transaction overview — Zava Group\'s proposed acquisition of 60% equity stake, (2) PrimeCare overview — 8 hospitals, MYR 680M revenue, 14.2% EBITDA margin, (3) Strategic rationale — accelerates Zava Healthcare to 18 hospitals, fills MY Central region gap, (4) Valuation — MYR 1.84B EV at 11.2x EV/EBITDA, (5) Deal structure — MYR 1.1B upfront, MYR 280M deferred, (6) Key conditions — regulatory approval, CIMSA accreditation maintained. 4 pages, investment banking IM style.',
-            'Ask Copilot: Draft the Board paper recommending approval of the PrimeCare acquisition. Cover: strategic rationale, financial impact (EPS accretion Year 3), deal structure, risk factors and mitigants, WACC vs ROIC analysis, regulatory approval timeline, and the Board resolution requested. 15 pages, formal Board paper.'
+            'Update the M&A Evaluation Framework to add a new ESG scoring category. The new category should include: (1) GHG Scope 1/2 intensity vs sector benchmark, (2) RSPO/ISPO certification status if plantation involved, (3) Labour practices and human rights screening, (4) Governance quality — independent directors, related party transaction history, (5) EUDR compliance if applicable. Assign a 15% weight to ESG in the overall deal score. Revise the framework document accordingly.',
+            'Draft the Executive Summary of the PrimeCare Holdings M&A Information Memorandum. The IM should cover: (1) Transaction overview — Zava Group\'s proposed acquisition of 60% equity stake, (2) PrimeCare overview — 8 hospitals, MYR 680M revenue, 14.2% EBITDA margin, (3) Strategic rationale — accelerates Zava Healthcare to 18 hospitals, fills MY Central region gap, (4) Valuation — MYR 1.84B EV at 11.2x EV/EBITDA, (5) Deal structure — MYR 1.1B upfront, MYR 280M deferred, (6) Key conditions — regulatory approval, CIMSA accreditation maintained. 4 pages, investment banking IM style.',
+            'Draft the Board paper recommending approval of the PrimeCare acquisition. Cover: strategic rationale, financial impact (EPS accretion Year 3), deal structure, risk factors and mitigants, WACC vs ROIC analysis, regulatory approval timeline, and the Board resolution requested. 15 pages, formal Board paper.'
           ]
         },
         {
@@ -5700,9 +5700,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 14-slide Investor Day strategy presentation for ZAVA FORWARD 2030. Include: (1) Group overview — MYR 44.8B, 11 divisions, (2) Market context — ASEAN growth outlook, (3) 5 strategic pillars, (4) Portfolio optimisation — grow, hold, divest decisions, (5) Healthcare M&A — pipeline and PrimeCare, (6) Properties REIT IPO 2026, (7) Pharma expansion — Vietnam and Philippines, (8) Digital transformation, (9) ESG leadership, (10) Capital allocation — MYR 12.4B, (11) 5-year financial targets, (12) Dividend policy, (13) Key risks and mitigants, (14) Summary — why Zava Group is the ASEAN conglomerate to own. Dark navy and gold.',
-            'Ask Copilot: Create a 5-slide M&A strategy summary for the Board\'s Strategy & Investment Committee. Slide 1: M&A deal capacity. Slides 2-5: Each of the 4 healthcare targets — one slide each with scorecard, recommendation, and key condition.',
-            'Ask Copilot: Create a 3-slide Vietnam pharma market entry analysis. Slide 1: Vietnam pharma market — size, growth, key therapeutic areas. Slide 2: Entry options — JV vs greenfield vs acquisition, comparing speed, cost, and risk. Slide 3: Recommended entry mode and 24-month implementation plan.'
+            'Create a 14-slide Investor Day strategy presentation for ZAVA FORWARD 2030. Include: (1) Group overview — MYR 44.8B, 11 divisions, (2) Market context — ASEAN growth outlook, (3) 5 strategic pillars, (4) Portfolio optimisation — grow, hold, divest decisions, (5) Healthcare M&A — pipeline and PrimeCare, (6) Properties REIT IPO 2026, (7) Pharma expansion — Vietnam and Philippines, (8) Digital transformation, (9) ESG leadership, (10) Capital allocation — MYR 12.4B, (11) 5-year financial targets, (12) Dividend policy, (13) Key risks and mitigants, (14) Summary — why Zava Group is the ASEAN conglomerate to own. Dark navy and gold.',
+            'Create a 5-slide M&A strategy summary for the Board\'s Strategy & Investment Committee. Slide 1: M&A deal capacity. Slides 2-5: Each of the 4 healthcare targets — one slide each with scorecard, recommendation, and key condition.',
+            'Create a 3-slide Vietnam pharma market entry analysis. Slide 1: Vietnam pharma market — size, growth, key therapeutic areas. Slide 2: Entry options — JV vs greenfield vs acquisition, comparing speed, cost, and risk. Slide 3: Recommended entry mode and 24-month implementation plan.'
           ]
         },
         {
@@ -5711,9 +5711,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a Non-Disclosure Agreement cover letter to PrimeCare Holdings\' CEO proposing the commencement of due diligence. The letter should: confirm our interest in exploring a 60% equity acquisition, request execution of the mutual NDA, and propose a 2-week timeline for the management presentation. Confidential, professional M&A engagement letter tone.',
-            'Ask Copilot: Draft the strategy communication to all Division CEOs following the ZAVA FORWARD 2030 Investor Day. The email should: summarise the 5 strategic pillars as they apply to each division, confirm the individual division capex allocation, and call for division 3-year operating plans to be submitted within 6 weeks. Energising, leadership tone.',
-            'Ask Copilot: Draft an email to our financial advisors (Goldman Sachs and Maybank Investment Bank) confirming the mandate for the PrimeCare M&A advisory engagement. Confirm: deal structure, advisory fee structure (retainer MYR 180K/month + success fee 0.8% of deal value), milestones for success fee trigger, and the 6-month exclusivity period.'
+            'Draft a Non-Disclosure Agreement cover letter to PrimeCare Holdings\' CEO proposing the commencement of due diligence. The letter should: confirm our interest in exploring a 60% equity acquisition, request execution of the mutual NDA, and propose a 2-week timeline for the management presentation. Confidential, professional M&A engagement letter tone.',
+            'Draft the strategy communication to all Division CEOs following the ZAVA FORWARD 2030 Investor Day. The email should: summarise the 5 strategic pillars as they apply to each division, confirm the individual division capex allocation, and call for division 3-year operating plans to be submitted within 6 weeks. Energising, leadership tone.',
+            'Draft an email to our financial advisors (Goldman Sachs and Maybank Investment Bank) confirming the mandate for the PrimeCare M&A advisory engagement. Confirm: deal structure, advisory fee structure (retainer MYR 180K/month + success fee 0.8% of deal value), milestones for success fee trigger, and the 6-month exclusivity period.'
           ]
         },
         {
@@ -5722,9 +5722,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a strategy or M&A committee meeting. Ask Copilot: Identify all M&A target discussions, deal structure debates, and strategic divestment mentions. Extract the 3 most important decisions made and the follow-up actions for the deal team.',
-            'Ask Copilot: Draft the M&A deal team weekly update. Structure: (1) PrimeCare — due diligence status, (2) 3 other targets — preliminary status, (3) Regulatory approval timeline, (4) Board paper preparation timeline, (5) Financial advisor engagement.',
-            'Ask Copilot: From this meeting, what concerns did the CFO raise about the combined M&A capacity? What was the debate about whether to proceed with 1 deal now or to wait until the REIT IPO proceeds are available?'
+            'Open an existing recorded Teams meeting recap from a strategy or M&A committee meeting. Identify all M&A target discussions, deal structure debates, and strategic divestment mentions. Extract the 3 most important decisions made and the follow-up actions for the deal team.',
+            'Draft the M&A deal team weekly update. Structure: (1) PrimeCare — due diligence status, (2) 3 other targets — preliminary status, (3) Regulatory approval timeline, (4) Board paper preparation timeline, (5) Financial advisor engagement.',
+            'From this meeting, what concerns did the CFO raise about the combined M&A capacity? What was the debate about whether to proceed with 1 deal now or to wait until the REIT IPO proceeds are available?'
           ]
         },
         {
@@ -5842,9 +5842,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 03_Zava_Group_Strategy_Framework.docx. Create a companion Communications Tracker workbook. Ask Copilot: Create Sheet 1 with columns for each active communications issue: Issue | Stakeholder | Sentiment (1-5) | Our Response Status | Key Message | Next Action | Owner | Deadline. Populate with 5 current issues. Apply RAG conditional formatting.',
-            'Ask Copilot: Build an Investor Day content tracker on Sheet 2. For each presentation section, show: Section | Presenter | Key Message | Key Data Point | Draft Status | Approved By | Time Allocated. Track 14 sections. Highlight any section without an approved draft 3 weeks before the event.',
-            'Ask Copilot: Create a brand monitoring dashboard on Sheet 3. For Zava Group and 3 competitors (Sime Darby, IOI, IJM), show quarterly: (1) Share of Voice in financial media (estimated %), (2) Net sentiment score (-100 to +100), (3) ESG mentions — positive vs negative, (4) Key themes covered. Show trend over 4 quarters.'
+            'Open 03_Zava_Group_Strategy_Framework.docx. Create a companion Communications Tracker workbook. Create Sheet 1 with columns for each active communications issue: Issue | Stakeholder | Sentiment (1-5) | Our Response Status | Key Message | Next Action | Owner | Deadline. Populate with 5 current issues. Apply RAG conditional formatting.',
+            'Build an Investor Day content tracker on Sheet 2. For each presentation section, show: Section | Presenter | Key Message | Key Data Point | Draft Status | Approved By | Time Allocated. Track 14 sections. Highlight any section without an approved draft 3 weeks before the event.',
+            'Create a brand monitoring dashboard on Sheet 3. For Zava Group and 3 competitors (Sime Darby, IOI, IJM), show quarterly: (1) Share of Voice in financial media (estimated %), (2) Net sentiment score (-100 to +100), (3) ESG mentions — positive vs negative, (4) Key themes covered. Show trend over 4 quarters.'
           ]
         },
         {
@@ -5853,9 +5853,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 03_Zava_Group_Strategy_Framework.docx. Ask Copilot: Draft the Zava Group Investor Day speech for the Group CEO. The speech (12 minutes / ~1,800 words) should: open with a compelling vision statement for 2030, acknowledge the challenges (Bank NPL, RSPO suspension) honestly, pivot to the strategic opportunity (healthcare, REIT, pharma), present the 5 pillars of ZAVA FORWARD 2030, and close with a personal commitment from the CEO. Energetic, authentic, investor-facing tone.',
-            'Open Email_08_Coal_Trading_Breach.docx. Ask Copilot: Draft the Zava Group holding statement on the coal trading breach for media. The statement should: acknowledge a risk control issue has occurred, state that the matter is being investigated internally, confirm no material financial impact is expected, note that governance enhancements are being implemented, and direct media to the forthcoming H1 results announcement for full disclosure. Measured, factual, no admission of fault language.',
-            'Ask Copilot: Draft the internal employee communication on the coal trading breach, Zava Bank NPL, and RSPO suspension — 3 separate brief paragraphs for the Group intranet. Each paragraph should: describe the situation in plain language, emphasise management action, reassure employees that Zava Group is financially strong, and note what employees should say if customers or media ask. Honest, reassuring tone.'
+            'Draft the Zava Group Investor Day speech for the Group CEO. The speech (12 minutes / ~1,800 words) should: open with a compelling vision statement for 2030, acknowledge the challenges (Bank NPL, RSPO suspension) honestly, pivot to the strategic opportunity (healthcare, REIT, pharma), present the 5 pillars of ZAVA FORWARD 2030, and close with a personal commitment from the CEO. Energetic, authentic, investor-facing tone.',
+            'Draft the Zava Group holding statement on the coal trading breach for media. The statement should: acknowledge a risk control issue has occurred, state that the matter is being investigated internally, confirm no material financial impact is expected, note that governance enhancements are being implemented, and direct media to the forthcoming H1 results announcement for full disclosure. Measured, factual, no admission of fault language.',
+            'Draft the internal employee communication on the coal trading breach, Zava Bank NPL, and RSPO suspension — 3 separate brief paragraphs for the Group intranet. Each paragraph should: describe the situation in plain language, emphasise management action, reassure employees that Zava Group is financially strong, and note what employees should say if customers or media ask. Honest, reassuring tone.'
           ]
         },
         {
@@ -5864,9 +5864,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 5-slide crisis communications playbook for Zava Group. Slide 1: Crisis classification framework (Tier 1/2/3 based on financial, reputational, and legal impact). Slide 2: Response timeline — who must be notified and in what order within 2 hours, 24 hours, 72 hours. Slide 3: Approved spokespersons by crisis type. Slide 4: Holding statement template. Slide 5: Post-crisis reputation recovery actions. Red and white crisis management visual.',
-            'Ask Copilot: Create the Investor Day visual identity slide deck theme. Design: dark navy (#1F2D55) background, gold accents (#D4AF37), clean sans-serif font, "ZAVA FORWARD 2030" branding on every slide. Apply to a 3-slide sample: title slide, agenda slide, and a content slide. This template will be used for all 14 investor day sections.',
-            'Ask Copilot: Create a 2-slide ESG reputation recovery plan for the Perkebunan Lestari RSPO suspension. Slide 1: Current media narrative and key stakeholder concerns. Slide 2: 6-month reputation recovery roadmap — proactive ESG announcements, NGO engagement, RSPO reinstatement milestone, CEO community visit.'
+            'Create a 5-slide crisis communications playbook for Zava Group. Slide 1: Crisis classification framework (Tier 1/2/3 based on financial, reputational, and legal impact). Slide 2: Response timeline — who must be notified and in what order within 2 hours, 24 hours, 72 hours. Slide 3: Approved spokespersons by crisis type. Slide 4: Holding statement template. Slide 5: Post-crisis reputation recovery actions. Red and white crisis management visual.',
+            'Create the Investor Day visual identity slide deck theme. Design: dark navy (#1F2D55) background, gold accents (#D4AF37), clean sans-serif font, "ZAVA FORWARD 2030" branding on every slide. Apply to a 3-slide sample: title slide, agenda slide, and a content slide. This template will be used for all 14 investor day sections.',
+            'Create a 2-slide ESG reputation recovery plan for the Perkebunan Lestari RSPO suspension. Slide 1: Current media narrative and key stakeholder concerns. Slide 2: 6-month reputation recovery roadmap — proactive ESG announcements, NGO engagement, RSPO reinstatement milestone, CEO community visit.'
           ]
         },
         {
@@ -5875,9 +5875,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft the Group CEO\'s personalised letter to the top 15 institutional shareholders ahead of Investor Day. The letter should: acknowledge their continued support, invite them to Investor Day (date, venue, registration link), offer a 30-minute pre-event bilateral meeting, and build anticipation for the ZAVA FORWARD 2030 strategy announcement. Warm, CEO-personal tone.',
-            'Ask Copilot: Draft a proactive media outreach email to 10 financial journalists proposing a background briefing on ZAVA FORWARD 2030. The briefing will be under embargo until Investor Day. The email should: invite the journalist, note the key themes to be covered, confirm the background-only ground rules, and offer a post-Investor Day exclusive follow-up interview with the CEO.',
-            'Ask Copilot: Draft the Group CCO\'s email to all 11 Division Communications Heads with the media handling guidelines for the current sensitive period. The guidelines should: list the 4 approved spokespersons for media enquiries, categorise topics as "approved to discuss", "refer to holding statement", or "no comment", and remind them that all media enquiries must be logged in the Communications Tracker within 2 hours.'
+            'Draft the Group CEO\'s personalised letter to the top 15 institutional shareholders ahead of Investor Day. The letter should: acknowledge their continued support, invite them to Investor Day (date, venue, registration link), offer a 30-minute pre-event bilateral meeting, and build anticipation for the ZAVA FORWARD 2030 strategy announcement. Warm, CEO-personal tone.',
+            'Draft a proactive media outreach email to 10 financial journalists proposing a background briefing on ZAVA FORWARD 2030. The briefing will be under embargo until Investor Day. The email should: invite the journalist, note the key themes to be covered, confirm the background-only ground rules, and offer a post-Investor Day exclusive follow-up interview with the CEO.',
+            'Draft the Group CCO\'s email to all 11 Division Communications Heads with the media handling guidelines for the current sensitive period. The guidelines should: list the 4 approved spokespersons for media enquiries, categorise topics as "approved to discuss", "refer to holding statement", or "no comment", and remind them that all media enquiries must be logged in the Communications Tracker within 2 hours.'
           ]
         },
         {
@@ -5886,9 +5886,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a communications, PR, or investor relations meeting. Ask Copilot: Identify all active media or reputation issues discussed, the agreed response strategies, and any approvals obtained. Create a communications action log.',
-            'Ask Copilot: Draft the weekly communications status update for the Group CEO. Structure: (1) Key media mentions this week — positive/negative, (2) Active issues and response status, (3) Investor Day preparation progress, (4) Next week\'s scheduled communications activities, (5) Actions needed from CEO.',
-            'Ask Copilot: From this meeting, what was the debate about whether to respond proactively to the Zava Bank NPL media story? What were the arguments for and against responding before the H1 results?'
+            'Open an existing recorded Teams meeting recap from a communications, PR, or investor relations meeting. Identify all active media or reputation issues discussed, the agreed response strategies, and any approvals obtained. Create a communications action log.',
+            'Draft the weekly communications status update for the Group CEO. Structure: (1) Key media mentions this week — positive/negative, (2) Active issues and response status, (3) Investor Day preparation progress, (4) Next week\'s scheduled communications activities, (5) Actions needed from CEO.',
+            'From this meeting, what was the debate about whether to respond proactively to the Zava Bank NPL media story? What were the arguments for and against responding before the H1 results?'
           ]
         },
         {
@@ -6006,9 +6006,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 03_Zava_Group_Strategy_Framework.docx. Create a companion IT Programme Tracker workbook. Ask Copilot: Create Sheet 1 with columns: Programme | Division Scope | Budget (MYR M) | Spent to Date | % Spent | Timeline | Current Phase | Status | Key Risk | Next Milestone. Populate with 5 IT programmes (Copilot rollout, SAP S/4HANA, Data Lake, Cybersecurity posture, Digital workplace). Apply RAG conditional formatting.',
-            'Ask Copilot: Build a Copilot adoption dashboard on Sheet 2. For each of the 11 divisions in Phase 1 rollout, show: (1) Licences allocated, (2) Monthly active users, (3) Adoption rate %, (4) Top 3 Copilot use cases by department, (5) Average prompts per user per day, (6) User satisfaction score. Highlight divisions with adoption below 40% in red — these need targeted intervention.',
-            'Ask Copilot: Create a cybersecurity incident tracker on Sheet 3. For each security incident in the past 12 months: (1) Date, (2) Type, (3) Division affected, (4) Systems compromised, (5) Data at risk, (6) Response time (hours), (7) Containment status, (8) BNM/PDPA notification made (Y/N), (9) Root cause, (10) Remediation completed (Y/N). Calculate average response time and % incidents with BNM notification completed within required timeframe.'
+            'Open 03_Zava_Group_Strategy_Framework.docx. Create a companion IT Programme Tracker workbook. Create Sheet 1 with columns: Programme | Division Scope | Budget (MYR M) | Spent to Date | % Spent | Timeline | Current Phase | Status | Key Risk | Next Milestone. Populate with 5 IT programmes (Copilot rollout, SAP S/4HANA, Data Lake, Cybersecurity posture, Digital workplace). Apply RAG conditional formatting.',
+            'Build a Copilot adoption dashboard on Sheet 2. For each of the 11 divisions in Phase 1 rollout, show: (1) Licences allocated, (2) Monthly active users, (3) Adoption rate %, (4) Top 3 Copilot use cases by department, (5) Average prompts per user per day, (6) User satisfaction score. Highlight divisions with adoption below 40% in red — these need targeted intervention.',
+            'Create a cybersecurity incident tracker on Sheet 3. For each security incident in the past 12 months: (1) Date, (2) Type, (3) Division affected, (4) Systems compromised, (5) Data at risk, (6) Response time (hours), (7) Containment status, (8) BNM/PDPA notification made (Y/N), (9) Root cause, (10) Remediation completed (Y/N). Calculate average response time and % incidents with BNM notification completed within required timeframe.'
           ]
         },
         {
@@ -6017,9 +6017,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 02_Zava_Group_Policy_Handbook.docx. Ask Copilot: Update the Data Privacy & Cybersecurity Policy with a new chapter on M365 Copilot Data Governance. Cover: (1) What data Copilot can access — only Microsoft Graph data within the user\'s permission boundary, (2) What data employees must NOT input into Copilot — PDPA-classified personal data, board-sensitive information, unpublished financial results, (3) How to classify a prompt before sending it, (4) Who is responsible for Copilot-generated content — the employee, not Microsoft, (5) Incident reporting if sensitive data is accidentally shared. 4 pages, policy format.',
-            'Ask Copilot: Draft the Zava Group Copilot Rollout Communication for all 2,400 Phase 1 users. The communication should: explain what M365 Copilot is in 3 simple sentences, describe the top 5 use cases for each user\'s role (tailored for Finance, HR, Operations, and Senior Management), provide links to the 3 training resources, note the DLP data handling rules, and invite users to the first Copilot Champions session next week. Exciting, accessible tone.',
-            'Ask Copilot: Draft the SAP S/4HANA Business Case for the Board approval paper. Cover: (1) Current state — 3 ERPs (SAP ECC for manufacturing, Oracle for financial services, Microsoft Dynamics for BPO), (2) The integration pain — monthly intercompany reconciliation takes 22 person-days, (3) Proposed solution — SAP S/4HANA single ERP, 42-month implementation, (4) Investment — MYR 84M total, (5) Benefits — 14-day monthly close reduced to 5 days, real-time group P&L, MYR 22M annual operational saving, (6) Risk — parallel run, data migration complexity. Board paper format.'
+            'Update the Data Privacy & Cybersecurity Policy with a new chapter on M365 Copilot Data Governance. Cover: (1) What data Copilot can access — only Microsoft Graph data within the user\'s permission boundary, (2) What data employees must NOT input into Copilot — PDPA-classified personal data, board-sensitive information, unpublished financial results, (3) How to classify a prompt before sending it, (4) Who is responsible for Copilot-generated content — the employee, not Microsoft, (5) Incident reporting if sensitive data is accidentally shared. 4 pages, policy format.',
+            'Draft the Zava Group Copilot Rollout Communication for all 2,400 Phase 1 users. The communication should: explain what M365 Copilot is in 3 simple sentences, describe the top 5 use cases for each user\'s role (tailored for Finance, HR, Operations, and Senior Management), provide links to the 3 training resources, note the DLP data handling rules, and invite users to the first Copilot Champions session next week. Exciting, accessible tone.',
+            'Draft the SAP S/4HANA Business Case for the Board approval paper. Cover: (1) Current state — 3 ERPs (SAP ECC for manufacturing, Oracle for financial services, Microsoft Dynamics for BPO), (2) The integration pain — monthly intercompany reconciliation takes 22 person-days, (3) Proposed solution — SAP S/4HANA single ERP, 42-month implementation, (4) Investment — MYR 84M total, (5) Benefits — 14-day monthly close reduced to 5 days, real-time group P&L, MYR 22M annual operational saving, (6) Risk — parallel run, data migration complexity. Board paper format.'
           ]
         },
         {
@@ -6028,9 +6028,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide IT Digital Transformation Board update. Include: (1) Digital transformation roadmap overview, (2) M365 Copilot — Phase 1 adoption results and Phase 2 plan, (3) Copilot ROI — time saved and cost avoided, (4) SAP S/4HANA business case, (5) Azure Data Lake — architecture and progress, (6) Cybersecurity posture — phishing incident and remediation, (7) Cybersecurity heat map — top 5 risks, (8) Digital workplace modernisation, (9) IT budget vs spend by programme, (10) FY2026 IT priorities. Teal and white colour scheme.',
-            'Ask Copilot: Create a 3-slide Copilot adoption showcase for the CEO town hall. Slide 1: What Copilot can do — 5 use cases with before/after time comparison. Slide 2: Adoption results from Phase 1 — which divisions are leading, which are lagging. Slide 3: Phase 2 rollout plan — all 87,420 users by end of FY2026.',
-            'Ask Copilot: Create a 2-slide cybersecurity incident summary for the Board Audit Committee. Slide 1: The phishing incident — what happened, how many credentials compromised, immediate containment actions. Slide 2: The 5 cybersecurity posture improvements implemented since the incident and the updated risk heat map.'
+            'Create a 10-slide IT Digital Transformation Board update. Include: (1) Digital transformation roadmap overview, (2) M365 Copilot — Phase 1 adoption results and Phase 2 plan, (3) Copilot ROI — time saved and cost avoided, (4) SAP S/4HANA business case, (5) Azure Data Lake — architecture and progress, (6) Cybersecurity posture — phishing incident and remediation, (7) Cybersecurity heat map — top 5 risks, (8) Digital workplace modernisation, (9) IT budget vs spend by programme, (10) FY2026 IT priorities. Teal and white colour scheme.',
+            'Create a 3-slide Copilot adoption showcase for the CEO town hall. Slide 1: What Copilot can do — 5 use cases with before/after time comparison. Slide 2: Adoption results from Phase 1 — which divisions are leading, which are lagging. Slide 3: Phase 2 rollout plan — all 87,420 users by end of FY2026.',
+            'Create a 2-slide cybersecurity incident summary for the Board Audit Committee. Slide 1: The phishing incident — what happened, how many credentials compromised, immediate containment actions. Slide 2: The 5 cybersecurity posture improvements implemented since the incident and the updated risk heat map.'
           ]
         },
         {
@@ -6039,9 +6039,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft the Group CIO\'s email to all Division IT Heads announcing the Microsoft 365 Copilot Phase 2 rollout plan. The email should: confirm the Phase 2 timeline (Q3 FY2025 — all remaining users), division-by-division rollout schedule, mandatory Copilot literacy training requirement, and the DLP data governance rules that must be communicated to all users before activation.',
-            'Ask Copilot: Draft the BNM cybersecurity incident notification letter following the phishing incident at Zava Bank. Under BNM\'s Risk Management in Technology (RMiT) policy, this notification is required within 24 hours of discovering the incident. The letter should: describe the incident (48 credentials compromised via phishing email, no customer data accessed, contained within 6 hours), confirm containment actions, and state the remediation timeline.',
-            'Ask Copilot: Draft an invitation email to all 2,400 Phase 1 Copilot users for the first "Copilot Champions Showcase" event. The email should: announce the event date and format (2-hour online), note that 5 employees will present their top Copilot use cases and time savings, invite attendees to register, and offer a Copilot productivity toolkit download link. Energetic, community-building tone.'
+            'Draft the Group CIO\'s email to all Division IT Heads announcing the Microsoft 365 Copilot Phase 2 rollout plan. The email should: confirm the Phase 2 timeline (Q3 FY2025 — all remaining users), division-by-division rollout schedule, mandatory Copilot literacy training requirement, and the DLP data governance rules that must be communicated to all users before activation.',
+            'Draft the BNM cybersecurity incident notification letter following the phishing incident at Zava Bank. Under BNM\'s Risk Management in Technology (RMiT) policy, this notification is required within 24 hours of discovering the incident. The letter should: describe the incident (48 credentials compromised via phishing email, no customer data accessed, contained within 6 hours), confirm containment actions, and state the remediation timeline.',
+            'Draft an invitation email to all 2,400 Phase 1 Copilot users for the first "Copilot Champions Showcase" event. The email should: announce the event date and format (2-hour online), note that 5 employees will present their top Copilot use cases and time savings, invite attendees to register, and offer a Copilot productivity toolkit download link. Energetic, community-building tone.'
           ]
         },
         {
@@ -6050,9 +6050,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from an IT steering or project meeting. Ask Copilot: Identify all IT programme delays, adoption blockers, and technical issues discussed. Create an action log with the IT team owner and deadline.',
-            'Ask Copilot: Draft the IT leadership weekly update for the CIO. Structure: (1) Copilot Phase 1 adoption rate this week vs target, (2) SAP S/4HANA implementation — phase and milestones, (3) Data Lake — datasets onboarded this week, (4) Cybersecurity — any new incidents or alerts, (5) Budget status vs plan.',
-            'Ask Copilot: From this meeting, what specific concerns did Division MDs raise about the SAP S/4HANA implementation timeline? Was there any discussion about delaying the go-live date?'
+            'Open an existing recorded Teams meeting recap from an IT steering or project meeting. Identify all IT programme delays, adoption blockers, and technical issues discussed. Create an action log with the IT team owner and deadline.',
+            'Draft the IT leadership weekly update for the CIO. Structure: (1) Copilot Phase 1 adoption rate this week vs target, (2) SAP S/4HANA implementation — phase and milestones, (3) Data Lake — datasets onboarded this week, (4) Cybersecurity — any new incidents or alerts, (5) Budget status vs plan.',
+            'From this meeting, what specific concerns did Division MDs raise about the SAP S/4HANA implementation timeline? Was there any discussion about delaying the go-live date?'
           ]
         },
         {
@@ -6170,9 +6170,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 20_Zava_ESG_Sustainability_Framework.docx. Create a companion ESG Dashboard workbook. Ask Copilot: Create Sheet 1 with the Group ESG KPI scorecard for FY2024. For each of 18 KPIs (Scope 1-3 emissions, RSPO certified area, EUDR compliance, TRIR, women in leadership, waste diversion, water intensity, community investment, ESG rating), show: (1) FY2022 actual, (2) FY2023 actual, (3) FY2024 actual, (4) FY2025 target, (5) FY2030 target, (6) Status (On Track/At Risk/Missed). Apply RAG formatting.',
-            'Ask Copilot: Build an EUDR compliance tracker on Sheet 2. For each of the 12 estates, show: (1) Estate name and country, (2) Total area (ha), (3) EUDR-compliant area (ha), (4) Non-compliant area (ha), (5) Non-compliance reason (peatland, HCV overlap, deforestation risk), (6) EUDR compliance action status, (7) Target compliance date. Calculate overall EUDR compliance rate. Highlight non-compliant estates in red.',
-            'Ask Copilot: Create a RSPO reinstatement roadmap on Sheet 3. For the 4 major nonconformances at Perkebunan Lestari, show: (1) Nonconformance description, (2) Root cause, (3) Required corrective action, (4) Responsible team, (5) Estimated cost (MYR M), (6) Timeline, (7) Evidence required for RSPO reinstatement auditor. Calculate total remediation cost and the earliest possible reinstatement date.'
+            'Open 20_Zava_ESG_Sustainability_Framework.docx. Create a companion ESG Dashboard workbook. Create Sheet 1 with the Group ESG KPI scorecard for FY2024. For each of 18 KPIs (Scope 1-3 emissions, RSPO certified area, EUDR compliance, TRIR, women in leadership, waste diversion, water intensity, community investment, ESG rating), show: (1) FY2022 actual, (2) FY2023 actual, (3) FY2024 actual, (4) FY2025 target, (5) FY2030 target, (6) Status (On Track/At Risk/Missed). Apply RAG formatting.',
+            'Build an EUDR compliance tracker on Sheet 2. For each of the 12 estates, show: (1) Estate name and country, (2) Total area (ha), (3) EUDR-compliant area (ha), (4) Non-compliant area (ha), (5) Non-compliance reason (peatland, HCV overlap, deforestation risk), (6) EUDR compliance action status, (7) Target compliance date. Calculate overall EUDR compliance rate. Highlight non-compliant estates in red.',
+            'Create a RSPO reinstatement roadmap on Sheet 3. For the 4 major nonconformances at Perkebunan Lestari, show: (1) Nonconformance description, (2) Root cause, (3) Required corrective action, (4) Responsible team, (5) Estimated cost (MYR M), (6) Timeline, (7) Evidence required for RSPO reinstatement auditor. Calculate total remediation cost and the earliest possible reinstatement date.'
           ]
         },
         {
@@ -6181,9 +6181,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 22_Zava_Plantation_RSPO_Audit.docx. Ask Copilot: Draft the RSPO Corrective Action Plan (CAP) response document for submission to RSPO. For each of the 4 major nonconformances: (1) NC description and audit finding reference, (2) Root cause analysis (using 5-Why methodology), (3) Specific corrective actions with milestones and deadlines, (4) Evidence to be provided at the re-audit, (5) Responsible team and manager name. Format as a formal RSPO CAP document.',
-            'Open 20_Zava_ESG_Sustainability_Framework.docx. Ask Copilot: Draft the EUDR compliance communication for our 14 European CPO buyers. The letter should: acknowledge the EUDR deadline, confirm our EUDR due diligence system is in place for 10 of 12 estates, disclose that Perkebunan Lestari and Perkebunan Nusantara Zava require remediation, explain our EUDR remediation timeline, and propose supply continuity from our 10 fully compliant estates during the remediation period. Professional, transparent tone.',
-            'Ask Copilot: Write the Bursa Malaysia Sustainability Report climate risk section. Follow TCFD requirements: (1) Governance — who oversees climate risk at Board and management level, (2) Strategy — climate risks and opportunities identified, impact on financial planning, (3) Risk Management — how we identify, assess, and manage climate risks, (4) Metrics and Targets — Scope 1/2/3 emissions data, GHG reduction targets, SBTi status. Use TCFD 2023 framework, with Malaysian Bursa SR guidelines cross-reference.'
+            'Draft the RSPO Corrective Action Plan (CAP) response document for submission to RSPO. For each of the 4 major nonconformances: (1) NC description and audit finding reference, (2) Root cause analysis (using 5-Why methodology), (3) Specific corrective actions with milestones and deadlines, (4) Evidence to be provided at the re-audit, (5) Responsible team and manager name. Format as a formal RSPO CAP document.',
+            'Draft the EUDR compliance communication for our 14 European CPO buyers. The letter should: acknowledge the EUDR deadline, confirm our EUDR due diligence system is in place for 10 of 12 estates, disclose that Perkebunan Lestari and Perkebunan Nusantara Zava require remediation, explain our EUDR remediation timeline, and propose supply continuity from our 10 fully compliant estates during the remediation period. Professional, transparent tone.',
+            'Write the Bursa Malaysia Sustainability Report climate risk section. Follow TCFD requirements: (1) Governance — who oversees climate risk at Board and management level, (2) Strategy — climate risks and opportunities identified, impact on financial planning, (3) Risk Management — how we identify, assess, and manage climate risks, (4) Metrics and Targets — Scope 1/2/3 emissions data, GHG reduction targets, SBTi status. Use TCFD 2023 framework, with Malaysian Bursa SR guidelines cross-reference.'
           ]
         },
         {
@@ -6192,9 +6192,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 10-slide ESG Board presentation. Include: (1) Group ESG overview — performance vs targets FY2024, (2) RSPO suspension — situation, remediation plan, commercial impact, (3) EUDR compliance — 10/12 estates compliant, 2 requiring action, (4) Net Zero 2050 — 3 pathways, recommended scenario, (5) Scope 1/2 emissions dashboard, (6) Social — safety TRIR trend, DEI progress, community investment, (7) Bursa sustainability reporting — compliance status, (8) MSCI ESG rating — current and improvement actions, (9) ESG-linked financing — green sukuk opportunity, (10) Board decisions required. Green and white ESG colour scheme.',
-            'Ask Copilot: Create a 3-slide EUDR compliance update for European CPO buyers. Slide 1: Our EUDR compliance status — 10/12 estates compliant (show on map). Slide 2: The 2 non-compliant estates — remediation timeline and interim supply plan. Slide 3: Our long-term EUDR commitment — No Deforestation, No Peat, No Exploitation policy.',
-            'Ask Copilot: Create a 2-slide Net Zero 2050 pathway comparison. Slide 1: 3 scenarios — cumulative emissions and cost. Slide 2: Our recommended pathway (Scenario B) — key investments, milestone emissions targets, and cumulative offset cost avoided vs Scenario A.'
+            'Create a 10-slide ESG Board presentation. Include: (1) Group ESG overview — performance vs targets FY2024, (2) RSPO suspension — situation, remediation plan, commercial impact, (3) EUDR compliance — 10/12 estates compliant, 2 requiring action, (4) Net Zero 2050 — 3 pathways, recommended scenario, (5) Scope 1/2 emissions dashboard, (6) Social — safety TRIR trend, DEI progress, community investment, (7) Bursa sustainability reporting — compliance status, (8) MSCI ESG rating — current and improvement actions, (9) ESG-linked financing — green sukuk opportunity, (10) Board decisions required. Green and white ESG colour scheme.',
+            'Create a 3-slide EUDR compliance update for European CPO buyers. Slide 1: Our EUDR compliance status — 10/12 estates compliant (show on map). Slide 2: The 2 non-compliant estates — remediation timeline and interim supply plan. Slide 3: Our long-term EUDR commitment — No Deforestation, No Peat, No Exploitation policy.',
+            'Create a 2-slide Net Zero 2050 pathway comparison. Slide 1: 3 scenarios — cumulative emissions and cost. Slide 2: Our recommended pathway (Scenario B) — key investments, milestone emissions targets, and cumulative offset cost avoided vs Scenario A.'
           ]
         },
         {
@@ -6203,9 +6203,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft a letter to RSPO\'s Certification Team formally submitting Zava Agribusiness\'s Corrective Action Plan for the Perkebunan Lestari suspension. The letter should: reference the audit report date and CB (certification body), confirm our commitment to full remediation, highlight the 3 corrective actions already completed, attach the full CAP document, and request a timeline for the re-audit scheduling. Formal RSPO correspondence format.',
-            'Ask Copilot: Draft a proactive email to our top 6 European CPO buyers (who collectively represent 34% of our export volume) ahead of the EUDR enforcement date. The email should: confirm our EUDR readiness for 10 estates, disclose the 2 non-compliant estates transparently, provide the remediation timeline, and offer a contract amendment for the transitional period to supply only from compliant estates. Transparent, partnership-focused tone.',
-            'Ask Copilot: Draft the Group CSO\'s email to all 12 estate managers announcing the mandatory EUDR due diligence training programme. The training covers the geolocation mapping requirement, supply chain documentation, and the customer declaration process. All estate managers must complete the training within 30 days. Emphasise that EUDR compliance is not optional — non-compliance puts EU export contracts at risk.'
+            'Draft a letter to RSPO\'s Certification Team formally submitting Zava Agribusiness\'s Corrective Action Plan for the Perkebunan Lestari suspension. The letter should: reference the audit report date and CB (certification body), confirm our commitment to full remediation, highlight the 3 corrective actions already completed, attach the full CAP document, and request a timeline for the re-audit scheduling. Formal RSPO correspondence format.',
+            'Draft a proactive email to our top 6 European CPO buyers (who collectively represent 34% of our export volume) ahead of the EUDR enforcement date. The email should: confirm our EUDR readiness for 10 estates, disclose the 2 non-compliant estates transparently, provide the remediation timeline, and offer a contract amendment for the transitional period to supply only from compliant estates. Transparent, partnership-focused tone.',
+            'Draft the Group CSO\'s email to all 12 estate managers announcing the mandatory EUDR due diligence training programme. The training covers the geolocation mapping requirement, supply chain documentation, and the customer declaration process. All estate managers must complete the training within 30 days. Emphasise that EUDR compliance is not optional — non-compliance puts EU export contracts at risk.'
           ]
         },
         {
@@ -6214,9 +6214,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from an ESG or sustainability committee meeting. Ask Copilot: Identify all RSPO, EUDR, and carbon target discussions. Create an action log for the ESG team covering remediation, reporting, and stakeholder engagement.',
-            'Ask Copilot: Draft the ESG team\'s weekly update for the Group CSO. Structure: (1) RSPO CAP submission status, (2) EUDR compliance progress by estate, (3) Scope 1 emissions tracker — vs target, (4) Bursa Sustainability Report — sections completed, (5) MSCI ESG rating engagement.',
-            'Ask Copilot: From this meeting, what was the debate about whether to engage an independent third-party consultant to support the RSPO reinstatement process? What were the budget concerns raised?'
+            'Open an existing recorded Teams meeting recap from an ESG or sustainability committee meeting. Identify all RSPO, EUDR, and carbon target discussions. Create an action log for the ESG team covering remediation, reporting, and stakeholder engagement.',
+            'Draft the ESG team\'s weekly update for the Group CSO. Structure: (1) RSPO CAP submission status, (2) EUDR compliance progress by estate, (3) Scope 1 emissions tracker — vs target, (4) Bursa Sustainability Report — sections completed, (5) MSCI ESG rating engagement.',
+            'From this meeting, what was the debate about whether to engage an independent third-party consultant to support the RSPO reinstatement process? What were the budget concerns raised?'
           ]
         },
         {
@@ -6324,8 +6324,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 12_Zava_Manufacturing_KPIs.xlsx. Ask Analyst: (1) Plot the Nilai plant OEE decline from Jan 2023 to Dec 2024 on a time series chart. Overlay the dates of key events (first spindle failure, parts ordered, training scheduled) to show the correlation. (2) Calculate the revenue lost due to OEE decline vs the world-class OEE benchmark of 85% — show monthly and cumulative. (3) Decompose the OEE into Availability, Performance, and Quality components and show which is contributing most to the decline. Highlight the trend clearly.',
-            'Upload 15_Zava_BPO_Operations.xlsx. Ask Analyst: (1) Calculate the total annual revenue at risk from the 3 BPO contracts expiring within 6 months. (2) For each expiring contract, score the renewal probability (High/Medium/Low) based on NPS score and SLA performance. (3) If all 3 are lost, calculate the impact on BPO Division revenue, headcount utilisation, and profitability. (4) Plot a revenue cliff chart showing the contracted revenue falling off in the next 12 months if no renewals are secured.'
+            '(1) Plot the Nilai plant OEE decline from Jan 2023 to Dec 2024 on a time series chart. Overlay the dates of key events (first spindle failure, parts ordered, training scheduled) to show the correlation. (2) Calculate the revenue lost due to OEE decline vs the world-class OEE benchmark of 85% — show monthly and cumulative. (3) Decompose the OEE into Availability, Performance, and Quality components and show which is contributing most to the decline. Highlight the trend clearly.',
+            '(1) Calculate the total annual revenue at risk from the 3 BPO contracts expiring within 6 months. (2) For each expiring contract, score the renewal probability (High/Medium/Low) based on NPS score and SLA performance. (3) If all 3 are lost, calculate the impact on BPO Division revenue, headcount utilisation, and profitability. (4) Plot a revenue cliff chart showing the contracted revenue falling off in the next 12 months if no renewals are secured.'
           ]
         },
         {
@@ -6334,9 +6334,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 12_Zava_Manufacturing_KPIs.xlsx. Ask Copilot: Add a column on Sheet 1 (Factory Dashboard) calculating the annual revenue impact of current OEE vs target OEE (85%) for each factory. Formula: (Target OEE% - Actual OEE%) × Installed Capacity/day × Working Days × Revenue per Unit. Show as a revenue opportunity column. Highlight factories where the gap represents more than MYR 20M annual revenue opportunity in red.',
-            'Open 15_Zava_BPO_Operations.xlsx. Ask Copilot: Add a contract risk score on Sheet 1 (Client Dashboard) based on: NPS score < 45 = 2 points, SLA score < 92% = 2 points, contract expiry within 6 months = 3 points, renewal status "At Risk" = 3 points. Sum the scores. Score 6+ = High Risk (red), 3-5 = Medium Risk (amber), 0-2 = Low Risk (green). Calculate the total revenue at risk for High Risk contracts.',
-            'Ask Copilot: Create an OpEx tracker on a new sheet. For each of the 11 divisions, show: (1) FY2024 OpEx (MYR M), (2) FY2025 OpEx Budget, (3) FY2025 YTD Actual, (4) Variance MYR M, (5) Variance %, (6) OpEx reduction target (MYR M), (7) Savings achieved to date, (8) % of target achieved. Sum group totals. Highlight divisions where savings are below 30% of target in red — these need COO intervention.'
+            'Add a column on Sheet 1 (Factory Dashboard) calculating the annual revenue impact of current OEE vs target OEE (85%) for each factory. Formula: (Target OEE% - Actual OEE%) × Installed Capacity/day × Working Days × Revenue per Unit. Show as a revenue opportunity column. Highlight factories where the gap represents more than MYR 20M annual revenue opportunity in red.',
+            'Add a contract risk score on Sheet 1 (Client Dashboard) based on: NPS score < 45 = 2 points, SLA score < 92% = 2 points, contract expiry within 6 months = 3 points, renewal status "At Risk" = 3 points. Sum the scores. Score 6+ = High Risk (red), 3-5 = Medium Risk (amber), 0-2 = Low Risk (green). Calculate the total revenue at risk for High Risk contracts.',
+            'Create an OpEx tracker on a new sheet. For each of the 11 divisions, show: (1) FY2024 OpEx (MYR M), (2) FY2025 OpEx Budget, (3) FY2025 YTD Actual, (4) Variance MYR M, (5) Variance %, (6) OpEx reduction target (MYR M), (7) Savings achieved to date, (8) % of target achieved. Sum group totals. Highlight divisions where savings are below 30% of target in red — these need COO intervention.'
           ]
         },
         {
@@ -6346,8 +6346,8 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             'Open 12_Zava_Manufacturing_KPIs.xlsx. Ask Copilot to draft a briefing document: "Nilai Plant OEE Crisis — Root Cause Analysis and Recovery Plan". Structure: (1) Executive Summary — OEE at 62%, financial impact, recovery timeline, (2) Root Cause Analysis — 5-Why analysis of spindle motor failures, (3) Immediate actions — 5 things that can start this week, (4) Short-term actions (30-90 days) — maintenance programme, spare parts, training, (5) Long-term investment — MYR 8.2M spindle motor replacement business case, (6) Recovery milestones — OEE targets at 30/60/90/180 days. 4 pages.',
-            'Ask Copilot: Draft the formal response letter to BPOM regarding the 3 enforcement notices at Cilegon Specialty Chemicals. The letter should: reference each enforcement notice number and date, for each notice provide (1) root cause, (2) immediate corrective action taken, (3) preventive measure implemented, (4) evidence attached. Request a reinspection to lift the production suspension. Formal Indonesian regulatory correspondence format.',
-            'Ask Copilot: Write the Group COO\'s quarterly Operations Review narrative for the Board. Structure: (1) Group OEE performance — 3 world class plants, 2 acceptable, 1 crisis (Nilai), (2) Quality performance — group defect rate trend, (3) Safety — TRIR vs benchmark, any critical incidents, (4) BPO contract risk — 3 contracts expiring, renewal status, (5) OpEx reduction — progress vs MYR 480M target, (6) Capex programme — 12 projects status, (7) Division-by-division operational highlights and concerns. 6 pages, Board report format.'
+            'Draft the formal response letter to BPOM regarding the 3 enforcement notices at Cilegon Specialty Chemicals. The letter should: reference each enforcement notice number and date, for each notice provide (1) root cause, (2) immediate corrective action taken, (3) preventive measure implemented, (4) evidence attached. Request a reinspection to lift the production suspension. Formal Indonesian regulatory correspondence format.',
+            'Write the Group COO\'s quarterly Operations Review narrative for the Board. Structure: (1) Group OEE performance — 3 world class plants, 2 acceptable, 1 crisis (Nilai), (2) Quality performance — group defect rate trend, (3) Safety — TRIR vs benchmark, any critical incidents, (4) BPO contract risk — 3 contracts expiring, renewal status, (5) OpEx reduction — progress vs MYR 480M target, (6) Capex programme — 12 projects status, (7) Division-by-division operational highlights and concerns. 6 pages, Board report format.'
           ]
         },
         {
@@ -6356,9 +6356,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create a 12-slide Operations Review Board presentation. Include: (1) Group operational highlights, (2) Manufacturing OEE dashboard — 6 factories, (3) Nilai plant crisis — OEE trend and recovery plan, (4) Quality performance — defect rate trend, (5) Safety performance — TRIR, enforcement notices, (6) BPO contract renewal risk — 3 expiring contracts revenue at risk, (7) BPO headcount and delivery centre utilisation, (8) Chemicals — Cilegon enforcement notice status, (9) Plantation operations — CPO production vs target, (10) OpEx reduction — division by division vs target, (11) Capex programme — 12 projects traffic light, (12) Actions required from Board. Grey and navy operations colour scheme.',
-            'Ask Copilot: Create a 3-slide Nilai Plant Recovery Plan for the Plant Manager town hall. Slide 1: The OEE crisis in plain numbers — what 62% vs 85% means for our revenue and jobs. Slide 2: The 7 recovery actions — 3 this week, 4 in 30 days. Slide 3: The 6-month OEE improvement targets. Straightforward, factory-worker-facing language.',
-            'Ask Copilot: Create a 2-slide BPO Contract Retention Strategy for the EXCO. Slide 1: The 3 contracts at risk — USD 26.4M combined ARR, renewal probability and reasoning. Slide 2: The retention playbook — price, scope, relationship, and service improvement actions for each client.'
+            'Create a 12-slide Operations Review Board presentation. Include: (1) Group operational highlights, (2) Manufacturing OEE dashboard — 6 factories, (3) Nilai plant crisis — OEE trend and recovery plan, (4) Quality performance — defect rate trend, (5) Safety performance — TRIR, enforcement notices, (6) BPO contract renewal risk — 3 expiring contracts revenue at risk, (7) BPO headcount and delivery centre utilisation, (8) Chemicals — Cilegon enforcement notice status, (9) Plantation operations — CPO production vs target, (10) OpEx reduction — division by division vs target, (11) Capex programme — 12 projects traffic light, (12) Actions required from Board. Grey and navy operations colour scheme.',
+            'Create a 3-slide Nilai Plant Recovery Plan for the Plant Manager town hall. Slide 1: The OEE crisis in plain numbers — what 62% vs 85% means for our revenue and jobs. Slide 2: The 7 recovery actions — 3 this week, 4 in 30 days. Slide 3: The 6-month OEE improvement targets. Straightforward, factory-worker-facing language.',
+            'Create a 2-slide BPO Contract Retention Strategy for the EXCO. Slide 1: The 3 contracts at risk — USD 26.4M combined ARR, renewal probability and reasoning. Slide 2: The retention playbook — price, scope, relationship, and service improvement actions for each client.'
           ]
         },
         {
@@ -6367,9 +6367,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft the Group COO\'s urgent email to the Nilai Plant Manager and Group Manufacturing VP escalating the OEE crisis. The email should: state the financial impact (revenue loss vs 85% OEE benchmark: MYR 40M annualised), note the spindle motor replacement has been pending approval for 6 months, request a 5-day OEE recovery plan submission, and schedule a site visit for the following week. Firm but constructive tone.',
-            'Ask Copilot: Draft the Group COO\'s email to the Zava BPO CEO regarding the 3 expiring BPO contracts. The email should: name the 3 contracts (Bank Mandiri, Sime Darby, Pan Pacific Hotels), note the combined USD 26.4M ARR at risk, request the current renewal negotiation status and the retention strategy for each, and set a deadline of 2 weeks for a detailed renewal plan.',
-            'Ask Copilot: Draft the Board Operations Committee invitation for an emergency meeting to discuss the Nilai plant OEE crisis and Cilegon enforcement notices. The agenda should: cover the financial impact of both issues, the recovery plans, the capital investment required (MYR 8.2M Nilai + MYR 2.4M Cilegon remediation), and the Board decisions required. Professional committee meeting format.'
+            'Draft the Group COO\'s urgent email to the Nilai Plant Manager and Group Manufacturing VP escalating the OEE crisis. The email should: state the financial impact (revenue loss vs 85% OEE benchmark: MYR 40M annualised), note the spindle motor replacement has been pending approval for 6 months, request a 5-day OEE recovery plan submission, and schedule a site visit for the following week. Firm but constructive tone.',
+            'Draft the Group COO\'s email to the Zava BPO CEO regarding the 3 expiring BPO contracts. The email should: name the 3 contracts (Bank Mandiri, Sime Darby, Pan Pacific Hotels), note the combined USD 26.4M ARR at risk, request the current renewal negotiation status and the retention strategy for each, and set a deadline of 2 weeks for a detailed renewal plan.',
+            'Draft the Board Operations Committee invitation for an emergency meeting to discuss the Nilai plant OEE crisis and Cilegon enforcement notices. The agenda should: cover the financial impact of both issues, the recovery plans, the capital investment required (MYR 8.2M Nilai + MYR 2.4M Cilegon remediation), and the Board decisions required. Professional committee meeting format.'
           ]
         },
         {
@@ -6378,9 +6378,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a manufacturing or operations review meeting. Ask Copilot: What operational KPIs were discussed? Identify the 3 most critical operational issues raised and the decisions made. Create a COO action log.',
-            'Ask Copilot: Draft the COO\'s daily operations flash report for today. Structure: (1) Manufacturing — any unplanned downtime or quality alerts across 6 factories, (2) BPO — any SLA breaches or client escalations, (3) Chemicals — Cilegon status, any new BPOM developments, (4) Plantation — production vs plan, (5) Actions required by 5pm today.',
-            'Ask Copilot: From this Operations Review meeting, what was the disagreement between the Manufacturing VP and the Plant Manager about the root cause of the Nilai OEE decline? Was it resolved and what was the agreed action?'
+            'Open an existing recorded Teams meeting recap from a manufacturing or operations review meeting. What operational KPIs were discussed? Identify the 3 most critical operational issues raised and the decisions made. Create a COO action log.',
+            'Draft the COO\'s daily operations flash report for today. Structure: (1) Manufacturing — any unplanned downtime or quality alerts across 6 factories, (2) BPO — any SLA breaches or client escalations, (3) Chemicals — Cilegon status, any new BPOM developments, (4) Plantation — production vs plan, (5) Actions required by 5pm today.',
+            'From this Operations Review meeting, what was the disagreement between the Manufacturing VP and the Plant Manager about the root cause of the Nilai OEE decline? Was it resolved and what was the agreed action?'
           ]
         },
         {
@@ -6390,7 +6390,7 @@ window.HUB_DATA = {
           desc: 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
           prompts: [
             'Upload 12_Zava_Manufacturing_KPIs.xlsx and 15_Zava_BPO_Operations.xlsx to Copilot Notebook. Set instruction: "You are the Group COO reviewing all operational risks." Ask: Based on all operational data, which 3 operational issues have the largest combined financial impact on the Group in the next 12 months? For each, what is the single most important action that the COO should personally drive in the next 30 days?',
-            'Upload 12_Zava_Manufacturing_KPIs.xlsx. Ask: The Nilai plant has an 8.2M MYR spindle motor replacement project that has been 15% complete for 6 months. Also the plant has a 12.4M MYR MES system that has not started. Given the OEE crisis, should we sequence these projects differently? What would be the OEE impact of completing the spindle motor replacement first?'
+            'The Nilai plant has an 8.2M MYR spindle motor replacement project that has been 15% complete for 6 months. Also the plant has a 12.4M MYR MES system that has not started. Given the OEE crisis, should we sequence these projects differently? What would be the OEE impact of completing the spindle motor replacement first?'
           ]
         },
         {
@@ -6488,8 +6488,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Upload 01_Zava_Group_Financial_Performance.xlsx. Ask Analyst: (1) Create an EPS bridge from FY2023 to FY2024 showing the contribution of each division to the change in group EPS. (2) Plot the FY2022-FY2025F earnings trajectory and analyst consensus vs actual for the last 4 quarters. (3) Calculate the implied P/E ratio vs the group\'s 5-year historical average and vs sector peer (Sime Darby, IOI, IHH). (4) Identify which single division contributed most to the FY2024 vs FY2023 EBITDA improvement and which most to the decline. Present as Board-ready charts.',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx. Ask: Model the financial impact of 3 simultaneous downside scenarios for FY2025F: (A) Zava Bank NPL requires MYR 800M additional provision, (B) Perkebunan Lestari suspension continues for full year — CPO volume loss at MYR 3,920/MT, (C) Nilai plant continues at 62% OEE for full year vs 85% target. Calculate: (1) Impact on Group EBITDA, (2) Impact on Group PAT, (3) Impact on EPS, (4) Impact on Net Gearing. Then show combined scenario if all 3 occur simultaneously.'
+            '(1) Create an EPS bridge from FY2023 to FY2024 showing the contribution of each division to the change in group EPS. (2) Plot the FY2022-FY2025F earnings trajectory and analyst consensus vs actual for the last 4 quarters. (3) Calculate the implied P/E ratio vs the group\'s 5-year historical average and vs sector peer (Sime Darby, IOI, IHH). (4) Identify which single division contributed most to the FY2024 vs FY2023 EBITDA improvement and which most to the decline. Present as Board-ready charts.',
+            'Model the financial impact of 3 simultaneous downside scenarios for FY2025F: (A) Zava Bank NPL requires MYR 800M additional provision, (B) Perkebunan Lestari suspension continues for full year — CPO volume loss at MYR 3,920/MT, (C) Nilai plant continues at 62% OEE for full year vs 85% target. Calculate: (1) Impact on Group EBITDA, (2) Impact on Group PAT, (3) Impact on EPS, (4) Impact on Net Gearing. Then show combined scenario if all 3 occur simultaneously.'
           ]
         },
         {
@@ -6498,9 +6498,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open 01_Zava_Group_Financial_Performance.xlsx. Ask Copilot: Create a Board KPI Dashboard sheet. For each of 15 Group-level KPIs (Revenue, EBITDA margin, PATAMI, EPS, Net Gearing, ROAE, DPS, Zava Bank NPL, Group TRIR, Group RSPO compliance, OEE weighted average, BPO SLA weighted average, Employee engagement, Women in leadership, ESG rating), show: (1) FY2024 Actual, (2) FY2025 Target, (3) FY2025 YTD, (4) Status (On Track/At Risk/Off Track). Apply RAG formatting. Create the Board\'s single-page Group performance dashboard.',
-            'Ask Copilot: Build a Board meeting tracker on a new sheet. For each of the last 4 Board meetings, show: (1) Meeting date, (2) Key resolutions passed, (3) Outstanding actions from previous meeting, (4) Status of each action, (5) Days since resolution and overdue actions. Highlight overdue Board actions in red.',
-            'Ask Copilot: Build an investor relations dashboard. For each of our 15 top institutional shareholders (approximate): (1) Fund name, (2) Country, (3) Estimated % stake, (4) Last engagement date, (5) Current sentiment (Positive/Neutral/Negative), (6) Key concerns raised, (7) Next engagement planned. Highlight shareholders with negative sentiment and no engagement in the last 90 days in amber.'
+            'Create a Board KPI Dashboard sheet. For each of 15 Group-level KPIs (Revenue, EBITDA margin, PATAMI, EPS, Net Gearing, ROAE, DPS, Zava Bank NPL, Group TRIR, Group RSPO compliance, OEE weighted average, BPO SLA weighted average, Employee engagement, Women in leadership, ESG rating), show: (1) FY2024 Actual, (2) FY2025 Target, (3) FY2025 YTD, (4) Status (On Track/At Risk/Off Track). Apply RAG formatting. Create the Board\'s single-page Group performance dashboard.',
+            'Build a Board meeting tracker on a new sheet. For each of the last 4 Board meetings, show: (1) Meeting date, (2) Key resolutions passed, (3) Outstanding actions from previous meeting, (4) Status of each action, (5) Days since resolution and overdue actions. Highlight overdue Board actions in red.',
+            'Build an investor relations dashboard. For each of our 15 top institutional shareholders (approximate): (1) Fund name, (2) Country, (3) Estimated % stake, (4) Last engagement date, (5) Current sentiment (Positive/Neutral/Negative), (6) Key concerns raised, (7) Next engagement planned. Highlight shareholders with negative sentiment and no engagement in the last 90 days in amber.'
           ]
         },
         {
@@ -6509,9 +6509,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Email_07_Emergency_Board_Meeting.docx. Ask Copilot: Draft the Group CEO\'s Board Paper on the Q1 FY2025 simultaneous crises. Section 1: Group financial performance — revenue and EBITDA vs target. Section 2: Zava Bank NPL crisis — current status, BNM response, remediation plan, provision impact. Section 3: Perkebunan Lestari RSPO suspension — situation, commercial impact, remediation timeline. Section 4: Coal trading limit breach — what happened, risk control failure, immediate actions. Section 5: Nilai plant OEE crisis — financial impact, recovery plan, capex required. Section 6: Recommendations — 7 specific Board resolutions required. 12 pages, Board paper format with executive summary.',
-            'Ask Copilot: Draft the Board resolution template for the 7 Board decisions required at the Q1 FY2025 emergency Board meeting: (1) Approve Zava Bank NPL remediation plan and MYR 800M provision, (2) Approve Perkebunan Lestari RSPO remediation budget MYR 140M, (3) Approve Coal Trading Risk Control enhancement — position limit reduction and risk committee oversight, (4) Approve Nilai plant spindle motor replacement MYR 8.2M, (5) Approve Group CEO authority to engage with BNM on NPL breach, (6) Approve RSPO CAP submission to RSPO certification body, (7) Approve EUDR compliance investment MYR 28M. Standard Malaysian Board resolution format.',
-            'Ask Copilot: Draft the Chairman\'s opening address for the Board meeting. The address should: acknowledge the extraordinary challenges of the quarter honestly, frame the 4 crises as manageable and being actively remediated, express confidence in the management team, remind Directors of their fiduciary duties and the Bursa disclosure obligations, and set the tone for a constructive and decisive Board discussion. Statesman-like, measured tone.'
+            'Draft the Group CEO\'s Board Paper on the Q1 FY2025 simultaneous crises. Section 1: Group financial performance — revenue and EBITDA vs target. Section 2: Zava Bank NPL crisis — current status, BNM response, remediation plan, provision impact. Section 3: Perkebunan Lestari RSPO suspension — situation, commercial impact, remediation timeline. Section 4: Coal trading limit breach — what happened, risk control failure, immediate actions. Section 5: Nilai plant OEE crisis — financial impact, recovery plan, capex required. Section 6: Recommendations — 7 specific Board resolutions required. 12 pages, Board paper format with executive summary.',
+            'Draft the Board resolution template for the 7 Board decisions required at the Q1 FY2025 emergency Board meeting: (1) Approve Zava Bank NPL remediation plan and MYR 800M provision, (2) Approve Perkebunan Lestari RSPO remediation budget MYR 140M, (3) Approve Coal Trading Risk Control enhancement — position limit reduction and risk committee oversight, (4) Approve Nilai plant spindle motor replacement MYR 8.2M, (5) Approve Group CEO authority to engage with BNM on NPL breach, (6) Approve RSPO CAP submission to RSPO certification body, (7) Approve EUDR compliance investment MYR 28M. Standard Malaysian Board resolution format.',
+            'Draft the Chairman\'s opening address for the Board meeting. The address should: acknowledge the extraordinary challenges of the quarter honestly, frame the 4 crises as manageable and being actively remediated, express confidence in the management team, remind Directors of their fiduciary duties and the Bursa disclosure obligations, and set the tone for a constructive and decisive Board discussion. Statesman-like, measured tone.'
           ]
         },
         {
@@ -6520,9 +6520,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in PowerPoint: Create the full Q1 FY2025 Board presentation (20 slides). Include: (1) Chairman\'s opening remarks context, (2) Q1 FY2025 Group financial highlights, (3) Division performance scorecard — 11 divisions, (4) Group financial KPI dashboard, (5) Zava Bank NPL crisis and remediation, (6) Perkebunan Lestari RSPO suspension, (7) Coal trading breach and risk control response, (8) Nilai plant OEE crisis and recovery, (9) Group ESG performance, (10) IT Digital transformation update, (11) M&A pipeline, (12) REIT IPO preparation, (13) ZAVA FORWARD 2030 progress, (14) FY2025 full-year guidance revision, (15) Capital allocation update, (16) Dividend consideration, (17) Investor relations update, (18) Regulatory engagement update, (19) Board decisions required, (20) Appendix — supporting data. Dark navy Board presentation.',
-            'Ask Copilot: Create the ZAVA FORWARD 2030 strategy presentation for the Annual General Meeting (15 slides). Include: (1) Our journey — Zava Group from founding to today, (2) ASEAN opportunity, (3) Vision 2030 — Asia\'s most trusted diversified conglomerate, (4) 5 Strategic Pillars overview, (5) Pillar 1: Portfolio Optimisation — healthcare M&A, REIT IPO, (6) Pillar 2: Digital Transformation — Copilot, SAP, data lake, (7) Pillar 3: ESG Leadership — Net Zero, RSPO, EUDR, (8) Pillar 4: Talent Excellence — 87K employees, DEI, (9) Pillar 5: Capital Efficiency — 0.82x gearing to 0.65x, (10) Financial targets FY2027: Revenue MYR 52B, EBITDA 18%, (11) Dividend commitment — progressive policy, (12) Our people, (13) Our communities, (14) Our planet, (15) The Zava Promise. Polished investor-facing design.',
-            'Ask Copilot: Create a 3-slide media briefing pack for the Q1 FY2025 results announcement. Slide 1: 3 key messages from the Group CEO. Slide 2: Q1 financial highlights in clean table format. Slide 3: FY2025 guidance — revenue range, EBITDA margin target, and DPS forecast. Journalist-accessible, no jargon.'
+            'Create the full Q1 FY2025 Board presentation (20 slides). Include: (1) Chairman\'s opening remarks context, (2) Q1 FY2025 Group financial highlights, (3) Division performance scorecard — 11 divisions, (4) Group financial KPI dashboard, (5) Zava Bank NPL crisis and remediation, (6) Perkebunan Lestari RSPO suspension, (7) Coal trading breach and risk control response, (8) Nilai plant OEE crisis and recovery, (9) Group ESG performance, (10) IT Digital transformation update, (11) M&A pipeline, (12) REIT IPO preparation, (13) ZAVA FORWARD 2030 progress, (14) FY2025 full-year guidance revision, (15) Capital allocation update, (16) Dividend consideration, (17) Investor relations update, (18) Regulatory engagement update, (19) Board decisions required, (20) Appendix — supporting data. Dark navy Board presentation.',
+            'Create the ZAVA FORWARD 2030 strategy presentation for the Annual General Meeting (15 slides). Include: (1) Our journey — Zava Group from founding to today, (2) ASEAN opportunity, (3) Vision 2030 — Asia\'s most trusted diversified conglomerate, (4) 5 Strategic Pillars overview, (5) Pillar 1: Portfolio Optimisation — healthcare M&A, REIT IPO, (6) Pillar 2: Digital Transformation — Copilot, SAP, data lake, (7) Pillar 3: ESG Leadership — Net Zero, RSPO, EUDR, (8) Pillar 4: Talent Excellence — 87K employees, DEI, (9) Pillar 5: Capital Efficiency — 0.82x gearing to 0.65x, (10) Financial targets FY2027: Revenue MYR 52B, EBITDA 18%, (11) Dividend commitment — progressive policy, (12) Our people, (13) Our communities, (14) Our planet, (15) The Zava Promise. Polished investor-facing design.',
+            'Create a 3-slide media briefing pack for the Q1 FY2025 results announcement. Slide 1: 3 key messages from the Group CEO. Slide 2: Q1 financial highlights in clean table format. Slide 3: FY2025 guidance — revenue range, EBITDA margin target, and DPS forecast. Journalist-accessible, no jargon.'
           ]
         },
         {
@@ -6531,9 +6531,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Ask Copilot in Outlook: Draft the Group CEO\'s email to all 11 Division CEOs and CFOs calling for urgent submissions for the emergency Board meeting. The email should: list the 4 simultaneous issues requiring Board presentation, request a 2-page "situation-action-status" brief from each affected division by Friday noon, confirm the emergency Board meeting date, and emphasise that the Board will ask tough questions — all answers must be evidenced and quantified. Authoritative, urgent tone.',
-            'Ask Copilot: Draft the Company Secretary\'s Bursa Malaysia announcement for the Zava Bank NPL situation. Under Bursa Listing Requirements, the announcement must: describe the material information (Retail Personal Loans NPL at 21.7%, breach of BNM threshold), note the date of discovery, confirm BNM has been notified, state management actions (MYR 800M provision, remediation plan), and provide guidance on financial impact. Formal Bursa announcement format.',
-            'Ask Copilot: Draft the Chairman\'s personal letter to the 4 largest institutional shareholders (EPF, KWAP, PNB, Permodalan MY) providing advance notification of the Q1 FY2025 challenges. The letter should: acknowledge the issues candidly, describe the remediation actions management has taken, express personal confidence in the strategy and management team, and invite a bilateral engagement before the public results announcement. Personal, statesman-like tone.'
+            'Draft the Group CEO\'s email to all 11 Division CEOs and CFOs calling for urgent submissions for the emergency Board meeting. The email should: list the 4 simultaneous issues requiring Board presentation, request a 2-page "situation-action-status" brief from each affected division by Friday noon, confirm the emergency Board meeting date, and emphasise that the Board will ask tough questions — all answers must be evidenced and quantified. Authoritative, urgent tone.',
+            'Draft the Company Secretary\'s Bursa Malaysia announcement for the Zava Bank NPL situation. Under Bursa Listing Requirements, the announcement must: describe the material information (Retail Personal Loans NPL at 21.7%, breach of BNM threshold), note the date of discovery, confirm BNM has been notified, state management actions (MYR 800M provision, remediation plan), and provide guidance on financial impact. Formal Bursa announcement format.',
+            'Draft the Chairman\'s personal letter to the 4 largest institutional shareholders (EPF, KWAP, PNB, Permodalan MY) providing advance notification of the Q1 FY2025 challenges. The letter should: acknowledge the issues candidly, describe the remediation actions management has taken, express personal confidence in the strategy and management team, and invite a bilateral engagement before the public results announcement. Personal, statesman-like tone.'
           ]
         },
         {
@@ -6542,9 +6542,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Open an existing recorded Teams meeting recap from a Board or EXCO meeting. Ask Copilot: What were the key strategic decisions made and what Board resolutions were passed? Identify all action items assigned to the CEO and their deadlines. Create a Board action tracker.',
-            'Ask Copilot: Draft the Group CEO\'s weekly executive report for the Board. Structure: (1) Top 3 strategic priorities this week, (2) Financial performance flash — revenue and EBITDA vs plan, (3) Critical issues — Zava Bank NPL, RSPO, coal breach, Nilai — status update, (4) External environment — any regulatory or market developments, (5) Upcoming key decisions and decisions needed from Board.',
-            'Ask Copilot: From this Board meeting recap, what was the Board\'s reaction to the NPL breach disclosure? Were there any dissenting views among Board members? What specific questions did the Board ask management that were not answered satisfactorily?'
+            'Open an existing recorded Teams meeting recap from a Board or EXCO meeting. What were the key strategic decisions made and what Board resolutions were passed? Identify all action items assigned to the CEO and their deadlines. Create a Board action tracker.',
+            'Draft the Group CEO\'s weekly executive report for the Board. Structure: (1) Top 3 strategic priorities this week, (2) Financial performance flash — revenue and EBITDA vs plan, (3) Critical issues — Zava Bank NPL, RSPO, coal breach, Nilai — status update, (4) External environment — any regulatory or market developments, (5) Upcoming key decisions and decisions needed from Board.',
+            'From this Board meeting recap, what was the Board\'s reaction to the NPL breach disclosure? Were there any dissenting views among Board members? What specific questions did the Board ask management that were not answered satisfactorily?'
           ]
         },
         {
@@ -6554,7 +6554,7 @@ window.HUB_DATA = {
           desc: 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
           prompts: [
             'Upload 01_Zava_Group_Financial_Performance.xlsx and Email_07_Emergency_Board_Meeting.docx to Copilot Notebook. Set instruction: "You are the Group CEO preparing for an emergency Board meeting." Ask: Based on the financial data and the email context, if I were the Board Chairman seeing these 4 simultaneous crises for the first time, what would be my 5 hardest questions for management? For each question, draft a 3-sentence answer that management should prepare.',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx. Ask: The Board must decide whether to revise down the FY2025 guidance that was given to Bursa at the Q4 FY2024 results. Original guidance: Revenue MYR 47.2B, EBITDA margin 16.8%. Based on the 4 simultaneous issues and their financial impact, should guidance be revised? If so, what is the defensible revised guidance range and what is the rationale that management should present?'
+            'The Board must decide whether to revise down the FY2025 guidance that was given to Bursa at the Q4 FY2024 results. Original guidance: Revenue MYR 47.2B, EBITDA margin 16.8%. Based on the 4 simultaneous issues and their financial impact, should guidance be revised? If so, what is the defensible revised guidance range and what is the rationale that management should present?'
           ]
         },
         {
