@@ -475,11 +475,12 @@ function showItem(item,tab){
     const sec=document.createElement('div'); sec.className='tool-section';
     const promHtml=tool.prompts.map((p,pi)=>{
       const key=_pmKey(id,ti,pi);
-      _PM[key]=p.prompt;
+      // p is a plain string in data.js
+      const txt=typeof p==='string'?p:(p.prompt||'');
+      _PM[key]=txt;
       return '<div class="prompt-item">'+
-        '<div class="prompt-title">&#x1F4AC; '+escapeHTML(p.title)+'</div>'+
-        (p.fileRef?'<div class="prompt-fileref">'+escapeHTML(p.fileRef)+'</div>':'')+
-        '<div class="prompt-text">'+escapeHTML(p.prompt)+'</div>'+
+        '<div class="prompt-title">&#x1F4AC; Prompt '+(pi+1)+'</div>'+
+        '<div class="prompt-text">'+escapeHTML(txt)+'</div>'+
         '<button class="copy-btn" onclick="copyById(\''+key+'\')">Copy prompt</button>'+
         '</div>';
     }).join('');
