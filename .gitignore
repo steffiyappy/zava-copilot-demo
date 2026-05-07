@@ -1,0 +1,8 @@
+node_modules/
+package-lock.json
+package.json
+_test.js
+_testall.js
+_check.py
+__pycache__/
+*.pyc
