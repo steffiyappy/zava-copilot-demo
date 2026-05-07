@@ -6,3 +6,8 @@ _testall.js
 _check.py
 __pycache__/
 *.pyc
+
+dept_data1.py
+_strip_personas.py
+_build_*.py
+*.bak

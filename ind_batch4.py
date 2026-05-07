@@ -1,260 +1,479 @@
-import sys; sys.path.insert(0,'.')
-from util import *
+# Phase B — Industry batch 4: Oil & Gas Downstream, Renewable Energy, Industrial Manufacturing
+# Bilingual (English + Bahasa Indonesia), 14 tools per industry, FRONTIER_LIC for cowork,
+# multi-tab Excel workbooks, agent-builder finale, 4 personas, 12-task storyboard.
+import sys
+sys.path.insert(0, '.')
+from util import (T_CHAT, T_RESEARCHER, T_ANALYST, T_EXCEL, T_WORD, T_PPT, T_OUTLOOK,
+                  T_TEAMS, T_NOTEBOOK, T_COWORK, T_WORD_AGT, T_PPT_AGT, T_XL_AGT, T_BUILDER,
+                  DESC_CHAT, DESC_RESEARCHER, DESC_ANALYST, DESC_EXCEL, DESC_WORD, DESC_PPT,
+                  DESC_OUTLOOK, DESC_TEAMS, DESC_NOTEBOOK, DESC_COWORK, DESC_WORD_AGT,
+                  DESC_PPT_AGT, DESC_XL_AGT, DESC_BUILDER,
+                  FREE_LIC, FREE_ACCT, M365_LIC, M365_ACCT, FRONTIER_LIC,
+                  tool, ind)
 
-INDUSTRIES_4 = [
+# ───────────────────────── INDUSTRY CONTEXTS ─────────────────────────
+OG = {
+    'id': 'og-downstream', 'sector': 'og-energy',
+    'name': 'Oil & Gas Downstream', 'icon': '🏭',
+    'color': '#BF360C', 'accent': '#D84315',
+    'co': 'Bumi Seri Refining Berhad', 'co_id': 'PT Pertamina Hilir Nusantara Tbk',
+    'tagline': 'FY2025 refining margin compressed to USD 5.1/bbl with major turnaround in 16 weeks — Board reset Tuesday.',
+    'taglineID': 'Margin refining FY2025 turun ke USD 5,1/bbl dengan turnaround besar dalam 16 minggu — reset Direksi hari Selasa.',
+    'scenario': "Bumi Seri Refining Berhad is a Malaysian downstream refiner listed on Bursa Malaysia with about 3,400 employees, a 165 kbpd coastal refinery, and integrated marketing, trading and HSE divisions supplying transport fuels and petrochemical feedstock into Malaysia and selected Indonesian counterparties through a Pertamina-affiliated joint venture. FY2025 gross refining margin compressed to USD 5.1/bbl from a USD 7.4/bbl budget, the conversion units have lost 6 percentage points of utilisation after repeated reliability interruptions, middle-distillate yield is running below plan, and a major turnaround on Crude Distillation Unit 2 is now less than 16 weeks away. Three Tier 2 process-safety events in Q4 have triggered DOSH formal correspondence, the Department of Environment has flagged flaring variance, and the trading book carries USD 38 M of mark-to-market loss on sour-crude hedges. BPH Migas in Indonesia and Kementerian ESDM are simultaneously requesting transparency on volumes, pricing and HSE performance ahead of the next licence review. The Group CEO has called a Board reset on Tuesday and needs a defensible margin recovery, turnaround readiness, HSE remediation and regulator narrative — fast.",
+    'scenarioID': 'PT Pertamina Hilir Nusantara Tbk adalah anak usaha hilir migas BUMN yang tercatat di Bursa Efek Indonesia dengan sekitar 4.200 karyawan, satu kilang pesisir berkapasitas 165 kbpd, serta divisi pemasaran, trading dan HSE terintegrasi yang memasok bahan bakar transportasi dan feedstock petrokimia ke Indonesia dan beberapa mitra Malaysia. Margin refining FY2025 meleset menjadi USD 5,1/bbl dari RKAP USD 7,4/bbl, unit konversi kehilangan 6 poin persentase utilisasi akibat gangguan keandalan berulang, yield distilat tengah berada di bawah rencana, dan turnaround besar pada Crude Distillation Unit 2 kurang dari 16 minggu lagi. Tiga insiden process safety Tier 2 di Q4 telah memicu surat resmi dari Kementerian ESDM, KLHK menyoroti selisih flaring, dan buku trading membukukan kerugian mark-to-market sebesar Rp 600 miliar atas hedge minyak mentah sour. BPH Migas meminta transparansi atas volume, harga dan kinerja HSE menjelang tinjauan izin berikutnya. Direktur Utama menggelar reset Direksi hari Selasa dan membutuhkan narasi pemulihan margin, kesiapan turnaround, remediasi HSE dan regulator yang dapat dipertahankan — secara cepat.',
+    'files': ['OGD_01_Refinery_Operations.xlsx', 'OGD_02_Environmental_Compliance.docx',
+              'OGD_03_Refinery_Maintenance_Plan.docx', 'OGD_04_Trading_Position_Book.xlsx',
+              'OGD_05_HSE_Incident_Register.xlsx', 'OGD_06_BPH_Migas_Submission.docx'],
+    'f_xlsx_ops': 'OGD_01_Refinery_Operations.xlsx',
+    'f_docx_env': 'OGD_02_Environmental_Compliance.docx',
+    'f_docx_maint': 'OGD_03_Refinery_Maintenance_Plan.docx',
+    'f_xlsx_trade': 'OGD_04_Trading_Position_Book.xlsx',
+    'f_xlsx_hse': 'OGD_05_HSE_Incident_Register.xlsx',
+    'f_docx_reg': 'OGD_06_BPH_Migas_Submission.docx',
+    'tabs1': 'Throughput Dashboard, Margin Bridge, Yield Profile, Energy Balance and Reliability Index tabs',
+    'kpi_phrase_en': 'the USD 5.1/bbl margin compression, the conversion-unit reliability gap and the 16-week turnaround window',
+    'kpi_phrase_id': 'kompresi margin USD 5,1/bbl, gap keandalan unit konversi dan jendela turnaround 16 minggu',
+    'crisis_short_en': 'the FY2025 refining margin miss and turnaround readiness',
+    'crisis_short_id': 'selisih margin refining FY2025 dan kesiapan turnaround',
+    'event_en': 'Board reset on Tuesday', 'event_id': 'reset Direksi hari Selasa',
+    'regulators_en': 'BPH Migas, Kementerian ESDM, DOSH, Department of Environment, Bursa Malaysia, OJK and BEI',
+    'regulators_id': 'BPH Migas, Kementerian ESDM, KLHK, DOSH, BEI dan OJK',
+    'agent_name': 'Bumi Seri Refining War Room',
+    'agent_name_id': 'War Room PT Pertamina Hilir Nusantara',
+    'recovery_focus_en': 'margin recovery, turnaround readiness and HSE remediation',
+    'recovery_focus_id': 'pemulihan margin, kesiapan turnaround dan remediasi HSE',
+    'topic_short_en': 'refining margin recovery and turnaround readiness',
+    'topic_short_id': 'pemulihan margin refining dan kesiapan turnaround',
+    'roles_en': {'cfo': 'Group CFO', 'ceo': 'Group CEO', 'cos': 'Chief of Staff to the CEO',
+                 'coo': 'COO Refining & Marketing', 'hsa': 'Head of HSE'},
+    'roles_id': {'cfo': 'Direktur Keuangan', 'ceo': 'Direktur Utama', 'cos': 'Kepala Staf Direktur Utama',
+                 'coo': 'Direktur Operasi Refining & Marketing', 'hsa': 'Kepala HSE'},
+    'relevantDepts': ['dept-operations', 'dept-finance', 'dept-risk', 'dept-esg'],
+}
 
-# ── OG DOWNSTREAM ───────────────────────────────────────────────────────
-ind('og-downstream', 'og-energy', 'Oil & Gas Downstream', '🏭', '#BF360C', '#D84315',
-    'Bumi Seri Refining Berhad',
-    'DOSH and DOE focus intensifies as margin drops to USD5.1/bbl ahead of turnaround season.',
-    'Bumi Seri Refining Berhad runs a coastal refinery supplying transport fuels and petrochemical feedstock into Malaysia and selected Indonesian counterparties. The Refinery Run Rate sheet shows utilisation slipping to 84% after repeated reliability interruptions on one conversion unit, while Product Yield Summary indicates weaker middle-distillate recovery than plan. Margin Tracker has compressed to USD5.1 per barrel, only slightly above the internal alert threshold, and Feedstock Cost Log shows crude slate penalties widening with sour cargo volatility. The Turnaround Schedule sheet confirms a major unit shutdown is now less than four months away, making maintenance sequencing and contractor readiness a Board-level issue. DOSH process-safety expectations and Department of Environment emissions scrutiny are both tightening as flaring variance increases. Management wants the action plan in OGD_03_Refinery_Maintenance_Plan.docx to line up more clearly with the compliance obligations in OGD_02_Environmental_Compliance.docx before lenders and insurers start asking harder questions. The Indonesian affiliate is also benchmarking performance against Pertamina-linked downstream peers, so credibility on execution matters immediately.',
-    [
-        'OGD_01_Refinery_Operations.xlsx',
-        'OGD_02_Environmental_Compliance.docx',
-        'OGD_03_Refinery_Maintenance_Plan.docx'
-    ],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'You are the COO at Bumi Seri Refining Berhad. Using the Refinery Run Rate, Product Yield Summary, Margin Tracker, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx, prepare a one-page operating diagnostic that explains why margin compression and turnaround and compliance execution risk are worsening at the same time. Present the answer as a RAG table with columns for Issue, Evidence from Sheet, Likely Root Cause, and 30-Day Action.',
-        'You are the Chief Strategy Officer at Bumi Seri Refining Berhad. Using OGD_02_Environmental_Compliance.docx, OGD_03_Refinery_Maintenance_Plan.docx, and the Feedstock Cost Log sheet in OGD_01_Refinery_Operations.xlsx, identify the 5 decisions management must make before the next executive review so that growth ambitions do not outpace control discipline. Present the answer as a prioritised table with columns for Decision, Why Now, Evidence Source, and Consequence if Deferred.',
-        'You are the Head of Corporate Affairs at Bumi Seri Refining Berhad. Using the trends implied by the Refinery Run Rate, Margin Tracker, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx, draft a stakeholder communication map covering the Board, regulators, frontline teams, and external partners. Present the answer as a RAG table with columns for Audience, Key Message, Timing, and Communication Risk.'
-      ]),
-      tool(T_RESEARCHER, FREE_LIC, FREE_ACCT, [
-        'You are the Strategy Director at Bumi Seri Refining Berhad. Research how comparable organisations in this sector responded when margin compression became visible in operating data like the Refinery Run Rate and Margin Tracker sheets in OGD_01_Refinery_Operations.xlsx. Present the answer as a table with columns for Organisation, Trigger, Intervention, Measured Outcome, and Relevance to Bumi Seri Refining Berhad. Flag any claim that could not be independently verified.',
-        'You are the Compliance Director at Bumi Seri Refining Berhad. Research the latest guidance, enforcement themes, and supervisory expectations relevant to DOSH and DOE Malaysia and the affiliated Indonesian context of Pertamina stakeholders, then link them to the control areas implied by OGD_02_Environmental_Compliance.docx and the Turnaround Schedule sheet in OGD_01_Refinery_Operations.xlsx. Present the answer as a RAG table with columns for Requirement, Malaysia Context, Indonesia Context, Practical Impact, and Immediate Management Action. Flag any claim that could not be independently verified.',
-        'You are the CEO at Bumi Seri Refining Berhad. Research three recent sector benchmarks on how peers balanced short-term recovery with longer-term priorities when facing turnaround and compliance execution risk, using the tension visible between the Product Yield Summary and Feedstock Cost Log sheets in OGD_01_Refinery_Operations.xlsx as the framing context. Present the answer as a table with columns for Peer, What They Changed, Time to Impact, Reported Result, and Lesson for Bumi Seri Refining Berhad. Flag any claim that could not be independently verified.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'You are the Head of FP&A at Bumi Seri Refining Berhad. Upload OGD_01_Refinery_Operations.xlsx to Analyst and use the Refinery Run Rate, Product Yield Summary, Margin Tracker, and Turnaround Schedule sheets to identify which refinery units are driving the largest share of margin compression and turnaround and compliance execution risk. Present the output as a RAG table with columns for Refinery Unit, Performance Signal, Financial Impact, Control Risk, and Recommended Owner.',
-        'You are the CFO at Bumi Seri Refining Berhad. Upload OGD_01_Refinery_Operations.xlsx to Analyst and quantify the revenue, margin, or cash exposure linked to the patterns in the Margin Tracker, Feedstock Cost Log, and Turnaround Schedule sheets, then show where management should intervene first. Present the answer as a ranked table and include one chart that makes the biggest pressure point obvious.',
-        'You are the Operations Director at Bumi Seri Refining Berhad. Upload OGD_01_Refinery_Operations.xlsx to Analyst and build a 3-scenario view for the next two quarters using the Refinery Run Rate, Product Yield Summary, Margin Tracker, and Feedstock Cost Log sheets: recover quickly, stabilise slowly, or deteriorate further. Present the result as a RAG table with threshold assumptions, earliest warning sign, and the action that should be triggered in each scenario.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'You are the Business Planning Manager at Bumi Seri Refining Berhad. Using the Refinery Run Rate, Product Yield Summary, Margin Tracker, and Turnaround Schedule sheets in this workbook, create a new worksheet called Executive RAG Dashboard that summarises the top operating and control risks by refinery unit. Add conditional formatting so leaders can instantly see Red, Amber, and Green status plus the numeric driver behind each status.',
-        'You are the Performance Manager at Bumi Seri Refining Berhad. Using the Feedstock Cost Log, Margin Tracker, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx, create a new worksheet called Intervention Tracker that logs the top 10 corrective actions, the accountable owner, the due date, the expected benefit, and the latest status. Include formulas that highlight overdue actions in red and roll up the count of open Reds at the top of the sheet.',
-        "You are the Finance Transformation Lead at Bumi Seri Refining Berhad. Using the Refinery Run Rate, Product Yield Summary, and Margin Tracker sheets in OGD_01_Refinery_Operations.xlsx, build a sensitivity model on a new worksheet that shows how small changes in operating throughput, quality or compliance performance, and unit economics would change the overall outcome. Present the result as an easy-to-read decision table that management can use in tomorrow's review."
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'You are the Company Secretary at Bumi Seri Refining Berhad. Using OGD_02_Environmental_Compliance.docx, OGD_03_Refinery_Maintenance_Plan.docx, and the evidence implied by the Refinery Run Rate, Margin Tracker, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx, draft a 2-page Board paper on the current situation, the main risks, and the governance actions required in the next 30 days. Start with a short RAG summary and then move into decisions, owners, and timing.',
-        'You are the Head of Internal Audit at Bumi Seri Refining Berhad. Using OGD_02_Environmental_Compliance.docx and the pressure points visible in the Turnaround Schedule and Margin Tracker sheets in OGD_01_Refinery_Operations.xlsx, draft a control-gap memorandum that identifies where process design and frontline execution are drifting apart. Present the core findings as a table with columns for Control Area, Current Gap, Risk if Unresolved, and Proposed Remediation.',
-        'You are the CEO at Bumi Seri Refining Berhad. Using OGD_03_Refinery_Maintenance_Plan.docx, the Refinery Run Rate sheet, and the Feedstock Cost Log sheet in OGD_01_Refinery_Operations.xlsx, draft a one-page management note that explains what can still be delivered this year, what must be reset, and how leadership should talk about the change in priorities. Keep the tone candid, steady, and evidence-based.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'You are the Chief of Staff at Bumi Seri Refining Berhad. Create a 6-slide executive deck using OGD_01_Refinery_Operations.xlsx, OGD_02_Environmental_Compliance.docx, and OGD_03_Refinery_Maintenance_Plan.docx as the source context, covering current performance, the root causes behind margin compression and turnaround and compliance execution risk, the top Red risks, the first 90-day actions, and the decisions required from leadership. Give each slide a headline that states the message, not just the topic.',
-        'You are the CFO at Bumi Seri Refining Berhad. Create a 5-slide update deck for leadership that uses the Margin Tracker, Feedstock Cost Log, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx to show where financial exposure is concentrated and how quickly it can be reduced. Include speaker notes that explain the Red issues in plain language for a non-technical audience.',
-        'You are the Strategy Director at Bumi Seri Refining Berhad. Create a single summary slide that links the signals in the Refinery Run Rate, Product Yield Summary, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx to the priorities in OGD_03_Refinery_Maintenance_Plan.docx. Present it as a RAG matrix with one sentence of management action beside each Red item.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'You are the Regulatory Affairs Lead at Bumi Seri Refining Berhad. Draft an email to the relevant authorities and senior internal stakeholders that acknowledges the current pressure areas indicated by the Turnaround Schedule sheet in OGD_01_Refinery_Operations.xlsx, outlines the corrective steps already under way, and requests alignment on the next review checkpoint. Keep the tone factual, controlled, and suitable for scrutiny by DOSH and DOE Malaysia and Pertamina stakeholders counterparts.',
-        'You are the COO at Bumi Seri Refining Berhad. Draft an internal email to Refinery, maintenance, and HSE leaders summarising the top three risks shown in the Refinery Run Rate, Margin Tracker, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx, the required actions this week, and the consequences of delay. End with a bullet list titled What I need from you by Friday.',
-        'You are the Head of Stakeholder Management at Bumi Seri Refining Berhad. Draft an external-facing update that explains the current operating situation using plain language consistent with OGD_02_Environmental_Compliance.docx and OGD_03_Refinery_Maintenance_Plan.docx, without overpromising outcomes or admitting fault. Use the evidence implied by the Feedstock Cost Log and Margin Tracker sheets in OGD_01_Refinery_Operations.xlsx to keep the message disciplined.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'You are the Chief of Staff at Bumi Seri Refining Berhad. Using this recorded Teams meeting recap, identify the decisions, unresolved issues, and action items that connect directly to the Refinery Run Rate, Margin Tracker, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx. Present the output as a RAG table with columns for Topic, What Was Said, Owner, Due Date, and Escalation Level.',
-        'You are the Operations Director at Bumi Seri Refining Berhad. Using this Teams recap, draft follow-up actions for the teams responsible for the areas covered in OGD_02_Environmental_Compliance.docx and the Product Yield Summary sheet in OGD_01_Refinery_Operations.xlsx. Group the actions by workstream and include a success measure for each one.',
-        'You are the CFO at Bumi Seri Refining Berhad. Using this Teams recap, extract every financial, compliance, or customer-impact figure that would help explain the trends in the Margin Tracker, Feedstock Cost Log, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx. Present the result as a structured note with sections for Facts, Risks, Commitments, and Missing Information.'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'You are the CEO at Bumi Seri Refining Berhad. Upload OGD_01_Refinery_Operations.xlsx, OGD_02_Environmental_Compliance.docx, OGD_03_Refinery_Maintenance_Plan.docx to Copilot Notebook, set the instruction to synthesise across all files with citations, and ask for the 10-slide-equivalent story leadership needs right now. Require Notebook to reconcile the signals from the Refinery Run Rate, Margin Tracker, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx with the commitments in OGD_02_Environmental_Compliance.docx and OGD_03_Refinery_Maintenance_Plan.docx.',
-        'You are the COO at Bumi Seri Refining Berhad. Upload OGD_01_Refinery_Operations.xlsx, OGD_02_Environmental_Compliance.docx, OGD_03_Refinery_Maintenance_Plan.docx to Copilot Notebook and ask whether the priorities implied by the Product Yield Summary and Feedstock Cost Log sheets in OGD_01_Refinery_Operations.xlsx are still realistic given the risk picture in the Turnaround Schedule sheet. Require a RAG table with columns for Priority, Evidence, Risk to Delivery, and Recommendation, all with citations.',
-        'You are the Board Liaison at Bumi Seri Refining Berhad. Upload OGD_01_Refinery_Operations.xlsx, OGD_02_Environmental_Compliance.docx, OGD_03_Refinery_Maintenance_Plan.docx to Copilot Notebook and ask for the contradictions management must resolve before the next review, especially where operational ambition, control capability, and financial reality do not line up. Request a concise answer with sections for Contradictions, Questions Directors Will Ask, and Pre-Reads to Send.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, M365_LIC, M365_ACCT, [
-        'You are the COO at Bumi Seri Refining Berhad. Do all of the following autonomously: create a recovery action plan grounded in the Refinery Run Rate, Margin Tracker, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx; save it to OneDrive; email it to Refinery, maintenance, and HSE leaders; and schedule a 45-minute review meeting for next week. Make the plan easy to track with RAG status and owner-by-owner accountability.',
-        'You are the Chief of Staff at Bumi Seri Refining Berhad. Do all of the following autonomously: turn the main obligations from OGD_02_Environmental_Compliance.docx and the priorities from OGD_03_Refinery_Maintenance_Plan.docx into a working checklist, save it in OneDrive, email the checklist to the accountable leaders, and create calendar reminders for each major milestone. Keep the wording clear enough that teams can act without a second briefing.'
-      ], DESC_COWORK),
-      tool(T_EDIT_COPILOT, M365_LIC, M365_ACCT, [
-        'You are the Company Secretary at Bumi Seri Refining Berhad. Using OGD_02_Environmental_Compliance.docx in Word for the web, add an appendix titled Operating Escalation and RAG Governance Protocol and populate it with decision rights, escalation thresholds, evidence requirements, and sign-off owners that mirror the issues visible in the Turnaround Schedule and Margin Tracker sheets in OGD_01_Refinery_Operations.xlsx. Keep the style consistent with the existing document.',
-        'You are the Performance Manager at Bumi Seri Refining Berhad. Using OGD_01_Refinery_Operations.xlsx in Excel for the web, create a new worksheet called Leadership Recovery Tracker that combines the Refinery Run Rate, Margin Tracker, Feedstock Cost Log, and Turnaround Schedule sheets into a single view with owner, due date, expected impact, and live RAG status. Reorder the layout so the Red issues appear first and add formulas that refresh the summary automatically.'
-      ], DESC_EDIT_COPILOT),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'You are the Knowledge Manager at Bumi Seri Refining Berhad. Open OGD_02_Environmental_Compliance.docx in Word for Web and create an agent called Refinery Compliance Navigator. Describe it as an assistant that answers questions about the policies, thresholds, and escalation rules that matter when the Turnaround Schedule sheet and the Margin Tracker sheet in OGD_01_Refinery_Operations.xlsx start to move against plan, then share it with the core leadership team.',
-        'You are the COO at Bumi Seri Refining Berhad. Demo the Refinery Compliance Navigator agent by asking: The hydrocracker is underperforming, turnaround readiness is Amber, and flare-related compliance risk is rising. What are the immediate actions, which documents should the turnaround manager update first, and what evidence will DOSH or insurers ask to see? Show how the answer cites the source document and gives a clear next step.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'You are the Chief of Staff at Bumi Seri Refining Berhad. Create the leadership deck in PowerPoint for Web, then create an agent called Margin Recovery Board Bot that helps executives find the right slide, chart, and message quickly. Make sure it can answer questions grounded in the Refinery Run Rate, Margin Tracker, and Turnaround Schedule sheets in OGD_01_Refinery_Operations.xlsx.',
-        'You are the CFO at Bumi Seri Refining Berhad. Demo the Margin Recovery Board Bot agent by asking which Red issue needs leadership attention first, what slide supports that answer, and what decision should be taken this week. Keep the response short enough to use in a live meeting.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'You are the Data Product Owner at Bumi Seri Refining Berhad. Open OGD_01_Refinery_Operations.xlsx in Excel for Web and create an agent called Refinery Operations Q&A. Describe it as an assistant that answers plain-English questions about the Refinery Run Rate, Product Yield Summary, Margin Tracker, Feedstock Cost Log, and Turnaround Schedule sheets and share it with the teams that need faster insight.',
-        'You are the COO at Bumi Seri Refining Berhad. Demo the Refinery Operations Q&A agent by asking which refinery unit is currently Red, what is driving the status, and what leading indicator should be watched next. Then ask for the one figure from the workbook that leadership should remember before the next review.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'You are the Digital Transformation Lead at Bumi Seri Refining Berhad. Go to copilotstudio.microsoft.com, create a new agent called Bumi Seri Refinery Assistant, use OGD_01_Refinery_Operations.xlsx, OGD_02_Environmental_Compliance.docx, OGD_03_Refinery_Maintenance_Plan.docx as the knowledge sources, and configure topics for Margin Recovery, Turnaround Readiness, Environmental Compliance, Feedstock Decisions. Publish it to Teams with instructions that it should answer in a concise, evidence-based way and surface a clear escalation path when users ask high-risk questions.',
-        'You are the Operations Director at Bumi Seri Refining Berhad. Demo the Bumi Seri Refinery Assistant agent by asking: The hydrocracker is underperforming, turnaround readiness is Amber, and flare-related compliance risk is rising. What are the immediate actions, which documents should the turnaround manager update first, and what evidence will DOSH or insurers ask to see? Show how the agent responds with the relevant file, the recommended action, and the owner who should take the next step.'
-      ], DESC_BUILDER),
-    ],
-    companyID='PT Bumi Seri Refinery Tbk',
-    taglineID='Pertamina-facing margin turun ke USD5.1/bbl saat kesiapan turnaround disorot.'),
+RE = {
+    'id': 'renewable-energy', 'sector': 'og-energy',
+    'name': 'Renewable Energy', 'icon': '☀️',
+    'color': '#F9A825', 'accent': '#F57F17',
+    'co': 'Suria Angin Utilities Berhad', 'co_id': 'PT Energi Hijau Nusantara Tbk',
+    'tagline': 'Curtailment at 8.6%, O&M cost up 14% and a MYR 1.4B refinancing window — Board pipeline review Thursday.',
+    'taglineID': 'Curtailment 8,6%, biaya O&M naik 14% dan jendela refinancing Rp 4,8 triliun — tinjauan pipeline Direksi hari Kamis.',
+    'scenario': "Suria Angin Utilities Berhad is a Malaysian renewable energy IPP listed on Bursa Malaysia with about 1,900 employees and 1.4 GW of operating solar and wind capacity, plus a cross-border project development pipeline of 850 MW with an Indonesian affiliate listed on IDX. Operating data shows utility-scale Solar Generation and Wind Farm Output close to nameplate, but the Grid Curtailment Tracker reveals curtailment has reached 8.6% at two sites because of TNB transmission constraints and PLN dispatch limits in Sumatra. PPA Revenue Tracker shows revenue leakage of about MYR 41 M over the last four quarters, while O&M Cost Summary has risen 14% year on year due to inverter replacements, blade inspections and imported spare parts. The 850 MW Indonesian pipeline depends on PLN PPA renegotiation, Renewable Portfolio Standard alignment and KLHK environmental permits, and a MYR 1.4B refinancing window opens in 14 weeks. Suruhanjaya Tenaga and Kementerian ESDM are both watching dispatch performance, and the Board wants clearer evidence that the asset management plan and the ESG disclosures can withstand lender scrutiny. The Group CEO has called a Board pipeline review on Thursday and needs a defensible recovery plan on curtailment, O&M cost, project finance and regulator engagement — fast.",
+    'scenarioID': 'PT Energi Hijau Nusantara Tbk adalah IPP energi terbarukan Indonesia yang tercatat di Bursa Efek Indonesia dengan sekitar 2.300 karyawan dan kapasitas operasi solar dan angin sebesar 1,4 GW, ditambah pipeline pengembangan proyek lintas-batas 850 MW dengan mitra Malaysia. Data operasi menunjukkan Solar Generation dan Wind Farm Output utility-scale mendekati nameplate, namun Grid Curtailment Tracker menampakkan curtailment mencapai 8,6% di dua lokasi akibat keterbatasan dispatch PLN di Sumatra dan kendala transmisi TNB. PPA Revenue Tracker memperlihatkan kebocoran pendapatan sekitar Rp 145 miliar selama empat kuartal terakhir, sementara O&M Cost Summary naik 14% tahun-ke-tahun karena penggantian inverter, inspeksi blade dan suku cadang impor. Pipeline 850 MW bergantung pada renegosiasi PPA PLN, keselarasan Renewable Portfolio Standard dan izin lingkungan KLHK, sedangkan jendela refinancing sebesar Rp 4,8 triliun terbuka dalam 14 minggu. Kementerian ESDM dan Suruhanjaya Tenaga sama-sama memantau kinerja dispatch, dan Direksi ingin bukti lebih jelas bahwa rencana asset management dan pengungkapan ESG tahan terhadap penelitian kreditor. Direktur Utama menggelar tinjauan pipeline Direksi hari Kamis dan membutuhkan rencana pemulihan curtailment, biaya O&M, project finance dan engagement regulator yang dapat dipertahankan — secara cepat.',
+    'files': ['RE_01_Plant_Performance.xlsx', 'RE_02_ESG_Reporting_Framework.docx',
+              'RE_03_Asset_Management_Plan.docx', 'RE_04_PPA_Contract_Tracker.xlsx',
+              'RE_05_Project_Pipeline_Finance.xlsx', 'RE_06_PLN_Dispatch_Compliance.docx'],
+    'f_xlsx_ops': 'RE_01_Plant_Performance.xlsx',
+    'f_docx_env': 'RE_02_ESG_Reporting_Framework.docx',
+    'f_docx_maint': 'RE_03_Asset_Management_Plan.docx',
+    'f_xlsx_trade': 'RE_04_PPA_Contract_Tracker.xlsx',
+    'f_xlsx_hse': 'RE_05_Project_Pipeline_Finance.xlsx',
+    'f_docx_reg': 'RE_06_PLN_Dispatch_Compliance.docx',
+    'tabs1': 'Solar Generation, Wind Farm Output, Grid Curtailment Tracker, PPA Revenue Tracker and O&M Cost Summary tabs',
+    'kpi_phrase_en': 'the 8.6% grid curtailment, the 14% O&M cost rise and the MYR 1.4B refinancing window',
+    'kpi_phrase_id': 'curtailment 8,6%, kenaikan biaya O&M 14% dan jendela refinancing Rp 4,8 triliun',
+    'crisis_short_en': 'curtailment, O&M cost rise and the refinancing window',
+    'crisis_short_id': 'curtailment, kenaikan biaya O&M dan jendela refinancing',
+    'event_en': 'Board pipeline review on Thursday', 'event_id': 'tinjauan pipeline Direksi hari Kamis',
+    'regulators_en': 'Suruhanjaya Tenaga, Kementerian ESDM, KLHK, PLN, TNB, Bursa Malaysia and BEI',
+    'regulators_id': 'PLN, Kementerian ESDM, KLHK, BEI dan OJK',
+    'agent_name': 'Suria Angin Renewables War Room',
+    'agent_name_id': 'War Room PT Energi Hijau Nusantara',
+    'recovery_focus_en': 'curtailment recovery, O&M cost discipline, project finance readiness and regulator engagement',
+    'recovery_focus_id': 'pemulihan curtailment, disiplin biaya O&M, kesiapan project finance dan engagement regulator',
+    'topic_short_en': 'curtailment recovery and project finance readiness',
+    'topic_short_id': 'pemulihan curtailment dan kesiapan project finance',
+    'roles_en': {'cfo': 'Group CFO', 'ceo': 'Group CEO', 'cos': 'Chief of Staff to the CEO',
+                 'coo': 'Chief Project Officer', 'hsa': 'Head of ESG'},
+    'roles_id': {'cfo': 'Direktur Keuangan', 'ceo': 'Direktur Utama', 'cos': 'Kepala Staf Direktur Utama',
+                 'coo': 'Direktur Proyek', 'hsa': 'Kepala ESG'},
+    'relevantDepts': ['dept-operations', 'dept-finance', 'dept-esg', 'dept-strategy'],
+}
 
-# ── RENEWABLE ENERGY ───────────────────────────────────────────────────────
-ind('renewable-energy', 'og-energy', 'Renewable Energy', '☀️', '#F9A825', '#F57F17',
-    'Suria Angin Utilities Berhad',
-    'ST and TNB negotiations tighten as curtailment reaches 8.6% and O&M costs jump 14%.',
-    'Suria Angin Utilities Berhad owns utility-scale solar and wind assets in Malaysia and is building a cross-border project development pipeline with an Indonesian affiliate. The Solar Generation Log and Wind Farm Output sheets show solid nameplate availability, but Grid Curtailment Tracker reveals curtailment has reached 8.6% at two sites because of transmission constraints. PPA Revenue Tracker indicates revenue leakage is now material, while O&M Cost Summary has risen 14% year on year due to inverter replacements, blade inspections, and imported spare parts. Management is in active discussions with Tenaga Nasional and Suruhanjaya Tenaga on dispatch performance, while the Indonesian team is tracking PLN and Kementerian ESDM expectations for comparable projects. The Board wants clearer evidence that RE_03_Asset_Management_Plan.docx is still the right operating playbook and that the ESG disclosures in RE_02_ESG_Reporting_Framework.docx can withstand lender scrutiny. If curtailment and maintenance inflation are not stabilised before the next quarter, refinancing terms and growth capex sequencing may both be affected.',
-    [
-        'RE_01_Plant_Performance.xlsx',
-        'RE_02_ESG_Reporting_Framework.docx',
-        'RE_03_Asset_Management_Plan.docx'
-    ],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'You are the COO at Suria Angin Utilities Berhad. Using the Solar Generation Log, Wind Farm Output, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx, prepare a one-page operating diagnostic that explains why curtailment-driven revenue leakage and asset reliability and cost inflation are worsening at the same time. Present the answer as a RAG table with columns for Issue, Evidence from Sheet, Likely Root Cause, and 30-Day Action.',
-        'You are the Chief Strategy Officer at Suria Angin Utilities Berhad. Using RE_02_ESG_Reporting_Framework.docx, RE_03_Asset_Management_Plan.docx, and the O&M Cost Summary sheet in RE_01_Plant_Performance.xlsx, identify the 5 decisions management must make before the next executive review so that growth ambitions do not outpace control discipline. Present the answer as a prioritised table with columns for Decision, Why Now, Evidence Source, and Consequence if Deferred.',
-        'You are the Head of Corporate Affairs at Suria Angin Utilities Berhad. Using the trends implied by the Solar Generation Log, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx, draft a stakeholder communication map covering the Board, regulators, frontline teams, and external partners. Present the answer as a RAG table with columns for Audience, Key Message, Timing, and Communication Risk.'
-      ]),
-      tool(T_RESEARCHER, FREE_LIC, FREE_ACCT, [
-        'You are the Strategy Director at Suria Angin Utilities Berhad. Research how comparable organisations in this sector responded when curtailment-driven revenue leakage became visible in operating data like the Solar Generation Log and PPA Revenue Tracker sheets in RE_01_Plant_Performance.xlsx. Present the answer as a table with columns for Organisation, Trigger, Intervention, Measured Outcome, and Relevance to Suria Angin Utilities Berhad. Flag any claim that could not be independently verified.',
-        'You are the Compliance Director at Suria Angin Utilities Berhad. Research the latest guidance, enforcement themes, and supervisory expectations relevant to Suruhanjaya Tenaga and TNB and the affiliated Indonesian context of PLN and Kementerian ESDM, then link them to the control areas implied by RE_02_ESG_Reporting_Framework.docx and the Grid Curtailment Tracker sheet in RE_01_Plant_Performance.xlsx. Present the answer as a RAG table with columns for Requirement, Malaysia Context, Indonesia Context, Practical Impact, and Immediate Management Action. Flag any claim that could not be independently verified.',
-        'You are the CEO at Suria Angin Utilities Berhad. Research three recent sector benchmarks on how peers balanced short-term recovery with longer-term priorities when facing asset reliability and cost inflation, using the tension visible between the Wind Farm Output and O&M Cost Summary sheets in RE_01_Plant_Performance.xlsx as the framing context. Present the answer as a table with columns for Peer, What They Changed, Time to Impact, Reported Result, and Lesson for Suria Angin Utilities Berhad. Flag any claim that could not be independently verified.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'You are the Head of FP&A at Suria Angin Utilities Berhad. Upload RE_01_Plant_Performance.xlsx to Analyst and use the Solar Generation Log, Wind Farm Output, PPA Revenue Tracker, and Grid Curtailment Tracker sheets to identify which plant or sites are driving the largest share of curtailment-driven revenue leakage and asset reliability and cost inflation. Present the output as a RAG table with columns for Plant Or Site, Performance Signal, Financial Impact, Control Risk, and Recommended Owner.',
-        'You are the CFO at Suria Angin Utilities Berhad. Upload RE_01_Plant_Performance.xlsx to Analyst and quantify the revenue, margin, or cash exposure linked to the patterns in the PPA Revenue Tracker, O&M Cost Summary, and Grid Curtailment Tracker sheets, then show where management should intervene first. Present the answer as a ranked table and include one chart that makes the biggest pressure point obvious.',
-        'You are the Operations Director at Suria Angin Utilities Berhad. Upload RE_01_Plant_Performance.xlsx to Analyst and build a 3-scenario view for the next two quarters using the Solar Generation Log, Wind Farm Output, PPA Revenue Tracker, and O&M Cost Summary sheets: recover quickly, stabilise slowly, or deteriorate further. Present the result as a RAG table with threshold assumptions, earliest warning sign, and the action that should be triggered in each scenario.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'You are the Business Planning Manager at Suria Angin Utilities Berhad. Using the Solar Generation Log, Wind Farm Output, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in this workbook, create a new worksheet called Executive RAG Dashboard that summarises the top operating and control risks by plant or site. Add conditional formatting so leaders can instantly see Red, Amber, and Green status plus the numeric driver behind each status.',
-        'You are the Performance Manager at Suria Angin Utilities Berhad. Using the O&M Cost Summary, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx, create a new worksheet called Intervention Tracker that logs the top 10 corrective actions, the accountable owner, the due date, the expected benefit, and the latest status. Include formulas that highlight overdue actions in red and roll up the count of open Reds at the top of the sheet.',
-        "You are the Finance Transformation Lead at Suria Angin Utilities Berhad. Using the Solar Generation Log, Wind Farm Output, and PPA Revenue Tracker sheets in RE_01_Plant_Performance.xlsx, build a sensitivity model on a new worksheet that shows how small changes in operating throughput, quality or compliance performance, and unit economics would change the overall outcome. Present the result as an easy-to-read decision table that management can use in tomorrow's review."
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'You are the Company Secretary at Suria Angin Utilities Berhad. Using RE_02_ESG_Reporting_Framework.docx, RE_03_Asset_Management_Plan.docx, and the evidence implied by the Solar Generation Log, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx, draft a 2-page Board paper on the current situation, the main risks, and the governance actions required in the next 30 days. Start with a short RAG summary and then move into decisions, owners, and timing.',
-        'You are the Head of Internal Audit at Suria Angin Utilities Berhad. Using RE_02_ESG_Reporting_Framework.docx and the pressure points visible in the Grid Curtailment Tracker and PPA Revenue Tracker sheets in RE_01_Plant_Performance.xlsx, draft a control-gap memorandum that identifies where process design and frontline execution are drifting apart. Present the core findings as a table with columns for Control Area, Current Gap, Risk if Unresolved, and Proposed Remediation.',
-        'You are the CEO at Suria Angin Utilities Berhad. Using RE_03_Asset_Management_Plan.docx, the Solar Generation Log sheet, and the O&M Cost Summary sheet in RE_01_Plant_Performance.xlsx, draft a one-page management note that explains what can still be delivered this year, what must be reset, and how leadership should talk about the change in priorities. Keep the tone candid, steady, and evidence-based.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'You are the Chief of Staff at Suria Angin Utilities Berhad. Create a 6-slide executive deck using RE_01_Plant_Performance.xlsx, RE_02_ESG_Reporting_Framework.docx, and RE_03_Asset_Management_Plan.docx as the source context, covering current performance, the root causes behind curtailment-driven revenue leakage and asset reliability and cost inflation, the top Red risks, the first 90-day actions, and the decisions required from leadership. Give each slide a headline that states the message, not just the topic.',
-        'You are the CFO at Suria Angin Utilities Berhad. Create a 5-slide update deck for leadership that uses the PPA Revenue Tracker, O&M Cost Summary, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx to show where financial exposure is concentrated and how quickly it can be reduced. Include speaker notes that explain the Red issues in plain language for a non-technical audience.',
-        'You are the Strategy Director at Suria Angin Utilities Berhad. Create a single summary slide that links the signals in the Solar Generation Log, Wind Farm Output, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx to the priorities in RE_03_Asset_Management_Plan.docx. Present it as a RAG matrix with one sentence of management action beside each Red item.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'You are the Regulatory Affairs Lead at Suria Angin Utilities Berhad. Draft an email to the relevant authorities and senior internal stakeholders that acknowledges the current pressure areas indicated by the Grid Curtailment Tracker sheet in RE_01_Plant_Performance.xlsx, outlines the corrective steps already under way, and requests alignment on the next review checkpoint. Keep the tone factual, controlled, and suitable for scrutiny by Suruhanjaya Tenaga and TNB and PLN and Kementerian ESDM counterparts.',
-        'You are the COO at Suria Angin Utilities Berhad. Draft an internal email to Asset management, finance, and ESG leaders summarising the top three risks shown in the Solar Generation Log, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx, the required actions this week, and the consequences of delay. End with a bullet list titled What I need from you by Friday.',
-        'You are the Head of Stakeholder Management at Suria Angin Utilities Berhad. Draft an external-facing update that explains the current operating situation using plain language consistent with RE_02_ESG_Reporting_Framework.docx and RE_03_Asset_Management_Plan.docx, without overpromising outcomes or admitting fault. Use the evidence implied by the O&M Cost Summary and PPA Revenue Tracker sheets in RE_01_Plant_Performance.xlsx to keep the message disciplined.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'You are the Chief of Staff at Suria Angin Utilities Berhad. Using this recorded Teams meeting recap, identify the decisions, unresolved issues, and action items that connect directly to the Solar Generation Log, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx. Present the output as a RAG table with columns for Topic, What Was Said, Owner, Due Date, and Escalation Level.',
-        'You are the Operations Director at Suria Angin Utilities Berhad. Using this Teams recap, draft follow-up actions for the teams responsible for the areas covered in RE_02_ESG_Reporting_Framework.docx and the Wind Farm Output sheet in RE_01_Plant_Performance.xlsx. Group the actions by workstream and include a success measure for each one.',
-        'You are the CFO at Suria Angin Utilities Berhad. Using this Teams recap, extract every financial, compliance, or customer-impact figure that would help explain the trends in the PPA Revenue Tracker, O&M Cost Summary, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx. Present the result as a structured note with sections for Facts, Risks, Commitments, and Missing Information.'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'You are the CEO at Suria Angin Utilities Berhad. Upload RE_01_Plant_Performance.xlsx, RE_02_ESG_Reporting_Framework.docx, RE_03_Asset_Management_Plan.docx to Copilot Notebook, set the instruction to synthesise across all files with citations, and ask for the 10-slide-equivalent story leadership needs right now. Require Notebook to reconcile the signals from the Solar Generation Log, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx with the commitments in RE_02_ESG_Reporting_Framework.docx and RE_03_Asset_Management_Plan.docx.',
-        'You are the COO at Suria Angin Utilities Berhad. Upload RE_01_Plant_Performance.xlsx, RE_02_ESG_Reporting_Framework.docx, RE_03_Asset_Management_Plan.docx to Copilot Notebook and ask whether the priorities implied by the Wind Farm Output and O&M Cost Summary sheets in RE_01_Plant_Performance.xlsx are still realistic given the risk picture in the Grid Curtailment Tracker sheet. Require a RAG table with columns for Priority, Evidence, Risk to Delivery, and Recommendation, all with citations.',
-        'You are the Board Liaison at Suria Angin Utilities Berhad. Upload RE_01_Plant_Performance.xlsx, RE_02_ESG_Reporting_Framework.docx, RE_03_Asset_Management_Plan.docx to Copilot Notebook and ask for the contradictions management must resolve before the next review, especially where operational ambition, control capability, and financial reality do not line up. Request a concise answer with sections for Contradictions, Questions Directors Will Ask, and Pre-Reads to Send.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, M365_LIC, M365_ACCT, [
-        'You are the COO at Suria Angin Utilities Berhad. Do all of the following autonomously: create a recovery action plan grounded in the Solar Generation Log, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx; save it to OneDrive; email it to Asset management, finance, and ESG leaders; and schedule a 45-minute review meeting for next week. Make the plan easy to track with RAG status and owner-by-owner accountability.',
-        'You are the Chief of Staff at Suria Angin Utilities Berhad. Do all of the following autonomously: turn the main obligations from RE_02_ESG_Reporting_Framework.docx and the priorities from RE_03_Asset_Management_Plan.docx into a working checklist, save it in OneDrive, email the checklist to the accountable leaders, and create calendar reminders for each major milestone. Keep the wording clear enough that teams can act without a second briefing.'
-      ], DESC_COWORK),
-      tool(T_EDIT_COPILOT, M365_LIC, M365_ACCT, [
-        'You are the Company Secretary at Suria Angin Utilities Berhad. Using RE_02_ESG_Reporting_Framework.docx in Word for the web, add an appendix titled Operating Escalation and RAG Governance Protocol and populate it with decision rights, escalation thresholds, evidence requirements, and sign-off owners that mirror the issues visible in the Grid Curtailment Tracker and PPA Revenue Tracker sheets in RE_01_Plant_Performance.xlsx. Keep the style consistent with the existing document.',
-        'You are the Performance Manager at Suria Angin Utilities Berhad. Using RE_01_Plant_Performance.xlsx in Excel for the web, create a new worksheet called Leadership Recovery Tracker that combines the Solar Generation Log, PPA Revenue Tracker, O&M Cost Summary, and Grid Curtailment Tracker sheets into a single view with owner, due date, expected impact, and live RAG status. Reorder the layout so the Red issues appear first and add formulas that refresh the summary automatically.'
-      ], DESC_EDIT_COPILOT),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'You are the Knowledge Manager at Suria Angin Utilities Berhad. Open RE_02_ESG_Reporting_Framework.docx in Word for Web and create an agent called Renewables ESG Navigator. Describe it as an assistant that answers questions about the policies, thresholds, and escalation rules that matter when the Grid Curtailment Tracker sheet and the PPA Revenue Tracker sheet in RE_01_Plant_Performance.xlsx start to move against plan, then share it with the core leadership team.',
-        'You are the COO at Suria Angin Utilities Berhad. Demo the Renewables ESG Navigator agent by asking: Curtailment at one solar site is above threshold and O&M cost inflation is eroding PPA value. What should the asset manager escalate first, what evidence belongs in the ESG framework, and what options should be discussed with TNB or PLN counterparts? Show how the answer cites the source document and gives a clear next step.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'You are the Chief of Staff at Suria Angin Utilities Berhad. Create the leadership deck in PowerPoint for Web, then create an agent called Generation Review Board Bot that helps executives find the right slide, chart, and message quickly. Make sure it can answer questions grounded in the Solar Generation Log, PPA Revenue Tracker, and Grid Curtailment Tracker sheets in RE_01_Plant_Performance.xlsx.',
-        'You are the CFO at Suria Angin Utilities Berhad. Demo the Generation Review Board Bot agent by asking which Red issue needs leadership attention first, what slide supports that answer, and what decision should be taken this week. Keep the response short enough to use in a live meeting.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'You are the Data Product Owner at Suria Angin Utilities Berhad. Open RE_01_Plant_Performance.xlsx in Excel for Web and create an agent called Renewables Portfolio Q&A. Describe it as an assistant that answers plain-English questions about the Solar Generation Log, Wind Farm Output, PPA Revenue Tracker, O&M Cost Summary, and Grid Curtailment Tracker sheets and share it with the teams that need faster insight.',
-        'You are the COO at Suria Angin Utilities Berhad. Demo the Renewables Portfolio Q&A agent by asking which plant or site is currently Red, what is driving the status, and what leading indicator should be watched next. Then ask for the one figure from the workbook that leadership should remember before the next review.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'You are the Digital Transformation Lead at Suria Angin Utilities Berhad. Go to copilotstudio.microsoft.com, create a new agent called Suria Angin Asset Assistant, use RE_01_Plant_Performance.xlsx, RE_02_ESG_Reporting_Framework.docx, RE_03_Asset_Management_Plan.docx as the knowledge sources, and configure topics for Curtailment, PPA Value, ESG Reporting, O&M Control. Publish it to Teams with instructions that it should answer in a concise, evidence-based way and surface a clear escalation path when users ask high-risk questions.',
-        'You are the Operations Director at Suria Angin Utilities Berhad. Demo the Suria Angin Asset Assistant agent by asking: Curtailment at one solar site is above threshold and O&M cost inflation is eroding PPA value. What should the asset manager escalate first, what evidence belongs in the ESG framework, and what options should be discussed with TNB or PLN counterparts? Show how the agent responds with the relevant file, the recommended action, and the owner who should take the next step.'
-      ], DESC_BUILDER),
-    ],
-    companyID='PT Suria Angin Energi Tbk',
-    taglineID='PLN dan Kementerian ESDM menekan saat curtailment 8.6% dan biaya O&M naik 14%.'),
+MFG = {
+    'id': 'industrial-manufacturing', 'sector': 'manufacturing',
+    'name': 'Industrial Manufacturing', 'icon': '⚙️',
+    'color': '#263238', 'accent': '#37474F',
+    'co': 'Maju Teknika Industries Berhad', 'co_id': 'PT Astra Industri Mandiri Tbk',
+    'tagline': 'Network OEE stuck at 68%, rejects at 4.9% and OTIF at 91% — Board operations reset Wednesday.',
+    'taglineID': 'OEE jaringan tertahan 68%, reject rate 4,9% dan OTIF 91% — reset operasi Direksi hari Rabu.',
+    'scenario': "Maju Teknika Industries Berhad is a Malaysian precision component and sub-assembly manufacturer listed on Bursa Malaysia with about 5,800 employees across plants in Nilai and Batu Kawan supplying automotive, electronics and industrial OEM customers, and an Indonesian affiliate listed on IDX serving regional Tier 1 customers. The Line OEE Dashboard shows network OEE stuck at 68% against a 75% recovery target, Quality Reject Log shows defect rate at 4.9% with rework concentrated on two high-volume customer programmes, Production Plan vs Actual shows chronic shortfalls on weekend shifts, and Raw Material Cost Tracker captures continuing volatility in resin, copper and imported machining consumables. Customer Order Fulfillment has slipped to 91% OTIF, raising the risk of supplier penalties and allocation losses on the next sourcing round with three Tier 1 OEM customers. Supply Chain Performance shows two single-source components with 9-week lead times, and a key Japanese customer audit is scheduled in 5 weeks. Kementerian Perindustrian incentive reporting, BKPM investment review, SNI quality certification and DOSH workplace safety discipline all intersect with the operating reset described in the lean manufacturing guide and the controls documented in the quality management system. The Group CEO has called a Board operations reset on Wednesday and needs a defensible recovery on OEE, quality, OTIF and supply chain — fast.",
+    'scenarioID': 'PT Astra Industri Mandiri Tbk adalah produsen komponen presisi dan sub-assembly Indonesia yang tercatat di Bursa Efek Indonesia dengan sekitar 6.500 karyawan di pabrik Karawang dan Cikarang yang memasok pelanggan OEM otomotif, elektronik dan industri, serta mitra Malaysia yang melayani pelanggan Tier 1 regional. Line OEE Dashboard menampakkan OEE jaringan tertahan 68% terhadap target pemulihan 75%, Quality Reject Log menunjukkan reject rate 4,9% dengan rework terkonsentrasi pada dua program pelanggan volume tinggi, Production Plan vs Actual menampilkan kekurangan kronis pada shift akhir pekan, dan Raw Material Cost Tracker mencatat volatilitas berlanjut pada resin, tembaga dan consumable mesin impor. Customer Order Fulfillment turun ke 91% OTIF, meningkatkan risiko penalti supplier dan kehilangan alokasi pada putaran sourcing berikutnya dengan tiga pelanggan OEM Tier 1. Supply Chain Performance menunjukkan dua komponen single-source dengan lead time 9 minggu, dan audit pelanggan Jepang utama dijadwalkan 5 minggu lagi. Pelaporan insentif Kementerian Perindustrian, tinjauan investasi BKPM, sertifikasi mutu SNI dan disiplin keselamatan kerja DOSH semuanya berpotongan dengan reset operasi yang dijelaskan dalam panduan lean manufacturing dan kontrol yang didokumentasikan dalam quality management system. Direktur Utama menggelar reset operasi Direksi hari Rabu dan membutuhkan pemulihan OEE, mutu, OTIF dan rantai pasok yang dapat dipertahankan — secara cepat.',
+    'files': ['MFG_01_Production_Metrics.xlsx', 'MFG_02_Quality_Management_System.docx',
+              'MFG_03_Lean_Manufacturing_Guide.docx', 'MFG_04_Supply_Chain_Performance.xlsx',
+              'MFG_05_Customer_OTIF_Tracker.xlsx', 'MFG_06_SNI_Quality_Submission.docx'],
+    'f_xlsx_ops': 'MFG_01_Production_Metrics.xlsx',
+    'f_docx_env': 'MFG_02_Quality_Management_System.docx',
+    'f_docx_maint': 'MFG_03_Lean_Manufacturing_Guide.docx',
+    'f_xlsx_trade': 'MFG_04_Supply_Chain_Performance.xlsx',
+    'f_xlsx_hse': 'MFG_05_Customer_OTIF_Tracker.xlsx',
+    'f_docx_reg': 'MFG_06_SNI_Quality_Submission.docx',
+    'tabs1': 'Line OEE Dashboard, Quality Reject Log, Production Plan vs Actual, Raw Material Cost Tracker and Customer Order Fulfillment tabs',
+    'kpi_phrase_en': 'the 68% network OEE, the 4.9% reject rate and the 91% OTIF slippage',
+    'kpi_phrase_id': 'OEE jaringan 68%, reject rate 4,9% dan slippage OTIF 91%',
+    'crisis_short_en': 'OEE recovery, quality, OTIF and supply chain',
+    'crisis_short_id': 'pemulihan OEE, mutu, OTIF dan rantai pasok',
+    'event_en': 'Board operations reset on Wednesday', 'event_id': 'reset operasi Direksi hari Rabu',
+    'regulators_en': 'Kementerian Perindustrian, BKPM, SNI, DOSH, Bursa Malaysia and BEI',
+    'regulators_id': 'Kementerian Perindustrian, BKPM, SNI, DOSH, BEI dan OJK',
+    'agent_name': 'Maju Teknika Operations War Room',
+    'agent_name_id': 'War Room Operasi PT Astra Industri Mandiri',
+    'recovery_focus_en': 'OEE recovery, quality discipline, OTIF protection and supply-chain de-risking',
+    'recovery_focus_id': 'pemulihan OEE, disiplin mutu, perlindungan OTIF dan de-risking rantai pasok',
+    'topic_short_en': 'OEE recovery and OTIF protection',
+    'topic_short_id': 'pemulihan OEE dan perlindungan OTIF',
+    'roles_en': {'cfo': 'Group CFO', 'ceo': 'Group CEO', 'cos': 'Chief of Staff to the CEO',
+                 'coo': 'COO', 'hsa': 'Head of Supply Chain'},
+    'roles_id': {'cfo': 'Direktur Keuangan', 'ceo': 'Direktur Utama', 'cos': 'Kepala Staf Direktur Utama',
+                 'coo': 'Direktur Operasi', 'hsa': 'Kepala Rantai Pasok'},
+    'relevantDepts': ['dept-operations', 'dept-finance', 'dept-strategy', 'dept-risk'],
+}
 
-# ── INDUSTRIAL MANUFACTURING ───────────────────────────────────────────────────────
-ind('industrial-manufacturing', 'manufacturing', 'Industrial Manufacturing', '⚙️', '#263238', '#37474F',
-    'Maju Teknika Industries Berhad',
-    'MITI and key customers are watching as OEE stalls at 68% and rejects rise to 4.9%.',
-    'Maju Teknika Industries Berhad operates precision component and sub-assembly plants in Nilai and Batu Kawan, supplying automotive, electronics, and industrial OEM customers. The Line OEE Dashboard shows network OEE stuck at 68%, well below the 75% recovery target approved at the start of the year. Quality Reject Log indicates defect rates have risen to 4.9%, with rework concentrated in two high-volume customer programmes. Production Plan vs Actual shows chronic shortfalls on weekend shifts, while Raw Material Cost Tracker captures continuing volatility in resin, copper, and imported machining consumables. Customer Order Fulfillment has slipped to 91% OTIF, raising the risk of penalties and allocation losses on the next sourcing round. MITI incentive reporting, DOSH workplace safety discipline, and SIRIM quality expectations all intersect with the operating reset described in MFG_03_Lean_Manufacturing_Guide.docx and the controls documented in MFG_02_Quality_Management_System.docx. The Indonesian affiliate is also under pressure to mirror the same corrective actions quickly if shared customers escalate regionally.',
-    [
-        'MFG_01_Production_Metrics.xlsx',
-        'MFG_02_Quality_Management_System.docx',
-        'MFG_03_Lean_Manufacturing_Guide.docx'
-    ],
-    [
-      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
-        'You are the COO at Maju Teknika Industries Berhad. Using the Line OEE Dashboard, Quality Reject Log, Raw Material Cost Tracker, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx, prepare a one-page operating diagnostic that explains why productivity stagnation and quality and delivery erosion are worsening at the same time. Present the answer as a RAG table with columns for Issue, Evidence from Sheet, Likely Root Cause, and 30-Day Action.',
-        'You are the Chief Strategy Officer at Maju Teknika Industries Berhad. Using MFG_02_Quality_Management_System.docx, MFG_03_Lean_Manufacturing_Guide.docx, and the Customer Order Fulfillment sheet in MFG_01_Production_Metrics.xlsx, identify the 5 decisions management must make before the next executive review so that growth ambitions do not outpace control discipline. Present the answer as a prioritised table with columns for Decision, Why Now, Evidence Source, and Consequence if Deferred.',
-        'You are the Head of Corporate Affairs at Maju Teknika Industries Berhad. Using the trends implied by the Line OEE Dashboard, Raw Material Cost Tracker, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx, draft a stakeholder communication map covering the Board, regulators, frontline teams, and external partners. Present the answer as a RAG table with columns for Audience, Key Message, Timing, and Communication Risk.'
-      ]),
-      tool(T_RESEARCHER, FREE_LIC, FREE_ACCT, [
-        'You are the Strategy Director at Maju Teknika Industries Berhad. Research how comparable organisations in this sector responded when productivity stagnation became visible in operating data like the Line OEE Dashboard and Raw Material Cost Tracker sheets in MFG_01_Production_Metrics.xlsx. Present the answer as a table with columns for Organisation, Trigger, Intervention, Measured Outcome, and Relevance to Maju Teknika Industries Berhad. Flag any claim that could not be independently verified.',
-        'You are the Compliance Director at Maju Teknika Industries Berhad. Research the latest guidance, enforcement themes, and supervisory expectations relevant to MITI, DOSH, and SIRIM and the affiliated Indonesian context of regional customer and plant leadership, then link them to the control areas implied by MFG_02_Quality_Management_System.docx and the Production Plan vs Actual sheet in MFG_01_Production_Metrics.xlsx. Present the answer as a RAG table with columns for Requirement, Malaysia Context, Indonesia Context, Practical Impact, and Immediate Management Action. Flag any claim that could not be independently verified.',
-        'You are the CEO at Maju Teknika Industries Berhad. Research three recent sector benchmarks on how peers balanced short-term recovery with longer-term priorities when facing quality and delivery erosion, using the tension visible between the Quality Reject Log and Customer Order Fulfillment sheets in MFG_01_Production_Metrics.xlsx as the framing context. Present the answer as a table with columns for Peer, What They Changed, Time to Impact, Reported Result, and Lesson for Maju Teknika Industries Berhad. Flag any claim that could not be independently verified.'
-      ], DESC_RESEARCHER),
-      tool(T_ANALYST, M365_LIC, M365_ACCT, [
-        'You are the Head of FP&A at Maju Teknika Industries Berhad. Upload MFG_01_Production_Metrics.xlsx to Analyst and use the Line OEE Dashboard, Quality Reject Log, Raw Material Cost Tracker, and Production Plan vs Actual sheets to identify which line or plants are driving the largest share of productivity stagnation and quality and delivery erosion. Present the output as a RAG table with columns for Line Or Plant, Performance Signal, Financial Impact, Control Risk, and Recommended Owner.',
-        'You are the CFO at Maju Teknika Industries Berhad. Upload MFG_01_Production_Metrics.xlsx to Analyst and quantify the revenue, margin, or cash exposure linked to the patterns in the Raw Material Cost Tracker, Customer Order Fulfillment, and Production Plan vs Actual sheets, then show where management should intervene first. Present the answer as a ranked table and include one chart that makes the biggest pressure point obvious.',
-        'You are the Operations Director at Maju Teknika Industries Berhad. Upload MFG_01_Production_Metrics.xlsx to Analyst and build a 3-scenario view for the next two quarters using the Line OEE Dashboard, Quality Reject Log, Raw Material Cost Tracker, and Customer Order Fulfillment sheets: recover quickly, stabilise slowly, or deteriorate further. Present the result as a RAG table with threshold assumptions, earliest warning sign, and the action that should be triggered in each scenario.'
-      ], DESC_ANALYST),
-      tool(T_EXCEL, M365_LIC, M365_ACCT, [
-        'You are the Business Planning Manager at Maju Teknika Industries Berhad. Using the Line OEE Dashboard, Quality Reject Log, Raw Material Cost Tracker, and Production Plan vs Actual sheets in this workbook, create a new worksheet called Executive RAG Dashboard that summarises the top operating and control risks by line or plant. Add conditional formatting so leaders can instantly see Red, Amber, and Green status plus the numeric driver behind each status.',
-        'You are the Performance Manager at Maju Teknika Industries Berhad. Using the Customer Order Fulfillment, Raw Material Cost Tracker, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx, create a new worksheet called Intervention Tracker that logs the top 10 corrective actions, the accountable owner, the due date, the expected benefit, and the latest status. Include formulas that highlight overdue actions in red and roll up the count of open Reds at the top of the sheet.',
-        "You are the Finance Transformation Lead at Maju Teknika Industries Berhad. Using the Line OEE Dashboard, Quality Reject Log, and Raw Material Cost Tracker sheets in MFG_01_Production_Metrics.xlsx, build a sensitivity model on a new worksheet that shows how small changes in operating throughput, quality or compliance performance, and unit economics would change the overall outcome. Present the result as an easy-to-read decision table that management can use in tomorrow's review."
-      ]),
-      tool(T_WORD, M365_LIC, M365_ACCT, [
-        'You are the Company Secretary at Maju Teknika Industries Berhad. Using MFG_02_Quality_Management_System.docx, MFG_03_Lean_Manufacturing_Guide.docx, and the evidence implied by the Line OEE Dashboard, Raw Material Cost Tracker, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx, draft a 2-page Board paper on the current situation, the main risks, and the governance actions required in the next 30 days. Start with a short RAG summary and then move into decisions, owners, and timing.',
-        'You are the Head of Internal Audit at Maju Teknika Industries Berhad. Using MFG_02_Quality_Management_System.docx and the pressure points visible in the Production Plan vs Actual and Raw Material Cost Tracker sheets in MFG_01_Production_Metrics.xlsx, draft a control-gap memorandum that identifies where process design and frontline execution are drifting apart. Present the core findings as a table with columns for Control Area, Current Gap, Risk if Unresolved, and Proposed Remediation.',
-        'You are the CEO at Maju Teknika Industries Berhad. Using MFG_03_Lean_Manufacturing_Guide.docx, the Line OEE Dashboard sheet, and the Customer Order Fulfillment sheet in MFG_01_Production_Metrics.xlsx, draft a one-page management note that explains what can still be delivered this year, what must be reset, and how leadership should talk about the change in priorities. Keep the tone candid, steady, and evidence-based.'
-      ]),
-      tool(T_PPT, M365_LIC, M365_ACCT, [
-        'You are the Chief of Staff at Maju Teknika Industries Berhad. Create a 6-slide executive deck using MFG_01_Production_Metrics.xlsx, MFG_02_Quality_Management_System.docx, and MFG_03_Lean_Manufacturing_Guide.docx as the source context, covering current performance, the root causes behind productivity stagnation and quality and delivery erosion, the top Red risks, the first 90-day actions, and the decisions required from leadership. Give each slide a headline that states the message, not just the topic.',
-        'You are the CFO at Maju Teknika Industries Berhad. Create a 5-slide update deck for leadership that uses the Raw Material Cost Tracker, Customer Order Fulfillment, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx to show where financial exposure is concentrated and how quickly it can be reduced. Include speaker notes that explain the Red issues in plain language for a non-technical audience.',
-        'You are the Strategy Director at Maju Teknika Industries Berhad. Create a single summary slide that links the signals in the Line OEE Dashboard, Quality Reject Log, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx to the priorities in MFG_03_Lean_Manufacturing_Guide.docx. Present it as a RAG matrix with one sentence of management action beside each Red item.'
-      ]),
-      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
-        'You are the Regulatory Affairs Lead at Maju Teknika Industries Berhad. Draft an email to the relevant authorities and senior internal stakeholders that acknowledges the current pressure areas indicated by the Production Plan vs Actual sheet in MFG_01_Production_Metrics.xlsx, outlines the corrective steps already under way, and requests alignment on the next review checkpoint. Keep the tone factual, controlled, and suitable for scrutiny by MITI, DOSH, and SIRIM and regional customer and plant leadership counterparts.',
-        'You are the COO at Maju Teknika Industries Berhad. Draft an internal email to Plant, quality, and supply-chain leaders summarising the top three risks shown in the Line OEE Dashboard, Raw Material Cost Tracker, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx, the required actions this week, and the consequences of delay. End with a bullet list titled What I need from you by Friday.',
-        'You are the Head of Stakeholder Management at Maju Teknika Industries Berhad. Draft an external-facing update that explains the current operating situation using plain language consistent with MFG_02_Quality_Management_System.docx and MFG_03_Lean_Manufacturing_Guide.docx, without overpromising outcomes or admitting fault. Use the evidence implied by the Customer Order Fulfillment and Raw Material Cost Tracker sheets in MFG_01_Production_Metrics.xlsx to keep the message disciplined.'
-      ]),
-      tool(T_TEAMS, M365_LIC, M365_ACCT, [
-        'You are the Chief of Staff at Maju Teknika Industries Berhad. Using this recorded Teams meeting recap, identify the decisions, unresolved issues, and action items that connect directly to the Line OEE Dashboard, Raw Material Cost Tracker, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx. Present the output as a RAG table with columns for Topic, What Was Said, Owner, Due Date, and Escalation Level.',
-        'You are the Operations Director at Maju Teknika Industries Berhad. Using this Teams recap, draft follow-up actions for the teams responsible for the areas covered in MFG_02_Quality_Management_System.docx and the Quality Reject Log sheet in MFG_01_Production_Metrics.xlsx. Group the actions by workstream and include a success measure for each one.',
-        'You are the CFO at Maju Teknika Industries Berhad. Using this Teams recap, extract every financial, compliance, or customer-impact figure that would help explain the trends in the Raw Material Cost Tracker, Customer Order Fulfillment, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx. Present the result as a structured note with sections for Facts, Risks, Commitments, and Missing Information.'
-      ], DESC_TEAMS),
-      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
-        'You are the CEO at Maju Teknika Industries Berhad. Upload MFG_01_Production_Metrics.xlsx, MFG_02_Quality_Management_System.docx, MFG_03_Lean_Manufacturing_Guide.docx to Copilot Notebook, set the instruction to synthesise across all files with citations, and ask for the 10-slide-equivalent story leadership needs right now. Require Notebook to reconcile the signals from the Line OEE Dashboard, Raw Material Cost Tracker, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx with the commitments in MFG_02_Quality_Management_System.docx and MFG_03_Lean_Manufacturing_Guide.docx.',
-        'You are the COO at Maju Teknika Industries Berhad. Upload MFG_01_Production_Metrics.xlsx, MFG_02_Quality_Management_System.docx, MFG_03_Lean_Manufacturing_Guide.docx to Copilot Notebook and ask whether the priorities implied by the Quality Reject Log and Customer Order Fulfillment sheets in MFG_01_Production_Metrics.xlsx are still realistic given the risk picture in the Production Plan vs Actual sheet. Require a RAG table with columns for Priority, Evidence, Risk to Delivery, and Recommendation, all with citations.',
-        'You are the Board Liaison at Maju Teknika Industries Berhad. Upload MFG_01_Production_Metrics.xlsx, MFG_02_Quality_Management_System.docx, MFG_03_Lean_Manufacturing_Guide.docx to Copilot Notebook and ask for the contradictions management must resolve before the next review, especially where operational ambition, control capability, and financial reality do not line up. Request a concise answer with sections for Contradictions, Questions Directors Will Ask, and Pre-Reads to Send.'
-      ], DESC_NOTEBOOK),
-      tool(T_COWORK, M365_LIC, M365_ACCT, [
-        'You are the COO at Maju Teknika Industries Berhad. Do all of the following autonomously: create a recovery action plan grounded in the Line OEE Dashboard, Raw Material Cost Tracker, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx; save it to OneDrive; email it to Plant, quality, and supply-chain leaders; and schedule a 45-minute review meeting for next week. Make the plan easy to track with RAG status and owner-by-owner accountability.',
-        'You are the Chief of Staff at Maju Teknika Industries Berhad. Do all of the following autonomously: turn the main obligations from MFG_02_Quality_Management_System.docx and the priorities from MFG_03_Lean_Manufacturing_Guide.docx into a working checklist, save it in OneDrive, email the checklist to the accountable leaders, and create calendar reminders for each major milestone. Keep the wording clear enough that teams can act without a second briefing.'
-      ], DESC_COWORK),
-      tool(T_EDIT_COPILOT, M365_LIC, M365_ACCT, [
-        'You are the Company Secretary at Maju Teknika Industries Berhad. Using MFG_02_Quality_Management_System.docx in Word for the web, add an appendix titled Operating Escalation and RAG Governance Protocol and populate it with decision rights, escalation thresholds, evidence requirements, and sign-off owners that mirror the issues visible in the Production Plan vs Actual and Raw Material Cost Tracker sheets in MFG_01_Production_Metrics.xlsx. Keep the style consistent with the existing document.',
-        'You are the Performance Manager at Maju Teknika Industries Berhad. Using MFG_01_Production_Metrics.xlsx in Excel for the web, create a new worksheet called Leadership Recovery Tracker that combines the Line OEE Dashboard, Raw Material Cost Tracker, Customer Order Fulfillment, and Production Plan vs Actual sheets into a single view with owner, due date, expected impact, and live RAG status. Reorder the layout so the Red issues appear first and add formulas that refresh the summary automatically.'
-      ], DESC_EDIT_COPILOT),
-      tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
-        'You are the Knowledge Manager at Maju Teknika Industries Berhad. Open MFG_02_Quality_Management_System.docx in Word for Web and create an agent called Quality System Navigator. Describe it as an assistant that answers questions about the policies, thresholds, and escalation rules that matter when the Production Plan vs Actual sheet and the Raw Material Cost Tracker sheet in MFG_01_Production_Metrics.xlsx start to move against plan, then share it with the core leadership team.',
-        'You are the COO at Maju Teknika Industries Berhad. Demo the Quality System Navigator agent by asking: One customer programme has low OEE, high rejects, and missed deliveries in the same month. What should the plant manager escalate first, which quality-system controls apply, and what evidence from the workbook should be used in the next customer review? Show how the answer cites the source document and gives a clear next step.'
-      ], DESC_WORD_AGT),
-      tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
-        'You are the Chief of Staff at Maju Teknika Industries Berhad. Create the leadership deck in PowerPoint for Web, then create an agent called Operations Recovery Board Bot that helps executives find the right slide, chart, and message quickly. Make sure it can answer questions grounded in the Line OEE Dashboard, Raw Material Cost Tracker, and Production Plan vs Actual sheets in MFG_01_Production_Metrics.xlsx.',
-        'You are the CFO at Maju Teknika Industries Berhad. Demo the Operations Recovery Board Bot agent by asking which Red issue needs leadership attention first, what slide supports that answer, and what decision should be taken this week. Keep the response short enough to use in a live meeting.'
-      ], DESC_PPT_AGT),
-      tool(T_XL_AGT, M365_LIC, M365_ACCT, [
-        'You are the Data Product Owner at Maju Teknika Industries Berhad. Open MFG_01_Production_Metrics.xlsx in Excel for Web and create an agent called Plant Performance Q&A. Describe it as an assistant that answers plain-English questions about the Line OEE Dashboard, Quality Reject Log, Raw Material Cost Tracker, Customer Order Fulfillment, and Production Plan vs Actual sheets and share it with the teams that need faster insight.',
-        'You are the COO at Maju Teknika Industries Berhad. Demo the Plant Performance Q&A agent by asking which line or plant is currently Red, what is driving the status, and what leading indicator should be watched next. Then ask for the one figure from the workbook that leadership should remember before the next review.'
-      ], DESC_XL_AGT),
-      tool(T_BUILDER, M365_LIC, M365_ACCT, [
-        'You are the Digital Transformation Lead at Maju Teknika Industries Berhad. Go to copilotstudio.microsoft.com, create a new agent called Maju Teknika Operations Assistant, use MFG_01_Production_Metrics.xlsx, MFG_02_Quality_Management_System.docx, MFG_03_Lean_Manufacturing_Guide.docx as the knowledge sources, and configure topics for OEE Recovery, Quality Loss, Order Fulfilment, Lean Actions. Publish it to Teams with instructions that it should answer in a concise, evidence-based way and surface a clear escalation path when users ask high-risk questions.',
-        'You are the Operations Director at Maju Teknika Industries Berhad. Demo the Maju Teknika Operations Assistant agent by asking: One customer programme has low OEE, high rejects, and missed deliveries in the same month. What should the plant manager escalate first, which quality-system controls apply, and what evidence from the workbook should be used in the next customer review? Show how the agent responds with the relevant file, the recommended action, and the owner who should take the next step.'
-      ], DESC_BUILDER),
-    ],
-    companyID='PT Maju Teknika Industri Tbk',
-    taglineID='Pelanggan utama menekan saat OEE 68% dan reject rate naik ke 4.9%.'),
+INDUSTRIES_4 = []  # populated below by _build()
 
-]
 
+# ───────────────────────── PERSONAS HELPER ─────────────────────────
+def _personas(c):
+    re_id = c['roles_id']
+    re_en = c['roles_en']
+    return [
+        {'id': 'hadar-caspit', 'name': 'Hadar Caspit',
+         'role': re_en['cfo'], 'roleID': re_id['cfo'],
+         'license': 'M365 Copilot', 'licenseID': 'M365 Copilot',
+         'account': 'admin@ABSx62256373.onmicrosoft.com',
+         'color': '#1E40AF', 'avatar': 'HC',
+         'leads': ['T_RESEARCHER', 'T_ANALYST', 'T_EXCEL', 'T_NOTEBOOK'],
+         'leadsID': ['T_RESEARCHER', 'T_ANALYST', 'T_EXCEL', 'T_NOTEBOOK']},
+        {'id': 'mod-admin', 'name': 'Mod Admin',
+         'role': re_en['coo'], 'roleID': re_id['coo'],
+         'license': 'M365 Copilot', 'licenseID': 'M365 Copilot',
+         'account': 'admin@ABSx62256373.onmicrosoft.com',
+         'color': '#059669', 'avatar': 'MA',
+         'leads': ['T_TEAMS', 'T_OUTLOOK', 'T_COWORK'],
+         'leadsID': ['T_TEAMS', 'T_OUTLOOK', 'T_COWORK']},
+        {'id': 'sasha-ouellet', 'name': 'Sasha Ouellet',
+         'role': re_en['cos'], 'roleID': re_id['cos'],
+         'license': 'Free — no M365 Copilot license',
+         'licenseID': 'Bebas — tanpa lisensi M365 Copilot',
+         'account': 'SashaO@ABSx62256373.OnMicrosoft.com',
+         'color': '#7C3AED', 'avatar': 'SO',
+         'leads': ['T_CHAT', 'T_RESEARCHER'],
+         'leadsID': ['T_CHAT', 'T_RESEARCHER']},
+        {'id': 'daichi-maruyama', 'name': 'Daichi Maruyama',
+         'role': re_en['hsa'], 'roleID': re_id['hsa'],
+         'license': 'M365 Copilot', 'licenseID': 'M365 Copilot',
+         'account': 'admin@ABSx62256373.onmicrosoft.com',
+         'color': '#DC2626', 'avatar': 'DM',
+         'leads': ['T_WORD', 'T_PPT', 'T_WORD_AGT', 'T_PPT_AGT', 'T_XL_AGT', 'T_BUILDER'],
+         'leadsID': ['T_WORD', 'T_PPT', 'T_WORD_AGT', 'T_PPT_AGT', 'T_XL_AGT', 'T_BUILDER']},
+    ]
+
+
+# ───────────────────────── STORYBOARD HELPER ─────────────────────────
+def _storyboard(c):
+    re_en = c['roles_en']
+    re_id = c['roles_id']
+    return [
+        {'id': 'ex1', 'title': 'Exercise 1 — Diagnose & Brief',
+         'titleID': 'Latihan 1 — Diagnosa & Pengarahan',
+         'objective': f"Frame the {c['crisis_short_en']} so the {re_en['ceo']} and Board can see exactly where {c['name'].lower()} performance has slipped.",
+         'objectiveID': f"Bingkai {c['crisis_short_id']} agar {re_id['ceo']} dan Direksi dapat melihat dengan tepat di mana kinerja {c['name'].lower()} meleset.",
+         'tasks': [
+             {'tool': 'T_CHAT', 'persona': 'Sasha Ouellet',
+              'desc': f"Sasha ({re_en['cos']}, Free license) opens m365.cloud.microsoft/chat in Edge to scope the {c['agent_name']} brief without grounding on tenant data.",
+              'descID': f"Sasha ({re_id['cos']}, lisensi Bebas) membuka m365.cloud.microsoft/chat di Edge untuk menyusun ringkasan {c['agent_name_id']} tanpa grounding pada data tenant."},
+             {'tool': 'T_RESEARCHER', 'persona': 'Hadar Caspit',
+              'desc': f"Hadar ({re_en['cfo']}) runs Researcher in Critique Mode against the FY2025 narrative on {c['kpi_phrase_en']}.",
+              'descID': f"Hadar ({re_id['cfo']}) menjalankan Researcher dalam Critique Mode terhadap narasi FY2025 mengenai {c['kpi_phrase_id']}."},
+             {'tool': 'T_RESEARCHER', 'persona': 'Hadar Caspit',
+              'desc': f"Hadar reruns Researcher in Model Council Mode to compare Asia-Pacific peer responses on {c['topic_short_en']}.",
+              'descID': f"Hadar menjalankan ulang Researcher dalam Model Council Mode untuk membandingkan respons peer Asia-Pasifik mengenai {c['topic_short_id']}."},
+         ]},
+        {'id': 'ex2', 'title': 'Exercise 2 — Quantify',
+         'titleID': 'Latihan 2 — Kuantifikasi',
+         'objective': f"Quantify the operating gap so the {re_en['cfo']} can present a defensible bridge for the {c['event_en']}.",
+         'objectiveID': f"Kuantifikasi gap operasi agar {re_id['cfo']} dapat menyajikan bridge yang dapat dipertahankan untuk {c['event_id']}.",
+         'tasks': [
+             {'tool': 'T_ANALYST', 'persona': 'Hadar Caspit',
+              'desc': f"Hadar uses Analyst in Copilot Chat against {c['f_xlsx_ops']} and {c['f_xlsx_trade']} to isolate the drivers behind {c['kpi_phrase_en']}.",
+              'descID': f"Hadar menggunakan Analyst di Copilot Chat terhadap {c['f_xlsx_ops']} dan {c['f_xlsx_trade']} untuk mengisolasi pendorong di balik {c['kpi_phrase_id']}."},
+             {'tool': 'T_EXCEL', 'persona': 'Hadar Caspit',
+              'desc': f"Hadar opens {c['f_xlsx_ops']} in Excel desktop and asks Copilot to refresh the {c['tabs1']}.",
+              'descID': f"Hadar membuka {c['f_xlsx_ops']} di Excel desktop dan meminta Copilot menyegarkan tab {c['tabs1']}."},
+             {'tool': 'T_NOTEBOOK', 'persona': 'Hadar Caspit',
+              'desc': f"Hadar pins the four working files into a Copilot Notebook and asks for an audio overview on {c['topic_short_en']}.",
+              'descID': f"Hadar menyematkan empat file kerja ke dalam Copilot Notebook dan meminta audio overview mengenai {c['topic_short_id']}."},
+         ]},
+        {'id': 'ex3', 'title': 'Exercise 3 — Communicate',
+         'titleID': 'Latihan 3 — Komunikasi',
+         'objective': f"Translate the operating gap into Word, PowerPoint and Outlook artefacts the Board, regulators and lenders can act on.",
+         'objectiveID': f"Terjemahkan gap operasi menjadi artefak Word, PowerPoint dan Outlook yang dapat ditindaklanjuti Direksi, regulator dan kreditor.",
+         'tasks': [
+             {'tool': 'T_WORD', 'persona': 'Daichi Maruyama',
+              'desc': f"Daichi ({re_en['hsa']}) opens {c['f_docx_env']} in Word desktop and asks Copilot to draft the regulator-facing remediation memo.",
+              'descID': f"Daichi ({re_id['hsa']}) membuka {c['f_docx_env']} di Word desktop dan meminta Copilot menyusun memo remediasi untuk regulator."},
+             {'tool': 'T_PPT', 'persona': 'Daichi Maruyama',
+              'desc': f"Daichi opens PowerPoint and asks Copilot to convert the Word remediation memo into a 10-slide Board pack covering {c['recovery_focus_en']}.",
+              'descID': f"Daichi membuka PowerPoint dan meminta Copilot mengubah memo remediasi Word menjadi paket Direksi 10 slide yang mencakup {c['recovery_focus_id']}."},
+             {'tool': 'T_OUTLOOK', 'persona': 'Mod Admin',
+              'desc': f"Mod ({re_en['coo']}) drafts the {re_en['ceo']}'s Outlook brief to {c['regulators_en']} contacts using the Word memo and PowerPoint pack as grounding.",
+              'descID': f"Mod ({re_id['coo']}) menyusun brief Outlook {re_id['ceo']} kepada kontak {c['regulators_id']} dengan grounding pada memo Word dan paket PowerPoint."},
+         ]},
+        {'id': 'ex4', 'title': 'Exercise 4 — Coordinate & Scale',
+         'titleID': 'Latihan 4 — Koordinasi & Skalakan',
+         'objective': f"Coordinate the executive response in Teams, run a parallel Copilot agent and stand up the {c['agent_name']} so {c['recovery_focus_en']} stays on track.",
+         'objectiveID': f"Koordinasikan respons eksekutif di Teams, jalankan agen Copilot paralel dan bangun {c['agent_name_id']} agar {c['recovery_focus_id']} tetap on-track.",
+         'tasks': [
+             {'tool': 'T_TEAMS', 'persona': 'Mod Admin',
+              'desc': f"Mod opens the recap of last week's New Software Implementation, Marketing Campaign Performance Review and Negotiating Marketing Contract meetings in Teams calendar and uses Copilot to extract decisions and risks affecting {c['crisis_short_en']}.",
+              'descID': f"Mod membuka recap rapat New Software Implementation, Marketing Campaign Performance Review dan Negotiating Marketing Contract minggu lalu di kalender Teams dan menggunakan Copilot untuk mengekstrak keputusan dan risiko yang memengaruhi {c['crisis_short_id']}."},
+             {'tool': 'T_COWORK', 'persona': 'Mod Admin',
+              'desc': f"Mod runs Copilot in Coworker (Frontier) mode to draft two Word documents, one Outlook email, schedule one Teams meeting and post one Teams chat in parallel — all aligned to {c['recovery_focus_en']}.",
+              'descID': f"Mod menjalankan Copilot dalam mode Coworker (Frontier) untuk menyusun dua dokumen Word, satu email Outlook, menjadwalkan satu rapat Teams dan memposting satu chat Teams secara paralel — seluruhnya selaras dengan {c['recovery_focus_id']}."},
+             {'tool': 'T_BUILDER', 'persona': 'Daichi Maruyama',
+              'desc': f"Daichi opens m365.cloud.microsoft/chat and pastes the {c['agent_name']} description into Copilot so the agent is built end-to-end without leaving chat.",
+              'descID': f"Daichi membuka m365.cloud.microsoft/chat dan menempelkan deskripsi {c['agent_name_id']} ke Copilot agar agen dibangun end-to-end tanpa meninggalkan chat."},
+         ]},
+    ]
+
+
+
+# ───────────────────────── _BUILD: emits one ind() per industry ─────────────────────────
+def _build(c):
+    re_en = c['roles_en']
+    re_id = c['roles_id']
+    files = c['files']
+
+    # 1. T_CHAT — 3 prompts each
+    chat_en = [
+        f"You are advising the {re_en['cfo']} of {c['co']}. Summarise in 6 bullets the FY2025 operating gap implied by {c['kpi_phrase_en']}, and flag the three risks {re_en['ceo']} must address before {c['event_en']}.",
+        f"From the perspective of the {re_en['cos']}, draft 8 questions {re_en['ceo']} should put to {re_en['coo']} and {re_en['hsa']} on {c['recovery_focus_en']}, ranked by urgency.",
+        f"Compare two scenarios for {c['co']} over the next 12 months — (a) accelerated remediation on {c['topic_short_en']} or (b) staged remediation. Output a 2-column table with capex, regulator exposure and Board defensibility.",
+    ]
+    chat_id = [
+        f"Anda menasihati {re_id['cfo']} {c['co_id']}. Ringkas dalam 6 bullet selisih operasi FY2025 yang tersirat dari {c['kpi_phrase_id']}, dan tandai tiga risiko yang harus ditangani {re_id['ceo']} sebelum {c['event_id']}.",
+        f"Dari sudut pandang {re_id['cos']}, susun 8 pertanyaan yang harus diajukan {re_id['ceo']} kepada {re_id['coo']} dan {re_id['hsa']} mengenai {c['recovery_focus_id']}, diurutkan berdasarkan urgensi.",
+        f"Bandingkan dua skenario untuk {c['co_id']} dalam 12 bulan ke depan — (a) remediasi dipercepat pada {c['topic_short_id']} atau (b) remediasi bertahap. Keluarkan tabel 2 kolom dengan capex, eksposur regulator dan ketahanan terhadap Direksi.",
+    ]
+    chat_personas = ['Sasha Ouellet', 'Sasha Ouellet', 'Sasha Ouellet']
+    t1 = tool(T_CHAT, FREE_LIC, FREE_ACCT, chat_en, DESC_CHAT,
+              promptsID=chat_id, persona=chat_personas, personaID=chat_personas)
+
+    # 2. T_RESEARCHER — 2 prompts (Critique + Model Council)
+    res_en = [
+        f"🔍 CRITIQUE MODE. You are a sceptical Asia-Pacific analyst reading the FY2025 board narrative for {c['co']}. Stress-test the claims around {c['kpi_phrase_en']}. Identify the three weakest assumptions, name the missing benchmarks, and propose a defensible counter-narrative for {re_en['ceo']} to use at the {c['event_en']}.",
+        f"⚖️ MODEL COUNCIL MODE. Convene a panel of three peer companies in {c['name']} across Asia-Pacific. For each peer, summarise how they responded to a similar {c['crisis_short_en']} situation, what worked, what failed, and what {c['co']} should adopt or avoid.",
+    ]
+    res_id = [
+        f"🔍 MODE CRITIQUE. Anda adalah analis Asia-Pasifik yang skeptis membaca narasi Direksi FY2025 untuk {c['co_id']}. Uji-tekan klaim seputar {c['kpi_phrase_id']}. Identifikasi tiga asumsi terlemah, sebutkan benchmark yang hilang, dan ajukan narasi tandingan yang dapat dipertahankan untuk digunakan {re_id['ceo']} pada {c['event_id']}.",
+        f"⚖️ MODE MODEL COUNCIL. Kumpulkan panel tiga perusahaan peer di {c['name']} di Asia-Pasifik. Untuk setiap peer, ringkas bagaimana mereka merespons situasi {c['crisis_short_id']} serupa, apa yang berhasil, apa yang gagal, dan apa yang harus diadopsi atau dihindari {c['co_id']}.",
+    ]
+    res_personas = ['Hadar Caspit', 'Hadar Caspit']
+    t2 = tool(T_RESEARCHER, M365_LIC, M365_ACCT, res_en, DESC_RESEARCHER,
+              promptsID=res_id, persona=res_personas, personaID=res_personas)
+
+    # 3. T_ANALYST — 3 prompts
+    ana_en = [
+        f"From Copilot Chat with /file {files[0]} and /file {files[3]}, run Analyst to isolate the top five drivers behind {c['kpi_phrase_en']}. Output a ranked table with driver, magnitude, and proposed owner.",
+        f"From Copilot Chat with /file {files[0]} and /file {files[4]}, ask Analyst to build a weekly timeline of operational events that explain the FY2025 deterioration, and tag each event as recoverable, structural or external.",
+        f"From Copilot Chat with /file {files[3]} and /file {files[4]}, ask Analyst to model the financial impact of three recovery levers on {c['recovery_focus_en']} and rank them by NPV.",
+    ]
+    ana_id = [
+        f"Dari Copilot Chat dengan /file {files[0]} dan /file {files[3]}, jalankan Analyst untuk mengisolasi lima pendorong utama di balik {c['kpi_phrase_id']}. Keluarkan tabel berperingkat dengan pendorong, besaran, dan pemilik yang diusulkan.",
+        f"Dari Copilot Chat dengan /file {files[0]} dan /file {files[4]}, minta Analyst membangun timeline mingguan kejadian operasi yang menjelaskan kemerosotan FY2025, dan tandai setiap kejadian sebagai dapat dipulihkan, struktural atau eksternal.",
+        f"Dari Copilot Chat dengan /file {files[3]} dan /file {files[4]}, minta Analyst memodelkan dampak finansial tiga lever pemulihan pada {c['recovery_focus_id']} dan urutkan berdasarkan NPV.",
+    ]
+    ana_personas = ['Hadar Caspit', 'Hadar Caspit', 'Hadar Caspit']
+    t3 = tool(T_ANALYST, M365_LIC, M365_ACCT, ana_en, DESC_ANALYST,
+              promptsID=ana_id, persona=ana_personas, personaID=ana_personas)
+
+    # 4. T_EXCEL — 3 prompts (multi-tab dashboard)
+    xl_en = [
+        f"Open {files[0]} in Excel desktop. Ask Copilot to refresh the {c['tabs1']}, then add a new Executive Summary tab that calls out the worst-performing line, the best-performing line, and the FY2025 selisih against budget.",
+        f"In {files[0]}, ask Copilot to build a conditional-formatting heatmap on the operating tabs so any week breaching the FY2025 RKAP threshold is flagged red, and any week beating the prior 8-week average is flagged green.",
+        f"In {files[3]}, ask Copilot to summarise the open exposure by counterparty, currency and tenor, and to draft a 5-bullet narrative the {re_en['cfo']} can paste into the Board pack.",
+    ]
+    xl_id = [
+        f"Buka {files[0]} di Excel desktop. Minta Copilot menyegarkan tab {c['tabs1']}, lalu tambahkan tab Executive Summary baru yang menonjolkan line dengan kinerja terburuk, terbaik, dan selisih FY2025 terhadap RKAP.",
+        f"Di {files[0]}, minta Copilot membangun heatmap conditional-formatting pada tab operasi sehingga setiap minggu yang melanggar ambang RKAP FY2025 ditandai merah, dan setiap minggu yang melampaui rata-rata 8 minggu sebelumnya ditandai hijau.",
+        f"Di {files[3]}, minta Copilot meringkas eksposur terbuka berdasarkan counterparty, mata uang dan tenor, dan menyusun narasi 5 bullet yang dapat ditempelkan {re_id['cfo']} ke paket Direksi.",
+    ]
+    xl_personas = ['Hadar Caspit', 'Hadar Caspit', 'Hadar Caspit']
+    t4 = tool(T_EXCEL, M365_LIC, M365_ACCT, xl_en, DESC_EXCEL,
+              promptsID=xl_id, persona=xl_personas, personaID=xl_personas)
+
+    # 5. T_WORD — 3 prompts
+    w_en = [
+        f"Open {files[1]} in Word desktop. Ask Copilot to draft a 3-page regulator-facing remediation memo aligned with {c['regulators_en']}, opening with the FY2025 selisih, then root cause, then committed actions and milestones.",
+        f"In {files[1]}, ask Copilot to add a section on {c['recovery_focus_en']} with a 12-week milestone table, and rewrite the executive summary in plain Bahasa-friendly English suitable for both Board and regulator audiences.",
+        f"In {files[2]}, ask Copilot to refresh the maintenance/asset narrative against the FY2025 operating gap and produce a 1-page CEO talking-point appendix that ties to {c['kpi_phrase_en']}.",
+    ]
+    w_id = [
+        f"Buka {files[1]} di Word desktop. Minta Copilot menyusun memo remediasi 3 halaman untuk regulator yang selaras dengan {c['regulators_id']}, dibuka dengan selisih FY2025, lalu akar masalah, kemudian tindakan dan milestone yang dikomitmenkan.",
+        f"Di {files[1]}, minta Copilot menambahkan bagian tentang {c['recovery_focus_id']} dengan tabel milestone 12 minggu, dan menulis ulang executive summary dalam Bahasa Indonesia yang ramah baik untuk Direksi maupun regulator.",
+        f"Di {files[2]}, minta Copilot menyegarkan narasi maintenance/aset terhadap gap operasi FY2025 dan menghasilkan apendiks talking-point 1 halaman untuk Direktur Utama yang terkait dengan {c['kpi_phrase_id']}.",
+    ]
+    w_personas = ['Daichi Maruyama', 'Daichi Maruyama', 'Daichi Maruyama']
+    t5 = tool(T_WORD, M365_LIC, M365_ACCT, w_en, DESC_WORD,
+              promptsID=w_id, persona=w_personas, personaID=w_personas)
+
+    # 6. T_PPT — 3 prompts
+    p_en = [
+        f"Open PowerPoint and create a new deck. Ask Copilot to convert {files[1]} into a 10-slide Board pack covering the FY2025 selisih, {c['recovery_focus_en']}, regulator engagement and {c['event_en']} ask.",
+        f"In the same deck, ask Copilot to add a 'Scenario' slide with three columns — base case, accelerated remediation, deferred remediation — populated from {files[0]} and {files[3]}.",
+        f"In the same deck, ask Copilot to redesign the title slide with the executive headline 'FY2025 reset for {c['co']}' and apply a consistent corporate look across all slides.",
+    ]
+    p_id = [
+        f"Buka PowerPoint dan buat deck baru. Minta Copilot mengubah {files[1]} menjadi paket Direksi 10 slide yang mencakup selisih FY2025, {c['recovery_focus_id']}, engagement regulator dan permintaan {c['event_id']}.",
+        f"Pada deck yang sama, minta Copilot menambahkan slide 'Skenario' dengan tiga kolom — base case, remediasi dipercepat, remediasi ditunda — diisi dari {files[0]} dan {files[3]}.",
+        f"Pada deck yang sama, minta Copilot mendesain ulang slide judul dengan headline eksekutif 'Reset FY2025 untuk {c['co_id']}' dan menerapkan tampilan korporat yang konsisten di seluruh slide.",
+    ]
+    p_personas = ['Daichi Maruyama', 'Daichi Maruyama', 'Daichi Maruyama']
+    t6 = tool(T_PPT, M365_LIC, M365_ACCT, p_en, DESC_PPT,
+              promptsID=p_id, persona=p_personas, personaID=p_personas)
+
+    # 7. T_OUTLOOK — 3 prompts
+    o_en = [
+        f"Open Outlook web. Ask Copilot to draft an email from the {re_en['ceo']} of {c['co']} to {c['regulators_en']} contacts, opening with acknowledgement of the FY2025 selisih, then committed remediation, grounded on {files[1]} and {files[5]}.",
+        f"In Outlook, ask Copilot to summarise the unread thread on {c['crisis_short_en']} and propose a draft reply that defers the regulator meeting by one week without weakening the {c['co']} position.",
+        f"In Outlook, ask Copilot to write a short internal note from the {re_en['cfo']} to executive leadership setting context for {c['event_en']} and listing the three pre-reads.",
+    ]
+    o_id = [
+        f"Buka Outlook web. Minta Copilot menyusun email dari {re_id['ceo']} {c['co_id']} kepada kontak {c['regulators_id']}, dibuka dengan pengakuan atas selisih FY2025, lalu remediasi yang dikomitmenkan, berdasarkan {files[1]} dan {files[5]}.",
+        f"Di Outlook, minta Copilot meringkas thread yang belum dibaca tentang {c['crisis_short_id']} dan mengusulkan draft balasan yang menunda rapat regulator selama satu minggu tanpa memperlemah posisi {c['co_id']}.",
+        f"Di Outlook, minta Copilot menulis nota internal singkat dari {re_id['cfo']} kepada direksi eksekutif untuk memberi konteks {c['event_id']} dan mencantumkan tiga pre-read.",
+    ]
+    o_personas = ['Mod Admin', 'Mod Admin', 'Mod Admin']
+    t7 = tool(T_OUTLOOK, M365_LIC, M365_ACCT, o_en, DESC_OUTLOOK,
+              promptsID=o_id, persona=o_personas, personaID=o_personas)
+
+    # 8. T_TEAMS — 3 prompts (3 of 4 fixed titles, no "Export")
+    tm_en = [
+        f"Open the New Software Implementation meeting in Teams calendar — Recap opens. Click the Copilot icon at top right — the Copilot pane opens grounded in the transcript. Type: \"List the three decisions and two risks from this meeting that affect {c['crisis_short_en']}, and the owners.\" Copy the result into the Word remediation memo.",
+        f"Open the Marketing Campaign Performance Review meeting in Teams calendar — Recap opens. Click the Copilot icon at top right — the Copilot pane opens grounded in the transcript. Type: \"Summarise the customer signals and competitor moves that change the {c['recovery_focus_en']} priorities.\" Copy the result into the Outlook brief to {re_en['ceo']}.",
+        f"Open the Negotiating Marketing Contract meeting in Teams calendar — Recap opens. Click the Copilot icon at top right — the Copilot pane opens grounded in the transcript. Type: \"Identify the contractual concessions discussed and how they shift exposure relative to {c['kpi_phrase_en']}.\" Copy the result into the Word memo annex.",
+    ]
+    tm_id = [
+        f"Buka rapat New Software Implementation di kalender Teams — Recap terbuka. Klik ikon Copilot di kanan atas — pane Copilot terbuka dengan grounding pada transkrip. Ketik: \"Sebutkan tiga keputusan dan dua risiko dari rapat ini yang memengaruhi {c['crisis_short_id']}, beserta pemiliknya.\" Salin hasilnya ke memo remediasi Word.",
+        f"Buka rapat Marketing Campaign Performance Review di kalender Teams — Recap terbuka. Klik ikon Copilot di kanan atas — pane Copilot terbuka dengan grounding pada transkrip. Ketik: \"Ringkas sinyal pelanggan dan pergerakan kompetitor yang mengubah prioritas {c['recovery_focus_id']}.\" Salin hasilnya ke brief Outlook untuk {re_id['ceo']}.",
+        f"Buka rapat Negotiating Marketing Contract di kalender Teams — Recap terbuka. Klik ikon Copilot di kanan atas — pane Copilot terbuka dengan grounding pada transkrip. Ketik: \"Identifikasi konsesi kontrak yang dibahas dan bagaimana hal itu menggeser eksposur relatif terhadap {c['kpi_phrase_id']}.\" Salin hasilnya ke lampiran memo Word.",
+    ]
+    tm_personas = ['Mod Admin', 'Mod Admin', 'Mod Admin']
+    t8 = tool(T_TEAMS, M365_LIC, M365_ACCT, tm_en, DESC_TEAMS,
+              promptsID=tm_id, persona=tm_personas, personaID=tm_personas)
+
+    # 9. T_NOTEBOOK — 3 prompts
+    nb_en = [
+        f"Create a new Copilot Notebook called '{c['agent_name']} Workbench'. Pin {files[0]}, {files[1]}, {files[3]} and {files[4]} as sources. Ask Copilot for a 6-bullet executive briefing on {c['kpi_phrase_en']}.",
+        f"In the same Notebook, ask Copilot to generate a 12-minute audio overview that {re_en['ceo']} can listen to before {c['event_en']}, structured by FY2025 selisih, root cause, recovery and regulator narrative.",
+        f"In the same Notebook, ask Copilot to surface contradictions across the four pinned sources and list the five biggest reconciliation items the {re_en['cfo']} must close before {c['event_en']}.",
+    ]
+    nb_id = [
+        f"Buat Copilot Notebook baru bernama '{c['agent_name_id']} Workbench'. Sematkan {files[0]}, {files[1]}, {files[3]} dan {files[4]} sebagai sumber. Minta Copilot membuat briefing eksekutif 6 bullet mengenai {c['kpi_phrase_id']}.",
+        f"Pada Notebook yang sama, minta Copilot menghasilkan audio overview 12 menit yang dapat didengarkan {re_id['ceo']} sebelum {c['event_id']}, terstruktur berdasarkan selisih FY2025, akar masalah, pemulihan dan narasi regulator.",
+        f"Pada Notebook yang sama, minta Copilot memunculkan kontradiksi di antara empat sumber yang disematkan dan mencantumkan lima item rekonsiliasi terbesar yang harus diselesaikan {re_id['cfo']} sebelum {c['event_id']}.",
+    ]
+    nb_personas = ['Hadar Caspit', 'Hadar Caspit', 'Hadar Caspit']
+    t9 = tool(T_NOTEBOOK, M365_LIC, M365_ACCT, nb_en, DESC_NOTEBOOK,
+              promptsID=nb_id, persona=nb_personas, personaID=nb_personas)
+
+    # 10. T_COWORK — 2 prompts (each fans out to 5 parallel sub-tasks), FRONTIER_LIC + M365_ACCT
+    cw_en = [
+        f"From Copilot Chat, run Coworker mode in parallel: (1) draft a Word remediation memo for {c['regulators_en']} grounded on {files[1]} and {files[5]}; (2) draft a second Word brief for the {re_en['ceo']} grounded on {files[2]}; (3) send an Outlook email to {re_en['cfo']} attaching both Word drafts; (4) schedule a Teams meeting titled 'FY2025 reset — {c['co']}' for the executive team within the next 5 business days; (5) post a Teams chat to the {c['recovery_focus_en']} group summarising all four artefacts.",
+        f"From Copilot Chat, run Coworker mode in parallel for the {c['event_en']} prep: (1) draft a Word executive summary tying {c['kpi_phrase_en']} to {c['recovery_focus_en']}; (2) draft a second Word annex on regulator engagement with {c['regulators_en']}; (3) send an Outlook email to {re_en['hsa']} requesting HSE/operational sign-off; (4) schedule a Teams meeting titled 'Pre-Board war room' for {re_en['coo']} and {re_en['hsa']}; (5) post a Teams chat to executive leadership confirming the four artefacts are ready.",
+    ]
+    cw_id = [
+        f"Dari Copilot Chat, jalankan mode Coworker secara paralel: (1) susun memo remediasi Word untuk {c['regulators_id']} berdasarkan {files[1]} dan {files[5]}; (2) susun brief Word kedua untuk {re_id['ceo']} berdasarkan {files[2]}; (3) kirim email Outlook ke {re_id['cfo']} dengan melampirkan kedua draft Word; (4) jadwalkan rapat Teams berjudul 'Reset FY2025 — {c['co_id']}' untuk tim eksekutif dalam 5 hari kerja ke depan; (5) posting chat Teams ke grup {c['recovery_focus_id']} yang meringkas keempat artefak.",
+        f"Dari Copilot Chat, jalankan mode Coworker secara paralel untuk persiapan {c['event_id']}: (1) susun executive summary Word yang mengaitkan {c['kpi_phrase_id']} dengan {c['recovery_focus_id']}; (2) susun lampiran Word kedua tentang engagement regulator dengan {c['regulators_id']}; (3) kirim email Outlook ke {re_id['hsa']} untuk meminta sign-off HSE/operasi; (4) jadwalkan rapat Teams berjudul 'War room pra-Direksi' untuk {re_id['coo']} dan {re_id['hsa']}; (5) posting chat Teams ke direksi eksekutif yang mengonfirmasi keempat artefak sudah siap.",
+    ]
+    cw_personas = ['Mod Admin', 'Mod Admin']
+    t10 = tool(T_COWORK, FRONTIER_LIC, M365_ACCT, cw_en, DESC_COWORK,
+               promptsID=cw_id, persona=cw_personas, personaID=cw_personas)
+
+    # 11. T_WORD_AGT — 2 prompts (DO NOT open Word first)
+    wa_en = [
+        f"From M365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Word first — type: \"Draft a 4-page Word memo from the {re_en['cfo']} of {c['co']} to the Board on the FY2025 selisih and {c['recovery_focus_en']}, grounded on /file {files[1]} and /file {files[2]}, and save the file to my OneDrive.\"",
+        f"From M365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Word first — type: \"Draft a 2-page Word talking-point pack for {re_en['ceo']} of {c['co']} ahead of {c['event_en']} grounded on /file {files[5]}, and save the file to my OneDrive.\"",
+    ]
+    wa_id = [
+        f"Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Word terlebih dahulu — ketik: \"Susun memo Word 4 halaman dari {re_id['cfo']} {c['co_id']} kepada Direksi mengenai selisih FY2025 dan {c['recovery_focus_id']}, berdasarkan /file {files[1]} dan /file {files[2]}, dan simpan file ke OneDrive saya.\"",
+        f"Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Word terlebih dahulu — ketik: \"Susun paket talking-point Word 2 halaman untuk {re_id['ceo']} {c['co_id']} menjelang {c['event_id']} berdasarkan /file {files[5]}, dan simpan file ke OneDrive saya.\"",
+    ]
+    wa_personas = ['Daichi Maruyama', 'Daichi Maruyama']
+    t11 = tool(T_WORD_AGT, M365_LIC, M365_ACCT, wa_en, DESC_WORD_AGT,
+               promptsID=wa_id, persona=wa_personas, personaID=wa_personas)
+
+    # 12. T_PPT_AGT — 2 prompts (DO NOT open PowerPoint first)
+    pa_en = [
+        f"From M365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open PowerPoint first — type: \"Build a 12-slide PowerPoint Board pack for {c['co']} on the FY2025 reset, grounded on /file {files[1]} and /file {files[0]}, covering {c['recovery_focus_en']}, and save the file to my OneDrive.\"",
+        f"From M365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open PowerPoint first — type: \"Build a 6-slide regulator pack for {c['co']} aligned with {c['regulators_en']}, grounded on /file {files[5]} and /file {files[4]}, and save the file to my OneDrive.\"",
+    ]
+    pa_id = [
+        f"Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka PowerPoint terlebih dahulu — ketik: \"Bangun paket Direksi PowerPoint 12 slide untuk {c['co_id']} mengenai reset FY2025, berdasarkan /file {files[1]} dan /file {files[0]}, mencakup {c['recovery_focus_id']}, dan simpan file ke OneDrive saya.\"",
+        f"Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka PowerPoint terlebih dahulu — ketik: \"Bangun paket regulator 6 slide untuk {c['co_id']} yang selaras dengan {c['regulators_id']}, berdasarkan /file {files[5]} dan /file {files[4]}, dan simpan file ke OneDrive saya.\"",
+    ]
+    pa_personas = ['Daichi Maruyama', 'Daichi Maruyama']
+    t12 = tool(T_PPT_AGT, M365_LIC, M365_ACCT, pa_en, DESC_PPT_AGT,
+               promptsID=pa_id, persona=pa_personas, personaID=pa_personas)
+
+    # 13. T_XL_AGT — 2 prompts (DO NOT open Excel first)
+    xa_en = [
+        f"From M365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Excel first — type: \"Build a new Excel workbook called 'FY2025 Reset Bridge — {c['co']}' with three tabs: FY2025 Bridge, Recovery Levers, Regulator Asks, grounded on /file {files[0]} and /file {files[3]}, and save the file to my OneDrive.\"",
+        f"From M365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Excel first — type: \"Build a new Excel workbook called 'Risk Heatmap — {c['co']}' that ranks the top 15 risks behind {c['kpi_phrase_en']} grounded on /file {files[4]} and /file {files[1]}, and save the file to my OneDrive.\"",
+    ]
+    xa_id = [
+        f"Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Excel terlebih dahulu — ketik: \"Bangun workbook Excel baru bernama 'Bridge Reset FY2025 — {c['co_id']}' dengan tiga tab: Bridge FY2025, Lever Pemulihan, Permintaan Regulator, berdasarkan /file {files[0]} dan /file {files[3]}, dan simpan file ke OneDrive saya.\"",
+        f"Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Excel terlebih dahulu — ketik: \"Bangun workbook Excel baru bernama 'Risk Heatmap — {c['co_id']}' yang memeringkat 15 risiko teratas di balik {c['kpi_phrase_id']} berdasarkan /file {files[4]} dan /file {files[1]}, dan simpan file ke OneDrive saya.\"",
+    ]
+    xa_personas = ['Daichi Maruyama', 'Daichi Maruyama']
+    t13 = tool(T_XL_AGT, M365_LIC, M365_ACCT, xa_en, DESC_XL_AGT,
+               promptsID=xa_id, persona=xa_personas, personaID=xa_personas)
+
+    # 14. T_BUILDER — 2 prompts (paste-into-chat agent description with starter prompts)
+    b_en = [
+        (f"Open m365.cloud.microsoft/chat. Paste this as a single prompt to build the {c['agent_name']} agent end-to-end without leaving chat:\n\n"
+         f"\"You are the {c['agent_name']}, a Copilot agent for {c['co']} that monitors {c['recovery_focus_en']}, drafts regulator-ready narrative aligned with {c['regulators_en']}, and surfaces the FY2025 selisih implied by {c['kpi_phrase_en']}. Ground every response on the current state of {files[0]}, {files[1]}, {files[3]}, {files[4]} and {files[5]}. Always show your sources, always quantify in MYR/USD/Rupiah, and always offer the next best action. Starter prompts: "
+         f"(1) 'Brief me on this week\'s {c['crisis_short_en']} status'; "
+         f"(2) 'Draft the regulator memo to {c['regulators_en']} on {c['recovery_focus_en']}'; "
+         f"(3) 'Show me the top five risks behind {c['kpi_phrase_en']}'; "
+         f"(4) 'Build the talking points for {re_en['ceo']} ahead of {c['event_en']}'; "
+         f"(5) 'List the executive decisions still outstanding from last week\'s Teams meetings'. \""),
+        (f"Open m365.cloud.microsoft/chat. Paste this as a single prompt to build the {c['agent_name']} 'Lite' regulator-only variant end-to-end without leaving chat:\n\n"
+         f"\"You are the {c['agent_name']} Regulator Lite, a Copilot agent for {c['co']} focused exclusively on {c['regulators_en']} engagement on {c['topic_short_en']}. Ground every response on {files[1]} and {files[5]}. Always quote the relevant clause, always show the date the underlying figure was last refreshed, and always propose a deferral, a concession, or a counter-narrative. Starter prompts: "
+         f"(1) 'Summarise outstanding regulator asks'; "
+         f"(2) 'Draft a holding reply that buys 7 days'; "
+         f"(3) 'Compare our position to the last two enforcement letters'; "
+         f"(4) 'Build a 1-page regulator-ready narrative'; "
+         f"(5) 'Flag any disclosure gap that triggers a re-filing'. \""),
+    ]
+    b_id = [
+        (f"Buka m365.cloud.microsoft/chat. Tempelkan ini sebagai prompt tunggal untuk membangun agen {c['agent_name_id']} end-to-end tanpa meninggalkan chat:\n\n"
+         f"\"Anda adalah {c['agent_name_id']}, agen Copilot untuk {c['co_id']} yang memantau {c['recovery_focus_id']}, menyusun narasi siap-regulator yang selaras dengan {c['regulators_id']}, dan memunculkan selisih FY2025 yang tersirat dari {c['kpi_phrase_id']}. Grounding setiap respons pada kondisi terkini {files[0]}, {files[1]}, {files[3]}, {files[4]} dan {files[5]}. Selalu tampilkan sumber, selalu kuantifikasi dalam MYR/USD/Rupiah, dan selalu tawarkan tindakan berikutnya yang terbaik. Prompt awal: "
+         f"(1) 'Beri saya briefing status {c['crisis_short_id']} minggu ini'; "
+         f"(2) 'Susun memo regulator kepada {c['regulators_id']} mengenai {c['recovery_focus_id']}'; "
+         f"(3) 'Tampilkan lima risiko teratas di balik {c['kpi_phrase_id']}'; "
+         f"(4) 'Bangun talking point untuk {re_id['ceo']} menjelang {c['event_id']}'; "
+         f"(5) 'Cantumkan keputusan eksekutif yang masih terbuka dari rapat Teams minggu lalu'. \""),
+        (f"Buka m365.cloud.microsoft/chat. Tempelkan ini sebagai prompt tunggal untuk membangun varian {c['agent_name_id']} 'Lite' khusus regulator end-to-end tanpa meninggalkan chat:\n\n"
+         f"\"Anda adalah {c['agent_name_id']} Regulator Lite, agen Copilot untuk {c['co_id']} yang fokus eksklusif pada engagement {c['regulators_id']} mengenai {c['topic_short_id']}. Grounding setiap respons pada {files[1]} dan {files[5]}. Selalu kutip klausul yang relevan, selalu tampilkan tanggal angka terkait terakhir disegarkan, dan selalu usulkan penundaan, konsesi, atau narasi tandingan. Prompt awal: "
+         f"(1) 'Ringkas permintaan regulator yang belum diselesaikan'; "
+         f"(2) 'Susun balasan sementara yang memberi waktu 7 hari'; "
+         f"(3) 'Bandingkan posisi kita dengan dua surat penegakan terakhir'; "
+         f"(4) 'Bangun narasi siap-regulator 1 halaman'; "
+         f"(5) 'Tandai setiap celah pengungkapan yang memicu re-filing'. \""),
+    ]
+    b_personas = ['Daichi Maruyama', 'Daichi Maruyama']
+    t14 = tool(T_BUILDER, M365_LIC, M365_ACCT, b_en, DESC_BUILDER,
+               promptsID=b_id, persona=b_personas, personaID=b_personas)
+
+    tools = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14]
+
+    return ind(c['id'], c['sector'], c['name'], c['icon'], c['color'], c['accent'],
+               c['co'], c['tagline'], c['scenario'], c['files'], tools,
+               companyID=c['co_id'], taglineID=c['taglineID'], scenarioID=c['scenarioID'],
+               subsector='', relevantDepts=c['relevantDepts'],
+               storyboard=_storyboard(c), personas=_personas(c))
+
+
+INDUSTRIES_4 = [_build(OG), _build(RE), _build(MFG)]
 print(f"Batch 4 written: {len(INDUSTRIES_4)} entries")
