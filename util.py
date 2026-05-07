@@ -5,22 +5,24 @@ FREE_LIC = 'Free \u2014 no M365 Copilot license needed'
 M365_LIC = 'M365 Copilot'
 FRONTIER_LIC = 'M365 Copilot + Frontier Program'
 
-T_CHAT = '\U0001f916 Copilot Chat (Basic)'
-T_RESEARCHER = '\U0001f50d Researcher'
-T_ANALYST = '\U0001f4ca Analyst'
-T_EXCEL = '\U0001f4ca Copilot in Excel'
-T_WORD = '\U0001f4dd Copilot in Word'
-T_PPT = '\U0001f3af Copilot in PowerPoint'
-T_OUTLOOK = '\U0001f4e7 Copilot in Outlook'
-T_TEAMS = '\U0001f399 Copilot in Teams'
-T_NOTEBOOK = '\U0001f4d3 Copilot Notebook'
-T_COWORK = '\U0001f91d Cowork (Frontier)'
-T_WORD_AGT = '\U0001f916 Word Agent'
-T_PPT_AGT = '\U0001f916 PowerPoint Agent'
-T_XL_AGT = '\U0001f916 Excel Agent'
-T_BUILDER = '\U0001f3d7 Agent Builder (Copilot Studio)'
+T_CHAT = '🤖 Copilot Chat (Basic)'
+T_RESEARCHER = '🔍 Researcher'
+T_ANALYST = '📊 Analyst'
+T_EXCEL = '📊 Copilot in Excel'
+T_WORD = '📝 Copilot in Word'
+T_PPT = '🎯 Copilot in PowerPoint'
+T_OUTLOOK = '📧 Copilot in Outlook'
+T_TEAMS = '🎙 Copilot in Teams'
+T_NOTEBOOK = '📓 Copilot Notebook'
+T_COWORK = '🤝 Cowork (Frontier)'
+T_EDIT_COPILOT = '✏️ Edit with Copilot'
+T_WORD_AGT = '🤖 Word Agent'
+T_PPT_AGT = '🤖 PowerPoint Agent'
+T_XL_AGT = '🤖 Excel Agent'
+T_BUILDER = '🏗 Agent Builder (Copilot Studio)'
 
-DESC_RESEARCHER = 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.'
+DESC_RESEARCHER = 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.'
+DESC_EDIT_COPILOT = 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.'
 DESC_ANALYST = 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.'
 DESC_TEAMS = 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.'
 DESC_NOTEBOOK = 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.'
@@ -41,11 +43,13 @@ def esc(s):
 def tool(name, lic, acct, prompts, desc=''):
     return {'tool': name, 'license': lic, 'account': acct, 'desc': desc, 'prompts': prompts}
 
-def ind(id, sectorId, name, icon, color, accent, company, tagline, scenario, files, tools, subsector=''):
+def ind(id, sectorId, name, icon, color, accent, company, tagline, scenario, files, tools,
+        companyID='', taglineID='', subsector=''):
     return {
         'id': id, 'sectorId': sectorId, 'subsector': subsector,
         'name': name, 'icon': icon, 'color': color, 'accent': accent,
         'company': company, 'tagline': tagline, 'scenario': scenario,
+        'companyID': companyID, 'taglineID': taglineID,
         'files': files, 'prompts': tools
     }
 
@@ -62,6 +66,10 @@ def write_entry(f, entry, is_last):
     f.write(f"      accent: '{e['accent']}',\n")
     f.write(f"      company: '{esc(e['company'])}',\n")
     f.write(f"      tagline: '{esc(e['tagline'])}',\n")
+    if e.get('companyID'):
+        f.write(f"      companyID: '{esc(e['companyID'])}',\n")
+    if e.get('taglineID'):
+        f.write(f"      taglineID: '{esc(e['taglineID'])}',\n")
     f.write(f"      scenario: '{esc(e['scenario'])}',\n")
     files_js = ', '.join(f"'{esc(x)}'" for x in e.get('files', []))
     f.write(f"      files: [{files_js}],\n")

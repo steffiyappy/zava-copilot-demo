@@ -181,6 +181,11 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 /* Toast */
 .toast{position:fixed;bottom:24px;right:24px;background:#1F2D55;color:#FFFFFF;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,0.3);transform:translateY(100px);opacity:0;transition:all 0.3s;z-index:1000;display:flex;align-items:center;gap:8px}
 .toast.show{transform:translateY(0);opacity:1}
+/* MY/ID context toggle */
+.ctx-toggle{display:flex;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;overflow:hidden;flex-shrink:0}
+.ctx-btn{padding:5px 12px;border:none;background:transparent;color:rgba(255,255,255,0.6);font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.ctx-btn.active{background:rgba(255,255,255,0.18);color:#FFFFFF}
+.ctx-btn:hover:not(.active){color:rgba(255,255,255,0.85)}
 /* Responsive */
 @media(max-width:768px){
   .sidebar{display:none}
@@ -205,8 +210,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
     <span class="topbar-badge">29 Industries · 10 Departments</span>
   </div>
   <div class="topbar-right">
-    <button class="btn-sm" onclick="goHome()">🏠 Home</button>
-    <button class="btn-sm" onclick="logout()">🔒 Lock</button>
+    <div class="ctx-toggle">
+      <button class="ctx-btn active" id="ctx-my" onclick="setCtx('MY')">&#127474;&#127486; Malaysia</button>
+      <button class="ctx-btn" id="ctx-id" onclick="setCtx('ID')">&#127470;&#127465; Indonesia</button>
+    </div>
+    <button class="btn-sm" onclick="goHome()">&#x1F3E0; Home</button>
+    <button class="btn-sm" onclick="logout()">&#x1F512; Lock</button>
   </div>
 </nav>
 
@@ -272,7 +281,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
           <div class="stat-chip"><span class="val">29</span><span class="lbl">Industries</span></div>
           <div class="stat-chip"><span class="val">10</span><span class="lbl">Departments</span></div>
           <div class="stat-chip"><span class="val" id="prompt-count">--</span><span class="lbl">Total Prompts</span></div>
-          <div class="stat-chip"><span class="val">14</span><span class="lbl">Copilot Tools</span></div>
+          <div class="stat-chip"><span class="val">15</span><span class="lbl">Copilot Tools</span></div>
         </div>
       </div>
       <!-- Grid tab toggle -->
@@ -323,9 +332,26 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 if(sessionStorage.getItem('hub_auth')!=='ok') window.location.href='index.html';
 
 let wnIdx=0;
-let currentGridTab='ind'; // 'ind' or 'dept'
+let currentGridTab='ind';
 let currentSidebarTab='ind';
+let _ctx='MY'; // 'MY' or 'ID'
 const data=window.HUB_DATA;
+
+function setCtx(c){
+  _ctx=c;
+  document.getElementById('ctx-my').classList.toggle('active',c==='MY');
+  document.getElementById('ctx-id').classList.toggle('active',c==='ID');
+  // Rebuild grids and sidebar with new context
+  buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar();
+  // If detail view open, refresh company/tagline
+  if(document.getElementById('detail-view').style.display!=='none' && _currentItem){
+    document.getElementById('detail-title').textContent=_getCompany(_currentItem);
+    document.getElementById('detail-tagline').textContent=_getTagline(_currentItem);
+  }
+}
+function _getCompany(item){return _ctx==='ID'&&item.companyID?item.companyID:item.company;}
+function _getTagline(item){return _ctx==='ID'&&item.taglineID?item.taglineID:item.tagline;}
+let _currentItem=null;
 
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
@@ -423,7 +449,7 @@ function makeCard(item,tab){
   div.innerHTML=
     '<div class="ind-card-icon">'+item.icon+'</div>'+
     '<div class="ind-card-name">'+item.name+'</div>'+
-    '<div class="ind-card-company">'+item.company+'</div>'+
+    '<div class="ind-card-company">'+_getCompany(item)+'</div>'+
     '<div class="ind-card-pills">'+
       tools.map(t=>'<span class="pill">'+t+'</span>').join('')+
       (isDept?'<span class="pill dept">Department</span>':'')+
@@ -451,6 +477,7 @@ setInterval(()=>wnNav(1),6000);
 
 // ── Show item detail (works for both industries and departments) ──
 function showItem(item,tab){
+  _currentItem=item;
   const id=item.id;
   // Hero
   const hero=document.getElementById('detail-hero');
@@ -460,9 +487,9 @@ function showItem(item,tab){
   document.getElementById('detail-back-btn').textContent=isDept?'← Back to all departments':'← Back to all industries';
   document.getElementById('detail-back-btn').onclick=()=>{ goHome(); showGridTab(tab); };
   document.getElementById('detail-badge').textContent=isDept?'Department':item.name;
-  document.getElementById('detail-title').textContent=item.company;
+  document.getElementById('detail-title').textContent=_getCompany(item);
   document.getElementById('detail-company').textContent=item.name;
-  document.getElementById('detail-tagline').textContent=item.tagline;
+  document.getElementById('detail-tagline').textContent=_getTagline(item);
   // Scenario
   document.getElementById('detail-scenario').innerHTML=
     '<div class="detail-scenario-title">&#x1F4CB; Demo Scenario</div>'+

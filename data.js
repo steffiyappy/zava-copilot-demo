@@ -207,9 +207,11 @@ window.HUB_DATA = {
       icon: '⭐',
       color: '#FF6B35',
       accent: '#FF8C42',
-      company: 'Your Organisation',
-      tagline: 'A universal demo set — works for any industry, any role.',
-      scenario: 'These scenarios work for any organisation and any seniority level. No prior context needed — just open Copilot and follow the prompts. Perfect as a warm-up before industry-specific demos.',
+      company: 'Zava Group Berhad',
+      tagline: 'FY2025 EBITDA misses budget by 18% — Board emergency review in 48 hours.',
+      scenario: 'Zava Group Berhad is a Malaysian diversified conglomerate with 11 divisions and about 8,400 employees. FY2025 EBITDA has missed budget by 18%, with 3 divisions now in negative EBITDA and investor confidence starting to wobble. The Group CEO has 48 hours to walk into an emergency Board review with a sharp briefing pack, a defensible variance analysis, and regulatory communications ready to go.',
+      companyID: 'PT Wahana Makmur Nusantara Tbk',
+      taglineID: 'EBITDA FY2025 meleset 18% — review darurat direksi dalam 48 jam.',
       files: [
         '01_Zava_Group_Financial_Performance.xlsx',
         '02_Zava_Group_Policy_Handbook.docx',
@@ -222,19 +224,20 @@ window.HUB_DATA = {
           account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
           desc: '',
           prompts: [
-            'I have a performance review meeting in two days and I need to articulate the impact of my last six months of work clearly. My key achievements include leading a cross-functional project that cut procurement cycle time by 22%, coaching two junior team members who both received "exceeds expectations" ratings, and resolving a long-standing vendor dispute that had been escalating for months. Draft a concise self-assessment narrative of around 300 words that connects these achievements to the team\'s broader goals, uses active language, and ends with a forward-looking statement about my priorities for the next half-year. Avoid generic phrases like "team player" — keep it specific and confident.',
-            'My manager just asked me to prepare a 5-minute briefing for the leadership team on why our department should pilot Microsoft 365 Copilot before the company-wide rollout. I need to make a compelling, evidence-based case without it sounding like a vendor pitch. Draft talking points covering: what Copilot does in plain language, two concrete use cases relevant to a finance or operations team, estimated time savings based on published Microsoft research, and how we would measure success in a 30-day pilot. Keep each talking point under 40 words so I can deliver it naturally without reading from a script.',
-            'Explain the difference between Copilot Chat, Microsoft 365 Copilot, and Copilot Studio in plain language — as if you were explaining to a department head who has heard the terms but is confused about what each one does and which licence they need. Use a simple analogy and end with a one-sentence recommendation on which to start with for a team of 50 knowledge workers who primarily use Outlook, Word, and Excel.'
+            'You are the Group Chief of Staff at Zava Group Berhad. FY2025 EBITDA is 18% below budget, 3 divisions are in negative EBITDA, and the Board has called an emergency review in 48 hours. Draft a crisp 1-page CEO briefing that explains the situation in plain language, the likely questions directors will ask first, and the 5 decisions that must be ready before the meeting opens. Present as a structured table with columns for Issue, Why It Matters, Board Question, and Recommended Answer.',
+            'You are the Group CFO at Zava Group Berhad. The CEO needs a verbal opening script for a high-pressure Board session after an 18% EBITDA miss across an 11-division conglomerate with 8,400 employees. Write a 90-second opening statement that acknowledges the underperformance directly, explains why 3 divisions have fallen into negative EBITDA, and signals immediate corrective action without sounding defensive. End with 3 talking points the CEO can use if directors challenge management credibility.',
+            'You are the Head of Corporate Affairs at Zava Group Berhad. Prepare a stakeholder communication map for an 18% FY2025 EBITDA miss, 3 negative-EBITDA divisions, and an emergency Board review in 48 hours. Identify the priority audiences, the message each audience needs, the timing, and the main communication risk if the message is mishandled. Present as a RAG table with Red for immediate same-day communication needs, Amber for 24-hour needs, and Green for monitor-only audiences.'
           ]
         },
         {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
-            'Research how Fortune 500 companies are measuring the ROI of Microsoft 365 Copilot deployments in 2025 and 2026. I need specific data points: average hours saved per user per week, cost-per-seat payback periods, and which job functions report the highest productivity gains. Summarise findings in a structured format with source citations so I can use this in an executive briefing next week.',
-            'What are the top five AI governance and responsible AI frameworks that enterprises in Southeast Asia are adopting in 2025? For each framework, identify who publishes it, what its core principles are, and whether it has any regulatory backing in Malaysia or Indonesia. Present as a comparison table.'
+            'You are the Group Strategy Director at Zava Group Berhad. Research how large diversified conglomerates in Malaysia and Indonesia have responded to EBITDA shortfalls of more than 15% against budget from 2022 to 2025. For at least 3 published case studies, identify the trigger event, the Board response within 30 days, and the financial outcome 12 months later. Cite all sources including publication dates and flag any claim that could not be independently verified against an original source.',
+            'You are the Group Company Secretary at Zava Group Berhad. Research the disclosure, governance, and investor communication expectations that listed Malaysian and Indonesian conglomerates typically face after a material earnings miss and emergency Board review. Focus on Bursa Malaysia, OJK, IDX, and comparable listed-company guidance from 2022 to 2025, then distinguish mandatory obligations from market practice. Present as a table with columns for Requirement, Malaysia, Indonesia, Timing, and Practical Implication for Management.',
+            'You are the Group CEO at Zava Group Berhad. Research turnaround actions used by ASEAN conglomerates when multiple divisions move into negative EBITDA at the same time, especially cost reset programmes, capital allocation changes, portfolio exits, and leadership interventions. Find examples published between 2022 and 2025 and note what happened in the first 100 days after the trigger event. Present as a RAG table with Red for actions usually required within 30 days, Amber for 31 to 90 days, and Green for longer-horizon actions, with citations for every case.'
           ]
         },
         {
@@ -243,8 +246,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via Microsoft 365 Copilot Chat > click Agents > Analyst. Upload an Excel or CSV file. Analyst runs Python-style analysis, builds charts, and interprets results without you writing a single formula.',
           prompts: [
-            'Analyse the revenue and EBITDA trends across all 11 divisions from FY2022 to FY2025. Which three divisions have shown the steepest decline in EBITDA margin? Calculate the year-on-year change in margin for each and rank them from worst to best. Create a bar chart showing EBITDA margin by division for FY2024 vs FY2025, and flag any division where margin has dropped more than 5 percentage points in a single year.',
-            'Perform a variance analysis between the FY2025 budget and actuals for each division. Calculate both the absolute variance in MYR millions and the percentage variance. Identify the top three divisions with the largest unfavourable variances and suggest two plausible business reasons for each based on the data patterns visible in the file. Output as a table ranked by absolute variance, largest first.'
+            'You are the Group CFO of Zava Group Berhad preparing for tomorrow\'s emergency Board review. Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Using the Group P&L Summary tab, calculate the absolute and percentage revenue and EBITDA variance against FY2025 budget for each of the 11 divisions, identify the 3 divisions with the largest unfavourable EBITDA variance in MYR millions, and quantify the group-level gap behind the 18% miss. Flag divisions where EBITDA variance is worse than -20% as Red, -10% to -20% as Amber, and above -10% as Green. Present as a RAG summary table with one recommended corrective action per Red-status division.',
+            'You are the Head of FP&A at Zava Group Berhad. Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Using the Division Revenue Bridge tab and the Quarterly Earnings Tracker tab, identify which revenue and margin drivers explain why 3 divisions have fallen into negative EBITDA and whether the deterioration accelerated in Q4. Quantify the contribution of volume, pricing, mix, and cost movements where visible in the data, then show which divisions are stabilising versus worsening. Present as a structured RAG table with columns for Division, Main Driver, Q4 Change, Negative EBITDA Risk, and Recommended Action.',
+            'You are the Group Treasurer at Zava Group Berhad. Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Using the Balance Sheet Summary tab and the Key Financial Ratios tab, assess whether the FY2025 18% EBITDA miss creates pressure on leverage, interest cover, liquidity, or covenant headroom at group level, and identify which 3 metrics the Board should monitor weekly over the next 8 weeks. Flag metrics with immediate escalation risk as Red, heightened watchlist risk as Amber, and stable metrics as Green. Present as a RAG dashboard table with a short note on the likely implication for lenders and regulators.'
           ]
         },
         {
@@ -253,9 +257,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Using the Group Summary tab in this workbook, Create a formula that calculates the compound annual growth rate (CAGR) of total group revenue from FY2022 to FY2025, then apply the same formula across each division row. Add a conditional formatting rule that highlights any division with a CAGR below 3% in red and above 8% in green.',
-            'Using this workbook, Add a new sheet called "FY2026 Forecast" that projects each division\'s revenue using linear trend extrapolation from the FY2022–FY2025 data. Include a column showing the assumed growth rate and a column showing the 90% confidence interval range. Format all currency cells in MYR millions with 1 decimal place.',
-            'Identify any cells in this workbook that contain hard-coded numbers where a formula would be more appropriate, and list them with the sheet name and cell reference. Also flag any formula inconsistencies where a formula in a row differs from the pattern used in adjacent rows.'
+            'Using the Group P&L Summary tab in this workbook, build a variance analysis dashboard on a new sheet called "Board Variance Dashboard". For each of the 11 divisions, calculate absolute revenue variance versus FY2025 budget in MYR M, percentage EBITDA variance, and year-on-year EBITDA margin change, then add a group-level summary row at the top. Apply conditional formatting so EBITDA variance worse than -20% is red, -10% to -20% is amber, and above -10% is green. The CFO is presenting this to the Board in 2 hours.',
+            'Using the Division Revenue Bridge tab in this workbook, create a new sheet called "Recovery Bridge" that shows for each division the movement from FY2025 budget EBITDA to actual EBITDA using the major bridge drivers available in the data. Sort the divisions from worst to best by EBITDA gap, highlight the 3 divisions already in negative EBITDA, and add a short text box beside each Red division summarising the likely driver in one sentence. Present the result so it can be pasted directly into a Board pack.',
+            'Using the Quarterly Earnings Tracker tab and the Key Financial Ratios tab in this workbook, create an early-warning tracker on a new sheet called "8-Week Watchlist". Show quarterly EBITDA trend, revenue trend, net debt to EBITDA, and interest cover for the group, then calculate whether each trend is improving, flat, or deteriorating. Flag metrics deteriorating for 2 or more consecutive periods as Red, 1 period as Amber, and stable or improving as Green. Present as a compact RAG table with sparklines that the CEO can review weekly.'
           ]
         },
         {
@@ -264,9 +268,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Summarise this policy handbook into a one-page executive briefing covering the five most critical compliance obligations, the three highest-risk policy areas, and the escalation path for a potential breach. Format as a briefing memo addressed to the Group CEO, with a "Key Actions Required" section at the end.',
-            'Using this document, Identify all sections that reference regulatory bodies or government agencies. List each reference with the section number, the regulatory body named, and the specific obligation it relates to. Present as a structured table with three columns: Section | Regulatory Body | Obligation Summary.',
-            'Ask Copilot to draft a new section for the policy handbook titled "Artificial Intelligence Acceptable Use Policy" covering: permitted uses of AI tools in the workplace, data classification rules (what can and cannot be uploaded to AI tools), employee responsibilities, and the approval process for deploying AI in a business process. Keep it under 600 words, use the same formal tone as the existing document, and flag where legal review is recommended.'
+            'You are the Group Company Secretary at Zava Group Berhad. Using 02_Zava_Group_Policy_Handbook.docx, draft a 2-page Board paper for the emergency review covering governance obligations, escalation triggers, disclosure controls, and management accountabilities after an 18% EBITDA miss. Include sections for Immediate Facts, Governance Obligations, Decisions Required, and Next 30-Day Actions. Present in formal Board paper style with a short RAG summary at the top.',
+            'You are the Group Strategy Director at Zava Group Berhad. Using 03_Zava_Group_Strategy_Framework.docx, draft a 2-page CEO briefing that explains which strategic priorities remain valid despite the FY2025 EBITDA miss and which priorities should be paused, reset, or accelerated across the 11 divisions. Specifically address the 3 divisions now in negative EBITDA and the implications for capital allocation over the next 2 quarters. Present as a Board-ready paper with a RAG table for Continue, Reset, and Pause decisions.',
+            'You are the Head of Corporate Affairs at Zava Group Berhad. Using 02_Zava_Group_Policy_Handbook.docx and the tone of 03_Zava_Group_Strategy_Framework.docx, draft a stakeholder communication annex for the Board pack covering regulators, lenders, employees, and investors. For each audience, state the core message, approval owner, timing window, and the main risk if the wording is wrong. Present as a structured table followed by a 200-word holding statement the CEO can adapt quickly.'
           ]
         },
         {
@@ -275,9 +279,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Create a 10-slide presentation titled "Microsoft 365 Copilot — Productivity Unlocked" for a C-suite audience. Include: an executive summary of what Copilot does, a slide on business impact with three metrics (time saved, cost avoidance, employee satisfaction), a demo flow slide showing which tools to show first, a change management slide, and a recommended 90-day rollout roadmap. Use a professional blue and white colour scheme.',
-            'Open any existing strategy presentation. Redesign this presentation so each slide follows a "Situation — Complication — Resolution" narrative structure. Rewrite the speaker notes for each slide to be a 30-second verbal script. Flag any slide that is currently text-heavy and suggest a chart or visual to replace it.',
-            'Add a new slide titled "AI Governance Principles" to this presentation. The slide should show five principles as icons with one-line descriptions: Responsible, Secure, Transparent, Inclusive, and Accountable. Use the existing slide template and colour palette.'
+            'You are the Group Chief of Staff at Zava Group Berhad. Create a 5-slide emergency Board deck on the FY2025 EBITDA miss using 01_Zava_Group_Financial_Performance.xlsx and 03_Zava_Group_Strategy_Framework.docx as the source context. Cover: group performance versus budget, the 3 negative-EBITDA divisions, the likely root causes, immediate management actions, and the decisions required in the next 48 hours. Use a serious executive design and present the output as a 5-slide deck with one headline message per slide.',
+            'You are the Group CFO at Zava Group Berhad. Create a 5-slide briefing deck for the CEO to use in lender and regulator conversations after the Board review. Show the 18% EBITDA miss, balance sheet resilience, corrective actions, and the expected timeline for recovery across the 11 divisions. Flag the most material risk on each slide as Red, Amber, or Green and include speaker notes that keep the tone factual and controlled.',
+            'You are the Head of Investor Relations at Zava Group Berhad. Build a 5-slide analyst call deck that explains the FY2025 variance without sounding defensive, focusing on what happened, what management is changing, and what investors should monitor next quarter. Include one slide that separates structural issues from one-off issues and one slide that summarises the 3 negative-EBITDA divisions. Format as a 5-slide deck with concise headlines, minimal text, and a closing slide titled "Management Commitments for the Next 90 Days".'
           ]
         },
         {
@@ -286,9 +290,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: '',
           prompts: [
-            'Open Outlook and find the most recent email thread about a project update or budget review. Summarise this thread, identify all open action items with the name of the person responsible, and draft a follow-up email to all participants listing the actions, owners, and a proposed deadline of end of this week. Keep the tone professional but direct.',
-            'Draft a meeting request email to three senior stakeholders requesting a 45-minute strategy alignment session. The email should explain the purpose (reviewing Q2 performance against FY2026 targets), the proposed agenda in three bullet points, and ask them to confirm availability for one of three time slots next week. Keep it concise — under 150 words.',
-            'Coach me on this email before I send it. Check the tone, identify anything that could be misinterpreted, suggest a stronger subject line, and recommend whether I should copy or blind-copy anyone based on the content. Show your suggestions as tracked changes.'
+            'You are the Group Company Secretary at Zava Group Berhad. Draft the Board emergency meeting email for a session taking place in 48 hours on the FY2025 EBITDA miss. The email should explain the purpose, list the 3 agenda items, mention that 3 divisions are in negative EBITDA, and instruct directors to review the briefing pack before the meeting. Keep it under 180 words and professional, urgent, and discreet.',
+            'You are the Group CFO at Zava Group Berhad. Draft an email to the lead relationship banks explaining that FY2025 EBITDA missed budget by 18% but that management is already preparing an emergency Board review and liquidity actions. Reassure lenders that balance sheet monitoring is active, note that a fuller update will follow after the Board meeting, and avoid making promises not yet approved. Present as a polished external email with a strong subject line.',
+            'You are the Head of Corporate Affairs at Zava Group Berhad. Draft an internal email to all division CEOs immediately after the emergency Board review summarising the key decisions, the expectations for Red-status divisions, and the rules for external communications until approved messaging is issued. Keep the tone firm and aligned, and end with 3 bullet points titled "What you must do today".'
           ]
         },
         {
@@ -297,9 +301,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Use your OWN existing recorded Teams meetings. Open a meeting recap in Teams > Recap tab. Copilot generates summaries, action items, and follow-up drafts grounded in the actual transcript.',
           prompts: [
-            'Generate a full meeting summary with four sections: Key Decisions Made, Open Action Items (with owner and due date), Topics That Need Follow-Up, and a one-paragraph executive summary I can paste into an email to stakeholders who did not attend.',
-            'Draft a follow-up email to all meeting participants. The email should thank them for attending, list all action items with owners and deadlines, note any decisions that require sign-off from absent stakeholders, and propose a date for the next check-in in two weeks.',
-            'Ask Copilot in the Teams recap: Which discussion points from this meeting are still unresolved? For each unresolved item, identify who raised it, what the proposed next step was, and whether a decision was reached or deferred. Present as a table: Topic | Raised By | Status | Next Step.'
+            'You are the Group Chief of Staff at Zava Group Berhad. Using this recorded Teams meeting recap from the executive committee, identify the decisions, unresolved issues, and action items related to the FY2025 EBITDA miss and the 3 divisions in negative EBITDA. Note who owns each item and whether it must be resolved before the Board emergency review in 48 hours. Present as a RAG table with Red for must-close before the Board, Amber for can close this week, and Green for monitor only.',
+            'You are the Group CFO at Zava Group Berhad. Using this Teams meeting recap, extract every statement relevant to variance drivers, liquidity, covenant pressure, or regulatory communication readiness. Summarise the discussion in 4 sections: Key Facts, Risks Raised, Decisions Taken, and Follow-Up Actions with owners and due dates. End with a one-paragraph executive summary the CEO can paste into the Board pack.',
+            'You are the Head of Investor Relations at Zava Group Berhad. Using this Teams meeting recap, identify which discussion points would worry investors most if they leaked before the Board review and which points demonstrate that management has control of the situation. Flag high-leak-risk items as Red, sensitive-but-manageable items as Amber, and safe factual items as Green. Present as a RAG table with suggested holding lines for each Red item.'
           ]
         },
         {
@@ -308,8 +312,9 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Access via copilot.microsoft.com > Notebook tab. Upload up to 5 files and set a system instruction. Best for synthesising insights across multiple documents simultaneously.',
           prompts: [
-            'Upload 02_Zava_Group_Policy_Handbook.docx and 03_Zava_Group_Strategy_Framework.docx to Copilot Notebook. Set this system instruction: "You are a senior strategy advisor. Answer questions by synthesising insights from both documents — always cite which document your answer draws from." Then ask: Where do the strategic priorities in the strategy framework conflict with or create compliance obligations under the policy handbook? List the top three tensions and suggest how leadership might resolve each.',
-            'Upload 01_Zava_Group_Financial_Performance.xlsx and 03_Zava_Group_Strategy_Framework.docx to Notebook. Ask: Based on the actual financial performance data and the stated strategic objectives, which strategic priorities appear to be underfunded given current revenue allocation? Rank by gap size and suggest which two should be accelerated and which one should be deferred.'
+            'You are the Group CEO at Zava Group Berhad. Upload 01_Zava_Group_Financial_Performance.xlsx, 02_Zava_Group_Policy_Handbook.docx, and 03_Zava_Group_Strategy_Framework.docx to Copilot Notebook. Set the instruction: "You are my executive war-room analyst. Synthesize across all files, cite the source file for every major point, and focus on actions needed in the next 48 hours." Then ask for the 10-slide-equivalent story the Board needs, including the 18% EBITDA miss, the 3 negative-EBITDA divisions, the main governance obligations, and the top 5 decisions management must bring forward.',
+            'You are the Group CFO at Zava Group Berhad. Upload 01_Zava_Group_Financial_Performance.xlsx and 03_Zava_Group_Strategy_Framework.docx to Copilot Notebook. Ask which strategic priorities appear underfunded or mis-sequenced given the FY2025 results, and which priorities should be accelerated, deferred, or stopped across the 11 divisions. Require Notebook to cite the exact source document for every recommendation and to present the answer as a RAG table with financial rationale.',
+            'You are the Group Company Secretary at Zava Group Berhad. Upload 01_Zava_Group_Financial_Performance.xlsx, 02_Zava_Group_Policy_Handbook.docx, and 03_Zava_Group_Strategy_Framework.docx to Copilot Notebook. Ask Notebook to identify where the strategy narrative, the financial reality, and the policy obligations are misaligned ahead of the emergency Board review. Request a concise answer with 3 sections: Contradictions to Resolve, Questions Directors Will Ask, and Recommended Pre-Reads, all with citations to the source files.'
           ]
         },
         {
@@ -318,8 +323,20 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Cowork is an autonomous agent that takes actions across Microsoft 365 on your behalf — sending emails, scheduling meetings, creating documents, posting in Teams, and scheduling recurring tasks. Access: m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.',
           prompts: [
-            'Do all of the following autonomously: (1) Research the latest Microsoft 365 Copilot adoption statistics and productivity benchmarks published in 2025 or 2026. (2) Draft a two-page Word document titled "Copilot Business Case — Internal Briefing" summarising the research with three key data points, two customer case studies, and a recommended adoption approach. (3) Save the document to my OneDrive. (4) Send an email to my manager with the document attached, subject line "Copilot Business Case — Ready for Review", asking for feedback by end of week. (5) Schedule a 30-minute Teams meeting with my manager for next Tuesday at 10am titled "Copilot Business Case Review".',
-            'Do all of the following: (1) Check my calendar for any meetings this week that do not have an agenda attached. (2) For each such meeting, draft a short agenda based on the meeting title and attendees. (3) Send each agenda as a reply to the original meeting invitation. (4) Create a recurring Teams meeting every Monday at 9am titled "Weekly Copilot Adoption Check-In" for the next 8 weeks and invite my manager.'
+            'You are the Group Chief of Staff at Zava Group Berhad. Do all of the following autonomously: research comparable Malaysian and Indonesian conglomerate responses to EBITDA misses above 15%, draft a 2-page Word document titled "Emergency Board Review Brief", save it to OneDrive, email it to the Group CEO and CFO for review, and schedule a 30-minute Teams prep meeting for tomorrow morning. Keep the brief focused on Board actions, disclosure risk, and the first 30 days of recovery.',
+            'You are the Group Company Secretary at Zava Group Berhad. Do all of the following autonomously: create the emergency Board review meeting invite for 48 hours from now, attach a placeholder agenda, set a reminder 12 hours before the meeting, create a OneDrive folder called "Board Emergency Review - FY2025 EBITDA", and email all directors asking them to expect the final pack within 24 hours. Keep the wording discreet and clearly marked confidential.',
+            'You are the Group CFO at Zava Group Berhad. Do all of the following autonomously: draft a lender update email, draft a regulator holding note, create a task list for the finance leadership team covering variance analysis, liquidity review, and divisional recovery plans, then send the task list to the relevant owners and schedule a 20-minute checkpoint meeting for this afternoon. The context is an 18% FY2025 EBITDA miss with 3 divisions in negative EBITDA and an emergency Board review in 48 hours.'
+          ]
+        },
+        {
+          tool: '✏️ Edit with Copilot',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Edit with Copilot is an agentic mode in Word, Excel, and PowerPoint (web) that executes multi-step editing tasks across your entire document in one instruction — reformatting, restructuring, building formulas, generating new sections. Access: open any Office file in browser > Copilot pane > Edit with Copilot. Requires M365 Copilot licence.',
+          prompts: [
+            'You are the Group Company Secretary at Zava Group Berhad. Using 02_Zava_Group_Policy_Handbook.docx in Word for the web, add an appendix titled "Emergency Earnings Review Governance Protocol" and populate it with a decision-rights table, escalation timeline, and approval matrix for regulator, lender, investor, and employee communications. Keep the language consistent with the existing handbook and add a short note wherever legal review is required before external release.',
+            'Using the Group P&L Summary tab and the Key Financial Ratios tab in 01_Zava_Group_Financial_Performance.xlsx, create a new worksheet called "Board Recovery Tracker" that combines divisional EBITDA variance, RAG status, leverage metrics, and an owner column for each corrective action. Reorder the columns so Board readers see the Red issues first, apply consistent styling, and add formulas that automatically refresh the group summary at the top when divisional values change.',
+            'You are the Group Chief of Staff at Zava Group Berhad. Using the current Board presentation in PowerPoint for the web, restructure the deck so the first 5 slides tell a tighter crisis narrative on the FY2025 EBITDA miss. Consolidate duplicative slides, rewrite slide titles into action-oriented headlines, move detailed backup charts to an appendix, and add a final decisions slide that clearly separates approve today, review next week, and monitor monthly.'
           ]
         },
         {
@@ -328,8 +345,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Create a declarative agent scoped to a Word document. Open the .docx in Word for Web > Copilot pane > + New Agent > name it, write a description, set the document as knowledge source > Share. Colleagues chat with it in Teams or M365 Copilot.',
           prompts: [
-            'Open 02_Zava_Group_Policy_Handbook.docx in Word for Web. In the Copilot pane, click + New Agent. Name it "Group Policy Assistant". Description: "Answers employee questions about Zava Group\'s internal policies, compliance obligations, and escalation procedures based on the official policy handbook." Set the document as the knowledge source. Copy the share link and send it to your HR team so employees can chat with it from Teams.',
-            'Demo the agent: Open a new Teams chat or M365 Copilot session and ask the Policy Assistant: "What is the escalation process if I suspect a colleague is violating our anti-bribery policy? Who do I contact and what documentation do I need to prepare?" Show how the agent answers with specific references to the policy sections.'
+            'You are the Group Company Secretary at Zava Group Berhad. Open 02_Zava_Group_Policy_Handbook.docx in Word for Web and create a new agent called "Zava Governance Guide". Describe it as an assistant that answers questions on governance obligations, escalation rules, disclosure controls, and approval authorities during performance or crisis situations. Set the document as the knowledge source and share it with the CEO office, finance, and corporate affairs teams.',
+            'You are the Head of Corporate Affairs at Zava Group Berhad. Demo the Zava Governance Guide agent by asking: "An 18% EBITDA miss has triggered an emergency Board review. What approvals do I need before sending a regulator update, a lender email, and an employee note, and who owns each approval?" Show how the agent responds with policy-grounded guidance that cites the source document.'
           ]
         },
         {
@@ -338,8 +355,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Create a declarative agent scoped to a PowerPoint presentation. Great for strategy decks or Board presentations many people need to reference. Same setup as Word Agent but using a .pptx file.',
           prompts: [
-            'Open 03_Zava_Group_Strategy_Framework.docx or a strategy presentation in PowerPoint for Web. Create a new agent called "Strategy Deck Assistant". Description: "Helps leadership and strategy teams quickly find information from the group strategy framework, including KPIs, initiative owners, and investment priorities." Set the file as knowledge source and share with the strategy team.',
-            'Demo query: Ask the Strategy Deck Assistant in Teams: "Which strategic initiative has the highest investment priority for FY2026, and who is the executive sponsor?" Then ask: "What are the three key risks flagged for the ASEAN expansion workstream?" Show how it pulls answers directly from the deck without requiring anyone to open the file.'
+            'You are the Group Chief of Staff at Zava Group Berhad. Build the emergency Board review deck in PowerPoint for Web, then create a new agent called "Board Pack Navigator". Describe it as an assistant that helps directors and executives find the right slide, chart, or message on group performance, divisional issues, and next-step decisions. Share it with the Board office and senior leadership team only.',
+            'You are the Group CFO at Zava Group Berhad. Demo the Board Pack Navigator agent by asking: "Which 3 divisions are in negative EBITDA, what is the size of each gap versus budget, and which slide should I open if a director asks about leverage impact?" Then ask it to summarise the 3 most important decisions on the final slide in under 80 words.'
           ]
         },
         {
@@ -348,8 +365,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Create a declarative agent scoped to an Excel workbook. Colleagues ask data questions in plain English without opening Excel. Open .xlsx in Excel for Web > Copilot pane > + New Agent > set workbook as knowledge source > share.',
           prompts: [
-            'Open 01_Zava_Group_Financial_Performance.xlsx in Excel for Web. In the Copilot pane, click + New Agent. Name it "Group Financials Q&A". Description: "Answers questions about Zava Group\'s divisional revenue, EBITDA, and budget performance using the latest financial data workbook." Set the workbook as knowledge source and share with finance leaders.',
-            'Demo query: Ask the Group Financials Q&A agent: "Which three divisions missed their FY2025 EBITDA target and by how much in MYR millions?" Then ask: "What was the group-level revenue growth rate from FY2024 to FY2025?" Show how non-finance colleagues get instant answers without needing to navigate the workbook.'
+            'You are the Group CFO at Zava Group Berhad. Open 01_Zava_Group_Financial_Performance.xlsx in Excel for Web and create a new agent called "Zava Performance Q&A". Describe it as an assistant that answers questions on the Group P&L Summary, Division Revenue Bridge, Balance Sheet Summary, Quarterly Earnings Tracker, and Key Financial Ratios tabs for the emergency Board review. Share it with the Group CEO, finance leadership team, and strategy office.',
+            'You are the Group CEO at Zava Group Berhad. Demo the Zava Performance Q&A agent by asking: "Which 3 divisions have the largest unfavourable EBITDA variance in FY2025, what is the group-level miss versus budget, and has liquidity or leverage materially worsened?" Then ask it to classify each answer as Red, Amber, or Green so the CEO gets an instant decision-oriented summary.'
           ]
         },
         {
@@ -358,8 +375,8 @@ window.HUB_DATA = {
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           desc: 'Build a custom declarative agent in Copilot Studio — no coding required. Access: copilotstudio.microsoft.com > Create > New Agent. Add name, description, knowledge sources (SharePoint URLs or uploaded files), topics/actions. Publish to Teams in under 10 minutes.',
           prompts: [
-            'Go to copilotstudio.microsoft.com > Create > New Agent. Name the agent "Zava Knowledge Hub". Description: "A company-wide AI assistant that answers questions about group policies, strategy, and financial performance, drawing from official Zava Group documents." Under Knowledge, upload 01_Zava_Group_Financial_Performance.xlsx, 02_Zava_Group_Policy_Handbook.docx, and 03_Zava_Group_Strategy_Framework.docx. Under Topics, add a welcome topic that greets users and explains what the agent can help with. Click Publish > Microsoft Teams. Within 10 minutes the agent appears in Teams for all authorised users.',
-            'Demo the published agent in Teams: Open the Zava Knowledge Hub bot and ask: "What is the group\'s FY2026 revenue target and which divisions are expected to contribute the most growth?" Then ask: "Is there a policy covering the use of AI tools in client-facing communications?" Show how the agent synthesises answers from multiple source documents and cites them.'
+            'You are the Group Chief of Staff at Zava Group Berhad. Go to copilotstudio.microsoft.com and create a new agent called "Zava Executive War Room". Describe it as an assistant for Board, CEO, CFO, and corporate affairs teams managing the FY2025 EBITDA miss, and upload 01_Zava_Group_Financial_Performance.xlsx, 02_Zava_Group_Policy_Handbook.docx, and 03_Zava_Group_Strategy_Framework.docx as knowledge sources. Add starter topics for Board Review, Divisional Recovery, Stakeholder Communications, and Governance Approvals, then publish it to Teams for authorised executives only.',
+            'You are the Group CEO at Zava Group Berhad. Demo the published Zava Executive War Room agent in Teams by asking: "Give me the 60-second version of the FY2025 EBITDA problem, the 3 divisions in negative EBITDA, the top governance obligations, and the decisions I must take to the Board in 48 hours." Then ask a second question: "Draft my first message to division CEOs after the Board meeting."'
           ]
         }
       ]
@@ -375,6 +392,8 @@ window.HUB_DATA = {
       company: 'Meridian Bank Berhad',
       tagline: 'NPL at 14.2% — 4x BNM\'s supervisory threshold. Bilateral review in 3 days.',
       scenario: 'Meridian Bank Berhad is Malaysia\'s fifth-largest commercial bank by assets (MYR 68.4B). Personal Financing NPL has climbed for 6 consecutive quarters, reaching 14.2% — four times BNM\'s 3.5% supervisory threshold. The CFO goes into a BNM bilateral review on Tuesday. Provision coverage sits at 68%, well below the internal 80% target.',
+      companyID: '',
+      taglineID: '',
       files: [
         'BNK_01_Meridian_Bank.xlsx',
         'BNK_02_Meridian_Bank_Strategy.docx',
@@ -397,7 +416,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research how Malaysian commercial banks have managed NPL surges in the past five years, particularly post-moratorium periods. I need: (1) Industry-average NPL ratios for Malaysian banks in 2023–2025, (2) The three most common remediation strategies banks used successfully, (3) Any BNM guidance circulars on NPL management issued since 2023. Cite all sources so I can share this with our credit risk team.',
             'Research global best practices for bank NPL resolution programmes, particularly in markets with similar profile to Malaysia — emerging markets with retail-heavy loan books. Identify two or three banks that successfully reduced NPL ratios by more than 4 percentage points within 18 months and summarise their approach. Present findings as a structured brief with source links.'
@@ -542,6 +561,8 @@ window.HUB_DATA = {
       company: 'Al-Amanah Islamic Bank Malaysia',
       tagline: 'MYR 3.5B Sukuk issuance pending — BNM IFSA compliance review in 4 weeks.',
       scenario: 'Al-Amanah Islamic Bank Malaysia (AIBM) has MYR 22.1B in total financing assets. A landmark MYR 3.5B Sukuk Wakalah issuance is pending regulatory approval. The BNM IFSA compliance review is scheduled in 4 weeks and the Shariah Committee has flagged two products for re-structuring. Profit rate risk is rising as OPR hovers at 3.0%.',
+      companyID: '',
+      taglineID: '',
       files: [
         'BNK_01_Meridian_Bank.xlsx',
         'BNK_02_Meridian_Bank_Strategy.docx'
@@ -562,7 +583,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the global Sukuk market outlook for 2025 and 2026 — specifically for Malaysia. I need: (1) Total Sukuk issuance volumes in Malaysia for 2024 and the forecast for 2025, (2) Demand trends from Middle Eastern and Southeast Asian investors, (3) Any new BNM or SC guidelines affecting Sukuk Wakalah structures issued in the past 12 months. Provide source citations for each data point.',
             'Research how Islamic banks in Malaysia are managing profit rate risk in a rising OPR environment. Identify the top three strategies used by leading Islamic banks (Maybank Islamic, CIMB Islamic, Bank Islam) and compare their approaches. Summarise in a briefing note format suitable for the ALCO (Asset and Liability Committee).'
@@ -706,6 +727,8 @@ window.HUB_DATA = {
       company: 'Kenanga Capital Group',
       tagline: 'MYR 18.4B AUM — 3 IPO mandates in pipeline, ESG fund launch Q2 FY2026.',
       scenario: 'Kenanga Capital Group manages MYR 18.4B in assets under management and has three IPO mandates in the pipeline totalling a combined market cap of MYR 4.2B. An ESG-themed fund is being structured for launch in Q2 FY2026. The Securities Commission quarterly regulatory filing is due in two weeks and the M&A advisory team is evaluating a cross-border acquisition target.',
+      companyID: '',
+      taglineID: '',
       files: [
         'GLC_01_Danamas_Capital.xlsx',
         'GLC_02_Danamas_Strategy.docx',
@@ -727,7 +750,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the Malaysian IPO market in 2025 and 2026. I need: (1) Total number of IPOs listed and total funds raised on Bursa Malaysia in 2024 and year-to-date 2025, (2) Sectors with the highest demand from institutional investors, (3) Average price-to-earnings multiples achieved by tech and consumer sector IPOs. Provide source citations and present as an investment research brief.',
             'Research global ESG fund regulations relevant to Malaysian fund managers — specifically SEC, MAS, and Securities Commission Malaysia requirements for ESG disclosure. Identify the three key differences between SC Malaysia\'s ESG framework and the EU SFDR, and explain the implications for a Malaysian fund manager distributing to European institutional investors.'
@@ -871,6 +894,8 @@ window.HUB_DATA = {
       company: 'Pacific Shield Insurance Berhad',
       tagline: 'Motor combined ratio at 108% — claims leakage and fraud costing MYR 84M annually.',
       scenario: 'Pacific Shield Insurance Berhad is Malaysia\'s fourth-largest general insurer. The motor segment combined ratio has breached 108%, well above the 95% profitability threshold, driven by rising claims frequency and a suspected claims fraud syndicate (Project SWIFT CLAIM). BNM\'s detariffication deadline creates additional pricing pressure.',
+      companyID: '',
+      taglineID: '',
       files: [
         'INS_01_Pacific_Shield_Insurance.xlsx',
         'INS_02_Pacific_Shield_Strategy.docx'
@@ -891,7 +916,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research insurance fraud detection technology trends in Southeast Asia for 2025 and 2026. I need: (1) The most effective AI and machine learning approaches used by leading insurers to detect motor claims fraud, (2) Two or three vendor solutions deployed in the region with documented fraud reduction results, (3) Any regulatory guidance from BNM or the Malaysia Insurance Institute on fraud analytics. Provide citations.',
             'Research how Malaysian general insurers are responding to BNM motor detariffication. What pricing strategies are the top 5 insurers using? Has the detariffication led to market share shifts? Are there any BNM supervisory concerns about underpricing? Present as a competitive intelligence brief.'
@@ -1035,6 +1060,8 @@ window.HUB_DATA = {
       company: 'Meridian Life Assurance Berhad',
       tagline: 'RBC ratio 182% — agent channel productivity declining 18% as digital disruptors gain share.',
       scenario: 'Meridian Life Assurance Berhad manages MYR 8.4B in life fund assets with an RBC ratio of 182% — comfortable but declining. Agent channel productivity has dropped 18% year-on-year as digital insurtech platforms capture first-time buyers. A new digital distribution initiative is being piloted in Q2 FY2026.',
+      companyID: '',
+      taglineID: '',
       files: [
         'INS_01_Pacific_Shield_Insurance.xlsx',
         'INS_02_Pacific_Shield_Strategy.docx'
@@ -1055,7 +1082,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the competitive landscape for digital life insurance distribution in Malaysia. I need: (1) The main insurtech and digital-first life insurance platforms operating in Malaysia and their estimated market share, (2) The customer segments they are targeting, (3) Any BNM licensing requirements for digital insurance distribution. Summarise as a competitive intelligence brief with sources.',
             'Research life insurance product innovation trends in Southeast Asia — specifically investment-linked products (ILPs) and micro-insurance. Which markets are growing fastest and why? What product features are driving take-up among millennial and Gen Z buyers? Cite recent industry reports or research.'
@@ -1199,6 +1226,8 @@ window.HUB_DATA = {
       company: 'Amanah Takaful Group Berhad',
       tagline: 'MYR 4.2B tabarru\' fund — wakalah fee model under BNM IFSA Takaful review.',
       scenario: 'Amanah Takaful Group Berhad manages a MYR 4.2B tabarru\' fund under a wakalah fee model. The BNM IFSA Takaful Operational Framework review is due in 6 weeks. Re-takaful arrangements with Middle East counterparties need renegotiation, and the family takaful segment is facing lapse pressure from new competitors offering lower wakalah fees.',
+      companyID: '',
+      taglineID: '',
       files: [
         'INS_01_Pacific_Shield_Insurance.xlsx',
         'INS_02_Pacific_Shield_Strategy.docx'
@@ -1219,7 +1248,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the competitive landscape for family takaful in Malaysia — specifically how new digital takaful operators are pricing their wakalah fees versus established operators. I need market data on average wakalah fee rates, the fastest-growing takaful distribution channels, and any BNM statements on competitive pricing in takaful. Provide citations.',
             'Research BNM\'s IFSA Takaful Operational Framework requirements updated since 2023. What are the key changes operators must implement? Specifically, what are the requirements around tabarru\' fund surplus distribution, waqf-linked takaful, and participant disclosure? Present as a compliance checklist.'
@@ -1363,6 +1392,8 @@ window.HUB_DATA = {
       company: 'Apex Health Group Berhad',
       tagline: '18.4% nurse attrition + 6-week oncology wait — MYR 2.84B revenue at risk.',
       scenario: 'Apex Health Group Berhad operates 12 hospitals across Malaysia and Indonesia with MYR 2.84B in revenue. Nurse attrition has reached 18.4%, creating ward coverage gaps. Oncology waiting time has stretched to 6 weeks against a 2-week clinical target. A Ministry of Health accreditation review is due in 10 weeks.',
+      companyID: '',
+      taglineID: '',
       files: [
         'HC_01_Apex_Health_Group.xlsx',
         'HC_02_Apex_Health_Strategy.docx'
@@ -1383,7 +1414,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research nurse retention strategies used by private hospital groups in Southeast Asia that have successfully reduced attrition from above 15% to below 10% within 18 months. I need: (1) The specific interventions used, (2) The cost per FTE of implementing the programme, (3) The return on investment compared to replacement cost. Provide citations from healthcare management journals or industry reports.',
             'Research the regulatory environment for private hospitals in Malaysia — specifically the Private Healthcare Facilities and Services Act (PHFSA) requirements for clinical staffing ratios, patient safety reporting, and data protection for medical records. Summarise the five most critical compliance obligations and recent MOH enforcement actions. Cite sources.'
@@ -1527,6 +1558,8 @@ window.HUB_DATA = {
       company: 'ZavaGen Pharmaceutical (Zava Pharma)',
       tagline: '3 BPOM enforcement notices closed — Sitagliptin 100mg BPfK registration in progress.',
       scenario: 'ZavaGen Pharmaceutical is the pharmaceutical arm of Zava Group, operating plants in Cikarang (Indonesia) and Johor (Malaysia). Three BPOM enforcement notices were received and all closed as of April 2025. BPfK registration for Sitagliptin 100mg is in progress. Four products are in Phase II/III clinical trials. GMP certification renewal is due in 3 months.',
+      companyID: '',
+      taglineID: '',
       files: [
         '17_Zava_Pharma_Pipeline.xlsx',
         'Email_11_Sitagliptin_BPOM_Registration.docx'
@@ -1547,7 +1580,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the market opportunity for Sitagliptin (a DPP-4 inhibitor for Type 2 diabetes) in Malaysia and Indonesia. I need: (1) Market size and growth rate for diabetes medications in both countries, (2) Current competitors and their market share, (3) Any pricing regulations or reimbursement status under MOH Malaysia and BPJS Indonesia. Provide citations.',
             'Research the latest ASEAN GMP guidelines updates and any BPOM enforcement trends in the Indonesian pharmaceutical sector in 2024 and 2025. Are there specific areas where enforcement has been more active? Have any major multinational pharmaceutical companies received enforcement actions? Provide citations.'
@@ -1691,6 +1724,8 @@ window.HUB_DATA = {
       company: 'Nusantara Energy Berhad',
       tagline: 'Tier 1 PSE at Miri field — PETRONAS HSE audit in 6 weeks. 2 offshore spill incidents.',
       scenario: 'Nusantara Energy Berhad is an upstream oil and gas operator with a Tier 1 Process Safety Event (PSE) at its Miri offshore field. Two minor offshore spill incidents were reported to PETRONAS in Q3. The HSE audit is scheduled in 6 weeks. Net Zero 2050 commitments require a 30% GHG reduction plan by Q1 FY2027.',
+      companyID: '',
+      taglineID: '',
       files: [
         'OG_01_Nusantara_Energy.xlsx',
         'OG_02_Nusantara_HSE_Report.docx',
@@ -1712,7 +1747,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research PETRONAS HSE audit requirements and the typical findings that upstream operators receive. I need: (1) The key HSE performance indicators PETRONAS measures during audits, (2) The most common non-conformances issued to upstream operators in Malaysia in 2023–2025, (3) Any PETRONAS HSE circulars or updates issued in the past 12 months. Provide citations.',
             'Research global upstream oil and gas Net Zero 2050 strategies adopted by operators of similar scale to Nusantara Energy (production 50,000–100,000 BOE/day). What are the most cost-effective GHG reduction levers? How are operators in Southeast Asia balancing production growth with decarbonisation commitments? Cite recent industry reports.'
@@ -1856,6 +1891,8 @@ window.HUB_DATA = {
       company: 'HengYuan Refining Sdn Bhd',
       tagline: 'Refinery margin at USD 4.2/bbl — DOSH CIMAH audit in 8 weeks.',
       scenario: 'HengYuan Refining operates Malaysia\'s second-largest crude oil refinery with 156,000 bbl/day capacity. Refinery margins have compressed to USD 4.2/bbl (breakeven at USD 5.8/bbl) driven by MOPS crack spread compression. A DOSH CIMAH (Control of Industrial Major Accident Hazards) audit is scheduled in 8 weeks. A major maintenance turnaround is being planned for Q3.',
+      companyID: '',
+      taglineID: '',
       files: [
         'OG_01_Nusantara_Energy.xlsx',
         'OG_02_Nusantara_HSE_Report.docx'
@@ -1876,7 +1913,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the current MOPS (Mean of Platts Singapore) crack spread trends for Asian refineries and the outlook for the next 6 months. What is driving the compression? Which product slates (gasoline, diesel, jet fuel) are most and least affected? Cite recent energy market reports or commodity trading publications.',
             'Research DOSH Malaysia\'s CIMAH enforcement trends for petroleum refineries in 2023–2025. What are the most common audit findings? Have any refineries received improvement orders or stop-work orders? What documentation do DOSH auditors typically request on the first day of inspection? Provide citations.'
@@ -2020,6 +2057,8 @@ window.HUB_DATA = {
       company: 'GreenPower Division (Sarawak Energy)',
       tagline: '480MW solar pipeline + PPA renegotiation with Tenaga — EUETS carbon credit filing due.',
       scenario: 'GreenPower Division manages Sarawak Energy\'s 2.4GW hydro portfolio and a 480MW solar pipeline under development. The power purchase agreement (PPA) with Tenaga Nasional Berhad (TNB) for 800MW is up for renegotiation. Carbon credit generation under Verra VCS is being certified. The Energy Commission (ST) large-scale solar (LSS) bid is due in 6 weeks.',
+      companyID: '',
+      taglineID: '',
       files: [
         'OG_01_Nusantara_Energy.xlsx',
         '20_Zava_ESG_Sustainability_Framework.docx'
@@ -2040,7 +2079,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the carbon credit market for renewable energy in Southeast Asia in 2025 and 2026. I need: (1) Current voluntary carbon credit price range for hydro and solar projects, (2) Demand trends from corporate buyers in Malaysia and Singapore, (3) The Bursa Carbon Exchange (BCX) performance since launch. Provide citations.',
             'Research global solar PV cost trends and the competitive landscape for LSS solar bids in Malaysia. What levelised cost of energy (LCOE) are developers achieving? Who are the main EPC contractors active in Malaysian LSS projects and what are typical project timelines? Cite recent energy reports.'
@@ -2184,6 +2223,8 @@ window.HUB_DATA = {
       company: 'Zava Manufacturing (Nilai Plant)',
       tagline: 'OEE 62% — spindle motor failures, 2,800-unit backlog MYR 14.2M. SIRIM audit in 8 weeks.',
       scenario: 'Zava Manufacturing\'s Nilai plant produces precision industrial components for the automotive and electronics sectors. Overall Equipment Effectiveness (OEE) has dropped from 76% to 62% over 3 quarters, driven by recurring spindle motor failures on 3 of 12 CNC machines. A 2,800-unit production backlog worth MYR 14.2M has accumulated. SIRIM ISO 9001:2015 audit is scheduled in 8 weeks.',
+      companyID: '',
+      taglineID: '',
       files: [
         '12_Zava_Manufacturing_KPIs.xlsx',
         '21_Zava_Chemical_Safety_HIRARC.docx'
@@ -2204,7 +2245,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research best practices for rapid OEE recovery in precision manufacturing — specifically for facilities producing automotive and electronics components in Southeast Asia. I need: (1) The most effective maintenance strategies (TPM, predictive maintenance, RCM) and their typical OEE improvement impact, (2) Any case studies of Malaysian manufacturers who recovered OEE from below 65% to above 80% within 6 months, (3) SIRIM\'s expectations during an ISO 9001 audit for a facility with known equipment issues. Cite sources.',
             'Research the current state of predictive maintenance technology for CNC machining — specifically spindle health monitoring using vibration analysis and IoT sensors. What are the leading solutions available in Malaysia, typical implementation cost for a 12-machine facility, and the expected reduction in unplanned downtime? Provide citations.'
@@ -2348,6 +2389,8 @@ window.HUB_DATA = {
       company: 'Zava Agribusiness (Perkebunan Lestari)',
       tagline: 'RSPO suspended 2 mills — EUDR deadline Jan 2026 with 184,200 ha at risk.',
       scenario: 'Zava Agribusiness operates 184,200 hectares of oil palm in Kalimantan and Sabah. Two mills have had RSPO certification suspended following a third-party audit. The EU Deforestation Regulation (EUDR) deadline is January 2026 — all palm oil exported to the EU must be deforestation-free with full geolocation traceability. OER has declined to 19.4% vs the 21.2% industry benchmark.',
+      companyID: '',
+      taglineID: '',
       files: [
         '11_Zava_Agribusiness_Plantations.xlsx',
         '22_Zava_Plantation_RSPO_Audit.docx',
@@ -2370,7 +2413,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the latest EUDR implementation updates — specifically for Indonesian and Malaysian palm oil exporters. I need: (1) The current implementation timeline (is the January 2026 deadline confirmed?), (2) Which EU member states are most actively enforcing, (3) The specific geolocation and due diligence documentation required, (4) Any industry body guidance from MPOB, RSPO, or MSPO on EUDR compliance. Provide citations.',
             'Research oil extraction rate (OER) improvement strategies for tropical oil palm in Southeast Asia. What are the key factors that drive the gap between 19.4% (our current OER) and the 21.2% industry benchmark? What mill process improvements and estate best practices have shown the highest OER improvement impact? Cite recent research or industry case studies.'
@@ -2514,6 +2557,8 @@ window.HUB_DATA = {
       company: 'Zava BPO (Bengaluru Centre)',
       tagline: 'Attrition 31.2% — Bank Mandiri renewal MYR 84M at risk. DOCUAI at 99.8% accuracy.',
       scenario: 'Zava BPO\'s Bengaluru Centre houses 3,200 FTE across banking, insurance, and healthcare process outsourcing. Staff attrition has surged to 31.2% (industry benchmark: 22%). The Bank Mandiri BPO contract worth MYR 84M is up for renewal — client satisfaction score is 6.8/10, below the 7.5 renewal threshold. DOCUAI (document processing AI) is performing at 99.8% accuracy.',
+      companyID: '',
+      taglineID: '',
       files: [
         '15_Zava_BPO_Operations.xlsx',
         '18_Zava_HR_Analytics.xlsx',
@@ -2536,7 +2581,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research BPO industry attrition benchmarks in Bengaluru specifically for banking and insurance process outsourcing. I need: (1) Average and top-quartile attrition rates for 2024 and 2025, (2) The top 5 reasons BPO employees cite for leaving, (3) The most effective retention bonuses and non-monetary benefits used by leading BPO operators in India. Provide citations.',
             'Research the competitive landscape for banking BPO services in Southeast Asia — specifically for Indonesian bank clients. Who are the top BPO providers competing for Bank Mandiri-scale contracts? What differentiators are most valued by Indonesian banking clients — cost, accuracy, turnaround time, or regulatory compliance expertise? Cite industry sources.'
@@ -2680,6 +2725,8 @@ window.HUB_DATA = {
       company: 'ClearWave Communications Berhad',
       tagline: '5G at 12.4% vs 20% target — MCMC penalty risk + Nexus Home FMC bundle launch.',
       scenario: 'ClearWave Communications Berhad is Malaysia\'s third-largest telco with 14.8 million subscribers. 5G coverage has reached only 12.4% of the population against MCMC\'s 20% year-end target. An MCMC penalty notice has been issued. The Nexus Home fixed-mobile convergence (FMC) bundle is launching in Q2 FY2026. Postpaid ARPU has declined 8.4% year-on-year.',
+      companyID: '',
+      taglineID: '',
       files: [
         'TC_01_ClearWave_Communications.xlsx',
         'TC_02_ClearWave_Strategy.docx'
@@ -2700,7 +2747,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research MCMC\'s 5G rollout requirements and enforcement framework for Malaysian telecommunications operators. I need: (1) The specific coverage and population penetration milestones MCMC requires, (2) The penalty structure for missing milestones, (3) Any recent MCMC statements about enforcement flexibility or remediation pathways for operators missing targets. Provide citations.',
             'Research global FMC bundle performance data — specifically how bundles of fixed broadband + mobile postpaid + OTT content have affected ARPU, churn rate, and NPS for telcos in comparable markets (Singapore, Australia, UK). What are the 3 most important success factors for a successful FMC launch? Cite industry reports.'
@@ -2844,6 +2891,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings Berhad',
       tagline: 'Coal trading breach USD 22.4M — Board emergency meeting + dual HQ MY+ID restructure.',
       scenario: 'Zava Group Holdings Berhad is a dual-HQ (Kuala Lumpur / Jakarta) ASEAN conglomerate with 11 divisions and MYR 44.8B revenue. A coal trading desk has breached its USD 20M single-counterparty exposure limit by USD 2.4M. An emergency Board meeting has been called. Three divisions are underperforming vs FY2026 targets. Group CFO Hadar Caspit must present to the Board on Monday.',
+      companyID: '',
+      taglineID: '',
       files: [
         '01_Zava_Group_Financial_Performance.xlsx',
         '03_Zava_Group_Strategy_Framework.docx',
@@ -2866,7 +2915,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research governance best practices for commodity trading risk management in diversified Asian conglomerates. I need: (1) Typical exposure limit frameworks used by conglomerates with commodity trading arms, (2) How boards of comparable conglomerates (Sime Darby, IOI, IJM) structure their risk oversight, (3) Any regulatory guidance from Bursa Malaysia or the Securities Commission on trading risk governance for listed conglomerates. Provide citations.',
             'Research the current Asian coal market — specifically Indonesian thermal coal pricing, demand trends from China and India, and any regulatory restrictions affecting Malaysian-listed companies\' coal trading activities. I need to brief the Board on whether our coal trading exposure represents a strategic risk beyond the immediate limit breach. Cite sources.'
@@ -3010,6 +3059,8 @@ window.HUB_DATA = {
       company: 'Tranglo Payments Group',
       tagline: '120+ corridor remittance — BNM e-money licence renewal + fraud detection ML upgrade.',
       scenario: 'Tranglo Payments Group operates cross-border remittance across 120+ corridors serving 8 million active digital wallets. The BNM e-money licence is up for renewal in 3 months. A fraud detection ML model upgrade is underway — current model flags 94% of fraud with a 12% false positive rate. ASEAN Payment Network (APN) integration is in progress.',
+      companyID: '',
+      taglineID: '',
       files: [
         '13_Zava_Financial_Services.xlsx',
         'BNK_01_Meridian_Bank.xlsx'
@@ -3030,7 +3081,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the competitive landscape for digital cross-border remittance in Southeast Asia. I need: (1) Market size and growth rate for intra-ASEAN and ASEAN-GCC remittance in 2024–2025, (2) The top 5 competitors (Wise, Western Union, GrabPay, Sea Money, local players) and their key differentiators, (3) The impact of APN on incumbent remittance operators. Provide citations.',
             'Research best practices for fraud detection in digital payments — specifically for cross-border remittance. What ML model architectures are most effective for remittance fraud? How do leading fintechs balance detection rate and false positive rate? Are there regulatory expectations from BNM on fraud detection performance? Cite industry sources.'
@@ -3174,6 +3225,8 @@ window.HUB_DATA = {
       company: 'Jabatan Perkhidmatan Awam (JPA) / State Digital Office',
       tagline: 'MyGovID rollout — 2.4M constituent digital interactions, e-service transformation.',
       scenario: 'The Selangor State Digital Office is leading the digital government transformation agenda — migrating 48 government services online, integrating with MyGovID (national digital identity), and reducing counter-based transactions by 60% within 18 months. 2.4 million constituent interactions per year are being transformed through digital channels.',
+      companyID: '',
+      taglineID: '',
       files: [
         '03_Zava_Group_Strategy_Framework.docx',
         '02_Zava_Group_Policy_Handbook.docx'
@@ -3194,7 +3247,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research successful government digital transformation case studies in Southeast Asia and comparable markets. I need: (1) The top 3 governments that have achieved the highest e-service adoption rates, (2) The specific interventions that drove adoption beyond 60%, (3) How they handled data privacy and cybersecurity concerns with constituents. Provide citations from GovTech publications or government reports.',
             'Research the Malaysia Government digital transformation roadmap — specifically MAMPU\'s guidelines, the MyDigital blueprint, and any Selangor-specific digital government initiatives. What are the performance benchmarks the federal government expects from state agencies? Are there any grant funding programmes for digital government projects? Cite official sources.'
@@ -3338,6 +3391,8 @@ window.HUB_DATA = {
       company: 'Zava Properties Berhad',
       tagline: 'MYR 8.2B REIT injection — Shell anchor lease expiry Dec 2026 + Penang MYR 2.1B GDV.',
       scenario: 'Zava Properties Berhad manages a 25-asset commercial, industrial, and hospitality portfolio valued at MYR 8.2B across Malaysia and Indonesia. The group is structuring a REIT IPO in 2026. Menara Zava KL\'s anchor tenant (Shell, 820,000 sq ft) has flagged a potential lease non-renewal in December 2026. A Penang mixed-development with MYR 2.1B GDV has received planning approval.',
+      companyID: '',
+      taglineID: '',
       files: [
         '14_Zava_Properties_Portfolio.xlsx',
         '03_Zava_Group_Strategy_Framework.docx'
@@ -3358,7 +3413,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the Malaysian REIT market in 2024–2025. I need: (1) Current REIT yield compression trends in Malaysia, (2) Recent REIT IPOs and their pricing — average premium/discount to NAV, (3) The major institutional investors in Malaysian REITs and their investment criteria, (4) How comparable Malaysian REITs (Sunway REIT, IGB REIT, Pavilion REIT) have handled large tenant vacancies. Cite sources.',
             'Research the Penang property market — specifically the mixed-use development segment. What is the current residential and commercial absorption rate in Georgetown and Batu Kawan? Who are the major developer competitors? What GDV pricing benchmarks apply for a MYR 2.1B mixed-use development? Cite Savills, JLL, or CBRE reports.'
@@ -3502,6 +3557,8 @@ window.HUB_DATA = {
       company: 'Samudera Logistics',
       tagline: '48 vessels, IMO 2030 decarbonisation — biofuel pilot + cold chain expansion.',
       scenario: 'Samudera Logistics operates 48 vessels across ASEAN corridors and manages 340,000 sq ft of bonded warehousing. IMO 2030 carbon intensity regulations require a 40% fuel efficiency improvement. A biofuel blending pilot on 6 vessels launched in Q1 FY2025. Cold chain logistics expansion into 3 new markets is in progress.',
+      companyID: '',
+      taglineID: '',
       files: [
         '15_Zava_BPO_Operations.xlsx',
         '20_Zava_ESG_Sustainability_Framework.docx'
@@ -3522,7 +3579,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research IMO 2030 decarbonisation requirements for ASEAN shipping operators. I need: (1) The CII rating thresholds and how they change annually, (2) How leading ASEAN shipping companies (MISC, PIL, Wan Hai) are addressing IMO 2030 compliance, (3) The availability and pricing of sustainable marine fuels in ASEAN ports, (4) Any Malaysian government incentives for green shipping. Cite official IMO and industry sources.',
             'Research the ASEAN cold chain logistics market. I need: (1) Market size and growth rate in Malaysia, Indonesia, and Vietnam, (2) Key demand drivers — pharmaceutical, food & beverage, e-commerce, (3) Top 3PL providers and their cold chain capabilities, (4) Investment requirements for cold storage expansion. Cite logistics industry reports.'
@@ -3666,6 +3723,8 @@ window.HUB_DATA = {
       company: 'PrimaCal Energy Berhad',
       tagline: 'ESDM royalty audit + EUDR-adjacent ESG risk — coal exit transition plan FY2026.',
       scenario: 'PrimaCal Energy Berhad operates 3 thermal coal concessions in East Kalimantan, Indonesia with 28MT annual production capacity. An ESDM (Indonesian Ministry of Energy) royalty audit is underway covering FY2022–FY2024. ESG pressure from European offtakers is intensifying. The Board has resolved to develop a coal exit and energy transition plan by Q4 FY2025.',
+      companyID: '',
+      taglineID: '',
       files: [
         '16_Zava_Trading_Commodities.xlsx',
         '20_Zava_ESG_Sustainability_Framework.docx'
@@ -3686,7 +3745,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research ESG requirements for coal mining companies listed on Bursa Malaysia. I need: (1) Bursa Malaysia\'s sustainability reporting requirements for mining companies, (2) Whether any Malaysian-listed coal companies have published coal exit timelines and what the investor reaction was, (3) How comparable companies (Bumi Resources, Indo Tambangraya Megah) are managing ESG pressure. Cite sources.',
             'Research the energy transition opportunity for coal mine operators in East Kalimantan. What clean energy projects are feasible on coal mining land? Are there any Indonesian government incentives for coal-to-clean-energy transitions? What has been the experience of companies like Adaro in transitioning from coal? Cite industry sources.'
@@ -3830,6 +3889,8 @@ window.HUB_DATA = {
       company: 'Suria Hotels & Resorts',
       tagline: 'RevPAR MYR 284 — F&B margin recovery + staff turnover 32% reduction programme.',
       scenario: 'Suria Hotels & Resorts operates 14 properties across Malaysia, Indonesia, and Thailand — 4 five-star city hotels, 6 four-star business hotels, and 4 resort properties. RevPAR stands at MYR 284 vs pre-COVID benchmark of MYR 318. F&B margin has slipped to 18.4% from a target of 26%. Staff turnover is 32% — the industry\'s leading challenge post-COVID.',
+      companyID: '',
+      taglineID: '',
       files: [
         'HT_01_Suria_Hotels_Resorts.xlsx',
         '18_Zava_HR_Analytics.xlsx'
@@ -3850,7 +3911,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the hotel and resort market recovery in Malaysia, Indonesia, and Thailand in 2024–2025. I need: (1) Current average occupancy and RevPAR benchmarks by market and hotel class (5-star, 4-star, resort), (2) Key demand drivers — MICE, corporate, leisure, inbound tourism, (3) How leading hotel chains (Marriott, IHG, Shangri-La) are driving ADR recovery. Cite industry sources (STR, JLL, CBRE Hotels).',
             'Research F&B profitability improvement best practices for hotel F&B operations in Southeast Asia. What menu engineering techniques, supplier renegotiation strategies, and upselling training programmes have delivered the best margin improvements? Are there any relevant technology solutions (revenue management, menu analytics) used by leading Asian hotel groups? Cite sources.'
@@ -3994,6 +4055,8 @@ window.HUB_DATA = {
       company: 'NusaBuild Group Berhad',
       tagline: 'LRT 3 delayed 14 weeks — CIDB Green Building certification + ESG tender scoring.',
       scenario: 'NusaBuild Group Berhad is Malaysia\'s 3rd largest civil and building contractor with a RM 8.4B order book. The LRT3 package is 14 weeks behind schedule due to ground condition variations. CIDB Green Building Index (GBI) certification is required for 6 upcoming government tenders. ESG scoring now forms 15% of government tender evaluation.',
+      companyID: '',
+      taglineID: '',
       files: [
         '14_Zava_Properties_Portfolio.xlsx',
         '12_Zava_Manufacturing_KPIs.xlsx'
@@ -4014,7 +4077,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the Malaysian construction industry outlook for 2025–2027. I need: (1) Total value of government infrastructure projects in the pipeline, (2) Key competitive dynamics — who are the top contractors and how are they positioned for upcoming tenders, (3) Impact of rising steel, concrete, and labour costs on contractor margins, (4) Government\'s ESG requirements in tender evaluation. Cite official CIDB, JKR, or MITI sources.',
             'Research the LRT and MRT extension projects in Malaysia — current status, contractor packages, any delays or cost overruns reported publicly, and how the government has managed extension of time claims historically. Cite news sources and official project announcements.'
@@ -4158,6 +4221,8 @@ window.HUB_DATA = {
       company: 'MAHB / Airport Operator',
       tagline: '73.4M pax FY2024 — KLIA2 MYR 2.8B expansion + aeronautical charge regulatory review.',
       scenario: 'Malaysia Airports Holdings Berhad (MAHB) manages 39 airports including KLIA. FY2024 passenger throughput was 73.4M — 94% of pre-COVID levels. KLIA2 is undergoing a MYR 2.8B capacity expansion. A regulatory review of aeronautical charges is due by MAVCOM in Q3 FY2025, which will affect airline relationships and airport revenue.',
+      companyID: '',
+      taglineID: '',
       files: [
         '01_Zava_Group_Financial_Performance.xlsx',
         '03_Zava_Group_Strategy_Framework.docx'
@@ -4178,7 +4243,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research international airport regulatory frameworks — specifically how aeronautical charges are set for airports of comparable size to KLIA (60–80M passengers per year). I need: (1) How Changi Airport, Dubai International, and Heathrow structure their regulatory charge frameworks, (2) The typical WACC (weighted average cost of capital) used in airport regulatory determinations, (3) How capacity expansion capex is treated in the regulated asset base. Cite regulatory decisions and academic sources.',
             'Research the Malaysia aviation market recovery in 2024–2025. I need: (1) Passenger volume recovery by route type (domestic, ASEAN, international), (2) The top 10 airlines by passenger volume at KLIA and KLIA2, (3) Any new route announcements or airline capacity additions, (4) Budget airline growth vs full service at Malaysian airports. Cite MAVCOM, MAHB, or ACI sources.'
@@ -4322,6 +4387,8 @@ window.HUB_DATA = {
       company: 'BrightMart Group',
       tagline: '148 stores — private label 34% mix target + supply chain shrinkage 2.1% issue.',
       scenario: 'BrightMart Group operates 148 grocery stores across Peninsular Malaysia with MYR 4.2B annual gross merchandising value. Private label products are 28% of sales vs a 34% target. Supply chain shrinkage is 2.1% — double the 1.0% industry benchmark. A fresh food expansion is adding 18 stores in FY2025.',
+      companyID: '',
+      taglineID: '',
       files: [
         'RT_01_BrightMart_Group.xlsx',
         'RT_02_BrightMart_Strategy.docx'
@@ -4342,7 +4409,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the Malaysian grocery retail market in 2024–2025. I need: (1) Market size and growth rate — total grocery retail GMV, (2) Key competitive dynamics — Lotus\'s, Giant, Jaya Grocer, AEON, and the rise of convenience stores and online grocery, (3) Consumer trends — health, halal, local brands, (4) Private label penetration rate in Malaysia vs regional benchmarks. Cite Nielsen, Kantar, or Euromonitor sources.',
             'Research supply chain shrinkage reduction technologies and best practices for grocery retailers. What specific technologies (RFID, computer vision at self-checkout, AI demand forecasting) have delivered the best ROI for mid-size grocery chains? Cite case studies with quantified results.'
@@ -4486,6 +4553,8 @@ window.HUB_DATA = {
       company: 'Prism Media Group',
       tagline: 'Linear TV audience -34% — digital pivot + content IP monetisation strategy.',
       scenario: 'Prism Media Group operates 4 free-to-air TV channels, 2 radio networks, an OTT streaming platform (PrismPlay), and a content production studio. Linear TV audience has declined 34% in 5 years. PrismPlay has 2.1M subscribers with 28% annual churn. The content studio has 340 hours of unmonetised IP in its library.',
+      companyID: '',
+      taglineID: '',
       files: [
         'TC_01_ClearWave_Communications.xlsx',
         'TC_02_ClearWave_Strategy.docx'
@@ -4506,7 +4575,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the Malaysian media and OTT streaming market in 2024–2025. I need: (1) Total OTT subscribers in Malaysia and growth rate, (2) Competitive landscape — Netflix, Disney+, Astro GO, sooka, YouTube Premium, (3) Content preferences of Malaysian audiences — local vs international, Malay vs English vs Chinese language, (4) Advertising market trends — digital vs broadcast. Cite Nielsen, Kantar, or MCMC data.',
             'Research content library monetisation strategies for regional broadcasters. I need: (1) How broadcasters like ABS-CBN (Philippines), TVRI (Indonesia), and Thai PBS have monetised their content libraries internationally, (2) The value of Southeast Asian content IP in international markets, (3) YouTube Shorts and short-form video monetisation potential for broadcast content. Cite industry sources.'
@@ -4650,6 +4719,8 @@ window.HUB_DATA = {
       company: 'Danamas Capital Berhad',
       tagline: 'MYR 48.2B AUM — mandate review + Khazanah-style strategic equity portfolio refresh.',
       scenario: 'Danamas Capital Berhad is Malaysia\'s state-linked strategic investment arm managing MYR 48.2B AUM across 34 investee companies. The government has initiated a mandate review to clarify the balance between commercial returns and national development objectives. The portfolio includes 3 underperforming GLCs requiring either active engagement or divestment.',
+      companyID: '',
+      taglineID: '',
       files: [
         'GLC_01_Danamas_Capital.xlsx',
         'GLC_02_Danamas_Strategy.docx'
@@ -4670,7 +4741,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the governance and investment strategies of major Asian sovereign and government-linked investment arms — specifically Temasek (Singapore), Khazanah Nasional (Malaysia), GIC (Singapore), and KWAP (Malaysia). I need: (1) Their AUM and portfolio composition, (2) How they balance commercial returns vs national development, (3) Their ESG integration approach, (4) Their performance measurement frameworks. Cite annual reports and academic sources.',
             'Research the current landscape of GLCs (Government-Linked Companies) in Malaysia. What are the biggest GLCs by market cap? How has GLC financial performance compared to the broader Bursa Malaysia index over the past 5 years? Are there any GLCs currently under active government restructuring? Cite Putrajaya GLC Transformation Programme reports and Bursa data.'
@@ -4814,6 +4885,8 @@ window.HUB_DATA = {
       company: 'Bank Negara Malaysia / OJK Proxy',
       tagline: 'NPL monitoring + IFSA digital banking licence review + systemic risk report.',
       scenario: 'A central bank supervisory team is monitoring 18 licensed financial institutions. NPL in the personal loan segment has breached the 3.5% system-wide threshold. 2 new digital banking licences are under post-approval operational review. The annual systemic risk report to the Board of Governors is due in 3 weeks.',
+      companyID: '',
+      taglineID: '',
       files: [
         'BNK_02_Meridian_Bank_Strategy.docx',
         'Email_06_BNM_Regulatory_Correspondence.docx'
@@ -4834,7 +4907,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research international central bank supervisory practices for managing NPL breaches in the banking system. I need: (1) How comparable regulators (MAS Singapore, BSP Philippines, OJK Indonesia) have responded to system-wide NPL increases, (2) The typical supervisory toolkit used — enhanced monitoring, capital surcharges, lending restrictions, (3) Any research on the effectiveness of different supervisory interventions in reducing NPL. Cite BIS or IMF papers.',
             'Research the digital banking landscape in Malaysia. I need: (1) The 5 licensed digital banks and their operational progress to date, (2) Technology and risk management challenges typical for newly licensed digital banks, (3) How MAS Singapore and BSP Philippines have supervised digital bank post-licence build-outs. Cite official sources and fintech research.'
@@ -4980,6 +5053,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group HR Division',
       tagline: '87,000 employees, 32% BPO attrition crisis, ESG DEI targets, plantation replanting displacement.',
       scenario: 'The Group HR Division manages talent strategy, compensation, and people analytics for 87,420 employees across 11 divisions and 3 countries. Critical issues: Bengaluru BPO attrition at 31.2%, plantation estate worker displacement from replanting, Zava Bank losing talent to fintech, and new DEI commitment (40% women leadership by 2028).',
+      companyID: '',
+      taglineID: '',
       files: [
         '18_Zava_HR_Analytics.xlsx',
         '02_Zava_Group_Policy_Handbook.docx'
@@ -5000,7 +5075,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research BPO industry attrition best practices in India (Bengaluru, Hyderabad, Chennai). What attrition benchmarks exist for Malaysian-owned BPO operators in India? What retention programmes have worked for mid-size BPO companies competing with IT majors like Infosys and Wipro? Cite industry reports.',
             'Research DEI (Diversity, Equity, Inclusion) best practices in Malaysian GLCs and conglomerates. What are the most effective programmes for increasing women in senior leadership? How have companies like Maybank, Sime Darby, and Petronas progressed on their DEI targets? Cite MSWG or MyCERT data.'
@@ -5144,6 +5219,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group Finance Division',
       tagline: 'MYR 18.4B net debt, FOREX hedging 11 currencies, NPL breach remediation, REIT IPO structuring.',
       scenario: 'The Group Finance Division manages group treasury, reporting, tax, and investor relations. Net debt is MYR 18.4B at 0.82x gearing. FOREX exposure spans MYR, IDR, USD, SGD, INR, and 6 other currencies. Group CFO Hadar Caspit is preparing the FY2025 half-year results, the REIT IPO financial model, and the BNM remediation plan for Zava Bank.',
+      companyID: '',
+      taglineID: '',
       files: [
         '01_Zava_Group_Financial_Performance.xlsx',
         '03_Zava_Group_Strategy_Framework.docx'
@@ -5164,7 +5241,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the current Malaysian ringgit (MYR) and Indonesian rupiah (IDR) outlook for FY2025-FY2026. I need: (1) Consensus MYR/USD and IDR/USD forecasts from investment banks, (2) Key risk factors — US Fed policy, Bank Negara Malaysia stance, oil prices, (3) How other Malaysian conglomerates with significant IDR exposure are managing FOREX risk. Cite Bloomberg consensus or investment bank research.',
             'Research FY2025 earnings guidance trends for Malaysian listed conglomerates. What are analysts saying about Sime Darby, IOI, and IHH in terms of earnings recovery? How is the plantation sector expected to perform given CPO price movements? Cite broker research or Bloomberg.'
@@ -5308,6 +5385,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group Legal Division',
       tagline: 'NDA pipeline, JV agreements, Bursa disclosures, BPOM/BNM regulatory response management.',
       scenario: 'The Group Legal Division manages contract review, regulatory compliance, M&A legal support, and corporate secretarial obligations for the dual-listed Zava Group (Bursa Malaysia + IDX Jakarta). Current workload includes 14 active NDAs, 3 JV agreement negotiations, 2 regulatory responses (BNM and BPOM), and an upcoming Bursa Malaysia circular for shareholder approval of the REIT IPO.',
+      companyID: '',
+      taglineID: '',
       files: [
         '02_Zava_Group_Policy_Handbook.docx',
         'Email_07_Emergency_Board_Meeting.docx'
@@ -5328,7 +5407,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the legal framework for cross-border M&A transactions involving Malaysian and Indonesian companies. What are the key regulatory approvals required (MIDA, BKPM, competition authorities)? What deal structures are commonly used to navigate foreign ownership restrictions in Indonesia? Cite legal sources.',
             'Research the latest Malaysia Anti-Corruption Commission (MACC) guidelines for corporate compliance. What are the requirements under Section 17A of the MACC Act 2009 for GLCs and listed companies? What are the key elements of an "adequate procedures" compliance programme? Cite official MACC resources.'
@@ -5472,6 +5551,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group Risk Division',
       tagline: 'ERM framework refresh, coal trading limit breach, Zava Bank NPL, Cilegon enforcement — 4 active risk events.',
       scenario: 'The Group Risk Division manages Enterprise Risk Management, Internal Audit, and Board Risk Committee reporting across Zava Group. Four active risk events: coal trading position limit breach, Zava Bank NPL breach, Cilegon plant 3 BPOM enforcement notices, Perkebunan Lestari RSPO suspension. Board Risk Committee meets monthly; a special meeting has been called.',
+      companyID: '',
+      taglineID: '',
       files: [
         '01_Zava_Group_Financial_Performance.xlsx',
         '20_Zava_ESG_Sustainability_Framework.docx'
@@ -5492,7 +5573,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research enterprise risk management frameworks for diversified conglomerates in Southeast Asia. How do comparable groups (Sime Darby, IJM, Axiata) structure their ERM frameworks? What are the best practices for Group-level risk aggregation when you have 11 diverse business units? Cite ISO 31000, COSO ERM 2017, or comparable frameworks.',
             'Research Malaysian listed company risk disclosure requirements. What does Bursa Malaysia require in the annual report risk section for a company in multiple sectors? How do companies like Petronas and Maybank communicate risk appetite and emerging risks to shareholders? Cite Bursa guidelines.'
@@ -5636,6 +5717,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group Strategy Division',
       tagline: 'ZAVA FORWARD 2030 — 4 healthcare M&A targets, REIT IPO, pharma Vietnam expansion.',
       scenario: 'The Group Strategy Division drives the ZAVA FORWARD 2030 strategic plan — 5 pillars, MYR 12.4B capex over 5 years. Current M&A pipeline: 4 healthcare targets in evaluation (PrimeCare Holdings being the priority), REIT IPO 2026, Pharma expansion into Vietnam and Philippines. Divestment: 2 non-core assets identified.',
+      companyID: '',
+      taglineID: '',
       files: [
         '04_Zava_MA_Evaluation_Framework.docx',
         '01_Zava_Group_Financial_Performance.xlsx'
@@ -5656,7 +5739,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research the Southeast Asian private hospital and healthcare M&A market. I need: (1) Current EV/EBITDA multiples for hospital acquisitions in Malaysia and Indonesia, (2) Key strategic rationale for conglomerate hospital investments — IHH, Columbia Asia, Pantai, (3) How healthcare M&A deals are structured in Malaysia (acquisition of shares vs assets, minority buy-in vs full acquisition). Cite Mergermarket or healthcare sector M&A reports.',
             'Research Vietnam pharma market entry strategies for Malaysian generic drug manufacturers. What are the licensing requirements from the DAV (Drug Administration of Vietnam)? Who are the existing Malaysian pharma companies in Vietnam and what entry mode did they use (greenfield, JV, acquisition, distributor)? Cite industry sources.'
@@ -5800,6 +5883,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group Marketing & Comms',
       tagline: 'Investor Day comms, Zava Bank NPL media risk, Perkebunan Lestari ESG reputation management.',
       scenario: 'Group Marketing & Communications manages brand, PR, investor communications, and crisis communications for all 11 Zava divisions and the Group. Three live communications challenges: Investor Day messaging for ZAVA FORWARD 2030, media risk from Zava Bank NPL coverage, and ESG reputation risk from the Perkebunan Lestari RSPO suspension.',
+      companyID: '',
+      taglineID: '',
       files: [
         '03_Zava_Group_Strategy_Framework.docx',
         'Email_08_Coal_Trading_Breach.docx'
@@ -5820,7 +5905,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research best practices for investor day communications for Asian conglomerates. What are the most effective formats, content elements, and follow-up strategies? How do Sime Darby, IHH, and Axiata structure their investor days? Cite IR best practice resources.',
             'Research the current media coverage of Malaysian banking NPL issues and ESG controversies in palm oil. What is the media and investor sentiment toward Malaysian conglomerates with diversified exposure in 2024-2025? Are there any specific journalists or publications most influential in this space? Cite media analysis.'
@@ -5964,6 +6049,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group IT Division',
       tagline: 'M365 Copilot rollout 87K users, ERP harmonisation, cybersecurity incident response, data lake.',
       scenario: 'The Group IT Division leads digital transformation across 87,420 users in 3 countries. Current priorities: Microsoft 365 Copilot rollout (Phase 1: 2,400 licences, Phase 2: full estate), ERP harmonisation (3 ERPs → SAP S/4HANA single platform), shared data lake on Azure, and a cybersecurity posture uplift following a phishing incident at Zava Bank.',
+      companyID: '',
+      taglineID: '',
       files: [
         '03_Zava_Group_Strategy_Framework.docx',
         '02_Zava_Group_Policy_Handbook.docx'
@@ -5984,7 +6071,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research Microsoft 365 Copilot adoption best practices for large enterprises. What are the proven adoption frameworks — Microsoft\'s own, Gartner, Forrester? What are the key metrics that indicate successful Copilot adoption? How have comparable Asian conglomerates structured their Copilot rollout? Cite Microsoft or analyst reports.',
             'Research SAP S/4HANA implementation best practices for multi-division conglomerates in ASEAN. What are the common failure modes in large SAP implementations? What is the typical implementation timeline and cost for 87,000 users across MY, ID, and IN? How do successful companies manage the change management challenge? Cite Gartner or SAP partner reports.'
@@ -6128,6 +6215,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group ESG Division',
       tagline: 'RSPO suspension, EUDR non-compliance, Net Zero 2050, Bursa sustainability reporting.',
       scenario: 'The Group ESG Division drives sustainability strategy, reporting, and stakeholder engagement. Critical issues: Perkebunan Lestari RSPO suspension (8,200ha peatland), EUDR compliance deadline Q4 2025, Bursa Malaysia enhanced sustainability reporting from FY2025, and the Net Zero 2050 pathway requiring a 40% Scope 1 reduction by 2030.',
+      companyID: '',
+      taglineID: '',
       files: [
         '20_Zava_ESG_Sustainability_Framework.docx',
         '22_Zava_Plantation_RSPO_Audit.docx'
@@ -6148,7 +6237,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research RSPO suspension remediation requirements. What are the specific steps a palm oil company must take to achieve reinstatement after suspension? Are there any precedent cases of companies successfully reinstating RSPO certification after a peatland nonconformance, and how long did it take? Cite RSPO official documentation.',
             'Research EUDR compliance requirements for Malaysian palm oil exporters. What is the practical implementation timeline, what systems and certifications are needed, and how are Malaysian exporters responding — MPOA, MPIC, or individual company approaches? Cite official EU, MPOB, or industry sources.'
@@ -6292,6 +6381,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group COO Office',
       tagline: 'Nilai plant OEE crisis, Cilegon enforcement notices, supply chain resilience, cross-division OpEx.',
       scenario: 'The Group COO Office oversees operational excellence across 6 factories, 12 plantations, 3 chemical plants, 10 hospitals, and 5 BPO delivery centres. Live crises: Nilai automotive plant OEE has declined from 76% to 62% in 18 months, Cilegon Chemicals has 3 BPOM enforcement notices, and the CPO feedstock shortage is impacting chemical plant utilisation. Group-wide OpEx reduction target: MYR 480M in FY2025.',
+      companyID: '',
+      taglineID: '',
       files: [
         '12_Zava_Manufacturing_KPIs.xlsx',
         '15_Zava_BPO_Operations.xlsx'
@@ -6312,7 +6403,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research OEE benchmarks for automotive component manufacturing plants in ASEAN. What is a world-class OEE for precision stamping and CNC machining? What are the documented root causes of OEE decline in aging manufacturing plants and what are the proven remediation approaches? Cite industry sources like ARC Advisory, LNS Research, or Siemens.',
             'Research process safety management best practices for chemical plants in Indonesia regulated by BPOM. What are the BPOM enforcement procedures when an enforcement notice is issued? What are the typical timeline and requirements to lift a production suspension? Cite BPOM regulations or official Indonesian industrial safety sources.'
@@ -6456,6 +6547,8 @@ window.HUB_DATA = {
       company: 'Zava Group Holdings — Group CEO & Board Secretariat',
       tagline: 'Q1 FY2025 Board pack, ZAVA FORWARD 2030 strategy briefing, dual listing compliance.',
       scenario: 'The Group CEO and Board Secretariat serve the 11-member Board of Directors of Zava Group Holdings Berhad (Bursa main market, IDX dual-listed). Priorities: Q1 FY2025 Board pack covering NPL breach, RSPO suspension, coal breach, and OEE crisis. Annual General Meeting preparation. ZAVA FORWARD 2030 strategy presentation. Corporate governance compliance for Bursa and IDX simultaneous disclosure obligations.',
+      companyID: '',
+      taglineID: '',
       files: [
         '01_Zava_Group_Financial_Performance.xlsx',
         'Email_07_Emergency_Board_Meeting.docx'
@@ -6476,7 +6569,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Access via Microsoft 365 Copilot Chat (copilot.microsoft.com or Teams) > click Agents > Researcher. Grounds answers in live web sources and your organisation data with full citations.',
+          desc: 'Access via Microsoft 365 Copilot Chat > Agents > Researcher. Researcher automatically critiques every source — verifying claims against the original before including them in the report. Grounds answers in live web sources and your organisation\'s data with full citations. Faster and more reliable than manual research.',
           prompts: [
             'Research Bursa Malaysia\'s mandatory immediate announcement requirements under the Listing Requirements. When must a company make an immediate announcement vs a next business day announcement? What specifically must be disclosed when a subsidiary bank breaches a regulatory capital ratio or NPL threshold? Cite Bursa Listing Requirements or SC circulars.',
             'Research Malaysian corporate governance best practices for conglomerate holding company boards. What are the MCCG 2021 requirements for Board composition (executive vs non-executive, independent), Board committees (Audit, Risk, Remuneration, Nomination), and Board effectiveness evaluation? How are the top Malaysian conglomerates (Sime Darby, IHH, IOI) rated on governance by MSWG or Bursa? Cite MCCG 2021 or governance rating reports.'
