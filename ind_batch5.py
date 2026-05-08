@@ -6,9 +6,9 @@ INDUSTRIES_5 = [
 
 # ── PLANTATION & AGRIBUSINESS ──────────────────────────────────────────────
 ind('plantation','plantation','Plantation & Agribusiness','🌿','#2E7D32','#43A047',
-    'Seri Sawit Nusantara Berhad',
+    'Zava Plantation Malaysia',
     'Yield down 11%, RSPO surveillance flags 9 majors — Board capex decision in 7 days.',
-    "PT Sinar Mas Agro Nusantara Tbk operates 142,000 hectares of palm estates across Sabah, Riau, and Kalimantan with 14,800 employees, 7 mills, and 1 refinery. FFB yield has slipped 11% below plan over 3 quarters, the RSPO surveillance audit identified 9 major non-conformities, and KLHK has issued a follow-up letter on land-use disclosures. Two German and one Dutch premium buyer have flagged that contract renewals are conditional on a credible 90-day remediation plan. The Board meets in 7 days to decide whether to defer FY2026 capex on the Riau refinery expansion and how to communicate certification gaps to ISPO and Kementerian Pertanian without triggering market-access escalation.",
+    "Zava Plantation Indonesia operates 142,000 hectares of palm estates across Sabah, Riau, and Kalimantan with 14,800 employees, 7 mills, and 1 refinery. FFB yield has slipped 11% below plan over 3 quarters, the RSPO surveillance audit identified 9 major non-conformities, and KLHK has issued a follow-up letter on land-use disclosures. Two German and one Dutch premium buyer have flagged that contract renewals are conditional on a credible 90-day remediation plan. The Board meets in 7 days to decide whether to defer FY2026 capex on the Riau refinery expansion and how to communicate certification gaps to ISPO and Kementerian Pertanian without triggering market-access escalation.",
     ['PLT_01_Estate_Operations.xlsx','PLT_02_MSPO_Certification_Manual.docx','PLT_03_Estate_Operations_SOP.docx','PLT_04_Sustainability_Roadmap.xlsx','PLT_05_Buyer_Contracts_Register.xlsx','PLT_06_Board_Briefing_Notes.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -181,9 +181,9 @@ ind('plantation','plantation','Plantation & Agribusiness','🌿','#2E7D32','#43A
       persona=['Citra Wulandari','Bayu Pranowo'],
       personaID=['Citra Wulandari','Bayu Pranowo']),
     ],
-    companyID='PT Sinar Mas Agro Nusantara Tbk',
+    companyID='Zava Plantation Indonesia',
     taglineID='Hasil turun 11%, surveillance RSPO menandai 9 mayor — keputusan capex Direksi dalam 7 hari.',
-    scenarioID='PT Sinar Mas Agro Nusantara Tbk mengoperasikan 142.000 hektar estate sawit di Sabah, Riau, dan Kalimantan dengan 14.800 karyawan, 7 pabrik, dan 1 kilang. Hasil FFB telah meleset 11% dari RKAP selama 3 kuartal, audit surveillance RSPO mengidentifikasi 9 ketidaksesuaian mayor, dan KLHK telah mengeluarkan surat tindak lanjut mengenai pengungkapan tata guna lahan. Dua pembeli premium Jerman dan satu Belanda telah menandai bahwa perpanjangan kontrak bergantung pada rencana remediasi 90 hari yang kredibel. Direksi bertemu dalam 7 hari untuk memutuskan apakah akan menunda capex FY2026 ekspansi kilang Riau dan bagaimana mengkomunikasikan gap sertifikasi kepada ISPO dan Kementerian Pertanian tanpa memicu eskalasi akses pasar.',
+    scenarioID='Zava Plantation Indonesia mengoperasikan 142.000 hektar estate sawit di Sabah, Riau, dan Kalimantan dengan 14.800 karyawan, 7 pabrik, dan 1 kilang. Hasil FFB telah meleset 11% dari RKAP selama 3 kuartal, audit surveillance RSPO mengidentifikasi 9 ketidaksesuaian mayor, dan KLHK telah mengeluarkan surat tindak lanjut mengenai pengungkapan tata guna lahan. Dua pembeli premium Jerman dan satu Belanda telah menandai bahwa perpanjangan kontrak bergantung pada rencana remediasi 90 hari yang kredibel. Direksi bertemu dalam 7 hari untuk memutuskan apakah akan menunda capex FY2026 ekspansi kilang Riau dan bagaimana mengkomunikasikan gap sertifikasi kepada ISPO dan Kementerian Pertanian tanpa memicu eskalasi akses pasar.',
     relevantDepts=['esg','operations','strategy','finance'],
     personas=[
       {'name':'Bayu Pranowo','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
@@ -228,9 +228,9 @@ ind('plantation','plantation','Plantation & Agribusiness','🌿','#2E7D32','#43A
 
 # ── BPO SERVICES ──────────────────────────────────────────────────────────
 ind('bpo-services','bpo-services','BPO Services','📞','#3949AB','#5C6BC0',
-    'Pacific Axis Services Berhad',
+    'Zava BPO Malaysia',
     'Attrition 38%, 4 of top 6 anchor clients amber, IDR 980B in renewals — Komite Eksekutif in 5 days.',
-    "PT Layanan Bisnis Nusantara Tbk runs 9 multilingual delivery centres across Jakarta, Bandung, Cebu, and Kuala Lumpur with 11,200 seats serving banking, insurance, and consumer clients. Annualised attrition has climbed to 38%, the SLA Dashboard shows 4 of the top 6 anchor clients in amber, and 2 contracts worth IDR 980 billion are scheduled for renewal in 12 weeks. Kemnaker has asked for a written response on overtime practices, BSSN has flagged a near-miss data incident at the Bandung site, and the UU PDP audit cycle starts next month. The CEO needs an integrated recovery and renewal pack for the Komite Eksekutif in 5 days.",
+    "Zava BPO Indonesia runs 9 multilingual delivery centres across Jakarta, Bandung, Cebu, and Kuala Lumpur with 11,200 seats serving banking, insurance, and consumer clients. Annualised attrition has climbed to 38%, the SLA Dashboard shows 4 of the top 6 anchor clients in amber, and 2 contracts worth IDR 980 billion are scheduled for renewal in 12 weeks. Kemnaker has asked for a written response on overtime practices, BSSN has flagged a near-miss data incident at the Bandung site, and the UU PDP audit cycle starts next month. The CEO needs an integrated recovery and renewal pack for the Komite Eksekutif in 5 days.",
     ['BPO_01_Service_Delivery.xlsx','BPO_02_Client_Service_Agreement.docx','BPO_03_Quality_Management_Framework.docx','BPO_04_Workforce_Plan.xlsx','BPO_05_Cyber_Compliance_Pack.docx','BPO_06_Renewal_Pipeline.xlsx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -403,9 +403,9 @@ ind('bpo-services','bpo-services','BPO Services','📞','#3949AB','#5C6BC0',
       persona=['Maya Anggraini','Andi Surya'],
       personaID=['Maya Anggraini','Andi Surya']),
     ],
-    companyID='PT Layanan Bisnis Nusantara Tbk',
+    companyID='Zava BPO Indonesia',
     taglineID='Attrition 38%, 4 dari 6 klien anchor kuning, IDR 980 miliar perpanjangan \u2014 Komite Eksekutif dalam 5 hari.',
-    scenarioID='PT Layanan Bisnis Nusantara Tbk menjalankan 9 delivery centre multibahasa di Jakarta, Bandung, Cebu, dan Kuala Lumpur dengan 11.200 seat melayani klien perbankan, asuransi, dan konsumer. Attrition tahunan telah naik ke 38%, SLA Dashboard menunjukkan 4 dari 6 klien anchor teratas berstatus kuning, dan 2 kontrak senilai IDR 980 miliar dijadwalkan diperpanjang dalam 12 minggu. Kemnaker telah meminta tanggapan tertulis mengenai praktik lembur, BSSN telah menandai insiden data near-miss di lokasi Bandung, dan siklus audit UU PDP dimulai bulan depan. Direktur Utama membutuhkan paket pemulihan dan perpanjangan terintegrasi untuk Komite Eksekutif dalam 5 hari.',
+    scenarioID='Zava BPO Indonesia menjalankan 9 delivery centre multibahasa di Jakarta, Bandung, Cebu, dan Kuala Lumpur dengan 11.200 seat melayani klien perbankan, asuransi, dan konsumer. Attrition tahunan telah naik ke 38%, SLA Dashboard menunjukkan 4 dari 6 klien anchor teratas berstatus kuning, dan 2 kontrak senilai IDR 980 miliar dijadwalkan diperpanjang dalam 12 minggu. Kemnaker telah meminta tanggapan tertulis mengenai praktik lembur, BSSN telah menandai insiden data near-miss di lokasi Bandung, dan siklus audit UU PDP dimulai bulan depan. Direktur Utama membutuhkan paket pemulihan dan perpanjangan terintegrasi untuk Komite Eksekutif dalam 5 hari.',
     relevantDepts=['operations','hr','finance','it'],
     personas=[
       {'name':'Andi Surya','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
@@ -450,9 +450,9 @@ ind('bpo-services','bpo-services','BPO Services','📞','#3949AB','#5C6BC0',
 
 # ── TELCO ─────────────────────────────────────────────────────────────────
 ind('telco','telco','Telco','📡','#00838F','#00ACC1',
-    'Satria Jaringan Digital Berhad',
+    'Zava Telco Malaysia',
     'Coverage 14 sites short, churn 2.3%, ARPU -6%, BRTI spectrum review in 10 days.',
-    "PT Telekomunikasi Nusantara Tbk serves 38.4 million subscribers across Sumatra, Java, and Kalimantan with 11,600 employees and 14,200 active sites. Coverage build is running 14 sites short of the Kominfo USO commitment, postpaid churn has climbed to 2.3% monthly in 4 priority clusters, blended ARPU has slipped 6%, and BRTI has scheduled a spectrum-utilisation review in 10 days. OJK has separately asked for the digital-payments licence cohort report. The Board needs a defensible network, commercial, and regulatory recovery story before approving the FY2026 capex envelope.",
+    "Zava Telco Indonesia serves 38.4 million subscribers across Sumatra, Java, and Kalimantan with 11,600 employees and 14,200 active sites. Coverage build is running 14 sites short of the Kominfo USO commitment, postpaid churn has climbed to 2.3% monthly in 4 priority clusters, blended ARPU has slipped 6%, and BRTI has scheduled a spectrum-utilisation review in 10 days. OJK has separately asked for the digital-payments licence cohort report. The Board needs a defensible network, commercial, and regulatory recovery story before approving the FY2026 capex envelope.",
     ['TC_01_Network_Performance.xlsx','TC_02_Spectrum_Compliance_Report.docx','TC_03_Network_Rollout_Strategy.docx','TC_04_Subscriber_ARPU_Bridge.xlsx','TC_05_Kominfo_BRTI_Submissions.docx','TC_06_Capex_Approvals_Tracker.xlsx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -625,9 +625,9 @@ ind('telco','telco','Telco','📡','#00838F','#00ACC1',
       persona=['Wulan Setiawati','Rangga Aditama'],
       personaID=['Wulan Setiawati','Rangga Aditama']),
     ],
-    companyID='PT Telekomunikasi Nusantara Tbk',
+    companyID='Zava Telco Indonesia',
     taglineID='Cakupan tertinggal 14 site, churn 2,3%, ARPU -6%, tinjauan spektrum BRTI dalam 10 hari.',
-    scenarioID='PT Telekomunikasi Nusantara Tbk melayani 38,4 juta pelanggan di Sumatra, Jawa, dan Kalimantan dengan 11.600 karyawan dan 14.200 site aktif. Pembangunan cakupan tertinggal 14 site dari komitmen USO Kominfo, churn pascabayar telah naik ke 2,3% bulanan di 4 cluster prioritas, ARPU blended meleset 6%, dan BRTI menjadwalkan tinjauan utilisasi spektrum dalam 10 hari. OJK secara terpisah meminta laporan cohort lisensi digital payments. Direksi membutuhkan cerita pemulihan jaringan, komersial, dan regulator yang dapat dipertahankan sebelum menyetujui envelope capex FY2026.',
+    scenarioID='Zava Telco Indonesia melayani 38,4 juta pelanggan di Sumatra, Jawa, dan Kalimantan dengan 11.600 karyawan dan 14.200 site aktif. Pembangunan cakupan tertinggal 14 site dari komitmen USO Kominfo, churn pascabayar telah naik ke 2,3% bulanan di 4 cluster prioritas, ARPU blended meleset 6%, dan BRTI menjadwalkan tinjauan utilisasi spektrum dalam 10 hari. OJK secara terpisah meminta laporan cohort lisensi digital payments. Direksi membutuhkan cerita pemulihan jaringan, komersial, dan regulator yang dapat dipertahankan sebelum menyetujui envelope capex FY2026.',
     relevantDepts=['it','marketing','strategy','finance'],
     personas=[
       {'name':'Rangga Aditama','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},

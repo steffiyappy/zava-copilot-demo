@@ -5,9 +5,9 @@ DEPARTMENTS_2 = [
 
 # ── LEGAL ───────────────────────────────────────────────────────────────
 ind('dept-legal','department','⚖️ Legal & Corporate Secretarial','⚖️','#4A148C','#6A1B9A',
-    'Group Legal & Corporate Secretarial Office, Zava Group Berhad',
+    'Zava Legal',
     'Contract approval backlog stands at 340 agreements, a Bursa Malaysia regulatory inquiry is live, and 7 board resolutions are slipping past their statutory windows.',
-    'Group Legal & Corporate Secretarial Office at Zava Group Berhad faces a contract approval backlog of 340 agreements across 11 divisions, a live Bursa Malaysia regulatory inquiry demanding immediate document production, and 7 board resolutions slipping past their statutory filing windows. The General Counsel must reduce the backlog by 60% within 21 days while maintaining clause discipline, disclosure quality, and board governance standards — all without additional headcount.',
+    'Group Legal & Corporate Secretarial Office at Zava Group faces a contract approval backlog of 340 agreements across 11 divisions, a live Bursa Malaysia regulatory inquiry demanding immediate document production, and 7 board resolutions slipping past their statutory filing windows. The General Counsel must reduce the backlog by 60% within 21 days while maintaining clause discipline, disclosure quality, and board governance standards — all without additional headcount.',
     ['LEG_01_Legal_Matter_Register.xlsx','LEG_02_Compliance_Manual.docx','LEG_03_Delegation_of_Authority.docx','LEG_04_Contract_Backlog_Tracker.xlsx','LEG_05_Regulatory_Inquiry_Log.xlsx','LEG_06_Board_Resolution_Calendar.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -167,9 +167,9 @@ ind('dept-legal','department','⚖️ Legal & Corporate Secretarial','⚖️','#
       persona=['Mod Admin','Lakshmi Iyer'],
       personaID=['Mod Admin','Lakshmi Iyer']),
     ],
-    companyID='Kantor Hukum dan Sekretariat Perusahaan Grup, PT Nusantara Raya Investama Tbk',
+    companyID='Zava Legal',
     taglineID='Backlog persetujuan kontrak mencapai 340 perjanjian, inquiry regulator OJK sedang berjalan, dan 7 resolusi Direksi melampaui jendela statutorinya.',
-    scenarioID='Kantor Hukum dan Sekretariat Perusahaan Grup di PT Nusantara Raya Investama Tbk menghadapi backlog persetujuan kontrak sebanyak 340 perjanjian lintas 9 unit usaha, inquiry regulator OJK yang memerlukan produksi dokumen segera, dan 7 resolusi Direksi yang melampaui jendela pelaporan statutorinya. General Counsel harus menurunkan backlog 60% dalam 21 hari sambil menjaga disiplin klausul, kualitas pengungkapan, dan standar tata kelola Direksi — tanpa penambahan SDM.',
+    scenarioID='Kantor Hukum dan Sekretariat Perusahaan Grup di Zava Group menghadapi backlog persetujuan kontrak sebanyak 340 perjanjian lintas 9 unit usaha, inquiry regulator OJK yang memerlukan produksi dokumen segera, dan 7 resolusi Direksi yang melampaui jendela pelaporan statutorinya. General Counsel harus menurunkan backlog 60% dalam 21 hari sambil menjaga disiplin klausul, kualitas pengungkapan, dan standar tata kelola Direksi — tanpa penambahan SDM.',
     relevantDepts=[],
     personas=[
       {'name':'Lakshmi Iyer','role':'General Counsel','roleID':'General Counsel','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#4A148C'},
@@ -214,9 +214,9 @@ ind('dept-legal','department','⚖️ Legal & Corporate Secretarial','⚖️','#
 ),
 # ── RISK ────────────────────────────────────────────────────────────────
 ind('dept-risk','department','🛡 Risk & Internal Audit','🛡','#B71C1C','#C62828',
-    'Group Risk & Internal Audit Office, Zava Group Berhad',
+    'Zava Risk',
     '47 open audit findings, 12 rated High, 3 Q3 incidents pending Board notification — special Board Risk Committee review in 14 days.',
-    'Group Risk & Internal Audit Office at Zava Group Berhad carries 47 open audit findings — 12 rated High — with 3 Q3 incidents still pending Board notification and a special Board Risk Committee session in 14 days. The CRO needs a cleaner RAG narrative on residual exposure, sharper escalation logic across the 11 divisions, and a defensible risk-appetite story that satisfies the committee without over-committing management to targets that cannot be met in the current environment.',
+    'Group Risk & Internal Audit Office at Zava Group carries 47 open audit findings — 12 rated High — with 3 Q3 incidents still pending Board notification and a special Board Risk Committee session in 14 days. The CRO needs a cleaner RAG narrative on residual exposure, sharper escalation logic across the 11 divisions, and a defensible risk-appetite story that satisfies the committee without over-committing management to targets that cannot be met in the current environment.',
     ['RSK_01_Enterprise_Risk_Register.xlsx','RSK_02_ERM_Framework.docx','RSK_03_Internal_Audit_Plan.docx','RSK_04_Audit_Findings_Tracker.xlsx','RSK_05_Incident_Log.xlsx','RSK_06_Risk_Appetite_Statement.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -376,9 +376,9 @@ ind('dept-risk','department','🛡 Risk & Internal Audit','🛡','#B71C1C','#C62
       persona=['Mod Admin','Nikolai Voss'],
       personaID=['Mod Admin','Nikolai Voss']),
     ],
-    companyID='Kantor Risiko dan Audit Internal Grup, PT Nusantara Raya Investama Tbk',
+    companyID='Zava Risk',
     taglineID='47 temuan audit terbuka, 12 berstatus High, 3 insiden Q3 menunggu notifikasi Direksi — Komite Risiko Direksi khusus dalam 14 hari.',
-    scenarioID='Kantor Risiko dan Audit Internal Grup di PT Nusantara Raya Investama Tbk memiliki 47 temuan audit terbuka — 12 berstatus High — dengan 3 insiden Q3 yang masih menunggu notifikasi Direksi dan sesi Komite Risiko Direksi khusus dalam 14 hari. CRO membutuhkan narasi RAG yang lebih bersih atas eksposur residual, logika eskalasi yang lebih tajam di 9 unit usaha, dan narasi risk appetite yang dapat dipertahankan dan memuaskan komite tanpa over-committing manajemen pada target yang tidak dapat dipenuhi dalam lingkungan saat ini.',
+    scenarioID='Kantor Risiko dan Audit Internal Grup di Zava Group memiliki 47 temuan audit terbuka — 12 berstatus High — dengan 3 insiden Q3 yang masih menunggu notifikasi Direksi dan sesi Komite Risiko Direksi khusus dalam 14 hari. CRO membutuhkan narasi RAG yang lebih bersih atas eksposur residual, logika eskalasi yang lebih tajam di 9 unit usaha, dan narasi risk appetite yang dapat dipertahankan dan memuaskan komite tanpa over-committing manajemen pada target yang tidak dapat dipenuhi dalam lingkungan saat ini.',
     relevantDepts=[],
     personas=[
       {'name':'Nikolai Voss','role':'Chief Risk Officer','roleID':'Chief Risk Officer','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#B71C1C'},
@@ -423,9 +423,9 @@ ind('dept-risk','department','🛡 Risk & Internal Audit','🛡','#B71C1C','#C62
 ),
 # ── STRATEGY ────────────────────────────────────────────────────────────
 ind('dept-strategy','department','🎯 Strategy & Corporate Planning','🎯','#E65100','#F57C00',
-    'Group Strategy & Corporate Planning Office, Zava Group Berhad',
+    'Zava Strategy',
     '3 flagship strategic initiatives are 4-7 months behind schedule, capex prioritisation under challenge, and the FY2026 growth thesis must be refreshed in 4 weeks.',
-    'Group Strategy & Corporate Planning Office at Zava Group Berhad has 3 flagship strategic initiatives running 4-7 months behind schedule, capex prioritisation under challenge from divisional CEOs, and a FY2026 growth thesis that the CEO wants refreshed within 4 weeks. The Group Strategy Director needs sharper sequencing, tighter linkage between strategy milestones and value creation, and a clear answer to the question: what moves first if resources stay constrained?',
+    'Group Strategy & Corporate Planning Office at Zava Group has 3 flagship strategic initiatives running 4-7 months behind schedule, capex prioritisation under challenge from divisional CEOs, and a FY2026 growth thesis that the CEO wants refreshed within 4 weeks. The Group Strategy Director needs sharper sequencing, tighter linkage between strategy milestones and value creation, and a clear answer to the question: what moves first if resources stay constrained?',
     ['STR_01_Strategy_Tracker.xlsx','STR_02_Corporate_Plan.docx','STR_03_Portfolio_Review.docx','STR_04_Capex_Allocation_Model.xlsx','STR_05_KPI_Tree.xlsx','STR_06_Investment_Committee_Charter.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -585,9 +585,9 @@ ind('dept-strategy','department','🎯 Strategy & Corporate Planning','🎯','#E
       persona=['Mod Admin','Rafael Monteiro'],
       personaID=['Mod Admin','Rafael Monteiro']),
     ],
-    companyID='Kantor Strategi dan Perencanaan Korporat Grup, PT Nusantara Raya Investama Tbk',
+    companyID='Zava Strategy',
     taglineID='3 inisiatif strategis utama tertinggal jadwal 4-7 bulan, prioritisasi capex digugat, dan thesis pertumbuhan FY2026 harus diperbarui dalam 4 minggu.',
-    scenarioID='Kantor Strategi dan Perencanaan Korporat Grup di PT Nusantara Raya Investama Tbk memiliki 3 inisiatif strategis utama yang tertinggal 4-7 bulan dari jadwal, prioritisasi capex yang digugat oleh Direktur Unit Usaha, dan thesis pertumbuhan FY2026 yang ingin diperbarui Direktur Utama dalam 4 minggu. Direktur Strategi Grup membutuhkan urutan yang lebih tajam, keterkaitan yang lebih erat antara milestone strategi dan penciptaan nilai, serta jawaban yang jelas atas pertanyaan: apa yang bergerak terlebih dahulu bila sumber daya tetap terbatas?',
+    scenarioID='Kantor Strategi dan Perencanaan Korporat Grup di Zava Group memiliki 3 inisiatif strategis utama yang tertinggal 4-7 bulan dari jadwal, prioritisasi capex yang digugat oleh Direktur Unit Usaha, dan thesis pertumbuhan FY2026 yang ingin diperbarui Direktur Utama dalam 4 minggu. Direktur Strategi Grup membutuhkan urutan yang lebih tajam, keterkaitan yang lebih erat antara milestone strategi dan penciptaan nilai, serta jawaban yang jelas atas pertanyaan: apa yang bergerak terlebih dahulu bila sumber daya tetap terbatas?',
     relevantDepts=[],
     personas=[
       {'name':'Rafael Monteiro','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#E65100'},

@@ -7,9 +7,9 @@ INDUSTRIES_8 = [
 
 # ── CONSTRUCTION ────────────────────
 ind('construction','construction','Construction','🏗','#E65100','#EF6C00',
-    'Bina Karya Pembinaan Berhad',
+    'Zava Construction Malaysia',
     'Three flagship projects slipping; HSE incidents rising; LPJK and PUPR reviews due.',
-    "Bina Karya Pembinaan Berhad and PT Karya Bangun Nusantara Tbk operate as a tier-one EPC contractor across Malaysia and Indonesia with MYR 5.8 billion in annual revenue and roughly 14,200 direct and subcontracted staff. Three flagship infrastructure projects are 14 weeks behind plan, the consolidated variation order book has grown 38% in 6 months, HSE incidents are up 22% year-on-year, LPJK is reviewing two of the company's SBU certifications, Kementerian PUPR has opened a delay review on a federal road package, and the working-capital cushion has compressed by MYR 220 million on extended subcontractor payment cycles. The Board project committee meets in 21 days and management must demonstrate that schedule, safety, and cash discipline are aligned before further mobilisation is approved.",
+    "Zava Construction Malaysia and Zava Construction Indonesia operate as a tier-one EPC contractor across Malaysia and Indonesia with MYR 5.8 billion in annual revenue and roughly 14,200 direct and subcontracted staff. Three flagship infrastructure projects are 14 weeks behind plan, the consolidated variation order book has grown 38% in 6 months, HSE incidents are up 22% year-on-year, LPJK is reviewing two of the company's SBU certifications, Kementerian PUPR has opened a delay review on a federal road package, and the working-capital cushion has compressed by MYR 220 million on extended subcontractor payment cycles. The Board project committee meets in 21 days and management must demonstrate that schedule, safety, and cash discipline are aligned before further mobilisation is approved.",
     ['CON_01_Project_Portfolio.xlsx', 'CON_02_Project_Management_Manual.docx', 'CON_03_HSE_Policy.docx', 'CON_04_Variation_Order_Tracker.xlsx', 'CON_05_Subcontractor_Compliance.docx', 'CON_06_Cash_Flow_Forecast.xlsx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -182,9 +182,9 @@ ind('construction','construction','Construction','🏗','#E65100','#EF6C00',
       persona=['Rina Halim', 'Bayu Pramudita'],
       personaID=['Rina Halim', 'Bayu Pramudita'])
     ],
-    companyID='PT Karya Bangun Nusantara Tbk',
+    companyID='Zava Construction Indonesia',
     taglineID='Tiga proyek unggulan tertunda; insiden K3 naik — peninjauan LPJK dan PUPR menjelang.',
-    scenarioID='PT Karya Bangun Nusantara Tbk dan Bina Karya Pembinaan Berhad beroperasi sebagai kontraktor EPC tier satu di Indonesia dan Malaysia dengan pendapatan tahunan Rp 19,8 triliun dan sekitar 14.200 staf langsung dan subkontraktor. Tiga proyek infrastruktur unggulan tertunda 14 minggu dari rencana, buku variation order konsolidasi tumbuh 38% dalam 6 bulan, insiden K3 naik 22% year-on-year, LPJK meninjau dua sertifikasi SBU perusahaan, Kementerian PUPR membuka tinjauan keterlambatan paket jalan federal, dan bantalan modal kerja terkompresi sebesar Rp 750 miliar akibat siklus pembayaran subkontraktor yang melar. Komite Proyek Direksi bersidang dalam 21 hari dan manajemen harus menunjukkan bahwa disiplin jadwal, keselamatan, dan kas selaras sebelum mobilisasi lanjutan disetujui.',
+    scenarioID='Zava Construction Indonesia dan Zava Construction Malaysia beroperasi sebagai kontraktor EPC tier satu di Indonesia dan Malaysia dengan pendapatan tahunan Rp 19,8 triliun dan sekitar 14.200 staf langsung dan subkontraktor. Tiga proyek infrastruktur unggulan tertunda 14 minggu dari rencana, buku variation order konsolidasi tumbuh 38% dalam 6 bulan, insiden K3 naik 22% year-on-year, LPJK meninjau dua sertifikasi SBU perusahaan, Kementerian PUPR membuka tinjauan keterlambatan paket jalan federal, dan bantalan modal kerja terkompresi sebesar Rp 750 miliar akibat siklus pembayaran subkontraktor yang melar. Komite Proyek Direksi bersidang dalam 21 hari dan manajemen harus menunjukkan bahwa disiplin jadwal, keselamatan, dan kas selaras sebelum mobilisasi lanjutan disetujui.',
     relevantDepts=['operations', 'finance', 'risk', 'legal'],
     personas=[
       {'name':'Bayu Pramudita','role':'CEO','roleID':'Direktur Utama','acct':'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no M365 Copilot license','color':'#E65100'},
@@ -221,9 +221,9 @@ ind('construction','construction','Construction','🏗','#E65100','#EF6C00',
 
 # ── AVIATION - AIRPORTS ────────────────────
 ind('aviation-airports','aviation-airports','Aviation - Airports','✈','#0277BD','#0288D1',
-    'Angkasa Pura Nusantara Berhad',
+    'Zava Airports Malaysia',
     'Flagship hub at 112% capacity; ICAO and DKPPU findings open; tariff revision delayed.',
-    'Angkasa Pura Nusantara Berhad and PT Angkasa Pura Nusantara Tbk operate as a tier-one airport operator across 14 hubs in Malaysia and Indonesia with MYR 4.2 billion in annual revenue and roughly 9,800 direct staff. The flagship hub is running at 112% of design capacity, the aeronautical tariff revision has been delayed 18 months at Kementerian Perhubungan and is constraining FY2026 revenue planning, ICAO has issued 14 findings under the latest USOAP audit including 4 priority ones on emergency response, DKPPU has opened an airworthiness review on 2 cargo handling sub-units, slot-allocation disputes with the 3 largest low-cost carriers are escalating into formal complaints, and the terminal expansion capex programme is 24% over the original envelope. The Board capex and safety committee meets in 21 days and management must demonstrate that capacity, safety, and tariff economics are aligned before further capex tranches are released.',
+    'Zava Airports Malaysia and Zava Airports Indonesia operate as a tier-one airport operator across 14 hubs in Malaysia and Indonesia with MYR 4.2 billion in annual revenue and roughly 9,800 direct staff. The flagship hub is running at 112% of design capacity, the aeronautical tariff revision has been delayed 18 months at Kementerian Perhubungan and is constraining FY2026 revenue planning, ICAO has issued 14 findings under the latest USOAP audit including 4 priority ones on emergency response, DKPPU has opened an airworthiness review on 2 cargo handling sub-units, slot-allocation disputes with the 3 largest low-cost carriers are escalating into formal complaints, and the terminal expansion capex programme is 24% over the original envelope. The Board capex and safety committee meets in 21 days and management must demonstrate that capacity, safety, and tariff economics are aligned before further capex tranches are released.',
     ['AVN_01_Airport_Operations.xlsx', 'AVN_02_Airport_Concession_Policy.docx', 'AVN_03_Emergency_Response_Plan.docx', 'AVN_04_Aeronautical_Tariff_Model.xlsx', 'AVN_05_Slot_Allocation_Tracker.xlsx', 'AVN_06_Capex_Plan.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -396,9 +396,9 @@ ind('aviation-airports','aviation-airports','Aviation - Airports','✈','#0277BD
       persona=['Maya Setiawan', 'Anugrah Wirawan'],
       personaID=['Maya Setiawan', 'Anugrah Wirawan'])
     ],
-    companyID='PT Angkasa Pura Nusantara Tbk',
+    companyID='Zava Airports Indonesia',
     taglineID='Hub unggulan pada 112% kapasitas; temuan ICAO dan DKPPU terbuka; revisi tarif tertunda.',
-    scenarioID='PT Angkasa Pura Nusantara Tbk dan Angkasa Pura Nusantara Berhad beroperasi sebagai operator bandara tier satu di 14 hub di Indonesia dan Malaysia dengan pendapatan tahunan Rp 14,3 triliun dan sekitar 9.800 staf langsung. Hub unggulan beroperasi pada 112% dari kapasitas desain, revisi tarif jasa aeronautika tertunda 18 bulan di Kementerian Perhubungan dan membatasi perencanaan pendapatan FY2026, ICAO mengeluarkan 14 temuan dalam audit USOAP terakhir termasuk 4 temuan prioritas pada respons darurat, DKPPU membuka tinjauan kelaikudaraan pada 2 sub-unit cargo handling, sengketa alokasi slot dengan 3 maskapai berbiaya rendah terbesar berkembang menjadi keluhan formal, dan program capex perluasan terminal melampaui envelope awal sebesar 24%. Komite Capex dan Keselamatan Direksi bersidang dalam 21 hari dan manajemen harus menunjukkan bahwa kapasitas, keselamatan, dan ekonomi tarif selaras sebelum tranche capex lanjutan dirilis.',
+    scenarioID='Zava Airports Indonesia dan Zava Airports Malaysia beroperasi sebagai operator bandara tier satu di 14 hub di Indonesia dan Malaysia dengan pendapatan tahunan Rp 14,3 triliun dan sekitar 9.800 staf langsung. Hub unggulan beroperasi pada 112% dari kapasitas desain, revisi tarif jasa aeronautika tertunda 18 bulan di Kementerian Perhubungan dan membatasi perencanaan pendapatan FY2026, ICAO mengeluarkan 14 temuan dalam audit USOAP terakhir termasuk 4 temuan prioritas pada respons darurat, DKPPU membuka tinjauan kelaikudaraan pada 2 sub-unit cargo handling, sengketa alokasi slot dengan 3 maskapai berbiaya rendah terbesar berkembang menjadi keluhan formal, dan program capex perluasan terminal melampaui envelope awal sebesar 24%. Komite Capex dan Keselamatan Direksi bersidang dalam 21 hari dan manajemen harus menunjukkan bahwa kapasitas, keselamatan, dan ekonomi tarif selaras sebelum tranche capex lanjutan dirilis.',
     relevantDepts=['operations', 'finance', 'risk', 'strategy'],
     personas=[
       {'name':'Anugrah Wirawan','role':'CEO','roleID':'Direktur Utama','acct':'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no M365 Copilot license','color':'#0277BD'},
@@ -435,9 +435,9 @@ ind('aviation-airports','aviation-airports','Aviation - Airports','✈','#0277BD
 
 # ── RETAIL - GROCERY ────────────────────
 ind('retail-grocery','retail-grocery','Retail - Grocery','🛒','#2E7D32','#388E3C',
-    'Segar Rakyat Retail Berhad',
+    'Zava Retail Malaysia',
     'SSS missing plan; shrinkage erodes margin; BPOM, Halal MUI and Kemendag scrutiny rising.',
-    'Segar Rakyat Retail Berhad and PT Ritel Nusantara Tbk operate as a tier-one grocery retailer across 412 stores in Malaysia and Indonesia with MYR 6.4 billion in annual revenue and roughly 21,400 direct staff. Same-store sales growth is 1.4% against the FY2026 plan of 4.6%, gross margin is 180 basis points below plan because of shrinkage, BPOM and Halal MUI scrutiny on private-label SKUs has intensified, Kementerian Perdagangan has opened a price-display review on 67 stores, the Ramadan promotional programme delivered ROI of 0.71x against the planned 1.4x, and supplier funding has compressed working capital. The Investment Committee meets in 18 days and management must demonstrate that commercial discipline, shrinkage controls, compliance posture, and promotional ROI are aligned before the FY2026 store-investment envelope is approved.',
+    'Zava Retail Malaysia and Zava Retail Indonesia operate as a tier-one grocery retailer across 412 stores in Malaysia and Indonesia with MYR 6.4 billion in annual revenue and roughly 21,400 direct staff. Same-store sales growth is 1.4% against the FY2026 plan of 4.6%, gross margin is 180 basis points below plan because of shrinkage, BPOM and Halal MUI scrutiny on private-label SKUs has intensified, Kementerian Perdagangan has opened a price-display review on 67 stores, the Ramadan promotional programme delivered ROI of 0.71x against the planned 1.4x, and supplier funding has compressed working capital. The Investment Committee meets in 18 days and management must demonstrate that commercial discipline, shrinkage controls, compliance posture, and promotional ROI are aligned before the FY2026 store-investment envelope is approved.',
     ['RT_01_Store_Performance.xlsx', 'RT_02_Store_Operations_Manual.docx', 'RT_03_Supplier_Management_Policy.docx', 'RT_04_Promotion_ROI_Model.xlsx', 'RT_05_Halal_Compliance_Register.docx', 'RT_06_Shrinkage_Audit.xlsx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -610,9 +610,9 @@ ind('retail-grocery','retail-grocery','Retail - Grocery','🛒','#2E7D32','#388E
       persona=['Hendrik Tan', 'Wulandari Sari'],
       personaID=['Hendrik Tan', 'Wulandari Sari'])
     ],
-    companyID='PT Ritel Nusantara Tbk',
+    companyID='Zava Retail Indonesia',
     taglineID='SSS meleset; shrinkage menggerus margin; pengawasan BPOM, Halal MUI, dan Kemendag meningkat.',
-    scenarioID='PT Ritel Nusantara Tbk dan Segar Rakyat Retail Berhad beroperasi sebagai peritel grocery tier satu di 412 toko di Indonesia dan Malaysia dengan pendapatan tahunan Rp 21,8 triliun dan sekitar 21.400 staf langsung. Pertumbuhan SSS 1,4% terhadap rencana FY2026 sebesar 4,6%, margin kotor 180 basis poin di bawah rencana akibat shrinkage, pengawasan BPOM dan Halal MUI atas SKU private-label semakin intens, Kementerian Perdagangan membuka tinjauan price-display pada 67 toko, program promosi Ramadan menghasilkan ROI 0,71x dibanding rencana 1,4x, dan pendanaan supplier mengkompresi modal kerja. Komite Investasi bersidang dalam 18 hari dan manajemen harus menunjukkan bahwa disiplin komersial, kontrol shrinkage, postur kepatuhan, dan ROI promosi selaras sebelum envelope investasi toko FY2026 disetujui.',
+    scenarioID='Zava Retail Indonesia dan Zava Retail Malaysia beroperasi sebagai peritel grocery tier satu di 412 toko di Indonesia dan Malaysia dengan pendapatan tahunan Rp 21,8 triliun dan sekitar 21.400 staf langsung. Pertumbuhan SSS 1,4% terhadap rencana FY2026 sebesar 4,6%, margin kotor 180 basis poin di bawah rencana akibat shrinkage, pengawasan BPOM dan Halal MUI atas SKU private-label semakin intens, Kementerian Perdagangan membuka tinjauan price-display pada 67 toko, program promosi Ramadan menghasilkan ROI 0,71x dibanding rencana 1,4x, dan pendanaan supplier mengkompresi modal kerja. Komite Investasi bersidang dalam 18 hari dan manajemen harus menunjukkan bahwa disiplin komersial, kontrol shrinkage, postur kepatuhan, dan ROI promosi selaras sebelum envelope investasi toko FY2026 disetujui.',
     relevantDepts=['operations', 'finance', 'marketing', 'risk'],
     personas=[
       {'name':'Wulandari Sari','role':'CEO','roleID':'Direktur Utama','acct':'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no M365 Copilot license','color':'#2E7D32'},
@@ -649,9 +649,9 @@ ind('retail-grocery','retail-grocery','Retail - Grocery','🛒','#2E7D32','#388E
 
 # ── MEDIA - ENTERTAINMENT ────────────────────
 ind('media-entertainment','media-entertainment','Media - Entertainment','📺','#6A1B9A','#7B1FA2',
-    'Layar Digital Media Berhad',
+    'Zava Media Malaysia',
     'Streaming subs up but ARPU down; Kominfo and KPI questions; copyright complaints rising.',
-    'Layar Digital Media Berhad and PT Media Hiburan Nusantara Tbk operate as a tier-one media and entertainment group across broadcast, streaming, and content commissioning in Malaysia and Indonesia with MYR 3.6 billion in annual revenue and roughly 6,800 direct staff. Streaming subscribers are up 23% year-on-year but ARPU is down 11%, three premium dramas are 28% over budget, advertising revenue is down 9% on weak open-rates, Kominfo has raised questions on news segment editorial governance, KPI has flagged advertising volume on 3 prime-time slots as exceeding the prescribed limit, and DJKI has received copyright complaints on 4 content items. The content commissioning round closes in 30 days and management must demonstrate that ARPU discipline, content cost control, and regulatory posture are aligned before the FY2026 commissioning slate is approved.',
+    'Zava Media Malaysia and Zava Media Indonesia operate as a tier-one media and entertainment group across broadcast, streaming, and content commissioning in Malaysia and Indonesia with MYR 3.6 billion in annual revenue and roughly 6,800 direct staff. Streaming subscribers are up 23% year-on-year but ARPU is down 11%, three premium dramas are 28% over budget, advertising revenue is down 9% on weak open-rates, Kominfo has raised questions on news segment editorial governance, KPI has flagged advertising volume on 3 prime-time slots as exceeding the prescribed limit, and DJKI has received copyright complaints on 4 content items. The content commissioning round closes in 30 days and management must demonstrate that ARPU discipline, content cost control, and regulatory posture are aligned before the FY2026 commissioning slate is approved.',
     ['ME_01_Content_Performance.xlsx', 'ME_02_Content_Policy.docx', 'ME_03_Digital_Strategy_Framework.docx', 'ME_04_Streaming_Subscriber_Cohort.xlsx', 'ME_05_Advertiser_Yield_Model.xlsx', 'ME_06_Content_Rights_Register.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -824,9 +824,9 @@ ind('media-entertainment','media-entertainment','Media - Entertainment','📺','
       persona=['Mira Anggraini', 'Indra Saputra'],
       personaID=['Mira Anggraini', 'Indra Saputra'])
     ],
-    companyID='PT Media Hiburan Nusantara Tbk',
+    companyID='Zava Media Indonesia',
     taglineID='Pelanggan streaming naik namun ARPU turun; pertanyaan Kominfo dan KPI; keluhan hak cipta meningkat.',
-    scenarioID='PT Media Hiburan Nusantara Tbk dan Layar Digital Media Berhad beroperasi sebagai grup media dan hiburan tier satu di broadcast, streaming, dan commissioning konten di Indonesia dan Malaysia dengan pendapatan tahunan Rp 12,3 triliun dan sekitar 6.800 staf langsung. Pelanggan streaming naik 23% year-on-year namun ARPU turun 11%, tiga drama premium 28% di atas anggaran, pendapatan iklan turun 9% akibat lemahnya open-rate, Kominfo mengajukan pertanyaan tentang tata kelola editorial segmen berita, KPI menandai volume iklan pada 3 slot prime-time melebihi batas yang ditentukan, dan DJKI menerima keluhan hak cipta atas 4 item konten. Putaran commissioning konten ditutup dalam 30 hari dan manajemen harus menunjukkan bahwa disiplin ARPU, kontrol biaya konten, dan postur regulasi selaras sebelum slate commissioning FY2026 disetujui.',
+    scenarioID='Zava Media Indonesia dan Zava Media Malaysia beroperasi sebagai grup media dan hiburan tier satu di broadcast, streaming, dan commissioning konten di Indonesia dan Malaysia dengan pendapatan tahunan Rp 12,3 triliun dan sekitar 6.800 staf langsung. Pelanggan streaming naik 23% year-on-year namun ARPU turun 11%, tiga drama premium 28% di atas anggaran, pendapatan iklan turun 9% akibat lemahnya open-rate, Kominfo mengajukan pertanyaan tentang tata kelola editorial segmen berita, KPI menandai volume iklan pada 3 slot prime-time melebihi batas yang ditentukan, dan DJKI menerima keluhan hak cipta atas 4 item konten. Putaran commissioning konten ditutup dalam 30 hari dan manajemen harus menunjukkan bahwa disiplin ARPU, kontrol biaya konten, dan postur regulasi selaras sebelum slate commissioning FY2026 disetujui.',
     relevantDepts=['marketing', 'strategy', 'finance', 'legal'],
     personas=[
       {'name':'Indra Saputra','role':'CEO','roleID':'Direktur Utama','acct':'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no M365 Copilot license','color':'#6A1B9A'},

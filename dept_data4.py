@@ -6,9 +6,9 @@ from util import *
 DEPARTMENTS_4 = [
   ind(
     'dept-operations', 'department', '⚙️ Operations & COO Office', '⚙️', '#37474F', '#455A64',
-    'Zava Group Berhad — COO Office',
+    'Zava Operations',
     'Service levels slipped at two sites, cost takeout is behind plan, and a supplier disruption is threatening production continuity.',
-    'The COO Office at Zava Group Berhad is trying to restore execution discipline across multiple operating sites while costs stay 11% above target and a tier-1 supplier issue threatens continuity at the Pasir Gudang manufacturing complex. Service levels slipped to 87% at two key sites against a 95% target, the FY2026 cost takeout programme is behind plan by MYR 38M, and site leaders disagree on which bottlenecks matter most. Leadership wants a single RAG tracker that ties service, cost, and continuity together, and the next monthly review needs a sharper line of sight from root cause to action owner within 14 days, ahead of the Operations Review Committee meeting where Board members will probe site-level recovery commitments.',
+    'The COO Office at Zava Group is trying to restore execution discipline across multiple operating sites while costs stay 11% above target and a tier-1 supplier issue threatens continuity at the Pasir Gudang manufacturing complex. Service levels slipped to 87% at two key sites against a 95% target, the FY2026 cost takeout programme is behind plan by MYR 38M, and site leaders disagree on which bottlenecks matter most. Leadership wants a single RAG tracker that ties service, cost, and continuity together, and the next monthly review needs a sharper line of sight from root cause to action owner within 14 days, ahead of the Operations Review Committee meeting where Board members will probe site-level recovery commitments.',
     ['OPS_01_Operational_Performance.xlsx','OPS_02_Site_Cost_Tracker.xlsx','OPS_03_Operations_Playbook.docx','OPS_04_Business_Continuity_Manual.docx','OPS_05_Supplier_Recovery_SOP.docx','OPS_06_Capex_Approval_Standards.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -182,9 +182,9 @@ DEPARTMENTS_4 = [
         persona=['Lestari Hapsari','Wahyu Setiabudi'],
         personaID=['Lestari Hapsari','Wahyu Setiabudi'])
     ],
-    companyID='PT Nusantara Raya Investama Tbk — Kantor COO',
+    companyID='Zava Operations',
     taglineID='SLA layanan turun di dua lokasi, cost takeout di bawah rencana, dan disrupsi pemasok mengancam kesinambungan produksi — keselamatan kerja Kemnaker harus dijaga.',
-    scenarioID='Kantor COO PT Nusantara Raya Investama Tbk berupaya memulihkan disiplin eksekusi di beberapa lokasi operasional sementara biaya tetap 11% di atas target dan masalah pemasok tier-1 mengancam kesinambungan di kompleks manufaktur Cikarang. SLA layanan turun ke 87% di dua lokasi utama terhadap target 95%, program cost takeout FY2026 di bawah rencana sebesar Rp 580 miliar, dan pimpinan lokasi berbeda pendapat tentang bottleneck mana yang paling penting. Direksi menginginkan satu tracker RAG yang mengikat SLA, biaya, dan kesinambungan, dan tinjauan bulanan berikutnya membutuhkan garis pandang lebih tajam dari akar masalah ke pemilik tindakan dalam 14 hari, menjelang rapat Komite Tinjauan Operasi di mana Direksi akan menelisik komitmen pemulihan tingkat lokasi.',
+    scenarioID='Kantor COO Zava Group berupaya memulihkan disiplin eksekusi di beberapa lokasi operasional sementara biaya tetap 11% di atas target dan masalah pemasok tier-1 mengancam kesinambungan di kompleks manufaktur Cikarang. SLA layanan turun ke 87% di dua lokasi utama terhadap target 95%, program cost takeout FY2026 di bawah rencana sebesar Rp 580 miliar, dan pimpinan lokasi berbeda pendapat tentang bottleneck mana yang paling penting. Direksi menginginkan satu tracker RAG yang mengikat SLA, biaya, dan kesinambungan, dan tinjauan bulanan berikutnya membutuhkan garis pandang lebih tajam dari akar masalah ke pemilik tindakan dalam 14 hari, menjelang rapat Komite Tinjauan Operasi di mana Direksi akan menelisik komitmen pemulihan tingkat lokasi.',
     relevantDepts=['finance','procurement','risk','hr','esg','it'],
     personas=[
       {'name':'Wahyu Setiabudi','role':'Chief Operating Officer','roleID':'Direktur Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
@@ -241,9 +241,9 @@ DEPARTMENTS_4 = [
   ),
   ind(
     'dept-board', 'department', '🏛 Board & Executive Office', '🏛', '#1A237E', '#283593',
-    'Zava Group Berhad — Board & Executive Office',
+    'Zava Board',
     'Board papers are late, disclosure-watchlist items are growing, and directors want clearer resolution tracking before quarter-end.',
-    'The Board & Executive Office at Zava Group Berhad is trying to improve paper quality, decision tracking, and governance visibility before the quarter-end meeting cycle. Across the last 4 Board meetings, 38% of papers arrived less than 48 hours before the meeting, the Resolution Log shows 17 open items overdue by more than 30 days, and 6 disclosure-watchlist items are now flagged Amber or Red. Directors are frustrated that resolutions are not always easy to trace back to owners and deadlines. The Company Secretary needs a more disciplined operating rhythm with a clear RAG view of disclosure and governance risks within two weeks, ahead of the next Board of Directors meeting where the Chairman will examine cross-listing readiness with IDX.',
+    'The Board & Executive Office at Zava Group is trying to improve paper quality, decision tracking, and governance visibility before the quarter-end meeting cycle. Across the last 4 Board meetings, 38% of papers arrived less than 48 hours before the meeting, the Resolution Log shows 17 open items overdue by more than 30 days, and 6 disclosure-watchlist items are now flagged Amber or Red. Directors are frustrated that resolutions are not always easy to trace back to owners and deadlines. The Company Secretary needs a more disciplined operating rhythm with a clear RAG view of disclosure and governance risks within two weeks, ahead of the next Board of Directors meeting where the Chairman will examine cross-listing readiness with IDX.',
     ['BRD_01_Board_Pack_Tracker.xlsx','BRD_02_Resolution_Log.xlsx','BRD_03_Governance_Manual.docx','BRD_04_Board_Paper_Standards.docx','BRD_05_Disclosure_Watchlist.docx','BRD_06_Director_Onboarding_Brief.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -417,9 +417,9 @@ DEPARTMENTS_4 = [
         persona=['Anissa Permatasari','Surya Hartanto'],
         personaID=['Anissa Permatasari','Surya Hartanto'])
     ],
-    companyID='Direksi dan Komisaris, PT Nusantara Raya Investama Tbk',
+    companyID='Zava Board',
     taglineID='Paper Direksi terlambat, item watchlist pengungkapan bertambah, dan Komisaris menginginkan pelacakan resolusi yang lebih jelas sebelum akhir kuartal — sinkron BEI dan OJK.',
-    scenarioID='Kantor Direksi dan Dewan PT Nusantara Raya Investama Tbk berupaya meningkatkan kualitas paper, pelacakan keputusan, dan visibilitas tata kelola sebelum siklus rapat akhir kuartal. Lintas 4 Rapat Direksi terakhir, 38% paper tiba kurang dari 48 jam sebelum rapat, Log Resolusi menampilkan 17 item terbuka tertunda lebih dari 30 hari, dan 6 item watchlist pengungkapan kini ditandai Kuning atau Merah. Komisaris frustrasi karena resolusi tidak selalu mudah dilacak ke pemilik dan tenggat. Sekretaris Perusahaan membutuhkan ritme operasi yang lebih disiplin dengan tinjauan RAG yang jelas atas risiko pengungkapan dan tata kelola dalam dua minggu, menjelang Rapat Dewan Komisaris berikutnya di mana Komisaris Utama akan meneliti kesiapan cross-listing dengan Bursa Malaysia.',
+    scenarioID='Kantor Direksi dan Dewan Zava Group berupaya meningkatkan kualitas paper, pelacakan keputusan, dan visibilitas tata kelola sebelum siklus rapat akhir kuartal. Lintas 4 Rapat Direksi terakhir, 38% paper tiba kurang dari 48 jam sebelum rapat, Log Resolusi menampilkan 17 item terbuka tertunda lebih dari 30 hari, dan 6 item watchlist pengungkapan kini ditandai Kuning atau Merah. Komisaris frustrasi karena resolusi tidak selalu mudah dilacak ke pemilik dan tenggat. Sekretaris Perusahaan membutuhkan ritme operasi yang lebih disiplin dengan tinjauan RAG yang jelas atas risiko pengungkapan dan tata kelola dalam dua minggu, menjelang Rapat Dewan Komisaris berikutnya di mana Komisaris Utama akan meneliti kesiapan cross-listing dengan Bursa Malaysia.',
     relevantDepts=['legal','compliance','investor-relations','risk','finance','strategy'],
     personas=[
       {'name':'Surya Hartanto','role':'Company Secretary','roleID':'Sekretaris Perusahaan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1A237E'},

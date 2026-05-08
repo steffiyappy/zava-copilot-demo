@@ -6,9 +6,9 @@ from util import *
 DEPARTMENTS_3 = [
   ind(
     'dept-marketing', 'department', '📢 Marketing & Communications', '📢', '#AD1457', '#C2185B',
-    'Zava Group Berhad — Brand, Marketing & Communications',
+    'Zava Marketing',
     'Campaign ROI is slipping, brand sentiment is mixed, and the next launch must recover qualified leads without creating disclosure risk.',
-    'The Brand, Marketing & Communications division at Zava Group Berhad is balancing performance pressure with reputation management ahead of a high-visibility ASEAN campaign window. Qualified lead conversion has softened by 22% over two quarters, brand sentiment is uneven across digital channels, and a recent influencer partnership generated unexpected pushback. Leadership wants clearer evidence on what content is working, the next launch must recover qualified leads without creating Bursa Malaysia disclosure risk, and the team must sharpen its RAG view of message risk, campaign effectiveness, and launch readiness across 11 product lines and 6 ASEAN markets within three weeks.',
+    'The Brand, Marketing & Communications division at Zava Group is balancing performance pressure with reputation management ahead of a high-visibility ASEAN campaign window. Qualified lead conversion has softened by 22% over two quarters, brand sentiment is uneven across digital channels, and a recent influencer partnership generated unexpected pushback. Leadership wants clearer evidence on what content is working, the next launch must recover qualified leads without creating Bursa Malaysia disclosure risk, and the team must sharpen its RAG view of message risk, campaign effectiveness, and launch readiness across 11 product lines and 6 ASEAN markets within three weeks.',
     ['MKT_01_Campaign_Performance.xlsx','MKT_02_Channel_Spend_Analytics.xlsx','MKT_03_Brand_Guidelines.docx','MKT_04_Communications_Playbook.docx','MKT_05_Crisis_Response_Protocol.docx','MKT_06_FY2026_Launch_Plan.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -182,9 +182,9 @@ DEPARTMENTS_3 = [
         persona=['Rafael Tanudjaja','Indira Setiawan'],
         personaID=['Rafael Tanudjaja','Indira Setiawan'])
     ],
-    companyID='PT Nusantara Raya Investama Tbk — Divisi Pemasaran dan Komunikasi',
+    companyID='Zava Marketing',
     taglineID='ROI kampanye menurun, sentimen merek campur aduk, dan peluncuran berikutnya harus memulihkan lead berkualitas tanpa menimbulkan risiko pengungkapan OJK.',
-    scenarioID='Divisi Pemasaran dan Komunikasi PT Nusantara Raya Investama Tbk menyeimbangkan tekanan kinerja dengan manajemen reputasi menjelang jendela kampanye nasional yang sangat terlihat. Konversi lead berkualitas turun 22% dalam dua kuartal, sentimen merek tidak merata di kanal digital, dan kemitraan influencer terbaru memicu reaksi negatif. Direksi meminta bukti yang lebih jelas mengenai konten yang berhasil, peluncuran berikutnya harus memulihkan lead berkualitas tanpa menimbulkan risiko pengungkapan OJK, dan tim harus mempertajam tinjauan RAG mengenai risiko pesan, efektivitas kampanye, dan kesiapan peluncuran lintas 11 lini produk dan 6 wilayah Indonesia dalam tiga minggu.',
+    scenarioID='Divisi Pemasaran dan Komunikasi Zava Group menyeimbangkan tekanan kinerja dengan manajemen reputasi menjelang jendela kampanye nasional yang sangat terlihat. Konversi lead berkualitas turun 22% dalam dua kuartal, sentimen merek tidak merata di kanal digital, dan kemitraan influencer terbaru memicu reaksi negatif. Direksi meminta bukti yang lebih jelas mengenai konten yang berhasil, peluncuran berikutnya harus memulihkan lead berkualitas tanpa menimbulkan risiko pengungkapan OJK, dan tim harus mempertajam tinjauan RAG mengenai risiko pesan, efektivitas kampanye, dan kesiapan peluncuran lintas 11 lini produk dan 6 wilayah Indonesia dalam tiga minggu.',
     relevantDepts=['strategy','sales','legal','risk','investor-relations','digital'],
     personas=[
       {'name':'Indira Setiawan','role':'Chief Marketing Officer','roleID':'Direktur Pemasaran','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
@@ -241,9 +241,9 @@ DEPARTMENTS_3 = [
   ),
   ind(
     'dept-it-digital', 'department', '💻 IT & Digital', '💻', '#006064', '#00838F',
-    'Zava Group Berhad — Group IT & Digital',
+    'Zava IT & Digital',
     'ERP migration is six months late, a cyber incident hit three business units, and Copilot adoption is uneven across the group.',
-    'Group IT & Digital at Zava Group Berhad is trying to recover a delayed ERP transformation programme while also proving cyber resilience and adoption value. Legacy SAP architecture is slowing the migration, three business units were disrupted by a recent ransomware-style incident with 14 hours of degraded service, and executives want clearer evidence that Copilot usage is moving beyond experimentation across 8,400 employees. The CIO needs one integrated RAG view of programme risk, cyber exposure, and adoption impact in 30 days, ahead of the next Technology Steering Committee where Bursa-disclosable incidents and FY2026 IT capex will both be on the table.',
+    'Group IT & Digital at Zava Group is trying to recover a delayed ERP transformation programme while also proving cyber resilience and adoption value. Legacy SAP architecture is slowing the migration, three business units were disrupted by a recent ransomware-style incident with 14 hours of degraded service, and executives want clearer evidence that Copilot usage is moving beyond experimentation across 8,400 employees. The CIO needs one integrated RAG view of programme risk, cyber exposure, and adoption impact in 30 days, ahead of the next Technology Steering Committee where Bursa-disclosable incidents and FY2026 IT capex will both be on the table.',
     ['IT_01_Transformation_Tracker.xlsx','IT_02_Cyber_Incident_Metrics.xlsx','IT_03_IT_Governance_Manual.docx','IT_04_Cyber_Response_Playbook.docx','IT_05_Architecture_Standards.docx','IT_06_Copilot_Adoption_Strategy.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -417,9 +417,9 @@ DEPARTMENTS_3 = [
         persona=['Sinta Kurniawan','Bayu Wirawan'],
         personaID=['Sinta Kurniawan','Bayu Wirawan'])
     ],
-    companyID='PT Nusantara Raya Investama Tbk — Divisi TI dan Digital',
+    companyID='Zava IT & Digital',
     taglineID='Migrasi ERP terlambat enam bulan, insiden siber menghantam tiga unit usaha, dan adopsi Copilot belum merata — kewajiban pelaporan OJK dan Kominfo aktif.',
-    scenarioID='Divisi TI dan Digital PT Nusantara Raya Investama Tbk berupaya memulihkan program transformasi ERP yang tertunda sambil membuktikan ketahanan siber dan nilai adopsi. Arsitektur SAP lama memperlambat migrasi, tiga unit usaha terganggu insiden bergaya ransomware terbaru dengan 14 jam layanan terdegradasi, dan eksekutif menginginkan bukti yang lebih jelas bahwa penggunaan Copilot bergerak melampaui eksperimen di 12.000 karyawan. CIO membutuhkan satu tinjauan RAG terintegrasi atas risiko program, paparan siber, dan dampak adopsi dalam 30 hari, menjelang Komite Pengarah Teknologi berikutnya di mana insiden yang harus diungkap ke BEI dan capex TI FY2026 keduanya akan dibahas.',
+    scenarioID='Divisi TI dan Digital Zava Group berupaya memulihkan program transformasi ERP yang tertunda sambil membuktikan ketahanan siber dan nilai adopsi. Arsitektur SAP lama memperlambat migrasi, tiga unit usaha terganggu insiden bergaya ransomware terbaru dengan 14 jam layanan terdegradasi, dan eksekutif menginginkan bukti yang lebih jelas bahwa penggunaan Copilot bergerak melampaui eksperimen di 12.000 karyawan. CIO membutuhkan satu tinjauan RAG terintegrasi atas risiko program, paparan siber, dan dampak adopsi dalam 30 hari, menjelang Komite Pengarah Teknologi berikutnya di mana insiden yang harus diungkap ke BEI dan capex TI FY2026 keduanya akan dibahas.',
     relevantDepts=['finance','risk','compliance','operations','hr','strategy'],
     personas=[
       {'name':'Bayu Wirawan','role':'Chief Information Officer','roleID':'Direktur TI','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
@@ -476,9 +476,9 @@ DEPARTMENTS_3 = [
   ),
   ind(
     'dept-esg', 'department', '🌱 ESG & Sustainability', '🌱', '#1B5E20', '#2E7D32',
-    'Zava Group Berhad — Group ESG Office',
+    'Zava ESG',
     'Scope 1 emissions are above glidepath, supplier due diligence gaps are visible, and sustainability assurance must be Board-ready.',
-    'The Group ESG Office at Zava Group Berhad is preparing for a tougher reporting and assurance cycle while several operational indicators are moving in the wrong direction. Scope 1 emissions intensity is 14% above the FY2026 glidepath, supplier due diligence reviews are inconsistent across 1,200 tier-1 suppliers, and the climate risk roadmap has not yet been mapped to TCFD aligned scenarios. Leadership wants a clearer narrative on what is genuinely on track versus at risk, and a major customer is asking for immediate proof of supply-chain controls before contract renewal. The CSO needs a sharper cross-functional story that can stand up to Board scrutiny within five weeks, ahead of the next Sustainability Committee meeting and the FY2026 Bursa-aligned sustainability report submission.',
+    'The Group ESG Office at Zava Group is preparing for a tougher reporting and assurance cycle while several operational indicators are moving in the wrong direction. Scope 1 emissions intensity is 14% above the FY2026 glidepath, supplier due diligence reviews are inconsistent across 1,200 tier-1 suppliers, and the climate risk roadmap has not yet been mapped to TCFD aligned scenarios. Leadership wants a clearer narrative on what is genuinely on track versus at risk, and a major customer is asking for immediate proof of supply-chain controls before contract renewal. The CSO needs a sharper cross-functional story that can stand up to Board scrutiny within five weeks, ahead of the next Sustainability Committee meeting and the FY2026 Bursa-aligned sustainability report submission.',
     ['ESG_01_Sustainability_Dashboard.xlsx','ESG_02_Supplier_DueDiligence.xlsx','ESG_03_Sustainability_Framework.docx','ESG_04_Climate_Action_Roadmap.docx','ESG_05_Assurance_Manual.docx','ESG_06_Customer_Disclosure_Pack.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
@@ -652,9 +652,9 @@ DEPARTMENTS_3 = [
         persona=['Hendra Wijaya','Galuh Saraswati'],
         personaID=['Hendra Wijaya','Galuh Saraswati'])
     ],
-    companyID='PT Nusantara Raya Investama Tbk — Divisi ESG dan Keberlanjutan',
+    companyID='Zava ESG',
     taglineID='Emisi Scope 1 di atas glidepath, gap uji tuntas pemasok terlihat, dan asurans keberlanjutan harus siap untuk Direksi — selaras dengan POJK 51 dan TCFD.',
-    scenarioID='Divisi ESG dan Keberlanjutan PT Nusantara Raya Investama Tbk mempersiapkan siklus pelaporan dan asurans yang lebih ketat sementara beberapa indikator operasional bergerak ke arah yang salah. Intensitas emisi Scope 1 14% di atas glidepath FY2026, tinjauan uji tuntas pemasok tidak konsisten di 1.200 pemasok tier-1, dan peta risiko iklim belum dipetakan ke skenario sejalan TCFD. Direksi menginginkan narasi yang lebih jelas mengenai apa yang benar-benar berjalan baik versus berisiko, dan pelanggan besar meminta bukti segera atas kontrol rantai pasok sebelum perpanjangan kontrak. Direktur Keberlanjutan membutuhkan narasi lintas fungsi yang lebih tajam yang dapat bertahan di hadapan Direksi dalam lima minggu, menjelang rapat Komite Keberlanjutan berikutnya dan penyerahan laporan keberlanjutan POJK 51 FY2026.',
+    scenarioID='Divisi ESG dan Keberlanjutan Zava Group mempersiapkan siklus pelaporan dan asurans yang lebih ketat sementara beberapa indikator operasional bergerak ke arah yang salah. Intensitas emisi Scope 1 14% di atas glidepath FY2026, tinjauan uji tuntas pemasok tidak konsisten di 1.200 pemasok tier-1, dan peta risiko iklim belum dipetakan ke skenario sejalan TCFD. Direksi menginginkan narasi yang lebih jelas mengenai apa yang benar-benar berjalan baik versus berisiko, dan pelanggan besar meminta bukti segera atas kontrol rantai pasok sebelum perpanjangan kontrak. Direktur Keberlanjutan membutuhkan narasi lintas fungsi yang lebih tajam yang dapat bertahan di hadapan Direksi dalam lima minggu, menjelang rapat Komite Keberlanjutan berikutnya dan penyerahan laporan keberlanjutan POJK 51 FY2026.',
     relevantDepts=['risk','operations','procurement','investor-relations','legal','strategy'],
     personas=[
       {'name':'Galuh Saraswati','role':'Chief Sustainability Officer','roleID':'Direktur Keberlanjutan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1B5E20'},
