@@ -674,9 +674,7 @@ function showItem(item,tab){
           ?'<span class="prompt-mode">🔍 Critique Mode</span>'
           :'<span class="prompt-mode">⚖️ Model Council</span>';
       }
-      const personaChip=persona
-        ?'<span class="prompt-persona" style="color:'+pColor+'">👤 '+escapeHTML(persona)+'</span>'
-        :'';
+      const personaChip='';
       return '<div class="prompt-item">'+
         '<div class="prompt-title">'+modeLbl+personaChip+'💬 Prompt '+(pi+1)+'</div>'+
         '<div class="prompt-text">'+escapeHTML(txt)+'</div>'+
