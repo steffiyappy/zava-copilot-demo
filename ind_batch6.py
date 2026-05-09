@@ -230,8 +230,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Saya Direktur Keuangan Grup. Direksi rapat dalam 5 hari membahas kerugian fraud Q4 dan penundaan lisensi OJK. Susun pembukaan CEO 90 detik yang: (1) menyebutkan kerugian Rp 134 miliar dan lonjakan 47% tanpa mengecilkan, (2) menjelaskan 3 akar masalah dalam satu kalimat masing-masing, (3) menegaskan perpanjangan lisensi masih dapat dipulihkan dengan rencana remediasi yang kredibel, (4) menyatakan komitmen 30/60/90 hari kepada OJK, BI dan BSSN, (5) ditutup dengan satu permintaan kepada Direksi. Nada: tenang, akuntabel, ke depan. Tanpa klise korporat.',
             'Saya Direktur Produk. Kami butuh peta komunikasi pemangku kepentingan untuk 14 hari ke depan mencakup OJK, Bank Indonesia, BSSN, merchant QRIS, nasabah dompet ritel, Direksi, dan 3 bank partner terbesar. Untuk setiap pemangku kepentingan, susun: kekhawatiran utama, pemilik pesan, saluran, waktu, dan satu hal yang TIDAK boleh kami sampaikan. Output berupa tabel yang bisa dimasukkan ke paket Direksi.'
         ],
-        persona=['Mod Admin — Head of Compliance','Hadar — Group CFO','Sasha — Chief Product Officer'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Hadar — Direktur Keuangan Grup','Sasha — Direktur Produk']),
+        persona=['Mod Admin','Hadar Caspit','Sasha Ouellet'],
+        personaID=['Mod Admin','Hadar Caspit','Sasha Ouellet']),
 
         tool('Microsoft 365 Copilot — Researcher', FRONTIER_LIC, M365_ACCT, [
             '🔍 CRITIQUE MODE — I am the Head of Compliance at a Southeast-Asian e-money issuer regulated by OJK and Bank Indonesia. Research how SEA fintechs (Indonesia, Malaysia, Philippines, Vietnam, Thailand) handled fraud-loss spikes greater than 40% in a single quarter between 2022 and 2025, with focus on cases where the regulator paused licence renewal or imposed enhanced supervision. For each case give: trigger event, regulator action, remediation plan, time-to-restore, and what the firm got wrong in its first response. Then critique the standard playbook of "freeze new merchants + raise KYC tier" — where does it fail? Cite primary sources (OJK, BI, BSP, BNM, SBV, BOT releases, central-bank reports, regulator press conferences).',
@@ -241,8 +241,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             '🔍 MODE KRITIK — Saya Kepala Kepatuhan penerbit e-money di Asia Tenggara yang diatur OJK dan Bank Indonesia. Teliti bagaimana fintech SEA (Indonesia, Malaysia, Filipina, Vietnam, Thailand) menangani lonjakan kerugian fraud lebih dari 40% dalam satu kuartal antara 2022-2025, dengan fokus pada kasus di mana regulator menunda perpanjangan lisensi atau menerapkan pengawasan diperketat. Untuk setiap kasus, sebutkan: peristiwa pemicu, tindakan regulator, rencana remediasi, waktu pemulihan, dan apa yang salah dalam respons awal perusahaan. Kemudian kritisi playbook standar "membekukan merchant baru + menaikkan tingkat KYC" — di mana playbook ini gagal? Sebutkan sumber primer (rilis OJK, BI, BSP, BNM, SBV, BOT, laporan bank sentral, konferensi pers regulator).',
             '⚖️ MODE DEWAN MODEL — Kumpulkan 3 perspektif ahli: (1) mantan pengawas OJK tentang apa yang sebenarnya ingin dilihat regulator dalam rencana remediasi 60 hari; (2) SME fraud pembayaran tentang kontrol mana yang terukur mengurangi kerugian social-engineering dan account-takeover dalam 90 hari; (3) CRO fintech tentang cara berkomunikasi dengan merchant dan konsumen tanpa memicu deposit run. Sintesa menjadi rencana 30/60/90 hari yang direkomendasikan untuk BayarLintas dengan trade-off eksplisit (biaya, friksi, churn, kepercayaan regulator). Sebutkan sumber primer.'
         ],
-        persona=['Mod Admin — Head of Compliance','Mod Admin — Head of Compliance'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Mod Admin — Kepala Kepatuhan']),
+        persona=['Mod Admin','Mod Admin'],
+        personaID=['Mod Admin','Mod Admin']),
 
         tool('Microsoft 365 Copilot — Analyst', FRONTIER_LIC, M365_ACCT, [
             'I am the Group CFO. Upload /FT_01_Payments_Operations.xlsx. The workbook has Transaction Volume, Fraud Losses, Chargeback Tracker, Merchant Risk Score, Settlement Cycle, Liquidity Buffer and Capital Adequacy tabs. Pull data from THREE tabs simultaneously — Transaction Volume + Fraud Losses + Chargeback Tracker — and calculate the fraud rate per merchant category for each month of FY2025, the YoY change, and a single quarter-over-quarter index. Show me a bar chart of the top 5 merchant categories by fraud rate and a waterfall of total fraud losses Q1→Q4. Give me the exact RM amount and % point change for Q4 versus the trailing-three-quarter average.',
@@ -254,8 +254,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Workbook yang sama /FT_01_Payments_Operations.xlsx. Tarik dari TIGA tab — Fraud Losses + Chargeback Tracker + Merchant Risk Score — dan identifikasi 3 pendorong utama lonjakan fraud Q4. Untuk setiap pendorong, sebutkan: kategori merchant yang paling terdampak, kerugian dalam miliar rupiah, pangsa total kerugian Q4, dan apakah pendorong terkonsentrasi pada 1-2 minggu atau menyebar sepanjang kuartal. Kemudian jalankan what-if: jika kami memblokir 10 merchant berisiko tertinggi pada hari ke-1 Q4, berapa kerugian yang akan terhindar?',
             'Workbook yang sama /FT_01_Payments_Operations.xlsx. Tarik dari TIGA tab — Settlement Cycle + Liquidity Buffer + Capital Adequacy — dan susun watchlist 8 minggu untuk CEO. Tandai setiap minggu di mana: siklus settlement meleset di luar T+1, buffer likuiditas turun di bawah 1,4× minimum regulator, atau kecukupan modal turun di bawah 14%. Output berupa satu tabel berkode warna (hijau/kuning/merah) yang bisa saya tempel ke paket Direksi.'
         ],
-        persona=['Hadar — Group CFO','Hadar — Group CFO','Hadar — Group CFO'],
-        personaID=['Hadar — Direktur Keuangan Grup','Hadar — Direktur Keuangan Grup','Hadar — Direktur Keuangan Grup']),
+        persona=['Hadar Caspit','Hadar Caspit','Hadar Caspit'],
+        personaID=['Hadar Caspit','Hadar Caspit','Hadar Caspit']),
 
         tool('Microsoft Excel + Copilot', M365_LIC, M365_ACCT, [
             'Open /FT_01_Payments_Operations.xlsx in Excel desktop. Use Copilot in Excel to pull data from THREE tabs simultaneously — Fraud Losses, Chargeback Tracker, and Merchant Risk Score. Create a new sheet called "Board Fraud Dashboard" with: (1) a merchant-category heatmap (rows = category, columns = month, colour = fraud rate), (2) a top-10 highest-loss merchant table with risk score, (3) a single KPI strip showing total Q4 loss, YoY change, and recovery to date. Format for projection on a Board screen.',
@@ -267,8 +267,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Workbook yang sama terbuka di Excel desktop /FT_01_Payments_Operations.xlsx. Gunakan Copilot untuk membangun sheet baru bernama "Recovery Bridge" yang menarik dari Fraud Losses + Chargeback Tracker. Tampilkan waterfall: kerugian Q4 awal → recovery yang dibukukan → write-off → klaim asuransi → kerugian sisa bersih. Kemudian di bawahnya, ramalan 4 kuartal ke depan dengan asumsi kontrol 30/60/90 hari diimplementasikan tepat waktu. Gunakan angka persis dari tab sumber, bukan estimasi yang dibulatkan.',
             'Workbook yang sama /FT_01_Payments_Operations.xlsx terbuka di Excel desktop. Gunakan Copilot in Excel untuk membuat sheet baru "Watchlist 8 Minggu" yang menarik dari Settlement Cycle + Liquidity Buffer + Capital Adequacy. Setiap baris adalah satu minggu, kolom adalah ketiga KPI dengan conditional formatting (hijau/kuning/merah terhadap ambang batas OJK dan BI). Tambahkan kolom sparkline yang menunjukkan trajektori 8 minggu dan kolom komentar untuk Treasurer.'
         ],
-        persona=['Hadar — Group CFO','Mod Admin — Head of Compliance','Hadar — Group CFO'],
-        personaID=['Hadar — Direktur Keuangan Grup','Mod Admin — Kepala Kepatuhan','Hadar — Direktur Keuangan Grup']),
+        persona=['Hadar Caspit','Mod Admin','Hadar Caspit'],
+        personaID=['Hadar Caspit','Mod Admin','Hadar Caspit']),
 
         tool('Microsoft Word + Copilot', M365_LIC, M365_ACCT, [
             'Open /FT_03_Fraud_Risk_Policy.docx in Word desktop. The current policy is 4 years old and predates the Q4 fraud event. Use Edit with Copilot to restructure it into 4 sections: (1) Risk Appetite & Loss Tolerances (with explicit RM thresholds), (2) Real-Time Detection & Blocking Controls (per channel — wallet, QRIS, B2B settlement), (3) Incident Response & 72-Hour Regulator Notification, (4) Quarterly Board Reporting. Add a 1-page executive summary at the top. Keep all defined terms; track every change.',
@@ -280,8 +280,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Buka /FT_02_OJK_Licence_Conditions.docx di Word desktop. Gunakan Edit with Copilot untuk menambahkan tabel status RAG yang mencakup 23 kondisi lisensi. Untuk setiap kondisi: status saat ini (Terpenuhi / Sebagian / Tidak Terpenuhi), referensi bukti, pemilik, tanggal target penutupan. Di akhir tambahkan "Briefing Perpanjangan Lisensi OJK" 1 halaman yang dapat ditandatangani CEO untuk diajukan. Pertahankan bahasa regulator persis seperti aslinya jika dikutip.',
             'Buka /FT_05_BSSN_Cyber_Audit_Report.docx di Word desktop dengan /FT_03_Fraud_Risk_Policy.docx sebagai konteks tambahan. Gunakan Edit with Copilot untuk menambahkan "Lampiran Komunikasi Pemangku Kepentingan" yang memetakan masing-masing dari 9 temuan kritis BSSN ke: pesan ke nasabah, pesan ke merchant, pesan ke regulator, pesan ke staf internal. Nada harus jujur tentang ruang lingkup tetapi tidak menakutkan.'
         ],
-        persona=['Sasha — Chief Product Officer','Mod Admin — Head of Compliance','Daichi — CTO/CISO'],
-        personaID=['Sasha — Direktur Produk','Mod Admin — Kepala Kepatuhan','Daichi — Direktur Teknologi/CISO']),
+        persona=['Sasha Ouellet','Mod Admin','Daichi Maruyama'],
+        personaID=['Sasha Ouellet','Mod Admin','Daichi Maruyama']),
 
         tool('Microsoft PowerPoint + Copilot', M365_LIC, M365_ACCT, [
             'Open a blank PowerPoint with /FT_01_Payments_Operations.xlsx and /FT_02_OJK_Licence_Conditions.docx as context. Use Copilot in PowerPoint to draft a 5-slide emergency Board deck: (1) Q4 Fraud Snapshot (RM 38m, 47% jump, 3 root causes), (2) Regulator Status (OJK paused / BI 72-hour / BSSN 9 findings), (3) Containment Done / In-Flight, (4) 30/60/90-Day Plan with named owners, (5) The 4 Decisions Board Must Make. Use brand colour #6A1B9A. No clip art. Numbers must reconcile to the source workbook.',
@@ -293,8 +293,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Buka PowerPoint kosong dengan /FT_01_Payments_Operations.xlsx sebagai konteks. Gunakan Copilot in PowerPoint untuk menyusun deck CEO 5 slide untuk diskusi rahasia dengan OJK dan Bank Indonesia: (1) Recovery Bridge (waterfall), (2) Ramalan Kerugian Diperbarui vs Buffer, (3) Headroom Likuiditas & Modal, (4) Rencana Validasi Independen (auditor eksternal, ruang lingkup, jadwal), (5) Commitment Register. Nada: kelas regulator, tanpa bahasa pemasaran.',
             'Buka PowerPoint kosong dengan /FT_01_Payments_Operations.xlsx dan /FT_04_Product_Roadmap_2026.docx sebagai konteks. Gunakan Copilot in PowerPoint untuk menyusun deck reset roadmap produk 5 slide: (1) Apa yang kami tunda (dan mengapa), (2) Apa yang kami percepat (pemblokiran fraud real-time, step-up KYC), (3) Apa yang tetap berjalan, (4) Dampak ke merchant & konsumen (dengan estimasi churn), (5) Metrik keberhasilan FY2026. Dirancang untuk offsite kepemimpinan Produk & Tek.'
         ],
-        persona=['Mod Admin — Head of Compliance','Hadar — Group CFO','Sasha — Chief Product Officer'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Hadar — Direktur Keuangan Grup','Sasha — Direktur Produk']),
+        persona=['Mod Admin','Hadar Caspit','Sasha Ouellet'],
+        personaID=['Mod Admin','Hadar Caspit','Sasha Ouellet']),
 
         tool('Microsoft Outlook + Copilot', M365_LIC, M365_ACCT, [
             'In Outlook, click New Email and use Copilot to draft an email to the BayarLintas Board of Directors calling an emergency meeting in 5 days on Q4 fraud losses and the OJK licence pause. Include: meeting purpose in 2 lines, the 4 papers being circulated 48 hours in advance, the 4 decisions sought, expected duration, and the dial-in for directors travelling. Tone: serious but not panicked. End with the Board Secretary as the RSVP point.',
@@ -306,8 +306,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Buka thread email panjang berjudul "Perpanjangan Lisensi OJK — Item Tertunggak" di Outlook. Gunakan Copilot untuk merangkum thread 18 pesan dalam 5 bullet: apa yang diminta OJK, apa yang sudah kami ajukan, apa yang terlambat, siapa yang memiliki setiap item terbuka, dan touchpoint regulator berikutnya. Kemudian susun balasan yang menutup 3 item terbuka dan mengusulkan tanggal untuk item yang tersisa.',
             'Di Outlook, susun email dari Direktur Produk kepada tim produk dan engineering pada hari setelah rapat Direksi. Cakup: apa yang disetujui Direksi, perubahan apa pada roadmap FY2026, 3 fitur yang kami tunda, 2 fitur yang kami percepat, standup pemblokiran fraud harian baru, dan pesan yang akan kami sampaikan kepada manajer merchant. Nada: terus terang, memotivasi, tanpa spin.'
         ],
-        persona=['Mod Admin — Head of Compliance','Hadar — Group CFO','Sasha — Chief Product Officer'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Hadar — Direktur Keuangan Grup','Sasha — Direktur Produk']),
+        persona=['Mod Admin','Hadar Caspit','Sasha Ouellet'],
+        personaID=['Mod Admin','Hadar Caspit','Sasha Ouellet']),
 
         tool('Microsoft Teams Premium + Copilot', M365_LIC, M365_ACCT, [
             'In Teams, open the recent meeting "New Software Implementation" (this was the rollout review of the new fraud-detection platform). Click the meeting → Recap → click the Copilot icon top right. Ask Copilot to produce structured minutes covering: decisions, owners, deadlines, and any open dependencies on vendor or BSSN sign-off. Then ask "what fraud-control commitments did we make that need to be reflected in the OJK remediation brief?". DO NOT use the Export button — work entirely inside Recap.',
@@ -319,8 +319,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Di Teams, buka rapat baru-baru ini "Potential Merger" (ini adalah diskusi akuisisi agregator QRIS regional). Klik rapat → Recap → klik ikon Copilot di kanan atas. Minta notulensi M&A rahasia yang mencakup: kisaran valuasi yang dibahas, persetujuan regulator yang diperlukan (OJK, KPPU, MyCC), risiko integrasi, dan 3 syarat untuk melanjutkan. JANGAN gunakan tombol Export.',
             'Di Teams, buka rapat baru-baru ini "Negotiating Marketing Contract" (ini adalah negosiasi ulang dengan merchant top-3 setelah peristiwa fraud). Klik rapat → Recap → klik ikon Copilot di kanan atas. Minta notulensi negosiasi vendor yang mencakup: kekhawatiran yang diangkat merchant, konsesi komersial yang ditawarkan, klausul fraud-loss-share baru, perubahan SLA, dan langkah berikutnya dengan tim hukum kami. JANGAN gunakan tombol Export.'
         ],
-        persona=['Mod Admin — Head of Compliance','Sasha — Chief Product Officer','Daichi — CTO/CISO'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Sasha — Direktur Produk','Daichi — Direktur Teknologi/CISO']),
+        persona=['Mod Admin','Sasha Ouellet','Daichi Maruyama'],
+        personaID=['Mod Admin','Sasha Ouellet','Daichi Maruyama']),
 
         tool('Copilot Notebooks', M365_LIC, M365_ACCT, [
             'Create a new Copilot Notebook called "Compliance War-Room" and add 3 grounded sources: /FT_02_OJK_Licence_Conditions.docx, /FT_03_Fraud_Risk_Policy.docx, /FT_06_AML_KYC_Procedure.docx. Ask: "Reading these three documents together, identify every commitment we have made to OJK or BI that is not yet evidenced in our internal procedures. For each gap, suggest the procedural change required and the owner." Then save the response as a working note in the notebook.',
@@ -332,8 +332,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Buat Copilot Notebook baru bernama "Chief of Staff CFO" dan tambahkan /FT_01_Payments_Operations.xlsx dan /FT_03_Fraud_Risk_Policy.docx sebagai sumber tertambat. Tanyakan: "Buatkan saya dashboard CFO 1 halaman tunggal yang menggabungkan dampak finansial Q4, trajektori pemulihan, dan ambang kebijakan yang sekarang kami jalankan. Sorot setiap KPI dalam 10% dari batas keras."',
             'Buat Copilot Notebook baru bernama "Reviewer Produk & Kepatuhan" dan tambahkan /FT_01_Payments_Operations.xlsx, /FT_03_Fraud_Risk_Policy.docx dan /FT_04_Product_Roadmap_2026.docx sebagai sumber tertambat. Tanyakan: "Telusuri setiap inisiatif roadmap FY2026 dan beritahu saya apakah konsisten, netral atau bertentangan dengan kebijakan risiko fraud yang diperbarui. Tandai konflik dengan rekomendasi: tunda, desain ulang, atau terima dengan mitigasi."'
         ],
-        persona=['Mod Admin — Head of Compliance','Hadar — Group CFO','Sasha — Chief Product Officer'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Hadar — Direktur Keuangan Grup','Sasha — Direktur Produk']),
+        persona=['Mod Admin','Hadar Caspit','Sasha Ouellet'],
+        personaID=['Mod Admin','Hadar Caspit','Sasha Ouellet']),
 
         tool('Copilot Cowork (parallel agents)', M365_LIC, M365_ACCT, [
             'I am the Head of Compliance. The emergency Board fraud review is in 5 days. From M365 Copilot Chat use Cowork to run 5 streams in parallel: (1) draft the OJK licence renewal brief from /FT_02 and /FT_03, (2) draft the BI 72-hour notification letter from /FT_01 and /FT_05, (3) draft the BSSN remediation tracker from /FT_05 with 9 findings owners and dates, (4) draft the merchant communication from /FT_04 product roadmap context, (5) draft the consumer FAQ for the wallet app. Return all 5 outputs in one consolidated response with section headings.',
@@ -343,8 +343,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Saya Kepala Kepatuhan. Review fraud Direksi darurat dalam 5 hari. Dari M365 Copilot Chat gunakan Cowork untuk menjalankan 5 stream paralel: (1) susun briefing perpanjangan lisensi OJK dari /FT_02 dan /FT_03, (2) susun surat notifikasi BI 72 jam dari /FT_01 dan /FT_05, (3) susun tracker remediasi BSSN dari /FT_05 dengan 9 pemilik temuan dan tanggal, (4) susun komunikasi merchant dari konteks roadmap produk /FT_04, (5) susun FAQ konsumen untuk aplikasi dompet. Kembalikan semua 5 output dalam satu respons terkonsolidasi dengan judul bagian.',
             'Saya Direktur Keuangan Grup. Setelah rapat Direksi kami harus eksekusi. Dari M365 Copilot Chat gunakan Cowork untuk menjalankan 5 stream paralel: (1) susun pernyataan pers dari bahasa Direksi yang disetujui, (2) siapkan pembaruan investor 30 hari dari /FT_01, (3) siapkan makalah Komite Audit tentang efektivitas kontrol fraud dari /FT_03, (4) susun pesan all-hands staf, (5) siapkan talking points untuk panggilan supervisi OJK berikutnya. Kembalikan semua 5 output bersama dengan ringkasan eksekutif 3 baris di atas.'
         ],
-        persona=['Mod Admin — Head of Compliance','Hadar — Group CFO'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Hadar — Direktur Keuangan Grup']),
+        persona=['Mod Admin','Hadar Caspit'],
+        personaID=['Mod Admin','Hadar Caspit']),
 
         tool('Word Agent (M365 Copilot Chat)', M365_LIC, M365_ACCT, [
             'From M365 Copilot Chat — DO NOT open Word first. Ask the Word Agent to generate a new .docx titled "OJK Licence Renewal Brief — FY2025" using /FT_02_OJK_Licence_Conditions.docx and /FT_03_Fraud_Risk_Policy.docx as grounded sources. Structure: Executive Summary, Q4 Fraud Event Narrative, 23 Licence Conditions Status Table, 30/60/90-Day Remediation Plan, Independent Validation, Sign-off. Length 8-10 pages. Regulator-grade tone.',
@@ -354,8 +354,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Dari M365 Copilot Chat — JANGAN buka Word terlebih dahulu. Minta Word Agent menghasilkan .docx baru berjudul "Briefing Perpanjangan Lisensi OJK — FY2025" menggunakan /FT_02_OJK_Licence_Conditions.docx dan /FT_03_Fraud_Risk_Policy.docx sebagai sumber tertambat. Struktur: Ringkasan Eksekutif, Narasi Peristiwa Fraud Q4, Tabel Status 23 Kondisi Lisensi, Rencana Remediasi 30/60/90 Hari, Validasi Independen, Pengesahan. Panjang 8-10 halaman. Nada kelas regulator.',
             'Dari M365 Copilot Chat — JANGAN buka Word terlebih dahulu. Minta Word Agent menghasilkan .docx baru berjudul "Reset Roadmap Produk — FY2026" menggunakan /FT_04_Product_Roadmap_2026.docx dan /FT_01_Payments_Operations.xlsx. Struktur: Apa yang Berubah dan Mengapa, Inisiatif yang Ditunda, Inisiatif yang Dipercepat, Dampak Merchant & Konsumen, Realokasi Sumber Daya, Metrik Keberhasilan FY2026. 6-8 halaman.'
         ],
-        persona=['Mod Admin — Head of Compliance','Sasha — Chief Product Officer'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Sasha — Direktur Produk']),
+        persona=['Mod Admin','Sasha Ouellet'],
+        personaID=['Mod Admin','Sasha Ouellet']),
 
         tool('PPT Agent (M365 Copilot Chat)', M365_LIC, M365_ACCT, [
             'From M365 Copilot Chat — DO NOT open PowerPoint first. Ask the PPT Agent to generate a 7-slide deck titled "Board Fraud & Licence Renewal — Emergency Review" using /FT_01_Payments_Operations.xlsx, /FT_02_OJK_Licence_Conditions.docx and /FT_03_Fraud_Risk_Policy.docx. Slides: Cover, Q4 Snapshot, Regulator Status (OJK/BI/BSSN), Recovery Bridge, 30/60/90 Plan, 4 Board Decisions, Closing. Brand colour #6A1B9A. Numbers must reconcile to /FT_01.',
@@ -365,8 +365,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Dari M365 Copilot Chat — JANGAN buka PowerPoint terlebih dahulu. Minta PPT Agent menghasilkan deck 7 slide berjudul "Fraud Direksi & Perpanjangan Lisensi — Review Darurat" menggunakan /FT_01_Payments_Operations.xlsx, /FT_02_OJK_Licence_Conditions.docx dan /FT_03_Fraud_Risk_Policy.docx. Slide: Sampul, Snapshot Q4, Status Regulator (OJK/BI/BSSN), Recovery Bridge, Rencana 30/60/90, 4 Keputusan Direksi, Penutup. Warna brand #6A1B9A. Angka harus rekonsiliasi dengan /FT_01.',
             'Dari M365 Copilot Chat — JANGAN buka PowerPoint terlebih dahulu. Minta PPT Agent menghasilkan deck 6 slide berjudul "Pembaruan Investor — Fraud & Lisensi FY2025" menggunakan /FT_01_Payments_Operations.xlsx dan /FT_02_OJK_Licence_Conditions.docx. Slide: Sampul, Apa yang Terjadi, Dampak Finansial, Trajektori Pemulihan, Posisi Regulasi, Outlook FY2026. Nada: terus terang, tanpa spin, kelas IR.'
         ],
-        persona=['Mod Admin — Head of Compliance','Hadar — Group CFO'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Hadar — Direktur Keuangan Grup']),
+        persona=['Mod Admin','Hadar Caspit'],
+        personaID=['Mod Admin','Hadar Caspit']),
 
         tool('Excel Agent (M365 Copilot Chat)', M365_LIC, M365_ACCT, [
             'From M365 Copilot Chat — DO NOT open Excel first. Ask the Excel Agent to generate a new workbook called "Board_Fraud_Dashboard_FY2025.xlsx" with 4 tabs: Q4 Snapshot, Merchant Heatmap, Recovery Bridge, 8-Week Watchlist. Source data from /FT_01_Payments_Operations.xlsx. Each tab has formulas referencing the source — no hard-coded numbers. Conditional formatting on the watchlist (green/amber/red) against OJK and BI thresholds.',
@@ -376,8 +376,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Dari M365 Copilot Chat — JANGAN buka Excel terlebih dahulu. Minta Excel Agent menghasilkan workbook baru bernama "Dashboard_Fraud_Direksi_FY2025.xlsx" dengan 4 tab: Snapshot Q4, Heatmap Merchant, Recovery Bridge, Watchlist 8 Minggu. Sumber data dari /FT_01_Payments_Operations.xlsx. Setiap tab memiliki formula yang merujuk ke sumber — tanpa angka hard-coded. Conditional formatting pada watchlist (hijau/kuning/merah) terhadap ambang OJK dan BI.',
             'Dari M365 Copilot Chat — JANGAN buka Excel terlebih dahulu. Minta Excel Agent menghasilkan workbook baru bernama "Skenario_Pemulihan_Fraud.xlsx" dengan 3 tab: Base Case, Upside (kontrol terealisasi dalam 60 hari), Downside (kontrol meleset 30 hari). Setiap skenario menampilkan kerugian fraud kuartalan, pemulihan, sisa, dan dampak ke kecukupan modal. Sumber dari /FT_01_Payments_Operations.xlsx dan /FT_03_Fraud_Risk_Policy.docx untuk definisi ambang.'
         ],
-        persona=['Hadar — Group CFO','Hadar — Group CFO'],
-        personaID=['Hadar — Direktur Keuangan Grup','Hadar — Direktur Keuangan Grup']),
+        persona=['Hadar Caspit','Hadar Caspit'],
+        personaID=['Hadar Caspit','Hadar Caspit']),
 
         tool('Copilot Studio Agent Builder', M365_LIC, M365_ACCT, [
             'Create an agent for the BayarLintas Compliance Council. Its role is to answer questions from compliance, risk, product and tech teams about how the new fraud risk policy, the OJK licence conditions, and the AML/KYC procedures should be applied to specific product or merchant decisions. It should always cite the exact clause it is relying on, name the regulator (OJK / BI / BSSN), and flag any question that needs human compliance review. Tone: precise, regulator-grade, no marketing language.',
@@ -387,8 +387,8 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
             'Buat agent untuk BayarLintas Compliance Council. Perannya adalah menjawab pertanyaan dari tim kepatuhan, risiko, produk dan teknologi tentang bagaimana kebijakan risiko fraud baru, kondisi lisensi OJK, dan prosedur AML/KYC harus diterapkan pada keputusan produk atau merchant tertentu. Agent harus selalu mengutip klausul persis yang menjadi dasar, menyebutkan regulator (OJK / BI / BSSN), dan menandai setiap pertanyaan yang memerlukan review kepatuhan manusia. Nada: presisi, kelas regulator, tanpa bahasa pemasaran.',
             'Lanjutkan di Copilot Studio Agent Builder — uji agent BayarLintas Compliance Council dengan 3 prompt: (1) "Merchant di kategori judi online ingin onboarding ke QRIS. Rujuk kebijakan dan beritahu saya apa jawabannya." (2) "Engineering ingin meluncurkan alur step-up KYC baru yang menggunakan video selfie. Klausul OJK dan BSSN mana yang perlu saya penuhi sebelum peluncuran?" (3) "Merchant e-commerce terbesar kami memiliki klaster fraud minggu lalu. Apa jalur notifikasi 72 jam dan siapa yang menandatangani?" Tangkap kutipan agent dan tandai jawaban yang seharusnya dieskalasi ke review kepatuhan manusia.'
         ],
-        persona=['Mod Admin — Head of Compliance','Sasha — Chief Product Officer'],
-        personaID=['Mod Admin — Kepala Kepatuhan','Sasha — Direktur Produk'])
+        persona=['Mod Admin','Sasha Ouellet'],
+        personaID=['Mod Admin','Sasha Ouellet'])
     ],
     companyID='Zava Pay Indonesia',
     taglineID='Kerugian fraud FY2025 melonjak 47% di Q4 dan perpanjangan lisensi e-money OJK jatuh tempo dalam 60 hari — eskalasi ke Bank Indonesia dalam 72 jam',
@@ -433,8 +433,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Saya Kepala Ekonom. RDP dalam 7 hari akan fokus pada apakah penyerapan rendah mencerminkan kegagalan desain program atau kapasitas eksekusi. Susun pernyataan pembuka DJ 90 detik yang: (1) mengakui penyerapan 58% tanpa defensif, (2) memisahkan 3 program yang menyerap baik dari 4 yang tidak, (3) menjelaskan penyebab struktural (penundaan pengadaan, kekosongan staf, kesiapan data), (4) menyatakan komitmen pemulihan 30/60/90 hari, (5) menegaskan kembali kerangka disiplin fiskal. Nada: akuntabel, berbasis bukti, register aparatur sipil.',
             'Saya Kepala Staf. Kami butuh peta komunikasi pemangku kepentingan untuk 14 hari ke depan mencakup anggota Komisi DPR, auditor utama BPK, liaison KPK, Direktorat Anggaran Kementerian Keuangan, Bappenas, manajer program garis depan, dan tim komunikasi publik. Untuk setiap pemangku kepentingan, susun: kekhawatiran utama, pemilik pesan, saluran (surat resmi / dengar pendapat / briefing / pers), waktu, dan satu pesan yang harus kita pertahankan. Output berupa tabel untuk berkas DJ.'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Hadar — Chief Economist','Sasha — Chief of Staff'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Hadar — Kepala Ekonom','Sasha — Kepala Staf']),
+        persona=['Mod Admin','Hadar Caspit','Sasha Ouellet'],
+        personaID=['Mod Admin','Hadar Caspit','Sasha Ouellet']),
 
         tool('Microsoft 365 Copilot — Researcher', FRONTIER_LIC, M365_ACCT, [
             '🔍 CRITIQUE MODE — I am the Deputy DG (Policy) of an ASEAN federal modernisation agency. Research how comparable agencies in Indonesia, Malaysia, the Philippines, Singapore and Thailand have responded to public-service reform programmes that fell below 70% budget absorption AND received material national-audit findings in the same fiscal year, between 2020 and 2025. For each case give: trigger event, parliamentary response (DPR / Parliament / Congress), audit-office posture, recovery plan, and absorption result 12 months later. Critique the standard playbook of "reallocate to higher-absorbing programmes" — when does it actually destroy programme outcomes? Cite primary sources (BPK / NAO / COA / SAI Indonesia, central agencies, parliamentary hearings).',
@@ -444,8 +444,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             '🔍 MODE KRITIK — Saya Wakil Direktur Jenderal Kebijakan badan modernisasi federal ASEAN. Teliti bagaimana badan serupa di Indonesia, Malaysia, Filipina, Singapura dan Thailand merespons program reformasi pelayanan publik yang penyerapan anggarannya di bawah 70% DAN menerima temuan audit nasional yang material pada tahun fiskal yang sama, antara 2020-2025. Untuk setiap kasus, sebutkan: peristiwa pemicu, respons parlemen (DPR / Parliament / Congress), sikap kantor audit, rencana pemulihan, dan hasil penyerapan 12 bulan kemudian. Kritisi playbook standar "realokasi ke program yang menyerap lebih baik" — kapan playbook ini sebenarnya menghancurkan hasil program? Sebutkan sumber primer (BPK / NAO / COA / SAI Indonesia, lembaga sentral, dengar pendapat parlemen).',
             '⚖️ MODE DEWAN MODEL — Kumpulkan 3 perspektif ahli: (1) mantan auditor senior BPK tentang apa yang secara kredibel akan menutup 14 temuan terbuka dalam 90 hari; (2) akademisi reformasi pelayanan publik tentang tuas pemulihan penyerapan mana yang berbasis bukti vs mana yang teater politik; (3) mantan DJ badan modernisasi ASEAN tentang cara membawa Komisi DPR melewati rencana pemulihan tanpa membuat janji yang akan gagal di Q1 tahun depan. Sintesa menjadi rencana 30/60/90 hari untuk badan dengan trade-off eksplisit (dampak layanan publik, penutupan audit, burnout staf, kepercayaan publik). Sebutkan sumber primer.'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Mod Admin — Deputy DG (Policy)'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Mod Admin — Wakil Direktur Jenderal Kebijakan']),
+        persona=['Mod Admin','Mod Admin'],
+        personaID=['Mod Admin','Mod Admin']),
 
         tool('Microsoft 365 Copilot — Analyst', FRONTIER_LIC, M365_ACCT, [
             'I am the Chief Economist. Upload /GOV_01_Programme_Performance.xlsx. The workbook has Programme Budget vs Absorption, Procurement Pipeline, Output Indicators, Outcome Indicators, Staffing & Vacancies, Frontline Service Volumes and Risk Register tabs. Pull data from THREE tabs simultaneously — Programme Budget vs Absorption + Procurement Pipeline + Staffing & Vacancies — and compute, for each of the 7 flagship programmes: actual absorption %, the procurement-stage bottleneck (planning / tender / contract / payment), and the vacancy rate of the delivery team. Show me a stacked bar of absorption vs target and a separate scatter of vacancy rate vs absorption gap. Give me the exact rupiah of unabsorbed budget by programme.',
@@ -457,8 +457,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Workbook yang sama /GOV_01_Programme_Performance.xlsx. Tarik dari TIGA tab — Indikator Output + Indikator Outcome + Volume Layanan Garis Depan — dan identifikasi setiap program di mana output sesuai jalur tetapi outcome meleset (penyampaian tanpa dampak), dan setiap program di mana outcome membaik meski penyerapan rendah (efisiensi). Untuk masing-masing, sebutkan program, indikator, selisih dari target, dan satu penyebab struktural. Kemudian usulkan what-if: jika kami memindahkan Rp 250 miliar dari program outcome rendah ke 2 program outcome tertinggi, berapa proyeksi dampak layanan publik?',
             'Workbook yang sama /GOV_01_Programme_Performance.xlsx. Tarik dari TIGA tab — Pipeline Pengadaan + Daftar Risiko + Anggaran Program vs Penyerapan — dan susun watchlist DJ 8 minggu. Tandai setiap minggu di mana: sebuah program memiliki lebih dari 3 berkas pengadaan berusia lebih dari 60 hari di tahap tender, daftar risiko menambahkan entri "tinggi" baru, atau penyerapan tertinggal lebih jauh dari trajektori linear menuju 85% di akhir tahun. Output berupa satu tabel berkode warna (hijau/kuning/merah) siap ditempel ke paket dengar pendapat DPR.'
         ],
-        persona=['Hadar — Chief Economist','Hadar — Chief Economist','Hadar — Chief Economist'],
-        personaID=['Hadar — Kepala Ekonom','Hadar — Kepala Ekonom','Hadar — Kepala Ekonom']),
+        persona=['Hadar Caspit','Hadar Caspit','Hadar Caspit'],
+        personaID=['Hadar Caspit','Hadar Caspit','Hadar Caspit']),
 
         tool('Microsoft Excel + Copilot', M365_LIC, M365_ACCT, [
             'Open /GOV_01_Programme_Performance.xlsx in Excel desktop. Use Copilot in Excel to pull data from THREE tabs simultaneously — Programme Budget vs Absorption, Procurement Pipeline and Output Indicators. Create a new sheet called "DPR Hearing Dashboard" with: (1) a programme-by-programme absorption table (target / actual / gap / forecast year-end), (2) a procurement-bottleneck heatmap (rows = programme, columns = procurement stage, colour = age in days), (3) a single KPI strip showing total absorption %, number of open BPK findings, and the citizen-service indicator most at risk. Format for projection in a parliamentary committee room.',
@@ -470,8 +470,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Workbook yang sama terbuka /GOV_01_Programme_Performance.xlsx. Gunakan Copilot in Excel untuk membangun sheet baru "Bridge Pemulihan Penyerapan" yang menarik dari Anggaran Program vs Penyerapan + Pipeline Pengadaan. Tampilkan waterfall: penyerapan 58% saat ini → kontrak yang sudah ditandatangani tetapi belum dibayar → award tender yang diharapkan akhir tahun → realokasi disetujui Bappenas → posisi proyeksi 31 Desember. Gunakan angka persis — tanpa estimasi yang dibulatkan — dan tunjukkan selisih sisa menuju target 85%.',
             'Workbook yang sama /GOV_01_Programme_Performance.xlsx terbuka di Excel desktop. Gunakan Copilot untuk membuat sheet baru "Watchlist DJ 8 Minggu" yang menarik dari Pipeline Pengadaan + Daftar Risiko + Volume Layanan Garis Depan. Setiap baris adalah satu minggu, kolom adalah: berkas pengadaan macet >60 hari, entri risiko tinggi baru, penurunan volume layanan garis depan vs minggu sebelumnya. Conditional formatting (hijau/kuning/merah) terhadap ambang batas badan. Tambahkan sparkline untuk setiap KPI dan kolom komentar untuk Kepala Staf.'
         ],
-        persona=['Hadar — Chief Economist','Hadar — Chief Economist','Mod Admin — Deputy DG (Policy)'],
-        personaID=['Hadar — Kepala Ekonom','Hadar — Kepala Ekonom','Mod Admin — Wakil Direktur Jenderal Kebijakan']),
+        persona=['Hadar Caspit','Hadar Caspit','Mod Admin'],
+        personaID=['Hadar Caspit','Hadar Caspit','Mod Admin']),
 
         tool('Microsoft Word + Copilot', M365_LIC, M365_ACCT, [
             'Open /GOV_02_Programme_Governance_Manual.docx in Word desktop. The current manual predates the recent BPK findings and treats audit response as a separate workstream from programme delivery. Use Edit with Copilot to restructure into 4 sections: (1) Programme Sponsor Accountability (named DG-1 sponsor per programme), (2) Single Quarterly Cycle (delivery + risk + audit response in one review), (3) Procurement & Disbursement Discipline, (4) DPR & BPK Reporting Calendar. Add a 1-page executive summary at the top. Keep all defined terms; track every change.',
@@ -483,8 +483,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Buka /GOV_04_BPK_Audit_Findings.docx di Word desktop. Gunakan Edit with Copilot untuk menambahkan tabel status penutupan yang mencakup 14 temuan terbuka. Untuk setiap temuan: tingkat (Signifikan / Moderat / Minor), akar masalah (desain kontrol / operasi kontrol / kualitas data / kapasitas), pemilik (sponsor DJ-1), bukti yang diperlukan untuk penutupan, tanggal target penutupan. Di akhir tambahkan "Rencana Penutupan BPK" 1 halaman yang sesuai untuk diserahkan ke auditor utama BPK. Pertahankan bahasa kantor audit persis seperti aslinya jika dikutip.',
             'Buka /GOV_05_DPR_Hearing_Brief.docx di Word desktop dengan /GOV_03_Public_Service_Reform_Policy.docx sebagai konteks tambahan. Gunakan Edit with Copilot untuk menambahkan "Lampiran Tanya-Jawab" yang mengantisipasi 12 pertanyaan yang kemungkinan akan diajukan Komisi DPR, diambil dari temuan BPK terbuka, posisi penyerapan, dan indikator layanan publik. Untuk masing-masing: jawaban 60 kata yang dapat disampaikan DJ persis, ditambah satu kalimat cadangan jika pertanyaan masuk lebih dalam dari yang diizinkan briefing.'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Mod Admin — Deputy DG (Policy)','Sasha — Chief of Staff'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Mod Admin — Wakil Direktur Jenderal Kebijakan','Sasha — Kepala Staf']),
+        persona=['Mod Admin','Mod Admin','Sasha Ouellet'],
+        personaID=['Mod Admin','Mod Admin','Sasha Ouellet']),
 
         tool('Microsoft PowerPoint + Copilot', M365_LIC, M365_ACCT, [
             'Open a blank PowerPoint with /GOV_01_Programme_Performance.xlsx and /GOV_05_DPR_Hearing_Brief.docx as context. Use Copilot in PowerPoint to draft a 5-slide DPR hearing deck: (1) FY2025 Programme Position (7 programmes, absorption, citizen indicators), (2) The 14 BPK Findings — Status, (3) Absorption Recovery Bridge to 31 December, (4) 30/60/90-Day Commitments, (5) Asks of the Committee (legislative or budget). Use brand colour #4E342E. No clip art, no commercial language. Numbers must reconcile to /GOV_01.',
@@ -496,8 +496,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Buka PowerPoint kosong dengan /GOV_01_Programme_Performance.xlsx sebagai konteks. Gunakan Copilot in PowerPoint untuk menyusun deck 5 slide untuk huddle kepemimpinan DJ-1 internal: (1) Di mana kita berdiri vs target akhir tahun, (2) Program sesuai jalur / berisiko / di luar jalur, (3) Bottleneck pengadaan per direktorat, (4) Kekosongan staf di tim pelaksana, (5) 4 keputusan yang dibutuhkan DJ dari huddle ini. Nada: terus terang, internal, register pelayanan publik.',
             'Buka PowerPoint kosong dengan /GOV_01_Programme_Performance.xlsx dan /GOV_03_Public_Service_Reform_Policy.docx sebagai konteks. Gunakan Copilot in PowerPoint untuk menyusun deck 5 slide untuk briefing gabungan Bappenas-Kementerian Keuangan: (1) Hasil Kebijakan Reformasi Tercapai Sampai Saat Ini, (2) Di mana Hasil Meleset, (3) Opsi Realokasi untuk Q4, (4) Risiko terhadap Kelanjutan Program FY2026, (5) Permintaan Bersama. Nada: teknis, antar-kementerian, tanpa framing politik.'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Daichi — Deputy DG (Operations)','Hadar — Chief Economist'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Daichi — Wakil Direktur Jenderal Operasi','Hadar — Kepala Ekonom']),
+        persona=['Mod Admin','Daichi Maruyama','Hadar Caspit'],
+        personaID=['Mod Admin','Daichi Maruyama','Hadar Caspit']),
 
         tool('Microsoft Outlook + Copilot', M365_LIC, M365_ACCT, [
             'In Outlook, click New Email and use Copilot to draft a formal letter from the DG to the Chair of the DPR Working Committee on Public Service Reform, confirming attendance at the hearing in 7 days, listing the 4 documents that will be circulated 48 hours in advance, the agency officials accompanying the DG, and a respectful request for any specific lines of inquiry the Committee wishes to flag in advance. Tone: formal, deferential to parliamentary process, no defensive language.',
@@ -509,8 +509,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Buka thread email panjang "Penyerapan Anggaran FY2025 — Koordinasi Bappenas" di Outlook. Gunakan Copilot untuk merangkum thread 22 pesan dalam 5 bullet: apa yang diminta Bappenas, apa yang sudah diserahkan badan, apa yang terlambat, siapa yang memiliki setiap item terbuka, dan tanggal pertemuan antar-kementerian berikutnya. Kemudian susun balasan yang menutup 3 item terbuka dan mengusulkan posisi bersama menjelang dengar pendapat DPR.',
             'Di Outlook, susun email internal dari Kepala Staf kepada 7 direktur program pada hari setelah dengar pendapat DPR. Cakup: komitmen yang dibuat DJ di catatan publik, perubahan apa pada rencana penyampaian kuartal penutup FY2025, review penyerapan dwi-mingguan baru dengan DJ, irama penutupan BPK, dan pesan untuk staf garis depan. Nada: apa adanya, mendukung, register aparatur sipil, tanpa spin.'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Hadar — Chief Economist','Sasha — Chief of Staff'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Hadar — Kepala Ekonom','Sasha — Kepala Staf']),
+        persona=['Mod Admin','Hadar Caspit','Sasha Ouellet'],
+        personaID=['Mod Admin','Hadar Caspit','Sasha Ouellet']),
 
         tool('Microsoft Teams Premium + Copilot', M365_LIC, M365_ACCT, [
             'In Teams, open the recent meeting "New Software Implementation" (this was the rollout review of the citizen-services consolidation platform). Click the meeting → Recap → click the Copilot icon top right. Ask Copilot to produce structured minutes covering: decisions, owners, deadlines, and any open dependencies on vendors or central-agency sign-off. Then ask "what programme-delivery commitments did we make that need to be reflected in the DPR hearing brief?". DO NOT use the Export button — work entirely inside Recap.',
@@ -522,8 +522,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Di Teams, buka rapat baru-baru ini "Potential Merger" (ini adalah diskusi penggabungan 2 program kapabilitas aparatur sipil yang tumpang tindih menjadi satu kendaraan penyampaian). Klik rapat → Recap → klik ikon Copilot di kanan atas. Minta notulensi rahasia yang mencakup: kewenangan hukum yang diperlukan, persetujuan lembaga sentral (Bappenas, Kemenkeu, MenPAN-RB), risiko transisi staf, dan 3 syarat untuk melanjutkan. JANGAN gunakan tombol Export.',
             'Di Teams, buka rapat baru-baru ini "Negotiating Marketing Contract" (ini adalah negosiasi ulang dengan agency-of-record komunikasi publik setelah sengketa tingkat layanan). Klik rapat → Recap → klik ikon Copilot di kanan atas. Minta notulensi manajemen vendor yang mencakup: pelanggaran SLA yang diangkat, penyesuaian biaya, klausul berbasis kinerja baru, pertimbangan disclosure KPK pada berkas pengadaan, dan langkah berikutnya dengan direktorat hukum badan. JANGAN gunakan tombol Export.'
         ],
-        persona=['Daichi — Deputy DG (Operations)','Mod Admin — Deputy DG (Policy)','Sasha — Chief of Staff'],
-        personaID=['Daichi — Wakil Direktur Jenderal Operasi','Mod Admin — Wakil Direktur Jenderal Kebijakan','Sasha — Kepala Staf']),
+        persona=['Daichi Maruyama','Mod Admin','Sasha Ouellet'],
+        personaID=['Daichi Maruyama','Mod Admin','Sasha Ouellet']),
 
         tool('Copilot Notebooks', M365_LIC, M365_ACCT, [
             'Create a new Copilot Notebook called "DPR Hearing War-Room" and add 3 grounded sources: /GOV_04_BPK_Audit_Findings.docx, /GOV_05_DPR_Hearing_Brief.docx, /GOV_02_Programme_Governance_Manual.docx. Ask: "Reading these three documents together, identify every open BPK finding that the DPR Committee is likely to raise in the hearing. For each, suggest the verbatim line the DG should use, the supporting evidence, and the fallback if the Committee presses further." Save the response as a working note in the notebook.',
@@ -535,8 +535,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Buat Copilot Notebook baru bernama "Review Program Kepala Ekonom" dan tambahkan /GOV_01_Programme_Performance.xlsx dan /GOV_03_Public_Service_Reform_Policy.docx sebagai sumber tertambat. Tanyakan: "Buatkan saya catatan Kepala Ekonom 1 halaman tunggal yang menggabungkan posisi penyerapan FY2025, target outcome kebijakan, dan rekomendasi tentang 2 program mana yang harus menerima realokasi anggaran untuk Q4. Sorot setiap KPI dalam 10% dari ambang kebijakan keras."',
             'Buat Copilot Notebook baru bernama "Reviewer Pengadaan & Kepatuhan" dan tambahkan /GOV_06_KPK_Compliance_Tracker.xlsx, /GOV_02_Programme_Governance_Manual.docx dan /GOV_04_BPK_Audit_Findings.docx sebagai sumber tertambat. Tanyakan: "Telusuri berkas pengadaan yang ditandai di tracker KPK dan beritahu saya mana yang selaras, netral, atau bertentangan dengan manual tata kelola dan temuan BPK terbuka. Rekomendasikan: clear, eskalasi ke Inspektorat, atau tunda."'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Hadar — Chief Economist','Daichi — Deputy DG (Operations)'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Hadar — Kepala Ekonom','Daichi — Wakil Direktur Jenderal Operasi']),
+        persona=['Mod Admin','Hadar Caspit','Daichi Maruyama'],
+        personaID=['Mod Admin','Hadar Caspit','Daichi Maruyama']),
 
         tool('Copilot Cowork (parallel agents)', M365_LIC, M365_ACCT, [
             'I am the Deputy DG (Policy). The DPR hearing is in 7 days. From M365 Copilot Chat use Cowork to run 5 streams in parallel: (1) draft the DG opening statement from /GOV_05 and /GOV_03, (2) draft the absorption recovery plan from /GOV_01 and /GOV_02, (3) draft the BPK closure plan from /GOV_04 with the 14 findings owners and dates, (4) draft the KPK procurement assurance brief from /GOV_06, (5) draft the citizen-comms holding lines for the day after the hearing. Return all 5 outputs in one consolidated response with section headings. Public-service language throughout.',
@@ -546,8 +546,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Saya Wakil Direktur Jenderal Kebijakan. Dengar pendapat DPR dalam 7 hari. Dari M365 Copilot Chat gunakan Cowork untuk menjalankan 5 stream paralel: (1) susun pernyataan pembuka DJ dari /GOV_05 dan /GOV_03, (2) susun rencana pemulihan penyerapan dari /GOV_01 dan /GOV_02, (3) susun rencana penutupan BPK dari /GOV_04 dengan 14 pemilik temuan dan tanggal, (4) susun briefing jaminan pengadaan KPK dari /GOV_06, (5) susun holding line komunikasi publik untuk hari setelah dengar pendapat. Kembalikan semua 5 output dalam satu respons terkonsolidasi dengan judul bagian. Bahasa pelayanan publik sepanjang dokumen.',
             'Saya Kepala Staf. Setelah dengar pendapat DPR kami harus eksekusi. Dari M365 Copilot Chat gunakan Cowork untuk menjalankan 5 stream paralel: (1) susun pesan all-staff seluruh badan dari bahasa DJ yang disetujui, (2) siapkan catatan kemajuan Bappenas 30 hari dari /GOV_01, (3) siapkan surat bersama Kemenkeu-MenPAN-RB tentang waiver kekosongan staf, (4) susun template review penyerapan DJ dwi-mingguan, (5) siapkan talking points untuk pertemuan exit BPK berikutnya. Kembalikan semua 5 output bersama dengan ringkasan eksekutif 3 baris di atas.'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Sasha — Chief of Staff'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Sasha — Kepala Staf']),
+        persona=['Mod Admin','Sasha Ouellet'],
+        personaID=['Mod Admin','Sasha Ouellet']),
 
         tool('Word Agent (M365 Copilot Chat)', M365_LIC, M365_ACCT, [
             'From M365 Copilot Chat — DO NOT open Word first. Ask the Word Agent to generate a new .docx titled "DPR Hearing Brief — Public Service Reform FY2025" using /GOV_05_DPR_Hearing_Brief.docx, /GOV_01_Programme_Performance.xlsx and /GOV_04_BPK_Audit_Findings.docx as grounded sources. Structure: Executive Summary, Programme Position by 7 Programmes, BPK Findings Status, Absorption Recovery Plan, Anticipated Q&A, Closing Asks of the Committee. Length 10-12 pages. Public-service register, no commercial language.',
@@ -557,8 +557,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Dari M365 Copilot Chat — JANGAN buka Word terlebih dahulu. Minta Word Agent menghasilkan .docx baru berjudul "Briefing Dengar Pendapat DPR — Reformasi Pelayanan Publik FY2025" menggunakan /GOV_05_DPR_Hearing_Brief.docx, /GOV_01_Programme_Performance.xlsx dan /GOV_04_BPK_Audit_Findings.docx sebagai sumber tertambat. Struktur: Ringkasan Eksekutif, Posisi Program per 7 Program, Status Temuan BPK, Rencana Pemulihan Penyerapan, Tanya-Jawab yang Diantisipasi, Permintaan Penutup kepada Komisi. Panjang 10-12 halaman. Register pelayanan publik, tanpa bahasa komersial.',
             'Dari M365 Copilot Chat — JANGAN buka Word terlebih dahulu. Minta Word Agent menghasilkan .docx baru berjudul "Rencana Penutupan BPK — 14 Temuan Terbuka" menggunakan /GOV_04_BPK_Audit_Findings.docx dan /GOV_02_Programme_Governance_Manual.docx. Struktur: Surat Pengantar ke Auditor Utama BPK, Rencana Penutupan Per Temuan (tingkat, akar masalah, pemilik, bukti, tanggal target), Perubahan Tata Kelola yang Sudah Diimplementasikan, Irama Pelaporan Triwulanan. 8-10 halaman. Nada kelas audit.'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Mod Admin — Deputy DG (Policy)'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Mod Admin — Wakil Direktur Jenderal Kebijakan']),
+        persona=['Mod Admin','Mod Admin'],
+        personaID=['Mod Admin','Mod Admin']),
 
         tool('PPT Agent (M365 Copilot Chat)', M365_LIC, M365_ACCT, [
             'From M365 Copilot Chat — DO NOT open PowerPoint first. Ask the PPT Agent to generate a 7-slide deck titled "DPR Hearing — FY2025 Public Service Reform" using /GOV_01_Programme_Performance.xlsx, /GOV_04_BPK_Audit_Findings.docx and /GOV_05_DPR_Hearing_Brief.docx. Slides: Cover, Programme Position, BPK Findings Status, Absorption Recovery Bridge, 30/60/90 Commitments, Asks of the Committee, Closing. Brand colour #4E342E. Numbers must reconcile to /GOV_01. No commercial language.',
@@ -568,8 +568,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Dari M365 Copilot Chat — JANGAN buka PowerPoint terlebih dahulu. Minta PPT Agent menghasilkan deck 7 slide berjudul "Dengar Pendapat DPR — Reformasi Pelayanan Publik FY2025" menggunakan /GOV_01_Programme_Performance.xlsx, /GOV_04_BPK_Audit_Findings.docx dan /GOV_05_DPR_Hearing_Brief.docx. Slide: Sampul, Posisi Program, Status Temuan BPK, Bridge Pemulihan Penyerapan, Komitmen 30/60/90, Permintaan kepada Komisi, Penutup. Warna brand #4E342E. Angka harus rekonsiliasi dengan /GOV_01. Tanpa bahasa komersial.',
             'Dari M365 Copilot Chat — JANGAN buka PowerPoint terlebih dahulu. Minta PPT Agent menghasilkan deck 6 slide berjudul "Pembaruan Outcome Publik — Pandangan Akhir Tahun FY2025" menggunakan /GOV_01_Programme_Performance.xlsx dan /GOV_03_Public_Service_Reform_Policy.docx. Slide: Sampul, Apa yang Berubah untuk Warga, Di mana Outcome Meleset, Outlook Risiko FY2026, Program Pemulihan, Penutup. Nada: terus terang, menghadap publik, tanpa framing politik.'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Hadar — Chief Economist'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Hadar — Kepala Ekonom']),
+        persona=['Mod Admin','Hadar Caspit'],
+        personaID=['Mod Admin','Hadar Caspit']),
 
         tool('Excel Agent (M365 Copilot Chat)', M365_LIC, M365_ACCT, [
             'From M365 Copilot Chat — DO NOT open Excel first. Ask the Excel Agent to generate a new workbook called "DPR_Hearing_Dashboard_FY2025.xlsx" with 4 tabs: Programme Position, BPK Findings Status, Absorption Recovery Bridge, 8-Week DG Watchlist. Source data from /GOV_01_Programme_Performance.xlsx and /GOV_06_KPK_Compliance_Tracker.xlsx. Each tab uses formulas referencing the source — no hard-coded numbers. Conditional formatting on the watchlist (green/amber/red) against the agency thresholds.',
@@ -579,8 +579,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Dari M365 Copilot Chat — JANGAN buka Excel terlebih dahulu. Minta Excel Agent menghasilkan workbook baru bernama "Dashboard_Dengar_Pendapat_DPR_FY2025.xlsx" dengan 4 tab: Posisi Program, Status Temuan BPK, Bridge Pemulihan Penyerapan, Watchlist DJ 8 Minggu. Sumber data dari /GOV_01_Programme_Performance.xlsx dan /GOV_06_KPK_Compliance_Tracker.xlsx. Setiap tab menggunakan formula yang merujuk ke sumber — tanpa angka hard-coded. Conditional formatting pada watchlist (hijau/kuning/merah) terhadap ambang batas badan.',
             'Dari M365 Copilot Chat — JANGAN buka Excel terlebih dahulu. Minta Excel Agent menghasilkan workbook baru bernama "Skenario_Pemulihan_Penyerapan.xlsx" dengan 3 tab: Base Case, Upside (bottleneck pengadaan dibersihkan dalam 30 hari), Downside (DPR mengalihkan anggaran ke kementerian lain). Setiap skenario menampilkan trajektori penyerapan bulanan, dampak indikator layanan publik, dan kemajuan penutupan BPK. Sumber dari /GOV_01_Programme_Performance.xlsx dan /GOV_04_BPK_Audit_Findings.docx untuk definisi ambang.'
         ],
-        persona=['Hadar — Chief Economist','Hadar — Chief Economist'],
-        personaID=['Hadar — Kepala Ekonom','Hadar — Kepala Ekonom']),
+        persona=['Hadar Caspit','Hadar Caspit'],
+        personaID=['Hadar Caspit','Hadar Caspit']),
 
         tool('Copilot Studio Agent Builder', M365_LIC, M365_ACCT, [
             'Create an agent for the Public Service Reform Programme Council. Its role is to answer questions from programme directors, the inspectorate, and the DG\'s office about how the governance manual, the BPK findings, and the public service reform policy should be applied to specific programme delivery, procurement and audit-response decisions. It should always cite the exact clause it is relying on, name the central agency or oversight body (BPK / KPK / DPR / Bappenas / MoF / MenPAN-RB), and flag any question that needs human inspectorate review. Tone: precise, public-service register, no commercial or political language.',
@@ -590,8 +590,8 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
             'Buat agent untuk Dewan Program Reformasi Pelayanan Publik. Perannya adalah menjawab pertanyaan dari direktur program, inspektorat, dan kantor DJ tentang bagaimana manual tata kelola, temuan BPK, dan kebijakan reformasi pelayanan publik harus diterapkan pada keputusan penyampaian program, pengadaan dan respons audit tertentu. Agent harus selalu mengutip klausul persis yang menjadi dasar, menyebutkan lembaga sentral atau badan pengawas (BPK / KPK / DPR / Bappenas / Kemenkeu / MenPAN-RB), dan menandai setiap pertanyaan yang memerlukan review inspektorat manusia. Nada: presisi, register pelayanan publik, tanpa bahasa komersial atau politik.',
             'Lanjutkan di Copilot Studio Agent Builder — uji agent Dewan Program Reformasi Pelayanan Publik dengan 3 prompt: (1) "Seorang direktur program ingin merealokasi Rp 80 miliar dari program yang menyerap rendah ke program yang berkinerja lebih baik di tengah kuartal. Rujuk manual tata kelola dan beritahu saya apa jawabannya." (2) "Inspektorat menanyakan apakah berkas pengadaan yang ditandai di tracker KPK dapat dilanjutkan ke award. Klausul mana yang perlu saya penuhi terlebih dahulu?" (3) "Sebuah temuan BPK yang dinilai signifikan memiliki tenggat penutupan 30 hari. Apa jalur eskalasi dan siapa yang menandatangani?" Tangkap kutipan agent dan tandai jawaban yang seharusnya dieskalasi ke review inspektorat manusia.'
         ],
-        persona=['Mod Admin — Deputy DG (Policy)','Daichi — Deputy DG (Operations)'],
-        personaID=['Mod Admin — Wakil Direktur Jenderal Kebijakan','Daichi — Wakil Direktur Jenderal Operasi'])
+        persona=['Mod Admin','Daichi Maruyama'],
+        personaID=['Mod Admin','Daichi Maruyama'])
     ],
     companyID='Zava Government Services Indonesia',
     taglineID='Penyerapan anggaran FY2025 hanya 58% dengan 14 temuan BPK terbuka — Rapat Dengar Pendapat DPR dalam 7 hari',

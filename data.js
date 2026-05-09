@@ -5873,13 +5873,13 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Sasha Ouellet',
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
             'Sasha Ouellet',
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -5910,12 +5910,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Aaliyah Suvendran'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Aaliyah Suvendran'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -5954,14 +5954,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6000,14 +6000,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6046,14 +6046,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6092,14 +6092,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6138,14 +6138,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6184,14 +6184,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6230,14 +6230,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer',
-            'Mei Lin Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6268,12 +6268,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6304,12 +6304,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6340,12 +6340,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6376,12 +6376,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6412,12 +6412,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Aaliyah Suvendran',
-            'Dr. Karthik Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -6665,13 +6665,13 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Sasha Ouellet',
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
             'Sasha Ouellet',
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6702,12 +6702,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Indra Wijaya'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Indra Wijaya'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6746,14 +6746,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6792,14 +6792,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6838,14 +6838,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6884,14 +6884,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6930,14 +6930,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -6976,14 +6976,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7022,14 +7022,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza',
-            'Bima Pradana'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7060,12 +7060,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7096,12 +7096,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7132,12 +7132,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7168,12 +7168,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7204,12 +7204,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Wijaya',
-            'Dr. Siti Nurhaliza'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -7457,13 +7457,13 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Sasha Ouellet',
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
             'Sasha Ouellet',
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7494,12 +7494,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Bayu Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Bayu Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7538,14 +7538,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7584,14 +7584,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7630,14 +7630,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7676,14 +7676,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7722,14 +7722,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7768,14 +7768,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7814,14 +7814,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto',
-            'Rini Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7852,12 +7852,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7888,12 +7888,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7924,12 +7924,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7960,12 +7960,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -7996,12 +7996,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Santoso',
-            'Eka Pranoto'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -10702,14 +10702,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Citra Wulandari',
-            'Bayu Pranowo',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Citra Wulandari',
-            'Bayu Pranowo',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -10740,12 +10740,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Reza Adisurya',
-            'Reza Adisurya'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Reza Adisurya',
-            'Reza Adisurya'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -10784,14 +10784,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Reza Adisurya',
-            'Citra Wulandari',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Reza Adisurya',
-            'Citra Wulandari',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -10830,14 +10830,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Reza Adisurya',
-            'Citra Wulandari',
-            'Reza Adisurya'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Reza Adisurya',
-            'Citra Wulandari',
-            'Reza Adisurya'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -10876,14 +10876,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Citra Wulandari',
-            'Reza Adisurya',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Citra Wulandari',
-            'Reza Adisurya',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -10922,14 +10922,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Citra Wulandari',
-            'Bayu Pranowo',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Citra Wulandari',
-            'Bayu Pranowo',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -10968,14 +10968,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Citra Wulandari',
-            'Reza Adisurya',
-            'Citra Wulandari'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Citra Wulandari',
-            'Reza Adisurya',
-            'Citra Wulandari'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11014,14 +11014,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Reza Adisurya',
-            'Citra Wulandari',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Reza Adisurya',
-            'Citra Wulandari',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11060,14 +11060,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Reza Adisurya',
-            'Bayu Pranowo',
-            'Citra Wulandari'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Reza Adisurya',
-            'Bayu Pranowo',
-            'Citra Wulandari'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11098,12 +11098,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pranowo',
-            'Citra Wulandari'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pranowo',
-            'Citra Wulandari'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11134,12 +11134,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pranowo',
-            'Citra Wulandari'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pranowo',
-            'Citra Wulandari'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11170,12 +11170,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Citra Wulandari',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Citra Wulandari',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11206,12 +11206,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Reza Adisurya',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Reza Adisurya',
-            'Linda Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11242,12 +11242,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Citra Wulandari',
-            'Bayu Pranowo'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Citra Wulandari',
-            'Bayu Pranowo'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -11494,14 +11494,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Anggraini',
-            'Andi Surya',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Anggraini',
-            'Andi Surya',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11532,12 +11532,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hendra Wibowo',
-            'Hendra Wibowo'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Hendra Wibowo',
-            'Hendra Wibowo'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11576,14 +11576,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Sinta Pertiwi',
-            'Hendra Wibowo',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Sinta Pertiwi',
-            'Hendra Wibowo',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11622,14 +11622,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Sinta Pertiwi',
-            'Maya Anggraini',
-            'Hendra Wibowo'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Sinta Pertiwi',
-            'Maya Anggraini',
-            'Hendra Wibowo'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11668,14 +11668,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Anggraini',
-            'Hendra Wibowo',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Anggraini',
-            'Hendra Wibowo',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11714,14 +11714,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Anggraini',
-            'Andi Surya',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Anggraini',
-            'Andi Surya',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11760,14 +11760,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Anggraini',
-            'Sinta Pertiwi',
-            'Maya Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Anggraini',
-            'Sinta Pertiwi',
-            'Maya Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11806,14 +11806,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Anggraini',
-            'Hendra Wibowo',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Anggraini',
-            'Hendra Wibowo',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11852,14 +11852,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Anggraini',
-            'Andi Surya',
-            'Hendra Wibowo'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Anggraini',
-            'Andi Surya',
-            'Hendra Wibowo'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11890,12 +11890,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Andi Surya',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Andi Surya',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11926,12 +11926,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Andi Surya',
-            'Maya Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Andi Surya',
-            'Maya Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11962,12 +11962,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Anggraini',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Anggraini',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -11998,12 +11998,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Sinta Pertiwi',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Sinta Pertiwi',
-            'Sinta Pertiwi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12034,12 +12034,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Anggraini',
-            'Andi Surya'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Anggraini',
-            'Andi Surya'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -12286,14 +12286,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Putri Maharani',
-            'Rangga Aditama',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Putri Maharani',
-            'Rangga Aditama',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12324,12 +12324,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Dimas Prabowo',
-            'Dimas Prabowo'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Dimas Prabowo',
-            'Dimas Prabowo'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12368,14 +12368,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Dimas Prabowo',
-            'Putri Maharani',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Dimas Prabowo',
-            'Putri Maharani',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12414,14 +12414,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Dimas Prabowo',
-            'Putri Maharani',
-            'Dimas Prabowo'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Dimas Prabowo',
-            'Putri Maharani',
-            'Dimas Prabowo'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12460,14 +12460,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulan Setiawati',
-            'Dimas Prabowo',
-            'Putri Maharani'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulan Setiawati',
-            'Dimas Prabowo',
-            'Putri Maharani'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12506,14 +12506,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulan Setiawati',
-            'Rangga Aditama',
-            'Putri Maharani'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulan Setiawati',
-            'Rangga Aditama',
-            'Putri Maharani'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12552,14 +12552,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulan Setiawati',
-            'Putri Maharani',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulan Setiawati',
-            'Putri Maharani',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12598,14 +12598,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Dimas Prabowo',
-            'Putri Maharani',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Dimas Prabowo',
-            'Putri Maharani',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12644,14 +12644,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Dimas Prabowo',
-            'Rangga Aditama',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Dimas Prabowo',
-            'Rangga Aditama',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12682,12 +12682,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rangga Aditama',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Rangga Aditama',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12718,12 +12718,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rangga Aditama',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Rangga Aditama',
-            'Wulan Setiawati'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12754,12 +12754,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulan Setiawati',
-            'Putri Maharani'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulan Setiawati',
-            'Putri Maharani'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12790,12 +12790,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Dimas Prabowo',
-            'Dimas Prabowo'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Dimas Prabowo',
-            'Dimas Prabowo'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -12826,12 +12826,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulan Setiawati',
-            'Rangga Aditama'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulan Setiawati',
-            'Rangga Aditama'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -13870,14 +13870,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Hadar — Group CFO',
-            'Sasha — Chief Product Officer'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Hadar — Direktur Keuangan Grup',
-            'Sasha — Direktur Produk'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -13908,12 +13908,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Mod Admin — Head of Compliance'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Mod Admin — Kepala Kepatuhan'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -13952,14 +13952,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hadar — Group CFO',
-            'Hadar — Group CFO',
-            'Hadar — Group CFO'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Hadar — Direktur Keuangan Grup',
-            'Hadar — Direktur Keuangan Grup',
-            'Hadar — Direktur Keuangan Grup'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -13998,14 +13998,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hadar — Group CFO',
-            'Mod Admin — Head of Compliance',
-            'Hadar — Group CFO'
+            'Hadar Caspit',
+            'Mod Admin',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Hadar — Direktur Keuangan Grup',
-            'Mod Admin — Kepala Kepatuhan',
-            'Hadar — Direktur Keuangan Grup'
+            'Hadar Caspit',
+            'Mod Admin',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -14044,14 +14044,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Sasha — Chief Product Officer',
-            'Mod Admin — Head of Compliance',
-            'Daichi — CTO/CISO'
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Sasha — Direktur Produk',
-            'Mod Admin — Kepala Kepatuhan',
-            'Daichi — Direktur Teknologi/CISO'
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -14090,14 +14090,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Hadar — Group CFO',
-            'Sasha — Chief Product Officer'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Hadar — Direktur Keuangan Grup',
-            'Sasha — Direktur Produk'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -14136,14 +14136,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Hadar — Group CFO',
-            'Sasha — Chief Product Officer'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Hadar — Direktur Keuangan Grup',
-            'Sasha — Direktur Produk'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -14182,14 +14182,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Sasha — Chief Product Officer',
-            'Daichi — CTO/CISO'
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Sasha — Direktur Produk',
-            'Daichi — Direktur Teknologi/CISO'
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -14228,14 +14228,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Hadar — Group CFO',
-            'Sasha — Chief Product Officer'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Hadar — Direktur Keuangan Grup',
-            'Sasha — Direktur Produk'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -14266,12 +14266,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Hadar — Group CFO'
+            'Mod Admin',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Hadar — Direktur Keuangan Grup'
+            'Mod Admin',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -14302,12 +14302,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Sasha — Chief Product Officer'
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Sasha — Direktur Produk'
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -14338,12 +14338,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Hadar — Group CFO'
+            'Mod Admin',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Hadar — Direktur Keuangan Grup'
+            'Mod Admin',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -14374,12 +14374,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hadar — Group CFO',
-            'Hadar — Group CFO'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Hadar — Direktur Keuangan Grup',
-            'Hadar — Direktur Keuangan Grup'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -14410,12 +14410,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Head of Compliance',
-            'Sasha — Chief Product Officer'
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Kepala Kepatuhan',
-            'Sasha — Direktur Produk'
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         }
@@ -14654,14 +14654,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Hadar — Chief Economist',
-            'Sasha — Chief of Staff'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Hadar — Kepala Ekonom',
-            'Sasha — Kepala Staf'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -14692,12 +14692,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Mod Admin — Deputy DG (Policy)'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -14736,14 +14736,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hadar — Chief Economist',
-            'Hadar — Chief Economist',
-            'Hadar — Chief Economist'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Hadar — Kepala Ekonom',
-            'Hadar — Kepala Ekonom',
-            'Hadar — Kepala Ekonom'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -14782,14 +14782,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hadar — Chief Economist',
-            'Hadar — Chief Economist',
-            'Mod Admin — Deputy DG (Policy)'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Mod Admin'
           ],
           personaID: [
-            'Hadar — Kepala Ekonom',
-            'Hadar — Kepala Ekonom',
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -14828,14 +14828,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Mod Admin — Deputy DG (Policy)',
-            'Sasha — Chief of Staff'
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Sasha — Kepala Staf'
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -14874,14 +14874,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Daichi — Deputy DG (Operations)',
-            'Hadar — Chief Economist'
+            'Mod Admin',
+            'Daichi Maruyama',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Daichi — Wakil Direktur Jenderal Operasi',
-            'Hadar — Kepala Ekonom'
+            'Mod Admin',
+            'Daichi Maruyama',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -14920,14 +14920,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Hadar — Chief Economist',
-            'Sasha — Chief of Staff'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Hadar — Kepala Ekonom',
-            'Sasha — Kepala Staf'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -14966,14 +14966,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Daichi — Deputy DG (Operations)',
-            'Mod Admin — Deputy DG (Policy)',
-            'Sasha — Chief of Staff'
+            'Daichi Maruyama',
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Daichi — Wakil Direktur Jenderal Operasi',
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Sasha — Kepala Staf'
+            'Daichi Maruyama',
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -15012,14 +15012,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Hadar — Chief Economist',
-            'Daichi — Deputy DG (Operations)'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Hadar — Kepala Ekonom',
-            'Daichi — Wakil Direktur Jenderal Operasi'
+            'Mod Admin',
+            'Hadar Caspit',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -15050,12 +15050,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Sasha — Chief of Staff'
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Sasha — Kepala Staf'
+            'Mod Admin',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -15086,12 +15086,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Mod Admin — Deputy DG (Policy)'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -15122,12 +15122,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Hadar — Chief Economist'
+            'Mod Admin',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Hadar — Kepala Ekonom'
+            'Mod Admin',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -15158,12 +15158,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hadar — Chief Economist',
-            'Hadar — Chief Economist'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Hadar — Kepala Ekonom',
-            'Hadar — Kepala Ekonom'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -15194,12 +15194,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin — Deputy DG (Policy)',
-            'Daichi — Deputy DG (Operations)'
+            'Mod Admin',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Mod Admin — Wakil Direktur Jenderal Kebijakan',
-            'Daichi — Wakil Direktur Jenderal Operasi'
+            'Mod Admin',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         }
@@ -18606,14 +18606,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pramudita',
-            'Siti Rahayu',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pramudita',
-            'Siti Rahayu',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -18644,12 +18644,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Siti Rahayu',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Siti Rahayu',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -18688,14 +18688,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Siti Rahayu',
-            'Dimas Kurniawan',
-            'Siti Rahayu'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Siti Rahayu',
-            'Dimas Kurniawan',
-            'Siti Rahayu'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -18734,14 +18734,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Siti Rahayu',
-            'Rina Halim',
-            'Siti Rahayu'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Siti Rahayu',
-            'Rina Halim',
-            'Siti Rahayu'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -18780,14 +18780,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pramudita',
-            'Dimas Kurniawan',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pramudita',
-            'Dimas Kurniawan',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -18826,14 +18826,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pramudita',
-            'Siti Rahayu',
-            'Dimas Kurniawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pramudita',
-            'Siti Rahayu',
-            'Dimas Kurniawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -18872,14 +18872,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pramudita',
-            'Siti Rahayu',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pramudita',
-            'Siti Rahayu',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -18918,14 +18918,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pramudita',
-            'Rina Halim',
-            'Dimas Kurniawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pramudita',
-            'Rina Halim',
-            'Dimas Kurniawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -18964,14 +18964,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rina Halim',
-            'Siti Rahayu',
-            'Bayu Pramudita'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Rina Halim',
-            'Siti Rahayu',
-            'Bayu Pramudita'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19002,12 +19002,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pramudita',
-            'Siti Rahayu'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pramudita',
-            'Siti Rahayu'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19038,12 +19038,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pramudita',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pramudita',
-            'Rina Halim'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19074,12 +19074,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Pramudita',
-            'Dimas Kurniawan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bayu Pramudita',
-            'Dimas Kurniawan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19110,12 +19110,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Siti Rahayu',
-            'Siti Rahayu'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Siti Rahayu',
-            'Siti Rahayu'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19146,12 +19146,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rina Halim',
-            'Bayu Pramudita'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Rina Halim',
-            'Bayu Pramudita'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -19398,14 +19398,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anugrah Wirawan',
-            'Bambang Hadi',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Anugrah Wirawan',
-            'Bambang Hadi',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19436,12 +19436,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bambang Hadi',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bambang Hadi',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19480,14 +19480,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bambang Hadi',
-            'Lestari Putri',
-            'Bambang Hadi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bambang Hadi',
-            'Lestari Putri',
-            'Bambang Hadi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19526,14 +19526,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bambang Hadi',
-            'Maya Setiawan',
-            'Bambang Hadi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bambang Hadi',
-            'Maya Setiawan',
-            'Bambang Hadi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19572,14 +19572,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anugrah Wirawan',
-            'Lestari Putri',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Anugrah Wirawan',
-            'Lestari Putri',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19618,14 +19618,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anugrah Wirawan',
-            'Bambang Hadi',
-            'Lestari Putri'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Anugrah Wirawan',
-            'Bambang Hadi',
-            'Lestari Putri'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19664,14 +19664,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anugrah Wirawan',
-            'Bambang Hadi',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Anugrah Wirawan',
-            'Bambang Hadi',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19710,14 +19710,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anugrah Wirawan',
-            'Maya Setiawan',
-            'Lestari Putri'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Anugrah Wirawan',
-            'Maya Setiawan',
-            'Lestari Putri'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19756,14 +19756,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Setiawan',
-            'Bambang Hadi',
-            'Anugrah Wirawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Setiawan',
-            'Bambang Hadi',
-            'Anugrah Wirawan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19794,12 +19794,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anugrah Wirawan',
-            'Bambang Hadi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Anugrah Wirawan',
-            'Bambang Hadi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19830,12 +19830,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anugrah Wirawan',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Anugrah Wirawan',
-            'Maya Setiawan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19866,12 +19866,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anugrah Wirawan',
-            'Lestari Putri'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Anugrah Wirawan',
-            'Lestari Putri'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19902,12 +19902,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bambang Hadi',
-            'Bambang Hadi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Bambang Hadi',
-            'Bambang Hadi'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -19938,12 +19938,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Maya Setiawan',
-            'Anugrah Wirawan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Maya Setiawan',
-            'Anugrah Wirawan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -20190,14 +20190,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulandari Sari',
-            'Fitria Kusuma',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulandari Sari',
-            'Fitria Kusuma',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20228,12 +20228,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Fitria Kusuma',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Fitria Kusuma',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20272,14 +20272,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Fitria Kusuma',
-            'Dani Hartono',
-            'Fitria Kusuma'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Fitria Kusuma',
-            'Dani Hartono',
-            'Fitria Kusuma'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20318,14 +20318,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Fitria Kusuma',
-            'Hendrik Tan',
-            'Fitria Kusuma'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Fitria Kusuma',
-            'Hendrik Tan',
-            'Fitria Kusuma'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20364,14 +20364,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulandari Sari',
-            'Dani Hartono',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulandari Sari',
-            'Dani Hartono',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20410,14 +20410,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulandari Sari',
-            'Fitria Kusuma',
-            'Dani Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulandari Sari',
-            'Fitria Kusuma',
-            'Dani Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20456,14 +20456,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulandari Sari',
-            'Fitria Kusuma',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulandari Sari',
-            'Fitria Kusuma',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20502,14 +20502,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulandari Sari',
-            'Hendrik Tan',
-            'Dani Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulandari Sari',
-            'Hendrik Tan',
-            'Dani Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20548,14 +20548,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hendrik Tan',
-            'Fitria Kusuma',
-            'Wulandari Sari'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Hendrik Tan',
-            'Fitria Kusuma',
-            'Wulandari Sari'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20586,12 +20586,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulandari Sari',
-            'Fitria Kusuma'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulandari Sari',
-            'Fitria Kusuma'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20622,12 +20622,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulandari Sari',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulandari Sari',
-            'Hendrik Tan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20658,12 +20658,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wulandari Sari',
-            'Dani Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Wulandari Sari',
-            'Dani Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20694,12 +20694,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Fitria Kusuma',
-            'Fitria Kusuma'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Fitria Kusuma',
-            'Fitria Kusuma'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -20730,12 +20730,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hendrik Tan',
-            'Wulandari Sari'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Hendrik Tan',
-            'Wulandari Sari'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -20982,14 +20982,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Saputra',
-            'Budi Santoso',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Saputra',
-            'Budi Santoso',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21020,12 +21020,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Budi Santoso',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Budi Santoso',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21064,14 +21064,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Budi Santoso',
-            'Tiara Permata',
-            'Budi Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Budi Santoso',
-            'Tiara Permata',
-            'Budi Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21110,14 +21110,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Budi Santoso',
-            'Mira Anggraini',
-            'Budi Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Budi Santoso',
-            'Mira Anggraini',
-            'Budi Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21156,14 +21156,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Saputra',
-            'Tiara Permata',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Saputra',
-            'Tiara Permata',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21202,14 +21202,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Saputra',
-            'Budi Santoso',
-            'Tiara Permata'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Saputra',
-            'Budi Santoso',
-            'Tiara Permata'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21248,14 +21248,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Saputra',
-            'Budi Santoso',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Saputra',
-            'Budi Santoso',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21294,14 +21294,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Saputra',
-            'Mira Anggraini',
-            'Tiara Permata'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Saputra',
-            'Mira Anggraini',
-            'Tiara Permata'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21340,14 +21340,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mira Anggraini',
-            'Budi Santoso',
-            'Indra Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mira Anggraini',
-            'Budi Santoso',
-            'Indra Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21378,12 +21378,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Saputra',
-            'Budi Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Saputra',
-            'Budi Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21414,12 +21414,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Saputra',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Saputra',
-            'Mira Anggraini'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21450,12 +21450,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indra Saputra',
-            'Tiara Permata'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Indra Saputra',
-            'Tiara Permata'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21486,12 +21486,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Budi Santoso',
-            'Budi Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Budi Santoso',
-            'Budi Santoso'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21522,12 +21522,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mira Anggraini',
-            'Indra Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mira Anggraini',
-            'Indra Saputra'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -21776,12 +21776,12 @@ window.HUB_DATA = {
           persona: [
             'Sasha Ouellet',
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21856,14 +21856,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lim Wei Han',
-            'Lim Wei Han',
-            'Lim Wei Han'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lim Wei Han',
-            'Lim Wei Han',
-            'Lim Wei Han'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21902,13 +21902,13 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lim Wei Han',
-            'Faiz Razak',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Mod Admin'
           ],
           personaID: [
-            'Lim Wei Han',
-            'Faiz Razak',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Mod Admin'
           ],
           notebookMeta: null
@@ -21949,13 +21949,13 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Sasha Ouellet',
-            'Faiz Razak',
-            'Lim Wei Han'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
             'Sasha Ouellet',
-            'Faiz Razak',
-            'Lim Wei Han'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -21995,12 +21995,12 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Faiz Razak',
+            'Hadar Caspit',
             'Sasha Ouellet'
           ],
           personaID: [
             'Mod Admin',
-            'Faiz Razak',
+            'Hadar Caspit',
             'Sasha Ouellet'
           ],
           notebookMeta: null
@@ -22041,13 +22041,13 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Faiz Razak',
-            'Lim Wei Han'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Faiz Razak',
-            'Lim Wei Han'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22088,12 +22088,12 @@ window.HUB_DATA = {
           persona: [
             'Sasha Ouellet',
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22133,13 +22133,13 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Faiz Razak',
-            'Lim Wei Han'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Faiz Razak',
-            'Lim Wei Han'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22171,11 +22171,11 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22207,11 +22207,11 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22243,11 +22243,11 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22279,11 +22279,11 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Faiz Razak'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22570,12 +22570,12 @@ window.HUB_DATA = {
           persona: [
             'Sasha Ouellet',
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22650,14 +22650,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Siti Zainab Othman',
-            'Siti Zainab Othman',
-            'Siti Zainab Othman'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Siti Zainab Othman',
-            'Siti Zainab Othman',
-            'Siti Zainab Othman'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22696,13 +22696,13 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Siti Zainab Othman',
-            'Anwar Hashim',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Mod Admin'
           ],
           personaID: [
-            'Siti Zainab Othman',
-            'Anwar Hashim',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Mod Admin'
           ],
           notebookMeta: null
@@ -22743,13 +22743,13 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Sasha Ouellet',
-            'Anwar Hashim',
-            'Siti Zainab Othman'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
             'Sasha Ouellet',
-            'Anwar Hashim',
-            'Siti Zainab Othman'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22789,12 +22789,12 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Anwar Hashim',
+            'Hadar Caspit',
             'Sasha Ouellet'
           ],
           personaID: [
             'Mod Admin',
-            'Anwar Hashim',
+            'Hadar Caspit',
             'Sasha Ouellet'
           ],
           notebookMeta: null
@@ -22835,13 +22835,13 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Anwar Hashim',
-            'Siti Zainab Othman'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Anwar Hashim',
-            'Siti Zainab Othman'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22882,12 +22882,12 @@ window.HUB_DATA = {
           persona: [
             'Sasha Ouellet',
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22927,13 +22927,13 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Anwar Hashim',
-            'Siti Zainab Othman'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Anwar Hashim',
-            'Siti Zainab Othman'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -22965,11 +22965,11 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -23001,11 +23001,11 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -23037,11 +23037,11 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -23073,11 +23073,11 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           personaID: [
             'Mod Admin',
-            'Anwar Hashim'
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
