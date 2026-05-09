@@ -35505,8 +35505,8 @@ window.HUB_DATA = {
         'IR_02_Peer_Share_Price_Tracker.xlsx',
         'IR_03_IR_Disclosure_Playbook.docx',
         'IR_04_Analyst_Engagement_Standards.docx',
-        'OPS_05_Supplier_Recovery_SOP.docx',
-        'OPS_06_Capex_Approval_Standards.docx'
+        'IR_05_Quarterly_Results_Script.docx',
+        'IR_06_Roadshow_Q_and_A_Prep.docx'
       ],
       prompts: [
         {
@@ -36105,8 +36105,8 @@ window.HUB_DATA = {
       storyboard: [
         {
           ex: 1,
-          title: 'Diagnose Sites & Brief',
-          titleID: 'Diagnosa Lokasi & Pengarahan',
+          title: 'Frame the Issue & Brief',
+          titleID: 'Bingkai Isu & Pengarahan',
           minutes: 18,
           mode: 'Show & Tell + Hands-on',
           summary: 'Frame the 6.4% consensus-to-guidance gap and 9-point KLCI underperformance and the highest-risk areas; pull deep market and governance benchmarks to anchor management credibility before the Investor Relations Steering Committee convenes.',
@@ -36299,8 +36299,8 @@ window.HUB_DATA = {
         'PROC_02_Vendor_Consolidation_Tracker.xlsx',
         'PROC_03_Procurement_Policy_ABAC_Manual.docx',
         'PROC_04_Vendor_Consolidation_Playbook.docx',
-        'OPS_05_Supplier_Recovery_SOP.docx',
-        'OPS_06_Capex_Approval_Standards.docx'
+        'PROC_05_Single_Source_Risk_Register.docx',
+        'PROC_06_ABAC_Audit_Prep.docx'
       ],
       prompts: [
         {
@@ -36899,8 +36899,8 @@ window.HUB_DATA = {
       storyboard: [
         {
           ex: 1,
-          title: 'Diagnose Sites & Brief',
-          titleID: 'Diagnosa Lokasi & Pengarahan',
+          title: 'Frame the Issue & Brief',
+          titleID: 'Bingkai Isu & Pengarahan',
           minutes: 18,
           mode: 'Show & Tell + Hands-on',
           summary: 'Frame the 8.7% indirect-spend overrun and MYR 38M consolidation-savings shortfall and the highest-risk areas; pull deep market and governance benchmarks to anchor management credibility before the Procurement Steering Committee convenes.',
@@ -37093,8 +37093,8 @@ window.HUB_DATA = {
         'IT_02_Incident_and_Cost_Tracker.xlsx',
         'IT_03_IT_Service_Management_Manual.docx',
         'IT_04_Cyber_Resilience_Playbook.docx',
-        'OPS_05_Supplier_Recovery_SOP.docx',
-        'OPS_06_Capex_Approval_Standards.docx'
+        'IT_05_Third_Party_Risk_Register.docx',
+        'IT_06_BNM_OJK_Tabletop_Prep.docx'
       ],
       prompts: [
         {
@@ -37693,8 +37693,8 @@ window.HUB_DATA = {
       storyboard: [
         {
           ex: 1,
-          title: 'Diagnose Sites & Brief',
-          titleID: 'Diagnosa Lokasi & Pengarahan',
+          title: 'Frame the Issue & Brief',
+          titleID: 'Bingkai Isu & Pengarahan',
           minutes: 18,
           mode: 'Show & Tell + Hands-on',
           summary: 'Frame the 74-basis-point availability shortfall and MYR 38M cyber-uplift gap and the highest-risk areas; pull deep market and governance benchmarks to anchor management credibility before the IT & Digital Steering Committee convenes.',

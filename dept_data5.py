@@ -9,7 +9,7 @@ DEPARTMENTS_5 = [
     'Zava Investor Relations',
     'Analyst consensus is drifting below management guidance, two sell-side downgrades are circulating, and the next quarterly results call is two weeks away.',
     'The Investor Relations Office at Zava Group is trying to close the gap between management guidance and drifting analyst consensus ahead of the Q4 FY2026 results call. Sell-side consensus EBITDA has slipped 6.4% below management guidance over 8 weeks, two of the eight covering analysts have moved to NEUTRAL with one HOLD downgrade circulating, and the share price has underperformed the FBM KLCI by 9 points and IDX Composite by 7 points year-to-date. The Head of Investor Relations needs a single RAG tracker tying analyst sentiment, peer benchmarks, and disclosure-watchlist items together, plus a sharper Q4 messaging arc that aligns the Bursa Malaysia announcement, the IDX disclosure, the analyst Q&A, and the buy-side roadshow within 14 days, ahead of the Investor Relations Steering Committee where the Group CFO will probe consensus-management discipline.',
-    ['IR_01_Analyst_Consensus_Tracker.xlsx','IR_02_Peer_Share_Price_Tracker.xlsx','IR_03_IR_Disclosure_Playbook.docx','IR_04_Analyst_Engagement_Standards.docx','OPS_05_Supplier_Recovery_SOP.docx','OPS_06_Capex_Approval_Standards.docx'],
+    ['IR_01_Analyst_Consensus_Tracker.xlsx','IR_02_Peer_Share_Price_Tracker.xlsx','IR_03_IR_Disclosure_Playbook.docx','IR_04_Analyst_Engagement_Standards.docx','IR_05_Quarterly_Results_Script.docx','IR_06_Roadshow_Q_and_A_Prep.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
         {'instr':'', 'prompt':'Site-level service slippage, delayed cost takeout, and tier-1 supplier disruption threatening continuity are converging into a Investor Relations Steering Committee in 14 days. Draft a crisp 1-page CEO briefing that explains the situation in plain language, the likely questions directors will ask first, and the 5 decisions that must be ready before the meeting opens. Present as a structured table with columns for Issue, Why It Matters, Board Question, and Recommended Answer.'},
@@ -194,7 +194,7 @@ DEPARTMENTS_5 = [
     ],
     storyboard=[
       {
-        'ex': 1, 'title': 'Diagnose Sites & Brief', 'titleID': 'Diagnosa Lokasi & Pengarahan',
+        'ex': 1, 'title': 'Frame the Issue & Brief', 'titleID': 'Bingkai Isu & Pengarahan',
         'minutes': 18, 'mode': 'Show & Tell + Hands-on',
         'summary': 'Frame the 6.4% consensus-to-guidance gap and 9-point KLCI underperformance and the highest-risk areas; pull deep market and governance benchmarks to anchor management credibility before the Investor Relations Steering Committee convenes.',
         'summaryID': 'Bingkai gap konsensus-ke-guidance 6,4% dan underperformance KLCI 9 poin dan area berisiko tertinggi; tarik benchmark pasar dan tata kelola untuk menopang kredibilitas manajemen sebelum Komite Pengarah Investor Relations dimulai.',
@@ -244,7 +244,7 @@ DEPARTMENTS_5 = [
     'Zava Procurement Hub',
     'Vendor consolidation is behind schedule, three single-source spend categories are above tolerance, and an anti-bribery audit lands in 14 days.',
     'The Group Procurement Office at Zava is trying to close out the FY2026 vendor-consolidation programme while three single-source categories breach the >70% concentration threshold and an internal anti-bribery & corruption audit kicks off in 14 days. Indirect spend is 8.7% above benchmark across 4 BUs, the consolidation programme has delivered MYR 22M of the targeted MYR 60M savings, and category leads disagree on which single-source positions are strategic vs structural. Leadership wants a single RAG tracker tying spend variance, vendor concentration, and ABAC compliance together, and the Procurement Steering Committee in 14 days needs a sharper line of sight from category-level concentration risk to remediation owner, ahead of where the Group CFO will probe sourcing-discipline commitments.',
-    ['PROC_01_Spend_Cube_Tracker.xlsx','PROC_02_Vendor_Consolidation_Tracker.xlsx','PROC_03_Procurement_Policy_ABAC_Manual.docx','PROC_04_Vendor_Consolidation_Playbook.docx','OPS_05_Supplier_Recovery_SOP.docx','OPS_06_Capex_Approval_Standards.docx'],
+    ['PROC_01_Spend_Cube_Tracker.xlsx','PROC_02_Vendor_Consolidation_Tracker.xlsx','PROC_03_Procurement_Policy_ABAC_Manual.docx','PROC_04_Vendor_Consolidation_Playbook.docx','PROC_05_Single_Source_Risk_Register.docx','PROC_06_ABAC_Audit_Prep.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
         {'instr':'', 'prompt':'Site-level service slippage, delayed cost takeout, and tier-1 supplier disruption threatening continuity are converging into a Procurement Steering Committee in 14 days. Draft a crisp 1-page CEO briefing that explains the situation in plain language, the likely questions directors will ask first, and the 5 decisions that must be ready before the meeting opens. Present as a structured table with columns for Issue, Why It Matters, Board Question, and Recommended Answer.'},
@@ -429,7 +429,7 @@ DEPARTMENTS_5 = [
     ],
     storyboard=[
       {
-        'ex': 1, 'title': 'Diagnose Sites & Brief', 'titleID': 'Diagnosa Lokasi & Pengarahan',
+        'ex': 1, 'title': 'Frame the Issue & Brief', 'titleID': 'Bingkai Isu & Pengarahan',
         'minutes': 18, 'mode': 'Show & Tell + Hands-on',
         'summary': 'Frame the 8.7% indirect-spend overrun and MYR 38M consolidation-savings shortfall and the highest-risk areas; pull deep market and governance benchmarks to anchor management credibility before the Procurement Steering Committee convenes.',
         'summaryID': 'Bingkai overrun indirect-spend 8,7% dan kekurangan penghematan konsolidasi Rp 580 miliar dan area berisiko tertinggi; tarik benchmark pasar dan tata kelola untuk menopang kredibilitas manajemen sebelum Komite Pengarah Pengadaan dimulai.',
@@ -479,7 +479,7 @@ DEPARTMENTS_5 = [
     'Zava Digital',
     'A P1 incident took 4 systems offline, the cyber posture score has dropped two bands, and a regulator-mandated tabletop exercise lands in 14 days.',
     'The Group CIO Office at Zava is trying to recover from a P1 incident that took 4 trading and ERP systems offline for 9 hours, while the third-party cyber posture score has dropped from A- to B+ across two consecutive quarters and a BNM/OJK-aligned cyber tabletop exercise is scheduled in 14 days. Critical-system availability has slipped to 99.21% against a 99.95% target across the last 90 days, the FY2026 cyber-uplift programme is behind plan by MYR 38M, and BU CIOs disagree on which control gaps matter most. Leadership wants a single RAG tracker tying availability, cyber-posture trend, and incident-recovery progress together, and the IT & Digital Steering Committee in 14 days needs a sharper line of sight from incident root cause to control owner, ahead of where the Group CFO and Group Risk Officer will probe resilience commitments.',
-    ['IT_01_Availability_and_Cyber_Tracker.xlsx','IT_02_Incident_and_Cost_Tracker.xlsx','IT_03_IT_Service_Management_Manual.docx','IT_04_Cyber_Resilience_Playbook.docx','OPS_05_Supplier_Recovery_SOP.docx','OPS_06_Capex_Approval_Standards.docx'],
+    ['IT_01_Availability_and_Cyber_Tracker.xlsx','IT_02_Incident_and_Cost_Tracker.xlsx','IT_03_IT_Service_Management_Manual.docx','IT_04_Cyber_Resilience_Playbook.docx','IT_05_Third_Party_Risk_Register.docx','IT_06_BNM_OJK_Tabletop_Prep.docx'],
     [
       tool(T_CHAT, FREE_LIC, FREE_ACCT, [
         {'instr':'', 'prompt':'Site-level service slippage, delayed cost takeout, and tier-1 supplier disruption threatening continuity are converging into a IT & Digital Steering Committee in 14 days. Draft a crisp 1-page CEO briefing that explains the situation in plain language, the likely questions directors will ask first, and the 5 decisions that must be ready before the meeting opens. Present as a structured table with columns for Issue, Why It Matters, Board Question, and Recommended Answer.'},
@@ -664,7 +664,7 @@ DEPARTMENTS_5 = [
     ],
     storyboard=[
       {
-        'ex': 1, 'title': 'Diagnose Sites & Brief', 'titleID': 'Diagnosa Lokasi & Pengarahan',
+        'ex': 1, 'title': 'Frame the Issue & Brief', 'titleID': 'Bingkai Isu & Pengarahan',
         'minutes': 18, 'mode': 'Show & Tell + Hands-on',
         'summary': 'Frame the 74-basis-point availability shortfall and MYR 38M cyber-uplift gap and the highest-risk areas; pull deep market and governance benchmarks to anchor management credibility before the IT & Digital Steering Committee convenes.',
         'summaryID': 'Bingkai kekurangan availability 74 basis poin dan gap cyber-uplift Rp 580 miliar dan area berisiko tertinggi; tarik benchmark pasar dan tata kelola untuk menopang kredibilitas manajemen sebelum Komite Pengarah IT & Digital dimulai.',
