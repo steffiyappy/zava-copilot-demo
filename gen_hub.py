@@ -206,7 +206,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .tool-group-header:first-child{margin-top:0}
 /* Language toggle (replaces MY/ID toggle) */
 .lang-toggle{display:flex;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;overflow:hidden;flex-shrink:0}
-.lang-btn{padding:5px 12px;border:none;background:transparent;color:rgba(255,255,255,0.6);font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.lang-btn{padding:6px 14px;border:none;background:transparent;color:rgba(255,255,255,0.7);font-size:12.5px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit;letter-spacing:0.2px}
 .lang-btn.active{background:rgba(255,255,255,0.18);color:#FFFFFF}
 .lang-btn:hover:not(.active){color:rgba(255,255,255,0.85)}
 .lang-btn:disabled{opacity:0.35;cursor:not-allowed}
@@ -312,9 +312,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   </div>
   <div class="topbar-right">
     <div class="lang-toggle" id="lang-toggle">
-      <button class="lang-btn active" id="lang-en" onclick="setLang('EN')" title="English (Malaysia &amp; Indonesia)">&#127474;&#127486;&#127470;&#127465; EN</button>
-      <button class="lang-btn" id="lang-id" onclick="setLang('ID')" title="Bahasa Indonesia">&#127470;&#127465; BI</button>
-      <button class="lang-btn" id="lang-bm" onclick="setLang('BM')" title="Bahasa Malaysia">&#127474;&#127486; BM</button>
+      <button class="lang-btn active" id="lang-en" onclick="setLang('EN')" title="English">&#x1F310; English</button>
+      <button class="lang-btn" id="lang-id" onclick="setLang('ID')" title="Bahasa Indonesia (Bahasa Malaysia speakers can read this — ~80% mutually intelligible)">&#127470;&#127465; Bahasa</button>
     </div>
     <button class="btn-sm" onclick="goHome()">&#x1F3E0; Home</button>
     <button class="btn-sm" onclick="logout()">&#x1F512; Lock</button>
@@ -442,17 +441,15 @@ if(sessionStorage.getItem('hub_auth')!=='ok') window.location.href='index.html';
 let wnIdx=0;
 let currentGridTab='ind';
 let currentSidebarTab='ind';
-let _lang='EN'; // 'EN' | 'ID' | 'BM'
+let _lang='EN'; // 'EN' | 'ID' (BI). BM merged into ID per UX (Bahasa Malaysia speakers read BI fluently).
 let _detailTab='tools'; // 'tools' or 'chat'
 let _currentTab='ind'; // 'ind' or 'dept' (which type was last shown)
 const data=window.HUB_DATA;
 
 function setLang(L){
-  // Disable BM pill if current entry is geo='ID' (BM doesn't apply to Indonesia entries)
-  // Disable ID pill if current entry is geo='MY' AND has no promptsID anywhere (rare).
-  // For now we let the user pick freely; renderer falls back to EN if no translation.
+  if(L!=='ID') L='EN'; // collapse any 'BM' (legacy) to 'EN' default
   _lang=L;
-  ['EN','ID','BM'].forEach(x=>{
+  ['EN','ID'].forEach(x=>{
     const el=document.getElementById('lang-'+x.toLowerCase());
     if(el) el.classList.toggle('active',x===L);
   });
@@ -465,12 +462,8 @@ function setLang(L){
 function setCtx(c){ setLang(c==='ID'?'ID':'EN'); }
 
 function _pickLangField(item, base){
-  // base = 'company' | 'tagline' | 'scenario' (without language suffix)
-  // BM falls back to BI (Bahasa Malaysia ≈ 80% mutually intelligible with Bahasa Indonesia)
   const id=item[base+'ID'];
-  const bm=item[base+'BM'];
   if(_lang==='ID' && id) return id;
-  if(_lang==='BM') return bm || id || item[base];
   return item[base];
 }
 function _getCompany(item){return _pickLangField(item,'company');}
@@ -478,10 +471,6 @@ function _getTagline(item){return _pickLangField(item,'tagline');}
 function _getScenario(item){return _pickLangField(item,'scenario');}
 function _getPrompts(t){
   if(_lang==='ID' && t.promptsID && t.promptsID.length) return t.promptsID;
-  if(_lang==='BM'){
-    if(t.promptsBM && t.promptsBM.length) return t.promptsBM;
-    if(t.promptsID && t.promptsID.length) return t.promptsID; // BM fallback to BI
-  }
   return t.prompts||[];
 }
 function _getPersona(t,pi){
@@ -778,7 +767,6 @@ function showItem(item,tab){
   const sbWrap=document.getElementById('detail-storyboard');
   const _phaseLabels=['🌅 MORNING','☀️ MIDDAY','🌤️ AFTERNOON','🌆 END OF DAY'];
   const _phaseLabelsID=['🌅 PAGI','☀️ SIANG','🌤️ SORE','🌆 AKHIR HARI'];
-  const _phaseLabelsBM=['🌅 PAGI','☀️ TENGAH HARI','🌤️ PETANG','🌆 AKHIR HARI'];
   // Tool short-id → display name + emoji (handles old shape: tool='chat' / new shape: toolId='💬 Microsoft 365 Copilot Chat')
   const _toolMap={
     'chat':'💬 Copilot Chat','researcher':'🔍 Researcher','analyst':'📊 Analyst Agent',
@@ -813,23 +801,21 @@ function showItem(item,tab){
   }
   if(item.storyboard && item.storyboard.length){
     sbWrap.style.display='block';
-    const phases=_lang==='ID'?_phaseLabelsID:(_lang==='BM'?_phaseLabelsBM:_phaseLabels);
-    const heroTitle=_lang==='ID'?'📖 Sehari Bersama Persona':(_lang==='BM'?'📖 Sehari Bersama Persona':'📖 A Day in the Life');
+    const phases=_lang==='ID'?_phaseLabelsID:_phaseLabels;
+    const heroTitle=_lang==='ID'?'📖 Sehari Bersama Persona':'📖 A Day in the Life';
     const heroSub=_lang==='ID'
       ?'Ikuti alur end-to-end: setiap langkah menceritakan apa yang dikerjakan persona dan solusi Copilot mana yang membantu.'
-      :(_lang==='BM'
-        ?'Ikuti aliran hujung-ke-hujung: setiap langkah menceritakan apa yang dilakukan persona dan penyelesaian Copilot yang digunakan.'
-        :'Follow the end-to-end story — each step tells what the persona is doing and which Copilot solution they use.');
+      :'Follow the end-to-end story — each step tells what the persona is doing and which Copilot solution they use.';
     sbWrap.innerHTML=
       '<div class="storyboard-title">'+heroTitle+'</div>'+
       '<div class="storyboard-sub">'+heroSub+'</div>'+
       '<div class="sb-exercises">'+
       item.storyboard.map((ex,i)=>{
-        const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:(_lang==='BM'?(ex.titleBM||ex.titleID||ex.title):ex.title);
-        const exSummary=_scrubFiles(_lang==='ID'&&ex.summaryID?ex.summaryID:(_lang==='BM'?(ex.summaryBM||ex.summaryID||(ex.summary||'')):(ex.summary||'')));
+        const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:ex.title;
+        const exSummary=_scrubFiles(_lang==='ID'&&ex.summaryID?ex.summaryID:(ex.summary||''));
         const phase=phases[i] || phases[phases.length-1];
         const acts=(ex.tasks||[]).map((t,ti)=>{
-          const verb=_lang==='ID'&&t.verbID?t.verbID:(_lang==='BM'?(t.verbBM||t.verbID||t.verb):t.verb);
+          const verb=_lang==='ID'&&t.verbID?t.verbID:t.verb;
           const toolName=_resolveTool(t);
           const mode=_resolveMode(t.mode);
           const stepNum=t.n||((i+1)+'.'+(ti+1));
@@ -939,7 +925,7 @@ function showItem(item,tab){
       if(isNotebook && pi===0 && tool.notebookMeta){
         const nm=tool.notebookMeta;
         const srcs=(nm.sources||[]).map(s=>'<span class="notebook-source-pill">'+escapeHTML(s)+'</span>').join('');
-        const instr=_lang==='ID'&&nm.instructionsID?nm.instructionsID:(_lang==='BM'?(nm.instructionsBM||nm.instructionsID||(nm.instructions||'')):(nm.instructions||''));
+        const instr=_lang==='ID'&&nm.instructionsID?nm.instructionsID:(nm.instructions||'');
         notebookHtml=
           '<div class="notebook-meta">'+
           '<div class="notebook-meta-label">📓 Notebook setup — add ALL sources at creation time, then set the Instructions field</div>'+
@@ -1007,7 +993,7 @@ function showItem(item,tab){
     personasEl.innerHTML=
       '<div class="personas-title">🎭 Personas in this demo</div>'+
       item.personas.map(p=>{
-        const role=_lang==='ID'&&p.roleID?p.roleID:(_lang==='BM'?(p.roleBM||p.roleID||p.role):p.role);
+        const role=_lang==='ID'&&p.roleID?p.roleID:p.role;
         const initials=(p.name||'').split(' ').map(s=>s[0]).join('').slice(0,2).toUpperCase();
         const isFree=/free/i.test(p.lic||'');
         return '<div class="persona-item">'+
