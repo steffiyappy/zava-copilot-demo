@@ -767,19 +767,15 @@ function showItem(item,tab){
         const exSummary=_lang==='ID'&&ex.summaryID?ex.summaryID:(_lang==='BM'&&ex.summaryBM?ex.summaryBM:(ex.summary||''));
         const tasks=(ex.tasks||[]).map(t=>{
           const verb=_lang==='ID'&&t.verbID?t.verbID:(_lang==='BM'&&t.verbBM?t.verbBM:t.verb);
-          const mode=t.mode==='hands'?'hands':'show';
-          const modeLabel=mode==='hands'?'Hands-on':'Show & Tell';
           return '<span class="sb-task" data-tool="'+escapeAttr(t.tool||'')+'">'+
             '<span class="sb-task-n">'+escapeHTML(t.n||'')+'</span>'+
             '<span class="sb-task-verb">'+escapeHTML(verb||'')+'</span>'+
-            '<span class="sb-task-mode '+mode+'">'+modeLabel+'</span>'+
             '</span>';
         }).join('');
         return '<div class="sb-ex">'+
           '<div class="sb-ex-head">'+
             '<span class="sb-ex-num">EX '+(ex.ex||'')+'</span>'+
             '<span class="sb-ex-title">'+escapeHTML(exTitle||'')+'</span>'+
-            '<span class="sb-ex-meta">⏱ '+(ex.minutes||15)+' min · '+escapeHTML(ex.mode||'')+'</span>'+
           '</div>'+
           (exSummary?'<div class="sb-ex-summary">'+escapeHTML(exSummary)+'</div>':'')+
           '<div class="sb-tasks">'+tasks+'</div>'+
