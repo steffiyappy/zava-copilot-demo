@@ -758,15 +758,26 @@ function showItem(item,tab){
   });
   // Storyboard
   const sbWrap=document.getElementById('detail-storyboard');
+  const _phaseLabels=['🌅 MORNING','☀️ MIDDAY','🌤️ AFTERNOON','🌆 END OF DAY'];
+  const _phaseLabelsID=['🌅 PAGI','☀️ SIANG','🌤️ SORE','🌆 AKHIR HARI'];
+  const _phaseLabelsBM=['🌅 PAGI','☀️ TENGAH HARI','🌤️ PETANG','🌆 AKHIR HARI'];
   if(item.storyboard && item.storyboard.length){
     sbWrap.style.display='block';
+    const phases=_lang==='ID'?_phaseLabelsID:(_lang==='BM'?_phaseLabelsBM:_phaseLabels);
+    const heroTitle=_lang==='ID'?'📖 Sehari Bersama Persona':(_lang==='BM'?'📖 Sehari Bersama Persona':'📖 A Day in the Life');
+    const heroSub=_lang==='ID'
+      ?'Ikuti alur end-to-end ini seolah Anda menemani persona sepanjang hari. Klik tool di bawah untuk menyalin promptnya.'
+      :(_lang==='BM'
+        ?'Ikuti aliran hujung-ke-hujung ini seolah-olah anda menemani persona sepanjang hari. Klik alat di bawah untuk menyalin prompt.'
+        :'Follow this end-to-end flow as if you are shadowing the persona through the day. Click a tool below to copy its prompts.');
     sbWrap.innerHTML=
-      '<div class="storyboard-title">🎬 Storyboard <span style="font-size:11px;font-weight:500;color:var(--muted)">— '+item.storyboard.length+' exercises across one morning</span></div>'+
-      '<div class="storyboard-sub">Run these tools in sequence to deliver an end-to-end demo flow. Click a tool below the storyboard to copy its prompts.</div>'+
+      '<div class="storyboard-title">'+heroTitle+'</div>'+
+      '<div class="storyboard-sub">'+heroSub+'</div>'+
       '<div class="sb-exercises">'+
-      item.storyboard.map(ex=>{
+      item.storyboard.map((ex,i)=>{
         const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:(_lang==='BM'&&ex.titleBM?ex.titleBM:ex.title);
         const exSummary=_lang==='ID'&&ex.summaryID?ex.summaryID:(_lang==='BM'&&ex.summaryBM?ex.summaryBM:(ex.summary||''));
+        const phase=phases[i] || phases[phases.length-1];
         const tasks=(ex.tasks||[]).map(t=>{
           const verb=_lang==='ID'&&t.verbID?t.verbID:(_lang==='BM'&&t.verbBM?t.verbBM:t.verb);
           return '<span class="sb-task" data-tool="'+escapeAttr(t.tool||'')+'">'+
@@ -776,7 +787,7 @@ function showItem(item,tab){
         }).join('');
         return '<div class="sb-ex">'+
           '<div class="sb-ex-head">'+
-            '<span class="sb-ex-num">EX '+(ex.ex||'')+'</span>'+
+            '<span class="sb-ex-num">'+phase+'</span>'+
             '<span class="sb-ex-title">'+escapeHTML(exTitle||'')+'</span>'+
           '</div>'+
           (exSummary?'<div class="sb-ex-summary">'+escapeHTML(exSummary)+'</div>':'')+
