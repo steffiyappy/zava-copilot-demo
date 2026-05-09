@@ -301,8 +301,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   </div>
   <div class="topbar-right">
     <div class="lang-toggle" id="lang-toggle">
-      <button class="lang-btn active" id="lang-en" onclick="setLang('EN')" title="English">&#127468;&#127463; EN</button>
-      <button class="lang-btn" id="lang-id" onclick="setLang('ID')" title="Bahasa Indonesia">&#127470;&#127465; ID</button>
+      <button class="lang-btn active" id="lang-en" onclick="setLang('EN')" title="English (Malaysia &amp; Indonesia)">&#127474;&#127486;&#127470;&#127465; EN</button>
+      <button class="lang-btn" id="lang-id" onclick="setLang('ID')" title="Bahasa Indonesia">&#127470;&#127465; BI</button>
       <button class="lang-btn" id="lang-bm" onclick="setLang('BM')" title="Bahasa Malaysia">&#127474;&#127486; BM</button>
     </div>
     <button class="btn-sm" onclick="goHome()">&#x1F3E0; Home</button>
@@ -962,7 +962,7 @@ function showItem(item,tab){
     'Use <strong>admin@ABSx62256373.onmicrosoft.com</strong> for all M365 Copilot premium demos',
     'Use <strong>SashaO@ABSx62256373.onmicrosoft.com</strong> for Copilot Chat Free demos',
     'Have the reference Excel/Word files open in the browser before demoing Copilot in that app',
-    'For Notebook demos, use the <code>/file</code> syntax to reference each source file',
+    'For Notebook demos, click <strong>+ Sources</strong> in the right rail and upload each file from OneDrive — the notebook grounds answers on those sources automatically (no <code>/file</code> tag needed in the prompt body)',
     'For Teams demos, use the demo tenant\'s recorded meetings (New Software Implementation, Potential Merger, Negotiating Marketing Contract)'
   ];
   document.getElementById('detail-tips').innerHTML=
