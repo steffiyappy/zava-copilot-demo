@@ -62,12 +62,16 @@ def _norm_prompts(prompts):
 
 
 def tool(name, lic, acct, prompts, desc='', promptsID=None, persona=None,
-         personaID=None, promptsBM=None):
+         personaID=None, promptsBM=None, notebookMeta=None):
     """Define a tool block with EN/ID/BM prompt arrays.
 
     `prompts`/`promptsID`/`promptsBM` items can be plain strings (legacy, treated as
     pure prompt body with empty instructions) OR dicts of shape
     {'instr': '<setup steps>', 'prompt': '<copyable prompt body>'}.
+
+    `notebookMeta` (Notebook tool only) carries the sources list + Instructions field
+    that the renderer surfaces as a separate visual block above the numbered prompts.
+    Shape: {'sources':['/file1.xlsx', ...], 'instructions':'...', 'instructionsID':'...', 'instructionsBM':'...'}.
     """
     return {
         'tool': name, 'license': lic, 'account': acct, 'desc': desc,
@@ -76,6 +80,7 @@ def tool(name, lic, acct, prompts, desc='', promptsID=None, persona=None,
         'promptsBM': _norm_prompts(promptsBM),
         'persona': persona or [],
         'personaID': personaID or [],
+        'notebookMeta': notebookMeta or None,
     }
 
 
@@ -213,6 +218,21 @@ def write_entry(f, entry, is_last):
             ppl = t['personaID']
             pers = ', '.join(f"'{esc(x)}'" for x in ppl)
             f.write(f"          personaID: [{pers}]")
+        nm = t.get('notebookMeta')
+        if nm:
+            f.write(",\n")
+            f.write(f"          notebookMeta: {{")
+            srcs = nm.get('sources') or []
+            if srcs:
+                src_js = ', '.join(f"'{esc(x)}'" for x in srcs)
+                f.write(f"sources: [{src_js}], ")
+            if nm.get('instructions'):
+                f.write(f"instructions: '{esc(nm['instructions'])}', ")
+            if nm.get('instructionsID'):
+                f.write(f"instructionsID: '{esc(nm['instructionsID'])}', ")
+            if nm.get('instructionsBM'):
+                f.write(f"instructionsBM: '{esc(nm['instructionsBM'])}', ")
+            f.write("}")
         f.write("\n")
         f.write(f"        }}" + ('' if tl else ',') + "\n")
     f.write(f"      ]\n")

@@ -203,7 +203,7 @@ window.HUB_DATA = {
       id: 'general',
       sectorId: 'general',
       subsector: '',
-      name: '⭐ General (Any Role)',
+      name: 'General (Any Role)',
       icon: '⭐',
       color: '#FF6B35',
       accent: '#FF8C42',
@@ -226,32 +226,32 @@ window.HUB_DATA = {
           tool: '💬 Microsoft 365 Copilot Chat',
           license: 'Free — no M365 Copilot license needed',
           account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
-          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          desc: '',
           prompts: [
             {
-              instr: '',
+              instr: 'Open `m365.cloud.microsoft/chat`. Sign in with the **Free Copilot Chat** account `SashaO@ABSx62256373.OnMicrosoft.com`. No license required. Type the prompt below.',
               prompt: 'FY2025 EBITDA is 18% below budget, 3 divisions are in negative EBITDA, and the Board has called an emergency review in 48 hours. Draft a crisp 1-page CEO briefing that explains the situation in plain language, the likely questions directors will ask first, and the 5 decisions that must be ready before the meeting opens. Present as a structured table with columns for Issue, Why It Matters, Board Question, and Recommended Answer.'
             },
             {
-              instr: '',
+              instr: 'Stay in the same Free Copilot Chat thread. Type the prompt below.',
               prompt: 'The CEO needs a verbal opening script for a high-pressure Board session after an 18% EBITDA miss across an 11-division conglomerate with 8,400 employees. Write a 90-second opening statement that acknowledges the underperformance directly, explains why 3 divisions have fallen into negative EBITDA, and signals immediate corrective action without sounding defensive. End with 3 talking points the CEO can use if directors challenge management credibility.'
             },
             {
-              instr: '',
+              instr: 'Stay in the same Free Copilot Chat thread. Type the prompt below.',
               prompt: 'Prepare a stakeholder communication map for an 18% FY2025 EBITDA miss, 3 negative-EBITDA divisions, and an emergency Board review in 48 hours. Identify the priority audiences, the message each audience needs, the timing, and the main communication risk if the message is mishandled. Present as a RAG table with Red for immediate same-day communication needs, Amber for 24-hour needs, and Green for monitor-only audiences.'
             }
           ],
           promptsID: [
             {
-              instr: '',
+              instr: 'Buka `m365.cloud.microsoft/chat`. Masuk dengan akun **Copilot Chat Gratis** `SashaO@ABSx62256373.OnMicrosoft.com`. Tidak memerlukan lisensi. Ketik prompt di bawah ini.',
               prompt: 'EBITDA FY2025 meleset 21% dari RKAP, dua dari sembilan unit usaha mencatat EBITDA negatif, OJK telah meminta klarifikasi, dan Rapat Direksi darurat akan digelar dalam 36 jam. Susun ringkasan tajam 1 halaman untuk Direktur Utama yang menjelaskan situasi dalam bahasa sederhana, pertanyaan yang kemungkinan akan dilayangkan Direksi pertama-tama, dan 5 keputusan yang harus siap sebelum rapat dibuka. Sajikan sebagai tabel terstruktur dengan kolom Isu, Mengapa Penting, Pertanyaan Direksi, dan Jawaban yang Direkomendasikan.'
             },
             {
-              instr: '',
+              instr: 'Tetap di thread Copilot Chat Gratis yang sama. Ketik prompt di bawah ini.',
               prompt: 'Direktur Utama memerlukan naskah pembukaan lisan untuk sesi Rapat Direksi bertekanan tinggi pasca selisih EBITDA 21% di konglomerat 9 unit usaha dengan 12.000 karyawan. Tulis pernyataan pembukaan 90 detik yang mengakui kinerja kurang secara langsung, menjelaskan mengapa dua unit usaha jatuh ke EBITDA negatif, dan memberikan sinyal tindakan perbaikan langsung tanpa terdengar defensif. Akhiri dengan 3 talking points untuk dipakai Direktur Utama bila Direksi menantang kredibilitas manajemen.'
             },
             {
-              instr: '',
+              instr: 'Tetap di thread Copilot Chat Gratis yang sama. Ketik prompt di bawah ini.',
               prompt: 'Susun peta komunikasi pemangku kepentingan untuk selisih EBITDA FY2025 21%, dua unit usaha bermasalah, klarifikasi OJK yang berjalan, dan Rapat Direksi darurat dalam 36 jam. Identifikasi audiens prioritas (OJK, BEI, bank utama, Komisaris, investor institusi, karyawan), pesan inti tiap audiens, timing, dan risiko komunikasi utama bila pesan keliru. Sajikan sebagai tabel RAG dengan Merah untuk kebutuhan komunikasi hari ini juga, Kuning untuk 24 jam, dan Hijau untuk audiens monitor saja.'
             }
           ],
@@ -265,31 +265,32 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'Use Researcher in CRITIQUE MODE: ask Researcher to research how large diversified conglomerates in Malaysia and Indonesia have responded to EBITDA shortfalls of more than 15% against budget between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the Board response within 30 days, and the financial outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Researcher**. Switch the mode pill to 🔍 **Critique Mode** (Researcher will self-critique every source and flag any claim it cannot independently verify). Paste the research brief below.',
+              prompt: 'Research how large diversified conglomerates in Malaysia and Indonesia have responded to EBITDA shortfalls of more than 15% against budget between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the Board response within 30 days, and the financial outcome 12 months later. Self-critique each source, verify every claim against the original publication, and flag any claim you cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: '',
-              prompt: 'Use Researcher in MODEL COUNCIL MODE: convene a multi-model debate (GPT-5, Claude, Gemini) on the question "What are the 3 best turnaround playbooks for an ASEAN conglomerate when 3 divisions simultaneously fall into negative EBITDA, and where do the models disagree?" Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
+              instr: 'Stay in the same Researcher session. Switch the mode pill to ⚖️ **Model Council** — Researcher will orchestrate a multi-model debate (GPT-5, Claude, Gemini) and surface dissent across the panel. Paste the brief below.',
+              prompt: 'Convene a multi-model council debate on the question: "What are the 3 best turnaround playbooks for an ASEAN conglomerate when 3 divisions simultaneously fall into negative EBITDA, and where do the models disagree?" Surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Gunakan Researcher dalam MODE CRITIQUE: minta Researcher meneliti bagaimana konglomerat diversifikasi besar di Indonesia dan Malaysia merespons selisih EBITDA lebih dari 15% terhadap RKAP antara tahun 2022 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons Direksi dalam 30 hari pertama, dan hasil finansial 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab **Agents** → pilih **Researcher**. Ubah pill mode menjadi 🔍 **Critique Mode** (Researcher akan mengkritisi setiap sumber dan menandai klaim yang tidak dapat diverifikasi). Tempelkan brief penelitian di bawah ini.',
+              prompt: 'Teliti bagaimana konglomerat diversifikasi besar di Indonesia dan Malaysia merespons selisih EBITDA lebih dari 15% terhadap RKAP antara tahun 2022 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons Direksi dalam 30 hari pertama, dan hasil finansial 12 bulan kemudian. Kritisi setiap sumber, verifikasi setiap klaim terhadap publikasi aslinya, dan tandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: '',
-              prompt: 'Gunakan Researcher dalam MODE MODEL COUNCIL: gelar perdebatan multi-model (GPT-5, Claude, Gemini) atas pertanyaan "Apa 3 strategi turnaround terbaik untuk konglomerat ASEAN ketika 3 unit usaha secara bersamaan jatuh ke EBITDA negatif, dan di titik mana model-model tersebut berbeda pendapat?" Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
+              instr: 'Tetap di sesi Researcher yang sama. Ubah pill mode menjadi ⚖️ **Model Council** — Researcher akan menggelar debat multi-model (GPT-5, Claude, Gemini) dan memunculkan perbedaan pendapat lintas panel. Tempelkan brief di bawah ini.',
+              prompt: 'Gelar debat multi-model council atas pertanyaan: "Apa 3 strategi turnaround terbaik untuk konglomerat ASEAN ketika 3 unit usaha secara bersamaan jatuh ke EBITDA negatif, dan di titik mana model-model tersebut berbeda pendapat?" Soroti perbedaan pendapat terkuat di antara council, rangkum posisi mayoritas, dan tandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
           promptsBM: [],
@@ -300,39 +301,40 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Across the Group P&L Summary, Division Revenue Bridge AND Quarterly Earnings Tracker tabs, calculate the absolute and percentage revenue and EBITDA variance against FY2025 budget for each of the 11 divisions, identify the 3 divisions with the largest unfavourable EBITDA variance in MYR millions, and quantify the group-level gap behind the 18% miss. Build (1) a horizontal bar chart of EBITDA variance by division ranked worst to best, and (2) a 100% stacked column chart showing each division\'s contribution to the group EBITDA gap. Flag divisions where EBITDA variance is worse than -20% as Red, -10% to -20% as Amber, and above -10% as Green. Output as a RAG dashboard with both charts embedded and one recommended corrective action per Red division.'
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Analyst**. **Upload** `01_Zava_Group_Financial_Performance.xlsx` from the right-hand sidebar. Wait for the upload to finish (Analyst will list the workbook tabs). Then paste the prompt below.',
+              prompt: 'Across the Group P&L Summary, Division Revenue Bridge AND Quarterly Earnings Tracker tabs, calculate the absolute and percentage revenue and EBITDA variance against FY2025 budget for each of the 11 divisions, identify the 3 divisions with the largest unfavourable EBITDA variance in MYR millions, and quantify the group-level gap behind the 18% miss. Build (1) a horizontal bar chart of EBITDA variance by division ranked worst to best, and (2) a 100% stacked column chart showing each division\'s contribution to the group EBITDA gap. Flag divisions where EBITDA variance is worse than -20% as Red, -10% to -20% as Amber, and above -10% as Green. Output as a RAG dashboard with both charts embedded and one recommended corrective action per Red division.'
             },
             {
-              instr: '',
-              prompt: 'Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Cross-reference the Division Revenue Bridge, Quarterly Earnings Tracker AND Group P&L Summary tabs to identify which revenue and margin drivers explain why 3 divisions have fallen into negative EBITDA and whether the deterioration accelerated in Q4. Quantify the contribution of volume, pricing, mix, and cost movements where visible in the data, then build a waterfall chart for each negative-EBITDA division showing Budget → Volume → Price → Mix → Cost → Actual EBITDA. Present a structured RAG table with columns for Division, Main Driver, Q4 Change, Negative EBITDA Risk, and Recommended Action, and embed the 3 waterfall charts beneath it.'
+              instr: 'Stay in the same Analyst session — the workbook is already uploaded. Paste the next prompt.',
+              prompt: 'Cross-reference the Division Revenue Bridge, Quarterly Earnings Tracker AND Group P&L Summary tabs to identify which revenue and margin drivers explain why 3 divisions have fallen into negative EBITDA and whether the deterioration accelerated in Q4. Quantify the contribution of volume, pricing, mix, and cost movements where visible in the data, then build a waterfall chart for each negative-EBITDA division showing Budget → Volume → Price → Mix → Cost → Actual EBITDA. Present a structured RAG table with columns for Division, Main Driver, Q4 Change, Negative EBITDA Risk, and Recommended Action, and embed the 3 waterfall charts beneath it.'
             },
             {
-              instr: '',
-              prompt: 'Upload 01_Zava_Group_Financial_Performance.xlsx to Analyst. Cross-tab analysis across Balance Sheet Summary, Key Financial Ratios AND Quarterly Earnings Tracker tabs: assess whether the FY2025 18% EBITDA miss creates pressure on leverage, interest cover, liquidity, or covenant headroom at group level, and identify the 3 metrics the Board should monitor weekly over the next 8 weeks. Build a sparkline-style trend dashboard for net debt to EBITDA, interest cover ratio, and liquidity coverage across the last 8 quarters. Flag metrics with immediate escalation risk as Red, heightened watchlist risk as Amber, and stable as Green. Present as a RAG dashboard with the 3 sparkline charts and a short note on the likely implication for lenders and regulators.'
+              instr: 'Stay in the same Analyst session. Paste the final prompt.',
+              prompt: 'Cross-tab analysis across Balance Sheet Summary, Key Financial Ratios AND Quarterly Earnings Tracker tabs: assess whether the FY2025 18% EBITDA miss creates pressure on leverage, interest cover, liquidity, or covenant headroom at group level, and identify the 3 metrics the Board should monitor weekly over the next 8 weeks. Build a sparkline-style trend dashboard for net debt to EBITDA, interest cover ratio, and liquidity coverage across the last 8 quarters. Flag metrics with immediate escalation risk as Red, heightened watchlist risk as Amber, and stable as Green. Present as a RAG dashboard with the 3 sparkline charts and a short note on the likely implication for lenders and regulators.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Unggah 01_Zava_Group_Financial_Performance.xlsx ke Analyst. Lintas tab Group P&L Summary, Division Revenue Bridge DAN Quarterly Earnings Tracker, hitung selisih pendapatan dan EBITDA absolut serta persentase terhadap RKAP FY2025 untuk masing-masing 9 unit usaha, identifikasi 3 unit usaha dengan selisih EBITDA terburuk dalam miliar rupiah, dan kuantifikasi gap tingkat grup di balik selisih 21%. Bangun (1) bar chart horizontal selisih EBITDA per unit usaha diurutkan dari terburuk ke terbaik, dan (2) stacked column chart 100% yang menunjukkan kontribusi tiap unit usaha terhadap gap EBITDA grup. Tandai unit usaha dengan selisih EBITDA lebih buruk dari -20% sebagai Merah, -10% sampai -20% sebagai Kuning, dan lebih baik dari -10% sebagai Hijau. Sajikan sebagai dashboard RAG dengan kedua chart tertanam dan satu tindakan korektif per unit usaha berstatus Merah.'
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab **Agents** → pilih **Analyst**. **Unggah** `01_Zava_Group_Financial_Performance.xlsx` dari sidebar kanan. Tunggu unggahan selesai (Analyst akan menampilkan tab workbook). Kemudian tempelkan prompt di bawah ini.',
+              prompt: 'Lintas tab Group P&L Summary, Division Revenue Bridge DAN Quarterly Earnings Tracker, hitung selisih pendapatan dan EBITDA absolut serta persentase terhadap RKAP FY2025 untuk masing-masing 9 unit usaha, identifikasi 3 unit usaha dengan selisih EBITDA terburuk dalam miliar rupiah, dan kuantifikasi gap tingkat grup di balik selisih 21%. Bangun (1) bar chart horizontal selisih EBITDA per unit usaha diurutkan dari terburuk ke terbaik, dan (2) stacked column chart 100% yang menunjukkan kontribusi tiap unit usaha terhadap gap EBITDA grup. Tandai unit usaha dengan selisih EBITDA lebih buruk dari -20% sebagai Merah, -10% sampai -20% sebagai Kuning, dan lebih baik dari -10% sebagai Hijau. Sajikan sebagai dashboard RAG dengan kedua chart tertanam dan satu tindakan korektif per unit usaha berstatus Merah.'
             },
             {
-              instr: '',
-              prompt: 'Unggah 01_Zava_Group_Financial_Performance.xlsx ke Analyst. Lakukan analisis silang antar tab Division Revenue Bridge, Quarterly Earnings Tracker DAN Group P&L Summary untuk mengidentifikasi driver pendapatan dan margin yang menjelaskan mengapa 3 unit usaha jatuh ke EBITDA negatif dan apakah penurunan tersebut berakselerasi di Q4. Kuantifikasi kontribusi volume, harga, bauran produk, dan pergerakan biaya jika terlihat dari data, lalu bangun waterfall chart untuk tiap unit usaha bermasalah yang menampilkan RKAP → Volume → Harga → Bauran → Biaya → EBITDA Aktual. Sajikan tabel RAG dengan kolom Unit Usaha, Driver Utama, Perubahan Q4, Risiko EBITDA Negatif, dan Tindakan yang Direkomendasikan, dan tanamkan ketiga waterfall chart di bawahnya.'
+              instr: 'Tetap di sesi Analyst yang sama — workbook sudah ter-unggah. Tempelkan prompt berikut.',
+              prompt: 'Lakukan analisis silang antar tab Division Revenue Bridge, Quarterly Earnings Tracker DAN Group P&L Summary untuk mengidentifikasi driver pendapatan dan margin yang menjelaskan mengapa 3 unit usaha jatuh ke EBITDA negatif dan apakah penurunan tersebut berakselerasi di Q4. Kuantifikasi kontribusi volume, harga, bauran produk, dan pergerakan biaya jika terlihat dari data, lalu bangun waterfall chart untuk tiap unit usaha bermasalah yang menampilkan RKAP → Volume → Harga → Bauran → Biaya → EBITDA Aktual. Sajikan tabel RAG dengan kolom Unit Usaha, Driver Utama, Perubahan Q4, Risiko EBITDA Negatif, dan Tindakan yang Direkomendasikan, dan tanamkan ketiga waterfall chart di bawahnya.'
             },
             {
-              instr: '',
-              prompt: 'Unggah 01_Zava_Group_Financial_Performance.xlsx ke Analyst. Analisis lintas tab Balance Sheet Summary, Key Financial Ratios DAN Quarterly Earnings Tracker: nilai apakah selisih EBITDA FY2025 sebesar 21% memberikan tekanan pada leverage, interest cover, likuiditas, atau headroom covenant pada level grup, dan identifikasi 3 metrik yang harus dipantau Direksi setiap minggu selama 8 minggu ke depan. Bangun dashboard tren bergaya sparkline untuk rasio utang bersih terhadap EBITDA, interest cover ratio, dan liquidity coverage selama 8 kuartal terakhir. Tandai metrik dengan risiko eskalasi langsung sebagai Merah, risiko watchlist sebagai Kuning, dan stabil sebagai Hijau. Sajikan sebagai dashboard RAG dengan 3 sparkline chart dan catatan singkat mengenai implikasi terhadap kreditor dan regulator.'
+              instr: 'Tetap di sesi Analyst yang sama. Tempelkan prompt terakhir.',
+              prompt: 'Analisis lintas tab Balance Sheet Summary, Key Financial Ratios DAN Quarterly Earnings Tracker: nilai apakah selisih EBITDA FY2025 sebesar 21% memberikan tekanan pada leverage, interest cover, likuiditas, atau headroom covenant pada level grup, dan identifikasi 3 metrik yang harus dipantau Direksi setiap minggu selama 8 minggu ke depan. Bangun dashboard tren bergaya sparkline untuk rasio utang bersih terhadap EBITDA, interest cover ratio, dan liquidity coverage selama 8 kuartal terakhir. Tandai metrik dengan risiko eskalasi langsung sebagai Merah, risiko watchlist sebagai Kuning, dan stabil sebagai Hijau. Sajikan sebagai dashboard RAG dengan 3 sparkline chart dan catatan singkat mengenai implikasi terhadap kreditor dan regulator.'
             }
           ],
           promptsBM: [],
@@ -345,7 +347,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -354,30 +357,30 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'Open 01_Zava_Group_Financial_Performance.xlsx in Excel for Web. Using Copilot in Excel, pull data from THREE tabs simultaneously — Group P&L Summary, Division Revenue Bridge AND Quarterly Earnings Tracker — and build a new sheet called "Board Variance Dashboard". On that sheet, calculate for each of the 11 divisions: absolute revenue variance vs FY2025 budget in MYR M, percentage EBITDA variance, year-on-year EBITDA margin change, and quarterly run-rate of the deterioration. Add a group-level summary row at the top with KPI tiles for Total Revenue Variance, Total EBITDA Gap, and Number of Negative-EBITDA Divisions. Insert a horizontal bar chart of EBITDA variance ranked worst to best, a clustered column chart of quarterly EBITDA trend by division, and a sparkline column for each division. Apply conditional formatting so EBITDA variance worse than -20% is red, -10% to -20% is amber, and above -10% is green. The CFO presents this to the Board in 2 hours.'
+              instr: 'Open `01_Zava_Group_Financial_Performance.xlsx` from the right-hand sidebar in **Excel for the Web**. Open the **Copilot pane** (top-right Copilot icon). Paste the prompt below.',
+              prompt: 'Pull data from THREE tabs simultaneously — Group P&L Summary, Division Revenue Bridge AND Quarterly Earnings Tracker — and build a new sheet called "Board Variance Dashboard". On that sheet, calculate for each of the 11 divisions: absolute revenue variance vs FY2025 budget in MYR M, percentage EBITDA variance, year-on-year EBITDA margin change, and quarterly run-rate of the deterioration. Add a group-level summary row at the top with KPI tiles for Total Revenue Variance, Total EBITDA Gap, and Number of Negative-EBITDA Divisions. Insert a horizontal bar chart of EBITDA variance ranked worst to best, a clustered column chart of quarterly EBITDA trend by division, and a sparkline column for each division. Apply conditional formatting so EBITDA variance worse than -20% is red, -10% to -20% is amber, and above -10% is green. The CFO presents this to the Board in 2 hours.'
             },
             {
-              instr: '',
-              prompt: 'Open 01_Zava_Group_Financial_Performance.xlsx in Excel for Web. Using Copilot in Excel, combine data from THREE tabs — Division Revenue Bridge, Balance Sheet Summary AND Key Financial Ratios — and create a new sheet called "Recovery Bridge". Build a waterfall chart for each of the 3 negative-EBITDA divisions showing the movement from FY2025 budget EBITDA to actual EBITDA across volume, price, mix and cost drivers. Beside each waterfall, add a leverage impact tile pulling from the Balance Sheet tab (net debt change attributable to that division) and a covenant headroom indicator pulling from the Key Financial Ratios tab. Sort the divisions from worst to best by EBITDA gap, highlight the 3 negative-EBITDA divisions in red banding, and embed a one-sentence summary text box beside each Red division. Output a Board-pack-ready dashboard sheet.'
+              instr: 'Stay in the same workbook. In the Copilot pane, click **Edit with Copilot** (agent mode) and paste the next prompt — Copilot will perform the multi-step build across tabs.',
+              prompt: 'Combine data from THREE tabs — Division Revenue Bridge, Balance Sheet Summary AND Key Financial Ratios — and create a new sheet called "Recovery Bridge". Build a waterfall chart for each of the 3 negative-EBITDA divisions showing the movement from FY2025 budget EBITDA to actual EBITDA across volume, price, mix and cost drivers. Beside each waterfall, add a leverage impact tile pulling from the Balance Sheet tab (net debt change attributable to that division) and a covenant headroom indicator pulling from the Key Financial Ratios tab. Sort the divisions from worst to best by EBITDA gap, highlight the 3 negative-EBITDA divisions in red banding, and embed a one-sentence summary text box beside each Red division. Output a Board-pack-ready dashboard sheet.'
             },
             {
-              instr: '',
-              prompt: 'Open 01_Zava_Group_Financial_Performance.xlsx in Excel for Web. Using Copilot in Excel, cross-reference the Quarterly Earnings Tracker, Key Financial Ratios AND Group P&L Summary tabs to create an early-warning tracker on a new sheet called "8-Week Watchlist". Show quarterly EBITDA trend, revenue trend, net debt to EBITDA, interest cover and liquidity coverage for the group as 5 KPI tiles at the top. Below the tiles, build a line chart with secondary axis combining EBITDA (left axis, MYR M) and net debt to EBITDA (right axis, ratio) across the last 8 quarters. Add sparklines to each metric column so directors can scan trend at a glance. Calculate whether each trend is improving, flat, or deteriorating. Flag metrics deteriorating for 2 or more consecutive periods as Red, 1 period as Amber, and stable or improving as Green. Present as a compact RAG dashboard the CEO can review weekly.'
+              instr: 'Stay in the same workbook. Paste the next prompt into the Copilot pane.',
+              prompt: 'Cross-reference the Quarterly Earnings Tracker, Key Financial Ratios AND Group P&L Summary tabs to create an early-warning tracker on a new sheet called "8-Week Watchlist". Show quarterly EBITDA trend, revenue trend, net debt to EBITDA, interest cover and liquidity coverage for the group as 5 KPI tiles at the top. Below the tiles, build a line chart with secondary axis combining EBITDA (left axis, MYR M) and net debt to EBITDA (right axis, ratio) across the last 8 quarters. Add sparklines to each metric column so directors can scan trend at a glance. Calculate whether each trend is improving, flat, or deteriorating. Flag metrics deteriorating for 2 or more consecutive periods as Red, 1 period as Amber, and stable or improving as Green. Present as a compact RAG dashboard the CEO can review weekly.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Buka 01_Zava_Group_Financial_Performance.xlsx di Excel for Web. Menggunakan Copilot in Excel, tarik data dari TIGA tab sekaligus — Group P&L Summary, Division Revenue Bridge DAN Quarterly Earnings Tracker — dan bangun sheet baru bernama "Dashboard Selisih Direksi". Pada sheet tersebut, hitung untuk masing-masing 9 unit usaha: selisih pendapatan absolut terhadap RKAP FY2025 dalam miliar rupiah, persentase selisih EBITDA, perubahan margin EBITDA tahun-ke-tahun, dan run-rate penurunan kuartalan. Tambahkan baris ringkasan tingkat grup di bagian atas dengan KPI tile untuk Total Selisih Pendapatan, Total Gap EBITDA, dan Jumlah Unit Usaha EBITDA Negatif. Sisipkan bar chart horizontal selisih EBITDA diurutkan dari terburuk ke terbaik, clustered column chart tren EBITDA kuartalan per unit usaha, dan kolom sparkline untuk tiap unit usaha. Terapkan conditional formatting sehingga selisih EBITDA lebih buruk dari -20% berwarna merah, -10% sampai -20% kuning, dan lebih baik dari -10% hijau. Direktur Keuangan akan mempresentasikannya kepada Direksi dalam 2 jam.'
+              instr: 'Buka `01_Zava_Group_Financial_Performance.xlsx` dari sidebar kanan di **Excel for the Web**. Buka **Copilot pane** (ikon Copilot di pojok kanan atas). Tempelkan prompt di bawah ini.',
+              prompt: 'Tarik data dari TIGA tab sekaligus — Group P&L Summary, Division Revenue Bridge DAN Quarterly Earnings Tracker — dan bangun sheet baru bernama "Dashboard Selisih Direksi". Pada sheet tersebut, hitung untuk masing-masing 9 unit usaha: selisih pendapatan absolut terhadap RKAP FY2025 dalam miliar rupiah, persentase selisih EBITDA, perubahan margin EBITDA tahun-ke-tahun, dan run-rate penurunan kuartalan. Tambahkan baris ringkasan tingkat grup di bagian atas dengan KPI tile untuk Total Selisih Pendapatan, Total Gap EBITDA, dan Jumlah Unit Usaha EBITDA Negatif. Sisipkan bar chart horizontal selisih EBITDA diurutkan dari terburuk ke terbaik, clustered column chart tren EBITDA kuartalan per unit usaha, dan kolom sparkline untuk tiap unit usaha. Terapkan conditional formatting sehingga selisih EBITDA lebih buruk dari -20% berwarna merah, -10% sampai -20% kuning, dan lebih baik dari -10% hijau. Direktur Keuangan akan mempresentasikannya kepada Direksi dalam 2 jam.'
             },
             {
-              instr: '',
-              prompt: 'Buka 01_Zava_Group_Financial_Performance.xlsx di Excel for Web. Menggunakan Copilot in Excel, gabungkan data dari TIGA tab — Division Revenue Bridge, Balance Sheet Summary DAN Key Financial Ratios — dan buat sheet baru bernama "Recovery Bridge". Bangun waterfall chart untuk tiap dari 3 unit usaha bermasalah yang menampilkan pergerakan dari EBITDA RKAP FY2025 ke EBITDA aktual lintas driver volume, harga, bauran dan biaya. Di samping tiap waterfall, tambahkan tile dampak leverage yang ditarik dari tab Balance Sheet (perubahan utang bersih yang berkaitan dengan unit usaha tersebut) dan indikator headroom covenant dari tab Key Financial Ratios. Urutkan unit usaha dari terburuk ke terbaik berdasarkan gap EBITDA, beri highlight pita merah pada 3 unit usaha bermasalah, dan tanamkan kotak teks ringkasan satu kalimat di samping tiap unit usaha Merah. Hasilkan sheet dashboard yang siap dimasukkan ke pack Direksi.'
+              instr: 'Tetap di workbook yang sama. Pada Copilot pane, klik **Edit with Copilot** (mode agent) dan tempelkan prompt berikut — Copilot akan menjalankan build multi-step lintas tab.',
+              prompt: 'Gabungkan data dari TIGA tab — Division Revenue Bridge, Balance Sheet Summary DAN Key Financial Ratios — dan buat sheet baru bernama "Recovery Bridge". Bangun waterfall chart untuk tiap dari 3 unit usaha bermasalah yang menampilkan pergerakan dari EBITDA RKAP FY2025 ke EBITDA aktual lintas driver volume, harga, bauran dan biaya. Di samping tiap waterfall, tambahkan tile dampak leverage yang ditarik dari tab Balance Sheet (perubahan utang bersih yang berkaitan dengan unit usaha tersebut) dan indikator headroom covenant dari tab Key Financial Ratios. Urutkan unit usaha dari terburuk ke terbaik berdasarkan gap EBITDA, beri highlight pita merah pada 3 unit usaha bermasalah, dan tanamkan kotak teks ringkasan satu kalimat di samping tiap unit usaha Merah. Hasilkan sheet dashboard yang siap dimasukkan ke pack Direksi.'
             },
             {
-              instr: '',
-              prompt: 'Buka 01_Zava_Group_Financial_Performance.xlsx di Excel for Web. Menggunakan Copilot in Excel, lakukan analisis silang antar tab Quarterly Earnings Tracker, Key Financial Ratios DAN Group P&L Summary untuk membuat early-warning tracker pada sheet baru bernama "Watchlist 8 Minggu". Tampilkan tren EBITDA kuartalan, tren pendapatan, rasio utang bersih terhadap EBITDA, interest cover, dan liquidity coverage untuk grup sebagai 5 KPI tile di bagian atas. Di bawah tile, bangun line chart dengan secondary axis yang menggabungkan EBITDA (sumbu kiri, miliar rupiah) dan rasio utang bersih terhadap EBITDA (sumbu kanan, rasio) selama 8 kuartal terakhir. Tambahkan sparkline pada tiap kolom metrik agar Direksi dapat memindai tren dengan cepat. Hitung apakah tiap tren membaik, datar, atau memburuk. Tandai metrik yang memburuk selama 2 periode berturut-turut sebagai Merah, 1 periode Kuning, dan stabil atau membaik Hijau. Sajikan sebagai dashboard RAG ringkas yang dapat ditinjau Direktur Utama setiap minggu.'
+              instr: 'Tetap di workbook yang sama. Tempelkan prompt berikut ke Copilot pane.',
+              prompt: 'Lakukan analisis silang antar tab Quarterly Earnings Tracker, Key Financial Ratios DAN Group P&L Summary untuk membuat early-warning tracker pada sheet baru bernama "Watchlist 8 Minggu". Tampilkan tren EBITDA kuartalan, tren pendapatan, rasio utang bersih terhadap EBITDA, interest cover, dan liquidity coverage untuk grup sebagai 5 KPI tile di bagian atas. Di bawah tile, bangun line chart dengan secondary axis yang menggabungkan EBITDA (sumbu kiri, miliar rupiah) dan rasio utang bersih terhadap EBITDA (sumbu kanan, rasio) selama 8 kuartal terakhir. Tambahkan sparkline pada tiap kolom metrik agar Direksi dapat memindai tren dengan cepat. Hitung apakah tiap tren membaik, datar, atau memburuk. Tandai metrik yang memburuk selama 2 periode berturut-turut sebagai Merah, 1 periode Kuning, dan stabil atau membaik Hijau. Sajikan sebagai dashboard RAG ringkas yang dapat ditinjau Direktur Utama setiap minggu.'
             }
           ],
           promptsBM: [],
@@ -390,7 +393,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -399,43 +403,44 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'Open 02_Zava_Group_Policy_Handbook.docx in Word for Web. Using the Copilot side pane, draft a new 2-page Board paper appended to the document for the emergency review, covering governance obligations, escalation triggers, disclosure controls, and management accountabilities after an 18% EBITDA miss. Use the Edit with Copilot inline agent mode to restructure as four sections: Immediate Facts, Governance Obligations, Decisions Required, and Next 30-Day Actions. Apply formal Board paper style with a short RAG summary at the top. Reference the Policy Handbook for any quoted obligations.'
+              instr: 'Open `02_Zava_Group_Policy_Handbook.docx` from the right-hand sidebar in **Word for the Web**. Open the **Copilot pane** (top-right Copilot icon). Paste the prompt below.',
+              prompt: 'Draft a new 2-page Board paper appended to this document for the emergency review, covering governance obligations, escalation triggers, disclosure controls, and management accountabilities after an 18% EBITDA miss. Restructure as four sections: Immediate Facts, Governance Obligations, Decisions Required, and Next 30-Day Actions. Apply formal Board paper style with a short RAG summary at the top. Reference the Policy Handbook for any quoted obligations.'
             },
             {
-              instr: '',
-              prompt: 'Open 03_Zava_Group_Strategy_Framework.docx in Word for Web. Using Copilot in Word, draft a new 2-page CEO briefing that explains which strategic priorities remain valid despite the FY2025 EBITDA miss and which priorities should be paused, reset, or accelerated across the 11 divisions. Use Edit with Copilot to insert a RAG table that classifies each priority as Continue, Reset, or Pause, and to add a clear explanation of what should change for the 3 divisions now in negative EBITDA and the implications for capital allocation over the next 2 quarters. Present as a Board-ready paper.'
+              instr: 'Open `03_Zava_Group_Strategy_Framework.docx` from the right-hand sidebar in **Word for the Web**. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Draft a new 2-page CEO briefing that explains which strategic priorities remain valid despite the FY2025 EBITDA miss and which priorities should be paused, reset, or accelerated across the 11 divisions. Insert a RAG table that classifies each priority as Continue, Reset, or Pause, and add a clear explanation of what should change for the 3 divisions now in negative EBITDA and the implications for capital allocation over the next 2 quarters. Present as a Board-ready paper.'
             },
             {
-              instr: '',
-              prompt: 'Open 02_Zava_Group_Policy_Handbook.docx in Word for Web. Using Copilot in Word with /03_Zava_Group_Strategy_Framework.docx as additional context, draft a stakeholder communication annex for the Board pack covering regulators, lenders, employees, and investors. For each audience, state the core message, approval owner, timing window, and the main risk if the wording is wrong. Present as a structured table followed by a 200-word holding statement the CEO can adapt quickly. Use Edit with Copilot to align tone with the Group\'s formal Bursa Malaysia and IDX disclosure language.'
+              instr: 'Stay in `02_Zava_Group_Policy_Handbook.docx`. In the Copilot pane, type `/03_Zava_Group_Strategy_Framework.docx` to bring the strategy doc into context, then paste the prompt below.',
+              prompt: 'Draft a stakeholder communication annex for the Board pack covering regulators, lenders, employees, and investors. For each audience, state the core message, approval owner, timing window, and the main risk if the wording is wrong. Present as a structured table followed by a 200-word holding statement the CEO can adapt quickly. Align tone with the Group\'s formal Bursa Malaysia and IDX disclosure language.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Buka 02_Zava_Group_Policy_Handbook.docx di Word for Web. Menggunakan panel Copilot di sebelah kanan, susun paper Direksi 2 halaman baru yang dilampirkan ke dokumen untuk Rapat Direksi darurat, mencakup kewajiban tata kelola, pemicu eskalasi, kontrol pengungkapan, dan akuntabilitas manajemen pasca selisih EBITDA 21%. Gunakan mode Edit with Copilot inline untuk menyusun ulang menjadi empat bagian: Fakta Mendesak, Kewajiban Tata Kelola, Keputusan yang Diperlukan, dan Tindakan 30 Hari ke Depan. Terapkan gaya paper Direksi formal dengan ringkasan RAG singkat di atas. Rujuk Policy Handbook untuk setiap kewajiban yang dikutip.'
+              instr: 'Buka `02_Zava_Group_Policy_Handbook.docx` dari sidebar kanan di **Word for the Web**. Buka **Copilot pane** (ikon Copilot di pojok kanan atas). Tempelkan prompt di bawah ini.',
+              prompt: 'Susun paper Direksi 2 halaman baru yang dilampirkan pada dokumen ini untuk Rapat Direksi darurat, mencakup kewajiban tata kelola, pemicu eskalasi, kontrol pengungkapan, dan akuntabilitas manajemen pasca selisih EBITDA 21%. Restrukturisasi menjadi empat bagian: Fakta Segera, Kewajiban Tata Kelola, Keputusan yang Diperlukan, dan Tindakan 30 Hari ke Depan. Terapkan gaya paper Direksi formal dengan ringkasan RAG singkat di bagian atas. Rujuk Policy Handbook untuk kutipan kewajiban.'
             },
             {
-              instr: '',
-              prompt: 'Buka 03_Zava_Group_Strategy_Framework.docx di Word for Web. Menggunakan Copilot in Word, susun briefing Direktur Utama 2 halaman baru yang menjelaskan prioritas strategis mana yang tetap valid meskipun selisih EBITDA FY2025, dan mana yang harus dihentikan sementara, di-reset, atau dipercepat di 9 unit usaha. Gunakan Edit with Copilot untuk menyisipkan tabel RAG yang mengklasifikasikan tiap prioritas sebagai Lanjutkan, Reset, atau Tunda, dan menambahkan penjelasan jelas mengenai apa yang harus berubah untuk 3 unit usaha bermasalah serta implikasinya terhadap alokasi modal selama 2 kuartal mendatang. Sajikan sebagai paper siap Direksi.'
+              instr: 'Buka `03_Zava_Group_Strategy_Framework.docx` dari sidebar kanan di **Word for the Web**. Buka **Copilot pane**. Tempelkan prompt di bawah ini.',
+              prompt: 'Susun briefing Direktur Utama 2 halaman baru yang menjelaskan prioritas strategis mana yang tetap valid meskipun EBITDA FY2025 meleset dan prioritas mana yang harus ditunda, di-reset, atau dipercepat di 9 unit usaha. Sisipkan tabel RAG yang mengklasifikasikan tiap prioritas sebagai Lanjutkan, Reset, atau Tunda, dan tambahkan penjelasan jelas tentang apa yang harus berubah untuk 2 unit usaha bermasalah dan implikasinya terhadap alokasi modal selama 2 kuartal ke depan. Sajikan sebagai paper siap-Direksi.'
             },
             {
-              instr: '',
-              prompt: 'Buka 02_Zava_Group_Policy_Handbook.docx di Word for Web. Menggunakan Copilot in Word dengan /03_Zava_Group_Strategy_Framework.docx sebagai konteks tambahan, susun lampiran komunikasi pemangku kepentingan untuk pack Direksi mencakup OJK, BEI, kreditor, karyawan, dan investor. Untuk tiap audiens, sebutkan pesan inti, pemilik persetujuan, jendela waktu, dan risiko utama bila redaksi keliru. Sajikan sebagai tabel terstruktur diikuti pernyataan holding statement 200 kata yang dapat diadaptasi cepat oleh Direktur Utama. Gunakan Edit with Copilot untuk menyelaraskan nada dengan bahasa pengungkapan formal Grup di BEI dan Bursa Malaysia.'
+              instr: 'Tetap di `02_Zava_Group_Policy_Handbook.docx`. Pada Copilot pane, ketik `/03_Zava_Group_Strategy_Framework.docx` untuk membawa dokumen strategi ke konteks, lalu tempelkan prompt di bawah ini.',
+              prompt: 'Susun lampiran komunikasi pemangku kepentingan untuk pack Direksi yang mencakup regulator, kreditor, karyawan, dan investor. Untuk tiap audiens, tuliskan pesan inti, pemilik persetujuan, jendela waktu, dan risiko utama bila redaksi keliru. Sajikan sebagai tabel terstruktur diikuti dengan pernyataan holding 200 kata yang dapat diadaptasi cepat oleh Direktur Utama. Selaraskan nada dengan bahasa pengungkapan formal Grup di Bursa Malaysia dan IDX.'
             }
           ],
           promptsBM: [],
           persona: [
-            'Sasha Ouellet',
+            'Hadar Caspit',
             'Mod Admin',
-            'Daichi Maruyama'
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Sasha Ouellet',
+            'Hadar Caspit',
             'Mod Admin',
-            'Daichi Maruyama'
-          ]
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -444,43 +449,44 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'Open a blank PowerPoint for Web file. Using Copilot in PowerPoint, create a 5-slide emergency Board deck on the FY2025 EBITDA miss using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as source context. Cover: (1) group performance vs budget, (2) the 3 negative-EBITDA divisions, (3) the likely root causes, (4) immediate management actions, (5) decisions required in the next 48 hours. Use a serious executive design with the Group navy theme. Then use Edit with Copilot to add concise speaker notes for each slide, drop in a chart on slide 1 showing the EBITDA variance, and tighten any slide with more than 30 words.'
+              instr: 'Open `03_Zava_Group_Strategy_Framework.docx` from the right-hand sidebar in **Word for the Web** to copy the executive summary into clipboard, then open **PowerPoint for the Web** with a blank deck. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Build a 7-slide Board deck titled "Emergency Board Review — FY2025" in this blank deck. Slide 1 Title; Slide 2 Executive Summary; Slide 3 FY2025 Performance vs Budget with an EBITDA bar chart; Slide 4 The 3 Negative-EBITDA Divisions; Slide 5 Root Cause; Slide 6 30-Day Corrective Programme; Slide 7 Decisions Required. Apply a formal executive theme, embed a chart on slide 3, and write speaker notes for the CEO on every slide.'
             },
             {
-              instr: '',
-              prompt: 'Open a blank PowerPoint for Web file. Using Copilot in PowerPoint with /01_Zava_Group_Financial_Performance.xlsx as source context, create a 5-slide briefing deck for the CEO to use in lender and regulator conversations after the Board review. Show the 18% EBITDA miss, balance sheet resilience, corrective actions, and the expected timeline for recovery across the 11 divisions. Use Edit with Copilot to flag the most material risk on each slide as Red, Amber, or Green, and to add detailed speaker notes that keep the tone factual and controlled. End with a slide titled "Lender and Regulator Holding Lines" with 3 short bullets each.'
+              instr: 'Stay in the same deck. In the Copilot pane, click **Edit with Copilot** (agent mode). Paste the next prompt — Copilot will iterate the deck for you.',
+              prompt: 'Restyle the deck for an analyst call audience. Reduce text density on every slide to no more than 5 bullets, add a fresh investor-facing cover, insert a slide between Slide 2 and Slide 3 that shows our FY2026 guidance assumptions, and rewrite all speaker notes in IR-friendly tone (forward-looking, no defensive language).'
             },
             {
-              instr: '',
-              prompt: 'Open a blank PowerPoint for Web file. Using Copilot in PowerPoint with /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as source context, build a 5-slide analyst call deck that explains the FY2025 variance without sounding defensive, focusing on what happened, what management is changing, and what investors should monitor next quarter. Include one slide that separates structural issues from one-off issues and one slide that summarises the 3 negative-EBITDA divisions. Use Edit with Copilot to apply minimal text per slide, polished IR design, and a closing slide titled "Management Commitments for the Next 90 Days".'
+              instr: 'Stay in the same deck. Paste the next prompt into the Copilot pane.',
+              prompt: 'Add a final 2-slide appendix: one slide with the lender holding line summary as a clean bullet list, and one slide with the regulator holding line. Both slides should be in disclosure-safe language suitable for Bursa Malaysia and IDX, with Confidential — Board Use Only watermark text in the footer.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Buka file PowerPoint for Web kosong. Menggunakan Copilot in PowerPoint, buat deck Direksi darurat 5 slide mengenai selisih EBITDA FY2025 dengan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks sumber. Cakup: (1) kinerja grup vs RKAP, (2) 3 unit usaha bermasalah, (3) kemungkinan akar masalah, (4) tindakan manajemen segera, (5) keputusan yang diperlukan dalam 48 jam. Gunakan desain eksekutif serius dengan tema navy Grup. Kemudian gunakan Edit with Copilot untuk menambahkan catatan pembicara ringkas pada tiap slide, menyisipkan chart pada slide 1 yang menampilkan selisih EBITDA, dan merapikan slide manapun yang lebih dari 30 kata.'
+              instr: 'Buka `03_Zava_Group_Strategy_Framework.docx` dari sidebar kanan di **Word for the Web** untuk menyalin ringkasan eksekutif ke clipboard, kemudian buka **PowerPoint for the Web** dengan deck kosong. Buka **Copilot pane**. Tempelkan prompt di bawah ini.',
+              prompt: 'Bangun deck Direksi 7 slide berjudul "Rapat Direksi Darurat — FY2025" pada deck kosong ini. Slide 1 Judul; Slide 2 Ringkasan Eksekutif; Slide 3 Kinerja FY2025 vs RKAP dengan bar chart EBITDA; Slide 4 2 Unit Usaha EBITDA Negatif; Slide 5 Akar Masalah; Slide 6 Program Perbaikan 30 Hari; Slide 7 Keputusan yang Diperlukan. Terapkan tema eksekutif formal, tanamkan chart di slide 3, dan tulis catatan pembicara untuk Direktur Utama di setiap slide.'
             },
             {
-              instr: '',
-              prompt: 'Buka file PowerPoint for Web kosong. Menggunakan Copilot in PowerPoint dengan /01_Zava_Group_Financial_Performance.xlsx sebagai konteks sumber, buat deck briefing 5 slide untuk Direktur Utama gunakan dalam percakapan dengan kreditor dan regulator pasca Rapat Direksi. Tampilkan selisih EBITDA 21%, ketahanan neraca, tindakan korektif, dan timeline pemulihan yang diharapkan untuk 9 unit usaha. Gunakan Edit with Copilot untuk menandai risiko paling material pada tiap slide sebagai Merah, Kuning, atau Hijau, dan menambahkan catatan pembicara terperinci yang menjaga nada faktual dan terkendali. Akhiri dengan slide berjudul "Holding Lines untuk Kreditor dan Regulator" dengan 3 bullet pendek tiap audiens.'
+              instr: 'Tetap di deck yang sama. Pada Copilot pane, klik **Edit with Copilot** (mode agent). Tempelkan prompt berikut — Copilot akan mengiterasi deck untuk Anda.',
+              prompt: 'Restyle deck untuk audiens analyst call. Kurangi kepadatan teks di setiap slide menjadi maksimum 5 bullet, tambahkan cover investor-facing baru, sisipkan slide antara Slide 2 dan Slide 3 yang menampilkan asumsi guidance FY2026, dan tulis ulang semua catatan pembicara dengan nada ramah-IR (berorientasi ke depan, tidak defensif).'
             },
             {
-              instr: '',
-              prompt: 'Buka file PowerPoint for Web kosong. Menggunakan Copilot in PowerPoint dengan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks sumber, susun deck analyst call 5 slide yang menjelaskan selisih FY2025 tanpa terkesan defensif, fokus pada apa yang terjadi, apa yang diubah manajemen, dan apa yang harus dipantau investor pada kuartal berikutnya. Sertakan satu slide yang memisahkan isu struktural dari isu non-berulang dan satu slide ringkasan 3 unit usaha bermasalah. Gunakan Edit with Copilot untuk menerapkan teks minimal per slide, desain IR yang rapi, dan slide penutup berjudul "Komitmen Manajemen untuk 90 Hari ke Depan".'
+              instr: 'Tetap di deck yang sama. Tempelkan prompt berikut pada Copilot pane.',
+              prompt: 'Tambahkan lampiran 2 slide terakhir: satu slide ringkasan holding line kreditor sebagai bullet list rapi, dan satu slide holding line regulator. Kedua slide menggunakan bahasa pengungkapan yang aman untuk BEI dan Bursa Malaysia, dengan teks watermark Rahasia — Hanya untuk Direksi pada footer.'
             }
           ],
           promptsBM: [],
           persona: [
             'Sasha Ouellet',
-            'Hadar Caspit',
-            'Daichi Maruyama'
+            'Daichi Maruyama',
+            'Sasha Ouellet'
           ],
           personaID: [
             'Sasha Ouellet',
-            'Hadar Caspit',
-            'Daichi Maruyama'
-          ]
+            'Daichi Maruyama',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -489,75 +495,76 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'In Outlook on the Web, click New Email then open the Copilot side pane. Use Copilot to draft the Board emergency meeting email for a session taking place in 48 hours on the FY2025 EBITDA miss. The email should explain the purpose, list the 3 agenda items, mention that 3 divisions are in negative EBITDA, and instruct directors to review the briefing pack before the meeting. Then use the Coach my response feature to test the tone and tighten to under 180 words — professional, urgent, and discreet.'
+              instr: 'Open **Outlook on the web**. In the inbox, find the thread **"FY2025 Variance — Director Pre-Read"** sent earlier today by the CEO. Open the thread. Click **Copilot** in the ribbon → **Summary by Copilot**.',
+              prompt: 'Summarise this thread for me as if I am the Group CFO. Start with the 3 most material concerns directors have raised, then list each director by name with their top question, and finish with the 3 commitments management has already given in this thread. Flag any commitment that conflicts with the current Group Policy Handbook.'
             },
             {
-              instr: '',
-              prompt: 'In Outlook on the Web, open the long thread titled "FY2025 Lender Covenant Review" and click Summarise to get the running concerns from your relationship banks. Then click New Email and use Copilot to draft a reply to the lead relationship bank explaining that FY2025 EBITDA missed budget by 18% but that management is already preparing an emergency Board review and liquidity actions. Reassure lenders that balance sheet monitoring is active, note that a fuller update will follow after the Board meeting, and avoid making promises not yet approved. Use Coach my response to ensure the tone is firm but reassuring, and to add a strong subject line.'
+              instr: 'In the same thread, click **Reply** → **Draft with Copilot**. Paste the prompt below.',
+              prompt: 'Draft a reply from the CFO to the Board distribution list confirming receipt of the pre-read questions, committing to provide a written response within 24 hours, and flagging that 2 questions touch on regulatory disclosure and require coordination with Legal before answer. Tone: precise, calm, no over-promising. Sign off as Hadar Caspit, Group CFO.'
             },
             {
-              instr: '',
-              prompt: 'In Outlook on the Web, click New Email and use Copilot to draft an internal email to all 11 division CEOs immediately after the emergency Board review, summarising the key decisions, the expectations for Red-status divisions, and the rules for external communications until approved messaging is issued. Reference the Group Strategy Framework and the Policy Handbook for the disclosure restrictions. End with 3 bullet points titled "What you must do today". Use Coach my response to keep the tone firm and aligned.'
+              instr: 'In the same Outlook tab, click **+ New email** → **Draft with Copilot**.',
+              prompt: 'Draft a confidential email to the 3 lead relationship banks (Maybank, CIMB, OCBC) explaining the FY2025 EBITDA miss, outlining the 30-day corrective programme, and offering a confidential briefing call with the CFO and Treasury team within 5 working days. Reassure on covenant headroom but flag the metrics we will monitor weekly. End with proposed call slots Monday afternoon. Sign off as the Group CFO.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Di Outlook on the Web, klik New Email lalu buka panel Copilot di samping. Gunakan Copilot untuk menyusun email Rapat Direksi darurat untuk sesi yang akan berlangsung dalam 36 jam mengenai selisih EBITDA FY2025. Email tersebut harus menjelaskan tujuan, mencantumkan 3 item agenda, menyebutkan bahwa 2 unit usaha berada di EBITDA negatif, dan menginstruksikan Direksi untuk meninjau briefing pack sebelum rapat. Kemudian gunakan fitur Coach my response untuk menguji nada dan memadatkan menjadi kurang dari 180 kata — profesional, mendesak, dan diskret.'
+              instr: 'Buka **Outlook on the web**. Pada inbox, cari thread **"Selisih FY2025 — Pre-Read Direksi"** yang dikirim oleh Direktur Utama hari ini. Buka thread. Klik **Copilot** di ribbon → **Summary by Copilot**.',
+              prompt: 'Ringkas thread ini untuk saya sebagai Direktur Keuangan Grup. Mulai dengan 3 kekhawatiran paling material yang diangkat Direksi, lalu daftar tiap Direktur dengan pertanyaan utama mereka, dan akhiri dengan 3 komitmen yang sudah diberikan manajemen di thread ini. Tandai setiap komitmen yang berbenturan dengan Policy Handbook Grup saat ini.'
             },
             {
-              instr: '',
-              prompt: 'Di Outlook on the Web, buka thread panjang berjudul "Tinjauan Covenant Kreditor FY2025" dan klik Summarise untuk mendapatkan kekhawatiran berjalan dari bank relasi. Kemudian klik New Email dan gunakan Copilot untuk menyusun balasan ke bank relasi utama yang menjelaskan bahwa EBITDA FY2025 meleset 21% dari RKAP namun manajemen sudah menyiapkan Rapat Direksi darurat dan tindakan likuiditas. Yakinkan kreditor bahwa pemantauan neraca aktif, catat bahwa update lebih lengkap akan menyusul pasca Rapat Direksi, dan hindari janji yang belum disetujui. Gunakan Coach my response untuk memastikan nada tegas namun menenangkan, dan menambahkan subject line yang kuat.'
+              instr: 'Pada thread yang sama, klik **Reply** → **Draft with Copilot**. Tempelkan prompt di bawah ini.',
+              prompt: 'Susun balasan dari Direktur Keuangan kepada distribution list Direksi yang mengonfirmasi penerimaan pertanyaan pre-read, berkomitmen menyediakan tanggapan tertulis dalam 24 jam, dan menandai bahwa 2 pertanyaan menyentuh pengungkapan regulator dan memerlukan koordinasi dengan Legal sebelum dijawab. Nada: presisi, tenang, tidak berjanji berlebihan. Tanda tangan Hadar Caspit, Direktur Keuangan Grup.'
             },
             {
-              instr: '',
-              prompt: 'Di Outlook on the Web, klik New Email dan gunakan Copilot untuk menyusun email internal kepada seluruh 9 Direktur Unit Usaha segera setelah Rapat Direksi darurat, merangkum keputusan utama, ekspektasi untuk unit usaha berstatus Merah, dan aturan komunikasi eksternal hingga pesan yang disetujui dirilis. Rujuk Group Strategy Framework dan Policy Handbook untuk pembatasan pengungkapan. Akhiri dengan 3 bullet point berjudul "Yang Wajib Anda Lakukan Hari Ini". Gunakan Coach my response untuk menjaga nada tegas dan selaras.'
+              instr: 'Pada tab Outlook yang sama, klik **+ New email** → **Draft with Copilot**.',
+              prompt: 'Susun email rahasia kepada 3 bank relasi utama (Mandiri, BCA, BNI) yang menjelaskan selisih EBITDA FY2025, menggarisbawahi program perbaikan 30 hari, dan menawarkan briefing rahasia dengan Direktur Keuangan dan tim Tresuri dalam 5 hari kerja. Yakinkan tentang headroom covenant tapi tandai metrik yang akan dipantau setiap minggu. Akhiri dengan slot panggilan yang diusulkan Senin sore. Tanda tangan sebagai Direktur Keuangan Grup.'
             }
           ],
           promptsBM: [],
           persona: [
-            'Sasha Ouellet',
             'Hadar Caspit',
-            'Sasha Ouellet'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Sasha Ouellet',
             'Hadar Caspit',
-            'Sasha Ouellet'
-          ]
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'For this demo we use Copilot grounded in the Teams Recap on the demo tenant for one of four meetings: "New Software Implementation", "Potential Merger", "Negotiating Marketing Contract", or "Marketing Campaign Performance Review". Workflow: Open the meeting in your Teams calendar > the Recap page opens with AI Notes, chapters, transcript and action items > click the Copilot icon in the top right of the Recap page > Copilot opens grounded in the meeting transcript > type your minutes prompt > copy the structured output into a new Word document (or open M365 Copilot Chat with a /transcript reference and ask Copilot to produce a .docx). Note: Teams Recap has no Export to Word button — the workflow is Copilot pane > copy/paste OR M365 Copilot Chat. Requires M365 Copilot license + Teams Premium for full Recap features.',
+          desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'In Microsoft Teams, open the meeting titled "New Software Implementation" from your calendar — the Recap page opens automatically with AI Notes, chapters, transcript and action items. Click the Copilot icon in the top right of the Recap page — the Copilot pane opens already grounded in the meeting transcript. Type this prompt: "Reformat the discussion into the Group meeting-minutes template with the following sections: Date and Attendees, Agenda Items, Decisions Taken, Action Items with Owner and Due Date, Risks Raised, Open Questions. Quote attendees verbatim where the wording matters. Tag any decision linked to the FY2025 EBITDA recovery programme as Critical Path." Copy the result into a new Word document and save as Minutes_New_Software_Implementation.docx.'
+              instr: 'In **Teams calendar**, open the past meeting **"New Software Implementation"**. The Recap page opens with AI Notes, chapters, transcript and action items. Click the **Copilot icon** (top right of the Recap page). Paste the prompt below. When done, copy the output into a new Word doc named `Minutes_New_Software_Implementation.docx`.',
+              prompt: 'Reformat this discussion into the Group\'s formal minutes template with sections: Date and Attendees, Agenda Items, Decisions Taken, Action Items with Owners and Due Dates, Risks Raised, Open Questions. Quote attendee statements verbatim where wording matters. Flag every decision linked to the FY2025 EBITDA recovery programme as Critical Path.'
             },
             {
-              instr: '',
-              prompt: 'In Microsoft Teams, open the meeting titled "Potential Merger" from your calendar — the Recap page opens with AI Notes, chapters and action items. Click the Copilot icon in the top right of the Recap page — Copilot opens grounded in the transcript. Type: "Produce M&A meeting minutes using the Group confidential M&A template with sections: Confidentiality Notice, Attendees and Conflicts, Discussion Themes, Decisions Taken, Reserved Decisions for Board, Workstream Owners, Next Checkpoints. Highlight any disclosure-sensitive item in red and add a one-line confidentiality reminder at the top." Copy the structured output into a new Word document marked Strictly Confidential, OR open M365 Copilot Chat in another tab and ask Copilot to draft the .docx referencing the Recap.'
+              instr: 'In **Teams calendar**, open the past meeting **"Potential Merger"**. The Recap opens. Click the **Copilot icon** at the top right of the Recap page. Paste the prompt below. Copy the output into a new Word doc marked `CONFIDENTIAL — M&A Discussion Minutes`.',
+              prompt: 'Generate M&A discussion minutes using the Group\'s confidential M&A template with sections: Confidentiality Notice, Attendees and Conflicts of Interest, Discussion Themes, Decisions Taken, Decisions Reserved for Board, Workstream Owners, Next Checkpoint. Highlight any disclosure-sensitive item in red and add a one-line confidentiality reminder at the top.'
             },
             {
-              instr: '',
-              prompt: 'In Microsoft Teams, open the meeting titled "Negotiating Marketing Contract" from your calendar — the Recap page opens with chapters, transcript and decisions. Click the Copilot icon in the top right of the Recap page. Type: "Format as a vendor-negotiation minute with sections: Vendor and Owner, Commercial Terms Discussed, Concessions Offered, Concessions Received, Open Items, Approval Threshold, Next Step Owner and Date. Highlight any term that requires CFO sign-off in amber, and any term that requires Board sign-off in red." Copy the result into a new Word document, then forward the link to Procurement, Legal and the Group CFO for review.'
+              instr: 'In **Teams calendar**, open the past meeting **"Negotiating Marketing Contract"**. The Recap opens. Click the **Copilot icon** at the top right. Paste the prompt below. Forward the resulting Word doc to Procurement, Legal, and the Group CFO for review.',
+              prompt: 'Format as vendor negotiation minutes with sections: Vendor and Owner, Commercial Terms Discussed, Concessions Offered, Concessions Accepted, Open Items, Approval Thresholds, Next Steps with Owner and Date. Mark terms that require CFO approval in amber and terms requiring Board approval in red.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Di Microsoft Teams, buka rapat berjudul "New Software Implementation" dari kalender Anda — halaman Recap terbuka otomatis dengan AI Notes, chapter, transkrip dan action item. Klik ikon Copilot di pojok kanan atas halaman Recap — panel Copilot terbuka dan sudah ter-grounding pada transkrip rapat. Ketik prompt ini: "Format ulang diskusi ke template notulen Grup dengan bagian-bagian: Tanggal dan Peserta, Item Agenda, Keputusan yang Diambil, Action Item dengan Pemilik dan Tenggat, Risiko yang Diangkat, Pertanyaan Terbuka. Kutip pernyataan peserta secara harfiah jika redaksinya penting. Tandai setiap keputusan yang terkait dengan program pemulihan EBITDA FY2025 sebagai Critical Path." Salin hasilnya ke dokumen Word baru dan simpan sebagai Notulen_New_Software_Implementation.docx.'
+              instr: 'Pada **kalender Teams**, buka rapat lampau **"New Software Implementation"**. Halaman Recap terbuka dengan AI Notes, chapter, transkrip dan action item. Klik **ikon Copilot** (pojok kanan atas halaman Recap). Tempelkan prompt di bawah ini. Setelah selesai, salin output ke dokumen Word baru bernama `Notulen_New_Software_Implementation.docx`.',
+              prompt: 'Format ulang diskusi ini ke template notulen Grup dengan bagian-bagian: Tanggal dan Peserta, Item Agenda, Keputusan yang Diambil, Action Item dengan Pemilik dan Tenggat, Risiko yang Diangkat, Pertanyaan Terbuka. Kutip pernyataan peserta secara harfiah jika redaksinya penting. Tandai setiap keputusan yang terkait dengan program pemulihan EBITDA FY2025 sebagai Critical Path.'
             },
             {
-              instr: '',
-              prompt: 'Di Microsoft Teams, buka rapat berjudul "Potential Merger" dari kalender Anda — halaman Recap terbuka dengan AI Notes, chapter dan action item. Klik ikon Copilot di pojok kanan atas halaman Recap — Copilot terbuka ter-grounding pada transkrip. Ketik: "Hasilkan notulen rapat M&A menggunakan template rahasia M&A Grup dengan bagian: Pemberitahuan Kerahasiaan, Peserta dan Benturan Kepentingan, Tema Pembahasan, Keputusan yang Diambil, Keputusan yang Dicadangkan untuk Direksi, Pemilik Workstream, Checkpoint Berikutnya. Sorot setiap item yang sensitif terhadap pengungkapan dengan warna merah dan tambahkan pengingat kerahasiaan satu baris di bagian atas." Salin output ke dokumen Word baru bertanda Sangat Rahasia, ATAU buka M365 Copilot Chat di tab lain dan minta Copilot menyusun .docx merujuk Recap.'
+              instr: 'Pada **kalender Teams**, buka rapat lampau **"Potential Merger"**. Recap terbuka. Klik **ikon Copilot** di pojok kanan atas halaman Recap. Tempelkan prompt di bawah ini. Salin output ke dokumen Word baru bertanda `RAHASIA — Notulen Diskusi M&A`.',
+              prompt: 'Hasilkan notulen rapat M&A menggunakan template rahasia M&A Grup dengan bagian: Pemberitahuan Kerahasiaan, Peserta dan Benturan Kepentingan, Tema Pembahasan, Keputusan yang Diambil, Keputusan yang Dicadangkan untuk Direksi, Pemilik Workstream, Checkpoint Berikutnya. Sorot setiap item yang sensitif terhadap pengungkapan dengan warna merah dan tambahkan pengingat kerahasiaan satu baris di bagian atas.'
             },
             {
-              instr: '',
-              prompt: 'Di Microsoft Teams, buka rapat berjudul "Negotiating Marketing Contract" dari kalender Anda — halaman Recap terbuka dengan chapter, transkrip dan keputusan. Klik ikon Copilot di pojok kanan atas halaman Recap. Ketik: "Format sebagai notulen negosiasi vendor dengan bagian: Vendor dan Pemilik, Persyaratan Komersial yang Dibahas, Konsesi yang Ditawarkan, Konsesi yang Diterima, Item Terbuka, Ambang Persetujuan, Pemilik dan Tanggal Langkah Berikutnya. Tandai persyaratan yang memerlukan persetujuan Direktur Keuangan dengan kuning, dan persyaratan yang memerlukan persetujuan Direksi dengan merah." Salin hasilnya ke dokumen Word baru, kemudian teruskan tautan ke Pengadaan, Legal dan Direktur Keuangan Grup untuk ditinjau.'
+              instr: 'Pada **kalender Teams**, buka rapat lampau **"Negotiating Marketing Contract"**. Recap terbuka. Klik **ikon Copilot** di pojok kanan atas. Tempelkan prompt di bawah ini. Teruskan dokumen Word hasilnya ke Pengadaan, Legal, dan Direktur Keuangan Grup untuk ditinjau.',
+              prompt: 'Format sebagai notulen negosiasi vendor dengan bagian: Vendor dan Pemilik, Persyaratan Komersial yang Dibahas, Konsesi yang Ditawarkan, Konsesi yang Diterima, Item Terbuka, Ambang Persetujuan, Pemilik dan Tanggal Langkah Berikutnya. Tandai persyaratan yang memerlukan persetujuan Direktur Keuangan dengan kuning, dan persyaratan yang memerlukan persetujuan Direksi dengan merah.'
             }
           ],
           promptsBM: [],
@@ -570,76 +577,99 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'Open M365 Copilot Chat (m365.cloud.microsoft/chat) and start a new Notebook. Add 3 sources: /02_Zava_Group_Policy_Handbook.docx, /03_Zava_Group_Strategy_Framework.docx, /01_Zava_Group_Financial_Performance.xlsx. In the Notebook Instructions field, paste: "You are my executive war-room analyst. Synthesize across all 3 sources, cite the source file for every major point, and focus on actions needed in the next 48 hours." Then ask the Notebook for the 10-slide-equivalent story the Board needs, including the 18% EBITDA miss, the 3 negative-EBITDA divisions, the main governance obligations, and the top 5 decisions management must bring forward — with citation to the source file for every paragraph.'
+              instr: 'All sources are already loaded in the notebook (see the Notebook setup block above). The Instructions field is set. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all 6 sources to produce a 10-slide-equivalent Board narrative for the emergency review. Cover: the 18% EBITDA miss in plain language, the 3 negative-EBITDA divisions and why, the regulator and lender concerns, the most relevant policy obligations, the 5 decisions management must table, and the 30-day corrective programme. Cite the source file (and tab/section where applicable) at the end of every paragraph.'
             },
             {
-              instr: '',
-              prompt: 'Open M365 Copilot Chat and start a new Notebook. Add 2 sources: /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx. Set the Instruction: "You are my CFO chief of staff. Cite source file and tab/section for every recommendation. Use a RAG framework for all output." Then ask the Notebook which strategic priorities appear underfunded or mis-sequenced given the FY2025 results, and which priorities should be accelerated, deferred, or stopped across the 11 divisions. Require Notebook to present the answer as a RAG table with financial rationale and source citation per row.'
+              instr: 'Stay in the same notebook. Type the next prompt.',
+              prompt: 'Score each of the 11 divisions on a Continue / Reset / Pause scale based on the financial reality, the strategy framework, and the policy obligations. Output as a RAG scorecard table with columns Division, FY2025 EBITDA Variance %, Strategy Alignment (Continue/Reset/Pause), Policy/Compliance Risk, Recommended 90-Day Action, Source Citation. Be ruthless on Reset/Pause where the financials warrant it.'
             },
             {
-              instr: '',
-              prompt: 'Open M365 Copilot Chat and start a new Notebook. Add 3 sources: /01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx and /03_Zava_Group_Strategy_Framework.docx. Set the Instruction: "You are my governance reviewer. Identify contradictions across the 3 sources and present concise pre-reads for the Board." Then ask the Notebook to identify where the strategy narrative, the financial reality, and the policy obligations are misaligned ahead of the emergency Board review. Request a concise answer with 3 sections: Contradictions to Resolve, Questions Directors Will Ask, and Recommended Pre-Reads, all with citation to the source file.'
+              instr: 'Stay in the same notebook. Type the next prompt.',
+              prompt: 'Draft a Board pre-read brief titled "Emergency Board Review — Pre-Read Pack" with these sections: Executive Summary (200 words), What Changed (300 words), 3 Negative-EBITDA Divisions Deep Dive (one paragraph each), Decisions Requested from the Board (numbered 1-5), Lender and Regulator Holding Lines (verbatim), and Anticipated Director Questions with draft answers (top 8). Use the policy handbook for any quoted obligations. Include source citations on every section.'
+            },
+            {
+              instr: 'Stay in the same notebook. Click **Quick Create** in the right rail → **Page**. Paste the prompt below — the notebook will turn the synthesis into a collaborative Page that the Group CFO and Chief of Staff can co-edit.',
+              prompt: 'Convert the Board pre-read brief into a collaborative Page titled "FY2025 Board Review — War Room". Top section: 3 KPI tiles (EBITDA Variance %, Number of Negative-EBITDA Divisions, Days to Board). Middle: a structured table of the 5 decisions, each as a checkbox the Group CFO and Chief of Staff can tick as they get sign-off. Bottom: a To-Do list of the next 24-hour actions per workstream. Make it scannable in 60 seconds.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Buka M365 Copilot Chat (m365.cloud.microsoft/chat) dan mulai Notebook baru. Tambahkan 3 sumber: /02_Zava_Group_Policy_Handbook.docx, /03_Zava_Group_Strategy_Framework.docx, /01_Zava_Group_Financial_Performance.xlsx. Pada kolom Instructions Notebook, tempelkan: "Anda adalah analis war-room eksekutif saya. Sintesakan ketiga sumber, kutip file sumber untuk setiap poin penting, dan fokus pada tindakan yang dibutuhkan dalam 36 jam ke depan." Kemudian minta Notebook menyusun narasi setara 10 slide yang dibutuhkan Direksi, mencakup selisih EBITDA 21%, 2 unit usaha bermasalah, kewajiban tata kelola utama, dan 5 keputusan teratas yang harus diajukan manajemen — dengan kutipan file sumber untuk tiap paragraf.'
+              instr: 'Semua sumber sudah ter-load di notebook (lihat blok Notebook setup di atas). Kolom Instructions sudah ditetapkan. Ketik prompt di bawah ini di chat notebook.',
+              prompt: 'Sintesakan semua 6 sumber untuk menghasilkan narasi Direksi setara 10 slide untuk Rapat Direksi darurat. Cakup: selisih EBITDA 21% dalam bahasa sederhana, 2 unit usaha bermasalah dan mengapa, kekhawatiran regulator dan kreditor, kewajiban kebijakan paling relevan, 5 keputusan yang harus diajukan manajemen, dan program perbaikan 30 hari. Kutip file sumber (dan tab/bagian bila berlaku) di akhir tiap paragraf.'
             },
             {
-              instr: '',
-              prompt: 'Buka M365 Copilot Chat dan mulai Notebook baru. Tambahkan 2 sumber: /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx. Tetapkan Instruction: "Anda adalah chief of staff CFO saya. Kutip file sumber dan tab/bagian untuk setiap rekomendasi. Gunakan framework RAG untuk seluruh output." Kemudian tanyakan kepada Notebook prioritas strategis mana yang tampak underfunded atau salah urutan mengingat hasil FY2025, dan prioritas mana yang harus dipercepat, ditunda, atau dihentikan di 9 unit usaha. Minta Notebook menyajikan jawaban sebagai tabel RAG dengan rasional finansial dan kutipan sumber per baris.'
+              instr: 'Tetap di notebook yang sama. Ketik prompt berikut.',
+              prompt: 'Beri skor pada masing-masing 9 unit usaha pada skala Lanjutkan / Reset / Tunda berdasarkan realitas finansial, kerangka strategi, dan kewajiban kebijakan. Hasilkan sebagai tabel scorecard RAG dengan kolom Unit Usaha, Selisih EBITDA FY2025 %, Keselarasan Strategi (Lanjutkan/Reset/Tunda), Risiko Kebijakan/Kepatuhan, Tindakan 90 Hari yang Direkomendasikan, Kutipan Sumber. Tegas pada Reset/Tunda bila finansial memang menuntut demikian.'
             },
             {
-              instr: '',
-              prompt: 'Buka M365 Copilot Chat dan mulai Notebook baru. Tambahkan 3 sumber: /01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx dan /03_Zava_Group_Strategy_Framework.docx. Tetapkan Instruction: "Anda adalah peninjau tata kelola saya. Identifikasi kontradiksi lintas 3 sumber dan sajikan pre-read ringkas untuk Direksi." Kemudian minta Notebook mengidentifikasi di mana narasi strategi, realitas finansial, dan kewajiban kebijakan tidak selaras menjelang Rapat Direksi darurat. Minta jawaban ringkas dengan 3 bagian: Kontradiksi untuk Diselesaikan, Pertanyaan yang Akan Diajukan Direksi, dan Rekomendasi Pre-Read, semuanya dengan kutipan ke file sumber.'
+              instr: 'Tetap di notebook yang sama. Ketik prompt berikut.',
+              prompt: 'Susun briefing pre-read Direksi berjudul "Rapat Direksi Darurat — Paket Pre-Read" dengan bagian: Ringkasan Eksekutif (200 kata), Apa yang Berubah (300 kata), Deep Dive 2 Unit Usaha Bermasalah (satu paragraf masing-masing), Keputusan yang Diminta dari Direksi (bernomor 1-5), Holding Line Kreditor dan Regulator (kata demi kata), dan Antisipasi Pertanyaan Direksi dengan jawaban draft (top 8). Gunakan policy handbook untuk kutipan kewajiban. Sertakan kutipan sumber di tiap bagian.'
+            },
+            {
+              instr: 'Tetap di notebook yang sama. Klik **Quick Create** di rail kanan → **Page**. Tempelkan prompt di bawah ini — notebook akan mengubah sintesa menjadi Page kolaboratif yang dapat di-edit bersama Direktur Keuangan dan Kepala Staf.',
+              prompt: 'Konversi briefing pre-read Direksi menjadi Page kolaboratif berjudul "Review Direksi FY2025 — War Room". Bagian atas: 3 KPI tile (Selisih EBITDA %, Jumlah Unit Usaha EBITDA Negatif, Hari Menuju Direksi). Tengah: tabel terstruktur 5 keputusan, masing-masing sebagai checkbox yang dapat dicentang Direktur Keuangan dan Kepala Staf saat mendapat persetujuan. Bawah: daftar To-Do tindakan 24 jam ke depan per workstream. Buat ringkas dipindai dalam 60 detik.'
             }
           ],
           promptsBM: [],
           persona: [
             'Mod Admin',
             'Hadar Caspit',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           personaID: [
             'Mod Admin',
             'Hadar Caspit',
+            'Sasha Ouellet',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: {
+            sources: [
+              '/01_Zava_Group_Financial_Performance.xlsx',
+              '/02_Zava_Group_Policy_Handbook.docx',
+              '/03_Zava_Group_Strategy_Framework.docx',
+              '/04_Zava_Divisional_Variance_FY2025.xlsx',
+              '/05_Zava_Lender_Covenant_Tracker.xlsx',
+              '/06_Zava_Investor_QA_FY2025.docx'
+            ],
+            instructions: 'You are my executive war-room analyst for Zava Group. The Group has just missed FY2025 EBITDA budget by 18%, 3 of 11 divisions are in negative EBITDA, the Securities Commission has requested a clarification, and the Board emergency review is in 48 hours. Synthesise across ALL 6 sources for every answer. Cite the source file and the relevant tab/section after every major point. Always classify financial recommendations as Red, Amber or Green. Tone: precise, board-ready, never speculative.',
+            instructionsID: 'Anda adalah analis war-room eksekutif saya untuk Zava Group. Grup baru saja meleset 21% dari RKAP EBITDA FY2025, 2 dari 9 unit usaha mencatat EBITDA negatif, OJK telah meminta klarifikasi, dan Rapat Direksi darurat akan digelar dalam 36 jam. Sintesakan SEMUA 6 sumber untuk setiap jawaban. Kutip file sumber dan tab/bagian yang relevan setelah tiap poin penting. Selalu klasifikasikan rekomendasi finansial sebagai Merah, Kuning, atau Hijau. Nada: presisi, siap-Direksi, tidak pernah spekulatif.'
+          }
         },
         {
           tool: '🤝 Cowork (Frontier)',
           license: 'M365 Copilot + Frontier Program',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'Help me prepare in parallel for tomorrow morning\'s emergency Board review. Please do all 5 of the following at once and report back when each is ready: (1) draft a 2-page Word document titled "Emergency Board Review Brief — FY2025" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx for context; (2) draft a second 1-page Word document titled "CEO Opening Statement" covering the 18% EBITDA miss and the 3 negative-EBITDA divisions; (3) draft a confidential email to the Board members with the meeting purpose, agenda and pre-read instructions; (4) schedule a 30-minute Teams prep meeting with the Group CEO, CFO and Company Secretary tomorrow at 7am for me to walk them through the deck before the Board convenes; (5) post a discreet message in the Executive Committee Teams channel reminding members that all external communication is on hold until the Board has met. Please confirm each task before sending external content.'
+              instr: 'Open `m365.cloud.microsoft` → left-rail **Agents** → **Cowork**. (Frontier Program required.) Paste the prompt below. Cowork will delegate the 5 numbered actions in parallel and report back when each one is done. Confirm before any external content is sent.',
+              prompt: 'Help me prepare in parallel for tomorrow morning\'s emergency Board review. Please do all 5 of the following at once and report back when each is ready. 1. Draft a 2-page Word document titled "Emergency Board Review Brief — FY2025" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx for context. 2. Draft a second 1-page Word document titled "CEO Opening Statement" covering the 18% EBITDA miss and the 3 negative-EBITDA divisions. 3. Draft a confidential email to the Board members with the meeting purpose, agenda and pre-read instructions. 4. Schedule a 30-minute Teams prep meeting with the Group CEO, CFO and Company Secretary tomorrow at 7am for me to walk them through the deck before the Board convenes. 5. Post a discreet message in the Executive Committee Teams channel reminding members that all external communication is on hold until the Board has met. Please confirm each task before sending external content.'
             },
             {
-              instr: '',
-              prompt: 'After the Board has met, please complete in parallel: (1) draft the lender update email to our 3 lead relationship banks with the agreed messaging from the Board minutes; (2) draft the regulator holding note for Bursa Malaysia and OJK; (3) create a 30-day finance leadership task list covering variance analysis, liquidity review, covenant monitoring, and divisional recovery plans, then send it to the relevant FP&A, Treasury, and Division CFOs; (4) schedule a 20-minute checkpoint Teams meeting for this afternoon with the finance leadership team; (5) update the lender communication tracker workbook with today\'s outreach. Wait for my confirmation before sending external emails.'
+              instr: 'Stay in the same Cowork session — Cowork remembers your earlier delegations. Paste the next prompt to delegate the post-Board follow-up sprint.',
+              prompt: 'After the Board has met, please complete in parallel. 1. Draft the lender update email to our 3 lead relationship banks with the agreed messaging from the Board minutes. 2. Draft the regulator holding note for Bursa Malaysia and the Securities Commission. 3. Create a 30-day finance leadership task list covering variance analysis, liquidity review, covenant monitoring, and divisional recovery plans, then send it to the relevant FP&A, Treasury, and Division CFOs. 4. Schedule a 20-minute checkpoint Teams meeting for this afternoon with the finance leadership team. 5. Update the lender communication tracker workbook with today\'s outreach. Wait for my confirmation before sending external emails.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Bantu saya mempersiapkan secara paralel Rapat Direksi darurat besok pagi. Mohon kerjakan kelima hal berikut sekaligus dan laporkan begitu masing-masing siap: (1) susun dokumen Word 2 halaman berjudul "Briefing Rapat Direksi Darurat — FY2025" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks; (2) susun dokumen Word 1 halaman kedua berjudul "Naskah Pembukaan Direktur Utama" yang mencakup selisih EBITDA 21% dan 2 unit usaha bermasalah; (3) susun email rahasia kepada Direksi berisi tujuan rapat, agenda dan instruksi pre-read; (4) jadwalkan rapat persiapan Teams 30 menit dengan Direktur Utama, Direktur Keuangan dan Sekretaris Perusahaan besok pukul 07.00 untuk saya memandu mereka melalui deck sebelum Rapat Direksi dimulai; (5) posting pesan diskret di channel Komite Eksekutif Teams yang mengingatkan bahwa semua komunikasi eksternal ditunda hingga Rapat Direksi selesai. Mohon konfirmasi tiap tugas sebelum mengirim konten eksternal.'
+              instr: 'Buka `m365.cloud.microsoft` → rail kiri **Agents** → **Cowork**. (Memerlukan Frontier Program.) Tempelkan prompt di bawah ini. Cowork akan mendelegasikan 5 tindakan bernomor secara paralel dan melaporkan saat tiap satu selesai. Konfirmasi sebelum konten eksternal dikirim.',
+              prompt: 'Bantu saya mempersiapkan secara paralel Rapat Direksi darurat besok pagi. Mohon kerjakan kelima hal berikut sekaligus dan laporkan begitu masing-masing siap. 1. Susun dokumen Word 2 halaman berjudul "Briefing Rapat Direksi Darurat — FY2025" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. 2. Susun dokumen Word 1 halaman kedua berjudul "Naskah Pembukaan Direktur Utama" yang mencakup selisih EBITDA 21% dan 2 unit usaha bermasalah. 3. Susun email rahasia kepada Direksi berisi tujuan rapat, agenda dan instruksi pre-read. 4. Jadwalkan rapat persiapan Teams 30 menit dengan Direktur Utama, Direktur Keuangan dan Sekretaris Perusahaan besok pukul 07.00 untuk saya memandu mereka melalui deck sebelum Rapat Direksi dimulai. 5. Posting pesan diskret di channel Komite Eksekutif Teams yang mengingatkan bahwa semua komunikasi eksternal ditunda hingga Rapat Direksi selesai. Mohon konfirmasi tiap tugas sebelum mengirim konten eksternal.'
             },
             {
-              instr: '',
-              prompt: 'Setelah Rapat Direksi selesai, mohon kerjakan secara paralel: (1) susun email update kepada 3 bank relasi utama dengan pesan yang disepakati dari notulen Direksi; (2) susun nota holding untuk regulator BEI dan OJK; (3) buat task list 30 hari untuk leadership tim keuangan mencakup analisis selisih, tinjauan likuiditas, pemantauan covenant, dan rencana pemulihan unit usaha, kemudian kirimkan ke FP&A, Treasury, dan CFO Unit Usaha terkait; (4) jadwalkan rapat checkpoint Teams 20 menit sore ini bersama leadership tim keuangan; (5) perbarui workbook tracker komunikasi kreditor dengan outreach hari ini. Tunggu konfirmasi saya sebelum mengirim email eksternal.'
+              instr: 'Tetap di sesi Cowork yang sama — Cowork mengingat delegasi sebelumnya. Tempelkan prompt berikut untuk mendelegasikan sprint tindak lanjut pasca-Direksi.',
+              prompt: 'Setelah Rapat Direksi selesai, mohon kerjakan secara paralel. 1. Susun email update kepada 3 bank relasi utama dengan pesan yang disepakati dari notulen Direksi. 2. Susun nota holding untuk OJK dan BEI. 3. Buat task list 30 hari untuk leadership tim keuangan mencakup analisis selisih, tinjauan likuiditas, pemantauan covenant, dan rencana pemulihan unit usaha, kemudian kirimkan ke FP&A, Treasury, dan CFO Unit Usaha terkait. 4. Jadwalkan rapat checkpoint Teams 20 menit sore ini bersama leadership tim keuangan. 5. Perbarui workbook tracker komunikasi kreditor dengan outreach hari ini. Tunggu konfirmasi saya sebelum mengirim email eksternal.'
             }
           ],
           promptsBM: [],
@@ -650,31 +680,32 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Requires M365 Copilot license.',
+          desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'From M365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Word first — type a single prompt asking Copilot to generate a 3-page Word document titled "Emergency Board Review Brief — FY2025" using /02_Zava_Group_Policy_Handbook.docx and /03_Zava_Group_Strategy_Framework.docx as context. Specify the structure: Section 1 Situation Snapshot (the 18% EBITDA miss, 3 negative-EBITDA divisions, SC clarification, lender concerns); Section 2 Governance Obligations (drawn from the policy handbook); Section 3 Decisions Required from the Board; Section 4 30-Day Corrective Programme. Ask Copilot to format as a formal Board paper with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
+              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Type the prompt below directly into chat — Copilot will return a fully drafted `.docx` saved to OneDrive, ready to share.',
+              prompt: 'Generate a 3-page Word document titled "Emergency Board Review Brief — FY2025" using /02_Zava_Group_Policy_Handbook.docx and /03_Zava_Group_Strategy_Framework.docx as context. Section 1 Situation Snapshot (the 18% EBITDA miss, 3 negative-EBITDA divisions, SC clarification, lender concerns); Section 2 Governance Obligations drawn from the policy handbook; Section 3 Decisions Required from the Board; Section 4 30-Day Corrective Programme. Format as a formal Board paper with a RAG summary at the top. Save as Emergency_Board_Review_Brief_FY2025.docx.'
             },
             {
-              instr: '',
-              prompt: 'From M365 Copilot Chat (m365.cloud.microsoft/chat), prompt Copilot to generate a 2-page strategic reset briefing as a .docx using /03_Zava_Group_Strategy_Framework.docx and /01_Zava_Group_Financial_Performance.xlsx as context. Required sections: (1) Strategic priorities to Continue, (2) priorities to Reset, (3) priorities to Pause, with one-line financial rationale per item drawn from the workbook. Ask Copilot to apply a clean executive layout and return the document as Strategic_Reset_Briefing.docx.'
+              instr: 'Stay in `m365.cloud.microsoft/chat`. Type the next prompt.',
+              prompt: 'Generate a 2-page strategic reset briefing as a `.docx` named Strategic_Reset_Briefing.docx using /03_Zava_Group_Strategy_Framework.docx and /01_Zava_Group_Financial_Performance.xlsx as context. Required sections: (1) Strategic priorities to Continue, (2) priorities to Reset, (3) priorities to Pause, with one-line financial rationale per item drawn from the workbook. Apply a clean executive layout.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Word terlebih dahulu — ketik satu prompt meminta Copilot menghasilkan dokumen Word 3 halaman berjudul "Briefing Rapat Direksi Darurat — FY2025" menggunakan /02_Zava_Group_Policy_Handbook.docx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Tentukan struktur: Bagian 1 Ringkasan Situasi (selisih EBITDA 21%, dua unit usaha negatif, klarifikasi OJK, kekhawatiran kreditor); Bagian 2 Kewajiban Tata Kelola; Bagian 3 Keputusan yang Diperlukan dari Direksi; Bagian 4 Program Perbaikan 30 Hari. Minta Copilot memformat sebagai paper Direksi formal dengan ringkasan RAG di atas dan kembalikan hasilnya sebagai .docx siap dibagikan.'
+              instr: 'Buka `m365.cloud.microsoft/chat`. **Jangan buka Word terlebih dahulu.** Ketik prompt di bawah ini langsung di chat — Copilot akan mengembalikan `.docx` yang sudah disusun lengkap dan tersimpan di OneDrive, siap dibagikan.',
+              prompt: 'Hasilkan dokumen Word 3 halaman berjudul "Briefing Rapat Direksi Darurat — FY2025" menggunakan /02_Zava_Group_Policy_Handbook.docx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Bagian 1 Ringkasan Situasi (selisih EBITDA 21%, dua unit usaha negatif, klarifikasi OJK, kekhawatiran kreditor); Bagian 2 Kewajiban Tata Kelola dari policy handbook; Bagian 3 Keputusan yang Diperlukan dari Direksi; Bagian 4 Program Perbaikan 30 Hari. Format sebagai paper Direksi formal dengan ringkasan RAG di atas. Simpan sebagai Briefing_Rapat_Direksi_Darurat_FY2025.docx.'
             },
             {
-              instr: '',
-              prompt: 'Dari M365 Copilot Chat, minta Copilot menghasilkan briefing reset strategis 2 halaman sebagai .docx menggunakan /03_Zava_Group_Strategy_Framework.docx dan /01_Zava_Group_Financial_Performance.xlsx. Bagian wajib: (1) prioritas strategis untuk Lanjutkan, (2) prioritas untuk Reset, (3) prioritas untuk Tunda, dengan rasional finansial satu baris per item dari workbook. Minta Copilot menerapkan tata letak eksekutif dan kembalikan dokumen sebagai Briefing_Reset_Strategis.docx.'
+              instr: 'Tetap di `m365.cloud.microsoft/chat`. Ketik prompt berikut.',
+              prompt: 'Hasilkan briefing reset strategis 2 halaman sebagai `.docx` bernama Briefing_Reset_Strategis.docx menggunakan /03_Zava_Group_Strategy_Framework.docx dan /01_Zava_Group_Financial_Performance.xlsx sebagai konteks. Bagian wajib: (1) prioritas strategis untuk Lanjutkan, (2) prioritas untuk Reset, (3) prioritas untuk Tunda, dengan rasional finansial satu baris per item dari workbook. Terapkan tata letak eksekutif yang rapi.'
             }
           ],
           promptsBM: [],
@@ -685,31 +716,32 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Requires M365 Copilot license.',
+          desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'From M365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open PowerPoint first — type a single prompt asking Copilot to generate a 7-slide PowerPoint deck titled "Emergency Board Review — FY2025" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as context. Specify the slide list: (1) Executive Summary; (2) FY2025 Performance vs Budget with EBITDA bar chart; (3) The 3 Negative-EBITDA Divisions; (4) Root Cause Analysis; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Board. Ask Copilot to apply a serious executive theme, embed a chart on slide 2, include speaker notes, and return the result as Emergency_Board_Review_FY2025.pptx ready to download.'
+              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Type the prompt below directly into chat — Copilot will return a fully drafted `.pptx` saved to OneDrive.',
+              prompt: 'Generate a 7-slide PowerPoint deck titled "Emergency Board Review — FY2025" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as context. Slide list: (1) Executive Summary; (2) FY2025 Performance vs Budget with EBITDA bar chart; (3) The 3 Negative-EBITDA Divisions; (4) Root Cause Analysis; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Board. Apply a serious executive theme, embed a chart on slide 2, include speaker notes for the CEO on every slide. Save as Emergency_Board_Review_FY2025.pptx.'
             },
             {
-              instr: '',
-              prompt: 'From M365 Copilot Chat, prompt Copilot to generate a 6-slide PowerPoint deck titled "Analyst Call — FY2025 Variance" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as context. Specify the slide list: (1) Title and Disclaimer; (2) FY2025 Group Performance Summary; (3) What Changed and Why (structural vs one-off); (4) Divisional Outlook for the 3 negative-EBITDA divisions; (5) Management Commitments for Next 90 Days; (6) Q&A. Ask Copilot to apply a polished IR theme with minimal text per slide, full speaker notes for the IR team, and return as Analyst_Call_FY2025.pptx.'
+              instr: 'Stay in `m365.cloud.microsoft/chat`. Type the next prompt.',
+              prompt: 'Generate a 6-slide PowerPoint deck titled "Analyst Call — FY2025 Variance" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as context. Slide list: (1) Title and Disclaimer; (2) FY2025 Group Performance Summary; (3) What Changed and Why (structural vs one-off); (4) Divisional Outlook for the 3 negative-EBITDA divisions; (5) Management Commitments for Next 90 Days; (6) Q&A. Apply a polished IR theme with minimal text per slide and full speaker notes for the IR team. Save as Analyst_Call_FY2025.pptx.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka PowerPoint terlebih dahulu — ketik satu prompt meminta Copilot menghasilkan deck PowerPoint 7 slide berjudul "Rapat Direksi Darurat — FY2025" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Tentukan daftar slide: (1) Ringkasan Eksekutif; (2) Kinerja FY2025 vs RKAP dengan bar chart EBITDA; (3) 2 Unit Usaha EBITDA Negatif; (4) Analisis Akar Masalah; (5) Program Perbaikan 30 Hari; (6) Rencana Komunikasi Pemangku Kepentingan; (7) Keputusan yang Diperlukan dari Direksi. Minta Copilot menerapkan tema eksekutif serius, menanamkan chart di slide 2, menyertakan catatan pembicara, dan kembalikan hasilnya sebagai Rapat_Direksi_Darurat_FY2025.pptx siap diunduh.'
+              instr: 'Buka `m365.cloud.microsoft/chat`. **Jangan buka PowerPoint terlebih dahulu.** Ketik prompt di bawah ini langsung di chat — Copilot akan mengembalikan `.pptx` yang tersimpan di OneDrive.',
+              prompt: 'Hasilkan deck PowerPoint 7 slide berjudul "Rapat Direksi Darurat — FY2025" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Daftar slide: (1) Ringkasan Eksekutif; (2) Kinerja FY2025 vs RKAP dengan bar chart EBITDA; (3) 2 Unit Usaha EBITDA Negatif; (4) Analisis Akar Masalah; (5) Program Perbaikan 30 Hari; (6) Rencana Komunikasi Pemangku Kepentingan; (7) Keputusan yang Diperlukan dari Direksi. Terapkan tema eksekutif serius, tanamkan chart di slide 2, sertakan catatan pembicara untuk Direktur Utama di setiap slide. Simpan sebagai Rapat_Direksi_Darurat_FY2025.pptx.'
             },
             {
-              instr: '',
-              prompt: 'Dari M365 Copilot Chat, minta Copilot menghasilkan deck PowerPoint 6 slide berjudul "Analyst Call — Selisih FY2025" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Tentukan daftar slide: (1) Judul dan Disclaimer; (2) Ringkasan Kinerja Grup FY2025; (3) Apa yang Berubah dan Mengapa (struktural vs non-berulang); (4) Outlook Divisi untuk 2 unit usaha bermasalah; (5) Komitmen Manajemen untuk 90 Hari ke Depan; (6) Q&A. Minta Copilot menerapkan tema IR yang rapi dengan teks minimal per slide, catatan pembicara lengkap untuk tim IR, dan kembalikan sebagai Analyst_Call_FY2025.pptx.'
+              instr: 'Tetap di `m365.cloud.microsoft/chat`. Ketik prompt berikut.',
+              prompt: 'Hasilkan deck PowerPoint 6 slide berjudul "Analyst Call — Selisih FY2025" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Daftar slide: (1) Judul dan Disclaimer; (2) Ringkasan Kinerja Grup FY2025; (3) Apa yang Berubah dan Mengapa (struktural vs non-berulang); (4) Outlook Divisi untuk 2 unit usaha bermasalah; (5) Komitmen Manajemen untuk 90 Hari ke Depan; (6) Q&A. Terapkan tema IR rapi dengan teks minimal per slide dan catatan pembicara lengkap untuk tim IR. Simpan sebagai Analyst_Call_FY2025.pptx.'
             }
           ],
           promptsBM: [],
@@ -720,31 +752,32 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Requires M365 Copilot license.',
+          desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'From M365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Excel first — type a single prompt asking Copilot to generate a new Excel workbook titled "Board_KPI_Dashboard_FY2025.xlsx" using /01_Zava_Group_Financial_Performance.xlsx as context. Specify the sheets: (1) "KPI Tiles" with Revenue, EBITDA, EBITDA Margin, Net Debt to EBITDA, Interest Cover, Liquidity Coverage as tile cards across the top; (2) "Divisional Variance" with EBITDA variance ranked worst to best for the 11 divisions and conditional formatting (Red < -20%, Amber -10% to -20%, Green > -10%); (3) "Quarterly Trend" with a clustered column chart of EBITDA by quarter for the 3 negative-EBITDA divisions; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Ask Copilot to embed the charts, set up the conditional formatting, and return the workbook ready to download.'
+              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Type the prompt below directly into chat — Copilot will return a fully built `.xlsx` saved to OneDrive.',
+              prompt: 'Generate a new Excel workbook titled "Board_KPI_Dashboard_FY2025.xlsx" using /01_Zava_Group_Financial_Performance.xlsx as context. Sheets: (1) "KPI Tiles" with Revenue, EBITDA, EBITDA Margin, Net Debt to EBITDA, Interest Cover, Liquidity Coverage as tile cards across the top; (2) "Divisional Variance" with EBITDA variance ranked worst to best for the 11 divisions and conditional formatting (Red < -20%, Amber -10% to -20%, Green > -10%); (3) "Quarterly Trend" with a clustered column chart of EBITDA by quarter for the 3 negative-EBITDA divisions; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts and apply the conditional formatting.'
             },
             {
-              instr: '',
-              prompt: 'From M365 Copilot Chat, prompt Copilot to generate a new Excel scenario model titled "Recovery_Scenario_Model.xlsx" using /01_Zava_Group_Financial_Performance.xlsx as context. Specify the sheets: (1) "Inputs" with 3 scenario columns (Base, Recovery, Downside) for revenue growth %, EBITDA margin %, and capex change %; (2) "Divisional P&L" computed from the Inputs sheet with formulas for each of the 11 divisions; (3) "Group Roll-Up" with calculated Group Revenue, EBITDA, EBITDA Margin and Net Debt to EBITDA per scenario; (4) "Sensitivity Chart" showing how Group EBITDA changes as the 3 negative-EBITDA divisions recover at different rates. Ask Copilot to use formula references (not hard-coded values) and to embed at least one tornado/sensitivity chart.'
+              instr: 'Stay in `m365.cloud.microsoft/chat`. Type the next prompt.',
+              prompt: 'Generate a new Excel scenario model titled "Recovery_Scenario_Model.xlsx" using /01_Zava_Group_Financial_Performance.xlsx as context. Sheets: (1) "Inputs" with 3 scenario columns (Base, Recovery, Downside) for revenue growth %, EBITDA margin %, and capex change %; (2) "Divisional P&L" computed from the Inputs sheet with formulas for each of the 11 divisions; (3) "Group Roll-Up" with calculated Group Revenue, EBITDA, EBITDA Margin and Net Debt to EBITDA per scenario; (4) "Sensitivity Chart" showing how Group EBITDA changes as the 3 negative-EBITDA divisions recover at different rates. Use formula references (not hard-coded values) and embed at least one tornado/sensitivity chart.'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Excel terlebih dahulu — ketik satu prompt meminta Copilot menghasilkan workbook Excel baru berjudul "Dashboard_KPI_Direksi_FY2025.xlsx" menggunakan /01_Zava_Group_Financial_Performance.xlsx sebagai konteks. Tentukan sheet: (1) "KPI Tile" berisi Pendapatan, EBITDA, Margin EBITDA, Utang Bersih terhadap EBITDA, Interest Cover, Liquidity Coverage sebagai kartu tile di bagian atas; (2) "Selisih Divisi" berisi selisih EBITDA diurutkan dari terburuk ke terbaik untuk 9 unit usaha dengan conditional formatting (Merah < -20%, Kuning -10% sampai -20%, Hijau > -10%); (3) "Tren Kuartalan" dengan clustered column chart EBITDA per kuartal untuk 2 unit usaha bermasalah; (4) "Sparkline Watchlist" dengan sparkline untuk tiap KPI selama 8 kuartal terakhir. Minta Copilot menanamkan chart, mengatur conditional formatting, dan mengembalikan workbook siap diunduh.'
+              instr: 'Buka `m365.cloud.microsoft/chat`. **Jangan buka Excel terlebih dahulu.** Ketik prompt di bawah ini langsung di chat — Copilot akan mengembalikan `.xlsx` yang tersimpan di OneDrive.',
+              prompt: 'Hasilkan workbook Excel baru berjudul "Dashboard_KPI_Direksi_FY2025.xlsx" menggunakan /01_Zava_Group_Financial_Performance.xlsx sebagai konteks. Sheet: (1) "KPI Tile" berisi Pendapatan, EBITDA, Margin EBITDA, Utang Bersih terhadap EBITDA, Interest Cover, Liquidity Coverage sebagai kartu tile di bagian atas; (2) "Selisih Divisi" berisi selisih EBITDA diurutkan dari terburuk ke terbaik untuk 9 unit usaha dengan conditional formatting (Merah < -20%, Kuning -10% sampai -20%, Hijau > -10%); (3) "Tren Kuartalan" dengan clustered column chart EBITDA per kuartal untuk 2 unit usaha bermasalah; (4) "Sparkline Watchlist" dengan sparkline untuk tiap KPI selama 8 kuartal terakhir. Tanamkan chart dan terapkan conditional formatting.'
             },
             {
-              instr: '',
-              prompt: 'Dari M365 Copilot Chat, minta Copilot menghasilkan model skenario Excel baru berjudul "Model_Skenario_Pemulihan.xlsx" menggunakan /01_Zava_Group_Financial_Performance.xlsx sebagai konteks. Tentukan sheet: (1) "Input" dengan 3 kolom skenario (Base, Pemulihan, Downside) untuk pertumbuhan pendapatan %, margin EBITDA %, dan perubahan capex %; (2) "P&L Divisi" yang dihitung dari sheet Input dengan rumus untuk masing-masing 9 unit usaha; (3) "Roll-Up Grup" dengan Pendapatan Grup terhitung, EBITDA, Margin EBITDA dan Utang Bersih terhadap EBITDA per skenario; (4) "Chart Sensitivitas" yang menampilkan bagaimana EBITDA Grup berubah saat 2 unit usaha bermasalah pulih pada laju yang berbeda. Minta Copilot menggunakan referensi rumus (bukan nilai hard-coded) dan menanamkan minimal satu tornado/sensitivity chart.'
+              instr: 'Tetap di `m365.cloud.microsoft/chat`. Ketik prompt berikut.',
+              prompt: 'Hasilkan model skenario Excel baru berjudul "Model_Skenario_Pemulihan.xlsx" menggunakan /01_Zava_Group_Financial_Performance.xlsx sebagai konteks. Sheet: (1) "Input" dengan 3 kolom skenario (Base, Pemulihan, Downside) untuk pertumbuhan pendapatan %, margin EBITDA %, dan perubahan capex %; (2) "P&L Divisi" dihitung dari sheet Input dengan rumus untuk masing-masing 9 unit usaha; (3) "Roll-Up Grup" dengan Pendapatan Grup terhitung, EBITDA, Margin EBITDA dan Utang Bersih terhadap EBITDA per skenario; (4) "Chart Sensitivitas" yang menampilkan bagaimana EBITDA Grup berubah saat 2 unit usaha bermasalah pulih pada laju yang berbeda. Gunakan referensi rumus (bukan nilai hard-coded) dan tanamkan minimal satu tornado/sensitivity chart.'
             }
           ],
           promptsBM: [],
@@ -755,57 +788,83 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup, no licence beyond M365 Copilot.',
+          desc: '',
           prompts: [
             {
-              instr: '',
-              prompt: 'Create an agent called "Zava Executive War Room". Description: an assistant for the Group Board, CEO, CFO, Chief of Staff and Investor Relations to navigate the FY2025 18% EBITDA miss and prepare for the emergency Board review. Instructions: ground every answer in the 3 attached files — /01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx, /03_Zava_Group_Strategy_Framework.docx. Always cite the source file and the relevant tab or section. Always classify financial recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts to include: (1) Summarise the 18% EBITDA miss for the Board in 60 seconds, (2) Which 3 divisions are in negative EBITDA and why, (3) What governance obligations apply after a material earnings miss, (4) Draft a holding line for lenders, (5) Draft a holding line for Bursa Malaysia and OJK.'
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** → **+ Create an agent**. Step 1 (**Describe**): paste the description below in the description field — Copilot drafts the agent\'s name, instructions, and starter prompts.',
+              prompt: 'Create an agent called "Zava Executive War Room". Description: an assistant for the Group Board, CEO, CFO, Chief of Staff and Investor Relations to navigate the FY2025 18% EBITDA miss and prepare for the emergency Board review. The agent should ground every answer in the attached financial, policy, and strategy files; always cite the source file and tab/section; classify financial recommendations as Red, Amber or Green by Board materiality; and stay precise, board-ready and never speculative.'
             },
             {
-              instr: '',
-              prompt: 'The Zava Executive War Room agent has just been created. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the FY2025 EBITDA problem, the 3 divisions in negative EBITDA, the top governance obligations, and the decisions I must take to the Board in 48 hours."; (2) "Draft my first message to the 11 Division CEOs immediately after the Board meeting closes."; (3) "Which lender covenants are most at risk and which 3 metrics should I monitor weekly for the next 8 weeks?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'
+              instr: 'Step 2 (**Configure**): paste the prompt below as the agent\'s **Instructions** field. Then click **Knowledge** → **Add** → upload the 3 files: `01_Zava_Group_Financial_Performance.xlsx`, `02_Zava_Group_Policy_Handbook.docx`, `03_Zava_Group_Strategy_Framework.docx`. Click **Capabilities** → enable **Web search** and **Code interpreter**. Add 5 starter prompts (the agent already drafted them in Step 1 — you can keep them).',
+              prompt: 'Ground every answer in the 3 attached files (/01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx, /03_Zava_Group_Strategy_Framework.docx). Always cite the source file and the relevant tab or section. Always classify financial recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts: (1) Summarise the 18% EBITDA miss for the Board in 60 seconds; (2) Which 3 divisions are in negative EBITDA and why; (3) What governance obligations apply after a material earnings miss; (4) Draft a holding line for lenders; (5) Draft a holding line for Bursa Malaysia and the Securities Commission.'
+            },
+            {
+              instr: 'Step 3 (**Test**): in the right-hand test pane, paste this validation prompt. Verify the agent grounds its answer in the uploaded files, applies the RAG framework, cites sources, and stays in scope.',
+              prompt: 'Give me the 60-second version of the FY2025 EBITDA problem, the 3 divisions in negative EBITDA, the top governance obligations, and the decisions I must take to the Board in 48 hours. Cite the file and tab/section for every paragraph and use the RAG framework where relevant.'
+            },
+            {
+              instr: 'Step 4 (**Create + Share**): click **Create**. Then click the agent in the left rail → **Share** → add the **Group ExCo** distribution list with **Use** access. Done — the agent is now live for executives.',
+              prompt: 'Share this agent with the Group ExCo distribution list (Group CEO, Group CFO, Group COO, Group Chief Strategy Officer, Group Chief of Staff, Head of Investor Relations) with Use access. Send the share notification with a one-line message: "The Zava Executive War Room agent is now available in your M365 Copilot chat — ground every Board prep question in this agent for the next 30 days."'
             }
           ],
           promptsID: [
             {
-              instr: '',
-              prompt: 'Buatkan agent bernama "Zava Executive War Room". Deskripsi: asisten untuk Direksi Grup, Direktur Utama, Direktur Keuangan, Kepala Staf dan Hubungan Investor untuk menavigasi selisih EBITDA FY2025 sebesar 21% dan mempersiapkan Rapat Direksi darurat. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx, /03_Zava_Group_Strategy_Framework.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi finansial sebagai Merah, Kuning atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum selisih EBITDA 21% untuk Direksi dalam 60 detik, (2) Unit usaha mana yang berada di EBITDA negatif dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca selisih earnings material, (4) Susun holding line untuk kreditor, (5) Susun holding line untuk OJK dan BEI.'
+              instr: 'Buka `m365.cloud.microsoft/chat` → **Agents** → **+ Create an agent**. Langkah 1 (**Describe**): tempelkan deskripsi di bawah ini di kolom deskripsi — Copilot akan menyusun nama agent, instruksi, dan starter prompt.',
+              prompt: 'Buatkan agent bernama "Zava Executive War Room". Deskripsi: asisten untuk Direksi Grup, Direktur Utama, Direktur Keuangan, Kepala Staf dan Hubungan Investor untuk menavigasi selisih EBITDA FY2025 sebesar 21% dan mempersiapkan Rapat Direksi darurat. Agent harus mendasarkan tiap jawaban pada file finansial, kebijakan, dan strategi terlampir; selalu mengutip file sumber dan tab/bagian; mengklasifikasikan rekomendasi finansial sebagai Merah, Kuning atau Hijau berdasarkan materialitas Direksi; dan tetap presisi, siap-Direksi, tidak pernah spekulatif.'
             },
             {
-              instr: '',
-              prompt: 'Agent Zava Executive War Room baru saja dibuat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah EBITDA FY2025, 2 unit usaha bermasalah, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Direksi dalam 36 jam."; (2) "Susun pesan pertama saya kepada 9 Direktur Unit Usaha segera setelah Rapat Direksi selesai."; (3) "Covenant kreditor mana yang paling berisiko dan 3 metrik apa yang harus saya pantau setiap minggu selama 8 minggu ke depan?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'
+              instr: 'Langkah 2 (**Configure**): tempelkan prompt di bawah ini sebagai **Instructions** field agent. Kemudian klik **Knowledge** → **Add** → unggah 3 file: `01_Zava_Group_Financial_Performance.xlsx`, `02_Zava_Group_Policy_Handbook.docx`, `03_Zava_Group_Strategy_Framework.docx`. Klik **Capabilities** → aktifkan **Web search** dan **Code interpreter**. Tambahkan 5 starter prompt (agent sudah menyusunnya di Langkah 1 — Anda dapat mempertahankannya).',
+              prompt: 'Dasarkan tiap jawaban pada 3 file terlampir (/01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx, /03_Zava_Group_Strategy_Framework.docx). Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi finansial sebagai Merah, Kuning atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap-Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt: (1) Rangkum selisih EBITDA 21% untuk Direksi dalam 60 detik; (2) Unit usaha mana yang berada di EBITDA negatif dan mengapa; (3) Kewajiban tata kelola apa yang berlaku pasca selisih earnings material; (4) Susun holding line untuk kreditor; (5) Susun holding line untuk OJK dan BEI.'
+            },
+            {
+              instr: 'Langkah 3 (**Test**): pada panel test sebelah kanan, tempelkan prompt validasi ini. Verifikasi agent mendasarkan jawabannya pada file yang diunggah, menerapkan framework RAG, mengutip sumber, dan tetap dalam cakupan.',
+              prompt: 'Berikan versi 60 detik dari masalah EBITDA FY2025, 2 unit usaha bermasalah, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Direksi dalam 36 jam. Kutip file dan tab/bagian untuk tiap paragraf dan gunakan framework RAG bila relevan.'
+            },
+            {
+              instr: 'Langkah 4 (**Create + Share**): klik **Create**. Kemudian klik agent di rail kiri → **Share** → tambahkan distribution list **Group ExCo** dengan akses **Use**. Selesai — agent kini live untuk eksekutif.',
+              prompt: 'Bagikan agent ini ke distribution list Group ExCo (Direktur Utama Grup, Direktur Keuangan Grup, Direktur Operasional Grup, Direktur Strategi Grup, Kepala Staf Grup, Kepala Hubungan Investor) dengan akses Use. Kirim notifikasi bagi-pakai dengan pesan satu baris: "Agent Zava Executive War Room kini tersedia di M365 Copilot chat Anda — dasarkan setiap pertanyaan persiapan Direksi pada agent ini selama 30 hari ke depan."'
             }
           ],
           promptsBM: [],
           persona: [
             'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           personaID: [
             'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
-        'finance',
-        'strategy',
-        'legal',
-        'risk',
-        'it',
-        'hr'
+        'dept-finance',
+        'dept-strategy',
+        'dept-legal',
+        'dept-risk',
+        'dept-it-digital',
+        'dept-hr',
+        'dept-esg',
+        'dept-marketing',
+        'dept-operations',
+        'dept-board'
       ],
       storyboard: [
         {
           ex: 1,
-          title: 'Diagnose & Brief',
-          titleID: 'Diagnosa & Pengarahan',
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
           minutes: 18,
           mode: 'Show & Tell + Hands-on',
           summary: 'Frame the 18% EBITDA miss and the 3 negative-EBITDA divisions; pull deep market and governance benchmarks to anchor management credibility before the Board walks in.',
@@ -822,29 +881,29 @@ window.HUB_DATA = {
             {
               n: '02',
               tool: 'researcher',
-              verb: 'Benchmark conglomerate misses',
-              verbID: 'Benchmark selisih konglomerat',
+              verb: 'Critique-mode benchmark',
+              verbID: 'Benchmark mode Critique',
               mode: 'show',
-              label: 'Critique'
+              label: 'Researcher'
             },
             {
               n: '03',
               tool: 'researcher',
-              verb: 'Multi-model debate of options',
-              verbID: 'Debat multi-model atas opsi',
+              verb: 'Model Council debate',
+              verbID: 'Debat Model Council',
               mode: 'show',
-              label: 'Model Council'
+              label: 'Researcher'
             }
           ]
         },
         {
           ex: 2,
-          title: 'Quantify',
-          titleID: 'Kuantifikasi',
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Keputusan',
           minutes: 22,
           mode: 'Hands-on',
-          summary: 'Analyse the divisional variance, build a Board-ready dashboard in Excel, and synthesise across financial, policy and strategy files in Notebook.',
-          summaryID: 'Analisis selisih per unit usaha, susun dashboard siap Direksi di Excel, dan sintesakan keuangan, kebijakan, dan strategi di Notebook.',
+          summary: 'Quantify divisional variance with Analyst, build a Board-ready dashboard in Excel, and synthesise across 6 sources in Notebook with the Quick Create Page output.',
+          summaryID: 'Kuantifikasi selisih divisi dengan Analyst, bangun dashboard siap-Direksi di Excel, dan sintesakan 6 sumber di Notebook dengan output Page via Quick Create.',
           tasks: [
             {
               n: '04',
@@ -857,16 +916,16 @@ window.HUB_DATA = {
             {
               n: '05',
               tool: 'excel',
-              verb: 'Board Variance Dashboard sheet',
-              verbID: 'Sheet Dashboard Selisih Direksi',
+              verb: 'Board Variance Dashboard',
+              verbID: 'Dashboard Selisih Direksi',
               mode: 'hands',
               label: 'Copilot in Excel'
             },
             {
               n: '06',
               tool: 'notebook',
-              verb: 'Cross-file war-room synthesis',
-              verbID: 'Sintesa war-room lintas-file',
+              verb: 'War-room synthesis + Page',
+              verbID: 'Sintesa war-room + Page',
               mode: 'hands',
               label: 'Copilot Notebook'
             }
@@ -874,69 +933,93 @@ window.HUB_DATA = {
         },
         {
           ex: 3,
-          title: 'Communicate',
-          titleID: 'Komunikasi',
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
           minutes: 22,
           mode: 'Hands-on',
-          summary: 'Draft the governance protocol appendix in Word, build the Board deck in PowerPoint, and align lender and director emails in Outlook.',
-          summaryID: 'Susun lampiran protokol tata kelola di Word, bangun deck Direksi di PowerPoint, dan rapikan email kreditor dan Direksi di Outlook.',
+          summary: 'Draft Board paper in Word, build the deck in PowerPoint, summarise the inbox in Outlook, and turn a Teams Recap into formal minutes.',
+          summaryID: 'Susun paper Direksi di Word, bangun deck di PowerPoint, ringkas inbox di Outlook, dan ubah Recap Teams menjadi notulen formal.',
           tasks: [
             {
               n: '07',
               tool: 'word',
-              verb: 'Governance protocol appendix',
-              verbID: 'Lampiran protokol tata kelola',
+              verb: 'Board paper appendix',
+              verbID: 'Lampiran paper Direksi',
               mode: 'hands',
               label: 'Copilot in Word'
             },
             {
               n: '08',
               tool: 'ppt',
-              verb: '5-slide Board deck',
-              verbID: 'Deck Direksi 5 slide',
+              verb: '7-slide Board deck',
+              verbID: 'Deck Direksi 7 slide',
               mode: 'hands',
               label: 'Copilot in PowerPoint'
             },
             {
               n: '09',
               tool: 'outlook',
-              verb: 'Lender + Board email pack',
-              verbID: 'Paket email kreditor + Direksi',
+              verb: 'Inbox summary + drafts',
+              verbID: 'Ringkasan inbox + draft',
               mode: 'hands',
               label: 'Copilot in Outlook'
-            }
-          ]
-        },
-        {
-          ex: 4,
-          title: 'Coordinate & Scale',
-          titleID: 'Koordinasi & Skalakan',
-          minutes: 18,
-          mode: 'Show & Tell',
-          summary: 'Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a War Room agent in M365 Copilot Chat for executives.',
-          summaryID: 'Konversi Teams Recap menjadi notulen formal, delegasikan prep paralel ke Cowork, dan bangun agen War Room di M365 Copilot Chat untuk eksekutif.',
-          tasks: [
+            },
             {
               n: '10',
               tool: 'teams',
               verb: 'Recap → Word minutes',
               verbID: 'Recap → Notulen Word',
-              mode: 'show',
+              mode: 'hands',
               label: 'Copilot in Teams'
-            },
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skalakan',
+          minutes: 18,
+          mode: 'Show & Tell',
+          summary: 'Delegate parallel prep to Cowork, generate a deck/doc/workbook from chat with the Word/PPT/Excel Agents, and wrap reusable War Room knowledge in an Agent Builder agent.',
+          summaryID: 'Delegasikan prep paralel ke Cowork, hasilkan deck/dok/workbook dari chat dengan Word/PPT/Excel Agent, dan bungkus pengetahuan War Room reusable dalam agent dari Agent Builder.',
+          tasks: [
             {
               n: '11',
               tool: 'cowork',
-              verb: 'Autonomous prep package',
-              verbID: 'Paket prep otonom',
+              verb: 'Cowork 5-task delegation',
+              verbID: 'Delegasi 5-tugas Cowork',
               mode: 'show',
               label: 'Cowork (Frontier)'
             },
             {
               n: '12',
+              tool: 'word_agt',
+              verb: 'Word Agent — Board brief',
+              verbID: 'Word Agent — Briefing Direksi',
+              mode: 'show',
+              label: 'Word Agent'
+            },
+            {
+              n: '13',
+              tool: 'ppt_agt',
+              verb: 'PPT Agent — Board deck',
+              verbID: 'PPT Agent — Deck Direksi',
+              mode: 'show',
+              label: 'PPT Agent'
+            },
+            {
+              n: '14',
+              tool: 'xl_agt',
+              verb: 'Excel Agent — KPI dashboard',
+              verbID: 'Excel Agent — Dashboard KPI',
+              mode: 'show',
+              label: 'Excel Agent'
+            },
+            {
+              n: '15',
               tool: 'builder',
-              verb: 'War Room agent in Copilot Chat',
-              verbID: 'Agen War Room di Copilot Chat',
+              verb: 'War Room agent (Describe→Configure→Test→Share)',
+              verbID: 'Agent War Room (Describe→Configure→Test→Share)',
               mode: 'show',
               label: 'Agent Builder'
             }
@@ -1045,7 +1128,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -1080,7 +1164,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -1125,7 +1210,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -1170,7 +1256,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -1215,7 +1302,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -1260,7 +1348,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -1305,7 +1394,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -1350,7 +1440,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -1395,7 +1486,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -1430,7 +1522,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -1465,7 +1558,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -1500,7 +1594,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -1535,7 +1630,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -1570,7 +1666,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -1823,7 +1920,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -1858,7 +1956,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -1903,7 +2002,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -1948,7 +2048,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -1993,7 +2094,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -2038,7 +2140,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -2083,7 +2186,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -2128,7 +2232,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -2173,7 +2278,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -2208,7 +2314,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -2243,7 +2350,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -2278,7 +2386,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -2313,7 +2422,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -2348,7 +2458,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -2601,7 +2712,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -2636,7 +2748,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -2681,7 +2794,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -2726,7 +2840,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -2771,7 +2886,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -2816,7 +2932,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -2861,7 +2978,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -2906,7 +3024,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -2951,7 +3070,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -2986,7 +3106,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -3021,7 +3142,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -3056,7 +3178,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -3091,7 +3214,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -3126,7 +3250,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -3379,7 +3504,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -3414,7 +3540,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -3459,7 +3586,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -3504,7 +3632,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -3549,7 +3678,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -3594,7 +3724,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -3639,7 +3770,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -3684,7 +3816,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -3729,7 +3862,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -3764,7 +3898,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -3799,7 +3934,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -3834,7 +3970,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -3869,7 +4006,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -3904,7 +4042,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -4157,7 +4296,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -4192,7 +4332,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -4237,7 +4378,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -4282,7 +4424,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -4327,7 +4470,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -4372,7 +4516,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -4417,7 +4562,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -4462,7 +4608,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -4507,7 +4654,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -4542,7 +4690,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -4577,7 +4726,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -4612,7 +4762,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -4647,7 +4798,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -4682,7 +4834,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -4935,7 +5088,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -4970,7 +5124,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -5015,7 +5170,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -5060,7 +5216,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -5105,7 +5262,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -5150,7 +5308,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -5195,7 +5354,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Sasha Ouellet',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -5240,7 +5400,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -5285,7 +5446,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -5320,7 +5482,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -5355,7 +5518,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -5390,7 +5554,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -5425,7 +5590,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -5460,7 +5626,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -5713,7 +5880,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -5748,7 +5916,8 @@ window.HUB_DATA = {
           personaID: [
             'Aaliyah Suvendran',
             'Aaliyah Suvendran'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -5793,7 +5962,8 @@ window.HUB_DATA = {
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer',
             'Mei Lin Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -5838,7 +6008,8 @@ window.HUB_DATA = {
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer',
             'Mei Lin Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -5883,7 +6054,8 @@ window.HUB_DATA = {
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer',
             'Mei Lin Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -5928,7 +6100,8 @@ window.HUB_DATA = {
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer',
             'Mei Lin Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -5973,7 +6146,8 @@ window.HUB_DATA = {
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer',
             'Mei Lin Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -6018,7 +6192,8 @@ window.HUB_DATA = {
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer',
             'Mei Lin Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -6063,7 +6238,8 @@ window.HUB_DATA = {
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer',
             'Mei Lin Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -6098,7 +6274,8 @@ window.HUB_DATA = {
           personaID: [
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -6133,7 +6310,8 @@ window.HUB_DATA = {
           personaID: [
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -6168,7 +6346,8 @@ window.HUB_DATA = {
           personaID: [
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -6203,7 +6382,8 @@ window.HUB_DATA = {
           personaID: [
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -6238,7 +6418,8 @@ window.HUB_DATA = {
           personaID: [
             'Aaliyah Suvendran',
             'Dr. Karthik Iyer'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -6491,7 +6672,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Indra Wijaya',
             'Dr. Siti Nurhaliza'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -6526,7 +6708,8 @@ window.HUB_DATA = {
           personaID: [
             'Indra Wijaya',
             'Indra Wijaya'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -6571,7 +6754,8 @@ window.HUB_DATA = {
             'Indra Wijaya',
             'Dr. Siti Nurhaliza',
             'Bima Pradana'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -6616,7 +6800,8 @@ window.HUB_DATA = {
             'Indra Wijaya',
             'Dr. Siti Nurhaliza',
             'Bima Pradana'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -6661,7 +6846,8 @@ window.HUB_DATA = {
             'Indra Wijaya',
             'Dr. Siti Nurhaliza',
             'Bima Pradana'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -6706,7 +6892,8 @@ window.HUB_DATA = {
             'Indra Wijaya',
             'Dr. Siti Nurhaliza',
             'Bima Pradana'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -6751,7 +6938,8 @@ window.HUB_DATA = {
             'Indra Wijaya',
             'Dr. Siti Nurhaliza',
             'Bima Pradana'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -6796,7 +6984,8 @@ window.HUB_DATA = {
             'Indra Wijaya',
             'Dr. Siti Nurhaliza',
             'Bima Pradana'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -6841,7 +7030,8 @@ window.HUB_DATA = {
             'Indra Wijaya',
             'Dr. Siti Nurhaliza',
             'Bima Pradana'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -6876,7 +7066,8 @@ window.HUB_DATA = {
           personaID: [
             'Indra Wijaya',
             'Dr. Siti Nurhaliza'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -6911,7 +7102,8 @@ window.HUB_DATA = {
           personaID: [
             'Indra Wijaya',
             'Dr. Siti Nurhaliza'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -6946,7 +7138,8 @@ window.HUB_DATA = {
           personaID: [
             'Indra Wijaya',
             'Dr. Siti Nurhaliza'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -6981,7 +7174,8 @@ window.HUB_DATA = {
           personaID: [
             'Indra Wijaya',
             'Dr. Siti Nurhaliza'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -7016,7 +7210,8 @@ window.HUB_DATA = {
           personaID: [
             'Indra Wijaya',
             'Dr. Siti Nurhaliza'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -7269,7 +7464,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Bayu Santoso',
             'Eka Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -7304,7 +7500,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Santoso',
             'Bayu Santoso'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -7349,7 +7546,8 @@ window.HUB_DATA = {
             'Bayu Santoso',
             'Eka Pranoto',
             'Rini Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -7394,7 +7592,8 @@ window.HUB_DATA = {
             'Bayu Santoso',
             'Eka Pranoto',
             'Rini Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -7439,7 +7638,8 @@ window.HUB_DATA = {
             'Bayu Santoso',
             'Eka Pranoto',
             'Rini Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -7484,7 +7684,8 @@ window.HUB_DATA = {
             'Bayu Santoso',
             'Eka Pranoto',
             'Rini Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -7529,7 +7730,8 @@ window.HUB_DATA = {
             'Bayu Santoso',
             'Eka Pranoto',
             'Rini Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -7574,7 +7776,8 @@ window.HUB_DATA = {
             'Bayu Santoso',
             'Eka Pranoto',
             'Rini Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -7619,7 +7822,8 @@ window.HUB_DATA = {
             'Bayu Santoso',
             'Eka Pranoto',
             'Rini Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -7654,7 +7858,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Santoso',
             'Eka Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -7689,7 +7894,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Santoso',
             'Eka Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -7724,7 +7930,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Santoso',
             'Eka Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -7759,7 +7966,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Santoso',
             'Eka Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -7794,7 +8002,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Santoso',
             'Eka Pranoto'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -8047,7 +8256,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -8082,7 +8292,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -8127,7 +8338,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -8172,7 +8384,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -8217,7 +8430,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -8262,7 +8476,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -8307,7 +8522,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -8352,7 +8568,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -8397,7 +8614,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -8432,7 +8650,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -8467,7 +8686,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -8502,7 +8722,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -8537,7 +8758,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -8572,7 +8794,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -8851,7 +9074,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -8886,7 +9110,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -8931,7 +9156,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -8976,7 +9202,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -9021,7 +9248,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -9066,7 +9294,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -9111,7 +9340,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -9156,7 +9386,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -9201,7 +9432,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -9236,7 +9468,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -9271,7 +9504,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -9306,7 +9540,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -9341,7 +9576,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -9376,7 +9612,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -9655,7 +9892,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -9690,7 +9928,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -9735,7 +9974,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -9780,7 +10020,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -9825,7 +10066,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -9870,7 +10112,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -9915,7 +10158,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -9960,7 +10204,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -10005,7 +10250,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -10040,7 +10286,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -10075,7 +10322,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -10110,7 +10358,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -10145,7 +10394,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -10180,7 +10430,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -10459,7 +10710,8 @@ window.HUB_DATA = {
             'Citra Wulandari',
             'Bayu Pranowo',
             'Linda Saputra'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -10494,7 +10746,8 @@ window.HUB_DATA = {
           personaID: [
             'Reza Adisurya',
             'Reza Adisurya'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -10539,7 +10792,8 @@ window.HUB_DATA = {
             'Reza Adisurya',
             'Citra Wulandari',
             'Linda Saputra'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -10584,7 +10838,8 @@ window.HUB_DATA = {
             'Reza Adisurya',
             'Citra Wulandari',
             'Reza Adisurya'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -10629,7 +10884,8 @@ window.HUB_DATA = {
             'Citra Wulandari',
             'Reza Adisurya',
             'Linda Saputra'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -10674,7 +10930,8 @@ window.HUB_DATA = {
             'Citra Wulandari',
             'Bayu Pranowo',
             'Linda Saputra'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -10719,7 +10976,8 @@ window.HUB_DATA = {
             'Citra Wulandari',
             'Reza Adisurya',
             'Citra Wulandari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -10764,7 +11022,8 @@ window.HUB_DATA = {
             'Reza Adisurya',
             'Citra Wulandari',
             'Linda Saputra'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -10809,7 +11068,8 @@ window.HUB_DATA = {
             'Reza Adisurya',
             'Bayu Pranowo',
             'Citra Wulandari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -10844,7 +11104,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Pranowo',
             'Citra Wulandari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -10879,7 +11140,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Pranowo',
             'Citra Wulandari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -10914,7 +11176,8 @@ window.HUB_DATA = {
           personaID: [
             'Citra Wulandari',
             'Linda Saputra'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -10949,7 +11212,8 @@ window.HUB_DATA = {
           personaID: [
             'Reza Adisurya',
             'Linda Saputra'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -10984,7 +11248,8 @@ window.HUB_DATA = {
           personaID: [
             'Citra Wulandari',
             'Bayu Pranowo'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -11237,7 +11502,8 @@ window.HUB_DATA = {
             'Maya Anggraini',
             'Andi Surya',
             'Sinta Pertiwi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -11272,7 +11538,8 @@ window.HUB_DATA = {
           personaID: [
             'Hendra Wibowo',
             'Hendra Wibowo'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -11317,7 +11584,8 @@ window.HUB_DATA = {
             'Sinta Pertiwi',
             'Hendra Wibowo',
             'Sinta Pertiwi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -11362,7 +11630,8 @@ window.HUB_DATA = {
             'Sinta Pertiwi',
             'Maya Anggraini',
             'Hendra Wibowo'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -11407,7 +11676,8 @@ window.HUB_DATA = {
             'Maya Anggraini',
             'Hendra Wibowo',
             'Sinta Pertiwi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -11452,7 +11722,8 @@ window.HUB_DATA = {
             'Maya Anggraini',
             'Andi Surya',
             'Sinta Pertiwi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -11497,7 +11768,8 @@ window.HUB_DATA = {
             'Maya Anggraini',
             'Sinta Pertiwi',
             'Maya Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -11542,7 +11814,8 @@ window.HUB_DATA = {
             'Maya Anggraini',
             'Hendra Wibowo',
             'Sinta Pertiwi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -11587,7 +11860,8 @@ window.HUB_DATA = {
             'Maya Anggraini',
             'Andi Surya',
             'Hendra Wibowo'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -11622,7 +11896,8 @@ window.HUB_DATA = {
           personaID: [
             'Andi Surya',
             'Sinta Pertiwi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -11657,7 +11932,8 @@ window.HUB_DATA = {
           personaID: [
             'Andi Surya',
             'Maya Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -11692,7 +11968,8 @@ window.HUB_DATA = {
           personaID: [
             'Maya Anggraini',
             'Sinta Pertiwi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -11727,7 +12004,8 @@ window.HUB_DATA = {
           personaID: [
             'Sinta Pertiwi',
             'Sinta Pertiwi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -11762,7 +12040,8 @@ window.HUB_DATA = {
           personaID: [
             'Maya Anggraini',
             'Andi Surya'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -12015,7 +12294,8 @@ window.HUB_DATA = {
             'Putri Maharani',
             'Rangga Aditama',
             'Wulan Setiawati'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -12050,7 +12330,8 @@ window.HUB_DATA = {
           personaID: [
             'Dimas Prabowo',
             'Dimas Prabowo'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -12095,7 +12376,8 @@ window.HUB_DATA = {
             'Dimas Prabowo',
             'Putri Maharani',
             'Wulan Setiawati'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -12140,7 +12422,8 @@ window.HUB_DATA = {
             'Dimas Prabowo',
             'Putri Maharani',
             'Dimas Prabowo'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -12185,7 +12468,8 @@ window.HUB_DATA = {
             'Wulan Setiawati',
             'Dimas Prabowo',
             'Putri Maharani'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -12230,7 +12514,8 @@ window.HUB_DATA = {
             'Wulan Setiawati',
             'Rangga Aditama',
             'Putri Maharani'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -12275,7 +12560,8 @@ window.HUB_DATA = {
             'Wulan Setiawati',
             'Putri Maharani',
             'Wulan Setiawati'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -12320,7 +12606,8 @@ window.HUB_DATA = {
             'Dimas Prabowo',
             'Putri Maharani',
             'Wulan Setiawati'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -12365,7 +12652,8 @@ window.HUB_DATA = {
             'Dimas Prabowo',
             'Rangga Aditama',
             'Wulan Setiawati'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -12400,7 +12688,8 @@ window.HUB_DATA = {
           personaID: [
             'Rangga Aditama',
             'Wulan Setiawati'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -12435,7 +12724,8 @@ window.HUB_DATA = {
           personaID: [
             'Rangga Aditama',
             'Wulan Setiawati'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -12470,7 +12760,8 @@ window.HUB_DATA = {
           personaID: [
             'Wulan Setiawati',
             'Putri Maharani'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -12505,7 +12796,8 @@ window.HUB_DATA = {
           personaID: [
             'Dimas Prabowo',
             'Dimas Prabowo'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -12540,7 +12832,8 @@ window.HUB_DATA = {
           personaID: [
             'Wulan Setiawati',
             'Rangga Aditama'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -12793,7 +13086,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -12828,7 +13122,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -12873,7 +13168,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -12918,7 +13214,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -12963,7 +13260,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -13008,7 +13306,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -13053,7 +13352,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -13098,7 +13398,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -13143,7 +13444,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -13178,7 +13480,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -13213,7 +13516,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -13248,7 +13552,8 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -13283,7 +13588,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -13318,7 +13624,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -13571,7 +13878,8 @@ window.HUB_DATA = {
             'Mod Admin — Kepala Kepatuhan',
             'Hadar — Direktur Keuangan Grup',
             'Sasha — Direktur Produk'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft 365 Copilot — Researcher',
@@ -13606,7 +13914,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Kepala Kepatuhan',
             'Mod Admin — Kepala Kepatuhan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft 365 Copilot — Analyst',
@@ -13651,7 +13960,8 @@ window.HUB_DATA = {
             'Hadar — Direktur Keuangan Grup',
             'Hadar — Direktur Keuangan Grup',
             'Hadar — Direktur Keuangan Grup'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft Excel + Copilot',
@@ -13696,7 +14006,8 @@ window.HUB_DATA = {
             'Hadar — Direktur Keuangan Grup',
             'Mod Admin — Kepala Kepatuhan',
             'Hadar — Direktur Keuangan Grup'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft Word + Copilot',
@@ -13741,7 +14052,8 @@ window.HUB_DATA = {
             'Sasha — Direktur Produk',
             'Mod Admin — Kepala Kepatuhan',
             'Daichi — Direktur Teknologi/CISO'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft PowerPoint + Copilot',
@@ -13786,7 +14098,8 @@ window.HUB_DATA = {
             'Mod Admin — Kepala Kepatuhan',
             'Hadar — Direktur Keuangan Grup',
             'Sasha — Direktur Produk'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft Outlook + Copilot',
@@ -13831,7 +14144,8 @@ window.HUB_DATA = {
             'Mod Admin — Kepala Kepatuhan',
             'Hadar — Direktur Keuangan Grup',
             'Sasha — Direktur Produk'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft Teams Premium + Copilot',
@@ -13876,7 +14190,8 @@ window.HUB_DATA = {
             'Mod Admin — Kepala Kepatuhan',
             'Sasha — Direktur Produk',
             'Daichi — Direktur Teknologi/CISO'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Copilot Notebooks',
@@ -13921,7 +14236,8 @@ window.HUB_DATA = {
             'Mod Admin — Kepala Kepatuhan',
             'Hadar — Direktur Keuangan Grup',
             'Sasha — Direktur Produk'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Copilot Cowork (parallel agents)',
@@ -13956,7 +14272,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Kepala Kepatuhan',
             'Hadar — Direktur Keuangan Grup'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Word Agent (M365 Copilot Chat)',
@@ -13991,7 +14308,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Kepala Kepatuhan',
             'Sasha — Direktur Produk'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'PPT Agent (M365 Copilot Chat)',
@@ -14026,7 +14344,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Kepala Kepatuhan',
             'Hadar — Direktur Keuangan Grup'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Excel Agent (M365 Copilot Chat)',
@@ -14061,7 +14380,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar — Direktur Keuangan Grup',
             'Hadar — Direktur Keuangan Grup'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Copilot Studio Agent Builder',
@@ -14096,7 +14416,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Kepala Kepatuhan',
             'Sasha — Direktur Produk'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -14341,7 +14662,8 @@ window.HUB_DATA = {
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Hadar — Kepala Ekonom',
             'Sasha — Kepala Staf'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft 365 Copilot — Researcher',
@@ -14376,7 +14698,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Mod Admin — Wakil Direktur Jenderal Kebijakan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft 365 Copilot — Analyst',
@@ -14421,7 +14744,8 @@ window.HUB_DATA = {
             'Hadar — Kepala Ekonom',
             'Hadar — Kepala Ekonom',
             'Hadar — Kepala Ekonom'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft Excel + Copilot',
@@ -14466,7 +14790,8 @@ window.HUB_DATA = {
             'Hadar — Kepala Ekonom',
             'Hadar — Kepala Ekonom',
             'Mod Admin — Wakil Direktur Jenderal Kebijakan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft Word + Copilot',
@@ -14511,7 +14836,8 @@ window.HUB_DATA = {
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Sasha — Kepala Staf'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft PowerPoint + Copilot',
@@ -14556,7 +14882,8 @@ window.HUB_DATA = {
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Daichi — Wakil Direktur Jenderal Operasi',
             'Hadar — Kepala Ekonom'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft Outlook + Copilot',
@@ -14601,7 +14928,8 @@ window.HUB_DATA = {
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Hadar — Kepala Ekonom',
             'Sasha — Kepala Staf'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Microsoft Teams Premium + Copilot',
@@ -14646,7 +14974,8 @@ window.HUB_DATA = {
             'Daichi — Wakil Direktur Jenderal Operasi',
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Sasha — Kepala Staf'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Copilot Notebooks',
@@ -14691,7 +15020,8 @@ window.HUB_DATA = {
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Hadar — Kepala Ekonom',
             'Daichi — Wakil Direktur Jenderal Operasi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Copilot Cowork (parallel agents)',
@@ -14726,7 +15056,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Sasha — Kepala Staf'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Word Agent (M365 Copilot Chat)',
@@ -14761,7 +15092,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Mod Admin — Wakil Direktur Jenderal Kebijakan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'PPT Agent (M365 Copilot Chat)',
@@ -14796,7 +15128,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Hadar — Kepala Ekonom'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Excel Agent (M365 Copilot Chat)',
@@ -14831,7 +15164,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar — Kepala Ekonom',
             'Hadar — Kepala Ekonom'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: 'Copilot Studio Agent Builder',
@@ -14866,7 +15200,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin — Wakil Direktur Jenderal Kebijakan',
             'Daichi — Wakil Direktur Jenderal Operasi'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -15111,7 +15446,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -15146,7 +15482,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -15191,7 +15528,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -15236,7 +15574,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -15281,7 +15620,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Daichi Maruyama',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -15326,7 +15666,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -15371,7 +15712,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -15416,7 +15758,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -15461,7 +15804,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -15496,7 +15840,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -15531,7 +15876,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -15566,7 +15912,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -15601,7 +15948,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -15636,7 +15984,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -15889,7 +16238,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -15924,7 +16274,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -15969,7 +16320,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -16014,7 +16366,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -16059,7 +16412,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Daichi Maruyama',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -16104,7 +16458,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Daichi Maruyama',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -16149,7 +16504,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -16194,7 +16550,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -16239,7 +16596,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -16274,7 +16632,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -16309,7 +16668,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -16344,7 +16704,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -16379,7 +16740,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -16414,7 +16776,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -16667,7 +17030,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -16702,7 +17066,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -16747,7 +17112,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -16792,7 +17158,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -16837,7 +17204,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Daichi Maruyama',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -16882,7 +17250,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -16927,7 +17296,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -16972,7 +17342,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -17017,7 +17388,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -17052,7 +17424,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -17087,7 +17460,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -17122,7 +17496,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -17157,7 +17532,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -17192,7 +17568,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -17445,7 +17822,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -17480,7 +17858,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -17525,7 +17904,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -17570,7 +17950,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Daichi Maruyama',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -17615,7 +17996,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Daichi Maruyama',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -17660,7 +18042,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -17705,7 +18088,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -17750,7 +18134,8 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Hadar Caspit',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -17795,7 +18180,8 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -17830,7 +18216,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Hadar Caspit'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -17865,7 +18252,8 @@ window.HUB_DATA = {
           personaID: [
             'Daichi Maruyama',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -17900,7 +18288,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -17935,7 +18324,8 @@ window.HUB_DATA = {
           personaID: [
             'Hadar Caspit',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -17970,7 +18360,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -18223,7 +18614,8 @@ window.HUB_DATA = {
             'Bayu Pramudita',
             'Siti Rahayu',
             'Rina Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -18258,7 +18650,8 @@ window.HUB_DATA = {
           personaID: [
             'Siti Rahayu',
             'Rina Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -18303,7 +18696,8 @@ window.HUB_DATA = {
             'Siti Rahayu',
             'Dimas Kurniawan',
             'Siti Rahayu'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -18348,7 +18742,8 @@ window.HUB_DATA = {
             'Siti Rahayu',
             'Rina Halim',
             'Siti Rahayu'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -18393,7 +18788,8 @@ window.HUB_DATA = {
             'Bayu Pramudita',
             'Dimas Kurniawan',
             'Rina Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -18438,7 +18834,8 @@ window.HUB_DATA = {
             'Bayu Pramudita',
             'Siti Rahayu',
             'Dimas Kurniawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -18483,7 +18880,8 @@ window.HUB_DATA = {
             'Bayu Pramudita',
             'Siti Rahayu',
             'Rina Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -18528,7 +18926,8 @@ window.HUB_DATA = {
             'Bayu Pramudita',
             'Rina Halim',
             'Dimas Kurniawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -18573,7 +18972,8 @@ window.HUB_DATA = {
             'Rina Halim',
             'Siti Rahayu',
             'Bayu Pramudita'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -18608,7 +19008,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Pramudita',
             'Siti Rahayu'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -18643,7 +19044,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Pramudita',
             'Rina Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -18678,7 +19080,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Pramudita',
             'Dimas Kurniawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -18713,7 +19116,8 @@ window.HUB_DATA = {
           personaID: [
             'Siti Rahayu',
             'Siti Rahayu'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -18748,7 +19152,8 @@ window.HUB_DATA = {
           personaID: [
             'Rina Halim',
             'Bayu Pramudita'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -19001,7 +19406,8 @@ window.HUB_DATA = {
             'Anugrah Wirawan',
             'Bambang Hadi',
             'Maya Setiawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -19036,7 +19442,8 @@ window.HUB_DATA = {
           personaID: [
             'Bambang Hadi',
             'Maya Setiawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -19081,7 +19488,8 @@ window.HUB_DATA = {
             'Bambang Hadi',
             'Lestari Putri',
             'Bambang Hadi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -19126,7 +19534,8 @@ window.HUB_DATA = {
             'Bambang Hadi',
             'Maya Setiawan',
             'Bambang Hadi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -19171,7 +19580,8 @@ window.HUB_DATA = {
             'Anugrah Wirawan',
             'Lestari Putri',
             'Maya Setiawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -19216,7 +19626,8 @@ window.HUB_DATA = {
             'Anugrah Wirawan',
             'Bambang Hadi',
             'Lestari Putri'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -19261,7 +19672,8 @@ window.HUB_DATA = {
             'Anugrah Wirawan',
             'Bambang Hadi',
             'Maya Setiawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -19306,7 +19718,8 @@ window.HUB_DATA = {
             'Anugrah Wirawan',
             'Maya Setiawan',
             'Lestari Putri'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -19351,7 +19764,8 @@ window.HUB_DATA = {
             'Maya Setiawan',
             'Bambang Hadi',
             'Anugrah Wirawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -19386,7 +19800,8 @@ window.HUB_DATA = {
           personaID: [
             'Anugrah Wirawan',
             'Bambang Hadi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -19421,7 +19836,8 @@ window.HUB_DATA = {
           personaID: [
             'Anugrah Wirawan',
             'Maya Setiawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -19456,7 +19872,8 @@ window.HUB_DATA = {
           personaID: [
             'Anugrah Wirawan',
             'Lestari Putri'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -19491,7 +19908,8 @@ window.HUB_DATA = {
           personaID: [
             'Bambang Hadi',
             'Bambang Hadi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -19526,7 +19944,8 @@ window.HUB_DATA = {
           personaID: [
             'Maya Setiawan',
             'Anugrah Wirawan'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -19779,7 +20198,8 @@ window.HUB_DATA = {
             'Wulandari Sari',
             'Fitria Kusuma',
             'Hendrik Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -19814,7 +20234,8 @@ window.HUB_DATA = {
           personaID: [
             'Fitria Kusuma',
             'Hendrik Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -19859,7 +20280,8 @@ window.HUB_DATA = {
             'Fitria Kusuma',
             'Dani Hartono',
             'Fitria Kusuma'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -19904,7 +20326,8 @@ window.HUB_DATA = {
             'Fitria Kusuma',
             'Hendrik Tan',
             'Fitria Kusuma'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -19949,7 +20372,8 @@ window.HUB_DATA = {
             'Wulandari Sari',
             'Dani Hartono',
             'Hendrik Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -19994,7 +20418,8 @@ window.HUB_DATA = {
             'Wulandari Sari',
             'Fitria Kusuma',
             'Dani Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -20039,7 +20464,8 @@ window.HUB_DATA = {
             'Wulandari Sari',
             'Fitria Kusuma',
             'Hendrik Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -20084,7 +20510,8 @@ window.HUB_DATA = {
             'Wulandari Sari',
             'Hendrik Tan',
             'Dani Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -20129,7 +20556,8 @@ window.HUB_DATA = {
             'Hendrik Tan',
             'Fitria Kusuma',
             'Wulandari Sari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -20164,7 +20592,8 @@ window.HUB_DATA = {
           personaID: [
             'Wulandari Sari',
             'Fitria Kusuma'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -20199,7 +20628,8 @@ window.HUB_DATA = {
           personaID: [
             'Wulandari Sari',
             'Hendrik Tan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -20234,7 +20664,8 @@ window.HUB_DATA = {
           personaID: [
             'Wulandari Sari',
             'Dani Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -20269,7 +20700,8 @@ window.HUB_DATA = {
           personaID: [
             'Fitria Kusuma',
             'Fitria Kusuma'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -20304,7 +20736,8 @@ window.HUB_DATA = {
           personaID: [
             'Hendrik Tan',
             'Wulandari Sari'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -20557,7 +20990,8 @@ window.HUB_DATA = {
             'Indra Saputra',
             'Budi Santoso',
             'Mira Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -20592,7 +21026,8 @@ window.HUB_DATA = {
           personaID: [
             'Budi Santoso',
             'Mira Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -20637,7 +21072,8 @@ window.HUB_DATA = {
             'Budi Santoso',
             'Tiara Permata',
             'Budi Santoso'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -20682,7 +21118,8 @@ window.HUB_DATA = {
             'Budi Santoso',
             'Mira Anggraini',
             'Budi Santoso'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -20727,7 +21164,8 @@ window.HUB_DATA = {
             'Indra Saputra',
             'Tiara Permata',
             'Mira Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -20772,7 +21210,8 @@ window.HUB_DATA = {
             'Indra Saputra',
             'Budi Santoso',
             'Tiara Permata'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -20817,7 +21256,8 @@ window.HUB_DATA = {
             'Indra Saputra',
             'Budi Santoso',
             'Mira Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -20862,7 +21302,8 @@ window.HUB_DATA = {
             'Indra Saputra',
             'Mira Anggraini',
             'Tiara Permata'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -20907,7 +21348,8 @@ window.HUB_DATA = {
             'Mira Anggraini',
             'Budi Santoso',
             'Indra Saputra'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -20942,7 +21384,8 @@ window.HUB_DATA = {
           personaID: [
             'Indra Saputra',
             'Budi Santoso'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -20977,7 +21420,8 @@ window.HUB_DATA = {
           personaID: [
             'Indra Saputra',
             'Mira Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -21012,7 +21456,8 @@ window.HUB_DATA = {
           personaID: [
             'Indra Saputra',
             'Tiara Permata'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -21047,7 +21492,8 @@ window.HUB_DATA = {
           personaID: [
             'Budi Santoso',
             'Budi Santoso'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -21082,7 +21528,8 @@ window.HUB_DATA = {
           personaID: [
             'Mira Anggraini',
             'Indra Saputra'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -21335,7 +21782,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Faiz Razak'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -21370,7 +21818,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -21415,7 +21864,8 @@ window.HUB_DATA = {
             'Lim Wei Han',
             'Lim Wei Han',
             'Lim Wei Han'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -21460,7 +21910,8 @@ window.HUB_DATA = {
             'Lim Wei Han',
             'Faiz Razak',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -21505,7 +21956,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Faiz Razak',
             'Lim Wei Han'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -21550,7 +22002,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Faiz Razak',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -21595,7 +22048,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Faiz Razak',
             'Lim Wei Han'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -21640,7 +22094,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Faiz Razak'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -21685,7 +22140,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Faiz Razak',
             'Lim Wei Han'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -21720,7 +22176,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Faiz Razak'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -21755,7 +22212,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Faiz Razak'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -21790,7 +22248,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Faiz Razak'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -21825,7 +22284,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Faiz Razak'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -21860,7 +22320,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -22115,7 +22576,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Anwar Hashim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -22150,7 +22612,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -22195,7 +22658,8 @@ window.HUB_DATA = {
             'Siti Zainab Othman',
             'Siti Zainab Othman',
             'Siti Zainab Othman'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -22240,7 +22704,8 @@ window.HUB_DATA = {
             'Siti Zainab Othman',
             'Anwar Hashim',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -22285,7 +22750,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Anwar Hashim',
             'Siti Zainab Othman'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -22330,7 +22796,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Anwar Hashim',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -22375,7 +22842,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Anwar Hashim',
             'Siti Zainab Othman'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -22420,7 +22888,8 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Anwar Hashim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -22465,7 +22934,8 @@ window.HUB_DATA = {
             'Mod Admin',
             'Anwar Hashim',
             'Siti Zainab Othman'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -22500,7 +22970,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Anwar Hashim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -22535,7 +23006,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Anwar Hashim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -22570,7 +23042,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Anwar Hashim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -22605,7 +23078,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Anwar Hashim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -22640,7 +23114,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -22897,7 +23372,8 @@ window.HUB_DATA = {
             'Aisha Rahman',
             'Putri Anindita',
             'Wiremu Tane'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -22926,7 +23402,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -22963,7 +23440,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -23000,7 +23478,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -23037,7 +23516,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -23074,7 +23554,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -23111,7 +23592,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -23148,7 +23630,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -23185,7 +23668,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -23214,7 +23698,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -23243,7 +23728,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -23272,7 +23758,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -23301,7 +23788,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -23330,7 +23818,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         }
       ],
       relevantDepts: [],
@@ -23578,7 +24067,8 @@ window.HUB_DATA = {
             'Rajesh Menon',
             'Sofia Hartanto',
             'Rajesh Menon'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -23607,7 +24097,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -23644,7 +24135,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -23681,7 +24173,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -23718,7 +24211,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -23755,7 +24249,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -23792,7 +24287,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -23829,7 +24325,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -23866,7 +24363,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -23895,7 +24393,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -23924,7 +24423,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -23953,7 +24453,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -23982,7 +24483,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -24011,7 +24513,8 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [],
-          personaID: []
+          personaID: [],
+          notebookMeta: null
         }
       ],
       relevantDepts: [],
@@ -24259,7 +24762,8 @@ window.HUB_DATA = {
             'Lakshmi Iyer',
             'Bayu Hartono',
             'Mei-Lin Chua'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -24294,7 +24798,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -24339,7 +24844,8 @@ window.HUB_DATA = {
             'Lakshmi Iyer',
             'Tunde Adeyemi',
             'Mei-Lin Chua'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -24384,7 +24890,8 @@ window.HUB_DATA = {
             'Lakshmi Iyer',
             'Tunde Adeyemi',
             'Mei-Lin Chua'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -24429,7 +24936,8 @@ window.HUB_DATA = {
             'Lakshmi Iyer',
             'Bayu Hartono',
             'Mei-Lin Chua'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -24474,7 +24982,8 @@ window.HUB_DATA = {
             'Lakshmi Iyer',
             'Bayu Hartono',
             'Mei-Lin Chua'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -24519,7 +25028,8 @@ window.HUB_DATA = {
             'Lakshmi Iyer',
             'Tunde Adeyemi',
             'Lakshmi Iyer'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -24564,7 +25074,8 @@ window.HUB_DATA = {
             'Lakshmi Iyer',
             'Bayu Hartono',
             'Tunde Adeyemi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -24609,7 +25120,8 @@ window.HUB_DATA = {
             'Lakshmi Iyer',
             'Bayu Hartono',
             'Mei-Lin Chua'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -24644,7 +25156,8 @@ window.HUB_DATA = {
           personaID: [
             'Lakshmi Iyer',
             'Bayu Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -24679,7 +25192,8 @@ window.HUB_DATA = {
           personaID: [
             'Lakshmi Iyer',
             'Bayu Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -24714,7 +25228,8 @@ window.HUB_DATA = {
           personaID: [
             'Lakshmi Iyer',
             'Mei-Lin Chua'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -24749,7 +25264,8 @@ window.HUB_DATA = {
           personaID: [
             'Lakshmi Iyer',
             'Mei-Lin Chua'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -24784,7 +25300,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Lakshmi Iyer'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [],
@@ -25032,7 +25549,8 @@ window.HUB_DATA = {
             'Nikolai Voss',
             'Priya Ramanathan',
             'Aisha Mbeki'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -25067,7 +25585,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -25112,7 +25631,8 @@ window.HUB_DATA = {
             'Nikolai Voss',
             'Tomás Echeverría',
             'Aisha Mbeki'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -25157,7 +25677,8 @@ window.HUB_DATA = {
             'Nikolai Voss',
             'Tomás Echeverría',
             'Aisha Mbeki'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -25202,7 +25723,8 @@ window.HUB_DATA = {
             'Nikolai Voss',
             'Priya Ramanathan',
             'Aisha Mbeki'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -25247,7 +25769,8 @@ window.HUB_DATA = {
             'Nikolai Voss',
             'Priya Ramanathan',
             'Aisha Mbeki'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -25292,7 +25815,8 @@ window.HUB_DATA = {
             'Nikolai Voss',
             'Tomás Echeverría',
             'Nikolai Voss'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -25337,7 +25861,8 @@ window.HUB_DATA = {
             'Nikolai Voss',
             'Tomás Echeverría',
             'Priya Ramanathan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -25382,7 +25907,8 @@ window.HUB_DATA = {
             'Nikolai Voss',
             'Tomás Echeverría',
             'Aisha Mbeki'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -25417,7 +25943,8 @@ window.HUB_DATA = {
           personaID: [
             'Nikolai Voss',
             'Priya Ramanathan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -25452,7 +25979,8 @@ window.HUB_DATA = {
           personaID: [
             'Nikolai Voss',
             'Priya Ramanathan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -25487,7 +26015,8 @@ window.HUB_DATA = {
           personaID: [
             'Nikolai Voss',
             'Aisha Mbeki'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -25522,7 +26051,8 @@ window.HUB_DATA = {
           personaID: [
             'Nikolai Voss',
             'Aisha Mbeki'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -25557,7 +26087,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Nikolai Voss'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [],
@@ -25805,7 +26336,8 @@ window.HUB_DATA = {
             'Rafael Monteiro',
             'Yuki Tanaka',
             'Henrik Larsson'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -25840,7 +26372,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Mod Admin'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -25885,7 +26418,8 @@ window.HUB_DATA = {
             'Rafael Monteiro',
             'Adwoa Mensah',
             'Henrik Larsson'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -25930,7 +26464,8 @@ window.HUB_DATA = {
             'Rafael Monteiro',
             'Adwoa Mensah',
             'Henrik Larsson'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -25975,7 +26510,8 @@ window.HUB_DATA = {
             'Rafael Monteiro',
             'Yuki Tanaka',
             'Henrik Larsson'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -26020,7 +26556,8 @@ window.HUB_DATA = {
             'Rafael Monteiro',
             'Adwoa Mensah',
             'Henrik Larsson'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -26065,7 +26602,8 @@ window.HUB_DATA = {
             'Rafael Monteiro',
             'Yuki Tanaka',
             'Rafael Monteiro'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -26110,7 +26648,8 @@ window.HUB_DATA = {
             'Rafael Monteiro',
             'Yuki Tanaka',
             'Adwoa Mensah'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -26155,7 +26694,8 @@ window.HUB_DATA = {
             'Rafael Monteiro',
             'Adwoa Mensah',
             'Henrik Larsson'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -26190,7 +26730,8 @@ window.HUB_DATA = {
           personaID: [
             'Rafael Monteiro',
             'Yuki Tanaka'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -26225,7 +26766,8 @@ window.HUB_DATA = {
           personaID: [
             'Rafael Monteiro',
             'Adwoa Mensah'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -26260,7 +26802,8 @@ window.HUB_DATA = {
           personaID: [
             'Rafael Monteiro',
             'Henrik Larsson'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -26295,7 +26838,8 @@ window.HUB_DATA = {
           personaID: [
             'Rafael Monteiro',
             'Adwoa Mensah'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -26330,7 +26874,8 @@ window.HUB_DATA = {
           personaID: [
             'Mod Admin',
             'Rafael Monteiro'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [],
@@ -26578,7 +27123,8 @@ window.HUB_DATA = {
             'Indira Setiawan',
             'Rafael Tanudjaja',
             'Adi Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -26613,7 +27159,8 @@ window.HUB_DATA = {
           personaID: [
             'Rafael Tanudjaja',
             'Rafael Tanudjaja'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -26658,7 +27205,8 @@ window.HUB_DATA = {
             'Indira Setiawan',
             'Maya Lestari',
             'Rafael Tanudjaja'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -26703,7 +27251,8 @@ window.HUB_DATA = {
             'Indira Setiawan',
             'Rafael Tanudjaja',
             'Maya Lestari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -26748,7 +27297,8 @@ window.HUB_DATA = {
             'Indira Setiawan',
             'Rafael Tanudjaja',
             'Adi Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -26793,7 +27343,8 @@ window.HUB_DATA = {
             'Indira Setiawan',
             'Rafael Tanudjaja',
             'Adi Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -26838,7 +27389,8 @@ window.HUB_DATA = {
             'Indira Setiawan',
             'Rafael Tanudjaja',
             'Indira Setiawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -26883,7 +27435,8 @@ window.HUB_DATA = {
             'Indira Setiawan',
             'Rafael Tanudjaja',
             'Adi Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -26928,7 +27481,8 @@ window.HUB_DATA = {
             'Rafael Tanudjaja',
             'Maya Lestari',
             'Indira Setiawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -26963,7 +27517,8 @@ window.HUB_DATA = {
           personaID: [
             'Indira Setiawan',
             'Rafael Tanudjaja'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -26998,7 +27553,8 @@ window.HUB_DATA = {
           personaID: [
             'Indira Setiawan',
             'Rafael Tanudjaja'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -27033,7 +27589,8 @@ window.HUB_DATA = {
           personaID: [
             'Indira Setiawan',
             'Adi Pranoto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -27068,7 +27625,8 @@ window.HUB_DATA = {
           personaID: [
             'Rafael Tanudjaja',
             'Maya Lestari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -27103,7 +27661,8 @@ window.HUB_DATA = {
           personaID: [
             'Rafael Tanudjaja',
             'Indira Setiawan'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -27358,7 +27917,8 @@ window.HUB_DATA = {
             'Bayu Wirawan',
             'Sinta Kurniawan',
             'Putri Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -27393,7 +27953,8 @@ window.HUB_DATA = {
           personaID: [
             'Sinta Kurniawan',
             'Sinta Kurniawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -27438,7 +27999,8 @@ window.HUB_DATA = {
             'Bayu Wirawan',
             'Reza Hartono',
             'Sinta Kurniawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -27483,7 +28045,8 @@ window.HUB_DATA = {
             'Bayu Wirawan',
             'Sinta Kurniawan',
             'Reza Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -27528,7 +28091,8 @@ window.HUB_DATA = {
             'Bayu Wirawan',
             'Sinta Kurniawan',
             'Putri Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -27573,7 +28137,8 @@ window.HUB_DATA = {
             'Bayu Wirawan',
             'Sinta Kurniawan',
             'Putri Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -27618,7 +28183,8 @@ window.HUB_DATA = {
             'Bayu Wirawan',
             'Sinta Kurniawan',
             'Bayu Wirawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -27663,7 +28229,8 @@ window.HUB_DATA = {
             'Bayu Wirawan',
             'Sinta Kurniawan',
             'Putri Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -27708,7 +28275,8 @@ window.HUB_DATA = {
             'Sinta Kurniawan',
             'Reza Hartono',
             'Bayu Wirawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -27743,7 +28311,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Wirawan',
             'Sinta Kurniawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -27778,7 +28347,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Wirawan',
             'Sinta Kurniawan'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -27813,7 +28383,8 @@ window.HUB_DATA = {
           personaID: [
             'Bayu Wirawan',
             'Putri Anggraini'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -27848,7 +28419,8 @@ window.HUB_DATA = {
           personaID: [
             'Sinta Kurniawan',
             'Reza Hartono'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -27883,7 +28455,8 @@ window.HUB_DATA = {
           personaID: [
             'Sinta Kurniawan',
             'Bayu Wirawan'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -28138,7 +28711,8 @@ window.HUB_DATA = {
             'Galuh Saraswati',
             'Hendra Wijaya',
             'Eko Pratama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -28173,7 +28747,8 @@ window.HUB_DATA = {
           personaID: [
             'Hendra Wijaya',
             'Hendra Wijaya'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -28218,7 +28793,8 @@ window.HUB_DATA = {
             'Galuh Saraswati',
             'Nadia Kusuma',
             'Hendra Wijaya'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -28263,7 +28839,8 @@ window.HUB_DATA = {
             'Galuh Saraswati',
             'Hendra Wijaya',
             'Nadia Kusuma'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -28308,7 +28885,8 @@ window.HUB_DATA = {
             'Galuh Saraswati',
             'Hendra Wijaya',
             'Eko Pratama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -28353,7 +28931,8 @@ window.HUB_DATA = {
             'Galuh Saraswati',
             'Hendra Wijaya',
             'Eko Pratama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -28398,7 +28977,8 @@ window.HUB_DATA = {
             'Galuh Saraswati',
             'Hendra Wijaya',
             'Galuh Saraswati'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -28443,7 +29023,8 @@ window.HUB_DATA = {
             'Galuh Saraswati',
             'Hendra Wijaya',
             'Eko Pratama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -28488,7 +29069,8 @@ window.HUB_DATA = {
             'Hendra Wijaya',
             'Nadia Kusuma',
             'Galuh Saraswati'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -28523,7 +29105,8 @@ window.HUB_DATA = {
           personaID: [
             'Galuh Saraswati',
             'Hendra Wijaya'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -28558,7 +29141,8 @@ window.HUB_DATA = {
           personaID: [
             'Galuh Saraswati',
             'Hendra Wijaya'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -28593,7 +29177,8 @@ window.HUB_DATA = {
           personaID: [
             'Galuh Saraswati',
             'Eko Pratama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -28628,7 +29213,8 @@ window.HUB_DATA = {
           personaID: [
             'Hendra Wijaya',
             'Nadia Kusuma'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -28663,7 +29249,8 @@ window.HUB_DATA = {
           personaID: [
             'Hendra Wijaya',
             'Galuh Saraswati'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -28918,7 +29505,8 @@ window.HUB_DATA = {
             'Wahyu Setiabudi',
             'Lestari Hapsari',
             'Citra Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -28953,7 +29541,8 @@ window.HUB_DATA = {
           personaID: [
             'Lestari Hapsari',
             'Lestari Hapsari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -28998,7 +29587,8 @@ window.HUB_DATA = {
             'Wahyu Setiabudi',
             'Bambang Suryadi',
             'Lestari Hapsari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -29043,7 +29633,8 @@ window.HUB_DATA = {
             'Wahyu Setiabudi',
             'Lestari Hapsari',
             'Bambang Suryadi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -29088,7 +29679,8 @@ window.HUB_DATA = {
             'Wahyu Setiabudi',
             'Lestari Hapsari',
             'Citra Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -29133,7 +29725,8 @@ window.HUB_DATA = {
             'Wahyu Setiabudi',
             'Lestari Hapsari',
             'Citra Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -29178,7 +29771,8 @@ window.HUB_DATA = {
             'Wahyu Setiabudi',
             'Lestari Hapsari',
             'Wahyu Setiabudi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -29223,7 +29817,8 @@ window.HUB_DATA = {
             'Wahyu Setiabudi',
             'Lestari Hapsari',
             'Citra Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -29268,7 +29863,8 @@ window.HUB_DATA = {
             'Lestari Hapsari',
             'Bambang Suryadi',
             'Wahyu Setiabudi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -29303,7 +29899,8 @@ window.HUB_DATA = {
           personaID: [
             'Wahyu Setiabudi',
             'Lestari Hapsari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -29338,7 +29935,8 @@ window.HUB_DATA = {
           personaID: [
             'Wahyu Setiabudi',
             'Lestari Hapsari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -29373,7 +29971,8 @@ window.HUB_DATA = {
           personaID: [
             'Wahyu Setiabudi',
             'Citra Halim'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -29408,7 +30007,8 @@ window.HUB_DATA = {
           personaID: [
             'Lestari Hapsari',
             'Bambang Suryadi'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -29443,7 +30043,8 @@ window.HUB_DATA = {
           personaID: [
             'Lestari Hapsari',
             'Wahyu Setiabudi'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
@@ -29698,7 +30299,8 @@ window.HUB_DATA = {
             'Surya Hartanto',
             'Anissa Permatasari',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🔍 Researcher',
@@ -29733,7 +30335,8 @@ window.HUB_DATA = {
           personaID: [
             'Anissa Permatasari',
             'Anissa Permatasari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Analyst',
@@ -29778,7 +30381,8 @@ window.HUB_DATA = {
             'Surya Hartanto',
             'Daichi Maruyama',
             'Anissa Permatasari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Copilot in Excel',
@@ -29823,7 +30427,8 @@ window.HUB_DATA = {
             'Surya Hartanto',
             'Anissa Permatasari',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Copilot in Word',
@@ -29868,7 +30473,8 @@ window.HUB_DATA = {
             'Surya Hartanto',
             'Anissa Permatasari',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 Copilot in PowerPoint',
@@ -29913,7 +30519,8 @@ window.HUB_DATA = {
             'Surya Hartanto',
             'Anissa Permatasari',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📧 Copilot in Outlook',
@@ -29958,7 +30565,8 @@ window.HUB_DATA = {
             'Surya Hartanto',
             'Anissa Permatasari',
             'Surya Hartanto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎙 Copilot in Teams (Recap → Word minutes)',
@@ -30003,7 +30611,8 @@ window.HUB_DATA = {
             'Surya Hartanto',
             'Anissa Permatasari',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📓 Copilot Notebook',
@@ -30048,7 +30657,8 @@ window.HUB_DATA = {
             'Anissa Permatasari',
             'Daichi Maruyama',
             'Surya Hartanto'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -30083,7 +30693,8 @@ window.HUB_DATA = {
           personaID: [
             'Surya Hartanto',
             'Anissa Permatasari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📝 Word Agent (Generate document)',
@@ -30118,7 +30729,8 @@ window.HUB_DATA = {
           personaID: [
             'Surya Hartanto',
             'Anissa Permatasari'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🎯 PowerPoint Agent (Generate deck)',
@@ -30153,7 +30765,8 @@ window.HUB_DATA = {
           personaID: [
             'Surya Hartanto',
             'Sasha Ouellet'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '📊 Excel Agent (Generate workbook)',
@@ -30188,7 +30801,8 @@ window.HUB_DATA = {
           personaID: [
             'Anissa Permatasari',
             'Daichi Maruyama'
-          ]
+          ],
+          notebookMeta: null
         },
         {
           tool: '🏗 Agent Builder (M365 Copilot Chat)',
@@ -30223,7 +30837,8 @@ window.HUB_DATA = {
           personaID: [
             'Anissa Permatasari',
             'Surya Hartanto'
-          ]
+          ],
+          notebookMeta: null
         }
       ],
       relevantDepts: [
