@@ -4,7 +4,7 @@ window.HUB_DATA = {
       id: 'wn-researcher',
       title: '🔍 Researcher — Critique + Model Council',
       badge: 'New rollout (May 2026)',
-      summary: 'Two demo modes inside Researcher: (1) Critique Mode self-critiques every source and flags claims it cannot verify; (2) Model Council convenes GPT-5.5 Thinking + Claude Opus 4.7 + Gemini in a multi-model debate and surfaces dissent across the panel.',
+      summary: 'Two demo modes inside Researcher: (1) Critique Mode self-critiques every source and flags claims it cannot verify; (2) Model Council convenes GPT-5.5 Thinking + Claude Opus 4.7 + Claude Sonnet 4.7 each return a full independent report, then a synthesis cover letter highlights where they agree, where they differ, and any unique findings.',
       tip: 'm365.cloud.microsoft/chat > Agents > Researcher > switch the mode pill at the top to \'Critique\' or \'Model Council\'.',
       license: 'M365_LIC'
     },
@@ -60,7 +60,7 @@ window.HUB_DATA = {
       id: 'wn-models',
       title: '🧠 Frontier Model Picker',
       badge: 'May 2026 rollout',
-      summary: 'Switch the underlying frontier model for any chat or agent: GPT-5.5 Instant, GPT-5.5 Thinking, Claude Opus 4.7, Gemini Ultra, ChatGPT Images 2.0. Use Thinking models for board-grade reasoning; Instant for fast triage.',
+      summary: 'Switch the underlying frontier model for any chat or agent: GPT-5.5 Instant, GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7, ChatGPT Images 2.0. Use Thinking models for board-grade reasoning; Instant for fast triage.',
       tip: 'In any Copilot Chat thread, click the model pill at the top — try \'GPT-5.5 Thinking\' for the Strategy/Risk briefs; \'Claude Opus 4.7\' for nuanced legal/policy drafting.',
       license: 'M365_LIC'
     }
@@ -79,7 +79,8 @@ window.HUB_DATA = {
       industries: [
         'commercial-banking',
         'islamic-banking',
-        'investment-banking'
+        'investment-banking',
+        'mortgage-finance'
       ]
     },
     {
@@ -95,7 +96,8 @@ window.HUB_DATA = {
       id: 'sec-fintech',
       label: 'Fintech',
       industries: [
-        'fintech-payments'
+        'fintech-payments',
+        'cross-border-remittance'
       ]
     },
     {
@@ -126,7 +128,17 @@ window.HUB_DATA = {
       label: 'Manufacturing',
       industries: [
         'industrial-manufacturing',
+        'rubber-gloves',
+        'semiconductor',
+        'auto-tyres',
         'construction'
+      ]
+    },
+    {
+      id: 'sec-food',
+      label: 'Food & FMCG',
+      industries: [
+        'food-fmcg'
       ]
     },
     {
@@ -197,7 +209,8 @@ window.HUB_DATA = {
       id: 'sec-mining',
       label: 'Mining',
       industries: [
-        'coal-mining'
+        'coal-mining',
+        'rare-earth'
       ]
     },
     {
@@ -303,7 +316,7 @@ window.HUB_DATA = {
               prompt: 'Research how large diversified conglomerates in Malaysia and Indonesia have responded to EBITDA shortfalls of more than 15% against budget between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the Board response within 30 days, and the financial outcome 12 months later. Self-critique each source, verify every claim against the original publication, and flag any claim you cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Stay in the same Researcher session. Switch the mode pill to ⚖️ **Model Council** — Researcher will orchestrate a multi-model debate (GPT-5, Claude, Gemini) and surface dissent across the panel. Paste the brief below.',
+              instr: 'Stay in the same Researcher session. Switch the mode pill to ⚖️ **Model Council** — Researcher will orchestrate a parallel multi-model report (GPT-5, Claude, Claude Sonnet 4.7) and surface dissent across the panel. Paste the brief below.',
               prompt: 'Convene a multi-model council debate on the question: "What are the 3 best turnaround playbooks for an ASEAN conglomerate when 3 divisions simultaneously fall into negative EBITDA, and where do the models disagree?" Surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -313,7 +326,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana konglomerat diversifikasi besar di Indonesia dan Malaysia merespons selisih EBITDA lebih dari 15% terhadap RKAP antara tahun 2022 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons Direksi dalam 30 hari pertama, dan hasil finansial 12 bulan kemudian. Kritisi setiap sumber, verifikasi setiap klaim terhadap publikasi aslinya, dan tandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Tetap di sesi Researcher yang sama. Ubah pill mode menjadi ⚖️ **Model Council** — Researcher akan menggelar debat multi-model (GPT-5, Claude, Gemini) dan memunculkan perbedaan pendapat lintas panel. Tempelkan brief di bawah ini.',
+              instr: 'Tetap di sesi Researcher yang sama. Ubah pill mode menjadi ⚖️ **Model Council** — Researcher akan menggelar debat multi-model (GPT-5, Claude, Claude Sonnet 4.7) dan memunculkan perbedaan pendapat lintas panel. Tempelkan brief di bawah ini.',
               prompt: 'Gelar debat multi-model council atas pertanyaan: "Apa 3 strategi turnaround terbaik untuk konglomerat ASEAN ketika 3 unit usaha secara bersamaan jatuh ke EBITDA negatif, dan di titik mana model-model tersebut berbeda pendapat?" Soroti perbedaan pendapat terkuat di antara council, rangkum posisi mayoritas, dan tandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -565,30 +578,30 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             {
-              instr: 'In **Teams calendar**, open the past meeting **"New Software Implementation"**. The Recap page opens with AI Notes, chapters, transcript and action items. Click the **Copilot icon** (top right of the Recap page). Paste the prompt below. When done, copy the output into a new Word doc named `Minutes_New_Software_Implementation.docx`.',
-              prompt: 'Reformat this discussion into the Group\'s formal minutes template with sections: Date and Attendees, Agenda Items, Decisions Taken, Action Items with Owners and Due Dates, Risks Raised, Open Questions. Quote attendee statements verbatim where wording matters. Flag every decision linked to the FY2025 EBITDA recovery programme as Critical Path.'
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"New Software Implementation"**. On the Recap page, walk the audience through the **AI Notes** (auto-summary), the **Custom summary** (Copilot\'s per-attendee view), and the **Audio recap** (chapter markers with speaker timings). **(2) In Word for the Web**, open a **new blank document**. Type a quick minutes template at the top — five empty headings: Date and Attendees · Agenda Items · Decisions Taken · Action Items · Risks and Open Questions. **(3) Click the Copilot icon** in the Word ribbon and paste the prompt below — Copilot in Word will reference the meeting recap by name with `/` and fill the template.',
+              prompt: 'Create meeting minutes for the Teams meeting /New Software Implementation. Use the empty template already on this page and fill each heading from the meeting recap. Sections: (1) Date and Attendees; (2) Agenda Items; (3) Decisions Taken; (4) Action Items with Owner and Due Date; (5) Risks and Open Questions. Quote attendee statements verbatim where the wording matters. Flag any decision linked to the FY2025 EBITDA recovery programme as Critical Path. Save the file as Minutes_New_Software_Implementation.docx in OneDrive.'
             },
             {
-              instr: 'In **Teams calendar**, open the past meeting **"Potential Merger"**. The Recap opens. Click the **Copilot icon** at the top right of the Recap page. Paste the prompt below. Copy the output into a new Word doc marked `CONFIDENTIAL — M&A Discussion Minutes`.',
-              prompt: 'Generate M&A discussion minutes using the Group\'s confidential M&A template with sections: Confidentiality Notice, Attendees and Conflicts of Interest, Discussion Themes, Decisions Taken, Decisions Reserved for Board, Workstream Owners, Next Checkpoint. Highlight any disclosure-sensitive item in red and add a one-line confidentiality reminder at the top.'
+              instr: '**(1) In Teams**, open **Calendar** → the past meeting **"Potential Merger"** → Recap page. Show the **AI Notes**, **Custom summary**, and **Audio recap** chapters. **(2) In Word for the Web**, open a new blank document marked `CONFIDENTIAL — M&A Discussion Minutes` at the top. Type the M&A template skeleton (Confidentiality Notice · Attendees and Conflicts · Discussion Themes · Decisions · Reserved for Board · Workstreams · Next Checkpoint). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot will reference the recap by name with `/`.',
+              prompt: 'Create the M&A discussion minutes for the Teams meeting /Potential Merger. Use the confidential template already on the page. Sections: (1) Confidentiality Notice at the top; (2) Attendees and Conflicts of Interest; (3) Discussion Themes; (4) Decisions Taken; (5) Decisions Reserved for the Board; (6) Workstream Owners; (7) Next Checkpoint. Highlight any disclosure-sensitive item in red. Save as MA_Minutes_Confidential.docx in the M&A SharePoint.'
             },
             {
-              instr: 'In **Teams calendar**, open the past meeting **"Negotiating Marketing Contract"**. The Recap opens. Click the **Copilot icon** at the top right. Paste the prompt below. Forward the resulting Word doc to Procurement, Legal, and the Group CFO for review.',
-              prompt: 'Format as vendor negotiation minutes with sections: Vendor and Owner, Commercial Terms Discussed, Concessions Offered, Concessions Accepted, Open Items, Approval Thresholds, Next Steps with Owner and Date. Mark terms that require CFO approval in amber and terms requiring Board approval in red.'
+              instr: '**(1) In Teams**, open **Calendar** → the past meeting **"Negotiating Marketing Contract"** → Recap page. Show the **AI Notes**, **Custom summary**, and **Audio recap**. **(2) In Word for the Web**, open a new blank document. Type the vendor-negotiation template at the top (Vendor and Owner · Commercial Terms · Concessions Offered · Concessions Accepted · Open Items · Approval Thresholds · Next Steps). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot will reference the recap by name with `/`. Forward the result to Procurement, Legal and the Group CFO.',
+              prompt: 'Create the vendor-negotiation minutes for the Teams meeting /Negotiating Marketing Contract. Use the empty template already on the page. Sections: (1) Vendor and Owner; (2) Commercial Terms Discussed; (3) Concessions Offered; (4) Concessions Accepted; (5) Open Items; (6) Approval Thresholds; (7) Next Steps with Owner and Date. Mark terms that require CFO approval in amber and terms requiring Board approval in red. Save as Vendor_Negotiation_Minutes.docx and forward the link to Procurement, Legal and the Group CFO.'
             }
           ],
           promptsID: [
             {
-              instr: 'Pada **kalender Teams**, buka rapat lampau **"New Software Implementation"**. Halaman Recap terbuka dengan AI Notes, chapter, transkrip dan action item. Klik **ikon Copilot** (pojok kanan atas halaman Recap). Tempelkan prompt di bawah ini. Setelah selesai, salin output ke dokumen Word baru bernama `Notulen_New_Software_Implementation.docx`.',
-              prompt: 'Format ulang diskusi ini ke template notulen Grup dengan bagian-bagian: Tanggal dan Peserta, Item Agenda, Keputusan yang Diambil, Action Item dengan Pemilik dan Tenggat, Risiko yang Diangkat, Pertanyaan Terbuka. Kutip pernyataan peserta secara harfiah jika redaksinya penting. Tandai setiap keputusan yang terkait dengan program pemulihan EBITDA FY2025 sebagai Critical Path.'
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"New Software Implementation"**. Pada halaman Recap, tampilkan **AI Notes** (ringkasan otomatis), **Custom summary** (ringkasan Copilot per-peserta), dan **Audio recap** (chapter dengan timing pembicara). **(2) Di Word for the Web**, buka **dokumen baru kosong**. Ketik template notulen di bagian atas — lima heading kosong: Tanggal dan Peserta · Item Agenda · Keputusan yang Diambil · Action Item · Risiko dan Pertanyaan Terbuka. **(3) Klik ikon Copilot** di ribbon Word dan tempelkan prompt di bawah — Copilot in Word akan mereferensikan recap rapat dengan `/` dan mengisi template.',
+              prompt: 'Buatkan notulen rapat untuk rapat Teams /New Software Implementation. Gunakan template kosong yang sudah ada di halaman ini dan isi tiap heading dari recap rapat. Bagian: (1) Tanggal dan Peserta; (2) Item Agenda; (3) Keputusan yang Diambil; (4) Action Item dengan Pemilik dan Tenggat; (5) Risiko dan Pertanyaan Terbuka. Kutip pernyataan peserta secara harfiah jika redaksinya penting. Tandai setiap keputusan terkait program pemulihan EBITDA FY2025 sebagai Critical Path. Simpan sebagai Notulen_New_Software_Implementation.docx di OneDrive.'
             },
             {
-              instr: 'Pada **kalender Teams**, buka rapat lampau **"Potential Merger"**. Recap terbuka. Klik **ikon Copilot** di pojok kanan atas halaman Recap. Tempelkan prompt di bawah ini. Salin output ke dokumen Word baru bertanda `RAHASIA — Notulen Diskusi M&A`.',
-              prompt: 'Hasilkan notulen rapat M&A menggunakan template rahasia M&A Grup dengan bagian: Pemberitahuan Kerahasiaan, Peserta dan Benturan Kepentingan, Tema Pembahasan, Keputusan yang Diambil, Keputusan yang Dicadangkan untuk Direksi, Pemilik Workstream, Checkpoint Berikutnya. Sorot setiap item yang sensitif terhadap pengungkapan dengan warna merah dan tambahkan pengingat kerahasiaan satu baris di bagian atas.'
+              instr: '**(1) Di Teams**, buka **Calendar** → rapat lampau **"Potential Merger"** → halaman Recap. Tampilkan **AI Notes**, **Custom summary**, dan chapter **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru bertanda `RAHASIA — Notulen Diskusi M&A` di bagian atas. Ketik kerangka template M&A (Pemberitahuan Kerahasiaan · Peserta dan Benturan Kepentingan · Tema Pembahasan · Keputusan · Dicadangkan untuk Direksi · Workstream · Checkpoint Berikutnya). **(3) Klik ikon Copilot** di Word dan tempelkan prompt di bawah — Copilot akan mereferensikan recap dengan `/`.',
+              prompt: 'Buatkan notulen diskusi M&A untuk rapat Teams /Potential Merger. Gunakan template rahasia yang sudah di halaman. Bagian: (1) Pemberitahuan Kerahasiaan di bagian atas; (2) Peserta dan Benturan Kepentingan; (3) Tema Pembahasan; (4) Keputusan yang Diambil; (5) Keputusan yang Dicadangkan untuk Direksi; (6) Pemilik Workstream; (7) Checkpoint Berikutnya. Sorot setiap item sensitif terhadap pengungkapan dengan warna merah. Simpan sebagai Notulen_MA_Rahasia.docx di SharePoint M&A.'
             },
             {
-              instr: 'Pada **kalender Teams**, buka rapat lampau **"Negotiating Marketing Contract"**. Recap terbuka. Klik **ikon Copilot** di pojok kanan atas. Tempelkan prompt di bawah ini. Teruskan dokumen Word hasilnya ke Pengadaan, Legal, dan Direktur Keuangan Grup untuk ditinjau.',
-              prompt: 'Format sebagai notulen negosiasi vendor dengan bagian: Vendor dan Pemilik, Persyaratan Komersial yang Dibahas, Konsesi yang Ditawarkan, Konsesi yang Diterima, Item Terbuka, Ambang Persetujuan, Pemilik dan Tanggal Langkah Berikutnya. Tandai persyaratan yang memerlukan persetujuan Direktur Keuangan dengan kuning, dan persyaratan yang memerlukan persetujuan Direksi dengan merah.'
+              instr: '**(1) Di Teams**, buka **Calendar** → rapat lampau **"Negotiating Marketing Contract"** → halaman Recap. Tampilkan **AI Notes**, **Custom summary**, dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong. Ketik template negosiasi vendor di bagian atas (Vendor dan Pemilik · Persyaratan Komersial · Konsesi yang Ditawarkan · Konsesi yang Diterima · Item Terbuka · Ambang Persetujuan · Langkah Berikutnya). **(3) Klik ikon Copilot** di Word dan tempelkan prompt di bawah — Copilot akan mereferensikan recap dengan `/`. Teruskan hasilnya ke Pengadaan, Legal, dan Direktur Keuangan Grup.',
+              prompt: 'Buatkan notulen negosiasi vendor untuk rapat Teams /Negotiating Marketing Contract. Gunakan template kosong yang sudah di halaman. Bagian: (1) Vendor dan Pemilik; (2) Persyaratan Komersial yang Dibahas; (3) Konsesi yang Ditawarkan; (4) Konsesi yang Diterima; (5) Item Terbuka; (6) Ambang Persetujuan; (7) Langkah Berikutnya dengan Pemilik dan Tanggal. Tandai persyaratan yang memerlukan persetujuan Direktur Keuangan dengan kuning dan persyaratan yang memerlukan persetujuan Direksi dengan merah. Simpan sebagai Notulen_Negosiasi_Vendor.docx dan teruskan tautan ke Pengadaan, Legal, dan Direktur Keuangan Grup.'
             }
           ],
           promptsBM: [],
@@ -714,7 +727,7 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Type the prompt below directly into chat — Copilot will return a fully drafted `.docx` saved to OneDrive, ready to share.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Emergency Board Review Brief — FY2025" using /02_Zava_Group_Policy_Handbook.docx and /03_Zava_Group_Strategy_Framework.docx as context. Section 1 Situation Snapshot (the 18% EBITDA miss, 3 negative-EBITDA divisions, SC clarification, lender concerns); Section 2 Governance Obligations drawn from the policy handbook; Section 3 Decisions Required from the Board; Section 4 30-Day Corrective Programme. Format as a formal Board paper with a RAG summary at the top. Save as Emergency_Board_Review_Brief_FY2025.docx.'
             },
             {
@@ -724,7 +737,7 @@ window.HUB_DATA = {
           ],
           promptsID: [
             {
-              instr: 'Buka `m365.cloud.microsoft/chat`. **Jangan buka Word terlebih dahulu.** Ketik prompt di bawah ini langsung di chat — Copilot akan mengembalikan `.docx` yang sudah disusun lengkap dan tersimpan di OneDrive, siap dibagikan.',
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab **Agents** → pilih **Word Agent**. Tempelkan prompt di bawah — agent akan mengembalikan `.docx` yang sudah disusun lengkap dan tersimpan di OneDrive, siap dibagikan. Berfungsi dengan akun Copilot Chat gratis maupun lisensi M365 Copilot.',
               prompt: 'Hasilkan dokumen Word 3 halaman berjudul "Briefing Rapat Direksi Darurat — FY2025" menggunakan /02_Zava_Group_Policy_Handbook.docx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Bagian 1 Ringkasan Situasi (selisih EBITDA 18%, tiga unit usaha negatif, klarifikasi OJK, kekhawatiran kreditor); Bagian 2 Kewajiban Tata Kelola dari policy handbook; Bagian 3 Keputusan yang Diperlukan dari Direksi; Bagian 4 Program Perbaikan 30 Hari. Format sebagai paper Direksi formal dengan ringkasan RAG di atas. Simpan sebagai Briefing_Rapat_Direksi_Darurat_FY2025.docx.'
             },
             {
@@ -750,7 +763,7 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Type the prompt below directly into chat — Copilot will return a fully drafted `.pptx` saved to OneDrive.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Emergency Board Review — FY2025" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as context. Slide list: (1) Executive Summary; (2) FY2025 Performance vs Budget with EBITDA bar chart; (3) The 3 Negative-EBITDA Divisions; (4) Root Cause Analysis; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Board. Apply a serious executive theme, embed a chart on slide 2, include speaker notes for the CEO on every slide. Save as Emergency_Board_Review_FY2025.pptx.'
             },
             {
@@ -760,7 +773,7 @@ window.HUB_DATA = {
           ],
           promptsID: [
             {
-              instr: 'Buka `m365.cloud.microsoft/chat`. **Jangan buka PowerPoint terlebih dahulu.** Ketik prompt di bawah ini langsung di chat — Copilot akan mengembalikan `.pptx` yang tersimpan di OneDrive.',
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab **Agents** → pilih **PowerPoint Agent**. Tempelkan prompt di bawah — agent akan mengembalikan `.pptx` yang tersimpan di OneDrive, siap dibagikan. Berfungsi dengan akun Copilot Chat gratis maupun lisensi M365 Copilot.',
               prompt: 'Hasilkan deck PowerPoint 7 slide berjudul "Rapat Direksi Darurat — FY2025" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Daftar slide: (1) Ringkasan Eksekutif; (2) Kinerja FY2025 vs RKAP dengan bar chart EBITDA; (3) 2 Unit Usaha EBITDA Negatif; (4) Analisis Akar Masalah; (5) Program Perbaikan 30 Hari; (6) Rencana Komunikasi Pemangku Kepentingan; (7) Keputusan yang Diperlukan dari Direksi. Terapkan tema eksekutif serius, tanamkan chart di slide 2, sertakan catatan pembicara untuk Direktur Utama di setiap slide. Simpan sebagai Rapat_Direksi_Darurat_FY2025.pptx.'
             },
             {
@@ -786,7 +799,7 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Type the prompt below directly into chat — Copilot will return a fully built `.xlsx` saved to OneDrive.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Board_KPI_Dashboard_FY2025.xlsx" using /01_Zava_Group_Financial_Performance.xlsx as context. Sheets: (1) "KPI Tiles" with Revenue, EBITDA, EBITDA Margin, Net Debt to EBITDA, Interest Cover, Liquidity Coverage as tile cards across the top; (2) "Divisional Variance" with EBITDA variance ranked worst to best for the 11 divisions and conditional formatting (Red < -20%, Amber -10% to -20%, Green > -10%); (3) "Quarterly Trend" with a clustered column chart of EBITDA by quarter for the 3 negative-EBITDA divisions; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts and apply the conditional formatting.'
             },
             {
@@ -796,7 +809,7 @@ window.HUB_DATA = {
           ],
           promptsID: [
             {
-              instr: 'Buka `m365.cloud.microsoft/chat`. **Jangan buka Excel terlebih dahulu.** Ketik prompt di bawah ini langsung di chat — Copilot akan mengembalikan `.xlsx` yang tersimpan di OneDrive.',
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab **Agents** → pilih **Excel Agent**. Tempelkan prompt di bawah — agent akan mengembalikan `.xlsx` yang tersimpan di OneDrive, siap dibagikan. Berfungsi dengan akun Copilot Chat gratis maupun lisensi M365 Copilot.',
               prompt: 'Hasilkan workbook Excel baru berjudul "Dashboard_KPI_Direksi_FY2025.xlsx" menggunakan /01_Zava_Group_Financial_Performance.xlsx sebagai konteks. Sheet: (1) "KPI Tile" berisi Pendapatan, EBITDA, Margin EBITDA, Utang Bersih terhadap EBITDA, Interest Cover, Liquidity Coverage sebagai kartu tile di bagian atas; (2) "Selisih Divisi" berisi selisih EBITDA diurutkan dari terburuk ke terbaik untuk 11 unit usaha dengan conditional formatting (Merah < -20%, Kuning -10% sampai -20%, Hijau > -10%); (3) "Tren Kuartalan" dengan clustered column chart EBITDA per kuartal untuk 3 unit usaha bermasalah; (4) "Sparkline Watchlist" dengan sparkline untuk tiap KPI selama 8 kuartal terakhir. Tanamkan chart dan terapkan conditional formatting.'
             },
             {
@@ -822,48 +835,58 @@ window.HUB_DATA = {
           desc: '',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** → **+ Create an agent**. Step 1 (**Describe**): paste the description below in the description field — Copilot drafts the agent\'s name, instructions, and starter prompts.',
-              prompt: 'Create an agent called "Zava Executive War Room". Description: an assistant for the Group Board, CEO, CFO, Chief of Staff and Investor Relations to navigate the FY2025 18% EBITDA miss and prepare for the emergency Board review. The agent should ground every answer in the attached financial, policy, and strategy files; always cite the source file and tab/section; classify financial recommendations as Red, Amber or Green by Board materiality; and stay precise, board-ready and never speculative.'
+              instr: '**Pick ONE of the 3 agents below.** Open `m365.cloud.microsoft/chat` → **Agents** tab → **+ Create an agent**. Paste your chosen description into the **Describe** field — Copilot drafts the agent\'s name, instructions, knowledge sources, capabilities and starter prompts in one shot. Click **Create** when done.',
+              prompt: '**Option A — Zava Executive War Room.** Build an agent for the Group Board, CEO, CFO, Chief of Staff and Investor Relations to navigate the FY2025 18% EBITDA miss and prepare for the emergency Board review in 48 hours. Ground every answer in /01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx and /03_Zava_Group_Strategy_Framework.docx. Always cite the file and tab/section. Classify recommendations as Red / Amber / Green by Board materiality. Tone: precise, board-ready, never speculative. Starter prompts: (1) Summarise the 18% EBITDA miss for the Board in 60 seconds; (2) Which 3 divisions are in negative EBITDA and why; (3) What governance obligations apply after a material earnings miss; (4) Draft a holding line for lenders; (5) Draft a holding line for Bursa Malaysia and the Securities Commission.'
             },
             {
-              instr: 'Step 2 (**Configure**): paste the prompt below as the agent\'s **Instructions** field. Then click **Knowledge** → **Add** → upload the 3 files: `01_Zava_Group_Financial_Performance.xlsx`, `02_Zava_Group_Policy_Handbook.docx`, `03_Zava_Group_Strategy_Framework.docx`. Click **Capabilities** → enable **Web search** and **Code interpreter**. Add 5 starter prompts (the agent already drafted them in Step 1 — you can keep them).',
-              prompt: 'Ground every answer in the 3 attached files (/01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx, /03_Zava_Group_Strategy_Framework.docx). Always cite the source file and the relevant tab or section. Always classify financial recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts: (1) Summarise the 18% EBITDA miss for the Board in 60 seconds; (2) Which 3 divisions are in negative EBITDA and why; (3) What governance obligations apply after a material earnings miss; (4) Draft a holding line for lenders; (5) Draft a holding line for Bursa Malaysia and the Securities Commission.'
+              instr: '**Option B — alternative agent.** Same Create-an-agent flow, but with a different specialism.',
+              prompt: '**Option B — Zava Lender & Covenant Advisor.** Build an agent for the Group Treasurer, Group CFO and the relationship-banking team to navigate covenant questions from the 8 lead relationship banks after the FY2025 EBITDA miss. Ground every answer in /04_Zava_Divisional_Variance_FY2025.xlsx, /05_Zava_Lender_Covenant_Tracker.xlsx and /06_Zava_Investor_QA_FY2025.docx. Always cite the file and tab/section. Classify each covenant facility as Compliant / Watch / Breach with a one-line corrective action. Tone: precise, lender-facing, conservative. Starter prompts: (1) Which facilities are within 10% of breach; (2) Draft the lender-relationship update for our top-3 banks; (3) What waivers have we historically secured; (4) What covenant resets are realistic this cycle; (5) Build the Treasury weekly dashboard for the next 90 days.'
             },
             {
-              instr: 'Step 3 (**Test**): in the right-hand test pane, paste this validation prompt. Verify the agent grounds its answer in the uploaded files, applies the RAG framework, cites sources, and stays in scope.',
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Investor Relations Briefing Agent.** Build an agent for the Head of Investor Relations and the Group Chief of Staff to handle inbound analyst and shareholder queries during the 30 days after the FY2025 EBITDA miss is disclosed. Ground every answer in /06_Zava_Investor_QA_FY2025.docx, /03_Zava_Group_Strategy_Framework.docx and /01_Zava_Group_Financial_Performance.xlsx. Always cite the file and section. Filter every draft response through the disclosure rules in the policy handbook. Tone: factual, conservative, never forward-looking unless the source already disclosed it. Starter prompts: (1) Draft a 200-word reply to a sell-side question on FY2026 guidance; (2) What does the strategy framework say about the 3 negative-EBITDA divisions; (3) Build the analyst Q&A pack; (4) Draft the IR holding line for any media query in the next 48 hours; (5) Summarise the variance bridge in 60 seconds.'
+            },
+            {
+              instr: '**Test it.** After the agent is created, click into it and use the right-hand test pane to validate that it grounds its answers in the uploaded files, cites sources, applies the RAG framework, and stays in scope.',
               prompt: 'Give me the 60-second version of the FY2025 EBITDA problem, the 3 divisions in negative EBITDA, the top governance obligations, and the decisions I must take to the Board in 48 hours. Cite the file and tab/section for every paragraph and use the RAG framework where relevant.'
             },
             {
-              instr: 'Step 4 (**Create + Share**): click **Create**. Then click the agent in the left rail → **Share** → add the **Group ExCo** distribution list with **Use** access. Done — the agent is now live for executives.',
-              prompt: 'Share this agent with the Group ExCo distribution list (Group CEO, Group CFO, Group COO, Group Chief Strategy Officer, Group Chief of Staff, Head of Investor Relations) with Use access. Send the share notification with a one-line message: "The Zava Executive War Room agent is now available in your M365 Copilot chat — ground every Board prep question in this agent for the next 30 days."'
+              instr: '**Share it.** Click the agent in the left rail → **Share** → add the recipients with **Use** access — your team can now use the agent in their own M365 Copilot chat.',
+              prompt: 'Share this agent with the Group ExCo distribution list (Group CEO, Group CFO, Group COO, Group Chief Strategy Officer, Group Chief of Staff, Head of Investor Relations) with Use access. Send the share notification with a one-line message: "This agent is now available in your M365 Copilot chat — ground every Board prep question in it for the next 30 days."'
             }
           ],
           promptsID: [
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` → **Agents** → **+ Create an agent**. Langkah 1 (**Describe**): tempelkan deskripsi di bawah ini di kolom deskripsi — Copilot akan menyusun nama agent, instruksi, dan starter prompt.',
-              prompt: 'Buatkan agent bernama "Zava Executive War Room". Deskripsi: asisten untuk Direksi Grup, Direktur Utama, Direktur Keuangan, Kepala Staf dan Hubungan Investor untuk menavigasi selisih EBITDA FY2025 sebesar 18% dan mempersiapkan Rapat Direksi darurat. Agent harus mendasarkan tiap jawaban pada file finansial, kebijakan, dan strategi terlampir; selalu mengutip file sumber dan tab/bagian; mengklasifikasikan rekomendasi finansial sebagai Merah, Kuning atau Hijau berdasarkan materialitas Direksi; dan tetap presisi, siap-Direksi, tidak pernah spekulatif.'
+              instr: '**Pilih SATU dari 3 agent di bawah.** Buka `m365.cloud.microsoft/chat` → tab **Agents** → **+ Create an agent**. Tempelkan deskripsi pilihan Anda di kolom **Describe** — Copilot akan menyusun nama agent, instruksi, sumber pengetahuan, capabilities, dan starter prompt sekaligus. Klik **Create** saat selesai.',
+              prompt: '**Opsi A — Zava Executive War Room.** Bangun agent untuk Direksi Grup, Direktur Utama, Direktur Keuangan, Kepala Staf, dan Hubungan Investor untuk menavigasi selisih EBITDA FY2025 sebesar 18% dan mempersiapkan Rapat Direksi darurat dalam 48 jam. Dasarkan tiap jawaban pada /01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx, dan /03_Zava_Group_Strategy_Framework.docx. Selalu kutip file dan tab/bagian. Klasifikasikan rekomendasi sebagai Merah / Kuning / Hijau berdasarkan materialitas Direksi. Nada: presisi, siap-Direksi, tidak spekulatif. Starter prompt: (1) Rangkum selisih EBITDA 18% untuk Direksi dalam 60 detik; (2) Unit usaha mana yang berada di EBITDA negatif dan mengapa; (3) Kewajiban tata kelola apa yang berlaku pasca selisih earnings material; (4) Susun holding line untuk kreditor; (5) Susun holding line untuk OJK dan BEI.'
             },
             {
-              instr: 'Langkah 2 (**Configure**): tempelkan prompt di bawah ini sebagai **Instructions** field agent. Kemudian klik **Knowledge** → **Add** → unggah 3 file: `01_Zava_Group_Financial_Performance.xlsx`, `02_Zava_Group_Policy_Handbook.docx`, `03_Zava_Group_Strategy_Framework.docx`. Klik **Capabilities** → aktifkan **Web search** dan **Code interpreter**. Tambahkan 5 starter prompt (agent sudah menyusunnya di Langkah 1 — Anda dapat mempertahankannya).',
-              prompt: 'Dasarkan tiap jawaban pada 3 file terlampir (/01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx, /03_Zava_Group_Strategy_Framework.docx). Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi finansial sebagai Merah, Kuning atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap-Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt: (1) Rangkum selisih EBITDA 18% untuk Direksi dalam 60 detik; (2) Unit usaha mana yang berada di EBITDA negatif dan mengapa; (3) Kewajiban tata kelola apa yang berlaku pasca selisih earnings material; (4) Susun holding line untuk kreditor; (5) Susun holding line untuk OJK dan BEI.'
+              instr: '**Opsi B — agent alternatif.** Alur Create-an-agent yang sama dengan spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Lender & Covenant Advisor.** Bangun agent untuk Direktur Treasury, Direktur Keuangan Grup, dan tim relationship banking untuk menjawab pertanyaan covenant dari 8 bank relasi utama pasca selisih EBITDA FY2025. Dasarkan tiap jawaban pada /04_Zava_Divisional_Variance_FY2025.xlsx, /05_Zava_Lender_Covenant_Tracker.xlsx, dan /06_Zava_Investor_QA_FY2025.docx. Selalu kutip file dan tab/bagian. Klasifikasikan tiap fasilitas covenant sebagai Compliant / Watch / Breach dengan rencana perbaikan satu baris. Nada: presisi, lender-facing, konservatif. Starter prompt: (1) Fasilitas mana yang berada dalam 10% jarak breach; (2) Susun update relationship banking untuk top-3 bank kami; (3) Waiver apa yang pernah kami amankan secara historis; (4) Reset covenant apa yang realistis siklus ini; (5) Bangun dashboard Treasury mingguan untuk 90 hari ke depan.'
             },
             {
-              instr: 'Langkah 3 (**Test**): pada panel test sebelah kanan, tempelkan prompt validasi ini. Verifikasi agent mendasarkan jawabannya pada file yang diunggah, menerapkan framework RAG, mengutip sumber, dan tetap dalam cakupan.',
+              instr: '**Opsi C — agent alternatif.** Alur yang sama.',
+              prompt: '**Opsi C — Zava Investor Relations Briefing Agent.** Bangun agent untuk Kepala Hubungan Investor dan Kepala Staf Grup untuk menangani pertanyaan masuk dari analis dan pemegang saham selama 30 hari setelah selisih EBITDA FY2025 diumumkan. Dasarkan tiap jawaban pada /06_Zava_Investor_QA_FY2025.docx, /03_Zava_Group_Strategy_Framework.docx, dan /01_Zava_Group_Financial_Performance.xlsx. Selalu kutip file dan bagian. Saring tiap draf jawaban melalui aturan pengungkapan di policy handbook. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkapkan. Starter prompt: (1) Susun jawaban 200 kata untuk pertanyaan sell-side mengenai panduan FY2026; (2) Apa yang dikatakan strategy framework tentang 3 unit usaha bermasalah; (3) Bangun pack Q&A analis; (4) Susun holding line IR untuk pertanyaan media dalam 48 jam; (5) Rangkum bridge selisih dalam 60 detik.'
+            },
+            {
+              instr: '**Uji.** Setelah agent dibuat, klik ke dalamnya dan gunakan panel uji sebelah kanan untuk memvalidasi bahwa agent mendasarkan jawaban pada file yang diunggah, mengutip sumber, menerapkan framework RAG, dan tetap dalam cakupan.',
               prompt: 'Berikan versi 60 detik dari masalah EBITDA FY2025, 3 unit usaha bermasalah, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Direksi dalam 48 jam. Kutip file dan tab/bagian untuk tiap paragraf dan gunakan framework RAG bila relevan.'
             },
             {
-              instr: 'Langkah 4 (**Create + Share**): klik **Create**. Kemudian klik agent di rail kiri → **Share** → tambahkan distribution list **Group ExCo** dengan akses **Use**. Selesai — agent kini live untuk eksekutif.',
-              prompt: 'Bagikan agent ini ke distribution list Group ExCo (Direktur Utama Grup, Direktur Keuangan Grup, Direktur Operasional Grup, Direktur Strategi Grup, Kepala Staf Grup, Kepala Hubungan Investor) dengan akses Use. Kirim notifikasi bagi-pakai dengan pesan satu baris: "Agent Zava Executive War Room kini tersedia di M365 Copilot chat Anda — dasarkan setiap pertanyaan persiapan Direksi pada agent ini selama 30 hari ke depan."'
+              instr: '**Bagikan.** Klik agent di rail kiri → **Share** → tambahkan penerima dengan akses **Use** — tim Anda kini dapat menggunakan agent di M365 Copilot chat masing-masing.',
+              prompt: 'Bagikan agent ini ke distribution list Group ExCo (Direktur Utama Grup, Direktur Keuangan Grup, Direktur Operasional Grup, Direktur Strategi Grup, Kepala Staf Grup, Kepala Hubungan Investor) dengan akses Use. Kirim notifikasi bagi-pakai dengan pesan satu baris: "Agent ini kini tersedia di M365 Copilot chat Anda — dasarkan setiap pertanyaan persiapan Direksi pada agent ini selama 30 hari ke depan."'
             }
           ],
           promptsBM: [],
           persona: [
             'Mod Admin',
             'Mod Admin',
+            'Mod Admin',
             'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           personaID: [
+            'Mod Admin',
             'Mod Admin',
             'Mod Admin',
             'Sasha Ouellet',
@@ -1159,14 +1182,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how Malaysian and Indonesian commercial banks responded to gross impaired loan ratios above 6% between 2022 and 2025. For at least 3 published case studies, identify the trigger, the Board response within 30 days, and the asset-quality outcome 12 months later. Critically instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best NPL workout playbooks for a mid-tier ASEAN commercial bank when gross impaired loans cross 6% with SME construction and transport stress, and where do the models disagree?Present as a comparison table with columns Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'
             }
           ],
@@ -1176,7 +1199,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana bank komersial di Indonesia dan Malaysia merespons rasio kredit bermasalah di atas 6% antara 2022 dan 2025. Untuk minimal 3 studi kasus terpublikasi, identifikasi pemicu, respons Direksi dalam 30 hari, dan hasil kualitas aset 12 bulan kemudian. Instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi tiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 playbook workout NPL terbaik untuk bank komersial menengah di ASEAN ketika kredit bermasalah melewati 6% dengan tekanan SME konstruksi dan transportasi, dan di titik mana model-model tersebut berbeda pendapat?Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'
             }
           ],
@@ -1556,11 +1579,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "BNM Bilateral Brief — Q4 NPL Review" using /BNK_02_Regulatory_Reporting_Pack.docx and /BNK_03_Credit_Risk_Policy.docx as context. Section 1 Situation Snapshot (NPL 4.1% to 6.8%, 3 driving segments, coverage 71%, 19 covenant-watch facilities); Section 2 Governance Obligations (drawn from the policy handbook); Section 3 Decisions Required from the Board Risk Committee; Section 4 30-Day Recovery Programme. Format as a formal supervisory paper with a RAG summary at the top Return as a downloadable .docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page credit policy reset briefing as a .docx using /BNK_03_Credit_Risk_Policy.docx and /BNK_01_Group_Loan_Portfolio.xlsx as context. Required sections: (1) policy areas to Operate, (2) areas to Tighten, (3) areas to Rewrite, with one-line supporting evidence per item drawn from the workbook. Apply a clean executive layout and return as Credit_Policy_Reset_Briefing.docx.'
             }
           ],
@@ -1592,11 +1615,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "BNM Bilateral — Q4 NPL Review" using /BNK_01_Group_Loan_Portfolio.xlsx and /BNK_02_Regulatory_Reporting_Pack.docx as context. (1) Executive Summary; (2) NPL trajectory 4.1% to 6.8% with bar chart; (3) The 3 Driving Segments; (4) Covenant Monitor Hotspots; (5) Coverage and Capital Position; (6) 30-Day Recovery Programme; (7) Decisions Required from BNM. Apply a serious supervisory theme, embed a chart on slide 2, include speaker notes, and return as BNM_Bilateral_Q4_NPL.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "Analyst Call — Q4 NPL Trajectory" using /BNK_01_Group_Loan_Portfolio.xlsx and /BNK_06_Investor_QA_Pack.docx as context. (1) Title and Disclaimer; (2) Q4 Asset-Quality Snapshot; (3) What Changed and Why (cyclical vs structural); (4) Outlook for the 3 driving segments; (5) Management Commitments for Next 90 Days; (6) Q&A. Apply a polished IR theme with minimal text per slide, full speaker notes for the IR team, and return as Analyst_Call_Q4_NPL.pptx.'
             }
           ],
@@ -1628,11 +1651,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "BNM_KPI_Dashboard_Q4.xlsx" using /BNK_01_Group_Loan_Portfolio.xlsx and /BNK_05_Capital_Adequacy_Report.xlsx as context. (1) "KPI Tiles" with NPL Ratio, Coverage, CET1, Leverage, LCR, and Watch Facilities as tile cards across the top; (2) "Segment Variance" with NPL ratio ranked worst to best for the 5 business divisions and conditional formatting (Red > 8%, Amber 5% to 8%, Green < 5%); (3) "Quarterly Trend" with a clustered column chart of NPL by quarter for the 3 driving segments; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel scenario model titled "NPL_Recovery_Scenario_Model.xlsx" using /BNK_01_Group_Loan_Portfolio.xlsx and /BNK_04_NPL_Recovery_Tracker.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Recovery, Downside) for cure rate %, restructure %, write-off % and provision top-up MYR M; (2) "Segment P&L" computed from the Inputs sheet for each of the 5 divisions; (3) "Group Roll-Up" with calculated NPL Ratio, Coverage, CET1 impact and earnings impact per scenario; (4) "Sensitivity Chart" showing how Group NPL changes as the 3 driving segments recover at different rates. Use formula references (not hard-coded values) and embed at least one tornado/sensitivity chart.'
             }
           ],
@@ -1951,14 +1974,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how Malaysian and Indonesian Islamic banks responded to Stage 2 financing above 10% and GIA runoff between 2022 and 2025. For at least 3 published case studies, identify the trigger, the Shariah Committee response within 30 days, and the financing-quality outcome 12 months later. Critically instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best displaced-commercial-risk and tawarruq remediation playbooks for an ASEAN Islamic bank facing Stage 2 financing above 10% with GIA outflows ahead of a sukuk wakalah issuance, and where do the models disagree?Present as a comparison table with columns Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'
             }
           ],
@@ -1968,7 +1991,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana bank syariah di Indonesia dan Malaysia merespons pembiayaan Stage 2 di atas 10% dan arus keluar DPK investasi antara 2022 dan 2025. Untuk minimal 3 studi kasus terpublikasi, identifikasi pemicu, respons Dewan Pengawas Syariah dalam 30 hari, dan hasil kualitas pembiayaan 12 bulan kemudian. Instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi tiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 playbook remediasi displaced commercial risk dan tawarruq terbaik untuk bank syariah ASEAN yang menghadapi pembiayaan Stage 2 di atas 10% dengan arus keluar DPK investasi menjelang penerbitan sukuk wakalah, dan di titik mana model-model tersebut berbeda pendapat?Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'
             }
           ],
@@ -2348,11 +2371,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "BNM IFSA Brief — Q4 Stage 2 Review" using /ISL_02_Shariah_Governance_Report.docx and /ISL_03_Islamic_Finance_Policy.docx as context. Section 1 Situation Snapshot (Stage 2 8.4% to 11.6%, 3 driving products, GIA runoff MYR 1.1B, 14 large-account exceptions); Section 2 Shariah Governance Obligations (drawn from the policy handbook); Section 3 Decisions Required from the Board Risk and Shariah Committees; Section 4 30-Day Remediation Programme. Format as a formal supervisory paper with a RAG summary at the top Return as a downloadable .docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page Shariah policy reset briefing as a .docx using /ISL_03_Islamic_Finance_Policy.docx and /ISL_01_Financing_Portfolio.xlsx as context. Required sections: (1) policy areas to Operate, (2) areas to Tighten, (3) areas to Rewrite, with one-line supporting evidence per item drawn from the workbook. Apply a clean executive layout and return as Shariah_Policy_Reset_Briefing.docx.'
             }
           ],
@@ -2384,11 +2407,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "BNM IFSA — Q4 Stage 2 Review" using /ISL_01_Financing_Portfolio.xlsx and /ISL_02_Shariah_Governance_Report.docx as context. (1) Executive Summary; (2) Stage 2 trajectory 8.4% to 11.6% with bar chart; (3) The 3 Driving Product Lines; (4) Tawarruq Exception Hotspots; (5) GIA Runoff and Profit-Distribution Gap; (6) 30-Day Remediation Programme; (7) Decisions Required from BNM. Apply a serious supervisory theme, embed a chart on slide 2, include speaker notes, and return as BNM_IFSA_Q4_Stage2.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "Sukuk Investor Call — Q4 Stage 2 and GIA" using /ISL_04_GIA_Performance_Tracker.xlsx and /ISL_06_Investor_QA_Islamic.docx as context. (1) Title and Disclaimer; (2) Q4 Financing-Quality Snapshot; (3) What Changed and Why (cyclical vs structural); (4) Outlook for the 3 driving cohorts; (5) Management Commitments for Next 90 Days; (6) Q&A. Apply a polished IR theme with minimal text per slide, full speaker notes for the IR team, and return as Sukuk_Investor_Call_Q4.pptx.'
             }
           ],
@@ -2420,11 +2443,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "IFSA_KPI_Dashboard_Q4.xlsx" using /ISL_01_Financing_Portfolio.xlsx and /ISL_04_GIA_Performance_Tracker.xlsx as context. (1) "KPI Tiles" with Stage 2 Ratio, GIF Ratio, GIA Balance, Profit-Distribution Gap, LCR, and Open Shariah Exceptions as tile cards across the top; (2) "Product Variance" with Stage 2 ratio ranked worst to best for the 5 product lines and conditional formatting (Red > 14%, Amber 8% to 14%, Green < 8%); (3) "Quarterly Trend" with a clustered column chart of Stage 2 by quarter for the 3 driving product lines; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel scenario model titled "Stage2_Remediation_Scenario_Model.xlsx" using /ISL_01_Financing_Portfolio.xlsx and /ISL_04_GIA_Performance_Tracker.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Remediation, Downside) for cure rate %, restructure %, write-off % and DCR reserve top-up MYR M; (2) "Product P&L" computed from the Inputs sheet for each of the 5 product lines; (3) "Group Roll-Up" with calculated Stage 2 Ratio, GIA Balance, LCR impact and earnings impact per scenario; (4) "Sensitivity Chart" showing how Group Stage 2 changes as the 3 driving products recover at different rates. Use formula references (not hard-coded values) and embed at least one tornado/sensitivity chart.'
             }
           ],
@@ -2743,14 +2766,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how investment banks and equity capital markets advisers in Malaysia and Indonesia responded from 2022 to 2025 when Bursa Malaysia or IDX IPO mandates faced valuation pushback, SC Malaysia or OJK disclosure delays, or cornerstone investor hesitation. For at least 3 published or publicly reported case studies, identify the trigger event, the adviser response within 30 days, the revised timetable, and the eventual outcome for proceeds and aftermarket performance. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best strategies for an ASEAN investment bank when two out of three live IPO mandates face simultaneous regulatory and valuation pressure, and where do the models disagree?Present as a comparison table with columns for Strategy, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -2760,7 +2783,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana bank investasi dan penasihat ECM di Malaysia dan Indonesia merespons dari tahun 2022 hingga 2025 ketika mandat IPO Bursa Malaysia atau BEI menghadapi penolakan valuasi, penundaan pengungkapan SC Malaysia atau OJK, atau keraguan investor cornerstone. Untuk minimal 3 studi kasus yang dipublikasikan atau dilaporkan secara publik, identifikasi peristiwa pemicu, respons penasihat dalam 30 hari pertama, revisi jadwal, dan hasil akhir untuk dana yang diperoleh serta kinerja aftermarket. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi terbaik untuk bank investasi ASEAN ketika dua dari tiga mandat IPO yang aktif menghadapi tekanan regulasi dan valuasi secara bersamaan, dan di titik mana model-model tersebut berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -3140,11 +3163,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Aruna_Deal_Committee_Brief.docx" using /IB_01_Deal_Pipeline.xlsx and /IB_03_Regulatory_Compliance_Pack.docx as context. Section 1 Mandate Status (probability-weighted fees, close risk, and principal blocker per deal); Section 2 Regulatory Touchpoints (SC Malaysia, Bursa Malaysia, and BNM open items with resolution owner and deadline); Section 3 ESG Fund Launch Readiness (go or no-go conditions and two items pending compliance sign-off); Section 4 Decisions Required in 10 Days (formatted as a RAG decision table with columns for Decision, Owner, Deadline, and Consequence of Delay). Format as a formal deal committee paper with a RAG summary at the top and return as Aruna_Deal_Committee_Brief.docx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page Word document titled "Aruna_Client_Coverage_Strategy.docx" using /IB_02_Client_Relationship_Map.docx and /IB_05_Fee_Revenue_Forecast.xlsx as context. Section 1 Top-5 Client Fee Exposure and Timetable Risk; Section 2 Sponsor Access Gaps and Relationship Weaknesses; Section 3 Cross-Sell Opportunities if an IPO is Delayed; Section 4 30-Day Coverage Plan with Owner and Priority per Client. Apply a professional IB advisory layout and return the document as Aruna_Client_Coverage_Strategy.docx ready to download.'
             }
           ],
@@ -3176,11 +3199,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "Aruna_Deal_Committee_Deck.pptx" using /IB_01_Deal_Pipeline.xlsx and /IB_03_Regulatory_Compliance_Pack.docx as context. (1) Executive Summary — three mandates, fee plan at risk, decisions needed; (2) Mandate Status with probability-weighted fee bar chart; (3) Regulatory Touchpoints — SC Malaysia, Bursa Malaysia, and BNM open items; (4) ESG Fund Launch Go or No-Go; (5) Banker Capacity and Coverage Gaps; (6) Decisions Required in 10 Days. Apply a professional investment banking navy theme. Embed a bar chart on slide 2. Include speaker notes on every slide. Return as Aruna_Deal_Committee_Deck.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 5-slide PowerPoint deck titled "Aruna_FY2026_Fee_Outlook.pptx" using /IB_05_Fee_Revenue_Forecast.xlsx and /IB_01_Deal_Pipeline.xlsx as context. (1) FY2026 Fee Plan Summary and Key Assumptions; (2) Deal Pipeline Sensitivity with a waterfall chart showing base versus downside; (3) Sector Mix and Fee Diversification; (4) Risk Scenarios if One or Two Mandates Slip by One Quarter; (5) Management Recommendations and Monitoring Metrics. Apply a clean IR-ready executive theme. Embed a waterfall chart on slide 2. Include speaker notes. Return as Aruna_FY2026_Fee_Outlook.pptx ready to download.'
             }
           ],
@@ -3212,11 +3235,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Aruna_Pipeline_KPI_Dashboard.xlsx" using /IB_01_Deal_Pipeline.xlsx as context. (1) "KPI Tiles" with Total Pipeline Value MYR M, Total Probability-Weighted Fee MYR M, Mandates at Risk This Quarter, and Average Deal Velocity as tile cards across the top; (2) "Deal Variance" with probability-weighted fee versus full-value fee per mandate and conditional formatting (close probability below 30% Red, 30% to 60% Amber, above 60% Green); (3) "Fee Trend" with a line chart of cumulative fee recognition forecast by quarter across three scenarios; (4) "Watchlist Sparklines" with sparklines for each deal showing milestone progress over the last six weeks. Embed the charts, apply conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Aruna_FY2026_Scenario_Model.xlsx" using /IB_05_Fee_Revenue_Forecast.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Downside-1, Downside-2) containing mandate-level close probability %, fee size MYR M, and quarter of recognition; (2) "Fee Forecast" with computed FY2026 fee by mandate and scenario using formula references not hardcoded values; (3) "Gap Analysis" with variance versus RKAP budget per scenario and conditional formatting (Red below minus 20%, Amber minus 10% to minus 20%, Green above minus 10%); (4) "Sensitivity Chart" with a tornado chart showing which mandate drives the largest fee risk. Embed charts, use formula references, and return as Aruna_FY2026_Scenario_Model.xlsx ready to download.'
             }
           ],
@@ -3535,14 +3558,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how general insurers in Malaysia, Indonesia, and comparable ASEAN markets responded between 2022 and 2025 when motor claims inflation, repair cost escalation, or workshop leakage pushed the combined ratio materially above plan. For at least 3 published case studies, identify the trigger event, the management response within 60 days, the reserve and pricing actions taken, and the financial outcome 12 months later. Instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim that could not be independently verified. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best recovery strategies for a general insurer when motor severity and leakage simultaneously push the combined ratio above plan, and where do the models disagree?Present as a comparison table with columns for Recovery Strategy, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -3552,7 +3575,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana perusahaan asuransi umum di Indonesia, Malaysia, dan pasar ASEAN yang setara merespons antara tahun 2022 dan 2025 ketika inflasi klaim kendaraan, eskalasi biaya perbaikan, atau kebocoran bengkel mendorong combined ratio secara material di atas RKAP. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons manajemen dalam 60 hari pertama, tindakan cadangan dan penetapan harga yang diambil, dan hasil finansial 12 bulan kemudian. Instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan setiap sumber dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi pemulihan terbaik bagi asuransi umum ketika severitas kendaraan dan kebocoran secara bersamaan mendorong combined ratio di atas RKAP, dan di mana model-model berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi Pemulihan, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -3932,11 +3955,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Prisma_Reserve_Adequacy_and_Supervisory_Brief.docx" using /GI_01_Claims_Portfolio.xlsx, /GI_03_Risk_Management_Framework.docx, and /GI_04_Reinsurance_Treaty_Pack.docx as context. Specify the 4-section structure: Section 1 Current Reserve Position and Sensitivity (drawn from the Solvency II Dashboard and Loss Ratio Tracker tabs); Section 2 Frequency-Severity Analysis and Leakage Estimate; Section 3 Reinsurance Programme Adequacy and Gap Assessment; Section 4 BNM Supervisory Readiness — Recommended Narrative and Holding Lines. Format as a formal actuarial briefing paper with a RAG summary at the top Return as a downloadable .docx ready to share with the Board Risk Committee.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page Word document titled "Claims_Leakage_Intervention_Brief.docx" using /GI_01_Claims_Portfolio.xlsx and /GI_06_Workshop_Vendor_Analysis.xlsx as context. Specify the 4-section structure: Section 1 Leakage Diagnosis by Segment and Workshop Cluster; Section 2 Abnormal Claims Patterns and Fraud Indicators; Section 3 Recommended Operational Controls and Approval Authority Changes; Section 4 90-Day Recovery Plan and Expected Financial Impact. Apply a clear executive layout, include a RAG priority table, and return the document as Claims_Leakage_Intervention_Brief.docx ready to share with the claims management team.'
             }
           ],
@@ -3968,11 +3991,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Combined_Ratio_Recovery_Plan.pptx" using /GI_01_Claims_Portfolio.xlsx, /GI_03_Risk_Management_Framework.docx, and /GI_05_Pricing_Adequacy_Model.xlsx as context. (1) Executive Summary — Combined Ratio Position vs Plan; (2) Motor Portfolio — Frequency and Severity Analysis with embedded loss ratio trend chart; (3) Claims Leakage — Hotspots and Workshop Risk; (4) Pricing Adequacy and Detariffication Impact; (5) Reinsurance Programme — Current Coverage and Gaps; (6) Reserve and Solvency Outlook Under Stress; (7) Executive Decisions Required — Actions and Timeline. Apply a serious executive navy theme, embed the loss ratio chart on slide 2, include concise speaker notes per slide, Return as Combined_Ratio_Recovery_Plan.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "Actuarial_Reserve_Briefing.pptx" using /GI_01_Claims_Portfolio.xlsx and /GI_04_Reinsurance_Treaty_Pack.docx as context. (1) Title and Scope; (2) Reserve Position — Current vs Required with embedded reserve adequacy chart; (3) Loss Development and IBNR Analysis; (4) Reinsurance Recovery — Gross to Net Impact; (5) Solvency Capital Ratio Under Base and Adverse Scenarios; (6) Supervisory Readiness — Key Messages for BNM and OJK. Apply a clean actuarial presentation theme, include detailed speaker notes for the Board Risk Committee, and return as Actuarial_Reserve_Briefing.pptx.'
             }
           ],
@@ -4004,11 +4027,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "GI_Performance_Dashboard.xlsx" using /GI_01_Claims_Portfolio.xlsx and /GI_05_Pricing_Adequacy_Model.xlsx as context. (1) "KPI Tiles" with Combined Ratio, Motor Loss Ratio, Reinsurance Recovery Rate, SCR Coverage, Reserve Adequacy Margin, and Pricing Gap as tile cards across the top; (2) "Segment Variance" with combined ratio and loss ratio gap ranked worst to best for each underwriting segment and conditional formatting (Red loss ratio above 110%, Amber 95% to 110%, Green below 95%); (3) "Loss Ratio Trend" with a line chart showing quarterly combined ratio movement for the top five problem segments over the last 8 quarters; (4) "Solvency Sparklines" with sparklines for SCR coverage ratio, reserve adequacy, and net combined ratio over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Claims_Control_Tracker.xlsx" using /GI_01_Claims_Portfolio.xlsx and /GI_06_Workshop_Vendor_Analysis.xlsx as context. (1) "Leakage Hotspots" with each workshop or segment ranked by abnormal claims frequency and severity index, conditional formatting Red for highest leakage risk, Amber for watch, Green for normal; (2) "Workshop Scorecard" with vendor name, approval rate, average repair cost versus benchmark, and a RAG rating per vendor; (3) "Claims Trend" with a clustered column chart of monthly claims count and average severity by product line over the last 12 months; (4) "Reserve Sensitivity" with a table showing reserve movement under three scenarios — base, severity up 10%, severity up 20% — with conditional formatting matching the loss ratio RAG thresholds. Use formula references and return the workbook ready to use.'
             }
           ],
@@ -4327,14 +4350,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how life insurers in Malaysia and Indonesia have responded from 2022 to 2025 when bancassurance productivity softened and early-duration lapses rose simultaneously. For at least 3 published case studies, identify the trigger event, the management response within 60 days, and the new business and persistency outcomes 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 most effective persistency recovery and bancassurance channel reset strategies for a Malaysian or Indonesian life insurer when momentum stalls and early-duration lapses rise together, and where do the models disagree?Present as a comparison table with columns for Strategy, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -4344,7 +4367,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana perusahaan asuransi jiwa di Malaysia dan Indonesia merespons dari tahun 2022 hingga 2025 ketika produktivitas bancassurance melemah dan lapse dini meningkat secara bersamaan. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons manajemen dalam 60 hari pertama, dan hasil bisnis baru serta persistensi 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi pemulihan persistensi dan reset kanal bancassurance yang paling efektif untuk perusahaan asuransi jiwa Malaysia atau Indonesia ketika momentum terhenti dan lapse dini meningkat bersamaan, dan di mana model-model berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -4724,11 +4747,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Actuarial Governance and Reserve Escalation Protocol" using /LI_03_Actuarial_Policy.docx and the Actuarial Reserve Summary tab in /LI_01_Policy_Portfolio.xlsx as context. Section 1 Current Reserve Assumptions and Pressure Points; Section 2 Early-Duration Lapse Escalation Trigger Thresholds; Section 3 Management Sign-Off Requirements Before BNM Communication; Section 4 Board Risk Committee Reporting Schedule. Format as a formal governance policy document with a RAG summary at the top and to return the result as a downloadable .docx ready to share with the Board Risk Committee.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page channel reset action brief as a .docx using /LI_04_Bancassurance_Channel_Pack.docx and /LI_01_Policy_Portfolio.xlsx as context. Required sections: (1) Channel Productivity Scorecard with bancassurance, agency, and digital ranked by NBV quality; (2) Priority Reset Actions for the weakest two channels with one-line evidence per action; (3) Digital Retention Opportunities for the highest-risk lapse cohorts. Apply a clean executive layout and return the document as Channel_Reset_Brief.docx.'
             }
           ],
@@ -4760,11 +4783,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Life Insurance Board Review — New Business Value and Persistency" using /LI_01_Policy_Portfolio.xlsx and /LI_03_Actuarial_Policy.docx as context. (1) Executive Summary; (2) New Business Value vs Plan with NBV bar chart; (3) Bancassurance Productivity Breakdown; (4) Early-Duration Lapse Analysis by Cohort; (5) Reserve and Capital Sensitivity; (6) Management Actions and Timeline; (7) Decisions Required from the Board. Apply a professional insurance executive theme, embed a chart on slide 2, include speaker notes, Return as Life_Insurance_Board_Review.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "Investor Update — Life Insurance Margin Quality and Persistency" using /LI_01_Policy_Portfolio.xlsx and /LI_06_New_Business_Value_Forecast.xlsx as context. (1) Title and Disclaimer; (2) In-Force Book Quality Summary; (3) New Business Value — What Changed and Why; (4) Persistency and Lapse Trends; (5) Capital and RBC Position for IDX and Bursa Malaysia investors; (6) Management Commitments and AAJI Metrics for Next 90 Days. Apply a polished IR theme with minimal text per slide, full speaker notes addressing OJK RBC disclosures and BI rate sensitivity, and return as Investor_Update_Life_Insurance.pptx.'
             }
           ],
@@ -4796,11 +4819,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Life_Insurance_KPI_Dashboard.xlsx" using /LI_01_Policy_Portfolio.xlsx as context. (1) "KPI Tiles" with New Business Value, Early-Duration Lapse Rate, Bancassurance Productivity Index, First-Year Strain, Reserve Coverage Ratio, and Capital Adequacy Ratio as tile cards across the top; (2) "NBV Variance" with new business value variance by channel ranked worst to best and conditional formatting (Red lapse > 15%, Amber 8-15%, Green < 8%); (3) "Lapse Cohort Trend" with a line chart of early-duration lapse rate by cohort over the last 8 quarters; (4) "Reserve Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel scenario model titled "Lapse_Reserve_Scenario_Model.xlsx" using /LI_05_Lapse_Cohort_Model.xlsx and the Actuarial Reserve Summary tab in /LI_01_Policy_Portfolio.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Adverse, Severe) for early-duration lapse rate %, new business volume growth %, and reserve strain assumption %; (2) "Reserve Impact" computed from the Inputs sheet showing reserve strain and capital coverage per scenario; (3) "NBV Sensitivity" with calculated new business value under each scenario for the top 3 product lines; (4) "BNM Stress Chart" showing how capital adequacy ratio moves across the 3 scenarios with conditional formatting (Red below BNM minimum, Amber within 10% of minimum, Green comfortably above). Use formula references and embed at least one scenario comparison chart.'
             }
           ],
@@ -5119,14 +5142,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Investigate how takaful operators in Malaysia and Indonesia responded between 2022 and 2026 when participant fund surplus deteriorated, wakalah fee competitiveness fell against digital entrants, or lapse rates worsened in early-year family takaful portfolios simultaneously. For at least 3 published case studies, identify the trigger event, the management or Board response within 30 days, the role of BNM or OJK in shaping the response, and the fund outcome 12 months later. Instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Include any relevant guidance from DSN-MUI or AAOIFI Shariah standards where cited. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best strategic options for a takaful operator when wakalah fee pressure, rising lapse rates, and Shariah governance exceptions converge in the same review cycle, and where do the models disagree on the right sequencing?Incorporate perspectives from BNM and OJK regulatory expectations, and note where DSN-MUI or international Shariah standard setters such as AAOIFI would influence the choice. Present as a comparison table with columns for Strategic Option, Council Verdict, Dissenting View, Regional Precedent, and Implementation Risk.'
             }
           ],
@@ -5136,7 +5159,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana operator takaful di Malaysia dan Indonesia merespons antara tahun 2022 hingga 2026 saat selisih dana peserta menurun, daya saing fee wakalah tergerus oleh pemain digital, atau tingkat lapse memburuk pada portofolio takaful keluarga tahun-tahun awal secara bersamaan. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons manajemen atau Direksi dalam 30 hari pertama, peran OJK atau BNM dalam membentuk respons tersebut, dan hasil dana 12 bulan kemudian. Instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan panduan fatwa DSN-MUI atau standar AAOIFI bila dikutip. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 opsi strategis terbaik bagi operator takaful saat tekanan fee wakalah, kenaikan lapse rate, dan pengecualian tata kelola syariah bertemu dalam satu siklus review yang sama, dan di mana model-model tersebut berbeda pendapat mengenai urutan yang tepat? Minta Researcher menyoroti perbedaan pendapat terkuat, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sertakan perspektif dari ekspektasi regulasi OJK dan BNM, serta catat di mana DSN-MUI atau lembaga standar syariah internasional seperti AAOIFI akan memengaruhi pilihan tersebut. Sajikan sebagai tabel perbandingan dengan kolom Opsi Strategis, Putusan Council, Pandangan Minoritas, Preseden Regional, dan Risiko Implementasi.'
             }
           ],
@@ -5516,11 +5539,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Shariah Governance Review Brief — Barakah Takaful" using /TAK_03_Shariah_Compliance_Policy.docx and /TAK_02_Takaful_Governance_Manual.docx as context. Section 1 Governance Status Summary (open exceptions, surplus treatment status, participant disclosure position); Section 2 BNM and Shariah Committee Review Readiness (drawn from the governance manual and policy); Section 3 Remediation Actions Required; Section 4 Evidence Pack Checklist for Review. Format as a formal governance brief with a RAG summary at the top and to return the result as a downloadable .docx ready to share with the Shariah Committee.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page underwriting review report as a .docx using /TAK_01_Takaful_Portfolio.xlsx and /TAK_05_Re_Takaful_Treaty_Pack.docx as context. Required sections: (1) Underwriting Performance: claims, lapse, and cohort analysis; (2) Re-Takaful Programme: current treaty terms, renewal risks, and negotiation priorities; (3) Recommended Actions with owner and timeline per item. Apply a professional underwriting report layout and return the document as Underwriting_Review_Report.docx.'
             }
           ],
@@ -5552,11 +5575,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "BNM Governance Readiness — Barakah Takaful" using /TAK_01_Takaful_Portfolio.xlsx, /TAK_03_Shariah_Compliance_Policy.docx, and /TAK_02_Takaful_Governance_Manual.docx as context. (1) Executive Summary and RAG Status; (2) Participant Fund Surplus Trend with chart; (3) Wakalah Fee Competitiveness Gap; (4) Shariah Exception Log and Remediation Status; (5) Re-Takaful Renewal Outlook; (6) Six-Week Action Plan; (7) Decisions Required from Management Committee. Apply a professional takaful governance theme, embed a chart on slide 2, include speaker notes, Return as BNM_Governance_Readiness.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "Re-Takaful Renewal and Fund Resilience" using /TAK_01_Takaful_Portfolio.xlsx, /TAK_04_Wakalah_Fee_Benchmark.xlsx, and /TAK_05_Re_Takaful_Treaty_Pack.docx as context. (1) Title and Context; (2) Current Fund Surplus and Pressure Summary; (3) Wakalah Fee Gap and Competitive Position; (4) Re-Takaful Treaty: Renewal Risks and Negotiation Priorities; (5) Financial Scenarios: Base, Adjusted Fee, and Downside Fund; (6) Recommended Management Decisions. Apply a clean financial presentation theme with minimal text per slide, full speaker notes, and return as Re_Takaful_Renewal_Brief.pptx.'
             }
           ],
@@ -5588,11 +5611,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Takaful_Fund_Resilience_Dashboard.xlsx" using /TAK_01_Takaful_Portfolio.xlsx and /TAK_06_Participant_Fund_Forecast.xlsx as context. (1) "KPI Tiles" with Participant Fund Surplus Ratio, Lapse Rate, Wakalah Fee Gap, Shariah Exception Count, and Re-Takaful Adequacy as tile cards across the top; (2) "Fund Trend" with surplus ratio trend for each product line and conditional formatting (Red surplus deficit worse than -10%, Amber -3% to -10%, Green better than -3%); (3) "Fee Competitiveness" with a clustered column chart comparing wakalah fee by product versus digital competitor benchmark; (4) "Scenario Forecast" with sparklines for each KPI across the next 8 periods under base and stressed scenarios. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel stress test model titled "Underwriting_Stress_Test_Model.xlsx" using /TAK_01_Takaful_Portfolio.xlsx and /TAK_05_Re_Takaful_Treaty_Pack.docx as context. (1) "Inputs" with 3 scenario columns (Base, Adverse, Severe) for lapse rate change %, claims frequency uplift %, and re-takaful retention change %; (2) "Segment Analysis" computed from the Inputs sheet with formulas for fund impact per underwriting segment; (3) "Fund Stress Summary" with calculated group-level fund surplus, exception count, and re-takaful adequacy per scenario; (4) "Sensitivity Chart" showing how fund surplus changes as lapse and claims stress increase simultaneously. Use formula references and to embed at least one tornado or sensitivity chart.'
             }
           ],
@@ -5911,14 +5934,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how comparable organisations in hospital networks and private healthcare groups responded when bed occupancy reached 92% while JCI/KARS quality scores fell to 78 and patient-safety evidence weakened. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date. Ask for a short transferability note that explains what Zava Health Malaysia should copy, adapt, or reject within the next 30 days.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'How should a nine-hospital ASEAN network protect access, accreditation readiness, and cash discipline when BOR is 92% and quality evidence is weakening?". Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Clinical Domain, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -5928,7 +5951,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana organisasi sebanding di jaringan rumah sakit dan grup layanan kesehatan swasta merespons ketika BOR mencapai 92% sementara skor JCI/KARS turun ke 78 dan bukti keselamatan pasien melemah. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi asli, dan menandai klaim yang tidak dapat diverifikasi secara independen. Kutip setiap sumber dengan tanggal publikasi. Minta catatan transferabilitas singkat tentang apa yang harus ditiru, diadaptasi, atau ditolak oleh Zava Health Indonesia dalam 30 hari ke depan.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Bagaimana jaringan sembilan rumah sakit ASEAN melindungi akses pasien, kesiapan akreditasi KARS, dan disiplin kas ketika BOR 92% dan bukti mutu melemah?". Minta Researcher menampilkan perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Domain Klinis, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -6308,11 +6331,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled \'MOH Readiness Board Brief\' using /HC_01_Hospital_Operations.xlsx and /HC_02_Clinical_Governance_Policy.docx as context. Section 1 Situation Snapshot; Section 2 Evidence and RAG Status; Section 3 Decisions Required; Section 4 Next 30-Day Actions. Format as a formal board paper with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page Word document titled \'Patient Safety Control Gap Memo\' using /HC_02_Clinical_Governance_Policy.docx and /HC_05_Patient_Safety_Audit.docx as context. Section 1 Control Obligations; Section 2 Execution Gaps; Section 3 RAG Remediation Table; Section 4 Evidence to Collect. Format as a concise management memorandum with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             }
           ],
@@ -6344,11 +6367,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled \'Hospital Network Readiness Review\' using /HC_01_Hospital_Operations.xlsx and /HC_03_Hospital_Strategy_Plan.docx as context. (1) Executive Summary; (2) RAG Dashboard; (3) What Changed; (4) Red Risks; (5) Recovery Plan; (6) Stakeholder Messages; (7) Decisions Required. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, and return as Hospital_Network_Readiness_Review.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled \'Clinical Governance Recovery Deck\' using /HC_02_Clinical_Governance_Policy.docx and /HC_05_Patient_Safety_Audit.docx as context. (1) Control Context; (2) Evidence of Drift; (3) RAG Risk Matrix; (4) Remediation Owners; (5) Next Checkpoints; (6) Appendix of Source Citations. Apply a clean assurance theme, embed a chart on slide 3, include speaker notes, and return as Clinical_Governance_Recovery.pptx ready to download.'
             }
           ],
@@ -6380,11 +6403,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled \'Hospital_Clinical_RAG_Dashboard.xlsx\' using /HC_01_Hospital_Operations.xlsx as context. (1) \'KPI Tiles\' with BOR, OT utilisation, department EBITDA, patient volume growth, and JCI/KARS score; (2) \'RAG Variance\' with ranked hospitals and departments and RAG conditional formatting Red < -20%, Amber -10% to -20%, Green > -10%; (3) \'Trend Chart\' with a chart of the pressure metric; (4) \'Watchlist Sparklines\' with weekly sparklines. Embed the charts, set up conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled \'Hospital_Recovery_Scenario_Model.xlsx\' using /HC_01_Hospital_Operations.xlsx as context. (1) \'Inputs\' with scenario assumptions; (2) \'Recovery Actions\' with owner, due date, expected benefit and RAG conditional formatting Red < -20%, Amber -10% to -20%, Green > -10%; (3) \'Bridge Chart\' with a waterfall chart; (4) \'Executive Sparklines\' with sparklines by hospital. Embed the charts, set up conditional formatting, and return the workbook ready to download.'
             }
           ],
@@ -6703,14 +6726,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how comparable organisations in pharmaceutical manufacturers and branded generics businesses responded when BPOM and MOH approval queries increased, fill rate fell to 93%, and late-stage launches became concentrated in the same 14-month window. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date. Ask for a short transferability note that explains what Zava Pharma Malaysia should copy, adapt, or reject within the next 30 days.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'How should a pharma group protect launch value, BPOM readiness, Halal MUI evidence, and supply reliability when approval queries and cold-chain failures are rising?". Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Portfolio Domain, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -6720,7 +6743,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana organisasi sebanding di produsen farmasi dan bisnis branded generics merespons ketika query BPOM dan Kemenkes meningkat, fill rate turun ke 93%, dan launch tahap akhir terkonsentrasi dalam jendela 14 bulan yang sama. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi asli, dan menandai klaim yang tidak dapat diverifikasi secara independen. Kutip setiap sumber dengan tanggal publikasi. Minta catatan transferabilitas singkat tentang apa yang harus ditiru, diadaptasi, atau ditolak oleh Zava Pharma Indonesia dalam 30 hari ke depan.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Bagaimana grup farmasi melindungi nilai peluncuran, kesiapan BPOM, bukti Halal MUI, dan keandalan suplai ketika query registrasi dan kegagalan rantai dingin meningkat?". Minta Researcher menampilkan perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Domain Portofolio, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -7100,11 +7123,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled \'BPOM Launch Readiness Board Brief\' using /PH_01_Drug_Portfolio.xlsx and /PH_02_Regulatory_Affairs_Manual.docx as context. Section 1 Situation Snapshot; Section 2 Evidence and RAG Status; Section 3 Decisions Required; Section 4 Next 30-Day Actions. Format as a formal board paper with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page Word document titled \'Regulatory Control Gap Memo\' using /PH_02_Regulatory_Affairs_Manual.docx and /PH_05_Halal_MUI_Certification.docx as context. Section 1 Control Obligations; Section 2 Execution Gaps; Section 3 RAG Remediation Table; Section 4 Evidence to Collect. Format as a concise management memorandum with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             }
           ],
@@ -7136,11 +7159,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled \'Pharma Launch Readiness Review\' using /PH_01_Drug_Portfolio.xlsx and /PH_03_Clinical_Trials_Protocol.docx as context. (1) Executive Summary; (2) RAG Dashboard; (3) What Changed; (4) Red Risks; (5) Recovery Plan; (6) Stakeholder Messages; (7) Decisions Required. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, and return as Pharma_Launch_Readiness_Review.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled \'Regulatory and Supply Recovery Deck\' using /PH_02_Regulatory_Affairs_Manual.docx and /PH_05_Halal_MUI_Certification.docx as context. (1) Control Context; (2) Evidence of Drift; (3) RAG Risk Matrix; (4) Remediation Owners; (5) Next Checkpoints; (6) Appendix of Source Citations. Apply a clean assurance theme, embed a chart on slide 3, include speaker notes, and return as Regulatory_Supply_Recovery.pptx ready to download.'
             }
           ],
@@ -7172,11 +7195,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled \'Pharma_Portfolio_RAG_Dashboard.xlsx\' using /PH_01_Drug_Portfolio.xlsx as context. (1) \'KPI Tiles\' with product revenue, gross margin, fill rate, open BPOM queries, and market share; (2) \'RAG Variance\' with ranked products and markets and RAG conditional formatting Red < -20%, Amber -10% to -20%, Green > -10%; (3) \'Trend Chart\' with a chart of the pressure metric; (4) \'Watchlist Sparklines\' with weekly sparklines. Embed the charts, set up conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled \'Pharma_Supply_Recovery_Model.xlsx\' using /PH_01_Drug_Portfolio.xlsx as context. (1) \'Inputs\' with scenario assumptions; (2) \'Recovery Actions\' with owner, due date, expected benefit and RAG conditional formatting Red < -20%, Amber -10% to -20%, Green > -10%; (3) \'Bridge Chart\' with a waterfall chart; (4) \'Executive Sparklines\' with sparklines by product. Embed the charts, set up conditional formatting, and return the workbook ready to download.'
             }
           ],
@@ -7495,14 +7518,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how comparable organisations in upstream oil and gas operators under production sharing contracts responded when lifting cost rose to USD19.8/bbl, production slipped 7% below plan, and HSSE recordable incidents increased. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date. Ask for a short transferability note that explains what Zava Oil Upstream Malaysia should copy, adapt, or reject within the next 30 days.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'How should an upstream operator protect PSC commitments, reservoir value, cash flow, and HSSE credibility when lifting cost and incidents are rising?". Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Asset Domain, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -7512,7 +7535,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana organisasi sebanding di operator hulu migas dalam skema PSC merespons ketika biaya angkat naik ke USD19.8/bbl, produksi turun 7% di bawah rencana, dan insiden recordable HSSE meningkat. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi asli, dan menandai klaim yang tidak dapat diverifikasi secara independen. Kutip setiap sumber dengan tanggal publikasi. Minta catatan transferabilitas singkat tentang apa yang harus ditiru, diadaptasi, atau ditolak oleh Zava Oil Upstream Indonesia dalam 30 hari ke depan.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Bagaimana operator hulu melindungi komitmen PSC, nilai reservoir, arus kas, dan kredibilitas HSSE ketika biaya angkat dan insiden meningkat?". Minta Researcher menampilkan perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Domain Aset, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -7892,11 +7915,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled \'PSC Asset Review Board Brief\' using /OGU_01_Production_Operations.xlsx and /OGU_02_HSE_Policy.docx as context. Section 1 Situation Snapshot; Section 2 Evidence and RAG Status; Section 3 Decisions Required; Section 4 Next 30-Day Actions. Format as a formal board paper with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page Word document titled \'HSSE Production Control Gap Memo\' using /OGU_02_HSE_Policy.docx and /OGU_05_SKK_Migas_Reporting.docx as context. Section 1 Control Obligations; Section 2 Execution Gaps; Section 3 RAG Remediation Table; Section 4 Evidence to Collect. Format as a concise management memorandum with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             }
           ],
@@ -7928,11 +7951,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled \'Upstream Asset Readiness Review\' using /OGU_01_Production_Operations.xlsx and /OGU_03_Field_Development_Plan.docx as context. (1) Executive Summary; (2) RAG Dashboard; (3) What Changed; (4) Red Risks; (5) Recovery Plan; (6) Stakeholder Messages; (7) Decisions Required. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, and return as Upstream_Asset_Readiness_Review.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled \'HSSE and Production Recovery Deck\' using /OGU_02_HSE_Policy.docx and /OGU_05_SKK_Migas_Reporting.docx as context. (1) Control Context; (2) Evidence of Drift; (3) RAG Risk Matrix; (4) Remediation Owners; (5) Next Checkpoints; (6) Appendix of Source Citations. Apply a clean assurance theme, embed a chart on slide 3, include speaker notes, and return as HSSE_Production_Recovery.pptx ready to download.'
             }
           ],
@@ -7964,11 +7987,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled \'Upstream_Field_RAG_Dashboard.xlsx\' using /OGU_01_Production_Operations.xlsx as context. (1) \'KPI Tiles\' with daily production, water cut, lifting cost, HSSE events, and capex variance; (2) \'RAG Variance\' with ranked assets and fields and RAG conditional formatting Red < -20%, Amber -10% to -20%, Green > -10%; (3) \'Trend Chart\' with a chart of the pressure metric; (4) \'Watchlist Sparklines\' with weekly sparklines. Embed the charts, set up conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled \'Upstream_Recovery_Scenario_Model.xlsx\' using /OGU_01_Production_Operations.xlsx as context. (1) \'Inputs\' with scenario assumptions; (2) \'Recovery Actions\' with owner, due date, expected benefit and RAG conditional formatting Red < -20%, Amber -10% to -20%, Green > -10%; (3) \'Bridge Chart\' with a waterfall chart; (4) \'Executive Sparklines\' with sparklines by field. Embed the charts, set up conditional formatting, and return the workbook ready to download.'
             }
           ],
@@ -8287,7 +8310,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: '',
@@ -9105,7 +9128,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: '',
@@ -9923,7 +9946,7 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: '',
@@ -10741,14 +10764,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how Indonesian and Malaysian palm-oil groups have responded to combined yield shortfalls, RSPO surveillance non-conformities, and KLHK or NGO scrutiny between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the operating and certification response within 90 days, and the buyer and regulator outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original RSPO, ISPO, KLHK, MPOB, or company filing, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best 90-day playbooks for an integrated palm-oil group facing simultaneous yield decline, an RSPO surveillance audit with 9 majors, KLHK land-use scrutiny, and conditional renewals from European premium buyers, and where do the models disagree?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -10758,7 +10781,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana grup minyak sawit Indonesia dan Malaysia merespons selisih hasil, ketidaksesuaian surveillance RSPO, dan pengawasan KLHK atau NGO yang terjadi bersamaan antara 2022-2025. Untuk minimal 3 studi kasus terpublikasi, identifikasi peristiwa pemicu, respons operasi dan sertifikasi dalam 90 hari, dan hasil pembeli dan regulator 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap dokumen asli RSPO, ISPO, KLHK, MPOB, atau filing perusahaan, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 playbook 90 hari terbaik untuk grup minyak sawit terintegrasi yang menghadapi penurunan hasil, audit surveillance RSPO dengan 9 mayor, pengawasan tata guna lahan KLHK, dan perpanjangan bersyarat dari pembeli premium Eropa secara bersamaan, dan di titik mana model-model tersebut berbeda pendapat?Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -11138,11 +11161,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Board_Pre_Read_Yield_RSPO.docx using /PLT_01_Estate_Operations.xlsx, /PLT_05_Buyer_Contracts_Register.xlsx and /PLT_02_MSPO_Certification_Manual.docx as context. Structure: (1) 1-page executive summary RAG-tagged, (2) 2-page situation diagnosis covering the 11% yield gap, 9 RSPO majors and KLHK letter, (3) 1-page 90-day operations and certification recovery programme, (4) 1-page FY2026 capex options A/B/C for the Riau refinery, (5) 1-page stakeholder map for RSPO, ISPO, KLHK, European buyers and lenders, (6) appendix with the estate-cluster RAG dashboard description. Tone: precise, board-ready, never speculative. Cite source file and section throughout. Return as Board_Pre_Read_Yield_RSPO.docx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Certification_Response_Playbook.docx using /PLT_02_MSPO_Certification_Manual.docx, /PLT_03_Estate_Operations_SOP.docx and /PLT_04_Sustainability_Roadmap.xlsx as context. Structure: (1) 1-page intro on the RSPO surveillance audit and KLHK follow-up letter, (2) 1-page non-conformity-by-non-conformity status with target, current, and gap for all 9 majors, (3) 1-page 60-day regulator engagement plan with named owners, (4) 1-page negotiation talking points covering RSPO, ISPO, and Kementerian Pertanian, (5) 1-page risk register if RSPO escalates to suspension. Cite source file and section. Return as Certification_Response_Playbook.docx.'
             }
           ],
@@ -11174,11 +11197,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Board_Deck_Yield_RSPO.pptx using /PLT_01_Estate_Operations.xlsx, /PLT_05_Buyer_Contracts_Register.xlsx and /PLT_02_MSPO_Certification_Manual.docx as context. Audience: Group Board. Theme: serious green executive. Slide list: (1) Title — Board Review: Yield, Certification & Riau Capex, (2) Situation in 60 seconds, (3) Yield variance by estate cluster (chart), (4) The 9 RSPO majors and KLHK letter, (5) 90-day operations and certification programme by week, (6) FY2026 Riau refinery capex options A/B/C, (7) Buyer impact — 3 European premium accounts and at-risk renewal volumes, (8) Regulator and lender holding lines, (9) Decisions required in next 7 days, (10) Appendix — RAG estate dashboard. Add detailed speaker notes per slide. Return as Board_Deck_Yield_RSPO.pptx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Investor_Update_Deck.pptx using /PLT_01_Estate_Operations.xlsx and /PLT_05_Buyer_Contracts_Register.xlsx as context. Audience: institutional investors and sell-side analysts. Theme: minimalist IR with Group green accents. Slide list: (1) Title — FY2025 Operating Update, (2) Headline numbers, (3) Yield trajectory and 90-day recovery plan, (4) Certification and buyer-renewal programme by buyer, (5) Capex discipline and Riau refinery decision framework, (6) Regulatory posture — RSPO, ISPO, KLHK, (7) FY2026 outlook and management commitments. Minimal text per slide, polished IR design, detailed speaker notes. Return as Investor_Update_Deck.pptx.'
             }
           ],
@@ -11210,11 +11233,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Operations_Recovery_Tracker.xlsx using /PLT_01_Estate_Operations.xlsx, /PLT_05_Buyer_Contracts_Register.xlsx and /PLT_04_Sustainability_Roadmap.xlsx as context. Tabs required: (1) Executive KPI Dashboard with tiles for Yield Gap (%), Group OER %, Certification Compliance Index, Buyer Renewal Index, plus a horizontal bar chart of estate yield variance ranked worst to best AND a clustered column chart of quarterly mill throughput by region; (2) Estate-Cluster Detail with conditional formatting RAG (Red < -15%, Amber -8% to -15%, Green > -8%); (3) RSPO Non-Conformity Tracker with status, owner, target close date, buyer-impact column; (4) Buyer Renewal Bridge by buyer with certification, KLHK, yield drivers; (5) 90-Day Action Plan by week. Return as Operations_Recovery_Tracker.xlsx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Capex_Decision_Model.xlsx using /PLT_05_Buyer_Contracts_Register.xlsx and /PLT_01_Estate_Operations.xlsx as context. Tabs required: (1) Executive Summary with KPI tiles for FY2026 Capex Envelope, Riau Refinery NPV under 3 scenarios, Certification Sensitivity, Buyer Renewal Exposure, plus a tornado chart of NPV sensitivity AND a line chart of cumulative cash flow under each scenario; (2) Scenario A — Proceed Riau Refinery on Plan; (3) Scenario B — Defer Riau by 12 Months; (4) Scenario C — Reallocate to Estate Replanting; (5) Sensitivity Drivers (CPO price, yield recovery, certification timeline). Apply conditional formatting RAG to NPV and IRR cells. Return as Capex_Decision_Model.xlsx.'
             }
           ],
@@ -11533,14 +11556,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how ASEAN BPO and shared-services groups have responded to attrition shocks above 30% combined with anchor-client SLA deterioration between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the workforce and SLA response within 90 days, and the renewal/retention outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best 90-day playbooks for an ASEAN BPO operator facing simultaneous high attrition, anchor-client renewal pressure, a Kemnaker overtime inquiry, and a BSSN data-incident notice, and where do the models disagree?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -11550,7 +11573,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana grup BPO dan shared-services ASEAN merespons guncangan attrition di atas 30% dikombinasikan dengan penurunan SLA klien anchor antara 2022-2025. Untuk minimal 3 studi kasus terpublikasi, identifikasi peristiwa pemicu, respons tenaga kerja dan SLA dalam 90 hari, dan hasil perpanjangan/retensi 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 playbook 90 hari terbaik untuk operator BPO ASEAN yang menghadapi attrition tinggi, tekanan perpanjangan klien anchor, surat lembur Kemnaker, dan notifikasi insiden data BSSN secara bersamaan, dan di titik mana model-model tersebut berbeda pendapat?Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -11930,11 +11953,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Komite_Pre_Read_Attrition_Renewals.docx using /BPO_01_Service_Delivery.xlsx, /BPO_04_Workforce_Plan.xlsx and /BPO_06_Renewal_Pipeline.xlsx as context. Structure: (1) 1-page executive summary RAG-tagged, (2) 2-page situation diagnosis covering 38% attrition and 4 amber anchor clients, (3) 1-page 90-day workforce and SLA recovery programme, (4) 1-page IDR 980B renewal options A/B/C, (5) 1-page stakeholder map for clients, Kemnaker, BSSN, UU PDP and lenders, (6) appendix with the 9-centre RAG dashboard description. Tone: precise, Komite-ready, never speculative. Cite source file and section throughout. Return as Komite_Pre_Read_Attrition_Renewals.docx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Anchor_Renewal_Playbook.docx using /BPO_06_Renewal_Pipeline.xlsx, /BPO_02_Client_Service_Agreement.docx and /BPO_03_Quality_Management_Framework.docx as context. Structure: (1) 1-page intro on the 6 anchor clients, (2) 1-page contract-by-contract status with renewal date, IDR value, and SLA performance, (3) 1-page 60-day client engagement plan with named owners, (4) 1-page negotiation talking points covering workforce stability, SLA recovery, and UU PDP compliance, (5) 1-page risk register if any of the 4 amber contracts is lost. Cite source file and section. Return as Anchor_Renewal_Playbook.docx.'
             }
           ],
@@ -11966,11 +11989,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Komite_Deck_Attrition_Renewals.pptx using /BPO_01_Service_Delivery.xlsx, /BPO_04_Workforce_Plan.xlsx and /BPO_06_Renewal_Pipeline.xlsx as context. Audience: Komite Eksekutif. Theme: serious indigo executive. Slide list: (1) Title — Komite Eksekutif: Attrition & Renewal Recovery, (2) Situation in 60 seconds, (3) Attrition by 9 delivery centres (chart), (4) The 4 amber anchor clients and SLA gaps, (5) 90-day workforce and SLA programme by week, (6) IDR 980B renewal options A/B/C, (7) Regulator impact — Kemnaker, BSSN, UU PDP, (8) Lender and client holding lines, (9) Decisions required in next 5 days, (10) Appendix — RAG centre dashboard. Add detailed speaker notes per slide. Return as Komite_Deck_Attrition_Renewals.pptx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Investor_Update_Deck.pptx using /BPO_01_Service_Delivery.xlsx and /BPO_06_Renewal_Pipeline.xlsx as context. Audience: institutional investors and sell-side analysts. Theme: minimalist IR with Group indigo accents. Slide list: (1) Title — FY2025 Operating Update, (2) Headline numbers, (3) Attrition trajectory and 90-day workforce plan, (4) SLA recovery programme by tier, (5) Renewal pipeline IDR 980B with 12-week visibility, (6) Compliance — UU PDP, Kemnaker, BSSN posture, (7) FY2026 outlook and management commitments. Minimal text per slide, polished IR design, detailed speaker notes. Return as Investor_Update_Deck.pptx.'
             }
           ],
@@ -12002,11 +12025,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate SLA_Recovery_Tracker.xlsx using /BPO_01_Service_Delivery.xlsx, /BPO_04_Workforce_Plan.xlsx and /BPO_06_Renewal_Pipeline.xlsx as context. Tabs required: (1) Executive KPI Dashboard with tiles for Group Attrition %, Blended SLA, Renewal IDR Bn at Risk, Cost-to-Serve per FTE, plus a horizontal bar chart of centre SLA variance ranked worst to best AND a clustered column chart of quarterly attrition by centre; (2) 9-Centre Detail with conditional formatting RAG (Red < -10%, Amber -5% to -10%, Green > -5%); (3) Anchor Client Tracker with status, owner, renewal date, IDR value, RAG; (4) Workforce Plan with new-hire, mid-tenure, senior cohorts; (5) 90-Day Action Plan by week. Return as SLA_Recovery_Tracker.xlsx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Renewal_Decision_Model.xlsx using /BPO_06_Renewal_Pipeline.xlsx and /BPO_01_Service_Delivery.xlsx as context. Tabs required: (1) Executive Summary with KPI tiles for Total Renewal IDR Bn, NPV under 3 scenarios, Attrition Sensitivity, SLA Sensitivity, plus a tornado chart of NPV sensitivity AND a line chart of cumulative cash flow under each scenario; (2) Scenario A — Aggressive Workforce Investment; (3) Scenario B — Selective Renewal (defend top 3, exit weakest); (4) Scenario C — Status Quo; (5) Sensitivity Drivers (attrition rate, SLA penalty, language cohort cost). Apply conditional formatting RAG to NPV and IRR cells. Return as Renewal_Decision_Model.xlsx.'
             }
           ],
@@ -12325,14 +12348,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how Indonesian and Malaysian telcos have responded to combined coverage shortfalls, ARPU compression, and regulator spectrum reviews between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the network and commercial response within 90 days, and the regulator and subscriber outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original Kominfo, BRTI, OJK, MCMC or company filing, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best 90-day playbooks for an ASEAN telco facing simultaneous USO coverage gaps, postpaid churn in priority clusters, ARPU decline, and a BRTI spectrum-utilisation review, and where do the models disagree?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -12342,7 +12365,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana telco Indonesia dan Malaysia merespons gap cakupan, kompresi ARPU, dan tinjauan spektrum regulator yang terjadi bersamaan antara 2022-2025. Untuk minimal 3 studi kasus terpublikasi, identifikasi peristiwa pemicu, respons jaringan dan komersial dalam 90 hari, dan hasil regulator dan pelanggan 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap dokumen asli Kominfo, BRTI, OJK, MCMC atau filing perusahaan, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 playbook 90 hari terbaik untuk telco ASEAN yang menghadapi gap cakupan USO, churn pascabayar di cluster prioritas, penurunan ARPU, dan tinjauan utilisasi spektrum BRTI secara bersamaan, dan di titik mana model-model tersebut berbeda pendapat?Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -12722,11 +12745,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Board_Pre_Read_Network_BRTI.docx using /TC_01_Network_Performance.xlsx, /TC_04_Subscriber_ARPU_Bridge.xlsx and /TC_05_Kominfo_BRTI_Submissions.docx as context. Structure: (1) 1-page executive summary RAG-tagged, (2) 2-page situation diagnosis covering the 14-site USO gap, 6% ARPU decline and BRTI spectrum review, (3) 1-page 90-day network and commercial recovery programme, (4) 1-page FY2026 capex options A/B/C, (5) 1-page stakeholder map for Kominfo, BRTI, OJK, lenders and subscribers, (6) appendix with the 14-cluster RAG dashboard description. Tone: precise, board-ready, never speculative. Cite source file and section throughout. Return as Board_Pre_Read_Network_BRTI.docx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Spectrum_Response_Playbook.docx using /TC_02_Spectrum_Compliance_Report.docx, /TC_05_Kominfo_BRTI_Submissions.docx and /TC_06_Capex_Approvals_Tracker.xlsx as context. Structure: (1) 1-page intro on the BRTI spectrum review and Kominfo USO commitment, (2) 1-page band-by-band utilisation status with target, current, and gap, (3) 1-page 60-day regulator engagement plan with named owners, (4) 1-page negotiation talking points covering coverage, utilisation, and digital-payments licence, (5) 1-page risk register if BRTI imposes a spectrum reallocation. Cite source file and section. Return as Spectrum_Response_Playbook.docx.'
             }
           ],
@@ -12758,11 +12781,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Board_Deck_Network_BRTI.pptx using /TC_01_Network_Performance.xlsx, /TC_04_Subscriber_ARPU_Bridge.xlsx and /TC_05_Kominfo_BRTI_Submissions.docx as context. Audience: Group Board. Theme: serious teal executive. Slide list: (1) Title — Board Review: Network, ARPU & BRTI, (2) Situation in 60 seconds, (3) Coverage variance by 14 site clusters (chart), (4) The 14-site USO gap and BRTI spectrum review, (5) 90-day network and commercial programme by week, (6) FY2026 capex options A/B/C, (7) Subscriber impact — 4 priority clusters and OJK digital-payments query, (8) Regulator and lender holding lines, (9) Decisions required in next 10 days, (10) Appendix — RAG cluster dashboard. Add detailed speaker notes per slide. Return as Board_Deck_Network_BRTI.pptx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Investor_Update_Deck.pptx using /TC_01_Network_Performance.xlsx and /TC_04_Subscriber_ARPU_Bridge.xlsx as context. Audience: institutional investors and sell-side analysts. Theme: minimalist IR with Group teal accents. Slide list: (1) Title — FY2025 Operating Update, (2) Headline numbers, (3) Network rollout trajectory and 90-day USO closing plan, (4) ARPU and churn recovery programme by cluster, (5) Capex discipline and FY2026 envelope decision framework, (6) Regulatory posture — Kominfo, BRTI, OJK, (7) FY2026 outlook and management commitments. Minimal text per slide, polished IR design, detailed speaker notes. Return as Investor_Update_Deck.pptx.'
             }
           ],
@@ -12794,11 +12817,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Network_Recovery_Tracker.xlsx using /TC_01_Network_Performance.xlsx, /TC_04_Subscriber_ARPU_Bridge.xlsx and /TC_06_Capex_Approvals_Tracker.xlsx as context. Tabs required: (1) Executive KPI Dashboard with tiles for USO Gap (sites), Group Spectrum Utilisation %, Blended ARPU, Postpaid Churn %, plus a horizontal bar chart of cluster coverage variance ranked worst to best AND a clustered column chart of quarterly spectrum utilisation by region; (2) 14-Cluster Detail with conditional formatting RAG (Red < -10%, Amber -5% to -10%, Green > -5%); (3) USO Site Tracker with status, owner, target on-air date, regulator-impact column; (4) ARPU Bridge by Cluster with mix, discounting, churn drivers; (5) 90-Day Action Plan by week. Return as Network_Recovery_Tracker.xlsx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Capex_Decision_Model.xlsx using /TC_06_Capex_Approvals_Tracker.xlsx and /TC_01_Network_Performance.xlsx as context. Tabs required: (1) Executive Summary with KPI tiles for FY2026 Capex Envelope, Network NPV under 3 scenarios, Spectrum Utilisation Sensitivity, USO Penalty Exposure, plus a tornado chart of NPV sensitivity AND a line chart of cumulative cash flow under each scenario; (2) Scenario A — Aggressive Rollout (close USO + spectrum-densify); (3) Scenario B — Targeted Rollout (focus 4 priority clusters); (4) Scenario C — Defer Non-Essential Capex; (5) Sensitivity Drivers (site cost, churn rate, ARPU recovery). Apply conditional formatting RAG to NPV and IRR cells. Return as Capex_Decision_Model.xlsx.'
             }
           ],
@@ -13117,14 +13140,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed diversified conglomerates in Malaysia, Singapore and Indonesia have closed sum-of-parts NAV discounts of 25% or more between 2020 and 2025. For at least 3 published case studies, identify the trigger event, the Board response within 90 days (divestment, spin-off, share buyback, capital return), and the NAV discount 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best playbooks for an ASEAN conglomerate to close a 32% sum-of-parts NAV discount when 2 portfolio bets are missing synergy targets, and where do the models disagree?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -13134,7 +13157,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana konglomerat diversifikasi tercatat di Indonesia, Singapura dan Malaysia menutup diskon NAV sum-of-parts 25% atau lebih antara tahun 2020 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons Direksi dalam 90 hari pertama (divestasi, spin-off, share buyback, capital return), dan diskon NAV 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi terbaik bagi konglomerat ASEAN untuk menutup diskon NAV sum-of-parts 32% ketika 2 portofolio meleset target sinergi, dan di titik mana model-model tersebut berbeda pendapat?Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -13514,11 +13537,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Capital Allocation Committee Brief — FY2025" using /DC_03_Capital_Allocation_Framework.docx and /DC_06_Board_Capital_Committee_Charter.docx as context. Section 1 Situation Snapshot (the 32% NAV discount, 2 missed-synergy subsidiaries, SC informal signal, lender concerns); Section 2 Governance Obligations (drawn from the Capital Committee Charter); Section 3 Decisions Required from the Committee; Section 4 90-Day Capital Reallocation Programme. Format as a formal Board paper with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page strategic reset briefing as a .docx using /DC_03_Capital_Allocation_Framework.docx and /DC_01_Group_Portfolio_Returns.xlsx as context. Required sections: (1) Subsidiaries to Continue at current capital weighting, (2) subsidiaries to Reset (re-underwrite the investment case), (3) subsidiaries to Divest, with one-line financial rationale per item drawn from the workbook. Apply a clean executive layout and return the document as Capital_Reset_Briefing.docx.'
             }
           ],
@@ -13550,11 +13573,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Board Capital Allocation Committee — FY2025" using /DC_01_Group_Portfolio_Returns.xlsx and /DC_03_Capital_Allocation_Framework.docx as context. (1) Executive Summary; (2) NAV vs Market Cap with discount waterfall chart; (3) The 2 Missed-Synergy Subsidiaries; (4) Root Cause Analysis; (5) 90-Day Capital Reallocation Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Committee. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, Return as Capital_Committee_FY2025.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "Analyst Call — NAV Discount FY2025" using /DC_01_Group_Portfolio_Returns.xlsx and /DC_03_Capital_Allocation_Framework.docx as context. (1) Title and Disclaimer; (2) FY2025 Group NAV Performance; (3) What Changed and Why (structural drag vs synergy slippage); (4) Subsidiary Outlook for the 2 missed-synergy subsidiaries; (5) Capital Allocation Commitments for Next 90 Days; (6) Q&A. Apply a polished IR theme with minimal text per slide, full speaker notes for the IR team, and return as Analyst_Call_NAV_FY2025.pptx.'
             }
           ],
@@ -13586,11 +13609,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Board_NAV_Dashboard_FY2025.xlsx" using /DC_01_Group_Portfolio_Returns.xlsx as context. (1) "KPI Tiles" with Look-Through NAV, Traded Market Cap, NAV Discount %, Net Debt to EBITDA, Dividend Cover, Holding Company Liquidity as tile cards across the top; (2) "Subsidiary IRR vs WACC" with IRR-WACC spread ranked worst to best for the 9 subsidiaries and conditional formatting (Red < -200bps, Amber -100 to -200bps, Green > -100bps); (3) "Quarterly Trend" with a clustered column chart of synergy delivery by quarter for the 2 missed-synergy subsidiaries; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel scenario model titled "Capital_Recovery_Scenario.xlsx" using /DC_01_Group_Portfolio_Returns.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Reallocation, Divest) for capital release MYR M, redeploy IRR uplift %, and synergy recovery %; (2) "Subsidiary P&L" computed from the Inputs sheet with formulas for each of the 9 subsidiaries; (3) "Group Roll-Up" with calculated Look-Through NAV, NAV Discount, Group EBITDA and Net Debt to EBITDA per scenario; (4) "Sensitivity Chart" showing how Group NAV Discount changes as the 2 missed-synergy subsidiaries are divested at different valuations. Use formula references (not hard-coded values) and to embed at least one tornado/sensitivity chart.'
             }
           ],
@@ -13909,7 +13932,7 @@ window.HUB_DATA = {
           tool: 'Microsoft 365 Copilot — Researcher',
           license: 'M365 Copilot + Frontier Program',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: '',
@@ -14693,7 +14716,7 @@ window.HUB_DATA = {
           tool: 'Microsoft 365 Copilot — Researcher',
           license: 'M365 Copilot + Frontier Program',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: '',
@@ -15477,14 +15500,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed property and REIT groups in Malaysia, Singapore and Indonesia have responded to revenue-recognition queries from regulators (Bursa Malaysia, SGX, IDX) between 2022 and 2025, where unbilled sales miss budget by more than 15% and at least one flagship project slips. For at least 3 published case studies, identify the trigger event, the Board response within 30 days, and the regulator and unit-holder outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original disclosure, and flag any claim it cannot independently verify. Cite every source with publication date and disclosure reference.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 most defensible turnaround playbooks for a sponsor-managed REIT in ASEAN when the developer slips on flagship projects, mall occupancy drops below 82%, and the NAV gap to peers widens by more than 10%, and where do the models disagree on cutting distribution versus protecting NAV?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent and Implementation Risk.'
             }
           ],
@@ -15494,7 +15517,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana grup properti dan DIRE tercatat di Indonesia, Malaysia, dan Singapura merespons pertanyaan regulator atas pengakuan pendapatan (OJK/BEI, Bursa Malaysia, SGX) antara 2022 hingga 2025, di mana penjualan unbilled meleset lebih dari 15% dan minimal satu proyek unggulan terlambat. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons Direksi dalam 30 hari pertama, dan hasil regulator serta pemegang unit 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap keterbukaan asli, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal dan referensi keterbukaan.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi turnaround paling defensif untuk DIRE yang dikelola sponsor di ASEAN ketika pengembang terlambat pada proyek unggulan, okupansi mal turun di bawah 82%, dan gap NAV terhadap peer melebar lebih dari 10%, dan di titik mana model-model berbeda pendapat antara memotong distribusi versus melindungi NAV?Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -15874,11 +15897,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a Word document called "REIT Clarification Memo" using /file PROP_05_Bursa_Disclosure_Pack.docx and /file PROP_06_Lender_Covenant_Schedule.xlsx as context. Ask the Word Agent to draft a 2-page memo addressed to the Bursa-facing legal counsel covering the unbilled-sales miss of 22%, the three slipping flagships, the proposed disclosure language, and a 30-day commitment table. Include a RAG summary at the top and a numbered list of 5 questions counsel should escalate to Compliance.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a Word document called "REIT Trustee Position Paper" using /file PROP_02_REIT_Distribution_Policy.docx and /file PROP_04_Mall_Tenancy_Tracker.xlsx. Ask the Word Agent to draft a 3-page paper for the trustee covering NAV bridge, distribution coverage, mall occupancy recovery, and proposed joint communication to unit-holders. Include a 4-row RAG decision table at the end with Recommended Action, Owner, Date, and Risk if Deferred.'
             }
           ],
@@ -15910,11 +15933,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 10-slide PowerPoint deck called "Aman Jaya Board Strategy Pack" using /file PROP_01_Project_Performance.xlsx, /file PROP_04_Mall_Tenancy_Tracker.xlsx and /file PROP_06_Lender_Covenant_Schedule.xlsx. Slides: Title, MD Opening, Project Variance Snapshot, Mall Occupancy Snapshot, REIT NAV Gap, Covenant Headroom, 60-Day Corrective Programme, Lender & Bursa Holding Lines, Decision Tree, Decisions Requested. Each substantive slide must have a RAG dot in the top-right and a one-line takeaway in the footer.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck called "REIT Trustee Update" using /file PROP_02_REIT_Distribution_Policy.docx and /file PROP_06_Lender_Covenant_Schedule.xlsx. Slides: Title, Distribution Outlook, NAV Bridge, Mall Occupancy Linkage, Covenant Headroom, Recommended Joint Communication. Add a callout box on the NAV Bridge slide listing the 3 single largest contributors to the gap.'
             }
           ],
@@ -15946,11 +15969,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate an Excel workbook called "Property & REIT Board Tracker" using /file PROP_01_Project_Performance.xlsx and /file PROP_04_Mall_Tenancy_Tracker.xlsx. Create 4 tabs: Project Variance Dashboard (5 KPI tiles + ranked bar chart + sparkline column with conditional RAG), Mall Occupancy Tracker (waterfall chart per underperforming mall + RAG flags below 82%), 60-Day Action Plan (owner, due date, RAG status), and Decision Log. Apply consistent green/amber/red conditional formatting across all numeric cells.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate an Excel workbook called "REIT Distribution Tracker" using /file PROP_02_REIT_Distribution_Policy.docx and /file PROP_06_Lender_Covenant_Schedule.xlsx. Create 4 tabs: NAV Bridge (waterfall chart Q1 to Q4 NAV), Distribution Coverage (KPI tiles for forward DPU, payout ratio, gearing), Covenant Headroom (line chart 8 quarters + sparkline column with RAG conditional formatting where headroom below 10% is red), and Trustee Q&A Log. Add a summary tile band at the top of the first tab.'
             }
           ],
@@ -16269,14 +16292,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed integrated logistics and 3PL groups in Malaysia, Singapore, Indonesia and Thailand have responded to anchor e-commerce SLA breaches, fleet utilisation drops below 75%, and regulator compliance notices between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the operations response within 30 days, and the customer and regulator outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original disclosure or trade press, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 most defensible 90-day stabilisation playbooks for a national 3PL when on-time delivery slips below 90%, three anchor e-commerce contracts trigger service credits, fleet utilisation drops below 75%, and a regulator compliance notice lands in the same quarter, and where do the models disagree on the trade-off between aggressive contract renegotiation and quiet operational repair?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent and Implementation Risk.'
             }
           ],
@@ -16286,7 +16309,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana grup logistik terintegrasi dan 3PL tercatat di Indonesia, Malaysia, Singapura, dan Thailand merespons pelanggaran SLA e-commerce anchor, penurunan utilisasi armada di bawah 75%, dan teguran kepatuhan regulator antara 2022 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons operasi dalam 30 hari pertama, dan hasil pelanggan dan regulator 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap keterbukaan asli atau pers perdagangan, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 playbook stabilisasi 90 hari paling defensif untuk 3PL nasional ketika ketepatan waktu turun di bawah 90%, tiga kontrak e-commerce anchor memicu service credit, utilisasi armada turun di bawah 75%, dan teguran kepatuhan regulator datang di kuartal yang sama, dan di titik mana model-model berbeda pendapat tentang trade-off antara renegosiasi kontrak agresif dan perbaikan operasional yang tenang?Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -16666,11 +16689,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a Word document called "Anchor Service-Credit Memo" using /file LOG_03_Customer_SLA_Manual.docx and /file LOG_04_Contract_Pipeline.xlsx as context. Ask the Word Agent to draft a 2-page memo addressed to the General Counsel covering the three anchor breaches, the proposed service-recovery sprint, the cumulative service-credit exposure, and a 30-day commitment table. Include a RAG summary at the top and a numbered list of 5 questions counsel should escalate to the Anchor Account Owners.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a Word document called "APAD Compliance Position Paper" using /file LOG_05_Driver_Compliance_Pack.docx and /file LOG_01_Fleet_Performance.xlsx. Ask the Word Agent to draft a 3-page paper for APAD covering immediate remediation, 90-day driver behaviour roadmap, telematics integration plan, and weekly monitoring cadence. Include a 4-row RAG decision table at the end with Recommended Action, Owner, Date, and Risk if Deferred.'
             }
           ],
@@ -16702,11 +16725,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 10-slide PowerPoint deck called "Logistics QBR Pack" using /file LOG_01_Fleet_Performance.xlsx, /file LOG_04_Contract_Pipeline.xlsx and /file LOG_06_Diesel_Cost_Schedule.xlsx. Slides: Title, MD Opening, Fleet Variance Snapshot, Anchor Contract Health, Diesel Cost Bridge, Operating Margin Gap, 90-Day Stabilisation Programme, Customer & APAD Holding Lines, Decision Tree, Decisions Requested. Each substantive slide must have a RAG dot in the top-right and a one-line takeaway in the footer.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck called "Anchor Customer Update" using /file LOG_03_Customer_SLA_Manual.docx and /file LOG_04_Contract_Pipeline.xlsx. Slides: Title, SLA Health, Service-Credit Exposure, Recovery Sprint Plan, Renewal Outlook, Recommended Joint Communication. Add a callout box on the SLA Health slide listing the 3 single largest contributors to the on-time drop.'
             }
           ],
@@ -16738,11 +16761,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate an Excel workbook called "Logistics QBR Tracker" using /file LOG_01_Fleet_Performance.xlsx and /file LOG_04_Contract_Pipeline.xlsx. Create 4 tabs: Fleet Variance Dashboard (5 KPI tiles + ranked bar chart + sparkline column with conditional RAG), Anchor Contract Tracker (waterfall chart per service-credit anchor + RAG flags below 88% SLA), 90-Day Action Plan (owner, due date, RAG status), and Decision Log. Apply consistent green/amber/red conditional formatting across all numeric cells.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate an Excel workbook called "Diesel & Margin Tracker" using /file LOG_06_Diesel_Cost_Schedule.xlsx and /file LOG_01_Fleet_Performance.xlsx. Create 4 tabs: Cost Bridge (waterfall chart Q1 to Q4 operating margin), Hedge Coverage (KPI tiles for forward hedge ratio, average contracted price, exposure), 12-Week Watchlist (line chart 8 quarters + sparkline column with RAG conditional formatting where margin gap below -200 bp is red), and Hedge Decision Log. Add a summary tile band at the top of the first tab.'
             }
           ],
@@ -17061,14 +17084,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed coal mining groups in Indonesia, Malaysia and Australia have responded to simultaneous price collapse (Newcastle index drop greater than 10%), regulator compliance audits (Indonesian Kementerian ESDM, KLHK or Australian state regulators), and community grievance escalations between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the operations and sustainability response within 30 days, and the regulator and offtaker outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original disclosure or trade press, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 most defensible 90-day stabilisation playbooks for an integrated thermal coal producer when the Newcastle index falls 14%, two mines slip on strip ratio, the regulator opens a royalty audit, a reclamation milestone slips, and a community grievance escalates simultaneously, and where do the models disagree on the trade-off between cutting strip ratio to protect cash and accelerating reclamation to protect licence?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent and Implementation Risk.'
             }
           ],
@@ -17078,7 +17101,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana grup pertambangan batu bara tercatat di Indonesia, Malaysia, dan Australia merespons collapse harga secara bersamaan (penurunan indeks Newcastle lebih dari 10%), audit kepatuhan regulator (Kementerian ESDM Indonesia, KLHK atau regulator negara bagian Australia), dan eskalasi keluhan komunitas antara 2022 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons operasi dan keberlanjutan dalam 30 hari pertama, dan hasil regulator dan offtaker 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap keterbukaan asli atau pers perdagangan, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 playbook stabilisasi 90 hari paling defensif untuk produsen thermal coal terintegrasi ketika indeks Newcastle turun 14%, dua tambang terlambat pada strip ratio, regulator membuka audit royalti, milestone reklamasi terlambat, dan keluhan komunitas tereskalasi secara bersamaan, dan di titik mana model-model berbeda pendapat tentang trade-off antara memotong strip ratio untuk melindungi kas dan mempercepat reklamasi untuk melindungi izin?Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -17458,11 +17481,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a Word document called "ESDM Royalty Audit Memo" using /file COAL_04_Royalty_PNBP_Schedule.xlsx and /file COAL_06_Stakeholder_Holding_Lines.docx as context. Ask the Word Agent to draft a 2-page memo addressed to the Group General Counsel covering the audit scope, the cumulative royalty exposure, the proposed PNBP reconciliation methodology, and a 30-day commitment table. Include a RAG summary at the top and a numbered list of 5 questions counsel should escalate to ESDM.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a Word document called "Community Grievance Position Paper" using /file COAL_03_Environmental_Management_Plan.docx and /file COAL_06_Stakeholder_Holding_Lines.docx. Ask the Word Agent to draft a 3-page paper for the South Sumatra community covering the haul-road grievance, the proposed remediation plan, the reclamation acceleration commitment, and the new community engagement cadence. Include a 4-row RAG decision table at the end with Recommended Action, Owner, Date, and Risk if Deferred.'
             }
           ],
@@ -17494,11 +17517,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 10-slide PowerPoint deck called "Mining Board Sustainability & Operations Pack" using /file COAL_01_Mining_Operations.xlsx, /file COAL_04_Royalty_PNBP_Schedule.xlsx and /file COAL_05_Marketing_Pricing_Pack.xlsx. Slides: Title, CEO Opening, Mine Variance Snapshot, Newcastle & Margin Bridge, Royalty / ESDM Exposure, Reclamation & KLHK Status, Community Grievance Snapshot, 90-Day Stabilisation Programme, Decision Tree, Decisions Requested. Each substantive slide must have a RAG dot in the top-right and a one-line takeaway in the footer.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck called "Offtaker Update" using /file COAL_05_Marketing_Pricing_Pack.xlsx and /file COAL_01_Mining_Operations.xlsx. Slides: Title, Newcastle Outlook, Offtake Contract Health, Shipment Risk, 90-Day Stabilisation Plan, Recommended Joint Communication. Add a callout box on the Offtake Contract Health slide listing the 3 single largest exposures.'
             }
           ],
@@ -17530,11 +17553,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate an Excel workbook called "Mining Board Tracker" using /file COAL_01_Mining_Operations.xlsx and /file COAL_04_Royalty_PNBP_Schedule.xlsx. Create 4 tabs: Mine Variance Dashboard (5 KPI tiles + ranked bar chart + sparkline column with conditional RAG), Royalty Exposure Tracker (waterfall chart per high-exposure mine + RAG flags above MYR 5M), 90-Day Action Plan (owner, due date, RAG status), and Decision Log. Apply consistent green/amber/red conditional formatting across all numeric cells.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate an Excel workbook called "ESG & Community Tracker" using /file COAL_03_Environmental_Management_Plan.docx and /file COAL_01_Mining_Operations.xlsx. Create 4 tabs: Reclamation Dashboard (waterfall chart Q1 to Q4 reclamation completion %), Community Grievance Heatmap (KPI tiles for grievance count by site, NGO engagement, response time), HSE Watchlist (line chart 8 quarters + sparkline column with RAG conditional formatting where incident rate above 0.5 is red), and Stakeholder Decision Log. Add a summary tile band at the top of the first tab.'
             }
           ],
@@ -17853,14 +17876,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed hospitality groups in Indonesia, Malaysia, Thailand and Singapore have responded to simultaneous RevPAR softening (more than 10% decline at flagship resorts), OTA commission re-tiering (commissions stepping up by more than 4 percentage points), Capex maintenance backlog flagged on brand-standard audits, and owner / managed-property disputes between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the commercial and asset-management response within 30 days, and the OTA-share and owner outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original disclosure, listed-company filing or trade press, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 most defensible 90-day stabilisation playbooks for a multi-country hospitality operator when RevPAR drops 11%, OTA commissions step up to 23%, Capex backlog hits brand-standard Red flags, and a managed-property owner triggers an asset-management dispute simultaneously, and where do the models disagree on the trade-off between defending direct-channel mix and protecting near-term occupancy via OTAs?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent and Implementation Risk.'
             }
           ],
@@ -17870,7 +17893,7 @@ window.HUB_DATA = {
               prompt: 'Bagaimana grup perhotelan tercatat di Indonesia, Malaysia, Thailand, dan Singapura merespons pelemahan RevPAR secara bersamaan (penurunan lebih dari 10% di resort unggulan), re-tier komisi OTA (komisi naik lebih dari 4 poin persentase), backlog Capex pemeliharaan yang ditandai pada audit brand-standard, dan sengketa pemilik / properti yang dikelola antara 2022 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons komersial dan asset management dalam 30 hari pertama, dan hasil OTA-share dan pemilik 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap keterbukaan asli, filing perusahaan tercatat, atau pers perdagangan, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 playbook stabilisasi 90 hari paling defensif untuk operator perhotelan multi-negara ketika RevPAR turun 11%, komisi OTA naik ke 23%, backlog Capex memicu flag Merah brand-standard, dan pemilik properti yang dikelola memicu sengketa asset management secara bersamaan, dan di titik mana model-model berbeda pendapat tentang trade-off antara mempertahankan bauran kanal langsung dan melindungi okupansi jangka pendek lewat OTA?Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -18250,11 +18273,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a Word document called "OTA Commission Review Memo" using /file HTL_05_OTA_Contract_Tracker.xlsx and /file HTL_03_Revenue_Management_Policy.docx as context. Ask the Word Agent to draft a 2-page memo addressed to the Group General Counsel covering the OTA re-tier scope, the cumulative net-revenue exposure, the proposed renegotiation methodology, and a 30-day commitment table. Include a RAG summary at the top and a numbered list of 5 questions counsel should escalate to the OTAs.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a Word document called "Owner Dispute Position Paper" using /file HTL_06_Owner_Asset_Management_Brief.docx and /file HTL_02_Brand_Standards_Manual.docx. Ask the Word Agent to draft a 3-page paper for the disputing owner covering the management-fee position, the proposed renovation pacing plan, the Capex acceleration commitment, and the new asset-management cadence. Include a 4-row RAG decision table at the end with Recommended Action, Owner, Date, and Risk if Deferred.'
             }
           ],
@@ -18286,11 +18309,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 10-slide PowerPoint deck called "Hospitality Board Commercial & Asset-Management Pack" using /file HTL_01_Property_Performance.xlsx, /file HTL_04_Capex_Maintenance_Pipeline.xlsx and /file HTL_05_OTA_Contract_Tracker.xlsx. Slides: Title, CEO Opening, Property RevPAR Snapshot, OTA Commission Bridge, Capex & Brand Standards Status, Owner Dispute Snapshot, Channel Mix Outlook, 90-Day Stabilisation Programme, Decision Tree, Decisions Requested. Each substantive slide must have a RAG dot in the top-right and a one-line takeaway in the footer.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck called "OTA Update" using /file HTL_05_OTA_Contract_Tracker.xlsx and /file HTL_01_Property_Performance.xlsx. Slides: Title, OTA Commission Outlook, OTA Contract Health, Direct-Channel Risk, 90-Day Stabilisation Plan, Recommended Joint Communication. Add a callout box on the OTA Contract Health slide listing the 3 single largest exposures.'
             }
           ],
@@ -18322,11 +18345,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate an Excel workbook called "Hospitality Board Tracker" using /file HTL_01_Property_Performance.xlsx and /file HTL_05_OTA_Contract_Tracker.xlsx. Create 4 tabs: Property RevPAR Dashboard (5 KPI tiles + ranked bar chart + sparkline column with conditional RAG), OTA Commission Tracker (waterfall chart per high-exposure OTA + RAG flags above 23% commission), 90-Day Action Plan (owner, due date, RAG status), and Decision Log. Apply consistent green/amber/red conditional formatting across all numeric cells.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate an Excel workbook called "Brand & Capex Tracker" using /file HTL_02_Brand_Standards_Manual.docx and /file HTL_04_Capex_Maintenance_Pipeline.xlsx. Create 4 tabs: Brand Standards Dashboard (waterfall chart Q1 to Q4 brand-standard score), Capex Backlog Heatmap (KPI tiles for backlog days by property, owner approval lead time, guest complaint rate), Owner & Auditor Watchlist (line chart 8 quarters + sparkline column with RAG conditional formatting where backlog days above 90 is red), and Stakeholder Decision Log. Add a summary tile band at the top of the first tab.'
             }
           ],
@@ -18645,15 +18668,15 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed EPC contractors in Malaysia and Indonesia have responded to flagship project slippage of more than 12 weeks, variation order growth of more than 30%, and LPJK/PUPR regulatory reviews between 2022 and 2025. For at least 3 published cases identify the trigger event, the Board response within 30 days, and the financial outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
-              prompt: 'Convene a multi-model debate (GPT-5, Claude, Gemini) on the question \'What are the 3 best playbooks for an ASEAN EPC contractor when schedule slippage, variation order escalation, HSE incidents, and LPJK scrutiny converge in a single quarter, and where do the models disagree?\' Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
+              prompt: 'Convene a parallel multi-model report (GPT-5, Claude, Claude Sonnet 4.7) on the question \'What are the 3 best playbooks for an ASEAN EPC contractor when schedule slippage, variation order escalation, HSE incidents, and LPJK scrutiny converge in a single quarter, and where do the models disagree?\' Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
           promptsID: [
@@ -18662,8 +18685,8 @@ window.HUB_DATA = {
               prompt: 'Bagaimana kontraktor EPC tercatat di Indonesia dan Malaysia merespons keterlambatan proyek unggulan lebih dari 12 minggu, pertumbuhan variation order lebih dari 30%, dan tinjauan regulasi LPJK/PUPR antara tahun 2022 hingga 2025. Untuk minimal 3 kasus terpublikasi, identifikasi peristiwa pemicu, respons Direksi dalam 30 hari, dan hasil finansial 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi tiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
-              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Gemini) atas pertanyaan \'Apa 3 playbook terbaik untuk kontraktor EPC ASEAN ketika keterlambatan jadwal, eskalasi variation order, insiden K3, dan pengawasan LPJK terjadi bersamaan dalam satu kuartal, dan di titik mana model-model tersebut berbeda pendapat?\' Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
+              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Claude Sonnet 4.7) atas pertanyaan \'Apa 3 playbook terbaik untuk kontraktor EPC ASEAN ketika keterlambatan jadwal, eskalasi variation order, insiden K3, dan pengawasan LPJK terjadi bersamaan dalam satu kuartal, dan di titik mana model-model tersebut berbeda pendapat?\' Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
           promptsBM: [],
@@ -19042,11 +19065,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Project_Committee_Brief.docx using /CON_02_Project_Management_Manual.docx, /CON_03_HSE_Policy.docx and /CON_01_Project_Portfolio.xlsx as context. Section 1 Situation Snapshot (14-week slippage, variation orders +38%, HSE incidents +22%, LPJK/PUPR reviews); Section 2 Governance Obligations (drawn from Project Management Manual and HSE Policy); Section 3 Decisions Required from the Committee; Section 4 30-Day Corrective Programme. Format as a formal Board paper with a RAG summary at the top. Return as Project_Committee_Brief.docx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Compliance_Recovery_Programme.docx using /CON_03_HSE_Policy.docx, /CON_05_Subcontractor_Compliance.docx and /CON_01_Project_Portfolio.xlsx as context. Required sections: (1) Incident Recap and Root Cause, (2) Subcontractor Controls Reset, (3) Site Cadence for the Next 90 Days, (4) Reporting and Escalation to LPJK and Kementerian PUPR, with a one-line owner per item. Apply a clean operating layout with a RAG status block per section. Return as Compliance_Recovery_Programme.docx.'
             }
           ],
@@ -19078,11 +19101,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Project_Committee_Deck.pptx using /CON_01_Project_Portfolio.xlsx and /CON_02_Project_Management_Manual.docx as context. (1) Executive Summary; (2) Portfolio Performance vs Plan with schedule bar chart; (3) The 3 Worst-Schedule Projects; (4) LPJK and PUPR Queries Root Cause; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required to Release Further Mobilisation. Apply a serious executive theme, embed a chart on slide 2, include speaker notes. Return as Project_Committee_Deck.pptx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate HSE_Discipline_Deck.pptx using /CON_03_HSE_Policy.docx and /CON_05_Subcontractor_Compliance.docx as context. (1) Title and Disclaimer; (2) TRIR Snapshot; (3) Site and Subcontractor Performance; (4) Subcontractor Controls Reset; (5) Approval Gates and Cadence; (6) Management Commitments. Apply a polished operations-review theme with minimal text per slide and full speaker notes. Return as HSE_Discipline_Deck.pptx.'
             }
           ],
@@ -19114,11 +19137,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Committee_KPI_Dashboard.xlsx using /CON_01_Project_Portfolio.xlsx and /CON_06_Cash_Flow_Forecast.xlsx as context. (1) \'KPI Tiles\' with Schedule Variance, Cost Variance, Variation Order Ratio, Working Capital, Subcontractor OTIF, FY2026 Capex Ask as tile cards across the top; (2) \'Project Variance\' with cost variance ranked worst to best for the 6 projects and conditional formatting (Red < -8%, Amber -3 to -8%, Green > -3%); (3) \'Weekly Trend\' with a clustered column chart of variation orders by project across the last 13 weeks; (4) \'Watchlist Sparklines\' with sparklines for each KPI over 13 weeks. Embed the charts and set up the conditional formatting. Return as Committee_KPI_Dashboard.xlsx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Margin_Recovery_Model.xlsx using /CON_01_Project_Portfolio.xlsx and /CON_04_Variation_Order_Tracker.xlsx as context. (1) \'Inputs\' with 3 scenario columns (Base, Recovery, Downside) for variation order ratio %, schedule slip weeks, and subcontractor OTIF %; (2) \'Project P&L\' computed from Inputs with formulas for each of the 6 projects; (3) \'Portfolio Roll-Up\' with calculated Revenue, Gross Margin, EBITDA Margin and Free Cash Flow per scenario; (4) \'Sensitivity Chart\' showing how Group EBITDA changes as variation orders and schedule assumptions vary. Use formula references (not hard-coded values) and to embed a tornado chart. Return as Margin_Recovery_Model.xlsx.'
             }
           ],
@@ -19437,15 +19460,15 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed airport operators in Southeast Asia have responded to ICAO USOAP priority findings, multi-year aeronautical tariff freezes, and capex overruns of more than 20% between 2022 and 2025. For at least 3 published cases identify the trigger event, the Board response within 30 days, and the financial outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
-              prompt: 'Convene a multi-model debate (GPT-5, Claude, Gemini) on the question \'What are the 3 best playbooks for an ASEAN airport operator when capacity saturation, ICAO findings, slot disputes with anchor carriers, and a stalled tariff revision converge in a single quarter, and where do the models disagree?\' Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
+              prompt: 'Convene a parallel multi-model report (GPT-5, Claude, Claude Sonnet 4.7) on the question \'What are the 3 best playbooks for an ASEAN airport operator when capacity saturation, ICAO findings, slot disputes with anchor carriers, and a stalled tariff revision converge in a single quarter, and where do the models disagree?\' Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
           promptsID: [
@@ -19454,8 +19477,8 @@ window.HUB_DATA = {
               prompt: 'Bagaimana operator bandara tercatat di Asia Tenggara merespons temuan prioritas USOAP ICAO, pembekuan tarif jasa aeronautika multi-tahun, dan pembengkakan capex lebih dari 20% antara tahun 2022 hingga 2025. Untuk minimal 3 kasus terpublikasi, identifikasi peristiwa pemicu, respons Direksi dalam 30 hari, dan hasil finansial 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi tiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
-              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Gemini) atas pertanyaan \'Apa 3 playbook terbaik untuk operator bandara ASEAN ketika saturasi kapasitas, temuan ICAO, sengketa slot dengan maskapai jangkar, dan revisi tarif yang macet terjadi bersamaan dalam satu kuartal, dan di titik mana model-model tersebut berbeda pendapat?\' Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
+              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Claude Sonnet 4.7) atas pertanyaan \'Apa 3 playbook terbaik untuk operator bandara ASEAN ketika saturasi kapasitas, temuan ICAO, sengketa slot dengan maskapai jangkar, dan revisi tarif yang macet terjadi bersamaan dalam satu kuartal, dan di titik mana model-model tersebut berbeda pendapat?\' Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
           promptsBM: [],
@@ -19834,11 +19857,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Capex_Committee_Brief.docx using /AVN_02_Airport_Concession_Policy.docx, /AVN_03_Emergency_Response_Plan.docx and /AVN_01_Airport_Operations.xlsx as context. Section 1 Situation Snapshot (112% capacity utilisation, capex +24%, ICAO 14 findings, DKPPU airworthiness review); Section 2 Governance Obligations (drawn from Airport Concession Policy and Emergency Response Plan); Section 3 Decisions Required from the Committee; Section 4 30-Day Corrective Programme. Format as a formal Board paper with a RAG summary at the top. Return as Capex_Committee_Brief.docx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Compliance_Recovery_Programme.docx using /AVN_03_Emergency_Response_Plan.docx, /AVN_05_Slot_Allocation_Tracker.xlsx and /AVN_01_Airport_Operations.xlsx as context. Required sections: (1) ICAO Findings Recap and Root Cause, (2) Sub-Unit Controls Reset, (3) Aerodrome Cadence for the Next 90 Days, (4) Reporting and Escalation to ICAO, DKPPU and Kementerian Perhubungan, with a one-line owner per item. Apply a clean operating layout with a RAG status block per section. Return as Compliance_Recovery_Programme.docx.'
             }
           ],
@@ -19870,11 +19893,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Capex_Committee_Deck.pptx using /AVN_01_Airport_Operations.xlsx and /AVN_02_Airport_Concession_Policy.docx as context. (1) Executive Summary; (2) Network Performance vs Plan with revenue bar chart; (3) The 3 Worst-Yield Hubs; (4) ICAO and DKPPU Findings Root Cause; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required to Release Further Capex Tranches. Apply a serious executive theme, embed a chart on slide 2, include speaker notes. Return as Capex_Committee_Deck.pptx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Safety_Discipline_Deck.pptx using /AVN_03_Emergency_Response_Plan.docx and /AVN_02_Airport_Concession_Policy.docx as context. (1) Title and Disclaimer; (2) Safety-Incident Snapshot; (3) Hub and Sub-Unit Performance; (4) Sub-Unit Controls Reset; (5) Approval Gates and Cadence; (6) Management Commitments. Apply a polished operations-review theme with minimal text per slide and full speaker notes. Return as Safety_Discipline_Deck.pptx.'
             }
           ],
@@ -19906,11 +19929,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Committee_KPI_Dashboard.xlsx using /AVN_01_Airport_Operations.xlsx and /AVN_06_Capex_Plan.docx as context. (1) \'KPI Tiles\' with Revenue Variance, Capacity Utilisation, Aeronautical Yield, Capex Burn, Slot OTIF, FY2026 Capex Ask as tile cards across the top; (2) \'Hub Variance\' with revenue variance ranked worst to best for the 14 hubs and conditional formatting (Red < -8%, Amber -3 to -8%, Green > -3%); (3) \'Weekly Trend\' with a clustered column chart of aeronautical revenue by hub across the last 13 weeks; (4) \'Watchlist Sparklines\' with sparklines for each KPI over 13 weeks. Embed the charts and set up the conditional formatting. Return as Committee_KPI_Dashboard.xlsx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Yield_Recovery_Model.xlsx using /AVN_01_Airport_Operations.xlsx and /AVN_04_Aeronautical_Tariff_Model.xlsx as context. (1) \'Inputs\' with 3 scenario columns (Base, Recovery, Downside) for tariff revision %, capacity uplift %, and slot OTIF %; (2) \'Hub P&L\' computed from Inputs with formulas for each of the 14 hubs; (3) \'Network Roll-Up\' with calculated Revenue, Gross Margin, EBITDA Margin and Free Cash Flow per scenario; (4) \'Sensitivity Chart\' showing how Group EBITDA changes as tariff and capacity assumptions vary. Use formula references (not hard-coded values) and to embed a tornado chart. Return as Yield_Recovery_Model.xlsx.'
             }
           ],
@@ -20229,15 +20252,15 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed grocery retailers in Malaysia and Indonesia have responded to SSS shortfalls of more than 200bp, gross margin compression of more than 150bp from shrinkage, and BPOM/Halal MUI/Kementerian Perdagangan scrutiny between 2022 and 2025. For at least 3 published cases identify the trigger event, the Board response within 30 days, and the financial outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
-              prompt: 'Convene a multi-model debate (GPT-5, Claude, Gemini) on the question \'What are the 3 best playbooks for an ASEAN grocery retailer when SSS misses, shrinkage spikes, halal/BPOM scrutiny, and weak promo ROI converge in a single quarter, and where do the models disagree?\' Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
+              prompt: 'Convene a parallel multi-model report (GPT-5, Claude, Claude Sonnet 4.7) on the question \'What are the 3 best playbooks for an ASEAN grocery retailer when SSS misses, shrinkage spikes, halal/BPOM scrutiny, and weak promo ROI converge in a single quarter, and where do the models disagree?\' Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
           promptsID: [
@@ -20246,8 +20269,8 @@ window.HUB_DATA = {
               prompt: 'Bagaimana peritel grocery tercatat di Indonesia dan Malaysia merespons kekurangan SSS lebih dari 200bp, kompresi margin kotor lebih dari 150bp dari shrinkage, dan pengawasan BPOM/Halal MUI/Kementerian Perdagangan antara tahun 2022 hingga 2025. Untuk minimal 3 kasus terpublikasi, identifikasi peristiwa pemicu, respons Direksi dalam 30 hari, dan hasil finansial 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi tiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
-              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Gemini) atas pertanyaan \'Apa 3 playbook terbaik untuk peritel grocery ASEAN ketika SSS meleset, shrinkage melonjak, pengawasan halal/BPOM, dan ROI promo lemah terjadi bersamaan dalam satu kuartal, dan di titik mana model-model tersebut berbeda pendapat?\' Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
+              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Claude Sonnet 4.7) atas pertanyaan \'Apa 3 playbook terbaik untuk peritel grocery ASEAN ketika SSS meleset, shrinkage melonjak, pengawasan halal/BPOM, dan ROI promo lemah terjadi bersamaan dalam satu kuartal, dan di titik mana model-model tersebut berbeda pendapat?\' Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
           promptsBM: [],
@@ -20626,11 +20649,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Investment_Committee_Brief.docx using /RT_02_Store_Operations_Manual.docx, /RT_05_Halal_Compliance_Register.docx and /RT_01_Store_Performance.xlsx as context. Section 1 Situation Snapshot (SSS 1.4% vs plan 4.6%, gross margin -180bp, BPOM/Halal MUI scrutiny, Kementerian Perdagangan 67-store price-display review); Section 2 Governance Obligations (drawn from Store Operations Manual and Halal Compliance Register); Section 3 Decisions Required from the Committee; Section 4 30-Day Corrective Programme. Format as a formal Board paper with a RAG summary at the top. Return as Investment_Committee_Brief.docx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Compliance_Recovery_Programme.docx using /RT_05_Halal_Compliance_Register.docx, /RT_03_Supplier_Management_Policy.docx and /RT_01_Store_Performance.xlsx as context. Required sections: (1) Compliance Incident Recap and Root Cause, (2) Private-Label Supplier Controls Reset, (3) Store Cadence for the Next 90 Days, (4) Reporting and Escalation to BPOM, Halal MUI and Kementerian Perdagangan, with a one-line owner per item. Apply a clean operating layout with a RAG status block per section. Return as Compliance_Recovery_Programme.docx.'
             }
           ],
@@ -20662,11 +20685,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Investment_Committee_Deck.pptx using /RT_01_Store_Performance.xlsx and /RT_02_Store_Operations_Manual.docx as context. (1) Executive Summary; (2) Network Performance vs Plan with SSS bar chart; (3) The 3 Worst-Margin Regions; (4) BPOM, Halal MUI and Kementerian Perdagangan Queries Root Cause; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required to Release the FY2026 Store-Investment Envelope. Apply a serious executive theme, embed a chart on slide 2, include speaker notes. Return as Investment_Committee_Deck.pptx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Compliance_Discipline_Deck.pptx using /RT_05_Halal_Compliance_Register.docx and /RT_03_Supplier_Management_Policy.docx as context. (1) Title and Disclaimer; (2) Compliance Snapshot; (3) Region and Supplier Performance; (4) Private-Label Controls Reset; (5) Approval Gates and Cadence; (6) Management Commitments. Apply a polished operations-review theme with minimal text per slide and full speaker notes. Return as Compliance_Discipline_Deck.pptx.'
             }
           ],
@@ -20698,11 +20721,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Committee_KPI_Dashboard.xlsx using /RT_01_Store_Performance.xlsx and /RT_06_Shrinkage_Audit.xlsx as context. (1) \'KPI Tiles\' with SSS Variance, Gross Margin, Shrinkage Rate, Promo ROI, Compliance Incidents, FY2026 Investment Ask as tile cards across the top; (2) \'Region Variance\' with SSS variance ranked worst to best for the 6 regions and conditional formatting (Red < -3%, Amber -1 to -3%, Green > -1%); (3) \'Weekly Trend\' with a clustered column chart of shrinkage by region across the last 13 weeks; (4) \'Watchlist Sparklines\' with sparklines for each KPI over 13 weeks. Embed the charts and set up the conditional formatting. Return as Committee_KPI_Dashboard.xlsx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Margin_Recovery_Model.xlsx using /RT_01_Store_Performance.xlsx and /RT_04_Promotion_ROI_Model.xlsx as context. (1) \'Inputs\' with 3 scenario columns (Base, Recovery, Downside) for shrinkage rate %, promo ROI x, and supplier funding days; (2) \'Region P&L\' computed from Inputs with formulas for each of the 6 regions; (3) \'Network Roll-Up\' with calculated Revenue, Gross Margin, EBITDA Margin and Free Cash Flow per scenario; (4) \'Sensitivity Chart\' showing how Group EBITDA changes as shrinkage and promo assumptions vary. Use formula references (not hard-coded values) and to embed a tornado chart. Return as Margin_Recovery_Model.xlsx.'
             }
           ],
@@ -21021,15 +21044,15 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed media and entertainment groups in Southeast Asia have responded to streaming ARPU declines of more than 10%, premium content overruns of more than 25%, advertising revenue declines of more than 8%, and Kominfo/KPI/DJKI scrutiny between 2022 and 2025. For at least 3 published cases identify the trigger event, the Board response within 30 days, and the financial outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
-              prompt: 'Convene a multi-model debate (GPT-5, Claude, Gemini) on the question \'What are the 3 best playbooks for an ASEAN media group when streaming ARPU declines, premium content overruns, advertising weakness, and Kominfo/KPI/DJKI scrutiny converge in a single quarter, and where do the models disagree?\' Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
+              prompt: 'Convene a parallel multi-model report (GPT-5, Claude, Claude Sonnet 4.7) on the question \'What are the 3 best playbooks for an ASEAN media group when streaming ARPU declines, premium content overruns, advertising weakness, and Kominfo/KPI/DJKI scrutiny converge in a single quarter, and where do the models disagree?\' Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
           promptsID: [
@@ -21038,8 +21061,8 @@ window.HUB_DATA = {
               prompt: 'Bagaimana grup media dan hiburan tercatat di Asia Tenggara merespons penurunan ARPU streaming lebih dari 10%, overrun konten premium lebih dari 25%, penurunan pendapatan iklan lebih dari 8%, dan pengawasan Kominfo/KPI/DJKI antara tahun 2022 hingga 2025. Untuk minimal 3 kasus terpublikasi, identifikasi peristiwa pemicu, respons Direksi dalam 30 hari, dan hasil finansial 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi tiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
-              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Gemini) atas pertanyaan \'Apa 3 playbook terbaik untuk grup media ASEAN ketika penurunan ARPU streaming, overrun konten premium, kelemahan iklan, dan pengawasan Kominfo/KPI/DJKI terjadi bersamaan dalam satu kuartal, dan di titik mana model-model tersebut berbeda pendapat?\' Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
+              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Claude Sonnet 4.7) atas pertanyaan \'Apa 3 playbook terbaik untuk grup media ASEAN ketika penurunan ARPU streaming, overrun konten premium, kelemahan iklan, dan pengawasan Kominfo/KPI/DJKI terjadi bersamaan dalam satu kuartal, dan di titik mana model-model tersebut berbeda pendapat?\' Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
           promptsBM: [],
@@ -21418,11 +21441,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Content_Committee_Brief.docx using /ME_02_Content_Policy.docx, /ME_06_Content_Rights_Register.docx and /ME_01_Content_Performance.xlsx as context. Section 1 Situation Snapshot (ARPU -11%, content overrun +28%, ad revenue -9%, Kominfo/KPI/DJKI queries); Section 2 Governance Obligations (drawn from Content Policy and Content Rights Register); Section 3 Decisions Required from the Committee; Section 4 30-Day Corrective Programme. Format as a formal Board paper with a RAG summary at the top. Return as Content_Committee_Brief.docx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Compliance_Recovery_Programme.docx using /ME_02_Content_Policy.docx, /ME_06_Content_Rights_Register.docx and /ME_01_Content_Performance.xlsx as context. Required sections: (1) Editorial Recap and Root Cause, (2) Rights and Ad-Volume Controls Reset, (3) Slate Cadence for the Next 90 Days, (4) Reporting and Escalation to Kominfo, KPI and DJKI, with a one-line owner per item. Apply a clean operating layout with a RAG status block per section. Return as Compliance_Recovery_Programme.docx.'
             }
           ],
@@ -21454,11 +21477,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Content_Committee_Deck.pptx using /ME_01_Content_Performance.xlsx and /ME_02_Content_Policy.docx as context. (1) Executive Summary; (2) Slate Performance vs Plan with ARPU bar chart; (3) The 3 Worst-Margin Titles; (4) Kominfo, KPI and DJKI Queries Root Cause; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required to Release the FY2026 Commissioning Slate. Apply a serious executive theme, embed a chart on slide 2, include speaker notes. Return as Content_Committee_Deck.pptx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate ARPU_Discipline_Deck.pptx using /ME_03_Digital_Strategy_Framework.docx and /ME_04_Streaming_Subscriber_Cohort.xlsx as context. (1) Title and Disclaimer; (2) ARPU Snapshot; (3) Cohort and Title Performance; (4) Pricing and Engagement Controls Reset; (5) Approval Gates and Cadence; (6) Management Commitments. Apply a polished operations-review theme with minimal text per slide and full speaker notes. Return as ARPU_Discipline_Deck.pptx.'
             }
           ],
@@ -21490,11 +21513,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Committee_KPI_Dashboard.xlsx using /ME_01_Content_Performance.xlsx and /ME_05_Advertiser_Yield_Model.xlsx as context. (1) \'KPI Tiles\' with Revenue Variance, ARPU, Ad Fill-Rate, Content Cost Variance, Churn Rate, FY2026 Commissioning Ask as tile cards across the top; (2) \'Title Variance\' with revenue variance ranked worst to best for the 24 titles and conditional formatting (Red < -8%, Amber -3 to -8%, Green > -3%); (3) \'Weekly Trend\' with a clustered column chart of ARPU by cohort across the last 13 weeks; (4) \'Watchlist Sparklines\' with sparklines for each KPI over 13 weeks. Embed the charts and set up the conditional formatting. Return as Committee_KPI_Dashboard.xlsx.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate ARPU_Recovery_Model.xlsx using /ME_01_Content_Performance.xlsx and /ME_04_Streaming_Subscriber_Cohort.xlsx as context. (1) \'Inputs\' with 3 scenario columns (Base, Recovery, Downside) for ARPU uplift %, ad fill-rate %, and churn rate %; (2) \'Title P&L\' computed from Inputs with formulas for each of the 24 titles; (3) \'Slate Roll-Up\' with calculated Revenue, Gross Margin, EBITDA Margin and Free Cash Flow per scenario; (4) \'Sensitivity Chart\' showing how Group EBITDA changes as ARPU and ad-fill assumptions vary. Use formula references (not hard-coded values) and to embed a tornado chart. Return as ARPU_Recovery_Model.xlsx.'
             }
           ],
@@ -21813,15 +21836,15 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how sovereign and government-linked investment companies in ASEAN and the Gulf have responded to multi-year benchmark underperformance of more than 5 percent and politically sensitive dividend shortfalls between 2020 and 2025. For at least 3 published case studies (e.g. Khazanah, Temasek, GIC, ADIA, Mubadala, Indonesia Investment Authority), identify the trigger event, the Board and Ministry response within 90 days, and the NAV outcome 24 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
-              prompt: 'Convene a multi-model debate (GPT-5, Claude, Gemini) on the question — What are the 3 best mandate-restoration playbooks for a GLC investment company when a small number of strategic holdings drag NAV by more than 9 percent and dividend distribution to the Treasury falls short by more than 20 percent, and where do the models disagree? Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN or Gulf Precedent, and Implementation Risk.'
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
+              prompt: 'Convene a parallel multi-model report (GPT-5, Claude, Claude Sonnet 4.7) on the question — What are the 3 best mandate-restoration playbooks for a GLC investment company when a small number of strategic holdings drag NAV by more than 9 percent and dividend distribution to the Treasury falls short by more than 20 percent, and where do the models disagree? Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN or Gulf Precedent, and Implementation Risk.'
             }
           ],
           promptsID: [
@@ -21830,8 +21853,8 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana sovereign dan government-linked investment companies di ASEAN dan Teluk merespons kinerja kurang multi-tahun lebih dari 5 persen terhadap benchmark dan selisih dividen yang sensitif secara politik antara 2020 hingga 2025. Untuk minimal 3 studi kasus terpublikasi (misal Khazanah, Temasek, GIC, ADIA, Mubadala, Indonesia Investment Authority), identifikasi peristiwa pemicu, respons Dewan dan Kementerian dalam 90 hari, dan hasil NAV 24 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi tiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
-              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Gemini) atas pertanyaan — Apa 3 strategi pemulihan mandat terbaik untuk sebuah perusahaan investasi BUMN ketika sejumlah kecil kepemilikan strategis menarik NAV lebih dari 9 persen dan distribusi dividen kepada Kementerian meleset lebih dari 20 persen, dan di titik mana model-model berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN atau Teluk, dan Risiko Implementasi.'
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
+              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Claude Sonnet 4.7) atas pertanyaan — Apa 3 strategi pemulihan mandat terbaik untuk sebuah perusahaan investasi BUMN ketika sejumlah kecil kepemilikan strategis menarik NAV lebih dari 9 persen dan distribusi dividen kepada Kementerian meleset lebih dari 20 persen, dan di titik mana model-model berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN atau Teluk, dan Risiko Implementasi.'
             }
           ],
           promptsBM: [],
@@ -22210,11 +22233,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate FY2025_NAV_Restoration_Plan.docx using /GLC_01_Investment_Portfolio.xlsx, /GLC_02_Investment_Policy_Statement.docx, and /GLC_05_Ministerial_Briefing_Pack.docx as context. Structure: (1) Executive Summary with RAG status, (2) FY2025 NAV Underperformance Diagnosis, (3) Strategic Holdings Drag Decomposition, (4) Mandate Compliance Gap Analysis, (5) 36-Month Restoration Plan with quarterly milestones, (6) Governance Findings Remediation, (7) Appendix — KPI tracker. Apply Ministerial-formal style. Return as FY2025_NAV_Restoration_Plan.docx ready for the CIO sign-off.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Strategic_Holdings_Stewardship_Plan.docx using /GLC_04_Strategic_Holdings_Review.docx and /GLC_03_Governance_Charter.docx as context. Structure: (1) Stewardship Framework Recap, (2) Bumi Energi — engagement roadmap, (3) Tenaga Nusa Telekom — engagement roadmap, (4) Pelabuhan Niaga — engagement roadmap, (5) Hold or Restructure or Divest — 12-month decision tree per holding, (6) Reporting Cadence to the Investment Committee. Apply formal stewardship style. Return as Strategic_Holdings_Stewardship_Plan.docx.'
             }
           ],
@@ -22246,11 +22269,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Ministerial_Briefing_FY2025.pptx using /GLC_05_Ministerial_Briefing_Pack.docx and /GLC_01_Investment_Portfolio.xlsx as context. Theme: navy and gold Ministerial. Audience: Minister of Finance and senior Ministry officials. Slides — (1) Cover with RAG status, (2) FY2025 NAV vs Benchmark, (3) The 3 Strategic Holdings Driving the Drag, (4) Dividend Distribution to Treasury — what happened, (5) 36-Month NAV Restoration Plan, (6) Mandate Compliance Recovery, (7) Governance Findings — Action Status, (8) Asks of the Ministry, (9) Q&A backup. Apply formal Ministerial style. Return as Ministerial_Briefing_FY2025.pptx ready for the CIO to deliver.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Strategic_Holdings_PAC_Deck.pptx using /GLC_04_Strategic_Holdings_Review.docx as context. Theme: navy formal stewardship. Audience: Public Accounts Committee. Slides — (1) Cover and purpose, (2) The 3 Strategic Holdings — portfolio role, (3) Bumi Energi — diagnosis and stewardship plan, (4) Tenaga Nusa Telekom — diagnosis and stewardship plan, (5) Pelabuhan Niaga — diagnosis and stewardship plan, (6) Hold or Restructure or Divest — decision tree, (7) Governance Strengthening Measures, (8) Asks of the Public Accounts Committee. Apply formal stewardship style. Return as Strategic_Holdings_PAC_Deck.pptx.'
             }
           ],
@@ -22282,11 +22305,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate FY2025_NAV_Tracker.xlsx using /GLC_01_Investment_Portfolio.xlsx and /GLC_06_Peer_Benchmark_Sovereign_Investors.xlsx as context. Build 4 tabs — (1) Sleeve Summary with KPI tiles for Total NAV, Drag vs Benchmark, Dividend Variance and 4 sleeves listed below, (2) Strategic Holdings Drilldown with the 3 problematic holdings and a waterfall chart per holding, (3) Mandate Compliance Heatmap with the 6 mandates and quarterly RAG conditional formatting, (4) Peer Benchmark Comparison with 5 sovereign peers and bar chart of NAV vs benchmark drag. Apply RAG conditional formatting throughout. Return as FY2025_NAV_Tracker.xlsx ready for the Investment Committee.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Stewardship_Engagement_Tracker.xlsx using /GLC_04_Strategic_Holdings_Review.docx and /GLC_01_Investment_Portfolio.xlsx as context. Build 3 tabs — (1) Engagement Calendar with the 9 strategic holdings, scheduled engagements over the next 12 months, lead Portfolio Manager, and engagement-status column, (2) Holding-Level Diagnostic with the 3 problematic holdings, dividend trend, governance issues, and a 12-month decision-tree column, (3) KPI Dashboard with KPI tiles for Engagements Completed, Dividend Recovery Index, Governance Findings Closed, and a clustered column chart of dividend per holding over 8 quarters. Apply RAG conditional formatting. Return as Stewardship_Engagement_Tracker.xlsx.'
             }
           ],
@@ -22607,15 +22630,15 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how ASEAN, EU, UK, and US securities regulators have handled Tier-2 broker-dealer prudential breaches combined with retail-suitability failures and late cyber-disclosure between 2018 and 2025. For at least 3 published enforcement cases (e.g. MAS, FCA, FINRA, ESMA, ASIC), identify the trigger event, the supervisory action taken within 90 days, the licence outcome, and the 24-month systemic effect. Critically, instruct Researcher to self-critique each source, verify every claim against the original enforcement notice, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
-              prompt: 'Convene a multi-model debate (GPT-5, Claude, Gemini) on the question — When a Tier-2 broker-dealer simultaneously breaches 3 prudential thresholds, fails retail-suitability rules, and discloses a cyber-incident 19 days late, what are the 3 best supervisory-action templates a securities regulator should choose between, and where do the models disagree? Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Action Template, Council Verdict, Dissenting View, ASEAN or Western Precedent, and Implementation Risk.'
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
+              prompt: 'Convene a parallel multi-model report (GPT-5, Claude, Claude Sonnet 4.7) on the question — When a Tier-2 broker-dealer simultaneously breaches 3 prudential thresholds, fails retail-suitability rules, and discloses a cyber-incident 19 days late, what are the 3 best supervisory-action templates a securities regulator should choose between, and where do the models disagree? Ask Researcher to surface the strongest dissent across the council, summarise the majority position, and clearly mark the minority view. Present as a comparison table with columns for Action Template, Council Verdict, Dissenting View, ASEAN or Western Precedent, and Implementation Risk.'
             }
           ],
           promptsID: [
@@ -22624,8 +22647,8 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana regulator efek di ASEAN, UE, Inggris, dan AS menangani pelanggaran prudensial perusahaan efek Tier-2 yang dipadukan dengan kegagalan kepatutan ritel dan pengungkapan siber terlambat antara 2018 hingga 2025. Untuk minimal 3 kasus penegakan terpublikasi (misal MAS, FCA, FINRA, ESMA, ASIC), identifikasi peristiwa pemicu, tindakan pengawasan dalam 90 hari, hasil izin, dan efek sistemik 24 bulan. Yang paling penting, instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi tiap klaim terhadap notifikasi penegakan asli, dan menandai klaim yang tidak dapat diverifikasi independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
-              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Gemini) atas pertanyaan — Ketika sebuah perusahaan efek Tier-2 secara bersamaan melanggar 3 ambang prudensial, gagal aturan kepatutan ritel, dan mengungkapkan insiden siber 19 hari terlambat, apa 3 template tindakan pengawasan terbaik yang harus dipilih regulator efek, dan di titik mana model-model berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Template Tindakan, Putusan Council, Pandangan Minoritas, Preseden ASEAN atau Barat, dan Risiko Implementasi.'
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
+              prompt: 'Gelar perdebatan multi-model (GPT-5, Claude, Claude Sonnet 4.7) atas pertanyaan — Ketika sebuah perusahaan efek Tier-2 secara bersamaan melanggar 3 ambang prudensial, gagal aturan kepatutan ritel, dan mengungkapkan insiden siber 19 hari terlambat, apa 3 template tindakan pengawasan terbaik yang harus dipilih regulator efek, dan di titik mana model-model berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Template Tindakan, Putusan Council, Pandangan Minoritas, Preseden ASEAN atau Barat, dan Risiko Implementasi.'
             }
           ],
           promptsBM: [],
@@ -23004,11 +23027,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Titan_Capital_Supervisory_Action_Recommendation.docx using /REG_01_Supervisory_Dashboard.xlsx, /REG_02_Supervisory_Framework.docx, and /REG_05_Market_Conduct_Review_Q4.docx as context. Structure: (1) Executive Summary with RAG status, (2) Prudential Breach Determination, (3) Retail Suitability and Restitution Determination, (4) Cyber-Disclosure Determination, (5) Supervisory Action Options Assessment (Revoke vs Suspend vs Remedial Direction), (6) Recommended Action with Implementation Timeline, (7) Appendix — Peer Regulator Read-across. Apply Commission-formal style. Return as Titan_Capital_Supervisory_Action_Recommendation.docx ready for Executive Director sign-off.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Retail_Restitution_Framework.docx using /REG_05_Market_Conduct_Review_Q4.docx and /REG_03_Regulatory_Policy_Manual.docx as context. Structure: (1) Affected Population — 11,200 accounts profile, (2) Suitability Failure Pattern, (3) Restitution Methodology — calculation basis, (4) Process for Affected Clients — claim, evidence, payment, (5) Funding Source — licensee vs Investor Compensation Fund, (6) Reporting Cadence to the Commission. Apply formal supervisory style. Return as Retail_Restitution_Framework.docx.'
             }
           ],
@@ -23040,11 +23063,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Commission_Decision_TitanCapital.pptx using /REG_05_Market_Conduct_Review_Q4.docx and /REG_01_Supervisory_Dashboard.xlsx as context. Theme: green and dark-green Commission. Audience: Commission Chair and Commissioners. Slides — (1) Cover with RAG status, (2) Triangulated Breach — Prudential + Conduct + Cyber, (3) Prudential Threshold Breaches Detail, (4) Retail-Suitability Failure and Restitution, (5) Late Cyber-Disclosure — Affected Accounts, (6) Supervisory Action Options Assessment, (7) Recommended Action and Timeline, (8) Peer Regulator Read-across, (9) Q&A backup. Apply formal Commission style. Return as Commission_Decision_TitanCapital.pptx ready for the Executive Director to deliver.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Retail_Protection_PAC_Deck.pptx using /REG_05_Market_Conduct_Review_Q4.docx as context. Theme: green formal supervisory. Audience: Public Accounts Committee. Slides — (1) Cover and purpose, (2) The 11,200 Affected Retail Accounts, (3) Suitability Failure — pattern of misselling, (4) Estimated Restitution Pool — methodology, (5) Cyber-Disclosure Delay — control failure mapping, (6) Supervisory Action and Restitution Plan, (7) Lessons for Broker-Dealer Population, (8) Asks of the Public Accounts Committee. Apply formal supervisory style. Return as Retail_Protection_PAC_Deck.pptx.'
             }
           ],
@@ -23076,11 +23099,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Titan_Capital_Supervisory_Tracker.xlsx using /REG_01_Supervisory_Dashboard.xlsx and /REG_06_Peer_Benchmark_MAS_BSP_OJK.xlsx as context. Build 4 tabs — (1) Prudential Snapshot with KPI tiles for CAR, LCR, Aggregate Indebtedness, Composite Risk Score, and 12-month trend per ratio, (2) Retail Suitability Drilldown with the affected-population profile and a waterfall chart of estimated restitution, (3) Cyber-Disclosure Heatmap with disclosure-latency per incident over 24 months and quarterly RAG conditional formatting, (4) Peer Regulator Comparison with MAS, BSP, OJK enforcement records and bar chart of comparable supervisory actions. Apply RAG conditional formatting throughout. Return as Titan_Capital_Supervisory_Tracker.xlsx ready for the Commission.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate Broker_Dealer_Watchlist.xlsx using /REG_05_Market_Conduct_Review_Q4.docx and /REG_01_Supervisory_Dashboard.xlsx as context. Build 3 tabs — (1) Population Watchlist with the 38 broker-dealers, composite supervisory score, prudential breach count, conduct findings count, and a status column, (2) Entity-Level Diagnostic with the 5 highest-risk broker-dealers (Titan plus 4 peers), prudential trend, conduct trend, cyber posture, and a 12-month supervisory-engagement plan column, (3) KPI Dashboard with KPI tiles for Population Composite Risk, Open Enforcement Cases, Restitution Pool Total, and a clustered column chart of breaches per quarter over 8 quarters. Apply RAG conditional formatting. Return as Broker_Dealer_Watchlist.xlsx.'
             }
           ],
@@ -23327,6 +23350,4410 @@ window.HUB_DATA = {
         }
       ],
       geo: 'MY'
+    },
+    {
+      id: 'food-fmcg',
+      sectorId: 'sec-food',
+      subsector: '',
+      name: 'Food & FMCG',
+      icon: '🍜',
+      color: '#F59E0B',
+      accent: '#D97706',
+      company: 'Zava Foods Indonesia',
+      tagline: 'Q4 FY2025 trade-spend overrun MYR 78M; key SKU recall in 2 markets — Board pack in 5 days.',
+      scenario: 'Zava Foods Indonesia is an ASEAN-listed food and FMCG group with 14 manufacturing plants across Indonesia, Malaysia, Singapore and the Philippines, producing instant noodles, dairy, beverages, baked goods, snacks and edible-oils for over 250 SKUs. Trade-spend in Q4 FY2025 overran budget by MYR 78M (+22%) driven by aggressive promo activity in modern trade and weaker general-trade sell-through. A Salmonella scare on one bakery SKU triggered a precautionary recall in Malaysia and Singapore — BPOM Indonesia, MOH Malaysia and SFA Singapore have all opened files. Edible-oil costs jumped 18% on CPO volatility, squeezing margins on the 4 highest-volume noodle SKUs. The Group CFO needs a Board pack in 5 days covering trade-spend control, the recall remediation programme, gross-margin recovery, and FY2026 promo guardrails. Real customer reference frame: the group operates similarly to Japfa Comfeed, Nippon Indosari Corpindo, Mamee-Double Decker, Spritzer, F&N Holdings, Malayan Flour Mills and Ajinomoto Indonesia.',
+      companyID: 'Zava Foods Indonesia',
+      taglineID: 'Trade-spend Q4 FY2025 over Rp 280 M; recall SKU di 2 pasar — paket Direksi 5 hari.',
+      scenarioID: 'Zava Foods Indonesia adalah grup makanan dan FMCG ASEAN yang tercatat di bursa dengan 14 pabrik di Indonesia, Malaysia, Singapura, dan Filipina, memproduksi mi instan, dairy, minuman, baked goods, snack, dan edible-oils untuk lebih dari 250 SKU. Trade-spend Q4 FY2025 melebihi anggaran Rp 280 miliar (+22%) terutama karena agresivitas promo modern-trade dan sell-through general-trade yang lemah. Indikasi Salmonella pada satu SKU bakery memicu recall pencegahan di Malaysia dan Singapura — BPOM Indonesia, KKM Malaysia, dan SFA Singapura semuanya membuka kasus. Biaya edible-oil melonjak 18% dari volatilitas CPO, menekan margin pada 4 SKU mi terlaris. Direktur Keuangan Grup butuh paket Direksi dalam 5 hari yang mencakup pengendalian trade-spend, program remediasi recall, pemulihan gross margin, dan guardrail promo FY2026. Frame customer riil: grup ini beroperasi serupa dengan Japfa Comfeed, Nippon Indosari Corpindo, Mamee-Double Decker, Spritzer, F&N Holdings, Malayan Flour Mills dan Ajinomoto Indonesia.',
+      files: [
+        'FMCG_01_Trade_Spend_Tracker.xlsx',
+        'FMCG_02_SKU_Margin_Tracker.xlsx',
+        'FMCG_03_Recall_Remediation_Programme.docx',
+        'FMCG_04_Edible_Oil_Hedge_Book.xlsx',
+        'FMCG_05_FY2026_Promo_Guardrails.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no M365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Trade-spend in Q4 FY2025 overran budget by MYR 78 million (+22%) driven mainly by modern-trade promo aggression on the noodle and dairy SKUs. Draft a 1-page note for the Group CFO that frames the overrun in plain language, lists the 5 questions the Board will ask first, and identifies the 3 decisions the CFO must take before the Audit Committee opens. Present as a structured table with columns for Issue, Why It Matters, Board Question, and Recommended Answer.'
+            },
+            {
+              instr: '',
+              prompt: 'Write a 90-second verbal opening for the Board meeting in 5 days that acknowledges the MYR 78M trade-spend overrun and the precautionary Salmonella recall in Malaysia and Singapore directly, explains the role of CPO volatility and modern-trade promo intensity without sounding defensive, and signals a credible 2-quarter margin restoration path. End with 3 talking points the CFO can use if the Board challenges promo discipline or QA controls.'
+            },
+            {
+              instr: '',
+              prompt: 'Build a stakeholder communication map for the Q4 FY2025 trade-spend overrun and the active Salmonella recall ahead of the Board meeting. Identify the priority audiences (BPOM Indonesia, MOH Malaysia, SFA Singapore, top-3 modern-trade chains, the recall-affected consumers via the 24h hotline, the 4 outsourced co-packers, and the FY2026 promo-funding banks), the message each audience requires, the timing, and the main communication risk if the message is mishandled. Present as a RAG table with Red for same-day, Amber for 24-hour, and Green for monitor-only audiences.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Trade-spend kuartal 4 FY2025 melebihi anggaran sebesar Rp 280 miliar (+22%) terutama karena agresivitas promo di modern trade pada SKU mie dan dairy. Susun nota tajam 1 halaman untuk Direktur Keuangan Grup yang membingkai pembengkakan dalam bahasa sederhana, mendaftar 5 pertanyaan yang akan ditanyakan Direksi pertama-tama, dan mengidentifikasi 3 keputusan yang harus diambil Direktur Keuangan sebelum Komite Audit dibuka. Sajikan sebagai tabel terstruktur dengan kolom Isu, Mengapa Penting, Pertanyaan Direksi, dan Jawaban yang Direkomendasikan.'
+            },
+            {
+              instr: '',
+              prompt: 'Tulis pembukaan lisan 90 detik untuk Rapat Direksi dalam 5 hari yang mengakui pembengkakan trade-spend Rp 280 miliar dan recall pencegahan Salmonella di Malaysia dan Singapura secara langsung, menjelaskan peran volatilitas CPO dan intensitas promo modern-trade tanpa terdengar defensif, dan memberikan sinyal jalur pemulihan margin 2-kuartal yang kredibel. Akhiri dengan 3 talking points untuk dipakai Direktur Keuangan bila Direksi menantang disiplin promo atau pengendalian QA.'
+            },
+            {
+              instr: '',
+              prompt: 'Bangun peta komunikasi pemangku kepentingan untuk pembengkakan trade-spend kuartal 4 FY2025 dan recall Salmonella aktif menjelang Rapat Direksi. Identifikasi audiens prioritas (BPOM Indonesia, KKM Malaysia, SFA Singapura, 3 chain modern-trade teratas, konsumen terdampak recall via hotline 24 jam, 4 co-packer eksternal, dan bank pendana promo FY2026), pesan inti tiap audiens, timing, dan risiko komunikasi utama bila pesan keliru. Sajikan sebagai tabel RAG dengan Merah untuk hari ini juga, Kuning untuk 24 jam, dan Hijau untuk audiens monitor saja.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will draft a deep market study and a second model peer-reviews every claim and citation before it lands.',
+              prompt: 'Goal: I need a defensible benchmark of how listed ASEAN food and FMCG groups have managed Q4 trade-spend overruns of more than 15 percent and concurrent product-recall events between 2020 and 2025. Context: Zava Foods Indonesia is preparing a Board pack in 5 days. We need credible peer cases including but not limited to Indofood, Mayora, Wings Group, Japfa, Nippon Indosari, F&N Holdings, Mamee Double Decker and Nestlé Malaysia. Source: For each peer, identify the trigger event, the trade-spend control programme adopted within 90 days, the recall-handling decisions, and the gross-margin trajectory 12 to 24 months later. Expectation: Cite every source with publication date. Critically, instruct Researcher to peer-review each claim against the original publication, flag any claim it cannot independently verify, and present as a structured comparison table with columns for Peer, Trigger, 90-Day Programme, Recall Handling, Margin Outcome, Citation.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher runs the question through GPT-5.5 Thinking and Claude Opus 4.7 in parallel, then a synthesis cover letter highlights agreements, disagreements and unique findings.',
+              prompt: 'Goal: Identify the 3 most defensible playbooks for an FMCG group dealing with simultaneous trade-spend overrun and product-recall pressure. Context: Zava Foods Indonesia operates across 4 ASEAN markets with regulators (BPOM, MOH, SFA, FDA Philippines) all on alert. Source: Use Researcher with Model Council enabled — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7 on trade-spend rationalisation, SKU portfolio pruning, recall communication, and CPO hedge restructuring. Expectation: Surface dissent across the panel, summarise the majority position, mark the minority view, and present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk for a CFO-led 90-day plan.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Critique Mode**. Tempel prompt — Researcher menyusun draf riset mendalam lalu model kedua mengkritisi tiap klaim dan kutipan sebelum hasilnya diterima.',
+              prompt: 'Tujuan: Saya butuh benchmark yang dapat dipertahankan tentang bagaimana grup makanan dan FMCG ASEAN yang tercatat di bursa menangani pembengkakan trade-spend Q4 di atas 15 persen dan kejadian recall produk antara 2020 hingga 2025. Konteks: Zava Foods Indonesia menyiapkan paket Direksi dalam 5 hari. Kami butuh studi kasus peer yang kredibel termasuk Indofood, Mayora, Wings Group, Japfa, Nippon Indosari, F&N Holdings, Mamee Double Decker dan Nestlé Malaysia. Sumber: Untuk tiap peer identifikasi peristiwa pemicu, program kendali trade-spend dalam 90 hari, keputusan penanganan recall, dan lintasan gross margin 12 sampai 24 bulan kemudian. Ekspektasi: Sertakan kutipan lengkap dengan tanggal publikasi. Yang kritikal, minta Researcher peer-review tiap klaim terhadap publikasi aslinya, tandai klaim yang tidak dapat diverifikasi independen, dan sajikan sebagai tabel perbandingan terstruktur dengan kolom Peer, Pemicu, Program 90-Hari, Penanganan Recall, Hasil Margin, Kutipan.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt — Researcher menggelar laporan parallel GPT-5.5 Thinking dan Claude Opus 4.7, lalu cover letter sintesa menyorot kesepakatan dan perbedaan.',
+              prompt: 'Tujuan: Identifikasi 3 strategi paling defensible untuk grup FMCG yang menghadapi pembengkakan trade-spend dan tekanan recall produk secara bersamaan. Konteks: Zava Foods Indonesia beroperasi di 4 pasar ASEAN dengan regulator (BPOM, KKM, SFA, FDA Filipina) semuanya waspada. Sumber: Gunakan Researcher dengan Model Council aktif — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7 atas rasionalisasi trade-spend, pemangkasan portfolio SKU, komunikasi recall, dan restrukturisasi hedge CPO. Ekspektasi: Sorot perbedaan pendapat, rangkum posisi mayoritas, tandai pandangan minoritas, dan sajikan tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi untuk rencana 90 hari yang dipimpin Direktur Keuangan.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload `/FMCG_01_Trade_Spend_Tracker.xlsx`. Paste the prompt below.',
+              prompt: 'Goal: Quantify and visualise the Q4 FY2025 trade-spend overrun. Context: We are MYR 78 million over budget on trade-spend; the Group CFO presents to the Board in 5 days. Source: Use the uploaded /FMCG_01_Trade_Spend_Tracker.xlsx — cross-reference the Channel Spend, SKU Promo Activity AND Sell-Through tabs. Expectation: Calculate absolute and percentage variance vs budget by channel (modern trade, general trade, e-commerce, HoReCa) and by category (noodles, dairy, beverages, snacks, edible-oils). Build (1) a horizontal bar chart of trade-spend variance ranked worst to best, and (2) a 100% stacked column showing each category contribution to the gap. Flag overrun worse than 25% as Red, 10–25% as Amber, under 10% as Green. Output a RAG dashboard with both charts embedded and one recommended corrective lever per Red row.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload `/FMCG_02_SKU_Margin_Tracker.xlsx` AND `/FMCG_04_Edible_Oil_Hedge_Book.xlsx`. Paste the prompt below.',
+              prompt: 'Goal: Identify which SKUs have lost the most gross-margin in Q4 FY2025 and how much of that is CPO-driven. Context: Edible-oil costs jumped 18% in Q4. Source: From /FMCG_02_SKU_Margin_Tracker.xlsx pull Q3 vs Q4 GM by SKU; from /FMCG_04_Edible_Oil_Hedge_Book.xlsx pull hedge coverage and realised vs spot CPO prices. Expectation: Build a margin-bridge waterfall (Q3 GM → Volume → Mix → Trade-spend → CPO Cost → FX → Q4 GM) with the 10 worst-impacted SKUs labelled. Output a RAG dashboard with the waterfall, a hedge-coverage donut chart, and a one-paragraph CFO note on whether to extend the hedge book through FY2026 H1.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah `/FMCG_01_Trade_Spend_Tracker.xlsx`. Tempel prompt.',
+              prompt: 'Tujuan: Kuantifikasi dan visualisasikan pembengkakan trade-spend Q4 FY2025. Konteks: Kami over budget Rp 280 miliar pada trade-spend; Direktur Keuangan Grup mempresentasikan ke Direksi dalam 5 hari. Sumber: Gunakan /FMCG_01_Trade_Spend_Tracker.xlsx — analisis silang antar tab Channel Spend, SKU Promo Activity DAN Sell-Through. Ekspektasi: Hitung selisih absolut dan persentase vs anggaran per channel (modern trade, general trade, e-commerce, HoReCa) dan per kategori (mie, dairy, minuman, snack, edible-oil). Bangun (1) bar chart horizontal selisih trade-spend diurutkan dari terburuk ke terbaik, dan (2) stacked column 100% kontribusi tiap kategori. Tandai pembengkakan >25% Merah, 10–25% Kuning, <10% Hijau. Hasilkan dashboard RAG dengan kedua chart tertanam dan satu rekomendasi perbaikan per baris Merah.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah `/FMCG_02_SKU_Margin_Tracker.xlsx` DAN `/FMCG_04_Edible_Oil_Hedge_Book.xlsx`. Tempel prompt.',
+              prompt: 'Tujuan: Identifikasi SKU mana yang kehilangan margin kotor terbanyak di Q4 FY2025 dan berapa banyak yang didorong CPO. Konteks: Biaya edible-oil melonjak 18% di Q4. Sumber: Dari /FMCG_02_SKU_Margin_Tracker.xlsx tarik GM per SKU Q3 vs Q4; dari /FMCG_04_Edible_Oil_Hedge_Book.xlsx tarik cover hedge dan harga CPO realisasi vs spot. Ekspektasi: Bangun margin-bridge waterfall (GM Q3 → Volume → Mix → Trade-spend → Biaya CPO → Valas → GM Q4) dengan 10 SKU paling terdampak diberi label. Sajikan dashboard RAG dengan waterfall, donut chart cover hedge, dan paragraf catatan Direktur Keuangan apakah memperpanjang hedge book hingga H1 FY2026.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/FMCG_01_Trade_Spend_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a Board-ready trade-spend dashboard. Context: The CFO presents in 5 days. Source: Pull from the Channel Spend, SKU Promo Activity AND Sell-Through tabs. Expectation: On a new sheet "Board Trade-Spend Dashboard": (1) KPI tiles for Total Variance MYR M, Variance %, Worst Channel, Worst Category; (2) horizontal bar of variance by channel; (3) clustered column of monthly run-rate; (4) sparklines per channel; (5) RAG conditional formatting >25% red, 10–25% amber, <10% green. Insert all charts on the new sheet, do not modify the source tabs.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/FMCG_01_Trade_Spend_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun dashboard trade-spend siap-Direksi. Konteks: Direktur Keuangan presentasi dalam 5 hari. Sumber: Tarik dari tab Channel Spend, SKU Promo Activity DAN Sell-Through. Ekspektasi: Pada sheet baru "Dashboard Trade-Spend Direksi": (1) KPI tile Total Selisih Rp Miliar, Selisih %, Channel Terburuk, Kategori Terburuk; (2) bar horizontal selisih per channel; (3) clustered column run-rate bulanan; (4) sparkline per channel; (5) format kondisional RAG >25% merah, 10–25% kuning, <10% hijau. Sisipkan semua chart pada sheet baru, jangan modifikasi tab sumber.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference `/FMCG_03_Recall_Remediation_Programme.docx` and `/FMCG_05_FY2026_Promo_Guardrails.docx` using `/`. Paste the prompt below.',
+              prompt: 'Goal: Draft the 4-page Board paper "Q4 FY2025 Trade-Spend & Recall Update — Board Discussion Pack". Context: Board meets in 5 days. Source: /FMCG_03_Recall_Remediation_Programme.docx and /FMCG_05_FY2026_Promo_Guardrails.docx, plus the trade-spend variance numbers I will paste. Expectation: Sections — (1) Executive summary in 5 bullets, (2) Trade-spend overrun bridge in plain language, (3) Salmonella recall status across MY/SG/ID, (4) Gross-margin recovery levers and their MYR impact, (5) FY2026 promo guardrail policy proposal, (6) Decisions requested from the Board. Tone: precise, Board-ready, no speculative language. Cite the source files at the end of every section.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan `/FMCG_03_Recall_Remediation_Programme.docx` dan `/FMCG_05_FY2026_Promo_Guardrails.docx` menggunakan `/`. Tempel prompt.',
+              prompt: 'Tujuan: Susun paper Direksi 4 halaman "Update Trade-Spend & Recall Q4 FY2025 — Pack Diskusi Direksi". Konteks: Direksi rapat dalam 5 hari. Sumber: /FMCG_03_Recall_Remediation_Programme.docx dan /FMCG_05_FY2026_Promo_Guardrails.docx, plus angka selisih trade-spend yang akan saya tempelkan. Ekspektasi: Bagian — (1) Ringkasan eksekutif 5 bullet, (2) Bridge pembengkakan trade-spend bahasa sederhana, (3) Status recall Salmonella di MY/SG/ID, (4) Lever pemulihan gross margin dan dampak Rp Miliar, (5) Proposal policy guardrail promo FY2026, (6) Keputusan yang diminta dari Direksi. Nada: presisi, siap-Direksi, tidak spekulatif. Kutip file sumber di akhir tiap bagian.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a 10-slide investor-grade deck on the Q4 FY2025 trade-spend overrun and recall response. Context: The Board sees this on Friday. Source: Reference my Word draft `/Q4_Board_Paper.docx` and the trade-spend dashboard numbers I will paste. Expectation: Cover slide; situation in 1 slide; trade-spend bridge waterfall (2 slides); recall status by market (1 slide); margin levers (2 slides); FY2026 promo guardrails (1 slide); decisions requested (1 slide); appendix (1 slide). Use Zava brand colours #F59E0B and #0F1C3F, 18pt minimum body text, 1 chart per slide, no walls of text.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun deck 10 slide kelas investor tentang pembengkakan trade-spend dan respons recall Q4 FY2025. Konteks: Direksi melihat ini Jumat. Sumber: Referensikan draf Word saya `/Paper_Direksi_Q4.docx` dan angka dashboard trade-spend yang akan saya tempel. Ekspektasi: Slide cover; situasi 1 slide; waterfall bridge trade-spend (2 slide); status recall per pasar (1 slide); lever margin (2 slide); guardrail promo FY2026 (1 slide); keputusan yang diminta (1 slide); appendix (1 slide). Gunakan warna brand Zava #F59E0B dan #0F1C3F, font tubuh minimum 18pt, 1 chart per slide, hindari dinding teks.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread titled "Q4 FY2025 Trade-Spend Variance — Group CFO follow-up". Click the **Copilot icon** in the message ribbon. Paste the prompt below.',
+              prompt: 'Goal: Draft a single, calm, board-ready email to the 6 Divisional MDs and the Group Trade-Marketing Director. Context: Q4 trade-spend overran budget by MYR 78 million; Board on Friday. Source: Summarise the latest figures from the email thread above and the attached dashboard. Expectation: Subject line, 4 short paragraphs covering (1) the headline number, (2) the 3 corrective levers I expect each Division to commit to in 48 hours, (3) the FY2026 promo guardrails coming, (4) the meeting time on Wednesday for alignment. End with a one-line note that the Board will see this on Friday. Tone: firm but collegial, not blaming.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "Selisih Trade-Spend Q4 FY2025 — tindak lanjut Direktur Keuangan". Klik **ikon Copilot** di ribbon pesan. Tempel prompt.',
+              prompt: 'Tujuan: Susun satu email tenang dan siap-Direksi kepada 6 Direktur Divisi dan Direktur Trade-Marketing Grup. Konteks: Trade-spend Q4 over budget Rp 280 miliar; Direksi Jumat. Sumber: Ringkas angka terbaru dari thread di atas dan dashboard terlampir. Ekspektasi: Baris subjek, 4 paragraf pendek mencakup (1) angka headline, (2) 3 lever perbaikan yang saya harapkan tiap Divisi komit dalam 48 jam, (3) guardrail promo FY2026 yang akan datang, (4) waktu rapat Rabu untuk penyelarasan. Akhiri dengan satu baris bahwa Direksi melihat ini Jumat. Nada: tegas tapi kolegial, tidak menyalahkan.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"Trade-Spend Crisis Review"**. On the Recap page, walk the audience through the **AI Notes**, the **Custom summary** (template: Speaker summary), and the **Audio recap**. **(2) In Word for the Web**, open a new blank document. Type a quick minutes template at the top — Date and Attendees · Decisions · Actions with Owner and Due Date · Risks · Open Questions. **(3) Click the Copilot icon** in the Word ribbon and paste the prompt below — Copilot in Word will reference the meeting recap by name with `/`.',
+              prompt: 'Create meeting minutes for the Teams meeting /Trade-Spend Crisis Review. Use the empty template already on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters and flag any decision linked to the Salmonella recall as Critical Path. Save as Minutes_TradeSpend_Crisis_Review.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"Trade-Spend Crisis Review"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong. Ketik template notulen di atas — Tanggal dan Peserta · Keputusan · Action dengan Pemilik dan Tenggat · Risiko · Pertanyaan Terbuka. **(3) Klik ikon Copilot** di ribbon Word dan tempel prompt — Copilot in Word akan mereferensikan recap dengan `/`.',
+              prompt: 'Buat notulen rapat untuk rapat Teams /Trade-Spend Crisis Review. Gunakan template kosong di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting dan tandai keputusan terkait recall Salmonella sebagai Critical Path. Simpan sebagai Notulen_TradeSpend_Crisis_Review.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          prompts: [
+            {
+              instr: 'All sources are loaded in the notebook (see Notebook setup above). The Instructions field is set. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all 5 sources to produce a 10-bullet Board narrative for Friday. Cover: the MYR 78M trade-spend overrun in plain language, the worst 5 SKUs by margin loss, the recall status by market, the 3 levers we will pull in 90 days, and the FY2026 promo guardrails we will table for approval. Cite the source file (and tab/section where applicable) at the end of every bullet.'
+            },
+            {
+              instr: 'In the same notebook, click **Quick Create** > **Audio Overview** to generate a 6-minute podcast-style summary; OR click **Quick Create** > **Page** to generate a collaborative Page the leadership team can comment on.',
+              prompt: 'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the Board narrative above. Listeners are the 6 Divisional MDs who will be on a flight on Thursday and need to walk into the Friday Board meeting prepared.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat di notebook (lihat setup Notebook di atas). Field Instructions sudah diset. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari kelima sumber untuk menghasilkan narasi Direksi 10-bullet untuk Jumat. Mencakup: pembengkakan trade-spend Rp 280 miliar dengan bahasa sederhana, 5 SKU terburuk dari sisi kehilangan margin, status recall per pasar, 3 lever yang akan kami tarik dalam 90 hari, dan guardrail promo FY2026 yang akan diajukan untuk disetujui. Kutip file sumber (dan tab/bagian bila relevan) di akhir tiap bullet.'
+            },
+            {
+              instr: 'Pada notebook yang sama, klik **Quick Create** > **Audio Overview** untuk menghasilkan ringkasan podcast 6 menit; ATAU klik **Quick Create** > **Page** untuk menghasilkan Page kolaboratif yang bisa dikomentari tim leadership.',
+              prompt: 'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi Direksi di atas. Pendengar adalah 6 Direktur Divisi yang akan terbang Kamis dan butuh siap hadir Rapat Direksi Jumat.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/FMCG_01_Trade_Spend_Tracker.xlsx',
+              '/FMCG_02_SKU_Margin_Tracker.xlsx',
+              '/FMCG_03_Recall_Remediation_Programme.docx',
+              '/FMCG_04_Edible_Oil_Hedge_Book.xlsx',
+              '/FMCG_05_FY2026_Promo_Guardrails.docx'
+            ],
+            instructions: 'You are the Group CFO of Zava Foods Indonesia preparing a Friday Board pack. Cover trade-spend control, the active Salmonella recall in MY/SG/ID, gross-margin recovery, and FY2026 promo guardrails. Always cite the source file and tab/section. Tone: precise, Board-ready, no speculation. Convert IDR to MYR at 1 MYR = 3,580 IDR when reporting Group totals.',
+            instructionsID: 'Anda adalah Direktur Keuangan Grup Zava Foods Indonesia yang menyiapkan paket Direksi Jumat. Cakup kendali trade-spend, recall Salmonella aktif di MY/SG/ID, pemulihan gross margin, dan guardrail promo FY2026. Selalu kutip file sumber dan tab/bagian. Nada: presisi, siap-Direksi, tanpa spekulasi. Konversi IDR ke MYR pada 1 MYR = 3.580 IDR saat melaporkan total Grup.'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'M365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > left nav > **Agents** > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks and reports back with one consolidated status panel. Frontier program required.',
+              prompt: 'Cowork — Trade-Spend Sprint. Run these 5 tasks in parallel and report back: (1) 📝 Draft a Word doc — Q4 Trade-Spend Variance Brief, 4 pages, audience Group ExCo, sources /FMCG_01_Trade_Spend_Tracker.xlsx and /FMCG_05_FY2026_Promo_Guardrails.docx. (2) 📝 Draft a Word doc — Recall Holding Lines for BPOM/MOH/SFA, 1 page each, source /FMCG_03_Recall_Remediation_Programme.docx. (3) ✉️ Send an email to the 6 Divisional MDs and the Group Trade-Marketing Director summarising the variance and asking for 3 corrective levers each, due in 48 hours. (4) 📅 Schedule a 60-minute Group ExCo meeting tomorrow 9am MYT titled "Trade-Spend Crisis Alignment — Pre-Board". (5) 💬 Post a Teams message to the #group-exco channel with a one-line headline of the variance and a link to the dashboard.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > nav kiri > **Agents** > **Cowork**. Tempel prompt tunggal di bawah — Cowork mendelegasikan 5 sub-tugas paralel dan melaporkan kembali dengan satu panel status terkonsolidasi. Membutuhkan program Frontier.',
+              prompt: 'Cowork — Sprint Trade-Spend. Jalankan 5 tugas berikut paralel dan laporkan kembali: (1) 📝 Susun dokumen Word — Brief Selisih Trade-Spend Q4, 4 halaman, audiens Group ExCo, sumber /FMCG_01_Trade_Spend_Tracker.xlsx dan /FMCG_05_FY2026_Promo_Guardrails.docx. (2) 📝 Susun dokumen Word — Holding Line Recall untuk BPOM/KKM/SFA, 1 halaman per regulator, sumber /FMCG_03_Recall_Remediation_Programme.docx. (3) ✉️ Kirim email ke 6 Direktur Divisi dan Direktur Trade-Marketing Grup yang merangkum selisih dan meminta 3 lever perbaikan dari masing-masing dalam 48 jam. (4) 📅 Jadwalkan rapat Group ExCo 60 menit besok pukul 09:00 WIB berjudul "Penyelarasan Krisis Trade-Spend — Pre-Direksi". (5) 💬 Posting pesan Teams di channel #group-exco dengan headline satu baris selisih dan tautan ke dashboard.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
+              prompt: 'Goal: Generate a 4-page Group CFO Trade-Spend & Recall Brief in Word. Context: Q4 FY2025 trade-spend overran by MYR 78M, Salmonella recall active in MY/SG/ID, Board on Friday. Source: Reference /FMCG_01_Trade_Spend_Tracker.xlsx (Channel Spend tab) and /FMCG_03_Recall_Remediation_Programme.docx. Expectation: Sections — Executive Summary 5 bullets, Trade-Spend Bridge plain English, Recall Status by Market, Margin Recovery Levers with MYR impact, FY2026 Promo Guardrails proposal, Decisions Requested. Tone: precise, Board-ready, no speculation. Save as CFO_TradeSpend_Recall_Brief.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → pilih **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh dan tersimpan di OneDrive, siap dibagikan. Bekerja dengan akun Copilot Chat gratis atau lisensi M365 Copilot.',
+              prompt: 'Tujuan: Hasilkan Brief Trade-Spend & Recall Direktur Keuangan Grup 4 halaman dalam Word. Konteks: Trade-spend Q4 FY2025 over Rp 280 miliar, recall Salmonella aktif di MY/SG/ID, Direksi Jumat. Sumber: Referensikan /FMCG_01_Trade_Spend_Tracker.xlsx (tab Channel Spend) dan /FMCG_03_Recall_Remediation_Programme.docx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet, Bridge Trade-Spend bahasa sederhana, Status Recall per Pasar, Lever Pemulihan Margin dengan dampak Rp Miliar, Proposal Guardrail Promo FY2026, Keputusan yang Diminta. Nada: presisi, siap-Direksi, tanpa spekulasi. Simpan sebagai Brief_TradeSpend_Recall_Direktur_Keuangan.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted .pptx saved to OneDrive, ready to share.',
+              prompt: 'Goal: Build a 10-slide Board deck on Q4 FY2025 trade-spend overrun and recall. Context: Friday Board. Source: Reference my Word brief /CFO_TradeSpend_Recall_Brief.docx and trade-spend dashboard /FMCG_01_Trade_Spend_Tracker.xlsx. Expectation: Cover, Situation, Bridge waterfall (2 slides), Recall by market, Levers (2 slides), FY2026 Guardrails, Decisions, Appendix. Brand colours #F59E0B + #0F1C3F, 18pt minimum body text, 1 chart per slide. Save as Q4_TradeSpend_Recall_BoardDeck.pptx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → pilih **PowerPoint Agent**. Tempel prompt — agent mengembalikan .pptx yang sudah didraf penuh dan tersimpan di OneDrive, siap dibagikan.',
+              prompt: 'Tujuan: Bangun deck Direksi 10 slide tentang pembengkakan trade-spend dan recall Q4 FY2025. Konteks: Direksi Jumat. Sumber: Referensikan brief Word saya /Brief_TradeSpend_Recall_Direktur_Keuangan.docx dan dashboard trade-spend /FMCG_01_Trade_Spend_Tracker.xlsx. Ekspektasi: Cover, Situasi, Waterfall Bridge (2 slide), Recall per Pasar, Lever (2 slide), Guardrail FY2026, Keputusan, Appendix. Warna brand #F59E0B + #0F1C3F, font tubuh minimum 18pt, 1 chart per slide. Simpan sebagai Deck_Direksi_TradeSpend_Recall_Q4.pptx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built .xlsx saved to OneDrive, ready to share.',
+              prompt: 'Goal: Build a Trade-Spend & Margin Tracker workbook from scratch. Context: 30-day rolling control workbook for the Group CFO. Source: schema only — channels (modern trade, general trade, e-commerce, HoReCa), categories (noodles, dairy, beverages, snacks, edible-oils), 4 ASEAN markets. Expectation: Sheet 1 Channel Spend (budget vs actual by month), Sheet 2 SKU Margin (top 50 SKUs Q3 vs Q4 GM), Sheet 3 Recall Cost Tracker (legal, logistics, replacement, comms), Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as FMCG_TradeSpend_Margin_Tracker.xlsx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → pilih **Excel Agent**. Tempel prompt — agent mengembalikan .xlsx yang sudah dibangun penuh dan tersimpan di OneDrive, siap dibagikan.',
+              prompt: 'Tujuan: Bangun workbook Tracker Trade-Spend & Margin dari nol. Konteks: Workbook kontrol rolling 30-hari untuk Direktur Keuangan Grup. Sumber: hanya skema — channel (modern trade, general trade, e-commerce, HoReCa), kategori (mie, dairy, minuman, snack, edible-oil), 4 pasar ASEAN. Ekspektasi: Sheet 1 Channel Spend (anggaran vs aktual per bulan), Sheet 2 SKU Margin (50 SKU teratas GM Q3 vs Q4), Sheet 3 Recall Cost Tracker (legal, logistik, replacement, komunikasi), Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_TradeSpend_Margin_FMCG.xlsx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (M365 Copilot Chat)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field — Copilot drafts name, instructions, knowledge sources, capabilities and starter prompts in one shot.',
+              prompt: '**Option A — Zava Foods Trade-Spend Watch.** Build an agent for the Group CFO, Group Trade-Marketing Director, and the 6 Divisional MDs to track and explain trade-spend variance daily. Ground every answer on /FMCG_01_Trade_Spend_Tracker.xlsx, /FMCG_02_SKU_Margin_Tracker.xlsx, and /FMCG_05_FY2026_Promo_Guardrails.docx. Always cite file and tab/section. Classify variance as Red / Amber / Green. Tone: precise, finance-grade, no speculation. Starter prompts: (1) What is today\'s rolling 30-day trade-spend variance vs budget; (2) Which 5 SKUs lost the most margin this week; (3) Which channel is overspending the most; (4) Draft a 1-page CFO note to the 6 Divisional MDs; (5) Build a weekly trade-spend dashboard.'
+            },
+            {
+              instr: '**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
+              prompt: '**Option B — Zava Foods Recall Response Agent.** Build an agent for the Group QA Director, Group Communications Director and Regulatory Affairs leads in MY/SG/ID/PH to manage active recall events and regulator engagement. Ground every answer on /FMCG_03_Recall_Remediation_Programme.docx and the Group recall playbook. Always cite section and step number. Classify each open regulator question as Closed / In Progress / Awaiting Internal Sign-Off. Tone: factual, regulator-facing, no admission of unproven causation. Starter prompts: (1) Draft a holding line for BPOM Indonesia; (2) Draft a holding line for MOH Malaysia; (3) Draft a holding line for SFA Singapore; (4) What disclosures has the Group already made to consumers via the 24h hotline; (5) What are the next 3 milestones on the recall remediation programme.'
+            },
+            {
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Foods Margin Defence Agent.** Build an agent for the Group CFO and the Edible Oils trading desk to defend gross margin against CPO volatility. Ground every answer on /FMCG_02_SKU_Margin_Tracker.xlsx, /FMCG_04_Edible_Oil_Hedge_Book.xlsx, and the Group hedge policy. Always cite file and tab/section. Classify hedge cover as Adequate / Watch / Insufficient. Tone: precise, treasury-grade, conservative. Starter prompts: (1) What is the current hedge cover for the next 90 days; (2) Which 5 SKUs have the worst CPO sensitivity; (3) Should we extend hedges into FY2026 H1; (4) Build a weekly Treasury margin-defence dashboard; (5) Summarise the H2 margin bridge in 60 seconds.'
+            },
+            {
+              instr: '**Test.** After the agent is created, click into it and use the right test pane to validate that it grounds in the uploaded files, cites sources, applies the GCSE framework, and stays in scope.',
+              prompt: 'Give me the 60-second version of the Q4 FY2025 trade-spend story, the worst 3 SKUs by margin loss, the recall status across MY/SG/ID, and the decisions I must take to the Board in 5 days. Cite the file and tab/section for every paragraph and use the GCSE framework where relevant.'
+            },
+            {
+              instr: '**Share.** Click the agent in the left rail → **Share** → add recipients with **Use** access — your team can now use the agent in their own M365 Copilot chat.',
+              prompt: 'Share this agent with the Zava Foods ExCo distribution list (Group CEO, Group CFO, Group COO, Group QA Director, Group Trade-Marketing Director, Group Comms Director, 6 Divisional MDs) with Use access. Send a sharing notification with the message: "This agent is now in your M365 Copilot chat — ground every Board-prep question through it for the next 30 days."'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent di bawah. Tempel deskripsi yang dipilih ke field **Describe** — Copilot menyusun nama, instruksi, sumber knowledge, capabilities, dan starter prompts dalam sekali jalan.',
+              prompt: '**Opsi A — Zava Foods Trade-Spend Watch.** Bangun agent untuk Direktur Keuangan Grup, Direktur Trade-Marketing Grup, dan 6 Direktur Divisi untuk melacak dan menjelaskan selisih trade-spend harian. Dasarkan tiap jawaban pada /FMCG_01_Trade_Spend_Tracker.xlsx, /FMCG_02_SKU_Margin_Tracker.xlsx, dan /FMCG_05_FY2026_Promo_Guardrails.docx. Selalu kutip file dan tab/bagian. Klasifikasikan selisih sebagai Merah / Kuning / Hijau. Nada: presisi, finance-grade, tanpa spekulasi. Starter prompt: (1) Berapa selisih trade-spend rolling 30-hari hari ini vs anggaran; (2) 5 SKU mana yang paling kehilangan margin minggu ini; (3) Channel mana yang paling over-spend; (4) Susun nota 1 halaman Direktur Keuangan ke 6 Direktur Divisi; (5) Bangun dashboard trade-spend mingguan.'
+            },
+            {
+              instr: '**Opsi B — agent alternatif.** Alur Create-an-agent yang sama dengan spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Foods Recall Response Agent.** Bangun agent untuk Direktur QA Grup, Direktur Komunikasi Grup, dan lead Regulatory Affairs di MY/SG/ID/PH untuk mengelola peristiwa recall aktif dan keterlibatan regulator. Dasarkan tiap jawaban pada /FMCG_03_Recall_Remediation_Programme.docx dan playbook recall Grup. Selalu kutip bagian dan nomor langkah. Klasifikasikan tiap pertanyaan regulator terbuka sebagai Closed / In Progress / Menunggu Persetujuan Internal. Nada: faktual, menghadapi regulator, tidak mengakui kausalitas yang belum terbukti. Starter prompt: (1) Susun holding line untuk BPOM Indonesia; (2) Susun holding line untuk KKM Malaysia; (3) Susun holding line untuk SFA Singapura; (4) Pengungkapan apa yang sudah dibuat Grup ke konsumen via hotline 24 jam; (5) Apa 3 milestone berikutnya pada program remediasi recall.'
+            },
+            {
+              instr: '**Opsi C — agent alternatif.** Alur yang sama.',
+              prompt: '**Opsi C — Zava Foods Margin Defence Agent.** Bangun agent untuk Direktur Keuangan Grup dan desk trading edible-oil untuk mempertahankan gross margin terhadap volatilitas CPO. Dasarkan tiap jawaban pada /FMCG_02_SKU_Margin_Tracker.xlsx, /FMCG_04_Edible_Oil_Hedge_Book.xlsx, dan policy hedge Grup. Selalu kutip file dan tab/bagian. Klasifikasikan cover hedge sebagai Memadai / Watch / Kurang. Nada: presisi, treasury-grade, konservatif. Starter prompt: (1) Berapa cover hedge saat ini untuk 90 hari ke depan; (2) 5 SKU mana yang paling sensitif terhadap CPO; (3) Apakah kita perlu memperpanjang hedge ke H1 FY2026; (4) Bangun dashboard pertahanan margin Treasury mingguan; (5) Rangkum bridge margin H2 dalam 60 detik.'
+            },
+            {
+              instr: '**Uji.** Setelah agent dibuat, klik ke dalamnya dan gunakan panel uji sebelah kanan untuk memvalidasi bahwa agent grounding pada file yang diunggah, mengutip sumber, menerapkan framework GCSE, dan tetap dalam cakupan.',
+              prompt: 'Berikan versi 60 detik dari cerita trade-spend Q4 FY2025, 3 SKU terburuk dari sisi kehilangan margin, status recall di MY/SG/ID, dan keputusan yang harus saya bawa ke Direksi dalam 5 hari. Kutip file dan tab/bagian untuk tiap paragraf dan gunakan framework GCSE bila relevan.'
+            },
+            {
+              instr: '**Bagikan.** Klik agent di rail kiri → **Share** → tambahkan penerima dengan akses **Use** — tim Anda kini dapat menggunakan agent di M365 Copilot chat masing-masing.',
+              prompt: 'Bagikan agent ini ke distribution list Zava Foods ExCo (Direktur Utama Grup, Direktur Keuangan Grup, Direktur Operasional Grup, Direktur QA Grup, Direktur Trade-Marketing Grup, Direktur Komunikasi Grup, 6 Direktur Divisi) dengan akses Use. Kirim notifikasi bagi-pakai dengan pesan: "Agent ini kini tersedia di M365 Copilot chat Anda — dasarkan setiap pertanyaan persiapan Direksi pada agent ini selama 30 hari ke depan."'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-finance',
+        'dept-strategy',
+        'dept-legal',
+        'dept-risk',
+        'dept-operations',
+        'dept-marketing',
+        'dept-it-digital'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the MYR 78M trade-spend overrun and the active recall; pull deep ASEAN peer benchmarks before the Group CFO walks into the Board on Friday.',
+          summaryID: 'Bingkai pembengkakan trade-spend Rp 280 M dan recall aktif; tarik benchmark peer ASEAN mendalam sebelum Direktur Keuangan Grup masuk Rapat Direksi Jumat.',
+          tasks: [
+            {
+              verb: 'Frame',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Benchmark',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Draft brief',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify the trade-spend variance and SKU-level margin drag; build a Board-ready dashboard.',
+          summaryID: 'Kuantifikasi selisih trade-spend dan drag margin per SKU; bangun dashboard siap-Direksi.',
+          tasks: [
+            {
+              verb: 'Crunch',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Dashboard',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Tracker',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief the 6 Divisional MDs, capture the Trade-Spend Crisis Review meeting, and assemble the Board deck.',
+          summaryID: 'Brief 6 Direktur Divisi, capture rapat Trade-Spend Crisis Review, dan rakit deck Direksi.',
+          tasks: [
+            {
+              verb: 'Email',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Deck',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Sprint',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the trade-spend playbook into a reusable agent so the 6 Divisional MDs can self-serve.',
+          summaryID: 'Bungkus playbook trade-spend ke dalam agent reusable agar 6 Direktur Divisi dapat self-service.',
+          tasks: [
+            {
+              verb: 'Notebook',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Agent',
+              toolId: '🏗 Agent Builder (M365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO',
+          roleID: 'Direktur Keuangan Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group Chief of Staff',
+          roleID: 'Kepala Staf Grup',
+          acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no M365 Copilot license',
+          color: '#7C3AED'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy Director',
+          roleID: 'Direktur Strategi Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#059669'
+        },
+        {
+          name: 'Daichi Maruyama',
+          role: 'Group QA & Regulatory Director',
+          roleID: 'Direktur QA & Regulatory Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'ID'
+    },
+    {
+      id: 'rubber-gloves',
+      sectorId: 'sec-mfg',
+      subsector: '',
+      name: 'Rubber Gloves Mfg',
+      icon: '🧤',
+      color: '#0EA5E9',
+      accent: '#0369A1',
+      company: 'Zava Glove Berhad',
+      tagline: 'US FDA Form 483 + USA forced-labour CBP withhold-release order — Bursa Malaysia query in 7 days.',
+      scenario: 'Zava Glove Berhad is a Bursa Malaysia-listed rubber-gloves manufacturer with 8 plants across Selangor, Negeri Sembilan and Kedah, producing 92 billion gloves annually for medical, exam and industrial markets across 195 countries. The US FDA issued a Form 483 with 9 observations on its Klang plant covering documentation, environmental monitoring and bioburden controls. US Customs and Border Protection has issued a Withhold Release Order against one production line citing forced-labour indicators in the migrant-worker recruitment chain. ESG ratings dropped 2 notches and the share price fell 14% in 5 sessions. Bursa Malaysia has issued an unusual market activity query and Securities Commission Malaysia has requested supplementary disclosure within 7 days. The Group CFO needs to coordinate FDA remediation, ILO-aligned migrant-worker remediation, ESG repair, lender covenant communication, and an Audit Committee briefing all at once. Real customer reference frame: this group operates similarly to Hartalega Holdings, Top Glove Corporation, Kossan Rubber, and Supermax.',
+      companyID: 'Zava Glove Berhad',
+      taglineID: 'FDA Form 483 + CBP forced-labour WRO — query Bursa Malaysia 7 hari.',
+      scenarioID: 'Zava Glove Berhad adalah produsen sarung tangan karet tercatat di Bursa Malaysia dengan 8 pabrik di Selangor, Negeri Sembilan, dan Kedah, memproduksi 92 miliar sarung tangan per tahun untuk pasar medis, exam, dan industri di 195 negara. US FDA menerbitkan Form 483 dengan 9 observasi pada pabrik Klang yang mencakup dokumentasi, pemantauan lingkungan, dan kendali bioburden. CBP AS menerbitkan Withhold Release Order pada satu line produksi dengan menyebut indikator kerja paksa pada rantai rekrutmen pekerja migran. Rating ESG turun 2 notch dan harga saham jatuh 14% dalam 5 sesi. Bursa Malaysia menerbitkan unusual market activity query dan SC Malaysia meminta pengungkapan tambahan dalam 7 hari. Direktur Keuangan Grup harus mengoordinasikan remediasi FDA, remediasi pekerja migran selaras-ILO, perbaikan ESG, komunikasi covenant lender, dan briefing Komite Audit semuanya sekaligus. Frame customer riil: grup ini beroperasi serupa dengan Hartalega Holdings, Top Glove Corporation, Kossan Rubber, dan Supermax.',
+      files: [
+        'GLOVE_01_FDA_483_Response_Tracker.xlsx',
+        'GLOVE_02_Migrant_Worker_Remediation_Plan.docx',
+        'GLOVE_03_ESG_Recovery_Roadmap.docx',
+        'GLOVE_04_Lender_Covenant_Tracker.xlsx',
+        'GLOVE_05_Bursa_Disclosure_Pack.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no M365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Goal: Frame the FDA Form 483 + CBP Withhold Release Order in plain English for the Group CEO. Context: 9 FDA observations at Klang plant, USA forced-labour finding on one line, ESG -2 notches, share -14%, Bursa query in 7 days. Source: my notes from the 6am crisis call. Expectation: 1-page note with sections — Headline, What FDA Said, What CBP Said, Bursa & SC Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: 90-second verbal opening for the Bursa-mandated press conference in 4 days. Context: Audience is wires + sell-side + retail investors. Source: the published facts only (Form 483, CBP WRO, ESG downgrade). Expectation: Open with acknowledgement, explain remediation underway, signal credible 90-day FDA + ILO-aligned migrant-worker recovery, end with 3 commitments. Avoid speculative language and avoid blaming labour agents.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: Build the stakeholder communication map. Context: 7-day Bursa clock. Source: known stakeholders. Expectation: RAG table — Red same-day (FDA, CBP, Bursa, SC, top-3 customers, US distributor), Amber 24h (ILO, top-5 lenders, ESG raters MSCI + Sustainalytics, migrant-worker hotline), Green monitor (sell-side, retail). Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Tujuan: Bingkai FDA Form 483 + CBP Withhold Release Order dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: 9 observasi FDA di pabrik Klang, temuan kerja paksa CBP pada satu line, ESG -2 notch, saham -14%, query Bursa dalam 7 hari. Sumber: catatan saya dari rapat krisis pukul 06:00. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa Kata FDA, Apa Kata CBP, Posisi Bursa & SC, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Pembukaan lisan 90 detik untuk press conference yang diwajibkan Bursa dalam 4 hari. Konteks: Audiens kantor berita + sell-side + investor ritel. Sumber: hanya fakta yang sudah dipublikasikan (Form 483, CBP WRO, ESG downgrade). Ekspektasi: Buka dengan pengakuan, jelaskan remediasi yang berjalan, beri sinyal pemulihan FDA + selaras ILO 90-hari yang kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif dan hindari menyalahkan agen tenaga kerja.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Bangun peta komunikasi pemangku kepentingan. Konteks: clock Bursa 7-hari. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga (FDA, CBP, Bursa, SC, 3 customer teratas, distributor AS), Kuning 24 jam (ILO, 5 lender teratas, ESG rater MSCI + Sustainalytics, hotline pekerja migran), Hijau pantau (sell-side, ritel). Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+              prompt: 'Goal: Benchmark how listed Malaysian glove makers (Hartalega, Top Glove, Kossan, Supermax) and global peers (Ansell, Halyard) have handled simultaneous FDA Form 483 + USA CBP Withhold Release Order events between 2018 and 2025. Context: Zava Glove Berhad must respond to Bursa Malaysia in 7 days. Source: peer disclosures, Bursa announcements, FDA EIRs, CBP WRO databases. Expectation: For each peer, identify trigger, FDA timeline to closure, ILO-aligned migrant-worker programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table: Peer, Trigger, FDA Closure Days, Worker Programme, Recovery, Citation.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+              prompt: 'Goal: 3 most defensible 90-day playbooks for a Malaysian glove maker hit by FDA + CBP simultaneously. Context: Zava Glove must protect FDA market access AND ILO-aligned worker remediation AND ESG rating concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+              prompt: 'Tujuan: Benchmark bagaimana produsen sarung tangan Malaysia tercatat (Hartalega, Top Glove, Kossan, Supermax) dan peer global (Ansell, Halyard) menangani peristiwa FDA Form 483 + CBP WRO AS bersamaan antara 2018 hingga 2025. Konteks: Zava Glove Berhad harus respons ke Bursa Malaysia dalam 7 hari. Sumber: pengungkapan peer, pengumuman Bursa, FDA EIR, database CBP WRO. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline penutupan FDA, program selaras-ILO untuk pekerja migran, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal publikasi. Hasilkan tabel perbandingan: Peer, Pemicu, Hari Penutupan FDA, Program Pekerja, Pemulihan, Kutipan.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+              prompt: 'Tujuan: 3 strategi 90-hari paling defensible untuk produsen sarung tangan Malaysia yang terkena FDA + CBP bersamaan. Konteks: Zava Glove harus melindungi akses pasar FDA DAN remediasi pekerja selaras-ILO DAN rating ESG sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai pandangan mayoritas dan minoritas. Tabel perbandingan: Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload `/GLOVE_01_FDA_483_Response_Tracker.xlsx` AND `/GLOVE_04_Lender_Covenant_Tracker.xlsx`. Paste the prompt below.',
+              prompt: 'Goal: Quantify open vs closed FDA observations and lender covenant headroom. Context: 9 FDA observations open, 18 lenders watching covenants. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of open FDA observations by closure-readiness; (2) waterfall of MYR EBITDA impact from FDA delay + CBP WRO + worker remediation costs; (3) covenant headroom tracker by lender, flag headroom <10% as Red. Output a Board-ready RAG dashboard.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah `/GLOVE_01_FDA_483_Response_Tracker.xlsx` DAN `/GLOVE_04_Lender_Covenant_Tracker.xlsx`. Tempel prompt.',
+              prompt: 'Tujuan: Kuantifikasi observasi FDA terbuka vs tertutup dan headroom covenant lender. Konteks: 9 observasi FDA terbuka, 18 lender memantau covenant. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG observasi FDA terbuka berdasarkan kesiapan penutupan; (2) waterfall dampak EBITDA RM dari penundaan FDA + CBP WRO + biaya remediasi pekerja; (3) tracker headroom covenant per lender, tandai headroom <10% Merah. Hasilkan dashboard RAG siap-Direksi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/GLOVE_01_FDA_483_Response_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in 7 days. Source: combine FDA Observations, Remediation Plan, AND Resource Plan tabs. Expectation: New sheet "AC Dashboard" with KPI tiles (open observations, on-track, delayed, average days in remediation), bar chart of observations by closure week, sparkline column. RAG conditional formatting. Do not modify source tabs.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/GLOVE_01_FDA_483_Response_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 7 hari. Sumber: gabungkan tab FDA Observations, Remediation Plan, DAN Resource Plan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile (observasi terbuka, on-track, terlambat, rata-rata hari remediasi), bar chart observasi per minggu penutupan, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference `/GLOVE_02_Migrant_Worker_Remediation_Plan.docx` and `/GLOVE_05_Bursa_Disclosure_Pack.docx` using `/`. Paste the prompt below.',
+              prompt: 'Goal: Draft the Bursa Malaysia supplementary disclosure (4 pages). Context: 7-day clock. Source: the 2 referenced docs + my notes. Expectation: Sections — Material Facts, FDA Form 483 Status, CBP WRO Status, ILO-Aligned Worker Remediation, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan `/GLOVE_02_Migrant_Worker_Remediation_Plan.docx` dan `/GLOVE_05_Bursa_Disclosure_Pack.docx` menggunakan `/`. Tempel prompt.',
+              prompt: 'Tujuan: Susun pengungkapan tambahan Bursa Malaysia (4 halaman). Konteks: clock 7 hari. Sumber: 2 dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status FDA Form 483, Status CBP WRO, Remediasi Pekerja Selaras-ILO, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on FDA + CBP joint response. Context: AC in 7 days. Source: my Bursa disclosure draft and dashboard. Expectation: Cover; Situation; FDA Status (1 slide, RAG); CBP Status (1 slide); 90-Day Recovery Plan (2 slides); Financial Impact; Decisions Requested. Brand colours #0EA5E9 + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang respons gabungan FDA + CBP. Konteks: KA dalam 7 hari. Sumber: draf pengungkapan Bursa dan dashboard saya. Ekspektasi: Cover; Situasi; Status FDA (1 slide, RAG); Status CBP (1 slide); Rencana Pemulihan 90-Hari (2 slide); Dampak Finansial; Keputusan yang Diminta. Warna brand #0EA5E9 + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread "FDA 483 + CBP — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+              prompt: 'Goal: Draft a single email to the 8 plant GMs and the Group HSE Director. Context: FDA + CBP active. Source: the email thread above and the remediation plan. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each plant must complete in 72 hours, the worker-remediation programme launch, the AC date. Tone: firm, supportive, accountable.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "FDA 483 + CBP — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+              prompt: 'Tujuan: Susun satu email ke 8 GM pabrik dan Direktur HSE Grup. Konteks: FDA + CBP aktif. Sumber: thread di atas dan rencana remediasi. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per pabrik dalam 72 jam, peluncuran program remediasi pekerja, tanggal KA. Nada: tegas, suportif, akuntabel.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"FDA 483 War Room"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+              prompt: 'Create meeting minutes for the Teams meeting /FDA 483 War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to the CBP WRO as Critical Path. Save as Minutes_FDA_483_WarRoom.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"FDA 483 War Room"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+              prompt: 'Buat notulen rapat untuk rapat Teams /FDA 483 War Room. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait CBP WRO sebagai Critical Path. Simpan sebagai Notulen_FDA_483_WarRoom.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          prompts: [
+            {
+              instr: 'All sources are loaded. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all 5 sources to produce a 10-bullet Audit Committee narrative. Cover: FDA 483 status, CBP WRO status, ILO-aligned migrant-worker remediation, ESG impact, lender covenant headroom, decisions requested. Cite the source file at the end of every bullet.'
+            },
+            {
+              instr: 'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+              prompt: 'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the 8 plant GMs preparing for tomorrow morning huddles.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari kelima sumber untuk menghasilkan narasi Komite Audit 10-bullet. Mencakup: status FDA 483, status CBP WRO, remediasi pekerja migran selaras-ILO, dampak ESG, headroom covenant lender, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'
+            },
+            {
+              instr: 'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+              prompt: 'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah 8 GM pabrik yang menyiapkan huddle pagi besok.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/GLOVE_01_FDA_483_Response_Tracker.xlsx',
+              '/GLOVE_02_Migrant_Worker_Remediation_Plan.docx',
+              '/GLOVE_03_ESG_Recovery_Roadmap.docx',
+              '/GLOVE_04_Lender_Covenant_Tracker.xlsx',
+              '/GLOVE_05_Bursa_Disclosure_Pack.docx'
+            ],
+            instructions: 'You are the Group CFO of Zava Glove Berhad preparing an Audit Committee pack. Cover FDA 483 remediation, CBP WRO worker programme, ESG repair, and covenant communication. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals.',
+            instructionsID: 'Anda adalah Direktur Keuangan Grup Zava Glove Berhad yang menyiapkan paket Komite Audit. Cakup remediasi FDA 483, program pekerja CBP WRO, perbaikan ESG, dan komunikasi covenant. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup.'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'M365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+              prompt: 'Cowork — FDA + CBP Sprint. Run these in parallel: (1) 📝 Draft Word — Bursa supplementary disclosure 4 pages, source /GLOVE_05_Bursa_Disclosure_Pack.docx. (2) 📝 Draft Word — FDA 483 line-by-line response, source /GLOVE_01_FDA_483_Response_Tracker.xlsx. (3) ✉️ Send email to 8 plant GMs and Group HSE Director with the 3 actions per plant in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+              prompt: 'Cowork — Sprint FDA + CBP. Jalankan paralel: (1) 📝 Susun Word — pengungkapan tambahan Bursa 4 halaman, sumber /GLOVE_05_Bursa_Disclosure_Pack.docx. (2) 📝 Susun Word — respons baris demi baris FDA 483, sumber /GLOVE_01_FDA_483_Response_Tracker.xlsx. (3) ✉️ Kirim email ke 8 GM pabrik dan Direktur HSE Grup dengan 3 aksi per pabrik dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+              prompt: 'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: FDA 483 + CBP WRO joint response. Source: /GLOVE_01_FDA_483_Response_Tracker.xlsx, /GLOVE_02_Migrant_Worker_Remediation_Plan.docx. Expectation: Sections — Executive Summary 5 bullets; FDA 483 status; CBP WRO worker programme; ESG repair; Lender covenant communication; Decisions requested. Tone: precise, regulator-grade. Save as CFO_FDA_CBP_Crisis_Brief.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+              prompt: 'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: respons gabungan FDA 483 + CBP WRO. Sumber: /GLOVE_01_FDA_483_Response_Tracker.xlsx, /GLOVE_02_Migrant_Worker_Remediation_Plan.docx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; status FDA 483; program pekerja CBP WRO; perbaikan ESG; komunikasi covenant lender; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_Krisis_FDA_CBP_Direktur_Keuangan.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on the FDA + CBP joint response. Context: AC in 7 days. Source: /CFO_FDA_CBP_Crisis_Brief.docx and /GLOVE_01_FDA_483_Response_Tracker.xlsx. Expectation: Cover; Situation; FDA RAG; CBP RAG; 90-Day Plan (2); Financial Impact; Decisions. Brand #0EA5E9 + #0F1C3F, 1 chart/slide. Save as FDA_CBP_AC_Deck.pptx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang respons gabungan FDA + CBP. Konteks: KA dalam 7 hari. Sumber: /Brief_Krisis_FDA_CBP_Direktur_Keuangan.docx dan /GLOVE_01_FDA_483_Response_Tracker.xlsx. Ekspektasi: Cover; Situasi; RAG FDA; RAG CBP; Rencana 90-Hari (2); Dampak Finansial; Keputusan. Brand #0EA5E9 + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_KA_FDA_CBP.pptx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+              prompt: 'Goal: Build an FDA + CBP joint-response control tracker workbook. Context: 90-day operating tracker for the Group COO. Source: schema only — 9 FDA observations, 8 plants, ILO worker indicators. Expectation: Sheet 1 FDA Observations log, Sheet 2 CBP Worker Programme milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as Glove_FDA_CBP_Tracker.xlsx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun workbook tracker respons gabungan FDA + CBP. Konteks: tracker operasi 90-hari untuk Direktur Operasional Grup. Sumber: hanya skema — 9 observasi FDA, 8 pabrik, indikator pekerja ILO. Ekspektasi: Sheet 1 Log Observasi FDA, Sheet 2 Milestone Program Pekerja CBP, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Glove_FDA_CBP.xlsx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (M365 Copilot Chat)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+              prompt: '**Option A — Zava Glove FDA Remediation Agent.** Build an agent for the Group COO, Group HSE Director, and 8 plant GMs to drive FDA 483 remediation to closure. Ground every answer on /GLOVE_01_FDA_483_Response_Tracker.xlsx and the FDA EIR. Always cite file and observation number. Classify each observation as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which observations are at risk of slipping; (2) What is the day-by-day closure plan for Klang plant; (3) Draft the FDA narrative response; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'
+            },
+            {
+              instr: '**Option B — alternative agent.** Same flow, different specialisation.',
+              prompt: '**Option B — Zava Glove Worker Remediation Agent.** Build an agent for the Group HR Director, Group Sustainability Officer, and Group Comms to manage ILO-aligned migrant-worker remediation under the CBP WRO. Ground every answer on /GLOVE_02_Migrant_Worker_Remediation_Plan.docx. Always cite section. Classify each indicator as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) What is the recruitment-fee reimbursement programme status; (2) Draft holding line for ILO; (3) Build a weekly sustainability dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second worker-remediation update.'
+            },
+            {
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Glove Investor Relations Agent.** Build an agent for the Head of IR and the Group CFO to handle analyst and shareholder questions over the 30 days post-event. Ground every answer on /GLOVE_05_Bursa_Disclosure_Pack.docx and /GLOVE_03_ESG_Recovery_Roadmap.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for Bursa media; (3) ESG recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'
+            },
+            {
+              instr: '**Test.** Validate grounding, citations, GCSE framework, and scope.',
+              prompt: 'Give me the 60-second version of the FDA + CBP situation, the 3 worst observations, the worker-remediation plan, and the decisions I must take to the AC in 7 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'
+            },
+            {
+              instr: '**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+              prompt: 'Share with the Zava Glove ExCo (Group CEO, CFO, COO, HR Director, HSE Director, Sustainability Officer, Comms, 8 plant GMs) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every FDA + CBP question through it for the next 90 days."'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+              prompt: '**Opsi A — Zava Glove FDA Remediation Agent.** Bangun agent untuk Direktur Operasional Grup, Direktur HSE Grup, dan 8 GM pabrik untuk mendorong remediasi FDA 483 hingga ditutup. Dasarkan pada /GLOVE_01_FDA_483_Response_Tracker.xlsx dan FDA EIR. Selalu kutip file dan nomor observasi. Klasifikasikan tiap observasi sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Observasi mana yang berisiko slip; (2) Apa rencana penutupan harian pabrik Klang; (3) Susun respons naratif FDA; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'
+            },
+            {
+              instr: '**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Glove Worker Remediation Agent.** Bangun agent untuk Direktur HR Grup, Sustainability Officer Grup, dan Komunikasi Grup untuk mengelola remediasi pekerja migran selaras-ILO di bawah CBP WRO. Dasarkan pada /GLOVE_02_Migrant_Worker_Remediation_Plan.docx. Selalu kutip bagian. Klasifikasikan tiap indikator sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status program pengembalian biaya rekrutmen; (2) Susun holding line untuk ILO; (3) Bangun dashboard sustainability mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update remediasi pekerja 60 detik.'
+            },
+            {
+              instr: '**Opsi C — agent alternatif.** Alur sama.',
+              prompt: '**Opsi C — Zava Glove Investor Relations Agent.** Bangun agent untuk Kepala Hubungan Investor dan Direktur Keuangan Grup untuk menangani pertanyaan analis dan pemegang saham 30 hari setelah peristiwa. Dasarkan pada /GLOVE_05_Bursa_Disclosure_Pack.docx dan /GLOVE_03_ESG_Recovery_Roadmap.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media Bursa; (3) Rangkum roadmap pemulihan ESG; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'
+            },
+            {
+              instr: '**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+              prompt: 'Berikan versi 60 detik dari situasi FDA + CBP, 3 observasi terburuk, rencana remediasi pekerja, dan keputusan yang harus saya bawa ke KA dalam 7 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'
+            },
+            {
+              instr: '**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+              prompt: 'Bagikan ke Zava Glove ExCo (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Direktur HR, Direktur HSE, Sustainability Officer, Komunikasi, 8 GM pabrik) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan FDA + CBP melalui agent ini selama 90 hari ke depan."'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-finance',
+        'dept-strategy',
+        'dept-legal',
+        'dept-risk',
+        'dept-operations',
+        'dept-hr',
+        'dept-esg',
+        'dept-corpsec'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the FDA + CBP joint hit and pull peer playbooks before the 7-day Bursa clock starts ticking.',
+          summaryID: 'Bingkai pukulan gabungan FDA + CBP dan tarik playbook peer sebelum clock Bursa 7-hari mulai berdetak.',
+          tasks: [
+            {
+              verb: 'Frame',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Benchmark',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Draft brief',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify FDA + CBP financial impact and covenant headroom; build an AC dashboard.',
+          summaryID: 'Kuantifikasi dampak finansial FDA + CBP dan headroom covenant; bangun dashboard KA.',
+          tasks: [
+            {
+              verb: 'Crunch',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Dashboard',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Tracker',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief 8 plant GMs, capture the FDA War Room recap, and assemble the AC deck and Bursa disclosure.',
+          summaryID: 'Brief 8 GM pabrik, capture recap FDA War Room, dan rakit deck KA serta pengungkapan Bursa.',
+          tasks: [
+            {
+              verb: 'Email',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Deck',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Sprint',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the FDA + CBP playbook into a reusable agent for the 8 plant GMs and the Group HSE team.',
+          summaryID: 'Bungkus playbook FDA + CBP ke dalam agent reusable untuk 8 GM pabrik dan tim HSE Grup.',
+          tasks: [
+            {
+              verb: 'Notebook',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Agent',
+              toolId: '🏗 Agent Builder (M365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO',
+          roleID: 'Direktur Keuangan Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group Chief of Staff',
+          roleID: 'Kepala Staf Grup',
+          acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no M365 Copilot license',
+          color: '#7C3AED'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy Director',
+          roleID: 'Direktur Strategi Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#059669'
+        },
+        {
+          name: 'Daichi Maruyama',
+          role: 'Group HSE & Sustainability Director',
+          roleID: 'Direktur HSE & Keberlanjutan Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'MY'
+    },
+    {
+      id: 'mortgage-finance',
+      sectorId: 'sec-banking',
+      subsector: '',
+      name: 'Mortgage Finance',
+      icon: '🏘️',
+      color: '#0F766E',
+      accent: '#134E4A',
+      company: 'Zava Cagamas Berhad',
+      tagline: 'BNM directed liquidity injection — MYR 2.4B MBS issuance window in 14 days.',
+      scenario: 'Zava Cagamas Berhad is the national mortgage-finance corporation supporting Malaysia\'s secondary mortgage market via Mortgage-Backed Securities (MBS), Sukuk Cagamas, and Purchase-with-Recourse facilities. Bank Negara Malaysia has flagged liquidity stress at 4 mid-tier banks and directed Zava Cagamas to open a MYR 2.4B MBS issuance window in 14 days. The Group CFO must coordinate origination-bank pricing, Securities Commission Malaysia approvals, RAM/MARC ratings affirmation, AAOIFI compliance for the Sukuk tranche, and an Investor Day briefing for 60 institutional investors all at once. Real customer reference frame: this group operates similarly to Cagamas Berhad and Maybank Investment Bank\'s mortgage-finance division.',
+      companyID: 'Zava Cagamas Berhad',
+      taglineID: 'BNM mengarahkan suntikan likuiditas — jendela penerbitan MBS RM 2,4 miliar dalam 14 hari.',
+      scenarioID: 'Zava Cagamas Berhad adalah korporasi pembiayaan hipotek nasional yang mendukung pasar hipotek sekunder Malaysia via Mortgage-Backed Securities (MBS), Sukuk Cagamas, dan fasilitas Purchase-with-Recourse. Bank Negara Malaysia menandai stres likuiditas pada 4 bank menengah dan mengarahkan Zava Cagamas untuk membuka jendela penerbitan MBS RM 2,4 miliar dalam 14 hari. Direktur Keuangan Grup harus mengoordinasikan pricing bank originator, persetujuan SC Malaysia, afirmasi rating RAM/MARC, kepatuhan AAOIFI untuk tranche Sukuk, dan briefing Investor Day untuk 60 investor institusi semuanya sekaligus. Frame customer riil: grup ini beroperasi serupa dengan Cagamas Berhad dan divisi mortgage-finance Maybank Investment Bank.',
+      files: [
+        'MORT_01_MBS_Pricing_Model.xlsx',
+        'MORT_02_Mortgage_Pool_Stratification.xlsx',
+        'MORT_03_BNM_Compliance_Pack.docx',
+        'MORT_04_Investor_Day_Briefing.docx',
+        'MORT_05_Rating_Agency_Submission.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no M365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Goal: Frame the BNM-directed MBS issuance situation in plain English for the Group CEO. Context: Zava Cagamas Berhad is the national mortgage-finance corporation supporting Malaysia\'s secondary mortgage market via Mortgage-Backed Securities (MBS), Sukuk Cagamas, and Purchase-with-Recourse facilit... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: 90-second verbal opening for the Zava Cagamas Berhad stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: Build the stakeholder communication map for the BNM-directed MBS issuance. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Tujuan: Bingkai situasi BNM-directed MBS issuance dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Cagamas Berhad adalah korporasi pembiayaan hipotek nasional yang mendukung pasar hipotek sekunder Malaysia via Mortgage-Backed Securities (MBS), Sukuk Cagamas, dan fasilitas Purchase-with-Recours... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Cagamas Berhad. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk BNM-directed MBS issuance. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+              prompt: 'Goal: Benchmark how peers (Cagamas Berhad, Maybank IB Mortgage, RHB Investment Bank, AmInvestment Bank, CIMB Investment Bank) handled comparable BNM-directed MBS issuance events between 2020 and 2025. Context: Zava Cagamas Berhad must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+              prompt: 'Goal: 3 most defensible response playbooks for Zava Cagamas Berhad hit by BNM-directed MBS issuance. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+              prompt: 'Tujuan: Benchmark bagaimana peer (Cagamas Berhad, Maybank IB Mortgage, RHB Investment Bank, AmInvestment Bank, CIMB Investment Bank) menangani peristiwa BNM-directed MBS issuance sebanding antara 2020 hingga 2025. Konteks: Zava Cagamas Berhad harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+              prompt: 'Tujuan: 3 playbook respons paling defensible untuk Zava Cagamas Berhad yang terkena BNM-directed MBS issuance. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /MORT_01_MBS_Pricing_Model.xlsx AND /MORT_02_Mortgage_Pool_Stratification.xlsx. Paste the prompt below.',
+              prompt: 'Goal: Quantify the BNM-directed MBS issuance financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /MORT_01_MBS_Pricing_Model.xlsx DAN /MORT_02_Mortgage_Pool_Stratification.xlsx. Tempel prompt.',
+              prompt: 'Tujuan: Kuantifikasi dampak finansial dan operasional dari BNM-directed MBS issuance. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/MORT_01_MBS_Pricing_Model.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/MORT_01_MBS_Pricing_Model.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /MORT_03_BNM_Compliance_Pack.docx and /MORT_04_Investor_Day_Briefing.docx using `/`. Paste the prompt below.',
+              prompt: 'Goal: Draft the regulator-grade response brief (4 pages). Context: BNM-directed MBS issuance active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /MORT_03_BNM_Compliance_Pack.docx dan /MORT_04_Investor_Day_Briefing.docx menggunakan `/`. Tempel prompt.',
+              prompt: 'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: BNM-directed MBS issuance aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on BNM-directed MBS issuance. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #0F766E + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang BNM-directed MBS issuance. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #0F766E + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread "BNM-directed MBS issuance — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+              prompt: 'Goal: Draft a single email to the Zava Cagamas Berhad ExCo and the relevant operating heads. Context: BNM-directed MBS issuance active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "BNM-directed MBS issuance — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+              prompt: 'Tujuan: Susun satu email ke ExCo Zava Cagamas Berhad dan kepala operasi yang relevan. Konteks: BNM-directed MBS issuance aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"BNM Liquidity War Room"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+              prompt: 'Create meeting minutes for the Teams meeting /BNM Liquidity War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to BNM-directed MBS issuance as Critical Path. Save as Minutes_BNM_Liquidity_War_Room.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"BNM Liquidity War Room"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+              prompt: 'Buat notulen rapat untuk rapat Teams /BNM Liquidity War Room. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait BNM-directed MBS issuance sebagai Critical Path. Simpan sebagai Notulen_BNM_Liquidity_War_Room.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          prompts: [
+            {
+              instr: 'All sources are loaded. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: BNM-directed MBS issuance status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'
+            },
+            {
+              instr: 'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+              prompt: 'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Cagamas Berhad operating heads preparing for tomorrow morning huddles.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status BNM-directed MBS issuance, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'
+            },
+            {
+              instr: 'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+              prompt: 'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Cagamas Berhad yang menyiapkan huddle pagi besok.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/MORT_01_MBS_Pricing_Model.xlsx',
+              '/MORT_02_Mortgage_Pool_Stratification.xlsx',
+              '/MORT_03_BNM_Compliance_Pack.docx',
+              '/MORT_04_Investor_Day_Briefing.docx',
+              '/MORT_05_Rating_Agency_Submission.docx'
+            ],
+            instructions: 'You are the Group CFO of Zava Cagamas Berhad preparing an Audit Committee pack on BNM-directed MBS issuance. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+            instructionsID: 'Anda adalah Direktur Keuangan Grup Zava Cagamas Berhad yang menyiapkan paket Komite Audit untuk BNM-directed MBS issuance. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'M365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+              prompt: 'Cowork — BNM-Directed Issuance Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /MORT_01_MBS_Pricing_Model.xlsx, /MORT_02_Mortgage_Pool_Stratification.xlsx, /MORT_03_BNM_Compliance_Pack.docx, /MORT_04_Investor_Day_Briefing.docx, /MORT_05_Rating_Agency_Submission.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Cagamas Berhad ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+              prompt: 'Cowork — BNM-Directed Issuance Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /MORT_01_MBS_Pricing_Model.xlsx, /MORT_02_Mortgage_Pool_Stratification.xlsx, /MORT_03_BNM_Compliance_Pack.docx, /MORT_04_Investor_Day_Briefing.docx, /MORT_05_Rating_Agency_Submission.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Cagamas Berhad dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+              prompt: 'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: BNM-directed MBS issuance. Source: /MORT_01_MBS_Pricing_Model.xlsx AND /MORT_02_Mortgage_Pool_Stratification.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as BNM_MBS_Issuance_Brief.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+              prompt: 'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: BNM-directed MBS issuance. Sumber: /MORT_01_MBS_Pricing_Model.xlsx DAN /MORT_02_Mortgage_Pool_Stratification.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_Penerbitan_MBS_BNM.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on BNM-directed MBS issuance. Context: AC in 14 days. Source: /BNM_MBS_Issuance_Brief.docx and /MORT_01_MBS_Pricing_Model.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #0F766E + #0F1C3F, 1 chart/slide. Save as MBS_Investor_Day_Deck.pptx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang BNM-directed MBS issuance. Konteks: KA dalam 14 hari. Sumber: /Brief_Penerbitan_MBS_BNM.docx dan /MORT_01_MBS_Pricing_Model.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #0F766E + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_Investor_Day_MBS.pptx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+              prompt: 'Goal: Build a BNM-directed MBS issuance response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as MBS_Issuance_Tracker.xlsx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun workbook tracker kendali respons BNM-directed MBS issuance. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Penerbitan_MBS.xlsx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (M365 Copilot Chat)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+              prompt: '**Option A — Zava Cagamas MBS Pricing Agent.** Build an agent for the Group COO and the operating heads to drive the BNM-directed MBS issuance response programme to closure. Ground every answer on /MORT_01_MBS_Pricing_Model.xlsx AND /MORT_02_Mortgage_Pool_Stratification.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'
+            },
+            {
+              instr: '**Option B — alternative agent.** Same flow, different specialisation.',
+              prompt: '**Option B — Zava Cagamas Investor Relations Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /MORT_03_BNM_Compliance_Pack.docx and /MORT_04_Investor_Day_Briefing.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'
+            },
+            {
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Cagamas BNM Compliance Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /MORT_01_MBS_Pricing_Model.xlsx, /MORT_02_Mortgage_Pool_Stratification.xlsx, /MORT_03_BNM_Compliance_Pack.docx, /MORT_04_Investor_Day_Briefing.docx, /MORT_05_Rating_Agency_Submission.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'
+            },
+            {
+              instr: '**Test.** Validate grounding, citations, GCSE framework, and scope.',
+              prompt: 'Give me the 60-second version of the BNM-directed MBS issuance situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'
+            },
+            {
+              instr: '**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+              prompt: 'Share with the Zava Cagamas Berhad ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every BNM-directed MBS issuance question through it for the next 90 days."'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+              prompt: '**Opsi A — Zava Cagamas MBS Pricing Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons BNM-directed MBS issuance hingga ditutup. Dasarkan pada /MORT_01_MBS_Pricing_Model.xlsx DAN /MORT_02_Mortgage_Pool_Stratification.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'
+            },
+            {
+              instr: '**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Cagamas Investor Relations Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /MORT_03_BNM_Compliance_Pack.docx dan /MORT_04_Investor_Day_Briefing.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'
+            },
+            {
+              instr: '**Opsi C — agent alternatif.** Alur sama.',
+              prompt: '**Opsi C — Zava Cagamas BNM Compliance Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /MORT_01_MBS_Pricing_Model.xlsx, /MORT_02_Mortgage_Pool_Stratification.xlsx, /MORT_03_BNM_Compliance_Pack.docx, /MORT_04_Investor_Day_Briefing.docx, /MORT_05_Rating_Agency_Submission.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'
+            },
+            {
+              instr: '**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+              prompt: 'Berikan versi 60 detik dari situasi BNM-directed MBS issuance, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'
+            },
+            {
+              instr: '**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+              prompt: 'Bagikan ke ExCo Zava Cagamas Berhad (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan BNM-directed MBS issuance melalui agent ini selama 90 hari ke depan."'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-finance',
+        'dept-strategy',
+        'dept-legal',
+        'dept-risk',
+        'dept-corpsec',
+        'dept-ir',
+        'dept-operations'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the BNM-directed MBS issuance situation and pull peer playbooks before the regulator clock starts ticking.',
+          summaryID: 'Bingkai situasi BNM-directed MBS issuance dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+          tasks: [
+            {
+              verb: 'Frame',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Benchmark',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Draft brief',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify BNM-directed MBS issuance financial and operational impact; build an AC dashboard.',
+          summaryID: 'Kuantifikasi dampak finansial dan operasional BNM-directed MBS issuance; bangun dashboard KA.',
+          tasks: [
+            {
+              verb: 'Crunch',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Dashboard',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Tracker',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief operating heads, capture the BNM Liquidity War Room recap, and assemble the AC deck and regulator response.',
+          summaryID: 'Brief kepala operasi, capture recap BNM Liquidity War Room, dan rakit deck KA serta respons regulator.',
+          tasks: [
+            {
+              verb: 'Email',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Deck',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Sprint',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the BNM-directed MBS issuance playbook into a reusable agent for the Zava Cagamas Berhad operating team.',
+          summaryID: 'Bungkus playbook BNM-directed MBS issuance ke dalam agent reusable untuk tim operasi Zava Cagamas Berhad.',
+          tasks: [
+            {
+              verb: 'Notebook',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Agent',
+              toolId: '🏗 Agent Builder (M365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO',
+          roleID: 'Direktur Keuangan Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group Chief of Staff',
+          roleID: 'Kepala Staf Grup',
+          acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no M365 Copilot license',
+          color: '#7C3AED'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy Director',
+          roleID: 'Direktur Strategi Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#059669'
+        },
+        {
+          name: 'Daichi Maruyama',
+          role: 'Group Sustainability & Risk Director',
+          roleID: 'Direktur Keberlanjutan & Risiko Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'MY'
+    },
+    {
+      id: 'cross-border-remittance',
+      sectorId: 'sec-fintech',
+      subsector: '',
+      name: 'Cross-Border Remittance',
+      icon: '💱',
+      color: '#9333EA',
+      accent: '#6B21A8',
+      company: 'Zava Remit Asia',
+      tagline: 'BNM PSA suspicious-transaction inquiry on the MY↔ID corridor — response in 5 days.',
+      scenario: 'Zava Remit Asia is a Bank Negara Malaysia-licensed e-money issuer and remittance operator running the MY↔ID, MY↔PH, MY↔BD, MY↔IN, and MY↔NP corridors with 1.4 million active migrant-worker users moving MYR 8.6B annually. BNM Payment Systems Act inquiry has flagged a 22% week-on-week spike in suspicious-transaction reports on the MY↔ID corridor and demanded explanation within 5 days. AUSTRAC, BSP and OJK are watching. Real customer reference frame: this group operates similarly to Merchantrade Asia, Tranglo, MoneyMatch, and Wise Malaysia.',
+      companyID: 'Zava Remit Asia',
+      taglineID: 'Inkuiri PSA BNM atas transaksi mencurigakan di koridor MY↔ID — respons dalam 5 hari.',
+      scenarioID: 'Zava Remit Asia adalah penerbit e-money berlisensi Bank Negara Malaysia dan operator remitansi yang menjalankan koridor MY↔ID, MY↔PH, MY↔BD, MY↔IN, dan MY↔NP dengan 1,4 juta pengguna pekerja migran aktif memindahkan RM 8,6 miliar per tahun. Inkuiri Payment Systems Act BNM menandai lonjakan 22% week-on-week dalam laporan transaksi mencurigakan di koridor MY↔ID dan meminta penjelasan dalam 5 hari. AUSTRAC, BSP, dan OJK juga memantau. Frame customer riil: grup ini beroperasi serupa dengan Merchantrade Asia, Tranglo, MoneyMatch, dan Wise Malaysia.',
+      files: [
+        'REMIT_01_STR_Filing_Tracker.xlsx',
+        'REMIT_02_Corridor_Volume_Heatmap.xlsx',
+        'REMIT_03_BNM_PSA_Response_Pack.docx',
+        'REMIT_04_AML_KYC_Policy.docx',
+        'REMIT_05_Regulator_QA_Pack.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no M365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Goal: Frame the BNM PSA suspicious-transaction inquiry situation in plain English for the Group CEO. Context: Zava Remit Asia is a Bank Negara Malaysia-licensed e-money issuer and remittance operator running the MY↔ID, MY↔PH, MY↔BD, MY↔IN, and MY↔NP corridors with 1.4 million active migrant-worker users movin... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: 90-second verbal opening for the Zava Remit Asia stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: Build the stakeholder communication map for the BNM PSA suspicious-transaction inquiry. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Tujuan: Bingkai situasi BNM PSA suspicious-transaction inquiry dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Remit Asia adalah penerbit e-money berlisensi Bank Negara Malaysia dan operator remitansi yang menjalankan koridor MY↔ID, MY↔PH, MY↔BD, MY↔IN, dan MY↔NP dengan 1,4 juta pengguna pekerja migran ak... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Remit Asia. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk BNM PSA suspicious-transaction inquiry. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+              prompt: 'Goal: Benchmark how peers (Merchantrade Asia, Tranglo, MoneyMatch, Wise Malaysia, Western Union Malaysia) handled comparable BNM PSA suspicious-transaction inquiry events between 2020 and 2025. Context: Zava Remit Asia must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+              prompt: 'Goal: 3 most defensible response playbooks for Zava Remit Asia hit by BNM PSA suspicious-transaction inquiry. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+              prompt: 'Tujuan: Benchmark bagaimana peer (Merchantrade Asia, Tranglo, MoneyMatch, Wise Malaysia, Western Union Malaysia) menangani peristiwa BNM PSA suspicious-transaction inquiry sebanding antara 2020 hingga 2025. Konteks: Zava Remit Asia harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+              prompt: 'Tujuan: 3 playbook respons paling defensible untuk Zava Remit Asia yang terkena BNM PSA suspicious-transaction inquiry. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /REMIT_01_STR_Filing_Tracker.xlsx AND /REMIT_02_Corridor_Volume_Heatmap.xlsx. Paste the prompt below.',
+              prompt: 'Goal: Quantify the BNM PSA suspicious-transaction inquiry financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /REMIT_01_STR_Filing_Tracker.xlsx DAN /REMIT_02_Corridor_Volume_Heatmap.xlsx. Tempel prompt.',
+              prompt: 'Tujuan: Kuantifikasi dampak finansial dan operasional dari BNM PSA suspicious-transaction inquiry. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/REMIT_01_STR_Filing_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/REMIT_01_STR_Filing_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /REMIT_03_BNM_PSA_Response_Pack.docx and /REMIT_05_Regulator_QA_Pack.docx using `/`. Paste the prompt below.',
+              prompt: 'Goal: Draft the regulator-grade response brief (4 pages). Context: BNM PSA suspicious-transaction inquiry active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /REMIT_03_BNM_PSA_Response_Pack.docx dan /REMIT_05_Regulator_QA_Pack.docx menggunakan `/`. Tempel prompt.',
+              prompt: 'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: BNM PSA suspicious-transaction inquiry aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on BNM PSA suspicious-transaction inquiry. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #9333EA + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang BNM PSA suspicious-transaction inquiry. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #9333EA + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread "BNM PSA suspicious-transaction inquiry — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+              prompt: 'Goal: Draft a single email to the Zava Remit Asia ExCo and the relevant operating heads. Context: BNM PSA suspicious-transaction inquiry active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "BNM PSA suspicious-transaction inquiry — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+              prompt: 'Tujuan: Susun satu email ke ExCo Zava Remit Asia dan kepala operasi yang relevan. Konteks: BNM PSA suspicious-transaction inquiry aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"AML Risk Council"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+              prompt: 'Create meeting minutes for the Teams meeting /AML Risk Council. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to BNM PSA suspicious-transaction inquiry as Critical Path. Save as Minutes_AML_Risk_Council.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"AML Risk Council"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+              prompt: 'Buat notulen rapat untuk rapat Teams /AML Risk Council. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait BNM PSA suspicious-transaction inquiry sebagai Critical Path. Simpan sebagai Notulen_AML_Risk_Council.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          prompts: [
+            {
+              instr: 'All sources are loaded. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: BNM PSA suspicious-transaction inquiry status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'
+            },
+            {
+              instr: 'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+              prompt: 'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Remit Asia operating heads preparing for tomorrow morning huddles.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status BNM PSA suspicious-transaction inquiry, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'
+            },
+            {
+              instr: 'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+              prompt: 'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Remit Asia yang menyiapkan huddle pagi besok.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/REMIT_01_STR_Filing_Tracker.xlsx',
+              '/REMIT_02_Corridor_Volume_Heatmap.xlsx',
+              '/REMIT_03_BNM_PSA_Response_Pack.docx',
+              '/REMIT_04_AML_KYC_Policy.docx',
+              '/REMIT_05_Regulator_QA_Pack.docx'
+            ],
+            instructions: 'You are the Group CFO of Zava Remit Asia preparing an Audit Committee pack on BNM PSA suspicious-transaction inquiry. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+            instructionsID: 'Anda adalah Direktur Keuangan Grup Zava Remit Asia yang menyiapkan paket Komite Audit untuk BNM PSA suspicious-transaction inquiry. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'M365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+              prompt: 'Cowork — BNM PSA 5-Day Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /REMIT_01_STR_Filing_Tracker.xlsx, /REMIT_02_Corridor_Volume_Heatmap.xlsx, /REMIT_03_BNM_PSA_Response_Pack.docx, /REMIT_04_AML_KYC_Policy.docx, /REMIT_05_Regulator_QA_Pack.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Remit Asia ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+              prompt: 'Cowork — BNM PSA 5-Day Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /REMIT_01_STR_Filing_Tracker.xlsx, /REMIT_02_Corridor_Volume_Heatmap.xlsx, /REMIT_03_BNM_PSA_Response_Pack.docx, /REMIT_04_AML_KYC_Policy.docx, /REMIT_05_Regulator_QA_Pack.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Remit Asia dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+              prompt: 'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: BNM PSA suspicious-transaction inquiry. Source: /REMIT_01_STR_Filing_Tracker.xlsx AND /REMIT_02_Corridor_Volume_Heatmap.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as BNM_PSA_Response_Brief.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+              prompt: 'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: BNM PSA suspicious-transaction inquiry. Sumber: /REMIT_01_STR_Filing_Tracker.xlsx DAN /REMIT_02_Corridor_Volume_Heatmap.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_Respons_PSA_BNM.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on BNM PSA suspicious-transaction inquiry. Context: AC in 14 days. Source: /BNM_PSA_Response_Brief.docx and /REMIT_01_STR_Filing_Tracker.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #9333EA + #0F1C3F, 1 chart/slide. Save as AML_Council_Deck.pptx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang BNM PSA suspicious-transaction inquiry. Konteks: KA dalam 14 hari. Sumber: /Brief_Respons_PSA_BNM.docx dan /REMIT_01_STR_Filing_Tracker.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #9333EA + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_AML_Council.pptx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+              prompt: 'Goal: Build a BNM PSA suspicious-transaction inquiry response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as AML_Sprint_Tracker.xlsx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun workbook tracker kendali respons BNM PSA suspicious-transaction inquiry. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Sprint_AML.xlsx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (M365 Copilot Chat)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+              prompt: '**Option A — Zava Remit AML Triage Agent.** Build an agent for the Group COO and the operating heads to drive the BNM PSA suspicious-transaction inquiry response programme to closure. Ground every answer on /REMIT_01_STR_Filing_Tracker.xlsx AND /REMIT_02_Corridor_Volume_Heatmap.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'
+            },
+            {
+              instr: '**Option B — alternative agent.** Same flow, different specialisation.',
+              prompt: '**Option B — Zava Remit Regulator Liaison Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /REMIT_03_BNM_PSA_Response_Pack.docx and /REMIT_05_Regulator_QA_Pack.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'
+            },
+            {
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Remit Corridor Risk Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /REMIT_01_STR_Filing_Tracker.xlsx, /REMIT_02_Corridor_Volume_Heatmap.xlsx, /REMIT_03_BNM_PSA_Response_Pack.docx, /REMIT_04_AML_KYC_Policy.docx, /REMIT_05_Regulator_QA_Pack.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'
+            },
+            {
+              instr: '**Test.** Validate grounding, citations, GCSE framework, and scope.',
+              prompt: 'Give me the 60-second version of the BNM PSA suspicious-transaction inquiry situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'
+            },
+            {
+              instr: '**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+              prompt: 'Share with the Zava Remit Asia ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every BNM PSA suspicious-transaction inquiry question through it for the next 90 days."'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+              prompt: '**Opsi A — Zava Remit AML Triage Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons BNM PSA suspicious-transaction inquiry hingga ditutup. Dasarkan pada /REMIT_01_STR_Filing_Tracker.xlsx DAN /REMIT_02_Corridor_Volume_Heatmap.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'
+            },
+            {
+              instr: '**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Remit Regulator Liaison Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /REMIT_03_BNM_PSA_Response_Pack.docx dan /REMIT_05_Regulator_QA_Pack.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'
+            },
+            {
+              instr: '**Opsi C — agent alternatif.** Alur sama.',
+              prompt: '**Opsi C — Zava Remit Corridor Risk Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /REMIT_01_STR_Filing_Tracker.xlsx, /REMIT_02_Corridor_Volume_Heatmap.xlsx, /REMIT_03_BNM_PSA_Response_Pack.docx, /REMIT_04_AML_KYC_Policy.docx, /REMIT_05_Regulator_QA_Pack.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'
+            },
+            {
+              instr: '**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+              prompt: 'Berikan versi 60 detik dari situasi BNM PSA suspicious-transaction inquiry, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'
+            },
+            {
+              instr: '**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+              prompt: 'Bagikan ke ExCo Zava Remit Asia (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan BNM PSA suspicious-transaction inquiry melalui agent ini selama 90 hari ke depan."'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-finance',
+        'dept-risk',
+        'dept-legal',
+        'dept-operations',
+        'dept-strategy',
+        'dept-corpsec'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the BNM PSA suspicious-transaction inquiry situation and pull peer playbooks before the regulator clock starts ticking.',
+          summaryID: 'Bingkai situasi BNM PSA suspicious-transaction inquiry dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+          tasks: [
+            {
+              verb: 'Frame',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Benchmark',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Draft brief',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify BNM PSA suspicious-transaction inquiry financial and operational impact; build an AC dashboard.',
+          summaryID: 'Kuantifikasi dampak finansial dan operasional BNM PSA suspicious-transaction inquiry; bangun dashboard KA.',
+          tasks: [
+            {
+              verb: 'Crunch',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Dashboard',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Tracker',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief operating heads, capture the AML Risk Council recap, and assemble the AC deck and regulator response.',
+          summaryID: 'Brief kepala operasi, capture recap AML Risk Council, dan rakit deck KA serta respons regulator.',
+          tasks: [
+            {
+              verb: 'Email',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Deck',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Sprint',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the BNM PSA suspicious-transaction inquiry playbook into a reusable agent for the Zava Remit Asia operating team.',
+          summaryID: 'Bungkus playbook BNM PSA suspicious-transaction inquiry ke dalam agent reusable untuk tim operasi Zava Remit Asia.',
+          tasks: [
+            {
+              verb: 'Notebook',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Agent',
+              toolId: '🏗 Agent Builder (M365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO',
+          roleID: 'Direktur Keuangan Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group Chief of Staff',
+          roleID: 'Kepala Staf Grup',
+          acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no M365 Copilot license',
+          color: '#7C3AED'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy Director',
+          roleID: 'Direktur Strategi Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#059669'
+        },
+        {
+          name: 'Daichi Maruyama',
+          role: 'Group Sustainability & Risk Director',
+          roleID: 'Direktur Keberlanjutan & Risiko Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'MY'
+    },
+    {
+      id: 'auto-tyres',
+      sectorId: 'sec-mfg',
+      subsector: '',
+      name: 'Auto Components & Tyres',
+      icon: '🛞',
+      color: '#52525B',
+      accent: '#27272A',
+      company: 'Zava Auto Industries',
+      tagline: 'NR raw-material spike + Toyota & Hyundai contract review — Steerco in 10 days.',
+      scenario: 'Zava Auto Industries is a tier-1 ASEAN automotive component and tyre manufacturer with 6 plants in Indonesia, Malaysia and Thailand supplying Toyota, Honda, Hyundai-Kia, Mitsubishi, and Proton. Natural-rubber and synthetic-rubber prices have spiked 32% in 6 weeks driving an EBITDA gap of MYR 410M in Q4. Toyota and Hyundai are reviewing OEM supply contracts — pricing pass-through requested by both within 10 days. The Group CFO needs to model raw-material pass-through scenarios, draft OEM customer letters, brief the Group Steering Committee, and prepare the lender covenant communication. Real customer reference frame: this group operates similarly to Gajah Tunggal, Goodyear Indonesia, Sime Darby Industrial, and APM Automotive.',
+      companyID: 'Zava Auto Industries',
+      taglineID: 'Lonjakan bahan baku NR + review kontrak Toyota & Hyundai — Steerco dalam 10 hari.',
+      scenarioID: 'Zava Auto Industries adalah produsen tier-1 komponen otomotif dan ban ASEAN dengan 6 pabrik di Indonesia, Malaysia, dan Thailand yang memasok Toyota, Honda, Hyundai-Kia, Mitsubishi, dan Proton. Harga natural-rubber dan synthetic-rubber melonjak 32% dalam 6 minggu mendorong gap EBITDA RM 410 juta di Q4. Toyota dan Hyundai me-review kontrak supply OEM — pricing pass-through diminta keduanya dalam 10 hari. Direktur Keuangan Grup harus memodelkan skenario pass-through bahan baku, menyusun surat customer OEM, brief Steering Committee Grup, dan menyiapkan komunikasi covenant lender. Frame customer riil: grup ini beroperasi serupa dengan Gajah Tunggal, Goodyear Indonesia, Sime Darby Industrial, dan APM Automotive.',
+      files: [
+        'AUTO_01_Raw_Material_Cost_Model.xlsx',
+        'AUTO_02_OEM_Contract_Matrix.xlsx',
+        'AUTO_03_OEM_Customer_Letter_Pack.docx',
+        'AUTO_04_Margin_Recovery_Plan.docx',
+        'AUTO_05_Steerco_Briefing.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no M365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Goal: Frame the NR raw-material spike + OEM contract review situation in plain English for the Group CEO. Context: Zava Auto Industries is a tier-1 ASEAN automotive component and tyre manufacturer with 6 plants in Indonesia, Malaysia and Thailand supplying Toyota, Honda, Hyundai-Kia, Mitsubishi, and Proton. Natura... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: 90-second verbal opening for the Zava Auto Industries stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: Build the stakeholder communication map for the NR raw-material spike + OEM contract review. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Tujuan: Bingkai situasi NR raw-material spike + OEM contract review dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Auto Industries adalah produsen tier-1 komponen otomotif dan ban ASEAN dengan 6 pabrik di Indonesia, Malaysia, dan Thailand yang memasok Toyota, Honda, Hyundai-Kia, Mitsubishi, dan Proton. Harga ... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Auto Industries. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk NR raw-material spike + OEM contract review. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+              prompt: 'Goal: Benchmark how peers (Gajah Tunggal, Goodyear Indonesia, Sime Darby Industrial, APM Automotive, MBM Resources) handled comparable NR raw-material spike + OEM contract review events between 2020 and 2025. Context: Zava Auto Industries must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+              prompt: 'Goal: 3 most defensible response playbooks for Zava Auto Industries hit by NR raw-material spike + OEM contract review. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+              prompt: 'Tujuan: Benchmark bagaimana peer (Gajah Tunggal, Goodyear Indonesia, Sime Darby Industrial, APM Automotive, MBM Resources) menangani peristiwa NR raw-material spike + OEM contract review sebanding antara 2020 hingga 2025. Konteks: Zava Auto Industries harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+              prompt: 'Tujuan: 3 playbook respons paling defensible untuk Zava Auto Industries yang terkena NR raw-material spike + OEM contract review. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /AUTO_01_Raw_Material_Cost_Model.xlsx AND /AUTO_02_OEM_Contract_Matrix.xlsx. Paste the prompt below.',
+              prompt: 'Goal: Quantify the NR raw-material spike + OEM contract review financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /AUTO_01_Raw_Material_Cost_Model.xlsx DAN /AUTO_02_OEM_Contract_Matrix.xlsx. Tempel prompt.',
+              prompt: 'Tujuan: Kuantifikasi dampak finansial dan operasional dari NR raw-material spike + OEM contract review. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/AUTO_01_Raw_Material_Cost_Model.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/AUTO_01_Raw_Material_Cost_Model.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /AUTO_03_OEM_Customer_Letter_Pack.docx and /AUTO_04_Margin_Recovery_Plan.docx using `/`. Paste the prompt below.',
+              prompt: 'Goal: Draft the regulator-grade response brief (4 pages). Context: NR raw-material spike + OEM contract review active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /AUTO_03_OEM_Customer_Letter_Pack.docx dan /AUTO_04_Margin_Recovery_Plan.docx menggunakan `/`. Tempel prompt.',
+              prompt: 'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: NR raw-material spike + OEM contract review aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on NR raw-material spike + OEM contract review. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #52525B + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang NR raw-material spike + OEM contract review. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #52525B + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread "NR raw-material spike + OEM contract review — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+              prompt: 'Goal: Draft a single email to the Zava Auto Industries ExCo and the relevant operating heads. Context: NR raw-material spike + OEM contract review active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "NR raw-material spike + OEM contract review — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+              prompt: 'Tujuan: Susun satu email ke ExCo Zava Auto Industries dan kepala operasi yang relevan. Konteks: NR raw-material spike + OEM contract review aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"OEM Pass-Through Steerco"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+              prompt: 'Create meeting minutes for the Teams meeting /OEM Pass-Through Steerco. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to NR raw-material spike + OEM contract review as Critical Path. Save as Minutes_OEM_Pass-Through_Steerco.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"OEM Pass-Through Steerco"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+              prompt: 'Buat notulen rapat untuk rapat Teams /OEM Pass-Through Steerco. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait NR raw-material spike + OEM contract review sebagai Critical Path. Simpan sebagai Notulen_OEM_Pass-Through_Steerco.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          prompts: [
+            {
+              instr: 'All sources are loaded. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: NR raw-material spike + OEM contract review status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'
+            },
+            {
+              instr: 'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+              prompt: 'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Auto Industries operating heads preparing for tomorrow morning huddles.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status NR raw-material spike + OEM contract review, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'
+            },
+            {
+              instr: 'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+              prompt: 'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Auto Industries yang menyiapkan huddle pagi besok.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/AUTO_01_Raw_Material_Cost_Model.xlsx',
+              '/AUTO_02_OEM_Contract_Matrix.xlsx',
+              '/AUTO_03_OEM_Customer_Letter_Pack.docx',
+              '/AUTO_04_Margin_Recovery_Plan.docx',
+              '/AUTO_05_Steerco_Briefing.docx'
+            ],
+            instructions: 'You are the Group CFO of Zava Auto Industries preparing an Audit Committee pack on NR raw-material spike + OEM contract review. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+            instructionsID: 'Anda adalah Direktur Keuangan Grup Zava Auto Industries yang menyiapkan paket Komite Audit untuk NR raw-material spike + OEM contract review. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'M365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+              prompt: 'Cowork — OEM Pass-Through 10-Day Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /AUTO_01_Raw_Material_Cost_Model.xlsx, /AUTO_02_OEM_Contract_Matrix.xlsx, /AUTO_03_OEM_Customer_Letter_Pack.docx, /AUTO_04_Margin_Recovery_Plan.docx, /AUTO_05_Steerco_Briefing.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Auto Industries ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+              prompt: 'Cowork — OEM Pass-Through 10-Day Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /AUTO_01_Raw_Material_Cost_Model.xlsx, /AUTO_02_OEM_Contract_Matrix.xlsx, /AUTO_03_OEM_Customer_Letter_Pack.docx, /AUTO_04_Margin_Recovery_Plan.docx, /AUTO_05_Steerco_Briefing.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Auto Industries dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+              prompt: 'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: NR raw-material spike + OEM contract review. Source: /AUTO_01_Raw_Material_Cost_Model.xlsx AND /AUTO_02_OEM_Contract_Matrix.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as OEM_PassThrough_Brief.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+              prompt: 'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: NR raw-material spike + OEM contract review. Sumber: /AUTO_01_Raw_Material_Cost_Model.xlsx DAN /AUTO_02_OEM_Contract_Matrix.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_PassThrough_OEM.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on NR raw-material spike + OEM contract review. Context: AC in 14 days. Source: /OEM_PassThrough_Brief.docx and /AUTO_01_Raw_Material_Cost_Model.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #52525B + #0F1C3F, 1 chart/slide. Save as OEM_Steerco_Deck.pptx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang NR raw-material spike + OEM contract review. Konteks: KA dalam 14 hari. Sumber: /Brief_PassThrough_OEM.docx dan /AUTO_01_Raw_Material_Cost_Model.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #52525B + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_Steerco_OEM.pptx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+              prompt: 'Goal: Build a NR raw-material spike + OEM contract review response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as OEM_PassThrough_Tracker.xlsx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun workbook tracker kendali respons NR raw-material spike + OEM contract review. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_PassThrough_OEM.xlsx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (M365 Copilot Chat)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+              prompt: '**Option A — Zava Auto Pricing Agent.** Build an agent for the Group COO and the operating heads to drive the NR raw-material spike + OEM contract review response programme to closure. Ground every answer on /AUTO_01_Raw_Material_Cost_Model.xlsx AND /AUTO_02_OEM_Contract_Matrix.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'
+            },
+            {
+              instr: '**Option B — alternative agent.** Same flow, different specialisation.',
+              prompt: '**Option B — Zava Auto OEM Liaison Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /AUTO_03_OEM_Customer_Letter_Pack.docx and /AUTO_04_Margin_Recovery_Plan.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'
+            },
+            {
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Auto Margin Recovery Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /AUTO_01_Raw_Material_Cost_Model.xlsx, /AUTO_02_OEM_Contract_Matrix.xlsx, /AUTO_03_OEM_Customer_Letter_Pack.docx, /AUTO_04_Margin_Recovery_Plan.docx, /AUTO_05_Steerco_Briefing.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'
+            },
+            {
+              instr: '**Test.** Validate grounding, citations, GCSE framework, and scope.',
+              prompt: 'Give me the 60-second version of the NR raw-material spike + OEM contract review situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'
+            },
+            {
+              instr: '**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+              prompt: 'Share with the Zava Auto Industries ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every NR raw-material spike + OEM contract review question through it for the next 90 days."'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+              prompt: '**Opsi A — Zava Auto Pricing Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons NR raw-material spike + OEM contract review hingga ditutup. Dasarkan pada /AUTO_01_Raw_Material_Cost_Model.xlsx DAN /AUTO_02_OEM_Contract_Matrix.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'
+            },
+            {
+              instr: '**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Auto OEM Liaison Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /AUTO_03_OEM_Customer_Letter_Pack.docx dan /AUTO_04_Margin_Recovery_Plan.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'
+            },
+            {
+              instr: '**Opsi C — agent alternatif.** Alur sama.',
+              prompt: '**Opsi C — Zava Auto Margin Recovery Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /AUTO_01_Raw_Material_Cost_Model.xlsx, /AUTO_02_OEM_Contract_Matrix.xlsx, /AUTO_03_OEM_Customer_Letter_Pack.docx, /AUTO_04_Margin_Recovery_Plan.docx, /AUTO_05_Steerco_Briefing.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'
+            },
+            {
+              instr: '**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+              prompt: 'Berikan versi 60 detik dari situasi NR raw-material spike + OEM contract review, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'
+            },
+            {
+              instr: '**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+              prompt: 'Bagikan ke ExCo Zava Auto Industries (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan NR raw-material spike + OEM contract review melalui agent ini selama 90 hari ke depan."'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-finance',
+        'dept-strategy',
+        'dept-operations',
+        'dept-procurement',
+        'dept-risk',
+        'dept-legal'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the NR raw-material spike + OEM contract review situation and pull peer playbooks before the regulator clock starts ticking.',
+          summaryID: 'Bingkai situasi NR raw-material spike + OEM contract review dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+          tasks: [
+            {
+              verb: 'Frame',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Benchmark',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Draft brief',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify NR raw-material spike + OEM contract review financial and operational impact; build an AC dashboard.',
+          summaryID: 'Kuantifikasi dampak finansial dan operasional NR raw-material spike + OEM contract review; bangun dashboard KA.',
+          tasks: [
+            {
+              verb: 'Crunch',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Dashboard',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Tracker',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief operating heads, capture the OEM Pass-Through Steerco recap, and assemble the AC deck and regulator response.',
+          summaryID: 'Brief kepala operasi, capture recap OEM Pass-Through Steerco, dan rakit deck KA serta respons regulator.',
+          tasks: [
+            {
+              verb: 'Email',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Deck',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Sprint',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the NR raw-material spike + OEM contract review playbook into a reusable agent for the Zava Auto Industries operating team.',
+          summaryID: 'Bungkus playbook NR raw-material spike + OEM contract review ke dalam agent reusable untuk tim operasi Zava Auto Industries.',
+          tasks: [
+            {
+              verb: 'Notebook',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Agent',
+              toolId: '🏗 Agent Builder (M365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO',
+          roleID: 'Direktur Keuangan Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group Chief of Staff',
+          roleID: 'Kepala Staf Grup',
+          acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no M365 Copilot license',
+          color: '#7C3AED'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy Director',
+          roleID: 'Direktur Strategi Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#059669'
+        },
+        {
+          name: 'Daichi Maruyama',
+          role: 'Group Sustainability & Risk Director',
+          roleID: 'Direktur Keberlanjutan & Risiko Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'MY'
+    },
+    {
+      id: 'semiconductor',
+      sectorId: 'sec-mfg',
+      subsector: '',
+      name: 'Semiconductor / E&E',
+      icon: '🔌',
+      color: '#7C3AED',
+      accent: '#5B21B6',
+      company: 'Zava Electronics MY',
+      tagline: 'US BIS export-control update — 14 customer SKUs at risk, MITI brief in 7 days.',
+      scenario: 'Zava Electronics MY operates 4 semiconductor assembly-and-test plants in Penang, Kulim and Melaka with hard-disk-drive heads, NAND flash packaging, and IC substrates as the core revenue lines (USD 1.9B FY2025 revenue). The US Bureau of Industry and Security has updated export-control rules adding 14 customer SKUs to the Entity-List exposure register. MITI Malaysia has requested a brief in 7 days. The Group CFO needs a quantified at-risk SKU schedule, customer-by-customer holding lines, US export-counsel guidance memo, capex re-prioritisation, and the Audit Committee narrative. Real customer reference frame: this group operates similarly to Western Digital Penang, Micron, Inari Amertron, ESCATEC, and Pentamaster.',
+      companyID: 'Zava Electronics MY',
+      taglineID: 'Update US BIS export-control — 14 customer SKU berisiko, brief MITI dalam 7 hari.',
+      scenarioID: 'Zava Electronics MY mengoperasikan 4 pabrik assembly-and-test semikonduktor di Penang, Kulim, dan Melaka dengan hard-disk-drive heads, NAND flash packaging, dan IC substrates sebagai lini pendapatan inti (USD 1,9 miliar FY2025). US Bureau of Industry and Security memperbarui aturan export-control menambahkan 14 customer SKU ke register paparan Entity-List. MITI Malaysia meminta brief dalam 7 hari. Direktur Keuangan Grup butuh jadwal SKU at-risk yang terkuantifikasi, holding line per customer, memo guidance dari export-counsel AS, re-prioritisasi capex, dan narasi Komite Audit. Frame customer riil: grup ini beroperasi serupa dengan Western Digital Penang, Micron, Inari Amertron, ESCATEC, dan Pentamaster.',
+      files: [
+        'SEMI_01_BIS_SKU_Exposure.xlsx',
+        'SEMI_02_Customer_Concentration_Heatmap.xlsx',
+        'SEMI_03_MITI_Brief_Pack.docx',
+        'SEMI_04_Capex_Reprioritisation.xlsx',
+        'SEMI_05_Customer_Holding_Lines.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no M365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Goal: Frame the US BIS export-control update situation in plain English for the Group CEO. Context: Zava Electronics MY operates 4 semiconductor assembly-and-test plants in Penang, Kulim and Melaka with hard-disk-drive heads, NAND flash packaging, and IC substrates as the core revenue lines (USD 1.9... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: 90-second verbal opening for the Zava Electronics MY stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: Build the stakeholder communication map for the US BIS export-control update. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Tujuan: Bingkai situasi US BIS export-control update dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Electronics MY mengoperasikan 4 pabrik assembly-and-test semikonduktor di Penang, Kulim, dan Melaka dengan hard-disk-drive heads, NAND flash packaging, dan IC substrates sebagai lini pendapatan i... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Electronics MY. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk US BIS export-control update. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+              prompt: 'Goal: Benchmark how peers (Western Digital Penang, Micron, Inari Amertron, ESCATEC, Pentamaster) handled comparable US BIS export-control update events between 2020 and 2025. Context: Zava Electronics MY must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+              prompt: 'Goal: 3 most defensible response playbooks for Zava Electronics MY hit by US BIS export-control update. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+              prompt: 'Tujuan: Benchmark bagaimana peer (Western Digital Penang, Micron, Inari Amertron, ESCATEC, Pentamaster) menangani peristiwa US BIS export-control update sebanding antara 2020 hingga 2025. Konteks: Zava Electronics MY harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+              prompt: 'Tujuan: 3 playbook respons paling defensible untuk Zava Electronics MY yang terkena US BIS export-control update. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /SEMI_01_BIS_SKU_Exposure.xlsx AND /SEMI_02_Customer_Concentration_Heatmap.xlsx. Paste the prompt below.',
+              prompt: 'Goal: Quantify the US BIS export-control update financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /SEMI_01_BIS_SKU_Exposure.xlsx DAN /SEMI_02_Customer_Concentration_Heatmap.xlsx. Tempel prompt.',
+              prompt: 'Tujuan: Kuantifikasi dampak finansial dan operasional dari US BIS export-control update. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/SEMI_01_BIS_SKU_Exposure.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/SEMI_01_BIS_SKU_Exposure.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /SEMI_03_MITI_Brief_Pack.docx and /SEMI_05_Customer_Holding_Lines.docx using `/`. Paste the prompt below.',
+              prompt: 'Goal: Draft the regulator-grade response brief (4 pages). Context: US BIS export-control update active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /SEMI_03_MITI_Brief_Pack.docx dan /SEMI_05_Customer_Holding_Lines.docx menggunakan `/`. Tempel prompt.',
+              prompt: 'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: US BIS export-control update aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on US BIS export-control update. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #7C3AED + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang US BIS export-control update. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #7C3AED + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread "US BIS export-control update — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+              prompt: 'Goal: Draft a single email to the Zava Electronics MY ExCo and the relevant operating heads. Context: US BIS export-control update active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "US BIS export-control update — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+              prompt: 'Tujuan: Susun satu email ke ExCo Zava Electronics MY dan kepala operasi yang relevan. Konteks: US BIS export-control update aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"BIS Export-Control War Room"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+              prompt: 'Create meeting minutes for the Teams meeting /BIS Export-Control War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to US BIS export-control update as Critical Path. Save as Minutes_BIS_Export-Control_War_Room.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"BIS Export-Control War Room"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+              prompt: 'Buat notulen rapat untuk rapat Teams /BIS Export-Control War Room. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait US BIS export-control update sebagai Critical Path. Simpan sebagai Notulen_BIS_Export-Control_War_Room.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          prompts: [
+            {
+              instr: 'All sources are loaded. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: US BIS export-control update status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'
+            },
+            {
+              instr: 'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+              prompt: 'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Electronics MY operating heads preparing for tomorrow morning huddles.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status US BIS export-control update, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'
+            },
+            {
+              instr: 'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+              prompt: 'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Electronics MY yang menyiapkan huddle pagi besok.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/SEMI_01_BIS_SKU_Exposure.xlsx',
+              '/SEMI_02_Customer_Concentration_Heatmap.xlsx',
+              '/SEMI_03_MITI_Brief_Pack.docx',
+              '/SEMI_04_Capex_Reprioritisation.xlsx',
+              '/SEMI_05_Customer_Holding_Lines.docx'
+            ],
+            instructions: 'You are the Group CFO of Zava Electronics MY preparing an Audit Committee pack on US BIS export-control update. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+            instructionsID: 'Anda adalah Direktur Keuangan Grup Zava Electronics MY yang menyiapkan paket Komite Audit untuk US BIS export-control update. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'M365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+              prompt: 'Cowork — BIS 7-Day MITI Brief Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /SEMI_01_BIS_SKU_Exposure.xlsx, /SEMI_02_Customer_Concentration_Heatmap.xlsx, /SEMI_03_MITI_Brief_Pack.docx, /SEMI_04_Capex_Reprioritisation.xlsx, /SEMI_05_Customer_Holding_Lines.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Electronics MY ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+              prompt: 'Cowork — BIS 7-Day MITI Brief Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /SEMI_01_BIS_SKU_Exposure.xlsx, /SEMI_02_Customer_Concentration_Heatmap.xlsx, /SEMI_03_MITI_Brief_Pack.docx, /SEMI_04_Capex_Reprioritisation.xlsx, /SEMI_05_Customer_Holding_Lines.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Electronics MY dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+              prompt: 'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: US BIS export-control update. Source: /SEMI_01_BIS_SKU_Exposure.xlsx AND /SEMI_02_Customer_Concentration_Heatmap.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as MITI_BIS_Brief.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+              prompt: 'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: US BIS export-control update. Sumber: /SEMI_01_BIS_SKU_Exposure.xlsx DAN /SEMI_02_Customer_Concentration_Heatmap.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_BIS_MITI.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on US BIS export-control update. Context: AC in 14 days. Source: /MITI_BIS_Brief.docx and /SEMI_01_BIS_SKU_Exposure.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #7C3AED + #0F1C3F, 1 chart/slide. Save as BIS_AC_Deck.pptx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang US BIS export-control update. Konteks: KA dalam 14 hari. Sumber: /Brief_BIS_MITI.docx dan /SEMI_01_BIS_SKU_Exposure.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #7C3AED + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_KA_BIS.pptx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+              prompt: 'Goal: Build a US BIS export-control update response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as BIS_Exposure_Tracker.xlsx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun workbook tracker kendali respons US BIS export-control update. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Paparan_BIS.xlsx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (M365 Copilot Chat)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+              prompt: '**Option A — Zava Electronics BIS Compliance Agent.** Build an agent for the Group COO and the operating heads to drive the US BIS export-control update response programme to closure. Ground every answer on /SEMI_01_BIS_SKU_Exposure.xlsx AND /SEMI_02_Customer_Concentration_Heatmap.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'
+            },
+            {
+              instr: '**Option B — alternative agent.** Same flow, different specialisation.',
+              prompt: '**Option B — Zava Electronics Customer Liaison Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /SEMI_03_MITI_Brief_Pack.docx and /SEMI_05_Customer_Holding_Lines.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'
+            },
+            {
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Electronics Capex Reprioritisation Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /SEMI_01_BIS_SKU_Exposure.xlsx, /SEMI_02_Customer_Concentration_Heatmap.xlsx, /SEMI_03_MITI_Brief_Pack.docx, /SEMI_04_Capex_Reprioritisation.xlsx, /SEMI_05_Customer_Holding_Lines.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'
+            },
+            {
+              instr: '**Test.** Validate grounding, citations, GCSE framework, and scope.',
+              prompt: 'Give me the 60-second version of the US BIS export-control update situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'
+            },
+            {
+              instr: '**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+              prompt: 'Share with the Zava Electronics MY ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every US BIS export-control update question through it for the next 90 days."'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+              prompt: '**Opsi A — Zava Electronics BIS Compliance Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons US BIS export-control update hingga ditutup. Dasarkan pada /SEMI_01_BIS_SKU_Exposure.xlsx DAN /SEMI_02_Customer_Concentration_Heatmap.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'
+            },
+            {
+              instr: '**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Electronics Customer Liaison Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /SEMI_03_MITI_Brief_Pack.docx dan /SEMI_05_Customer_Holding_Lines.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'
+            },
+            {
+              instr: '**Opsi C — agent alternatif.** Alur sama.',
+              prompt: '**Opsi C — Zava Electronics Capex Reprioritisation Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /SEMI_01_BIS_SKU_Exposure.xlsx, /SEMI_02_Customer_Concentration_Heatmap.xlsx, /SEMI_03_MITI_Brief_Pack.docx, /SEMI_04_Capex_Reprioritisation.xlsx, /SEMI_05_Customer_Holding_Lines.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'
+            },
+            {
+              instr: '**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+              prompt: 'Berikan versi 60 detik dari situasi US BIS export-control update, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'
+            },
+            {
+              instr: '**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+              prompt: 'Bagikan ke ExCo Zava Electronics MY (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan US BIS export-control update melalui agent ini selama 90 hari ke depan."'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-finance',
+        'dept-strategy',
+        'dept-legal',
+        'dept-operations',
+        'dept-risk',
+        'dept-procurement'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the US BIS export-control update situation and pull peer playbooks before the regulator clock starts ticking.',
+          summaryID: 'Bingkai situasi US BIS export-control update dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+          tasks: [
+            {
+              verb: 'Frame',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Benchmark',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Draft brief',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify US BIS export-control update financial and operational impact; build an AC dashboard.',
+          summaryID: 'Kuantifikasi dampak finansial dan operasional US BIS export-control update; bangun dashboard KA.',
+          tasks: [
+            {
+              verb: 'Crunch',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Dashboard',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Tracker',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief operating heads, capture the BIS Export-Control War Room recap, and assemble the AC deck and regulator response.',
+          summaryID: 'Brief kepala operasi, capture recap BIS Export-Control War Room, dan rakit deck KA serta respons regulator.',
+          tasks: [
+            {
+              verb: 'Email',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Deck',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Sprint',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the US BIS export-control update playbook into a reusable agent for the Zava Electronics MY operating team.',
+          summaryID: 'Bungkus playbook US BIS export-control update ke dalam agent reusable untuk tim operasi Zava Electronics MY.',
+          tasks: [
+            {
+              verb: 'Notebook',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Agent',
+              toolId: '🏗 Agent Builder (M365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO',
+          roleID: 'Direktur Keuangan Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group Chief of Staff',
+          roleID: 'Kepala Staf Grup',
+          acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no M365 Copilot license',
+          color: '#7C3AED'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy Director',
+          roleID: 'Direktur Strategi Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#059669'
+        },
+        {
+          name: 'Daichi Maruyama',
+          role: 'Group Sustainability & Risk Director',
+          roleID: 'Direktur Keberlanjutan & Risiko Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'MY'
+    },
+    {
+      id: 'rare-earth',
+      sectorId: 'sec-mining',
+      subsector: '',
+      name: 'Rare-Earth & Metals',
+      icon: '⛏️',
+      color: '#B45309',
+      accent: '#78350F',
+      company: 'Zava Rare Earth',
+      tagline: 'JAEC environmental approval renewal + China REE export curb — Bursa update in 14 days.',
+      scenario: 'Zava Rare Earth operates an integrated heavy rare-earth concentrate plant in Pahang and a downstream separation facility in Gebeng producing neodymium, dysprosium, and terbium oxides for global EV magnet and wind-turbine customers. The Atomic Energy Licensing Board (AELB) environmental-approval renewal is due in 90 days; civil-society stakeholders have raised TENORM-residue concerns. China\'s MOFCOM has tightened REE export licensing in parallel, lifting global pricing 28% in 4 weeks. Bursa Malaysia expects an operational update in 14 days. The Group CFO needs the JAEC/AELB technical narrative, civil-society engagement plan, customer pricing pass-through analysis, and Bursa disclosure all coordinated. Real customer reference frame: this group operates similarly to Lynas Malaysia and MMC Corp Mining.',
+      companyID: 'Zava Rare Earth',
+      taglineID: 'Pembaruan persetujuan lingkungan JAEC + curb ekspor REE Tiongkok — update Bursa dalam 14 hari.',
+      scenarioID: 'Zava Rare Earth mengoperasikan pabrik konsentrat heavy rare-earth terintegrasi di Pahang dan fasilitas separation hilir di Gebeng yang memproduksi neodymium, dysprosium, dan terbium oxides untuk customer magnet EV dan turbin angin global. Pembaruan persetujuan lingkungan Atomic Energy Licensing Board (AELB) jatuh tempo dalam 90 hari; pemangku kepentingan masyarakat sipil mengangkat kekhawatiran residu TENORM. MOFCOM Tiongkok memperketat lisensi ekspor REE secara paralel, mendorong pricing global naik 28% dalam 4 minggu. Bursa Malaysia mengharapkan update operasional dalam 14 hari. Direktur Keuangan Grup butuh narasi teknis JAEC/AELB, rencana engagement masyarakat sipil, analisis pricing pass-through customer, dan pengungkapan Bursa semuanya terkoordinasi. Frame customer riil: grup ini beroperasi serupa dengan Lynas Malaysia dan MMC Corp Mining.',
+      files: [
+        'RE_01_AELB_Compliance_Tracker.xlsx',
+        'RE_02_TENORM_Residue_Inventory.xlsx',
+        'RE_03_Civil_Society_Engagement.docx',
+        'RE_04_Customer_Pricing_Model.xlsx',
+        'RE_05_Bursa_Operational_Update.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no M365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Goal: Frame the AELB renewal + China REE export curb situation in plain English for the Group CEO. Context: Zava Rare Earth operates an integrated heavy rare-earth concentrate plant in Pahang and a downstream separation facility in Gebeng producing neodymium, dysprosium, and terbium oxides for global EV mag... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: 90-second verbal opening for the Zava Rare Earth stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: Build the stakeholder communication map for the AELB renewal + China REE export curb. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Tujuan: Bingkai situasi AELB renewal + China REE export curb dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Rare Earth mengoperasikan pabrik konsentrat heavy rare-earth terintegrasi di Pahang dan fasilitas separation hilir di Gebeng yang memproduksi neodymium, dysprosium, dan terbium oxides untuk custo... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Rare Earth. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk AELB renewal + China REE export curb. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+              prompt: 'Goal: Benchmark how peers (Lynas Malaysia, MMC Corp Mining, Iluka Resources, Northern Minerals) handled comparable AELB renewal + China REE export curb events between 2020 and 2025. Context: Zava Rare Earth must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+              prompt: 'Goal: 3 most defensible response playbooks for Zava Rare Earth hit by AELB renewal + China REE export curb. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+              prompt: 'Tujuan: Benchmark bagaimana peer (Lynas Malaysia, MMC Corp Mining, Iluka Resources, Northern Minerals) menangani peristiwa AELB renewal + China REE export curb sebanding antara 2020 hingga 2025. Konteks: Zava Rare Earth harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+              prompt: 'Tujuan: 3 playbook respons paling defensible untuk Zava Rare Earth yang terkena AELB renewal + China REE export curb. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /RE_01_AELB_Compliance_Tracker.xlsx AND /RE_04_Customer_Pricing_Model.xlsx. Paste the prompt below.',
+              prompt: 'Goal: Quantify the AELB renewal + China REE export curb financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /RE_01_AELB_Compliance_Tracker.xlsx DAN /RE_04_Customer_Pricing_Model.xlsx. Tempel prompt.',
+              prompt: 'Tujuan: Kuantifikasi dampak finansial dan operasional dari AELB renewal + China REE export curb. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/RE_01_AELB_Compliance_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/RE_01_AELB_Compliance_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /RE_03_Civil_Society_Engagement.docx and /RE_05_Bursa_Operational_Update.docx using `/`. Paste the prompt below.',
+              prompt: 'Goal: Draft the regulator-grade response brief (4 pages). Context: AELB renewal + China REE export curb active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /RE_03_Civil_Society_Engagement.docx dan /RE_05_Bursa_Operational_Update.docx menggunakan `/`. Tempel prompt.',
+              prompt: 'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: AELB renewal + China REE export curb aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on AELB renewal + China REE export curb. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #B45309 + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang AELB renewal + China REE export curb. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #B45309 + #0F1C3F, 1 chart per slide.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread "AELB renewal + China REE export curb — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+              prompt: 'Goal: Draft a single email to the Zava Rare Earth ExCo and the relevant operating heads. Context: AELB renewal + China REE export curb active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "AELB renewal + China REE export curb — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+              prompt: 'Tujuan: Susun satu email ke ExCo Zava Rare Earth dan kepala operasi yang relevan. Konteks: AELB renewal + China REE export curb aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"AELB Renewal War Room"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+              prompt: 'Create meeting minutes for the Teams meeting /AELB Renewal War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to AELB renewal + China REE export curb as Critical Path. Save as Minutes_AELB_Renewal_War_Room.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"AELB Renewal War Room"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+              prompt: 'Buat notulen rapat untuk rapat Teams /AELB Renewal War Room. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait AELB renewal + China REE export curb sebagai Critical Path. Simpan sebagai Notulen_AELB_Renewal_War_Room.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          prompts: [
+            {
+              instr: 'All sources are loaded. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: AELB renewal + China REE export curb status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'
+            },
+            {
+              instr: 'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+              prompt: 'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Rare Earth operating heads preparing for tomorrow morning huddles.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status AELB renewal + China REE export curb, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'
+            },
+            {
+              instr: 'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+              prompt: 'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Rare Earth yang menyiapkan huddle pagi besok.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/RE_01_AELB_Compliance_Tracker.xlsx',
+              '/RE_02_TENORM_Residue_Inventory.xlsx',
+              '/RE_03_Civil_Society_Engagement.docx',
+              '/RE_04_Customer_Pricing_Model.xlsx',
+              '/RE_05_Bursa_Operational_Update.docx'
+            ],
+            instructions: 'You are the Group CFO of Zava Rare Earth preparing an Audit Committee pack on AELB renewal + China REE export curb. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+            instructionsID: 'Anda adalah Direktur Keuangan Grup Zava Rare Earth yang menyiapkan paket Komite Audit untuk AELB renewal + China REE export curb. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'M365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+              prompt: 'Cowork — AELB + China REE 14-Day Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /RE_01_AELB_Compliance_Tracker.xlsx, /RE_02_TENORM_Residue_Inventory.xlsx, /RE_03_Civil_Society_Engagement.docx, /RE_04_Customer_Pricing_Model.xlsx, /RE_05_Bursa_Operational_Update.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Rare Earth ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+              prompt: 'Cowork — AELB + China REE 14-Day Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /RE_01_AELB_Compliance_Tracker.xlsx, /RE_02_TENORM_Residue_Inventory.xlsx, /RE_03_Civil_Society_Engagement.docx, /RE_04_Customer_Pricing_Model.xlsx, /RE_05_Bursa_Operational_Update.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Rare Earth dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+              prompt: 'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: AELB renewal + China REE export curb. Source: /RE_01_AELB_Compliance_Tracker.xlsx AND /RE_04_Customer_Pricing_Model.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as AELB_Bursa_Brief.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+              prompt: 'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: AELB renewal + China REE export curb. Sumber: /RE_01_AELB_Compliance_Tracker.xlsx DAN /RE_04_Customer_Pricing_Model.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_AELB_Bursa.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+              prompt: 'Goal: 8-slide Audit Committee deck on AELB renewal + China REE export curb. Context: AC in 14 days. Source: /AELB_Bursa_Brief.docx and /RE_01_AELB_Compliance_Tracker.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #B45309 + #0F1C3F, 1 chart/slide. Save as AELB_AC_Deck.pptx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 8 slide Komite Audit tentang AELB renewal + China REE export curb. Konteks: KA dalam 14 hari. Sumber: /Brief_AELB_Bursa.docx dan /RE_01_AELB_Compliance_Tracker.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #B45309 + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_KA_AELB.pptx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+              prompt: 'Goal: Build a AELB renewal + China REE export curb response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as AELB_Compliance_Tracker.xlsx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun workbook tracker kendali respons AELB renewal + China REE export curb. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Kepatuhan_AELB.xlsx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (M365 Copilot Chat)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+              prompt: '**Option A — Zava Rare Earth Regulator Liaison Agent.** Build an agent for the Group COO and the operating heads to drive the AELB renewal + China REE export curb response programme to closure. Ground every answer on /RE_01_AELB_Compliance_Tracker.xlsx AND /RE_04_Customer_Pricing_Model.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'
+            },
+            {
+              instr: '**Option B — alternative agent.** Same flow, different specialisation.',
+              prompt: '**Option B — Zava Rare Earth Customer Pricing Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /RE_03_Civil_Society_Engagement.docx and /RE_05_Bursa_Operational_Update.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'
+            },
+            {
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Rare Earth Civil Society Engagement Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /RE_01_AELB_Compliance_Tracker.xlsx, /RE_02_TENORM_Residue_Inventory.xlsx, /RE_03_Civil_Society_Engagement.docx, /RE_04_Customer_Pricing_Model.xlsx, /RE_05_Bursa_Operational_Update.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'
+            },
+            {
+              instr: '**Test.** Validate grounding, citations, GCSE framework, and scope.',
+              prompt: 'Give me the 60-second version of the AELB renewal + China REE export curb situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'
+            },
+            {
+              instr: '**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+              prompt: 'Share with the Zava Rare Earth ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every AELB renewal + China REE export curb question through it for the next 90 days."'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+              prompt: '**Opsi A — Zava Rare Earth Regulator Liaison Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons AELB renewal + China REE export curb hingga ditutup. Dasarkan pada /RE_01_AELB_Compliance_Tracker.xlsx DAN /RE_04_Customer_Pricing_Model.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'
+            },
+            {
+              instr: '**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Rare Earth Customer Pricing Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /RE_03_Civil_Society_Engagement.docx dan /RE_05_Bursa_Operational_Update.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'
+            },
+            {
+              instr: '**Opsi C — agent alternatif.** Alur sama.',
+              prompt: '**Opsi C — Zava Rare Earth Civil Society Engagement Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /RE_01_AELB_Compliance_Tracker.xlsx, /RE_02_TENORM_Residue_Inventory.xlsx, /RE_03_Civil_Society_Engagement.docx, /RE_04_Customer_Pricing_Model.xlsx, /RE_05_Bursa_Operational_Update.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'
+            },
+            {
+              instr: '**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+              prompt: 'Berikan versi 60 detik dari situasi AELB renewal + China REE export curb, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'
+            },
+            {
+              instr: '**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+              prompt: 'Bagikan ke ExCo Zava Rare Earth (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan AELB renewal + China REE export curb melalui agent ini selama 90 hari ke depan."'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-finance',
+        'dept-strategy',
+        'dept-esg',
+        'dept-legal',
+        'dept-operations',
+        'dept-risk',
+        'dept-corpsec'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the AELB renewal + China REE export curb situation and pull peer playbooks before the regulator clock starts ticking.',
+          summaryID: 'Bingkai situasi AELB renewal + China REE export curb dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+          tasks: [
+            {
+              verb: 'Frame',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Benchmark',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Draft brief',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify AELB renewal + China REE export curb financial and operational impact; build an AC dashboard.',
+          summaryID: 'Kuantifikasi dampak finansial dan operasional AELB renewal + China REE export curb; bangun dashboard KA.',
+          tasks: [
+            {
+              verb: 'Crunch',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Dashboard',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Tracker',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief operating heads, capture the AELB Renewal War Room recap, and assemble the AC deck and regulator response.',
+          summaryID: 'Brief kepala operasi, capture recap AELB Renewal War Room, dan rakit deck KA serta respons regulator.',
+          tasks: [
+            {
+              verb: 'Email',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Deck',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Sprint',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the AELB renewal + China REE export curb playbook into a reusable agent for the Zava Rare Earth operating team.',
+          summaryID: 'Bungkus playbook AELB renewal + China REE export curb ke dalam agent reusable untuk tim operasi Zava Rare Earth.',
+          tasks: [
+            {
+              verb: 'Notebook',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Agent',
+              toolId: '🏗 Agent Builder (M365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO',
+          roleID: 'Direktur Keuangan Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group Chief of Staff',
+          roleID: 'Kepala Staf Grup',
+          acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no M365 Copilot license',
+          color: '#7C3AED'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy Director',
+          roleID: 'Direktur Strategi Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#059669'
+        },
+        {
+          name: 'Daichi Maruyama',
+          role: 'Group Sustainability & Risk Director',
+          roleID: 'Direktur Keberlanjutan & Risiko Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'MY'
     }
   ],
   departments: [
@@ -23403,14 +27830,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research ASEAN employee attrition case studies from 2022-2024, specifically in conglomerates with 2,000-10,000 headcount. Find: (1) proven rapid-retention interventions that showed results within 90 days, (2) cost-of-attrition models with actual figures, (3) examples of successful hiring blitz programs, (4) compensation reset methodologies that maintained pay equity. Challenge any finding that lacks quantitative evidence.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'Convene a virtual debate between a CHRO advocate, a CFO skeptic, and a labour economist. Topic: Should Zava Group approve an immediate 12%% compensation correction for Band 5-7 employees in Tech and Customer Ops, funded by a 6-month hiring pause in non-critical roles? Each panellist must cite real-world examples. Summarise with a consensus recommendation and dissenting notes.'
             }
           ],
@@ -23420,7 +27847,7 @@ window.HUB_DATA = {
               prompt: 'Mode Kritik \\u2014 Riset studi kasus attrition karyawan ASEAN 2022-2024, khususnya di konglomerat 2.000-10.000 karyawan. Temukan: (1) intervensi retensi cepat yang terbukti menunjukkan hasil dalam 90 hari, (2) model biaya attrition dengan angka aktual, (3) contoh program hiring blitz yang berhasil, (4) metodologi reset kompensasi yang menjaga kesetaraan gaji. Tantang setiap temuan yang tidak memiliki bukti kuantitatif.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Adakan debat virtual antara advokat Direktur SDM, skeptis Direktur Keuangan, dan ekonom ketenagakerjaan. Topik: Haruskah Zava Group menyetujui koreksi kompensasi 12%% segera untuk karyawan Band 5-7 di Teknologi dan Operasi Pelanggan, didanai oleh jeda rekrutmen 6 bulan di posisi non-kritikal? Setiap panelis harus mengutip contoh nyata. Ringkas dengan rekomendasi konsensus dan catatan dissenting.'
             }
           ],
@@ -23732,11 +28159,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new Word document titled ‘Emergency Talent Council Brief’. Write a 3-page executive brief structured as: Page 1 — Crisis Summary (Q3 attrition at 24%%, 180-hire backlog, 6 unfilled critical roles, comp gap 8-15%% below market); Page 2 — Three Strategic Responses (Retention War Plan, Hiring Blitz, Compensation Reset) each with 3 bullet actions and estimated cost; Page 3 — Recommendations and Board Decision Items with a summary table of investment vs expected attrition reduction. Use formal executive tone with data callouts in bold.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new Word document titled ‘Capability Development Acceleration Plan Q4’. Structure as: Section 1 — Strategic Context (link capability gaps to attrition drivers); Section 2 — Priority Skill Clusters (table with columns: Skill Cluster, Current Gap, Target Level, Development Method, Timeline, Budget); Section 3 — Fast-Track Programs (mentoring pairs, stretch assignments, certification pathways); Section 4 — Success Metrics (leading and lagging indicators); Section 5 — 90-Day Implementation Roadmap with weekly milestones. Include a cover page and table of contents.'
             }
           ],
@@ -23762,11 +28189,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new PowerPoint presentation titled ‘Emergency Talent Council — CHRO Briefing’ with 10 slides. Slide 1: Title slide with subtitle ‘Confidential — Board Talent Council’. Slide 2: Executive Summary (3 crisis bullets: 24%% attrition, 180-hire backlog, MYR 12M replacement cost risk). Slide 3: Attrition Trend (placeholder for line chart, 6-month data). Slide 4: Root Cause Analysis (5 factors in a visual framework). Slide 5: Retention War Plan (30/60/90 day actions in a timeline). Slide 6: Hiring Blitz (velocity targets and resource needs). Slide 7: Compensation Reset (3 scenarios with cost). Slide 8: Risk Register (top 5 risks in a table). Slide 9: Budget Request (total MYR 4.2M with breakdown). Slide 10: Decision Items (3 items needing Council approval). Use professional blue theme.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new PowerPoint presentation titled ‘Compensation Competitiveness Reset — Rewards Committee’ with 8 slides. Slide 1: Title. Slide 2: Market Context (key finding: below P25 in 4/6 bands). Slide 3: Band-by-Band Gap Analysis (table showing current vs market P50). Slide 4: Attrition-Pay Correlation (visual showing high-attrition roles are most underpaid). Slide 5: Three Correction Scenarios (Conservative/Market/Competitive with total costs). Slide 6: Phasing Strategy (critical roles Month 1, broad-based Month 3). Slide 7: Equity Safeguards (gender and ethnicity pay gap maintained or improved). Slide 8: Recommendation and Approval Ask. Use green and navy colour scheme.'
             }
           ],
@@ -23792,11 +28219,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new Excel workbook titled ‘HR Crisis Command Dashboard’ with 6 sheets: Sheet 1 ‘Headcount Dashboard’ — current headcount by division, department, band, with YoY change and vacancy count columns, include totals row; Sheet 2 ‘Attrition Tracker’ — monthly attrition data for 12 months with columns for voluntary/involuntary split, cost estimate, and conditional formatting on >15%%; Sheet 3 ‘Talent Pipeline’ — 180 open requisitions with columns: Role, Department, Days Open, Stage, Blocker, Recruiter, Priority; Sheet 4 ‘Compensation Benchmark’ — market comparison by band (P25/P50/P75), current median, gap %%, and correction cost estimate; Sheet 5 ‘Onboarding Backlog’ — detailed tracker of stuck hires with SLA status and escalation flag; Sheet 6 ‘Critical Roles Watchlist’ — 6 unfilled senior roles with days vacant, candidate pipeline count, and risk rating. Add sample data rows to each sheet.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new Excel workbook titled ‘Retention Intervention Model’ with 4 sheets: Sheet 1 ‘Retention Scenario Planner’ — inputs for retention bonus pool, market correction budget, and hiring acceleration fund with formulae calculating per-head amounts by band; Sheet 2 ‘ROI Calculator’ — cost-of-attrition model (replacement cost = 1.5x salary, include productivity loss, recruitment fees, training) vs intervention cost; Sheet 3 ‘Sensitivity Analysis’ — data table varying attrition reduction assumptions (5%%, 10%%, 15%%) against investment levels; Sheet 4 ‘ Implementation Tracker’ — 30/60/90 day milestones with RAG status, owner, and budget spent vs allocated. Include formulae and conditional formatting.'
             }
           ],
@@ -23991,7 +28418,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Aisha Rahman',
+          name: 'Hadar Caspit',
           role: 'Chief Human Resources Officer',
           roleID: 'Direktur Sumber Daya Manusia',
           acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -23999,7 +28426,7 @@ window.HUB_DATA = {
           color: '#1565C0'
         },
         {
-          name: 'Putri Anindita',
+          name: 'Sasha Ouellet',
           role: 'Head of Talent Acquisition',
           roleID: 'Kepala Akuisisi Talenta',
           acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -24007,7 +28434,7 @@ window.HUB_DATA = {
           color: '#1976D2'
         },
         {
-          name: 'Wiremu Tane',
+          name: 'Mod Admin',
           role: 'Head of Total Rewards',
           roleID: 'Kepala Total Rewards',
           acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -24015,7 +28442,7 @@ window.HUB_DATA = {
           color: '#1E88E5'
         },
         {
-          name: 'Lakshmi Iyer',
+          name: 'Daichi Maruyama',
           role: 'Head of Learning & Development',
           roleID: 'Kepala Learning & Development',
           acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -24098,14 +28525,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research corporate cost transformation programs from 2022-2024 in ASEAN conglomerates and MNCs. Find: (1) proven rapid cost-reduction methodologies that delivered 10-20%% savings within 90 days without destroying capability, (2) month-end close acceleration case studies (from 10+ days to <5 days), (3) AP management turnaround examples with actual figures, (4) covenant protection strategies used by CFOs in distressed situations. Challenge any finding that lacks quantitative evidence.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'Convene a virtual debate between a Group CFO advocate, an operations director who will face cuts, and an investment analyst. Topic: Should Zava Group implement an immediate across-the-board 15%% opex cut, or a targeted 25%% cut on discretionary spend while protecting growth investments? Each panellist must cite real-world transformation examples and their 2-year outcomes. Summarise with consensus recommendation and risk factors.'
             }
           ],
@@ -24115,7 +28542,7 @@ window.HUB_DATA = {
               prompt: 'Mode Kritik \\u2014 Riset program transformasi biaya korporat 2022-2024 di konglomerat ASEAN dan MNC. Temukan: (1) metodologi pengurangan biaya cepat yang terbukti menghasilkan penghematan 10-20%% dalam 90 hari tanpa merusak kapabilitas, (2) studi kasus akselerasi tutup buku bulanan (dari 10+ hari ke <5 hari), (3) contoh turnaround manajemen AP dengan angka aktual, (4) strategi perlindungan covenant yang digunakan CFO dalam situasi distressed. Tantang temuan yang tidak memiliki bukti kuantitatif.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Adakan debat virtual antara advokat Direktur Keuangan Grup, direktur operasi yang akan menghadapi pemotongan, dan analis investasi. Topik: Haruskah Zava Group menerapkan pemotongan opex merata 15%% segera, atau pemotongan targeted 25%% pada pengeluaran diskresioner sambil melindungi investasi pertumbuhan? Setiap panelis harus mengutip contoh transformasi nyata dan hasil 2 tahun mereka. Ringkas dengan rekomendasi konsensus dan faktor risiko.'
             }
           ],
@@ -24427,11 +28854,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new Word document titled ‘Cost Reset Proposal — Audit Committee Brief’. Write a 4-page executive proposal structured as: Page 1 — Situation Summary (opex variance -22%% against RKAP, AP ageing MYR 84M, covenant Debt/EBITDA at 3.4x vs 3.5x limit, month-end close 3 days late); Page 2 — Reset Framework (4 levers: discretionary elimination targeting MYR 8M savings, contract renegotiation targeting MYR 12M, structural efficiency targeting MYR 6M, headcount optimisation targeting MYR 4M); Page 3 — Implementation Roadmap (Week 1-2 quick wins, Month 1 contracts, Month 2 structural, Month 3 steady state) with accountability matrix; Page 4 — Risk Assessment and Decision Items for Committee approval. Use formal boardroom tone with data callouts in bold.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new Word document titled ‘Month-End Close Acceleration Blueprint’. Structure as: Section 1 — Current State Assessment (8-day close, key bottlenecks identified: intercompany recs, manual journals, approval delays); Section 2 — Target State (4-day close with parallel processing); Section 3 — Transformation Levers (table with columns: Process Step, Current Duration, Target Duration, Enabler, Owner, Go-Live Date); Section 4 — Technology Requirements (RPA for reconciliation, system integration for auto-journals, workflow for approvals); Section 5 — Implementation Plan with Gantt-style timeline across 3 close cycles. Include table of contents and executive summary.'
             }
           ],
@@ -24457,11 +28884,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new PowerPoint presentation titled ‘15%% Cost Reset — Audit Committee Briefing’ with 10 slides. Slide 1: Title with subtitle ‘Confidential — Audit Committee’. Slide 2: Executive Summary (4 crisis metrics: -22%% opex variance, MYR 84M AP ageing, 3.4x leverage, 3-day close delay). Slide 3: Variance Waterfall (concept showing budget-to-actual bridge by category). Slide 4: Cashflow Trajectory (12-month view with danger zone highlighted). Slide 5: Cost Reset Framework (4 levers in a visual: Discretionary, Contracts, Structural, Headcount). Slide 6: Savings Targets by Lever (table with MYR amounts and timelines). Slide 7: Implementation Roadmap (30/60/90 day timeline). Slide 8: Covenant Protection Plan (current vs projected ratios). Slide 9: Risk Matrix (likelihood vs impact for top 5 execution risks). Slide 10: Committee Decision Items (3 approvals requested with rationale). Use dark green professional theme.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new PowerPoint presentation titled ‘Covenant Protection & Lender Strategy’ with 8 slides. Slide 1: Title. Slide 2: Covenant Dashboard (Debt/EBITDA current 3.4x, limit 3.5x; Interest Coverage current and trend). Slide 3: Scenario Modelling (3 paths with breach probability percentages). Slide 4: Cash Waterfall (sources and uses for next 6 months). Slide 5: Lender Relationship Map (4 lenders with exposure, relationship quality, likely stance). Slide 6: Communication Strategy (proactive disclosure timeline and messaging). Slide 7: Remediation Actions (cost reset impact on ratios, timeline to safe harbour). Slide 8: Board Recommendations (pre-emptive waiver request vs monitor-and-respond). Use navy and gold colour scheme.'
             }
           ],
@@ -24487,11 +28914,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new Excel workbook titled ‘Finance Crisis Command Dashboard’ with 6 sheets: Sheet 1 ‘Budget vs Actual’ — monthly budget vs actual by cost category with variance column, YTD cumulative, and conditional formatting on variances >5%%; Sheet 2 ‘Cashflow Forecast’ — 13-week rolling cash forecast with operating receipts, disbursements, debt service, net position, and minimum balance trigger line; Sheet 3 ‘GL Summary’ — trial balance extract with top 50 GL accounts, current month movement, YTD balance, and budget comparison; Sheet 4 ‘Accruals Register’ — all open accruals with columns: GL Code, Description, Amount, Ageing Days, Owner, Status (Confirmed/Estimated/Disputed); Sheet 5 ‘AP Ageing’ — supplier-level ageing with buckets (Current, 30, 60, 90, 120+ days), payment priority flag, and dispute indicator; Sheet 6 ‘Cost Reset Tracker’ — each cost reduction initiative with target savings, actual achieved, owner, status RAG, and implementation date. Add sample data rows to each sheet.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Create a new Excel workbook titled ‘Covenant & Treasury Model’ with 4 sheets: Sheet 1 ‘Covenant Calculator’ — quarterly Debt/EBITDA and Interest Coverage calculations with inputs for debt balance, EBITDA (trailing 12-month), interest expense, and formula showing headroom to covenant limits; Sheet 2 ‘Scenario Engine’ — three scenarios (Base/Stress/Recovery) with variable inputs for revenue growth, cost reduction achieved, working capital change, and resulting covenant ratios per quarter; Sheet 3 ‘Liquidity Dashboard’ — daily cash position tracker with available facilities, drawn amounts, undrawn headroom, and days-of-cover calculation; Sheet 4 ‘Debt Maturity Profile’ — all borrowings with lender, facility type, drawn amount, maturity date, interest rate, covenant tests, and refinancing timeline. Include formulae and conditional formatting throughout.'
             }
           ],
@@ -24686,7 +29113,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Rajesh Menon',
+          name: 'Hadar Caspit',
           role: 'Chief Financial Officer',
           roleID: 'Direktur Keuangan',
           acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -24694,7 +29121,7 @@ window.HUB_DATA = {
           color: '#1B5E20'
         },
         {
-          name: 'Sofia Hartanto',
+          name: 'Sasha Ouellet',
           role: 'Head of Financial Planning & Analysis',
           roleID: 'Kepala Perencanaan & Analisis Keuangan',
           acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -24702,7 +29129,7 @@ window.HUB_DATA = {
           color: '#2E7D32'
         },
         {
-          name: 'Marcus Chen',
+          name: 'Mod Admin',
           role: 'Group Treasurer',
           roleID: 'Kepala Treasury Grup',
           acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -24710,7 +29137,7 @@ window.HUB_DATA = {
           color: '#388E3C'
         },
         {
-          name: 'Priya Krishnamurthy',
+          name: 'Daichi Maruyama',
           role: 'Group Controller',
           roleID: 'Group Controller',
           acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -24793,14 +29220,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how listed companies in Malaysia and Indonesia have responded to regulatory inquiries from Bursa Malaysia, OJK, or the Securities Commission while simultaneously facing contract-approval backlogs exceeding 200 agreements between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the legal team\'s response within 14 days, and the regulatory outcome 6 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best approaches for a corporate legal team to reduce a 340-contract backlog by 60% in 21 days while maintaining clause discipline and disclosure quality, and where do the models disagree?Present as a comparison table with columns for Approach, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -24810,7 +29237,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana perusahaan tercatat di Indonesia dan Malaysia merespons inquiry regulator dari OJK, BEI, atau Bapepam-LK sambil menghadapi backlog persetujuan kontrak melebihi 200 perjanjian antara 2022 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons tim legal dalam 14 hari pertama, dan hasil regulasi 6 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi klaim terhadap publikasi asli, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 pendekatan terbaik bagi tim legal korporat untuk menurunkan backlog 340 kontrak sebesar 60% dalam 21 hari sambil menjaga disiplin klausul dan kualitas pengungkapan, dan di titik mana model-model tersebut berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Pendekatan, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -25190,11 +29617,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Board_Governance_Committee_Brief.docx" using /LEG_02_Compliance_Manual.docx and /LEG_04_Contract_Backlog_Tracker.xlsx as context. Section 1 Situation Snapshot (the 340-contract backlog, Bursa Malaysia inquiry, 7 overdue resolutions); Section 2 Governance Obligations (drawn from the compliance manual); Section 3 Decisions Required from the Committee; Section 4 21-Day Clearance Programme. Format as a formal Board paper with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page delegation threshold review as a .docx using /LEG_03_Delegation_of_Authority.docx and /LEG_04_Contract_Backlog_Tracker.xlsx as context. Required sections: (1) Current delegation thresholds causing bottlenecks, (2) Proposed temporary expansions with risk assessment, (3) Safeguards and sunset clauses, with one-line commercial rationale per proposed change drawn from the tracker. Apply a clean executive layout and return the document as Delegation_Threshold_Review.docx.'
             }
           ],
@@ -25226,11 +29653,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Board_Governance_Committee_Deck.pptx" using /LEG_04_Contract_Backlog_Tracker.xlsx and /LEG_05_Regulatory_Inquiry_Log.xlsx as context. (1) Executive Summary; (2) Contract Backlog Overview with bar chart; (3) Bursa Malaysia Inquiry Status; (4) 7 Overdue Board Resolutions; (5) 21-Day Clearance Programme; (6) Regulatory Communication Plan; (7) Decisions Required from the Committee. Apply a serious governance theme, embed a chart on slide 2, include speaker notes, Return as Board_Governance_Committee_Deck.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "Regulatory_Compliance_Update.pptx" using /LEG_05_Regulatory_Inquiry_Log.xlsx and /LEG_06_Board_Resolution_Calendar.docx as context. (1) Title and Governance Notice; (2) Regulatory Inquiry Status Summary; (3) Document Production Progress; (4) Board Resolution Remediation Timeline; (5) Statutory Penalty Exposure; (6) Compliance Commitments for Next 21 Days. Apply a polished governance theme with minimal text per slide, full speaker notes for the compliance team, and return as Regulatory_Compliance_Update.pptx.'
             }
           ],
@@ -25262,11 +29689,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Legal_Governance_Dashboard.xlsx" using /LEG_04_Contract_Backlog_Tracker.xlsx as context. (1) "KPI Tiles" with Total Backlog Count, Unsigned Value MYR M, Average Queue Days, SLA Breach Rate, Overdue Resolutions, Regulatory Inquiries Open as tile cards across the top; (2) "Contract Backlog" with backlog count ranked worst to best for the 11 divisions and conditional formatting (Red > 50 contracts, Amber 25-50, Green < 25); (3) "Ageing Trend" with a clustered column chart of contract age bands by division; (4) "Resolution Sparklines" with sparklines for each governance KPI over the last 6 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel compliance tracker titled "Regulatory_Response_Tracker.xlsx" using /LEG_05_Regulatory_Inquiry_Log.xlsx as context. (1) "Inquiry Status" with columns for Inquiry ID, Regulatory Body, Date Received, Documents Required, Documents Produced, Days Overdue, Status (RAG); (2) "Document Production" with a Gantt-style timeline of production milestones per inquiry; (3) "Resolution Calendar" showing the 7 board resolutions with statutory deadline, current status, and days-to-breach; (4) "Compliance Heatmap" with a matrix of regulatory risk by inquiry type and division. Use conditional formatting (Red for overdue, Amber for approaching deadline, Green for on-track) and to embed at least one timeline chart showing production progress.'
             }
           ],
@@ -25473,7 +29900,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Lakshmi Iyer',
+          name: 'Hadar Caspit',
           role: 'General Counsel',
           roleID: 'General Counsel',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -25481,7 +29908,7 @@ window.HUB_DATA = {
           color: '#4A148C'
         },
         {
-          name: 'Bayu Hartono',
+          name: 'Sasha Ouellet',
           role: 'Deputy GC (Commercial)',
           roleID: 'Wakil GC (Komersial)',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -25489,7 +29916,7 @@ window.HUB_DATA = {
           color: '#6A1B9A'
         },
         {
-          name: 'Tunde Adeyemi',
+          name: 'Mod Admin',
           role: 'Deputy GC (Disputes)',
           roleID: 'Wakil GC (Sengketa)',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -25497,7 +29924,7 @@ window.HUB_DATA = {
           color: '#8E24AA'
         },
         {
-          name: 'Mei-Lin Chua',
+          name: 'Daichi Maruyama',
           role: 'Head of Compliance',
           roleID: 'Kepala Kepatuhan',
           acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
@@ -25580,14 +30007,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how large diversified conglomerates in Malaysia and Indonesia have managed audit-finding backlogs exceeding 40 open items with multiple High-rated findings between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the risk committee\'s response within 30 days, and the regulatory or financial outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best frameworks for presenting residual risk exposure to a Board Risk Committee when 12 findings are rated High and 3 incidents remain unnotified, and where do the models disagree?Present as a comparison table with columns for Framework, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -25597,7 +30024,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana konglomerat diversifikasi besar di Indonesia dan Malaysia mengelola backlog temuan audit melebihi 40 item terbuka dengan beberapa temuan High antara 2022 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons komite risiko dalam 30 hari pertama, dan hasil regulasi atau finansial 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi klaim terhadap publikasi asli, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 framework terbaik untuk menyajikan eksposur risiko residual kepada Komite Risiko Direksi ketika 12 temuan berstatus High dan 3 insiden belum dinotifikasi, dan di titik mana model-model tersebut berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Framework, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -25977,11 +30404,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Board_Risk_Committee_Brief.docx" using /RSK_02_ERM_Framework.docx and /RSK_04_Audit_Findings_Tracker.xlsx as context. Section 1 Risk Posture Snapshot (47 open findings, 12 High-rated, 3 unnotified incidents); Section 2 Escalation Logic and Thresholds (drawn from the ERM framework); Section 3 Decisions Required from the Committee; Section 4 14-Day Remediation Sprint Plan. Format as a formal Board paper with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page remediation sprint plan as a .docx using /RSK_04_Audit_Findings_Tracker.xlsx and /RSK_03_Internal_Audit_Plan.docx as context. Required sections: (1) Findings prioritised for closure (top 6 High-rated), (2) Resource allocation by division, (3) Sprint milestones and checkpoints, with one-line rationale per finding drawn from the tracker. Apply a clean executive layout and return the document as Remediation_Sprint_Plan.docx.'
             }
           ],
@@ -26013,11 +30440,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Board_Risk_Committee_Deck.pptx" using /RSK_04_Audit_Findings_Tracker.xlsx and /RSK_01_Enterprise_Risk_Register.xlsx as context. (1) Executive Summary; (2) Finding Distribution by Risk Rating with bar chart; (3) The 12 High-Rated Findings; (4) 3 Unnotified Q3 Incidents; (5) 14-Day Remediation Sprint Plan; (6) Risk Appetite Recalibration Proposal; (7) Decisions Required from the Committee. Apply a serious risk-governance theme, embed a chart on slide 2, include speaker notes, Return as Board_Risk_Committee_Deck.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "Risk_Appetite_Narrative.pptx" using /RSK_01_Enterprise_Risk_Register.xlsx and /RSK_06_Risk_Appetite_Statement.docx as context. (1) Title and Governance Framework; (2) Current Risk Posture vs Stated Appetite; (3) Breached Thresholds Analysis; (4) Management Response Plan; (5) Proposed Recalibration Parameters; (6) Board Monitoring Commitments. Apply a polished risk-governance theme with minimal text per slide, full speaker notes for the risk team, and return as Risk_Appetite_Narrative.pptx.'
             }
           ],
@@ -26049,11 +30476,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Risk_Committee_Dashboard.xlsx" using /RSK_04_Audit_Findings_Tracker.xlsx as context. (1) "KPI Tiles" with Total Open Findings, High-Rated Count, Average Remediation Days, SLA Breach Rate, Unnotified Incidents, Risk Appetite Utilisation % as tile cards across the top; (2) "Finding Distribution" with findings ranked by risk rating for the 11 divisions and conditional formatting (Red > 5 High findings, Amber 3-5, Green < 3); (3) "Remediation Trend" with a clustered column chart of finding closure rate by quarter for the top 5 divisions; (4) "Risk Sparklines" with sparklines for each risk KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel risk-appetite model titled "Risk_Appetite_Model.xlsx" using /RSK_01_Enterprise_Risk_Register.xlsx as context. (1) "Current Exposure" with residual risk scores by category and comparison to stated appetite threshold; (2) "Breach Analysis" showing the 3 breached appetite thresholds with variance calculations; (3) "Recalibration Scenarios" with 3 scenario columns (Conservative, Moderate, Aggressive) for each appetite parameter; (4) "Monitoring Dashboard" with a radar chart showing current exposure vs appetite across 8 risk categories. Use conditional formatting (Red for breached, Amber for approaching, Green for within appetite) and to embed at least one radar chart showing the appetite gap.'
             }
           ],
@@ -26260,7 +30687,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Nikolai Voss',
+          name: 'Hadar Caspit',
           role: 'Chief Risk Officer',
           roleID: 'Chief Risk Officer',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -26268,7 +30695,7 @@ window.HUB_DATA = {
           color: '#B71C1C'
         },
         {
-          name: 'Priya Ramanathan',
+          name: 'Sasha Ouellet',
           role: 'Head of Operational Risk',
           roleID: 'Kepala Risiko Operasional',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -26276,7 +30703,7 @@ window.HUB_DATA = {
           color: '#C62828'
         },
         {
-          name: 'Tomás Echeverría',
+          name: 'Mod Admin',
           role: 'Head of Internal Audit',
           roleID: 'Kepala Audit Internal',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -26284,7 +30711,7 @@ window.HUB_DATA = {
           color: '#D32F2F'
         },
         {
-          name: 'Aisha Mbeki',
+          name: 'Daichi Maruyama',
           role: 'Head of Enterprise Risk',
           roleID: 'Kepala Enterprise Risk',
           acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
@@ -26367,14 +30794,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how large diversified conglomerates in ASEAN have recovered from strategic initiative delays of 4-7 months while simultaneously facing capex prioritisation challenges between 2022 and 2025. For at least 3 published case studies, identify the trigger event, the strategy team\'s response within 30 days, and the value-creation outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best sequencing frameworks for a diversified conglomerate when 3 flagship initiatives are behind schedule and capex is constrained, and where do the models disagree on what should move first?Present as a comparison table with columns for Framework, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -26384,7 +30811,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana konglomerat diversifikasi besar di ASEAN memulihkan diri dari keterlambatan inisiatif strategis 4-7 bulan sambil menghadapi tantangan prioritisasi capex antara 2022 hingga 2025. Untuk minimal 3 studi kasus yang dipublikasikan, identifikasi peristiwa pemicu, respons tim strategi dalam 30 hari pertama, dan hasil penciptaan nilai 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi tiap sumber, memverifikasi klaim terhadap publikasi asli, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 framework sekuensing terbaik untuk konglomerat diversifikasi ketika 3 inisiatif utama tertinggal jadwal dan capex terbatas, dan di titik mana model-model tersebut berbeda pendapat mengenai apa yang harus bergerak terlebih dahulu? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Framework, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -26764,11 +31191,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "CEO_Strategy_Review_Brief.docx" using /STR_02_Corporate_Plan.docx and /STR_01_Strategy_Tracker.xlsx as context. Section 1 Execution Gap Snapshot (3 initiatives 4-7 months behind, capex challenged, thesis refresh due); Section 2 Sequencing Framework (drawn from the corporate plan); Section 3 Decisions Required from the CEO; Section 4 4-Week Acceleration Programme. Format as a formal CEO paper with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page capex reallocation proposal as a .docx using /STR_04_Capex_Allocation_Model.xlsx and /STR_06_Investment_Committee_Charter.docx as context. Required sections: (1) Current allocation vs demand gap, (2) Proposed reallocation with IRR ranking, (3) Governance safeguards and Investment Committee approval requirements, with one-line value rationale per reallocation drawn from the model. Apply a clean executive layout and return the document as Capex_Reallocation_Proposal.docx.'
             }
           ],
@@ -26800,11 +31227,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "CEO_Strategy_Review_Deck.pptx" using /STR_01_Strategy_Tracker.xlsx and /STR_02_Corporate_Plan.docx as context. (1) Executive Summary; (2) Initiative Execution Gap with timeline chart; (3) Capex Allocation Tension; (4) FY2026 Growth Thesis Parameters; (5) Sequencing Framework; (6) 4-Week Acceleration Programme; (7) Decisions Required from the CEO. Apply a serious strategy theme, embed a chart on slide 2, include speaker notes, Return as CEO_Strategy_Review_Deck.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "FY2026_Growth_Thesis.pptx" using /STR_05_KPI_Tree.xlsx and /STR_02_Corporate_Plan.docx as context. (1) Title and Strategic Context; (2) Macro Assumptions Refreshed; (3) Revised Divisional Growth Trajectories; (4) Strategic Bets — Valid vs Re-Underwriting; (5) Value Creation Waterfall; (6) Board Commitments and Monitoring Framework. Apply a polished strategy theme with minimal text per slide, full speaker notes for the strategy team, and return as FY2026_Growth_Thesis.pptx.'
             }
           ],
@@ -26836,11 +31263,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Strategy_Execution_Dashboard.xlsx" using /STR_01_Strategy_Tracker.xlsx as context. (1) "KPI Tiles" with Initiative Completion %, Total Delay Months, Value at Risk MYR M, Capex Deployment Rate, Thesis Readiness Score as tile cards across the top; (2) "Initiative Status" with the 3 flagship initiatives showing planned vs actual milestones and conditional formatting (Red > 6 months delay, Amber 4-6, Green < 4); (3) "Capex Allocation" with a clustered column chart of allocated vs requested capex by division; (4) "Progress Sparklines" with sparklines for each strategic KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel capex scenario model titled "Capex_Scenario_Model.xlsx" using /STR_04_Capex_Allocation_Model.xlsx as context. (1) "Inputs" with 3 scenario columns (Conservative, Moderate, Aggressive) for capex growth %, reallocation %, and timeline acceleration; (2) "Division Allocation" computed from the Inputs sheet with formulas for each of the 11 divisions; (3) "Value Impact" with calculated NPV, IRR, and payback period per scenario; (4) "Sensitivity Chart" showing how total value creation changes as the 3 delayed initiatives accelerate at different rates. Use formula references (not hard-coded values) and to embed at least one tornado/sensitivity chart.'
             }
           ],
@@ -27047,7 +31474,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Rafael Monteiro',
+          name: 'Hadar Caspit',
           role: 'Group Strategy Director',
           roleID: 'Direktur Strategi Grup',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -27055,7 +31482,7 @@ window.HUB_DATA = {
           color: '#E65100'
         },
         {
-          name: 'Yuki Tanaka',
+          name: 'Sasha Ouellet',
           role: 'Head of Corporate Development',
           roleID: 'Kepala Corporate Development',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -27063,7 +31490,7 @@ window.HUB_DATA = {
           color: '#F57C00'
         },
         {
-          name: 'Adwoa Mensah',
+          name: 'Mod Admin',
           role: 'Head of Business Planning',
           roleID: 'Kepala Business Planning',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -27071,7 +31498,7 @@ window.HUB_DATA = {
           color: '#FF8F00'
         },
         {
-          name: 'Henrik Larsson',
+          name: 'Daichi Maruyama',
           role: 'Head of Strategic Insights',
           roleID: 'Kepala Strategic Insights',
           acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
@@ -27154,14 +31581,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how large ASEAN groups have responded to campaign ROI deterioration, mixed brand sentiment, and disclosure-sensitive launch communications between 2022 and 2025. For at least 3 published case studies relevant to campaign ROI and brand sentiment, identify the trigger event, the leadership response within 30 days, and the outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best playbooks for an ASEAN group facing campaign ROI deterioration, mixed brand sentiment, and disclosure-sensitive launch communications, and where do the models disagree?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -27171,7 +31598,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana grup besar ASEAN merespons penurunan ROI kampanye, sentimen merek yang campur aduk, dan komunikasi peluncuran sensitif terhadap pengungkapan antara tahun 2022 hingga 2025. Untuk minimal 3 studi kasus terkait campaign ROI dan brand sentiment yang dipublikasikan, identifikasi peristiwa pemicu, respons pimpinan dalam 30 hari pertama, dan hasil 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi terbaik untuk grup ASEAN yang menghadapi penurunan ROI kampanye, sentimen merek yang campur aduk, dan komunikasi peluncuran sensitif terhadap pengungkapan, dan di titik mana model-model tersebut berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -27551,11 +31978,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Executive Communications Review Brief — FY2026" using /MKT_03_Brand_Guidelines.docx and /MKT_04_Communications_Playbook.docx as context. Section 1 Situation Snapshot (the 22% lead conversion drop, the highest-risk areas, regulator concerns); Section 2 Governance Obligations (drawn from the brand document); Section 3 Decisions Required from the Executive Communications Review; Section 4 30-Day Corrective Programme. Format as a formal Executive Communications Review paper with a RAG summary at the top and to return the result as Executive_Communications_Review_Brief_FY2026.docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page strategic reset briefing as a .docx using /MKT_04_Communications_Playbook.docx and /MKT_01_Campaign_Performance.xlsx as context. Required sections: (1) campaign ROI priorities to Continue, (2) priorities to Reset, (3) priorities to Pause, with one-line rationale per item drawn from the workbook. Apply a clean executive layout and return the document as Strategic_Reset_Briefing.docx.'
             }
           ],
@@ -27587,11 +32014,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Executive Communications Review — FY2026" using /MKT_01_Campaign_Performance.xlsx and /MKT_04_Communications_Playbook.docx as context. (1) Executive Summary; (2) FY2026 Performance vs Target with variance bar chart; (3) Highest-Risk Areas; (4) Root Cause Analysis; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Executive Communications Review. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, Return as Executive_Communications_Review_FY2026.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "External Briefing — Campaign Roi Update" using /MKT_01_Campaign_Performance.xlsx and /MKT_04_Communications_Playbook.docx as context. (1) Title and Disclaimer; (2) FY2026 Performance Summary; (3) What Changed and Why (structural vs one-off); (4) Outlook for the highest-risk areas; (5) Management Commitments for Next 90 Days; (6) Q&A. Apply a polished theme with minimal text per slide, full speaker notes, and return as External_Briefing_FY2026.pptx.'
             }
           ],
@@ -27623,11 +32050,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Executive Communications Review_KPI_Dashboard_FY2026.xlsx" using /MKT_01_Campaign_Performance.xlsx as context. (1) "KPI Tiles" with the top campaign ROI KPIs as tile cards across the top; (2) "Variance Detail" with variance ranked worst to best and conditional formatting (Red < -20%, Amber -10% to -20%, Green > -10%); (3) "Quarterly Trend" with a clustered column chart of quarterly trend for the highest-risk areas; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel scenario model titled "Recovery_Scenario_Model.xlsx" using /MKT_01_Campaign_Performance.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Recovery, Downside) for the top 3 driver assumptions; (2) "Campaign ROI" computed from the Inputs sheet with formulas; (3) "Roll-Up" with calculated outputs per scenario; (4) "Sensitivity Chart" showing how the headline KPI changes as the highest-risk areas recover at different rates. Use formula references (not hard-coded values) and to embed at least one tornado/sensitivity chart.'
             }
           ],
@@ -27841,7 +32268,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Indira Setiawan',
+          name: 'Hadar Caspit',
           role: 'Chief Marketing Officer',
           roleID: 'Direktur Pemasaran',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -27849,7 +32276,7 @@ window.HUB_DATA = {
           color: '#1E40AF'
         },
         {
-          name: 'Rafael Tanudjaja',
+          name: 'Sasha Ouellet',
           role: 'Head of Brand Strategy',
           roleID: 'Kepala Strategi Merek',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -27857,7 +32284,7 @@ window.HUB_DATA = {
           color: '#7C3AED'
         },
         {
-          name: 'Maya Lestari',
+          name: 'Mod Admin',
           role: 'Head of Performance Marketing',
           roleID: 'Kepala Pemasaran Kinerja',
           acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
@@ -27865,7 +32292,7 @@ window.HUB_DATA = {
           color: '#059669'
         },
         {
-          name: 'Adi Pranoto',
+          name: 'Daichi Maruyama',
           role: 'Head of Corporate Communications',
           roleID: 'Kepala Komunikasi Korporat',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -27948,14 +32375,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how large ASEAN groups have responded to ERP migration slippage, cyber incident exposure, and inconsistent Copilot adoption between 2022 and 2025. For at least 3 published case studies relevant to ERP migration and cyber incidents, identify the trigger event, the leadership response within 30 days, and the outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best playbooks for an ASEAN group facing ERP migration slippage, cyber incident exposure, and inconsistent Copilot adoption, and where do the models disagree?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -27965,7 +32392,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana grup besar ASEAN merespons keterlambatan migrasi ERP, paparan insiden siber, dan adopsi Copilot yang tidak konsisten antara tahun 2022 hingga 2025. Untuk minimal 3 studi kasus terkait ERP migration dan cyber incidents yang dipublikasikan, identifikasi peristiwa pemicu, respons pimpinan dalam 30 hari pertama, dan hasil 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi terbaik untuk grup ASEAN yang menghadapi keterlambatan migrasi ERP, paparan insiden siber, dan adopsi Copilot yang tidak konsisten, dan di titik mana model-model tersebut berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -28345,11 +32772,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Technology Steering Committee Brief — FY2026" using /IT_03_IT_Governance_Manual.docx and /IT_04_Cyber_Response_Playbook.docx as context. Section 1 Situation Snapshot (the 6-month ERP delay and 14-hour service degradation, the highest-risk areas, regulator concerns); Section 2 Governance Obligations (drawn from the brand document); Section 3 Decisions Required from the Technology Steering Committee; Section 4 30-Day Corrective Programme. Format as a formal Technology Steering Committee paper with a RAG summary at the top and to return the result as Technology_Steering_Committee_Brief_FY2026.docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page strategic reset briefing as a .docx using /IT_04_Cyber_Response_Playbook.docx and /IT_01_Transformation_Tracker.xlsx as context. Required sections: (1) ERP migration priorities to Continue, (2) priorities to Reset, (3) priorities to Pause, with one-line rationale per item drawn from the workbook. Apply a clean executive layout and return the document as Strategic_Reset_Briefing.docx.'
             }
           ],
@@ -28381,11 +32808,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Technology Steering Committee — FY2026" using /IT_01_Transformation_Tracker.xlsx and /IT_04_Cyber_Response_Playbook.docx as context. (1) Executive Summary; (2) FY2026 Performance vs Target with variance bar chart; (3) Highest-Risk Areas; (4) Root Cause Analysis; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Technology Steering Committee. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, Return as Technology_Steering_Committee_FY2026.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "External Briefing — Erp Migration Update" using /IT_01_Transformation_Tracker.xlsx and /IT_04_Cyber_Response_Playbook.docx as context. (1) Title and Disclaimer; (2) FY2026 Performance Summary; (3) What Changed and Why (structural vs one-off); (4) Outlook for the highest-risk areas; (5) Management Commitments for Next 90 Days; (6) Q&A. Apply a polished theme with minimal text per slide, full speaker notes, and return as External_Briefing_FY2026.pptx.'
             }
           ],
@@ -28417,11 +32844,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Technology Steering Committee_KPI_Dashboard_FY2026.xlsx" using /IT_01_Transformation_Tracker.xlsx as context. (1) "KPI Tiles" with the top ERP migration KPIs as tile cards across the top; (2) "Variance Detail" with variance ranked worst to best and conditional formatting (Red < -20%, Amber -10% to -20%, Green > -10%); (3) "Quarterly Trend" with a clustered column chart of quarterly trend for the highest-risk areas; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel scenario model titled "Recovery_Scenario_Model.xlsx" using /IT_01_Transformation_Tracker.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Recovery, Downside) for the top 3 driver assumptions; (2) "ERP Migration Plan" computed from the Inputs sheet with formulas; (3) "Roll-Up" with calculated outputs per scenario; (4) "Sensitivity Chart" showing how the headline KPI changes as the highest-risk areas recover at different rates. Use formula references (not hard-coded values) and to embed at least one tornado/sensitivity chart.'
             }
           ],
@@ -28635,7 +33062,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Bayu Wirawan',
+          name: 'Hadar Caspit',
           role: 'Chief Information Officer',
           roleID: 'Direktur TI',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -28643,7 +33070,7 @@ window.HUB_DATA = {
           color: '#1E40AF'
         },
         {
-          name: 'Sinta Kurniawan',
+          name: 'Sasha Ouellet',
           role: 'Head of Enterprise Architecture',
           roleID: 'Kepala Arsitektur Perusahaan',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -28651,7 +33078,7 @@ window.HUB_DATA = {
           color: '#7C3AED'
         },
         {
-          name: 'Reza Hartono',
+          name: 'Mod Admin',
           role: 'Head of Cybersecurity',
           roleID: 'Kepala Keamanan Siber',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -28659,7 +33086,7 @@ window.HUB_DATA = {
           color: '#DC2626'
         },
         {
-          name: 'Putri Anggraini',
+          name: 'Daichi Maruyama',
           role: 'Head of Digital Adoption',
           roleID: 'Kepala Adopsi Digital',
           acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
@@ -28742,14 +33169,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how large ASEAN groups have responded to Scope 1 emissions trajectory above plan, supplier due diligence inconsistency, and Board-ready assurance gaps between 2022 and 2025. For at least 3 published case studies relevant to emissions and compliance obligations, identify the trigger event, the leadership response within 30 days, and the outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best playbooks for an ASEAN group facing Scope 1 emissions trajectory above plan, supplier due diligence inconsistency, and Board-ready assurance gaps, and where do the models disagree?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -28759,7 +33186,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana grup besar ASEAN merespons lintasan emisi Scope 1 di atas rencana, ketidakkonsistenan uji tuntas pemasok, dan gap asurans untuk Direksi antara tahun 2022 hingga 2025. Untuk minimal 3 studi kasus terkait emissions dan compliance obligations yang dipublikasikan, identifikasi peristiwa pemicu, respons pimpinan dalam 30 hari pertama, dan hasil 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi terbaik untuk grup ASEAN yang menghadapi lintasan emisi Scope 1 di atas rencana, ketidakkonsistenan uji tuntas pemasok, dan gap asurans untuk Direksi, dan di titik mana model-model tersebut berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -29139,11 +33566,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Board Sustainability Committee Brief — FY2026" using /ESG_03_Sustainability_Framework.docx and /ESG_04_Climate_Action_Roadmap.docx as context. Section 1 Situation Snapshot (the 14% emissions overshoot vs FY2026 glidepath, the highest-risk areas, regulator concerns); Section 2 Governance Obligations (drawn from the brand document); Section 3 Decisions Required from the Board Sustainability Committee; Section 4 30-Day Corrective Programme. Format as a formal Board Sustainability Committee paper with a RAG summary at the top and to return the result as Board_Sustainability_Committee_Brief_FY2026.docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page strategic reset briefing as a .docx using /ESG_04_Climate_Action_Roadmap.docx and /ESG_01_Sustainability_Dashboard.xlsx as context. Required sections: (1) emissions priorities to Continue, (2) priorities to Reset, (3) priorities to Pause, with one-line rationale per item drawn from the workbook. Apply a clean executive layout and return the document as Strategic_Reset_Briefing.docx.'
             }
           ],
@@ -29175,11 +33602,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Board Sustainability Committee — FY2026" using /ESG_01_Sustainability_Dashboard.xlsx and /ESG_04_Climate_Action_Roadmap.docx as context. (1) Executive Summary; (2) FY2026 Performance vs Target with variance bar chart; (3) Highest-Risk Areas; (4) Root Cause Analysis; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Board Sustainability Committee. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, Return as Board_Sustainability_Committee_FY2026.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "External Briefing — Emissions Update" using /ESG_01_Sustainability_Dashboard.xlsx and /ESG_04_Climate_Action_Roadmap.docx as context. (1) Title and Disclaimer; (2) FY2026 Performance Summary; (3) What Changed and Why (structural vs one-off); (4) Outlook for the highest-risk areas; (5) Management Commitments for Next 90 Days; (6) Q&A. Apply a polished theme with minimal text per slide, full speaker notes, and return as External_Briefing_FY2026.pptx.'
             }
           ],
@@ -29211,11 +33638,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Board Sustainability Committee_KPI_Dashboard_FY2026.xlsx" using /ESG_01_Sustainability_Dashboard.xlsx as context. (1) "KPI Tiles" with the top emissions KPIs as tile cards across the top; (2) "Variance Detail" with variance ranked worst to best and conditional formatting (Red < -20%, Amber -10% to -20%, Green > -10%); (3) "Quarterly Trend" with a clustered column chart of quarterly trend for the highest-risk areas; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel scenario model titled "Recovery_Scenario_Model.xlsx" using /ESG_01_Sustainability_Dashboard.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Recovery, Downside) for the top 3 driver assumptions; (2) "Emissions Tracker" computed from the Inputs sheet with formulas; (3) "Roll-Up" with calculated outputs per scenario; (4) "Sensitivity Chart" showing how the headline KPI changes as the highest-risk areas recover at different rates. Use formula references (not hard-coded values) and to embed at least one tornado/sensitivity chart.'
             }
           ],
@@ -29429,7 +33856,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Galuh Saraswati',
+          name: 'Hadar Caspit',
           role: 'Chief Sustainability Officer',
           roleID: 'Direktur Keberlanjutan',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -29437,7 +33864,7 @@ window.HUB_DATA = {
           color: '#1B5E20'
         },
         {
-          name: 'Hendra Wijaya',
+          name: 'Sasha Ouellet',
           role: 'Head of Sustainability Reporting',
           roleID: 'Kepala Pelaporan Keberlanjutan',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -29445,7 +33872,7 @@ window.HUB_DATA = {
           color: '#7C3AED'
         },
         {
-          name: 'Nadia Kusuma',
+          name: 'Mod Admin',
           role: 'Head of Climate & Supply Chain',
           roleID: 'Kepala Iklim & Rantai Pasok',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -29453,7 +33880,7 @@ window.HUB_DATA = {
           color: '#DC2626'
         },
         {
-          name: 'Eko Pratama',
+          name: 'Daichi Maruyama',
           role: 'Head of Community Impact',
           roleID: 'Kepala Dampak Komunitas',
           acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
@@ -29536,14 +33963,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how large ASEAN groups have responded to site-level service slippage, delayed cost takeout, and tier-1 supplier disruption threatening continuity between 2022 and 2025. For at least 3 published case studies relevant to service levels and supply risk, identify the trigger event, the leadership response within 30 days, and the outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best playbooks for an ASEAN group facing site-level service slippage, delayed cost takeout, and tier-1 supplier disruption threatening continuity, and where do the models disagree?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -29553,7 +33980,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana grup besar ASEAN merespons keterlambatan SLA tingkat lokasi, cost takeout yang tertunda, dan disrupsi pemasok tier-1 yang mengancam kesinambungan antara tahun 2022 hingga 2025. Untuk minimal 3 studi kasus terkait service levels dan supply risk yang dipublikasikan, identifikasi peristiwa pemicu, respons pimpinan dalam 30 hari pertama, dan hasil 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi terbaik untuk grup ASEAN yang menghadapi keterlambatan SLA tingkat lokasi, cost takeout yang tertunda, dan disrupsi pemasok tier-1 yang mengancam kesinambungan, dan di titik mana model-model tersebut berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -29933,11 +34360,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Operations Review Committee Brief — FY2026" using /OPS_03_Operations_Playbook.docx and /OPS_04_Business_Continuity_Manual.docx as context. Section 1 Situation Snapshot (the 8-point SLA gap and MYR 38M cost takeout shortfall, the highest-risk areas, regulator concerns); Section 2 Governance Obligations (drawn from the brand document); Section 3 Decisions Required from the Operations Review Committee; Section 4 30-Day Corrective Programme. Format as a formal Operations Review Committee paper with a RAG summary at the top and to return the result as Operations_Review_Committee_Brief_FY2026.docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page strategic reset briefing as a .docx using /OPS_04_Business_Continuity_Manual.docx and /OPS_01_Operational_Performance.xlsx as context. Required sections: (1) service levels priorities to Continue, (2) priorities to Reset, (3) priorities to Pause, with one-line rationale per item drawn from the workbook. Apply a clean executive layout and return the document as Strategic_Reset_Briefing.docx.'
             }
           ],
@@ -29969,11 +34396,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Operations Review Committee — FY2026" using /OPS_01_Operational_Performance.xlsx and /OPS_04_Business_Continuity_Manual.docx as context. (1) Executive Summary; (2) FY2026 Performance vs Target with variance bar chart; (3) Highest-Risk Areas; (4) Root Cause Analysis; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Operations Review Committee. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, Return as Operations_Review_Committee_FY2026.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "External Briefing — Service Levels Update" using /OPS_01_Operational_Performance.xlsx and /OPS_04_Business_Continuity_Manual.docx as context. (1) Title and Disclaimer; (2) FY2026 Performance Summary; (3) What Changed and Why (structural vs one-off); (4) Outlook for the highest-risk areas; (5) Management Commitments for Next 90 Days; (6) Q&A. Apply a polished theme with minimal text per slide, full speaker notes, and return as External_Briefing_FY2026.pptx.'
             }
           ],
@@ -30005,11 +34432,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Operations Review Committee_KPI_Dashboard_FY2026.xlsx" using /OPS_01_Operational_Performance.xlsx as context. (1) "KPI Tiles" with the top service levels KPIs as tile cards across the top; (2) "Variance Detail" with variance ranked worst to best and conditional formatting (Red < -20%, Amber -10% to -20%, Green > -10%); (3) "Quarterly Trend" with a clustered column chart of quarterly trend for the highest-risk areas; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel scenario model titled "Recovery_Scenario_Model.xlsx" using /OPS_01_Operational_Performance.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Recovery, Downside) for the top 3 driver assumptions; (2) "Plant OEE" computed from the Inputs sheet with formulas; (3) "Roll-Up" with calculated outputs per scenario; (4) "Sensitivity Chart" showing how the headline KPI changes as the highest-risk areas recover at different rates. Use formula references (not hard-coded values) and to embed at least one tornado/sensitivity chart.'
             }
           ],
@@ -30223,7 +34650,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Wahyu Setiabudi',
+          name: 'Hadar Caspit',
           role: 'Chief Operating Officer',
           roleID: 'Direktur Operasi',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -30231,7 +34658,7 @@ window.HUB_DATA = {
           color: '#1E40AF'
         },
         {
-          name: 'Lestari Hapsari',
+          name: 'Sasha Ouellet',
           role: 'Head of Operational Excellence',
           roleID: 'Kepala Keunggulan Operasi',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -30239,7 +34666,7 @@ window.HUB_DATA = {
           color: '#7C3AED'
         },
         {
-          name: 'Bambang Suryadi',
+          name: 'Mod Admin',
           role: 'Head of Supply & Continuity',
           roleID: 'Kepala Pasokan & Kesinambungan',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -30247,7 +34674,7 @@ window.HUB_DATA = {
           color: '#DC2626'
         },
         {
-          name: 'Citra Halim',
+          name: 'Daichi Maruyama',
           role: 'Head of Site Operations',
           roleID: 'Kepala Operasi Lokasi',
           acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
@@ -30330,14 +34757,14 @@ window.HUB_DATA = {
           tool: '🔍 Researcher',
           license: 'M365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
-          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude, Gemini, etc.) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
           prompts: [
             {
               instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will self-critique each source and flag any claim it cannot independently verify.',
               prompt: 'Research how large ASEAN groups have responded to late Board papers, overdue resolutions, and a growing disclosure watchlist ahead of quarter-end between 2022 and 2025. For at least 3 published case studies relevant to board calendar and resolution tracking, identify the trigger event, the leadership response within 30 days, and the outcome 12 months later. Critically, instruct Researcher to self-critique each source, verify every claim against the original publication, and flag any claim it cannot independently verify. Cite every source with publication date.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a multi-model debate (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) and surfaces dissent across the panel.',
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher convenes a parallel multi-model report (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) and surfaces dissent across the panel.',
               prompt: 'What are the 3 best playbooks for an ASEAN group facing late Board papers, overdue resolutions, and a growing disclosure watchlist ahead of quarter-end, and where do the models disagree?Present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk.'
             }
           ],
@@ -30347,7 +34774,7 @@ window.HUB_DATA = {
               prompt: 'Teliti bagaimana grup besar ASEAN merespons paper Direksi terlambat, resolusi yang tertunda, dan watchlist pengungkapan yang bertumbuh menjelang akhir kuartal antara tahun 2022 hingga 2025. Untuk minimal 3 studi kasus terkait board calendar dan resolution tracking yang dipublikasikan, identifikasi peristiwa pemicu, respons pimpinan dalam 30 hari pertama, dan hasil 12 bulan kemudian. Yang paling penting, instruksikan Researcher untuk mengkritisi setiap sumber, memverifikasi setiap klaim terhadap publikasi aslinya, dan menandai klaim yang tidak dapat diverifikasi secara independen. Sertakan kutipan lengkap dengan tanggal publikasi.'
             },
             {
-              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Gemini) dan menampilkan perbedaan pendapat lintas panel.',
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt di bawah — Researcher akan menggelar debat multi-model (GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7) dan menampilkan perbedaan pendapat lintas panel.',
               prompt: 'Apa 3 strategi terbaik untuk grup ASEAN yang menghadapi paper Direksi terlambat, resolusi yang tertunda, dan watchlist pengungkapan yang bertumbuh menjelang akhir kuartal, dan di titik mana model-model tersebut berbeda pendapat? Minta Researcher menyoroti perbedaan pendapat terkuat di antara council, merangkum posisi mayoritas, dan menandai pandangan minoritas dengan jelas. Sajikan sebagai tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi.'
             }
           ],
@@ -30727,11 +35154,11 @@ window.HUB_DATA = {
           desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 3-page Word document titled "Board of Directors Brief — FY2026" using /BRD_03_Governance_Manual.docx and /BRD_04_Board_Paper_Standards.docx as context. Section 1 Situation Snapshot (the 38% late papers and 17 overdue resolutions, the highest-risk areas, regulator concerns); Section 2 Governance Obligations (drawn from the brand document); Section 3 Decisions Required from the Board of Directors; Section 4 30-Day Corrective Programme. Format as a formal Board of Directors paper with a RAG summary at the top and to return the result as Board_of_Directors_Brief_FY2026.docx ready to share.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Word first.** Paste the prompt below — Copilot returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted `.docx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 2-page strategic reset briefing as a .docx using /BRD_04_Board_Paper_Standards.docx and /BRD_01_Board_Pack_Tracker.xlsx as context. Required sections: (1) board calendar priorities to Continue, (2) priorities to Reset, (3) priorities to Pause, with one-line rationale per item drawn from the workbook. Apply a clean executive layout and return the document as Strategic_Reset_Briefing.docx.'
             }
           ],
@@ -30763,11 +35190,11 @@ window.HUB_DATA = {
           desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 7-slide PowerPoint deck titled "Board of Directors — FY2026" using /BRD_01_Board_Pack_Tracker.xlsx and /BRD_04_Board_Paper_Standards.docx as context. (1) Executive Summary; (2) FY2026 Performance vs Target with variance bar chart; (3) Highest-Risk Areas; (4) Root Cause Analysis; (5) 30-Day Corrective Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Board of Directors. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, Return as Board_of_Directors_FY2026.pptx ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open PowerPoint first.** Paste the prompt below — Copilot returns a fully drafted `.pptx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted `.pptx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a 6-slide PowerPoint deck titled "External Briefing — Board Calendar Update" using /BRD_01_Board_Pack_Tracker.xlsx and /BRD_04_Board_Paper_Standards.docx as context. (1) Title and Disclaimer; (2) FY2026 Performance Summary; (3) What Changed and Why (structural vs one-off); (4) Outlook for the highest-risk areas; (5) Management Commitments for Next 90 Days; (6) Q&A. Apply a polished theme with minimal text per slide, full speaker notes, and return as External_Briefing_FY2026.pptx.'
             }
           ],
@@ -30799,11 +35226,11 @@ window.HUB_DATA = {
           desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
           prompts: [
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel workbook titled "Board of Directors_KPI_Dashboard_FY2026.xlsx" using /BRD_01_Board_Pack_Tracker.xlsx as context. (1) "KPI Tiles" with the top board calendar KPIs as tile cards across the top; (2) "Variance Detail" with variance ranked worst to best and conditional formatting (Red < -20%, Amber -10% to -20%, Green > -10%); (3) "Quarterly Trend" with a clustered column chart of quarterly trend for the highest-risk areas; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'
             },
             {
-              instr: 'Open `m365.cloud.microsoft/chat`. **Do NOT open Excel first.** Paste the prompt below — Copilot returns a fully built `.xlsx` saved to OneDrive. Works with the free Copilot Chat account or with an M365 Copilot license.',
+              instr: 'Open `m365.cloud.microsoft/chat` → **Agents** tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built `.xlsx` saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
               prompt: 'Generate a new Excel scenario model titled "Recovery_Scenario_Model.xlsx" using /BRD_01_Board_Pack_Tracker.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Recovery, Downside) for the top 3 driver assumptions; (2) "Board Calendar" computed from the Inputs sheet with formulas; (3) "Roll-Up" with calculated outputs per scenario; (4) "Sensitivity Chart" showing how the headline KPI changes as the highest-risk areas recover at different rates. Use formula references (not hard-coded values) and to embed at least one tornado/sensitivity chart.'
             }
           ],
@@ -31017,7 +35444,7 @@ window.HUB_DATA = {
       ],
       personas: [
         {
-          name: 'Surya Hartanto',
+          name: 'Hadar Caspit',
           role: 'Company Secretary',
           roleID: 'Sekretaris Perusahaan',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -31025,7 +35452,7 @@ window.HUB_DATA = {
           color: '#1A237E'
         },
         {
-          name: 'Anissa Permatasari',
+          name: 'Sasha Ouellet',
           role: 'Chief of Staff to the CEO',
           roleID: 'Kepala Staf Direktur Utama',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -31033,7 +35460,7 @@ window.HUB_DATA = {
           color: '#7C3AED'
         },
         {
-          name: 'Daichi Maruyama',
+          name: 'Mod Admin',
           role: 'Head of Governance',
           roleID: 'Kepala Tata Kelola',
           acct: 'admin@ABSx62256373.onmicrosoft.com',
@@ -31041,7 +35468,7 @@ window.HUB_DATA = {
           color: '#DC2626'
         },
         {
-          name: 'Sasha Ouellet',
+          name: 'Daichi Maruyama',
           role: 'Board Secretariat Lead',
           roleID: 'Pimpinan Sekretariat Dewan',
           acct: 'SashaO@ABSx62256373.OnMicrosoft.com',

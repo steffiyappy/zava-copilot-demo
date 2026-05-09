@@ -1,0 +1,1692 @@
+
+import sys; sys.path.insert(0,'.')
+from util import *
+
+# ────────────────────────────────────────────────────────────────────────
+#  Batch 10  —  Newly added industries to close coverage gaps:
+#    1. Food & FMCG               (Japfa / Nippon Indosari / Mamee / F&N flavour)
+#    2. Rubber Gloves Mfg         (Hartalega / Top Glove / Kossan flavour)
+#    3. Mortgage Finance          (Cagamas Bhd flavour)
+#    4. Cross-border Remittance   (Merchantrade Asia / Tranglo flavour)
+#    5. Auto Components & Tyres   (Gajah Tunggal / Indo Kordsa flavour)
+#    6. Semiconductor / E&E Mfg   (Western Digital / Micron / Pentamaster flavour)
+#    7. Rare-Earth & Metals       (Lynas / Malaysia Mining Corp flavour)
+#
+#  Each entry:
+#   • 4-phase day-in-the-life storyboard
+#   • 14 Copilot tools (Chat / Researcher / Analyst / Excel / Word / PPT /
+#     Outlook / Teams / Notebook / Cowork / Word-Agt / PPT-Agt / Excel-Agt /
+#     Builder)
+#   • EN + ID prompts
+#   • 4 standard personas mapped to industry-appropriate roles
+#   • 4 industry-specific reference files
+# ────────────────────────────────────────────────────────────────────────
+
+INDUSTRIES_10 = []
+
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  1.  FOOD & FMCG                                                     ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+INDUSTRIES_10.append(ind(
+    'food-fmcg', 'sec-food', 'Food & FMCG', '🍜', '#F59E0B', '#D97706',
+    'Zava Foods Indonesia',
+    'Q4 FY2025 trade-spend overrun MYR 78M; key SKU recall in 2 markets — Board pack in 5 days.',
+    "Zava Foods Indonesia is an ASEAN-listed food and FMCG group with 14 manufacturing plants across Indonesia, Malaysia, Singapore and the Philippines, producing instant noodles, dairy, beverages, baked goods, snacks and edible-oils for over 250 SKUs. Trade-spend in Q4 FY2025 overran budget by MYR 78M (+22%) driven by aggressive promo activity in modern trade and weaker general-trade sell-through. A Salmonella scare on one bakery SKU triggered a precautionary recall in Malaysia and Singapore — BPOM Indonesia, MOH Malaysia and SFA Singapore have all opened files. Edible-oil costs jumped 18% on CPO volatility, squeezing margins on the 4 highest-volume noodle SKUs. The Group CFO needs a Board pack in 5 days covering trade-spend control, the recall remediation programme, gross-margin recovery, and FY2026 promo guardrails. Real customer reference frame: the group operates similarly to Japfa Comfeed, Nippon Indosari Corpindo, Mamee-Double Decker, Spritzer, F&N Holdings, Malayan Flour Mills and Ajinomoto Indonesia.",
+    ['FMCG_01_Trade_Spend_Tracker.xlsx','FMCG_02_SKU_Margin_Tracker.xlsx','FMCG_03_Recall_Remediation_Programme.docx','FMCG_04_Edible_Oil_Hedge_Book.xlsx','FMCG_05_FY2026_Promo_Guardrails.docx'],
+    [
+      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
+        {'instr':'', 'prompt':'Trade-spend in Q4 FY2025 overran budget by MYR 78 million (+22%) driven mainly by modern-trade promo aggression on the noodle and dairy SKUs. Draft a 1-page note for the Group CFO that frames the overrun in plain language, lists the 5 questions the Board will ask first, and identifies the 3 decisions the CFO must take before the Audit Committee opens. Present as a structured table with columns for Issue, Why It Matters, Board Question, and Recommended Answer.'},
+        {'instr':'', 'prompt':'Write a 90-second verbal opening for the Board meeting in 5 days that acknowledges the MYR 78M trade-spend overrun and the precautionary Salmonella recall in Malaysia and Singapore directly, explains the role of CPO volatility and modern-trade promo intensity without sounding defensive, and signals a credible 2-quarter margin restoration path. End with 3 talking points the CFO can use if the Board challenges promo discipline or QA controls.'},
+        {'instr':'', 'prompt':'Build a stakeholder communication map for the Q4 FY2025 trade-spend overrun and the active Salmonella recall ahead of the Board meeting. Identify the priority audiences (BPOM Indonesia, MOH Malaysia, SFA Singapore, top-3 modern-trade chains, the recall-affected consumers via the 24h hotline, the 4 outsourced co-packers, and the FY2026 promo-funding banks), the message each audience requires, the timing, and the main communication risk if the message is mishandled. Present as a RAG table with Red for same-day, Amber for 24-hour, and Green for monitor-only audiences.'}
+      ], DESC_CHAT,
+      promptsID=[
+        {'instr':'', 'prompt':'Trade-spend kuartal 4 FY2025 melebihi anggaran sebesar Rp 280 miliar (+22%) terutama karena agresivitas promo di modern trade pada SKU mie dan dairy. Susun nota tajam 1 halaman untuk Direktur Keuangan Grup yang membingkai pembengkakan dalam bahasa sederhana, mendaftar 5 pertanyaan yang akan ditanyakan Direksi pertama-tama, dan mengidentifikasi 3 keputusan yang harus diambil Direktur Keuangan sebelum Komite Audit dibuka. Sajikan sebagai tabel terstruktur dengan kolom Isu, Mengapa Penting, Pertanyaan Direksi, dan Jawaban yang Direkomendasikan.'},
+        {'instr':'', 'prompt':'Tulis pembukaan lisan 90 detik untuk Rapat Direksi dalam 5 hari yang mengakui pembengkakan trade-spend Rp 280 miliar dan recall pencegahan Salmonella di Malaysia dan Singapura secara langsung, menjelaskan peran volatilitas CPO dan intensitas promo modern-trade tanpa terdengar defensif, dan memberikan sinyal jalur pemulihan margin 2-kuartal yang kredibel. Akhiri dengan 3 talking points untuk dipakai Direktur Keuangan bila Direksi menantang disiplin promo atau pengendalian QA.'},
+        {'instr':'', 'prompt':'Bangun peta komunikasi pemangku kepentingan untuk pembengkakan trade-spend kuartal 4 FY2025 dan recall Salmonella aktif menjelang Rapat Direksi. Identifikasi audiens prioritas (BPOM Indonesia, KKM Malaysia, SFA Singapura, 3 chain modern-trade teratas, konsumen terdampak recall via hotline 24 jam, 4 co-packer eksternal, dan bank pendana promo FY2026), pesan inti tiap audiens, timing, dan risiko komunikasi utama bila pesan keliru. Sajikan sebagai tabel RAG dengan Merah untuk hari ini juga, Kuning untuk 24 jam, dan Hijau untuk audiens monitor saja.'}
+      ],
+      persona=['Sasha Ouellet','Mod Admin','Hadar Caspit'],
+      personaID=['Sasha Ouellet','Mod Admin','Hadar Caspit']),
+
+      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will draft a deep market study and a second model peer-reviews every claim and citation before it lands.', 'prompt':'Goal: I need a defensible benchmark of how listed ASEAN food and FMCG groups have managed Q4 trade-spend overruns of more than 15 percent and concurrent product-recall events between 2020 and 2025. Context: Zava Foods Indonesia is preparing a Board pack in 5 days. We need credible peer cases including but not limited to Indofood, Mayora, Wings Group, Japfa, Nippon Indosari, F&N Holdings, Mamee Double Decker and Nestlé Malaysia. Source: For each peer, identify the trigger event, the trade-spend control programme adopted within 90 days, the recall-handling decisions, and the gross-margin trajectory 12 to 24 months later. Expectation: Cite every source with publication date. Critically, instruct Researcher to peer-review each claim against the original publication, flag any claim it cannot independently verify, and present as a structured comparison table with columns for Peer, Trigger, 90-Day Programme, Recall Handling, Margin Outcome, Citation.'},
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher runs the question through GPT-5.5 Thinking and Claude Opus 4.7 in parallel, then a synthesis cover letter highlights agreements, disagreements and unique findings.', 'prompt':'Goal: Identify the 3 most defensible playbooks for an FMCG group dealing with simultaneous trade-spend overrun and product-recall pressure. Context: Zava Foods Indonesia operates across 4 ASEAN markets with regulators (BPOM, MOH, SFA, FDA Philippines) all on alert. Source: Use Researcher with Model Council enabled — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7 on trade-spend rationalisation, SKU portfolio pruning, recall communication, and CPO hedge restructuring. Expectation: Surface dissent across the panel, summarise the majority position, mark the minority view, and present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk for a CFO-led 90-day plan.'}
+      ], DESC_RESEARCHER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Critique Mode**. Tempel prompt — Researcher menyusun draf riset mendalam lalu model kedua mengkritisi tiap klaim dan kutipan sebelum hasilnya diterima.', 'prompt':'Tujuan: Saya butuh benchmark yang dapat dipertahankan tentang bagaimana grup makanan dan FMCG ASEAN yang tercatat di bursa menangani pembengkakan trade-spend Q4 di atas 15 persen dan kejadian recall produk antara 2020 hingga 2025. Konteks: Zava Foods Indonesia menyiapkan paket Direksi dalam 5 hari. Kami butuh studi kasus peer yang kredibel termasuk Indofood, Mayora, Wings Group, Japfa, Nippon Indosari, F&N Holdings, Mamee Double Decker dan Nestlé Malaysia. Sumber: Untuk tiap peer identifikasi peristiwa pemicu, program kendali trade-spend dalam 90 hari, keputusan penanganan recall, dan lintasan gross margin 12 sampai 24 bulan kemudian. Ekspektasi: Sertakan kutipan lengkap dengan tanggal publikasi. Yang kritikal, minta Researcher peer-review tiap klaim terhadap publikasi aslinya, tandai klaim yang tidak dapat diverifikasi independen, dan sajikan sebagai tabel perbandingan terstruktur dengan kolom Peer, Pemicu, Program 90-Hari, Penanganan Recall, Hasil Margin, Kutipan.'},
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt — Researcher menggelar laporan parallel GPT-5.5 Thinking dan Claude Opus 4.7, lalu cover letter sintesa menyorot kesepakatan dan perbedaan.', 'prompt':'Tujuan: Identifikasi 3 strategi paling defensible untuk grup FMCG yang menghadapi pembengkakan trade-spend dan tekanan recall produk secara bersamaan. Konteks: Zava Foods Indonesia beroperasi di 4 pasar ASEAN dengan regulator (BPOM, KKM, SFA, FDA Filipina) semuanya waspada. Sumber: Gunakan Researcher dengan Model Council aktif — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7 atas rasionalisasi trade-spend, pemangkasan portfolio SKU, komunikasi recall, dan restrukturisasi hedge CPO. Ekspektasi: Sorot perbedaan pendapat, rangkum posisi mayoritas, tandai pandangan minoritas, dan sajikan tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi untuk rencana 90 hari yang dipimpin Direktur Keuangan.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin']),
+
+      tool(T_ANALYST, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload `/FMCG_01_Trade_Spend_Tracker.xlsx`. Paste the prompt below.', 'prompt':'Goal: Quantify and visualise the Q4 FY2025 trade-spend overrun. Context: We are MYR 78 million over budget on trade-spend; the Group CFO presents to the Board in 5 days. Source: Use the uploaded /FMCG_01_Trade_Spend_Tracker.xlsx — cross-reference the Channel Spend, SKU Promo Activity AND Sell-Through tabs. Expectation: Calculate absolute and percentage variance vs budget by channel (modern trade, general trade, e-commerce, HoReCa) and by category (noodles, dairy, beverages, snacks, edible-oils). Build (1) a horizontal bar chart of trade-spend variance ranked worst to best, and (2) a 100% stacked column showing each category contribution to the gap. Flag overrun worse than 25% as Red, 10–25% as Amber, under 10% as Green. Output a RAG dashboard with both charts embedded and one recommended corrective lever per Red row.'},
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload `/FMCG_02_SKU_Margin_Tracker.xlsx` AND `/FMCG_04_Edible_Oil_Hedge_Book.xlsx`. Paste the prompt below.', 'prompt':'Goal: Identify which SKUs have lost the most gross-margin in Q4 FY2025 and how much of that is CPO-driven. Context: Edible-oil costs jumped 18% in Q4. Source: From /FMCG_02_SKU_Margin_Tracker.xlsx pull Q3 vs Q4 GM by SKU; from /FMCG_04_Edible_Oil_Hedge_Book.xlsx pull hedge coverage and realised vs spot CPO prices. Expectation: Build a margin-bridge waterfall (Q3 GM → Volume → Mix → Trade-spend → CPO Cost → FX → Q4 GM) with the 10 worst-impacted SKUs labelled. Output a RAG dashboard with the waterfall, a hedge-coverage donut chart, and a one-paragraph CFO note on whether to extend the hedge book through FY2026 H1.'}
+      ], DESC_ANALYST,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah `/FMCG_01_Trade_Spend_Tracker.xlsx`. Tempel prompt.', 'prompt':'Tujuan: Kuantifikasi dan visualisasikan pembengkakan trade-spend Q4 FY2025. Konteks: Kami over budget Rp 280 miliar pada trade-spend; Direktur Keuangan Grup mempresentasikan ke Direksi dalam 5 hari. Sumber: Gunakan /FMCG_01_Trade_Spend_Tracker.xlsx — analisis silang antar tab Channel Spend, SKU Promo Activity DAN Sell-Through. Ekspektasi: Hitung selisih absolut dan persentase vs anggaran per channel (modern trade, general trade, e-commerce, HoReCa) dan per kategori (mie, dairy, minuman, snack, edible-oil). Bangun (1) bar chart horizontal selisih trade-spend diurutkan dari terburuk ke terbaik, dan (2) stacked column 100% kontribusi tiap kategori. Tandai pembengkakan >25% Merah, 10–25% Kuning, <10% Hijau. Hasilkan dashboard RAG dengan kedua chart tertanam dan satu rekomendasi perbaikan per baris Merah.'},
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah `/FMCG_02_SKU_Margin_Tracker.xlsx` DAN `/FMCG_04_Edible_Oil_Hedge_Book.xlsx`. Tempel prompt.', 'prompt':'Tujuan: Identifikasi SKU mana yang kehilangan margin kotor terbanyak di Q4 FY2025 dan berapa banyak yang didorong CPO. Konteks: Biaya edible-oil melonjak 18% di Q4. Sumber: Dari /FMCG_02_SKU_Margin_Tracker.xlsx tarik GM per SKU Q3 vs Q4; dari /FMCG_04_Edible_Oil_Hedge_Book.xlsx tarik cover hedge dan harga CPO realisasi vs spot. Ekspektasi: Bangun margin-bridge waterfall (GM Q3 → Volume → Mix → Trade-spend → Biaya CPO → Valas → GM Q4) dengan 10 SKU paling terdampak diberi label. Sajikan dashboard RAG dengan waterfall, donut chart cover hedge, dan paragraf catatan Direktur Keuangan apakah memperpanjang hedge book hingga H1 FY2026.'}
+      ],
+      persona=['Hadar Caspit','Hadar Caspit'],
+      personaID=['Hadar Caspit','Hadar Caspit']),
+
+      tool(T_EXCEL, M365_LIC, M365_ACCT, [
+        {'instr':'Open `/FMCG_01_Trade_Spend_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.', 'prompt':'Goal: Build a Board-ready trade-spend dashboard. Context: The CFO presents in 5 days. Source: Pull from the Channel Spend, SKU Promo Activity AND Sell-Through tabs. Expectation: On a new sheet "Board Trade-Spend Dashboard": (1) KPI tiles for Total Variance MYR M, Variance %, Worst Channel, Worst Category; (2) horizontal bar of variance by channel; (3) clustered column of monthly run-rate; (4) sparklines per channel; (5) RAG conditional formatting >25% red, 10–25% amber, <10% green. Insert all charts on the new sheet, do not modify the source tabs.'}
+      ], '',
+      promptsID=[
+        {'instr':'Buka `/FMCG_01_Trade_Spend_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.', 'prompt':'Tujuan: Bangun dashboard trade-spend siap-Direksi. Konteks: Direktur Keuangan presentasi dalam 5 hari. Sumber: Tarik dari tab Channel Spend, SKU Promo Activity DAN Sell-Through. Ekspektasi: Pada sheet baru "Dashboard Trade-Spend Direksi": (1) KPI tile Total Selisih Rp Miliar, Selisih %, Channel Terburuk, Kategori Terburuk; (2) bar horizontal selisih per channel; (3) clustered column run-rate bulanan; (4) sparkline per channel; (5) format kondisional RAG >25% merah, 10–25% kuning, <10% hijau. Sisipkan semua chart pada sheet baru, jangan modifikasi tab sumber.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_WORD, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference `/FMCG_03_Recall_Remediation_Programme.docx` and `/FMCG_05_FY2026_Promo_Guardrails.docx` using `/`. Paste the prompt below.', 'prompt':'Goal: Draft the 4-page Board paper "Q4 FY2025 Trade-Spend & Recall Update — Board Discussion Pack". Context: Board meets in 5 days. Source: /FMCG_03_Recall_Remediation_Programme.docx and /FMCG_05_FY2026_Promo_Guardrails.docx, plus the trade-spend variance numbers I will paste. Expectation: Sections — (1) Executive summary in 5 bullets, (2) Trade-spend overrun bridge in plain language, (3) Salmonella recall status across MY/SG/ID, (4) Gross-margin recovery levers and their MYR impact, (5) FY2026 promo guardrail policy proposal, (6) Decisions requested from the Board. Tone: precise, Board-ready, no speculative language. Cite the source files at the end of every section.'}
+      ], DESC_WORD,
+      promptsID=[
+        {'instr':'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan `/FMCG_03_Recall_Remediation_Programme.docx` dan `/FMCG_05_FY2026_Promo_Guardrails.docx` menggunakan `/`. Tempel prompt.', 'prompt':'Tujuan: Susun paper Direksi 4 halaman "Update Trade-Spend & Recall Q4 FY2025 — Pack Diskusi Direksi". Konteks: Direksi rapat dalam 5 hari. Sumber: /FMCG_03_Recall_Remediation_Programme.docx dan /FMCG_05_FY2026_Promo_Guardrails.docx, plus angka selisih trade-spend yang akan saya tempelkan. Ekspektasi: Bagian — (1) Ringkasan eksekutif 5 bullet, (2) Bridge pembengkakan trade-spend bahasa sederhana, (3) Status recall Salmonella di MY/SG/ID, (4) Lever pemulihan gross margin dan dampak Rp Miliar, (5) Proposal policy guardrail promo FY2026, (6) Keputusan yang diminta dari Direksi. Nada: presisi, siap-Direksi, tidak spekulatif. Kutip file sumber di akhir tiap bagian.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_PPT, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.', 'prompt':'Goal: Build a 10-slide investor-grade deck on the Q4 FY2025 trade-spend overrun and recall response. Context: The Board sees this on Friday. Source: Reference my Word draft `/Q4_Board_Paper.docx` and the trade-spend dashboard numbers I will paste. Expectation: Cover slide; situation in 1 slide; trade-spend bridge waterfall (2 slides); recall status by market (1 slide); margin levers (2 slides); FY2026 promo guardrails (1 slide); decisions requested (1 slide); appendix (1 slide). Use Zava brand colours #F59E0B and #0F1C3F, 18pt minimum body text, 1 chart per slide, no walls of text.'}
+      ], DESC_PPT,
+      promptsID=[
+        {'instr':'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.', 'prompt':'Tujuan: Bangun deck 10 slide kelas investor tentang pembengkakan trade-spend dan respons recall Q4 FY2025. Konteks: Direksi melihat ini Jumat. Sumber: Referensikan draf Word saya `/Paper_Direksi_Q4.docx` dan angka dashboard trade-spend yang akan saya tempel. Ekspektasi: Slide cover; situasi 1 slide; waterfall bridge trade-spend (2 slide); status recall per pasar (1 slide); lever margin (2 slide); guardrail promo FY2026 (1 slide); keputusan yang diminta (1 slide); appendix (1 slide). Gunakan warna brand Zava #F59E0B dan #0F1C3F, font tubuh minimum 18pt, 1 chart per slide, hindari dinding teks.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
+        {'instr':'Open Outlook on the Web. Open the email thread titled "Q4 FY2025 Trade-Spend Variance — Group CFO follow-up". Click the **Copilot icon** in the message ribbon. Paste the prompt below.', 'prompt':'Goal: Draft a single, calm, board-ready email to the 6 Divisional MDs and the Group Trade-Marketing Director. Context: Q4 trade-spend overran budget by MYR 78 million; Board on Friday. Source: Summarise the latest figures from the email thread above and the attached dashboard. Expectation: Subject line, 4 short paragraphs covering (1) the headline number, (2) the 3 corrective levers I expect each Division to commit to in 48 hours, (3) the FY2026 promo guardrails coming, (4) the meeting time on Wednesday for alignment. End with a one-line note that the Board will see this on Friday. Tone: firm but collegial, not blaming.'}
+      ], DESC_OUTLOOK,
+      promptsID=[
+        {'instr':'Buka Outlook on the Web. Buka thread email "Selisih Trade-Spend Q4 FY2025 — tindak lanjut Direktur Keuangan". Klik **ikon Copilot** di ribbon pesan. Tempel prompt.', 'prompt':'Tujuan: Susun satu email tenang dan siap-Direksi kepada 6 Direktur Divisi dan Direktur Trade-Marketing Grup. Konteks: Trade-spend Q4 over budget Rp 280 miliar; Direksi Jumat. Sumber: Ringkas angka terbaru dari thread di atas dan dashboard terlampir. Ekspektasi: Baris subjek, 4 paragraf pendek mencakup (1) angka headline, (2) 3 lever perbaikan yang saya harapkan tiap Divisi komit dalam 48 jam, (3) guardrail promo FY2026 yang akan datang, (4) waktu rapat Rabu untuk penyelarasan. Akhiri dengan satu baris bahwa Direksi melihat ini Jumat. Nada: tegas tapi kolegial, tidak menyalahkan.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_TEAMS, M365_LIC, M365_ACCT, [
+        {'instr':"**(1) In Teams**, open **Calendar** → click the past meeting **\"Trade-Spend Crisis Review\"**. On the Recap page, walk the audience through the **AI Notes**, the **Custom summary** (template: Speaker summary), and the **Audio recap**. **(2) In Word for the Web**, open a new blank document. Type a quick minutes template at the top — Date and Attendees · Decisions · Actions with Owner and Due Date · Risks · Open Questions. **(3) Click the Copilot icon** in the Word ribbon and paste the prompt below — Copilot in Word will reference the meeting recap by name with `/`.",
+         'prompt':"Create meeting minutes for the Teams meeting /Trade-Spend Crisis Review. Use the empty template already on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters and flag any decision linked to the Salmonella recall as Critical Path. Save as Minutes_TradeSpend_Crisis_Review.docx."}
+      ], '',
+      promptsID=[
+        {'instr':"**(1) Di Teams**, buka **Calendar** → klik rapat lampau **\"Trade-Spend Crisis Review\"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong. Ketik template notulen di atas — Tanggal dan Peserta · Keputusan · Action dengan Pemilik dan Tenggat · Risiko · Pertanyaan Terbuka. **(3) Klik ikon Copilot** di ribbon Word dan tempel prompt — Copilot in Word akan mereferensikan recap dengan `/`.",
+         'prompt':"Buat notulen rapat untuk rapat Teams /Trade-Spend Crisis Review. Gunakan template kosong di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting dan tandai keputusan terkait recall Salmonella sebagai Critical Path. Simpan sebagai Notulen_TradeSpend_Crisis_Review.docx."}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
+        {'instr':'All sources are loaded in the notebook (see Notebook setup above). The Instructions field is set. Type the prompt below in the notebook chat.',
+         'prompt':'Synthesise across all 5 sources to produce a 10-bullet Board narrative for Friday. Cover: the MYR 78M trade-spend overrun in plain language, the worst 5 SKUs by margin loss, the recall status by market, the 3 levers we will pull in 90 days, and the FY2026 promo guardrails we will table for approval. Cite the source file (and tab/section where applicable) at the end of every bullet.'},
+        {'instr':'In the same notebook, click **Quick Create** > **Audio Overview** to generate a 6-minute podcast-style summary; OR click **Quick Create** > **Page** to generate a collaborative Page the leadership team can comment on.',
+         'prompt':'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the Board narrative above. Listeners are the 6 Divisional MDs who will be on a flight on Thursday and need to walk into the Friday Board meeting prepared.'}
+      ], DESC_NOTEBOOK,
+      promptsID=[
+        {'instr':'Semua sumber sudah dimuat di notebook (lihat setup Notebook di atas). Field Instructions sudah diset. Ketik prompt di bawah pada chat notebook.',
+         'prompt':'Sintesakan dari kelima sumber untuk menghasilkan narasi Direksi 10-bullet untuk Jumat. Mencakup: pembengkakan trade-spend Rp 280 miliar dengan bahasa sederhana, 5 SKU terburuk dari sisi kehilangan margin, status recall per pasar, 3 lever yang akan kami tarik dalam 90 hari, dan guardrail promo FY2026 yang akan diajukan untuk disetujui. Kutip file sumber (dan tab/bagian bila relevan) di akhir tiap bullet.'},
+        {'instr':'Pada notebook yang sama, klik **Quick Create** > **Audio Overview** untuk menghasilkan ringkasan podcast 6 menit; ATAU klik **Quick Create** > **Page** untuk menghasilkan Page kolaboratif yang bisa dikomentari tim leadership.',
+         'prompt':'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi Direksi di atas. Pendengar adalah 6 Direktur Divisi yang akan terbang Kamis dan butuh siap hadir Rapat Direksi Jumat.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin'],
+      notebookMeta={
+        'sources':['/FMCG_01_Trade_Spend_Tracker.xlsx','/FMCG_02_SKU_Margin_Tracker.xlsx','/FMCG_03_Recall_Remediation_Programme.docx','/FMCG_04_Edible_Oil_Hedge_Book.xlsx','/FMCG_05_FY2026_Promo_Guardrails.docx'],
+        'instructions':'You are the Group CFO of Zava Foods Indonesia preparing a Friday Board pack. Cover trade-spend control, the active Salmonella recall in MY/SG/ID, gross-margin recovery, and FY2026 promo guardrails. Always cite the source file and tab/section. Tone: precise, Board-ready, no speculation. Convert IDR to MYR at 1 MYR = 3,580 IDR when reporting Group totals.',
+        'instructionsID':'Anda adalah Direktur Keuangan Grup Zava Foods Indonesia yang menyiapkan paket Direksi Jumat. Cakup kendali trade-spend, recall Salmonella aktif di MY/SG/ID, pemulihan gross margin, dan guardrail promo FY2026. Selalu kutip file sumber dan tab/bagian. Nada: presisi, siap-Direksi, tanpa spekulasi. Konversi IDR ke MYR pada 1 MYR = 3.580 IDR saat melaporkan total Grup.'
+      }),
+
+      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft` > left nav > **Agents** > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks and reports back with one consolidated status panel. Frontier program required.',
+         'prompt':'Cowork — Trade-Spend Sprint. Run these 5 tasks in parallel and report back: (1) 📝 Draft a Word doc — Q4 Trade-Spend Variance Brief, 4 pages, audience Group ExCo, sources /FMCG_01_Trade_Spend_Tracker.xlsx and /FMCG_05_FY2026_Promo_Guardrails.docx. (2) 📝 Draft a Word doc — Recall Holding Lines for BPOM/MOH/SFA, 1 page each, source /FMCG_03_Recall_Remediation_Programme.docx. (3) ✉️ Send an email to the 6 Divisional MDs and the Group Trade-Marketing Director summarising the variance and asking for 3 corrective levers each, due in 48 hours. (4) 📅 Schedule a 60-minute Group ExCo meeting tomorrow 9am MYT titled "Trade-Spend Crisis Alignment — Pre-Board". (5) 💬 Post a Teams message to the #group-exco channel with a one-line headline of the variance and a link to the dashboard.'}
+      ], DESC_COWORK,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft` > nav kiri > **Agents** > **Cowork**. Tempel prompt tunggal di bawah — Cowork mendelegasikan 5 sub-tugas paralel dan melaporkan kembali dengan satu panel status terkonsolidasi. Membutuhkan program Frontier.',
+         'prompt':'Cowork — Sprint Trade-Spend. Jalankan 5 tugas berikut paralel dan laporkan kembali: (1) 📝 Susun dokumen Word — Brief Selisih Trade-Spend Q4, 4 halaman, audiens Group ExCo, sumber /FMCG_01_Trade_Spend_Tracker.xlsx dan /FMCG_05_FY2026_Promo_Guardrails.docx. (2) 📝 Susun dokumen Word — Holding Line Recall untuk BPOM/KKM/SFA, 1 halaman per regulator, sumber /FMCG_03_Recall_Remediation_Programme.docx. (3) ✉️ Kirim email ke 6 Direktur Divisi dan Direktur Trade-Marketing Grup yang merangkum selisih dan meminta 3 lever perbaikan dari masing-masing dalam 48 jam. (4) 📅 Jadwalkan rapat Group ExCo 60 menit besok pukul 09:00 WIB berjudul "Penyelarasan Krisis Trade-Spend — Pre-Direksi". (5) 💬 Posting pesan Teams di channel #group-exco dengan headline satu baris selisih dan tautan ke dashboard.'}
+      ],
+      persona=['Mod Admin'],
+      personaID=['Mod Admin']),
+
+      tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → choose **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx saved to OneDrive, ready to share. Works with the free Copilot Chat account or an M365 Copilot license.',
+         'prompt':'Goal: Generate a 4-page Group CFO Trade-Spend & Recall Brief in Word. Context: Q4 FY2025 trade-spend overran by MYR 78M, Salmonella recall active in MY/SG/ID, Board on Friday. Source: Reference /FMCG_01_Trade_Spend_Tracker.xlsx (Channel Spend tab) and /FMCG_03_Recall_Remediation_Programme.docx. Expectation: Sections — Executive Summary 5 bullets, Trade-Spend Bridge plain English, Recall Status by Market, Margin Recovery Levers with MYR impact, FY2026 Promo Guardrails proposal, Decisions Requested. Tone: precise, Board-ready, no speculation. Save as CFO_TradeSpend_Recall_Brief.docx.'}
+      ], DESC_WORD_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → pilih **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh dan tersimpan di OneDrive, siap dibagikan. Bekerja dengan akun Copilot Chat gratis atau lisensi M365 Copilot.',
+         'prompt':'Tujuan: Hasilkan Brief Trade-Spend & Recall Direktur Keuangan Grup 4 halaman dalam Word. Konteks: Trade-spend Q4 FY2025 over Rp 280 miliar, recall Salmonella aktif di MY/SG/ID, Direksi Jumat. Sumber: Referensikan /FMCG_01_Trade_Spend_Tracker.xlsx (tab Channel Spend) dan /FMCG_03_Recall_Remediation_Programme.docx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet, Bridge Trade-Spend bahasa sederhana, Status Recall per Pasar, Lever Pemulihan Margin dengan dampak Rp Miliar, Proposal Guardrail Promo FY2026, Keputusan yang Diminta. Nada: presisi, siap-Direksi, tanpa spekulasi. Simpan sebagai Brief_TradeSpend_Recall_Direktur_Keuangan.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → choose **PowerPoint Agent**. Paste the prompt below — the agent returns a fully drafted .pptx saved to OneDrive, ready to share.',
+         'prompt':'Goal: Build a 10-slide Board deck on Q4 FY2025 trade-spend overrun and recall. Context: Friday Board. Source: Reference my Word brief /CFO_TradeSpend_Recall_Brief.docx and trade-spend dashboard /FMCG_01_Trade_Spend_Tracker.xlsx. Expectation: Cover, Situation, Bridge waterfall (2 slides), Recall by market, Levers (2 slides), FY2026 Guardrails, Decisions, Appendix. Brand colours #F59E0B + #0F1C3F, 18pt minimum body text, 1 chart per slide. Save as Q4_TradeSpend_Recall_BoardDeck.pptx.'}
+      ], DESC_PPT_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → pilih **PowerPoint Agent**. Tempel prompt — agent mengembalikan .pptx yang sudah didraf penuh dan tersimpan di OneDrive, siap dibagikan.',
+         'prompt':'Tujuan: Bangun deck Direksi 10 slide tentang pembengkakan trade-spend dan recall Q4 FY2025. Konteks: Direksi Jumat. Sumber: Referensikan brief Word saya /Brief_TradeSpend_Recall_Direktur_Keuangan.docx dan dashboard trade-spend /FMCG_01_Trade_Spend_Tracker.xlsx. Ekspektasi: Cover, Situasi, Waterfall Bridge (2 slide), Recall per Pasar, Lever (2 slide), Guardrail FY2026, Keputusan, Appendix. Warna brand #F59E0B + #0F1C3F, font tubuh minimum 18pt, 1 chart per slide. Simpan sebagai Deck_Direksi_TradeSpend_Recall_Q4.pptx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → choose **Excel Agent**. Paste the prompt below — the agent returns a fully built .xlsx saved to OneDrive, ready to share.',
+         'prompt':'Goal: Build a Trade-Spend & Margin Tracker workbook from scratch. Context: 30-day rolling control workbook for the Group CFO. Source: schema only — channels (modern trade, general trade, e-commerce, HoReCa), categories (noodles, dairy, beverages, snacks, edible-oils), 4 ASEAN markets. Expectation: Sheet 1 Channel Spend (budget vs actual by month), Sheet 2 SKU Margin (top 50 SKUs Q3 vs Q4 GM), Sheet 3 Recall Cost Tracker (legal, logistics, replacement, comms), Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as FMCG_TradeSpend_Margin_Tracker.xlsx.'}
+      ], DESC_XL_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → pilih **Excel Agent**. Tempel prompt — agent mengembalikan .xlsx yang sudah dibangun penuh dan tersimpan di OneDrive, siap dibagikan.',
+         'prompt':'Tujuan: Bangun workbook Tracker Trade-Spend & Margin dari nol. Konteks: Workbook kontrol rolling 30-hari untuk Direktur Keuangan Grup. Sumber: hanya skema — channel (modern trade, general trade, e-commerce, HoReCa), kategori (mie, dairy, minuman, snack, edible-oil), 4 pasar ASEAN. Ekspektasi: Sheet 1 Channel Spend (anggaran vs aktual per bulan), Sheet 2 SKU Margin (50 SKU teratas GM Q3 vs Q4), Sheet 3 Recall Cost Tracker (legal, logistik, replacement, komunikasi), Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_TradeSpend_Margin_FMCG.xlsx.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field — Copilot drafts name, instructions, knowledge sources, capabilities and starter prompts in one shot.',
+         'prompt':'**Option A — Zava Foods Trade-Spend Watch.** Build an agent for the Group CFO, Group Trade-Marketing Director, and the 6 Divisional MDs to track and explain trade-spend variance daily. Ground every answer on /FMCG_01_Trade_Spend_Tracker.xlsx, /FMCG_02_SKU_Margin_Tracker.xlsx, and /FMCG_05_FY2026_Promo_Guardrails.docx. Always cite file and tab/section. Classify variance as Red / Amber / Green. Tone: precise, finance-grade, no speculation. Starter prompts: (1) What is today\'s rolling 30-day trade-spend variance vs budget; (2) Which 5 SKUs lost the most margin this week; (3) Which channel is overspending the most; (4) Draft a 1-page CFO note to the 6 Divisional MDs; (5) Build a weekly trade-spend dashboard.'},
+        {'instr':'**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
+         'prompt':'**Option B — Zava Foods Recall Response Agent.** Build an agent for the Group QA Director, Group Communications Director and Regulatory Affairs leads in MY/SG/ID/PH to manage active recall events and regulator engagement. Ground every answer on /FMCG_03_Recall_Remediation_Programme.docx and the Group recall playbook. Always cite section and step number. Classify each open regulator question as Closed / In Progress / Awaiting Internal Sign-Off. Tone: factual, regulator-facing, no admission of unproven causation. Starter prompts: (1) Draft a holding line for BPOM Indonesia; (2) Draft a holding line for MOH Malaysia; (3) Draft a holding line for SFA Singapore; (4) What disclosures has the Group already made to consumers via the 24h hotline; (5) What are the next 3 milestones on the recall remediation programme.'},
+        {'instr':'**Option C — alternative agent.** Same flow.',
+         'prompt':'**Option C — Zava Foods Margin Defence Agent.** Build an agent for the Group CFO and the Edible Oils trading desk to defend gross margin against CPO volatility. Ground every answer on /FMCG_02_SKU_Margin_Tracker.xlsx, /FMCG_04_Edible_Oil_Hedge_Book.xlsx, and the Group hedge policy. Always cite file and tab/section. Classify hedge cover as Adequate / Watch / Insufficient. Tone: precise, treasury-grade, conservative. Starter prompts: (1) What is the current hedge cover for the next 90 days; (2) Which 5 SKUs have the worst CPO sensitivity; (3) Should we extend hedges into FY2026 H1; (4) Build a weekly Treasury margin-defence dashboard; (5) Summarise the H2 margin bridge in 60 seconds.'},
+        {'instr':'**Test.** After the agent is created, click into it and use the right test pane to validate that it grounds in the uploaded files, cites sources, applies the GCSE framework, and stays in scope.',
+         'prompt':'Give me the 60-second version of the Q4 FY2025 trade-spend story, the worst 3 SKUs by margin loss, the recall status across MY/SG/ID, and the decisions I must take to the Board in 5 days. Cite the file and tab/section for every paragraph and use the GCSE framework where relevant.'},
+        {'instr':'**Share.** Click the agent in the left rail → **Share** → add recipients with **Use** access — your team can now use the agent in their own M365 Copilot chat.',
+         'prompt':'Share this agent with the Zava Foods ExCo distribution list (Group CEO, Group CFO, Group COO, Group QA Director, Group Trade-Marketing Director, Group Comms Director, 6 Divisional MDs) with Use access. Send a sharing notification with the message: "This agent is now in your M365 Copilot chat — ground every Board-prep question through it for the next 30 days."'}
+      ], DESC_BUILDER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent di bawah. Tempel deskripsi yang dipilih ke field **Describe** — Copilot menyusun nama, instruksi, sumber knowledge, capabilities, dan starter prompts dalam sekali jalan.',
+         'prompt':'**Opsi A — Zava Foods Trade-Spend Watch.** Bangun agent untuk Direktur Keuangan Grup, Direktur Trade-Marketing Grup, dan 6 Direktur Divisi untuk melacak dan menjelaskan selisih trade-spend harian. Dasarkan tiap jawaban pada /FMCG_01_Trade_Spend_Tracker.xlsx, /FMCG_02_SKU_Margin_Tracker.xlsx, dan /FMCG_05_FY2026_Promo_Guardrails.docx. Selalu kutip file dan tab/bagian. Klasifikasikan selisih sebagai Merah / Kuning / Hijau. Nada: presisi, finance-grade, tanpa spekulasi. Starter prompt: (1) Berapa selisih trade-spend rolling 30-hari hari ini vs anggaran; (2) 5 SKU mana yang paling kehilangan margin minggu ini; (3) Channel mana yang paling over-spend; (4) Susun nota 1 halaman Direktur Keuangan ke 6 Direktur Divisi; (5) Bangun dashboard trade-spend mingguan.'},
+        {'instr':'**Opsi B — agent alternatif.** Alur Create-an-agent yang sama dengan spesialisasi berbeda.',
+         'prompt':'**Opsi B — Zava Foods Recall Response Agent.** Bangun agent untuk Direktur QA Grup, Direktur Komunikasi Grup, dan lead Regulatory Affairs di MY/SG/ID/PH untuk mengelola peristiwa recall aktif dan keterlibatan regulator. Dasarkan tiap jawaban pada /FMCG_03_Recall_Remediation_Programme.docx dan playbook recall Grup. Selalu kutip bagian dan nomor langkah. Klasifikasikan tiap pertanyaan regulator terbuka sebagai Closed / In Progress / Menunggu Persetujuan Internal. Nada: faktual, menghadapi regulator, tidak mengakui kausalitas yang belum terbukti. Starter prompt: (1) Susun holding line untuk BPOM Indonesia; (2) Susun holding line untuk KKM Malaysia; (3) Susun holding line untuk SFA Singapura; (4) Pengungkapan apa yang sudah dibuat Grup ke konsumen via hotline 24 jam; (5) Apa 3 milestone berikutnya pada program remediasi recall.'},
+        {'instr':'**Opsi C — agent alternatif.** Alur yang sama.',
+         'prompt':'**Opsi C — Zava Foods Margin Defence Agent.** Bangun agent untuk Direktur Keuangan Grup dan desk trading edible-oil untuk mempertahankan gross margin terhadap volatilitas CPO. Dasarkan tiap jawaban pada /FMCG_02_SKU_Margin_Tracker.xlsx, /FMCG_04_Edible_Oil_Hedge_Book.xlsx, dan policy hedge Grup. Selalu kutip file dan tab/bagian. Klasifikasikan cover hedge sebagai Memadai / Watch / Kurang. Nada: presisi, treasury-grade, konservatif. Starter prompt: (1) Berapa cover hedge saat ini untuk 90 hari ke depan; (2) 5 SKU mana yang paling sensitif terhadap CPO; (3) Apakah kita perlu memperpanjang hedge ke H1 FY2026; (4) Bangun dashboard pertahanan margin Treasury mingguan; (5) Rangkum bridge margin H2 dalam 60 detik.'},
+        {'instr':'**Uji.** Setelah agent dibuat, klik ke dalamnya dan gunakan panel uji sebelah kanan untuk memvalidasi bahwa agent grounding pada file yang diunggah, mengutip sumber, menerapkan framework GCSE, dan tetap dalam cakupan.',
+         'prompt':'Berikan versi 60 detik dari cerita trade-spend Q4 FY2025, 3 SKU terburuk dari sisi kehilangan margin, status recall di MY/SG/ID, dan keputusan yang harus saya bawa ke Direksi dalam 5 hari. Kutip file dan tab/bagian untuk tiap paragraf dan gunakan framework GCSE bila relevan.'},
+        {'instr':'**Bagikan.** Klik agent di rail kiri → **Share** → tambahkan penerima dengan akses **Use** — tim Anda kini dapat menggunakan agent di M365 Copilot chat masing-masing.',
+         'prompt':'Bagikan agent ini ke distribution list Zava Foods ExCo (Direktur Utama Grup, Direktur Keuangan Grup, Direktur Operasional Grup, Direktur QA Grup, Direktur Trade-Marketing Grup, Direktur Komunikasi Grup, 6 Direktur Divisi) dengan akses Use. Kirim notifikasi bagi-pakai dengan pesan: "Agent ini kini tersedia di M365 Copilot chat Anda — dasarkan setiap pertanyaan persiapan Direksi pada agent ini selama 30 hari ke depan."'}
+      ],
+      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
+      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+    ],
+    companyID='Zava Foods Indonesia',
+    taglineID='Trade-spend Q4 FY2025 over Rp 280 M; recall SKU di 2 pasar — paket Direksi 5 hari.',
+    scenarioID='Zava Foods Indonesia adalah grup makanan dan FMCG ASEAN yang tercatat di bursa dengan 14 pabrik di Indonesia, Malaysia, Singapura, dan Filipina, memproduksi mi instan, dairy, minuman, baked goods, snack, dan edible-oils untuk lebih dari 250 SKU. Trade-spend Q4 FY2025 melebihi anggaran Rp 280 miliar (+22%) terutama karena agresivitas promo modern-trade dan sell-through general-trade yang lemah. Indikasi Salmonella pada satu SKU bakery memicu recall pencegahan di Malaysia dan Singapura — BPOM Indonesia, KKM Malaysia, dan SFA Singapura semuanya membuka kasus. Biaya edible-oil melonjak 18% dari volatilitas CPO, menekan margin pada 4 SKU mi terlaris. Direktur Keuangan Grup butuh paket Direksi dalam 5 hari yang mencakup pengendalian trade-spend, program remediasi recall, pemulihan gross margin, dan guardrail promo FY2026. Frame customer riil: grup ini beroperasi serupa dengan Japfa Comfeed, Nippon Indosari Corpindo, Mamee-Double Decker, Spritzer, F&N Holdings, Malayan Flour Mills dan Ajinomoto Indonesia.',
+    relevantDepts=['dept-finance','dept-strategy','dept-legal','dept-risk','dept-operations','dept-marketing','dept-it-digital'],
+    personas=[
+      {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group QA & Regulatory Director','roleID':'Direktur QA & Regulatory Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+    ],
+    storyboard=[
+      {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
+       'summary':'Frame the MYR 78M trade-spend overrun and the active recall; pull deep ASEAN peer benchmarks before the Group CFO walks into the Board on Friday.',
+       'summaryID':'Bingkai pembengkakan trade-spend Rp 280 M dan recall aktif; tarik benchmark peer ASEAN mendalam sebelum Direktur Keuangan Grup masuk Rapat Direksi Jumat.',
+       'tasks':[
+         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+      {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
+       'summary':'Quantify the trade-spend variance and SKU-level margin drag; build a Board-ready dashboard.',
+       'summaryID':'Kuantifikasi selisih trade-spend dan drag margin per SKU; bangun dashboard siap-Direksi.',
+       'tasks':[
+         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+      {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
+       'summary':'Brief the 6 Divisional MDs, capture the Trade-Spend Crisis Review meeting, and assemble the Board deck.',
+       'summaryID':'Brief 6 Direktur Divisi, capture rapat Trade-Spend Crisis Review, dan rakit deck Direksi.',
+       'tasks':[
+         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+      {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
+       'summary':'Wrap the trade-spend playbook into a reusable agent so the 6 Divisional MDs can self-serve.',
+       'summaryID':'Bungkus playbook trade-spend ke dalam agent reusable agar 6 Direktur Divisi dapat self-service.',
+       'tasks':[
+         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+    ],
+    geo='ID'
+))
+
+
+# Continued in subsequent edits — Industries 2-7 follow the same template.
+
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  2.  RUBBER GLOVES MANUFACTURING                                     ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+INDUSTRIES_10.append(ind(
+    'rubber-gloves', 'sec-mfg', 'Rubber Gloves Mfg', '🧤', '#0EA5E9', '#0369A1',
+    'Zava Glove Berhad',
+    'US FDA Form 483 + USA forced-labour CBP withhold-release order — Bursa Malaysia query in 7 days.',
+    "Zava Glove Berhad is a Bursa Malaysia-listed rubber-gloves manufacturer with 8 plants across Selangor, Negeri Sembilan and Kedah, producing 92 billion gloves annually for medical, exam and industrial markets across 195 countries. The US FDA issued a Form 483 with 9 observations on its Klang plant covering documentation, environmental monitoring and bioburden controls. US Customs and Border Protection has issued a Withhold Release Order against one production line citing forced-labour indicators in the migrant-worker recruitment chain. ESG ratings dropped 2 notches and the share price fell 14% in 5 sessions. Bursa Malaysia has issued an unusual market activity query and Securities Commission Malaysia has requested supplementary disclosure within 7 days. The Group CFO needs to coordinate FDA remediation, ILO-aligned migrant-worker remediation, ESG repair, lender covenant communication, and an Audit Committee briefing all at once. Real customer reference frame: this group operates similarly to Hartalega Holdings, Top Glove Corporation, Kossan Rubber, and Supermax.",
+    ['GLOVE_01_FDA_483_Response_Tracker.xlsx','GLOVE_02_Migrant_Worker_Remediation_Plan.docx','GLOVE_03_ESG_Recovery_Roadmap.docx','GLOVE_04_Lender_Covenant_Tracker.xlsx','GLOVE_05_Bursa_Disclosure_Pack.docx'],
+    [
+      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
+        {'instr':'', 'prompt':'Goal: Frame the FDA Form 483 + CBP Withhold Release Order in plain English for the Group CEO. Context: 9 FDA observations at Klang plant, USA forced-labour finding on one line, ESG -2 notches, share -14%, Bursa query in 7 days. Source: my notes from the 6am crisis call. Expectation: 1-page note with sections — Headline, What FDA Said, What CBP Said, Bursa & SC Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'},
+        {'instr':'', 'prompt':'Goal: 90-second verbal opening for the Bursa-mandated press conference in 4 days. Context: Audience is wires + sell-side + retail investors. Source: the published facts only (Form 483, CBP WRO, ESG downgrade). Expectation: Open with acknowledgement, explain remediation underway, signal credible 90-day FDA + ILO-aligned migrant-worker recovery, end with 3 commitments. Avoid speculative language and avoid blaming labour agents.'},
+        {'instr':'', 'prompt':'Goal: Build the stakeholder communication map. Context: 7-day Bursa clock. Source: known stakeholders. Expectation: RAG table — Red same-day (FDA, CBP, Bursa, SC, top-3 customers, US distributor), Amber 24h (ILO, top-5 lenders, ESG raters MSCI + Sustainalytics, migrant-worker hotline), Green monitor (sell-side, retail). Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'}
+      ], DESC_CHAT,
+      promptsID=[
+        {'instr':'', 'prompt':'Tujuan: Bingkai FDA Form 483 + CBP Withhold Release Order dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: 9 observasi FDA di pabrik Klang, temuan kerja paksa CBP pada satu line, ESG -2 notch, saham -14%, query Bursa dalam 7 hari. Sumber: catatan saya dari rapat krisis pukul 06:00. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa Kata FDA, Apa Kata CBP, Posisi Bursa & SC, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'},
+        {'instr':'', 'prompt':'Tujuan: Pembukaan lisan 90 detik untuk press conference yang diwajibkan Bursa dalam 4 hari. Konteks: Audiens kantor berita + sell-side + investor ritel. Sumber: hanya fakta yang sudah dipublikasikan (Form 483, CBP WRO, ESG downgrade). Ekspektasi: Buka dengan pengakuan, jelaskan remediasi yang berjalan, beri sinyal pemulihan FDA + selaras ILO 90-hari yang kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif dan hindari menyalahkan agen tenaga kerja.'},
+        {'instr':'', 'prompt':'Tujuan: Bangun peta komunikasi pemangku kepentingan. Konteks: clock Bursa 7-hari. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga (FDA, CBP, Bursa, SC, 3 customer teratas, distributor AS), Kuning 24 jam (ILO, 5 lender teratas, ESG rater MSCI + Sustainalytics, hotline pekerja migran), Hijau pantau (sell-side, ritel). Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'}
+      ],
+      persona=['Sasha Ouellet','Mod Admin','Hadar Caspit'],
+      personaID=['Sasha Ouellet','Mod Admin','Hadar Caspit']),
+
+      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+         'prompt':'Goal: Benchmark how listed Malaysian glove makers (Hartalega, Top Glove, Kossan, Supermax) and global peers (Ansell, Halyard) have handled simultaneous FDA Form 483 + USA CBP Withhold Release Order events between 2018 and 2025. Context: Zava Glove Berhad must respond to Bursa Malaysia in 7 days. Source: peer disclosures, Bursa announcements, FDA EIRs, CBP WRO databases. Expectation: For each peer, identify trigger, FDA timeline to closure, ILO-aligned migrant-worker programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table: Peer, Trigger, FDA Closure Days, Worker Programme, Recovery, Citation.'},
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+         'prompt':'Goal: 3 most defensible 90-day playbooks for a Malaysian glove maker hit by FDA + CBP simultaneously. Context: Zava Glove must protect FDA market access AND ILO-aligned worker remediation AND ESG rating concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'}
+      ], DESC_RESEARCHER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+         'prompt':'Tujuan: Benchmark bagaimana produsen sarung tangan Malaysia tercatat (Hartalega, Top Glove, Kossan, Supermax) dan peer global (Ansell, Halyard) menangani peristiwa FDA Form 483 + CBP WRO AS bersamaan antara 2018 hingga 2025. Konteks: Zava Glove Berhad harus respons ke Bursa Malaysia dalam 7 hari. Sumber: pengungkapan peer, pengumuman Bursa, FDA EIR, database CBP WRO. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline penutupan FDA, program selaras-ILO untuk pekerja migran, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal publikasi. Hasilkan tabel perbandingan: Peer, Pemicu, Hari Penutupan FDA, Program Pekerja, Pemulihan, Kutipan.'},
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+         'prompt':'Tujuan: 3 strategi 90-hari paling defensible untuk produsen sarung tangan Malaysia yang terkena FDA + CBP bersamaan. Konteks: Zava Glove harus melindungi akses pasar FDA DAN remediasi pekerja selaras-ILO DAN rating ESG sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai pandangan mayoritas dan minoritas. Tabel perbandingan: Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin']),
+
+      tool(T_ANALYST, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload `/GLOVE_01_FDA_483_Response_Tracker.xlsx` AND `/GLOVE_04_Lender_Covenant_Tracker.xlsx`. Paste the prompt below.',
+         'prompt':'Goal: Quantify open vs closed FDA observations and lender covenant headroom. Context: 9 FDA observations open, 18 lenders watching covenants. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of open FDA observations by closure-readiness; (2) waterfall of MYR EBITDA impact from FDA delay + CBP WRO + worker remediation costs; (3) covenant headroom tracker by lender, flag headroom <10% as Red. Output a Board-ready RAG dashboard.'}
+      ], DESC_ANALYST,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah `/GLOVE_01_FDA_483_Response_Tracker.xlsx` DAN `/GLOVE_04_Lender_Covenant_Tracker.xlsx`. Tempel prompt.',
+         'prompt':'Tujuan: Kuantifikasi observasi FDA terbuka vs tertutup dan headroom covenant lender. Konteks: 9 observasi FDA terbuka, 18 lender memantau covenant. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG observasi FDA terbuka berdasarkan kesiapan penutupan; (2) waterfall dampak EBITDA RM dari penundaan FDA + CBP WRO + biaya remediasi pekerja; (3) tracker headroom covenant per lender, tandai headroom <10% Merah. Hasilkan dashboard RAG siap-Direksi.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_EXCEL, M365_LIC, M365_ACCT, [
+        {'instr':'Open `/GLOVE_01_FDA_483_Response_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in 7 days. Source: combine FDA Observations, Remediation Plan, AND Resource Plan tabs. Expectation: New sheet "AC Dashboard" with KPI tiles (open observations, on-track, delayed, average days in remediation), bar chart of observations by closure week, sparkline column. RAG conditional formatting. Do not modify source tabs.'}
+      ], '',
+      promptsID=[
+        {'instr':'Buka `/GLOVE_01_FDA_483_Response_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 7 hari. Sumber: gabungkan tab FDA Observations, Remediation Plan, DAN Resource Plan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile (observasi terbuka, on-track, terlambat, rata-rata hari remediasi), bar chart observasi per minggu penutupan, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_WORD, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference `/GLOVE_02_Migrant_Worker_Remediation_Plan.docx` and `/GLOVE_05_Bursa_Disclosure_Pack.docx` using `/`. Paste the prompt below.',
+         'prompt':'Goal: Draft the Bursa Malaysia supplementary disclosure (4 pages). Context: 7-day clock. Source: the 2 referenced docs + my notes. Expectation: Sections — Material Facts, FDA Form 483 Status, CBP WRO Status, ILO-Aligned Worker Remediation, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'}
+      ], DESC_WORD,
+      promptsID=[
+        {'instr':'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan `/GLOVE_02_Migrant_Worker_Remediation_Plan.docx` dan `/GLOVE_05_Bursa_Disclosure_Pack.docx` menggunakan `/`. Tempel prompt.',
+         'prompt':'Tujuan: Susun pengungkapan tambahan Bursa Malaysia (4 halaman). Konteks: clock 7 hari. Sumber: 2 dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status FDA Form 483, Status CBP WRO, Remediasi Pekerja Selaras-ILO, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_PPT, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on FDA + CBP joint response. Context: AC in 7 days. Source: my Bursa disclosure draft and dashboard. Expectation: Cover; Situation; FDA Status (1 slide, RAG); CBP Status (1 slide); 90-Day Recovery Plan (2 slides); Financial Impact; Decisions Requested. Brand colours #0EA5E9 + #0F1C3F, 1 chart per slide.'}
+      ], DESC_PPT,
+      promptsID=[
+        {'instr':'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang respons gabungan FDA + CBP. Konteks: KA dalam 7 hari. Sumber: draf pengungkapan Bursa dan dashboard saya. Ekspektasi: Cover; Situasi; Status FDA (1 slide, RAG); Status CBP (1 slide); Rencana Pemulihan 90-Hari (2 slide); Dampak Finansial; Keputusan yang Diminta. Warna brand #0EA5E9 + #0F1C3F, 1 chart per slide.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
+        {'instr':'Open Outlook on the Web. Open the email thread "FDA 483 + CBP — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+         'prompt':'Goal: Draft a single email to the 8 plant GMs and the Group HSE Director. Context: FDA + CBP active. Source: the email thread above and the remediation plan. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each plant must complete in 72 hours, the worker-remediation programme launch, the AC date. Tone: firm, supportive, accountable.'}
+      ], DESC_OUTLOOK,
+      promptsID=[
+        {'instr':'Buka Outlook on the Web. Buka thread email "FDA 483 + CBP — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+         'prompt':'Tujuan: Susun satu email ke 8 GM pabrik dan Direktur HSE Grup. Konteks: FDA + CBP aktif. Sumber: thread di atas dan rencana remediasi. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per pabrik dalam 72 jam, peluncuran program remediasi pekerja, tanggal KA. Nada: tegas, suportif, akuntabel.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_TEAMS, M365_LIC, M365_ACCT, [
+        {'instr':"**(1) In Teams**, open **Calendar** → click the past meeting **\"FDA 483 War Room\"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.",
+         'prompt':"Create meeting minutes for the Teams meeting /FDA 483 War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to the CBP WRO as Critical Path. Save as Minutes_FDA_483_WarRoom.docx."}
+      ], '',
+      promptsID=[
+        {'instr':"**(1) Di Teams**, buka **Calendar** → klik rapat lampau **\"FDA 483 War Room\"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.",
+         'prompt':"Buat notulen rapat untuk rapat Teams /FDA 483 War Room. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait CBP WRO sebagai Critical Path. Simpan sebagai Notulen_FDA_483_WarRoom.docx."}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
+        {'instr':'All sources are loaded. Type the prompt below in the notebook chat.',
+         'prompt':'Synthesise across all 5 sources to produce a 10-bullet Audit Committee narrative. Cover: FDA 483 status, CBP WRO status, ILO-aligned migrant-worker remediation, ESG impact, lender covenant headroom, decisions requested. Cite the source file at the end of every bullet.'},
+        {'instr':'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+         'prompt':'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the 8 plant GMs preparing for tomorrow morning huddles.'}
+      ], DESC_NOTEBOOK,
+      promptsID=[
+        {'instr':'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+         'prompt':'Sintesakan dari kelima sumber untuk menghasilkan narasi Komite Audit 10-bullet. Mencakup: status FDA 483, status CBP WRO, remediasi pekerja migran selaras-ILO, dampak ESG, headroom covenant lender, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'},
+        {'instr':'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+         'prompt':'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah 8 GM pabrik yang menyiapkan huddle pagi besok.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin'],
+      notebookMeta={
+        'sources':['/GLOVE_01_FDA_483_Response_Tracker.xlsx','/GLOVE_02_Migrant_Worker_Remediation_Plan.docx','/GLOVE_03_ESG_Recovery_Roadmap.docx','/GLOVE_04_Lender_Covenant_Tracker.xlsx','/GLOVE_05_Bursa_Disclosure_Pack.docx'],
+        'instructions':'You are the Group CFO of Zava Glove Berhad preparing an Audit Committee pack. Cover FDA 483 remediation, CBP WRO worker programme, ESG repair, and covenant communication. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals.',
+        'instructionsID':'Anda adalah Direktur Keuangan Grup Zava Glove Berhad yang menyiapkan paket Komite Audit. Cakup remediasi FDA 483, program pekerja CBP WRO, perbaikan ESG, dan komunikasi covenant. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup.'
+      }),
+
+      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+         'prompt':'Cowork — FDA + CBP Sprint. Run these in parallel: (1) 📝 Draft Word — Bursa supplementary disclosure 4 pages, source /GLOVE_05_Bursa_Disclosure_Pack.docx. (2) 📝 Draft Word — FDA 483 line-by-line response, source /GLOVE_01_FDA_483_Response_Tracker.xlsx. (3) ✉️ Send email to 8 plant GMs and Group HSE Director with the 3 actions per plant in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'}
+      ], DESC_COWORK,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+         'prompt':'Cowork — Sprint FDA + CBP. Jalankan paralel: (1) 📝 Susun Word — pengungkapan tambahan Bursa 4 halaman, sumber /GLOVE_05_Bursa_Disclosure_Pack.docx. (2) 📝 Susun Word — respons baris demi baris FDA 483, sumber /GLOVE_01_FDA_483_Response_Tracker.xlsx. (3) ✉️ Kirim email ke 8 GM pabrik dan Direktur HSE Grup dengan 3 aksi per pabrik dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'}
+      ],
+      persona=['Mod Admin'],
+      personaID=['Mod Admin']),
+
+      tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+         'prompt':'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: FDA 483 + CBP WRO joint response. Source: /GLOVE_01_FDA_483_Response_Tracker.xlsx, /GLOVE_02_Migrant_Worker_Remediation_Plan.docx. Expectation: Sections — Executive Summary 5 bullets; FDA 483 status; CBP WRO worker programme; ESG repair; Lender covenant communication; Decisions requested. Tone: precise, regulator-grade. Save as CFO_FDA_CBP_Crisis_Brief.docx.'}
+      ], DESC_WORD_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+         'prompt':'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: respons gabungan FDA 483 + CBP WRO. Sumber: /GLOVE_01_FDA_483_Response_Tracker.xlsx, /GLOVE_02_Migrant_Worker_Remediation_Plan.docx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; status FDA 483; program pekerja CBP WRO; perbaikan ESG; komunikasi covenant lender; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_Krisis_FDA_CBP_Direktur_Keuangan.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on the FDA + CBP joint response. Context: AC in 7 days. Source: /CFO_FDA_CBP_Crisis_Brief.docx and /GLOVE_01_FDA_483_Response_Tracker.xlsx. Expectation: Cover; Situation; FDA RAG; CBP RAG; 90-Day Plan (2); Financial Impact; Decisions. Brand #0EA5E9 + #0F1C3F, 1 chart/slide. Save as FDA_CBP_AC_Deck.pptx.'}
+      ], DESC_PPT_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang respons gabungan FDA + CBP. Konteks: KA dalam 7 hari. Sumber: /Brief_Krisis_FDA_CBP_Direktur_Keuangan.docx dan /GLOVE_01_FDA_483_Response_Tracker.xlsx. Ekspektasi: Cover; Situasi; RAG FDA; RAG CBP; Rencana 90-Hari (2); Dampak Finansial; Keputusan. Brand #0EA5E9 + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_KA_FDA_CBP.pptx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+         'prompt':'Goal: Build an FDA + CBP joint-response control tracker workbook. Context: 90-day operating tracker for the Group COO. Source: schema only — 9 FDA observations, 8 plants, ILO worker indicators. Expectation: Sheet 1 FDA Observations log, Sheet 2 CBP Worker Programme milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as Glove_FDA_CBP_Tracker.xlsx.'}
+      ], DESC_XL_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun workbook tracker respons gabungan FDA + CBP. Konteks: tracker operasi 90-hari untuk Direktur Operasional Grup. Sumber: hanya skema — 9 observasi FDA, 8 pabrik, indikator pekerja ILO. Ekspektasi: Sheet 1 Log Observasi FDA, Sheet 2 Milestone Program Pekerja CBP, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Glove_FDA_CBP.xlsx.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+         'prompt':'**Option A — Zava Glove FDA Remediation Agent.** Build an agent for the Group COO, Group HSE Director, and 8 plant GMs to drive FDA 483 remediation to closure. Ground every answer on /GLOVE_01_FDA_483_Response_Tracker.xlsx and the FDA EIR. Always cite file and observation number. Classify each observation as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which observations are at risk of slipping; (2) What is the day-by-day closure plan for Klang plant; (3) Draft the FDA narrative response; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'},
+        {'instr':'**Option B — alternative agent.** Same flow, different specialisation.',
+         'prompt':'**Option B — Zava Glove Worker Remediation Agent.** Build an agent for the Group HR Director, Group Sustainability Officer, and Group Comms to manage ILO-aligned migrant-worker remediation under the CBP WRO. Ground every answer on /GLOVE_02_Migrant_Worker_Remediation_Plan.docx. Always cite section. Classify each indicator as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) What is the recruitment-fee reimbursement programme status; (2) Draft holding line for ILO; (3) Build a weekly sustainability dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second worker-remediation update.'},
+        {'instr':'**Option C — alternative agent.** Same flow.',
+         'prompt':'**Option C — Zava Glove Investor Relations Agent.** Build an agent for the Head of IR and the Group CFO to handle analyst and shareholder questions over the 30 days post-event. Ground every answer on /GLOVE_05_Bursa_Disclosure_Pack.docx and /GLOVE_03_ESG_Recovery_Roadmap.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for Bursa media; (3) ESG recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'},
+        {'instr':'**Test.** Validate grounding, citations, GCSE framework, and scope.',
+         'prompt':'Give me the 60-second version of the FDA + CBP situation, the 3 worst observations, the worker-remediation plan, and the decisions I must take to the AC in 7 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'},
+        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+         'prompt':'Share with the Zava Glove ExCo (Group CEO, CFO, COO, HR Director, HSE Director, Sustainability Officer, Comms, 8 plant GMs) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every FDA + CBP question through it for the next 90 days."'}
+      ], DESC_BUILDER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+         'prompt':'**Opsi A — Zava Glove FDA Remediation Agent.** Bangun agent untuk Direktur Operasional Grup, Direktur HSE Grup, dan 8 GM pabrik untuk mendorong remediasi FDA 483 hingga ditutup. Dasarkan pada /GLOVE_01_FDA_483_Response_Tracker.xlsx dan FDA EIR. Selalu kutip file dan nomor observasi. Klasifikasikan tiap observasi sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Observasi mana yang berisiko slip; (2) Apa rencana penutupan harian pabrik Klang; (3) Susun respons naratif FDA; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'},
+        {'instr':'**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+         'prompt':'**Opsi B — Zava Glove Worker Remediation Agent.** Bangun agent untuk Direktur HR Grup, Sustainability Officer Grup, dan Komunikasi Grup untuk mengelola remediasi pekerja migran selaras-ILO di bawah CBP WRO. Dasarkan pada /GLOVE_02_Migrant_Worker_Remediation_Plan.docx. Selalu kutip bagian. Klasifikasikan tiap indikator sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status program pengembalian biaya rekrutmen; (2) Susun holding line untuk ILO; (3) Bangun dashboard sustainability mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update remediasi pekerja 60 detik.'},
+        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
+         'prompt':'**Opsi C — Zava Glove Investor Relations Agent.** Bangun agent untuk Kepala Hubungan Investor dan Direktur Keuangan Grup untuk menangani pertanyaan analis dan pemegang saham 30 hari setelah peristiwa. Dasarkan pada /GLOVE_05_Bursa_Disclosure_Pack.docx dan /GLOVE_03_ESG_Recovery_Roadmap.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media Bursa; (3) Rangkum roadmap pemulihan ESG; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'},
+        {'instr':'**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+         'prompt':'Berikan versi 60 detik dari situasi FDA + CBP, 3 observasi terburuk, rencana remediasi pekerja, dan keputusan yang harus saya bawa ke KA dalam 7 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'},
+        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+         'prompt':'Bagikan ke Zava Glove ExCo (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Direktur HR, Direktur HSE, Sustainability Officer, Komunikasi, 8 GM pabrik) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan FDA + CBP melalui agent ini selama 90 hari ke depan."'}
+      ],
+      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
+      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+    ],
+    companyID='Zava Glove Berhad',
+    taglineID='FDA Form 483 + CBP forced-labour WRO — query Bursa Malaysia 7 hari.',
+    scenarioID='Zava Glove Berhad adalah produsen sarung tangan karet tercatat di Bursa Malaysia dengan 8 pabrik di Selangor, Negeri Sembilan, dan Kedah, memproduksi 92 miliar sarung tangan per tahun untuk pasar medis, exam, dan industri di 195 negara. US FDA menerbitkan Form 483 dengan 9 observasi pada pabrik Klang yang mencakup dokumentasi, pemantauan lingkungan, dan kendali bioburden. CBP AS menerbitkan Withhold Release Order pada satu line produksi dengan menyebut indikator kerja paksa pada rantai rekrutmen pekerja migran. Rating ESG turun 2 notch dan harga saham jatuh 14% dalam 5 sesi. Bursa Malaysia menerbitkan unusual market activity query dan SC Malaysia meminta pengungkapan tambahan dalam 7 hari. Direktur Keuangan Grup harus mengoordinasikan remediasi FDA, remediasi pekerja migran selaras-ILO, perbaikan ESG, komunikasi covenant lender, dan briefing Komite Audit semuanya sekaligus. Frame customer riil: grup ini beroperasi serupa dengan Hartalega Holdings, Top Glove Corporation, Kossan Rubber, dan Supermax.',
+    relevantDepts=['dept-finance','dept-strategy','dept-legal','dept-risk','dept-operations','dept-hr','dept-esg','dept-corpsec'],
+    personas=[
+      {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group HSE & Sustainability Director','roleID':'Direktur HSE & Keberlanjutan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+    ],
+    storyboard=[
+      {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
+       'summary':'Frame the FDA + CBP joint hit and pull peer playbooks before the 7-day Bursa clock starts ticking.',
+       'summaryID':'Bingkai pukulan gabungan FDA + CBP dan tarik playbook peer sebelum clock Bursa 7-hari mulai berdetak.',
+       'tasks':[
+         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+      {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
+       'summary':'Quantify FDA + CBP financial impact and covenant headroom; build an AC dashboard.',
+       'summaryID':'Kuantifikasi dampak finansial FDA + CBP dan headroom covenant; bangun dashboard KA.',
+       'tasks':[
+         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+      {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
+       'summary':'Brief 8 plant GMs, capture the FDA War Room recap, and assemble the AC deck and Bursa disclosure.',
+       'summaryID':'Brief 8 GM pabrik, capture recap FDA War Room, dan rakit deck KA serta pengungkapan Bursa.',
+       'tasks':[
+         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+      {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
+       'summary':'Wrap the FDA + CBP playbook into a reusable agent for the 8 plant GMs and the Group HSE team.',
+       'summaryID':'Bungkus playbook FDA + CBP ke dalam agent reusable untuk 8 GM pabrik dan tim HSE Grup.',
+       'tasks':[
+         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+    ],
+    geo='MY'
+))
+
+
+# (Industries 3-7 appended below in compact form)
+
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  3.  MORTGAGE FINANCE                                        ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+INDUSTRIES_10.append(ind(
+    'mortgage-finance', 'sec-banking', 'Mortgage Finance', '🏘️', '#0F766E', '#134E4A',
+    'Zava Cagamas Berhad',
+    'BNM directed liquidity injection — MYR 2.4B MBS issuance window in 14 days.',
+    "Zava Cagamas Berhad is the national mortgage-finance corporation supporting Malaysia's secondary mortgage market via Mortgage-Backed Securities (MBS), Sukuk Cagamas, and Purchase-with-Recourse facilities. Bank Negara Malaysia has flagged liquidity stress at 4 mid-tier banks and directed Zava Cagamas to open a MYR 2.4B MBS issuance window in 14 days. The Group CFO must coordinate origination-bank pricing, Securities Commission Malaysia approvals, RAM/MARC ratings affirmation, AAOIFI compliance for the Sukuk tranche, and an Investor Day briefing for 60 institutional investors all at once. Real customer reference frame: this group operates similarly to Cagamas Berhad and Maybank Investment Bank's mortgage-finance division.",
+    ['MORT_01_MBS_Pricing_Model.xlsx', 'MORT_02_Mortgage_Pool_Stratification.xlsx', 'MORT_03_BNM_Compliance_Pack.docx', 'MORT_04_Investor_Day_Briefing.docx', 'MORT_05_Rating_Agency_Submission.docx'],
+    [
+      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
+        {'instr':'', 'prompt':"Goal: Frame the BNM-directed MBS issuance situation in plain English for the Group CEO. Context: Zava Cagamas Berhad is the national mortgage-finance corporation supporting Malaysia's secondary mortgage market via Mortgage-Backed Securities (MBS), Sukuk Cagamas, and Purchase-with-Recourse facilit... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon."},
+        {'instr':'', 'prompt':'Goal: 90-second verbal opening for the Zava Cagamas Berhad stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'},
+        {'instr':'', 'prompt':'Goal: Build the stakeholder communication map for the BNM-directed MBS issuance. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'}
+      ], DESC_CHAT,
+      promptsID=[
+        {'instr':'', 'prompt':'Tujuan: Bingkai situasi BNM-directed MBS issuance dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Cagamas Berhad adalah korporasi pembiayaan hipotek nasional yang mendukung pasar hipotek sekunder Malaysia via Mortgage-Backed Securities (MBS), Sukuk Cagamas, dan fasilitas Purchase-with-Recours... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'},
+        {'instr':'', 'prompt':'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Cagamas Berhad. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'},
+        {'instr':'', 'prompt':'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk BNM-directed MBS issuance. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'}
+      ],
+      persona=['Sasha Ouellet','Mod Admin','Hadar Caspit'],
+      personaID=['Sasha Ouellet','Mod Admin','Hadar Caspit']),
+
+      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+         'prompt':'Goal: Benchmark how peers (Cagamas Berhad, Maybank IB Mortgage, RHB Investment Bank, AmInvestment Bank, CIMB Investment Bank) handled comparable BNM-directed MBS issuance events between 2020 and 2025. Context: Zava Cagamas Berhad must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'},
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+         'prompt':'Goal: 3 most defensible response playbooks for Zava Cagamas Berhad hit by BNM-directed MBS issuance. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'}
+      ], DESC_RESEARCHER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+         'prompt':'Tujuan: Benchmark bagaimana peer (Cagamas Berhad, Maybank IB Mortgage, RHB Investment Bank, AmInvestment Bank, CIMB Investment Bank) menangani peristiwa BNM-directed MBS issuance sebanding antara 2020 hingga 2025. Konteks: Zava Cagamas Berhad harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'},
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+         'prompt':'Tujuan: 3 playbook respons paling defensible untuk Zava Cagamas Berhad yang terkena BNM-directed MBS issuance. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin']),
+
+      tool(T_ANALYST, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /MORT_01_MBS_Pricing_Model.xlsx AND /MORT_02_Mortgage_Pool_Stratification.xlsx. Paste the prompt below.',
+         'prompt':'Goal: Quantify the BNM-directed MBS issuance financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'}
+      ], DESC_ANALYST,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /MORT_01_MBS_Pricing_Model.xlsx DAN /MORT_02_Mortgage_Pool_Stratification.xlsx. Tempel prompt.',
+         'prompt':'Tujuan: Kuantifikasi dampak finansial dan operasional dari BNM-directed MBS issuance. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_EXCEL, M365_LIC, M365_ACCT, [
+        {'instr':'Open `/MORT_01_MBS_Pricing_Model.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'}
+      ], '',
+      promptsID=[
+        {'instr':'Buka `/MORT_01_MBS_Pricing_Model.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_WORD, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /MORT_03_BNM_Compliance_Pack.docx and /MORT_04_Investor_Day_Briefing.docx using `/`. Paste the prompt below.',
+         'prompt':'Goal: Draft the regulator-grade response brief (4 pages). Context: BNM-directed MBS issuance active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'}
+      ], DESC_WORD,
+      promptsID=[
+        {'instr':'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /MORT_03_BNM_Compliance_Pack.docx dan /MORT_04_Investor_Day_Briefing.docx menggunakan `/`. Tempel prompt.',
+         'prompt':'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: BNM-directed MBS issuance aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_PPT, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on BNM-directed MBS issuance. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #0F766E + #0F1C3F, 1 chart per slide.'}
+      ], DESC_PPT,
+      promptsID=[
+        {'instr':'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang BNM-directed MBS issuance. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #0F766E + #0F1C3F, 1 chart per slide.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
+        {'instr':'Open Outlook on the Web. Open the email thread "BNM-directed MBS issuance — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+         'prompt':'Goal: Draft a single email to the Zava Cagamas Berhad ExCo and the relevant operating heads. Context: BNM-directed MBS issuance active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'}
+      ], DESC_OUTLOOK,
+      promptsID=[
+        {'instr':'Buka Outlook on the Web. Buka thread email "BNM-directed MBS issuance — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+         'prompt':'Tujuan: Susun satu email ke ExCo Zava Cagamas Berhad dan kepala operasi yang relevan. Konteks: BNM-directed MBS issuance aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_TEAMS, M365_LIC, M365_ACCT, [
+        {'instr':'**(1) In Teams**, open **Calendar** → click the past meeting **"BNM Liquidity War Room"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+         'prompt':'Create meeting minutes for the Teams meeting /BNM Liquidity War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to BNM-directed MBS issuance as Critical Path. Save as Minutes_BNM_Liquidity_War_Room.docx.'}
+      ], '',
+      promptsID=[
+        {'instr':'**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"BNM Liquidity War Room"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+         'prompt':'Buat notulen rapat untuk rapat Teams /BNM Liquidity War Room. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait BNM-directed MBS issuance sebagai Critical Path. Simpan sebagai Notulen_BNM_Liquidity_War_Room.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
+        {'instr':'All sources are loaded. Type the prompt below in the notebook chat.',
+         'prompt':'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: BNM-directed MBS issuance status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'},
+        {'instr':'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+         'prompt':'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Cagamas Berhad operating heads preparing for tomorrow morning huddles.'}
+      ], DESC_NOTEBOOK,
+      promptsID=[
+        {'instr':'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+         'prompt':'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status BNM-directed MBS issuance, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'},
+        {'instr':'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+         'prompt':'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Cagamas Berhad yang menyiapkan huddle pagi besok.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin'],
+      notebookMeta={
+        'sources':['/MORT_01_MBS_Pricing_Model.xlsx', '/MORT_02_Mortgage_Pool_Stratification.xlsx', '/MORT_03_BNM_Compliance_Pack.docx', '/MORT_04_Investor_Day_Briefing.docx', '/MORT_05_Rating_Agency_Submission.docx'],
+        'instructions':'You are the Group CFO of Zava Cagamas Berhad preparing an Audit Committee pack on BNM-directed MBS issuance. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+        'instructionsID':'Anda adalah Direktur Keuangan Grup Zava Cagamas Berhad yang menyiapkan paket Komite Audit untuk BNM-directed MBS issuance. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+      }),
+
+      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+         'prompt':'Cowork — BNM-Directed Issuance Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /MORT_01_MBS_Pricing_Model.xlsx, /MORT_02_Mortgage_Pool_Stratification.xlsx, /MORT_03_BNM_Compliance_Pack.docx, /MORT_04_Investor_Day_Briefing.docx, /MORT_05_Rating_Agency_Submission.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Cagamas Berhad ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'}
+      ], DESC_COWORK,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+         'prompt':'Cowork — BNM-Directed Issuance Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /MORT_01_MBS_Pricing_Model.xlsx, /MORT_02_Mortgage_Pool_Stratification.xlsx, /MORT_03_BNM_Compliance_Pack.docx, /MORT_04_Investor_Day_Briefing.docx, /MORT_05_Rating_Agency_Submission.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Cagamas Berhad dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'}
+      ],
+      persona=['Mod Admin'],
+      personaID=['Mod Admin']),
+
+      tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+         'prompt':'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: BNM-directed MBS issuance. Source: /MORT_01_MBS_Pricing_Model.xlsx AND /MORT_02_Mortgage_Pool_Stratification.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as BNM_MBS_Issuance_Brief.docx.'}
+      ], DESC_WORD_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+         'prompt':'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: BNM-directed MBS issuance. Sumber: /MORT_01_MBS_Pricing_Model.xlsx DAN /MORT_02_Mortgage_Pool_Stratification.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_Penerbitan_MBS_BNM.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on BNM-directed MBS issuance. Context: AC in 14 days. Source: /BNM_MBS_Issuance_Brief.docx and /MORT_01_MBS_Pricing_Model.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #0F766E + #0F1C3F, 1 chart/slide. Save as MBS_Investor_Day_Deck.pptx.'}
+      ], DESC_PPT_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang BNM-directed MBS issuance. Konteks: KA dalam 14 hari. Sumber: /Brief_Penerbitan_MBS_BNM.docx dan /MORT_01_MBS_Pricing_Model.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #0F766E + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_Investor_Day_MBS.pptx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+         'prompt':'Goal: Build a BNM-directed MBS issuance response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as MBS_Issuance_Tracker.xlsx.'}
+      ], DESC_XL_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun workbook tracker kendali respons BNM-directed MBS issuance. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Penerbitan_MBS.xlsx.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+         'prompt':'**Option A — Zava Cagamas MBS Pricing Agent.** Build an agent for the Group COO and the operating heads to drive the BNM-directed MBS issuance response programme to closure. Ground every answer on /MORT_01_MBS_Pricing_Model.xlsx AND /MORT_02_Mortgage_Pool_Stratification.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'},
+        {'instr':'**Option B — alternative agent.** Same flow, different specialisation.',
+         'prompt':'**Option B — Zava Cagamas Investor Relations Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /MORT_03_BNM_Compliance_Pack.docx and /MORT_04_Investor_Day_Briefing.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'},
+        {'instr':'**Option C — alternative agent.** Same flow.',
+         'prompt':'**Option C — Zava Cagamas BNM Compliance Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /MORT_01_MBS_Pricing_Model.xlsx, /MORT_02_Mortgage_Pool_Stratification.xlsx, /MORT_03_BNM_Compliance_Pack.docx, /MORT_04_Investor_Day_Briefing.docx, /MORT_05_Rating_Agency_Submission.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'},
+        {'instr':'**Test.** Validate grounding, citations, GCSE framework, and scope.',
+         'prompt':'Give me the 60-second version of the BNM-directed MBS issuance situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'},
+        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+         'prompt':'Share with the Zava Cagamas Berhad ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every BNM-directed MBS issuance question through it for the next 90 days."'}
+      ], DESC_BUILDER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+         'prompt':'**Opsi A — Zava Cagamas MBS Pricing Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons BNM-directed MBS issuance hingga ditutup. Dasarkan pada /MORT_01_MBS_Pricing_Model.xlsx DAN /MORT_02_Mortgage_Pool_Stratification.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'},
+        {'instr':'**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+         'prompt':'**Opsi B — Zava Cagamas Investor Relations Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /MORT_03_BNM_Compliance_Pack.docx dan /MORT_04_Investor_Day_Briefing.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'},
+        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
+         'prompt':'**Opsi C — Zava Cagamas BNM Compliance Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /MORT_01_MBS_Pricing_Model.xlsx, /MORT_02_Mortgage_Pool_Stratification.xlsx, /MORT_03_BNM_Compliance_Pack.docx, /MORT_04_Investor_Day_Briefing.docx, /MORT_05_Rating_Agency_Submission.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'},
+        {'instr':'**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+         'prompt':'Berikan versi 60 detik dari situasi BNM-directed MBS issuance, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'},
+        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+         'prompt':'Bagikan ke ExCo Zava Cagamas Berhad (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan BNM-directed MBS issuance melalui agent ini selama 90 hari ke depan."'}
+      ],
+      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
+      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+    ],
+    companyID='Zava Cagamas Berhad',
+    taglineID='BNM mengarahkan suntikan likuiditas — jendela penerbitan MBS RM 2,4 miliar dalam 14 hari.',
+    scenarioID='Zava Cagamas Berhad adalah korporasi pembiayaan hipotek nasional yang mendukung pasar hipotek sekunder Malaysia via Mortgage-Backed Securities (MBS), Sukuk Cagamas, dan fasilitas Purchase-with-Recourse. Bank Negara Malaysia menandai stres likuiditas pada 4 bank menengah dan mengarahkan Zava Cagamas untuk membuka jendela penerbitan MBS RM 2,4 miliar dalam 14 hari. Direktur Keuangan Grup harus mengoordinasikan pricing bank originator, persetujuan SC Malaysia, afirmasi rating RAM/MARC, kepatuhan AAOIFI untuk tranche Sukuk, dan briefing Investor Day untuk 60 investor institusi semuanya sekaligus. Frame customer riil: grup ini beroperasi serupa dengan Cagamas Berhad dan divisi mortgage-finance Maybank Investment Bank.',
+    relevantDepts=['dept-finance','dept-strategy','dept-legal','dept-risk','dept-corpsec','dept-ir','dept-operations'],
+    personas=[
+      {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group Sustainability & Risk Director','roleID':'Direktur Keberlanjutan & Risiko Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+    ],
+    storyboard=[
+      {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
+       'summary':'Frame the BNM-directed MBS issuance situation and pull peer playbooks before the regulator clock starts ticking.',
+       'summaryID':'Bingkai situasi BNM-directed MBS issuance dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+       'tasks':[
+         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+      {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
+       'summary':'Quantify BNM-directed MBS issuance financial and operational impact; build an AC dashboard.',
+       'summaryID':'Kuantifikasi dampak finansial dan operasional BNM-directed MBS issuance; bangun dashboard KA.',
+       'tasks':[
+         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+      {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
+       'summary':'Brief operating heads, capture the BNM Liquidity War Room recap, and assemble the AC deck and regulator response.',
+       'summaryID':'Brief kepala operasi, capture recap BNM Liquidity War Room, dan rakit deck KA serta respons regulator.',
+       'tasks':[
+         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+      {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
+       'summary':'Wrap the BNM-directed MBS issuance playbook into a reusable agent for the Zava Cagamas Berhad operating team.',
+       'summaryID':'Bungkus playbook BNM-directed MBS issuance ke dalam agent reusable untuk tim operasi Zava Cagamas Berhad.',
+       'tasks':[
+         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+    ],
+    geo='MY'
+))
+
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  4.  CROSS-BORDER REMITTANCE                                        ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+INDUSTRIES_10.append(ind(
+    'cross-border-remittance', 'sec-fintech', 'Cross-Border Remittance', '💱', '#9333EA', '#6B21A8',
+    'Zava Remit Asia',
+    'BNM PSA suspicious-transaction inquiry on the MY↔ID corridor — response in 5 days.',
+    'Zava Remit Asia is a Bank Negara Malaysia-licensed e-money issuer and remittance operator running the MY↔ID, MY↔PH, MY↔BD, MY↔IN, and MY↔NP corridors with 1.4 million active migrant-worker users moving MYR 8.6B annually. BNM Payment Systems Act inquiry has flagged a 22% week-on-week spike in suspicious-transaction reports on the MY↔ID corridor and demanded explanation within 5 days. AUSTRAC, BSP and OJK are watching. Real customer reference frame: this group operates similarly to Merchantrade Asia, Tranglo, MoneyMatch, and Wise Malaysia.',
+    ['REMIT_01_STR_Filing_Tracker.xlsx', 'REMIT_02_Corridor_Volume_Heatmap.xlsx', 'REMIT_03_BNM_PSA_Response_Pack.docx', 'REMIT_04_AML_KYC_Policy.docx', 'REMIT_05_Regulator_QA_Pack.docx'],
+    [
+      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
+        {'instr':'', 'prompt':'Goal: Frame the BNM PSA suspicious-transaction inquiry situation in plain English for the Group CEO. Context: Zava Remit Asia is a Bank Negara Malaysia-licensed e-money issuer and remittance operator running the MY↔ID, MY↔PH, MY↔BD, MY↔IN, and MY↔NP corridors with 1.4 million active migrant-worker users movin... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'},
+        {'instr':'', 'prompt':'Goal: 90-second verbal opening for the Zava Remit Asia stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'},
+        {'instr':'', 'prompt':'Goal: Build the stakeholder communication map for the BNM PSA suspicious-transaction inquiry. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'}
+      ], DESC_CHAT,
+      promptsID=[
+        {'instr':'', 'prompt':'Tujuan: Bingkai situasi BNM PSA suspicious-transaction inquiry dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Remit Asia adalah penerbit e-money berlisensi Bank Negara Malaysia dan operator remitansi yang menjalankan koridor MY↔ID, MY↔PH, MY↔BD, MY↔IN, dan MY↔NP dengan 1,4 juta pengguna pekerja migran ak... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'},
+        {'instr':'', 'prompt':'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Remit Asia. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'},
+        {'instr':'', 'prompt':'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk BNM PSA suspicious-transaction inquiry. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'}
+      ],
+      persona=['Sasha Ouellet','Mod Admin','Hadar Caspit'],
+      personaID=['Sasha Ouellet','Mod Admin','Hadar Caspit']),
+
+      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+         'prompt':'Goal: Benchmark how peers (Merchantrade Asia, Tranglo, MoneyMatch, Wise Malaysia, Western Union Malaysia) handled comparable BNM PSA suspicious-transaction inquiry events between 2020 and 2025. Context: Zava Remit Asia must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'},
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+         'prompt':'Goal: 3 most defensible response playbooks for Zava Remit Asia hit by BNM PSA suspicious-transaction inquiry. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'}
+      ], DESC_RESEARCHER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+         'prompt':'Tujuan: Benchmark bagaimana peer (Merchantrade Asia, Tranglo, MoneyMatch, Wise Malaysia, Western Union Malaysia) menangani peristiwa BNM PSA suspicious-transaction inquiry sebanding antara 2020 hingga 2025. Konteks: Zava Remit Asia harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'},
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+         'prompt':'Tujuan: 3 playbook respons paling defensible untuk Zava Remit Asia yang terkena BNM PSA suspicious-transaction inquiry. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin']),
+
+      tool(T_ANALYST, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /REMIT_01_STR_Filing_Tracker.xlsx AND /REMIT_02_Corridor_Volume_Heatmap.xlsx. Paste the prompt below.',
+         'prompt':'Goal: Quantify the BNM PSA suspicious-transaction inquiry financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'}
+      ], DESC_ANALYST,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /REMIT_01_STR_Filing_Tracker.xlsx DAN /REMIT_02_Corridor_Volume_Heatmap.xlsx. Tempel prompt.',
+         'prompt':'Tujuan: Kuantifikasi dampak finansial dan operasional dari BNM PSA suspicious-transaction inquiry. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_EXCEL, M365_LIC, M365_ACCT, [
+        {'instr':'Open `/REMIT_01_STR_Filing_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'}
+      ], '',
+      promptsID=[
+        {'instr':'Buka `/REMIT_01_STR_Filing_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_WORD, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /REMIT_03_BNM_PSA_Response_Pack.docx and /REMIT_05_Regulator_QA_Pack.docx using `/`. Paste the prompt below.',
+         'prompt':'Goal: Draft the regulator-grade response brief (4 pages). Context: BNM PSA suspicious-transaction inquiry active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'}
+      ], DESC_WORD,
+      promptsID=[
+        {'instr':'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /REMIT_03_BNM_PSA_Response_Pack.docx dan /REMIT_05_Regulator_QA_Pack.docx menggunakan `/`. Tempel prompt.',
+         'prompt':'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: BNM PSA suspicious-transaction inquiry aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_PPT, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on BNM PSA suspicious-transaction inquiry. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #9333EA + #0F1C3F, 1 chart per slide.'}
+      ], DESC_PPT,
+      promptsID=[
+        {'instr':'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang BNM PSA suspicious-transaction inquiry. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #9333EA + #0F1C3F, 1 chart per slide.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
+        {'instr':'Open Outlook on the Web. Open the email thread "BNM PSA suspicious-transaction inquiry — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+         'prompt':'Goal: Draft a single email to the Zava Remit Asia ExCo and the relevant operating heads. Context: BNM PSA suspicious-transaction inquiry active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'}
+      ], DESC_OUTLOOK,
+      promptsID=[
+        {'instr':'Buka Outlook on the Web. Buka thread email "BNM PSA suspicious-transaction inquiry — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+         'prompt':'Tujuan: Susun satu email ke ExCo Zava Remit Asia dan kepala operasi yang relevan. Konteks: BNM PSA suspicious-transaction inquiry aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_TEAMS, M365_LIC, M365_ACCT, [
+        {'instr':'**(1) In Teams**, open **Calendar** → click the past meeting **"AML Risk Council"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+         'prompt':'Create meeting minutes for the Teams meeting /AML Risk Council. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to BNM PSA suspicious-transaction inquiry as Critical Path. Save as Minutes_AML_Risk_Council.docx.'}
+      ], '',
+      promptsID=[
+        {'instr':'**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"AML Risk Council"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+         'prompt':'Buat notulen rapat untuk rapat Teams /AML Risk Council. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait BNM PSA suspicious-transaction inquiry sebagai Critical Path. Simpan sebagai Notulen_AML_Risk_Council.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
+        {'instr':'All sources are loaded. Type the prompt below in the notebook chat.',
+         'prompt':'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: BNM PSA suspicious-transaction inquiry status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'},
+        {'instr':'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+         'prompt':'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Remit Asia operating heads preparing for tomorrow morning huddles.'}
+      ], DESC_NOTEBOOK,
+      promptsID=[
+        {'instr':'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+         'prompt':'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status BNM PSA suspicious-transaction inquiry, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'},
+        {'instr':'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+         'prompt':'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Remit Asia yang menyiapkan huddle pagi besok.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin'],
+      notebookMeta={
+        'sources':['/REMIT_01_STR_Filing_Tracker.xlsx', '/REMIT_02_Corridor_Volume_Heatmap.xlsx', '/REMIT_03_BNM_PSA_Response_Pack.docx', '/REMIT_04_AML_KYC_Policy.docx', '/REMIT_05_Regulator_QA_Pack.docx'],
+        'instructions':'You are the Group CFO of Zava Remit Asia preparing an Audit Committee pack on BNM PSA suspicious-transaction inquiry. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+        'instructionsID':'Anda adalah Direktur Keuangan Grup Zava Remit Asia yang menyiapkan paket Komite Audit untuk BNM PSA suspicious-transaction inquiry. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+      }),
+
+      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+         'prompt':'Cowork — BNM PSA 5-Day Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /REMIT_01_STR_Filing_Tracker.xlsx, /REMIT_02_Corridor_Volume_Heatmap.xlsx, /REMIT_03_BNM_PSA_Response_Pack.docx, /REMIT_04_AML_KYC_Policy.docx, /REMIT_05_Regulator_QA_Pack.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Remit Asia ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'}
+      ], DESC_COWORK,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+         'prompt':'Cowork — BNM PSA 5-Day Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /REMIT_01_STR_Filing_Tracker.xlsx, /REMIT_02_Corridor_Volume_Heatmap.xlsx, /REMIT_03_BNM_PSA_Response_Pack.docx, /REMIT_04_AML_KYC_Policy.docx, /REMIT_05_Regulator_QA_Pack.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Remit Asia dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'}
+      ],
+      persona=['Mod Admin'],
+      personaID=['Mod Admin']),
+
+      tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+         'prompt':'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: BNM PSA suspicious-transaction inquiry. Source: /REMIT_01_STR_Filing_Tracker.xlsx AND /REMIT_02_Corridor_Volume_Heatmap.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as BNM_PSA_Response_Brief.docx.'}
+      ], DESC_WORD_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+         'prompt':'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: BNM PSA suspicious-transaction inquiry. Sumber: /REMIT_01_STR_Filing_Tracker.xlsx DAN /REMIT_02_Corridor_Volume_Heatmap.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_Respons_PSA_BNM.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on BNM PSA suspicious-transaction inquiry. Context: AC in 14 days. Source: /BNM_PSA_Response_Brief.docx and /REMIT_01_STR_Filing_Tracker.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #9333EA + #0F1C3F, 1 chart/slide. Save as AML_Council_Deck.pptx.'}
+      ], DESC_PPT_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang BNM PSA suspicious-transaction inquiry. Konteks: KA dalam 14 hari. Sumber: /Brief_Respons_PSA_BNM.docx dan /REMIT_01_STR_Filing_Tracker.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #9333EA + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_AML_Council.pptx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+         'prompt':'Goal: Build a BNM PSA suspicious-transaction inquiry response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as AML_Sprint_Tracker.xlsx.'}
+      ], DESC_XL_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun workbook tracker kendali respons BNM PSA suspicious-transaction inquiry. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Sprint_AML.xlsx.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+         'prompt':'**Option A — Zava Remit AML Triage Agent.** Build an agent for the Group COO and the operating heads to drive the BNM PSA suspicious-transaction inquiry response programme to closure. Ground every answer on /REMIT_01_STR_Filing_Tracker.xlsx AND /REMIT_02_Corridor_Volume_Heatmap.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'},
+        {'instr':'**Option B — alternative agent.** Same flow, different specialisation.',
+         'prompt':'**Option B — Zava Remit Regulator Liaison Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /REMIT_03_BNM_PSA_Response_Pack.docx and /REMIT_05_Regulator_QA_Pack.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'},
+        {'instr':'**Option C — alternative agent.** Same flow.',
+         'prompt':'**Option C — Zava Remit Corridor Risk Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /REMIT_01_STR_Filing_Tracker.xlsx, /REMIT_02_Corridor_Volume_Heatmap.xlsx, /REMIT_03_BNM_PSA_Response_Pack.docx, /REMIT_04_AML_KYC_Policy.docx, /REMIT_05_Regulator_QA_Pack.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'},
+        {'instr':'**Test.** Validate grounding, citations, GCSE framework, and scope.',
+         'prompt':'Give me the 60-second version of the BNM PSA suspicious-transaction inquiry situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'},
+        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+         'prompt':'Share with the Zava Remit Asia ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every BNM PSA suspicious-transaction inquiry question through it for the next 90 days."'}
+      ], DESC_BUILDER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+         'prompt':'**Opsi A — Zava Remit AML Triage Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons BNM PSA suspicious-transaction inquiry hingga ditutup. Dasarkan pada /REMIT_01_STR_Filing_Tracker.xlsx DAN /REMIT_02_Corridor_Volume_Heatmap.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'},
+        {'instr':'**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+         'prompt':'**Opsi B — Zava Remit Regulator Liaison Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /REMIT_03_BNM_PSA_Response_Pack.docx dan /REMIT_05_Regulator_QA_Pack.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'},
+        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
+         'prompt':'**Opsi C — Zava Remit Corridor Risk Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /REMIT_01_STR_Filing_Tracker.xlsx, /REMIT_02_Corridor_Volume_Heatmap.xlsx, /REMIT_03_BNM_PSA_Response_Pack.docx, /REMIT_04_AML_KYC_Policy.docx, /REMIT_05_Regulator_QA_Pack.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'},
+        {'instr':'**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+         'prompt':'Berikan versi 60 detik dari situasi BNM PSA suspicious-transaction inquiry, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'},
+        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+         'prompt':'Bagikan ke ExCo Zava Remit Asia (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan BNM PSA suspicious-transaction inquiry melalui agent ini selama 90 hari ke depan."'}
+      ],
+      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
+      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+    ],
+    companyID='Zava Remit Asia',
+    taglineID='Inkuiri PSA BNM atas transaksi mencurigakan di koridor MY↔ID — respons dalam 5 hari.',
+    scenarioID='Zava Remit Asia adalah penerbit e-money berlisensi Bank Negara Malaysia dan operator remitansi yang menjalankan koridor MY↔ID, MY↔PH, MY↔BD, MY↔IN, dan MY↔NP dengan 1,4 juta pengguna pekerja migran aktif memindahkan RM 8,6 miliar per tahun. Inkuiri Payment Systems Act BNM menandai lonjakan 22% week-on-week dalam laporan transaksi mencurigakan di koridor MY↔ID dan meminta penjelasan dalam 5 hari. AUSTRAC, BSP, dan OJK juga memantau. Frame customer riil: grup ini beroperasi serupa dengan Merchantrade Asia, Tranglo, MoneyMatch, dan Wise Malaysia.',
+    relevantDepts=['dept-finance','dept-risk','dept-legal','dept-operations','dept-strategy','dept-corpsec'],
+    personas=[
+      {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group Sustainability & Risk Director','roleID':'Direktur Keberlanjutan & Risiko Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+    ],
+    storyboard=[
+      {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
+       'summary':'Frame the BNM PSA suspicious-transaction inquiry situation and pull peer playbooks before the regulator clock starts ticking.',
+       'summaryID':'Bingkai situasi BNM PSA suspicious-transaction inquiry dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+       'tasks':[
+         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+      {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
+       'summary':'Quantify BNM PSA suspicious-transaction inquiry financial and operational impact; build an AC dashboard.',
+       'summaryID':'Kuantifikasi dampak finansial dan operasional BNM PSA suspicious-transaction inquiry; bangun dashboard KA.',
+       'tasks':[
+         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+      {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
+       'summary':'Brief operating heads, capture the AML Risk Council recap, and assemble the AC deck and regulator response.',
+       'summaryID':'Brief kepala operasi, capture recap AML Risk Council, dan rakit deck KA serta respons regulator.',
+       'tasks':[
+         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+      {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
+       'summary':'Wrap the BNM PSA suspicious-transaction inquiry playbook into a reusable agent for the Zava Remit Asia operating team.',
+       'summaryID':'Bungkus playbook BNM PSA suspicious-transaction inquiry ke dalam agent reusable untuk tim operasi Zava Remit Asia.',
+       'tasks':[
+         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+    ],
+    geo='MY'
+))
+
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  5.  AUTO COMPONENTS & TYRES                                        ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+INDUSTRIES_10.append(ind(
+    'auto-tyres', 'sec-mfg', 'Auto Components & Tyres', '🛞', '#52525B', '#27272A',
+    'Zava Auto Industries',
+    'NR raw-material spike + Toyota & Hyundai contract review — Steerco in 10 days.',
+    'Zava Auto Industries is a tier-1 ASEAN automotive component and tyre manufacturer with 6 plants in Indonesia, Malaysia and Thailand supplying Toyota, Honda, Hyundai-Kia, Mitsubishi, and Proton. Natural-rubber and synthetic-rubber prices have spiked 32% in 6 weeks driving an EBITDA gap of MYR 410M in Q4. Toyota and Hyundai are reviewing OEM supply contracts — pricing pass-through requested by both within 10 days. The Group CFO needs to model raw-material pass-through scenarios, draft OEM customer letters, brief the Group Steering Committee, and prepare the lender covenant communication. Real customer reference frame: this group operates similarly to Gajah Tunggal, Goodyear Indonesia, Sime Darby Industrial, and APM Automotive.',
+    ['AUTO_01_Raw_Material_Cost_Model.xlsx', 'AUTO_02_OEM_Contract_Matrix.xlsx', 'AUTO_03_OEM_Customer_Letter_Pack.docx', 'AUTO_04_Margin_Recovery_Plan.docx', 'AUTO_05_Steerco_Briefing.docx'],
+    [
+      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
+        {'instr':'', 'prompt':'Goal: Frame the NR raw-material spike + OEM contract review situation in plain English for the Group CEO. Context: Zava Auto Industries is a tier-1 ASEAN automotive component and tyre manufacturer with 6 plants in Indonesia, Malaysia and Thailand supplying Toyota, Honda, Hyundai-Kia, Mitsubishi, and Proton. Natura... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'},
+        {'instr':'', 'prompt':'Goal: 90-second verbal opening for the Zava Auto Industries stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'},
+        {'instr':'', 'prompt':'Goal: Build the stakeholder communication map for the NR raw-material spike + OEM contract review. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'}
+      ], DESC_CHAT,
+      promptsID=[
+        {'instr':'', 'prompt':'Tujuan: Bingkai situasi NR raw-material spike + OEM contract review dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Auto Industries adalah produsen tier-1 komponen otomotif dan ban ASEAN dengan 6 pabrik di Indonesia, Malaysia, dan Thailand yang memasok Toyota, Honda, Hyundai-Kia, Mitsubishi, dan Proton. Harga ... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'},
+        {'instr':'', 'prompt':'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Auto Industries. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'},
+        {'instr':'', 'prompt':'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk NR raw-material spike + OEM contract review. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'}
+      ],
+      persona=['Sasha Ouellet','Mod Admin','Hadar Caspit'],
+      personaID=['Sasha Ouellet','Mod Admin','Hadar Caspit']),
+
+      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+         'prompt':'Goal: Benchmark how peers (Gajah Tunggal, Goodyear Indonesia, Sime Darby Industrial, APM Automotive, MBM Resources) handled comparable NR raw-material spike + OEM contract review events between 2020 and 2025. Context: Zava Auto Industries must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'},
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+         'prompt':'Goal: 3 most defensible response playbooks for Zava Auto Industries hit by NR raw-material spike + OEM contract review. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'}
+      ], DESC_RESEARCHER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+         'prompt':'Tujuan: Benchmark bagaimana peer (Gajah Tunggal, Goodyear Indonesia, Sime Darby Industrial, APM Automotive, MBM Resources) menangani peristiwa NR raw-material spike + OEM contract review sebanding antara 2020 hingga 2025. Konteks: Zava Auto Industries harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'},
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+         'prompt':'Tujuan: 3 playbook respons paling defensible untuk Zava Auto Industries yang terkena NR raw-material spike + OEM contract review. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin']),
+
+      tool(T_ANALYST, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /AUTO_01_Raw_Material_Cost_Model.xlsx AND /AUTO_02_OEM_Contract_Matrix.xlsx. Paste the prompt below.',
+         'prompt':'Goal: Quantify the NR raw-material spike + OEM contract review financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'}
+      ], DESC_ANALYST,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /AUTO_01_Raw_Material_Cost_Model.xlsx DAN /AUTO_02_OEM_Contract_Matrix.xlsx. Tempel prompt.',
+         'prompt':'Tujuan: Kuantifikasi dampak finansial dan operasional dari NR raw-material spike + OEM contract review. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_EXCEL, M365_LIC, M365_ACCT, [
+        {'instr':'Open `/AUTO_01_Raw_Material_Cost_Model.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'}
+      ], '',
+      promptsID=[
+        {'instr':'Buka `/AUTO_01_Raw_Material_Cost_Model.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_WORD, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /AUTO_03_OEM_Customer_Letter_Pack.docx and /AUTO_04_Margin_Recovery_Plan.docx using `/`. Paste the prompt below.',
+         'prompt':'Goal: Draft the regulator-grade response brief (4 pages). Context: NR raw-material spike + OEM contract review active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'}
+      ], DESC_WORD,
+      promptsID=[
+        {'instr':'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /AUTO_03_OEM_Customer_Letter_Pack.docx dan /AUTO_04_Margin_Recovery_Plan.docx menggunakan `/`. Tempel prompt.',
+         'prompt':'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: NR raw-material spike + OEM contract review aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_PPT, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on NR raw-material spike + OEM contract review. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #52525B + #0F1C3F, 1 chart per slide.'}
+      ], DESC_PPT,
+      promptsID=[
+        {'instr':'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang NR raw-material spike + OEM contract review. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #52525B + #0F1C3F, 1 chart per slide.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
+        {'instr':'Open Outlook on the Web. Open the email thread "NR raw-material spike + OEM contract review — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+         'prompt':'Goal: Draft a single email to the Zava Auto Industries ExCo and the relevant operating heads. Context: NR raw-material spike + OEM contract review active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'}
+      ], DESC_OUTLOOK,
+      promptsID=[
+        {'instr':'Buka Outlook on the Web. Buka thread email "NR raw-material spike + OEM contract review — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+         'prompt':'Tujuan: Susun satu email ke ExCo Zava Auto Industries dan kepala operasi yang relevan. Konteks: NR raw-material spike + OEM contract review aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_TEAMS, M365_LIC, M365_ACCT, [
+        {'instr':'**(1) In Teams**, open **Calendar** → click the past meeting **"OEM Pass-Through Steerco"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+         'prompt':'Create meeting minutes for the Teams meeting /OEM Pass-Through Steerco. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to NR raw-material spike + OEM contract review as Critical Path. Save as Minutes_OEM_Pass-Through_Steerco.docx.'}
+      ], '',
+      promptsID=[
+        {'instr':'**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"OEM Pass-Through Steerco"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+         'prompt':'Buat notulen rapat untuk rapat Teams /OEM Pass-Through Steerco. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait NR raw-material spike + OEM contract review sebagai Critical Path. Simpan sebagai Notulen_OEM_Pass-Through_Steerco.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
+        {'instr':'All sources are loaded. Type the prompt below in the notebook chat.',
+         'prompt':'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: NR raw-material spike + OEM contract review status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'},
+        {'instr':'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+         'prompt':'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Auto Industries operating heads preparing for tomorrow morning huddles.'}
+      ], DESC_NOTEBOOK,
+      promptsID=[
+        {'instr':'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+         'prompt':'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status NR raw-material spike + OEM contract review, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'},
+        {'instr':'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+         'prompt':'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Auto Industries yang menyiapkan huddle pagi besok.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin'],
+      notebookMeta={
+        'sources':['/AUTO_01_Raw_Material_Cost_Model.xlsx', '/AUTO_02_OEM_Contract_Matrix.xlsx', '/AUTO_03_OEM_Customer_Letter_Pack.docx', '/AUTO_04_Margin_Recovery_Plan.docx', '/AUTO_05_Steerco_Briefing.docx'],
+        'instructions':'You are the Group CFO of Zava Auto Industries preparing an Audit Committee pack on NR raw-material spike + OEM contract review. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+        'instructionsID':'Anda adalah Direktur Keuangan Grup Zava Auto Industries yang menyiapkan paket Komite Audit untuk NR raw-material spike + OEM contract review. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+      }),
+
+      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+         'prompt':'Cowork — OEM Pass-Through 10-Day Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /AUTO_01_Raw_Material_Cost_Model.xlsx, /AUTO_02_OEM_Contract_Matrix.xlsx, /AUTO_03_OEM_Customer_Letter_Pack.docx, /AUTO_04_Margin_Recovery_Plan.docx, /AUTO_05_Steerco_Briefing.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Auto Industries ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'}
+      ], DESC_COWORK,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+         'prompt':'Cowork — OEM Pass-Through 10-Day Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /AUTO_01_Raw_Material_Cost_Model.xlsx, /AUTO_02_OEM_Contract_Matrix.xlsx, /AUTO_03_OEM_Customer_Letter_Pack.docx, /AUTO_04_Margin_Recovery_Plan.docx, /AUTO_05_Steerco_Briefing.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Auto Industries dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'}
+      ],
+      persona=['Mod Admin'],
+      personaID=['Mod Admin']),
+
+      tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+         'prompt':'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: NR raw-material spike + OEM contract review. Source: /AUTO_01_Raw_Material_Cost_Model.xlsx AND /AUTO_02_OEM_Contract_Matrix.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as OEM_PassThrough_Brief.docx.'}
+      ], DESC_WORD_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+         'prompt':'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: NR raw-material spike + OEM contract review. Sumber: /AUTO_01_Raw_Material_Cost_Model.xlsx DAN /AUTO_02_OEM_Contract_Matrix.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_PassThrough_OEM.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on NR raw-material spike + OEM contract review. Context: AC in 14 days. Source: /OEM_PassThrough_Brief.docx and /AUTO_01_Raw_Material_Cost_Model.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #52525B + #0F1C3F, 1 chart/slide. Save as OEM_Steerco_Deck.pptx.'}
+      ], DESC_PPT_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang NR raw-material spike + OEM contract review. Konteks: KA dalam 14 hari. Sumber: /Brief_PassThrough_OEM.docx dan /AUTO_01_Raw_Material_Cost_Model.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #52525B + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_Steerco_OEM.pptx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+         'prompt':'Goal: Build a NR raw-material spike + OEM contract review response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as OEM_PassThrough_Tracker.xlsx.'}
+      ], DESC_XL_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun workbook tracker kendali respons NR raw-material spike + OEM contract review. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_PassThrough_OEM.xlsx.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+         'prompt':'**Option A — Zava Auto Pricing Agent.** Build an agent for the Group COO and the operating heads to drive the NR raw-material spike + OEM contract review response programme to closure. Ground every answer on /AUTO_01_Raw_Material_Cost_Model.xlsx AND /AUTO_02_OEM_Contract_Matrix.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'},
+        {'instr':'**Option B — alternative agent.** Same flow, different specialisation.',
+         'prompt':'**Option B — Zava Auto OEM Liaison Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /AUTO_03_OEM_Customer_Letter_Pack.docx and /AUTO_04_Margin_Recovery_Plan.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'},
+        {'instr':'**Option C — alternative agent.** Same flow.',
+         'prompt':'**Option C — Zava Auto Margin Recovery Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /AUTO_01_Raw_Material_Cost_Model.xlsx, /AUTO_02_OEM_Contract_Matrix.xlsx, /AUTO_03_OEM_Customer_Letter_Pack.docx, /AUTO_04_Margin_Recovery_Plan.docx, /AUTO_05_Steerco_Briefing.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'},
+        {'instr':'**Test.** Validate grounding, citations, GCSE framework, and scope.',
+         'prompt':'Give me the 60-second version of the NR raw-material spike + OEM contract review situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'},
+        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+         'prompt':'Share with the Zava Auto Industries ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every NR raw-material spike + OEM contract review question through it for the next 90 days."'}
+      ], DESC_BUILDER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+         'prompt':'**Opsi A — Zava Auto Pricing Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons NR raw-material spike + OEM contract review hingga ditutup. Dasarkan pada /AUTO_01_Raw_Material_Cost_Model.xlsx DAN /AUTO_02_OEM_Contract_Matrix.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'},
+        {'instr':'**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+         'prompt':'**Opsi B — Zava Auto OEM Liaison Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /AUTO_03_OEM_Customer_Letter_Pack.docx dan /AUTO_04_Margin_Recovery_Plan.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'},
+        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
+         'prompt':'**Opsi C — Zava Auto Margin Recovery Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /AUTO_01_Raw_Material_Cost_Model.xlsx, /AUTO_02_OEM_Contract_Matrix.xlsx, /AUTO_03_OEM_Customer_Letter_Pack.docx, /AUTO_04_Margin_Recovery_Plan.docx, /AUTO_05_Steerco_Briefing.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'},
+        {'instr':'**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+         'prompt':'Berikan versi 60 detik dari situasi NR raw-material spike + OEM contract review, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'},
+        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+         'prompt':'Bagikan ke ExCo Zava Auto Industries (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan NR raw-material spike + OEM contract review melalui agent ini selama 90 hari ke depan."'}
+      ],
+      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
+      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+    ],
+    companyID='Zava Auto Industries',
+    taglineID='Lonjakan bahan baku NR + review kontrak Toyota & Hyundai — Steerco dalam 10 hari.',
+    scenarioID='Zava Auto Industries adalah produsen tier-1 komponen otomotif dan ban ASEAN dengan 6 pabrik di Indonesia, Malaysia, dan Thailand yang memasok Toyota, Honda, Hyundai-Kia, Mitsubishi, dan Proton. Harga natural-rubber dan synthetic-rubber melonjak 32% dalam 6 minggu mendorong gap EBITDA RM 410 juta di Q4. Toyota dan Hyundai me-review kontrak supply OEM — pricing pass-through diminta keduanya dalam 10 hari. Direktur Keuangan Grup harus memodelkan skenario pass-through bahan baku, menyusun surat customer OEM, brief Steering Committee Grup, dan menyiapkan komunikasi covenant lender. Frame customer riil: grup ini beroperasi serupa dengan Gajah Tunggal, Goodyear Indonesia, Sime Darby Industrial, dan APM Automotive.',
+    relevantDepts=['dept-finance','dept-strategy','dept-operations','dept-procurement','dept-risk','dept-legal'],
+    personas=[
+      {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group Sustainability & Risk Director','roleID':'Direktur Keberlanjutan & Risiko Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+    ],
+    storyboard=[
+      {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
+       'summary':'Frame the NR raw-material spike + OEM contract review situation and pull peer playbooks before the regulator clock starts ticking.',
+       'summaryID':'Bingkai situasi NR raw-material spike + OEM contract review dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+       'tasks':[
+         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+      {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
+       'summary':'Quantify NR raw-material spike + OEM contract review financial and operational impact; build an AC dashboard.',
+       'summaryID':'Kuantifikasi dampak finansial dan operasional NR raw-material spike + OEM contract review; bangun dashboard KA.',
+       'tasks':[
+         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+      {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
+       'summary':'Brief operating heads, capture the OEM Pass-Through Steerco recap, and assemble the AC deck and regulator response.',
+       'summaryID':'Brief kepala operasi, capture recap OEM Pass-Through Steerco, dan rakit deck KA serta respons regulator.',
+       'tasks':[
+         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+      {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
+       'summary':'Wrap the NR raw-material spike + OEM contract review playbook into a reusable agent for the Zava Auto Industries operating team.',
+       'summaryID':'Bungkus playbook NR raw-material spike + OEM contract review ke dalam agent reusable untuk tim operasi Zava Auto Industries.',
+       'tasks':[
+         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+    ],
+    geo='MY'
+))
+
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  6.  SEMICONDUCTOR / E&E                                        ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+INDUSTRIES_10.append(ind(
+    'semiconductor', 'sec-mfg', 'Semiconductor / E&E', '🔌', '#7C3AED', '#5B21B6',
+    'Zava Electronics MY',
+    'US BIS export-control update — 14 customer SKUs at risk, MITI brief in 7 days.',
+    'Zava Electronics MY operates 4 semiconductor assembly-and-test plants in Penang, Kulim and Melaka with hard-disk-drive heads, NAND flash packaging, and IC substrates as the core revenue lines (USD 1.9B FY2025 revenue). The US Bureau of Industry and Security has updated export-control rules adding 14 customer SKUs to the Entity-List exposure register. MITI Malaysia has requested a brief in 7 days. The Group CFO needs a quantified at-risk SKU schedule, customer-by-customer holding lines, US export-counsel guidance memo, capex re-prioritisation, and the Audit Committee narrative. Real customer reference frame: this group operates similarly to Western Digital Penang, Micron, Inari Amertron, ESCATEC, and Pentamaster.',
+    ['SEMI_01_BIS_SKU_Exposure.xlsx', 'SEMI_02_Customer_Concentration_Heatmap.xlsx', 'SEMI_03_MITI_Brief_Pack.docx', 'SEMI_04_Capex_Reprioritisation.xlsx', 'SEMI_05_Customer_Holding_Lines.docx'],
+    [
+      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
+        {'instr':'', 'prompt':'Goal: Frame the US BIS export-control update situation in plain English for the Group CEO. Context: Zava Electronics MY operates 4 semiconductor assembly-and-test plants in Penang, Kulim and Melaka with hard-disk-drive heads, NAND flash packaging, and IC substrates as the core revenue lines (USD 1.9... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'},
+        {'instr':'', 'prompt':'Goal: 90-second verbal opening for the Zava Electronics MY stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'},
+        {'instr':'', 'prompt':'Goal: Build the stakeholder communication map for the US BIS export-control update. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'}
+      ], DESC_CHAT,
+      promptsID=[
+        {'instr':'', 'prompt':'Tujuan: Bingkai situasi US BIS export-control update dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Electronics MY mengoperasikan 4 pabrik assembly-and-test semikonduktor di Penang, Kulim, dan Melaka dengan hard-disk-drive heads, NAND flash packaging, dan IC substrates sebagai lini pendapatan i... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'},
+        {'instr':'', 'prompt':'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Electronics MY. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'},
+        {'instr':'', 'prompt':'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk US BIS export-control update. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'}
+      ],
+      persona=['Sasha Ouellet','Mod Admin','Hadar Caspit'],
+      personaID=['Sasha Ouellet','Mod Admin','Hadar Caspit']),
+
+      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+         'prompt':'Goal: Benchmark how peers (Western Digital Penang, Micron, Inari Amertron, ESCATEC, Pentamaster) handled comparable US BIS export-control update events between 2020 and 2025. Context: Zava Electronics MY must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'},
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+         'prompt':'Goal: 3 most defensible response playbooks for Zava Electronics MY hit by US BIS export-control update. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'}
+      ], DESC_RESEARCHER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+         'prompt':'Tujuan: Benchmark bagaimana peer (Western Digital Penang, Micron, Inari Amertron, ESCATEC, Pentamaster) menangani peristiwa US BIS export-control update sebanding antara 2020 hingga 2025. Konteks: Zava Electronics MY harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'},
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+         'prompt':'Tujuan: 3 playbook respons paling defensible untuk Zava Electronics MY yang terkena US BIS export-control update. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin']),
+
+      tool(T_ANALYST, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /SEMI_01_BIS_SKU_Exposure.xlsx AND /SEMI_02_Customer_Concentration_Heatmap.xlsx. Paste the prompt below.',
+         'prompt':'Goal: Quantify the US BIS export-control update financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'}
+      ], DESC_ANALYST,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /SEMI_01_BIS_SKU_Exposure.xlsx DAN /SEMI_02_Customer_Concentration_Heatmap.xlsx. Tempel prompt.',
+         'prompt':'Tujuan: Kuantifikasi dampak finansial dan operasional dari US BIS export-control update. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_EXCEL, M365_LIC, M365_ACCT, [
+        {'instr':'Open `/SEMI_01_BIS_SKU_Exposure.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'}
+      ], '',
+      promptsID=[
+        {'instr':'Buka `/SEMI_01_BIS_SKU_Exposure.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_WORD, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /SEMI_03_MITI_Brief_Pack.docx and /SEMI_05_Customer_Holding_Lines.docx using `/`. Paste the prompt below.',
+         'prompt':'Goal: Draft the regulator-grade response brief (4 pages). Context: US BIS export-control update active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'}
+      ], DESC_WORD,
+      promptsID=[
+        {'instr':'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /SEMI_03_MITI_Brief_Pack.docx dan /SEMI_05_Customer_Holding_Lines.docx menggunakan `/`. Tempel prompt.',
+         'prompt':'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: US BIS export-control update aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_PPT, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on US BIS export-control update. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #7C3AED + #0F1C3F, 1 chart per slide.'}
+      ], DESC_PPT,
+      promptsID=[
+        {'instr':'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang US BIS export-control update. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #7C3AED + #0F1C3F, 1 chart per slide.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
+        {'instr':'Open Outlook on the Web. Open the email thread "US BIS export-control update — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+         'prompt':'Goal: Draft a single email to the Zava Electronics MY ExCo and the relevant operating heads. Context: US BIS export-control update active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'}
+      ], DESC_OUTLOOK,
+      promptsID=[
+        {'instr':'Buka Outlook on the Web. Buka thread email "US BIS export-control update — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+         'prompt':'Tujuan: Susun satu email ke ExCo Zava Electronics MY dan kepala operasi yang relevan. Konteks: US BIS export-control update aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_TEAMS, M365_LIC, M365_ACCT, [
+        {'instr':'**(1) In Teams**, open **Calendar** → click the past meeting **"BIS Export-Control War Room"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+         'prompt':'Create meeting minutes for the Teams meeting /BIS Export-Control War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to US BIS export-control update as Critical Path. Save as Minutes_BIS_Export-Control_War_Room.docx.'}
+      ], '',
+      promptsID=[
+        {'instr':'**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"BIS Export-Control War Room"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+         'prompt':'Buat notulen rapat untuk rapat Teams /BIS Export-Control War Room. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait US BIS export-control update sebagai Critical Path. Simpan sebagai Notulen_BIS_Export-Control_War_Room.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
+        {'instr':'All sources are loaded. Type the prompt below in the notebook chat.',
+         'prompt':'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: US BIS export-control update status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'},
+        {'instr':'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+         'prompt':'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Electronics MY operating heads preparing for tomorrow morning huddles.'}
+      ], DESC_NOTEBOOK,
+      promptsID=[
+        {'instr':'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+         'prompt':'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status US BIS export-control update, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'},
+        {'instr':'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+         'prompt':'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Electronics MY yang menyiapkan huddle pagi besok.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin'],
+      notebookMeta={
+        'sources':['/SEMI_01_BIS_SKU_Exposure.xlsx', '/SEMI_02_Customer_Concentration_Heatmap.xlsx', '/SEMI_03_MITI_Brief_Pack.docx', '/SEMI_04_Capex_Reprioritisation.xlsx', '/SEMI_05_Customer_Holding_Lines.docx'],
+        'instructions':'You are the Group CFO of Zava Electronics MY preparing an Audit Committee pack on US BIS export-control update. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+        'instructionsID':'Anda adalah Direktur Keuangan Grup Zava Electronics MY yang menyiapkan paket Komite Audit untuk US BIS export-control update. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+      }),
+
+      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+         'prompt':'Cowork — BIS 7-Day MITI Brief Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /SEMI_01_BIS_SKU_Exposure.xlsx, /SEMI_02_Customer_Concentration_Heatmap.xlsx, /SEMI_03_MITI_Brief_Pack.docx, /SEMI_04_Capex_Reprioritisation.xlsx, /SEMI_05_Customer_Holding_Lines.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Electronics MY ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'}
+      ], DESC_COWORK,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+         'prompt':'Cowork — BIS 7-Day MITI Brief Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /SEMI_01_BIS_SKU_Exposure.xlsx, /SEMI_02_Customer_Concentration_Heatmap.xlsx, /SEMI_03_MITI_Brief_Pack.docx, /SEMI_04_Capex_Reprioritisation.xlsx, /SEMI_05_Customer_Holding_Lines.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Electronics MY dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'}
+      ],
+      persona=['Mod Admin'],
+      personaID=['Mod Admin']),
+
+      tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+         'prompt':'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: US BIS export-control update. Source: /SEMI_01_BIS_SKU_Exposure.xlsx AND /SEMI_02_Customer_Concentration_Heatmap.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as MITI_BIS_Brief.docx.'}
+      ], DESC_WORD_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+         'prompt':'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: US BIS export-control update. Sumber: /SEMI_01_BIS_SKU_Exposure.xlsx DAN /SEMI_02_Customer_Concentration_Heatmap.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_BIS_MITI.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on US BIS export-control update. Context: AC in 14 days. Source: /MITI_BIS_Brief.docx and /SEMI_01_BIS_SKU_Exposure.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #7C3AED + #0F1C3F, 1 chart/slide. Save as BIS_AC_Deck.pptx.'}
+      ], DESC_PPT_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang US BIS export-control update. Konteks: KA dalam 14 hari. Sumber: /Brief_BIS_MITI.docx dan /SEMI_01_BIS_SKU_Exposure.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #7C3AED + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_KA_BIS.pptx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+         'prompt':'Goal: Build a US BIS export-control update response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as BIS_Exposure_Tracker.xlsx.'}
+      ], DESC_XL_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun workbook tracker kendali respons US BIS export-control update. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Paparan_BIS.xlsx.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+         'prompt':'**Option A — Zava Electronics BIS Compliance Agent.** Build an agent for the Group COO and the operating heads to drive the US BIS export-control update response programme to closure. Ground every answer on /SEMI_01_BIS_SKU_Exposure.xlsx AND /SEMI_02_Customer_Concentration_Heatmap.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'},
+        {'instr':'**Option B — alternative agent.** Same flow, different specialisation.',
+         'prompt':'**Option B — Zava Electronics Customer Liaison Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /SEMI_03_MITI_Brief_Pack.docx and /SEMI_05_Customer_Holding_Lines.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'},
+        {'instr':'**Option C — alternative agent.** Same flow.',
+         'prompt':'**Option C — Zava Electronics Capex Reprioritisation Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /SEMI_01_BIS_SKU_Exposure.xlsx, /SEMI_02_Customer_Concentration_Heatmap.xlsx, /SEMI_03_MITI_Brief_Pack.docx, /SEMI_04_Capex_Reprioritisation.xlsx, /SEMI_05_Customer_Holding_Lines.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'},
+        {'instr':'**Test.** Validate grounding, citations, GCSE framework, and scope.',
+         'prompt':'Give me the 60-second version of the US BIS export-control update situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'},
+        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+         'prompt':'Share with the Zava Electronics MY ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every US BIS export-control update question through it for the next 90 days."'}
+      ], DESC_BUILDER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+         'prompt':'**Opsi A — Zava Electronics BIS Compliance Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons US BIS export-control update hingga ditutup. Dasarkan pada /SEMI_01_BIS_SKU_Exposure.xlsx DAN /SEMI_02_Customer_Concentration_Heatmap.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'},
+        {'instr':'**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+         'prompt':'**Opsi B — Zava Electronics Customer Liaison Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /SEMI_03_MITI_Brief_Pack.docx dan /SEMI_05_Customer_Holding_Lines.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'},
+        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
+         'prompt':'**Opsi C — Zava Electronics Capex Reprioritisation Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /SEMI_01_BIS_SKU_Exposure.xlsx, /SEMI_02_Customer_Concentration_Heatmap.xlsx, /SEMI_03_MITI_Brief_Pack.docx, /SEMI_04_Capex_Reprioritisation.xlsx, /SEMI_05_Customer_Holding_Lines.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'},
+        {'instr':'**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+         'prompt':'Berikan versi 60 detik dari situasi US BIS export-control update, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'},
+        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+         'prompt':'Bagikan ke ExCo Zava Electronics MY (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan US BIS export-control update melalui agent ini selama 90 hari ke depan."'}
+      ],
+      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
+      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+    ],
+    companyID='Zava Electronics MY',
+    taglineID='Update US BIS export-control — 14 customer SKU berisiko, brief MITI dalam 7 hari.',
+    scenarioID='Zava Electronics MY mengoperasikan 4 pabrik assembly-and-test semikonduktor di Penang, Kulim, dan Melaka dengan hard-disk-drive heads, NAND flash packaging, dan IC substrates sebagai lini pendapatan inti (USD 1,9 miliar FY2025). US Bureau of Industry and Security memperbarui aturan export-control menambahkan 14 customer SKU ke register paparan Entity-List. MITI Malaysia meminta brief dalam 7 hari. Direktur Keuangan Grup butuh jadwal SKU at-risk yang terkuantifikasi, holding line per customer, memo guidance dari export-counsel AS, re-prioritisasi capex, dan narasi Komite Audit. Frame customer riil: grup ini beroperasi serupa dengan Western Digital Penang, Micron, Inari Amertron, ESCATEC, dan Pentamaster.',
+    relevantDepts=['dept-finance','dept-strategy','dept-legal','dept-operations','dept-risk','dept-procurement'],
+    personas=[
+      {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group Sustainability & Risk Director','roleID':'Direktur Keberlanjutan & Risiko Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+    ],
+    storyboard=[
+      {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
+       'summary':'Frame the US BIS export-control update situation and pull peer playbooks before the regulator clock starts ticking.',
+       'summaryID':'Bingkai situasi US BIS export-control update dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+       'tasks':[
+         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+      {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
+       'summary':'Quantify US BIS export-control update financial and operational impact; build an AC dashboard.',
+       'summaryID':'Kuantifikasi dampak finansial dan operasional US BIS export-control update; bangun dashboard KA.',
+       'tasks':[
+         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+      {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
+       'summary':'Brief operating heads, capture the BIS Export-Control War Room recap, and assemble the AC deck and regulator response.',
+       'summaryID':'Brief kepala operasi, capture recap BIS Export-Control War Room, dan rakit deck KA serta respons regulator.',
+       'tasks':[
+         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+      {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
+       'summary':'Wrap the US BIS export-control update playbook into a reusable agent for the Zava Electronics MY operating team.',
+       'summaryID':'Bungkus playbook US BIS export-control update ke dalam agent reusable untuk tim operasi Zava Electronics MY.',
+       'tasks':[
+         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+    ],
+    geo='MY'
+))
+
+
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  7.  RARE-EARTH & METALS                                        ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+INDUSTRIES_10.append(ind(
+    'rare-earth', 'sec-mining', 'Rare-Earth & Metals', '⛏️', '#B45309', '#78350F',
+    'Zava Rare Earth',
+    'JAEC environmental approval renewal + China REE export curb — Bursa update in 14 days.',
+    "Zava Rare Earth operates an integrated heavy rare-earth concentrate plant in Pahang and a downstream separation facility in Gebeng producing neodymium, dysprosium, and terbium oxides for global EV magnet and wind-turbine customers. The Atomic Energy Licensing Board (AELB) environmental-approval renewal is due in 90 days; civil-society stakeholders have raised TENORM-residue concerns. China's MOFCOM has tightened REE export licensing in parallel, lifting global pricing 28% in 4 weeks. Bursa Malaysia expects an operational update in 14 days. The Group CFO needs the JAEC/AELB technical narrative, civil-society engagement plan, customer pricing pass-through analysis, and Bursa disclosure all coordinated. Real customer reference frame: this group operates similarly to Lynas Malaysia and MMC Corp Mining.",
+    ['RE_01_AELB_Compliance_Tracker.xlsx', 'RE_02_TENORM_Residue_Inventory.xlsx', 'RE_03_Civil_Society_Engagement.docx', 'RE_04_Customer_Pricing_Model.xlsx', 'RE_05_Bursa_Operational_Update.docx'],
+    [
+      tool(T_CHAT, FREE_LIC, FREE_ACCT, [
+        {'instr':'', 'prompt':'Goal: Frame the AELB renewal + China REE export curb situation in plain English for the Group CEO. Context: Zava Rare Earth operates an integrated heavy rare-earth concentrate plant in Pahang and a downstream separation facility in Gebeng producing neodymium, dysprosium, and terbium oxides for global EV mag... Source: my notes from the morning crisis call. Expectation: 1-page note with sections — Headline, What Happened, Stakeholder Position, Top 5 Questions the Board Will Ask, 3 Decisions the CEO Must Take in 48 Hours. Tone: calm, precise, no industry jargon.'},
+        {'instr':'', 'prompt':'Goal: 90-second verbal opening for the Zava Rare Earth stakeholder briefing. Context: Audience is internal ExCo + key external stakeholders. Source: published facts only. Expectation: Open with acknowledgement, explain the response programme, signal credible recovery, end with 3 commitments. Avoid speculative language.'},
+        {'instr':'', 'prompt':'Goal: Build the stakeholder communication map for the AELB renewal + China REE export curb. Context: regulator clock active. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'}
+      ], DESC_CHAT,
+      promptsID=[
+        {'instr':'', 'prompt':'Tujuan: Bingkai situasi AELB renewal + China REE export curb dalam bahasa sederhana untuk Direktur Utama Grup. Konteks: Zava Rare Earth mengoperasikan pabrik konsentrat heavy rare-earth terintegrasi di Pahang dan fasilitas separation hilir di Gebeng yang memproduksi neodymium, dysprosium, dan terbium oxides untuk custo... Sumber: catatan saya dari rapat krisis pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline, Apa yang Terjadi, Posisi Pemangku Kepentingan, 5 Pertanyaan Direksi, 3 Keputusan Direktur Utama dalam 48 Jam. Nada: tenang, presisi, hindari jargon industri.'},
+        {'instr':'', 'prompt':'Tujuan: Pembukaan lisan 90 detik untuk briefing pemangku kepentingan Zava Rare Earth. Konteks: Audiens ExCo internal + pemangku kepentingan eksternal kunci. Sumber: hanya fakta yang sudah dipublikasi. Ekspektasi: Buka dengan pengakuan, jelaskan program respons, beri sinyal pemulihan kredibel, akhiri dengan 3 komitmen. Hindari bahasa spekulatif.'},
+        {'instr':'', 'prompt':'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk AELB renewal + China REE export curb. Konteks: clock regulator aktif. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'}
+      ],
+      persona=['Sasha Ouellet','Mod Admin','Hadar Caspit'],
+      personaID=['Sasha Ouellet','Mod Admin','Hadar Caspit']),
+
+      tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+         'prompt':'Goal: Benchmark how peers (Lynas Malaysia, MMC Corp Mining, Iluka Resources, Northern Minerals) handled comparable AELB renewal + China REE export curb events between 2020 and 2025. Context: Zava Rare Earth must respond to its regulator imminently. Source: peer disclosures, regulator filings, industry press. Expectation: For each peer, identify trigger, response timeline, programme adopted, share-price recovery 12 months later. Critique each source. Cite all with publication date. Output as comparison table.'},
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+         'prompt':'Goal: 3 most defensible response playbooks for Zava Rare Earth hit by AELB renewal + China REE export curb. Context: must protect regulator standing AND customer trust AND financial position concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent, Implementation Risk.'}
+      ], DESC_RESEARCHER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+         'prompt':'Tujuan: Benchmark bagaimana peer (Lynas Malaysia, MMC Corp Mining, Iluka Resources, Northern Minerals) menangani peristiwa AELB renewal + China REE export curb sebanding antara 2020 hingga 2025. Konteks: Zava Rare Earth harus respons ke regulator segera. Sumber: pengungkapan peer, filing regulator, pers industri. Ekspektasi: Untuk tiap peer identifikasi pemicu, timeline respons, program yang diadopsi, pemulihan harga saham 12 bulan kemudian. Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'},
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+         'prompt':'Tujuan: 3 playbook respons paling defensible untuk Zava Rare Earth yang terkena AELB renewal + China REE export curb. Konteks: harus melindungi posisi regulator DAN kepercayaan customer DAN posisi finansial sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat, tandai mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN, Risiko Implementasi.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin']),
+
+      tool(T_ANALYST, M365_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /RE_01_AELB_Compliance_Tracker.xlsx AND /RE_04_Customer_Pricing_Model.xlsx. Paste the prompt below.',
+         'prompt':'Goal: Quantify the AELB renewal + China REE export curb financial and operational impact. Context: Group ExCo needs an evidence-based view in 48 hours. Source: the 2 uploaded files. Expectation: (1) RAG bar chart of at-risk items by severity; (2) waterfall of MYR EBITDA impact; (3) tracker by stakeholder/segment, flag worst <10% headroom as Red. Output a Board-ready RAG dashboard.'}
+      ], DESC_ANALYST,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /RE_01_AELB_Compliance_Tracker.xlsx DAN /RE_04_Customer_Pricing_Model.xlsx. Tempel prompt.',
+         'prompt':'Tujuan: Kuantifikasi dampak finansial dan operasional dari AELB renewal + China REE export curb. Konteks: ExCo Grup butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah. Ekspektasi: (1) Bar chart RAG item at-risk berdasarkan severity; (2) waterfall dampak EBITDA RM; (3) tracker per stakeholder/segmen, tandai headroom terburuk <10% Merah. Hasilkan dashboard RAG siap-Direksi.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_EXCEL, M365_LIC, M365_ACCT, [
+        {'instr':'Open `/RE_01_AELB_Compliance_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: Build a single Audit-Committee-ready dashboard sheet. Context: Audit Committee meets in the next 14 days. Source: combine all relevant tabs. Expectation: New sheet "AC Dashboard" with KPI tiles, bar chart by severity, sparkline column. RAG conditional formatting. Do not modify source tabs.'}
+      ], '',
+      promptsID=[
+        {'instr':'Buka `/RE_01_AELB_Compliance_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun satu sheet dashboard siap-Komite Audit. Konteks: Komite Audit rapat dalam 14 hari ke depan. Sumber: gabungkan semua tab yang relevan. Ekspektasi: Sheet baru "AC Dashboard" dengan KPI tile, bar chart per severity, kolom sparkline. Format kondisional RAG. Jangan modifikasi tab sumber.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_WORD, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /RE_03_Civil_Society_Engagement.docx and /RE_05_Bursa_Operational_Update.docx using `/`. Paste the prompt below.',
+         'prompt':'Goal: Draft the regulator-grade response brief (4 pages). Context: AELB renewal + China REE export curb active. Source: the referenced docs + my notes. Expectation: Sections — Material Facts, Current Status, Programme, Financial Impact Range, Forward-Looking Statements with explicit risk language. Tone: factual, regulator-grade, no speculation. Cite source files at the end of each section.'}
+      ], DESC_WORD,
+      promptsID=[
+        {'instr':'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /RE_03_Civil_Society_Engagement.docx dan /RE_05_Bursa_Operational_Update.docx menggunakan `/`. Tempel prompt.',
+         'prompt':'Tujuan: Susun brief respons regulator-grade (4 halaman). Konteks: AELB renewal + China REE export curb aktif. Sumber: dokumen yang direferensikan + catatan saya. Ekspektasi: Bagian — Fakta Material, Status Saat Ini, Program, Rentang Dampak Finansial, Pernyataan Forward-Looking dengan bahasa risiko eksplisit. Nada: faktual, regulator-grade, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_PPT, M365_LIC, M365_ACCT, [
+        {'instr':'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on AELB renewal + China REE export curb. Context: AC in 14 days. Source: my brief draft and dashboard. Expectation: Cover; Situation; Status (RAG); Programme (2 slides); Financial Impact; Stakeholder Map; Decisions Requested. Brand colours #B45309 + #0F1C3F, 1 chart per slide.'}
+      ], DESC_PPT,
+      promptsID=[
+        {'instr':'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang AELB renewal + China REE export curb. Konteks: KA dalam 14 hari. Sumber: draf brief dan dashboard saya. Ekspektasi: Cover; Situasi; Status (RAG); Program (2 slide); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang Diminta. Warna brand #B45309 + #0F1C3F, 1 chart per slide.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_OUTLOOK, M365_LIC, M365_ACCT, [
+        {'instr':'Open Outlook on the Web. Open the email thread "AELB renewal + China REE export curb — Group CFO follow-up". Click the **Copilot icon**. Paste the prompt below.',
+         'prompt':'Goal: Draft a single email to the Zava Rare Earth ExCo and the relevant operating heads. Context: AELB renewal + China REE export curb active. Source: the email thread above and the response programme. Expectation: Subject line, 4 short paragraphs covering — situation, the 3 actions each operating head must complete in 72 hours, the regulator-engagement workstream, the AC date. Tone: firm, supportive, accountable.'}
+      ], DESC_OUTLOOK,
+      promptsID=[
+        {'instr':'Buka Outlook on the Web. Buka thread email "AELB renewal + China REE export curb — tindak lanjut Direktur Keuangan Grup". Klik **ikon Copilot**. Tempel prompt.',
+         'prompt':'Tujuan: Susun satu email ke ExCo Zava Rare Earth dan kepala operasi yang relevan. Konteks: AELB renewal + China REE export curb aktif. Sumber: thread di atas dan program respons. Ekspektasi: Baris subjek, 4 paragraf pendek — situasi, 3 aksi per kepala operasi dalam 72 jam, workstream engagement regulator, tanggal KA. Nada: tegas, suportif, akuntabel.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_TEAMS, M365_LIC, M365_ACCT, [
+        {'instr':'**(1) In Teams**, open **Calendar** → click the past meeting **"AELB Renewal War Room"**. On the Recap page, walk the audience through **AI Notes**, **Custom summary** (Speaker summary template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+         'prompt':'Create meeting minutes for the Teams meeting /AELB Renewal War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote attendees verbatim where wording matters. Flag any decision linked to AELB renewal + China REE export curb as Critical Path. Save as Minutes_AELB_Renewal_War_Room.docx.'}
+      ], '',
+      promptsID=[
+        {'instr':'**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"AELB Renewal War Room"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker summary), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+         'prompt':'Buat notulen rapat untuk rapat Teams /AELB Renewal War Room. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip peserta secara harfiah jika redaksinya penting. Tandai keputusan terkait AELB renewal + China REE export curb sebagai Critical Path. Simpan sebagai Notulen_AELB_Renewal_War_Room.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_NOTEBOOK, M365_LIC, M365_ACCT, [
+        {'instr':'All sources are loaded. Type the prompt below in the notebook chat.',
+         'prompt':'Synthesise across all sources to produce a 10-bullet Audit Committee narrative. Cover: AELB renewal + China REE export curb status, programme, financial impact, stakeholder map, decisions requested. Cite the source file at the end of every bullet.'},
+        {'instr':'Click **Quick Create** > **Audio Overview** to generate a 6-minute briefing podcast.',
+         'prompt':'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the AC narrative above. Listeners are the Zava Rare Earth operating heads preparing for tomorrow morning huddles.'}
+      ], DESC_NOTEBOOK,
+      promptsID=[
+        {'instr':'Semua sumber sudah dimuat. Ketik prompt di bawah pada chat notebook.',
+         'prompt':'Sintesakan dari semua sumber untuk menghasilkan narasi Komite Audit 10-bullet. Cakup: status AELB renewal + China REE export curb, program, dampak finansial, peta pemangku kepentingan, keputusan yang diminta. Kutip file sumber di akhir tiap bullet.'},
+        {'instr':'Klik **Quick Create** > **Audio Overview** untuk menghasilkan podcast briefing 6 menit.',
+         'prompt':'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi KA di atas. Pendengar adalah kepala operasi Zava Rare Earth yang menyiapkan huddle pagi besok.'}
+      ],
+      persona=['Mod Admin','Mod Admin'],
+      personaID=['Mod Admin','Mod Admin'],
+      notebookMeta={
+        'sources':['/RE_01_AELB_Compliance_Tracker.xlsx', '/RE_02_TENORM_Residue_Inventory.xlsx', '/RE_03_Civil_Society_Engagement.docx', '/RE_04_Customer_Pricing_Model.xlsx', '/RE_05_Bursa_Operational_Update.docx'],
+        'instructions':'You are the Group CFO of Zava Rare Earth preparing an Audit Committee pack on AELB renewal + China REE export curb. Always cite the source file and tab/section. Tone: precise, regulator-grade, no speculation. Use MYR for the Group totals (1 MYR ≈ 3,580 IDR).',
+        'instructionsID':'Anda adalah Direktur Keuangan Grup Zava Rare Earth yang menyiapkan paket Komite Audit untuk AELB renewal + China REE export curb. Selalu kutip file sumber dan tab/bagian. Nada: presisi, regulator-grade, tanpa spekulasi. Gunakan MYR untuk total Grup (1 MYR ≈ 3.580 IDR).'
+      }),
+
+      tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft` > Agents > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+         'prompt':'Cowork — AELB + China REE 14-Day Sprint. Run these in parallel: (1) 📝 Draft Word — regulator response brief 4 pages, source /RE_01_AELB_Compliance_Tracker.xlsx, /RE_02_TENORM_Residue_Inventory.xlsx, /RE_03_Civil_Society_Engagement.docx, /RE_04_Customer_Pricing_Model.xlsx, /RE_05_Bursa_Operational_Update.docx. (2) 📝 Draft Word — internal ExCo briefing memo 2 pages, same sources. (3) ✉️ Send email to Zava Rare Earth ExCo and operating heads with the 3 actions in 72h. (4) 📅 Schedule 90-min AC Pre-Read tomorrow 8am MYT. (5) 💬 Post Teams message to #group-exco with one-line headline + dashboard link.'}
+      ], DESC_COWORK,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft` > Agents > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+         'prompt':'Cowork — AELB + China REE 14-Day Sprint. Jalankan paralel: (1) 📝 Susun Word — brief respons regulator 4 halaman, sumber /RE_01_AELB_Compliance_Tracker.xlsx, /RE_02_TENORM_Residue_Inventory.xlsx, /RE_03_Civil_Society_Engagement.docx, /RE_04_Customer_Pricing_Model.xlsx, /RE_05_Bursa_Operational_Update.docx. (2) 📝 Susun Word — memo briefing ExCo internal 2 halaman, sumber sama. (3) ✉️ Kirim email ke ExCo Zava Rare Earth dan kepala operasi dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan AC Pre-Read 90 menit besok 08:00 WIB. (5) 💬 Posting pesan Teams di #group-exco dengan headline satu baris + tautan dashboard.'}
+      ],
+      persona=['Mod Admin'],
+      personaID=['Mod Admin']),
+
+      tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+         'prompt':'Goal: Generate a 4-page CFO Crisis Brief in Word. Context: AELB renewal + China REE export curb. Source: /RE_01_AELB_Compliance_Tracker.xlsx AND /RE_04_Customer_Pricing_Model.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status; Programme; Financial Impact; Stakeholder Map; Decisions requested. Tone: precise, regulator-grade. Save as AELB_Bursa_Brief.docx.'}
+      ], DESC_WORD_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+         'prompt':'Tujuan: Hasilkan Brief Krisis Direktur Keuangan 4 halaman dalam Word. Konteks: AELB renewal + China REE export curb. Sumber: /RE_01_AELB_Compliance_Tracker.xlsx DAN /RE_04_Customer_Pricing_Model.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini; Program; Dampak Finansial; Peta Pemangku Kepentingan; Keputusan yang diminta. Nada: presisi, regulator-grade. Simpan sebagai Brief_AELB_Bursa.docx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+         'prompt':'Goal: 8-slide Audit Committee deck on AELB renewal + China REE export curb. Context: AC in 14 days. Source: /AELB_Bursa_Brief.docx and /RE_01_AELB_Compliance_Tracker.xlsx. Expectation: Cover; Situation; Status RAG; Programme (2); Financial Impact; Stakeholder Map; Decisions. Brand #B45309 + #0F1C3F, 1 chart/slide. Save as AELB_AC_Deck.pptx.'}
+      ], DESC_PPT_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Deck 8 slide Komite Audit tentang AELB renewal + China REE export curb. Konteks: KA dalam 14 hari. Sumber: /Brief_AELB_Bursa.docx dan /RE_01_AELB_Compliance_Tracker.xlsx. Ekspektasi: Cover; Situasi; Status RAG; Program (2); Dampak Finansial; Peta Pemangku Kepentingan; Keputusan. Brand #B45309 + #0F1C3F, 1 chart/slide. Simpan sebagai Deck_KA_AELB.pptx.'}
+      ],
+      persona=['Sasha Ouellet'],
+      personaID=['Sasha Ouellet']),
+
+      tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+         'prompt':'Goal: Build a AELB renewal + China REE export curb response control tracker workbook. Context: Operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 Issue Log, Sheet 2 Programme Milestones, Sheet 3 Cost Tracker, Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as AELB_Compliance_Tracker.xlsx.'}
+      ], DESC_XL_AGT,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+         'prompt':'Tujuan: Bangun workbook tracker kendali respons AELB renewal + China REE export curb. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Log Isu, Sheet 2 Milestone Program, Sheet 3 Tracker Biaya, Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Kepatuhan_AELB.xlsx.'}
+      ],
+      persona=['Hadar Caspit'],
+      personaID=['Hadar Caspit']),
+
+      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
+        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+         'prompt':'**Option A — Zava Rare Earth Regulator Liaison Agent.** Build an agent for the Group COO and the operating heads to drive the AELB renewal + China REE export curb response programme to closure. Ground every answer on /RE_01_AELB_Compliance_Tracker.xlsx AND /RE_04_Customer_Pricing_Model.xlsx and the regulator filing. Always cite file and section. Classify each issue as Closed / On-Track / Delayed. Tone: precise, regulator-grade. Starter prompts: (1) Which issues are at risk of slipping; (2) What is the day-by-day plan; (3) Draft the regulator narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the AC.'},
+        {'instr':'**Option B — alternative agent.** Same flow, different specialisation.',
+         'prompt':'**Option B — Zava Rare Earth Customer Pricing Agent.** Build an agent for the Head of IR and the Group CFO to handle stakeholder questions over 30 days post-event. Ground every answer on /RE_03_Civil_Society_Engagement.docx and /RE_05_Bursa_Operational_Update.docx. Always cite section. Filter every answer through Bursa disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word analyst answer on FY2026 guidance; (2) Holding line for media; (3) Recovery roadmap summary; (4) 60-second EBITDA bridge; (5) Build IR Q&A pack.'},
+        {'instr':'**Option C — alternative agent.** Same flow.',
+         'prompt':'**Option C — Zava Rare Earth Civil Society Engagement Agent.** Build an agent for the Group Sustainability Officer / Risk team to handle the long-tail engagement programme. Ground every answer on /RE_01_AELB_Compliance_Tracker.xlsx, /RE_02_TENORM_Residue_Inventory.xlsx, /RE_03_Civil_Society_Engagement.docx, /RE_04_Customer_Pricing_Model.xlsx, /RE_05_Bursa_Operational_Update.docx. Always cite section. Classify each engagement as Closed / In Progress / Awaiting External Verifier. Tone: factual, no admission of unproven facts. Starter prompts: (1) Status of programme milestones; (2) Draft holding line; (3) Build a weekly dashboard; (4) Summarise external auditor next steps; (5) Give me the 60-second update.'},
+        {'instr':'**Test.** Validate grounding, citations, GCSE framework, and scope.',
+         'prompt':'Give me the 60-second version of the AELB renewal + China REE export curb situation, the 3 worst issues, the response programme, and the decisions I must take to the AC in 14 days. Cite the file and section for every paragraph. Use the GCSE framework where relevant.'},
+        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+         'prompt':'Share with the Zava Rare Earth ExCo (Group CEO, CFO, COO, Strategy, Sustainability Officer, Comms, operating heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every AELB renewal + China REE export curb question through it for the next 90 days."'}
+      ], DESC_BUILDER,
+      promptsID=[
+        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+         'prompt':'**Opsi A — Zava Rare Earth Regulator Liaison Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala operasi untuk mendorong program respons AELB renewal + China REE export curb hingga ditutup. Dasarkan pada /RE_01_AELB_Compliance_Tracker.xlsx DAN /RE_04_Customer_Pricing_Model.xlsx dan filing regulator. Selalu kutip file dan bagian. Klasifikasikan tiap isu sebagai Closed / On-Track / Delayed. Nada: presisi, regulator-grade. Starter prompt: (1) Isu mana yang berisiko slip; (2) Apa rencana harian; (3) Susun naratif regulator; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk KA.'},
+        {'instr':'**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
+         'prompt':'**Opsi B — Zava Rare Earth Customer Pricing Agent.** Bangun agent untuk Kepala IR dan Direktur Keuangan Grup untuk menangani pertanyaan pemangku kepentingan 30 hari setelah peristiwa. Dasarkan pada /RE_03_Civil_Society_Engagement.docx dan /RE_05_Bursa_Operational_Update.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan pengungkapan Bursa. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban analis 200 kata mengenai panduan FY2026; (2) Holding line untuk media; (3) Rangkum roadmap pemulihan; (4) Bridge EBITDA 60 detik; (5) Bangun pack Q&A IR.'},
+        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
+         'prompt':'**Opsi C — Zava Rare Earth Civil Society Engagement Agent.** Bangun agent untuk Sustainability Officer Grup / tim Risiko untuk menangani program engagement long-tail. Dasarkan pada /RE_01_AELB_Compliance_Tracker.xlsx, /RE_02_TENORM_Residue_Inventory.xlsx, /RE_03_Civil_Society_Engagement.docx, /RE_04_Customer_Pricing_Model.xlsx, /RE_05_Bursa_Operational_Update.docx. Selalu kutip bagian. Klasifikasikan tiap engagement sebagai Closed / In Progress / Menunggu Verifier Eksternal. Nada: faktual, tidak mengakui fakta yang belum terbukti. Starter prompt: (1) Status milestone program; (2) Susun holding line; (3) Bangun dashboard mingguan; (4) Rangkum next step auditor eksternal; (5) Berikan update 60 detik.'},
+        {'instr':'**Uji.** Validasi grounding, kutipan, framework GCSE, dan cakupan.',
+         'prompt':'Berikan versi 60 detik dari situasi AELB renewal + China REE export curb, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke KA dalam 14 hari. Kutip file dan bagian untuk tiap paragraf. Gunakan framework GCSE bila relevan.'},
+        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+         'prompt':'Bagikan ke ExCo Zava Rare Earth (Direktur Utama Grup, Direktur Keuangan, Direktur Operasional, Strategi, Sustainability Officer, Komunikasi, kepala operasi) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan AELB renewal + China REE export curb melalui agent ini selama 90 hari ke depan."'}
+      ],
+      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
+      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+    ],
+    companyID='Zava Rare Earth',
+    taglineID='Pembaruan persetujuan lingkungan JAEC + curb ekspor REE Tiongkok — update Bursa dalam 14 hari.',
+    scenarioID='Zava Rare Earth mengoperasikan pabrik konsentrat heavy rare-earth terintegrasi di Pahang dan fasilitas separation hilir di Gebeng yang memproduksi neodymium, dysprosium, dan terbium oxides untuk customer magnet EV dan turbin angin global. Pembaruan persetujuan lingkungan Atomic Energy Licensing Board (AELB) jatuh tempo dalam 90 hari; pemangku kepentingan masyarakat sipil mengangkat kekhawatiran residu TENORM. MOFCOM Tiongkok memperketat lisensi ekspor REE secara paralel, mendorong pricing global naik 28% dalam 4 minggu. Bursa Malaysia mengharapkan update operasional dalam 14 hari. Direktur Keuangan Grup butuh narasi teknis JAEC/AELB, rencana engagement masyarakat sipil, analisis pricing pass-through customer, dan pengungkapan Bursa semuanya terkoordinasi. Frame customer riil: grup ini beroperasi serupa dengan Lynas Malaysia dan MMC Corp Mining.',
+    relevantDepts=['dept-finance','dept-strategy','dept-esg','dept-legal','dept-operations','dept-risk','dept-corpsec'],
+    personas=[
+      {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group Sustainability & Risk Director','roleID':'Direktur Keberlanjutan & Risiko Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+    ],
+    storyboard=[
+      {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
+       'summary':'Frame the AELB renewal + China REE export curb situation and pull peer playbooks before the regulator clock starts ticking.',
+       'summaryID':'Bingkai situasi AELB renewal + China REE export curb dan tarik playbook peer sebelum clock regulator mulai berdetak.',
+       'tasks':[
+         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+      {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
+       'summary':'Quantify AELB renewal + China REE export curb financial and operational impact; build an AC dashboard.',
+       'summaryID':'Kuantifikasi dampak finansial dan operasional AELB renewal + China REE export curb; bangun dashboard KA.',
+       'tasks':[
+         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+      {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
+       'summary':'Brief operating heads, capture the AELB Renewal War Room recap, and assemble the AC deck and regulator response.',
+       'summaryID':'Brief kepala operasi, capture recap AELB Renewal War Room, dan rakit deck KA serta respons regulator.',
+       'tasks':[
+         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+      {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
+       'summary':'Wrap the AELB renewal + China REE export curb playbook into a reusable agent for the Zava Rare Earth operating team.',
+       'summaryID':'Bungkus playbook AELB renewal + China REE export curb ke dalam agent reusable untuk tim operasi Zava Rare Earth.',
+       'tasks':[
+         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+    ],
+    geo='MY'
+))

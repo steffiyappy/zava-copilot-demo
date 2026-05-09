@@ -11,13 +11,15 @@ from ind_batch6 import INDUSTRIES_6
 from ind_batch7 import INDUSTRIES_7
 from ind_batch8 import INDUSTRIES_8
 from ind_batch9 import INDUSTRIES_9
+from ind_batch10 import INDUSTRIES_10
 from dept_data  import DEPARTMENTS
 from dept_data2 import DEPARTMENTS_2
 from dept_data3 import DEPARTMENTS_3
 from dept_data4 import DEPARTMENTS_4
 
 all_industries = (INDUSTRIES_1 + INDUSTRIES_2 + INDUSTRIES_3 + INDUSTRIES_4 +
-                  INDUSTRIES_5 + INDUSTRIES_6 + INDUSTRIES_7 + INDUSTRIES_8 + INDUSTRIES_9)
+                  INDUSTRIES_5 + INDUSTRIES_6 + INDUSTRIES_7 + INDUSTRIES_8 +
+                  INDUSTRIES_9 + INDUSTRIES_10)
 all_departments = DEPARTMENTS + DEPARTMENTS_2 + DEPARTMENTS_3 + DEPARTMENTS_4
 
 print(f"Industries: {len(all_industries)}, Departments: {len(all_departments)}")
@@ -27,7 +29,7 @@ WHATS_NEW = [
         "id": "wn-researcher",
         "title": "🔍 Researcher \u2014 Critique + Model Council",
         "badge": "New rollout (May 2026)",
-        "summary": "Two demo modes inside Researcher: (1) Critique Mode self-critiques every source and flags claims it cannot verify; (2) Model Council convenes GPT-5.5 Thinking + Claude Opus 4.7 + Gemini in a multi-model debate and surfaces dissent across the panel.",
+        "summary": "Two demo modes inside Researcher: (1) Critique Mode self-critiques every source and flags claims it cannot verify; (2) Model Council convenes GPT-5.5 Thinking + Claude Opus 4.7 + Claude Sonnet 4.7 each return a full independent report, then a synthesis cover letter highlights where they agree, where they differ, and any unique findings.",
         "tip": "m365.cloud.microsoft/chat > Agents > Researcher > switch the mode pill at the top to 'Critique' or 'Model Council'.",
         "license": "M365_LIC"
     },
@@ -83,7 +85,7 @@ WHATS_NEW = [
         "id": "wn-models",
         "title": "🧠 Frontier Model Picker",
         "badge": "May 2026 rollout",
-        "summary": "Switch the underlying frontier model for any chat or agent: GPT-5.5 Instant, GPT-5.5 Thinking, Claude Opus 4.7, Gemini Ultra, ChatGPT Images 2.0. Use Thinking models for board-grade reasoning; Instant for fast triage.",
+        "summary": "Switch the underlying frontier model for any chat or agent: GPT-5.5 Instant, GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7, ChatGPT Images 2.0. Use Thinking models for board-grade reasoning; Instant for fast triage.",
         "tip": "In any Copilot Chat thread, click the model pill at the top \u2014 try 'GPT-5.5 Thinking' for the Strategy/Risk briefs; 'Claude Opus 4.7' for nuanced legal/policy drafting.",
         "license": "M365_LIC"
     }
@@ -91,13 +93,14 @@ WHATS_NEW = [
 
 SECTORS = [
     {"id": "sec-general",    "label": "⭐ Start Here",     "industries": ["general"]},
-    {"id": "sec-banking",    "label": "Banking",           "industries": ["commercial-banking","islamic-banking","investment-banking"]},
+    {"id": "sec-banking",    "label": "Banking",           "industries": ["commercial-banking","islamic-banking","investment-banking","mortgage-finance"]},
     {"id": "sec-insurance",  "label": "Insurance",         "industries": ["general-insurance","life-insurance","takaful"]},
-    {"id": "sec-fintech",    "label": "Fintech",           "industries": ["fintech-payments"]},
+    {"id": "sec-fintech",    "label": "Fintech",           "industries": ["fintech-payments","cross-border-remittance"]},
     {"id": "sec-healthcare", "label": "Healthcare",        "industries": ["hospital-network","pharmaceutical"]},
     {"id": "sec-og",         "label": "Oil & Gas",         "industries": ["og-upstream","og-downstream"]},
     {"id": "sec-energy",     "label": "Energy",            "industries": ["renewable-energy"]},
-    {"id": "sec-mfg",        "label": "Manufacturing",     "industries": ["industrial-manufacturing","construction"]},
+    {"id": "sec-mfg",        "label": "Manufacturing",     "industries": ["industrial-manufacturing","rubber-gloves","semiconductor","auto-tyres","construction"]},
+    {"id": "sec-food",       "label": "Food & FMCG",       "industries": ["food-fmcg"]},
     {"id": "sec-agri",       "label": "Agriculture",       "industries": ["plantation"]},
     {"id": "sec-bpo",        "label": "BPO & Tech",        "industries": ["bpo-services"]},
     {"id": "sec-telco",      "label": "Telco",             "industries": ["telco"]},
@@ -107,7 +110,7 @@ SECTORS = [
     {"id": "sec-re",         "label": "Real Estate",       "industries": ["property-reit"]},
     {"id": "sec-logistics",  "label": "Logistics",         "industries": ["logistics-3pl"]},
     {"id": "sec-aviation",   "label": "Aviation",          "industries": ["aviation-airports"]},
-    {"id": "sec-mining",     "label": "Mining",            "industries": ["coal-mining"]},
+    {"id": "sec-mining",     "label": "Mining",            "industries": ["coal-mining","rare-earth"]},
     {"id": "sec-retail",     "label": "Retail",            "industries": ["retail-grocery"]},
     {"id": "sec-hospitality","label": "Hospitality",       "industries": ["hotel-resort"]},
     {"id": "sec-media",      "label": "Media",             "industries": ["media-entertainment"]},
