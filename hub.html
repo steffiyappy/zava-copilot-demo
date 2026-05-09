@@ -31,12 +31,14 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .layout{display:flex;min-height:calc(100vh - 56px)}
 /* SIDEBAR */
 .sidebar{
-  width:var(--sidebar);background:#FFFFFF;border-right:1px solid var(--border);
+  width:var(--sidebar);background:rgba(255,255,255,0.92);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);border-right:1px solid var(--border);
   position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column;
 }
 .sidebar-tabs{display:flex;border-bottom:2px solid var(--border);flex-shrink:0}
 .sidebar-tab{flex:1;padding:12px 0;text-align:center;font-size:12px;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s}
-.sidebar-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+.sidebar-tab.active{color:var(--blue);border-bottom-color:var(--blue);position:relative}
+.sidebar-tab.active::after{content:'';position:absolute;left:20%;right:20%;bottom:-2px;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);animation:slideUnderline 0.3s ease}
+@keyframes slideUnderline{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
 .sidebar-panel{display:none;flex:1;overflow-y:auto}
 .sidebar-panel.active{display:block}
 .sidebar-section{padding:12px 0 6px}
@@ -147,21 +149,60 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .tool-license.basic{background:#F0FDF4;color:#16A34A}
 .tool-chevron{color:var(--muted);transition:transform 0.2s;font-size:12px}
 .tool-header.open .tool-chevron{transform:rotate(180deg)}
-.tool-prompts{display:none;border:1px solid var(--blue);border-top:none;border-bottom-left-radius:10px;border-bottom-right-radius:10px;overflow:hidden}
+.tool-prompts{display:none;border:1px solid var(--blue);border-top:none;border-bottom-left-radius:10px;border-bottom-right-radius:10px;overflow:hidden;background:#FFFFFF}
 .tool-prompts.open{display:block}
-.prompt-item{padding:13px 15px;border-bottom:1px solid #F1F5F9;cursor:pointer;transition:background 0.15s;position:relative}
+.prompt-item{padding:14px 16px 12px;border-bottom:1px solid #F1F5F9;transition:background 0.15s;position:relative}
 .prompt-item:last-child{border-bottom:none}
 .prompt-item:hover{background:#F8FAFC}
-.prompt-item:hover .copy-btn{opacity:1}
-.prompt-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px}
-.prompt-text{font-size:12px;color:#2D3748;line-height:1.7;white-space:pre-wrap;background:#F8FAFC;border-left:3px solid #0078D4;padding:11px 13px;border-radius:0 8px 8px 0;margin:6px 0 10px}
+.prompt-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+/* INSTR panel — sits ABOVE the copyable prompt; not copyable */
+.prompt-instr{font-size:11.5px;color:#475569;line-height:1.6;background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #94A3B8;padding:9px 12px;border-radius:0 6px 6px 0;margin:4px 0 8px;white-space:pre-wrap}
+.prompt-instr-label{font-size:9.5px;font-weight:800;color:#475569;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;display:flex;align-items:center;gap:5px}
+.prompt-text{font-size:12px;color:#1A1A2E;line-height:1.7;white-space:pre-wrap;background:#EEF4FF;border-left:3px solid #0078D4;padding:11px 13px;border-radius:0 8px 8px 0;margin:6px 0 8px;font-weight:500}
+.prompt-text-label{font-size:9.5px;font-weight:800;color:#0078D4;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;display:flex;align-items:center;gap:5px}
+/* Copy button — flow-positioned BELOW the prompt (no longer overlapping text) */
+.prompt-actions{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:6px}
 .copy-btn{
-  position:absolute;right:12px;top:50%;transform:translateY(-50%);
   background:var(--blue);color:#FFFFFF;border:none;border-radius:6px;
-  padding:4px 9px;font-size:10px;font-weight:700;cursor:pointer;
-  opacity:0;transition:opacity 0.2s;font-family:inherit;
+  padding:6px 14px;font-size:11px;font-weight:700;cursor:pointer;
+  transition:all 0.2s;font-family:inherit;display:inline-flex;align-items:center;gap:5px;
 }
-.copy-btn:hover{background:#005EA6}
+.copy-btn:hover{background:#005EA6;transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,120,212,0.3)}
+.copy-btn:active{transform:translateY(0)}
+.copy-btn:focus-visible{outline:3px solid rgba(0,120,212,0.4);outline-offset:2px}
+/* Cowork actions list (5 numbered parallel sub-tasks on separate lines) */
+.cowork-actions{background:linear-gradient(135deg,#FFF7ED,#FFEDD5);border:1px solid #FED7AA;border-radius:8px;padding:10px 14px;margin:0 0 10px}
+.cowork-actions-label{font-size:9.5px;font-weight:800;color:#9A3412;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.cowork-action-line{display:flex;align-items:flex-start;gap:9px;padding:6px 0;border-top:1px dashed rgba(154,52,18,0.18);font-size:12px;color:#451A03;line-height:1.55}
+.cowork-action-line:first-of-type{border-top:none;padding-top:2px}
+.cowork-action-num{font-weight:800;color:#9A3412;flex-shrink:0;min-width:18px}
+.cowork-action-icon{font-size:14px;flex-shrink:0;line-height:1.4}
+.cowork-action-text{flex:1;min-width:0}
+/* Notebook special block (sources + Instructions field) */
+.notebook-meta{background:linear-gradient(135deg,#F0F9FF,#E0F2FE);border:1px solid #BAE6FD;border-radius:8px;padding:11px 14px;margin:0 0 10px}
+.notebook-meta-label{font-size:9.5px;font-weight:800;color:#075985;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.notebook-sources{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.notebook-source-pill{background:#FFFFFF;border:1px solid #BAE6FD;border-radius:14px;padding:3px 10px;font-size:10.5px;color:#075985;font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.notebook-instr-row{font-size:11.5px;color:#0C4A6E;line-height:1.55;background:rgba(255,255,255,0.6);border-radius:6px;padding:8px 10px;margin-top:4px;border-left:2px solid #0EA5E9}
+.notebook-instr-row strong{color:#075985}
+/* Fluent polish — focus rings, hover lift, smooth motion */
+.ind-card,.dept-pill,.sb-task,.sb-ex,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
+.ind-card:focus-visible,.dept-pill:focus-visible,.sb-task:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
+.tool-header:active{transform:scale(0.995)}
+.sb-ex{transition:transform 0.2s ease,box-shadow 0.2s ease}
+.sb-ex:hover{transform:translateX(2px);box-shadow:-3px 0 0 var(--blue)}
+/* Persona avatar gradient by name */
+.persona-avatar{background:linear-gradient(135deg,#3B82F6,#1E40AF)}
+/* Section header above tools (groups Agent Builder under M365 Copilot Tools) */
+.tool-group-header{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:18px 0 8px;padding:0 4px;display:flex;align-items:center;gap:8px}
+.tool-group-header::after{content:'';flex:1;height:1px;background:var(--border)}
+.tool-group-header:first-child{margin-top:0}
+/* Language toggle (replaces MY/ID toggle) */
+.lang-toggle{display:flex;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;overflow:hidden;flex-shrink:0}
+.lang-btn{padding:5px 12px;border:none;background:transparent;color:rgba(255,255,255,0.6);font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.lang-btn.active{background:rgba(255,255,255,0.18);color:#FFFFFF}
+.lang-btn:hover:not(.active){color:rgba(255,255,255,0.85)}
+.lang-btn:disabled{opacity:0.35;cursor:not-allowed}
 .detail-sidebar{}
 .files-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px}
 .files-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:6px}
@@ -256,12 +297,13 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   <div class="topbar-left">
     <div class="topbar-logo">🤖</div>
     <span class="topbar-title">IDMY Copilot Industry Hub</span>
-    <span class="topbar-badge">29 Industries · 10 Departments</span>
+    <span class="topbar-badge" id="topbar-badge">Loading…</span>
   </div>
   <div class="topbar-right">
-    <div class="ctx-toggle">
-      <button class="ctx-btn active" id="ctx-my" onclick="setCtx('MY')">&#127474;&#127486; Malaysia</button>
-      <button class="ctx-btn" id="ctx-id" onclick="setCtx('ID')">&#127470;&#127465; Indonesia</button>
+    <div class="lang-toggle" id="lang-toggle">
+      <button class="lang-btn active" id="lang-en" onclick="setLang('EN')" title="English">&#127468;&#127463; EN</button>
+      <button class="lang-btn" id="lang-id" onclick="setLang('ID')" title="Bahasa Indonesia">&#127470;&#127465; ID</button>
+      <button class="lang-btn" id="lang-bm" onclick="setLang('BM')" title="Bahasa Malaysia">&#127474;&#127486; BM</button>
     </div>
     <button class="btn-sm" onclick="goHome()">&#x1F3E0; Home</button>
     <button class="btn-sm" onclick="logout()">&#x1F512; Lock</button>
@@ -386,33 +428,58 @@ if(sessionStorage.getItem('hub_auth')!=='ok') window.location.href='index.html';
 let wnIdx=0;
 let currentGridTab='ind';
 let currentSidebarTab='ind';
-let _ctx='MY'; // 'MY' or 'ID'
+let _lang='EN'; // 'EN' | 'ID' | 'BM'
 let _detailTab='tools'; // 'tools' or 'chat'
 let _currentTab='ind'; // 'ind' or 'dept' (which type was last shown)
 const data=window.HUB_DATA;
 
-function setCtx(c){
-  _ctx=c;
-  document.getElementById('ctx-my').classList.toggle('active',c==='MY');
-  document.getElementById('ctx-id').classList.toggle('active',c==='ID');
-  // Rebuild grids and sidebar with new context
+function setLang(L){
+  // Disable BM pill if current entry is geo='ID' (BM doesn't apply to Indonesia entries)
+  // Disable ID pill if current entry is geo='MY' AND has no promptsID anywhere (rare).
+  // For now we let the user pick freely; renderer falls back to EN if no translation.
+  _lang=L;
+  ['EN','ID','BM'].forEach(x=>{
+    const el=document.getElementById('lang-'+x.toLowerCase());
+    if(el) el.classList.toggle('active',x===L);
+  });
   buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar();
-  // If detail view open, fully re-render with new context
   if(_currentItem && document.getElementById('detail-view').style.display!=='none'){
     showItem(_currentItem,_currentTab);
   }
 }
-function _getCompany(item){return _ctx==='ID'&&item.companyID?item.companyID:item.company;}
-function _getTagline(item){return _ctx==='ID'&&item.taglineID?item.taglineID:item.tagline;}
-function _getScenario(item){return _ctx==='ID'&&item.scenarioID?item.scenarioID:item.scenario;}
-function _getPrompts(t){return _ctx==='ID'&&t.promptsID&&t.promptsID.length?t.promptsID:t.prompts;}
+// Backward-compat alias (in case old onclick="setCtx('ID')" inline handlers leaked into data)
+function setCtx(c){ setLang(c==='ID'?'ID':'EN'); }
+
+function _pickLangField(item, base){
+  // base = 'company' | 'tagline' | 'scenario' (without language suffix)
+  const id=item[base+'ID'];
+  const bm=item[base+'BM'];
+  if(_lang==='ID' && id) return id;
+  if(_lang==='BM' && bm) return bm;
+  return item[base];
+}
+function _getCompany(item){return _pickLangField(item,'company');}
+function _getTagline(item){return _pickLangField(item,'tagline');}
+function _getScenario(item){return _pickLangField(item,'scenario');}
+function _getPrompts(t){
+  if(_lang==='ID' && t.promptsID && t.promptsID.length) return t.promptsID;
+  if(_lang==='BM' && t.promptsBM && t.promptsBM.length) return t.promptsBM;
+  return t.prompts||[];
+}
 function _getPersona(t,pi){
-  const arr=_ctx==='ID'&&t.personaID&&t.personaID.length?t.personaID:(t.persona||[]);
+  const arr=_lang==='ID'&&t.personaID&&t.personaID.length?t.personaID:(t.persona||[]);
   return arr[pi]||'';
 }
 function _isResearcher(name){return /Researcher/i.test(name||'')}
 function _isCowork(name){return /Cowork/i.test(name||'')}
+function _isNotebook(name){return /Notebook/i.test(name||'')}
 function _isChat(name){return /Copilot Chat/i.test(name||'')&&!/Notebook/i.test(name||'')}
+function _isWordAgt(name){return /Word\s*Agent/i.test(name||'')}
+function _isPptAgt(name){return /(PowerPoint|PPT)\s*Agent/i.test(name||'')}
+function _isXlAgt(name){return /Excel\s*Agent/i.test(name||'')}
+function _isBuilder(name){return /Agent\s*Builder/i.test(name||'')}
+// Tools that live in the Copilot Chat tab (chat-based continuous-motion flow per IHH HR ref)
+function _isChatTab(name){return _isChat(name)||_isWordAgt(name)||_isPptAgt(name)||_isXlAgt(name)||_isBuilder(name);}
 function _isFrontier(lic){return /Frontier/i.test(lic||'')}
 function _personaColor(name){
   if(!name) return '#6B7280';
@@ -426,6 +493,97 @@ function _personaColor(name){
   return palette[Math.abs(h)%palette.length];
 }
 let _currentItem=null;
+
+// Strip leading emoji + whitespace from a display name (#9/#10 — defence in depth)
+const _EMOJI_PREFIX_RE=/^[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B00}-\u{2BFF}]+\s*/u;
+function _stripLeadingEmoji(s){return String(s||'').replace(_EMOJI_PREFIX_RE,'').trim();}
+
+// Default instructions per tool when the prompt object's `instr` field is empty.
+// These match the per-tool contract committed in the v3 plan.
+function _defaultInstr(tool, pi, item){
+  const name=String(tool.tool||'');
+  const acct=tool.account?(' Sign in with '+tool.account+'.'):'';
+  if(_isResearcher(name)){
+    const mode=pi===0?'**Critique Mode**':'**Model Council**';
+    return 'Open `m365.cloud.microsoft/chat`.'+acct+' Click the **Agents** tab in the left rail → choose **Researcher**. Switch the mode pill to '+mode+'. Paste the prompt below.';
+  }
+  if(/Analyst/i.test(name)){
+    return 'Open `m365.cloud.microsoft/chat`.'+acct+' Click the **Agents** tab → choose **Analyst**. **Upload** the reference file(s) listed in this entry from the right-hand sidebar. Then paste the prompt below — Analyst writes Python, runs it, and returns charts + tables.';
+  }
+  if(/Copilot in Excel/i.test(name)){
+    return 'Open the relevant `.xlsx` file from the right-hand sidebar in **Excel for the Web**.'+acct+' Open the **Copilot pane** (top-right Copilot icon). Paste the prompt below.';
+  }
+  if(/Copilot in Word/i.test(name)){
+    return 'Open the relevant `.docx` file from the right-hand sidebar in **Word for the Web**.'+acct+' Open the **Copilot pane** (top-right Copilot icon). Paste the prompt below.';
+  }
+  if(/Copilot in PowerPoint/i.test(name)){
+    return 'Open the relevant `.pptx` file from the right-hand sidebar in **PowerPoint for the Web**.'+acct+' Open the **Copilot pane** (top-right Copilot icon). Paste the prompt below.';
+  }
+  if(/Outlook/i.test(name)){
+    return 'Open **Outlook on the web**.'+acct+' Open the relevant email/thread referenced in the prompt. Click **Copilot** in the ribbon → choose **Summarise / Draft / Coach**. Paste the prompt below.';
+  }
+  if(/Teams/i.test(name)){
+    return 'In **Teams calendar**, open the past meeting referenced in the prompt. The **Recap** page opens. Click the **Copilot icon** (top-right). Paste the prompt below. Copy the answer into a new Word doc when done.';
+  }
+  if(_isNotebook(name)){
+    return 'Open `m365.cloud.microsoft/chat` → **Notebook** tab → **+ New Notebook**.'+acct+' Add ALL files listed in the Notebook setup block above as sources at creation time. Paste the **Instructions field** (system prompt) shown above. Then run this prompt.';
+  }
+  if(_isCowork(name)){
+    return 'Open `m365.cloud.microsoft` → left-rail **Agents** → **Cowork**. (Frontier Program required.) Paste the prompt — Cowork delegates the 5 numbered actions in parallel and reports back when each is done.';
+  }
+  if(_isWordAgt(name)){
+    return 'Open `m365.cloud.microsoft/chat`.'+acct+' Type the prompt below directly into chat — Copilot returns a fully drafted **`.docx`** saved to OneDrive. **Do NOT open Word first.**';
+  }
+  if(_isPptAgt(name)){
+    return 'Open `m365.cloud.microsoft/chat`.'+acct+' Type the prompt below directly into chat — Copilot returns a fully drafted **`.pptx`** saved to OneDrive. **Do NOT open PowerPoint first.**';
+  }
+  if(_isXlAgt(name)){
+    return 'Open `m365.cloud.microsoft/chat`.'+acct+' Type the prompt below directly into chat — Copilot returns a fully built **`.xlsx`** saved to OneDrive. **Do NOT open Excel first.**';
+  }
+  if(_isBuilder(name)){
+    if(pi===0) return 'Open `m365.cloud.microsoft/chat` → **Agents** → **+ Create an agent**.'+acct+' Step 1 (**Describe**): paste this prompt into the description field — Copilot drafts the agent\'s name, instructions, and starter prompts.';
+    if(pi===1) return 'Step 2 (**Configure**): paste this prompt as the **Instructions** field. Then click **Knowledge** → **Add** → upload the reference files listed in the right sidebar. Click **Capabilities** → enable **Web search** + **Code interpreter**.';
+    if(pi===2) return 'Step 3 (**Test**): paste this prompt into the right-hand test pane. Verify the agent grounds its answer in the uploaded files and cites them.';
+    return 'Step 4 (**Create + Share**): click **Create**, then **Share** → add Group ExCo distribution list with **Use** access. Done.';
+  }
+  if(_isChat(name)){
+    return 'Open `m365.cloud.microsoft/chat`.'+acct+' Type the prompt below directly into chat.';
+  }
+  return 'Open the tool listed above in M365.'+acct+' Paste the prompt below.';
+}
+
+// Parse a Cowork prompt body for numbered action markers and return {n, icon, text} per line.
+// Supports both line-separated ("1. Draft …\n2. Send …") and inline ("(1) draft …; (2) send …") formats.
+function _parseCoworkActions(text){
+  const T=String(text||'');
+  // Marker = optional "(", digits, then ")" or ".", followed by whitespace.
+  // Anchored to start-of-string OR preceded by whitespace/semicolon/comma to avoid false hits inside words.
+  const RE=/(?:^|[\s;,])\(?(\d+)[\.\)]\s+/g;
+  const positions=[];
+  let m;
+  while((m=RE.exec(T))!==null){
+    positions.push({n:m[1], start: m.index + m[0].length, markerStart: m.index});
+  }
+  if(positions.length<2) return [];
+  const out=[];
+  for(let i=0;i<positions.length;i++){
+    const start=positions[i].start;
+    const end=i+1<positions.length?positions[i+1].markerStart:T.length;
+    let body=T.slice(start,end).trim();
+    body=body.replace(/[;,]\s*$/,'').trim();
+    if(!body) continue;
+    let icon='⚡';
+    if(/draft.+(word|doc|brief|memo|paper|note)/i.test(body)||/word\s+doc/i.test(body)) icon='📝';
+    else if(/(send|draft).+(email|mail)/i.test(body)||/email\s+to/i.test(body)) icon='✉️';
+    else if(/(schedule|book|set\s+up|create).+(meeting|cal|calendar)/i.test(body)||/calendar\s+invite/i.test(body)) icon='📅';
+    else if(/(post|message).+(teams|chat|channel)/i.test(body)||/teams\s+(message|post|channel)/i.test(body)) icon='💬';
+    else if(/(deck|slide|powerpoint|pptx|presentation)/i.test(body)) icon='🖼';
+    else if(/(spreadsheet|excel|xlsx|workbook|model)/i.test(body)) icon='📊';
+    else if(/(plan|task|todo|to-do)/i.test(body)) icon='✅';
+    out.push({n:positions[i].n, icon, text:body});
+  }
+  return out;
+}
 
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
@@ -476,7 +634,7 @@ function buildSidebar(){
       const a=document.createElement('a');
       a.className='sidebar-item'; a.id='nav-'+ind.id;
       a.onclick=()=>showItem(ind,'ind');
-      a.innerHTML='<span class="ind-icon">'+ind.icon+'</span><span class="ind-name">'+ind.name+'</span><span class="ind-count">'+count+'</span>';
+      a.innerHTML='<span class="ind-icon">'+ind.icon+'</span><span class="ind-name">'+_stripLeadingEmoji(ind.name)+'</span><span class="ind-count">'+count+'</span>';
       el.appendChild(a);
     });
   });
@@ -492,7 +650,7 @@ function buildDeptSidebar(){
     const a=document.createElement('a');
     a.className='sidebar-item'; a.id='nav-'+dept.id;
     a.onclick=()=>showItem(dept,'dept');
-    a.innerHTML='<span class="ind-icon">'+dept.icon+'</span><span class="ind-name">'+dept.name+'</span><span class="ind-count">'+count+'</span>';
+    a.innerHTML='<span class="ind-icon">'+dept.icon+'</span><span class="ind-name">'+_stripLeadingEmoji(dept.name)+'</span><span class="ind-count">'+count+'</span>';
     el.appendChild(a);
   });
 }
@@ -529,7 +687,7 @@ function makeCard(item,tab){
   const isDept=tab==='dept';
   div.innerHTML=
     '<div class="ind-card-icon">'+item.icon+'</div>'+
-    '<div class="ind-card-name">'+item.name+'</div>'+
+    '<div class="ind-card-name">'+_stripLeadingEmoji(item.name)+'</div>'+
     '<div class="ind-card-company">'+_getCompany(item)+'</div>'+
     '<div class="ind-card-pills">'+
       tools.map(t=>'<span class="pill">'+t+'</span>').join('')+
@@ -568,9 +726,9 @@ function showItem(item,tab){
   const isDept=tab==='dept';
   document.getElementById('detail-back-btn').textContent=isDept?'← Back to all departments':'← Back to all industries';
   document.getElementById('detail-back-btn').onclick=()=>{ goHome(); showGridTab(tab); };
-  document.getElementById('detail-badge').textContent=isDept?'Department':item.name;
+  document.getElementById('detail-badge').textContent=isDept?'Department':_stripLeadingEmoji(item.name);
   document.getElementById('detail-title').textContent=_getCompany(item);
-  document.getElementById('detail-company').textContent=item.name;
+  document.getElementById('detail-company').textContent=_stripLeadingEmoji(item.name);
   document.getElementById('detail-tagline').textContent=_getTagline(item);
   // Scenario + dept pills
   const scenarioText=_getScenario(item);
@@ -605,10 +763,10 @@ function showItem(item,tab){
       '<div class="storyboard-sub">Run these tools in sequence to deliver an end-to-end demo flow. Click a tool below the storyboard to copy its prompts.</div>'+
       '<div class="sb-exercises">'+
       item.storyboard.map(ex=>{
-        const exTitle=_ctx==='ID'&&ex.titleID?ex.titleID:ex.title;
-        const exSummary=_ctx==='ID'&&ex.summaryID?ex.summaryID:(ex.summary||'');
+        const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:(_lang==='BM'&&ex.titleBM?ex.titleBM:ex.title);
+        const exSummary=_lang==='ID'&&ex.summaryID?ex.summaryID:(_lang==='BM'&&ex.summaryBM?ex.summaryBM:(ex.summary||''));
         const tasks=(ex.tasks||[]).map(t=>{
-          const verb=_ctx==='ID'&&t.verbID?t.verbID:t.verb;
+          const verb=_lang==='ID'&&t.verbID?t.verbID:(_lang==='BM'&&t.verbBM?t.verbBM:t.verb);
           const mode=t.mode==='hands'?'hands':'show';
           const modeLabel=mode==='hands'?'Hands-on':'Show & Tell';
           return '<span class="sb-task" data-tool="'+escapeAttr(t.tool||'')+'">'+
@@ -632,9 +790,11 @@ function showItem(item,tab){
     sbWrap.style.display='none';
     sbWrap.innerHTML='';
   }
-  // Tab toggle (Tools vs Chat) — only show if tool list contains both T_CHAT and other tools
-  const hasChat=item.prompts.some(t=>_isChat(t.tool));
-  const hasOther=item.prompts.some(t=>!_isChat(t.tool));
+  // Tab toggle (Tools vs Chat).
+  // Chat tab = T_CHAT + Word/PPT/Excel Agents + Agent Builder (continuous-motion chat-based flow per IHH HR ref).
+  // Tools tab = everything else (Researcher, Analyst, Excel/Word/PPT in-app, Outlook, Teams, Notebook, Cowork).
+  const hasChat=item.prompts.some(t=>_isChatTab(t.tool));
+  const hasOther=item.prompts.some(t=>!_isChatTab(t.tool));
   const tabsWrap=document.getElementById('detail-tabs');
   if(hasChat && hasOther){
     tabsWrap.style.display='flex';
@@ -649,36 +809,93 @@ function showItem(item,tab){
   // Filter prompts by tab
   const visibleTools=item.prompts.filter(t=>{
     if(!hasChat||!hasOther) return true;
-    if(_detailTab==='chat') return _isChat(t.tool);
-    return !_isChat(t.tool);
+    if(_detailTab==='chat') return _isChatTab(t.tool);
+    return !_isChatTab(t.tool);
   });
   // Prompts
   const pEl=document.getElementById('detail-prompts');
   pEl.innerHTML='';
+  let _lastGroup=null;
   visibleTools.forEach((tool)=>{
     const ti=item.prompts.indexOf(tool);
     const isBasic=tool.license&&(tool.license.toLowerCase().includes('basic')||tool.license.toLowerCase().includes('free'));
     const isFront=_isFrontier(tool.license);
     const isResearcher=_isResearcher(tool.tool);
+    const isCowork=_isCowork(tool.tool);
+    const isNotebook=_isNotebook(tool.tool);
+    // Optional group header — only inside the Chat tab to delineate "Free Chat" vs "M365 Copilot — chat-based agents"
+    if(_detailTab==='chat'){
+      const grp=_isChat(tool.tool)?'free':'agents';
+      if(grp!==_lastGroup){
+        const hdr=document.createElement('div');
+        hdr.className='tool-group-header';
+        hdr.innerHTML=grp==='free'
+          ?'🆓 Copilot Chat — broader use cases (no license required)'
+          :'✨ M365 Copilot — chat-based continuous-motion flow (Word Agent → PPT Agent → Excel Agent → Agent Builder)';
+        pEl.appendChild(hdr);
+        _lastGroup=grp;
+      }
+    }
     const sec=document.createElement('div'); sec.className='tool-section';
     const promptArr=_getPrompts(tool);
     const promHtml=promptArr.map((p,pi)=>{
       const key=_pmKey(id,ti,pi);
       const txt=typeof p==='string'?p:(p.prompt||'');
+      const instrTxt=(typeof p==='object'&&p&&p.instr)?p.instr:_defaultInstr(tool,pi,item);
       _PM[key]=txt;
-      const persona=_getPersona(tool,pi);
-      const pColor=_personaColor(persona);
       let modeLbl='';
       if(isResearcher){
         modeLbl=pi===0
           ?'<span class="prompt-mode">🔍 Critique Mode</span>'
           :'<span class="prompt-mode">⚖️ Model Council</span>';
       }
-      const personaChip='';
+      // Cowork special render: parse the prompt body for "1. " / "2. " etc. action lines and split each onto its own line.
+      let coworkHtml='';
+      if(isCowork){
+        const lines=_parseCoworkActions(txt);
+        if(lines.length>=2){
+          coworkHtml=
+            '<div class="cowork-actions">'+
+            '<div class="cowork-actions-label">⚡ Cowork delegates these in parallel</div>'+
+            lines.map(L=>{
+              return '<div class="cowork-action-line">'+
+                '<span class="cowork-action-num">'+escapeHTML(L.n)+'.</span>'+
+                '<span class="cowork-action-icon">'+L.icon+'</span>'+
+                '<span class="cowork-action-text">'+escapeHTML(L.text)+'</span>'+
+              '</div>';
+            }).join('')+
+            '</div>';
+        }
+      }
+      // Notebook special render: surface sources + Instructions field above the numbered prompts.
+      // We only add this once, on prompt 0 (so it doesn't repeat per prompt).
+      let notebookHtml='';
+      if(isNotebook && pi===0 && tool.notebookMeta){
+        const nm=tool.notebookMeta;
+        const srcs=(nm.sources||[]).map(s=>'<span class="notebook-source-pill">'+escapeHTML(s)+'</span>').join('');
+        const instr=_lang==='ID'&&nm.instructionsID?nm.instructionsID:(_lang==='BM'&&nm.instructionsBM?nm.instructionsBM:(nm.instructions||''));
+        notebookHtml=
+          '<div class="notebook-meta">'+
+          '<div class="notebook-meta-label">📓 Notebook setup — add ALL sources at creation time, then set the Instructions field</div>'+
+          (srcs?'<div class="notebook-sources">'+srcs+'</div>':'')+
+          (instr?'<div class="notebook-instr-row"><strong>Instructions field (system prompt):</strong> '+escapeHTML(instr)+'</div>':'')+
+          '</div>';
+      }
+      // The instr block above the prompt body is suppressed for Cowork (the actions block IS the instr context)
+      const showInstr=instrTxt && !isCowork;
       return '<div class="prompt-item">'+
-        '<div class="prompt-title">'+modeLbl+personaChip+'💬 Prompt '+(pi+1)+'</div>'+
+        '<div class="prompt-title">'+modeLbl+'💬 Prompt '+(pi+1)+'</div>'+
+        (notebookHtml)+
+        (showInstr
+          ? '<div class="prompt-instr-label">📋 Instructions</div>'+
+            '<div class="prompt-instr">'+escapeHTML(instrTxt)+'</div>'
+          : '')+
+        coworkHtml+
+        '<div class="prompt-text-label">💬 Prompt — copy this</div>'+
         '<div class="prompt-text">'+escapeHTML(txt)+'</div>'+
-        '<button class="copy-btn" onclick="copyById(\''+key+'\')">Copy prompt</button>'+
+        '<div class="prompt-actions">'+
+          '<button class="copy-btn" onclick="copyById(\''+key+'\')">📋 Copy prompt</button>'+
+        '</div>'+
         '</div>';
     }).join('');
     let licClass='premium', licLabel='✨ M365 Copilot';
@@ -724,7 +941,7 @@ function showItem(item,tab){
     personasEl.innerHTML=
       '<div class="personas-title">🎭 Personas in this demo</div>'+
       item.personas.map(p=>{
-        const role=_ctx==='ID'&&p.roleID?p.roleID:p.role;
+        const role=_lang==='ID'&&p.roleID?p.roleID:(_lang==='BM'&&p.roleBM?p.roleBM:p.role);
         const initials=(p.name||'').split(' ').map(s=>s[0]).join('').slice(0,2).toUpperCase();
         const isFree=/free/i.test(p.lic||'');
         return '<div class="persona-item">'+
@@ -815,6 +1032,24 @@ function logout(){
 }
 
 // ── Init ──
+(function(){
+  const tb=document.getElementById('topbar-badge');
+  if(tb) tb.textContent=data.industries.length+' Industries · '+data.departments.length+' Departments';
+  const stIndCount=document.getElementById('total-ind-count');
+  if(stIndCount) stIndCount.textContent=data.industries.length;
+  const stDeptCount=document.getElementById('total-dept-count');
+  if(stDeptCount) stDeptCount.textContent=data.departments.length;
+  // Update home-page stat chips
+  document.querySelectorAll('.stat-chip').forEach(c=>{
+    const lbl=c.querySelector('.lbl'); const val=c.querySelector('.val');
+    if(!lbl||!val) return;
+    if(/Industries/i.test(lbl.textContent)) val.textContent=data.industries.length;
+    if(/Departments/i.test(lbl.textContent)) val.textContent=data.departments.length;
+  });
+  // Update home-page grid-tab labels
+  const gtI=document.getElementById('gtab-ind'); if(gtI) gtI.innerHTML='&#127981; Industries ('+data.industries.length+')';
+  const gtD=document.getElementById('gtab-dept'); if(gtD) gtD.innerHTML='&#127970; Departments ('+data.departments.length+')';
+})();
 buildSidebar();
 buildDeptSidebar();
 buildGrid();
