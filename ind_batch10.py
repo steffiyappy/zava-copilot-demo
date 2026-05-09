@@ -223,30 +223,30 @@ INDUSTRIES_10.append(ind(
        'summary':'Frame the MYR 78M trade-spend overrun and the active recall; pull deep ASEAN peer benchmarks before the Group CFO walks into the Board on Friday.',
        'summaryID':'Bingkai pembengkakan trade-spend Rp 280 M dan recall aktif; tarik benchmark peer ASEAN mendalam sebelum Direktur Keuangan Grup masuk Rapat Direksi Jumat.',
        'tasks':[
-         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
-         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
-         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+         {'verb':'Frame the morning question and lock the day priorities','verbID':'Susun pertanyaan pagi dan kunci prioritas hari ini','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Run an outside-in peer scan and pull proven plays','verbID':'Lakukan pemindaian peer dari luar dan tarik praktik terbaik','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Generate a board-ready brief straight from chat','verbID':'Hasilkan brief siap-Direksi langsung dari chat','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
       {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
        'summary':'Quantify the trade-spend variance and SKU-level margin drag; build a Board-ready dashboard.',
        'summaryID':'Kuantifikasi selisih trade-spend dan drag margin per SKU; bangun dashboard siap-Direksi.',
        'tasks':[
-         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
-         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
-         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+         {'verb':'Crunch the numbers and surface the biggest gaps','verbID':'Olah angka dan ungkap celah terbesar','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Build a single-pane operating dashboard','verbID':'Bangun dashboard operasi satu-halaman','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Spin up a recurring tracker workbook from chat','verbID':'Buat workbook tracker berulang dari chat','toolId':T_XL_AGT,'mode':'Hands-on'}]},
       {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
        'summary':'Brief the 6 Divisional MDs, capture the Trade-Spend Crisis Review meeting, and assemble the Board deck.',
        'summaryID':'Brief 6 Direktur Divisi, capture rapat Trade-Spend Crisis Review, dan rakit deck Direksi.',
        'tasks':[
-         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
-         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
-         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
-         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+         {'verb':'Draft the stakeholder alignment email','verbID':'Draf email penyelarasan stakeholder','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap the meeting and turn it into minutes','verbID':'Recap rapat dan ubah ke notulen','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Generate a board-ready deck from chat','verbID':'Hasilkan deck siap-Direksi dari chat','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Delegate a 5-task parallel sprint','verbID':'Delegasikan 5-tugas paralel ke Cowork','toolId':T_COWORK,'mode':'Show & Tell'}]},
       {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
        'summary':'Wrap the trade-spend playbook into a reusable agent so the 6 Divisional MDs can self-serve.',
        'summaryID':'Bungkus playbook trade-spend ke dalam agent reusable agar 6 Direktur Divisi dapat self-service.',
        'tasks':[
-         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
-         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+         {'verb':'Pull every source into one synthesis notebook','verbID':'Tarik semua sumber ke satu notebook sintesis','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Wrap the daily workflow into a reusable agent','verbID':'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang','toolId':T_BUILDER,'mode':'Show & Tell'}]}
     ],
     geo='ID'
 ))
@@ -465,30 +465,30 @@ INDUSTRIES_10.append(ind(
        'summary':'Frame the FDA + CBP joint hit and pull peer playbooks before the 7-day Bursa clock starts ticking.',
        'summaryID':'Bingkai pukulan gabungan FDA + CBP dan tarik playbook peer sebelum clock Bursa 7-hari mulai berdetak.',
        'tasks':[
-         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
-         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
-         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+         {'verb':'Frame the morning question and lock the day priorities','verbID':'Susun pertanyaan pagi dan kunci prioritas hari ini','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Run an outside-in peer scan and pull proven plays','verbID':'Lakukan pemindaian peer dari luar dan tarik praktik terbaik','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Generate a board-ready brief straight from chat','verbID':'Hasilkan brief siap-Direksi langsung dari chat','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
       {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
        'summary':'Quantify FDA + CBP financial impact and covenant headroom; build an AC dashboard.',
        'summaryID':'Kuantifikasi dampak finansial FDA + CBP dan headroom covenant; bangun dashboard KA.',
        'tasks':[
-         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
-         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
-         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+         {'verb':'Crunch the numbers and surface the biggest gaps','verbID':'Olah angka dan ungkap celah terbesar','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Build a single-pane operating dashboard','verbID':'Bangun dashboard operasi satu-halaman','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Spin up a recurring tracker workbook from chat','verbID':'Buat workbook tracker berulang dari chat','toolId':T_XL_AGT,'mode':'Hands-on'}]},
       {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
        'summary':'Brief 8 plant GMs, capture the FDA War Room recap, and assemble the AC deck and Bursa disclosure.',
        'summaryID':'Brief 8 GM pabrik, capture recap FDA War Room, dan rakit deck KA serta pengungkapan Bursa.',
        'tasks':[
-         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
-         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
-         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
-         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+         {'verb':'Draft the stakeholder alignment email','verbID':'Draf email penyelarasan stakeholder','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap the meeting and turn it into minutes','verbID':'Recap rapat dan ubah ke notulen','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Generate a board-ready deck from chat','verbID':'Hasilkan deck siap-Direksi dari chat','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Delegate a 5-task parallel sprint','verbID':'Delegasikan 5-tugas paralel ke Cowork','toolId':T_COWORK,'mode':'Show & Tell'}]},
       {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
        'summary':'Wrap the FDA + CBP playbook into a reusable agent for the 8 plant GMs and the Group HSE team.',
        'summaryID':'Bungkus playbook FDA + CBP ke dalam agent reusable untuk 8 GM pabrik dan tim HSE Grup.',
        'tasks':[
-         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
-         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+         {'verb':'Pull every source into one synthesis notebook','verbID':'Tarik semua sumber ke satu notebook sintesis','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Wrap the daily workflow into a reusable agent','verbID':'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang','toolId':T_BUILDER,'mode':'Show & Tell'}]}
     ],
     geo='MY'
 ))
@@ -707,30 +707,30 @@ INDUSTRIES_10.append(ind(
        'summary':'Frame the BNM-directed MBS issuance situation and pull peer playbooks before the regulator clock starts ticking.',
        'summaryID':'Bingkai situasi BNM-directed MBS issuance dan tarik playbook peer sebelum clock regulator mulai berdetak.',
        'tasks':[
-         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
-         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
-         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+         {'verb':'Frame the morning question and lock the day priorities','verbID':'Susun pertanyaan pagi dan kunci prioritas hari ini','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Run an outside-in peer scan and pull proven plays','verbID':'Lakukan pemindaian peer dari luar dan tarik praktik terbaik','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Generate a board-ready brief straight from chat','verbID':'Hasilkan brief siap-Direksi langsung dari chat','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
       {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
        'summary':'Quantify BNM-directed MBS issuance financial and operational impact; build an AC dashboard.',
        'summaryID':'Kuantifikasi dampak finansial dan operasional BNM-directed MBS issuance; bangun dashboard KA.',
        'tasks':[
-         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
-         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
-         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+         {'verb':'Crunch the numbers and surface the biggest gaps','verbID':'Olah angka dan ungkap celah terbesar','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Build a single-pane operating dashboard','verbID':'Bangun dashboard operasi satu-halaman','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Spin up a recurring tracker workbook from chat','verbID':'Buat workbook tracker berulang dari chat','toolId':T_XL_AGT,'mode':'Hands-on'}]},
       {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
        'summary':'Brief operating heads, capture the BNM Liquidity War Room recap, and assemble the AC deck and regulator response.',
        'summaryID':'Brief kepala operasi, capture recap BNM Liquidity War Room, dan rakit deck KA serta respons regulator.',
        'tasks':[
-         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
-         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
-         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
-         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+         {'verb':'Draft the stakeholder alignment email','verbID':'Draf email penyelarasan stakeholder','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap the meeting and turn it into minutes','verbID':'Recap rapat dan ubah ke notulen','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Generate a board-ready deck from chat','verbID':'Hasilkan deck siap-Direksi dari chat','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Delegate a 5-task parallel sprint','verbID':'Delegasikan 5-tugas paralel ke Cowork','toolId':T_COWORK,'mode':'Show & Tell'}]},
       {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
        'summary':'Wrap the BNM-directed MBS issuance playbook into a reusable agent for the Zava Cagamas Berhad operating team.',
        'summaryID':'Bungkus playbook BNM-directed MBS issuance ke dalam agent reusable untuk tim operasi Zava Cagamas Berhad.',
        'tasks':[
-         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
-         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+         {'verb':'Pull every source into one synthesis notebook','verbID':'Tarik semua sumber ke satu notebook sintesis','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Wrap the daily workflow into a reusable agent','verbID':'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang','toolId':T_BUILDER,'mode':'Show & Tell'}]}
     ],
     geo='MY'
 ))
@@ -946,30 +946,30 @@ INDUSTRIES_10.append(ind(
        'summary':'Frame the BNM PSA suspicious-transaction inquiry situation and pull peer playbooks before the regulator clock starts ticking.',
        'summaryID':'Bingkai situasi BNM PSA suspicious-transaction inquiry dan tarik playbook peer sebelum clock regulator mulai berdetak.',
        'tasks':[
-         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
-         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
-         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+         {'verb':'Frame the morning question and lock the day priorities','verbID':'Susun pertanyaan pagi dan kunci prioritas hari ini','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Run an outside-in peer scan and pull proven plays','verbID':'Lakukan pemindaian peer dari luar dan tarik praktik terbaik','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Generate a board-ready brief straight from chat','verbID':'Hasilkan brief siap-Direksi langsung dari chat','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
       {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
        'summary':'Quantify BNM PSA suspicious-transaction inquiry financial and operational impact; build an AC dashboard.',
        'summaryID':'Kuantifikasi dampak finansial dan operasional BNM PSA suspicious-transaction inquiry; bangun dashboard KA.',
        'tasks':[
-         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
-         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
-         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+         {'verb':'Crunch the numbers and surface the biggest gaps','verbID':'Olah angka dan ungkap celah terbesar','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Build a single-pane operating dashboard','verbID':'Bangun dashboard operasi satu-halaman','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Spin up a recurring tracker workbook from chat','verbID':'Buat workbook tracker berulang dari chat','toolId':T_XL_AGT,'mode':'Hands-on'}]},
       {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
        'summary':'Brief operating heads, capture the AML Risk Council recap, and assemble the AC deck and regulator response.',
        'summaryID':'Brief kepala operasi, capture recap AML Risk Council, dan rakit deck KA serta respons regulator.',
        'tasks':[
-         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
-         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
-         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
-         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+         {'verb':'Draft the stakeholder alignment email','verbID':'Draf email penyelarasan stakeholder','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap the meeting and turn it into minutes','verbID':'Recap rapat dan ubah ke notulen','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Generate a board-ready deck from chat','verbID':'Hasilkan deck siap-Direksi dari chat','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Delegate a 5-task parallel sprint','verbID':'Delegasikan 5-tugas paralel ke Cowork','toolId':T_COWORK,'mode':'Show & Tell'}]},
       {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
        'summary':'Wrap the BNM PSA suspicious-transaction inquiry playbook into a reusable agent for the Zava Remit Asia operating team.',
        'summaryID':'Bungkus playbook BNM PSA suspicious-transaction inquiry ke dalam agent reusable untuk tim operasi Zava Remit Asia.',
        'tasks':[
-         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
-         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+         {'verb':'Pull every source into one synthesis notebook','verbID':'Tarik semua sumber ke satu notebook sintesis','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Wrap the daily workflow into a reusable agent','verbID':'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang','toolId':T_BUILDER,'mode':'Show & Tell'}]}
     ],
     geo='MY'
 ))
@@ -1185,30 +1185,30 @@ INDUSTRIES_10.append(ind(
        'summary':'Frame the NR raw-material spike + OEM contract review situation and pull peer playbooks before the regulator clock starts ticking.',
        'summaryID':'Bingkai situasi NR raw-material spike + OEM contract review dan tarik playbook peer sebelum clock regulator mulai berdetak.',
        'tasks':[
-         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
-         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
-         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+         {'verb':'Frame the morning question and lock the day priorities','verbID':'Susun pertanyaan pagi dan kunci prioritas hari ini','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Run an outside-in peer scan and pull proven plays','verbID':'Lakukan pemindaian peer dari luar dan tarik praktik terbaik','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Generate a board-ready brief straight from chat','verbID':'Hasilkan brief siap-Direksi langsung dari chat','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
       {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
        'summary':'Quantify NR raw-material spike + OEM contract review financial and operational impact; build an AC dashboard.',
        'summaryID':'Kuantifikasi dampak finansial dan operasional NR raw-material spike + OEM contract review; bangun dashboard KA.',
        'tasks':[
-         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
-         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
-         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+         {'verb':'Crunch the numbers and surface the biggest gaps','verbID':'Olah angka dan ungkap celah terbesar','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Build a single-pane operating dashboard','verbID':'Bangun dashboard operasi satu-halaman','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Spin up a recurring tracker workbook from chat','verbID':'Buat workbook tracker berulang dari chat','toolId':T_XL_AGT,'mode':'Hands-on'}]},
       {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
        'summary':'Brief operating heads, capture the OEM Pass-Through Steerco recap, and assemble the AC deck and regulator response.',
        'summaryID':'Brief kepala operasi, capture recap OEM Pass-Through Steerco, dan rakit deck KA serta respons regulator.',
        'tasks':[
-         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
-         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
-         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
-         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+         {'verb':'Draft the stakeholder alignment email','verbID':'Draf email penyelarasan stakeholder','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap the meeting and turn it into minutes','verbID':'Recap rapat dan ubah ke notulen','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Generate a board-ready deck from chat','verbID':'Hasilkan deck siap-Direksi dari chat','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Delegate a 5-task parallel sprint','verbID':'Delegasikan 5-tugas paralel ke Cowork','toolId':T_COWORK,'mode':'Show & Tell'}]},
       {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
        'summary':'Wrap the NR raw-material spike + OEM contract review playbook into a reusable agent for the Zava Auto Industries operating team.',
        'summaryID':'Bungkus playbook NR raw-material spike + OEM contract review ke dalam agent reusable untuk tim operasi Zava Auto Industries.',
        'tasks':[
-         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
-         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+         {'verb':'Pull every source into one synthesis notebook','verbID':'Tarik semua sumber ke satu notebook sintesis','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Wrap the daily workflow into a reusable agent','verbID':'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang','toolId':T_BUILDER,'mode':'Show & Tell'}]}
     ],
     geo='MY'
 ))
@@ -1424,30 +1424,30 @@ INDUSTRIES_10.append(ind(
        'summary':'Frame the US BIS export-control update situation and pull peer playbooks before the regulator clock starts ticking.',
        'summaryID':'Bingkai situasi US BIS export-control update dan tarik playbook peer sebelum clock regulator mulai berdetak.',
        'tasks':[
-         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
-         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
-         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+         {'verb':'Frame the morning question and lock the day priorities','verbID':'Susun pertanyaan pagi dan kunci prioritas hari ini','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Run an outside-in peer scan and pull proven plays','verbID':'Lakukan pemindaian peer dari luar dan tarik praktik terbaik','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Generate a board-ready brief straight from chat','verbID':'Hasilkan brief siap-Direksi langsung dari chat','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
       {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
        'summary':'Quantify US BIS export-control update financial and operational impact; build an AC dashboard.',
        'summaryID':'Kuantifikasi dampak finansial dan operasional US BIS export-control update; bangun dashboard KA.',
        'tasks':[
-         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
-         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
-         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+         {'verb':'Crunch the numbers and surface the biggest gaps','verbID':'Olah angka dan ungkap celah terbesar','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Build a single-pane operating dashboard','verbID':'Bangun dashboard operasi satu-halaman','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Spin up a recurring tracker workbook from chat','verbID':'Buat workbook tracker berulang dari chat','toolId':T_XL_AGT,'mode':'Hands-on'}]},
       {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
        'summary':'Brief operating heads, capture the BIS Export-Control War Room recap, and assemble the AC deck and regulator response.',
        'summaryID':'Brief kepala operasi, capture recap BIS Export-Control War Room, dan rakit deck KA serta respons regulator.',
        'tasks':[
-         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
-         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
-         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
-         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+         {'verb':'Draft the stakeholder alignment email','verbID':'Draf email penyelarasan stakeholder','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap the meeting and turn it into minutes','verbID':'Recap rapat dan ubah ke notulen','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Generate a board-ready deck from chat','verbID':'Hasilkan deck siap-Direksi dari chat','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Delegate a 5-task parallel sprint','verbID':'Delegasikan 5-tugas paralel ke Cowork','toolId':T_COWORK,'mode':'Show & Tell'}]},
       {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
        'summary':'Wrap the US BIS export-control update playbook into a reusable agent for the Zava Electronics MY operating team.',
        'summaryID':'Bungkus playbook US BIS export-control update ke dalam agent reusable untuk tim operasi Zava Electronics MY.',
        'tasks':[
-         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
-         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+         {'verb':'Pull every source into one synthesis notebook','verbID':'Tarik semua sumber ke satu notebook sintesis','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Wrap the daily workflow into a reusable agent','verbID':'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang','toolId':T_BUILDER,'mode':'Show & Tell'}]}
     ],
     geo='MY'
 ))
@@ -1663,30 +1663,30 @@ INDUSTRIES_10.append(ind(
        'summary':'Frame the AELB renewal + China REE export curb situation and pull peer playbooks before the regulator clock starts ticking.',
        'summaryID':'Bingkai situasi AELB renewal + China REE export curb dan tarik playbook peer sebelum clock regulator mulai berdetak.',
        'tasks':[
-         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
-         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
-         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+         {'verb':'Frame the morning question and lock the day priorities','verbID':'Susun pertanyaan pagi dan kunci prioritas hari ini','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Run an outside-in peer scan and pull proven plays','verbID':'Lakukan pemindaian peer dari luar dan tarik praktik terbaik','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Generate a board-ready brief straight from chat','verbID':'Hasilkan brief siap-Direksi langsung dari chat','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
       {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
        'summary':'Quantify AELB renewal + China REE export curb financial and operational impact; build an AC dashboard.',
        'summaryID':'Kuantifikasi dampak finansial dan operasional AELB renewal + China REE export curb; bangun dashboard KA.',
        'tasks':[
-         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
-         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
-         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+         {'verb':'Crunch the numbers and surface the biggest gaps','verbID':'Olah angka dan ungkap celah terbesar','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Build a single-pane operating dashboard','verbID':'Bangun dashboard operasi satu-halaman','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Spin up a recurring tracker workbook from chat','verbID':'Buat workbook tracker berulang dari chat','toolId':T_XL_AGT,'mode':'Hands-on'}]},
       {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
        'summary':'Brief operating heads, capture the AELB Renewal War Room recap, and assemble the AC deck and regulator response.',
        'summaryID':'Brief kepala operasi, capture recap AELB Renewal War Room, dan rakit deck KA serta respons regulator.',
        'tasks':[
-         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
-         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
-         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
-         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+         {'verb':'Draft the stakeholder alignment email','verbID':'Draf email penyelarasan stakeholder','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap the meeting and turn it into minutes','verbID':'Recap rapat dan ubah ke notulen','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Generate a board-ready deck from chat','verbID':'Hasilkan deck siap-Direksi dari chat','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Delegate a 5-task parallel sprint','verbID':'Delegasikan 5-tugas paralel ke Cowork','toolId':T_COWORK,'mode':'Show & Tell'}]},
       {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
        'summary':'Wrap the AELB renewal + China REE export curb playbook into a reusable agent for the Zava Rare Earth operating team.',
        'summaryID':'Bungkus playbook AELB renewal + China REE export curb ke dalam agent reusable untuk tim operasi Zava Rare Earth.',
        'tasks':[
-         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
-         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+         {'verb':'Pull every source into one synthesis notebook','verbID':'Tarik semua sumber ke satu notebook sintesis','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Wrap the daily workflow into a reusable agent','verbID':'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang','toolId':T_BUILDER,'mode':'Show & Tell'}]}
     ],
     geo='MY'
 ))

@@ -195,7 +195,7 @@ ind('hospital-network', 'healthcare', 'Hospital Network', '🏥', '#1B5E20', '#2
        ]},
       {
        'ex':2,'title':'Quantify','titleID':'Kuantifikasi','minutes':22,'mode':'Hands-on',
-       'summary':'Quantify the Red and Amber drivers in HC_01_Hospital_Operations.xlsx, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.','summaryID':'Kuantifikasi driver Merah dan Kuning dalam HC_01_Hospital_Operations.xlsx, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
+       'summary':'Quantify the Red and Amber drivers, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.','summaryID':'Kuantifikasi driver Merah dan Kuning, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
        'tasks':[
          {'n':'04','tool':'analyst','verb':'Rank exposure drivers','verbID':'Peringkat driver eksposur','mode':'hands','label':'Analyst'},
          {'n':'05','tool':'excel','verb':'Clinical Operations Dashboard','verbID':'Clinical Operations Dashboard','mode':'hands','label':'Copilot in Excel'},
@@ -412,7 +412,7 @@ ind('pharmaceutical', 'healthcare', 'Pharmaceutical', '💊', '#311B92', '#5E35B
        ]},
       {
        'ex':2,'title':'Quantify','titleID':'Kuantifikasi','minutes':22,'mode':'Hands-on',
-       'summary':'Quantify the Red and Amber drivers in PH_01_Drug_Portfolio.xlsx, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.','summaryID':'Kuantifikasi driver Merah dan Kuning dalam PH_01_Drug_Portfolio.xlsx, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
+       'summary':'Quantify the Red and Amber drivers, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.','summaryID':'Kuantifikasi driver Merah dan Kuning, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
        'tasks':[
          {'n':'04','tool':'analyst','verb':'Rank exposure drivers','verbID':'Peringkat driver eksposur','mode':'hands','label':'Analyst'},
          {'n':'05','tool':'excel','verb':'Portfolio RAG Dashboard','verbID':'Portfolio RAG Dashboard','mode':'hands','label':'Copilot in Excel'},
@@ -629,7 +629,7 @@ ind('og-upstream', 'og-energy', 'Oil & Gas Upstream', '🛢️', '#E65100', '#F5
        ]},
       {
        'ex':2,'title':'Quantify','titleID':'Kuantifikasi','minutes':22,'mode':'Hands-on',
-       'summary':'Quantify the Red and Amber drivers in OGU_01_Production_Operations.xlsx, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.','summaryID':'Kuantifikasi driver Merah dan Kuning dalam OGU_01_Production_Operations.xlsx, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
+       'summary':'Quantify the Red and Amber drivers, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.','summaryID':'Kuantifikasi driver Merah dan Kuning, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
        'tasks':[
          {'n':'04','tool':'analyst','verb':'Rank exposure drivers','verbID':'Peringkat driver eksposur','mode':'hands','label':'Analyst'},
          {'n':'05','tool':'excel','verb':'Field Operations Dashboard','verbID':'Field Operations Dashboard','mode':'hands','label':'Copilot in Excel'},

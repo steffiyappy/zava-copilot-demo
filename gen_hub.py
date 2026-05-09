@@ -193,8 +193,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .notebook-instr-row{font-size:11.5px;color:#0C4A6E;line-height:1.55;background:rgba(255,255,255,0.6);border-radius:6px;padding:8px 10px;margin-top:4px;border-left:2px solid #0EA5E9}
 .notebook-instr-row strong{color:#075985}
 /* Fluent polish — focus rings, hover lift, smooth motion */
-.ind-card,.dept-pill,.sb-task,.sb-ex,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
-.ind-card:focus-visible,.dept-pill:focus-visible,.sb-task:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
+.ind-card,.dept-pill,.sb-act,.sb-ex,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
+.ind-card:focus-visible,.dept-pill:focus-visible,.sb-act:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
 .tool-header:active{transform:scale(0.995)}
 .sb-ex{transition:transform 0.2s ease,box-shadow 0.2s ease}
 .sb-ex:hover{transform:translateX(2px);box-shadow:-3px 0 0 var(--blue)}
@@ -244,20 +244,24 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .storyboard-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;display:flex;align-items:center;gap:6px}
 .storyboard-sub{font-size:11px;color:var(--muted);margin-bottom:14px}
 .sb-exercises{display:flex;flex-direction:column;gap:12px}
-.sb-ex{border-left:3px solid var(--blue);padding:10px 14px;background:#F8FAFC;border-radius:0 8px 8px 0}
+.sb-ex{border-left:3px solid var(--blue);padding:12px 16px;background:#F8FAFC;border-radius:0 8px 8px 0;margin-bottom:14px}
 .sb-ex-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
 .sb-ex-num{font-size:10px;font-weight:800;color:#FFFFFF;background:var(--blue);padding:3px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px}
 .sb-ex-title{font-size:13px;font-weight:700;color:var(--navy);flex:1;min-width:0}
 .sb-ex-meta{font-size:10px;color:var(--muted);font-weight:600;background:#FFFFFF;border:1px solid var(--border);padding:2px 8px;border-radius:10px}
-.sb-ex-summary{font-size:11px;color:#475569;margin-bottom:8px;line-height:1.5;font-style:italic}
-.sb-tasks{display:flex;flex-wrap:wrap;gap:6px}
-.sb-task{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:#FFFFFF;border:1px solid var(--border);border-radius:14px;font-size:10px;color:var(--text);font-weight:600;cursor:pointer;transition:all 0.15s}
-.sb-task:hover{border-color:var(--blue);background:#EEF4FF;transform:translateY(-1px)}
-.sb-task-n{font-weight:800;color:var(--blue);font-size:10px}
-.sb-task-verb{font-weight:600}
-.sb-task-mode{font-size:9px;text-transform:uppercase;padding:1px 6px;border-radius:8px;font-weight:800;letter-spacing:0.4px}
-.sb-task-mode.show{background:#FFF3E0;color:#C2410C}
-.sb-task-mode.hands{background:#F0FDF4;color:#16A34A}
+.sb-ex-summary{font-size:11.5px;color:#334155;margin:6px 0 12px;line-height:1.55;font-style:italic;background:#FFFFFF;border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+/* IHH-style activity rows */
+.sb-acts{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.sb-act{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:flex-start;background:#FFFFFF;border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:8px;padding:10px 12px;transition:all 0.15s;cursor:pointer}
+.sb-act:hover{border-color:var(--blue);background:#F4F8FF;transform:translateX(2px)}
+.sb-act-n{font-weight:800;color:var(--blue);font-size:13px;background:#EEF4FF;border-radius:6px;width:34px;height:26px;display:flex;align-items:center;justify-content:center;letter-spacing:-0.3px}
+.sb-act-body{display:flex;flex-direction:column;gap:3px;min-width:0}
+.sb-act-tool{font-weight:700;color:var(--navy);font-size:12px;letter-spacing:0.1px}
+.sb-act-narr{font-size:11.5px;color:#475569;line-height:1.5}
+.sb-act-mode{font-size:9px;text-transform:uppercase;padding:3px 8px;border-radius:8px;font-weight:800;letter-spacing:0.4px;align-self:flex-start;white-space:nowrap}
+.sb-act-mode.show{background:#FFF3E0;color:#C2410C}
+.sb-act-mode.hands{background:#F0FDF4;color:#16A34A}
+@media(max-width:640px){.sb-act{grid-template-columns:30px 1fr;gap:8px}.sb-act-mode{grid-column:2/3;justify-self:flex-start}}
 /* Personas card (right sidebar) */
 .personas-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px}
 .personas-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:6px}
@@ -771,29 +775,68 @@ function showItem(item,tab){
   const _phaseLabels=['🌅 MORNING','☀️ MIDDAY','🌤️ AFTERNOON','🌆 END OF DAY'];
   const _phaseLabelsID=['🌅 PAGI','☀️ SIANG','🌤️ SORE','🌆 AKHIR HARI'];
   const _phaseLabelsBM=['🌅 PAGI','☀️ TENGAH HARI','🌤️ PETANG','🌆 AKHIR HARI'];
+  // Tool short-id → display name + emoji (handles old shape: tool='chat' / new shape: toolId='💬 Microsoft 365 Copilot Chat')
+  const _toolMap={
+    'chat':'💬 Copilot Chat','researcher':'🔍 Researcher','analyst':'📊 Analyst Agent',
+    'excel':'📊 Copilot in Excel','word':'📝 Copilot in Word','ppt':'🎯 Copilot in PowerPoint','powerpoint':'🎯 Copilot in PowerPoint',
+    'outlook':'📧 Copilot in Outlook','teams':'🎙 Copilot in Teams · Recap','notebook':'📓 Copilot Notebook','cowork':'🤝 Cowork',
+    'word_agent':'📝 Word Agent','wordagent':'📝 Word Agent','word-agent':'📝 Word Agent',
+    'ppt_agent':'🎯 PowerPoint Agent','pptagent':'🎯 PowerPoint Agent','ppt-agent':'🎯 PowerPoint Agent','powerpoint_agent':'🎯 PowerPoint Agent',
+    'excel_agent':'📊 Excel Agent','excelagent':'📊 Excel Agent','excel-agent':'📊 Excel Agent','xl_agent':'📊 Excel Agent',
+    'agent_builder':'🏗 Agent Builder','agentbuilder':'🏗 Agent Builder','builder':'🏗 Agent Builder'
+  };
+  function _resolveTool(t){
+    // Prefer label / toolId / tool. Lookup short keys in _toolMap; fall back to verbatim.
+    let raw=t.label||t.toolId||t.tool||'';
+    if(!raw) return 'M365 Copilot';
+    const key=raw.toString().trim().toLowerCase();
+    return _toolMap[key]||raw;
+  }
+  function _resolveMode(m){
+    if(!m) return {cls:'show',label:'Show & Tell'};
+    const v=m.toString().toLowerCase();
+    if(v==='hands'||v.indexOf('hands')>=0) return {cls:'hands',label:'Hands-on'};
+    return {cls:'show',label:'Show & Tell'};
+  }
+  // Strip filename references (XX_01_Foo.xlsx etc) and "Open the X file" patterns from summary text
+  function _scrubFiles(t){
+    if(!t) return '';
+    t=t.replace(/\s*\(?\b[A-Z]{2,5}_\d{2}_[A-Za-z0-9_]+\.(?:xlsx|docx|pptx|pdf)\)?/g,'');
+    t=t.replace(/\s*\(?\b\d{2}\s*[A-Za-z_]+_[A-Za-z_]+\.(?:xlsx|docx|pptx|pdf)\)?/g,'');
+    t=t.replace(/\s+(?:in|dalam|di)\s+the\s+(?:attached|provided)?\s*(?:xlsx|docx|pptx|workbook|document|file)/gi,'');
+    t=t.replace(/\s{2,}/g,' ').replace(/\s+([,.;])/g,'$1').trim();
+    return t;
+  }
   if(item.storyboard && item.storyboard.length){
     sbWrap.style.display='block';
     const phases=_lang==='ID'?_phaseLabelsID:(_lang==='BM'?_phaseLabelsBM:_phaseLabels);
     const heroTitle=_lang==='ID'?'📖 Sehari Bersama Persona':(_lang==='BM'?'📖 Sehari Bersama Persona':'📖 A Day in the Life');
     const heroSub=_lang==='ID'
-      ?'Ikuti alur end-to-end ini seolah Anda menemani persona sepanjang hari. Klik tool di bawah untuk menyalin promptnya.'
+      ?'Ikuti alur end-to-end: setiap langkah menceritakan apa yang dikerjakan persona dan solusi Copilot mana yang membantu.'
       :(_lang==='BM'
-        ?'Ikuti aliran hujung-ke-hujung ini seolah-olah anda menemani persona sepanjang hari. Klik alat di bawah untuk menyalin prompt.'
-        :'Follow this end-to-end flow as if you are shadowing the persona through the day. Click a tool below to copy its prompts.');
+        ?'Ikuti aliran hujung-ke-hujung: setiap langkah menceritakan apa yang dilakukan persona dan penyelesaian Copilot yang digunakan.'
+        :'Follow the end-to-end story — each step tells what the persona is doing and which Copilot solution they use.');
     sbWrap.innerHTML=
       '<div class="storyboard-title">'+heroTitle+'</div>'+
       '<div class="storyboard-sub">'+heroSub+'</div>'+
       '<div class="sb-exercises">'+
       item.storyboard.map((ex,i)=>{
         const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:(_lang==='BM'&&ex.titleBM?ex.titleBM:ex.title);
-        const exSummary=_lang==='ID'&&ex.summaryID?ex.summaryID:(_lang==='BM'&&ex.summaryBM?ex.summaryBM:(ex.summary||''));
+        const exSummary=_scrubFiles(_lang==='ID'&&ex.summaryID?ex.summaryID:(_lang==='BM'&&ex.summaryBM?ex.summaryBM:(ex.summary||'')));
         const phase=phases[i] || phases[phases.length-1];
-        const tasks=(ex.tasks||[]).map(t=>{
+        const acts=(ex.tasks||[]).map((t,ti)=>{
           const verb=_lang==='ID'&&t.verbID?t.verbID:(_lang==='BM'&&t.verbBM?t.verbBM:t.verb);
-          return '<span class="sb-task" data-tool="'+escapeAttr(t.tool||'')+'">'+
-            '<span class="sb-task-n">'+escapeHTML(t.n||'')+'</span>'+
-            '<span class="sb-task-verb">'+escapeHTML(verb||'')+'</span>'+
-            '</span>';
+          const toolName=_resolveTool(t);
+          const mode=_resolveMode(t.mode);
+          const stepNum=t.n||((i+1)+'.'+(ti+1));
+          return '<div class="sb-act" data-tool="'+escapeAttr(t.tool||t.toolId||'')+'">'+
+            '<div class="sb-act-n">'+escapeHTML(stepNum)+'</div>'+
+            '<div class="sb-act-body">'+
+              '<div class="sb-act-tool">'+escapeHTML(toolName)+'</div>'+
+              '<div class="sb-act-narr">'+escapeHTML(verb||'')+'</div>'+
+            '</div>'+
+            '<div class="sb-act-mode '+mode.cls+'">'+escapeHTML(mode.label)+'</div>'+
+            '</div>';
         }).join('');
         return '<div class="sb-ex">'+
           '<div class="sb-ex-head">'+
@@ -801,7 +844,7 @@ function showItem(item,tab){
             '<span class="sb-ex-title">'+escapeHTML(exTitle||'')+'</span>'+
           '</div>'+
           (exSummary?'<div class="sb-ex-summary">'+escapeHTML(exSummary)+'</div>':'')+
-          '<div class="sb-tasks">'+tasks+'</div>'+
+          '<div class="sb-acts">'+acts+'</div>'+
           '</div>';
       }).join('')+
       '</div>';

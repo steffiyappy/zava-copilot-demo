@@ -216,30 +216,30 @@ INDUSTRIES_11.append(ind(
        'summary':'Frame the Toyota EV-mix shortfall + Honda margin renegotiation + dealer rationalisation situation and pull peer playbooks before the principal clock starts ticking.',
        'summaryID':'Bingkai situasi shortfall EV-mix Toyota + renegosiasi margin Honda + rasionalisasi dealer dan tarik playbook peer sebelum clock prinsipal mulai berdetak.',
        'tasks':[
-         {'verb':'Frame','toolId':T_CHAT,'mode':'Show & Tell'},
-         {'verb':'Benchmark','toolId':T_RESEARCHER,'mode':'Show & Tell'},
-         {'verb':'Draft brief','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
+         {'verb':'Frame the morning question and lock the day priorities','verbID':'Susun pertanyaan pagi dan kunci prioritas hari ini','toolId':T_CHAT,'mode':'Show & Tell'},
+         {'verb':'Run an outside-in peer scan and pull proven plays','verbID':'Lakukan pemindaian peer dari luar dan tarik praktik terbaik','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+         {'verb':'Generate a board-ready brief straight from chat','verbID':'Hasilkan brief siap-Direksi langsung dari chat','toolId':T_WORD_AGT,'mode':'Hands-on'}]},
       {'ex':2,'title':'Analyse & Decide','titleID':'Analisis & Putuskan','minutes':18,'mode':'Hands-on',
        'summary':'Quantify the Toyota EV-mix + Honda margin + dealer P&L combined impact; build a Group-ExCo dashboard.',
        'summaryID':'Kuantifikasi dampak gabungan EV-mix Toyota + margin Honda + P&L dealer; bangun dashboard ExCo Grup.',
        'tasks':[
-         {'verb':'Crunch','toolId':T_ANALYST,'mode':'Hands-on'},
-         {'verb':'Dashboard','toolId':T_EXCEL,'mode':'Hands-on'},
-         {'verb':'Tracker','toolId':T_XL_AGT,'mode':'Hands-on'}]},
+         {'verb':'Crunch the numbers and surface the biggest gaps','verbID':'Olah angka dan ungkap celah terbesar','toolId':T_ANALYST,'mode':'Hands-on'},
+         {'verb':'Build a single-pane operating dashboard','verbID':'Bangun dashboard operasi satu-halaman','toolId':T_EXCEL,'mode':'Hands-on'},
+         {'verb':'Spin up a recurring tracker workbook from chat','verbID':'Buat workbook tracker berulang dari chat','toolId':T_XL_AGT,'mode':'Hands-on'}]},
       {'ex':3,'title':'Communicate & Coordinate','titleID':'Komunikasi & Koordinasi','minutes':18,'mode':'Hands-on',
        'summary':'Brief brand-principal liaison heads, capture the Toyota TMAP Q4 review recap, and assemble the ExCo deck and Honda counter-proposal.',
        'summaryID':'Brief kepala liaison prinsipal merek, capture recap review TMAP Q4 Toyota, dan rakit deck ExCo serta counter-proposal Honda.',
        'tasks':[
-         {'verb':'Email','toolId':T_OUTLOOK,'mode':'Hands-on'},
-         {'verb':'Recap','toolId':T_TEAMS,'mode':'Hands-on'},
-         {'verb':'Deck','toolId':T_PPT_AGT,'mode':'Hands-on'},
-         {'verb':'Sprint','toolId':T_COWORK,'mode':'Show & Tell'}]},
+         {'verb':'Draft the stakeholder alignment email','verbID':'Draf email penyelarasan stakeholder','toolId':T_OUTLOOK,'mode':'Hands-on'},
+         {'verb':'Recap the meeting and turn it into minutes','verbID':'Recap rapat dan ubah ke notulen','toolId':T_TEAMS,'mode':'Hands-on'},
+         {'verb':'Generate a board-ready deck from chat','verbID':'Hasilkan deck siap-Direksi dari chat','toolId':T_PPT_AGT,'mode':'Hands-on'},
+         {'verb':'Delegate a 5-task parallel sprint','verbID':'Delegasikan 5-tugas paralel ke Cowork','toolId':T_COWORK,'mode':'Show & Tell'}]},
       {'ex':4,'title':'Build & Scale','titleID':'Bangun & Skala','minutes':15,'mode':'Show & Tell',
        'summary':'Wrap the Toyota EV-mix + Honda margin + dealer rationalisation playbook into a reusable agent for the Zava Motors operating team.',
        'summaryID':'Bungkus playbook EV-mix Toyota + margin Honda + rasionalisasi dealer ke dalam agent reusable untuk tim operasi Zava Motors.',
        'tasks':[
-         {'verb':'Notebook','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
-         {'verb':'Agent','toolId':T_BUILDER,'mode':'Show & Tell'}]}
+         {'verb':'Pull every source into one synthesis notebook','verbID':'Tarik semua sumber ke satu notebook sintesis','toolId':T_NOTEBOOK,'mode':'Show & Tell'},
+         {'verb':'Wrap the daily workflow into a reusable agent','verbID':'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang','toolId':T_BUILDER,'mode':'Show & Tell'}]}
     ],
     geo='MY+ID'
 ))

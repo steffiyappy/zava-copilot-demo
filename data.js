@@ -6526,8 +6526,8 @@ window.HUB_DATA = {
           titleID: 'Kuantifikasi',
           minutes: 22,
           mode: 'Hands-on',
-          summary: 'Quantify the Red and Amber drivers in HC_01_Hospital_Operations.xlsx, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.',
-          summaryID: 'Kuantifikasi driver Merah dan Kuning dalam HC_01_Hospital_Operations.xlsx, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
+          summary: 'Quantify the Red and Amber drivers, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.',
+          summaryID: 'Kuantifikasi driver Merah dan Kuning, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
           tasks: [
             {
               n: '04',
@@ -7318,8 +7318,8 @@ window.HUB_DATA = {
           titleID: 'Kuantifikasi',
           minutes: 22,
           mode: 'Hands-on',
-          summary: 'Quantify the Red and Amber drivers in PH_01_Drug_Portfolio.xlsx, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.',
-          summaryID: 'Kuantifikasi driver Merah dan Kuning dalam PH_01_Drug_Portfolio.xlsx, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
+          summary: 'Quantify the Red and Amber drivers, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.',
+          summaryID: 'Kuantifikasi driver Merah dan Kuning, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
           tasks: [
             {
               n: '04',
@@ -8110,8 +8110,8 @@ window.HUB_DATA = {
           titleID: 'Kuantifikasi',
           minutes: 22,
           mode: 'Hands-on',
-          summary: 'Quantify the Red and Amber drivers in OGU_01_Production_Operations.xlsx, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.',
-          summaryID: 'Kuantifikasi driver Merah dan Kuning dalam OGU_01_Production_Operations.xlsx, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
+          summary: 'Quantify the Red and Amber drivers, build a multi-tab Excel dashboard, and synthesize cross-file evidence in Notebook. Participants leave with a repeatable method for turning raw sheets into an executive watchlist.',
+          summaryID: 'Kuantifikasi driver Merah dan Kuning, bangun dashboard Excel multi-tab, dan sintesakan bukti lintas file di Notebook. Peserta memperoleh metode berulang untuk mengubah sheet mentah menjadi watchlist eksekutif.',
           tasks: [
             {
               n: '04',
@@ -23867,17 +23867,20 @@ window.HUB_DATA = {
           summaryID: 'Bingkai pembengkakan trade-spend Rp 280 M dan recall aktif; tarik benchmark peer ASEAN mendalam sebelum Direktur Keuangan Grup masuk Rapat Direksi Jumat.',
           tasks: [
             {
-              verb: 'Frame',
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
               toolId: '💬 Microsoft 365 Copilot Chat',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Benchmark',
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
               toolId: '🔍 Researcher',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Draft brief',
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
               toolId: '📝 Word Agent (Generate document)',
               mode: 'Hands-on'
             }
@@ -23893,17 +23896,20 @@ window.HUB_DATA = {
           summaryID: 'Kuantifikasi selisih trade-spend dan drag margin per SKU; bangun dashboard siap-Direksi.',
           tasks: [
             {
-              verb: 'Crunch',
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
               toolId: '📊 Analyst',
               mode: 'Hands-on'
             },
             {
-              verb: 'Dashboard',
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
               toolId: '📊 Copilot in Excel',
               mode: 'Hands-on'
             },
             {
-              verb: 'Tracker',
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
               toolId: '📊 Excel Agent (Generate workbook)',
               mode: 'Hands-on'
             }
@@ -23919,22 +23925,26 @@ window.HUB_DATA = {
           summaryID: 'Brief 6 Direktur Divisi, capture rapat Trade-Spend Crisis Review, dan rakit deck Direksi.',
           tasks: [
             {
-              verb: 'Email',
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
               toolId: '📧 Copilot in Outlook',
               mode: 'Hands-on'
             },
             {
-              verb: 'Recap',
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
               toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Deck',
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
               toolId: '🎯 PowerPoint Agent (Generate deck)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Sprint',
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
               toolId: '🤝 Cowork (Frontier)',
               mode: 'Show & Tell'
             }
@@ -23950,12 +23960,14 @@ window.HUB_DATA = {
           summaryID: 'Bungkus playbook trade-spend ke dalam agent reusable agar 6 Direktur Divisi dapat self-service.',
           tasks: [
             {
-              verb: 'Notebook',
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
               toolId: '📓 Copilot Notebook',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Agent',
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
               toolId: '🏗 Agent Builder (M365 Copilot Chat)',
               mode: 'Show & Tell'
             }
@@ -24496,17 +24508,20 @@ window.HUB_DATA = {
           summaryID: 'Bingkai pukulan gabungan FDA + CBP dan tarik playbook peer sebelum clock Bursa 7-hari mulai berdetak.',
           tasks: [
             {
-              verb: 'Frame',
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
               toolId: '💬 Microsoft 365 Copilot Chat',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Benchmark',
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
               toolId: '🔍 Researcher',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Draft brief',
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
               toolId: '📝 Word Agent (Generate document)',
               mode: 'Hands-on'
             }
@@ -24522,17 +24537,20 @@ window.HUB_DATA = {
           summaryID: 'Kuantifikasi dampak finansial FDA + CBP dan headroom covenant; bangun dashboard KA.',
           tasks: [
             {
-              verb: 'Crunch',
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
               toolId: '📊 Analyst',
               mode: 'Hands-on'
             },
             {
-              verb: 'Dashboard',
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
               toolId: '📊 Copilot in Excel',
               mode: 'Hands-on'
             },
             {
-              verb: 'Tracker',
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
               toolId: '📊 Excel Agent (Generate workbook)',
               mode: 'Hands-on'
             }
@@ -24548,22 +24566,26 @@ window.HUB_DATA = {
           summaryID: 'Brief 8 GM pabrik, capture recap FDA War Room, dan rakit deck KA serta pengungkapan Bursa.',
           tasks: [
             {
-              verb: 'Email',
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
               toolId: '📧 Copilot in Outlook',
               mode: 'Hands-on'
             },
             {
-              verb: 'Recap',
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
               toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Deck',
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
               toolId: '🎯 PowerPoint Agent (Generate deck)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Sprint',
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
               toolId: '🤝 Cowork (Frontier)',
               mode: 'Show & Tell'
             }
@@ -24579,12 +24601,14 @@ window.HUB_DATA = {
           summaryID: 'Bungkus playbook FDA + CBP ke dalam agent reusable untuk 8 GM pabrik dan tim HSE Grup.',
           tasks: [
             {
-              verb: 'Notebook',
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
               toolId: '📓 Copilot Notebook',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Agent',
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
               toolId: '🏗 Agent Builder (M365 Copilot Chat)',
               mode: 'Show & Tell'
             }
@@ -25124,17 +25148,20 @@ window.HUB_DATA = {
           summaryID: 'Bingkai situasi BNM-directed MBS issuance dan tarik playbook peer sebelum clock regulator mulai berdetak.',
           tasks: [
             {
-              verb: 'Frame',
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
               toolId: '💬 Microsoft 365 Copilot Chat',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Benchmark',
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
               toolId: '🔍 Researcher',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Draft brief',
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
               toolId: '📝 Word Agent (Generate document)',
               mode: 'Hands-on'
             }
@@ -25150,17 +25177,20 @@ window.HUB_DATA = {
           summaryID: 'Kuantifikasi dampak finansial dan operasional BNM-directed MBS issuance; bangun dashboard KA.',
           tasks: [
             {
-              verb: 'Crunch',
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
               toolId: '📊 Analyst',
               mode: 'Hands-on'
             },
             {
-              verb: 'Dashboard',
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
               toolId: '📊 Copilot in Excel',
               mode: 'Hands-on'
             },
             {
-              verb: 'Tracker',
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
               toolId: '📊 Excel Agent (Generate workbook)',
               mode: 'Hands-on'
             }
@@ -25176,22 +25206,26 @@ window.HUB_DATA = {
           summaryID: 'Brief kepala operasi, capture recap BNM Liquidity War Room, dan rakit deck KA serta respons regulator.',
           tasks: [
             {
-              verb: 'Email',
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
               toolId: '📧 Copilot in Outlook',
               mode: 'Hands-on'
             },
             {
-              verb: 'Recap',
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
               toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Deck',
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
               toolId: '🎯 PowerPoint Agent (Generate deck)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Sprint',
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
               toolId: '🤝 Cowork (Frontier)',
               mode: 'Show & Tell'
             }
@@ -25207,12 +25241,14 @@ window.HUB_DATA = {
           summaryID: 'Bungkus playbook BNM-directed MBS issuance ke dalam agent reusable untuk tim operasi Zava Cagamas Berhad.',
           tasks: [
             {
-              verb: 'Notebook',
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
               toolId: '📓 Copilot Notebook',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Agent',
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
               toolId: '🏗 Agent Builder (M365 Copilot Chat)',
               mode: 'Show & Tell'
             }
@@ -25751,17 +25787,20 @@ window.HUB_DATA = {
           summaryID: 'Bingkai situasi BNM PSA suspicious-transaction inquiry dan tarik playbook peer sebelum clock regulator mulai berdetak.',
           tasks: [
             {
-              verb: 'Frame',
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
               toolId: '💬 Microsoft 365 Copilot Chat',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Benchmark',
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
               toolId: '🔍 Researcher',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Draft brief',
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
               toolId: '📝 Word Agent (Generate document)',
               mode: 'Hands-on'
             }
@@ -25777,17 +25816,20 @@ window.HUB_DATA = {
           summaryID: 'Kuantifikasi dampak finansial dan operasional BNM PSA suspicious-transaction inquiry; bangun dashboard KA.',
           tasks: [
             {
-              verb: 'Crunch',
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
               toolId: '📊 Analyst',
               mode: 'Hands-on'
             },
             {
-              verb: 'Dashboard',
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
               toolId: '📊 Copilot in Excel',
               mode: 'Hands-on'
             },
             {
-              verb: 'Tracker',
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
               toolId: '📊 Excel Agent (Generate workbook)',
               mode: 'Hands-on'
             }
@@ -25803,22 +25845,26 @@ window.HUB_DATA = {
           summaryID: 'Brief kepala operasi, capture recap AML Risk Council, dan rakit deck KA serta respons regulator.',
           tasks: [
             {
-              verb: 'Email',
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
               toolId: '📧 Copilot in Outlook',
               mode: 'Hands-on'
             },
             {
-              verb: 'Recap',
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
               toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Deck',
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
               toolId: '🎯 PowerPoint Agent (Generate deck)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Sprint',
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
               toolId: '🤝 Cowork (Frontier)',
               mode: 'Show & Tell'
             }
@@ -25834,12 +25880,14 @@ window.HUB_DATA = {
           summaryID: 'Bungkus playbook BNM PSA suspicious-transaction inquiry ke dalam agent reusable untuk tim operasi Zava Remit Asia.',
           tasks: [
             {
-              verb: 'Notebook',
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
               toolId: '📓 Copilot Notebook',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Agent',
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
               toolId: '🏗 Agent Builder (M365 Copilot Chat)',
               mode: 'Show & Tell'
             }
@@ -26378,17 +26426,20 @@ window.HUB_DATA = {
           summaryID: 'Bingkai situasi NR raw-material spike + OEM contract review dan tarik playbook peer sebelum clock regulator mulai berdetak.',
           tasks: [
             {
-              verb: 'Frame',
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
               toolId: '💬 Microsoft 365 Copilot Chat',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Benchmark',
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
               toolId: '🔍 Researcher',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Draft brief',
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
               toolId: '📝 Word Agent (Generate document)',
               mode: 'Hands-on'
             }
@@ -26404,17 +26455,20 @@ window.HUB_DATA = {
           summaryID: 'Kuantifikasi dampak finansial dan operasional NR raw-material spike + OEM contract review; bangun dashboard KA.',
           tasks: [
             {
-              verb: 'Crunch',
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
               toolId: '📊 Analyst',
               mode: 'Hands-on'
             },
             {
-              verb: 'Dashboard',
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
               toolId: '📊 Copilot in Excel',
               mode: 'Hands-on'
             },
             {
-              verb: 'Tracker',
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
               toolId: '📊 Excel Agent (Generate workbook)',
               mode: 'Hands-on'
             }
@@ -26430,22 +26484,26 @@ window.HUB_DATA = {
           summaryID: 'Brief kepala operasi, capture recap OEM Pass-Through Steerco, dan rakit deck KA serta respons regulator.',
           tasks: [
             {
-              verb: 'Email',
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
               toolId: '📧 Copilot in Outlook',
               mode: 'Hands-on'
             },
             {
-              verb: 'Recap',
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
               toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Deck',
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
               toolId: '🎯 PowerPoint Agent (Generate deck)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Sprint',
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
               toolId: '🤝 Cowork (Frontier)',
               mode: 'Show & Tell'
             }
@@ -26461,12 +26519,14 @@ window.HUB_DATA = {
           summaryID: 'Bungkus playbook NR raw-material spike + OEM contract review ke dalam agent reusable untuk tim operasi Zava Auto Industries.',
           tasks: [
             {
-              verb: 'Notebook',
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
               toolId: '📓 Copilot Notebook',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Agent',
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
               toolId: '🏗 Agent Builder (M365 Copilot Chat)',
               mode: 'Show & Tell'
             }
@@ -27005,17 +27065,20 @@ window.HUB_DATA = {
           summaryID: 'Bingkai situasi US BIS export-control update dan tarik playbook peer sebelum clock regulator mulai berdetak.',
           tasks: [
             {
-              verb: 'Frame',
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
               toolId: '💬 Microsoft 365 Copilot Chat',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Benchmark',
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
               toolId: '🔍 Researcher',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Draft brief',
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
               toolId: '📝 Word Agent (Generate document)',
               mode: 'Hands-on'
             }
@@ -27031,17 +27094,20 @@ window.HUB_DATA = {
           summaryID: 'Kuantifikasi dampak finansial dan operasional US BIS export-control update; bangun dashboard KA.',
           tasks: [
             {
-              verb: 'Crunch',
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
               toolId: '📊 Analyst',
               mode: 'Hands-on'
             },
             {
-              verb: 'Dashboard',
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
               toolId: '📊 Copilot in Excel',
               mode: 'Hands-on'
             },
             {
-              verb: 'Tracker',
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
               toolId: '📊 Excel Agent (Generate workbook)',
               mode: 'Hands-on'
             }
@@ -27057,22 +27123,26 @@ window.HUB_DATA = {
           summaryID: 'Brief kepala operasi, capture recap BIS Export-Control War Room, dan rakit deck KA serta respons regulator.',
           tasks: [
             {
-              verb: 'Email',
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
               toolId: '📧 Copilot in Outlook',
               mode: 'Hands-on'
             },
             {
-              verb: 'Recap',
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
               toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Deck',
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
               toolId: '🎯 PowerPoint Agent (Generate deck)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Sprint',
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
               toolId: '🤝 Cowork (Frontier)',
               mode: 'Show & Tell'
             }
@@ -27088,12 +27158,14 @@ window.HUB_DATA = {
           summaryID: 'Bungkus playbook US BIS export-control update ke dalam agent reusable untuk tim operasi Zava Electronics MY.',
           tasks: [
             {
-              verb: 'Notebook',
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
               toolId: '📓 Copilot Notebook',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Agent',
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
               toolId: '🏗 Agent Builder (M365 Copilot Chat)',
               mode: 'Show & Tell'
             }
@@ -27633,17 +27705,20 @@ window.HUB_DATA = {
           summaryID: 'Bingkai situasi AELB renewal + China REE export curb dan tarik playbook peer sebelum clock regulator mulai berdetak.',
           tasks: [
             {
-              verb: 'Frame',
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
               toolId: '💬 Microsoft 365 Copilot Chat',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Benchmark',
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
               toolId: '🔍 Researcher',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Draft brief',
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
               toolId: '📝 Word Agent (Generate document)',
               mode: 'Hands-on'
             }
@@ -27659,17 +27734,20 @@ window.HUB_DATA = {
           summaryID: 'Kuantifikasi dampak finansial dan operasional AELB renewal + China REE export curb; bangun dashboard KA.',
           tasks: [
             {
-              verb: 'Crunch',
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
               toolId: '📊 Analyst',
               mode: 'Hands-on'
             },
             {
-              verb: 'Dashboard',
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
               toolId: '📊 Copilot in Excel',
               mode: 'Hands-on'
             },
             {
-              verb: 'Tracker',
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
               toolId: '📊 Excel Agent (Generate workbook)',
               mode: 'Hands-on'
             }
@@ -27685,22 +27763,26 @@ window.HUB_DATA = {
           summaryID: 'Brief kepala operasi, capture recap AELB Renewal War Room, dan rakit deck KA serta respons regulator.',
           tasks: [
             {
-              verb: 'Email',
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
               toolId: '📧 Copilot in Outlook',
               mode: 'Hands-on'
             },
             {
-              verb: 'Recap',
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
               toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Deck',
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
               toolId: '🎯 PowerPoint Agent (Generate deck)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Sprint',
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
               toolId: '🤝 Cowork (Frontier)',
               mode: 'Show & Tell'
             }
@@ -27716,12 +27798,14 @@ window.HUB_DATA = {
           summaryID: 'Bungkus playbook AELB renewal + China REE export curb ke dalam agent reusable untuk tim operasi Zava Rare Earth.',
           tasks: [
             {
-              verb: 'Notebook',
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
               toolId: '📓 Copilot Notebook',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Agent',
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
               toolId: '🏗 Agent Builder (M365 Copilot Chat)',
               mode: 'Show & Tell'
             }
@@ -28261,17 +28345,20 @@ window.HUB_DATA = {
           summaryID: 'Bingkai situasi shortfall EV-mix Toyota + renegosiasi margin Honda + rasionalisasi dealer dan tarik playbook peer sebelum clock prinsipal mulai berdetak.',
           tasks: [
             {
-              verb: 'Frame',
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
               toolId: '💬 Microsoft 365 Copilot Chat',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Benchmark',
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
               toolId: '🔍 Researcher',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Draft brief',
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
               toolId: '📝 Word Agent (Generate document)',
               mode: 'Hands-on'
             }
@@ -28287,17 +28374,20 @@ window.HUB_DATA = {
           summaryID: 'Kuantifikasi dampak gabungan EV-mix Toyota + margin Honda + P&L dealer; bangun dashboard ExCo Grup.',
           tasks: [
             {
-              verb: 'Crunch',
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
               toolId: '📊 Analyst',
               mode: 'Hands-on'
             },
             {
-              verb: 'Dashboard',
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
               toolId: '📊 Copilot in Excel',
               mode: 'Hands-on'
             },
             {
-              verb: 'Tracker',
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
               toolId: '📊 Excel Agent (Generate workbook)',
               mode: 'Hands-on'
             }
@@ -28313,22 +28403,26 @@ window.HUB_DATA = {
           summaryID: 'Brief kepala liaison prinsipal merek, capture recap review TMAP Q4 Toyota, dan rakit deck ExCo serta counter-proposal Honda.',
           tasks: [
             {
-              verb: 'Email',
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
               toolId: '📧 Copilot in Outlook',
               mode: 'Hands-on'
             },
             {
-              verb: 'Recap',
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
               toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Deck',
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
               toolId: '🎯 PowerPoint Agent (Generate deck)',
               mode: 'Hands-on'
             },
             {
-              verb: 'Sprint',
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
               toolId: '🤝 Cowork (Frontier)',
               mode: 'Show & Tell'
             }
@@ -28344,12 +28438,14 @@ window.HUB_DATA = {
           summaryID: 'Bungkus playbook EV-mix Toyota + margin Honda + rasionalisasi dealer ke dalam agent reusable untuk tim operasi Zava Motors.',
           tasks: [
             {
-              verb: 'Notebook',
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
               toolId: '📓 Copilot Notebook',
               mode: 'Show & Tell'
             },
             {
-              verb: 'Agent',
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
               toolId: '🏗 Agent Builder (M365 Copilot Chat)',
               mode: 'Show & Tell'
             }
