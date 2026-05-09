@@ -16,11 +16,12 @@ from dept_data  import DEPARTMENTS
 from dept_data2 import DEPARTMENTS_2
 from dept_data3 import DEPARTMENTS_3
 from dept_data4 import DEPARTMENTS_4
+from dept_data5 import DEPARTMENTS_5
 
 all_industries = (INDUSTRIES_1 + INDUSTRIES_2 + INDUSTRIES_3 + INDUSTRIES_4 +
                   INDUSTRIES_5 + INDUSTRIES_6 + INDUSTRIES_7 + INDUSTRIES_8 +
                   INDUSTRIES_9 + INDUSTRIES_10)
-all_departments = DEPARTMENTS + DEPARTMENTS_2 + DEPARTMENTS_3 + DEPARTMENTS_4
+all_departments = DEPARTMENTS + DEPARTMENTS_2 + DEPARTMENTS_3 + DEPARTMENTS_4 + DEPARTMENTS_5
 
 print(f"Industries: {len(all_industries)}, Departments: {len(all_departments)}")
 
