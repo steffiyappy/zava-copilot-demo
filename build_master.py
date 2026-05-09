@@ -31,7 +31,8 @@ WHATS_NEW = [
         "badge": "New rollout (May 2026)",
         "summary": "Two demo modes inside Researcher: (1) Critique Mode self-critiques every source and flags claims it cannot verify; (2) Model Council convenes GPT-5.5 Thinking + Claude Opus 4.7 + Claude Sonnet 4.7 each return a full independent report, then a synthesis cover letter highlights where they agree, where they differ, and any unique findings.",
         "tip": "m365.cloud.microsoft/chat > Agents > Researcher > switch the mode pill at the top to 'Critique' or 'Model Council'.",
-        "license": "M365_LIC"
+        "license": "M365_LIC",
+        "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-multi-model-intelligence-in-researcher/4506011"
     },
     {
         "id": "wn-cowork",
@@ -39,7 +40,8 @@ WHATS_NEW = [
         "badge": "Frontier Program",
         "summary": "ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, post a Teams message \u2014 Cowork executes them all in parallel and reports back with a single status panel.",
         "tip": "m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.",
-        "license": "FRONTIER_LIC"
+        "license": "FRONTIER_LIC",
+        "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/cowork-in-progress/4511672"
     },
     {
         "id": "wn-doc-agents",
@@ -47,7 +49,8 @@ WHATS_NEW = [
         "badge": "Free Chat tier + M365 Copilot",
         "summary": "Type ONE prompt in m365.cloud.microsoft/chat and Copilot returns a fully drafted .docx / .pptx / .xlsx without you opening Word/PPT/Excel first. Now available in BOTH the free Copilot Chat tier (Sasha account) and with an M365 Copilot license (MOD Admin account).",
         "tip": "Try in the free tier: 'Build a 5-slide investor narrative deck for the Zava FY2025 Q4 results...'",
-        "license": "ANY_LIC"
+        "license": "ANY_LIC",
+        "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/copilot-in-word-new-capabilities-for-document-workflows/4508974"
     },
     {
         "id": "wn-builder",
@@ -55,7 +58,8 @@ WHATS_NEW = [
         "badge": "Free Chat tier + M365 Copilot",
         "summary": "Create custom agents inside Copilot Chat \u2014 NOT Copilot Studio. Describe \u2192 Configure (knowledge, instructions, starter prompts) \u2192 Test \u2192 Create + share. Now usable in both the free Copilot Chat tier and with an M365 Copilot license.",
         "tip": "m365.cloud.microsoft/chat > Agents > + Create an agent. Try building a 'Group CFO Briefing Bot' grounded in your finance reference files.",
-        "license": "ANY_LIC"
+        "license": "ANY_LIC",
+        "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/whats-new-in-microsoft-365-copilot--april-2026/4510935"
     },
     {
         "id": "wn-notebook",
@@ -63,7 +67,8 @@ WHATS_NEW = [
         "badge": "Generally Available",
         "summary": "Add up to 5 source files (Word/Excel/PDF/PPT) at notebook creation, set a persistent Instructions field, then run multiple prompts against the same notebook without re-uploading. Quick Create now produces Pages, Audio Overviews, and presentations from any notebook.",
         "tip": "m365.cloud.microsoft/chat > Notebook tab > + New Notebook. After grounding, click Quick Create > Audio Overview for a podcast-style executive summary.",
-        "license": "M365_LIC"
+        "license": "M365_LIC",
+        "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/whats-new-in-microsoft-365-copilot--april-2026/4510935"
     },
     {
         "id": "wn-federated",
@@ -71,7 +76,8 @@ WHATS_NEW = [
         "badge": "May 2026 rollout",
         "summary": "Copilot can now query external systems-of-record from inside Chat: Moody's (credit ratings), HubSpot (CRM), LSEG (market data), Notion (knowledge base) and ServiceNow. Useful for IR/credit prompts that need real-time market or counterparty data.",
         "tip": "Try in Researcher: 'Pull LSEG 5-year CDS spreads for Zava Group's top-3 lender peers and Moody's latest rating action notes.'",
-        "license": "M365_LIC"
+        "license": "M365_LIC",
+        "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993"
     },
     {
         "id": "wn-word-legal",
@@ -79,7 +85,8 @@ WHATS_NEW = [
         "badge": "Frontier Program",
         "summary": "Specialised Word agent for contract / litigation / compliance work \u2014 redlines clauses against a playbook, highlights deviations from precedent, and proposes alternate language grounded in the firm's contract corpus.",
         "tip": "Open a contract .docx in Word for the Web > Copilot pane > switch to 'Legal Agent'. Ask: 'Redline this MSA against our Tier-1 vendor playbook and flag any indemnity carve-outs.'",
-        "license": "FRONTIER_LIC"
+        "license": "FRONTIER_LIC",
+        "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/word-legal-agent-in-frontier/4516218"
     },
     {
         "id": "wn-models",
@@ -87,7 +94,8 @@ WHATS_NEW = [
         "badge": "May 2026 rollout",
         "summary": "Switch the underlying frontier model for any chat or agent: GPT-5.5 Instant, GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7, ChatGPT Images 2.0. Use Thinking models for board-grade reasoning; Instant for fast triage.",
         "tip": "In any Copilot Chat thread, click the model pill at the top \u2014 try 'GPT-5.5 Thinking' for the Strategy/Risk briefs; 'Claude Opus 4.7' for nuanced legal/policy drafting.",
-        "license": "M365_LIC"
+        "license": "M365_LIC",
+        "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-anthropic-claude-opus-4-7-in-microsoft-365-copilot/4511666"
     }
 ]
 

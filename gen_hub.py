@@ -362,7 +362,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
         <div class="wn-tag" id="wn-tag">Loading...</div>
         <div class="wn-title" id="wn-title">Loading...</div>
         <div class="wn-desc" id="wn-desc">Loading...</div>
-        <div class="wn-dots" id="wn-dots"></div>
+        <div class="wn-meta">
+          <a id="wn-link" class="wn-link" href="#" target="_blank" rel="noopener" style="display:none">Read the blog post →</a>
+          <div class="wn-dots" id="wn-dots"></div>
+        </div>
       </div>
       <div class="wn-nav">
         <button class="wn-btn" onclick="wnNav(-1)">&#8249;</button>
@@ -716,6 +719,8 @@ function setWn(i){
   document.getElementById('wn-tag').textContent=item.badge||item.tag||'';
   document.getElementById('wn-title').textContent=item.title||'';
   document.getElementById('wn-desc').textContent=item.summary||item.desc||item.tip||'';
+  const linkEl=document.getElementById('wn-link');
+  if(item.link){linkEl.href=item.link;linkEl.style.display='inline-flex';}else{linkEl.style.display='none';}
   document.querySelectorAll('.wn-dot').forEach((d,j)=>{d.classList.toggle('active',j===i)});
 }
 function wnNav(dir){setWn((wnIdx+dir+data.whatsNew.length)%data.whatsNew.length)}
