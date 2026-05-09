@@ -12,6 +12,7 @@ from ind_batch7 import INDUSTRIES_7
 from ind_batch8 import INDUSTRIES_8
 from ind_batch9 import INDUSTRIES_9
 from ind_batch10 import INDUSTRIES_10
+from ind_batch11 import INDUSTRIES_11
 from dept_data  import DEPARTMENTS
 from dept_data2 import DEPARTMENTS_2
 from dept_data3 import DEPARTMENTS_3
@@ -20,7 +21,7 @@ from dept_data5 import DEPARTMENTS_5
 
 all_industries = (INDUSTRIES_1 + INDUSTRIES_2 + INDUSTRIES_3 + INDUSTRIES_4 +
                   INDUSTRIES_5 + INDUSTRIES_6 + INDUSTRIES_7 + INDUSTRIES_8 +
-                  INDUSTRIES_9 + INDUSTRIES_10)
+                  INDUSTRIES_9 + INDUSTRIES_10 + INDUSTRIES_11)
 all_departments = DEPARTMENTS + DEPARTMENTS_2 + DEPARTMENTS_3 + DEPARTMENTS_4 + DEPARTMENTS_5
 
 print(f"Industries: {len(all_industries)}, Departments: {len(all_departments)}")
@@ -108,7 +109,7 @@ SECTORS = [
     {"id": "sec-healthcare", "label": "Healthcare",        "industries": ["hospital-network","pharmaceutical"]},
     {"id": "sec-og",         "label": "Oil & Gas",         "industries": ["og-upstream","og-downstream"]},
     {"id": "sec-energy",     "label": "Energy",            "industries": ["renewable-energy"]},
-    {"id": "sec-mfg",        "label": "Manufacturing",     "industries": ["industrial-manufacturing","rubber-gloves","semiconductor","auto-tyres","construction"]},
+    {"id": "sec-mfg",        "label": "Manufacturing",     "industries": ["industrial-manufacturing","rubber-gloves","semiconductor","automotive","auto-tyres","construction"]},
     {"id": "sec-food",       "label": "Food & FMCG",       "industries": ["food-fmcg"]},
     {"id": "sec-agri",       "label": "Agriculture",       "industries": ["plantation"]},
     {"id": "sec-bpo",        "label": "BPO & Tech",        "industries": ["bpo-services"]},
