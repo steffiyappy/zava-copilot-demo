@@ -8,7 +8,7 @@ from util import (T_CHAT, T_RESEARCHER, T_ANALYST, T_EXCEL, T_WORD, T_PPT, T_OUT
                   DESC_CHAT, DESC_RESEARCHER, DESC_ANALYST, DESC_EXCEL, DESC_WORD, DESC_PPT,
                   DESC_OUTLOOK, DESC_TEAMS, DESC_NOTEBOOK, DESC_COWORK, DESC_WORD_AGT,
                   DESC_PPT_AGT, DESC_XL_AGT, DESC_BUILDER,
-                  FREE_LIC, FREE_ACCT, M365_LIC, M365_ACCT, FRONTIER_LIC,
+                  FREE_LIC, FREE_ACCT, M365_LIC, M365_ACCT, ANY_LIC, ANY_ACCT, FRONTIER_LIC,
                   tool, ind)
 
 # ───────────────────────── INDUSTRY CONTEXTS ─────────────────────────
@@ -400,7 +400,7 @@ def _build(c):
         f"Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Word terlebih dahulu — ketik: \"Susun paket talking-point Word 2 halaman untuk {re_id['ceo']} {c['co_id']} menjelang {c['event_id']} berdasarkan /file {files[5]}, dan simpan file ke OneDrive saya.\"",
     ]
     wa_personas = ['Daichi Maruyama', 'Daichi Maruyama']
-    t11 = tool(T_WORD_AGT, M365_LIC, M365_ACCT, wa_en, DESC_WORD_AGT,
+    t11 = tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, wa_en, DESC_WORD_AGT,
                promptsID=wa_id, persona=wa_personas, personaID=wa_personas)
 
     # 12. T_PPT_AGT — 2 prompts (DO NOT open PowerPoint first)
@@ -413,7 +413,7 @@ def _build(c):
         f"Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka PowerPoint terlebih dahulu — ketik: \"Bangun paket regulator 6 slide untuk {c['co_id']} yang selaras dengan {c['regulators_id']}, berdasarkan /file {files[5]} dan /file {files[4]}, dan simpan file ke OneDrive saya.\"",
     ]
     pa_personas = ['Daichi Maruyama', 'Daichi Maruyama']
-    t12 = tool(T_PPT_AGT, M365_LIC, M365_ACCT, pa_en, DESC_PPT_AGT,
+    t12 = tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, pa_en, DESC_PPT_AGT,
                promptsID=pa_id, persona=pa_personas, personaID=pa_personas)
 
     # 13. T_XL_AGT — 2 prompts (DO NOT open Excel first)
@@ -426,7 +426,7 @@ def _build(c):
         f"Dari M365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Excel terlebih dahulu — ketik: \"Bangun workbook Excel baru bernama 'Risk Heatmap — {c['co_id']}' yang memeringkat 15 risiko teratas di balik {c['kpi_phrase_id']} berdasarkan /file {files[4]} dan /file {files[1]}, dan simpan file ke OneDrive saya.\"",
     ]
     xa_personas = ['Daichi Maruyama', 'Daichi Maruyama']
-    t13 = tool(T_XL_AGT, M365_LIC, M365_ACCT, xa_en, DESC_XL_AGT,
+    t13 = tool(T_XL_AGT, ANY_LIC, ANY_ACCT, xa_en, DESC_XL_AGT,
                promptsID=xa_id, persona=xa_personas, personaID=xa_personas)
 
     # 14. T_BUILDER — 2 prompts (paste-into-chat agent description with starter prompts)
@@ -463,7 +463,7 @@ def _build(c):
          f"(5) 'Tandai setiap celah pengungkapan yang memicu re-filing'. \""),
     ]
     b_personas = ['Daichi Maruyama', 'Daichi Maruyama']
-    t14 = tool(T_BUILDER, M365_LIC, M365_ACCT, b_en, DESC_BUILDER,
+    t14 = tool(T_BUILDER, ANY_LIC, ANY_ACCT, b_en, DESC_BUILDER,
                promptsID=b_id, persona=b_personas, personaID=b_personas)
 
     tools = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14]
