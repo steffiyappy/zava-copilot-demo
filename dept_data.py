@@ -28,8 +28,8 @@ DEPARTMENTS = [
                      'Saya perlu memberi brief lisan kepada Direktur Utama dalam 10 menit tentang krisis talenta. Menggunakan /HR_01_Workforce_Analytics.xlsx dan /HR_03_Talent_Strategy.docx, berikan 5 poin brief lisan: angka attrition dan tren, 3 departemen risiko tertinggi, estimasi dampak finansial, langkah darurat kami, dan apa yang saya butuhkan dari Direktur Utama (persetujuan anggaran, pengecualian hiring freeze). Setiap poin maksimal 30 kata.',
                      'Petakan semua pemangku kepentingan untuk Talent Council mendatang menggunakan /HR_06_Talent_Council_Charter.docx. Untuk setiap pemangku kepentingan, identifikasi: kekhawatiran utama, data yang akan mereka minta, potensi keberatan terhadap reset kompensasi, dan cara mengantisipasinya. Format sebagai matriks persiapan pemangku kepentingan.',
                  ],
-                 persona=['Aisha Rahman','Putri Anindita','Wiremu Tane'],
-                 personaID=['Aisha Rahman','Putri Anindita','Wiremu Tane']),
+                 persona=['Sasha Ouellet','Sasha Ouellet','Sasha Ouellet'],
+                 personaID=['Sasha Ouellet','Sasha Ouellet','Sasha Ouellet']),
             tool(T_RESEARCHER, M365_LIC, M365_ACCT,
                  prompts=[
                      'Critique Mode \u2014 Research ASEAN employee attrition case studies from 2022-2024, specifically in conglomerates with 2,000-10,000 headcount. Find: (1) proven rapid-retention interventions that showed results within 90 days, (2) cost-of-attrition models with actual figures, (3) examples of successful hiring blitz programs, (4) compensation reset methodologies that maintained pay equity. Challenge any finding that lacks quantitative evidence.',
@@ -233,8 +233,8 @@ DEPARTMENTS = [
                      'Saya punya 5 menit dengan Direktur Utama sebelum rapat Dewan. Menggunakan /FIN_01_Budget_Performance.xlsx dan /FIN_05_Cashflow_Forecast.xlsx, berikan 5 poin brief lisan: keterlambatan close dan akar masalah, kuantum overrun opex, timeline krisis cashflow, probabilitas pelanggaran covenant, dan permintaan spesifik saya (perpanjangan 30 hari untuk submission RKAP, hiring freeze posisi non-revenue). Maksimal 25 kata per poin.',
                      'Petakan anggota Komite Audit menggunakan /FIN_06_Audit_Committee_Charter.docx. Untuk setiap anggota identifikasi: latar belakang dan fokus area mereka, pertanyaan yang akan mereka ajukan tentang selisih -22%%, tingkat toleransi risiko, potensi keberatan terhadap reset 15%%, dan cara membingkai proposal agar selaras dengan prioritas mereka. Output sebagai matriks persiapan.',
                  ],
-                 persona=['Rajesh Menon','Sofia Hartanto','Rajesh Menon'],
-                 personaID=['Rajesh Menon','Sofia Hartanto','Rajesh Menon']),
+                 persona=['Hadar Caspit','Hadar Caspit','Hadar Caspit'],
+                 personaID=['Hadar Caspit','Hadar Caspit','Hadar Caspit']),
             tool(T_RESEARCHER, M365_LIC, M365_ACCT,
                  prompts=[
                      'Critique Mode \u2014 Research corporate cost transformation programs from 2022-2024 in ASEAN conglomerates and MNCs. Find: (1) proven rapid cost-reduction methodologies that delivered 10-20%% savings within 90 days without destroying capability, (2) month-end close acceleration case studies (from 10+ days to <5 days), (3) AP management turnaround examples with actual figures, (4) covenant protection strategies used by CFOs in distressed situations. Challenge any finding that lacks quantitative evidence.',

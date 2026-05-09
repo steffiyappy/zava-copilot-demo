@@ -739,7 +739,7 @@ function showItem(item,tab){
     const pills=item.relevantDepts.map(did=>{
       const d=data.departments.find(x=>x.id===did);
       if(!d) return '';
-      return '<span class="dept-pill" data-did="'+escapeAttr(d.id)+'">'+d.icon+' '+escapeHTML(d.name)+'</span>';
+      return '<span class="dept-pill" data-did="'+escapeAttr(d.id)+'">'+d.icon+' '+escapeHTML(_stripLeadingEmoji(d.name))+'</span>';
     }).filter(Boolean).join('');
     if(pills){
       pillsHtml='<div class="dept-pills"><div class="dept-pills-label">🏢 Departments most affected — click to drill down</div>'+pills+'</div>';

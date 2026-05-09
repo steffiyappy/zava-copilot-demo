@@ -274,7 +274,7 @@ ind('general','general','General (Any Role)','⭐','#FF6B35','#FF8C42',
     companyID='Zava Group',
     taglineID='EBITDA FY2025 meleset 21% dari RKAP \u2014 Rapat Direksi darurat dalam 36 jam.',
     scenarioID='Zava Group adalah konglomerat diversifikasi ASEAN yang beroperasi di 11 unit usaha lintas kimia, agribisnis, manufaktur, jasa keuangan, properti, BPO, perdagangan, farmasi, kesehatan, ritel, dan tresuri grup, dengan sekitar 12.000 karyawan di Malaysia, Indonesia, dan Singapura. EBITDA FY2025 meleset 21% dari RKAP, dua unit usaha kini mencatat EBITDA negatif, OJK telah meminta klarifikasi, dan bank relasi utama mengangkat pertanyaan covenant. Direktur Utama akan menghadapi Rapat Direksi darurat dalam 36 jam dan membutuhkan paket briefing yang dapat dipertahankan, analisis varians per unit usaha, holding lines untuk regulator dan kreditor, serta program perbaikan 30 hari \u2014 secara cepat.',
-    relevantDepts=['dept-finance','dept-strategy','dept-legal','dept-risk','dept-it-digital','dept-hr','dept-esg','dept-marketing','dept-operations','dept-board'],
+    relevantDepts=['dept-finance','dept-strategy','dept-legal','dept-risk','dept-it-digital','dept-hr','dept-esg','dept-marketing','dept-operations','dept-corpsec'],
     personas=[
       {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
       {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},

@@ -858,7 +858,7 @@ window.HUB_DATA = {
         'dept-esg',
         'dept-marketing',
         'dept-operations',
-        'dept-board'
+        'dept-corpsec'
       ],
       storyboard: [
         {
@@ -13631,7 +13631,7 @@ window.HUB_DATA = {
       relevantDepts: [
         'dept-finance',
         'dept-strategy',
-        'dept-board',
+        'dept-corpsec',
         'dept-legal'
       ],
       storyboard: [
@@ -15208,7 +15208,7 @@ window.HUB_DATA = {
         'dept-finance',
         'dept-strategy',
         'dept-operations',
-        'dept-board'
+        'dept-corpsec'
       ],
       storyboard: [
         {
@@ -22328,7 +22328,7 @@ window.HUB_DATA = {
         'dept-finance',
         'dept-strategy',
         'dept-risk',
-        'dept-board',
+        'dept-corpsec',
         'dept-esg',
         'dept-legal'
       ],
@@ -23122,7 +23122,7 @@ window.HUB_DATA = {
         'dept-legal',
         'dept-risk',
         'dept-strategy',
-        'dept-board',
+        'dept-corpsec',
         'dept-it-digital',
         'dept-operations'
       ],
@@ -23364,14 +23364,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Aisha Rahman',
-            'Putri Anindita',
-            'Wiremu Tane'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Aisha Rahman',
-            'Putri Anindita',
-            'Wiremu Tane'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -24059,14 +24059,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rajesh Menon',
-            'Sofia Hartanto',
-            'Rajesh Menon'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Rajesh Menon',
-            'Sofia Hartanto',
-            'Rajesh Menon'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -24700,7 +24700,7 @@ window.HUB_DATA = {
       id: 'dept-legal',
       sectorId: 'department',
       subsector: '',
-      name: '⚖️ Legal & Corporate Secretarial',
+      name: '⚖️ Legal',
       icon: '⚖️',
       color: '#4A148C',
       accent: '#6A1B9A',
@@ -24754,14 +24754,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -24792,12 +24792,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin',
-            'Mod Admin'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mod Admin',
-            'Mod Admin'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -24836,14 +24836,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Tunde Adeyemi',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Tunde Adeyemi',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -24882,14 +24882,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Tunde Adeyemi',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Tunde Adeyemi',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -24928,14 +24928,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -24974,14 +24974,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25020,14 +25020,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Tunde Adeyemi',
-            'Lakshmi Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Tunde Adeyemi',
-            'Lakshmi Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25066,14 +25066,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Tunde Adeyemi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Tunde Adeyemi'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25112,14 +25112,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Bayu Hartono',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25150,12 +25150,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Bayu Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Bayu Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25186,12 +25186,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Bayu Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Bayu Hartono'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25222,12 +25222,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25258,12 +25258,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lakshmi Iyer',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Lakshmi Iyer',
-            'Mei-Lin Chua'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25294,12 +25294,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin',
-            'Lakshmi Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mod Admin',
-            'Lakshmi Iyer'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -25541,14 +25541,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Priya Ramanathan',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Priya Ramanathan',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25579,12 +25579,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin',
-            'Mod Admin'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mod Admin',
-            'Mod Admin'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25623,14 +25623,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25669,14 +25669,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25715,14 +25715,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Priya Ramanathan',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Priya Ramanathan',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25761,14 +25761,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Priya Ramanathan',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Priya Ramanathan',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25807,14 +25807,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Nikolai Voss'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Nikolai Voss'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25853,14 +25853,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Priya Ramanathan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Priya Ramanathan'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25899,14 +25899,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Tomás Echeverría',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25937,12 +25937,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Priya Ramanathan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Priya Ramanathan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25973,12 +25973,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Priya Ramanathan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Priya Ramanathan'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -26009,12 +26009,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -26045,12 +26045,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Nikolai Voss',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Nikolai Voss',
-            'Aisha Mbeki'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -26081,12 +26081,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Mod Admin',
-            'Nikolai Voss'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           personaID: [
-            'Mod Admin',
-            'Nikolai Voss'
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         }
@@ -26328,14 +26328,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Yuki Tanaka',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Yuki Tanaka',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26410,14 +26410,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Adwoa Mensah',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Adwoa Mensah',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26456,14 +26456,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Adwoa Mensah',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Adwoa Mensah',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26502,14 +26502,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Yuki Tanaka',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Yuki Tanaka',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26548,14 +26548,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Adwoa Mensah',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Adwoa Mensah',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26594,14 +26594,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Yuki Tanaka',
-            'Rafael Monteiro'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Yuki Tanaka',
-            'Rafael Monteiro'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26640,14 +26640,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Yuki Tanaka',
-            'Adwoa Mensah'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Yuki Tanaka',
-            'Adwoa Mensah'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26686,14 +26686,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Adwoa Mensah',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Adwoa Mensah',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26724,12 +26724,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Yuki Tanaka'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Yuki Tanaka'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26760,12 +26760,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Adwoa Mensah'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Adwoa Mensah'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26796,12 +26796,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Henrik Larsson'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26832,12 +26832,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Monteiro',
-            'Adwoa Mensah'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Rafael Monteiro',
-            'Adwoa Mensah'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -26869,11 +26869,11 @@ window.HUB_DATA = {
           promptsBM: [],
           persona: [
             'Mod Admin',
-            'Rafael Monteiro'
+            'Mod Admin'
           ],
           personaID: [
             'Mod Admin',
-            'Rafael Monteiro'
+            'Mod Admin'
           ],
           notebookMeta: null
         }
@@ -27115,14 +27115,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27153,12 +27153,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Tanudjaja',
-            'Rafael Tanudjaja'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Rafael Tanudjaja',
-            'Rafael Tanudjaja'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27197,14 +27197,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Maya Lestari',
-            'Rafael Tanudjaja'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Maya Lestari',
-            'Rafael Tanudjaja'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27243,14 +27243,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Maya Lestari'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Maya Lestari'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27289,14 +27289,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27335,14 +27335,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27381,14 +27381,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Indira Setiawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Indira Setiawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27427,14 +27427,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27473,14 +27473,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Tanudjaja',
-            'Maya Lestari',
-            'Indira Setiawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Rafael Tanudjaja',
-            'Maya Lestari',
-            'Indira Setiawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27511,12 +27511,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27547,12 +27547,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Rafael Tanudjaja'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27583,12 +27583,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Indira Setiawan',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Indira Setiawan',
-            'Adi Pranoto'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27619,12 +27619,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Tanudjaja',
-            'Maya Lestari'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Rafael Tanudjaja',
-            'Maya Lestari'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27655,12 +27655,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Rafael Tanudjaja',
-            'Indira Setiawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Rafael Tanudjaja',
-            'Indira Setiawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         }
@@ -27909,14 +27909,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27947,12 +27947,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Sinta Kurniawan',
-            'Sinta Kurniawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Sinta Kurniawan',
-            'Sinta Kurniawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -27991,14 +27991,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Reza Hartono',
-            'Sinta Kurniawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Reza Hartono',
-            'Sinta Kurniawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28037,14 +28037,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Reza Hartono'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Reza Hartono'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28083,14 +28083,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28129,14 +28129,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28175,14 +28175,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Bayu Wirawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Bayu Wirawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28221,14 +28221,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28267,14 +28267,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Sinta Kurniawan',
-            'Reza Hartono',
-            'Bayu Wirawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Sinta Kurniawan',
-            'Reza Hartono',
-            'Bayu Wirawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28305,12 +28305,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28341,12 +28341,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Sinta Kurniawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28377,12 +28377,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Bayu Wirawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Bayu Wirawan',
-            'Putri Anggraini'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28413,12 +28413,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Sinta Kurniawan',
-            'Reza Hartono'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Sinta Kurniawan',
-            'Reza Hartono'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -28449,12 +28449,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Sinta Kurniawan',
-            'Bayu Wirawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Sinta Kurniawan',
-            'Bayu Wirawan'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         }
@@ -28703,14 +28703,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -28741,12 +28741,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hendra Wijaya',
-            'Hendra Wijaya'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Hendra Wijaya',
-            'Hendra Wijaya'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -28785,14 +28785,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Nadia Kusuma',
-            'Hendra Wijaya'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Nadia Kusuma',
-            'Hendra Wijaya'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -28831,14 +28831,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Nadia Kusuma'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Nadia Kusuma'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -28877,14 +28877,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -28923,14 +28923,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -28969,14 +28969,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Galuh Saraswati'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Galuh Saraswati'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -29015,14 +29015,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Hendra Wijaya',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -29061,14 +29061,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hendra Wijaya',
-            'Nadia Kusuma',
-            'Galuh Saraswati'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Hendra Wijaya',
-            'Nadia Kusuma',
-            'Galuh Saraswati'
+            'Daichi Maruyama',
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -29099,12 +29099,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Hendra Wijaya'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Hendra Wijaya'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -29135,12 +29135,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Hendra Wijaya'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Hendra Wijaya'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -29171,12 +29171,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Galuh Saraswati',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Galuh Saraswati',
-            'Eko Pratama'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -29207,12 +29207,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hendra Wijaya',
-            'Nadia Kusuma'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Hendra Wijaya',
-            'Nadia Kusuma'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         },
@@ -29243,12 +29243,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Hendra Wijaya',
-            'Galuh Saraswati'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           personaID: [
-            'Hendra Wijaya',
-            'Galuh Saraswati'
+            'Daichi Maruyama',
+            'Daichi Maruyama'
           ],
           notebookMeta: null
         }
@@ -29497,14 +29497,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29535,12 +29535,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lestari Hapsari',
-            'Lestari Hapsari'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Lestari Hapsari',
-            'Lestari Hapsari'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29579,14 +29579,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Bambang Suryadi',
-            'Lestari Hapsari'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Bambang Suryadi',
-            'Lestari Hapsari'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29625,14 +29625,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Bambang Suryadi'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Bambang Suryadi'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29671,14 +29671,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29717,14 +29717,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29763,14 +29763,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Wahyu Setiabudi'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Wahyu Setiabudi'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29809,14 +29809,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29855,14 +29855,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lestari Hapsari',
-            'Bambang Suryadi',
-            'Wahyu Setiabudi'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Lestari Hapsari',
-            'Bambang Suryadi',
-            'Wahyu Setiabudi'
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29893,12 +29893,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29929,12 +29929,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Lestari Hapsari'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -29965,12 +29965,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Wahyu Setiabudi',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Wahyu Setiabudi',
-            'Citra Halim'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -30001,12 +30001,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lestari Hapsari',
-            'Bambang Suryadi'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Lestari Hapsari',
-            'Bambang Suryadi'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -30037,12 +30037,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Lestari Hapsari',
-            'Wahyu Setiabudi'
+            'Mod Admin',
+            'Mod Admin'
           ],
           personaID: [
-            'Lestari Hapsari',
-            'Wahyu Setiabudi'
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         }
@@ -30234,14 +30234,14 @@ window.HUB_DATA = {
       geo: 'MY'
     },
     {
-      id: 'dept-board',
+      id: 'dept-corpsec',
       sectorId: 'department',
       subsector: '',
-      name: '🏛 Board & Executive Office',
-      icon: '🏛',
+      name: '📜 Corporate Secretarial',
+      icon: '📜',
       color: '#1A237E',
       accent: '#283593',
-      company: 'Zava Board',
+      company: 'Zava Corporate Secretariat',
       tagline: 'Board papers are late, disclosure-watchlist items are growing, and directors want clearer resolution tracking before quarter-end.',
       scenario: 'The Board & Executive Office at Zava Group is trying to improve paper quality, decision tracking, and governance visibility before the quarter-end meeting cycle. Across the last 4 Board meetings, 38% of papers arrived less than 48 hours before the meeting, the Resolution Log shows 17 open items overdue by more than 30 days, and 6 disclosure-watchlist items are now flagged Amber or Red. Directors are frustrated that resolutions are not always easy to trace back to owners and deadlines. The Company Secretary needs a more disciplined operating rhythm with a clear RAG view of disclosure and governance risks within two weeks, ahead of the next Board of Directors meeting where the Chairman will examine cross-listing readiness with IDX.',
       companyID: 'Zava Board',
@@ -30291,13 +30291,13 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           notebookMeta: null
@@ -30329,12 +30329,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anissa Permatasari',
-            'Anissa Permatasari'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Anissa Permatasari',
-            'Anissa Permatasari'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -30373,14 +30373,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
-            'Daichi Maruyama',
-            'Anissa Permatasari'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
-            'Daichi Maruyama',
-            'Anissa Permatasari'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -30419,14 +30419,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
-            'Daichi Maruyama'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
-            'Daichi Maruyama'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -30465,13 +30465,13 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           notebookMeta: null
@@ -30511,13 +30511,13 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           notebookMeta: null
@@ -30557,14 +30557,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
-            'Surya Hartanto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
-            'Surya Hartanto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -30603,13 +30603,13 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
-            'Anissa Permatasari',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           notebookMeta: null
@@ -30649,14 +30649,14 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anissa Permatasari',
-            'Daichi Maruyama',
-            'Surya Hartanto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Anissa Permatasari',
-            'Daichi Maruyama',
-            'Surya Hartanto'
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -30687,12 +30687,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
-            'Anissa Permatasari'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
-            'Anissa Permatasari'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -30723,12 +30723,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
-            'Anissa Permatasari'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
-            'Anissa Permatasari'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -30759,11 +30759,11 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Surya Hartanto',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           personaID: [
-            'Surya Hartanto',
+            'Sasha Ouellet',
             'Sasha Ouellet'
           ],
           notebookMeta: null
@@ -30795,12 +30795,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anissa Permatasari',
-            'Daichi Maruyama'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Anissa Permatasari',
-            'Daichi Maruyama'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -30831,12 +30831,12 @@ window.HUB_DATA = {
           ],
           promptsBM: [],
           persona: [
-            'Anissa Permatasari',
-            'Surya Hartanto'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           personaID: [
-            'Anissa Permatasari',
-            'Surya Hartanto'
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         }
