@@ -466,10 +466,11 @@ function setCtx(c){ setLang(c==='ID'?'ID':'EN'); }
 
 function _pickLangField(item, base){
   // base = 'company' | 'tagline' | 'scenario' (without language suffix)
+  // BM falls back to BI (Bahasa Malaysia ≈ 80% mutually intelligible with Bahasa Indonesia)
   const id=item[base+'ID'];
   const bm=item[base+'BM'];
   if(_lang==='ID' && id) return id;
-  if(_lang==='BM' && bm) return bm;
+  if(_lang==='BM') return bm || id || item[base];
   return item[base];
 }
 function _getCompany(item){return _pickLangField(item,'company');}
@@ -477,7 +478,10 @@ function _getTagline(item){return _pickLangField(item,'tagline');}
 function _getScenario(item){return _pickLangField(item,'scenario');}
 function _getPrompts(t){
   if(_lang==='ID' && t.promptsID && t.promptsID.length) return t.promptsID;
-  if(_lang==='BM' && t.promptsBM && t.promptsBM.length) return t.promptsBM;
+  if(_lang==='BM'){
+    if(t.promptsBM && t.promptsBM.length) return t.promptsBM;
+    if(t.promptsID && t.promptsID.length) return t.promptsID; // BM fallback to BI
+  }
   return t.prompts||[];
 }
 function _getPersona(t,pi){
@@ -821,11 +825,11 @@ function showItem(item,tab){
       '<div class="storyboard-sub">'+heroSub+'</div>'+
       '<div class="sb-exercises">'+
       item.storyboard.map((ex,i)=>{
-        const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:(_lang==='BM'&&ex.titleBM?ex.titleBM:ex.title);
-        const exSummary=_scrubFiles(_lang==='ID'&&ex.summaryID?ex.summaryID:(_lang==='BM'&&ex.summaryBM?ex.summaryBM:(ex.summary||'')));
+        const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:(_lang==='BM'?(ex.titleBM||ex.titleID||ex.title):ex.title);
+        const exSummary=_scrubFiles(_lang==='ID'&&ex.summaryID?ex.summaryID:(_lang==='BM'?(ex.summaryBM||ex.summaryID||(ex.summary||'')):(ex.summary||'')));
         const phase=phases[i] || phases[phases.length-1];
         const acts=(ex.tasks||[]).map((t,ti)=>{
-          const verb=_lang==='ID'&&t.verbID?t.verbID:(_lang==='BM'&&t.verbBM?t.verbBM:t.verb);
+          const verb=_lang==='ID'&&t.verbID?t.verbID:(_lang==='BM'?(t.verbBM||t.verbID||t.verb):t.verb);
           const toolName=_resolveTool(t);
           const mode=_resolveMode(t.mode);
           const stepNum=t.n||((i+1)+'.'+(ti+1));
@@ -935,7 +939,7 @@ function showItem(item,tab){
       if(isNotebook && pi===0 && tool.notebookMeta){
         const nm=tool.notebookMeta;
         const srcs=(nm.sources||[]).map(s=>'<span class="notebook-source-pill">'+escapeHTML(s)+'</span>').join('');
-        const instr=_lang==='ID'&&nm.instructionsID?nm.instructionsID:(_lang==='BM'&&nm.instructionsBM?nm.instructionsBM:(nm.instructions||''));
+        const instr=_lang==='ID'&&nm.instructionsID?nm.instructionsID:(_lang==='BM'?(nm.instructionsBM||nm.instructionsID||(nm.instructions||'')):(nm.instructions||''));
         notebookHtml=
           '<div class="notebook-meta">'+
           '<div class="notebook-meta-label">📓 Notebook setup — add ALL sources at creation time, then set the Instructions field</div>'+
@@ -1003,7 +1007,7 @@ function showItem(item,tab){
     personasEl.innerHTML=
       '<div class="personas-title">🎭 Personas in this demo</div>'+
       item.personas.map(p=>{
-        const role=_lang==='ID'&&p.roleID?p.roleID:(_lang==='BM'&&p.roleBM?p.roleBM:p.role);
+        const role=_lang==='ID'&&p.roleID?p.roleID:(_lang==='BM'?(p.roleBM||p.roleID||p.role):p.role);
         const initials=(p.name||'').split(' ').map(s=>s[0]).join('').slice(0,2).toUpperCase();
         const isFree=/free/i.test(p.lic||'');
         return '<div class="persona-item">'+
