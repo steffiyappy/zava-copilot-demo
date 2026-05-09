@@ -379,6 +379,41 @@ def s8_12(doc):
       None)
 
 
+def s13_regulatory(doc):
+    H(doc, '13. Regulatory, Listing & Disclosure Q&A')
+    Q(doc, 54, 'Has Bursa Malaysia or the Securities Commission Malaysia raised any query on the FY2025 result or its disclosure?',
+      'No formal query letter has been received as at result-release date. We pre-engaged Bursa Listing Division and the SC Corporate Surveillance Department in November 2024 with a confidential briefing on the EBITDA shortfall trajectory and the disclosure plan, including the timing of the Q4 trading update and the announcement of the three Red divisions. The trading update issued 31 Dec 2024 satisfied Chapter 9 immediate-disclosure requirements (Bursa Listing Requirements). We will continue normal engagement and remain compliant with MCCG 2021 — including the Audit Committee Report and Statement on Risk Management & Internal Control sections of the Annual Report.',
+      'Bursa LR Chapter 9; SC CMSA 2007; MCCG 2021')
+
+    Q(doc, 55, 'For PT Zava Pharmaceuticals Tbk and PT Zava Agribusiness Tbk on IDX — any OJK or BEI matters?',
+      'Both Indonesia-listed subsidiaries filed their Q3 2024 LK on time with OJK (POJK 14/2022) and IDX. No OJK enforcement notice or BEI suspension has been received. Related-party transactions with the Group parent are disclosed under POJK 19/2017 with independent appraiser fairness opinions where required. Both entities remain on the IDX Main Board with no special-monitoring designation.',
+      'POJK 14/2022; POJK 19/2017')
+
+    Q(doc, 56, 'Bank Negara Malaysia and Bank Indonesia — any regulatory issues at the Financial Services division?',
+      'Zava Financial Services (M) Bhd received the FY2024 BNM RMiT thematic review outcome in Q1 FY2025 with no material findings; one observation on third-party-cyber-controls is being closed in FY2025 (no impact on capital adequacy or licence). PT Zava Multi Finance is current on POJK 35/2018 health-of-finance ratios and on UU 4/2023 (P2SK) implementation milestones. Capital adequacy ratios at the FS Division are well above Basel III minima (CET1 14.2%, Total CAR 17.8%).',
+      'BNM RMiT; BNM RMCG; POJK 35/2018; UU 4/2023')
+
+    Q(doc, 57, 'Are you considering early adoption of IFRS S1 / S2 climate disclosure ahead of the NACRA / Bursa-mandated FY2027 timeline?',
+      'We are running a phased adoption: gap-assessment in FY2025, parallel-run in FY2026, full disclosure in FY2027 in line with the National Sustainability Reporting Framework (NSRF) and the Bursa Sustainability Reporting Guide (3rd edition). We already produce TCFD-aligned climate disclosure annually since FY2024 (4 pillars × 11 recommendations), so the incremental content for IFRS S2 is mostly in scenario analysis depth and Scope 3 financed-emissions for the FS division. We see no benefit in a year-early adoption that would not be peer-comparable.',
+      'TCFD; IFRS S1+S2; NACRA; Bursa Sustainability Guide')
+
+    Q(doc, 58, 'Are FY2025 results prepared on the same MFRS basis? Any new standards adopted?',
+      'Yes — FY2025 financials are MFRS-compliant (MFRS being equivalent to IFRS as adopted in Malaysia). New standards effective FY2025 are MFRS 17 (Insurance Contracts — limited Group impact via FS), and amendments to MFRS 101 on classification of liabilities. The Indonesia subsidiaries report under PSAK and reconcile to MFRS at consolidation; the reconciliation note is in the consolidated Annual Report. The Penang Tower MYR 320M writedown was processed under MFRS 136 impairment testing and fully audited.',
+      'MFRS 17, MFRS 101, MFRS 136; PSAK reconciliation')
+
+    Q(doc, 59, 'On data privacy — what is your readiness for PDPA Amendment Act 2024 (effective 1 June 2025) and UU PDP (full enforcement Oct 2024)?',
+      'Group Data Protection Officer was appointed in FY2024, with division DPOs in MY and ID entities. The MY DPO registration with JPDP / Jabatan Perlindungan Data Peribadi has been completed; the breach-notification protocol meets the 72-hour requirement under the amended PDPA. In Indonesia, the 3×24-hour breach notification protocol to Lembaga PDP is operational; standard-contractual-clauses for cross-border transfers from PT Zava entities to the Group parent are signed. Staff training is at 97% completion across MY/ID/SG/TH/VN. We have not had a reportable breach in FY2024 or FY2025 to date.',
+      'PDPA 2010 + Act A1709/2024; UU 27/2022 (UU PDP)')
+
+    Q(doc, 60, 'MCCG 2021 corporate-governance compliance — any departures?',
+      'We comply with all 32 MCCG 2021 Practices on an "apply" basis except for one Step-Up Practice (independent Chairman) which we currently meet through a Senior Independent Director arrangement. The Step-Up Practice on at-least-30%-women on Board is met (current Board composition 4 of 11 = 36%). Departure rationales are disclosed in the Corporate Governance Report.',
+      'MCCG 2021')
+
+    Q(doc, 61, 'Halal certification status across MY/ID Pharmaceuticals and Agribusiness?',
+      'Zava Pharmaceuticals (MY) — Halal certification under JAKIM is current; renewal underway for two Penang production lines. Zava Pharmaceuticals (ID) — BPJPH certification under UU JPH 33/2014 is current. Agribusiness palm oil supply chain — RSPO P&C 2018 certified since 2020; FY2024 ASA-1 surveillance audit closed without major NCR; smallholder traceability programme covers 78% of FFB throughput, target 95% by FY2027.',
+      'JAKIM; BPJPH (UU JPH 33/2014); RSPO P&C 2018')
+
+
 def main(out_path):
     doc = Document()
     style = doc.styles['Normal']
@@ -398,6 +433,7 @@ def main(out_path):
     s6(doc)
     s7(doc)
     s8_12(doc)
+    s13_regulatory(doc)
     doc.save(out_path)
     print(f'Wrote {out_path}')
 

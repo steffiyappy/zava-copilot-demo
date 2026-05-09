@@ -534,8 +534,79 @@ def s7_risks(doc):
           ['Cyber incident / ransomware', 'High', 'Medium', 'Zero-trust roll-out FY2025; quarterly red team; cyber insurance'],
           ['Geopolitical (US-China supply-chain)', 'Medium', 'Medium', 'Multi-source critical components; ASEAN+1 supplier diversification'],
           ['Property writedowns (Penang Tower, Mid-Valley)', 'Medium', 'High', 'Conservative carrying values; quarterly impairment testing'],
-          ['Regulatory change (PDPA MY 2024 amend, UU PDP ID)', 'Medium', 'High', 'DPO appointed; mandatory breach process; staff training'],
+          ['PDPA MY 2024 amendment + UU PDP ID enforcement (Oct 2024)', 'Medium', 'High', 'DPO appointed at Group + each MY/ID division; mandatory breach process; staff training'],
+          ['Bursa Malaysia / SC Malaysia listing review of FY2025 disclosure', 'Medium', 'Medium', 'Pre-emptive Q4 trading update; board statement on EBITDA miss; SC engagement protocol'],
+          ['OJK enforcement on Indonesia-listed subsidiaries (PT Zava entities)', 'Medium', 'Medium', 'OJK liaison via Group Legal; quarterly POJK 14/POJK 19 disclosure check'],
+          ['BNM regulatory expectations on Financial Services division', 'Medium', 'Medium', 'BNM RMiT, BNM RMCG, AMLA compliance; FS division CRO direct line to BNM'],
+          ['ISSB / IFRS S1+S2 climate disclosure (NACRA, Bursa-mandated)', 'Medium', 'High', 'Adoption roadmap to FY2027; TCFD-aligned reporting from FY2025'],
+          ['RSPO certification slip in Agribusiness (P&C 2018 audits)', 'Medium', 'Medium', 'Annual ASA-1/2 surveillance audits; smallholder traceability programme'],
       ], col_widths=[5.0, 1.8, 1.8, 8.5])
+    doc.add_page_break()
+
+
+def s7b_compliance(doc):
+    H(doc, '7B. Regulatory, Listing & Sustainability Compliance', level=1)
+    P(doc, 'Zava Group operates across multiple regulatory jurisdictions. The compliance footprint '
+           'and the standards we report against are summarised below to give the Board, the Investment '
+           'Committee and external stakeholders a single reference view.')
+
+    H(doc, '7B.1 Listing & Capital-Markets Regulators', level=2)
+    T(doc, ['Jurisdiction', 'Regulator', 'Listed Vehicle / Instrument', 'Key Obligations'],
+      [
+          ['Malaysia', 'Bursa Malaysia + Securities Commission Malaysia (SC)',
+           'Zava Group Berhad (Main Market, FBM KLCI constituent); Sukuk Murabahah MYR 2.0B',
+           'Bursa Listing Requirements (Chapter 9 disclosure, Chapter 10 transactions, Chapter 15 corporate governance); SC Capital Markets and Services Act 2007; MCCG 2021 (apply or explain); Quarterly Reports within 2 months; Annual Report within 4 months'],
+          ['Indonesia', 'OJK (Otoritas Jasa Keuangan) + IDX (Bursa Efek Indonesia / BEI)',
+           'PT Zava Pharmaceuticals Tbk and PT Zava Agribusiness Tbk (IDX Main Board); IDX MTN Programme IDR 2.7T equivalent',
+           'POJK 14/2022 (periodic & material disclosure); POJK 19/2017 (related-party transactions); IDX Listing Rule I-A; OJK governance circulars; Quarterly LK within 1 month; Annual LK within 3 months'],
+          ['Singapore', 'Monetary Authority of Singapore (MAS) + SGX',
+           'Zava Trading Pte Ltd (subsidiary, not listed); SGX-AC member',
+           'MAS Notice 626 (AML/CFT); Securities and Futures Act 2001'],
+          ['Thailand', 'SEC Thailand + SET',
+           'Zava Manufacturing (Thailand) Ltd (subsidiary, not listed)',
+           'TFRS reporting; BOI investment-promoted entity'],
+          ['Vietnam', 'SBV + State Securities Commission',
+           'Zava Vietnam JSC (subsidiary, not listed)',
+           'VAS (Vietnamese Accounting Standards); Decree 13/2023 on Personal Data Protection'],
+      ], col_widths=[1.8, 3.6, 4.5, 7.0])
+
+    H(doc, '7B.2 Banking & Financial-Services Regulators', level=2)
+    P(doc, 'The Zava Financial Services division is dual-supervised by Bank Negara Malaysia (BNM) for the '
+           'MY entity and by Bank Indonesia (BI) and OJK for the ID entity. Compliance is owned by the '
+           'FS Division CRO with a direct reporting line to the Group Audit & Risk Committee.')
+    T(doc, ['Regulator', 'Scope', 'Key Frameworks'],
+      [
+          ['Bank Negara Malaysia (BNM)', 'Zava Financial Services (M) Bhd',
+           'BNM Risk Management in Technology (RMiT); BNM Risk Management & Corporate Governance (RMCG); BNM Capital Adequacy Framework (Basel III); AMLA 2001 / FATF Recommendations; Financial Services Act 2013'],
+          ['Bank Indonesia (BI) + OJK', 'PT Zava Multi Finance',
+           'POJK 35/2018 (multi-finance); BI Regulation No.23/6/PBI/2021 (payment services); UU 4/2023 (Financial Sector Development & Strengthening / "P2SK")'],
+          ['Bursa Malaysia (FS-listed Sukuk)', 'Sukuk Murabahah issuance',
+           'SC Sukuk Guidelines; Shariah Advisory Council resolutions; LOLA submission framework'],
+      ], col_widths=[3.5, 4.5, 9.0])
+
+    H(doc, '7B.3 Sustainability & Climate Disclosure Standards', level=2)
+    P(doc, 'Zava Group commits to climate-aligned, investor-grade sustainability disclosure. The framework '
+           'used and the adoption roadmap are set out below.')
+    T(doc, ['Standard', 'Applicability', 'Status'],
+      [
+          ['TCFD (Taskforce on Climate-related Financial Disclosures)', 'Group Annual Report + Sustainability Report', 'Fully adopted from FY2024 (4 pillars × 11 recommendations)'],
+          ['IFRS S1 + S2 / ISSB (Climate-related Disclosures)', 'Group consolidated; mandatory for Bursa Main Market issuers from FY2027 (NACRA roadmap)', 'Gap-assessment FY2025; phased adoption FY2026; full adoption FY2027'],
+          ['GRI Universal Standards 2021', 'Group Sustainability Report', 'In accordance — Comprehensive option, externally assured'],
+          ['SBTi (Science Based Targets initiative)', 'Group Net-Zero pathway', 'Targets validated 2024: 1.5°C-aligned; -42% Scope 1+2 by 2030 (vs 2022 base); Net-Zero by 2050'],
+          ['UNGC (UN Global Compact)', 'Group-wide', 'Signatory since 2018; Communication on Progress filed annually'],
+          ['CDP (Carbon Disclosure Project)', 'Climate + Water', 'Disclosed since 2019; current rating B (Climate), B (Water)'],
+          ['RSPO (Roundtable on Sustainable Palm Oil)', 'Zava Agribusiness — palm oil estates and mills', 'Certified RSPO P&C 2018 since 2020; ASA-1 audit FY2024 closed without major NCR'],
+          ['Bursa Malaysia ESG Reporting Guide (3rd edition, 2022)', 'Listed entity disclosure', 'Aligned; informs FBM4Good index inclusion'],
+          ['POJK 51/2017 (ID Sustainability Reporting)', 'PT Zava Pharmaceuticals Tbk and PT Zava Agribusiness Tbk', 'Compliant; LST submission with Annual LK'],
+      ], col_widths=[5.5, 6.0, 5.5])
+
+    H(doc, '7B.4 Other Regulatory Touchpoints', level=2)
+    B(doc, 'Tax — LHDN (MY) under the Income Tax Act 1967; DGT / DJP (ID) under UU HPP 2021; transfer-pricing master file + local file with Group structure documentation per OECD BEPS Action 13')
+    B(doc, 'Trade & Investment — MITI (MY) for export licensing and FTA preferences (RCEP, ATIGA, MJEPA); MIDA for investment-incentive applications; BKPM (ID) for foreign-investment licensing (OSS-RBA)')
+    B(doc, 'Halal — JAKIM (MY) for Halal certification of Zava Pharmaceuticals MY production; BPJPH (ID) under UU JPH 33/2014 for Halal certification of Indonesia operations')
+    B(doc, 'Personal Data — JPDP / KKD (Jabatan Perlindungan Data Peribadi) MY under PDPA 2010 as amended by Act A1709/2024; Lembaga PDP ID under UU 27/2022 (UU PDP)')
+    B(doc, 'Workplace — DOSH MY under OSHA 1994 / OSH (Amendment) Act 2022; Kemnaker / BPJS Ketenagakerjaan ID under UU 13/2003 (Cipta Kerja amendments) and UU 1/1970')
+
     doc.add_page_break()
 
 
@@ -585,6 +656,7 @@ def main(out_path):
     s5_capex(doc)
     s6_people(doc)
     s7_risks(doc)
+    s7b_compliance(doc)
     s8_governance(doc)
     doc.save(out_path)
     print(f'Wrote {out_path}')
