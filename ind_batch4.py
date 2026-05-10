@@ -46,6 +46,14 @@ OG = {
     'recovery_focus_id': 'pemulihan margin, kesiapan turnaround dan remediasi HSE',
     'topic_short_en': 'refining margin recovery and turnaround readiness',
     'topic_short_id': 'pemulihan margin refining dan kesiapan turnaround',
+    'ana_timeline_event_en': 'reliability interruptions and HSE deviations',
+    'ana_timeline_event_id': 'gangguan keandalan dan deviasi HSE',
+    'xl_heatmap_metric_en': 'energy intensity (EII) and conversion-unit utilisation',
+    'xl_heatmap_metric_id': 'energy intensity (EII) dan utilisasi unit konversi',
+    'xl_exposure_lens_en': 'hedged crude positions by counterparty, currency and tenor',
+    'xl_exposure_lens_id': 'posisi crude yang dihedge berdasarkan counterparty, mata uang dan tenor',
+    'ppt_scenario_label_en': "'Refining Margin Bridge' slide with three columns — base case, accelerated turnaround, deferred turnaround",
+    'ppt_scenario_label_id': "slide 'Jembatan Margin Refining' dengan tiga kolom — base case, turnaround dipercepat, turnaround ditunda",
     'roles_en': {'cfo': 'Group CFO', 'ceo': 'Group CEO', 'cos': 'Chief of Staff to the CEO',
                  'coo': 'COO Refining & Marketing', 'hsa': 'Head of HSE'},
     'roles_id': {'cfo': 'Direktur Keuangan', 'ceo': 'Direktur Utama', 'cos': 'Kepala Staf Direktur Utama',
@@ -85,6 +93,14 @@ RE = {
     'recovery_focus_id': 'pemulihan curtailment, disiplin biaya O&M, kesiapan project finance dan engagement regulator',
     'topic_short_en': 'curtailment recovery and project finance readiness',
     'topic_short_id': 'pemulihan curtailment dan kesiapan project finance',
+    'ana_timeline_event_en': 'curtailment incidents and PPA dispatch breaches',
+    'ana_timeline_event_id': 'insiden curtailment dan pelanggaran dispatch PPA',
+    'xl_heatmap_metric_en': 'capacity factor and PPA-availability ratio',
+    'xl_heatmap_metric_id': 'capacity factor dan rasio ketersediaan PPA',
+    'xl_exposure_lens_en': 'off-taker credit exposure and curtailment compensation by site',
+    'xl_exposure_lens_id': 'eksposur kredit off-taker dan kompensasi curtailment per lokasi',
+    'ppt_scenario_label_en': "'PPA Cashflow Bridge' slide with three columns — base case, accelerated build-out, deferred build-out",
+    'ppt_scenario_label_id': "slide 'Jembatan Cashflow PPA' dengan tiga kolom — base case, build-out dipercepat, build-out ditunda",
     'roles_en': {'cfo': 'Group CFO', 'ceo': 'Group CEO', 'cos': 'Chief of Staff to the CEO',
                  'coo': 'Chief Project Officer', 'hsa': 'Head of ESG'},
     'roles_id': {'cfo': 'Direktur Keuangan', 'ceo': 'Direktur Utama', 'cos': 'Kepala Staf Direktur Utama',
@@ -124,6 +140,14 @@ MFG = {
     'recovery_focus_id': 'pemulihan OEE, disiplin mutu, perlindungan OTIF dan de-risking rantai pasok',
     'topic_short_en': 'OEE recovery and OTIF protection',
     'topic_short_id': 'pemulihan OEE dan perlindungan OTIF',
+    'ana_timeline_event_en': 'OEE breaks, line-changeover misses and customer-OTIF slips',
+    'ana_timeline_event_id': 'gangguan OEE, kegagalan changeover line dan slippage OTIF pelanggan',
+    'xl_heatmap_metric_en': 'OEE and customer-OTIF score',
+    'xl_heatmap_metric_id': 'OEE dan skor OTIF pelanggan',
+    'xl_exposure_lens_en': 'customer-concentration and single-source supplier exposure',
+    'xl_exposure_lens_id': 'konsentrasi pelanggan dan eksposur supplier single-source',
+    'ppt_scenario_label_en': "'Order-Book Bridge' slide with three columns — base case, accelerated mix-shift, deferred capex",
+    'ppt_scenario_label_id': "slide 'Jembatan Order Book' dengan tiga kolom — base case, mix-shift dipercepat, capex ditunda",
     'roles_en': {'cfo': 'Group CFO', 'ceo': 'Group CEO', 'cos': 'Chief of Staff to the CEO',
                  'coo': 'COO', 'hsa': 'Head of Supply Chain'},
     'roles_id': {'cfo': 'Direktur Keuangan', 'ceo': 'Direktur Utama', 'cos': 'Kepala Staf Direktur Utama',
@@ -301,12 +325,12 @@ def _build(c):
     # 3. T_ANALYST — 3 prompts
     ana_en = [
         f"From Copilot Chat with /file {files[0]} and /file {files[3]}, run Analyst to isolate the top five drivers behind {c['kpi_phrase_en']}. Output a ranked table with driver, magnitude, and proposed owner.",
-        f"From Copilot Chat with /file {files[0]} and /file {files[4]}, ask Analyst to build a weekly timeline of operational events that explain the FY2025 deterioration, and tag each event as recoverable, structural or external.",
+        f"From Copilot Chat with /file {files[0]} and /file {files[4]}, ask Analyst to build a weekly timeline of {c['ana_timeline_event_en']} that explain the FY2025 deterioration, and tag each event as recoverable, structural or external.",
         f"From Copilot Chat with /file {files[3]} and /file {files[4]}, ask Analyst to model the financial impact of three recovery levers on {c['recovery_focus_en']} and rank them by NPV.",
     ]
     ana_id = [
         f"Dari Copilot Chat dengan /file {files[0]} dan /file {files[3]}, jalankan Analyst untuk mengisolasi lima pendorong utama di balik {c['kpi_phrase_id']}. Keluarkan tabel berperingkat dengan pendorong, besaran, dan pemilik yang diusulkan.",
-        f"Dari Copilot Chat dengan /file {files[0]} dan /file {files[4]}, minta Analyst membangun timeline mingguan kejadian operasi yang menjelaskan kemerosotan FY2025, dan tandai setiap kejadian sebagai dapat dipulihkan, struktural atau eksternal.",
+        f"Dari Copilot Chat dengan /file {files[0]} dan /file {files[4]}, minta Analyst membangun timeline mingguan {c['ana_timeline_event_id']} yang menjelaskan kemerosotan FY2025, dan tandai setiap kejadian sebagai dapat dipulihkan, struktural atau eksternal.",
         f"Dari Copilot Chat dengan /file {files[3]} dan /file {files[4]}, minta Analyst memodelkan dampak finansial tiga lever pemulihan pada {c['recovery_focus_id']} dan urutkan berdasarkan NPV.",
     ]
     ana_personas = ['Hadar Caspit', 'Hadar Caspit', 'Hadar Caspit']
@@ -316,13 +340,13 @@ def _build(c):
     # 4. T_EXCEL — 3 prompts (multi-tab dashboard)
     xl_en = [
         f"Open {files[0]} in Excel desktop. Ask Copilot to refresh the {c['tabs1']}, then add a new Executive Summary tab that calls out the worst-performing line, the best-performing line, and the FY2025 selisih against budget.",
-        f"In {files[0]}, ask Copilot to build a conditional-formatting heatmap on the operating tabs so any week breaching the FY2025 RKAP threshold is flagged red, and any week beating the prior 8-week average is flagged green.",
-        f"In {files[3]}, ask Copilot to summarise the open exposure by counterparty, currency and tenor, and to draft a 5-bullet narrative the {re_en['cfo']} can paste into the Board pack.",
+        f"In {files[0]}, ask Copilot to build a conditional-formatting heatmap on the operating tabs tracking {c['xl_heatmap_metric_en']}, so any week breaching the FY2025 target is flagged red, and any week beating the prior 8-week average is flagged green.",
+        f"In {files[3]}, ask Copilot to summarise {c['xl_exposure_lens_en']}, and to draft a 5-bullet narrative the {re_en['cfo']} can paste into the Board pack.",
     ]
     xl_id = [
         f"Buka {files[0]} di Excel desktop. Minta Copilot menyegarkan tab {c['tabs1']}, lalu tambahkan tab Executive Summary baru yang menonjolkan line dengan kinerja terburuk, terbaik, dan selisih FY2025 terhadap RKAP.",
-        f"Di {files[0]}, minta Copilot membangun heatmap conditional-formatting pada tab operasi sehingga setiap minggu yang melanggar ambang RKAP FY2025 ditandai merah, dan setiap minggu yang melampaui rata-rata 8 minggu sebelumnya ditandai hijau.",
-        f"Di {files[3]}, minta Copilot meringkas eksposur terbuka berdasarkan counterparty, mata uang dan tenor, dan menyusun narasi 5 bullet yang dapat ditempelkan {re_id['cfo']} ke paket Direksi.",
+        f"Di {files[0]}, minta Copilot membangun heatmap conditional-formatting pada tab operasi yang memantau {c['xl_heatmap_metric_id']}, sehingga setiap minggu yang melanggar target FY2025 ditandai merah, dan setiap minggu yang melampaui rata-rata 8 minggu sebelumnya ditandai hijau.",
+        f"Di {files[3]}, minta Copilot meringkas {c['xl_exposure_lens_id']}, dan menyusun narasi 5 bullet yang dapat ditempelkan {re_id['cfo']} ke paket Direksi.",
     ]
     xl_personas = ['Hadar Caspit', 'Hadar Caspit', 'Hadar Caspit']
     t4 = tool(T_EXCEL, M365_LIC, M365_ACCT, xl_en, DESC_EXCEL,
@@ -346,12 +370,12 @@ def _build(c):
     # 6. T_PPT — 3 prompts
     p_en = [
         f"Open PowerPoint and create a new deck. Ask Copilot to convert {files[1]} into a 10-slide Board pack covering the FY2025 selisih, {c['recovery_focus_en']}, regulator engagement and {c['event_en']} ask.",
-        f"In the same deck, ask Copilot to add a 'Scenario' slide with three columns — base case, accelerated remediation, deferred remediation — populated from {files[0]} and {files[3]}.",
+        f"In the same deck, ask Copilot to add a {c['ppt_scenario_label_en']}, populated from {files[0]} and {files[3]}.",
         f"In the same deck, ask Copilot to redesign the title slide with the executive headline 'FY2025 reset for {c['co']}' and apply a consistent corporate look across all slides.",
     ]
     p_id = [
         f"Buka PowerPoint dan buat deck baru. Minta Copilot mengubah {files[1]} menjadi paket Direksi 10 slide yang mencakup selisih FY2025, {c['recovery_focus_id']}, engagement regulator dan permintaan {c['event_id']}.",
-        f"Pada deck yang sama, minta Copilot menambahkan slide 'Skenario' dengan tiga kolom — base case, remediasi dipercepat, remediasi ditunda — diisi dari {files[0]} dan {files[3]}.",
+        f"Pada deck yang sama, minta Copilot menambahkan {c['ppt_scenario_label_id']}, diisi dari {files[0]} dan {files[3]}.",
         f"Pada deck yang sama, minta Copilot mendesain ulang slide judul dengan headline eksekutif 'Reset FY2025 untuk {c['co_id']}' dan menerapkan tampilan korporat yang konsisten di seluruh slide.",
     ]
     p_personas = ['Daichi Maruyama', 'Daichi Maruyama', 'Daichi Maruyama']
