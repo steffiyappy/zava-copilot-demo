@@ -266,6 +266,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .tool-header.open .tool-chevron{transform:rotate(180deg)}
 .tool-prompts{display:none;border:1px solid var(--blue);border-top:none;border-bottom-left-radius:10px;border-bottom-right-radius:10px;overflow:hidden;background:var(--surface)}
 .tool-prompts.open{display:block}
+/* Tool capability blurb — shown above the prompt list when expanded */
+.tool-info{display:flex;flex-direction:column;gap:4px;padding:10px 14px;background:linear-gradient(135deg,#F0F9FF,#EFF6FF);border-bottom:1px solid #BAE6FD;font-size:11.5px;line-height:1.55}
+.tool-info-label{font-size:9.5px;font-weight:800;color:#0369A1;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:5px}
+.tool-info-body{color:#0F172A;font-weight:500}
 .prompt-item{padding:14px 16px 12px;border-bottom:1px solid #F1F5F9;transition:background 0.15s;position:relative}
 .prompt-item:last-child{border-bottom:none}
 .prompt-item:hover{background:var(--surface-2)}
@@ -583,6 +587,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 /* DARK theme: rich content blocks (Cowork, Notebook, Agent Builder, Tool prompt block) */
 [data-theme="dark"] .tool-header.open,
 [data-theme="system"] .tool-header.open{background:#0F2540}
+[data-theme="dark"] .tool-info,
+[data-theme="system"] .tool-info{background:linear-gradient(135deg,#0E1F33,#0F2540);border-bottom-color:#155E75}
+[data-theme="dark"] .tool-info-label,
+[data-theme="system"] .tool-info-label{color:#7DD3FC}
+[data-theme="dark"] .tool-info-body,
+[data-theme="system"] .tool-info-body{color:#BAE6FD}
 [data-theme="dark"] .cowork-actions,
 [data-theme="system"] .cowork-actions{background:linear-gradient(135deg,#3B1F0A,#4A2A10);border-color:#7C2D12}
 [data-theme="dark"] .cowork-actions-label,
@@ -2758,6 +2768,61 @@ function _defaultInstr(tool, pi, item){
   return 'Open the tool listed above in M365.'+acct+' Paste the prompt below.';
 }
 
+// Default tool description per tool when entry-level desc is empty.
+// Mirrors DESC_* constants in util.py so every entry surfaces the latest
+// per-tool capability summary (Plan mode + Python in Excel, Claude model
+// for Word, web grounding + image picker for PPT, first-draft canvas for
+// Outlook, Call Delegation + Consecutive Interpretation for Teams,
+// Mind Maps + PPT/Word generation for Notebook, GPT-5.5 + Claude Opus 4.7
+// in Researcher, submit-to-Agent-Store for Builder).
+function _defaultDesc(tool){
+  if(tool.desc) return tool.desc;
+  const name=String(tool.tool||'');
+  if(_isResearcher(name)){
+    return 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes: (1) 🔍 Critique Mode — Researcher self-critiques every source, verifying claims against the originals; (2) ⚖️ Model Council — Researcher orchestrates GPT-5.5 Thinking and Claude Opus 4.7 to debate the brief and synthesise a balanced answer. Grounded in live web + tenant data with citations, plus optional federated connectors (Moody\u2019s, LSEG, HubSpot, Notion, ServiceNow) for real-time external data. Requires Microsoft 365 Copilot license.';
+  }
+  if(/Analyst/i.test(name)){
+    return 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required.';
+  }
+  if(/Copilot in Excel/i.test(name)){
+    return 'Copilot inside Excel for the Web. Three demo angles: (1) inline "Edit with Copilot" agent mode — multi-step actions across the workbook (columns, pivots, dashboards, conditional formatting); (2) 📈 Plan mode (May 2026) — Copilot outlines a step-by-step approach BEFORE making any changes so users can review and adjust before edits land; (3) 🐍 Python in Excel — invoke Python in the prompt for advanced analysis (forecasting, regressions, custom visualisations) without leaving the workbook.';
+  }
+  if(/Copilot in Word/i.test(name)){
+    return 'Copilot inside Word for the Web. Three demo angles: (1) inline "Edit with Copilot" agent mode — rewrite, restructure or expand sections in one instruction (great for board minutes/briefs); (2) draft new sections grounded in /reference files; (3) 🧠 model picker — switch between GPT and Claude for the same editing workflow when teams prefer specific model behaviours.';
+  }
+  if(/Copilot in PowerPoint/i.test(name)){
+    return 'Copilot inside PowerPoint for the Web. Three demo angles: (1) inline "Edit with Copilot" agent mode — restyle/restructure deck, generate speaker notes, swap imagery; (2) generate new slides grounded in /reference files; (3) 🌐 public web grounding (April 2026) — add a webpage URL as a deck reference and Copilot pulls in current external context; 🎨 image model picker — choose GPT-Image, Flux, or Auto when generating or editing visuals.';
+  }
+  if(/Outlook/i.test(name)){
+    return 'Copilot inside Outlook on the Web. Three demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit; (3) ✍️ first draft in canvas (March 2026, new Outlook) — Copilot writes the email directly in place and asks clarifying questions on goal/audience/tone, then iterates with the user without copy-paste.';
+  }
+  if(/Teams/i.test(name)){
+    return 'Copilot grounded in the Teams Recap. Open a meeting in Teams calendar > Recap page opens with AI Notes, chapters, transcript and action items > click the Copilot icon (top right) > Copilot opens grounded in the meeting transcript > type your minutes prompt > copy the structured output into a new Word doc. Also new for this demo cycle: 📞 Copilot Call Delegation — Copilot answers incoming Teams calls on the user\u2019s behalf, gathers context from callers, and books follow-ups via Microsoft Bookings; 🗣️ Consecutive Interpretation — turn-based translation between two languages with Interpreter on the meeting stage, ideal for ASEAN cross-border meetings.';
+  }
+  if(_isNotebook(name)){
+    return 'Microsoft 365 Copilot Notebook — m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once. Frontier preview (May 2026): 🔗 reference SharePoint sites and OneNote notebooks; 🌐 add external web links as references; 📄 generate Word documents from notebook content; 📊 generate PowerPoint presentations from notebook content; 🧠 explore relationships with interactive Mind Maps; 👥 share notebooks with a Microsoft 365 Group.';
+  }
+  if(_isCowork(name)){
+    return 'Cowork is the autonomous agent in Microsoft 365 Copilot — m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires Microsoft 365 Copilot + Frontier Program enrollment.';
+  }
+  if(_isWordAgt(name)){
+    return 'Word Agent in Microsoft 365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files describing the document, and Copilot returns a fully drafted .docx. Great for: board minutes, briefing memos, policy drafts, status reports.';
+  }
+  if(_isPptAgt(name)){
+    return 'PowerPoint Agent in Microsoft 365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files describing the deck (theme, audience, slide list), and Copilot returns a complete .pptx. Great for: Board decks, IR decks, town hall decks.';
+  }
+  if(_isXlAgt(name)){
+    return 'Excel Agent in Microsoft 365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files describing the workbook (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx. Great for: KPI dashboards, division comparisons, scenario models.';
+  }
+  if(_isBuilder(name)){
+    return 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. m365.cloud.microsoft/chat > Agents > + Create an agent. Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues, OR submit for admin approval to publish into the Agent Store \u201cBuilt by your org\u201d catalog (May 2026 rollout) so the whole organisation can discover it.';
+  }
+  if(_isChat(name)){
+    return 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with Microsoft 365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).';
+  }
+  return '';
+}
+
 // Parse a Cowork prompt body for numbered action markers and return {n, icon, text} per line.
 // Supports both line-separated ("1. Draft …\n2. Send …") and inline ("(1) draft …; (2) send …") formats.
 function _parseCoworkActions(text){
@@ -3464,6 +3529,7 @@ function showItem(item,tab,preserveScroll){
         '</div>'+
         '<div class="tool-prompts" id="tool-prm-'+slot+'">'+
           (tool.account?'<div class="tool-account-bar">'+_uL('👤 Demo account:')+' <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
+          (function(){var d=_defaultDesc(tool);return d?'<div class="tool-info"><span class="tool-info-label">'+_uL('💡 What this tool can do')+'</span><span class="tool-info-body">'+escapeHTML(_xformVal(d,'EN'))+'</span></div>':'';})()+
           _renderBuilderBlock(slot, agents, intro)+
         '</div>';
       pEl.appendChild(sec);
@@ -3557,6 +3623,7 @@ function showItem(item,tab,preserveScroll){
       '</div>'+
       '<div class="tool-prompts" id="tool-prm-'+id+'-'+ti+'">'+
         (tool.account?'<div class="tool-account-bar">'+_uL('👤 Demo account:')+' <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
+        (function(){var d=_defaultDesc(tool);return d?'<div class="tool-info"><span class="tool-info-label">'+_uL('💡 What this tool can do')+'</span><span class="tool-info-body">'+escapeHTML(_xformVal(d,'EN'))+'</span></div>':'';})()+
         researcherCallout+
         promHtml+
       '</div>';
