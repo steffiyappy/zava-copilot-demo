@@ -1417,7 +1417,7 @@ const _SCRUB_REAL = [
   [/\bBank Islam\b/gi, 'Apex Islamic Bank'],
   [/\bBank Muamalat\b/gi, 'Coastline Islamic Bank'],
   // Malaysian conglomerates / large caps
-  [/\bSunway\b/g, 'Asianova'],
+  [/\bSunway\b/g, 'ASEAN'],
   [/\bKPJ\b/g, 'Northstar Health'],
   [/\bIHH Healthcare\b/gi, 'Pan-Asian Health'],
   [/\bIHH\b/g, 'Pan-Asian Health'],
@@ -1506,38 +1506,37 @@ const _SCRUB_REAL = [
   [/\bDjarum\b/gi, 'Coastline Group'],
   [/\bBakrie\b/g, 'Helix Group'],
   // Regulators (replace with neutral terms — not real authority names)
-  [/\bBank Negara Malaysia\b/gi, 'Pacifica Reserve'],
-  [/\bBNM\b/g, 'Pacifica Reserve'],
-  [/\bSecurities Commission Malaysia\b/gi, 'Pacifica Securities Commission'],
-  [/\bSC Malaysia\b/gi, 'Pacifica Securities Commission'],
-  [/\bSuruhanjaya Sekuriti\b/gi, 'Pacifica Securities Commission'],
-  [/\bBursa Malaysia\b/gi, 'Pacifica Exchange'],
-  [/\bBursa\b/g, 'Pacifica Exchange'],
-  [/\bOJK\b/g, 'Asianova FSA'],
-  [/\bOtoritas Jasa Keuangan\b/gi, 'Asianova FSA'],
-  [/\bIDX\b/g, 'Asianova Exchange'],
-  [/\bBEI\b/g, 'Asianova Exchange'],
-  [/\bBursa Efek Indonesia\b/gi, 'Asianova Exchange'],
-  [/\bMatrade\b/gi, 'Pacifica Trade Authority'],
-  [/\bMIDA\b/g, 'Pacifica Investment Authority'],
-  [/\bBKPM\b/g, 'Asianova Investment Board'],
-  [/\bMPOB\b/g, 'Pacifica Palm Oil Board'],
-  [/\bSPAN\b/g, 'Pacifica Water Commission'],
-  [/\bMCMC\b/g, 'Pacifica Communications Commission'],
-  [/\bKominfo\b/g, 'Asianova Communications Ministry'],
-  [/\bLHDN\b/g, 'Pacifica Tax Office'],
-  [/\bDJP\b/g, 'Asianova Tax Office'],
+  [/\bBank Negara Malaysia\b/gi, 'ASEAN Central Bank'],
+  [/\bBNM\b/g, 'ASEAN Central Bank'],
+  [/\bSecurities Commission Malaysia\b/gi, 'ASEAN Securities Commission'],
+  [/\bSC Malaysia\b/gi, 'ASEAN Securities Commission'],
+  [/\bSuruhanjaya Sekuriti\b/gi, 'ASEAN Securities Commission'],
+  [/\bBursa Malaysia\b/gi, 'ASEAN Stock Exchange'],
+  [/\bBursa\b/g, 'ASEAN Stock Exchange'],
+  [/\bOJK\b/g, 'ASEAN Financial Services Authority'],
+  [/\bOtoritas Jasa Keuangan\b/gi, 'ASEAN Financial Services Authority'],
+  [/\bIDX\b/g, 'ASEAN Stock Exchange'],
+  [/\bBEI\b/g, 'ASEAN Stock Exchange'],
+  [/\bBursa Efek Indonesia\b/gi, 'ASEAN Stock Exchange'],
+  [/\bMatrade\b/gi, 'ASEAN Trade Authority'],
+  [/\bMIDA\b/g, 'ASEAN Investment Authority'],
+  [/\bBKPM\b/g, 'ASEAN Investment Board'],
+  [/\bMPOB\b/g, 'ASEAN Palm Oil Board'],
+  [/\bSPAN\b/g, 'ASEAN Water Commission'],
+  [/\bMCMC\b/g, 'ASEAN Communications Commission'],
+  [/\bKominfo\b/g, 'ASEAN Communications Ministry'],
+  [/\bLHDN\b/g, 'ASEAN Tax Authority'],
+  [/\bDJP\b/g, 'ASEAN Tax Authority'],
 ];
 
 // Global-only swaps (only fired when _isGlobal()). Strip MY/ID geographic + currency markers.
 const _SCRUB_GLOBAL_GEO = [
-  [/\bMalaysian\b/gi, 'Pacifican'],
-  [/\bIndonesian\b/gi, 'Asianovan'],
-  [/\bMalaysia\b/gi, 'Pacifica'],
-  [/\bIndonesia\b/gi, 'Asianova'],
-  [/\bASEAN\b/g, 'Pacific region'],
-  [/\bSEA\b/g, 'Pacific region'],
-  [/\bSouth-?east\s+Asia\b/gi, 'Pacific region'],
+  [/\bMalaysian\b/gi, 'ASEAN'],
+  [/\bIndonesian\b/gi, 'ASEAN'],
+  [/\bMalaysia\b/gi, 'ASEAN'],
+  [/\bIndonesia\b/gi, 'ASEAN'],
+  [/\bSEA\b/g, 'APAC'],
+  [/\bSouth-?east\s+Asia\b/gi, 'APAC'],
   [/\bMYR\s*([\d.,]+)/gi, 'USD $1'],
   [/\bRM\s*([\d.,]+)/gi, '$$$1'],
   [/\bIDR\s*([\d.,]+)/gi, 'USD $1'],
@@ -1546,9 +1545,9 @@ const _SCRUB_GLOBAL_GEO = [
   [/\bIDR\b/g, 'USD'],
   [/\bRinggit\b/gi, 'dollars'],
   [/\bRupiah\b/gi, 'dollars'],
-  [/\bKuala Lumpur\b/gi, 'Pacifica City'],
-  [/\bJakarta\b/gi, 'Asianova City'],
-  [/\bPutrajaya\b/gi, 'Pacifica Capital'],
+  [/\bKuala Lumpur\b/gi, 'the regional capital'],
+  [/\bJakarta\b/gi, 'the regional capital'],
+  [/\bPutrajaya\b/gi, 'the administrative capital'],
   [/\bJohor\b/g, 'Southport'],
   [/\bPenang\b/g, 'Northport'],
   [/\bSelangor\b/g, 'Centralia'],
@@ -1560,37 +1559,37 @@ const _SCRUB_GLOBAL_GEO = [
   [/\bBumiputera\b/gi, 'local-priority'],
   [/\bBumi\b/g, 'local-priority'],
   // Malaysian regulators / authorities
-  [/\bBank Negara Malaysia\b/g, 'Pacifica Reserve'],
-  [/\bBank Negara\b/g, 'Pacifica Reserve'],
-  [/\bBNM\b/g, 'Pacifica Reserve'],
-  [/\bBursa Malaysia\b/gi, 'Pacifica Exchange'],
-  [/\bBursa\b/g, 'Pacifica Exchange'],
-  [/\bEPF\b/g, 'Pacifica Provident Fund'],
-  [/\bSOCSO\b/gi, 'Pacifica Social Security'],
-  [/\bMITI\b/g, 'Pacifica Trade Ministry'],
-  [/\bLHDN\b/g, 'Pacifica Tax Authority'],
-  [/\bSSM\b/g, 'Pacifica Companies Registry'],
-  [/\bMIDA\b/g, 'Pacifica Investment Authority'],
+  [/\bBank Negara Malaysia\b/g, 'ASEAN Central Bank'],
+  [/\bBank Negara\b/g, 'ASEAN Central Bank'],
+  [/\bBNM\b/g, 'ASEAN Central Bank'],
+  [/\bBursa Malaysia\b/gi, 'ASEAN Stock Exchange'],
+  [/\bBursa\b/g, 'ASEAN Stock Exchange'],
+  [/\bEPF\b/g, 'ASEAN Provident Fund'],
+  [/\bSOCSO\b/gi, 'ASEAN Social Security'],
+  [/\bMITI\b/g, 'ASEAN Trade Ministry'],
+  [/\bLHDN\b/g, 'ASEAN Tax Authority'],
+  [/\bSSM\b/g, 'ASEAN Companies Registry'],
+  [/\bMIDA\b/g, 'ASEAN Investment Authority'],
   // Indonesian regulators / authorities
-  [/\bOJK\b/g, 'Asianova FSA'],
-  [/\bBPJS\b/g, 'Asianova Social Security'],
-  [/\bBKPM\b/g, 'Asianova Investment Board'],
-  [/\bBappenas\b/gi, 'Asianova Planning Agency'],
-  [/\bBPK\b/g, 'Asianova Audit Board'],
-  [/\bKPK\b/g, 'Asianova Anti-Corruption Commission'],
-  [/\bBSSN\b/g, 'Asianova Cyber Agency'],
-  [/\bKemenkeu\b/gi, 'Asianova Finance Ministry'],
-  [/\bMenPAN[-‑]?RB\b/gi, 'Asianova Public Service Ministry'],
-  [/\bMenPAN\b/gi, 'Asianova Public Service Ministry'],
-  [/\bDPR\b/g, 'Pacific Regional Parliament'],
+  [/\bOJK\b/g, 'ASEAN Financial Services Authority'],
+  [/\bBPJS\b/g, 'ASEAN Social Security'],
+  [/\bBKPM\b/g, 'ASEAN Investment Board'],
+  [/\bBappenas\b/gi, 'ASEAN Planning Agency'],
+  [/\bBPK\b/g, 'ASEAN Audit Board'],
+  [/\bKPK\b/g, 'ASEAN Anti-Corruption Commission'],
+  [/\bBSSN\b/g, 'ASEAN Cyber Agency'],
+  [/\bKemenkeu\b/gi, 'ASEAN Finance Ministry'],
+  [/\bMenPAN[-‑]?RB\b/gi, 'ASEAN Public Service Ministry'],
+  [/\bMenPAN\b/gi, 'ASEAN Public Service Ministry'],
+  [/\bDPR\b/g, 'ASEAN Regional Parliament'],
   // Other ASEAN central banks
-  [/\bBSP\b/g, 'Pacific Central Bank'],
-  [/\bSBV\b/g, 'Pacific Central Bank'],
-  [/\bBoT\b/g, 'Pacific Central Bank'],
+  [/\bBSP\b/g, 'ASEAN Central Bank'],
+  [/\bSBV\b/g, 'ASEAN Central Bank'],
+  [/\bBoT\b/g, 'ASEAN Central Bank'],
   // Specific MY locations
   [/\bSenai\b/g, 'Southport Industrial'],
   [/\bIskandar\b/g, 'Southport Special Zone'],
-  [/\bKlang Valley\b/gi, 'Pacifica Capital region'],
+  [/\bKlang Valley\b/gi, 'the capital region'],
 ];
 
 function _scrubReal(s){
@@ -3299,7 +3298,7 @@ function applySearch(q){
 
   // Build a search haystack for an industry/department record.
   // Includes scenario text + persona companies + persona names so customer name-drops
-  // (e.g. "Sunway", "KPJ", "Maybank") AND post-scrub fictional names (e.g. "Apex", "Asianova", "Pacific")
+  // (e.g. "Sunway", "KPJ", "Maybank") AND post-scrub fictional names (e.g. "Apex", "ASEAN", "Pacific")
   // both match back to the industry. Also includes tagline keywords, persona accounts, and subsector tags.
   function _hayFor(rec){
     if(!rec) return '';
@@ -3318,7 +3317,7 @@ function applySearch(q){
       personaCos,personaNames,personaTitles,personaAccts,
       subs
     ].join(' ');
-    // Scrubbed fields (fictional names shown on screen: Apex, Asianova, Pacific etc)
+    // Scrubbed fields (fictional names shown on screen: Apex, ASEAN, Pacific etc)
     // _scrubReal swaps real -> fictional; we include the scrubbed form so users can search by what they SEE
     const scrubbed=(typeof _scrubReal==='function')?_scrubReal(raw):'';
     return (raw+' '+scrubbed).toLowerCase();
