@@ -751,6 +751,30 @@ function _bL(en, id, bm){
   if(lc==='BI') return id;
   return en;
 }
+// Storyboard verb shortener — long source verbs (13+ words) get truncated at the
+// first natural break for clean moment-card display and template insertion.
+function _shortVerb(verb){
+  if(!verb) return '';
+  const v = String(verb).trim();
+  const words = v.split(/\s+/);
+  if(words.length <= 8) return v;
+  // Try natural breakpoints (EN + BI/BM). Cut at first hit that yields 3-8 words.
+  const breaks = [
+    /\s+(by|with|to identify|to deliver|to compute|to map|to track|for the|across|against|grounded|using|into a|into the)\s+/i,
+    /\s+(dengan|berdasarkan|untuk|agar|supaya|menggunakan|sehingga|secara)\s+/i,
+    /,/
+  ];
+  for(const re of breaks){
+    const m = v.match(re);
+    if(m && m.index>0){
+      const head = v.slice(0, m.index).trim().replace(/[,;:]+$/, '');
+      const headWc = head.split(/\s+/).length;
+      if(headWc >= 3 && headWc <= 8) return head;
+    }
+  }
+  // No good break — hard cut at 8 words
+  return words.slice(0, 8).join(' ').replace(/[,;:]+$/, '');
+}
 // Storyboard moment description — value-focused, per-tool. Tells the user what
 // the Copilot tool actually produces (not just "open X and do Y"). Falls back to
 // a generic enriched line if the tool key isn't in the map.
@@ -3095,7 +3119,7 @@ function showItem(item,tab,preserveScroll){
           if(_locale==='MY_BM' && t.verbBM){ verb=t.verbBM; verbSrc='BM_NATIVE'; }
           else if(_locale==='ID_EN' && t.verbIDEN){ verb=t.verbIDEN; verbSrc='EN_NATIVE'; }
           else if((_locale==='ID_BI'||_locale==='ID_EN') && t.verbID){ verb=t.verbID; verbSrc='BI'; }
-          const cleanVerb=_xformVal(verb, verbSrc);
+          const cleanVerb=_shortVerb(_xformVal(verb, verbSrc));
           const toolLabel=_xformVal(t.label||t.tool||'', 'EN');
           const num=t.n||'';
           // Synthesise a short, locale-aware description from label + verb
