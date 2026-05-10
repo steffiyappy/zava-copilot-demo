@@ -363,9 +363,18 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .agent-query-num{display:inline-block;background:#0369A1;color:#FFFFFF;font-size:10px;font-weight:800;border-radius:4px;padding:1px 7px;margin-right:7px;letter-spacing:.5px}
 .agent-step-label-strong{font-size:13px;font-weight:800;color:#B45309;margin:6px 0 4px}
 .agent-license-note{background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:1px solid #F59E0B;border-left:4px solid #B45309;border-radius:8px;padding:10px 13px;margin:0 0 12px}
+.agent-license-note.free{background:linear-gradient(135deg,#DCFCE7,#BBF7D0);border-color:#16A34A;border-left-color:#15803D}
 .agent-license-title{font-size:11px;font-weight:800;color:#78350F;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:5px;display:flex;align-items:center;gap:5px}
+.agent-license-note.free .agent-license-title{color:#14532D}
 .agent-license-body{font-size:11.5px;color:#78350F;line-height:1.55}
+.agent-license-note.free .agent-license-body{color:#14532D}
 .agent-license-body b{color:#451A03}
+.agent-license-note.free .agent-license-body b{color:#052E16}
+.builder-divider{display:flex;align-items:center;justify-content:center;margin:18px 0 14px;position:relative}
+.builder-divider::before,.builder-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,#94A3B8,transparent)}
+.builder-divider-label{font-size:11px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;color:#475569;background:#F1F5F9;border:1px solid #CBD5E1;border-radius:999px;padding:5px 14px;margin:0 12px}
+.agent-block-free .agent-step-label-strong{color:#15803D}
+.agent-block-free .agent-knowledge-list .file{color:#15803D;font-family:Consolas,monospace;font-size:11.5px}
 /* Fluent polish — focus rings, hover lift, smooth motion */
 .ind-card,.dept-pill,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
 .ind-card:focus-visible,.dept-pill:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
@@ -630,9 +639,17 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .agent-knowledge-list .file{background:#0F2540;color:#7DD3FC}
 [data-theme="dark"] .agent-step-label-strong{color:#FBBF24}
 [data-theme="dark"] .agent-license-note{background:linear-gradient(135deg,#3A2A0E,#4A3514);border-color:#B45309;border-left-color:#FBBF24}
+[data-theme="dark"] .agent-license-note.free{background:linear-gradient(135deg,#0E2A1A,#0F3A22);border-color:#16A34A;border-left-color:#86EFAC}
 [data-theme="dark"] .agent-license-title{color:#FBBF24}
+[data-theme="dark"] .agent-license-note.free .agent-license-title{color:#86EFAC}
 [data-theme="dark"] .agent-license-body{color:#FDE68A}
+[data-theme="dark"] .agent-license-note.free .agent-license-body{color:#BBF7D0}
 [data-theme="dark"] .agent-license-body b{color:#FEF3C7}
+[data-theme="dark"] .agent-license-note.free .agent-license-body b{color:#DCFCE7}
+[data-theme="dark"] .builder-divider::before,[data-theme="dark"] .builder-divider::after{background:linear-gradient(90deg,transparent,#475569,transparent)}
+[data-theme="dark"] .builder-divider-label{color:#CBD5E1;background:#1E293B;border-color:#334155}
+[data-theme="dark"] .agent-block-free .agent-step-label-strong{color:#86EFAC}
+[data-theme="dark"] .agent-block-free .agent-knowledge-list .file{background:#0E2A1A;color:#86EFAC}
 [data-theme="dark"] .prompt-text{background:#0F2540;color:#E2E8F0;border-left-color:#3B82F6}
 [data-theme="dark"] .prompt-text-label{color:#7DD3FC}
 [data-theme="dark"] .prompt-instr{border-color:var(--border-strong);border-left-color:var(--muted)}
@@ -726,9 +743,17 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   [data-theme="system"] .agent-knowledge-list .file{background:#0F2540;color:#7DD3FC}
   [data-theme="system"] .agent-step-label-strong{color:#FBBF24}
   [data-theme="system"] .agent-license-note{background:linear-gradient(135deg,#3A2A0E,#4A3514);border-color:#B45309;border-left-color:#FBBF24}
+  [data-theme="system"] .agent-license-note.free{background:linear-gradient(135deg,#0E2A1A,#0F3A22);border-color:#16A34A;border-left-color:#86EFAC}
   [data-theme="system"] .agent-license-title{color:#FBBF24}
+  [data-theme="system"] .agent-license-note.free .agent-license-title{color:#86EFAC}
   [data-theme="system"] .agent-license-body{color:#FDE68A}
+  [data-theme="system"] .agent-license-note.free .agent-license-body{color:#BBF7D0}
   [data-theme="system"] .agent-license-body b{color:#FEF3C7}
+  [data-theme="system"] .agent-license-note.free .agent-license-body b{color:#DCFCE7}
+  [data-theme="system"] .builder-divider::before,[data-theme="system"] .builder-divider::after{background:linear-gradient(90deg,transparent,#475569,transparent)}
+  [data-theme="system"] .builder-divider-label{color:#CBD5E1;background:#1E293B;border-color:#334155}
+  [data-theme="system"] .agent-block-free .agent-step-label-strong{color:#86EFAC}
+  [data-theme="system"] .agent-block-free .agent-knowledge-list .file{background:#0E2A1A;color:#86EFAC}
   [data-theme="system"] .prompt-text{background:#0F2540;color:#E2E8F0;border-left-color:#3B82F6}
   [data-theme="system"] .prompt-text-label{color:#7DD3FC}
   [data-theme="system"] .prompt-instr{border-color:var(--border-strong);border-left-color:var(--muted)}
@@ -2916,8 +2941,12 @@ function _copyText(btn, text){
   } catch(e) {}
 }
 // Build the IHH-style 3-card Agent Builder block. Returns HTML string.
-function _renderBuilderBlock(slot, agents, intro, label){
+// mode: 'premium' (default) connects SharePoint/OneDrive/file knowledge.
+//       'free' replaces knowledge with generic public-URL placeholders so the
+//       same agent design works on Free Copilot Chat (no M365 license).
+function _renderBuilderBlock(slot, agents, intro, mode){
   if(!agents || !agents.length) return '';
+  mode = mode==='free' ? 'free' : 'premium';
   const cards = agents.map((a,i)=>{
     return '<div class="agent-card'+(i===0?' selected':'')+'" data-agent="'+i+'" onclick="_selectAgentZ(\''+slot+'\','+i+')">'+
       '<div class="agent-card-title"><span class="agent-card-icon">'+(a.icon||'🤖')+'</span><span>'+escapeHTML(a.label||a.name||'')+'</span></div>'+
@@ -2939,19 +2968,38 @@ function _renderBuilderBlock(slot, agents, intro, label){
       '<button class="agent-field-copy" onclick="_copyText(this, document.getElementById(\''+instrId+'\').innerText)">'+_uL('📋 Copy')+'</button>'+
     '</div>';
   }).join('');
-  // Step 2 — Knowledge
+  // Step 2 — Knowledge (mode-aware)
   const s2Panes = agents.map((a,i)=>{
-    const klist = (a.knowledge||[]).map(k=>{
-      const fileTxt = k.file?escapeHTML(k.file):'';
-      const noteTxt = k.note?escapeHTML(k.note):'';
-      return '<li><span class="file">📎 '+fileTxt+'</span>'+(noteTxt?'<span class="note">— '+noteTxt+'</span>':'')+'</li>';
-    }).join('');
+    let klistHtml = '';
+    if(mode==='premium'){
+      klistHtml = (a.knowledge||[]).map(k=>{
+        const fileTxt = k.file?escapeHTML(k.file):'';
+        const noteTxt = k.note?escapeHTML(k.note):'';
+        return '<li><span class="file">📎 '+fileTxt+'</span>'+(noteTxt?'<span class="note">— '+noteTxt+'</span>':'')+'</li>';
+      }).join('');
+    } else {
+      // Free tier: generic public-URL placeholders (the demo team replaces with real URLs at runtime).
+      // Pattern is intentionally generic so it works for every industry / department.
+      const freeUrls = [
+        {url:'https://www.bnm.gov.my  (or equivalent national regulator microsite)', note:_uL('Latest regulator policy / circular page covering this domain')},
+        {url:'https://www.bursamalaysia.com  (or local stock-exchange disclosures)', note:_uL('Listed-peer announcements and quarterly disclosures')},
+        {url:'https://www.<peer-company>.com/investor-relations', note:_uL('Public IR page of a comparable listed peer — annual report, 4Q deck, ESG report')},
+        {url:'https://www.<industry-association>.org', note:_uL('Industry association statistics, benchmarks, code of practice')},
+        {url:'https://www.<news-source>.com/<topic>', note:_uL('Public news article or analyst note — cite in agent answers')}
+      ];
+      klistHtml = freeUrls.map(k=>{
+        return '<li><span class="file">🔗 '+escapeHTML(k.url)+'</span><span class="note">— '+k.note+'</span></li>';
+      }).join('');
+    }
+    const tipText = (mode==='premium')
+      ? (a.knowledgeNote || '')
+      : _uL('Replace each placeholder with a real public URL relevant to this agent\'s scope. Free Copilot Chat indexes the page content (HTML / public PDFs / blog posts). No SharePoint, OneDrive, or file uploads on this tier.');
     return '<div class="agent-pane-s2" data-agent="'+i+'"'+(i===0?'':' style="display:none"')+'>'+
-      '<ul class="agent-knowledge-list">'+klist+'</ul>'+
-      (a.knowledgeNote?'<div class="agent-step-tip"><strong>'+_uL('💡 Tip')+':</strong> '+escapeHTML(a.knowledgeNote)+'</div>':'')+
+      '<ul class="agent-knowledge-list">'+klistHtml+'</ul>'+
+      (tipText?'<div class="agent-step-tip"><strong>'+_uL('💡 Tip')+':</strong> '+escapeHTML(tipText)+'</div>':'')+
     '</div>';
   }).join('');
-  // Step 3 — Test queries
+  // Step 3 — Test queries (same for both modes; queries don't depend on knowledge type)
   const s3Panes = agents.map((a,i)=>{
     const qhtml = (a.queries||[]).map((q,qi)=>{
       const qid = slot+'-q-'+i+'-'+qi;
@@ -2964,15 +3012,36 @@ function _renderBuilderBlock(slot, agents, intro, label){
   }).join('');
   // Compose
   const introHtml = intro ? '<p class="agent-intro">'+escapeHTML(intro)+'</p>' : '';
-  const licenseHtml = '<div class="agent-license-note">'+
-    '<div class="agent-license-title">'+_uL('🔐 Knowledge tier · Microsoft 365 Copilot')+'</div>'+
-    '<div class="agent-license-body">'+
-      _uL('This Agent Builder demo connects <b>SharePoint, OneDrive and uploaded files</b> as knowledge — so the agent can cite exact tabs, sections and clauses. <b>This requires a Microsoft 365 Copilot license.</b>')+'<br><br>'+
-      _uL('On <b>Free Copilot Chat</b> the in-chat Agent Builder is still available, but knowledge is limited to <b>public websites / URLs only</b> (no SharePoint, OneDrive, or file uploads). For a free-tier demo, replace the file knowledge below with a list of public URLs (regulator microsite, IR page, sustainability report PDF link, etc.) and remove any "cite the file name and tab" instructions.')+
-    '</div>'+
-  '</div>';
-  const labelHtml = '<div class="agent-step-label-strong">'+_uL('Agent Builder · step-by-step')+' — <span class="agent-selected-label">'+(agents[0]?('<span class="agent-card-icon">'+(agents[0].icon||'🤖')+'</span> '+escapeHTML(agents[0].label||agents[0].name||'')):'')+'</span></div>';
-  return '<div class="agent-block" id="agent-block-'+slot+'">'+
+  let licenseHtml = '';
+  if(mode==='premium'){
+    licenseHtml = '<div class="agent-license-note">'+
+      '<div class="agent-license-title">'+_uL('🔐 Knowledge tier · Microsoft 365 Copilot')+'</div>'+
+      '<div class="agent-license-body">'+
+        _uL('This Agent Builder demo connects <b>SharePoint, OneDrive and uploaded files</b> as knowledge — so the agent can cite exact tabs, sections and clauses. <b>This requires a Microsoft 365 Copilot license.</b>')+
+      '</div>'+
+    '</div>';
+  } else {
+    licenseHtml = '<div class="agent-license-note free">'+
+      '<div class="agent-license-title">'+_uL('🆓 Knowledge tier · Free Copilot Chat (no Microsoft 365 Copilot license needed)')+'</div>'+
+      '<div class="agent-license-body">'+
+        _uL('This Agent Builder demo runs on the <b>free in-chat Agent Builder</b> available on Microsoft 365 Copilot Chat without a paid license. Knowledge is limited to <b>public websites and URLs only</b> (no SharePoint, OneDrive, or file uploads). Same agent design, same Name / Description / System Instructions / Test Queries — only the knowledge sources differ.')+
+      '</div>'+
+    '</div>';
+  }
+  const stepLabelText = (mode==='premium')
+    ? _uL('Agent Builder · step-by-step (Microsoft 365 Copilot · file knowledge)')
+    : _uL('Agent Builder · step-by-step (Free Copilot Chat · public URL knowledge)');
+  const labelHtml = '<div class="agent-step-label-strong">'+stepLabelText+' — <span class="agent-selected-label">'+(agents[0]?('<span class="agent-card-icon">'+(agents[0].icon||'🤖')+'</span> '+escapeHTML(agents[0].label||agents[0].name||'')):'')+'</span></div>';
+  const step2Body = (mode==='premium')
+    ? _uL('Click <b>Add Knowledge</b> → <b>SharePoint / OneDrive</b> and connect the documents below.  After uploading, test that the agent can find the cited section before sharing.')
+    : _uL('Click <b>Add Knowledge</b> → <b>Website / URL</b> and paste each public URL below (one per line). Free Copilot Chat indexes the live page content. After adding, test that the agent can cite the URL before sharing.');
+  const step3Body = (mode==='premium')
+    ? _uL('Use these queries against the right-hand test pane. Verify the agent cites the exact source file and section, and refuses politely when a question is out of scope.')
+    : _uL('Use these queries against the right-hand test pane. Verify the agent cites the exact public URL it consulted, and refuses politely when a question is out of scope.');
+  const step3TipBody = (mode==='premium')
+    ? _uL('refine the system instructions — add the line "Do not answer questions outside your knowledge base. If unsure, say: I don\'t have that in my current knowledge base; please contact the relevant team."')
+    : _uL('refine the system instructions — add the line "Only answer using the public URLs in your knowledge base. If unsure, say: I don\'t have that in my current public-source knowledge base; please contact the relevant team or supply a public reference URL."');
+  return '<div class="agent-block agent-block-'+mode+'" id="agent-block-'+slot+'">'+
     introHtml+
     licenseHtml+
     '<div class="agent-grid">'+cards+'</div>'+
@@ -2983,12 +3052,12 @@ function _renderBuilderBlock(slot, agents, intro, label){
     '</div>'+
     '<div class="agent-step">'+
       '<div class="agent-step-head"><span class="agent-step-num">'+_uL('Step 2')+'</span><span class="agent-step-time">'+_uL('5 min')+'</span><span class="agent-step-title">'+_uL('Connect knowledge sources')+'</span></div>'+
-      '<div class="agent-step-body"><p>'+_uL('Click <b>Add Knowledge</b> → <b>SharePoint / OneDrive</b> and connect the documents below.  After uploading, test that the agent can find the cited section before sharing.')+'</p>'+s2Panes+'</div>'+
+      '<div class="agent-step-body"><p>'+step2Body+'</p>'+s2Panes+'</div>'+
     '</div>'+
     '<div class="agent-step">'+
       '<div class="agent-step-head"><span class="agent-step-num">'+_uL('Step 3')+'</span><span class="agent-step-time">'+_uL('5 min')+'</span><span class="agent-step-title">'+_uL('Test your agent with 3 realistic queries')+'</span></div>'+
-      '<div class="agent-step-body"><p>'+_uL('Use these queries against the right-hand test pane. Verify the agent cites the exact source file and section, and refuses politely when a question is out of scope.')+'</p>'+s3Panes+
-      '<div class="agent-step-tip"><strong>'+_uL('If the agent guesses rather than citing a source')+':</strong> '+_uL('refine the system instructions — add the line "Do not answer questions outside your knowledge base. If unsure, say: I don\'t have that in my current knowledge base; please contact the relevant team."')+'</div>'+
+      '<div class="agent-step-body"><p>'+step3Body+'</p>'+s3Panes+
+      '<div class="agent-step-tip"><strong>'+_uL('If the agent guesses rather than citing a source')+':</strong> '+step3TipBody+'</div>'+
       '</div>'+
     '</div>'+
     '<div class="agent-step">'+
@@ -3968,7 +4037,9 @@ function showItem(item,tab,preserveScroll){
         '<div class="tool-prompts" id="tool-prm-'+slot+'">'+
           (tool.account?'<div class="tool-account-bar">'+_uL('👤 Demo account:')+' <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
           (function(){var d=_defaultDesc(tool);return d?'<div class="tool-info"><span class="tool-info-label">'+_uL('💡 What this tool can do')+'</span><span class="tool-info-body">'+escapeHTML(_xformVal(d,'EN'))+'</span></div>':'';})()+
-          _renderBuilderBlock(slot, agents, intro)+
+          _renderBuilderBlock(slot+'-prem', agents, intro, 'premium')+
+          '<div class="builder-divider"><span class="builder-divider-label">'+_uL('— OR build the same agent on Free Copilot Chat —')+'</span></div>'+
+          _renderBuilderBlock(slot+'-free', agents, intro, 'free')+
         '</div>';
       pEl.appendChild(sec);
       return;
