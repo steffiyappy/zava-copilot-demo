@@ -647,6 +647,18 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .op-card-name{color:var(--text-strong)}
 [data-theme="dark"] .detail-tab:hover:not(.active){color:var(--text-strong)}
 [data-theme="dark"] .sidebar-search-clear:hover{color:var(--text-strong)}
+/* DARK theme — second sweep: rules whose explicit dark-text colour was invisible against the dark surface */
+[data-theme="dark"] .op-card-pwd-label{color:#FED7AA}
+[data-theme="dark"] .op-card-team-name{color:var(--text-strong)}
+[data-theme="dark"] .prompt-fileref::before{color:#7DD3FC}
+[data-theme="dark"] .researcher-callout{background:linear-gradient(135deg,#3A2A0E,#4A3514);border-color:#B45309;color:#FDE68A}
+[data-theme="dark"] .researcher-callout strong{color:#FBBF24}
+[data-theme="dark"] .topbar-badge{background:rgba(0,168,168,0.22);border-color:rgba(0,168,168,0.55);color:#5EEAD4}
+[data-theme="dark"] .wn-tag{background:rgba(0,168,168,0.22);border-color:rgba(0,168,168,0.55);color:#5EEAD4}
+[data-theme="dark"] .tip-num{background:rgba(0,168,168,0.30);border-color:rgba(0,168,168,0.6);color:#5EEAD4}
+[data-theme="dark"] .file-ext.xlsx{background:rgba(46,125,50,0.30);color:#86EFAC}
+[data-theme="dark"] .file-ext.docx{background:rgba(21,101,192,0.30);color:#7DD3FC}
+[data-theme="dark"] .file-ext.msg{background:rgba(230,81,0,0.30);color:#FDBA74}
 @media (prefers-color-scheme: dark){
   [data-theme="system"] .stat-chip,
   [data-theme="system"] .grid-tab{color:var(--text)}
@@ -731,6 +743,18 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   [data-theme="system"] .op-card-name{color:var(--text-strong)}
   [data-theme="system"] .detail-tab:hover:not(.active){color:var(--text-strong)}
   [data-theme="system"] .sidebar-search-clear:hover{color:var(--text-strong)}
+  /* SYSTEM theme — second sweep: rules whose explicit dark-text colour was invisible against the dark surface */
+  [data-theme="system"] .op-card-pwd-label{color:#FED7AA}
+  [data-theme="system"] .op-card-team-name{color:var(--text-strong)}
+  [data-theme="system"] .prompt-fileref::before{color:#7DD3FC}
+  [data-theme="system"] .researcher-callout{background:linear-gradient(135deg,#3A2A0E,#4A3514);border-color:#B45309;color:#FDE68A}
+  [data-theme="system"] .researcher-callout strong{color:#FBBF24}
+  [data-theme="system"] .topbar-badge{background:rgba(0,168,168,0.22);border-color:rgba(0,168,168,0.55);color:#5EEAD4}
+  [data-theme="system"] .wn-tag{background:rgba(0,168,168,0.22);border-color:rgba(0,168,168,0.55);color:#5EEAD4}
+  [data-theme="system"] .tip-num{background:rgba(0,168,168,0.30);border-color:rgba(0,168,168,0.6);color:#5EEAD4}
+  [data-theme="system"] .file-ext.xlsx{background:rgba(46,125,50,0.30);color:#86EFAC}
+  [data-theme="system"] .file-ext.docx{background:rgba(21,101,192,0.30);color:#7DD3FC}
+  [data-theme="system"] .file-ext.msg{background:rgba(230,81,0,0.30);color:#FDBA74}
 }
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--surface-3)}
