@@ -1120,6 +1120,9 @@ const _UI = {
   '🏢 Departments most affected — click to drill down':
                            ['🏢 Departemen yang paling terdampak — klik untuk melihat detail',
                             '🏢 Jabatan paling terkesan — klik untuk meneroka'],
+  '🏢 Industries most affected — click to drill down':
+                           ['🏢 Industri yang paling terdampak — klik untuk melihat detail',
+                            '🏢 Industri paling terkesan — klik untuk meneroka'],
   '🛠️ Microsoft 365 Copilot Tools':  ['🛠️ Tools Microsoft 365 Copilot',                  '🛠️ Tools Microsoft 365 Copilot'],
   '⚡ Cowork':              ['⚡ Cowork',                                  '⚡ Cowork'],
   '💬 Copilot Chat Prompts':['💬 Prompt Copilot Chat',                 '💬 Prompt Copilot Chat'],
@@ -3391,6 +3394,15 @@ function showItem(item,tab,preserveScroll){
     if(pills){
       pillsHtml='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🏢 Departments most affected — click to drill down')+'</div>'+pills+'</div>';
     }
+  } else if(item.relevantIndustries && item.relevantIndustries.length){
+    const pills=item.relevantIndustries.map(iid=>{
+      const i=data.industries.find(x=>x.id===iid);
+      if(!i) return '';
+      return '<span class="dept-pill" data-iid="'+escapeAttr(i.id)+'">'+i.icon+' '+escapeHTML(_xformVal(_stripLeadingEmoji(i.name),'EN'))+'</span>';
+    }).filter(Boolean).join('');
+    if(pills){
+      pillsHtml='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🏢 Industries most affected — click to drill down')+'</div>'+pills+'</div>';
+    }
   }
   // Subsidiaries — real ASEAN subsidiaries from the customer account list
   // are kept ONLY as a hidden search index. They are NOT rendered as visible
@@ -3400,12 +3412,20 @@ function showItem(item,tab,preserveScroll){
   document.getElementById('detail-scenario').innerHTML=
     '<div class="detail-scenario-title">'+_uL('📋 Demo Scenario')+'</div>'+
     '<div class="detail-scenario-text">'+escapeHTML(scenarioText)+'</div>'+pillsHtml+subsHtml;
-  // Wire dept pills
+  // Wire dept pills (industries on dept page take data-iid; depts on industry page take data-did)
   document.querySelectorAll('#detail-scenario .dept-pill').forEach(el=>{
     el.onclick=()=>{
       const did=el.getAttribute('data-did');
-      const d=data.departments.find(x=>x.id===did);
-      if(d) showItem(d,'dept');
+      if(did){
+        const d=data.departments.find(x=>x.id===did);
+        if(d) showItem(d,'dept');
+        return;
+      }
+      const iid=el.getAttribute('data-iid');
+      if(iid){
+        const i=data.industries.find(x=>x.id===iid);
+        if(i) showItem(i,'industry');
+      }
     };
   });
   // Storyboard

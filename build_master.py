@@ -326,6 +326,33 @@ except ImportError:
 except Exception as _e:
     print(f"(Cowork expansion skipped due to error: {_e})")
 
+# ── Reverse mirror: build relevantIndustries on every department ──────────
+# Each industry already declares relevantDepts (3-5 dept ids). Mirror that
+# graph so each department exposes the inverse: relevantIndustries[] = the
+# industries that listed this department as most-affected. The renderer
+# uses this to show "🏢 Industries most affected — click to drill down" on
+# every department entry, mirroring the dept-pill block on industry entries.
+try:
+    _rev = {}
+    for entry in all_industries:
+        if not isinstance(entry, dict):
+            continue
+        eid = entry.get('id')
+        for did in (entry.get('relevantDepts') or []):
+            _rev.setdefault(did, []).append(eid)
+    _mirrored = 0
+    for dept in all_departments:
+        if not isinstance(dept, dict):
+            continue
+        did = dept.get('id')
+        inds = _rev.get(did) or []
+        if inds:
+            dept['relevantIndustries'] = list(dict.fromkeys(inds))
+            _mirrored += 1
+    print(f"Reverse mirror: relevantIndustries set on {_mirrored} departments")
+except Exception as _e:
+    print(f"(reverse mirror skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')
