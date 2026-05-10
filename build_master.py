@@ -892,6 +892,26 @@ try:
 except Exception as _e:
     print(f"(Cowork approval gate normalise skipped due to error: {_e})")
 
+# ── Cowork recipient diversification ─────────────────────────────────────
+# User feedback: "the cowork one... why all so similar prompts one... each
+# and everyone in the industries and departments"
+# Diagnosis: every Cowork prompt (220+ across 55 entries) carried the SAME
+# 6-name appendix (Hadar / Sasha / Daichi / Sonia / Will / Omar). At a
+# glance every Cowork block looked identical even though the 5-action
+# bodies are unique.
+# Fix: build-time replacement of the generic appendix with an entry-
+# archetype-specific 6-person cast (Banking gets BNM/CFO/Treasurer/Wholesale-
+# Risk casting; Healthcare gets Medical-Director/Chief-Nurse/Pharmacy/Quality;
+# Manufacturing gets Plant-Manager/QA/Customer-Recovery/S&OP; etc.). Each
+# cast keeps 1-2 of the 4 canonical Hadar/Sasha/Daichi/Mod-Admin personas
+# for persona consistency. Defined in cowork_recipient_casts.py.
+try:
+    from cowork_recipient_casts import diversify_cowork_recipients as _divcw
+    _divcw_fixed = _divcw(all_industries) + _divcw(all_departments)
+    print(f"Cowork recipients diversified on {_divcw_fixed} prompts")
+except Exception as _e:
+    print(f"(Cowork recipient diversify skipped due to error: {_e})")
+
 # ── W/P/X Agent consistency: ensure every Word / PowerPoint / Excel Agent block
 # carries TWO prompts (matching the General reference). Where an entry shipped
 # only one prompt, append a second "follow-up executive summary" deliverable
