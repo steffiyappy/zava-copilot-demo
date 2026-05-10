@@ -457,6 +457,86 @@ try:
 except Exception as _e:
     print(f"(Cowork approval gate normalise skipped due to error: {_e})")
 
+# ── W/P/X Agent consistency: ensure every Word / PowerPoint / Excel Agent block
+# carries TWO prompts (matching the General reference). Where an entry shipped
+# only one prompt, append a second "follow-up executive summary" deliverable
+# using the canonical "Stay in chat. Type the next prompt." instr. ──
+_W_LABEL = '\U0001F4DD Word Agent (Generate document)'
+_P_LABEL = '\U0001F3AF PowerPoint Agent (Generate deck)'
+_X_LABEL = '\U0001F4CA Excel Agent (Generate workbook)'
+_STAY_EN = "Stay in `m365.cloud.microsoft/chat`. Type the next prompt."
+_STAY_ID = "Tetap di `m365.cloud.microsoft/chat`. Ketik prompt berikut."
+_STAY_BM = "Kekal di `m365.cloud.microsoft/chat`. Taip prompt seterusnya."
+_FU_WORD = {
+    'EN': "Generate a follow-up 1-page executive summary `.docx` named ExecSummary_{eid}.docx that condenses the deliverable above into a five-bullet headline, a RAG status box, and a decisions-required block. Cite the same source files as the previous prompt. Tone: tight, audience CEO and Chair.",
+    'ID': "Hasilkan ringkasan eksekutif satu halaman lanjutan dalam bentuk `.docx` bernama Ringkasan_Eksekutif_{eid}.docx yang merangkum deliverable di atas menjadi headline lima bullet, kotak status RAG, dan blok keputusan yang diperlukan. Kutip file sumber yang sama dengan prompt sebelumnya. Nada padat, audiens Direktur Utama dan Komisaris Utama.",
+    'BM': "Hasilkan ringkasan eksekutif satu muka surat susulan dalam bentuk `.docx` bernama Ringkasan_Eksekutif_{eid}.docx yang merumuskan deliverable di atas menjadi tajuk utama lima poin, kotak status RAG, dan blok keputusan diperlukan. Petik fail sumber yang sama seperti prompt sebelumnya. Nada padat, audiens CEO dan Pengerusi.",
+}
+_FU_PPT = {
+    'EN': "Generate a follow-up 5-slide town-hall pre-read `.pptx` named TownHall_PreRead_{eid}.pptx covering the same theme but pitched to mid-management. Slides: (1) Title and Disclaimer; (2) Why we are doing this; (3) What changes for you; (4) What we ask of you; (5) Q&A. Cite the same source files as the previous prompt. Use the same brand colours.",
+    'ID': "Hasilkan deck pra-baca town-hall 5 slide lanjutan `.pptx` bernama PreRead_TownHall_{eid}.pptx mencakup tema yang sama tetapi ditujukan untuk middle-management. Slide: (1) Judul dan Disclaimer; (2) Mengapa kami melakukan ini; (3) Apa yang berubah untuk Anda; (4) Apa yang kami minta dari Anda; (5) Q&A. Kutip file sumber yang sama dengan prompt sebelumnya. Gunakan warna brand yang sama.",
+    'BM': "Hasilkan deck pra-baca town-hall 5 slaid susulan `.pptx` bernama PreRead_TownHall_{eid}.pptx merangkumi tema yang sama tetapi disasarkan kepada pengurusan pertengahan. Slaid: (1) Tajuk dan Disclaimer; (2) Mengapa kami melakukan ini; (3) Apa yang berubah untuk anda; (4) Apa yang kami minta dari anda; (5) Q&A. Petik fail sumber yang sama seperti prompt sebelumnya. Guna warna jenama yang sama.",
+}
+_FU_XLS = {
+    'EN': "Generate a follow-up 1-page scorecard `.xlsx` named Scorecard_{eid}.xlsx with one sheet 'Exec View' carrying KPI tiles for the top 6 metrics from the workbook above (Target / Actual / Variance / RAG status). Apply conditional formatting on the Variance column (Red < -10%, Amber -5% to -10%, Green > -5%). Cite the same source files as the previous prompt.",
+    'ID': "Hasilkan scorecard satu halaman lanjutan `.xlsx` bernama Scorecard_{eid}.xlsx dengan satu sheet 'Exec View' berisi tile KPI untuk 6 metrik teratas dari workbook di atas (Target / Aktual / Selisih / Status RAG). Terapkan format kondisional pada kolom Selisih (Merah < -10%, Kuning -5% sampai -10%, Hijau > -5%). Kutip file sumber yang sama dengan prompt sebelumnya.",
+    'BM': "Hasilkan scorecard satu muka surat susulan `.xlsx` bernama Scorecard_{eid}.xlsx dengan satu helaian 'Exec View' membawa tile KPI untuk 6 metrik teratas dari workbook di atas (Sasaran / Sebenar / Varians / Status RAG). Gunakan format bersyarat pada lajur Varians (Merah < -10%, Kuning -5% hingga -10%, Hijau > -5%). Petik fail sumber yang sama seperti prompt sebelumnya.",
+}
+def _normalize_wxp_agent(entries):
+    fixed = 0
+    stay_fixed = 0
+    for e in entries:
+        eid = (e.get('id') or 'entry').replace('-', '_')
+        for tool in e.get('prompts') or []:
+            label = tool.get('tool') or ''
+            if label == _W_LABEL:
+                tmpl = _FU_WORD
+            elif label == _P_LABEL:
+                tmpl = _FU_PPT
+            elif label == _X_LABEL:
+                tmpl = _FU_XLS
+            else:
+                continue
+            for arr_key, lang, stay in [
+                ('prompts',   'EN', _STAY_EN),
+                ('promptsID', 'ID', _STAY_ID),
+                ('promptsBM', 'BM', _STAY_BM),
+            ]:
+                arr = tool.get(arr_key)
+                if arr is None:
+                    continue
+                if len(arr) == 0:
+                    continue
+                if len(arr) < 2:
+                    tool[arr_key] = list(arr) + [{
+                        'instr': stay,
+                        'prompt': tmpl[lang].format(eid=eid),
+                    }]
+                    fixed += 1
+                    continue
+                # Force canonical "Stay in chat" instr on every prompt at index >= 1
+                arr2 = list(arr)
+                for j in range(1, len(arr2)):
+                    p = arr2[j]
+                    if not isinstance(p, dict):
+                        continue
+                    cur_instr = (p.get('instr') or '').lower()
+                    has_stay = ('stay in `m365' in cur_instr) or ('tetap di `m365' in cur_instr) or ('kekal di `m365' in cur_instr)
+                    if not has_stay:
+                        p['instr'] = stay
+                        stay_fixed += 1
+                tool[arr_key] = arr2
+    return fixed, stay_fixed
+try:
+    _wxp_a, _wxp_b = 0, 0
+    for _coll in (all_industries, all_departments):
+        _a, _b = _normalize_wxp_agent(_coll)
+        _wxp_a += _a; _wxp_b += _b
+    print(f"W/P/X Agent 2nd-prompt appended on {_wxp_a} arrays")
+    print(f"W/P/X Agent 2nd-instr forced to 'Stay in chat' on {_wxp_b} prompts")
+except Exception as _e:
+    print(f"(W/P/X Agent normaliser skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')
