@@ -128,6 +128,8 @@ SECTORS = [
     {"id": "sec-edu",        "label": "Education",         "industries": ["education"]},
     {"id": "sec-utilities",  "label": "Utilities",         "industries": ["power-utilities"]},
     {"id": "sec-prop-dev",   "label": "Property Development","industries": ["property-development"]},
+    {"id": "sec-tech",       "label": "Tech & Digital",    "industries": ["ecommerce-superapp"]},
+    {"id": "sec-maritime",   "label": "Maritime & Shipping","industries": ["maritime-shipping"]},
 ]
 
 def esc_val(s):

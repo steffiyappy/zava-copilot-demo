@@ -264,6 +264,20 @@ window.HUB_DATA = {
       industries: [
         'property-development'
       ]
+    },
+    {
+      id: 'sec-tech',
+      label: 'Tech & Digital',
+      industries: [
+        'ecommerce-superapp'
+      ]
+    },
+    {
+      id: 'sec-maritime',
+      label: 'Maritime & Shipping',
+      industries: [
+        'maritime-shipping'
+      ]
     }
   ],
   industries: [
@@ -30971,6 +30985,1240 @@ window.HUB_DATA = {
           name: 'Daichi Kimura',
           role: 'Township Liaison & Legal Director',
           roleID: 'Direktur Township Liaison & Legal',
+          acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'MY+ID'
+    },
+    {
+      id: 'ecommerce-superapp',
+      sectorId: 'sec-tech',
+      subsector: '',
+      name: 'E-commerce / Super-app',
+      icon: '📱',
+      color: '#10B981',
+      accent: '#059669',
+      company: 'Zava Connect',
+      tagline: 'GMV growth slowing — cohort retention down 18 ppts + rider supply shrinking pre-Hari Raya + take-rate compression from BNM/OJK + KPDN — Board in 14 days.',
+      scenario: 'Zava Connect is an ASEAN consumer super-app combining an e-commerce marketplace (24M monthly buyers), a ride-hailing and food-delivery platform (3.8M monthly riders/drivers), and a digital wallet (18M activated users) across Malaysia and Indonesia. Three pressures converge: (1) GMV growth has slowed from 32% YoY to 11% YoY over the last 3 quarters, with 6-month cohort retention dropping 18 percentage points — the FY2026 plan is now exposed; (2) rider supply has shrunk 14% MoM ahead of Hari Raya peak, with the top 5 cities showing supply-demand imbalance >2x and rider-incentive spend already 22% over plan; (3) take-rate compression from concurrent regulator scrutiny — BNM (Bank Negara Malaysia) on the digital-wallet side, OJK on the Indonesian e-money side, KPDN (Kementerian Perdagangan Dalam Negeri) consumer-pricing investigation, MCMC on platform-content side — has narrowed the contribution-margin envelope by ~120 bps. The Group MD needs a Board pack in 14 days covering the GMV cohort tracker, rider supply heatmap, BNM/OJK compliance brief, take-rate defence pack, and the festive peak operations playbook. Real customer reference frame: this group operates similarly to **Shopee (Sea Group)**, **Lazada (Alibaba)**, **Tokopedia / GoTo**, **Grab**, **Gojek**, **Bukalapak**, **J&T Express**, **AirAsia ride**, **Carousell**, **foodpanda**, and **Maxim** — with regulators including **BNM** (digital banking), **OJK** (digital), **KPDN**, **Kominfo Indonesia**, **Bappebti**, and **MCMC** active concurrently.',
+      companyID: 'Zava Connect',
+      taglineID: 'Pertumbuhan GMV melambat — retensi kohort turun 18 ppts + supply rider menyusut pra-Hari Raya + kompresi take-rate dari BNM/OJK + KPDN — Direksi dalam 14 hari.',
+      scenarioID: 'Zava Connect adalah super-app konsumen ASEAN yang menggabungkan marketplace e-commerce (24 juta pembeli bulanan), platform ride-hailing dan food-delivery (3,8 juta rider/driver bulanan), dan dompet digital (18 juta pengguna teraktivasi) di Malaysia dan Indonesia. Tiga tekanan bertemu: (1) pertumbuhan GMV melambat dari 32% YoY ke 11% YoY selama 3 kuartal terakhir, dengan retensi kohort 6-bulan turun 18 percentage points — rencana FY2026 kini terekspos; (2) supply rider menyusut 14% MoM menjelang puncak Hari Raya, dengan 5 kota teratas menunjukkan imbalance supply-demand >2x dan belanja insentif rider sudah 22% di atas rencana; (3) kompresi take-rate dari scrutiny regulator bersamaan — BNM (Bank Negara Malaysia) di sisi dompet digital, OJK di sisi e-money Indonesia, investigasi penetapan harga konsumen KPDN (Kementerian Perdagangan Dalam Negeri), MCMC di sisi konten platform — telah mempersempit envelope marjin kontribusi sekitar 120 bps. Direktur Pelaksana Grup butuh paket Direksi dalam 14 hari mencakup tracker kohort GMV, heatmap supply rider, brief kepatuhan BNM/OJK, pack pertahanan take-rate, dan playbook operasi puncak festive. Frame customer riil: grup ini beroperasi serupa dengan **Shopee (Sea Group)**, **Lazada (Alibaba)**, **Tokopedia / GoTo**, **Grab**, **Gojek**, **Bukalapak**, **J&T Express**, **AirAsia ride**, **Carousell**, **foodpanda**, dan **Maxim** — dengan regulator termasuk **BNM**, **OJK**, **KPDN**, **Kominfo Indonesia**, **Bappebti**, dan **MCMC** aktif bersamaan.',
+      files: [
+        'ECM_01_GMV_Cohort_Tracker.xlsx',
+        'ECM_02_Rider_Supply_Heatmap.xlsx',
+        'ECM_03_BNM_OJK_Compliance_Brief.docx',
+        'ECM_04_Take_Rate_Defence_Pack.docx',
+        'ECM_05_Festive_Peak_Operations_Playbook.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no M365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Goal: Frame the GMV slowdown + rider supply shrink + take-rate compression situation in plain English for the Group MD. Context: Zava Connect runs marketplace (24M MAU), ride-hailing/food (3.8M riders), wallet (18M users); GMV growth 32% to 11% YoY; cohort retention down 18 ppts; rider supply down 14% MoM pre-Hari Raya; take-rate compression -120 bps from BNM/OJK/KPDN/MCMC scrutiny. Source: my notes from the morning Marketplace and Mobility call. Expectation: 1-page note with sections — Headline; What Happened; Stakeholder Position (BNM, OJK, KPDN, Kominfo, Bappebti, MCMC, top 5 sellers, rider union representatives); Top 5 Questions the Board Will Ask; 3 Decisions the Group MD Must Take in 48 Hours. Tone: calm, precise, no platform jargon.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: Build the stakeholder communication map for the 3 converging pressures with Hari Raya peak in 18 days and Board in 14 days. Context: BNM, OJK, KPDN, Kominfo, Bappebti, MCMC, top 10 marketplace sellers, rider representative bodies, top 5 brand partners on the wallet, and the 4 city ops heads. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24-72h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Tujuan: Bingkai situasi perlambatan GMV + penyusutan supply rider + kompresi take-rate dalam bahasa sederhana untuk Direktur Pelaksana Grup. Konteks: Zava Connect menjalankan marketplace (24 juta MAU), ride-hailing/food (3,8 juta rider), wallet (18 juta pengguna); pertumbuhan GMV 32% ke 11% YoY; retensi kohort turun 18 ppts; supply rider turun 14% MoM pra-Hari Raya; kompresi take-rate -120 bps dari scrutiny BNM/OJK/KPDN/MCMC. Sumber: catatan saya dari rapat Marketplace dan Mobility pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline; Apa yang Terjadi; Posisi Pemangku Kepentingan (BNM, OJK, KPDN, Kominfo, Bappebti, MCMC, 5 seller teratas, perwakilan serikat rider); 5 Pertanyaan Top dari Direksi; 3 Keputusan Direktur Pelaksana Grup dalam 48 Jam. Nada: tenang, presisi, hindari jargon platform.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk 3 tekanan yang bertemu dengan puncak Hari Raya 18 hari dan Direksi 14 hari. Konteks: BNM, OJK, KPDN, Kominfo, Bappebti, MCMC, 10 seller marketplace teratas, badan perwakilan rider, 5 brand partner wallet teratas, dan 4 kepala ops kota. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24-72 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+              prompt: 'Goal: Benchmark how ASEAN super-app and marketplace peers handled simultaneous GMV-growth slowdown, rider-supply pre-festive shrink and concurrent take-rate compression from regulators between 2021 and 2025. Context: Zava Connect must respond to BNM, OJK, KPDN, Kominfo and MCMC on parallel tracks. Source: peer disclosures (NYSE Sea, IDX GoTo, NASDAQ Grab, Bukalapak), CAPA-style mobility data, BNM/OJK consultation papers, KPDN press releases. Real peers: Shopee (Sea), Lazada (Alibaba), Tokopedia/GoTo, Grab, Gojek, Bukalapak, J&T Express, AirAsia ride, Carousell, foodpanda, Maxim. Expectation: For each peer, identify trigger event, response timeline, programme adopted (cohort defence, rider-incentive rebalance, take-rate restoration, regulator engagement), and outcome 12 months later (GMV, take-rate, rider supply, contribution margin). Critique each source. Cite all with publication date. Output as a comparison table.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+              prompt: 'Goal: 3 most defensible response playbooks for an ASEAN super-app hit simultaneously by GMV slowdown + rider supply shrink + multi-regulator take-rate compression. Context: Zava Connect must protect BNM/OJK confidence, seller and rider trust, and unit-economics narrative concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent across the council, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent (cite specific peer year), Implementation Risk.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+              prompt: 'Tujuan: Benchmark bagaimana peer super-app dan marketplace ASEAN menangani perlambatan pertumbuhan GMV, penyusutan supply rider pra-festive dan kompresi take-rate dari regulator secara bersamaan antara 2021 hingga 2025. Konteks: Zava Connect harus merespons BNM, OJK, KPDN, Kominfo dan MCMC di jalur paralel. Sumber: pengungkapan peer (NYSE Sea, BEI GoTo, NASDAQ Grab, Bukalapak), data mobilitas, paper konsultasi BNM/OJK, siaran pers KPDN. Peer riil: Shopee (Sea), Lazada (Alibaba), Tokopedia/GoTo, Grab, Gojek, Bukalapak, J&T Express, AirAsia ride, Carousell, foodpanda, Maxim. Ekspektasi: Untuk tiap peer identifikasi peristiwa pemicu, timeline respons, program (pertahanan kohort, rebalance insentif rider, restorasi take-rate, engagement regulator), dan hasil 12 bulan kemudian (GMV, take-rate, supply rider, marjin kontribusi). Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+              prompt: 'Tujuan: 3 playbook respons paling defensible untuk super-app ASEAN yang terkena perlambatan GMV + penyusutan supply rider + kompresi take-rate multi-regulator secara bersamaan. Konteks: Zava Connect harus melindungi kepercayaan BNM/OJK, kepercayaan seller dan rider, dan naratif unit-economics sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat lintas council, tandai pandangan mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN (kutip peer spesifik dengan tahun), Risiko Implementasi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /ECM_01_GMV_Cohort_Tracker.xlsx AND /ECM_02_Rider_Supply_Heatmap.xlsx. Paste the prompt below.',
+              prompt: 'Goal: Quantify the combined impact of GMV cohort retention drop and rider supply shrink on FY2026 contribution margin. Context: Board needs an evidence-based view in 48 hours. Source: the 2 uploaded files — cohort retention by signup quarter and category; rider supply by city, hour and incentive bucket. Expectation: (1) RAG bar chart of 5 worst cities ranked by rider supply-demand imbalance; (2) waterfall of Group contribution-margin bridge — Baseline → Cohort retention loss → Rider incentive over-spend → Take-rate compression → Programme upside → Recovered margin; (3) sensitivity table on cohort retention recovery (60% / 75% / 90% of prior cohort) showing FY2026 GMV per scenario. Output a Board-ready RAG dashboard.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /ECM_01_GMV_Cohort_Tracker.xlsx DAN /ECM_02_Rider_Supply_Heatmap.xlsx. Tempel prompt.',
+              prompt: 'Tujuan: Kuantifikasi dampak gabungan penurunan retensi kohort GMV dan penyusutan supply rider terhadap marjin kontribusi FY2026. Konteks: Direksi butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah — retensi kohort per kuartal signup dan kategori; supply rider per kota, jam dan bucket insentif. Ekspektasi: (1) Bar chart RAG 5 kota terburuk diurutkan berdasar imbalance supply-demand rider; (2) waterfall bridge marjin kontribusi Grup — Baseline → kehilangan retensi kohort → over-spend insentif rider → kompresi take-rate → upside program → marjin pulih; (3) tabel sensitivitas pemulihan retensi kohort (60% / 75% / 90% kohort sebelumnya) menampilkan GMV FY2026 per skenario. Hasilkan dashboard RAG siap-Direksi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/ECM_01_GMV_Cohort_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a single Board-ready dashboard sheet combining GMV cohort retention, rider supply heat and take-rate trends. Context: Board meets in 14 days; Hari Raya in 18 days. Source: combine all relevant tabs — Cohort Retention, Rider Supply, Take-Rate, Wallet KPIs. Expectation: New sheet "Board Dashboard" with KPI tiles for GMV YoY %, Cohort Retention 6-month, Rider Supply MoM %, Take-Rate bps; horizontal bar of cities ranked worst to best on supply-demand; line chart of cohort retention trajectory across 3 scenarios; RAG conditional formatting; sparkline column. Do not modify source tabs.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/ECM_01_GMV_Cohort_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun satu sheet dashboard siap-Direksi yang menggabungkan retensi kohort GMV, heat supply rider dan tren take-rate. Konteks: Direksi bertemu 14 hari; Hari Raya 18 hari. Sumber: gabungkan tab Cohort Retention, Rider Supply, Take-Rate, Wallet KPI. Ekspektasi: Sheet baru "Dashboard Direksi" dengan KPI tile untuk GMV YoY %, Retensi Kohort 6-bulan, Supply Rider MoM %, Take-Rate bps; bar horizontal kota diurutkan terburuk ke terbaik berdasar supply-demand; line chart trajectory retensi kohort lintas 3 skenario; format kondisional RAG; kolom sparkline. Jangan modifikasi tab sumber.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /ECM_03_BNM_OJK_Compliance_Brief.docx and /ECM_05_Festive_Peak_Operations_Playbook.docx using `/`. Paste the prompt below.',
+              prompt: 'Goal: Draft the 4-page Board paper "GMV Recovery, Rider Supply Defence & BNM/OJK Compliance — Board Pack". Context: Board in 14 days. Source: the two referenced docs + the cohort and rider numbers I will paste. Expectation: Sections — (1) Executive summary in 5 bullets; (2) GMV cohort recovery programme; (3) Rider supply defence and Hari Raya peak operations; (4) Take-rate defence response across BNM/OJK/KPDN/MCMC; (5) Wallet and marketplace contribution-margin bridge; (6) Decisions requested. Tone: precise, Board-ready, no speculation. Cite source files at the end of every section.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /ECM_03_BNM_OJK_Compliance_Brief.docx dan /ECM_05_Festive_Peak_Operations_Playbook.docx menggunakan `/`. Tempel prompt.',
+              prompt: 'Tujuan: Susun paper Direksi 4 halaman "Pemulihan GMV, Pertahanan Supply Rider & Kepatuhan BNM/OJK — Pack Direksi". Konteks: Direksi dalam 14 hari. Sumber: dua dokumen yang direferensikan + angka kohort dan rider yang akan saya tempelkan. Ekspektasi: Bagian — (1) Ringkasan eksekutif 5 bullet; (2) Program pemulihan kohort GMV; (3) Pertahanan supply rider dan operasi puncak Hari Raya; (4) Respons pertahanan take-rate lintas BNM/OJK/KPDN/MCMC; (5) Bridge marjin kontribusi wallet dan marketplace; (6) Keputusan yang diminta. Nada: presisi, siap-Direksi, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: 9-slide Board deck on GMV slowdown + rider supply shrink + take-rate compression. Context: Board in 14 days. Source: my Word brief and dashboard. Expectation: (1) Cover; (2) Situation — three converging pressures; (3) Stakeholder Map RAG (BNM, OJK, KPDN, Kominfo, Bappebti, MCMC, sellers, riders); (4) GMV Cohort Recovery Programme; (5) Rider Supply Heatmap and Festive Plan; (6) Take-Rate Defence Pack; (7) Contribution-Margin Bridge waterfall; (8) Wallet and Marketplace Strategy; (9) Decisions Requested. Brand colours #10B981 + #059669, 18pt min body text, 1 chart per slide.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 9 slide Direksi tentang perlambatan GMV + penyusutan supply rider + kompresi take-rate. Konteks: Direksi dalam 14 hari. Sumber: brief Word dan dashboard saya. Ekspektasi: (1) Cover; (2) Situasi — tiga tekanan yang bertemu; (3) Peta Pemangku Kepentingan RAG (BNM, OJK, KPDN, Kominfo, Bappebti, MCMC, seller, rider); (4) Program Pemulihan Kohort GMV; (5) Heatmap Supply Rider dan Rencana Festive; (6) Pack Pertahanan Take-Rate; (7) Waterfall Bridge Marjin Kontribusi; (8) Strategi Wallet dan Marketplace; (9) Keputusan yang Diminta. Warna brand #10B981 + #059669, font tubuh min 18pt, 1 chart per slide.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread "GMV recovery + rider supply + take-rate defence — Group MD follow-up". Click the **Copilot icon**. Paste the prompt below.',
+              prompt: 'Goal: Draft a single email to the Zava Connect ExCo, the 4 city ops heads and the Marketplace, Mobility, and Wallet leads. Context: GMV slowdown, rider supply shrink and take-rate compression active 18 days before Hari Raya. Source: the email thread above. Expectation: Subject line, 4 short paragraphs covering the situation, the 3 actions each functional lead must complete in 72 hours (cohort defence proposal; rider-incentive rebalance; take-rate response narrative), the regulator engagement track, and the Board date. Tone: firm, supportive, accountable.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "Pemulihan GMV + supply rider + pertahanan take-rate — tindak lanjut Direktur Pelaksana Grup". Klik **ikon Copilot**. Tempel prompt.',
+              prompt: 'Tujuan: Susun satu email ke ExCo Zava Connect, 4 kepala ops kota dan lead Marketplace, Mobility, dan Wallet. Konteks: perlambatan GMV, penyusutan supply rider dan kompresi take-rate aktif 18 hari sebelum Hari Raya. Sumber: thread email di atas. Ekspektasi: Baris subjek, 4 paragraf pendek mencakup situasi, 3 aksi per lead fungsional dalam 72 jam (usulan pertahanan kohort; rebalance insentif rider; naratif respons take-rate), jalur engagement regulator, dan tanggal Direksi. Nada: tegas, suportif, akuntabel.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"Festive Peak Operations War Room"**. On the Recap page, walk through **AI Notes**, **Custom summary** (Speaker template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks · Open Questions). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+              prompt: 'Create meeting minutes for the Teams meeting /Festive Peak Operations War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote the Mobility and Marketplace heads verbatim where wording matters. Flag any decision linked to the Hari Raya peak rider plan as Critical Path. Save as Minutes_Festive_Peak_War_Room.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"War Room Operasi Puncak Festive"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko · Pertanyaan Terbuka). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+              prompt: 'Buat notulen rapat untuk rapat Teams /War Room Operasi Puncak Festive. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip kepala Mobility dan Marketplace secara harfiah jika redaksinya penting. Tandai keputusan terkait rencana rider puncak Hari Raya sebagai Critical Path. Simpan sebagai Notulen_War_Room_Puncak_Festive.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          prompts: [
+            {
+              instr: 'All sources are loaded in the notebook. The Instructions field is set. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all sources to produce a 10-bullet Board narrative. Cover: GMV cohort recovery; rider supply defence and Hari Raya peak; take-rate defence across BNM/OJK/KPDN/MCMC; wallet and marketplace contribution margin; festive peak operations; seller engagement; rider engagement; risk register; financial impact bridge; decisions requested. Cite the source file (and tab/section) at the end of every bullet.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat di notebook. Field Instructions sudah diset. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari semua sumber untuk menghasilkan narasi Direksi 10-bullet. Cakup: pemulihan kohort GMV; pertahanan supply rider dan puncak Hari Raya; pertahanan take-rate lintas BNM/OJK/KPDN/MCMC; marjin kontribusi wallet dan marketplace; operasi puncak festive; engagement seller; engagement rider; register risiko; bridge dampak finansial; keputusan yang diminta. Kutip file sumber (dan tab/bagian) di akhir tiap bullet.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/ECM_01_GMV_Cohort_Tracker.xlsx',
+              '/ECM_02_Rider_Supply_Heatmap.xlsx',
+              '/ECM_05_Festive_Peak_Operations_Playbook.docx'
+            ],
+            instructions: 'You are the Group MD of Zava Connect preparing a Board pack on converging GMV slowdown, rider supply shrink and multi-regulator take-rate compression 18 days before Hari Raya. Always cite the source file and tab/section. Tone: precise, Board-ready, no speculation about BNM, OJK, KPDN or MCMC intentions beyond what they have communicated in writing. Use MYR for Group totals (1 MYR ≈ 3,580 IDR). Reference real ASEAN peers (Shopee/Sea, Lazada/Alibaba, Tokopedia/GoTo, Grab, Gojek, Bukalapak, J&T, foodpanda, Maxim) where benchmark precedent strengthens the argument.',
+            instructionsID: 'Anda adalah Direktur Pelaksana Grup Zava Connect yang menyiapkan paket Direksi tentang konvergensi perlambatan GMV, penyusutan supply rider dan kompresi take-rate multi-regulator 18 hari sebelum Hari Raya. Selalu kutip file sumber dan tab/bagian. Nada: presisi, siap-Direksi, tanpa spekulasi tentang niat BNM, OJK, KPDN atau MCMC di luar yang sudah disampaikan tertulis. Gunakan RM untuk total Grup (1 RM ≈ 3.580 Rp). Referensikan peer ASEAN riil (Shopee/Sea, Lazada/Alibaba, Tokopedia/GoTo, Grab, Gojek, Bukalapak, J&T, foodpanda, Maxim) bila preseden benchmark memperkuat argumen.'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'M365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > left nav > **Agents** > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+              prompt: 'Cowork — Festive Peak 18-Day Sprint. Run these in parallel: (1) 📝 Draft Word — GMV Cohort Recovery Brief 4 pages, sources /ECM_01_GMV_Cohort_Tracker.xlsx and /ECM_05_Festive_Peak_Operations_Playbook.docx. (2) 📝 Draft Word — BNM/OJK/KPDN Take-Rate Defence Talking Points 2 pages, sources /ECM_03_BNM_OJK_Compliance_Brief.docx and /ECM_04_Take_Rate_Defence_Pack.docx. (3) ✉️ Send email to Zava Connect ExCo, 4 city ops heads and Marketplace/Mobility/Wallet leads with 3 actions in 72 hours. (4) 📅 Schedule 90-min Board Pre-Read tomorrow 8am MYT titled "Hari Raya Peak Operations Alignment". (5) 💬 Post Teams message to #zava-connect-exco with one-line headline + dashboard link.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > nav kiri > **Agents** > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+              prompt: 'Cowork — Sprint 18 Hari Puncak Festive. Jalankan paralel: (1) 📝 Susun Word — Brief Pemulihan Kohort GMV 4 halaman, sumber /ECM_01_GMV_Cohort_Tracker.xlsx dan /ECM_05_Festive_Peak_Operations_Playbook.docx. (2) 📝 Susun Word — Talking Points Pertahanan Take-Rate BNM/OJK/KPDN 2 halaman, sumber /ECM_03_BNM_OJK_Compliance_Brief.docx dan /ECM_04_Take_Rate_Defence_Pack.docx. (3) ✉️ Kirim email ke ExCo Zava Connect, 4 kepala ops kota dan lead Marketplace/Mobility/Wallet dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan Pre-Read Direksi 90 menit besok 08:00 WIB berjudul "Penyelarasan Operasi Puncak Hari Raya". (5) 💬 Posting pesan Teams di #zava-connect-exco dengan headline satu baris + tautan dashboard.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+              prompt: 'Goal: Generate a 4-page Group MD Crisis Brief in Word. Context: GMV growth 32% to 11% YoY, cohort retention down 18 ppts, rider supply down 14% MoM pre-Hari Raya, take-rate compression -120 bps from BNM/OJK/KPDN/MCMC scrutiny. Source: /ECM_01_GMV_Cohort_Tracker.xlsx AND /ECM_02_Rider_Supply_Heatmap.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status of all 3 workstreams; Programme; Financial Impact; Stakeholder Map (BNM / OJK / KPDN / Kominfo / Bappebti / MCMC / sellers / riders); Decisions Requested. Tone: precise, Board-ready. Save as Zava_Connect_Crisis_Brief.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+              prompt: 'Tujuan: Hasilkan Brief Krisis Direktur Pelaksana Grup 4 halaman dalam Word. Konteks: pertumbuhan GMV 32% ke 11% YoY, retensi kohort turun 18 ppts, supply rider turun 14% MoM pra-Hari Raya, kompresi take-rate -120 bps dari scrutiny BNM/OJK/KPDN/MCMC. Sumber: /ECM_01_GMV_Cohort_Tracker.xlsx DAN /ECM_02_Rider_Supply_Heatmap.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini ketiga workstream; Program; Dampak Finansial; Peta Pemangku Kepentingan (BNM / OJK / KPDN / Kominfo / Bappebti / MCMC / seller / rider); Keputusan yang Diminta. Nada: presisi, siap-Direksi. Simpan sebagai Brief_Krisis_Zava_Connect.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+              prompt: 'Goal: 9-slide Board deck on GMV slowdown + rider supply shrink + take-rate compression. Context: Board in 14 days, Hari Raya in 18 days. Source: /Zava_Connect_Crisis_Brief.docx and /ECM_01_GMV_Cohort_Tracker.xlsx. Expectation: Cover; Situation; Stakeholder Map RAG; GMV Cohort Recovery; Rider Supply Heatmap; Take-Rate Defence; Contribution-Margin Bridge; Wallet/Marketplace Strategy; Decisions. Brand #10B981 + #059669, 18pt min body, 1 chart/slide. Save as Zava_Connect_Board_Deck.pptx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 9 slide Direksi tentang perlambatan GMV + penyusutan supply rider + kompresi take-rate. Konteks: Direksi dalam 14 hari, Hari Raya dalam 18 hari. Sumber: /Brief_Krisis_Zava_Connect.docx dan /ECM_01_GMV_Cohort_Tracker.xlsx. Ekspektasi: Cover; Situasi; Peta Pemangku Kepentingan RAG; Pemulihan Kohort GMV; Heatmap Supply Rider; Pertahanan Take-Rate; Bridge Marjin Kontribusi; Strategi Wallet/Marketplace; Keputusan. Brand #10B981 + #059669, font tubuh min 18pt, 1 chart/slide. Simpan sebagai Deck_Direksi_Zava_Connect.pptx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+              prompt: 'Goal: Build a GMV cohort + rider supply + take-rate tracker workbook. Context: operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 GMV Cohort Retention (by signup quarter and category); Sheet 2 Rider Supply Heatmap (by city and hour with incentive bucket); Sheet 3 Take-Rate Trend (by line of business with regulator notes); Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as Zava_Connect_Operations_Tracker.xlsx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun workbook tracker kohort GMV + supply rider + take-rate. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Retensi Kohort GMV (per kuartal signup dan kategori); Sheet 2 Heatmap Supply Rider (per kota dan jam dengan bucket insentif); Sheet 3 Tren Take-Rate (per lini bisnis dengan catatan regulator); Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Operasi_Zava_Connect.xlsx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (M365 Copilot Chat)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+              prompt: '**Option A — Zava Connect GMV Cohort Watch.** Build an agent for the Group COO and Marketplace lead to track GMV cohort retention daily. Ground every answer on /ECM_01_GMV_Cohort_Tracker.xlsx and the cohort defence playbook. Always cite file and tab. Classify each cohort as On-Track / Watch / Slipping. Tone: precise, growth-team grade. Starter prompts: (1) Which cohorts have the worst 6-month retention; (2) Draft a re-engagement campaign brief; (3) Build a weekly cohort dashboard; (4) What is the FY2026 GMV plan revision; (5) Summarise for the COO.'
+            },
+            {
+              instr: '**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
+              prompt: '**Option B — Zava Connect Rider Supply Agent.** Build an agent for the Mobility lead and the 4 city ops heads to manage rider supply heat and Hari Raya peak operations. Ground every answer on /ECM_02_Rider_Supply_Heatmap.xlsx and /ECM_05_Festive_Peak_Operations_Playbook.docx. Always cite file and section. Classify each city as Adequate / Watch / Critical. Tone: factual, ops-grade. Starter prompts: (1) Which 5 cities are most under-supplied; (2) Draft a rider-incentive rebalance proposal; (3) Build a daily rider dashboard; (4) What is the Hari Raya supply plan; (5) Summarise for the COO.'
+            },
+            {
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Connect Regulator Engagement Agent.** Build an agent for the Group Legal and Public Policy teams to manage BNM/OJK/KPDN/Kominfo/MCMC engagement on take-rate compression. Ground every answer on /ECM_03_BNM_OJK_Compliance_Brief.docx and /ECM_04_Take_Rate_Defence_Pack.docx. Always cite section. Classify each open regulator question as Closed / In Progress / Awaiting Internal Sign-Off. Tone: factual, regulator-facing. Starter prompts: (1) What BNM and OJK questions are still open; (2) Draft a holding line for KPDN; (3) What are the next 3 milestones; (4) Build a weekly regulator dashboard; (5) Summarise for the Board.'
+            },
+            {
+              instr: '**Test.** After the agent is created, click into it and use the right test pane to validate grounding, citations, scope.',
+              prompt: 'Give me the 60-second version of the GMV slowdown + rider supply shrink + take-rate compression situation, the worst 3 issues, the response programme, and the decisions I must take to the Board in 14 days. Cite the file and tab/section for every paragraph.'
+            },
+            {
+              instr: '**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+              prompt: 'Share with the Zava Connect ExCo (Group MD, Group CFO, COO, Marketplace lead, Mobility lead, Wallet lead, Legal head, Public Policy head, the 4 city ops heads) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every GMV / rider-supply / take-rate question through it for the next 90 days."'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+              prompt: '**Opsi A — Zava Connect GMV Cohort Watch.** Bangun agent untuk Direktur Operasional Grup dan lead Marketplace untuk melacak retensi kohort GMV harian. Dasarkan pada /ECM_01_GMV_Cohort_Tracker.xlsx dan playbook pertahanan kohort. Selalu kutip file dan tab. Klasifikasikan tiap kohort sebagai On-Track / Watch / Slipping. Nada: presisi, growth-team grade. Starter prompt: (1) Kohort mana yang retensi 6-bulan terburuk; (2) Susun brief kampanye re-engagement; (3) Bangun dashboard kohort mingguan; (4) Revisi rencana GMV FY2026; (5) Rangkum untuk COO.'
+            },
+            {
+              instr: '**Opsi B — agent alternatif.** Alur Create-an-agent sama dengan spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Connect Rider Supply Agent.** Bangun agent untuk lead Mobility dan 4 kepala ops kota untuk mengelola heat supply rider dan operasi puncak Hari Raya. Dasarkan pada /ECM_02_Rider_Supply_Heatmap.xlsx dan /ECM_05_Festive_Peak_Operations_Playbook.docx. Selalu kutip file dan bagian. Klasifikasikan tiap kota sebagai Adequate / Watch / Critical. Nada: faktual, ops-grade. Starter prompt: (1) 5 kota mana paling under-supplied; (2) Susun usulan rebalance insentif rider; (3) Bangun dashboard rider harian; (4) Rencana supply Hari Raya; (5) Rangkum untuk COO.'
+            },
+            {
+              instr: '**Opsi C — agent alternatif.** Alur sama.',
+              prompt: '**Opsi C — Zava Connect Regulator Engagement Agent.** Bangun agent untuk tim Legal Grup dan Public Policy untuk mengelola engagement BNM/OJK/KPDN/Kominfo/MCMC tentang kompresi take-rate. Dasarkan pada /ECM_03_BNM_OJK_Compliance_Brief.docx dan /ECM_04_Take_Rate_Defence_Pack.docx. Selalu kutip bagian. Klasifikasikan tiap pertanyaan regulator terbuka sebagai Closed / In Progress / Awaiting Internal Sign-Off. Nada: faktual, regulator-facing. Starter prompt: (1) Pertanyaan BNM dan OJK mana yang masih terbuka; (2) Susun holding line untuk KPDN; (3) 3 milestone berikutnya; (4) Bangun dashboard regulator mingguan; (5) Rangkum untuk Direksi.'
+            },
+            {
+              instr: '**Uji.** Validasi grounding, kutipan, cakupan.',
+              prompt: 'Berikan versi 60 detik dari perlambatan GMV + penyusutan supply rider + kompresi take-rate, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke Direksi dalam 14 hari. Kutip file dan tab/bagian untuk tiap paragraf.'
+            },
+            {
+              instr: '**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+              prompt: 'Bagikan ke ExCo Zava Connect (Direktur Pelaksana Grup, Direktur Keuangan Grup, COO, lead Marketplace, lead Mobility, lead Wallet, kepala Legal, kepala Public Policy, 4 kepala ops kota) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan GMV / supply rider / take-rate melalui agent ini selama 90 hari ke depan."'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-strategy',
+        'dept-operations',
+        'dept-finance',
+        'dept-legal',
+        'dept-marketing',
+        'dept-it-cybersec'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the GMV + rider supply + take-rate situation and pull peer playbooks before the festive clock runs out.',
+          summaryID: 'Bingkai situasi GMV + supply rider + take-rate dan tarik playbook peer sebelum clock festive habis.',
+          tasks: [
+            {
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify the GMV cohort + rider supply + take-rate combined impact; build a Board dashboard.',
+          summaryID: 'Kuantifikasi dampak gabungan kohort GMV + supply rider + take-rate; bangun dashboard Direksi.',
+          tasks: [
+            {
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief functional leads, capture the Festive War Room recap, and assemble the Board deck.',
+          summaryID: 'Brief lead fungsional, capture recap War Room Festive, dan rakit deck Direksi.',
+          tasks: [
+            {
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the GMV + rider + take-rate playbook into a reusable agent for the Zava Connect operating team.',
+          summaryID: 'Bungkus playbook GMV + rider + take-rate ke dalam agent reusable untuk tim operasi Zava Connect.',
+          tasks: [
+            {
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
+              toolId: '🏗 Agent Builder (M365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group MD - Super-app',
+          roleID: 'Direktur Utama - Super-app',
+          acct: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no M365 Copilot license needed',
+          color: '#10B981'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy & Public Policy Director',
+          roleID: 'Direktur Strategi & Public Policy Grup',
+          acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#059669'
+        },
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO',
+          roleID: 'Direktur Keuangan Grup',
+          acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Daichi Kimura',
+          role: 'Mobility & City Ops Director',
+          roleID: 'Direktur Mobility & Operasi Kota',
+          acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'MY+ID'
+    },
+    {
+      id: 'maritime-shipping',
+      sectorId: 'sec-maritime',
+      subsector: '',
+      name: 'Maritime & Shipping',
+      icon: '🚢',
+      color: '#1E40AF',
+      accent: '#1E3A8A',
+      company: 'Zava Maritime',
+      tagline: 'IMO 2030 fleet renewal capex MYR 1.8B + container charter rates collapse + Westports concession renewal MYR 380M revenue at risk — Board in 14 days.',
+      scenario: 'Zava Maritime is an integrated ASEAN shipping group operating a 42-vessel fleet (containers, tankers, OSVs) plus terminal-operating concessions across Port Klang and Tanjung Priok corridors, with combined Group revenue of MYR 4.6B (~IDR 16.5T at 1 MYR ≈ 3,580 IDR). Three pressures converge: (1) the IMO 2030 emissions glide-path requires a fleet-renewal capex programme of approximately MYR 1.8B over 60 months covering dual-fuel LNG vessels, scrubber retrofits and shore-power readiness; (2) container charter rates have collapsed 36% YoY on the Asia–Europe and Intra-Asia legs, compressing the FY2026 revenue plan by approximately MYR 220M and triggering covenant tests with the syndicated USD facility; (3) the Westports terminal concession renewal — worth approximately MYR 380M of recurring revenue — enters the formal review window with the Marine Department Malaysia (Jabatan Laut), MOT and PEMUDAH next quarter, with one peer concession having recently been re-tendered. The Group MD needs a Board pack in 14 days covering the IMO 2030 fleet capex bridge, the container charter-rate tracker, the Westports concession renewal brief, the Hubla/Marine Department compliance pack, and the fleet renewal financing playbook. Real customer reference frame: this group operates similarly to **MISC Berhad**, **Bumi Armada**, **Westports Holdings**, **Northport**, **Bintulu Port**, **Samudera Indonesia**, **Pelindo**, **IPC**, **Meratus Line**, **Soechi Lines**, **Salam Pacific**, and **Indo Straits** — with regulators including **Marine Department Malaysia (Jabatan Laut)**, **Hubla** (Direktorat Jenderal Perhubungan Laut), **IMO**, **ASEAN Maritime Forum**, and **MMEA** active concurrently.',
+      companyID: 'Zava Maritime',
+      taglineID: 'Capex pembaruan armada IMO 2030 RM 1,8 miliar + keruntuhan charter rate kontainer + perpanjangan konsesi Westports RM 380 juta pendapatan terancam — Direksi dalam 14 hari.',
+      scenarioID: 'Zava Maritime adalah grup shipping ASEAN terintegrasi yang mengoperasikan armada 42 kapal (kontainer, tanker, OSV) plus konsesi terminal di koridor Port Klang dan Tanjung Priok, dengan pendapatan Grup gabungan RM 4,6 miliar (~Rp 16,5 triliun pada 1 RM ≈ 3.580 Rp). Tiga tekanan bertemu: (1) glide-path emisi IMO 2030 mensyaratkan program capex pembaruan armada sekitar RM 1,8 miliar selama 60 bulan mencakup kapal dual-fuel LNG, retrofit scrubber dan kesiapan shore-power; (2) charter rate kontainer runtuh 36% YoY pada leg Asia–Eropa dan Intra-Asia, menekan rencana pendapatan FY2026 sekitar RM 220 juta dan memicu uji covenant dengan fasilitas USD sindikasi; (3) perpanjangan konsesi terminal Westports — bernilai sekitar RM 380 juta pendapatan berulang — memasuki window review formal dengan Jabatan Laut Malaysia, Kementerian Perhubungan dan PEMUDAH kuartal depan, dengan satu konsesi peer baru-baru ini di-tender ulang. Direktur Pelaksana Grup butuh paket Direksi dalam 14 hari mencakup bridge capex armada IMO 2030, tracker charter rate kontainer, brief perpanjangan konsesi Westports, pack kepatuhan Hubla/Jabatan Laut, dan playbook pembiayaan pembaruan armada. Frame customer riil: grup ini beroperasi serupa dengan **MISC Berhad**, **Bumi Armada**, **Westports Holdings**, **Northport**, **Bintulu Port**, **Samudera Indonesia**, **Pelindo**, **IPC**, **Meratus Line**, **Soechi Lines**, **Salam Pacific**, dan **Indo Straits** — dengan regulator termasuk **Jabatan Laut Malaysia**, **Hubla** (Direktorat Jenderal Perhubungan Laut), **IMO**, **ASEAN Maritime Forum**, dan **MMEA** aktif bersamaan.',
+      files: [
+        'MAR_01_IMO_2030_Fleet_Capex.xlsx',
+        'MAR_02_Container_Charter_Rates_Tracker.xlsx',
+        'MAR_03_Westports_Concession_Renewal_Brief.docx',
+        'MAR_04_Hubla_MarineDept_Compliance_Pack.docx',
+        'MAR_05_Fleet_Renewal_Financing_Playbook.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no M365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with M365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Goal: Frame the IMO 2030 fleet capex + charter-rate collapse + Westports concession renewal situation in plain English for the Group MD. Context: Zava Maritime — 42 vessels, terminal concessions across Port Klang and Tanjung Priok, Group revenue MYR 4.6B; IMO 2030 fleet capex MYR 1.8B over 60 months; container charter rates -36% YoY; Westports concession renewal MYR 380M revenue at risk. Source: my notes from the morning Fleet and Terminals review. Expectation: 1-page note with sections — Headline; What Happened; Stakeholder Position (Marine Department Malaysia, Hubla, IMO, MOT, PEMUDAH, MMEA, syndicate banks, top 10 charterers); Top 5 Questions the Board Will Ask; 3 Decisions the Group MD Must Take in 48 Hours. Tone: calm, precise, no shipping jargon.'
+            },
+            {
+              instr: '',
+              prompt: 'Goal: Build the stakeholder communication map for the 3 converging pressures with the Westports concession review window opening next quarter and the Board in 14 days. Context: Marine Department Malaysia, Hubla, IMO, MOT, PEMUDAH, MMEA, the syndicate of 6 USD-facility banks, top 10 charterers, the 3 shipyards in the renewal pipeline, and union representatives for crew. Source: known stakeholders. Expectation: RAG table — Red same-day, Amber 24-72h, Green monitor. Columns: Audience, Channel, Owner, Message Theme, Timing, Risk if Mishandled.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Tujuan: Bingkai situasi capex IMO 2030 + keruntuhan charter rate + perpanjangan konsesi Westports dalam bahasa sederhana untuk Direktur Pelaksana Grup. Konteks: Zava Maritime — 42 kapal, konsesi terminal di koridor Port Klang dan Tanjung Priok, pendapatan Grup RM 4,6 miliar; capex armada IMO 2030 RM 1,8 miliar selama 60 bulan; charter rate kontainer -36% YoY; perpanjangan konsesi Westports RM 380 juta pendapatan terancam. Sumber: catatan saya dari review Armada dan Terminal pagi. Ekspektasi: nota 1 halaman dengan bagian — Headline; Apa yang Terjadi; Posisi Pemangku Kepentingan (Jabatan Laut Malaysia, Hubla, IMO, Kementerian Perhubungan, PEMUDAH, MMEA, bank sindikasi, 10 charterer teratas); 5 Pertanyaan Top dari Direksi; 3 Keputusan Direktur Pelaksana Grup dalam 48 Jam. Nada: tenang, presisi, hindari jargon shipping.'
+            },
+            {
+              instr: '',
+              prompt: 'Tujuan: Bangun peta komunikasi pemangku kepentingan untuk 3 tekanan yang bertemu dengan window review konsesi Westports terbuka kuartal depan dan Direksi 14 hari. Konteks: Jabatan Laut Malaysia, Hubla, IMO, Kementerian Perhubungan, PEMUDAH, MMEA, sindikasi 6 bank fasilitas USD, 10 charterer teratas, 3 galangan dalam pipeline pembaruan, dan perwakilan serikat awak kapal. Sumber: pemangku kepentingan yang dikenal. Ekspektasi: tabel RAG — Merah hari ini juga, Kuning 24-72 jam, Hijau pantau. Kolom: Audiens, Channel, Pemilik, Tema Pesan, Timing, Risiko bila Keliru.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) ?? Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5, Claude Opus, Claude Sonnet 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Paste the prompt below.',
+              prompt: 'Goal: Benchmark how ASEAN shipping and terminal peers handled simultaneous IMO emissions fleet renewal, container charter-rate collapse and concession renewal pressure between 2020 and 2025. Context: Zava Maritime must respond to Marine Department Malaysia, Hubla, IMO, MOT and the syndicate banks on parallel tracks. Source: peer disclosures (Bursa Malaysia MISC, Bumi Armada, Westports; IDX Samudera Indonesia, Soechi Lines; SGX peers), IMO MEPC papers, ASEAN Maritime Forum communiques. Real peers: MISC Berhad, Bumi Armada, Westports Holdings, Northport, Bintulu Port, Samudera Indonesia, Pelindo, IPC, Meratus Line, Soechi Lines, Salam Pacific, Indo Straits. Expectation: For each peer, identify trigger event, response timeline, programme adopted (dual-fuel order, scrubber retrofit, charter renegotiation, concession bid), and outcome 12 months later (fleet utilisation, charter rate, concession outcome, leverage). Critique each source. Cite all with publication date. Output as a comparison table.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Paste the prompt below.',
+              prompt: 'Goal: 3 most defensible response playbooks for an ASEAN shipping group hit simultaneously by IMO 2030 fleet capex + charter-rate collapse + concession renewal. Context: Zava Maritime must protect Marine Department Malaysia and Hubla confidence, syndicate-bank covenants, and the FY2026 revenue plan concurrently. Source: Researcher Model Council — convene parallel reports from GPT-5.5 Thinking and Claude Opus 4.7. Expectation: Surface dissent across the council, mark majority and minority views. Comparison table: Playbook, Council Verdict, Dissenting View, ASEAN Precedent (cite specific peer year), Implementation Risk.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Tempel prompt.',
+              prompt: 'Tujuan: Benchmark bagaimana peer shipping dan terminal ASEAN menangani pembaruan armada emisi IMO, keruntuhan charter rate kontainer dan tekanan perpanjangan konsesi secara bersamaan antara 2020 hingga 2025. Konteks: Zava Maritime harus merespons Jabatan Laut Malaysia, Hubla, IMO, Kementerian Perhubungan dan bank sindikasi di jalur paralel. Sumber: pengungkapan peer (Bursa Malaysia MISC, Bumi Armada, Westports; BEI Samudera Indonesia, Soechi Lines; peer SGX), paper IMO MEPC, komunike ASEAN Maritime Forum. Peer riil: MISC Berhad, Bumi Armada, Westports Holdings, Northport, Bintulu Port, Samudera Indonesia, Pelindo, IPC, Meratus Line, Soechi Lines, Salam Pacific, Indo Straits. Ekspektasi: Untuk tiap peer identifikasi peristiwa pemicu, timeline respons, program (pemesanan dual-fuel, retrofit scrubber, renegosiasi charter, tender konsesi), dan hasil 12 bulan kemudian (utilisasi armada, charter rate, hasil konsesi, leverage). Kritisi tiap sumber. Cantumkan kutipan lengkap dengan tanggal. Hasilkan tabel perbandingan.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. Tempel prompt.',
+              prompt: 'Tujuan: 3 playbook respons paling defensible untuk grup shipping ASEAN yang terkena capex IMO 2030 + keruntuhan charter rate + perpanjangan konsesi secara bersamaan. Konteks: Zava Maritime harus melindungi kepercayaan Jabatan Laut Malaysia dan Hubla, covenant bank sindikasi, dan rencana pendapatan FY2026 sekaligus. Sumber: Model Council — gelar laporan paralel dari GPT-5.5 Thinking dan Claude Opus 4.7. Ekspektasi: Sorot perbedaan pendapat lintas council, tandai pandangan mayoritas dan minoritas. Tabel perbandingan: Playbook, Putusan Council, Pandangan Minoritas, Preseden ASEAN (kutip peer spesifik dengan tahun), Risiko Implementasi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload /MAR_01_IMO_2030_Fleet_Capex.xlsx AND /MAR_02_Container_Charter_Rates_Tracker.xlsx. Paste the prompt below.',
+              prompt: 'Goal: Quantify the combined impact of IMO 2030 capex and charter-rate collapse on FY2026 EBITDA and covenant headroom. Context: Board needs an evidence-based view in 48 hours. Source: the 2 uploaded files — fleet-by-fleet capex schedule + charter-rate tracker by leg and vessel class. Expectation: (1) RAG bar chart of the 10 vessels ranked by IMO 2030 readiness gap; (2) waterfall of Group EBITDA bridge — Baseline → Charter rate decline → Capex depreciation step-up → Fuel switch upside → Programme upside → Recovered EBITDA; (3) sensitivity table on charter-rate recovery (60% / 75% / 90% of prior year) showing covenant headroom per scenario. Output a Board-ready RAG dashboard.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah /MAR_01_IMO_2030_Fleet_Capex.xlsx DAN /MAR_02_Container_Charter_Rates_Tracker.xlsx. Tempel prompt.',
+              prompt: 'Tujuan: Kuantifikasi dampak gabungan capex IMO 2030 dan keruntuhan charter rate terhadap EBITDA FY2026 dan headroom covenant. Konteks: Direksi butuh pandangan berbasis bukti dalam 48 jam. Sumber: 2 file yang diunggah — jadwal capex per kapal + tracker charter rate per leg dan kelas kapal. Ekspektasi: (1) Bar chart RAG 10 kapal diurutkan berdasar gap kesiapan IMO 2030; (2) waterfall bridge EBITDA Grup — Baseline → penurunan charter rate → step-up depresiasi capex → upside fuel switch → upside program → EBITDA pulih; (3) tabel sensitivitas pemulihan charter rate (60% / 75% / 90% tahun sebelumnya) menampilkan headroom covenant per skenario. Hasilkan dashboard RAG siap-Direksi.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/MAR_01_IMO_2030_Fleet_Capex.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: Build a single Board-ready dashboard sheet combining IMO 2030 capex schedule, charter-rate trends and concession revenue at risk. Context: Board meets in 14 days; Westports renewal window opens next quarter. Source: combine all relevant tabs — Capex Schedule, Charter Rates, Concession Revenue, Covenant Headroom. Expectation: New sheet "Board Dashboard" with KPI tiles for IMO 2030 readiness %, Charter Rate YoY %, Concession Revenue at Risk MYR, Covenant Headroom %; horizontal bar of vessels ranked worst to best on IMO readiness; line chart of charter-rate trajectory across 3 scenarios; RAG conditional formatting; sparkline column. Do not modify source tabs.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/MAR_01_IMO_2030_Fleet_Capex.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun satu sheet dashboard siap-Direksi yang menggabungkan jadwal capex IMO 2030, tren charter rate dan pendapatan konsesi terancam. Konteks: Direksi bertemu 14 hari; window perpanjangan Westports terbuka kuartal depan. Sumber: gabungkan tab Jadwal Capex, Charter Rate, Pendapatan Konsesi, Headroom Covenant. Ekspektasi: Sheet baru "Dashboard Direksi" dengan KPI tile untuk Kesiapan IMO 2030 %, Charter Rate YoY %, Pendapatan Konsesi Terancam RM, Headroom Covenant %; bar horizontal kapal diurutkan terburuk ke terbaik berdasar kesiapan IMO; line chart trajectory charter rate lintas 3 skenario; format kondisional RAG; kolom sparkline. Jangan modifikasi tab sumber.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference /MAR_03_Westports_Concession_Renewal_Brief.docx and /MAR_05_Fleet_Renewal_Financing_Playbook.docx using `/`. Paste the prompt below.',
+              prompt: 'Goal: Draft the 4-page Board paper "IMO 2030 Fleet Renewal, Charter Defence & Westports Concession — Board Pack". Context: Board in 14 days. Source: the two referenced docs + the capex and charter numbers I will paste. Expectation: Sections — (1) Executive summary in 5 bullets; (2) IMO 2030 fleet renewal capex programme; (3) Charter-rate defence and chartering strategy; (4) Westports concession renewal track; (5) Syndicate-bank covenant management; (6) Decisions requested. Tone: precise, Board-ready, no speculation. Cite source files at the end of every section.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan /MAR_03_Westports_Concession_Renewal_Brief.docx dan /MAR_05_Fleet_Renewal_Financing_Playbook.docx menggunakan `/`. Tempel prompt.',
+              prompt: 'Tujuan: Susun paper Direksi 4 halaman "Pembaruan Armada IMO 2030, Pertahanan Charter & Konsesi Westports — Pack Direksi". Konteks: Direksi dalam 14 hari. Sumber: dua dokumen yang direferensikan + angka capex dan charter yang akan saya tempelkan. Ekspektasi: Bagian — (1) Ringkasan eksekutif 5 bullet; (2) Program capex pembaruan armada IMO 2030; (3) Pertahanan charter rate dan strategi chartering; (4) Jalur perpanjangan konsesi Westports; (5) Manajemen covenant bank sindikasi; (6) Keputusan yang diminta. Nada: presisi, siap-Direksi, tanpa spekulasi. Kutip file sumber di akhir tiap bagian.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Two demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'Goal: 9-slide Board deck on IMO 2030 fleet capex + charter-rate collapse + Westports concession renewal. Context: Board in 14 days. Source: my Word brief and dashboard. Expectation: (1) Cover; (2) Situation — three converging pressures; (3) Stakeholder Map RAG (Marine Dept Malaysia, Hubla, IMO, MOT, PEMUDAH, MMEA, syndicate banks, charterers); (4) IMO 2030 Fleet Renewal Capex; (5) Charter Rate Tracker and Defence; (6) Westports Concession Renewal Brief; (7) EBITDA Bridge waterfall; (8) Financing and Covenant Strategy; (9) Decisions Requested. Brand colours #1E40AF + #1E3A8A, 18pt min body text, 1 chart per slide.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 9 slide Direksi tentang capex armada IMO 2030 + keruntuhan charter rate + perpanjangan konsesi Westports. Konteks: Direksi dalam 14 hari. Sumber: brief Word dan dashboard saya. Ekspektasi: (1) Cover; (2) Situasi — tiga tekanan yang bertemu; (3) Peta Pemangku Kepentingan RAG (Jabatan Laut Malaysia, Hubla, IMO, Kementerian Perhubungan, PEMUDAH, MMEA, bank sindikasi, charterer); (4) Capex Pembaruan Armada IMO 2030; (5) Tracker Charter Rate dan Pertahanan; (6) Brief Perpanjangan Konsesi Westports; (7) Waterfall Bridge EBITDA; (8) Strategi Pembiayaan dan Covenant; (9) Keputusan yang Diminta. Warna brand #1E40AF + #1E3A8A, font tubuh min 18pt, 1 chart per slide.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Two demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit. Requires M365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread "IMO 2030 + charter defence + Westports renewal — Group MD follow-up". Click the **Copilot icon**. Paste the prompt below.',
+              prompt: 'Goal: Draft a single email to the Zava Maritime ExCo, the Fleet, Terminals and Treasury leads, and the syndicate-bank relationship lead. Context: IMO 2030 capex programme + charter-rate collapse + Westports concession renewal active concurrently. Source: the email thread above. Expectation: Subject line, 4 short paragraphs covering the situation, the 3 actions each functional lead must complete in 72 hours (capex sequencing proposal; charter renegotiation list; concession renewal evidence pack), the syndicate engagement track, and the Board date. Tone: firm, supportive, accountable.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "IMO 2030 + pertahanan charter + perpanjangan Westports — tindak lanjut Direktur Pelaksana Grup". Klik **ikon Copilot**. Tempel prompt.',
+              prompt: 'Tujuan: Susun satu email ke ExCo Zava Maritime, lead Armada, Terminal dan Treasury, dan lead relationship bank sindikasi. Konteks: program capex IMO 2030 + keruntuhan charter rate + perpanjangan konsesi Westports aktif bersamaan. Sumber: thread email di atas. Ekspektasi: Baris subjek, 4 paragraf pendek mencakup situasi, 3 aksi per lead fungsional dalam 72 jam (usulan urutan capex; daftar renegosiasi charter; pack bukti perpanjangan konsesi), jalur engagement sindikasi, dan tanggal Direksi. Nada: tegas, suportif, akuntabel.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"Fleet Renewal & Concession War Room"**. On the Recap page, walk through **AI Notes**, **Custom summary** (Speaker template), and **Audio recap**. **(2) In Word for the Web**, open a new blank document and type the minutes template (Date · Decisions · Actions · Risks · Open Questions). **(3) Click the Copilot icon** in Word and paste the prompt below — Copilot in Word references the recap with `/`.',
+              prompt: 'Create meeting minutes for the Teams meeting /Fleet Renewal & Concession War Room. Use the template on this page. Sections: (1) Date and Attendees; (2) Decisions Taken; (3) Action Items with Owner and Due Date; (4) Risks Raised; (5) Open Questions. Quote the Fleet and Treasury leads verbatim where wording matters. Flag any decision linked to the Westports concession or syndicate covenant as Critical Path. Save as Minutes_Fleet_Concession_War_Room.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat lampau **"War Room Pembaruan Armada & Konsesi"**. Pada halaman Recap, tampilkan **AI Notes**, **Custom summary** (template Speaker), dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen baru kosong dan ketik template notulen (Tanggal · Keputusan · Action · Risiko · Pertanyaan Terbuka). **(3) Klik ikon Copilot** di Word dan tempel prompt — Copilot in Word mereferensikan recap dengan `/`.',
+              prompt: 'Buat notulen rapat untuk rapat Teams /War Room Pembaruan Armada & Konsesi. Gunakan template di halaman ini. Bagian: (1) Tanggal dan Peserta; (2) Keputusan; (3) Action dengan Pemilik dan Tenggat; (4) Risiko; (5) Pertanyaan Terbuka. Kutip lead Armada dan Treasury secara harfiah jika redaksinya penting. Tandai keputusan terkait konsesi Westports atau covenant sindikasi sebagai Critical Path. Simpan sebagai Notulen_War_Room_Armada_Konsesi.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'M365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading.',
+          prompts: [
+            {
+              instr: 'All sources are loaded in the notebook. The Instructions field is set. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all sources to produce a 10-bullet Board narrative. Cover: IMO 2030 fleet renewal capex; charter-rate collapse and chartering defence; Westports concession renewal; Marine Department Malaysia and Hubla compliance; syndicate-bank covenant management; fleet utilisation; bunkering and fuel-switch; risk register; financial impact bridge; decisions requested. Cite the source file (and tab/section) at the end of every bullet.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat di notebook. Field Instructions sudah diset. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari semua sumber untuk menghasilkan narasi Direksi 10-bullet. Cakup: capex pembaruan armada IMO 2030; keruntuhan charter rate dan pertahanan chartering; perpanjangan konsesi Westports; kepatuhan Jabatan Laut Malaysia dan Hubla; manajemen covenant bank sindikasi; utilisasi armada; bunkering dan fuel-switch; register risiko; bridge dampak finansial; keputusan yang diminta. Kutip file sumber (dan tab/bagian) di akhir tiap bullet.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/MAR_01_IMO_2030_Fleet_Capex.xlsx',
+              '/MAR_02_Container_Charter_Rates_Tracker.xlsx',
+              '/MAR_05_Fleet_Renewal_Financing_Playbook.docx'
+            ],
+            instructions: 'You are the Group MD of Zava Maritime preparing a Board pack on converging IMO 2030 fleet renewal capex, container charter-rate collapse and the Westports concession renewal review window. Always cite the source file and tab/section. Tone: precise, Board-ready, no speculation about Marine Department Malaysia, Hubla, MOT or syndicate-bank intentions beyond what they have communicated in writing. Use MYR for Group totals (1 MYR ≈ 3,580 IDR). Reference real ASEAN peers (MISC, Bumi Armada, Westports, Northport, Bintulu Port, Samudera Indonesia, Pelindo, IPC, Meratus, Soechi, Salam Pacific, Indo Straits) where benchmark precedent strengthens the argument.',
+            instructionsID: 'Anda adalah Direktur Pelaksana Grup Zava Maritime yang menyiapkan paket Direksi tentang konvergensi capex pembaruan armada IMO 2030, keruntuhan charter rate kontainer dan window review perpanjangan konsesi Westports. Selalu kutip file sumber dan tab/bagian. Nada: presisi, siap-Direksi, tanpa spekulasi tentang niat Jabatan Laut Malaysia, Hubla, Kementerian Perhubungan atau bank sindikasi di luar yang sudah disampaikan tertulis. Gunakan RM untuk total Grup (1 RM ≈ 3.580 Rp). Referensikan peer ASEAN riil (MISC, Bumi Armada, Westports, Northport, Bintulu Port, Samudera Indonesia, Pelindo, IPC, Meratus, Soechi, Salam Pacific, Indo Straits) bila preseden benchmark memperkuat argumen.'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'M365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in M365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires M365 Copilot + Frontier Program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > left nav > **Agents** > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks. Frontier required.',
+              prompt: 'Cowork — Concession Renewal 14-Day Sprint. Run these in parallel: (1) 📝 Draft Word — IMO 2030 Fleet Renewal Brief 4 pages, sources /MAR_01_IMO_2030_Fleet_Capex.xlsx and /MAR_05_Fleet_Renewal_Financing_Playbook.docx. (2) 📝 Draft Word — Westports Concession Renewal Talking Points 2 pages, sources /MAR_03_Westports_Concession_Renewal_Brief.docx and /MAR_04_Hubla_MarineDept_Compliance_Pack.docx. (3) ✉️ Send email to Zava Maritime ExCo, Fleet/Terminals/Treasury leads with 3 actions in 72 hours. (4) 📅 Schedule 90-min Board Pre-Read tomorrow 8am MYT titled "IMO 2030, Charter Defence & Westports Renewal Alignment". (5) 💬 Post Teams message to #zava-maritime-exco with one-line headline + dashboard link.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > nav kiri > **Agents** > **Cowork**. Tempel prompt tunggal — Cowork mendelegasikan 5 sub-tugas paralel. Frontier diperlukan.',
+              prompt: 'Cowork — Sprint 14 Hari Perpanjangan Konsesi. Jalankan paralel: (1) 📝 Susun Word — Brief Pembaruan Armada IMO 2030 4 halaman, sumber /MAR_01_IMO_2030_Fleet_Capex.xlsx dan /MAR_05_Fleet_Renewal_Financing_Playbook.docx. (2) 📝 Susun Word — Talking Points Perpanjangan Konsesi Westports 2 halaman, sumber /MAR_03_Westports_Concession_Renewal_Brief.docx dan /MAR_04_Hubla_MarineDept_Compliance_Pack.docx. (3) ✉️ Kirim email ke ExCo Zava Maritime, lead Armada/Terminal/Treasury dengan 3 aksi dalam 72 jam. (4) 📅 Jadwalkan Pre-Read Direksi 90 menit besok 08:00 WIB berjudul "Penyelarasan IMO 2030, Pertahanan Charter & Perpanjangan Westports". (5) 💬 Posting pesan Teams di #zava-maritime-exco dengan headline satu baris + tautan dashboard.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in M365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the document you want, and Copilot returns a fully drafted .docx you can open in Word. Great for: board minutes, briefing memos, policy drafts, status reports. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Word Agent**. Paste the prompt below — the agent returns a fully drafted .docx.',
+              prompt: 'Goal: Generate a 4-page Group MD Crisis Brief in Word. Context: IMO 2030 fleet capex MYR 1.8B over 60 months, container charter rates -36% YoY compressing FY2026 revenue MYR 220M, Westports concession renewal MYR 380M revenue at risk. Source: /MAR_01_IMO_2030_Fleet_Capex.xlsx AND /MAR_02_Container_Charter_Rates_Tracker.xlsx. Expectation: Sections — Executive Summary 5 bullets; Current Status of all 3 workstreams; Programme; Financial Impact; Stakeholder Map (Marine Dept Malaysia / Hubla / IMO / MOT / PEMUDAH / MMEA / syndicate banks / charterers); Decisions Requested. Tone: precise, Board-ready. Save as Zava_Maritime_Crisis_Brief.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Word Agent**. Tempel prompt — agent mengembalikan .docx yang sudah didraf penuh.',
+              prompt: 'Tujuan: Hasilkan Brief Krisis Direktur Pelaksana Grup 4 halaman dalam Word. Konteks: capex armada IMO 2030 RM 1,8 miliar selama 60 bulan, charter rate kontainer -36% YoY menekan pendapatan FY2026 RM 220 juta, perpanjangan konsesi Westports RM 380 juta pendapatan terancam. Sumber: /MAR_01_IMO_2030_Fleet_Capex.xlsx DAN /MAR_02_Container_Charter_Rates_Tracker.xlsx. Ekspektasi: Bagian — Ringkasan Eksekutif 5 bullet; Status Saat Ini ketiga workstream; Program; Dampak Finansial; Peta Pemangku Kepentingan (Jabatan Laut Malaysia / Hubla / IMO / Kementerian Perhubungan / PEMUDAH / MMEA / bank sindikasi / charterer); Keputusan yang Diminta. Nada: presisi, siap-Direksi. Simpan sebagai Brief_Krisis_Zava_Maritime.docx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in M365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the deck you want (theme, audience, slide list), and Copilot returns a complete .pptx you can open in PowerPoint. Great for: Board decks, IR decks, town hall decks. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **PowerPoint Agent**. Paste the prompt below.',
+              prompt: 'Goal: 9-slide Board deck on IMO 2030 fleet capex + charter-rate collapse + Westports concession renewal. Context: Board in 14 days, Westports renewal window opens next quarter. Source: /Zava_Maritime_Crisis_Brief.docx and /MAR_01_IMO_2030_Fleet_Capex.xlsx. Expectation: Cover; Situation; Stakeholder Map RAG; IMO 2030 Fleet Renewal; Charter Rate Defence; Westports Concession Renewal; EBITDA Bridge; Financing and Covenant Strategy; Decisions. Brand #1E40AF + #1E3A8A, 18pt min body, 1 chart/slide. Save as Zava_Maritime_Board_Deck.pptx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **PowerPoint Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Deck 9 slide Direksi tentang capex armada IMO 2030 + keruntuhan charter rate + perpanjangan konsesi Westports. Konteks: Direksi dalam 14 hari, window perpanjangan Westports terbuka kuartal depan. Sumber: /Brief_Krisis_Zava_Maritime.docx dan /MAR_01_IMO_2030_Fleet_Capex.xlsx. Ekspektasi: Cover; Situasi; Peta Pemangku Kepentingan RAG; Pembaruan Armada IMO 2030; Pertahanan Charter Rate; Perpanjangan Konsesi Westports; Bridge EBITDA; Strategi Pembiayaan dan Covenant; Keputusan. Brand #1E40AF + #1E3A8A, font tubuh min 18pt, 1 chart/slide. Simpan sebagai Deck_Direksi_Zava_Maritime.pptx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in M365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files context describing the workbook you want (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx you can open in Excel. Great for: KPI dashboards, division comparisons, scenario models. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` → Agents tab → **Excel Agent**. Paste the prompt below.',
+              prompt: 'Goal: Build an IMO 2030 capex + charter-rate + concession revenue tracker workbook. Context: operating tracker for the Group COO. Source: schema only. Expectation: Sheet 1 IMO 2030 Capex Schedule (by vessel and milestone); Sheet 2 Charter Rate Tracker (by leg and vessel class); Sheet 3 Concession Revenue at Risk (by terminal with regulator notes); Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as Zava_Maritime_Operations_Tracker.xlsx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` → tab Agents → **Excel Agent**. Tempel prompt.',
+              prompt: 'Tujuan: Bangun workbook tracker capex IMO 2030 + charter rate + pendapatan konsesi. Konteks: tracker operasi untuk Direktur Operasional Grup. Sumber: hanya skema. Ekspektasi: Sheet 1 Jadwal Capex IMO 2030 (per kapal dan milestone); Sheet 2 Tracker Charter Rate (per leg dan kelas kapal); Sheet 3 Pendapatan Konsesi Terancam (per terminal dengan catatan regulator); Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_Operasi_Zava_Maritime.xlsx.'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (M365 Copilot Chat)',
+          license: 'Either Free Copilot Chat (no extra license) OR M365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an M365 Copilot license (MOD Admin account).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
+              prompt: '**Option A — Zava Maritime IMO 2030 Capex Watch.** Build an agent for the Group COO and Fleet lead to track IMO 2030 capex milestones weekly. Ground every answer on /MAR_01_IMO_2030_Fleet_Capex.xlsx and the financing playbook. Always cite file and tab. Classify each vessel as On-Track / Watch / Slipping. Tone: precise, fleet-engineering grade. Starter prompts: (1) Which vessels are most behind on IMO 2030 readiness; (2) Draft a capex sequencing proposal; (3) Build a weekly capex dashboard; (4) What is the FY2026 capex profile; (5) Summarise for the COO.'
+            },
+            {
+              instr: '**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
+              prompt: '**Option B — Zava Maritime Charter Defence Agent.** Build an agent for the Chartering desk to manage container charter-rate exposure. Ground every answer on /MAR_02_Container_Charter_Rates_Tracker.xlsx. Always cite file and tab. Classify each leg as Above Plan / Watch / Underwater. Tone: factual, chartering-desk grade. Starter prompts: (1) Which legs are most underwater on charter rates; (2) Draft a renegotiation list; (3) Build a daily charter dashboard; (4) What is the chartering plan for FY2026; (5) Summarise for the COO.'
+            },
+            {
+              instr: '**Option C — alternative agent.** Same flow.',
+              prompt: '**Option C — Zava Maritime Concession Renewal Agent.** Build an agent for the Group Legal and Terminals teams to manage Westports concession renewal with Marine Department Malaysia, MOT and PEMUDAH. Ground every answer on /MAR_03_Westports_Concession_Renewal_Brief.docx and /MAR_04_Hubla_MarineDept_Compliance_Pack.docx. Always cite section. Classify each renewal milestone as Closed / In Progress / Awaiting Internal Sign-Off. Tone: factual, regulator-facing. Starter prompts: (1) What Marine Department Malaysia and MOT questions are open; (2) Draft a holding line for PEMUDAH; (3) What are the next 3 milestones; (4) Build a weekly concession dashboard; (5) Summarise for the Board.'
+            },
+            {
+              instr: '**Test.** After the agent is created, click into it and use the right test pane to validate grounding, citations, scope.',
+              prompt: 'Give me the 60-second version of the IMO 2030 capex + charter-rate collapse + Westports concession renewal situation, the worst 3 issues, the response programme, and the decisions I must take to the Board in 14 days. Cite the file and tab/section for every paragraph.'
+            },
+            {
+              instr: '**Share.** Click the agent → **Share** → add recipients with **Use** access.',
+              prompt: 'Share with the Zava Maritime ExCo (Group MD, Group CFO, COO, Fleet lead, Terminals lead, Treasury lead, Legal head, Chartering desk head) — Use access. Send notification: "This agent is now in your M365 Copilot chat — ground every IMO 2030 / charter / Westports question through it for the next 90 days."'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
+              prompt: '**Opsi A — Zava Maritime IMO 2030 Capex Watch.** Bangun agent untuk Direktur Operasional Grup dan lead Armada untuk melacak milestone capex IMO 2030 mingguan. Dasarkan pada /MAR_01_IMO_2030_Fleet_Capex.xlsx dan playbook pembiayaan. Selalu kutip file dan tab. Klasifikasikan tiap kapal sebagai On-Track / Watch / Slipping. Nada: presisi, fleet-engineering grade. Starter prompt: (1) Kapal mana paling tertinggal kesiapan IMO 2030; (2) Susun usulan urutan capex; (3) Bangun dashboard capex mingguan; (4) Profil capex FY2026; (5) Rangkum untuk COO.'
+            },
+            {
+              instr: '**Opsi B — agent alternatif.** Alur Create-an-agent sama dengan spesialisasi berbeda.',
+              prompt: '**Opsi B — Zava Maritime Charter Defence Agent.** Bangun agent untuk desk Chartering untuk mengelola eksposur charter rate kontainer. Dasarkan pada /MAR_02_Container_Charter_Rates_Tracker.xlsx. Selalu kutip file dan tab. Klasifikasikan tiap leg sebagai Above Plan / Watch / Underwater. Nada: faktual, chartering-desk grade. Starter prompt: (1) Leg mana paling underwater pada charter rate; (2) Susun daftar renegosiasi; (3) Bangun dashboard charter harian; (4) Rencana chartering FY2026; (5) Rangkum untuk COO.'
+            },
+            {
+              instr: '**Opsi C — agent alternatif.** Alur sama.',
+              prompt: '**Opsi C — Zava Maritime Concession Renewal Agent.** Bangun agent untuk tim Legal Grup dan Terminal untuk mengelola perpanjangan konsesi Westports dengan Jabatan Laut Malaysia, Kementerian Perhubungan dan PEMUDAH. Dasarkan pada /MAR_03_Westports_Concession_Renewal_Brief.docx dan /MAR_04_Hubla_MarineDept_Compliance_Pack.docx. Selalu kutip bagian. Klasifikasikan tiap milestone perpanjangan sebagai Closed / In Progress / Awaiting Internal Sign-Off. Nada: faktual, regulator-facing. Starter prompt: (1) Pertanyaan Jabatan Laut Malaysia dan Kementerian Perhubungan yang masih terbuka; (2) Susun holding line untuk PEMUDAH; (3) 3 milestone berikutnya; (4) Bangun dashboard konsesi mingguan; (5) Rangkum untuk Direksi.'
+            },
+            {
+              instr: '**Uji.** Validasi grounding, kutipan, cakupan.',
+              prompt: 'Berikan versi 60 detik dari capex IMO 2030 + keruntuhan charter rate + perpanjangan konsesi Westports, 3 isu terburuk, program respons, dan keputusan yang harus saya bawa ke Direksi dalam 14 hari. Kutip file dan tab/bagian untuk tiap paragraf.'
+            },
+            {
+              instr: '**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
+              prompt: 'Bagikan ke ExCo Zava Maritime (Direktur Pelaksana Grup, Direktur Keuangan Grup, COO, lead Armada, lead Terminal, lead Treasury, kepala Legal, kepala desk Chartering) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di M365 Copilot chat Anda — dasarkan tiap pertanyaan IMO 2030 / charter / Westports melalui agent ini selama 90 hari ke depan."'
+            }
+          ],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-strategy',
+        'dept-operations',
+        'dept-finance',
+        'dept-legal',
+        'dept-procurement',
+        'dept-it-cybersec'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the IMO 2030 + charter + concession situation and pull peer playbooks before the renewal window opens.',
+          summaryID: 'Bingkai situasi IMO 2030 + charter + konsesi dan tarik playbook peer sebelum window perpanjangan terbuka.',
+          tasks: [
+            {
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify the IMO capex + charter collapse + concession revenue combined impact; build a Board dashboard.',
+          summaryID: 'Kuantifikasi dampak gabungan capex IMO + keruntuhan charter + pendapatan konsesi; bangun dashboard Direksi.',
+          tasks: [
+            {
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief functional leads, capture the Fleet & Concession War Room recap, and assemble the Board deck.',
+          summaryID: 'Brief lead fungsional, capture recap War Room Armada & Konsesi, dan rakit deck Direksi.',
+          tasks: [
+            {
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the IMO 2030 + charter + concession playbook into a reusable agent for the Zava Maritime operating team.',
+          summaryID: 'Bungkus playbook IMO 2030 + charter + konsesi ke dalam agent reusable untuk tim operasi Zava Maritime.',
+          tasks: [
+            {
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
+              toolId: '🏗 Agent Builder (M365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group MD - Maritime',
+          roleID: 'Direktur Utama - Maritim',
+          acct: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no M365 Copilot license needed',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy & Public Policy Director',
+          roleID: 'Direktur Strategi & Public Policy Grup',
+          acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#1E3A8A'
+        },
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO & Treasurer',
+          roleID: 'Direktur Keuangan & Treasurer Grup',
+          acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          lic: 'M365 Copilot',
+          color: '#0EA5E9'
+        },
+        {
+          name: 'Daichi Kimura',
+          role: 'Fleet & Terminals Director',
+          roleID: 'Direktur Armada & Terminal',
           acct: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
           lic: 'M365 Copilot',
           color: '#DC2626'
