@@ -324,7 +324,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .sb-moment-tool{font-size:10px;font-weight:700;color:#FFFFFF;text-transform:uppercase;letter-spacing:0.4px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sb-moment-body{padding:8px 9px 10px;flex:1;display:flex;flex-direction:column}
 .sb-moment-verb{margin:0 0 4px;font-size:11.5px;font-weight:700;color:var(--text);line-height:1.3}
-.sb-moment-mode{margin:auto 0 0;font-size:9px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.6px;padding-top:4px}
+.sb-moment-desc{margin:0;font-size:10px;color:#475569;line-height:1.45}
 @media(max-width:760px){.sb-hero{grid-template-columns:1fr}}
 /* Personas card (right sidebar) */
 .personas-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px}
@@ -2595,7 +2595,6 @@ function showItem(item,tab){
       const cleanTitle=_xformVal(exTitle, exSrc);
       const cleanSummary=_translateLocale(_scrubReal(_scrubFiles(exSummary)), summarySrc);
       const exNum=ex.ex||(i+1);
-      const minsLabel=ex.minutes?(ex.minutes+' min'):'';
       const exBadge=_bL('Exercise '+exNum,'Latihan '+exNum,'Latihan '+exNum);
       // Render moment cards for ex.tasks
       let momentsHTML='';
@@ -2610,10 +2609,16 @@ function showItem(item,tab){
           const cleanVerb=_xformVal(verb, verbSrc);
           const toolLabel=_xformVal(t.label||t.tool||'', 'EN');
           const num=t.n||'';
-          const modeStr=t.mode||'';
-          const modeLabel=modeStr==='show'?_bL('Show & Tell','Tunjuk & Cerita','Tunjuk & Cerita')
-                           :modeStr==='hands'?_bL('Hands-on','Praktik','Amali')
-                           :modeStr;
+          // Synthesise a short, locale-aware description from label + verb
+          let descText='';
+          if(toolLabel && cleanVerb){
+            const verbLow = cleanVerb.charAt(0).toLowerCase() + cleanVerb.slice(1);
+            descText = _bL(
+              'Open '+toolLabel+' and produce the '+verbLow+', grounded in the scenario files.',
+              'Buka '+toolLabel+' dan hasilkan '+verbLow+' berdasarkan file skenario.',
+              'Buka '+toolLabel+' dan hasilkan '+verbLow+' berasaskan fail senario.'
+            );
+          }
           return '<div class="sb-moment">'+
             '<div class="sb-moment-strip">'+
               (num?'<span class="sb-moment-num">'+escapeHTML(num)+'</span>':'')+
@@ -2621,7 +2626,7 @@ function showItem(item,tab){
             '</div>'+
             '<div class="sb-moment-body">'+
               '<p class="sb-moment-verb">'+escapeHTML(cleanVerb)+'</p>'+
-              (modeLabel?'<p class="sb-moment-mode">'+escapeHTML(modeLabel)+'</p>':'')+
+              (descText?'<p class="sb-moment-desc">'+escapeHTML(descText)+'</p>':'')+
             '</div>'+
           '</div>';
         }).join('')+'</div>';
@@ -2630,7 +2635,6 @@ function showItem(item,tab){
         '<div class="sb-phase-head">'+
           '<span class="sb-phase-ex">'+escapeHTML(exBadge)+'</span>'+
           '<span class="sb-phase-title">'+escapeHTML(cleanTitle)+'</span>'+
-          (minsLabel?'<span class="sb-phase-mins">'+escapeHTML(minsLabel)+'</span>':'')+
         '</div>'+
         '<div class="sb-phase-body">'+
           (cleanSummary?'<p class="sb-phase-summary">'+escapeHTML(cleanSummary)+'</p>':'')+
