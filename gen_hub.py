@@ -3549,7 +3549,9 @@ function showItem(item,tab,preserveScroll){
           groups[exKey] = {
             title: (t.exercise||'').replace(/^Exercise\s+\d+\s*[—-]\s*/i,''),
             titleID:(t.exerciseID||'').replace(/^Latihan\s+\d+\s*[—-]\s*/i,''),
-            tasks: []
+            tasks: [],
+            _taskTexts: [],
+            _taskTextsID: []
           };
           order.push(exKey);
         }
@@ -3557,8 +3559,23 @@ function showItem(item,tab,preserveScroll){
           tool: t.tool, label: _toolLabelFromKey(t.tool) || t.tool,
           verb: t.task, verbID: t.taskID, mode: t.mode
         });
+        if(t.task) groups[exKey]._taskTexts.push(String(t.task));
+        if(t.taskID) groups[exKey]._taskTextsID.push(String(t.taskID));
       });
-      _sb = order.map(k => groups[k]);
+      _sb = order.map(function(k){
+        const g = groups[k];
+        // Synthesise phase summary by joining the task strings — gives a 1-2
+        // sentence overview of what this exercise covers when no explicit
+        // summary was authored on the source records.
+        if(g._taskTexts.length){
+          g.summary = g._taskTexts.join(' · ') + '.';
+        }
+        if(g._taskTextsID.length){
+          g.summaryID = g._taskTextsID.join(' · ') + '.';
+        }
+        delete g._taskTexts; delete g._taskTextsID;
+        return g;
+      });
       // Number tasks 01..NN
       let cnt = 1;
       _sb.forEach(function(p){ p.tasks.forEach(function(t){ t.n = String(cnt++).padStart(2,'0'); }); });
