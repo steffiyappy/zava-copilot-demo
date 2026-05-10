@@ -4112,7 +4112,7 @@ const OTHER_PAGES = [
     keywords: 'ABMB Alliance Bank Malaysia prompt-a-thon hackathon banking SME HR finance risk digital comms strategy team codes facilitator'
   },
   {
-    section: 'Customer Demos',
+    section: 'Customer Workshops',
     icon: '🏗️',
     color: '#A16207',
     accent: '#854D0E',
