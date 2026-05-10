@@ -85,6 +85,31 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .topbar-right{display:flex;align-items:center;gap:8px}
 .btn-sm{padding:7px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit}
 .btn-sm:hover{background:rgba(255,255,255,0.15);color:#FFFFFF}
+/* CHANGELOG — discreet hidden-by-default tab next to Lock */
+.btn-changelog{background:transparent;border:none;color:rgba(255,255,255,0.55);font-size:13px;padding:4px 6px;cursor:pointer;opacity:0.42;transition:opacity 0.18s,color 0.18s;font-family:inherit;line-height:1}
+.btn-changelog:hover,.btn-changelog:focus{opacity:1;color:#FFFFFF;outline:none}
+.changelog-modal{position:fixed;inset:0;background:rgba(15,23,42,0.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:9999;display:none;align-items:center;justify-content:center;animation:fadeIn 0.18s ease-out}
+.changelog-modal.open{display:flex}
+.changelog-panel{background:var(--surface);border:1px solid var(--border-strong);border-radius:14px;width:min(720px,92vw);max-height:78vh;display:flex;flex-direction:column;box-shadow:var(--shadow-lg);overflow:hidden}
+.changelog-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(0,120,212,0.06),rgba(0,168,168,0.06))}
+.changelog-title{font-size:14px;font-weight:800;color:var(--text-strong);letter-spacing:0.2px;display:flex;align-items:center;gap:8px}
+.changelog-close{background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:0 6px;line-height:1;border-radius:6px;transition:background 0.15s,color 0.15s}
+.changelog-close:hover{background:var(--surface-2);color:var(--text-strong)}
+.changelog-body{padding:6px 0;overflow-y:auto;flex:1}
+.changelog-row{display:grid;grid-template-columns:84px 70px 1fr;gap:10px;padding:9px 18px;border-bottom:1px solid var(--border);font-size:12px;line-height:1.45;align-items:start}
+.changelog-row:last-child{border-bottom:none}
+.changelog-row:hover{background:var(--surface-2)}
+.changelog-date{color:var(--muted);font-size:11px;font-weight:600;font-family:'Courier New',monospace;white-space:nowrap}
+.changelog-hash{color:#0078D4;font-size:11px;font-weight:700;font-family:'Courier New',monospace;cursor:pointer;text-decoration:none}
+.changelog-hash:hover{text-decoration:underline}
+.changelog-desc{color:var(--text);font-size:12px;line-height:1.4}
+.changelog-empty{text-align:center;padding:24px;color:var(--muted);font-size:12px}
+[data-theme="dark"] .changelog-modal{background:rgba(2,8,20,0.62)}
+[data-theme="dark"] .changelog-hash{color:#60A5FA}
+@media (prefers-color-scheme: dark){
+  [data-theme="system"] .changelog-modal{background:rgba(2,8,20,0.62)}
+  [data-theme="system"] .changelog-hash{color:#60A5FA}
+}
 /* LAYOUT */
 .layout{display:flex;min-height:calc(100vh - 56px)}
 /* SIDEBAR */
@@ -783,9 +808,21 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
     <button class="btn-theme" id="btn-theme" onclick="cycleTheme()" title="Cycle theme: Light / Dark / System"><span id="theme-icon">&#9788;</span><span class="theme-label" id="theme-label">Light</span></button>
     <button class="btn-sm" onclick="goHome()">&#x1F3E0; Home</button>
     <button class="btn-sm" onclick="logout()">&#x1F512; Lock</button>
+    <button class="btn-changelog" id="btn-changelog" onclick="toggleChangelog()" title="What's changed (Ctrl+Shift+L)" aria-label="Show changelog">&#128220;</button>
   </div>
 </nav>
 <div class="scrim" id="sidebar-scrim" onclick="closeSidebar()"></div>
+
+<!-- Changelog modal — discreet, opens via icon next to Lock or Ctrl+Shift+L -->
+<div class="changelog-modal" id="changelog-modal" onclick="if(event.target===this)toggleChangelog()" role="dialog" aria-modal="true" aria-labelledby="changelog-title-text">
+  <div class="changelog-panel">
+    <div class="changelog-header">
+      <span class="changelog-title" id="changelog-title-text">&#128220; Changelog &mdash; recent updates</span>
+      <button class="changelog-close" onclick="toggleChangelog()" aria-label="Close changelog">&times;</button>
+    </div>
+    <div class="changelog-body" id="changelog-body"></div>
+  </div>
+</div>
 
 <!-- LAYOUT -->
 <div class="layout">
@@ -4390,6 +4427,47 @@ function logout(){
   window.location.href='index.html';
 }
 
+// ── Changelog (discreet hidden tab) ──
+const CHANGELOG_DATA = __CHANGELOG_JSON__;
+function _renderChangelog(){
+  const body=document.getElementById('changelog-body');
+  if(!body) return;
+  if(!Array.isArray(CHANGELOG_DATA) || CHANGELOG_DATA.length===0){
+    body.innerHTML='<div class="changelog-empty">No changelog entries available.</div>';
+    return;
+  }
+  const repoUrl='https://github.com/steffiyappy/zava-copilot-demo/commit/';
+  body.innerHTML=CHANGELOG_DATA.map(e=>
+    '<div class="changelog-row">'+
+      '<span class="changelog-date">'+escapeHTML(e.date||'')+'</span>'+
+      '<a class="changelog-hash" href="'+repoUrl+escapeHTML(e.hash||'')+'" target="_blank" rel="noopener" title="View commit on GitHub">'+escapeHTML(e.hash||'')+'</a>'+
+      '<span class="changelog-desc">'+escapeHTML(e.desc||'')+'</span>'+
+    '</div>'
+  ).join('');
+}
+function toggleChangelog(){
+  const m=document.getElementById('changelog-modal');
+  if(!m) return;
+  if(m.classList.contains('open')){
+    m.classList.remove('open');
+  } else {
+    _renderChangelog();
+    m.classList.add('open');
+  }
+}
+document.addEventListener('keydown',function(e){
+  // Ctrl+Shift+L (or Cmd+Shift+L) toggles the changelog
+  if((e.ctrlKey||e.metaKey) && e.shiftKey && (e.key==='L'||e.key==='l')){
+    e.preventDefault();
+    toggleChangelog();
+  }
+  // ESC closes it
+  if(e.key==='Escape'){
+    const m=document.getElementById('changelog-modal');
+    if(m && m.classList.contains('open')) m.classList.remove('open');
+  }
+});
+
 // ── Init ──
 (function(){
   const tb=document.getElementById('topbar-badge');
@@ -4422,8 +4500,26 @@ _initTheme();
 </body>
 </html>"""
 
+def _build_changelog_json():
+    """Read up-to-100 most recent git commits and emit a compact JS array."""
+    import subprocess, json
+    try:
+        out = subprocess.check_output(
+            ['git', '--no-pager', 'log', '--pretty=format:%h\x1f%ad\x1f%s', '--date=short', '-100'],
+            encoding='utf-8',
+            stderr=subprocess.DEVNULL,
+        )
+    except Exception:
+        return '[]'
+    rows = []
+    for line in out.splitlines():
+        parts = line.split('\x1f')
+        if len(parts) == 3:
+            rows.append({'hash': parts[0], 'date': parts[1], 'desc': parts[2]})
+    return json.dumps(rows, ensure_ascii=False, separators=(',', ':'))
+
 with open('hub.html','w',encoding='utf-8') as f:
-    f.write(HTML)
+    f.write(HTML.replace('__CHANGELOG_JSON__', _build_changelog_json()))
 
 import os
 sz=os.path.getsize('hub.html')

@@ -1,0 +1,100 @@
+1f93a64	2026-05-10	Alliance team codes: align to Cagamas style (short uppercase) + suppress redundant single-group header
+b607af2	2026-05-10	Other Pages: collapse Customer Demos section into Customer Workshops
+d8bbce7	2026-05-10	Storyboard description consistency: convert Shape B (og/re/mfg) to Shape A by adding verb fields
+fa5fad9	2026-05-10	files/: generate 378 placeholder Office files (134 docx + 115 xlsx + 129 pptx) so every prompt reference resolves
+e9165a2	2026-05-10	Other Pages: add 3 customer demos ΓÇö Kenanga C-Suite, Rivanta CTO, Contoso Cowork
+040e72d	2026-05-10	Dark-mode second sweep ΓÇö 11 more elements made readable in dark + system themes
+2aea66a	2026-05-10	Storyboard description coverage: synthesise summaries for Shape C entries
+ff34f72	2026-05-10	Departments-most-affected coverage: dedupe IT&Digital + add reverse mirror to all departments
+a514554	2026-05-10	Align Alliance Bank team codes with Cagamas ΓÇö wrap in single teamGroup
+341da4f	2026-05-10	Cowork: add 3 cross-cutting delegation scenarios per entry
+aa42bbd	2026-05-10	Fix carousel '??' mojibake on 5 What's-New titles
+e8c1629	2026-05-10	Cowork now lives in its own tab between Microsoft 365 Copilot Tools and Copilot Chat Prompts
+6cc6fbf	2026-05-10	Fix dark mode invisible text ΓÇö var(--navy) used as text color on dark navy surface
+a340877	2026-05-10	Fix dark mode contrast ΓÇö invisible text + light-wash bg in 9 spots
+c5532f4	2026-05-10	Fix BM/BI prompt mixing: auto-fill 674 empty promptsBM from promptsID with token swaps
+32cbfa2	2026-05-10	Rework show-password toggle on the access gate (index.html)
+2b74335	2026-05-10	Translate tool-info banner bodies + preserve open tool on language toggle
+5f7514a	2026-05-10	Hide subsidiaries chip strip from entry hero (keep search-only)
+35076e4	2026-05-10	Fix system-default theme contrast + complete language toggle coverage
+9265d17	2026-05-10	Subsidiaries: map customer accounts list onto industries
+266f630	2026-05-10	Search: tie company names to records (raw + scrubbed + persona fields)
+060fe81	2026-05-10	Audit new features: roll out April 2026 Microsoft 365 Copilot Blog updates
+1df0a51	2026-05-10	Audit mobile-adaptive: tighten layout at 480px and add 380px breakpoint
+8bfdd07	2026-05-10	Audit technical feasibility: align license tier to actual prompt capability
+d8914e6	2026-05-10	Audit uniqueness: differentiate 8 dept PPT-generic + 5 industry AC-generic dupes
+7fa16be	2026-05-10	Audit comprehensiveness: normalise tool labels to 14 canonical names
+e01515a	2026-05-10	Audit realism: align persona accounts + licenses to canonical mapping
+3772ea6	2026-05-10	Audit consistency: normalise license labels across personas + tools
+0d0e79d	2026-05-10	Agent Builder: tier the license correctly + add knowledge-tier disclaimer
+c0f1033	2026-05-10	Dark mode: contrast overrides for Cowork / Notebook / Agent Builder / prompt blocks / pills
+c17a346	2026-05-10	Other Pages tab: stop scrubbing real workshop / hackathon names
+f142302	2026-05-10	Generate 316 industry reference files (xlsx + docx) per entry
+68b8901	2026-05-10	Global locale: scrub MY/ID regulator names + agency acronyms + specific cities
+e446036	2026-05-10	Storyboard: Shape B narrative renders as full-body description (no synth template)
+3a70743	2026-05-10	Storyboard: render-time verb shortener for clean moment cards
+c8c512d	2026-05-10	Agent Builder: per-entry-unique 3-agent catalog across all 56 entries (no War Room template repeats)
+18888ab	2026-05-10	Teams: canonical 3-meeting IHH structure (52 blocks); fix tab-click auto-scroll-to-top
+d1946e4	2026-05-10	Agent Builder: IHH-style 3-card picker (General entry)
+355f746	2026-05-10	UI: theme toggle (Light/Dark/System), responsive sidebar drawer, contrast bumps.
+4013e64	2026-05-10	Persona audit: fix 144 non-conforming names in dept_data5.py.
+c4dfd0f	2026-05-10	Rebrand: M365 Copilot -> Microsoft 365 Copilot (1,129 replacements).
+4222d0e	2026-05-10	Runtime translator: disable ENΓåÆBM and BIΓåÆEN dictionary substitution.
+2992d29	2026-05-10	Cowork prompts: append named-recipient appendix (176 prompts).
+bfada09	2026-05-10	Meeting-minutes prompts: normalise to canonical 5-section template (66 prompts).
+f8952c8	2026-05-10	Multi-model prefix removed + GPT/Claude version sweep (135 replacements).
+2d27dc2	2026-05-10	Storyboard moment descriptions per-tool + agent-builder Test step agent-agnostic.
+bd9e615	2026-05-10	Prompts: convert 348 structured-label prompts (Goal/Context/Source/Expectation + Tujuan/Konteks/Sumber/Ekspektasi) across ind_batch10/11/12 to flowing prose, lengthened with directive lead-in and verification trail.
+fc5ae67	2026-05-10	Storyboard render: normalise 3 source schemas ΓÇö (a) standard nested {tasks:[{n,verb,label}]}, (b) ind_batch4 {objective, desc/descID}, (c) flat ind_batch6 {exercise, task/taskID, tool}. Now fintech-payments, government-agency, og-downstream, renewable-energy, and industrial-manufacturing render real moment cards instead of empty phases. Strips leading 'Exercise N ΓÇö ' from titles. Auto-numbers tasks when 'n' is missing.
+5aae746	2026-05-10	Storyboard: remove 'Exercise N' badge from phase header ΓÇö title alone reads cleaner.
+ea63f1c	2026-05-10	Storyboard moment cards: drop Show & Tell / Hands-on mode pill and remove duration pill from exercise header. Keep verb (solution) prominent, add a short locale-aware description below ('Open {tool} and produce the {verb}, grounded in the scenario files.' / BM / BI variants).
+919264a	2026-05-10	Hackathon cards: span 2 grid columns when team data is present (uses the right-side whitespace); split 'Team N ΓÇö Desc' label into a coloured team-num badge + wrapped description so each row is unmistakably labelled even in tight 2-col layout.
+6344333	2026-05-10	Personas: standardize all 49 non-conforming names to Hadar/Sasha/Mod Admin/Daichi across 6 source files. Storyboard: restructure to IHH 8-moment style ΓÇö exercise header strips with Exercise N badge + minutes pill, plus grid of moment cards (numbered, tool label, action verb, mode). Hero now reads 'X moments across one workday' with X = total tasks count.
+3b73046	2026-05-10	Hackathon cards: lay team codes side-by-side (2-col grid)
+777ce13	2026-05-10	Sidebar: remove default underline on Other Pages links
+ef847c8	2026-05-10	Native BM/IDEN translations + team-codes render + locale-leak fixes
+16a48a3	2026-05-10	UI: contrast fix, IHH-style storyboard cards, native UI labels, ABMB to Hackathons, sidebar to hub
+ef74df5	2026-05-10	Locale fixes: fictional regulator/geo names + ABMB password + full translation coverage
+eec50a3	2026-05-10	Add 5-locale toggle + runtime real-customer-name scrub
+0e85c70	2026-05-10	Storyboard: drop EXERCISE/duration/task chips; show phase title + summary only
+1f0dd11	2026-05-10	Add final 2 batch12 industries: ecommerce-superapp + maritime-shipping (43 total)
+09c2780	2026-05-10	IHH-style storyboard + UI search + Other Pages tab + 4 new industries (41 total)
+47f490b	2026-05-09	Language toggle: collapse to EN | Bahasa (drop BM pill)
+7aa8b2d	2026-05-09	BM fallback to BI: Bahasa Malaysia toggle now reads BI strings when BM strings absent
+e99b633	2026-05-09	Storyboard: IHH-style activity rows (story + solution, no file refs)
+976a083	2026-05-09	Add automotive (vehicle distribution & dealership) -- Zava Motors
+c53accd	2026-05-09	Fix dept_data5: complete files list (6 of 6) + correct phase 1 storyboard titles for IR/Procurement/IT depts
+3103a3e	2026-05-09	Add 3 new departments: Investor Relations, Procurement, IT & Digital (13 depts total)
+8951bf3	2026-05-09	Hospital network: name-drop IHH/KPJ/Sunway/Columbia + add Nurul-style Finance Manager reference
+dfc7820	2026-05-09	Carousel blog links + 5 vertical folds/name-drops + MY+ID neutrality
+e4e9432	2026-05-09	Session 2: Teams flow + Gemini purge + feasibility audit + 7 new industries + carousel fix
+38c1130	2026-05-09	Storyboard: reframe Exercises -> A Day in the Life
+b965dcc	2026-05-09	Storyboard: drop minute counts and Show&Tell/Hands-on tags
+3cb3cf1	2026-05-09	UI fixes: demo tip wording, EN flag shows MY+ID, ID -> BI
+df52664	2026-05-09	Phase A cleanup: strip preamble/wrapper boilerplate from all prompt bodies
+adc4133	2026-05-09	Phase 1 audit: align General ID prompts to Group scope + enrich Strategy + Investor Q&A regulatory grounding
+a4e5714	2026-05-09	Phase 3 Pass A: persona standardisation across all 28 industries
+a610a49	2026-05-09	Phase 2 Pass A: persona standardisation across all 9 departments + Legal/CorpSec split
+ec52d12	2026-05-09	Phase 1.11-1.18: 6 RICH reference files for General entry
+5226ddd	2026-05-09	Phase 1.1-1.10: General entry full rewrite to {instr,prompt} shape
+317a107	2026-05-09	Phase 0: renderer + util plumbing for {instr,prompt} shape, language toggle, Cowork/Notebook specials, Copy button below, Fluent polish
+4714414	2026-05-08	Remove 48 stale legacy reference files from repo
+61b34c4	2026-05-08	Strip 'Open Cowork...paste this single prompt' wrappers across all 28 industries + 10 departments
+3ce8bd2	2026-05-08	Clean up General prompts: strip 'Open <tool>...paste this' wrappers + remove persona chip from prompt title
+1e111c4	2026-05-08	Standardise company names to Zava brand + General reference files
+01d24f3	2026-05-08	Phase B: 28 industries + 10 departments rewritten in Phase A pattern
+577fd5c	2026-05-07	fix(teams): remove 'click Export, then Open in Word' (Teams Recap has no export button); use Copilot pane in Recap, then copy into Word OR M365 Copilot Chat with /transcript ref. Expand General to 6 reference files (added Divisional Variance, Lender Covenant Tracker, Investor QA).
+bf4ade9	2026-05-07	fix: 'All Industries'/'All Departments' sidebar nav now hides detail view and returns to gallery (root cause: showGridTab only toggled grid wraps, not home/detail view containers)
+4895e5f	2026-05-07	chore: gitignore node_modules and scratch files
+0fa8d90	2026-05-07	General-ID v2: all 14 tools have promptsID + personaID; / file syntax replacing @[]; Teams uses 4 specific meeting titles; W/PPT/Excel agents are generate-file-from-prompt; Builder is natural-language auto-build; Excel/Analyst use multi-tab dashboards with charts; correct Bahasa Indonesia grammar
+bb81b03	2026-05-07	Phase 3A v1.1: Notebook prompts use @[file] reference syntax
+875fd11	2026-05-07	Phase 3A: General-Indonesia v1 - storyboard, personas, scenario toggle, dept pills
+21a7307	2026-05-07	Phase 2: Comprehensive rewrite of all 29 industries + 10 departments
+02e3f9a	2026-05-07	Phase 1: General industry comprehensive rewrite + MY/ID toggle + Edit with Copilot tool
+5602dfd	2026-05-07	Rewrite all prompts to IHH format: strip Open/Upload wrappers, make directly pasteable
+4bc0ac0	2026-05-07	Fix: prompts are plain strings not objects, update showItem renderer
+2259829	2026-05-07	Fix: correct sector IDs to match actual industry IDs (no ind- prefix)
+34dc1ed	2026-05-07	Rebuild: 29 industries + 10 departments + 14 tools + sector grouping + dept tabs
+e7705b9	2026-05-06	Fix JS syntax error: remove stray }).join('') at line 474
+d190eb6	2026-05-06	Fix copy button: use global prompt map instead of inline onclick text
+890aa37	2026-05-06	Rebuild data.js: 15 industries x 13 tools x 540 detailed prompts
