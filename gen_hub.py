@@ -334,6 +334,67 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .cowork-runbook-list{margin:0;padding:0;list-style:none}
 .cowork-runbook-list li{position:relative;padding:1px 0 2px 14px;line-height:1.55}
 .cowork-runbook-list li:before{content:"›";position:absolute;left:2px;top:0;color:#B45309;font-weight:800}
+/* Cowork Library — per-entry "more use cases" cards (Contoso C-Suite + everythingischr0me merge) */
+.cw-section{margin-top:20px;padding-top:18px;border-top:2px solid var(--border)}
+.cw-section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.cw-section-title{font-size:15px;font-weight:800;color:var(--text-strong);display:flex;align-items:center;gap:8px;margin:0}
+.cw-section-sub{font-size:11.5px;color:var(--muted);font-weight:500}
+.cw-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.cw-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.cw-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.cw-card[open]{box-shadow:var(--shadow-sm)}
+.cw-card summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:flex-start;gap:12px;background:linear-gradient(135deg,rgba(254,243,199,0.35),rgba(253,230,138,0.25));border-bottom:1px solid transparent}
+.cw-card summary::-webkit-details-marker{display:none}
+.cw-card[open] summary{border-bottom-color:var(--border)}
+.cw-card summary:hover{background:linear-gradient(135deg,rgba(254,243,199,0.55),rgba(253,230,138,0.40))}
+.cw-num{flex-shrink:0;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#F59E0B,#D97706);color:#FFF;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;letter-spacing:.5px}
+.cw-head-main{flex:1;min-width:0}
+.cw-title{font-size:14px;font-weight:700;color:var(--text-strong);line-height:1.35;margin:0 0 5px}
+.cw-badges{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.cw-tag{display:inline-block;background:rgba(245,158,11,0.14);border:1px solid rgba(245,158,11,0.32);border-radius:12px;padding:1px 8px;font-size:10px;color:#92400E;font-weight:700;letter-spacing:.3px}
+.cw-tag.ind{background:rgba(59,130,246,0.13);border-color:rgba(59,130,246,0.30);color:#1E40AF}
+.cw-complexity{display:inline-block;border-radius:12px;padding:1px 8px;font-size:10px;font-weight:700;letter-spacing:.3px;text-transform:uppercase}
+.cw-complexity.basic{background:rgba(16,185,129,0.13);color:#047857;border:1px solid rgba(16,185,129,0.32)}
+.cw-complexity.intermediate{background:rgba(245,158,11,0.13);color:#B45309;border:1px solid rgba(245,158,11,0.32)}
+.cw-complexity.advanced{background:rgba(239,68,68,0.13);color:#B91C1C;border:1px solid rgba(239,68,68,0.32)}
+.cw-chev{margin-left:auto;flex-shrink:0;color:var(--muted);font-size:13px;transition:transform .2s}
+.cw-card[open] .cw-chev{transform:rotate(180deg)}
+.cw-body{padding:14px 16px 16px;background:var(--surface)}
+.cw-desc{font-size:12.5px;color:var(--text);line-height:1.55;margin:0 0 12px}
+.cw-section-label{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:#92400E;margin:12px 0 6px;display:flex;align-items:center;gap:5px}
+.cw-section-label:first-child{margin-top:0}
+.cw-list{margin:0 0 10px;padding:0 0 0 18px;font-size:12px;color:var(--text);line-height:1.6}
+.cw-list li{margin-bottom:2px}
+.cw-instructions{counter-reset:cwstep;list-style:none;padding:0;margin:0 0 10px}
+.cw-instructions li{position:relative;padding:3px 0 3px 28px;font-size:12px;color:var(--text);line-height:1.55;counter-increment:cwstep}
+.cw-instructions li:before{content:counter(cwstep);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:rgba(245,158,11,0.18);color:#92400E;font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.cw-apps-row{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
+.app-pill{display:inline-block;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.28);border-radius:12px;padding:2px 9px;font-size:10.5px;color:#1E40AF;font-weight:700}
+.cw-files-pills{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
+.file-pill{display:inline-flex;align-items:center;gap:5px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:2px 9px;font-size:10.5px;color:var(--text);font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.file-pill .ext{display:inline-block;font-size:9px;font-weight:800;padding:1px 5px;border-radius:6px;letter-spacing:.5px}
+.file-pill .ext.xlsx{background:#10B981;color:#FFF}
+.file-pill .ext.docx{background:#2563EB;color:#FFF}
+.file-pill .ext.pdf{background:#DC2626;color:#FFF}
+.file-pill .ext.png{background:#9333EA;color:#FFF}
+.cw-prompt{background:linear-gradient(135deg,#F0FDF4,#DCFCE7);border:1px solid #BBF7D0;border-radius:8px;padding:11px 13px;margin:0 0 10px;position:relative}
+.cw-prompt-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.cw-prompt-label{font-size:10px;font-weight:800;color:#166534;text-transform:uppercase;letter-spacing:1.2px}
+.cw-prompt-copy{background:#16A34A;color:#FFF;border:none;border-radius:6px;padding:3px 10px;font-size:10.5px;font-weight:700;cursor:pointer;transition:background .15s}
+.cw-prompt-copy:hover{background:#15803D}
+.cw-prompt-copy.copied{background:#059669}
+.cw-prompt-text{font-size:12px;color:#14532D;line-height:1.6;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.cw-callout{border-radius:8px;padding:10px 12px;margin:0 0 10px;border-left-width:4px;border-left-style:solid;font-size:12px;line-height:1.55}
+.cw-watch{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.32);border-left-color:#10B981;color:#065F46}
+.cw-watch .cw-callout-label{color:#047857}
+.cw-honest{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.32);border-left-color:#F59E0B;color:#78350F}
+.cw-honest .cw-callout-label{color:#92400E}
+.cw-callout-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:5px;display:block}
+.cw-callout p{margin:0}
+.cw-callout ul{margin:0;padding-left:18px}
+@media (min-width:900px){
+  .cw-grid{grid-template-columns:repeat(2,1fr)}
+}
 /* Notebook special block (sources + Instructions field) */
 .notebook-meta{background:linear-gradient(135deg,#F0F9FF,#E0F2FE);border:1px solid #BAE6FD;border-radius:8px;padding:11px 14px;margin:0 0 10px}
 .notebook-meta-label{font-size:9.5px;font-weight:800;color:#075985;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:5px}
@@ -677,6 +738,30 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .agent-license-body{color:#FDE68A}
 [data-theme="dark"] .agent-license-note.free .agent-license-body{color:#BBF7D0}
 [data-theme="dark"] .agent-license-body b{color:#FEF3C7}
+/* Cowork Library — dark theme */
+[data-theme="dark"] .cw-section{border-top-color:var(--border)}
+[data-theme="dark"] .cw-section-title{color:#FBBF24}
+[data-theme="dark"] .cw-section-sub{color:var(--muted)}
+[data-theme="dark"] .cw-card{background:var(--surface);border-color:#92400E}
+[data-theme="dark"] .cw-card summary{background:linear-gradient(135deg,#332100,#3D2900);border-bottom-color:transparent}
+[data-theme="dark"] .cw-card[open] summary{border-bottom-color:#92400E}
+[data-theme="dark"] .cw-card summary:hover{background:linear-gradient(135deg,#3D2900,#4A2E00)}
+[data-theme="dark"] .cw-title{color:#FDE68A}
+[data-theme="dark"] .cw-tag{background:rgba(245,158,11,0.20);color:#FCD34D;border-color:rgba(245,158,11,0.45)}
+[data-theme="dark"] .cw-tag.ind{background:rgba(59,130,246,0.20);color:#93C5FD;border-color:rgba(59,130,246,0.40)}
+[data-theme="dark"] .cw-chev{color:#FBBF24}
+[data-theme="dark"] .cw-section-label{color:#FBBF24}
+[data-theme="dark"] .cw-desc,[data-theme="dark"] .cw-list,[data-theme="dark"] .cw-instructions li{color:#FDE68A}
+[data-theme="dark"] .cw-instructions li:before{background:rgba(245,158,11,0.30);color:#FCD34D}
+[data-theme="dark"] .app-pill{background:rgba(59,130,246,0.20);color:#93C5FD;border-color:rgba(59,130,246,0.40)}
+[data-theme="dark"] .file-pill{background:#1F2937;border-color:#374151;color:#E5E7EB}
+[data-theme="dark"] .cw-prompt{background:linear-gradient(135deg,#0E2A1A,#0F3A22);border-color:#16A34A}
+[data-theme="dark"] .cw-prompt-label{color:#86EFAC}
+[data-theme="dark"] .cw-prompt-text{color:#BBF7D0}
+[data-theme="dark"] .cw-watch{background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.40);color:#BBF7D0}
+[data-theme="dark"] .cw-watch .cw-callout-label{color:#86EFAC}
+[data-theme="dark"] .cw-honest{background:rgba(245,158,11,0.10);border-color:rgba(245,158,11,0.40);color:#FCD34D}
+[data-theme="dark"] .cw-honest .cw-callout-label{color:#FBBF24}
 [data-theme="dark"] .agent-license-note.free .agent-license-body b{color:#DCFCE7}
 [data-theme="dark"] .builder-divider::before,[data-theme="dark"] .builder-divider::after{background:linear-gradient(90deg,transparent,#475569,transparent)}
 [data-theme="dark"] .builder-divider-label{color:#CBD5E1;background:#1E293B;border-color:#334155}
@@ -763,6 +848,32 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   [data-theme="system"] .cowork-runbook-body{color:#FDE68A}
   [data-theme="system"] .cowork-runbook-pill{background:rgba(180,83,9,0.30);color:#FDE68A;border-color:#92400E}
   [data-theme="system"] .cowork-runbook-list li:before{color:#FBBF24}
+  /* Cowork Library — system theme dark mirror */
+  [data-theme="system"] .cw-section{border-top-color:var(--border)}
+  [data-theme="system"] .cw-section-title{color:#FBBF24}
+  [data-theme="system"] .cw-section-sub{color:var(--muted)}
+  [data-theme="system"] .cw-card{background:var(--surface);border-color:#92400E}
+  [data-theme="system"] .cw-card summary{background:linear-gradient(135deg,#332100,#3D2900);border-bottom-color:transparent}
+  [data-theme="system"] .cw-card[open] summary{border-bottom-color:#92400E}
+  [data-theme="system"] .cw-card summary:hover{background:linear-gradient(135deg,#3D2900,#4A2E00)}
+  [data-theme="system"] .cw-title{color:#FDE68A}
+  [data-theme="system"] .cw-tag{background:rgba(245,158,11,0.20);color:#FCD34D;border-color:rgba(245,158,11,0.45)}
+  [data-theme="system"] .cw-tag.ind{background:rgba(59,130,246,0.20);color:#93C5FD;border-color:rgba(59,130,246,0.40)}
+  [data-theme="system"] .cw-chev{color:#FBBF24}
+  [data-theme="system"] .cw-section-label{color:#FBBF24}
+  [data-theme="system"] .cw-desc,
+  [data-theme="system"] .cw-list,
+  [data-theme="system"] .cw-instructions li{color:#FDE68A}
+  [data-theme="system"] .cw-instructions li:before{background:rgba(245,158,11,0.30);color:#FCD34D}
+  [data-theme="system"] .app-pill{background:rgba(59,130,246,0.20);color:#93C5FD;border-color:rgba(59,130,246,0.40)}
+  [data-theme="system"] .file-pill{background:#1F2937;border-color:#374151;color:#E5E7EB}
+  [data-theme="system"] .cw-prompt{background:linear-gradient(135deg,#0E2A1A,#0F3A22);border-color:#16A34A}
+  [data-theme="system"] .cw-prompt-label{color:#86EFAC}
+  [data-theme="system"] .cw-prompt-text{color:#BBF7D0}
+  [data-theme="system"] .cw-watch{background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.40);color:#BBF7D0}
+  [data-theme="system"] .cw-watch .cw-callout-label{color:#86EFAC}
+  [data-theme="system"] .cw-honest{background:rgba(245,158,11,0.10);border-color:rgba(245,158,11,0.40);color:#FCD34D}
+  [data-theme="system"] .cw-honest .cw-callout-label{color:#FBBF24}
   [data-theme="system"] .notebook-meta{background:linear-gradient(135deg,#0E2538,#10324A);border-color:#155E75}
   [data-theme="system"] .notebook-meta-label{color:#7DD3FC}
   [data-theme="system"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
@@ -1276,6 +1387,26 @@ const _UI = {
   'Instructions field (system prompt):':
                            ['Kolom Instructions (system prompt):',   'Medan Instructions (system prompt):'],
   '⚡ Cowork delegates these in parallel': ['⚡ Cowork mendelegasikan ini secara paralel', '⚡ Cowork mengagihkan ini secara selari'],
+  // Cowork Library card labels
+  '📚 Cowork Library — more use cases':
+                           ['📚 Pustaka Cowork — lebih banyak kasus penggunaan',
+                            '📚 Pustaka Cowork — lebih banyak kes penggunaan'],
+  'Tap any card to expand the full prompt, skills, instructions, expected outcome, and honest framing.':
+                           ['Ketuk kartu apa pun untuk memperluas prompt lengkap, skill, instruksi, hasil yang diharapkan, dan penjelasan jujur.',
+                            'Ketuk mana-mana kad untuk meluaskan prompt penuh, kemahiran, arahan, hasil dijangka dan rangka kerja jujur.'],
+  'SKILLS':                ['KEMAHIRAN',                             'KEMAHIRAN'],
+  'INSTRUCTIONS':          ['INSTRUKSI',                              'ARAHAN'],
+  'APPS INVOLVED':         ['APLIKASI YANG TERLIBAT',                 'APLIKASI YANG TERLIBAT'],
+  'SAMPLE INPUTS':         ['CONTOH INPUT',                           'CONTOH INPUT'],
+  'PROMPT':                ['PROMPT',                                 'PROMPT'],
+  'EXPECTED OUTCOME':      ['HASIL YANG DIHARAPKAN',                  'HASIL YANG DIJANGKA'],
+  'WHAT TO WATCH':         ['APA YANG DIPERHATIKAN',                  'APA YANG DIPERHATIKAN'],
+  'HONEST FRAMING':        ['PENJELASAN JUJUR',                       'RANGKA KERJA JUJUR'],
+  'TIPS & VARIATIONS':     ['TIPS & VARIASI',                         'PETUA & VARIASI'],
+  'Basic':                 ['Dasar',                                  'Asas'],
+  'Intermediate':          ['Menengah',                               'Pertengahan'],
+  'Advanced':              ['Lanjut',                                 'Lanjutan'],
+  'Copied!':               ['Tersalin!',                              'Tersalin!'],
   '🧰 Apps involved':       ['🧰 Aplikasi yang terlibat',                  '🧰 Aplikasi yang terlibat'],
   '🧠 Complexity':          ['🧠 Tingkat kompleksitas',                    '🧠 Tahap kerumitan'],
   '📋 Description':         ['📋 Deskripsi',                                '📋 Penerangan'],
@@ -3730,6 +3861,119 @@ function _coworkRunbookHtml(item,tool,promptText,lines){
   '</div>';
 }
 
+// Render the per-entry Cowork Library section (4-5 unique-use-case cards
+// authored in _cowork_library.py, attached at build time as item.coworkLibrary).
+// Each card: collapsible <details> with skills, instructions, apps, sample
+// inputs, prompts, expected outcome, WHAT TO WATCH (green) and HONEST FRAMING
+// (amber) callouts plus tips & variations.
+function _coworkLibraryHtml(item){
+  const cards=(item && item.coworkLibrary) || [];
+  if(!cards.length) return '';
+  const L_TITLE=_uL('📚 Cowork Library — more use cases');
+  const L_SUB=_uL('Tap any card to expand the full prompt, skills, instructions, expected outcome, and honest framing.');
+  const L_SKILLS=_uL('SKILLS');
+  const L_INSTR=_uL('INSTRUCTIONS');
+  const L_APPS=_uL('APPS INVOLVED');
+  const L_FILES=_uL('SAMPLE INPUTS');
+  const L_PROMPT=_uL('PROMPT');
+  const L_EXP=_uL('EXPECTED OUTCOME');
+  const L_WATCH=_uL('WHAT TO WATCH');
+  const L_HONEST=_uL('HONEST FRAMING');
+  const L_TIPS=_uL('TIPS & VARIATIONS');
+  const L_COPY=_uL('📋 Copy prompt');
+  function lbl(c){
+    if(c==='basic') return _uL('Basic');
+    if(c==='advanced') return _uL('Advanced');
+    return _uL('Intermediate');
+  }
+  const body=cards.map((c,idx)=>{
+    const num='UC '+String(idx+1).padStart(2,'0');
+    const cmplx=String(c.complexity||'intermediate').toLowerCase();
+    const apps=(c.apps||[]).map(a=>'<span class="app-pill">'+escapeHTML(a)+'</span>').join('');
+    const files=(c.sample_files||[]).map(f=>{
+      const name=Array.isArray(f)?(f[0]||''):(f && f.filename) || String(f||'');
+      const ext=String((Array.isArray(f)?f[1]:(f && f.ext)) || (name.split('.').pop()||'')).toLowerCase();
+      const safeExt=['xlsx','docx','pdf','png'].indexOf(ext)>=0?ext:'docx';
+      return '<span class="file-pill"><span class="ext '+safeExt+'">'+safeExt.toUpperCase()+'</span>'+escapeHTML(name)+'</span>';
+    }).join('');
+    const skills=(c.skills||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
+    const instr=(c.instructions||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
+    const expected=(c.expected||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
+    const watch=(c.watch||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
+    const tips=(c.tips||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
+    const prompts=(c.prompts||[]).map((p,pi)=>{
+      const txt=_xformVal((typeof p==='string'?p:(p&&p.prompt||p&&p.text)||''),'EN');
+      const label=(typeof p==='object'&&p&&p.label)?_xformVal(p.label,'EN'):(L_PROMPT+' '+(pi+1));
+      const cwKey='cwlib_'+(item.id||'x')+'_'+idx+'_'+pi;
+      // Stash plaintext in a hidden span so copy works without inline event payloads.
+      return '<div class="cw-prompt">'+
+        '<div class="cw-prompt-head">'+
+          '<span class="cw-prompt-label">'+escapeHTML(label)+'</span>'+
+          '<button class="cw-prompt-copy" type="button" data-cwkey="'+cwKey+'">'+escapeHTML(L_COPY)+'</button>'+
+        '</div>'+
+        '<div class="cw-prompt-text" id="'+cwKey+'">'+escapeHTML(txt)+'</div>'+
+      '</div>';
+    }).join('');
+    const dept=c.dept_tag?('<span class="cw-tag">'+escapeHTML(_xformVal(c.dept_tag,'EN'))+'</span>'):'';
+    const ind=c.industry_tag?('<span class="cw-tag ind">'+escapeHTML(_xformVal(c.industry_tag,'EN'))+'</span>'):'';
+    const honest=c.honest?('<div class="cw-callout cw-honest"><span class="cw-callout-label">'+L_HONEST+'</span><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):'';
+    const watchHtml=watch?('<div class="cw-callout cw-watch"><span class="cw-callout-label">'+L_WATCH+'</span><ul>'+watch+'</ul></div>'):'';
+    return '<details class="cw-card">'+
+      '<summary>'+
+        '<span class="cw-num">'+escapeHTML(num)+'</span>'+
+        '<span class="cw-head-main">'+
+          '<div class="cw-title">'+escapeHTML(_xformVal(c.title||'','EN'))+'</div>'+
+          '<div class="cw-badges">'+dept+ind+'<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span></div>'+
+        '</span>'+
+        '<span class="cw-chev">▼</span>'+
+      '</summary>'+
+      '<div class="cw-body">'+
+        (c.desc?'<p class="cw-desc">'+escapeHTML(_xformVal(c.desc,'EN'))+'</p>':'')+
+        (apps?('<div class="cw-section-label">'+L_APPS+'</div><div class="cw-apps-row">'+apps+'</div>'):'')+
+        (skills?('<div class="cw-section-label">'+L_SKILLS+'</div><ul class="cw-list">'+skills+'</ul>'):'')+
+        (instr?('<div class="cw-section-label">'+L_INSTR+'</div><ol class="cw-instructions">'+instr+'</ol>'):'')+
+        (files?('<div class="cw-section-label">'+L_FILES+'</div><div class="cw-files-pills">'+files+'</div>'):'')+
+        prompts+
+        (expected?('<div class="cw-section-label">'+L_EXP+'</div><ul class="cw-list">'+expected+'</ul>'):'')+
+        watchHtml+
+        honest+
+        (tips?('<div class="cw-section-label">'+L_TIPS+'</div><ul class="cw-list">'+tips+'</ul>'):'')+
+      '</div>'+
+    '</details>';
+  }).join('');
+  return '<div class="cw-section">'+
+    '<div class="cw-section-head">'+
+      '<h3 class="cw-section-title">'+L_TITLE+'</h3>'+
+      '<span class="cw-section-sub">'+escapeHTML(L_SUB)+'</span>'+
+    '</div>'+
+    '<div class="cw-grid">'+body+'</div>'+
+  '</div>';
+}
+
+// Delegated copy-handler for Cowork Library prompt buttons (one listener,
+// re-attached idempotently every time the detail view re-renders).
+function _wireCoworkLibraryCopy(){
+  if(window._cwlibCopyWired) return;
+  document.addEventListener('click', function(ev){
+    const btn=ev.target && ev.target.closest && ev.target.closest('.cw-prompt-copy');
+    if(!btn) return;
+    const key=btn.getAttribute('data-cwkey');
+    if(!key) return;
+    const el=document.getElementById(key);
+    if(!el) return;
+    const txt=el.textContent || '';
+    try{
+      navigator.clipboard.writeText(txt).then(function(){
+        const orig=btn.textContent;
+        btn.textContent=_uL('Copied!');
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent=orig; btn.classList.remove('copied'); }, 1400);
+      }).catch(function(){});
+    } catch(e){}
+  });
+  window._cwlibCopyWired=true;
+}
+
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
   currentSidebarTab=tab;
@@ -4639,6 +4883,17 @@ function showItem(item,tab,preserveScroll){
       '</div>';
     pEl.appendChild(sec);
   });
+  // Cowork Library — appended only when the user is viewing the Cowork tab
+  // and the entry carries a coworkLibrary catalog (every entry does, post-build).
+  if(_detailTab==='cowork'){
+    const cwHtml=_coworkLibraryHtml(item);
+    if(cwHtml){
+      const cwWrap=document.createElement('div');
+      cwWrap.innerHTML=cwHtml;
+      pEl.appendChild(cwWrap);
+      _wireCoworkLibraryCopy();
+    }
+  }
   if(visibleTools.length){ toggleTool(id+'-'+item.prompts.indexOf(visibleTools[0])); }
   // Files
   const fEl=document.getElementById('detail-files');

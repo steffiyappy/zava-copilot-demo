@@ -1038,6 +1038,30 @@ try:
 except Exception as _e:
     print(f"(Free-tier Agent Builder injection skipped due to error: {_e})")
 
+# ── Cowork Library: attach per-entry catalog of 4-5 unique Cowork use cases ──
+# Source: _cowork_library.py (combines parts 2-5). Card schema includes title,
+# dept_tag, industry_tag, complexity, apps, desc, skills, instructions,
+# sample_files, prompts (P1/P2), expected, watch, honest, tips. Renderer in
+# gen_hub.py turns each card into an expandable cw-card with WHAT TO WATCH /
+# HONEST FRAMING callouts.
+try:
+    from _cowork_library import get_library_for_entry as _get_cwlib
+    def _inject_cwlib(entries):
+        n = 0
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            eid = e.get('id') or ''
+            cards = _get_cwlib(eid)
+            if cards:
+                e['coworkLibrary'] = cards
+                n += 1
+        return n
+    _cwlib_added = _inject_cwlib(all_industries) + _inject_cwlib(all_departments)
+    print(f"Cowork Library attached to {_cwlib_added} entries")
+except Exception as _e:
+    print(f"(Cowork Library injection skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')
