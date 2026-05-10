@@ -269,7 +269,7 @@ def build_entry(cfg):
                 "Reorder the content so decision-makers see the most urgent Red issues before the supporting detail.",
             ),
         ], DESC_EDIT_COPILOT),
-        tool(T_WORD_AGT, M365_LIC, M365_ACCT, [
+        tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
             _prompt(
                 role3, cfg['company'],
                 f"Open {doc1} in Word for Web and use the {_oxford([sheets[0], sheets[2], sheets[4]])} sheets in {workbook} plus {doc2}",
@@ -285,7 +285,7 @@ def build_entry(cfg):
                 "Make the demo feel realistic enough for leadership to see immediate value.",
             ),
         ], DESC_WORD_AGT),
-        tool(T_PPT_AGT, M365_LIC, M365_ACCT, [
+        tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
             _prompt(
                 role1, cfg['company'],
                 f"Use {workbook}, especially the {_oxford([sheets[0], sheets[1], sheets[3]])} sheets, with {doc1} and {doc2}",
@@ -301,7 +301,7 @@ def build_entry(cfg):
                 "Keep the demo crisp and executive-facing.",
             ),
         ], DESC_PPT_AGT),
-        tool(T_XL_AGT, M365_LIC, M365_ACCT, [
+        tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
             _prompt(
                 role2, cfg['company'],
                 f"Open {workbook} in Excel for Web and use the {_oxford([sheets[0], sheets[1], sheets[2]])} sheets",

@@ -135,7 +135,7 @@ ind('diversified-conglomerate', 'conglomerate', 'Diversified Conglomerate', '�
       ],
       persona=['Sasha Ouellet','Hadar Caspit'],
       personaID=['Sasha Ouellet','Hadar Caspit']),
-      tool(T_WORD_AGT, M365_LIC, ANY_ACCT, [
+      tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
         {'instr':'Open `m365.cloud.microsoft/chat` and sign in. In the prompt box click the **Tools** menu (or **Agents** menu) and choose **Word**. Paste the prompt below — Copilot generates a complete `.docx` preview in chat, asks any clarifying questions on tone/length/audience, then saves the finished file to OneDrive. Open it in Word to review and polish. Works **with or without** a Microsoft 365 Copilot license — with a Copilot license, Copilot can ground in tenant files/emails/chats/meetings; without a license, Copilot uses the public web plus any file you reference inline.', 'prompt':'Generate a 3-page Word document titled "Capital Allocation Committee Brief — FY2025" using /DC_03_Capital_Allocation_Framework.docx and /DC_06_Board_Capital_Committee_Charter.docx as context. Section 1 Situation Snapshot (the 32% NAV discount, 2 missed-synergy subsidiaries, SC informal signal, lender concerns); Section 2 Governance Obligations (drawn from the Capital Committee Charter); Section 3 Decisions Required from the Committee; Section 4 90-Day Capital Reallocation Programme. Format as a formal Board paper with a RAG summary at the top and to return the result as a downloadable .docx ready to share.'},
         {'instr':'Open `m365.cloud.microsoft/chat` and sign in. In the prompt box click the **Tools** menu (or **Agents** menu) and choose **Word**. Paste the prompt below — Copilot generates a complete `.docx` preview in chat, asks any clarifying questions on tone/length/audience, then saves the finished file to OneDrive. Open it in Word to review and polish. Works **with or without** a Microsoft 365 Copilot license — with a Copilot license, Copilot can ground in tenant files/emails/chats/meetings; without a license, Copilot uses the public web plus any file you reference inline.', 'prompt':'Generate a 2-page strategic reset briefing as a .docx using /DC_03_Capital_Allocation_Framework.docx and /DC_01_Group_Portfolio_Returns.xlsx as context. Required sections: (1) Subsidiaries to Continue at current capital weighting, (2) subsidiaries to Reset (re-underwrite the investment case), (3) subsidiaries to Divest, with one-line financial rationale per item drawn from the workbook. Apply a clean executive layout and return the document as Capital_Reset_Briefing.docx.'}
       ], DESC_WORD_AGT,
@@ -145,7 +145,7 @@ ind('diversified-conglomerate', 'conglomerate', 'Diversified Conglomerate', '�
       ],
       persona=['Sasha Ouellet','Mod Admin'],
       personaID=['Sasha Ouellet','Mod Admin']),
-      tool(T_PPT_AGT, M365_LIC, ANY_ACCT, [
+      tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
         {'instr':'Open `m365.cloud.microsoft/chat` and sign in. In the prompt box click the **Tools** menu (or **Agents** menu) and choose **PowerPoint**. Paste the prompt below — Copilot generates a complete `.pptx` preview in chat, asks any clarifying questions on theme/audience/slide count, then saves the finished file to OneDrive. Open it in PowerPoint to review and polish. Works **with or without** a Microsoft 365 Copilot license — with a Copilot license, Copilot can ground in tenant content; without a license, Copilot uses the public web plus any file you reference inline.', 'prompt':'Generate a 7-slide PowerPoint deck titled "Board Capital Allocation Committee — FY2025" using /DC_01_Group_Portfolio_Returns.xlsx and /DC_03_Capital_Allocation_Framework.docx as context. (1) Executive Summary; (2) NAV vs Market Cap with discount waterfall chart; (3) The 2 Missed-Synergy Subsidiaries; (4) Root Cause Analysis; (5) 90-Day Capital Reallocation Programme; (6) Stakeholder Communication Plan; (7) Decisions Required from the Committee. Apply a serious executive theme, embed a chart on slide 2, include speaker notes, Return as Capital_Committee_FY2025.pptx ready to download.'},
         {'instr':'Open `m365.cloud.microsoft/chat` and sign in. In the prompt box click the **Tools** menu (or **Agents** menu) and choose **PowerPoint**. Paste the prompt below — Copilot generates a complete `.pptx` preview in chat, asks any clarifying questions on theme/audience/slide count, then saves the finished file to OneDrive. Open it in PowerPoint to review and polish. Works **with or without** a Microsoft 365 Copilot license — with a Copilot license, Copilot can ground in tenant content; without a license, Copilot uses the public web plus any file you reference inline.', 'prompt':'Generate a 6-slide PowerPoint deck titled "Analyst Call — NAV Discount FY2025" using /DC_01_Group_Portfolio_Returns.xlsx and /DC_03_Capital_Allocation_Framework.docx as context. (1) Title and Disclaimer; (2) FY2025 Group NAV Performance; (3) What Changed and Why (structural drag vs synergy slippage); (4) Subsidiary Outlook for the 2 missed-synergy subsidiaries; (5) Capital Allocation Commitments for Next 90 Days; (6) Q&A. Apply a polished IR theme with minimal text per slide, full speaker notes for the IR team, and return as Analyst_Call_NAV_FY2025.pptx.'}
       ], DESC_PPT_AGT,
@@ -155,7 +155,7 @@ ind('diversified-conglomerate', 'conglomerate', 'Diversified Conglomerate', '�
       ],
       persona=['Sasha Ouellet','Daichi Maruyama'],
       personaID=['Sasha Ouellet','Daichi Maruyama']),
-      tool(T_XL_AGT, M365_LIC, ANY_ACCT, [
+      tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
         {'instr':'Open `m365.cloud.microsoft/chat` and sign in. In the prompt box click the **Tools** menu (or **Agents** menu) and choose **Excel**. Paste the prompt below — Copilot generates a complete `.xlsx` preview in chat, asks any clarifying questions on sheets/columns/charts/formatting, then saves the finished file to OneDrive. Open it in Excel to review and polish. Works **with or without** a Microsoft 365 Copilot license — with a Copilot license, Copilot can ground in tenant data; without a license, Copilot uses the public web plus any file you reference inline.', 'prompt':'Generate a new Excel workbook titled "Board_NAV_Dashboard_FY2025.xlsx" using /DC_01_Group_Portfolio_Returns.xlsx as context. (1) "KPI Tiles" with Look-Through NAV, Traded Market Cap, NAV Discount %, Net Debt to EBITDA, Dividend Cover, Holding Company Liquidity as tile cards across the top; (2) "Subsidiary IRR vs WACC" with IRR-WACC spread ranked worst to best for the 9 subsidiaries and conditional formatting (Red < -200bps, Amber -100 to -200bps, Green > -100bps); (3) "Quarterly Trend" with a clustered column chart of synergy delivery by quarter for the 2 missed-synergy subsidiaries; (4) "Watchlist Sparklines" with sparklines for each KPI over the last 8 quarters. Embed the charts, set up the conditional formatting, and return the workbook ready to download.'},
         {'instr':'Open `m365.cloud.microsoft/chat` and sign in. In the prompt box click the **Tools** menu (or **Agents** menu) and choose **Excel**. Paste the prompt below — Copilot generates a complete `.xlsx` preview in chat, asks any clarifying questions on sheets/columns/charts/formatting, then saves the finished file to OneDrive. Open it in Excel to review and polish. Works **with or without** a Microsoft 365 Copilot license — with a Copilot license, Copilot can ground in tenant data; without a license, Copilot uses the public web plus any file you reference inline.', 'prompt':'Generate a new Excel scenario model titled "Capital_Recovery_Scenario.xlsx" using /DC_01_Group_Portfolio_Returns.xlsx as context. (1) "Inputs" with 3 scenario columns (Base, Reallocation, Divest) for capital release MYR M, redeploy IRR uplift %, and synergy recovery %; (2) "Subsidiary P&L" computed from the Inputs sheet with formulas for each of the 9 subsidiaries; (3) "Group Roll-Up" with calculated Look-Through NAV, NAV Discount, Group EBITDA and Net Debt to EBITDA per scenario; (4) "Sensitivity Chart" showing how Group NAV Discount changes as the 2 missed-synergy subsidiaries are divested at different valuations. Use formula references (not hard-coded values) and to embed at least one tornado/sensitivity chart.'}
       ], DESC_XL_AGT,
@@ -454,7 +454,7 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
         persona=['Mod Admin','Hadar Caspit'],
         personaID=['Mod Admin','Hadar Caspit']),
 
-        tool('Microsoft 365 Copilot — Word Agent', M365_LIC, M365_ACCT, [
+        tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
             'From Microsoft 365 Copilot Chat — Ask the Word Agent to generate a new .docx titled "OJK Licence Renewal Brief — FY2025" using /FT_02_OJK_Licence_Conditions.docx and /FT_03_Fraud_Risk_Policy.docx as grounded sources. Structure: Executive Summary, Q4 Fraud Event Narrative, 23 Licence Conditions Status Table, 30/60/90-Day Remediation Plan, Independent Validation, Sign-off. Length 8-10 pages. Regulator-grade tone.',
             'From Microsoft 365 Copilot Chat — Ask the Word Agent to generate a new .docx titled "Product Roadmap Reset — FY2026" using /FT_04_Product_Roadmap_2026.docx and /FT_01_Payments_Operations.xlsx. Structure: What Changed and Why, Paused Initiatives, Accelerated Initiatives, Merchant & Consumer Impact, Resource Reallocation, FY2026 Success Metrics. 6-8 pages.'
         ], DESC_WORD_AGT,
@@ -465,7 +465,7 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
         persona=['Mod Admin','Sasha Ouellet'],
         personaID=['Mod Admin','Sasha Ouellet']),
 
-        tool('Microsoft 365 Copilot — PowerPoint Agent', M365_LIC, M365_ACCT, [
+        tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
             'From Microsoft 365 Copilot Chat — Ask the PPT Agent to generate a 7-slide deck titled "Board Fraud & Licence Renewal — Emergency Review" using /FT_01_Payments_Operations.xlsx, /FT_02_OJK_Licence_Conditions.docx and /FT_03_Fraud_Risk_Policy.docx. Slides: Cover, Q4 Snapshot, Regulator Status (OJK/BI/BSSN), Recovery Bridge, 30/60/90 Plan, 4 Board Decisions, Closing. Brand colour #6A1B9A. Numbers must reconcile to /FT_01.',
             'From Microsoft 365 Copilot Chat — Ask the PPT Agent to generate a 6-slide deck titled "Investor Update — Fraud & Licence FY2025" using /FT_01_Payments_Operations.xlsx and /FT_02_OJK_Licence_Conditions.docx. Slides: Cover, What Happened, Financial Impact, Recovery Trajectory, Regulatory Posture, FY2026 Outlook. Tone: candid, no spin, IR-grade.'
         ], DESC_PPT_AGT,
@@ -476,7 +476,7 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
         persona=['Mod Admin','Hadar Caspit'],
         personaID=['Mod Admin','Hadar Caspit']),
 
-        tool('Microsoft 365 Copilot — Excel Agent', M365_LIC, M365_ACCT, [
+        tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
             'From Microsoft 365 Copilot Chat — Ask the Excel Agent to generate a new workbook called "Board_Fraud_Dashboard_FY2025.xlsx" with 4 tabs: Q4 Snapshot, Merchant Heatmap, Recovery Bridge, 8-Week Watchlist. Source data from /FT_01_Payments_Operations.xlsx. Each tab has formulas referencing the source — no hard-coded numbers. Conditional formatting on the watchlist (green/amber/red) against OJK and BI thresholds.',
             'From Microsoft 365 Copilot Chat — Ask the Excel Agent to generate a new workbook called "Fraud_Recovery_Scenario.xlsx" with 3 tabs: Base Case, Upside (controls deliver in 60 days), Downside (controls slip 30 days). Each scenario shows quarterly fraud loss, recovery, residual, and impact on capital adequacy. Source from /FT_01_Payments_Operations.xlsx and /FT_03_Fraud_Risk_Policy.docx for the threshold definitions.'
         ], DESC_XL_AGT,
@@ -660,7 +660,7 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
         persona=['Mod Admin','Sasha Ouellet'],
         personaID=['Mod Admin','Sasha Ouellet']),
 
-        tool('Microsoft 365 Copilot — Word Agent', M365_LIC, M365_ACCT, [
+        tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, [
             'From Microsoft 365 Copilot Chat — Ask the Word Agent to generate a new .docx titled "DPR Hearing Brief — Public Service Reform FY2025" using /GOV_05_DPR_Hearing_Brief.docx, /GOV_01_Programme_Performance.xlsx and /GOV_04_BPK_Audit_Findings.docx as grounded sources. Structure: Executive Summary, Programme Position by 7 Programmes, BPK Findings Status, Absorption Recovery Plan, Anticipated Q&A, Closing Asks of the Committee. Length 10-12 pages. Public-service register, no commercial language.',
             'From Microsoft 365 Copilot Chat — Ask the Word Agent to generate a new .docx titled "BPK Closure Plan — 14 Open Findings" using /GOV_04_BPK_Audit_Findings.docx and /GOV_02_Programme_Governance_Manual.docx. Structure: Cover Letter to BPK Lead Auditor, Finding-by-Finding Closure Plan (severity, root cause, owner, evidence, target date), Governance Changes Already Implemented, Quarterly Reporting Cadence. 8-10 pages. Audit-grade tone.'
         ], DESC_WORD_AGT,
@@ -671,7 +671,7 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
         persona=['Mod Admin','Mod Admin'],
         personaID=['Mod Admin','Mod Admin']),
 
-        tool('Microsoft 365 Copilot — PowerPoint Agent', M365_LIC, M365_ACCT, [
+        tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, [
             'From Microsoft 365 Copilot Chat — Ask the PPT Agent to generate a 7-slide deck titled "DPR Hearing — FY2025 Public Service Reform" using /GOV_01_Programme_Performance.xlsx, /GOV_04_BPK_Audit_Findings.docx and /GOV_05_DPR_Hearing_Brief.docx. Slides: Cover, Programme Position, BPK Findings Status, Absorption Recovery Bridge, 30/60/90 Commitments, Asks of the Committee, Closing. Brand colour #4E342E. Numbers must reconcile to /GOV_01. No commercial language.',
             'From Microsoft 365 Copilot Chat — Ask the PPT Agent to generate a 6-slide deck titled "Citizen Outcomes Update — FY2025 Year-End View" using /GOV_01_Programme_Performance.xlsx and /GOV_03_Public_Service_Reform_Policy.docx. Slides: Cover, What Changed for Citizens, Where Outcomes Are Slipping, FY2026 Risk Outlook, Recovery Programme, Closing. Tone: candid, public-facing, no political framing.'
         ], DESC_PPT_AGT,
@@ -682,7 +682,7 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
         persona=['Mod Admin','Hadar Caspit'],
         personaID=['Mod Admin','Hadar Caspit']),
 
-        tool('Microsoft 365 Copilot — Excel Agent', M365_LIC, M365_ACCT, [
+        tool(T_XL_AGT, ANY_LIC, ANY_ACCT, [
             'From Microsoft 365 Copilot Chat — Ask the Excel Agent to generate a new workbook called "DPR_Hearing_Dashboard_FY2025.xlsx" with 4 tabs: Programme Position, BPK Findings Status, Absorption Recovery Bridge, 8-Week DG Watchlist. Source data from /GOV_01_Programme_Performance.xlsx and /GOV_06_KPK_Compliance_Tracker.xlsx. Each tab uses formulas referencing the source — no hard-coded numbers. Conditional formatting on the watchlist (green/amber/red) against the agency thresholds.',
             'From Microsoft 365 Copilot Chat — Ask the Excel Agent to generate a new workbook called "Absorption_Recovery_Scenarios.xlsx" with 3 tabs: Base Case, Upside (procurement bottlenecks cleared in 30 days), Downside (DPR redirects budget to other ministries). Each scenario shows monthly absorption trajectory, citizen-service indicator impact, and BPK closure progress. Source from /GOV_01_Programme_Performance.xlsx and /GOV_04_BPK_Audit_Findings.docx for the threshold definitions.'
         ], DESC_XL_AGT,
