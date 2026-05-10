@@ -102,7 +102,7 @@ WHATS_NEW = [
     },
     {
         "id": "wn-excel-plan-python",
-        "title": "\ud83d\udcc8 Excel \u2014 Plan mode + Python",
+        "title": "📈 Excel \u2014 Plan mode + Python",
         "badge": "May 2026 rollout",
         "summary": "Plan mode lets Copilot in Excel outline a step-by-step approach BEFORE making any change \u2014 review and adjust before edits land. Python in Excel runs advanced data techniques (forecasts, regressions, custom visualisations) directly inside the Edit-with-Copilot flow without leaving the workbook.",
         "tip": "In Excel for the Web > Copilot pane, click the menu above the prompt box and pick 'Plan'. Or simply add 'use Python' to your prompt to invoke Python automatically.",
@@ -111,7 +111,7 @@ WHATS_NEW = [
     },
     {
         "id": "wn-ppt-web-images",
-        "title": "\ud83c\udf10 PowerPoint \u2014 web grounding + image picker",
+        "title": "🌐 PowerPoint \u2014 web grounding + image picker",
         "badge": "April 2026",
         "summary": "Add a public webpage URL as a deck reference and Copilot pulls in current external context to build the outline. Choose the image model (GPT-Image, Flux, or Auto) when generating or editing visuals \u2014 align with quality, style, and governance expectations.",
         "tip": "In PPT for the Web > Copilot pane > add a web reference URL (e.g. a Bursa Malaysia listing or BNM circular page). When generating an image, click the gear and pick the model.",
@@ -129,7 +129,7 @@ WHATS_NEW = [
     },
     {
         "id": "wn-teams-call-interpret",
-        "title": "\ud83d\udcde Teams \u2014 Call Delegation + Interpretation",
+        "title": "📞 Teams \u2014 Call Delegation + Interpretation",
         "badge": "April-May 2026",
         "summary": "Copilot Call Delegation: Copilot answers incoming Teams calls on the user\u2019s behalf, gathers context from the caller, and books follow-ups via Microsoft Bookings. Consecutive Interpretation: turn-based translation between two languages with Interpreter on the meeting stage \u2014 ideal for ASEAN cross-border meetings.",
         "tip": "Teams > Settings > Calls > enable Copilot Call Delegation. For meetings, Interpreter on stage supports both real-time simultaneous and turn-based consecutive interpretation.",
@@ -138,7 +138,7 @@ WHATS_NEW = [
     },
     {
         "id": "wn-notebook-mindmap",
-        "title": "\ud83e\udde0 Notebook \u2014 Mind Maps + PPT/Word generation",
+        "title": "🧠 Notebook \u2014 Mind Maps + PPT/Word generation",
         "badge": "May 2026 (Frontier preview)",
         "summary": "Copilot Notebook can now generate full Word documents and PowerPoint decks directly from notebook content. Mind Maps give an interactive grounded view of relationships across all sources \u2014 click a node to drill in. SharePoint sites, OneNote notebooks, and external web URLs all qualify as sources.",
         "tip": "After grounding the notebook, click Quick Create > Mind Map for an executive overview, or > Word document / PowerPoint presentation to draft a deliverable preloaded with visuals.",
@@ -147,7 +147,7 @@ WHATS_NEW = [
     },
     {
         "id": "wn-agent-store",
-        "title": "\ud83c\udfea Agent Builder \u2014 submit to Agent Store",
+        "title": "🏪 Agent Builder \u2014 submit to Agent Store",
         "badge": "May 2026 rollout",
         "summary": "Agent Builder now supports submitting agents for admin review and approval. Approved agents land in the \u201cBuilt by your org\u201d section of the Agent Store where the whole organisation can discover and install them \u2014 the right balance of citizen-developer scale and IT admin control.",
         "tip": "After Test, click Submit for review (next to Create + share). Once your IT admin approves, the agent appears in the org\u2019s Agent Store automatically.",
