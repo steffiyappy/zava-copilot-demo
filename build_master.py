@@ -299,6 +299,33 @@ except ImportError:
 except Exception as _e:
     print(f"(BM auto-fill skipped due to error: {_e})")
 
+# ── Cowork: expand each entry's Cowork block with 3 more delegation scenarios ──
+# User feedback: "I need more use cases for all... like the everythingischr0me
+# github site". We append 3 cross-cutting Cowork scenarios (Investor Day Sprint,
+# Lender Outreach Cycle, Regulator Submission Sprint) to every entry's Cowork
+# tool block. Each scenario delegates 5 parallel actions (Word doc + email +
+# Teams meeting + Teams post + tracker update) using the standardised named-
+# recipients (Hadar/Sasha/Daichi/Sonia/Will/Omar) for persona consistency.
+# The BM auto-fill above already ran; we wire in BM via the same path AFTER
+# this expansion step so the new ID variants get token-swapped into BM too.
+try:
+    from cowork_more_scenarios import expand_cowork_prompts
+    _cw_added_ind  = expand_cowork_prompts(all_industries)
+    _cw_added_dept = expand_cowork_prompts(all_departments)
+    print(f"Cowork extra scenarios appended to {_cw_added_ind + _cw_added_dept} entries")
+    # Re-run BM auto-fill so the newly appended ID scenarios populate BM too.
+    try:
+        from id_to_bm_swaps import fill_missing_bm_from_id as _refill
+        _bm_more = _refill(all_industries) + _refill(all_departments)
+        if _bm_more:
+            print(f"BM auto-fill (post-Cowork): {_bm_more} more tool blocks filled")
+    except Exception:
+        pass
+except ImportError:
+    print("(cowork_more_scenarios.py not found; Cowork left as-is)")
+except Exception as _e:
+    print(f"(Cowork expansion skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')
