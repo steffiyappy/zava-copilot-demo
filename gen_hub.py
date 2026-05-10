@@ -1281,6 +1281,10 @@ const _UI = {
   '📋 Description':         ['📋 Deskripsi',                                '📋 Penerangan'],
   '✅ Expected outcome':    ['✅ Hasil yang diharapkan',                   '✅ Hasil yang dijangka'],
   '💡 Tips & variations':   ['💡 Tips & variasi',                          '💡 Petua & variasi'],
+  '🎯 Goal':                ['🎯 Tujuan',                                   '🎯 Matlamat'],
+  '👤 Persona':             ['👤 Persona',                                  '👤 Persona'],
+  '✅ Pre-conditions':      ['✅ Prasyarat',                                '✅ Pra-syarat'],
+  '📥 Inputs':              ['📥 Input',                                    '📥 Input'],
   'Advanced (5+ chained apps)':       ['Advanced (5+ aplikasi terangkai)',          'Lanjutan (5+ aplikasi berantai)'],
   'Intermediate (3-4 chained apps)':  ['Menengah (3-4 aplikasi terangkai)',         'Pertengahan (3-4 aplikasi berantai)'],
   'Beginner (1-2 apps)':              ['Dasar (1-2 aplikasi)',                       'Asas (1-2 aplikasi)'],
@@ -3587,13 +3591,122 @@ function _coworkTipsForEntry(entryId){
     'For recurring Cowork delegations, save the prompt as a template in your tenant’s prompt library — cuts re-prompt time for the next cycle in half.'
   ];
 }
+function _coworkGoal(item, promptText){
+  // Goal = outcome-framed 1-liner. Prefer the entry tagline (already a crisis
+  // hook). Fall back to the first clause of the prompt.
+  const tg = (item && (item.taglineID || item.taglineBM || item.tagline)) || '';
+  if(tg) return _scrubReal(String(tg).trim());
+  const t=String(promptText||'').replace(/\s+/g,' ').trim();
+  const cut=t.search(/(?:[.!?](?=\s)|—|:)/);
+  let s=t.slice(0, cut>0?cut:Math.min(180,t.length)).trim().replace(/[—:.,;]+$/,'').trim();
+  return _scrubReal(s);
+}
+function _coworkPersona(item, tool){
+  // Named persona running the workstream. We take the tool's persona array
+  // when present (already standardised to Hadar / Sasha / Daichi / Mod Admin
+  // earlier in the build) — but layer in a use-case role hint based on the
+  // entry archetype so the persona reads as scenario-appropriate.
+  const E=String((item&&item.id)||'').toLowerCase();
+  const role = (function(){
+    if(/bank|finance|treasury|invest|wealth|fintech|payment|remitt|mortgage|leasing/.test(E)) return 'Group CFO + Group Treasurer';
+    if(/insurance|takaful/.test(E)) return 'Chief Actuary + Group CFO';
+    if(/health|hospital|pharma|clinic|medical/.test(E)) return 'Medical Director + Chief Nurse';
+    if(/og-|oil|gas|petro|coal|mining|rare-earth|renewable|power|util|electric/.test(E)) return 'HSSE Director + Operations VP';
+    if(/manuf|automotiv|auto-tyre|semicon|food-fmcg|rubber-glove/.test(E)) return 'Plant Manager + QA Director';
+    if(/agri|plantation|palm/.test(E)) return 'Sustainability Manager + Estate GM';
+    if(/retail|grocery|qsr|fashion|apparel|ecomm|super-app|mall/.test(E)) return 'Category Manager + Store Operations VP';
+    if(/hotel|tourism|airline|aviation|cruise|leisure|entertain|gaming|media|broadcast/.test(E)) return 'GM + Director of Operations';
+    if(/telco|telecom|broadband|tower|isp|tech|software|cloud|data-center|saas|platform|digital|bpo/.test(E)) return 'SVP Product + SVP Engineering';
+    if(/maritim|shipping|port|logistic|rail|express|courier|cold-chain|transport|trucking|terminal/.test(E)) return 'Port Captain + Operations Director';
+    if(/gov|public-sector|smart-city|sovereign|regulator/.test(E)) return 'Permanent Secretary + Communications Director';
+    if(/property|construction|reit/.test(E)) return 'Project Director + Asset Management VP';
+    if(/education|university/.test(E)) return 'Vice-Chancellor + Registrar';
+    if(/^dept-finance/.test(E)) return 'Group CFO + Head of FP&A';
+    if(/^dept-hr/.test(E)) return 'Group CHRO + Head of Talent';
+    if(/^dept-legal/.test(E)) return 'Group General Counsel + Head of Litigation';
+    if(/^dept-risk/.test(E)) return 'Group CRO + Head of ORM';
+    if(/^dept-strategy/.test(E)) return 'Group Chief of Staff + Head of Strategy';
+    if(/^dept-mark/.test(E)) return 'Group CMO + Head of Brand';
+    if(/^dept-esg/.test(E)) return 'Group Chief Sustainability Officer + ESG Lead';
+    if(/^dept-operation/.test(E)) return 'COO + Head of Operations';
+    if(/^dept-corpsec/.test(E)) return 'Company Secretary + Head of Governance';
+    if(/^dept-investor/.test(E)) return 'Head of IR + Group CFO';
+    if(/^dept-procurement/.test(E)) return 'CPO + Head of Supplier Risk';
+    if(/^dept-it/.test(E)) return 'Group CIO + Head of Cyber';
+    return 'Group CFO + Chief of Staff';
+  })();
+  // Layer in named persona (Hadar leads; Sasha co-runs) for the human face.
+  return 'Hadar Caspit (Group CFO) leads; Sasha Ouellet (Group CoS) co-runs the cycle. Functional owners: ' + role + '.';
+}
+function _coworkPreconditions(item){
+  // 4 hard pre-conditions to satisfy before the Cowork delegation can run.
+  // Lists keep their order — license first (most common blocker), then
+  // tenant-side directory / DLP / SharePoint scoping.
+  const E=String((item&&item.id)||'').toLowerCase();
+  const sensExtra = (function(){
+    if(/health|hospital|pharma|clinic|medical/.test(E)) return ' + [Confidential — Patient Care] applied to clinical artefacts';
+    if(/bank|finance|invest|treasury|insurance|takaful|fintech|payment|remitt|mortgage|leasing|wealth/.test(E)) return ' + [Highly Confidential — Material Non-Public] for pre-results material';
+    if(/og-|oil|gas|petro|coal|mining|rare-earth/.test(E)) return ' + [Confidential — Operational Safety] on incident-related artefacts';
+    if(/gov|public-sector|sovereign|regulator/.test(E)) return ' + [Restricted — Inter-Ministry] on draft submissions';
+    return '';
+  })();
+  return [
+    'Microsoft 365 Copilot license + Frontier Program enrolment active for the prompt-runner.',
+    'Cowork enabled in tenant admin centre + agent permissions granted (Word / Outlook / Teams / Planner).',
+    'Named recipients exist as live mailboxes in the tenant directory (Hadar Caspit, Sasha Ouellet, Daichi Maruyama, Sonia, Will, Omar).',
+    'Sensitivity labels configured: Confidential (default) / Highly Confidential (board-level)' + sensExtra + '.',
+  ];
+}
+function _coworkInputs(item, tool){
+  // 4 named inputs the prompt expects to find — files + DL + Teams channel.
+  // Pulls top files from the entry's file list and uses an archetype-aware
+  // Teams channel naming convention.
+  const files=(item && item.files)||[];
+  const realFiles=files.filter(function(f){ return String(f||'').indexOf('00_Copilot_Notebook_Demo_Guide')<0; }).slice(0,3);
+  const fileLine = realFiles.length
+    ? 'Source files in SharePoint / OneDrive: ' + realFiles.map(function(f){ return '`' + String(f).replace(/^\//,'') + '`'; }).join(', ') + '.'
+    : 'Source files in SharePoint / OneDrive — see the file-pill row at the top of this entry.';
+  const E=String((item&&item.id)||'').toLowerCase();
+  const channel = (function(){
+    if(/bank|finance|treasury|invest|wealth/.test(E)) return 'Teams channel: `Group Risk & Treasury Council`.';
+    if(/insurance|takaful/.test(E)) return 'Teams channel: `Group Capital & Solvency`.';
+    if(/fintech|payment|remitt/.test(E)) return 'Teams channel: `Group Payments Risk`.';
+    if(/health|hospital|pharma|clinic|medical/.test(E)) return 'Teams channel: `Medical Advisory Committee`.';
+    if(/og-|oil|gas|petro|coal|mining|rare-earth|renewable|power|util|electric/.test(E)) return 'Teams channel: `HSSE & Operations Crisis Cell`.';
+    if(/manuf|automotiv|auto-tyre|semicon|food-fmcg|rubber-glove/.test(E)) return 'Teams channel: `Quality & Customer Recovery`.';
+    if(/agri|plantation|palm/.test(E)) return 'Teams channel: `Sustainability & Certification`.';
+    if(/retail|grocery|qsr|fashion|apparel|ecomm|super-app|mall/.test(E)) return 'Teams channel: `Daily Trade Huddle`.';
+    if(/hotel|tourism|airline|aviation|cruise|leisure|entertain|gaming|media|broadcast/.test(E)) return 'Teams channel: `Property Operations Daily`.';
+    if(/telco|telecom|broadband|tower|isp|tech|software|cloud|data-center|saas|platform|digital|bpo/.test(E)) return 'Teams channel: `Service Reliability Bridge`.';
+    if(/maritim|shipping|port|logistic|rail|express|courier|cold-chain|transport|trucking|terminal/.test(E)) return 'Teams channel: `Operations Crisis Cell`.';
+    if(/gov|public-sector|smart-city|sovereign|regulator/.test(E)) return 'Teams channel: `Inter-Ministry Steering Committee`.';
+    if(/property|construction|reit/.test(E)) return 'Teams channel: `Project Steering Committee`.';
+    if(/education|university/.test(E)) return 'Teams channel: `Senate / Academic Council`.';
+    if(/^dept-/.test(E)) return 'Teams channel: `Group ExCo + functional council`.';
+    return 'Teams channel: `Group ExCo`.';
+  })();
+  return [
+    fileLine,
+    'Distribution list: Hadar (Group CFO), Sasha (Group CoS), Daichi (Head of IR), Sonia (Head of Strategy), Will (Head of Risk), Omar (Head of Procurement) — adapt per sub-task.',
+    channel,
+    'Sensitivity label preset selected before Cowork runs (so the label travels with the artefact when shared externally).',
+  ];
+}
 function _coworkRunbookHtml(item,tool,promptText,lines){
   const apps=_coworkAppsFromIcons(lines);
   const cmplx=_coworkComplexity(lines);
   const title=_coworkScenarioTitle(promptText);
   const outcomes=_coworkOutcomeFromActions(lines);
   const tips=_coworkTipsForEntry(item&&item.id);
-  // Locale-aware labels
+  const goal=_coworkGoal(item, promptText);
+  const persona=_coworkPersona(item, tool);
+  const preconds=_coworkPreconditions(item);
+  const inputs=_coworkInputs(item, tool);
+  // Locale-aware labels (Aaron Yue / Microsoft Cowork page row order)
+  const L_GOAL=_uL('🎯 Goal');
+  const L_PERS=_uL('👤 Persona');
+  const L_PRE=_uL('✅ Pre-conditions');
+  const L_IN=_uL('📥 Inputs');
   const L_APPS=_uL('🧰 Apps involved');
   const L_CMPLX=_uL('🧠 Complexity');
   const L_DESC=_uL('📋 Description');
@@ -3602,7 +3715,13 @@ function _coworkRunbookHtml(item,tool,promptText,lines){
   const appsHtml=apps.map(a=>'<span class="cowork-runbook-pill">'+escapeHTML(a)+'</span>').join('');
   const outHtml='<ul class="cowork-runbook-list">'+outcomes.map(o=>'<li>'+escapeHTML(o.icon+' '+o.text)+'</li>').join('')+'</ul>';
   const tipsHtml='<ul class="cowork-runbook-list">'+tips.map(t=>'<li>'+escapeHTML(_xformVal(t,'EN'))+'</li>').join('')+'</ul>';
+  const preHtml='<ul class="cowork-runbook-list">'+preconds.map(p=>'<li>'+escapeHTML(_xformVal(p,'EN'))+'</li>').join('')+'</ul>';
+  const inHtml='<ul class="cowork-runbook-list">'+inputs.map(p=>'<li>'+escapeHTML(_xformVal(p,'EN'))+'</li>').join('')+'</ul>';
   return '<div class="cowork-runbook">'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_GOAL+'</span><span class="cowork-runbook-body">'+escapeHTML(_xformVal(goal,'EN'))+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_PERS+'</span><span class="cowork-runbook-body">'+escapeHTML(_xformVal(persona,'EN'))+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_PRE+'</span><span class="cowork-runbook-body">'+preHtml+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_IN+'</span><span class="cowork-runbook-body">'+inHtml+'</span></div>'+
     '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_APPS+'</span><span class="cowork-runbook-body">'+appsHtml+'</span></div>'+
     '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_CMPLX+'</span><span class="cowork-runbook-body">'+escapeHTML(_xformVal(cmplx,'EN'))+'</span></div>'+
     '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_DESC+'</span><span class="cowork-runbook-body">'+escapeHTML(_xformVal(title,'EN'))+'</span></div>'+
