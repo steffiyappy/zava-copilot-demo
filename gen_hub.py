@@ -3993,15 +3993,21 @@ const OTHER_PAGES = [
     desc: 'Alliance Bank Malaysia × Microsoft 365 Copilot Prompt-a-thon (7 May 2026). 8 team packs across Consumer Banking, SME, Digital Workplace, Finance, Risk, Digital Tech, Comms, and Strategy.',
     url: 'https://steffiyappy.github.io/ABMB7May/',
     password: 'ABMB7May',
-    teamCodes: [
-      {label:'Team 1 — Consumer Banking',                 code:'ConsumerBanking'},
-      {label:'Team 2 — SME Banking',                      code:'SMEBanking'},
-      {label:'Team 3 — Digital Workplace & Employee Exp', code:'DigitalWorkplace'},
-      {label:'Team 4 — Finance & Reporting',              code:'FinanceReporting'},
-      {label:'Team 5 — Risk & Compliance',                code:'RiskCompliance'},
-      {label:'Team 6 — Digital Banking & Tech',           code:'DigitalTechnology'},
-      {label:'Team 7 — Strategy & Change Communications', code:'StrategyComms'},
-      {label:'Team 8 — Operations, Treasury & Biz Mgmt',  code:'OperationsTreasury'}
+    teamGroups: [
+      {
+        label: '7 May — Prompt-a-thon',
+        color: '#B91C1C',
+        teamCodes: [
+          {label:'Team 1 — Consumer Banking',                 code:'ConsumerBanking'},
+          {label:'Team 2 — SME Banking',                      code:'SMEBanking'},
+          {label:'Team 3 — Digital Workplace & Employee Exp', code:'DigitalWorkplace'},
+          {label:'Team 4 — Finance & Reporting',              code:'FinanceReporting'},
+          {label:'Team 5 — Risk & Compliance',                code:'RiskCompliance'},
+          {label:'Team 6 — Digital Banking & Tech',           code:'DigitalTechnology'},
+          {label:'Team 7 — Strategy & Change Communications', code:'StrategyComms'},
+          {label:'Team 8 — Operations, Treasury & Biz Mgmt',  code:'OperationsTreasury'}
+        ]
+      }
     ],
     facilitatorUrl: 'https://steffiyappy.github.io/ABMB7May/?facilitator',
     facilitatorLabel: 'Facilitator view (bypass team lock — all packs)',
