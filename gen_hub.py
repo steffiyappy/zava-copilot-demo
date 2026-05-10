@@ -555,6 +555,93 @@ function _bL(en, id, bm){
   if(lc==='BI') return id;
   return en;
 }
+// Storyboard moment description — value-focused, per-tool. Tells the user what
+// the Copilot tool actually produces (not just "open X and do Y"). Falls back to
+// a generic enriched line if the tool key isn't in the map.
+function _momentDesc(toolKey, toolLabel, verbLow){
+  const k = String(toolKey||'').toLowerCase()
+    .replace(/^t_/,'')
+    .replace(/^m365 copilot[ -]/,'')
+    .replace(/^copilot (in |notebook ?| ?)/,'')
+    .trim();
+  const lbl = String(toolLabel||'').toLowerCase();
+  // Resolve to canonical key
+  let key = k;
+  if(!key){
+    if(lbl.indexOf('researcher')>=0) key='researcher';
+    else if(lbl.indexOf('analyst')>=0) key='analyst';
+    else if(lbl.indexOf('notebook')>=0) key='notebook';
+    else if(lbl.indexOf('cowork')>=0) key='cowork';
+    else if(lbl.indexOf('agent builder')>=0||lbl.indexOf('builder')>=0) key='builder';
+    else if(lbl.indexOf('word agent')>=0) key='word_agt';
+    else if(lbl.indexOf('ppt agent')>=0||lbl.indexOf('powerpoint agent')>=0) key='ppt_agt';
+    else if(lbl.indexOf('excel agent')>=0) key='xl_agt';
+    else if(lbl.indexOf('excel')>=0) key='excel';
+    else if(lbl.indexOf('word')>=0) key='word';
+    else if(lbl.indexOf('powerpoint')>=0||lbl.indexOf('ppt')>=0) key='ppt';
+    else if(lbl.indexOf('outlook')>=0) key='outlook';
+    else if(lbl.indexOf('teams')>=0) key='teams';
+    else if(lbl.indexOf('chat')>=0) key='chat';
+  }
+  // Normalise common synonyms
+  if(key==='powerpoint') key='ppt';
+  if(key==='word_agent') key='word_agt';
+  if(key==='ppt_agent'||key==='powerpoint_agent') key='ppt_agt';
+  if(key==='excel_agent') key='xl_agt';
+  if(key==='agent_builder') key='builder';
+  const EN = {
+    chat:       'Copilot Chat reads every scenario file and returns '+verbLow+' in seconds, with each figure cited to its source so you can defend it on the spot.',
+    researcher: 'Researcher runs a deep multi-source web study and returns '+verbLow+' — every claim peer-reviewed and citation-traceable before it lands.',
+    analyst:    'Analyst writes Python on your data, validates the maths step by step, and returns '+verbLow+' with the working visible alongside the answer.',
+    excel:      'Copilot in Excel turns raw rows into '+verbLow+' — formulas, conditional formatting, charts and a sensitivity view already wired up and ready to drop into the deck.',
+    word:       'Copilot in Word drafts '+verbLow+' from your scenario files in proper exec voice — sections, tables and citations already in place, ready for one final read-through.',
+    ppt:        'Copilot in PowerPoint builds '+verbLow+' slide by slide — speaker notes, layout and visuals pulled straight from your data, no manual deck-jockeying.',
+    outlook:    'Copilot in Outlook surfaces what matters from the inbox and drafts '+verbLow+' ready to send — tone matched to the recipient and threads grouped for fast triage.',
+    teams:      'Copilot in Teams turns the meeting recap into '+verbLow+' — decisions, action owners, due dates and follow-ups extracted automatically from the transcript.',
+    notebook:   'Copilot Notebook synthesises across all your scenario files at once and produces '+verbLow+' — sources surfaced inline, with a Quick Page output ready to share.',
+    cowork:     'Cowork delegates '+verbLow+' as a single parallel task across your apps — drafts, meeting invites and file updates land in your tenant for a final review and send.',
+    word_agt:   'The Word Agent drafts '+verbLow+' straight from chat — full document generated, formatted and saved to OneDrive without leaving Copilot.',
+    ppt_agt:    'The PowerPoint Agent builds '+verbLow+' from chat — fully designed deck with speaker notes saved to OneDrive, ready for one polish pass.',
+    xl_agt:     'The Excel Agent generates '+verbLow+' from chat — workbook with formulas, formatting and charts saved to OneDrive, ready to share.',
+    builder:    'Agent Builder spins up a custom agent that owns '+verbLow+' end to end and shares it with the team in one click — reusable across the next 30 days of work.'
+  };
+  const ID = {
+    chat:       'Copilot Chat membaca semua file skenario dan menghasilkan '+verbLow+' dalam hitungan detik, dengan setiap angka dikutip ke sumbernya sehingga Anda dapat mempertahankannya seketika.',
+    researcher: 'Researcher melakukan studi web multi-sumber yang mendalam dan menghasilkan '+verbLow+' — setiap klaim direview rekan dan kutipannya dapat ditelusuri sebelum ditampilkan.',
+    analyst:    'Analyst menulis Python pada data Anda, memvalidasi perhitungan langkah demi langkah, dan menghasilkan '+verbLow+' dengan langkah kerja terlihat di samping jawaban.',
+    excel:      'Copilot in Excel mengubah baris data mentah menjadi '+verbLow+' — formula, formatting kondisional, grafik dan analisis sensitivitas sudah terangkai siap dimasukkan ke deck.',
+    word:       'Copilot in Word menyusun '+verbLow+' dari file skenario dalam nada eksekutif — bagian, tabel dan kutipan sudah tertata, tinggal sekali baca akhir.',
+    ppt:        'Copilot in PowerPoint membangun '+verbLow+' slide demi slide — catatan presenter, layout dan visual ditarik langsung dari data Anda, tanpa kerja deck manual.',
+    outlook:    'Copilot in Outlook mengangkat hal penting dari inbox dan menyusun '+verbLow+' siap kirim — nada disesuaikan dengan penerima dan thread dikelompokkan untuk triase cepat.',
+    teams:      'Copilot in Teams mengubah recap rapat menjadi '+verbLow+' — keputusan, pemilik aksi, tenggat dan tindak lanjut diekstraksi otomatis dari transkrip.',
+    notebook:   'Copilot Notebook mensintesa semua file skenario sekaligus dan menghasilkan '+verbLow+' — sumber tampak inline, dengan Quick Page siap dibagikan.',
+    cowork:     'Cowork mendelegasikan '+verbLow+' sebagai tugas paralel tunggal lintas aplikasi — draf, undangan rapat dan update file mendarat di tenant Anda untuk ditinjau dan dikirim.',
+    word_agt:   'Word Agent menyusun '+verbLow+' langsung dari chat — dokumen lengkap dihasilkan, diformat, dan disimpan ke OneDrive tanpa keluar dari Copilot.',
+    ppt_agt:    'PowerPoint Agent membangun '+verbLow+' dari chat — deck didesain penuh dengan catatan presenter disimpan ke OneDrive, siap untuk satu pass poles.',
+    xl_agt:     'Excel Agent menghasilkan '+verbLow+' dari chat — workbook dengan formula, formatting dan grafik disimpan ke OneDrive, siap dibagikan.',
+    builder:    'Agent Builder membangun agent kustom yang menangani '+verbLow+' dari ujung ke ujung dan membagikannya ke tim sekali klik — dapat dipakai ulang sepanjang 30 hari kerja berikutnya.'
+  };
+  const BM = {
+    chat:       'Copilot Chat membaca setiap fail senario dan menghasilkan '+verbLow+' dalam beberapa saat, dengan setiap angka dikutip ke sumbernya supaya anda boleh mempertahankannya serta-merta.',
+    researcher: 'Researcher menjalankan kajian web berbilang-sumber yang mendalam dan menghasilkan '+verbLow+' — setiap dakwaan disemak rakan dan rujukan boleh dijejak sebelum dipaparkan.',
+    analyst:    'Analyst menulis Python pada data anda, mengesahkan kiraan langkah demi langkah, dan menghasilkan '+verbLow+' dengan langkah kerja kelihatan bersebelahan jawapan.',
+    excel:      'Copilot in Excel mengubah baris data mentah menjadi '+verbLow+' — formula, formatting bersyarat, carta dan paparan sensitiviti sudah tersambung sedia dimasukkan ke dalam deck.',
+    word:       'Copilot in Word merangka '+verbLow+' daripada fail senario dalam nada eksekutif — seksyen, jadual dan kutipan sudah tersusun, tinggal satu kali baca akhir.',
+    ppt:        'Copilot in PowerPoint membina '+verbLow+' slaid demi slaid — catatan penyampai, susun atur dan visual ditarik terus daripada data anda, tanpa kerja deck manual.',
+    outlook:    'Copilot in Outlook mengangkat perkara penting daripada peti masuk dan merangka '+verbLow+' sedia hantar — nada padan dengan penerima dan thread dikumpulkan untuk triase pantas.',
+    teams:      'Copilot in Teams mengubah rumusan mesyuarat menjadi '+verbLow+' — keputusan, pemilik tindakan, tarikh akhir dan tindakan susulan diekstrak automatik daripada transkrip.',
+    notebook:   'Copilot Notebook mensintesakan semua fail senario sekaligus dan menghasilkan '+verbLow+' — sumber kelihatan inline, dengan Quick Page sedia dikongsi.',
+    cowork:     'Cowork mendelegasikan '+verbLow+' sebagai tugas selari tunggal merentas aplikasi — draf, jemputan mesyuarat dan kemas kini fail mendarat di tenant anda untuk semakan akhir dan hantaran.',
+    word_agt:   'Word Agent merangka '+verbLow+' terus dari chat — dokumen lengkap dihasilkan, diformat dan disimpan ke OneDrive tanpa keluar dari Copilot.',
+    ppt_agt:    'PowerPoint Agent membina '+verbLow+' dari chat — deck direka penuh dengan catatan penyampai disimpan ke OneDrive, sedia untuk satu pas poles.',
+    xl_agt:     'Excel Agent menghasilkan '+verbLow+' dari chat — workbook dengan formula, formatting dan carta disimpan ke OneDrive, sedia dikongsi.',
+    builder:    'Agent Builder membina agent kustom yang menangani '+verbLow+' dari hujung ke hujung dan dikongsi ke pasukan sekali klik — boleh diguna semula sepanjang 30 hari kerja berikutnya.'
+  };
+  const enFb = toolLabel+' helps you produce '+verbLow+' grounded in the scenario files — fast, cited, and ready to drop into your deliverable.';
+  const idFb = toolLabel+' membantu Anda menghasilkan '+verbLow+' berdasarkan file skenario — cepat, terkutip, siap dimasukkan ke deliverable Anda.';
+  const bmFb = toolLabel+' membantu anda menghasilkan '+verbLow+' berasaskan fail senario — pantas, terkutip, sedia dimasukkan ke dalam hasil kerja anda.';
+  return _bL(EN[key]||enFb, ID[key]||idFb, BM[key]||bmFb);
+}
 // UI label dictionary for static chrome strings. Keys are the canonical English label.
 // Values are [BI, BM]; if BM omitted it falls back to BI.
 const _UI = {
@@ -2690,11 +2777,7 @@ function showItem(item,tab){
           let descText='';
           if(toolLabel && cleanVerb){
             const verbLow = cleanVerb.charAt(0).toLowerCase() + cleanVerb.slice(1);
-            descText = _bL(
-              'Open '+toolLabel+' and produce the '+verbLow+', grounded in the scenario files.',
-              'Buka '+toolLabel+' dan hasilkan '+verbLow+' berdasarkan file skenario.',
-              'Buka '+toolLabel+' dan hasilkan '+verbLow+' berasaskan fail senario.'
-            );
+            descText = _momentDesc(t.tool||t.toolId||'', toolLabel, verbLow);
           }
           return '<div class="sb-moment">'+
             '<div class="sb-moment-strip">'+
