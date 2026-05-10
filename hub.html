@@ -2049,36 +2049,38 @@ function _applyDict(out, dict){
 }
 function _translateLocale(s, src){
   if(!s) return s;
-  src = src || 'EN';
-  // Native baked translations: skip phrase substitution entirely.
-  if(src === 'BM_NATIVE' || src === 'EN_NATIVE') return String(s);
-  let out = String(s);
-  if(_locale==='MY_BM' && src==='EN'){
-    out = _applyDict(out, _TRANSLATE_EN_TO_BM);
-  } else if(_locale==='ID_EN' && src==='BI'){
-    out = _applyDict(out, _TRANSLATE_BI_TO_EN);
-  }
-  // Tidy spacing
-  out = out.replace(/[ \t]{2,}/g,' ').replace(/\s+([,.;:])/g,'$1');
-  return out;
+  // Runtime dictionary translators (EN→BM, BI→EN) produced code-switched garbage
+  // when an entry lacked native translations. Disabled — entries without native
+  // *BM / *IDEN now fall back to the cleanest available source language.
+  // Tidy spacing only.
+  return String(s).replace(/[ \t]{2,}/g,' ').replace(/\s+([,.;:])/g,'$1');
 }
 
 // Locale-aware field picker that tracks the source language of the value it returned.
-//   MY_BM with native *BM field → returns *BM, src='BM_NATIVE' (translator skips)
-//   ID_EN with native *IDEN field → returns *IDEN, src='EN_NATIVE' (translator skips)
-//   ID_BI / ID_EN with *ID field → returns *ID, src='BI'
+//   MY_BM with native *BM field → returns *BM, src='BM' (clean BM)
+//   MY_BM without *BM → returns base EN field, src='EN' (clean English fallback)
+//   ID_EN with native *IDEN field → returns *IDEN, src='EN' (clean English in ID context)
+//   ID_EN without *IDEN → returns base EN field, src='EN' (clean English; _scrubReal
+//                          swaps regulator names for ID context)
+//   ID_BI with *ID field → returns *ID, src='BI' (clean Bahasa Indonesia)
+//   ID_BI without *ID → returns base EN, src='EN' (last-resort fallback)
 //   else → returns base field, src='EN'
 function _pickField(item, base){
   if(_locale==='MY_BM'){
     const bmVal = item[base+'BM'];
-    if(bmVal) return {val:bmVal, src:'BM_NATIVE'};
+    if(bmVal) return {val:bmVal, src:'BM'};
+    return {val:(item[base]||''), src:'EN'};
   }
   if(_locale==='ID_EN'){
     const idenVal = item[base+'IDEN'];
-    if(idenVal) return {val:idenVal, src:'EN_NATIVE'};
+    if(idenVal) return {val:idenVal, src:'EN'};
+    return {val:(item[base]||''), src:'EN'};
   }
-  const idVal = item[base+'ID'];
-  if((_locale==='ID_BI' || _locale==='ID_EN') && idVal) return {val:idVal, src:'BI'};
+  if(_locale==='ID_BI'){
+    const idVal = item[base+'ID'];
+    if(idVal) return {val:idVal, src:'BI'};
+    return {val:(item[base]||''), src:'EN'};
+  }
   return {val:(item[base]||''), src:'EN'};
 }
 function _xform(item, base){
@@ -2096,7 +2098,7 @@ function _getPrompts(t){
   let arr, src;
   if(_locale==='MY_BM' && t.promptsBM && t.promptsBM.length){ arr=t.promptsBM; src='BM'; }
   else if(_locale==='ID_BI' && t.promptsID && t.promptsID.length){ arr=t.promptsID; src='BI'; }
-  else if(_locale==='ID_EN' && t.promptsID && t.promptsID.length){ arr=t.promptsID; src='BI'; }
+  else if(_locale==='ID_EN' && t.promptsIDEN && t.promptsIDEN.length){ arr=t.promptsIDEN; src='EN'; }
   else { arr = t.prompts || []; src='EN'; }
   return arr.map(p=>{
     if(typeof p === 'string') return _translateLocale(_scrubReal(p), src);
@@ -2109,7 +2111,8 @@ function _getPrompts(t){
 function _getPersona(t,pi){
   let arr=null, src='EN';
   if(_locale==='MY_BM' && t.personaBM && t.personaBM.length){ arr=t.personaBM; src='BM'; }
-  else if((_locale==='ID_BI' || _locale==='ID_EN') && t.personaID && t.personaID.length){ arr=t.personaID; src='BI'; }
+  else if(_locale==='ID_BI' && t.personaID && t.personaID.length){ arr=t.personaID; src='BI'; }
+  else if(_locale==='ID_EN' && t.personaIDEN && t.personaIDEN.length){ arr=t.personaIDEN; src='EN'; }
   else arr=(t.persona||[]);
   return _translateLocale(_scrubReal(arr[pi]||''), src);
 }
