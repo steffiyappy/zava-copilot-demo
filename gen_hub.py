@@ -2747,6 +2747,120 @@ function _getPrompts(t){
     return r;
   });
 }
+// Standardised 10-step Copilot Notebook Demo Guide flow.
+// Replaces the rendered T_NOTEBOOK prompts so every entry follows the same flow:
+// pre-flight setup → 7 typed prompts (build on each other) → 3 Quick Create.
+function _notebookDemoGuidePrompts(tool){
+  const meta = tool.notebookMeta || {};
+  const srcCount = (meta.sources||[]).length;
+  const lang = _langCode(); // 'EN' | 'BM' | 'BI'
+  const L = function(en, bm, bi){ return lang==='BM'?bm: (lang==='BI'?bi: en); };
+  const SI = function(en, bm, bi){ return _scrubReal(L(en,bm,bi)); };
+  const fileLabel = srcCount > 0 ? srcCount : L('all','semua','semua');
+
+  return [
+    // Prompt 1 — Compliance / Snapshot
+    {instr: SI(
+        'Open the notebook chat below the Instructions field. Pre-flight: ✅ Microsoft 365 Copilot license (Notebooks not available in standard M365). ✅ '+fileLabel+' sources uploaded above. ✅ Instructions field set above. Type the prompt below — Copilot reads ALL sources for every answer.',
+        'Buka chat notebook di bawah medan Instructions. Pra-terbang: ✅ Lesen Microsoft 365 Copilot (Notebooks tiada di M365 standard). ✅ '+fileLabel+' sumber dimuat naik di atas. ✅ Medan Instructions sudah ditetapkan di atas. Taip prompt di bawah — Copilot membaca SEMUA sumber bagi setiap jawapan.',
+        'Buka chat notebook di bawah field Instructions. Pemeriksaan: ✅ Lisensi Microsoft 365 Copilot (Notebooks tidak tersedia di M365 standar). ✅ '+fileLabel+' sumber sudah diunggah di atas. ✅ Field Instructions sudah diatur di atas. Ketik prompt di bawah — Copilot membaca SEMUA sumber untuk setiap jawaban.'
+      ), prompt: SI(
+        'Give me a top-line snapshot across ALL '+fileLabel+' sources in this notebook. Headlines I should know in 30 seconds: the 3-5 numbers that matter most, the single biggest risk, and the single biggest opportunity. Cite the source file (and the tab/section where applicable) at the end of every line.',
+        'Beri saya snapshot teratas merentas SEMUA '+fileLabel+' sumber di notebook ini. Tajuk yang perlu saya tahu dalam 30 saat: 3-5 nombor paling penting, satu risiko terbesar, dan satu peluang terbesar. Petik fail sumber (dan tab/bahagian jika berkenaan) di hujung setiap baris.',
+        'Berikan saya snapshot atas dari SEMUA '+fileLabel+' sumber di notebook ini. Headline yang harus saya ketahui dalam 30 detik: 3-5 angka paling penting, satu risiko terbesar, dan satu peluang terbesar. Kutip file sumber (dan tab/bagian jika berlaku) di akhir tiap baris.'
+      )},
+    // Prompt 2 — Critical issues / red flags
+    {instr: SI(
+        'Stay in the same notebook chat. Type the next prompt — Copilot remembers prompt 1 context.',
+        'Kekal di chat notebook yang sama. Taip prompt seterusnya — Copilot ingat konteks prompt 1.',
+        'Tetap di chat notebook yang sama. Ketik prompt berikut — Copilot mengingat konteks prompt 1.'
+      ), prompt: SI(
+        'List the 5 most critical issues, red flags, or risks I need to act on, sourced from the materials in this notebook. For each one give: (1) the issue in one sentence, (2) the source file + section it came from, (3) the Red/Amber/Green severity, (4) the suggested first action with owner role.',
+        'Senaraikan 5 isu paling kritikal, red flag, atau risiko yang perlu saya tangani, daripada bahan dalam notebook ini. Untuk setiap satu beri: (1) isu dalam satu ayat, (2) fail sumber + bahagian asalnya, (3) keterukan Merah/Kuning/Hijau, (4) tindakan pertama yang dicadangkan dengan peranan pemilik.',
+        'Daftar 5 masalah paling kritis, red flag, atau risiko yang perlu saya tindaklanjuti, dari materi di notebook ini. Untuk masing-masing berikan: (1) masalah dalam satu kalimat, (2) file sumber + bagian asalnya, (3) tingkat Merah/Kuning/Hijau, (4) tindakan pertama yang disarankan dengan peran pemilik.'
+      )},
+    // Prompt 3 — Comparison
+    {instr: SI(
+        'Stay in the same notebook chat. Type the next prompt.',
+        'Kekal di chat notebook yang sama. Taip prompt seterusnya.',
+        'Tetap di chat notebook yang sama. Ketik prompt berikut.'
+      ), prompt: SI(
+        'Compare the top 2 entities, options, divisions, or vendors that appear most often across these sources. Use a side-by-side comparison table with these columns: Name, Headline Strengths, Headline Weaknesses, Hard Numbers (with source citation), and a one-line recommendation for which to favour and why.',
+        'Bandingkan 2 entiti, pilihan, bahagian atau vendor teratas yang paling kerap muncul merentas sumber ini. Gunakan jadual perbandingan bersebelahan dengan lajur: Nama, Kekuatan Utama, Kelemahan Utama, Angka Konkrit (dengan petikan sumber), dan satu baris cadangan untuk mana yang patut dipilih dan mengapa.',
+        'Bandingkan 2 entitas, opsi, divisi, atau vendor teratas yang paling sering muncul di sumber ini. Gunakan tabel perbandingan berdampingan dengan kolom: Nama, Kekuatan Utama, Kelemahan Utama, Angka Konkret (dengan kutipan sumber), dan satu baris rekomendasi untuk mana yang harus dipilih dan mengapa.'
+      )},
+    // Prompt 4 — Recommendation
+    {instr: SI(
+        'Stay in the same notebook chat. Type the next prompt.',
+        'Kekal di chat notebook yang sama. Taip prompt seterusnya.',
+        'Tetap di chat notebook yang sama. Ketik prompt berikut.'
+      ), prompt: SI(
+        'Based on the sources alone, what is your single most defensible recommendation for the most critical decision facing me right now? Justify in 4-6 bullets. Each bullet must cite a source file + section. End with a confidence score (Low / Medium / High) and the top 2 things you would still need to verify before going to my Board.',
+        'Berdasarkan sumber sahaja, apakah cadangan tunggal anda yang paling kukuh untuk keputusan paling kritikal yang saya hadapi sekarang? Justifikasikan dalam 4-6 poin. Setiap poin mesti petik fail sumber + bahagian. Akhiri dengan skor keyakinan (Rendah / Sederhana / Tinggi) dan 2 perkara teratas yang masih perlu disahkan sebelum dibawa ke Lembaga.',
+        'Berdasarkan sumber saja, apa rekomendasi tunggal Anda yang paling kuat untuk keputusan paling kritis yang saya hadapi sekarang? Justifikasi dalam 4-6 poin. Tiap poin harus mengutip file sumber + bagian. Akhiri dengan skor keyakinan (Rendah / Sedang / Tinggi) dan 2 hal teratas yang masih perlu diverifikasi sebelum dibawa ke Direksi.'
+      )},
+    // Prompt 5 — Pre-read brief
+    {instr: SI(
+        'Stay in the same notebook chat. Type the next prompt — this brief becomes the source for prompt 8 (Quick Create — Document).',
+        'Kekal di chat notebook yang sama. Taip prompt seterusnya — ringkasan ini akan menjadi sumber untuk prompt 8 (Quick Create — Document).',
+        'Tetap di chat notebook yang sama. Ketik prompt berikut — briefing ini akan menjadi sumber untuk prompt 8 (Quick Create — Document).'
+      ), prompt: SI(
+        'Draft a 1-page pre-read brief for my next executive meeting. Sections (each ~80-100 words): (1) Headline of the situation; (2) The 3 hard numbers that frame it (with sources); (3) Top 3 risks (Red/Amber/Green); (4) Recommended decision and why; (5) Open questions for the room. Tone: precise, board-ready, no hedging. Cite every claim.',
+        'Sediakan ringkasan pra-baca 1 muka surat untuk mesyuarat eksekutif saya yang seterusnya. Bahagian (~80-100 patah perkataan setiap satu): (1) Tajuk situasi; (2) 3 angka konkrit yang merangkanya (dengan sumber); (3) 3 risiko teratas (Merah/Kuning/Hijau); (4) Keputusan disyorkan dan sebabnya; (5) Soalan terbuka untuk bilik mesyuarat. Nada: tepat, sedia-Lembaga, tanpa berlapik. Petik setiap dakwaan.',
+        'Susun pre-read brief 1 halaman untuk rapat eksekutif saya berikutnya. Bagian (~80-100 kata tiap bagian): (1) Headline situasi; (2) 3 angka konkret yang membingkainya (dengan sumber); (3) 3 risiko teratas (Merah/Kuning/Hijau); (4) Keputusan yang direkomendasikan dan alasannya; (5) Pertanyaan terbuka untuk ruang rapat. Nada: presisi, siap-Direksi, tanpa keraguan. Kutip tiap klaim.'
+      )},
+    // Prompt 6 — Anticipated Q&A
+    {instr: SI(
+        'Stay in the same notebook chat. Type the next prompt.',
+        'Kekal di chat notebook yang sama. Taip prompt seterusnya.',
+        'Tetap di chat notebook yang sama. Ketik prompt berikut.'
+      ), prompt: SI(
+        'List the top 8 questions I will be asked when I present the brief from prompt 5. For each: (a) the question verbatim, (b) a 2-3 sentence draft answer grounded in the sources, (c) the source citation, (d) a flag if my evidence is weak so I know to soften the language.',
+        'Senaraikan 8 soalan teratas yang akan ditanyakan kepada saya apabila saya membentangkan ringkasan dari prompt 5. Untuk setiap satu: (a) soalan kata demi kata, (b) draf jawapan 2-3 ayat berdasarkan sumber, (c) petikan sumber, (d) bendera jika bukti saya lemah supaya saya tahu untuk melembutkan bahasa.',
+        'Daftar 8 pertanyaan teratas yang akan diajukan saat saya mempresentasikan briefing dari prompt 5. Untuk masing-masing: (a) pertanyaan kata demi kata, (b) draft jawaban 2-3 kalimat berdasarkan sumber, (c) kutipan sumber, (d) tanda jika bukti saya lemah supaya saya tahu melunakkan bahasa.'
+      )},
+    // Prompt 7 — 30-day action plan
+    {instr: SI(
+        'Stay in the same notebook chat. Type the next prompt — this is the last typed prompt before the 3 Quick Create buttons.',
+        'Kekal di chat notebook yang sama. Taip prompt seterusnya — ini prompt taip terakhir sebelum 3 butang Quick Create.',
+        'Tetap di chat notebook yang sama. Ketik prompt berikut — ini prompt ketik terakhir sebelum 3 tombol Quick Create.'
+      ), prompt: SI(
+        'Draft a 30-day action plan grounded in the sources. Output as a table with: Day Range, Action, Owner Role, Source Citation, Done-When Definition, Status (set all to Not Started). Cluster actions into Week 1 / Week 2 / Week 3 / Week 4. End with the top 3 dependencies that could derail the plan.',
+        'Sediakan pelan tindakan 30 hari berdasarkan sumber. Keluarkan sebagai jadual dengan: Julat Hari, Tindakan, Peranan Pemilik, Petikan Sumber, Definisi Selesai, Status (tetapkan semua kepada Belum Bermula). Kelompokkan tindakan ke Minggu 1 / Minggu 2 / Minggu 3 / Minggu 4. Akhiri dengan 3 kebergantungan teratas yang boleh menggagalkan pelan.',
+        'Susun rencana aksi 30 hari berdasarkan sumber. Hasilkan sebagai tabel dengan: Rentang Hari, Tindakan, Peran Pemilik, Kutipan Sumber, Definisi Selesai, Status (atur semua ke Belum Dimulai). Kelompokkan tindakan ke Minggu 1 / Minggu 2 / Minggu 3 / Minggu 4. Akhiri dengan 3 ketergantungan teratas yang dapat menggagalkan rencana.'
+      )},
+    // Prompt 8 — Quick Create: Document
+    {instr: SI(
+        '🚀 Quick Create — Document. In the right rail of the notebook, click Quick Create → Document (or "Create a Word document" depending on tenant version). Paste the prompt below into the dialog.',
+        '🚀 Quick Create — Document. Di rail kanan notebook, klik Quick Create → Document (atau "Create a Word document" bergantung pada versi tenant). Tampal prompt di bawah ke dalam dialog.',
+        '🚀 Quick Create — Document. Di rail kanan notebook, klik Quick Create → Document (atau "Create a Word document" tergantung versi tenant). Tempel prompt di bawah ke dialog.'
+      ), prompt: SI(
+        'Generate a Microsoft Word document of the 1-page pre-read brief from prompt 5. Title the doc "Pre-Read Brief — [today\'s date]". Apply heading styles to each of the 5 sections so the doc has a clean Table of Contents. End with a Sources page listing every source file the brief cited.',
+        'Hasilkan dokumen Microsoft Word ringkasan pra-baca 1 muka surat dari prompt 5. Judul dokumen "Ringkasan Pra-Baca — [tarikh hari ini]". Guna gaya tajuk untuk setiap 5 bahagian supaya dokumen mempunyai Jadual Kandungan yang kemas. Akhiri dengan halaman Sumber yang menyenaraikan setiap fail sumber yang dipetik.',
+        'Hasilkan dokumen Microsoft Word pre-read brief 1 halaman dari prompt 5. Judul dokumen "Pre-Read Brief — [tanggal hari ini]". Terapkan gaya heading ke tiap 5 bagian supaya dokumen punya Daftar Isi yang rapi. Akhiri dengan halaman Sumber yang mendaftar tiap file sumber yang dikutip.'
+      )},
+    // Prompt 9 — Quick Create: Presentation
+    {instr: SI(
+        '🚀 Quick Create — Presentation. In the right rail, click Quick Create → Presentation (or "Create a presentation"). Paste the prompt below.',
+        '🚀 Quick Create — Presentation. Di rail kanan, klik Quick Create → Presentation (atau "Create a presentation"). Tampal prompt di bawah.',
+        '🚀 Quick Create — Presentation. Di rail kanan, klik Quick Create → Presentation (atau "Create a presentation"). Tempel prompt di bawah.'
+      ), prompt: SI(
+        'Generate a 12-slide PowerPoint executive overview. Slide 1 title; slide 2 the headline numbers from prompt 1; slides 3-5 the top 3 risks with one slide each; slide 6 the comparison table from prompt 3; slide 7 the recommendation from prompt 4; slides 8-11 the 30-day plan from prompt 7 (one week per slide); slide 12 anticipated questions from prompt 6. Visual style: clean executive, no clip art, dark navy + accent.',
+        'Hasilkan slaid PowerPoint gambaran keseluruhan eksekutif 12-slaid. Slaid 1 tajuk; slaid 2 nombor utama dari prompt 1; slaid 3-5 3 risiko teratas satu slaid sebelah; slaid 6 jadual perbandingan dari prompt 3; slaid 7 cadangan dari prompt 4; slaid 8-11 pelan 30-hari dari prompt 7 (satu minggu per slaid); slaid 12 soalan yang dijangka dari prompt 6. Gaya visual: eksekutif kemas, tiada clip art, navy gelap + aksen.',
+        'Hasilkan deck PowerPoint executive overview 12 slide. Slide 1 judul; slide 2 angka headline dari prompt 1; slide 3-5 3 risiko teratas satu slide masing-masing; slide 6 tabel perbandingan dari prompt 3; slide 7 rekomendasi dari prompt 4; slide 8-11 rencana 30 hari dari prompt 7 (satu minggu per slide); slide 12 pertanyaan antisipasi dari prompt 6. Gaya visual: executive bersih, tanpa clip art, navy gelap + aksen.'
+      )},
+    // Prompt 10 — Quick Create: Audio Overview
+    {instr: SI(
+        '🎧 Quick Create — Audio Overview. In the right rail, click Quick Create → Audio Overview (or "Generate an audio overview"). Paste the prompt below — Notebook produces a ~5 minute spoken summary you can listen to on the way to your meeting.',
+        '🎧 Quick Create — Audio Overview. Di rail kanan, klik Quick Create → Audio Overview (atau "Generate an audio overview"). Tampal prompt di bawah — Notebook menghasilkan ringkasan suara ~5 minit yang anda boleh dengar dalam perjalanan ke mesyuarat.',
+        '🎧 Quick Create — Audio Overview. Di rail kanan, klik Quick Create → Audio Overview (atau "Generate an audio overview"). Tempel prompt di bawah — Notebook menghasilkan ringkasan suara ~5 menit yang dapat Anda dengar di perjalanan ke rapat.'
+      ), prompt: SI(
+        'Generate a 5-minute audio overview of the entire notebook for an executive listener walking into the meeting. Open with the headline from prompt 1, then walk through the top 3 risks, the recommendation, and close with the first 3 actions from the 30-day plan. Conversational tone, 2 hosts taking turns, no stat dumps — narrate the numbers in plain English.',
+        'Hasilkan gambaran audio 5-minit bagi keseluruhan notebook untuk pendengar eksekutif yang sedang masuk mesyuarat. Mula dengan tajuk dari prompt 1, kemudian terangkan 3 risiko teratas, cadangan, dan akhiri dengan 3 tindakan pertama dari pelan 30-hari. Nada perbualan, 2 penyampai bergilir, tiada limpahan angka — naratifkan nombor dalam bahasa yang mudah.',
+        'Hasilkan audio overview 5 menit dari seluruh notebook untuk pendengar eksekutif yang akan masuk rapat. Buka dengan headline dari prompt 1, lalu bahas 3 risiko teratas, rekomendasi, dan tutup dengan 3 aksi pertama dari rencana 30 hari. Nada percakapan, 2 host bergantian, tanpa banjir angka — narasikan angka dalam bahasa sederhana.'
+      )}
+  ];
+}
 function _getPersona(t,pi){
   let arr=null, src='EN';
   if(_locale==='MY_BM' && t.personaBM && t.personaBM.length){ arr=t.personaBM; src='BM'; }
@@ -3858,7 +3972,7 @@ function showItem(item,tab,preserveScroll){
       pEl.appendChild(sec);
       return;
     }
-    const promptArr=_getPrompts(tool);
+    const promptArr = isNotebook ? _notebookDemoGuidePrompts(tool) : _getPrompts(tool);
     const promHtml=promptArr.map((p,pi)=>{
       const key=_pmKey(id,ti,pi);
       const txt=typeof p==='string'?p:(p.prompt||'');
