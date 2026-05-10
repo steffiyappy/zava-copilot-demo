@@ -4046,6 +4046,42 @@ const OTHER_PAGES = [
     keywords: 'contoso medical finance procurement variance supplier capital board pack immersion'
   },
   {
+    section: 'Customer Workshops',
+    icon: '👔',
+    color: '#0F172A',
+    accent: '#1E293B',
+    name: 'Kenanga — C-Suite Immersion (Contoso)',
+    desc: 'C-Suite Copilot immersion modelled for Kenanga Investment Bank. Group CEO/CFO/COO/CRO scenarios — board narrative, risk lens, investor briefing, executive correspondence with Researcher, Analyst, and Frontier Cowork.',
+    url: 'https://steffiyappy.github.io/contoso-csuite-immersion/',
+    password: 'KenangaCSuite2026',
+    tag: 'C-Suite Workshop',
+    keywords: 'kenanga contoso C-suite CEO CFO COO CRO board executive immersion researcher analyst cowork investment bank'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '🛠️',
+    color: '#0EA5E9',
+    accent: '#0369A1',
+    name: 'Rivanta — CTO Immersion',
+    desc: 'CTO-focused Copilot immersion for Rivanta. Engineering leadership scenarios — architecture review, vendor evaluation, incident retrospective, talent planning. Researcher Critique Mode, Notebook on technical docs, Agent Builder for engineering Q&A.',
+    url: 'https://steffiyappy.github.io/rivanta-cto-immersion/',
+    password: 'RivantaTech2026',
+    tag: 'CTO Workshop',
+    keywords: 'rivanta CTO chief technology officer engineering architecture vendor incident retrospective immersion researcher notebook agent builder'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '🤝',
+    color: '#9333EA',
+    accent: '#6B21A8',
+    name: 'Contoso — Cowork Immersion',
+    desc: 'Frontier-tier Copilot Cowork immersion (14 May 2026). Day-in-the-life of a Group CFO using Cowork to delegate 5 parallel sub-tasks — board pack draft, lender holding lines, IR alignment email, risk committee scheduling, ExCo Teams update.',
+    url: 'https://steffiyappy.github.io/contoso-cowork-immersion/',
+    password: 'ContosoCowork14May',
+    tag: 'Cowork Workshop · Frontier',
+    keywords: 'contoso cowork frontier delegation parallel CFO board pack lender investor risk committee teams immersion'
+  },
+  {
     section: 'Hackathons',
     icon: '🏦',
     color: '#B91C1C',
