@@ -563,134 +563,130 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 }
 /* DARK theme: ensure contrast on tokens that started life as light-only */
 [data-theme="dark"] .stat-chip,
-[data-theme="system"] .stat-chip,
-[data-theme="dark"] .grid-tab,
-[data-theme="system"] .grid-tab{color:var(--text)}
-[data-theme="dark"] .grid-tab.active,
-[data-theme="system"] .grid-tab.active{color:#FFFFFF}
+[data-theme="dark"] .grid-tab{color:var(--text)}
+[data-theme="dark"] .grid-tab.active{color:#FFFFFF}
 [data-theme="dark"] .ind-card-name,
-[data-theme="system"] .ind-card-name,
 [data-theme="dark"] .persona-name,
-[data-theme="system"] .persona-name,
-[data-theme="dark"] .personas-title,
-[data-theme="system"] .personas-title{color:var(--text-strong)}
-[data-theme="dark"] .sb-phase-summary,
-[data-theme="system"] .sb-phase-summary{color:var(--text)}
-[data-theme="dark"] .sidebar-search-input,
-[data-theme="system"] .sidebar-search-input{color:var(--text)}
-[data-theme="dark"] .sidebar-search-input::placeholder,
-[data-theme="system"] .sidebar-search-input::placeholder{color:var(--muted-2)}
-[data-theme="dark"] .sb-hero-right h3.right-title,
-[data-theme="system"] .sb-hero-right h3.right-title{color:var(--text-strong)}
-[data-theme="dark"] ::-webkit-scrollbar-track,
-[data-theme="system"] ::-webkit-scrollbar-track{background:var(--surface-3)}
-[data-theme="dark"] ::-webkit-scrollbar-thumb,
-[data-theme="system"] ::-webkit-scrollbar-thumb{background:var(--border-strong)}
+[data-theme="dark"] .personas-title{color:var(--text-strong)}
+[data-theme="dark"] .sb-phase-summary{color:var(--text)}
+[data-theme="dark"] .sidebar-search-input{color:var(--text)}
+[data-theme="dark"] .sidebar-search-input::placeholder{color:var(--muted-2)}
+[data-theme="dark"] .sb-hero-right h3.right-title{color:var(--text-strong)}
+[data-theme="dark"] ::-webkit-scrollbar-track{background:var(--surface-3)}
+[data-theme="dark"] ::-webkit-scrollbar-thumb{background:var(--border-strong)}
 /* DARK theme: rich content blocks (Cowork, Notebook, Agent Builder, Tool prompt block) */
-[data-theme="dark"] .tool-header.open,
-[data-theme="system"] .tool-header.open{background:#0F2540}
-[data-theme="dark"] .tool-info,
-[data-theme="system"] .tool-info{background:linear-gradient(135deg,#0E1F33,#0F2540);border-bottom-color:#155E75}
-[data-theme="dark"] .tool-info-label,
-[data-theme="system"] .tool-info-label{color:#7DD3FC}
-[data-theme="dark"] .tool-info-body,
-[data-theme="system"] .tool-info-body{color:#BAE6FD}
-[data-theme="dark"] .cowork-actions,
-[data-theme="system"] .cowork-actions{background:linear-gradient(135deg,#3B1F0A,#4A2A10);border-color:#7C2D12}
-[data-theme="dark"] .cowork-actions-label,
-[data-theme="system"] .cowork-actions-label{color:#FED7AA}
-[data-theme="dark"] .cowork-action-line,
-[data-theme="system"] .cowork-action-line{color:#FFEDD5;border-top-color:rgba(254,215,170,0.18)}
-[data-theme="dark"] .cowork-action-num,
-[data-theme="system"] .cowork-action-num{color:#FBBF24}
-[data-theme="dark"] .notebook-meta,
-[data-theme="system"] .notebook-meta{background:linear-gradient(135deg,#0E2538,#10324A);border-color:#155E75}
-[data-theme="dark"] .notebook-meta-label,
-[data-theme="system"] .notebook-meta-label{color:#7DD3FC}
-[data-theme="dark"] .notebook-source-pill,
-[data-theme="system"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
-[data-theme="dark"] .notebook-instr-row,
-[data-theme="system"] .notebook-instr-row{background:rgba(125,211,252,0.10);color:#BAE6FD}
-[data-theme="dark"] .notebook-instr-row strong,
-[data-theme="system"] .notebook-instr-row strong{color:#7DD3FC}
-[data-theme="dark"] .agent-block,
-[data-theme="system"] .agent-block{background:linear-gradient(135deg,#2B1F08,#3A2A0E);border-color:#92400E}
-[data-theme="dark"] .agent-intro,
-[data-theme="system"] .agent-intro{color:#FDE68A}
-[data-theme="dark"] .agent-card,
-[data-theme="system"] .agent-card{background:rgba(180,83,9,0.18);border-color:#92400E}
-[data-theme="dark"] .agent-card:hover,
-[data-theme="system"] .agent-card:hover{background:rgba(180,83,9,0.30);border-color:#B45309}
-[data-theme="dark"] .agent-card.selected,
-[data-theme="system"] .agent-card.selected{background:rgba(180,83,9,0.45);border-color:#FBBF24}
-[data-theme="dark"] .agent-card-title,
-[data-theme="system"] .agent-card-title{color:#FDE68A}
-[data-theme="dark"] .agent-card-desc,
-[data-theme="system"] .agent-card-desc{color:#FCD34D}
-[data-theme="dark"] .agent-step,
-[data-theme="system"] .agent-step{background:var(--surface-2);border-color:var(--border-strong)}
-[data-theme="dark"] .agent-step-tip,
-[data-theme="system"] .agent-step-tip{background:#3A2A0E;border-color:#B45309;color:#FDE68A}
-[data-theme="dark"] .agent-step-share,
-[data-theme="system"] .agent-step-share{background:#0E2A1A;border-color:#16A34A;color:#86EFAC}
-[data-theme="dark"] .agent-knowledge-list .file,
-[data-theme="system"] .agent-knowledge-list .file{background:#0F2540;color:#7DD3FC}
-[data-theme="dark"] .agent-step-label-strong,
-[data-theme="system"] .agent-step-label-strong{color:#FBBF24}
-[data-theme="dark"] .agent-license-note,
-[data-theme="system"] .agent-license-note{background:linear-gradient(135deg,#3A2A0E,#4A3514);border-color:#B45309;border-left-color:#FBBF24}
-[data-theme="dark"] .agent-license-title,
-[data-theme="system"] .agent-license-title{color:#FBBF24}
-[data-theme="dark"] .agent-license-body,
-[data-theme="system"] .agent-license-body{color:#FDE68A}
-[data-theme="dark"] .agent-license-body b,
-[data-theme="system"] .agent-license-body b{color:#FEF3C7}
-[data-theme="dark"] .prompt-text,
-[data-theme="system"] .prompt-text{background:#0F2540;color:#E2E8F0;border-left-color:#3B82F6}
-[data-theme="dark"] .prompt-text-label,
-[data-theme="system"] .prompt-text-label{color:#7DD3FC}
-[data-theme="dark"] .prompt-instr,
-[data-theme="system"] .prompt-instr{border-color:var(--border-strong);border-left-color:var(--muted)}
-[data-theme="dark"] .pill.dept,
-[data-theme="system"] .pill.dept{background:#3A2A0E;color:#FDBA74;border:1px solid #92400E}
-[data-theme="dark"] .dept-pill,
-[data-theme="system"] .dept-pill{background:#3A2A0E;color:#FDBA74;border-color:#92400E}
-[data-theme="dark"] .dept-pill:hover,
-[data-theme="system"] .dept-pill:hover{background:#5A3F18;color:#FED7AA}
-[data-theme="dark"] .subs-pill,
-[data-theme="system"] .subs-pill{background:#0F2540;color:#93C5FD;border-color:#1E3A8A}
-[data-theme="dark"] .file-ext.msg,
-[data-theme="system"] .file-ext.msg{background:#3A2A0E;color:#FDBA74}
-[data-theme="dark"] .tool-license.frontier,
-[data-theme="system"] .tool-license.frontier{background:#3A2A0E;color:#FDBA74;border-color:#92400E}
-[data-theme="dark"] .tool-license.basic,
-[data-theme="system"] .tool-license.basic{background:#0E2A1A;color:#86EFAC}
-[data-theme="dark"] .tool-license.premium,
-[data-theme="system"] .tool-license.premium{background:#0F2540;color:#7DD3FC}
-[data-theme="dark"] .pill.basic,
-[data-theme="system"] .pill.basic{background:#0E2A1A;color:#86EFAC}
-[data-theme="dark"] .file-ext.docx,
-[data-theme="system"] .file-ext.docx{background:#0F2540;color:#7DD3FC}
-[data-theme="dark"] .persona-lic,
-[data-theme="system"] .persona-lic{background:#0F2540;color:#7DD3FC}
-[data-theme="dark"] .persona-lic.free,
-[data-theme="system"] .persona-lic.free{background:#0E2A1A;color:#86EFAC}
-[data-theme="dark"] .op-card-pwd.none,
-[data-theme="system"] .op-card-pwd.none{background:#0E2A1A;color:#86EFAC;border-color:#16A34A}
-[data-theme="dark"] .prompt-item,
-[data-theme="system"] .prompt-item{border-bottom-color:var(--border)}
-[data-theme="dark"] .prompt-item:hover,
-[data-theme="system"] .prompt-item:hover{background:var(--surface-2)}
-[data-theme="dark"] .agent-query,
-[data-theme="system"] .agent-query{background:var(--surface-2);color:var(--text)}
-[data-theme="dark"] .agent-field,
-[data-theme="system"] .agent-field{background:var(--surface-2);color:var(--text)}
+[data-theme="dark"] .tool-header.open{background:#0F2540}
+[data-theme="dark"] .tool-info{background:linear-gradient(135deg,#0E1F33,#0F2540);border-bottom-color:#155E75}
+[data-theme="dark"] .tool-info-label{color:#7DD3FC}
+[data-theme="dark"] .tool-info-body{color:#BAE6FD}
+[data-theme="dark"] .cowork-actions{background:linear-gradient(135deg,#3B1F0A,#4A2A10);border-color:#7C2D12}
+[data-theme="dark"] .cowork-actions-label{color:#FED7AA}
+[data-theme="dark"] .cowork-action-line{color:#FFEDD5;border-top-color:rgba(254,215,170,0.18)}
+[data-theme="dark"] .cowork-action-num{color:#FBBF24}
+[data-theme="dark"] .notebook-meta{background:linear-gradient(135deg,#0E2538,#10324A);border-color:#155E75}
+[data-theme="dark"] .notebook-meta-label{color:#7DD3FC}
+[data-theme="dark"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
+[data-theme="dark"] .notebook-instr-row{background:rgba(125,211,252,0.10);color:#BAE6FD}
+[data-theme="dark"] .notebook-instr-row strong{color:#7DD3FC}
+[data-theme="dark"] .agent-block{background:linear-gradient(135deg,#2B1F08,#3A2A0E);border-color:#92400E}
+[data-theme="dark"] .agent-intro{color:#FDE68A}
+[data-theme="dark"] .agent-card{background:rgba(180,83,9,0.18);border-color:#92400E}
+[data-theme="dark"] .agent-card:hover{background:rgba(180,83,9,0.30);border-color:#B45309}
+[data-theme="dark"] .agent-card.selected{background:rgba(180,83,9,0.45);border-color:#FBBF24}
+[data-theme="dark"] .agent-card-title{color:#FDE68A}
+[data-theme="dark"] .agent-card-desc{color:#FCD34D}
+[data-theme="dark"] .agent-step{background:var(--surface-2);border-color:var(--border-strong)}
+[data-theme="dark"] .agent-step-tip{background:#3A2A0E;border-color:#B45309;color:#FDE68A}
+[data-theme="dark"] .agent-step-share{background:#0E2A1A;border-color:#16A34A;color:#86EFAC}
+[data-theme="dark"] .agent-knowledge-list .file{background:#0F2540;color:#7DD3FC}
+[data-theme="dark"] .agent-step-label-strong{color:#FBBF24}
+[data-theme="dark"] .agent-license-note{background:linear-gradient(135deg,#3A2A0E,#4A3514);border-color:#B45309;border-left-color:#FBBF24}
+[data-theme="dark"] .agent-license-title{color:#FBBF24}
+[data-theme="dark"] .agent-license-body{color:#FDE68A}
+[data-theme="dark"] .agent-license-body b{color:#FEF3C7}
+[data-theme="dark"] .prompt-text{background:#0F2540;color:#E2E8F0;border-left-color:#3B82F6}
+[data-theme="dark"] .prompt-text-label{color:#7DD3FC}
+[data-theme="dark"] .prompt-instr{border-color:var(--border-strong);border-left-color:var(--muted)}
+[data-theme="dark"] .pill.dept{background:#3A2A0E;color:#FDBA74;border:1px solid #92400E}
+[data-theme="dark"] .dept-pill{background:#3A2A0E;color:#FDBA74;border-color:#92400E}
+[data-theme="dark"] .dept-pill:hover{background:#5A3F18;color:#FED7AA}
+[data-theme="dark"] .subs-pill{background:#0F2540;color:#93C5FD;border-color:#1E3A8A}
+[data-theme="dark"] .file-ext.msg{background:#3A2A0E;color:#FDBA74}
+[data-theme="dark"] .tool-license.frontier{background:#3A2A0E;color:#FDBA74;border-color:#92400E}
+[data-theme="dark"] .tool-license.basic{background:#0E2A1A;color:#86EFAC}
+[data-theme="dark"] .tool-license.premium{background:#0F2540;color:#7DD3FC}
+[data-theme="dark"] .pill.basic{background:#0E2A1A;color:#86EFAC}
+[data-theme="dark"] .file-ext.docx{background:#0F2540;color:#7DD3FC}
+[data-theme="dark"] .persona-lic{background:#0F2540;color:#7DD3FC}
+[data-theme="dark"] .persona-lic.free{background:#0E2A1A;color:#86EFAC}
+[data-theme="dark"] .op-card-pwd.none{background:#0E2A1A;color:#86EFAC;border-color:#16A34A}
+[data-theme="dark"] .prompt-item{border-bottom-color:var(--border)}
+[data-theme="dark"] .prompt-item:hover{background:var(--surface-2)}
+[data-theme="dark"] .agent-query{background:var(--surface-2);color:var(--text)}
+[data-theme="dark"] .agent-field{background:var(--surface-2);color:var(--text)}
 @media (prefers-color-scheme: dark){
+  [data-theme="system"] .stat-chip,
+  [data-theme="system"] .grid-tab{color:var(--text)}
+  [data-theme="system"] .grid-tab.active{color:#FFFFFF}
   [data-theme="system"] .ind-card-name,
   [data-theme="system"] .persona-name,
-  [data-theme="system"] .personas-title,
-  [data-theme="system"] .sb-hero-right h3.right-title{color:var(--text-strong)}
+  [data-theme="system"] .personas-title{color:var(--text-strong)}
+  [data-theme="system"] .sb-phase-summary{color:var(--text)}
   [data-theme="system"] .sidebar-search-input{color:var(--text)}
+  [data-theme="system"] .sidebar-search-input::placeholder{color:var(--muted-2)}
+  [data-theme="system"] .sb-hero-right h3.right-title{color:var(--text-strong)}
+  [data-theme="system"] ::-webkit-scrollbar-track{background:var(--surface-3)}
+  [data-theme="system"] ::-webkit-scrollbar-thumb{background:var(--border-strong)}
+  /* DARK theme: rich content blocks (Cowork, Notebook, Agent Builder, Tool prompt block) */
+  [data-theme="system"] .tool-header.open{background:#0F2540}
+  [data-theme="system"] .tool-info{background:linear-gradient(135deg,#0E1F33,#0F2540);border-bottom-color:#155E75}
+  [data-theme="system"] .tool-info-label{color:#7DD3FC}
+  [data-theme="system"] .tool-info-body{color:#BAE6FD}
+  [data-theme="system"] .cowork-actions{background:linear-gradient(135deg,#3B1F0A,#4A2A10);border-color:#7C2D12}
+  [data-theme="system"] .cowork-actions-label{color:#FED7AA}
+  [data-theme="system"] .cowork-action-line{color:#FFEDD5;border-top-color:rgba(254,215,170,0.18)}
+  [data-theme="system"] .cowork-action-num{color:#FBBF24}
+  [data-theme="system"] .notebook-meta{background:linear-gradient(135deg,#0E2538,#10324A);border-color:#155E75}
+  [data-theme="system"] .notebook-meta-label{color:#7DD3FC}
+  [data-theme="system"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
+  [data-theme="system"] .notebook-instr-row{background:rgba(125,211,252,0.10);color:#BAE6FD}
+  [data-theme="system"] .notebook-instr-row strong{color:#7DD3FC}
+  [data-theme="system"] .agent-block{background:linear-gradient(135deg,#2B1F08,#3A2A0E);border-color:#92400E}
+  [data-theme="system"] .agent-intro{color:#FDE68A}
+  [data-theme="system"] .agent-card{background:rgba(180,83,9,0.18);border-color:#92400E}
+  [data-theme="system"] .agent-card:hover{background:rgba(180,83,9,0.30);border-color:#B45309}
+  [data-theme="system"] .agent-card.selected{background:rgba(180,83,9,0.45);border-color:#FBBF24}
+  [data-theme="system"] .agent-card-title{color:#FDE68A}
+  [data-theme="system"] .agent-card-desc{color:#FCD34D}
+  [data-theme="system"] .agent-step{background:var(--surface-2);border-color:var(--border-strong)}
+  [data-theme="system"] .agent-step-tip{background:#3A2A0E;border-color:#B45309;color:#FDE68A}
+  [data-theme="system"] .agent-step-share{background:#0E2A1A;border-color:#16A34A;color:#86EFAC}
+  [data-theme="system"] .agent-knowledge-list .file{background:#0F2540;color:#7DD3FC}
+  [data-theme="system"] .agent-step-label-strong{color:#FBBF24}
+  [data-theme="system"] .agent-license-note{background:linear-gradient(135deg,#3A2A0E,#4A3514);border-color:#B45309;border-left-color:#FBBF24}
+  [data-theme="system"] .agent-license-title{color:#FBBF24}
+  [data-theme="system"] .agent-license-body{color:#FDE68A}
+  [data-theme="system"] .agent-license-body b{color:#FEF3C7}
+  [data-theme="system"] .prompt-text{background:#0F2540;color:#E2E8F0;border-left-color:#3B82F6}
+  [data-theme="system"] .prompt-text-label{color:#7DD3FC}
+  [data-theme="system"] .prompt-instr{border-color:var(--border-strong);border-left-color:var(--muted)}
+  [data-theme="system"] .pill.dept{background:#3A2A0E;color:#FDBA74;border:1px solid #92400E}
+  [data-theme="system"] .dept-pill{background:#3A2A0E;color:#FDBA74;border-color:#92400E}
+  [data-theme="system"] .dept-pill:hover{background:#5A3F18;color:#FED7AA}
+  [data-theme="system"] .subs-pill{background:#0F2540;color:#93C5FD;border-color:#1E3A8A}
+  [data-theme="system"] .file-ext.msg{background:#3A2A0E;color:#FDBA74}
+  [data-theme="system"] .tool-license.frontier{background:#3A2A0E;color:#FDBA74;border-color:#92400E}
+  [data-theme="system"] .tool-license.basic{background:#0E2A1A;color:#86EFAC}
+  [data-theme="system"] .tool-license.premium{background:#0F2540;color:#7DD3FC}
+  [data-theme="system"] .pill.basic{background:#0E2A1A;color:#86EFAC}
+  [data-theme="system"] .file-ext.docx{background:#0F2540;color:#7DD3FC}
+  [data-theme="system"] .persona-lic{background:#0F2540;color:#7DD3FC}
+  [data-theme="system"] .persona-lic.free{background:#0E2A1A;color:#86EFAC}
+  [data-theme="system"] .op-card-pwd.none{background:#0E2A1A;color:#86EFAC;border-color:#16A34A}
+  [data-theme="system"] .prompt-item{border-bottom-color:var(--border)}
+  [data-theme="system"] .prompt-item:hover{background:var(--surface-2)}
+  [data-theme="system"] .agent-query{background:var(--surface-2);color:var(--text)}
+  [data-theme="system"] .agent-field{background:var(--surface-2);color:var(--text)}
 }
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--surface-3)}
@@ -1116,7 +1112,76 @@ const _UI = {
                             '🔍 **Mod Kritik** — Researcher mengkritik sendiri setiap sumber, mengesahkan dakwaan terhadap sumber asal sebelum memasukkan ke dalam laporan. Terbaik untuk mendapat jawapan yang boleh dipercayai dengan cepat.'],
   'researcher-callout-council':
                            ['⚖️ **Dewan Model** — Researcher menjalankan GPT dan Claude secara paralel terhadap brief dan mengembalikan kedua laporan plus surat pengantar sintesis yang menyoroti kesepakatan, perbedaan dan temuan unik. Terbaik untuk keputusan berisiko tinggi yang membutuhkan masukan ahli yang beragam.',
-                            '⚖️ **Majlis Model** — Researcher menjalankan GPT dan Claude secara selari terhadap taklimat dan mengembalikan kedua-dua laporan serta surat iringan sintesis yang menyerlahkan persetujuan, perbezaan dan penemuan unik. Terbaik untuk keputusan berisiko tinggi yang memerlukan input pakar pelbagai.']
+                            '⚖️ **Majlis Model** — Researcher menjalankan GPT dan Claude secara selari terhadap taklimat dan mengembalikan kedua-dua laporan serta surat iringan sintesis yang menyerlahkan persetujuan, perbezaan dan penemuan unik. Terbaik untuk keputusan berisiko tinggi yang memerlukan input pakar pelbagai.'],
+  // Tool-info banner (renderer fallback for tool.desc)
+  '💡 What this tool can do':              ['💡 Apa yang bisa dilakukan tool ini',          '💡 Apa yang boleh alat ini buat'],
+  // Subsidiaries chip strip (entry hero)
+  '📌 Real ASEAN subsidiaries we mapped here (from your account list)':
+                           ['📌 Anak perusahaan ASEAN nyata yang kami petakan di sini (dari daftar akun Anda)',
+                            '📌 Anak syarikat ASEAN sebenar yang kami petakan di sini (daripada senarai akaun anda)'],
+  // Demo Tips (5 hardcoded tips on every entry)
+  'Use <strong>admin@ABSx62256373.onmicrosoft.com</strong> for all Microsoft 365 Copilot premium demos':
+                           ['Gunakan <strong>admin@ABSx62256373.onmicrosoft.com</strong> untuk semua demo Microsoft 365 Copilot premium',
+                            'Gunakan <strong>admin@ABSx62256373.onmicrosoft.com</strong> untuk semua demo Microsoft 365 Copilot premium'],
+  'Use <strong>SashaO@ABSx62256373.onmicrosoft.com</strong> for Copilot Chat Free demos':
+                           ['Gunakan <strong>SashaO@ABSx62256373.onmicrosoft.com</strong> untuk demo Copilot Chat Free',
+                            'Gunakan <strong>SashaO@ABSx62256373.onmicrosoft.com</strong> untuk demo Copilot Chat Free'],
+  'Have the reference Excel/Word files open in the browser before demoing Copilot in that app':
+                           ['Buka file Excel/Word referensi di browser sebelum mendemokan Copilot di app tersebut',
+                            'Buka fail Excel/Word rujukan dalam pelayar sebelum mendemokan Copilot dalam app berkenaan'],
+  'For Notebook demos, click <strong>+ Sources</strong> in the right rail and upload each file from OneDrive — the notebook grounds answers on those sources automatically (no <code>/file</code> tag needed in the prompt body)':
+                           ['Untuk demo Notebook, klik <strong>+ Sources</strong> di rail kanan dan upload setiap file dari OneDrive — notebook akan grounding jawaban pada sumber tersebut secara otomatis (tidak perlu tag <code>/file</code> di body prompt)',
+                            'Untuk demo Notebook, klik <strong>+ Sources</strong> di rail kanan dan muat naik setiap fail dari OneDrive — notebook akan grounding jawapan pada sumber tersebut secara automatik (tidak perlu tag <code>/file</code> dalam body gesaan)'],
+  'For Teams demos, use the demo tenant\'s recorded meetings (New Software Implementation, Potential Merger, Negotiating Marketing Contract)':
+                           ['Untuk demo Teams, gunakan recording meeting dari tenant demo (New Software Implementation, Potential Merger, Negotiating Marketing Contract)',
+                            'Untuk demo Teams, gunakan rakaman mesyuarat dari tenant demo (New Software Implementation, Potential Merger, Negotiating Marketing Contract)'],
+  // Storyboard moment durations
+  '1 min':                 ['1 mnt',                                  '1 min'],
+  '3 min':                 ['3 mnt',                                  '3 min'],
+  '5 min':                 ['5 mnt',                                  '5 min'],
+  // Agent Builder block — section + step labels
+  'Agent Builder · step-by-step': ['Agent Builder · langkah demi langkah', 'Agent Builder · langkah demi langkah'],
+  'Build your own Microsoft 365 Copilot agent — no code required. Pick the use case below that fits the demo. The fields, knowledge, and test queries on the right will swap to match.':
+                           ['Bangun agent Microsoft 365 Copilot Anda sendiri — tanpa kode. Pilih use case di bawah yang sesuai dengan demo. Field, knowledge dan test queries di sebelah kanan akan berubah mengikut pilihan.',
+                            'Bina agent Microsoft 365 Copilot anda sendiri — tanpa kod. Pilih kes guna di bawah yang sesuai dengan demo. Medan, knowledge dan test queries di sebelah kanan akan berubah mengikut pilihan.'],
+  'Step 1':                ['Langkah 1',                              'Langkah 1'],
+  'Step 2':                ['Langkah 2',                              'Langkah 2'],
+  'Step 3':                ['Langkah 3',                              'Langkah 3'],
+  'Step 4 · Share':        ['Langkah 4 · Bagikan',                    'Langkah 4 · Kongsi'],
+  'Open Agent Builder and configure your agent': ['Buka Agent Builder dan konfigurasikan agent Anda',
+                                                   'Buka Agent Builder dan konfigurasikan agent anda'],
+  'Open <code>m365.cloud.microsoft/chat</code> → <b>Agents</b> → <b>+ Create an agent</b>. Fill in the <b>Name</b>, <b>Description</b>, and <b>Instructions</b> fields using the content below — each has its own Copy button.':
+                           ['Buka <code>m365.cloud.microsoft/chat</code> → <b>Agents</b> → <b>+ Create an agent</b>. Isi field <b>Name</b>, <b>Description</b>, dan <b>Instructions</b> menggunakan konten di bawah — masing-masing punya tombol Copy sendiri.',
+                            'Buka <code>m365.cloud.microsoft/chat</code> → <b>Agents</b> → <b>+ Create an agent</b>. Isi medan <b>Name</b>, <b>Description</b>, dan <b>Instructions</b> menggunakan kandungan di bawah — setiap satu ada butang Copy sendiri.'],
+  'Connect knowledge sources': ['Hubungkan sumber knowledge',          'Sambung sumber pengetahuan'],
+  'Click <b>Add Knowledge</b> → <b>SharePoint / OneDrive</b> and connect the documents below.  After uploading, test that the agent can find the cited section before sharing.':
+                           ['Klik <b>Add Knowledge</b> → <b>SharePoint / OneDrive</b> dan hubungkan dokumen di bawah. Setelah upload, uji apakah agent dapat menemukan section yang dikutip sebelum dibagikan.',
+                            'Klik <b>Add Knowledge</b> → <b>SharePoint / OneDrive</b> dan sambungkan dokumen di bawah. Setelah muat naik, uji sama ada agent boleh menemukan bahagian yang dipetik sebelum dikongsikan.'],
+  'Test your agent with 3 realistic queries': ['Uji agent Anda dengan 3 query realistis',
+                                                'Uji agent anda dengan 3 query realistik'],
+  'Use these queries against the right-hand test pane. Verify the agent cites the exact source file and section, and refuses politely when a question is out of scope.':
+                           ['Gunakan query-query ini di test pane sebelah kanan. Pastikan agent mengutip file sumber dan section yang tepat, dan menolak dengan sopan jika pertanyaan di luar scope.',
+                            'Gunakan query ini di test pane sebelah kanan. Pastikan agent memetik fail sumber dan bahagian yang tepat, dan menolak dengan sopan apabila soalan di luar skop.'],
+  'If the agent guesses rather than citing a source': ['Jika agent menebak alih-alih mengutip sumber',
+                                                        'Jika agent meneka berbanding memetik sumber'],
+  'Share with your team':  ['Bagikan dengan tim Anda',                'Kongsi dengan pasukan anda'],
+  'Once satisfied, click <b>Publish</b> → share the link with colleagues.  They can use the agent directly from Microsoft 365 Copilot — no setup needed.':
+                           ['Setelah puas, klik <b>Publish</b> → bagikan link dengan kolega. Mereka dapat menggunakan agent langsung dari Microsoft 365 Copilot — tanpa setup.',
+                            'Apabila berpuas hati, klik <b>Publish</b> → kongsikan pautan dengan rakan sekerja. Mereka boleh menggunakan agent terus dari Microsoft 365 Copilot — tanpa persediaan.'],
+  'Name':                  ['Name',                                    'Name'],
+  'Description':           ['Description',                             'Description'],
+  'System Instructions':   ['System Instructions',                     'System Instructions'],
+  '📋 Copy':               ['📋 Salin',                                '📋 Salin'],
+  '📋 Copy query':         ['📋 Salin query',                          '📋 Salin query'],
+  '💡 Tip':                ['💡 Tips',                                  '💡 Petua'],
+  '🔐 Knowledge tier · Microsoft 365 Copilot': ['🔐 Tingkat Knowledge · Microsoft 365 Copilot',
+                                                 '🔐 Peringkat Pengetahuan · Microsoft 365 Copilot'],
+  'This Agent Builder demo connects <b>SharePoint, OneDrive and uploaded files</b> as knowledge — so the agent can cite exact tabs, sections and clauses. <b>This requires a Microsoft 365 Copilot license.</b>':
+                           ['Demo Agent Builder ini menghubungkan <b>SharePoint, OneDrive dan file yang diupload</b> sebagai knowledge — sehingga agent dapat mengutip tab, section dan klausa yang tepat. <b>Memerlukan lisensi Microsoft 365 Copilot.</b>',
+                            'Demo Agent Builder ini menyambungkan <b>SharePoint, OneDrive dan fail yang dimuat naik</b> sebagai pengetahuan — supaya agent dapat memetik tab, bahagian dan klausa tepat. <b>Memerlukan lesen Microsoft 365 Copilot.</b>'],
+  'On <b>Free Copilot Chat</b> the in-chat Agent Builder is still available, but knowledge is limited to <b>public websites / URLs only</b> (no SharePoint, OneDrive, or file uploads). For a free-tier demo, replace the file knowledge below with a list of public URLs (regulator microsite, IR page, sustainability report PDF link, etc.) and remove any "cite the file name and tab" instructions.':
+                           ['Pada <b>Free Copilot Chat</b>, Agent Builder in-chat tetap tersedia, tetapi knowledge dibatasi pada <b>website / URL publik saja</b> (tidak ada SharePoint, OneDrive, atau upload file). Untuk demo free-tier, ganti file knowledge di bawah dengan daftar URL publik (microsite regulator, halaman IR, link PDF laporan keberlanjutan, dll.) dan hapus instruksi "kutip nama file dan tab".',
+                            'Pada <b>Free Copilot Chat</b>, Agent Builder dalam-chat masih tersedia, tetapi pengetahuan terhad kepada <b>laman web / URL awam sahaja</b> (tiada SharePoint, OneDrive, atau muat naik fail). Untuk demo peringkat free, gantikan pengetahuan fail di bawah dengan senarai URL awam (microsite pengawal selia, halaman IR, pautan PDF laporan kemampanan, dll.) dan keluarkan arahan "petik nama fail dan tab".']
 };
 function _uL(en){
   const lc = _langCode();
@@ -3707,7 +3772,7 @@ function showItem(item,tab,preserveScroll){
   ];
   document.getElementById('detail-tips').innerHTML=
     '<div class="tips-title" style="color:#FFFFFF">'+_uL('⚡ Demo Tips')+'</div>'+
-    tips.map((t,i)=>'<div class="tip-item"><div class="tip-num">'+(i+1)+'</div><div>'+_translateLocale(_scrubReal(t),'EN')+'</div></div>').join('');
+    tips.map((t,i)=>'<div class="tip-item"><div class="tip-num">'+(i+1)+'</div><div>'+_uL(t)+'</div></div>').join('');
   // Sidebar highlight
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   const navEl=document.getElementById('nav-'+id);
