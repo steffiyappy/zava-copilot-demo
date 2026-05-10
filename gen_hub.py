@@ -972,7 +972,9 @@ function setLocale(L){
   buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar();
   _applyLocaleLabels();
   if(_currentItem && document.getElementById('detail-view').style.display!=='none'){
-    showItem(_currentItem,_currentTab);
+    const _prev=window.scrollY;
+    showItem(_currentItem,_currentTab,true);
+    requestAnimationFrame(()=>window.scrollTo({top:_prev,behavior:'instant'}));
   }
 }
 // Backward-compat shims in case any old inline handlers leaked through data
@@ -2850,7 +2852,7 @@ function wnNav(dir){setWn((wnIdx+dir+data.whatsNew.length)%data.whatsNew.length)
 setInterval(()=>wnNav(1),6000);
 
 // ── Show item detail (works for both industries and departments) ──
-function showItem(item,tab){
+function showItem(item,tab,preserveScroll){
   _autoCloseSidebar();
   _currentItem=item;
   _currentTab=tab||'ind';
@@ -3369,12 +3371,15 @@ function showItem(item,tab){
   document.getElementById('home-view').style.display='none';
   const dv=document.getElementById('detail-view');
   dv.classList.add('active'); dv.style.display='block';
-  window.scrollTo({top:0,behavior:'smooth'});
+  if(!preserveScroll) window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function setDetailTab(t){
+  const _prev=window.scrollY;
   _detailTab=t;
-  if(_currentItem) showItem(_currentItem,_currentTab);
+  if(_currentItem) showItem(_currentItem,_currentTab,true);
+  // Restore scroll position so clicking a tab doesn't jump back to the top
+  requestAnimationFrame(()=>window.scrollTo({top:_prev,behavior:'instant'}));
 }
 
 function escapeAttr(s){return String(s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
