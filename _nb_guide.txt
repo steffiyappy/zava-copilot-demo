@@ -1,0 +1,309 @@
+PERSOL APAC — Copilot Notebook Demo Guide
+RFP Evaluation: Talent Acquisition & Workforce Management Platform  |  6 Vendors  |  3 Markets
+This document is your complete presenter's run-sheet for the Copilot Notebook RFP demo. It covers pre-demo setup, the Copilot Instructions system prompt, and 10 ready-to-use demo prompts (7 typed + 3 Quick Create: Presentation, Document, Audio Overview). Total demo run-time: 45–60 minutes.
+📋 How to use this guide:  Complete Sections 1–3 before the demo. During the live session, work through Section 4 in sequence — Prompts 1 to 7 build on each other. Close with the 3 Quick Create buttons (Prompts 8–10) as the final 'wow' moment.
+SECTION 1 — What You Need Before You Start
+Licence requirement
+Copilot Notebook requires a Microsoft 365 Copilot licence. It is NOT available on standard Microsoft 365 without the Copilot add-on.
+✅  Microsoft 365 Copilot (enterprise) — full access, recommended for demo
+✅  Microsoft Copilot Pro (personal/SMB) — full access
+❌  Microsoft 365 without Copilot add-on — Notebooks feature not available
+⚠️  Check before the demo:  Confirm the presenting account has a Copilot licence at https://microsoft365.com. If 'Notebooks' does not appear in the left-hand navigation, the licence is missing — do not proceed without resolving this first.
+Files for this demo
+All files are in your OneDrive folder:  Documents → Customers → Persol → Persol RFP Copilot Notebook Demo
+Upload all 8 files into your Copilot Notebook:
+01_RFP_Tender_Document.docx  — PERSOL's full RFP requirements and evaluation scope
+02_Evaluation_Criteria.docx  — 1,000-point weighted scoring framework (11 categories)
+VendorA_Workday_RFP_Response.xlsx  — Workday proposal (global market leader)
+VendorB_SAP_SuccessFactors_RFP_Response.xlsx  — SAP SuccessFactors proposal
+VendorC_Ramco_RFP_Response.xlsx  — Ramco Systems proposal (APAC-native, KL HQ)
+VendorD_Oracle_RFP_Response.xlsx  — Oracle HCM Cloud proposal
+VendorE_TalentBridge_RFP_Response.xlsx  — TalentBridge Asia proposal (MY startup)
+VendorF_Dynamics365_RFP_Response.xlsx  — Microsoft Dynamics 365 HR proposal
+ℹ️  About the Excel files:  Each vendor Excel workbook contains 4 sheets: (1) Vendor Summary — company profile and compliance count totals; (2) Requirements Response — all Mandatory and High priority requirements with compliance status (FC/PC/NC/R) and vendor response text; (3) Pricing Schedule — 3-year line-item cost breakdown; (4) SLA and Support — 20 SLA items comparing PERSOL requirement vs vendor commitment. Copilot Notebook reads all sheets in each file.
+File compatibility
+All files are confirmed compatible with Copilot Notebook:
+File format: .docx and .xlsx — both reliably read by Copilot Notebook ✅
+File sizes: 40–55 KB each (limit is 150 MB per file) ✅
+Number of files: 8 (limit is 20 files per notebook) ✅
+SECTION 2 — How to Set Up the Notebook
+Step 1 — Create the notebook
+Go to https://microsoft365.com and sign in with your Copilot-licensed account
+In the left navigation panel, click Notebooks → All Notebooks
+Click + New Notebook
+Name it:  PERSOL RFP 2025 – Vendor Evaluation
+Click Create
+Step 2 — Add all 8 files as references
+Method A — Upload directly (recommended for demo reliability):
+In the open notebook, click Add references or the + icon in the Sources panel
+Select Upload file
+Upload all 8 files listed in Section 1 one by one (or select all and drag-drop)
+Method B — Link from OneDrive:
+Click Add references → Files → OneDrive
+Navigate to Documents → Customers → Persol → Persol RFP Copilot Notebook Demo
+Select all 8 files and click Add
+✅  Verify sources loaded:  After adding, you should see all 8 files listed as sources in the notebook panel. Click each file name to confirm it shows a preview before running any prompts.
+Step 3 — Paste the Copilot Instructions (critical — do not skip)
+The Instructions field is a persistent system prompt — it tells Copilot its role and context for every query in this notebook. Without this, responses will be generic and uncalibrated.
+Locate the Instructions field at the top of the notebook (may appear as 'Custom instructions' or behind a ⚙️ gear icon)
+Click to expand it and paste the full text block below
+Click Save or Apply before proceeding
+── COPY ALL TEXT BELOW THIS LINE INTO THE INSTRUCTIONS FIELD ──
+You are a senior procurement consultant specialising in HR technology. You are
+helping PERSOL APAC evaluate six vendor proposals for a Talent Acquisition
+and Workforce Management Platform covering Malaysia, Singapore, and Australia.
+ABOUT PERSOL APAC:
+- Leading recruitment and HR services company; 13 markets across Asia Pacific
+- Headquartered in Kuala Lumpur, Malaysia
+- Key business units: permanent placement, contract staffing, executive search,
+  RPO (Recruitment Process Outsourcing)
+- PERSOL employs and manages approximately 15,000 contract workers across MY/SG/AU
+- The new platform must support PERSOL as both employer and staffing agency
+  (managing workers placed at client sites)
+- Target go-live: Q4 2025 starting with Malaysia, SG by Q1 2026, AU by Q3 2026
+- Evaluation budget: USD 500,000 to USD 2,000,000 over 3 years
+DOCUMENTS IN THIS NOTEBOOK (8 files):
+1. 01_RFP_Tender_Document.docx                   — Full RFP requirements and evaluation scope
+2. 02_Evaluation_Criteria.docx                   — 1,000-point scoring framework (11 categories)
+3. VendorA_Workday_RFP_Response.xlsx             — Workday (US-listed global HCM leader)
+4. VendorB_SAP_SuccessFactors_RFP_Response.xlsx  — SAP SuccessFactors (German enterprise)
+5. VendorC_Ramco_RFP_Response.xlsx               — Ramco Systems (APAC-native, KL HQ)
+6. VendorD_Oracle_RFP_Response.xlsx              — Oracle HCM Cloud (US enterprise suite)
+7. VendorE_TalentBridge_RFP_Response.xlsx        — TalentBridge Asia (Malaysian startup)
+8. VendorF_Dynamics365_RFP_Response.xlsx         — Microsoft Dynamics 365 HR
+VENDOR RESPONSE FILE STRUCTURE — each *_RFP_Response.xlsx contains 4 sheets:
+  Sheet 1 'Vendor Summary'          — Company profile (HQ, APAC offices, contacts, founded, employees)
+                                       Compliance count summary: FC/PC/NC/R totals, Mandatory NC list
+  Sheet 2 'Requirements Response'   — 52 rows covering all Mandatory and High priority requirements
+                                       Columns: Req ID | Category | Priority | Requirement | Compliance Status | Vendor Response
+  Sheet 3 'Pricing Schedule'        — 3-year line-item cost breakdown: licences, implementation,
+                                       support, add-ons; row for Total 3-Year TCO
+  Sheet 4 'SLA and Support'         — 20 SLA items: PERSOL Requirement | Vendor Commitment | Status
+
+COMPLIANCE STATUS CODES:
+  FC = Fully Compliant (meets requirement completely, out of the box)
+  PC = Partially Compliant (meets requirement with limitations or configuration)
+  NC = Not Compliant (does not meet this requirement)
+  R  = Roadmap (feature not yet available; committed delivery within 12 months)
+
+REQUIREMENT PRIORITIES:
+  Mandatory = pass/fail gate; any NC on Mandatory = risk of disqualification
+  High      = heavily weighted in scoring
+  Medium    = standard weighting
+  Low       = nice-to-have
+EVALUATION FRAMEWORK (11 categories, 1,000 points total):
+  1.  Applicant Tracking System            150 pts
+  2.  Workforce Management                 150 pts
+  3.  Payroll Integration                  120 pts
+  4.  Analytics & Reporting                 80 pts
+  5.  Technical & Integration               80 pts
+  6.  Compliance & Data Governance          80 pts
+  7.  Implementation & Onboarding           80 pts
+  8.  Support & Service Levels              80 pts
+  9.  Vendor & Product Stability            80 pts
+  10. Integrations & Ecosystem              50 pts
+  11. User Experience & Adoption            50 pts
+
+  SCORING RULE: FC = 100% of points | PC = 60% | R = 40% | NC = 0%
+  Mandatory NC: automatic 20% penalty applied to that category total
+YOUR ROLE AS PROCUREMENT CONSULTANT:
+- Analyse, compare, score, and recommend based ONLY on content in this notebook
+- Always cite the specific vendor file, sheet name, and requirement ID (e.g., ATS-14)
+  that supports each claim you make
+- Be objective and forensic — surface gaps even if the vendor has not acknowledged them
+- Apply the exact weighting factors from the Evaluation Criteria document when scoring
+- Scrutinise self-reported FC statuses — cross-check against the response text for
+  qualifications like 'via third-party', 'additional module required', 'roadmap item',
+  'custom development needed'
+- Flag any Mandatory requirements with NC or questionable FC status as high-priority risks
+- When asked for a recommendation, take a clear position with evidence-based reasoning
+── END OF INSTRUCTIONS — SAVE BEFORE PROCEEDING ──
+Step 4 — Pre-demo connectivity test
+Run this test prompt BEFORE the live demo session to verify all 8 files are correctly loaded and readable:
+"Connectivity test. From the Pricing Schedule sheet in each of these 6 files — VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, VendorC_Ramco_RFP_Response.xlsx, VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, VendorF_Dynamics365_RFP_Response.xlsx — find the row labelled TOTAL 3-YEAR TCO for each. Present as a 3-column table: Vendor | 3-Year TCO | Currency. Then confirm how many sheets each file contains."
+Expected: 6-row table with TCO figures in USD, plus 4 sheets confirmed for each file. If any file is missing or shows wrong sheet count, re-upload it before the demo.
+⚠️  If Copilot can't locate a specific data point:  Name the file and sheet explicitly: 'In the Pricing Schedule sheet of VendorC_Ramco_RFP_Response.xlsx, read the row labelled TOTAL 3-YEAR TCO.' Specificity always improves accuracy.
+SECTION 3 — Demo Narrative & Framing
+Before typing any prompt, set the scene for the audience with this 2-minute verbal introduction:
+💬 Say this to open:  'PERSOL has just completed collecting six vendor proposals. Each vendor submitted a detailed response — over 147 individual requirements, pricing tables, implementation plans, security questionnaires, and SLAs. Normally, a procurement team would spend 3–4 weeks manually reviewing all of this to shortlist vendors. What I'm going to show you today is how Copilot Notebook processes the same information in minutes — and does it with the depth and rigour of a senior procurement consultant who has read every page.'
+Then open one of the vendor Excel files on screen (VendorA_Workday_RFP_Response.xlsx) and scroll through the Requirements Response sheet to show the audience the raw volume of data — 52 requirements across 4 sheets per vendor. Say:
+💬 Then say:  'This is ONE vendor's submission. There are six of them. Watch what happens when I give all of this to Copilot Notebook — it reads every document simultaneously and gives me the analysis in under a minute.'
+Run the prompts in order. Each phase builds on the previous one — early phases establish facts, later phases deliver judgment and recommendations.
+💡 Demo pacing tip:  Spend 30 seconds reading each response aloud and pointing out 2–3 specific data points before moving to the next prompt. The audience needs time to absorb what they see. Do not rush.
+SECTION 4 — Demo Prompts  (Ready to Copy-Paste)
+8 prompts. 5 typed + 3 Quick Create. Each typed prompt is scoped to a specific sheet or a small number of vendors — this is intentional to avoid context overload. Run in order. Total runtime: ~45 minutes.
+⚠️  If Copilot returns an error or incomplete response:  Scope it down further. Say: 'Look at VendorA, VendorB, and VendorC only. I will ask about the other three separately.' Then combine the findings yourself. Large documents across 6 vendors can hit Copilot's context limit in a single query.
+🔍 Quick Create buttons:  After Prompts 1–5, use the Quick Create bar: 📊 Presentation (Frontier)  |  📄 Document (Frontier)  |  🎧 Audio overview. One click — no typing needed.
+PROMPT 1 — Vendor health check: who's even in the running?
+"From the Vendor Summary sheet of each of these 6 files — VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, VendorC_Ramco_RFP_Response.xlsx, VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, VendorF_Dynamics365_RFP_Response.xlsx — extract and present as a single table:
+
+Vendor Name | HQ Country | APAC Offices | FC Count | PC Count | NC Count | R Count | Mandatory NC Count
+
+Then flag:
+  1. Any vendor with 1 or more Mandatory NCs — name the specific Req IDs
+  2. Any vendor where R (Roadmap) items exceed 15% of total responses — PERSOL would be paying for features not yet built
+
+Sort by Mandatory NC count ascending. Which vendors should not proceed to the next stage, and why?"
+💬 Say:  'I haven't typed a single vendor name — just the file names. Copilot is reading all six Vendor Summary sheets simultaneously. Watch the Mandatory NC column — that's the disqualification signal. Some vendors are already in trouble before we've even scored them.'
+PROMPT 2 — The integrity audit: catch vendors who overclaimed
+⚠️  Run as two batches — Copilot reads the full response text for each vendor, so splitting prevents context overload.
+Batch A — first 3 vendors:
+"Compliance integrity check — Batch A. In the Requirements Response sheet of VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, and VendorC_Ramco_RFP_Response.xlsx:
+
+Find every requirement where the vendor marked themselves FC (Fully Compliant) but their response text uses qualifying language such as: 'via third-party', 'additional module required', 'custom development', 'available on roadmap', 'subject to configuration', or 'available on request'.
+
+For each case output: Vendor | Req ID | Requirement | The exact quote that reveals the qualification.
+
+At the end: how many inflated FC entries did you find for each of the 3 vendors?"
+Batch B — remaining 3 vendors (paste after Batch A completes):
+"Compliance integrity check — Batch B. Same analysis for VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, and VendorF_Dynamics365_RFP_Response.xlsx.
+
+Find every requirement where the vendor marked FC but response text uses: 'via third-party', 'additional module', 'custom development', 'roadmap', 'subject to configuration', or 'available on request'.
+
+For each case: Vendor | Req ID | Requirement | Exact quote.
+
+At the end: how many inflated FC entries per vendor?"
+Synthesis — paste after both batches complete:
+"Based on your Batch A and Batch B integrity findings: which of the 6 vendors is the most aggressive overclaimer? Rank all 6 by number of inflated FC statuses. If each inflation were corrected to PC (60%), which vendor's total compliance picture changes the most — and would it affect who reaches the shortlist?"
+💬 Say:  'Vendors self-score their own compliance. What Copilot just did is read the fine print in every response and find where the words contradict the tick. A human reviewer would need days to catch all of these. This is the most important finding in the evaluation — because it changes who you trust.'
+⏱️  Timing:  Batch A ~45 sec, Batch B ~45 sec, Synthesis ~20 sec. Total ~2 minutes for all three. Point out key findings from each batch as they come in — don't wait for all three before talking.
+PROMPT 3 — The weighted scorecard: rank all 6 vendors
+⚠️  Run as two steps — get compliance counts first, then apply scoring.
+Step A — pull compliance counts (paste this first):
+"From the Vendor Summary sheet of each of the 6 vendor RFP_Response.xlsx files, extract the compliance count table: Vendor | FC | PC | NC | R | Mandatory NC Count. Present as a 6-row table. Then identify which vendors have any Mandatory NCs and in which category."
+Step B — apply the scoring framework (paste after Step A):
+"Using the compliance counts you just extracted, apply the 1,000-point evaluation framework from 02_Evaluation_Criteria.docx. Score each vendor across all 11 categories using: FC = 100%, PC = 60%, R = 40%, NC = 0% of category points. Apply a 20% penalty to any category where a Mandatory requirement is NC.
+
+Present as a full matrix: 6 vendors × 11 categories with scores, plus a final total out of 1,000. Rank the vendors 1–6. Which vendors make the top 3? Which should be eliminated, and why?"
+💬 Say:  'Same criteria, same weights, applied consistently across all 6 vendors — no bias, no fatigue. Step A read the data; Step B applied the scoring model. This is what a procurement committee spends days building in a spreadsheet.'
+PROMPT 4 — The real cost: what PERSOL will actually pay
+"From the Pricing Schedule sheet of each of these 6 files — VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, VendorC_Ramco_RFP_Response.xlsx, VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, VendorF_Dynamics365_RFP_Response.xlsx — show three numbers per vendor:
+
+  A — As-quoted: the TOTAL 3-YEAR TCO row as submitted by the vendor
+  B — Full deployment: A plus any line items in the Pricing Schedule marked as 'recommended' or flagged as 'not in base' in the Notes column that are NOT already included in the base licence — list each item added and its 3-year cost
+  C — Risk-adjusted: Scenario B plus a 15% contingency on the implementation cost line
+
+Present as a 6-row table: Vendor | A | B | C | Gap (C minus A). Which vendor has the largest A-to-C gap? Who offers the best value at full deployment cost?"
+💬 Say:  'Column A is what vendors want you to compare. Column C is what PERSOL will actually spend. That gap is the number the CFO needs to see — and it's different for every vendor. Some gaps are small because they disclosed everything upfront. Some are large because they buried it in footnotes.'
+PROMPT 5 — Risk-adjusted final ranking
+"Using the weighted scores from our Prompt 3 analysis, apply these risk adjustments to each vendor's score:
+  Deduct 50 pts — any unmitigated Mandatory NC still on the table
+  Deduct 30 pts — implementation go-live exceeds 9 months (check the SLA and Support sheet, Go-Live Timeline row)
+  Deduct 25 pts — 3-year TCO (Scenario C from Prompt 4) exceeds USD 1.5 million
+  Deduct 20 pts — no dedicated APAC delivery team cited in Vendor Summary
+  Add    15 pts — vendor cited a verified APAC staffing or recruitment industry reference
+
+Show the original score, adjustments applied (with reason), and final adjusted score for all 6 vendors. Rank 1–6. Who is the clear winner, and which vendor drops most due to risk penalties?"
+💬 Say:  'The raw scorecard measures features. The risk-adjusted scorecard measures what could go wrong. Watch which vendors drop — those deductions are real project risks PERSOL would inherit on day one.'
+PROMPT 6 — CEO/CFO board brief
+"Based on the risk-adjusted ranking: write a 300-word executive brief for PERSOL's CEO and CFO. Cover:
+  1. Recommended vendor and the single most compelling reason to choose them
+  2. Three concrete business outcomes PERSOL can expect in Year 1 (specific to PERSOL's recruitment and staffing model)
+  3. Year 1 cost commitment (from Prompt 4 Scenario B)
+  4. The single biggest risk of delaying this decision by 6 months
+  5. Recommended next step and timeline
+
+Write in plain business language — no technical jargon, no compliance codes. This brief will be read by executives who were not in this evaluation."
+💬 Say:  'This is the brief that would take your procurement team half a day to draft. It uses the vendor's own data, grounded in the files we uploaded. Your team edits it — they don't start from a blank page.'
+PROMPT 7 — Negotiation playbook for the top 2 vendors
+"For the #1 and #2 ranked vendors from our analysis: give PERSOL 3 negotiation moves for each vendor.
+
+For each move specify:
+  - The leverage point (a capability gap, a pricing inconsistency, or something a competitor offers that this vendor doesn't)
+  - The exact ask PERSOL should make
+  - Estimated USD value or commercial benefit of this move
+
+Base every move on evidence from the vendor's own files — Req IDs, pricing line items, or SLA commitments. PERSOL should be able to walk into the negotiation room with this and cite chapter and verse."
+💬 Say:  'The negotiation section uses the vendor's own gaps against them — gaps they disclosed in their own submission. That's the part vendors hope you don't find before you sign. Copilot found all of them in the files they uploaded themselves.'
+QUICK CREATE — Instant Deliverables  (no typing — click the buttons)
+Use the Quick Create bar at the top of the notebook. Everything generated here is grounded in the uploaded files AND the full analysis conversation above. Run in this order:
+PROMPT 8 — Presentation (Frontier): Steering committee deck
+Click  📊 Presentation (Frontier)  in the Quick Create bar.
+Copilot generates a downloadable PowerPoint — vendor overview, scoring heatmap, shortlist comparison, recommended vendor rationale, risk summary, next steps.
+Open the .pptx on screen and scroll through the slides
+Point to the scoring slide: 'Every number here came directly from the vendor proposals'
+💬 Say:  'A vendor selection deck for the board normally takes a consulting team 2–3 days. Copilot generated this from the same files we uploaded. Your team refines it — they don't build it from scratch.'
+PROMPT 9 — Document (Frontier): Formal procurement report
+Click  📄 Document (Frontier)  in the Quick Create bar.
+Copilot generates a downloadable Word document — executive summary, full vendor ranking, category findings, recommended vendor case, runner-up case, next steps. Ready to circulate.
+Open the .docx and scroll to the vendor ranking table
+💬 Say:  'This is the document your procurement team would spend 3 days writing. Grounded first draft in under a minute — every finding traceable back to what the vendors actually submitted.'
+PROMPT 10 — Audio Overview: Stakeholder briefing  (the closer)
+Click  🎧 Audio overview  — run this last.
+Two AI voices discuss the key findings, the recommended vendor, and the critical risks. Let it play for 60–90 seconds.
+💬 Say:  'Any stakeholder who wasn't in this session — the CFO, a board member, a regional director — can listen to this on the way to their next meeting and be fully up to speed. No slides, no briefing call, no prep time.'
+🏁 Closing line:  'In under an hour: 8 documents read, 52 requirements scored per vendor across 6 vendors, every compliance gap and pricing risk surfaced, a board deck, a procurement report, and an audio briefing produced. PERSOL's team spends their time on the decision — not the data processing.'
+SECTION 5 — Supplementary Prompts  (pick and choose during Q&A)
+These prompts are designed for the live Q&A portion — use them when the audience asks follow-up questions or when you want to go deeper. Each is scoped to stay within Copilot's context limits. Pick the ones most relevant to your audience.
+✅  All supplementary prompts below are technically validated:  Each is scoped to the right sheet and file count to avoid context errors. Small sheets (SLA, Pricing, Vendor Summary) can read all 6 at once. Requirements Response prompts are limited to 2–3 vendors.
+SUPP-1 — SLA battle card: who's contractually exposed?
+When to use: after Prompt 3 (scorecard), when someone asks 'what happens if something goes wrong?'
+Reads: SLA and Support sheet only (21 rows per vendor) — safe to read all 6 at once.
+"From the SLA and Support sheet of these 6 files — VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, VendorC_Ramco_RFP_Response.xlsx, VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, VendorF_Dynamics365_RFP_Response.xlsx — extract these 5 rows for each vendor: Uptime | P1 Response Time | P1 Resolution Time | Go-Live Timeline | Support Hours.
+
+Present as a matrix: 5 SLA items × 6 vendors. For each cell show the vendor's commitment and mark ✅ if it meets the PERSOL Requirement column, ⚠️ if it is PC, or ❌ if it falls short.
+
+Which vendor has the strongest overall SLA position? Which vendor has the weakest — and what risk does PERSOL absorb if they underperform?"
+💬 Say:  'SLA clauses are what protect PERSOL when something goes wrong at 2am. This matrix shows exactly which vendors gave PERSOL contractual protection and which kept the language vague enough to wriggle out of it.'
+SUPP-2 — Australia readiness: who can actually operate there?
+When to use: any time someone mentions PERSOL's AU operations, or challenges whether vendors can really cover all 3 markets.
+Reads: Requirements Response PAY + CDG rows only (~12 rows per vendor). Run as two batches.
+Batch A:
+"Australia market readiness — Batch A. From the Requirements Response sheet of VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, and VendorC_Ramco_RFP_Response.xlsx: show only the rows where Category is PAY or CDG. For each row: Req ID | Requirement | Compliance Status | Vendor Response.
+
+Flag any PAY or CDG requirement that is NC or PC, and note whether the vendor's response text specifically addresses Australian payroll (ATO, Single Touch Payroll, Fair Work Act) or Australian data residency requirements."
+Batch B:
+"Australia market readiness — Batch B. Same analysis for VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, and VendorF_Dynamics365_RFP_Response.xlsx. PAY and CDG rows only. Flag any NC or PC with AU-specific commentary."
+Synthesis:
+"Based on the PAY and CDG findings from both batches: rank the 6 vendors by Australia readiness. Which vendors can go live in AU from day one with no additional procurement? Which need extra modules, partners, or custom work? Which should PERSOL disqualify from the AU rollout entirely?"
+💬 Say:  'PERSOL has operations in Australia — this isn't a future market, it's live today. Payroll compliance in AU is some of the most complex in the region — Single Touch Payroll, Fair Work, state-by-state rules. Watch which vendors actually know that.'
+SUPP-3 — The cost in local currency
+When to use: when a Malaysian or Singapore audience asks what the numbers look like in MYR or SGD.
+Reads: Pricing Schedule only (10 rows per vendor) — safe to read all 6 at once.
+"From the Pricing Schedule sheet of these 6 files — VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, VendorC_Ramco_RFP_Response.xlsx, VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, VendorF_Dynamics365_RFP_Response.xlsx — take the TOTAL 3-YEAR TCO row for each vendor.
+
+Convert to MYR using 1 USD = 4.70 MYR and to SGD using 1 USD = 1.35 SGD. Present as a table: Vendor | 3-Yr TCO (USD) | 3-Yr TCO (MYR) | 3-Yr TCO (SGD) | Monthly equivalent (MYR).
+
+Which vendor's 3-year commitment, in MYR per month, represents the best value for a business at PERSOL's scale?"
+💬 Say:  'USD figures can feel abstract. When you see the MYR monthly number — that's what hits the P&L every month. That's the number the finance team will sign off on.'
+SUPP-4 — TalentBridge risk audit: should PERSOL trust a startup?
+When to use: when someone asks 'why not just go with the cheapest option?', or defends TalentBridge's low price.
+Reads: Requirements Response for 1 vendor only — fast and reliable.
+"Single vendor deep dive: TalentBridge Asia (VendorE_TalentBridge_RFP_Response.xlsx).
+
+From the Requirements Response sheet, list every requirement where TalentBridge is NC or PC. For each: Req ID | Priority | Requirement | Status | Their exact response.
+
+From the Vendor Summary sheet, note their founding year, employee count, and APAC office count.
+
+From the SLA and Support sheet, flag any SLA items they marked PC or NC.
+
+Conclusion: if PERSOL selected TalentBridge as the primary vendor for the full MY/SG/AU rollout, what are the top 3 risks PERSOL would be carrying on day one — and what would need to be true for those risks to be acceptable?"
+💬 Say:  'The cheapest number is almost never the cheapest outcome. This is a 3-year platform that 15,000 workers depend on for their payslips. Let's be precise about what PERSOL would be taking on with the lowest-cost option.'
+SUPP-5 — What would you do if you were us?
+When to use: at any point when you want a strong closing statement, or when a senior executive in the room asks for a direct opinion.
+Reads: nothing new — pure synthesis based on prior conversation. Always fast.
+"Step out of the analyst role for a moment. Based on everything we've reviewed today — compliance data, pricing, SLA commitments, risk flags, and the risk-adjusted scores — if you were PERSOL's CHRO, which vendor would you sign, and why?
+
+Don't hedge. Give one vendor, three reasons it's the right call for PERSOL's specific situation as a recruitment and staffing company operating across Malaysia, Singapore, and Australia, and one condition you would insist on before signing the contract."
+💬 Say:  'I'm going to ask Copilot to stop being neutral. Based on everything it has read — all 8 documents — give me a direct answer as if you're responsible for this decision.' Then let the response land. Don't pre-empt it.
+SECTION 6 — Tips, Objection Handling & Known Limitations
+Prompt engineering tips for better results
+Be specific about the file and sheet: 'From the SLA and Support sheet in VendorC_Ramco_RFP_Response.xlsx...' — this eliminates ambiguity across 8 files
+Ask for citations: 'Quote the exact requirement ID and vendor response text that supports this conclusion' — makes output verifiable and trustworthy
+Iterate — don't accept the first response: 'You rated Vendor A as PC on ATS-14. Read their response again and tell me if that rating should actually be NC given they mentioned requiring a third-party module.'
+Reframe for different audiences: 'Rewrite your recommendation as a 5-bullet point email for a non-technical HR Director audience'
+Cross-examine the model: 'You have ranked Vendor F highest. Play devil's advocate — what is the strongest case against choosing Vendor F?'
+Build incrementally: start with 3 vendors, get the response, then: 'Now repeat the same analysis adding the other 3 vendors'
+Handling common audience objections during the demo
+Objection: 'Can Copilot make mistakes? Can we trust this output?'
+Response: 'Every output Copilot produces here is grounded only in the documents you uploaded — it doesn't make things up from the internet. It can only say what the vendors actually wrote. What it adds is the ability to synthesise that across 8 files simultaneously and apply your scoring criteria consistently. The job of the procurement team is to verify the top findings — and Copilot has already pointed them to exactly where to look, with the specific requirement ID and quoted text.'
+Objection: 'This is just summarising — surely our team can do this already.'
+Response: 'Your team can produce summaries. What takes time is the cross-vendor analysis — looking at one requirement across 146 rows in 6 vendor files and spotting where vendor A self-reported FC but their response text says they need a third-party integration. That forensic cross-referencing, done manually, is 3 weeks of work for a team of four. Copilot just did it in 45 seconds.'
+Objection: 'What about confidentiality? Vendor proposals are sensitive.'
+Response: 'Copilot Notebook is hosted within Microsoft 365 — it does not share your data with anyone, does not use it to train models, and is protected by your organisation's Microsoft 365 data boundary. The files you upload stay in your tenant. This is the same compliance posture as your Teams messages and SharePoint files.'
+Known limitations
+Limitation 1 — Colours not read:  Copilot reads cell values, not formatting. Our Excel files use text codes (FC/PC/NC/R) in the Compliance Status column — not just cell colours — so this is not an issue for this demo.
+Limitation 2 — Context window on very large queries:  Prompts asking Copilot to analyse all sheets of all 6 vendor Excel files simultaneously may produce incomplete responses. Break into phases: 'Analyse vendors A, B, C first. Then D, E, F. Then compare your findings.'
+Limitation 3 — No live internet access:  Copilot Notebook is grounded only in your uploaded files. It cannot verify current vendor pricing or certification status. Present this as a BENEFIT: 'The output is 100% based on what the vendors submitted — no hallucinated information from the web.'
+Limitation 4 — File upload availability:  Test uploads the day before the demo. If direct upload is unavailable in the tenant, use the OneDrive link method in Section 2, Step 2. Have a backup screen recording of the prompts if all else fails.
+All company names, vendor details, product names, contacts, pricing figures, and reference customers in the demo files are entirely fictional and created solely for Microsoft demonstration purposes. Any resemblance to real vendors or products is coincidental.

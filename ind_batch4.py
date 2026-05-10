@@ -429,20 +429,40 @@ def _build(c):
       personaID=tm_personas
     )
 
-    # 9. T_NOTEBOOK — 3 prompts
+    # 9. T_NOTEBOOK — 3 prompts (clean dict pattern with notebookMeta)
     nb_en = [
-        f"Create a new Copilot Notebook called '{c['agent_name']} Workbench'. Pin {files[0]}, {files[1]}, {files[3]} and {files[4]} as sources. Ask Copilot for a 6-bullet executive briefing on {c['kpi_phrase_en']}.",
-        f"In the same Notebook, ask Copilot to generate a 12-minute audio overview that {re_en['ceo']} can listen to before {c['event_en']}, structured by FY2025 selisih, root cause, recovery and regulator narrative.",
-        f"In the same Notebook, ask Copilot to surface contradictions across the four pinned sources and list the five biggest reconciliation items the {re_en['cfo']} must close before {c['event_en']}.",
+        {'instr': "All sources are loaded in the notebook (see Notebook setup above). The Instructions field is set. Type the prompt below in the notebook chat.",
+         'prompt': f"Synthesise across all four pinned sources to produce a 6-bullet executive briefing on {c['kpi_phrase_en']}. Cover the FY2025 selisih, the top 3 root causes, the 3 recovery levers ranked by NPV, and the regulator-ready narrative. Cite the source file (and tab/section where applicable) at the end of every bullet."},
+        {'instr': "Stay in the same notebook chat. Type the next prompt — Copilot remembers earlier prompts.",
+         'prompt': f"Generate a 12-minute audio overview that {re_en['ceo']} can listen to before {c['event_en']}, structured by FY2025 selisih, root cause, recovery and regulator narrative. Use the same four pinned sources as the only source of truth and cite at the end of each section."},
+        {'instr': "Stay in the same notebook chat. Type the next prompt — Copilot remembers earlier prompts.",
+         'prompt': f"Surface contradictions across the four pinned sources and list the five biggest reconciliation items the {re_en['cfo']} must close before {c['event_en']}. Present as a RAG table with columns: Item, Source-A statement, Source-B statement, Reconciliation Owner, RAG. Cite both source files per row."},
     ]
     nb_id = [
-        f"Buat Copilot Notebook baru bernama '{c['agent_name_id']} Workbench'. Sematkan {files[0]}, {files[1]}, {files[3]} dan {files[4]} sebagai sumber. Minta Copilot membuat briefing eksekutif 6 bullet mengenai {c['kpi_phrase_id']}.",
-        f"Pada Notebook yang sama, minta Copilot menghasilkan audio overview 12 menit yang dapat didengarkan {re_id['ceo']} sebelum {c['event_id']}, terstruktur berdasarkan selisih FY2025, akar masalah, pemulihan dan narasi regulator.",
-        f"Pada Notebook yang sama, minta Copilot memunculkan kontradiksi di antara empat sumber yang disematkan dan mencantumkan lima item rekonsiliasi terbesar yang harus diselesaikan {re_id['cfo']} sebelum {c['event_id']}.",
+        {'instr': "Semua sumber sudah dimuat di notebook (lihat setup Notebook di atas). Field Instructions sudah diset. Ketik prompt di bawah pada chat notebook.",
+         'prompt': f"Sintesakan keempat sumber yang disematkan untuk membuat briefing eksekutif 6 bullet mengenai {c['kpi_phrase_id']}. Cakup selisih FY2025, 3 akar masalah utama, 3 lever pemulihan berdasarkan peringkat NPV, dan narasi siap-regulator. Kutip file sumber (dan tab/bagian bila relevan) di akhir tiap bullet."},
+        {'instr': "Tetap di chat notebook yang sama. Ketik prompt berikut — Copilot mengingat prompt sebelumnya.",
+         'prompt': f"Hasilkan audio overview 12 menit yang dapat didengarkan {re_id['ceo']} sebelum {c['event_id']}, terstruktur berdasarkan selisih FY2025, akar masalah, pemulihan dan narasi regulator. Gunakan keempat sumber yang disematkan sebagai satu-satunya sumber kebenaran dan kutip di akhir tiap bagian."},
+        {'instr': "Tetap di chat notebook yang sama. Ketik prompt berikut — Copilot mengingat prompt sebelumnya.",
+         'prompt': f"Munculkan kontradiksi di antara empat sumber yang disematkan dan cantumkan lima item rekonsiliasi terbesar yang harus diselesaikan {re_id['cfo']} sebelum {c['event_id']}. Sajikan sebagai tabel RAG dengan kolom: Item, Pernyataan Sumber-A, Pernyataan Sumber-B, Owner Rekonsiliasi, RAG. Kutip kedua file sumber per baris."},
     ]
     nb_personas = ['Hadar Caspit', 'Hadar Caspit', 'Hadar Caspit']
+    nb_sources = [f"/{files[0]}", f"/{files[1]}", f"/{files[3]}", f"/{files[4]}"]
+    nb_instructions_en = (
+        f"You are the Group CFO war-room analyst for {c['co']} preparing for {c['event_en']}. Always cite the source file and tab/section. "
+        f"Tone: precise, regulator-grade, no speculation. Focus the synthesis on {c['kpi_phrase_en']} and {c['recovery_focus_en']}."
+    )
+    nb_instructions_id = (
+        f"Anda adalah analis war-room Direktur Keuangan Grup {c['co_id']} yang menyiapkan {c['event_id']}. Selalu kutip file sumber dan tab/bagian. "
+        f"Nada: presisi, regulator-grade, tanpa spekulasi. Fokus sintesis pada {c['kpi_phrase_id']} dan {c['recovery_focus_id']}."
+    )
     t9 = tool(T_NOTEBOOK, M365_LIC, M365_ACCT, nb_en, DESC_NOTEBOOK,
-              promptsID=nb_id, persona=nb_personas, personaID=nb_personas)
+              promptsID=nb_id, persona=nb_personas, personaID=nb_personas,
+              notebookMeta={
+                  'sources': nb_sources,
+                  'instructions': nb_instructions_en,
+                  'instructionsID': nb_instructions_id,
+              })
 
     # 10. T_COWORK — 2 prompts (each fans out to 5 parallel sub-tasks), FRONTIER_LIC + M365_ACCT
     cw_en = [

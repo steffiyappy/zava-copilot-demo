@@ -1,0 +1,236 @@
+PERSOL APAC — Cowork (Frontier) Demo Guide
+RFP Evaluation Prompts adapted from Copilot Notebook  |  6 Vendors  |  3 Markets
+This guide adapts the Copilot Notebook RFP prompts for use in Microsoft 365 Copilot Cowork (Frontier). All analysis prompts work in both tools — the key differences are how you set context, how you attach files, and what Cowork can do with the output.
+🟫  Brown = SETUP PROMPT  Run this ONCE at the start of every Cowork session. It replaces the Instructions field that Notebook uses. Without it, Cowork has no context about PERSOL or the evaluation framework.
+🟩  Green = ANALYSIS PROMPTS (same as Notebook)  These prompts are identical to the Copilot Notebook versions. Copy-paste them directly. Attach files from OneDrive before sending.
+🔵  Blue = UPGRADED FOR COWORK  These prompts are enhanced versions of the Notebook prompts — they ask Cowork to produce a downloadable file (Word/Excel/PowerPoint) instead of just showing text in the chat. Cowork can do this; Notebook cannot.
+⚠️  Frontier programme required:  Cowork is only available to users enrolled in the Microsoft 365 Frontier early access programme. Access at m365.cloud.microsoft → Agents → Cowork.
+SECTION 1 — How to Start a Cowork Session with the Demo Files
+Step 1 — Open Cowork
+Go to m365.cloud.microsoft and sign in with your Copilot-licensed account
+In the left navigation panel, under Agents, select Cowork
+Start a new conversation
+Step 2 — Attach the 8 demo files
+In the chat input, select Attach cloud files (not Upload from device — files must be in OneDrive):
+Click Attach cloud files in the Cowork chat input
+Navigate to Documents → Customers → Persol → Persol RFP Copilot Notebook Demo
+Select all 8 files and click Add
+📁  The 8 files to attach:  01_RFP_Tender_Document.docx  |  02_Evaluation_Criteria.docx  |  VendorA_Workday_RFP_Response.xlsx  |  VendorB_SAP_SuccessFactors_RFP_Response.xlsx  |  VendorC_Ramco_RFP_Response.xlsx  |  VendorD_Oracle_RFP_Response.xlsx  |  VendorE_TalentBridge_RFP_Response.xlsx  |  VendorF_Dynamics365_RFP_Response.xlsx
+⚠️  Cowork cannot access local files:  Files must be in OneDrive or SharePoint — not on your desktop or Downloads folder. All 8 demo files are already in your OneDrive under Documents → Customers → Persol.
+Step 3 — Run the Setup Prompt FIRST (mandatory)
+Cowork has no persistent Instructions field. Paste the Setup Prompt below as your very first message — before any analysis prompts. This establishes PERSOL's context, the file structure, and Cowork's role for the entire session.
+SETUP PROMPT — Paste this as your first message (with all 8 files attached)
+You are a senior procurement consultant specialising in HR technology. You are helping PERSOL APAC evaluate six vendor proposals for a Talent Acquisition and Workforce Management Platform covering Malaysia, Singapore, and Australia.
+
+ABOUT PERSOL APAC:
+- Leading recruitment and HR services company operating across 13 Asia Pacific markets
+- Headquartered in Kuala Lumpur, Malaysia
+- Core business: permanent placement, contract staffing, executive search, RPO
+- Manages approximately 15,000 contract workers across MY/SG/AU
+- The platform must support PERSOL as both employer AND staffing agency
+- Target go-live: Malaysia Q4 2025, Singapore Q1 2026, Australia Q3 2026
+- Evaluation budget: USD 500,000 to USD 2,000,000 over 3 years
+
+I HAVE ATTACHED 8 FILES:
+1. 01_RFP_Tender_Document.docx                   — Full RFP requirements
+2. 02_Evaluation_Criteria.docx                   — 1,000-point scoring framework (11 categories)
+3. VendorA_Workday_RFP_Response.xlsx             — Workday proposal
+4. VendorB_SAP_SuccessFactors_RFP_Response.xlsx  — SAP SuccessFactors proposal
+5. VendorC_Ramco_RFP_Response.xlsx               — Ramco Systems proposal
+6. VendorD_Oracle_RFP_Response.xlsx              — Oracle HCM Cloud proposal
+7. VendorE_TalentBridge_RFP_Response.xlsx        — TalentBridge Asia proposal
+8. VendorF_Dynamics365_RFP_Response.xlsx         — Microsoft Dynamics 365 HR proposal
+
+EACH VENDOR XLSX HAS 4 SHEETS:
+  'Vendor Summary'         — Company profile + FC/PC/NC/R compliance count totals
+  'Requirements Response'  — 52 rows: Req ID | Category | Priority | Requirement | Compliance Status | Vendor Response
+  'Pricing Schedule'       — 3-year line-item costs; row labelled TOTAL 3-YEAR TCO
+  'SLA and Support'        — 20 SLA items: PERSOL Requirement | Vendor Commitment | Status
+
+COMPLIANCE CODES: FC=Fully Compliant | PC=Partially Compliant | NC=Not Compliant | R=Roadmap
+PRIORITIES: Mandatory=pass/fail gate | High=heavily weighted | Medium=standard | Low=nice-to-have
+
+SCORING FRAMEWORK (11 categories, 1,000 pts total):
+  ATS 150pts | WFM 150pts | PAY 120pts | ANL 80pts | TEC 80pts | CDG 80pts
+  IMP 80pts  | SLA 80pts  | VPS 80pts  | INT 50pts  | UXA 50pts
+  Rule: FC=100% | PC=60% | R=40% | NC=0% of category points
+  Mandatory NC in any category: 20% penalty on that category total
+
+YOUR ROLE:
+- Analyse and compare vendors based ONLY on the attached files
+- Always cite the specific file name, sheet name, and Req ID for every claim
+- Scrutinise FC statuses — flag any where the response text qualifies with 'via third-party', 'additional module', 'custom development', 'roadmap', or 'subject to configuration'
+- Take a clear position when asked for a recommendation
+
+Acknowledge this setup and confirm you can see all 8 files. List the TOTAL 3-YEAR TCO from the Pricing Schedule sheet of each vendor xlsx as a quick connectivity check.
+✅  Expected response:  Cowork acknowledges the context and returns a 6-row TCO table. If any vendor file is missing, re-attach it before proceeding.
+SECTION 2 — Analysis Prompts  (identical to Copilot Notebook)
+These prompts are copy-pasted directly from the Copilot Notebook guide. No changes needed. Cowork maintains conversation context within a session, so each prompt builds on the previous one — exactly like Notebook.
+💡  No need to re-attach files:  After the Setup Prompt, Cowork remembers the files for the rest of the session. You do not need to re-attach them for each subsequent prompt.
+PROMPT 1 — Vendor health check: who's even in the running?
+"From the Vendor Summary sheet of each of these 6 files — VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, VendorC_Ramco_RFP_Response.xlsx, VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, VendorF_Dynamics365_RFP_Response.xlsx — extract and present as a single table:
+
+Vendor Name | HQ Country | APAC Offices | FC Count | PC Count | NC Count | R Count | Mandatory NC Count
+
+Then flag:
+  1. Any vendor with 1 or more Mandatory NCs — name the specific Req IDs
+  2. Any vendor where R (Roadmap) items exceed 15% of total responses
+
+Sort by Mandatory NC count ascending. Which vendors should not proceed to the next stage, and why?"
+💬 Say:  'Cowork is reading all six Vendor Summary sheets simultaneously. Watch the Mandatory NC column — that's the disqualification signal.'
+PROMPT 2 — The integrity audit: catch vendors who overclaimed
+Run as two batches then a synthesis — prevents context overload on the Requirements Response sheets.
+Batch A — Vendors A, B, C:
+"Compliance integrity check — Batch A. In the Requirements Response sheet of VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, and VendorC_Ramco_RFP_Response.xlsx:
+
+Find every requirement where the vendor marked themselves FC (Fully Compliant) but their response text uses qualifying language such as: 'via third-party', 'additional module required', 'custom development', 'available on roadmap', 'subject to configuration', or 'available on request'.
+
+For each case: Vendor | Req ID | Requirement | The exact quote that reveals the qualification.
+
+At the end: how many inflated FC entries per vendor?"
+Batch B — Vendors D, E, F:
+"Compliance integrity check — Batch B. Same analysis for VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, and VendorF_Dynamics365_RFP_Response.xlsx.
+
+Find every FC where the response text uses: 'via third-party', 'additional module', 'custom development', 'roadmap', 'subject to configuration', or 'available on request'.
+
+For each case: Vendor | Req ID | Requirement | Exact quote.
+
+At the end: how many inflated FC entries per vendor?"
+Synthesis — after both batches:
+"Based on your Batch A and Batch B findings: rank all 6 vendors by number of inflated FC statuses. Which is the most aggressive overclaimer? If each inflation were corrected to PC (60%), which vendor's compliance picture changes the most — and would it affect who reaches the shortlist?"
+💬 Say:  'Vendors self-score their own compliance. Cowork just read the fine print and found where the words contradict the tick. A human reviewer would need days to catch all of these.'
+PROMPT 3 — The weighted scorecard: rank all 6 vendors
+Run as two steps — data pull first, then scoring.
+Step A — pull compliance counts:
+"From the Vendor Summary sheet of each of the 6 vendor RFP_Response.xlsx files, extract: Vendor | FC | PC | NC | R | Mandatory NC Count. Present as a 6-row table. Then identify which vendors have Mandatory NCs and in which category."
+Step B — apply scoring framework:
+"Using the compliance counts you just extracted and the 1,000-point framework from 02_Evaluation_Criteria.docx, score each vendor across all 11 categories: FC=100%, PC=60%, R=40%, NC=0% of category points. Apply 20% penalty for any Mandatory NC in that category.
+
+Present as a full matrix: 6 vendors × 11 categories with scores, plus a total out of 1,000. Rank 1–6. Which vendors make the top 3? Which should be eliminated, and why?"
+💬 Say:  'Same criteria, same weights, applied consistently across all 6 vendors — no bias, no fatigue. Step A read the data; Step B applied the scoring model.'
+PROMPT 4 — The real cost: what PERSOL will actually pay
+"From the Pricing Schedule sheet of each of these 6 files — VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, VendorC_Ramco_RFP_Response.xlsx, VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, VendorF_Dynamics365_RFP_Response.xlsx — show three numbers per vendor:
+
+  A — As-quoted: the TOTAL 3-YEAR TCO row as submitted
+  B — Full deployment: A plus any line items marked 'recommended' or 'not in base' in the Notes column — list each item and its 3-year cost
+  C — Risk-adjusted: Scenario B plus a 15% contingency on the implementation cost line
+
+Present as a 6-row table: Vendor | A | B | C | Gap (C minus A). Which vendor has the largest gap? Who offers the best value at full cost?"
+💬 Say:  'Column A is what vendors want you to compare. Column C is what PERSOL will actually spend. That gap is the number the CFO needs to see.'
+PROMPT 5 — Risk-adjusted final ranking
+"Using the weighted scores from our Prompt 3 analysis, apply these risk adjustments:
+  Deduct 50 pts — any unmitigated Mandatory NC
+  Deduct 30 pts — go-live exceeds 9 months (check SLA and Support sheet, Go-Live Timeline row)
+  Deduct 25 pts — 3-year TCO (Scenario C from Prompt 4) exceeds USD 1.5 million
+  Deduct 20 pts — no dedicated APAC delivery team in Vendor Summary
+  Add    15 pts — verified APAC staffing/recruitment industry reference cited
+
+Show original score, adjustments with reasons, and final adjusted score for all 6 vendors. Rank 1–6. Who is the clear winner? Which vendor drops most due to risk penalties?"
+💬 Say:  'The raw scorecard measures features. The risk-adjusted scorecard measures what could go wrong. Watch which vendors drop — those deductions are real risks PERSOL inherits on day one.'
+SECTION 3 — Upgraded Prompts  (Cowork creates downloadable files)
+These replace Prompts 6, 7, and the Notebook Quick Create buttons. Instead of text in the chat, Cowork creates real files you can download and share. Results appear in the side panel.
+📂  Output files appear in the side panel:  After Cowork creates a file, it appears under Output folder in the right-hand side panel. Click Preview to review it inline, or Download to save it. You can also select Download All to get everything as a zip.
+PROMPT 6 — CEO/CFO brief  →  save as a Word document
+Notebook version: text in chat.  Cowork upgrade: creates a downloadable Word file.
+"Based on the risk-adjusted ranking: write a 300-word executive brief for PERSOL's CEO and CFO and save it as a Word document called 'PERSOL CEO Brief.docx'.
+
+Include:
+  1. Recommended vendor and the single most compelling reason to choose them
+  2. Three concrete business outcomes PERSOL can expect in Year 1 (specific to their recruitment and staffing model)
+  3. Year 1 cost commitment (from Prompt 4 Scenario B)
+  4. The single biggest risk of delaying this decision by 6 months
+  5. Recommended next step and timeline
+
+Write in plain business language — no technical jargon, no compliance codes. Format it as a clean one-page memo ready to circulate."
+💬 Say:  'In Notebook, this comes out as text in the chat. In Cowork, it creates an actual Word document you can email to your CEO today. Same prompt — different output.'
+PROMPT 7 — Negotiation playbook  →  save as a Word document
+Notebook version: text in chat.  Cowork upgrade: creates a downloadable Word file.
+"For the #1 and #2 ranked vendors from our analysis: write a negotiation playbook and save it as a Word document called 'PERSOL Negotiation Playbook.docx'.
+
+For each of the 2 vendors, provide 3 negotiation moves. For each move:
+  - The leverage point (a capability gap, pricing inconsistency, or competitor advantage)
+  - The exact ask PERSOL should make at the negotiation table
+  - Estimated USD value or commercial benefit of this move
+
+Base every move on evidence from the vendor's own files — cite Req IDs, pricing line items, or SLA commitments. PERSOL should be able to walk in and cite chapter and verse.
+
+Format as a clean two-page document with a section per vendor."
+💬 Say:  'This goes straight from Cowork into the hands of whoever is running the negotiation. Every leverage point cited back to the vendor's own submission. That's the part vendors hope you don't find.'
+PROMPT 8 — Steering committee deck  →  PowerPoint  (replaces Quick Create)
+In Notebook, you click the Quick Create: Presentation button. In Cowork, type this prompt.
+"Create a PowerPoint presentation called 'PERSOL Vendor Shortlist — Steering Committee.pptx' for PERSOL's senior leadership.
+
+Include these slides:
+  1. Title: 'Talent Platform Vendor Evaluation: Shortlist & Recommendation'
+  2. Scope: 6 vendors, 3 markets (MY/SG/AU), 11 criteria, 1,000-point framework
+  3. Vendor overview table: all 6 vendors with HQ, APAC offices, FC/PC/NC/R counts (from Vendor Summary sheets)
+  4. Scoring results: 6-vendor ranking table with total scores and key category highlights
+  5. Disqualification review: which vendors have Mandatory NCs and why they are at risk
+  6. Pricing comparison: 3-year TCO for all 6 vendors sorted lowest to highest (from Pricing Schedule sheets)
+  7. Shortlist: top 2 vendors — strengths, gaps, key risks side by side
+  8. Recommendation: recommended vendor, top 3 reasons, Year 1 commitment
+  9. Next steps: 4 steps with suggested timeline
+
+Use a clean, professional design with PERSOL's colours: red (#C00000) and dark blue (#1F4E79)."
+💬 Say:  'In Notebook, one click builds a deck from the conversation. In Cowork, you type what you want and it builds the exact slide structure you need. The result is more controlled — you're directing what goes on each slide.'
+PROMPT 9 — Formal procurement report  →  Word  (replaces Quick Create)
+In Notebook, you click the Quick Create: Document button. In Cowork, type this prompt.
+"Write a formal procurement recommendation report and save it as 'PERSOL Vendor Evaluation Report.docx'.
+
+Structure:
+  1. Executive Summary (1 page): recommended vendor, score, 3 key reasons, Year 1 cost
+  2. Evaluation Methodology: 11-category framework and scoring rules
+  3. Vendor Profiles: one paragraph per vendor — HQ, APAC presence, key strengths
+  4. Compliance Analysis: FC/PC/NC/R count table; all Mandatory NCs with Req IDs
+  5. Weighted Scorecard: full 11-category matrix with scores and final rankings
+  6. Pricing Comparison: 3-year TCO for all 6 vendors sorted lowest to highest
+  7. Risk Assessment: top 2 risks per shortlisted vendor with mitigation
+  8. Recommendation: recommended vendor with 3 business outcomes specific to PERSOL
+  9. Next Steps: 5 action items with suggested owners
+
+Write in formal procurement language. All data from the attached files only."
+💬 Say:  'This is the document your procurement team would spend 3 days writing. Cowork builds it in under 3 minutes — structured, sourced, ready to circulate. Your team edits, they don't start from scratch.'
+SECTION 4 — Supplementary Prompts  (for Q&A — same as Notebook)
+All 5 supplementary prompts from the Notebook guide work identically in Cowork. Copy-paste them directly.
+SUPP-1 — SLA battle card
+Reads SLA and Support sheet only — safe to read all 6 at once.
+"From the SLA and Support sheet of these 6 files — VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, VendorC_Ramco_RFP_Response.xlsx, VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, VendorF_Dynamics365_RFP_Response.xlsx — extract: Uptime | P1 Response | P1 Resolution | Go-Live Timeline | Support Hours.
+
+Present as a matrix: 5 SLA items × 6 vendors. Mark ✅ if meets PERSOL Requirement, ⚠️ if PC, ❌ if it falls short.
+
+Which vendor has the strongest SLA position? Which has the weakest — and what risk does PERSOL absorb?"
+SUPP-2 — Australia readiness
+Reads Requirements Response PAY+CDG rows only. Run as two batches.
+Batch A:
+"Australia readiness — Batch A. From the Requirements Response sheet of VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, and VendorC_Ramco_RFP_Response.xlsx: show only rows where Category is PAY or CDG. For each: Req ID | Requirement | Compliance Status | Vendor Response.
+
+Flag any NC or PC and note whether the response specifically addresses Australian payroll (ATO, Single Touch Payroll, Fair Work Act) or data residency."
+Batch B:
+"Australia readiness — Batch B. Same analysis for VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, and VendorF_Dynamics365_RFP_Response.xlsx. PAY and CDG rows only."
+Synthesis:
+"Rank the 6 vendors by Australia readiness. Which go live in AU from day one? Which need extra modules or partners? Which should PERSOL disqualify from the AU rollout entirely?"
+SUPP-3 — Cost in MYR and SGD
+Reads Pricing Schedule only — safe to read all 6 at once.
+"From the Pricing Schedule sheet of these 6 files — VendorA_Workday_RFP_Response.xlsx, VendorB_SAP_SuccessFactors_RFP_Response.xlsx, VendorC_Ramco_RFP_Response.xlsx, VendorD_Oracle_RFP_Response.xlsx, VendorE_TalentBridge_RFP_Response.xlsx, VendorF_Dynamics365_RFP_Response.xlsx — take the TOTAL 3-YEAR TCO row for each.
+
+Convert using 1 USD = 4.70 MYR and 1 USD = 1.35 SGD. Present as: Vendor | 3-Yr TCO (USD) | 3-Yr TCO (MYR) | 3-Yr TCO (SGD) | Monthly equivalent (MYR).
+
+Which vendor represents the best MYR monthly value for a business at PERSOL's scale?"
+SUPP-4 — TalentBridge risk audit
+Single vendor only — fast and reliable.
+"Single vendor deep dive: TalentBridge Asia (VendorE_TalentBridge_RFP_Response.xlsx).
+
+From Requirements Response: list every NC or PC requirement. For each: Req ID | Priority | Requirement | Status | Exact response.
+From Vendor Summary: note founding year, employee count, APAC office count.
+From SLA and Support: flag any PC or NC items.
+
+Conclusion: if PERSOL selected TalentBridge for the full MY/SG/AU rollout, what are the top 3 risks on day one — and what would need to be true for those risks to be acceptable?"
+SUPP-5 — What would you do if you were us?
+Pure synthesis — no files needed, uses prior conversation only.
+"Step out of the analyst role. Based on everything we've reviewed — compliance data, pricing, SLA commitments, risk flags, and the risk-adjusted scores — if you were PERSOL's CHRO, which vendor would you sign, and why?
+
+Don't hedge. Give one vendor, three reasons it's the right call for PERSOL's specific situation as a recruitment and staffing company across Malaysia, Singapore, and Australia, and one condition you would insist on before signing."
+💬 Say:  'I'm going to ask it to stop being neutral. Based on everything it has read, give me a direct answer as if you're responsible for this decision.' Then let the response land.
+SECTION 5 — Notebook vs Cowork: What Changes
+🎧  Audio Overview not in Cowork:  Prompt 10 (Audio Overview) is a Copilot Notebook-only feature. If your audience wants an audio summary, use the Notebook guide for that step, or describe the findings verbally as your closing. The Cowork guide ends at Prompt 9.
+All company names, vendor details, product names, contacts, pricing figures, and reference customers in the demo files are entirely fictional and created solely for Microsoft demonstration purposes.

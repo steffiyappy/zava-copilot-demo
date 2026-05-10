@@ -1213,6 +1213,7 @@ const _UI = {
                             '🏢 Industri paling terkesan — klik untuk meneroka'],
   '🛠️ Microsoft 365 Copilot Tools':  ['🛠️ Tools Microsoft 365 Copilot',                  '🛠️ Tools Microsoft 365 Copilot'],
   '⚡ Cowork':              ['⚡ Cowork',                                  '⚡ Cowork'],
+  '📓 Copilot Notebook':    ['📓 Copilot Notebook',                       '📓 Copilot Notebook'],
   '💬 Copilot Chat Prompts':['💬 Prompt Copilot Chat',                 '💬 Prompt Copilot Chat'],
   '🆓 Copilot Chat — broader use cases (no license required)':
                            ['🆓 Copilot Chat — kasus penggunaan yang lebih luas (tidak perlu lisensi)',
@@ -3094,6 +3095,11 @@ function _isChatTab(name){return _isChat(name)||_isWordAgt(name)||_isPptAgt(name
 // Cowork now sits in its own tab (between Tools and Chat) — broken out of the Tools cluster
 // because it's a distinct delegation-style flow, not an in-app Copilot.
 function _isCoworkTab(name){return _isCowork(name);}
+// Notebook now sits in its own tab (between Cowork and Chat) — per user UX request:
+// "do not have generic copilot notebook... can break it out as special tab in between
+// cowork and Copilot Chat Prompts". The dedicated tab surfaces the Notebook setup
+// banner (sources + Instructions field) prominently, separate from the in-app Copilots.
+function _isNotebookTab(name){return _isNotebook(name);}
 function _isFrontier(lic){return /Frontier/i.test(lic||'')}
 function _personaColor(name){
   if(!name) return '#6B7280';
@@ -3975,16 +3981,19 @@ function showItem(item,tab,preserveScroll){
     sbWrap.style.display='none';
     sbWrap.innerHTML='';
   }
-  // Tab toggle (Tools vs Cowork vs Chat).
-  // Tools tab = Researcher, Analyst, Excel/Word/PPT in-app, Outlook, Teams, Notebook (everything that's not Chat-tab and not Cowork).
-  // Cowork tab = Cowork only — its own dedicated tab between Tools and Chat per UX request.
+  // Tab toggle (Tools vs Cowork vs Notebook vs Chat).
+  // Tools tab = Researcher, Analyst, Excel/Word/PPT in-app, Outlook, Teams (everything that's not Notebook, Chat-tab or Cowork).
+  // Cowork tab = Cowork only — its own dedicated tab.
+  // Notebook tab = Copilot Notebook only — dedicated tab between Cowork and Chat (per user UX request).
   // Chat tab = T_CHAT + Word/PPT/Excel Agents + Agent Builder (continuous-motion chat-based flow per IHH HR ref).
   const hasChat=item.prompts.some(t=>_isChatTab(t.tool));
   const hasCowork=item.prompts.some(t=>_isCoworkTab(t.tool));
-  const hasOther=item.prompts.some(t=>!_isChatTab(t.tool)&&!_isCoworkTab(t.tool));
+  const hasNotebookTab=item.prompts.some(t=>_isNotebookTab(t.tool));
+  const hasOther=item.prompts.some(t=>!_isChatTab(t.tool)&&!_isCoworkTab(t.tool)&&!_isNotebookTab(t.tool));
   const visibleTabs=[];
   if(hasOther) visibleTabs.push('tools');
   if(hasCowork) visibleTabs.push('cowork');
+  if(hasNotebookTab) visibleTabs.push('notebook');
   if(hasChat) visibleTabs.push('chat');
   const tabsWrap=document.getElementById('detail-tabs');
   if(visibleTabs.length>=2){
@@ -3993,6 +4002,7 @@ function showItem(item,tab,preserveScroll){
     let html='';
     if(hasOther) html+='<button class="detail-tab '+( _detailTab==='tools'?'active':'')+'" id="dtab-tools" onclick="setDetailTab(\'tools\')">'+_uL('🛠️ Microsoft 365 Copilot Tools')+'</button>';
     if(hasCowork) html+='<button class="detail-tab '+( _detailTab==='cowork'?'active':'')+'" id="dtab-cowork" onclick="setDetailTab(\'cowork\')">'+_uL('⚡ Cowork')+'</button>';
+    if(hasNotebookTab) html+='<button class="detail-tab '+( _detailTab==='notebook'?'active':'')+'" id="dtab-notebook" onclick="setDetailTab(\'notebook\')">'+_uL('📓 Copilot Notebook')+'</button>';
     if(hasChat) html+='<button class="detail-tab '+( _detailTab==='chat'?'active':'')+'" id="dtab-chat" onclick="setDetailTab(\'chat\')">'+_uL('💬 Copilot Chat Prompts')+'</button>';
     tabsWrap.innerHTML=html;
   } else {
@@ -4003,9 +4013,10 @@ function showItem(item,tab,preserveScroll){
   // Filter prompts by tab — only when more than one tab is visible
   const visibleTools=item.prompts.filter(t=>{
     if(visibleTabs.length<2) return true;
-    if(_detailTab==='chat')   return _isChatTab(t.tool);
-    if(_detailTab==='cowork') return _isCoworkTab(t.tool);
-    return !_isChatTab(t.tool) && !_isCoworkTab(t.tool);
+    if(_detailTab==='chat')     return _isChatTab(t.tool);
+    if(_detailTab==='cowork')   return _isCoworkTab(t.tool);
+    if(_detailTab==='notebook') return _isNotebookTab(t.tool);
+    return !_isChatTab(t.tool) && !_isCoworkTab(t.tool) && !_isNotebookTab(t.tool);
   });
   // Prompts
   const pEl=document.getElementById('detail-prompts');
@@ -4056,7 +4067,13 @@ function showItem(item,tab,preserveScroll){
       pEl.appendChild(sec);
       return;
     }
-    const promptArr = isNotebook ? _notebookDemoGuidePrompts(tool, item.files, item.tagline) : _getPrompts(tool);
+    const userPrompts = _getPrompts(tool);
+    const hasRichUserPrompts = isNotebook && userPrompts && userPrompts.length >= 2 &&
+      userPrompts.every(p => {
+        const t = (typeof p === 'string') ? p : (p && p.prompt) || '';
+        return t.length >= 60;
+      });
+    const promptArr = (isNotebook && !hasRichUserPrompts) ? _notebookDemoGuidePrompts(tool, item.files, item.tagline) : userPrompts;
     const promHtml=promptArr.map((p,pi)=>{
       const key=_pmKey(id,ti,pi);
       const txt=typeof p==='string'?p:(p.prompt||'');

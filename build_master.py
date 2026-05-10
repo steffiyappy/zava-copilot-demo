@@ -384,6 +384,41 @@ try:
 except Exception as _e:
     print(f"(reverse mirror skipped due to error: {_e})")
 
+# ── Notebook Demo Guide: prepend canonical /00_Copilot_Notebook_Demo_Guide.docx ──
+# User feedback: "do not have generic copilot notebook... make sure you put instructions
+# like this: [📝 00_Copilot_Notebook_Demo_Guide.docx] and also their sample prompts."
+# We add a single canonical demo guide doc as the FIRST source on EVERY Notebook
+# block across all 55 entries so presenters always have the run-sheet alongside
+# the entry-specific data files.
+_NB_GUIDE = '/00_Copilot_Notebook_Demo_Guide.docx'
+def _prepend_nb_guide(entries):
+    n = 0
+    for e in entries:
+        # Each entry has a `prompts` array of tool dicts (NOT 'sections')
+        for tool in e.get('prompts') or []:
+            if 'Copilot Notebook' not in (tool.get('tool') or ''):
+                continue
+            meta = tool.get('notebookMeta')
+            if not meta:
+                meta = {'sources': [], 'instructions': '', 'instructionsID': ''}
+                tool['notebookMeta'] = meta
+            srcs = list(meta.get('sources') or [])
+            if _NB_GUIDE not in srcs:
+                srcs.insert(0, _NB_GUIDE)
+                meta['sources'] = srcs
+                n += 1
+        # Also surface the file in the entry-level files list
+        files = list(e.get('files') or [])
+        if _NB_GUIDE not in files:
+            files.insert(0, _NB_GUIDE)
+            e['files'] = files
+    return n
+try:
+    _nb_added = _prepend_nb_guide(all_industries) + _prepend_nb_guide(all_departments)
+    print(f"Notebook Demo Guide prepended on {_nb_added} Notebook blocks")
+except Exception as _e:
+    print(f"(Notebook Demo Guide prepend skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')
