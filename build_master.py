@@ -163,6 +163,47 @@ def js_val(v, indent=0):
         return '{\n' + ',\n'.join(pairs) + '\n' + pad + '}'
     return "'" + esc_val(str(v)) + "'"
 
+# ── Native BM/IDEN translation merge ────────────────────────────────────────
+# Loaded from translations.py (auto-authored). Adds *BM and *IDEN fields to
+# each industry/department so the JS render path can prefer native text over
+# the runtime phrase translator when locale is MY_BM or ID_EN.
+try:
+    from translations import TRANSLATIONS as _TRANS
+    _trans_count = 0
+    for entry in all_industries + all_departments:
+        eid = entry.get('id') if isinstance(entry, dict) else None
+        if not eid:
+            continue
+        trans = _TRANS.get(eid)
+        if not trans:
+            continue
+        bm = trans.get('BM') or {}
+        iden = trans.get('IDEN') or {}
+        if bm.get('company'):  entry['companyBM']  = bm['company']
+        if bm.get('tagline'):  entry['taglineBM']  = bm['tagline']
+        if bm.get('scenario'): entry['scenarioBM'] = bm['scenario']
+        if iden.get('company'):  entry['companyIDEN']  = iden['company']
+        if iden.get('tagline'):  entry['taglineIDEN']  = iden['tagline']
+        if iden.get('scenario'): entry['scenarioIDEN'] = iden['scenario']
+        sb = entry.get('storyboard') or []
+        sb_bm = bm.get('storyboard') or []
+        sb_iden = iden.get('storyboard') or []
+        for i, phase in enumerate(sb):
+            if not isinstance(phase, dict):
+                continue
+            if i < len(sb_bm):
+                if sb_bm[i].get('title'):   phase['titleBM']   = sb_bm[i]['title']
+                if sb_bm[i].get('summary'): phase['summaryBM'] = sb_bm[i]['summary']
+            if i < len(sb_iden):
+                if sb_iden[i].get('title'):   phase['titleIDEN']   = sb_iden[i]['title']
+                if sb_iden[i].get('summary'): phase['summaryIDEN'] = sb_iden[i]['summary']
+        _trans_count += 1
+    print(f"Native translations merged into {_trans_count} entries")
+except ImportError:
+    print("(translations.py not found; building without native translations)")
+except Exception as _e:
+    print(f"(translations merge skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')

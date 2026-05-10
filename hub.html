@@ -66,6 +66,18 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .op-card-pwd-list{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
 .op-card-pwd-multi{font-size:9.5px;line-height:1.4;display:inline-flex;align-items:baseline;gap:3px;white-space:normal}
 .op-card-pwd-label{color:#7C2D12;font-family:'Segoe UI',sans-serif;font-weight:700;font-size:9px}
+.op-card-teams{margin:10px 0 0;padding:10px 12px;background:#F8FAFC;border:1px solid var(--border);border-radius:10px;display:flex;flex-direction:column;gap:8px}
+.op-card-teams-hdr{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.9px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.op-card-team-group{display:flex;flex-direction:column;gap:4px}
+.op-card-team-group-hdr{font-size:9.5px;font-weight:800;color:var(--tg-color,#0EA5E9);text-transform:uppercase;letter-spacing:0.6px;padding-bottom:3px;border-bottom:1px dashed rgba(14,165,233,0.25);margin-bottom:2px}
+.op-card-team-row{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:6px;font-size:10px;line-height:1.35;padding:1px 0}
+.op-card-team-name{color:#1E293B;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.op-card-team-code{font-family:'Courier New',monospace;font-size:9.5px;color:#9A3412;background:#FEF3C7;border:1px solid #FDE68A;border-radius:6px;padding:1px 7px;font-weight:700;cursor:pointer;flex-shrink:0;transition:transform 0.12s,box-shadow 0.12s;white-space:nowrap}
+.op-card-team-code:hover{transform:translateY(-1px);box-shadow:0 2px 5px rgba(154,52,18,0.18)}
+.op-card-team-link{font-size:11px;color:var(--op-color,#0078D4);text-decoration:none;font-weight:800;padding:1px 4px;border-radius:4px;transition:background 0.12s}
+.op-card-team-link:hover{background:rgba(0,120,212,0.12);text-decoration:none}
+.op-card-facilitator{display:inline-flex;align-items:center;gap:6px;padding:6px 11px;font-size:10.5px;font-weight:700;color:#FFFFFF;background:linear-gradient(135deg,#7C2D12,#9A3412);border-radius:8px;text-decoration:none;transition:transform 0.12s,box-shadow 0.12s;align-self:flex-start;line-height:1.2}
+.op-card-facilitator:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(124,45,18,0.3)}
 .op-card-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--op-color,var(--blue));text-decoration:none;transition:gap 0.15s;align-self:center}
 .op-card-link:hover{gap:8px;text-decoration:underline}
 .op-section-hdr{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:22px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
@@ -1935,6 +1947,8 @@ function _applyDict(out, dict){
 function _translateLocale(s, src){
   if(!s) return s;
   src = src || 'EN';
+  // Native baked translations: skip phrase substitution entirely.
+  if(src === 'BM_NATIVE' || src === 'EN_NATIVE') return String(s);
   let out = String(s);
   if(_locale==='MY_BM' && src==='EN'){
     out = _applyDict(out, _TRANSLATE_EN_TO_BM);
@@ -1947,9 +1961,19 @@ function _translateLocale(s, src){
 }
 
 // Locale-aware field picker that tracks the source language of the value it returned.
-//   country=ID locales (ID_BI/ID_EN) → returns *ID variant if present, src='BI'
+//   MY_BM with native *BM field → returns *BM, src='BM_NATIVE' (translator skips)
+//   ID_EN with native *IDEN field → returns *IDEN, src='EN_NATIVE' (translator skips)
+//   ID_BI / ID_EN with *ID field → returns *ID, src='BI'
 //   else → returns base field, src='EN'
 function _pickField(item, base){
+  if(_locale==='MY_BM'){
+    const bmVal = item[base+'BM'];
+    if(bmVal) return {val:bmVal, src:'BM_NATIVE'};
+  }
+  if(_locale==='ID_EN'){
+    const idenVal = item[base+'IDEN'];
+    if(idenVal) return {val:idenVal, src:'EN_NATIVE'};
+  }
   const idVal = item[base+'ID'];
   if((_locale==='ID_BI' || _locale==='ID_EN') && idVal) return {val:idVal, src:'BI'};
   return {val:(item[base]||''), src:'EN'};
@@ -2312,7 +2336,7 @@ function buildSidebar(){
       const a=document.createElement('a');
       a.className='sidebar-item'; a.id='nav-'+ind.id;
       a.onclick=()=>showItem(ind,'ind');
-      a.innerHTML='<span class="ind-icon">'+ind.icon+'</span><span class="ind-name">'+_stripLeadingEmoji(ind.name)+'</span><span class="ind-count">'+count+'</span>';
+      a.innerHTML='<span class="ind-icon">'+ind.icon+'</span><span class="ind-name">'+escapeHTML(_xformVal(_stripLeadingEmoji(ind.name),'EN'))+'</span><span class="ind-count">'+count+'</span>';
       el.appendChild(a);
     });
   });
@@ -2328,7 +2352,7 @@ function buildDeptSidebar(){
     const a=document.createElement('a');
     a.className='sidebar-item'; a.id='nav-'+dept.id;
     a.onclick=()=>showItem(dept,'dept');
-    a.innerHTML='<span class="ind-icon">'+dept.icon+'</span><span class="ind-name">'+_stripLeadingEmoji(dept.name)+'</span><span class="ind-count">'+count+'</span>';
+    a.innerHTML='<span class="ind-icon">'+dept.icon+'</span><span class="ind-name">'+escapeHTML(_xformVal(_stripLeadingEmoji(dept.name),'EN'))+'</span><span class="ind-count">'+count+'</span>';
     el.appendChild(a);
   });
 }
@@ -2367,7 +2391,7 @@ function makeCard(item,tab){
   const isDept=tab==='dept';
   div.innerHTML=
     '<div class="ind-card-icon">'+item.icon+'</div>'+
-    '<div class="ind-card-name">'+_stripLeadingEmoji(item.name)+'</div>'+
+    '<div class="ind-card-name">'+escapeHTML(_xformVal(_stripLeadingEmoji(item.name),'EN'))+'</div>'+
     '<div class="ind-card-company">'+_getCompany(item)+'</div>'+
     '<div class="ind-card-pills">'+
       tools.map(t=>'<span class="pill">'+t+'</span>').join('')+
@@ -2386,9 +2410,9 @@ function buildWhatsNew(){
 }
 function setWn(i){
   wnIdx=i; const item=data.whatsNew[i];
-  document.getElementById('wn-tag').textContent=item.badge||item.tag||'';
-  document.getElementById('wn-title').textContent=item.title||'';
-  document.getElementById('wn-desc').textContent=item.summary||item.desc||item.tip||'';
+  document.getElementById('wn-tag').textContent=_xformVal(item.badge||item.tag||'','EN');
+  document.getElementById('wn-title').textContent=_xformVal(item.title||'','EN');
+  document.getElementById('wn-desc').textContent=_xformVal(item.summary||item.desc||item.tip||'','EN');
   const linkEl=document.getElementById('wn-link');
   if(item.link){linkEl.href=item.link;linkEl.style.display='inline-flex';}else{linkEl.style.display='none';}
   document.querySelectorAll('.wn-dot').forEach((d,j)=>{d.classList.toggle('active',j===i)});
@@ -2408,9 +2432,9 @@ function showItem(item,tab){
   const isDept=tab==='dept';
   document.getElementById('detail-back-btn').textContent=isDept?_uL('← Back to all departments'):_uL('← Back to all industries');
   document.getElementById('detail-back-btn').onclick=()=>{ goHome(); showGridTab(tab); };
-  document.getElementById('detail-badge').textContent=isDept?_uL('Department'):_stripLeadingEmoji(item.name);
+  document.getElementById('detail-badge').textContent=isDept?_uL('Department'):_xformVal(_stripLeadingEmoji(item.name),'EN');
   document.getElementById('detail-title').textContent=_getCompany(item);
-  document.getElementById('detail-company').textContent=_stripLeadingEmoji(item.name);
+  document.getElementById('detail-company').textContent=_xformVal(_stripLeadingEmoji(item.name),'EN');
   document.getElementById('detail-tagline').textContent=_getTagline(item);
   // Scenario + dept pills
   const scenarioText=_getScenario(item);
@@ -2419,7 +2443,7 @@ function showItem(item,tab){
     const pills=item.relevantDepts.map(did=>{
       const d=data.departments.find(x=>x.id===did);
       if(!d) return '';
-      return '<span class="dept-pill" data-did="'+escapeAttr(d.id)+'">'+d.icon+' '+escapeHTML(_stripLeadingEmoji(d.name))+'</span>';
+      return '<span class="dept-pill" data-did="'+escapeAttr(d.id)+'">'+d.icon+' '+escapeHTML(_xformVal(_stripLeadingEmoji(d.name),'EN'))+'</span>';
     }).filter(Boolean).join('');
     if(pills){
       pillsHtml='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🏢 Departments most affected — click to drill down')+'</div>'+pills+'</div>';
@@ -2511,12 +2535,14 @@ function showItem(item,tab){
       personaRole=_xformVal(personaRole, personaRoleSrc);
     }
     const personaCompany=p0?_xformVal(p0.company||'','EN'):'';
-    // Mission text: prefer tagline, fall back to first sentence of scenario
+    // Mission text: prefer tagline (with native fallback chain), fall back to first sentence of scenario
     let missionText='', missionSrc='EN';
-    if((_locale==='ID_BI'||_locale==='ID_EN') && item.taglineID){ missionText=item.taglineID; missionSrc='BI'; }
-    else if(item.tagline){ missionText=item.tagline; missionSrc='EN'; }
-    else if((_locale==='ID_BI'||_locale==='ID_EN') && item.scenarioID){ missionText=item.scenarioID.split(/[.!?]/)[0]+'.'; missionSrc='BI'; }
-    else if(item.scenario){ missionText=item.scenario.split(/[.!?]/)[0]+'.'; missionSrc='EN'; }
+    const _tagP=_pickField(item,'tagline');
+    if(_tagP.val){ missionText=_tagP.val; missionSrc=_tagP.src; }
+    else {
+      const _scnP=_pickField(item,'scenario');
+      if(_scnP.val){ missionText=_scnP.val.split(/[.!?]/)[0]+'.'; missionSrc=_scnP.src; }
+    }
     missionText=_translateLocale(_scrubReal(_scrubFiles(missionText)), missionSrc);
     // Total tools used = count of prompt blocks in the entry (Punchline line)
     const toolsCount=item.prompts?item.prompts.length:8;
@@ -2537,11 +2563,16 @@ function showItem(item,tab){
       'Satu hari kerja. '+toolsCount+' alat. Daripada rangka kepada penghantaran.');
     const indColor=item.color||'#0EA5E9';
     const phasesHTML=item.storyboard.map((ex,i)=>{
-      let exTitle='', exSummary='', exSrc='EN';
-      if((_locale==='ID_BI'||_locale==='ID_EN') && ex.titleID){ exTitle=ex.titleID; exSrc='BI'; }
+      let exTitle='', exSummary='', exSrc='EN', summarySrc='EN';
+      // Title: prefer native BM/IDEN, then *ID for ID locales, then base
+      if(_locale==='MY_BM' && ex.titleBM){ exTitle=ex.titleBM; exSrc='BM_NATIVE'; }
+      else if(_locale==='ID_EN' && ex.titleIDEN){ exTitle=ex.titleIDEN; exSrc='EN_NATIVE'; }
+      else if((_locale==='ID_BI'||_locale==='ID_EN') && ex.titleID){ exTitle=ex.titleID; exSrc='BI'; }
       else { exTitle=ex.title||''; }
-      let summarySrc='EN';
-      if((_locale==='ID_BI'||_locale==='ID_EN') && ex.summaryID){ exSummary=ex.summaryID; summarySrc='BI'; }
+      // Summary: same precedence
+      if(_locale==='MY_BM' && ex.summaryBM){ exSummary=ex.summaryBM; summarySrc='BM_NATIVE'; }
+      else if(_locale==='ID_EN' && ex.summaryIDEN){ exSummary=ex.summaryIDEN; summarySrc='EN_NATIVE'; }
+      else if((_locale==='ID_BI'||_locale==='ID_EN') && ex.summaryID){ exSummary=ex.summaryID; summarySrc='BI'; }
       else { exSummary=ex.summary||''; }
       const cleanTitle=_xformVal(exTitle, exSrc);
       const cleanSummary=_translateLocale(_scrubReal(_scrubFiles(exSummary)), summarySrc);
@@ -2647,7 +2678,7 @@ function showItem(item,tab){
               return '<div class="cowork-action-line">'+
                 '<span class="cowork-action-num">'+escapeHTML(L.n)+'.</span>'+
                 '<span class="cowork-action-icon">'+L.icon+'</span>'+
-                '<span class="cowork-action-text">'+escapeHTML(L.text)+'</span>'+
+                '<span class="cowork-action-text">'+escapeHTML(_xformVal(L.text,'EN'))+'</span>'+
               '</div>';
             }).join('')+
             '</div>';
@@ -2705,7 +2736,7 @@ function showItem(item,tab){
     }
     sec.innerHTML=
       '<div class="tool-header" id="tool-hdr-'+id+'-'+ti+'" onclick="toggleTool(\''+id+'-'+ti+'\')">'+
-        '<span class="tool-name">'+escapeHTML(tool.tool)+'</span>'+
+        '<span class="tool-name">'+escapeHTML(_xformVal(tool.tool,'EN'))+'</span>'+
         '<span class="tool-license '+licClass+'">'+licLabel+'</span>'+
         '<span class="tool-chevron">▼</span>'+
       '</div>'+
@@ -2764,7 +2795,7 @@ function showItem(item,tab){
   ];
   document.getElementById('detail-tips').innerHTML=
     '<div class="tips-title" style="color:#FFFFFF">'+_uL('⚡ Demo Tips')+'</div>'+
-    tips.map((t,i)=>'<div class="tip-item"><div class="tip-num">'+(i+1)+'</div><div>'+t+'</div></div>').join('');
+    tips.map((t,i)=>'<div class="tip-item"><div class="tip-num">'+(i+1)+'</div><div>'+_translateLocale(_scrubReal(t),'EN')+'</div></div>').join('');
   // Sidebar highlight
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   const navEl=document.getElementById('nav-'+id);
@@ -2849,11 +2880,23 @@ const OTHER_PAGES = [
     color: '#B91C1C',
     accent: '#7F1D1D',
     name: 'Alliance Bank Malaysia — Prompt-a-thon',
-    desc: 'Alliance Bank Malaysia × Microsoft 365 Copilot Prompt-a-thon (7 May 2026). 8 team packs across Consumer Banking, SME, HR, Finance, Risk, Digital, Comms, and Strategy.',
+    desc: 'Alliance Bank Malaysia × Microsoft 365 Copilot Prompt-a-thon (7 May 2026). 8 team packs across Consumer Banking, SME, Digital Workplace, Finance, Risk, Digital Tech, Comms, and Strategy.',
     url: 'https://steffiyappy.github.io/ABMB7May/',
     password: 'ABMB7May',
+    teamCodes: [
+      {label:'Team 1 — Consumer Banking',                 code:'ConsumerBanking'},
+      {label:'Team 2 — SME Banking',                      code:'SMEBanking'},
+      {label:'Team 3 — Digital Workplace & Employee Exp', code:'DigitalWorkplace'},
+      {label:'Team 4 — Finance & Reporting',              code:'FinanceReporting'},
+      {label:'Team 5 — Risk & Compliance',                code:'RiskCompliance'},
+      {label:'Team 6 — Digital Banking & Tech',           code:'DigitalTechnology'},
+      {label:'Team 7 — Strategy & Change Communications', code:'StrategyComms'},
+      {label:'Team 8 — Operations, Treasury & Biz Mgmt',  code:'OperationsTreasury'}
+    ],
+    facilitatorUrl: 'https://steffiyappy.github.io/ABMB7May/?facilitator',
+    facilitatorLabel: 'Facilitator view (bypass team lock — all packs)',
     tag: 'Hackathon',
-    keywords: 'ABMB Alliance Bank Malaysia prompt-a-thon hackathon banking SME HR finance risk digital comms strategy'
+    keywords: 'ABMB Alliance Bank Malaysia prompt-a-thon hackathon banking SME HR finance risk digital comms strategy team codes facilitator'
   },
   {
     section: 'Customer Demos',
@@ -2873,14 +2916,42 @@ const OTHER_PAGES = [
     color: '#DC2626',
     accent: '#991B1B',
     name: 'Cagamas — Prompt-a-thon & Agent-a-thon',
-    desc: 'Cagamas x Microsoft Copilot Challenge Week — Prompt-a-thon (12 May 2026) and Agent-a-thon (13 May 2026) materials.',
+    desc: 'Cagamas x Microsoft Copilot Challenge Week — Prompt-a-thon (12 May 2026) and Agent-a-thon (13 May 2026) materials. 6 team packs each, clue-based tasks, agent builds in Copilot Studio.',
     url: 'https://steffiyappy.github.io/Cagamas1213May/',
     passwords: [
       {label: 'Prompt-a-thon (12 May)', value: 'Cagamas12May'},
       {label: 'Agent-a-thon (13 May)',  value: 'Cagamas13May'}
     ],
+    teamGroups: [
+      {
+        label: '12 May — Prompt-a-thon',
+        color: '#0EA5E9',
+        teamCodes: [
+          {label:'Team 1 — Business & Client Coverage', code:'BCTEAM',  url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/business-client.html'},
+          {label:'Team 2 — Islamic Finance',            code:'ISLTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/islamic-business.html'},
+          {label:'Team 3 — Treasury & Capital Markets', code:'TRSTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/treasury-dcm.html'},
+          {label:'Team 4 — Finance & Reporting',        code:'FINTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/finance-reporting.html'},
+          {label:'Team 5 — Human Capital',              code:'HCMTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/human-capital.html'},
+          {label:'Team 6 — Risk & Compliance',          code:'RSKTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/risk-compliance.html'}
+        ]
+      },
+      {
+        label: '13 May — Agent-a-thon',
+        color: '#7C3AED',
+        teamCodes: [
+          {label:'Team 1 — Business & Client Coverage (HHFC Lender Connect)',   code:'ABCTEAM',  url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/business-client.html'},
+          {label:'Team 2 — Islamic Finance (HHFC Shariah Guide)',                code:'AISLTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/islamic-business.html'},
+          {label:'Team 3 — Treasury & Capital Markets (HHFC Market Desk)',       code:'ATRSTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/treasury-dcm.html'},
+          {label:'Team 4 — Finance & Reporting (HHFC Finance Desk)',             code:'AFINTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/finance-reporting.html'},
+          {label:'Team 5 — Human Capital (HHFC People Connect)',                 code:'AHCMTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/human-capital.html'},
+          {label:'Team 6 — Risk & Compliance (HHFC Compliance Radar)',           code:'ARSKTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/risk-compliance.html'}
+        ]
+      }
+    ],
+    facilitatorUrl: 'https://steffiyappy.github.io/Cagamas1213May/?facilitator',
+    facilitatorLabel: 'Facilitator view (bypass all password gates)',
     tag: 'Hackathon',
-    keywords: 'cagamas mortgage finance prompt-a-thon agent-a-thon hackathon may 2026 challenge'
+    keywords: 'cagamas mortgage finance prompt-a-thon agent-a-thon hackathon may 2026 challenge HHFC team codes facilitator'
   }
 ];
 
@@ -2977,24 +3048,62 @@ function buildOtherGrid(){
           '</span>'
         ).join('')+'</div>';
       }
+      // Build team-codes block (supports flat teamCodes OR teamGroups for multi-event)
+      let teamsHTML = '';
+      const tgList = Array.isArray(p.teamGroups) ? p.teamGroups : null;
+      const tcFlat = Array.isArray(p.teamCodes) ? p.teamCodes : null;
+      if(tgList || tcFlat || p.facilitatorUrl){
+        const renderRow = (t)=>{
+          const linkHTML = t.url ? ' <a class="op-card-team-link" href="'+escapeAttr(t.url)+'" target="_blank" rel="noopener" title="Open team pack">&#8599;</a>' : '';
+          return '<div class="op-card-team-row">'+
+            '<span class="op-card-team-name">'+escapeHTML(t.label||'')+'</span>'+
+            '<span class="op-card-team-code" data-pwd="'+escapeAttr(t.code||'')+'" title="Click to copy code">'+escapeHTML(t.code||'')+'</span>'+
+            linkHTML+
+          '</div>';
+        };
+        let inner = '';
+        if(tgList){
+          inner = tgList.map(g=>{
+            const colorStyle = g.color ? ' style="--tg-color:'+escapeAttr(g.color)+'"' : '';
+            return '<div class="op-card-team-group"'+colorStyle+'>'+
+              '<div class="op-card-team-group-hdr">'+escapeHTML(g.label||'')+'</div>'+
+              (Array.isArray(g.teamCodes)?g.teamCodes.map(renderRow).join(''):'')+
+            '</div>';
+          }).join('');
+        } else if(tcFlat){
+          inner = '<div class="op-card-team-group">'+tcFlat.map(renderRow).join('')+'</div>';
+        }
+        const facHTML = p.facilitatorUrl
+          ? '<a class="op-card-facilitator" href="'+escapeAttr(p.facilitatorUrl)+'" target="_blank" rel="noopener" title="Bypass team password — facilitator view">&#128275; '+escapeHTML(p.facilitatorLabel||'Facilitator view (bypass team lock)')+'</a>'
+          : '';
+        teamsHTML = '<div class="op-card-teams">'+
+          (inner ? '<div class="op-card-teams-hdr">&#128273; Team codes (click code to copy)</div>'+inner : '')+
+          facHTML+
+        '</div>';
+      }
       card.innerHTML=
         '<div class="op-card-banner">'+p.icon+'</div>'+
         '<div class="op-card-body">'+
-          '<div class="op-card-tag">'+escapeHTML(p.tag)+'</div>'+
-          '<div class="op-card-name">'+escapeHTML(p.name)+'</div>'+
-          '<div class="op-card-desc">'+escapeHTML(p.desc)+'</div>'+
+          '<div class="op-card-tag">'+escapeHTML(_xformVal(p.tag,'EN'))+'</div>'+
+          '<div class="op-card-name">'+escapeHTML(_xformVal(p.name,'EN'))+'</div>'+
+          '<div class="op-card-desc">'+escapeHTML(_xformVal(p.desc,'EN'))+'</div>'+
+          teamsHTML+
           '<div class="op-card-meta">'+pwdHTML+
             '<span class="op-card-link">Open &#8599;</span>'+
           '</div>'+
         '</div>';
-      // Wire click-to-copy for every password chip on this card
-      card.querySelectorAll('.op-card-pwd[data-pwd]').forEach(pwdEl=>{
+      // Stop click-through on facilitator link (the parent card is also <a>)
+      card.querySelectorAll('.op-card-facilitator, .op-card-team-link').forEach(el=>{
+        el.addEventListener('click', function(e){ e.stopPropagation(); });
+      });
+      // Wire click-to-copy for every password chip AND team code on this card
+      card.querySelectorAll('.op-card-pwd[data-pwd], .op-card-team-code[data-pwd]').forEach(pwdEl=>{
         pwdEl.addEventListener('click', function(e){
           e.preventDefault(); e.stopPropagation();
           const val=pwdEl.getAttribute('data-pwd')||'';
           navigator.clipboard.writeText(val).then(()=>{
             const t=document.getElementById('toast');
-            t.textContent='\u2713 Password copied: '+val;
+            t.textContent='\u2713 Copied: '+val;
             t.classList.add('show');
             setTimeout(()=>{t.classList.remove('show'); t.textContent='\u2713 Prompt copied to clipboard!';},2200);
           });
