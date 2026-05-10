@@ -179,9 +179,9 @@ ind('hospital-network', 'healthcare', 'Hospital Network', '🏥', '#1B5E20', '#2
     scenarioID='Zava Health Indonesia mengelola sembilan rumah sakit tersier dan sekunder yang sama di Jakarta, Bandung, Surabaya, Medan, Makassar, Balikpapan, Semarang, Denpasar, dan Batam, dengan rujukan BPJS Kesehatan dan pasien korporasi. Pendapatan grup mendekati Rp 2,1 triliun, namun BOR rata-rata mencapai 92% sementara utilisasi kamar operasi tidak merata. Skor akreditasi KARS turun ke 78, terutama pada medication safety, discharge turnaround, dan audit hand hygiene, sehingga Kemenkes meminta bukti perbaikan sebelum review sembilan minggu lagi. Dua bangsal medis lama sudah EBITDA negatif, volume pasien naik 11%, dan renovasi bangsal terancam ditunda karena pengadaan alat medik terlambat. Direksi perlu memadukan workbook operasi, governance klinis, dan rencana strategi untuk menentukan tindakan 30 hari, pesan regulator, dan prioritas kas tanpa memperburuk akses pasien.',
     relevantDepts=['dept-operations','dept-risk','dept-strategy','dept-finance'],
     personas=[
-      {'name':'Aaliyah Suvendran','role':'Group CEO','roleID':'Direktur Utama Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
-      {'name':'Dr. Karthik Iyer','role':'Chief Medical Officer','roleID':'Direktur Medik','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
-      {'name':'Mei Lin Tan','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'},
+      {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Mod Admin','role':'Chief Medical Officer','roleID':'Direktur Medik','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'},
       {'name':'Sasha Ouellet','role':'Head of Quality & Patient Safety','roleID':'Kepala Mutu & Keselamatan Pasien','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no M365 Copilot license','color':'#7C3AED'}
     ],
     storyboard=[
@@ -396,9 +396,9 @@ ind('pharmaceutical', 'healthcare', 'Pharmaceutical', '💊', '#311B92', '#5E35B
     scenarioID='Zava Pharma Indonesia memproduksi branded generics dan terapi spesialis dari Jawa Barat, lalu mendistribusikannya ke Indonesia dan Malaysia. Lima produk yang sama masih menyumbang 63% penjualan, tetapi margin tertekan oleh harga tender dan biaya rantai dingin. Tiga aset tahap akhir terkonsentrasi dalam jendela 14 bulan, sehingga query BPOM dapat menggeser peluncuran produk diabetes unggulan. Fill rate turun ke 93% dari target 97%, terutama pada dua SKU sensitif suhu, sementara tim regulatory harus menutup klarifikasi BPOM, kesiapan Halal MUI, dan pesan Kemenkes. Direksi perlu menyelaraskan manual regulatory affairs, protokol uji klinis, tracker submission BPOM, dan rencana distribusi dingin untuk menentukan prioritas 30 hari, risiko pendapatan, serta holding line regulator bila launch bergeser satu kuartal lagi.',
     relevantDepts=['dept-operations','dept-risk','dept-strategy','dept-finance'],
     personas=[
-      {'name':'Indra Wijaya','role':'Group CEO','roleID':'Direktur Utama Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
-      {'name':'Dr. Siti Nurhaliza','role':'Chief Scientific Officer','roleID':'Direktur Sains','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
-      {'name':'Bima Pradana','role':'Head of Regulatory Affairs','roleID':'Kepala Regulasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'},
+      {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Mod Admin','role':'Chief Scientific Officer','roleID':'Direktur Sains','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Head of Regulatory Affairs','roleID':'Kepala Regulasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'},
       {'name':'Sasha Ouellet','role':'Head of Manufacturing','roleID':'Kepala Manufaktur','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no M365 Copilot license','color':'#7C3AED'}
     ],
     storyboard=[
@@ -613,9 +613,9 @@ ind('og-upstream', 'og-energy', 'Oil & Gas Upstream', '🛢️', '#E65100', '#F5
     scenarioID='Zava Oil Upstream Indonesia mengelola partisipasi pada blok PSC lepas pantai Indonesia dan aset matang yang sama dengan grup Malaysia. Produksi rata-rata 41,6 mboepd, 7% di bawah rencana karena deferment dua sumur dan downtime kompresor, sementara water cut pada cluster brownfield naik lebih cepat dari asumsi FDP. Biaya angkat mencapai USD19.8/bbl dibanding RKAP USD16.2/bbl, capex subsea integrity 14% di atas plan, dan register HSSE mencatat tiga insiden recordable termasuk hydrocarbon release. SKK Migas meminta penjelasan komitmen produksi PSC, Kementerian ESDM menyorot kepatuhan operasi, dan PETRONAS menunggu bukti assurance. Direksi perlu menghubungkan workbook produksi, kebijakan HSE, rencana pengembangan lapangan, tracker PSC, dan laporan SKK Migas untuk menentukan prioritas workover, kas, dan pesan regulator bulan ini.',
     relevantDepts=['dept-operations','dept-risk','dept-esg','dept-finance'],
     personas=[
-      {'name':'Bayu Santoso','role':'Group CEO','roleID':'Direktur Utama Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
-      {'name':'Eka Pranoto','role':'COO Upstream','roleID':'Direktur Operasi Hulu','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
-      {'name':'Rini Hartono','role':'CFO','roleID':'Direktur Keuangan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'},
+      {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Mod Admin','role':'COO Upstream','roleID':'Direktur Operasi Hulu','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'CFO','roleID':'Direktur Keuangan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'},
       {'name':'Sasha Ouellet','role':'Head of HSE','roleID':'Kepala HSE','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no M365 Copilot license','color':'#7C3AED'}
     ],
     storyboard=[

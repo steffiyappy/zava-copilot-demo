@@ -186,10 +186,10 @@ ind('plantation','plantation','Plantation & Agribusiness','🌿','#2E7D32','#43A
     scenarioID='Zava Plantation Indonesia mengoperasikan 142.000 hektar estate sawit di Sabah, Riau, dan Kalimantan dengan 14.800 karyawan, 7 pabrik, dan 1 kilang. Hasil FFB telah meleset 11% dari RKAP selama 3 kuartal, audit surveillance RSPO mengidentifikasi 9 ketidaksesuaian mayor, dan KLHK telah mengeluarkan surat tindak lanjut mengenai pengungkapan tata guna lahan. Dua pembeli premium Jerman dan satu Belanda telah menandai bahwa perpanjangan kontrak bergantung pada rencana remediasi 90 hari yang kredibel. Direksi bertemu dalam 7 hari untuk memutuskan apakah akan menunda capex FY2026 ekspansi kilang Riau dan bagaimana mengkomunikasikan gap sertifikasi kepada ISPO dan Kementerian Pertanian tanpa memicu eskalasi akses pasar.',
     relevantDepts=['esg','operations','strategy','finance'],
     personas=[
-      {'name':'Bayu Pranowo','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
-      {'name':'Citra Wulandari','role':'Head of ESG','roleID':'Kepala ESG','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
-      {'name':'Reza Adisurya','role':'COO Plantation','roleID':'COO Perkebunan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
-      {'name':'Linda Saputra','role':'Group CFO','roleID':'Direktur Keuangan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+      {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Head of ESG','roleID':'Kepala ESG','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'COO Plantation','roleID':'COO Perkebunan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group CFO','roleID':'Direktur Keuangan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Diagnose & Brief','titleID':'Diagnosa & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -408,10 +408,10 @@ ind('bpo-services','bpo-services','BPO Services','📞','#3949AB','#5C6BC0',
     scenarioID='Zava BPO Indonesia menjalankan 9 delivery centre multibahasa di Jakarta, Bandung, Cebu, dan Kuala Lumpur dengan 11.200 seat melayani klien perbankan, asuransi, dan konsumer. Attrition tahunan telah naik ke 38%, SLA Dashboard menunjukkan 4 dari 6 klien anchor teratas berstatus kuning, dan 2 kontrak senilai IDR 980 miliar dijadwalkan diperpanjang dalam 12 minggu. Kemnaker telah meminta tanggapan tertulis mengenai praktik lembur, BSSN telah menandai insiden data near-miss di lokasi Bandung, dan siklus audit UU PDP dimulai bulan depan. Direktur Utama membutuhkan paket pemulihan dan perpanjangan terintegrasi untuk Komite Eksekutif dalam 5 hari.',
     relevantDepts=['operations','hr','finance','it'],
     personas=[
-      {'name':'Andi Surya','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
-      {'name':'Maya Anggraini','role':'Head of Client Success','roleID':'Kepala Client Success','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
-      {'name':'Hendra Wibowo','role':'COO','roleID':'Direktur Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
-      {'name':'Sinta Pertiwi','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+      {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'Head of Client Success','roleID':'Kepala Client Success','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'COO','roleID':'Direktur Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Diagnose & Brief','titleID':'Diagnosa & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -630,10 +630,10 @@ ind('telco','telco','Telco','📡','#00838F','#00ACC1',
     scenarioID='Zava Telco Indonesia melayani 38,4 juta pelanggan di Sumatra, Jawa, dan Kalimantan dengan 11.600 karyawan dan 14.200 site aktif. Pembangunan cakupan tertinggal 14 site dari komitmen USO Kominfo, churn pascabayar telah naik ke 2,3% bulanan di 4 cluster prioritas, ARPU blended meleset 6%, dan BRTI menjadwalkan tinjauan utilisasi spektrum dalam 10 hari. OJK secara terpisah meminta laporan cohort lisensi digital payments. Direksi membutuhkan cerita pemulihan jaringan, komersial, dan regulator yang dapat dipertahankan sebelum menyetujui envelope capex FY2026.',
     relevantDepts=['it','marketing','strategy','finance'],
     personas=[
-      {'name':'Rangga Aditama','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
-      {'name':'Putri Maharani','role':'CMO','roleID':'Direktur Pemasaran','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
-      {'name':'Dimas Prabowo','role':'CTO','roleID':'Direktur Teknologi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
-      {'name':'Wulan Setiawati','role':'Head of Regulatory Affairs','roleID':'Kepala Hubungan Regulasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+      {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Sasha Ouellet','role':'CMO','roleID':'Direktur Pemasaran','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no M365 Copilot license','color':'#7C3AED'},
+      {'name':'Mod Admin','role':'CTO','roleID':'Direktur Teknologi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#059669'},
+      {'name':'Daichi Maruyama','role':'Head of Regulatory Affairs','roleID':'Kepala Hubungan Regulasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Diagnose & Brief','titleID':'Diagnosa & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',

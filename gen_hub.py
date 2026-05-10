@@ -309,9 +309,21 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .sb-phase{margin-bottom:14px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#FFFFFF;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
 .sb-phase:last-child{margin-bottom:0}
 .sb-phase-head{padding:10px 14px;background:var(--ind-color,#1E3A5F);color:#FFFFFF;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.sb-phase-title{font-size:13px;font-weight:700;color:#FFFFFF;line-height:1.3;text-shadow:0 1px 2px rgba(0,0,0,0.15)}
+.sb-phase-ex{font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#FFFFFF;background:rgba(255,255,255,0.20);padding:3px 7px;border-radius:4px;white-space:nowrap}
+.sb-phase-title{font-size:13px;font-weight:700;color:#FFFFFF;line-height:1.3;text-shadow:0 1px 2px rgba(0,0,0,0.15);flex:1;min-width:0}
+.sb-phase-mins{font-size:10px;font-weight:600;color:#FFFFFF;background:rgba(0,0,0,0.20);padding:3px 7px;border-radius:4px;white-space:nowrap}
 .sb-phase-body{padding:12px 14px 14px;background:#FAFBFC}
-.sb-phase-summary{margin:0;font-size:12.5px;color:#334155;line-height:1.6}
+.sb-phase-summary{margin:0 0 10px;font-size:12px;color:#334155;line-height:1.55}
+.sb-phase-summary:last-child{margin-bottom:0}
+.sb-moments{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:8px}
+.sb-moment{border:1px solid var(--border);border-radius:8px;background:#FFFFFF;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,0.04);transition:transform 0.18s ease,box-shadow 0.18s ease}
+.sb-moment:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+.sb-moment-strip{padding:6px 9px;background:var(--ind-color,#1E3A5F);color:#FFFFFF;display:flex;align-items:center;gap:6px}
+.sb-moment-num{font-size:9px;font-weight:800;letter-spacing:1px;color:#FFFFFF;background:rgba(255,255,255,0.20);padding:2px 6px;border-radius:3px}
+.sb-moment-tool{font-size:10px;font-weight:700;color:#FFFFFF;text-transform:uppercase;letter-spacing:0.4px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-moment-body{padding:8px 9px 10px;flex:1;display:flex;flex-direction:column}
+.sb-moment-verb{margin:0 0 4px;font-size:11.5px;font-weight:700;color:var(--text);line-height:1.3}
+.sb-moment-mode{margin:auto 0 0;font-size:9px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.6px;padding-top:4px}
 @media(max-width:760px){.sb-hero{grid-template-columns:1fr}}
 /* Personas card (right sidebar) */
 .personas-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px}
@@ -2549,12 +2561,14 @@ function showItem(item,tab){
     missionText=_translateLocale(_scrubReal(_scrubFiles(missionText)), missionSrc);
     // Total tools used = count of prompt blocks in the entry (Punchline line)
     const toolsCount=item.prompts?item.prompts.length:8;
-    // Right header: count phases (tasks have been removed from storyboard render)
-    const phaseCount=item.storyboard.length;
+    // Right header: total moments = sum of tasks across all phases (fallback to phase count)
+    let momentCount=0;
+    item.storyboard.forEach(function(ex){momentCount+=(ex.tasks&&ex.tasks.length)||0;});
+    if(!momentCount) momentCount=item.storyboard.length;
     const rightHeader=_bL(
-      phaseCount+' moments across one workday',
-      phaseCount+' babak dalam satu hari kerja',
-      phaseCount+' detik penting dalam satu hari kerja');
+      momentCount+' moments across one workday',
+      momentCount+' babak dalam satu hari kerja',
+      momentCount+' detik penting dalam satu hari kerja');
     const labelCopilot=_bL('Copilot in M365','Copilot di M365','Copilot dalam M365');
     const labelHeroTitle=_bL('AI Assistant<br>to AI Doer','Asisten AI<br>menjadi Pelaku AI','Pembantu AI<br>kepada Pelaksana AI');
     const labelPersona=_bL('Persona','Persona','Persona');
@@ -2579,11 +2593,48 @@ function showItem(item,tab){
       else { exSummary=ex.summary||''; }
       const cleanTitle=_xformVal(exTitle, exSrc);
       const cleanSummary=_translateLocale(_scrubReal(_scrubFiles(exSummary)), summarySrc);
+      const exNum=ex.ex||(i+1);
+      const minsLabel=ex.minutes?(ex.minutes+' min'):'';
+      const exBadge=_bL('Exercise '+exNum,'Latihan '+exNum,'Latihan '+exNum);
+      // Render moment cards for ex.tasks
+      let momentsHTML='';
+      if(ex.tasks && ex.tasks.length){
+        momentsHTML='<div class="sb-moments">'+ex.tasks.map(function(t){
+          // Pick verb
+          let verb=t.verb||'';
+          let verbSrc='EN';
+          if(_locale==='MY_BM' && t.verbBM){ verb=t.verbBM; verbSrc='BM_NATIVE'; }
+          else if(_locale==='ID_EN' && t.verbIDEN){ verb=t.verbIDEN; verbSrc='EN_NATIVE'; }
+          else if((_locale==='ID_BI'||_locale==='ID_EN') && t.verbID){ verb=t.verbID; verbSrc='BI'; }
+          const cleanVerb=_xformVal(verb, verbSrc);
+          const toolLabel=_xformVal(t.label||t.tool||'', 'EN');
+          const num=t.n||'';
+          const modeStr=t.mode||'';
+          const modeLabel=modeStr==='show'?_bL('Show & Tell','Tunjuk & Cerita','Tunjuk & Cerita')
+                           :modeStr==='hands'?_bL('Hands-on','Praktik','Amali')
+                           :modeStr;
+          return '<div class="sb-moment">'+
+            '<div class="sb-moment-strip">'+
+              (num?'<span class="sb-moment-num">'+escapeHTML(num)+'</span>':'')+
+              '<span class="sb-moment-tool">'+escapeHTML(toolLabel)+'</span>'+
+            '</div>'+
+            '<div class="sb-moment-body">'+
+              '<p class="sb-moment-verb">'+escapeHTML(cleanVerb)+'</p>'+
+              (modeLabel?'<p class="sb-moment-mode">'+escapeHTML(modeLabel)+'</p>':'')+
+            '</div>'+
+          '</div>';
+        }).join('')+'</div>';
+      }
       return '<div class="sb-phase">'+
         '<div class="sb-phase-head">'+
+          '<span class="sb-phase-ex">'+escapeHTML(exBadge)+'</span>'+
           '<span class="sb-phase-title">'+escapeHTML(cleanTitle)+'</span>'+
+          (minsLabel?'<span class="sb-phase-mins">'+escapeHTML(minsLabel)+'</span>':'')+
         '</div>'+
-        (cleanSummary?'<div class="sb-phase-body"><p class="sb-phase-summary">'+escapeHTML(cleanSummary)+'</p></div>':'')+
+        '<div class="sb-phase-body">'+
+          (cleanSummary?'<p class="sb-phase-summary">'+escapeHTML(cleanSummary)+'</p>':'')+
+          momentsHTML+
+        '</div>'+
         '</div>';
     }).join('');
     sbWrap.innerHTML=

@@ -188,8 +188,8 @@ ind('glc-investment','glc','GLC Investment Arm','🏛','#1A237E','#283593',
     personas=[
       {'name':'Mod Admin','role':'Chief Investment Officer (CIO)','roleID':'Direktur Investasi (CIO)','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1A237E'},
       {'name':'Sasha Ouellet','role':'Head of Portfolio Construction','roleID':'Kepala Konstruksi Portofolio','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no M365 Copilot license','color':'#7C3AED'},
-      {'name':'Faiz Razak','role':'Head of Strategic Investments','roleID':'Kepala Investasi Strategis','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
-      {'name':'Lim Wei Han','role':'Head of Public Markets & Stewardship','roleID':'Kepala Pasar Publik & Stewardship','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+      {'name':'Hadar Caspit','role':'Head of Strategic Investments','roleID':'Kepala Investasi Strategis','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1E40AF'},
+      {'name':'Daichi Maruyama','role':'Head of Public Markets & Stewardship','roleID':'Kepala Pasar Publik & Stewardship','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Diagnose & Brief','titleID':'Diagnosa & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -410,8 +410,8 @@ ind('financial-regulator','reg','Financial Regulator','⚖️','#1B5E20','#2E7D3
     personas=[
       {'name':'Mod Admin','role':'Executive Director, Banking & Markets Supervision','roleID':'Direktur Eksekutif Pengawasan Bank & Pasar Modal','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#1B5E20'},
       {'name':'Sasha Ouellet','role':'Head of Supervisory Policy','roleID':'Kepala Kebijakan Pengawasan','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no M365 Copilot license','color':'#7C3AED'},
-      {'name':'Anwar Hashim','role':'Executive Director, Conduct & Authorisation','roleID':'Direktur Eksekutif Pengawasan Perilaku & Perizinan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#2E7D32'},
-      {'name':'Siti Zainab Othman','role':'Executive Director, Investigation','roleID':'Direktur Eksekutif Investigasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
+      {'name':'Hadar Caspit','role':'Executive Director, Conduct & Authorisation','roleID':'Direktur Eksekutif Pengawasan Perilaku & Perizinan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#2E7D32'},
+      {'name':'Daichi Maruyama','role':'Executive Director, Investigation','roleID':'Direktur Eksekutif Investigasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'M365 Copilot','color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Diagnose & Brief','titleID':'Diagnosa & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',

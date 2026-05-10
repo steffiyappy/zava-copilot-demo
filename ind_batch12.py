@@ -208,7 +208,7 @@ INDUSTRIES_12.append(ind(
       {'name':'Sasha Ouellet','role':'Group MD - Network Planning','roleID':'Direktur Utama - Perencanaan Jaringan','acct':FREE_ACCT,'lic':FREE_LIC,'color':'#0EA5E9'},
       {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#059669'},
       {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#1E40AF'},
-      {'name':'Daichi Kimura','role':'Cabin Services & Labour Relations Director','roleID':'Direktur Cabin Services & Hubungan Kerja','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
+      {'name':'Daichi Maruyama','role':'Cabin Services & Labour Relations Director','roleID':'Direktur Cabin Services & Hubungan Kerja','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -442,7 +442,7 @@ INDUSTRIES_12.append(ind(
       {'name':'Sasha Ouellet','role':'Group CEO - Education','roleID':'CEO Grup - Pendidikan','acct':FREE_ACCT,'lic':FREE_LIC,'color':'#7C3AED'},
       {'name':'Mod Admin','role':'Group Quality Assurance Director','roleID':'Direktur Quality Assurance Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#059669'},
       {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#1E40AF'},
-      {'name':'Daichi Kimura','role':'Admissions & Agent Network Director','roleID':'Direktur Admissions & Jaringan Agen','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
+      {'name':'Daichi Maruyama','role':'Admissions & Agent Network Director','roleID':'Direktur Admissions & Jaringan Agen','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -676,7 +676,7 @@ INDUSTRIES_12.append(ind(
       {'name':'Sasha Ouellet','role':'Group MD - Power Generation','roleID':'Direktur Utama - Pembangkit Listrik','acct':FREE_ACCT,'lic':FREE_LIC,'color':'#FACC15'},
       {'name':'Mod Admin','role':'Group Strategy & Capex Director','roleID':'Direktur Strategi & Capex Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#059669'},
       {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#1E40AF'},
-      {'name':'Daichi Kimura','role':'Regulatory Affairs & Off-Taker Director','roleID':'Direktur Regulatory Affairs & Off-Taker','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
+      {'name':'Daichi Maruyama','role':'Regulatory Affairs & Off-Taker Director','roleID':'Direktur Regulatory Affairs & Off-Taker','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -910,7 +910,7 @@ INDUSTRIES_12.append(ind(
       {'name':'Sasha Ouellet','role':'Group MD - Property Development','roleID':'Direktur Utama - Pengembangan Properti','acct':FREE_ACCT,'lic':FREE_LIC,'color':'#A16207'},
       {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#059669'},
       {'name':'Hadar Caspit','role':'Group CFO & Treasurer','roleID':'Direktur Keuangan & Treasurer Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#1E40AF'},
-      {'name':'Daichi Kimura','role':'Township Liaison & Legal Director','roleID':'Direktur Township Liaison & Legal','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
+      {'name':'Daichi Maruyama','role':'Township Liaison & Legal Director','roleID':'Direktur Township Liaison & Legal','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -1144,7 +1144,7 @@ INDUSTRIES_12.append(ind(
       {'name':'Sasha Ouellet','role':'Group MD - Super-app','roleID':'Direktur Utama - Super-app','acct':FREE_ACCT,'lic':FREE_LIC,'color':'#10B981'},
       {'name':'Mod Admin','role':'Group Strategy & Public Policy Director','roleID':'Direktur Strategi & Public Policy Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#059669'},
       {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#1E40AF'},
-      {'name':'Daichi Kimura','role':'Mobility & City Ops Director','roleID':'Direktur Mobility & Operasi Kota','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
+      {'name':'Daichi Maruyama','role':'Mobility & City Ops Director','roleID':'Direktur Mobility & Operasi Kota','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -1378,7 +1378,7 @@ INDUSTRIES_12.append(ind(
       {'name':'Sasha Ouellet','role':'Group MD - Maritime','roleID':'Direktur Utama - Maritim','acct':FREE_ACCT,'lic':FREE_LIC,'color':'#1E40AF'},
       {'name':'Mod Admin','role':'Group Strategy & Public Policy Director','roleID':'Direktur Strategi & Public Policy Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#1E3A8A'},
       {'name':'Hadar Caspit','role':'Group CFO & Treasurer','roleID':'Direktur Keuangan & Treasurer Grup','acct':M365_ACCT,'lic':M365_LIC,'color':'#0EA5E9'},
-      {'name':'Daichi Kimura','role':'Fleet & Terminals Director','roleID':'Direktur Armada & Terminal','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
+      {'name':'Daichi Maruyama','role':'Fleet & Terminals Director','roleID':'Direktur Armada & Terminal','acct':M365_ACCT,'lic':M365_LIC,'color':'#DC2626'}
     ],
     storyboard=[
       {'ex':1,'title':'Research & Brief','titleID':'Riset & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
