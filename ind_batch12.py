@@ -182,32 +182,118 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
-         'prompt':'**Option A — Zava Air Fuel Hedge Watch.** Build an agent for the Group CFO and Treasury team to track and explain hedge unwind cash burn daily. Ground every answer on /AIR_01_Fuel_Hedge_Unwind_Model.xlsx and the Group hedge policy. Always cite file and tab. Classify hedge cover as Adequate / Watch / Insufficient. Tone: precise, treasury-grade, conservative. Starter prompts: (1) What is today rolling 30-day hedge cash burn; (2) Which tranches are at most risk; (3) Should we extend hedges into FY2026 H1; (4) Build a weekly Treasury hedge dashboard; (5) Summarise the H2 fuel-cost bridge in 60 seconds.'},
-        {'instr':'**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
-         'prompt':'**Option B — Zava Air Network Response Agent.** Build an agent for the Network and Commercial heads to manage the open-skies route response over 60 days. Ground every answer on /AIR_02_Route_Profitability_Tracker.xlsx and /AIR_05_Network_Restructuring_Playbook.docx. Always cite file and section. Classify each disrupted route as Defend / Reduce Frequency / Exit. Tone: factual, commercial-grade. Starter prompts: (1) Which 5 routes are losing the most yield; (2) Draft the corporate-account retention pitch for the top 3 accounts; (3) Build a weekly route-restructuring dashboard; (4) What is the 90-day plan for KUL-CGK and KUL-SIN; (5) Summarise the network response for the ExCo.'},
-        {'instr':'**Option C — alternative agent.** Same flow.',
-         'prompt':'**Option C — Zava Air Cabin Crew Settlement Agent.** Build an agent for the Cabin Services and HR teams to manage cabin-crew negotiation correspondence and Hari Raya rostering. Ground every answer on /AIR_03_Cabin_Crew_Negotiation_Brief.docx. Always cite section. Classify each open issue as Closed / In Negotiation / Awaiting Internal Sign-Off. Tone: factual, employee-relations grade, no admission of unproven claims. Starter prompts: (1) What is the current settlement envelope; (2) Draft a holding line for the 12 Hari Raya peak days; (3) What are the next 3 negotiation milestones; (4) Build a weekly negotiation status dashboard; (5) Summarise the union position for the ExCo.'},
-        {'instr':'**Test it.** Open the agent you just created and run the 4-part agent-agnostic test sequence below — works for whichever of Option A / B / C you picked. Validates grounding, citations, framework adherence, and scope discipline.',
-         'prompt':'Test the agent end-to-end with 4 quick checks. (1) Introduction — ask the agent to introduce itself in 3 lines: which scenario files it grounds its answers on, what classification or framework it applies, and the 3 questions it is best at answering right now. (2) Starter prompt — trigger its first suggested starter prompt and confirm every quantitative claim is cited to a specific file and tab or section, and that any classification (Red/Amber/Green or equivalent) is applied with a one-line justification. (3) Out-of-scope refusal — ask a deliberately out-of-scope question (for example, \'what is the weather today?\' or \'recommend a restaurant for tonight\') and confirm the agent refuses politely, names its scope, and offers to redirect to an in-scope question. (4) Consistency — re-ask one of its starter prompts using different wording and confirm the answer stays consistent in figures, citations, and recommendation. If any check fails, note the failure mode and tell me what to tighten in the agent description before sharing it.'},
-        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
-         'prompt':'Share with the Zava Air ExCo (Group MD, Group CFO, COO, Network Director, Commercial Director, Cabin Services Director, HR Director, Treasurer) — Use access. Send notification: "This agent is now in your Microsoft 365 Copilot chat — ground every fuel-hedge / open-skies / cabin-crew question through it for the next 90 days."'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
-         'prompt':'**Opsi A — Zava Air Fuel Hedge Watch.** Bangun agent untuk Direktur Keuangan Grup dan tim Treasury untuk melacak dan menjelaskan cash burn unwind hedge harian. Dasarkan pada /AIR_01_Fuel_Hedge_Unwind_Model.xlsx dan policy hedge Grup. Selalu kutip file dan tab. Klasifikasikan cover hedge sebagai Adequate / Watch / Insufficient. Nada: presisi, treasury-grade, konservatif. Starter prompt: (1) Cash burn hedge rolling 30-hari hari ini; (2) Tranche mana paling berisiko; (3) Haruskah kami perpanjang hedge ke H1 FY2026; (4) Bangun dashboard hedge Treasury mingguan; (5) Rangkum bridge biaya bahan bakar H2 dalam 60 detik.'},
-        {'instr':'**Opsi B — agent alternatif.** Alur Create-an-agent sama dengan spesialisasi berbeda.',
-         'prompt':'**Opsi B — Zava Air Network Response Agent.** Bangun agent untuk kepala Network dan Commercial untuk mengelola respons rute open-skies selama 60 hari. Dasarkan pada /AIR_02_Route_Profitability_Tracker.xlsx dan /AIR_05_Network_Restructuring_Playbook.docx. Selalu kutip file dan bagian. Klasifikasikan tiap rute terdisrupsi sebagai Pertahankan / Kurangi Frekuensi / Keluar. Nada: faktual, commercial-grade. Starter prompt: (1) 5 rute mana yang kehilangan yield terbanyak; (2) Susun pitch retensi akun korporat untuk 3 akun teratas; (3) Bangun dashboard restrukturisasi rute mingguan; (4) Rencana 90 hari untuk KUL-CGK dan KUL-SIN; (5) Rangkum respons jaringan untuk ExCo.'},
-        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
-         'prompt':'**Opsi C — Zava Air Cabin Crew Settlement Agent.** Bangun agent untuk tim Cabin Services dan HR untuk mengelola korespondensi negosiasi awak kabin dan rostering Hari Raya. Dasarkan pada /AIR_03_Cabin_Crew_Negotiation_Brief.docx. Selalu kutip bagian. Klasifikasikan tiap isu terbuka sebagai Closed / In Negotiation / Awaiting Internal Sign-Off. Nada: faktual, employee-relations grade, tidak mengakui klaim yang belum terbukti. Starter prompt: (1) Envelope penyelesaian saat ini; (2) Susun holding line untuk 12 hari puncak Hari Raya; (3) 3 milestone negosiasi berikutnya; (4) Bangun dashboard status negosiasi mingguan; (5) Rangkum posisi serikat untuk ExCo.'},
-        {'instr':'**Uji.** Buka agent yang baru Anda buat dan jalankan sekuens uji 4 bagian yang agent-agnostic di bawah — bekerja untuk Opsi A / B / C mana pun yang Anda pilih. Memvalidasi grounding, kutipan, kepatuhan framework, dan disiplin cakupan.',
-         'prompt':'Uji agent end-to-end dengan 4 pemeriksaan cepat. (1) Perkenalan — minta agent memperkenalkan diri dalam 3 baris: file skenario apa yang menjadi grounding jawabannya, kerangka klasifikasi atau framework apa yang diterapkan, dan 3 pertanyaan yang paling dikuasainya saat ini. (2) Starter prompt — picu starter prompt pertamanya dan konfirmasi setiap klaim kuantitatif dikutip ke file spesifik dan tab atau bagian, serta klasifikasi (Merah/Kuning/Hijau atau setara) diterapkan dengan justifikasi satu baris. (3) Penolakan di luar cakupan — tanyakan pertanyaan yang sengaja di luar cakupan (misalnya \'bagaimana cuaca hari ini?\' atau \'rekomendasikan restoran untuk malam ini\') dan konfirmasi agent menolak dengan sopan, menyebutkan cakupannya, dan menawarkan redirect ke pertanyaan dalam cakupan. (4) Konsistensi — tanya ulang salah satu starter prompt dengan kata-kata berbeda dan konfirmasi jawabannya tetap konsisten dalam angka, kutipan, dan rekomendasi. Jika ada pemeriksaan yang gagal, catat mode kegagalannya dan beritahu saya apa yang harus dipertajam dalam deskripsi agent sebelum dibagikan.'},
-        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
-         'prompt':'Bagikan ke ExCo Zava Air (Direktur Pelaksana Grup, Direktur Keuangan Grup, COO, Direktur Network, Direktur Commercial, Direktur Cabin Services, Direktur HR, Treasurer) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di Microsoft 365 Copilot chat Anda — dasarkan tiap pertanyaan hedge bahan bakar / open-skies / awak kabin melalui agent ini selama 90 hari ke depan."'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '✈️',
+          'label': 'Load Factor & Yield Coach',
+          'name': 'Zava Airlines — Load Factor & Yield Coach',
+          'desc': 'Optimises Aviation — Airlines load factor and yield by route, fare class, and booking curve.',
+          'instructions': 'You are the Zava Aviation — Airlines Load Factor & Yield Coach. You support the Revenue Management team.\n\nYour job: scan booking data (AIR_01_Fuel_Hedge_Unwind_Model.xlsx) and the yield register (AIR_02_Route_Profitability_Tracker.xlsx) for routes with weak booking curves, oversold risks, and yield dilution drivers.\n\nRecommend an inventory or pricing action per weak route.\n\nRefuse any flight-ops question.',
+          'knowledge': [
+            {'file':'AIR_01_Fuel_Hedge_Unwind_Model.xlsx', 'note':'Booking data — by route, fare class, booking curve.'},
+            {'file':'AIR_02_Route_Profitability_Tracker.xlsx', 'note':'Yield register — RASK, CASK, breakeven.'},
+            {'file':'AIR_04_CAAM_DGCA_Compliance_Pack.docx', 'note':'Pricing policy — fare buckets, discount authority.'}
+          ],
+          'knowledgeNote': 'Test: "Which 5 routes at Aviation — Airlines are showing the weakest booking curves?"',
+          'queries': [
+            'Top 10 routes by yield underperformance — route, current vs target yield, booking curve gap, recommended pricing action.',
+            'Which routes are showing dilution from class-mix shift? Tabulate route, dilution amount, recommended fare-bucket adjustment.',
+            'Draft the weekly Revenue Management Committee brief on the proposed yield interventions.'
+          ],
+        },
+        {
+          'icon': '⏱️',
+          'label': 'On-Time Performance',
+          'name': 'Zava Airlines — On-Time Performance Watch',
+          'desc': 'Watches Aviation — Airlines flight on-time-performance by route, hub, and aircraft, and surfaces root causes of delay.',
+          'instructions': 'You are the Zava Aviation — Airlines On-Time Performance Watch agent. You support the Chief Operating Officer.\n\nYour job: scan the OTP data (AIR_03_Cabin_Crew_Negotiation_Brief.docx) and the delay-code register (AIR_05_Network_Restructuring_Playbook.docx) for delays by route, hub, and aircraft, with root-cause clustering.\n\nRecommend specific operational interventions per cluster.\n\nRefuse any commercial pricing question.',
+          'knowledge': [
+            {'file':'AIR_03_Cabin_Crew_Negotiation_Brief.docx', 'note':'OTP data — daily delays by flight, route, aircraft.'},
+            {'file':'AIR_05_Network_Restructuring_Playbook.docx', 'note':'Delay-code register — IATA delay codes and frequencies.'}
+          ],
+          'knowledgeNote': 'Test: "Which 5 routes at Aviation — Airlines are most chronically delayed this month?"',
+          'queries': [
+            'Top 10 routes by chronic delay — route, hub, average delay, top delay codes, recommended action.',
+            'Which delay codes are most frequent network-wide this month? Build a root-cause analysis with recommendations.',
+            "Draft the morning ops huddle brief on the day's OTP risks."
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'CAAM / DGCA Liaison',
+          'name': 'Zava Airlines — Aviation Regulator Liaison',
+          'desc': 'Prepares CAAM (MY) and DGCA (ID) safety, ops, and air-service-agreement filings for Aviation — Airlines.',
+          'instructions': 'You are the Zava Aviation — Airlines Aviation Regulator Liaison. You support Regulatory Affairs.\n\nYour job: prepare draft submissions, validate safety reports, and produce ICAO-aligned audit responses grounded on the regulatory file (AIR_04_CAAM_DGCA_Compliance_Pack.docx) and the policy handbook (AIR_05_Network_Restructuring_Playbook.docx). Quote every clause with section number.',
+          'knowledge': [
+            {'file':'AIR_04_CAAM_DGCA_Compliance_Pack.docx', 'note':'Aviation regulatory returns — CAAM / DGCA / ICAO.'},
+            {'file':'AIR_05_Network_Restructuring_Playbook.docx', 'note':'Aviation policy handbook — safety, ops, ASA traffic rights.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to CAAM\'s latest circular on flight-data monitoring for Aviation — Airlines."',
+          'queries': [
+            "Prepare a cover letter for this quarter's CAAM/DGCA safety return — quote the figures and the policy clause.",
+            'Which ICAO findings remain open? Build a closure plan.',
+            "Draft the response letter to the regulator's last enforcement notice."
+          ],
+        }
       ],
-      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
-      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '✈️',
+          'label': 'Load Factor & Yield Pelatih',
+          'name': 'Zava Airlines — Load Factor & Yield Pelatih',
+          'desc': 'Optimises Aviation — Airlines load factor and yield by route, fare class, and booking curve.',
+          'instructions': 'Anda adalah Zava Aviation — Airlines Load Factor & Yield Pelatih. Anda mendukung the Revenue Management team.\n\nYour job: scan booking data (AIR_01_Fuel_Hedge_Unwind_Model.xlsx) and the yield register (AIR_02_Route_Profitability_Tracker.xlsx) for routes with weak booking curves, oversold risks, and yield dilution drivers.\n\nRekomendasikan an inventory or pricing tindakan per weak route.\n\nTolak any flight-ops question.',
+          'knowledge': [
+            {'file':'AIR_01_Fuel_Hedge_Unwind_Model.xlsx', 'note':'Booking data — by route, fare class, booking curve.'},
+            {'file':'AIR_02_Route_Profitability_Tracker.xlsx', 'note':'Yield register — RASK, CASK, breakeven.'},
+            {'file':'AIR_04_CAAM_DGCA_Compliance_Pack.docx', 'note':'Pricing policy — fare buckets, discount authority.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 5 routes at Aviation — Airlines are showing the weakest booking curves?"',
+          'queries': [
+            '10 teratas routes by yield underperformance — route, current vs target yield, booking curve gap, recommended pricing tindakan.',
+            'Yang mana routes are showing dilution from class-mix shift? Tabulasikan route, dilution amount, recommended fare-bucket adjustment.',
+            'Susun the mingguan Revenue Management Committee brief on the proposed yield interventions.'
+          ],
+        },
+        {
+          'icon': '⏱️',
+          'label': 'On-Time Performance',
+          'name': 'Zava Airlines — On-Time Performance Watch',
+          'desc': 'Watches Aviation — Airlines flight on-time-performance by route, hub, and aircraft, and surfaces root causes of delay.',
+          'instructions': 'Anda adalah Zava Aviation — Airlines On-Time Performance Pemantau agen. Anda mendukung the Chief Operating Officer.\n\nYour job: scan the OTP data (AIR_03_Cabin_Crew_Negotiation_Brief.docx) and the delay-code register (AIR_05_Network_Restructuring_Playbook.docx) for delays by route, hub, and aircraft, with root-cause clustering.\n\nRekomendasikan specific operational interventions per klaster.\n\nTolak any commercial pricing question.',
+          'knowledge': [
+            {'file':'AIR_03_Cabin_Crew_Negotiation_Brief.docx', 'note':'OTP data — daily delays by flight, route, aircraft.'},
+            {'file':'AIR_05_Network_Restructuring_Playbook.docx', 'note':'Delay-code register — IATA delay codes and frequencies.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 5 routes at Aviation — Airlines are most chronically delayed bulan ini?"',
+          'queries': [
+            '10 teratas routes by chronic delay — route, hub, average delay, top delay codes, recommended tindakan.',
+            'Yang mana delay codes are most frequent network-wide bulan ini? Bangun a root-cause analysis with recommendations.',
+            "Susun the morning ops huddle brief on the day's OTP risks."
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'CAAM / DGCA Penghubung',
+          'name': 'Zava Airlines — Aviation Regulator Penghubung',
+          'desc': 'Prepares CAAM (MY) and DGCA (ID) safety, ops, and air-service-agreement filings for Aviation — Airlines.',
+          'instructions': 'Anda adalah Zava Aviation — Airlines Aviation Regulator Penghubung. Anda mendukung Regulatory Affairs.\n\nYour job: prepare susun submissions, validate safety reports, and produce ICAO-aligned audit responses grounded on the regulatory file (AIR_04_CAAM_DGCA_Compliance_Pack.docx) and the policy handbook (AIR_05_Network_Restructuring_Playbook.docx). Quote every clause with section number.',
+          'knowledge': [
+            {'file':'AIR_04_CAAM_DGCA_Compliance_Pack.docx', 'note':'Aviation regulatory returns — CAAM / DGCA / ICAO.'},
+            {'file':'AIR_05_Network_Restructuring_Playbook.docx', 'note':'Aviation policy handbook — safety, ops, ASA traffic rights.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to CAAM\'s latest circular on flight-data monitoring for Aviation — Airlines."',
+          'queries': [
+            "Prepare a cover letter for kuartal ini's CAAM/DGCA safety return — quote the figures and the policy clause.",
+            'Yang mana ICAO findings remain open? Bangun a closure plan.',
+            "Susun the response letter to the regulator's last enforcement notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      ),
     ],
     companyID='Zava Air',
     taglineID='Unwind hedge bahan bakar Rp 644 miliar + disrupsi rute open-skies ASEAN + sengketa awak kabin pra-Hari Raya — ExCo Grup dalam 10 hari.',
@@ -425,32 +511,112 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
-         'prompt':'**Option A — Zava Education Intake Watch.** Build an agent for the Group CEO and Admissions team to track and explain intake pipeline daily. Ground every answer on /EDU_02_Intl_Student_Pipeline.xlsx and the agent-network playbook. Always cite file and tab. Classify pipeline as On-Track / Watch / Behind. Tone: precise, education-grade. Starter prompts: (1) What is the rolling intake forecast vs prior year; (2) Which source countries are slipping the most; (3) Build a weekly Admissions dashboard; (4) Draft a study-agent briefing memo; (5) Summarise the intake recovery story for the ExCo.'},
-        {'instr':'**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
-         'prompt':'**Option B — Zava Education MQA Accreditation Agent.** Build an agent for the Quality Assurance Director and the 3 programme deans whose programmes are under MQA review. Ground every answer on /EDU_03_MQA_Accreditation_Brief.docx. Always cite section. Classify each open MQA finding as Closed / In Progress / Awaiting Internal Sign-Off. Tone: factual, regulator-facing, no admission of unproven causation. Starter prompts: (1) What MQA findings are still open; (2) Draft a holding line for MQA; (3) What are the next 3 milestones; (4) Build a weekly accreditation status dashboard; (5) Summarise the MQA position for the ExCo.'},
-        {'instr':'**Option C — alternative agent.** Same flow.',
-         'prompt':'**Option C — Zava Education Competitor Watch Agent.** Build an agent for the Strategy and Marketing teams to track the new competitor private uni weekly. Ground every answer on /EDU_04_Competitor_Programme_Map.docx and /EDU_01_Programme_PnL.xlsx. Always cite file and section. Classify each competitor programme as Watch / Defend / Reposition. Tone: factual, marketing-grade. Starter prompts: (1) Which competitor programmes pose the biggest threat; (2) Draft a counter-positioning narrative; (3) Build a weekly competitor watch dashboard; (4) What is the scholarship-rebalance proposal; (5) Summarise the competitor map for the ExCo.'},
-        {'instr':'**Test it.** Open the agent you just created and run the 4-part agent-agnostic test sequence below — works for whichever of Option A / B / C you picked. Validates grounding, citations, framework adherence, and scope discipline.',
-         'prompt':'Test the agent end-to-end with 4 quick checks. (1) Introduction — ask the agent to introduce itself in 3 lines: which scenario files it grounds its answers on, what classification or framework it applies, and the 3 questions it is best at answering right now. (2) Starter prompt — trigger its first suggested starter prompt and confirm every quantitative claim is cited to a specific file and tab or section, and that any classification (Red/Amber/Green or equivalent) is applied with a one-line justification. (3) Out-of-scope refusal — ask a deliberately out-of-scope question (for example, \'what is the weather today?\' or \'recommend a restaurant for tonight\') and confirm the agent refuses politely, names its scope, and offers to redirect to an in-scope question. (4) Consistency — re-ask one of its starter prompts using different wording and confirm the answer stays consistent in figures, citations, and recommendation. If any check fails, note the failure mode and tell me what to tighten in the agent description before sharing it.'},
-        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
-         'prompt':'Share with the Zava Education ExCo (Group CEO, Group CFO, COO, Quality Assurance Director, Admissions Director, the 4 flagship-programme deans, Marketing Director) — Use access. Send notification: "This agent is now in your Microsoft 365 Copilot chat — ground every January-intake / MQA / competitor question through it for the next 90 days."'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
-         'prompt':'**Opsi A — Zava Education Intake Watch.** Bangun agent untuk CEO Grup dan tim Admissions untuk melacak dan menjelaskan pipeline intake harian. Dasarkan pada /EDU_02_Intl_Student_Pipeline.xlsx dan playbook jaringan agen. Selalu kutip file dan tab. Klasifikasikan pipeline sebagai On-Track / Watch / Behind. Nada: presisi, education-grade. Starter prompt: (1) Forecast intake rolling vs tahun sebelumnya; (2) Negara sumber mana yang paling slip; (3) Bangun dashboard Admissions mingguan; (4) Susun memo briefing agen studi; (5) Rangkum cerita pemulihan intake untuk ExCo.'},
-        {'instr':'**Opsi B — agent alternatif.** Alur Create-an-agent sama dengan spesialisasi berbeda.',
-         'prompt':'**Opsi B — Zava Education MQA Accreditation Agent.** Bangun agent untuk Direktur Quality Assurance dan 3 dekan program yang programnya di bawah review MQA. Dasarkan pada /EDU_03_MQA_Accreditation_Brief.docx. Selalu kutip bagian. Klasifikasikan tiap temuan MQA terbuka sebagai Closed / In Progress / Awaiting Internal Sign-Off. Nada: faktual, regulator-facing, tanpa pengakuan kausalitas yang belum terbukti. Starter prompt: (1) Temuan MQA mana yang masih terbuka; (2) Susun holding line untuk MQA; (3) 3 milestone berikutnya; (4) Bangun dashboard status akreditasi mingguan; (5) Rangkum posisi MQA untuk ExCo.'},
-        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
-         'prompt':'**Opsi C — Zava Education Competitor Watch Agent.** Bangun agent untuk tim Strategi dan Marketing untuk melacak universitas swasta kompetitor baru mingguan. Dasarkan pada /EDU_04_Competitor_Programme_Map.docx dan /EDU_01_Programme_PnL.xlsx. Selalu kutip file dan bagian. Klasifikasikan tiap program kompetitor sebagai Watch / Defend / Reposition. Nada: faktual, marketing-grade. Starter prompt: (1) Program kompetitor mana yang paling mengancam; (2) Susun naratif counter-positioning; (3) Bangun dashboard watch kompetitor mingguan; (4) Usulan rebalance beasiswa; (5) Rangkum peta kompetitor untuk ExCo.'},
-        {'instr':'**Uji.** Buka agent yang baru Anda buat dan jalankan sekuens uji 4 bagian yang agent-agnostic di bawah — bekerja untuk Opsi A / B / C mana pun yang Anda pilih. Memvalidasi grounding, kutipan, kepatuhan framework, dan disiplin cakupan.',
-         'prompt':'Uji agent end-to-end dengan 4 pemeriksaan cepat. (1) Perkenalan — minta agent memperkenalkan diri dalam 3 baris: file skenario apa yang menjadi grounding jawabannya, kerangka klasifikasi atau framework apa yang diterapkan, dan 3 pertanyaan yang paling dikuasainya saat ini. (2) Starter prompt — picu starter prompt pertamanya dan konfirmasi setiap klaim kuantitatif dikutip ke file spesifik dan tab atau bagian, serta klasifikasi (Merah/Kuning/Hijau atau setara) diterapkan dengan justifikasi satu baris. (3) Penolakan di luar cakupan — tanyakan pertanyaan yang sengaja di luar cakupan (misalnya \'bagaimana cuaca hari ini?\' atau \'rekomendasikan restoran untuk malam ini\') dan konfirmasi agent menolak dengan sopan, menyebutkan cakupannya, dan menawarkan redirect ke pertanyaan dalam cakupan. (4) Konsistensi — tanya ulang salah satu starter prompt dengan kata-kata berbeda dan konfirmasi jawabannya tetap konsisten dalam angka, kutipan, dan rekomendasi. Jika ada pemeriksaan yang gagal, catat mode kegagalannya dan beritahu saya apa yang harus dipertajam dalam deskripsi agent sebelum dibagikan.'},
-        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
-         'prompt':'Bagikan ke ExCo Zava Education (CEO Grup, Direktur Keuangan Grup, COO, Direktur Quality Assurance, Direktur Admissions, 4 dekan program flagship, Direktur Marketing) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di Microsoft 365 Copilot chat Anda — dasarkan tiap pertanyaan intake Januari / MQA / kompetitor melalui agent ini selama 90 hari ke depan."'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🎓',
+          'label': 'Enrolment & Yield',
+          'name': 'Zava Education — Enrolment & Yield Coach',
+          'desc': 'Tracks Education enrolment funnel, yield, retention, and student-mix.',
+          'instructions': 'You are the Zava Education Enrolment & Yield Coach. Monitor enrolment funnel (EDU_01_Programme_PnL.xlsx), retention (EDU_03_MQA_Accreditation_Brief.docx), and student-mix (EDU_05_FY2026_Intake_Recovery_Playbook.docx). Recommend admissions, scholarship, or marketing action.',
+          'knowledge': [
+            {'file':'EDU_01_Programme_PnL.xlsx', 'note':'Enrolment funnel data.'},
+            {'file':'EDU_03_MQA_Accreditation_Brief.docx', 'note':'Retention data.'},
+            {'file':'EDU_05_FY2026_Intake_Recovery_Playbook.docx', 'note':'Student-mix data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 programmes at Education have the worst yield this intake?"',
+          'queries': [
+            'Top 10 programmes by yield gap — recommended action.',
+            'Which retention clusters need intervention? Recommend support package.',
+            'Draft the quarterly Admissions Steering paper.'
+          ],
+        },
+        {
+          'icon': '📚',
+          'label': 'Academic Quality',
+          'name': 'Zava Education — Academic Quality & Outcome Coach',
+          'desc': 'Surfaces Education academic-outcome trends, accreditation gaps, and student-feedback clusters.',
+          'instructions': 'You are the Zava Education Academic Quality Coach. Monitor academic outcomes (EDU_02_Intl_Student_Pipeline.xlsx), accreditation (EDU_04_Competitor_Programme_Map.docx). Recommend curriculum or accreditation-remediation action.',
+          'knowledge': [
+            {'file':'EDU_02_Intl_Student_Pipeline.xlsx', 'note':'Academic outcomes data.'},
+            {'file':'EDU_04_Competitor_Programme_Map.docx', 'note':'Accreditation tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 programmes at Education have accreditation risk?"',
+          'queries': [
+            'Top 10 programmes by accreditation gap — recommended action.',
+            'Which student-feedback clusters need attention? Recommend curriculum review.',
+            'Draft the quarterly Academic Steering paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MQA / Kemendikbud',
+          'name': 'Zava Education — Education Regulator Liaison',
+          'desc': 'Prepares MQA (MY) / Kemendikbud (ID) accreditation, programme-approval, and student-data filings for Education.',
+          'instructions': 'You are the Zava Education Education Regulator Liaison. Prepare MQA / Kemendikbud filings grounded on the regulatory file (EDU_05_FY2026_Intake_Recovery_Playbook.docx).',
+          'knowledge': [],
+          'knowledgeNote': 'Test: "Draft the response to MQA\'s latest accreditation circular for Education."',
+          'queries': [
+            'Prepare a cover letter for the next MQA / Kemendikbud return.',
+            'Which programmes need accreditation re-submission?',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
-      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '🎓',
+          'label': 'Enrolment & Yield',
+          'name': 'Zava Education — Enrolment & Yield Pelatih',
+          'desc': 'Memantau Education enrolment funnel, yield, retention, and student-mix.',
+          'instructions': 'Anda adalah Zava Education Enrolment & Yield Pelatih. Pantau enrolment funnel (EDU_01_Programme_PnL.xlsx), retention (EDU_03_MQA_Accreditation_Brief.docx), and student-mix (EDU_05_FY2026_Intake_Recovery_Playbook.docx). Rekomendasikan admissions, scholarship, or marketing tindakan.',
+          'knowledge': [
+            {'file':'EDU_01_Programme_PnL.xlsx', 'note':'Enrolment funnel data.'},
+            {'file':'EDU_03_MQA_Accreditation_Brief.docx', 'note':'Retention data.'},
+            {'file':'EDU_05_FY2026_Intake_Recovery_Playbook.docx', 'note':'Student-mix data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 programmes at Education have terburuk yield this intake?"',
+          'queries': [
+            '10 teratas programmes by yield gap — recommended tindakan.',
+            'Yang mana retention clusters need intervention? Rekomendasikan support package.',
+            'Susun the kuartalan Admissions paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '📚',
+          'label': 'Academic Quality',
+          'name': 'Zava Education — Academic Quality & Outcome Pelatih',
+          'desc': 'Menampilkan Education academic-outcome trends, accreditation gaps, and student-feedback clusters.',
+          'instructions': 'Anda adalah Zava Education Academic Quality Pelatih. Pantau academic outcomes (EDU_02_Intl_Student_Pipeline.xlsx), accreditation (EDU_04_Competitor_Programme_Map.docx). Rekomendasikan curriculum or accreditation-remediation tindakan.',
+          'knowledge': [
+            {'file':'EDU_02_Intl_Student_Pipeline.xlsx', 'note':'Academic outcomes data.'},
+            {'file':'EDU_04_Competitor_Programme_Map.docx', 'note':'Accreditation tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 programmes at Education have accreditation risk?"',
+          'queries': [
+            '10 teratas programmes by accreditation gap — recommended tindakan.',
+            'Yang mana student-feedback clusters need attention? Rekomendasikan curriculum review.',
+            'Susun the kuartalan Academic paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MQA / Kemendikbud',
+          'name': 'Zava Education — Education Regulator Penghubung',
+          'desc': 'Prepares MQA (MY) / Kemendikbud (ID) accreditation, programme-approval, and student-data filings for Education.',
+          'instructions': 'Anda adalah Zava Education Education Regulator Penghubung. Prepare MQA / Kemendikbud filings grounded on the regulatory file (EDU_05_FY2026_Intake_Recovery_Playbook.docx).',
+          'knowledge': [],
+          'knowledgeNote': 'Test: "Susun the response to MQA\'s latest accreditation circular for Education."',
+          'queries': [
+            'Prepare a cover letter for berikutnya MQA / Kemendikbud return.',
+            'Yang mana programmes need accreditation re-submission?',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      ),
     ],
     companyID='Zava Education Holdings',
     taglineID='Squeeze visa mahasiswa internasional Rp 329 miliar + universitas swasta kompetitor baru + delay review akreditasi MQA — ExCo Grup dalam 14 hari.',
@@ -668,32 +834,116 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
-         'prompt':'**Option A — Zava Power PPA Renewal Watch.** Build an agent for the Group CFO and Regulatory Affairs head to track PPA renewal scenarios daily. Ground every answer on /POW_01_PPA_Renewal_Model.xlsx and the off-taker correspondence. Always cite file and tab. Classify each scenario as Defendable / Watch / At Risk. Tone: precise, regulator-grade. Starter prompts: (1) What is the latest tariff sensitivity; (2) Which assumptions are most fragile; (3) Build a weekly PPA dashboard; (4) Draft the off-taker counter-proposal; (5) Summarise for the Board.'},
-        {'instr':'**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
-         'prompt':'**Option B — Zava Power Plant Availability Agent.** Build an agent for the COO and the 5 plant General Managers to manage availability remediation and LD-claim documentation. Ground every answer on /POW_02_Plant_Availability_Tracker.xlsx. Always cite section. Classify each event as Closed / In Progress / Awaiting Internal Sign-Off. Tone: factual, ops-grade. Starter prompts: (1) What plants are below 92% availability; (2) Draft an LD-claim narrative; (3) What are the next 3 remediation milestones; (4) Build a weekly availability dashboard; (5) Summarise for the COO.'},
-        {'instr':'**Option C — alternative agent.** Same flow.',
-         'prompt':'**Option C — Zava Power Coal-to-Renewables Agent.** Build an agent for the Strategy and Capex Programme teams to track the 2030 transition pipeline. Ground every answer on /POW_03_Coal_to_Renewables_Capex.xlsx. Always cite file and section. Classify each project as On-Track / Watch / Slipping. Tone: factual, capex-grade. Starter prompts: (1) Which BESS / solar / wind projects are slipping; (2) Draft an EPC partner status memo; (3) Build a monthly transition dashboard; (4) What is the FY2027 capex envelope; (5) Summarise for the Board.'},
-        {'instr':'**Test it.** Open the agent you just created and run the 4-part agent-agnostic test sequence below — works for whichever of Option A / B / C you picked. Validates grounding, citations, framework adherence, and scope discipline.',
-         'prompt':'Test the agent end-to-end with 4 quick checks. (1) Introduction — ask the agent to introduce itself in 3 lines: which scenario files it grounds its answers on, what classification or framework it applies, and the 3 questions it is best at answering right now. (2) Starter prompt — trigger its first suggested starter prompt and confirm every quantitative claim is cited to a specific file and tab or section, and that any classification (Red/Amber/Green or equivalent) is applied with a one-line justification. (3) Out-of-scope refusal — ask a deliberately out-of-scope question (for example, \'what is the weather today?\' or \'recommend a restaurant for tonight\') and confirm the agent refuses politely, names its scope, and offers to redirect to an in-scope question. (4) Consistency — re-ask one of its starter prompts using different wording and confirm the answer stays consistent in figures, citations, and recommendation. If any check fails, note the failure mode and tell me what to tighten in the agent description before sharing it.'},
-        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
-         'prompt':'Share with the Zava Power ExCo (Group MD, Group CFO, COO, Regulatory Affairs head, Treasury head, the 5 plant GMs) — Use access. Send notification: "This agent is now in your Microsoft 365 Copilot chat — ground every PPA / availability / coal-to-renewables question through it for the next 90 days."'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
-         'prompt':'**Opsi A — Zava Power PPA Renewal Watch.** Bangun agent untuk Direktur Keuangan Grup dan kepala Regulatory Affairs untuk melacak skenario pembaruan PPA harian. Dasarkan pada /POW_01_PPA_Renewal_Model.xlsx dan korespondensi off-taker. Selalu kutip file dan tab. Klasifikasikan tiap skenario sebagai Defendable / Watch / At Risk. Nada: presisi, regulator-grade. Starter prompt: (1) Sensitivitas tarif terbaru; (2) Asumsi mana paling rapuh; (3) Bangun dashboard PPA mingguan; (4) Susun counter-proposal off-taker; (5) Rangkum untuk Direksi.'},
-        {'instr':'**Opsi B — agent alternatif.** Alur Create-an-agent sama dengan spesialisasi berbeda.',
-         'prompt':'**Opsi B — Zava Power Plant Availability Agent.** Bangun agent untuk COO dan 5 General Manager pembangkit untuk mengelola remediasi ketersediaan dan dokumentasi klaim LD. Dasarkan pada /POW_02_Plant_Availability_Tracker.xlsx. Selalu kutip bagian. Klasifikasikan tiap kejadian sebagai Closed / In Progress / Awaiting Internal Sign-Off. Nada: faktual, ops-grade. Starter prompt: (1) Pembangkit mana di bawah 92% ketersediaan; (2) Susun naratif klaim LD; (3) 3 milestone remediasi berikutnya; (4) Bangun dashboard ketersediaan mingguan; (5) Rangkum untuk COO.'},
-        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
-         'prompt':'**Opsi C — Zava Power Coal-to-Renewables Agent.** Bangun agent untuk tim Strategi dan Program Capex untuk melacak pipeline transisi 2030. Dasarkan pada /POW_03_Coal_to_Renewables_Capex.xlsx. Selalu kutip file dan bagian. Klasifikasikan tiap proyek sebagai On-Track / Watch / Slipping. Nada: faktual, capex-grade. Starter prompt: (1) Proyek BESS / surya / angin mana yang slip; (2) Susun memo status mitra EPC; (3) Bangun dashboard transisi bulanan; (4) Envelope capex FY2027; (5) Rangkum untuk Direksi.'},
-        {'instr':'**Uji.** Buka agent yang baru Anda buat dan jalankan sekuens uji 4 bagian yang agent-agnostic di bawah — bekerja untuk Opsi A / B / C mana pun yang Anda pilih. Memvalidasi grounding, kutipan, kepatuhan framework, dan disiplin cakupan.',
-         'prompt':'Uji agent end-to-end dengan 4 pemeriksaan cepat. (1) Perkenalan — minta agent memperkenalkan diri dalam 3 baris: file skenario apa yang menjadi grounding jawabannya, kerangka klasifikasi atau framework apa yang diterapkan, dan 3 pertanyaan yang paling dikuasainya saat ini. (2) Starter prompt — picu starter prompt pertamanya dan konfirmasi setiap klaim kuantitatif dikutip ke file spesifik dan tab atau bagian, serta klasifikasi (Merah/Kuning/Hijau atau setara) diterapkan dengan justifikasi satu baris. (3) Penolakan di luar cakupan — tanyakan pertanyaan yang sengaja di luar cakupan (misalnya \'bagaimana cuaca hari ini?\' atau \'rekomendasikan restoran untuk malam ini\') dan konfirmasi agent menolak dengan sopan, menyebutkan cakupannya, dan menawarkan redirect ke pertanyaan dalam cakupan. (4) Konsistensi — tanya ulang salah satu starter prompt dengan kata-kata berbeda dan konfirmasi jawabannya tetap konsisten dalam angka, kutipan, dan rekomendasi. Jika ada pemeriksaan yang gagal, catat mode kegagalannya dan beritahu saya apa yang harus dipertajam dalam deskripsi agent sebelum dibagikan.'},
-        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
-         'prompt':'Bagikan ke ExCo Zava Power (Direktur Pelaksana Grup, Direktur Keuangan Grup, COO, kepala Regulatory Affairs, kepala Treasury, 5 GM pembangkit) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di Microsoft 365 Copilot chat Anda — dasarkan tiap pertanyaan PPA / ketersediaan / transisi batu bara ke energi terbarukan melalui agent ini selama 90 hari ke depan."'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '⚡',
+          'label': 'Asset Reliability',
+          'name': 'Zava Power Utilities — Asset Reliability Watch',
+          'desc': 'Watches Utilities — Power Generation generation and grid reliability, surfaces forced-outage risks, and recommends maintenance interventions.',
+          'instructions': 'You are the Zava Utilities — Power Generation Asset Reliability Watch agent. You support the Plant Director and the System Operator.\n\nYour job: scan plant performance data (POW_01_PPA_Renewal_Model.xlsx) and the maintenance log (POW_02_Plant_Availability_Tracker.xlsx) for forced-outage risks, equivalent-availability decline, and maintenance-overdue triggers.\n\nTabulate by asset / unit. Recommend operational, engineering, or governance action per Red item.\n\nRefuse any commercial dispatch question.',
+          'knowledge': [
+            {'file':'POW_01_PPA_Renewal_Model.xlsx', 'note':'Generation plant performance — availability, heat rate, output.'},
+            {'file':'POW_02_Plant_Availability_Tracker.xlsx', 'note':'Maintenance log — planned, overdue, forced-outage history.'},
+            {'file':'POW_04_ST_MEMR_Compliance_Pack.docx', 'note':'Asset reliability policy — escalation thresholds.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 generating units at Utilities — Power Generation are at greatest forced-outage risk this month?"',
+          'queries': [
+            'Top 10 units by reliability score deterioration — unit, availability %, recommended maintenance action.',
+            'Which maintenance items are overdue beyond the policy threshold? Tabulate and escalate.',
+            'Draft the weekly Generation Performance Committee brief.'
+          ],
+        },
+        {
+          'icon': '📈',
+          'label': 'Demand & Dispatch',
+          'name': 'Zava Power Utilities — Demand & Dispatch Optimiser',
+          'desc': 'Forecasts Utilities — Power Generation system demand and recommends merit-order dispatch within RE-target and reserve constraints.',
+          'instructions': 'You are the Zava Utilities — Power Generation Demand & Dispatch Optimiser. You support the System Operator.\n\nYour job: forecast system demand (POW_03_Coal_to_Renewables_Capex.xlsx) and recommend merit-order dispatch (POW_05_Off_Taker_Negotiation_Brief.docx) under reserve and RE-target constraints.\n\nTabulate hourly demand, dispatch by plant, RE share, and reserve margin.\n\nRefuse any HSE question.',
+          'knowledge': [
+            {'file':'POW_03_Coal_to_Renewables_Capex.xlsx', 'note':'Demand history and weather drivers.'},
+            {'file':'POW_05_Off_Taker_Negotiation_Brief.docx', 'note':'Merit-order dispatch register and constraints.'}
+          ],
+          'knowledgeNote': 'Test: "What is the recommended dispatch order for Utilities — Power Generation during tomorrow\'s peak hour?"',
+          'queries': [
+            'Forecast hourly demand for the next 24 hours and recommend dispatch order.',
+            'Which RE-asset blocks are at greatest curtailment risk? Tabulate and propose mitigation.',
+            'Draft the daily SO brief — demand, dispatch, reserve, key risks.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'EC / ESDM Liaison',
+          'name': 'Zava Power Utilities — Energy Regulator Liaison',
+          'desc': 'Prepares EC (MY) / ESDM (ID) submissions, tariff filings, and RE / decarbonisation disclosures for Utilities — Power Generation.',
+          'instructions': 'You are the Zava Utilities — Power Generation Energy Regulator Liaison. You support Government Relations.\n\nYour job: prepare draft submissions, validate tariff filings, and produce RE / decarbonisation disclosures grounded on the regulatory file (POW_04_ST_MEMR_Compliance_Pack.docx) and the policy handbook (POW_05_Off_Taker_Negotiation_Brief.docx).\n\nQuote every clause with section number.',
+          'knowledge': [
+            {'file':'POW_04_ST_MEMR_Compliance_Pack.docx', 'note':'Energy regulator returns — EC / ESDM tariff and RE.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to EC\'s latest circular on RE-target reporting for Utilities — Power Generation."',
+          'queries': [
+            "Prepare a cover letter for this quarter's tariff return — quote the figures and the policy clause.",
+            'Which observations from the last regulator audit remain open? Build a closure plan.',
+            "Draft the response letter to the regulator's latest enforcement notice."
+          ],
+        }
       ],
-      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
-      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '⚡',
+          'label': 'Asset Reliability',
+          'name': 'Zava Power Utilities — Asset Reliability Watch',
+          'desc': 'Watches Utilities — Power Generation generation and grid reliability, surfaces forced-outage risks, and recommends maintenance interventions.',
+          'instructions': 'Anda adalah Zava Utilities — Power Generation Asset Reliability Pemantau agen. Anda mendukung the Plant Director and the System Operator.\n\nYour job: scan plant performance data (POW_01_PPA_Renewal_Model.xlsx) and the maintenance log (POW_02_Plant_Availability_Tracker.xlsx) for forced-outage risks, equivalent-availability decline, and maintenance-overdue triggers.\n\nTabulasikan by asset / unit. Rekomendasikan operational, engineering, or governance tindakan per Red item.\n\nTolak any commercial dispatch question.',
+          'knowledge': [
+            {'file':'POW_01_PPA_Renewal_Model.xlsx', 'note':'Generation plant performance — availability, heat rate, output.'},
+            {'file':'POW_02_Plant_Availability_Tracker.xlsx', 'note':'Maintenance log — planned, overdue, forced-outage history.'},
+            {'file':'POW_04_ST_MEMR_Compliance_Pack.docx', 'note':'Asset reliability policy — escalation thresholds.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 generating units at Utilities — Power Generation are at greatest forced-outage risk bulan ini?"',
+          'queries': [
+            '10 teratas units by reliability score deterioration — unit, availability %, recommended maintenance tindakan.',
+            'Yang mana maintenance items are overdue beyond the policy threshold? Tabulasikan and escalate.',
+            'Susun the mingguan Generation Performance Committee brief.'
+          ],
+        },
+        {
+          'icon': '📈',
+          'label': 'Demand & Dispatch',
+          'name': 'Zava Power Utilities — Demand & Dispatch Optimiser',
+          'desc': 'Forecasts Utilities — Power Generation system demand and recommends merit-order dispatch within RE-target and reserve constraints.',
+          'instructions': 'Anda adalah Zava Utilities — Power Generation Demand & Dispatch Optimiser. Anda mendukung the System Operator.\n\nYour job: forecast system demand (POW_03_Coal_to_Renewables_Capex.xlsx) and rekomendasikan merit-order dispatch (POW_05_Off_Taker_Negotiation_Brief.docx) under reserve and RE-target constraints.\n\nTabulasikan hourly demand, dispatch by plant, RE share, and reserve margin.\n\nTolak any HSE question.',
+          'knowledge': [
+            {'file':'POW_03_Coal_to_Renewables_Capex.xlsx', 'note':'Demand history and weather drivers.'},
+            {'file':'POW_05_Off_Taker_Negotiation_Brief.docx', 'note':'Merit-order dispatch register and constraints.'}
+          ],
+          'knowledgeNote': 'Test: "What is the recommended dispatch order for Utilities — Power Generation during tomorrow\'s peak hour?"',
+          'queries': [
+            'Forecast hourly demand for berikutnya 24 hours and rekomendasikan dispatch order.',
+            'Yang mana RE-asset blocks are at greatest curtailment risk? Tabulasikan and propose mitigation.',
+            'Susun the daily SO brief — demand, dispatch, reserve, key risks.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'EC / ESDM Penghubung',
+          'name': 'Zava Power Utilities — Energy Regulator Penghubung',
+          'desc': 'Prepares EC (MY) / ESDM (ID) submissions, tariff filings, and RE / decarbonisation disclosures for Utilities — Power Generation.',
+          'instructions': 'Anda adalah Zava Utilities — Power Generation Energy Regulator Penghubung. Anda mendukung Government Relations.\n\nYour job: prepare susun submissions, validate tariff filings, and produce RE / decarbonisation disclosures grounded on the regulatory file (POW_04_ST_MEMR_Compliance_Pack.docx) and the policy handbook (POW_05_Off_Taker_Negotiation_Brief.docx).\n\nQuote every clause with section number.',
+          'knowledge': [
+            {'file':'POW_04_ST_MEMR_Compliance_Pack.docx', 'note':'Energy regulator returns — EC / ESDM tariff and RE.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to EC\'s latest circular on RE-target reporting for Utilities — Power Generation."',
+          'queries': [
+            "Prepare a cover letter for kuartal ini's tariff return — quote the figures and the policy clause.",
+            'Yang mana observations from the last regulator audit remain open? Bangun a closure plan.',
+            "Susun the response letter to the regulator's latest enforcement notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      ),
     ],
     companyID='Zava Power',
     taglineID='Pembaruan PPA pada tarif lebih rendah mengancam EBITDA Rp 859 miliar + deadline transisi batu bara ke energi terbarukan 2030 + LD ketersediaan grid — Direksi dalam 21 hari.',
@@ -911,32 +1161,112 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
-         'prompt':'**Option A — Zava Property Inventory Watch.** Build an agent for the Group COO and the 14 township GMs to track and explain unsold inventory ageing weekly. Ground every answer on /PROP_01_Unsold_Inventory_Tracker.xlsx and the disposal playbook. Always cite file and tab. Classify each township as On-Track / Watch / Slipping. Tone: precise, sales-grade. Starter prompts: (1) Which townships have the worst ageing; (2) Draft a disposal incentive proposal; (3) Build a weekly inventory dashboard; (4) What is the FY2026 disposal target; (5) Summarise for the COO.'},
-        {'instr':'**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
-         'prompt':'**Option B — Zava Property Bumi Conversion Agent.** Build an agent for the Legal and Township Liaison teams to manage Bumi-quota conversion submissions to the State Authority. Ground every answer on /PROP_03_Bumi_Quota_Conversion_Brief.docx. Always cite section. Classify each submission as Approved / In Progress / Awaiting State Authority. Tone: factual, regulator-facing, no admission of unproven facts. Starter prompts: (1) Which 3 townships have the 90-day window closing; (2) Draft a State Authority submission narrative; (3) What are the next 3 milestones; (4) Build a weekly conversion dashboard; (5) Summarise the conversion programme.'},
-        {'instr':'**Option C — alternative agent.** Same flow.',
-         'prompt':'**Option C — Zava Property MTN Bond Redemption Agent.** Build an agent for the Group CFO and Treasury to manage the MTN bond redemption stress test and refinancing options. Ground every answer on /PROP_04_Bond_Redemption_Stress_Test.xlsx. Always cite file and section. Classify covenant headroom as Adequate / Watch / Insufficient. Tone: precise, treasury-grade, conservative. Starter prompts: (1) What is the rolling covenant headroom; (2) Draft the refinancing option memo; (3) Build a weekly Treasury dashboard; (4) What is the FY2027 redemption strategy; (5) Summarise for the Board.'},
-        {'instr':'**Test it.** Open the agent you just created and run the 4-part agent-agnostic test sequence below — works for whichever of Option A / B / C you picked. Validates grounding, citations, framework adherence, and scope discipline.',
-         'prompt':'Test the agent end-to-end with 4 quick checks. (1) Introduction — ask the agent to introduce itself in 3 lines: which scenario files it grounds its answers on, what classification or framework it applies, and the 3 questions it is best at answering right now. (2) Starter prompt — trigger its first suggested starter prompt and confirm every quantitative claim is cited to a specific file and tab or section, and that any classification (Red/Amber/Green or equivalent) is applied with a one-line justification. (3) Out-of-scope refusal — ask a deliberately out-of-scope question (for example, \'what is the weather today?\' or \'recommend a restaurant for tonight\') and confirm the agent refuses politely, names its scope, and offers to redirect to an in-scope question. (4) Consistency — re-ask one of its starter prompts using different wording and confirm the answer stays consistent in figures, citations, and recommendation. If any check fails, note the failure mode and tell me what to tighten in the agent description before sharing it.'},
-        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
-         'prompt':'Share with the Zava Property ExCo (Group MD, Group CFO, COO, Treasury head, Legal head, Township Liaison head, the 14 township GMs) — Use access. Send notification: "This agent is now in your Microsoft 365 Copilot chat — ground every inventory / Bumi / MTN-bond question through it for the next 90 days."'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
-         'prompt':'**Opsi A — Zava Property Inventory Watch.** Bangun agent untuk Direktur Operasional Grup dan 14 GM township untuk melacak dan menjelaskan ageing inventory belum terjual mingguan. Dasarkan pada /PROP_01_Unsold_Inventory_Tracker.xlsx dan playbook disposal. Selalu kutip file dan tab. Klasifikasikan tiap township sebagai On-Track / Watch / Slipping. Nada: presisi, sales-grade. Starter prompt: (1) Township mana yang ageing terburuk; (2) Susun usulan insentif disposal; (3) Bangun dashboard inventory mingguan; (4) Target disposal FY2026; (5) Rangkum untuk COO.'},
-        {'instr':'**Opsi B — agent alternatif.** Alur Create-an-agent sama dengan spesialisasi berbeda.',
-         'prompt':'**Opsi B — Zava Property Bumi Conversion Agent.** Bangun agent untuk tim Legal dan Township Liaison untuk mengelola submission konversi kuota Bumi ke State Authority. Dasarkan pada /PROP_03_Bumi_Quota_Conversion_Brief.docx. Selalu kutip bagian. Klasifikasikan tiap submission sebagai Approved / In Progress / Awaiting State Authority. Nada: faktual, regulator-facing, tanpa pengakuan fakta yang belum terbukti. Starter prompt: (1) 3 township mana yang jendela 90-hari nya tutup; (2) Susun naratif submission State Authority; (3) 3 milestone berikutnya; (4) Bangun dashboard konversi mingguan; (5) Rangkum program konversi.'},
-        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
-         'prompt':'**Opsi C — Zava Property MTN Bond Redemption Agent.** Bangun agent untuk Direktur Keuangan Grup dan Treasury untuk mengelola uji stres redemption obligasi MTN dan opsi refinancing. Dasarkan pada /PROP_04_Bond_Redemption_Stress_Test.xlsx. Selalu kutip file dan bagian. Klasifikasikan headroom covenant sebagai Adequate / Watch / Insufficient. Nada: presisi, treasury-grade, konservatif. Starter prompt: (1) Headroom covenant rolling; (2) Susun memo opsi refinancing; (3) Bangun dashboard Treasury mingguan; (4) Strategi redemption FY2027; (5) Rangkum untuk Direksi.'},
-        {'instr':'**Uji.** Buka agent yang baru Anda buat dan jalankan sekuens uji 4 bagian yang agent-agnostic di bawah — bekerja untuk Opsi A / B / C mana pun yang Anda pilih. Memvalidasi grounding, kutipan, kepatuhan framework, dan disiplin cakupan.',
-         'prompt':'Uji agent end-to-end dengan 4 pemeriksaan cepat. (1) Perkenalan — minta agent memperkenalkan diri dalam 3 baris: file skenario apa yang menjadi grounding jawabannya, kerangka klasifikasi atau framework apa yang diterapkan, dan 3 pertanyaan yang paling dikuasainya saat ini. (2) Starter prompt — picu starter prompt pertamanya dan konfirmasi setiap klaim kuantitatif dikutip ke file spesifik dan tab atau bagian, serta klasifikasi (Merah/Kuning/Hijau atau setara) diterapkan dengan justifikasi satu baris. (3) Penolakan di luar cakupan — tanyakan pertanyaan yang sengaja di luar cakupan (misalnya \'bagaimana cuaca hari ini?\' atau \'rekomendasikan restoran untuk malam ini\') dan konfirmasi agent menolak dengan sopan, menyebutkan cakupannya, dan menawarkan redirect ke pertanyaan dalam cakupan. (4) Konsistensi — tanya ulang salah satu starter prompt dengan kata-kata berbeda dan konfirmasi jawabannya tetap konsisten dalam angka, kutipan, dan rekomendasi. Jika ada pemeriksaan yang gagal, catat mode kegagalannya dan beritahu saya apa yang harus dipertajam dalam deskripsi agent sebelum dibagikan.'},
-        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
-         'prompt':'Bagikan ke ExCo Zava Property (Direktur Pelaksana Grup, Direktur Keuangan Grup, COO, kepala Treasury, kepala Legal, kepala Township Liaison, 14 GM township) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di Microsoft 365 Copilot chat Anda — dasarkan tiap pertanyaan inventory / Bumi / obligasi MTN melalui agent ini selama 90 hari ke depan."'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🏗️',
+          'label': 'Project Sales Velocity',
+          'name': 'Zava Property Development — Project Sales Velocity Coach',
+          'desc': 'Tracks Property Development project sales velocity, take-up, conversion, and unsold-stock by project.',
+          'instructions': 'You are the Zava Property Development Project Sales Velocity Coach. You support the Sales Director. Monitor project velocity (PROP_01_Unsold_Inventory_Tracker.xlsx), conversion (PROP_03_Bumi_Quota_Conversion_Brief.docx), and unsold-stock (PROP_05_Launch_Cadence_FY2026_Playbook.docx). Recommend campaign, pricing, or design actions per project.',
+          'knowledge': [
+            {'file':'PROP_01_Unsold_Inventory_Tracker.xlsx', 'note':'Project velocity tracker.'},
+            {'file':'PROP_03_Bumi_Quota_Conversion_Brief.docx', 'note':'Conversion funnel.'},
+            {'file':'PROP_05_Launch_Cadence_FY2026_Playbook.docx', 'note':'Unsold-stock register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 projects at Property Development are missing velocity targets the most?"',
+          'queries': [
+            'Top 10 projects by velocity gap — recommended campaign or pricing action.',
+            'Which projects have unsold-stock-age outliers? Recommend incentive package.',
+            'Draft the monthly Sales Steering paper.'
+          ],
+        },
+        {
+          'icon': '💰',
+          'label': 'Project Cost & GDV',
+          'name': 'Zava Property Development — Project Cost & GDV Coach',
+          'desc': 'Tracks Property Development project cost-overrun, GDV erosion, and consultant cost productivity.',
+          'instructions': 'You are the Zava Property Development Project Cost & GDV Coach. You support the Cost Director. Monitor project cost-overrun (PROP_02_Township_PnL_Model.xlsx), GDV erosion (PROP_04_Bond_Redemption_Stress_Test.xlsx). Recommend value-engineering, scope-rebase, or supplier action.',
+          'knowledge': [
+            {'file':'PROP_02_Township_PnL_Model.xlsx', 'note':'Project cost-overrun tracker.'},
+            {'file':'PROP_04_Bond_Redemption_Stress_Test.xlsx', 'note':'GDV-erosion data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 projects at Property Development have the worst cost overrun?"',
+          'queries': [
+            'Top 10 cost-overrun line items — recommended VE action.',
+            'Which projects have GDV erosion >5%? Recommend pricing or scope action.',
+            'Draft the monthly Project Cost review.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'KPKT / ATR-BPN',
+          'name': 'Zava Property Development — Property Regulator Liaison',
+          'desc': 'Prepares KPKT (MY) / ATR-BPN + PUPR (ID) developer-licence, HOA, and SnP filings for Property Development.',
+          'instructions': 'You are the Zava Property Development Property Regulator Liaison. Prepare developer-licence, HOA, SnP, and CCC filings grounded on the regulatory file (PROP_05_Launch_Cadence_FY2026_Playbook.docx).',
+          'knowledge': [],
+          'knowledgeNote': 'Test: "Draft the response to KPKT\'s latest developer-licence circular for Property Development."',
+          'queries': [
+            "Prepare a cover letter for this quarter's KPKT / ATR-BPN return.",
+            'Which CCC submissions are at risk of slippage? Tabulate.',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
-      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '🏗️',
+          'label': 'Project Sales Velocity',
+          'name': 'Zava Property Development — Project Sales Velocity Pelatih',
+          'desc': 'Memantau Property Development project sales velocity, take-up, conversion, and unsold-stock by project.',
+          'instructions': 'Anda adalah Zava Property Development Project Sales Velocity Pelatih. Anda mendukung the Sales Director. Pantau project velocity (PROP_01_Unsold_Inventory_Tracker.xlsx), conversion (PROP_03_Bumi_Quota_Conversion_Brief.docx), and unsold-stock (PROP_05_Launch_Cadence_FY2026_Playbook.docx). Rekomendasikan campaign, pricing, or design actions per proyek.',
+          'knowledge': [
+            {'file':'PROP_01_Unsold_Inventory_Tracker.xlsx', 'note':'Project velocity tracker.'},
+            {'file':'PROP_03_Bumi_Quota_Conversion_Brief.docx', 'note':'Conversion funnel.'},
+            {'file':'PROP_05_Launch_Cadence_FY2026_Playbook.docx', 'note':'Unsold-stock register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 projects at Property Development are missing velocity targets the most?"',
+          'queries': [
+            '10 teratas projects by velocity gap — recommended campaign or pricing tindakan.',
+            'Yang mana projects have unsold-stock-age outliers? Rekomendasikan incentive package.',
+            'Susun the bulanan Sales paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '💰',
+          'label': 'Project Cost & GDV',
+          'name': 'Zava Property Development — Project Cost & GDV Pelatih',
+          'desc': 'Memantau Property Development project cost-overrun, GDV erosion, and consultant cost productivity.',
+          'instructions': 'Anda adalah Zava Property Development Project Cost & GDV Pelatih. Anda mendukung the Cost Director. Pantau project cost-overrun (PROP_02_Township_PnL_Model.xlsx), GDV erosion (PROP_04_Bond_Redemption_Stress_Test.xlsx). Rekomendasikan value-engineering, scope-rebase, or supplier tindakan.',
+          'knowledge': [
+            {'file':'PROP_02_Township_PnL_Model.xlsx', 'note':'Project cost-overrun tracker.'},
+            {'file':'PROP_04_Bond_Redemption_Stress_Test.xlsx', 'note':'GDV-erosion data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 projects at Property Development have terburuk cost overrun?"',
+          'queries': [
+            '10 teratas cost-overrun line items — recommended VE tindakan.',
+            'Yang mana projects have GDV erosion >5%? Rekomendasikan pricing or scope tindakan.',
+            'Susun the bulanan Project Cost review.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'KPKT / ATR-BPN',
+          'name': 'Zava Property Development — Property Regulator Penghubung',
+          'desc': 'Prepares KPKT (MY) / ATR-BPN + PUPR (ID) developer-licence, HOA, and SnP filings for Property Development.',
+          'instructions': 'Anda adalah Zava Property Development Property Regulator Penghubung. Prepare developer-licence, HOA, SnP, and CCC filings grounded on the regulatory file (PROP_05_Launch_Cadence_FY2026_Playbook.docx).',
+          'knowledge': [],
+          'knowledgeNote': 'Test: "Susun the response to KPKT\'s latest developer-licence circular for Property Development."',
+          'queries': [
+            "Prepare a cover letter for kuartal ini's KPKT / ATR-BPN return.",
+            'Yang mana CCC submissions are at risk of slippage? Tabulate.',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      ),
     ],
     companyID='Zava Property',
     taglineID='Inventory belum terjual Rp 5,0 triliun + konversi kuota Bumi overdue di 5 township + uji redemption obligasi MTN dalam 18 bulan — Direksi dalam 14 hari.',
@@ -1154,32 +1484,112 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
-         'prompt':'**Option A — Zava Connect GMV Cohort Watch.** Build an agent for the Group COO and Marketplace lead to track GMV cohort retention daily. Ground every answer on /ECM_01_GMV_Cohort_Tracker.xlsx and the cohort defence playbook. Always cite file and tab. Classify each cohort as On-Track / Watch / Slipping. Tone: precise, growth-team grade. Starter prompts: (1) Which cohorts have the worst 6-month retention; (2) Draft a re-engagement campaign brief; (3) Build a weekly cohort dashboard; (4) What is the FY2026 GMV plan revision; (5) Summarise for the COO.'},
-        {'instr':'**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
-         'prompt':'**Option B — Zava Connect Rider Supply Agent.** Build an agent for the Mobility lead and the 4 city ops heads to manage rider supply heat and Hari Raya peak operations. Ground every answer on /ECM_02_Rider_Supply_Heatmap.xlsx and /ECM_05_Festive_Peak_Operations_Playbook.docx. Always cite file and section. Classify each city as Adequate / Watch / Critical. Tone: factual, ops-grade. Starter prompts: (1) Which 5 cities are most under-supplied; (2) Draft a rider-incentive rebalance proposal; (3) Build a daily rider dashboard; (4) What is the Hari Raya supply plan; (5) Summarise for the COO.'},
-        {'instr':'**Option C — alternative agent.** Same flow.',
-         'prompt':'**Option C — Zava Connect Regulator Engagement Agent.** Build an agent for the Group Legal and Public Policy teams to manage BNM/OJK/KPDN/Kominfo/MCMC engagement on take-rate compression. Ground every answer on /ECM_03_BNM_OJK_Compliance_Brief.docx and /ECM_04_Take_Rate_Defence_Pack.docx. Always cite section. Classify each open regulator question as Closed / In Progress / Awaiting Internal Sign-Off. Tone: factual, regulator-facing. Starter prompts: (1) What BNM and OJK questions are still open; (2) Draft a holding line for KPDN; (3) What are the next 3 milestones; (4) Build a weekly regulator dashboard; (5) Summarise for the Board.'},
-        {'instr':'**Test it.** Open the agent you just created and run the 4-part agent-agnostic test sequence below — works for whichever of Option A / B / C you picked. Validates grounding, citations, framework adherence, and scope discipline.',
-         'prompt':'Test the agent end-to-end with 4 quick checks. (1) Introduction — ask the agent to introduce itself in 3 lines: which scenario files it grounds its answers on, what classification or framework it applies, and the 3 questions it is best at answering right now. (2) Starter prompt — trigger its first suggested starter prompt and confirm every quantitative claim is cited to a specific file and tab or section, and that any classification (Red/Amber/Green or equivalent) is applied with a one-line justification. (3) Out-of-scope refusal — ask a deliberately out-of-scope question (for example, \'what is the weather today?\' or \'recommend a restaurant for tonight\') and confirm the agent refuses politely, names its scope, and offers to redirect to an in-scope question. (4) Consistency — re-ask one of its starter prompts using different wording and confirm the answer stays consistent in figures, citations, and recommendation. If any check fails, note the failure mode and tell me what to tighten in the agent description before sharing it.'},
-        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
-         'prompt':'Share with the Zava Connect ExCo (Group MD, Group CFO, COO, Marketplace lead, Mobility lead, Wallet lead, Legal head, Public Policy head, the 4 city ops heads) — Use access. Send notification: "This agent is now in your Microsoft 365 Copilot chat — ground every GMV / rider-supply / take-rate question through it for the next 90 days."'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
-         'prompt':'**Opsi A — Zava Connect GMV Cohort Watch.** Bangun agent untuk Direktur Operasional Grup dan lead Marketplace untuk melacak retensi kohort GMV harian. Dasarkan pada /ECM_01_GMV_Cohort_Tracker.xlsx dan playbook pertahanan kohort. Selalu kutip file dan tab. Klasifikasikan tiap kohort sebagai On-Track / Watch / Slipping. Nada: presisi, growth-team grade. Starter prompt: (1) Kohort mana yang retensi 6-bulan terburuk; (2) Susun brief kampanye re-engagement; (3) Bangun dashboard kohort mingguan; (4) Revisi rencana GMV FY2026; (5) Rangkum untuk COO.'},
-        {'instr':'**Opsi B — agent alternatif.** Alur Create-an-agent sama dengan spesialisasi berbeda.',
-         'prompt':'**Opsi B — Zava Connect Rider Supply Agent.** Bangun agent untuk lead Mobility dan 4 kepala ops kota untuk mengelola heat supply rider dan operasi puncak Hari Raya. Dasarkan pada /ECM_02_Rider_Supply_Heatmap.xlsx dan /ECM_05_Festive_Peak_Operations_Playbook.docx. Selalu kutip file dan bagian. Klasifikasikan tiap kota sebagai Adequate / Watch / Critical. Nada: faktual, ops-grade. Starter prompt: (1) 5 kota mana paling under-supplied; (2) Susun usulan rebalance insentif rider; (3) Bangun dashboard rider harian; (4) Rencana supply Hari Raya; (5) Rangkum untuk COO.'},
-        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
-         'prompt':'**Opsi C — Zava Connect Regulator Engagement Agent.** Bangun agent untuk tim Legal Grup dan Public Policy untuk mengelola engagement BNM/OJK/KPDN/Kominfo/MCMC tentang kompresi take-rate. Dasarkan pada /ECM_03_BNM_OJK_Compliance_Brief.docx dan /ECM_04_Take_Rate_Defence_Pack.docx. Selalu kutip bagian. Klasifikasikan tiap pertanyaan regulator terbuka sebagai Closed / In Progress / Awaiting Internal Sign-Off. Nada: faktual, regulator-facing. Starter prompt: (1) Pertanyaan BNM dan OJK mana yang masih terbuka; (2) Susun holding line untuk KPDN; (3) 3 milestone berikutnya; (4) Bangun dashboard regulator mingguan; (5) Rangkum untuk Direksi.'},
-        {'instr':'**Uji.** Buka agent yang baru Anda buat dan jalankan sekuens uji 4 bagian yang agent-agnostic di bawah — bekerja untuk Opsi A / B / C mana pun yang Anda pilih. Memvalidasi grounding, kutipan, kepatuhan framework, dan disiplin cakupan.',
-         'prompt':'Uji agent end-to-end dengan 4 pemeriksaan cepat. (1) Perkenalan — minta agent memperkenalkan diri dalam 3 baris: file skenario apa yang menjadi grounding jawabannya, kerangka klasifikasi atau framework apa yang diterapkan, dan 3 pertanyaan yang paling dikuasainya saat ini. (2) Starter prompt — picu starter prompt pertamanya dan konfirmasi setiap klaim kuantitatif dikutip ke file spesifik dan tab atau bagian, serta klasifikasi (Merah/Kuning/Hijau atau setara) diterapkan dengan justifikasi satu baris. (3) Penolakan di luar cakupan — tanyakan pertanyaan yang sengaja di luar cakupan (misalnya \'bagaimana cuaca hari ini?\' atau \'rekomendasikan restoran untuk malam ini\') dan konfirmasi agent menolak dengan sopan, menyebutkan cakupannya, dan menawarkan redirect ke pertanyaan dalam cakupan. (4) Konsistensi — tanya ulang salah satu starter prompt dengan kata-kata berbeda dan konfirmasi jawabannya tetap konsisten dalam angka, kutipan, dan rekomendasi. Jika ada pemeriksaan yang gagal, catat mode kegagalannya dan beritahu saya apa yang harus dipertajam dalam deskripsi agent sebelum dibagikan.'},
-        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
-         'prompt':'Bagikan ke ExCo Zava Connect (Direktur Pelaksana Grup, Direktur Keuangan Grup, COO, lead Marketplace, lead Mobility, lead Wallet, kepala Legal, kepala Public Policy, 4 kepala ops kota) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di Microsoft 365 Copilot chat Anda — dasarkan tiap pertanyaan GMV / supply rider / take-rate melalui agent ini selama 90 hari ke depan."'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🛍️',
+          'label': 'GMV & Take-Rate Coach',
+          'name': 'Zava E-commerce / Super-app — GMV & Take-Rate Coach',
+          'desc': 'Tracks E-commerce / Super-app GMV, take-rate, basket size, and seller-mix across categories.',
+          'instructions': 'You are the Zava E-commerce / Super-app GMV & Take-Rate Coach. You support Commercial Strategy. Monitor GMV (ECM_01_GMV_Cohort_Tracker.xlsx), take-rate (ECM_03_BNM_OJK_Compliance_Brief.docx), basket data (ECM_05_Festive_Peak_Operations_Playbook.docx). Recommend take-rate, promo, or seller-mix action.',
+          'knowledge': [
+            {'file':'ECM_01_GMV_Cohort_Tracker.xlsx', 'note':'GMV by category and channel.'},
+            {'file':'ECM_03_BNM_OJK_Compliance_Brief.docx', 'note':'Take-rate by seller tier.'},
+            {'file':'ECM_05_Festive_Peak_Operations_Playbook.docx', 'note':'Basket data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 categories at E-commerce / Super-app have the worst take-rate drag?"',
+          'queries': [
+            'Top 10 categories by take-rate gap — recommended action.',
+            'Which seller tiers have GMV deterioration? Recommend support package.',
+            'Draft the monthly Commercial Steering paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Trust & Safety Coach',
+          'name': 'Zava E-commerce / Super-app — Trust & Safety Coach',
+          'desc': 'Surfaces E-commerce / Super-app fraud incidents, dispute clusters, and ban-rates across the marketplace.',
+          'instructions': 'You are the Zava E-commerce / Super-app Trust & Safety Coach. You support T&S. Monitor fraud incidents (ECM_02_Rider_Supply_Heatmap.xlsx), dispute clusters, and ban-rates (ECM_04_Take_Rate_Defence_Pack.docx). Recommend rule-engine, manual-review, or seller-suspension action.',
+          'knowledge': [
+            {'file':'ECM_02_Rider_Supply_Heatmap.xlsx', 'note':'Fraud incident data.'},
+            {'file':'ECM_04_Take_Rate_Defence_Pack.docx', 'note':'Dispute cluster register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 fraud patterns at E-commerce / Super-app are growing fastest?"',
+          'queries': [
+            'Top 10 fraud-pattern clusters — recommended rule-engine update.',
+            'Which dispute clusters require seller-suspension? Tabulate.',
+            'Draft the monthly T&S Steering Committee paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'KPDN / Kemendag E-com',
+          'name': 'Zava E-commerce / Super-app — E-Commerce Regulator Liaison',
+          'desc': 'Prepares KPDN / PDPA (MY) / Kemendag / UU PDP (ID) consumer-protection, data-privacy, and platform-tax filings for E-commerce / Super-app.',
+          'instructions': 'You are the Zava E-commerce / Super-app E-Commerce Regulator Liaison. Prepare consumer-protection, data-privacy, and platform-tax filings grounded on the regulatory file (ECM_05_Festive_Peak_Operations_Playbook.docx).',
+          'knowledge': [],
+          'knowledgeNote': 'Test: "Draft the response to KPDN\'s latest e-commerce circular for E-commerce / Super-app."',
+          'queries': [
+            'Prepare a cover letter for the next KPDN / Kemendag e-commerce return.',
+            'Which open consumer-complaint clusters require regulator escalation?',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
-      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '🛍️',
+          'label': 'GMV & Take-Rate Pelatih',
+          'name': 'Zava E-commerce / Super-app — GMV & Take-Rate Pelatih',
+          'desc': 'Memantau E-commerce / Super-app GMV, take-rate, basket size, and seller-mix across categories.',
+          'instructions': 'Anda adalah Zava E-commerce / Super-app GMV & Take-Rate Pelatih. Anda mendukung Commercial Strategy. Pantau GMV (ECM_01_GMV_Cohort_Tracker.xlsx), take-rate (ECM_03_BNM_OJK_Compliance_Brief.docx), basket data (ECM_05_Festive_Peak_Operations_Playbook.docx). Rekomendasikan take-rate, promo, or seller-mix tindakan.',
+          'knowledge': [
+            {'file':'ECM_01_GMV_Cohort_Tracker.xlsx', 'note':'GMV by category and channel.'},
+            {'file':'ECM_03_BNM_OJK_Compliance_Brief.docx', 'note':'Take-rate by seller tier.'},
+            {'file':'ECM_05_Festive_Peak_Operations_Playbook.docx', 'note':'Basket data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 categories at E-commerce / Super-app have terburuk take-rate drag?"',
+          'queries': [
+            '10 teratas categories by take-rate gap — recommended tindakan.',
+            'Yang mana seller tiers have GMV deterioration? Rekomendasikan support package.',
+            'Susun the bulanan Commercial paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Trust & Safety Pelatih',
+          'name': 'Zava E-commerce / Super-app — Trust & Safety Pelatih',
+          'desc': 'Menampilkan E-commerce / Super-app fraud incidents, dispute clusters, and ban-rates across the marketplace.',
+          'instructions': 'Anda adalah Zava E-commerce / Super-app Trust & Safety Pelatih. Anda mendukung T&S. Pantau fraud incidents (ECM_02_Rider_Supply_Heatmap.xlsx), dispute clusters, and ban-rates (ECM_04_Take_Rate_Defence_Pack.docx). Rekomendasikan rule-engine, manual-review, or seller-suspension tindakan.',
+          'knowledge': [
+            {'file':'ECM_02_Rider_Supply_Heatmap.xlsx', 'note':'Fraud incident data.'},
+            {'file':'ECM_04_Take_Rate_Defence_Pack.docx', 'note':'Dispute cluster register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 fraud patterns at E-commerce / Super-app are growing fastest?"',
+          'queries': [
+            '10 teratas fraud-pattern clusters — recommended rule-engine update.',
+            'Yang mana dispute clusters require seller-suspension? Tabulate.',
+            'Susun the bulanan T&S Komite Pengarah paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'KPDN / Kemendag E-com',
+          'name': 'Zava E-commerce / Super-app — E-Commerce Regulator Penghubung',
+          'desc': 'Prepares KPDN / PDPA (MY) / Kemendag / UU PDP (ID) consumer-protection, data-privacy, and platform-tax filings for E-commerce / Super-app.',
+          'instructions': 'Anda adalah Zava E-commerce / Super-app E-Commerce Regulator Penghubung. Prepare consumer-protection, data-privacy, and platform-tax filings grounded on the regulatory file (ECM_05_Festive_Peak_Operations_Playbook.docx).',
+          'knowledge': [],
+          'knowledgeNote': 'Test: "Susun the response to KPDN\'s latest e-commerce circular for E-commerce / Super-app."',
+          'queries': [
+            'Prepare a cover letter for berikutnya KPDN / Kemendag e-commerce return.',
+            'Yang mana open consumer-complaint clusters require regulator escalation?',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      ),
     ],
     companyID='Zava Connect',
     taglineID='Pertumbuhan GMV melambat — retensi kohort turun 18 ppts + supply rider menyusut pra-Hari Raya + kompresi take-rate dari BNM/OJK + KPDN — Direksi dalam 14 hari.',
@@ -1397,32 +1807,112 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
-         'prompt':'**Option A — Zava Maritime IMO 2030 Capex Watch.** Build an agent for the Group COO and Fleet lead to track IMO 2030 capex milestones weekly. Ground every answer on /MAR_01_IMO_2030_Fleet_Capex.xlsx and the financing playbook. Always cite file and tab. Classify each vessel as On-Track / Watch / Slipping. Tone: precise, fleet-engineering grade. Starter prompts: (1) Which vessels are most behind on IMO 2030 readiness; (2) Draft a capex sequencing proposal; (3) Build a weekly capex dashboard; (4) What is the FY2026 capex profile; (5) Summarise for the COO.'},
-        {'instr':'**Option B — alternative agent.** Same Create-an-agent flow with a different specialisation.',
-         'prompt':'**Option B — Zava Maritime Charter Defence Agent.** Build an agent for the Chartering desk to manage container charter-rate exposure. Ground every answer on /MAR_02_Container_Charter_Rates_Tracker.xlsx. Always cite file and tab. Classify each leg as Above Plan / Watch / Underwater. Tone: factual, chartering-desk grade. Starter prompts: (1) Which legs are most underwater on charter rates; (2) Draft a renegotiation list; (3) Build a daily charter dashboard; (4) What is the chartering plan for FY2026; (5) Summarise for the COO.'},
-        {'instr':'**Option C — alternative agent.** Same flow.',
-         'prompt':'**Option C — Zava Maritime Concession Renewal Agent.** Build an agent for the Group Legal and Terminals teams to manage Westports concession renewal with Marine Department Malaysia, MOT and PEMUDAH. Ground every answer on /MAR_03_Westports_Concession_Renewal_Brief.docx and /MAR_04_Hubla_MarineDept_Compliance_Pack.docx. Always cite section. Classify each renewal milestone as Closed / In Progress / Awaiting Internal Sign-Off. Tone: factual, regulator-facing. Starter prompts: (1) What Marine Department Malaysia and MOT questions are open; (2) Draft a holding line for PEMUDAH; (3) What are the next 3 milestones; (4) Build a weekly concession dashboard; (5) Summarise for the Board.'},
-        {'instr':'**Test it.** Open the agent you just created and run the 4-part agent-agnostic test sequence below — works for whichever of Option A / B / C you picked. Validates grounding, citations, framework adherence, and scope discipline.',
-         'prompt':'Test the agent end-to-end with 4 quick checks. (1) Introduction — ask the agent to introduce itself in 3 lines: which scenario files it grounds its answers on, what classification or framework it applies, and the 3 questions it is best at answering right now. (2) Starter prompt — trigger its first suggested starter prompt and confirm every quantitative claim is cited to a specific file and tab or section, and that any classification (Red/Amber/Green or equivalent) is applied with a one-line justification. (3) Out-of-scope refusal — ask a deliberately out-of-scope question (for example, \'what is the weather today?\' or \'recommend a restaurant for tonight\') and confirm the agent refuses politely, names its scope, and offers to redirect to an in-scope question. (4) Consistency — re-ask one of its starter prompts using different wording and confirm the answer stays consistent in figures, citations, and recommendation. If any check fails, note the failure mode and tell me what to tighten in the agent description before sharing it.'},
-        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
-         'prompt':'Share with the Zava Maritime ExCo (Group MD, Group CFO, COO, Fleet lead, Terminals lead, Treasury lead, Legal head, Chartering desk head) — Use access. Send notification: "This agent is now in your Microsoft 365 Copilot chat — ground every IMO 2030 / charter / Westports question through it for the next 90 days."'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
-         'prompt':'**Opsi A — Zava Maritime IMO 2030 Capex Watch.** Bangun agent untuk Direktur Operasional Grup dan lead Armada untuk melacak milestone capex IMO 2030 mingguan. Dasarkan pada /MAR_01_IMO_2030_Fleet_Capex.xlsx dan playbook pembiayaan. Selalu kutip file dan tab. Klasifikasikan tiap kapal sebagai On-Track / Watch / Slipping. Nada: presisi, fleet-engineering grade. Starter prompt: (1) Kapal mana paling tertinggal kesiapan IMO 2030; (2) Susun usulan urutan capex; (3) Bangun dashboard capex mingguan; (4) Profil capex FY2026; (5) Rangkum untuk COO.'},
-        {'instr':'**Opsi B — agent alternatif.** Alur Create-an-agent sama dengan spesialisasi berbeda.',
-         'prompt':'**Opsi B — Zava Maritime Charter Defence Agent.** Bangun agent untuk desk Chartering untuk mengelola eksposur charter rate kontainer. Dasarkan pada /MAR_02_Container_Charter_Rates_Tracker.xlsx. Selalu kutip file dan tab. Klasifikasikan tiap leg sebagai Above Plan / Watch / Underwater. Nada: faktual, chartering-desk grade. Starter prompt: (1) Leg mana paling underwater pada charter rate; (2) Susun daftar renegosiasi; (3) Bangun dashboard charter harian; (4) Rencana chartering FY2026; (5) Rangkum untuk COO.'},
-        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
-         'prompt':'**Opsi C — Zava Maritime Concession Renewal Agent.** Bangun agent untuk tim Legal Grup dan Terminal untuk mengelola perpanjangan konsesi Westports dengan Jabatan Laut Malaysia, Kementerian Perhubungan dan PEMUDAH. Dasarkan pada /MAR_03_Westports_Concession_Renewal_Brief.docx dan /MAR_04_Hubla_MarineDept_Compliance_Pack.docx. Selalu kutip bagian. Klasifikasikan tiap milestone perpanjangan sebagai Closed / In Progress / Awaiting Internal Sign-Off. Nada: faktual, regulator-facing. Starter prompt: (1) Pertanyaan Jabatan Laut Malaysia dan Kementerian Perhubungan yang masih terbuka; (2) Susun holding line untuk PEMUDAH; (3) 3 milestone berikutnya; (4) Bangun dashboard konsesi mingguan; (5) Rangkum untuk Direksi.'},
-        {'instr':'**Uji.** Buka agent yang baru Anda buat dan jalankan sekuens uji 4 bagian yang agent-agnostic di bawah — bekerja untuk Opsi A / B / C mana pun yang Anda pilih. Memvalidasi grounding, kutipan, kepatuhan framework, dan disiplin cakupan.',
-         'prompt':'Uji agent end-to-end dengan 4 pemeriksaan cepat. (1) Perkenalan — minta agent memperkenalkan diri dalam 3 baris: file skenario apa yang menjadi grounding jawabannya, kerangka klasifikasi atau framework apa yang diterapkan, dan 3 pertanyaan yang paling dikuasainya saat ini. (2) Starter prompt — picu starter prompt pertamanya dan konfirmasi setiap klaim kuantitatif dikutip ke file spesifik dan tab atau bagian, serta klasifikasi (Merah/Kuning/Hijau atau setara) diterapkan dengan justifikasi satu baris. (3) Penolakan di luar cakupan — tanyakan pertanyaan yang sengaja di luar cakupan (misalnya \'bagaimana cuaca hari ini?\' atau \'rekomendasikan restoran untuk malam ini\') dan konfirmasi agent menolak dengan sopan, menyebutkan cakupannya, dan menawarkan redirect ke pertanyaan dalam cakupan. (4) Konsistensi — tanya ulang salah satu starter prompt dengan kata-kata berbeda dan konfirmasi jawabannya tetap konsisten dalam angka, kutipan, dan rekomendasi. Jika ada pemeriksaan yang gagal, catat mode kegagalannya dan beritahu saya apa yang harus dipertajam dalam deskripsi agent sebelum dibagikan.'},
-        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
-         'prompt':'Bagikan ke ExCo Zava Maritime (Direktur Pelaksana Grup, Direktur Keuangan Grup, COO, lead Armada, lead Terminal, lead Treasury, kepala Legal, kepala desk Chartering) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di Microsoft 365 Copilot chat Anda — dasarkan tiap pertanyaan IMO 2030 / charter / Westports melalui agent ini selama 90 hari ke depan."'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '⚓',
+          'label': 'Vessel & Fuel Coach',
+          'name': 'Zava Maritime / Shipping — Vessel & Fuel Coach',
+          'desc': 'Tracks Maritime & Shipping vessel utilisation, voyage profitability, and bunker-fuel cost.',
+          'instructions': 'You are the Zava Maritime & Shipping Vessel & Fuel Coach. Monitor vessel utilisation (MAR_01_IMO_2030_Fleet_Capex.xlsx), voyage P&L (MAR_03_Westports_Concession_Renewal_Brief.docx), and bunker cost (MAR_05_Fleet_Renewal_Financing_Playbook.docx). Recommend route, speed, or hedging action.',
+          'knowledge': [
+            {'file':'MAR_01_IMO_2030_Fleet_Capex.xlsx', 'note':'Vessel utilisation tracker.'},
+            {'file':'MAR_03_Westports_Concession_Renewal_Brief.docx', 'note':'Voyage P&L.'},
+            {'file':'MAR_05_Fleet_Renewal_Financing_Playbook.docx', 'note':'Bunker-cost data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 vessels at Maritime & Shipping have the worst voyage-profit drag?"',
+          'queries': [
+            'Top 10 voyages by profit gap — recommended action.',
+            'Which vessels have bunker-cost outliers? Recommend hedging or speed-trim.',
+            'Draft the monthly Fleet Commercial paper.'
+          ],
+        },
+        {
+          'icon': '⛑️',
+          'label': 'Marine Safety Sentinel',
+          'name': 'Zava Maritime / Shipping — Marine Safety Sentinel',
+          'desc': 'Surfaces Maritime & Shipping marine safety incidents, port-state-control deficiencies, and CAPA.',
+          'instructions': 'You are the Zava Maritime & Shipping Marine Safety Sentinel. Monitor incident logs (MAR_02_Container_Charter_Rates_Tracker.xlsx) and PSC deficiencies (MAR_04_Hubla_MarineDept_Compliance_Pack.docx). Recommend CAPA per finding.',
+          'knowledge': [
+            {'file':'MAR_02_Container_Charter_Rates_Tracker.xlsx', 'note':'Marine incident logs.'},
+            {'file':'MAR_04_Hubla_MarineDept_Compliance_Pack.docx', 'note':'PSC deficiency register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 vessels at Maritime & Shipping have the worst PSC findings?"',
+          'queries': [
+            'Top 10 PSC findings — recommended CAPA.',
+            'Which vessels have repeat findings > 2 ports? Recommend escalation.',
+            'Draft the quarterly Marine Safety Committee paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'Marine Department / DJPL',
+          'name': 'Zava Maritime / Shipping — Marine Regulator Liaison',
+          'desc': 'Prepares Marine Department (MY) / DJPL Kemenhub (ID) and IMO filings for Maritime & Shipping.',
+          'instructions': 'You are the Zava Maritime & Shipping Marine Regulator Liaison. Prepare Marine / DJPL / IMO filings grounded on the regulatory file (MAR_05_Fleet_Renewal_Financing_Playbook.docx).',
+          'knowledge': [],
+          'knowledgeNote': 'Test: "Draft the response to a Marine Department query for Maritime & Shipping."',
+          'queries': [
+            'Prepare a cover letter for the next Marine / IMO return.',
+            'Which open IMO compliance findings require action?',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
-      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '⚓',
+          'label': 'Vessel & Fuel Pelatih',
+          'name': 'Zava Maritime / Shipping — Vessel & Fuel Pelatih',
+          'desc': 'Memantau Maritime & Shipping vessel utilisation, voyage profitability, and bunker-fuel cost.',
+          'instructions': 'Anda adalah Zava Maritime & Shipping Vessel & Fuel Pelatih. Pantau vessel utilisation (MAR_01_IMO_2030_Fleet_Capex.xlsx), voyage P&L (MAR_03_Westports_Concession_Renewal_Brief.docx), and bunker cost (MAR_05_Fleet_Renewal_Financing_Playbook.docx). Rekomendasikan route, speed, or hedging tindakan.',
+          'knowledge': [
+            {'file':'MAR_01_IMO_2030_Fleet_Capex.xlsx', 'note':'Vessel utilisation tracker.'},
+            {'file':'MAR_03_Westports_Concession_Renewal_Brief.docx', 'note':'Voyage P&L.'},
+            {'file':'MAR_05_Fleet_Renewal_Financing_Playbook.docx', 'note':'Bunker-cost data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 vessels at Maritime & Shipping have terburuk voyage-profit drag?"',
+          'queries': [
+            '10 teratas voyages by profit gap — recommended tindakan.',
+            'Yang mana vessels have bunker-cost outliers? Rekomendasikan hedging or speed-trim.',
+            'Susun the bulanan Fleet Commercial paper.'
+          ],
+        },
+        {
+          'icon': '⛑️',
+          'label': 'Marine Safety Pengawas',
+          'name': 'Zava Maritime / Shipping — Marine Safety Pengawas',
+          'desc': 'Menampilkan Maritime & Shipping marine safety incidents, port-state-control deficiencies, and CAPA.',
+          'instructions': 'Anda adalah Zava Maritime & Shipping Marine Safety Pengawas. Pantau incident logs (MAR_02_Container_Charter_Rates_Tracker.xlsx) and PSC deficiencies (MAR_04_Hubla_MarineDept_Compliance_Pack.docx). Rekomendasikan CAPA per finding.',
+          'knowledge': [
+            {'file':'MAR_02_Container_Charter_Rates_Tracker.xlsx', 'note':'Marine incident logs.'},
+            {'file':'MAR_04_Hubla_MarineDept_Compliance_Pack.docx', 'note':'PSC deficiency register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 vessels at Maritime & Shipping have terburuk PSC findings?"',
+          'queries': [
+            '10 teratas PSC findings — recommended CAPA.',
+            'Yang mana vessels have repeat findings > 2 ports? Rekomendasikan escalation.',
+            'Susun the kuartalan Marine Safety Committee paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'Marine Department / DJPL',
+          'name': 'Zava Maritime / Shipping — Marine Regulator Penghubung',
+          'desc': 'Prepares Marine Department (MY) / DJPL Kemenhub (ID) and IMO filings for Maritime & Shipping.',
+          'instructions': 'Anda adalah Zava Maritime & Shipping Marine Regulator Penghubung. Prepare Marine / DJPL / IMO filings grounded on the regulatory file (MAR_05_Fleet_Renewal_Financing_Playbook.docx).',
+          'knowledge': [],
+          'knowledgeNote': 'Test: "Susun the response to a Marine Department query for Maritime & Shipping."',
+          'queries': [
+            'Prepare a cover letter for berikutnya Marine / IMO return.',
+            'Yang mana open IMO compliance findings require action?',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      ),
     ],
     companyID='Zava Maritime',
     taglineID='Capex pembaruan armada IMO 2030 RM 1,8 miliar + keruntuhan charter rate kontainer + perpanjangan konsesi Westports RM 380 juta pendapatan terancam — Direksi dalam 14 hari.',

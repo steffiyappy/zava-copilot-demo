@@ -176,17 +176,116 @@ DEPARTMENTS_4 = [
       ],
         persona=['Mod Admin','Mod Admin'],
         personaID=['Mod Admin','Mod Admin']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Zava Operations Continuity Agent\'. Description: an assistant to help the COO, operational excellence, supply and continuity leads, and site operations managers navigate site-level service slippage, the delayed cost takeout, and supplier disruption. Instructions: ground every answer in the 3 attached files — /OPS_01_Operational_Performance.xlsx, /OPS_03_Operations_Playbook.docx, /OPS_04_Business_Continuity_Manual.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Operations Review Committee materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the team should be consulted. Starter prompts to include: (1) Summarise the 8-point SLA gap and MYR 38M cost takeout shortfall for the Operations Review Committee in 60 seconds, (2) Which areas are Red on service levels and why, (3) What governance obligations apply after site-level service slippage, delayed cost takeout, and tier-1 supplier disruption threatening continuity, (4) Draft a holding line for external partners, (5) Draft a holding line for Malaysian DOSH workplace safety expectations and continuity-governance norms.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Zava Operations Continuity Agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the 8-point SLA gap and MYR 38M cost takeout shortfall, the highest-risk areas, the top governance obligations, and the decisions I must take to the Operations Review Committee in 14 days."; (2) "Draft my first message to the leadership team immediately after the Operations Review Committee closes."; (3) "A critical tier-1 supplier signals a possible 72-hour shutdown overnight after a fire at their plant, and the COO needs to know the likely service impact across 4 sites plus the first recovery move before dawn." Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '⚙️',
+          'label': 'Operations PMO',
+          'name': 'Zava Group Operations — Cross-Division PMO Coach',
+          'desc': 'Tracks Operations & COO Office operations programmes, SLA performance, and division-level operating KPIs.',
+          'instructions': 'You are the Zava Group Operations & COO Office Operations PMO Coach. You support Mod Admin (Strategy Director sponsoring Ops transformation). Monitor programme tracker (OPS_01_Operational_Performance.xlsx), SLA performance (OPS_03_Operations_Playbook.docx). Recommend escalation per Red.',
+          'knowledge': [
+            {'file':'OPS_01_Operational_Performance.xlsx', 'note':'Operations programme tracker.'},
+            {'file':'OPS_03_Operations_Playbook.docx', 'note':'SLA performance.'},
+            {'file':'OPS_05_Supplier_Recovery_SOP.docx', 'note':'Division ops KPIs.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 operations programmes in Operations & COO Office are most at risk?"',
+          'queries': [
+            'Top 10 programmes by RAG — recommended escalation.',
+            'Which SLA clusters require root-cause review?',
+            'Draft the monthly Operations PMO paper.'
+          ],
+        },
+        {
+          'icon': '🚚',
+          'label': 'Supply Chain Coach',
+          'name': 'Zava Group Operations — Supply Chain Coach',
+          'desc': 'Surfaces Operations & COO Office group OTIF, inventory turns, and supplier reliability.',
+          'instructions': 'You are the Zava Group Operations & COO Office Supply Chain Coach. Monitor OTIF data (OPS_02_Site_Cost_Tracker.xlsx), inventory data (OPS_04_Business_Continuity_Manual.docx). Recommend supplier or inventory action.',
+          'knowledge': [
+            {'file':'OPS_02_Site_Cost_Tracker.xlsx', 'note':'OTIF tracker.'},
+            {'file':'OPS_04_Business_Continuity_Manual.docx', 'note':'Inventory turns data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 categories in Operations & COO Office have the worst OTIF this quarter?"',
+          'queries': [
+            'Top 10 OTIF-drag suppliers — recommended action.',
+            'Which inventory clusters have turns < 4? Recommend liquidation.',
+            'Draft the monthly Supply Chain paper.'
+          ],
+        },
+        {
+          'icon': '⛑️',
+          'label': 'QHSE Sentinel',
+          'name': 'Zava Group Operations — QHSE Sentinel',
+          'desc': 'Tracks Operations & COO Office group QHSE incidents, near-miss patterns, and CAPA closure.',
+          'instructions': 'You are the Zava Group Operations & COO Office QHSE Sentinel. Monitor incident data (OPS_06_Capex_Approval_Standards.docx).',
+          'knowledge': [
+            {'file':'OPS_06_Capex_Approval_Standards.docx', 'note':'QHSE incident dashboard.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 sites in Operations & COO Office have the worst QHSE drag?"',
+          'queries': [
+            'Top 10 incident clusters — recommended CAPA.',
+            'Which CAPAs are overdue > 30 days? Build closure plan.',
+            'Draft the quarterly QHSE Steering paper.'
+          ],
+        }
       ],
-        DESC_BUILDER,
-        promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Zava Operations Continuity Agent\'. Deskripsi: asisten untuk membantu Direktur Operasi, keunggulan operasi, pimpinan pasokan dan kesinambungan, dan manajer operasi lokasi menavigasi keterlambatan SLA tingkat lokasi, cost takeout yang tertunda, dan disrupsi pemasok. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /OPS_01_Operational_Performance.xlsx, /OPS_03_Operations_Playbook.docx, /OPS_04_Business_Continuity_Manual.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Komite Tinjauan Operasi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di tim yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum gap SLA 8 poin dan kekurangan cost takeout Rp 580 miliar untuk Komite Tinjauan Operasi dalam 60 detik, (2) Area mana yang Merah pada service levels dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca keterlambatan SLA tingkat lokasi, cost takeout yang tertunda, dan disrupsi pemasok tier-1 yang mengancam kesinambungan, (4) Susun holding line untuk mitra eksternal, (5) Susun holding line untuk aturan Kemnaker dan UU Cipta Kerja, ekspektasi keselamatan kerja, dan norma tata kelola kesinambungan.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Zava Operations Continuity Agent baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari gap SLA 8 poin dan kekurangan cost takeout Rp 580 miliar, area berisiko tertinggi, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Tinjauan Operasi dalam 14 hari."; (2) "Susun pesan pertama saya kepada tim pimpinan segera setelah Komite Tinjauan Operasi selesai."; (3) "Pemasok tier-1 kritis memberi sinyal kemungkinan penghentian 72 jam setelah kebakaran di pabriknya, dan Direktur Operasi perlu tahu kemungkinan dampak SLA lintas 4 lokasi serta langkah pemulihan pertama sebelum fajar." Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+        agentsID=[
+        {
+          'icon': '⚙️',
+          'label': 'Operations PMO',
+          'name': 'Zava Grup Operations — Cross-Division PMO Pelatih',
+          'desc': 'Memantau Operations & COO Office operations programmes, SLA performance, and division-level operating KPIs.',
+          'instructions': 'Anda adalah Zava Grup Operations & COO Office Operations PMO Pelatih. Anda mendukung Mod Admin (Strategy Director sponsoring Ops transformation). Pantau programme tracker (OPS_01_Operational_Performance.xlsx), SLA performance (OPS_03_Operations_Playbook.docx). Rekomendasikan escalation per Red.',
+          'knowledge': [
+            {'file':'OPS_01_Operational_Performance.xlsx', 'note':'Operations programme tracker.'},
+            {'file':'OPS_03_Operations_Playbook.docx', 'note':'SLA performance.'},
+            {'file':'OPS_05_Supplier_Recovery_SOP.docx', 'note':'Division ops KPIs.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 operations programmes in Operations & COO Office are most at risk?"',
+          'queries': [
+            '10 teratas programmes by RAG — recommended escalation.',
+            'Yang mana SLA clusters require root-cause review?',
+            'Susun the bulanan Operations PMO paper.'
+          ],
+        },
+        {
+          'icon': '🚚',
+          'label': 'Supply Chain Pelatih',
+          'name': 'Zava Grup Operations — Supply Chain Pelatih',
+          'desc': 'Menampilkan Operations & COO Office grup OTIF, inventory turns, and supplier reliability.',
+          'instructions': 'Anda adalah Zava Grup Operations & COO Office Supply Chain Pelatih. Pantau OTIF data (OPS_02_Site_Cost_Tracker.xlsx), inventory data (OPS_04_Business_Continuity_Manual.docx). Rekomendasikan supplier or inventory tindakan.',
+          'knowledge': [
+            {'file':'OPS_02_Site_Cost_Tracker.xlsx', 'note':'OTIF tracker.'},
+            {'file':'OPS_04_Business_Continuity_Manual.docx', 'note':'Inventory turns data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 categories in Operations & COO Office have terburuk OTIF kuartal ini?"',
+          'queries': [
+            '10 teratas OTIF-drag suppliers — recommended tindakan.',
+            'Yang mana inventory clusters have turns < 4? Rekomendasikan liquidation.',
+            'Susun the bulanan Supply Chain paper.'
+          ],
+        },
+        {
+          'icon': '⛑️',
+          'label': 'QHSE Pengawas',
+          'name': 'Zava Grup Operations — QHSE Pengawas',
+          'desc': 'Memantau Operations & COO Office grup QHSE incidents, near-miss patterns, and CAPA closure.',
+          'instructions': 'Anda adalah Zava Grup Operations & COO Office QHSE Pengawas. Pantau incident data (OPS_06_Capex_Approval_Standards.docx).',
+          'knowledge': [
+            {'file':'OPS_06_Capex_Approval_Standards.docx', 'note':'QHSE incident dashboard.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 sites in Operations & COO Office have terburuk QHSE drag?"',
+          'queries': [
+            '10 teratas incident clusters — recommended CAPA.',
+            'Yang mana CAPAs are overdue > 30 days? Bangun closure plan.',
+            'Susun the kuartalan QHSE paper Komite Pengarah.'
+          ],
+        }
       ],
-        persona=['Mod Admin','Mod Admin'],
-        personaID=['Mod Admin','Mod Admin'])
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      )
     ],
     companyID='Zava Operations',
     taglineID='SLA layanan turun di dua lokasi, cost takeout di bawah rencana, dan disrupsi pemasok mengancam kesinambungan produksi — keselamatan kerja Kemnaker harus dijaga.',
@@ -417,17 +516,116 @@ DEPARTMENTS_4 = [
       ],
         persona=['Sasha Ouellet','Sasha Ouellet'],
         personaID=['Sasha Ouellet','Sasha Ouellet']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Zava Board Governance Agent\'. Description: an assistant to help the Company Secretary, Chief of Staff, governance leads, and board secretariat manage late papers, the growing disclosure watchlist, and resolution tracking ahead of quarter-end. Instructions: ground every answer in the 3 attached files — /BRD_01_Board_Pack_Tracker.xlsx, /BRD_03_Governance_Manual.docx, /BRD_04_Board_Paper_Standards.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Board of Directors materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the team should be consulted. Starter prompts to include: (1) Summarise the 38% late papers and 17 overdue resolutions for the Board of Directors in 60 seconds, (2) Which areas are Red on board calendar and why, (3) What governance obligations apply after late Board papers, overdue resolutions, and a growing disclosure watchlist ahead of quarter-end, (4) Draft a holding line for external partners, (5) Draft a holding line for MCCG-style governance, Bursa Malaysia disclosure discipline, and IDX cross-listing expectations.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Zava Board Governance Agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the 38% late papers and 17 overdue resolutions, the highest-risk areas, the top governance obligations, and the decisions I must take to the Board of Directors in two weeks."; (2) "Draft my first message to the leadership team immediately after the Board of Directors closes."; (3) "A late-night query from an institutional investor coincides with a new disclosure-watchlist item, and the Company Secretary needs to know before market open whether the Board should be convened or simply briefed." Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '📋',
+          'label': 'Board Papers Coach',
+          'name': 'Zava Group Corporate Secretarial — Board Papers Coach',
+          'desc': 'Helps Corporate Secretarial draft board agendas, minutes, and committee papers.',
+          'instructions': 'You are the Zava Group Corporate Secretarial Board Papers Coach. You support Sasha (Group CoS). Help draft board agendas, minutes, and papers grounded on the Corporate Secretarial archive (BRD_01_Board_Pack_Tracker.xlsx).',
+          'knowledge': [
+            {'file':'BRD_01_Board_Pack_Tracker.xlsx', 'note':'CorpSec archive.'},
+            {'file':'BRD_03_Governance_Manual.docx', 'note':'Board calendar.'},
+            {'file':'BRD_05_Disclosure_Watchlist.docx', 'note':'Committee charters.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the agenda for the next Board meeting at Corporate Secretarial."',
+          'queries': [
+            'Draft the agenda for the next Board meeting.',
+            'Build minutes from the latest Board pack — confirm decisions and owners.',
+            'Draft the quarterly committee paper template.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'CG / Listing Watch',
+          'name': 'Zava Group Corporate Secretarial — Listing & CG Watch',
+          'desc': 'Tracks Corporate Secretarial listing-rule compliance, related-party disclosures, and CG-readiness.',
+          'instructions': 'You are the Zava Group Corporate Secretarial Listing & CG Watch. Monitor listing rules (BRD_02_Resolution_Log.xlsx) and related-party register (BRD_04_Board_Paper_Standards.docx).',
+          'knowledge': [
+            {'file':'BRD_02_Resolution_Log.xlsx', 'note':'Listing rule tracker.'},
+            {'file':'BRD_04_Board_Paper_Standards.docx', 'note':'Related-party register.'}
+          ],
+          'knowledgeNote': 'Test: "Which related-party transactions in Corporate Secretarial require Bursa / IDX disclosure?"',
+          'queries': [
+            'Top 10 listing-rule items at risk — recommended action.',
+            'Which related-party transactions require unitholder approval?',
+            'Draft the quarterly CG paper.'
+          ],
+        },
+        {
+          'icon': '🤝',
+          'label': 'Shareholder Service',
+          'name': 'Zava Group Corporate Secretarial — Shareholder Service Coach',
+          'desc': 'Surfaces Corporate Secretarial shareholder query handling, AGM logistics, and dividend administration.',
+          'instructions': 'You are the Zava Group Corporate Secretarial Shareholder Service Coach. Monitor shareholder service queue (BRD_06_Director_Onboarding_Brief.docx).',
+          'knowledge': [
+            {'file':'BRD_06_Director_Onboarding_Brief.docx', 'note':'Shareholder service queue.'}
+          ],
+          'knowledgeNote': 'Test: "Which open shareholder issues in Corporate Secretarial require executive response?"',
+          'queries': [
+            'Top 10 open shareholder queries — recommended response.',
+            'Which AGM logistics items remain open? Build closure plan.',
+            'Draft the AGM agenda and resolutions.'
+          ],
+        }
       ],
-        DESC_BUILDER,
-        promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Zava Board Governance Agent\'. Deskripsi: asisten untuk membantu Sekretaris Perusahaan, Kepala Staf, pimpinan tata kelola, dan sekretariat dewan mengelola paper yang terlambat, watchlist pengungkapan yang bertumbuh, dan pelacakan resolusi menjelang akhir kuartal. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /BRD_01_Board_Pack_Tracker.xlsx, /BRD_03_Governance_Manual.docx, /BRD_04_Board_Paper_Standards.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Rapat Dewan Komisaris. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di tim yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum 38% paper terlambat dan 17 resolusi tertunda untuk Rapat Dewan Komisaris dalam 60 detik, (2) Area mana yang Merah pada board calendar dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca paper Direksi terlambat, resolusi yang tertunda, dan watchlist pengungkapan yang bertumbuh menjelang akhir kuartal, (4) Susun holding line untuk mitra eksternal, (5) Susun holding line untuk tata kelola POJK, disiplin pengungkapan BEI, dan ekspektasi cross-listing Bursa Malaysia.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Zava Board Governance Agent baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari 38% paper terlambat dan 17 resolusi tertunda, area berisiko tertinggi, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Rapat Dewan Komisaris dalam dua minggu."; (2) "Susun pesan pertama saya kepada tim pimpinan segera setelah Rapat Dewan Komisaris selesai."; (3) "Pertanyaan larut malam dari investor institusi bersamaan dengan item watchlist pengungkapan baru, dan Sekretaris Perusahaan perlu tahu sebelum bursa dibuka apakah Direksi harus dipanggil atau cukup diberi briefing." Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+        agentsID=[
+        {
+          'icon': '📋',
+          'label': 'Board Papers Pelatih',
+          'name': 'Zava Grup Corporate Secretarial — Board Papers Pelatih',
+          'desc': 'Helps Corporate Secretarial susun board agendas, minutes, and committee papers.',
+          'instructions': 'Anda adalah Zava Grup Corporate Secretarial Board Papers Pelatih. Anda mendukung Sasha (Grup CoS). Help susun board agendas, minutes, and papers grounded on the Corporate Secretarial archive (BRD_01_Board_Pack_Tracker.xlsx).',
+          'knowledge': [
+            {'file':'BRD_01_Board_Pack_Tracker.xlsx', 'note':'CorpSec archive.'},
+            {'file':'BRD_03_Governance_Manual.docx', 'note':'Board calendar.'},
+            {'file':'BRD_05_Disclosure_Watchlist.docx', 'note':'Committee charters.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the agenda for berikutnya Board meeting at Corporate Secretarial."',
+          'queries': [
+            'Susun the agenda for berikutnya Board meeting.',
+            'Bangun minutes from terbaru Board pack — confirm decisions and owners.',
+            'Susun the kuartalan committee paper template.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'CG / Listing Watch',
+          'name': 'Zava Grup Corporate Secretarial — Listing & CG Watch',
+          'desc': 'Memantau Corporate Secretarial listing-rule compliance, related-party disclosures, and CG-readiness.',
+          'instructions': 'Anda adalah Zava Grup Corporate Secretarial Listing & CG Watch. Pantau listing rules (BRD_02_Resolution_Log.xlsx) and related-party register (BRD_04_Board_Paper_Standards.docx).',
+          'knowledge': [
+            {'file':'BRD_02_Resolution_Log.xlsx', 'note':'Listing rule tracker.'},
+            {'file':'BRD_04_Board_Paper_Standards.docx', 'note':'Related-party register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana related-party transactions in Corporate Secretarial require Bursa / IDX disclosure?"',
+          'queries': [
+            '10 teratas listing-rule items at risk — recommended tindakan.',
+            'Yang mana related-party transactions require unitholder approval?',
+            'Susun the kuartalan CG paper.'
+          ],
+        },
+        {
+          'icon': '🤝',
+          'label': 'Shareholder Service',
+          'name': 'Zava Grup Corporate Secretarial — Shareholder Service Pelatih',
+          'desc': 'Menampilkan Corporate Secretarial shareholder query handling, AGM logistics, and dividend administration.',
+          'instructions': 'Anda adalah Zava Grup Corporate Secretarial Shareholder Service Pelatih. Pantau shareholder service queue (BRD_06_Director_Onboarding_Brief.docx).',
+          'knowledge': [
+            {'file':'BRD_06_Director_Onboarding_Brief.docx', 'note':'Shareholder service queue.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana open shareholder issues in Corporate Secretarial require executive response?"',
+          'queries': [
+            '10 teratas open shareholder queries — recommended response.',
+            'Yang mana AGM logistics items remain open? Bangun closure plan.',
+            'Susun the AGM agenda and resolutions.'
+          ],
+        }
       ],
-        persona=['Sasha Ouellet','Sasha Ouellet'],
-        personaID=['Sasha Ouellet','Sasha Ouellet'])
+        persona=['Sasha Ouellet', 'Sasha Ouellet', 'Mod Admin'],
+        personaID=['Sasha Ouellet', 'Sasha Ouellet', 'Mod Admin']
+      )
     ],
     companyID='Zava Board',
     taglineID='Paper Direksi terlambat, item watchlist pengungkapan bertambah, dan Komisaris menginginkan pelacakan resolusi yang lebih jelas sebelum akhir kuartal — sinkron BEI dan OJK.',

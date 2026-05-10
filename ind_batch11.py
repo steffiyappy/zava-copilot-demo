@@ -183,32 +183,116 @@ INDUSTRIES_11.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pick ONE of the 3 agents below. Paste the chosen description into the **Describe** field.',
-         'prompt':'**Option A — Zava Motors EV-Mix Agent.** Build an agent for the Group COO and the brand-principal liaison heads to drive the Toyota EV-mix recovery programme to closure. Ground every answer on /AUTOM_01_EV_Mix_and_Capex_Model.xlsx and the Toyota TMAP correspondence. Always cite file and section. Classify each milestone as Closed / On-Track / Delayed. Tone: precise, principal-grade. Starter prompts: (1) Which BYD ramp milestones are at risk of slipping; (2) What is the day-by-day plan for the Toyota Q4 review; (3) Draft the Toyota TMAP narrative; (4) Build a daily ops dashboard; (5) Summarise progress for the Group ExCo.'},
-        {'instr':'**Option B — alternative agent.** Same flow, different specialisation.',
-         'prompt':'**Option B — Zava Motors Honda Liaison Agent.** Build an agent for the Group CFO and the Honda liaison head to handle Honda margin renegotiation correspondence over 30 days. Ground every answer on /AUTOM_03_Principal_Margin_Renegotiation_Brief.docx and /AUTOM_05_Dealer_Rationalisation_Playbook.docx. Always cite section. Filter every answer through Bursa Malaysia continuous-disclosure rules. Tone: factual, conservative, not forward-looking unless source already disclosed. Starter prompts: (1) Draft 200-word Honda counter-proposal answer; (2) Holding line for media if Honda response leaks; (3) Recovery roadmap summary; (4) 60-second EBITDA-bridge talking points; (5) Build IR Q&A pack on Honda margin defence.'},
-        {'instr':'**Option C — alternative agent.** Same flow.',
-         'prompt':'**Option C — Zava Motors Dealer Network Agent.** Build an agent for the Group COO / Dealer Network team to handle the dealer-rationalisation programme. Ground every answer on /AUTOM_02_Dealer_PnL_Tracker.xlsx, /AUTOM_05_Dealer_Rationalisation_Playbook.docx. Always cite section. Classify each dealer as Retain / Restructure / Exit. Tone: factual, no admission of unproven facts about dealer principal performance. Starter prompts: (1) Status of the 8 underperforming dealers; (2) Draft principal-conversation prep notes; (3) Build a weekly dashboard; (4) Summarise dealer-rationalisation timeline; (5) Give me the 60-second update.'},
-        {'instr':'**Test it.** Open the agent you just created and run the 4-part agent-agnostic test sequence below — works for whichever of Option A / B / C you picked. Validates grounding, citations, framework adherence, and scope discipline.',
-         'prompt':'Test the agent end-to-end with 4 quick checks. (1) Introduction — ask the agent to introduce itself in 3 lines: which scenario files it grounds its answers on, what classification or framework it applies, and the 3 questions it is best at answering right now. (2) Starter prompt — trigger its first suggested starter prompt and confirm every quantitative claim is cited to a specific file and tab or section, and that any classification (Red/Amber/Green or equivalent) is applied with a one-line justification. (3) Out-of-scope refusal — ask a deliberately out-of-scope question (for example, \'what is the weather today?\' or \'recommend a restaurant for tonight\') and confirm the agent refuses politely, names its scope, and offers to redirect to an in-scope question. (4) Consistency — re-ask one of its starter prompts using different wording and confirm the answer stays consistent in figures, citations, and recommendation. If any check fails, note the failure mode and tell me what to tighten in the agent description before sharing it.'},
-        {'instr':'**Share.** Click the agent → **Share** → add recipients with **Use** access.',
-         'prompt':'Share with the Zava Motors ExCo (Group MD, CFO, COO, Dealer Network Director, Toyota liaison head, Honda liaison head, Hyundai liaison head, BYD liaison head) — Use access. Send notification: "This agent is now in your Microsoft 365 Copilot chat — ground every Toyota / Honda / dealer-rationalisation question through it for the next 90 days."'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > Agents > **+ Create an agent**. Pilih SATU dari 3 agent. Tempel deskripsi ke field **Describe**.',
-         'prompt':'**Opsi A — Zava Motors EV-Mix Agent.** Bangun agent untuk Direktur Operasional Grup dan kepala liaison prinsipal merek untuk mendorong program pemulihan EV-mix Toyota hingga ditutup. Dasarkan pada /AUTOM_01_EV_Mix_and_Capex_Model.xlsx dan korespondensi Toyota TMAP. Selalu kutip file dan bagian. Klasifikasikan tiap milestone sebagai Closed / On-Track / Delayed. Nada: presisi, principal-grade. Starter prompt: (1) Milestone ramp BYD mana yang berisiko slip; (2) Apa rencana harian untuk review Q4 Toyota; (3) Susun naratif Toyota TMAP; (4) Bangun dashboard ops harian; (5) Rangkum progress untuk ExCo Grup.'},
-        {'instr':'**Opsi B — agent alternatif.** Alur sama, spesialisasi berbeda.',
-         'prompt':'**Opsi B — Zava Motors Honda Liaison Agent.** Bangun agent untuk Direktur Keuangan Grup dan kepala liaison Honda untuk menangani korespondensi renegosiasi margin Honda selama 30 hari. Dasarkan pada /AUTOM_03_Principal_Margin_Renegotiation_Brief.docx dan /AUTOM_05_Dealer_Rationalisation_Playbook.docx. Selalu kutip bagian. Saring tiap jawaban melalui aturan continuous-disclosure Bursa Malaysia. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkap. Starter prompt: (1) Susun jawaban counter-proposal Honda 200 kata; (2) Holding line untuk media bila respons Honda bocor; (3) Rangkum roadmap pemulihan; (4) Talking points bridge EBITDA 60 detik; (5) Bangun pack Q&A IR pertahanan margin Honda.'},
-        {'instr':'**Opsi C — agent alternatif.** Alur sama.',
-         'prompt':'**Opsi C — Zava Motors Dealer Network Agent.** Bangun agent untuk Direktur Operasional Grup / tim Jaringan Dealer untuk menangani program rasionalisasi dealer. Dasarkan pada /AUTOM_02_Dealer_PnL_Tracker.xlsx, /AUTOM_05_Dealer_Rationalisation_Playbook.docx. Selalu kutip bagian. Klasifikasikan tiap dealer sebagai Pertahankan / Restrukturisasi / Keluar. Nada: faktual, tidak mengakui fakta yang belum terbukti tentang kinerja prinsipal dealer. Starter prompt: (1) Status 8 dealer underperform; (2) Susun catatan persiapan percakapan prinsipal; (3) Bangun dashboard mingguan; (4) Rangkum timeline rasionalisasi dealer; (5) Berikan update 60 detik.'},
-        {'instr':'**Uji.** Buka agent yang baru Anda buat dan jalankan sekuens uji 4 bagian yang agent-agnostic di bawah — bekerja untuk Opsi A / B / C mana pun yang Anda pilih. Memvalidasi grounding, kutipan, kepatuhan framework, dan disiplin cakupan.',
-         'prompt':'Uji agent end-to-end dengan 4 pemeriksaan cepat. (1) Perkenalan — minta agent memperkenalkan diri dalam 3 baris: file skenario apa yang menjadi grounding jawabannya, kerangka klasifikasi atau framework apa yang diterapkan, dan 3 pertanyaan yang paling dikuasainya saat ini. (2) Starter prompt — picu starter prompt pertamanya dan konfirmasi setiap klaim kuantitatif dikutip ke file spesifik dan tab atau bagian, serta klasifikasi (Merah/Kuning/Hijau atau setara) diterapkan dengan justifikasi satu baris. (3) Penolakan di luar cakupan — tanyakan pertanyaan yang sengaja di luar cakupan (misalnya \'bagaimana cuaca hari ini?\' atau \'rekomendasikan restoran untuk malam ini\') dan konfirmasi agent menolak dengan sopan, menyebutkan cakupannya, dan menawarkan redirect ke pertanyaan dalam cakupan. (4) Konsistensi — tanya ulang salah satu starter prompt dengan kata-kata berbeda dan konfirmasi jawabannya tetap konsisten dalam angka, kutipan, dan rekomendasi. Jika ada pemeriksaan yang gagal, catat mode kegagalannya dan beritahu saya apa yang harus dipertajam dalam deskripsi agent sebelum dibagikan.'},
-        {'instr':'**Bagikan.** Klik agent → **Share** → tambahkan penerima dengan akses **Use**.',
-         'prompt':'Bagikan ke ExCo Zava Motors (Direktur Pelaksana Grup, Direktur Keuangan, Direktur Operasional, Direktur Jaringan Dealer, kepala liaison Toyota, kepala liaison Honda, kepala liaison Hyundai, kepala liaison BYD) — akses Use. Kirim notifikasi: "Agent ini sekarang ada di Microsoft 365 Copilot chat Anda — dasarkan tiap pertanyaan Toyota / Honda / rasionalisasi dealer melalui agent ini selama 90 hari ke depan."'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🚗',
+          'label': 'Stock & Rotation Coach',
+          'name': 'Zava Automotive Distribution — Inventory & Rotation Coach',
+          'desc': 'Tracks Automotive Distribution & Dealerships dealer stock by model and age, and recommends transfer / discount / order actions.',
+          'instructions': 'You are the Zava Automotive Distribution & Dealerships Inventory & Rotation Coach. You support the Distribution Director. Scan dealer-stock data (AUTOM_01_EV_Mix_and_Capex_Model.xlsx) and order-pipeline data (AUTOM_02_Dealer_PnL_Tracker.xlsx) for stock-age outliers, model-mix imbalance, and discount risk. Recommend transfer, discount, or order action per outlier.',
+          'knowledge': [
+            {'file':'AUTOM_01_EV_Mix_and_Capex_Model.xlsx', 'note':'Dealer stock — by dealer, model, age.'},
+            {'file':'AUTOM_02_Dealer_PnL_Tracker.xlsx', 'note':'Order pipeline — back-orders and committed deliveries.'},
+            {'file':'AUTOM_04_MITI_EEV_BKPM_PPnBM_Briefing_Pack.docx', 'note':'Discount-authority policy.'}
+          ],
+          'knowledgeNote': 'Test: "Which 5 dealers at Automotive Distribution & Dealerships are holding the worst aged stock?"',
+          'queries': [
+            'Top 10 stock-age outliers — dealer, model, age days, recommended action.',
+            'Which models are showing repeat aged-stock? Recommend production cut or model-mix shift.',
+            'Draft the weekly Distribution review paper.'
+          ],
+        },
+        {
+          'icon': '🔧',
+          'label': 'Aftermarket Margin',
+          'name': 'Zava Automotive Distribution — Aftermarket Margin Coach',
+          'desc': 'Helps Automotive Distribution & Dealerships after-sales team grow service-bay throughput, parts margin, and customer retention.',
+          'instructions': 'You are the Zava Automotive Distribution & Dealerships Aftermarket Margin Coach. You support the After-Sales Director. Scan after-sales data (AUTOM_03_Principal_Margin_Renegotiation_Brief.docx) and parts pricing (AUTOM_05_Dealer_Rationalisation_Playbook.docx) for service-bay underutilisation, parts-margin leakage, and lost retention. Recommend pricing or campaign actions.',
+          'knowledge': [
+            {'file':'AUTOM_03_Principal_Margin_Renegotiation_Brief.docx', 'note':'After-sales data — service entries, parts revenue.'},
+            {'file':'AUTOM_05_Dealer_Rationalisation_Playbook.docx', 'note':'Parts pricing register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 dealers at Automotive Distribution & Dealerships are leaving the most after-sales margin on the table?"',
+          'queries': [
+            'Top 10 dealers by service-bay underutilisation — recommended bay-loading action.',
+            'Which parts are showing margin leakage? Recommend pricing.',
+            'Draft the monthly After-Sales review paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'JPJ / Korlantas Liaison',
+          'name': 'Zava Automotive Distribution — Transport Regulator Liaison',
+          'desc': 'Prepares JPJ (MY) / Korlantas + Kemenperin (ID) approvals, type-approval, and recall filings for Automotive Distribution & Dealerships.',
+          'instructions': 'You are the Zava Automotive Distribution & Dealerships Transport Regulator Liaison. You support Regulatory Affairs. Prepare type-approval submissions, recall filings, and emission-disclosure returns grounded on the regulatory file (AUTOM_04_MITI_EEV_BKPM_PPnBM_Briefing_Pack.docx) and the policy handbook (AUTOM_05_Dealer_Rationalisation_Playbook.docx). Quote every clause.',
+          'knowledge': [
+            {'file':'AUTOM_04_MITI_EEV_BKPM_PPnBM_Briefing_Pack.docx', 'note':'Transport regulatory returns and type-approval dossiers.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to JPJ\'s latest circular on emission-reporting for Automotive Distribution & Dealerships."',
+          'queries': [
+            "Prepare a cover letter for this quarter's JPJ / Korlantas return.",
+            'Which open recalls remain unclosed? Build a closure plan.',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
-      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '🚗',
+          'label': 'Stock & Rotation Pelatih',
+          'name': 'Zava Automotive Distribution — Inventory & Rotation Pelatih',
+          'desc': 'Memantau Automotive Distribution & Dealerships dealer stock by model and age, and recommends transfer / discount / order actions.',
+          'instructions': 'Anda adalah Zava Automotive Distribution & Dealerships Inventory & Rotation Pelatih. Anda mendukung the Distribution Director. Scan dealer-stock data (AUTOM_01_EV_Mix_and_Capex_Model.xlsx) and order-pipeline data (AUTOM_02_Dealer_PnL_Tracker.xlsx) for stock-age outliers, model-mix imbalance, and discount risk. Rekomendasikan transfer, discount, or order tindakan per pencilan.',
+          'knowledge': [
+            {'file':'AUTOM_01_EV_Mix_and_Capex_Model.xlsx', 'note':'Dealer stock — by dealer, model, age.'},
+            {'file':'AUTOM_02_Dealer_PnL_Tracker.xlsx', 'note':'Order pipeline — back-orders and committed deliveries.'},
+            {'file':'AUTOM_04_MITI_EEV_BKPM_PPnBM_Briefing_Pack.docx', 'note':'Discount-authority policy.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 5 dealers at Automotive Distribution & Dealerships are holding terburuk aged stock?"',
+          'queries': [
+            '10 teratas stock-age outliers — dealer, model, age days, recommended tindakan.',
+            'Yang mana models are showing repeat aged-stock? Rekomendasikan production cut or model-mix shift.',
+            'Susun the mingguan Distribution review paper.'
+          ],
+        },
+        {
+          'icon': '🔧',
+          'label': 'Aftermarket Margin',
+          'name': 'Zava Automotive Distribution — Aftermarket Margin Pelatih',
+          'desc': 'Helps Automotive Distribution & Dealerships after-sales team grow service-bay throughput, parts margin, and customer retention.',
+          'instructions': 'Anda adalah Zava Automotive Distribution & Dealerships Aftermarket Margin Pelatih. Anda mendukung the After-Sales Director. Scan after-sales data (AUTOM_03_Principal_Margin_Renegotiation_Brief.docx) and parts pricing (AUTOM_05_Dealer_Rationalisation_Playbook.docx) for service-bay underutilisation, parts-margin leakage, and lost retention. Rekomendasikan pricing or campaign actions.',
+          'knowledge': [
+            {'file':'AUTOM_03_Principal_Margin_Renegotiation_Brief.docx', 'note':'After-sales data — service entries, parts revenue.'},
+            {'file':'AUTOM_05_Dealer_Rationalisation_Playbook.docx', 'note':'Parts pricing register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 dealers at Automotive Distribution & Dealerships are leaving the most after-sales margin on the table?"',
+          'queries': [
+            '10 teratas dealers by service-bay underutilisation — recommended bay-loading tindakan.',
+            'Yang mana parts are showing margin leakage? Rekomendasikan pricing.',
+            'Susun the bulanan After-Sales review paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'JPJ / Korlantas Penghubung',
+          'name': 'Zava Automotive Distribution — Transport Regulator Penghubung',
+          'desc': 'Prepares JPJ (MY) / Korlantas + Kemenperin (ID) approvals, type-approval, and recall filings for Automotive Distribution & Dealerships.',
+          'instructions': 'Anda adalah Zava Automotive Distribution & Dealerships Transport Regulator Penghubung. Anda mendukung Regulatory Affairs. Prepare type-approval submissions, recall filings, and emission-disclosure returns grounded on the regulatory file (AUTOM_04_MITI_EEV_BKPM_PPnBM_Briefing_Pack.docx) and the policy handbook (AUTOM_05_Dealer_Rationalisation_Playbook.docx). Quote every clause.',
+          'knowledge': [
+            {'file':'AUTOM_04_MITI_EEV_BKPM_PPnBM_Briefing_Pack.docx', 'note':'Transport regulatory returns and type-approval dossiers.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to JPJ\'s latest circular on emission-reporting for Automotive Distribution & Dealerships."',
+          'queries': [
+            "Prepare a cover letter for kuartal ini's JPJ / Korlantas return.",
+            'Yang mana open recalls remain unclosed? Bangun a closure plan.',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      ),
     ],
     companyID='Zava Motors',
     taglineID='Shortfall EV-mix Toyota + renegosiasi prinsipal Honda + 8 dealer underperform — ExCo Grup dalam 14 hari.',

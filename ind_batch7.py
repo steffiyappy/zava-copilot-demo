@@ -163,16 +163,116 @@ INDUSTRIES_7 = [
       ],
       persona=['Hadar Caspit', 'Daichi Maruyama'],
       personaID=['Hadar Caspit', 'Daichi Maruyama']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Property & REIT Recovery Advisor. Description: an internal agent that helps property and REIT executives at Zava REIT Malaysia triage project slippage, mall occupancy decline, REIT NAV gap, and covenant headroom risk. Instructions: always answer with a 3-sentence executive summary first, then a structured RAG table, then a numbered list of next steps. Always cite which uploaded file (PROP_01 to PROP_06) was used. Refuse to speculate on regulator outcomes; instead, suggest the disclosure pathway. Starter prompts: 1. Brief me on the latest project slippage and what to tell the Board. 2. Triage mall occupancy at the two underperforming malls. 3. Summarise covenant headroom this quarter. 4. Draft a 1-page note for the REIT trustee. 5. List the open Bursa clarification questions and recommended responses.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called REIT Trustee Liaison. Description: an internal agent that helps the REIT manager prepare for trustee, unit-holder and rating-agency interactions. Instructions: never quote a distribution outlook outside the bands stated in PROP_02_REIT_Distribution_Policy.docx. Always reconcile financial answers to PROP_06_Lender_Covenant_Schedule.xlsx. Provide answers in plain Bahasa-friendly English suitable for translation. Starter prompts: 1. Draft a 1-page trustee note on the NAV gap. 2. Prepare 8 Q&A for an institutional unit-holder call. 3. Build a distribution decision tree for the next 2 quarters. 4. Summarise the covenant headroom in 5 bullets. 5. Draft a joint developer-trustee communication outline.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat agent bernama Penasihat Pemulihan Properti & DIRE. Deskripsi: agent internal yang membantu eksekutif properti dan DIRE di Zava REIT Indonesia men-triase keterlambatan proyek, penurunan okupansi mal, gap NAV DIRE, dan risiko headroom covenant. Instruksi: selalu jawab dengan ringkasan eksekutif 3 kalimat terlebih dahulu, lalu tabel RAG terstruktur, lalu daftar bernomor langkah berikutnya. Selalu kutip file mana yang diunggah (PROP_01 hingga PROP_06) yang digunakan. Tolak berspekulasi atas hasil regulator; sebaliknya, sarankan jalur keterbukaan. Starter prompts: 1. Briefing keterlambatan proyek terbaru dan apa yang disampaikan ke Direksi. 2. Triage okupansi dua mal berkinerja kurang. 3. Rangkum headroom covenant kuartal ini. 4. Susun note 1 halaman untuk trustee DIRE. 5. Daftar pertanyaan klarifikasi BEI yang terbuka beserta respons yang direkomendasikan.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat agent bernama Liaison Trustee DIRE. Deskripsi: agent internal yang membantu Manajer DIRE mempersiapkan interaksi dengan trustee, pemegang unit, dan lembaga pemeringkat. Instruksi: jangan pernah mengutip outlook distribusi di luar band yang dinyatakan di PROP_02_REIT_Distribution_Policy.docx. Selalu rekonsiliasi jawaban finansial ke PROP_06_Lender_Covenant_Schedule.xlsx. Berikan jawaban dalam Bahasa Inggris yang ramah Bahasa Indonesia agar mudah diterjemahkan. Starter prompts: 1. Susun note trustee 1 halaman tentang gap NAV. 2. Siapkan 8 Q&A untuk panggilan pemegang unit institusi. 3. Bangun decision tree distribusi untuk 2 kuartal ke depan. 4. Rangkum headroom covenant dalam 5 bullet. 5. Susun outline komunikasi gabungan pengembang-trustee.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🏢',
+          'label': 'Asset Occupancy Coach',
+          'name': 'Zava Property & REIT — Asset Occupancy & Yield Coach',
+          'desc': 'Tracks Property & REIT occupancy, NPI yield, lease-expiry, and tenant-credit risk by asset.',
+          'instructions': 'You are the Zava Property & REIT Asset Occupancy & Yield Coach. You support the Asset Management team. Monitor occupancy (PROP_01_Project_Performance.xlsx), NPI yield (PROP_03_Land_Bank_Strategy.docx), and lease expiries (PROP_05_Bursa_Disclosure_Pack.docx). Recommend leasing, capex, or tenant-credit action per asset.',
+          'knowledge': [
+            {'file':'PROP_01_Project_Performance.xlsx', 'note':'Asset occupancy register.'},
+            {'file':'PROP_03_Land_Bank_Strategy.docx', 'note':'NPI yield tracker.'},
+            {'file':'PROP_05_Bursa_Disclosure_Pack.docx', 'note':'Lease expiry calendar.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 assets at Property & REIT have the largest occupancy gap?"',
+          'queries': [
+            'Top 10 assets by occupancy gap — recommended leasing or capex action.',
+            'Which leases expire within 12 months and have low renewal probability?',
+            'Draft the quarterly Asset Steering paper.'
+          ],
+        },
+        {
+          'icon': '🛠️',
+          'label': 'AEI Capex Watch',
+          'name': 'Zava Property & REIT — AEI Capex Watch',
+          'desc': 'Monitors Property & REIT asset enhancement initiatives, ROI, and capex governance.',
+          'instructions': 'You are the Zava Property & REIT AEI Capex Watch. You support the Investment Committee. Monitor AEI projects (PROP_02_REIT_Distribution_Policy.docx), ROI (PROP_04_Mall_Tenancy_Tracker.xlsx), and capex governance. Recommend escalation per Red.',
+          'knowledge': [
+            {'file':'PROP_02_REIT_Distribution_Policy.docx', 'note':'AEI project register.'},
+            {'file':'PROP_04_Mall_Tenancy_Tracker.xlsx', 'note':'AEI ROI tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 AEIs at Property & REIT have the worst ROI deterioration?"',
+          'queries': [
+            'Top 5 AEIs by ROI deterioration — recommended action.',
+            'Which AEIs have capex slippage > 10%? Recommend re-baseline.',
+            'Draft the quarterly AEI Investment Committee paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'SC / OJK REIT Liaison',
+          'name': 'Zava Property & REIT — REIT Regulator Liaison',
+          'desc': 'Prepares SC (MY) / OJK (ID) REIT disclosures, related-party submissions, and unitholder filings for Property & REIT.',
+          'instructions': 'You are the Zava Property & REIT REIT Regulator Liaison. Prepare REIT disclosures, related-party submissions, and unitholder filings grounded on the regulatory file (PROP_06_Lender_Covenant_Schedule.xlsx).',
+          'knowledge': [
+            {'file':'PROP_06_Lender_Covenant_Schedule.xlsx', 'note':'REIT regulatory filings.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to SC\'s latest REIT-disclosure circular for Property & REIT."',
+          'queries': [
+            'Prepare a cover letter for the next quarterly REIT return.',
+            'Which related-party transactions require unitholder approval?',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Mod Admin', 'Daichi Maruyama'],
-      personaID=['Mod Admin', 'Daichi Maruyama']),
+        agentsID=[
+        {
+          'icon': '🏢',
+          'label': 'Asset Occupancy Pelatih',
+          'name': 'Zava Property & REIT — Asset Occupancy & Yield Pelatih',
+          'desc': 'Memantau Property & REIT occupancy, NPI yield, lease-expiry, and tenant-credit risk by asset.',
+          'instructions': 'Anda adalah Zava Property & REIT Asset Occupancy & Yield Pelatih. Anda mendukung the Asset Management team. Pantau occupancy (PROP_01_Project_Performance.xlsx), NPI yield (PROP_03_Land_Bank_Strategy.docx), and lease expiries (PROP_05_Bursa_Disclosure_Pack.docx). Rekomendasikan leasing, capex, or tenant-credit tindakan per aset.',
+          'knowledge': [
+            {'file':'PROP_01_Project_Performance.xlsx', 'note':'Asset occupancy register.'},
+            {'file':'PROP_03_Land_Bank_Strategy.docx', 'note':'NPI yield tracker.'},
+            {'file':'PROP_05_Bursa_Disclosure_Pack.docx', 'note':'Lease expiry calendar.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 assets at Property & REIT have terbesar occupancy gap?"',
+          'queries': [
+            '10 teratas assets by occupancy gap — recommended leasing or capex tindakan.',
+            'Yang mana leases expire within 12 months and have low renewal probability?',
+            'Susun the kuartalan Asset paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🛠️',
+          'label': 'AEI Capex Watch',
+          'name': 'Zava Property & REIT — AEI Capex Watch',
+          'desc': 'Monitors Property & REIT asset enhancement initiatives, ROI, and capex governance.',
+          'instructions': 'Anda adalah Zava Property & REIT AEI Capex Watch. Anda mendukung the Investment Committee. Pantau AEI projects (PROP_02_REIT_Distribution_Policy.docx), ROI (PROP_04_Mall_Tenancy_Tracker.xlsx), and capex governance. Rekomendasikan escalation per Red.',
+          'knowledge': [
+            {'file':'PROP_02_REIT_Distribution_Policy.docx', 'note':'AEI project register.'},
+            {'file':'PROP_04_Mall_Tenancy_Tracker.xlsx', 'note':'AEI ROI tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 AEIs at Property & REIT have terburuk ROI deterioration?"',
+          'queries': [
+            '5 teratas AEIs by ROI deterioration — recommended tindakan.',
+            'Yang mana AEIs have capex slippage > 10%? Rekomendasikan re-baseline.',
+            'Susun the kuartalan AEI Investment Committee paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'SC / OJK REIT Penghubung',
+          'name': 'Zava Property & REIT — REIT Regulator Penghubung',
+          'desc': 'Prepares SC (MY) / OJK (ID) REIT disclosures, related-party submissions, and unitholder filings for Property & REIT.',
+          'instructions': 'Anda adalah Zava Property & REIT REIT Regulator Penghubung. Prepare REIT disclosures, related-party submissions, and unitholder filings grounded on the regulatory file (PROP_06_Lender_Covenant_Schedule.xlsx).',
+          'knowledge': [
+            {'file':'PROP_06_Lender_Covenant_Schedule.xlsx', 'note':'REIT regulatory filings.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to SC\'s latest REIT-disclosure circular for Property & REIT."',
+          'queries': [
+            'Prepare a cover letter for berikutnya kuartalan REIT return.',
+            'Yang mana related-party transactions require unitholder approval?',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Daichi Maruyama', 'Mod Admin'],
+        personaID=['Mod Admin', 'Daichi Maruyama', 'Mod Admin']
+      ),
     ],
     companyID='Zava REIT Indonesia',
     taglineID='Tiga proyek unggulan terlambat, gap NAV DIRE melebar, dan BEI menunggu klarifikasi sebelum Jumat.',
@@ -387,16 +487,116 @@ INDUSTRIES_7 = [
       ],
       persona=['Hadar Caspit', 'Hadar Caspit'],
       personaID=['Hadar Caspit', 'Hadar Caspit']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called 3PL Operations Stabilisation Advisor. Description: an internal agent that helps logistics executives at Zava Logistics Malaysia triage SLA breaches, fleet utilisation slippage, diesel cost gaps, and APAD compliance risk. Instructions: always answer with a 3-sentence executive summary first, then a structured RAG table, then a numbered list of next steps. Always cite which uploaded file (LOG_01 to LOG_06) was used. Refuse to speculate on regulator outcomes; instead, suggest the disclosure pathway. Starter prompts: 1. Brief me on the latest SLA breaches and what to tell anchors. 2. Triage fleet utilisation in the worst three regions. 3. Summarise diesel-driven margin gap this quarter. 4. Draft a 1-page note for APAD on the tachograph notice. 5. List the open service-credit issues and recommended responses.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Anchor Customer Recovery Liaison. Description: an internal agent that helps the enterprise customer team prepare for anchor service-credit recovery interactions and renewal conversations. Instructions: never quote a service-credit waiver outside the bands stated in LOG_03_Customer_SLA_Manual.docx. Always reconcile financial answers to LOG_04_Contract_Pipeline.xlsx. Provide answers in plain Bahasa-friendly English suitable for translation. Starter prompts: 1. Draft a 1-page anchor note on the SLA breach. 2. Prepare 8 Q&A for an anchor procurement call. 3. Build a service-recovery decision tree for the next 30 days. 4. Summarise renewal exposure in 5 bullets. 5. Draft a joint operations-customer communication outline.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat agent bernama Penasihat Stabilisasi Operasi 3PL. Deskripsi: agent internal yang membantu eksekutif logistik di Zava Logistics Indonesia men-triase pelanggaran SLA, penurunan utilisasi armada, gap biaya solar, dan risiko kepatuhan Kementerian Perhubungan. Instruksi: selalu jawab dengan ringkasan eksekutif 3 kalimat terlebih dahulu, lalu tabel RAG terstruktur, lalu daftar bernomor langkah berikutnya. Selalu kutip file mana yang diunggah (LOG_01 hingga LOG_06) yang digunakan. Tolak berspekulasi atas hasil regulator; sebaliknya, sarankan jalur keterbukaan. Starter prompts: 1. Briefing pelanggaran SLA terbaru dan apa yang disampaikan ke anchor. 2. Triage utilisasi armada di tiga wilayah terburuk. 3. Rangkum gap marjin yang didorong solar kuartal ini. 4. Susun note 1 halaman untuk Kementerian Perhubungan atas teguran tachograph. 5. Daftar isu service credit yang terbuka beserta respons yang direkomendasikan.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat agent bernama Liaison Pemulihan Pelanggan Anchor. Deskripsi: agent internal yang membantu tim enterprise customer mempersiapkan interaksi pemulihan service credit anchor dan percakapan perpanjangan. Instruksi: jangan pernah mengutip waiver service credit di luar band yang dinyatakan di LOG_03_Customer_SLA_Manual.docx. Selalu rekonsiliasi jawaban finansial ke LOG_04_Contract_Pipeline.xlsx. Berikan jawaban dalam Bahasa Inggris yang ramah Bahasa Indonesia agar mudah diterjemahkan. Starter prompts: 1. Susun note anchor 1 halaman tentang pelanggaran SLA. 2. Siapkan 8 Q&A untuk panggilan procurement anchor. 3. Bangun decision tree pemulihan layanan untuk 30 hari ke depan. 4. Rangkum eksposur perpanjangan dalam 5 bullet. 5. Susun outline komunikasi gabungan operasi-pelanggan.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🚚',
+          'label': 'Fleet & Route Coach',
+          'name': 'Zava Logistics 3PL — Fleet & Route Coach',
+          'desc': 'Tracks Logistics & 3PL fleet utilisation, route productivity, and on-time delivery.',
+          'instructions': 'You are the Zava Logistics & 3PL Fleet & Route Coach. Monitor fleet utilisation (LOG_01_Fleet_Performance.xlsx), on-time delivery (LOG_03_Customer_SLA_Manual.docx), and route productivity (LOG_05_Driver_Compliance_Pack.docx). Recommend route, fleet-mix, or staffing action.',
+          'knowledge': [
+            {'file':'LOG_01_Fleet_Performance.xlsx', 'note':'Fleet utilisation data.'},
+            {'file':'LOG_03_Customer_SLA_Manual.docx', 'note':'OTD tracker.'},
+            {'file':'LOG_05_Driver_Compliance_Pack.docx', 'note':'Route productivity register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 routes at Logistics & 3PL have the worst OTD drag?"',
+          'queries': [
+            'Top 10 routes by OTD gap — recommended action.',
+            'Which fleet segments have utilisation < 60%? Recommend redeployment.',
+            'Draft the monthly Fleet Steering paper.'
+          ],
+        },
+        {
+          'icon': '🏬',
+          'label': 'Warehouse Productivity',
+          'name': 'Zava Logistics 3PL — Warehouse Productivity Coach',
+          'desc': 'Surfaces Logistics & 3PL warehouse productivity, pick-pack rate, and inventory accuracy.',
+          'instructions': 'You are the Zava Logistics & 3PL Warehouse Productivity Coach. Monitor warehouse productivity (LOG_02_DC_Capacity_Plan.docx) and inventory accuracy (LOG_04_Contract_Pipeline.xlsx). Recommend layout, training, or automation action.',
+          'knowledge': [
+            {'file':'LOG_02_DC_Capacity_Plan.docx', 'note':'Warehouse productivity data.'},
+            {'file':'LOG_04_Contract_Pipeline.xlsx', 'note':'Inventory accuracy.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 warehouses at Logistics & 3PL have the worst pick-pack rate?"',
+          'queries': [
+            'Top 10 warehouses by productivity gap — recommended action.',
+            'Which inventory-accuracy clusters need cycle-count programme?',
+            'Draft the monthly Warehouse Steering paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'Customs & Logistics',
+          'name': 'Zava Logistics 3PL — Customs & Logistics Regulator Liaison',
+          'desc': 'Prepares Logistics & 3PL customs, AEO, dangerous-goods, and licensing filings.',
+          'instructions': 'You are the Zava Logistics & 3PL Customs Regulator Liaison. Prepare customs / AEO / DG / licensing filings grounded on the regulatory file (LOG_06_Diesel_Cost_Schedule.xlsx).',
+          'knowledge': [
+            {'file':'LOG_06_Diesel_Cost_Schedule.xlsx', 'note':'Customs regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to a customs query for Logistics & 3PL."',
+          'queries': [
+            'Prepare a cover letter for the next AEO / customs return.',
+            'Which DG declarations require remediation?',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Mod Admin', 'Daichi Maruyama'],
-      personaID=['Mod Admin', 'Daichi Maruyama']),
+        agentsID=[
+        {
+          'icon': '🚚',
+          'label': 'Fleet & Route Pelatih',
+          'name': 'Zava Logistics 3PL — Fleet & Route Pelatih',
+          'desc': 'Memantau Logistics & 3PL fleet utilisation, route productivity, and on-time delivery.',
+          'instructions': 'Anda adalah Zava Logistics & 3PL Fleet & Route Pelatih. Pantau fleet utilisation (LOG_01_Fleet_Performance.xlsx), on-time delivery (LOG_03_Customer_SLA_Manual.docx), and route productivity (LOG_05_Driver_Compliance_Pack.docx). Rekomendasikan route, fleet-mix, or staffing tindakan.',
+          'knowledge': [
+            {'file':'LOG_01_Fleet_Performance.xlsx', 'note':'Fleet utilisation data.'},
+            {'file':'LOG_03_Customer_SLA_Manual.docx', 'note':'OTD tracker.'},
+            {'file':'LOG_05_Driver_Compliance_Pack.docx', 'note':'Route productivity register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 routes at Logistics & 3PL have terburuk OTD drag?"',
+          'queries': [
+            '10 teratas routes by OTD gap — recommended tindakan.',
+            'Yang mana fleet segments have utilisation < 60%? Rekomendasikan redeployment.',
+            'Susun the bulanan Fleet paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🏬',
+          'label': 'Warehouse Productivity',
+          'name': 'Zava Logistics 3PL — Warehouse Productivity Pelatih',
+          'desc': 'Menampilkan Logistics & 3PL warehouse productivity, pick-pack rate, and inventory accuracy.',
+          'instructions': 'Anda adalah Zava Logistics & 3PL Warehouse Productivity Pelatih. Pantau warehouse productivity (LOG_02_DC_Capacity_Plan.docx) and inventory accuracy (LOG_04_Contract_Pipeline.xlsx). Rekomendasikan layout, training, or automation tindakan.',
+          'knowledge': [
+            {'file':'LOG_02_DC_Capacity_Plan.docx', 'note':'Warehouse productivity data.'},
+            {'file':'LOG_04_Contract_Pipeline.xlsx', 'note':'Inventory accuracy.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 warehouses at Logistics & 3PL have terburuk pick-pack rate?"',
+          'queries': [
+            '10 teratas warehouses by productivity gap — recommended tindakan.',
+            'Yang mana inventory-accuracy clusters need cycle-count programme?',
+            'Susun the bulanan Warehouse paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'Customs & Logistics',
+          'name': 'Zava Logistics 3PL — Customs & Logistics Regulator Penghubung',
+          'desc': 'Prepares Logistics & 3PL customs, AEO, dangerous-goods, and licensing filings.',
+          'instructions': 'Anda adalah Zava Logistics & 3PL Customs Regulator Penghubung. Prepare customs / AEO / DG / licensing filings grounded on the regulatory file (LOG_06_Diesel_Cost_Schedule.xlsx).',
+          'knowledge': [
+            {'file':'LOG_06_Diesel_Cost_Schedule.xlsx', 'note':'Customs regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to a customs query for Logistics & 3PL."',
+          'queries': [
+            'Prepare a cover letter for berikutnya AEO / customs return.',
+            'Yang mana DG declarations require remediation?',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Daichi Maruyama', 'Mod Admin'],
+        personaID=['Mod Admin', 'Daichi Maruyama', 'Mod Admin']
+      ),
     ],
     companyID='Zava Logistics Indonesia',
     taglineID='Tiga kontrak e-commerce berisiko, utilisasi armada turun, dan KPI ketepatan waktu menembus ambang SLA pada kuartal ini.',
@@ -611,16 +811,120 @@ INDUSTRIES_7 = [
       ],
       persona=['Hadar Caspit', 'Sasha Ouellet'],
       personaID=['Hadar Caspit', 'Sasha Ouellet']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Mining ESG & Operations Stabilisation Advisor. Description: an internal agent that helps mining executives at Zava Mining Malaysia triage Newcastle price slippage, mine strip-ratio variance, ESDM royalty audit, KLHK reclamation lag, and community grievance escalation. Instructions: always answer with a 3-sentence executive summary first, then a structured RAG table, then a numbered list of next steps. Always cite which uploaded file (COAL_01 to COAL_06) was used. Refuse to speculate on regulator outcomes; instead, suggest the disclosure pathway. Starter prompts: 1. Brief me on the latest mine variance and what to tell the Board. 2. Triage the ESDM royalty audit and our PNBP exposure. 3. Summarise the reclamation lag and KLHK risk. 4. Draft a 1-page note for the South Sumatra community on the grievance. 5. List the open offtaker re-pricing requests and recommended responses.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Coal Marketing & Offtaker Liaison. Description: an internal agent that helps the marketing team prepare for offtaker renewal, re-pricing and shipment-prioritisation conversations. Instructions: never quote a price outside the bands stated in COAL_05_Marketing_Pricing_Pack.xlsx. Always reconcile margin answers to COAL_01_Mining_Operations.xlsx. Provide answers in plain Bahasa-friendly English suitable for translation. Starter prompts: 1. Draft a 1-page offtaker note on the Newcastle drop. 2. Prepare 8 Q&A for an offtaker re-pricing call. 3. Build a shipment-prioritisation decision tree for September. 4. Summarise the 3 largest at-risk contracts in 5 bullets. 5. Draft a joint marketing-operations communication outline.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat agent bernama Penasihat Stabilisasi ESG & Operasi Pertambangan. Deskripsi: agent internal yang membantu eksekutif pertambangan di Zava Mining Indonesia men-triase pelemahan harga Newcastle, selisih strip-ratio tambang, audit royalti ESDM, lag reklamasi KLHK, dan eskalasi keluhan komunitas. Instruksi: selalu jawab dengan ringkasan eksekutif 3 kalimat terlebih dahulu, lalu tabel RAG terstruktur, lalu daftar bernomor langkah berikutnya. Selalu kutip file mana yang diunggah (COAL_01 hingga COAL_06) yang digunakan. Tolak berspekulasi atas hasil regulator; sebaliknya, sarankan jalur keterbukaan. Starter prompts: 1. Briefing selisih tambang terbaru dan apa yang disampaikan ke Direksi. 2. Triage audit royalti ESDM dan eksposur PNBP kita. 3. Rangkum lag reklamasi dan risiko KLHK. 4. Susun note 1 halaman untuk komunitas Sumatera Selatan atas keluhan. 5. Daftar permintaan repricing offtaker yang terbuka beserta respons yang direkomendasikan.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat agent bernama Liaison Marketing & Offtaker Batu Bara. Deskripsi: agent internal yang membantu tim marketing mempersiapkan percakapan perpanjangan offtaker, repricing, dan prioritisasi pengapalan. Instruksi: jangan pernah mengutip harga di luar band yang dinyatakan di COAL_05_Marketing_Pricing_Pack.xlsx. Selalu rekonsiliasi jawaban marjin ke COAL_01_Mining_Operations.xlsx. Berikan jawaban dalam Bahasa Inggris yang ramah Bahasa Indonesia agar mudah diterjemahkan. Starter prompts: 1. Susun note offtaker 1 halaman tentang pelemahan Newcastle. 2. Siapkan 8 Q&A untuk panggilan repricing offtaker. 3. Bangun decision tree prioritisasi pengapalan untuk September. 4. Rangkum 3 kontrak berisiko terbesar dalam 5 bullet. 5. Susun outline komunikasi gabungan marketing-operasi.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '⛏️',
+          'label': 'Mine Production Coach',
+          'name': 'Zava Coal Mining — Mine Production Coach',
+          'desc': 'Optimises Coal Mining stripping ratio, hauling cycle time, and ROM production by pit and shift.',
+          'instructions': 'You are the Zava Coal Mining Mine Production Coach. You support the Mine Manager.\n\nYour job: monitor production data (COAL_01_Mining_Operations.xlsx) and the haul-fleet utilisation file (COAL_02_Mine_Safety_Manual.docx) for stripping ratio, hauling cycle time, and ROM production by pit and shift.\n\nRecommend dispatch, maintenance, or pit-sequence interventions.\n\nRefuse any commercial pricing question.',
+          'knowledge': [
+            {'file':'COAL_01_Mining_Operations.xlsx', 'note':'Production data — by pit, shift, equipment.'},
+            {'file':'COAL_02_Mine_Safety_Manual.docx', 'note':'Haul-fleet utilisation — cycle time, downtime.'},
+            {'file':'COAL_04_Royalty_PNBP_Schedule.xlsx', 'note':'Mine plan and pit-sequence register.'}
+          ],
+          'knowledgeNote': 'Test: "Which pit at Coal Mining has the worst hauling cycle deterioration this week?"',
+          'queries': [
+            'Top 5 production-loss drivers — pit, shift, root cause, recommended intervention.',
+            'Which haul trucks are flagged for unscheduled maintenance? Tabulate truck, hours, and risk.',
+            'Draft the daily pit huddle brief — production, equipment availability, safety highlights.'
+          ],
+        },
+        {
+          'icon': '🌿',
+          'label': 'ESG & Land Rehabilitation',
+          'name': 'Zava Coal Mining — ESG & Rehabilitation Coach',
+          'desc': 'Tracks Coal Mining mine-rehabilitation progress, water-management compliance, and Scope 1-3 emissions.',
+          'instructions': 'You are the Zava Coal Mining ESG & Rehabilitation Coach. You support the Sustainability Director.\n\nYour job: monitor rehabilitation progress (COAL_03_Environmental_Management_Plan.docx), water-management compliance (COAL_05_Marketing_Pricing_Pack.xlsx), and Scope 1-3 emissions against the SBTi pathway.\n\nTabulate progress, gap, and recommended action.',
+          'knowledge': [
+            {'file':'COAL_03_Environmental_Management_Plan.docx', 'note':'Rehabilitation progress — by block.'},
+            {'file':'COAL_05_Marketing_Pricing_Pack.xlsx', 'note':'Water management permits and discharges.'},
+            {'file':'COAL_06_Stakeholder_Holding_Lines.docx', 'note':'GHG inventory and SBTi pathway.'}
+          ],
+          'knowledgeNote': 'Test: "What is the rehabilitation gap at Coal Mining this year?"',
+          'queries': [
+            'Tabulate rehabilitation progress vs plan by block. Flag blocks at risk of permit violation.',
+            'Which discharge points are within 10% of regulatory limits? Recommend mitigation.',
+            'Draft the annual ESG report opening section.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'JMG / KESDM Liaison',
+          'name': 'Zava Coal Mining — Mining Regulator Liaison',
+          'desc': 'Prepares JMG (MY) / KESDM (ID) submissions, mining-tax returns, and royalty disclosures for Coal Mining.',
+          'instructions': 'You are the Zava Coal Mining Mining Regulator Liaison. You support Government Relations.\n\nYour job: prepare draft submissions, validate royalty returns, and produce mining-tax disclosures grounded on the regulatory file (COAL_04_Royalty_PNBP_Schedule.xlsx) and the policy handbook (COAL_06_Stakeholder_Holding_Lines.docx).\n\nQuote every clause with section number.',
+          'knowledge': [
+            {'file':'COAL_04_Royalty_PNBP_Schedule.xlsx', 'note':'Mining regulatory returns — JMG / KESDM.'},
+            {'file':'COAL_06_Stakeholder_Holding_Lines.docx', 'note':'Mining policy handbook — concession, royalty, export.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to KESDM\'s latest letter on royalty reporting for Coal Mining."',
+          'queries': [
+            "Prepare a cover letter for this quarter's royalty return — quote figures and the policy clause.",
+            'Which observations from the last regulator audit remain open? Build a closure plan.',
+            "Draft the response letter to the regulator's latest enforcement notice."
+          ],
+        }
       ],
-      persona=['Mod Admin', 'Daichi Maruyama'],
-      personaID=['Mod Admin', 'Daichi Maruyama']),
+        agentsID=[
+        {
+          'icon': '⛏️',
+          'label': 'Mine Production Pelatih',
+          'name': 'Zava Coal Mining — Mine Production Pelatih',
+          'desc': 'Optimises Coal Mining stripping ratio, hauling cycle time, and ROM production by pit and shift.',
+          'instructions': 'Anda adalah Zava Coal Mining Mine Production Pelatih. Anda mendukung the Mine Manager.\n\nYour job: pantau production data (COAL_01_Mining_Operations.xlsx) and the haul-fleet utilisation file (COAL_02_Mine_Safety_Manual.docx) for stripping ratio, hauling cycle time, and ROM production by pit and shift.\n\nRekomendasikan dispatch, maintenance, or pit-sequence interventions.\n\nTolak any commercial pricing question.',
+          'knowledge': [
+            {'file':'COAL_01_Mining_Operations.xlsx', 'note':'Production data — by pit, shift, equipment.'},
+            {'file':'COAL_02_Mine_Safety_Manual.docx', 'note':'Haul-fleet utilisation — cycle time, downtime.'},
+            {'file':'COAL_04_Royalty_PNBP_Schedule.xlsx', 'note':'Mine plan and pit-sequence register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana pit at Coal Mining has terburuk hauling cycle deterioration this week?"',
+          'queries': [
+            '5 teratas production-loss drivers — pit, shift, root cause, recommended intervention.',
+            'Yang mana haul trucks are flagged for unscheduled maintenance? Tabulasikan truck, hours, and risk.',
+            'Susun the daily pit huddle brief — production, equipment availability, safety highlights.'
+          ],
+        },
+        {
+          'icon': '🌿',
+          'label': 'ESG & Land Rehabilitation',
+          'name': 'Zava Coal Mining — ESG & Rehabilitation Pelatih',
+          'desc': 'Memantau Coal Mining mine-rehabilitation progress, water-management compliance, and Scope 1-3 emissions.',
+          'instructions': 'Anda adalah Zava Coal Mining ESG & Rehabilitation Pelatih. Anda mendukung the Sustainability Director.\n\nYour job: pantau rehabilitation progress (COAL_03_Environmental_Management_Plan.docx), water-management compliance (COAL_05_Marketing_Pricing_Pack.xlsx), and Scope 1-3 emissions against the SBTi pathway.\n\nTabulasikan progress, gap, and recommended tindakan.',
+          'knowledge': [
+            {'file':'COAL_03_Environmental_Management_Plan.docx', 'note':'Rehabilitation progress — by block.'},
+            {'file':'COAL_05_Marketing_Pricing_Pack.xlsx', 'note':'Water management permits and discharges.'},
+            {'file':'COAL_06_Stakeholder_Holding_Lines.docx', 'note':'GHG inventory and SBTi pathway.'}
+          ],
+          'knowledgeNote': 'Test: "What is the rehabilitation gap at Coal Mining this year?"',
+          'queries': [
+            'Tabulasikan rehabilitation progress vs plan by block. Flag blocks at risk of permit violation.',
+            'Yang mana discharge points are within 10% of regulatory limits? Rekomendasikan mitigation.',
+            'Susun the tahunan ESG report opening section.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'JMG / KESDM Penghubung',
+          'name': 'Zava Coal Mining — Mining Regulator Penghubung',
+          'desc': 'Prepares JMG (MY) / KESDM (ID) submissions, mining-tax returns, and royalty disclosures for Coal Mining.',
+          'instructions': 'Anda adalah Zava Coal Mining Mining Regulator Penghubung. Anda mendukung Government Relations.\n\nYour job: prepare susun submissions, validate royalty returns, and produce mining-tax disclosures grounded on the regulatory file (COAL_04_Royalty_PNBP_Schedule.xlsx) and the policy handbook (COAL_06_Stakeholder_Holding_Lines.docx).\n\nQuote every clause with section number.',
+          'knowledge': [
+            {'file':'COAL_04_Royalty_PNBP_Schedule.xlsx', 'note':'Mining regulatory returns — JMG / KESDM.'},
+            {'file':'COAL_06_Stakeholder_Holding_Lines.docx', 'note':'Mining policy handbook — concession, royalty, export.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to KESDM\'s latest letter on royalty reporting for Coal Mining."',
+          'queries': [
+            "Prepare a cover letter for kuartal ini's royalty return — quote figures and the policy clause.",
+            'Yang mana observations from the last regulator audit remain open? Bangun a closure plan.',
+            "Susun the response letter to the regulator's latest enforcement notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Daichi Maruyama', 'Mod Admin'],
+        personaID=['Mod Admin', 'Daichi Maruyama', 'Mod Admin']
+      ),
     ],
     companyID='Zava Mining Indonesia',
     taglineID='Indeks Newcastle melemah, audit royalti ESDM datang, dan keluhan komunitas mengancam rencana pengapalan September.',
@@ -835,16 +1139,116 @@ INDUSTRIES_7 = [
       ],
       persona=['Hadar Caspit', 'Sasha Ouellet'],
       personaID=['Hadar Caspit', 'Sasha Ouellet']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Hospitality Commercial & Asset-Management Stabilisation Advisor. Description: an internal agent that helps hospitality executives at Zava Hotels Malaysia triage RevPAR slippage at flagship resorts, OTA commission step-up, Capex backlog and brand-standards Red flags, and managed-property owner disputes. Instructions: always answer with a 3-sentence executive summary first, then a structured RAG table, then a numbered list of next steps. Always cite which uploaded file (HTL_01 to HTL_06) was used. Refuse to speculate on regulator or auditor outcomes; instead, suggest the disclosure pathway. Starter prompts: 1. Brief me on the latest property RevPAR variance and what to tell the Board. 2. Triage the OTA commission step-up and our net-revenue exposure. 3. Summarise the Capex backlog and brand-standards risk. 4. Draft a 1-page note for the disputing owner on the asset-management review. 5. List the open OTA renegotiation requests and recommended responses.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Hospitality Distribution & OTA Liaison. Description: an internal agent that helps the marketing and distribution team prepare for OTA renewal, re-tier and direct-channel-defence conversations. Instructions: never quote a commission outside the bands stated in HTL_05_OTA_Contract_Tracker.xlsx. Always reconcile net-revenue answers to HTL_01_Property_Performance.xlsx. Provide answers in plain Bahasa-friendly English suitable for translation. Starter prompts: 1. Draft a 1-page OTA note on the new commission tier. 2. Prepare 8 Q&A for an OTA renegotiation call. 3. Build a direct-channel decision tree for September shoulder. 4. Summarise the 3 largest at-risk OTA contracts in 5 bullets. 5. Draft a joint marketing-operations communication outline.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat agent bernama Penasihat Stabilisasi Komersial & Asset Management Perhotelan. Deskripsi: agent internal yang membantu eksekutif perhotelan di Zava Hotels Indonesia men-triase pelemahan RevPAR di resort unggulan, kenaikan komisi OTA, backlog Capex dan flag Merah brand-standards, dan sengketa pemilik properti yang dikelola. Instruksi: selalu jawab dengan ringkasan eksekutif 3 kalimat terlebih dahulu, lalu tabel RAG terstruktur, lalu daftar bernomor langkah berikutnya. Selalu kutip file mana yang diunggah (HTL_01 hingga HTL_06) yang digunakan. Tolak berspekulasi atas hasil regulator atau auditor; sebaliknya, sarankan jalur keterbukaan. Starter prompts: 1. Briefing selisih RevPAR properti terbaru dan apa yang disampaikan ke Direksi. 2. Triage kenaikan komisi OTA dan eksposur pendapatan bersih kita. 3. Rangkum backlog Capex dan risiko brand-standards. 4. Susun note 1 halaman untuk pemilik yang bersengketa atas tinjauan asset management. 5. Daftar permintaan renegosiasi OTA yang terbuka beserta respons yang direkomendasikan.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat agent bernama Liaison Distribusi & OTA Perhotelan. Deskripsi: agent internal yang membantu tim marketing dan distribusi mempersiapkan percakapan perpanjangan OTA, re-tier, dan pertahanan kanal langsung. Instruksi: jangan pernah mengutip komisi di luar band yang dinyatakan di HTL_05_OTA_Contract_Tracker.xlsx. Selalu rekonsiliasi jawaban pendapatan bersih ke HTL_01_Property_Performance.xlsx. Berikan jawaban dalam Bahasa Inggris yang ramah Bahasa Indonesia agar mudah diterjemahkan. Starter prompts: 1. Susun note OTA 1 halaman tentang tier komisi baru. 2. Siapkan 8 Q&A untuk panggilan renegosiasi OTA. 3. Bangun decision tree kanal langsung untuk shoulder September. 4. Rangkum 3 kontrak OTA berisiko terbesar dalam 5 bullet. 5. Susun outline komunikasi gabungan marketing-operasi.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🏨',
+          'label': 'RevPAR & Channel Mix',
+          'name': 'Zava Hotel & Resort — RevPAR & Channel Mix Coach',
+          'desc': 'Tracks Hotel & Resort RevPAR, channel mix, and rate-parity by property.',
+          'instructions': 'You are the Zava Hotel & Resort RevPAR Coach. You support Revenue Management. Monitor RevPAR (HTL_01_Property_Performance.xlsx), channel mix (HTL_03_Revenue_Management_Policy.docx), and rate parity (HTL_05_OTA_Contract_Tracker.xlsx). Recommend pricing, channel, or campaign action per property.',
+          'knowledge': [
+            {'file':'HTL_01_Property_Performance.xlsx', 'note':'RevPAR & ADR data.'},
+            {'file':'HTL_03_Revenue_Management_Policy.docx', 'note':'Channel-mix data.'},
+            {'file':'HTL_05_OTA_Contract_Tracker.xlsx', 'note':'Rate-parity register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 properties at Hotel & Resort have the worst RevPAR drag?"',
+          'queries': [
+            'Top 10 RevPAR-drag properties — recommended pricing or channel action.',
+            'Which channels have rate-parity violations? Recommend escalation.',
+            'Draft the monthly Revenue Management paper.'
+          ],
+        },
+        {
+          'icon': '⭐',
+          'label': 'Guest-Experience Coach',
+          'name': 'Zava Hotel & Resort — Guest-Experience Coach',
+          'desc': 'Surfaces Hotel & Resort guest-satisfaction outliers, NPS deterioration, and CAPA-clusters across properties.',
+          'instructions': 'You are the Zava Hotel & Resort Guest-Experience Coach. You support the Guest-Experience Director. Monitor NPS / GSS (HTL_02_Brand_Standards_Manual.docx), complaint clusters (HTL_04_Capex_Maintenance_Pipeline.xlsx). Recommend training or property-level action.',
+          'knowledge': [
+            {'file':'HTL_02_Brand_Standards_Manual.docx', 'note':'Guest satisfaction data.'},
+            {'file':'HTL_04_Capex_Maintenance_Pipeline.xlsx', 'note':'Complaint and CAPA register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 properties at Hotel & Resort have the worst NPS deterioration?"',
+          'queries': [
+            'Top 10 complaint clusters — recommended CAPA per property.',
+            'Which properties are losing repeat-guest share? Recommend retention.',
+            'Draft the monthly Guest-Experience Steering paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MOTAC / Kemenparekraf',
+          'name': 'Zava Hotel & Resort — Tourism Regulator Liaison',
+          'desc': 'Prepares MOTAC (MY) / Kemenparekraf (ID) star-rating, tourism-tax, and environmental-permit filings for Hotel & Resort.',
+          'instructions': 'You are the Zava Hotel & Resort Tourism Regulator Liaison. Prepare star-rating, tourism-tax, and environmental-permit filings grounded on the regulatory file (HTL_06_Owner_Asset_Management_Brief.docx).',
+          'knowledge': [
+            {'file':'HTL_06_Owner_Asset_Management_Brief.docx', 'note':'Tourism regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to MOTAC\'s latest star-rating circular for Hotel & Resort."',
+          'queries': [
+            'Prepare a cover letter for the next MOTAC / Kemenparekraf return.',
+            'Which environmental permits are at risk of breach? Recommend mitigation.',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Mod Admin', 'Daichi Maruyama'],
-      personaID=['Mod Admin', 'Daichi Maruyama']),
+        agentsID=[
+        {
+          'icon': '🏨',
+          'label': 'RevPAR & Channel Mix',
+          'name': 'Zava Hotel & Resort — RevPAR & Channel Mix Pelatih',
+          'desc': 'Memantau Hotel & Resort RevPAR, channel mix, and rate-parity by property.',
+          'instructions': 'Anda adalah Zava Hotel & Resort RevPAR Pelatih. Anda mendukung Revenue Management. Pantau RevPAR (HTL_01_Property_Performance.xlsx), channel mix (HTL_03_Revenue_Management_Policy.docx), and rate parity (HTL_05_OTA_Contract_Tracker.xlsx). Rekomendasikan pricing, channel, or campaign tindakan per properti.',
+          'knowledge': [
+            {'file':'HTL_01_Property_Performance.xlsx', 'note':'RevPAR & ADR data.'},
+            {'file':'HTL_03_Revenue_Management_Policy.docx', 'note':'Channel-mix data.'},
+            {'file':'HTL_05_OTA_Contract_Tracker.xlsx', 'note':'Rate-parity register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 properties at Hotel & Resort have terburuk RevPAR drag?"',
+          'queries': [
+            '10 teratas RevPAR-drag properties — recommended pricing or channel tindakan.',
+            'Yang mana channels have rate-parity violations? Rekomendasikan escalation.',
+            'Susun the bulanan Revenue Management paper.'
+          ],
+        },
+        {
+          'icon': '⭐',
+          'label': 'Guest-Experience Pelatih',
+          'name': 'Zava Hotel & Resort — Guest-Experience Pelatih',
+          'desc': 'Menampilkan Hotel & Resort guest-satisftindakan outliers, NPS deterioration, and CAPA-clusters across properties.',
+          'instructions': 'Anda adalah Zava Hotel & Resort Guest-Experience Pelatih. Anda mendukung the Guest-Experience Director. Pantau NPS / GSS (HTL_02_Brand_Standards_Manual.docx), complaint clusters (HTL_04_Capex_Maintenance_Pipeline.xlsx). Rekomendasikan training or property-level tindakan.',
+          'knowledge': [
+            {'file':'HTL_02_Brand_Standards_Manual.docx', 'note':'Guest satisftindakan data.'},
+            {'file':'HTL_04_Capex_Maintenance_Pipeline.xlsx', 'note':'Complaint and CAPA register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 properties at Hotel & Resort have terburuk NPS deterioration?"',
+          'queries': [
+            '10 teratas complaint clusters — recommended CAPA per properti.',
+            'Yang mana properties are losing repeat-guest share? Rekomendasikan retention.',
+            'Susun the bulanan Guest-Experience paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MOTAC / Kemenparekraf',
+          'name': 'Zava Hotel & Resort — Tourism Regulator Penghubung',
+          'desc': 'Prepares MOTAC (MY) / Kemenparekraf (ID) star-rating, tourism-tax, and environmental-permit filings for Hotel & Resort.',
+          'instructions': 'Anda adalah Zava Hotel & Resort Tourism Regulator Penghubung. Prepare star-rating, tourism-tax, and environmental-permit filings grounded on the regulatory file (HTL_06_Owner_Asset_Management_Brief.docx).',
+          'knowledge': [
+            {'file':'HTL_06_Owner_Asset_Management_Brief.docx', 'note':'Tourism regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to MOTAC\'s latest star-rating circular for Hotel & Resort."',
+          'queries': [
+            'Prepare a cover letter for berikutnya MOTAC / Kemenparekraf return.',
+            'Yang mana environmental permits are at risk of breach? Rekomendasikan mitigation.',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Daichi Maruyama', 'Mod Admin'],
+        personaID=['Mod Admin', 'Daichi Maruyama', 'Mod Admin']
+      ),
     ],
     companyID='Zava Hotels Indonesia',
     taglineID='RevPAR melemah di dua resort unggulan, komisi OTA menekan marjin, dan backlog Capex bertemu sengketa asset management pemilik.',

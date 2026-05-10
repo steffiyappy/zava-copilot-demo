@@ -169,16 +169,114 @@ DEPARTMENTS = [
         {'instr':'Buka `m365.cloud.microsoft/chat`. **JANGAN buka Excel terlebih dahulu.** Tempel prompt di bawah — Copilot mengembalikan `.xlsx` yang sudah dibuat dan tersimpan di OneDrive. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat workbook Excel baru berjudul ‘Dashboard Komando Krisis SDM’ dengan 6 sheet: Sheet 1 ‘Dashboard Headcount’ — headcount saat ini per divisi, departemen, band, dengan kolom perubahan YoY dan jumlah vacancy, sertakan baris total; Sheet 2 ‘Tracker Attrition’ — data attrition bulanan 12 bulan dengan kolom split sukarela/tidak sukarela, estimasi biaya, dan conditional formatting pada >15%%; Sheet 3 ‘Pipeline Talenta’ — 180 rekuisisi terbuka dengan kolom: Posisi, Departemen, Hari Terbuka, Tahap, Hambatan, Recruiter, Prioritas; Sheet 4 ‘Benchmark Kompensasi’ — perbandingan pasar per band (P25/P50/P75), median saat ini, gap %%, dan estimasi biaya koreksi; Sheet 5 ‘Backlog Onboarding’ — tracker detail hire tertahan dengan status SLA dan flag eskalasi; Sheet 6 ‘Watchlist Posisi Kritikal’ — 6 posisi senior kosong dengan hari vakant, jumlah pipeline kandidat, dan rating risiko. Tambahkan baris data sampel ke setiap sheet.'},
         {'instr':'Buka `m365.cloud.microsoft/chat`. **JANGAN buka Excel terlebih dahulu.** Tempel prompt di bawah — Copilot mengembalikan `.xlsx` yang sudah dibuat dan tersimpan di OneDrive. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat workbook Excel baru berjudul ‘Model Intervensi Retensi’ dengan 4 sheet: Sheet 1 ‘Perencana Skenario Retensi’ — input untuk pool bonus retensi, anggaran koreksi pasar, dan dana akselerasi hiring dengan formula menghitung jumlah per orang per band; Sheet 2 ‘Kalkulator ROI’ — model biaya attrition (biaya penggantian = 1,5x gaji, termasuk kehilangan produktivitas, biaya rekrutmen, pelatihan) vs biaya intervensi; Sheet 3 ‘Analisis Sensitivitas’ — tabel data memvariasikan asumsi pengurangan attrition (5%%, 10%%, 15%%) terhadap level investasi; Sheet 4 ‘Tracker Implementasi’ — milestone 30/60/90 hari dengan status RAG, penanggung jawab, dan anggaran terpakai vs dialokasikan. Sertakan formula dan conditional formatting.'}
       ]),
-            tool(T_BUILDER, ANY_LIC, ANY_ACCT,
-                 prompts=[
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Build me an agent called HR War Room Assistant. It helps the CHRO and HR leadership team manage the talent crisis response. It should: (1) Answer questions about current attrition data, pipeline status, and compensation gaps using uploaded HR files as knowledge sources; (2) Generate weekly progress reports on retention initiatives; (3) Draft communications to the Board, managers, and employees about talent programs; (4) Track action items from the Talent Council with owners and deadlines; (5) Provide talking points for leadership meetings on the talent crisis. Tone: professional, data-driven, urgent but composed. Always cite specific numbers when available.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Test the HR War Room Assistant agent with these sequential prompts:\\n\\n1. "What is our current attrition rate and how does it compare to our target? Which divisions are worst affected?"\\n\\n2. "Draft a weekly progress update email for the CHRO to send to the Board, covering: hires completed this week, retention actions deployed, and upcoming milestones for next week."\\n\\n3. "I have a meeting with the CEO in 15 minutes about the talent crisis. Give me 5 data-backed talking points covering attrition trend, financial impact, progress on countermeasures, biggest risk, and what I need from the CEO."'}
-      ],
-                 desc=DESC_BUILDER,
-                 promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan saya agen bernama Asisten War Room SDM. Agen ini membantu Direktur SDM dan tim leadership SDM mengelola respons krisis talenta. Agen harus: (1) Menjawab pertanyaan tentang data attrition saat ini, status pipeline, dan gap kompensasi menggunakan file SDM yang diunggah sebagai sumber pengetahuan; (2) Menghasilkan laporan progres mingguan tentang inisiatif retensi; (3) Menyusun komunikasi kepada Dewan, manajer, dan karyawan tentang program talenta; (4) Melacak item aksi dari Talent Council dengan penanggung jawab dan deadline; (5) Menyediakan talking points untuk rapat leadership tentang krisis talenta. Nada: profesional, berbasis data, mendesak tapi tenang. Selalu kutip angka spesifik jika tersedia.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Uji agen Asisten War Room SDM dengan prompt berurutan ini:\\n\\n1. "Berapa tingkat attrition kita saat ini dan bagaimana dibandingkan dengan target? Divisi mana yang paling terpengaruh?"\\n\\n2. "Draf email update progres mingguan untuk Direktur SDM kirim ke Dewan, mencakup: hire selesai minggu ini, aksi retensi yang di-deploy, dan milestone mendatang minggu depan."\\n\\n3. "Saya ada rapat dengan Direktur Utama dalam 15 menit tentang krisis talenta. Berikan 5 talking points berbasis data mencakup tren attrition, dampak finansial, progres langkah penanggulangan, risiko terbesar, dan apa yang saya butuhkan dari Direktur Utama."'}
-      ]),
+            tool_builder(ANY_LIC, ANY_ACCT,
+              agents=[
+              {
+                'icon': '👥',
+                'label': 'Workforce Planning Coach',
+                'name': 'Zava Group HR — Workforce Planning Coach',
+                'desc': 'Tracks Human Resources headcount, attrition, succession, and critical-role coverage.',
+                'instructions': 'You are the Zava Group Human Resources Workforce Planning Coach. You support Sasha (Group CoS) and the CHRO. Monitor headcount (HR_01_Workforce_Analytics.xlsx), attrition (HR_03_Talent_Strategy.docx), and succession (HR_05_Compensation_Benchmark.xlsx). Recommend hiring, retention, or succession action.',
+                'knowledge': [
+                  {'file':'HR_01_Workforce_Analytics.xlsx', 'note':'Headcount & attrition data.'},
+                  {'file':'HR_03_Talent_Strategy.docx', 'note':'Talent pipeline data.'},
+                  {'file':'HR_05_Compensation_Benchmark.xlsx', 'note':'Succession plans.'}
+                ],
+                'knowledgeNote': 'Test: "Which 3 critical roles in Human Resources have the worst succession coverage?"',
+                'queries': [
+                  'Top 10 attrition clusters — recommended retention package.',
+                  'Which critical roles have no successor? Recommend pipeline action.',
+                  'Draft the quarterly Talent Steering paper.'
+                ],
+              },
+              {
+                'icon': '📚',
+                'label': 'Capability & L&D',
+                'name': 'Zava Group HR — Capability & L&D Coach',
+                'desc': 'Surfaces Human Resources capability gaps, L&D ROI, and certification compliance.',
+                'instructions': 'You are the Zava Group Human Resources Capability & L&D Coach. Monitor capability matrix (HR_02_People_Policy_Manual.docx), L&D programme (HR_04_Attrition_Risk_Register.xlsx). Recommend learning-pathway or certification action.',
+                'knowledge': [
+                  {'file':'HR_02_People_Policy_Manual.docx', 'note':'Capability matrix.'},
+                  {'file':'HR_04_Attrition_Risk_Register.xlsx', 'note':'L&D programme tracker.'}
+                ],
+                'knowledgeNote': 'Test: "Which 3 capability gaps in Human Resources are widening?"',
+                'queries': [
+                  'Top 10 capability gaps — recommended learning pathway.',
+                  'Which certifications expire within 90 days? Recommend renewal programme.',
+                  'Draft the quarterly L&D Steering paper.'
+                ],
+              },
+              {
+                'icon': '⚖️',
+                'label': 'IR & ER Sentinel',
+                'name': 'Zava Group HR — Industrial & Employee Relations Sentinel',
+                'desc': 'Tracks Human Resources IR / ER cases, union engagement, and grievance closure.',
+                'instructions': 'You are the Zava Group Human Resources IR & ER Sentinel. Monitor IR / ER cases (HR_06_Talent_Council_Charter.docx). Refuse to disclose individual employee data externally.',
+                'knowledge': [
+                  {'file':'HR_06_Talent_Council_Charter.docx', 'note':'IR / ER case register.'}
+                ],
+                'knowledgeNote': 'Test: "Which 3 IR cases in Human Resources require Group escalation?"',
+                'queries': [
+                  'Top 10 open IR / ER cases — recommended action.',
+                  'Which union engagements are due this quarter? Build agenda.',
+                  'Draft the quarterly People Risk paper for the Audit Committee.'
+                ],
+              }
+            ],
+              agentsID=[
+              {
+                'icon': '👥',
+                'label': 'Workforce Planning Pelatih',
+                'name': 'Zava Grup HR — Workforce Planning Pelatih',
+                'desc': 'Memantau Human Resources headcount, attrition, succession, and critical-role coverage.',
+                'instructions': 'Anda adalah Zava Grup Human Resources Workforce Planning Pelatih. Anda mendukung Sasha (Grup CoS) and the CHRO. Pantau headcount (HR_01_Workforce_Analytics.xlsx), attrition (HR_03_Talent_Strategy.docx), and succession (HR_05_Compensation_Benchmark.xlsx). Rekomendasikan hiring, retention, or succession tindakan.',
+                'knowledge': [
+                  {'file':'HR_01_Workforce_Analytics.xlsx', 'note':'Headcount & attrition data.'},
+                  {'file':'HR_03_Talent_Strategy.docx', 'note':'Talent pipeline data.'},
+                  {'file':'HR_05_Compensation_Benchmark.xlsx', 'note':'Succession plans.'}
+                ],
+                'knowledgeNote': 'Test: "Yang mana 3 critical roles in Human Resources have terburuk succession coverage?"',
+                'queries': [
+                  '10 teratas attrition clusters — recommended retention package.',
+                  'Yang mana critical roles have no successor? Rekomendasikan pipeline tindakan.',
+                  'Susun the kuartalan Talent paper Komite Pengarah.'
+                ],
+              },
+              {
+                'icon': '📚',
+                'label': 'Capability & L&D',
+                'name': 'Zava Grup HR — Capability & L&D Pelatih',
+                'desc': 'Menampilkan Human Resources capability gaps, L&D ROI, and certification compliance.',
+                'instructions': 'Anda adalah Zava Grup Human Resources Capability & L&D Pelatih. Pantau capability matrix (HR_02_People_Policy_Manual.docx), L&D programme (HR_04_Attrition_Risk_Register.xlsx). Rekomendasikan learning-pathway or certification tindakan.',
+                'knowledge': [
+                  {'file':'HR_02_People_Policy_Manual.docx', 'note':'Capability matrix.'},
+                  {'file':'HR_04_Attrition_Risk_Register.xlsx', 'note':'L&D programme tracker.'}
+                ],
+                'knowledgeNote': 'Test: "Yang mana 3 capability gaps in Human Resources are widening?"',
+                'queries': [
+                  '10 teratas capability gaps — recommended learning pathway.',
+                  'Yang mana certifications expire within 90 days? Rekomendasikan renewal programme.',
+                  'Susun the kuartalan L&D paper Komite Pengarah.'
+                ],
+              },
+              {
+                'icon': '⚖️',
+                'label': 'IR & ER Pengawas',
+                'name': 'Zava Grup HR — Industrial & Employee Relations Pengawas',
+                'desc': 'Memantau Human Resources IR / ER cases, union engagement, and grievance closure.',
+                'instructions': 'Anda adalah Zava Grup Human Resources IR & ER Pengawas. Pantau IR / ER cases (HR_06_Talent_Council_Charter.docx). Tolak to disclose individual employee data externally.',
+                'knowledge': [
+                  {'file':'HR_06_Talent_Council_Charter.docx', 'note':'IR / ER case register.'}
+                ],
+                'knowledgeNote': 'Test: "Yang mana 3 IR cases in Human Resources require Grup escalation?"',
+                'queries': [
+                  '10 teratas open IR / ER cases — recommended tindakan.',
+                  'Yang mana union engagements are due kuartal ini? Bangun agenda.',
+                  'Susun the kuartalan People Risk paper for the Audit Committee.'
+                ],
+              }
+            ]
+            ),
         ],
         companyID='Zava HR',
         taglineID='Attrition Q3 mencapai 24%% pada headcount 3.200, backlog onboarding 180 hire \u2014 Direksi memanggil Talent Council darurat dalam 72 jam.',
@@ -379,16 +477,116 @@ DEPARTMENTS = [
         {'instr':'Buka `m365.cloud.microsoft/chat`. **JANGAN buka Excel terlebih dahulu.** Tempel prompt di bawah — Copilot mengembalikan `.xlsx` yang sudah dibuat dan tersimpan di OneDrive. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat workbook Excel baru berjudul ‘Dashboard Komando Krisis Keuangan’ dengan 6 sheet: Sheet 1 ‘Budget vs Actual’ — budget vs aktual bulanan per kategori biaya dengan kolom selisih, kumulatif YTD, dan conditional formatting pada selisih >5%%; Sheet 2 ‘Forecast Cashflow’ — forecast kas bergulir 13 minggu dengan penerimaan operasi, pengeluaran, debt service, posisi bersih, dan garis trigger saldo minimum; Sheet 3 ‘Ringkasan GL’ — ekstrak trial balance dengan 50 akun GL teratas, pergerakan bulan berjalan, saldo YTD, dan perbandingan anggaran; Sheet 4 ‘Register Akrual’ — semua akrual terbuka dengan kolom: Kode GL, Deskripsi, Jumlah, Hari Ageing, Penanggung Jawab, Status (Dikonfirmasi/Estimasi/Disengketakan); Sheet 5 ‘AP Ageing’ — ageing level supplier dengan bucket (Lancar, 30, 60, 90, 120+ hari), flag prioritas pembayaran, dan indikator sengketa; Sheet 6 ‘Tracker Reset Biaya’ — setiap inisiatif pengurangan biaya dengan target penghematan, aktual tercapai, penanggung jawab, status RAG, dan tanggal implementasi. Tambahkan baris data sampel ke setiap sheet.'},
         {'instr':'Buka `m365.cloud.microsoft/chat`. **JANGAN buka Excel terlebih dahulu.** Tempel prompt di bawah — Copilot mengembalikan `.xlsx` yang sudah dibuat dan tersimpan di OneDrive. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buat workbook Excel baru berjudul ‘Model Covenant & Treasury’ dengan 4 sheet: Sheet 1 ‘Kalkulator Covenant’ — perhitungan Debt/EBITDA dan Interest Coverage kuartalan dengan input untuk saldo utang, EBITDA (trailing 12 bulan), beban bunga, dan formula menunjukkan headroom ke batas covenant; Sheet 2 ‘Mesin Skenario’ — tiga skenario (Base/Stress/Recovery) dengan input variabel untuk pertumbuhan pendapatan, pengurangan biaya tercapai, perubahan working capital, dan rasio covenant hasil per kuartal; Sheet 3 ‘Dashboard Likuiditas’ — tracker posisi kas harian dengan fasilitas tersedia, jumlah ditarik, headroom belum ditarik, dan perhitungan days-of-cover; Sheet 4 ‘Profil Maturitas Utang’ — semua pinjaman dengan lender, jenis fasilitas, jumlah ditarik, tanggal jatuh tempo, suku bunga, tes covenant, dan timeline refinancing. Sertakan formula dan conditional formatting di seluruh workbook.'}
       ]),
-            tool(T_BUILDER, ANY_LIC, ANY_ACCT,
-                 prompts=[
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Build me an agent called Finance War Room Assistant. It helps the CFO and finance leadership team manage the cost reset program and financial recovery. It should: (1) Answer questions about budget performance, variance drivers, and cost reduction progress using uploaded finance files as knowledge sources; (2) Generate weekly cost reset progress reports with savings achieved vs target; (3) Draft communications to the Audit Committee, business unit heads, and the finance team about program milestones; (4) Track covenant ratios and alert when headroom drops below threshold; (5) Provide cashflow projections and scenario modelling on demand. Tone: precise, analytical, action-oriented. Always cite specific MYR figures and percentages.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Test the Finance War Room Assistant agent with these sequential prompts:\\n\\n1. "What is our current opex variance against RKAP and which cost categories are the biggest overrun drivers? Show me the top 5 by quantum."\\n\\n2. "Draft a weekly progress email for the CFO to send to the Audit Committee chair, covering: savings achieved this week by lever, cumulative progress against 15%% target, covenant ratio movement, and any escalation items requiring Committee attention."\\n\\n3. "The CEO wants a 2-minute verbal update on our financial recovery before the Board meeting. Give me 4 punchy talking points covering: cost reset progress percentage, cashflow trajectory, covenant headroom, and timeline to financial stabilisation."'}
-      ],
-                 desc=DESC_BUILDER,
-                 promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan saya agen bernama Asisten War Room Keuangan. Agen ini membantu Direktur Keuangan dan tim leadership keuangan mengelola program reset biaya dan pemulihan finansial. Agen harus: (1) Menjawab pertanyaan tentang kinerja anggaran, penggerak selisih, dan progres pengurangan biaya menggunakan file keuangan yang diunggah sebagai sumber pengetahuan; (2) Menghasilkan laporan progres reset biaya mingguan dengan penghematan tercapai vs target; (3) Menyusun komunikasi kepada Komite Audit, kepala unit bisnis, dan tim keuangan tentang milestone program; (4) Melacak rasio covenant dan memberi peringatan saat headroom turun di bawah ambang batas; (5) Menyediakan proyeksi cashflow dan pemodelan skenario sesuai permintaan. Nada: presisi, analitis, berorientasi aksi. Selalu kutip angka MYR spesifik dan persentase.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Uji agen Asisten War Room Keuangan dengan prompt berurutan ini:\\n\\n1. "Berapa selisih opex kami saat ini terhadap RKAP dan kategori biaya mana yang merupakan penggerak overrun terbesar? Tunjukkan 5 teratas berdasarkan kuantum."\\n\\n2. "Draf email progres mingguan untuk Direktur Keuangan kirim ke ketua Komite Audit, mencakup: penghematan tercapai minggu ini per lever, progres kumulatif terhadap target 15%%, pergerakan rasio covenant, dan item eskalasi yang memerlukan perhatian Komite."\\n\\n3. "Direktur Utama ingin update verbal 2 menit tentang pemulihan keuangan sebelum rapat Dewan. Berikan 4 talking points singkat mencakup: persentase progres reset biaya, trajectory cashflow, headroom covenant, dan timeline stabilisasi keuangan."'}
-      ]),
+            tool_builder(ANY_LIC, ANY_ACCT,
+              agents=[
+              {
+                'icon': '📊',
+                'label': 'FP&A Variance Coach',
+                'name': 'Zava Group Finance — FP&A Variance Coach',
+                'desc': 'Surfaces budget-vs-actual variance, division-level bridges, and recovery levers.',
+                'instructions': 'You are the Zava Group Finance & Treasury FP&A Variance Coach. You support Hadar (Group CFO). Read the consolidated financial pack (FIN_01_Budget_Performance.xlsx), divisional variance (FIN_02_Treasury_Policy.docx), and lender register (FIN_03_Month_End_Close_Playbook.docx). Tabulate the top variance drivers per division. Recommend a recovery action per Red.',
+                'knowledge': [
+                  {'file':'FIN_01_Budget_Performance.xlsx', 'note':'Group consolidated financial pack.'},
+                  {'file':'FIN_02_Treasury_Policy.docx', 'note':'Divisional variance & recovery levers.'},
+                  {'file':'FIN_03_Month_End_Close_Playbook.docx', 'note':'Lender register and covenant matrix.'}
+                ],
+                'knowledgeNote': 'Test: "Which 3 divisions are dragging group EBITDA the most this quarter?"',
+                'queries': [
+                  'Top 10 variance items — division, driver, magnitude, recovery lever owner.',
+                  'Which divisions have repeat variance > 3 quarters? Recommend root-cause programme.',
+                  'Draft the monthly FP&A paper for the Group ExCo.'
+                ],
+              },
+              {
+                'icon': '🏦',
+                'label': 'Treasury Liquidity Coach',
+                'name': 'Zava Group Finance — Treasury Liquidity Coach',
+                'desc': 'Tracks Finance & Treasury liquidity position, FX-hedge book, and intercompany funding.',
+                'instructions': 'You are the Zava Group Finance & Treasury Treasury Liquidity Coach. Monitor liquidity (FIN_01_Budget_Performance.xlsx) and the lender register (FIN_03_Month_End_Close_Playbook.docx). Recommend funding actions (drawdown, repayment, hedge) per outlier.',
+                'knowledge': [
+                  {'file':'FIN_01_Budget_Performance.xlsx', 'note':'Group liquidity & cash forecast.'},
+                  {'file':'FIN_03_Month_End_Close_Playbook.docx', 'note':'Lender register.'}
+                ],
+                'knowledgeNote': 'Test: "Which divisions in Finance & Treasury have the largest unfunded cash gap next month?"',
+                'queries': [
+                  'Top 10 cash-gap divisions — recommended funding action.',
+                  'Which FX hedges roll off this quarter? Recommend rollover plan.',
+                  'Draft the monthly Treasury paper for the Audit Committee.'
+                ],
+              },
+              {
+                'icon': '🧾',
+                'label': 'Group Tax Sentinel',
+                'name': 'Zava Group Finance — Group Tax Sentinel',
+                'desc': 'Surfaces Finance & Treasury group ETR, transfer-pricing exposure, and tax-incentive tracking.',
+                'instructions': 'You are the Zava Group Finance & Treasury Tax Sentinel. Monitor ETR (FIN_02_Treasury_Policy.docx) and tax-incentive register (FIN_05_Cashflow_Forecast.xlsx). Recommend tax-planning or filing action.',
+                'knowledge': [
+                  {'file':'FIN_02_Treasury_Policy.docx', 'note':'Group tax filings.'},
+                  {'file':'FIN_05_Cashflow_Forecast.xlsx', 'note':'Incentive register.'}
+                ],
+                'knowledgeNote': 'Test: "Which divisions in Finance & Treasury have the largest ETR delta vs statutory?"',
+                'queries': [
+                  'Top 10 ETR-delta divisions — recommended action.',
+                  'Which incentive claims are at risk of clawback?',
+                  'Draft the quarterly Tax paper.'
+                ],
+              }
+            ],
+              agentsID=[
+              {
+                'icon': '📊',
+                'label': 'FP&A Variance Pelatih',
+                'name': 'Zava Grup Finance — FP&A Variance Pelatih',
+                'desc': 'Menampilkan budget-vs-actual variance, division-level bridges, and recovery levers.',
+                'instructions': 'Anda adalah Zava Grup Finance & Treasury FP&A Variance Pelatih. Anda mendukung Hadar (Grup CFO). Read the consolidated financial pack (FIN_01_Budget_Performance.xlsx), divisional variance (FIN_02_Treasury_Policy.docx), and lender register (FIN_03_Month_End_Close_Playbook.docx). Tabulasikan the top variance drivers per divisi. Rekomendasikan a recovery tindakan per Red.',
+                'knowledge': [
+                  {'file':'FIN_01_Budget_Performance.xlsx', 'note':'Grup consolidated financial pack.'},
+                  {'file':'FIN_02_Treasury_Policy.docx', 'note':'Divisional variance & recovery levers.'},
+                  {'file':'FIN_03_Month_End_Close_Playbook.docx', 'note':'Lender register and covenant matrix.'}
+                ],
+                'knowledgeNote': 'Test: "Yang mana 3 divisions are dragging grup EBITDA the most kuartal ini?"',
+                'queries': [
+                  '10 teratas variance items — division, driver, magnitude, recovery lever owner.',
+                  'Yang mana divisions have repeat variance > 3 quarters? Rekomendasikan root-cause programme.',
+                  'Susun the bulanan FP&A paper for the Grup ExCo.'
+                ],
+              },
+              {
+                'icon': '🏦',
+                'label': 'Treasury Liquidity Pelatih',
+                'name': 'Zava Grup Finance — Treasury Liquidity Pelatih',
+                'desc': 'Memantau Finance & Treasury liquidity position, FX-hedge book, and intercompany funding.',
+                'instructions': 'Anda adalah Zava Grup Finance & Treasury Treasury Liquidity Pelatih. Pantau liquidity (FIN_01_Budget_Performance.xlsx) and the lender register (FIN_03_Month_End_Close_Playbook.docx). Rekomendasikan funding actions (drawdown, repayment, hedge) per pencilan.',
+                'knowledge': [
+                  {'file':'FIN_01_Budget_Performance.xlsx', 'note':'Grup liquidity & cash forecast.'},
+                  {'file':'FIN_03_Month_End_Close_Playbook.docx', 'note':'Lender register.'}
+                ],
+                'knowledgeNote': 'Test: "Yang mana divisions in Finance & Treasury have terbesar unfunded cash gap bulan depan?"',
+                'queries': [
+                  '10 teratas cash-gap divisions — recommended funding tindakan.',
+                  'Yang mana FX hedges roll off kuartal ini? Rekomendasikan rollover plan.',
+                  'Susun the bulanan Treasury paper for the Audit Committee.'
+                ],
+              },
+              {
+                'icon': '🧾',
+                'label': 'Grup Tax Pengawas',
+                'name': 'Zava Grup Finance — Grup Tax Pengawas',
+                'desc': 'Menampilkan Finance & Treasury grup ETR, transfer-pricing exposure, and tax-incentive tracking.',
+                'instructions': 'Anda adalah Zava Grup Finance & Treasury Tax Pengawas. Pantau ETR (FIN_02_Treasury_Policy.docx) and tax-incentive register (FIN_05_Cashflow_Forecast.xlsx). Rekomendasikan tax-planning or filing tindakan.',
+                'knowledge': [
+                  {'file':'FIN_02_Treasury_Policy.docx', 'note':'Grup tax filings.'},
+                  {'file':'FIN_05_Cashflow_Forecast.xlsx', 'note':'Incentive register.'}
+                ],
+                'knowledgeNote': 'Test: "Yang mana divisions in Finance & Treasury have terbesar ETR delta vs statutory?"',
+                'queries': [
+                  '10 teratas ETR-delta divisions — recommended tindakan.',
+                  'Yang mana incentive claims are at risk of clawback?',
+                  'Susun the kuartalan Tax paper.'
+                ],
+              }
+            ]
+            ),
         ],
         companyID='Zava Finance',
         taglineID='Tutup buku bulanan terlambat 3 hari, selisih opex -22%%, AP ageing >90 hari mencapai Rp 280 miliar \u2014 Direktur Keuangan harus mempresentasikan reset biaya 15%% kepada Komite Audit dalam 30 hari.',

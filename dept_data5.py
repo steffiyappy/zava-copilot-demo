@@ -176,17 +176,116 @@ DEPARTMENTS_5 = [
       ],
         persona=['Hadar Caspit','Hadar Caspit'],
         personaID=['Hadar Caspit','Hadar Caspit']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Zava IR Disclosure Agent\'. Description: an assistant to help the COO, operational excellence, supply and continuity leads, and site operations managers navigate site-level service slippage, the delayed cost takeout, and supplier disruption. Instructions: ground every answer in the 3 attached files — /IR_01_Analyst_Consensus_Tracker.xlsx, /IR_03_IR_Disclosure_Playbook.docx, /IR_04_Analyst_Engagement_Standards.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Investor Relations Steering Committee materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the team should be consulted. Starter prompts to include: (1) Summarise the 6.4% consensus-to-guidance gap and 9-point KLCI underperformance for the Investor Relations Steering Committee in 60 seconds, (2) Which areas are Red on analyst-consensus alignment and why, (3) What governance obligations apply after analyst-consensus slippage, two sell-side downgrades, and a widening guidance-to-consensus gap, (4) Draft a holding line for external partners, (5) Draft a holding line for Bursa Malaysia continuous-disclosure rules and Securities Commission Malaysia guidance.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Zava IR Disclosure Agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the 6.4% consensus-to-guidance gap and 9-point KLCI underperformance, the highest-risk areas, the top governance obligations, and the decisions I must take to the Investor Relations Steering Committee in 14 days."; (2) "Draft my first message to the leadership team immediately after the Investor Relations Steering Committee closes."; (3) "A critical tier-1 supplier signals a possible 72-hour shutdown overnight after a fire at their plant, and the COO needs to know the likely service impact across 4 sites plus the first recovery move before dawn." Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '📣',
+          'label': 'Disclosure Drafter',
+          'name': 'Zava Group Investor Relations — Disclosure Drafter',
+          'desc': 'Helps Investor Relations draft Bursa / IDX disclosures, results press releases, and analyst Q&A.',
+          'instructions': 'You are the Zava Group Investor Relations Disclosure Drafter. You support Daichi (Head of IR). Help draft Bursa / IDX disclosures grounded on the IR archive (IR_01_Analyst_Consensus_Tracker.xlsx) and consolidated financials (IR_03_IR_Disclosure_Playbook.docx).',
+          'knowledge': [
+            {'file':'IR_01_Analyst_Consensus_Tracker.xlsx', 'note':'IR disclosure archive.'},
+            {'file':'IR_03_IR_Disclosure_Playbook.docx', 'note':'Consolidated financials.'},
+            {'file':'IR_05_Quarterly_Results_Script.docx', 'note':'Investor Q&A archive.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the next quarterly results press release for Investor Relations."',
+          'queries': [
+            'Draft the next quarterly results press release.',
+            'Build the analyst Q&A pack for the upcoming earnings call.',
+            'Draft the announcement for the next material related-party transaction.'
+          ],
+        },
+        {
+          'icon': '📈',
+          'label': 'Analyst Sentiment Watch',
+          'name': 'Zava Group Investor Relations — Analyst Sentiment Watch',
+          'desc': 'Tracks Investor Relations sell-side coverage, consensus drift, and target-price movement.',
+          'instructions': 'You are the Zava Group Investor Relations Analyst Sentiment Watch. Monitor analyst notes (IR_02_Peer_Share_Price_Tracker.xlsx) and consensus (IR_04_Analyst_Engagement_Standards.docx). Recommend IR engagement per anomaly.',
+          'knowledge': [
+            {'file':'IR_02_Peer_Share_Price_Tracker.xlsx', 'note':'Analyst note archive.'},
+            {'file':'IR_04_Analyst_Engagement_Standards.docx', 'note':'Consensus tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which sell-side analysts on Investor Relations have moved most against consensus this quarter?"',
+          'queries': [
+            'Top 10 analyst notes by consensus delta — recommended IR engagement.',
+            'Which target-price moves are statistically significant?',
+            'Draft the monthly IR analyst review.'
+          ],
+        },
+        {
+          'icon': '🌿',
+          'label': 'ESG Disclosure Coach',
+          'name': 'Zava Group Investor Relations — ESG Disclosure Coach',
+          'desc': 'Surfaces Investor Relations ESG disclosure gaps and TCFD / GRI / ISSB readiness.',
+          'instructions': 'You are the Zava Group Investor Relations ESG Disclosure Coach. Monitor ESG disclosure (IR_06_Roadshow_Q_and_A_Prep.docx).',
+          'knowledge': [
+            {'file':'IR_06_Roadshow_Q_and_A_Prep.docx', 'note':'ESG disclosure archive.'}
+          ],
+          'knowledgeNote': 'Test: "Which TCFD / GRI / ISSB gaps in Investor Relations require closure before next year\'s annual report?"',
+          'queries': [
+            'List open ESG disclosure gaps and recommended closure.',
+            'Which ISSB items require board-level approval? Tabulate.',
+            'Draft the quarterly ESG IR paper.'
+          ],
+        }
       ],
-        DESC_BUILDER,
-        promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Zava IR Disclosure Agent\'. Deskripsi: asisten untuk membantu Kepala Investor Relations, keunggulan operasi, pimpinan pasokan dan kesinambungan, dan manajer operasi lokasi menavigasi keterlambatan SLA tingkat lokasi, cost takeout yang tertunda, dan disrupsi pemasok. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /IR_01_Analyst_Consensus_Tracker.xlsx, /IR_03_IR_Disclosure_Playbook.docx, /IR_04_Analyst_Engagement_Standards.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Komite Pengarah Investor Relations. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di tim yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum gap konsensus-ke-guidance 6,4% dan underperformance KLCI 9 poin untuk Komite Pengarah Investor Relations dalam 60 detik, (2) Area mana yang Merah pada analyst-consensus alignment dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca pelemahan konsensus analis, dua downgrade sell-side, dan pelebaran gap guidance-ke-konsensus, (4) Susun holding line untuk mitra eksternal, (5) Susun holding line untuk aturan disclosure berkelanjutan BEI dan POJK transparansi emiten.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Zava IR Disclosure Agent baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari gap konsensus-ke-guidance 6,4% dan underperformance KLCI 9 poin, area berisiko tertinggi, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Pengarah Investor Relations dalam 14 hari."; (2) "Susun pesan pertama saya kepada tim pimpinan segera setelah Komite Pengarah Investor Relations selesai."; (3) "Pemasok tier-1 kritis memberi sinyal kemungkinan penghentian 72 jam setelah kebakaran di pabriknya, dan Kepala Investor Relations perlu tahu kemungkinan dampak SLA lintas 4 lokasi serta langkah pemulihan pertama sebelum fajar." Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+        agentsID=[
+        {
+          'icon': '📣',
+          'label': 'Disclosure Drafter',
+          'name': 'Zava Grup Investor Relations — Disclosure Drafter',
+          'desc': 'Helps Investor Relations susun Bursa / IDX disclosures, results press releases, and analyst Q&A.',
+          'instructions': 'Anda adalah Zava Grup Investor Relations Disclosure Drafter. Anda mendukung Daichi (Head of IR). Help susun Bursa / IDX disclosures grounded on the IR archive (IR_01_Analyst_Consensus_Tracker.xlsx) and consolidated financials (IR_03_IR_Disclosure_Playbook.docx).',
+          'knowledge': [
+            {'file':'IR_01_Analyst_Consensus_Tracker.xlsx', 'note':'IR disclosure archive.'},
+            {'file':'IR_03_IR_Disclosure_Playbook.docx', 'note':'Consolidated financials.'},
+            {'file':'IR_05_Quarterly_Results_Script.docx', 'note':'Investor Q&A archive.'}
+          ],
+          'knowledgeNote': 'Test: "Susun berikutnya kuartalan results press release for Investor Relations."',
+          'queries': [
+            'Susun berikutnya kuartalan results press release.',
+            'Bangun the analyst Q&A pack for the upcoming earnings call.',
+            'Susun the announcement for berikutnya material related-party transtindakan.'
+          ],
+        },
+        {
+          'icon': '📈',
+          'label': 'Analyst Sentiment Watch',
+          'name': 'Zava Grup Investor Relations — Analyst Sentiment Watch',
+          'desc': 'Memantau Investor Relations sell-side coverage, consensus drift, and target-price movement.',
+          'instructions': 'Anda adalah Zava Grup Investor Relations Analyst Sentiment Watch. Pantau analyst notes (IR_02_Peer_Share_Price_Tracker.xlsx) and consensus (IR_04_Analyst_Engagement_Standards.docx). Rekomendasikan IR engagement per anomaly.',
+          'knowledge': [
+            {'file':'IR_02_Peer_Share_Price_Tracker.xlsx', 'note':'Analyst note archive.'},
+            {'file':'IR_04_Analyst_Engagement_Standards.docx', 'note':'Consensus tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana sell-side analysts on Investor Relations have moved most against consensus kuartal ini?"',
+          'queries': [
+            '10 teratas analyst notes by consensus delta — recommended IR engagement.',
+            'Yang mana target-price moves are statistically significant?',
+            'Susun the bulanan IR analyst review.'
+          ],
+        },
+        {
+          'icon': '🌿',
+          'label': 'ESG Disclosure Pelatih',
+          'name': 'Zava Grup Investor Relations — ESG Disclosure Pelatih',
+          'desc': 'Menampilkan Investor Relations ESG disclosure gaps and TCFD / GRI / ISSB readiness.',
+          'instructions': 'Anda adalah Zava Grup Investor Relations ESG Disclosure Pelatih. Pantau ESG disclosure (IR_06_Roadshow_Q_and_A_Prep.docx).',
+          'knowledge': [
+            {'file':'IR_06_Roadshow_Q_and_A_Prep.docx', 'note':'ESG disclosure archive.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana TCFD / GRI / ISSB gaps in Investor Relations require closure before next year\'s tahunan report?"',
+          'queries': [
+            'List open ESG disclosure gaps and recommended closure.',
+            'Yang mana ISSB items require board-level approval? Tabulate.',
+            'Susun the kuartalan ESG IR paper.'
+          ],
+        }
       ],
-        persona=['Hadar Caspit','Hadar Caspit'],
-        personaID=['Hadar Caspit','Hadar Caspit'])
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      )
     ],
     companyID='Zava Investor Relations',
     taglineID='SLA layanan turun di dua lokasi, cost takeout di bawah rencana, dan disrupsi pemasok mengancam kesinambungan produksi — keselamatan kerja Kemnaker harus dijaga.',
@@ -417,17 +516,116 @@ DEPARTMENTS_5 = [
       ],
         persona=['Daichi Maruyama','Daichi Maruyama'],
         personaID=['Daichi Maruyama','Daichi Maruyama']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Zava Procurement Compliance Agent\'. Description: an assistant to help the COO, operational excellence, supply and continuity leads, and site operations managers navigate site-level service slippage, the delayed cost takeout, and supplier disruption. Instructions: ground every answer in the 3 attached files — /PROC_01_Spend_Cube_Tracker.xlsx, /PROC_03_Procurement_Policy_ABAC_Manual.docx, /PROC_04_Vendor_Consolidation_Playbook.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Procurement Steering Committee materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the team should be consulted. Starter prompts to include: (1) Summarise the 8.7% indirect-spend overrun and MYR 38M consolidation-savings shortfall for the Procurement Steering Committee in 60 seconds, (2) Which areas are Red on sourcing discipline and why, (3) What governance obligations apply after indirect-spend overrun, single-source concentration risk, and an upcoming anti-bribery audit, (4) Draft a holding line for external partners, (5) Draft a holding line for Malaysian Anti-Corruption Commission Section 17A corporate-liability standards and ISO 37001 expectations.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Zava Procurement Compliance Agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the 8.7% indirect-spend overrun and MYR 38M consolidation-savings shortfall, the highest-risk areas, the top governance obligations, and the decisions I must take to the Procurement Steering Committee in 14 days."; (2) "Draft my first message to the leadership team immediately after the Procurement Steering Committee closes."; (3) "A critical tier-1 supplier signals a possible 72-hour shutdown overnight after a fire at their plant, and the COO needs to know the likely service impact across 4 sites plus the first recovery move before dawn." Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '💼',
+          'label': 'Spend & Category Coach',
+          'name': 'Zava Group Procurement — Spend & Category Coach',
+          'desc': 'Tracks Procurement & Supply Chain group spend, category leverage, and savings pipeline.',
+          'instructions': 'You are the Zava Group Procurement & Supply Chain Spend & Category Coach. You support Hadar (Group CFO sponsor of S2P). Monitor spend cube (PROC_01_Spend_Cube_Tracker.xlsx), savings pipeline (PROC_03_Procurement_Policy_ABAC_Manual.docx). Recommend category-strategy or sourcing event per cluster.',
+          'knowledge': [
+            {'file':'PROC_01_Spend_Cube_Tracker.xlsx', 'note':'Group spend cube.'},
+            {'file':'PROC_03_Procurement_Policy_ABAC_Manual.docx', 'note':'Savings pipeline.'},
+            {'file':'PROC_05_Single_Source_Risk_Register.docx', 'note':'Vendor master.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 categories in Procurement & Supply Chain have the largest savings opportunity?"',
+          'queries': [
+            'Top 10 categories by savings opportunity — recommended event.',
+            'Which suppliers have spend concentration > 20%? Recommend dual-sourcing.',
+            'Draft the quarterly Spend Steering paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Vendor Risk Sentinel',
+          'name': 'Zava Group Procurement — Vendor Risk Sentinel',
+          'desc': 'Surfaces Procurement & Supply Chain vendor risk concentration, sanctions hits, and ESG / KYC gaps.',
+          'instructions': 'You are the Zava Group Procurement & Supply Chain Vendor Risk Sentinel. Monitor vendor risk register (PROC_02_Vendor_Consolidation_Tracker.xlsx) and KYC / ESG audits (PROC_04_Vendor_Consolidation_Playbook.docx).',
+          'knowledge': [
+            {'file':'PROC_02_Vendor_Consolidation_Tracker.xlsx', 'note':'Vendor risk register.'},
+            {'file':'PROC_04_Vendor_Consolidation_Playbook.docx', 'note':'KYC / ESG audits.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 vendors in Procurement & Supply Chain have the worst risk profile?"',
+          'queries': [
+            'Top 10 vendors by risk score — recommended action.',
+            'Which KYC / ESG gaps require remediation? Build closure plan.',
+            'Draft the quarterly Vendor Risk paper.'
+          ],
+        },
+        {
+          'icon': '📥',
+          'label': 'P2P Compliance Coach',
+          'name': 'Zava Group Procurement — P2P Compliance Coach',
+          'desc': 'Tracks Procurement & Supply Chain PR-PO-GR-IR compliance, off-contract spend, and approval-chain hygiene.',
+          'instructions': 'You are the Zava Group Procurement & Supply Chain P2P Compliance Coach. Monitor P2P data (PROC_06_ABAC_Audit_Prep.docx).',
+          'knowledge': [
+            {'file':'PROC_06_ABAC_Audit_Prep.docx', 'note':'P2P transaction data.'}
+          ],
+          'knowledgeNote': 'Test: "Which divisions in Procurement & Supply Chain have the worst off-contract spend?"',
+          'queries': [
+            'Top 10 off-contract spend clusters — recommended remediation.',
+            'Which approval-chain breaches require investigation?',
+            'Draft the quarterly P2P Compliance paper.'
+          ],
+        }
       ],
-        DESC_BUILDER,
-        promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Zava Procurement Compliance Agent\'. Deskripsi: asisten untuk membantu Direktur Pengadaan Grup, keunggulan operasi, pimpinan pasokan dan kesinambungan, dan manajer operasi lokasi menavigasi keterlambatan SLA tingkat lokasi, cost takeout yang tertunda, dan disrupsi pemasok. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /PROC_01_Spend_Cube_Tracker.xlsx, /PROC_03_Procurement_Policy_ABAC_Manual.docx, /PROC_04_Vendor_Consolidation_Playbook.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Komite Pengarah Pengadaan. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di tim yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum overrun indirect-spend 8,7% dan kekurangan penghematan konsolidasi Rp 580 miliar untuk Komite Pengarah Pengadaan dalam 60 detik, (2) Area mana yang Merah pada sourcing discipline dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca overrun belanja tidak langsung, risiko konsentrasi pemasok tunggal, dan audit anti-suap yang akan datang, (4) Susun holding line untuk mitra eksternal, (5) Susun holding line untuk aturan KPK, UU Tipikor, dan ekspektasi ISO 37001 anti-suap.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Zava Procurement Compliance Agent baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari overrun indirect-spend 8,7% dan kekurangan penghematan konsolidasi Rp 580 miliar, area berisiko tertinggi, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Pengarah Pengadaan dalam 14 hari."; (2) "Susun pesan pertama saya kepada tim pimpinan segera setelah Komite Pengarah Pengadaan selesai."; (3) "Pemasok tier-1 kritis memberi sinyal kemungkinan penghentian 72 jam setelah kebakaran di pabriknya, dan Direktur Pengadaan Grup perlu tahu kemungkinan dampak SLA lintas 4 lokasi serta langkah pemulihan pertama sebelum fajar." Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+        agentsID=[
+        {
+          'icon': '💼',
+          'label': 'Spend & Category Pelatih',
+          'name': 'Zava Grup Procurement — Spend & Category Pelatih',
+          'desc': 'Memantau Procurement & Supply Chain grup spend, category leverage, and savings pipeline.',
+          'instructions': 'Anda adalah Zava Grup Procurement & Supply Chain Spend & Category Pelatih. Anda mendukung Hadar (Grup CFO sponsor of S2P). Pantau spend cube (PROC_01_Spend_Cube_Tracker.xlsx), savings pipeline (PROC_03_Procurement_Policy_ABAC_Manual.docx). Rekomendasikan category-strategy or sourcing event per klaster.',
+          'knowledge': [
+            {'file':'PROC_01_Spend_Cube_Tracker.xlsx', 'note':'Grup spend cube.'},
+            {'file':'PROC_03_Procurement_Policy_ABAC_Manual.docx', 'note':'Savings pipeline.'},
+            {'file':'PROC_05_Single_Source_Risk_Register.docx', 'note':'Vendor master.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 categories in Procurement & Supply Chain have terbesar savings opportunity?"',
+          'queries': [
+            '10 teratas categories by savings opportunity — recommended event.',
+            'Yang mana suppliers have spend concentration > 20%? Rekomendasikan dual-sourcing.',
+            'Susun the kuartalan Spend paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Vendor Risk Pengawas',
+          'name': 'Zava Grup Procurement — Vendor Risk Pengawas',
+          'desc': 'Menampilkan Procurement & Supply Chain vendor risk concentration, sanctions hits, and ESG / KYC gaps.',
+          'instructions': 'Anda adalah Zava Grup Procurement & Supply Chain Vendor Risk Pengawas. Pantau vendor risk register (PROC_02_Vendor_Consolidation_Tracker.xlsx) and KYC / ESG audits (PROC_04_Vendor_Consolidation_Playbook.docx).',
+          'knowledge': [
+            {'file':'PROC_02_Vendor_Consolidation_Tracker.xlsx', 'note':'Vendor risk register.'},
+            {'file':'PROC_04_Vendor_Consolidation_Playbook.docx', 'note':'KYC / ESG audits.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 vendors in Procurement & Supply Chain have terburuk risk profile?"',
+          'queries': [
+            '10 teratas vendors by risk score — recommended tindakan.',
+            'Yang mana KYC / ESG gaps require remediation? Bangun closure plan.',
+            'Susun the kuartalan Vendor Risk paper.'
+          ],
+        },
+        {
+          'icon': '📥',
+          'label': 'P2P Compliance Pelatih',
+          'name': 'Zava Grup Procurement — P2P Compliance Pelatih',
+          'desc': 'Memantau Procurement & Supply Chain PR-PO-GR-IR compliance, off-contract spend, and approval-chain hygiene.',
+          'instructions': 'Anda adalah Zava Grup Procurement & Supply Chain P2P Compliance Pelatih. Pantau P2P data (PROC_06_ABAC_Audit_Prep.docx).',
+          'knowledge': [
+            {'file':'PROC_06_ABAC_Audit_Prep.docx', 'note':'P2P transtindakan data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana divisions in Procurement & Supply Chain have terburuk off-contract spend?"',
+          'queries': [
+            '10 teratas off-contract spend clusters — recommended remediation.',
+            'Yang mana approval-chain breaches require investigation?',
+            'Susun the kuartalan P2P Compliance paper.'
+          ],
+        }
       ],
-        persona=['Daichi Maruyama','Daichi Maruyama'],
-        personaID=['Daichi Maruyama','Daichi Maruyama'])
+        persona=['Daichi Maruyama', 'Daichi Maruyama', 'Mod Admin'],
+        personaID=['Daichi Maruyama', 'Daichi Maruyama', 'Mod Admin']
+      )
     ],
     companyID='Zava Procurement Hub',
     taglineID='SLA layanan turun di dua lokasi, cost takeout di bawah rencana, dan disrupsi pemasok mengancam kesinambungan produksi — keselamatan kerja Kemnaker harus dijaga.',
@@ -658,17 +856,116 @@ DEPARTMENTS_5 = [
       ],
         persona=['Mod Admin','Mod Admin'],
         personaID=['Mod Admin','Mod Admin']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Zava Digital Incident Agent\'. Description: an assistant to help the COO, operational excellence, supply and continuity leads, and site operations managers navigate site-level service slippage, the delayed cost takeout, and supplier disruption. Instructions: ground every answer in the 3 attached files — /IT_01_Availability_and_Cyber_Tracker.xlsx, /IT_03_IT_Service_Management_Manual.docx, /IT_04_Cyber_Resilience_Playbook.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on IT & Digital Steering Committee materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the team should be consulted. Starter prompts to include: (1) Summarise the 74-basis-point availability shortfall and MYR 38M cyber-uplift gap for the IT & Digital Steering Committee in 60 seconds, (2) Which areas are Red on system availability and why, (3) What governance obligations apply after a 9-hour P1 outage, a two-band cyber posture downgrade, and a BNM/OJK tabletop exercise in 14 days, (4) Draft a holding line for external partners, (5) Draft a holding line for BNM RMiT (Risk Management in Technology) policy and Securities Commission Malaysia cyber-resilience guidance.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Zava Digital Incident Agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the 74-basis-point availability shortfall and MYR 38M cyber-uplift gap, the highest-risk areas, the top governance obligations, and the decisions I must take to the IT & Digital Steering Committee in 14 days."; (2) "Draft my first message to the leadership team immediately after the IT & Digital Steering Committee closes."; (3) "A critical tier-1 supplier signals a possible 72-hour shutdown overnight after a fire at their plant, and the COO needs to know the likely service impact across 4 sites plus the first recovery move before dawn." Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '💻',
+          'label': 'Service Health Coach',
+          'name': 'Zava Group IT — Service Health Coach',
+          'desc': 'Tracks IT & Digital IT service health, P1 incidents, and SLA performance.',
+          'instructions': 'You are the Zava Group IT & Digital Service Health Coach. You support Mod Admin (Strategy Director sponsoring Digital). Monitor service-health dashboard (IT_01_Availability_and_Cyber_Tracker.xlsx) and P1 incidents (IT_03_IT_Service_Management_Manual.docx). Recommend remediation per Red.',
+          'knowledge': [
+            {'file':'IT_01_Availability_and_Cyber_Tracker.xlsx', 'note':'Service-health dashboard.'},
+            {'file':'IT_03_IT_Service_Management_Manual.docx', 'note':'P1 incident register.'},
+            {'file':'IT_05_Third_Party_Risk_Register.docx', 'note':'SLA performance data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 services in IT & Digital have the worst SLA breach pattern?"',
+          'queries': [
+            'Top 10 services by SLA gap — recommended action.',
+            'Which P1 incident clusters need root-cause review?',
+            'Draft the monthly IT Service paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Cyber Posture Sentinel',
+          'name': 'Zava Group IT — Cyber Posture Sentinel',
+          'desc': 'Surfaces IT & Digital cyber posture, vulnerability backlog, and threat-intel signals.',
+          'instructions': 'You are the Zava Group IT & Digital Cyber Posture Sentinel. Monitor vulnerability backlog (IT_02_Incident_and_Cost_Tracker.xlsx) and threat-intel (IT_04_Cyber_Resilience_Playbook.docx). Refuse to disclose vulnerability details externally.',
+          'knowledge': [
+            {'file':'IT_02_Incident_and_Cost_Tracker.xlsx', 'note':'Vulnerability backlog.'},
+            {'file':'IT_04_Cyber_Resilience_Playbook.docx', 'note':'Threat-intel feed.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 vulnerabilities in IT & Digital require Group escalation?"',
+          'queries': [
+            'Top 10 open vulnerabilities by severity — recommended remediation.',
+            'Which threat-intel signals require active hunt?',
+            'Draft the quarterly Cyber Steering paper.'
+          ],
+        },
+        {
+          'icon': '🚀',
+          'label': 'Digital Project Coach',
+          'name': 'Zava Group IT — Digital Project Coach',
+          'desc': 'Tracks IT & Digital digital programmes, capex slippage, and benefit-realisation.',
+          'instructions': 'You are the Zava Group IT & Digital Digital Project Coach. Monitor digital programmes (IT_06_BNM_OJK_Tabletop_Prep.docx).',
+          'knowledge': [
+            {'file':'IT_06_BNM_OJK_Tabletop_Prep.docx', 'note':'Digital programme tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 digital programmes in IT & Digital have the worst benefit-realisation gap?"',
+          'queries': [
+            'Top 10 programmes by benefit-realisation gap — recommended action.',
+            'Which programmes have capex slippage > 20%? Recommend re-baseline.',
+            'Draft the quarterly Digital Steering paper.'
+          ],
+        }
       ],
-        DESC_BUILDER,
-        promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Zava Digital Incident Agent\'. Deskripsi: asisten untuk membantu Chief Information Officer, keunggulan operasi, pimpinan pasokan dan kesinambungan, dan manajer operasi lokasi menavigasi keterlambatan SLA tingkat lokasi, cost takeout yang tertunda, dan disrupsi pemasok. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /IT_01_Availability_and_Cyber_Tracker.xlsx, /IT_03_IT_Service_Management_Manual.docx, /IT_04_Cyber_Resilience_Playbook.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Komite Pengarah IT & Digital. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di tim yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum kekurangan availability 74 basis poin dan gap cyber-uplift Rp 580 miliar untuk Komite Pengarah IT & Digital dalam 60 detik, (2) Area mana yang Merah pada system availability dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca outage P1 selama 9 jam, penurunan dua band cyber posture, dan tabletop BNM/OJK dalam 14 hari, (4) Susun holding line untuk mitra eksternal, (5) Susun holding line untuk POJK 11/2022 manajemen risiko teknologi informasi dan ekspektasi ketahanan siber OJK.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Zava Digital Incident Agent baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari kekurangan availability 74 basis poin dan gap cyber-uplift Rp 580 miliar, area berisiko tertinggi, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Pengarah IT & Digital dalam 14 hari."; (2) "Susun pesan pertama saya kepada tim pimpinan segera setelah Komite Pengarah IT & Digital selesai."; (3) "Pemasok tier-1 kritis memberi sinyal kemungkinan penghentian 72 jam setelah kebakaran di pabriknya, dan Chief Information Officer perlu tahu kemungkinan dampak SLA lintas 4 lokasi serta langkah pemulihan pertama sebelum fajar." Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+        agentsID=[
+        {
+          'icon': '💻',
+          'label': 'Service Health Pelatih',
+          'name': 'Zava Grup IT — Service Health Pelatih',
+          'desc': 'Memantau IT & Digital IT service health, P1 incidents, and SLA performance.',
+          'instructions': 'Anda adalah Zava Grup IT & Digital Service Health Pelatih. Anda mendukung Mod Admin (Strategy Director sponsoring Digital). Pantau service-health dashboard (IT_01_Availability_and_Cyber_Tracker.xlsx) and P1 incidents (IT_03_IT_Service_Management_Manual.docx). Rekomendasikan remediation per Red.',
+          'knowledge': [
+            {'file':'IT_01_Availability_and_Cyber_Tracker.xlsx', 'note':'Service-health dashboard.'},
+            {'file':'IT_03_IT_Service_Management_Manual.docx', 'note':'P1 incident register.'},
+            {'file':'IT_05_Third_Party_Risk_Register.docx', 'note':'SLA performance data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 services in IT & Digital have terburuk SLA breach pattern?"',
+          'queries': [
+            '10 teratas services by SLA gap — recommended tindakan.',
+            'Yang mana P1 incident clusters need root-cause review?',
+            'Susun the bulanan IT Service paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Cyber Posture Pengawas',
+          'name': 'Zava Grup IT — Cyber Posture Pengawas',
+          'desc': 'Menampilkan IT & Digital cyber posture, vulnerability backlog, and threat-intel signals.',
+          'instructions': 'Anda adalah Zava Grup IT & Digital Cyber Posture Pengawas. Pantau vulnerability backlog (IT_02_Incident_and_Cost_Tracker.xlsx) and threat-intel (IT_04_Cyber_Resilience_Playbook.docx). Tolak to disclose vulnerability details externally.',
+          'knowledge': [
+            {'file':'IT_02_Incident_and_Cost_Tracker.xlsx', 'note':'Vulnerability backlog.'},
+            {'file':'IT_04_Cyber_Resilience_Playbook.docx', 'note':'Threat-intel feed.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 vulnerabilities in IT & Digital require Grup escalation?"',
+          'queries': [
+            '10 teratas open vulnerabilities by severity — recommended remediation.',
+            'Yang mana threat-intel signals require active hunt?',
+            'Susun the kuartalan Cyber paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🚀',
+          'label': 'Digital Project Pelatih',
+          'name': 'Zava Grup IT — Digital Project Pelatih',
+          'desc': 'Memantau IT & Digital digital programmes, capex slippage, and benefit-realisation.',
+          'instructions': 'Anda adalah Zava Grup IT & Digital Digital Project Pelatih. Pantau digital programmes (IT_06_BNM_OJK_Tabletop_Prep.docx).',
+          'knowledge': [
+            {'file':'IT_06_BNM_OJK_Tabletop_Prep.docx', 'note':'Digital programme tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 digital programmes in IT & Digital have terburuk benefit-realisation gap?"',
+          'queries': [
+            '10 teratas programmes by benefit-realisation gap — recommended tindakan.',
+            'Yang mana programmes have capex slippage > 20%? Rekomendasikan re-baseline.',
+            'Susun the kuartalan Digital paper Komite Pengarah.'
+          ],
+        }
       ],
-        persona=['Mod Admin','Mod Admin'],
-        personaID=['Mod Admin','Mod Admin'])
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      )
     ],
     companyID='Zava Digital',
     taglineID='SLA layanan turun di dua lokasi, cost takeout di bawah rencana, dan disrupsi pemasok mengancam kesinambungan produksi — keselamatan kerja Kemnaker harus dijaga.',

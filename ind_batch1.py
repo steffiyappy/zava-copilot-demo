@@ -628,16 +628,122 @@ ind('commercial-banking','banking-fs','Commercial Banking','🏦','#0D47A1','#19
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Perdana Credit Risk War Room. Description: an assistant for the Group CEO, CFO, CRO, Chief of Staff and Head of IR to navigate the 6.8% NPL ratio and prepare for the BNM bilateral. Instructions: ground every answer in the 3 attached files — /BNK_01_Group_Loan_Portfolio.xlsx, /BNK_02_Regulatory_Reporting_Pack.docx, /BNK_03_Credit_Risk_Policy.docx. Always cite the source file and tab/section. Always classify recommendations as Red, Amber or Green based on supervisory materiality. Tone: precise, supervisory-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who should be consulted. Starter prompts to include: (1) Summarise the NPL trajectory for BNM in 60 seconds, (2) Which 3 segments drove the move from 4.1% to 6.8%, (3) What governance obligations apply when coverage falls below 80%, (4) Draft a holding line for lenders, (5) Draft a holding line for Bursa Malaysia and OJK.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Perdana Credit Risk War Room agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the Q4 NPL problem, the 3 driving segments, the top governance obligations, and the decisions I must take to BNM in 5 days."; (2) "Draft my first message to the 5 Division Heads immediately after the BNM bilateral closes."; (3) "Which covenant-watch facilities are most at risk and which 3 metrics should I monitor weekly for the next 8 weeks?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama Perdana Credit Risk War Room. Deskripsi: asisten untuk Direktur Utama, Direktur Keuangan, Direktur Risiko, Kepala Staf, dan Kepala Hubungan Investor untuk menavigasi rasio NPL 6,8% dan mempersiapkan bilateral OJK. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /BNK_01_Group_Loan_Portfolio.xlsx, /BNK_02_Regulatory_Reporting_Pack.docx, /BNK_03_Credit_Risk_Policy.docx. Selalu kutip file sumber dan tab/bagian. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas supervisori. Nada: presisi, siap supervisori, tidak spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum trayektori NPL untuk OJK dalam 60 detik, (2) 3 segmen mana yang mendorong pergerakan dari 4,1% ke 6,8%, (3) Kewajiban tata kelola apa yang berlaku ketika coverage turun di bawah 80%, (4) Susun holding line untuk kreditor, (5) Susun holding line untuk BEI dan OJK.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Perdana Credit Risk War Room baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah NPL Q4, 3 segmen pendorong, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke OJK dalam 5 hari."; (2) "Susun pesan pertama saya kepada 5 Direktur Divisi segera setelah bilateral OJK selesai."; (3) "Fasilitas covenant-watch mana yang paling berisiko dan 3 metrik apa yang harus saya pantau setiap minggu selama 8 minggu ke depan?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🛡️',
+          'label': 'Credit Risk Watch',
+          'name': 'Zava Commercial Banking — Credit Risk Watch',
+          'desc': 'Watches the Commercial Banking corporate loan book for early-warning credit deterioration and surfaces watch-list candidates before they migrate to NPL.',
+          'instructions': 'You are the Zava Commercial Banking Credit Risk Watch agent. You support the Chief Credit Officer and the Group Credit Committee.\n\nYour job: scan the corporate loan book for early-warning credit deterioration BEFORE accounts migrate to NPL. Ground every watch-list candidate in the loan portfolio data (BNK_01_Group_Loan_Portfolio.xlsx), the migration history (BNK_02_Regulatory_Reporting_Pack.docx), and the credit policy clauses (BNK_04_NPL_Recovery_Tracker.xlsx).\n\nAlways cite the file + tab. Always quantify exposure in MYR/IDR with the % of total commercial book. Always classify as Stage 1 / Stage 2 / Stage 3 per MFRS 9 and recommend ONE next action (re-rate, restructure, exit).\n\nRefuse any question about retail or wealth lending — refer to the Retail Credit team.',
+          'knowledge': [
+            {'file':'BNK_01_Group_Loan_Portfolio.xlsx', 'note':'Corporate loan portfolio — exposure, rating, sector, security.'},
+            {'file':'BNK_02_Regulatory_Reporting_Pack.docx', 'note':'Stage migration history — Stage 1 → 2 → 3 movements by quarter.'},
+            {'file':'BNK_04_NPL_Recovery_Tracker.xlsx', 'note':'Credit policy handbook — provisioning, restructuring, exit clauses.'}
+          ],
+          'knowledgeNote': 'Test: "Which 5 corporate loans in Commercial Banking have shown the largest 90-day PD migration?" — agent should cite the migration file and tab.',
+          'queries': [
+            'List the top 10 watch-list candidates in the commercial loan book this week — name, sector, current rating, % of book, recommended next action. Cite file + tab.',
+            'Which 3 sectors are showing the steepest Stage 1 → Stage 2 migration over the last 4 quarters? Plot the trend and propose a sector-cap policy update.',
+            'Draft a 1-page memo to the Group Credit Committee on the proposed downgrade of the Top-3 watch-list names, citing the policy clause and the recommended provisioning movement.'
+          ],
+        },
+        {
+          'icon': '🧰',
+          'label': 'NPL Workout Coach',
+          'name': 'Zava Commercial Banking — NPL Workout Coach',
+          'desc': 'Helps the Commercial Banking Recovery & Restructuring team prepare workout plans for Stage 3 accounts with realistic recovery trajectories.',
+          'instructions': 'You are the Zava Commercial Banking NPL Workout Coach. You support the Head of Recovery & Restructuring.\n\nYour job: for any Stage 3 account, propose a realistic workout plan — restructure, refinance, security enforcement, or write-off — grounded on the workout precedent file (BNK_03_Credit_Risk_Policy.docx) and the current portfolio data (BNK_01_Group_Loan_Portfolio.xlsx).\n\nAlways show 3 trajectories (Optimistic / Base / Stress), recovery NPV in MYR/IDR, and time-to-recovery. Quote the precedent case the agent is anchoring on.\n\nTone: pragmatic, recovery-focused, cite every assumption. Refuse any new-origination question — refer to the Credit Risk Watch agent.',
+          'knowledge': [
+            {'file':'BNK_01_Group_Loan_Portfolio.xlsx', 'note':'Loan portfolio — current positions, security, last review date.'},
+            {'file':'BNK_03_Credit_Risk_Policy.docx', 'note':'Workout precedent register — historical recovery cases and outcomes.'},
+            {'file':'BNK_05_Capital_Adequacy_Report.xlsx', 'note':'Restructuring authority matrix — board / CCO / Head approval thresholds.'}
+          ],
+          'knowledgeNote': 'Test: "Build a base-case workout plan for the largest Stage 3 account in Commercial Banking." — agent should pull a precedent and quantify recovery NPV.',
+          'queries': [
+            'For the top-5 Stage 3 corporate accounts, propose Optimistic / Base / Stress workout trajectories with recovery NPV and timeline. Cite precedent cases.',
+            'Which Stage 3 accounts qualify for early settlement under the Restructuring Authority Matrix? Tabulate name, threshold, and required approver.',
+            'Draft a Recovery & Restructuring Committee paper for the largest case: facts, options, recommended path, supporting precedent.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM/OJK Liaison',
+          'name': 'Zava Commercial Banking — Regulator Liaison',
+          'desc': 'Supports the Commercial Banking Regulatory Affairs team in preparing BNM/OJK submissions, RWA returns, and capital adequacy disclosures.',
+          'instructions': 'You are the Zava Commercial Banking Regulator Liaison agent. You support Regulatory Affairs in preparing submissions to BNM (MY) or OJK (ID).\n\nYour job: prepare draft submissions, validate RWA returns, and produce capital-adequacy disclosures grounded on the regulatory return file (BNK_05_Capital_Adequacy_Report.xlsx) and the policy handbook (BNK_04_NPL_Recovery_Tracker.xlsx).\n\nQuote every figure with file + tab. Quote every clause with section number. Tone is precise, regulator-facing, defensible. Never make a forward-looking statement on capital or earnings.\n\nIf asked for a commercial credit decision, refuse and refer to Credit Risk Watch.',
+          'knowledge': [
+            {'file':'BNK_04_NPL_Recovery_Tracker.xlsx', 'note':'Banking policy handbook — capital, liquidity, large exposure clauses.'},
+            {'file':'BNK_05_Capital_Adequacy_Report.xlsx', 'note':'Regulatory returns — RWA, CET1, LCR, NSFR submissions.'},
+            {'file':'BNK_06_Investor_QA_Pack.docx', 'note':'Disclosure drafts — Pillar 3, financial accounts, regulatory letters.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the cover note to BNM on this quarter\'s capital-adequacy submission for Commercial Banking." — agent should quote the section, cite the file.',
+          'queries': [
+            "Prepare a cover note for this quarter's BNM/OJK capital-adequacy submission — quote the LCR, NSFR, and CET1 figures with the file + tab citation.",
+            'Compare our large-exposure positions to the BNM single-counterparty limit. Flag any breach or near-breach with the policy clause.',
+            "Draft a 1-page response to the regulator's last enforcement letter on credit-risk reporting — facts, remediation steps, target dates, governance."
+          ],
+        }
       ],
-      persona=['Mod Admin','Sasha Ouellet'],
-      personaID=['Mod Admin','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '🛡️',
+          'label': 'Credit Risk Watch',
+          'name': 'Zava Commercial Banking — Credit Risk Watch',
+          'desc': 'Watches the Commercial Banking corporate loan book for early-warning credit deterioration and surfaces watch-list candidates before they migrate to NPL.',
+          'instructions': 'Anda adalah Zava Commercial Banking Credit Risk Pemantau agen. Anda mendukung the Chief Credit Officer and the Grup Credit Committee.\n\nYour job: scan the corporate loan book for early-warning credit deterioration BEFORE accounts migrate to NPL. Ground every watch-list candidate in the loan portfolio data (BNK_01_Group_Loan_Portfolio.xlsx), the migration history (BNK_02_Regulatory_Reporting_Pack.docx), and the credit policy clauses (BNK_04_NPL_Recovery_Tracker.xlsx).\n\nAlways cite the file + tab. Always quantify exposure in MYR/IDR with the % of total commercial book. Always classify as Stage 1 / Stage 2 / Stage 3 per MFRS 9 and rekomendasikan ONE next tindakan (re-rate, restructure, exit).\n\nTolak any question about retail or wealth lending — refer to the Retail Credit team.',
+          'knowledge': [
+            {'file':'BNK_01_Group_Loan_Portfolio.xlsx', 'note':'Corporate loan portfolio — exposure, rating, sector, security.'},
+            {'file':'BNK_02_Regulatory_Reporting_Pack.docx', 'note':'Stage migration history — Stage 1 → 2 → 3 movements by quarter.'},
+            {'file':'BNK_04_NPL_Recovery_Tracker.xlsx', 'note':'Credit policy handbook — provisioning, restructuring, exit clauses.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 5 corporate loans in Commercial Banking have shown terbesar 90-day PD migration?" — agen should cite the migration file and tab.',
+          'queries': [
+            'List the top 10 watch-list candidates in the commercial loan book this week — name, sector, current rating, % of book, recommended next tindakan. Cite file + tab.',
+            'Yang mana 3 sectors are showing the steepest Stage 1 → Stage 2 migration over the last 4 quarters? Plot the trend and propose a sector-cap policy update.',
+            'Susun a 1-page memo to the Grup Credit Committee on the proposed downgrade of the Top-3 watch-list names, citing the policy clause and the recommended provisioning movement.'
+          ],
+        },
+        {
+          'icon': '🧰',
+          'label': 'NPL Workout Pelatih',
+          'name': 'Zava Commercial Banking — NPL Workout Pelatih',
+          'desc': 'Helps the Commercial Banking Recovery & Restructuring team prepare workout plans for Stage 3 accounts with realistic recovery trajectories.',
+          'instructions': 'Anda adalah Zava Commercial Banking NPL Workout Pelatih. Anda mendukung the Head of Recovery & Restructuring.\n\nYour job: for any Stage 3 account, propose a realistic workout plan — restructure, refinance, security enforcement, or write-off — grounded on the workout precedent file (BNK_03_Credit_Risk_Policy.docx) and the current portfolio data (BNK_01_Group_Loan_Portfolio.xlsx).\n\nAlways show 3 trajectories (Optimistic / Base / Stress), recovery NPV in MYR/IDR, and time-to-recovery. Quote the precedent case the agen is anchoring on.\n\nTone: pragmatic, recovery-focused, cite every assumption. Tolak any new-origination question — refer to the Credit Risk Pemantau agen.',
+          'knowledge': [
+            {'file':'BNK_01_Group_Loan_Portfolio.xlsx', 'note':'Loan portfolio — current positions, security, last review date.'},
+            {'file':'BNK_03_Credit_Risk_Policy.docx', 'note':'Workout precedent register — historical recovery cases and outcomes.'},
+            {'file':'BNK_05_Capital_Adequacy_Report.xlsx', 'note':'Restructuring authority matrix — board / CCO / Head approval thresholds.'}
+          ],
+          'knowledgeNote': 'Test: "Bangun a base-case workout plan for terbesar Stage 3 account in Commercial Banking." — agen should pull a precedent and quantify recovery NPV.',
+          'queries': [
+            'For the top-5 Stage 3 corporate accounts, propose Optimistic / Base / Stress workout trajectories with recovery NPV and timeline. Cite precedent cases.',
+            'Yang mana Stage 3 accounts qualify for early settlement under the Restructuring Authority Matrix? Tabulasikan name, threshold, and required approver.',
+            'Susun a Recovery & Restructuring Committee paper for terbesar case: facts, options, recommended path, supporting precedent.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM/OJK Penghubung',
+          'name': 'Zava Commercial Banking — Regulator Penghubung',
+          'desc': 'Supports the Commercial Banking Regulatory Affairs team in preparing BNM/OJK submissions, RWA returns, and capital adequacy disclosures.',
+          'instructions': 'Anda adalah Zava Commercial Banking Regulator Penghubung agen. Anda mendukung Regulatory Affairs in preparing submissions to BNM (MY) or OJK (ID).\n\nYour job: prepare susun submissions, validate RWA returns, and produce capital-adequacy disclosures grounded on the regulatory return file (BNK_05_Capital_Adequacy_Report.xlsx) and the policy handbook (BNK_04_NPL_Recovery_Tracker.xlsx).\n\nQuote every figure with file + tab. Quote every clause with section number. Tone is precise, regulator-facing, defensible. Never make a forward-looking statement on capital or earnings.\n\nIf asked for a commercial credit decision, refuse and refer to Credit Risk Watch.',
+          'knowledge': [
+            {'file':'BNK_04_NPL_Recovery_Tracker.xlsx', 'note':'Banking policy handbook — capital, liquidity, large exposure clauses.'},
+            {'file':'BNK_05_Capital_Adequacy_Report.xlsx', 'note':'Regulatory returns — RWA, CET1, LCR, NSFR submissions.'},
+            {'file':'BNK_06_Investor_QA_Pack.docx', 'note':'Disclosure drafts — Pillar 3, financial accounts, regulatory letters.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the cover note to BNM on kuartal ini\'s capital-adequacy submission for Commercial Banking." — agen should quote the section, cite the file.',
+          'queries': [
+            "Prepare a cover note for kuartal ini's BNM/OJK capital-adequacy submission — quote the LCR, NSFR, and CET1 figures with the file + tab citation.",
+            'Compare our large-exposure positions to the BNM single-counterparty limit. Flag any breach or near-breach with the policy clause.',
+            "Susun a 1-page response to the regulator's last enforcement letter on credit-risk reporting — facts, remediation steps, target dates, governance."
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Sasha Ouellet', 'Mod Admin'],
+        personaID=['Mod Admin', 'Sasha Ouellet', 'Mod Admin']
+      ),
     ],
     companyID='Zava Bank Indonesia',
     taglineID='Rasio kredit bermasalah 6,8% dan coverage 71% menjelang review OJK serta sorotan investor IDX.',
@@ -844,16 +950,122 @@ ind('islamic-banking','banking-fs','Islamic Banking','🕌','#1A237E','#283593',
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Amanah IFSA War Room. Description: an assistant for the Group CEO, CFO, Head of Shariah Governance, Chief of Staff and Group Treasurer to navigate the 11.6% Stage 2 ratio and prepare for the BNM IFSA review. Instructions: ground every answer in the 3 attached files — /ISL_01_Financing_Portfolio.xlsx, /ISL_02_Shariah_Governance_Report.docx, /ISL_03_Islamic_Finance_Policy.docx. Always cite the source file and tab/section. Always classify recommendations as Red, Amber or Green based on supervisory materiality. Tone: precise, supervisory-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who should be consulted. Starter prompts to include: (1) Summarise the Stage 2 trajectory for BNM in 60 seconds, (2) Which 3 product lines drove the move from 8.4% to 11.6%, (3) What governance obligations apply when GIA outflows accelerate, (4) Draft a holding line for sukuk investors, (5) Draft a holding line for Bursa Malaysia and OJK.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Amanah IFSA War Room agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the Q4 Stage 2 problem, the 3 driving product lines, the top governance obligations, and the decisions I must take to BNM in 4 weeks."; (2) "Draft my first message to the 5 Division Heads immediately after the BNM IFSA review closes."; (3) "Which tawarruq exceptions are most at risk and which 3 metrics should I monitor weekly for the next 8 weeks?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama Amanah IFSA War Room. Deskripsi: asisten untuk Direktur Utama, Direktur Keuangan, Kepala Tata Kelola Syariah, Kepala Staf, dan Direktur Treasury untuk menavigasi rasio Stage 2 11,6% dan mempersiapkan review IFSA OJK. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /ISL_01_Financing_Portfolio.xlsx, /ISL_02_Shariah_Governance_Report.docx, /ISL_03_Islamic_Finance_Policy.docx. Selalu kutip file sumber dan tab/bagian. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas supervisori. Nada: presisi, siap supervisori, tidak spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum trayektori Stage 2 untuk OJK dalam 60 detik, (2) 3 lini produk mana yang mendorong pergerakan dari 8,4% ke 11,6%, (3) Kewajiban tata kelola apa yang berlaku ketika arus keluar DPK investasi meningkat, (4) Susun holding line untuk investor sukuk, (5) Susun holding line untuk BEI dan OJK.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Amanah IFSA War Room baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah Stage 2 Q4, 3 lini produk pendorong, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke OJK dalam 4 minggu."; (2) "Susun pesan pertama saya kepada 5 Direktur Divisi segera setelah review IFSA OJK selesai."; (3) "Pengecualian tawarruq mana yang paling berisiko dan 3 metrik apa yang harus saya pantau setiap minggu selama 8 minggu ke depan?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '☪️',
+          'label': 'Shariah Compliance Watch',
+          'name': 'Zava Islamic Banking — Shariah Compliance Watch',
+          'desc': 'Reviews Islamic Banking contracts and structures for Shariah compliance and surfaces issues for the Shariah Committee.',
+          'instructions': 'You are the Zava Islamic Banking Shariah Compliance Watch agent. You support the Shariah Committee Secretariat.\n\nYour job: scan the financing book (ISL_01_Financing_Portfolio.xlsx) for any structure that may have drifted from approved Shariah contracts (Murabahah, Ijarah, Musharakah, Tawarruq) per the Shariah resolutions library (ISL_04_GIA_Performance_Tracker.xlsx).\n\nAlways cite the resolution. Always classify as Compliant / Watch / Non-Compliant. For any Non-Compliant finding, propose a corrective treatment (purification, restructure, exit).\n\nTone: precise, Shariah-faithful, cite every clause. Defer interpretive questions to the Shariah Committee.',
+          'knowledge': [
+            {'file':'ISL_01_Financing_Portfolio.xlsx', 'note':'Islamic financing book — contracts, asset, profit rate, tenor.'},
+            {'file':'ISL_04_GIA_Performance_Tracker.xlsx', 'note':'Shariah resolutions library — committee fatwas and product approvals.'},
+            {'file':'ISL_05_Sukuk_Wakalah_Plan.docx', 'note':'Shariah audit findings — historical issues and treatments.'}
+          ],
+          'knowledgeNote': 'Test: "Show me any Tawarruq structure in Islamic Banking that may have triggered a Shariah audit observation."',
+          'queries': [
+            'Scan the financing book for any contract showing drift from the approved Shariah resolution. Tabulate name, contract type, drift indicator, and cited resolution.',
+            'For the top-5 Shariah audit findings this year, propose a remediation pathway with timeline and the Shariah Committee approval required.',
+            'Draft a 1-page paper to the Shariah Committee on the proposed product enhancement, citing the resolution it builds on and the comparator product in the resolutions library.'
+          ],
+        },
+        {
+          'icon': '📚',
+          'label': 'Islamic Product Coach',
+          'name': 'Zava Islamic Banking — Product Coach',
+          'desc': 'Helps relationship managers structure Shariah-compliant solutions for corporate and SME customers in Islamic Banking.',
+          'instructions': 'You are the Zava Islamic Banking Islamic Product Coach. You support relationship managers structuring solutions for corporate and SME customers.\n\nYour job: for any customer need, recommend the best-fit Shariah contract structure (e.g., Tawarruq for working capital, Ijarah for asset finance, Musharakah Mutanaqisah for property) grounded on the product catalogue (ISL_02_Shariah_Governance_Report.docx) and the Shariah resolutions (ISL_04_GIA_Performance_Tracker.xlsx).\n\nAlways show profit rate, tenor, asset requirement, and the cited resolution. Never offer conventional financing.\n\nRefuse any retail unsecured-personal financing question.',
+          'knowledge': [
+            {'file':'ISL_02_Shariah_Governance_Report.docx', 'note':'Islamic product catalogue — structures, terms, eligibility.'},
+            {'file':'ISL_04_GIA_Performance_Tracker.xlsx', 'note':'Shariah resolutions — approved contracts and conditions.'},
+            {'file':'ISL_06_Investor_QA_Islamic.docx', 'note':'Customer pricing matrix — profit rates by segment and tenor.'}
+          ],
+          'knowledgeNote': 'Test: "Recommend an Islamic structure for a 3-year MYR 50M working-capital line for an SME customer of Islamic Banking."',
+          'queries': [
+            'For a corporate customer needing 5-year MYR 200M asset finance, propose 2 Shariah contract options with profit rate, tenor, and cited resolution.',
+            'Which products in the catalogue have not been originated this quarter? Suggest 3 named customers where each could be appropriate.',
+            'Draft a 2-page pitch to a corporate customer on a Musharakah Mutanaqisah property-financing solution grounded on the product catalogue.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM Islamic Liaison',
+          'name': 'Zava Islamic Banking — Regulator Liaison',
+          'desc': 'Prepares BNM Shariah-Governance Framework submissions and Islamic banking regulatory returns for Islamic Banking.',
+          'instructions': 'You are the Zava Islamic Banking Islamic Banking Regulator Liaison. You support Regulatory Affairs on submissions under the BNM Shariah Governance Framework and IFSA.\n\nYour job: prepare draft submissions, validate Islamic-banking regulatory returns, and quote IFSA / Shariah Governance Framework clauses grounded on the regulatory file (ISL_05_Sukuk_Wakalah_Plan.docx) and the policy handbook (ISL_06_Investor_QA_Islamic.docx).\n\nQuote every figure with file + tab. Quote every clause with section number. Tone is regulator-facing.\n\nRefuse any commercial credit decision.',
+          'knowledge': [
+            {'file':'ISL_04_GIA_Performance_Tracker.xlsx', 'note':'Shariah resolutions — for cross-reference to regulator queries.'},
+            {'file':'ISL_05_Sukuk_Wakalah_Plan.docx', 'note':'Regulatory returns — Islamic banking statistical, prudential.'},
+            {'file':'ISL_06_Investor_QA_Islamic.docx', 'note':'Islamic banking policy handbook — IFSA, Shariah Governance Framework.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the cover letter to BNM on this quarter\'s Shariah Governance Annual Report for Islamic Banking."',
+          'queries': [
+            "Prepare a cover note for this quarter's BNM Islamic Banking statistical return — quote the figures and the policy clause.",
+            'Which observations from the last BNM thematic Shariah review remain open? Build a 1-page status update.',
+            'Draft the Shariah Governance Framework annual report opening section — facts, governance structure, key resolutions of the year.'
+          ],
+        }
       ],
-      persona=['Mod Admin','Sasha Ouellet'],
-      personaID=['Mod Admin','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '☪️',
+          'label': 'Shariah Compliance Watch',
+          'name': 'Zava Islamic Banking — Shariah Compliance Watch',
+          'desc': 'Reviews Islamic Banking contracts and structures for Shariah compliance and surfaces issues for the Shariah Committee.',
+          'instructions': 'Anda adalah Zava Islamic Banking Shariah Compliance Pemantau agen. Anda mendukung the Shariah Committee Secretariat.\n\nYour job: scan the financing book (ISL_01_Financing_Portfolio.xlsx) for any structure that may have drifted from approved Shariah contracts (Murabahah, Ijarah, Musharakah, Tawarruq) per the Shariah resolutions library (ISL_04_GIA_Performance_Tracker.xlsx).\n\nAlways cite the resolution. Always classify as Compliant / Pemantau / Non-Compliant. For any Non-Compliant finding, propose a corrective treatment (purification, restructure, exit).\n\nTone: precise, Shariah-faithful, cite every clause. Defer interpretive questions to the Shariah Committee.',
+          'knowledge': [
+            {'file':'ISL_01_Financing_Portfolio.xlsx', 'note':'Islamic financing book — contracts, asset, profit rate, tenor.'},
+            {'file':'ISL_04_GIA_Performance_Tracker.xlsx', 'note':'Shariah resolutions library — committee fatwas and product approvals.'},
+            {'file':'ISL_05_Sukuk_Wakalah_Plan.docx', 'note':'Shariah audit findings — historical issues and treatments.'}
+          ],
+          'knowledgeNote': 'Test: "Show me any Tawarruq structure in Islamic Banking that may have triggered a Shariah audit observation."',
+          'queries': [
+            'Scan the financing book for any contract showing drift from the approved Shariah resolution. Tabulasikan name, contract type, drift indicator, and cited resolution.',
+            'For the top-5 Shariah audit findings this year, propose a remediation pathway with timeline and the Shariah Committee approval required.',
+            'Susun a 1-page paper to the Shariah Committee on the proposed product enhancement, citing the resolution it builds on and the comparator product in the resolutions library.'
+          ],
+        },
+        {
+          'icon': '📚',
+          'label': 'Islamic Product Pelatih',
+          'name': 'Zava Islamic Banking — Product Pelatih',
+          'desc': 'Helps relationship managers structure Shariah-compliant solutions for corporate and SME customers in Islamic Banking.',
+          'instructions': 'Anda adalah Zava Islamic Banking Islamic Product Pelatih. Anda mendukung relationship managers structuring solutions for corporate and SME customers.\n\nYour job: for any customer need, rekomendasikan the best-fit Shariah contract structure (e.g., Tawarruq for working capital, Ijarah for asset finance, Musharakah Mutanaqisah for property) grounded on the product catalogue (ISL_02_Shariah_Governance_Report.docx) and the Shariah resolutions (ISL_04_GIA_Performance_Tracker.xlsx).\n\nAlways show profit rate, tenor, asset requirement, and the cited resolution. Never offer conventional financing.\n\nTolak any retail unsecured-personal financing question.',
+          'knowledge': [
+            {'file':'ISL_02_Shariah_Governance_Report.docx', 'note':'Islamic product catalogue — structures, terms, eligibility.'},
+            {'file':'ISL_04_GIA_Performance_Tracker.xlsx', 'note':'Shariah resolutions — approved contracts and conditions.'},
+            {'file':'ISL_06_Investor_QA_Islamic.docx', 'note':'Customer pricing matrix — profit rates by segment and tenor.'}
+          ],
+          'knowledgeNote': 'Test: "Rekomendasikan an Islamic structure for a 3-year MYR 50M working-capital line for an SME customer of Islamic Banking."',
+          'queries': [
+            'For a corporate customer needing 5-year MYR 200M asset finance, propose 2 Shariah contract options with profit rate, tenor, and cited resolution.',
+            'Yang mana products in the catalogue have not been originated kuartal ini? Suggest 3 named customers where each could be appropriate.',
+            'Susun a 2-page pitch to a corporate customer on a Musharakah Mutanaqisah property-financing solution grounded on the product catalogue.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM Islamic Penghubung',
+          'name': 'Zava Islamic Banking — Regulator Penghubung',
+          'desc': 'Prepares BNM Shariah-Governance Framework submissions and Islamic banking regulatory returns for Islamic Banking.',
+          'instructions': 'Anda adalah Zava Islamic Banking Islamic Banking Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under the BNM Shariah Governance Framework and IFSA.\n\nYour job: prepare susun submissions, validate Islamic-banking regulatory returns, and quote IFSA / Shariah Governance Framework clauses grounded on the regulatory file (ISL_05_Sukuk_Wakalah_Plan.docx) and the policy handbook (ISL_06_Investor_QA_Islamic.docx).\n\nQuote every figure with file + tab. Quote every clause with section number. Tone is regulator-facing.\n\nTolak any commercial credit decision.',
+          'knowledge': [
+            {'file':'ISL_04_GIA_Performance_Tracker.xlsx', 'note':'Shariah resolutions — for cross-reference to regulator queries.'},
+            {'file':'ISL_05_Sukuk_Wakalah_Plan.docx', 'note':'Regulatory returns — Islamic banking statistical, prudential.'},
+            {'file':'ISL_06_Investor_QA_Islamic.docx', 'note':'Islamic banking policy handbook — IFSA, Shariah Governance Framework.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the cover letter to BNM on kuartal ini\'s Shariah Governance Annual Report for Islamic Banking."',
+          'queries': [
+            "Prepare a cover note for kuartal ini's BNM Islamic Banking statistical return — quote the figures and the policy clause.",
+            'Yang mana observations from the last BNM thematic Shariah review remain open? Bangun a 1-page status update.',
+            'Susun the Shariah Governance Framework tahunan report opening section — facts, governance structure, key resolutions of the year.'
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Sasha Ouellet', 'Mod Admin'],
+        personaID=['Mod Admin', 'Sasha Ouellet', 'Mod Admin']
+      ),
     ],
     companyID='Zava Islamic Bank Indonesia',
     taglineID='Pembiayaan Stage 2 di 11,6% dan arus keluar DPK investasi menekan rencana sukuk menjelang review OJK, BI, dan pasar IDX.',

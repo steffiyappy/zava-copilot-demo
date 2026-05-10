@@ -1,6 +1,7 @@
 
 import sys; sys.path.insert(0,'.')
 from util import *
+import _builder_catalog as _bcat
 
 INDUSTRIES_6 = [
 
@@ -164,16 +165,116 @@ ind('diversified-conglomerate', 'conglomerate', 'Diversified Conglomerate', '�
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Puncak Horizon Capital Committee\'. Description: an assistant for the Board, CEO, CFO, Chief of Staff and Head of M&A to navigate the FY2025 32% NAV discount and prepare for the Board Capital Allocation Committee. Instructions: ground every answer in the 3 attached files — /DC_01_Group_Portfolio_Returns.xlsx, /DC_02_Group_Governance_Charter.docx, /DC_03_Capital_Allocation_Framework.docx. Always cite the source file and the relevant tab or section. Always classify capital recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts to include: (1) Summarise the 32% NAV discount for the Board in 60 seconds, (2) Which 2 subsidiaries are missing synergy targets and why, (3) What governance obligations apply after a material NAV deterioration, (4) Draft a holding line for lenders, (5) Draft a holding line for Bursa Malaysia and OJK.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Puncak Horizon Capital Committee agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the FY2025 NAV discount problem, the 2 missed-synergy subsidiaries, the top governance obligations, and the decisions I must take to the Capital Committee in 5 days."; (2) "Draft my first message to the 9 Subsidiary CEOs immediately after the Capital Committee meeting closes."; (3) "Which holding-company covenants are most at risk and which 3 metrics should I monitor weekly for the next 8 weeks?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Komite Modal Citra Nusantara\'. Deskripsi: asisten untuk Direksi, Direktur Utama, Direktur Keuangan, Kepala Staf dan Kepala M&A untuk menavigasi diskon NAV FY2025 sebesar 32% dan mempersiapkan Komite Alokasi Modal Direksi. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /DC_01_Group_Portfolio_Returns.xlsx, /DC_02_Group_Governance_Charter.docx, /DC_03_Capital_Allocation_Framework.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi modal sebagai Merah, Kuning atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum diskon NAV 32% untuk Direksi dalam 60 detik, (2) Anak usaha mana yang meleset target sinergi dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca penurunan NAV material, (4) Susun holding line untuk kreditor, (5) Susun holding line untuk OJK dan BEI.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Komite Modal Citra Nusantara baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah diskon NAV FY2025, 2 anak usaha bermasalah, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Alokasi Modal dalam 5 hari."; (2) "Susun pesan pertama saya kepada 9 Direktur Anak Usaha segera setelah rapat Komite selesai."; (3) "Covenant holding company mana yang paling berisiko dan 3 metrik apa yang harus saya pantau setiap minggu selama 8 minggu ke depan?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🎯',
+          'label': 'Group PMO Watch',
+          'name': 'Zava Diversified Conglomerate — Group PMO Watch',
+          'desc': 'Tracks Diversified Conglomerate group-wide programmes, division performance, and capital allocation.',
+          'instructions': 'You are the Zava Diversified Conglomerate Group PMO Watch. Monitor group programme tracker (DC_01_Group_Portfolio_Returns.xlsx), division performance (DC_03_Capital_Allocation_Framework.docx), and capital allocation (DC_05_Investor_QA_FY2025.docx). Recommend programme-level escalation per Red.',
+          'knowledge': [
+            {'file':'DC_01_Group_Portfolio_Returns.xlsx', 'note':'Group programme tracker.'},
+            {'file':'DC_03_Capital_Allocation_Framework.docx', 'note':'Division performance.'},
+            {'file':'DC_05_Investor_QA_FY2025.docx', 'note':'Capital allocation register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 group programmes at Diversified Conglomerate are most at risk of slippage?"',
+          'queries': [
+            'Top 10 group programmes by RAG — recommended escalation.',
+            'Which divisions are over-running capex? Recommend re-baseline.',
+            'Draft the quarterly Group PMO review paper.'
+          ],
+        },
+        {
+          'icon': '📣',
+          'label': 'IR & Disclosure Coach',
+          'name': 'Zava Diversified Conglomerate — IR & Disclosure Coach',
+          'desc': 'Helps Diversified Conglomerate IR team draft Bursa / IDX disclosures, investor briefings, and analyst Q&A.',
+          'instructions': 'You are the Zava Diversified Conglomerate IR & Disclosure Coach. Help draft Bursa / IDX disclosures and investor briefings grounded on the IR archive (DC_02_Group_Governance_Charter.docx) and analyst Q&A log (DC_04_MA_Pipeline_Tracker.xlsx).',
+          'knowledge': [
+            {'file':'DC_02_Group_Governance_Charter.docx', 'note':'IR disclosure archive.'},
+            {'file':'DC_04_MA_Pipeline_Tracker.xlsx', 'note':'Analyst Q&A log.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to an analyst question on the FY EBITDA miss for Diversified Conglomerate."',
+          'queries': [
+            'Draft the next quarterly results press release.',
+            'Build the analyst Q&A pack for the upcoming earnings call.',
+            'Draft the announcement for the next material related-party transaction.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Group Risk Sentinel',
+          'name': 'Zava Diversified Conglomerate — Group Risk Sentinel',
+          'desc': 'Surfaces Diversified Conglomerate top-risk movement, near-miss patterns, and CAPA closure across divisions.',
+          'instructions': 'You are the Zava Diversified Conglomerate Group Risk Sentinel. Monitor top-risk register and CAPA closure grounded on the risk dossier (DC_06_Board_Capital_Committee_Charter.docx).',
+          'knowledge': [
+            {'file':'DC_06_Board_Capital_Committee_Charter.docx', 'note':'Group risk dossier.'}
+          ],
+          'knowledgeNote': 'Test: "Which top-risk items at Diversified Conglomerate moved up the heatmap this quarter?"',
+          'queries': [
+            'List top-risk items that moved up the heatmap — driver and recommended action.',
+            'Which CAPA items remain overdue > 60 days? Build closure plan.',
+            'Draft the quarterly Group Risk Committee paper.'
+          ],
+        }
       ],
-      persona=['Mod Admin','Sasha Ouellet'],
-      personaID=['Mod Admin','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '🎯',
+          'label': 'Grup PMO Watch',
+          'name': 'Zava Diversified Conglomerate — Grup PMO Watch',
+          'desc': 'Memantau Diversified Conglomerate group-wide programmes, division performance, and capital allocation.',
+          'instructions': 'Anda adalah Zava Diversified Conglomerate Grup PMO Watch. Pantau grup programme tracker (DC_01_Group_Portfolio_Returns.xlsx), division performance (DC_03_Capital_Allocation_Framework.docx), and capital allocation (DC_05_Investor_QA_FY2025.docx). Rekomendasikan programme-level escalation per Red.',
+          'knowledge': [
+            {'file':'DC_01_Group_Portfolio_Returns.xlsx', 'note':'Grup programme tracker.'},
+            {'file':'DC_03_Capital_Allocation_Framework.docx', 'note':'Division performance.'},
+            {'file':'DC_05_Investor_QA_FY2025.docx', 'note':'Capital allocation register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 grup programmes at Diversified Conglomerate are most at risk of slippage?"',
+          'queries': [
+            '10 teratas grup programmes by RAG — recommended escalation.',
+            'Yang mana divisions are over-running capex? Rekomendasikan re-baseline.',
+            'Susun the kuartalan Grup PMO review paper.'
+          ],
+        },
+        {
+          'icon': '📣',
+          'label': 'IR & Disclosure Pelatih',
+          'name': 'Zava Diversified Conglomerate — IR & Disclosure Pelatih',
+          'desc': 'Helps Diversified Conglomerate IR team susun Bursa / IDX disclosures, investor briefings, and analyst Q&A.',
+          'instructions': 'Anda adalah Zava Diversified Conglomerate IR & Disclosure Pelatih. Help susun Bursa / IDX disclosures and investor briefings grounded on the IR archive (DC_02_Group_Governance_Charter.docx) and analyst Q&A log (DC_04_MA_Pipeline_Tracker.xlsx).',
+          'knowledge': [
+            {'file':'DC_02_Group_Governance_Charter.docx', 'note':'IR disclosure archive.'},
+            {'file':'DC_04_MA_Pipeline_Tracker.xlsx', 'note':'Analyst Q&A log.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to an analyst question on the FY EBITDA miss for Diversified Conglomerate."',
+          'queries': [
+            'Susun berikutnya kuartalan results press release.',
+            'Bangun the analyst Q&A pack for the upcoming earnings call.',
+            'Susun the announcement for berikutnya material related-party transtindakan.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Grup Risk Pengawas',
+          'name': 'Zava Diversified Conglomerate — Grup Risk Pengawas',
+          'desc': 'Menampilkan Diversified Conglomerate top-risk movement, near-miss patterns, and CAPA closure across divisions.',
+          'instructions': 'Anda adalah Zava Diversified Conglomerate Grup Risk Pengawas. Pantau top-risk register and CAPA closure grounded on the risk dossier (DC_06_Board_Capital_Committee_Charter.docx).',
+          'knowledge': [
+            {'file':'DC_06_Board_Capital_Committee_Charter.docx', 'note':'Grup risk dossier.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana top-risk items at Diversified Conglomerate moved up the heatmap kuartal ini?"',
+          'queries': [
+            'List top-risk items that moved up the heatmap — driver and recommended tindakan.',
+            'Yang mana CAPA items remain overdue > 60 days? Bangun closure plan.',
+            'Susun the kuartalan Grup Risk Committee paper.'
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Sasha Ouellet', 'Mod Admin'],
+        personaID=['Mod Admin', 'Sasha Ouellet', 'Mod Admin']
+      ),
     ],
     companyID='Zava Holdings Indonesia',
     taglineID='Diskon NAV sum-of-parts FY2025 melebar ke 32% seiring 2 portofolio meleset target sinergi — Komite Alokasi Modal Direksi dalam 5 hari.',
@@ -386,16 +487,19 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
         persona=['Hadar Caspit','Hadar Caspit'],
         personaID=['Hadar Caspit','Hadar Caspit']),
 
-        tool('Copilot Studio Agent Builder', M365_LIC, M365_ACCT, [
-            'Create an agent for the BayarLintas Compliance Council. Its role is to answer questions from compliance, risk, product and tech teams about how the new fraud risk policy, the OJK licence conditions, and the AML/KYC procedures should be applied to specific product or merchant decisions. It should always cite the exact clause it is relying on, name the regulator (OJK / BI / BSSN), and flag any question that needs human compliance review. Tone: precise, regulator-grade, no marketing language.',
-            'Continuing in Copilot Studio Agent Builder — test the BayarLintas Compliance Council agent with 3 prompts: (1) "A merchant in the online gambling category wants to onboard onto QRIS. Reference the policy and tell me what the answer must be." (2) "Engineering wants to ship a new step-up KYC flow that uses video selfie. Which OJK and BSSN clauses do I need to satisfy before launch?" (3) "Our largest e-commerce merchant had a fraud cluster last week. What is the 72-hour notification path and who signs?" Capture the agent\'s citations and flag any answer that should have been escalated to human compliance review.'
-        ], DESC_BUILDER,
-        promptsID=[
-            'Buat agent untuk BayarLintas Compliance Council. Perannya adalah menjawab pertanyaan dari tim kepatuhan, risiko, produk dan teknologi tentang bagaimana kebijakan risiko fraud baru, kondisi lisensi OJK, dan prosedur AML/KYC harus diterapkan pada keputusan produk atau merchant tertentu. Agent harus selalu mengutip klausul persis yang menjadi dasar, menyebutkan regulator (OJK / BI / BSSN), dan menandai setiap pertanyaan yang memerlukan review kepatuhan manusia. Nada: presisi, kelas regulator, tanpa bahasa pemasaran.',
-            'Lanjutkan di Copilot Studio Agent Builder — uji agent BayarLintas Compliance Council dengan 3 prompt: (1) "Merchant di kategori judi online ingin onboarding ke QRIS. Rujuk kebijakan dan beritahu saya apa jawabannya." (2) "Engineering ingin meluncurkan alur step-up KYC baru yang menggunakan video selfie. Klausul OJK dan BSSN mana yang perlu saya penuhi sebelum peluncuran?" (3) "Merchant e-commerce terbesar kami memiliki klaster fraud minggu lalu. Apa jalur notifikasi 72 jam dan siapa yang menandatangani?" Tangkap kutipan agent dan tandai jawaban yang seharusnya dieskalasi ke review kepatuhan manusia.'
-        ],
-        persona=['Mod Admin','Sasha Ouellet'],
-        personaID=['Mod Admin','Sasha Ouellet'])
+        tool_builder(ANY_LIC, ANY_ACCT,
+          agents=[{'icon':a['icon'],'label':a['label'],'name':a['name'],'desc':a['description'],
+                   'instructions':a['instructions'],'knowledge':a['knowledge'],
+                   'knowledgeNote':a['knowledgeTest'],'queries':a['queries']}
+                  for a in (_bcat.render_agents('fintech-payments','Fintech Payments',
+                            ['FT_01_Payments_Operations.xlsx','FT_02_OJK_Licence_Conditions.docx','FT_03_Fraud_Risk_Policy.docx','FT_04_Product_Roadmap_2026.docx','FT_05_BSSN_Cyber_Audit_Report.docx','FT_06_AML_KYC_Procedure.docx']) or [])],
+          agentsID=[{'icon':a['icon'],'label':a['label'],'name':a['name'],'desc':a['description'],
+                     'instructions':a['instructions'],'knowledge':a['knowledge'],
+                     'knowledgeNote':a['knowledgeTest'],'queries':a['queries']}
+                    for a in (_bcat.render_agents_id('fintech-payments','Fintech Payments',
+                              ['FT_01_Payments_Operations.xlsx','FT_02_OJK_Licence_Conditions.docx','FT_03_Fraud_Risk_Policy.docx','FT_04_Product_Roadmap_2026.docx','FT_05_BSSN_Cyber_Audit_Report.docx','FT_06_AML_KYC_Procedure.docx']) or [])],
+          persona=['Mod Admin','Sasha Ouellet','Hadar Caspit'],
+          personaID=['Mod Admin','Sasha Ouellet','Hadar Caspit'])
     ],
     companyID='Zava Pay Indonesia',
     taglineID='Kerugian fraud FY2025 melonjak 47% di Q4 dan perpanjangan lisensi e-money OJK jatuh tempo dalam 60 hari — eskalasi ke Bank Indonesia dalam 72 jam',
@@ -589,16 +693,19 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
         persona=['Hadar Caspit','Hadar Caspit'],
         personaID=['Hadar Caspit','Hadar Caspit']),
 
-        tool('Copilot Studio Agent Builder', M365_LIC, M365_ACCT, [
-            'Create an agent for the Public Service Reform Programme Council. Its role is to answer questions from programme directors, the inspectorate, and the DG\'s office about how the governance manual, the BPK findings, and the public service reform policy should be applied to specific programme delivery, procurement and audit-response decisions. It should always cite the exact clause it is relying on, name the central agency or oversight body (BPK / KPK / DPR / Bappenas / MoF / MenPAN-RB), and flag any question that needs human inspectorate review. Tone: precise, public-service register, no commercial or political language.',
-            'Continuing in Copilot Studio Agent Builder — test the Public Service Reform Programme Council agent with 3 prompts: (1) "A programme director wants to reallocate Rp 80 miliar from a low-absorbing programme to a higher-performing one mid-quarter. Reference the governance manual and tell me what the answer must be." (2) "The inspectorate has asked whether a procurement file flagged in the KPK tracker can proceed to award. Which clauses do I need to satisfy first?" (3) "A BPK finding rated significant has a 30-day closure deadline. What is the escalation path and who signs?" Capture the agent\'s citations and flag any answer that should have been escalated to human inspectorate review.'
-        ], DESC_BUILDER,
-        promptsID=[
-            'Buat agent untuk Dewan Program Reformasi Pelayanan Publik. Perannya adalah menjawab pertanyaan dari direktur program, inspektorat, dan kantor DJ tentang bagaimana manual tata kelola, temuan BPK, dan kebijakan reformasi pelayanan publik harus diterapkan pada keputusan penyampaian program, pengadaan dan respons audit tertentu. Agent harus selalu mengutip klausul persis yang menjadi dasar, menyebutkan lembaga sentral atau badan pengawas (BPK / KPK / DPR / Bappenas / Kemenkeu / MenPAN-RB), dan menandai setiap pertanyaan yang memerlukan review inspektorat manusia. Nada: presisi, register pelayanan publik, tanpa bahasa komersial atau politik.',
-            'Lanjutkan di Copilot Studio Agent Builder — uji agent Dewan Program Reformasi Pelayanan Publik dengan 3 prompt: (1) "Seorang direktur program ingin merealokasi Rp 80 miliar dari program yang menyerap rendah ke program yang berkinerja lebih baik di tengah kuartal. Rujuk manual tata kelola dan beritahu saya apa jawabannya." (2) "Inspektorat menanyakan apakah berkas pengadaan yang ditandai di tracker KPK dapat dilanjutkan ke award. Klausul mana yang perlu saya penuhi terlebih dahulu?" (3) "Sebuah temuan BPK yang dinilai signifikan memiliki tenggat penutupan 30 hari. Apa jalur eskalasi dan siapa yang menandatangani?" Tangkap kutipan agent dan tandai jawaban yang seharusnya dieskalasi ke review inspektorat manusia.'
-        ],
-        persona=['Mod Admin','Daichi Maruyama'],
-        personaID=['Mod Admin','Daichi Maruyama'])
+        tool_builder(ANY_LIC, ANY_ACCT,
+          agents=[{'icon':a['icon'],'label':a['label'],'name':a['name'],'desc':a['description'],
+                   'instructions':a['instructions'],'knowledge':a['knowledge'],
+                   'knowledgeNote':a['knowledgeTest'],'queries':a['queries']}
+                  for a in (_bcat.render_agents('government-agency','Government Agency',
+                            ['GOV_01_Programme_Performance.xlsx','GOV_02_Programme_Governance_Manual.docx','GOV_03_Public_Service_Reform_Policy.docx','GOV_04_BPK_Audit_Findings.docx','GOV_05_DPR_Hearing_Brief.docx','GOV_06_KPK_Compliance_Tracker.xlsx']) or [])],
+          agentsID=[{'icon':a['icon'],'label':a['label'],'name':a['name'],'desc':a['description'],
+                     'instructions':a['instructions'],'knowledge':a['knowledge'],
+                     'knowledgeNote':a['knowledgeTest'],'queries':a['queries']}
+                    for a in (_bcat.render_agents_id('government-agency','Government Agency',
+                              ['GOV_01_Programme_Performance.xlsx','GOV_02_Programme_Governance_Manual.docx','GOV_03_Public_Service_Reform_Policy.docx','GOV_04_BPK_Audit_Findings.docx','GOV_05_DPR_Hearing_Brief.docx','GOV_06_KPK_Compliance_Tracker.xlsx']) or [])],
+          persona=['Mod Admin','Daichi Maruyama','Sasha Ouellet'],
+          personaID=['Mod Admin','Daichi Maruyama','Sasha Ouellet'])
     ],
     companyID='Zava Government Services Indonesia',
     taglineID='Penyerapan anggaran FY2025 hanya 58% dengan 14 temuan BPK terbuka — Rapat Dengar Pendapat DPR dalam 7 hari',

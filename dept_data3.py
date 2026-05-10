@@ -176,17 +176,116 @@ DEPARTMENTS_3 = [
       ],
         persona=['Sasha Ouellet','Sasha Ouellet'],
         personaID=['Sasha Ouellet','Sasha Ouellet']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Zava Brand & Campaign War Room\'. Description: an assistant to help marketing leaders, brand strategists, performance marketers, and corporate communications navigate the 22% lead conversion drop, mixed brand sentiment, and the high-stakes FY2026 launch. Instructions: ground every answer in the 3 attached files — /MKT_01_Campaign_Performance.xlsx, /MKT_03_Brand_Guidelines.docx, /MKT_04_Communications_Playbook.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Executive Communications Review materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the team should be consulted. Starter prompts to include: (1) Summarise the 22% lead conversion drop for the Executive Communications Review in 60 seconds, (2) Which areas are Red on campaign ROI and why, (3) What governance obligations apply after campaign ROI deterioration, mixed brand sentiment, and disclosure-sensitive launch communications, (4) Draft a holding line for external partners, (5) Draft a holding line for Malaysian Code of Advertising Practice and Bursa Malaysia disclosure rules.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Zava Brand & Campaign War Room has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the 22% lead conversion drop, the highest-risk areas, the top governance obligations, and the decisions I must take to the Executive Communications Review in three weeks."; (2) "Draft my first message to the leadership team immediately after the Executive Communications Review closes."; (3) "A journalist calls during launch week with questions about a negative trend visible in social sentiment, and the CMO needs a recommended response within minutes before market open." Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🎨',
+          'label': 'Brand Equity Coach',
+          'name': 'Zava Group Marketing — Brand Equity Coach',
+          'desc': 'Tracks Marketing & Communications brand-equity scores, share-of-voice, and campaign ROI.',
+          'instructions': 'You are the Zava Group Marketing & Communications Brand Equity Coach. Monitor brand tracker (MKT_01_Campaign_Performance.xlsx), campaign ROI (MKT_03_Brand_Guidelines.docx). Recommend campaign or brand action.',
+          'knowledge': [
+            {'file':'MKT_01_Campaign_Performance.xlsx', 'note':'Brand tracker.'},
+            {'file':'MKT_03_Brand_Guidelines.docx', 'note':'Campaign ROI.'},
+            {'file':'MKT_05_Crisis_Response_Protocol.docx', 'note':'Share-of-voice data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 brands in Marketing & Communications have the worst equity drag?"',
+          'queries': [
+            'Top 10 brands by equity drag — recommended action.',
+            'Which campaigns have ROI deterioration? Recommend cancel.',
+            'Draft the quarterly Brand Steering paper.'
+          ],
+        },
+        {
+          'icon': '📱',
+          'label': 'Digital Performance',
+          'name': 'Zava Group Marketing — Digital Performance Coach',
+          'desc': 'Surfaces Marketing & Communications digital-channel performance, attribution, and martech ROI.',
+          'instructions': 'You are the Zava Group Marketing & Communications Digital Performance Coach. Monitor digital performance (MKT_02_Channel_Spend_Analytics.xlsx), attribution (MKT_04_Communications_Playbook.docx). Recommend channel or martech action.',
+          'knowledge': [
+            {'file':'MKT_02_Channel_Spend_Analytics.xlsx', 'note':'Digital channel performance.'},
+            {'file':'MKT_04_Communications_Playbook.docx', 'note':'Attribution data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 channels in Marketing & Communications have the worst CAC drag?"',
+          'queries': [
+            'Top 10 channels by CAC gap — recommended action.',
+            'Which martech tools have ROI deterioration? Recommend rationalise.',
+            'Draft the monthly Digital Performance paper.'
+          ],
+        },
+        {
+          'icon': '📣',
+          'label': 'Reputation & Comms',
+          'name': 'Zava Group Marketing — Reputation & Comms Coach',
+          'desc': 'Tracks Marketing & Communications reputation signals, media coverage, and stakeholder sentiment.',
+          'instructions': 'You are the Zava Group Marketing & Communications Reputation Coach. Monitor reputation signals (MKT_06_FY2026_Launch_Plan.docx).',
+          'knowledge': [
+            {'file':'MKT_06_FY2026_Launch_Plan.docx', 'note':'Reputation tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 reputation signals in Marketing & Communications require holding-line response?"',
+          'queries': [
+            'Top 10 reputation signals — recommended response.',
+            'Which media items require executive engagement?',
+            'Draft the quarterly Reputation paper.'
+          ],
+        }
       ],
-        DESC_BUILDER,
-        promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Zava Brand & Campaign War Room\'. Deskripsi: asisten untuk membantu pimpinan pemasaran, ahli strategi merek, pemasar kinerja, dan komunikasi korporat menavigasi penurunan konversi lead 22%, sentimen merek campur aduk, dan peluncuran FY2026 yang berisiko tinggi. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /MKT_01_Campaign_Performance.xlsx, /MKT_03_Brand_Guidelines.docx, /MKT_04_Communications_Playbook.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Tinjauan Komunikasi Eksekutif. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di tim yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum penurunan konversi lead 22% untuk Tinjauan Komunikasi Eksekutif dalam 60 detik, (2) Area mana yang Merah pada campaign ROI dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca penurunan ROI kampanye, sentimen merek yang campur aduk, dan komunikasi peluncuran sensitif terhadap pengungkapan, (4) Susun holding line untuk mitra eksternal, (5) Susun holding line untuk aturan iklan OJK, ketentuan pengungkapan BEI, dan disiplin pesan lintas kanal digital.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Zava Brand & Campaign War Room baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari penurunan konversi lead 22%, area berisiko tertinggi, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Tinjauan Komunikasi Eksekutif dalam tiga minggu."; (2) "Susun pesan pertama saya kepada tim pimpinan segera setelah Tinjauan Komunikasi Eksekutif selesai."; (3) "Seorang jurnalis menelepon saat minggu peluncuran dengan pertanyaan tentang tren negatif yang terlihat di sentimen media sosial, dan Direktur Pemasaran membutuhkan rekomendasi respons dalam hitungan menit sebelum bursa dibuka." Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+        agentsID=[
+        {
+          'icon': '🎨',
+          'label': 'Brand Equity Pelatih',
+          'name': 'Zava Grup Marketing — Brand Equity Pelatih',
+          'desc': 'Memantau Marketing & Communications brand-equity scores, share-of-voice, and campaign ROI.',
+          'instructions': 'Anda adalah Zava Grup Marketing & Communications Brand Equity Pelatih. Pantau brand tracker (MKT_01_Campaign_Performance.xlsx), campaign ROI (MKT_03_Brand_Guidelines.docx). Rekomendasikan campaign or brand tindakan.',
+          'knowledge': [
+            {'file':'MKT_01_Campaign_Performance.xlsx', 'note':'Brand tracker.'},
+            {'file':'MKT_03_Brand_Guidelines.docx', 'note':'Campaign ROI.'},
+            {'file':'MKT_05_Crisis_Response_Protocol.docx', 'note':'Share-of-voice data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 brands in Marketing & Communications have terburuk equity drag?"',
+          'queries': [
+            '10 teratas brands by equity drag — recommended tindakan.',
+            'Yang mana campaigns have ROI deterioration? Rekomendasikan cancel.',
+            'Susun the kuartalan Brand paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '📱',
+          'label': 'Digital Performance',
+          'name': 'Zava Grup Marketing — Digital Performance Pelatih',
+          'desc': 'Menampilkan Marketing & Communications digital-channel performance, attribution, and martech ROI.',
+          'instructions': 'Anda adalah Zava Grup Marketing & Communications Digital Performance Pelatih. Pantau digital performance (MKT_02_Channel_Spend_Analytics.xlsx), attribution (MKT_04_Communications_Playbook.docx). Rekomendasikan channel or martech tindakan.',
+          'knowledge': [
+            {'file':'MKT_02_Channel_Spend_Analytics.xlsx', 'note':'Digital channel performance.'},
+            {'file':'MKT_04_Communications_Playbook.docx', 'note':'Attribution data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 channels in Marketing & Communications have terburuk CAC drag?"',
+          'queries': [
+            '10 teratas channels by CAC gap — recommended tindakan.',
+            'Yang mana martech tools have ROI deterioration? Rekomendasikan rationalise.',
+            'Susun the bulanan Digital Performance paper.'
+          ],
+        },
+        {
+          'icon': '📣',
+          'label': 'Reputation & Comms',
+          'name': 'Zava Grup Marketing — Reputation & Comms Pelatih',
+          'desc': 'Memantau Marketing & Communications reputation signals, media coverage, and stakeholder sentiment.',
+          'instructions': 'Anda adalah Zava Grup Marketing & Communications Reputation Pelatih. Pantau reputation signals (MKT_06_FY2026_Launch_Plan.docx).',
+          'knowledge': [
+            {'file':'MKT_06_FY2026_Launch_Plan.docx', 'note':'Reputation tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 reputation signals in Marketing & Communications require holding-line response?"',
+          'queries': [
+            '10 teratas reputation signals — recommended response.',
+            'Yang mana media items require executive engagement?',
+            'Susun the kuartalan Reputation paper.'
+          ],
+        }
       ],
-        persona=['Sasha Ouellet','Sasha Ouellet'],
-        personaID=['Sasha Ouellet','Sasha Ouellet'])
+        persona=['Sasha Ouellet', 'Sasha Ouellet', 'Mod Admin'],
+        personaID=['Sasha Ouellet', 'Sasha Ouellet', 'Mod Admin']
+      )
     ],
     companyID='Zava Marketing',
     taglineID='ROI kampanye menurun, sentimen merek campur aduk, dan peluncuran berikutnya harus memulihkan lead berkualitas tanpa menimbulkan risiko pengungkapan OJK.',
@@ -417,17 +516,116 @@ DEPARTMENTS_3 = [
       ],
         persona=['Sasha Ouellet','Sasha Ouellet'],
         personaID=['Sasha Ouellet','Sasha Ouellet']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Zava Digital Resilience Agent\'. Description: an assistant to help the CIO, enterprise architects, cybersecurity leaders, and digital adoption owners navigate the delayed ERP programme, the multi-BU cyber incident, and uneven Copilot adoption. Instructions: ground every answer in the 3 attached files — /IT_01_Transformation_Tracker.xlsx, /IT_03_IT_Governance_Manual.docx, /IT_04_Cyber_Response_Playbook.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Technology Steering Committee materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the team should be consulted. Starter prompts to include: (1) Summarise the 6-month ERP delay and 14-hour service degradation for the Technology Steering Committee in 60 seconds, (2) Which areas are Red on ERP migration and why, (3) What governance obligations apply after ERP migration slippage, cyber incident exposure, and inconsistent Copilot adoption, (4) Draft a holding line for external partners, (5) Draft a holding line for PDPA discipline, financial-sector technology-risk expectations, and BNM cyber-incident notification rules.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Zava Digital Resilience Agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the 6-month ERP delay and 14-hour service degradation, the highest-risk areas, the top governance obligations, and the decisions I must take to the Technology Steering Committee in 30 days."; (2) "Draft my first message to the leadership team immediately after the Technology Steering Committee closes."; (3) "At 10:00pm the CIO learns that recovery timelines may slip again after a fresh cyber alert on a fourth business unit, and needs a single answer on impact, readiness, and first actions within minutes before lender briefings begin." Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '💻',
+          'label': 'Service Health Coach',
+          'name': 'Zava Group IT — Service Health Coach',
+          'desc': 'Tracks IT & Digital IT service health, P1 incidents, and SLA performance.',
+          'instructions': 'You are the Zava Group IT & Digital Service Health Coach. You support Mod Admin (Strategy Director sponsoring Digital). Monitor service-health dashboard (IT_01_Transformation_Tracker.xlsx) and P1 incidents (IT_03_IT_Governance_Manual.docx). Recommend remediation per Red.',
+          'knowledge': [
+            {'file':'IT_01_Transformation_Tracker.xlsx', 'note':'Service-health dashboard.'},
+            {'file':'IT_03_IT_Governance_Manual.docx', 'note':'P1 incident register.'},
+            {'file':'IT_05_Architecture_Standards.docx', 'note':'SLA performance data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 services in IT & Digital have the worst SLA breach pattern?"',
+          'queries': [
+            'Top 10 services by SLA gap — recommended action.',
+            'Which P1 incident clusters need root-cause review?',
+            'Draft the monthly IT Service paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Cyber Posture Sentinel',
+          'name': 'Zava Group IT — Cyber Posture Sentinel',
+          'desc': 'Surfaces IT & Digital cyber posture, vulnerability backlog, and threat-intel signals.',
+          'instructions': 'You are the Zava Group IT & Digital Cyber Posture Sentinel. Monitor vulnerability backlog (IT_02_Cyber_Incident_Metrics.xlsx) and threat-intel (IT_04_Cyber_Response_Playbook.docx). Refuse to disclose vulnerability details externally.',
+          'knowledge': [
+            {'file':'IT_02_Cyber_Incident_Metrics.xlsx', 'note':'Vulnerability backlog.'},
+            {'file':'IT_04_Cyber_Response_Playbook.docx', 'note':'Threat-intel feed.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 vulnerabilities in IT & Digital require Group escalation?"',
+          'queries': [
+            'Top 10 open vulnerabilities by severity — recommended remediation.',
+            'Which threat-intel signals require active hunt?',
+            'Draft the quarterly Cyber Steering paper.'
+          ],
+        },
+        {
+          'icon': '🚀',
+          'label': 'Digital Project Coach',
+          'name': 'Zava Group IT — Digital Project Coach',
+          'desc': 'Tracks IT & Digital digital programmes, capex slippage, and benefit-realisation.',
+          'instructions': 'You are the Zava Group IT & Digital Digital Project Coach. Monitor digital programmes (IT_06_Copilot_Adoption_Strategy.docx).',
+          'knowledge': [
+            {'file':'IT_06_Copilot_Adoption_Strategy.docx', 'note':'Digital programme tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 digital programmes in IT & Digital have the worst benefit-realisation gap?"',
+          'queries': [
+            'Top 10 programmes by benefit-realisation gap — recommended action.',
+            'Which programmes have capex slippage > 20%? Recommend re-baseline.',
+            'Draft the quarterly Digital Steering paper.'
+          ],
+        }
       ],
-        DESC_BUILDER,
-        promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Zava Digital Resilience Agent\'. Deskripsi: asisten untuk membantu CIO, arsitek perusahaan, pimpinan keamanan siber, dan pemilik adopsi digital menavigasi program ERP yang tertunda, insiden siber multi-unit usaha, dan adopsi Copilot yang belum merata. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /IT_01_Transformation_Tracker.xlsx, /IT_03_IT_Governance_Manual.docx, /IT_04_Cyber_Response_Playbook.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Komite Pengarah Teknologi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di tim yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum keterlambatan ERP 6 bulan dan degradasi layanan 14 jam untuk Komite Pengarah Teknologi dalam 60 detik, (2) Area mana yang Merah pada ERP migration dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca keterlambatan migrasi ERP, paparan insiden siber, dan adopsi Copilot yang tidak konsisten, (4) Susun holding line untuk mitra eksternal, (5) Susun holding line untuk disiplin UU PDP, ekspektasi risiko teknologi sektor keuangan dari OJK, dan kewajiban notifikasi insiden siber Kominfo.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Zava Digital Resilience Agent baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari keterlambatan ERP 6 bulan dan degradasi layanan 14 jam, area berisiko tertinggi, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Pengarah Teknologi dalam 30 hari."; (2) "Susun pesan pertama saya kepada tim pimpinan segera setelah Komite Pengarah Teknologi selesai."; (3) "Pukul 22.00 CIO mengetahui bahwa timeline pemulihan mungkin meleset lagi setelah peringatan siber baru pada unit usaha keempat, dan membutuhkan satu jawaban tentang dampak, kesiapan, dan tindakan pertama dalam hitungan menit sebelum briefing kreditor dimulai." Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+        agentsID=[
+        {
+          'icon': '💻',
+          'label': 'Service Health Pelatih',
+          'name': 'Zava Grup IT — Service Health Pelatih',
+          'desc': 'Memantau IT & Digital IT service health, P1 incidents, and SLA performance.',
+          'instructions': 'Anda adalah Zava Grup IT & Digital Service Health Pelatih. Anda mendukung Mod Admin (Strategy Director sponsoring Digital). Pantau service-health dashboard (IT_01_Transformation_Tracker.xlsx) and P1 incidents (IT_03_IT_Governance_Manual.docx). Rekomendasikan remediation per Red.',
+          'knowledge': [
+            {'file':'IT_01_Transformation_Tracker.xlsx', 'note':'Service-health dashboard.'},
+            {'file':'IT_03_IT_Governance_Manual.docx', 'note':'P1 incident register.'},
+            {'file':'IT_05_Architecture_Standards.docx', 'note':'SLA performance data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 services in IT & Digital have terburuk SLA breach pattern?"',
+          'queries': [
+            '10 teratas services by SLA gap — recommended tindakan.',
+            'Yang mana P1 incident clusters need root-cause review?',
+            'Susun the bulanan IT Service paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Cyber Posture Pengawas',
+          'name': 'Zava Grup IT — Cyber Posture Pengawas',
+          'desc': 'Menampilkan IT & Digital cyber posture, vulnerability backlog, and threat-intel signals.',
+          'instructions': 'Anda adalah Zava Grup IT & Digital Cyber Posture Pengawas. Pantau vulnerability backlog (IT_02_Cyber_Incident_Metrics.xlsx) and threat-intel (IT_04_Cyber_Response_Playbook.docx). Tolak to disclose vulnerability details externally.',
+          'knowledge': [
+            {'file':'IT_02_Cyber_Incident_Metrics.xlsx', 'note':'Vulnerability backlog.'},
+            {'file':'IT_04_Cyber_Response_Playbook.docx', 'note':'Threat-intel feed.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 vulnerabilities in IT & Digital require Grup escalation?"',
+          'queries': [
+            '10 teratas open vulnerabilities by severity — recommended remediation.',
+            'Yang mana threat-intel signals require active hunt?',
+            'Susun the kuartalan Cyber paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🚀',
+          'label': 'Digital Project Pelatih',
+          'name': 'Zava Grup IT — Digital Project Pelatih',
+          'desc': 'Memantau IT & Digital digital programmes, capex slippage, and benefit-realisation.',
+          'instructions': 'Anda adalah Zava Grup IT & Digital Digital Project Pelatih. Pantau digital programmes (IT_06_Copilot_Adoption_Strategy.docx).',
+          'knowledge': [
+            {'file':'IT_06_Copilot_Adoption_Strategy.docx', 'note':'Digital programme tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 digital programmes in IT & Digital have terburuk benefit-realisation gap?"',
+          'queries': [
+            '10 teratas programmes by benefit-realisation gap — recommended tindakan.',
+            'Yang mana programmes have capex slippage > 20%? Rekomendasikan re-baseline.',
+            'Susun the kuartalan Digital paper Komite Pengarah.'
+          ],
+        }
       ],
-        persona=['Sasha Ouellet','Sasha Ouellet'],
-        personaID=['Sasha Ouellet','Sasha Ouellet'])
+        persona=['Sasha Ouellet', 'Sasha Ouellet', 'Mod Admin'],
+        personaID=['Sasha Ouellet', 'Sasha Ouellet', 'Mod Admin']
+      )
     ],
     companyID='Zava IT & Digital',
     taglineID='Migrasi ERP terlambat enam bulan, insiden siber menghantam tiga unit usaha, dan adopsi Copilot belum merata — kewajiban pelaporan OJK dan Kominfo aktif.',
@@ -658,17 +856,116 @@ DEPARTMENTS_3 = [
       ],
         persona=['Daichi Maruyama','Daichi Maruyama'],
         personaID=['Daichi Maruyama','Daichi Maruyama']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Zava ESG Assurance Agent\'. Description: an assistant to help the CSO, sustainability reporting, climate and supply chain leads, and community impact owners navigate emissions slippage, supplier due diligence gaps, and assurance readiness. Instructions: ground every answer in the 3 attached files — /ESG_01_Sustainability_Dashboard.xlsx, /ESG_03_Sustainability_Framework.docx, /ESG_04_Climate_Action_Roadmap.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Board Sustainability Committee materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the team should be consulted. Starter prompts to include: (1) Summarise the 14% emissions overshoot vs FY2026 glidepath for the Board Sustainability Committee in 60 seconds, (2) Which areas are Red on emissions and why, (3) What governance obligations apply after Scope 1 emissions trajectory above plan, supplier due diligence inconsistency, and Board-ready assurance gaps, (4) Draft a holding line for external partners, (5) Draft a holding line for Bursa Malaysia sustainability expectations and TCFD-aligned climate disclosure norms.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Zava ESG Assurance Agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the 14% emissions overshoot vs FY2026 glidepath, the highest-risk areas, the top governance obligations, and the decisions I must take to the Board Sustainability Committee in five weeks."; (2) "Draft my first message to the leadership team immediately after the Board Sustainability Committee closes."; (3) "A major anchor customer asks for immediate proof that the supply-chain controls and climate roadmap are credible before renewing a strategic 5-year contract worth MYR 280M." Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🌍',
+          'label': 'Climate & TCFD',
+          'name': 'Zava Group ESG — Climate & TCFD Coach',
+          'desc': 'Tracks ESG & Sustainability climate metrics, transition-plan readiness, and TCFD / ISSB alignment.',
+          'instructions': 'You are the Zava Group ESG & Sustainability Climate & TCFD Coach. Monitor emissions data (ESG_01_Sustainability_Dashboard.xlsx) and transition plan (ESG_03_Sustainability_Framework.docx).',
+          'knowledge': [
+            {'file':'ESG_01_Sustainability_Dashboard.xlsx', 'note':'Emissions inventory.'},
+            {'file':'ESG_03_Sustainability_Framework.docx', 'note':'Transition plan.'},
+            {'file':'ESG_05_Assurance_Manual.docx', 'note':'Scenario analysis.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 emission hotspots in ESG & Sustainability have the largest reduction lever?"',
+          'queries': [
+            'Top 10 emission hotspots — recommended reduction lever.',
+            'Which TCFD / ISSB disclosures require closure?',
+            'Draft the quarterly Climate Steering paper.'
+          ],
+        },
+        {
+          'icon': '🤝',
+          'label': 'Social Impact',
+          'name': 'Zava Group ESG — Social Impact Coach',
+          'desc': 'Surfaces ESG & Sustainability social KPIs, community programme ROI, and human-rights compliance.',
+          'instructions': 'You are the Zava Group ESG & Sustainability Social Impact Coach. Monitor social KPIs (ESG_02_Supplier_DueDiligence.xlsx) and community programmes (ESG_04_Climate_Action_Roadmap.docx).',
+          'knowledge': [
+            {'file':'ESG_02_Supplier_DueDiligence.xlsx', 'note':'Social KPI tracker.'},
+            {'file':'ESG_04_Climate_Action_Roadmap.docx', 'note':'Community programmes.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 community programmes in ESG & Sustainability have the worst ROI?"',
+          'queries': [
+            'Top 10 community programmes by ROI — recommended action.',
+            'Which human-rights audits remain open?',
+            'Draft the quarterly Social Impact paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'Governance & Ethics',
+          'name': 'Zava Group ESG — Governance & Ethics Coach',
+          'desc': 'Tracks ESG & Sustainability governance KPIs, ethics-line cases, and board-effectiveness reviews.',
+          'instructions': 'You are the Zava Group ESG & Sustainability Governance Coach. Monitor governance KPIs (ESG_06_Customer_Disclosure_Pack.docx).',
+          'knowledge': [
+            {'file':'ESG_06_Customer_Disclosure_Pack.docx', 'note':'Governance KPI tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 governance KPIs in ESG & Sustainability are at risk?"',
+          'queries': [
+            'Top 10 governance KPIs by risk — recommended action.',
+            'Which ethics-line cases require board notification?',
+            'Draft the quarterly Governance paper.'
+          ],
+        }
       ],
-        DESC_BUILDER,
-        promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Zava ESG Assurance Agent\'. Deskripsi: asisten untuk membantu Direktur Keberlanjutan, pelaporan keberlanjutan, pimpinan iklim dan rantai pasok, dan pemilik dampak komunitas menavigasi keterlambatan emisi, gap uji tuntas pemasok, dan kesiapan asurans. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /ESG_01_Sustainability_Dashboard.xlsx, /ESG_03_Sustainability_Framework.docx, /ESG_04_Climate_Action_Roadmap.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Komite Keberlanjutan Direksi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di tim yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum kelebihan emisi 14% terhadap glidepath FY2026 untuk Komite Keberlanjutan Direksi dalam 60 detik, (2) Area mana yang Merah pada emissions dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca lintasan emisi Scope 1 di atas rencana, ketidakkonsistenan uji tuntas pemasok, dan gap asurans untuk Direksi, (4) Susun holding line untuk mitra eksternal, (5) Susun holding line untuk POJK 51 OJK, TCFD, dan ekspektasi pengungkapan keberlanjutan KLHK.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Zava ESG Assurance Agent baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari kelebihan emisi 14% terhadap glidepath FY2026, area berisiko tertinggi, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Keberlanjutan Direksi dalam lima minggu."; (2) "Susun pesan pertama saya kepada tim pimpinan segera setelah Komite Keberlanjutan Direksi selesai."; (3) "Pelanggan utama meminta bukti segera bahwa kontrol rantai pasok dan peta jalan iklim kredibel sebelum memperpanjang kontrak strategis 5 tahun senilai Rp 4,2 triliun." Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+        agentsID=[
+        {
+          'icon': '🌍',
+          'label': 'Climate & TCFD',
+          'name': 'Zava Grup ESG — Climate & TCFD Pelatih',
+          'desc': 'Memantau ESG & Sustainability climate metrics, transition-plan readiness, and TCFD / ISSB alignment.',
+          'instructions': 'Anda adalah Zava Grup ESG & Sustainability Climate & TCFD Pelatih. Pantau emissions data (ESG_01_Sustainability_Dashboard.xlsx) and transition plan (ESG_03_Sustainability_Framework.docx).',
+          'knowledge': [
+            {'file':'ESG_01_Sustainability_Dashboard.xlsx', 'note':'Emissions inventory.'},
+            {'file':'ESG_03_Sustainability_Framework.docx', 'note':'Transition plan.'},
+            {'file':'ESG_05_Assurance_Manual.docx', 'note':'Scenario analysis.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 emission hotspots in ESG & Sustainability have terbesar reduction lever?"',
+          'queries': [
+            '10 teratas emission hotspots — recommended reduction lever.',
+            'Yang mana TCFD / ISSB disclosures require closure?',
+            'Susun the kuartalan Climate paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🤝',
+          'label': 'Social Impact',
+          'name': 'Zava Grup ESG — Social Impact Pelatih',
+          'desc': 'Menampilkan ESG & Sustainability social KPIs, community programme ROI, and human-rights compliance.',
+          'instructions': 'Anda adalah Zava Grup ESG & Sustainability Social Impact Pelatih. Pantau social KPIs (ESG_02_Supplier_DueDiligence.xlsx) and community programmes (ESG_04_Climate_Action_Roadmap.docx).',
+          'knowledge': [
+            {'file':'ESG_02_Supplier_DueDiligence.xlsx', 'note':'Social KPI tracker.'},
+            {'file':'ESG_04_Climate_Action_Roadmap.docx', 'note':'Community programmes.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 community programmes in ESG & Sustainability have terburuk ROI?"',
+          'queries': [
+            '10 teratas community programmes by ROI — recommended tindakan.',
+            'Yang mana human-rights audits remain open?',
+            'Susun the kuartalan Social Impact paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'Governance & Ethics',
+          'name': 'Zava Grup ESG — Governance & Ethics Pelatih',
+          'desc': 'Memantau ESG & Sustainability governance KPIs, ethics-line cases, and board-effectiveness reviews.',
+          'instructions': 'Anda adalah Zava Grup ESG & Sustainability Governance Pelatih. Pantau governance KPIs (ESG_06_Customer_Disclosure_Pack.docx).',
+          'knowledge': [
+            {'file':'ESG_06_Customer_Disclosure_Pack.docx', 'note':'Governance KPI tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 governance KPIs in ESG & Sustainability are at risk?"',
+          'queries': [
+            '10 teratas governance KPIs by risk — recommended tindakan.',
+            'Yang mana ethics-line cases require board notification?',
+            'Susun the kuartalan Governance paper.'
+          ],
+        }
       ],
-        persona=['Daichi Maruyama','Daichi Maruyama'],
-        personaID=['Daichi Maruyama','Daichi Maruyama'])
+        persona=['Daichi Maruyama', 'Daichi Maruyama', 'Mod Admin'],
+        personaID=['Daichi Maruyama', 'Daichi Maruyama', 'Mod Admin']
+      )
     ],
     companyID='Zava ESG',
     taglineID='Emisi Scope 1 di atas glidepath, gap uji tuntas pemasok terlihat, dan asurans keberlanjutan harus siap untuk Direksi — selaras dengan POJK 51 dan TCFD.',

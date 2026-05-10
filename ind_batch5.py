@@ -177,16 +177,120 @@ ind('plantation','plantation','Plantation & Agribusiness','🌿','#2E7D32','#43A
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Plantation Yield & RSPO War Room\'. Description: an assistant for the Group Board, CEO, COO, ESG, and CFO to navigate the 11% yield gap, 9 RSPO surveillance majors, KLHK follow-up letter, conditional European premium buyer renewals, and the Riau refinery FY2026 capex decision. Instructions: ground every answer in the 4 attached files — /PLT_01_Estate_Operations.xlsx, /PLT_02_MSPO_Certification_Manual.docx, /PLT_05_Buyer_Contracts_Register.xlsx, /PLT_06_Board_Briefing_Notes.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts to include: (1) Summarise the operations and certification situation for the Board in 60 seconds, (2) Which 3 estate clusters are highest risk, (3) What governance obligations apply to an RSPO surveillance audit, (4) Draft a holding line for RSPO and KLHK, (5) Draft a holding line for European premium buyers.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Plantation Yield & RSPO War Room agent has just been created. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the yield problem, the RSPO surveillance audit, the KLHK letter, and the decisions I must take to the Board in 7 days."; (2) "Draft my first message to the estate general managers immediately after the Board meeting closes."; (3) "Which 3 metrics should I monitor weekly for the next 8 weeks to catch yield, certification or buyer-renewal deterioration early?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'War Room Hasil & RSPO Perkebunan\'. Deskripsi: asisten untuk Direksi Grup, Direktur Utama, COO, ESG, dan Direktur Keuangan untuk menavigasi gap hasil 11%, 9 mayor surveillance RSPO, surat tindak lanjut KLHK, perpanjangan bersyarat dari pembeli premium Eropa, dan keputusan capex FY2026 kilang Riau. Instruksi: dasarkan tiap jawaban pada 4 file terlampir — /PLT_01_Estate_Operations.xlsx, /PLT_02_MSPO_Certification_Manual.docx, /PLT_05_Buyer_Contracts_Register.xlsx, /PLT_06_Board_Briefing_Notes.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum situasi operasi dan sertifikasi untuk Direksi dalam 60 detik, (2) 3 cluster estate mana yang berisiko tertinggi, (3) Kewajiban tata kelola apa yang berlaku untuk audit surveillance RSPO, (4) Susun holding line untuk RSPO dan KLHK, (5) Susun holding line untuk pembeli premium Eropa.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent War Room Hasil & RSPO Perkebunan baru saja dibuat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah hasil, audit surveillance RSPO, surat KLHK, dan keputusan yang harus saya bawa ke Direksi dalam 7 hari."; (2) "Susun pesan pertama saya kepada general manager estate segera setelah Rapat Direksi selesai."; (3) "3 metrik mana yang harus saya pantau setiap minggu selama 8 minggu ke depan untuk mendeteksi penurunan hasil, sertifikasi atau perpanjangan pembeli sejak dini?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🌴',
+          'label': 'Estate Yield & FFB Coach',
+          'name': 'Zava Plantation — Estate FFB Yield Coach',
+          'desc': 'Tracks Plantation & Agribusiness estate FFB yield, OER, replanting cycle, and cost-per-tonne movements.',
+          'instructions': 'You are the Zava Plantation & Agribusiness Estate FFB Yield Coach. You support the Plantation Director. Monitor FFB yield by estate (PLT_01_Estate_Operations.xlsx), OER trends (PLT_03_Estate_Operations_SOP.docx), and cost-per-tonne (PLT_05_Buyer_Contracts_Register.xlsx). Recommend replanting, fertiliser, or harvesting actions per outlier.',
+          'knowledge': [
+            {'file':'PLT_01_Estate_Operations.xlsx', 'note':'FFB yield by estate.'},
+            {'file':'PLT_03_Estate_Operations_SOP.docx', 'note':'Mill OER & throughput.'},
+            {'file':'PLT_05_Buyer_Contracts_Register.xlsx', 'note':'Cost-per-tonne register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 5 estates at Plantation & Agribusiness have the worst FFB-yield drag this quarter?"',
+          'queries': [
+            'Top 10 estates by yield drag — recommended replanting / fertiliser action.',
+            'Which mills have OER deterioration? Recommend mechanical or operational action.',
+            'Draft the quarterly Plantation Steering Committee paper.'
+          ],
+        },
+        {
+          'icon': '🌿',
+          'label': 'RSPO / ISPO Coach',
+          'name': 'Zava Plantation — Sustainability & RSPO Coach',
+          'desc': 'Monitors Plantation & Agribusiness RSPO / MSPO / ISPO certification, NDPE compliance, and HCV monitoring.',
+          'instructions': 'You are the Zava Plantation & Agribusiness Sustainability & RSPO Coach. You support the Sustainability Director. Track RSPO / MSPO / ISPO certificates (PLT_02_MSPO_Certification_Manual.docx), NDPE compliance, and HCV monitoring (PLT_04_Sustainability_Roadmap.xlsx). Tabulate findings and CAPA. Refuse pricing questions.',
+          'knowledge': [
+            {'file':'PLT_02_MSPO_Certification_Manual.docx', 'note':'RSPO / MSPO / ISPO certificate register.'},
+            {'file':'PLT_04_Sustainability_Roadmap.xlsx', 'note':'NDPE & HCV monitoring data.'},
+            {'file':'PLT_06_Board_Briefing_Notes.docx', 'note':'Sustainability policy handbook.'}
+          ],
+          'knowledgeNote': 'Test: "Which estates at Plantation & Agribusiness have lapsed-certificate risk?"',
+          'queries': [
+            'Top 5 sustainability-finding clusters — recommended CAPA.',
+            'Which certificates expire within 90 days? Tabulate.',
+            'Draft the annual Sustainability Disclosure for the integrated annual report.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MPOB / IPOC Liaison',
+          'name': 'Zava Plantation — Plantation Regulator Liaison',
+          'desc': 'Prepares MPOB (MY) / IPOC + Kementan (ID) returns, export-levy filings, and replanting-grant applications for Plantation & Agribusiness.',
+          'instructions': 'You are the Zava Plantation & Agribusiness Plantation Regulator Liaison. You support Government Relations. Prepare MPOB / IPOC / export-levy filings grounded on the regulatory file (PLT_04_Sustainability_Roadmap.xlsx) and the policy handbook (PLT_06_Board_Briefing_Notes.docx).',
+          'knowledge': [
+            {'file':'PLT_04_Sustainability_Roadmap.xlsx', 'note':'Plantation regulatory filings.'},
+            {'file':'PLT_06_Board_Briefing_Notes.docx', 'note':'Plantation policy handbook.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to MPOB\'s latest export-levy circular for Plantation & Agribusiness."',
+          'queries': [
+            "Prepare a cover letter for this quarter's MPOB return.",
+            'Which replanting-grant applications are due this year? Tabulate eligibility.',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Hadar Caspit','Hadar Caspit'],
-      personaID=['Hadar Caspit','Hadar Caspit']),
+        agentsID=[
+        {
+          'icon': '🌴',
+          'label': 'Estate Yield & FFB Pelatih',
+          'name': 'Zava Plantation — Estate FFB Yield Pelatih',
+          'desc': 'Memantau Plantation & Agribusiness estate FFB yield, OER, replanting cycle, and cost-per-tonne movements.',
+          'instructions': 'Anda adalah Zava Plantation & Agribusiness Estate FFB Yield Pelatih. Anda mendukung the Plantation Director. Pantau FFB yield by estate (PLT_01_Estate_Operations.xlsx), OER trends (PLT_03_Estate_Operations_SOP.docx), and cost-per-tonne (PLT_05_Buyer_Contracts_Register.xlsx). Rekomendasikan replanting, fertiliser, or harvesting actions per pencilan.',
+          'knowledge': [
+            {'file':'PLT_01_Estate_Operations.xlsx', 'note':'FFB yield by estate.'},
+            {'file':'PLT_03_Estate_Operations_SOP.docx', 'note':'Mill OER & throughput.'},
+            {'file':'PLT_05_Buyer_Contracts_Register.xlsx', 'note':'Cost-per-tonne register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 5 estates at Plantation & Agribusiness have terburuk FFB-yield drag kuartal ini?"',
+          'queries': [
+            '10 teratas estates by yield drag — recommended replanting / fertiliser tindakan.',
+            'Yang mana mills have OER deterioration? Rekomendasikan mechanical or operational tindakan.',
+            'Susun the kuartalan Plantation Komite Pengarah paper.'
+          ],
+        },
+        {
+          'icon': '🌿',
+          'label': 'RSPO / ISPO Pelatih',
+          'name': 'Zava Plantation — Sustainability & RSPO Pelatih',
+          'desc': 'Monitors Plantation & Agribusiness RSPO / MSPO / ISPO certification, NDPE compliance, and HCV monitoring.',
+          'instructions': 'Anda adalah Zava Plantation & Agribusiness Sustainability & RSPO Pelatih. Anda mendukung the Sustainability Director. Lacak RSPO / MSPO / ISPO certificates (PLT_02_MSPO_Certification_Manual.docx), NDPE compliance, and HCV monitoring (PLT_04_Sustainability_Roadmap.xlsx). Tabulasikan findings and CAPA. Tolak pricing questions.',
+          'knowledge': [
+            {'file':'PLT_02_MSPO_Certification_Manual.docx', 'note':'RSPO / MSPO / ISPO certificate register.'},
+            {'file':'PLT_04_Sustainability_Roadmap.xlsx', 'note':'NDPE & HCV monitoring data.'},
+            {'file':'PLT_06_Board_Briefing_Notes.docx', 'note':'Sustainability policy handbook.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana estates at Plantation & Agribusiness have lapsed-certificate risk?"',
+          'queries': [
+            '5 teratas sustainability-finding clusters — recommended CAPA.',
+            'Yang mana certificates expire within 90 days? Tabulate.',
+            'Susun the tahunan Sustainability Disclosure for the integrated tahunan report.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MPOB / IPOC Penghubung',
+          'name': 'Zava Plantation — Plantation Regulator Penghubung',
+          'desc': 'Prepares MPOB (MY) / IPOC + Kementan (ID) returns, export-levy filings, and replanting-grant applications for Plantation & Agribusiness.',
+          'instructions': 'Anda adalah Zava Plantation & Agribusiness Plantation Regulator Penghubung. Anda mendukung Government Relations. Prepare MPOB / IPOC / export-levy filings grounded on the regulatory file (PLT_04_Sustainability_Roadmap.xlsx) and the policy handbook (PLT_06_Board_Briefing_Notes.docx).',
+          'knowledge': [
+            {'file':'PLT_04_Sustainability_Roadmap.xlsx', 'note':'Plantation regulatory filings.'},
+            {'file':'PLT_06_Board_Briefing_Notes.docx', 'note':'Plantation policy handbook.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to MPOB\'s latest export-levy circular for Plantation & Agribusiness."',
+          'queries': [
+            "Prepare a cover letter for kuartal ini's MPOB return.",
+            'Yang mana replanting-grant applications are due this year? Tabulasikan eligibility.',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      ),
     ],
     companyID='Zava Plantation Indonesia',
     taglineID='Hasil turun 11%, surveillance RSPO menandai 9 mayor — keputusan capex Direksi dalam 7 hari.',
@@ -406,16 +510,116 @@ ind('bpo-services','bpo-services','BPO Services','📞','#3949AB','#5C6BC0',
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'BPO Renewal & Workforce War Room\'. Description: an assistant for the Komite Eksekutif, CEO, COO, CFO, and Client Success team to navigate 38% attrition, the 4 amber anchor clients, IDR 980B in renewals, and the Kemnaker/BSSN context. Instructions: ground every answer in the 4 attached files — /BPO_01_Service_Delivery.xlsx, /BPO_04_Workforce_Plan.xlsx, /BPO_05_Cyber_Compliance_Pack.docx, /BPO_06_Renewal_Pipeline.xlsx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Komite materiality. Tone: precise, Komite-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts to include: (1) Summarise the attrition and renewal pressure for the Komite in 60 seconds, (2) Which 3 anchor clients are highest risk, (3) What governance obligations apply after a near-miss data incident, (4) Draft a holding line for amber anchor clients, (5) Draft a holding line for Kemnaker and BSSN.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The BPO Renewal & Workforce War Room agent has just been created. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the attrition problem, the 4 amber clients, the BSSN/Kemnaker letters, and the decisions I must take to the Komite in 5 days."; (2) "Draft my first message to the 9 delivery centre managers immediately after the Komite meeting closes."; (3) "Which 3 metrics should I monitor weekly for the next 8 weeks to catch attrition or SLA deterioration early?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'War Room Perpanjangan & Tenaga Kerja BPO\'. Deskripsi: asisten untuk Komite Eksekutif, Direktur Utama, Direktur Operasi, Direktur Keuangan, dan tim Client Success untuk menavigasi attrition 38%, 4 klien anchor kuning, perpanjangan IDR 980 miliar, dan konteks Kemnaker/BSSN. Instruksi: dasarkan tiap jawaban pada 4 file terlampir — /BPO_01_Service_Delivery.xlsx, /BPO_04_Workforce_Plan.xlsx, /BPO_05_Cyber_Compliance_Pack.docx, /BPO_06_Renewal_Pipeline.xlsx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Komite. Nada: presisi, siap untuk Komite, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum tekanan attrition dan perpanjangan untuk Komite dalam 60 detik, (2) 3 klien anchor mana yang berisiko tertinggi, (3) Kewajiban tata kelola apa yang berlaku pasca insiden data near-miss, (4) Susun holding line untuk klien anchor kuning, (5) Susun holding line untuk Kemnaker dan BSSN.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent War Room Perpanjangan & Tenaga Kerja BPO baru saja dibuat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah attrition, 4 klien anchor kuning, surat BSSN/Kemnaker, dan keputusan yang harus saya bawa ke Komite dalam 5 hari."; (2) "Susun pesan pertama saya kepada 9 manajer delivery centre segera setelah rapat Komite selesai."; (3) "3 metrik mana yang harus saya pantau setiap minggu selama 8 minggu ke depan untuk mendeteksi penurunan attrition atau SLA sejak dini?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🎧',
+          'label': 'Service Delivery & SLA',
+          'name': 'Zava BPO Services — Service Delivery & SLA Coach',
+          'desc': 'Tracks BPO Services client SLA performance, agent productivity, and quality scores.',
+          'instructions': 'You are the Zava BPO Services Service Delivery Coach. Monitor SLA performance (BPO_01_Service_Delivery.xlsx), agent productivity (BPO_03_Quality_Management_Framework.docx), and quality scores (BPO_05_Cyber_Compliance_Pack.docx). Recommend training, staffing, or process action.',
+          'knowledge': [
+            {'file':'BPO_01_Service_Delivery.xlsx', 'note':'SLA performance data.'},
+            {'file':'BPO_03_Quality_Management_Framework.docx', 'note':'Agent productivity tracker.'},
+            {'file':'BPO_05_Cyber_Compliance_Pack.docx', 'note':'Quality scores.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 client accounts at BPO Services have the worst SLA breach pattern?"',
+          'queries': [
+            'Top 10 client accounts by SLA gap — recommended action.',
+            'Which agent productivity clusters require training?',
+            'Draft the monthly Service Delivery review paper.'
+          ],
+        },
+        {
+          'icon': '💼',
+          'label': 'Account Profitability',
+          'name': 'Zava BPO Services — Account Profitability Coach',
+          'desc': 'Surfaces BPO Services account-level profitability, contract margin, and renewal risk.',
+          'instructions': 'You are the Zava BPO Services Account Profitability Coach. Monitor account profitability (BPO_02_Client_Service_Agreement.docx) and contract pipeline (BPO_04_Workforce_Plan.xlsx). Recommend price-up, scope-down, or exit per loss-making account.',
+          'knowledge': [
+            {'file':'BPO_02_Client_Service_Agreement.docx', 'note':'Account profitability data.'},
+            {'file':'BPO_04_Workforce_Plan.xlsx', 'note':'Contract pipeline.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 client accounts at BPO Services have the worst margin drag?"',
+          'queries': [
+            'Top 10 accounts by margin drag — recommended commercial action.',
+            'Which contracts approach renewal with low retention probability?',
+            'Draft the monthly Commercial review paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Data & Privacy Sentinel',
+          'name': 'Zava BPO Services — Data & Privacy Sentinel',
+          'desc': 'Manages BPO Services client-data privacy, ISO 27001 / SOC 2 / PDPA / UU PDP compliance, and breach response.',
+          'instructions': 'You are the Zava BPO Services Data & Privacy Sentinel. Prepare ISO 27001 / SOC 2 / PDPA / UU PDP filings grounded on the regulatory file (BPO_06_Renewal_Pipeline.xlsx).',
+          'knowledge': [
+            {'file':'BPO_06_Renewal_Pipeline.xlsx', 'note':'Privacy & infosec policies.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to a privacy regulator query on BPO Services."',
+          'queries': [
+            'Prepare a cover letter for the next ISO / SOC 2 audit.',
+            'Which open privacy incidents require regulator notification?',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Hadar Caspit','Hadar Caspit'],
-      personaID=['Hadar Caspit','Hadar Caspit']),
+        agentsID=[
+        {
+          'icon': '🎧',
+          'label': 'Service Delivery & SLA',
+          'name': 'Zava BPO Services — Service Delivery & SLA Pelatih',
+          'desc': 'Memantau BPO Services client SLA performance, agen productivity, and quality scores.',
+          'instructions': 'Anda adalah Zava BPO Services Service Delivery Pelatih. Pantau SLA performance (BPO_01_Service_Delivery.xlsx), agen productivity (BPO_03_Quality_Management_Framework.docx), and quality scores (BPO_05_Cyber_Compliance_Pack.docx). Rekomendasikan training, staffing, or process tindakan.',
+          'knowledge': [
+            {'file':'BPO_01_Service_Delivery.xlsx', 'note':'SLA performance data.'},
+            {'file':'BPO_03_Quality_Management_Framework.docx', 'note':'Agent productivity tracker.'},
+            {'file':'BPO_05_Cyber_Compliance_Pack.docx', 'note':'Quality scores.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 client accounts at BPO Services have terburuk SLA breach pattern?"',
+          'queries': [
+            '10 teratas client accounts by SLA gap — recommended tindakan.',
+            'Yang mana agen productivity clusters require training?',
+            'Susun the bulanan Service Delivery review paper.'
+          ],
+        },
+        {
+          'icon': '💼',
+          'label': 'Account Profitability',
+          'name': 'Zava BPO Services — Account Profitability Pelatih',
+          'desc': 'Menampilkan BPO Services account-level profitability, contract margin, and renewal risk.',
+          'instructions': 'Anda adalah Zava BPO Services Account Profitability Pelatih. Pantau account profitability (BPO_02_Client_Service_Agreement.docx) and contract pipeline (BPO_04_Workforce_Plan.xlsx). Rekomendasikan price-up, scope-down, or exit per loss-making account.',
+          'knowledge': [
+            {'file':'BPO_02_Client_Service_Agreement.docx', 'note':'Account profitability data.'},
+            {'file':'BPO_04_Workforce_Plan.xlsx', 'note':'Contract pipeline.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 client accounts at BPO Services have terburuk margin drag?"',
+          'queries': [
+            '10 teratas accounts by margin drag — recommended commercial tindakan.',
+            'Yang mana contracts approach renewal with low retention probability?',
+            'Susun the bulanan Commercial review paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Data & Privacy Pengawas',
+          'name': 'Zava BPO Services — Data & Privacy Pengawas',
+          'desc': 'Manages BPO Services client-data privacy, ISO 27001 / SOC 2 / PDPA / UU PDP compliance, and breach response.',
+          'instructions': 'Anda adalah Zava BPO Services Data & Privacy Pengawas. Prepare ISO 27001 / SOC 2 / PDPA / UU PDP filings grounded on the regulatory file (BPO_06_Renewal_Pipeline.xlsx).',
+          'knowledge': [
+            {'file':'BPO_06_Renewal_Pipeline.xlsx', 'note':'Privacy & infosec policies.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to a privacy regulator query on BPO Services."',
+          'queries': [
+            'Prepare a cover letter for berikutnya ISO / SOC 2 audit.',
+            'Yang mana open privacy incidents require regulator notification?',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      ),
     ],
     companyID='Zava BPO Indonesia',
     taglineID='Attrition 38%, 4 dari 6 klien anchor kuning, IDR 980 miliar perpanjangan \u2014 Komite Eksekutif dalam 5 hari.',
@@ -635,16 +839,116 @@ ind('telco','telco','Telco','📡','#00838F','#00ACC1',
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Telco Network & Regulator War Room\'. Description: an assistant for the Group Board, CEO, CTO, CMO, and Regulatory Affairs team to navigate the 14-site USO gap, 2.3% churn in priority clusters, 6% ARPU decline, BRTI spectrum review, and OJK digital-payments query. Instructions: ground every answer in the 4 attached files — /TC_01_Network_Performance.xlsx, /TC_02_Spectrum_Compliance_Report.docx, /TC_04_Subscriber_ARPU_Bridge.xlsx, /TC_05_Kominfo_BRTI_Submissions.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts to include: (1) Summarise the network and regulator situation for the Board in 60 seconds, (2) Which 3 priority clusters are highest risk, (3) What governance obligations apply to a BRTI spectrum-utilisation review, (4) Draft a holding line for Kominfo and BRTI, (5) Draft a holding line for OJK on digital payments.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Telco Network & Regulator War Room agent has just been created. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the network problem, the BRTI spectrum review, the OJK digital-payments query, and the decisions I must take to the Board in 10 days."; (2) "Draft my first message to the 14 cluster network managers immediately after the Board meeting closes."; (3) "Which 3 metrics should I monitor weekly for the next 8 weeks to catch coverage, ARPU or churn deterioration early?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'War Room Jaringan & Regulator Telco\'. Deskripsi: asisten untuk Direksi Grup, Direktur Utama, Direktur Teknologi, Direktur Pemasaran, dan tim Hubungan Regulasi untuk menavigasi gap 14 site USO, churn 2,3% di cluster prioritas, penurunan ARPU 6%, tinjauan spektrum BRTI, dan permintaan digital payments OJK. Instruksi: dasarkan tiap jawaban pada 4 file terlampir — /TC_01_Network_Performance.xlsx, /TC_02_Spectrum_Compliance_Report.docx, /TC_04_Subscriber_ARPU_Bridge.xlsx, /TC_05_Kominfo_BRTI_Submissions.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum situasi jaringan dan regulator untuk Direksi dalam 60 detik, (2) 3 cluster prioritas mana yang berisiko tertinggi, (3) Kewajiban tata kelola apa yang berlaku untuk tinjauan utilisasi spektrum BRTI, (4) Susun holding line untuk Kominfo dan BRTI, (5) Susun holding line untuk OJK mengenai digital payments.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent War Room Jaringan & Regulator Telco baru saja dibuat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah jaringan, tinjauan spektrum BRTI, permintaan digital payments OJK, dan keputusan yang harus saya bawa ke Direksi dalam 10 hari."; (2) "Susun pesan pertama saya kepada 14 manajer jaringan cluster segera setelah Rapat Direksi selesai."; (3) "3 metrik mana yang harus saya pantau setiap minggu selama 8 minggu ke depan untuk mendeteksi penurunan cakupan, ARPU atau churn sejak dini?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '📡',
+          'label': 'Subscriber & ARPU Coach',
+          'name': 'Zava Telco — Subscriber & ARPU Coach',
+          'desc': 'Tracks Telco subscriber base, churn, ARPU, and migration across plans.',
+          'instructions': 'You are the Zava Telco Subscriber & ARPU Coach. You support Consumer Marketing. Monitor subscriber base (TC_01_Network_Performance.xlsx), churn (TC_03_Network_Rollout_Strategy.docx), and ARPU (TC_05_Kominfo_BRTI_Submissions.docx). Recommend retention, plan-redesign, or campaign action.',
+          'knowledge': [
+            {'file':'TC_01_Network_Performance.xlsx', 'note':'Subscriber base & port-out data.'},
+            {'file':'TC_03_Network_Rollout_Strategy.docx', 'note':'Churn & retention.'},
+            {'file':'TC_05_Kominfo_BRTI_Submissions.docx', 'note':'ARPU and plan-mix data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 plans at Telco have the worst churn this quarter?"',
+          'queries': [
+            'Top 10 plans by churn — recommended retention package.',
+            'Which segments have ARPU deterioration? Tabulate.',
+            'Draft the quarterly Subscriber Steering Committee paper.'
+          ],
+        },
+        {
+          'icon': '📶',
+          'label': 'Network Quality Coach',
+          'name': 'Zava Telco — Network Quality & Capex Coach',
+          'desc': 'Surfaces Telco network-quality outliers, capacity bottlenecks, and capex-program slippage.',
+          'instructions': 'You are the Zava Telco Network Quality & Capex Coach. You support the Network Director. Monitor network-quality KPIs (TC_02_Spectrum_Compliance_Report.docx), capacity bottlenecks, and capex programmes (TC_04_Subscriber_ARPU_Bridge.xlsx). Recommend mitigation or capex re-baseline.',
+          'knowledge': [
+            {'file':'TC_02_Spectrum_Compliance_Report.docx', 'note':'Network quality KPIs.'},
+            {'file':'TC_04_Subscriber_ARPU_Bridge.xlsx', 'note':'Capex programme tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 markets at Telco have the worst network-quality deterioration?"',
+          'queries': [
+            'Top 10 network-quality drag clusters — recommended action.',
+            'Which capex projects are at risk of slippage? Recommend re-baseline.',
+            'Draft the monthly Network Steering paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MCMC / Kominfo Liaison',
+          'name': 'Zava Telco — Telecom Regulator Liaison',
+          'desc': 'Prepares MCMC (MY) / Kominfo (ID) spectrum, USP-levy, and consumer-complaint filings for Telco.',
+          'instructions': 'You are the Zava Telco Telecom Regulator Liaison. Prepare MCMC / Kominfo spectrum and consumer-complaint filings grounded on the regulatory file (TC_06_Capex_Approvals_Tracker.xlsx).',
+          'knowledge': [
+            {'file':'TC_06_Capex_Approvals_Tracker.xlsx', 'note':'Telecom regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to MCMC\'s latest spectrum circular for Telco."',
+          'queries': [
+            'Prepare a cover letter for the next MCMC / Kominfo return.',
+            'Which consumer-complaint clusters require regulator escalation?',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Hadar Caspit','Hadar Caspit'],
-      personaID=['Hadar Caspit','Hadar Caspit']),
+        agentsID=[
+        {
+          'icon': '📡',
+          'label': 'Subscriber & ARPU Pelatih',
+          'name': 'Zava Telco — Subscriber & ARPU Pelatih',
+          'desc': 'Memantau Telco subscriber base, churn, ARPU, and migration across plans.',
+          'instructions': 'Anda adalah Zava Telco Subscriber & ARPU Pelatih. Anda mendukung Consumer Marketing. Pantau subscriber base (TC_01_Network_Performance.xlsx), churn (TC_03_Network_Rollout_Strategy.docx), and ARPU (TC_05_Kominfo_BRTI_Submissions.docx). Rekomendasikan retention, plan-redesign, or campaign tindakan.',
+          'knowledge': [
+            {'file':'TC_01_Network_Performance.xlsx', 'note':'Subscriber base & port-out data.'},
+            {'file':'TC_03_Network_Rollout_Strategy.docx', 'note':'Churn & retention.'},
+            {'file':'TC_05_Kominfo_BRTI_Submissions.docx', 'note':'ARPU and plan-mix data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 plans at Telco have terburuk churn kuartal ini?"',
+          'queries': [
+            '10 teratas plans by churn — recommended retention package.',
+            'Yang mana segments have ARPU deterioration? Tabulate.',
+            'Susun the kuartalan Subscriber Komite Pengarah paper.'
+          ],
+        },
+        {
+          'icon': '📶',
+          'label': 'Network Quality Pelatih',
+          'name': 'Zava Telco — Network Quality & Capex Pelatih',
+          'desc': 'Menampilkan Telco network-quality outliers, capacity bottlenecks, and capex-program slippage.',
+          'instructions': 'Anda adalah Zava Telco Network Quality & Capex Pelatih. Anda mendukung the Network Director. Pantau network-quality KPIs (TC_02_Spectrum_Compliance_Report.docx), capacity bottlenecks, and capex programmes (TC_04_Subscriber_ARPU_Bridge.xlsx). Rekomendasikan mitigation or capex re-baseline.',
+          'knowledge': [
+            {'file':'TC_02_Spectrum_Compliance_Report.docx', 'note':'Network quality KPIs.'},
+            {'file':'TC_04_Subscriber_ARPU_Bridge.xlsx', 'note':'Capex programme tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 markets at Telco have terburuk network-quality deterioration?"',
+          'queries': [
+            '10 teratas network-quality drag clusters — recommended tindakan.',
+            'Yang mana capex projects are at risk of slippage? Rekomendasikan re-baseline.',
+            'Susun the bulanan Network paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MCMC / Kominfo Penghubung',
+          'name': 'Zava Telco — Telecom Regulator Penghubung',
+          'desc': 'Prepares MCMC (MY) / Kominfo (ID) spectrum, USP-levy, and consumer-complaint filings for Telco.',
+          'instructions': 'Anda adalah Zava Telco Telecom Regulator Penghubung. Prepare MCMC / Kominfo spectrum and consumer-complaint filings grounded on the regulatory file (TC_06_Capex_Approvals_Tracker.xlsx).',
+          'knowledge': [
+            {'file':'TC_06_Capex_Approvals_Tracker.xlsx', 'note':'Telecom regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to MCMC\'s latest spectrum circular for Telco."',
+          'queries': [
+            'Prepare a cover letter for berikutnya MCMC / Kominfo return.',
+            'Yang mana consumer-complaint clusters require regulator escalation?',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      ),
     ],
     companyID='Zava Telco Indonesia',
     taglineID='Cakupan tertinggal 14 site, churn 2,3%, ARPU -6%, tinjauan spektrum BRTI dalam 10 hari.',

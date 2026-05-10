@@ -177,16 +177,116 @@ ind('glc-investment','glc','GLC Investment Arm','🏛','#1A237E','#283593',
       persona=['Mod Admin','Hadar Caspit'],
       personaID=['Mod Admin','Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called AMNB Ministerial War Room. Description: an assistant for the CIO, Investment Committee, Strategic Investments, and Stewardship teams to navigate the FY2025 9.2 percent NAV drag, the 22 percent dividend miss, and the 14-day Ministerial briefing. Instructions: ground every answer in the 3 attached files — /GLC_01_Investment_Portfolio.xlsx, /GLC_02_Investment_Policy_Statement.docx, /GLC_05_Ministerial_Briefing_Pack.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Ministerial materiality. Tone: precise, Ministerial, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Fund should be consulted. Starter prompts to include: (1) Summarise the FY2025 9.2 percent NAV drag in 60 seconds, (2) Which 3 strategic holdings drove the drag and why, (3) What does the Investment Policy Statement require after a benchmark miss this size, (4) Draft a holding line for the Treasury on the dividend miss, (5) Draft a holding line for the Public Accounts Committee.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The AMNB Ministerial War Room agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence — (1) Give me the 60-second version of the FY2025 NAV drag, the 3 strategic holdings driving it, the top mandate-compliance issues, and the 5 decisions the CIO must take to the Minister in 14 days; (2) Draft my first message to the 9 strategic-holding Boards immediately after the Ministerial briefing closes; (3) Which mandate clauses are most at risk and which 3 metrics should the Investment Committee monitor monthly for the next 8 quarters. Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama AMNB Ministerial War Room. Deskripsi: asisten untuk Direktur Investasi, Komite Investasi, Investasi Strategis, dan tim Stewardship untuk menavigasi selisih NAV FY2025 9,2 persen, selisih dividen 22 persen, dan pengarahan Kementerian 14 hari. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /GLC_01_Investment_Portfolio.xlsx, /GLC_02_Investment_Policy_Statement.docx, /GLC_05_Ministerial_Briefing_Pack.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas Kementerian. Nada: presisi, Kementerian, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Dana yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum selisih NAV FY2025 9,2 persen dalam 60 detik, (2) 3 kepemilikan strategis mana yang menarik selisih dan mengapa, (3) Apa yang dipersyaratkan Pernyataan Kebijakan Investasi pasca selisih benchmark sebesar ini, (4) Susun holding line untuk Kas Negara terkait selisih dividen, (5) Susun holding line untuk Komisi VI DPR.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent AMNB Ministerial War Room baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan — (1) Berikan versi 60 detik dari selisih NAV FY2025, 3 kepemilikan strategis pendorong, isu kepatuhan mandat utama, dan 5 keputusan yang harus dibawa Direktur Investasi ke Menteri dalam 14 hari; (2) Susun pesan pertama saya kepada 9 Dewan Komisaris kepemilikan strategis segera setelah pengarahan Kementerian selesai; (3) Klausul mandat mana yang paling berisiko dan 3 metrik apa yang harus dipantau Komite Investasi tiap bulan selama 8 kuartal ke depan. Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '📈',
+          'label': 'Portfolio NAV Watch',
+          'name': 'Zava GLC Investment — Portfolio NAV Watch',
+          'desc': 'Tracks GLC Investment Arm portfolio NAV, division-IRR, and dividend yield by company.',
+          'instructions': 'You are the Zava GLC Investment Arm Portfolio NAV Watch. Monitor portfolio NAV (GLC_01_Investment_Portfolio.xlsx), IRR (GLC_03_Governance_Charter.docx), and dividend yield (GLC_05_Ministerial_Briefing_Pack.docx). Recommend rebalancing or capital-deployment action.',
+          'knowledge': [
+            {'file':'GLC_01_Investment_Portfolio.xlsx', 'note':'Portfolio NAV data.'},
+            {'file':'GLC_03_Governance_Charter.docx', 'note':'IRR tracker.'},
+            {'file':'GLC_05_Ministerial_Briefing_Pack.docx', 'note':'Dividend yield register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 holdings at GLC Investment Arm have the worst NAV deterioration?"',
+          'queries': [
+            'Top 10 holdings by NAV deterioration — recommended action.',
+            'Which holdings have IRR below hurdle? Recommend exit.',
+            'Draft the quarterly Investment Committee paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Investee Governance',
+          'name': 'Zava GLC Investment — Investee Governance Coach',
+          'desc': 'Surfaces GLC Investment Arm investee-board reports, governance gaps, and risk events.',
+          'instructions': 'You are the Zava GLC Investment Arm Investee Governance Coach. Monitor investee-board reports (GLC_02_Investment_Policy_Statement.docx), governance (GLC_04_Strategic_Holdings_Review.docx). Recommend board-level intervention.',
+          'knowledge': [
+            {'file':'GLC_02_Investment_Policy_Statement.docx', 'note':'Investee board reports.'},
+            {'file':'GLC_04_Strategic_Holdings_Review.docx', 'note':'Governance gap register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 investees at GLC Investment Arm have the worst governance gaps?"',
+          'queries': [
+            'Top 10 investees by governance gap — recommended intervention.',
+            'Which risk events require regulator notification?',
+            'Draft the quarterly Governance Steering paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'Sovereign Stakeholder',
+          'name': 'Zava GLC Investment — Sovereign Stakeholder Liaison',
+          'desc': 'Manages GLC Investment Arm stakeholder coordination with MOF / Ministry of Finance / Treasury.',
+          'instructions': 'You are the Zava GLC Investment Arm Sovereign Stakeholder Liaison. Prepare MoF / Treasury briefings grounded on the briefing archive (GLC_06_Peer_Benchmark_Sovereign_Investors.xlsx).',
+          'knowledge': [
+            {'file':'GLC_06_Peer_Benchmark_Sovereign_Investors.xlsx', 'note':'Sovereign-stakeholder briefing archive.'}
+          ],
+          'knowledgeNote': 'Test: "Draft talking points for the next Treasury committee briefing on GLC Investment Arm."',
+          'queries': [
+            'Build briefing pack for next sovereign-stakeholder meeting.',
+            'Which MoF queries require a holding line?',
+            'Draft the position paper for the next inter-ministerial committee.'
+          ],
+        }
       ],
-      persona=['Mod Admin','Sasha Ouellet'],
-      personaID=['Mod Admin','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '📈',
+          'label': 'Portfolio NAV Watch',
+          'name': 'Zava GLC Investment — Portfolio NAV Watch',
+          'desc': 'Memantau GLC Investment Arm portfolio NAV, division-IRR, and dividend yield by company.',
+          'instructions': 'Anda adalah Zava GLC Investment Arm Portfolio NAV Watch. Pantau portfolio NAV (GLC_01_Investment_Portfolio.xlsx), IRR (GLC_03_Governance_Charter.docx), and dividend yield (GLC_05_Ministerial_Briefing_Pack.docx). Rekomendasikan rebalancing or capital-deployment tindakan.',
+          'knowledge': [
+            {'file':'GLC_01_Investment_Portfolio.xlsx', 'note':'Portfolio NAV data.'},
+            {'file':'GLC_03_Governance_Charter.docx', 'note':'IRR tracker.'},
+            {'file':'GLC_05_Ministerial_Briefing_Pack.docx', 'note':'Dividend yield register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 holdings at GLC Investment Arm have terburuk NAV deterioration?"',
+          'queries': [
+            '10 teratas holdings by NAV deterioration — recommended tindakan.',
+            'Yang mana holdings have IRR below hurdle? Rekomendasikan exit.',
+            'Susun the kuartalan Investment Committee paper.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Investee Governance',
+          'name': 'Zava GLC Investment — Investee Governance Pelatih',
+          'desc': 'Menampilkan GLC Investment Arm investee-board reports, governance gaps, and risk events.',
+          'instructions': 'Anda adalah Zava GLC Investment Arm Investee Governance Pelatih. Pantau investee-board reports (GLC_02_Investment_Policy_Statement.docx), governance (GLC_04_Strategic_Holdings_Review.docx). Rekomendasikan board-level intervention.',
+          'knowledge': [
+            {'file':'GLC_02_Investment_Policy_Statement.docx', 'note':'Investee board reports.'},
+            {'file':'GLC_04_Strategic_Holdings_Review.docx', 'note':'Governance gap register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 investees at GLC Investment Arm have terburuk governance gaps?"',
+          'queries': [
+            '10 teratas investees by governance gap — recommended intervention.',
+            'Yang mana risk events require regulator notification?',
+            'Susun the kuartalan Governance paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'Sovereign Stakeholder',
+          'name': 'Zava GLC Investment — Sovereign Stakeholder Penghubung',
+          'desc': 'Manages GLC Investment Arm stakeholder coordination with MOF / Ministry of Finance / Treasury.',
+          'instructions': 'Anda adalah Zava GLC Investment Arm Sovereign Stakeholder Penghubung. Prepare MoF / Treasury briefings grounded on the briefing archive (GLC_06_Peer_Benchmark_Sovereign_Investors.xlsx).',
+          'knowledge': [
+            {'file':'GLC_06_Peer_Benchmark_Sovereign_Investors.xlsx', 'note':'Sovereign-stakeholder briefing archive.'}
+          ],
+          'knowledgeNote': 'Test: "Susun talking points for berikutnya Treasury committee briefing on GLC Investment Arm."',
+          'queries': [
+            'Bangun briefing pack for next sovereign-stakeholder meeting.',
+            'Yang mana MoF queries require a holding line?',
+            'Susun the position paper for berikutnya inter-ministerial committee.'
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Sasha Ouellet', 'Mod Admin'],
+        personaID=['Mod Admin', 'Sasha Ouellet', 'Mod Admin']
+      ),
     ],
     companyID='Zava Investment Indonesia',
     taglineID='NAV portofolio FY2025 tertinggal benchmark 9,2% — pengarahan Kementerian dalam 14 hari.',
@@ -406,16 +506,116 @@ ind('financial-regulator','reg','Financial Regulator','⚖️','#1B5E20','#2E7D3
       persona=['Mod Admin','Hadar Caspit'],
       personaID=['Mod Admin','Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called SKM Enforcement War Room. Description: an assistant for the Executive Director, Commissioners, Conduct & Authorisation, and Investigation teams to navigate the Titan Capital triangulated breach, the 11,200 affected retail accounts, and the 5-day Commission decision. Instructions: ground every answer in the 3 attached files — /REG_01_Supervisory_Dashboard.xlsx, /REG_02_Supervisory_Framework.docx, /REG_05_Market_Conduct_Review_Q4.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on supervisory materiality. Tone: precise, supervisory, never speculative, never punitive in language. If a question cannot be answered from the attached files, say so and suggest who in SKM should be consulted. Starter prompts to include: (1) Summarise the Titan Capital triangulated breach in 60 seconds, (2) What does the Supervisory Framework require after a breach of this nature, (3) Compare Revoke vs Suspend vs Remedial Direction for this case, (4) Draft a holding line for affected retail clients, (5) Draft a holding line for the Public Accounts Committee.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The SKM Enforcement War Room agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence — (1) Give me the 60-second version of the Titan Capital triangulated breach, the prudential exposure, the conduct exposure, and the 5 decisions the Commission must take in 5 days; (2) Draft my first message to the 38 broker-dealer licensees once the Commission decision is announced; (3) Which Supervisory Framework provisions are most at risk and which 3 indicators should the Executive Director monitor monthly across the broker-dealer population for the next 8 quarters. Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama OJK Enforcement War Room. Deskripsi: asisten untuk Direktur Eksekutif, Komisioner, Pengawasan Perilaku & Perizinan, dan tim Investigasi untuk menavigasi pelanggaran ter-triangulasi Titan Capital, 11.200 rekening ritel terdampak, dan keputusan Dewan Komisioner 5 hari. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /REG_01_Supervisory_Dashboard.xlsx, /REG_02_Supervisory_Framework.docx, /REG_05_Market_Conduct_Review_Q4.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan materialitas pengawasan. Nada: presisi, pengawasan, tidak pernah spekulatif, tidak pernah punitive dalam bahasa. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di OJK yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Rangkum pelanggaran ter-triangulasi Titan Capital dalam 60 detik, (2) Apa yang dipersyaratkan Kerangka Pengawasan pasca pelanggaran semacam ini, (3) Bandingkan Cabut vs Suspensi vs Perintah Remedial untuk kasus ini, (4) Susun holding line untuk nasabah ritel terdampak, (5) Susun holding line untuk Komisi XI DPR.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent OJK Enforcement War Room baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan — (1) Berikan versi 60 detik dari pelanggaran ter-triangulasi Titan Capital, eksposur prudensial, eksposur perilaku, dan 5 keputusan yang harus diambil Dewan Komisioner dalam 5 hari; (2) Susun pesan pertama saya kepada 38 perusahaan efek terdaftar setelah keputusan Dewan Komisioner diumumkan; (3) Ketentuan Kerangka Pengawasan mana yang paling berisiko dan 3 indikator apa yang harus dipantau Direktur Eksekutif tiap bulan di populasi perusahaan efek selama 8 kuartal ke depan. Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🔍',
+          'label': 'Supervised-Entity Watch',
+          'name': 'Zava Financial Regulator — Supervised-Entity Risk Watch',
+          'desc': 'Tracks Financial Regulator supervised-entity risk indicators, breach trends, and enforcement pipeline.',
+          'instructions': 'You are the Zava Financial Regulator Supervised-Entity Risk Watch. Monitor supervised-entity submissions (REG_01_Supervisory_Dashboard.xlsx), breach data (REG_03_Regulatory_Policy_Manual.docx), and enforcement pipeline (REG_05_Market_Conduct_Review_Q4.docx). Refuse to disclose entity names externally.',
+          'knowledge': [
+            {'file':'REG_01_Supervisory_Dashboard.xlsx', 'note':'Supervised-entity submissions.'},
+            {'file':'REG_03_Regulatory_Policy_Manual.docx', 'note':'Breach register.'},
+            {'file':'REG_05_Market_Conduct_Review_Q4.docx', 'note':'Enforcement pipeline.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 supervised entities at Financial Regulator have the worst breach trend?"',
+          'queries': [
+            'Top 10 supervised entities by breach trend — recommended supervisory action.',
+            'Which enforcement pipeline items need acceleration?',
+            'Draft the quarterly Supervisory Committee paper.'
+          ],
+        },
+        {
+          'icon': '📜',
+          'label': 'Policy & Circular',
+          'name': 'Zava Financial Regulator — Policy & Circular Drafting Agent',
+          'desc': 'Helps Financial Regulator draft circulars, exposure drafts, and consultation responses.',
+          'instructions': 'You are the Zava Financial Regulator Policy & Circular Drafting Agent. Help draft circulars and exposure drafts grounded on the policy archive (REG_02_Supervisory_Framework.docx) and consultation responses (REG_04_Licensee_File_TitanCapital.docx).',
+          'knowledge': [
+            {'file':'REG_02_Supervisory_Framework.docx', 'note':'Policy archive.'},
+            {'file':'REG_04_Licensee_File_TitanCapital.docx', 'note':'Consultation responses.'}
+          ],
+          'knowledgeNote': 'Test: "Draft an exposure-draft circular on AI use in financial services for Financial Regulator."',
+          'queries': [
+            'Draft an exposure-draft circular on a specified topic.',
+            'Summarise consultation responses on an existing draft.',
+            'Draft the FAQ to accompany the next circular.'
+          ],
+        },
+        {
+          'icon': '🌍',
+          'label': 'International Engagement',
+          'name': 'Zava Financial Regulator — International Engagement Agent',
+          'desc': 'Prepares Financial Regulator engagement with FATF, BCBS, IAIS, IOSCO, and ASEAN forums.',
+          'instructions': 'You are the Zava Financial Regulator International Engagement Agent. Prepare engagement notes for FATF, BCBS, IAIS, IOSCO, and ASEAN forums grounded on the engagement archive (REG_06_Peer_Benchmark_MAS_BSP_OJK.xlsx).',
+          'knowledge': [
+            {'file':'REG_06_Peer_Benchmark_MAS_BSP_OJK.xlsx', 'note':'International engagement archive.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the position paper for the next ASEAN Senior Officials Meeting at Financial Regulator."',
+          'queries': [
+            'Build briefing pack for next FATF / BCBS / IAIS / IOSCO meeting.',
+            'Which ASEAN deliverables remain open? Tabulate.',
+            'Draft the position paper for the next standard-setting forum.'
+          ],
+        }
       ],
-      persona=['Mod Admin','Sasha Ouellet'],
-      personaID=['Mod Admin','Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '🔍',
+          'label': 'Supervised-Entity Watch',
+          'name': 'Zava Financial Regulator — Supervised-Entity Risk Watch',
+          'desc': 'Memantau Financial Regulator supervised-entity risk indicators, breach trends, and enforcement pipeline.',
+          'instructions': 'Anda adalah Zava Financial Regulator Supervised-Entity Risk Watch. Pantau supervised-entity submissions (REG_01_Supervisory_Dashboard.xlsx), breach data (REG_03_Regulatory_Policy_Manual.docx), and enforcement pipeline (REG_05_Market_Conduct_Review_Q4.docx). Tolak to disclose entity names externally.',
+          'knowledge': [
+            {'file':'REG_01_Supervisory_Dashboard.xlsx', 'note':'Supervised-entity submissions.'},
+            {'file':'REG_03_Regulatory_Policy_Manual.docx', 'note':'Breach register.'},
+            {'file':'REG_05_Market_Conduct_Review_Q4.docx', 'note':'Enforcement pipeline.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 supervised entities at Financial Regulator have terburuk breach trend?"',
+          'queries': [
+            '10 teratas supervised entities by breach trend — recommended supervisory tindakan.',
+            'Yang mana enforcement pipeline items need acceleration?',
+            'Susun the kuartalan Supervisory Committee paper.'
+          ],
+        },
+        {
+          'icon': '📜',
+          'label': 'Policy & Circular',
+          'name': 'Zava Financial Regulator — Policy & Circular Drafting Agent',
+          'desc': 'Helps Financial Regulator susun circulars, exposure drafts, and consultation responses.',
+          'instructions': 'Anda adalah Zava Financial Regulator Policy & Circular Drafting Agent. Help susun circulars and exposure drafts grounded on the policy archive (REG_02_Supervisory_Framework.docx) and consultation responses (REG_04_Licensee_File_TitanCapital.docx).',
+          'knowledge': [
+            {'file':'REG_02_Supervisory_Framework.docx', 'note':'Policy archive.'},
+            {'file':'REG_04_Licensee_File_TitanCapital.docx', 'note':'Consultation responses.'}
+          ],
+          'knowledgeNote': 'Test: "Susun an exposure-susun circular on AI use in financial services for Financial Regulator."',
+          'queries': [
+            'Susun an exposure-susun circular on a specified topic.',
+            'Summarise consultation responses on an existing draft.',
+            'Susun the FAQ to accompany berikutnya circular.'
+          ],
+        },
+        {
+          'icon': '🌍',
+          'label': 'International Engagement',
+          'name': 'Zava Financial Regulator — International Engagement Agent',
+          'desc': 'Prepares Financial Regulator engagement with FATF, BCBS, IAIS, IOSCO, and ASEAN forums.',
+          'instructions': 'Anda adalah Zava Financial Regulator International Engagement Agent. Prepare engagement notes for FATF, BCBS, IAIS, IOSCO, and ASEAN forums grounded on the engagement archive (REG_06_Peer_Benchmark_MAS_BSP_OJK.xlsx).',
+          'knowledge': [
+            {'file':'REG_06_Peer_Benchmark_MAS_BSP_OJK.xlsx', 'note':'International engagement archive.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the position paper for berikutnya ASEAN Senior Officials Meeting at Financial Regulator."',
+          'queries': [
+            'Bangun briefing pack for next FATF / BCBS / IAIS / IOSCO meeting.',
+            'Yang mana ASEAN deliverables remain open? Tabulate.',
+            'Susun the position paper for berikutnya standard-setting forum.'
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Sasha Ouellet', 'Mod Admin'],
+        personaID=['Mod Admin', 'Sasha Ouellet', 'Mod Admin']
+      ),
     ],
     companyID='Zava Financial Regulator Indonesia',
     taglineID='Pelanggaran perusahaan efek Tier-2 terungkap — keputusan penegakan pengawasan dalam 5 hari.',

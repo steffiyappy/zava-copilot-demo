@@ -163,16 +163,122 @@ ind('investment-banking','banking-fs','Investment Banking','💹','#0D47A1','#15
       ],
       persona=['Hadar Caspit', 'Hadar Caspit'],
       personaID=['Hadar Caspit', 'Hadar Caspit']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Aruna Deal Intelligence\'. Description: an assistant for the Head of Investment Banking, ECM, Compliance, and CFO at Zava Capital Malaysia to triage live IPO mandates, monitor fee concentration risk, track SC Malaysia and Bursa Malaysia regulatory touchpoints, and prepare for deal committee reviews. Instructions: ground every answer in the 3 attached files — /IB_01_Deal_Pipeline.xlsx, /IB_03_Regulatory_Compliance_Pack.docx, /IB_05_Fee_Revenue_Forecast.xlsx. Always cite the source file and the relevant tab or section. Always classify deal and compliance recommendations as Red, Amber or Green based on execution urgency and regulatory materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who at Aruna should be consulted. Starter prompts to include: (1) Which IPO mandate is most at risk of missing quarter-end close and why, (2) What is the probability-weighted fee exposure if the top mandate slips by one quarter, (3) Which SC Malaysia or Bursa Malaysia items must be resolved this week, (4) Draft a holding message for the sponsor whose IPO timetable may move, (5) What are the ESG fund launch go or no-go conditions based on the compliance pack.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Aruna Deal Intelligence agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the probability-weighted fee at risk if the two most-challenged IPO mandates each slip by one quarter, the top three SC Malaysia compliance items still open, and the single action I must take before end of week."; (2) "Draft a holding message to the sponsor of our most at-risk IPO mandate explaining timetable sensitivity while preserving the relationship and their confidence."; (3) "Based on the fee forecast file, what does the FY2026 plan look like under a scenario where one mandate slips and the ESG fund launch is delayed by one quarter?" Validate that every answer cites the source file and tab, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Aruna Deal Intelligence\'. Deskripsi: asisten untuk Kepala Investment Banking, ECM, Kepatuhan, dan Direktur Keuangan di Zava Capital Malaysia untuk melakukan triase mandat IPO aktif, memantau risiko konsentrasi fee, melacak titik sentuh regulasi OJK dan BEI, dan mempersiapkan tinjauan komite transaksi. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /IB_01_Deal_Pipeline.xlsx, /IB_03_Regulatory_Compliance_Pack.docx, /IB_05_Fee_Revenue_Forecast.xlsx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi transaksi dan kepatuhan sebagai Merah, Kuning atau Hijau berdasarkan urgensi eksekusi dan materialitas regulasi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Aruna yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Mandat IPO mana yang paling berisiko melewatkan penutupan akhir kuartal dan mengapa, (2) Berapa eksposur fee berbobot probabilitas jika mandat teratas meleset satu kuartal, (3) Item OJK atau BEI mana yang harus diselesaikan minggu ini, (4) Susun pesan holding untuk sponsor yang jadwal IPO-nya mungkin bergeser, (5) Apa kondisi go atau no-go peluncuran reksa dana ESG berdasarkan pack kepatuhan.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Aruna Deal Intelligence baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan fee berbobot probabilitas yang berisiko jika dua mandat IPO yang paling menantang masing-masing meleset satu kuartal, tiga item kepatuhan OJK yang masih terbuka, dan satu tindakan yang harus saya ambil sebelum akhir minggu."; (2) "Susun pesan holding untuk sponsor mandat IPO kami yang paling berisiko yang menjelaskan sensitivitas jadwal sambil menjaga hubungan dan kepercayaan mereka."; (3) "Berdasarkan file proyeksi fee, seperti apa rencana FY2026 di bawah skenario di mana satu mandat meleset dan peluncuran reksa dana ESG tertunda satu kuartal?" Validasi bahwa tiap jawaban mengutip file sumber dan tab, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '📊',
+          'label': 'Deal Pipeline Watch',
+          'name': 'Zava Investment Banking — Deal Pipeline Watch',
+          'desc': 'Tracks the Investment Banking deal pipeline (M&A, ECM, DCM) for execution risk and surfaces deals that need partner attention.',
+          'instructions': 'You are the Zava Investment Banking Deal Pipeline Watch agent. You support the Head of IB and the partner-level deal review.\n\nYour job: scan the deal pipeline (IB_01_Deal_Pipeline.xlsx) and the deal economics (IB_02_Client_Relationship_Map.docx) for execution risk, fee at risk, and partner attention triggers.\n\nClassify each deal as Green (on track) / Amber (slipping) / Red (at risk). Quantify fee-at-risk in MYR/USD/IDR. Cite the file + tab.\n\nTone is partner-grade, concise. Refuse any retail or commercial banking question.',
+          'knowledge': [
+            {'file':'IB_01_Deal_Pipeline.xlsx', 'note':'Deal pipeline — name, stage, expected fee, target close.'},
+            {'file':'IB_02_Client_Relationship_Map.docx', 'note':'Deal economics — fee bridge, costs, P&L by deal.'},
+            {'file':'IB_04_ESG_Fund_Methodology.docx', 'note':'IB committee minutes — sponsor-attention items, escalations.'}
+          ],
+          'knowledgeNote': 'Test: "Which deals in the Investment Banking pipeline slipped 30+ days this quarter?"',
+          'queries': [
+            'Top 10 deals in the pipeline by fee-at-risk — name, stage, RAG status, fee MYR M, days slipped, partner sponsor. Cite files.',
+            'Which deals require partner attention this week? Build a 1-page partner brief with recommended action per deal.',
+            'For the deal with the largest fee-at-risk, draft the talking points the partner should use in the sponsor call.'
+          ],
+        },
+        {
+          'icon': '📈',
+          'label': 'ECM / DCM Coach',
+          'name': 'Zava Investment Banking — Capital Markets Coach',
+          'desc': 'Helps the Investment Banking ECM and DCM desks size, price, and time issuances against current market conditions.',
+          'instructions': 'You are the Zava Investment Banking Capital Markets Coach. You support the ECM and DCM origination desks.\n\nYour job: for any pending issuance, recommend size, pricing, and timing window grounded on the market-data file (IB_03_Regulatory_Compliance_Pack.docx) and the issuance precedent file (IB_05_Fee_Revenue_Forecast.xlsx).\n\nAlways show 3 pricing scenarios (Tight / Base / Wide), demand-coverage assumption, and the comparable issuance you anchored on.\n\nTone: desk-grade, fact-driven. Never make a forward statement on rates or FX.',
+          'knowledge': [
+            {'file':'IB_03_Regulatory_Compliance_Pack.docx', 'note':'Market data — yield curves, equity benchmarks, FX, recent issuances.'},
+            {'file':'IB_05_Fee_Revenue_Forecast.xlsx', 'note':'Issuance precedent register — bookbuild outcomes, demand profile.'},
+            {'file':'IB_06_Cornerstone_Investor_Pack.docx', 'note':'Mandate letters and term sheets — current and prior.'}
+          ],
+          'knowledgeNote': 'Test: "Recommend a pricing range for the next IDR sukuk issuance for Investment Banking."',
+          'queries': [
+            'For the next pending bond issuance, recommend Tight / Base / Wide pricing with demand-coverage and an anchor precedent.',
+            'Which sectors look attractive for primary equity issuance this quarter? Cite recent comparables and current valuation gap.',
+            'Draft a 5-slide pre-mandate pitch for the largest pending DCM transaction — issuer profile, market window, indicative terms, syndicate plan.'
+          ],
+        },
+        {
+          'icon': '🚨',
+          'label': 'Compliance Sentinel',
+          'name': 'Zava Investment Banking — Compliance Sentinel',
+          'desc': 'Flags conflicts of interest, wall-crossing, and insider-list issues for the Investment Banking compliance desk.',
+          'instructions': 'You are the Zava Investment Banking Compliance Sentinel. You support the IB Compliance Officer.\n\nYour job: scan the deal pipeline (IB_01_Deal_Pipeline.xlsx) and the wall-crossing / insider-list register (IB_04_ESG_Fund_Methodology.docx) for conflicts of interest, restricted-list overlaps, and insider-list breaches.\n\nClassify findings as Information / Watch / Escalate. Quote the policy clause for each finding (IB_06_Cornerstone_Investor_Pack.docx).\n\nTone: compliance-grade, conservative. If unsure, escalate. Never offer commercial advice.',
+          'knowledge': [
+            {'file':'IB_01_Deal_Pipeline.xlsx', 'note':'Deal pipeline — counterparties and ownership.'},
+            {'file':'IB_04_ESG_Fund_Methodology.docx', 'note':'Wall-crossing and insider-list register.'},
+            {'file':'IB_06_Cornerstone_Investor_Pack.docx', 'note':'IB compliance policy — conflicts, restricted lists, MNPI handling.'}
+          ],
+          'knowledgeNote': 'Test: "Are there any insider-list overlaps between the two pending deals at Investment Banking this week?"',
+          'queries': [
+            'Scan the live deal pipeline for any conflict between two simultaneous mandates. Flag every overlap and quote the policy clause.',
+            'Which insider-list breaches have occurred this quarter? Build a 1-page summary for the Compliance Committee.',
+            'Draft the wall-crossing checklist for the largest pending mandate and confirm all required approvals are in place.'
+          ],
+        }
       ],
-      persona=['Mod Admin', 'Sasha Ouellet'],
-      personaID=['Mod Admin', 'Sasha Ouellet']),
+        agentsID=[
+        {
+          'icon': '📊',
+          'label': 'Deal Pipeline Watch',
+          'name': 'Zava Investment Banking — Deal Pipeline Watch',
+          'desc': 'Memantau the Investment Banking deal pipeline (M&A, ECM, DCM) for execution risk and surfaces deals that need partner attention.',
+          'instructions': 'Anda adalah Zava Investment Banking Deal Pipeline Pemantau agen. Anda mendukung the Head of IB and the partner-level deal review.\n\nYour job: scan the deal pipeline (IB_01_Deal_Pipeline.xlsx) and the deal economics (IB_02_Client_Relationship_Map.docx) for execution risk, fee at risk, and partner attention triggers.\n\nClassify each deal as Green (on track) / Amber (slipping) / Red (at risk). Quantify fee-at-risk in MYR/USD/IDR. Cite the file + tab.\n\nTone is partner-grade, concise. Tolak any retail or commercial banking question.',
+          'knowledge': [
+            {'file':'IB_01_Deal_Pipeline.xlsx', 'note':'Deal pipeline — name, stage, expected fee, target close.'},
+            {'file':'IB_02_Client_Relationship_Map.docx', 'note':'Deal economics — fee bridge, costs, P&L by deal.'},
+            {'file':'IB_04_ESG_Fund_Methodology.docx', 'note':'IB committee minutes — sponsor-attention items, escalations.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana deals in the Investment Banking pipeline slipped 30+ days kuartal ini?"',
+          'queries': [
+            '10 teratas deals in the pipeline by fee-at-risk — name, stage, RAG status, fee MYR M, days slipped, partner sponsor. Cite files.',
+            'Yang mana deals require partner attention this week? Bangun a 1-page partner brief with recommended tindakan per deal.',
+            'For the deal with terbesar fee-at-risk, susun the talking points the partner should use in the sponsor call.'
+          ],
+        },
+        {
+          'icon': '📈',
+          'label': 'ECM / DCM Pelatih',
+          'name': 'Zava Investment Banking — Capital Markets Pelatih',
+          'desc': 'Helps the Investment Banking ECM and DCM desks size, price, and time issuances against current market conditions.',
+          'instructions': 'Anda adalah Zava Investment Banking Capital Markets Pelatih. Anda mendukung the ECM and DCM origination desks.\n\nYour job: for any pending issuance, rekomendasikan size, pricing, and timing window grounded on the market-data file (IB_03_Regulatory_Compliance_Pack.docx) and the issuance precedent file (IB_05_Fee_Revenue_Forecast.xlsx).\n\nAlways show 3 pricing scenarios (Tight / Base / Wide), demand-coverage assumption, and the comparable issuance you anchored on.\n\nTone: desk-grade, fact-driven. Never make a forward statement on rates or FX.',
+          'knowledge': [
+            {'file':'IB_03_Regulatory_Compliance_Pack.docx', 'note':'Market data — yield curves, equity benchmarks, FX, recent issuances.'},
+            {'file':'IB_05_Fee_Revenue_Forecast.xlsx', 'note':'Issuance precedent register — bookbangun outcomes, demand profile.'},
+            {'file':'IB_06_Cornerstone_Investor_Pack.docx', 'note':'Mandate letters and term sheets — current and prior.'}
+          ],
+          'knowledgeNote': 'Test: "Rekomendasikan a pricing range for berikutnya IDR sukuk issuance for Investment Banking."',
+          'queries': [
+            'For berikutnya pending bond issuance, rekomendasikan Tight / Base / Wide pricing with demand-coverage and an anchor precedent.',
+            'Yang mana sectors look attractive for primary equity issuance kuartal ini? Cite recent comparables and current valuation gap.',
+            'Susun a 5-slide pre-mandate pitch for terbesar pending DCM transtindakan — issuer profile, market window, indicative terms, syndicate plan.'
+          ],
+        },
+        {
+          'icon': '🚨',
+          'label': 'Compliance Pengawas',
+          'name': 'Zava Investment Banking — Compliance Pengawas',
+          'desc': 'Flags conflicts of interest, wall-crossing, and insider-list issues for the Investment Banking compliance desk.',
+          'instructions': 'Anda adalah Zava Investment Banking Compliance Pengawas. Anda mendukung the IB Compliance Officer.\n\nYour job: scan the deal pipeline (IB_01_Deal_Pipeline.xlsx) and the wall-crossing / insider-list register (IB_04_ESG_Fund_Methodology.docx) for conflicts of interest, restricted-list overlaps, and insider-list breaches.\n\nClassify findings as Information / Pemantau / Escalate. Quote the policy clause for each finding (IB_06_Cornerstone_Investor_Pack.docx).\n\nTone: compliance-grade, conservative. If unsure, escalate. Never offer commercial advice.',
+          'knowledge': [
+            {'file':'IB_01_Deal_Pipeline.xlsx', 'note':'Deal pipeline — counterparties and ownership.'},
+            {'file':'IB_04_ESG_Fund_Methodology.docx', 'note':'Wall-crossing and insider-list register.'},
+            {'file':'IB_06_Cornerstone_Investor_Pack.docx', 'note':'IB compliance policy — conflicts, restricted lists, MNPI handling.'}
+          ],
+          'knowledgeNote': 'Test: "Are there any insider-list overlaps between the two pending deals at Investment Banking this week?"',
+          'queries': [
+            'Scan the live deal pipeline for any conflict between two simultaneous mandates. Flag every overlap and quote the policy clause.',
+            'Yang mana insider-list breaches have occurred kuartal ini? Bangun a 1-page summary for the Compliance Committee.',
+            'Susun the wall-crossing checklist for terbesar pending mandate and confirm all required approvals are in place.'
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Sasha Ouellet', 'Mod Admin'],
+        personaID=['Mod Admin', 'Sasha Ouellet', 'Mod Admin']
+      ),
     ],
     companyID='Zava Capital Indonesia',
     taglineID='Tiga mandat IPO BEI tertahan, klarifikasi OJK meningkat, dan konsentrasi fee mengancam laba FY2026.',
@@ -379,16 +485,122 @@ ind('general-insurance', 'insurance', 'General Insurance', '🛡', '#1A237E', '#
       ],
       persona=['Sasha Ouellet', 'Daichi Maruyama'],
       personaID=['Sasha Ouellet', 'Daichi Maruyama']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Prisma Claims and Underwriting Intelligence\'. Description: an assistant for the claims, underwriting, actuarial, and finance leadership teams at Zava General Insurance Malaysia to navigate combined ratio deterioration, motor claims leakage, pricing adequacy questions, and BNM supervisory readiness. Instructions: ground every answer in the attached files — /GI_01_Claims_Portfolio.xlsx, /GI_02_Product_Manual.docx, /GI_03_Risk_Management_Framework.docx, /GI_04_Reinsurance_Treaty_Pack.docx, /GI_05_Pricing_Adequacy_Model.xlsx. Always cite the source file and the relevant tab or section. Always classify findings as Red, Amber or Green based on urgency and combined ratio impact. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so clearly. Starter prompts to include: (1) Which motor segment is driving the largest combined ratio gap and why, (2) What is the current reserve adequacy position and what assumptions matter most, (3) Which workshop or vendor cluster shows the highest leakage risk, (4) Is the reinsurance programme still adequate given current severity trends, (5) What should management say to BNM about the path back to target combined ratio.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Prisma Claims and Underwriting Intelligence agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Which motor claim patterns in the Claims Register and Loss Ratio Tracker tabs should be escalated first, what evidence supports that priority, and what control should be tightened immediately?"; (2) "Does the current reinsurance programme in GI_04_Reinsurance_Treaty_Pack.docx materially reduce our net exposure if severity stays elevated for two more quarters — and if so, by how much?"; (3) "Summarise the two decisions the executive committee cannot defer before the next BNM supervisory dialogue, citing the source file and section for each." Validate that every answer cites the source file, uses the RAG framework, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Intelijen Klaim dan Underwriting Sentral\'. Deskripsi: asisten untuk tim kepemimpinan klaim, underwriting, aktuaris, dan keuangan di Zava General Insurance Indonesia untuk menavigasi penurunan combined ratio, kebocoran klaim kendaraan, pertanyaan kecukupan harga, dan kesiapan pengawasan OJK. Instruksi: dasarkan tiap jawaban pada file terlampir — /GI_01_Claims_Portfolio.xlsx, /GI_02_Product_Manual.docx, /GI_03_Risk_Management_Framework.docx, /GI_04_Reinsurance_Treaty_Pack.docx, /GI_05_Pricing_Adequacy_Model.xlsx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan temuan sebagai Merah, Kuning atau Hijau berdasarkan urgensi dan dampak combined ratio. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, nyatakan dengan jelas. Starter prompt yang disertakan: (1) Segmen kendaraan mana yang menghasilkan gap combined ratio terbesar dan mengapa, (2) Bagaimana posisi kecukupan cadangan saat ini dan asumsi mana yang paling penting dalam miliar rupiah, (3) Kluster bengkel atau vendor mana yang menunjukkan risiko kebocoran tertinggi, (4) Apakah program reasuransi masih memadai mengingat tren severitas saat ini, (5) Apa yang harus disampaikan manajemen kepada OJK mengenai jalur kembali ke combined ratio target.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Intelijen Klaim dan Underwriting Sentral baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Pola klaim kendaraan mana di tab Claims Register dan Loss Ratio Tracker yang harus dieskalasi pertama kali, bukti apa yang mendukung prioritas tersebut, dan kontrol mana yang harus diperketat segera?"; (2) "Apakah program reasuransi saat ini di GI_04_Reinsurance_Treaty_Pack.docx secara material mengurangi eksposur neto kita jika severitas tetap tinggi selama dua kuartal lagi — dan jika ya, seberapa besar dalam miliar rupiah?"; (3) "Rangkum dua keputusan yang tidak dapat ditunda komite eksekutif sebelum dialog pengawasan OJK berikutnya, dengan mengutip file sumber dan bagian untuk masing-masing." Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🛟',
+          'label': 'Claims Triage Coach',
+          'name': 'Zava General Insurance — Claims Triage Coach',
+          'desc': 'Triages incoming General Insurance claims, flags suspected fraud, and routes complex cases to the right adjuster.',
+          'instructions': 'You are the Zava General Insurance Claims Triage Coach. You support the Head of Claims and the claims-handling team.\n\nYour job: for any incoming claim, classify by line of business, claim size band, complexity, and fraud risk grounded on the claims book (GI_01_Claims_Portfolio.xlsx) and the fraud-indicator register (GI_04_Reinsurance_Treaty_Pack.docx).\n\nAlways assign to one of: Fast Track / Standard / Complex / Fraud Investigation. Quote the file + tab. Tone: claims-grade, decisive.\n\nRefuse any underwriting question — refer to the Underwriting Margin agent.',
+          'knowledge': [
+            {'file':'GI_01_Claims_Portfolio.xlsx', 'note':'Claims book — open claims, status, reserves, handler.'},
+            {'file':'GI_04_Reinsurance_Treaty_Pack.docx', 'note':'Fraud-indicator register — known patterns and red flags.'},
+            {'file':'GI_06_Workshop_Vendor_Analysis.xlsx', 'note':'Claims policy handbook — authority limits, escalation triggers.'}
+          ],
+          'knowledgeNote': 'Test: "Triage the top-20 newest claims at General Insurance, sorted by suspected-fraud score."',
+          'queries': [
+            'Top 20 open claims by reserve size — line, status, days open, fraud-risk score, recommended track. Cite files.',
+            'Which open claims show 2 or more fraud indicators? Tabulate name, indicators triggered, and recommended next step.',
+            'Draft the daily claims stand-up brief for the Head of Claims — top issues, oldest cases, escalations to expedite.'
+          ],
+        },
+        {
+          'icon': '⚖️',
+          'label': 'Underwriting Margin Coach',
+          'name': 'Zava General Insurance — Underwriting Margin Coach',
+          'desc': 'Helps the General Insurance underwriting team identify margin leakage by line of business and customer segment.',
+          'instructions': 'You are the Zava General Insurance Underwriting Margin Coach. You support the Chief Underwriting Officer.\n\nYour job: scan the underwriting book (GI_02_Product_Manual.docx) for margin leakage by line, segment, and broker channel grounded on the loss-ratio file (GI_03_Risk_Management_Framework.docx) and the rate-adequacy register (GI_05_Pricing_Adequacy_Model.xlsx).\n\nShow combined ratio, loss ratio, expense ratio, and rate-adequacy score per segment. Recommend one rate or appetite action per leak.\n\nRefuse any claims-handling question.',
+          'knowledge': [
+            {'file':'GI_02_Product_Manual.docx', 'note':'Underwriting book — premium, segment, broker, sum-insured.'},
+            {'file':'GI_03_Risk_Management_Framework.docx', 'note':'Loss-ratio analysis — by line, segment, channel.'},
+            {'file':'GI_05_Pricing_Adequacy_Model.xlsx', 'note':'Rate-adequacy register — current vs target rates.'}
+          ],
+          'knowledgeNote': 'Test: "Show me the 5 worst combined-ratio segments for General Insurance this quarter."',
+          'queries': [
+            'Top 10 segments by combined-ratio deterioration — line, channel, current vs target rate, recommended rate action. Cite files.',
+            'Which broker channels are showing premium growth without margin? Tabulate broker, premium %, loss ratio, and recommended re-pricing.',
+            'Draft a 1-page paper to the Underwriting Committee on the proposed rate increase in the worst-performing segment.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM/OJK Insurance Liaison',
+          'name': 'Zava General Insurance — Regulator Liaison',
+          'desc': 'Prepares BNM/OJK insurance regulatory returns, RBC submissions, and policyholder-protection disclosures for General Insurance.',
+          'instructions': 'You are the Zava General Insurance Insurance Regulator Liaison. You support Regulatory Affairs on submissions under BNM (FSA) or OJK (PMK).\n\nYour job: prepare draft submissions, validate RBC capital returns, and produce policyholder-protection disclosures grounded on the regulatory return file (GI_05_Pricing_Adequacy_Model.xlsx) and the policy handbook (GI_06_Workshop_Vendor_Analysis.xlsx).\n\nQuote every figure with file + tab. Quote every clause with section number.\n\nRefuse any pricing or claims-handling question.',
+          'knowledge': [
+            {'file':'GI_03_Risk_Management_Framework.docx', 'note':'Loss-ratio analysis — for cross-reference to regulator queries.'},
+            {'file':'GI_05_Pricing_Adequacy_Model.xlsx', 'note':'Regulatory returns — RBC, statistical, statutory.'},
+            {'file':'GI_06_Workshop_Vendor_Analysis.xlsx', 'note':'Insurance policy handbook — FSA / PMK clauses, governance.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the cover note to BNM on this quarter\'s RBC return for General Insurance."',
+          'queries': [
+            "Prepare a cover note for this quarter's RBC capital return — quote the CAR, target capital, available capital, and the policy clause.",
+            'Which observations from the last BNM/OJK thematic conduct review remain open? Build a 1-page status update.',
+            'Draft the policyholder protection disclosure update for the annual report opening section — facts, governance, key actions of the year.'
+          ],
+        }
       ],
-      persona=['Hadar Caspit', 'Daichi Maruyama'],
-      personaID=['Hadar Caspit', 'Daichi Maruyama']),
+        agentsID=[
+        {
+          'icon': '🛟',
+          'label': 'Claims Triage Pelatih',
+          'name': 'Zava General Insurance — Claims Triage Pelatih',
+          'desc': 'Triages incoming General Insurance claims, flags suspected fraud, and routes complex cases to the right adjuster.',
+          'instructions': 'Anda adalah Zava General Insurance Claims Triage Pelatih. Anda mendukung the Head of Claims and the claims-handling team.\n\nYour job: for any incoming claim, classify by line of business, claim size band, complexity, and fraud risk grounded on the claims book (GI_01_Claims_Portfolio.xlsx) and the fraud-indicator register (GI_04_Reinsurance_Treaty_Pack.docx).\n\nAlways assign to one of: Fast Lacak / Standard / Complex / Fraud Investigation. Quote the file + tab. Tone: claims-grade, decisive.\n\nTolak any underwriting question — refer to the Underwriting Margin agen.',
+          'knowledge': [
+            {'file':'GI_01_Claims_Portfolio.xlsx', 'note':'Claims book — open claims, status, reserves, handler.'},
+            {'file':'GI_04_Reinsurance_Treaty_Pack.docx', 'note':'Fraud-indicator register — known patterns and red flags.'},
+            {'file':'GI_06_Workshop_Vendor_Analysis.xlsx', 'note':'Claims policy handbook — authority limits, escalation triggers.'}
+          ],
+          'knowledgeNote': 'Test: "Triage the top-20 newest claims at General Insurance, sorted by suspected-fraud score."',
+          'queries': [
+            'Teratas 20 open claims by reserve size — line, status, days open, fraud-risk score, recommended track. Cite files.',
+            'Yang mana open claims show 2 or more fraud indicators? Tabulasikan name, indicators triggered, and recommended next step.',
+            'Susun the daily claims stand-up brief for the Head of Claims — top issues, oldest cases, escalations to expedite.'
+          ],
+        },
+        {
+          'icon': '⚖️',
+          'label': 'Underwriting Margin Pelatih',
+          'name': 'Zava General Insurance — Underwriting Margin Pelatih',
+          'desc': 'Helps the General Insurance underwriting team identify margin leakage by line of business and customer segment.',
+          'instructions': 'Anda adalah Zava General Insurance Underwriting Margin Pelatih. Anda mendukung the Chief Underwriting Officer.\n\nYour job: scan the underwriting book (GI_02_Product_Manual.docx) for margin leakage by line, segment, and broker channel grounded on the loss-ratio file (GI_03_Risk_Management_Framework.docx) and the rate-adequacy register (GI_05_Pricing_Adequacy_Model.xlsx).\n\nShow combined ratio, loss ratio, expense ratio, and rate-adequacy score per segment. Rekomendasikan one rate or appetite tindakan per leak.\n\nTolak any claims-handling question.',
+          'knowledge': [
+            {'file':'GI_02_Product_Manual.docx', 'note':'Underwriting book — premium, segment, broker, sum-insured.'},
+            {'file':'GI_03_Risk_Management_Framework.docx', 'note':'Loss-ratio analysis — by line, segment, channel.'},
+            {'file':'GI_05_Pricing_Adequacy_Model.xlsx', 'note':'Rate-adequacy register — current vs target rates.'}
+          ],
+          'knowledgeNote': 'Test: "Show me the 5 worst combined-ratio segments for General Insurance kuartal ini."',
+          'queries': [
+            '10 teratas segments by combined-ratio deterioration — line, channel, current vs target rate, recommended rate tindakan. Cite files.',
+            'Yang mana broker channels are showing premium growth without margin? Tabulasikan broker, premium %, loss ratio, and recommended re-pricing.',
+            'Susun a 1-page paper to the Underwriting Committee on the proposed rate increase in the worst-performing segment.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM/OJK Insurance Penghubung',
+          'name': 'Zava General Insurance — Regulator Penghubung',
+          'desc': 'Prepares BNM/OJK insurance regulatory returns, RBC submissions, and policyholder-protection disclosures for General Insurance.',
+          'instructions': 'Anda adalah Zava General Insurance Insurance Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under BNM (FSA) or OJK (PMK).\n\nYour job: prepare susun submissions, validate RBC capital returns, and produce policyholder-protection disclosures grounded on the regulatory return file (GI_05_Pricing_Adequacy_Model.xlsx) and the policy handbook (GI_06_Workshop_Vendor_Analysis.xlsx).\n\nQuote every figure with file + tab. Quote every clause with section number.\n\nTolak any pricing or claims-handling question.',
+          'knowledge': [
+            {'file':'GI_03_Risk_Management_Framework.docx', 'note':'Loss-ratio analysis — for cross-reference to regulator queries.'},
+            {'file':'GI_05_Pricing_Adequacy_Model.xlsx', 'note':'Regulatory returns — RBC, statistical, statutory.'},
+            {'file':'GI_06_Workshop_Vendor_Analysis.xlsx', 'note':'Insurance policy handbook — FSA / PMK clauses, governance.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the cover note to BNM on kuartal ini\'s RBC return for General Insurance."',
+          'queries': [
+            "Prepare a cover note for kuartal ini's RBC capital return — quote the CAR, target capital, available capital, and the policy clause.",
+            'Yang mana observations from the last BNM/OJK thematic conduct review remain open? Bangun a 1-page status update.',
+            'Susun the policyholder protection disclosure update for the tahunan report opening section — facts, governance, key actions of the year.'
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Daichi Maruyama', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Daichi Maruyama', 'Mod Admin']
+      ),
     ],
     companyID='Zava General Insurance Indonesia',
     taglineID='Severitas klaim kendaraan dan kebocoran mendorong combined ratio di atas RKAP, sementara kecukupan cadangan disorot OJK.',
@@ -595,16 +807,122 @@ ind('life-insurance','insurance','Life Insurance','💗','#283593','#3949AB',
       ],
       persona=['Hadar Caspit','Mod Admin'],
       personaID=['Hadar Caspit','Mod Admin']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Sentosa Life Intelligence Hub\'. Description: an assistant for the Group CEO, Chief Distribution Officer, Appointed Actuary, and Head of Investor Relations to navigate early-duration lapse deterioration, bancassurance productivity decline, and reserve pressure ahead of BNM stress testing. Instructions: ground every answer in the 3 attached files — /LI_01_Policy_Portfolio.xlsx, /LI_03_Actuarial_Policy.docx, /LI_04_Bancassurance_Channel_Pack.docx. Always cite the source file and the relevant tab or section. Always classify risk indicators as Red, Amber or Green based on BNM and Board materiality. Tone: precise, actuarially grounded, never speculative. If a question cannot be answered from the attached files, say so and suggest who should be consulted. Starter prompts to include: (1) What is the current early-duration lapse rate and which cohort is most at risk, (2) Which bancassurance partners are underperforming and why, (3) What reserve assumptions are under the most pressure, (4) Draft a holding line for BNM on persistency trends, (5) What three decisions must management make this week.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Sentosa Life Intelligence Hub agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the persistency and bancassurance productivity problem, the top reserve concerns, and the three decisions I must bring to the Board this month."; (2) "Draft a holding line for the BNM supervisor if asked about early-duration lapse deterioration and its impact on our RBC ratio."; (3) "Which cohort needs intervention first, which bancassurance partner should be escalated, and which capital metric should I monitor weekly?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Sentosa Life Intelligence Hub\'. Deskripsi: asisten untuk Direktur Utama, Direktur Distribusi, Aktuaris Penanggung Jawab, dan Kepala Hubungan Investor untuk menavigasi penurunan lapse dini, penurunan produktivitas bancassurance, dan tekanan cadangan menjelang stress testing OJK. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /LI_01_Policy_Portfolio.xlsx, /LI_03_Actuarial_Policy.docx, /LI_04_Bancassurance_Channel_Pack.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan indikator risiko sebagai Merah, Kuning atau Hijau berdasarkan materialitas OJK dan Direksi. Nada: presisi, berdasarkan aktuaria, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Berapa lapse dini saat ini dan kohort mana yang paling berisiko, (2) Mitra bancassurance mana yang berkinerja buruk dan mengapa, (3) Asumsi cadangan mana yang paling tertekan, (4) Susun holding line untuk OJK mengenai tren persistensi, (5) Tiga keputusan apa yang harus dibuat manajemen minggu ini.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Sentosa Life Intelligence Hub baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah persistensi dan produktivitas bancassurance, kekhawatiran cadangan utama, dan tiga keputusan yang harus saya bawa ke Direksi bulan ini."; (2) "Susun holding line untuk supervisor OJK jika ditanya mengenai penurunan lapse dini dan dampaknya terhadap rasio RBC kami."; (3) "Kohort mana yang membutuhkan intervensi pertama, mitra bancassurance mana yang harus dieskalasi, dan metrik modal mana yang harus saya pantau setiap minggu?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '📉',
+          'label': 'Policy Persistency Watch',
+          'name': 'Zava Life Insurance — Policy Persistency Watch',
+          'desc': 'Watches Life Insurance policy persistency by cohort, channel, and product, and surfaces lapses-at-risk before the cooling-off and surrender peaks.',
+          'instructions': 'You are the Zava Life Insurance Policy Persistency Watch agent. You support the Chief Distribution Officer and the Inforce Management team.\n\nYour job: scan inforce data (LI_01_Policy_Portfolio.xlsx) and lapse history (LI_02_Product_Framework.docx) for cohorts at risk of lapse / surrender within the next 90 days. Cluster by cohort, agency channel, and product.\n\nAlways show persistency %, lapse-at-risk count, and recommended retention action per cluster. Cite file + tab.\n\nRefuse any new-business pricing question.',
+          'knowledge': [
+            {'file':'LI_01_Policy_Portfolio.xlsx', 'note':'Inforce policy book — cohort, channel, product, premium.'},
+            {'file':'LI_02_Product_Framework.docx', 'note':'Lapse and surrender history — by cohort and reason code.'},
+            {'file':'LI_05_Lapse_Cohort_Model.xlsx', 'note':'Retention play-book — actions and outcomes by cluster.'}
+          ],
+          'knowledgeNote': 'Test: "Which cohorts of Life Insurance are at greatest persistency risk this quarter?"',
+          'queries': [
+            'Top 10 cohorts at lapse-risk — cohort, channel, product, persistency %, lapse-at-risk count, recommended action. Cite files.',
+            'Which agency channels are showing the steepest persistency decline? Tabulate channel, decline %, root-cause hypothesis, and intervention.',
+            'Draft a 1-page note to the Distribution leadership on the proposed retention campaign for the highest-risk cohort.'
+          ],
+        },
+        {
+          'icon': '📋',
+          'label': 'Product Mix Coach',
+          'name': 'Zava Life Insurance — Product Mix Coach',
+          'desc': 'Helps the Life Insurance actuarial and product team rebalance the new-business mix for VNB and embedded-value uplift.',
+          'instructions': 'You are the Zava Life Insurance Product Mix Coach. You support the Chief Actuary and the Product Committee.\n\nYour job: for the current new-business pipeline, score each product by VNB margin, IRR, and capital intensity grounded on the product economics file (LI_03_Actuarial_Policy.docx) and the embedded-value report (LI_04_Bancassurance_Channel_Pack.docx).\n\nRecommend a product-mix adjustment that lifts VNB without breaching the persistency or capital constraints.\n\nRefuse any claims or persistency question.',
+          'knowledge': [
+            {'file':'LI_03_Actuarial_Policy.docx', 'note':'Product economics — VNB, IRR, capital intensity by product.'},
+            {'file':'LI_04_Bancassurance_Channel_Pack.docx', 'note':'Embedded-value report — by product and cohort.'},
+            {'file':'LI_06_New_Business_Value_Forecast.xlsx', 'note':'Product Committee minutes — rate revisions and decisions.'}
+          ],
+          'knowledgeNote': 'Test: "What is the product mix that maximises VNB at Life Insurance for the next quarter without breaching capital ratio?"',
+          'queries': [
+            'Rank the current new-business products by VNB margin and capital intensity. Recommend a target mix for next quarter.',
+            'Which products should be repriced this quarter? Tabulate product, current vs target rate, expected VNB uplift.',
+            'Draft a 1-page paper to the Product Committee on the proposed launch of the protection rider, grounded on product economics.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM/OJK Liaison',
+          'name': 'Zava Life Insurance — Regulator Liaison',
+          'desc': 'Prepares life-insurance regulatory returns and conduct-risk disclosures for Life Insurance.',
+          'instructions': 'You are the Zava Life Insurance Life Insurance Regulator Liaison. You support Regulatory Affairs on submissions under BNM (FSA) or OJK (PMK).\n\nYour job: prepare draft submissions, validate RBC returns, and produce conduct-risk disclosures grounded on the regulatory return file (LI_05_Lapse_Cohort_Model.xlsx) and the policy handbook (LI_06_New_Business_Value_Forecast.xlsx).\n\nQuote every figure with file + tab. Quote every clause with section number.\n\nRefuse any pricing or claims question.',
+          'knowledge': [
+            {'file':'LI_04_Bancassurance_Channel_Pack.docx', 'note':'Embedded-value report — for cross-reference to regulator queries.'},
+            {'file':'LI_05_Lapse_Cohort_Model.xlsx', 'note':'Regulatory returns — RBC, statistical, conduct.'},
+            {'file':'LI_06_New_Business_Value_Forecast.xlsx', 'note':'Life insurance policy handbook — FSA/PMK clauses, governance.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the cover note to BNM on this quarter\'s RBC return for Life Insurance."',
+          'queries': [
+            "Prepare a cover note for this quarter's RBC return — quote the CAR, target capital, available capital, and the policy clause.",
+            'Which observations from the last conduct review remain open? Build a 1-page status update.',
+            'Draft the policyholder protection disclosure for the annual report opening section.'
+          ],
+        }
       ],
-      persona=['Mod Admin','Hadar Caspit'],
-      personaID=['Mod Admin','Hadar Caspit']),
+        agentsID=[
+        {
+          'icon': '📉',
+          'label': 'Policy Persistency Watch',
+          'name': 'Zava Life Insurance — Policy Persistency Watch',
+          'desc': 'Watches Life Insurance policy persistency by cohort, channel, and product, and surfaces lapses-at-risk before the cooling-off and surrender peaks.',
+          'instructions': 'Anda adalah Zava Life Insurance Policy Persistency Pemantau agen. Anda mendukung the Chief Distribution Officer and the Inforce Management team.\n\nYour job: scan inforce data (LI_01_Policy_Portfolio.xlsx) and lapse history (LI_02_Product_Framework.docx) for cohorts at risk of lapse / surrender within berikutnya 90 days. Cluster by cohort, agency channel, and product.\n\nAlways show persistency %, lapse-at-risk count, and recommended retention tindakan per klaster. Cite file + tab.\n\nTolak any new-business pricing question.',
+          'knowledge': [
+            {'file':'LI_01_Policy_Portfolio.xlsx', 'note':'Inforce policy book — cohort, channel, product, premium.'},
+            {'file':'LI_02_Product_Framework.docx', 'note':'Lapse and surrender history — by cohort and reason code.'},
+            {'file':'LI_05_Lapse_Cohort_Model.xlsx', 'note':'Retention play-book — actions and outcomes by cluster.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana cohorts of Life Insurance are at greatest persistency risk kuartal ini?"',
+          'queries': [
+            '10 teratas cohorts at lapse-risk — cohort, channel, product, persistency %, lapse-at-risk count, recommended tindakan. Cite files.',
+            'Yang mana agency channels are showing the steepest persistency decline? Tabulasikan channel, decline %, root-cause hypothesis, and intervention.',
+            'Susun a 1-page note to the Distribution leadership on the proposed retention campaign for the highest-risk cohort.'
+          ],
+        },
+        {
+          'icon': '📋',
+          'label': 'Product Mix Pelatih',
+          'name': 'Zava Life Insurance — Product Mix Pelatih',
+          'desc': 'Helps the Life Insurance actuarial and product team rebalance the new-business mix for VNB and embedded-value uplift.',
+          'instructions': 'Anda adalah Zava Life Insurance Product Mix Pelatih. Anda mendukung the Chief Actuary and the Product Committee.\n\nYour job: for the current new-business pipeline, score each product by VNB margin, IRR, and capital intensity grounded on the product economics file (LI_03_Actuarial_Policy.docx) and the embedded-value report (LI_04_Bancassurance_Channel_Pack.docx).\n\nRekomendasikan a product-mix adjustment that lifts VNB without breaching the persistency or capital constraints.\n\nTolak any claims or persistency question.',
+          'knowledge': [
+            {'file':'LI_03_Actuarial_Policy.docx', 'note':'Product economics — VNB, IRR, capital intensity by product.'},
+            {'file':'LI_04_Bancassurance_Channel_Pack.docx', 'note':'Embedded-value report — by product and cohort.'},
+            {'file':'LI_06_New_Business_Value_Forecast.xlsx', 'note':'Product Committee minutes — rate revisions and decisions.'}
+          ],
+          'knowledgeNote': 'Test: "What is the product mix that maximises VNB at Life Insurance for berikutnya quarter without breaching capital ratio?"',
+          'queries': [
+            'Rank the current new-business products by VNB margin and capital intensity. Rekomendasikan a target mix for kuartal depan.',
+            'Yang mana products should be repriced kuartal ini? Tabulasikan product, current vs target rate, expected VNB uplift.',
+            'Susun a 1-page paper to the Product Committee on the proposed launch of the protection rider, grounded on product economics.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM/OJK Penghubung',
+          'name': 'Zava Life Insurance — Regulator Penghubung',
+          'desc': 'Prepares life-insurance regulatory returns and conduct-risk disclosures for Life Insurance.',
+          'instructions': 'Anda adalah Zava Life Insurance Life Insurance Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under BNM (FSA) or OJK (PMK).\n\nYour job: prepare susun submissions, validate RBC returns, and produce conduct-risk disclosures grounded on the regulatory return file (LI_05_Lapse_Cohort_Model.xlsx) and the policy handbook (LI_06_New_Business_Value_Forecast.xlsx).\n\nQuote every figure with file + tab. Quote every clause with section number.\n\nTolak any pricing or claims question.',
+          'knowledge': [
+            {'file':'LI_04_Bancassurance_Channel_Pack.docx', 'note':'Embedded-value report — for cross-reference to regulator queries.'},
+            {'file':'LI_05_Lapse_Cohort_Model.xlsx', 'note':'Regulatory returns — RBC, statistical, conduct.'},
+            {'file':'LI_06_New_Business_Value_Forecast.xlsx', 'note':'Life insurance policy handbook — FSA/PMK clauses, governance.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the cover note to BNM on kuartal ini\'s RBC return for Life Insurance."',
+          'queries': [
+            "Prepare a cover note for kuartal ini's RBC return — quote the CAR, target capital, available capital, and the policy clause.",
+            'Yang mana observations from the last conduct review remain open? Bangun a 1-page status update.',
+            'Susun the policyholder protection disclosure for the tahunan report opening section.'
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Mod Admin', 'Hadar Caspit', 'Mod Admin']
+      ),
     ],
     companyID='Zava Life Insurance Indonesia',
     taglineID='Lapse dini meningkat dan penjualan bancassurance melambat, mengikis nilai bisnis baru menjelang stress test OJK.',
@@ -811,16 +1129,122 @@ ind('takaful', 'insurance', 'Takaful', '☪', '#1A237E', '#1976D2',
       ],
       persona=['Daichi Maruyama', 'Mod Admin'],
       personaID=['Daichi Maruyama', 'Mod Admin']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Barakah Takaful Intelligence\'. Description: an assistant for the takaful leadership team to navigate participant fund pressure, wakalah fee competitiveness, Shariah governance risk, and BNM review readiness using the attached files as knowledge. Instructions: ground every answer in the 3 attached files — /TAK_01_Takaful_Portfolio.xlsx, /TAK_02_Takaful_Governance_Manual.docx, /TAK_03_Shariah_Compliance_Policy.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on management urgency and participant impact. Tone: precise, governance-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the takaful leadership should be consulted. Starter prompts to include: (1) Which participant fund pressures require immediate management action, (2) How does the current wakalah fee position compare against digital takaful competitors, (3) Which Shariah exceptions must be closed before the BNM review, (4) What governance steps are required before surplus distribution is confirmed, (5) What should management prioritise in the next six weeks.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Barakah Takaful Intelligence agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of our current participant fund risk, the wakalah fee gap, the open Shariah exceptions, and the five decisions I cannot defer this month."; (2) "Draft my opening remarks for the management committee meeting where I need to present the six-week BNM readiness programme."; (3) "Which governance steps are mandatory before we confirm the next round of surplus distribution to participants, and which of those steps are currently incomplete?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Barakah Takaful Intelligence\'. Deskripsi: asisten untuk tim kepemimpinan takaful untuk menavigasi tekanan dana peserta, daya saing fee wakalah, risiko tata kelola syariah, dan kesiapan review OJK menggunakan file terlampir sebagai knowledge. Instruksi: dasarkan tiap jawaban pada 3 file terlampir — /TAK_01_Takaful_Portfolio.xlsx, /TAK_02_Takaful_Governance_Manual.docx, /TAK_03_Shariah_Compliance_Policy.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning atau Hijau berdasarkan urgensi manajemen dan dampak peserta. Nada: presisi, siap untuk tata kelola, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di kepemimpinan takaful yang harus dikonsultasikan. Starter prompt yang disertakan: (1) Tekanan dana peserta mana yang memerlukan tindakan manajemen segera, (2) Bagaimana posisi fee wakalah saat ini dibandingkan pesaing takaful digital, (3) Pengecualian syariah mana yang harus ditutup sebelum review OJK, (4) Langkah tata kelola apa yang diperlukan sebelum distribusi selisih dikonfirmasi sesuai fatwa DSN-MUI, (5) Apa yang harus diprioritaskan manajemen dalam enam minggu ke depan.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Barakah Takaful Intelligence baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari risiko dana peserta kami saat ini, kesenjangan fee wakalah, pengecualian syariah yang terbuka, dan lima keputusan yang tidak dapat saya tunda bulan ini."; (2) "Susun kata sambutan pembuka saya untuk rapat komite manajemen di mana saya perlu mempresentasikan programme kesiapan OJK enam minggu."; (3) "Langkah tata kelola apa yang wajib dipenuhi sebelum kami mengonfirmasi distribusi selisih berikutnya kepada peserta sesuai fatwa DSN-MUI, dan mana dari langkah tersebut yang saat ini belum selesai?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🤝',
+          'label': "Tabarru' Pool Watch",
+          'name': "Zava Takaful — Tabarru' Pool Watch",
+          'desc': "Monitors the Takaful Tabarru' pool surplus / deficit, retakaful cessions, and Wakalah fee performance.",
+          'instructions': "You are the Zava Takaful Tabarru' Pool Watch agent. You support the Chief Actuary and the Shariah Committee Secretariat.\n\nYour job: monitor the Participants' Risk Fund (Tabarru' pool) for surplus / deficit movements, retakaful cession adequacy, and Wakalah fee adequacy grounded on the pool ledger (TAK_01_Takaful_Portfolio.xlsx) and the retakaful arrangement file (TAK_03_Shariah_Compliance_Policy.docx).\n\nAlways cite the pool ledger and quote the underlying contract. Tone is Shariah-faithful and actuarial.\n\nRefuse any non-Takaful question — refer to General Insurance agent if needed.",
+          'knowledge': [
+            {'file':'TAK_01_Takaful_Portfolio.xlsx', 'note':"Tabarru' pool ledger — contributions, claims, surplus."},
+            {'file':'TAK_03_Shariah_Compliance_Policy.docx', 'note':'Retakaful arrangement file — proportional and excess-of-loss treaties.'},
+            {'file':'TAK_06_Participant_Fund_Forecast.xlsx', 'note':"Shariah resolutions — Tabarru', Wakalah, Mudharabah models."}
+          ],
+          'knowledgeNote': 'Test: "What was the Takaful Tabarru\' pool position at the end of last quarter?"',
+          'queries': [
+            "Tabulate the Tabarru' pool position over the last 8 quarters — contributions, claims, surplus, retakaful recoveries.",
+            'Which lines are pulling the pool into deficit? Recommend retakaful and underwriting actions.',
+            'Draft a 1-page paper to the Shariah Committee on the proposed surplus distribution model.'
+          ],
+        },
+        {
+          'icon': '👥',
+          'label': 'Takaful Agency Coach',
+          'name': 'Zava Takaful — Agency Performance Coach',
+          'desc': 'Helps the Takaful Agency Distribution team identify high-potential agents, struggling teams, and retention risks.',
+          'instructions': 'You are the Zava Takaful Takaful Agency Performance Coach. You support the Chief Agency Officer.\n\nYour job: score every agency by new-business contribution, persistency, productivity, and Shariah-knowledge index grounded on the agency file (TAK_02_Takaful_Governance_Manual.docx) and the persistency file (TAK_04_Wakalah_Fee_Benchmark.xlsx).\n\nRecommend coaching, recognition, or remedial actions per agency. Tone is performance-grade.\n\nRefuse any claims question.',
+          'knowledge': [
+            {'file':'TAK_02_Takaful_Governance_Manual.docx', 'note':'Agency master — agent, leader, region, productivity.'},
+            {'file':'TAK_04_Wakalah_Fee_Benchmark.xlsx', 'note':'Persistency by agency — 13M, 25M, 49M.'},
+            {'file':'TAK_05_Re_Takaful_Treaty_Pack.docx', 'note':'Agency policy — recognition tiers, remedial-action triggers.'}
+          ],
+          'knowledgeNote': 'Test: "Which 5 agencies need the most urgent coaching at Takaful this quarter?"',
+          'queries': [
+            'Rank the top and bottom 10 agencies by composite score (new business, persistency, productivity).',
+            'Which agencies are at risk of failing the recognition threshold this year? Tabulate agency, gap, and recommended intervention.',
+            'Draft the monthly agency leadership update memo with the top performers and the 3 agencies needing remediation.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM Takaful Liaison',
+          'name': 'Zava Takaful — Regulator Liaison',
+          'desc': 'Prepares BNM IFSA Takaful submissions and Shariah Governance Framework reporting for Takaful.',
+          'instructions': 'You are the Zava Takaful Takaful Regulator Liaison. You support Regulatory Affairs on submissions under BNM IFSA and the Shariah Governance Framework.\n\nYour job: prepare draft submissions, validate Takaful returns, and produce Shariah Governance Framework disclosures grounded on the regulatory file (TAK_05_Re_Takaful_Treaty_Pack.docx) and the resolutions library (TAK_06_Participant_Fund_Forecast.xlsx).\n\nQuote every figure with file + tab. Quote every clause with section number.',
+          'knowledge': [
+            {'file':'TAK_03_Shariah_Compliance_Policy.docx', 'note':'Retakaful arrangement — for cross-reference to regulator queries.'},
+            {'file':'TAK_05_Re_Takaful_Treaty_Pack.docx', 'note':'Regulatory returns — Takaful prudential, statistical.'},
+            {'file':'TAK_06_Participant_Fund_Forecast.xlsx', 'note':'Shariah resolutions and Governance Framework documentation.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the cover note to BNM on this quarter\'s Takaful return for Takaful."',
+          'queries': [
+            "Prepare a cover note for this quarter's BNM Takaful return — quote the figures and the IFSA clause.",
+            'Which observations from the last Shariah thematic review remain open? Build a 1-page status update.',
+            'Draft the Shariah Governance Framework annual report opening section.'
+          ],
+        }
       ],
-      persona=['Mod Admin', 'Hadar Caspit'],
-      personaID=['Mod Admin', 'Hadar Caspit'])
+        agentsID=[
+        {
+          'icon': '🤝',
+          'label': "Tabarru' Pool Watch",
+          'name': "Zava Takaful — Tabarru' Pool Watch",
+          'desc': "Monitors the Takaful Tabarru' pool surplus / deficit, retakaful cessions, and Wakalah fee performance.",
+          'instructions': "Anda adalah Zava Takaful Tabarru' Pool Pemantau agen. Anda mendukung the Chief Actuary and the Shariah Committee Secretariat.\n\nYour job: pantau the Participants' Risk Fund (Tabarru' pool) for surplus / deficit movements, retakaful cession adequacy, and Wakalah fee adequacy grounded on the pool ledger (TAK_01_Takaful_Portfolio.xlsx) and the retakaful arrangement file (TAK_03_Shariah_Compliance_Policy.docx).\n\nAlways cite the pool ledger and quote the underlying contract. Tone is Shariah-faithful and actuarial.\n\nTolak any non-Takaful question — refer to General Insurance agen if needed.",
+          'knowledge': [
+            {'file':'TAK_01_Takaful_Portfolio.xlsx', 'note':"Tabarru' pool ledger — contributions, claims, surplus."},
+            {'file':'TAK_03_Shariah_Compliance_Policy.docx', 'note':'Retakaful arrangement file — proportional and excess-of-loss treaties.'},
+            {'file':'TAK_06_Participant_Fund_Forecast.xlsx', 'note':"Shariah resolutions — Tabarru', Wakalah, Mudharabah models."}
+          ],
+          'knowledgeNote': 'Test: "What was the Takaful Tabarru\' pool position at the end of last quarter?"',
+          'queries': [
+            "Tabulasikan the Tabarru' pool position over the last 8 quarters — contributions, claims, surplus, retakaful recoveries.",
+            'Yang mana lines are pulling the pool into deficit? Rekomendasikan retakaful and underwriting actions.',
+            'Susun a 1-page paper to the Shariah Committee on the proposed surplus distribution model.'
+          ],
+        },
+        {
+          'icon': '👥',
+          'label': 'Takaful Agency Pelatih',
+          'name': 'Zava Takaful — Agency Performance Pelatih',
+          'desc': 'Helps the Takaful Agency Distribution team identify high-potential agents, struggling teams, and retention risks.',
+          'instructions': 'Anda adalah Zava Takaful Takaful Agency Performance Pelatih. Anda mendukung the Chief Agency Officer.\n\nYour job: score every agency by new-business contribution, persistency, productivity, and Shariah-knowledge index grounded on the agency file (TAK_02_Takaful_Governance_Manual.docx) and the persistency file (TAK_04_Wakalah_Fee_Benchmark.xlsx).\n\nRekomendasikan coaching, recognition, or remedial actions per agency. Tone is performance-grade.\n\nTolak any claims question.',
+          'knowledge': [
+            {'file':'TAK_02_Takaful_Governance_Manual.docx', 'note':'Agency master — agent, leader, region, productivity.'},
+            {'file':'TAK_04_Wakalah_Fee_Benchmark.xlsx', 'note':'Persistency by agency — 13M, 25M, 49M.'},
+            {'file':'TAK_05_Re_Takaful_Treaty_Pack.docx', 'note':'Agency policy — recognition tiers, remedial-tindakan triggers.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 5 agencies need the most urgent coaching at Takaful kuartal ini?"',
+          'queries': [
+            'Rank the top and bottom 10 agencies by composite score (new business, persistency, productivity).',
+            'Yang mana agencies are at risk of failing the recognition threshold this year? Tabulasikan agency, gap, and recommended intervention.',
+            'Susun the bulanan agency leadership update memo with the top performers and the 3 agencies needing remediation.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'BNM Takaful Penghubung',
+          'name': 'Zava Takaful — Regulator Penghubung',
+          'desc': 'Prepares BNM IFSA Takaful submissions and Shariah Governance Framework reporting for Takaful.',
+          'instructions': 'Anda adalah Zava Takaful Takaful Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under BNM IFSA and the Shariah Governance Framework.\n\nYour job: prepare susun submissions, validate Takaful returns, and produce Shariah Governance Framework disclosures grounded on the regulatory file (TAK_05_Re_Takaful_Treaty_Pack.docx) and the resolutions library (TAK_06_Participant_Fund_Forecast.xlsx).\n\nQuote every figure with file + tab. Quote every clause with section number.',
+          'knowledge': [
+            {'file':'TAK_03_Shariah_Compliance_Policy.docx', 'note':'Retakaful arrangement — for cross-reference to regulator queries.'},
+            {'file':'TAK_05_Re_Takaful_Treaty_Pack.docx', 'note':'Regulatory returns — Takaful prudential, statistical.'},
+            {'file':'TAK_06_Participant_Fund_Forecast.xlsx', 'note':'Shariah resolutions and Governance Framework documentation.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the cover note to BNM on kuartal ini\'s Takaful return for Takaful."',
+          'queries': [
+            "Prepare a cover note for kuartal ini's BNM Takaful return — quote the figures and the IFSA clause.",
+            'Yang mana observations from the last Shariah thematic review remain open? Bangun a 1-page status update.',
+            'Susun the Shariah Governance Framework tahunan report opening section.'
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Mod Admin', 'Hadar Caspit', 'Mod Admin']
+      )
     ],
     companyID='Zava Takaful Indonesia',
     taglineID='Surplus dana peserta menyempit, fee wakalah kalah saing, dan temuan kepatuhan syariah jelang review OJK dan DSN-MUI.',

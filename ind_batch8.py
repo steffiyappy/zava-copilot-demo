@@ -178,16 +178,116 @@ ind('construction','construction','Construction','🏗','#E65100','#EF6C00',
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Karya Bangun Project War Room. Description: an assistant for the Board, CEO, COO, CFO and Head of HSE to navigate the 14-week schedule slippage, variation order escalation, HSE incidents, LPJK/PUPR queries, and the Project Committee. Instructions: ground every answer in the 6 attached files — /CON_01_Project_Portfolio.xlsx, /CON_02_Project_Management_Manual.docx, /CON_03_HSE_Policy.docx, /CON_04_Variation_Order_Tracker.xlsx, /CON_05_Subcontractor_Compliance.docx, /CON_06_Cash_Flow_Forecast.xlsx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts: (1) Summarise the project and HSE problem for the Board in 60 seconds, (2) Which 3 projects are worst on schedule and why, (3) What governance obligations apply after an LPJK SBU review, (4) Draft a holding line for lenders, (5) Draft a holding line for LPJK and Kementerian PUPR.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Karya Bangun Project War Room agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) \'Give me the 60-second version of the project and HSE problem, the 3 worst-schedule projects, the top governance obligations, and the decisions I must take to the Project Committee in 21 days.\'; (2) \'Draft my first message to the 6 Project Directors immediately after the Committee approves the FY2026 mobilisation envelope.\'; (3) \'Which lender covenants are most at risk and which 3 metrics should I monitor weekly for the next 13 weeks?\' Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama Karya Bangun Project War Room. Deskripsi: asisten untuk Direksi, Direktur Utama, Direktur Operasi, Direktur Keuangan, dan Kepala HSE untuk menavigasi keterlambatan jadwal 14 minggu, eskalasi variation order, insiden K3, pertanyaan LPJK/PUPR, dan Komite Proyek. Instruksi: dasarkan tiap jawaban pada 6 file terlampir — /CON_01_Project_Portfolio.xlsx, /CON_02_Project_Management_Manual.docx, /CON_03_HSE_Policy.docx, /CON_04_Variation_Order_Tracker.xlsx, /CON_05_Subcontractor_Compliance.docx, /CON_06_Cash_Flow_Forecast.xlsx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning, atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompts: (1) Rangkum masalah proyek dan K3 untuk Direksi dalam 60 detik, (2) 3 proyek mana yang terburuk dari sisi jadwal dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca tinjauan SBU LPJK, (4) Susun holding line untuk kreditor, (5) Susun holding line untuk LPJK dan Kementerian PUPR.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Karya Bangun Project War Room baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) \'Berikan versi 60 detik dari masalah proyek dan K3, 3 proyek berjadwal terburuk, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Proyek dalam 21 hari.\'; (2) \'Susun pesan pertama saya kepada 6 Project Director segera setelah Komite menyetujui envelope mobilisasi FY2026.\'; (3) \'Covenant kreditor mana yang paling berisiko dan 3 metrik apa yang harus saya pantau setiap minggu selama 13 minggu ke depan?\' Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🏗️',
+          'label': 'Project Earned-Value',
+          'name': 'Zava Construction — Project Earned-Value Coach',
+          'desc': 'Tracks Construction project SPI, CPI, and milestone slippage across job-sites.',
+          'instructions': 'You are the Zava Construction Project Earned-Value Coach. You support the Project Director. Monitor project SPI / CPI (CON_01_Project_Portfolio.xlsx), milestone tracker (CON_03_HSE_Policy.docx), and variation orders (CON_05_Subcontractor_Compliance.docx). Recommend re-baseline, escalation, or recovery action per project.',
+          'knowledge': [
+            {'file':'CON_01_Project_Portfolio.xlsx', 'note':'Project earned-value data.'},
+            {'file':'CON_03_HSE_Policy.docx', 'note':'Milestone tracker.'},
+            {'file':'CON_05_Subcontractor_Compliance.docx', 'note':'Variation order register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 projects at Construction have the worst CPI deterioration?"',
+          'queries': [
+            'Top 10 projects by CPI gap — recommended recovery action.',
+            'Which milestones have slipped > 30 days? Recommend re-baseline.',
+            'Draft the monthly Project Steering paper.'
+          ],
+        },
+        {
+          'icon': '⛑️',
+          'label': 'HSE Sentinel',
+          'name': 'Zava Construction — HSE Sentinel',
+          'desc': 'Monitors Construction site HSE incidents, near-misses, and CAPA closure across job-sites.',
+          'instructions': 'You are the Zava Construction HSE Sentinel. You support the Group HSE Director. Monitor incident logs (CON_02_Project_Management_Manual.docx) and CAPA closure (CON_04_Variation_Order_Tracker.xlsx). Tabulate by site and recommend CAPA actions. Refuse cost questions.',
+          'knowledge': [
+            {'file':'CON_02_Project_Management_Manual.docx', 'note':'HSE incident logs.'},
+            {'file':'CON_04_Variation_Order_Tracker.xlsx', 'note':'CAPA register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 sites at Construction have the worst HSE drag this quarter?"',
+          'queries': [
+            'Top 10 incident clusters — recommended CAPA.',
+            'Which CAPAs are overdue > 30 days? Build closure plan.',
+            'Draft the quarterly HSE Steering paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'CIDB / DJBK Liaison',
+          'name': 'Zava Construction — Construction Regulator Liaison',
+          'desc': 'Prepares CIDB (MY) / DJBK (ID) contractor-grading, safety, and project-completion filings for Construction.',
+          'instructions': 'You are the Zava Construction Construction Regulator Liaison. Prepare CIDB / DJBK / OSH filings grounded on the regulatory file (CON_06_Cash_Flow_Forecast.xlsx).',
+          'knowledge': [
+            {'file':'CON_06_Cash_Flow_Forecast.xlsx', 'note':'Construction regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to CIDB\'s latest contractor-grading circular for Construction."',
+          'queries': [
+            'Prepare a cover letter for the next CIDB / DJBK return.',
+            'Which sites have OSH-permit lapses? Recommend immediate action.',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Hadar Caspit','Hadar Caspit'],
-      personaID=['Hadar Caspit','Hadar Caspit'])
+        agentsID=[
+        {
+          'icon': '🏗️',
+          'label': 'Project Earned-Value',
+          'name': 'Zava Construction — Project Earned-Value Pelatih',
+          'desc': 'Memantau Construction project SPI, CPI, and milestone slippage across job-sites.',
+          'instructions': 'Anda adalah Zava Construction Project Earned-Value Pelatih. Anda mendukung the Project Director. Pantau project SPI / CPI (CON_01_Project_Portfolio.xlsx), milestone tracker (CON_03_HSE_Policy.docx), and variation orders (CON_05_Subcontractor_Compliance.docx). Rekomendasikan re-baseline, escalation, or recovery tindakan per proyek.',
+          'knowledge': [
+            {'file':'CON_01_Project_Portfolio.xlsx', 'note':'Project earned-value data.'},
+            {'file':'CON_03_HSE_Policy.docx', 'note':'Milestone tracker.'},
+            {'file':'CON_05_Subcontractor_Compliance.docx', 'note':'Variation order register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 projects at Construction have terburuk CPI deterioration?"',
+          'queries': [
+            '10 teratas projects by CPI gap — recommended recovery tindakan.',
+            'Yang mana milestones have slipped > 30 days? Rekomendasikan re-baseline.',
+            'Susun the bulanan Project paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '⛑️',
+          'label': 'HSE Pengawas',
+          'name': 'Zava Construction — HSE Pengawas',
+          'desc': 'Monitors Construction site HSE incidents, near-misses, and CAPA closure across job-sites.',
+          'instructions': 'Anda adalah Zava Construction HSE Pengawas. Anda mendukung the Grup HSE Director. Pantau incident logs (CON_02_Project_Management_Manual.docx) and CAPA closure (CON_04_Variation_Order_Tracker.xlsx). Tabulasikan by site and rekomendasikan CAPA actions. Tolak cost questions.',
+          'knowledge': [
+            {'file':'CON_02_Project_Management_Manual.docx', 'note':'HSE incident logs.'},
+            {'file':'CON_04_Variation_Order_Tracker.xlsx', 'note':'CAPA register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 sites at Construction have terburuk HSE drag kuartal ini?"',
+          'queries': [
+            '10 teratas incident clusters — recommended CAPA.',
+            'Yang mana CAPAs are overdue > 30 days? Bangun closure plan.',
+            'Susun the kuartalan HSE paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'CIDB / DJBK Penghubung',
+          'name': 'Zava Construction — Construction Regulator Penghubung',
+          'desc': 'Prepares CIDB (MY) / DJBK (ID) contractor-grading, safety, and project-completion filings for Construction.',
+          'instructions': 'Anda adalah Zava Construction Construction Regulator Penghubung. Prepare CIDB / DJBK / OSH filings grounded on the regulatory file (CON_06_Cash_Flow_Forecast.xlsx).',
+          'knowledge': [
+            {'file':'CON_06_Cash_Flow_Forecast.xlsx', 'note':'Construction regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to CIDB\'s latest contractor-grading circular for Construction."',
+          'queries': [
+            'Prepare a cover letter for berikutnya CIDB / DJBK return.',
+            'Yang mana sites have OSH-permit lapses? Rekomendasikan immediate tindakan.',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      )
     ],
     companyID='Zava Construction Indonesia',
     taglineID='Tiga proyek unggulan tertunda; insiden K3 naik — peninjauan LPJK dan PUPR menjelang.',
@@ -399,16 +499,120 @@ ind('aviation-airports','aviation-airports','Aviation - Airports','✈','#0277BD
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Angkasa Pura Capex War Room. Description: an assistant for the Board, CEO, COO, CFO and Head of Safety to navigate the 112% capacity utilisation, the 24% capex overrun, ICAO USOAP findings, DKPPU airworthiness review, slot disputes, and the Capex Committee. Instructions: ground every answer in the 6 attached files — /AVN_01_Airport_Operations.xlsx, /AVN_02_Airport_Concession_Policy.docx, /AVN_03_Emergency_Response_Plan.docx, /AVN_04_Aeronautical_Tariff_Model.xlsx, /AVN_05_Slot_Allocation_Tracker.xlsx, /AVN_06_Capex_Plan.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts: (1) Summarise the network and safety problem for the Board in 60 seconds, (2) Which 3 hubs are worst on yield and why, (3) What governance obligations apply after an ICAO USOAP priority finding, (4) Draft a holding line for lenders, (5) Draft a holding line for ICAO, DKPPU and Kementerian Perhubungan.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Angkasa Pura Capex War Room agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) \'Give me the 60-second version of the network and safety problem, the 3 worst-yield hubs, the top governance obligations, and the decisions I must take to the Capex Committee in 21 days.\'; (2) \'Draft my first message to the 14 Hub Directors immediately after the Committee approves the FY2026 capex envelope.\'; (3) \'Which lender covenants are most at risk and which 3 metrics should I monitor weekly for the next 13 weeks?\' Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama Angkasa Pura Capex War Room. Deskripsi: asisten untuk Direksi, Direktur Utama, Direktur Operasi, Direktur Keuangan, dan Kepala Keselamatan untuk menavigasi utilisasi kapasitas 112%, overrun capex 24%, temuan USOAP ICAO, tinjauan kelaikudaraan DKPPU, sengketa slot, dan Komite Capex. Instruksi: dasarkan tiap jawaban pada 6 file terlampir — /AVN_01_Airport_Operations.xlsx, /AVN_02_Airport_Concession_Policy.docx, /AVN_03_Emergency_Response_Plan.docx, /AVN_04_Aeronautical_Tariff_Model.xlsx, /AVN_05_Slot_Allocation_Tracker.xlsx, /AVN_06_Capex_Plan.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning, atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompts: (1) Rangkum masalah jaringan dan keselamatan untuk Direksi dalam 60 detik, (2) 3 hub mana yang terburuk dari sisi yield dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca temuan prioritas USOAP ICAO, (4) Susun holding line untuk kreditor, (5) Susun holding line untuk ICAO, DKPPU, dan Kementerian Perhubungan.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Angkasa Pura Capex War Room baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) \'Berikan versi 60 detik dari masalah jaringan dan keselamatan, 3 hub yield terburuk, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Capex dalam 21 hari.\'; (2) \'Susun pesan pertama saya kepada 14 Hub Director segera setelah Komite menyetujui envelope capex FY2026.\'; (3) \'Covenant kreditor mana yang paling berisiko dan 3 metrik apa yang harus saya pantau setiap minggu selama 13 minggu ke depan?\' Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🛬',
+          'label': 'Turnaround Performance',
+          'name': 'Zava Airports — Aircraft Turnaround Performance',
+          'desc': 'Watches Aviation - Airports aircraft turnaround times by airline, terminal, and stand, and recommends ops adjustments.',
+          'instructions': 'You are the Zava Aviation - Airports Aircraft Turnaround Performance agent. You support the Chief Operating Officer.\n\nYour job: scan the operations data (AVN_01_Airport_Operations.xlsx) and the aircraft movement log (AVN_02_Airport_Concession_Policy.docx) for turnaround times, ground-handling delays, and on-time-performance breaches by airline, terminal, and stand.\n\nRecommend specific operational interventions per recurring delay.\n\nRefuse any commercial concession or retail question.',
+          'knowledge': [
+            {'file':'AVN_01_Airport_Operations.xlsx', 'note':'Operations data — turnaround, ground-handling, OTP.'},
+            {'file':'AVN_02_Airport_Concession_Policy.docx', 'note':'Aircraft movement log — by airline, terminal, stand.'},
+            {'file':'AVN_05_Slot_Allocation_Tracker.xlsx', 'note':'SLA register — airline-specific service standards.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 stands at Aviation - Airports are causing the worst turnaround delays this week?"',
+          'queries': [
+            'Top 10 turnaround-delay drivers — airline, terminal, stand, average delay, root cause, recommended action.',
+            'Which airlines are repeatedly breaching SLAs? Tabulate airline, breach %, recommended commercial discussion.',
+            'Draft the morning ops huddle brief — top OTP issues, recovery actions for the day.'
+          ],
+        },
+        {
+          'icon': '🛍️',
+          'label': 'Concessions & Retail',
+          'name': 'Zava Airports — Concessions & Retail Performance',
+          'desc': 'Tracks Aviation - Airports F&B and retail concessions by terminal and surface revenue uplift opportunities.',
+          'instructions': 'You are the Zava Aviation - Airports Concessions & Retail Performance agent. You support the Chief Commercial Officer.\n\nYour job: monitor concessionaire performance from the commercial file (AVN_03_Emergency_Response_Plan.docx) and the footfall data (AVN_04_Aeronautical_Tariff_Model.xlsx). Identify under-performing concessions, missed minimum-guarantee triggers, and revenue uplift opportunities.\n\nTabulate concession, terminal, MAT revenue, MG status, and recommended commercial intervention.\n\nRefuse any flight operations question.',
+          'knowledge': [
+            {'file':'AVN_03_Emergency_Response_Plan.docx', 'note':'Concession contracts and revenue data.'},
+            {'file':'AVN_04_Aeronautical_Tariff_Model.xlsx', 'note':'Footfall data — by terminal, time, demographic.'},
+            {'file':'AVN_06_Capex_Plan.docx', 'note':'Commercial policy — minimum guarantees, lease renewals.'}
+          ],
+          'knowledgeNote': 'Test: "Which 5 concessions at Aviation - Airports are at risk of breaching minimum-guarantee?"',
+          'queries': [
+            'Top 10 concessions by margin underperformance — name, terminal, MAT revenue vs MG, recommended intervention.',
+            'Which terminals have unutilised commercial space? Tabulate location, footfall, and recommended new tenants.',
+            'Draft the monthly Commercial Committee paper on the proposed lease-renewal terms.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'CAAM / DGCA Liaison',
+          'name': 'Zava Airports — Aviation Regulator Liaison',
+          'desc': 'Prepares CAAM (MY) and DGCA (ID) submissions, safety reports, and ICAO-aligned audits for Aviation - Airports.',
+          'instructions': 'You are the Zava Aviation - Airports Aviation Regulator Liaison agent. You support the Aviation Safety and Regulatory Affairs office.\n\nYour job: prepare draft submissions, validate safety reports, and produce ICAO-aligned audit responses grounded on the regulatory file (AVN_05_Slot_Allocation_Tracker.xlsx) and the policy handbook (AVN_06_Capex_Plan.docx).\n\nQuote every clause with section number.',
+          'knowledge': [
+            {'file':'AVN_05_Slot_Allocation_Tracker.xlsx', 'note':'Aviation regulatory returns — CAAM / DGCA, ICAO.'},
+            {'file':'AVN_06_Capex_Plan.docx', 'note':'Aviation policy handbook — safety, security, environment.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to CAAM\'s latest circular on runway-safety reporting for Aviation - Airports."',
+          'queries': [
+            "Prepare a cover letter for this quarter's CAAM/DGCA safety return — quote the figures and the policy clause.",
+            'Which ICAO-aligned audit findings remain open? Build a 1-page closure plan.',
+            "Draft the response letter to the regulator's last enforcement notice."
+          ],
+        }
       ],
-      persona=['Hadar Caspit','Hadar Caspit'],
-      personaID=['Hadar Caspit','Hadar Caspit'])
+        agentsID=[
+        {
+          'icon': '🛬',
+          'label': 'Turnaround Performance',
+          'name': 'Zava Airports — Aircraft Turnaround Performance',
+          'desc': 'Watches Aviation - Airports aircraft turnaround times by airline, terminal, and stand, and recommends ops adjustments.',
+          'instructions': 'Anda adalah Zava Aviation - Airports Aircraft Turnaround Performance agen. Anda mendukung the Chief Operating Officer.\n\nYour job: scan the operations data (AVN_01_Airport_Operations.xlsx) and the aircraft movement log (AVN_02_Airport_Concession_Policy.docx) for turnaround times, ground-handling delays, and on-time-performance breaches by airline, terminal, and stand.\n\nRekomendasikan specific operational interventions per recurring delay.\n\nTolak any commercial concession or retail question.',
+          'knowledge': [
+            {'file':'AVN_01_Airport_Operations.xlsx', 'note':'Operations data — turnaround, ground-handling, OTP.'},
+            {'file':'AVN_02_Airport_Concession_Policy.docx', 'note':'Aircraft movement log — by airline, terminal, stand.'},
+            {'file':'AVN_05_Slot_Allocation_Tracker.xlsx', 'note':'SLA register — airline-specific service standards.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 stands at Aviation - Airports are causing terburuk turnaround delays this week?"',
+          'queries': [
+            '10 teratas turnaround-delay drivers — airline, terminal, stand, average delay, root cause, recommended tindakan.',
+            'Yang mana airlines are repeatedly breaching SLAs? Tabulasikan airline, breach %, recommended commercial discussion.',
+            'Susun the morning ops huddle brief — top OTP issues, recovery actions for the day.'
+          ],
+        },
+        {
+          'icon': '🛍️',
+          'label': 'Concessions & Retail',
+          'name': 'Zava Airports — Concessions & Retail Performance',
+          'desc': 'Memantau Aviation - Airports F&B and retail concessions by terminal and surface revenue uplift opportunities.',
+          'instructions': 'Anda adalah Zava Aviation - Airports Concessions & Retail Performance agen. Anda mendukung the Chief Commercial Officer.\n\nYour job: pantau concessionaire performance from the commercial file (AVN_03_Emergency_Response_Plan.docx) and the footfall data (AVN_04_Aeronautical_Tariff_Model.xlsx). Identify under-performing concessions, missed minimum-guarantee triggers, and revenue uplift opportunities.\n\nTabulasikan concession, terminal, MAT revenue, MG status, and recommended commercial intervention.\n\nTolak any flight operations question.',
+          'knowledge': [
+            {'file':'AVN_03_Emergency_Response_Plan.docx', 'note':'Concession contracts and revenue data.'},
+            {'file':'AVN_04_Aeronautical_Tariff_Model.xlsx', 'note':'Footfall data — by terminal, time, demographic.'},
+            {'file':'AVN_06_Capex_Plan.docx', 'note':'Commercial policy — minimum guarantees, lease renewals.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 5 concessions at Aviation - Airports are at risk of breaching minimum-guarantee?"',
+          'queries': [
+            '10 teratas concessions by margin underperformance — name, terminal, MAT revenue vs MG, recommended intervention.',
+            'Yang mana terminals have unutilised commercial space? Tabulasikan location, footfall, and recommended new tenants.',
+            'Susun the bulanan Commercial Committee paper on the proposed lease-renewal terms.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'CAAM / DGCA Penghubung',
+          'name': 'Zava Airports — Aviation Regulator Penghubung',
+          'desc': 'Prepares CAAM (MY) and DGCA (ID) submissions, safety reports, and ICAO-aligned audits for Aviation - Airports.',
+          'instructions': 'Anda adalah Zava Aviation - Airports Aviation Regulator Penghubung agen. Anda mendukung the Aviation Safety and Regulatory Affairs office.\n\nYour job: prepare susun submissions, validate safety reports, and produce ICAO-aligned audit responses grounded on the regulatory file (AVN_05_Slot_Allocation_Tracker.xlsx) and the policy handbook (AVN_06_Capex_Plan.docx).\n\nQuote every clause with section number.',
+          'knowledge': [
+            {'file':'AVN_05_Slot_Allocation_Tracker.xlsx', 'note':'Aviation regulatory returns — CAAM / DGCA, ICAO.'},
+            {'file':'AVN_06_Capex_Plan.docx', 'note':'Aviation policy handbook — safety, security, environment.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to CAAM\'s latest circular on runway-safety reporting for Aviation - Airports."',
+          'queries': [
+            "Prepare a cover letter for kuartal ini's CAAM/DGCA safety return — quote the figures and the policy clause.",
+            'Yang mana ICAO-aligned audit findings remain open? Bangun a 1-page closure plan.',
+            "Susun the response letter to the regulator's last enforcement notice."
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      )
     ],
     companyID='Zava Airports Indonesia',
     taglineID='Hub unggulan pada 112% kapasitas; temuan ICAO dan DKPPU terbuka; revisi tarif tertunda.',
@@ -620,16 +824,116 @@ ind('retail-grocery','retail-grocery','Retail - Grocery','🛒','#2E7D32','#388E
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Segar Rakyat Commercial War Room. Description: an assistant for the Board, CEO, COO, CFO and Head of Digital to navigate the SSS shortfall, gross margin compression, shrinkage spike, BPOM/Halal MUI scrutiny, Kementerian Perdagangan price-display review, weak Ramadan promo ROI, and the Investment Committee. Instructions: ground every answer in the 6 attached files — /RT_01_Store_Performance.xlsx, /RT_02_Store_Operations_Manual.docx, /RT_03_Supplier_Management_Policy.docx, /RT_04_Promotion_ROI_Model.xlsx, /RT_05_Halal_Compliance_Register.docx, /RT_06_Shrinkage_Audit.xlsx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts: (1) Summarise the commercial and compliance problem for the Board in 60 seconds, (2) Which 3 regions are worst on margin and why, (3) What governance obligations apply after a Halal MUI private-label query, (4) Draft a holding line for lenders, (5) Draft a holding line for BPOM, Halal MUI and Kementerian Perdagangan.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Segar Rakyat Commercial War Room agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) \'Give me the 60-second version of the commercial and compliance problem, the 3 worst-margin regions, the top governance obligations, and the decisions I must take to the Investment Committee in 18 days.\'; (2) \'Draft my first message to the 6 Regional Directors immediately after the Committee approves the FY2026 store-investment envelope.\'; (3) \'Which lender covenants are most at risk and which 3 metrics should I monitor weekly for the next 13 weeks?\' Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama Segar Rakyat Commercial War Room. Deskripsi: asisten untuk Direksi, Direktur Utama, Direktur Operasi, Direktur Keuangan, dan Kepala Digital untuk menavigasi kekurangan SSS, kompresi margin kotor, lonjakan shrinkage, pengawasan BPOM/Halal MUI, tinjauan price-display Kementerian Perdagangan, ROI promo Ramadan yang lemah, dan Komite Investasi. Instruksi: dasarkan tiap jawaban pada 6 file terlampir — /RT_01_Store_Performance.xlsx, /RT_02_Store_Operations_Manual.docx, /RT_03_Supplier_Management_Policy.docx, /RT_04_Promotion_ROI_Model.xlsx, /RT_05_Halal_Compliance_Register.docx, /RT_06_Shrinkage_Audit.xlsx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning, atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompts: (1) Rangkum masalah komersial dan kepatuhan untuk Direksi dalam 60 detik, (2) 3 wilayah mana yang terburuk dari sisi margin dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca pertanyaan private-label Halal MUI, (4) Susun holding line untuk kreditor, (5) Susun holding line untuk BPOM, Halal MUI, dan Kementerian Perdagangan.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Segar Rakyat Commercial War Room baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) \'Berikan versi 60 detik dari masalah komersial dan kepatuhan, 3 wilayah bermargin terburuk, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Investasi dalam 18 hari.\'; (2) \'Susun pesan pertama saya kepada 6 Regional Director segera setelah Komite menyetujui envelope investasi toko FY2026.\'; (3) \'Covenant kreditor mana yang paling berisiko dan 3 metrik apa yang harus saya pantau setiap minggu selama 13 minggu ke depan?\' Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🛒',
+          'label': 'Category Margin Coach',
+          'name': 'Zava Retail Grocery — Category & Promo Margin Coach',
+          'desc': 'Tracks Retail - Grocery category sell-through, promo ROI, and basket-mix shift across stores and channels.',
+          'instructions': 'You are the Zava Retail - Grocery Category & Promo Margin Coach. You support Category and Trade Marketing. Monitor SKU sell-through (RT_01_Store_Performance.xlsx), promo ROI (RT_03_Supplier_Management_Policy.docx), and basket-mix (RT_05_Halal_Compliance_Register.docx). Recommend promo, range-edit, or pricing actions per category.',
+          'knowledge': [
+            {'file':'RT_01_Store_Performance.xlsx', 'note':'SKU sell-through and inventory.'},
+            {'file':'RT_03_Supplier_Management_Policy.docx', 'note':'Promo ROI tracker.'},
+            {'file':'RT_05_Halal_Compliance_Register.docx', 'note':'Basket-mix and loyalty data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 categories at Retail - Grocery have the worst margin leakage this period?"',
+          'queries': [
+            'Top 10 SKUs by margin leakage — recommended action (range-edit, promo, pricing).',
+            'Which promotions are ROI-negative? Recommend cancel-or-restructure.',
+            'Draft the monthly Category Steering paper.'
+          ],
+        },
+        {
+          'icon': '🚨',
+          'label': 'Shrink & Store Ops',
+          'name': 'Zava Retail Grocery — Shrink & Store Operations Coach',
+          'desc': 'Surfaces store-level shrink, wastage, and store-ops KPI outliers for Retail - Grocery.',
+          'instructions': 'You are the Zava Retail - Grocery Shrink & Store Operations Coach. You support Retail Operations. Monitor shrink (RT_02_Store_Operations_Manual.docx), wastage, and store-ops KPIs (RT_04_Promotion_ROI_Model.xlsx). Tabulate root-cause clusters and recommend training, process, or investigation actions per store.',
+          'knowledge': [
+            {'file':'RT_02_Store_Operations_Manual.docx', 'note':'Shrink and wastage data.'},
+            {'file':'RT_04_Promotion_ROI_Model.xlsx', 'note':'Store-ops KPI tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 5 stores at Retail - Grocery have the worst shrink this quarter?"',
+          'queries': [
+            'Top 10 stores by shrink% — recommended action per store.',
+            'Which wastage clusters are recurring? Recommend root-cause programme.',
+            'Draft the monthly Retail Operations review.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'KPDN / Kemendag',
+          'name': 'Zava Retail Grocery — Trade Regulator Liaison',
+          'desc': 'Prepares KPDN (MY) / Kemendag (ID) price-control, halal, and supply-disclosure filings for Retail - Grocery.',
+          'instructions': 'You are the Zava Retail - Grocery Trade Regulator Liaison. Prepare price-control returns, halal compliance, and supply-disclosure submissions grounded on the regulatory file (RT_06_Shrinkage_Audit.xlsx).',
+          'knowledge': [
+            {'file':'RT_06_Shrinkage_Audit.xlsx', 'note':'Trade regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to KPDN\'s latest controlled-item circular for Retail - Grocery."',
+          'queries': [
+            "Prepare a cover letter for this quarter's KPDN / Kemendag return.",
+            'Which controlled-items pricing is at risk of breach?',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Hadar Caspit','Hadar Caspit'],
-      personaID=['Hadar Caspit','Hadar Caspit'])
+        agentsID=[
+        {
+          'icon': '🛒',
+          'label': 'Category Margin Pelatih',
+          'name': 'Zava Retail Grocery — Category & Promo Margin Pelatih',
+          'desc': 'Memantau Retail - Grocery category sell-through, promo ROI, and basket-mix shift across stores and channels.',
+          'instructions': 'Anda adalah Zava Retail - Grocery Category & Promo Margin Pelatih. Anda mendukung Category and Trade Marketing. Pantau SKU sell-through (RT_01_Store_Performance.xlsx), promo ROI (RT_03_Supplier_Management_Policy.docx), and basket-mix (RT_05_Halal_Compliance_Register.docx). Rekomendasikan promo, range-edit, or pricing actions per kategori.',
+          'knowledge': [
+            {'file':'RT_01_Store_Performance.xlsx', 'note':'SKU sell-through and inventory.'},
+            {'file':'RT_03_Supplier_Management_Policy.docx', 'note':'Promo ROI tracker.'},
+            {'file':'RT_05_Halal_Compliance_Register.docx', 'note':'Basket-mix and loyalty data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 categories at Retail - Grocery have terburuk margin leakage periode ini?"',
+          'queries': [
+            '10 teratas SKUs by margin leakage — recommended tindakan (range-edit, promo, pricing).',
+            'Yang mana promotions are ROI-negative? Rekomendasikan cancel-or-restructure.',
+            'Susun the bulanan Category paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🚨',
+          'label': 'Shrink & Store Ops',
+          'name': 'Zava Retail Grocery — Shrink & Store Operations Pelatih',
+          'desc': 'Menampilkan store-level shrink, wastage, and store-ops KPI outliers for Retail - Grocery.',
+          'instructions': 'Anda adalah Zava Retail - Grocery Shrink & Store Operations Pelatih. Anda mendukung Retail Operations. Pantau shrink (RT_02_Store_Operations_Manual.docx), wastage, and store-ops KPIs (RT_04_Promotion_ROI_Model.xlsx). Tabulasikan root-cause clusters and rekomendasikan training, process, or investigation actions per store.',
+          'knowledge': [
+            {'file':'RT_02_Store_Operations_Manual.docx', 'note':'Shrink and wastage data.'},
+            {'file':'RT_04_Promotion_ROI_Model.xlsx', 'note':'Store-ops KPI tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 5 stores at Retail - Grocery have terburuk shrink kuartal ini?"',
+          'queries': [
+            '10 teratas stores by shrink% — recommended tindakan per store.',
+            'Yang mana wastage clusters are recurring? Rekomendasikan root-cause programme.',
+            'Susun the bulanan Retail Operations review.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'KPDN / Kemendag',
+          'name': 'Zava Retail Grocery — Trade Regulator Penghubung',
+          'desc': 'Prepares KPDN (MY) / Kemendag (ID) price-control, halal, and supply-disclosure filings for Retail - Grocery.',
+          'instructions': 'Anda adalah Zava Retail - Grocery Trade Regulator Penghubung. Prepare price-control returns, halal compliance, and supply-disclosure submissions grounded on the regulatory file (RT_06_Shrinkage_Audit.xlsx).',
+          'knowledge': [
+            {'file':'RT_06_Shrinkage_Audit.xlsx', 'note':'Trade regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to KPDN\'s latest controlled-item circular for Retail - Grocery."',
+          'queries': [
+            "Prepare a cover letter for kuartal ini's KPDN / Kemendag return.",
+            'Yang mana controlled-items pricing is at risk of breach?',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      )
     ],
     companyID='Zava Retail Indonesia',
     taglineID='SSS meleset; shrinkage menggerus margin; pengawasan BPOM, Halal MUI, dan Kemendag meningkat.',
@@ -841,16 +1145,116 @@ ind('media-entertainment','media-entertainment','Media - Entertainment','📺','
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called Layar Digital Content War Room. Description: an assistant for the Board, CEO, CCO, CFO and Head of Streaming to navigate the 11% ARPU decline, 28% content overrun, 9% ad-revenue decline, Kominfo editorial queries, KPI ad-volume breaches, DJKI copyright complaints, and the FY2026 commissioning round. Instructions: ground every answer in the 6 attached files — /ME_01_Content_Performance.xlsx, /ME_02_Content_Policy.docx, /ME_03_Digital_Strategy_Framework.docx, /ME_04_Streaming_Subscriber_Cohort.xlsx, /ME_05_Advertiser_Yield_Model.xlsx, /ME_06_Content_Rights_Register.docx. Always cite the source file and the relevant tab or section. Always classify recommendations as Red, Amber or Green based on Board materiality. Tone: precise, board-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts: (1) Summarise the content and ARPU problem for the Board in 60 seconds, (2) Which 3 titles are worst on margin and why, (3) What governance obligations apply after a Kominfo editorial query, (4) Draft a holding line for advertisers, (5) Draft a holding line for Kominfo, KPI and DJKI.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Layar Digital Content War Room agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) \'Give me the 60-second version of the content and ARPU problem, the 3 worst-margin titles, the top governance obligations, and the decisions I must take to the Content Committee in 30 days.\'; (2) \'Draft my first message to the 24 Title Producers immediately after the Committee approves the FY2026 commissioning slate.\'; (3) \'Which lender covenants are most at risk and which 3 metrics should I monitor weekly for the next 13 weeks?\' Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama Layar Digital Content War Room. Deskripsi: asisten untuk Direksi, Direktur Utama, Direktur Konten, Direktur Keuangan, dan Kepala Streaming untuk menavigasi penurunan ARPU 11%, overrun konten 28%, penurunan pendapatan iklan 9%, pertanyaan editorial Kominfo, pelanggaran volume iklan KPI, keluhan hak cipta DJKI, dan putaran commissioning FY2026. Instruksi: dasarkan tiap jawaban pada 6 file terlampir — /ME_01_Content_Performance.xlsx, /ME_02_Content_Policy.docx, /ME_03_Digital_Strategy_Framework.docx, /ME_04_Streaming_Subscriber_Cohort.xlsx, /ME_05_Advertiser_Yield_Model.xlsx, /ME_06_Content_Rights_Register.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi sebagai Merah, Kuning, atau Hijau berdasarkan materialitas Direksi. Nada: presisi, siap untuk Direksi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompts: (1) Rangkum masalah konten dan ARPU untuk Direksi dalam 60 detik, (2) 3 judul mana yang terburuk dari sisi margin dan mengapa, (3) Kewajiban tata kelola apa yang berlaku pasca pertanyaan editorial Kominfo, (4) Susun holding line untuk pengiklan, (5) Susun holding line untuk Kominfo, KPI, dan DJKI.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Layar Digital Content War Room baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) \'Berikan versi 60 detik dari masalah konten dan ARPU, 3 judul bermargin terburuk, kewajiban tata kelola utama, dan keputusan yang harus saya bawa ke Komite Konten dalam 30 hari.\'; (2) \'Susun pesan pertama saya kepada 24 Title Producer segera setelah Komite menyetujui slate commissioning FY2026.\'; (3) \'Covenant kreditor mana yang paling berisiko dan 3 metrik apa yang harus saya pantau setiap minggu selama 13 minggu ke depan?\' Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🎬',
+          'label': 'Content & Audience Coach',
+          'name': 'Zava Media & Entertainment — Content & Audience Coach',
+          'desc': 'Tracks Media - Entertainment content performance, audience engagement, and slate ROI.',
+          'instructions': 'You are the Zava Media - Entertainment Content & Audience Coach. You support Programming and Marketing. Monitor content performance (ME_01_Content_Performance.xlsx), audience engagement (ME_03_Digital_Strategy_Framework.docx), and slate ROI (ME_05_Advertiser_Yield_Model.xlsx). Recommend programming, marketing, or licensing action.',
+          'knowledge': [
+            {'file':'ME_01_Content_Performance.xlsx', 'note':'Content performance data.'},
+            {'file':'ME_03_Digital_Strategy_Framework.docx', 'note':'Audience-engagement data.'},
+            {'file':'ME_05_Advertiser_Yield_Model.xlsx', 'note':'Slate ROI tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 content shows at Media - Entertainment have the worst engagement drag?"',
+          'queries': [
+            'Top 10 content shows by engagement gap — recommended action.',
+            'Which slate items are ROI-negative? Recommend renew / drop.',
+            'Draft the quarterly Programming Steering paper.'
+          ],
+        },
+        {
+          'icon': '💵',
+          'label': 'Ad-Sales Yield Coach',
+          'name': 'Zava Media & Entertainment — Ad-Sales & Subscription Yield Coach',
+          'desc': 'Optimises Media - Entertainment ad-sales yield, subscription mix, and pricing leverage.',
+          'instructions': 'You are the Zava Media - Entertainment Ad-Sales & Subscription Yield Coach. You support Commercial. Monitor ad-sales yield (ME_02_Content_Policy.docx), subscription mix (ME_04_Streaming_Subscriber_Cohort.xlsx). Recommend pricing or product-mix action.',
+          'knowledge': [
+            {'file':'ME_02_Content_Policy.docx', 'note':'Ad-sales yield data.'},
+            {'file':'ME_04_Streaming_Subscriber_Cohort.xlsx', 'note':'Subscription mix.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 ad-sales segments at Media - Entertainment have the worst yield drag?"',
+          'queries': [
+            'Top 10 ad-sales segments by yield gap — recommended action.',
+            'Which subscription tiers have the lowest renewal? Recommend redesign.',
+            'Draft the quarterly Commercial Steering paper.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MCMC / KPI / Kominfo',
+          'name': 'Zava Media & Entertainment — Media Regulator Liaison',
+          'desc': 'Prepares MCMC / Censorship / KPI (MY) / Kominfo (ID) content-classification, advertising-standards, and licensing filings for Media - Entertainment.',
+          'instructions': 'You are the Zava Media - Entertainment Media Regulator Liaison. Prepare content-classification, advertising-standards, and licensing filings grounded on the regulatory file (ME_06_Content_Rights_Register.docx).',
+          'knowledge': [
+            {'file':'ME_06_Content_Rights_Register.docx', 'note':'Media regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Draft the response to MCMC\'s latest content-classification circular for Media - Entertainment."',
+          'queries': [
+            'Prepare a cover letter for the next MCMC / KPI / Kominfo return.',
+            'Which content items require classification re-review?',
+            "Draft the response letter to the regulator's latest notice."
+          ],
+        }
       ],
-      persona=['Hadar Caspit','Hadar Caspit'],
-      personaID=['Hadar Caspit','Hadar Caspit'])
+        agentsID=[
+        {
+          'icon': '🎬',
+          'label': 'Content & Audience Pelatih',
+          'name': 'Zava Media & Entertainment — Content & Audience Pelatih',
+          'desc': 'Memantau Media - Entertainment content performance, audience engagement, and slate ROI.',
+          'instructions': 'Anda adalah Zava Media - Entertainment Content & Audience Pelatih. Anda mendukung Programming and Marketing. Pantau content performance (ME_01_Content_Performance.xlsx), audience engagement (ME_03_Digital_Strategy_Framework.docx), and slate ROI (ME_05_Advertiser_Yield_Model.xlsx). Rekomendasikan programming, marketing, or licensing tindakan.',
+          'knowledge': [
+            {'file':'ME_01_Content_Performance.xlsx', 'note':'Content performance data.'},
+            {'file':'ME_03_Digital_Strategy_Framework.docx', 'note':'Audience-engagement data.'},
+            {'file':'ME_05_Advertiser_Yield_Model.xlsx', 'note':'Slate ROI tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 content shows at Media - Entertainment have terburuk engagement drag?"',
+          'queries': [
+            '10 teratas content shows by engagement gap — recommended tindakan.',
+            'Yang mana slate items are ROI-negative? Rekomendasikan renew / drop.',
+            'Susun the kuartalan Programming paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '💵',
+          'label': 'Ad-Sales Yield Pelatih',
+          'name': 'Zava Media & Entertainment — Ad-Sales & Subscription Yield Pelatih',
+          'desc': 'Optimises Media - Entertainment ad-sales yield, subscription mix, and pricing leverage.',
+          'instructions': 'Anda adalah Zava Media - Entertainment Ad-Sales & Subscription Yield Pelatih. Anda mendukung Commercial. Pantau ad-sales yield (ME_02_Content_Policy.docx), subscription mix (ME_04_Streaming_Subscriber_Cohort.xlsx). Rekomendasikan pricing or product-mix tindakan.',
+          'knowledge': [
+            {'file':'ME_02_Content_Policy.docx', 'note':'Ad-sales yield data.'},
+            {'file':'ME_04_Streaming_Subscriber_Cohort.xlsx', 'note':'Subscription mix.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 ad-sales segments at Media - Entertainment have terburuk yield drag?"',
+          'queries': [
+            '10 teratas ad-sales segments by yield gap — recommended tindakan.',
+            'Yang mana subscription tiers have the lowest renewal? Rekomendasikan redesign.',
+            'Susun the kuartalan Commercial paper Komite Pengarah.'
+          ],
+        },
+        {
+          'icon': '🏛️',
+          'label': 'MCMC / KPI / Kominfo',
+          'name': 'Zava Media & Entertainment — Media Regulator Penghubung',
+          'desc': 'Prepares MCMC / Censorship / KPI (MY) / Kominfo (ID) content-classification, advertising-standards, and licensing filings for Media - Entertainment.',
+          'instructions': 'Anda adalah Zava Media - Entertainment Media Regulator Penghubung. Prepare content-classification, advertising-standards, and licensing filings grounded on the regulatory file (ME_06_Content_Rights_Register.docx).',
+          'knowledge': [
+            {'file':'ME_06_Content_Rights_Register.docx', 'note':'Media regulator filings.'}
+          ],
+          'knowledgeNote': 'Test: "Susun the response to MCMC\'s latest content-classification circular for Media - Entertainment."',
+          'queries': [
+            'Prepare a cover letter for berikutnya MCMC / KPI / Kominfo return.',
+            'Yang mana content items require classification re-review?',
+            "Susun the response letter to the regulator's latest notice."
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      )
     ],
     companyID='Zava Media Indonesia',
     taglineID='Pelanggan streaming naik namun ARPU turun; pertanyaan Kominfo dan KPI; keluhan hak cipta meningkat.',

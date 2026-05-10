@@ -163,16 +163,116 @@ ind('dept-legal','department','⚖️ Legal','⚖️','#4A148C','#6A1B9A',
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Legal Intelligence Hub\'. Description: an assistant for the General Counsel, Deputy GCs, Head of Compliance and Company Secretary to navigate the 340-contract backlog, the live Bursa Malaysia regulatory inquiry, and the 7 overdue board resolutions. Instructions: ground every answer in the 6 attached files — /LEG_01_Legal_Matter_Register.xlsx, /LEG_02_Compliance_Manual.docx, /LEG_03_Delegation_of_Authority.docx, /LEG_04_Contract_Backlog_Tracker.xlsx, /LEG_05_Regulatory_Inquiry_Log.xlsx, /LEG_06_Board_Resolution_Calendar.docx. Always cite the source file and the relevant tab or section. Always classify legal recommendations as Red, Amber or Green based on governance materiality. Tone: precise, governance-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts to include: (1) Summarise the 340-contract backlog status for the Board Governance Committee in 60 seconds, (2) Which regulatory inquiries are overdue and what is the statutory risk, (3) What governance obligations apply to the 7 slipping board resolutions, (4) Draft a holding line for Bursa Malaysia, (5) What delegation threshold changes would clear the backlog fastest.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Legal Intelligence Hub agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the contract backlog problem, the live Bursa Malaysia inquiry, the 7 overdue resolutions, and the decisions I must take to the Board Governance Committee in 48 hours."; (2) "Draft my notification email to the 11 Division General Managers with the fast-track programme rules."; (3) "Which board resolutions carry the highest statutory penalty risk and what remediation steps should I prioritise this week?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Legal Intelligence Hub\'. Deskripsi: asisten untuk General Counsel, Wakil GC, Kepala Kepatuhan dan Sekretaris Perusahaan untuk menavigasi backlog 340 kontrak, inquiry OJK yang berjalan, dan 7 resolusi Direksi terlambat. Instruksi: dasarkan tiap jawaban pada 6 file terlampir — /LEG_01_Legal_Matter_Register.xlsx, /LEG_02_Compliance_Manual.docx, /LEG_03_Delegation_of_Authority.docx, /LEG_04_Contract_Backlog_Tracker.xlsx, /LEG_05_Regulatory_Inquiry_Log.xlsx, /LEG_06_Board_Resolution_Calendar.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi hukum sebagai Merah, Kuning atau Hijau berdasarkan materialitas tata kelola. Nada: presisi, siap tata kelola, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt: (1) Rangkum status backlog 340 kontrak untuk Komite Tata Kelola dalam 60 detik, (2) Inquiry regulator mana yang terlambat dan apa risiko statutorinya, (3) Kewajiban tata kelola apa yang berlaku untuk 7 resolusi Direksi yang meleset, (4) Susun holding line untuk OJK, (5) Perubahan ambang delegasi apa yang akan membersihkan backlog paling cepat.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Legal Intelligence Hub baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah backlog kontrak, inquiry OJK yang berjalan, 7 resolusi terlambat, dan keputusan yang harus saya bawa ke Komite Tata Kelola dalam 48 jam."; (2) "Susun email notifikasi saya kepada 9 General Manager Unit Usaha dengan aturan program fast-track."; (3) "Resolusi Direksi mana yang membawa risiko penalti statutori tertinggi dan langkah remediasi apa yang harus saya prioritaskan minggu ini?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '📜',
+          'label': 'Contract Risk Coach',
+          'name': 'Zava Group Legal — Contract Risk Coach',
+          'desc': 'Tracks Legal group contract pipeline, indemnity exposure, and renewal calendar.',
+          'instructions': 'You are the Zava Group Legal Contract Risk Coach. You support Hadar (Group CFO sponsor of Legal escalations). Monitor contract pipeline (LEG_01_Legal_Matter_Register.xlsx), indemnity exposure (LEG_03_Delegation_of_Authority.docx). Recommend negotiation or escalation per outlier.',
+          'knowledge': [
+            {'file':'LEG_01_Legal_Matter_Register.xlsx', 'note':'Contract pipeline.'},
+            {'file':'LEG_03_Delegation_of_Authority.docx', 'note':'Indemnity exposure register.'},
+            {'file':'LEG_05_Regulatory_Inquiry_Log.xlsx', 'note':'Renewal calendar.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 contracts in Legal carry the largest unfunded indemnity?"',
+          'queries': [
+            'Top 10 contracts by indemnity exposure — recommended action.',
+            'Which renewals are due in the next 90 days? Tabulate.',
+            'Draft the monthly Contract Risk paper.'
+          ],
+        },
+        {
+          'icon': '⚖️',
+          'label': 'Litigation Sentinel',
+          'name': 'Zava Group Legal — Litigation Sentinel',
+          'desc': 'Surfaces Legal active litigation, provisioning gap, and settlement strategy.',
+          'instructions': 'You are the Zava Group Legal Litigation Sentinel. Monitor litigation register (LEG_02_Compliance_Manual.docx) and provisioning (LEG_04_Contract_Backlog_Tracker.xlsx). Recommend settlement, defend, or escalation action.',
+          'knowledge': [
+            {'file':'LEG_02_Compliance_Manual.docx', 'note':'Litigation register.'},
+            {'file':'LEG_04_Contract_Backlog_Tracker.xlsx', 'note':'Provisioning data.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 litigation matters in Legal have the largest provisioning gap?"',
+          'queries': [
+            'Top 10 litigation matters by exposure — recommended strategy.',
+            'Which matters have provisioning < 50% of likely loss? Recommend top-up.',
+            'Draft the quarterly Litigation paper for the Audit Committee.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Compliance Watch',
+          'name': 'Zava Group Legal — Compliance Watch',
+          'desc': 'Tracks Legal regulatory-change pipeline, compliance attestations, and external counsel spend.',
+          'instructions': 'You are the Zava Group Legal Compliance Watch. Monitor regulatory-change pipeline (LEG_06_Board_Resolution_Calendar.docx).',
+          'knowledge': [
+            {'file':'LEG_06_Board_Resolution_Calendar.docx', 'note':'Regulatory-change pipeline.'}
+          ],
+          'knowledgeNote': 'Test: "Which regulatory changes affecting Legal are due to take effect within 6 months?"',
+          'queries': [
+            'Top 10 regulatory changes by impact — recommended response.',
+            'Which compliance attestations are due this quarter? Tabulate.',
+            'Draft the quarterly Compliance paper.'
+          ],
+        }
       ],
-      persona=['Hadar Caspit','Hadar Caspit'],
-      personaID=['Hadar Caspit','Hadar Caspit']),
+        agentsID=[
+        {
+          'icon': '📜',
+          'label': 'Contract Risk Pelatih',
+          'name': 'Zava Grup Legal — Contract Risk Pelatih',
+          'desc': 'Memantau Legal grup contract pipeline, indemnity exposure, and renewal calendar.',
+          'instructions': 'Anda adalah Zava Grup Legal Contract Risk Pelatih. Anda mendukung Hadar (Grup CFO sponsor of Legal escalations). Pantau contract pipeline (LEG_01_Legal_Matter_Register.xlsx), indemnity exposure (LEG_03_Delegation_of_Authority.docx). Rekomendasikan negotiation or escalation per pencilan.',
+          'knowledge': [
+            {'file':'LEG_01_Legal_Matter_Register.xlsx', 'note':'Contract pipeline.'},
+            {'file':'LEG_03_Delegation_of_Authority.docx', 'note':'Indemnity exposure register.'},
+            {'file':'LEG_05_Regulatory_Inquiry_Log.xlsx', 'note':'Renewal calendar.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 contracts in Legal carry terbesar unfunded indemnity?"',
+          'queries': [
+            '10 teratas contracts by indemnity exposure — recommended tindakan.',
+            'Yang mana renewals are due in berikutnya 90 days? Tabulate.',
+            'Susun the bulanan Contract Risk paper.'
+          ],
+        },
+        {
+          'icon': '⚖️',
+          'label': 'Litigation Pengawas',
+          'name': 'Zava Grup Legal — Litigation Pengawas',
+          'desc': 'Menampilkan Legal active litigation, provisioning gap, and settlement strategy.',
+          'instructions': 'Anda adalah Zava Grup Legal Litigation Pengawas. Pantau litigation register (LEG_02_Compliance_Manual.docx) and provisioning (LEG_04_Contract_Backlog_Tracker.xlsx). Rekomendasikan settlement, defend, or escalation tindakan.',
+          'knowledge': [
+            {'file':'LEG_02_Compliance_Manual.docx', 'note':'Litigation register.'},
+            {'file':'LEG_04_Contract_Backlog_Tracker.xlsx', 'note':'Provisioning data.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 litigation matters in Legal have terbesar provisioning gap?"',
+          'queries': [
+            '10 teratas litigation matters by exposure — recommended strategy.',
+            'Yang mana matters have provisioning < 50% of likely loss? Rekomendasikan top-up.',
+            'Susun the kuartalan Litigation paper for the Audit Committee.'
+          ],
+        },
+        {
+          'icon': '🛡️',
+          'label': 'Compliance Watch',
+          'name': 'Zava Grup Legal — Compliance Watch',
+          'desc': 'Memantau Legal regulatory-change pipeline, compliance attestations, and external counsel spend.',
+          'instructions': 'Anda adalah Zava Grup Legal Compliance Watch. Pantau regulatory-change pipeline (LEG_06_Board_Resolution_Calendar.docx).',
+          'knowledge': [
+            {'file':'LEG_06_Board_Resolution_Calendar.docx', 'note':'Regulatory-change pipeline.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana regulatory changes affecting Legal are due to take effect within 6 months?"',
+          'queries': [
+            '10 teratas regulatory changes by impact — recommended response.',
+            'Yang mana compliance attestations are due kuartal ini? Tabulate.',
+            'Susun the kuartalan Compliance paper.'
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      ),
     ],
     companyID='Zava Legal',
     taglineID='Backlog persetujuan kontrak mencapai 340 perjanjian, inquiry regulator OJK sedang berjalan, dan 7 resolusi Direksi melampaui jendela statutorinya.',
@@ -379,16 +479,116 @@ ind('dept-risk','department','🛡 Risk & Internal Audit','🛡','#B71C1C','#C62
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Risk Intelligence Hub\'. Description: an assistant for the CRO, Head of Internal Audit, Head of Operational Risk and Head of Enterprise Risk to navigate the 47 open audit findings, the 3 unnotified Q3 incidents, and the upcoming Board Risk Committee session. Instructions: ground every answer in the 6 attached files — /RSK_01_Enterprise_Risk_Register.xlsx, /RSK_02_ERM_Framework.docx, /RSK_03_Internal_Audit_Plan.docx, /RSK_04_Audit_Findings_Tracker.xlsx, /RSK_05_Incident_Log.xlsx, /RSK_06_Risk_Appetite_Statement.docx. Always cite the source file and the relevant tab or section. Always classify risk recommendations as Red, Amber or Green based on risk materiality. Tone: precise, risk-governance-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts to include: (1) Summarise the 47 open findings for the Board Risk Committee in 60 seconds, (2) Which findings are High-rated and what divisions are they in, (3) What are the 3 unnotified Q3 incidents and what is the Board notification obligation, (4) Draft a risk-appetite narrative for the Committee, (5) What remediation actions should be prioritised in the 14-day sprint.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Risk Intelligence Hub agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the audit finding problem, the 3 unnotified incidents, the risk appetite breaches, and the decisions I must take to the Board Risk Committee in 14 days."; (2) "Draft my notification memo to the Board covering the 3 Q3 incidents with approved governance language."; (3) "Which divisions have the most High-rated findings and what remediation actions should I prioritise this fortnight?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Risk Intelligence Hub\'. Deskripsi: asisten untuk CRO, Kepala Audit Internal, Kepala Risiko Operasional dan Kepala Enterprise Risk untuk menavigasi 47 temuan audit terbuka, 3 insiden Q3 yang belum dinotifikasi, dan sesi Komite Risiko Direksi mendatang. Instruksi: dasarkan tiap jawaban pada 6 file terlampir — /RSK_01_Enterprise_Risk_Register.xlsx, /RSK_02_ERM_Framework.docx, /RSK_03_Internal_Audit_Plan.docx, /RSK_04_Audit_Findings_Tracker.xlsx, /RSK_05_Incident_Log.xlsx, /RSK_06_Risk_Appetite_Statement.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi risiko sebagai Merah, Kuning atau Hijau berdasarkan materialitas risiko. Nada: presisi, siap tata kelola risiko, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt: (1) Rangkum 47 temuan terbuka untuk Komite Risiko dalam 60 detik, (2) Temuan mana yang High dan di unit usaha mana, (3) Apa 3 insiden Q3 yang belum dinotifikasi dan apa kewajiban notifikasi Direksi, (4) Susun narasi risk appetite untuk Komite, (5) Tindakan remediasi apa yang harus diprioritaskan dalam sprint 14 hari.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Risk Intelligence Hub baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah temuan audit, 3 insiden yang belum dinotifikasi, pelanggaran risk appetite, dan keputusan yang harus saya bawa ke Komite Risiko Direksi dalam 14 hari."; (2) "Susun memo notifikasi saya kepada Direksi mencakup 3 insiden Q3 dengan bahasa tata kelola yang disetujui."; (3) "Unit usaha mana yang memiliki temuan High terbanyak dan tindakan remediasi apa yang harus saya prioritaskan dua minggu ini?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🛡️',
+          'label': 'Top-Risk Heatmap',
+          'name': 'Zava Group Risk — Top-Risk Heatmap Watch',
+          'desc': 'Tracks Risk & Internal Audit top-of-house risks, risk-appetite breaches, and emerging-risk signals.',
+          'instructions': 'You are the Zava Group Risk & Internal Audit Top-Risk Heatmap Watch. You support Hadar (Group CFO and Risk Committee Chair). Monitor top-risk register (RSK_01_Enterprise_Risk_Register.xlsx), appetite breaches (RSK_03_Internal_Audit_Plan.docx), and emerging-risk signals (RSK_05_Incident_Log.xlsx).',
+          'knowledge': [
+            {'file':'RSK_01_Enterprise_Risk_Register.xlsx', 'note':'Top-risk register.'},
+            {'file':'RSK_03_Internal_Audit_Plan.docx', 'note':'Risk-appetite tracker.'},
+            {'file':'RSK_05_Incident_Log.xlsx', 'note':'Emerging-risk register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 top-risk items in Risk & Internal Audit moved up the heatmap this quarter?"',
+          'queries': [
+            'Top 10 risks by movement — driver, mitigation status, recommended action.',
+            'Which appetite breaches require Board notification?',
+            'Draft the quarterly Risk Committee paper.'
+          ],
+        },
+        {
+          'icon': '🔍',
+          'label': 'Internal Audit Coach',
+          'name': 'Zava Group Risk — Internal Audit Findings Coach',
+          'desc': 'Surfaces Risk & Internal Audit internal audit findings, CAPA closure, and repeat-finding clusters.',
+          'instructions': 'You are the Zava Group Risk & Internal Audit Internal Audit Findings Coach. Monitor audit findings (RSK_02_ERM_Framework.docx) and CAPA closure (RSK_04_Audit_Findings_Tracker.xlsx).',
+          'knowledge': [
+            {'file':'RSK_02_ERM_Framework.docx', 'note':'Internal audit findings.'},
+            {'file':'RSK_04_Audit_Findings_Tracker.xlsx', 'note':'CAPA closure tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 audit findings in Risk & Internal Audit are repeat findings?"',
+          'queries': [
+            'Top 10 open audit findings — recommended CAPA owner.',
+            'Which CAPA items are overdue > 60 days? Build closure plan.',
+            'Draft the quarterly Internal Audit paper.'
+          ],
+        },
+        {
+          'icon': '🚨',
+          'label': 'Crisis & Incident Sentinel',
+          'name': 'Zava Group Risk — Crisis & Incident Sentinel',
+          'desc': 'Manages Risk & Internal Audit crisis playbooks, incident dashboards, and Group war-room readiness.',
+          'instructions': 'You are the Zava Group Risk & Internal Audit Crisis & Incident Sentinel. Monitor incident dashboards (RSK_06_Risk_Appetite_Statement.docx) and crisis playbooks. Refuse to disclose unresolved incidents externally.',
+          'knowledge': [
+            {'file':'RSK_06_Risk_Appetite_Statement.docx', 'note':'Incident dashboard.'}
+          ],
+          'knowledgeNote': 'Test: "Which open incidents in Risk & Internal Audit require Group war-room activation?"',
+          'queries': [
+            'Top 10 open incidents — recommended war-room status.',
+            'Which playbooks need refresh this quarter? Tabulate.',
+            'Draft the quarterly Crisis Readiness paper.'
+          ],
+        }
       ],
-      persona=['Hadar Caspit','Hadar Caspit'],
-      personaID=['Hadar Caspit','Hadar Caspit']),
+        agentsID=[
+        {
+          'icon': '🛡️',
+          'label': 'Top-Risk Heatmap',
+          'name': 'Zava Grup Risk — Top-Risk Heatmap Watch',
+          'desc': 'Memantau Risk & Internal Audit top-of-house risks, risk-appetite breaches, and emerging-risk signals.',
+          'instructions': 'Anda adalah Zava Grup Risk & Internal Audit Top-Risk Heatmap Watch. Anda mendukung Hadar (Grup CFO and Risk Committee Chair). Pantau top-risk register (RSK_01_Enterprise_Risk_Register.xlsx), appetite breaches (RSK_03_Internal_Audit_Plan.docx), and emerging-risk signals (RSK_05_Incident_Log.xlsx).',
+          'knowledge': [
+            {'file':'RSK_01_Enterprise_Risk_Register.xlsx', 'note':'Top-risk register.'},
+            {'file':'RSK_03_Internal_Audit_Plan.docx', 'note':'Risk-appetite tracker.'},
+            {'file':'RSK_05_Incident_Log.xlsx', 'note':'Emerging-risk register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 top-risk items in Risk & Internal Audit moved up the heatmap kuartal ini?"',
+          'queries': [
+            '10 teratas risks by movement — driver, mitigation status, recommended tindakan.',
+            'Yang mana appetite breaches require Board notification?',
+            'Susun the kuartalan Risk Committee paper.'
+          ],
+        },
+        {
+          'icon': '🔍',
+          'label': 'Internal Audit Pelatih',
+          'name': 'Zava Grup Risk — Internal Audit Findings Pelatih',
+          'desc': 'Menampilkan Risk & Internal Audit internal audit findings, CAPA closure, and repeat-finding clusters.',
+          'instructions': 'Anda adalah Zava Grup Risk & Internal Audit Internal Audit Findings Pelatih. Pantau audit findings (RSK_02_ERM_Framework.docx) and CAPA closure (RSK_04_Audit_Findings_Tracker.xlsx).',
+          'knowledge': [
+            {'file':'RSK_02_ERM_Framework.docx', 'note':'Internal audit findings.'},
+            {'file':'RSK_04_Audit_Findings_Tracker.xlsx', 'note':'CAPA closure tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 audit findings in Risk & Internal Audit are repeat findings?"',
+          'queries': [
+            '10 teratas open audit findings — recommended CAPA owner.',
+            'Yang mana CAPA items are overdue > 60 days? Bangun closure plan.',
+            'Susun the kuartalan Internal Audit paper.'
+          ],
+        },
+        {
+          'icon': '🚨',
+          'label': 'Crisis & Incident Pengawas',
+          'name': 'Zava Grup Risk — Crisis & Incident Pengawas',
+          'desc': 'Manages Risk & Internal Audit crisis playbooks, incident dashboards, and Grup war-room readiness.',
+          'instructions': 'Anda adalah Zava Grup Risk & Internal Audit Crisis & Incident Pengawas. Pantau incident dashboards (RSK_06_Risk_Appetite_Statement.docx) and crisis playbooks. Tolak to disclose unresolved incidents externally.',
+          'knowledge': [
+            {'file':'RSK_06_Risk_Appetite_Statement.docx', 'note':'Incident dashboard.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana open incidents in Risk & Internal Audit require Grup war-room activation?"',
+          'queries': [
+            '10 teratas open incidents — recommended war-room status.',
+            'Yang mana playbooks need refresh kuartal ini? Tabulate.',
+            'Susun the kuartalan Crisis Readiness paper.'
+          ],
+        }
+      ],
+        persona=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin'],
+        personaID=['Hadar Caspit', 'Hadar Caspit', 'Mod Admin']
+      ),
     ],
     companyID='Zava Risk',
     taglineID='47 temuan audit terbuka, 12 berstatus High, 3 insiden Q3 menunggu notifikasi Direksi — Komite Risiko Direksi khusus dalam 14 hari.',
@@ -595,16 +795,116 @@ ind('dept-strategy','department','🎯 Strategy & Corporate Planning','🎯','#E
       ],
       persona=['Mod Admin','Mod Admin'],
       personaID=['Mod Admin','Mod Admin']),
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'Create an agent called \'Strategy Command Centre\'. Description: an assistant for the Group Strategy Director, Head of Corporate Development, Head of Business Planning and Head of Strategic Insights to navigate the 3 delayed flagship initiatives, the capex prioritisation challenge, and the FY2026 growth thesis refresh. Instructions: ground every answer in the 6 attached files — /STR_01_Strategy_Tracker.xlsx, /STR_02_Corporate_Plan.docx, /STR_03_Portfolio_Review.docx, /STR_04_Capex_Allocation_Model.xlsx, /STR_05_KPI_Tree.xlsx, /STR_06_Investment_Committee_Charter.docx. Always cite the source file and the relevant tab or section. Always classify strategic recommendations as Red, Amber or Green based on value-creation materiality. Tone: precise, strategy-ready, never speculative. If a question cannot be answered from the attached files, say so and suggest who in the Group should be consulted. Starter prompts to include: (1) Summarise the 3 delayed initiatives for the CEO in 60 seconds, (2) Which initiatives are most behind and what are the root causes, (3) What capex reallocation would maximise value creation, (4) Draft the FY2026 thesis refresh parameters, (5) What should move first if resources stay constrained.'},
-        {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** tab > **+ Create an agent**. Use the prompt below as the **Description** input. Works with the free Copilot Chat account or with an Microsoft 365 Copilot license.', 'prompt':'The Strategy Command Centre agent has just been created in Microsoft 365 Copilot Chat. Test it now from the right pane by sending these 3 prompts in sequence: (1) "Give me the 60-second version of the initiative delay problem, the capex tension, the FY2026 thesis refresh deadline, and the decisions I must take to the CEO in 4 weeks."; (2) "Draft my email to the 11 divisional CEOs with the approved sequencing changes and capex parameters."; (3) "Which initiatives should accelerate first if resources stay constrained and what is the value-creation impact of each sequencing option?" Validate that every answer cites the source file, uses the RAG framework where relevant, and stays within the agent\'s scope.'}
-      ], DESC_BUILDER,
-      promptsID=[
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Buatkan agent bernama \'Strategy Command Centre\'. Deskripsi: asisten untuk Direktur Strategi Grup, Kepala Corporate Development, Kepala Business Planning dan Kepala Strategic Insights untuk menavigasi 3 inisiatif utama yang tertunda, tantangan prioritisasi capex, dan pembaruan thesis pertumbuhan FY2026. Instruksi: dasarkan tiap jawaban pada 6 file terlampir — /STR_01_Strategy_Tracker.xlsx, /STR_02_Corporate_Plan.docx, /STR_03_Portfolio_Review.docx, /STR_04_Capex_Allocation_Model.xlsx, /STR_05_KPI_Tree.xlsx, /STR_06_Investment_Committee_Charter.docx. Selalu kutip file sumber dan tab atau bagian yang relevan. Selalu klasifikasikan rekomendasi strategis sebagai Merah, Kuning atau Hijau berdasarkan materialitas penciptaan nilai. Nada: presisi, siap strategi, tidak pernah spekulatif. Bila pertanyaan tidak dapat dijawab dari file terlampir, sebutkan demikian dan sarankan siapa di Grup yang harus dikonsultasikan. Starter prompt: (1) Rangkum 3 inisiatif tertunda untuk Direktur Utama dalam 60 detik, (2) Inisiatif mana yang paling tertinggal dan apa akar masalahnya, (3) Realokasi capex apa yang akan memaksimalkan penciptaan nilai, (4) Susun parameter pembaruan thesis FY2026, (5) Apa yang harus bergerak terlebih dahulu bila sumber daya tetap terbatas.'},
-        {'instr':'Buka `m365.cloud.microsoft/chat` > tab **Agents** > **+ Create an agent**. Gunakan prompt di bawah sebagai input **Description**. Berfungsi dengan akun Copilot Chat gratis maupun lisensi Microsoft 365 Copilot.', 'prompt':'Agent Strategy Command Centre baru saja dibuat di Microsoft 365 Copilot Chat. Uji sekarang dari panel kanan dengan mengirim 3 prompt berikut secara berurutan: (1) "Berikan versi 60 detik dari masalah keterlambatan inisiatif, ketegangan capex, tenggat pembaruan thesis FY2026, dan keputusan yang harus saya bawa ke Direktur Utama dalam 4 minggu."; (2) "Susun email saya kepada 9 Direktur Unit Usaha dengan perubahan sekuensing yang disetujui dan parameter capex."; (3) "Inisiatif mana yang harus berakselerasi lebih dulu bila sumber daya tetap terbatas dan apa dampak penciptaan nilai dari tiap opsi sekuensing?" Validasi bahwa tiap jawaban mengutip file sumber, menggunakan framework RAG bila relevan, dan tetap dalam cakupan agent.'}
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+        {
+          'icon': '🎯',
+          'label': 'Strategy PMO Coach',
+          'name': 'Zava Group Strategy — PMO Coach',
+          'desc': 'Tracks Strategy & Corporate Planning strategic-programme delivery, division-level RAG, and capital deployment.',
+          'instructions': 'You are the Zava Group Strategy & Corporate Planning Strategy PMO Coach. You support Mod Admin (Group Strategy Director). Monitor programme tracker (STR_01_Strategy_Tracker.xlsx), division KPIs (STR_03_Portfolio_Review.docx), and capital deployment (STR_05_KPI_Tree.xlsx).',
+          'knowledge': [
+            {'file':'STR_01_Strategy_Tracker.xlsx', 'note':'Strategy programme tracker.'},
+            {'file':'STR_03_Portfolio_Review.docx', 'note':'Division KPI dashboard.'},
+            {'file':'STR_05_KPI_Tree.xlsx', 'note':'Capital deployment register.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 strategic programmes in Strategy & Corporate Planning are most at risk of slippage?"',
+          'queries': [
+            'Top 10 programmes by RAG — recommended escalation.',
+            'Which divisions are over-running on capex? Recommend re-baseline.',
+            'Draft the monthly Strategy PMO paper.'
+          ],
+        },
+        {
+          'icon': '🤝',
+          'label': 'M&A Pipeline Coach',
+          'name': 'Zava Group Strategy — M&A Pipeline Coach',
+          'desc': 'Surfaces Strategy & Corporate Planning M&A pipeline, target-thesis quality, and integration progress.',
+          'instructions': 'You are the Zava Group Strategy & Corporate Planning M&A Pipeline Coach. Monitor M&A pipeline (STR_02_Corporate_Plan.docx) and integration tracker (STR_04_Capex_Allocation_Model.xlsx). Recommend pursue / pass / accelerate per deal.',
+          'knowledge': [
+            {'file':'STR_02_Corporate_Plan.docx', 'note':'M&A pipeline.'},
+            {'file':'STR_04_Capex_Allocation_Model.xlsx', 'note':'Integration tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Which 3 M&A targets in Strategy & Corporate Planning have the strongest IRR thesis?"',
+          'queries': [
+            'Top 10 M&A targets by thesis-IRR — recommended pursue / pass.',
+            'Which integration milestones are slipping? Recommend recovery.',
+            'Draft the quarterly Investment Committee paper.'
+          ],
+        },
+        {
+          'icon': '🔭',
+          'label': 'Foresight & Scanning',
+          'name': 'Zava Group Strategy — Foresight & Scanning Agent',
+          'desc': 'Surfaces Strategy & Corporate Planning signal-scan on disruptors, regulatory shifts, and competitor moves.',
+          'instructions': 'You are the Zava Group Strategy & Corporate Planning Foresight & Scanning Agent. Monitor signal-scan archive (STR_06_Investment_Committee_Charter.docx).',
+          'knowledge': [
+            {'file':'STR_06_Investment_Committee_Charter.docx', 'note':'Foresight signal-scan archive.'}
+          ],
+          'knowledgeNote': 'Test: "Which top-3 disruptive signals in Strategy & Corporate Planning require Strategy response?"',
+          'queries': [
+            'Build the quarterly signal-scan brief — top 10 signals, classification, recommended response.',
+            'Which competitor moves require a Group response? Tabulate.',
+            'Draft the quarterly Foresight paper for the Group ExCo.'
+          ],
+        }
       ],
-      persona=['Mod Admin','Mod Admin'],
-      personaID=['Mod Admin','Mod Admin']),
+        agentsID=[
+        {
+          'icon': '🎯',
+          'label': 'Strategy PMO Pelatih',
+          'name': 'Zava Grup Strategy — PMO Pelatih',
+          'desc': 'Memantau Strategy & Corporate Planning strategic-programme delivery, division-level RAG, and capital deployment.',
+          'instructions': 'Anda adalah Zava Grup Strategy & Corporate Planning Strategy PMO Pelatih. Anda mendukung Mod Admin (Grup Strategy Director). Pantau programme tracker (STR_01_Strategy_Tracker.xlsx), division KPIs (STR_03_Portfolio_Review.docx), and capital deployment (STR_05_KPI_Tree.xlsx).',
+          'knowledge': [
+            {'file':'STR_01_Strategy_Tracker.xlsx', 'note':'Strategy programme tracker.'},
+            {'file':'STR_03_Portfolio_Review.docx', 'note':'Division KPI dashboard.'},
+            {'file':'STR_05_KPI_Tree.xlsx', 'note':'Capital deployment register.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 strategic programmes in Strategy & Corporate Planning are most at risk of slippage?"',
+          'queries': [
+            '10 teratas programmes by RAG — recommended escalation.',
+            'Yang mana divisions are over-running on capex? Rekomendasikan re-baseline.',
+            'Susun the bulanan Strategy PMO paper.'
+          ],
+        },
+        {
+          'icon': '🤝',
+          'label': 'M&A Pipeline Pelatih',
+          'name': 'Zava Grup Strategy — M&A Pipeline Pelatih',
+          'desc': 'Menampilkan Strategy & Corporate Planning M&A pipeline, target-thesis quality, and integration progress.',
+          'instructions': 'Anda adalah Zava Grup Strategy & Corporate Planning M&A Pipeline Pelatih. Pantau M&A pipeline (STR_02_Corporate_Plan.docx) and integration tracker (STR_04_Capex_Allocation_Model.xlsx). Rekomendasikan pursue / pass / accelerate per deal.',
+          'knowledge': [
+            {'file':'STR_02_Corporate_Plan.docx', 'note':'M&A pipeline.'},
+            {'file':'STR_04_Capex_Allocation_Model.xlsx', 'note':'Integration tracker.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana 3 M&A targets in Strategy & Corporate Planning have the strongest IRR thesis?"',
+          'queries': [
+            '10 teratas M&A targets by thesis-IRR — recommended pursue / pass.',
+            'Yang mana integration milestones are slipping? Rekomendasikan recovery.',
+            'Susun the kuartalan Investment Committee paper.'
+          ],
+        },
+        {
+          'icon': '🔭',
+          'label': 'Foresight & Scanning',
+          'name': 'Zava Grup Strategy — Foresight & Scanning Agent',
+          'desc': 'Menampilkan Strategy & Corporate Planning signal-scan on disruptors, regulatory shifts, and competitor moves.',
+          'instructions': 'Anda adalah Zava Grup Strategy & Corporate Planning Foresight & Scanning Agent. Pantau signal-scan archive (STR_06_Investment_Committee_Charter.docx).',
+          'knowledge': [
+            {'file':'STR_06_Investment_Committee_Charter.docx', 'note':'Foresight signal-scan archive.'}
+          ],
+          'knowledgeNote': 'Test: "Yang mana top-3 disruptive signals in Strategy & Corporate Planning require Strategy response?"',
+          'queries': [
+            'Bangun the kuartalan signal-scan brief — top 10 signals, classification, recommended response.',
+            'Yang mana competitor moves require a Grup response? Tabulate.',
+            'Susun the kuartalan Foresight paper for the Grup ExCo.'
+          ],
+        }
+      ],
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+      ),
     ],
     companyID='Zava Strategy',
     taglineID='3 inisiatif strategis utama tertinggal jadwal 4-7 bulan, prioritisasi capex digugat, dan thesis pertumbuhan FY2026 harus diperbarui dalam 4 minggu.',

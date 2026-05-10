@@ -3,8 +3,10 @@
 # multi-tab Excel workbooks, agent-builder finale, 4 personas, 12-task storyboard.
 import sys
 sys.path.insert(0, '.')
+import _builder_catalog as _bcat
 from util import (T_CHAT, T_RESEARCHER, T_ANALYST, T_EXCEL, T_WORD, T_PPT, T_OUTLOOK,
                   T_TEAMS, T_NOTEBOOK, T_COWORK, T_WORD_AGT, T_PPT_AGT, T_XL_AGT, T_BUILDER,
+                  tool_builder,
                   DESC_CHAT, DESC_RESEARCHER, DESC_ANALYST, DESC_EXCEL, DESC_WORD, DESC_PPT,
                   DESC_OUTLOOK, DESC_TEAMS, DESC_NOTEBOOK, DESC_COWORK, DESC_WORD_AGT,
                   DESC_PPT_AGT, DESC_XL_AGT, DESC_BUILDER,
@@ -479,9 +481,18 @@ def _build(c):
          f"(4) 'Bangun narasi siap-regulator 1 halaman'; "
          f"(5) 'Tandai setiap celah pengungkapan yang memicu re-filing'. \""),
     ]
-    b_personas = ['Daichi Maruyama', 'Daichi Maruyama']
-    t14 = tool(T_BUILDER, ANY_LIC, ANY_ACCT, b_en, DESC_BUILDER,
-               promptsID=b_id, persona=b_personas, personaID=b_personas)
+    b_personas = ['Daichi Maruyama', 'Daichi Maruyama', 'Daichi Maruyama']
+    _en_agents = _bcat.render_agents(c['id'], c['name'], c['files']) or []
+    _id_agents = _bcat.render_agents_id(c['id'], c['name'], c['files']) or []
+    _en_remap = [{'icon':a['icon'],'label':a['label'],'name':a['name'],'desc':a['description'],
+                  'instructions':a['instructions'],'knowledge':a['knowledge'],
+                  'knowledgeNote':a['knowledgeTest'],'queries':a['queries']} for a in _en_agents]
+    _id_remap = [{'icon':a['icon'],'label':a['label'],'name':a['name'],'desc':a['description'],
+                  'instructions':a['instructions'],'knowledge':a['knowledge'],
+                  'knowledgeNote':a['knowledgeTest'],'queries':a['queries']} for a in _id_agents]
+    t14 = tool_builder(ANY_LIC, ANY_ACCT,
+                       agents=_en_remap, agentsID=_id_remap,
+                       persona=b_personas, personaID=b_personas)
 
     tools = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14]
 
