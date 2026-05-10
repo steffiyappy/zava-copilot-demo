@@ -1115,10 +1115,9 @@ const _UI = {
                             '⚖️ **Majlis Model** — Researcher menjalankan GPT dan Claude secara selari terhadap taklimat dan mengembalikan kedua-dua laporan serta surat iringan sintesis yang menyerlahkan persetujuan, perbezaan dan penemuan unik. Terbaik untuk keputusan berisiko tinggi yang memerlukan input pakar pelbagai.'],
   // Tool-info banner (renderer fallback for tool.desc)
   '💡 What this tool can do':              ['💡 Apa yang bisa dilakukan tool ini',          '💡 Apa yang boleh alat ini buat'],
-  // Subsidiaries chip strip (entry hero)
-  '📌 Real ASEAN subsidiaries we mapped here (from your account list)':
-                           ['📌 Anak perusahaan ASEAN nyata yang kami petakan di sini (dari daftar akun Anda)',
-                            '📌 Anak syarikat ASEAN sebenar yang kami petakan di sini (daripada senarai akaun anda)'],
+  // Subsidiaries chip strip removed from visible UI — kept for search-only
+  // indexing via _hayFor(rec.subsidiaries). Translation entry intentionally
+  // omitted because the strip is no longer rendered.
   // Demo Tips (5 hardcoded tips on every entry)
   'Use <strong>admin@ABSx62256373.onmicrosoft.com</strong> for all Microsoft 365 Copilot premium demos':
                            ['Gunakan <strong>admin@ABSx62256373.onmicrosoft.com</strong> untuk semua demo Microsoft 365 Copilot premium',
@@ -3264,19 +3263,11 @@ function showItem(item,tab,preserveScroll){
       pillsHtml='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🏢 Departments most affected — click to drill down')+'</div>'+pills+'</div>';
     }
   }
-  // Subsidiaries strip — real ASEAN subsidiaries from the customer account list
-  // that map to this industry. Names are scrubbed to fictional brands at display.
+  // Subsidiaries — real ASEAN subsidiaries from the customer account list
+  // are kept ONLY as a hidden search index. They are NOT rendered as visible
+  // chips on the entry page (per request) — they only affect search hits via
+  // _hayFor() which already concatenates rec.subsidiaries into the haystack.
   let subsHtml='';
-  if(Array.isArray(item.subsidiaries) && item.subsidiaries.length){
-    const chips=item.subsidiaries.map(sub=>{
-      const clean=_scrubReal(String(sub||''));
-      if(!clean) return '';
-      return '<span class="subs-pill">'+escapeHTML(clean)+'</span>';
-    }).filter(Boolean).join('');
-    if(chips){
-      subsHtml='<div class="subs-strip"><div class="subs-strip-label">'+_uL('📌 Real ASEAN subsidiaries we mapped here (from your account list)')+'</div>'+chips+'</div>';
-    }
-  }
   document.getElementById('detail-scenario').innerHTML=
     '<div class="detail-scenario-title">'+_uL('📋 Demo Scenario')+'</div>'+
     '<div class="detail-scenario-text">'+escapeHTML(scenarioText)+'</div>'+pillsHtml+subsHtml;
