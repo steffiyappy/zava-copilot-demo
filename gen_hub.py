@@ -2776,24 +2776,36 @@ function _getPrompts(t){
 // Standardised 10-step Copilot Notebook Demo Guide flow.
 // Replaces the rendered T_NOTEBOOK prompts so every entry follows the same flow:
 // pre-flight setup → 7 typed prompts (build on each other) → 3 Quick Create.
-function _notebookDemoGuidePrompts(tool){
+function _notebookDemoGuidePrompts(tool, itemFiles, itemContext){
   const meta = tool.notebookMeta || {};
-  const srcCount = (meta.sources||[]).length;
+  const metaSrcs = (meta.sources||[]);
+  // Fall back to entry-level files when the tool has no explicit notebookMeta.sources.
+  const sources = metaSrcs.length ? metaSrcs : ((itemFiles||[]).slice());
+  const srcCount = sources.length;
   const lang = _langCode(); // 'EN' | 'BM' | 'BI'
   const L = function(en, bm, bi){ return lang==='BM'?bm: (lang==='BI'?bi: en); };
   const SI = function(en, bm, bi){ return _scrubReal(L(en,bm,bi)); };
   const fileLabel = srcCount > 0 ? srcCount : L('all','semua','semua');
+  // Build a clean comma-separated display list of file names (strip leading slash)
+  const srcNames = sources.map(function(s){ return String(s||'').replace(/^\//,''); });
+  const filesList = srcNames.length ? srcNames.join(', ') : '';
+  const filesListNote = filesList ? ' (' + filesList + ')' : '';
+  // Entry context line — short tagline / scenario hook so each entry's notebook prompts
+  // are not template-identical. Falls back to empty if no context provided.
+  const ctxRaw = (itemContext && String(itemContext).trim()) || '';
+  const ctx = ctxRaw ? _scrubReal(ctxRaw) : '';
+  const ctxClause = ctx ? L(' Context: '+ctx+'.', ' Konteks: '+ctx+'.', ' Konteks: '+ctx+'.') : '';
 
   return [
     // Prompt 1 — Compliance / Snapshot
     {instr: SI(
-        'Open the notebook chat below the Instructions field. Pre-flight: ✅ Microsoft 365 Copilot license (Notebooks not available in standard M365). ✅ '+fileLabel+' sources uploaded above. ✅ Instructions field set above. Type the prompt below — Copilot reads ALL sources for every answer.',
-        'Buka chat notebook di bawah medan Instructions. Pra-terbang: ✅ Lesen Microsoft 365 Copilot (Notebooks tiada di M365 standard). ✅ '+fileLabel+' sumber dimuat naik di atas. ✅ Medan Instructions sudah ditetapkan di atas. Taip prompt di bawah — Copilot membaca SEMUA sumber bagi setiap jawapan.',
-        'Buka chat notebook di bawah field Instructions. Pemeriksaan: ✅ Lisensi Microsoft 365 Copilot (Notebooks tidak tersedia di M365 standar). ✅ '+fileLabel+' sumber sudah diunggah di atas. ✅ Field Instructions sudah diatur di atas. Ketik prompt di bawah — Copilot membaca SEMUA sumber untuk setiap jawaban.'
+        'Open the notebook chat below the Instructions field. Pre-flight: ✅ Microsoft 365 Copilot license (Notebooks not available in standard M365). ✅ '+fileLabel+' sources uploaded above'+filesListNote+'. ✅ Instructions field set above. Type the prompt below — Copilot reads ALL sources for every answer.',
+        'Buka chat notebook di bawah medan Instructions. Pra-terbang: ✅ Lesen Microsoft 365 Copilot (Notebooks tiada di M365 standard). ✅ '+fileLabel+' sumber dimuat naik di atas'+filesListNote+'. ✅ Medan Instructions sudah ditetapkan di atas. Taip prompt di bawah — Copilot membaca SEMUA sumber bagi setiap jawapan.',
+        'Buka chat notebook di bawah field Instructions. Pemeriksaan: ✅ Lisensi Microsoft 365 Copilot (Notebooks tidak tersedia di M365 standar). ✅ '+fileLabel+' sumber sudah diunggah di atas'+filesListNote+'. ✅ Field Instructions sudah diatur di atas. Ketik prompt di bawah — Copilot membaca SEMUA sumber untuk setiap jawaban.'
       ), prompt: SI(
-        'Give me a top-line snapshot across ALL '+fileLabel+' sources in this notebook. Headlines I should know in 30 seconds: the 3-5 numbers that matter most, the single biggest risk, and the single biggest opportunity. Cite the source file (and the tab/section where applicable) at the end of every line.',
-        'Beri saya snapshot teratas merentas SEMUA '+fileLabel+' sumber di notebook ini. Tajuk yang perlu saya tahu dalam 30 saat: 3-5 nombor paling penting, satu risiko terbesar, dan satu peluang terbesar. Petik fail sumber (dan tab/bahagian jika berkenaan) di hujung setiap baris.',
-        'Berikan saya snapshot atas dari SEMUA '+fileLabel+' sumber di notebook ini. Headline yang harus saya ketahui dalam 30 detik: 3-5 angka paling penting, satu risiko terbesar, dan satu peluang terbesar. Kutip file sumber (dan tab/bagian jika berlaku) di akhir tiap baris.'
+        'Give me a top-line snapshot across ALL '+fileLabel+' sources I just uploaded into this notebook'+filesListNote+'.'+ctxClause+' Headlines I should know in 30 seconds: the 3-5 numbers that matter most, the single biggest risk, and the single biggest opportunity. Cite the source file (and the tab/section where applicable) at the end of every line.',
+        'Beri saya snapshot teratas merentas SEMUA '+fileLabel+' sumber yang baru saya muat naik ke notebook ini'+filesListNote+'.'+ctxClause+' Tajuk yang perlu saya tahu dalam 30 saat: 3-5 nombor paling penting, satu risiko terbesar, dan satu peluang terbesar. Petik fail sumber (dan tab/bahagian jika berkenaan) di hujung setiap baris.',
+        'Berikan saya snapshot atas dari SEMUA '+fileLabel+' sumber yang baru saya unggah ke notebook ini'+filesListNote+'.'+ctxClause+' Headline yang harus saya ketahui dalam 30 detik: 3-5 angka paling penting, satu risiko terbesar, dan satu peluang terbesar. Kutip file sumber (dan tab/bagian jika berlaku) di akhir tiap baris.'
       )},
     // Prompt 2 — Critical issues / red flags
     {instr: SI(
@@ -4044,7 +4056,7 @@ function showItem(item,tab,preserveScroll){
       pEl.appendChild(sec);
       return;
     }
-    const promptArr = isNotebook ? _notebookDemoGuidePrompts(tool) : _getPrompts(tool);
+    const promptArr = isNotebook ? _notebookDemoGuidePrompts(tool, item.files, item.tagline) : _getPrompts(tool);
     const promHtml=promptArr.map((p,pi)=>{
       const key=_pmKey(id,ti,pi);
       const txt=typeof p==='string'?p:(p.prompt||'');
@@ -4076,13 +4088,35 @@ function showItem(item,tab,preserveScroll){
       }
       // Notebook special render: surface sources + Instructions field above the numbered prompts.
       // We only add this once, on prompt 0 (so it doesn't repeat per prompt).
+      // Falls back to entry-level item.files when the tool has no explicit notebookMeta.
       let notebookHtml='';
-      if(isNotebook && pi===0 && tool.notebookMeta){
-        const nm=tool.notebookMeta;
-        const srcs=(nm.sources||[]).map(s=>'<span class="notebook-source-pill">'+escapeHTML(s)+'</span>').join('');
+      if(isNotebook && pi===0){
+        const nm=tool.notebookMeta||{};
+        const metaSrcs=(nm.sources||[]);
+        const fallbackSrcs=(item.files||[]);
+        const finalSrcs= metaSrcs.length ? metaSrcs : fallbackSrcs;
+        const srcs=finalSrcs.map(s=>'<span class="notebook-source-pill">'+escapeHTML(s)+'</span>').join('');
         const instrSrc=(_locale==='ID_BI'||_locale==='ID_EN')&&nm.instructionsID?'BI':'EN';
         const instrRaw=(_locale==='ID_BI'||_locale==='ID_EN')&&nm.instructionsID?nm.instructionsID:(nm.instructions||'');
-        const instr=_translateLocale(_scrubReal(instrRaw), instrSrc);
+        // Default Instructions-field text: "You are a senior Microsoft 365 Copilot
+        // analyst supporting the leadership of <company>. Use the <N> uploaded sources
+        // as the only source of truth..." Falls back to a generic line when no scenario
+        // is available. This keeps the Instructions row populated on entries that don't
+        // ship an explicit notebookMeta payload.
+        let instrFinal=instrRaw;
+        if(!instrFinal){
+          const co=_scrubReal(item.company||'');
+          const tg=_scrubReal(item.tagline||'');
+          const cnt=(finalSrcs||[]).length;
+          if(_locale==='ID_BI'||_locale==='ID_EN'){
+            instrFinal='Anda adalah analis senior Microsoft 365 Copilot yang mendukung tim kepemimpinan'+(co?' '+co:'')+'. Gunakan '+cnt+' file sumber yang diunggah sebagai satu-satunya sumber kebenaran. '+(tg?'Konteks bisnis: '+tg+'. ':'')+'Selalu kutip nama file (dan tab/bagian jika berlaku) di akhir setiap pernyataan. Jangan berhalusinasi — jika sumber tidak menyebutkan sesuatu, katakan dan tandai sebagai celah verifikasi.';
+          } else if(_locale==='MY_BM'){
+            instrFinal='Anda adalah penganalisis kanan Microsoft 365 Copilot yang menyokong pasukan pengurusan'+(co?' '+co:'')+'. Gunakan '+cnt+' fail sumber yang dimuat naik sebagai satu-satunya sumber kebenaran. '+(tg?'Konteks perniagaan: '+tg+'. ':'')+'Sentiasa petik nama fail (dan tab/bahagian jika berkenaan) di hujung setiap kenyataan. Jangan halusinasi — jika sumber tidak menyebut sesuatu, katakan dan tandakan sebagai jurang pengesahan.';
+          } else {
+            instrFinal='You are a senior Microsoft 365 Copilot analyst supporting the leadership team'+(co?' of '+co:'')+'. Use the '+cnt+' uploaded source files as the only source of truth. '+(tg?'Business context: '+tg+'. ':'')+'Always cite the file name (and tab/section where applicable) at the end of every statement. Do NOT hallucinate — if the sources do not mention something, say so and flag it as a verification gap.';
+          }
+        }
+        const instr=_translateLocale(_scrubReal(instrFinal), instrSrc);
         notebookHtml=
           '<div class="notebook-meta">'+
           '<div class="notebook-meta-label">'+_uL('📓 Notebook setup — add ALL sources at creation time, then set the Instructions field')+'</div>'+
