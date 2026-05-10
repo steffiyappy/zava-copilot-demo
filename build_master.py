@@ -32,7 +32,7 @@ WHATS_NEW = [
         "id": "wn-researcher",
         "title": "🔍 Researcher \u2014 Critique + Model Council",
         "badge": "New rollout (May 2026)",
-        "summary": "Two demo modes inside Researcher: (1) Critique Mode self-critiques every source and flags claims it cannot verify; (2) Model Council convenes GPT-5.5 Thinking + Claude Opus 4.7 + Claude Sonnet 4.7 each return a full independent report, then a synthesis cover letter highlights where they agree, where they differ, and any unique findings.",
+        "summary": "Two demo modes inside Researcher: (1) Critique Mode self-critiques every source and flags claims it cannot verify; (2) Model Council convenes GPT and Claude each return a full independent report, then a synthesis cover letter highlights where they agree, where they differ, and any unique findings.",
         "tip": "m365.cloud.microsoft/chat > Agents > Researcher > switch the mode pill at the top to 'Critique' or 'Model Council'.",
         "license": "M365_LIC",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-multi-model-intelligence-in-researcher/4506011"
@@ -95,8 +95,8 @@ WHATS_NEW = [
         "id": "wn-models",
         "title": "🧠 Frontier Model Picker",
         "badge": "May 2026 rollout",
-        "summary": "Switch the underlying frontier model for any chat or agent: GPT-5.5 Instant, GPT-5.5 Thinking, Claude Opus 4.7, Claude Sonnet 4.7, ChatGPT Images 2.0. Use Thinking models for board-grade reasoning; Instant for fast triage.",
-        "tip": "In any Copilot Chat thread, click the model pill at the top \u2014 try 'GPT-5.5 Thinking' for the Strategy/Risk briefs; 'Claude Opus 4.7' for nuanced legal/policy drafting.",
+        "summary": "Switch the underlying frontier model for any chat or agent: GPT Instant, GPT and Claude, ChatGPT Images 2.0. Use Thinking models for board-grade reasoning; Instant for fast triage.",
+        "tip": "In any Copilot Chat thread, click the model pill at the top \u2014 try 'GPT' for the Strategy/Risk briefs; 'Claude' for nuanced legal/policy drafting.",
         "license": "M365_LIC",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-anthropic-claude-opus-4-7-in-microsoft-365-copilot/4511666"
     }

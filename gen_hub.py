@@ -707,8 +707,8 @@ const _UI = {
                            ['🔍 **Mode Kritik** — Researcher mengkritik sendiri setiap sumber, memverifikasi klaim terhadap sumber asli sebelum memasukkannya ke laporan. Terbaik untuk mendapatkan jawaban yang tepercaya dan didukung kutipan dengan cepat.',
                             '🔍 **Mod Kritik** — Researcher mengkritik sendiri setiap sumber, mengesahkan dakwaan terhadap sumber asal sebelum memasukkan ke dalam laporan. Terbaik untuk mendapat jawapan yang boleh dipercayai dengan cepat.'],
   'researcher-callout-council':
-                           ['⚖️ **Dewan Model** — Researcher menjalankan GPT-5.5 Thinking dan Claude Opus 4.7 secara paralel terhadap brief dan mengembalikan kedua laporan plus surat pengantar sintesis yang menyoroti kesepakatan, perbedaan dan temuan unik. Terbaik untuk keputusan berisiko tinggi yang membutuhkan masukan ahli yang beragam.',
-                            '⚖️ **Majlis Model** — Researcher menjalankan GPT-5.5 Thinking dan Claude Opus 4.7 secara selari terhadap taklimat dan mengembalikan kedua-dua laporan serta surat iringan sintesis yang menyerlahkan persetujuan, perbezaan dan penemuan unik. Terbaik untuk keputusan berisiko tinggi yang memerlukan input pakar pelbagai.']
+                           ['⚖️ **Dewan Model** — Researcher menjalankan GPT dan Claude secara paralel terhadap brief dan mengembalikan kedua laporan plus surat pengantar sintesis yang menyoroti kesepakatan, perbedaan dan temuan unik. Terbaik untuk keputusan berisiko tinggi yang membutuhkan masukan ahli yang beragam.',
+                            '⚖️ **Majlis Model** — Researcher menjalankan GPT dan Claude secara selari terhadap taklimat dan mengembalikan kedua-dua laporan serta surat iringan sintesis yang menyerlahkan persetujuan, perbezaan dan penemuan unik. Terbaik untuk keputusan berisiko tinggi yang memerlukan input pakar pelbagai.']
 };
 function _uL(en){
   const lc = _langCode();
@@ -2948,7 +2948,7 @@ function showItem(item,tab){
         '<span class="researcher-callout-row"></span>'+
         '<strong>'+_uL('⚖️ Model Council')+'</strong> — '+
         (_langCode()==='EN'
-          ?'Researcher runs GPT-5.5 Thinking and Claude Opus 4.7 in parallel against the brief and returns both reports plus a synthesis cover letter highlighting agreements, disagreements and unique findings. Best for high-stakes decisions where you want diverse expert input.'
+          ?'Researcher runs GPT and Claude in parallel against the brief and returns both reports plus a synthesis cover letter highlighting agreements, disagreements and unique findings. Best for high-stakes decisions where you want diverse expert input.'
           :_uL('researcher-callout-council').replace(/^.*?—\s*/,''))+
         '</div>';
     }
