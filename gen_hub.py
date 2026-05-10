@@ -3736,9 +3736,9 @@ function buildOtherGrid(){
       card.innerHTML=
         '<div class="op-card-banner">'+p.icon+'</div>'+
         '<div class="op-card-body">'+
-          '<div class="op-card-tag">'+escapeHTML(_xformVal(p.tag,'EN'))+'</div>'+
-          '<div class="op-card-name">'+escapeHTML(_xformVal(p.name,'EN'))+'</div>'+
-          '<div class="op-card-desc">'+escapeHTML(_xformVal(p.desc,'EN'))+'</div>'+
+          '<div class="op-card-tag">'+escapeHTML(p.tag||'')+'</div>'+
+          '<div class="op-card-name">'+escapeHTML(p.name||'')+'</div>'+
+          '<div class="op-card-desc">'+escapeHTML(p.desc||'')+'</div>'+
           teamsHTML+
           '<div class="op-card-meta">'+pwdHTML+
             '<span class="op-card-link">Open &#8599;</span>'+
