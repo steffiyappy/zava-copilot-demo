@@ -636,6 +636,17 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .prompt-mode{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
 [data-theme="dark"] .op-card-pwd{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
 [data-theme="dark"] .op-card-team-code{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
+/* DARK theme — text that uses var(--navy) is invisible on dark navy surface; promote to text-strong */
+[data-theme="dark"] .home-title,
+[data-theme="dark"] .stat-chip .val,
+[data-theme="dark"] .tool-name,
+[data-theme="dark"] .prompt-title,
+[data-theme="dark"] .detail-scenario-title,
+[data-theme="dark"] .files-title,
+[data-theme="dark"] .storyboard-title,
+[data-theme="dark"] .op-card-name{color:var(--text-strong)}
+[data-theme="dark"] .detail-tab:hover:not(.active){color:var(--text-strong)}
+[data-theme="dark"] .sidebar-search-clear:hover{color:var(--text-strong)}
 @media (prefers-color-scheme: dark){
   [data-theme="system"] .stat-chip,
   [data-theme="system"] .grid-tab{color:var(--text)}
@@ -709,6 +720,17 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   [data-theme="system"] .prompt-mode{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
   [data-theme="system"] .op-card-pwd{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
   [data-theme="system"] .op-card-team-code{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
+  /* Text that uses var(--navy) — promote to text-strong in dark */
+  [data-theme="system"] .home-title,
+  [data-theme="system"] .stat-chip .val,
+  [data-theme="system"] .tool-name,
+  [data-theme="system"] .prompt-title,
+  [data-theme="system"] .detail-scenario-title,
+  [data-theme="system"] .files-title,
+  [data-theme="system"] .storyboard-title,
+  [data-theme="system"] .op-card-name{color:var(--text-strong)}
+  [data-theme="system"] .detail-tab:hover:not(.active){color:var(--text-strong)}
+  [data-theme="system"] .sidebar-search-clear:hover{color:var(--text-strong)}
 }
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--surface-3)}
