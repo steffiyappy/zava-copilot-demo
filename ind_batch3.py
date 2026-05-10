@@ -293,7 +293,7 @@ ind('hospital-network', 'healthcare', 'Hospital Network', '🏥', '#1B5E20', '#2
       {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
       {'name':'Mod Admin','role':'Chief Medical Officer','roleID':'Direktur Medik','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
       {'name':'Daichi Maruyama','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Sasha Ouellet','role':'Head of Quality & Patient Safety','roleID':'Kepala Mutu & Keselamatan Pasien','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#7C3AED'}
+      {'name':'Sasha Ouellet','role':'Head of Quality & Patient Safety','roleID':'Kepala Mutu & Keselamatan Pasien','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'}
     ],
     storyboard=[
       {
@@ -621,7 +621,7 @@ ind('pharmaceutical', 'healthcare', 'Pharmaceutical', '💊', '#311B92', '#5E35B
       {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
       {'name':'Mod Admin','role':'Chief Scientific Officer','roleID':'Direktur Sains','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
       {'name':'Daichi Maruyama','role':'Head of Regulatory Affairs','roleID':'Kepala Regulasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Sasha Ouellet','role':'Head of Manufacturing','roleID':'Kepala Manufaktur','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#7C3AED'}
+      {'name':'Sasha Ouellet','role':'Head of Manufacturing','roleID':'Kepala Manufaktur','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'}
     ],
     storyboard=[
       {
@@ -949,7 +949,7 @@ ind('og-upstream', 'og-energy', 'Oil & Gas Upstream', '🛢️', '#E65100', '#F5
       {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
       {'name':'Mod Admin','role':'COO Upstream','roleID':'Direktur Operasi Hulu','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
       {'name':'Daichi Maruyama','role':'CFO','roleID':'Direktur Keuangan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Sasha Ouellet','role':'Head of HSE','roleID':'Kepala HSE','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#7C3AED'}
+      {'name':'Sasha Ouellet','role':'Head of HSE','roleID':'Kepala HSE','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'}
     ],
     storyboard=[
       {

@@ -294,7 +294,7 @@ DEPARTMENTS_3 = [
     personas=[
       {'name':'Hadar Caspit','role':'Chief Marketing Officer','roleID':'Direktur Pemasaran','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
       {'name':'Sasha Ouellet','role':'Head of Brand Strategy','roleID':'Kepala Strategi Merek','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#7C3AED'},
-      {'name':'Mod Admin','role':'Head of Performance Marketing','roleID':'Kepala Pemasaran Kinerja','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#059669'},
+      {'name':'Mod Admin','role':'Head of Performance Marketing','roleID':'Kepala Pemasaran Kinerja','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#059669'},
       {'name':'Daichi Maruyama','role':'Head of Corporate Communications','roleID':'Kepala Komunikasi Korporat','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],
     storyboard=[
@@ -635,7 +635,7 @@ DEPARTMENTS_3 = [
       {'name':'Hadar Caspit','role':'Chief Information Officer','roleID':'Direktur TI','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
       {'name':'Sasha Ouellet','role':'Head of Enterprise Architecture','roleID':'Kepala Arsitektur Perusahaan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Head of Cybersecurity','roleID':'Kepala Keamanan Siber','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Daichi Maruyama','role':'Head of Digital Adoption','roleID':'Kepala Adopsi Digital','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#059669'}
+      {'name':'Daichi Maruyama','role':'Head of Digital Adoption','roleID':'Kepala Adopsi Digital','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#059669'}
     ],
     storyboard=[
       {
@@ -975,7 +975,7 @@ DEPARTMENTS_3 = [
       {'name':'Hadar Caspit','role':'Chief Sustainability Officer','roleID':'Direktur Keberlanjutan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1B5E20'},
       {'name':'Sasha Ouellet','role':'Head of Sustainability Reporting','roleID':'Kepala Pelaporan Keberlanjutan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Head of Climate & Supply Chain','roleID':'Kepala Iklim & Rantai Pasok','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Daichi Maruyama','role':'Head of Community Impact','roleID':'Kepala Dampak Komunitas','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#059669'}
+      {'name':'Daichi Maruyama','role':'Head of Community Impact','roleID':'Kepala Dampak Komunitas','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#059669'}
     ],
     storyboard=[
       {

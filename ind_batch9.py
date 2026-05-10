@@ -294,7 +294,7 @@ ind('glc-investment','glc','GLC Investment Arm','🏛','#1A237E','#283593',
     relevantDepts=['dept-finance','dept-strategy','dept-risk','dept-corpsec','dept-esg','dept-legal'],
     personas=[
       {'name':'Mod Admin','role':'Chief Investment Officer (CIO)','roleID':'Direktur Investasi (CIO)','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1A237E'},
-      {'name':'Sasha Ouellet','role':'Head of Portfolio Construction','roleID':'Kepala Konstruksi Portofolio','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Head of Portfolio Construction','roleID':'Kepala Konstruksi Portofolio','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Hadar Caspit','role':'Head of Strategic Investments','roleID':'Kepala Investasi Strategis','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
       {'name':'Daichi Maruyama','role':'Head of Public Markets & Stewardship','roleID':'Kepala Pasar Publik & Stewardship','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],
@@ -623,7 +623,7 @@ ind('financial-regulator','reg','Financial Regulator','⚖️','#1B5E20','#2E7D3
     relevantDepts=['dept-legal','dept-risk','dept-strategy','dept-corpsec','dept-it-digital','dept-operations'],
     personas=[
       {'name':'Mod Admin','role':'Executive Director, Banking & Markets Supervision','roleID':'Direktur Eksekutif Pengawasan Bank & Pasar Modal','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1B5E20'},
-      {'name':'Sasha Ouellet','role':'Head of Supervisory Policy','roleID':'Kepala Kebijakan Pengawasan','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Head of Supervisory Policy','roleID':'Kepala Kebijakan Pengawasan','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Hadar Caspit','role':'Executive Director, Conduct & Authorisation','roleID':'Direktur Eksekutif Pengawasan Perilaku & Perizinan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#2E7D32'},
       {'name':'Daichi Maruyama','role':'Executive Director, Investigation','roleID':'Direktur Eksekutif Investigasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],

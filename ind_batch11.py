@@ -300,7 +300,7 @@ INDUSTRIES_11.append(ind(
     relevantDepts=['dept-finance','dept-strategy','dept-operations','dept-procurement','dept-risk','dept-legal','dept-investor-relations'],
     personas=[
       {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no Microsoft 365 Copilot license','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
       {'name':'Daichi Maruyama','role':'Group Sustainability & Risk Director','roleID':'Direktur Keberlanjutan & Risiko Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],

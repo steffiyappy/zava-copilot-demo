@@ -155,7 +155,7 @@ def _personas(c):
          'leadsID': ['T_TEAMS', 'T_OUTLOOK', 'T_COWORK']},
         {'id': 'sasha-ouellet', 'name': 'Sasha Ouellet',
          'role': re_en['cos'], 'roleID': re_id['cos'],
-         'license': 'Free — no Microsoft 365 Copilot license',
+         'license': 'Free — no Microsoft 365 Copilot license needed',
          'licenseID': 'Bebas — tanpa lisensi Microsoft 365 Copilot',
          'account': 'SashaO@ABSx62256373.OnMicrosoft.com',
          'color': '#7C3AED', 'avatar': 'SO',

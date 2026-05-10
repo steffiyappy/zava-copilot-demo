@@ -295,7 +295,7 @@ DEPARTMENTS_4 = [
       {'name':'Hadar Caspit','role':'Chief Operating Officer','roleID':'Direktur Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
       {'name':'Sasha Ouellet','role':'Head of Operational Excellence','roleID':'Kepala Keunggulan Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Head of Supply & Continuity','roleID':'Kepala Pasokan & Kesinambungan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Daichi Maruyama','role':'Head of Site Operations','roleID':'Kepala Operasi Lokasi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#059669'}
+      {'name':'Daichi Maruyama','role':'Head of Site Operations','roleID':'Kepala Operasi Lokasi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#059669'}
     ],
     storyboard=[
       {
@@ -635,7 +635,7 @@ DEPARTMENTS_4 = [
       {'name':'Hadar Caspit','role':'Company Secretary','roleID':'Sekretaris Perusahaan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1A237E'},
       {'name':'Sasha Ouellet','role':'Chief of Staff to the CEO','roleID':'Kepala Staf Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Head of Governance','roleID':'Kepala Tata Kelola','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Daichi Maruyama','role':'Board Secretariat Lead','roleID':'Pimpinan Sekretariat Dewan','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#059669'}
+      {'name':'Daichi Maruyama','role':'Board Secretariat Lead','roleID':'Pimpinan Sekretariat Dewan','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#059669'}
     ],
     storyboard=[
       {

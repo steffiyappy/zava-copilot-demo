@@ -282,7 +282,7 @@ ind('diversified-conglomerate', 'conglomerate', 'Diversified Conglomerate', '�
     relevantDepts=['dept-finance','dept-strategy','dept-corpsec','dept-legal'],
     personas=[
       {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
       {'name':'Daichi Maruyama','role':'Head of M&A','roleID':'Kepala M&A','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],
@@ -508,7 +508,7 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
     relevantDepts=['dept-risk', 'dept-it-digital', 'dept-legal', 'dept-finance'],
     personas=[
         {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-        {'name':'Sasha Ouellet','role':'Chief Product Officer','roleID':'Direktur Produk','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#7C3AED'},
+        {'name':'Sasha Ouellet','role':'Chief Product Officer','roleID':'Direktur Produk','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
         {'name':'Mod Admin','role':'Head of Compliance','roleID':'Kepala Kepatuhan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
         {'name':'Daichi Maruyama','role':'CTO / CISO','roleID':'Direktur Teknologi / CISO','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],
@@ -714,7 +714,7 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
     relevantDepts=['dept-finance', 'dept-strategy', 'dept-operations', 'dept-corpsec'],
     personas=[
         {'name':'Hadar Caspit','role':'Chief Economist','roleID':'Kepala Ekonom','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-        {'name':'Sasha Ouellet','role':'Chief of Staff','roleID':'Kepala Staf','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license','color':'#7C3AED'},
+        {'name':'Sasha Ouellet','role':'Chief of Staff','roleID':'Kepala Staf','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
         {'name':'Mod Admin','role':'Deputy Director General (Policy)','roleID':'Wakil Direktur Jenderal Kebijakan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
         {'name':'Daichi Maruyama','role':'Deputy Director General (Operations)','roleID':'Wakil Direktur Jenderal Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],
