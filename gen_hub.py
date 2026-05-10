@@ -1063,12 +1063,12 @@ const _UI = {
   'No pages match your search.':        ['Tidak ada halaman yang cocok dengan pencarian Anda.', 'Tiada halaman sepadan dengan carian anda.'],
   'Search industries, departments…':    ['Cari industri, departemen…', 'Cari industri, jabatan…'],
   // Home stat chips
-  'Total Prompts':         ['Total Prompt',                          'Jumlah Gesaan'],
-  'Copilot Tools':         ['Tools Copilot',                         'Alat Copilot'],
+  'Total Prompts':         ['Total Prompt',                          'Jumlah Prompt'],
+  'Copilot Tools':         ['Tools Copilot',                         'Tools Copilot'],
   // Home subtitle
   'Select an industry or department to explore Microsoft 365 Copilot demo scenarios, prompts, and reference files':
                            ['Pilih industri atau departemen untuk mengeksplorasi skenario demo Microsoft 365 Copilot, prompt, dan file referensi',
-                            'Pilih industri atau jabatan untuk meneroka senario demo Microsoft 365 Copilot, gesaan dan fail rujukan'],
+                            'Pilih industri atau jabatan untuk meneroka senario demo Microsoft 365 Copilot, prompt dan fail rujukan'],
   // Detail page chrome
   'Industry':              ['Industri',                              'Industri'],
   'Department':            ['Departemen',                            'Jabatan'],
@@ -1078,8 +1078,8 @@ const _UI = {
   '🏢 Departments most affected — click to drill down':
                            ['🏢 Departemen yang paling terdampak — klik untuk melihat detail',
                             '🏢 Jabatan paling terkesan — klik untuk meneroka'],
-  '🛠️ Microsoft 365 Copilot Tools':  ['🛠️ Tools Microsoft 365 Copilot',                  '🛠️ Alat Microsoft 365 Copilot'],
-  '💬 Copilot Chat Prompts':['💬 Prompt Copilot Chat',                 '💬 Gesaan Copilot Chat'],
+  '🛠️ Microsoft 365 Copilot Tools':  ['🛠️ Tools Microsoft 365 Copilot',                  '🛠️ Tools Microsoft 365 Copilot'],
+  '💬 Copilot Chat Prompts':['💬 Prompt Copilot Chat',                 '💬 Prompt Copilot Chat'],
   '🆓 Copilot Chat — broader use cases (no license required)':
                            ['🆓 Copilot Chat — kasus penggunaan yang lebih luas (tidak perlu lisensi)',
                             '🆓 Copilot Chat — kes penggunaan lebih luas (tiada lesen diperlukan)'],
@@ -1090,13 +1090,13 @@ const _UI = {
                            ['📓 Setup Notebook — tambahkan SEMUA sumber saat pembuatan, lalu atur kolom Instructions',
                             '📓 Persediaan Notebook — tambah SEMUA sumber semasa cipta, kemudian set medan Instructions'],
   'Instructions field (system prompt):':
-                           ['Kolom Instructions (system prompt):',   'Medan Instructions (gesaan sistem):'],
+                           ['Kolom Instructions (system prompt):',   'Medan Instructions (system prompt):'],
   '⚡ Cowork delegates these in parallel': ['⚡ Cowork mendelegasikan ini secara paralel', '⚡ Cowork mengagihkan ini secara selari'],
   '🔍 Critique Mode':       ['🔍 Mode Kritik',                         '🔍 Mod Kritik'],
   '⚖️ Model Council':       ['⚖️ Dewan Model',                          '⚖️ Majlis Model'],
   '📋 Instructions':       ['📋 Petunjuk',                            '📋 Arahan'],
-  '💬 Prompt — copy this': ['💬 Prompt — salin ini',                  '💬 Gesaan — salin ini'],
-  '📋 Copy prompt':        ['📋 Salin prompt',                        '📋 Salin gesaan'],
+  '💬 Prompt — copy this': ['💬 Prompt — salin ini',                  '💬 Prompt — salin ini'],
+  '📋 Copy prompt':        ['📋 Salin prompt',                        '📋 Salin prompt'],
   '👤 Demo account:':      ['👤 Akun demo:',                          '👤 Akaun demo:'],
   '✨ Microsoft 365 Copilot':       ['✨ Microsoft 365 Copilot',                        '✨ Microsoft 365 Copilot'],
   '🆓 No License Required':['🆓 Tidak Perlu Lisensi',                 '🆓 Tiada Lesen Diperlukan'],
@@ -1106,7 +1106,7 @@ const _UI = {
   '⬇ Download':            ['⬇ Unduh',                                '⬇ Muat turun'],
   '🎭 Personas in this demo': ['🎭 Persona dalam demo ini',           '🎭 Persona dalam demo ini'],
   '⚡ Demo Tips':          ['⚡ Tips Demo',                            '⚡ Petua Demo'],
-  'prompts':               ['prompt',                                 'gesaan'],
+  'prompts':               ['prompt',                                 'prompt'],
   'files':                 ['file',                                   'fail'],
   // Researcher callout
   'researcher-callout-critique':
@@ -1116,7 +1116,7 @@ const _UI = {
                            ['⚖️ **Dewan Model** — Researcher menjalankan GPT dan Claude secara paralel terhadap brief dan mengembalikan kedua laporan plus surat pengantar sintesis yang menyoroti kesepakatan, perbedaan dan temuan unik. Terbaik untuk keputusan berisiko tinggi yang membutuhkan masukan ahli yang beragam.',
                             '⚖️ **Majlis Model** — Researcher menjalankan GPT dan Claude secara selari terhadap taklimat dan mengembalikan kedua-dua laporan serta surat iringan sintesis yang menyerlahkan persetujuan, perbezaan dan penemuan unik. Terbaik untuk keputusan berisiko tinggi yang memerlukan input pakar pelbagai.'],
   // Tool-info banner (renderer fallback for tool.desc)
-  '💡 What this tool can do':              ['💡 Apa yang bisa dilakukan tool ini',          '💡 Apa yang boleh alat ini buat'],
+  '💡 What this tool can do':              ['💡 Apa yang bisa dilakukan tool ini',          '💡 Apa yang boleh tool ini buat'],
   // Subsidiaries chip strip removed from visible UI — kept for search-only
   // indexing via _hayFor(rec.subsidiaries). Translation entry intentionally
   // omitted because the strip is no longer rendered.
@@ -1132,7 +1132,7 @@ const _UI = {
                             'Buka fail Excel/Word rujukan dalam pelayar sebelum mendemokan Copilot dalam app berkenaan'],
   'For Notebook demos, click <strong>+ Sources</strong> in the right rail and upload each file from OneDrive — the notebook grounds answers on those sources automatically (no <code>/file</code> tag needed in the prompt body)':
                            ['Untuk demo Notebook, klik <strong>+ Sources</strong> di rail kanan dan upload setiap file dari OneDrive — notebook akan grounding jawaban pada sumber tersebut secara otomatis (tidak perlu tag <code>/file</code> di body prompt)',
-                            'Untuk demo Notebook, klik <strong>+ Sources</strong> di rail kanan dan muat naik setiap fail dari OneDrive — notebook akan grounding jawapan pada sumber tersebut secara automatik (tidak perlu tag <code>/file</code> dalam body gesaan)'],
+                            'Untuk demo Notebook, klik <strong>+ Sources</strong> di rail kanan dan muat naik setiap fail dari OneDrive — notebook akan grounding jawapan pada sumber tersebut secara automatik (tidak perlu tag <code>/file</code> dalam body prompt)'],
   'For Teams demos, use the demo tenant\'s recorded meetings (New Software Implementation, Potential Merger, Negotiating Marketing Contract)':
                            ['Untuk demo Teams, gunakan recording meeting dari tenant demo (New Software Implementation, Potential Merger, Negotiating Marketing Contract)',
                             'Untuk demo Teams, gunakan rakaman mesyuarat dari tenant demo (New Software Implementation, Potential Merger, Negotiating Marketing Contract)'],
@@ -1196,7 +1196,7 @@ function _uL(en){
 function _uLPrompt(n){
   const lc = _langCode();
   if(lc==='BI') return '💬 Prompt '+n;
-  if(lc==='BM') return '💬 Gesaan '+n;
+  if(lc==='BM') return '💬 Prompt '+n;
   return '💬 Prompt '+n;
 }
 // Apply locale labels to static HTML elements (called from setLocale)
@@ -1223,8 +1223,8 @@ function _applyLocaleLabels(){
     const t=lbl.textContent.trim();
     if(/^Industri$|^Industries$/i.test(t)) lbl.textContent=_uL('Industries');
     else if(/^Departments$|^Departemen$|^Jabatan$/i.test(t)) lbl.textContent=_uL('Departments');
-    else if(/^Total Prompts$|^Total Prompt$|^Jumlah Gesaan$/i.test(t)) lbl.textContent=_uL('Total Prompts');
-    else if(/^Copilot Tools$|^Tools Copilot$|^Alat Copilot$/i.test(t)) lbl.textContent=_uL('Copilot Tools');
+    else if(/^Total Prompts$|^Total Prompt$|^Jumlah Prompt$/i.test(t)) lbl.textContent=_uL('Total Prompts');
+    else if(/^Copilot Tools$|^Tools Copilot$|^Tool Copilot$/i.test(t)) lbl.textContent=_uL('Copilot Tools');
   });
   // Grid tabs
   const gtI=document.getElementById('gtab-ind'); if(gtI) gtI.innerHTML='🏭 '+_uL('Industries')+' ('+(window.HUB_DATA?HUB_DATA.industries.length:'')+')';
@@ -2884,7 +2884,7 @@ const _TOOL_DESCS = {
   },
   excel: {
     EN: 'Copilot inside Excel for the Web. Three demo angles: (1) inline "Edit with Copilot" agent mode — multi-step actions across the workbook (columns, pivots, dashboards, conditional formatting); (2) 📈 Plan mode (May 2026) — Copilot outlines a step-by-step approach BEFORE making any changes so users can review and adjust before edits land; (3) 🐍 Python in Excel — invoke Python in the prompt for advanced analysis (forecasting, regressions, custom visualisations) without leaving the workbook.',
-    BM: 'Copilot di dalam Excel for the Web. Tiga sudut demo: (1) mod agen inline "Edit with Copilot" — tindakan berbilang langkah merentasi buku kerja (kolum, pivot, dashboard, conditional formatting); (2) 📈 mod Plan (Mei 2026) — Copilot menggariskan langkah demi langkah SEBELUM membuat sebarang perubahan supaya pengguna boleh menyemak dan melaras sebelum suntingan dilaksanakan; (3) 🐍 Python in Excel — panggil Python dalam gesaan untuk analisis lanjutan (ramalan, regresi, visualisasi khusus) tanpa keluar dari buku kerja.',
+    BM: 'Copilot di dalam Excel for the Web. Tiga sudut demo: (1) mod agen inline "Edit with Copilot" — tindakan berbilang langkah merentasi buku kerja (kolum, pivot, dashboard, conditional formatting); (2) 📈 mod Plan (Mei 2026) — Copilot menggariskan langkah demi langkah SEBELUM membuat sebarang perubahan supaya pengguna boleh menyemak dan melaras sebelum suntingan dilaksanakan; (3) 🐍 Python in Excel — panggil Python dalam prompt untuk analisis lanjutan (ramalan, regresi, visualisasi khusus) tanpa keluar dari buku kerja.',
     BI: 'Copilot di dalam Excel for the Web. Tiga sudut demo: (1) mode agent inline "Edit with Copilot" — aksi multi-step lintas workbook (kolom, pivot, dashboard, conditional formatting); (2) 📈 mode Plan (Mei 2026) — Copilot menyusun pendekatan langkah-demi-langkah SEBELUM melakukan perubahan apa pun, sehingga user bisa review dan menyesuaikan sebelum edit diterapkan; (3) 🐍 Python in Excel — panggil Python di dalam prompt untuk analisis lanjutan (forecasting, regresi, visualisasi khusus) tanpa keluar dari workbook.'
   },
   word: {
@@ -2904,7 +2904,7 @@ const _TOOL_DESCS = {
   },
   teams: {
     EN: 'Copilot grounded in the Teams Recap. Open a meeting in Teams calendar > Recap page opens with AI Notes, chapters, transcript and action items > click the Copilot icon (top right) > Copilot opens grounded in the meeting transcript > type your minutes prompt > copy the structured output into a new Word doc. Also new for this demo cycle: 📞 Copilot Call Delegation — Copilot answers incoming Teams calls on the user\u2019s behalf, gathers context from callers, and books follow-ups via Microsoft Bookings; 🗣️ Consecutive Interpretation — turn-based translation between two languages with Interpreter on the meeting stage, ideal for ASEAN cross-border meetings.',
-    BM: 'Copilot yang grounded pada Teams Recap. Buka mesyuarat dalam kalendar Teams > halaman Recap dibuka dengan AI Notes, bab, transkrip dan action items > klik ikon Copilot (kanan atas) > Copilot dibuka grounded pada transkrip mesyuarat > taip gesaan minit anda > salin output berstruktur ke dokumen Word baharu. Baharu untuk kitaran demo ini: 📞 Copilot Call Delegation — Copilot menjawab panggilan masuk Teams bagi pihak pengguna, mengumpul konteks daripada pemanggil dan menempah follow-up melalui Microsoft Bookings; 🗣️ Consecutive Interpretation — terjemahan giliran antara dua bahasa dengan Interpreter di pentas mesyuarat, sesuai untuk mesyuarat rentas sempadan ASEAN.',
+    BM: 'Copilot yang grounded pada Teams Recap. Buka mesyuarat dalam kalendar Teams > halaman Recap dibuka dengan AI Notes, bab, transkrip dan action items > klik ikon Copilot (kanan atas) > Copilot dibuka grounded pada transkrip mesyuarat > taip prompt minit anda > salin output berstruktur ke dokumen Word baharu. Baharu untuk kitaran demo ini: 📞 Copilot Call Delegation — Copilot menjawab panggilan masuk Teams bagi pihak pengguna, mengumpul konteks daripada pemanggil dan menempah follow-up melalui Microsoft Bookings; 🗣️ Consecutive Interpretation — terjemahan giliran antara dua bahasa dengan Interpreter di pentas mesyuarat, sesuai untuk mesyuarat rentas sempadan ASEAN.',
     BI: 'Copilot yang grounded pada Teams Recap. Buka meeting di kalender Teams > halaman Recap muncul dengan AI Notes, chapter, transcript dan action items > klik ikon Copilot (kanan atas) > Copilot terbuka grounded pada transcript meeting > ketik prompt minutes Anda > copy output terstruktur ke dokumen Word baru. Baru untuk siklus demo ini: 📞 Copilot Call Delegation — Copilot menjawab panggilan Teams masuk atas nama user, mengumpulkan konteks dari penelepon, dan booking follow-up via Microsoft Bookings; 🗣️ Consecutive Interpretation — terjemahan turn-based antara dua bahasa dengan Interpreter di stage meeting, ideal untuk meeting cross-border ASEAN.'
   },
   notebook: {
@@ -2914,32 +2914,32 @@ const _TOOL_DESCS = {
   },
   cowork: {
     EN: 'Cowork is the autonomous agent in Microsoft 365 Copilot — m365.cloud.microsoft > left nav > Agents > Cowork. ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, and post a Teams message — Cowork executes them all and reports back. Requires Microsoft 365 Copilot + Frontier Program enrollment.',
-    BM: 'Cowork ialah agen autonomi dalam Microsoft 365 Copilot — m365.cloud.microsoft > nav kiri > Agents > Cowork. SATU gesaan yang mendelegasikan 5 tugas selari: draf dokumen Word, draf dokumen Word kedua, hantar emel, jadualkan mesyuarat kalendar dan hantar mesej Teams — Cowork laksanakan semuanya dan laporkan semula. Memerlukan Microsoft 365 Copilot + pendaftaran Frontier Program.',
+    BM: 'Cowork ialah agen autonomi dalam Microsoft 365 Copilot — m365.cloud.microsoft > nav kiri > Agents > Cowork. SATU prompt yang mendelegasikan 5 tugas selari: draf dokumen Word, draf dokumen Word kedua, hantar emel, jadualkan mesyuarat kalendar dan hantar mesej Teams — Cowork laksanakan semuanya dan laporkan semula. Memerlukan Microsoft 365 Copilot + pendaftaran Frontier Program.',
     BI: 'Cowork adalah agent autonomous di Microsoft 365 Copilot — m365.cloud.microsoft > nav kiri > Agents > Cowork. SATU prompt yang mendelegasikan 5 task paralel: draf dokumen Word, draf dokumen Word kedua, kirim email, schedule meeting kalender, dan post pesan Teams — Cowork eksekusi semuanya dan melaporkan kembali. Membutuhkan Microsoft 365 Copilot + enrollment Frontier Program.'
   },
   wordAgent: {
     EN: 'Word Agent in Microsoft 365 Copilot Chat — do NOT open Word first. From m365.cloud.microsoft/chat type a prompt with /reference files describing the document, and Copilot returns a fully drafted .docx. Great for: board minutes, briefing memos, policy drafts, status reports.',
-    BM: 'Word Agent dalam Microsoft 365 Copilot Chat — JANGAN buka Word dulu. Dari m365.cloud.microsoft/chat, taip gesaan dengan /reference fail yang menerangkan dokumen, dan Copilot pulangkan .docx yang siap didraf sepenuhnya. Hebat untuk: minit lembaga, memo taklimat, draf polisi, laporan status.',
+    BM: 'Word Agent dalam Microsoft 365 Copilot Chat — JANGAN buka Word dulu. Dari m365.cloud.microsoft/chat, taip prompt dengan /reference fail yang menerangkan dokumen, dan Copilot pulangkan .docx yang siap didraf sepenuhnya. Hebat untuk: minit lembaga, memo taklimat, draf polisi, laporan status.',
     BI: 'Word Agent di Microsoft 365 Copilot Chat — JANGAN buka Word dulu. Dari m365.cloud.microsoft/chat, ketik prompt dengan /reference file yang mendeskripsikan dokumennya, dan Copilot mengembalikan .docx yang sudah ter-draf lengkap. Sangat pas untuk: board minutes, briefing memo, draf kebijakan, laporan status.'
   },
   pptAgent: {
     EN: 'PowerPoint Agent in Microsoft 365 Copilot Chat — do NOT open PowerPoint first. From m365.cloud.microsoft/chat type a prompt with /reference files describing the deck (theme, audience, slide list), and Copilot returns a complete .pptx. Great for: Board decks, IR decks, town hall decks.',
-    BM: 'PowerPoint Agent dalam Microsoft 365 Copilot Chat — JANGAN buka PowerPoint dulu. Dari m365.cloud.microsoft/chat, taip gesaan dengan /reference fail yang menerangkan dek (tema, audiens, senarai slaid), dan Copilot pulangkan .pptx yang lengkap. Hebat untuk: dek Lembaga, dek IR, dek town hall.',
+    BM: 'PowerPoint Agent dalam Microsoft 365 Copilot Chat — JANGAN buka PowerPoint dulu. Dari m365.cloud.microsoft/chat, taip prompt dengan /reference fail yang menerangkan dek (tema, audiens, senarai slaid), dan Copilot pulangkan .pptx yang lengkap. Hebat untuk: dek Lembaga, dek IR, dek town hall.',
     BI: 'PowerPoint Agent di Microsoft 365 Copilot Chat — JANGAN buka PowerPoint dulu. Dari m365.cloud.microsoft/chat, ketik prompt dengan /reference file yang mendeskripsikan deck (tema, audiens, list slide), dan Copilot mengembalikan .pptx lengkap. Sangat pas untuk: deck Board, deck IR, deck town hall.'
   },
   excelAgent: {
     EN: 'Excel Agent in Microsoft 365 Copilot Chat — do NOT open Excel first. From m365.cloud.microsoft/chat type a prompt with /reference files describing the workbook (sheets, columns, charts, conditional formatting), and Copilot returns a fully built .xlsx. Great for: KPI dashboards, division comparisons, scenario models.',
-    BM: 'Excel Agent dalam Microsoft 365 Copilot Chat — JANGAN buka Excel dulu. Dari m365.cloud.microsoft/chat, taip gesaan dengan /reference fail yang menerangkan buku kerja (helaian, kolum, carta, conditional formatting), dan Copilot pulangkan .xlsx yang siap dibina sepenuhnya. Hebat untuk: dashboard KPI, perbandingan bahagian, model senario.',
+    BM: 'Excel Agent dalam Microsoft 365 Copilot Chat — JANGAN buka Excel dulu. Dari m365.cloud.microsoft/chat, taip prompt dengan /reference fail yang menerangkan buku kerja (helaian, kolum, carta, conditional formatting), dan Copilot pulangkan .xlsx yang siap dibina sepenuhnya. Hebat untuk: dashboard KPI, perbandingan bahagian, model senario.',
     BI: 'Excel Agent di Microsoft 365 Copilot Chat — JANGAN buka Excel dulu. Dari m365.cloud.microsoft/chat, ketik prompt dengan /reference file yang mendeskripsikan workbook (sheet, kolom, chart, conditional formatting), dan Copilot mengembalikan .xlsx yang sudah ter-build lengkap. Sangat pas untuk: dashboard KPI, komparasi divisi, model skenario.'
   },
   agentBuilder: {
     EN: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. m365.cloud.microsoft/chat > Agents > + Create an agent. Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues, OR submit for admin approval to publish into the Agent Store \u201cBuilt by your org\u201d catalog (May 2026 rollout) so the whole organisation can discover it.',
-    BM: 'Agent Builder berada DI DALAM Microsoft 365 Copilot Chat — BUKAN Copilot Studio. m365.cloud.microsoft/chat > Agents > + Create an agent. Panduan: (1) Describe — taip apa yang agen anda patut buat dalam bahasa biasa; (2) Configure — arahan, pengetahuan (URL SharePoint / fail yang dimuat naik), gesaan permulaan; (3) Test dalam panel kanan; (4) Create + kongsi kepada rakan sekerja, ATAU hantar untuk kelulusan admin bagi diterbitkan ke katalog \u201cBuilt by your org\u201d Agent Store (rollout Mei 2026) supaya seluruh organisasi boleh menemuinya.',
+    BM: 'Agent Builder berada DI DALAM Microsoft 365 Copilot Chat — BUKAN Copilot Studio. m365.cloud.microsoft/chat > Agents > + Create an agent. Panduan: (1) Describe — taip apa yang agen anda patut buat dalam bahasa biasa; (2) Configure — arahan, pengetahuan (URL SharePoint / fail yang dimuat naik), prompt permulaan; (3) Test dalam panel kanan; (4) Create + kongsi kepada rakan sekerja, ATAU hantar untuk kelulusan admin bagi diterbitkan ke katalog \u201cBuilt by your org\u201d Agent Store (rollout Mei 2026) supaya seluruh organisasi boleh menemuinya.',
     BI: 'Agent Builder ada DI DALAM Microsoft 365 Copilot Chat — BUKAN Copilot Studio. m365.cloud.microsoft/chat > Agents > + Create an agent. Walkthrough: (1) Describe — ketik apa yang harus dilakukan agent Anda dalam bahasa sehari-hari; (2) Configure — instruksi, knowledge (URL SharePoint / file yang di-upload), starter prompt; (3) Test di pane kanan; (4) Create + share ke kolega, ATAU submit untuk approval admin agar dipublish ke katalog \u201cBuilt by your org\u201d Agent Store (rollout Mei 2026) supaya seluruh organisasi bisa menemukannya.'
   },
   chat: {
     EN: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with Microsoft 365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
-    BM: 'Microsoft 365 Copilot Chat di m365.cloud.microsoft/chat — chat selamat yang grounded pada kerja. Taip gesaan dan rujuk fail dengan /file. Tersedia untuk sesiapa yang ada akaun M365 tanpa kos tambahan (peringkat Free) dan dikuasakan dengan lesen Microsoft 365 Copilot (jawapan grounded pada kerja, agen, ringkasan merentasi peti masuk/fail/mesyuarat).',
+    BM: 'Microsoft 365 Copilot Chat di m365.cloud.microsoft/chat — chat selamat yang grounded pada kerja. Taip prompt dan rujuk fail dengan /file. Tersedia untuk sesiapa yang ada akaun M365 tanpa kos tambahan (peringkat Free) dan dikuasakan dengan lesen Microsoft 365 Copilot (jawapan grounded pada kerja, agen, ringkasan merentasi peti masuk/fail/mesyuarat).',
     BI: 'Microsoft 365 Copilot Chat di m365.cloud.microsoft/chat — chat aman yang grounded pada kerja. Ketik prompt dan reference file dengan /file. Tersedia untuk siapa saja yang punya akun M365 tanpa biaya tambahan (tier Free) dan disuper-charge dengan lisensi Microsoft 365 Copilot (jawaban grounded pada kerja, agent, ringkasan lintas mailbox/file/meeting).'
   }
 };
@@ -3540,8 +3540,8 @@ function showItem(item,tab,preserveScroll){
     const labelPunch=_bL('The Punchline','Inti Cerita','Inti Cerita');
     const punchText=_bL(
       'One workday. '+toolsCount+' tools. From frame to ship.',
-      'Satu hari kerja. '+toolsCount+' alat. Dari konteks ke pengiriman.',
-      'Satu hari kerja. '+toolsCount+' alat. Daripada rangka kepada penghantaran.');
+      'Satu hari kerja. '+toolsCount+' tool. Dari konteks ke pengiriman.',
+      'Satu hari kerja. '+toolsCount+' tool. Daripada rangka kepada penghantaran.');
     const indColor=item.color||'#0EA5E9';
     const phasesHTML=_sb.map((ex,i)=>{
       let exTitle='', exSummary='', exSrc='EN', summarySrc='EN';

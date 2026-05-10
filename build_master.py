@@ -280,6 +280,25 @@ except ImportError:
 except Exception as _e:
     print(f"(subsidiaries merge skipped due to error: {_e})")
 
+# ── ID -> BM auto-fill ─────────────────────────────────────────────────────
+# Most promptsBM arrays are empty (~93%) so MY_BM users were seeing English
+# fallback for the bulk of prompt blocks while a handful of tools had hand-
+# authored BM — producing the dreaded "half English half BM" mix. We now fill
+# every empty promptsBM by cloning promptsID and running it through the
+# ID→BM token swap table (Ketik→Taip, Akun→Akaun, Kantor→Pejabat, Kolom→Lajur,
+# Tabel→Jadual, Bisa→Boleh, etc.). BM and ID are ~80% mutually intelligible so
+# this gives MY_BM users a consistent Bahasa Malaysia experience instead of
+# locale-mixing.
+try:
+    from id_to_bm_swaps import fill_missing_bm_from_id
+    _bm_filled = fill_missing_bm_from_id(all_industries)
+    _bm_filled += fill_missing_bm_from_id(all_departments)
+    print(f"BM prompts auto-filled from ID for {_bm_filled} tool blocks")
+except ImportError:
+    print("(id_to_bm_swaps.py not found; BM prompts left as-is)")
+except Exception as _e:
+    print(f"(BM auto-fill skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')
