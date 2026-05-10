@@ -2921,17 +2921,28 @@ function applySearch(q){
   if(clr) clr.classList.toggle('show', query.length>0);
 
   // Build a search haystack for an industry/department record.
-  // Includes scenario text + persona companies so customer name-drops (e.g. "Sunway", "KPJ", "Maybank") match back to the industry.
+  // Includes scenario text + persona companies + persona names so customer name-drops
+  // (e.g. "Sunway", "KPJ", "Maybank") AND post-scrub fictional names (e.g. "Apex", "Asianova", "Pacific")
+  // both match back to the industry. Also includes tagline keywords, persona accounts, and subsector tags.
   function _hayFor(rec){
     if(!rec) return '';
-    const personaCos=Array.isArray(rec.personas)?rec.personas.map(p=>(p&&p.company)||'').join(' '):'';
-    return [
+    const ps=Array.isArray(rec.personas)?rec.personas:[];
+    const personaCos=ps.map(p=>(p&&p.company)||'').join(' ');
+    const personaNames=ps.map(p=>(p&&p.name)||'').join(' ');
+    const personaTitles=ps.map(p=>(p&&p.title)||'').join(' ');
+    const personaAccts=ps.map(p=>(p&&p.acct)||'').join(' ');
+    // Raw fields (real customer names: Sunway, Maybank, KPJ etc — present in source data)
+    const raw=[
       rec.name||'',rec.id||'',rec.sectorId||'',rec.subsector||'',
       rec.company||'',rec.companyID||'',
       rec.tagline||'',rec.taglineID||'',
       rec.scenario||'',rec.scenarioID||'',
-      personaCos
-    ].join(' ').toLowerCase();
+      personaCos,personaNames,personaTitles,personaAccts
+    ].join(' ');
+    // Scrubbed fields (fictional names shown on screen: Apex, Asianova, Pacific etc)
+    // _scrubReal swaps real -> fictional; we include the scrubbed form so users can search by what they SEE
+    const scrubbed=(typeof _scrubReal==='function')?_scrubReal(raw):'';
+    return (raw+' '+scrubbed).toLowerCase();
   }
 
   // Sidebar filter — Industries
