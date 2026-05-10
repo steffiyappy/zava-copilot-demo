@@ -46,20 +46,30 @@
   .form-group{margin-bottom:20px;text-align:left}
   label{display:block;color:rgba(255,255,255,0.8);font-size:13px;font-weight:600;margin-bottom:8px;letter-spacing:0.5px}
   .input-wrap{position:relative}
-  input[type=password]{
+  /* Style by class so the input stays styled when type flips between password and text. */
+  .pw-input{
     width:100%;padding:14px 48px 14px 16px;
     background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.2);
     border-radius:12px;color:#FFFFFF;font-size:15px;font-family:inherit;
     outline:none;transition:all 0.2s;
+    letter-spacing:0.5px;
+    /* When the input is in text mode the password manager / browser may try to
+       autocomplete it as a username — prevent the visual jump. */
+    -webkit-text-security:none;
   }
-  input[type=password]:focus{border-color:#00A8A8;background:rgba(255,255,255,0.12);box-shadow:0 0 0 4px rgba(0,168,168,0.15)}
-  input[type=password]::placeholder{color:rgba(255,255,255,0.3)}
+  .pw-input:focus{border-color:#00A8A8;background:rgba(255,255,255,0.12);box-shadow:0 0 0 4px rgba(0,168,168,0.15)}
+  .pw-input::placeholder{color:rgba(255,255,255,0.3)}
   .eye-btn{
-    position:absolute;right:14px;top:50%;transform:translateY(-50%);
-    background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.5);font-size:18px;
-    padding:0;line-height:1;transition:color 0.2s;
+    position:absolute;right:8px;top:50%;transform:translateY(-50%);
+    width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;
+    cursor:pointer;color:rgba(255,255,255,0.7);font-size:16px;line-height:1;
+    padding:0;transition:all 0.18s;user-select:none;
   }
-  .eye-btn:hover{color:#00A8A8}
+  .eye-btn:hover{color:#00A8A8;background:rgba(0,168,168,0.15);border-color:rgba(0,168,168,0.4)}
+  .eye-btn:active{transform:translateY(-50%) scale(0.94)}
+  .eye-btn:focus-visible{outline:2px solid #00A8A8;outline-offset:2px}
+  .eye-btn[aria-pressed="true"]{color:#00A8A8;background:rgba(0,168,168,0.18);border-color:rgba(0,168,168,0.5)}
   .btn{
     width:100%;padding:15px;background:linear-gradient(135deg,#0078D4,#00A8A8);
     border:none;border-radius:12px;color:#FFFFFF;font-size:15px;font-weight:700;
@@ -99,8 +109,8 @@
   <div class="form-group">
     <label>Access Password</label>
     <div class="input-wrap">
-      <input type="password" id="pw" placeholder="Enter access password" onkeydown="if(event.key==='Enter')unlock()">
-      <button class="eye-btn" onclick="togglePw()" title="Show/hide">👁</button>
+      <input type="password" class="pw-input" id="pw" autocomplete="current-password" placeholder="Enter access password" onkeydown="if(event.key==='Enter')unlock()">
+      <button type="button" class="eye-btn" id="eye-btn" onclick="togglePw()" aria-label="Show password" aria-pressed="false" title="Show password"><span id="eye-icon">&#128065;</span></button>
     </div>
   </div>
   <button class="btn" onclick="unlock()">🚀 Enter Hub</button>
@@ -142,7 +152,21 @@ async function unlock(){
 }
 function togglePw(){
   const i=document.getElementById('pw');
-  i.type=i.type==='password'?'text':'password';
+  const btn=document.getElementById('eye-btn');
+  const icon=document.getElementById('eye-icon');
+  const wasHidden = i.type==='password';
+  // Preserve cursor position when swapping type
+  const start = i.selectionStart;
+  const end = i.selectionEnd;
+  i.type = wasHidden ? 'text' : 'password';
+  // Eye icon: 👁 when hidden (click to show), 🙈 when shown (click to hide)
+  icon.innerHTML = wasHidden ? '&#128584;' : '&#128065;';
+  btn.setAttribute('aria-label', wasHidden ? 'Hide password' : 'Show password');
+  btn.setAttribute('title',      wasHidden ? 'Hide password' : 'Show password');
+  btn.setAttribute('aria-pressed', wasHidden ? 'true' : 'false');
+  // Restore focus + caret
+  i.focus();
+  try { i.setSelectionRange(start, end); } catch(_){}
 }
 // Auto-check if already authenticated
 if(sessionStorage.getItem('hub_auth')==='ok') window.location.href='hub.html';
