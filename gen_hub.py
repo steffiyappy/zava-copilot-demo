@@ -472,11 +472,88 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   /* Touch targets */
   .sidebar-tab,.detail-tab,.grid-tab,.lang-btn{min-height:40px}
   .ind-card,.dept-pill,.tool-header{min-height:44px}
+  /* Tab strips: allow horizontal scroll instead of overflow at narrow widths */
+  .detail-tabs,.grid-tabs{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;padding-bottom:2px}
+  .detail-tabs::-webkit-scrollbar,.grid-tabs::-webkit-scrollbar{display:none}
+  .detail-tab,.grid-tab{flex-shrink:0}
+  /* Tool header: allow license badge to drop below name on tight rows */
+  .tool-header{flex-wrap:wrap;row-gap:6px;padding:11px 12px}
+  .tool-name{flex:1 1 100%;font-size:12.5px}
+  .tool-license{order:3}
+  /* Whats-new banner: auto-height + column stack below 768px */
+  .whats-new{height:auto;min-height:0;max-height:none;padding:16px 18px;flex-wrap:wrap;gap:12px}
+  .wn-content{flex:1 1 100%}
+  .wn-nav{flex:0 0 auto;margin-left:auto}
+  .wn-title{-webkit-line-clamp:2}
+  .wn-desc{-webkit-line-clamp:3}
+  /* Op-grid: stack site cards single column on mobile */
+  .op-grid{grid-template-columns:1fr !important;gap:14px}
+  .op-card{min-height:0}
+  /* Persona cards: avoid horizontal overflow in detail sidebar */
+  .persona-card{flex-wrap:wrap}
+  .persona-info{flex:1 1 200px}
 }
 @media(max-width:480px){
   .topbar-badge{display:none}
   .lang-btn{font-size:10px;padding:5px 8px}
   .sb-hero-left{padding:16px 14px}
+  /* Industry grid: 2-up at 320-480px so cards aren't huge */
+  .ind-grid{grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:10px}
+  .ind-card{padding:12px 10px;min-height:44px}
+  .ind-card-name{font-size:12px}
+  /* Reduce main padding further */
+  .main{padding:10px}
+  /* Tighten tool prompt block padding */
+  .prompt-item{padding:12px 12px 10px}
+  .prompt-text,.prompt-instr{padding:9px 11px;font-size:11.5px}
+  /* Sidebar drawer: allow wider on phone (more room for sector group titles) */
+  .sidebar{width:min(92vw,320px)}
+  /* Storyboard: smaller hero title to avoid line-break uglines */
+  .sb-hero-left h3.hero-title{font-size:16px}
+  .sb-hero-left .mission-text,.sb-hero-left .punch-text{font-size:11px}
+  /* Notebook source pills smaller */
+  .notebook-source-pill{font-size:10px;padding:2px 8px}
+  /* Cowork actions tighter */
+  .cowork-actions{padding:9px 11px}
+  .cowork-action-line{font-size:11px}
+  /* Detail tabs smaller padding */
+  .detail-tab{padding:9px 12px;font-size:12px}
+  .grid-tab{padding:8px 14px;font-size:12px}
+  /* Stat chips wrap nicely */
+  .home-stats{gap:6px}
+  .stat-chip{font-size:11px;padding:6px 10px}
+  /* Home title shrink */
+  .home-title{font-size:18px}
+  .home-subtitle{font-size:12px}
+  /* Tool name on very narrow screens */
+  .tool-icon{font-size:14px}
+  /* Search input keeps usable height */
+  .sidebar-search-input{font-size:13px;padding:9px 30px 9px 32px}
+}
+@media(max-width:380px){
+  /* iPhone SE / 320px viewport */
+  .topbar{padding:0 10px;gap:4px}
+  .topbar-logo{width:24px;height:24px;font-size:12px}
+  .btn-hamburger{width:32px;height:32px;font-size:16px}
+  .btn-theme{padding:6px 8px;min-height:32px}
+  .lang-toggle{order:99;flex:1 1 100%;justify-content:center;margin-top:4px}
+  .topbar{flex-wrap:wrap;height:auto;min-height:56px;padding:6px 10px}
+  /* Industry grid: single column at 320px to avoid cramped cards */
+  .ind-grid{grid-template-columns:1fr;gap:8px}
+  .ind-card{padding:14px 12px}
+  /* Whats-new: simpler at 320px */
+  .whats-new{padding:14px 14px}
+  .wn-icon{font-size:22px}
+  .wn-title{font-size:13px}
+  .wn-desc{font-size:11px}
+  .wn-btn{padding:5px 10px;font-size:14px}
+  /* Storyboard moments: explicit 1-col */
+  .sb-moments{grid-template-columns:1fr}
+  /* Detail header: tighter persona cards */
+  .persona-name{font-size:12px}
+  .personas-title{font-size:11px}
+  /* Allow long company names to wrap */
+  .ind-card-name,.detail-title{word-break:break-word}
 }
 /* DARK theme: ensure contrast on tokens that started life as light-only */
 [data-theme="dark"] .stat-chip,
