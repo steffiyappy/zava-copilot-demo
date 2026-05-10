@@ -52,6 +52,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 /* Other-pages grid + cards */
 .op-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:14px}
 .op-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:0;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.op-card.op-card-wide{grid-column:span 2}
+@media(max-width:760px){.op-card.op-card-wide{grid-column:span 1}}
 .op-card-flash{animation:opCardFlash 1.8s ease-out}
 @keyframes opCardFlash{0%{box-shadow:0 0 0 0 rgba(0,120,212,0)}20%{box-shadow:0 0 0 6px rgba(0,120,212,0.45)}100%{box-shadow:0 0 0 0 rgba(0,120,212,0)}}
 .op-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.1);border-color:var(--blue)}
@@ -70,10 +72,11 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .op-card-pwd-label{color:#7C2D12;font-family:'Segoe UI',sans-serif;font-weight:700;font-size:9px}
 .op-card-teams{margin:10px 0 0;padding:10px 12px;background:#F8FAFC;border:1px solid var(--border);border-radius:10px;display:flex;flex-direction:column;gap:8px}
 .op-card-teams-hdr{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.9px;color:var(--muted);display:flex;align-items:center;gap:5px}
-.op-card-team-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 10px}
+.op-card-team-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 10px}
 .op-card-team-group-hdr{grid-column:1/-1;font-size:9.5px;font-weight:800;color:var(--tg-color,#0EA5E9);text-transform:uppercase;letter-spacing:0.6px;padding-bottom:3px;border-bottom:1px dashed rgba(14,165,233,0.25);margin-bottom:2px}
-.op-card-team-row{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:5px;font-size:10px;line-height:1.35;padding:1px 0;min-width:0}
-.op-card-team-name{color:#1E293B;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.op-card-team-row{display:grid;grid-template-columns:auto 1fr auto auto;align-items:start;gap:5px;font-size:10px;line-height:1.35;padding:2px 0;min-width:0}
+.op-card-team-num{font-size:9px;font-weight:800;color:#FFFFFF;background:var(--tg-color,#0EA5E9);padding:2px 5px;border-radius:4px;letter-spacing:0.4px;white-space:nowrap;flex-shrink:0;align-self:start;margin-top:1px}
+.op-card-team-name{color:#1E293B;min-width:0;line-height:1.3;word-break:break-word}
 .op-card-team-code{font-family:'Courier New',monospace;font-size:9px;color:#9A3412;background:#FEF3C7;border:1px solid #FDE68A;border-radius:5px;padding:1px 5px;font-weight:700;cursor:pointer;flex-shrink:0;transition:transform 0.12s,box-shadow 0.12s;white-space:nowrap}
 .op-card-team-code:hover{transform:translateY(-1px);box-shadow:0 2px 5px rgba(154,52,18,0.18)}
 .op-card-team-link{font-size:11px;color:var(--op-color,#0078D4);text-decoration:none;font-weight:800;padding:1px 3px;border-radius:4px;transition:background 0.12s;flex-shrink:0}
@@ -3080,6 +3083,10 @@ function buildOtherGrid(){
     sections[secName].forEach(p=>{
       const card=document.createElement('a');
       card.className='op-card';
+      // Wide card (2-col span) when it has team data — gives the 2-col team grid breathing room
+      if(Array.isArray(p.teamGroups) || Array.isArray(p.teamCodes)){
+        card.classList.add('op-card-wide');
+      }
       card.style.setProperty('--op-color',p.color);
       card.style.setProperty('--op-accent',p.accent);
       card.href=p.url; card.target='_blank'; card.rel='noopener';
@@ -3109,8 +3116,18 @@ function buildOtherGrid(){
       if(tgList || tcFlat || p.facilitatorUrl){
         const renderRow = (t)=>{
           const linkHTML = t.url ? ' <a class="op-card-team-link" href="'+escapeAttr(t.url)+'" target="_blank" rel="noopener" title="Open team pack">&#8599;</a>' : '';
+          // Split label "Team N — Description" so the team-num shows as a coloured badge
+          const fullLabel = t.label || '';
+          const dashIdx = fullLabel.indexOf(' \u2014 ');
+          let numPart='', namePart=fullLabel;
+          if(dashIdx > 0){
+            numPart = fullLabel.slice(0, dashIdx).trim();
+            namePart = fullLabel.slice(dashIdx + 3).trim();
+          }
+          const numHTML = numPart ? '<span class="op-card-team-num">'+escapeHTML(numPart)+'</span>' : '';
           return '<div class="op-card-team-row">'+
-            '<span class="op-card-team-name">'+escapeHTML(t.label||'')+'</span>'+
+            numHTML+
+            '<span class="op-card-team-name">'+escapeHTML(namePart)+'</span>'+
             '<span class="op-card-team-code" data-pwd="'+escapeAttr(t.code||'')+'" title="Click to copy code">'+escapeHTML(t.code||'')+'</span>'+
             linkHTML+
           '</div>';
