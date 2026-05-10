@@ -501,16 +501,35 @@ if(sessionStorage.getItem('hub_auth')!=='ok') window.location.href='index.html';
 let wnIdx=0;
 let currentGridTab='ind';
 let currentSidebarTab='ind';
-let _lang='EN'; // 'EN' | 'ID' (Bahasa Indonesia) | 'BM' (Bahasa Malaysia). Promp data has promptsID + promptsBM; other fields BM falls back to ID.
+let _locale='G_EN'; // G_EN (Global·EN) | MY_EN | MY_BM | ID_EN | ID_BI
 let _detailTab='tools'; // 'tools' or 'chat'
 let _currentTab='ind'; // 'ind' or 'dept' (which type was last shown)
 const data=window.HUB_DATA;
 
-function setLang(L){
-  if(L!=='ID' && L!=='BM') L='EN';
-  _lang=L;
-  ['EN','ID','BM'].forEach(x=>{
-    const el=document.getElementById('lang-'+x.toLowerCase());
+// --- Locale helpers ---
+function _country(){return _locale.startsWith('MY')?'MY':_locale.startsWith('ID')?'ID':'GLOBAL';}
+function _langCode(){return _locale.endsWith('_BM')?'BM':_locale.endsWith('_BI')?'BI':'EN';}
+function _isGlobal(){return _country()==='GLOBAL';}
+function _isMY(){return _country()==='MY';}
+function _isID(){return _country()==='ID';}
+function _isBahasa(){return _langCode()==='BM' || _langCode()==='BI';}
+// 3-way label picker by language. If `bm` omitted, BM falls back to BI.
+function _bL(en, id, bm){
+  const lc = _langCode();
+  if(lc==='BM') return (bm!==undefined?bm:id);
+  if(lc==='BI') return id;
+  return en;
+}
+// Legacy alias used by storyboard label fallbacks (BI fields used for both BI and BM display when no BM-specific data)
+let _lang; function _syncLegacyLang(){_lang = _isBahasa()?(_langCode()==='BM'?'BM':'ID'):'EN';}
+
+function setLocale(L){
+  const valid=['G_EN','MY_EN','MY_BM','ID_EN','ID_BI'];
+  if(!valid.includes(L)) L='G_EN';
+  _locale=L;
+  _syncLegacyLang();
+  valid.forEach(x=>{
+    const el=document.getElementById('loc-'+x);
     if(el) el.classList.toggle('active',x===L);
   });
   buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar();
@@ -518,47 +537,225 @@ function setLang(L){
     showItem(_currentItem,_currentTab);
   }
 }
-// Backward-compat alias (in case old onclick="setCtx('ID')" inline handlers leaked into data)
-function setCtx(c){ setLang(c==='ID'?'ID':(c==='BM'?'BM':'EN')); }
+// Backward-compat shims in case any old inline handlers leaked through data
+function setLang(L){ setLocale(L==='BM'?'MY_BM':L==='ID'?'ID_BI':'G_EN'); }
+function setCtx(c){ setLocale(c==='ID'?'ID_EN':c==='MY'?'MY_EN':'G_EN'); }
 
-// Treat ID and BM as Bahasa-family for UI label strings that have no BM-specific copy.
-function _isBahasa(){return _lang==='ID' || _lang==='BM';}
+// --- Real-customer-name scrubber (applied ALWAYS to every displayed string) ---
+// User mandate: NO real customer/regulator names anywhere in industry+department content.
+// Source data files contain real ASEAN names as realistic flavour. We scrub them at render time
+// so the data files stay readable while the UI stays generic.
+const _SCRUB_REAL = [
+  // Strip company suffixes (so "Cagamas Berhad" doesn't become "Apex Mortgage Berhad")
+  [/\s+Berhad\b/gi, ''],
+  [/\s+Sdn\.?\s*Bhd\.?/gi, ''],
+  [/\s+Bhd\.?(?=\s|$|[,.;:])/gi, ''],
+  [/\s+Tbk\.?(?=\s|$|[,.;:])/gi, ''],
+  [/\s*\(Persero\)\s*Tbk\.?/gi, ''],
+  [/\s*\(Persero\)/gi, ''],
+  [/\s+Pte\.?\s*Ltd\.?/gi, ''],
+  [/\s+Pcl\.?(?=\s|$|[,.;:])/gi, ''],
+  // Malaysian banks & financial
+  [/\bCagamas\b/g, 'Apex Mortgage'],
+  [/\bMaybank\b/gi, 'Apex Bank'],
+  [/\bMalayan Banking\b/gi, 'Apex Bank'],
+  [/\bCIMB\b/g, 'Pacific Bank'],
+  [/\bPublic Bank\b/gi, 'Civic Bank'],
+  [/\bRHB\b/g, 'Helix Bank'],
+  [/\bAlliance Bank\b/gi, 'Coastline Bank'],
+  [/\bABMB\b/g, 'Coastline Bank'],
+  [/\bHong Leong Bank\b/gi, 'Northstar Bank'],
+  [/\bAmBank\b/gi, 'Skyline Bank'],
+  [/\bAffin Bank\b/gi, 'Helix Bank'],
+  [/\bBank Islam\b/gi, 'Apex Islamic Bank'],
+  [/\bBank Muamalat\b/gi, 'Coastline Islamic Bank'],
+  // Malaysian conglomerates / large caps
+  [/\bSunway\b/g, 'Asianova'],
+  [/\bKPJ\b/g, 'Northstar Health'],
+  [/\bIHH Healthcare\b/gi, 'Pan-Asian Health'],
+  [/\bIHH\b/g, 'Pan-Asian Health'],
+  [/\bIOI Properties\b/gi, 'Pacific Properties'],
+  [/\bIOI Corporation\b/gi, 'Pacific Agribusiness'],
+  [/\bIOI\b/g, 'Pacific'],
+  [/\bGenting\b/g, 'Stellar Holdings'],
+  [/\bKLCC\b/g, 'Capital Square'],
+  [/\bPetronas\b/gi, 'Apex Energy'],
+  [/\bMISC\b/g, 'Pacific Maritime'],
+  [/\bAirAsia\b/gi, 'Skyline Air'],
+  [/\bMalaysia Airlines\b/gi, 'Apex Airways'],
+  [/\bMaxis\b/gi, 'Apex Telecom'],
+  [/\bDigi\.com\b/gi, 'Connect Telecom'],
+  [/\bCelcom\b/gi, 'Coastline Telecom'],
+  [/\bTelekom Malaysia\b/gi, 'Apex Telecom'],
+  [/\bCelcomDigi\b/gi, 'Connect Telecom'],
+  [/\bTNB\b/g, 'Apex Power'],
+  [/\bTenaga Nasional\b/gi, 'Apex Power'],
+  [/\bGas Malaysia\b/gi, 'Pacific Gas'],
+  [/\bCarlsberg\b/gi, 'Pacific Brewery'],
+  [/\bHeineken Malaysia\b/gi, 'Coastline Brewery'],
+  [/\bNestl[ée] Malaysia\b/gi, 'Apex Foods'],
+  [/\bNestl[ée]\b/g, 'Apex Foods'],
+  [/\bShell Malaysia\b/gi, 'Coastline Energy'],
+  [/\bDialog\b/g, 'Helix Engineering'],
+  [/\bYTL\b/g, 'Pacific Holdings'],
+  [/\bTop Glove\b/gi, 'Apex Glove'],
+  [/\bHartalega\b/gi, 'Pacific Glove'],
+  [/\bKossan\b/gi, 'Coastline Glove'],
+  [/\bSupermax\b/gi, 'Helix Glove'],
+  [/\bMR DIY\b/gi, 'Apex Retail'],
+  [/\bAeon Malaysia\b/gi, 'Pacific Retail'],
+  [/\bMyEG\b/gi, 'Apex Digital'],
+  [/\bPress Metal\b/gi, 'Pacific Metals'],
+  [/\bGamuda\b/g, 'Pacific Construction'],
+  [/\bIJM\b/g, 'Coastline Construction'],
+  [/\bSime Darby\b/gi, 'Pacific Plantation'],
+  [/\bKuala Lumpur Kepong\b/gi, 'Apex Plantation'],
+  [/\bKLK\b/g, 'Apex Plantation'],
+  [/\bFGV\b/g, 'Coastline Plantation'],
+  [/\bLembaga Tabung Haji\b/gi, 'Apex Pilgrim Fund'],
+  [/\bEPF\b/g, 'the national pension fund'],
+  [/\bKWAP\b/g, 'the civil service pension fund'],
+  [/\bKhazanah\b/gi, 'the sovereign fund'],
+  [/\bPNB\b/g, 'the unit-trust manager'],
+  // Indonesian banks
+  [/\bBank Mandiri\b/gi, 'Apex Bank'],
+  [/\bBank Central Asia\b/gi, 'Pacific Bank'],
+  [/\bBCA\b/g, 'Pacific Bank'],
+  [/\bBank Negara Indonesia\b/gi, 'Civic Bank'],
+  [/\bBNI\b/g, 'Civic Bank'],
+  [/\bBank Rakyat Indonesia\b/gi, 'Helix Bank'],
+  [/\bBRI\b/g, 'Helix Bank'],
+  [/\bBank Danamon\b/gi, 'Coastline Bank'],
+  [/\bBank Mega\b/gi, 'Northstar Bank'],
+  [/\bBank Syariah Indonesia\b/gi, 'Apex Islamic Bank'],
+  [/\bBSI\b/g, 'Apex Islamic Bank'],
+  // Indonesian conglomerates
+  [/\bAstra International\b/gi, 'Pacific Industrial'],
+  [/\bAstra\b/g, 'Pacific Industrial'],
+  [/\bIndofood\b/gi, 'Pacific Foods'],
+  [/\bUnilever Indonesia\b/gi, 'Coastline Consumer'],
+  [/\bGoTo\b/g, 'Apex Tech'],
+  [/\bGojek\b/gi, 'Apex Mobility'],
+  [/\bTokopedia\b/gi, 'Apex Marketplace'],
+  [/\bShopee\b/gi, 'Pacific Marketplace'],
+  [/\bBukalapak\b/gi, 'Coastline Marketplace'],
+  [/\bGaruda Indonesia\b/gi, 'Skyline Air'],
+  [/\bGaruda\b/g, 'Skyline Air'],
+  [/\bLion Air\b/gi, 'Pacific Airways'],
+  [/\bCitilink\b/gi, 'Connect Airways'],
+  [/\bTelkom Indonesia\b/gi, 'Apex Telecom'],
+  [/\bTelkomsel\b/gi, 'Apex Mobile'],
+  [/\bIndosat\b/gi, 'Pacific Mobile'],
+  [/\bXL Axiata\b/gi, 'Coastline Mobile'],
+  [/\bPLN\b/g, 'Apex Power'],
+  [/\bPertamina\b/gi, 'Apex Energy'],
+  [/\bAdaro\b/g, 'Pacific Coal'],
+  [/\bBumi Resources\b/gi, 'Coastline Coal'],
+  [/\bBerau Coal\b/gi, 'Helix Coal'],
+  [/\bMedco Energi\b/gi, 'Pacific Petroleum'],
+  [/\bSinar Mas\b/gi, 'Pacific Group'],
+  [/\bSalim Group\b/gi, 'Apex Group'],
+  [/\bLippo\b/g, 'Northstar Group'],
+  [/\bDjarum\b/gi, 'Coastline Group'],
+  [/\bBakrie\b/g, 'Helix Group'],
+  // Regulators (replace with neutral terms — not real authority names)
+  [/\bBank Negara Malaysia\b/gi, 'the central bank'],
+  [/\bBNM\b/g, 'the central bank'],
+  [/\bBank Indonesia\b/gi, 'the central bank'],
+  [/\bSecurities Commission Malaysia\b/gi, 'the securities regulator'],
+  [/\bSC Malaysia\b/gi, 'the securities regulator'],
+  [/\bSuruhanjaya Sekuriti\b/gi, 'the securities regulator'],
+  [/\bBursa Malaysia\b/gi, 'the local stock exchange'],
+  [/\bBursa\b/g, 'the local stock exchange'],
+  [/\bOJK\b/g, 'the financial services authority'],
+  [/\bOtoritas Jasa Keuangan\b/gi, 'the financial services authority'],
+  [/\bIDX\b/g, 'the local stock exchange'],
+  [/\bBEI\b/g, 'the local stock exchange'],
+  [/\bMatrade\b/gi, 'the trade authority'],
+  [/\bMIDA\b/g, 'the investment authority'],
+  [/\bBKPM\b/g, 'the investment authority'],
+  [/\bMPOB\b/g, 'the palm-oil authority'],
+  [/\bSPAN\b/g, 'the water-services regulator'],
+  [/\bMCMC\b/g, 'the communications regulator'],
+  [/\bKominfo\b/g, 'the communications ministry'],
+  [/\bLHDN\b/g, 'the tax authority'],
+  [/\bDJP\b/g, 'the tax authority'],
+];
 
-// 3-way label picker. If `bm` omitted, BM falls back to BI.
-function _bL(en, id, bm){
-  if(_lang==='BM') return (bm!==undefined?bm:id);
-  if(_lang==='ID') return id;
-  return en;
+// Global-only swaps (only fired when _isGlobal()). Strip MY/ID geographic + currency markers.
+const _SCRUB_GLOBAL_GEO = [
+  [/\bMalaysia(n)?\b/gi, 'the region'],
+  [/\bIndonesia(n)?\b/gi, 'the region'],
+  [/\bASEAN\b/g, 'the region'],
+  [/\bSEA\b/g, 'the region'],
+  [/\bSouth-?east\s+Asia\b/gi, 'the region'],
+  [/\bMYR\s*([\d.,]+)/gi, 'USD $1'],
+  [/\bRM\s*([\d.,]+)/gi, '$$$1'],
+  [/\bIDR\s*([\d.,]+)/gi, 'USD $1'],
+  [/\bRp\s*([\d.,]+)/gi, '$$$1'],
+  [/\bMYR\b/g, 'USD'],
+  [/\bIDR\b/g, 'USD'],
+  [/\bRinggit\b/gi, 'dollars'],
+  [/\bRupiah\b/gi, 'dollars'],
+  [/\bKuala Lumpur\b/gi, 'the regional capital'],
+  [/\bJakarta\b/gi, 'the regional capital'],
+  [/\bPutrajaya\b/gi, 'the administrative capital'],
+  [/\bJohor\b/g, 'a coastal state'],
+  [/\bPenang\b/g, 'a coastal state'],
+  [/\bSelangor\b/g, 'the central state'],
+  [/\bSabah\b/g, 'a remote state'],
+  [/\bSarawak\b/g, 'a remote state'],
+  [/\bSurabaya\b/gi, 'a coastal city'],
+  [/\bBandung\b/gi, 'an inland city'],
+  [/\bMedan\b/gi, 'a coastal city'],
+  [/\bBumiputera\b/gi, 'local-priority'],
+  [/\bBumi\b/g, 'local-priority'],
+];
+
+function _scrubReal(s){
+  if(!s) return s;
+  let out = String(s);
+  for(let i=0;i<_SCRUB_REAL.length;i++){ out = out.replace(_SCRUB_REAL[i][0], _SCRUB_REAL[i][1]); }
+  if(_isGlobal()){
+    for(let i=0;i<_SCRUB_GLOBAL_GEO.length;i++){ out = out.replace(_SCRUB_GLOBAL_GEO[i][0], _SCRUB_GLOBAL_GEO[i][1]); }
+  }
+  // Tidy double-spaces left by suffix strips
+  out = out.replace(/[ \t]{2,}/g,' ').replace(/\s+([,.;:])/g,'$1');
+  return out;
 }
 
+// Locale-aware field picker:
+//   Country selects MY/ID base field. Language selects prompt array.
+//   In Global mode, picks MY base field then runs full scrub (incl. geo).
 function _pickLangField(item, base){
-  // BM → use BM field if exists, else fall back to ID, else EN
-  if(_lang==='BM'){
-    const bm=item[base+'BM']; if(bm) return bm;
-    const id=item[base+'ID']; if(id) return id;
-    return item[base];
-  }
-  if(_lang==='ID'){
-    const id=item[base+'ID']; if(id) return id;
-    return item[base];
-  }
-  return item[base];
+  const idVal = item[base+'ID'];
+  if(_isID() && idVal) return idVal;
+  return item[base]; // MY default & GLOBAL default
 }
-function _getCompany(item){return _pickLangField(item,'company');}
-function _getTagline(item){return _pickLangField(item,'tagline');}
-function _getScenario(item){return _pickLangField(item,'scenario');}
+function _getCompany(item){return _scrubReal(_pickLangField(item,'company'));}
+function _getTagline(item){return _scrubReal(_pickLangField(item,'tagline'));}
+function _getScenario(item){return _scrubReal(_pickLangField(item,'scenario'));}
 function _getPrompts(t){
-  if(_lang==='BM' && t.promptsBM && t.promptsBM.length) return t.promptsBM;
-  if((_lang==='ID' || _lang==='BM') && t.promptsID && t.promptsID.length) return t.promptsID;
-  return t.prompts||[];
+  let arr;
+  if(_langCode()==='BM' && t.promptsBM && t.promptsBM.length) arr = t.promptsBM;
+  else if(_langCode()==='BI' && t.promptsID && t.promptsID.length) arr = t.promptsID;
+  else arr = t.prompts || [];
+  return arr.map(p=>{
+    if(typeof p === 'string') return _scrubReal(p);
+    const r = Object.assign({}, p);
+    if(r.instr) r.instr = _scrubReal(r.instr);
+    if(r.prompt) r.prompt = _scrubReal(r.prompt);
+    return r;
+  });
 }
 function _getPersona(t,pi){
   let arr=null;
-  if(_lang==='BM' && t.personaBM && t.personaBM.length) arr=t.personaBM;
-  else if((_lang==='ID' || _lang==='BM') && t.personaID && t.personaID.length) arr=t.personaID;
+  if(_langCode()==='BM' && t.personaBM && t.personaBM.length) arr=t.personaBM;
+  else if(_isBahasa() && t.personaID && t.personaID.length) arr=t.personaID;
   else arr=(t.persona||[]);
-  return arr[pi]||'';
+  return _scrubReal(arr[pi]||'');
 }
+_syncLegacyLang();
 function _isResearcher(name){return /Researcher/i.test(name||'')}
 function _isCowork(name){return /Cowork/i.test(name||'')}
 function _isNotebook(name){return /Notebook/i.test(name||'')}
@@ -1074,16 +1271,16 @@ function showItem(item,tab){
     sbWrap.style.display='block';
     // Persona for left panel — first persona, fallback empty
     const p0=(item.personas&&item.personas[0])||null;
-    const personaName=p0?p0.name:'';
-    const personaRole=p0?(_isBahasa()&&p0.roleID?p0.roleID:p0.role):'';
-    const personaCompany=p0?(p0.company||''):'';
+    const personaName=p0?_scrubReal(p0.name):'';
+    const personaRole=p0?(_isID()&&p0.roleID?p0.roleID:p0.role):'';
+    const personaCompany=p0?_scrubReal(p0.company||''):'';
     // Mission text: prefer tagline, fall back to first sentence of scenario
     let missionText='';
-    if(_isBahasa()&&item.taglineID) missionText=item.taglineID;
+    if(_isID()&&item.taglineID) missionText=item.taglineID;
     else if(item.tagline) missionText=item.tagline;
-    else if(_isBahasa()&&item.scenarioID) missionText=item.scenarioID.split(/[.!?]/)[0]+'.';
+    else if(_isID()&&item.scenarioID) missionText=item.scenarioID.split(/[.!?]/)[0]+'.';
     else if(item.scenario) missionText=item.scenario.split(/[.!?]/)[0]+'.';
-    missionText=_scrubFiles(missionText);
+    missionText=_scrubReal(_scrubFiles(missionText));
     // Total tools used = count of prompt blocks in the entry (Punchline line)
     const toolsCount=item.prompts?item.prompts.length:8;
     // Right header: count phases (tasks have been removed from storyboard render)
@@ -1103,9 +1300,9 @@ function showItem(item,tab){
       'Satu hari kerja. '+toolsCount+' alat. Daripada rangka kepada penghantaran.');
     const indColor=item.color||'#0EA5E9';
     const phasesHTML=item.storyboard.map((ex,i)=>{
-      const exTitle=_isBahasa()&&ex.titleID?ex.titleID:(ex.title||'');
-      const exSummary=_isBahasa()&&ex.summaryID?ex.summaryID:(ex.summary||'');
-      const cleanSummary=_scrubFiles(exSummary);
+      const exTitle=_isID()&&ex.titleID?ex.titleID:(ex.title||'');
+      const exSummary=_isID()&&ex.summaryID?ex.summaryID:(ex.summary||'');
+      const cleanSummary=_scrubReal(_scrubFiles(exSummary));
       return '<div class="sb-phase">'+
         '<div class="sb-phase-head">'+
           '<span class="sb-phase-title">'+escapeHTML(exTitle)+'</span>'+
@@ -1220,7 +1417,7 @@ function showItem(item,tab){
       if(isNotebook && pi===0 && tool.notebookMeta){
         const nm=tool.notebookMeta;
         const srcs=(nm.sources||[]).map(s=>'<span class="notebook-source-pill">'+escapeHTML(s)+'</span>').join('');
-        const instr=_isBahasa()&&nm.instructionsID?nm.instructionsID:(nm.instructions||'');
+        const instr=_isID()&&nm.instructionsID?nm.instructionsID:(nm.instructions||'');
         notebookHtml=
           '<div class="notebook-meta">'+
           '<div class="notebook-meta-label">📓 Notebook setup — add ALL sources at creation time, then set the Instructions field</div>'+
@@ -1288,13 +1485,14 @@ function showItem(item,tab){
     personasEl.innerHTML=
       '<div class="personas-title">🎭 Personas in this demo</div>'+
       item.personas.map(p=>{
-        const role=_isBahasa()&&p.roleID?p.roleID:p.role;
-        const initials=(p.name||'').split(' ').map(s=>s[0]).join('').slice(0,2).toUpperCase();
+        const role=_isID()&&p.roleID?p.roleID:p.role;
+        const cleanName=_scrubReal(p.name||'');
+        const initials=cleanName.split(' ').map(s=>s[0]).join('').slice(0,2).toUpperCase();
         const isFree=/free/i.test(p.lic||'');
         return '<div class="persona-item">'+
           '<div class="persona-avatar" style="background:'+(p.color||_personaColor(p.name))+'">'+initials+'</div>'+
           '<div class="persona-info">'+
-            '<div class="persona-name">'+escapeHTML(p.name||'')+'</div>'+
+            '<div class="persona-name">'+escapeHTML(cleanName)+'</div>'+
             '<div class="persona-role">'+escapeHTML(role||'')+'</div>'+
             '<div class="persona-lic '+(isFree?'free':'')+'">'+escapeHTML(p.lic||'')+'</div>'+
           '</div>'+
