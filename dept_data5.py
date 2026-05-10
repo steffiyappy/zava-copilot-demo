@@ -293,9 +293,9 @@ DEPARTMENTS_5 = [
     relevantDepts=['finance','procurement','risk','hr','esg','it'],
     personas=[
       {'name':'Hadar Caspit','role':'Head of Investor Relations','roleID':'Kepala Investor Relations','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-      {'name':'Sasha Ouellet','role':'Head of Operational Excellence','roleID':'Kepala Keunggulan Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Head of Operational Excellence','roleID':'Kepala Keunggulan Operasi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Head of Supply & Continuity','roleID':'Kepala Pasokan & Kesinambungan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Daichi Maruyama','role':'Head of Site Operations','roleID':'Kepala Operasi Lokasi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#059669'}
+      {'name':'Daichi Maruyama','role':'Head of Site Operations','roleID':'Kepala Operasi Lokasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'}
     ],
     storyboard=[
       {
@@ -633,9 +633,9 @@ DEPARTMENTS_5 = [
     relevantDepts=['finance','procurement','risk','hr','esg','it'],
     personas=[
       {'name':'Hadar Caspit','role':'Group Procurement Director','roleID':'Direktur Pengadaan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-      {'name':'Sasha Ouellet','role':'Head of Operational Excellence','roleID':'Kepala Keunggulan Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Head of Operational Excellence','roleID':'Kepala Keunggulan Operasi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Head of Supply & Continuity','roleID':'Kepala Pasokan & Kesinambungan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Daichi Maruyama','role':'Head of Site Operations','roleID':'Kepala Operasi Lokasi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#059669'}
+      {'name':'Daichi Maruyama','role':'Head of Site Operations','roleID':'Kepala Operasi Lokasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'}
     ],
     storyboard=[
       {
@@ -973,9 +973,9 @@ DEPARTMENTS_5 = [
     relevantDepts=['finance','procurement','risk','hr','esg','it'],
     personas=[
       {'name':'Hadar Caspit','role':'Chief Information Officer','roleID':'Chief Information Officer','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-      {'name':'Sasha Ouellet','role':'Head of Operational Excellence','roleID':'Kepala Keunggulan Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Head of Operational Excellence','roleID':'Kepala Keunggulan Operasi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Head of Supply & Continuity','roleID':'Kepala Pasokan & Kesinambungan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'},
-      {'name':'Daichi Maruyama','role':'Head of Site Operations','roleID':'Kepala Operasi Lokasi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#059669'}
+      {'name':'Daichi Maruyama','role':'Head of Site Operations','roleID':'Kepala Operasi Lokasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'}
     ],
     storyboard=[
       {

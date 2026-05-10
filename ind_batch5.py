@@ -298,7 +298,7 @@ ind('plantation','plantation','Plantation & Agribusiness','🌿','#2E7D32','#43A
     relevantDepts=['esg','operations','strategy','finance'],
     personas=[
       {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-      {'name':'Sasha Ouellet','role':'Head of ESG','roleID':'Kepala ESG','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no Microsoft 365 Copilot license needed','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Head of ESG','roleID':'Kepala ESG','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Mod Admin','role':'COO Plantation','roleID':'COO Perkebunan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
       {'name':'Daichi Maruyama','role':'Group CFO','roleID':'Direktur Keuangan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],
@@ -627,7 +627,7 @@ ind('bpo-services','bpo-services','BPO Services','📞','#3949AB','#5C6BC0',
     relevantDepts=['operations','hr','finance','it'],
     personas=[
       {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-      {'name':'Sasha Ouellet','role':'Head of Client Success','roleID':'Kepala Client Success','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no Microsoft 365 Copilot license needed','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Head of Client Success','roleID':'Kepala Client Success','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Mod Admin','role':'COO','roleID':'Direktur Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
       {'name':'Daichi Maruyama','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],
@@ -956,7 +956,7 @@ ind('telco','telco','Telco','📡','#00838F','#00ACC1',
     relevantDepts=['it','marketing','strategy','finance'],
     personas=[
       {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-      {'name':'Sasha Ouellet','role':'CMO','roleID':'Direktur Pemasaran','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no Microsoft 365 Copilot license needed','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'CMO','roleID':'Direktur Pemasaran','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Mod Admin','role':'CTO','roleID':'Direktur Teknologi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
       {'name':'Daichi Maruyama','role':'Head of Regulatory Affairs','roleID':'Kepala Hubungan Regulasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],

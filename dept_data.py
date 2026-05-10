@@ -284,7 +284,7 @@ DEPARTMENTS = [
         relevantDepts=[],
         personas=[
             {'name': 'Hadar Caspit', 'role': 'Chief Human Resources Officer', 'roleID': 'Direktur Sumber Daya Manusia', 'acct': M365_ACCT, 'lic': M365_LIC, 'color': '#1565C0'},
-            {'name': 'Sasha Ouellet', 'role': 'Head of Talent Acquisition', 'roleID': 'Kepala Akuisisi Talenta', 'acct': M365_ACCT, 'lic': M365_LIC, 'color': '#1976D2'},
+            {'name': 'Sasha Ouellet', 'role': 'Head of Talent Acquisition', 'roleID': 'Kepala Akuisisi Talenta', 'acct': FREE_ACCT, 'lic': FREE_LIC, 'color': '#1976D2'},
             {'name': 'Mod Admin', 'role': 'Head of Total Rewards', 'roleID': 'Kepala Total Rewards', 'acct': M365_ACCT, 'lic': M365_LIC, 'color': '#1E88E5'},
             {'name': 'Daichi Maruyama', 'role': 'Head of Learning & Development', 'roleID': 'Kepala Learning & Development', 'acct': M365_ACCT, 'lic': M365_LIC, 'color': '#42A5F5'},
         ],
@@ -594,7 +594,7 @@ DEPARTMENTS = [
         relevantDepts=[],
         personas=[
             {'name': 'Hadar Caspit', 'role': 'Chief Financial Officer', 'roleID': 'Direktur Keuangan', 'acct': M365_ACCT, 'lic': M365_LIC, 'color': '#1B5E20'},
-            {'name': 'Sasha Ouellet', 'role': 'Head of Financial Planning & Analysis', 'roleID': 'Kepala Perencanaan & Analisis Keuangan', 'acct': M365_ACCT, 'lic': M365_LIC, 'color': '#2E7D32'},
+            {'name': 'Sasha Ouellet', 'role': 'Head of Financial Planning & Analysis', 'roleID': 'Kepala Perencanaan & Analisis Keuangan', 'acct': FREE_ACCT, 'lic': FREE_LIC, 'color': '#2E7D32'},
             {'name': 'Mod Admin', 'role': 'Group Treasurer', 'roleID': 'Kepala Treasury Grup', 'acct': M365_ACCT, 'lic': M365_LIC, 'color': '#388E3C'},
             {'name': 'Daichi Maruyama', 'role': 'Group Controller', 'roleID': 'Group Controller', 'acct': M365_ACCT, 'lic': M365_LIC, 'color': '#43A047'},
         ],

@@ -280,9 +280,9 @@ ind('dept-legal','department','⚖️ Legal','⚖️','#4A148C','#6A1B9A',
     relevantDepts=[],
     personas=[
       {'name':'Hadar Caspit','role':'General Counsel','roleID':'General Counsel','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#4A148C'},
-      {'name':'Sasha Ouellet','role':'Deputy GC (Commercial)','roleID':'Wakil GC (Komersial)','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#6A1B9A'},
+      {'name':'Sasha Ouellet','role':'Deputy GC (Commercial)','roleID':'Wakil GC (Komersial)','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#6A1B9A'},
       {'name':'Mod Admin','role':'Deputy GC (Disputes)','roleID':'Wakil GC (Sengketa)','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#8E24AA'},
-      {'name':'Daichi Maruyama','role':'Head of Compliance','roleID':'Kepala Kepatuhan','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#AB47BC'}
+      {'name':'Daichi Maruyama','role':'Head of Compliance','roleID':'Kepala Kepatuhan','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#AB47BC'}
     ],
     storyboard=[
       {'ex':1,'title':'Diagnose & Brief','titleID':'Diagnosa & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -596,9 +596,9 @@ ind('dept-risk','department','🛡 Risk & Internal Audit','🛡','#B71C1C','#C62
     relevantDepts=[],
     personas=[
       {'name':'Hadar Caspit','role':'Chief Risk Officer','roleID':'Chief Risk Officer','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#B71C1C'},
-      {'name':'Sasha Ouellet','role':'Head of Operational Risk','roleID':'Kepala Risiko Operasional','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#C62828'},
+      {'name':'Sasha Ouellet','role':'Head of Operational Risk','roleID':'Kepala Risiko Operasional','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#C62828'},
       {'name':'Mod Admin','role':'Head of Internal Audit','roleID':'Kepala Audit Internal','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#D32F2F'},
-      {'name':'Daichi Maruyama','role':'Head of Enterprise Risk','roleID':'Kepala Enterprise Risk','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#E53935'}
+      {'name':'Daichi Maruyama','role':'Head of Enterprise Risk','roleID':'Kepala Enterprise Risk','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#E53935'}
     ],
     storyboard=[
       {'ex':1,'title':'Diagnose & Brief','titleID':'Diagnosa & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',
@@ -912,9 +912,9 @@ ind('dept-strategy','department','🎯 Strategy & Corporate Planning','🎯','#E
     relevantDepts=[],
     personas=[
       {'name':'Hadar Caspit','role':'Group Strategy Director','roleID':'Direktur Strategi Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#E65100'},
-      {'name':'Sasha Ouellet','role':'Head of Corporate Development','roleID':'Kepala Corporate Development','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#F57C00'},
+      {'name':'Sasha Ouellet','role':'Head of Corporate Development','roleID':'Kepala Corporate Development','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#F57C00'},
       {'name':'Mod Admin','role':'Head of Business Planning','roleID':'Kepala Business Planning','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#FF8F00'},
-      {'name':'Daichi Maruyama','role':'Head of Strategic Insights','roleID':'Kepala Strategic Insights','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#FFA000'}
+      {'name':'Daichi Maruyama','role':'Head of Strategic Insights','roleID':'Kepala Strategic Insights','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#FFA000'}
     ],
     storyboard=[
       {'ex':1,'title':'Diagnose & Brief','titleID':'Diagnosa & Pengarahan','minutes':18,'mode':'Show & Tell + Hands-on',

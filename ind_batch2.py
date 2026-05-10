@@ -286,7 +286,7 @@ ind('investment-banking','banking-fs','Investment Banking','💹','#0D47A1','#15
     relevantDepts=['finance', 'strategy', 'legal', 'risk'],
     personas=[
       {'name': 'Hadar Caspit', 'role': 'Group CFO', 'roleID': 'Direktur Keuangan Grup', 'acct': 'admin@ABSx62256373.onmicrosoft.com', 'lic': 'Microsoft 365 Copilot', 'color': '#1E40AF'},
-      {'name': 'Sasha Ouellet', 'role': 'Head of Equity Capital Markets', 'roleID': 'Kepala ECM', 'acct': 'SashaO@ABSx62256373.OnMicrosoft.com', 'lic': 'Free \u2014 no Microsoft 365 Copilot license needed', 'color': '#7C3AED'},
+      {'name': 'Sasha Ouellet', 'role': 'Head of Equity Capital Markets', 'roleID': 'Kepala ECM', 'acct': 'SashaO@ABSx62256373.OnMicrosoft.com', 'lic': 'Free — no Microsoft 365 Copilot license needed', 'color': '#7C3AED'},
       {'name': 'Mod Admin', 'role': 'Head of Client Coverage', 'roleID': 'Kepala Coverage Klien', 'acct': 'admin@ABSx62256373.onmicrosoft.com', 'lic': 'Microsoft 365 Copilot', 'color': '#059669'},
       {'name': 'Daichi Maruyama', 'role': 'Chief Compliance Officer', 'roleID': 'Direktur Kepatuhan', 'acct': 'admin@ABSx62256373.onmicrosoft.com', 'lic': 'Microsoft 365 Copilot', 'color': '#DC2626'}
     ],
@@ -608,7 +608,7 @@ ind('general-insurance', 'insurance', 'General Insurance', '🛡', '#1A237E', '#
     relevantDepts=['risk', 'finance', 'operations', 'strategy'],
     personas=[
       {'name': 'Hadar Caspit', 'role': 'Group CEO', 'roleID': 'Direktur Utama', 'acct': 'admin@ABSx62256373.onmicrosoft.com', 'lic': 'Microsoft 365 Copilot', 'color': '#1E40AF'},
-      {'name': 'Sasha Ouellet', 'role': 'Chief Underwriting Officer', 'roleID': 'Direktur Underwriting', 'acct': 'SashaO@ABSx62256373.OnMicrosoft.com', 'lic': 'Free \u2014 no Microsoft 365 Copilot license needed', 'color': '#7C3AED'},
+      {'name': 'Sasha Ouellet', 'role': 'Chief Underwriting Officer', 'roleID': 'Direktur Underwriting', 'acct': 'SashaO@ABSx62256373.OnMicrosoft.com', 'lic': 'Free — no Microsoft 365 Copilot license needed', 'color': '#7C3AED'},
       {'name': 'Mod Admin', 'role': 'Chief Actuary', 'roleID': 'Aktuaris Penanggung Jawab', 'acct': 'admin@ABSx62256373.onmicrosoft.com', 'lic': 'Microsoft 365 Copilot', 'color': '#059669'},
       {'name': 'Daichi Maruyama', 'role': 'Head of Claims', 'roleID': 'Kepala Klaim', 'acct': 'admin@ABSx62256373.onmicrosoft.com', 'lic': 'Microsoft 365 Copilot', 'color': '#DC2626'},
     ],
@@ -930,7 +930,7 @@ ind('life-insurance','insurance','Life Insurance','💗','#283593','#3949AB',
     relevantDepts=['finance','risk','strategy','marketing'],
     personas=[
       {'name':'Hadar Caspit','role':'Group CEO','roleID':'Direktur Utama','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
-      {'name':'Sasha Ouellet','role':'Chief Distribution Officer','roleID':'Direktur Distribusi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free \u2014 no Microsoft 365 Copilot license needed','color':'#7C3AED'},
+      {'name':'Sasha Ouellet','role':'Chief Distribution Officer','roleID':'Direktur Distribusi','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
       {'name':'Mod Admin','role':'Appointed Actuary','roleID':'Aktuaris Penanggung Jawab','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#059669'},
       {'name':'Daichi Maruyama','role':'Head of Investor Relations','roleID':'Kepala Hubungan Investor','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#DC2626'}
     ],
@@ -1252,7 +1252,7 @@ ind('takaful', 'insurance', 'Takaful', '☪', '#1A237E', '#1976D2',
     relevantDepts=['risk', 'finance', 'legal', 'strategy'],
     personas=[
       {'name': 'Hadar Caspit', 'role': 'Group CEO', 'roleID': 'Direktur Utama', 'acct': 'admin@ABSx62256373.onmicrosoft.com', 'lic': 'Microsoft 365 Copilot', 'color': '#1E40AF'},
-      {'name': 'Sasha Ouellet', 'role': 'Head of Shariah Governance', 'roleID': 'Kepala Tata Kelola Syariah', 'acct': 'SashaO@ABSx62256373.OnMicrosoft.com', 'lic': 'Free \u2014 no Microsoft 365 Copilot license needed', 'color': '#7C3AED'},
+      {'name': 'Sasha Ouellet', 'role': 'Head of Shariah Governance', 'roleID': 'Kepala Tata Kelola Syariah', 'acct': 'SashaO@ABSx62256373.OnMicrosoft.com', 'lic': 'Free — no Microsoft 365 Copilot license needed', 'color': '#7C3AED'},
       {'name': 'Mod Admin', 'role': 'Chief Underwriting Officer (Takaful)', 'roleID': 'Direktur Underwriting Takaful', 'acct': 'admin@ABSx62256373.onmicrosoft.com', 'lic': 'Microsoft 365 Copilot', 'color': '#059669'},
       {'name': 'Daichi Maruyama', 'role': 'Group CFO', 'roleID': 'Direktur Keuangan Grup', 'acct': 'admin@ABSx62256373.onmicrosoft.com', 'lic': 'Microsoft 365 Copilot', 'color': '#DC2626'}
     ],
