@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IDMY Copilot Industry Hub — Password Protected</title>
+<title>Zava Conglomerate Copilot Demo Hub — Password Protected</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -103,8 +103,8 @@
 <div class="card">
   <div class="logo-wrap">
     <div class="logo-badge"><div class="logo-dot"></div><span class="logo-text">Microsoft 365 Copilot</span></div>
-    <h1>IDMY Industry<br><span>Copilot Hub</span></h1>
-    <p class="subtitle">Comprehensive M365 Copilot demo materials for 14 industries across Indonesia & Malaysia</p>
+    <h1>Zava Conglomerate<br><span>Copilot Demo Hub</span></h1>
+    <p class="subtitle">43 industries · 13 departments · 5 locales — Global English, Malaysia EN/BM, Indonesia EN/BI</p>
   </div>
   <div class="form-group">
     <label>Access Password</label>
@@ -115,18 +115,18 @@
   </div>
   <button class="btn" onclick="unlock()">🚀 Enter Hub</button>
   <div class="error" id="err">⚠️ Incorrect password. Please try again.</div>
-  <p class="hint">Access restricted to Microsoft IDMY team use only</p>
+  <p class="hint">Access restricted to Microsoft demo team use only</p>
   <div class="industries-preview">
     <span class="ind-tag">🏦 Banking</span>
-    <span class="ind-tag">🏥 Healthcare</span>
     <span class="ind-tag">⛽ Oil & Gas</span>
+    <span class="ind-tag">🏥 Healthcare</span>
+    <span class="ind-tag">🏭 Manufacturing</span>
     <span class="ind-tag">📡 Telco</span>
-    <span class="ind-tag">🛡 Insurance</span>
     <span class="ind-tag">🛒 Retail</span>
-    <span class="ind-tag">🏛 GLC</span>
-    <span class="ind-tag">🎓 Education</span>
-    <span class="ind-tag">🏨 Hospitality</span>
-    <span class="ind-tag">+5 more</span>
+    <span class="ind-tag">🏛 GLC / Government</span>
+    <span class="ind-tag">⚡ Power & Utilities</span>
+    <span class="ind-tag">🏗 Property</span>
+    <span class="ind-tag">+34 more</span>
   </div>
 </div>
 <script>
@@ -137,8 +137,8 @@ async function sha256(msg){
 async function unlock(){
   const pw=document.getElementById('pw').value;
   const hash=await sha256(pw);
-  // SHA-256 of "ZavaDemo2025"
-  if(hash==='554da3d8e6d559e8c05c06bb983ac663eae50db47ea9677aa6f07f98474b8d7c'){
+  // SHA-256 of "ZavaGlobal2026"
+  if(hash==='ada2e12138372c4e7145244d46b7f37882098917965ee743d07da7e0aea8fe3a'){
     sessionStorage.setItem('hub_auth','ok');
     window.location.href='hub.html';
   } else {
