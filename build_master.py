@@ -326,12 +326,19 @@ except ImportError:
 except Exception as _e:
     print(f"(Cowork expansion skipped due to error: {_e})")
 
-# ── Reverse mirror: build relevantIndustries on every department ──────────
-# Each industry already declares relevantDepts (3-5 dept ids). Mirror that
-# graph so each department exposes the inverse: relevantIndustries[] = the
-# industries that listed this department as most-affected. The renderer
-# uses this to show "🏢 Industries most affected — click to drill down" on
-# every department entry, mirroring the dept-pill block on industry entries.
+# ── Reverse mirror + canonical override: build relevantIndustries on every department ──
+# Each industry declares 3-5 dept ids in relevantDepts (kept narrow so industry
+# pages stay visually neat with 3-5 dept pills). Reverse-mirror that graph to
+# get a base set of relevantIndustries[] per department.
+#
+# Then augment: in a conglomerate, EVERY group function (Finance, Strategy,
+# Risk, Operations, Legal, HR, Procurement, IR, CorpSec, IT/Digital, ESG,
+# Marketing) genuinely interfaces with EVERY operating arm. So we override the
+# reverse-mirror with a canonical "all operating arms apply to me" list per
+# dept. 'general' is excluded everywhere because it is the umbrella entry.
+# 'government-agency' and 'financial-regulator' are excluded from depts where
+# they don't naturally apply (IR, CorpSec, Marketing — public-sector entities
+# don't have private-listed-entity boards or brand-marketing functions).
 try:
     _rev = {}
     for entry in all_industries:
@@ -340,16 +347,40 @@ try:
         eid = entry.get('id')
         for did in (entry.get('relevantDepts') or []):
             _rev.setdefault(did, []).append(eid)
+
+    _all_ind_ids = [e.get('id') for e in all_industries if isinstance(e, dict) and e.get('id')]
+    _operating_arms = [iid for iid in _all_ind_ids if iid != 'general']
+    _commercial_only = [iid for iid in _operating_arms if iid not in ('government-agency', 'financial-regulator')]
+
+    DEPT_RELEVANT_INDUSTRIES = {
+        'dept-finance':             _operating_arms,
+        'dept-strategy':            _operating_arms,
+        'dept-risk':                _operating_arms,
+        'dept-operations':          _operating_arms,
+        'dept-legal':               _operating_arms,
+        'dept-hr':                  _operating_arms,
+        'dept-procurement':         _operating_arms,
+        'dept-it-digital':          _operating_arms,
+        'dept-esg':                 _operating_arms,
+        'dept-investor-relations':  _commercial_only,
+        'dept-corpsec':             _commercial_only,
+        'dept-marketing':           _commercial_only,
+    }
+
     _mirrored = 0
     for dept in all_departments:
         if not isinstance(dept, dict):
             continue
         did = dept.get('id')
-        inds = _rev.get(did) or []
-        if inds:
-            dept['relevantIndustries'] = list(dict.fromkeys(inds))
+        # Start from reverse-mirror (preserves any explicitly declared links)
+        base = _rev.get(did) or []
+        # Union with canonical list (every dept sees every operating arm)
+        canonical = DEPT_RELEVANT_INDUSTRIES.get(did) or []
+        merged = list(dict.fromkeys([*base, *canonical]))
+        if merged:
+            dept['relevantIndustries'] = merged
             _mirrored += 1
-    print(f"Reverse mirror: relevantIndustries set on {_mirrored} departments")
+    print(f"Reverse mirror + canonical override: relevantIndustries set on {_mirrored} departments")
 except Exception as _e:
     print(f"(reverse mirror skipped due to error: {_e})")
 
