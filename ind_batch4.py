@@ -433,40 +433,40 @@ def _build(c):
     t10 = tool(T_COWORK, FRONTIER_LIC, M365_ACCT, cw_en, DESC_COWORK,
                promptsID=cw_id, persona=cw_personas, personaID=cw_personas)
 
-    # 11. T_WORD_AGT — 2 prompts (DO NOT open Word first)
+    # 11. T_WORD_AGT — 2 prompts 
     wa_en = [
-        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Word first — type: \"Draft a 4-page Word memo from the {re_en['cfo']} of {c['co']} to the Board on the FY2025 selisih and {c['recovery_focus_en']}, grounded on /file {files[1]} and /file {files[2]}, and save the file to my OneDrive.\"",
-        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Word first — type: \"Draft a 2-page Word talking-point pack for {re_en['ceo']} of {c['co']} ahead of {c['event_en']} grounded on /file {files[5]}, and save the file to my OneDrive.\"",
+        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — type: \"Draft a 4-page Word memo from the {re_en['cfo']} of {c['co']} to the Board on the FY2025 selisih and {c['recovery_focus_en']}, grounded on /file {files[1]} and /file {files[2]}, and save the file to my OneDrive.\"",
+        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — type: \"Draft a 2-page Word talking-point pack for {re_en['ceo']} of {c['co']} ahead of {c['event_en']} grounded on /file {files[5]}, and save the file to my OneDrive.\"",
     ]
     wa_id = [
-        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Word terlebih dahulu — ketik: \"Susun memo Word 4 halaman dari {re_id['cfo']} {c['co_id']} kepada Direksi mengenai selisih FY2025 dan {c['recovery_focus_id']}, berdasarkan /file {files[1]} dan /file {files[2]}, dan simpan file ke OneDrive saya.\"",
-        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Word terlebih dahulu — ketik: \"Susun paket talking-point Word 2 halaman untuk {re_id['ceo']} {c['co_id']} menjelang {c['event_id']} berdasarkan /file {files[5]}, dan simpan file ke OneDrive saya.\"",
+        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — di kotak prompt klik menu Tools (atau Agents) lalu pilih Word — ketik: \"Susun memo Word 4 halaman dari {re_id['cfo']} {c['co_id']} kepada Direksi mengenai selisih FY2025 dan {c['recovery_focus_id']}, berdasarkan /file {files[1]} dan /file {files[2]}, dan simpan file ke OneDrive saya.\"",
+        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — di kotak prompt klik menu Tools (atau Agents) lalu pilih Word — ketik: \"Susun paket talking-point Word 2 halaman untuk {re_id['ceo']} {c['co_id']} menjelang {c['event_id']} berdasarkan /file {files[5]}, dan simpan file ke OneDrive saya.\"",
     ]
     wa_personas = ['Daichi Maruyama', 'Daichi Maruyama']
     t11 = tool(T_WORD_AGT, ANY_LIC, ANY_ACCT, wa_en, DESC_WORD_AGT,
                promptsID=wa_id, persona=wa_personas, personaID=wa_personas)
 
-    # 12. T_PPT_AGT — 2 prompts (DO NOT open PowerPoint first)
+    # 12. T_PPT_AGT — 2 prompts 
     pa_en = [
-        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open PowerPoint first — type: \"Build a 12-slide PowerPoint Board pack for {c['co']} on the FY2025 reset, grounded on /file {files[1]} and /file {files[0]}, covering {c['recovery_focus_en']}, and save the file to my OneDrive.\"",
-        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open PowerPoint first — type: \"Build a 6-slide regulator pack for {c['co']} aligned with {c['regulators_en']}, grounded on /file {files[5]} and /file {files[4]}, and save the file to my OneDrive.\"",
+        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — type: \"Build a 12-slide PowerPoint Board pack for {c['co']} on the FY2025 reset, grounded on /file {files[1]} and /file {files[0]}, covering {c['recovery_focus_en']}, and save the file to my OneDrive.\"",
+        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — type: \"Build a 6-slide regulator pack for {c['co']} aligned with {c['regulators_en']}, grounded on /file {files[5]} and /file {files[4]}, and save the file to my OneDrive.\"",
     ]
     pa_id = [
-        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka PowerPoint terlebih dahulu — ketik: \"Bangun paket Direksi PowerPoint 12 slide untuk {c['co_id']} mengenai reset FY2025, berdasarkan /file {files[1]} dan /file {files[0]}, mencakup {c['recovery_focus_id']}, dan simpan file ke OneDrive saya.\"",
-        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka PowerPoint terlebih dahulu — ketik: \"Bangun paket regulator 6 slide untuk {c['co_id']} yang selaras dengan {c['regulators_id']}, berdasarkan /file {files[5]} dan /file {files[4]}, dan simpan file ke OneDrive saya.\"",
+        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — di kotak prompt klik menu Tools (atau Agents) lalu pilih PowerPoint — ketik: \"Bangun paket Direksi PowerPoint 12 slide untuk {c['co_id']} mengenai reset FY2025, berdasarkan /file {files[1]} dan /file {files[0]}, mencakup {c['recovery_focus_id']}, dan simpan file ke OneDrive saya.\"",
+        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — di kotak prompt klik menu Tools (atau Agents) lalu pilih PowerPoint — ketik: \"Bangun paket regulator 6 slide untuk {c['co_id']} yang selaras dengan {c['regulators_id']}, berdasarkan /file {files[5]} dan /file {files[4]}, dan simpan file ke OneDrive saya.\"",
     ]
     pa_personas = ['Daichi Maruyama', 'Daichi Maruyama']
     t12 = tool(T_PPT_AGT, ANY_LIC, ANY_ACCT, pa_en, DESC_PPT_AGT,
                promptsID=pa_id, persona=pa_personas, personaID=pa_personas)
 
-    # 13. T_XL_AGT — 2 prompts (DO NOT open Excel first)
+    # 13. T_XL_AGT — 2 prompts 
     xa_en = [
-        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Excel first — type: \"Build a new Excel workbook called 'FY2025 Reset Bridge — {c['co']}' with three tabs: FY2025 Bridge, Recovery Levers, Regulator Asks, grounded on /file {files[0]} and /file {files[3]}, and save the file to my OneDrive.\"",
-        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — DO NOT open Excel first — type: \"Build a new Excel workbook called 'Risk Heatmap — {c['co']}' that ranks the top 15 risks behind {c['kpi_phrase_en']} grounded on /file {files[4]} and /file {files[1]}, and save the file to my OneDrive.\"",
+        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — type: \"Build a new Excel workbook called 'FY2025 Reset Bridge — {c['co']}' with three tabs: FY2025 Bridge, Recovery Levers, Regulator Asks, grounded on /file {files[0]} and /file {files[3]}, and save the file to my OneDrive.\"",
+        f"From Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — type: \"Build a new Excel workbook called 'Risk Heatmap — {c['co']}' that ranks the top 15 risks behind {c['kpi_phrase_en']} grounded on /file {files[4]} and /file {files[1]}, and save the file to my OneDrive.\"",
     ]
     xa_id = [
-        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Excel terlebih dahulu — ketik: \"Bangun workbook Excel baru bernama 'Bridge Reset FY2025 — {c['co_id']}' dengan tiga tab: Bridge FY2025, Lever Pemulihan, Permintaan Regulator, berdasarkan /file {files[0]} dan /file {files[3]}, dan simpan file ke OneDrive saya.\"",
-        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — JANGAN buka Excel terlebih dahulu — ketik: \"Bangun workbook Excel baru bernama 'Risk Heatmap — {c['co_id']}' yang memeringkat 15 risiko teratas di balik {c['kpi_phrase_id']} berdasarkan /file {files[4]} dan /file {files[1]}, dan simpan file ke OneDrive saya.\"",
+        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — di kotak prompt klik menu Tools (atau Agents) lalu pilih Excel — ketik: \"Bangun workbook Excel baru bernama 'Bridge Reset FY2025 — {c['co_id']}' dengan tiga tab: Bridge FY2025, Lever Pemulihan, Permintaan Regulator, berdasarkan /file {files[0]} dan /file {files[3]}, dan simpan file ke OneDrive saya.\"",
+        f"Dari Microsoft 365 Copilot Chat (m365.cloud.microsoft/chat) — di kotak prompt klik menu Tools (atau Agents) lalu pilih Excel — ketik: \"Bangun workbook Excel baru bernama 'Risk Heatmap — {c['co_id']}' yang memeringkat 15 risiko teratas di balik {c['kpi_phrase_id']} berdasarkan /file {files[4]} dan /file {files[1]}, dan simpan file ke OneDrive saya.\"",
     ]
     xa_personas = ['Daichi Maruyama', 'Daichi Maruyama']
     t13 = tool(T_XL_AGT, ANY_LIC, ANY_ACCT, xa_en, DESC_XL_AGT,
