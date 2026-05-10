@@ -4095,14 +4095,14 @@ const OTHER_PAGES = [
         label: '7 May — Prompt-a-thon',
         color: '#B91C1C',
         teamCodes: [
-          {label:'Team 1 — Consumer Banking',                 code:'ConsumerBanking'},
-          {label:'Team 2 — SME Banking',                      code:'SMEBanking'},
-          {label:'Team 3 — Digital Workplace & Employee Exp', code:'DigitalWorkplace'},
-          {label:'Team 4 — Finance & Reporting',              code:'FinanceReporting'},
-          {label:'Team 5 — Risk & Compliance',                code:'RiskCompliance'},
-          {label:'Team 6 — Digital Banking & Tech',           code:'DigitalTechnology'},
-          {label:'Team 7 — Strategy & Change Communications', code:'StrategyComms'},
-          {label:'Team 8 — Operations, Treasury & Biz Mgmt',  code:'OperationsTreasury'}
+          {label:'Team 1 — Consumer Banking',                 code:'CBTEAM'},
+          {label:'Team 2 — SME Banking',                      code:'SMETEAM'},
+          {label:'Team 3 — Digital Workplace & Employee Exp', code:'DWTEAM'},
+          {label:'Team 4 — Finance & Reporting',              code:'FINTEAM'},
+          {label:'Team 5 — Risk & Compliance',                code:'RSKTEAM'},
+          {label:'Team 6 — Digital Banking & Tech',           code:'DGTTEAM'},
+          {label:'Team 7 — Strategy & Change Communications', code:'STGTEAM'},
+          {label:'Team 8 — Operations, Treasury & Biz Mgmt',  code:'OPSTEAM'}
         ]
       }
     ],
@@ -4290,10 +4290,11 @@ function buildOtherGrid(){
         };
         let inner = '';
         if(tgList){
+          const showGroupHdr = tgList.length > 1;
           inner = tgList.map(g=>{
             const colorStyle = g.color ? ' style="--tg-color:'+escapeAttr(g.color)+'"' : '';
             return '<div class="op-card-team-group"'+colorStyle+'>'+
-              '<div class="op-card-team-group-hdr">'+escapeHTML(g.label||'')+'</div>'+
+              (showGroupHdr ? '<div class="op-card-team-group-hdr">'+escapeHTML(g.label||'')+'</div>' : '')+
               (Array.isArray(g.teamCodes)?g.teamCodes.map(renderRow).join(''):'')+
             '</div>';
           }).join('');
