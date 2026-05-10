@@ -3191,7 +3191,11 @@ _syncLegacyLang();
 function _isResearcher(name){return /Researcher/i.test(name||'')}
 function _isCowork(name){return /Cowork/i.test(name||'')}
 function _isNotebook(name){return /Notebook/i.test(name||'')}
-function _isChat(name){return /Copilot Chat/i.test(name||'')&&!/Notebook/i.test(name||'')}
+// "Copilot Chat" matches both literal Chat tools (e.g. `💬 Copilot Chat`) and
+// the paid Agent Builder label `🏗 Agent Builder (Microsoft 365 Copilot Chat)`.
+// We want the paid Agent Builder to live in the Tools tab, NOT the Chat tab —
+// so explicitly exclude any tool whose label contains "Agent Builder".
+function _isChat(name){return /Copilot Chat/i.test(name||'')&&!/Notebook/i.test(name||'')&&!/Agent\s*Builder/i.test(name||'')}
 function _isWordAgt(name){return /Word\s*Agent/i.test(name||'')}
 function _isPptAgt(name){return /(PowerPoint|PPT)\s*Agent/i.test(name||'')}
 function _isXlAgt(name){return /Excel\s*Agent/i.test(name||'')}
