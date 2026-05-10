@@ -34,7 +34,7 @@ WHATS_NEW = [
         "badge": "New rollout (May 2026)",
         "summary": "Two demo modes inside Researcher: (1) Critique Mode self-critiques every source and flags claims it cannot verify; (2) Model Council convenes GPT and Claude each return a full independent report, then a synthesis cover letter highlights where they agree, where they differ, and any unique findings.",
         "tip": "m365.cloud.microsoft/chat > Agents > Researcher > switch the mode pill at the top to 'Critique' or 'Model Council'.",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-multi-model-intelligence-in-researcher/4506011"
     },
     {
@@ -43,7 +43,7 @@ WHATS_NEW = [
         "badge": "Frontier Program",
         "summary": "ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, post a Teams message \u2014 Cowork executes them all in parallel and reports back with a single status panel.",
         "tip": "m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.",
-        "license": "FRONTIER_LIC",
+        "license": "Microsoft 365 Copilot + Frontier Program",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/cowork-in-progress/4511672"
     },
     {
@@ -52,7 +52,7 @@ WHATS_NEW = [
         "badge": "Free Chat tier + Microsoft 365 Copilot",
         "summary": "Type ONE prompt in m365.cloud.microsoft/chat and Copilot returns a fully drafted .docx / .pptx / .xlsx without you opening Word/PPT/Excel first. Now available in BOTH the free Copilot Chat tier (Sasha account) and with an Microsoft 365 Copilot license (MOD Admin account).",
         "tip": "Try in the free tier: 'Build a 5-slide investor narrative deck for the Zava FY2025 Q4 results...'",
-        "license": "ANY_LIC",
+        "license": "Either Free Copilot Chat (no extra license) OR Microsoft 365 Copilot license",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/copilot-in-word-new-capabilities-for-document-workflows/4508974"
     },
     {
@@ -61,7 +61,7 @@ WHATS_NEW = [
         "badge": "Free Chat tier + Microsoft 365 Copilot",
         "summary": "Create custom agents inside Copilot Chat \u2014 NOT Copilot Studio. Describe \u2192 Configure (knowledge, instructions, starter prompts) \u2192 Test \u2192 Create + share. Now usable in both the free Copilot Chat tier and with an Microsoft 365 Copilot license.",
         "tip": "m365.cloud.microsoft/chat > Agents > + Create an agent. Try building a 'Group CFO Briefing Bot' grounded in your finance reference files.",
-        "license": "ANY_LIC",
+        "license": "Either Free Copilot Chat (no extra license) OR Microsoft 365 Copilot license",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/whats-new-in-microsoft-365-copilot--april-2026/4510935"
     },
     {
@@ -70,7 +70,7 @@ WHATS_NEW = [
         "badge": "Generally Available",
         "summary": "Add up to 5 source files (Word/Excel/PDF/PPT) at notebook creation, set a persistent Instructions field, then run multiple prompts against the same notebook without re-uploading. Quick Create now produces Pages, Audio Overviews, and presentations from any notebook.",
         "tip": "m365.cloud.microsoft/chat > Notebook tab > + New Notebook. After grounding, click Quick Create > Audio Overview for a podcast-style executive summary.",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/whats-new-in-microsoft-365-copilot--april-2026/4510935"
     },
     {
@@ -79,7 +79,7 @@ WHATS_NEW = [
         "badge": "May 2026 rollout",
         "summary": "Copilot can now query external systems-of-record from inside Chat: Moody's (credit ratings), HubSpot (CRM), LSEG (market data), Notion (knowledge base) and ServiceNow. Useful for IR/credit prompts that need real-time market or counterparty data.",
         "tip": "Try in Researcher: 'Pull LSEG 5-year CDS spreads for Zava Group's top-3 lender peers and Moody's latest rating action notes.'",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993"
     },
     {
@@ -88,7 +88,7 @@ WHATS_NEW = [
         "badge": "Frontier Program",
         "summary": "Specialised Word agent for contract / litigation / compliance work \u2014 redlines clauses against a playbook, highlights deviations from precedent, and proposes alternate language grounded in the firm's contract corpus.",
         "tip": "Open a contract .docx in Word for the Web > Copilot pane > switch to 'Legal Agent'. Ask: 'Redline this MSA against our Tier-1 vendor playbook and flag any indemnity carve-outs.'",
-        "license": "FRONTIER_LIC",
+        "license": "Microsoft 365 Copilot + Frontier Program",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/word-legal-agent-in-frontier/4516218"
     },
     {
@@ -97,7 +97,7 @@ WHATS_NEW = [
         "badge": "May 2026 rollout",
         "summary": "Switch the underlying frontier model for any chat or agent: GPT Instant, GPT and Claude, ChatGPT Images 2.0. Use Thinking models for board-grade reasoning; Instant for fast triage.",
         "tip": "In any Copilot Chat thread, click the model pill at the top \u2014 try 'GPT' for the Strategy/Risk briefs; 'Claude' for nuanced legal/policy drafting.",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-anthropic-claude-opus-4-7-in-microsoft-365-copilot/4511666"
     },
     {
@@ -106,7 +106,7 @@ WHATS_NEW = [
         "badge": "May 2026 rollout",
         "summary": "Plan mode lets Copilot in Excel outline a step-by-step approach BEFORE making any change \u2014 review and adjust before edits land. Python in Excel runs advanced data techniques (forecasts, regressions, custom visualisations) directly inside the Edit-with-Copilot flow without leaving the workbook.",
         "tip": "In Excel for the Web > Copilot pane, click the menu above the prompt box and pick 'Plan'. Or simply add 'use Python' to your prompt to invoke Python automatically.",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935"
     },
     {
@@ -115,7 +115,7 @@ WHATS_NEW = [
         "badge": "April 2026",
         "summary": "Add a public webpage URL as a deck reference and Copilot pulls in current external context to build the outline. Choose the image model (GPT-Image, Flux, or Auto) when generating or editing visuals \u2014 align with quality, style, and governance expectations.",
         "tip": "In PPT for the Web > Copilot pane > add a web reference URL (e.g. a Bursa Malaysia listing or BNM circular page). When generating an image, click the gear and pick the model.",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935"
     },
     {
@@ -124,7 +124,7 @@ WHATS_NEW = [
         "badge": "March 2026 (new Outlook)",
         "summary": "Copilot now writes the email directly in place and asks clarifying questions about goal, audience, and tone, then iterates with the user in the same canvas. No copy-paste, no formatting surprises \u2014 every change is visible in Outlook as the message is refined.",
         "tip": "In new Outlook on the Web, open Compose > Copilot. After the first draft lands, answer Copilot\u2019s clarifying questions and watch the email update in place.",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935"
     },
     {
@@ -133,7 +133,7 @@ WHATS_NEW = [
         "badge": "April-May 2026",
         "summary": "Copilot Call Delegation: Copilot answers incoming Teams calls on the user\u2019s behalf, gathers context from the caller, and books follow-ups via Microsoft Bookings. Consecutive Interpretation: turn-based translation between two languages with Interpreter on the meeting stage \u2014 ideal for ASEAN cross-border meetings.",
         "tip": "Teams > Settings > Calls > enable Copilot Call Delegation. For meetings, Interpreter on stage supports both real-time simultaneous and turn-based consecutive interpretation.",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935"
     },
     {
@@ -142,7 +142,7 @@ WHATS_NEW = [
         "badge": "May 2026 (Frontier preview)",
         "summary": "Copilot Notebook can now generate full Word documents and PowerPoint decks directly from notebook content. Mind Maps give an interactive grounded view of relationships across all sources \u2014 click a node to drill in. SharePoint sites, OneNote notebooks, and external web URLs all qualify as sources.",
         "tip": "After grounding the notebook, click Quick Create > Mind Map for an executive overview, or > Word document / PowerPoint presentation to draft a deliverable preloaded with visuals.",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935"
     },
     {
@@ -151,7 +151,7 @@ WHATS_NEW = [
         "badge": "May 2026 rollout",
         "summary": "Agent Builder now supports submitting agents for admin review and approval. Approved agents land in the \u201cBuilt by your org\u201d section of the Agent Store where the whole organisation can discover and install them \u2014 the right balance of citizen-developer scale and IT admin control.",
         "tip": "After Test, click Submit for review (next to Create + share). Once your IT admin approves, the agent appears in the org\u2019s Agent Store automatically.",
-        "license": "M365_LIC",
+        "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935"
     }
 ]

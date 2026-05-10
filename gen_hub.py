@@ -1354,7 +1354,42 @@ const _UI = {
                             'Demo Agent Builder ini menyambungkan <b>SharePoint, OneDrive dan fail yang dimuat naik</b> sebagai pengetahuan — supaya agent dapat memetik tab, bahagian dan klausa tepat. <b>Memerlukan lesen Microsoft 365 Copilot.</b>'],
   'On <b>Free Copilot Chat</b> the in-chat Agent Builder is still available, but knowledge is limited to <b>public websites / URLs only</b> (no SharePoint, OneDrive, or file uploads). For a free-tier demo, replace the file knowledge below with a list of public URLs (regulator microsite, IR page, sustainability report PDF link, etc.) and remove any "cite the file name and tab" instructions.':
                            ['Pada <b>Free Copilot Chat</b>, Agent Builder in-chat tetap tersedia, tetapi knowledge dibatasi pada <b>website / URL publik saja</b> (tidak ada SharePoint, OneDrive, atau upload file). Untuk demo free-tier, ganti file knowledge di bawah dengan daftar URL publik (microsite regulator, halaman IR, link PDF laporan keberlanjutan, dll.) dan hapus instruksi "kutip nama file dan tab".',
-                            'Pada <b>Free Copilot Chat</b>, Agent Builder dalam-chat masih tersedia, tetapi pengetahuan terhad kepada <b>laman web / URL awam sahaja</b> (tiada SharePoint, OneDrive, atau muat naik fail). Untuk demo peringkat free, gantikan pengetahuan fail di bawah dengan senarai URL awam (microsite pengawal selia, halaman IR, pautan PDF laporan kemampanan, dll.) dan keluarkan arahan "petik nama fail dan tab".']
+                            'Pada <b>Free Copilot Chat</b>, Agent Builder dalam-chat masih tersedia, tetapi pengetahuan terhad kepada <b>laman web / URL awam sahaja</b> (tiada SharePoint, OneDrive, atau muat naik fail). Untuk demo peringkat free, gantikan pengetahuan fail di bawah dengan senarai URL awam (microsite pengawal selia, halaman IR, pautan PDF laporan kemampanan, dll.) dan keluarkan arahan "petik nama fail dan tab".'],
+  // Agent Builder — split-tier additions (paid + free)
+  'Agent Builder · step-by-step (Microsoft 365 Copilot · file knowledge)':
+                           ['Agent Builder · langkah demi langkah (Microsoft 365 Copilot · knowledge file)',
+                            'Agent Builder · langkah demi langkah (Microsoft 365 Copilot · pengetahuan fail)'],
+  'Agent Builder · step-by-step (Free Copilot Chat · public URL knowledge)':
+                           ['Agent Builder · langkah demi langkah (Free Copilot Chat · knowledge URL publik)',
+                            'Agent Builder · langkah demi langkah (Free Copilot Chat · pengetahuan URL awam)'],
+  '🆓 Knowledge tier · Free Copilot Chat (no Microsoft 365 Copilot license needed)':
+                           ['🆓 Tingkat Knowledge · Free Copilot Chat (tanpa lisensi Microsoft 365 Copilot)',
+                            '🆓 Peringkat Pengetahuan · Free Copilot Chat (tiada lesen Microsoft 365 Copilot diperlukan)'],
+  'This Agent Builder demo runs on the <b>free in-chat Agent Builder</b> available on Microsoft 365 Copilot Chat without a paid license. Knowledge is limited to <b>public websites and URLs only</b> (no SharePoint, OneDrive, or file uploads). Same agent design, same Name / Description / System Instructions / Test Queries — only the knowledge sources differ.':
+                           ['Demo Agent Builder ini berjalan di <b>Agent Builder in-chat free</b> yang tersedia di Microsoft 365 Copilot Chat tanpa lisensi berbayar. Knowledge dibatasi pada <b>website dan URL publik saja</b> (tanpa SharePoint, OneDrive, atau upload file). Desain agent sama, Name / Description / System Instructions / Test Queries sama — hanya sumber knowledge yang berbeda.',
+                            'Demo Agent Builder ini berjalan pada <b>Agent Builder dalam-chat percuma</b> yang tersedia di Microsoft 365 Copilot Chat tanpa lesen berbayar. Pengetahuan terhad kepada <b>laman web dan URL awam sahaja</b> (tiada SharePoint, OneDrive, atau muat naik fail). Reka bentuk agent sama, Name / Description / System Instructions / Test Queries sama — hanya sumber pengetahuan yang berbeza.'],
+  'Click <b>Add Knowledge</b> → <b>Website / URL</b> and paste each public URL below (one per line). Free Copilot Chat indexes the live page content. After adding, test that the agent can cite the URL before sharing.':
+                           ['Klik <b>Add Knowledge</b> → <b>Website / URL</b> dan paste setiap URL publik di bawah (satu per baris). Free Copilot Chat mengindeks konten halaman live. Setelah ditambahkan, uji apakah agent dapat mengutip URL sebelum dibagikan.',
+                            'Klik <b>Add Knowledge</b> → <b>Website / URL</b> dan tampal setiap URL awam di bawah (satu per baris). Free Copilot Chat mengindeks kandungan halaman langsung. Setelah ditambah, uji sama ada agent boleh memetik URL sebelum dikongsikan.'],
+  'Use these queries against the right-hand test pane. Verify the agent cites the exact public URL it consulted, and refuses politely when a question is out of scope.':
+                           ['Gunakan query-query ini di test pane sebelah kanan. Pastikan agent mengutip URL publik tepat yang dirujuk, dan menolak dengan sopan jika pertanyaan di luar scope.',
+                            'Gunakan query ini di test pane sebelah kanan. Pastikan agent memetik URL awam tepat yang dirujuk, dan menolak dengan sopan apabila soalan di luar skop.'],
+  // Free-tier knowledge URL labels (canonical archetype rows)
+  'Latest regulator policy / circular page covering this domain':
+                           ['Halaman kebijakan / sirkular regulator terbaru yang mencakup domain ini',
+                            'Halaman polisi / pekeliling pengawal selia terkini yang merangkumi domain ini'],
+  'Public IR page of a comparable listed peer — annual report, 4Q deck, ESG report':
+                           ['Halaman IR publik peer listed sebanding — annual report, 4Q deck, laporan ESG',
+                            'Halaman IR awam peer tersenarai setanding — laporan tahunan, deck 4Q, laporan ESG'],
+  'Industry association statistics, benchmarks, code of practice':
+                           ['Statistik asosiasi industri, benchmark, code of practice',
+                            'Statistik persatuan industri, penanda aras, kod amalan'],
+  'Listed-peer announcements and quarterly disclosures':
+                           ['Pengumuman peer listed dan pengungkapan kuartal',
+                            'Pengumuman peer tersenarai dan pendedahan suku tahun'],
+  'Public news article or analyst note — cite in agent answers':
+                           ['Artikel berita publik atau catatan analis — kutip dalam jawaban agent',
+                            'Artikel berita awam atau nota penganalisis — petik dalam jawapan agent']
 };
 function _uL(en){
   const lc = _langCode();
