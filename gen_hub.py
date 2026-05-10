@@ -1176,6 +1176,38 @@ const _SCRUB_GLOBAL_GEO = [
   [/\bMedan\b/gi, 'Northgate'],
   [/\bBumiputera\b/gi, 'local-priority'],
   [/\bBumi\b/g, 'local-priority'],
+  // Malaysian regulators / authorities
+  [/\bBank Negara Malaysia\b/g, 'Pacifica Reserve'],
+  [/\bBank Negara\b/g, 'Pacifica Reserve'],
+  [/\bBNM\b/g, 'Pacifica Reserve'],
+  [/\bBursa Malaysia\b/gi, 'Pacifica Exchange'],
+  [/\bBursa\b/g, 'Pacifica Exchange'],
+  [/\bEPF\b/g, 'Pacifica Provident Fund'],
+  [/\bSOCSO\b/gi, 'Pacifica Social Security'],
+  [/\bMITI\b/g, 'Pacifica Trade Ministry'],
+  [/\bLHDN\b/g, 'Pacifica Tax Authority'],
+  [/\bSSM\b/g, 'Pacifica Companies Registry'],
+  [/\bMIDA\b/g, 'Pacifica Investment Authority'],
+  // Indonesian regulators / authorities
+  [/\bOJK\b/g, 'Asianova FSA'],
+  [/\bBPJS\b/g, 'Asianova Social Security'],
+  [/\bBKPM\b/g, 'Asianova Investment Board'],
+  [/\bBappenas\b/gi, 'Asianova Planning Agency'],
+  [/\bBPK\b/g, 'Asianova Audit Board'],
+  [/\bKPK\b/g, 'Asianova Anti-Corruption Commission'],
+  [/\bBSSN\b/g, 'Asianova Cyber Agency'],
+  [/\bKemenkeu\b/gi, 'Asianova Finance Ministry'],
+  [/\bMenPAN[-‑]?RB\b/gi, 'Asianova Public Service Ministry'],
+  [/\bMenPAN\b/gi, 'Asianova Public Service Ministry'],
+  [/\bDPR\b/g, 'Pacific Regional Parliament'],
+  // Other ASEAN central banks
+  [/\bBSP\b/g, 'Pacific Central Bank'],
+  [/\bSBV\b/g, 'Pacific Central Bank'],
+  [/\bBoT\b/g, 'Pacific Central Bank'],
+  // Specific MY locations
+  [/\bSenai\b/g, 'Southport Industrial'],
+  [/\bIskandar\b/g, 'Southport Special Zone'],
+  [/\bKlang Valley\b/gi, 'Pacifica Capital region'],
 ];
 
 function _scrubReal(s){
