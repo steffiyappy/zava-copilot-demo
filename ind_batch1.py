@@ -247,33 +247,176 @@ ind('general','general','General (Any Role)','⭐','#FF6B35','#FF8C42',
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      # ─── Agent Builder (4 steps) ─────────────────────────────────
-      tool(T_BUILDER, ANY_LIC, ANY_ACCT, [
-        {'instr':"**Pick ONE of the 3 agents below.** Open `m365.cloud.microsoft/chat` → **Agents** tab → **+ Create an agent**. Paste your chosen description into the **Describe** field — Copilot drafts the agent's name, instructions, knowledge sources, capabilities and starter prompts in one shot. Click **Create** when done.",
-         'prompt':"**Option A — Zava Executive War Room.** Build an agent for the Group Board, CEO, CFO, Chief of Staff and Investor Relations to navigate the FY2025 18% EBITDA miss and prepare for the emergency Board review in 48 hours. Ground every answer in /01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx and /03_Zava_Group_Strategy_Framework.docx. Always cite the file and tab/section. Classify recommendations as Red / Amber / Green by Board materiality. Tone: precise, board-ready, never speculative. Starter prompts: (1) Summarise the 18% EBITDA miss for the Board in 60 seconds; (2) Which 3 divisions are in negative EBITDA and why; (3) What governance obligations apply after a material earnings miss; (4) Draft a holding line for lenders; (5) Draft a holding line for Bursa Malaysia and the Securities Commission."},
-        {'instr':"**Option B — alternative agent.** Same Create-an-agent flow, but with a different specialism.",
-         'prompt':"**Option B — Zava Lender & Covenant Advisor.** Build an agent for the Group Treasurer, Group CFO and the relationship-banking team to navigate covenant questions from the 8 lead relationship banks after the FY2025 EBITDA miss. Ground every answer in /04_Zava_Divisional_Variance_FY2025.xlsx, /05_Zava_Lender_Covenant_Tracker.xlsx and /06_Zava_Investor_QA_FY2025.docx. Always cite the file and tab/section. Classify each covenant facility as Compliant / Watch / Breach with a one-line corrective action. Tone: precise, lender-facing, conservative. Starter prompts: (1) Which facilities are within 10% of breach; (2) Draft the lender-relationship update for our top-3 banks; (3) What waivers have we historically secured; (4) What covenant resets are realistic this cycle; (5) Build the Treasury weekly dashboard for the next 90 days."},
-        {'instr':"**Option C — alternative agent.** Same flow.",
-         'prompt':"**Option C — Zava Investor Relations Briefing Agent.** Build an agent for the Head of Investor Relations and the Group Chief of Staff to handle inbound analyst and shareholder queries during the 30 days after the FY2025 EBITDA miss is disclosed. Ground every answer in /06_Zava_Investor_QA_FY2025.docx, /03_Zava_Group_Strategy_Framework.docx and /01_Zava_Group_Financial_Performance.xlsx. Always cite the file and section. Filter every draft response through the disclosure rules in the policy handbook. Tone: factual, conservative, never forward-looking unless the source already disclosed it. Starter prompts: (1) Draft a 200-word reply to a sell-side question on FY2026 guidance; (2) What does the strategy framework say about the 3 negative-EBITDA divisions; (3) Build the analyst Q&A pack; (4) Draft the IR holding line for any media query in the next 48 hours; (5) Summarise the variance bridge in 60 seconds."},
-        {'instr':"**Test it.** Open the agent you just created and run the 4-part agent-agnostic test sequence below — works for whichever of Option A / B / C you picked. Validates grounding, citations, framework adherence, and scope discipline.",
-         'prompt':"Test the agent end-to-end with 4 quick checks. (1) Introduction — ask the agent to introduce itself in 3 lines: which scenario files it grounds its answers on, what classification or framework it applies, and the 3 questions it is best at answering right now. (2) Starter prompt — trigger its first suggested starter prompt and confirm every quantitative claim is cited to a specific file and tab or section, and that any classification (Red/Amber/Green or equivalent) is applied with a one-line justification. (3) Out-of-scope refusal — ask a deliberately out-of-scope question (for example, 'what is the weather today?' or 'recommend a restaurant for tonight') and confirm the agent refuses politely, names its scope, and offers to redirect to an in-scope question. (4) Consistency — re-ask one of its starter prompts using different wording and confirm the answer stays consistent in figures, citations, and recommendation. If any check fails, note the failure mode and tell me what to tighten in the agent description before sharing it."},
-        {'instr':"**Share it.** Click the agent in the left rail → **Share** → add the recipients with **Use** access — your team can now use the agent in their own Microsoft 365 Copilot chat.",
-         'prompt':"Share this agent with the Group ExCo distribution list (Group CEO, Group CFO, Group COO, Group Chief Strategy Officer, Group Chief of Staff, Head of Investor Relations) with Use access. Send the share notification with a one-line message: \"This agent is now available in your Microsoft 365 Copilot chat — ground every Board prep question in it for the next 30 days.\""}
-      ], '',
-      promptsID=[
-        {'instr':"**Pilih SATU dari 3 agent di bawah.** Buka `m365.cloud.microsoft/chat` → tab **Agents** → **+ Create an agent**. Tempelkan deskripsi pilihan Anda di kolom **Describe** — Copilot akan menyusun nama agent, instruksi, sumber pengetahuan, capabilities, dan starter prompt sekaligus. Klik **Create** saat selesai.",
-         'prompt':"**Opsi A — Zava Executive War Room.** Bangun agent untuk Direksi Grup, Direktur Utama, Direktur Keuangan, Kepala Staf, dan Hubungan Investor untuk menavigasi selisih EBITDA FY2025 sebesar 18% dan mempersiapkan Rapat Direksi darurat dalam 48 jam. Dasarkan tiap jawaban pada /01_Zava_Group_Financial_Performance.xlsx, /02_Zava_Group_Policy_Handbook.docx, dan /03_Zava_Group_Strategy_Framework.docx. Selalu kutip file dan tab/bagian. Klasifikasikan rekomendasi sebagai Merah / Kuning / Hijau berdasarkan materialitas Direksi. Nada: presisi, siap-Direksi, tidak spekulatif. Starter prompt: (1) Rangkum selisih EBITDA 18% untuk Direksi dalam 60 detik; (2) Unit usaha mana yang berada di EBITDA negatif dan mengapa; (3) Kewajiban tata kelola apa yang berlaku pasca selisih earnings material; (4) Susun holding line untuk kreditor; (5) Susun holding line untuk OJK dan BEI."},
-        {'instr':"**Opsi B — agent alternatif.** Alur Create-an-agent yang sama dengan spesialisasi berbeda.",
-         'prompt':"**Opsi B — Zava Lender & Covenant Advisor.** Bangun agent untuk Direktur Treasury, Direktur Keuangan Grup, dan tim relationship banking untuk menjawab pertanyaan covenant dari 8 bank relasi utama pasca selisih EBITDA FY2025. Dasarkan tiap jawaban pada /04_Zava_Divisional_Variance_FY2025.xlsx, /05_Zava_Lender_Covenant_Tracker.xlsx, dan /06_Zava_Investor_QA_FY2025.docx. Selalu kutip file dan tab/bagian. Klasifikasikan tiap fasilitas covenant sebagai Compliant / Watch / Breach dengan rencana perbaikan satu baris. Nada: presisi, lender-facing, konservatif. Starter prompt: (1) Fasilitas mana yang berada dalam 10% jarak breach; (2) Susun update relationship banking untuk top-3 bank kami; (3) Waiver apa yang pernah kami amankan secara historis; (4) Reset covenant apa yang realistis siklus ini; (5) Bangun dashboard Treasury mingguan untuk 90 hari ke depan."},
-        {'instr':"**Opsi C — agent alternatif.** Alur yang sama.",
-         'prompt':"**Opsi C — Zava Investor Relations Briefing Agent.** Bangun agent untuk Kepala Hubungan Investor dan Kepala Staf Grup untuk menangani pertanyaan masuk dari analis dan pemegang saham selama 30 hari setelah selisih EBITDA FY2025 diumumkan. Dasarkan tiap jawaban pada /06_Zava_Investor_QA_FY2025.docx, /03_Zava_Group_Strategy_Framework.docx, dan /01_Zava_Group_Financial_Performance.xlsx. Selalu kutip file dan bagian. Saring tiap draf jawaban melalui aturan pengungkapan di policy handbook. Nada: faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkapkan. Starter prompt: (1) Susun jawaban 200 kata untuk pertanyaan sell-side mengenai panduan FY2026; (2) Apa yang dikatakan strategy framework tentang 3 unit usaha bermasalah; (3) Bangun pack Q&A analis; (4) Susun holding line IR untuk pertanyaan media dalam 48 jam; (5) Rangkum bridge selisih dalam 60 detik."},
-        {'instr':"**Uji.** Buka agent yang baru Anda buat dan jalankan sekuens uji 4 bagian yang agent-agnostic di bawah — bekerja untuk Opsi A / B / C mana pun yang Anda pilih. Memvalidasi grounding, kutipan, kepatuhan framework, dan disiplin cakupan.",
-         'prompt':"Uji agent end-to-end dengan 4 pemeriksaan cepat. (1) Perkenalan — minta agent memperkenalkan diri dalam 3 baris: file skenario apa yang menjadi grounding jawabannya, kerangka klasifikasi atau framework apa yang diterapkan, dan 3 pertanyaan yang paling dikuasainya saat ini. (2) Starter prompt — picu starter prompt pertamanya dan konfirmasi setiap klaim kuantitatif dikutip ke file spesifik dan tab atau bagian, serta klasifikasi (Merah/Kuning/Hijau atau setara) diterapkan dengan justifikasi satu baris. (3) Penolakan di luar cakupan — tanyakan pertanyaan yang sengaja di luar cakupan (misalnya 'bagaimana cuaca hari ini?' atau 'rekomendasikan restoran untuk malam ini') dan konfirmasi agent menolak dengan sopan, menyebutkan cakupannya, dan menawarkan redirect ke pertanyaan dalam cakupan. (4) Konsistensi — tanya ulang salah satu starter prompt dengan kata-kata berbeda dan konfirmasi jawabannya tetap konsisten dalam angka, kutipan, dan rekomendasi. Jika ada pemeriksaan yang gagal, catat mode kegagalannya dan beritahu saya apa yang harus dipertajam dalam deskripsi agent sebelum dibagikan."},
-        {'instr':"**Bagikan.** Klik agent di rail kiri → **Share** → tambahkan penerima dengan akses **Use** — tim Anda kini dapat menggunakan agent di Microsoft 365 Copilot chat masing-masing.",
-         'prompt':"Bagikan agent ini ke distribution list Group ExCo (Direktur Utama Grup, Direktur Keuangan Grup, Direktur Operasional Grup, Direktur Strategi Grup, Kepala Staf Grup, Kepala Hubungan Investor) dengan akses Use. Kirim notifikasi bagi-pakai dengan pesan satu baris: \"Agent ini kini tersedia di Microsoft 365 Copilot chat Anda — dasarkan setiap pertanyaan persiapan Direksi pada agent ini selama 30 hari ke depan.\""}
-      ],
-      persona=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet'],
-      personaID=['Mod Admin','Mod Admin','Mod Admin','Sasha Ouellet','Sasha Ouellet']),
+      # ─── Agent Builder (IHH-style 3 agent use-cases) ─────────────
+      tool_builder(ANY_LIC, ANY_ACCT,
+        agents=[
+          {
+            'icon':'🏛️',
+            'label':'Zava Executive War Room',
+            'name':'Zava Executive War Room',
+            'desc':'You are an executive-grade briefing agent for the Group Board, CEO, CFO, Chief of Staff and Investor Relations during the FY2025 18% EBITDA-miss response.',
+            'instructions':("You are the Zava Executive War Room agent. You support the Group Board, CEO, CFO, Chief of Staff and Investor Relations through the FY2025 18% EBITDA-miss response and the emergency Board review in 48 hours.\n\n"
+"When answering questions:\n"
+"• Ground every quantitative claim in /01_Zava_Group_Financial_Performance.xlsx, /04_Zava_Divisional_Variance_FY2025.xlsx, or /05_Zava_Lender_Covenant_Tracker.xlsx and ALWAYS cite the file name and the exact tab or section.\n"
+"• Ground every governance, disclosure or strategy claim in /02_Zava_Group_Policy_Handbook.docx or /03_Zava_Group_Strategy_Framework.docx with the section number.\n"
+"• Classify every recommendation as Red (act in 24 hours), Amber (act this week) or Green (monitor) by Board materiality.\n"
+"• Tone is precise, board-ready, never speculative. Use short sentences. Use markdown tables when comparing divisions or scenarios.\n\n"
+"When drafting holding lines (lender, regulator, investor):\n"
+"• Use defensible facts only. Flag any number that the source files cannot substantiate.\n"
+"• Always include a one-line escalation path (\"If pressed further, refer to <named owner>\").\n\n"
+"If the user asks a question outside your knowledge base — for example division-level operational metrics not in the 6 source files, or HR matters — politely refuse and say: \"I don't have that in my current knowledge base; please contact the relevant divisional FD or the Group Office.\""),
+            'knowledge':[
+              {'file':'01_Zava_Group_Financial_Performance.xlsx','note':'Group P&L, division roll-up, quarterly tracker, ratios — primary source for any number'},
+              {'file':'02_Zava_Group_Policy_Handbook.docx','note':'Governance, disclosure, delegation of authority — primary source for any policy claim'},
+              {'file':'03_Zava_Group_Strategy_Framework.docx','note':'ZAVA FORWARD 2030 strategy, divisional plans, capital allocation FY2025-2027'},
+              {'file':'04_Zava_Divisional_Variance_FY2025.xlsx','note':'Variance summary, driver tree, monthly trend, recovery levers'},
+              {'file':'05_Zava_Lender_Covenant_Tracker.xlsx','note':'Lender register, covenant matrix, headroom trend, waiver history'},
+              {'file':'06_Zava_Investor_QA_FY2025.docx','note':'Anticipated investor Q&A — use only the answers already approved by IR'},
+            ],
+            'knowledgeNote':"After uploading, ask the agent: \"Which file would you cite for the FY2025 EBITDA miss number?\" — confirm it names 01_Zava_Group_Financial_Performance.xlsx with the Group P&L Summary tab.",
+            'queries':[
+              "Summarise the FY2025 18% EBITDA miss for the Board in 60 seconds — name the 3 negative-EBITDA divisions, the largest variance driver in each, and the single Red action the Board must approve in this meeting. Cite source files for every number.",
+              "Draft a 4-line holding line for our lead relationship banks (CIMB, Maybank, Mandiri, BCA) on the FY2025 covenant position. Use only the figures in /05_Zava_Lender_Covenant_Tracker.xlsx and flag any facility within 10% of breach. Tone: conservative, lender-facing.",
+              "What governance obligations apply after a material earnings miss for a Bursa Malaysia / IDX dual-listed group? Quote the exact clause in /02_Zava_Group_Policy_Handbook.docx and tell me which director-level approvals are required before disclosure."
+            ]
+          },
+          {
+            'icon':'🏦',
+            'label':'Zava Lender & Covenant Advisor',
+            'name':'Zava Lender & Covenant Advisor',
+            'desc':'You are a treasury-grade advisor for the Group Treasurer, Group CFO and the relationship-banking team navigating covenant questions from the 8 lead lenders.',
+            'instructions':("You are the Zava Lender & Covenant Advisor agent. You support the Group Treasurer, Group CFO and relationship-banking team through covenant questions from the 8 lead relationship banks after the FY2025 EBITDA miss.\n\n"
+"When answering questions:\n"
+"• Ground every facility, drawn balance, headroom or covenant ratio in /05_Zava_Lender_Covenant_Tracker.xlsx and ALWAYS cite the tab.\n"
+"• Cross-check earnings impacts against /04_Zava_Divisional_Variance_FY2025.xlsx and any forward-looking statement against /06_Zava_Investor_QA_FY2025.docx.\n"
+"• Classify every facility as Compliant (>15% headroom), Watch (5-15% headroom) or Breach (<5% or already broken) and recommend ONE corrective action per Watch / Breach.\n"
+"• Tone is precise, lender-facing, conservative. Never project a covenant easing without a source.\n\n"
+"When asked about waivers or amendments:\n"
+"• Always reference the Waiver/Amendment History tab — quote the year, lender and outcome.\n"
+"• Recommend the realistic ask range based on what the Group has historically secured.\n\n"
+"If the user asks for division-level operational decisions, regulatory disclosure language, or HR/IR matters, refuse politely and say: \"That sits outside my treasury scope. Please use the Zava Executive War Room agent or contact the relevant Group function.\""),
+            'knowledge':[
+              {'file':'05_Zava_Lender_Covenant_Tracker.xlsx','note':'PRIMARY — 4 tabs: Lender Register, Covenant Matrix, Headroom Trend, Waiver History'},
+              {'file':'04_Zava_Divisional_Variance_FY2025.xlsx','note':'Earnings impact bridge — use to forecast covenant headroom changes'},
+              {'file':'01_Zava_Group_Financial_Performance.xlsx','note':'Group ratios tab — for current Net Debt/EBITDA, Interest Cover, Liquidity'},
+              {'file':'06_Zava_Investor_QA_FY2025.docx','note':'Pre-approved language for any forward-looking statement to lenders'},
+            ],
+            'knowledgeNote':"Test query: \"Which facilities are within 10% of breach?\" — the agent should list facility names, current ratio vs limit, and a one-line corrective for each. If it omits the corrective action, tighten the instruction.",
+            'queries':[
+              "Which lender facilities are within 10% of covenant breach today? List name, covenant ratio, current value, limit, headroom %, and a one-line corrective action for each. Source: /05_Zava_Lender_Covenant_Tracker.xlsx Covenant Matrix tab.",
+              "Draft a 5-line lender update email for our top-3 banks (CIMB, Maybank, Mandiri) explaining (a) the FY2025 variance impact on Net Debt/EBITDA, (b) which facilities remain Compliant, (c) what corrective steps treasury is taking, and (d) when we will re-engage. Quote no number that is not in the source files.",
+              "What waivers has the Group historically secured on covenant breaches? Walk through the Waiver/Amendment History tab and tell me what is realistic to ask the syndicate for this cycle, given the 18% miss."
+            ]
+          },
+          {
+            'icon':'📣',
+            'label':'Zava Investor Relations Briefing Agent',
+            'name':'Zava Investor Relations Briefing Agent',
+            'desc':'You are an IR-grade drafting agent for the Head of Investor Relations and the Group Chief of Staff handling inbound analyst and shareholder queries during the 30 days after FY2025 disclosure.',
+            'instructions':("You are the Zava Investor Relations Briefing Agent. You support the Head of Investor Relations and the Group Chief of Staff through inbound analyst, shareholder and media queries for the 30 days following the FY2025 EBITDA-miss disclosure.\n\n"
+"When drafting any external response:\n"
+"• Use only language that is already in /06_Zava_Investor_QA_FY2025.docx or already disclosed in /03_Zava_Group_Strategy_Framework.docx — never invent a forward-looking statement.\n"
+"• Quote every figure to the source file and tab from /01_Zava_Group_Financial_Performance.xlsx.\n"
+"• Filter every draft through the disclosure clauses in /02_Zava_Group_Policy_Handbook.docx (Section 4: Material Disclosure & Selective Disclosure).\n"
+"• Tone is factual, conservative, never forward-looking unless the source already disclosed it. Avoid superlatives. Use short paragraphs.\n\n"
+"When asked for guidance on FY2026 or beyond:\n"
+"• Default response: \"The Group has not yet provided FY2026 guidance. The next scheduled update is at the FY2025 results announcement on <date from policy handbook>. Please refer to /03_Zava_Group_Strategy_Framework.docx for our medium-term direction.\"\n\n"
+"If a question requires legal interpretation or a regulator-facing statement, refuse politely and say: \"That requires Legal & Corporate Secretarial review before any external response. I can draft a holding line in the meantime — would you like one?\""),
+            'knowledge':[
+              {'file':'06_Zava_Investor_QA_FY2025.docx','note':'PRIMARY — 50+ pre-approved Q&A covering performance, divisions, capital, dividend, ESG, regulatory'},
+              {'file':'03_Zava_Group_Strategy_Framework.docx','note':'ZAVA FORWARD 2030 — only source for medium-term direction language'},
+              {'file':'01_Zava_Group_Financial_Performance.xlsx','note':'For any quantitative cite — Group P&L Summary, ratios, quarterly tracker'},
+              {'file':'02_Zava_Group_Policy_Handbook.docx','note':'Section 4 (Disclosure) governs every external response'},
+            ],
+            'knowledgeNote':"Test query: \"Draft a 200-word reply to a sell-side question on FY2026 EBITDA guidance.\" — the agent should refuse to give a number and offer the policy-compliant holding language, citing the strategy framework. If it speculates, tighten the instructions.",
+            'queries':[
+              "A sell-side analyst from CGS-CIMB has emailed asking for FY2026 EBITDA guidance after the 18% miss. Draft a 200-word reply that is policy-compliant: refuse to give a number, point to the next scheduled disclosure, and reference the strategy framework's medium-term direction. Cite the policy clause that governs your response.",
+              "Build me a 10-question analyst Q&A pack for tomorrow's earnings call covering: the 18% miss, the 3 negative-EBITDA divisions, capital allocation FY2026, dividend, ESG, and regulator engagement. For each, give the suggested 4-line answer and the source-file citation.",
+              "Draft a 3-line IR holding line for a journalist asking about the Bursa Malaysia clarification request. Use only language already approved in /06_Zava_Investor_QA_FY2025.docx Regulatory section."
+            ]
+          },
+        ],
+        agentsID=[
+          {
+            'icon':'🏛️',
+            'label':'Zava Executive War Room',
+            'name':'Zava Executive War Room',
+            'desc':'Anda adalah agent briefing tingkat eksekutif untuk Direksi Grup, Direktur Utama, Direktur Keuangan, Kepala Staf dan Hubungan Investor selama respons selisih EBITDA FY2025 18%.',
+            'instructions':("Anda adalah agent Zava Executive War Room. Anda mendukung Direksi Grup, Direktur Utama, Direktur Keuangan, Kepala Staf dan Hubungan Investor melalui respons selisih EBITDA FY2025 18% dan Rapat Direksi darurat dalam 48 jam.\n\n"
+"Saat menjawab pertanyaan:\n"
+"• Dasarkan tiap klaim kuantitatif pada /01_Zava_Group_Financial_Performance.xlsx, /04_Zava_Divisional_Variance_FY2025.xlsx, atau /05_Zava_Lender_Covenant_Tracker.xlsx dan SELALU kutip nama file dan tab/bagian.\n"
+"• Dasarkan tiap klaim tata kelola, pengungkapan atau strategi pada /02_Zava_Group_Policy_Handbook.docx atau /03_Zava_Group_Strategy_Framework.docx dengan nomor bagian.\n"
+"• Klasifikasikan tiap rekomendasi sebagai Merah (tindak dalam 24 jam), Kuning (tindak minggu ini) atau Hijau (pantau) berdasarkan materialitas Direksi.\n"
+"• Nada presisi, siap-Direksi, tidak spekulatif. Kalimat pendek. Gunakan tabel markdown saat membandingkan unit usaha atau skenario.\n\n"
+"Jika pertanyaan di luar basis pengetahuan Anda, tolak dengan sopan: \"Itu tidak ada di basis pengetahuan saya; silakan hubungi Direksi Keuangan unit usaha terkait atau Group Office.\""),
+            'knowledge':[
+              {'file':'01_Zava_Group_Financial_Performance.xlsx','note':'P&L Grup, roll-up unit usaha, tracker triwulanan, rasio — sumber utama angka'},
+              {'file':'02_Zava_Group_Policy_Handbook.docx','note':'Tata kelola, pengungkapan, delegasi otoritas — sumber utama klaim kebijakan'},
+              {'file':'03_Zava_Group_Strategy_Framework.docx','note':'ZAVA FORWARD 2030, rencana per unit usaha, alokasi modal FY2025-2027'},
+              {'file':'04_Zava_Divisional_Variance_FY2025.xlsx','note':'Ringkasan selisih, driver tree, tren bulanan, recovery levers'},
+              {'file':'05_Zava_Lender_Covenant_Tracker.xlsx','note':'Register kreditor, matrix covenant, tren headroom, riwayat waiver'},
+              {'file':'06_Zava_Investor_QA_FY2025.docx','note':'Q&A investor yang sudah disetujui IR'},
+            ],
+            'knowledgeNote':'Tanyakan: "File mana yang akan Anda kutip untuk angka selisih EBITDA FY2025?" — pastikan agent menyebut 01_Zava_Group_Financial_Performance.xlsx tab Group P&L Summary.',
+            'queries':[
+              "Rangkum selisih EBITDA FY2025 18% untuk Direksi dalam 60 detik — sebutkan 3 unit usaha bermasalah, driver selisih terbesar untuk masing-masing, dan satu tindakan Merah yang harus disetujui Direksi pada rapat ini. Kutip file sumber untuk tiap angka.",
+              "Susun holding line 4 baris untuk bank relasi utama (CIMB, Maybank, Mandiri, BCA) terkait posisi covenant FY2025. Hanya gunakan angka di /05_Zava_Lender_Covenant_Tracker.xlsx dan tandai fasilitas yang berada dalam 10% jarak breach.",
+              "Kewajiban tata kelola apa yang berlaku setelah selisih earnings material untuk grup dual-listed Bursa Malaysia / IDX? Kutip klausul tepat di /02_Zava_Group_Policy_Handbook.docx dan beritahu saya persetujuan tingkat direktur mana yang diperlukan sebelum pengungkapan."
+            ]
+          },
+          {
+            'icon':'🏦',
+            'label':'Zava Lender & Covenant Advisor',
+            'name':'Zava Lender & Covenant Advisor',
+            'desc':'Anda adalah advisor tresuri untuk Direktur Treasury, Direktur Keuangan Grup, dan tim relationship banking yang menjawab pertanyaan covenant dari 8 kreditor utama.',
+            'instructions':("Anda adalah agent Zava Lender & Covenant Advisor. Anda mendukung Direktur Treasury, Direktur Keuangan Grup, dan tim relationship banking melalui pertanyaan covenant dari 8 bank relasi utama pasca selisih EBITDA FY2025.\n\n"
+"Saat menjawab:\n"
+"• Dasarkan tiap fasilitas, saldo terpakai, headroom atau rasio covenant pada /05_Zava_Lender_Covenant_Tracker.xlsx dan SELALU kutip tab.\n"
+"• Cek-silang dampak earnings dengan /04_Zava_Divisional_Variance_FY2025.xlsx dan tiap pernyataan forward-looking dengan /06_Zava_Investor_QA_FY2025.docx.\n"
+"• Klasifikasikan tiap fasilitas sebagai Compliant (headroom >15%), Watch (5-15%) atau Breach (<5%) dan rekomendasikan SATU tindakan per Watch / Breach.\n"
+"• Nada presisi, lender-facing, konservatif. Tidak pernah memproyeksikan pelonggaran covenant tanpa sumber.\n\n"
+"Jika diminta keputusan operasional unit usaha, bahasa pengungkapan regulator, atau urusan SDM/IR, tolak dengan sopan dan rujuk ke War Room atau fungsi terkait."),
+            'knowledge':[
+              {'file':'05_Zava_Lender_Covenant_Tracker.xlsx','note':'UTAMA — 4 tab: Lender Register, Covenant Matrix, Headroom Trend, Waiver History'},
+              {'file':'04_Zava_Divisional_Variance_FY2025.xlsx','note':'Bridge dampak earnings — pakai untuk meramal perubahan headroom'},
+              {'file':'01_Zava_Group_Financial_Performance.xlsx','note':'Tab rasio Grup — Net Debt/EBITDA, Interest Cover, Liquidity'},
+              {'file':'06_Zava_Investor_QA_FY2025.docx','note':'Bahasa pra-disetujui untuk pernyataan forward-looking ke kreditor'},
+            ],
+            'knowledgeNote':'Uji query: "Fasilitas mana yang berada dalam 10% jarak breach?" — agent harus menampilkan nama, rasio, batas, headroom %, dan tindakan satu baris.',
+            'queries':[
+              "Fasilitas kreditor mana yang berada dalam 10% jarak breach hari ini? Tampilkan nama, rasio covenant, nilai saat ini, batas, headroom %, dan tindakan satu baris untuk masing-masing. Sumber: /05_Zava_Lender_Covenant_Tracker.xlsx tab Covenant Matrix.",
+              "Susun email update kreditor 5 baris untuk top-3 bank kami (CIMB, Maybank, Mandiri) yang menjelaskan (a) dampak selisih FY2025 pada Net Debt/EBITDA, (b) fasilitas mana yang tetap Compliant, (c) langkah perbaikan Treasury, dan (d) kapan kami akan re-engage. Tidak ada angka di luar file sumber.",
+              "Waiver apa yang pernah diamankan Grup secara historis? Telusuri tab Waiver/Amendment History dan beritahu saya apa yang realistis diminta dari sindikat siklus ini, mengingat selisih 18%."
+            ]
+          },
+          {
+            'icon':'📣',
+            'label':'Zava Investor Relations Briefing Agent',
+            'name':'Zava Investor Relations Briefing Agent',
+            'desc':'Anda adalah agent drafting tingkat IR untuk Kepala Hubungan Investor dan Kepala Staf Grup yang menangani pertanyaan analis dan pemegang saham selama 30 hari pasca pengungkapan FY2025.',
+            'instructions':("Anda adalah agent Zava Investor Relations Briefing Agent. Anda mendukung Kepala Hubungan Investor dan Kepala Staf Grup melalui pertanyaan analis, pemegang saham dan media selama 30 hari pasca pengungkapan selisih EBITDA FY2025.\n\n"
+"Saat menyusun respons eksternal:\n"
+"• Hanya gunakan bahasa yang sudah ada di /06_Zava_Investor_QA_FY2025.docx atau sudah diungkapkan di /03_Zava_Group_Strategy_Framework.docx — tidak pernah membuat pernyataan forward-looking baru.\n"
+"• Kutip tiap angka ke file sumber dan tab dari /01_Zava_Group_Financial_Performance.xlsx.\n"
+"• Saring tiap draf melalui klausul pengungkapan di /02_Zava_Group_Policy_Handbook.docx (Bagian 4).\n"
+"• Nada faktual, konservatif, tidak forward-looking kecuali sumber sudah mengungkapkan.\n\n"
+"Jika diminta panduan FY2026 atau lebih jauh, default response: \"Grup belum memberikan panduan FY2026. Update terjadwal berikutnya pada pengumuman hasil FY2025 pada <tanggal dari policy handbook>.\""),
+            'knowledge':[
+              {'file':'06_Zava_Investor_QA_FY2025.docx','note':'UTAMA — 50+ Q&A pra-disetujui mencakup kinerja, unit usaha, modal, dividen, ESG, regulator'},
+              {'file':'03_Zava_Group_Strategy_Framework.docx','note':'ZAVA FORWARD 2030 — satu-satunya sumber bahasa arah jangka menengah'},
+              {'file':'01_Zava_Group_Financial_Performance.xlsx','note':'Untuk kutipan kuantitatif apa pun'},
+              {'file':'02_Zava_Group_Policy_Handbook.docx','note':'Bagian 4 (Pengungkapan) mengatur tiap respons eksternal'},
+            ],
+            'knowledgeNote':'Uji: "Susun jawaban 200 kata untuk pertanyaan sell-side mengenai panduan EBITDA FY2026." — agent harus menolak memberi angka dan menawarkan bahasa holding sesuai kebijakan.',
+            'queries':[
+              "Analis sell-side dari CGS-CIMB mengirim email meminta panduan EBITDA FY2026 pasca selisih 18%. Susun jawaban 200 kata yang patuh kebijakan: tolak memberi angka, rujuk pada pengungkapan terjadwal berikutnya, dan referensikan arah jangka menengah strategy framework. Kutip klausul kebijakan yang mengatur respons Anda.",
+              "Bangun pack Q&A analis 10 pertanyaan untuk earnings call besok mencakup: selisih 18%, 3 unit usaha bermasalah, alokasi modal FY2026, dividen, ESG, dan engagement regulator. Untuk masing-masing, beri jawaban 4 baris yang disarankan dan kutipan file sumber.",
+              "Susun holding line IR 3 baris untuk wartawan yang bertanya tentang permintaan klarifikasi Bursa Malaysia. Hanya gunakan bahasa yang sudah disetujui di /06_Zava_Investor_QA_FY2025.docx bagian Regulatory."
+            ]
+          },
+        ],
+        persona=['Mod Admin','Mod Admin','Mod Admin'],
+        personaID=['Mod Admin','Mod Admin','Mod Admin']),
     ],
     companyID='Zava Group',
     taglineID='EBITDA FY2025 meleset 18% dari RKAP \u2014 Rapat Direksi darurat dalam 48 jam.',

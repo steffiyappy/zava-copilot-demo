@@ -298,6 +298,37 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .notebook-source-pill{background:var(--surface);border:1px solid #BAE6FD;border-radius:14px;padding:3px 10px;font-size:10.5px;color:#075985;font-weight:600;display:inline-flex;align-items:center;gap:4px}
 .notebook-instr-row{font-size:11.5px;color:#0C4A6E;line-height:1.55;background:rgba(255,255,255,0.6);border-radius:6px;padding:8px 10px;margin-top:4px;border-left:2px solid #0EA5E9}
 .notebook-instr-row strong{color:#075985}
+/* Agent Builder — IHH-style 3-card picker + 4-step workflow */
+.agent-block{background:linear-gradient(135deg,#FEFCE8,#FEF3C7);border:1px solid #FDE68A;border-radius:10px;padding:14px 16px;margin:0 0 12px}
+.agent-intro{margin:0 0 10px;font-size:12.5px;color:#78350F;line-height:1.55}
+.agent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:8px 0 14px}
+.agent-card{cursor:pointer;border:2px solid #FCD34D;border-radius:8px;padding:10px 12px;background:rgba(255,255,255,0.7);transition:.18s;display:flex;flex-direction:column;gap:5px}
+.agent-card:hover{border-color:#F59E0B;background:rgba(255,255,255,0.95)}
+.agent-card.selected{border-color:#B45309;background:#FFFFFF;box-shadow:0 2px 8px rgba(180,83,9,0.18)}
+.agent-card-title{font-size:12.5px;font-weight:800;color:#78350F;display:flex;align-items:center;gap:6px;line-height:1.35}
+.agent-card-icon{font-size:15px}
+.agent-card-desc{font-size:11px;color:#92400E;line-height:1.5}
+.agent-step{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:11px 14px;margin-bottom:9px}
+.agent-step-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.agent-step-num{background:#B45309;color:#FFFFFF;font-size:10px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:4px;text-transform:uppercase}
+.agent-step-time{font-size:10.5px;color:var(--muted);font-style:italic}
+.agent-step-title{font-size:12.5px;font-weight:700;color:var(--text-strong)}
+.agent-step-body{font-size:11.5px;color:var(--text);line-height:1.6}
+.agent-step-body p{margin:4px 0 8px}
+.agent-step-body code{background:var(--surface-2);padding:1px 5px;border-radius:3px;font-size:10.5px}
+.agent-field-label{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:10px 0 4px}
+.agent-field{position:relative;background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:9px 11px 9px 11px;margin-bottom:7px;font-size:11.5px;color:var(--text-strong);line-height:1.6;white-space:pre-wrap;font-family:ui-sans-serif,system-ui,sans-serif}
+.agent-field-copy{margin-top:6px;display:inline-block;background:var(--blue);color:#FFFFFF;border:none;border-radius:5px;padding:4px 10px;font-size:10.5px;font-weight:700;cursor:pointer}
+.agent-field-copy:hover{background:#1D4ED8}
+.agent-knowledge-list{margin:6px 0 4px;padding:0;list-style:none}
+.agent-knowledge-list li{padding:5px 0;font-size:11.5px;color:var(--text);display:flex;align-items:flex-start;gap:7px}
+.agent-knowledge-list .file{background:#E0F2FE;color:#0369A1;border-radius:3px;padding:2px 7px;font-weight:700;font-size:11px}
+.agent-knowledge-list .note{color:var(--muted);font-style:italic;font-size:11px}
+.agent-step-tip{background:#FEF9C3;border:1px solid #FBBF24;border-left:3px solid #F59E0B;border-radius:6px;padding:7px 11px;font-size:11px;color:#78350F;margin-top:9px}
+.agent-step-share{background:#DCFCE7;border:1px solid #86EFAC;border-left:3px solid #16A34A;border-radius:6px;padding:7px 11px;font-size:11px;color:#14532D;margin-top:6px}
+.agent-query{background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:9px 11px;margin-bottom:6px;font-size:11.5px;color:var(--text-strong);line-height:1.55}
+.agent-query-num{display:inline-block;background:#0369A1;color:#FFFFFF;font-size:10px;font-weight:800;border-radius:4px;padding:1px 7px;margin-right:7px;letter-spacing:.5px}
+.agent-step-label-strong{font-size:13px;font-weight:800;color:#B45309;margin:6px 0 4px}
 /* Fluent polish — focus rings, hover lift, smooth motion */
 .ind-card,.dept-pill,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
 .ind-card:focus-visible,.dept-pill:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
@@ -2283,6 +2314,127 @@ function _getPersona(t,pi){
   else arr=(t.persona||[]);
   return _translateLocale(_scrubReal(arr[pi]||''), src);
 }
+// Locale-aware Agent Builder agents (IHH-style 3 use-cases)
+function _getAgents(t){
+  let arr, src;
+  if(_locale==='MY_BM' && t.agentsBM && t.agentsBM.length){ arr=t.agentsBM; src='BM'; }
+  else if(_locale==='ID_BI' && t.agentsID && t.agentsID.length){ arr=t.agentsID; src='BI'; }
+  else { arr = t.agents || []; src='EN'; }
+  return arr.map(a=>{
+    const r = Object.assign({}, a);
+    if(r.name) r.name = _translateLocale(_scrubReal(r.name), src);
+    if(r.label) r.label = _translateLocale(_scrubReal(r.label), src);
+    if(r.desc) r.desc = _translateLocale(_scrubReal(r.desc), src);
+    if(r.instructions) r.instructions = _translateLocale(_scrubReal(r.instructions), src);
+    if(r.knowledgeNote) r.knowledgeNote = _translateLocale(_scrubReal(r.knowledgeNote), src);
+    if(r.knowledge) r.knowledge = (r.knowledge||[]).map(k=>{
+      const kk = Object.assign({}, k);
+      if(kk.note) kk.note = _translateLocale(_scrubReal(kk.note), src);
+      if(kk.file) kk.file = _scrubReal(kk.file);
+      return kk;
+    });
+    if(r.queries) r.queries = (r.queries||[]).map(q=>_translateLocale(_scrubReal(q), src));
+    return r;
+  });
+}
+// Switch which agent's content is visible inside an Agent Builder block
+function _selectAgentZ(slot, idx){
+  const root = document.getElementById('agent-block-'+slot);
+  if(!root) return;
+  root.querySelectorAll('.agent-card').forEach(c=>c.classList.toggle('selected', Number(c.getAttribute('data-agent'))===idx));
+  ['s1','s2','s3'].forEach(s=>{
+    root.querySelectorAll('.agent-pane-'+s).forEach(p=>{
+      p.style.display = (Number(p.getAttribute('data-agent'))===idx)?'block':'none';
+    });
+  });
+  const lab = root.querySelector('.agent-selected-label');
+  const card = root.querySelector('.agent-card[data-agent="'+idx+'"] .agent-card-title');
+  if(lab && card) lab.innerHTML = card.innerHTML;
+}
+function _copyText(btn, text){
+  try {
+    navigator.clipboard.writeText(text);
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied';
+    setTimeout(()=>{ btn.textContent = orig; }, 1400);
+  } catch(e) {}
+}
+// Build the IHH-style 3-card Agent Builder block. Returns HTML string.
+function _renderBuilderBlock(slot, agents, intro, label){
+  if(!agents || !agents.length) return '';
+  const cards = agents.map((a,i)=>{
+    return '<div class="agent-card'+(i===0?' selected':'')+'" data-agent="'+i+'" onclick="_selectAgentZ(\''+slot+'\','+i+')">'+
+      '<div class="agent-card-title"><span class="agent-card-icon">'+(a.icon||'🤖')+'</span><span>'+escapeHTML(a.label||a.name||'')+'</span></div>'+
+      (a.desc?'<div class="agent-card-desc">'+escapeHTML(a.desc)+'</div>':'')+
+    '</div>';
+  }).join('');
+  // Step 1 — Configure
+  const s1Panes = agents.map((a,i)=>{
+    const nameId = slot+'-name-'+i, descId = slot+'-desc-'+i, instrId = slot+'-instr-'+i;
+    return '<div class="agent-pane-s1" data-agent="'+i+'"'+(i===0?'':' style="display:none"')+'>'+
+      '<div class="agent-field-label">'+_uL('Name')+'</div>'+
+      '<div class="agent-field" id="'+nameId+'">'+escapeHTML(a.name||'')+'</div>'+
+      '<button class="agent-field-copy" onclick="_copyText(this, document.getElementById(\''+nameId+'\').innerText)">'+_uL('📋 Copy')+'</button>'+
+      '<div class="agent-field-label">'+_uL('Description')+'</div>'+
+      '<div class="agent-field" id="'+descId+'">'+escapeHTML(a.desc||'')+'</div>'+
+      '<button class="agent-field-copy" onclick="_copyText(this, document.getElementById(\''+descId+'\').innerText)">'+_uL('📋 Copy')+'</button>'+
+      '<div class="agent-field-label">'+_uL('System Instructions')+'</div>'+
+      '<div class="agent-field" id="'+instrId+'">'+escapeHTML(a.instructions||'')+'</div>'+
+      '<button class="agent-field-copy" onclick="_copyText(this, document.getElementById(\''+instrId+'\').innerText)">'+_uL('📋 Copy')+'</button>'+
+    '</div>';
+  }).join('');
+  // Step 2 — Knowledge
+  const s2Panes = agents.map((a,i)=>{
+    const klist = (a.knowledge||[]).map(k=>{
+      const fileTxt = k.file?escapeHTML(k.file):'';
+      const noteTxt = k.note?escapeHTML(k.note):'';
+      return '<li><span class="file">📎 '+fileTxt+'</span>'+(noteTxt?'<span class="note">— '+noteTxt+'</span>':'')+'</li>';
+    }).join('');
+    return '<div class="agent-pane-s2" data-agent="'+i+'"'+(i===0?'':' style="display:none"')+'>'+
+      '<ul class="agent-knowledge-list">'+klist+'</ul>'+
+      (a.knowledgeNote?'<div class="agent-step-tip"><strong>'+_uL('💡 Tip')+':</strong> '+escapeHTML(a.knowledgeNote)+'</div>':'')+
+    '</div>';
+  }).join('');
+  // Step 3 — Test queries
+  const s3Panes = agents.map((a,i)=>{
+    const qhtml = (a.queries||[]).map((q,qi)=>{
+      const qid = slot+'-q-'+i+'-'+qi;
+      return '<div class="agent-query" id="'+qid+'">'+
+        '<span class="agent-query-num">Q'+(qi+1)+'</span>'+escapeHTML(q)+
+      '</div>'+
+      '<button class="agent-field-copy" style="margin-bottom:6px" onclick="_copyText(this, document.getElementById(\''+qid+'\').innerText.replace(/^Q\\d+/, \'\').trim())">'+_uL('📋 Copy query')+'</button>';
+    }).join('');
+    return '<div class="agent-pane-s3" data-agent="'+i+'"'+(i===0?'':' style="display:none"')+'>'+qhtml+'</div>';
+  }).join('');
+  // Compose
+  const introHtml = intro ? '<p class="agent-intro">'+escapeHTML(intro)+'</p>' : '';
+  const labelHtml = '<div class="agent-step-label-strong">'+_uL('Agent Builder · step-by-step')+' — <span class="agent-selected-label">'+(agents[0]?('<span class="agent-card-icon">'+(agents[0].icon||'🤖')+'</span> '+escapeHTML(agents[0].label||agents[0].name||'')):'')+'</span></div>';
+  return '<div class="agent-block" id="agent-block-'+slot+'">'+
+    introHtml+
+    '<div class="agent-grid">'+cards+'</div>'+
+    labelHtml+
+    '<div class="agent-step">'+
+      '<div class="agent-step-head"><span class="agent-step-num">'+_uL('Step 1')+'</span><span class="agent-step-time">'+_uL('3 min')+'</span><span class="agent-step-title">'+_uL('Open Agent Builder and configure your agent')+'</span></div>'+
+      '<div class="agent-step-body"><p>'+_uL('Open <code>m365.cloud.microsoft/chat</code> → <b>Agents</b> → <b>+ Create an agent</b>. Fill in the <b>Name</b>, <b>Description</b>, and <b>Instructions</b> fields using the content below — each has its own Copy button.')+'</p>'+s1Panes+'</div>'+
+    '</div>'+
+    '<div class="agent-step">'+
+      '<div class="agent-step-head"><span class="agent-step-num">'+_uL('Step 2')+'</span><span class="agent-step-time">'+_uL('5 min')+'</span><span class="agent-step-title">'+_uL('Connect knowledge sources')+'</span></div>'+
+      '<div class="agent-step-body"><p>'+_uL('Click <b>Add Knowledge</b> → <b>SharePoint / OneDrive</b> and connect the documents below.  After uploading, test that the agent can find the cited section before sharing.')+'</p>'+s2Panes+'</div>'+
+    '</div>'+
+    '<div class="agent-step">'+
+      '<div class="agent-step-head"><span class="agent-step-num">'+_uL('Step 3')+'</span><span class="agent-step-time">'+_uL('5 min')+'</span><span class="agent-step-title">'+_uL('Test your agent with 3 realistic queries')+'</span></div>'+
+      '<div class="agent-step-body"><p>'+_uL('Use these queries against the right-hand test pane. Verify the agent cites the exact source file and section, and refuses politely when a question is out of scope.')+'</p>'+s3Panes+
+      '<div class="agent-step-tip"><strong>'+_uL('If the agent guesses rather than citing a source')+':</strong> '+_uL('refine the system instructions — add the line "Do not answer questions outside your knowledge base. If unsure, say: I don\'t have that in my current knowledge base; please contact the relevant team."')+'</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="agent-step">'+
+      '<div class="agent-step-head"><span class="agent-step-num">'+_uL('Step 4 · Share')+'</span><span class="agent-step-time">'+_uL('1 min')+'</span><span class="agent-step-title">'+_uL('Share with your team')+'</span></div>'+
+      '<div class="agent-step-body"><p>'+_uL('Once satisfied, click <b>Publish</b> → share the link with colleagues.  They can use the agent directly from Microsoft 365 Copilot — no setup needed.')+'</p>'+
+      '<div class="agent-step-share">🎉 '+_uL('You\'ve built a working AI agent in under 15 minutes — grounded on real documents, with citations, running 24/7.')+'</div>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+}
 _syncLegacyLang();
 function _isResearcher(name){return /Researcher/i.test(name||'')}
 function _isCowork(name){return /Cowork/i.test(name||'')}
@@ -3043,6 +3195,27 @@ function showItem(item,tab){
       }
     }
     const sec=document.createElement('div'); sec.className='tool-section';
+    // IHH-style 3-card Agent Builder picker (when tool has isBuilder3 + agents arrays)
+    if(tool.isBuilder3 && (tool.agents||[]).length){
+      const agents=_getAgents(tool);
+      const slot=id+'-'+ti;
+      const intro=_uL('Build your own Microsoft 365 Copilot agent — no code required. Pick the use case below that fits the demo. The fields, knowledge, and test queries on the right will swap to match.');
+      let licClass2='premium', licLabel2=_uL('✨ Microsoft 365 Copilot');
+      if(isBasic){ licClass2='basic'; licLabel2=_uL('🆓 No License Required'); }
+      if(isFront){ licClass2='frontier'; licLabel2=_uL('🔥 M365 + Frontier'); }
+      sec.innerHTML=
+        '<div class="tool-header" id="tool-hdr-'+slot+'" onclick="toggleTool(\''+slot+'\')">'+
+          '<span class="tool-name">'+escapeHTML(_xformVal(tool.tool,'EN'))+'</span>'+
+          '<span class="tool-license '+licClass2+'">'+licLabel2+'</span>'+
+          '<span class="tool-chevron">▼</span>'+
+        '</div>'+
+        '<div class="tool-prompts" id="tool-prm-'+slot+'">'+
+          (tool.account?'<div class="tool-account-bar">'+_uL('👤 Demo account:')+' <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
+          _renderBuilderBlock(slot, agents, intro)+
+        '</div>';
+      pEl.appendChild(sec);
+      return;
+    }
     const promptArr=_getPrompts(tool);
     const promHtml=promptArr.map((p,pi)=>{
       const key=_pmKey(id,ti,pi);

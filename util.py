@@ -86,6 +86,66 @@ def tool(name, lic, acct, prompts, desc='', promptsID=None, persona=None,
     }
 
 
+def _norm_agents(arr):
+    """Normalise an agents list into the IHH-style shape.
+
+    Each agent is a dict with these fields (any missing default to empty):
+      icon          short emoji or symbol shown on the picker card
+      label         display label for picker card and step header
+      name          string the user types into the Agent Builder Name field
+      desc          string the user types into the Description field
+      instructions  multi-paragraph system prompt for the Instructions field
+      knowledge     list of {'file': '/PATH.xlsx', 'note': 'short hint'}
+      knowledgeNote optional callout under the knowledge list (e.g. test tip)
+      queries       list of 3 short test-query strings for the Test step
+    """
+    if not arr:
+        return []
+    out = []
+    for a in arr:
+        if not isinstance(a, dict):
+            continue
+        out.append({
+            'icon':         a.get('icon', '🤖'),
+            'label':        a.get('label', a.get('name', '')),
+            'name':         a.get('name', ''),
+            'desc':         a.get('desc', ''),
+            'instructions': a.get('instructions', ''),
+            'knowledge':    a.get('knowledge', []) or [],
+            'knowledgeNote': a.get('knowledgeNote', ''),
+            'queries':      a.get('queries', []) or [],
+        })
+    return out
+
+
+def tool_builder(lic, acct, agents, desc='', agentsID=None, agentsBM=None,
+                 persona=None, personaID=None, personaBM=None):
+    """IHH-style Agent Builder block — 3 agent use-cases the demoer picks from.
+
+    `agents` (and optional `agentsID`, `agentsBM`) is a list of 3 agent dicts —
+    see `_norm_agents` for the shape.  The renderer detects the `isBuilder3`
+    flag and emits a 3-card picker plus the IHH 4-step layout (Configure →
+    Connect knowledge → Test → Share).
+    """
+    return {
+        'tool': T_BUILDER,
+        'license': lic,
+        'account': acct,
+        'desc': desc or DESC_BUILDER,
+        'isBuilder3': True,
+        'prompts':   [],
+        'promptsID': [],
+        'promptsBM': [],
+        'agents':   _norm_agents(agents),
+        'agentsID': _norm_agents(agentsID),
+        'agentsBM': _norm_agents(agentsBM),
+        'persona':   persona or [],
+        'personaID': personaID or [],
+        'personaBM': personaBM or [],
+        'notebookMeta': None,
+    }
+
+
 def ind(id, sectorId, name, icon, color, accent, company, tagline, scenario, files, tools,
         companyID='', taglineID='', scenarioID='', subsector='',
         relevantDepts=None, storyboard=None, personas=None, geo='MY'):
