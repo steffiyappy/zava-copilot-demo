@@ -626,6 +626,16 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .prompt-item:hover{background:var(--surface-2)}
 [data-theme="dark"] .agent-query{background:var(--surface-2);color:var(--text)}
 [data-theme="dark"] .agent-field{background:var(--surface-2);color:var(--text)}
+/* DARK theme — recently-discovered missing overrides (was causing "cannot see" complaints) */
+[data-theme="dark"] .sidebar-search{background:rgba(15,37,64,0.4)}
+[data-theme="dark"] .sidebar-item.active{background:#0F2540;color:#7DD3FC;border-left-color:#3B82F6}
+[data-theme="dark"] .tool-header:hover{background:#0F2540;border-color:#3B82F6}
+[data-theme="dark"] .file-item:hover{background:#0F2540;border-color:#3B82F6}
+[data-theme="dark"] .tool-account-bar{background:rgba(15,37,64,0.6);border-color:#1E3A8A;color:var(--muted)}
+[data-theme="dark"] .tool-account-bar strong{color:#BAE6FD}
+[data-theme="dark"] .prompt-mode{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
+[data-theme="dark"] .op-card-pwd{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
+[data-theme="dark"] .op-card-team-code{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
 @media (prefers-color-scheme: dark){
   [data-theme="system"] .stat-chip,
   [data-theme="system"] .grid-tab{color:var(--text)}
@@ -689,6 +699,16 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   [data-theme="system"] .prompt-item:hover{background:var(--surface-2)}
   [data-theme="system"] .agent-query{background:var(--surface-2);color:var(--text)}
   [data-theme="system"] .agent-field{background:var(--surface-2);color:var(--text)}
+  /* Recently-discovered missing overrides */
+  [data-theme="system"] .sidebar-search{background:rgba(15,37,64,0.4)}
+  [data-theme="system"] .sidebar-item.active{background:#0F2540;color:#7DD3FC;border-left-color:#3B82F6}
+  [data-theme="system"] .tool-header:hover{background:#0F2540;border-color:#3B82F6}
+  [data-theme="system"] .file-item:hover{background:#0F2540;border-color:#3B82F6}
+  [data-theme="system"] .tool-account-bar{background:rgba(15,37,64,0.6);border-color:#1E3A8A;color:var(--muted)}
+  [data-theme="system"] .tool-account-bar strong{color:#BAE6FD}
+  [data-theme="system"] .prompt-mode{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
+  [data-theme="system"] .op-card-pwd{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
+  [data-theme="system"] .op-card-team-code{background:rgba(180,83,9,0.25);color:#FED7AA;border-color:#92400E}
 }
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--surface-3)}
