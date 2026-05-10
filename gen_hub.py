@@ -2994,18 +2994,25 @@ function _renderBuilderBlock(slot, agents, intro, mode){
         return '<li><span class="file">📎 '+fileTxt+'</span>'+(noteTxt?'<span class="note">— '+noteTxt+'</span>':'')+'</li>';
       }).join('');
     } else {
-      // Free tier: generic public-URL placeholders (the demo team replaces with real URLs at runtime).
-      // Pattern is intentionally generic so it works for every industry / department.
-      const freeUrls = [
-        {url:'https://www.bnm.gov.my  (or equivalent national regulator microsite)', note:_uL('Latest regulator policy / circular page covering this domain')},
-        {url:'https://www.bursamalaysia.com  (or local stock-exchange disclosures)', note:_uL('Listed-peer announcements and quarterly disclosures')},
-        {url:'https://www.<peer-company>.com/investor-relations', note:_uL('Public IR page of a comparable listed peer — annual report, 4Q deck, ESG report')},
-        {url:'https://www.<industry-association>.org', note:_uL('Industry association statistics, benchmarks, code of practice')},
-        {url:'https://www.<news-source>.com/<topic>', note:_uL('Public news article or analyst note — cite in agent answers')}
-      ];
-      klistHtml = freeUrls.map(k=>{
-        return '<li><span class="file">🔗 '+escapeHTML(k.url)+'</span><span class="note">— '+k.note+'</span></li>';
-      }).join('');
+      // Free tier: render the agent's actual URL knowledge if present; else fall back to generic hints.
+      const urls = (a.knowledge||[]).filter(k=>k && (k.url||'').length);
+      if(urls.length){
+        klistHtml = urls.map(k=>{
+          const noteTxt = k.note?escapeHTML(k.note):'';
+          return '<li><span class="file">🔗 '+escapeHTML(k.url)+'</span>'+(noteTxt?'<span class="note">— '+noteTxt+'</span>':'')+'</li>';
+        }).join('');
+      } else {
+        const freeUrls = [
+          {url:'https://www.bnm.gov.my  (or equivalent national regulator microsite)', note:_uL('Latest regulator policy / circular page covering this domain')},
+          {url:'https://www.bursamalaysia.com  (or local stock-exchange disclosures)', note:_uL('Listed-peer announcements and quarterly disclosures')},
+          {url:'https://www.<peer-company>.com/investor-relations', note:_uL('Public IR page of a comparable listed peer — annual report, 4Q deck, ESG report')},
+          {url:'https://www.<industry-association>.org', note:_uL('Industry association statistics, benchmarks, code of practice')},
+          {url:'https://www.<news-source>.com/<topic>', note:_uL('Public news article or analyst note — cite in agent answers')}
+        ];
+        klistHtml = freeUrls.map(k=>{
+          return '<li><span class="file">🔗 '+escapeHTML(k.url)+'</span><span class="note">— '+k.note+'</span></li>';
+        }).join('');
+      }
     }
     const tipText = (mode==='premium')
       ? (a.knowledgeNote || '')
@@ -3093,8 +3100,11 @@ function _isWordAgt(name){return /Word\s*Agent/i.test(name||'')}
 function _isPptAgt(name){return /(PowerPoint|PPT)\s*Agent/i.test(name||'')}
 function _isXlAgt(name){return /Excel\s*Agent/i.test(name||'')}
 function _isBuilder(name){return /Agent\s*Builder/i.test(name||'')}
+function _isBuilderFree(name){return /Free\s*Copilot\s*Chat/i.test(name||'') && _isBuilder(name);}
+function _isBuilderPaid(name){return _isBuilder(name) && !_isBuilderFree(name);}
 // Tools that live in the Copilot Chat tab (chat-based continuous-motion flow per IHH HR ref)
-function _isChatTab(name){return _isChat(name)||_isWordAgt(name)||_isPptAgt(name)||_isXlAgt(name)||_isBuilder(name);}
+// Free-tier Agent Builder lives in the Chat tab; paid Agent Builder lives in the M365 Tools tab.
+function _isChatTab(name){return _isChat(name)||_isWordAgt(name)||_isPptAgt(name)||_isXlAgt(name)||_isBuilderFree(name);}
 // Cowork now sits in its own tab (between Tools and Chat) — broken out of the Tools cluster
 // because it's a distinct delegation-style flow, not an in-app Copilot.
 function _isCoworkTab(name){return _isCowork(name);}
@@ -4069,6 +4079,10 @@ function showItem(item,tab,preserveScroll){
       let licClass2='premium', licLabel2=_uL('✨ Microsoft 365 Copilot');
       if(isBasic){ licClass2='basic'; licLabel2=_uL('🆓 No License Required'); }
       if(isFront){ licClass2='frontier'; licLabel2=_uL('🔥 M365 + Frontier'); }
+      // Render single tier — premium (paid, file knowledge) OR free (URL knowledge).
+      // Each entry now ships TWO separate Agent Builder tool blocks (paid + free)
+      // and the tab routing places paid in M365 Tools tab, free in Copilot Chat tab.
+      const tier = (tool.builderTier === 'free') ? 'free' : 'premium';
       sec.innerHTML=
         '<div class="tool-header" id="tool-hdr-'+slot+'" onclick="toggleTool(\''+slot+'\')">'+
           '<span class="tool-name">'+escapeHTML(_xformVal(tool.tool,'EN'))+'</span>'+
@@ -4078,9 +4092,7 @@ function showItem(item,tab,preserveScroll){
         '<div class="tool-prompts" id="tool-prm-'+slot+'">'+
           (tool.account?'<div class="tool-account-bar">'+_uL('👤 Demo account:')+' <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
           (function(){var d=_defaultDesc(tool);return d?'<div class="tool-info"><span class="tool-info-label">'+_uL('💡 What this tool can do')+'</span><span class="tool-info-body">'+escapeHTML(_xformVal(d,'EN'))+'</span></div>':'';})()+
-          _renderBuilderBlock(slot+'-prem', agents, intro, 'premium')+
-          '<div class="builder-divider"><span class="builder-divider-label">'+_uL('— OR build the same agent on Free Copilot Chat —')+'</span></div>'+
-          _renderBuilderBlock(slot+'-free', agents, intro, 'free')+
+          _renderBuilderBlock(slot+'-'+tier.substring(0,4), agents, intro, tier)+
         '</div>';
       pEl.appendChild(sec);
       return;

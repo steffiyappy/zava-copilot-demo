@@ -537,6 +537,52 @@ try:
 except Exception as _e:
     print(f"(W/P/X Agent normaliser skipped due to error: {_e})")
 
+# ── Free-tier Agent Builder injection ──────────────────────────────────────
+# After every paid (T_BUILDER) block, append a parallel free-tier (T_BUILDER_FREE)
+# block whose knowledge is PUBLIC URLs only (regulator microsites, association
+# pages, statistics offices). Free Copilot Chat cannot resolve enterprise file
+# paths, so this gives demoers an authentic "build the same kind of agent on
+# the free tier" path with unique, industry-specific public sources.
+try:
+    from _builder_free_catalog import render_agents_free, render_agents_free_id
+    def _inject_builder_free(entries):
+        n = 0
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            eid = e.get('id') or ''
+            ename = e.get('name') or eid
+            prompts_arr = e.get('prompts') or []
+            # Skip if already injected
+            if any((t.get('tool') == T_BUILDER_FREE) for t in prompts_arr if isinstance(t, dict)):
+                continue
+            # Find paid builder block index — anchor the free block right after it.
+            paid_idx = -1
+            for i, t in enumerate(prompts_arr):
+                if isinstance(t, dict) and t.get('tool') == T_BUILDER and t.get('isBuilder3'):
+                    paid_idx = i
+                    break
+            if paid_idx < 0:
+                continue
+            agents_en = render_agents_free(eid, ename) or []
+            agents_id = render_agents_free_id(eid, ename) or []
+            free_block = tool_builder_free(
+                FREE_ACCT,
+                agents_en,
+                desc=DESC_BUILDER_FREE,
+                agentsID=agents_id,
+                agentsBM=agents_id,  # BM falls back to ID phrasing (Bahasa overlap)
+            )
+            new_arr = list(prompts_arr)
+            new_arr.insert(paid_idx + 1, free_block)
+            e['prompts'] = new_arr
+            n += 1
+        return n
+    _bf_added = _inject_builder_free(all_industries) + _inject_builder_free(all_departments)
+    print(f"Free-tier Agent Builder injected on {_bf_added} entries")
+except Exception as _e:
+    print(f"(Free-tier Agent Builder injection skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')

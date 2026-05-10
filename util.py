@@ -20,6 +20,7 @@ T_WORD_AGT = '📝 Word Agent (Generate document)'
 T_PPT_AGT = '🎯 PowerPoint Agent (Generate deck)'
 T_XL_AGT = '📊 Excel Agent (Generate workbook)'
 T_BUILDER = '🏗 Agent Builder (Microsoft 365 Copilot Chat)'
+T_BUILDER_FREE = '🆓 Agent Builder (Free Copilot Chat — public URL knowledge)'
 
 DESC_CHAT = 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat \u2014 secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with Microsoft 365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).'
 DESC_RESEARCHER = 'Reasoning agent in Microsoft 365 Copilot Chat \u2014 access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) 🔍 Critique Mode \u2014 Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) \u2696\ufe0f Model Council \u2014 Researcher orchestrates multiple frontier reasoning models (GPT-5.5 Thinking and Claude Opus 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations \u2014 and now optionally federated connectors (Moody\u2019s, LSEG, HubSpot, Notion, ServiceNow) for real-time external data. Requires Microsoft 365 Copilot license.'
@@ -35,6 +36,7 @@ DESC_WORD_AGT = 'Word Agent in Microsoft 365 Copilot Chat. Access from m365.clou
 DESC_PPT_AGT = 'PowerPoint Agent in Microsoft 365 Copilot Chat. Access from m365.cloud.microsoft/chat (or the Copilot app in Teams) — in the prompt box click the Tools menu (or Agents menu) and choose PowerPoint. Describe the deck you want (slide count, audience, theme, content outline) — Copilot generates a complete .pptx preview in chat, asks clarifying questions, then saves the file to OneDrive. Available to all Microsoft 365 users WITH OR WITHOUT a Microsoft 365 Copilot license (including Microsoft 365 Personal/Family/Premium plans). With a Copilot license, Copilot grounds slides in tenant content; without a license, it uses the public web plus any file you reference. Great for: Board decks, IR decks, town hall decks, marketing strategy presentations.'
 DESC_XL_AGT = 'Excel Agent in Microsoft 365 Copilot Chat. Access from m365.cloud.microsoft/chat (or the Copilot app in Teams) — in the prompt box click the Tools menu (or Agents menu) and choose Excel. Describe the workbook you want (sheets, columns, charts, formulas, conditional formatting) — Copilot generates a complete .xlsx preview in chat, asks clarifying questions, then saves the file to OneDrive. Available to all Microsoft 365 users WITH OR WITHOUT a Microsoft 365 Copilot license (including Microsoft 365 Personal/Family/Premium plans). With a Copilot license, Copilot can ground in tenant data; without a license, it uses the public web plus any file you reference. Great for: KPI dashboards, division comparisons, budget trackers, scenario models, summary reports from existing data.'
 DESC_BUILDER = 'Agent Builder is INSIDE Microsoft 365 Copilot Chat \u2014 NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe \u2014 type what your agent should do in plain language; (2) Configure \u2014 add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues, OR submit for admin approval to publish into the Agent Store \u201cBuilt by your org\u201d catalog (May 2026 rollout) so the whole organisation can discover it. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an Microsoft 365 Copilot license (MOD Admin account).'
+DESC_BUILDER_FREE = 'Free-tier Agent Builder inside Microsoft 365 Copilot Chat \u2014 same 4-step flow (Describe \u2192 Configure \u2192 Test \u2192 Create) but on a Free Copilot Chat account (no paid license). Knowledge sources are limited to PUBLIC WEBSITES / URLs only (no SharePoint, OneDrive, or file uploads). Ideal for citizen-developer agents that summarise regulator microsites, peer investor-relations pages, public sustainability reports and industry research portals \u2014 zero cost, zero IT involvement. Submit to the Agent Store for org-wide discovery once admin approval is in place.'
 
 
 def esc(s):
@@ -133,6 +135,37 @@ def tool_builder(lic, acct, agents, desc='', agentsID=None, agentsBM=None,
         'account': acct,
         'desc': desc or DESC_BUILDER,
         'isBuilder3': True,
+        'builderTier': 'premium',
+        'prompts':   [],
+        'promptsID': [],
+        'promptsBM': [],
+        'agents':   _norm_agents(agents),
+        'agentsID': _norm_agents(agentsID),
+        'agentsBM': _norm_agents(agentsBM),
+        'persona':   persona or [],
+        'personaID': personaID or [],
+        'personaBM': personaBM or [],
+        'notebookMeta': None,
+    }
+
+
+def tool_builder_free(acct, agents, desc='', agentsID=None, agentsBM=None,
+                      persona=None, personaID=None, personaBM=None):
+    """Free-tier Agent Builder block — 3 agent use-cases that use PUBLIC URL knowledge only.
+
+    Same shape as `tool_builder` but pinned to FREE_LIC + the T_BUILDER_FREE
+    tool label so the renderer routes it to the Copilot Chat tab and surfaces
+    the free-tier UI copy (URL knowledge, no file uploads). Agent dicts here
+    must use 'knowledge' entries shaped {'url': 'https://…', 'note': '…'}
+    instead of {'file': '…', 'note': '…'}.
+    """
+    return {
+        'tool': T_BUILDER_FREE,
+        'license': FREE_LIC,
+        'account': acct,
+        'desc': desc or DESC_BUILDER_FREE,
+        'isBuilder3': True,
+        'builderTier': 'free',
         'prompts':   [],
         'promptsID': [],
         'promptsBM': [],
