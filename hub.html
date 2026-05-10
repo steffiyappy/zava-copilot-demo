@@ -50,6 +50,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 /* Other-pages grid + cards */
 .op-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:14px}
 .op-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:0;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.op-card-flash{animation:opCardFlash 1.8s ease-out}
+@keyframes opCardFlash{0%{box-shadow:0 0 0 0 rgba(0,120,212,0)}20%{box-shadow:0 0 0 6px rgba(0,120,212,0.45)}100%{box-shadow:0 0 0 0 rgba(0,120,212,0)}}
 .op-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.1);border-color:var(--blue)}
 .op-card-banner{height:80px;background:linear-gradient(135deg,var(--op-color,#0078D4),var(--op-accent,#005EA6));display:flex;align-items:center;justify-content:center;font-size:34px;color:#FFFFFF;position:relative;overflow:hidden}
 .op-card-banner::after{content:'';position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.1)}
@@ -278,20 +280,23 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 /* IHH-style 2-column "Day in the Life" hero */
 .sb-hero{display:grid;grid-template-columns:240px 1fr;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);background:#FFFFFF}
 .sb-hero-left{background:linear-gradient(180deg,#1E3A5F,#0F2545);padding:22px 18px;display:flex;flex-direction:column;gap:14px;color:#E2E8F0;min-width:0}
-.sb-hero-left .lbl{margin:0 0 3px;font-size:8px;letter-spacing:1.8px;font-weight:700;text-transform:uppercase;color:var(--ind-color,#0EA5E9)}
+/* Bright cyan label always — never tinted by industry color (was unreadable on dark navy for dark-colored industries) */
+.sb-hero-left .lbl{margin:0 0 3px;font-size:8px;letter-spacing:1.8px;font-weight:700;text-transform:uppercase;color:#7DD3FC}
 .sb-hero-left h3.hero-title{margin:0;font-size:18px;font-weight:800;color:#FFFFFF;line-height:1.2}
 .sb-hero-left .persona-name{margin:0;font-size:12.5px;font-weight:700;color:#FFFFFF}
-.sb-hero-left .persona-role{margin:2px 0 0;font-size:10.5px;color:#94A3B8;line-height:1.45}
-.sb-hero-left .mission-text{margin:0;font-size:10.5px;color:#CBD5E1;line-height:1.6}
-.sb-hero-left .punch{margin-top:auto;padding:10px;background:rgba(255,255,255,0.06);border-radius:8px;border:1px solid rgba(255,255,255,0.12)}
+.sb-hero-left .persona-role{margin:2px 0 0;font-size:11px;color:#CBD5E1;line-height:1.45}
+.sb-hero-left .mission-text{margin:0;font-size:11px;color:#E2E8F0;line-height:1.6}
+.sb-hero-left .punch{margin-top:auto;padding:10px;background:rgba(255,255,255,0.10);border-radius:8px;border:1px solid rgba(255,255,255,0.20)}
 .sb-hero-left .punch-text{margin:0;font-size:11.5px;font-weight:700;font-style:italic;color:#FFFFFF;line-height:1.4}
 .sb-hero-right{background:#FFFFFF;padding:18px 16px 14px;min-width:0}
 .sb-hero-right h3.right-title{margin:0 0 14px;font-size:15px;font-weight:700;color:var(--text)}
-.sb-phase{margin-bottom:18px;padding:14px 14px 12px;background:#F8FAFC;border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--ind-color,var(--blue))}
+/* IHH-style phase card — colored header strip + clean body description */
+.sb-phase{margin-bottom:14px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#FFFFFF;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
 .sb-phase:last-child{margin-bottom:0}
-.sb-phase-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
-.sb-phase-title{font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
-.sb-phase-summary{margin:0;font-size:12.5px;color:#475569;line-height:1.55}
+.sb-phase-head{padding:10px 14px;background:var(--ind-color,#1E3A5F);color:#FFFFFF;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sb-phase-title{font-size:13px;font-weight:700;color:#FFFFFF;line-height:1.3;text-shadow:0 1px 2px rgba(0,0,0,0.15)}
+.sb-phase-body{padding:12px 14px 14px;background:#FAFBFC}
+.sb-phase-summary{margin:0;font-size:12.5px;color:#334155;line-height:1.6}
 @media(max-width:760px){.sb-hero{grid-template-columns:1fr}}
 /* Personas card (right sidebar) */
 .personas-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px}
@@ -520,6 +525,123 @@ function _bL(en, id, bm){
   if(lc==='BI') return id;
   return en;
 }
+// UI label dictionary for static chrome strings. Keys are the canonical English label.
+// Values are [BI, BM]; if BM omitted it falls back to BI.
+const _UI = {
+  // Sidebar
+  'Industries':            ['Industri',                              'Industri'],
+  'Departments':           ['Departemen',                            'Jabatan'],
+  'All Industries':        ['Semua Industri',                        'Semua Industri'],
+  'All Departments':       ['Semua Departemen',                      'Semua Jabatan'],
+  'More':                  ['Lainnya',                               'Lain-lain'],
+  'All Other Pages':       ['Semua Halaman Lainnya',                 'Semua Halaman Lain'],
+  'No industries match your search.':   ['Tidak ada industri yang cocok dengan pencarian Anda.', 'Tiada industri sepadan dengan carian anda.'],
+  'No departments match your search.':  ['Tidak ada departemen yang cocok dengan pencarian Anda.', 'Tiada jabatan sepadan dengan carian anda.'],
+  'No pages match your search.':        ['Tidak ada halaman yang cocok dengan pencarian Anda.', 'Tiada halaman sepadan dengan carian anda.'],
+  'Search industries, departments…':    ['Cari industri, departemen…', 'Cari industri, jabatan…'],
+  // Home stat chips
+  'Total Prompts':         ['Total Prompt',                          'Jumlah Gesaan'],
+  'Copilot Tools':         ['Tools Copilot',                         'Alat Copilot'],
+  // Home subtitle
+  'Select an industry or department to explore M365 Copilot demo scenarios, prompts, and reference files':
+                           ['Pilih industri atau departemen untuk mengeksplorasi skenario demo M365 Copilot, prompt, dan file referensi',
+                            'Pilih industri atau jabatan untuk meneroka senario demo M365 Copilot, gesaan dan fail rujukan'],
+  // Detail page chrome
+  'Industry':              ['Industri',                              'Industri'],
+  'Department':            ['Departemen',                            'Jabatan'],
+  '← Back to all industries':   ['← Kembali ke semua industri',      '← Kembali ke semua industri'],
+  '← Back to all departments':  ['← Kembali ke semua departemen',    '← Kembali ke semua jabatan'],
+  '📋 Demo Scenario':      ['📋 Skenario Demo',                       '📋 Senario Demo'],
+  '🏢 Departments most affected — click to drill down':
+                           ['🏢 Departemen yang paling terdampak — klik untuk melihat detail',
+                            '🏢 Jabatan paling terkesan — klik untuk meneroka'],
+  '🛠️ M365 Copilot Tools':  ['🛠️ Tools M365 Copilot',                  '🛠️ Alat M365 Copilot'],
+  '💬 Copilot Chat Prompts':['💬 Prompt Copilot Chat',                 '💬 Gesaan Copilot Chat'],
+  '🆓 Copilot Chat — broader use cases (no license required)':
+                           ['🆓 Copilot Chat — kasus penggunaan yang lebih luas (tidak perlu lisensi)',
+                            '🆓 Copilot Chat — kes penggunaan lebih luas (tiada lesen diperlukan)'],
+  '✨ M365 Copilot — chat-based continuous-motion flow (Word Agent → PPT Agent → Excel Agent → Agent Builder)':
+                           ['✨ M365 Copilot — alur kerja berbasis chat berkelanjutan (Word Agent → PPT Agent → Excel Agent → Agent Builder)',
+                            '✨ M365 Copilot — aliran kerja berasaskan chat berterusan (Word Agent → PPT Agent → Excel Agent → Agent Builder)'],
+  '📓 Notebook setup — add ALL sources at creation time, then set the Instructions field':
+                           ['📓 Setup Notebook — tambahkan SEMUA sumber saat pembuatan, lalu atur kolom Instructions',
+                            '📓 Persediaan Notebook — tambah SEMUA sumber semasa cipta, kemudian set medan Instructions'],
+  'Instructions field (system prompt):':
+                           ['Kolom Instructions (system prompt):',   'Medan Instructions (gesaan sistem):'],
+  '⚡ Cowork delegates these in parallel': ['⚡ Cowork mendelegasikan ini secara paralel', '⚡ Cowork mengagihkan ini secara selari'],
+  '🔍 Critique Mode':       ['🔍 Mode Kritik',                         '🔍 Mod Kritik'],
+  '⚖️ Model Council':       ['⚖️ Dewan Model',                          '⚖️ Majlis Model'],
+  '📋 Instructions':       ['📋 Petunjuk',                            '📋 Arahan'],
+  '💬 Prompt — copy this': ['💬 Prompt — salin ini',                  '💬 Gesaan — salin ini'],
+  '📋 Copy prompt':        ['📋 Salin prompt',                        '📋 Salin gesaan'],
+  '👤 Demo account:':      ['👤 Akun demo:',                          '👤 Akaun demo:'],
+  '✨ M365 Copilot':       ['✨ M365 Copilot',                        '✨ M365 Copilot'],
+  '🆓 No License Required':['🆓 Tidak Perlu Lisensi',                 '🆓 Tiada Lesen Diperlukan'],
+  '🔥 M365 + Frontier':    ['🔥 M365 + Frontier',                     '🔥 M365 + Frontier'],
+  '📁 Reference Files':    ['📁 File Referensi',                      '📁 Fail Rujukan'],
+  '— click to download':   ['— klik untuk mengunduh',                 '— klik untuk muat turun'],
+  '⬇ Download':            ['⬇ Unduh',                                '⬇ Muat turun'],
+  '🎭 Personas in this demo': ['🎭 Persona dalam demo ini',           '🎭 Persona dalam demo ini'],
+  '⚡ Demo Tips':          ['⚡ Tips Demo',                            '⚡ Petua Demo'],
+  'prompts':               ['prompt',                                 'gesaan'],
+  'files':                 ['file',                                   'fail'],
+  // Researcher callout
+  'researcher-callout-critique':
+                           ['🔍 **Mode Kritik** — Researcher mengkritik sendiri setiap sumber, memverifikasi klaim terhadap sumber asli sebelum memasukkannya ke laporan. Terbaik untuk mendapatkan jawaban yang tepercaya dan didukung kutipan dengan cepat.',
+                            '🔍 **Mod Kritik** — Researcher mengkritik sendiri setiap sumber, mengesahkan dakwaan terhadap sumber asal sebelum memasukkan ke dalam laporan. Terbaik untuk mendapat jawapan yang boleh dipercayai dengan cepat.'],
+  'researcher-callout-council':
+                           ['⚖️ **Dewan Model** — Researcher menjalankan GPT-5.5 Thinking dan Claude Opus 4.7 secara paralel terhadap brief dan mengembalikan kedua laporan plus surat pengantar sintesis yang menyoroti kesepakatan, perbedaan dan temuan unik. Terbaik untuk keputusan berisiko tinggi yang membutuhkan masukan ahli yang beragam.',
+                            '⚖️ **Majlis Model** — Researcher menjalankan GPT-5.5 Thinking dan Claude Opus 4.7 secara selari terhadap taklimat dan mengembalikan kedua-dua laporan serta surat iringan sintesis yang menyerlahkan persetujuan, perbezaan dan penemuan unik. Terbaik untuk keputusan berisiko tinggi yang memerlukan input pakar pelbagai.']
+};
+function _uL(en){
+  const lc = _langCode();
+  if(lc==='EN') return en;
+  const e = _UI[en];
+  if(!e) return en;
+  if(lc==='BM') return (e[1]!==undefined?e[1]:e[0]);
+  return e[0];
+}
+// "Prompt N" — N is dynamic so we build it via _uL
+function _uLPrompt(n){
+  const lc = _langCode();
+  if(lc==='BI') return '💬 Prompt '+n;
+  if(lc==='BM') return '💬 Gesaan '+n;
+  return '💬 Prompt '+n;
+}
+// Apply locale labels to static HTML elements (called from setLocale)
+function _applyLocaleLabels(){
+  const setText=(id,txt)=>{const el=document.getElementById(id); if(el) el.textContent=txt;};
+  const setHTML=(id,html)=>{const el=document.getElementById(id); if(el) el.innerHTML=html;};
+  // Sidebar tabs
+  setHTML('stab-ind', '🏭 '+_uL('Industries'));
+  setHTML('stab-dept','🏢 '+_uL('Departments'));
+  setHTML('stab-other','📚 '+_uL('More'));
+  // "All X" sidebar items
+  document.querySelectorAll('#spanel-ind .ind-name').forEach((el,i)=>{ if(i===0) el.textContent=_uL('All Industries'); });
+  document.querySelectorAll('#spanel-dept .ind-name').forEach((el,i)=>{ if(i===0) el.textContent=_uL('All Departments'); });
+  document.querySelectorAll('#spanel-other .ind-name').forEach((el,i)=>{ if(i===0) el.textContent=_uL('All Other Pages'); });
+  // Empty-search messages
+  setText('search-empty-ind', _uL('No industries match your search.'));
+  setText('search-empty-dept', _uL('No departments match your search.'));
+  setText('search-empty-other', _uL('No pages match your search.'));
+  // Sidebar search placeholder
+  const searchInp=document.getElementById('sidebar-search-input'); if(searchInp) searchInp.placeholder=_uL('Search industries, departments…');
+  // Home stat chips
+  document.querySelectorAll('.stat-chip').forEach(c=>{
+    const lbl=c.querySelector('.lbl'); if(!lbl) return;
+    const t=lbl.textContent.trim();
+    if(/^Industri$|^Industries$/i.test(t)) lbl.textContent=_uL('Industries');
+    else if(/^Departments$|^Departemen$|^Jabatan$/i.test(t)) lbl.textContent=_uL('Departments');
+    else if(/^Total Prompts$|^Total Prompt$|^Jumlah Gesaan$/i.test(t)) lbl.textContent=_uL('Total Prompts');
+    else if(/^Copilot Tools$|^Tools Copilot$|^Alat Copilot$/i.test(t)) lbl.textContent=_uL('Copilot Tools');
+  });
+  // Grid tabs
+  const gtI=document.getElementById('gtab-ind'); if(gtI) gtI.innerHTML='🏭 '+_uL('Industries')+' ('+(window.HUB_DATA?HUB_DATA.industries.length:'')+')';
+  const gtD=document.getElementById('gtab-dept'); if(gtD) gtD.innerHTML='🏢 '+_uL('Departments')+' ('+(window.HUB_DATA?HUB_DATA.departments.length:'')+')';
+  // Home subtitle
+  const homeSub=document.querySelector('.home-subtitle');
+  if(homeSub) homeSub.textContent=_uL('Select an industry or department to explore M365 Copilot demo scenarios, prompts, and reference files');
+}
 // Legacy alias used by storyboard label fallbacks (BI fields used for both BI and BM display when no BM-specific data)
 let _lang; function _syncLegacyLang(){_lang = _isBahasa()?(_langCode()==='BM'?'BM':'ID'):'EN';}
 
@@ -533,6 +655,7 @@ function setLocale(L){
     if(el) el.classList.toggle('active',x===L);
   });
   buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar();
+  _applyLocaleLabels();
   if(_currentItem && document.getElementById('detail-view').style.display!=='none'){
     showItem(_currentItem,_currentTab);
   }
@@ -1786,14 +1909,37 @@ const _TRANSLATE_BI_TO_EN = [
 //   MY_BM: source is English (base) → translate to BM
 //   ID_EN: source is BI (*ID)       → translate to EN
 //   Other locales: no-op
+// Case-preserving replacement. If the matched original starts with an uppercase
+// letter (e.g., 'Board' or 'BOARD'), the replacement's first letter is upper-cased
+// so titles/sentence-starts/proper nouns stay capitalised.
+function _matchCase(orig, repl){
+  if(!orig || !repl) return repl;
+  const o0 = orig.charAt(0);
+  if(o0 >= 'A' && o0 <= 'Z'){
+    // Whole-word ALL CAPS? (>=2 chars and all upper) → upper-case the whole replacement
+    if(orig.length >= 2 && orig === orig.toUpperCase() && /[A-Z]/.test(orig)){
+      return repl.toUpperCase();
+    }
+    return repl.charAt(0).toUpperCase() + repl.slice(1);
+  }
+  return repl;
+}
+function _applyDict(out, dict){
+  for(let i=0;i<dict.length;i++){
+    const re = dict[i][0];
+    const rep = dict[i][1];
+    out = out.replace(re, function(m){ return _matchCase(m, rep); });
+  }
+  return out;
+}
 function _translateLocale(s, src){
   if(!s) return s;
   src = src || 'EN';
   let out = String(s);
   if(_locale==='MY_BM' && src==='EN'){
-    for(let i=0;i<_TRANSLATE_EN_TO_BM.length;i++){ out = out.replace(_TRANSLATE_EN_TO_BM[i][0], _TRANSLATE_EN_TO_BM[i][1]); }
+    out = _applyDict(out, _TRANSLATE_EN_TO_BM);
   } else if(_locale==='ID_EN' && src==='BI'){
-    for(let i=0;i<_TRANSLATE_BI_TO_EN.length;i++){ out = out.replace(_TRANSLATE_BI_TO_EN[i][0], _TRANSLATE_BI_TO_EN[i][1]); }
+    out = _applyDict(out, _TRANSLATE_BI_TO_EN);
   }
   // Tidy spacing
   out = out.replace(/[ \t]{2,}/g,' ').replace(/\s+([,.;:])/g,'$1');
@@ -2260,9 +2406,9 @@ function showItem(item,tab){
   hero.style.background='linear-gradient(135deg,'+item.color+','+(item.accent||item.color)+')';
   hero.style.setProperty('--ind-icon','"'+item.icon+'"');
   const isDept=tab==='dept';
-  document.getElementById('detail-back-btn').textContent=isDept?'← Back to all departments':'← Back to all industries';
+  document.getElementById('detail-back-btn').textContent=isDept?_uL('← Back to all departments'):_uL('← Back to all industries');
   document.getElementById('detail-back-btn').onclick=()=>{ goHome(); showGridTab(tab); };
-  document.getElementById('detail-badge').textContent=isDept?'Department':_stripLeadingEmoji(item.name);
+  document.getElementById('detail-badge').textContent=isDept?_uL('Department'):_stripLeadingEmoji(item.name);
   document.getElementById('detail-title').textContent=_getCompany(item);
   document.getElementById('detail-company').textContent=_stripLeadingEmoji(item.name);
   document.getElementById('detail-tagline').textContent=_getTagline(item);
@@ -2276,11 +2422,11 @@ function showItem(item,tab){
       return '<span class="dept-pill" data-did="'+escapeAttr(d.id)+'">'+d.icon+' '+escapeHTML(_stripLeadingEmoji(d.name))+'</span>';
     }).filter(Boolean).join('');
     if(pills){
-      pillsHtml='<div class="dept-pills"><div class="dept-pills-label">🏢 Departments most affected — click to drill down</div>'+pills+'</div>';
+      pillsHtml='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🏢 Departments most affected — click to drill down')+'</div>'+pills+'</div>';
     }
   }
   document.getElementById('detail-scenario').innerHTML=
-    '<div class="detail-scenario-title">📋 Demo Scenario</div>'+
+    '<div class="detail-scenario-title">'+_uL('📋 Demo Scenario')+'</div>'+
     '<div class="detail-scenario-text">'+escapeHTML(scenarioText)+'</div>'+pillsHtml;
   // Wire dept pills
   document.querySelectorAll('#detail-scenario .dept-pill').forEach(el=>{
@@ -2403,7 +2549,7 @@ function showItem(item,tab){
         '<div class="sb-phase-head">'+
           '<span class="sb-phase-title">'+escapeHTML(cleanTitle)+'</span>'+
         '</div>'+
-        (cleanSummary?'<p class="sb-phase-summary">'+escapeHTML(cleanSummary)+'</p>':'')+
+        (cleanSummary?'<div class="sb-phase-body"><p class="sb-phase-summary">'+escapeHTML(cleanSummary)+'</p></div>':'')+
         '</div>';
     }).join('');
     sbWrap.innerHTML=
@@ -2439,8 +2585,8 @@ function showItem(item,tab){
   if(hasChat && hasOther){
     tabsWrap.style.display='flex';
     tabsWrap.innerHTML=
-      '<button class="detail-tab '+( _detailTab==='tools'?'active':'')+'" id="dtab-tools" onclick="setDetailTab(\'tools\')">🛠️ M365 Copilot Tools</button>'+
-      '<button class="detail-tab '+( _detailTab==='chat'?'active':'')+'" id="dtab-chat" onclick="setDetailTab(\'chat\')">💬 Copilot Chat Prompts</button>';
+      '<button class="detail-tab '+( _detailTab==='tools'?'active':'')+'" id="dtab-tools" onclick="setDetailTab(\'tools\')">'+_uL('🛠️ M365 Copilot Tools')+'</button>'+
+      '<button class="detail-tab '+( _detailTab==='chat'?'active':'')+'" id="dtab-chat" onclick="setDetailTab(\'chat\')">'+_uL('💬 Copilot Chat Prompts')+'</button>';
   } else {
     tabsWrap.style.display='none';
     tabsWrap.innerHTML='';
@@ -2470,8 +2616,8 @@ function showItem(item,tab){
         const hdr=document.createElement('div');
         hdr.className='tool-group-header';
         hdr.innerHTML=grp==='free'
-          ?'🆓 Copilot Chat — broader use cases (no license required)'
-          :'✨ M365 Copilot — chat-based continuous-motion flow (Word Agent → PPT Agent → Excel Agent → Agent Builder)';
+          ?_uL('🆓 Copilot Chat — broader use cases (no license required)')
+          :_uL('✨ M365 Copilot — chat-based continuous-motion flow (Word Agent → PPT Agent → Excel Agent → Agent Builder)');
         pEl.appendChild(hdr);
         _lastGroup=grp;
       }
@@ -2486,8 +2632,8 @@ function showItem(item,tab){
       let modeLbl='';
       if(isResearcher){
         modeLbl=pi===0
-          ?'<span class="prompt-mode">🔍 Critique Mode</span>'
-          :'<span class="prompt-mode">⚖️ Model Council</span>';
+          ?'<span class="prompt-mode">'+_uL('🔍 Critique Mode')+'</span>'
+          :'<span class="prompt-mode">'+_uL('⚖️ Model Council')+'</span>';
       }
       // Cowork special render: parse the prompt body for "1. " / "2. " etc. action lines and split each onto its own line.
       let coworkHtml='';
@@ -2496,7 +2642,7 @@ function showItem(item,tab){
         if(lines.length>=2){
           coworkHtml=
             '<div class="cowork-actions">'+
-            '<div class="cowork-actions-label">⚡ Cowork delegates these in parallel</div>'+
+            '<div class="cowork-actions-label">'+_uL('⚡ Cowork delegates these in parallel')+'</div>'+
             lines.map(L=>{
               return '<div class="cowork-action-line">'+
                 '<span class="cowork-action-num">'+escapeHTML(L.n)+'.</span>'+
@@ -2518,37 +2664,43 @@ function showItem(item,tab){
         const instr=_translateLocale(_scrubReal(instrRaw), instrSrc);
         notebookHtml=
           '<div class="notebook-meta">'+
-          '<div class="notebook-meta-label">📓 Notebook setup — add ALL sources at creation time, then set the Instructions field</div>'+
+          '<div class="notebook-meta-label">'+_uL('📓 Notebook setup — add ALL sources at creation time, then set the Instructions field')+'</div>'+
           (srcs?'<div class="notebook-sources">'+srcs+'</div>':'')+
-          (instr?'<div class="notebook-instr-row"><strong>Instructions field (system prompt):</strong> '+escapeHTML(instr)+'</div>':'')+
+          (instr?'<div class="notebook-instr-row"><strong>'+_uL('Instructions field (system prompt):')+'</strong> '+escapeHTML(instr)+'</div>':'')+
           '</div>';
       }
       // The instr block above the prompt body is suppressed for Cowork (the actions block IS the instr context)
       const showInstr=instrTxt && !isCowork;
       return '<div class="prompt-item">'+
-        '<div class="prompt-title">'+modeLbl+'💬 Prompt '+(pi+1)+'</div>'+
+        '<div class="prompt-title">'+modeLbl+_uLPrompt(pi+1)+'</div>'+
         (notebookHtml)+
         (showInstr
-          ? '<div class="prompt-instr-label">📋 Instructions</div>'+
+          ? '<div class="prompt-instr-label">'+_uL('📋 Instructions')+'</div>'+
             '<div class="prompt-instr">'+escapeHTML(instrTxt)+'</div>'
           : '')+
         coworkHtml+
-        '<div class="prompt-text-label">💬 Prompt — copy this</div>'+
+        '<div class="prompt-text-label">'+_uL('💬 Prompt — copy this')+'</div>'+
         '<div class="prompt-text">'+escapeHTML(txt)+'</div>'+
         '<div class="prompt-actions">'+
-          '<button class="copy-btn" onclick="copyById(\''+key+'\')">📋 Copy prompt</button>'+
+          '<button class="copy-btn" onclick="copyById(\''+key+'\')">'+_uL('📋 Copy prompt')+'</button>'+
         '</div>'+
         '</div>';
     }).join('');
-    let licClass='premium', licLabel='✨ M365 Copilot';
-    if(isBasic){ licClass='basic'; licLabel='🆓 No License Required'; }
-    if(isFront){ licClass='frontier'; licLabel='🔥 M365 + Frontier'; }
+    let licClass='premium', licLabel=_uL('✨ M365 Copilot');
+    if(isBasic){ licClass='basic'; licLabel=_uL('🆓 No License Required'); }
+    if(isFront){ licClass='frontier'; licLabel=_uL('🔥 M365 + Frontier'); }
     let researcherCallout='';
     if(isResearcher){
       researcherCallout='<div class="researcher-callout">'+
-        '<strong>🔍 Critique Mode</strong> — Researcher self-critiques every source, verifying claims against the originals before including them in the report. Best for getting trustworthy, citation-grounded answers fast.'+
+        '<strong>'+_uL('🔍 Critique Mode')+'</strong> — '+
+        (_langCode()==='EN'
+          ?'Researcher self-critiques every source, verifying claims against the originals before including them in the report. Best for getting trustworthy, citation-grounded answers fast.'
+          :_uL('researcher-callout-critique').replace(/^.*?—\s*/,''))+
         '<span class="researcher-callout-row"></span>'+
-        '<strong>⚖️ Model Council</strong> — Researcher runs GPT-5.5 Thinking and Claude Opus 4.7 in parallel against the brief and returns both reports plus a synthesis cover letter highlighting agreements, disagreements and unique findings. Best for high-stakes decisions where you want diverse expert input.'+
+        '<strong>'+_uL('⚖️ Model Council')+'</strong> — '+
+        (_langCode()==='EN'
+          ?'Researcher runs GPT-5.5 Thinking and Claude Opus 4.7 in parallel against the brief and returns both reports plus a synthesis cover letter highlighting agreements, disagreements and unique findings. Best for high-stakes decisions where you want diverse expert input.'
+          :_uL('researcher-callout-council').replace(/^.*?—\s*/,''))+
         '</div>';
     }
     sec.innerHTML=
@@ -2558,7 +2710,7 @@ function showItem(item,tab){
         '<span class="tool-chevron">▼</span>'+
       '</div>'+
       '<div class="tool-prompts" id="tool-prm-'+id+'-'+ti+'">'+
-        (tool.account?'<div class="tool-account-bar">👤 Demo account: <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
+        (tool.account?'<div class="tool-account-bar">'+_uL('👤 Demo account:')+' <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
         researcherCallout+
         promHtml+
       '</div>';
@@ -2567,13 +2719,13 @@ function showItem(item,tab){
   if(visibleTools.length){ toggleTool(id+'-'+item.prompts.indexOf(visibleTools[0])); }
   // Files
   const fEl=document.getElementById('detail-files');
-  fEl.innerHTML='<div class="files-title">📁 Reference Files <span style="font-size:11px;font-weight:400;color:var(--muted)">— click to download</span></div>'+
+  fEl.innerHTML='<div class="files-title">'+_uL('📁 Reference Files')+' <span style="font-size:11px;font-weight:400;color:var(--muted)">'+_uL('— click to download')+'</span></div>'+
     item.files.map(f=>{
       const ext=f.split('.').pop().toLowerCase();
       return '<a class="file-item" href="files/'+encodeURIComponent(f)+'" download="'+f+'" target="_blank">'+
         '<span class="file-ext '+ext+'">'+ext.toUpperCase()+'</span>'+
         '<span class="file-name">'+escapeHTML(f)+'</span>'+
-        '<span style="margin-left:auto;font-size:11px;color:var(--blue);font-weight:600">⬇ Download</span>'+
+        '<span style="margin-left:auto;font-size:11px;color:var(--blue);font-weight:600">'+_uL('⬇ Download')+'</span>'+
         '</a>';
     }).join('');
   // Personas card (between files and tips)
@@ -2581,7 +2733,7 @@ function showItem(item,tab){
   if(item.personas && item.personas.length){
     personasEl.style.display='block';
     personasEl.innerHTML=
-      '<div class="personas-title">🎭 Personas in this demo</div>'+
+      '<div class="personas-title">'+_uL('🎭 Personas in this demo')+'</div>'+
       item.personas.map(p=>{
         const roleSrc=(_locale==='ID_BI'||_locale==='ID_EN')&&p.roleID?'BI':'EN';
         const roleRaw=(_locale==='ID_BI'||_locale==='ID_EN')&&p.roleID?p.roleID:(p.role||'');
@@ -2611,7 +2763,7 @@ function showItem(item,tab){
     'For Teams demos, use the demo tenant\'s recorded meetings (New Software Implementation, Potential Merger, Negotiating Marketing Contract)'
   ];
   document.getElementById('detail-tips').innerHTML=
-    '<div class="tips-title" style="color:#FFFFFF">⚡ Demo Tips</div>'+
+    '<div class="tips-title" style="color:#FFFFFF">'+_uL('⚡ Demo Tips')+'</div>'+
     tips.map((t,i)=>'<div class="tip-item"><div class="tip-num">'+(i+1)+'</div><div>'+t+'</div></div>').join('');
   // Sidebar highlight
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
@@ -2692,7 +2844,7 @@ const OTHER_PAGES = [
     keywords: 'contoso medical finance procurement variance supplier capital board pack immersion'
   },
   {
-    section: 'Customer Workshops',
+    section: 'Hackathons',
     icon: '🏦',
     color: '#B91C1C',
     accent: '#7F1D1D',
@@ -2700,8 +2852,8 @@ const OTHER_PAGES = [
     desc: 'Alliance Bank Malaysia × Microsoft 365 Copilot Prompt-a-thon (7 May 2026). 8 team packs across Consumer Banking, SME, HR, Finance, Risk, Digital, Comms, and Strategy.',
     url: 'https://steffiyappy.github.io/ABMB7May/',
     password: 'ABMB7May',
-    tag: 'Bank Workshop',
-    keywords: 'ABMB Alliance Bank Malaysia prompt-a-thon banking SME HR finance risk digital comms strategy'
+    tag: 'Hackathon',
+    keywords: 'ABMB Alliance Bank Malaysia prompt-a-thon hackathon banking SME HR finance risk digital comms strategy'
   },
   {
     section: 'Customer Demos',
@@ -2752,13 +2904,28 @@ function buildOtherSidebar(){
       a.className='sidebar-item';
       a.id='nav-other-'+p.idx;
       a.setAttribute('data-keywords',p.keywords||'');
-      a.href=p.url; a.target='_blank'; a.rel='noopener';
-      a.innerHTML='<span class="ind-icon">'+p.icon+'</span><span class="ind-name">'+p.name+'</span><span class="ind-count">↗</span>';
+      // Navigate to the Other Pages tab and scroll to this card so the user
+      // can read the password chip — do NOT bounce straight to the external URL.
+      a.href='javascript:void(0)';
+      a.onclick=()=>showOtherTabAndScroll(p.idx);
+      a.innerHTML='<span class="ind-icon">'+p.icon+'</span><span class="ind-name">'+p.name+'</span><span class="ind-count">→</span>';
       el.appendChild(a);
     });
   });
   const ct=document.getElementById('total-other-count');
   if(ct) ct.textContent=OTHER_PAGES.length;
+}
+// Helper: switch to Other Pages tab, then scroll to the card matching idx.
+function showOtherTabAndScroll(idx){
+  showOtherTab();
+  setTimeout(()=>{
+    const cards=document.querySelectorAll('#other-grid .op-card');
+    if(cards[idx]){
+      cards[idx].scrollIntoView({behavior:'smooth',block:'center'});
+      cards[idx].classList.add('op-card-flash');
+      setTimeout(()=>cards[idx].classList.remove('op-card-flash'),1800);
+    }
+  },80);
 }
 
 function buildOtherGrid(){
