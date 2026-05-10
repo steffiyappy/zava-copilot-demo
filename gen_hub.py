@@ -1211,6 +1211,9 @@ const _UI = {
   '🏢 Industries most affected — click to drill down':
                            ['🏢 Industri yang paling terdampak — klik untuk melihat detail',
                             '🏢 Industri paling terkesan — klik untuk meneroka'],
+  '🤝 Sister departments — click to drill down':
+                           ['🤝 Departemen pendamping — klik untuk melihat detail',
+                            '🤝 Jabatan rakan — klik untuk meneroka'],
   '🛠️ Microsoft 365 Copilot Tools':  ['🛠️ Tools Microsoft 365 Copilot',                  '🛠️ Tools Microsoft 365 Copilot'],
   '⚡ Cowork':              ['⚡ Cowork',                                  '⚡ Cowork'],
   '📓 Copilot Notebook':    ['📓 Copilot Notebook',                       '📓 Copilot Notebook'],
@@ -3645,10 +3648,34 @@ function showItem(item,tab,preserveScroll){
   document.getElementById('detail-title').textContent=_getCompany(item);
   document.getElementById('detail-company').textContent=_xformVal(_stripLeadingEmoji(item.name),'EN');
   document.getElementById('detail-tagline').textContent=_getTagline(item);
-  // Scenario + dept pills
+  // Scenario + dept/industry pills
+  // - Industries: always render relevantDepts (drill into departments)
+  // - Departments: ALWAYS render relevantIndustries (drill into industries),
+  //   plus relevantDepts as a 2nd row if present (sister departments)
   const scenarioText=_getScenario(item);
   let pillsHtml='';
-  if(item.relevantDepts && item.relevantDepts.length){
+  if(isDept){
+    if(item.relevantIndustries && item.relevantIndustries.length){
+      const pills=item.relevantIndustries.map(iid=>{
+        const i=data.industries.find(x=>x.id===iid);
+        if(!i) return '';
+        return '<span class="dept-pill" data-iid="'+escapeAttr(i.id)+'">'+i.icon+' '+escapeHTML(_xformVal(_stripLeadingEmoji(i.name),'EN'))+'</span>';
+      }).filter(Boolean).join('');
+      if(pills){
+        pillsHtml+='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🏢 Industries most affected — click to drill down')+'</div>'+pills+'</div>';
+      }
+    }
+    if(item.relevantDepts && item.relevantDepts.length){
+      const pills=item.relevantDepts.map(did=>{
+        const d=data.departments.find(x=>x.id===did);
+        if(!d || d.id===item.id) return '';
+        return '<span class="dept-pill" data-did="'+escapeAttr(d.id)+'">'+d.icon+' '+escapeHTML(_xformVal(_stripLeadingEmoji(d.name),'EN'))+'</span>';
+      }).filter(Boolean).join('');
+      if(pills){
+        pillsHtml+='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🤝 Sister departments — click to drill down')+'</div>'+pills+'</div>';
+      }
+    }
+  } else if(item.relevantDepts && item.relevantDepts.length){
     const pills=item.relevantDepts.map(did=>{
       const d=data.departments.find(x=>x.id===did);
       if(!d) return '';
@@ -3656,15 +3683,6 @@ function showItem(item,tab,preserveScroll){
     }).filter(Boolean).join('');
     if(pills){
       pillsHtml='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🏢 Departments most affected — click to drill down')+'</div>'+pills+'</div>';
-    }
-  } else if(item.relevantIndustries && item.relevantIndustries.length){
-    const pills=item.relevantIndustries.map(iid=>{
-      const i=data.industries.find(x=>x.id===iid);
-      if(!i) return '';
-      return '<span class="dept-pill" data-iid="'+escapeAttr(i.id)+'">'+i.icon+' '+escapeHTML(_xformVal(_stripLeadingEmoji(i.name),'EN'))+'</span>';
-    }).filter(Boolean).join('');
-    if(pills){
-      pillsHtml='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🏢 Industries most affected — click to drill down')+'</div>'+pills+'</div>';
     }
   }
   // Subsidiaries — real ASEAN subsidiaries from the customer account list
