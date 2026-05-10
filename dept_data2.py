@@ -163,7 +163,7 @@ ind('dept-legal','department','⚖️ Legal','⚖️','#4A148C','#6A1B9A',
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '📜',
@@ -479,7 +479,7 @@ ind('dept-risk','department','🛡 Risk & Internal Audit','🛡','#B71C1C','#C62
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🛡️',
@@ -795,7 +795,7 @@ ind('dept-strategy','department','🎯 Strategy & Corporate Planning','🎯','#E
       ],
       persona=['Mod Admin','Mod Admin'],
       personaID=['Mod Admin','Mod Admin']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🎯',

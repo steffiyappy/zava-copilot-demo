@@ -178,7 +178,7 @@ ind('construction','construction','Construction','🏗','#E65100','#EF6C00',
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🏗️',
@@ -499,7 +499,7 @@ ind('aviation-airports','aviation-airports','Aviation - Airports','✈','#0277BD
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🛬',
@@ -824,7 +824,7 @@ ind('retail-grocery','retail-grocery','Retail - Grocery','🛒','#2E7D32','#388E
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🛒',
@@ -1145,7 +1145,7 @@ ind('media-entertainment','media-entertainment','Media - Entertainment','📺','
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🎬',

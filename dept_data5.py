@@ -176,7 +176,7 @@ DEPARTMENTS_5 = [
       ],
         persona=['Hadar Caspit','Hadar Caspit'],
         personaID=['Hadar Caspit','Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '📣',
@@ -516,7 +516,7 @@ DEPARTMENTS_5 = [
       ],
         persona=['Daichi Maruyama','Daichi Maruyama'],
         personaID=['Daichi Maruyama','Daichi Maruyama']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '💼',
@@ -856,7 +856,7 @@ DEPARTMENTS_5 = [
       ],
         persona=['Mod Admin','Mod Admin'],
         personaID=['Mod Admin','Mod Admin']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '💻',

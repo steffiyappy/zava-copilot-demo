@@ -331,6 +331,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .agent-query{background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:9px 11px;margin-bottom:6px;font-size:11.5px;color:var(--text-strong);line-height:1.55}
 .agent-query-num{display:inline-block;background:#0369A1;color:#FFFFFF;font-size:10px;font-weight:800;border-radius:4px;padding:1px 7px;margin-right:7px;letter-spacing:.5px}
 .agent-step-label-strong{font-size:13px;font-weight:800;color:#B45309;margin:6px 0 4px}
+.agent-license-note{background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:1px solid #F59E0B;border-left:4px solid #B45309;border-radius:8px;padding:10px 13px;margin:0 0 12px}
+.agent-license-title{font-size:11px;font-weight:800;color:#78350F;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:5px;display:flex;align-items:center;gap:5px}
+.agent-license-body{font-size:11.5px;color:#78350F;line-height:1.55}
+.agent-license-body b{color:#451A03}
 /* Fluent polish — focus rings, hover lift, smooth motion */
 .ind-card,.dept-pill,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
 .ind-card:focus-visible,.dept-pill:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
@@ -544,6 +548,14 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="system"] .agent-knowledge-list .file{background:#0F2540;color:#7DD3FC}
 [data-theme="dark"] .agent-step-label-strong,
 [data-theme="system"] .agent-step-label-strong{color:#FBBF24}
+[data-theme="dark"] .agent-license-note,
+[data-theme="system"] .agent-license-note{background:linear-gradient(135deg,#3A2A0E,#4A3514);border-color:#B45309;border-left-color:#FBBF24}
+[data-theme="dark"] .agent-license-title,
+[data-theme="system"] .agent-license-title{color:#FBBF24}
+[data-theme="dark"] .agent-license-body,
+[data-theme="system"] .agent-license-body{color:#FDE68A}
+[data-theme="dark"] .agent-license-body b,
+[data-theme="system"] .agent-license-body b{color:#FEF3C7}
 [data-theme="dark"] .prompt-text,
 [data-theme="system"] .prompt-text{background:#0F2540;color:#E2E8F0;border-left-color:#3B82F6}
 [data-theme="dark"] .prompt-text-label,
@@ -2551,9 +2563,17 @@ function _renderBuilderBlock(slot, agents, intro, label){
   }).join('');
   // Compose
   const introHtml = intro ? '<p class="agent-intro">'+escapeHTML(intro)+'</p>' : '';
+  const licenseHtml = '<div class="agent-license-note">'+
+    '<div class="agent-license-title">'+_uL('🔐 Knowledge tier · Microsoft 365 Copilot')+'</div>'+
+    '<div class="agent-license-body">'+
+      _uL('This Agent Builder demo connects <b>SharePoint, OneDrive and uploaded files</b> as knowledge — so the agent can cite exact tabs, sections and clauses. <b>This requires a Microsoft 365 Copilot license.</b>')+'<br><br>'+
+      _uL('On <b>Free Copilot Chat</b> the in-chat Agent Builder is still available, but knowledge is limited to <b>public websites / URLs only</b> (no SharePoint, OneDrive, or file uploads). For a free-tier demo, replace the file knowledge below with a list of public URLs (regulator microsite, IR page, sustainability report PDF link, etc.) and remove any "cite the file name and tab" instructions.')+
+    '</div>'+
+  '</div>';
   const labelHtml = '<div class="agent-step-label-strong">'+_uL('Agent Builder · step-by-step')+' — <span class="agent-selected-label">'+(agents[0]?('<span class="agent-card-icon">'+(agents[0].icon||'🤖')+'</span> '+escapeHTML(agents[0].label||agents[0].name||'')):'')+'</span></div>';
   return '<div class="agent-block" id="agent-block-'+slot+'">'+
     introHtml+
+    licenseHtml+
     '<div class="agent-grid">'+cards+'</div>'+
     labelHtml+
     '<div class="agent-step">'+

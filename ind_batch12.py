@@ -182,7 +182,7 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '✈️',
@@ -511,7 +511,7 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🎓',
@@ -834,7 +834,7 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '⚡',
@@ -1161,7 +1161,7 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🏗️',
@@ -1484,7 +1484,7 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🛍️',
@@ -1807,7 +1807,7 @@ INDUSTRIES_12.append(ind(
       persona=['Hadar Caspit'],
       personaID=['Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '⚓',

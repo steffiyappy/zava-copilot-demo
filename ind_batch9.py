@@ -177,7 +177,7 @@ ind('glc-investment','glc','GLC Investment Arm','🏛','#1A237E','#283593',
       persona=['Mod Admin','Hadar Caspit'],
       personaID=['Mod Admin','Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '📈',
@@ -506,7 +506,7 @@ ind('financial-regulator','reg','Financial Regulator','⚖️','#1B5E20','#2E7D3
       persona=['Mod Admin','Hadar Caspit'],
       personaID=['Mod Admin','Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🔍',

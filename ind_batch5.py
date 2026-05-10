@@ -177,7 +177,7 @@ ind('plantation','plantation','Plantation & Agribusiness','🌿','#2E7D32','#43A
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🌴',
@@ -510,7 +510,7 @@ ind('bpo-services','bpo-services','BPO Services','📞','#3949AB','#5C6BC0',
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🎧',
@@ -839,7 +839,7 @@ ind('telco','telco','Telco','📡','#00838F','#00ACC1',
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
 
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '📡',

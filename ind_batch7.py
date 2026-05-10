@@ -163,7 +163,7 @@ INDUSTRIES_7 = [
       ],
       persona=['Hadar Caspit', 'Daichi Maruyama'],
       personaID=['Hadar Caspit', 'Daichi Maruyama']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🏢',
@@ -487,7 +487,7 @@ INDUSTRIES_7 = [
       ],
       persona=['Hadar Caspit', 'Hadar Caspit'],
       personaID=['Hadar Caspit', 'Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🚚',
@@ -811,7 +811,7 @@ INDUSTRIES_7 = [
       ],
       persona=['Hadar Caspit', 'Sasha Ouellet'],
       personaID=['Hadar Caspit', 'Sasha Ouellet']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '⛏️',
@@ -1139,7 +1139,7 @@ INDUSTRIES_7 = [
       ],
       persona=['Hadar Caspit', 'Sasha Ouellet'],
       personaID=['Hadar Caspit', 'Sasha Ouellet']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🏨',

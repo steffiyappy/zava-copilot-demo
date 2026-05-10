@@ -176,7 +176,7 @@ DEPARTMENTS_4 = [
       ],
         persona=['Mod Admin','Mod Admin'],
         personaID=['Mod Admin','Mod Admin']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '⚙️',
@@ -516,7 +516,7 @@ DEPARTMENTS_4 = [
       ],
         persona=['Sasha Ouellet','Sasha Ouellet'],
         personaID=['Sasha Ouellet','Sasha Ouellet']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '📋',

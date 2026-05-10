@@ -163,7 +163,7 @@ ind('investment-banking','banking-fs','Investment Banking','💹','#0D47A1','#15
       ],
       persona=['Hadar Caspit', 'Hadar Caspit'],
       personaID=['Hadar Caspit', 'Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '📊',
@@ -485,7 +485,7 @@ ind('general-insurance', 'insurance', 'General Insurance', '🛡', '#1A237E', '#
       ],
       persona=['Sasha Ouellet', 'Daichi Maruyama'],
       personaID=['Sasha Ouellet', 'Daichi Maruyama']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🛟',
@@ -807,7 +807,7 @@ ind('life-insurance','insurance','Life Insurance','💗','#283593','#3949AB',
       ],
       persona=['Hadar Caspit','Mod Admin'],
       personaID=['Hadar Caspit','Mod Admin']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '📉',
@@ -1129,7 +1129,7 @@ ind('takaful', 'insurance', 'Takaful', '☪', '#1A237E', '#1976D2',
       ],
       persona=['Daichi Maruyama', 'Mod Admin'],
       personaID=['Daichi Maruyama', 'Mod Admin']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🤝',

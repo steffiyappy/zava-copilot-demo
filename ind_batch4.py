@@ -490,7 +490,7 @@ def _build(c):
     _id_remap = [{'icon':a['icon'],'label':a['label'],'name':a['name'],'desc':a['description'],
                   'instructions':a['instructions'],'knowledge':a['knowledge'],
                   'knowledgeNote':a['knowledgeTest'],'queries':a['queries']} for a in _id_agents]
-    t14 = tool_builder(ANY_LIC, ANY_ACCT,
+    t14 = tool_builder(M365_LIC, M365_ACCT,
                        agents=_en_remap, agentsID=_id_remap,
                        persona=b_personas, personaID=b_personas)
 

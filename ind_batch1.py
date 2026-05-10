@@ -249,7 +249,7 @@ ind('general','general','General (Any Role)','⭐','#FF6B35','#FF8C42',
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
       # ─── Agent Builder (IHH-style 3 agent use-cases) ─────────────
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
           {
             'icon':'🏛️',
@@ -628,7 +628,7 @@ ind('commercial-banking','banking-fs','Commercial Banking','🏦','#0D47A1','#19
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🛡️',
@@ -950,7 +950,7 @@ ind('islamic-banking','banking-fs','Islamic Banking','🕌','#1A237E','#283593',
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '☪️',

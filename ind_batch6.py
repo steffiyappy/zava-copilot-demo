@@ -165,7 +165,7 @@ ind('diversified-conglomerate', 'conglomerate', 'Diversified Conglomerate', '�
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🎯',
@@ -487,7 +487,7 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
         persona=['Hadar Caspit','Hadar Caspit'],
         personaID=['Hadar Caspit','Hadar Caspit']),
 
-        tool_builder(ANY_LIC, ANY_ACCT,
+        tool_builder(M365_LIC, M365_ACCT,
           agents=[{'icon':a['icon'],'label':a['label'],'name':a['name'],'desc':a['description'],
                    'instructions':a['instructions'],'knowledge':a['knowledge'],
                    'knowledgeNote':a['knowledgeTest'],'queries':a['queries']}
@@ -693,7 +693,7 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
         persona=['Hadar Caspit','Hadar Caspit'],
         personaID=['Hadar Caspit','Hadar Caspit']),
 
-        tool_builder(ANY_LIC, ANY_ACCT,
+        tool_builder(M365_LIC, M365_ACCT,
           agents=[{'icon':a['icon'],'label':a['label'],'name':a['name'],'desc':a['description'],
                    'instructions':a['instructions'],'knowledge':a['knowledge'],
                    'knowledgeNote':a['knowledgeTest'],'queries':a['queries']}

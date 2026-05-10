@@ -176,7 +176,7 @@ DEPARTMENTS_3 = [
       ],
         persona=['Sasha Ouellet','Sasha Ouellet'],
         personaID=['Sasha Ouellet','Sasha Ouellet']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🎨',
@@ -516,7 +516,7 @@ DEPARTMENTS_3 = [
       ],
         persona=['Sasha Ouellet','Sasha Ouellet'],
         personaID=['Sasha Ouellet','Sasha Ouellet']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '💻',
@@ -856,7 +856,7 @@ DEPARTMENTS_3 = [
       ],
         persona=['Daichi Maruyama','Daichi Maruyama'],
         personaID=['Daichi Maruyama','Daichi Maruyama']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🌍',

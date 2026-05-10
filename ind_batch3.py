@@ -170,7 +170,7 @@ ind('hospital-network', 'healthcare', 'Hospital Network', '🏥', '#1B5E20', '#2
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🛏️',
@@ -498,7 +498,7 @@ ind('pharmaceutical', 'healthcare', 'Pharmaceutical', '💊', '#311B92', '#5E35B
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '🧪',
@@ -826,7 +826,7 @@ ind('og-upstream', 'og-energy', 'Oil & Gas Upstream', '🛢️', '#E65100', '#F5
       ],
       persona=['Hadar Caspit','Hadar Caspit'],
       personaID=['Hadar Caspit','Hadar Caspit']),
-      tool_builder(ANY_LIC, ANY_ACCT,
+      tool_builder(M365_LIC, M365_ACCT,
         agents=[
         {
           'icon': '⛑️',
