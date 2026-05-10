@@ -2564,10 +2564,86 @@ function showItem(item,tab){
     missionText=_translateLocale(_scrubReal(_scrubFiles(missionText)), missionSrc);
     // Total tools used = count of prompt blocks in the entry (Punchline line)
     const toolsCount=item.prompts?item.prompts.length:8;
+    // Normalise storyboard data — supports 3 shapes:
+    //   A) standard nested: [{title, summary, tasks:[{n,tool,verb,label,...}]}]
+    //   B) ind_batch4: [{title, objective, tasks:[{tool:'T_CHAT', desc, descID, persona}]}]
+    //   C) flat (ind_batch6 fintech/govt): [{exercise, task, taskID, tool, mode, ...}, ...]
+    const _toolLabelFromKey = function(k){
+      if(!k) return '';
+      const map = {
+        'T_CHAT':'Copilot Chat','chat':'Copilot Chat',
+        'T_RESEARCHER':'Researcher','researcher':'Researcher',
+        'T_ANALYST':'Analyst','analyst':'Analyst',
+        'T_EXCEL':'Copilot in Excel','excel':'Copilot in Excel',
+        'T_WORD':'Copilot in Word','word':'Copilot in Word',
+        'T_PPT':'Copilot in PowerPoint','ppt':'Copilot in PowerPoint',
+        'T_OUTLOOK':'Copilot in Outlook','outlook':'Copilot in Outlook',
+        'T_TEAMS':'Copilot in Teams','teams':'Copilot in Teams',
+        'T_NOTEBOOK':'Copilot Notebook','notebook':'Copilot Notebook',
+        'T_COWORK':'Cowork (Frontier)','cowork':'Cowork (Frontier)',
+        'T_BUILDER':'Agent Builder','builder':'Agent Builder',
+        'T_WORD_AGT':'Word Agent','word_agt':'Word Agent',
+        'T_PPT_AGT':'PowerPoint Agent','ppt_agt':'PowerPoint Agent',
+        'T_XL_AGT':'Excel Agent','xl_agt':'Excel Agent'
+      };
+      return map[k] || k.replace(/^M365\s+Copilot\s+[—-]\s+/i,'').replace(/\s*\+\s*Copilot$/i,'');
+    };
+    let _sb = item.storyboard || [];
+    // Detect Shape C — flat list (each item has 'exercise' string but no 'tasks' array)
+    if(_sb.length && _sb[0].exercise && !_sb[0].tasks){
+      const groups = {};
+      const order = [];
+      _sb.forEach(function(t){
+        const exKey = t.exercise || 'misc';
+        if(!groups[exKey]){
+          groups[exKey] = {
+            title: (t.exercise||'').replace(/^Exercise\s+\d+\s*[—-]\s*/i,''),
+            titleID:(t.exerciseID||'').replace(/^Latihan\s+\d+\s*[—-]\s*/i,''),
+            tasks: []
+          };
+          order.push(exKey);
+        }
+        groups[exKey].tasks.push({
+          tool: t.tool, label: _toolLabelFromKey(t.tool) || t.tool,
+          verb: t.task, verbID: t.taskID, mode: t.mode
+        });
+      });
+      _sb = order.map(k => groups[k]);
+      // Number tasks 01..NN
+      let cnt = 1;
+      _sb.forEach(function(p){ p.tasks.forEach(function(t){ t.n = String(cnt++).padStart(2,'0'); }); });
+    }
+    // Normalise per-phase + per-task (Shape B fallback + missing labels)
+    _sb.forEach(function(ex){
+      // Phase summary fallback: summary -> objective
+      if(!ex.summary && ex.objective) ex.summary = ex.objective;
+      if(!ex.summaryID && ex.objectiveID) ex.summaryID = ex.objectiveID;
+      // Phase title: strip leading "Exercise N — " if present
+      if(ex.title && /^Exercise\s+\d+\s*[—-]\s*/i.test(ex.title)){
+        ex.title = ex.title.replace(/^Exercise\s+\d+\s*[—-]\s*/i,'');
+      }
+      if(ex.titleID && /^Latihan\s+\d+\s*[—-]\s*/i.test(ex.titleID)){
+        ex.titleID = ex.titleID.replace(/^Latihan\s+\d+\s*[—-]\s*/i,'');
+      }
+      (ex.tasks||[]).forEach(function(t){
+        // Task verb fallback: verb -> desc
+        if(!t.verb && t.desc) t.verb = t.desc;
+        if(!t.verbID && t.descID) t.verbID = t.descID;
+        // Label fallback from tool key
+        if(!t.label && t.tool) t.label = _toolLabelFromKey(t.tool) || t.tool;
+      });
+    });
+    // Renumber tasks if any are missing 'n' (ind_batch4 case)
+    let _hasN = true;
+    _sb.forEach(function(p){ (p.tasks||[]).forEach(function(t){ if(!t.n) _hasN=false; }); });
+    if(!_hasN){
+      let cnt = 1;
+      _sb.forEach(function(p){ (p.tasks||[]).forEach(function(t){ if(!t.n) t.n = String(cnt).padStart(2,'0'); cnt++; }); });
+    }
     // Right header: total moments = sum of tasks across all phases (fallback to phase count)
     let momentCount=0;
-    item.storyboard.forEach(function(ex){momentCount+=(ex.tasks&&ex.tasks.length)||0;});
-    if(!momentCount) momentCount=item.storyboard.length;
+    _sb.forEach(function(ex){momentCount+=(ex.tasks&&ex.tasks.length)||0;});
+    if(!momentCount) momentCount=_sb.length;
     const rightHeader=_bL(
       momentCount+' moments across one workday',
       momentCount+' babak dalam satu hari kerja',
@@ -2582,7 +2658,7 @@ function showItem(item,tab){
       'Satu hari kerja. '+toolsCount+' alat. Dari konteks ke pengiriman.',
       'Satu hari kerja. '+toolsCount+' alat. Daripada rangka kepada penghantaran.');
     const indColor=item.color||'#0EA5E9';
-    const phasesHTML=item.storyboard.map((ex,i)=>{
+    const phasesHTML=_sb.map((ex,i)=>{
       let exTitle='', exSummary='', exSrc='EN', summarySrc='EN';
       // Title: prefer native BM/IDEN, then *ID for ID locales, then base
       if(_locale==='MY_BM' && ex.titleBM){ exTitle=ex.titleBM; exSrc='BM_NATIVE'; }
