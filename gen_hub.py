@@ -2597,7 +2597,6 @@ function showItem(item,tab){
       const cleanTitle=_xformVal(exTitle, exSrc);
       const cleanSummary=_translateLocale(_scrubReal(_scrubFiles(exSummary)), summarySrc);
       const exNum=ex.ex||(i+1);
-      const exBadge=_bL('Exercise '+exNum,'Latihan '+exNum,'Latihan '+exNum);
       // Render moment cards for ex.tasks
       let momentsHTML='';
       if(ex.tasks && ex.tasks.length){
@@ -2635,7 +2634,6 @@ function showItem(item,tab){
       }
       return '<div class="sb-phase">'+
         '<div class="sb-phase-head">'+
-          '<span class="sb-phase-ex">'+escapeHTML(exBadge)+'</span>'+
           '<span class="sb-phase-title">'+escapeHTML(cleanTitle)+'</span>'+
         '</div>'+
         '<div class="sb-phase-body">'+
