@@ -57,10 +57,14 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .op-card-tag{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--op-color,var(--blue));margin-bottom:5px}
 .op-card-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:5px;line-height:1.3}
 .op-card-desc{font-size:11.5px;color:var(--muted);line-height:1.5;margin-bottom:10px;flex:1}
-.op-card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid var(--border)}
-.op-card-pwd{font-size:10px;color:#9A3412;background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:2px 8px;font-weight:600;font-family:'Courier New',monospace}
-.op-card-pwd.none{background:#F0FDF4;border-color:#BBF7D0;color:#166534}
-.op-card-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--op-color,var(--blue));text-decoration:none;transition:gap 0.15s}
+.op-card-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid var(--border);flex-wrap:wrap}
+.op-card-pwd{font-size:10px;color:#9A3412;background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:2px 8px;font-weight:600;font-family:'Courier New',monospace;cursor:pointer;transition:transform 0.12s,box-shadow 0.12s}
+.op-card-pwd:hover:not(.none){transform:translateY(-1px);box-shadow:0 2px 6px rgba(154,52,18,0.18)}
+.op-card-pwd.none{background:#F0FDF4;border-color:#BBF7D0;color:#166534;cursor:default}
+.op-card-pwd-list{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
+.op-card-pwd-multi{font-size:9.5px;line-height:1.4;display:inline-flex;align-items:baseline;gap:3px;white-space:normal}
+.op-card-pwd-label{color:#7C2D12;font-family:'Segoe UI',sans-serif;font-weight:700;font-size:9px}
+.op-card-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--op-color,var(--blue));text-decoration:none;transition:gap 0.15s;align-self:center}
 .op-card-link:hover{gap:8px;text-decoration:underline}
 .op-section-hdr{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:22px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .op-section-hdr:first-child{margin-top:0}
@@ -221,8 +225,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .notebook-instr-row{font-size:11.5px;color:#0C4A6E;line-height:1.55;background:rgba(255,255,255,0.6);border-radius:6px;padding:8px 10px;margin-top:4px;border-left:2px solid #0EA5E9}
 .notebook-instr-row strong{color:#075985}
 /* Fluent polish — focus rings, hover lift, smooth motion */
-.ind-card,.dept-pill,.sb-task,.sb-phase,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
-.ind-card:focus-visible,.dept-pill:focus-visible,.sb-task:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
+.ind-card,.dept-pill,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
+.ind-card:focus-visible,.dept-pill:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
 .tool-header:active{transform:scale(0.995)}
 .sb-phase{transition:transform 0.2s ease,box-shadow 0.2s ease}
 /* Persona avatar gradient by name */
@@ -232,8 +236,9 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .tool-group-header::after{content:'';flex:1;height:1px;background:var(--border)}
 .tool-group-header:first-child{margin-top:0}
 /* Language toggle (replaces MY/ID toggle) */
-.lang-toggle{display:flex;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;overflow:hidden;flex-shrink:0}
-.lang-btn{padding:6px 14px;border:none;background:transparent;color:rgba(255,255,255,0.7);font-size:12.5px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit;letter-spacing:0.2px}
+.lang-toggle{display:flex;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;overflow:hidden;flex-shrink:0;flex-wrap:wrap}
+.lang-btn{padding:6px 10px;border:none;background:transparent;color:rgba(255,255,255,0.7);font-size:11.5px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit;letter-spacing:0.2px;white-space:nowrap;border-right:1px solid rgba(255,255,255,0.10)}
+.lang-btn:last-child{border-right:none}
 .lang-btn.active{background:rgba(255,255,255,0.18);color:#FFFFFF}
 .lang-btn:hover:not(.active){color:rgba(255,255,255,0.85)}
 .lang-btn:disabled{opacity:0.35;cursor:not-allowed}
@@ -282,26 +287,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .sb-hero-left .punch-text{margin:0;font-size:11.5px;font-weight:700;font-style:italic;color:#FFFFFF;line-height:1.4}
 .sb-hero-right{background:#FFFFFF;padding:18px 16px 14px;min-width:0}
 .sb-hero-right h3.right-title{margin:0 0 14px;font-size:15px;font-weight:700;color:var(--text)}
-.sb-phase{margin-bottom:14px}
+.sb-phase{margin-bottom:18px;padding:14px 14px 12px;background:#F8FAFC;border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--ind-color,var(--blue))}
 .sb-phase:last-child{margin-bottom:0}
-.sb-phase-head{display:flex;align-items:center;gap:8px;margin-bottom:7px;flex-wrap:wrap}
-.sb-phase-num{background:#0F2545;color:#FFFFFF;font-size:9px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:0.5px}
-.sb-phase-title{font-size:12px;font-weight:700;color:var(--text)}
-.sb-phase-mins{font-size:10px;color:var(--muted);font-weight:600}
-.sb-task-grid{display:grid;gap:8px}
-.sb-task-grid.cols-1{grid-template-columns:1fr}
-.sb-task-grid.cols-2{grid-template-columns:repeat(2,1fr)}
-.sb-task-grid.cols-3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:760px){.sb-hero{grid-template-columns:1fr}.sb-task-grid.cols-2,.sb-task-grid.cols-3{grid-template-columns:1fr}}
-.sb-task{border:1px solid var(--border);border-radius:7px;overflow:hidden;background:#FFFFFF;cursor:pointer;display:flex;flex-direction:column;min-width:0}
-.sb-task:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,0.08);border-color:var(--ind-color,var(--blue))}
-.sb-task-head{padding:5px 9px;display:flex;align-items:center;gap:5px;color:#FFFFFF}
-.sb-task-num{font-size:9.5px;font-weight:800;color:rgba(255,255,255,0.55);min-width:14px}
-.sb-task-tool{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:#FFFFFF;line-height:1.2;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sb-task-body{padding:8px 10px 10px;background:#F8FAFC;flex:1;display:flex;flex-direction:column;gap:2px}
-.sb-task-title{margin:0;font-size:11px;font-weight:700;color:var(--text);line-height:1.3}
-.sb-task-label{margin:0 0 4px;font-size:9px;font-style:italic;color:var(--ind-color,var(--blue));font-weight:600}
-.sb-task-narr{margin:0;font-size:9.5px;color:var(--muted);line-height:1.5}
+.sb-phase-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.sb-phase-title{font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
+.sb-phase-summary{margin:0;font-size:12.5px;color:#475569;line-height:1.55}
+@media(max-width:760px){.sb-hero{grid-template-columns:1fr}}
 /* Personas card (right sidebar) */
 .personas-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px}
 .personas-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:6px}
@@ -352,8 +343,11 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   </div>
   <div class="topbar-right">
     <div class="lang-toggle" id="lang-toggle">
-      <button class="lang-btn active" id="lang-en" onclick="setLang('EN')" title="English">&#x1F310; English</button>
-      <button class="lang-btn" id="lang-id" onclick="setLang('ID')" title="Bahasa Indonesia (Bahasa Malaysia speakers can read this — ~80% mutually intelligible)">&#127470;&#127465; Bahasa</button>
+      <button class="lang-btn active" id="loc-G_EN" onclick="setLocale('G_EN')" title="Global / Generic context, English">&#x1F310; Global &middot; EN</button>
+      <button class="lang-btn" id="loc-MY_EN" onclick="setLocale('MY_EN')" title="Malaysia context, English">&#127474;&#127486; MY &middot; EN</button>
+      <button class="lang-btn" id="loc-MY_BM" onclick="setLocale('MY_BM')" title="Malaysia context, Bahasa Malaysia">&#127474;&#127486; MY &middot; BM</button>
+      <button class="lang-btn" id="loc-ID_EN" onclick="setLocale('ID_EN')" title="Indonesia context, English">&#127470;&#127465; ID &middot; EN</button>
+      <button class="lang-btn" id="loc-ID_BI" onclick="setLocale('ID_BI')" title="Indonesia context, Bahasa Indonesia">&#127470;&#127465; ID &middot; BI</button>
     </div>
     <button class="btn-sm" onclick="goHome()">&#x1F3E0; Home</button>
     <button class="btn-sm" onclick="logout()">&#x1F512; Lock</button>
@@ -507,15 +501,15 @@ if(sessionStorage.getItem('hub_auth')!=='ok') window.location.href='index.html';
 let wnIdx=0;
 let currentGridTab='ind';
 let currentSidebarTab='ind';
-let _lang='EN'; // 'EN' | 'ID' (BI). BM merged into ID per UX (Bahasa Malaysia speakers read BI fluently).
+let _lang='EN'; // 'EN' | 'ID' (Bahasa Indonesia) | 'BM' (Bahasa Malaysia). Promp data has promptsID + promptsBM; other fields BM falls back to ID.
 let _detailTab='tools'; // 'tools' or 'chat'
 let _currentTab='ind'; // 'ind' or 'dept' (which type was last shown)
 const data=window.HUB_DATA;
 
 function setLang(L){
-  if(L!=='ID') L='EN'; // collapse any 'BM' (legacy) to 'EN' default
+  if(L!=='ID' && L!=='BM') L='EN';
   _lang=L;
-  ['EN','ID'].forEach(x=>{
+  ['EN','ID','BM'].forEach(x=>{
     const el=document.getElementById('lang-'+x.toLowerCase());
     if(el) el.classList.toggle('active',x===L);
   });
@@ -525,22 +519,44 @@ function setLang(L){
   }
 }
 // Backward-compat alias (in case old onclick="setCtx('ID')" inline handlers leaked into data)
-function setCtx(c){ setLang(c==='ID'?'ID':'EN'); }
+function setCtx(c){ setLang(c==='ID'?'ID':(c==='BM'?'BM':'EN')); }
+
+// Treat ID and BM as Bahasa-family for UI label strings that have no BM-specific copy.
+function _isBahasa(){return _lang==='ID' || _lang==='BM';}
+
+// 3-way label picker. If `bm` omitted, BM falls back to BI.
+function _bL(en, id, bm){
+  if(_lang==='BM') return (bm!==undefined?bm:id);
+  if(_lang==='ID') return id;
+  return en;
+}
 
 function _pickLangField(item, base){
-  const id=item[base+'ID'];
-  if(_lang==='ID' && id) return id;
+  // BM → use BM field if exists, else fall back to ID, else EN
+  if(_lang==='BM'){
+    const bm=item[base+'BM']; if(bm) return bm;
+    const id=item[base+'ID']; if(id) return id;
+    return item[base];
+  }
+  if(_lang==='ID'){
+    const id=item[base+'ID']; if(id) return id;
+    return item[base];
+  }
   return item[base];
 }
 function _getCompany(item){return _pickLangField(item,'company');}
 function _getTagline(item){return _pickLangField(item,'tagline');}
 function _getScenario(item){return _pickLangField(item,'scenario');}
 function _getPrompts(t){
-  if(_lang==='ID' && t.promptsID && t.promptsID.length) return t.promptsID;
+  if(_lang==='BM' && t.promptsBM && t.promptsBM.length) return t.promptsBM;
+  if((_lang==='ID' || _lang==='BM') && t.promptsID && t.promptsID.length) return t.promptsID;
   return t.prompts||[];
 }
 function _getPersona(t,pi){
-  const arr=_lang==='ID'&&t.personaID&&t.personaID.length?t.personaID:(t.persona||[]);
+  let arr=null;
+  if(_lang==='BM' && t.personaBM && t.personaBM.length) arr=t.personaBM;
+  else if((_lang==='ID' || _lang==='BM') && t.personaID && t.personaID.length) arr=t.personaID;
+  else arr=(t.persona||[]);
   return arr[pi]||'';
 }
 function _isResearcher(name){return /Researcher/i.test(name||'')}
@@ -720,6 +736,20 @@ function applySearch(q){
   const clr=document.getElementById('sidebar-search-clear');
   if(clr) clr.classList.toggle('show', query.length>0);
 
+  // Build a search haystack for an industry/department record.
+  // Includes scenario text + persona companies so customer name-drops (e.g. "Sunway", "KPJ", "Maybank") match back to the industry.
+  function _hayFor(rec){
+    if(!rec) return '';
+    const personaCos=Array.isArray(rec.personas)?rec.personas.map(p=>(p&&p.company)||'').join(' '):'';
+    return [
+      rec.name||'',rec.id||'',rec.sectorId||'',rec.subsector||'',
+      rec.company||'',rec.companyID||'',
+      rec.tagline||'',rec.taglineID||'',
+      rec.scenario||'',rec.scenarioID||'',
+      personaCos
+    ].join(' ').toLowerCase();
+  }
+
   // Sidebar filter — Industries
   let visIndCount=0;
   document.querySelectorAll('#sidebar-industries .sidebar-item').forEach(el=>{
@@ -728,7 +758,7 @@ function applySearch(q){
     const ind=data.industries.find(i=>i.id===indId);
     let match=!query;
     if(query && ind){
-      const hay=(name+' '+(ind.company||'')+' '+(ind.companyID||'')+' '+(ind.tagline||'')+' '+(ind.taglineID||'')).toLowerCase();
+      const hay=name+' '+_hayFor(ind);
       match=hay.indexOf(query)>=0;
     } else if(query){
       match=name.indexOf(query)>=0;
@@ -756,7 +786,7 @@ function applySearch(q){
     const dept=data.departments.find(d=>d.id===deptId);
     let match=!query;
     if(query && dept){
-      const hay=(name+' '+(dept.company||'')+' '+(dept.tagline||'')).toLowerCase();
+      const hay=name+' '+_hayFor(dept);
       match=hay.indexOf(query)>=0;
     } else if(query){
       match=name.indexOf(query)>=0;
@@ -781,8 +811,14 @@ function applySearch(q){
 
   // Main grid filter — Industries (cards + sector headers)
   document.querySelectorAll('#ind-grid .ind-card').forEach(card=>{
-    const txt=(card.textContent||'').toLowerCase();
-    card.style.display=(!query || txt.indexOf(query)>=0)?'block':'none';
+    let match=!query;
+    if(query){
+      const txt=(card.textContent||'').toLowerCase();
+      const ind=data.industries.find(i=>i.id===card.getAttribute('data-id'));
+      const hay=txt+' '+_hayFor(ind);
+      match=hay.indexOf(query)>=0;
+    }
+    card.style.display=match?'block':'none';
   });
   document.querySelectorAll('#ind-grid .sector-header').forEach(hdr=>{
     let n=hdr.nextElementSibling, anyVisible=false;
@@ -795,8 +831,14 @@ function applySearch(q){
 
   // Main grid filter — Departments
   document.querySelectorAll('#dept-grid .ind-card').forEach(card=>{
-    const txt=(card.textContent||'').toLowerCase();
-    card.style.display=(!query || txt.indexOf(query)>=0)?'block':'none';
+    let match=!query;
+    if(query){
+      const txt=(card.textContent||'').toLowerCase();
+      const dept=data.departments.find(d=>d.id===card.getAttribute('data-id'));
+      const hay=txt+' '+_hayFor(dept);
+      match=hay.indexOf(query)>=0;
+    }
+    card.style.display=match?'block':'none';
   });
 
   // Main grid filter — Other Pages
@@ -891,6 +933,8 @@ function makeCard(item,tab){
   const div=document.createElement('div');
   div.className='ind-card';
   div.style.setProperty('--ind-color',item.color);
+  div.setAttribute('data-id',item.id);
+  div.setAttribute('data-tab',tab);
   div.onclick=()=>showItem(item,tab);
   const isDept=tab==='dept';
   div.innerHTML=
@@ -1031,65 +1075,42 @@ function showItem(item,tab){
     // Persona for left panel — first persona, fallback empty
     const p0=(item.personas&&item.personas[0])||null;
     const personaName=p0?p0.name:'';
-    const personaRole=p0?(_lang==='ID'&&p0.roleID?p0.roleID:p0.role):'';
+    const personaRole=p0?(_isBahasa()&&p0.roleID?p0.roleID:p0.role):'';
     const personaCompany=p0?(p0.company||''):'';
     // Mission text: prefer tagline, fall back to first sentence of scenario
     let missionText='';
-    if(_lang==='ID'&&item.taglineID) missionText=item.taglineID;
+    if(_isBahasa()&&item.taglineID) missionText=item.taglineID;
     else if(item.tagline) missionText=item.tagline;
-    else if(_lang==='ID'&&item.scenarioID) missionText=item.scenarioID.split(/[.!?]/)[0]+'.';
+    else if(_isBahasa()&&item.scenarioID) missionText=item.scenarioID.split(/[.!?]/)[0]+'.';
     else if(item.scenario) missionText=item.scenario.split(/[.!?]/)[0]+'.';
     missionText=_scrubFiles(missionText);
-    // Total tools used = count unique across all phases (for Punchline line)
-    const allTools=new Set();
-    item.storyboard.forEach(ex=>(ex.tasks||[]).forEach(t=>allTools.add(_toolLabelShort(t))));
-    const toolsCount=allTools.size||(item.prompts?item.prompts.length:8);
-    // Total tasks (for right-header)
-    let totalTasks=0;
-    item.storyboard.forEach(ex=>{totalTasks+=(ex.tasks||[]).length;});
-    const labelCopilot=_lang==='ID'?'Copilot di M365':'Copilot in M365';
-    const labelHeroTitle=_lang==='ID'?'Asisten AI<br>menjadi Pelaku AI':'AI Assistant<br>to AI Doer';
-    const labelPersona=_lang==='ID'?'Persona':'Persona';
-    const labelMission=_lang==='ID'?'Misi Hari Ini':'The Mission';
-    const labelPunch=_lang==='ID'?'Inti Cerita':'The Punchline';
-    const punchText=_lang==='ID'
-      ?('Satu hari kerja. '+toolsCount+' alat. Dari konteks ke pengiriman.')
-      :('One workday. '+toolsCount+' tools. From frame to ship.');
-    const rightHeader=_lang==='ID'
-      ?(totalTasks+' babak dalam satu hari kerja')
-      :(totalTasks+' moments across one workday');
+    // Total tools used = count of prompt blocks in the entry (Punchline line)
+    const toolsCount=item.prompts?item.prompts.length:8;
+    // Right header: count phases (tasks have been removed from storyboard render)
+    const phaseCount=item.storyboard.length;
+    const rightHeader=_bL(
+      phaseCount+' moments across one workday',
+      phaseCount+' babak dalam satu hari kerja',
+      phaseCount+' detik penting dalam satu hari kerja');
+    const labelCopilot=_bL('Copilot in M365','Copilot di M365','Copilot dalam M365');
+    const labelHeroTitle=_bL('AI Assistant<br>to AI Doer','Asisten AI<br>menjadi Pelaku AI','Pembantu AI<br>kepada Pelaksana AI');
+    const labelPersona=_bL('Persona','Persona','Persona');
+    const labelMission=_bL('The Mission','Misi Hari Ini','Misi Hari Ini');
+    const labelPunch=_bL('The Punchline','Inti Cerita','Inti Cerita');
+    const punchText=_bL(
+      'One workday. '+toolsCount+' tools. From frame to ship.',
+      'Satu hari kerja. '+toolsCount+' alat. Dari konteks ke pengiriman.',
+      'Satu hari kerja. '+toolsCount+' alat. Daripada rangka kepada penghantaran.');
     const indColor=item.color||'#0EA5E9';
     const phasesHTML=item.storyboard.map((ex,i)=>{
-      const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:(ex.title||'');
-      const tasks=ex.tasks||[];
-      const colsCls=_gridColsCls(tasks.length);
-      const tasksHTML=tasks.map((t,ti)=>{
-        const verb=_lang==='ID'&&t.verbID?t.verbID:(t.verb||'');
-        const toolColor=_toolColor(t);
-        const toolLabel=_toolLabelShort(t);
-        const stepNum=String(ti+1).padStart(2,'0');
-        const stepLabel=(_lang==='ID'?'Tugas ':'Task ')+(i+1)+'.'+(ti+1);
-        const split=_verbSplit(verb);
-        return '<div class="sb-task" data-tool="'+escapeAttr(t.tool||t.toolId||'')+'">'+
-          '<div class="sb-task-head" style="background:'+toolColor+'">'+
-            '<span class="sb-task-num">'+stepNum+'</span>'+
-            '<span class="sb-task-tool">'+escapeHTML(toolLabel)+'</span>'+
-          '</div>'+
-          '<div class="sb-task-body">'+
-            '<p class="sb-task-title">'+escapeHTML(split.title)+'</p>'+
-            '<p class="sb-task-label">'+escapeHTML(stepLabel)+'</p>'+
-            (split.body?'<p class="sb-task-narr">'+escapeHTML(split.body)+'</p>':'')+
-          '</div>'+
-          '</div>';
-      }).join('');
-      const minsLabel=_lang==='ID'?' menit':' min';
+      const exTitle=_isBahasa()&&ex.titleID?ex.titleID:(ex.title||'');
+      const exSummary=_isBahasa()&&ex.summaryID?ex.summaryID:(ex.summary||'');
+      const cleanSummary=_scrubFiles(exSummary);
       return '<div class="sb-phase">'+
         '<div class="sb-phase-head">'+
-          '<span class="sb-phase-num">'+(_lang==='ID'?'BABAK ':'EXERCISE ')+(i+1)+'</span>'+
-          (ex.minutes?'<span class="sb-phase-mins">&middot; '+ex.minutes+minsLabel+'</span>':'')+
-          '<span class="sb-phase-title">&middot; '+escapeHTML(exTitle)+'</span>'+
+          '<span class="sb-phase-title">'+escapeHTML(exTitle)+'</span>'+
         '</div>'+
-        '<div class="sb-task-grid '+colsCls+'">'+tasksHTML+'</div>'+
+        (cleanSummary?'<p class="sb-phase-summary">'+escapeHTML(cleanSummary)+'</p>':'')+
         '</div>';
     }).join('');
     sbWrap.innerHTML=
@@ -1199,7 +1220,7 @@ function showItem(item,tab){
       if(isNotebook && pi===0 && tool.notebookMeta){
         const nm=tool.notebookMeta;
         const srcs=(nm.sources||[]).map(s=>'<span class="notebook-source-pill">'+escapeHTML(s)+'</span>').join('');
-        const instr=_lang==='ID'&&nm.instructionsID?nm.instructionsID:(nm.instructions||'');
+        const instr=_isBahasa()&&nm.instructionsID?nm.instructionsID:(nm.instructions||'');
         notebookHtml=
           '<div class="notebook-meta">'+
           '<div class="notebook-meta-label">📓 Notebook setup — add ALL sources at creation time, then set the Instructions field</div>'+
@@ -1267,7 +1288,7 @@ function showItem(item,tab){
     personasEl.innerHTML=
       '<div class="personas-title">🎭 Personas in this demo</div>'+
       item.personas.map(p=>{
-        const role=_lang==='ID'&&p.roleID?p.roleID:p.role;
+        const role=_isBahasa()&&p.roleID?p.roleID:p.role;
         const initials=(p.name||'').split(' ').map(s=>s[0]).join('').slice(0,2).toUpperCase();
         const isFree=/free/i.test(p.lic||'');
         return '<div class="persona-item">'+
@@ -1342,9 +1363,9 @@ const OTHER_PAGES = [
     color: '#7C3AED',
     accent: '#5B21B6',
     name: 'Contoso Malaysia — HR Copilot Immersion',
-    desc: 'HR-focused Copilot immersion for a Malaysian conglomerate. Talent, recruitment, performance, payroll workflows with M365 Copilot.',
+    desc: 'HR-focused Copilot immersion for a Malaysian conglomerate (5 May 2026). Talent, recruitment, performance, payroll workflows with M365 Copilot.',
     url: 'https://steffiyappy.github.io/contoso-hr-copilot-immersion/',
-    password: '',
+    password: 'HRImmersion5May',
     tag: 'HR Workshop',
     keywords: 'contoso malaysia HR human resources talent recruitment payroll performance immersion'
   },
@@ -1356,7 +1377,7 @@ const OTHER_PAGES = [
     name: 'Contoso Trade — HR Copilot Immersion',
     desc: 'Trade & cross-border HR scenarios using paid M365 Copilot features (Researcher, Analyst, Frontier Cowork, Agent Builder).',
     url: 'https://steffiyappy.github.io/contoso-trade-hr-copilot-immersion/',
-    password: '',
+    password: 'THRCI',
     tag: 'HR Workshop · Frontier',
     keywords: 'contoso trade HR cross-border M365 paid features cowork researcher frontier'
   },
@@ -1366,11 +1387,23 @@ const OTHER_PAGES = [
     color: '#1E40AF',
     accent: '#1E3A8A',
     name: 'Contoso Medical — Finance & Procurement',
-    desc: 'Finance, procurement, and capital-allocation Copilot scenarios for a medical-devices customer. Variance analysis, supplier negotiation, board pack.',
+    desc: 'Finance, procurement, and capital-allocation Copilot scenarios for a medical-devices customer (6 May 2026). Variance analysis, supplier negotiation, board pack.',
     url: 'https://steffiyappy.github.io/contoso-medical-finance-immersion/',
-    password: '',
+    password: 'FinanceImmersion6May',
     tag: 'Finance Workshop',
-    keywords: 'contoso medical finance procurement variance supplier capital board pack'
+    keywords: 'contoso medical finance procurement variance supplier capital board pack immersion'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '🏦',
+    color: '#B91C1C',
+    accent: '#7F1D1D',
+    name: 'Alliance Bank Malaysia — Prompt-a-thon',
+    desc: 'Alliance Bank Malaysia × Microsoft 365 Copilot Prompt-a-thon (7 May 2026). 8 team packs across Consumer Banking, SME, HR, Finance, Risk, Digital, Comms, and Strategy.',
+    url: 'https://steffiyappy.github.io/ABMB7May/',
+    password: 'AB<MB7May',
+    tag: 'Bank Workshop',
+    keywords: 'ABMB Alliance Bank Malaysia prompt-a-thon banking SME HR finance risk digital comms strategy'
   },
   {
     section: 'Customer Demos',
@@ -1380,7 +1413,7 @@ const OTHER_PAGES = [
     name: 'IOI Properties — Copilot Chat',
     desc: 'Customer-specific Copilot Chat demo for IOI Properties Group (Malaysian property developer). Tailored prompts and use cases.',
     url: 'https://steffiyappy.github.io/ioipg-copilotchat/',
-    password: '',
+    password: 'IOIPGCopilotChat',
     tag: 'Customer Demo',
     keywords: 'IOI properties property developer real estate malaysia copilot chat'
   },
@@ -1392,7 +1425,10 @@ const OTHER_PAGES = [
     name: 'Cagamas — Prompt-a-thon & Agent-a-thon',
     desc: 'Cagamas x Microsoft Copilot Challenge Week — Prompt-a-thon (12 May 2026) and Agent-a-thon (13 May 2026) materials.',
     url: 'https://steffiyappy.github.io/Cagamas1213May/',
-    password: '',
+    passwords: [
+      {label: 'Prompt-a-thon (12 May)', value: 'Cagamas12May'},
+      {label: 'Agent-a-thon (13 May)',  value: 'Cagamas13May'}
+    ],
     tag: 'Hackathon',
     keywords: 'cagamas mortgage finance prompt-a-thon agent-a-thon hackathon may 2026 challenge'
   }
@@ -1436,7 +1472,7 @@ function buildOtherGrid(){
   intro.className='detail-scenario';
   intro.style.marginBottom='18px';
   intro.innerHTML='<div class="detail-scenario-title">&#128218; Other Copilot Demo Pages</div>'+
-    '<div class="detail-scenario-text">A library of related M365 Copilot demo sites we have built for other customers and workshops. Each link opens in a new tab — sites may have their own password.</div>';
+    '<div class="detail-scenario-text">A library of related M365 Copilot demo sites we have built for other customers and workshops. Each link opens in a new tab — click the &#128274; password chip on a card to copy the password to your clipboard.</div>';
   root.appendChild(intro);
 
   const sections={};
@@ -1459,32 +1495,46 @@ function buildOtherGrid(){
       card.href=p.url; card.target='_blank'; card.rel='noopener';
       card.style.textDecoration='none';
       card.setAttribute('data-keywords',p.keywords||'');
-      const pwdHTML = p.password
-        ? '<span class="op-card-pwd" title="Click to copy">&#128274; '+p.password+'</span>'
-        : '<span class="op-card-pwd none">&#10003; Open access</span>';
+      // Normalise to an array of {label, value} entries
+      const pwdList = Array.isArray(p.passwords) && p.passwords.length
+        ? p.passwords
+        : (p.password ? [{label:'', value:p.password}] : []);
+      let pwdHTML;
+      if(pwdList.length === 0){
+        pwdHTML = '<span class="op-card-pwd none">&#10003; Open access</span>';
+      } else if(pwdList.length === 1){
+        pwdHTML = '<span class="op-card-pwd" data-pwd="'+escapeAttr(pwdList[0].value)+'" title="Click to copy">&#128274; '+escapeHTML(pwdList[0].value)+'</span>';
+      } else {
+        pwdHTML = '<div class="op-card-pwd-list">'+pwdList.map(pp=>
+          '<span class="op-card-pwd op-card-pwd-multi" data-pwd="'+escapeAttr(pp.value)+'" title="Click to copy">&#128274; '+
+            (pp.label?'<span class="op-card-pwd-label">'+escapeHTML(pp.label)+':</span> ':'')+
+            escapeHTML(pp.value)+
+          '</span>'
+        ).join('')+'</div>';
+      }
       card.innerHTML=
         '<div class="op-card-banner">'+p.icon+'</div>'+
         '<div class="op-card-body">'+
-          '<div class="op-card-tag">'+p.tag+'</div>'+
-          '<div class="op-card-name">'+p.name+'</div>'+
-          '<div class="op-card-desc">'+p.desc+'</div>'+
+          '<div class="op-card-tag">'+escapeHTML(p.tag)+'</div>'+
+          '<div class="op-card-name">'+escapeHTML(p.name)+'</div>'+
+          '<div class="op-card-desc">'+escapeHTML(p.desc)+'</div>'+
           '<div class="op-card-meta">'+pwdHTML+
             '<span class="op-card-link">Open &#8599;</span>'+
           '</div>'+
         '</div>';
-      // Click password chip → copy to clipboard
-      const pwdEl=card.querySelector('.op-card-pwd');
-      if(p.password && pwdEl){
+      // Wire click-to-copy for every password chip on this card
+      card.querySelectorAll('.op-card-pwd[data-pwd]').forEach(pwdEl=>{
         pwdEl.addEventListener('click', function(e){
           e.preventDefault(); e.stopPropagation();
-          navigator.clipboard.writeText(p.password).then(()=>{
+          const val=pwdEl.getAttribute('data-pwd')||'';
+          navigator.clipboard.writeText(val).then(()=>{
             const t=document.getElementById('toast');
-            t.textContent='\u2713 Password copied: '+p.password;
+            t.textContent='\u2713 Password copied: '+val;
             t.classList.add('show');
             setTimeout(()=>{t.classList.remove('show'); t.textContent='\u2713 Prompt copied to clipboard!';},2200);
           });
         });
-      }
+      });
       grid.appendChild(card);
     });
     root.appendChild(grid);
