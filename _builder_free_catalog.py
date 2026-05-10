@@ -680,16 +680,22 @@ def render_agents_free(entry_id, name):
     mapping = _entry_pack_map()
     pack_key = mapping.get(entry_id, 'departments')
     pack = PACKS.get(pack_key) or PACKS['departments']
+    # Per-entry URL overrides — each industry / department gets its own knowledge sources
+    try:
+        from _builder_free_urls import get_urls as _get_entry_urls
+    except Exception:
+        _get_entry_urls = lambda *a, **kw: None
     agents = []
-    for arch in pack:
+    for i, arch in enumerate(pack):
         nm = arch['name_tmpl'].format(name=name)
+        urls = _get_entry_urls(entry_id, i) or arch['urls']
         a = {
             'icon': '🆓',
             'label': nm,
             'name': nm,
             'desc': arch['desc_tmpl'].format(name=name),
             'instructions': arch['instr_tmpl'].format(name=name),
-            'knowledge': [{'url': u, 'note': n} for (u, n) in arch['urls']],
+            'knowledge': [{'url': u, 'note': n} for (u, n) in urls],
             'knowledgeNote': 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
             'queries': [q.format(name=name) for q in arch['queries']],
         }
