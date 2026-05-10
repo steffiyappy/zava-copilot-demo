@@ -419,6 +419,44 @@ try:
 except Exception as _e:
     print(f"(Notebook Demo Guide prepend skipped due to error: {_e})")
 
+# ── Cowork approval gate: append a human-approval sentence to every cowork prompt ──
+# Per Aaron Yue / OneDrive File Intelligence canonical pattern, every Cowork prompt
+# that may send/post external content must end with a human approval gate so the
+# delegation pauses for review before changing state.
+_AG_EN = ' Wait for my approval before sending anything externally or posting to channels.'
+_AG_ID = ' Tunggu persetujuan saya sebelum mengirim apa pun secara eksternal atau memposting ke channel.'
+_AG_BM = ' Tunggu kelulusan saya sebelum menghantar apa-apa secara luaran atau menyiarkan di saluran.'
+_AG_KEYS_EN = ['confirm each task','my approval','approval before','wait for me','wait for my','wait for approval','wait until','before sending','await sign','await my','before externalising','review with me','before externally','do not send','no external comm','hold for review']
+_AG_KEYS_ID = ['konfirmasi','persetujuan saya','tunggu persetujuan','sebelum mengirim','jangan kirim','jangan post','tahan dulu','sebelum eksternal','sebelum menyiarkan','konfirmasikan']
+_AG_KEYS_BM = ['kelulusan saya','tunggu kelulusan','sebelum menghantar','jangan hantar','sebelum siar','luluskan dahulu','sebelum luaran','sahkan dahulu']
+def _has_gate(text, lang):
+    if not text: return True
+    low = text.lower()
+    if lang == 'EN': return any(k in low for k in _AG_KEYS_EN)
+    if lang == 'ID': return any(k in low for k in _AG_KEYS_ID)
+    if lang == 'BM': return any(k in low for k in _AG_KEYS_BM)
+    return True
+def _normalize_cowork(entries):
+    fixed = 0
+    for e in entries:
+        for tool in e.get('prompts') or []:
+            if 'Cowork' not in (tool.get('tool') or ''):
+                continue
+            for arr_key, lang, gate in [('prompts','EN',_AG_EN),('promptsID','ID',_AG_ID),('promptsBM','BM',_AG_BM)]:
+                arr = tool.get(arr_key) or []
+                for p in arr:
+                    if not isinstance(p, dict): continue
+                    body = p.get('prompt') or ''
+                    if body and not _has_gate(body, lang):
+                        p['prompt'] = body.rstrip() + gate
+                        fixed += 1
+    return fixed
+try:
+    _gate_fixed = _normalize_cowork(all_industries) + _normalize_cowork(all_departments)
+    print(f"Cowork approval gate appended to {_gate_fixed} prompts")
+except Exception as _e:
+    print(f"(Cowork approval gate normalise skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')
