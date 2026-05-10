@@ -258,6 +258,28 @@ except ImportError:
 except Exception as _e:
     print(f"(translations merge skipped due to error: {_e})")
 
+# ── Subsidiaries map merge ─────────────────────────────────────────────────
+# Attaches a `subsidiaries` array on each industry record from the customer
+# accounts list. Surfaces real ASEAN subsidiaries on the entry hero (chip
+# strip) and feeds the search haystack so demoers can search by subsidiary
+# name and land on the matching industry.
+try:
+    from subsidiaries_map import SUBSIDIARIES_MAP as _SUBS
+    _subs_count = 0
+    for entry in all_industries:
+        eid = entry.get('id') if isinstance(entry, dict) else None
+        if not eid:
+            continue
+        subs = _SUBS.get(eid)
+        if subs:
+            entry['subsidiaries'] = list(subs)
+            _subs_count += 1
+    print(f"Subsidiaries mapped onto {_subs_count} industries")
+except ImportError:
+    print("(subsidiaries_map.py not found; building without subsidiary chips)")
+except Exception as _e:
+    print(f"(subsidiaries merge skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')

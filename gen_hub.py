@@ -386,6 +386,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .dept-pills-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);width:100%;margin-bottom:2px}
 .dept-pill{padding:5px 11px;background:#FFF3E0;border:1px solid #FED7AA;border-radius:14px;font-size:11px;color:#C2410C;font-weight:700;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:4px}
 .dept-pill:hover{background:#FED7AA;color:#9A3412;transform:translateY(-1px)}
+/* Subsidiaries strip — real ASEAN account-list subsidiaries that map to this entry */
+.subs-strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--border)}
+.subs-strip-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);width:100%;margin-bottom:2px}
+.subs-pill{padding:5px 10px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:14px;font-size:11px;color:#1D4ED8;font-weight:600;display:inline-flex;align-items:center;gap:4px}
 /* Storyboard card */
 .storyboard-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:18px}
 .storyboard-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;display:flex;align-items:center;gap:6px}
@@ -655,6 +659,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="system"] .dept-pill{background:#3A2A0E;color:#FDBA74;border-color:#92400E}
 [data-theme="dark"] .dept-pill:hover,
 [data-theme="system"] .dept-pill:hover{background:#5A3F18;color:#FED7AA}
+[data-theme="dark"] .subs-pill,
+[data-theme="system"] .subs-pill{background:#0F2540;color:#93C5FD;border-color:#1E3A8A}
 [data-theme="dark"] .file-ext.msg,
 [data-theme="system"] .file-ext.msg{background:#3A2A0E;color:#FDBA74}
 [data-theme="dark"] .tool-license.frontier,
@@ -2931,13 +2937,15 @@ function applySearch(q){
     const personaNames=ps.map(p=>(p&&p.name)||'').join(' ');
     const personaTitles=ps.map(p=>(p&&p.title)||'').join(' ');
     const personaAccts=ps.map(p=>(p&&p.acct)||'').join(' ');
+    const subs=Array.isArray(rec.subsidiaries)?rec.subsidiaries.join(' '):'';
     // Raw fields (real customer names: Sunway, Maybank, KPJ etc — present in source data)
     const raw=[
       rec.name||'',rec.id||'',rec.sectorId||'',rec.subsector||'',
-      rec.company||'',rec.companyID||'',
-      rec.tagline||'',rec.taglineID||'',
-      rec.scenario||'',rec.scenarioID||'',
-      personaCos,personaNames,personaTitles,personaAccts
+      rec.company||'',rec.companyID||'',rec.companyBM||'',rec.companyIDEN||'',
+      rec.tagline||'',rec.taglineID||'',rec.taglineBM||'',rec.taglineIDEN||'',
+      rec.scenario||'',rec.scenarioID||'',rec.scenarioBM||'',rec.scenarioIDEN||'',
+      personaCos,personaNames,personaTitles,personaAccts,
+      subs
     ].join(' ');
     // Scrubbed fields (fictional names shown on screen: Apex, Asianova, Pacific etc)
     // _scrubReal swaps real -> fictional; we include the scrubbed form so users can search by what they SEE
@@ -3193,9 +3201,22 @@ function showItem(item,tab,preserveScroll){
       pillsHtml='<div class="dept-pills"><div class="dept-pills-label">'+_uL('🏢 Departments most affected — click to drill down')+'</div>'+pills+'</div>';
     }
   }
+  // Subsidiaries strip — real ASEAN subsidiaries from the customer account list
+  // that map to this industry. Names are scrubbed to fictional brands at display.
+  let subsHtml='';
+  if(Array.isArray(item.subsidiaries) && item.subsidiaries.length){
+    const chips=item.subsidiaries.map(sub=>{
+      const clean=_scrubReal(String(sub||''));
+      if(!clean) return '';
+      return '<span class="subs-pill">'+escapeHTML(clean)+'</span>';
+    }).filter(Boolean).join('');
+    if(chips){
+      subsHtml='<div class="subs-strip"><div class="subs-strip-label">'+_uL('📌 Real ASEAN subsidiaries we mapped here (from your account list)')+'</div>'+chips+'</div>';
+    }
+  }
   document.getElementById('detail-scenario').innerHTML=
     '<div class="detail-scenario-title">'+_uL('📋 Demo Scenario')+'</div>'+
-    '<div class="detail-scenario-text">'+escapeHTML(scenarioText)+'</div>'+pillsHtml;
+    '<div class="detail-scenario-text">'+escapeHTML(scenarioText)+'</div>'+pillsHtml+subsHtml;
   // Wire dept pills
   document.querySelectorAll('#detail-scenario .dept-pill').forEach(el=>{
     el.onclick=()=>{
