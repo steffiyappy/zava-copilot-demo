@@ -598,11 +598,12 @@ def _entry_pack_map():
     banking = [
         'banking', 'banking-malaysia', 'banking-indonesia', 'investment-banking',
         'islamic-banking', 'cooperative-banking', 'mortgage-finance',
-        'cross-border-remittance', 'fintech-payments',
+        'cross-border-remittance', 'fintech-payments', 'commercial-banking',
+        'financial-regulator',
     ]
     insurance = [
-        'insurance', 'takaful-malaysia', 'insurance-indonesia',
-        'reinsurance', 'health-insurance',
+        'insurance', 'takaful-malaysia', 'insurance-indonesia', 'takaful',
+        'reinsurance', 'health-insurance', 'general-insurance', 'life-insurance',
     ]
     healthcare = [
         'hospital-network', 'pharmaceutical', 'medical-devices',
@@ -610,11 +611,12 @@ def _entry_pack_map():
     ]
     energy = [
         'og-upstream', 'og-downstream', 'renewable-energy',
-        'power-utilities', 'mining-coal', 'rare-earth',
+        'power-utilities', 'mining-coal', 'rare-earth', 'coal-mining',
     ]
     manufacturing = [
         'industrial-manufacturing', 'food-fmcg', 'rubber-gloves',
-        'auto-tyres', 'semiconductor', 'electronics-mfg',
+        'auto-tyres', 'semiconductor', 'electronics-mfg', 'automotive',
+        'construction',
     ]
     agri = [
         'plantation', 'agritech', 'fisheries-aquaculture',
@@ -624,18 +626,19 @@ def _entry_pack_map():
     ]
     hospitality = [
         'hospitality', 'property-development', 'reit-realestate',
+        'hotel-resort', 'property-reit',
     ]
     telco_tech = [
         'telco', 'media-entertainment', 'ecommerce-superapp',
-        'edtech-saas', 'data-center-cloud',
+        'edtech-saas', 'data-center-cloud', 'bpo-services',
     ]
     transport = [
         'aviation-airlines', 'maritime-shipping', 'logistics-courier',
-        'rail-mass-transit',
+        'rail-mass-transit', 'logistics-3pl', 'aviation-airports',
     ]
     public_sector = [
         'government-agency', 'sovereign-wealth', 'state-owned-conglomerate',
-        'general',
+        'general', 'glc-investment', 'diversified-conglomerate',
     ]
     edu = [
         'education',
@@ -683,21 +686,28 @@ def render_agents_free(entry_id, name):
     # Per-entry URL overrides — each industry / department gets its own knowledge sources
     try:
         from _builder_free_urls import get_urls as _get_entry_urls
+        from _builder_free_urls import get_agent_meta as _get_entry_meta
     except Exception:
         _get_entry_urls = lambda *a, **kw: None
+        _get_entry_meta = lambda *a, **kw: None
     agents = []
     for i, arch in enumerate(pack):
-        nm = arch['name_tmpl'].format(name=name)
+        meta = _get_entry_meta(entry_id, i) or {}
+        name_tmpl = meta.get('name_tmpl', arch['name_tmpl'])
+        desc_tmpl = meta.get('desc_tmpl', arch['desc_tmpl'])
+        instr_tmpl = meta.get('instr_tmpl', arch['instr_tmpl'])
+        queries_tmpl = meta.get('queries', arch['queries'])
+        nm = name_tmpl.format(name=name)
         urls = _get_entry_urls(entry_id, i) or arch['urls']
         a = {
             'icon': '🆓',
             'label': nm,
             'name': nm,
-            'desc': arch['desc_tmpl'].format(name=name),
-            'instructions': arch['instr_tmpl'].format(name=name),
+            'desc': desc_tmpl.format(name=name),
+            'instructions': instr_tmpl.format(name=name),
             'knowledge': [{'url': u, 'note': n} for (u, n) in urls],
             'knowledgeNote': 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
-            'queries': [q.format(name=name) for q in arch['queries']],
+            'queries': [q.format(name=name) for q in queries_tmpl],
         }
         agents.append(a)
     return agents

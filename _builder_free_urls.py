@@ -198,7 +198,7 @@ ENTRY_URLS = {
             ('https://www.oecd.org/finance/insurance/', 'OECD insurance statistics'),
         ],
     ],
-    'takaful-malaysia': [
+    'takaful': [
         [
             ('https://www.bnm.gov.my/-/operational-framework-for-takaful', 'BNM Operational Framework for Takaful'),
             ('https://www.ojk.go.id/id/kanal/syariah/data-dan-statistik/asuransi-syariah/Default.aspx', 'OJK Asuransi Syariah statistics'),
@@ -406,7 +406,7 @@ ENTRY_URLS = {
             ('https://www.spglobal.com/commodityinsights/en/our-methodology/price-assessments/electric-power', 'S&P Platts electric-power price assessments'),
         ],
     ],
-    'mining-coal': [
+    'coal-mining': [
         [
             ('https://www.minerals.gov.my/', 'JMG Malaysia mineral/coal regulator'),
             ('https://www.minerba.esdm.go.id/', 'KemESDM Indonesia mineral & coal directorate'),
@@ -652,7 +652,7 @@ ENTRY_URLS = {
     ],
 
     # ── Hospitality & Property ───────────────────────────────────────────
-    'hospitality': [
+    'hotel-resort': [
         [
             ('https://www.motac.gov.my/en/announcements/news', 'MOTAC Malaysia tourism & culture announcements'),
             ('https://www.kemenparekraf.go.id/berita', 'Kemenparekraf Indonesia tourism & creative news'),
@@ -686,7 +686,7 @@ ENTRY_URLS = {
             ('https://www.colliers.com/en-my/research', 'Colliers Asia property research'),
         ],
     ],
-    'reit-realestate': [
+    'property-reit': [
         [
             ('https://www.sc.com.my/regulation/guidelines/reits', 'SC Malaysia REIT Guidelines'),
             ('https://www.ojk.go.id/id/kanal/pasar-modal/Pages/dire.aspx', 'OJK DIRE (Indonesian REIT) regulations'),
@@ -826,7 +826,7 @@ ENTRY_URLS = {
             ('https://www.clarksons.com/research/', 'Clarksons shipping intelligence'),
         ],
     ],
-    'logistics-courier': [
+    'logistics-3pl': [
         [
             ('https://www.customs.gov.my/en/Pages/index.aspx', 'Royal Malaysian Customs (RMCD)'),
             ('https://www.beacukai.go.id/', 'Bea Cukai Indonesia customs'),
@@ -1153,6 +1153,109 @@ ENTRY_URLS = {
             ('https://www.marsh.com/us/insights/research.html', 'Marsh Asia Pacific risk surveys'),
         ],
     ],
+    # ── Other real industries (added to align with actual entry IDs) ──────
+    'bpo-services': [
+        [
+            ('https://outsourcingmalaysia.com.my/', 'Outsourcing Malaysia industry association'),
+            ('https://www.iaoa.id/', 'Indonesian Association of Outsourcing'),
+            ('https://www.ida.gov.sg/', 'IMDA Singapore (services accreditation)'),
+        ],
+        [
+            ('https://www.gartner.com/en/insights/business-process-outsourcing', 'Gartner BPO insights'),
+            ('https://everestgrp.com/research/', 'Everest Group BPO research'),
+            ('https://nasscom.in/', 'NASSCOM India (peer industry body)'),
+        ],
+        [
+            ('https://www.weforum.org/agenda/future-of-work/', 'WEF Future of Work'),
+            ('https://www.deloitte.com/global/en/services/consulting/perspectives/global-shared-services.html', 'Deloitte Global Shared Services Survey'),
+            ('https://www.kearney.com/service/digital/article/-/insights/global-services-location-index', 'Kearney GSLI BPO ranking'),
+        ],
+    ],
+    'diversified-conglomerate': [
+        [
+            ('https://www.mof.gov.my/portal/en/announcement/news', 'MOF Inc Malaysia GLC announcements'),
+            ('https://www.bumn.go.id/page/berita/all', 'Kementerian BUMN Indonesia state-owned news'),
+            ('https://www.mof.gov.sg/news-publications', 'MOF Singapore Temasek-linked news'),
+        ],
+        [
+            ('https://www.bursamalaysia.com/market_information/announcements/company_announcement', 'Bursa GLC announcements'),
+            ('https://www.idx.co.id/id/perusahaan-tercatat/news/', 'IDX BUMN listed-companies'),
+            ('https://www.sgx.com/securities/company-announcements', 'SGX listed Temasek-portfolio cos'),
+        ],
+        [
+            ('https://www.oecd.org/corporate/soes/', 'OECD State-Owned Enterprise Guidelines'),
+            ('https://www.ifc.org/en/insights-reports/2025/state-owned-enterprises', 'IFC State-Owned Enterprises insights'),
+            ('https://www.worldbank.org/en/topic/governance/brief/corporate-governance-state-owned-enterprises', 'World Bank SOE governance'),
+        ],
+    ],
+    'glc-investment': [
+        [
+            ('https://www.pnb.com.my/announcement.html', 'PNB Malaysia announcements'),
+            ('https://www.ina.go.id/news', 'INA Indonesia Investment Authority news'),
+            ('https://www.khazanah.com.my/news-press-releases/', 'Khazanah Nasional press releases'),
+        ],
+        [
+            ('https://www.temasek.com.sg/en/news-and-resources', 'Temasek news & resources'),
+            ('https://www.gic.com.sg/en/newsroom/', 'GIC Singapore newsroom'),
+            ('https://www.adia.ae/en/news-publications', 'ADIA Abu Dhabi news (peer)'),
+        ],
+        [
+            ('https://www.swfinstitute.org/research/sovereign-wealth-fund', 'SWF Institute sovereign-wealth fund rankings'),
+            ('https://www.ifswf.org/publications-page', 'IFSWF International Forum of SWFs publications'),
+            ('https://www.worldbank.org/en/topic/sovereign-wealth-funds', 'World Bank SWF research'),
+        ],
+    ],
+    'construction': [
+        [
+            ('https://www.cidb.gov.my/en/announcement/', 'CIDB Malaysia announcements'),
+            ('https://www.pu.go.id/halaman/peraturan-jasa-konstruksi', 'Kementerian PUPR construction regulations'),
+            ('https://www1.bca.gov.sg/about-us/news-and-publications', 'BCA Singapore news + publications'),
+        ],
+        [
+            ('https://mbam.org.my/news/', 'Master Builders Association Malaysia news'),
+            ('https://aki.or.id/berita-aki/', 'AKI Indonesia construction association news'),
+            ('https://www.scal.com.sg/news/', 'SCAL Singapore Contractors Association news'),
+        ],
+        [
+            ('https://www.gibo.com/en/insights', 'Global Infrastructure Outlook insights'),
+            ('https://www.mckinsey.com/industries/private-capital/our-insights', 'McKinsey infrastructure insights'),
+            ('https://www.adb.org/what-we-do/sectors/transport/main', 'ADB transport / infrastructure'),
+        ],
+    ],
+    'aviation-airports': [
+        [
+            ('https://www.mavcom.my/en/industry/airport-infrastructure/', 'MAVCOM Malaysia airport regulation'),
+            ('https://hubud.dephub.go.id/', 'Ditjen Perhubungan Udara Indonesia'),
+            ('https://www.caas.gov.sg/who-we-are/newsroom/', 'CAAS Singapore newsroom'),
+        ],
+        [
+            ('https://www.malaysiaairports.com.my/media-centre', 'Malaysia Airports press releases'),
+            ('https://ap2.co.id/news/', 'Angkasa Pura II news'),
+            ('https://www.changiairport.com/corporate/media-centre.html', 'Changi Airport corporate news'),
+        ],
+        [
+            ('https://www.aci.aero/insights/', 'Airports Council International insights'),
+            ('https://www.iata.org/en/publications/economics/', 'IATA economic reports'),
+            ('https://www.icao.int/sustainability/Pages/default.aspx', 'ICAO sustainability'),
+        ],
+    ],
+    'automotive': [
+        [
+            ('https://www.mai.org.my/', 'Malaysia Automotive Association industry news'),
+            ('https://www.gaikindo.or.id/category/news/', 'GAIKINDO Indonesia automotive association'),
+            ('https://www.maa.org.my/maa/news.html', 'Malaysia Automotive Association statistics'),
+        ],
+        [
+            ('https://www.proton.com/news', 'Proton newsroom'),
+            ('https://www.astra-otoparts.com/news', 'Astra Otoparts Indonesia news'),
+            ('https://www.mida.gov.my/industries/manufacturing/automotive-industry/', 'MIDA automotive industry overview'),
+        ],
+        [
+            ('https://www.oica.net/category/production-statistics/', 'OICA global automotive production statistics'),
+            ('https://www.mckinsey.com/industries/automotive-and-assembly/our-insights', 'McKinsey automotive insights'),
+            ('https://www.frost.com/research/automotive-and-transportation/', 'Frost & Sullivan automotive research'),
+        ],
+    ],
 }
 
 # Sanity-check: every override must be a list of 3 archetype URL groups,
@@ -1166,6 +1269,159 @@ for _eid, _groups in ENTRY_URLS.items():
         for _t in _arch:
             assert isinstance(_t, tuple) and len(_t) == 2, f'{_eid}[{_i}]: bad tuple {_t!r}'
             assert _t[0].startswith('http'), f'{_eid}[{_i}]: bad URL {_t[0]!r}'
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Per-entry full-agent metadata overrides. Used when the pack archetype's
+# name/desc/instructions/queries don't semantically fit an entry — even if
+# the URLs DO match the entry's domain. Without this override, you get a
+# free-tier agent named "Government Policy Watch" pointing at Bursa+IDX+SGX
+# disclosure URLs, which is incoherent. ENTRY_AGENT_META keeps name+desc+
+# instr+queries aligned with the per-entry URL bucket.
+#
+# Shape: ENTRY_AGENT_META[entry_id] = list of 3 dicts (one per archetype)
+# Each dict optionally provides:
+#   name_tmpl, desc_tmpl, instr_tmpl  — strings with {name} placeholder
+#   queries — list of 3 strings with {name} placeholder
+# Any field not provided falls back to the pack template's value.
+ENTRY_AGENT_META = {
+    'general': [
+        {
+            'name_tmpl': 'ASEAN Disclosure Watch ({name})',
+            'desc_tmpl': 'Tracks Bursa Malaysia + IDX Indonesia + SGX Singapore listed-co announcements relevant to the {name} group.',
+            'instr_tmpl': 'You are a cross-industry disclosure analyst for the {name} group. Source ONLY from the Bursa / IDX / SGX announcement portals in knowledge. Cite filing date + ticker + filing type. Output: weekly cross-industry disclosure log with implications for {name}.',
+            'queries': [
+                'List the 10 most material listed-co announcements on Bursa, IDX, and SGX in the last 7 days for sectors {name} operates in.',
+                'Filter by category (earnings / M&A / restructuring / dividend) — flag the 5 most relevant to {name} portfolio.',
+                'Draft a weekly cross-industry disclosure log with {name} CFO implications for each entry.',
+            ],
+        },
+        {
+            'name_tmpl': 'Governance & Stewardship Watch ({name})',
+            'desc_tmpl': 'Tracks MSWG + OJK Corporate Governance + SIAS investor stewardship updates for the {name} group.',
+            'instr_tmpl': 'You are a corporate-governance analyst for the {name} group. Source ONLY from the MSWG / OJK CG / SIAS URLs in knowledge. Cite source + date. Output: monthly governance digest with red-flag list for {name} board.',
+            'queries': [
+                'Summarise the last 30 days of MSWG, OJK CG, and SIAS publications relevant to listed conglomerates.',
+                'List the governance red flags raised at AGMs of {name} peer groups.',
+                'Draft a monthly governance digest with proposed actions for the {name} CorpSec lead.',
+            ],
+        },
+        {
+            'name_tmpl': 'Macro Brief Builder ({name})',
+            'desc_tmpl': 'Builds macro briefs from IMF + ADB + World Bank ASEAN research for the {name} CFO.',
+            'instr_tmpl': 'You are a macro-research analyst for the {name} group. Source ONLY from the IMF / ADB / World Bank URLs in knowledge. Cite report + date + chart. Output: monthly macro brief tagged by impact area for {name} divisions.',
+            'queries': [
+                'Pull the latest IMF Article IV, ADB AMRO, and World Bank ASEAN updates for Malaysia, Indonesia, and Singapore.',
+                'Identify the macro themes most material to {name} divisional mix (banking / energy / consumer / property).',
+                'Draft a monthly macro brief with base / bear / bull scenarios for the {name} group strategy.',
+            ],
+        },
+    ],
+    'glc-investment': [
+        {
+            'name_tmpl': 'Sovereign Wealth Mandate Watch ({name})',
+            'desc_tmpl': 'Tracks PNB + INA + Khazanah official disclosures on mandate, returns, and investments.',
+            'instr_tmpl': 'You are a SWF mandate analyst for {name}. Source ONLY from the PNB / INA / Khazanah / Temasek URLs in knowledge. Cite filing + date. Output: monthly mandate-watch summarising peer SWF positioning vs {name} thesis.',
+            'queries': [
+                'Summarise the last 90 days of PNB, INA, and Khazanah official disclosures (returns / mandate / investments).',
+                'Identify the 5 largest peer SWF investments and the rationale stated publicly.',
+                'Draft a monthly mandate-watch summarising peer SWF positioning vs {name} portfolio thesis.',
+            ],
+        },
+        {
+            'name_tmpl': 'Peer SWF News Tracker ({name})',
+            'desc_tmpl': 'Pulls Temasek + GIC + ADIA newsroom articles relevant to {name} peer benchmarking.',
+            'instr_tmpl': 'You are a peer SWF analyst for {name}. Source ONLY from the Temasek / GIC / ADIA newsroom URLs. Cite article date + headline. Output: weekly peer-pulse log with deal counts + AUM moves.',
+            'queries': [
+                'List Temasek, GIC, and ADIA news headlines in the last 30 days, tagged by deal type.',
+                'Identify the 3 deals most relevant to {name} sector mandates.',
+                'Draft a weekly peer-pulse log with deal counts + AUM moves vs {name}.',
+            ],
+        },
+        {
+            'name_tmpl': 'SWF Research Hub ({name})',
+            'desc_tmpl': 'Tracks SWF Institute + IFSWF + World Bank SWF research relevant to {name}.',
+            'instr_tmpl': 'You are a SWF research analyst for {name}. Source ONLY from the SWF Institute / IFSWF / World Bank URLs. Cite publication + date. Output: monthly research digest with adoption priorities for {name}.',
+            'queries': [
+                'Summarise SWF Institute, IFSWF, and World Bank SWF publications in the last 90 days.',
+                'Identify the 3 governance / disclosure practices most relevant to {name} mandate.',
+                'Draft a monthly research digest with adoption priorities for {name} board.',
+            ],
+        },
+    ],
+    'diversified-conglomerate': [
+        {
+            'name_tmpl': 'Conglomerate Mandate Watch ({name})',
+            'desc_tmpl': 'Tracks MOF Inc + Kementerian BUMN + MOF Singapore announcements relevant to {name}.',
+            'instr_tmpl': 'You are a conglomerate-mandate analyst for {name}. Source ONLY from the MOF Inc / BUMN / MOF SG URLs. Cite source + date. Output: weekly mandate-watch with policy implications for {name}.',
+            'queries': [
+                'Summarise the last 30 days of MOF Inc, Kementerian BUMN, and MOF SG announcements.',
+                'Identify the policy changes most material to {name} divisions.',
+                'Draft a weekly mandate-watch with policy implications for {name}.',
+            ],
+        },
+        {
+            'name_tmpl': 'Listed-Group Disclosure Tracker ({name})',
+            'desc_tmpl': 'Tracks Bursa GLC + IDX BUMN + SGX Temasek-portfolio listed-co disclosures relevant to {name}.',
+            'instr_tmpl': 'You are a listed-group disclosure tracker for {name}. Source ONLY from the Bursa / IDX / SGX disclosure portals. Cite filing date + ticker. Output: weekly disclosure log with peer implications for {name}.',
+            'queries': [
+                'List the 10 most material conglomerate disclosures on Bursa, IDX, and SGX in the last 7 days.',
+                'Identify the peer disclosures most relevant to {name} divisions.',
+                'Draft a weekly disclosure log with peer implications for {name}.',
+            ],
+        },
+        {
+            'name_tmpl': 'OECD Group Governance Hub ({name})',
+            'desc_tmpl': 'Tracks OECD SOE + IFC + World Bank governance research relevant to {name}.',
+            'instr_tmpl': 'You are a group-governance analyst for {name}. Source ONLY from the OECD / IFC / World Bank URLs. Cite report + date. Output: monthly governance digest with adoption priorities for {name} board.',
+            'queries': [
+                'Summarise OECD SOE, IFC, and World Bank governance research in the last 90 days.',
+                'Identify the 3 practices most relevant to {name} mandate.',
+                'Draft a monthly governance digest with adoption priorities for {name} board.',
+            ],
+        },
+    ],
+    'education': [
+        {
+            'name_tmpl': 'Education Policy Watch ({name})',
+            'desc_tmpl': 'Tracks MOE Malaysia + Kemendikbud + MOE Singapore policy announcements for {name}.',
+            'instr_tmpl': 'You are an education-policy analyst for {name}. Source ONLY from the MOE MY / Kemendikbud / MOE SG URLs. Cite policy + date. Output: weekly policy digest tagged by impact area for {name}.',
+            'queries': [
+                'Summarise the last 30 days of MOE MY, Kemendikbud, and MOE SG announcements relevant to {name}.',
+                'Identify curriculum / accreditation / funding changes affecting {name}.',
+                'Draft a weekly policy digest tagged by impact area for {name} academic council.',
+            ],
+        },
+        {
+            'name_tmpl': 'Quality & Accreditation Watch ({name})',
+            'desc_tmpl': 'Tracks MQA + BAN-PT + SkillsFuture accreditation updates relevant to {name}.',
+            'instr_tmpl': 'You are an accreditation analyst for {name}. Source ONLY from the MQA / BAN-PT / SkillsFuture URLs. Cite standard + revision + date. Output: monthly accreditation digest with renewal milestones for {name}.',
+            'queries': [
+                'List the latest MQA, BAN-PT, and SkillsFuture accreditation revisions affecting {name}.',
+                'Flag programmes nearing renewal or with new compliance gaps for {name}.',
+                'Draft a monthly accreditation digest with renewal milestones for {name} QA committee.',
+            ],
+        },
+        {
+            'name_tmpl': 'Higher-Ed Research Hub ({name})',
+            'desc_tmpl': 'Pulls UNESCO + OECD Education + World Bank EdTech research relevant to {name}.',
+            'instr_tmpl': 'You are an education-research analyst for {name}. Source ONLY from UNESCO / OECD / WB URLs. Cite report + date. Output: monthly research digest with adoption priorities for {name}.',
+            'queries': [
+                'Summarise UNESCO, OECD Education, and WB EdTech publications in the last 90 days.',
+                'Identify the 3 practices most relevant to {name} programmes.',
+                'Draft a monthly research digest with adoption priorities for {name} VC office.',
+            ],
+        },
+    ],
+}
+
+
+def get_agent_meta(entry_id, archetype_index):
+    """Return entry-specific agent metadata override (or None if no override)."""
+    metas = ENTRY_AGENT_META.get(entry_id)
+    if not metas or archetype_index < 0 or archetype_index >= len(metas):
+        return None
+    return metas[archetype_index]
 
 
 def get_urls(entry_id, archetype_index):
