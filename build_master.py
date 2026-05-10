@@ -49,8 +49,8 @@ WHATS_NEW = [
     {
         "id": "wn-doc-agents",
         "title": "📝🎯📊 Word / PPT / Excel Agents \u2014 dual tier",
-        "badge": "Free Chat tier + M365 Copilot",
-        "summary": "Type ONE prompt in m365.cloud.microsoft/chat and Copilot returns a fully drafted .docx / .pptx / .xlsx without you opening Word/PPT/Excel first. Now available in BOTH the free Copilot Chat tier (Sasha account) and with an M365 Copilot license (MOD Admin account).",
+        "badge": "Free Chat tier + Microsoft 365 Copilot",
+        "summary": "Type ONE prompt in m365.cloud.microsoft/chat and Copilot returns a fully drafted .docx / .pptx / .xlsx without you opening Word/PPT/Excel first. Now available in BOTH the free Copilot Chat tier (Sasha account) and with an Microsoft 365 Copilot license (MOD Admin account).",
         "tip": "Try in the free tier: 'Build a 5-slide investor narrative deck for the Zava FY2025 Q4 results...'",
         "license": "ANY_LIC",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/copilot-in-word-new-capabilities-for-document-workflows/4508974"
@@ -58,8 +58,8 @@ WHATS_NEW = [
     {
         "id": "wn-builder",
         "title": "🏗 Agent Builder \u2014 dual tier",
-        "badge": "Free Chat tier + M365 Copilot",
-        "summary": "Create custom agents inside Copilot Chat \u2014 NOT Copilot Studio. Describe \u2192 Configure (knowledge, instructions, starter prompts) \u2192 Test \u2192 Create + share. Now usable in both the free Copilot Chat tier and with an M365 Copilot license.",
+        "badge": "Free Chat tier + Microsoft 365 Copilot",
+        "summary": "Create custom agents inside Copilot Chat \u2014 NOT Copilot Studio. Describe \u2192 Configure (knowledge, instructions, starter prompts) \u2192 Test \u2192 Create + share. Now usable in both the free Copilot Chat tier and with an Microsoft 365 Copilot license.",
         "tip": "m365.cloud.microsoft/chat > Agents > + Create an agent. Try building a 'Group CFO Briefing Bot' grounded in your finance reference files.",
         "license": "ANY_LIC",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/whats-new-in-microsoft-365-copilot--april-2026/4510935"

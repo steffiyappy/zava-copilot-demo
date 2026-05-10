@@ -296,7 +296,7 @@ def s2_pillars(doc):
             'commitments': [
                 'Group-wide energy-transition capex of MYR 2.4 billion through FY2027',
                 'Solar and storage at all manufacturing and refinery sites by FY2027 (15-year PPAs preferred)',
-                'M365 Copilot Pro+ deployment to 12,000 knowledge workers by mid-FY2026',
+                'Microsoft 365 Copilot Pro+ deployment to 12,000 knowledge workers by mid-FY2026',
                 'Sector-specific AI platforms: BPO Cognitive Workbench, Pharma Regulatory Co-pilot, FS Risk Brain, Healthcare Diagnostic Assistant',
                 'Climate-linked compensation: 15% of senior-executive PSU vest tied to Scope 1+2 trajectory',
             ],

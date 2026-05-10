@@ -125,7 +125,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan perundangan selari kepada Cowork, dan bina ejen Legal Intelligence dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan perundangan selari kepada Cowork, dan bina ejen Legal Intelligence dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -148,7 +148,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel legal prep to Cowork, and build a Legal Intelligence agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel legal prep to Cowork, and build a Legal Intelligence agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -173,7 +173,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan risiko selari kepada Cowork, dan bina ejen Risk Intelligence dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan risiko selari kepada Cowork, dan bina ejen Risk Intelligence dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -196,7 +196,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel risk prep to Cowork, and build a Risk Intelligence agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel risk prep to Cowork, and build a Risk Intelligence agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -221,7 +221,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan strategi selari kepada Cowork, dan bina ejen Strategy Command Centre dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan strategi selari kepada Cowork, dan bina ejen Strategy Command Centre dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -244,7 +244,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel strategy prep to Cowork, and build a Strategy Command Centre agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel strategy prep to Cowork, and build a Strategy Command Centre agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -269,7 +269,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala Suara Jenama",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava Brand & Campaign War Room dalam M365 Copilot Chat untuk pasukan."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava Brand & Campaign War Room dalam Microsoft 365 Copilot Chat untuk pasukan."
         }
       ]
     },
@@ -292,7 +292,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale Brand Voice",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Brand & Campaign War Room in M365 Copilot Chat for the team."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Brand & Campaign War Room in Microsoft 365 Copilot Chat for the team."
         }
       ]
     }
@@ -317,7 +317,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala Penggunaan",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava Digital Resilience Agent dalam M365 Copilot Chat untuk pasukan."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava Digital Resilience Agent dalam Microsoft 365 Copilot Chat untuk pasukan."
         }
       ]
     },
@@ -340,7 +340,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale Adoption",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Digital Resilience Agent in M365 Copilot Chat for the team."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Digital Resilience Agent in Microsoft 365 Copilot Chat for the team."
         }
       ]
     }
@@ -365,7 +365,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala Asurans",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava ESG Assurance Agent dalam M365 Copilot Chat untuk pasukan."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava ESG Assurance Agent dalam Microsoft 365 Copilot Chat untuk pasukan."
         }
       ]
     },
@@ -388,7 +388,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale Assurance",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava ESG Assurance Agent in M365 Copilot Chat for the team."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava ESG Assurance Agent in Microsoft 365 Copilot Chat for the team."
         }
       ]
     }
@@ -413,7 +413,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala Kesinambungan",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava Operations Continuity Agent dalam M365 Copilot Chat untuk pasukan."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava Operations Continuity Agent dalam Microsoft 365 Copilot Chat untuk pasukan."
         }
       ]
     },
@@ -436,7 +436,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale Continuity",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Operations Continuity Agent in M365 Copilot Chat for the team."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Operations Continuity Agent in Microsoft 365 Copilot Chat for the team."
         }
       ]
     }
@@ -461,7 +461,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala Sekretariat",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava Board Governance Agent dalam M365 Copilot Chat untuk pasukan."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina Zava Board Governance Agent dalam Microsoft 365 Copilot Chat untuk pasukan."
         }
       ]
     },
@@ -484,7 +484,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale Secretariat",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Board Governance Agent in M365 Copilot Chat for the team."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Board Governance Agent in Microsoft 365 Copilot Chat for the team."
         }
       ]
     }
@@ -509,7 +509,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaraskan & Luaskan Pendedahan",
-          "summary": "Tukar Teams Recap menjadi minit formal, agihkan persediaan selari kepada Cowork, dan bina Zava IR Disclosure Agent dalam M365 Copilot Chat untuk pasukan."
+          "summary": "Tukar Teams Recap menjadi minit formal, agihkan persediaan selari kepada Cowork, dan bina Zava IR Disclosure Agent dalam Microsoft 365 Copilot Chat untuk pasukan."
         }
       ]
     },
@@ -532,7 +532,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale Disclosure",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava IR Disclosure Agent in M365 Copilot Chat for the team."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava IR Disclosure Agent in Microsoft 365 Copilot Chat for the team."
         }
       ]
     }
@@ -557,7 +557,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaraskan & Luaskan Pematuhan",
-          "summary": "Tukar Teams Recap menjadi minit formal, agihkan persediaan selari kepada Cowork, dan bina Zava Procurement Compliance Agent dalam M365 Copilot Chat untuk pasukan."
+          "summary": "Tukar Teams Recap menjadi minit formal, agihkan persediaan selari kepada Cowork, dan bina Zava Procurement Compliance Agent dalam Microsoft 365 Copilot Chat untuk pasukan."
         }
       ]
     },
@@ -580,7 +580,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale Compliance",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Procurement Compliance Agent in M365 Copilot Chat for the team."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build the Zava Procurement Compliance Agent in Microsoft 365 Copilot Chat for the team."
         }
       ]
     }
@@ -653,7 +653,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaraskan & Luaskan",
-          "summary": "Tukar Teams Recap menjadi minit formal, agihkan persediaan selari kepada Cowork, dan bina agent Credit Risk War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap menjadi minit formal, agihkan persediaan selari kepada Cowork, dan bina agent Credit Risk War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -676,7 +676,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a Credit Risk War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a Credit Risk War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -701,7 +701,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaraskan & Luaskan",
-          "summary": "Tukar Teams Recap menjadi minit formal, agihkan persediaan selari kepada Cowork, dan bina agent IFSA War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap menjadi minit formal, agihkan persediaan selari kepada Cowork, dan bina agent IFSA War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -724,7 +724,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build an IFSA War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build an IFSA War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -1421,7 +1421,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Penyelarasan & Skala",
-          "summary": "Tukar Teams Recap kepada minit urus niaga berstruktur, agihkan persediaan selari kepada Cowork, dan bina agen Deal Intelligence dalam M365 Copilot Chat untuk pasukan IB."
+          "summary": "Tukar Teams Recap kepada minit urus niaga berstruktur, agihkan persediaan selari kepada Cowork, dan bina agen Deal Intelligence dalam Microsoft 365 Copilot Chat untuk pasukan IB."
         }
       ]
     },
@@ -1444,7 +1444,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into structured deal minutes, delegate parallel prep to Cowork, and build a Deal Intelligence agent in M365 Copilot Chat for the IB team."
+          "summary": "Convert Teams Recap into structured deal minutes, delegate parallel prep to Cowork, and build a Deal Intelligence agent in Microsoft 365 Copilot Chat for the IB team."
         }
       ]
     }
@@ -1469,7 +1469,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Ubah Teams Recap menjadi minit rasmi semakan tuntutan, agihkan tindakan selari kepada Cowork, dan bina agent Claims Intelligence dalam M365 Copilot Chat untuk pasukan kepimpinan insurans."
+          "summary": "Ubah Teams Recap menjadi minit rasmi semakan tuntutan, agihkan tindakan selari kepada Cowork, dan bina agent Claims Intelligence dalam Microsoft 365 Copilot Chat untuk pasukan kepimpinan insurans."
         }
       ]
     },
@@ -1492,7 +1492,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordination & Scaling",
-          "summary": "Convert Teams Recap into formal claims review minutes, delegate parallel actions to Cowork, and build a Claims Intelligence agent in M365 Copilot Chat for the insurance leadership team."
+          "summary": "Convert Teams Recap into formal claims review minutes, delegate parallel actions to Cowork, and build a Claims Intelligence agent in Microsoft 365 Copilot Chat for the insurance leadership team."
         }
       ]
     }
@@ -1517,7 +1517,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Ubah Teams Recap menjadi minit rasmi, agihkan persediaan aktuari dan pengedaran secara selari kepada Cowork, dan bina agent Sentosa Life Intelligence Hub dalam M365 Copilot Chat."
+          "summary": "Ubah Teams Recap menjadi minit rasmi, agihkan persediaan aktuari dan pengedaran secara selari kepada Cowork, dan bina agent Sentosa Life Intelligence Hub dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -1540,7 +1540,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordination & Scaling",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel actuarial and distribution preparation to Cowork, and build the Sentosa Life Intelligence Hub agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel actuarial and distribution preparation to Cowork, and build the Sentosa Life Intelligence Hub agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -1565,7 +1565,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Ubah Teams Recap menjadi minit rasmi tadbir urus takaful, agihkan persediaan Pacifica Reserve secara selari kepada Cowork, dan bina agent Barakah Takaful Intelligence dalam M365 Copilot Chat untuk pasukan kepimpinan."
+          "summary": "Ubah Teams Recap menjadi minit rasmi tadbir urus takaful, agihkan persediaan Pacifica Reserve secara selari kepada Cowork, dan bina agent Barakah Takaful Intelligence dalam Microsoft 365 Copilot Chat untuk pasukan kepimpinan."
         }
       ]
     },
@@ -1588,7 +1588,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordination & Scaling",
-          "summary": "Convert Teams Recap into formal takaful governance minutes, delegate parallel Asianova FSA preparation to Cowork, and build a Barakah Takaful Intelligence agent in M365 Copilot Chat for the leadership team."
+          "summary": "Convert Teams Recap into formal takaful governance minutes, delegate parallel Asianova FSA preparation to Cowork, and build a Barakah Takaful Intelligence agent in Microsoft 365 Copilot Chat for the leadership team."
         }
       ]
     }
@@ -1901,7 +1901,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Ubah Teams Recap menjadi minit rasmi, agihkan persediaan selari kepada Cowork, dan bina agent Plantation War Room dalam M365 Copilot Chat."
+          "summary": "Ubah Teams Recap menjadi minit rasmi, agihkan persediaan selari kepada Cowork, dan bina agent Plantation War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -1924,7 +1924,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordination & Scaling",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel preparation to Cowork, and build a Plantation War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel preparation to Cowork, and build a Plantation War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -1949,7 +1949,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skalakan",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina agent BPO War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina agent BPO War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -1972,7 +1972,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a BPO War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a BPO War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -1997,7 +1997,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skalakan",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina agent Telco War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina agent Telco War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -2020,7 +2020,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a Telco War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a Telco War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -2045,7 +2045,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skalakan",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina agent Jawatankuasa Modal dalam M365 Copilot Chat untuk eksekutif."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, dan bina agent Jawatankuasa Modal dalam Microsoft 365 Copilot Chat untuk eksekutif."
         }
       ]
     },
@@ -2068,7 +2068,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a Capital Committee agent in M365 Copilot Chat for executives."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, and build a Capital Committee agent in Microsoft 365 Copilot Chat for executives."
         }
       ]
     }
@@ -2509,7 +2509,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skalakan",
-          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, jana artifak Word/PPT/Excel melalui Chat agents, dan bina agent Project War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit rasmi, agihkan persediaan selari kepada Cowork, jana artifak Word/PPT/Excel melalui Chat agents, dan bina agent Project War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -2532,7 +2532,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, generate Word/PPT/Excel artefacts via Chat agents, and build a Project War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, generate Word/PPT/Excel artefacts via Chat agents, and build a Project War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -2557,7 +2557,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Tukar Teams Recap kepada minit rasmi, tugaskan persediaan selari kepada Cowork, hasilkan artefak Word/PPT/Excel melalui agen Chat, dan bina agen Capex War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit rasmi, tugaskan persediaan selari kepada Cowork, hasilkan artefak Word/PPT/Excel melalui agen Chat, dan bina agen Capex War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -2580,7 +2580,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, generate Word/PPT/Excel artefacts via Chat agents, and build a Capex War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, generate Word/PPT/Excel artefacts via Chat agents, and build a Capex War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -2605,7 +2605,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Tukar Teams Recap kepada minit rasmi, tugaskan persediaan selari kepada Cowork, hasilkan artefak Word/PPT/Excel melalui agen Chat, dan bina agen Commercial War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit rasmi, tugaskan persediaan selari kepada Cowork, hasilkan artefak Word/PPT/Excel melalui agen Chat, dan bina agen Commercial War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -2628,7 +2628,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, generate Word/PPT/Excel artefacts via Chat agents, and build a Commercial War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, generate Word/PPT/Excel artefacts via Chat agents, and build a Commercial War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -2653,7 +2653,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Tukar Teams Recap kepada minit rasmi, tugaskan persediaan selari kepada Cowork, hasilkan artefak Word/PPT/Excel melalui agen Chat, dan bina agen Content War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit rasmi, tugaskan persediaan selari kepada Cowork, hasilkan artefak Word/PPT/Excel melalui agen Chat, dan bina agen Content War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -2676,7 +2676,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, generate Word/PPT/Excel artefacts via Chat agents, and build a Content War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into formal minutes, delegate parallel prep to Cowork, generate Word/PPT/Excel artefacts via Chat agents, and build a Content War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -2701,7 +2701,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Tukar Teams Recap kepada minit Jawatankuasa Pelaburan, tugaskan persediaan selari kepada Cowork, dan bina agen Ministerial War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit Jawatankuasa Pelaburan, tugaskan persediaan selari kepada Cowork, dan bina agen Ministerial War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -2724,7 +2724,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into Investment Committee minutes, delegate parallel prep to Cowork, and build a Ministerial War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into Investment Committee minutes, delegate parallel prep to Cowork, and build a Ministerial War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }
@@ -2749,7 +2749,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Selaras & Skala",
-          "summary": "Tukar Teams Recap kepada minit Jawatankuasa Risiko Penyeliaan, tugaskan persediaan selari kepada Cowork, dan bina agen Enforcement War Room dalam M365 Copilot Chat."
+          "summary": "Tukar Teams Recap kepada minit Jawatankuasa Risiko Penyeliaan, tugaskan persediaan selari kepada Cowork, dan bina agen Enforcement War Room dalam Microsoft 365 Copilot Chat."
         }
       ]
     },
@@ -2772,7 +2772,7 @@ TRANSLATIONS = {
         },
         {
           "title": "Coordinate & Scale",
-          "summary": "Convert Teams Recap into Supervisory Risk Committee minutes, delegate parallel prep to Cowork, and build an Enforcement War Room agent in M365 Copilot Chat."
+          "summary": "Convert Teams Recap into Supervisory Risk Committee minutes, delegate parallel prep to Cowork, and build an Enforcement War Room agent in Microsoft 365 Copilot Chat."
         }
       ]
     }

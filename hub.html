@@ -249,7 +249,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .sb-phase{transition:transform 0.2s ease,box-shadow 0.2s ease}
 /* Persona avatar gradient by name */
 .persona-avatar{background:linear-gradient(135deg,#3B82F6,#1E40AF)}
-/* Section header above tools (groups Agent Builder under M365 Copilot Tools) */
+/* Section header above tools (groups Agent Builder under Microsoft 365 Copilot Tools) */
 .tool-group-header{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:18px 0 8px;padding:0 4px;display:flex;align-items:center;gap:8px}
 .tool-group-header::after{content:'';flex:1;height:1px;background:var(--border)}
 .tool-group-header:first-child{margin-top:0}
@@ -468,7 +468,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
     <div id="home-view">
       <div class="home-header">
         <div class="home-title">&#127474;&#127486; &#127470;&#127465; IDMY Industry Hub</div>
-        <div class="home-subtitle">Select an industry or department to explore M365 Copilot demo scenarios, prompts, and reference files</div>
+        <div class="home-subtitle">Select an industry or department to explore Microsoft 365 Copilot demo scenarios, prompts, and reference files</div>
         <div class="home-stats">
           <div class="stat-chip"><span class="val">29</span><span class="lbl">Industries</span></div>
           <div class="stat-chip"><span class="val">10</span><span class="lbl">Departments</span></div>
@@ -658,9 +658,9 @@ const _UI = {
   'Total Prompts':         ['Total Prompt',                          'Jumlah Gesaan'],
   'Copilot Tools':         ['Tools Copilot',                         'Alat Copilot'],
   // Home subtitle
-  'Select an industry or department to explore M365 Copilot demo scenarios, prompts, and reference files':
-                           ['Pilih industri atau departemen untuk mengeksplorasi skenario demo M365 Copilot, prompt, dan file referensi',
-                            'Pilih industri atau jabatan untuk meneroka senario demo M365 Copilot, gesaan dan fail rujukan'],
+  'Select an industry or department to explore Microsoft 365 Copilot demo scenarios, prompts, and reference files':
+                           ['Pilih industri atau departemen untuk mengeksplorasi skenario demo Microsoft 365 Copilot, prompt, dan file referensi',
+                            'Pilih industri atau jabatan untuk meneroka senario demo Microsoft 365 Copilot, gesaan dan fail rujukan'],
   // Detail page chrome
   'Industry':              ['Industri',                              'Industri'],
   'Department':            ['Departemen',                            'Jabatan'],
@@ -670,14 +670,14 @@ const _UI = {
   '🏢 Departments most affected — click to drill down':
                            ['🏢 Departemen yang paling terdampak — klik untuk melihat detail',
                             '🏢 Jabatan paling terkesan — klik untuk meneroka'],
-  '🛠️ M365 Copilot Tools':  ['🛠️ Tools M365 Copilot',                  '🛠️ Alat M365 Copilot'],
+  '🛠️ Microsoft 365 Copilot Tools':  ['🛠️ Tools Microsoft 365 Copilot',                  '🛠️ Alat Microsoft 365 Copilot'],
   '💬 Copilot Chat Prompts':['💬 Prompt Copilot Chat',                 '💬 Gesaan Copilot Chat'],
   '🆓 Copilot Chat — broader use cases (no license required)':
                            ['🆓 Copilot Chat — kasus penggunaan yang lebih luas (tidak perlu lisensi)',
                             '🆓 Copilot Chat — kes penggunaan lebih luas (tiada lesen diperlukan)'],
-  '✨ M365 Copilot — chat-based continuous-motion flow (Word Agent → PPT Agent → Excel Agent → Agent Builder)':
-                           ['✨ M365 Copilot — alur kerja berbasis chat berkelanjutan (Word Agent → PPT Agent → Excel Agent → Agent Builder)',
-                            '✨ M365 Copilot — aliran kerja berasaskan chat berterusan (Word Agent → PPT Agent → Excel Agent → Agent Builder)'],
+  '✨ Microsoft 365 Copilot — chat-based continuous-motion flow (Word Agent → PPT Agent → Excel Agent → Agent Builder)':
+                           ['✨ Microsoft 365 Copilot — alur kerja berbasis chat berkelanjutan (Word Agent → PPT Agent → Excel Agent → Agent Builder)',
+                            '✨ Microsoft 365 Copilot — aliran kerja berasaskan chat berterusan (Word Agent → PPT Agent → Excel Agent → Agent Builder)'],
   '📓 Notebook setup — add ALL sources at creation time, then set the Instructions field':
                            ['📓 Setup Notebook — tambahkan SEMUA sumber saat pembuatan, lalu atur kolom Instructions',
                             '📓 Persediaan Notebook — tambah SEMUA sumber semasa cipta, kemudian set medan Instructions'],
@@ -690,7 +690,7 @@ const _UI = {
   '💬 Prompt — copy this': ['💬 Prompt — salin ini',                  '💬 Gesaan — salin ini'],
   '📋 Copy prompt':        ['📋 Salin prompt',                        '📋 Salin gesaan'],
   '👤 Demo account:':      ['👤 Akun demo:',                          '👤 Akaun demo:'],
-  '✨ M365 Copilot':       ['✨ M365 Copilot',                        '✨ M365 Copilot'],
+  '✨ Microsoft 365 Copilot':       ['✨ Microsoft 365 Copilot',                        '✨ Microsoft 365 Copilot'],
   '🆓 No License Required':['🆓 Tidak Perlu Lisensi',                 '🆓 Tiada Lesen Diperlukan'],
   '🔥 M365 + Frontier':    ['🔥 M365 + Frontier',                     '🔥 M365 + Frontier'],
   '📁 Reference Files':    ['📁 File Referensi',                      '📁 Fail Rujukan'],
@@ -755,7 +755,7 @@ function _applyLocaleLabels(){
   const gtD=document.getElementById('gtab-dept'); if(gtD) gtD.innerHTML='🏢 '+_uL('Departments')+' ('+(window.HUB_DATA?HUB_DATA.departments.length:'')+')';
   // Home subtitle
   const homeSub=document.querySelector('.home-subtitle');
-  if(homeSub) homeSub.textContent=_uL('Select an industry or department to explore M365 Copilot demo scenarios, prompts, and reference files');
+  if(homeSub) homeSub.textContent=_uL('Select an industry or department to explore Microsoft 365 Copilot demo scenarios, prompts, and reference files');
 }
 // Legacy alias used by storyboard label fallbacks (BI fields used for both BI and BM display when no BM-specific data)
 let _lang; function _syncLegacyLang(){_lang = _isBahasa()?(_langCode()==='BM'?'BM':'ID'):'EN';}
@@ -2583,7 +2583,7 @@ function showItem(item,tab){
   function _resolveTool(t){
     // Prefer label / toolId / tool. Lookup short keys in _toolMap; fall back to verbatim.
     let raw=t.label||t.toolId||t.tool||'';
-    if(!raw) return 'M365 Copilot';
+    if(!raw) return 'Microsoft 365 Copilot';
     const key=raw.toString().trim().toLowerCase();
     return _toolMap[key]||raw;
   }
@@ -2736,7 +2736,7 @@ function showItem(item,tab){
       momentCount+' moments across one workday',
       momentCount+' babak dalam satu hari kerja',
       momentCount+' detik penting dalam satu hari kerja');
-    const labelCopilot=_bL('Copilot in M365','Copilot di M365','Copilot dalam M365');
+    const labelCopilot=_bL('Microsoft 365 Copilot','Copilot di M365','Copilot dalam M365');
     const labelHeroTitle=_bL('AI Assistant<br>to AI Doer','Asisten AI<br>menjadi Pelaku AI','Pembantu AI<br>kepada Pelaksana AI');
     const labelPersona=_bL('Persona','Persona','Persona');
     const labelMission=_bL('The Mission','Misi Hari Ini','Misi Hari Ini');
@@ -2835,7 +2835,7 @@ function showItem(item,tab){
   if(hasChat && hasOther){
     tabsWrap.style.display='flex';
     tabsWrap.innerHTML=
-      '<button class="detail-tab '+( _detailTab==='tools'?'active':'')+'" id="dtab-tools" onclick="setDetailTab(\'tools\')">'+_uL('🛠️ M365 Copilot Tools')+'</button>'+
+      '<button class="detail-tab '+( _detailTab==='tools'?'active':'')+'" id="dtab-tools" onclick="setDetailTab(\'tools\')">'+_uL('🛠️ Microsoft 365 Copilot Tools')+'</button>'+
       '<button class="detail-tab '+( _detailTab==='chat'?'active':'')+'" id="dtab-chat" onclick="setDetailTab(\'chat\')">'+_uL('💬 Copilot Chat Prompts')+'</button>';
   } else {
     tabsWrap.style.display='none';
@@ -2859,7 +2859,7 @@ function showItem(item,tab){
     const isResearcher=_isResearcher(tool.tool);
     const isCowork=_isCowork(tool.tool);
     const isNotebook=_isNotebook(tool.tool);
-    // Optional group header — only inside the Chat tab to delineate "Free Chat" vs "M365 Copilot — chat-based agents"
+    // Optional group header — only inside the Chat tab to delineate "Free Chat" vs "Microsoft 365 Copilot — chat-based agents"
     if(_detailTab==='chat'){
       const grp=_isChat(tool.tool)?'free':'agents';
       if(grp!==_lastGroup){
@@ -2867,7 +2867,7 @@ function showItem(item,tab){
         hdr.className='tool-group-header';
         hdr.innerHTML=grp==='free'
           ?_uL('🆓 Copilot Chat — broader use cases (no license required)')
-          :_uL('✨ M365 Copilot — chat-based continuous-motion flow (Word Agent → PPT Agent → Excel Agent → Agent Builder)');
+          :_uL('✨ Microsoft 365 Copilot — chat-based continuous-motion flow (Word Agent → PPT Agent → Excel Agent → Agent Builder)');
         pEl.appendChild(hdr);
         _lastGroup=grp;
       }
@@ -2936,7 +2936,7 @@ function showItem(item,tab){
         '</div>'+
         '</div>';
     }).join('');
-    let licClass='premium', licLabel=_uL('✨ M365 Copilot');
+    let licClass='premium', licLabel=_uL('✨ Microsoft 365 Copilot');
     if(isBasic){ licClass='basic'; licLabel=_uL('🆓 No License Required'); }
     if(isFront){ licClass='frontier'; licLabel=_uL('🔥 M365 + Frontier'); }
     let researcherCallout='';
@@ -3006,7 +3006,7 @@ function showItem(item,tab){
   }
   // Tips
   const tips=[
-    'Use <strong>admin@ABSx62256373.onmicrosoft.com</strong> for all M365 Copilot premium demos',
+    'Use <strong>admin@ABSx62256373.onmicrosoft.com</strong> for all Microsoft 365 Copilot premium demos',
     'Use <strong>SashaO@ABSx62256373.onmicrosoft.com</strong> for Copilot Chat Free demos',
     'Have the reference Excel/Word files open in the browser before demoing Copilot in that app',
     'For Notebook demos, click <strong>+ Sources</strong> in the right rail and upload each file from OneDrive — the notebook grounds answers on those sources automatically (no <code>/file</code> tag needed in the prompt body)',
@@ -3063,7 +3063,7 @@ const OTHER_PAGES = [
     color: '#7C3AED',
     accent: '#5B21B6',
     name: 'Contoso Malaysia — HR Copilot Immersion',
-    desc: 'HR-focused Copilot immersion for a Malaysian conglomerate (5 May 2026). Talent, recruitment, performance, payroll workflows with M365 Copilot.',
+    desc: 'HR-focused Copilot immersion for a Malaysian conglomerate (5 May 2026). Talent, recruitment, performance, payroll workflows with Microsoft 365 Copilot.',
     url: 'https://steffiyappy.github.io/contoso-hr-copilot-immersion/',
     password: 'HRImmersion5May',
     tag: 'HR Workshop',
@@ -3075,7 +3075,7 @@ const OTHER_PAGES = [
     color: '#10B981',
     accent: '#047857',
     name: 'Contoso Trade — HR Copilot Immersion',
-    desc: 'Trade & cross-border HR scenarios using paid M365 Copilot features (Researcher, Analyst, Frontier Cowork, Agent Builder).',
+    desc: 'Trade & cross-border HR scenarios using paid Microsoft 365 Copilot features (Researcher, Analyst, Frontier Cowork, Agent Builder).',
     url: 'https://steffiyappy.github.io/contoso-trade-hr-copilot-immersion/',
     password: 'THRCI',
     tag: 'HR Workshop · Frontier',
@@ -3227,7 +3227,7 @@ function buildOtherGrid(){
   intro.className='detail-scenario';
   intro.style.marginBottom='18px';
   intro.innerHTML='<div class="detail-scenario-title">&#128218; Other Copilot Demo Pages</div>'+
-    '<div class="detail-scenario-text">A library of related M365 Copilot demo sites we have built for other customers and workshops. Each link opens in a new tab — click the &#128274; password chip on a card to copy the password to your clipboard.</div>';
+    '<div class="detail-scenario-text">A library of related Microsoft 365 Copilot demo sites we have built for other customers and workshops. Each link opens in a new tab — click the &#128274; password chip on a card to copy the password to your clipboard.</div>';
   root.appendChild(intro);
 
   const sections={};
