@@ -324,6 +324,16 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .cowork-action-num{font-weight:800;color:#9A3412;flex-shrink:0;min-width:18px}
 .cowork-action-icon{font-size:14px;flex-shrink:0;line-height:1.4}
 .cowork-action-text{flex:1;min-width:0}
+/* Cowork runbook (Skills + Description + Outcome + Tips above the actions list) */
+.cowork-runbook{background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1px solid #FDE68A;border-radius:10px;padding:12px 16px;margin:0 0 10px}
+.cowork-runbook-row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;padding:6px 0;border-top:1px dashed rgba(180,83,9,0.18);font-size:12px;color:#451A03;line-height:1.55}
+.cowork-runbook-row:first-of-type{border-top:none;padding-top:2px}
+.cowork-runbook-label{font-size:9.5px;font-weight:800;color:#92400E;text-transform:uppercase;letter-spacing:1px;flex-shrink:0;min-width:130px;padding-top:1px}
+.cowork-runbook-body{flex:1;min-width:200px;color:#451A03}
+.cowork-runbook-pill{display:inline-block;background:var(--surface);border:1px solid #FDE68A;border-radius:14px;padding:2px 9px;font-size:10.5px;color:#92400E;font-weight:700;margin:0 4px 3px 0}
+.cowork-runbook-list{margin:0;padding:0;list-style:none}
+.cowork-runbook-list li{position:relative;padding:1px 0 2px 14px;line-height:1.55}
+.cowork-runbook-list li:before{content:"›";position:absolute;left:2px;top:0;color:#B45309;font-weight:800}
 /* Notebook special block (sources + Instructions field) */
 .notebook-meta{background:linear-gradient(135deg,#F0F9FF,#E0F2FE);border:1px solid #BAE6FD;border-radius:8px;padding:11px 14px;margin:0 0 10px}
 .notebook-meta-label{font-size:9.5px;font-weight:800;color:#075985;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:5px}
@@ -560,6 +570,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   /* Cowork actions tighter */
   .cowork-actions{padding:9px 11px}
   .cowork-action-line{font-size:11px}
+  .cowork-runbook{padding:10px 12px}
+  .cowork-runbook-row{padding:5px 0}
+  .cowork-runbook-label{min-width:108px;font-size:9px}
+  .cowork-runbook-body{font-size:11px}
   /* Detail tabs smaller padding */
   .detail-tab{padding:9px 12px;font-size:12px}
   .grid-tab{padding:8px 14px;font-size:12px}
@@ -621,6 +635,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .cowork-actions-label{color:#FED7AA}
 [data-theme="dark"] .cowork-action-line{color:#FFEDD5;border-top-color:rgba(254,215,170,0.18)}
 [data-theme="dark"] .cowork-action-num{color:#FBBF24}
+[data-theme="dark"] .cowork-runbook{background:linear-gradient(135deg,#2B1F08,#3A2A0E);border-color:#92400E}
+[data-theme="dark"] .cowork-runbook-row{color:#FDE68A;border-top-color:rgba(253,230,138,0.18)}
+[data-theme="dark"] .cowork-runbook-label{color:#FCD34D}
+[data-theme="dark"] .cowork-runbook-body{color:#FDE68A}
+[data-theme="dark"] .cowork-runbook-pill{background:rgba(180,83,9,0.30);color:#FDE68A;border-color:#92400E}
+[data-theme="dark"] .cowork-runbook-list li:before{color:#FBBF24}
 [data-theme="dark"] .notebook-meta{background:linear-gradient(135deg,#0E2538,#10324A);border-color:#155E75}
 [data-theme="dark"] .notebook-meta-label{color:#7DD3FC}
 [data-theme="dark"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
@@ -725,6 +745,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   [data-theme="system"] .cowork-actions-label{color:#FED7AA}
   [data-theme="system"] .cowork-action-line{color:#FFEDD5;border-top-color:rgba(254,215,170,0.18)}
   [data-theme="system"] .cowork-action-num{color:#FBBF24}
+  [data-theme="system"] .cowork-runbook{background:linear-gradient(135deg,#2B1F08,#3A2A0E);border-color:#92400E}
+  [data-theme="system"] .cowork-runbook-row{color:#FDE68A;border-top-color:rgba(253,230,138,0.18)}
+  [data-theme="system"] .cowork-runbook-label{color:#FCD34D}
+  [data-theme="system"] .cowork-runbook-body{color:#FDE68A}
+  [data-theme="system"] .cowork-runbook-pill{background:rgba(180,83,9,0.30);color:#FDE68A;border-color:#92400E}
+  [data-theme="system"] .cowork-runbook-list li:before{color:#FBBF24}
   [data-theme="system"] .notebook-meta{background:linear-gradient(135deg,#0E2538,#10324A);border-color:#155E75}
   [data-theme="system"] .notebook-meta-label{color:#7DD3FC}
   [data-theme="system"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
@@ -1230,6 +1256,14 @@ const _UI = {
   'Instructions field (system prompt):':
                            ['Kolom Instructions (system prompt):',   'Medan Instructions (system prompt):'],
   '⚡ Cowork delegates these in parallel': ['⚡ Cowork mendelegasikan ini secara paralel', '⚡ Cowork mengagihkan ini secara selari'],
+  '🧰 Apps involved':       ['🧰 Aplikasi yang terlibat',                  '🧰 Aplikasi yang terlibat'],
+  '🧠 Complexity':          ['🧠 Tingkat kompleksitas',                    '🧠 Tahap kerumitan'],
+  '📋 Description':         ['📋 Deskripsi',                                '📋 Penerangan'],
+  '✅ Expected outcome':    ['✅ Hasil yang diharapkan',                   '✅ Hasil yang dijangka'],
+  '💡 Tips & variations':   ['💡 Tips & variasi',                          '💡 Petua & variasi'],
+  'Advanced (5+ chained apps)':       ['Advanced (5+ aplikasi terangkai)',          'Lanjutan (5+ aplikasi berantai)'],
+  'Intermediate (3-4 chained apps)':  ['Menengah (3-4 aplikasi terangkai)',         'Pertengahan (3-4 aplikasi berantai)'],
+  'Beginner (1-2 apps)':              ['Dasar (1-2 aplikasi)',                       'Asas (1-2 aplikasi)'],
   '🔍 Critique Mode':       ['🔍 Mode Kritik',                         '🔍 Mod Kritik'],
   '⚖️ Model Council':       ['⚖️ Dewan Model',                          '⚖️ Majlis Model'],
   '📋 Instructions':       ['📋 Petunjuk',                            '📋 Arahan'],
@@ -3332,6 +3366,156 @@ function _parseCoworkActions(text){
   return out;
 }
 
+// ── Cowork runbook (Skills + Description + Outcome + Tips) ──────────
+// Mirrors the public cowork-prompts page layout (Aaron Yue / Microsoft):
+//   Apps Involved · Complexity · Description · The Prompt · Expected Outcome · Tips & Variations
+// Built deterministically from the parsed action lines + entry context so we
+// don't have to hand-author 220+ runbook payloads. Every Cowork prompt is
+// accompanied by this metadata panel rendered ABOVE the cowork-actions list.
+function _coworkAppsFromIcons(lines){
+  const set=new Set();
+  (lines||[]).forEach(L=>{
+    const i=L.icon;
+    if(i==='📝') set.add('Word');
+    else if(i==='✉️') set.add('Outlook');
+    else if(i==='📅') { set.add('Outlook'); set.add('Teams'); }
+    else if(i==='💬') set.add('Teams');
+    else if(i==='🖼') set.add('PowerPoint');
+    else if(i==='📊') set.add('Excel');
+    else if(i==='✅') set.add('Planner');
+  });
+  set.add('SharePoint');
+  set.add('OneDrive');
+  return Array.from(set);
+}
+function _coworkComplexity(lines){
+  const n=(lines||[]).length;
+  if(n>=5) return 'Advanced (5+ chained apps)';
+  if(n>=3) return 'Intermediate (3-4 chained apps)';
+  return 'Beginner (1-2 apps)';
+}
+function _coworkScenarioTitle(promptText){
+  const t=String(promptText||'').replace(/\s+/g,' ').trim();
+  // Try to extract a short scenario title from the first sentence (up to ~110 chars
+  // or first '.', '—', ':' or '1.' marker — whichever comes first).
+  let cut=t.search(/(?:[.!?](?=\s)|—|:|\b1\.\s)/);
+  if(cut<0||cut>140) cut=Math.min(110,t.length);
+  let title=t.slice(0,cut).trim().replace(/[—:.,;]+$/,'').trim();
+  // Strip leading directives like "I need you to ..."
+  title=title.replace(/^(?:please|i need you to|i need to|help me|kindly|tolong|sila|mohon)\s+/i,'');
+  // Title-case first letter
+  return title.charAt(0).toUpperCase()+title.slice(1);
+}
+function _coworkOutcomeFromActions(lines){
+  return (lines||[]).map(L=>{
+    const t=L.text.replace(/\s+/g,' ').trim();
+    let s=t.search(/(?:[.!?](?=\s)|—|:)/);
+    if(s<0||s>180) s=Math.min(160,t.length);
+    let summary=t.slice(0,s).trim().replace(/[—:.,;]+$/,'').trim();
+    return {icon:L.icon, text:summary};
+  });
+}
+function _coworkTipsForEntry(entryId){
+  // 12 category buckets — same partitioning used by the free-tier builder
+  // catalog. Each bucket ships 3 ASEAN-grounded tips that apply to ANY
+  // Cowork scenario for entries in that bucket.
+  const E=String(entryId||'').toLowerCase();
+  const isBank=/bank|finance|insurance|takaful|reit|leasing|remittance|fintech|payments|asset-mgmt|securit|broker|wealth|microfinance|investment-banking|stock-exch|mortgage/i.test(E);
+  const isHC=/health|hospital|pharma|clinic|medical|diagnos|tcm/i.test(E);
+  const isEnergy=/energy|oil|gas|petro|refin|coal|mining|nuclear|solar|wind|geothermal|hydro|power|util|electric/i.test(E);
+  const isMfg=/manufactur|automotiv|auto-tyre|semiconductor|electronics|chemical|cement|steel|rare-earth|fmcg|food|tobacco|rubber|plastic|paper|textile/i.test(E);
+  const isAgri=/agri|plantation|palm|forest|fish|aquaculture|livestock|farm/i.test(E);
+  const isRetail=/retail|grocery|qsr|restaurant|fashion|apparel|ecomm|super-app|mall/i.test(E);
+  const isHosp=/hospital|hotel|tourism|airline|aviation|cruise|leisure|entertain|gaming|media|broadcast/i.test(E);
+  const isTel=/telco|telecom|broadband|tower|isp|tech|software|cloud|data-center|saas|platform|digital/i.test(E);
+  const isTrans=/maritime|shipping|port|logistic|rail|express|courier|cold-chain|transport|trucking|terminal/i.test(E);
+  const isPub=/government|gov|public-sector|smart-city|sovereign|regulator|stat-office|water-util|defense|aerospace|education-uni|education-k12|education|university/i.test(E);
+  const isDept=/^dept-/.test(E);
+  if(isBank) return [
+    'Confirm the named recipients (Hadar / Sasha / Daichi / Sonia / Will / Omar) match your tenant directory before Cowork sends — Cowork is brittle to misspelled DLs and external bank/regulator emails.',
+    'For ASEAN regulators, do NOT email BNM / OJK / MAS directly through Cowork. Cowork drafts the cover letter; the human regulatory lead submits via the regulator portal (LINKAJA / Maklumat / MASNet / OJK Box).',
+    'Sensitivity-label every output as Confidential — Highly Confidential before posting to Teams. Cowork honours your tenant labelling policy; the approval gate is the final guardrail.'
+  ];
+  if(isHC) return [
+    'Patient-identifying content NEVER goes into Cowork prompts — use case IDs, MRN, or de-identified handles. PDPA (MY) / UU PDP (ID) / PDPA (SG) require de-identification before AI processing.',
+    'For multidisciplinary case prep, scope folder paths tightly (e.g. /Clinical/Cases/[CASE_ID]/) so Cowork pulls the right pathology / imaging / consult notes only.',
+    'Apply the [Confidential — Patient Care] sensitivity label on every generated artefact. Cowork respects the tenant DLP policy; review the label before approving the send.'
+  ];
+  if(isEnergy) return [
+    'For HSE / process-safety incidents, Cowork drafts the internal report — the licensed Safety Officer / OIM owns the notification to DOSH (MY) / KemenESDM (ID) / MOM (SG) and signs off via the regulator portal.',
+    'Keep operational data (production volumes, well metrics, plant uptime) in the prompt; commercial data (offtake pricing, hedge positions) goes in a SEPARATE Cowork run with a tighter approver list.',
+    'Always include the emergency response coordinator and HSSE Director in the named-recipients list; Cowork will pre-populate the Teams channel for the Crisis Cell.'
+  ];
+  if(isMfg) return [
+    'For supplier / customer contractual content, Cowork stays inside the tenant — do not let it auto-send to external vendors. Approval gate routes through the Procurement Director.',
+    'Quality / recall scenarios: scope the prompt to a specific batch / lot / SKU and let Cowork pull the full batch genealogy from the SharePoint quality library before drafting customer comms.',
+    'Production planning Cowork runs are weekly cadence — schedule them as a recurring Cowork delegation tied to the Monday S&OP touchpoint.'
+  ];
+  if(isAgri) return [
+    'Plantation / mill yield data sits in operational SharePoint libraries — give Cowork the specific estate / mill ID in the prompt; broad searches return mixed-up estate data.',
+    'Sustainability disclosures (RSPO, ISPO, MSPO, NDPE) go through Cowork as drafts only — the certified Sustainability Manager reviews against the audit trail before signing.',
+    'Smallholder grievance handling: keep grievance IDs anonymised; Cowork drafts the response framework, the human ESG lead handles the conversation.'
+  ];
+  if(isRetail) return [
+    'For promo / pricing / SKU launch comms, Cowork drafts the in-app banner copy + email + Teams brief in one shot — pricing is REVIEWED by the Category Manager before approval.',
+    'POS / loyalty data referenced in prompts must come from the Curated Reporting site — never raw transaction extracts (PII risk).',
+    'Store-ops Cowork runs live alongside the Daily Trade Huddle Teams meeting; schedule the Cowork delegation 30 min before each huddle so the brief is ready.'
+  ];
+  if(isHosp) return [
+    'Guest PII (passport, payment) is OUT of scope — Cowork drafts narrative + commercial summaries only. Front office + finance handle the guest record.',
+    'For property / event launches, scope Cowork to a single property + single date window so the Teams channel + email DL match the operating team.',
+    'Service-recovery scenarios: Cowork drafts the apology + recovery offer; the GM / Resident Manager owns the conversation and final goodwill amount.'
+  ];
+  if(isTel) return [
+    'Network outage / incident comms: Cowork drafts the internal NOC update + customer apology + regulator pre-notification. Public release is gated by the Comms Director and the Regulatory Affairs lead.',
+    'Subscriber / usage data referenced in prompts must be aggregated (not customer-level) — Cowork stays compliant with the tenant DLP policy.',
+    'For new product / plan launches, schedule the Cowork delegation alongside the Marketing readiness sprint; pre-populate the Customer Care Teams channel for tier-1 agents.'
+  ];
+  if(isTrans) return [
+    'Vessel / fleet / shipment IDs go in the prompt; Cowork pulls voyage data from the operational SharePoint libraries. Cargo manifest data (BL / commercial invoice) stays out of Cowork prompts.',
+    'For port-call / customs delays, Cowork drafts the customer hold-note + agent comms — the Port Captain / Operations Director signs off before send.',
+    'Crisis-cell Teams channel must be pre-populated with the named incident coordinator, marine insurance broker, and salvage / response provider.'
+  ];
+  if(isPub) return [
+    'Citizen-facing comms drafted by Cowork are reviewed by the Communications Director and Director-General BEFORE any external channel post — Cowork stays inside the tenant for drafting.',
+    'Cross-ministry coordination: keep the named recipients list tight (Permanent Secretary + relevant Deputy DGs); Cowork respects the tenant directory groups.',
+    'Sensitivity labels: Restricted (default) for inter-ministry, Public after the comms director clears the draft.'
+  ];
+  if(isDept) return [
+    'Department-wide Cowork runs land in the relevant function''s Teams channel (Finance / IR / Risk / HR / Strategy / Procurement / Legal / IT). Confirm the channel name in the prompt before approving.',
+    'Cowork respects the tenant directory — named recipients (Hadar / Sasha / Daichi / Sonia / Will / Omar) must exist as live mailboxes in the same tenant; otherwise the email task will fail silently.',
+    'Use Cowork for the WEEKLY cadence work (Monday brief, Friday close-out). For ad-hoc one-off requests, use the Word / PPT / Excel agents directly.'
+  ];
+  return [
+    'Confirm named recipients exist in the tenant directory before approving Cowork''s send — Cowork is brittle to typos in distribution lists.',
+    'Apply the matching sensitivity label (Confidential / Highly Confidential) to every generated artefact; the label travels with the file when shared externally.',
+    'For recurring Cowork delegations, save the prompt as a template in your tenant''s prompt library — cuts re-prompt time for the next cycle in half.'
+  ];
+}
+function _coworkRunbookHtml(item,tool,promptText,lines){
+  const apps=_coworkAppsFromIcons(lines);
+  const cmplx=_coworkComplexity(lines);
+  const title=_coworkScenarioTitle(promptText);
+  const outcomes=_coworkOutcomeFromActions(lines);
+  const tips=_coworkTipsForEntry(item&&item.id);
+  // Locale-aware labels
+  const L_APPS=_uL('🧰 Apps involved');
+  const L_CMPLX=_uL('🧠 Complexity');
+  const L_DESC=_uL('📋 Description');
+  const L_OUT=_uL('✅ Expected outcome');
+  const L_TIPS=_uL('💡 Tips & variations');
+  const appsHtml=apps.map(a=>'<span class="cowork-runbook-pill">'+escapeHTML(a)+'</span>').join('');
+  const outHtml='<ul class="cowork-runbook-list">'+outcomes.map(o=>'<li>'+escapeHTML(o.icon+' '+o.text)+'</li>').join('')+'</ul>';
+  const tipsHtml='<ul class="cowork-runbook-list">'+tips.map(t=>'<li>'+escapeHTML(_xformVal(t,'EN'))+'</li>').join('')+'</ul>';
+  return '<div class="cowork-runbook">'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_APPS+'</span><span class="cowork-runbook-body">'+appsHtml+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_CMPLX+'</span><span class="cowork-runbook-body">'+escapeHTML(_xformVal(cmplx,'EN'))+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_DESC+'</span><span class="cowork-runbook-body">'+escapeHTML(_xformVal(title,'EN'))+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_OUT+'</span><span class="cowork-runbook-body">'+outHtml+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_TIPS+'</span><span class="cowork-runbook-body">'+tipsHtml+'</span></div>'+
+  '</div>';
+}
+
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
   currentSidebarTab=tab;
@@ -4121,6 +4305,11 @@ function showItem(item,tab,preserveScroll){
         const lines=_parseCoworkActions(txt);
         if(lines.length>=2){
           coworkHtml=
+            // Runbook (Apps Involved · Complexity · Description · Outcome · Tips)
+            // mirrors the public cowork-prompts page layout — renders ABOVE the
+            // delegated-actions list. Built deterministically from the parsed
+            // action lines + entry id (no per-prompt hand-authoring required).
+            _coworkRunbookHtml(item, tool, txt, lines)+
             '<div class="cowork-actions">'+
             '<div class="cowork-actions-label">'+_uL('⚡ Cowork delegates these in parallel')+'</div>'+
             lines.map(L=>{

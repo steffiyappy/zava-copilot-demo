@@ -322,6 +322,16 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .cowork-action-num{font-weight:800;color:#9A3412;flex-shrink:0;min-width:18px}
 .cowork-action-icon{font-size:14px;flex-shrink:0;line-height:1.4}
 .cowork-action-text{flex:1;min-width:0}
+/* Cowork runbook (Skills + Description + Outcome + Tips above the actions list) */
+.cowork-runbook{background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1px solid #FDE68A;border-radius:10px;padding:12px 16px;margin:0 0 10px}
+.cowork-runbook-row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;padding:6px 0;border-top:1px dashed rgba(180,83,9,0.18);font-size:12px;color:#451A03;line-height:1.55}
+.cowork-runbook-row:first-of-type{border-top:none;padding-top:2px}
+.cowork-runbook-label{font-size:9.5px;font-weight:800;color:#92400E;text-transform:uppercase;letter-spacing:1px;flex-shrink:0;min-width:130px;padding-top:1px}
+.cowork-runbook-body{flex:1;min-width:200px;color:#451A03}
+.cowork-runbook-pill{display:inline-block;background:var(--surface);border:1px solid #FDE68A;border-radius:14px;padding:2px 9px;font-size:10.5px;color:#92400E;font-weight:700;margin:0 4px 3px 0}
+.cowork-runbook-list{margin:0;padding:0;list-style:none}
+.cowork-runbook-list li{position:relative;padding:1px 0 2px 14px;line-height:1.55}
+.cowork-runbook-list li:before{content:"›";position:absolute;left:2px;top:0;color:#B45309;font-weight:800}
 /* Notebook special block (sources + Instructions field) */
 .notebook-meta{background:linear-gradient(135deg,#F0F9FF,#E0F2FE);border:1px solid #BAE6FD;border-radius:8px;padding:11px 14px;margin:0 0 10px}
 .notebook-meta-label{font-size:9.5px;font-weight:800;color:#075985;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:5px}
@@ -558,6 +568,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   /* Cowork actions tighter */
   .cowork-actions{padding:9px 11px}
   .cowork-action-line{font-size:11px}
+  .cowork-runbook{padding:10px 12px}
+  .cowork-runbook-row{padding:5px 0}
+  .cowork-runbook-label{min-width:108px;font-size:9px}
+  .cowork-runbook-body{font-size:11px}
   /* Detail tabs smaller padding */
   .detail-tab{padding:9px 12px;font-size:12px}
   .grid-tab{padding:8px 14px;font-size:12px}
@@ -619,6 +633,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .cowork-actions-label{color:#FED7AA}
 [data-theme="dark"] .cowork-action-line{color:#FFEDD5;border-top-color:rgba(254,215,170,0.18)}
 [data-theme="dark"] .cowork-action-num{color:#FBBF24}
+[data-theme="dark"] .cowork-runbook{background:linear-gradient(135deg,#2B1F08,#3A2A0E);border-color:#92400E}
+[data-theme="dark"] .cowork-runbook-row{color:#FDE68A;border-top-color:rgba(253,230,138,0.18)}
+[data-theme="dark"] .cowork-runbook-label{color:#FCD34D}
+[data-theme="dark"] .cowork-runbook-body{color:#FDE68A}
+[data-theme="dark"] .cowork-runbook-pill{background:rgba(180,83,9,0.30);color:#FDE68A;border-color:#92400E}
+[data-theme="dark"] .cowork-runbook-list li:before{color:#FBBF24}
 [data-theme="dark"] .notebook-meta{background:linear-gradient(135deg,#0E2538,#10324A);border-color:#155E75}
 [data-theme="dark"] .notebook-meta-label{color:#7DD3FC}
 [data-theme="dark"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
@@ -723,6 +743,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   [data-theme="system"] .cowork-actions-label{color:#FED7AA}
   [data-theme="system"] .cowork-action-line{color:#FFEDD5;border-top-color:rgba(254,215,170,0.18)}
   [data-theme="system"] .cowork-action-num{color:#FBBF24}
+  [data-theme="system"] .cowork-runbook{background:linear-gradient(135deg,#2B1F08,#3A2A0E);border-color:#92400E}
+  [data-theme="system"] .cowork-runbook-row{color:#FDE68A;border-top-color:rgba(253,230,138,0.18)}
+  [data-theme="system"] .cowork-runbook-label{color:#FCD34D}
+  [data-theme="system"] .cowork-runbook-body{color:#FDE68A}
+  [data-theme="system"] .cowork-runbook-pill{background:rgba(180,83,9,0.30);color:#FDE68A;border-color:#92400E}
+  [data-theme="system"] .cowork-runbook-list li:before{color:#FBBF24}
   [data-theme="system"] .notebook-meta{background:linear-gradient(135deg,#0E2538,#10324A);border-color:#155E75}
   [data-theme="system"] .notebook-meta-label{color:#7DD3FC}
   [data-theme="system"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
@@ -1228,6 +1254,14 @@ const _UI = {
   'Instructions field (system prompt):':
                            ['Kolom Instructions (system prompt):',   'Medan Instructions (system prompt):'],
   '⚡ Cowork delegates these in parallel': ['⚡ Cowork mendelegasikan ini secara paralel', '⚡ Cowork mengagihkan ini secara selari'],
+  '🧰 Apps involved':       ['🧰 Aplikasi yang terlibat',                  '🧰 Aplikasi yang terlibat'],
+  '🧠 Complexity':          ['🧠 Tingkat kompleksitas',                    '🧠 Tahap kerumitan'],
+  '📋 Description':         ['📋 Deskripsi',                                '📋 Penerangan'],
+  '✅ Expected outcome':    ['✅ Hasil yang diharapkan',                   '✅ Hasil yang dijangka'],
+  '💡 Tips & variations':   ['💡 Tips & variasi',                          '💡 Petua & variasi'],
+  'Advanced (5+ chained apps)':       ['Advanced (5+ aplikasi terangkai)',          'Lanjutan (5+ aplikasi berantai)'],
+  'Intermediate (3-4 chained apps)':  ['Menengah (3-4 aplikasi terangkai)',         'Pertengahan (3-4 aplikasi berantai)'],
+  'Beginner (1-2 apps)':              ['Dasar (1-2 aplikasi)',                       'Asas (1-2 aplikasi)'],
   '🔍 Critique Mode':       ['🔍 Mode Kritik',                         '🔍 Mod Kritik'],
   '⚖️ Model Council':       ['⚖️ Dewan Model',                          '⚖️ Majlis Model'],
   '📋 Instructions':       ['📋 Petunjuk',                            '📋 Arahan'],
@@ -3330,6 +3364,156 @@ function _parseCoworkActions(text){
   return out;
 }
 
+// ── Cowork runbook (Skills + Description + Outcome + Tips) ──────────
+// Mirrors the public cowork-prompts page layout (Aaron Yue / Microsoft):
+//   Apps Involved · Complexity · Description · The Prompt · Expected Outcome · Tips & Variations
+// Built deterministically from the parsed action lines + entry context so we
+// don't have to hand-author 220+ runbook payloads. Every Cowork prompt is
+// accompanied by this metadata panel rendered ABOVE the cowork-actions list.
+function _coworkAppsFromIcons(lines){
+  const set=new Set();
+  (lines||[]).forEach(L=>{
+    const i=L.icon;
+    if(i==='📝') set.add('Word');
+    else if(i==='✉️') set.add('Outlook');
+    else if(i==='📅') { set.add('Outlook'); set.add('Teams'); }
+    else if(i==='💬') set.add('Teams');
+    else if(i==='🖼') set.add('PowerPoint');
+    else if(i==='📊') set.add('Excel');
+    else if(i==='✅') set.add('Planner');
+  });
+  set.add('SharePoint');
+  set.add('OneDrive');
+  return Array.from(set);
+}
+function _coworkComplexity(lines){
+  const n=(lines||[]).length;
+  if(n>=5) return 'Advanced (5+ chained apps)';
+  if(n>=3) return 'Intermediate (3-4 chained apps)';
+  return 'Beginner (1-2 apps)';
+}
+function _coworkScenarioTitle(promptText){
+  const t=String(promptText||'').replace(/\s+/g,' ').trim();
+  // Try to extract a short scenario title from the first sentence (up to ~110 chars
+  // or first '.', '—', ':' or '1.' marker — whichever comes first).
+  let cut=t.search(/(?:[.!?](?=\s)|—|:|\b1\.\s)/);
+  if(cut<0||cut>140) cut=Math.min(110,t.length);
+  let title=t.slice(0,cut).trim().replace(/[—:.,;]+$/,'').trim();
+  // Strip leading directives like "I need you to ..."
+  title=title.replace(/^(?:please|i need you to|i need to|help me|kindly|tolong|sila|mohon)\s+/i,'');
+  // Title-case first letter
+  return title.charAt(0).toUpperCase()+title.slice(1);
+}
+function _coworkOutcomeFromActions(lines){
+  return (lines||[]).map(L=>{
+    const t=L.text.replace(/\s+/g,' ').trim();
+    let s=t.search(/(?:[.!?](?=\s)|—|:)/);
+    if(s<0||s>180) s=Math.min(160,t.length);
+    let summary=t.slice(0,s).trim().replace(/[—:.,;]+$/,'').trim();
+    return {icon:L.icon, text:summary};
+  });
+}
+function _coworkTipsForEntry(entryId){
+  // 12 category buckets — same partitioning used by the free-tier builder
+  // catalog. Each bucket ships 3 ASEAN-grounded tips that apply to ANY
+  // Cowork scenario for entries in that bucket.
+  const E=String(entryId||'').toLowerCase();
+  const isBank=/bank|finance|insurance|takaful|reit|leasing|remittance|fintech|payments|asset-mgmt|securit|broker|wealth|microfinance|investment-banking|stock-exch|mortgage/i.test(E);
+  const isHC=/health|hospital|pharma|clinic|medical|diagnos|tcm/i.test(E);
+  const isEnergy=/energy|oil|gas|petro|refin|coal|mining|nuclear|solar|wind|geothermal|hydro|power|util|electric/i.test(E);
+  const isMfg=/manufactur|automotiv|auto-tyre|semiconductor|electronics|chemical|cement|steel|rare-earth|fmcg|food|tobacco|rubber|plastic|paper|textile/i.test(E);
+  const isAgri=/agri|plantation|palm|forest|fish|aquaculture|livestock|farm/i.test(E);
+  const isRetail=/retail|grocery|qsr|restaurant|fashion|apparel|ecomm|super-app|mall/i.test(E);
+  const isHosp=/hospital|hotel|tourism|airline|aviation|cruise|leisure|entertain|gaming|media|broadcast/i.test(E);
+  const isTel=/telco|telecom|broadband|tower|isp|tech|software|cloud|data-center|saas|platform|digital/i.test(E);
+  const isTrans=/maritime|shipping|port|logistic|rail|express|courier|cold-chain|transport|trucking|terminal/i.test(E);
+  const isPub=/government|gov|public-sector|smart-city|sovereign|regulator|stat-office|water-util|defense|aerospace|education-uni|education-k12|education|university/i.test(E);
+  const isDept=/^dept-/.test(E);
+  if(isBank) return [
+    'Confirm the named recipients (Hadar / Sasha / Daichi / Sonia / Will / Omar) match your tenant directory before Cowork sends — Cowork is brittle to misspelled DLs and external bank/regulator emails.',
+    'For ASEAN regulators, do NOT email BNM / OJK / MAS directly through Cowork. Cowork drafts the cover letter; the human regulatory lead submits via the regulator portal (LINKAJA / Maklumat / MASNet / OJK Box).',
+    'Sensitivity-label every output as Confidential — Highly Confidential before posting to Teams. Cowork honours your tenant labelling policy; the approval gate is the final guardrail.'
+  ];
+  if(isHC) return [
+    'Patient-identifying content NEVER goes into Cowork prompts — use case IDs, MRN, or de-identified handles. PDPA (MY) / UU PDP (ID) / PDPA (SG) require de-identification before AI processing.',
+    'For multidisciplinary case prep, scope folder paths tightly (e.g. /Clinical/Cases/[CASE_ID]/) so Cowork pulls the right pathology / imaging / consult notes only.',
+    'Apply the [Confidential — Patient Care] sensitivity label on every generated artefact. Cowork respects the tenant DLP policy; review the label before approving the send.'
+  ];
+  if(isEnergy) return [
+    'For HSE / process-safety incidents, Cowork drafts the internal report — the licensed Safety Officer / OIM owns the notification to DOSH (MY) / KemenESDM (ID) / MOM (SG) and signs off via the regulator portal.',
+    'Keep operational data (production volumes, well metrics, plant uptime) in the prompt; commercial data (offtake pricing, hedge positions) goes in a SEPARATE Cowork run with a tighter approver list.',
+    'Always include the emergency response coordinator and HSSE Director in the named-recipients list; Cowork will pre-populate the Teams channel for the Crisis Cell.'
+  ];
+  if(isMfg) return [
+    'For supplier / customer contractual content, Cowork stays inside the tenant — do not let it auto-send to external vendors. Approval gate routes through the Procurement Director.',
+    'Quality / recall scenarios: scope the prompt to a specific batch / lot / SKU and let Cowork pull the full batch genealogy from the SharePoint quality library before drafting customer comms.',
+    'Production planning Cowork runs are weekly cadence — schedule them as a recurring Cowork delegation tied to the Monday S&OP touchpoint.'
+  ];
+  if(isAgri) return [
+    'Plantation / mill yield data sits in operational SharePoint libraries — give Cowork the specific estate / mill ID in the prompt; broad searches return mixed-up estate data.',
+    'Sustainability disclosures (RSPO, ISPO, MSPO, NDPE) go through Cowork as drafts only — the certified Sustainability Manager reviews against the audit trail before signing.',
+    'Smallholder grievance handling: keep grievance IDs anonymised; Cowork drafts the response framework, the human ESG lead handles the conversation.'
+  ];
+  if(isRetail) return [
+    'For promo / pricing / SKU launch comms, Cowork drafts the in-app banner copy + email + Teams brief in one shot — pricing is REVIEWED by the Category Manager before approval.',
+    'POS / loyalty data referenced in prompts must come from the Curated Reporting site — never raw transaction extracts (PII risk).',
+    'Store-ops Cowork runs live alongside the Daily Trade Huddle Teams meeting; schedule the Cowork delegation 30 min before each huddle so the brief is ready.'
+  ];
+  if(isHosp) return [
+    'Guest PII (passport, payment) is OUT of scope — Cowork drafts narrative + commercial summaries only. Front office + finance handle the guest record.',
+    'For property / event launches, scope Cowork to a single property + single date window so the Teams channel + email DL match the operating team.',
+    'Service-recovery scenarios: Cowork drafts the apology + recovery offer; the GM / Resident Manager owns the conversation and final goodwill amount.'
+  ];
+  if(isTel) return [
+    'Network outage / incident comms: Cowork drafts the internal NOC update + customer apology + regulator pre-notification. Public release is gated by the Comms Director and the Regulatory Affairs lead.',
+    'Subscriber / usage data referenced in prompts must be aggregated (not customer-level) — Cowork stays compliant with the tenant DLP policy.',
+    'For new product / plan launches, schedule the Cowork delegation alongside the Marketing readiness sprint; pre-populate the Customer Care Teams channel for tier-1 agents.'
+  ];
+  if(isTrans) return [
+    'Vessel / fleet / shipment IDs go in the prompt; Cowork pulls voyage data from the operational SharePoint libraries. Cargo manifest data (BL / commercial invoice) stays out of Cowork prompts.',
+    'For port-call / customs delays, Cowork drafts the customer hold-note + agent comms — the Port Captain / Operations Director signs off before send.',
+    'Crisis-cell Teams channel must be pre-populated with the named incident coordinator, marine insurance broker, and salvage / response provider.'
+  ];
+  if(isPub) return [
+    'Citizen-facing comms drafted by Cowork are reviewed by the Communications Director and Director-General BEFORE any external channel post — Cowork stays inside the tenant for drafting.',
+    'Cross-ministry coordination: keep the named recipients list tight (Permanent Secretary + relevant Deputy DGs); Cowork respects the tenant directory groups.',
+    'Sensitivity labels: Restricted (default) for inter-ministry, Public after the comms director clears the draft.'
+  ];
+  if(isDept) return [
+    'Department-wide Cowork runs land in the relevant function''s Teams channel (Finance / IR / Risk / HR / Strategy / Procurement / Legal / IT). Confirm the channel name in the prompt before approving.',
+    'Cowork respects the tenant directory — named recipients (Hadar / Sasha / Daichi / Sonia / Will / Omar) must exist as live mailboxes in the same tenant; otherwise the email task will fail silently.',
+    'Use Cowork for the WEEKLY cadence work (Monday brief, Friday close-out). For ad-hoc one-off requests, use the Word / PPT / Excel agents directly.'
+  ];
+  return [
+    'Confirm named recipients exist in the tenant directory before approving Cowork''s send — Cowork is brittle to typos in distribution lists.',
+    'Apply the matching sensitivity label (Confidential / Highly Confidential) to every generated artefact; the label travels with the file when shared externally.',
+    'For recurring Cowork delegations, save the prompt as a template in your tenant''s prompt library — cuts re-prompt time for the next cycle in half.'
+  ];
+}
+function _coworkRunbookHtml(item,tool,promptText,lines){
+  const apps=_coworkAppsFromIcons(lines);
+  const cmplx=_coworkComplexity(lines);
+  const title=_coworkScenarioTitle(promptText);
+  const outcomes=_coworkOutcomeFromActions(lines);
+  const tips=_coworkTipsForEntry(item&&item.id);
+  // Locale-aware labels
+  const L_APPS=_uL('🧰 Apps involved');
+  const L_CMPLX=_uL('🧠 Complexity');
+  const L_DESC=_uL('📋 Description');
+  const L_OUT=_uL('✅ Expected outcome');
+  const L_TIPS=_uL('💡 Tips & variations');
+  const appsHtml=apps.map(a=>'<span class="cowork-runbook-pill">'+escapeHTML(a)+'</span>').join('');
+  const outHtml='<ul class="cowork-runbook-list">'+outcomes.map(o=>'<li>'+escapeHTML(o.icon+' '+o.text)+'</li>').join('')+'</ul>';
+  const tipsHtml='<ul class="cowork-runbook-list">'+tips.map(t=>'<li>'+escapeHTML(_xformVal(t,'EN'))+'</li>').join('')+'</ul>';
+  return '<div class="cowork-runbook">'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_APPS+'</span><span class="cowork-runbook-body">'+appsHtml+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_CMPLX+'</span><span class="cowork-runbook-body">'+escapeHTML(_xformVal(cmplx,'EN'))+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_DESC+'</span><span class="cowork-runbook-body">'+escapeHTML(_xformVal(title,'EN'))+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_OUT+'</span><span class="cowork-runbook-body">'+outHtml+'</span></div>'+
+    '<div class="cowork-runbook-row"><span class="cowork-runbook-label">'+L_TIPS+'</span><span class="cowork-runbook-body">'+tipsHtml+'</span></div>'+
+  '</div>';
+}
+
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
   currentSidebarTab=tab;
@@ -4119,6 +4303,11 @@ function showItem(item,tab,preserveScroll){
         const lines=_parseCoworkActions(txt);
         if(lines.length>=2){
           coworkHtml=
+            // Runbook (Apps Involved · Complexity · Description · Outcome · Tips)
+            // mirrors the public cowork-prompts page layout — renders ABOVE the
+            // delegated-actions list. Built deterministically from the parsed
+            // action lines + entry id (no per-prompt hand-authoring required).
+            _coworkRunbookHtml(item, tool, txt, lines)+
             '<div class="cowork-actions">'+
             '<div class="cowork-actions-label">'+_uL('⚡ Cowork delegates these in parallel')+'</div>'+
             lines.map(L=>{
@@ -4693,7 +4882,7 @@ function logout(){
 }
 
 // ── Changelog (discreet hidden tab) ──
-const CHANGELOG_DATA = [{"hash":"e7d1fd8","date":"2026-05-10","desc":"Industries-most-affected drill-down on every department"},{"hash":"b85c111","date":"2026-05-10","desc":"Files-match unique use cases — fix dangling ref + audit clean"},{"hash":"1a46b53","date":"2026-05-10","desc":"W/P/X Agent consistency + stay-in-chat normaliser"},{"hash":"bb42117","date":"2026-05-10","desc":"Cowork recheck — Aaron Yue / OneDrive Intelligence approval-gate normaliser"},{"hash":"507bce9","date":"2026-05-10","desc":"Notebook recheck — dedicated tab + canonical demo guide"},{"hash":"ff6981a","date":"2026-05-10","desc":"Unique use cases: 13 template-clone prompts rewritten across 6 entries"},{"hash":"e27093d","date":"2026-05-10","desc":"Cross-check consistency: 20 tool labels normalised in ind_batch6"},{"hash":"e0b8aa6","date":"2026-05-10","desc":"Data realism audit: vague phrasings replaced with named teams"},{"hash":"a36757e","date":"2026-05-10","desc":"Tech feasibility recheck: 6 license mislabels fixed in ind_batch6"},{"hash":"ea30565","date":"2026-05-10","desc":"Notebook: every entry now lists its source files in setup banner + prompt 1"},{"hash":"e2f7f18","date":"2026-05-10","desc":"Cowork: full IHH-style fan-out — named recipients + 5 actions on every prompt"},{"hash":"b911d72","date":"2026-05-10","desc":"Agent Builder: render TWO versions side-by-side (Premium + Free)"},{"hash":"c12e05d","date":"2026-05-10","desc":"Generalize Pacifica/Pacifican to ASEAN/APAC across all entries"},{"hash":"221dbda","date":"2026-05-10","desc":"Departments: rich Industries-most-affected pills (40-43 per dept)"},{"hash":"08d4693","date":"2026-05-10","desc":"Word/PPT/Excel Agent license: flip M365_LIC to ANY_LIC across all 55 entries"},{"hash":"1956ad6","date":"2026-05-10","desc":"Word/PPT/Excel Agent instructions: rewrite per Microsoft support article"},{"hash":"4fe5b37","date":"2026-05-10","desc":"Departments most affected pills: fix 22 industries with dangling dept IDs"},{"hash":"9665cf9","date":"2026-05-10","desc":"Index page: rebrand to Zava Conglomerate, update count to 43+13, password ZavaGlobal2026"},{"hash":"fbaebbe","date":"2026-05-10","desc":"Dark mode third sweep: --navy text invisible against dark navy surface"},{"hash":"b02e85d","date":"2026-05-10","desc":"Notebook follow demo guide: 10-step flow render-time intercept"},{"hash":"424cea7","date":"2026-05-10","desc":"Teams prompts: remove redundant 'Save the file as X.docx in OneDrive' tails"},{"hash":"d66244d","date":"2026-05-10","desc":"Hidden changelog tab — discreet icon next to Lock + Ctrl+Shift+L shortcut"},{"hash":"1f93a64","date":"2026-05-10","desc":"Alliance team codes: align to Cagamas style (short uppercase) + suppress redundant single-group header"},{"hash":"b607af2","date":"2026-05-10","desc":"Other Pages: collapse Customer Demos section into Customer Workshops"},{"hash":"d8bbce7","date":"2026-05-10","desc":"Storyboard description consistency: convert Shape B (og/re/mfg) to Shape A by adding verb fields"},{"hash":"fa5fad9","date":"2026-05-10","desc":"files/: generate 378 placeholder Office files (134 docx + 115 xlsx + 129 pptx) so every prompt reference resolves"},{"hash":"e9165a2","date":"2026-05-10","desc":"Other Pages: add 3 customer demos — Kenanga C-Suite, Rivanta CTO, Contoso Cowork"},{"hash":"040e72d","date":"2026-05-10","desc":"Dark-mode second sweep — 11 more elements made readable in dark + system themes"},{"hash":"2aea66a","date":"2026-05-10","desc":"Storyboard description coverage: synthesise summaries for Shape C entries"},{"hash":"ff34f72","date":"2026-05-10","desc":"Departments-most-affected coverage: dedupe IT&Digital + add reverse mirror to all departments"},{"hash":"a514554","date":"2026-05-10","desc":"Align Alliance Bank team codes with Cagamas — wrap in single teamGroup"},{"hash":"341da4f","date":"2026-05-10","desc":"Cowork: add 3 cross-cutting delegation scenarios per entry"},{"hash":"aa42bbd","date":"2026-05-10","desc":"Fix carousel '??' mojibake on 5 What's-New titles"},{"hash":"e8c1629","date":"2026-05-10","desc":"Cowork now lives in its own tab between Microsoft 365 Copilot Tools and Copilot Chat Prompts"},{"hash":"6cc6fbf","date":"2026-05-10","desc":"Fix dark mode invisible text — var(--navy) used as text color on dark navy surface"},{"hash":"a340877","date":"2026-05-10","desc":"Fix dark mode contrast — invisible text + light-wash bg in 9 spots"},{"hash":"c5532f4","date":"2026-05-10","desc":"Fix BM/BI prompt mixing: auto-fill 674 empty promptsBM from promptsID with token swaps"},{"hash":"32cbfa2","date":"2026-05-10","desc":"Rework show-password toggle on the access gate (index.html)"},{"hash":"2b74335","date":"2026-05-10","desc":"Translate tool-info banner bodies + preserve open tool on language toggle"},{"hash":"5f7514a","date":"2026-05-10","desc":"Hide subsidiaries chip strip from entry hero (keep search-only)"},{"hash":"35076e4","date":"2026-05-10","desc":"Fix system-default theme contrast + complete language toggle coverage"},{"hash":"9265d17","date":"2026-05-10","desc":"Subsidiaries: map customer accounts list onto industries"},{"hash":"266f630","date":"2026-05-10","desc":"Search: tie company names to records (raw + scrubbed + persona fields)"},{"hash":"060fe81","date":"2026-05-10","desc":"Audit new features: roll out April 2026 Microsoft 365 Copilot Blog updates"},{"hash":"1df0a51","date":"2026-05-10","desc":"Audit mobile-adaptive: tighten layout at 480px and add 380px breakpoint"},{"hash":"8bfdd07","date":"2026-05-10","desc":"Audit technical feasibility: align license tier to actual prompt capability"},{"hash":"d8914e6","date":"2026-05-10","desc":"Audit uniqueness: differentiate 8 dept PPT-generic + 5 industry AC-generic dupes"},{"hash":"7fa16be","date":"2026-05-10","desc":"Audit comprehensiveness: normalise tool labels to 14 canonical names"},{"hash":"e01515a","date":"2026-05-10","desc":"Audit realism: align persona accounts + licenses to canonical mapping"},{"hash":"3772ea6","date":"2026-05-10","desc":"Audit consistency: normalise license labels across personas + tools"},{"hash":"0d0e79d","date":"2026-05-10","desc":"Agent Builder: tier the license correctly + add knowledge-tier disclaimer"},{"hash":"c0f1033","date":"2026-05-10","desc":"Dark mode: contrast overrides for Cowork / Notebook / Agent Builder / prompt blocks / pills"},{"hash":"c17a346","date":"2026-05-10","desc":"Other Pages tab: stop scrubbing real workshop / hackathon names"},{"hash":"f142302","date":"2026-05-10","desc":"Generate 316 industry reference files (xlsx + docx) per entry"},{"hash":"68b8901","date":"2026-05-10","desc":"Global locale: scrub MY/ID regulator names + agency acronyms + specific cities"},{"hash":"e446036","date":"2026-05-10","desc":"Storyboard: Shape B narrative renders as full-body description (no synth template)"},{"hash":"3a70743","date":"2026-05-10","desc":"Storyboard: render-time verb shortener for clean moment cards"},{"hash":"c8c512d","date":"2026-05-10","desc":"Agent Builder: per-entry-unique 3-agent catalog across all 56 entries (no War Room template repeats)"},{"hash":"18888ab","date":"2026-05-10","desc":"Teams: canonical 3-meeting IHH structure (52 blocks); fix tab-click auto-scroll-to-top"},{"hash":"d1946e4","date":"2026-05-10","desc":"Agent Builder: IHH-style 3-card picker (General entry)"},{"hash":"355f746","date":"2026-05-10","desc":"UI: theme toggle (Light/Dark/System), responsive sidebar drawer, contrast bumps."},{"hash":"4013e64","date":"2026-05-10","desc":"Persona audit: fix 144 non-conforming names in dept_data5.py."},{"hash":"c4dfd0f","date":"2026-05-10","desc":"Rebrand: M365 Copilot -> Microsoft 365 Copilot (1,129 replacements)."},{"hash":"4222d0e","date":"2026-05-10","desc":"Runtime translator: disable EN→BM and BI→EN dictionary substitution."},{"hash":"2992d29","date":"2026-05-10","desc":"Cowork prompts: append named-recipient appendix (176 prompts)."},{"hash":"bfada09","date":"2026-05-10","desc":"Meeting-minutes prompts: normalise to canonical 5-section template (66 prompts)."},{"hash":"f8952c8","date":"2026-05-10","desc":"Multi-model prefix removed + GPT/Claude version sweep (135 replacements)."},{"hash":"2d27dc2","date":"2026-05-10","desc":"Storyboard moment descriptions per-tool + agent-builder Test step agent-agnostic."},{"hash":"bd9e615","date":"2026-05-10","desc":"Prompts: convert 348 structured-label prompts (Goal/Context/Source/Expectation + Tujuan/Konteks/Sumber/Ekspektasi) across ind_batch10/11/12 to flowing prose, lengthened with directive lead-in and verification trail."},{"hash":"fc5ae67","date":"2026-05-10","desc":"Storyboard render: normalise 3 source schemas — (a) standard nested {tasks:[{n,verb,label}]}, (b) ind_batch4 {objective, desc/descID}, (c) flat ind_batch6 {exercise, task/taskID, tool}. Now fintech-payments, government-agency, og-downstream, renewable-energy, and industrial-manufacturing render real moment cards instead of empty phases. Strips leading 'Exercise N — ' from titles. Auto-numbers tasks when 'n' is missing."},{"hash":"5aae746","date":"2026-05-10","desc":"Storyboard: remove 'Exercise N' badge from phase header — title alone reads cleaner."},{"hash":"ea63f1c","date":"2026-05-10","desc":"Storyboard moment cards: drop Show & Tell / Hands-on mode pill and remove duration pill from exercise header. Keep verb (solution) prominent, add a short locale-aware description below ('Open {tool} and produce the {verb}, grounded in the scenario files.' / BM / BI variants)."},{"hash":"919264a","date":"2026-05-10","desc":"Hackathon cards: span 2 grid columns when team data is present (uses the right-side whitespace); split 'Team N — Desc' label into a coloured team-num badge + wrapped description so each row is unmistakably labelled even in tight 2-col layout."},{"hash":"6344333","date":"2026-05-10","desc":"Personas: standardize all 49 non-conforming names to Hadar/Sasha/Mod Admin/Daichi across 6 source files. Storyboard: restructure to IHH 8-moment style — exercise header strips with Exercise N badge + minutes pill, plus grid of moment cards (numbered, tool label, action verb, mode). Hero now reads 'X moments across one workday' with X = total tasks count."},{"hash":"3b73046","date":"2026-05-10","desc":"Hackathon cards: lay team codes side-by-side (2-col grid)"},{"hash":"777ce13","date":"2026-05-10","desc":"Sidebar: remove default underline on Other Pages links"},{"hash":"ef847c8","date":"2026-05-10","desc":"Native BM/IDEN translations + team-codes render + locale-leak fixes"},{"hash":"16a48a3","date":"2026-05-10","desc":"UI: contrast fix, IHH-style storyboard cards, native UI labels, ABMB to Hackathons, sidebar to hub"},{"hash":"ef74df5","date":"2026-05-10","desc":"Locale fixes: fictional regulator/geo names + ABMB password + full translation coverage"},{"hash":"eec50a3","date":"2026-05-10","desc":"Add 5-locale toggle + runtime real-customer-name scrub"},{"hash":"0e85c70","date":"2026-05-10","desc":"Storyboard: drop EXERCISE/duration/task chips; show phase title + summary only"},{"hash":"1f0dd11","date":"2026-05-10","desc":"Add final 2 batch12 industries: ecommerce-superapp + maritime-shipping (43 total)"},{"hash":"09c2780","date":"2026-05-10","desc":"IHH-style storyboard + UI search + Other Pages tab + 4 new industries (41 total)"},{"hash":"47f490b","date":"2026-05-09","desc":"Language toggle: collapse to EN | Bahasa (drop BM pill)"},{"hash":"7aa8b2d","date":"2026-05-09","desc":"BM fallback to BI: Bahasa Malaysia toggle now reads BI strings when BM strings absent"},{"hash":"e99b633","date":"2026-05-09","desc":"Storyboard: IHH-style activity rows (story + solution, no file refs)"},{"hash":"976a083","date":"2026-05-09","desc":"Add automotive (vehicle distribution & dealership) -- Zava Motors"},{"hash":"c53accd","date":"2026-05-09","desc":"Fix dept_data5: complete files list (6 of 6) + correct phase 1 storyboard titles for IR/Procurement/IT depts"},{"hash":"3103a3e","date":"2026-05-09","desc":"Add 3 new departments: Investor Relations, Procurement, IT & Digital (13 depts total)"},{"hash":"8951bf3","date":"2026-05-09","desc":"Hospital network: name-drop IHH/KPJ/Sunway/Columbia + add Nurul-style Finance Manager reference"},{"hash":"dfc7820","date":"2026-05-09","desc":"Carousel blog links + 5 vertical folds/name-drops + MY+ID neutrality"},{"hash":"e4e9432","date":"2026-05-09","desc":"Session 2: Teams flow + Gemini purge + feasibility audit + 7 new industries + carousel fix"},{"hash":"38c1130","date":"2026-05-09","desc":"Storyboard: reframe Exercises -> A Day in the Life"},{"hash":"b965dcc","date":"2026-05-09","desc":"Storyboard: drop minute counts and Show&Tell/Hands-on tags"},{"hash":"3cb3cf1","date":"2026-05-09","desc":"UI fixes: demo tip wording, EN flag shows MY+ID, ID -> BI"},{"hash":"df52664","date":"2026-05-09","desc":"Phase A cleanup: strip preamble/wrapper boilerplate from all prompt bodies"},{"hash":"adc4133","date":"2026-05-09","desc":"Phase 1 audit: align General ID prompts to Group scope + enrich Strategy + Investor Q&A regulatory grounding"},{"hash":"a4e5714","date":"2026-05-09","desc":"Phase 3 Pass A: persona standardisation across all 28 industries"},{"hash":"a610a49","date":"2026-05-09","desc":"Phase 2 Pass A: persona standardisation across all 9 departments + Legal/CorpSec split"},{"hash":"ec52d12","date":"2026-05-09","desc":"Phase 1.11-1.18: 6 RICH reference files for General entry"}];
+const CHANGELOG_DATA = [{"hash":"13e21dc","date":"2026-05-10","desc":"Split Agent Builder into paid (file knowledge) + free (URL knowledge) tiers"},{"hash":"e7d1fd8","date":"2026-05-10","desc":"Industries-most-affected drill-down on every department"},{"hash":"b85c111","date":"2026-05-10","desc":"Files-match unique use cases — fix dangling ref + audit clean"},{"hash":"1a46b53","date":"2026-05-10","desc":"W/P/X Agent consistency + stay-in-chat normaliser"},{"hash":"bb42117","date":"2026-05-10","desc":"Cowork recheck — Aaron Yue / OneDrive Intelligence approval-gate normaliser"},{"hash":"507bce9","date":"2026-05-10","desc":"Notebook recheck — dedicated tab + canonical demo guide"},{"hash":"ff6981a","date":"2026-05-10","desc":"Unique use cases: 13 template-clone prompts rewritten across 6 entries"},{"hash":"e27093d","date":"2026-05-10","desc":"Cross-check consistency: 20 tool labels normalised in ind_batch6"},{"hash":"e0b8aa6","date":"2026-05-10","desc":"Data realism audit: vague phrasings replaced with named teams"},{"hash":"a36757e","date":"2026-05-10","desc":"Tech feasibility recheck: 6 license mislabels fixed in ind_batch6"},{"hash":"ea30565","date":"2026-05-10","desc":"Notebook: every entry now lists its source files in setup banner + prompt 1"},{"hash":"e2f7f18","date":"2026-05-10","desc":"Cowork: full IHH-style fan-out — named recipients + 5 actions on every prompt"},{"hash":"b911d72","date":"2026-05-10","desc":"Agent Builder: render TWO versions side-by-side (Premium + Free)"},{"hash":"c12e05d","date":"2026-05-10","desc":"Generalize Pacifica/Pacifican to ASEAN/APAC across all entries"},{"hash":"221dbda","date":"2026-05-10","desc":"Departments: rich Industries-most-affected pills (40-43 per dept)"},{"hash":"08d4693","date":"2026-05-10","desc":"Word/PPT/Excel Agent license: flip M365_LIC to ANY_LIC across all 55 entries"},{"hash":"1956ad6","date":"2026-05-10","desc":"Word/PPT/Excel Agent instructions: rewrite per Microsoft support article"},{"hash":"4fe5b37","date":"2026-05-10","desc":"Departments most affected pills: fix 22 industries with dangling dept IDs"},{"hash":"9665cf9","date":"2026-05-10","desc":"Index page: rebrand to Zava Conglomerate, update count to 43+13, password ZavaGlobal2026"},{"hash":"fbaebbe","date":"2026-05-10","desc":"Dark mode third sweep: --navy text invisible against dark navy surface"},{"hash":"b02e85d","date":"2026-05-10","desc":"Notebook follow demo guide: 10-step flow render-time intercept"},{"hash":"424cea7","date":"2026-05-10","desc":"Teams prompts: remove redundant 'Save the file as X.docx in OneDrive' tails"},{"hash":"d66244d","date":"2026-05-10","desc":"Hidden changelog tab — discreet icon next to Lock + Ctrl+Shift+L shortcut"},{"hash":"1f93a64","date":"2026-05-10","desc":"Alliance team codes: align to Cagamas style (short uppercase) + suppress redundant single-group header"},{"hash":"b607af2","date":"2026-05-10","desc":"Other Pages: collapse Customer Demos section into Customer Workshops"},{"hash":"d8bbce7","date":"2026-05-10","desc":"Storyboard description consistency: convert Shape B (og/re/mfg) to Shape A by adding verb fields"},{"hash":"fa5fad9","date":"2026-05-10","desc":"files/: generate 378 placeholder Office files (134 docx + 115 xlsx + 129 pptx) so every prompt reference resolves"},{"hash":"e9165a2","date":"2026-05-10","desc":"Other Pages: add 3 customer demos — Kenanga C-Suite, Rivanta CTO, Contoso Cowork"},{"hash":"040e72d","date":"2026-05-10","desc":"Dark-mode second sweep — 11 more elements made readable in dark + system themes"},{"hash":"2aea66a","date":"2026-05-10","desc":"Storyboard description coverage: synthesise summaries for Shape C entries"},{"hash":"ff34f72","date":"2026-05-10","desc":"Departments-most-affected coverage: dedupe IT&Digital + add reverse mirror to all departments"},{"hash":"a514554","date":"2026-05-10","desc":"Align Alliance Bank team codes with Cagamas — wrap in single teamGroup"},{"hash":"341da4f","date":"2026-05-10","desc":"Cowork: add 3 cross-cutting delegation scenarios per entry"},{"hash":"aa42bbd","date":"2026-05-10","desc":"Fix carousel '??' mojibake on 5 What's-New titles"},{"hash":"e8c1629","date":"2026-05-10","desc":"Cowork now lives in its own tab between Microsoft 365 Copilot Tools and Copilot Chat Prompts"},{"hash":"6cc6fbf","date":"2026-05-10","desc":"Fix dark mode invisible text — var(--navy) used as text color on dark navy surface"},{"hash":"a340877","date":"2026-05-10","desc":"Fix dark mode contrast — invisible text + light-wash bg in 9 spots"},{"hash":"c5532f4","date":"2026-05-10","desc":"Fix BM/BI prompt mixing: auto-fill 674 empty promptsBM from promptsID with token swaps"},{"hash":"32cbfa2","date":"2026-05-10","desc":"Rework show-password toggle on the access gate (index.html)"},{"hash":"2b74335","date":"2026-05-10","desc":"Translate tool-info banner bodies + preserve open tool on language toggle"},{"hash":"5f7514a","date":"2026-05-10","desc":"Hide subsidiaries chip strip from entry hero (keep search-only)"},{"hash":"35076e4","date":"2026-05-10","desc":"Fix system-default theme contrast + complete language toggle coverage"},{"hash":"9265d17","date":"2026-05-10","desc":"Subsidiaries: map customer accounts list onto industries"},{"hash":"266f630","date":"2026-05-10","desc":"Search: tie company names to records (raw + scrubbed + persona fields)"},{"hash":"060fe81","date":"2026-05-10","desc":"Audit new features: roll out April 2026 Microsoft 365 Copilot Blog updates"},{"hash":"1df0a51","date":"2026-05-10","desc":"Audit mobile-adaptive: tighten layout at 480px and add 380px breakpoint"},{"hash":"8bfdd07","date":"2026-05-10","desc":"Audit technical feasibility: align license tier to actual prompt capability"},{"hash":"d8914e6","date":"2026-05-10","desc":"Audit uniqueness: differentiate 8 dept PPT-generic + 5 industry AC-generic dupes"},{"hash":"7fa16be","date":"2026-05-10","desc":"Audit comprehensiveness: normalise tool labels to 14 canonical names"},{"hash":"e01515a","date":"2026-05-10","desc":"Audit realism: align persona accounts + licenses to canonical mapping"},{"hash":"3772ea6","date":"2026-05-10","desc":"Audit consistency: normalise license labels across personas + tools"},{"hash":"0d0e79d","date":"2026-05-10","desc":"Agent Builder: tier the license correctly + add knowledge-tier disclaimer"},{"hash":"c0f1033","date":"2026-05-10","desc":"Dark mode: contrast overrides for Cowork / Notebook / Agent Builder / prompt blocks / pills"},{"hash":"c17a346","date":"2026-05-10","desc":"Other Pages tab: stop scrubbing real workshop / hackathon names"},{"hash":"f142302","date":"2026-05-10","desc":"Generate 316 industry reference files (xlsx + docx) per entry"},{"hash":"68b8901","date":"2026-05-10","desc":"Global locale: scrub MY/ID regulator names + agency acronyms + specific cities"},{"hash":"e446036","date":"2026-05-10","desc":"Storyboard: Shape B narrative renders as full-body description (no synth template)"},{"hash":"3a70743","date":"2026-05-10","desc":"Storyboard: render-time verb shortener for clean moment cards"},{"hash":"c8c512d","date":"2026-05-10","desc":"Agent Builder: per-entry-unique 3-agent catalog across all 56 entries (no War Room template repeats)"},{"hash":"18888ab","date":"2026-05-10","desc":"Teams: canonical 3-meeting IHH structure (52 blocks); fix tab-click auto-scroll-to-top"},{"hash":"d1946e4","date":"2026-05-10","desc":"Agent Builder: IHH-style 3-card picker (General entry)"},{"hash":"355f746","date":"2026-05-10","desc":"UI: theme toggle (Light/Dark/System), responsive sidebar drawer, contrast bumps."},{"hash":"4013e64","date":"2026-05-10","desc":"Persona audit: fix 144 non-conforming names in dept_data5.py."},{"hash":"c4dfd0f","date":"2026-05-10","desc":"Rebrand: M365 Copilot -> Microsoft 365 Copilot (1,129 replacements)."},{"hash":"4222d0e","date":"2026-05-10","desc":"Runtime translator: disable EN→BM and BI→EN dictionary substitution."},{"hash":"2992d29","date":"2026-05-10","desc":"Cowork prompts: append named-recipient appendix (176 prompts)."},{"hash":"bfada09","date":"2026-05-10","desc":"Meeting-minutes prompts: normalise to canonical 5-section template (66 prompts)."},{"hash":"f8952c8","date":"2026-05-10","desc":"Multi-model prefix removed + GPT/Claude version sweep (135 replacements)."},{"hash":"2d27dc2","date":"2026-05-10","desc":"Storyboard moment descriptions per-tool + agent-builder Test step agent-agnostic."},{"hash":"bd9e615","date":"2026-05-10","desc":"Prompts: convert 348 structured-label prompts (Goal/Context/Source/Expectation + Tujuan/Konteks/Sumber/Ekspektasi) across ind_batch10/11/12 to flowing prose, lengthened with directive lead-in and verification trail."},{"hash":"fc5ae67","date":"2026-05-10","desc":"Storyboard render: normalise 3 source schemas — (a) standard nested {tasks:[{n,verb,label}]}, (b) ind_batch4 {objective, desc/descID}, (c) flat ind_batch6 {exercise, task/taskID, tool}. Now fintech-payments, government-agency, og-downstream, renewable-energy, and industrial-manufacturing render real moment cards instead of empty phases. Strips leading 'Exercise N — ' from titles. Auto-numbers tasks when 'n' is missing."},{"hash":"5aae746","date":"2026-05-10","desc":"Storyboard: remove 'Exercise N' badge from phase header — title alone reads cleaner."},{"hash":"ea63f1c","date":"2026-05-10","desc":"Storyboard moment cards: drop Show & Tell / Hands-on mode pill and remove duration pill from exercise header. Keep verb (solution) prominent, add a short locale-aware description below ('Open {tool} and produce the {verb}, grounded in the scenario files.' / BM / BI variants)."},{"hash":"919264a","date":"2026-05-10","desc":"Hackathon cards: span 2 grid columns when team data is present (uses the right-side whitespace); split 'Team N — Desc' label into a coloured team-num badge + wrapped description so each row is unmistakably labelled even in tight 2-col layout."},{"hash":"6344333","date":"2026-05-10","desc":"Personas: standardize all 49 non-conforming names to Hadar/Sasha/Mod Admin/Daichi across 6 source files. Storyboard: restructure to IHH 8-moment style — exercise header strips with Exercise N badge + minutes pill, plus grid of moment cards (numbered, tool label, action verb, mode). Hero now reads 'X moments across one workday' with X = total tasks count."},{"hash":"3b73046","date":"2026-05-10","desc":"Hackathon cards: lay team codes side-by-side (2-col grid)"},{"hash":"777ce13","date":"2026-05-10","desc":"Sidebar: remove default underline on Other Pages links"},{"hash":"ef847c8","date":"2026-05-10","desc":"Native BM/IDEN translations + team-codes render + locale-leak fixes"},{"hash":"16a48a3","date":"2026-05-10","desc":"UI: contrast fix, IHH-style storyboard cards, native UI labels, ABMB to Hackathons, sidebar to hub"},{"hash":"ef74df5","date":"2026-05-10","desc":"Locale fixes: fictional regulator/geo names + ABMB password + full translation coverage"},{"hash":"eec50a3","date":"2026-05-10","desc":"Add 5-locale toggle + runtime real-customer-name scrub"},{"hash":"0e85c70","date":"2026-05-10","desc":"Storyboard: drop EXERCISE/duration/task chips; show phase title + summary only"},{"hash":"1f0dd11","date":"2026-05-10","desc":"Add final 2 batch12 industries: ecommerce-superapp + maritime-shipping (43 total)"},{"hash":"09c2780","date":"2026-05-10","desc":"IHH-style storyboard + UI search + Other Pages tab + 4 new industries (41 total)"},{"hash":"47f490b","date":"2026-05-09","desc":"Language toggle: collapse to EN | Bahasa (drop BM pill)"},{"hash":"7aa8b2d","date":"2026-05-09","desc":"BM fallback to BI: Bahasa Malaysia toggle now reads BI strings when BM strings absent"},{"hash":"e99b633","date":"2026-05-09","desc":"Storyboard: IHH-style activity rows (story + solution, no file refs)"},{"hash":"976a083","date":"2026-05-09","desc":"Add automotive (vehicle distribution & dealership) -- Zava Motors"},{"hash":"c53accd","date":"2026-05-09","desc":"Fix dept_data5: complete files list (6 of 6) + correct phase 1 storyboard titles for IR/Procurement/IT depts"},{"hash":"3103a3e","date":"2026-05-09","desc":"Add 3 new departments: Investor Relations, Procurement, IT & Digital (13 depts total)"},{"hash":"8951bf3","date":"2026-05-09","desc":"Hospital network: name-drop IHH/KPJ/Sunway/Columbia + add Nurul-style Finance Manager reference"},{"hash":"dfc7820","date":"2026-05-09","desc":"Carousel blog links + 5 vertical folds/name-drops + MY+ID neutrality"},{"hash":"e4e9432","date":"2026-05-09","desc":"Session 2: Teams flow + Gemini purge + feasibility audit + 7 new industries + carousel fix"},{"hash":"38c1130","date":"2026-05-09","desc":"Storyboard: reframe Exercises -> A Day in the Life"},{"hash":"b965dcc","date":"2026-05-09","desc":"Storyboard: drop minute counts and Show&Tell/Hands-on tags"},{"hash":"3cb3cf1","date":"2026-05-09","desc":"UI fixes: demo tip wording, EN flag shows MY+ID, ID -> BI"},{"hash":"df52664","date":"2026-05-09","desc":"Phase A cleanup: strip preamble/wrapper boilerplate from all prompt bodies"},{"hash":"adc4133","date":"2026-05-09","desc":"Phase 1 audit: align General ID prompts to Group scope + enrich Strategy + Investor Q&A regulatory grounding"},{"hash":"a4e5714","date":"2026-05-09","desc":"Phase 3 Pass A: persona standardisation across all 28 industries"},{"hash":"a610a49","date":"2026-05-09","desc":"Phase 2 Pass A: persona standardisation across all 9 departments + Legal/CorpSec split"}];
 function _renderChangelog(){
   const body=document.getElementById('changelog-body');
   if(!body) return;
