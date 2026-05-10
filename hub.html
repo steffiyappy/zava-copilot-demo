@@ -34,8 +34,38 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   width:var(--sidebar);background:rgba(255,255,255,0.92);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);border-right:1px solid var(--border);
   position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column;
 }
+/* Sidebar search box (always visible, filters sidebar + grid live) */
+.sidebar-search{padding:10px 12px;border-bottom:1px solid var(--border);background:rgba(248,250,252,0.6);flex-shrink:0;position:relative}
+.sidebar-search-input{width:100%;padding:8px 30px 8px 32px;font-size:12px;border:1px solid var(--border);border-radius:8px;background:#FFFFFF;color:var(--text);font-family:inherit;outline:none;transition:all 0.18s}
+.sidebar-search-input::placeholder{color:#94A3B8}
+.sidebar-search-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,120,212,0.15)}
+.sidebar-search-icon{position:absolute;left:22px;top:50%;transform:translateY(-50%);font-size:13px;color:#94A3B8;pointer-events:none}
+.sidebar-search-clear{position:absolute;right:22px;top:50%;transform:translateY(-50%);background:#E2E8F0;color:#475569;border:none;border-radius:50%;width:18px;height:18px;font-size:11px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center;font-family:inherit;padding:0}
+.sidebar-search-clear.show{display:flex}
+.sidebar-search-clear:hover{background:#CBD5E1;color:var(--navy)}
+.sidebar-search-hint{position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:9px;color:#94A3B8;background:#F1F5F9;border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-weight:600;pointer-events:none}
+.sidebar-search-input:focus + .sidebar-search-icon + .sidebar-search-hint{display:none}
+.search-empty{padding:24px 14px;text-align:center;font-size:11px;color:var(--muted);font-style:italic;display:none}
+.search-empty.show{display:block}
+/* Other-pages grid + cards */
+.op-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:14px}
+.op-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:0;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.op-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.1);border-color:var(--blue)}
+.op-card-banner{height:80px;background:linear-gradient(135deg,var(--op-color,#0078D4),var(--op-accent,#005EA6));display:flex;align-items:center;justify-content:center;font-size:34px;color:#FFFFFF;position:relative;overflow:hidden}
+.op-card-banner::after{content:'';position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.1)}
+.op-card-body{padding:16px 18px 14px;flex:1;display:flex;flex-direction:column}
+.op-card-tag{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--op-color,var(--blue));margin-bottom:5px}
+.op-card-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:5px;line-height:1.3}
+.op-card-desc{font-size:11.5px;color:var(--muted);line-height:1.5;margin-bottom:10px;flex:1}
+.op-card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid var(--border)}
+.op-card-pwd{font-size:10px;color:#9A3412;background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:2px 8px;font-weight:600;font-family:'Courier New',monospace}
+.op-card-pwd.none{background:#F0FDF4;border-color:#BBF7D0;color:#166534}
+.op-card-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--op-color,var(--blue));text-decoration:none;transition:gap 0.15s}
+.op-card-link:hover{gap:8px;text-decoration:underline}
+.op-section-hdr{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:22px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.op-section-hdr:first-child{margin-top:0}
 .sidebar-tabs{display:flex;border-bottom:2px solid var(--border);flex-shrink:0}
-.sidebar-tab{flex:1;padding:12px 0;text-align:center;font-size:12px;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s}
+.sidebar-tab{flex:1;padding:12px 0;text-align:center;font-size:11px;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sidebar-tab.active{color:var(--blue);border-bottom-color:var(--blue);position:relative}
 .sidebar-tab.active::after{content:'';position:absolute;left:20%;right:20%;bottom:-2px;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);animation:slideUnderline 0.3s ease}
 @keyframes slideUnderline{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
@@ -191,11 +221,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .notebook-instr-row{font-size:11.5px;color:#0C4A6E;line-height:1.55;background:rgba(255,255,255,0.6);border-radius:6px;padding:8px 10px;margin-top:4px;border-left:2px solid #0EA5E9}
 .notebook-instr-row strong{color:#075985}
 /* Fluent polish — focus rings, hover lift, smooth motion */
-.ind-card,.dept-pill,.sb-act,.sb-ex,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
-.ind-card:focus-visible,.dept-pill:focus-visible,.sb-act:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
+.ind-card,.dept-pill,.sb-task,.sb-phase,.tool-header,.tool-prompts,.copy-btn{transition:all 0.18s cubic-bezier(.2,.8,.2,1)}
+.ind-card:focus-visible,.dept-pill:focus-visible,.sb-task:focus-visible,.tool-header:focus-visible{outline:3px solid rgba(0,120,212,0.45);outline-offset:2px;border-color:var(--blue)}
 .tool-header:active{transform:scale(0.995)}
-.sb-ex{transition:transform 0.2s ease,box-shadow 0.2s ease}
-.sb-ex:hover{transform:translateX(2px);box-shadow:-3px 0 0 var(--blue)}
+.sb-phase{transition:transform 0.2s ease,box-shadow 0.2s ease}
 /* Persona avatar gradient by name */
 .persona-avatar{background:linear-gradient(135deg,#3B82F6,#1E40AF)}
 /* Section header above tools (groups Agent Builder under M365 Copilot Tools) */
@@ -241,25 +270,38 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .storyboard-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:18px}
 .storyboard-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;display:flex;align-items:center;gap:6px}
 .storyboard-sub{font-size:11px;color:var(--muted);margin-bottom:14px}
-.sb-exercises{display:flex;flex-direction:column;gap:12px}
-.sb-ex{border-left:3px solid var(--blue);padding:12px 16px;background:#F8FAFC;border-radius:0 8px 8px 0;margin-bottom:14px}
-.sb-ex-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
-.sb-ex-num{font-size:10px;font-weight:800;color:#FFFFFF;background:var(--blue);padding:3px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px}
-.sb-ex-title{font-size:13px;font-weight:700;color:var(--navy);flex:1;min-width:0}
-.sb-ex-meta{font-size:10px;color:var(--muted);font-weight:600;background:#FFFFFF;border:1px solid var(--border);padding:2px 8px;border-radius:10px}
-.sb-ex-summary{font-size:11.5px;color:#334155;margin:6px 0 12px;line-height:1.55;font-style:italic;background:#FFFFFF;border:1px solid var(--border);border-radius:8px;padding:10px 12px}
-/* IHH-style activity rows */
-.sb-acts{display:flex;flex-direction:column;gap:8px;margin-top:6px}
-.sb-act{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:flex-start;background:#FFFFFF;border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:8px;padding:10px 12px;transition:all 0.15s;cursor:pointer}
-.sb-act:hover{border-color:var(--blue);background:#F4F8FF;transform:translateX(2px)}
-.sb-act-n{font-weight:800;color:var(--blue);font-size:13px;background:#EEF4FF;border-radius:6px;width:34px;height:26px;display:flex;align-items:center;justify-content:center;letter-spacing:-0.3px}
-.sb-act-body{display:flex;flex-direction:column;gap:3px;min-width:0}
-.sb-act-tool{font-weight:700;color:var(--navy);font-size:12px;letter-spacing:0.1px}
-.sb-act-narr{font-size:11.5px;color:#475569;line-height:1.5}
-.sb-act-mode{font-size:9px;text-transform:uppercase;padding:3px 8px;border-radius:8px;font-weight:800;letter-spacing:0.4px;align-self:flex-start;white-space:nowrap}
-.sb-act-mode.show{background:#FFF3E0;color:#C2410C}
-.sb-act-mode.hands{background:#F0FDF4;color:#16A34A}
-@media(max-width:640px){.sb-act{grid-template-columns:30px 1fr;gap:8px}.sb-act-mode{grid-column:2/3;justify-self:flex-start}}
+/* IHH-style 2-column "Day in the Life" hero */
+.sb-hero{display:grid;grid-template-columns:240px 1fr;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);background:#FFFFFF}
+.sb-hero-left{background:linear-gradient(180deg,#1E3A5F,#0F2545);padding:22px 18px;display:flex;flex-direction:column;gap:14px;color:#E2E8F0;min-width:0}
+.sb-hero-left .lbl{margin:0 0 3px;font-size:8px;letter-spacing:1.8px;font-weight:700;text-transform:uppercase;color:var(--ind-color,#0EA5E9)}
+.sb-hero-left h3.hero-title{margin:0;font-size:18px;font-weight:800;color:#FFFFFF;line-height:1.2}
+.sb-hero-left .persona-name{margin:0;font-size:12.5px;font-weight:700;color:#FFFFFF}
+.sb-hero-left .persona-role{margin:2px 0 0;font-size:10.5px;color:#94A3B8;line-height:1.45}
+.sb-hero-left .mission-text{margin:0;font-size:10.5px;color:#CBD5E1;line-height:1.6}
+.sb-hero-left .punch{margin-top:auto;padding:10px;background:rgba(255,255,255,0.06);border-radius:8px;border:1px solid rgba(255,255,255,0.12)}
+.sb-hero-left .punch-text{margin:0;font-size:11.5px;font-weight:700;font-style:italic;color:#FFFFFF;line-height:1.4}
+.sb-hero-right{background:#FFFFFF;padding:18px 16px 14px;min-width:0}
+.sb-hero-right h3.right-title{margin:0 0 14px;font-size:15px;font-weight:700;color:var(--text)}
+.sb-phase{margin-bottom:14px}
+.sb-phase:last-child{margin-bottom:0}
+.sb-phase-head{display:flex;align-items:center;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.sb-phase-num{background:#0F2545;color:#FFFFFF;font-size:9px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:0.5px}
+.sb-phase-title{font-size:12px;font-weight:700;color:var(--text)}
+.sb-phase-mins{font-size:10px;color:var(--muted);font-weight:600}
+.sb-task-grid{display:grid;gap:8px}
+.sb-task-grid.cols-1{grid-template-columns:1fr}
+.sb-task-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.sb-task-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.sb-hero{grid-template-columns:1fr}.sb-task-grid.cols-2,.sb-task-grid.cols-3{grid-template-columns:1fr}}
+.sb-task{border:1px solid var(--border);border-radius:7px;overflow:hidden;background:#FFFFFF;cursor:pointer;display:flex;flex-direction:column;min-width:0}
+.sb-task:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,0.08);border-color:var(--ind-color,var(--blue))}
+.sb-task-head{padding:5px 9px;display:flex;align-items:center;gap:5px;color:#FFFFFF}
+.sb-task-num{font-size:9.5px;font-weight:800;color:rgba(255,255,255,0.55);min-width:14px}
+.sb-task-tool{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:#FFFFFF;line-height:1.2;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-task-body{padding:8px 10px 10px;background:#F8FAFC;flex:1;display:flex;flex-direction:column;gap:2px}
+.sb-task-title{margin:0;font-size:11px;font-weight:700;color:var(--text);line-height:1.3}
+.sb-task-label{margin:0 0 4px;font-size:9px;font-style:italic;color:var(--ind-color,var(--blue));font-weight:600}
+.sb-task-narr{margin:0;font-size:9.5px;color:var(--muted);line-height:1.5}
 /* Personas card (right sidebar) */
 .personas-card{background:#FFFFFF;border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px}
 .personas-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:6px}
@@ -323,33 +365,54 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
+    <div class="sidebar-search">
+      <span class="sidebar-search-icon">&#128269;</span>
+      <input class="sidebar-search-input" id="sidebar-search-input" type="text" placeholder="Search industries, departments…" oninput="applySearch(this.value)" onkeydown="if(event.key==='Escape'){this.value='';applySearch('');this.blur();}" />
+      <button class="sidebar-search-clear" id="sidebar-search-clear" type="button" onclick="document.getElementById('sidebar-search-input').value='';applySearch('');" title="Clear search">&times;</button>
+    </div>
     <div class="sidebar-tabs">
-      <div class="sidebar-tab active" id="stab-ind" onclick="setSidebarTab('ind')">🏭 Industries</div>
-      <div class="sidebar-tab" id="stab-dept" onclick="setSidebarTab('dept')">🏢 Departments</div>
+      <div class="sidebar-tab active" id="stab-ind" onclick="setSidebarTab('ind')">&#127981; Industries</div>
+      <div class="sidebar-tab" id="stab-dept" onclick="setSidebarTab('dept')">&#127970; Departments</div>
+      <div class="sidebar-tab" id="stab-other" onclick="setSidebarTab('other')">&#128218; More</div>
     </div>
     <!-- Industries panel -->
     <div class="sidebar-panel active" id="spanel-ind">
       <div class="sidebar-section">
         <a class="sidebar-item active" id="nav-all-ind" onclick="showGridTab('ind')">
-          <span class="ind-icon">🏠</span>
+          <span class="ind-icon">&#127968;</span>
           <span class="ind-name">All Industries</span>
           <span class="ind-count" id="total-ind-count">29</span>
         </a>
       </div>
       <div class="sidebar-divider"></div>
       <div id="sidebar-industries"></div>
+      <div class="search-empty" id="search-empty-ind">No industries match your search.</div>
     </div>
     <!-- Departments panel -->
     <div class="sidebar-panel" id="spanel-dept">
       <div class="sidebar-section">
         <a class="sidebar-item active" id="nav-all-dept" onclick="showGridTab('dept')">
-          <span class="ind-icon">🏠</span>
+          <span class="ind-icon">&#127968;</span>
           <span class="ind-name">All Departments</span>
           <span class="ind-count" id="total-dept-count">10</span>
         </a>
       </div>
       <div class="sidebar-divider"></div>
       <div id="sidebar-departments"></div>
+      <div class="search-empty" id="search-empty-dept">No departments match your search.</div>
+    </div>
+    <!-- Other Pages panel -->
+    <div class="sidebar-panel" id="spanel-other">
+      <div class="sidebar-section">
+        <a class="sidebar-item active" id="nav-all-other" onclick="showOtherTab()">
+          <span class="ind-icon">&#127760;</span>
+          <span class="ind-name">All Other Pages</span>
+          <span class="ind-count" id="total-other-count">6</span>
+        </a>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div id="sidebar-other-pages"></div>
+      <div class="search-empty" id="search-empty-other">No pages match your search.</div>
     </div>
   </aside>
 
@@ -390,6 +453,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
       <div class="grid-tabs">
         <button class="grid-tab active" id="gtab-ind" onclick="showGridTab('ind')">&#127981; Industries (29)</button>
         <button class="grid-tab" id="gtab-dept" onclick="showGridTab('dept')">&#127970; Departments (10)</button>
+        <button class="grid-tab" id="gtab-other" onclick="showOtherTab()">&#128218; Other Pages (6)</button>
       </div>
       <!-- Industry grid (sector grouped) -->
       <div id="ind-grid-wrap">
@@ -398,6 +462,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
       <!-- Department grid -->
       <div id="dept-grid-wrap" style="display:none">
         <div class="ind-grid" id="dept-grid"></div>
+      </div>
+      <!-- Other Pages grid -->
+      <div id="other-grid-wrap" style="display:none">
+        <div id="other-grid"></div>
       </div>
     </div>
 
@@ -593,10 +661,15 @@ function _parseCoworkActions(text){
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
   currentSidebarTab=tab;
-  ['ind','dept'].forEach(t=>{
-    document.getElementById('stab-'+t).classList.toggle('active',t===tab);
-    document.getElementById('spanel-'+t).classList.toggle('active',t===tab);
+  ['ind','dept','other'].forEach(t=>{
+    const stEl=document.getElementById('stab-'+t);
+    const spEl=document.getElementById('spanel-'+t);
+    if(stEl) stEl.classList.toggle('active',t===tab);
+    if(spEl) spEl.classList.toggle('active',t===tab);
   });
+  // Re-apply current search filter when switching panels
+  const sv=document.getElementById('sidebar-search-input');
+  if(sv && sv.value) applySearch(sv.value);
 }
 
 // ── Grid tab toggle ──
@@ -611,13 +684,143 @@ function showGridTab(tab){
   _currentItem=null;
   document.getElementById('gtab-ind').classList.toggle('active',tab==='ind');
   document.getElementById('gtab-dept').classList.toggle('active',tab==='dept');
+  const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.remove('active');
   document.getElementById('ind-grid-wrap').style.display=tab==='ind'?'block':'none';
   document.getElementById('dept-grid-wrap').style.display=tab==='dept'?'block':'none';
+  const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='none';
   // Reset sidebar nav highlights to "All"
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   if(tab==='ind') document.getElementById('nav-all-ind').classList.add('active');
   else document.getElementById('nav-all-dept').classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Show Other Pages tab (workshops + customer demos) ──
+function showOtherTab(){
+  currentGridTab='other';
+  setSidebarTab('other');
+  document.getElementById('home-view').style.display='block';
+  const dv=document.getElementById('detail-view');
+  dv.classList.remove('active'); dv.style.display='none';
+  _currentItem=null;
+  document.getElementById('gtab-ind').classList.remove('active');
+  document.getElementById('gtab-dept').classList.remove('active');
+  const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.add('active');
+  document.getElementById('ind-grid-wrap').style.display='none';
+  document.getElementById('dept-grid-wrap').style.display='none';
+  const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='block';
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navAll=document.getElementById('nav-all-other'); if(navAll) navAll.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Live search across sidebar + grid (industries, departments, other pages) ──
+function applySearch(q){
+  const query=(q||'').toLowerCase().trim();
+  const clr=document.getElementById('sidebar-search-clear');
+  if(clr) clr.classList.toggle('show', query.length>0);
+
+  // Sidebar filter — Industries
+  let visIndCount=0;
+  document.querySelectorAll('#sidebar-industries .sidebar-item').forEach(el=>{
+    const name=(el.textContent||'').toLowerCase();
+    const indId=el.id.replace(/^nav-/,'');
+    const ind=data.industries.find(i=>i.id===indId);
+    let match=!query;
+    if(query && ind){
+      const hay=(name+' '+(ind.company||'')+' '+(ind.companyID||'')+' '+(ind.tagline||'')+' '+(ind.taglineID||'')).toLowerCase();
+      match=hay.indexOf(query)>=0;
+    } else if(query){
+      match=name.indexOf(query)>=0;
+    }
+    el.style.display=match?'flex':'none';
+    if(match) visIndCount++;
+  });
+  // Hide sector labels with zero visible children
+  document.querySelectorAll('#sidebar-industries .sector-label').forEach(lbl=>{
+    let n=lbl.nextElementSibling, anyVisible=false;
+    while(n && !n.classList.contains('sector-label')){
+      if(n.classList.contains('sidebar-item') && n.style.display!=='none'){anyVisible=true;break;}
+      n=n.nextElementSibling;
+    }
+    lbl.style.display=anyVisible?'block':'none';
+  });
+  const seInd=document.getElementById('search-empty-ind');
+  if(seInd) seInd.classList.toggle('show', query.length>0 && visIndCount===0);
+
+  // Sidebar filter — Departments
+  let visDeptCount=0;
+  document.querySelectorAll('#sidebar-departments .sidebar-item').forEach(el=>{
+    const name=(el.textContent||'').toLowerCase();
+    const deptId=el.id.replace(/^nav-/,'');
+    const dept=data.departments.find(d=>d.id===deptId);
+    let match=!query;
+    if(query && dept){
+      const hay=(name+' '+(dept.company||'')+' '+(dept.tagline||'')).toLowerCase();
+      match=hay.indexOf(query)>=0;
+    } else if(query){
+      match=name.indexOf(query)>=0;
+    }
+    el.style.display=match?'flex':'none';
+    if(match) visDeptCount++;
+  });
+  const seDept=document.getElementById('search-empty-dept');
+  if(seDept) seDept.classList.toggle('show', query.length>0 && visDeptCount===0);
+
+  // Sidebar filter — Other Pages
+  let visOtherCount=0;
+  document.querySelectorAll('#sidebar-other-pages .sidebar-item').forEach(el=>{
+    const name=(el.textContent||'').toLowerCase();
+    const dataKw=(el.getAttribute('data-keywords')||'').toLowerCase();
+    const match=!query || (name.indexOf(query)>=0) || (dataKw.indexOf(query)>=0);
+    el.style.display=match?'flex':'none';
+    if(match) visOtherCount++;
+  });
+  const seOth=document.getElementById('search-empty-other');
+  if(seOth) seOth.classList.toggle('show', query.length>0 && visOtherCount===0);
+
+  // Main grid filter — Industries (cards + sector headers)
+  document.querySelectorAll('#ind-grid .ind-card').forEach(card=>{
+    const txt=(card.textContent||'').toLowerCase();
+    card.style.display=(!query || txt.indexOf(query)>=0)?'block':'none';
+  });
+  document.querySelectorAll('#ind-grid .sector-header').forEach(hdr=>{
+    let n=hdr.nextElementSibling, anyVisible=false;
+    while(n && !n.classList.contains('sector-header')){
+      if(n.classList.contains('ind-card') && n.style.display!=='none'){anyVisible=true;break;}
+      n=n.nextElementSibling;
+    }
+    hdr.style.display=anyVisible?'block':'none';
+  });
+
+  // Main grid filter — Departments
+  document.querySelectorAll('#dept-grid .ind-card').forEach(card=>{
+    const txt=(card.textContent||'').toLowerCase();
+    card.style.display=(!query || txt.indexOf(query)>=0)?'block':'none';
+  });
+
+  // Main grid filter — Other Pages
+  document.querySelectorAll('#other-grid .op-card').forEach(card=>{
+    const txt=(card.textContent||'').toLowerCase();
+    const kw=(card.getAttribute('data-keywords')||'').toLowerCase();
+    card.style.display=(!query || txt.indexOf(query)>=0 || kw.indexOf(query)>=0)?'flex':'none';
+  });
+  document.querySelectorAll('#other-grid .op-section-hdr').forEach(hdr=>{
+    let n=hdr.nextElementSibling, anyVisible=false;
+    while(n && !n.classList.contains('op-section-hdr')){
+      if(n.classList.contains('op-grid')){
+        const cards=n.querySelectorAll('.op-card');
+        for(const c of cards){ if(c.style.display!=='none'){anyVisible=true;break;} }
+      }
+      if(anyVisible) break;
+      n=n.nextElementSibling;
+    }
+    hdr.style.display=anyVisible?'block':'none';
+    // Hide following grid wrapper if no visible cards
+    if(hdr.nextElementSibling && hdr.nextElementSibling.classList.contains('op-grid')){
+      hdr.nextElementSibling.style.display=anyVisible?'grid':'none';
+    }
+  });
 }
 
 // ── Build sidebar industries (sector-grouped) ──
@@ -763,8 +966,8 @@ function showItem(item,tab){
   });
   // Storyboard
   const sbWrap=document.getElementById('detail-storyboard');
-  const _phaseLabels=['🌅 MORNING','☀️ MIDDAY','🌤️ AFTERNOON','🌆 END OF DAY'];
-  const _phaseLabelsID=['🌅 PAGI','☀️ SIANG','🌤️ SORE','🌆 AKHIR HARI'];
+  const _phaseLabels=['🌅 MORNING','☀️ MIDDAY','🌤️ AFTERNOON','🌆 END OF DAY']; // legacy — kept for back-compat
+  const _phaseLabelsID=['🌅 PAGI','☀️ SIANG','🌤️ SORE','🌆 AKHIR HARI']; // legacy — kept for back-compat
   // Tool short-id → display name + emoji (handles old shape: tool='chat' / new shape: toolId='💬 Microsoft 365 Copilot Chat')
   const _toolMap={
     'chat':'💬 Copilot Chat','researcher':'🔍 Researcher','analyst':'📊 Analyst Agent',
@@ -782,12 +985,38 @@ function showItem(item,tab){
     const key=raw.toString().trim().toLowerCase();
     return _toolMap[key]||raw;
   }
-  function _resolveMode(m){
-    if(!m) return {cls:'show',label:'Show & Tell'};
-    const v=m.toString().toLowerCase();
-    if(v==='hands'||v.indexOf('hands')>=0) return {cls:'hands',label:'Hands-on'};
-    return {cls:'show',label:'Show & Tell'};
+  // IHH-style task-card header colour by tool
+  const _toolColorMap={
+    'chat':'#0F2545','researcher':'#0E7490','analyst':'#0F4C75',
+    'excel':'#14532D','word':'#1E3A5F','ppt':'#0A5268','powerpoint':'#0A5268',
+    'outlook':'#7C2D12','teams':'#5B21B6','notebook':'#075985','cowork':'#4C1D95',
+    'word_agent':'#1E3A5F','wordagent':'#1E3A5F','word-agent':'#1E3A5F',
+    'ppt_agent':'#0A5268','pptagent':'#0A5268','ppt-agent':'#0A5268',
+    'excel_agent':'#14532D','excelagent':'#14532D','excel-agent':'#14532D','xl_agent':'#14532D',
+    'agent_builder':'#8B2635','agentbuilder':'#8B2635','builder':'#8B2635'
+  };
+  function _toolColor(t){
+    const k=(t.label||t.toolId||t.tool||'').toString().trim().toLowerCase();
+    return _toolColorMap[k]||'#1E3A5F';
   }
+  // Tool label without leading emoji (for the colored card header strip)
+  function _toolLabelShort(t){
+    const full=_resolveTool(t);
+    return full.replace(/^\S+\s+/,'');
+  }
+  // Split a verb into title (first ~4 words) + body (remainder), with sensible fallbacks
+  function _verbSplit(v){
+    if(!v) return {title:'',body:''};
+    const s=String(v).trim();
+    const words=s.split(/\s+/);
+    if(words.length<=5) return {title:s,body:''};
+    let title=words.slice(0,4).join(' ');
+    let body=words.slice(4).join(' ');
+    body=body.replace(/^(and|or|but|then|while|with|to|in|for)\s+/i,'');
+    title=title.replace(/[,;:]+$/,'');
+    return {title:title,body:body};
+  }
+  function _gridColsCls(n){if(n<=1)return 'cols-1';if(n===2||n===4)return 'cols-2';return 'cols-3';}
   // Strip filename references (XX_01_Foo.xlsx etc) and "Open the X file" patterns from summary text
   function _scrubFiles(t){
     if(!t) return '';
@@ -799,42 +1028,89 @@ function showItem(item,tab){
   }
   if(item.storyboard && item.storyboard.length){
     sbWrap.style.display='block';
-    const phases=_lang==='ID'?_phaseLabelsID:_phaseLabels;
-    const heroTitle=_lang==='ID'?'📖 Sehari Bersama Persona':'📖 A Day in the Life';
-    const heroSub=_lang==='ID'
-      ?'Ikuti alur end-to-end: setiap langkah menceritakan apa yang dikerjakan persona dan solusi Copilot mana yang membantu.'
-      :'Follow the end-to-end story — each step tells what the persona is doing and which Copilot solution they use.';
-    sbWrap.innerHTML=
-      '<div class="storyboard-title">'+heroTitle+'</div>'+
-      '<div class="storyboard-sub">'+heroSub+'</div>'+
-      '<div class="sb-exercises">'+
-      item.storyboard.map((ex,i)=>{
-        const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:ex.title;
-        const exSummary=_scrubFiles(_lang==='ID'&&ex.summaryID?ex.summaryID:(ex.summary||''));
-        const phase=phases[i] || phases[phases.length-1];
-        const acts=(ex.tasks||[]).map((t,ti)=>{
-          const verb=_lang==='ID'&&t.verbID?t.verbID:t.verb;
-          const toolName=_resolveTool(t);
-          const mode=_resolveMode(t.mode);
-          const stepNum=t.n||((i+1)+'.'+(ti+1));
-          return '<div class="sb-act" data-tool="'+escapeAttr(t.tool||t.toolId||'')+'">'+
-            '<div class="sb-act-n">'+escapeHTML(stepNum)+'</div>'+
-            '<div class="sb-act-body">'+
-              '<div class="sb-act-tool">'+escapeHTML(toolName)+'</div>'+
-              '<div class="sb-act-narr">'+escapeHTML(verb||'')+'</div>'+
-            '</div>'+
-            '<div class="sb-act-mode '+mode.cls+'">'+escapeHTML(mode.label)+'</div>'+
-            '</div>';
-        }).join('');
-        return '<div class="sb-ex">'+
-          '<div class="sb-ex-head">'+
-            '<span class="sb-ex-num">'+phase+'</span>'+
-            '<span class="sb-ex-title">'+escapeHTML(exTitle||'')+'</span>'+
+    // Persona for left panel — first persona, fallback empty
+    const p0=(item.personas&&item.personas[0])||null;
+    const personaName=p0?p0.name:'';
+    const personaRole=p0?(_lang==='ID'&&p0.roleID?p0.roleID:p0.role):'';
+    const personaCompany=p0?(p0.company||''):'';
+    // Mission text: prefer tagline, fall back to first sentence of scenario
+    let missionText='';
+    if(_lang==='ID'&&item.taglineID) missionText=item.taglineID;
+    else if(item.tagline) missionText=item.tagline;
+    else if(_lang==='ID'&&item.scenarioID) missionText=item.scenarioID.split(/[.!?]/)[0]+'.';
+    else if(item.scenario) missionText=item.scenario.split(/[.!?]/)[0]+'.';
+    missionText=_scrubFiles(missionText);
+    // Total tools used = count unique across all phases (for Punchline line)
+    const allTools=new Set();
+    item.storyboard.forEach(ex=>(ex.tasks||[]).forEach(t=>allTools.add(_toolLabelShort(t))));
+    const toolsCount=allTools.size||(item.prompts?item.prompts.length:8);
+    // Total tasks (for right-header)
+    let totalTasks=0;
+    item.storyboard.forEach(ex=>{totalTasks+=(ex.tasks||[]).length;});
+    const labelCopilot=_lang==='ID'?'Copilot di M365':'Copilot in M365';
+    const labelHeroTitle=_lang==='ID'?'Asisten AI<br>menjadi Pelaku AI':'AI Assistant<br>to AI Doer';
+    const labelPersona=_lang==='ID'?'Persona':'Persona';
+    const labelMission=_lang==='ID'?'Misi Hari Ini':'The Mission';
+    const labelPunch=_lang==='ID'?'Inti Cerita':'The Punchline';
+    const punchText=_lang==='ID'
+      ?('Satu hari kerja. '+toolsCount+' alat. Dari konteks ke pengiriman.')
+      :('One workday. '+toolsCount+' tools. From frame to ship.');
+    const rightHeader=_lang==='ID'
+      ?(totalTasks+' babak dalam satu hari kerja')
+      :(totalTasks+' moments across one workday');
+    const indColor=item.color||'#0EA5E9';
+    const phasesHTML=item.storyboard.map((ex,i)=>{
+      const exTitle=_lang==='ID'&&ex.titleID?ex.titleID:(ex.title||'');
+      const tasks=ex.tasks||[];
+      const colsCls=_gridColsCls(tasks.length);
+      const tasksHTML=tasks.map((t,ti)=>{
+        const verb=_lang==='ID'&&t.verbID?t.verbID:(t.verb||'');
+        const toolColor=_toolColor(t);
+        const toolLabel=_toolLabelShort(t);
+        const stepNum=String(ti+1).padStart(2,'0');
+        const stepLabel=(_lang==='ID'?'Tugas ':'Task ')+(i+1)+'.'+(ti+1);
+        const split=_verbSplit(verb);
+        return '<div class="sb-task" data-tool="'+escapeAttr(t.tool||t.toolId||'')+'">'+
+          '<div class="sb-task-head" style="background:'+toolColor+'">'+
+            '<span class="sb-task-num">'+stepNum+'</span>'+
+            '<span class="sb-task-tool">'+escapeHTML(toolLabel)+'</span>'+
           '</div>'+
-          (exSummary?'<div class="sb-ex-summary">'+escapeHTML(exSummary)+'</div>':'')+
-          '<div class="sb-acts">'+acts+'</div>'+
+          '<div class="sb-task-body">'+
+            '<p class="sb-task-title">'+escapeHTML(split.title)+'</p>'+
+            '<p class="sb-task-label">'+escapeHTML(stepLabel)+'</p>'+
+            (split.body?'<p class="sb-task-narr">'+escapeHTML(split.body)+'</p>':'')+
+          '</div>'+
           '</div>';
-      }).join('')+
+      }).join('');
+      const minsLabel=_lang==='ID'?' menit':' min';
+      return '<div class="sb-phase">'+
+        '<div class="sb-phase-head">'+
+          '<span class="sb-phase-num">'+(_lang==='ID'?'BABAK ':'EXERCISE ')+(i+1)+'</span>'+
+          (ex.minutes?'<span class="sb-phase-mins">&middot; '+ex.minutes+minsLabel+'</span>':'')+
+          '<span class="sb-phase-title">&middot; '+escapeHTML(exTitle)+'</span>'+
+        '</div>'+
+        '<div class="sb-task-grid '+colsCls+'">'+tasksHTML+'</div>'+
+        '</div>';
+    }).join('');
+    sbWrap.innerHTML=
+      '<div class="sb-hero" style="--ind-color:'+indColor+'">'+
+        '<div class="sb-hero-left">'+
+          '<p class="lbl">'+escapeHTML(labelCopilot)+'</p>'+
+          '<h3 class="hero-title">'+labelHeroTitle+'</h3>'+
+          (personaName?
+            '<div><p class="lbl">'+escapeHTML(labelPersona)+'</p>'+
+            '<p class="persona-name">'+escapeHTML(personaName)+'</p>'+
+            '<p class="persona-role">'+escapeHTML(personaRole||'')+(personaCompany?'<br>'+escapeHTML(personaCompany):'')+'</p></div>':'')+
+          (missionText?
+            '<div><p class="lbl">'+escapeHTML(labelMission)+'</p>'+
+            '<p class="mission-text">'+escapeHTML(missionText)+'</p></div>':'')+
+          '<div class="punch"><p class="lbl">'+escapeHTML(labelPunch)+'</p>'+
+          '<p class="punch-text">'+escapeHTML(punchText)+'</p></div>'+
+        '</div>'+
+        '<div class="sb-hero-right">'+
+          '<h3 class="right-title">'+escapeHTML(rightHeader)+'</h3>'+
+          phasesHTML+
+        '</div>'+
       '</div>';
   } else {
     sbWrap.style.display='none';
@@ -1046,6 +1322,184 @@ function toggleTool(key){
   prm.classList.toggle('open',!isOpen);
 }
 
+// ── Other Pages data + renderers ──
+const OTHER_PAGES = [
+  {
+    section: 'Customer Workshops',
+    icon: '🏥',
+    color: '#0EA5E9',
+    accent: '#0369A1',
+    name: 'IHH Healthcare — Copilot Immersion',
+    desc: 'Healthcare conglomerate immersion (29 Apr 2026 workshop). 4-exercise day-in-the-life storyboard with Researcher, Analyst, Cowork, and Agent Builder.',
+    url: 'https://steffiyappy.github.io/ihh-copilot-immersion/',
+    password: 'IHHCopilot29Apr',
+    tag: 'Workshop',
+    keywords: 'IHH healthcare hospital pantai gleneagles immersion researcher analyst cowork builder'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '👥',
+    color: '#7C3AED',
+    accent: '#5B21B6',
+    name: 'Contoso Malaysia — HR Copilot Immersion',
+    desc: 'HR-focused Copilot immersion for a Malaysian conglomerate. Talent, recruitment, performance, payroll workflows with M365 Copilot.',
+    url: 'https://steffiyappy.github.io/contoso-hr-copilot-immersion/',
+    password: '',
+    tag: 'HR Workshop',
+    keywords: 'contoso malaysia HR human resources talent recruitment payroll performance immersion'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '🌐',
+    color: '#10B981',
+    accent: '#047857',
+    name: 'Contoso Trade — HR Copilot Immersion',
+    desc: 'Trade & cross-border HR scenarios using paid M365 Copilot features (Researcher, Analyst, Frontier Cowork, Agent Builder).',
+    url: 'https://steffiyappy.github.io/contoso-trade-hr-copilot-immersion/',
+    password: '',
+    tag: 'HR Workshop · Frontier',
+    keywords: 'contoso trade HR cross-border M365 paid features cowork researcher frontier'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '💰',
+    color: '#1E40AF',
+    accent: '#1E3A8A',
+    name: 'Contoso Medical — Finance & Procurement',
+    desc: 'Finance, procurement, and capital-allocation Copilot scenarios for a medical-devices customer. Variance analysis, supplier negotiation, board pack.',
+    url: 'https://steffiyappy.github.io/contoso-medical-finance-immersion/',
+    password: '',
+    tag: 'Finance Workshop',
+    keywords: 'contoso medical finance procurement variance supplier capital board pack'
+  },
+  {
+    section: 'Customer Demos',
+    icon: '🏗️',
+    color: '#A16207',
+    accent: '#854D0E',
+    name: 'IOI Properties — Copilot Chat',
+    desc: 'Customer-specific Copilot Chat demo for IOI Properties Group (Malaysian property developer). Tailored prompts and use cases.',
+    url: 'https://steffiyappy.github.io/ioipg-copilotchat/',
+    password: '',
+    tag: 'Customer Demo',
+    keywords: 'IOI properties property developer real estate malaysia copilot chat'
+  },
+  {
+    section: 'Hackathons',
+    icon: '🏆',
+    color: '#DC2626',
+    accent: '#991B1B',
+    name: 'Cagamas — Prompt-a-thon & Agent-a-thon',
+    desc: 'Cagamas x Microsoft Copilot Challenge Week — Prompt-a-thon (12 May 2026) and Agent-a-thon (13 May 2026) materials.',
+    url: 'https://steffiyappy.github.io/Cagamas1213May/',
+    password: '',
+    tag: 'Hackathon',
+    keywords: 'cagamas mortgage finance prompt-a-thon agent-a-thon hackathon may 2026 challenge'
+  }
+];
+
+function buildOtherSidebar(){
+  const el=document.getElementById('sidebar-other-pages');
+  if(!el) return;
+  el.innerHTML='';
+  // Group by section
+  const sections={};
+  OTHER_PAGES.forEach((p,idx)=>{
+    if(!sections[p.section]) sections[p.section]=[];
+    sections[p.section].push({...p,idx});
+  });
+  Object.keys(sections).forEach(secName=>{
+    const lbl=document.createElement('div');
+    lbl.className='sector-label';
+    lbl.textContent=secName;
+    el.appendChild(lbl);
+    sections[secName].forEach(p=>{
+      const a=document.createElement('a');
+      a.className='sidebar-item';
+      a.id='nav-other-'+p.idx;
+      a.setAttribute('data-keywords',p.keywords||'');
+      a.href=p.url; a.target='_blank'; a.rel='noopener';
+      a.innerHTML='<span class="ind-icon">'+p.icon+'</span><span class="ind-name">'+p.name+'</span><span class="ind-count">↗</span>';
+      el.appendChild(a);
+    });
+  });
+  const ct=document.getElementById('total-other-count');
+  if(ct) ct.textContent=OTHER_PAGES.length;
+}
+
+function buildOtherGrid(){
+  const root=document.getElementById('other-grid');
+  if(!root) return;
+  root.innerHTML='';
+  // Section intro
+  const intro=document.createElement('div');
+  intro.className='detail-scenario';
+  intro.style.marginBottom='18px';
+  intro.innerHTML='<div class="detail-scenario-title">&#128218; Other Copilot Demo Pages</div>'+
+    '<div class="detail-scenario-text">A library of related M365 Copilot demo sites we have built for other customers and workshops. Each link opens in a new tab — sites may have their own password.</div>';
+  root.appendChild(intro);
+
+  const sections={};
+  OTHER_PAGES.forEach(p=>{
+    if(!sections[p.section]) sections[p.section]=[];
+    sections[p.section].push(p);
+  });
+  Object.keys(sections).forEach(secName=>{
+    const hdr=document.createElement('div');
+    hdr.className='op-section-hdr';
+    hdr.textContent=secName;
+    root.appendChild(hdr);
+    const grid=document.createElement('div');
+    grid.className='op-grid';
+    sections[secName].forEach(p=>{
+      const card=document.createElement('a');
+      card.className='op-card';
+      card.style.setProperty('--op-color',p.color);
+      card.style.setProperty('--op-accent',p.accent);
+      card.href=p.url; card.target='_blank'; card.rel='noopener';
+      card.style.textDecoration='none';
+      card.setAttribute('data-keywords',p.keywords||'');
+      const pwdHTML = p.password
+        ? '<span class="op-card-pwd" title="Click to copy">&#128274; '+p.password+'</span>'
+        : '<span class="op-card-pwd none">&#10003; Open access</span>';
+      card.innerHTML=
+        '<div class="op-card-banner">'+p.icon+'</div>'+
+        '<div class="op-card-body">'+
+          '<div class="op-card-tag">'+p.tag+'</div>'+
+          '<div class="op-card-name">'+p.name+'</div>'+
+          '<div class="op-card-desc">'+p.desc+'</div>'+
+          '<div class="op-card-meta">'+pwdHTML+
+            '<span class="op-card-link">Open &#8599;</span>'+
+          '</div>'+
+        '</div>';
+      // Click password chip → copy to clipboard
+      const pwdEl=card.querySelector('.op-card-pwd');
+      if(p.password && pwdEl){
+        pwdEl.addEventListener('click', function(e){
+          e.preventDefault(); e.stopPropagation();
+          navigator.clipboard.writeText(p.password).then(()=>{
+            const t=document.getElementById('toast');
+            t.textContent='\u2713 Password copied: '+p.password;
+            t.classList.add('show');
+            setTimeout(()=>{t.classList.remove('show'); t.textContent='\u2713 Prompt copied to clipboard!';},2200);
+          });
+        });
+      }
+      grid.appendChild(card);
+    });
+    root.appendChild(grid);
+  });
+}
+
+// Keyboard shortcut: Ctrl+K / Cmd+K focuses the search box
+document.addEventListener('keydown', function(e){
+  if((e.ctrlKey||e.metaKey) && (e.key==='k'||e.key==='K')){
+    e.preventDefault();
+    const inp=document.getElementById('sidebar-search-input');
+    if(inp){ inp.focus(); inp.select(); }
+  }
+});
+
 function goHome(){
   document.getElementById('home-view').style.display='block';
   const dv=document.getElementById('detail-view');
@@ -1055,6 +1509,9 @@ function goHome(){
   if(currentGridTab==='dept'){
     document.getElementById('nav-all-dept').classList.add('active');
     setSidebarTab('dept');
+  } else if(currentGridTab==='other'){
+    const navAll=document.getElementById('nav-all-other'); if(navAll) navAll.classList.add('active');
+    setSidebarTab('other');
   } else {
     document.getElementById('nav-all-ind').classList.add('active');
     setSidebarTab('ind');
@@ -1099,11 +1556,14 @@ function logout(){
   // Update home-page grid-tab labels
   const gtI=document.getElementById('gtab-ind'); if(gtI) gtI.innerHTML='&#127981; Industries ('+data.industries.length+')';
   const gtD=document.getElementById('gtab-dept'); if(gtD) gtD.innerHTML='&#127970; Departments ('+data.departments.length+')';
+  const gtO=document.getElementById('gtab-other'); if(gtO) gtO.innerHTML='&#128218; Other Pages ('+OTHER_PAGES.length+')';
 })();
 buildSidebar();
 buildDeptSidebar();
+buildOtherSidebar();
 buildGrid();
 buildDeptGrid();
+buildOtherGrid();
 buildWhatsNew();
 </script>
 </body>

@@ -13,6 +13,7 @@ from ind_batch8 import INDUSTRIES_8
 from ind_batch9 import INDUSTRIES_9
 from ind_batch10 import INDUSTRIES_10
 from ind_batch11 import INDUSTRIES_11
+from ind_batch12 import INDUSTRIES_12
 from dept_data  import DEPARTMENTS
 from dept_data2 import DEPARTMENTS_2
 from dept_data3 import DEPARTMENTS_3
@@ -21,7 +22,7 @@ from dept_data5 import DEPARTMENTS_5
 
 all_industries = (INDUSTRIES_1 + INDUSTRIES_2 + INDUSTRIES_3 + INDUSTRIES_4 +
                   INDUSTRIES_5 + INDUSTRIES_6 + INDUSTRIES_7 + INDUSTRIES_8 +
-                  INDUSTRIES_9 + INDUSTRIES_10 + INDUSTRIES_11)
+                  INDUSTRIES_9 + INDUSTRIES_10 + INDUSTRIES_11 + INDUSTRIES_12)
 all_departments = DEPARTMENTS + DEPARTMENTS_2 + DEPARTMENTS_3 + DEPARTMENTS_4 + DEPARTMENTS_5
 
 print(f"Industries: {len(all_industries)}, Departments: {len(all_departments)}")
@@ -119,11 +120,14 @@ SECTORS = [
     {"id": "sec-glc",        "label": "GLC",               "industries": ["glc-investment"]},
     {"id": "sec-re",         "label": "Real Estate",       "industries": ["property-reit"]},
     {"id": "sec-logistics",  "label": "Logistics",         "industries": ["logistics-3pl"]},
-    {"id": "sec-aviation",   "label": "Aviation",          "industries": ["aviation-airports"]},
+    {"id": "sec-aviation",   "label": "Aviation",          "industries": ["aviation-airports","aviation-airlines"]},
     {"id": "sec-mining",     "label": "Mining",            "industries": ["coal-mining","rare-earth"]},
     {"id": "sec-retail",     "label": "Retail",            "industries": ["retail-grocery"]},
     {"id": "sec-hospitality","label": "Hospitality",       "industries": ["hotel-resort"]},
     {"id": "sec-media",      "label": "Media",             "industries": ["media-entertainment"]},
+    {"id": "sec-edu",        "label": "Education",         "industries": ["education"]},
+    {"id": "sec-utilities",  "label": "Utilities",         "industries": ["power-utilities"]},
+    {"id": "sec-prop-dev",   "label": "Property Development","industries": ["property-development"]},
 ]
 
 def esc_val(s):
