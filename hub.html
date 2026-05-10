@@ -3062,8 +3062,9 @@ function showItem(item,tab,preserveScroll){
         ex.titleID = ex.titleID.replace(/^Latihan\s+\d+\s*[—-]\s*/i,'');
       }
       (ex.tasks||[]).forEach(function(t){
-        // Task verb fallback: verb -> desc
-        if(!t.verb && t.desc) t.verb = t.desc;
+        // Task verb fallback: verb -> desc (Shape B). Mark so renderer can use
+        // the original desc as the body description instead of the synth template.
+        if(!t.verb && t.desc){ t.verb = t.desc; t._fromDesc = true; }
         if(!t.verbID && t.descID) t.verbID = t.descID;
         // Label fallback from tool key
         if(!t.label && t.tool) t.label = _toolLabelFromKey(t.tool) || t.tool;
@@ -3122,9 +3123,21 @@ function showItem(item,tab,preserveScroll){
           const cleanVerb=_shortVerb(_xformVal(verb, verbSrc));
           const toolLabel=_xformVal(t.label||t.tool||'', 'EN');
           const num=t.n||'';
-          // Synthesise a short, locale-aware description from label + verb
+          // Synthesise a short, locale-aware description from label + verb.
+          // For Shape B tasks (verb came from desc narrative), render the original
+          // desc as the description body and suppress the bold verb line — the
+          // narrative IS the summary.
           let descText='';
-          if(toolLabel && cleanVerb){
+          let displayVerb = cleanVerb;
+          if(t._fromDesc){
+            displayVerb = '';
+            // Pick locale-specific desc, fall back to base desc
+            let rawDesc = t.desc; let descSrc='EN';
+            if(_locale==='MY_BM' && t.descBM){ rawDesc=t.descBM; descSrc='BM_NATIVE'; }
+            else if(_locale==='ID_EN' && t.descIDEN){ rawDesc=t.descIDEN; descSrc='EN_NATIVE'; }
+            else if((_locale==='ID_BI'||_locale==='ID_EN') && t.descID){ rawDesc=t.descID; descSrc='BI'; }
+            descText = _xformVal(rawDesc||'', descSrc);
+          } else if(toolLabel && cleanVerb){
             const verbLow = cleanVerb.charAt(0).toLowerCase() + cleanVerb.slice(1);
             descText = _momentDesc(t.tool||t.toolId||'', toolLabel, verbLow);
           }
@@ -3134,7 +3147,7 @@ function showItem(item,tab,preserveScroll){
               '<span class="sb-moment-tool">'+escapeHTML(toolLabel)+'</span>'+
             '</div>'+
             '<div class="sb-moment-body">'+
-              '<p class="sb-moment-verb">'+escapeHTML(cleanVerb)+'</p>'+
+              (displayVerb?'<p class="sb-moment-verb">'+escapeHTML(displayVerb)+'</p>':'')+
               (descText?'<p class="sb-moment-desc">'+escapeHTML(descText)+'</p>':'')+
             '</div>'+
           '</div>';
