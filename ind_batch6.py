@@ -505,7 +505,7 @@ ind('fintech-payments', 'fintech', 'Fintech Payments', '💳', '#6A1B9A', '#7B1F
     taglineID='Kerugian fraud FY2025 melonjak 47% di Q4 dan perpanjangan lisensi e-money OJK jatuh tempo dalam 60 hari — eskalasi ke Bank Indonesia dalam 72 jam',
     scenarioID='BayarLintas menjalankan e-wallet, pembayaran QRIS dan settlement B2B di Malaysia dan Indonesia. Serangan social-engineering terkoordinasi mengangkat kerugian fraud Q4 menjadi RM 38 juta / Rp 134 miliar, melanggar ambang loss-event OJK. OJK telah menunda perpanjangan lisensi e-money menunggu rencana remediasi; Bank Indonesia menginginkan tanggapan tertulis dalam 72 jam dan BSSN telah mengeluarkan 9 temuan kritis dalam audit siber terbaru. CEO telah memanggil rapat Direksi darurat dalam 5 hari. Tim memiliki 6 dokumen sumber dan perlu menghasilkan: paket Direksi dengan recovery bridge, briefing perpanjangan lisensi OJK, rencana remediasi BSSN, dan reset roadmap produk 90 hari yang tidak mendorong merchant dan konsumen keluar dari platform.',
     subsector='Digital Payments & E-Money',
-    relevantDepts=['dept-risk', 'dept-it-digital', 'dept-legal', 'dept-finance'],
+    relevantDepts=['dept-risk','dept-it-digital','dept-legal','dept-finance'],
     personas=[
         {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
         {'name':'Sasha Ouellet','role':'Chief Product Officer','roleID':'Direktur Produk','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
@@ -711,7 +711,7 @@ ind('government-agency', 'government', 'Government Agency', '🏛', '#4E342E', '
     taglineID='Penyerapan anggaran FY2025 hanya 58% dengan 14 temuan BPK terbuka — Rapat Dengar Pendapat DPR dalam 7 hari',
     scenarioID='Zava Government Services Indonesia adalah badan modernisasi federal yang dimandatkan untuk menyampaikan 7 program reformasi pelayanan publik unggulan di bidang identitas digital, konsolidasi layanan warga, kapabilitas aparatur sipil, dan penyampaian garis depan di kesehatan dan pendidikan. Pada akhir November penyerapan anggaran FY2025 hanya 58% dari target 85%, 14 temuan audit BPK masih terbuka (3 di antaranya dinilai signifikan), KPK telah menandai 2 berkas pengadaan untuk review lebih lanjut, dan Komisi DPR Reformasi Pelayanan Publik telah memanggil Direktur Jenderal ke dengar pendapat publik dalam 7 hari. Tim memiliki 6 dokumen sumber dan harus menghasilkan: rencana pemulihan penyerapan per program, paket dengar pendapat DPR, tracker penutupan BPK, briefing jaminan pengadaan KPK, dan manual tata kelola yang dirancang ulang yang membawa akuntabilitas sponsor dan respons audit ke dalam satu siklus. Tanpa bahasa komersial — outcome publik, kepengurusan fiskal, dampak warga.',
     subsector='Public Service Reform',
-    relevantDepts=['dept-finance', 'dept-strategy', 'dept-operations', 'dept-corpsec'],
+    relevantDepts=['dept-finance','dept-strategy','dept-operations','dept-corpsec'],
     personas=[
         {'name':'Hadar Caspit','role':'Chief Economist','roleID':'Kepala Ekonom','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
         {'name':'Sasha Ouellet','role':'Chief of Staff','roleID':'Kepala Staf','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},

@@ -966,7 +966,7 @@ INDUSTRIES_10.append(ind(
     companyID='Zava Cagamas Berhad',
     taglineID='BNM mengarahkan suntikan likuiditas — jendela penerbitan MBS RM 2,4 miliar dalam 14 hari.',
     scenarioID='Zava Cagamas Berhad adalah korporasi pembiayaan hipotek nasional yang mendukung pasar hipotek sekunder Malaysia via Mortgage-Backed Securities (MBS), Sukuk Cagamas, dan fasilitas Purchase-with-Recourse. Bank Negara Malaysia menandai stres likuiditas pada 4 bank menengah dan mengarahkan Zava Cagamas untuk membuka jendela penerbitan MBS RM 2,4 miliar dalam 14 hari. Direktur Keuangan Grup harus mengoordinasikan pricing bank originator, persetujuan SC Malaysia, afirmasi rating RAM/MARC, kepatuhan AAOIFI untuk tranche Sukuk, dan briefing Investor Day untuk 60 investor institusi semuanya sekaligus. Frame customer riil: grup ini beroperasi serupa dengan Cagamas Berhad dan divisi mortgage-finance Maybank Investment Bank.',
-    relevantDepts=['dept-finance','dept-strategy','dept-legal','dept-risk','dept-corpsec','dept-ir','dept-operations'],
+    relevantDepts=['dept-finance','dept-strategy','dept-legal','dept-risk','dept-corpsec','dept-investor-relations','dept-operations'],
     personas=[
       {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
       {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},

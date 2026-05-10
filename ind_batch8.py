@@ -292,7 +292,7 @@ ind('construction','construction','Construction','🏗','#E65100','#EF6C00',
     companyID='Zava Construction Indonesia',
     taglineID='Tiga proyek unggulan tertunda; insiden K3 naik — peninjauan LPJK dan PUPR menjelang.',
     scenarioID='Zava Construction Indonesia dan Zava Construction Malaysia beroperasi sebagai kontraktor EPC tier satu di Indonesia dan Malaysia dengan pendapatan tahunan Rp 19,8 triliun dan sekitar 14.200 staf langsung dan subkontraktor. Tiga proyek infrastruktur unggulan tertunda 14 minggu dari rencana, buku variation order konsolidasi tumbuh 38% dalam 6 bulan, insiden K3 naik 22% year-on-year, LPJK meninjau dua sertifikasi SBU perusahaan, Kementerian PUPR membuka tinjauan keterlambatan paket jalan federal, dan bantalan modal kerja terkompresi sebesar Rp 750 miliar akibat siklus pembayaran subkontraktor yang melar. Komite Proyek Direksi bersidang dalam 21 hari dan manajemen harus menunjukkan bahwa disiplin jadwal, keselamatan, dan kas selaras sebelum mobilisasi lanjutan disetujui.',
-    relevantDepts=['operations', 'finance', 'risk', 'legal'],
+    relevantDepts=['dept-operations','dept-finance','dept-risk','dept-legal'],
     personas=[
       {'name':'Sasha Ouellet','role':'CEO','roleID':'Direktur Utama','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#E65100'},
       {'name':'Hadar Caspit','role':'COO','roleID':'Direktur Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
@@ -617,7 +617,7 @@ ind('aviation-airports','aviation-airports','Aviation - Airports','✈','#0277BD
     companyID='Zava Airports Indonesia',
     taglineID='Hub unggulan pada 112% kapasitas; temuan ICAO dan DKPPU terbuka; revisi tarif tertunda.',
     scenarioID='Zava Airports Indonesia dan Zava Airports Malaysia beroperasi sebagai operator bandara tier satu di 14 hub di Indonesia dan Malaysia dengan pendapatan tahunan Rp 14,3 triliun dan sekitar 9.800 staf langsung. Hub unggulan beroperasi pada 112% dari kapasitas desain, revisi tarif jasa aeronautika tertunda 18 bulan di Kementerian Perhubungan dan membatasi perencanaan pendapatan FY2026, ICAO mengeluarkan 14 temuan dalam audit USOAP terakhir termasuk 4 temuan prioritas pada respons darurat, DKPPU membuka tinjauan kelaikudaraan pada 2 sub-unit cargo handling, sengketa alokasi slot dengan 3 maskapai berbiaya rendah terbesar berkembang menjadi keluhan formal, dan program capex perluasan terminal melampaui envelope awal sebesar 24%. Komite Capex dan Keselamatan Direksi bersidang dalam 21 hari dan manajemen harus menunjukkan bahwa kapasitas, keselamatan, dan ekonomi tarif selaras sebelum tranche capex lanjutan dirilis.',
-    relevantDepts=['operations', 'finance', 'risk', 'strategy'],
+    relevantDepts=['dept-operations','dept-finance','dept-risk','dept-strategy'],
     personas=[
       {'name':'Sasha Ouellet','role':'CEO','roleID':'Direktur Utama','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#0277BD'},
       {'name':'Hadar Caspit','role':'COO','roleID':'Direktur Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
@@ -938,7 +938,7 @@ ind('retail-grocery','retail-grocery','Retail - Grocery','🛒','#2E7D32','#388E
     companyID='Zava Retail Indonesia',
     taglineID='SSS meleset; shrinkage menggerus margin; pengawasan BPOM, Halal MUI, dan Kemendag meningkat.',
     scenarioID='Zava Retail Indonesia dan Zava Retail Malaysia beroperasi sebagai peritel grocery tier satu di 412 toko di Indonesia dan Malaysia dengan pendapatan tahunan Rp 21,8 triliun dan sekitar 21.400 staf langsung. Pertumbuhan SSS 1,4% terhadap rencana FY2026 sebesar 4,6%, margin kotor 180 basis poin di bawah rencana akibat shrinkage, pengawasan BPOM dan Halal MUI atas SKU private-label semakin intens, Kementerian Perdagangan membuka tinjauan price-display pada 67 toko, program promosi Ramadan menghasilkan ROI 0,71x dibanding rencana 1,4x, dan pendanaan supplier mengkompresi modal kerja. Komite Investasi bersidang dalam 18 hari dan manajemen harus menunjukkan bahwa disiplin komersial, kontrol shrinkage, postur kepatuhan, dan ROI promosi selaras sebelum envelope investasi toko FY2026 disetujui.',
-    relevantDepts=['operations', 'finance', 'marketing', 'risk'],
+    relevantDepts=['dept-operations','dept-finance','dept-marketing','dept-risk'],
     personas=[
       {'name':'Sasha Ouellet','role':'CEO','roleID':'Direktur Utama','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#2E7D32'},
       {'name':'Hadar Caspit','role':'COO','roleID':'Direktur Operasi','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
@@ -1259,7 +1259,7 @@ ind('media-entertainment','media-entertainment','Media - Entertainment','📺','
     companyID='Zava Media Indonesia',
     taglineID='Pelanggan streaming naik namun ARPU turun; pertanyaan Kominfo dan KPI; keluhan hak cipta meningkat.',
     scenarioID='Zava Media Indonesia dan Zava Media Malaysia beroperasi sebagai grup media dan hiburan tier satu di broadcast, streaming, dan commissioning konten di Indonesia dan Malaysia dengan pendapatan tahunan Rp 12,3 triliun dan sekitar 6.800 staf langsung. Pelanggan streaming naik 23% year-on-year namun ARPU turun 11%, tiga drama premium 28% di atas anggaran, pendapatan iklan turun 9% akibat lemahnya open-rate, Kominfo mengajukan pertanyaan tentang tata kelola editorial segmen berita, KPI menandai volume iklan pada 3 slot prime-time melebihi batas yang ditentukan, dan DJKI menerima keluhan hak cipta atas 4 item konten. Putaran commissioning konten ditutup dalam 30 hari dan manajemen harus menunjukkan bahwa disiplin ARPU, kontrol biaya konten, dan postur regulasi selaras sebelum slate commissioning FY2026 disetujui.',
-    relevantDepts=['marketing', 'strategy', 'finance', 'legal'],
+    relevantDepts=['dept-marketing','dept-strategy','dept-finance','dept-legal'],
     personas=[
       {'name':'Sasha Ouellet','role':'CEO','roleID':'Direktur Utama','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#6A1B9A'},
       {'name':'Hadar Caspit','role':'Chief Content Officer','roleID':'Direktur Konten','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
