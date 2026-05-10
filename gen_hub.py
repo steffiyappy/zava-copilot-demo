@@ -341,6 +341,13 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .notebook-source-pill{background:var(--surface);border:1px solid #BAE6FD;border-radius:14px;padding:3px 10px;font-size:10.5px;color:#075985;font-weight:600;display:inline-flex;align-items:center;gap:4px}
 .notebook-instr-row{font-size:11.5px;color:#0C4A6E;line-height:1.55;background:rgba(255,255,255,0.6);border-radius:6px;padding:8px 10px;margin-top:4px;border-left:2px solid #0EA5E9}
 .notebook-instr-row strong{color:#075985}
+/* Notebook Demo Guide presenter-only callout (NOT a Notebook source) */
+.notebook-guide-row{display:flex;align-items:flex-start;gap:10px;background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:1px dashed #D97706;border-radius:8px;padding:9px 12px;margin:0 0 10px}
+.notebook-guide-icon{font-size:18px;line-height:1.2;flex:0 0 auto}
+.notebook-guide-text{display:flex;flex-direction:column;gap:3px;font-size:11.5px;color:#78350F;line-height:1.45}
+.notebook-guide-label{font-weight:700;font-size:10.5px;color:#92400E;text-transform:uppercase;letter-spacing:0.4px}
+.notebook-guide-link{color:#B45309;font-weight:700;text-decoration:underline;font-size:11.5px;word-break:break-all}
+.notebook-guide-link:hover{color:#7C2D12}
 /* Agent Builder — IHH-style 3-card picker + 4-step workflow */
 .agent-block{background:linear-gradient(135deg,#FEFCE8,#FEF3C7);border:1px solid #FDE68A;border-radius:10px;padding:14px 16px;margin:0 0 12px}
 .agent-intro{margin:0 0 10px;font-size:12.5px;color:#78350F;line-height:1.55}
@@ -646,6 +653,11 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
 [data-theme="dark"] .notebook-instr-row{background:rgba(125,211,252,0.10);color:#BAE6FD}
 [data-theme="dark"] .notebook-instr-row strong{color:#7DD3FC}
+[data-theme="dark"] .notebook-guide-row{background:linear-gradient(135deg,#332100,#4A2E00);border-color:#D97706}
+[data-theme="dark"] .notebook-guide-text{color:#FCD34D}
+[data-theme="dark"] .notebook-guide-label{color:#FBBF24}
+[data-theme="dark"] .notebook-guide-link{color:#FCD34D}
+[data-theme="dark"] .notebook-guide-link:hover{color:#FEF3C7}
 [data-theme="dark"] .agent-block{background:linear-gradient(135deg,#2B1F08,#3A2A0E);border-color:#92400E}
 [data-theme="dark"] .agent-intro{color:#FDE68A}
 [data-theme="dark"] .agent-card{background:rgba(180,83,9,0.18);border-color:#92400E}
@@ -756,6 +768,11 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   [data-theme="system"] .notebook-source-pill{background:#0F1A2E;color:#7DD3FC;border-color:#155E75}
   [data-theme="system"] .notebook-instr-row{background:rgba(125,211,252,0.10);color:#BAE6FD}
   [data-theme="system"] .notebook-instr-row strong{color:#7DD3FC}
+  [data-theme="system"] .notebook-guide-row{background:linear-gradient(135deg,#332100,#4A2E00);border-color:#D97706}
+  [data-theme="system"] .notebook-guide-text{color:#FCD34D}
+  [data-theme="system"] .notebook-guide-label{color:#FBBF24}
+  [data-theme="system"] .notebook-guide-link{color:#FCD34D}
+  [data-theme="system"] .notebook-guide-link:hover{color:#FEF3C7}
   [data-theme="system"] .agent-block{background:linear-gradient(135deg,#2B1F08,#3A2A0E);border-color:#92400E}
   [data-theme="system"] .agent-intro{color:#FDE68A}
   [data-theme="system"] .agent-card{background:rgba(180,83,9,0.18);border-color:#92400E}
@@ -1253,6 +1270,9 @@ const _UI = {
   '📓 Notebook setup — add ALL sources at creation time, then set the Instructions field':
                            ['📓 Setup Notebook — tambahkan SEMUA sumber saat pembuatan, lalu atur kolom Instructions',
                             '📓 Persediaan Notebook — tambah SEMUA sumber semasa cipta, kemudian set medan Instructions'],
+  '📘 Demo guide for the presenter — open this on your screen, do NOT upload to the Notebook':
+                           ['📘 Panduan demo untuk presenter — buka ini di layar Anda, JANGAN unggah ke Notebook',
+                            '📘 Panduan demo untuk pembentang — buka ini pada skrin anda, JANGAN muat naik ke Notebook'],
   'Instructions field (system prompt):':
                            ['Kolom Instructions (system prompt):',   'Medan Instructions (system prompt):'],
   '⚡ Cowork delegates these in parallel': ['⚡ Cowork mendelegasikan ini secara paralel', '⚡ Cowork mengagihkan ini secara selari'],
@@ -2851,8 +2871,14 @@ function _getPrompts(t){
 // pre-flight setup → 7 typed prompts (build on each other) → 3 Quick Create.
 function _notebookDemoGuidePrompts(tool, itemFiles, itemContext){
   const meta = tool.notebookMeta || {};
-  const metaSrcs = (meta.sources||[]);
-  const sources = metaSrcs.length ? metaSrcs : ((itemFiles||[]).slice());
+  // metaSrcs = files the demo user uploads to the Notebook tool. The demo
+  // guide is intentionally excluded — it lives on meta.guide and is shown as
+  // a presenter-only callout (we don't want the audience uploading the
+  // run-sheet alongside their data).
+  const _GUIDE_PATH = '/00_Copilot_Notebook_Demo_Guide.docx';
+  const metaSrcs = (meta.sources||[]).filter(function(s){ return s !== _GUIDE_PATH; });
+  const fallbackSrcs = (itemFiles||[]).filter(function(s){ return s !== _GUIDE_PATH; });
+  const sources = metaSrcs.length ? metaSrcs : fallbackSrcs;
   const srcCount = sources.length;
   const lang = _langCode();
   const L = function(en, bm, bi){ return lang==='BM'?bm: (lang==='BI'?bi: en); };
@@ -2861,11 +2887,14 @@ function _notebookDemoGuidePrompts(tool, itemFiles, itemContext){
   const srcNames = sources.map(function(s){ return String(s||'').replace(/^\//,''); });
   const filesList = srcNames.length ? srcNames.join(', ') : '';
   const filesListNote = filesList ? ' (' + filesList + ')' : '';
+  // The demo guide is read separately by the presenter (NOT a Notebook source).
+  const guideF = String(meta.guide || _GUIDE_PATH).replace(/^\//,'');
+  // Prompt 0 (Demo Guide walkthrough) is no longer needed — the guide is now
+  // surfaced as a page-level callout above the sources. Data prompts start at P1.
   // ── Per-prompt named-file targeting (personal-document focus pattern) ──
   // Pick specific files by purpose so each prompt has a concrete anchor.
   // Falls back to the first available source when a category is missing.
-  const guideF = srcNames.find(function(n){ return /demo_guide|demo-guide|notebook_demo|notebook-demo/i.test(n); }) || srcNames[0] || '';
-  const dataFiles = srcNames.filter(function(n){ return n !== guideF; });
+  const dataFiles = srcNames.slice();
   const primaryF = dataFiles.find(function(n){ return /financial|performance|earnings|p&l|balance|treasury|cash|forecast|kpi|tracker|portfolio|book/i.test(n); }) || dataFiles[0] || '';
   const policyF  = dataFiles.find(function(n){ return /policy|handbook|framework|strategy|playbook|charter|guideline/i.test(n); }) || dataFiles[1] || dataFiles[0] || '';
   const varF     = dataFiles.find(function(n){ return /variance|driver|covenant|risk|audit|stress|gap/i.test(n); }) || dataFiles[2] || dataFiles[0] || '';
@@ -2877,15 +2906,15 @@ function _notebookDemoGuidePrompts(tool, itemFiles, itemContext){
   const ctxClause = ctx ? L(' Context: '+ctx+'.', ' Konteks: '+ctx+'.', ' Konteks: '+ctx+'.') : '';
 
   return [
-    // Prompt 0 — Demo Guide walkthrough
+    // Prompt 0 — Pre-flight + Demo Guide walkthrough (presenter reads guide on screen, NOT in notebook)
     {instr: SI(
-        'Open the notebook chat below the Instructions field. Pre-flight: ✅ Microsoft 365 Copilot license. ✅ '+fileLabel+' sources uploaded above'+filesListNote+'. ✅ Instructions field set above. Type the prompt below FIRST — it walks Copilot through the demo guide before any data work begins.',
-        'Buka chat notebook di bawah medan Instructions. Pra-terbang: ✅ Lesen Microsoft 365 Copilot. ✅ '+fileLabel+' sumber dimuat naik di atas'+filesListNote+'. ✅ Medan Instructions sudah ditetapkan. Taip prompt di bawah DAHULU — ia membawa Copilot melalui panduan demo sebelum kerja data bermula.',
-        'Buka chat notebook di bawah field Instructions. Pemeriksaan: ✅ Lisensi Microsoft 365 Copilot. ✅ '+fileLabel+' sumber sudah diunggah di atas'+filesListNote+'. ✅ Field Instructions sudah diatur. Ketik prompt di bawah DULU — ini membawa Copilot melalui panduan demo sebelum kerja data dimulai.'
+        'BEFORE typing the prompt below: open `'+guideF+'` SEPARATELY on your screen — this is your run-sheet, NOT a Notebook source. Do NOT add it to the Notebook. Pre-flight: ✅ Microsoft 365 Copilot license. ✅ '+fileLabel+' data sources uploaded above'+filesListNote+'. ✅ Instructions field set above. Type the prompt below FIRST so Copilot anchors itself to the data before you start asking questions.',
+        'SEBELUM taip prompt di bawah: buka `'+guideF+'` SECARA BERASINGAN pada skrin anda — ini lembaran panduan anda, BUKAN sumber Notebook. JANGAN tambah ia ke dalam Notebook. Pra-terbang: ✅ Lesen Microsoft 365 Copilot. ✅ '+fileLabel+' sumber data dimuat naik di atas'+filesListNote+'. ✅ Medan Instructions sudah ditetapkan. Taip prompt di bawah DAHULU supaya Copilot ditambat pada data sebelum anda mula bertanya.',
+        'SEBELUM mengetik prompt di bawah: buka `'+guideF+'` TERPISAH di layar Anda — ini run-sheet Anda, BUKAN sumber Notebook. JANGAN tambahkan ke Notebook. Pemeriksaan: ✅ Lisensi Microsoft 365 Copilot. ✅ '+fileLabel+' sumber data sudah diunggah di atas'+filesListNote+'. ✅ Field Instructions sudah diatur. Ketik prompt di bawah DULU agar Copilot terkunci pada data sebelum Anda bertanya.'
       ), prompt: SI(
-        'Read '+fileQ(guideF)+' end-to-end. Summarise the recommended demo flow in 5 bullets. Then list every other source file I uploaded into this notebook by exact file name and tell me which one of those sources is best suited to answer each of the 4 demo questions named in the guide. End with the 3 follow-up prompts you would suggest I ask after this snapshot — anchored to the specific file names.',
-        'Baca '+fileQ(guideF)+' dari hujung ke hujung. Ringkaskan aliran demo yang disyorkan dalam 5 poin. Kemudian senaraikan setiap fail sumber lain mengikut nama tepat dan beritahu saya mana satu paling sesuai untuk menjawab setiap 4 soalan demo dalam panduan. Akhiri dengan 3 prompt susulan yang anda akan cadangkan saya tanya — diankor pada nama fail tertentu.',
-        'Baca '+fileQ(guideF)+' dari awal hingga akhir. Ringkas alur demo yang disarankan dalam 5 bullet. Lalu daftar tiap file sumber lain dengan nama persis dan beritahu saya mana yang paling cocok untuk tiap 4 pertanyaan demo di panduan. Tutup dengan 3 prompt lanjutan yang akan Anda sarankan — terangkar pada nama file spesifik.'
+        'Confirm you have access to ALL '+fileLabel+' uploaded sources by listing each one by exact file name. For each file, give me a 1-line description of what it contains and which tab / sheet / section is the most analytically valuable starting point. End with the 3 sharpest follow-up questions you would ask first against this data — anchored to specific file names.',
+        'Sahkan anda boleh akses SEMUA '+fileLabel+' sumber yang dimuat naik dengan menyenaraikan setiap satu mengikut nama fail tepat. Untuk setiap fail, berikan saya 1-baris penerangan tentang kandungannya dan tab / helaian / bahagian mana yang paling bernilai sebagai titik mula analisis. Akhiri dengan 3 soalan susulan paling tajam yang anda akan tanya dahulu terhadap data ini — diankor pada nama fail tertentu.',
+        'Konfirmasikan Anda memiliki akses ke SEMUA '+fileLabel+' sumber yang diunggah dengan mendaftar tiap file dengan nama persis. Untuk tiap file, beri saya deskripsi 1-baris tentang isinya dan tab / sheet / bagian mana yang paling bernilai analitis sebagai starting point. Tutup dengan 3 pertanyaan lanjutan paling tajam yang akan Anda tanyakan terhadap data ini — terangkar pada nama file spesifik.'
       )},
     // Prompt 1 — Snapshot anchored to PRIMARY data file
     {instr: SI(
@@ -4388,16 +4417,32 @@ function showItem(item,tab,preserveScroll){
             '</div>';
         }
       }
-      // Notebook special render: surface sources + Instructions field above the numbered prompts.
+      // Notebook special render: surface a presenter-only Demo Guide callout +
+      // sources + Instructions field above the numbered prompts.
       // We only add this once, on prompt 0 (so it doesn't repeat per prompt).
       // Falls back to entry-level item.files when the tool has no explicit notebookMeta.
       let notebookHtml='';
       if(isNotebook && pi===0){
         const nm=tool.notebookMeta||{};
-        const metaSrcs=(nm.sources||[]);
-        const fallbackSrcs=(item.files||[]);
+        // metaSrcs = files the demo user actually uploads to the Notebook tool.
+        // The demo guide is NOT here — it lives on nm.guide and is rendered as a
+        // separate presenter-only callout (it would be misleading to suggest
+        // the audience uploads the run-sheet alongside their data).
+        const metaSrcs=(nm.sources||[]).filter(s => s !== '/00_Copilot_Notebook_Demo_Guide.docx');
+        const fallbackSrcs=(item.files||[]).filter(s => s !== '/00_Copilot_Notebook_Demo_Guide.docx');
         const finalSrcs= metaSrcs.length ? metaSrcs : fallbackSrcs;
         const srcs=finalSrcs.map(s=>'<span class="notebook-source-pill">'+escapeHTML(s)+'</span>').join('');
+        // Presenter-only Demo Guide callout
+        const guideRef = nm.guide || '/00_Copilot_Notebook_Demo_Guide.docx';
+        const guideName = String(guideRef).replace(/^\//,'');
+        const guideLabel = _uL('📘 Demo guide for the presenter — open this on your screen, do NOT upload to the Notebook');
+        const guideHtml = '<div class="notebook-guide-row">'+
+          '<span class="notebook-guide-icon">📘</span>'+
+          '<div class="notebook-guide-text">'+
+            '<div class="notebook-guide-label">'+guideLabel+'</div>'+
+            '<a class="notebook-guide-link" href="files/'+escapeHTML(guideName)+'" target="_blank" rel="noopener">'+escapeHTML(guideName)+'</a>'+
+          '</div>'+
+        '</div>';
         const instrSrc=(_locale==='ID_BI'||_locale==='ID_EN')&&nm.instructionsID?'BI':'EN';
         const instrRaw=(_locale==='ID_BI'||_locale==='ID_EN')&&nm.instructionsID?nm.instructionsID:(nm.instructions||'');
         // Default Instructions-field text: "You are a senior Microsoft 365 Copilot
@@ -4421,6 +4466,7 @@ function showItem(item,tab,preserveScroll){
         const instr=_translateLocale(_scrubReal(instrFinal), instrSrc);
         notebookHtml=
           '<div class="notebook-meta">'+
+          guideHtml+
           '<div class="notebook-meta-label">'+_uL('📓 Notebook setup — add ALL sources at creation time, then set the Instructions field')+'</div>'+
           (srcs?'<div class="notebook-sources">'+srcs+'</div>':'')+
           (instr?'<div class="notebook-instr-row"><strong>'+_uL('Instructions field (system prompt):')+'</strong> '+escapeHTML(instr)+'</div>':'')+

@@ -384,17 +384,18 @@ try:
 except Exception as _e:
     print(f"(reverse mirror skipped due to error: {_e})")
 
-# ── Notebook Demo Guide: prepend canonical /00_Copilot_Notebook_Demo_Guide.docx ──
-# User feedback: "do not have generic copilot notebook... make sure you put instructions
-# like this: [📝 00_Copilot_Notebook_Demo_Guide.docx] and also their sample prompts."
-# We add a single canonical demo guide doc as the FIRST source on EVERY Notebook
-# block across all 55 entries so presenters always have the run-sheet alongside
-# the entry-specific data files.
+# ── Notebook Demo Guide: surface canonical /00_Copilot_Notebook_Demo_Guide.docx
+# as a presenter-only companion (NOT a Notebook source).
+# User feedback: "the guide should actually be the guide showing on the page...
+# they are not supposed to add that source into the notebook. doesn't make sense."
+# So: we expose the guide via meta['guide'] which the renderer paints as a
+# separate "📘 Demo guide" callout above the source-pills row, with copy that
+# explicitly says "Do NOT add to the Notebook — open this on your screen."
+# It stays in the entry-level files list so the file is still downloadable.
 _NB_GUIDE = '/00_Copilot_Notebook_Demo_Guide.docx'
 def _prepend_nb_guide(entries):
     n = 0
     for e in entries:
-        # Each entry has a `prompts` array of tool dicts (NOT 'sections')
         for tool in e.get('prompts') or []:
             if 'Copilot Notebook' not in (tool.get('tool') or ''):
                 continue
@@ -402,12 +403,16 @@ def _prepend_nb_guide(entries):
             if not meta:
                 meta = {'sources': [], 'instructions': '', 'instructionsID': ''}
                 tool['notebookMeta'] = meta
-            srcs = list(meta.get('sources') or [])
-            if _NB_GUIDE not in srcs:
-                srcs.insert(0, _NB_GUIDE)
-                meta['sources'] = srcs
+            # Strip the guide if it leaked into a previous build's sources array
+            srcs = [s for s in (meta.get('sources') or []) if s != _NB_GUIDE]
+            meta['sources'] = srcs
+            # Surface the guide as a separate companion field (rendered as a
+            # presenter-only callout above the sources row).
+            if meta.get('guide') != _NB_GUIDE:
+                meta['guide'] = _NB_GUIDE
                 n += 1
-        # Also surface the file in the entry-level files list
+        # Keep the guide on the entry-level files list so it's still discoverable
+        # via the file-pill row at the top of the entry detail panel.
         files = list(e.get('files') or [])
         if _NB_GUIDE not in files:
             files.insert(0, _NB_GUIDE)
@@ -418,6 +423,436 @@ try:
     print(f"Notebook Demo Guide prepended on {_nb_added} Notebook blocks")
 except Exception as _e:
     print(f"(Notebook Demo Guide prepend skipped due to error: {_e})")
+
+# ── Notebook unique scenarios: kill war-room boilerplate ──
+# User feedback: "why all the notebooks are war room? why no unique scenario one."
+# 22/55 entries shipped with one of three generic openers:
+#   "Use ALL uploaded sources as the only source of truth..." (x11)
+#   "You are my executive war-room analyst..."                (x8)
+#   "Act as my board-ready synthesis partner..."              (x3)
+# 25/55 used "war-room" generically. Result: notebooks felt copy-paste.
+#
+# Fix: detect generic openers and rewrite with industry-anchored persona +
+# real regulator + signature crisis tied to the entry's tagline.
+import re as _nb_re
+_NB_GENERIC_RX = _nb_re.compile(
+    r"^(use all uploaded sources|you are my executive war-room analyst\.|"
+    r"act as my board-ready synthesis partner|you are my (portfolio|network|commercial|content) war-room analyst|"
+    r"you are my executive readiness analyst)",
+    _nb_re.IGNORECASE,
+)
+# Indonesian generic openers (mirror of the EN templates above)
+_NB_GENERIC_RX_ID = _nb_re.compile(
+    r"^(gunakan seluruh sumber|anda adalah analis war-room eksekutif saya\.|"
+    r"bertindak sebagai mitra sintesis|anda adalah analis (portfolio|jaringan|komersial|konten) war-room|"
+    r"anda adalah analis kesiapan eksekutif)",
+    _nb_re.IGNORECASE,
+)
+
+def _nb_archetype(eid):
+    e = (eid or '').lower()
+    if _nb_re.search(r'^dept-finance', e): return 'dept-fin'
+    if _nb_re.search(r'^dept-hr', e):       return 'dept-hr'
+    if _nb_re.search(r'^dept-legal', e):    return 'dept-legal'
+    if _nb_re.search(r'^dept-risk', e):     return 'dept-risk'
+    if _nb_re.search(r'^dept-strategy', e): return 'dept-strat'
+    if _nb_re.search(r'^dept-mark',  e):    return 'dept-mkt'
+    if _nb_re.search(r'^dept-esg',  e):     return 'dept-esg'
+    if _nb_re.search(r'^dept-operation', e): return 'dept-ops'
+    if _nb_re.search(r'^dept-corpsec', e):  return 'dept-corpsec'
+    if _nb_re.search(r'^dept-investor', e): return 'dept-ir'
+    if _nb_re.search(r'^dept-procurement',e): return 'dept-proc'
+    if _nb_re.search(r'^dept-it', e):       return 'dept-it'
+    if _nb_re.search(r'bank|finance|treasury|mortgage|remitt|glc-investment', e): return 'bank'
+    if _nb_re.search(r'islamic', e):                  return 'islamic'
+    if _nb_re.search(r'fintech|payment',  e):         return 'fintech'
+    if _nb_re.search(r'insurance|takaful',  e):       return 'insur'
+    if _nb_re.search(r'hospital|pharma|health|rubber-glove', e): return 'hc'
+    if _nb_re.search(r'og-up|og-down|coal|mining|rare-earth|renewable|power|util', e): return 'energy'
+    if _nb_re.search(r'manuf|automotive|auto-tyre|semicon|food-fmcg', e): return 'mfg'
+    if _nb_re.search(r'plantation|agri', e):          return 'agri'
+    if _nb_re.search(r'retail|grocery|qsr|fashion|apparel|ecomm|super-app|mall', e): return 'retail'
+    if _nb_re.search(r'hotel|tourism|airline|aviation|cruise|leisure|entertain|gaming|media|broadcast|hospital(?!ity)|hospitality', e): return 'hosp'
+    if _nb_re.search(r'telco|telecom|broadband|tower|isp|tech|software|cloud|data-center|saas|platform|digital|bpo', e): return 'tech'
+    if _nb_re.search(r'maritim|shipping|port|logistic|rail|express|courier|cold-chain|transport|trucking|terminal', e): return 'trans'
+    if _nb_re.search(r'gov|public|regulator|sovereign', e): return 'pub'
+    if _nb_re.search(r'property|construction|reit', e): return 'prop'
+    if _nb_re.search(r'education|university', e): return 'edu'
+    if _nb_re.search(r'diversified|conglomerate|general', e): return 'congl'
+    return 'congl'
+
+# Per-archetype: (persona-role, regulator/governance-anchor, signature-deliverable, framing-rule, language-ID-translation-of-rule)
+_NB_TEMPLATES = {
+    'bank':    ('Group CFO and Group Treasurer war-room analyst', 'BNM (MY) / OJK (ID) / MAS (SG) prudential and SCM disclosure', 'next Board-Risk briefing pack', 'Classify every credit and treasury recommendation as Red / Amber / Green and cite the file + tab.', 'Klasifikasikan setiap rekomendasi kredit dan treasury sebagai Merah / Kuning / Hijau dan kutip file + tab.'),
+    'islamic': ('Shariah Committee secretariat analyst', 'IFSA + AAOIFI Shariah governance', 'next Shariah Committee meeting pack', 'Anchor every recommendation in the relevant Shariah resolution and cite the file + section.', 'Anchor setiap rekomendasi pada resolusi Shariah yang relevan dan kutip file + bagian.'),
+    'fintech': ('Group CRO and Compliance Lead briefing analyst', 'BNM e-money / OJK PUJK / MAS PSA licensing', 'next Risk Committee deep-dive', 'Tag each recommendation as Red / Amber / Green for fraud, AML/CFT, and operational risk and cite the file + section.', 'Tag setiap rekomendasi sebagai Merah / Kuning / Hijau untuk fraud, APU/PPT, dan risiko operasional dan kutip file + bagian.'),
+    'insur':   ('Chief Actuary and Group CFO briefing analyst', 'BNM RBC / OJK SLOJK / MAS RBC2 solvency framework', 'next Capital and Risk Committee pack', 'Tie every figure to the loss ratio, expense ratio or combined ratio it impacts and cite the source file.', 'Kaitkan setiap angka dengan loss ratio, expense ratio atau combined ratio yang dipengaruhi dan kutip file sumber.'),
+    'hc':      ('Medical Director and Chief Nurse case-conference analyst', 'PDPA (MY) / UU PDP (ID) / PDPA (SG) and MOH clinical-governance standards', 'next Medical Advisory Committee meeting', 'De-identify all patient detail (use case IDs) and tag each finding as Clinical-Quality / Patient-Safety / Compliance and cite the source file.', 'De-identifikasi semua detail pasien (gunakan case ID) dan tag setiap temuan sebagai Clinical-Quality / Patient-Safety / Compliance dan kutip file sumber.'),
+    'energy':  ('HSSE Director and Operations VP incident-review analyst', 'DOSH (MY) / KemenESDM (ID) / MOM (SG) HSE reporting and Bursa / IDX disclosure', 'next Operating Committee HSE review', 'Tag each item as Process-Safety / People-Safety / Environment / Commercial and cite the source file + tab.', 'Tag setiap item sebagai Process-Safety / People-Safety / Environment / Commercial dan kutip file + tab sumber.'),
+    'mfg':     ('Plant Manager and QA Director quality-review analyst', 'Customer Quality Agreement and ISO 9001 / IATF 16949 batch-traceability', 'next Quality Council and Customer Recovery review', 'For every recommendation tag the affected SKU / batch / lot and cite the source file + tab.', 'Untuk setiap rekomendasi tag SKU / batch / lot yang terdampak dan kutip file + tab sumber.'),
+    'agri':    ('Sustainability Manager and Estate GM analyst', 'RSPO / ISPO / MSPO / NDPE certification audit', 'next Sustainability Committee + Buyer audit close-out', 'Tag every finding by estate / mill / smallholder block, classify as Compliant / Watchlist / Non-conformance and cite the source file.', 'Tag setiap temuan berdasarkan estate / mill / blok smallholder, klasifikasikan sebagai Compliant / Watchlist / Non-conformance dan kutip file sumber.'),
+    'retail':  ('Category Manager and Store Operations VP huddle analyst', 'Category Performance Review + Loyalty Privacy policy', 'next weekly Trade Huddle + Category Council', 'Tag every recommendation by category / SKU / store cluster and cite the source file + tab.', 'Tag setiap rekomendasi berdasarkan kategori / SKU / klaster gerai dan kutip file + tab sumber.'),
+    'hosp':    ('General Manager and Director of Operations property-review analyst', 'Brand Standard audit + Guest Privacy policy', 'next property leadership huddle + brand audit close-out', 'Tag every issue by property / department / shift, classify as Guest-Impact / Revenue-Impact / Compliance and cite the source file.', 'Tag setiap masalah berdasarkan properti / departemen / shift, klasifikasikan sebagai Guest-Impact / Revenue-Impact / Compliance dan kutip file sumber.'),
+    'tech':    ('SVP Product and SVP Engineering operating-review analyst', 'SLA + DPA contractual obligations and tenant-side DLP', 'next Operating Review + SLA breach customer notification', 'Anchor every recommendation in the SLA metric or DPA clause it impacts and cite the source file + tab.', 'Anchor setiap rekomendasi pada metrik SLA atau klausul DPA yang dipengaruhi dan kutip file + tab sumber.'),
+    'trans':   ('Port Captain and Operations Director incident-review analyst', 'IMO / port-state authority and customs-broker compliance', 'next Operations Committee + customer hold-note review', 'Tag every action by vessel / voyage / port-call and classify as Schedule / Cargo / Compliance / Customer and cite the source file.', 'Tag setiap aksi berdasarkan kapal / voyage / port-call dan klasifikasikan sebagai Schedule / Cargo / Compliance / Customer dan kutip file sumber.'),
+    'pub':     ('Permanent Secretary and Communications Director citizen-engagement analyst', 'BPK / AGD / National Audit Department audit-trail standard', 'next Inter-Ministry Steering Committee + DPR / Parliament hearing prep', 'Tag every recommendation by ministry / agency / programme and classify as Service-Delivery / Compliance / Reputation and cite the source file.', 'Tag setiap rekomendasi berdasarkan kementerian / lembaga / program dan klasifikasikan sebagai Service-Delivery / Compliance / Reputation dan kutip file sumber.'),
+    'prop':    ('Project Director and Asset Management VP development-review analyst', 'Sales & Purchase Agreement + REIT trustee disclosure', 'next Project Steering Committee + REIT-trustee briefing', 'Tag every issue by project phase / asset / tenant and classify as Schedule / Cost / Quality / Compliance and cite the source file.', 'Tag setiap masalah berdasarkan fase proyek / aset / tenant dan klasifikasikan sebagai Schedule / Cost / Quality / Compliance dan kutip file sumber.'),
+    'edu':     ('Vice-Chancellor and Registrar academic-quality analyst', 'MQA / Kemdikbud / SkillsFuture academic-quality audit', 'next Senate / Academic Council meeting', 'Tag every issue by faculty / programme / cohort and classify as Academic-Quality / Compliance / Student-Experience and cite the source file.', 'Tag setiap masalah berdasarkan fakultas / program / cohort dan klasifikasikan sebagai Academic-Quality / Compliance / Student-Experience dan kutip file sumber.'),
+    'congl':   ('Group CFO and Chief of Staff Board-pack analyst', 'Bursa / IDX dual-listing disclosure and SCM / OJK enquiries', 'next emergency Board review', 'Classify every divisional recommendation as Red / Amber / Green and cite the source file + tab.', 'Klasifikasikan setiap rekomendasi divisional sebagai Merah / Kuning / Hijau dan kutip file + tab sumber.'),
+    # Departments
+    'dept-fin':     ('Group CFO and Head of FP&A briefing analyst', 'Group Finance close calendar + variance protocol', 'next Group CFO briefing + Audit Committee deep-dive', 'Tag every variance by division / cost line and classify as Volume / Price / FX / Other and cite the source file.', 'Tag setiap selisih berdasarkan divisi / lini biaya dan klasifikasikan sebagai Volume / Price / FX / Other dan kutip file sumber.'),
+    'dept-hr':      ('Group CHRO and Head of Talent talent-review analyst', 'PDPA (MY) / UU PDP (ID) employee-data protection', 'next Talent Council + Group ExCo people-update', 'Tag every action by population / job-family / location and classify as Talent / Comp / ER / Compliance and cite the source file.', 'Tag setiap aksi berdasarkan populasi / job-family / lokasi dan klasifikasikan sebagai Talent / Comp / ER / Compliance dan kutip file sumber.'),
+    'dept-legal':   ('Group General Counsel and Head of Litigation matter-review analyst', 'Privilege protocol + matter-management standard', 'next Group Legal Council + risk-committee escalation', 'Tag every matter as Privileged / Open / Closed and classify exposure as Material / Notable / Routine and cite the source file.', 'Tag setiap matter sebagai Privileged / Open / Closed dan klasifikasikan eksposur sebagai Material / Notable / Routine dan kutip file sumber.'),
+    'dept-risk':    ('Group CRO and Head of ORM enterprise-risk analyst', 'Group Risk Appetite Statement + Bank Negara / OJK / MAS supervisory expectations', 'next Risk Management Committee deep-dive', 'Map every recommendation to the relevant risk-appetite metric and tag as Red / Amber / Green vs threshold and cite the source file.', 'Petakan setiap rekomendasi ke metrik risk-appetite yang relevan dan tag sebagai Merah / Kuning / Hijau vs threshold dan kutip file sumber.'),
+    'dept-strat':   ('Group Chief of Staff and Head of Strategy strategy-review analyst', 'Group Strategy Framework + 5-Year Plan governance', 'next Strategy Council + Board strategy day', 'Map every recommendation to the strategic pillar it serves and classify as Build / Buy / Partner / Stop and cite the source file.', 'Petakan setiap rekomendasi ke pilar strategis yang dilayani dan klasifikasikan sebagai Build / Buy / Partner / Stop dan kutip file sumber.'),
+    'dept-mkt':     ('Group CMO and Head of Brand campaign-review analyst', 'Brand Guidelines + Group Communications policy', 'next Marketing Council + brand-equity tracker review', 'Tag every campaign by audience / channel / phase and classify as On-Track / At-Risk / Re-Plan and cite the source file.', 'Tag setiap kampanye berdasarkan audience / channel / fase dan klasifikasikan sebagai On-Track / At-Risk / Re-Plan dan kutip file sumber.'),
+    'dept-esg':     ('Group Chief Sustainability Officer and ESG Lead disclosure analyst', 'GRI + IFRS S1/S2 + Bursa / IDX sustainability reporting standards', 'next Sustainability Committee + investor ESG roadshow', 'Tag every disclosure by E / S / G pillar and classify materiality as Material / Notable / Watchlist and cite the source file.', 'Tag setiap disclosure berdasarkan pilar E / S / G dan klasifikasikan materialitas sebagai Material / Notable / Watchlist dan kutip file sumber.'),
+    'dept-ops':     ('COO and Head of Operations excellence-review analyst', 'Operating Model design + KPI dictionary', 'next Operating Committee + functional QBR', 'Tag every initiative by function / site / programme and classify as Run / Change / Transform and cite the source file.', 'Tag setiap inisiatif berdasarkan fungsi / lokasi / program dan klasifikasikan sebagai Run / Change / Transform dan kutip file sumber.'),
+    'dept-corpsec': ('Company Secretary and Head of Governance Board-prep analyst', 'Bursa / IDX listing rules + Companies Act minute-keeping standard', 'next Board / committee meeting pack', 'Classify every Board paper as Decision / Discussion / Information and cite the source file + section.', 'Klasifikasikan setiap Board paper sebagai Decision / Discussion / Information dan kutip file + bagian sumber.'),
+    'dept-ir':      ('Head of Investor Relations and Group CFO disclosure analyst', 'Bursa / IDX continuing-disclosure rules + Reg-FD-equivalent fairness', 'next quarterly results call + investor-day prep', 'Pre-empt every analyst concern by mapping it to a published disclosure and tag as On-Message / Risk / Off-Limits and cite the source file.', 'Antisipasi setiap kekhawatiran analis dengan memetakannya ke disclosure yang dipublikasikan dan tag sebagai On-Message / Risk / Off-Limits dan kutip file sumber.'),
+    'dept-proc':    ('Chief Procurement Officer and Head of Supplier Risk savings-review analyst', 'Group Procurement policy + supplier code of conduct', 'next Procurement Council + savings-tracker close-out', 'Tag every saving by category / supplier and classify as Realised / Run-Rate / At-Risk and cite the source file.', 'Tag setiap saving berdasarkan kategori / supplier dan klasifikasikan sebagai Realised / Run-Rate / At-Risk dan kutip file sumber.'),
+    'dept-it':      ('Group CIO and Head of Cyber operating-review analyst', 'ISO 27001 + Group cyber-resilience framework', 'next Technology Council + Cyber sub-committee', 'Tag every issue by service / domain / stage and classify as Run / Change / Cyber / Compliance and cite the source file.', 'Tag setiap masalah berdasarkan service / domain / tahap dan klasifikasikan sebagai Run / Change / Cyber / Compliance dan kutip file sumber.'),
+}
+
+# Use-case taxonomy: one of 13 canonical notebook events, picked by keyword
+# matching the entry's tagline + scenario. Mirrors Microsoft's published
+# Notebook patterns (Persol = RFP scoring; AECOM = bid pursuit; PWC = audit
+# response; Sanofi = clinical case; Pfizer = regulator submission; etc.) —
+# every notebook becomes a "single grounded source" for ONE specific event.
+# (event_name_EN, deliverable_EN, framing_EN, event_name_ID, deliverable_ID, framing_ID)
+_NB_USECASES = {
+    'rfp':       ('RFP scoring marathon', 'RFP scoring memo + supplier short-list',
+                  'For every shortlisted supplier output a Strengths / Risks / Conditions block tied to the scoring rubric.',
+                  'maraton penilaian RFP', 'memo penilaian RFP + shortlist supplier',
+                  'Untuk setiap supplier shortlist keluarkan blok Kekuatan / Risiko / Syarat yang terikat ke rubrik penilaian.'),
+    'ma':        ('M&A target due-diligence', 'diligence findings memo + go/no-go recommendation',
+                  'For every red flag produce an Action / Owner / Pre-close-condition entry with valuation impact.',
+                  'due-diligence target M&A', 'memo temuan due-diligence + rekomendasi go/no-go',
+                  'Untuk setiap red flag hasilkan entry Aksi / Pemilik / Syarat-Pra-Closing dengan dampak valuasi.'),
+    'lender':    ('lender refinancing & covenant engagement', 'lender pack: covenant cure plan + refi options',
+                  'Tag every covenant by Headroom / Breach-Risk / Cure-Path and bring the Information Memorandum thread.',
+                  'engagement refinancing & covenant lender', 'lender pack: rencana cure covenant + opsi refinancing',
+                  'Tag setiap covenant berdasarkan Headroom / Breach-Risk / Cure-Path dan bawa benang IM.'),
+    'regulator': ('regulator submission cycle', 'regulator response submission with full audit trail',
+                  'Number every regulator query and cite the source file + paragraph that answers it.',
+                  'siklus submisi regulator', 'submisi tanggapan regulator dengan jejak audit lengkap',
+                  'Beri nomor pada setiap pertanyaan regulator dan kutip file sumber + paragraf yang menjawabnya.'),
+    'audit':     ('Bursa / SCM / OJK enquiry response', 'audit-response binder + management letter',
+                  'Tag every finding as Material / Notable / Watch and cite the file + section that supports the position.',
+                  'tanggapan enquiry Bursa / SCM / OJK', 'binder tanggapan audit + management letter',
+                  'Tag setiap temuan sebagai Material / Notable / Watch dan kutip file + bagian yang mendukung posisi.'),
+    'recall':    ('customer recall & quality crisis', 'customer recovery memo + recall-scope decision',
+                  'For every affected SKU / batch / lot tag as Recall-In-Field / Recall-In-Stock / Hold with recovery cost.',
+                  'recall pelanggan & krisis kualitas', 'memo recovery pelanggan + keputusan scope recall',
+                  'Untuk setiap SKU / batch / lot terdampak tag sebagai Recall-In-Field / Recall-In-Stock / Hold dengan biaya recovery.'),
+    'earnings':  ('pre-results blackout window', 'results-day pack: Q&A bank + IR script + Board paper',
+                  'Pre-empt every analyst concern by mapping to a published disclosure and tag On-Message / Risk / Off-Limits.',
+                  'window blackout pra-hasil', 'pack hari hasil: bank Q&A + skrip IR + Board paper',
+                  'Antisipasi setiap kekhawatiran analis dengan memetakan ke disclosure terpublikasi dan tag On-Message / Risk / Off-Limits.'),
+    'board':     ('emergency Board variance review', 'Board paper + variance bridge + recovery programme',
+                  'Classify every divisional recommendation as Red / Amber / Green and tie to the EBITDA bridge component it serves.',
+                  'review variance Board darurat', 'Board paper + bridge variance + program recovery',
+                  'Klasifikasikan setiap rekomendasi divisional sebagai Merah / Kuning / Hijau dan kaitkan ke komponen EBITDA bridge yang dilayani.'),
+    'clinical':  ('clinical case-conference / M&M review', 'case-conference brief + clinical-quality recommendations',
+                  'De-identify all patient detail (use case IDs) and tag every finding as Clinical-Quality / Patient-Safety / Compliance.',
+                  'review konferensi kasus klinis / M&M', 'brief konferensi kasus + rekomendasi clinical-quality',
+                  'De-identifikasi semua detail pasien (gunakan case ID) dan tag setiap temuan sebagai Clinical-Quality / Patient-Safety / Compliance.'),
+    'customer':  ('major-account recovery / churn save', 'customer recovery memo + remediation plan',
+                  'For every named account tag as Save / Right-Size / Exit and cite the contract clause that backs the position.',
+                  'recovery major-account / churn save', 'memo recovery pelanggan + rencana remediasi',
+                  'Untuk setiap akun bernama tag sebagai Save / Right-Size / Exit dan kutip klausul kontrak yang mendukung posisi.'),
+    'incident':  ('incident / outage post-mortem', 'incident root-cause memo + customer-impact note',
+                  'Tag each finding as Process / People / Tech / Comms with named owner and time-to-cure.',
+                  'post-mortem insiden / outage', 'memo root-cause insiden + catatan dampak-pelanggan',
+                  'Tag setiap temuan sebagai Process / People / Tech / Comms dengan pemilik bernama dan time-to-cure.'),
+    'esg':       ('ESG / sustainability disclosure cycle', 'sustainability statement + materiality matrix update',
+                  'Tag every disclosure by E / S / G pillar and classify materiality as Material / Notable / Watchlist.',
+                  'siklus disclosure ESG / sustainability', 'statement sustainability + update materiality matrix',
+                  'Tag setiap disclosure berdasarkan pilar E / S / G dan klasifikasikan materialitas sebagai Material / Notable / Watchlist.'),
+    'strategy':  ('5-year plan refresh', '5-year plan paper + capital-allocation case',
+                  'Map every initiative to a strategic pillar and classify as Build / Buy / Partner / Stop with NPV anchor.',
+                  'refresh rencana 5-tahun', 'paper rencana 5-tahun + case alokasi modal',
+                  'Petakan setiap inisiatif ke pilar strategis dan klasifikasikan sebagai Build / Buy / Partner / Stop dengan anchor NPV.'),
+}
+
+# Per-archetype short-list of plausible use-cases — ordered by how natural
+# each event is for that industry. Detector picks the FIRST keyword match
+# inside this short-list, so a hospital can never land on RFP scoring even
+# if the scenario happens to contain "tender" anywhere.
+_NB_ARCHETYPE_USECASES = {
+    'bank':         ['lender', 'regulator', 'earnings', 'audit'],
+    'islamic':      ['regulator', 'lender', 'audit'],
+    'fintech':      ['regulator', 'incident', 'audit'],
+    'insur':        ['regulator', 'recall', 'audit', 'earnings'],
+    'hc':           ['clinical', 'regulator', 'recall'],
+    'energy':       ['incident', 'regulator', 'recall', 'esg'],
+    'mfg':          ['recall', 'audit', 'incident', 'customer'],
+    'agri':         ['esg', 'audit', 'regulator'],
+    'retail':       ['customer', 'recall', 'incident'],
+    'hosp':         ['customer', 'incident', 'audit'],
+    'tech':         ['incident', 'customer', 'regulator'],
+    'trans':        ['incident', 'audit', 'regulator', 'customer'],
+    'pub':          ['regulator', 'audit', 'esg'],
+    'prop':         ['lender', 'regulator', 'audit'],
+    'edu':          ['audit', 'regulator', 'strategy'],
+    'congl':        ['board', 'ma', 'lender', 'strategy'],
+    'dept-fin':     ['lender', 'audit', 'board', 'earnings'],
+    'dept-hr':      ['strategy', 'audit', 'incident'],
+    'dept-legal':   ['regulator', 'audit', 'ma'],
+    'dept-risk':    ['incident', 'audit', 'regulator'],
+    'dept-strat':   ['ma', 'strategy', 'board'],
+    'dept-mkt':     ['customer', 'strategy'],
+    'dept-esg':     ['esg', 'audit'],
+    'dept-ops':     ['incident', 'strategy', 'recall'],
+    'dept-corpsec': ['board', 'regulator', 'audit'],
+    'dept-ir':      ['earnings', 'regulator'],
+    'dept-proc':    ['rfp', 'customer', 'audit'],
+    'dept-it':      ['incident', 'audit'],
+}
+
+# Use-case lane — what review/handoff each event delivers into. Lets us pair
+# archetype "named roles" with a use-case-aware "lane" so the language stays
+# coherent ("Medical Director, leading the M&M case-conference" — not
+# "Medical Director...case-conference analyst...for the RFP scoring marathon").
+# Lanes are short noun phrases, EN+ID, dropped into "leading the {lane}".
+_NB_USECASE_LANE = {
+    'rfp':       ('RFP scoring marathon',                 'maraton penilaian RFP'),
+    'ma':        ('M&A target due-diligence',             'due-diligence target M&A'),
+    'lender':    ('lender refinancing & covenant cure',   'cure refinancing & covenant lender'),
+    'regulator': ('regulator submission cycle',           'siklus submisi regulator'),
+    'audit':     ('Bursa / SCM / OJK enquiry response',   'tanggapan enquiry Bursa / SCM / OJK'),
+    'recall':    ('customer recall & quality crisis',     'recall pelanggan & krisis kualitas'),
+    'earnings':  ('pre-results blackout package',         'paket blackout pra-hasil'),
+    'clinical':  ('clinical M&M / case-conference review','review M&M klinis / konferensi kasus'),
+    'customer':  ('major-account recovery campaign',      'kampanye recovery major-account'),
+    'incident':  ('incident / outage post-mortem',        'post-mortem insiden / outage'),
+    'esg':       ('ESG / sustainability disclosure cycle','siklus disclosure ESG / sustainability'),
+    'strategy':  ('5-year plan refresh',                  'refresh rencana 5-tahun'),
+    'board':     ('emergency Board variance review',      'review variance Board darurat'),
+}
+
+# Use-case keyword detector. Reuses regex in _NB_USECASES, narrowed to the
+# archetype's short-list at decision time so out-of-domain matches are blocked.
+_NB_USECASE_PATTERNS = [
+    ('rfp',       r'\brfp\b|\btender\b|supplier panel|sourcing event|reverse auction|panel of suppliers|panel award'),
+    ('ma',        r'\bm&a\b|\bm and a\b|acquisition|target screen|due[- ]?diligence|integration program|carve[- ]?out|merger|takeover|bidder'),
+    ('lender',    r'lender|covenant|refinanc|maturity wall|debt stack|sukuk|credit facility|syndicat|bond tap|coupon|holding line'),
+    ('regulator', r'regulator|bnm|ojk|mas|scm|bursa enquiry|idx enquiry|enforcement notice|supervisory|clarification letter|show[- ]cause|moh|kkm|kemenkes|jci'),
+    ('audit',     r'\baudit\b|disclosure breach|continuing disclosure|internal audit|external audit|management letter|qualified opinion'),
+    ('recall',    r'recall|product safety|defect|batch hold|quality issue|complaint surge|lot rejection|customer hold'),
+    ('earnings',  r'earnings|results call|investor day|blackout|guidance|consensus|preliminary results|analyst day|results pack'),
+    ('clinical',  r'clinical|patient case|m&m|morbidity|adverse event|case conference|sentinel event|near miss|jci|bed occupancy|infection|safety event'),
+    ('customer',  r'churn|\bnps\b|customer recovery|major account|key account|sla breach|claim|hold note|stop[- ]work|trade huddle|sss\b|same-store'),
+    ('incident',  r'incident|outage|breach|leak|spill|fire|blast|cyber attack|ransomware|data leak|near[- ]miss'),
+    ('esg',       r'esg|sustainability report|tcfd|gri|ifrs s\d|net[- ]zero|emissions disclosure|csrd|rspo|ispo|ndpe|nikkanjo|carbon|deforestation'),
+    ('strategy',  r'strategy refresh|5[- ]year plan|operating model|transformation programme|portfolio reshape'),
+    ('board',     r'board[- ]pack|emergency board|variance|adverse|missed.*ebitda|board paper|board[- ]risk'),
+]
+_NB_PATTERN_MAP = {k: _nb_re.compile(p, _nb_re.IGNORECASE) for k, p in _NB_USECASE_PATTERNS}
+
+def _nb_usecase(entry):
+    arche = _nb_archetype(entry.get('id'))
+    allowed = _NB_ARCHETYPE_USECASES.get(arche) or ['board']
+    text = ' '.join([
+        str(entry.get('tagline') or ''),
+        str(entry.get('scenario') or ''),
+        str(entry.get('name') or ''),
+        str(entry.get('id') or ''),
+    ]).lower()
+    # Prefer specificity inside the archetype's allowed set
+    for tag in allowed:
+        rx = _NB_PATTERN_MAP.get(tag)
+        if rx and rx.search(text):
+            return tag
+    # No keyword hit — first item in archetype short-list is the natural default
+    return allowed[0]
+
+def _nb_first_sentence(s):
+    if not s: return ''
+    s = str(s).strip()
+    m = _nb_re.search(r'(.+?[\.!\?])(\s|$)', s)
+    return (m.group(1) if m else s[:160]).strip()
+
+def _nb_named_files(meta, max_files=3):
+    src = meta.get('sources') or []
+    names = []
+    for s in src:
+        if not isinstance(s, dict): continue
+        nm = s.get('name') or s.get('label') or ''
+        if not nm: continue
+        if 'Copilot_Notebook_Demo_Guide' in nm or 'Copilot Notebook Demo Guide' in nm:
+            continue
+        names.append(nm)
+        if len(names) >= max_files:
+            break
+    return names
+
+# Per-archetype "named roles" (short noun phrase, no "...analyst" suffix).
+# Format: (named_roles_EN, regulator_EN_or_governance_anchor)
+_NB_ROLES = {
+    'bank':         ('Group CFO and Group Treasurer',                     'BNM (MY) / OJK (ID) / MAS (SG) prudential and SCM disclosure'),
+    'islamic':      ('Shariah Committee secretariat',                     'IFSA + AAOIFI Shariah governance'),
+    'fintech':      ('Group CRO and Compliance Lead',                     'BNM e-money / OJK PUJK / MAS PSA licensing'),
+    'insur':        ('Chief Actuary and Group CFO',                       'BNM RBC / OJK SLOJK / MAS RBC2 solvency framework'),
+    'hc':           ('Medical Director and Chief Nurse',                  'PDPA (MY) / UU PDP (ID) and MOH clinical-governance standards'),
+    'energy':       ('HSSE Director and Operations VP',                   'DOSH (MY) / KemenESDM (ID) / MOM (SG) HSE reporting and Bursa / IDX disclosure'),
+    'mfg':          ('Plant Manager and QA Director',                     'Customer Quality Agreement and ISO 9001 / IATF 16949 batch-traceability'),
+    'agri':         ('Sustainability Manager and Estate GM',              'RSPO / ISPO / MSPO / NDPE certification audit'),
+    'retail':       ('Category Manager and Store Operations VP',          'Category Performance Review + Loyalty Privacy policy'),
+    'hosp':         ('General Manager and Director of Operations',        'Brand Standard audit + Guest Privacy policy'),
+    'tech':         ('SVP Product and SVP Engineering',                   'SLA + DPA contractual obligations and tenant-side DLP'),
+    'trans':        ('Port Captain and Operations Director',              'IMO / port-state authority and customs-broker compliance'),
+    'pub':          ('Permanent Secretary and Communications Director',   'BPK / AGD / National Audit Department audit-trail standard'),
+    'prop':         ('Project Director and Asset Management VP',          'Sales & Purchase Agreement + REIT trustee disclosure'),
+    'edu':          ('Vice-Chancellor and Registrar',                     'MQA / Kemdikbud / SkillsFuture academic-quality audit'),
+    'congl':        ('Group CFO and Chief of Staff',                      'Bursa / IDX dual-listing disclosure and SCM / OJK enquiries'),
+    'dept-fin':     ('Group CFO and Head of FP&A',                        'Group Finance close calendar + variance protocol'),
+    'dept-hr':      ('Group CHRO and Head of Talent',                     'PDPA (MY) / UU PDP (ID) employee-data protection'),
+    'dept-legal':   ('Group General Counsel and Head of Litigation',      'privilege protocol + matter-management standard'),
+    'dept-risk':    ('Group CRO and Head of ORM',                         'Group Risk Appetite Statement + BNM / OJK / MAS supervisory expectations'),
+    'dept-strat':   ('Group Chief of Staff and Head of Strategy',         'Group Strategy Framework + 5-Year Plan governance'),
+    'dept-mkt':     ('Group CMO and Head of Brand',                       'Brand Guidelines + Group Communications policy'),
+    'dept-esg':     ('Group Chief Sustainability Officer and ESG Lead',   'GRI + IFRS S1/S2 + Bursa / IDX sustainability reporting standards'),
+    'dept-ops':     ('COO and Head of Operations',                        'Operating Model design + KPI dictionary'),
+    'dept-corpsec': ('Company Secretary and Head of Governance',          'Bursa / IDX listing rules + Companies Act minute-keeping standard'),
+    'dept-ir':      ('Head of Investor Relations and Group CFO',          'Bursa / IDX continuing-disclosure rules + Reg-FD-equivalent fairness'),
+    'dept-proc':    ('Chief Procurement Officer and Head of Supplier Risk','Group Procurement policy + supplier code of conduct'),
+    'dept-it':      ('Group CIO and Head of Cyber',                       'ISO 27001 + Group cyber-resilience framework'),
+}
+
+# Per-use-case framing (deliverable + Tag/RAG rule), EN + ID
+_NB_FRAMING = {
+    'rfp':       ('RFP scoring memo + supplier short-list',
+                  'For every shortlisted supplier emit a Strengths / Risks / Conditions block tied to the scoring rubric.',
+                  'memo penilaian RFP + shortlist supplier',
+                  'Untuk setiap supplier shortlist keluarkan blok Kekuatan / Risiko / Syarat yang terikat ke rubrik penilaian.'),
+    'ma':        ('diligence findings memo + go/no-go recommendation',
+                  'For every red flag produce an Action / Owner / Pre-close-condition entry with valuation impact.',
+                  'memo temuan due-diligence + rekomendasi go/no-go',
+                  'Untuk setiap red flag hasilkan entry Aksi / Pemilik / Syarat-Pra-Closing dengan dampak valuasi.'),
+    'lender':    ('lender pack: covenant cure plan + refi options',
+                  'Tag every covenant by Headroom / Breach-Risk / Cure-Path and bring the IM thread.',
+                  'lender pack: rencana cure covenant + opsi refinancing',
+                  'Tag setiap covenant berdasarkan Headroom / Breach-Risk / Cure-Path dan bawa benang IM.'),
+    'regulator': ('regulator response submission with full audit trail',
+                  'Number every regulator query and cite the source file + paragraph that answers it.',
+                  'submisi tanggapan regulator dengan jejak audit lengkap',
+                  'Beri nomor pada setiap pertanyaan regulator dan kutip file sumber + paragraf yang menjawabnya.'),
+    'audit':     ('audit-response binder + management letter',
+                  'Tag every finding as Material / Notable / Watch and cite the file + section that supports the position.',
+                  'binder tanggapan audit + management letter',
+                  'Tag setiap temuan sebagai Material / Notable / Watch dan kutip file + bagian yang mendukung posisi.'),
+    'recall':    ('customer recovery memo + recall-scope decision',
+                  'For every affected SKU / batch / lot tag as Recall-In-Field / Recall-In-Stock / Hold with recovery cost.',
+                  'memo recovery pelanggan + keputusan scope recall',
+                  'Untuk setiap SKU / batch / lot terdampak tag sebagai Recall-In-Field / Recall-In-Stock / Hold dengan biaya recovery.'),
+    'earnings':  ('results-day pack: Q&A bank + IR script + Board paper',
+                  'Pre-empt every analyst concern by mapping to a published disclosure and tag On-Message / Risk / Off-Limits.',
+                  'pack hari hasil: bank Q&A + skrip IR + Board paper',
+                  'Antisipasi setiap kekhawatiran analis dengan memetakan ke disclosure terpublikasi dan tag On-Message / Risk / Off-Limits.'),
+    'clinical':  ('case-conference brief + clinical-quality recommendations',
+                  'De-identify all patient detail (use case IDs) and tag every finding as Clinical-Quality / Patient-Safety / Compliance.',
+                  'brief konferensi kasus + rekomendasi clinical-quality',
+                  'De-identifikasi semua detail pasien (gunakan case ID) dan tag setiap temuan sebagai Clinical-Quality / Patient-Safety / Compliance.'),
+    'customer':  ('customer recovery memo + remediation plan',
+                  'For every named account tag as Save / Right-Size / Exit and cite the contract clause that backs the position.',
+                  'memo recovery pelanggan + rencana remediasi',
+                  'Untuk setiap akun bernama tag sebagai Save / Right-Size / Exit dan kutip klausul kontrak yang mendukung posisi.'),
+    'incident':  ('incident root-cause memo + customer-impact note',
+                  'Tag each finding as Process / People / Tech / Comms with named owner and time-to-cure.',
+                  'memo root-cause insiden + catatan dampak-pelanggan',
+                  'Tag setiap temuan sebagai Process / People / Tech / Comms dengan pemilik bernama dan time-to-cure.'),
+    'esg':       ('sustainability statement + materiality matrix update',
+                  'Tag every disclosure by E / S / G pillar and classify materiality as Material / Notable / Watchlist.',
+                  'statement sustainability + update materiality matrix',
+                  'Tag setiap disclosure berdasarkan pilar E / S / G dan klasifikasikan materialitas sebagai Material / Notable / Watchlist.'),
+    'strategy':  ('5-year plan paper + capital-allocation case',
+                  'Map every initiative to a strategic pillar and classify as Build / Buy / Partner / Stop with NPV anchor.',
+                  'paper rencana 5-tahun + case alokasi modal',
+                  'Petakan setiap inisiatif ke pilar strategis dan klasifikasikan sebagai Build / Buy / Partner / Stop dengan anchor NPV.'),
+    'board':     ('Board paper + variance bridge + recovery programme',
+                  'Classify every divisional recommendation as Red / Amber / Green and tie to the EBITDA bridge component.',
+                  'Board paper + bridge variance + program recovery',
+                  'Klasifikasikan setiap rekomendasi divisional sebagai Merah / Kuning / Hijau dan kaitkan ke komponen EBITDA bridge.'),
+}
+
+def _build_nb_instructions(entry, meta):
+    arche = _nb_archetype(entry.get('id'))
+    use_tag = _nb_usecase(entry)
+    roles_en, regulator = _NB_ROLES.get(arche, _NB_ROLES['congl'])
+    lane_en, lane_id = _NB_USECASE_LANE[use_tag]
+    deliv_en, frame_en, deliv_id, frame_id = _NB_FRAMING[use_tag]
+    company = entry.get('company') or entry.get('name') or 'Zava'
+    company_id = entry.get('companyID') or company
+    burning = _nb_first_sentence(entry.get('tagline') or '')
+    burning_id = _nb_first_sentence(entry.get('taglineID') or burning)
+    n_src = len(meta.get('sources') or []) or 5
+    files = _nb_named_files(meta, 3)
+    files_phrase_en = ''
+    files_phrase_id = ''
+    if files:
+        names_inline = ', '.join(f"`{f}`" for f in files)
+        files_phrase_en = f"Named anchor files for this cycle: {names_inline}. "
+        files_phrase_id = f"File anchor bernama untuk siklus ini: {names_inline}. "
+    # Lead with the entry-unique tagline so each instruction's first chars are
+    # different on the rendered page. Then event + persona + governance.
+    en = (
+        f"Trigger: \"{burning}\". "
+        f"This notebook is the {company} grounded source for the {lane_en} — "
+        f"the {roles_en} convene the workstream. "
+        f"{files_phrase_en}"
+        f"Synthesise across ALL {n_src} sources. Use {regulator} as the governance reference. "
+        f"Every answer must cite the source file by name and the tab / section. "
+        f"Frame the output for the {deliv_en}. {frame_en} "
+        f"Tone: precise, evidence-only, never speculative."
+    )
+    idn = (
+        f"Pemicu: \"{burning_id}\". "
+        f"Notebook ini adalah sumber tertanam {company_id} untuk {lane_id} — "
+        f"{roles_en} memimpin workstream. "
+        f"{files_phrase_id}"
+        f"Sintesakan SEMUA {n_src} sumber. Gunakan {regulator} sebagai referensi tata kelola. "
+        f"Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. "
+        f"Bingkai output untuk {deliv_id}. {frame_id} "
+        f"Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif."
+    )
+    return en, idn, use_tag
+
+def _uniquify_nb_instructions(entries):
+    """Rewrite EVERY notebookMeta instruction so each entry is anchored to its
+    own unique business event AND its own tagline. The instruction LEADS with
+    the entry-specific tagline so first-glance uniqueness is visible.
+    """
+    rewritten = 0
+    bucket_counts = {}
+    for e in entries:
+        for tool in e.get('prompts') or []:
+            if 'Copilot Notebook' not in (tool.get('tool') or ''):
+                continue
+            meta = tool.get('notebookMeta') or {}
+            if not meta:
+                continue
+            en_new, id_new, use_tag = _build_nb_instructions(e, meta)
+            meta['instructions'] = en_new
+            meta['instructionsID'] = id_new
+            tool['notebookMeta'] = meta
+            rewritten += 1
+            bucket_counts[use_tag] = bucket_counts.get(use_tag, 0) + 1
+    return rewritten, bucket_counts
+
+try:
+    _nb_uniq_i, _nb_buckets_i = _uniquify_nb_instructions(all_industries)
+    _nb_uniq_d, _nb_buckets_d = _uniquify_nb_instructions(all_departments)
+    _nb_total = _nb_uniq_i + _nb_uniq_d
+    _nb_combined = {}
+    for _b in (_nb_buckets_i, _nb_buckets_d):
+        for _k, _v in _b.items():
+            _nb_combined[_k] = _nb_combined.get(_k, 0) + _v
+    print(f"Notebook unique scenarios — rewrote {_nb_total} notebookMeta blocks")
+    print(f"  Use-case distribution: " + ", ".join(f"{k}={v}" for k, v in sorted(_nb_combined.items(), key=lambda x: -x[1])))
+except Exception as _e:
+    print(f"(Notebook uniquify skipped due to error: {_e})")
+
 
 # ── Cowork approval gate: append a human-approval sentence to every cowork prompt ──
 # Per Aaron Yue / OneDrive File Intelligence canonical pattern, every Cowork prompt
