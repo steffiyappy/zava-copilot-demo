@@ -1278,6 +1278,10 @@ function _shortVerb(verb){
 // the Copilot tool actually produces (not just "open X and do Y"). Falls back to
 // a generic enriched line if the tool key isn't in the map.
 function _momentDesc(toolKey, toolLabel, verbLow){
+  // Strip redundant trailing phrases that overlap with our description templates,
+  // so verbs ending "from chat" / "straight from chat" don't produce
+  // "...from chat from chat — ..." when stitched into agent templates.
+  verbLow = String(verbLow||'').replace(/\s+(?:straight\s+)?from\s+chat\s*$/i, '').trim();
   const k = String(toolKey||'').toLowerCase()
     .replace(/^t_/,'')
     .replace(/^m365 copilot[ -]/,'')
@@ -4621,6 +4625,30 @@ function showItem(item,tab,preserveScroll){
       };
       return map[k] || k.replace(/^M365\s+Copilot\s+[—-]\s+/i,'').replace(/\s*\+\s*Copilot$/i,'');
     };
+    // Resolve an emoji-prefixed toolId string (e.g. '💬 Microsoft 365 Copilot Chat')
+    // back to a canonical short key ('chat') so _momentDesc can pick the per-tool
+    // description template. Without this, ind_batch10/11 industries (rubber-gloves,
+    // semiconductor, automotive, auto-tyres, food-fmcg) render task cards with
+    // empty tool labels and empty description bodies.
+    const _toolIdToKey = function(toolId){
+      const s = String(toolId||'').toLowerCase();
+      if(!s) return '';
+      if(s.indexOf('researcher')>=0) return 'researcher';
+      if(s.indexOf('analyst')>=0) return 'analyst';
+      if(s.indexOf('notebook')>=0) return 'notebook';
+      if(s.indexOf('cowork')>=0) return 'cowork';
+      if(s.indexOf('agent builder')>=0 || s.indexOf('builder')>=0) return 'builder';
+      if(s.indexOf('word agent')>=0) return 'word_agt';
+      if(s.indexOf('powerpoint agent')>=0 || s.indexOf('ppt agent')>=0) return 'ppt_agt';
+      if(s.indexOf('excel agent')>=0) return 'xl_agt';
+      if(s.indexOf('excel')>=0) return 'excel';
+      if(s.indexOf('word')>=0) return 'word';
+      if(s.indexOf('powerpoint')>=0 || s.indexOf('ppt')>=0) return 'ppt';
+      if(s.indexOf('outlook')>=0) return 'outlook';
+      if(s.indexOf('teams')>=0) return 'teams';
+      if(s.indexOf('chat')>=0) return 'chat';
+      return '';
+    };
     let _sb = item.storyboard || [];
     // Detect Shape C — flat list (each item has 'exercise' string but no 'tasks' array)
     if(_sb.length && _sb[0].exercise && !_sb[0].tasks){
@@ -4680,8 +4708,26 @@ function showItem(item,tab,preserveScroll){
         // the original desc as the body description instead of the synth template.
         if(!t.verb && t.desc){ t.verb = t.desc; t._fromDesc = true; }
         if(!t.verbID && t.descID) t.verbID = t.descID;
-        // Label fallback from tool key
-        if(!t.label && t.tool) t.label = _toolLabelFromKey(t.tool) || t.tool;
+        // Label fallback: prefer explicit label, then short-key (t.tool), then
+        // emoji-prefixed toolId (ind_batch10/11 shape). Resolving the toolId
+        // back to a canonical short key also lets _momentDesc pick the per-tool
+        // description template rather than the generic fallback.
+        if(!t.label){
+          if(t.tool){
+            t.label = _toolLabelFromKey(t.tool) || t.tool;
+          } else if(t.toolId){
+            const _k = _toolIdToKey(t.toolId);
+            if(_k){
+              t.label = _toolLabelFromKey(_k) || t.toolId;
+              if(!t.tool) t.tool = _k;
+            } else {
+              t.label = t.toolId;
+            }
+          }
+        } else if(!t.tool && t.toolId){
+          const _k = _toolIdToKey(t.toolId);
+          if(_k) t.tool = _k;
+        }
       });
     });
     // Renumber tasks if any are missing 'n' (ind_batch4 case)
