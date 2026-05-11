@@ -257,6 +257,71 @@ html{overflow-x:hidden}
   margin-bottom:8px;
 }
 .prompt-fileref::before{content:"📁 Open first: ";font-weight:400;color:#555}
+/* ── Cowork Library view (separate copy of cowork data, sidebar tab between Departments and More) ── */
+.cwlib-hero{margin:18px 0 22px;padding:24px 24px 22px;background:linear-gradient(135deg,#FFF7ED 0%,#FFEDD5 100%);border:1px solid #FED7AA;border-radius:18px;box-shadow:0 6px 24px rgba(245,158,11,0.08)}
+.cwlib-hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:1.3px;color:#9A3412;background:rgba(255,255,255,0.7);padding:6px 12px;border-radius:999px;border:1px solid rgba(154,52,18,0.18);text-transform:uppercase}
+.cwlib-hero-title{margin:14px 0 6px;font-size:30px;font-weight:900;color:#7C2D12;letter-spacing:-0.5px;line-height:1.15}
+.cwlib-hero-sub{font-size:14px;color:#7C2D12;line-height:1.55;max-width:780px;opacity:0.85}
+.cwlib-mode-toggle{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.cwlib-mode-btn{padding:9px 18px;border-radius:999px;border:2px solid rgba(154,52,18,0.22);background:rgba(255,255,255,0.65);color:#7C2D12;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
+.cwlib-mode-btn:hover{background:#FFF;border-color:rgba(154,52,18,0.4)}
+.cwlib-mode-btn.active{background:#7C2D12;border-color:#7C2D12;color:#FFF;box-shadow:0 4px 12px rgba(124,45,18,0.25)}
+.cwlib-section{margin:0 0 26px}
+.cwlib-section-title{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;color:var(--muted);letter-spacing:0.6px;text-transform:uppercase;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.cwlib-section-title .sec-emoji{font-size:18px}
+.cwlib-section-title .sec-count{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted-2);background:var(--surface-2);padding:3px 10px;border-radius:999px;letter-spacing:0;text-transform:none}
+.cwlib-grid-inner{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;align-items:stretch}
+.cwlib-entry-card{cursor:pointer;background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:18px 18px 16px;position:relative;overflow:hidden;transition:all .2s;display:flex;flex-direction:column;gap:8px;min-height:160px}
+.cwlib-entry-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F59E0B,#D97706)}
+.cwlib-entry-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(245,158,11,0.18);border-color:#F59E0B}
+.cwlib-entry-card-head{display:flex;align-items:center;gap:10px}
+.cwlib-entry-icon{font-size:24px;flex-shrink:0}
+.cwlib-entry-name{font-size:14px;font-weight:800;color:var(--text-strong);line-height:1.25}
+.cwlib-entry-sector{font-size:10px;font-weight:700;color:#9A3412;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);padding:2px 8px;border-radius:999px;display:inline-block;letter-spacing:0.3px;text-transform:uppercase;margin-top:2px;width:fit-content}
+.cwlib-entry-preview{flex:1;font-size:12px;color:var(--muted);line-height:1.5;margin:6px 0 0;display:flex;flex-direction:column;gap:4px;overflow:hidden}
+.cwlib-entry-preview-item{display:flex;align-items:flex-start;gap:6px}
+.cwlib-entry-preview-num{flex-shrink:0;color:#D97706;font-weight:800;font-size:10px;letter-spacing:0.4px;margin-top:1px}
+.cwlib-entry-preview-text{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cwlib-entry-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:10px;border-top:1px dashed var(--border)}
+.cwlib-entry-count{font-size:11px;font-weight:700;color:#9A3412}
+.cwlib-entry-open{font-size:12px;font-weight:700;color:#D97706;display:inline-flex;align-items:center;gap:4px;transition:gap .15s}
+.cwlib-entry-card:hover .cwlib-entry-open{gap:8px}
+.cwlib-empty{padding:48px 24px;text-align:center;color:var(--muted);font-size:14px;border:1.5px dashed var(--border);border-radius:14px;background:var(--surface)}
+.cwlib-detail-hero{background:linear-gradient(135deg,#7C2D12 0%,#9A3412 60%,#B45309 100%)}
+.cwlib-sidebar-group{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--muted-2);text-transform:uppercase;padding:14px 16px 6px}
+[data-theme="dark"] .cwlib-hero{background:linear-gradient(135deg,#451A03 0%,#7C2D12 100%);border-color:rgba(245,158,11,0.35)}
+[data-theme="dark"] .cwlib-hero-eyebrow,
+[data-theme="dark"] .cwlib-hero-title,
+[data-theme="dark"] .cwlib-hero-sub{color:#FED7AA}
+[data-theme="dark"] .cwlib-hero-eyebrow{background:rgba(0,0,0,0.3);border-color:rgba(245,158,11,0.4)}
+[data-theme="dark"] .cwlib-mode-btn{background:rgba(0,0,0,0.3);border-color:rgba(245,158,11,0.35);color:#FED7AA}
+[data-theme="dark"] .cwlib-mode-btn.active{background:#F59E0B;border-color:#F59E0B;color:#451A03}
+[data-theme="dark"] .cwlib-entry-card{background:var(--surface)}
+[data-theme="dark"] .cwlib-entry-sector{color:#FED7AA;background:rgba(245,158,11,0.18);border-color:rgba(245,158,11,0.45)}
+[data-theme="dark"] .cwlib-entry-count,
+[data-theme="dark"] .cwlib-entry-open{color:#FBBF24}
+@media (prefers-color-scheme: dark){
+  [data-theme="system"] .cwlib-hero{background:linear-gradient(135deg,#451A03 0%,#7C2D12 100%);border-color:rgba(245,158,11,0.35)}
+  [data-theme="system"] .cwlib-hero-eyebrow,
+  [data-theme="system"] .cwlib-hero-title,
+  [data-theme="system"] .cwlib-hero-sub{color:#FED7AA}
+  [data-theme="system"] .cwlib-hero-eyebrow{background:rgba(0,0,0,0.3);border-color:rgba(245,158,11,0.4)}
+  [data-theme="system"] .cwlib-mode-btn{background:rgba(0,0,0,0.3);border-color:rgba(245,158,11,0.35);color:#FED7AA}
+  [data-theme="system"] .cwlib-mode-btn.active{background:#F59E0B;border-color:#F59E0B;color:#451A03}
+  [data-theme="system"] .cwlib-entry-sector{color:#FED7AA;background:rgba(245,158,11,0.18);border-color:rgba(245,158,11,0.45)}
+  [data-theme="system"] .cwlib-entry-count,
+  [data-theme="system"] .cwlib-entry-open{color:#FBBF24}
+}
+@media (max-width:768px){
+  .cwlib-hero{padding:18px 16px 16px;margin:12px 0 18px;border-radius:14px}
+  .cwlib-hero-title{font-size:22px}
+  .cwlib-hero-sub{font-size:13px}
+  .cwlib-grid-inner{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+  .cwlib-entry-card{padding:14px;min-height:140px}
+}
+@media (max-width:480px){
+  .cwlib-grid-inner{grid-template-columns:1fr;gap:8px}
+}
 .tool-account-bar{
   padding:8px 16px;font-size:11px;background:var(--surface-2);
   border-bottom:1px solid #E2E8F0;display:flex;align-items:center;gap:6px;
@@ -1083,6 +1148,7 @@ a.file-pill:visited{color:var(--text)}
     <div class="sidebar-tabs">
       <div class="sidebar-tab active" id="stab-ind" onclick="setSidebarTab('ind')">&#127981; Industries</div>
       <div class="sidebar-tab" id="stab-dept" onclick="setSidebarTab('dept')">&#127970; Departments</div>
+      <div class="sidebar-tab" id="stab-cwlib" onclick="setSidebarTab('cwlib')">&#129309; Cowork</div>
       <div class="sidebar-tab" id="stab-other" onclick="setSidebarTab('other')">&#128218; More</div>
     </div>
     <!-- Industries panel -->
@@ -1110,6 +1176,19 @@ a.file-pill:visited{color:var(--text)}
       <div class="sidebar-divider"></div>
       <div id="sidebar-departments"></div>
       <div class="search-empty" id="search-empty-dept">No departments match your search.</div>
+    </div>
+    <!-- Cowork Library panel — all entries that have coworkLibrary content -->
+    <div class="sidebar-panel" id="spanel-cwlib">
+      <div class="sidebar-section">
+        <a class="sidebar-item active" id="nav-all-cwlib" onclick="showCwLibTab()">
+          <span class="ind-icon">&#129309;</span>
+          <span class="ind-name">All Cowork Use Cases</span>
+          <span class="ind-count" id="total-cwlib-count">--</span>
+        </a>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div id="sidebar-cwlib"></div>
+      <div class="search-empty" id="search-empty-cwlib">No cowork entries match your search.</div>
     </div>
     <!-- Other Pages panel -->
     <div class="sidebar-panel" id="spanel-other">
@@ -1163,6 +1242,7 @@ a.file-pill:visited{color:var(--text)}
       <div class="grid-tabs">
         <button class="grid-tab active" id="gtab-ind" onclick="showGridTab('ind')">&#127981; Industries (29)</button>
         <button class="grid-tab" id="gtab-dept" onclick="showGridTab('dept')">&#127970; Departments (10)</button>
+        <button class="grid-tab" id="gtab-cwlib" onclick="showCwLibTab()">&#129309; Cowork Library</button>
         <button class="grid-tab" id="gtab-other" onclick="showOtherTab()">&#128218; Other Pages (6)</button>
       </div>
       <!-- Industry grid (sector grouped) -->
@@ -1172,6 +1252,19 @@ a.file-pill:visited{color:var(--text)}
       <!-- Department grid -->
       <div id="dept-grid-wrap" style="display:none">
         <div class="ind-grid" id="dept-grid"></div>
+      </div>
+      <!-- Cowork Library grid (entries that have coworkLibrary content) -->
+      <div id="cwlib-grid-wrap" style="display:none">
+        <div class="cwlib-hero">
+          <div class="cwlib-hero-eyebrow">&#129309; COPY-PASTE READY &middot; <span id="cwlib-total-uc">--</span> USE CASES</div>
+          <div class="cwlib-hero-title">Cowork Library</div>
+          <div class="cwlib-hero-sub">All Microsoft 365 Copilot Cowork (Frontier) prompts organised by industry and department. Each entry opens its own runbook of skills, instructions, prompts, watch-outs and tips. Originals stay where they were &mdash; this is a copy view.</div>
+          <div class="cwlib-mode-toggle">
+            <button class="cwlib-mode-btn active" id="cwlib-mode-ind" onclick="setCwLibMode('ind')">&#127981; By Industry (<span id="cwlib-mode-ind-n">--</span>)</button>
+            <button class="cwlib-mode-btn" id="cwlib-mode-dept" onclick="setCwLibMode('dept')">&#127970; By Department (<span id="cwlib-mode-dept-n">--</span>)</button>
+          </div>
+        </div>
+        <div id="cwlib-grid"></div>
       </div>
       <!-- Other Pages grid -->
       <div id="other-grid-wrap" style="display:none">
@@ -1199,6 +1292,21 @@ a.file-pill:visited{color:var(--text)}
           <div class="files-card" id="detail-files"></div>
           <div class="personas-card" id="detail-personas" style="display:none"></div>
           <div class="tips-card" id="detail-tips"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COWORK LIBRARY DETAIL VIEW (separate from industry/dept detail; no scrub, no storyboard, just the cowork runbook) -->
+    <div id="cwlib-detail-view" class="detail-view" style="display:none">
+      <div class="detail-hero cwlib-detail-hero" id="cwlib-detail-hero">
+        <button class="detail-hero-back" onclick="backToCwLib()">&#8592; Back to Cowork Library</button>
+        <div class="detail-hero-badge">&#129309; Cowork Runbook</div>
+        <div class="detail-hero-title" id="cwlib-detail-title">Title</div>
+        <div class="detail-hero-tagline" id="cwlib-detail-sub">Copy-paste ready &middot; -- use cases</div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-main-col" style="grid-column:1 / -1">
+          <div id="cwlib-detail-cards"></div>
         </div>
       </div>
     </div>
@@ -1684,7 +1792,8 @@ function setLocale(L){
     const el=document.getElementById('loc-'+x);
     if(el) el.classList.toggle('active',x===L);
   });
-  buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar();
+  buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar(); buildCwLibSidebar();
+  if(currentGridTab==='cwlib'){ renderCwLibGrid(); if(_cwLibCurrentEntryId) showCwLibFor(_cwLibCurrentEntryId); }
   _applyLocaleLabels();
   if(_currentItem && document.getElementById('detail-view').style.display!=='none'){
     // Capture open tool key + scroll position BEFORE re-render so we can
@@ -4167,7 +4276,7 @@ function _wireNotebookLibraryCopy(){
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
   currentSidebarTab=tab;
-  ['ind','dept','other'].forEach(t=>{
+  ['ind','dept','cwlib','other'].forEach(t=>{
     const stEl=document.getElementById('stab-'+t);
     const spEl=document.getElementById('spanel-'+t);
     if(stEl) stEl.classList.toggle('active',t===tab);
@@ -4188,17 +4297,45 @@ function showGridTab(tab){
   document.getElementById('home-view').style.display='block';
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
   _currentItem=null;
   document.getElementById('gtab-ind').classList.toggle('active',tab==='ind');
   document.getElementById('gtab-dept').classList.toggle('active',tab==='dept');
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.classList.remove('active');
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.remove('active');
   document.getElementById('ind-grid-wrap').style.display=tab==='ind'?'block':'none';
   document.getElementById('dept-grid-wrap').style.display=tab==='dept'?'block':'none';
+  const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='none';
   const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='none';
   // Reset sidebar nav highlights to "All"
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   if(tab==='ind') document.getElementById('nav-all-ind').classList.add('active');
   else document.getElementById('nav-all-dept').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Show Cowork Library tab (mirror view of all coworkLibrary content) ──
+function showCwLibTab(){
+  _autoCloseSidebar();
+  currentGridTab='cwlib';
+  setSidebarTab('cwlib');
+  document.getElementById('home-view').style.display='block';
+  const dv=document.getElementById('detail-view');
+  dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  _currentItem=null;
+  document.getElementById('gtab-ind').classList.remove('active');
+  document.getElementById('gtab-dept').classList.remove('active');
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.classList.add('active');
+  const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.remove('active');
+  document.getElementById('ind-grid-wrap').style.display='none';
+  document.getElementById('dept-grid-wrap').style.display='none';
+  const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='block';
+  const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='none';
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navAll=document.getElementById('nav-all-cwlib'); if(navAll) navAll.classList.add('active');
+  // Render the grid (idempotent — rebuilds each time so locale changes flow through)
+  renderCwLibGrid();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -4210,12 +4347,15 @@ function showOtherTab(){
   document.getElementById('home-view').style.display='block';
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
   _currentItem=null;
   document.getElementById('gtab-ind').classList.remove('active');
   document.getElementById('gtab-dept').classList.remove('active');
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.classList.remove('active');
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.add('active');
   document.getElementById('ind-grid-wrap').style.display='none';
   document.getElementById('dept-grid-wrap').style.display='none';
+  const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='none';
   const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='block';
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   const navAll=document.getElementById('nav-all-other'); if(navAll) navAll.classList.add('active');
@@ -4301,6 +4441,57 @@ function applySearch(q){
   });
   const seDept=document.getElementById('search-empty-dept');
   if(seDept) seDept.classList.toggle('show', query.length>0 && visDeptCount===0);
+
+  // Sidebar filter — Cowork Library
+  let visCwLibCount=0;
+  const _allCw=(data.industries||[]).concat(data.departments||[]);
+  document.querySelectorAll('#sidebar-cwlib .sidebar-item').forEach(el=>{
+    const name=(el.textContent||'').toLowerCase();
+    const eId=el.id.replace(/^nav-cwlib-/,'');
+    const rec=_allCw.find(r=>r.id===eId);
+    let match=!query;
+    if(query && rec){
+      // Also search inside cowork card titles + descriptions for this entry
+      const cw=(rec.coworkLibrary||[]);
+      const cwTxt=cw.map(c=>(c.title||'')+' '+(c.desc||'')+' '+((c.apps||[]).join(' '))).join(' ').toLowerCase();
+      const hay=name+' '+_hayFor(rec)+' '+cwTxt;
+      match=hay.indexOf(query)>=0;
+    } else if(query){
+      match=name.indexOf(query)>=0;
+    }
+    el.style.display=match?'flex':'none';
+    if(match) visCwLibCount++;
+  });
+  // Also hide sidebar group headers in cwlib panel when no items below them are visible
+  document.querySelectorAll('#sidebar-cwlib .cwlib-sidebar-group').forEach(hdr=>{
+    let n=hdr.nextElementSibling, anyVisible=false;
+    while(n && !n.classList.contains('cwlib-sidebar-group')){
+      if(n.classList.contains('sidebar-item') && n.style.display!=='none'){anyVisible=true;break;}
+      n=n.nextElementSibling;
+    }
+    hdr.style.display=anyVisible?'block':'none';
+  });
+  const seCwLib=document.getElementById('search-empty-cwlib');
+  if(seCwLib) seCwLib.classList.toggle('show', query.length>0 && visCwLibCount===0);
+
+  // Main grid filter — Cowork Library entry cards
+  document.querySelectorAll('#cwlib-grid .cwlib-entry-card').forEach(card=>{
+    let match=!query;
+    if(query){
+      const txt=(card.textContent||'').toLowerCase();
+      const eId=card.getAttribute('data-cwlib-id');
+      const rec=_allCw.find(r=>r.id===eId);
+      const cw = rec ? (rec.coworkLibrary||[]) : [];
+      const cwTxt=cw.map(c=>(c.title||'')+' '+(c.desc||'')+' '+((c.apps||[]).join(' '))+' '+((c.skills||[]).join(' '))).join(' ').toLowerCase();
+      const hay=txt+' '+(rec ? _hayFor(rec) : '')+' '+cwTxt;
+      match=hay.indexOf(query)>=0;
+    }
+    card.style.display=match?'flex':'none';
+  });
+  document.querySelectorAll('#cwlib-grid .cwlib-section').forEach(sec=>{
+    const anyVisible = !!sec.querySelector('.cwlib-entry-card:not([style*="display: none"])');
+    sec.style.display = (query && !anyVisible) ? 'none' : 'block';
+  });
 
   // Sidebar filter — Other Pages
   let visOtherCount=0;
@@ -4430,6 +4621,214 @@ function buildDeptGrid(){
   const el=document.getElementById('dept-grid');
   el.innerHTML='';
   data.departments.forEach(dept=>el.appendChild(makeCard(dept,'dept')));
+}
+
+// ── Cowork Library: mirror view ─────────────────────────────────────────
+// Walks data.industries and data.departments to surface every entry that has
+// a non-empty coworkLibrary[]. Originals are untouched — this is a pure copy.
+let _cwLibMode='ind';
+let _cwLibCurrentEntryId=null;
+let _cwLibSidebarBuilt=false;
+
+function _cwLibEntries(kind){
+  // kind: 'ind' or 'dept'
+  const src = kind==='ind' ? (data.industries||[]) : (data.departments||[]);
+  return src.filter(e => Array.isArray(e.coworkLibrary) && e.coworkLibrary.length>0);
+}
+
+function _cwLibTotalUC(){
+  const ind = _cwLibEntries('ind').reduce((a,e)=>a + (e.coworkLibrary||[]).length, 0);
+  const dept = _cwLibEntries('dept').reduce((a,e)=>a + (e.coworkLibrary||[]).length, 0);
+  return ind + dept;
+}
+
+function _cwLibFmtName(e){
+  return escapeHTML(_xformVal(_stripLeadingEmoji(e.name||''),'EN'));
+}
+
+function _cwLibSectorOf(ind){
+  if(!ind) return '';
+  const sec = (data.sectors||[]).find(s => (s.industries||[]).includes(ind.id));
+  return sec ? sec.label : '';
+}
+
+function buildCwLibSidebar(){
+  const el=document.getElementById('sidebar-cwlib');
+  if(!el) return;
+  el.innerHTML='';
+  // Industries section
+  const indEntries=_cwLibEntries('ind');
+  if(indEntries.length){
+    const hdr=document.createElement('div');
+    hdr.className='cwlib-sidebar-group';
+    hdr.textContent='Industries ('+indEntries.length+')';
+    el.appendChild(hdr);
+    indEntries.forEach(e=>{
+      const a=document.createElement('a');
+      a.className='sidebar-item'; a.id='nav-cwlib-'+e.id;
+      a.onclick=()=>showCwLibFor(e.id);
+      const n=(e.coworkLibrary||[]).length;
+      a.innerHTML='<span class="ind-icon">'+e.icon+'</span><span class="ind-name">'+_cwLibFmtName(e)+'</span><span class="ind-count">'+n+'</span>';
+      el.appendChild(a);
+    });
+  }
+  // Departments section
+  const deptEntries=_cwLibEntries('dept');
+  if(deptEntries.length){
+    const hdr=document.createElement('div');
+    hdr.className='cwlib-sidebar-group';
+    hdr.textContent='Departments ('+deptEntries.length+')';
+    el.appendChild(hdr);
+    deptEntries.forEach(e=>{
+      const a=document.createElement('a');
+      a.className='sidebar-item'; a.id='nav-cwlib-'+e.id;
+      a.onclick=()=>showCwLibFor(e.id);
+      const n=(e.coworkLibrary||[]).length;
+      a.innerHTML='<span class="ind-icon">'+e.icon+'</span><span class="ind-name">'+_cwLibFmtName(e)+'</span><span class="ind-count">'+n+'</span>';
+      el.appendChild(a);
+    });
+  }
+  const total=document.getElementById('total-cwlib-count');
+  if(total) total.textContent=indEntries.length+deptEntries.length;
+  _cwLibSidebarBuilt=true;
+}
+
+function _cwLibPreviewItems(entry){
+  // Top 3 use-case titles for the entry-card preview
+  const items=(entry.coworkLibrary||[]).slice(0,3);
+  return items.map((c,i)=>{
+    const t = (typeof _xformVal==='function') ? _xformVal(c.title||'','EN') : (c.title||'');
+    return '<div class="cwlib-entry-preview-item">'+
+      '<span class="cwlib-entry-preview-num">UC '+String(i+1).padStart(2,'0')+'</span>'+
+      '<span class="cwlib-entry-preview-text">'+escapeHTML(t)+'</span>'+
+    '</div>';
+  }).join('');
+}
+
+function _cwLibEntryCard(entry, kind){
+  const div=document.createElement('div');
+  div.className='cwlib-entry-card';
+  div.setAttribute('data-cwlib-id',entry.id);
+  div.onclick=()=>showCwLibFor(entry.id);
+  const n=(entry.coworkLibrary||[]).length;
+  const sector = kind==='ind' ? _cwLibSectorOf(entry) : 'Department';
+  div.innerHTML=
+    '<div class="cwlib-entry-card-head">'+
+      '<div class="cwlib-entry-icon">'+(entry.icon||'🤝')+'</div>'+
+      '<div style="flex:1;min-width:0">'+
+        '<div class="cwlib-entry-name">'+_cwLibFmtName(entry)+'</div>'+
+        '<div class="cwlib-entry-sector">'+escapeHTML(sector||'—')+'</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="cwlib-entry-preview">'+_cwLibPreviewItems(entry)+'</div>'+
+    '<div class="cwlib-entry-foot">'+
+      '<span class="cwlib-entry-count">'+n+' use case'+(n===1?'':'s')+'</span>'+
+      '<span class="cwlib-entry-open">Open runbook &rarr;</span>'+
+    '</div>';
+  return div;
+}
+
+function renderCwLibGrid(){
+  if(!_cwLibSidebarBuilt) buildCwLibSidebar();
+  const root=document.getElementById('cwlib-grid');
+  if(!root) return;
+  root.innerHTML='';
+  const indEntries=_cwLibEntries('ind');
+  const deptEntries=_cwLibEntries('dept');
+  // Update counters on the toggle pills
+  const nIndEl=document.getElementById('cwlib-mode-ind-n'); if(nIndEl) nIndEl.textContent=indEntries.length;
+  const nDeptEl=document.getElementById('cwlib-mode-dept-n'); if(nDeptEl) nDeptEl.textContent=deptEntries.length;
+  const totalEl=document.getElementById('cwlib-total-uc'); if(totalEl) totalEl.textContent=_cwLibTotalUC();
+  // Apply current mode highlight
+  ['ind','dept'].forEach(m=>{
+    const b=document.getElementById('cwlib-mode-'+m);
+    if(b) b.classList.toggle('active', m===_cwLibMode);
+  });
+  if(_cwLibMode==='ind'){
+    // Group by sector
+    (data.sectors||[]).forEach(sec=>{
+      const inSec=indEntries.filter(e => (sec.industries||[]).includes(e.id));
+      if(!inSec.length) return;
+      const section=document.createElement('div');
+      section.className='cwlib-section';
+      section.innerHTML=
+        '<div class="cwlib-section-title">'+
+          '<span class="sec-emoji">🏷️</span>'+
+          '<span>'+escapeHTML(sec.label)+'</span>'+
+          '<span class="sec-count">'+inSec.length+' entr'+(inSec.length===1?'y':'ies')+'</span>'+
+        '</div>';
+      const grid=document.createElement('div');
+      grid.className='cwlib-grid-inner';
+      inSec.forEach(e=>grid.appendChild(_cwLibEntryCard(e,'ind')));
+      section.appendChild(grid);
+      root.appendChild(section);
+    });
+    if(!indEntries.length){
+      root.innerHTML='<div class="cwlib-empty">No industries with cowork content yet.</div>';
+    }
+  } else {
+    // By Department — single grid
+    const section=document.createElement('div');
+    section.className='cwlib-section';
+    section.innerHTML=
+      '<div class="cwlib-section-title">'+
+        '<span class="sec-emoji">🏢</span>'+
+        '<span>Departments</span>'+
+        '<span class="sec-count">'+deptEntries.length+' entr'+(deptEntries.length===1?'y':'ies')+'</span>'+
+      '</div>';
+    const grid=document.createElement('div');
+    grid.className='cwlib-grid-inner';
+    deptEntries.forEach(e=>grid.appendChild(_cwLibEntryCard(e,'dept')));
+    section.appendChild(grid);
+    root.appendChild(section);
+    if(!deptEntries.length){
+      root.innerHTML='<div class="cwlib-empty">No departments with cowork content yet.</div>';
+    }
+  }
+}
+
+function setCwLibMode(mode){
+  _cwLibMode = (mode==='dept') ? 'dept' : 'ind';
+  renderCwLibGrid();
+}
+
+function showCwLibFor(entryId){
+  _autoCloseSidebar();
+  // Find the entry
+  const all = (data.industries||[]).concat(data.departments||[]);
+  const entry = all.find(e => e.id===entryId);
+  if(!entry) return;
+  _cwLibCurrentEntryId = entryId;
+  // Switch into cwlib mode (sidebar + grid state stays consistent)
+  setSidebarTab('cwlib');
+  currentGridTab='cwlib';
+  document.getElementById('home-view').style.display='none';
+  const dv=document.getElementById('detail-view'); if(dv){ dv.classList.remove('active'); dv.style.display='none'; }
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='block';
+  // Highlight sidebar item
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navEl=document.getElementById('nav-cwlib-'+entryId); if(navEl) navEl.classList.add('active');
+  // Populate hero
+  const t=document.getElementById('cwlib-detail-title');
+  if(t) t.innerHTML=(entry.icon||'🤝')+' '+_cwLibFmtName(entry);
+  const sub=document.getElementById('cwlib-detail-sub');
+  const n=(entry.coworkLibrary||[]).length;
+  const sector = (data.industries||[]).find(i=>i.id===entryId) ? _cwLibSectorOf(entry) : 'Department';
+  if(sub) sub.innerHTML='<strong>'+escapeHTML(sector||'—')+'</strong> &middot; '+n+' Cowork use case'+(n===1?'':'s')+' &middot; Copy-paste ready';
+  // Render the cards reusing the existing _coworkLibraryHtml renderer (shim item)
+  const host=document.getElementById('cwlib-detail-cards');
+  if(host){
+    const shim={ id: entry.id, coworkLibrary: entry.coworkLibrary };
+    host.innerHTML = (typeof _coworkLibraryHtml==='function') ? _coworkLibraryHtml(shim) : '';
+    // Re-wire copy buttons inside the rendered cards
+    if(typeof _wireCoworkLibraryCopy==='function') _wireCoworkLibraryCopy(host);
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function backToCwLib(){
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  showCwLibTab();
 }
 
 function makeCard(item,tab){
@@ -5550,11 +5949,15 @@ function goHome(){
   document.getElementById('home-view').style.display='block';
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
   // Restore grid tab state
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   if(currentGridTab==='dept'){
     document.getElementById('nav-all-dept').classList.add('active');
     setSidebarTab('dept');
+  } else if(currentGridTab==='cwlib'){
+    const navAll=document.getElementById('nav-all-cwlib'); if(navAll) navAll.classList.add('active');
+    setSidebarTab('cwlib');
   } else if(currentGridTab==='other'){
     const navAll=document.getElementById('nav-all-other'); if(navAll) navAll.classList.add('active');
     setSidebarTab('other');
@@ -5672,10 +6075,12 @@ document.addEventListener('keydown',function(e){
   // Update home-page grid-tab labels
   const gtI=document.getElementById('gtab-ind'); if(gtI) gtI.innerHTML='&#127981; Industries ('+data.industries.length+')';
   const gtD=document.getElementById('gtab-dept'); if(gtD) gtD.innerHTML='&#127970; Departments ('+data.departments.length+')';
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.innerHTML='&#129309; Cowork Library ('+_cwLibTotalUC()+')';
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.innerHTML='&#128218; Other Pages ('+OTHER_PAGES.length+')';
 })();
 buildSidebar();
 buildDeptSidebar();
+buildCwLibSidebar();
 buildOtherSidebar();
 buildGrid();
 buildDeptGrid();

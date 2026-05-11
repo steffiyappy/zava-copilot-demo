@@ -255,6 +255,71 @@ html{overflow-x:hidden}
   margin-bottom:8px;
 }
 .prompt-fileref::before{content:"📁 Open first: ";font-weight:400;color:#555}
+/* ── Cowork Library view (separate copy of cowork data, sidebar tab between Departments and More) ── */
+.cwlib-hero{margin:18px 0 22px;padding:24px 24px 22px;background:linear-gradient(135deg,#FFF7ED 0%,#FFEDD5 100%);border:1px solid #FED7AA;border-radius:18px;box-shadow:0 6px 24px rgba(245,158,11,0.08)}
+.cwlib-hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:1.3px;color:#9A3412;background:rgba(255,255,255,0.7);padding:6px 12px;border-radius:999px;border:1px solid rgba(154,52,18,0.18);text-transform:uppercase}
+.cwlib-hero-title{margin:14px 0 6px;font-size:30px;font-weight:900;color:#7C2D12;letter-spacing:-0.5px;line-height:1.15}
+.cwlib-hero-sub{font-size:14px;color:#7C2D12;line-height:1.55;max-width:780px;opacity:0.85}
+.cwlib-mode-toggle{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.cwlib-mode-btn{padding:9px 18px;border-radius:999px;border:2px solid rgba(154,52,18,0.22);background:rgba(255,255,255,0.65);color:#7C2D12;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
+.cwlib-mode-btn:hover{background:#FFF;border-color:rgba(154,52,18,0.4)}
+.cwlib-mode-btn.active{background:#7C2D12;border-color:#7C2D12;color:#FFF;box-shadow:0 4px 12px rgba(124,45,18,0.25)}
+.cwlib-section{margin:0 0 26px}
+.cwlib-section-title{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;color:var(--muted);letter-spacing:0.6px;text-transform:uppercase;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.cwlib-section-title .sec-emoji{font-size:18px}
+.cwlib-section-title .sec-count{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted-2);background:var(--surface-2);padding:3px 10px;border-radius:999px;letter-spacing:0;text-transform:none}
+.cwlib-grid-inner{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;align-items:stretch}
+.cwlib-entry-card{cursor:pointer;background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:18px 18px 16px;position:relative;overflow:hidden;transition:all .2s;display:flex;flex-direction:column;gap:8px;min-height:160px}
+.cwlib-entry-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F59E0B,#D97706)}
+.cwlib-entry-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(245,158,11,0.18);border-color:#F59E0B}
+.cwlib-entry-card-head{display:flex;align-items:center;gap:10px}
+.cwlib-entry-icon{font-size:24px;flex-shrink:0}
+.cwlib-entry-name{font-size:14px;font-weight:800;color:var(--text-strong);line-height:1.25}
+.cwlib-entry-sector{font-size:10px;font-weight:700;color:#9A3412;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);padding:2px 8px;border-radius:999px;display:inline-block;letter-spacing:0.3px;text-transform:uppercase;margin-top:2px;width:fit-content}
+.cwlib-entry-preview{flex:1;font-size:12px;color:var(--muted);line-height:1.5;margin:6px 0 0;display:flex;flex-direction:column;gap:4px;overflow:hidden}
+.cwlib-entry-preview-item{display:flex;align-items:flex-start;gap:6px}
+.cwlib-entry-preview-num{flex-shrink:0;color:#D97706;font-weight:800;font-size:10px;letter-spacing:0.4px;margin-top:1px}
+.cwlib-entry-preview-text{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cwlib-entry-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:10px;border-top:1px dashed var(--border)}
+.cwlib-entry-count{font-size:11px;font-weight:700;color:#9A3412}
+.cwlib-entry-open{font-size:12px;font-weight:700;color:#D97706;display:inline-flex;align-items:center;gap:4px;transition:gap .15s}
+.cwlib-entry-card:hover .cwlib-entry-open{gap:8px}
+.cwlib-empty{padding:48px 24px;text-align:center;color:var(--muted);font-size:14px;border:1.5px dashed var(--border);border-radius:14px;background:var(--surface)}
+.cwlib-detail-hero{background:linear-gradient(135deg,#7C2D12 0%,#9A3412 60%,#B45309 100%)}
+.cwlib-sidebar-group{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--muted-2);text-transform:uppercase;padding:14px 16px 6px}
+[data-theme="dark"] .cwlib-hero{background:linear-gradient(135deg,#451A03 0%,#7C2D12 100%);border-color:rgba(245,158,11,0.35)}
+[data-theme="dark"] .cwlib-hero-eyebrow,
+[data-theme="dark"] .cwlib-hero-title,
+[data-theme="dark"] .cwlib-hero-sub{color:#FED7AA}
+[data-theme="dark"] .cwlib-hero-eyebrow{background:rgba(0,0,0,0.3);border-color:rgba(245,158,11,0.4)}
+[data-theme="dark"] .cwlib-mode-btn{background:rgba(0,0,0,0.3);border-color:rgba(245,158,11,0.35);color:#FED7AA}
+[data-theme="dark"] .cwlib-mode-btn.active{background:#F59E0B;border-color:#F59E0B;color:#451A03}
+[data-theme="dark"] .cwlib-entry-card{background:var(--surface)}
+[data-theme="dark"] .cwlib-entry-sector{color:#FED7AA;background:rgba(245,158,11,0.18);border-color:rgba(245,158,11,0.45)}
+[data-theme="dark"] .cwlib-entry-count,
+[data-theme="dark"] .cwlib-entry-open{color:#FBBF24}
+@media (prefers-color-scheme: dark){
+  [data-theme="system"] .cwlib-hero{background:linear-gradient(135deg,#451A03 0%,#7C2D12 100%);border-color:rgba(245,158,11,0.35)}
+  [data-theme="system"] .cwlib-hero-eyebrow,
+  [data-theme="system"] .cwlib-hero-title,
+  [data-theme="system"] .cwlib-hero-sub{color:#FED7AA}
+  [data-theme="system"] .cwlib-hero-eyebrow{background:rgba(0,0,0,0.3);border-color:rgba(245,158,11,0.4)}
+  [data-theme="system"] .cwlib-mode-btn{background:rgba(0,0,0,0.3);border-color:rgba(245,158,11,0.35);color:#FED7AA}
+  [data-theme="system"] .cwlib-mode-btn.active{background:#F59E0B;border-color:#F59E0B;color:#451A03}
+  [data-theme="system"] .cwlib-entry-sector{color:#FED7AA;background:rgba(245,158,11,0.18);border-color:rgba(245,158,11,0.45)}
+  [data-theme="system"] .cwlib-entry-count,
+  [data-theme="system"] .cwlib-entry-open{color:#FBBF24}
+}
+@media (max-width:768px){
+  .cwlib-hero{padding:18px 16px 16px;margin:12px 0 18px;border-radius:14px}
+  .cwlib-hero-title{font-size:22px}
+  .cwlib-hero-sub{font-size:13px}
+  .cwlib-grid-inner{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+  .cwlib-entry-card{padding:14px;min-height:140px}
+}
+@media (max-width:480px){
+  .cwlib-grid-inner{grid-template-columns:1fr;gap:8px}
+}
 .tool-account-bar{
   padding:8px 16px;font-size:11px;background:var(--surface-2);
   border-bottom:1px solid #E2E8F0;display:flex;align-items:center;gap:6px;
@@ -1081,6 +1146,7 @@ a.file-pill:visited{color:var(--text)}
     <div class="sidebar-tabs">
       <div class="sidebar-tab active" id="stab-ind" onclick="setSidebarTab('ind')">&#127981; Industries</div>
       <div class="sidebar-tab" id="stab-dept" onclick="setSidebarTab('dept')">&#127970; Departments</div>
+      <div class="sidebar-tab" id="stab-cwlib" onclick="setSidebarTab('cwlib')">&#129309; Cowork</div>
       <div class="sidebar-tab" id="stab-other" onclick="setSidebarTab('other')">&#128218; More</div>
     </div>
     <!-- Industries panel -->
@@ -1108,6 +1174,19 @@ a.file-pill:visited{color:var(--text)}
       <div class="sidebar-divider"></div>
       <div id="sidebar-departments"></div>
       <div class="search-empty" id="search-empty-dept">No departments match your search.</div>
+    </div>
+    <!-- Cowork Library panel — all entries that have coworkLibrary content -->
+    <div class="sidebar-panel" id="spanel-cwlib">
+      <div class="sidebar-section">
+        <a class="sidebar-item active" id="nav-all-cwlib" onclick="showCwLibTab()">
+          <span class="ind-icon">&#129309;</span>
+          <span class="ind-name">All Cowork Use Cases</span>
+          <span class="ind-count" id="total-cwlib-count">--</span>
+        </a>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div id="sidebar-cwlib"></div>
+      <div class="search-empty" id="search-empty-cwlib">No cowork entries match your search.</div>
     </div>
     <!-- Other Pages panel -->
     <div class="sidebar-panel" id="spanel-other">
@@ -1161,6 +1240,7 @@ a.file-pill:visited{color:var(--text)}
       <div class="grid-tabs">
         <button class="grid-tab active" id="gtab-ind" onclick="showGridTab('ind')">&#127981; Industries (29)</button>
         <button class="grid-tab" id="gtab-dept" onclick="showGridTab('dept')">&#127970; Departments (10)</button>
+        <button class="grid-tab" id="gtab-cwlib" onclick="showCwLibTab()">&#129309; Cowork Library</button>
         <button class="grid-tab" id="gtab-other" onclick="showOtherTab()">&#128218; Other Pages (6)</button>
       </div>
       <!-- Industry grid (sector grouped) -->
@@ -1170,6 +1250,19 @@ a.file-pill:visited{color:var(--text)}
       <!-- Department grid -->
       <div id="dept-grid-wrap" style="display:none">
         <div class="ind-grid" id="dept-grid"></div>
+      </div>
+      <!-- Cowork Library grid (entries that have coworkLibrary content) -->
+      <div id="cwlib-grid-wrap" style="display:none">
+        <div class="cwlib-hero">
+          <div class="cwlib-hero-eyebrow">&#129309; COPY-PASTE READY &middot; <span id="cwlib-total-uc">--</span> USE CASES</div>
+          <div class="cwlib-hero-title">Cowork Library</div>
+          <div class="cwlib-hero-sub">All Microsoft 365 Copilot Cowork (Frontier) prompts organised by industry and department. Each entry opens its own runbook of skills, instructions, prompts, watch-outs and tips. Originals stay where they were &mdash; this is a copy view.</div>
+          <div class="cwlib-mode-toggle">
+            <button class="cwlib-mode-btn active" id="cwlib-mode-ind" onclick="setCwLibMode('ind')">&#127981; By Industry (<span id="cwlib-mode-ind-n">--</span>)</button>
+            <button class="cwlib-mode-btn" id="cwlib-mode-dept" onclick="setCwLibMode('dept')">&#127970; By Department (<span id="cwlib-mode-dept-n">--</span>)</button>
+          </div>
+        </div>
+        <div id="cwlib-grid"></div>
       </div>
       <!-- Other Pages grid -->
       <div id="other-grid-wrap" style="display:none">
@@ -1197,6 +1290,21 @@ a.file-pill:visited{color:var(--text)}
           <div class="files-card" id="detail-files"></div>
           <div class="personas-card" id="detail-personas" style="display:none"></div>
           <div class="tips-card" id="detail-tips"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COWORK LIBRARY DETAIL VIEW (separate from industry/dept detail; no scrub, no storyboard, just the cowork runbook) -->
+    <div id="cwlib-detail-view" class="detail-view" style="display:none">
+      <div class="detail-hero cwlib-detail-hero" id="cwlib-detail-hero">
+        <button class="detail-hero-back" onclick="backToCwLib()">&#8592; Back to Cowork Library</button>
+        <div class="detail-hero-badge">&#129309; Cowork Runbook</div>
+        <div class="detail-hero-title" id="cwlib-detail-title">Title</div>
+        <div class="detail-hero-tagline" id="cwlib-detail-sub">Copy-paste ready &middot; -- use cases</div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-main-col" style="grid-column:1 / -1">
+          <div id="cwlib-detail-cards"></div>
         </div>
       </div>
     </div>
@@ -1682,7 +1790,8 @@ function setLocale(L){
     const el=document.getElementById('loc-'+x);
     if(el) el.classList.toggle('active',x===L);
   });
-  buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar();
+  buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar(); buildCwLibSidebar();
+  if(currentGridTab==='cwlib'){ renderCwLibGrid(); if(_cwLibCurrentEntryId) showCwLibFor(_cwLibCurrentEntryId); }
   _applyLocaleLabels();
   if(_currentItem && document.getElementById('detail-view').style.display!=='none'){
     // Capture open tool key + scroll position BEFORE re-render so we can
@@ -4165,7 +4274,7 @@ function _wireNotebookLibraryCopy(){
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
   currentSidebarTab=tab;
-  ['ind','dept','other'].forEach(t=>{
+  ['ind','dept','cwlib','other'].forEach(t=>{
     const stEl=document.getElementById('stab-'+t);
     const spEl=document.getElementById('spanel-'+t);
     if(stEl) stEl.classList.toggle('active',t===tab);
@@ -4186,17 +4295,45 @@ function showGridTab(tab){
   document.getElementById('home-view').style.display='block';
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
   _currentItem=null;
   document.getElementById('gtab-ind').classList.toggle('active',tab==='ind');
   document.getElementById('gtab-dept').classList.toggle('active',tab==='dept');
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.classList.remove('active');
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.remove('active');
   document.getElementById('ind-grid-wrap').style.display=tab==='ind'?'block':'none';
   document.getElementById('dept-grid-wrap').style.display=tab==='dept'?'block':'none';
+  const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='none';
   const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='none';
   // Reset sidebar nav highlights to "All"
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   if(tab==='ind') document.getElementById('nav-all-ind').classList.add('active');
   else document.getElementById('nav-all-dept').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Show Cowork Library tab (mirror view of all coworkLibrary content) ──
+function showCwLibTab(){
+  _autoCloseSidebar();
+  currentGridTab='cwlib';
+  setSidebarTab('cwlib');
+  document.getElementById('home-view').style.display='block';
+  const dv=document.getElementById('detail-view');
+  dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  _currentItem=null;
+  document.getElementById('gtab-ind').classList.remove('active');
+  document.getElementById('gtab-dept').classList.remove('active');
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.classList.add('active');
+  const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.remove('active');
+  document.getElementById('ind-grid-wrap').style.display='none';
+  document.getElementById('dept-grid-wrap').style.display='none';
+  const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='block';
+  const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='none';
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navAll=document.getElementById('nav-all-cwlib'); if(navAll) navAll.classList.add('active');
+  // Render the grid (idempotent — rebuilds each time so locale changes flow through)
+  renderCwLibGrid();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -4208,12 +4345,15 @@ function showOtherTab(){
   document.getElementById('home-view').style.display='block';
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
   _currentItem=null;
   document.getElementById('gtab-ind').classList.remove('active');
   document.getElementById('gtab-dept').classList.remove('active');
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.classList.remove('active');
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.add('active');
   document.getElementById('ind-grid-wrap').style.display='none';
   document.getElementById('dept-grid-wrap').style.display='none';
+  const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='none';
   const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='block';
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   const navAll=document.getElementById('nav-all-other'); if(navAll) navAll.classList.add('active');
@@ -4299,6 +4439,57 @@ function applySearch(q){
   });
   const seDept=document.getElementById('search-empty-dept');
   if(seDept) seDept.classList.toggle('show', query.length>0 && visDeptCount===0);
+
+  // Sidebar filter — Cowork Library
+  let visCwLibCount=0;
+  const _allCw=(data.industries||[]).concat(data.departments||[]);
+  document.querySelectorAll('#sidebar-cwlib .sidebar-item').forEach(el=>{
+    const name=(el.textContent||'').toLowerCase();
+    const eId=el.id.replace(/^nav-cwlib-/,'');
+    const rec=_allCw.find(r=>r.id===eId);
+    let match=!query;
+    if(query && rec){
+      // Also search inside cowork card titles + descriptions for this entry
+      const cw=(rec.coworkLibrary||[]);
+      const cwTxt=cw.map(c=>(c.title||'')+' '+(c.desc||'')+' '+((c.apps||[]).join(' '))).join(' ').toLowerCase();
+      const hay=name+' '+_hayFor(rec)+' '+cwTxt;
+      match=hay.indexOf(query)>=0;
+    } else if(query){
+      match=name.indexOf(query)>=0;
+    }
+    el.style.display=match?'flex':'none';
+    if(match) visCwLibCount++;
+  });
+  // Also hide sidebar group headers in cwlib panel when no items below them are visible
+  document.querySelectorAll('#sidebar-cwlib .cwlib-sidebar-group').forEach(hdr=>{
+    let n=hdr.nextElementSibling, anyVisible=false;
+    while(n && !n.classList.contains('cwlib-sidebar-group')){
+      if(n.classList.contains('sidebar-item') && n.style.display!=='none'){anyVisible=true;break;}
+      n=n.nextElementSibling;
+    }
+    hdr.style.display=anyVisible?'block':'none';
+  });
+  const seCwLib=document.getElementById('search-empty-cwlib');
+  if(seCwLib) seCwLib.classList.toggle('show', query.length>0 && visCwLibCount===0);
+
+  // Main grid filter — Cowork Library entry cards
+  document.querySelectorAll('#cwlib-grid .cwlib-entry-card').forEach(card=>{
+    let match=!query;
+    if(query){
+      const txt=(card.textContent||'').toLowerCase();
+      const eId=card.getAttribute('data-cwlib-id');
+      const rec=_allCw.find(r=>r.id===eId);
+      const cw = rec ? (rec.coworkLibrary||[]) : [];
+      const cwTxt=cw.map(c=>(c.title||'')+' '+(c.desc||'')+' '+((c.apps||[]).join(' '))+' '+((c.skills||[]).join(' '))).join(' ').toLowerCase();
+      const hay=txt+' '+(rec ? _hayFor(rec) : '')+' '+cwTxt;
+      match=hay.indexOf(query)>=0;
+    }
+    card.style.display=match?'flex':'none';
+  });
+  document.querySelectorAll('#cwlib-grid .cwlib-section').forEach(sec=>{
+    const anyVisible = !!sec.querySelector('.cwlib-entry-card:not([style*="display: none"])');
+    sec.style.display = (query && !anyVisible) ? 'none' : 'block';
+  });
 
   // Sidebar filter — Other Pages
   let visOtherCount=0;
@@ -4428,6 +4619,214 @@ function buildDeptGrid(){
   const el=document.getElementById('dept-grid');
   el.innerHTML='';
   data.departments.forEach(dept=>el.appendChild(makeCard(dept,'dept')));
+}
+
+// ── Cowork Library: mirror view ─────────────────────────────────────────
+// Walks data.industries and data.departments to surface every entry that has
+// a non-empty coworkLibrary[]. Originals are untouched — this is a pure copy.
+let _cwLibMode='ind';
+let _cwLibCurrentEntryId=null;
+let _cwLibSidebarBuilt=false;
+
+function _cwLibEntries(kind){
+  // kind: 'ind' or 'dept'
+  const src = kind==='ind' ? (data.industries||[]) : (data.departments||[]);
+  return src.filter(e => Array.isArray(e.coworkLibrary) && e.coworkLibrary.length>0);
+}
+
+function _cwLibTotalUC(){
+  const ind = _cwLibEntries('ind').reduce((a,e)=>a + (e.coworkLibrary||[]).length, 0);
+  const dept = _cwLibEntries('dept').reduce((a,e)=>a + (e.coworkLibrary||[]).length, 0);
+  return ind + dept;
+}
+
+function _cwLibFmtName(e){
+  return escapeHTML(_xformVal(_stripLeadingEmoji(e.name||''),'EN'));
+}
+
+function _cwLibSectorOf(ind){
+  if(!ind) return '';
+  const sec = (data.sectors||[]).find(s => (s.industries||[]).includes(ind.id));
+  return sec ? sec.label : '';
+}
+
+function buildCwLibSidebar(){
+  const el=document.getElementById('sidebar-cwlib');
+  if(!el) return;
+  el.innerHTML='';
+  // Industries section
+  const indEntries=_cwLibEntries('ind');
+  if(indEntries.length){
+    const hdr=document.createElement('div');
+    hdr.className='cwlib-sidebar-group';
+    hdr.textContent='Industries ('+indEntries.length+')';
+    el.appendChild(hdr);
+    indEntries.forEach(e=>{
+      const a=document.createElement('a');
+      a.className='sidebar-item'; a.id='nav-cwlib-'+e.id;
+      a.onclick=()=>showCwLibFor(e.id);
+      const n=(e.coworkLibrary||[]).length;
+      a.innerHTML='<span class="ind-icon">'+e.icon+'</span><span class="ind-name">'+_cwLibFmtName(e)+'</span><span class="ind-count">'+n+'</span>';
+      el.appendChild(a);
+    });
+  }
+  // Departments section
+  const deptEntries=_cwLibEntries('dept');
+  if(deptEntries.length){
+    const hdr=document.createElement('div');
+    hdr.className='cwlib-sidebar-group';
+    hdr.textContent='Departments ('+deptEntries.length+')';
+    el.appendChild(hdr);
+    deptEntries.forEach(e=>{
+      const a=document.createElement('a');
+      a.className='sidebar-item'; a.id='nav-cwlib-'+e.id;
+      a.onclick=()=>showCwLibFor(e.id);
+      const n=(e.coworkLibrary||[]).length;
+      a.innerHTML='<span class="ind-icon">'+e.icon+'</span><span class="ind-name">'+_cwLibFmtName(e)+'</span><span class="ind-count">'+n+'</span>';
+      el.appendChild(a);
+    });
+  }
+  const total=document.getElementById('total-cwlib-count');
+  if(total) total.textContent=indEntries.length+deptEntries.length;
+  _cwLibSidebarBuilt=true;
+}
+
+function _cwLibPreviewItems(entry){
+  // Top 3 use-case titles for the entry-card preview
+  const items=(entry.coworkLibrary||[]).slice(0,3);
+  return items.map((c,i)=>{
+    const t = (typeof _xformVal==='function') ? _xformVal(c.title||'','EN') : (c.title||'');
+    return '<div class="cwlib-entry-preview-item">'+
+      '<span class="cwlib-entry-preview-num">UC '+String(i+1).padStart(2,'0')+'</span>'+
+      '<span class="cwlib-entry-preview-text">'+escapeHTML(t)+'</span>'+
+    '</div>';
+  }).join('');
+}
+
+function _cwLibEntryCard(entry, kind){
+  const div=document.createElement('div');
+  div.className='cwlib-entry-card';
+  div.setAttribute('data-cwlib-id',entry.id);
+  div.onclick=()=>showCwLibFor(entry.id);
+  const n=(entry.coworkLibrary||[]).length;
+  const sector = kind==='ind' ? _cwLibSectorOf(entry) : 'Department';
+  div.innerHTML=
+    '<div class="cwlib-entry-card-head">'+
+      '<div class="cwlib-entry-icon">'+(entry.icon||'🤝')+'</div>'+
+      '<div style="flex:1;min-width:0">'+
+        '<div class="cwlib-entry-name">'+_cwLibFmtName(entry)+'</div>'+
+        '<div class="cwlib-entry-sector">'+escapeHTML(sector||'—')+'</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="cwlib-entry-preview">'+_cwLibPreviewItems(entry)+'</div>'+
+    '<div class="cwlib-entry-foot">'+
+      '<span class="cwlib-entry-count">'+n+' use case'+(n===1?'':'s')+'</span>'+
+      '<span class="cwlib-entry-open">Open runbook &rarr;</span>'+
+    '</div>';
+  return div;
+}
+
+function renderCwLibGrid(){
+  if(!_cwLibSidebarBuilt) buildCwLibSidebar();
+  const root=document.getElementById('cwlib-grid');
+  if(!root) return;
+  root.innerHTML='';
+  const indEntries=_cwLibEntries('ind');
+  const deptEntries=_cwLibEntries('dept');
+  // Update counters on the toggle pills
+  const nIndEl=document.getElementById('cwlib-mode-ind-n'); if(nIndEl) nIndEl.textContent=indEntries.length;
+  const nDeptEl=document.getElementById('cwlib-mode-dept-n'); if(nDeptEl) nDeptEl.textContent=deptEntries.length;
+  const totalEl=document.getElementById('cwlib-total-uc'); if(totalEl) totalEl.textContent=_cwLibTotalUC();
+  // Apply current mode highlight
+  ['ind','dept'].forEach(m=>{
+    const b=document.getElementById('cwlib-mode-'+m);
+    if(b) b.classList.toggle('active', m===_cwLibMode);
+  });
+  if(_cwLibMode==='ind'){
+    // Group by sector
+    (data.sectors||[]).forEach(sec=>{
+      const inSec=indEntries.filter(e => (sec.industries||[]).includes(e.id));
+      if(!inSec.length) return;
+      const section=document.createElement('div');
+      section.className='cwlib-section';
+      section.innerHTML=
+        '<div class="cwlib-section-title">'+
+          '<span class="sec-emoji">🏷️</span>'+
+          '<span>'+escapeHTML(sec.label)+'</span>'+
+          '<span class="sec-count">'+inSec.length+' entr'+(inSec.length===1?'y':'ies')+'</span>'+
+        '</div>';
+      const grid=document.createElement('div');
+      grid.className='cwlib-grid-inner';
+      inSec.forEach(e=>grid.appendChild(_cwLibEntryCard(e,'ind')));
+      section.appendChild(grid);
+      root.appendChild(section);
+    });
+    if(!indEntries.length){
+      root.innerHTML='<div class="cwlib-empty">No industries with cowork content yet.</div>';
+    }
+  } else {
+    // By Department — single grid
+    const section=document.createElement('div');
+    section.className='cwlib-section';
+    section.innerHTML=
+      '<div class="cwlib-section-title">'+
+        '<span class="sec-emoji">🏢</span>'+
+        '<span>Departments</span>'+
+        '<span class="sec-count">'+deptEntries.length+' entr'+(deptEntries.length===1?'y':'ies')+'</span>'+
+      '</div>';
+    const grid=document.createElement('div');
+    grid.className='cwlib-grid-inner';
+    deptEntries.forEach(e=>grid.appendChild(_cwLibEntryCard(e,'dept')));
+    section.appendChild(grid);
+    root.appendChild(section);
+    if(!deptEntries.length){
+      root.innerHTML='<div class="cwlib-empty">No departments with cowork content yet.</div>';
+    }
+  }
+}
+
+function setCwLibMode(mode){
+  _cwLibMode = (mode==='dept') ? 'dept' : 'ind';
+  renderCwLibGrid();
+}
+
+function showCwLibFor(entryId){
+  _autoCloseSidebar();
+  // Find the entry
+  const all = (data.industries||[]).concat(data.departments||[]);
+  const entry = all.find(e => e.id===entryId);
+  if(!entry) return;
+  _cwLibCurrentEntryId = entryId;
+  // Switch into cwlib mode (sidebar + grid state stays consistent)
+  setSidebarTab('cwlib');
+  currentGridTab='cwlib';
+  document.getElementById('home-view').style.display='none';
+  const dv=document.getElementById('detail-view'); if(dv){ dv.classList.remove('active'); dv.style.display='none'; }
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='block';
+  // Highlight sidebar item
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navEl=document.getElementById('nav-cwlib-'+entryId); if(navEl) navEl.classList.add('active');
+  // Populate hero
+  const t=document.getElementById('cwlib-detail-title');
+  if(t) t.innerHTML=(entry.icon||'🤝')+' '+_cwLibFmtName(entry);
+  const sub=document.getElementById('cwlib-detail-sub');
+  const n=(entry.coworkLibrary||[]).length;
+  const sector = (data.industries||[]).find(i=>i.id===entryId) ? _cwLibSectorOf(entry) : 'Department';
+  if(sub) sub.innerHTML='<strong>'+escapeHTML(sector||'—')+'</strong> &middot; '+n+' Cowork use case'+(n===1?'':'s')+' &middot; Copy-paste ready';
+  // Render the cards reusing the existing _coworkLibraryHtml renderer (shim item)
+  const host=document.getElementById('cwlib-detail-cards');
+  if(host){
+    const shim={ id: entry.id, coworkLibrary: entry.coworkLibrary };
+    host.innerHTML = (typeof _coworkLibraryHtml==='function') ? _coworkLibraryHtml(shim) : '';
+    // Re-wire copy buttons inside the rendered cards
+    if(typeof _wireCoworkLibraryCopy==='function') _wireCoworkLibraryCopy(host);
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function backToCwLib(){
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  showCwLibTab();
 }
 
 function makeCard(item,tab){
@@ -5548,11 +5947,15 @@ function goHome(){
   document.getElementById('home-view').style.display='block';
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
   // Restore grid tab state
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   if(currentGridTab==='dept'){
     document.getElementById('nav-all-dept').classList.add('active');
     setSidebarTab('dept');
+  } else if(currentGridTab==='cwlib'){
+    const navAll=document.getElementById('nav-all-cwlib'); if(navAll) navAll.classList.add('active');
+    setSidebarTab('cwlib');
   } else if(currentGridTab==='other'){
     const navAll=document.getElementById('nav-all-other'); if(navAll) navAll.classList.add('active');
     setSidebarTab('other');
@@ -5583,7 +5986,7 @@ function logout(){
 }
 
 // ── Changelog (discreet hidden tab) ──
-const CHANGELOG_DATA = [{"hash":"894964a","date":"2026-05-11","desc":"Responsive layout: eliminate horizontal overflow across 320-1280 widths"},{"hash":"a2e76f9","date":"2026-05-11","desc":"Cagamas hackathon card: remove team codes (keep facilitator view)"},{"hash":"2fff630","date":"2026-05-11","desc":"Storyboard fix — render tool label + description body on toolId-only tasks"},{"hash":"de4047c","date":"2026-05-11","desc":"Notebook + Cowork Library: close all file-pill 404s with rich data"},{"hash":"88fd44f","date":"2026-05-11","desc":"Cowork+Notebook fix: clickable file pills and 75 redesigned sample files"},{"hash":"77224e9","date":"2026-05-11","desc":"UI alignment + 75 missing demo data files"},{"hash":"8036c63","date":"2026-05-11","desc":"UI + data: fix empty-sibling-card grid stretch + clean Cowork sample_files render"},{"hash":"3740fe1","date":"2026-05-11","desc":"Notebook Library polish: per-entry title suffix + overflow safety + 1050px grid breakpoint"},{"hash":"59258f2","date":"2026-05-11","desc":"Notebook Library: gate to Notebook tab + add 2026 output features + per-entry personalisation"},{"hash":"aa87d5a","date":"2026-05-11","desc":"Cowork & Notebook Library: ungate cowork render + add Notebook Library (13 archetype cards, 55 entries)"},{"hash":"490de0c","date":"2026-05-11","desc":"Notebook: strip setup-leak from bespoke prompt bodies (ind_batch5.py)"},{"hash":"82a501a","date":"2026-05-11","desc":"Cowork Library: 63-card per-entry catalog (Contoso C-Suite + cowork-prompts style)"},{"hash":"d7f8049","date":"2026-05-11","desc":"Free-tier Agent Builder — fix entry-id mismatches + per-entry agent meta"},{"hash":"4134d2e","date":"2026-05-11","desc":"Free-tier Agent Builder — per-entry industry-specific knowledge URLs"},{"hash":"3d63106","date":"2026-05-10","desc":"Cowork — diversify named recipients per industry archetype"},{"hash":"3f4bbfd","date":"2026-05-10","desc":"Cowork runbook — extend to Aaron Yue 9-row format"},{"hash":"8ad7476","date":"2026-05-10","desc":"Notebook — unique scenarios per entry + presenter-only Demo Guide callout"},{"hash":"7a4a74b","date":"2026-05-10","desc":"Move PAID Agent Builder to Microsoft 365 Copilot Tools tab (was in Chat by mistake)"},{"hash":"f126c4a","date":"2026-05-10","desc":"Remove temp _script.js extracted during hotfix debug"},{"hash":"c17ddb5","date":"2026-05-10","desc":"HOTFIX — Cowork tips library broke JS parse (page rendered ~29 industries)"},{"hash":"334da73","date":"2026-05-10","desc":"Final audit fixups — license labels + i18n completeness"},{"hash":"150ca21","date":"2026-05-10","desc":"Notebook prompts — named-file targeting (personal-document focus pattern)"},{"hash":"682ad45","date":"2026-05-10","desc":"Cowork runbook enrich — Skills, Description, Outcome, Tips above every prompt"},{"hash":"13e21dc","date":"2026-05-10","desc":"Split Agent Builder into paid (file knowledge) + free (URL knowledge) tiers"},{"hash":"e7d1fd8","date":"2026-05-10","desc":"Industries-most-affected drill-down on every department"},{"hash":"b85c111","date":"2026-05-10","desc":"Files-match unique use cases — fix dangling ref + audit clean"},{"hash":"1a46b53","date":"2026-05-10","desc":"W/P/X Agent consistency + stay-in-chat normaliser"},{"hash":"bb42117","date":"2026-05-10","desc":"Cowork recheck — Aaron Yue / OneDrive Intelligence approval-gate normaliser"},{"hash":"507bce9","date":"2026-05-10","desc":"Notebook recheck — dedicated tab + canonical demo guide"},{"hash":"ff6981a","date":"2026-05-10","desc":"Unique use cases: 13 template-clone prompts rewritten across 6 entries"},{"hash":"e27093d","date":"2026-05-10","desc":"Cross-check consistency: 20 tool labels normalised in ind_batch6"},{"hash":"e0b8aa6","date":"2026-05-10","desc":"Data realism audit: vague phrasings replaced with named teams"},{"hash":"a36757e","date":"2026-05-10","desc":"Tech feasibility recheck: 6 license mislabels fixed in ind_batch6"},{"hash":"ea30565","date":"2026-05-10","desc":"Notebook: every entry now lists its source files in setup banner + prompt 1"},{"hash":"e2f7f18","date":"2026-05-10","desc":"Cowork: full IHH-style fan-out — named recipients + 5 actions on every prompt"},{"hash":"b911d72","date":"2026-05-10","desc":"Agent Builder: render TWO versions side-by-side (Premium + Free)"},{"hash":"c12e05d","date":"2026-05-10","desc":"Generalize Pacifica/Pacifican to ASEAN/APAC across all entries"},{"hash":"221dbda","date":"2026-05-10","desc":"Departments: rich Industries-most-affected pills (40-43 per dept)"},{"hash":"08d4693","date":"2026-05-10","desc":"Word/PPT/Excel Agent license: flip M365_LIC to ANY_LIC across all 55 entries"},{"hash":"1956ad6","date":"2026-05-10","desc":"Word/PPT/Excel Agent instructions: rewrite per Microsoft support article"},{"hash":"4fe5b37","date":"2026-05-10","desc":"Departments most affected pills: fix 22 industries with dangling dept IDs"},{"hash":"9665cf9","date":"2026-05-10","desc":"Index page: rebrand to Zava Conglomerate, update count to 43+13, password ZavaGlobal2026"},{"hash":"fbaebbe","date":"2026-05-10","desc":"Dark mode third sweep: --navy text invisible against dark navy surface"},{"hash":"b02e85d","date":"2026-05-10","desc":"Notebook follow demo guide: 10-step flow render-time intercept"},{"hash":"424cea7","date":"2026-05-10","desc":"Teams prompts: remove redundant 'Save the file as X.docx in OneDrive' tails"},{"hash":"d66244d","date":"2026-05-10","desc":"Hidden changelog tab — discreet icon next to Lock + Ctrl+Shift+L shortcut"},{"hash":"1f93a64","date":"2026-05-10","desc":"Alliance team codes: align to Cagamas style (short uppercase) + suppress redundant single-group header"},{"hash":"b607af2","date":"2026-05-10","desc":"Other Pages: collapse Customer Demos section into Customer Workshops"},{"hash":"d8bbce7","date":"2026-05-10","desc":"Storyboard description consistency: convert Shape B (og/re/mfg) to Shape A by adding verb fields"},{"hash":"fa5fad9","date":"2026-05-10","desc":"files/: generate 378 placeholder Office files (134 docx + 115 xlsx + 129 pptx) so every prompt reference resolves"},{"hash":"e9165a2","date":"2026-05-10","desc":"Other Pages: add 3 customer demos — Kenanga C-Suite, Rivanta CTO, Contoso Cowork"},{"hash":"040e72d","date":"2026-05-10","desc":"Dark-mode second sweep — 11 more elements made readable in dark + system themes"},{"hash":"2aea66a","date":"2026-05-10","desc":"Storyboard description coverage: synthesise summaries for Shape C entries"},{"hash":"ff34f72","date":"2026-05-10","desc":"Departments-most-affected coverage: dedupe IT&Digital + add reverse mirror to all departments"},{"hash":"a514554","date":"2026-05-10","desc":"Align Alliance Bank team codes with Cagamas — wrap in single teamGroup"},{"hash":"341da4f","date":"2026-05-10","desc":"Cowork: add 3 cross-cutting delegation scenarios per entry"},{"hash":"aa42bbd","date":"2026-05-10","desc":"Fix carousel '??' mojibake on 5 What's-New titles"},{"hash":"e8c1629","date":"2026-05-10","desc":"Cowork now lives in its own tab between Microsoft 365 Copilot Tools and Copilot Chat Prompts"},{"hash":"6cc6fbf","date":"2026-05-10","desc":"Fix dark mode invisible text — var(--navy) used as text color on dark navy surface"},{"hash":"a340877","date":"2026-05-10","desc":"Fix dark mode contrast — invisible text + light-wash bg in 9 spots"},{"hash":"c5532f4","date":"2026-05-10","desc":"Fix BM/BI prompt mixing: auto-fill 674 empty promptsBM from promptsID with token swaps"},{"hash":"32cbfa2","date":"2026-05-10","desc":"Rework show-password toggle on the access gate (index.html)"},{"hash":"2b74335","date":"2026-05-10","desc":"Translate tool-info banner bodies + preserve open tool on language toggle"},{"hash":"5f7514a","date":"2026-05-10","desc":"Hide subsidiaries chip strip from entry hero (keep search-only)"},{"hash":"35076e4","date":"2026-05-10","desc":"Fix system-default theme contrast + complete language toggle coverage"},{"hash":"9265d17","date":"2026-05-10","desc":"Subsidiaries: map customer accounts list onto industries"},{"hash":"266f630","date":"2026-05-10","desc":"Search: tie company names to records (raw + scrubbed + persona fields)"},{"hash":"060fe81","date":"2026-05-10","desc":"Audit new features: roll out April 2026 Microsoft 365 Copilot Blog updates"},{"hash":"1df0a51","date":"2026-05-10","desc":"Audit mobile-adaptive: tighten layout at 480px and add 380px breakpoint"},{"hash":"8bfdd07","date":"2026-05-10","desc":"Audit technical feasibility: align license tier to actual prompt capability"},{"hash":"d8914e6","date":"2026-05-10","desc":"Audit uniqueness: differentiate 8 dept PPT-generic + 5 industry AC-generic dupes"},{"hash":"7fa16be","date":"2026-05-10","desc":"Audit comprehensiveness: normalise tool labels to 14 canonical names"},{"hash":"e01515a","date":"2026-05-10","desc":"Audit realism: align persona accounts + licenses to canonical mapping"},{"hash":"3772ea6","date":"2026-05-10","desc":"Audit consistency: normalise license labels across personas + tools"},{"hash":"0d0e79d","date":"2026-05-10","desc":"Agent Builder: tier the license correctly + add knowledge-tier disclaimer"},{"hash":"c0f1033","date":"2026-05-10","desc":"Dark mode: contrast overrides for Cowork / Notebook / Agent Builder / prompt blocks / pills"},{"hash":"c17a346","date":"2026-05-10","desc":"Other Pages tab: stop scrubbing real workshop / hackathon names"},{"hash":"f142302","date":"2026-05-10","desc":"Generate 316 industry reference files (xlsx + docx) per entry"},{"hash":"68b8901","date":"2026-05-10","desc":"Global locale: scrub MY/ID regulator names + agency acronyms + specific cities"},{"hash":"e446036","date":"2026-05-10","desc":"Storyboard: Shape B narrative renders as full-body description (no synth template)"},{"hash":"3a70743","date":"2026-05-10","desc":"Storyboard: render-time verb shortener for clean moment cards"},{"hash":"c8c512d","date":"2026-05-10","desc":"Agent Builder: per-entry-unique 3-agent catalog across all 56 entries (no War Room template repeats)"},{"hash":"18888ab","date":"2026-05-10","desc":"Teams: canonical 3-meeting IHH structure (52 blocks); fix tab-click auto-scroll-to-top"},{"hash":"d1946e4","date":"2026-05-10","desc":"Agent Builder: IHH-style 3-card picker (General entry)"},{"hash":"355f746","date":"2026-05-10","desc":"UI: theme toggle (Light/Dark/System), responsive sidebar drawer, contrast bumps."},{"hash":"4013e64","date":"2026-05-10","desc":"Persona audit: fix 144 non-conforming names in dept_data5.py."},{"hash":"c4dfd0f","date":"2026-05-10","desc":"Rebrand: M365 Copilot -> Microsoft 365 Copilot (1,129 replacements)."},{"hash":"4222d0e","date":"2026-05-10","desc":"Runtime translator: disable EN→BM and BI→EN dictionary substitution."},{"hash":"2992d29","date":"2026-05-10","desc":"Cowork prompts: append named-recipient appendix (176 prompts)."},{"hash":"bfada09","date":"2026-05-10","desc":"Meeting-minutes prompts: normalise to canonical 5-section template (66 prompts)."},{"hash":"f8952c8","date":"2026-05-10","desc":"Multi-model prefix removed + GPT/Claude version sweep (135 replacements)."},{"hash":"2d27dc2","date":"2026-05-10","desc":"Storyboard moment descriptions per-tool + agent-builder Test step agent-agnostic."},{"hash":"bd9e615","date":"2026-05-10","desc":"Prompts: convert 348 structured-label prompts (Goal/Context/Source/Expectation + Tujuan/Konteks/Sumber/Ekspektasi) across ind_batch10/11/12 to flowing prose, lengthened with directive lead-in and verification trail."},{"hash":"fc5ae67","date":"2026-05-10","desc":"Storyboard render: normalise 3 source schemas — (a) standard nested {tasks:[{n,verb,label}]}, (b) ind_batch4 {objective, desc/descID}, (c) flat ind_batch6 {exercise, task/taskID, tool}. Now fintech-payments, government-agency, og-downstream, renewable-energy, and industrial-manufacturing render real moment cards instead of empty phases. Strips leading 'Exercise N — ' from titles. Auto-numbers tasks when 'n' is missing."},{"hash":"5aae746","date":"2026-05-10","desc":"Storyboard: remove 'Exercise N' badge from phase header — title alone reads cleaner."},{"hash":"ea63f1c","date":"2026-05-10","desc":"Storyboard moment cards: drop Show & Tell / Hands-on mode pill and remove duration pill from exercise header. Keep verb (solution) prominent, add a short locale-aware description below ('Open {tool} and produce the {verb}, grounded in the scenario files.' / BM / BI variants)."},{"hash":"919264a","date":"2026-05-10","desc":"Hackathon cards: span 2 grid columns when team data is present (uses the right-side whitespace); split 'Team N — Desc' label into a coloured team-num badge + wrapped description so each row is unmistakably labelled even in tight 2-col layout."},{"hash":"6344333","date":"2026-05-10","desc":"Personas: standardize all 49 non-conforming names to Hadar/Sasha/Mod Admin/Daichi across 6 source files. Storyboard: restructure to IHH 8-moment style — exercise header strips with Exercise N badge + minutes pill, plus grid of moment cards (numbered, tool label, action verb, mode). Hero now reads 'X moments across one workday' with X = total tasks count."},{"hash":"3b73046","date":"2026-05-10","desc":"Hackathon cards: lay team codes side-by-side (2-col grid)"},{"hash":"777ce13","date":"2026-05-10","desc":"Sidebar: remove default underline on Other Pages links"}];
+const CHANGELOG_DATA = [{"hash":"6fb2163","date":"2026-05-11","desc":"Lock changelog behind owner-only password (ZavaAdmin2026)"},{"hash":"894964a","date":"2026-05-11","desc":"Responsive layout: eliminate horizontal overflow across 320-1280 widths"},{"hash":"a2e76f9","date":"2026-05-11","desc":"Cagamas hackathon card: remove team codes (keep facilitator view)"},{"hash":"2fff630","date":"2026-05-11","desc":"Storyboard fix — render tool label + description body on toolId-only tasks"},{"hash":"de4047c","date":"2026-05-11","desc":"Notebook + Cowork Library: close all file-pill 404s with rich data"},{"hash":"88fd44f","date":"2026-05-11","desc":"Cowork+Notebook fix: clickable file pills and 75 redesigned sample files"},{"hash":"77224e9","date":"2026-05-11","desc":"UI alignment + 75 missing demo data files"},{"hash":"8036c63","date":"2026-05-11","desc":"UI + data: fix empty-sibling-card grid stretch + clean Cowork sample_files render"},{"hash":"3740fe1","date":"2026-05-11","desc":"Notebook Library polish: per-entry title suffix + overflow safety + 1050px grid breakpoint"},{"hash":"59258f2","date":"2026-05-11","desc":"Notebook Library: gate to Notebook tab + add 2026 output features + per-entry personalisation"},{"hash":"aa87d5a","date":"2026-05-11","desc":"Cowork & Notebook Library: ungate cowork render + add Notebook Library (13 archetype cards, 55 entries)"},{"hash":"490de0c","date":"2026-05-11","desc":"Notebook: strip setup-leak from bespoke prompt bodies (ind_batch5.py)"},{"hash":"82a501a","date":"2026-05-11","desc":"Cowork Library: 63-card per-entry catalog (Contoso C-Suite + cowork-prompts style)"},{"hash":"d7f8049","date":"2026-05-11","desc":"Free-tier Agent Builder — fix entry-id mismatches + per-entry agent meta"},{"hash":"4134d2e","date":"2026-05-11","desc":"Free-tier Agent Builder — per-entry industry-specific knowledge URLs"},{"hash":"3d63106","date":"2026-05-10","desc":"Cowork — diversify named recipients per industry archetype"},{"hash":"3f4bbfd","date":"2026-05-10","desc":"Cowork runbook — extend to Aaron Yue 9-row format"},{"hash":"8ad7476","date":"2026-05-10","desc":"Notebook — unique scenarios per entry + presenter-only Demo Guide callout"},{"hash":"7a4a74b","date":"2026-05-10","desc":"Move PAID Agent Builder to Microsoft 365 Copilot Tools tab (was in Chat by mistake)"},{"hash":"f126c4a","date":"2026-05-10","desc":"Remove temp _script.js extracted during hotfix debug"},{"hash":"c17ddb5","date":"2026-05-10","desc":"HOTFIX — Cowork tips library broke JS parse (page rendered ~29 industries)"},{"hash":"334da73","date":"2026-05-10","desc":"Final audit fixups — license labels + i18n completeness"},{"hash":"150ca21","date":"2026-05-10","desc":"Notebook prompts — named-file targeting (personal-document focus pattern)"},{"hash":"682ad45","date":"2026-05-10","desc":"Cowork runbook enrich — Skills, Description, Outcome, Tips above every prompt"},{"hash":"13e21dc","date":"2026-05-10","desc":"Split Agent Builder into paid (file knowledge) + free (URL knowledge) tiers"},{"hash":"e7d1fd8","date":"2026-05-10","desc":"Industries-most-affected drill-down on every department"},{"hash":"b85c111","date":"2026-05-10","desc":"Files-match unique use cases — fix dangling ref + audit clean"},{"hash":"1a46b53","date":"2026-05-10","desc":"W/P/X Agent consistency + stay-in-chat normaliser"},{"hash":"bb42117","date":"2026-05-10","desc":"Cowork recheck — Aaron Yue / OneDrive Intelligence approval-gate normaliser"},{"hash":"507bce9","date":"2026-05-10","desc":"Notebook recheck — dedicated tab + canonical demo guide"},{"hash":"ff6981a","date":"2026-05-10","desc":"Unique use cases: 13 template-clone prompts rewritten across 6 entries"},{"hash":"e27093d","date":"2026-05-10","desc":"Cross-check consistency: 20 tool labels normalised in ind_batch6"},{"hash":"e0b8aa6","date":"2026-05-10","desc":"Data realism audit: vague phrasings replaced with named teams"},{"hash":"a36757e","date":"2026-05-10","desc":"Tech feasibility recheck: 6 license mislabels fixed in ind_batch6"},{"hash":"ea30565","date":"2026-05-10","desc":"Notebook: every entry now lists its source files in setup banner + prompt 1"},{"hash":"e2f7f18","date":"2026-05-10","desc":"Cowork: full IHH-style fan-out — named recipients + 5 actions on every prompt"},{"hash":"b911d72","date":"2026-05-10","desc":"Agent Builder: render TWO versions side-by-side (Premium + Free)"},{"hash":"c12e05d","date":"2026-05-10","desc":"Generalize Pacifica/Pacifican to ASEAN/APAC across all entries"},{"hash":"221dbda","date":"2026-05-10","desc":"Departments: rich Industries-most-affected pills (40-43 per dept)"},{"hash":"08d4693","date":"2026-05-10","desc":"Word/PPT/Excel Agent license: flip M365_LIC to ANY_LIC across all 55 entries"},{"hash":"1956ad6","date":"2026-05-10","desc":"Word/PPT/Excel Agent instructions: rewrite per Microsoft support article"},{"hash":"4fe5b37","date":"2026-05-10","desc":"Departments most affected pills: fix 22 industries with dangling dept IDs"},{"hash":"9665cf9","date":"2026-05-10","desc":"Index page: rebrand to Zava Conglomerate, update count to 43+13, password ZavaGlobal2026"},{"hash":"fbaebbe","date":"2026-05-10","desc":"Dark mode third sweep: --navy text invisible against dark navy surface"},{"hash":"b02e85d","date":"2026-05-10","desc":"Notebook follow demo guide: 10-step flow render-time intercept"},{"hash":"424cea7","date":"2026-05-10","desc":"Teams prompts: remove redundant 'Save the file as X.docx in OneDrive' tails"},{"hash":"d66244d","date":"2026-05-10","desc":"Hidden changelog tab — discreet icon next to Lock + Ctrl+Shift+L shortcut"},{"hash":"1f93a64","date":"2026-05-10","desc":"Alliance team codes: align to Cagamas style (short uppercase) + suppress redundant single-group header"},{"hash":"b607af2","date":"2026-05-10","desc":"Other Pages: collapse Customer Demos section into Customer Workshops"},{"hash":"d8bbce7","date":"2026-05-10","desc":"Storyboard description consistency: convert Shape B (og/re/mfg) to Shape A by adding verb fields"},{"hash":"fa5fad9","date":"2026-05-10","desc":"files/: generate 378 placeholder Office files (134 docx + 115 xlsx + 129 pptx) so every prompt reference resolves"},{"hash":"e9165a2","date":"2026-05-10","desc":"Other Pages: add 3 customer demos — Kenanga C-Suite, Rivanta CTO, Contoso Cowork"},{"hash":"040e72d","date":"2026-05-10","desc":"Dark-mode second sweep — 11 more elements made readable in dark + system themes"},{"hash":"2aea66a","date":"2026-05-10","desc":"Storyboard description coverage: synthesise summaries for Shape C entries"},{"hash":"ff34f72","date":"2026-05-10","desc":"Departments-most-affected coverage: dedupe IT&Digital + add reverse mirror to all departments"},{"hash":"a514554","date":"2026-05-10","desc":"Align Alliance Bank team codes with Cagamas — wrap in single teamGroup"},{"hash":"341da4f","date":"2026-05-10","desc":"Cowork: add 3 cross-cutting delegation scenarios per entry"},{"hash":"aa42bbd","date":"2026-05-10","desc":"Fix carousel '??' mojibake on 5 What's-New titles"},{"hash":"e8c1629","date":"2026-05-10","desc":"Cowork now lives in its own tab between Microsoft 365 Copilot Tools and Copilot Chat Prompts"},{"hash":"6cc6fbf","date":"2026-05-10","desc":"Fix dark mode invisible text — var(--navy) used as text color on dark navy surface"},{"hash":"a340877","date":"2026-05-10","desc":"Fix dark mode contrast — invisible text + light-wash bg in 9 spots"},{"hash":"c5532f4","date":"2026-05-10","desc":"Fix BM/BI prompt mixing: auto-fill 674 empty promptsBM from promptsID with token swaps"},{"hash":"32cbfa2","date":"2026-05-10","desc":"Rework show-password toggle on the access gate (index.html)"},{"hash":"2b74335","date":"2026-05-10","desc":"Translate tool-info banner bodies + preserve open tool on language toggle"},{"hash":"5f7514a","date":"2026-05-10","desc":"Hide subsidiaries chip strip from entry hero (keep search-only)"},{"hash":"35076e4","date":"2026-05-10","desc":"Fix system-default theme contrast + complete language toggle coverage"},{"hash":"9265d17","date":"2026-05-10","desc":"Subsidiaries: map customer accounts list onto industries"},{"hash":"266f630","date":"2026-05-10","desc":"Search: tie company names to records (raw + scrubbed + persona fields)"},{"hash":"060fe81","date":"2026-05-10","desc":"Audit new features: roll out April 2026 Microsoft 365 Copilot Blog updates"},{"hash":"1df0a51","date":"2026-05-10","desc":"Audit mobile-adaptive: tighten layout at 480px and add 380px breakpoint"},{"hash":"8bfdd07","date":"2026-05-10","desc":"Audit technical feasibility: align license tier to actual prompt capability"},{"hash":"d8914e6","date":"2026-05-10","desc":"Audit uniqueness: differentiate 8 dept PPT-generic + 5 industry AC-generic dupes"},{"hash":"7fa16be","date":"2026-05-10","desc":"Audit comprehensiveness: normalise tool labels to 14 canonical names"},{"hash":"e01515a","date":"2026-05-10","desc":"Audit realism: align persona accounts + licenses to canonical mapping"},{"hash":"3772ea6","date":"2026-05-10","desc":"Audit consistency: normalise license labels across personas + tools"},{"hash":"0d0e79d","date":"2026-05-10","desc":"Agent Builder: tier the license correctly + add knowledge-tier disclaimer"},{"hash":"c0f1033","date":"2026-05-10","desc":"Dark mode: contrast overrides for Cowork / Notebook / Agent Builder / prompt blocks / pills"},{"hash":"c17a346","date":"2026-05-10","desc":"Other Pages tab: stop scrubbing real workshop / hackathon names"},{"hash":"f142302","date":"2026-05-10","desc":"Generate 316 industry reference files (xlsx + docx) per entry"},{"hash":"68b8901","date":"2026-05-10","desc":"Global locale: scrub MY/ID regulator names + agency acronyms + specific cities"},{"hash":"e446036","date":"2026-05-10","desc":"Storyboard: Shape B narrative renders as full-body description (no synth template)"},{"hash":"3a70743","date":"2026-05-10","desc":"Storyboard: render-time verb shortener for clean moment cards"},{"hash":"c8c512d","date":"2026-05-10","desc":"Agent Builder: per-entry-unique 3-agent catalog across all 56 entries (no War Room template repeats)"},{"hash":"18888ab","date":"2026-05-10","desc":"Teams: canonical 3-meeting IHH structure (52 blocks); fix tab-click auto-scroll-to-top"},{"hash":"d1946e4","date":"2026-05-10","desc":"Agent Builder: IHH-style 3-card picker (General entry)"},{"hash":"355f746","date":"2026-05-10","desc":"UI: theme toggle (Light/Dark/System), responsive sidebar drawer, contrast bumps."},{"hash":"4013e64","date":"2026-05-10","desc":"Persona audit: fix 144 non-conforming names in dept_data5.py."},{"hash":"c4dfd0f","date":"2026-05-10","desc":"Rebrand: M365 Copilot -> Microsoft 365 Copilot (1,129 replacements)."},{"hash":"4222d0e","date":"2026-05-10","desc":"Runtime translator: disable EN→BM and BI→EN dictionary substitution."},{"hash":"2992d29","date":"2026-05-10","desc":"Cowork prompts: append named-recipient appendix (176 prompts)."},{"hash":"bfada09","date":"2026-05-10","desc":"Meeting-minutes prompts: normalise to canonical 5-section template (66 prompts)."},{"hash":"f8952c8","date":"2026-05-10","desc":"Multi-model prefix removed + GPT/Claude version sweep (135 replacements)."},{"hash":"2d27dc2","date":"2026-05-10","desc":"Storyboard moment descriptions per-tool + agent-builder Test step agent-agnostic."},{"hash":"bd9e615","date":"2026-05-10","desc":"Prompts: convert 348 structured-label prompts (Goal/Context/Source/Expectation + Tujuan/Konteks/Sumber/Ekspektasi) across ind_batch10/11/12 to flowing prose, lengthened with directive lead-in and verification trail."},{"hash":"fc5ae67","date":"2026-05-10","desc":"Storyboard render: normalise 3 source schemas — (a) standard nested {tasks:[{n,verb,label}]}, (b) ind_batch4 {objective, desc/descID}, (c) flat ind_batch6 {exercise, task/taskID, tool}. Now fintech-payments, government-agency, og-downstream, renewable-energy, and industrial-manufacturing render real moment cards instead of empty phases. Strips leading 'Exercise N — ' from titles. Auto-numbers tasks when 'n' is missing."},{"hash":"5aae746","date":"2026-05-10","desc":"Storyboard: remove 'Exercise N' badge from phase header — title alone reads cleaner."},{"hash":"ea63f1c","date":"2026-05-10","desc":"Storyboard moment cards: drop Show & Tell / Hands-on mode pill and remove duration pill from exercise header. Keep verb (solution) prominent, add a short locale-aware description below ('Open {tool} and produce the {verb}, grounded in the scenario files.' / BM / BI variants)."},{"hash":"919264a","date":"2026-05-10","desc":"Hackathon cards: span 2 grid columns when team data is present (uses the right-side whitespace); split 'Team N — Desc' label into a coloured team-num badge + wrapped description so each row is unmistakably labelled even in tight 2-col layout."},{"hash":"6344333","date":"2026-05-10","desc":"Personas: standardize all 49 non-conforming names to Hadar/Sasha/Mod Admin/Daichi across 6 source files. Storyboard: restructure to IHH 8-moment style — exercise header strips with Exercise N badge + minutes pill, plus grid of moment cards (numbered, tool label, action verb, mode). Hero now reads 'X moments across one workday' with X = total tasks count."},{"hash":"3b73046","date":"2026-05-10","desc":"Hackathon cards: lay team codes side-by-side (2-col grid)"}];
 function _renderChangelog(){
   const body=document.getElementById('changelog-body');
   if(!body) return;
@@ -5670,10 +6073,12 @@ document.addEventListener('keydown',function(e){
   // Update home-page grid-tab labels
   const gtI=document.getElementById('gtab-ind'); if(gtI) gtI.innerHTML='&#127981; Industries ('+data.industries.length+')';
   const gtD=document.getElementById('gtab-dept'); if(gtD) gtD.innerHTML='&#127970; Departments ('+data.departments.length+')';
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.innerHTML='&#129309; Cowork Library ('+_cwLibTotalUC()+')';
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.innerHTML='&#128218; Other Pages ('+OTHER_PAGES.length+')';
 })();
 buildSidebar();
 buildDeptSidebar();
+buildCwLibSidebar();
 buildOtherSidebar();
 buildGrid();
 buildDeptGrid();
