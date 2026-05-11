@@ -290,6 +290,95 @@ html{overflow-x:hidden}
 .cwlib-empty{padding:48px 24px;text-align:center;color:var(--muted);font-size:14px;border:1.5px dashed var(--border);border-radius:14px;background:var(--surface)}
 .cwlib-detail-hero{background:linear-gradient(135deg,#7C2D12 0%,#9A3412 60%,#B45309 100%)}
 .cwlib-sidebar-group{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--muted-2);text-transform:uppercase;padding:14px 16px 6px}
+/* ── Cowork Library DETAIL view — Agent-Builder-style picker + static structure ── */
+/* Sticky picker row at top — clickable UC tiles, content area below stays in a fixed scaffold */
+.cwlib-runbook-intro{background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1px solid #FDE68A;border-radius:10px;padding:11px 14px;margin:0 0 14px;font-size:12.5px;color:#78350F;line-height:1.55;display:flex;align-items:flex-start;gap:10px}
+.cwlib-runbook-intro .ri-icon{font-size:18px;flex-shrink:0;line-height:1.4}
+.cwlib-runbook-intro b{color:#7C2D12}
+.cwlib-picker-wrap{position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 0 12px;margin:0 0 4px;border-bottom:1px solid var(--border)}
+.cwlib-picker-row{display:flex;align-items:stretch;gap:8px}
+.cwlib-picker-scroll{flex:1;display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:thin;padding:4px 2px}
+.cwlib-picker-scroll::-webkit-scrollbar{height:6px}
+.cwlib-picker-scroll::-webkit-scrollbar-thumb{background:rgba(245,158,11,0.4);border-radius:3px}
+.cwlib-pick{flex:0 0 auto;min-width:170px;max-width:240px;cursor:pointer;border:2px solid var(--border);border-radius:10px;padding:8px 11px;background:var(--surface);transition:all .18s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;gap:4px;scroll-snap-align:start;font-family:inherit;text-align:left}
+.cwlib-pick:hover{border-color:#F59E0B;background:rgba(255,247,237,0.6);transform:translateY(-1px)}
+.cwlib-pick.selected{border-color:#B45309;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);box-shadow:0 4px 12px rgba(180,83,9,0.22)}
+.cwlib-pick-top{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:800;color:#9A3412;letter-spacing:0.5px;text-transform:uppercase}
+.cwlib-pick-num{background:linear-gradient(135deg,#F59E0B,#D97706);color:#FFFFFF;font-weight:800;padding:2px 7px;border-radius:5px;font-size:10px;letter-spacing:0.5px}
+.cwlib-pick-title{font-size:12.5px;font-weight:700;color:var(--text-strong);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
+.cwlib-pick-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:2px}
+.cwlib-pick-meta .cw-complexity{font-size:9.5px;padding:1px 6px}
+.cwlib-pick-meta .pick-app{font-size:9.5px;color:var(--muted);font-weight:600}
+.cwlib-nav-btns{display:flex;flex-direction:column;gap:4px;flex-shrink:0}
+.cwlib-nav-btn{background:var(--surface);border:1.5px solid var(--border);color:var(--text-strong);width:36px;height:34px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit}
+.cwlib-nav-btn:hover:not(:disabled){border-color:#F59E0B;background:#FFFBEB;color:#9A3412}
+.cwlib-nav-btn:disabled{opacity:0.35;cursor:not-allowed}
+.cwlib-runbook{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.cwlib-uc-head{background:linear-gradient(135deg,#7C2D12,#B45309);color:#FFFFFF;border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:14px}
+.cwlib-uc-head-num{background:rgba(255,255,255,0.18);border:2px solid rgba(255,255,255,0.32);border-radius:10px;padding:8px 14px;font-size:16px;font-weight:900;letter-spacing:0.5px;flex-shrink:0}
+.cwlib-uc-head-main{flex:1;min-width:0}
+.cwlib-uc-head-title{font-size:17px;font-weight:800;line-height:1.3;color:#FFFFFF;margin-bottom:6px}
+.cwlib-uc-head-badges{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.cwlib-uc-head-badges .cw-tag,.cwlib-uc-head-badges .cw-complexity{background:rgba(255,255,255,0.18);color:#FFFFFF;border:1px solid rgba(255,255,255,0.32);font-size:10.5px;padding:2px 9px}
+.cwlib-uc-head-badges .cw-complexity.basic{background:rgba(16,185,129,0.3);border-color:rgba(16,185,129,0.6)}
+.cwlib-uc-head-badges .cw-complexity.intermediate{background:rgba(245,158,11,0.32);border-color:rgba(245,158,11,0.6)}
+.cwlib-uc-head-badges .cw-complexity.advanced{background:rgba(239,68,68,0.32);border-color:rgba(239,68,68,0.6)}
+.cwlib-pos-chip{margin-left:auto;font-size:11px;font-weight:700;color:#FFFFFF;background:rgba(0,0,0,0.22);padding:5px 10px;border-radius:999px;flex-shrink:0}
+.cwlib-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;transition:opacity .15s}
+.cwlib-block.fading{opacity:0.55}
+.cwlib-block-head{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:800;color:#9A3412;letter-spacing:1.2px;text-transform:uppercase;margin:0 0 10px;padding:0 0 8px;border-bottom:1.5px solid var(--border)}
+.cwlib-block-head .bh-icon{font-size:18px;line-height:1}
+.cwlib-block-head .bh-label{flex:1}
+.cwlib-block-body{font-size:12.5px;color:var(--text);line-height:1.6}
+.cwlib-block-body p{margin:0 0 8px}
+.cwlib-block-body ul,.cwlib-block-body ol{margin:0;padding-left:20px}
+.cwlib-block-body ul li,.cwlib-block-body ol li{margin-bottom:4px;line-height:1.6}
+.cwlib-block-body .cw-prompt{margin:0 0 10px}
+.cwlib-block-body .cw-prompt:last-child{margin-bottom:0}
+.cwlib-block-body .cw-apps-row,.cwlib-block-body .cw-files-pills{margin:0}
+.cwlib-block-body .cw-callout{margin:0}
+.cwlib-block-empty{color:var(--muted);font-style:italic;font-size:12px}
+.cwlib-block-prev-next{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px;background:var(--surface);border:1px dashed var(--border);border-radius:12px;margin-top:6px}
+.cwlib-pn-btn{background:linear-gradient(135deg,#F59E0B,#D97706);color:#FFFFFF;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;transition:all .15s}
+.cwlib-pn-btn:hover:not(:disabled){background:linear-gradient(135deg,#D97706,#B45309);transform:translateY(-1px);box-shadow:0 4px 10px rgba(180,83,9,0.3)}
+.cwlib-pn-btn:disabled{opacity:0.35;cursor:not-allowed;transform:none;box-shadow:none}
+.cwlib-pn-spacer{flex:1;text-align:center;font-size:12px;color:var(--muted);font-weight:600}
+[data-theme="dark"] .cwlib-runbook-intro{background:linear-gradient(135deg,#1F1208,#3F2107);border-color:rgba(245,158,11,0.45);color:#FED7AA}
+[data-theme="dark"] .cwlib-runbook-intro b{color:#FBBF24}
+[data-theme="dark"] .cwlib-picker-wrap{background:var(--bg);border-bottom-color:var(--border-strong)}
+[data-theme="dark"] .cwlib-pick.selected{background:linear-gradient(135deg,#3F2107,#5A2D0A);border-color:#F59E0B}
+[data-theme="dark"] .cwlib-pick:hover{background:rgba(63,33,7,0.6);border-color:#D97706}
+[data-theme="dark"] .cwlib-nav-btn{background:var(--surface)}
+[data-theme="dark"] .cwlib-nav-btn:hover:not(:disabled){background:#3F2107;color:#FBBF24}
+[data-theme="dark"] .cwlib-block-head{color:#FBBF24}
+[data-theme="dark"] .cwlib-block-prev-next{background:var(--surface);border-color:rgba(245,158,11,0.32)}
+@media (prefers-color-scheme: dark){
+  [data-theme="system"] .cwlib-runbook-intro{background:linear-gradient(135deg,#1F1208,#3F2107);border-color:rgba(245,158,11,0.45);color:#FED7AA}
+  [data-theme="system"] .cwlib-runbook-intro b{color:#FBBF24}
+  [data-theme="system"] .cwlib-pick.selected{background:linear-gradient(135deg,#3F2107,#5A2D0A);border-color:#F59E0B}
+  [data-theme="system"] .cwlib-pick:hover{background:rgba(63,33,7,0.6);border-color:#D97706}
+  [data-theme="system"] .cwlib-nav-btn{background:var(--surface)}
+  [data-theme="system"] .cwlib-nav-btn:hover:not(:disabled){background:#3F2107;color:#FBBF24}
+  [data-theme="system"] .cwlib-block-head{color:#FBBF24}
+  [data-theme="system"] .cwlib-block-prev-next{background:var(--surface);border-color:rgba(245,158,11,0.32)}
+}
+@media (max-width:768px){
+  .cwlib-pick{min-width:150px;max-width:200px;padding:7px 10px}
+  .cwlib-pick-title{font-size:12px}
+  .cwlib-nav-btns{display:none}
+  .cwlib-uc-head{padding:14px 16px;flex-wrap:wrap}
+  .cwlib-uc-head-num{padding:6px 11px;font-size:14px}
+  .cwlib-uc-head-title{font-size:15px}
+  .cwlib-pos-chip{order:-1;margin-left:0}
+  .cwlib-block{padding:13px 14px}
+  .cwlib-block-head{font-size:10.5px;gap:7px}
+}
+@media (max-width:480px){
+  .cwlib-picker-wrap{padding:8px 0 10px}
+  .cwlib-pick{min-width:130px;padding:6px 9px}
+  .cwlib-pick-title{font-size:11.5px}
+  .cwlib-pn-btn{padding:8px 12px;font-size:12px}
+}
 [data-theme="dark"] .cwlib-hero{background:linear-gradient(135deg,#451A03 0%,#7C2D12 100%);border-color:rgba(245,158,11,0.35)}
 [data-theme="dark"] .cwlib-hero-eyebrow,
 [data-theme="dark"] .cwlib-hero-title,
@@ -4049,34 +4138,76 @@ function _coworkRunbookHtml(item,tool,promptText,lines){
   '</div>';
 }
 
-// Render the per-entry Cowork Library section (4-5 unique-use-case cards
-// authored in _cowork_library.py, attached at build time as item.coworkLibrary).
-// Each card: collapsible <details> with skills, instructions, apps, sample
-// inputs, prompts, expected outcome, WHAT TO WATCH (green) and HONEST FRAMING
-// (amber) callouts plus tips & variations.
+// Render the per-entry Cowork Library section using the Agent-Builder-style
+// picker + static-frame UI:
+//   • Sticky top row with one card per use case (UC 01..N) — click to swap
+//   • Below: fixed scaffold of section headers (Description, Apps, Skills,
+//     Instructions, Sample inputs, Prompts, Expected outcome, What to watch,
+//     Honest framing, Tips). Only the BODIES change between use cases —
+//     headers and structure stay constant.
+//   • Prev/Next buttons on the right of the picker AND at the bottom of the
+//     content, with disabled state on the boundaries.
+// All use cases are pre-rendered as siblings under one container; switching
+// is done by toggling display:none — zero post-mount JS init required.
+// Used by BOTH callers: the dedicated Cowork Library detail view (showCwLibFor)
+// AND the original industry/dept page Cowork sub-tab.
 function _coworkLibraryHtml(item){
   const cards=(item && item.coworkLibrary) || [];
   if(!cards.length) return '';
+  // Embedded mode = called from the Cowork Library detail view (which already
+  // shows the entry name in its own hero). In that case we skip our own header
+  // so the page doesn't render "Cowork Library — more use cases" twice.
+  const embedded = !!(item && item.__cwlibEmbedded);
   const L_TITLE=_uL('📚 Cowork Library — more use cases');
-  const L_SUB=_uL('Tap any card to expand the full prompt, skills, instructions, expected outcome, and honest framing.');
-  const L_SKILLS=_uL('SKILLS');
-  const L_INSTR=_uL('INSTRUCTIONS');
-  const L_APPS=_uL('APPS INVOLVED');
-  const L_FILES=_uL('SAMPLE INPUTS');
+  const L_SUB=_uL('Pick a use case above — every section below updates in place. Each card is a copy-paste-ready runbook.');
+  const L_INTRO=_uL('Use the cards above to switch between use cases. The section headers below stay constant — only the contents change, so you can compare runbooks at a glance. Adjust placeholders to your business reality before you send.');
+  const L_SKILLS=_uL('Skills required');
+  const L_INSTR=_uL('Instructions');
+  const L_APPS=_uL('Apps involved');
+  const L_FILES=_uL('Sample inputs');
+  const L_PROMPTS=_uL('Prompts');
+  const L_DESC=_uL('Description');
+  const L_EXP=_uL('Expected outcome');
+  const L_WATCH=_uL('What to watch');
+  const L_HONEST=_uL('Honest framing');
+  const L_TIPS=_uL('Tips & variations');
   const L_PROMPT=_uL('PROMPT');
-  const L_EXP=_uL('EXPECTED OUTCOME');
-  const L_WATCH=_uL('WHAT TO WATCH');
-  const L_HONEST=_uL('HONEST FRAMING');
-  const L_TIPS=_uL('TIPS & VARIATIONS');
   const L_COPY=_uL('📋 Copy prompt');
+  const L_NONE=_uL('Nothing to show for this use case.');
+  const L_OF=_uL(' of ');
+  const L_PREV=_uL('← Previous use case');
+  const L_NEXT=_uL('Next use case →');
   function lbl(c){
     if(c==='basic') return _uL('Basic');
     if(c==='advanced') return _uL('Advanced');
     return _uL('Intermediate');
   }
-  const body=cards.map((c,idx)=>{
+  // Unique slot id so multiple instances on the same page (defensive) don't
+  // collide on DOM ids or click handlers.
+  window._cwlibSlotCtr = (window._cwlibSlotCtr || 0) + 1;
+  const slot = 'cw_'+String(item && item.id || 'x').replace(/[^A-Za-z0-9_-]/g,'_')+'_'+window._cwlibSlotCtr;
+  const total=cards.length;
+  // ── Picker tiles (top, sticky) ────────────────────────────────────────
+  const pickerTiles=cards.map((c,idx)=>{
     const num='UC '+String(idx+1).padStart(2,'0');
     const cmplx=String(c.complexity||'intermediate').toLowerCase();
+    const title=_xformVal(c.title||'','EN');
+    const apps=(c.apps||[]);
+    const appLine=apps.length ? (apps.slice(0,2).join(' · ')+(apps.length>2?' +'+(apps.length-2):'')) : '';
+    return '<button type="button" class="cwlib-pick'+(idx===0?' selected':'')+'" data-cwlib-slot="'+slot+'" data-cwlib-idx="'+idx+'" onclick="_cwLibSelectInSlot(\''+slot+'\','+idx+')">'+
+      '<div class="cwlib-pick-top"><span class="cwlib-pick-num">'+escapeHTML(num)+'</span></div>'+
+      '<div class="cwlib-pick-title">'+escapeHTML(title)+'</div>'+
+      '<div class="cwlib-pick-meta">'+
+        '<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span>'+
+        (appLine?('<span class="pick-app">'+escapeHTML(appLine)+'</span>'):'')+
+      '</div>'+
+    '</button>';
+  }).join('');
+  // ── Per-UC content sections (all rendered, only one visible) ──────────
+  const ucSections=cards.map((c,idx)=>{
+    const num='UC '+String(idx+1).padStart(2,'0');
+    const cmplx=String(c.complexity||'intermediate').toLowerCase();
+    const title=_xformVal(c.title||'','EN');
     const apps=(c.apps||[]).map(a=>'<span class="app-pill">'+escapeHTML(a)+'</span>').join('');
     const files=(c.sample_files||[]).map(f=>{
       const name=Array.isArray(f)?(f[0]||''):(f && f.filename) || String(f||'');
@@ -4093,8 +4224,7 @@ function _coworkLibraryHtml(item){
     const prompts=(c.prompts||[]).map((p,pi)=>{
       const txt=_xformVal((typeof p==='string'?p:(p&&p.prompt||p&&p.text)||''),'EN');
       const label=(typeof p==='object'&&p&&p.label)?_xformVal(p.label,'EN'):(L_PROMPT+' '+(pi+1));
-      const cwKey='cwlib_'+(item.id||'x')+'_'+idx+'_'+pi;
-      // Stash plaintext in a hidden span so copy works without inline event payloads.
+      const cwKey='cwlib_'+(item.id||'x')+'_'+slot+'_'+idx+'_'+pi;
       return '<div class="cw-prompt">'+
         '<div class="cw-prompt-head">'+
           '<span class="cw-prompt-label">'+escapeHTML(label)+'</span>'+
@@ -4105,38 +4235,98 @@ function _coworkLibraryHtml(item){
     }).join('');
     const dept=c.dept_tag?('<span class="cw-tag">'+escapeHTML(_xformVal(c.dept_tag,'EN'))+'</span>'):'';
     const ind=c.industry_tag?('<span class="cw-tag ind">'+escapeHTML(_xformVal(c.industry_tag,'EN'))+'</span>'):'';
-    const honest=c.honest?('<div class="cw-callout cw-honest"><span class="cw-callout-label">'+L_HONEST+'</span><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):'';
-    const watchHtml=watch?('<div class="cw-callout cw-watch"><span class="cw-callout-label">'+L_WATCH+'</span><ul>'+watch+'</ul></div>'):'';
-    return '<details class="cw-card">'+
-      '<summary>'+
-        '<span class="cw-num">'+escapeHTML(num)+'</span>'+
-        '<span class="cw-head-main">'+
-          '<div class="cw-title">'+escapeHTML(_xformVal(c.title||'','EN'))+'</div>'+
-          '<div class="cw-badges">'+dept+ind+'<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span></div>'+
-        '</span>'+
-        '<span class="cw-chev">▼</span>'+
-      '</summary>'+
-      '<div class="cw-body">'+
-        (c.desc?'<p class="cw-desc">'+escapeHTML(_xformVal(c.desc,'EN'))+'</p>':'')+
-        (apps?('<div class="cw-section-label">'+L_APPS+'</div><div class="cw-apps-row">'+apps+'</div>'):'')+
-        (skills?('<div class="cw-section-label">'+L_SKILLS+'</div><ul class="cw-list">'+skills+'</ul>'):'')+
-        (instr?('<div class="cw-section-label">'+L_INSTR+'</div><ol class="cw-instructions">'+instr+'</ol>'):'')+
-        (files?('<div class="cw-section-label">'+L_FILES+'</div><div class="cw-files-pills">'+files+'</div>'):'')+
-        prompts+
-        (expected?('<div class="cw-section-label">'+L_EXP+'</div><ul class="cw-list">'+expected+'</ul>'):'')+
-        watchHtml+
-        honest+
-        (tips?('<div class="cw-section-label">'+L_TIPS+'</div><ul class="cw-list">'+tips+'</ul>'):'')+
+    const honest=c.honest?('<div class="cw-callout cw-honest"><span class="cw-callout-label">'+L_HONEST+'</span><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+    const watchHtml=watch?('<div class="cw-callout cw-watch"><span class="cw-callout-label">'+L_WATCH+'</span><ul>'+watch+'</ul></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+    function block(icon, label, bodyHtml, hasContent){
+      const inner = hasContent ? bodyHtml : ('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+      return '<div class="cwlib-block">'+
+        '<div class="cwlib-block-head"><span class="bh-icon">'+icon+'</span><span class="bh-label">'+escapeHTML(label)+'</span></div>'+
+        '<div class="cwlib-block-body">'+inner+'</div>'+
+      '</div>';
+    }
+    const isFirst = (idx===0);
+    const isLast = (idx===total-1);
+    return '<section class="cwlib-uc" data-cwlib-slot="'+slot+'" data-cwlib-idx="'+idx+'"'+(isFirst?'':' style="display:none"')+'>'+
+      '<div class="cwlib-uc-head">'+
+        '<div class="cwlib-uc-head-num">'+escapeHTML(num)+'</div>'+
+        '<div class="cwlib-uc-head-main">'+
+          '<div class="cwlib-uc-head-title">'+escapeHTML(title)+'</div>'+
+          '<div class="cwlib-uc-head-badges">'+dept+ind+'<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span></div>'+
+        '</div>'+
+        '<span class="cwlib-pos-chip">'+(idx+1)+escapeHTML(L_OF)+total+'</span>'+
       '</div>'+
-    '</details>';
+      block('📋', L_DESC, '<p>'+escapeHTML(_xformVal(c.desc||'','EN'))+'</p>', !!c.desc) +
+      block('📱', L_APPS, '<div class="cw-apps-row">'+apps+'</div>', !!apps) +
+      block('🎯', L_SKILLS, '<ul class="cw-list">'+skills+'</ul>', !!skills) +
+      block('🧭', L_INSTR, '<ol class="cw-instructions">'+instr+'</ol>', !!instr) +
+      block('📎', L_FILES, '<div class="cw-files-pills">'+files+'</div>', !!files) +
+      block('💬', L_PROMPTS, prompts, !!prompts) +
+      block('✅', L_EXP, '<ul class="cw-list">'+expected+'</ul>', !!expected) +
+      block('👀', L_WATCH, watchHtml, true) +
+      block('⚖️', L_HONEST, honest, true) +
+      block('💡', L_TIPS, '<ul class="cw-list">'+tips+'</ul>', !!tips) +
+      '<div class="cwlib-block-prev-next">'+
+        '<button class="cwlib-pn-btn" type="button" onclick="_cwLibNavInSlot(\''+slot+'\',-1)"'+(isFirst?' disabled':'')+'>'+escapeHTML(L_PREV)+'</button>'+
+        '<span class="cwlib-pn-spacer">'+(idx+1)+escapeHTML(L_OF)+total+'</span>'+
+        '<button class="cwlib-pn-btn" type="button" onclick="_cwLibNavInSlot(\''+slot+'\',1)"'+(isLast?' disabled':'')+'>'+escapeHTML(L_NEXT)+'</button>'+
+      '</div>'+
+    '</section>';
   }).join('');
-  return '<div class="cw-section">'+
-    '<div class="cw-section-head">'+
+  const head = embedded ? '' :
+    ('<div class="cw-section-head">'+
       '<h3 class="cw-section-title">'+L_TITLE+'</h3>'+
       '<span class="cw-section-sub">'+escapeHTML(L_SUB)+'</span>'+
+    '</div>');
+  const intro = '<div class="cwlib-runbook-intro"><span class="ri-icon">📖</span><div>'+escapeHTML(L_INTRO)+'</div></div>';
+  return '<div class="cw-section'+(embedded?' cw-section-embedded':'')+'" data-cwlib-runbook="'+slot+'">'+
+    head+
+    intro+
+    '<div class="cwlib-picker-wrap" data-cwlib-slot="'+slot+'">'+
+      '<div class="cwlib-picker-row">'+
+        '<div class="cwlib-picker-scroll">'+pickerTiles+'</div>'+
+        '<div class="cwlib-nav-btns">'+
+          '<button class="cwlib-nav-btn" type="button" data-cwlib-nav-prev="'+slot+'" onclick="_cwLibNavInSlot(\''+slot+'\',-1)" disabled>‹</button>'+
+          '<button class="cwlib-nav-btn" type="button" data-cwlib-nav-next="'+slot+'" onclick="_cwLibNavInSlot(\''+slot+'\',1)"'+(total<=1?' disabled':'')+'>›</button>'+
+        '</div>'+
+      '</div>'+
     '</div>'+
-    '<div class="cw-grid">'+body+'</div>'+
+    '<div class="cwlib-runbook" data-cwlib-stage="'+slot+'">'+ucSections+'</div>'+
   '</div>';
+}
+
+// Picker handler — swap which UC section is visible inside a given slot.
+// Toggles display on the per-UC <section> elements, the selected class on the
+// picker buttons, and the disabled state on the top-row nav buttons.
+function _cwLibSelectInSlot(slot, idx){
+  const picks = document.querySelectorAll('[data-cwlib-slot="'+slot+'"].cwlib-pick');
+  if(!picks.length) return;
+  const total = picks.length;
+  if(idx<0 || idx>=total) return;
+  picks.forEach(function(b){
+    const i = parseInt(b.getAttribute('data-cwlib-idx'),10);
+    b.classList.toggle('selected', i===idx);
+    if(i===idx){
+      // bring selected tile into view inside the horizontal scroller
+      try { b.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'}); } catch(e){}
+    }
+  });
+  document.querySelectorAll('section.cwlib-uc[data-cwlib-slot="'+slot+'"]').forEach(function(s){
+    const i = parseInt(s.getAttribute('data-cwlib-idx'),10);
+    s.style.display = (i===idx) ? '' : 'none';
+  });
+  const navPrev = document.querySelector('[data-cwlib-nav-prev="'+slot+'"]');
+  const navNext = document.querySelector('[data-cwlib-nav-next="'+slot+'"]');
+  if(navPrev) navPrev.disabled = (idx<=0);
+  if(navNext) navNext.disabled = (idx>=total-1);
+}
+
+// Prev/Next navigation — find the currently-selected UC in this slot and step
+// by delta (-1 / +1). Clamped to [0, total-1] via the bounds check above.
+function _cwLibNavInSlot(slot, delta){
+  const picks = document.querySelectorAll('[data-cwlib-slot="'+slot+'"].cwlib-pick');
+  let cur = 0;
+  picks.forEach(function(b, i){ if(b.classList.contains('selected')) cur = i; });
+  _cwLibSelectInSlot(slot, cur + (delta||0));
 }
 
 // Delegated copy-handler for Cowork Library prompt buttons (one listener,
@@ -4820,7 +5010,7 @@ function showCwLibFor(entryId){
   // Render the cards reusing the existing _coworkLibraryHtml renderer (shim item)
   const host=document.getElementById('cwlib-detail-cards');
   if(host){
-    const shim={ id: entry.id, coworkLibrary: entry.coworkLibrary };
+    const shim={ id: entry.id, coworkLibrary: entry.coworkLibrary, __cwlibEmbedded: true };
     host.innerHTML = (typeof _coworkLibraryHtml==='function') ? _coworkLibraryHtml(shim) : '';
     // Re-wire copy buttons inside the rendered cards
     if(typeof _wireCoworkLibraryCopy==='function') _wireCoworkLibraryCopy(host);

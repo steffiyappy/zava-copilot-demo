@@ -288,6 +288,95 @@ html{overflow-x:hidden}
 .cwlib-empty{padding:48px 24px;text-align:center;color:var(--muted);font-size:14px;border:1.5px dashed var(--border);border-radius:14px;background:var(--surface)}
 .cwlib-detail-hero{background:linear-gradient(135deg,#7C2D12 0%,#9A3412 60%,#B45309 100%)}
 .cwlib-sidebar-group{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--muted-2);text-transform:uppercase;padding:14px 16px 6px}
+/* ── Cowork Library DETAIL view — Agent-Builder-style picker + static structure ── */
+/* Sticky picker row at top — clickable UC tiles, content area below stays in a fixed scaffold */
+.cwlib-runbook-intro{background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1px solid #FDE68A;border-radius:10px;padding:11px 14px;margin:0 0 14px;font-size:12.5px;color:#78350F;line-height:1.55;display:flex;align-items:flex-start;gap:10px}
+.cwlib-runbook-intro .ri-icon{font-size:18px;flex-shrink:0;line-height:1.4}
+.cwlib-runbook-intro b{color:#7C2D12}
+.cwlib-picker-wrap{position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 0 12px;margin:0 0 4px;border-bottom:1px solid var(--border)}
+.cwlib-picker-row{display:flex;align-items:stretch;gap:8px}
+.cwlib-picker-scroll{flex:1;display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:thin;padding:4px 2px}
+.cwlib-picker-scroll::-webkit-scrollbar{height:6px}
+.cwlib-picker-scroll::-webkit-scrollbar-thumb{background:rgba(245,158,11,0.4);border-radius:3px}
+.cwlib-pick{flex:0 0 auto;min-width:170px;max-width:240px;cursor:pointer;border:2px solid var(--border);border-radius:10px;padding:8px 11px;background:var(--surface);transition:all .18s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;gap:4px;scroll-snap-align:start;font-family:inherit;text-align:left}
+.cwlib-pick:hover{border-color:#F59E0B;background:rgba(255,247,237,0.6);transform:translateY(-1px)}
+.cwlib-pick.selected{border-color:#B45309;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);box-shadow:0 4px 12px rgba(180,83,9,0.22)}
+.cwlib-pick-top{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:800;color:#9A3412;letter-spacing:0.5px;text-transform:uppercase}
+.cwlib-pick-num{background:linear-gradient(135deg,#F59E0B,#D97706);color:#FFFFFF;font-weight:800;padding:2px 7px;border-radius:5px;font-size:10px;letter-spacing:0.5px}
+.cwlib-pick-title{font-size:12.5px;font-weight:700;color:var(--text-strong);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
+.cwlib-pick-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:2px}
+.cwlib-pick-meta .cw-complexity{font-size:9.5px;padding:1px 6px}
+.cwlib-pick-meta .pick-app{font-size:9.5px;color:var(--muted);font-weight:600}
+.cwlib-nav-btns{display:flex;flex-direction:column;gap:4px;flex-shrink:0}
+.cwlib-nav-btn{background:var(--surface);border:1.5px solid var(--border);color:var(--text-strong);width:36px;height:34px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit}
+.cwlib-nav-btn:hover:not(:disabled){border-color:#F59E0B;background:#FFFBEB;color:#9A3412}
+.cwlib-nav-btn:disabled{opacity:0.35;cursor:not-allowed}
+.cwlib-runbook{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.cwlib-uc-head{background:linear-gradient(135deg,#7C2D12,#B45309);color:#FFFFFF;border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:14px}
+.cwlib-uc-head-num{background:rgba(255,255,255,0.18);border:2px solid rgba(255,255,255,0.32);border-radius:10px;padding:8px 14px;font-size:16px;font-weight:900;letter-spacing:0.5px;flex-shrink:0}
+.cwlib-uc-head-main{flex:1;min-width:0}
+.cwlib-uc-head-title{font-size:17px;font-weight:800;line-height:1.3;color:#FFFFFF;margin-bottom:6px}
+.cwlib-uc-head-badges{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.cwlib-uc-head-badges .cw-tag,.cwlib-uc-head-badges .cw-complexity{background:rgba(255,255,255,0.18);color:#FFFFFF;border:1px solid rgba(255,255,255,0.32);font-size:10.5px;padding:2px 9px}
+.cwlib-uc-head-badges .cw-complexity.basic{background:rgba(16,185,129,0.3);border-color:rgba(16,185,129,0.6)}
+.cwlib-uc-head-badges .cw-complexity.intermediate{background:rgba(245,158,11,0.32);border-color:rgba(245,158,11,0.6)}
+.cwlib-uc-head-badges .cw-complexity.advanced{background:rgba(239,68,68,0.32);border-color:rgba(239,68,68,0.6)}
+.cwlib-pos-chip{margin-left:auto;font-size:11px;font-weight:700;color:#FFFFFF;background:rgba(0,0,0,0.22);padding:5px 10px;border-radius:999px;flex-shrink:0}
+.cwlib-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;transition:opacity .15s}
+.cwlib-block.fading{opacity:0.55}
+.cwlib-block-head{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:800;color:#9A3412;letter-spacing:1.2px;text-transform:uppercase;margin:0 0 10px;padding:0 0 8px;border-bottom:1.5px solid var(--border)}
+.cwlib-block-head .bh-icon{font-size:18px;line-height:1}
+.cwlib-block-head .bh-label{flex:1}
+.cwlib-block-body{font-size:12.5px;color:var(--text);line-height:1.6}
+.cwlib-block-body p{margin:0 0 8px}
+.cwlib-block-body ul,.cwlib-block-body ol{margin:0;padding-left:20px}
+.cwlib-block-body ul li,.cwlib-block-body ol li{margin-bottom:4px;line-height:1.6}
+.cwlib-block-body .cw-prompt{margin:0 0 10px}
+.cwlib-block-body .cw-prompt:last-child{margin-bottom:0}
+.cwlib-block-body .cw-apps-row,.cwlib-block-body .cw-files-pills{margin:0}
+.cwlib-block-body .cw-callout{margin:0}
+.cwlib-block-empty{color:var(--muted);font-style:italic;font-size:12px}
+.cwlib-block-prev-next{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px;background:var(--surface);border:1px dashed var(--border);border-radius:12px;margin-top:6px}
+.cwlib-pn-btn{background:linear-gradient(135deg,#F59E0B,#D97706);color:#FFFFFF;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;transition:all .15s}
+.cwlib-pn-btn:hover:not(:disabled){background:linear-gradient(135deg,#D97706,#B45309);transform:translateY(-1px);box-shadow:0 4px 10px rgba(180,83,9,0.3)}
+.cwlib-pn-btn:disabled{opacity:0.35;cursor:not-allowed;transform:none;box-shadow:none}
+.cwlib-pn-spacer{flex:1;text-align:center;font-size:12px;color:var(--muted);font-weight:600}
+[data-theme="dark"] .cwlib-runbook-intro{background:linear-gradient(135deg,#1F1208,#3F2107);border-color:rgba(245,158,11,0.45);color:#FED7AA}
+[data-theme="dark"] .cwlib-runbook-intro b{color:#FBBF24}
+[data-theme="dark"] .cwlib-picker-wrap{background:var(--bg);border-bottom-color:var(--border-strong)}
+[data-theme="dark"] .cwlib-pick.selected{background:linear-gradient(135deg,#3F2107,#5A2D0A);border-color:#F59E0B}
+[data-theme="dark"] .cwlib-pick:hover{background:rgba(63,33,7,0.6);border-color:#D97706}
+[data-theme="dark"] .cwlib-nav-btn{background:var(--surface)}
+[data-theme="dark"] .cwlib-nav-btn:hover:not(:disabled){background:#3F2107;color:#FBBF24}
+[data-theme="dark"] .cwlib-block-head{color:#FBBF24}
+[data-theme="dark"] .cwlib-block-prev-next{background:var(--surface);border-color:rgba(245,158,11,0.32)}
+@media (prefers-color-scheme: dark){
+  [data-theme="system"] .cwlib-runbook-intro{background:linear-gradient(135deg,#1F1208,#3F2107);border-color:rgba(245,158,11,0.45);color:#FED7AA}
+  [data-theme="system"] .cwlib-runbook-intro b{color:#FBBF24}
+  [data-theme="system"] .cwlib-pick.selected{background:linear-gradient(135deg,#3F2107,#5A2D0A);border-color:#F59E0B}
+  [data-theme="system"] .cwlib-pick:hover{background:rgba(63,33,7,0.6);border-color:#D97706}
+  [data-theme="system"] .cwlib-nav-btn{background:var(--surface)}
+  [data-theme="system"] .cwlib-nav-btn:hover:not(:disabled){background:#3F2107;color:#FBBF24}
+  [data-theme="system"] .cwlib-block-head{color:#FBBF24}
+  [data-theme="system"] .cwlib-block-prev-next{background:var(--surface);border-color:rgba(245,158,11,0.32)}
+}
+@media (max-width:768px){
+  .cwlib-pick{min-width:150px;max-width:200px;padding:7px 10px}
+  .cwlib-pick-title{font-size:12px}
+  .cwlib-nav-btns{display:none}
+  .cwlib-uc-head{padding:14px 16px;flex-wrap:wrap}
+  .cwlib-uc-head-num{padding:6px 11px;font-size:14px}
+  .cwlib-uc-head-title{font-size:15px}
+  .cwlib-pos-chip{order:-1;margin-left:0}
+  .cwlib-block{padding:13px 14px}
+  .cwlib-block-head{font-size:10.5px;gap:7px}
+}
+@media (max-width:480px){
+  .cwlib-picker-wrap{padding:8px 0 10px}
+  .cwlib-pick{min-width:130px;padding:6px 9px}
+  .cwlib-pick-title{font-size:11.5px}
+  .cwlib-pn-btn{padding:8px 12px;font-size:12px}
+}
 [data-theme="dark"] .cwlib-hero{background:linear-gradient(135deg,#451A03 0%,#7C2D12 100%);border-color:rgba(245,158,11,0.35)}
 [data-theme="dark"] .cwlib-hero-eyebrow,
 [data-theme="dark"] .cwlib-hero-title,
@@ -4047,34 +4136,76 @@ function _coworkRunbookHtml(item,tool,promptText,lines){
   '</div>';
 }
 
-// Render the per-entry Cowork Library section (4-5 unique-use-case cards
-// authored in _cowork_library.py, attached at build time as item.coworkLibrary).
-// Each card: collapsible <details> with skills, instructions, apps, sample
-// inputs, prompts, expected outcome, WHAT TO WATCH (green) and HONEST FRAMING
-// (amber) callouts plus tips & variations.
+// Render the per-entry Cowork Library section using the Agent-Builder-style
+// picker + static-frame UI:
+//   • Sticky top row with one card per use case (UC 01..N) — click to swap
+//   • Below: fixed scaffold of section headers (Description, Apps, Skills,
+//     Instructions, Sample inputs, Prompts, Expected outcome, What to watch,
+//     Honest framing, Tips). Only the BODIES change between use cases —
+//     headers and structure stay constant.
+//   • Prev/Next buttons on the right of the picker AND at the bottom of the
+//     content, with disabled state on the boundaries.
+// All use cases are pre-rendered as siblings under one container; switching
+// is done by toggling display:none — zero post-mount JS init required.
+// Used by BOTH callers: the dedicated Cowork Library detail view (showCwLibFor)
+// AND the original industry/dept page Cowork sub-tab.
 function _coworkLibraryHtml(item){
   const cards=(item && item.coworkLibrary) || [];
   if(!cards.length) return '';
+  // Embedded mode = called from the Cowork Library detail view (which already
+  // shows the entry name in its own hero). In that case we skip our own header
+  // so the page doesn't render "Cowork Library — more use cases" twice.
+  const embedded = !!(item && item.__cwlibEmbedded);
   const L_TITLE=_uL('📚 Cowork Library — more use cases');
-  const L_SUB=_uL('Tap any card to expand the full prompt, skills, instructions, expected outcome, and honest framing.');
-  const L_SKILLS=_uL('SKILLS');
-  const L_INSTR=_uL('INSTRUCTIONS');
-  const L_APPS=_uL('APPS INVOLVED');
-  const L_FILES=_uL('SAMPLE INPUTS');
+  const L_SUB=_uL('Pick a use case above — every section below updates in place. Each card is a copy-paste-ready runbook.');
+  const L_INTRO=_uL('Use the cards above to switch between use cases. The section headers below stay constant — only the contents change, so you can compare runbooks at a glance. Adjust placeholders to your business reality before you send.');
+  const L_SKILLS=_uL('Skills required');
+  const L_INSTR=_uL('Instructions');
+  const L_APPS=_uL('Apps involved');
+  const L_FILES=_uL('Sample inputs');
+  const L_PROMPTS=_uL('Prompts');
+  const L_DESC=_uL('Description');
+  const L_EXP=_uL('Expected outcome');
+  const L_WATCH=_uL('What to watch');
+  const L_HONEST=_uL('Honest framing');
+  const L_TIPS=_uL('Tips & variations');
   const L_PROMPT=_uL('PROMPT');
-  const L_EXP=_uL('EXPECTED OUTCOME');
-  const L_WATCH=_uL('WHAT TO WATCH');
-  const L_HONEST=_uL('HONEST FRAMING');
-  const L_TIPS=_uL('TIPS & VARIATIONS');
   const L_COPY=_uL('📋 Copy prompt');
+  const L_NONE=_uL('Nothing to show for this use case.');
+  const L_OF=_uL(' of ');
+  const L_PREV=_uL('← Previous use case');
+  const L_NEXT=_uL('Next use case →');
   function lbl(c){
     if(c==='basic') return _uL('Basic');
     if(c==='advanced') return _uL('Advanced');
     return _uL('Intermediate');
   }
-  const body=cards.map((c,idx)=>{
+  // Unique slot id so multiple instances on the same page (defensive) don't
+  // collide on DOM ids or click handlers.
+  window._cwlibSlotCtr = (window._cwlibSlotCtr || 0) + 1;
+  const slot = 'cw_'+String(item && item.id || 'x').replace(/[^A-Za-z0-9_-]/g,'_')+'_'+window._cwlibSlotCtr;
+  const total=cards.length;
+  // ── Picker tiles (top, sticky) ────────────────────────────────────────
+  const pickerTiles=cards.map((c,idx)=>{
     const num='UC '+String(idx+1).padStart(2,'0');
     const cmplx=String(c.complexity||'intermediate').toLowerCase();
+    const title=_xformVal(c.title||'','EN');
+    const apps=(c.apps||[]);
+    const appLine=apps.length ? (apps.slice(0,2).join(' · ')+(apps.length>2?' +'+(apps.length-2):'')) : '';
+    return '<button type="button" class="cwlib-pick'+(idx===0?' selected':'')+'" data-cwlib-slot="'+slot+'" data-cwlib-idx="'+idx+'" onclick="_cwLibSelectInSlot(\''+slot+'\','+idx+')">'+
+      '<div class="cwlib-pick-top"><span class="cwlib-pick-num">'+escapeHTML(num)+'</span></div>'+
+      '<div class="cwlib-pick-title">'+escapeHTML(title)+'</div>'+
+      '<div class="cwlib-pick-meta">'+
+        '<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span>'+
+        (appLine?('<span class="pick-app">'+escapeHTML(appLine)+'</span>'):'')+
+      '</div>'+
+    '</button>';
+  }).join('');
+  // ── Per-UC content sections (all rendered, only one visible) ──────────
+  const ucSections=cards.map((c,idx)=>{
+    const num='UC '+String(idx+1).padStart(2,'0');
+    const cmplx=String(c.complexity||'intermediate').toLowerCase();
+    const title=_xformVal(c.title||'','EN');
     const apps=(c.apps||[]).map(a=>'<span class="app-pill">'+escapeHTML(a)+'</span>').join('');
     const files=(c.sample_files||[]).map(f=>{
       const name=Array.isArray(f)?(f[0]||''):(f && f.filename) || String(f||'');
@@ -4091,8 +4222,7 @@ function _coworkLibraryHtml(item){
     const prompts=(c.prompts||[]).map((p,pi)=>{
       const txt=_xformVal((typeof p==='string'?p:(p&&p.prompt||p&&p.text)||''),'EN');
       const label=(typeof p==='object'&&p&&p.label)?_xformVal(p.label,'EN'):(L_PROMPT+' '+(pi+1));
-      const cwKey='cwlib_'+(item.id||'x')+'_'+idx+'_'+pi;
-      // Stash plaintext in a hidden span so copy works without inline event payloads.
+      const cwKey='cwlib_'+(item.id||'x')+'_'+slot+'_'+idx+'_'+pi;
       return '<div class="cw-prompt">'+
         '<div class="cw-prompt-head">'+
           '<span class="cw-prompt-label">'+escapeHTML(label)+'</span>'+
@@ -4103,38 +4233,98 @@ function _coworkLibraryHtml(item){
     }).join('');
     const dept=c.dept_tag?('<span class="cw-tag">'+escapeHTML(_xformVal(c.dept_tag,'EN'))+'</span>'):'';
     const ind=c.industry_tag?('<span class="cw-tag ind">'+escapeHTML(_xformVal(c.industry_tag,'EN'))+'</span>'):'';
-    const honest=c.honest?('<div class="cw-callout cw-honest"><span class="cw-callout-label">'+L_HONEST+'</span><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):'';
-    const watchHtml=watch?('<div class="cw-callout cw-watch"><span class="cw-callout-label">'+L_WATCH+'</span><ul>'+watch+'</ul></div>'):'';
-    return '<details class="cw-card">'+
-      '<summary>'+
-        '<span class="cw-num">'+escapeHTML(num)+'</span>'+
-        '<span class="cw-head-main">'+
-          '<div class="cw-title">'+escapeHTML(_xformVal(c.title||'','EN'))+'</div>'+
-          '<div class="cw-badges">'+dept+ind+'<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span></div>'+
-        '</span>'+
-        '<span class="cw-chev">▼</span>'+
-      '</summary>'+
-      '<div class="cw-body">'+
-        (c.desc?'<p class="cw-desc">'+escapeHTML(_xformVal(c.desc,'EN'))+'</p>':'')+
-        (apps?('<div class="cw-section-label">'+L_APPS+'</div><div class="cw-apps-row">'+apps+'</div>'):'')+
-        (skills?('<div class="cw-section-label">'+L_SKILLS+'</div><ul class="cw-list">'+skills+'</ul>'):'')+
-        (instr?('<div class="cw-section-label">'+L_INSTR+'</div><ol class="cw-instructions">'+instr+'</ol>'):'')+
-        (files?('<div class="cw-section-label">'+L_FILES+'</div><div class="cw-files-pills">'+files+'</div>'):'')+
-        prompts+
-        (expected?('<div class="cw-section-label">'+L_EXP+'</div><ul class="cw-list">'+expected+'</ul>'):'')+
-        watchHtml+
-        honest+
-        (tips?('<div class="cw-section-label">'+L_TIPS+'</div><ul class="cw-list">'+tips+'</ul>'):'')+
+    const honest=c.honest?('<div class="cw-callout cw-honest"><span class="cw-callout-label">'+L_HONEST+'</span><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+    const watchHtml=watch?('<div class="cw-callout cw-watch"><span class="cw-callout-label">'+L_WATCH+'</span><ul>'+watch+'</ul></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+    function block(icon, label, bodyHtml, hasContent){
+      const inner = hasContent ? bodyHtml : ('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+      return '<div class="cwlib-block">'+
+        '<div class="cwlib-block-head"><span class="bh-icon">'+icon+'</span><span class="bh-label">'+escapeHTML(label)+'</span></div>'+
+        '<div class="cwlib-block-body">'+inner+'</div>'+
+      '</div>';
+    }
+    const isFirst = (idx===0);
+    const isLast = (idx===total-1);
+    return '<section class="cwlib-uc" data-cwlib-slot="'+slot+'" data-cwlib-idx="'+idx+'"'+(isFirst?'':' style="display:none"')+'>'+
+      '<div class="cwlib-uc-head">'+
+        '<div class="cwlib-uc-head-num">'+escapeHTML(num)+'</div>'+
+        '<div class="cwlib-uc-head-main">'+
+          '<div class="cwlib-uc-head-title">'+escapeHTML(title)+'</div>'+
+          '<div class="cwlib-uc-head-badges">'+dept+ind+'<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span></div>'+
+        '</div>'+
+        '<span class="cwlib-pos-chip">'+(idx+1)+escapeHTML(L_OF)+total+'</span>'+
       '</div>'+
-    '</details>';
+      block('📋', L_DESC, '<p>'+escapeHTML(_xformVal(c.desc||'','EN'))+'</p>', !!c.desc) +
+      block('📱', L_APPS, '<div class="cw-apps-row">'+apps+'</div>', !!apps) +
+      block('🎯', L_SKILLS, '<ul class="cw-list">'+skills+'</ul>', !!skills) +
+      block('🧭', L_INSTR, '<ol class="cw-instructions">'+instr+'</ol>', !!instr) +
+      block('📎', L_FILES, '<div class="cw-files-pills">'+files+'</div>', !!files) +
+      block('💬', L_PROMPTS, prompts, !!prompts) +
+      block('✅', L_EXP, '<ul class="cw-list">'+expected+'</ul>', !!expected) +
+      block('👀', L_WATCH, watchHtml, true) +
+      block('⚖️', L_HONEST, honest, true) +
+      block('💡', L_TIPS, '<ul class="cw-list">'+tips+'</ul>', !!tips) +
+      '<div class="cwlib-block-prev-next">'+
+        '<button class="cwlib-pn-btn" type="button" onclick="_cwLibNavInSlot(\''+slot+'\',-1)"'+(isFirst?' disabled':'')+'>'+escapeHTML(L_PREV)+'</button>'+
+        '<span class="cwlib-pn-spacer">'+(idx+1)+escapeHTML(L_OF)+total+'</span>'+
+        '<button class="cwlib-pn-btn" type="button" onclick="_cwLibNavInSlot(\''+slot+'\',1)"'+(isLast?' disabled':'')+'>'+escapeHTML(L_NEXT)+'</button>'+
+      '</div>'+
+    '</section>';
   }).join('');
-  return '<div class="cw-section">'+
-    '<div class="cw-section-head">'+
+  const head = embedded ? '' :
+    ('<div class="cw-section-head">'+
       '<h3 class="cw-section-title">'+L_TITLE+'</h3>'+
       '<span class="cw-section-sub">'+escapeHTML(L_SUB)+'</span>'+
+    '</div>');
+  const intro = '<div class="cwlib-runbook-intro"><span class="ri-icon">📖</span><div>'+escapeHTML(L_INTRO)+'</div></div>';
+  return '<div class="cw-section'+(embedded?' cw-section-embedded':'')+'" data-cwlib-runbook="'+slot+'">'+
+    head+
+    intro+
+    '<div class="cwlib-picker-wrap" data-cwlib-slot="'+slot+'">'+
+      '<div class="cwlib-picker-row">'+
+        '<div class="cwlib-picker-scroll">'+pickerTiles+'</div>'+
+        '<div class="cwlib-nav-btns">'+
+          '<button class="cwlib-nav-btn" type="button" data-cwlib-nav-prev="'+slot+'" onclick="_cwLibNavInSlot(\''+slot+'\',-1)" disabled>‹</button>'+
+          '<button class="cwlib-nav-btn" type="button" data-cwlib-nav-next="'+slot+'" onclick="_cwLibNavInSlot(\''+slot+'\',1)"'+(total<=1?' disabled':'')+'>›</button>'+
+        '</div>'+
+      '</div>'+
     '</div>'+
-    '<div class="cw-grid">'+body+'</div>'+
+    '<div class="cwlib-runbook" data-cwlib-stage="'+slot+'">'+ucSections+'</div>'+
   '</div>';
+}
+
+// Picker handler — swap which UC section is visible inside a given slot.
+// Toggles display on the per-UC <section> elements, the selected class on the
+// picker buttons, and the disabled state on the top-row nav buttons.
+function _cwLibSelectInSlot(slot, idx){
+  const picks = document.querySelectorAll('[data-cwlib-slot="'+slot+'"].cwlib-pick');
+  if(!picks.length) return;
+  const total = picks.length;
+  if(idx<0 || idx>=total) return;
+  picks.forEach(function(b){
+    const i = parseInt(b.getAttribute('data-cwlib-idx'),10);
+    b.classList.toggle('selected', i===idx);
+    if(i===idx){
+      // bring selected tile into view inside the horizontal scroller
+      try { b.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'}); } catch(e){}
+    }
+  });
+  document.querySelectorAll('section.cwlib-uc[data-cwlib-slot="'+slot+'"]').forEach(function(s){
+    const i = parseInt(s.getAttribute('data-cwlib-idx'),10);
+    s.style.display = (i===idx) ? '' : 'none';
+  });
+  const navPrev = document.querySelector('[data-cwlib-nav-prev="'+slot+'"]');
+  const navNext = document.querySelector('[data-cwlib-nav-next="'+slot+'"]');
+  if(navPrev) navPrev.disabled = (idx<=0);
+  if(navNext) navNext.disabled = (idx>=total-1);
+}
+
+// Prev/Next navigation — find the currently-selected UC in this slot and step
+// by delta (-1 / +1). Clamped to [0, total-1] via the bounds check above.
+function _cwLibNavInSlot(slot, delta){
+  const picks = document.querySelectorAll('[data-cwlib-slot="'+slot+'"].cwlib-pick');
+  let cur = 0;
+  picks.forEach(function(b, i){ if(b.classList.contains('selected')) cur = i; });
+  _cwLibSelectInSlot(slot, cur + (delta||0));
 }
 
 // Delegated copy-handler for Cowork Library prompt buttons (one listener,
@@ -4818,7 +5008,7 @@ function showCwLibFor(entryId){
   // Render the cards reusing the existing _coworkLibraryHtml renderer (shim item)
   const host=document.getElementById('cwlib-detail-cards');
   if(host){
-    const shim={ id: entry.id, coworkLibrary: entry.coworkLibrary };
+    const shim={ id: entry.id, coworkLibrary: entry.coworkLibrary, __cwlibEmbedded: true };
     host.innerHTML = (typeof _coworkLibraryHtml==='function') ? _coworkLibraryHtml(shim) : '';
     // Re-wire copy buttons inside the rendered cards
     if(typeof _wireCoworkLibraryCopy==='function') _wireCoworkLibraryCopy(host);
@@ -5988,7 +6178,7 @@ function logout(){
 }
 
 // ── Changelog (discreet hidden tab) ──
-const CHANGELOG_DATA = [{"hash":"58f9c33","date":"2026-05-11","desc":"Cowork Library: new 4th sidebar tab mirroring all coworkLibrary content"},{"hash":"6fb2163","date":"2026-05-11","desc":"Lock changelog behind owner-only password (ZavaAdmin2026)"},{"hash":"894964a","date":"2026-05-11","desc":"Responsive layout: eliminate horizontal overflow across 320-1280 widths"},{"hash":"a2e76f9","date":"2026-05-11","desc":"Cagamas hackathon card: remove team codes (keep facilitator view)"},{"hash":"2fff630","date":"2026-05-11","desc":"Storyboard fix — render tool label + description body on toolId-only tasks"},{"hash":"de4047c","date":"2026-05-11","desc":"Notebook + Cowork Library: close all file-pill 404s with rich data"},{"hash":"88fd44f","date":"2026-05-11","desc":"Cowork+Notebook fix: clickable file pills and 75 redesigned sample files"},{"hash":"77224e9","date":"2026-05-11","desc":"UI alignment + 75 missing demo data files"},{"hash":"8036c63","date":"2026-05-11","desc":"UI + data: fix empty-sibling-card grid stretch + clean Cowork sample_files render"},{"hash":"3740fe1","date":"2026-05-11","desc":"Notebook Library polish: per-entry title suffix + overflow safety + 1050px grid breakpoint"},{"hash":"59258f2","date":"2026-05-11","desc":"Notebook Library: gate to Notebook tab + add 2026 output features + per-entry personalisation"},{"hash":"aa87d5a","date":"2026-05-11","desc":"Cowork & Notebook Library: ungate cowork render + add Notebook Library (13 archetype cards, 55 entries)"},{"hash":"490de0c","date":"2026-05-11","desc":"Notebook: strip setup-leak from bespoke prompt bodies (ind_batch5.py)"},{"hash":"82a501a","date":"2026-05-11","desc":"Cowork Library: 63-card per-entry catalog (Contoso C-Suite + cowork-prompts style)"},{"hash":"d7f8049","date":"2026-05-11","desc":"Free-tier Agent Builder — fix entry-id mismatches + per-entry agent meta"},{"hash":"4134d2e","date":"2026-05-11","desc":"Free-tier Agent Builder — per-entry industry-specific knowledge URLs"},{"hash":"3d63106","date":"2026-05-10","desc":"Cowork — diversify named recipients per industry archetype"},{"hash":"3f4bbfd","date":"2026-05-10","desc":"Cowork runbook — extend to Aaron Yue 9-row format"},{"hash":"8ad7476","date":"2026-05-10","desc":"Notebook — unique scenarios per entry + presenter-only Demo Guide callout"},{"hash":"7a4a74b","date":"2026-05-10","desc":"Move PAID Agent Builder to Microsoft 365 Copilot Tools tab (was in Chat by mistake)"},{"hash":"f126c4a","date":"2026-05-10","desc":"Remove temp _script.js extracted during hotfix debug"},{"hash":"c17ddb5","date":"2026-05-10","desc":"HOTFIX — Cowork tips library broke JS parse (page rendered ~29 industries)"},{"hash":"334da73","date":"2026-05-10","desc":"Final audit fixups — license labels + i18n completeness"},{"hash":"150ca21","date":"2026-05-10","desc":"Notebook prompts — named-file targeting (personal-document focus pattern)"},{"hash":"682ad45","date":"2026-05-10","desc":"Cowork runbook enrich — Skills, Description, Outcome, Tips above every prompt"},{"hash":"13e21dc","date":"2026-05-10","desc":"Split Agent Builder into paid (file knowledge) + free (URL knowledge) tiers"},{"hash":"e7d1fd8","date":"2026-05-10","desc":"Industries-most-affected drill-down on every department"},{"hash":"b85c111","date":"2026-05-10","desc":"Files-match unique use cases — fix dangling ref + audit clean"},{"hash":"1a46b53","date":"2026-05-10","desc":"W/P/X Agent consistency + stay-in-chat normaliser"},{"hash":"bb42117","date":"2026-05-10","desc":"Cowork recheck — Aaron Yue / OneDrive Intelligence approval-gate normaliser"},{"hash":"507bce9","date":"2026-05-10","desc":"Notebook recheck — dedicated tab + canonical demo guide"},{"hash":"ff6981a","date":"2026-05-10","desc":"Unique use cases: 13 template-clone prompts rewritten across 6 entries"},{"hash":"e27093d","date":"2026-05-10","desc":"Cross-check consistency: 20 tool labels normalised in ind_batch6"},{"hash":"e0b8aa6","date":"2026-05-10","desc":"Data realism audit: vague phrasings replaced with named teams"},{"hash":"a36757e","date":"2026-05-10","desc":"Tech feasibility recheck: 6 license mislabels fixed in ind_batch6"},{"hash":"ea30565","date":"2026-05-10","desc":"Notebook: every entry now lists its source files in setup banner + prompt 1"},{"hash":"e2f7f18","date":"2026-05-10","desc":"Cowork: full IHH-style fan-out — named recipients + 5 actions on every prompt"},{"hash":"b911d72","date":"2026-05-10","desc":"Agent Builder: render TWO versions side-by-side (Premium + Free)"},{"hash":"c12e05d","date":"2026-05-10","desc":"Generalize Pacifica/Pacifican to ASEAN/APAC across all entries"},{"hash":"221dbda","date":"2026-05-10","desc":"Departments: rich Industries-most-affected pills (40-43 per dept)"},{"hash":"08d4693","date":"2026-05-10","desc":"Word/PPT/Excel Agent license: flip M365_LIC to ANY_LIC across all 55 entries"},{"hash":"1956ad6","date":"2026-05-10","desc":"Word/PPT/Excel Agent instructions: rewrite per Microsoft support article"},{"hash":"4fe5b37","date":"2026-05-10","desc":"Departments most affected pills: fix 22 industries with dangling dept IDs"},{"hash":"9665cf9","date":"2026-05-10","desc":"Index page: rebrand to Zava Conglomerate, update count to 43+13, password ZavaGlobal2026"},{"hash":"fbaebbe","date":"2026-05-10","desc":"Dark mode third sweep: --navy text invisible against dark navy surface"},{"hash":"b02e85d","date":"2026-05-10","desc":"Notebook follow demo guide: 10-step flow render-time intercept"},{"hash":"424cea7","date":"2026-05-10","desc":"Teams prompts: remove redundant 'Save the file as X.docx in OneDrive' tails"},{"hash":"d66244d","date":"2026-05-10","desc":"Hidden changelog tab — discreet icon next to Lock + Ctrl+Shift+L shortcut"},{"hash":"1f93a64","date":"2026-05-10","desc":"Alliance team codes: align to Cagamas style (short uppercase) + suppress redundant single-group header"},{"hash":"b607af2","date":"2026-05-10","desc":"Other Pages: collapse Customer Demos section into Customer Workshops"},{"hash":"d8bbce7","date":"2026-05-10","desc":"Storyboard description consistency: convert Shape B (og/re/mfg) to Shape A by adding verb fields"},{"hash":"fa5fad9","date":"2026-05-10","desc":"files/: generate 378 placeholder Office files (134 docx + 115 xlsx + 129 pptx) so every prompt reference resolves"},{"hash":"e9165a2","date":"2026-05-10","desc":"Other Pages: add 3 customer demos — Kenanga C-Suite, Rivanta CTO, Contoso Cowork"},{"hash":"040e72d","date":"2026-05-10","desc":"Dark-mode second sweep — 11 more elements made readable in dark + system themes"},{"hash":"2aea66a","date":"2026-05-10","desc":"Storyboard description coverage: synthesise summaries for Shape C entries"},{"hash":"ff34f72","date":"2026-05-10","desc":"Departments-most-affected coverage: dedupe IT&Digital + add reverse mirror to all departments"},{"hash":"a514554","date":"2026-05-10","desc":"Align Alliance Bank team codes with Cagamas — wrap in single teamGroup"},{"hash":"341da4f","date":"2026-05-10","desc":"Cowork: add 3 cross-cutting delegation scenarios per entry"},{"hash":"aa42bbd","date":"2026-05-10","desc":"Fix carousel '??' mojibake on 5 What's-New titles"},{"hash":"e8c1629","date":"2026-05-10","desc":"Cowork now lives in its own tab between Microsoft 365 Copilot Tools and Copilot Chat Prompts"},{"hash":"6cc6fbf","date":"2026-05-10","desc":"Fix dark mode invisible text — var(--navy) used as text color on dark navy surface"},{"hash":"a340877","date":"2026-05-10","desc":"Fix dark mode contrast — invisible text + light-wash bg in 9 spots"},{"hash":"c5532f4","date":"2026-05-10","desc":"Fix BM/BI prompt mixing: auto-fill 674 empty promptsBM from promptsID with token swaps"},{"hash":"32cbfa2","date":"2026-05-10","desc":"Rework show-password toggle on the access gate (index.html)"},{"hash":"2b74335","date":"2026-05-10","desc":"Translate tool-info banner bodies + preserve open tool on language toggle"},{"hash":"5f7514a","date":"2026-05-10","desc":"Hide subsidiaries chip strip from entry hero (keep search-only)"},{"hash":"35076e4","date":"2026-05-10","desc":"Fix system-default theme contrast + complete language toggle coverage"},{"hash":"9265d17","date":"2026-05-10","desc":"Subsidiaries: map customer accounts list onto industries"},{"hash":"266f630","date":"2026-05-10","desc":"Search: tie company names to records (raw + scrubbed + persona fields)"},{"hash":"060fe81","date":"2026-05-10","desc":"Audit new features: roll out April 2026 Microsoft 365 Copilot Blog updates"},{"hash":"1df0a51","date":"2026-05-10","desc":"Audit mobile-adaptive: tighten layout at 480px and add 380px breakpoint"},{"hash":"8bfdd07","date":"2026-05-10","desc":"Audit technical feasibility: align license tier to actual prompt capability"},{"hash":"d8914e6","date":"2026-05-10","desc":"Audit uniqueness: differentiate 8 dept PPT-generic + 5 industry AC-generic dupes"},{"hash":"7fa16be","date":"2026-05-10","desc":"Audit comprehensiveness: normalise tool labels to 14 canonical names"},{"hash":"e01515a","date":"2026-05-10","desc":"Audit realism: align persona accounts + licenses to canonical mapping"},{"hash":"3772ea6","date":"2026-05-10","desc":"Audit consistency: normalise license labels across personas + tools"},{"hash":"0d0e79d","date":"2026-05-10","desc":"Agent Builder: tier the license correctly + add knowledge-tier disclaimer"},{"hash":"c0f1033","date":"2026-05-10","desc":"Dark mode: contrast overrides for Cowork / Notebook / Agent Builder / prompt blocks / pills"},{"hash":"c17a346","date":"2026-05-10","desc":"Other Pages tab: stop scrubbing real workshop / hackathon names"},{"hash":"f142302","date":"2026-05-10","desc":"Generate 316 industry reference files (xlsx + docx) per entry"},{"hash":"68b8901","date":"2026-05-10","desc":"Global locale: scrub MY/ID regulator names + agency acronyms + specific cities"},{"hash":"e446036","date":"2026-05-10","desc":"Storyboard: Shape B narrative renders as full-body description (no synth template)"},{"hash":"3a70743","date":"2026-05-10","desc":"Storyboard: render-time verb shortener for clean moment cards"},{"hash":"c8c512d","date":"2026-05-10","desc":"Agent Builder: per-entry-unique 3-agent catalog across all 56 entries (no War Room template repeats)"},{"hash":"18888ab","date":"2026-05-10","desc":"Teams: canonical 3-meeting IHH structure (52 blocks); fix tab-click auto-scroll-to-top"},{"hash":"d1946e4","date":"2026-05-10","desc":"Agent Builder: IHH-style 3-card picker (General entry)"},{"hash":"355f746","date":"2026-05-10","desc":"UI: theme toggle (Light/Dark/System), responsive sidebar drawer, contrast bumps."},{"hash":"4013e64","date":"2026-05-10","desc":"Persona audit: fix 144 non-conforming names in dept_data5.py."},{"hash":"c4dfd0f","date":"2026-05-10","desc":"Rebrand: M365 Copilot -> Microsoft 365 Copilot (1,129 replacements)."},{"hash":"4222d0e","date":"2026-05-10","desc":"Runtime translator: disable EN→BM and BI→EN dictionary substitution."},{"hash":"2992d29","date":"2026-05-10","desc":"Cowork prompts: append named-recipient appendix (176 prompts)."},{"hash":"bfada09","date":"2026-05-10","desc":"Meeting-minutes prompts: normalise to canonical 5-section template (66 prompts)."},{"hash":"f8952c8","date":"2026-05-10","desc":"Multi-model prefix removed + GPT/Claude version sweep (135 replacements)."},{"hash":"2d27dc2","date":"2026-05-10","desc":"Storyboard moment descriptions per-tool + agent-builder Test step agent-agnostic."},{"hash":"bd9e615","date":"2026-05-10","desc":"Prompts: convert 348 structured-label prompts (Goal/Context/Source/Expectation + Tujuan/Konteks/Sumber/Ekspektasi) across ind_batch10/11/12 to flowing prose, lengthened with directive lead-in and verification trail."},{"hash":"fc5ae67","date":"2026-05-10","desc":"Storyboard render: normalise 3 source schemas — (a) standard nested {tasks:[{n,verb,label}]}, (b) ind_batch4 {objective, desc/descID}, (c) flat ind_batch6 {exercise, task/taskID, tool}. Now fintech-payments, government-agency, og-downstream, renewable-energy, and industrial-manufacturing render real moment cards instead of empty phases. Strips leading 'Exercise N — ' from titles. Auto-numbers tasks when 'n' is missing."},{"hash":"5aae746","date":"2026-05-10","desc":"Storyboard: remove 'Exercise N' badge from phase header — title alone reads cleaner."},{"hash":"ea63f1c","date":"2026-05-10","desc":"Storyboard moment cards: drop Show & Tell / Hands-on mode pill and remove duration pill from exercise header. Keep verb (solution) prominent, add a short locale-aware description below ('Open {tool} and produce the {verb}, grounded in the scenario files.' / BM / BI variants)."},{"hash":"919264a","date":"2026-05-10","desc":"Hackathon cards: span 2 grid columns when team data is present (uses the right-side whitespace); split 'Team N — Desc' label into a coloured team-num badge + wrapped description so each row is unmistakably labelled even in tight 2-col layout."},{"hash":"6344333","date":"2026-05-10","desc":"Personas: standardize all 49 non-conforming names to Hadar/Sasha/Mod Admin/Daichi across 6 source files. Storyboard: restructure to IHH 8-moment style — exercise header strips with Exercise N badge + minutes pill, plus grid of moment cards (numbered, tool label, action verb, mode). Hero now reads 'X moments across one workday' with X = total tasks count."}];
+const CHANGELOG_DATA = [{"hash":"a0521b6","date":"2026-05-11","desc":"Sidebar tabs: shorten Departments to Dept, even out spacing"},{"hash":"58f9c33","date":"2026-05-11","desc":"Cowork Library: new 4th sidebar tab mirroring all coworkLibrary content"},{"hash":"6fb2163","date":"2026-05-11","desc":"Lock changelog behind owner-only password (ZavaAdmin2026)"},{"hash":"894964a","date":"2026-05-11","desc":"Responsive layout: eliminate horizontal overflow across 320-1280 widths"},{"hash":"a2e76f9","date":"2026-05-11","desc":"Cagamas hackathon card: remove team codes (keep facilitator view)"},{"hash":"2fff630","date":"2026-05-11","desc":"Storyboard fix — render tool label + description body on toolId-only tasks"},{"hash":"de4047c","date":"2026-05-11","desc":"Notebook + Cowork Library: close all file-pill 404s with rich data"},{"hash":"88fd44f","date":"2026-05-11","desc":"Cowork+Notebook fix: clickable file pills and 75 redesigned sample files"},{"hash":"77224e9","date":"2026-05-11","desc":"UI alignment + 75 missing demo data files"},{"hash":"8036c63","date":"2026-05-11","desc":"UI + data: fix empty-sibling-card grid stretch + clean Cowork sample_files render"},{"hash":"3740fe1","date":"2026-05-11","desc":"Notebook Library polish: per-entry title suffix + overflow safety + 1050px grid breakpoint"},{"hash":"59258f2","date":"2026-05-11","desc":"Notebook Library: gate to Notebook tab + add 2026 output features + per-entry personalisation"},{"hash":"aa87d5a","date":"2026-05-11","desc":"Cowork & Notebook Library: ungate cowork render + add Notebook Library (13 archetype cards, 55 entries)"},{"hash":"490de0c","date":"2026-05-11","desc":"Notebook: strip setup-leak from bespoke prompt bodies (ind_batch5.py)"},{"hash":"82a501a","date":"2026-05-11","desc":"Cowork Library: 63-card per-entry catalog (Contoso C-Suite + cowork-prompts style)"},{"hash":"d7f8049","date":"2026-05-11","desc":"Free-tier Agent Builder — fix entry-id mismatches + per-entry agent meta"},{"hash":"4134d2e","date":"2026-05-11","desc":"Free-tier Agent Builder — per-entry industry-specific knowledge URLs"},{"hash":"3d63106","date":"2026-05-10","desc":"Cowork — diversify named recipients per industry archetype"},{"hash":"3f4bbfd","date":"2026-05-10","desc":"Cowork runbook — extend to Aaron Yue 9-row format"},{"hash":"8ad7476","date":"2026-05-10","desc":"Notebook — unique scenarios per entry + presenter-only Demo Guide callout"},{"hash":"7a4a74b","date":"2026-05-10","desc":"Move PAID Agent Builder to Microsoft 365 Copilot Tools tab (was in Chat by mistake)"},{"hash":"f126c4a","date":"2026-05-10","desc":"Remove temp _script.js extracted during hotfix debug"},{"hash":"c17ddb5","date":"2026-05-10","desc":"HOTFIX — Cowork tips library broke JS parse (page rendered ~29 industries)"},{"hash":"334da73","date":"2026-05-10","desc":"Final audit fixups — license labels + i18n completeness"},{"hash":"150ca21","date":"2026-05-10","desc":"Notebook prompts — named-file targeting (personal-document focus pattern)"},{"hash":"682ad45","date":"2026-05-10","desc":"Cowork runbook enrich — Skills, Description, Outcome, Tips above every prompt"},{"hash":"13e21dc","date":"2026-05-10","desc":"Split Agent Builder into paid (file knowledge) + free (URL knowledge) tiers"},{"hash":"e7d1fd8","date":"2026-05-10","desc":"Industries-most-affected drill-down on every department"},{"hash":"b85c111","date":"2026-05-10","desc":"Files-match unique use cases — fix dangling ref + audit clean"},{"hash":"1a46b53","date":"2026-05-10","desc":"W/P/X Agent consistency + stay-in-chat normaliser"},{"hash":"bb42117","date":"2026-05-10","desc":"Cowork recheck — Aaron Yue / OneDrive Intelligence approval-gate normaliser"},{"hash":"507bce9","date":"2026-05-10","desc":"Notebook recheck — dedicated tab + canonical demo guide"},{"hash":"ff6981a","date":"2026-05-10","desc":"Unique use cases: 13 template-clone prompts rewritten across 6 entries"},{"hash":"e27093d","date":"2026-05-10","desc":"Cross-check consistency: 20 tool labels normalised in ind_batch6"},{"hash":"e0b8aa6","date":"2026-05-10","desc":"Data realism audit: vague phrasings replaced with named teams"},{"hash":"a36757e","date":"2026-05-10","desc":"Tech feasibility recheck: 6 license mislabels fixed in ind_batch6"},{"hash":"ea30565","date":"2026-05-10","desc":"Notebook: every entry now lists its source files in setup banner + prompt 1"},{"hash":"e2f7f18","date":"2026-05-10","desc":"Cowork: full IHH-style fan-out — named recipients + 5 actions on every prompt"},{"hash":"b911d72","date":"2026-05-10","desc":"Agent Builder: render TWO versions side-by-side (Premium + Free)"},{"hash":"c12e05d","date":"2026-05-10","desc":"Generalize Pacifica/Pacifican to ASEAN/APAC across all entries"},{"hash":"221dbda","date":"2026-05-10","desc":"Departments: rich Industries-most-affected pills (40-43 per dept)"},{"hash":"08d4693","date":"2026-05-10","desc":"Word/PPT/Excel Agent license: flip M365_LIC to ANY_LIC across all 55 entries"},{"hash":"1956ad6","date":"2026-05-10","desc":"Word/PPT/Excel Agent instructions: rewrite per Microsoft support article"},{"hash":"4fe5b37","date":"2026-05-10","desc":"Departments most affected pills: fix 22 industries with dangling dept IDs"},{"hash":"9665cf9","date":"2026-05-10","desc":"Index page: rebrand to Zava Conglomerate, update count to 43+13, password ZavaGlobal2026"},{"hash":"fbaebbe","date":"2026-05-10","desc":"Dark mode third sweep: --navy text invisible against dark navy surface"},{"hash":"b02e85d","date":"2026-05-10","desc":"Notebook follow demo guide: 10-step flow render-time intercept"},{"hash":"424cea7","date":"2026-05-10","desc":"Teams prompts: remove redundant 'Save the file as X.docx in OneDrive' tails"},{"hash":"d66244d","date":"2026-05-10","desc":"Hidden changelog tab — discreet icon next to Lock + Ctrl+Shift+L shortcut"},{"hash":"1f93a64","date":"2026-05-10","desc":"Alliance team codes: align to Cagamas style (short uppercase) + suppress redundant single-group header"},{"hash":"b607af2","date":"2026-05-10","desc":"Other Pages: collapse Customer Demos section into Customer Workshops"},{"hash":"d8bbce7","date":"2026-05-10","desc":"Storyboard description consistency: convert Shape B (og/re/mfg) to Shape A by adding verb fields"},{"hash":"fa5fad9","date":"2026-05-10","desc":"files/: generate 378 placeholder Office files (134 docx + 115 xlsx + 129 pptx) so every prompt reference resolves"},{"hash":"e9165a2","date":"2026-05-10","desc":"Other Pages: add 3 customer demos — Kenanga C-Suite, Rivanta CTO, Contoso Cowork"},{"hash":"040e72d","date":"2026-05-10","desc":"Dark-mode second sweep — 11 more elements made readable in dark + system themes"},{"hash":"2aea66a","date":"2026-05-10","desc":"Storyboard description coverage: synthesise summaries for Shape C entries"},{"hash":"ff34f72","date":"2026-05-10","desc":"Departments-most-affected coverage: dedupe IT&Digital + add reverse mirror to all departments"},{"hash":"a514554","date":"2026-05-10","desc":"Align Alliance Bank team codes with Cagamas — wrap in single teamGroup"},{"hash":"341da4f","date":"2026-05-10","desc":"Cowork: add 3 cross-cutting delegation scenarios per entry"},{"hash":"aa42bbd","date":"2026-05-10","desc":"Fix carousel '??' mojibake on 5 What's-New titles"},{"hash":"e8c1629","date":"2026-05-10","desc":"Cowork now lives in its own tab between Microsoft 365 Copilot Tools and Copilot Chat Prompts"},{"hash":"6cc6fbf","date":"2026-05-10","desc":"Fix dark mode invisible text — var(--navy) used as text color on dark navy surface"},{"hash":"a340877","date":"2026-05-10","desc":"Fix dark mode contrast — invisible text + light-wash bg in 9 spots"},{"hash":"c5532f4","date":"2026-05-10","desc":"Fix BM/BI prompt mixing: auto-fill 674 empty promptsBM from promptsID with token swaps"},{"hash":"32cbfa2","date":"2026-05-10","desc":"Rework show-password toggle on the access gate (index.html)"},{"hash":"2b74335","date":"2026-05-10","desc":"Translate tool-info banner bodies + preserve open tool on language toggle"},{"hash":"5f7514a","date":"2026-05-10","desc":"Hide subsidiaries chip strip from entry hero (keep search-only)"},{"hash":"35076e4","date":"2026-05-10","desc":"Fix system-default theme contrast + complete language toggle coverage"},{"hash":"9265d17","date":"2026-05-10","desc":"Subsidiaries: map customer accounts list onto industries"},{"hash":"266f630","date":"2026-05-10","desc":"Search: tie company names to records (raw + scrubbed + persona fields)"},{"hash":"060fe81","date":"2026-05-10","desc":"Audit new features: roll out April 2026 Microsoft 365 Copilot Blog updates"},{"hash":"1df0a51","date":"2026-05-10","desc":"Audit mobile-adaptive: tighten layout at 480px and add 380px breakpoint"},{"hash":"8bfdd07","date":"2026-05-10","desc":"Audit technical feasibility: align license tier to actual prompt capability"},{"hash":"d8914e6","date":"2026-05-10","desc":"Audit uniqueness: differentiate 8 dept PPT-generic + 5 industry AC-generic dupes"},{"hash":"7fa16be","date":"2026-05-10","desc":"Audit comprehensiveness: normalise tool labels to 14 canonical names"},{"hash":"e01515a","date":"2026-05-10","desc":"Audit realism: align persona accounts + licenses to canonical mapping"},{"hash":"3772ea6","date":"2026-05-10","desc":"Audit consistency: normalise license labels across personas + tools"},{"hash":"0d0e79d","date":"2026-05-10","desc":"Agent Builder: tier the license correctly + add knowledge-tier disclaimer"},{"hash":"c0f1033","date":"2026-05-10","desc":"Dark mode: contrast overrides for Cowork / Notebook / Agent Builder / prompt blocks / pills"},{"hash":"c17a346","date":"2026-05-10","desc":"Other Pages tab: stop scrubbing real workshop / hackathon names"},{"hash":"f142302","date":"2026-05-10","desc":"Generate 316 industry reference files (xlsx + docx) per entry"},{"hash":"68b8901","date":"2026-05-10","desc":"Global locale: scrub MY/ID regulator names + agency acronyms + specific cities"},{"hash":"e446036","date":"2026-05-10","desc":"Storyboard: Shape B narrative renders as full-body description (no synth template)"},{"hash":"3a70743","date":"2026-05-10","desc":"Storyboard: render-time verb shortener for clean moment cards"},{"hash":"c8c512d","date":"2026-05-10","desc":"Agent Builder: per-entry-unique 3-agent catalog across all 56 entries (no War Room template repeats)"},{"hash":"18888ab","date":"2026-05-10","desc":"Teams: canonical 3-meeting IHH structure (52 blocks); fix tab-click auto-scroll-to-top"},{"hash":"d1946e4","date":"2026-05-10","desc":"Agent Builder: IHH-style 3-card picker (General entry)"},{"hash":"355f746","date":"2026-05-10","desc":"UI: theme toggle (Light/Dark/System), responsive sidebar drawer, contrast bumps."},{"hash":"4013e64","date":"2026-05-10","desc":"Persona audit: fix 144 non-conforming names in dept_data5.py."},{"hash":"c4dfd0f","date":"2026-05-10","desc":"Rebrand: M365 Copilot -> Microsoft 365 Copilot (1,129 replacements)."},{"hash":"4222d0e","date":"2026-05-10","desc":"Runtime translator: disable EN→BM and BI→EN dictionary substitution."},{"hash":"2992d29","date":"2026-05-10","desc":"Cowork prompts: append named-recipient appendix (176 prompts)."},{"hash":"bfada09","date":"2026-05-10","desc":"Meeting-minutes prompts: normalise to canonical 5-section template (66 prompts)."},{"hash":"f8952c8","date":"2026-05-10","desc":"Multi-model prefix removed + GPT/Claude version sweep (135 replacements)."},{"hash":"2d27dc2","date":"2026-05-10","desc":"Storyboard moment descriptions per-tool + agent-builder Test step agent-agnostic."},{"hash":"bd9e615","date":"2026-05-10","desc":"Prompts: convert 348 structured-label prompts (Goal/Context/Source/Expectation + Tujuan/Konteks/Sumber/Ekspektasi) across ind_batch10/11/12 to flowing prose, lengthened with directive lead-in and verification trail."},{"hash":"fc5ae67","date":"2026-05-10","desc":"Storyboard render: normalise 3 source schemas — (a) standard nested {tasks:[{n,verb,label}]}, (b) ind_batch4 {objective, desc/descID}, (c) flat ind_batch6 {exercise, task/taskID, tool}. Now fintech-payments, government-agency, og-downstream, renewable-energy, and industrial-manufacturing render real moment cards instead of empty phases. Strips leading 'Exercise N — ' from titles. Auto-numbers tasks when 'n' is missing."},{"hash":"5aae746","date":"2026-05-10","desc":"Storyboard: remove 'Exercise N' badge from phase header — title alone reads cleaner."},{"hash":"ea63f1c","date":"2026-05-10","desc":"Storyboard moment cards: drop Show & Tell / Hands-on mode pill and remove duration pill from exercise header. Keep verb (solution) prominent, add a short locale-aware description below ('Open {tool} and produce the {verb}, grounded in the scenario files.' / BM / BI variants)."},{"hash":"919264a","date":"2026-05-10","desc":"Hackathon cards: span 2 grid columns when team data is present (uses the right-side whitespace); split 'Team N — Desc' label into a coloured team-num badge + wrapped description so each row is unmistakably labelled even in tight 2-col layout."}];
 function _renderChangelog(){
   const body=document.getElementById('changelog-body');
   if(!body) return;
