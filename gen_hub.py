@@ -343,7 +343,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .cw-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow .2s,transform .2s}
 .cw-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
 .cw-card[open]{box-shadow:var(--shadow-sm)}
-.cw-card summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:flex-start;gap:12px;background:linear-gradient(135deg,rgba(254,243,199,0.35),rgba(253,230,138,0.25));border-bottom:1px solid transparent}
+.cw-card summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(254,243,199,0.35),rgba(253,230,138,0.25));border-bottom:1px solid transparent}
 .cw-card summary::-webkit-details-marker{display:none}
 .cw-card[open] summary{border-bottom-color:var(--border)}
 .cw-card summary:hover{background:linear-gradient(135deg,rgba(254,243,199,0.55),rgba(253,230,138,0.40))}
