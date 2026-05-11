@@ -88,10 +88,10 @@ html{overflow-x:hidden}
 .topbar-title{color:#FFFFFF;font-size:15px;font-weight:700;letter-spacing:0.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .topbar-badge{background:rgba(0,168,168,0.2);border:1px solid rgba(0,168,168,0.4);border-radius:20px;padding:3px 10px;color:#00A8A8;font-size:11px;font-weight:600;white-space:nowrap;flex-shrink:0}
 .topbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.btn-sm{padding:7px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.btn-sm{padding:0 14px;min-height:32px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:5px;box-sizing:border-box}
 .btn-sm:hover{background:rgba(255,255,255,0.15);color:#FFFFFF}
 /* CHANGELOG — discreet hidden-by-default tab next to Lock */
-.btn-changelog{background:transparent;border:none;color:rgba(255,255,255,0.55);font-size:13px;padding:4px 6px;cursor:pointer;opacity:0.42;transition:opacity 0.18s,color 0.18s;font-family:inherit;line-height:1}
+.btn-changelog{background:transparent;border:none;color:rgba(255,255,255,0.55);font-size:13px;padding:0 8px;min-height:32px;cursor:pointer;opacity:0.42;transition:opacity 0.18s,color 0.18s;font-family:inherit;line-height:1;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
 .btn-changelog:hover,.btn-changelog:focus{opacity:1;color:#FFFFFF;outline:none}
 .changelog-modal{position:fixed;inset:0;background:rgba(15,23,42,0.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:9999;display:none;align-items:center;justify-content:center;animation:fadeIn 0.18s ease-out}
 .changelog-modal.open{display:flex}
@@ -238,6 +238,7 @@ html{overflow-x:hidden}
 .ind-card{
   background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;
   cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;min-height:168px;
 }
 .ind-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--ind-color,var(--blue))}
 .ind-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.1);border-color:var(--ind-color,var(--blue))}
@@ -315,12 +316,12 @@ html{overflow-x:hidden}
 .cwlib-pick .cw-complexity.intermediate{background:#D97706;color:#FFFFFF;border:1px solid #B45309}
 .cwlib-pick .cw-complexity.advanced{background:#DC2626;color:#FFFFFF;border:1px solid #B91C1C}
 .cwlib-pick-meta .pick-app{font-size:9.5px;color:var(--muted);font-weight:600}
-.cwlib-nav-btns{display:flex;flex-direction:column;gap:4px;flex-shrink:0}
-.cwlib-nav-btn{background:var(--surface);border:1.5px solid var(--border);color:var(--text-strong);width:36px;height:34px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit}
+.cwlib-nav-btns{display:flex;flex-direction:row;gap:6px;flex-shrink:0;align-self:center}
+.cwlib-nav-btn{background:var(--surface);border:1.5px solid var(--border);color:var(--text-strong);width:36px;height:36px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit;padding:0;box-sizing:border-box}
 .cwlib-nav-btn:hover:not(:disabled){border-color:#F59E0B;background:#FFFBEB;color:#9A3412}
 .cwlib-nav-btn:disabled{opacity:0.35;cursor:not-allowed}
 .cwlib-runbook{display:flex;flex-direction:column;gap:14px;margin-top:14px}
-.cwlib-uc-head{background:linear-gradient(135deg,#7C2D12,#B45309);color:#FFFFFF;border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:14px}
+.cwlib-uc-head{background:linear-gradient(135deg,#7C2D12,#B45309);color:#FFFFFF;border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px}
 .cwlib-uc-head-num{background:rgba(255,255,255,0.18);border:2px solid rgba(255,255,255,0.32);border-radius:10px;padding:8px 14px;font-size:16px;font-weight:900;letter-spacing:0.5px;flex-shrink:0}
 .cwlib-uc-head-main{flex:1;min-width:0}
 .cwlib-uc-head-title{font-size:17px;font-weight:800;line-height:1.3;color:#FFFFFF;margin-bottom:6px}
@@ -682,7 +683,7 @@ a.file-pill:visited{color:var(--text)}
 .tool-group-header:first-child{margin-top:0}
 /* Language toggle (replaces MY/ID toggle) */
 .lang-toggle{display:flex;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;overflow:hidden;flex-shrink:0;flex-wrap:wrap}
-.lang-btn{padding:6px 10px;border:none;background:transparent;color:rgba(255,255,255,0.7);font-size:11.5px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit;letter-spacing:0.2px;white-space:nowrap;border-right:1px solid rgba(255,255,255,0.10)}
+.lang-btn{padding:0 10px;min-height:32px;border:none;background:transparent;color:rgba(255,255,255,0.7);font-size:11.5px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:inherit;letter-spacing:0.2px;white-space:nowrap;border-right:1px solid rgba(255,255,255,0.10);display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
 .lang-btn:last-child{border-right:none}
 .lang-btn.active{background:rgba(255,255,255,0.18);color:#FFFFFF}
 .lang-btn:hover:not(.active){color:rgba(255,255,255,0.85)}
@@ -693,7 +694,7 @@ a.file-pill:visited{color:var(--text)}
 .file-item{display:flex;align-items:center;gap:9px;padding:7px 9px;border:1px solid var(--border);border-radius:7px;margin-bottom:5px;font-size:12px;background:var(--surface-2);text-decoration:none;color:var(--text);transition:all 0.15s;cursor:pointer}
 .file-item:hover{background:#EEF4FF;border-color:var(--blue)}
 .file-item:last-child{margin-bottom:0}
-.file-ext{font-weight:700;padding:2px 5px;border-radius:4px;font-size:10px;flex-shrink:0}
+.file-ext{font-weight:700;padding:2px 5px;border-radius:4px;font-size:10px;flex-shrink:0;min-width:42px;text-align:center;box-sizing:border-box}
 .file-ext.xlsx{background:#E8F5E9;color:#2E7D32}
 .file-ext.docx{background:#E3F2FD;color:#1565C0}
 .file-ext.msg{background:#FFF3E0;color:#E65100}
@@ -789,17 +790,17 @@ a.file-pill:visited{color:var(--text)}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .btn-hamburger{display:none;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#FFFFFF;cursor:pointer;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;font-family:inherit;padding:0}
 .btn-hamburger:hover{background:rgba(255,255,255,0.18)}
-.btn-theme{padding:7px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.9);font-size:14px;font-weight:600;cursor:pointer;transition:all 0.18s;font-family:inherit;display:inline-flex;align-items:center;gap:5px;min-height:36px}
+.btn-theme{padding:0 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.9);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.18s;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:32px;box-sizing:border-box}
 .btn-theme:hover{background:rgba(255,255,255,0.18);color:#FFFFFF}
 .btn-theme .theme-label{font-size:11px;letter-spacing:0.3px}
 @media(max-width:1100px){
   /* Tablet/laptop range: compact the topbar so it stops pushing the document wider than the viewport */
   .topbar{padding:0 16px}
-  .btn-sm{padding:7px 10px}
+  .btn-sm{padding:0 10px}
   .btn-sm .btn-label{display:none}
-  .btn-theme{padding:6px 9px}
+  .btn-theme{padding:0 9px}
   .btn-theme .theme-label{display:none}
-  .lang-btn{font-size:11px;padding:5px 9px}
+  .lang-btn{font-size:11px;padding:0 9px}
   .topbar-title{font-size:14px;max-width:180px}
   .topbar-badge{display:none}
   /* Detail body: collapse the right rail earlier so persona/tips don't squeeze */
@@ -810,7 +811,7 @@ a.file-pill:visited{color:var(--text)}
   .detail-body{grid-template-columns:1fr !important}
   .detail-sidebar{order:-1}
   /* Lang toggle compresses further */
-  .lang-btn{font-size:10.5px;padding:5px 7px;letter-spacing:0}
+  .lang-btn{font-size:10.5px;padding:0 7px;letter-spacing:0}
 }
 @media(max-width:768px){
   .sidebar{position:fixed;top:56px;left:0;height:calc(100vh - 56px);z-index:95;transform:translateX(-100%);transition:transform 0.22s cubic-bezier(.2,.8,.2,1);width:min(86vw,310px);box-shadow:8px 0 30px rgba(0,0,0,0.25)}
@@ -825,7 +826,7 @@ a.file-pill:visited{color:var(--text)}
   .btn-hamburger{display:inline-flex}
   .btn-theme .theme-label{display:none}
   .lang-toggle{order:99;flex:1 1 100%;justify-content:center;margin-top:4px;gap:4px;flex-wrap:wrap}
-  .btn-sm{padding:7px 10px;min-height:36px}
+  .btn-sm{padding:0 10px;min-height:36px}
   .btn-sm .btn-label{display:none}
   .sb-hero{grid-template-columns:1fr}
   .topbar-right{gap:5px;flex-wrap:wrap;justify-content:flex-end}
@@ -863,7 +864,7 @@ a.file-pill:visited{color:var(--text)}
 @media(max-width:480px){
   .topbar-badge{display:none}
   /* Locale buttons: ultra-compact — just flag + country, hide ".EN/.BM/.BI" suffix */
-  .lang-btn{font-size:10px;padding:5px 7px;letter-spacing:0}
+  .lang-btn{font-size:10px;padding:0 7px;letter-spacing:0}
   /* Hide context word + bullet separator on tightest widths; keep flag + lang code (e.g. "🇮🇩 BI") */
   .lang-btn .lc-ctx,.lang-btn .lc-sep{display:none}
   .sb-hero-left{padding:16px 14px}
@@ -909,7 +910,7 @@ a.file-pill:visited{color:var(--text)}
   .topbar{padding:6px 10px;gap:4px}
   .topbar-logo{width:24px;height:24px;font-size:12px}
   .btn-hamburger{width:32px;height:32px;font-size:16px}
-  .btn-theme{padding:6px 8px;min-height:32px}
+  .btn-theme{padding:0 8px;min-height:32px}
   /* Hide changelog icon at tightest widths — still accessible via Ctrl+Shift+L */
   .btn-changelog{display:none}
   .lang-toggle{order:99;flex:1 1 100%;justify-content:center;margin-top:4px}
