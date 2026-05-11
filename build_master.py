@@ -1062,6 +1062,28 @@ try:
 except Exception as _e:
     print(f"(Cowork Library injection skipped due to error: {_e})")
 
+# ── Notebook Library injection: attach a per-entry notebookLibrary[] of
+# 2-3 unique Copilot Notebook use-case cards (different archetypes per
+# industry / department) so the audience sees concrete bespoke scenarios,
+# not just the standardised 12-prompt demo guide flow.
+try:
+    from _notebook_library import get_nb_library_for_entry as _get_nblib
+    def _inject_nblib(entries):
+        n = 0
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            eid = e.get('id') or ''
+            cards = _get_nblib(eid)
+            if cards:
+                e['notebookLibrary'] = cards
+                n += 1
+        return n
+    _nblib_added = _inject_nblib(all_industries) + _inject_nblib(all_departments)
+    print(f"Notebook Library attached to {_nblib_added} entries")
+except Exception as _e:
+    print(f"(Notebook Library injection skipped due to error: {_e})")
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')

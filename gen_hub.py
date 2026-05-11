@@ -384,6 +384,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .cw-prompt-copy:hover{background:#15803D}
 .cw-prompt-copy.copied{background:#059669}
 .cw-prompt-text{font-size:12px;color:#14532D;line-height:1.6;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.nb-instructions-block{background:#FEF3C7;border:1px solid #FCD34D;border-left:4px solid #D97706;border-radius:8px;padding:10px 12px;margin:0 0 10px;font-size:12px;line-height:1.6;color:#78350F;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap}
 .cw-callout{border-radius:8px;padding:10px 12px;margin:0 0 10px;border-left-width:4px;border-left-style:solid;font-size:12px;line-height:1.55}
 .cw-watch{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.32);border-left-color:#10B981;color:#065F46}
 .cw-watch .cw-callout-label{color:#047857}
@@ -758,6 +759,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .cw-prompt{background:linear-gradient(135deg,#0E2A1A,#0F3A22);border-color:#16A34A}
 [data-theme="dark"] .cw-prompt-label{color:#86EFAC}
 [data-theme="dark"] .cw-prompt-text{color:#BBF7D0}
+[data-theme="dark"] .nb-instructions-block{background:#3A2510;border-color:#92400E;border-left-color:#FCD34D;color:#FED7AA}
 [data-theme="dark"] .cw-watch{background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.40);color:#BBF7D0}
 [data-theme="dark"] .cw-watch .cw-callout-label{color:#86EFAC}
 [data-theme="dark"] .cw-honest{background:rgba(245,158,11,0.10);border-color:rgba(245,158,11,0.40);color:#FCD34D}
@@ -1391,6 +1393,14 @@ const _UI = {
   '📚 Cowork Library — more use cases':
                            ['📚 Pustaka Cowork — lebih banyak kasus penggunaan',
                             '📚 Pustaka Cowork — lebih banyak kes penggunaan'],
+  '📓 Notebook Library — more use cases':
+                           ['📓 Pustaka Notebook — lebih banyak kasus penggunaan',
+                            '📓 Pustaka Notebook — lebih banyak kes penggunaan'],
+  'Each card is a 5-source notebook with a system Instructions field and a chained prompt flow. Tap to expand.':
+                           ['Setiap kartu adalah notebook 5-sumber dengan field Instructions sistem dan alur prompt berantai. Ketuk untuk memperluas.',
+                            'Setiap kad ialah notebook 5-sumber dengan medan Instructions sistem dan aliran prompt berangkai. Ketuk untuk meluaskan.'],
+  '5 SOURCES':             ['5 SUMBER',                                '5 SUMBER'],
+  'INSTRUCTIONS FIELD':    ['MEDAN INSTRUCTIONS',                      'MEDAN INSTRUCTIONS'],
   'Tap any card to expand the full prompt, skills, instructions, expected outcome, and honest framing.':
                            ['Ketuk kartu apa pun untuk memperluas prompt lengkap, skill, instruksi, hasil yang diharapkan, dan penjelasan jujur.',
                             'Ketuk mana-mana kad untuk meluaskan prompt penuh, kemahiran, arahan, hasil dijangka dan rangka kerja jujur.'],
@@ -3974,6 +3984,96 @@ function _wireCoworkLibraryCopy(){
   window._cwlibCopyWired=true;
 }
 
+// ── Notebook Library renderer ─────────────────────────────────────────────
+// Renders the per-entry item.notebookLibrary[] catalog as a stack of cards.
+// Each card models a full Copilot Notebook setup (5 sources + Instructions
+// field + 3 chained prompts) for a SPECIFIC business archetype — e.g. RFP
+// synthesis, clinical case prep, regulator cross-reference, M&A diligence.
+// Reuses the .cw-* CSS family (theme-aware) with two extra Notebook-only
+// classes: .nb-sources-list and .nb-instructions-block.
+function _notebookLibraryHtml(item){
+  const cards=(item && item.notebookLibrary) || [];
+  if(!cards.length) return '';
+  const L_TITLE=_uL('📓 Notebook Library — more use cases');
+  const L_SUB=_uL('Each card is a 5-source notebook with a system Instructions field and a chained prompt flow. Tap to expand.');
+  const L_SOURCES=_uL('5 SOURCES');
+  const L_INSTR_FIELD=_uL('INSTRUCTIONS FIELD');
+  const L_PROMPT=_uL('PROMPT');
+  const L_EXP=_uL('EXPECTED OUTCOME');
+  const L_WATCH=_uL('WHAT TO WATCH');
+  const L_HONEST=_uL('HONEST FRAMING');
+  const L_TIPS=_uL('TIPS & VARIATIONS');
+  const L_COPY=_uL('📋 Copy prompt');
+  function lbl(c){
+    if(c==='basic') return _uL('Basic');
+    if(c==='advanced') return _uL('Advanced');
+    return _uL('Intermediate');
+  }
+  const body=cards.map((c,idx)=>{
+    const num='NB '+String(idx+1).padStart(2,'0');
+    const cmplx=String(c.complexity||'intermediate').toLowerCase();
+    const sources=(c.sources||[]).map(f=>{
+      const name=Array.isArray(f)?(f[0]||''):(f && f.filename) || String(f||'');
+      const ext=String((Array.isArray(f)?f[1]:(f && f.ext)) || (name.split('.').pop()||'')).toLowerCase();
+      const safeExt=['xlsx','docx','pdf','png','pptx'].indexOf(ext)>=0?ext:'docx';
+      return '<span class="file-pill"><span class="ext '+safeExt+'">'+safeExt.toUpperCase()+'</span>'+escapeHTML(name)+'</span>';
+    }).join('');
+    const instrTxt=c.instructions?_xformVal(String(c.instructions),'EN'):'';
+    const expected=(c.expected||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
+    const watch=(c.watch||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
+    const tips=(c.tips||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
+    const prompts=(c.prompts||[]).map((p,pi)=>{
+      const txt=_xformVal((typeof p==='string'?p:(p&&p.text||p&&p.prompt)||''),'EN');
+      const label=(typeof p==='object'&&p&&p.label)?_xformVal(p.label,'EN'):(L_PROMPT+' '+(pi+1));
+      const nbKey='nblib_'+(item.id||'x')+'_'+idx+'_'+pi;
+      return '<div class="cw-prompt">'+
+        '<div class="cw-prompt-head">'+
+          '<span class="cw-prompt-label">'+escapeHTML(label)+'</span>'+
+          '<button class="cw-prompt-copy" type="button" data-cwkey="'+nbKey+'">'+escapeHTML(L_COPY)+'</button>'+
+        '</div>'+
+        '<div class="cw-prompt-text" id="'+nbKey+'">'+escapeHTML(txt)+'</div>'+
+      '</div>';
+    }).join('');
+    const dept=c.archetype?('<span class="cw-tag">'+escapeHTML(String(c.archetype).replace(/_/g,' '))+'</span>'):'';
+    const honest=c.honest?('<div class="cw-callout cw-honest"><span class="cw-callout-label">'+L_HONEST+'</span><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):'';
+    const watchHtml=watch?('<div class="cw-callout cw-watch"><span class="cw-callout-label">'+L_WATCH+'</span><ul>'+watch+'</ul></div>'):'';
+    return '<details class="cw-card">'+
+      '<summary>'+
+        '<span class="cw-num">'+escapeHTML(num)+'</span>'+
+        '<span class="cw-head-main">'+
+          '<div class="cw-title">'+escapeHTML(_xformVal(c.title||'','EN'))+'</div>'+
+          '<div class="cw-badges">'+dept+'<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span></div>'+
+        '</span>'+
+        '<span class="cw-chev">▼</span>'+
+      '</summary>'+
+      '<div class="cw-body">'+
+        (c.desc?'<p class="cw-desc">'+escapeHTML(_xformVal(c.desc,'EN'))+'</p>':'')+
+        (sources?('<div class="cw-section-label">'+L_SOURCES+'</div><div class="cw-files-pills">'+sources+'</div>'):'')+
+        (instrTxt?('<div class="cw-section-label">'+L_INSTR_FIELD+'</div><div class="nb-instructions-block">'+escapeHTML(instrTxt)+'</div>'):'')+
+        prompts+
+        (expected?('<div class="cw-section-label">'+L_EXP+'</div><ul class="cw-list">'+expected+'</ul>'):'')+
+        watchHtml+
+        honest+
+        (tips?('<div class="cw-section-label">'+L_TIPS+'</div><ul class="cw-list">'+tips+'</ul>'):'')+
+      '</div>'+
+    '</details>';
+  }).join('');
+  return '<div class="cw-section">'+
+    '<div class="cw-section-head">'+
+      '<h3 class="cw-section-title">'+L_TITLE+'</h3>'+
+      '<span class="cw-section-sub">'+escapeHTML(L_SUB)+'</span>'+
+    '</div>'+
+    '<div class="cw-grid">'+body+'</div>'+
+  '</div>';
+}
+
+// Notebook Library uses the same delegated copy listener as Cowork — the
+// .cw-prompt-copy buttons it emits flow through _wireCoworkLibraryCopy().
+// This stub keeps the showItem hook idempotent; no separate wiring needed.
+function _wireNotebookLibraryCopy(){
+  _wireCoworkLibraryCopy();
+}
+
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
   currentSidebarTab=tab;
@@ -4883,15 +4983,26 @@ function showItem(item,tab,preserveScroll){
       '</div>';
     pEl.appendChild(sec);
   });
-  // Cowork Library — appended only when the user is viewing the Cowork tab
-  // and the entry carries a coworkLibrary catalog (every entry does, post-build).
-  if(_detailTab==='cowork'){
+  // Cowork Library — always visible regardless of detail tab so the user
+  // discovers it without needing to click the Cowork sub-tab first.
+  {
     const cwHtml=_coworkLibraryHtml(item);
     if(cwHtml){
       const cwWrap=document.createElement('div');
       cwWrap.innerHTML=cwHtml;
       pEl.appendChild(cwWrap);
       _wireCoworkLibraryCopy();
+    }
+  }
+  // Notebook Library — also always visible so the audience can see the
+  // per-entry Copilot Notebook use cases below the tool list.
+  {
+    const nbHtml=(typeof _notebookLibraryHtml==='function')?_notebookLibraryHtml(item):'';
+    if(nbHtml){
+      const nbWrap=document.createElement('div');
+      nbWrap.innerHTML=nbHtml;
+      pEl.appendChild(nbWrap);
+      if(typeof _wireNotebookLibraryCopy==='function') _wireNotebookLibraryCopy();
     }
   }
   if(visibleTools.length){ toggleTool(id+'-'+item.prompts.indexOf(visibleTools[0])); }
