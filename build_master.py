@@ -1074,7 +1074,12 @@ try:
             if not isinstance(e, dict):
                 continue
             eid = e.get('id') or ''
-            cards = _get_nblib(eid)
+            ename = e.get('name') or e.get('label') or ''
+            personas = e.get('personas') or []
+            pname = ''
+            if personas and isinstance(personas[0], dict):
+                pname = personas[0].get('name') or ''
+            cards = _get_nblib(eid, entry_name=ename, persona_name=pname)
             if cards:
                 e['notebookLibrary'] = cards
                 n += 1

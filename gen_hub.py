@@ -385,6 +385,22 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .cw-prompt-copy.copied{background:#059669}
 .cw-prompt-text{font-size:12px;color:#14532D;line-height:1.6;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .nb-instructions-block{background:#FEF3C7;border:1px solid #FCD34D;border-left:4px solid #D97706;border-radius:8px;padding:10px 12px;margin:0 0 10px;font-size:12px;line-height:1.6;color:#78350F;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap}
+.nb-outputs-section{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:1px solid #BFDBFE;border-radius:10px;padding:12px 14px;margin:10px 0}
+.nb-outputs-title{font-size:10px;font-weight:800;color:#1E3A8A;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.nb-outputs-grid{display:grid;grid-template-columns:1fr;gap:8px}
+@media (min-width:760px){.nb-outputs-grid{grid-template-columns:repeat(2,1fr)}}
+.nb-output-pill{background:var(--surface);border:1px solid #BFDBFE;border-radius:8px;padding:8px 10px;display:flex;gap:8px;align-items:flex-start;transition:box-shadow .15s,transform .15s}
+.nb-output-pill:hover{box-shadow:0 2px 8px rgba(59,130,246,0.15);transform:translateY(-1px)}
+.nb-output-icon{font-size:18px;line-height:1.1;flex:0 0 auto}
+.nb-output-body{flex:1;min-width:0}
+.nb-output-name{font-size:11.5px;font-weight:800;color:#1E3A8A;margin-bottom:2px}
+.nb-output-desc{font-size:11px;color:var(--muted);line-height:1.45;margin-bottom:4px}
+.nb-output-how{font-size:10.5px;color:#1E40AF;font-style:italic;line-height:1.4;background:rgba(255,255,255,0.7);padding:4px 6px;border-radius:4px;border-left:2px solid #3B82F6}
+/* Notebook card accent — distinguish from Cowork cards which use amber */
+.cw-card.is-nb summary{background:linear-gradient(135deg,rgba(219,234,254,0.55),rgba(191,219,254,0.40))}
+.cw-card.is-nb summary:hover{background:linear-gradient(135deg,rgba(219,234,254,0.75),rgba(191,219,254,0.55))}
+.cw-card.is-nb .cw-num{background:#1E40AF;color:#FFF}
+.cw-card.is-nb .cw-tag{background:rgba(59,130,246,0.13);border-color:rgba(59,130,246,0.32);color:#1E3A8A}
 .cw-callout{border-radius:8px;padding:10px 12px;margin:0 0 10px;border-left-width:4px;border-left-style:solid;font-size:12px;line-height:1.55}
 .cw-watch{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.32);border-left-color:#10B981;color:#065F46}
 .cw-watch .cw-callout-label{color:#047857}
@@ -760,6 +776,15 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 [data-theme="dark"] .cw-prompt-label{color:#86EFAC}
 [data-theme="dark"] .cw-prompt-text{color:#BBF7D0}
 [data-theme="dark"] .nb-instructions-block{background:#3A2510;border-color:#92400E;border-left-color:#FCD34D;color:#FED7AA}
+[data-theme="dark"] .nb-outputs-section{background:linear-gradient(135deg,#0F1F3A,#13284A);border-color:#1E40AF}
+[data-theme="dark"] .nb-outputs-title{color:#93C5FD}
+[data-theme="dark"] .nb-output-pill{background:#0F1A2E;border-color:#1E40AF}
+[data-theme="dark"] .nb-output-pill:hover{box-shadow:0 2px 12px rgba(59,130,246,0.30)}
+[data-theme="dark"] .nb-output-name{color:#BFDBFE}
+[data-theme="dark"] .nb-output-how{background:rgba(30,58,138,0.40);color:#93C5FD;border-left-color:#3B82F6}
+[data-theme="dark"] .cw-card.is-nb summary{background:linear-gradient(135deg,rgba(30,58,138,0.30),rgba(30,64,175,0.20))}
+[data-theme="dark"] .cw-card.is-nb summary:hover{background:linear-gradient(135deg,rgba(30,58,138,0.50),rgba(30,64,175,0.35))}
+[data-theme="dark"] .cw-card.is-nb .cw-tag{background:rgba(59,130,246,0.20);border-color:rgba(59,130,246,0.40);color:#93C5FD}
 [data-theme="dark"] .cw-watch{background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.40);color:#BBF7D0}
 [data-theme="dark"] .cw-watch .cw-callout-label{color:#86EFAC}
 [data-theme="dark"] .cw-honest{background:rgba(245,158,11,0.10);border-color:rgba(245,158,11,0.40);color:#FCD34D}
@@ -3998,6 +4023,8 @@ function _notebookLibraryHtml(item){
   const L_SUB=_uL('Each card is a 5-source notebook with a system Instructions field and a chained prompt flow. Tap to expand.');
   const L_SOURCES=_uL('5 SOURCES');
   const L_INSTR_FIELD=_uL('INSTRUCTIONS FIELD');
+  const L_OUTPUTS=_uL('✨ NOTEBOOK OUTPUTS (NEW)');
+  const L_OUTPUTS_SUB=_uL('Beyond chat — generate these outputs from the same sources:');
   const L_PROMPT=_uL('PROMPT');
   const L_EXP=_uL('EXPECTED OUTCOME');
   const L_WATCH=_uL('WHAT TO WATCH');
@@ -4037,7 +4064,25 @@ function _notebookLibraryHtml(item){
     const dept=c.archetype?('<span class="cw-tag">'+escapeHTML(String(c.archetype).replace(/_/g,' '))+'</span>'):'';
     const honest=c.honest?('<div class="cw-callout cw-honest"><span class="cw-callout-label">'+L_HONEST+'</span><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):'';
     const watchHtml=watch?('<div class="cw-callout cw-watch"><span class="cw-callout-label">'+L_WATCH+'</span><ul>'+watch+'</ul></div>'):'';
-    return '<details class="cw-card">'+
+    const outputs=(c.outputs||[]).map(function(o){
+      const oIcon=escapeHTML(o.icon||'•');
+      const oName=escapeHTML(_xformVal(o.name||'','EN'));
+      const oDesc=escapeHTML(_xformVal(o.desc||'','EN'));
+      const oHow=escapeHTML(_xformVal(o.how||'','EN'));
+      return '<div class="nb-output-pill">'+
+        '<span class="nb-output-icon">'+oIcon+'</span>'+
+        '<div class="nb-output-body">'+
+          '<div class="nb-output-name">'+oName+'</div>'+
+          (oDesc?'<div class="nb-output-desc">'+oDesc+'</div>':'')+
+          (oHow?'<div class="nb-output-how">'+oHow+'</div>':'')+
+        '</div>'+
+      '</div>';
+    }).join('');
+    const outputsHtml=outputs?('<div class="nb-outputs-section">'+
+      '<div class="nb-outputs-title">'+L_OUTPUTS+'</div>'+
+      '<div class="nb-outputs-grid">'+outputs+'</div>'+
+    '</div>'):'';
+    return '<details class="cw-card is-nb">'+
       '<summary>'+
         '<span class="cw-num">'+escapeHTML(num)+'</span>'+
         '<span class="cw-head-main">'+
@@ -4054,6 +4099,7 @@ function _notebookLibraryHtml(item){
         (expected?('<div class="cw-section-label">'+L_EXP+'</div><ul class="cw-list">'+expected+'</ul>'):'')+
         watchHtml+
         honest+
+        outputsHtml+
         (tips?('<div class="cw-section-label">'+L_TIPS+'</div><ul class="cw-list">'+tips+'</ul>'):'')+
       '</div>'+
     '</details>';
@@ -4983,9 +5029,8 @@ function showItem(item,tab,preserveScroll){
       '</div>';
     pEl.appendChild(sec);
   });
-  // Cowork Library — always visible regardless of detail tab so the user
-  // discovers it without needing to click the Cowork sub-tab first.
-  {
+  // Cowork Library — render only when the user is on the Cowork sub-tab.
+  if(_detailTab==='cowork'){
     const cwHtml=_coworkLibraryHtml(item);
     if(cwHtml){
       const cwWrap=document.createElement('div');
@@ -4994,9 +5039,8 @@ function showItem(item,tab,preserveScroll){
       _wireCoworkLibraryCopy();
     }
   }
-  // Notebook Library — also always visible so the audience can see the
-  // per-entry Copilot Notebook use cases below the tool list.
-  {
+  // Notebook Library — render only when the user is on the Notebook sub-tab.
+  if(_detailTab==='notebook'){
     const nbHtml=(typeof _notebookLibraryHtml==='function')?_notebookLibraryHtml(item):'';
     if(nbHtml){
       const nbWrap=document.createElement('div');

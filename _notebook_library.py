@@ -25,7 +25,51 @@ Shape:
 
 Cards are keyed by id (e.g. 'nb-rfp-procurement') and mapped to entries via
 ENTRY_NB_USE_CASES below. Most entries get 2-3 cards.
+
+Placeholders {persona} and {industry} are substituted at build time using
+the entry's first persona and the entry's display name, so each card feels
+personalised to the audience even when shared across multiple entries.
 """
+
+# ════════════════════════════════════════════════════════════════════════════
+# NB_OUTPUTS — the new (2026) Microsoft 365 Copilot Notebook output features.
+# Every card inherits this list unless it overrides via its own 'outputs' key.
+# These render as a labelled grid below the prompts so the audience sees the
+# generative outputs Notebook can produce on top of the source-grounded chat.
+# ════════════════════════════════════════════════════════════════════════════
+NB_OUTPUTS = [
+    {
+        'icon': '🎙️',
+        'name': 'Audio Overview',
+        'desc': 'Generates a ~10-15 minute podcast-style discussion between two AI hosts walking through every source.',
+        'how': 'Click ⋯ on the Notebook header → Audio Overview → Generate. Download MP3 when ready.',
+    },
+    {
+        'icon': '🎥',
+        'name': 'Video Overview',
+        'desc': 'A visual walkthrough of the sources with on-screen text, citations, and an AI narrator. Great for handoff briefings.',
+        'how': '⋯ → Video Overview → Generate. Pick the audience tone (executive, technical, training).',
+    },
+    {
+        'icon': '🧠',
+        'name': 'Mind Map',
+        'desc': 'Auto-generated visual concept map showing how the sources connect (themes, decisions, dependencies).',
+        'how': '⋯ → Mind Map. Click any node to jump to the cited source span.',
+    },
+    {
+        'icon': '📊',
+        'name': 'Reports',
+        'desc': 'One-click structured documents: Executive Briefing, Study Guide, FAQ, Timeline, or Custom Report you describe in one line.',
+        'how': 'Reports tab → choose a template OR type "Write a report on..." in the prompt box.',
+    },
+    {
+        'icon': '📋',
+        'name': 'Study Guide / FAQ',
+        'desc': 'Generates Q&A pairs and a study-guide outline from every source — useful for onboarding decks and "leave-behind" materials.',
+        'how': 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."',
+    },
+]
+
 
 # ════════════════════════════════════════════════════════════════════════════
 # UNIVERSAL CARDS — relevant to any entry, used as fallback/cross-pollination
@@ -838,24 +882,63 @@ ENTRY_NB_USE_CASES = {
 }
 
 
-def get_nb_library_for_entry(entry_id):
+def _personalise(value, persona, industry):
+    """Substitute {persona} and {industry} placeholders in a string. Leaves
+    other content untouched. Used at injection time to make each card feel
+    bespoke to the entry without authoring 660+ unique prompt strings."""
+    if not isinstance(value, str):
+        return value
+    out = value
+    if persona:
+        out = out.replace('{persona}', persona)
+    if industry:
+        out = out.replace('{industry}', industry)
+    return out
+
+
+def _personalise_deep(node, persona, industry):
+    """Recursively substitute placeholders across nested str/list/dict."""
+    if isinstance(node, str):
+        return _personalise(node, persona, industry)
+    if isinstance(node, list):
+        return [_personalise_deep(x, persona, industry) for x in node]
+    if isinstance(node, tuple):
+        return tuple(_personalise_deep(x, persona, industry) for x in node)
+    if isinstance(node, dict):
+        return {k: _personalise_deep(v, persona, industry) for k, v in node.items()}
+    return node
+
+
+def get_nb_library_for_entry(entry_id, entry_name=None, persona_name=None):
     """Return list of card dicts for a given entry id; falls back to
-    universal cards when the entry is unmapped or maps to a missing card."""
+    universal cards when the entry is unmapped or maps to a missing card.
+
+    If entry_name (industry / department display name) and persona_name are
+    supplied, every {persona} and {industry} placeholder in the card's title,
+    desc, instructions, prompts, etc. gets substituted so the card feels
+    personal to the audience. NB_OUTPUTS is also attached to every card so
+    the new 2026 Notebook output features (Audio / Video / Mind Map / Reports
+    / Study Guide) are visible per card."""
     ids = ENTRY_NB_USE_CASES.get(entry_id, UNIVERSAL_USE_CASES)
     out = []
     for cid in ids:
         c = USE_CASES.get(cid)
         if not c:
             continue
-        item = dict(c)
+        item = _personalise_deep(c, persona_name, entry_name)
         item['id'] = cid
+        # Attach the 2026 Notebook output features unless the card overrides.
+        if 'outputs' not in item or not item['outputs']:
+            item['outputs'] = [dict(o) for o in NB_OUTPUTS]
         out.append(item)
     if not out:
         for cid in UNIVERSAL_USE_CASES:
             c = USE_CASES.get(cid)
             if c:
-                item = dict(c)
+                item = _personalise_deep(c, persona_name, entry_name)
                 item['id'] = cid
+                if 'outputs' not in item or not item['outputs']:
+                    item['outputs'] = [dict(o) for o in NB_OUTPUTS]
                 out.append(item)
     return out
 
