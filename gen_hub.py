@@ -307,7 +307,13 @@ html{overflow-x:hidden}
 .cwlib-pick-num{background:linear-gradient(135deg,#F59E0B,#D97706);color:#FFFFFF;font-weight:800;padding:2px 7px;border-radius:5px;font-size:10px;letter-spacing:0.5px}
 .cwlib-pick-title{font-size:12.5px;font-weight:700;color:var(--text-strong);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
 .cwlib-pick-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:2px}
-.cwlib-pick-meta .cw-complexity{font-size:9.5px;padding:1px 6px}
+.cwlib-pick-meta .cw-complexity{font-size:11px;padding:3px 9px;font-weight:800;letter-spacing:0.4px;text-shadow:0 1px 1px rgba(0,0,0,0.22)}
+/* Solid pills with white text — guarantee legibility on both unselected (white)
+   and selected (amber gradient) picker tiles. 3-class specificity beats the
+   base .cw-complexity.basic rule defined further down in the stylesheet. */
+.cwlib-pick .cw-complexity.basic{background:#059669;color:#FFFFFF;border:1px solid #047857}
+.cwlib-pick .cw-complexity.intermediate{background:#D97706;color:#FFFFFF;border:1px solid #B45309}
+.cwlib-pick .cw-complexity.advanced{background:#DC2626;color:#FFFFFF;border:1px solid #B91C1C}
 .cwlib-pick-meta .pick-app{font-size:9.5px;color:var(--muted);font-weight:600}
 .cwlib-nav-btns{display:flex;flex-direction:column;gap:4px;flex-shrink:0}
 .cwlib-nav-btn{background:var(--surface);border:1.5px solid var(--border);color:var(--text-strong);width:36px;height:34px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit}
@@ -319,10 +325,39 @@ html{overflow-x:hidden}
 .cwlib-uc-head-main{flex:1;min-width:0}
 .cwlib-uc-head-title{font-size:17px;font-weight:800;line-height:1.3;color:#FFFFFF;margin-bottom:6px}
 .cwlib-uc-head-badges{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.cwlib-uc-head-badges .cw-tag,.cwlib-uc-head-badges .cw-complexity{background:rgba(255,255,255,0.18);color:#FFFFFF;border:1px solid rgba(255,255,255,0.32);font-size:10.5px;padding:2px 9px}
-.cwlib-uc-head-badges .cw-complexity.basic{background:rgba(16,185,129,0.3);border-color:rgba(16,185,129,0.6)}
-.cwlib-uc-head-badges .cw-complexity.intermediate{background:rgba(245,158,11,0.32);border-color:rgba(245,158,11,0.6)}
-.cwlib-uc-head-badges .cw-complexity.advanced{background:rgba(239,68,68,0.32);border-color:rgba(239,68,68,0.6)}
+/* === COMPLEXITY + TAG PILLS ON THE BROWN UC-HEAD GRADIENT (#7C2D12 → #B45309) ===
+   The dark brown gradient kills any saturated colored pill. The previous semi-
+   transparent white-on-white-tint also washed out. AND the base `.cw-tag.ind`
+   rule (blue tint, defined LATER in this stylesheet) was winning over the
+   `.cwlib-uc-head-badges .cw-tag` override on equal specificity, leaving the
+   industry-tag pill blue-on-brown (illegible).
+   Fix: every pill on the UC head uses a BRIGHT LIGHT background + DARK TEXT +
+   1.5px white border, with !important to defeat any later .cw-tag.ind / dark-
+   mode rule. */
+.cwlib-uc-head-badges .cw-tag,
+.cwlib-uc-head-badges .cw-tag.ind,
+.cwlib-uc-head-badges .cw-complexity{
+  font-size:12px;padding:3px 11px;font-weight:800;border-radius:999px;
+  border:1.5px solid #FFFFFF !important;text-shadow:none !important;
+  box-shadow:0 1px 3px rgba(0,0,0,0.25);letter-spacing:.3px
+}
+/* Default (dept) cw-tag — bright cream pill with dark brown text */
+.cwlib-uc-head-badges .cw-tag{
+  background:#FEF3C7 !important;color:#7C2D12 !important
+}
+/* Industry tag (.cw-tag.ind) — bright sky pill with dark navy text */
+.cwlib-uc-head-badges .cw-tag.ind{
+  background:#DBEAFE !important;color:#1E3A8A !important
+}
+.cwlib-uc-head-badges .cw-complexity.basic{
+  background:#A7F3D0 !important;color:#064E3B !important
+}
+.cwlib-uc-head-badges .cw-complexity.intermediate{
+  background:#FDE68A !important;color:#78350F !important
+}
+.cwlib-uc-head-badges .cw-complexity.advanced{
+  background:#FECACA !important;color:#7F1D1D !important
+}
 .cwlib-pos-chip{margin-left:auto;font-size:11px;font-weight:700;color:#FFFFFF;background:rgba(0,0,0,0.22);padding:5px 10px;border-radius:999px;flex-shrink:0}
 .cwlib-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;transition:opacity .15s}
 .cwlib-block.fading{opacity:0.55}
@@ -432,6 +467,10 @@ html{overflow-x:hidden}
 .detail-hero-company{color:rgba(255,255,255,0.85);font-size:14px;font-weight:600;margin-bottom:6px}
 .detail-hero-tagline{color:rgba(255,255,255,0.65);font-size:13px;line-height:1.5}
 .detail-body{display:grid;grid-template-columns:1fr 310px;gap:22px;align-items:start}
+/* Grid items default to min-width:auto which lets them grow to their min-content
+   width and overflow the grid track. Force them to honor the track width so the
+   cwlib picker/UC content actually wraps to mobile viewports. */
+.detail-main-col,.detail-sidebar-col{min-width:0;max-width:100%}
 .detail-scenario{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:18px}
 .detail-scenario-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px}
 .detail-scenario-text{font-size:13px;color:var(--muted);line-height:1.6}
@@ -4235,8 +4274,8 @@ function _coworkLibraryHtml(item){
     }).join('');
     const dept=c.dept_tag?('<span class="cw-tag">'+escapeHTML(_xformVal(c.dept_tag,'EN'))+'</span>'):'';
     const ind=c.industry_tag?('<span class="cw-tag ind">'+escapeHTML(_xformVal(c.industry_tag,'EN'))+'</span>'):'';
-    const honest=c.honest?('<div class="cw-callout cw-honest"><span class="cw-callout-label">'+L_HONEST+'</span><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
-    const watchHtml=watch?('<div class="cw-callout cw-watch"><span class="cw-callout-label">'+L_WATCH+'</span><ul>'+watch+'</ul></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+    const honest=c.honest?('<div class="cw-callout cw-honest"><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+    const watchHtml=watch?('<div class="cw-callout cw-watch"><ul>'+watch+'</ul></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
     function block(icon, label, bodyHtml, hasContent){
       const inner = hasContent ? bodyHtml : ('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
       return '<div class="cwlib-block">'+
@@ -5025,7 +5064,6 @@ function backToCwLib(){
 
 function makeCard(item,tab){
   const count=item.prompts.reduce((a,t)=>a+t.prompts.length,0);
-  const tools=[...new Set(item.prompts.map(t=>t.tool.replace(/^[^\s]+ /,'')))].slice(0,3);
   const div=document.createElement('div');
   div.className='ind-card';
   div.style.setProperty('--ind-color',item.color);
@@ -5037,10 +5075,7 @@ function makeCard(item,tab){
     '<div class="ind-card-icon">'+item.icon+'</div>'+
     '<div class="ind-card-name">'+escapeHTML(_xformVal(_stripLeadingEmoji(item.name),'EN'))+'</div>'+
     '<div class="ind-card-company">'+_getCompany(item)+'</div>'+
-    '<div class="ind-card-pills">'+
-      tools.map(t=>'<span class="pill">'+t+'</span>').join('')+
-      (isDept?'<span class="pill dept">Department</span>':'')+
-    '</div>'+
+    (isDept?'<div class="ind-card-pills"><span class="pill dept">Department</span></div>':'')+
     '<div class="ind-card-prompts">&#x1F4AC; '+count+' prompts &middot; '+item.files.length+' files</div>';
   return div;
 }
