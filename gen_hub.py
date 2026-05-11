@@ -5319,36 +5319,10 @@ const OTHER_PAGES = [
       {label: 'Prompt-a-thon (12 May)', value: 'Cagamas12May'},
       {label: 'Agent-a-thon (13 May)',  value: 'Cagamas13May'}
     ],
-    teamGroups: [
-      {
-        label: '12 May — Prompt-a-thon',
-        color: '#0EA5E9',
-        teamCodes: [
-          {label:'Team 1 — Business & Client Coverage', code:'BCTEAM',  url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/business-client.html'},
-          {label:'Team 2 — Islamic Finance',            code:'ISLTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/islamic-business.html'},
-          {label:'Team 3 — Treasury & Capital Markets', code:'TRSTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/treasury-dcm.html'},
-          {label:'Team 4 — Finance & Reporting',        code:'FINTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/finance-reporting.html'},
-          {label:'Team 5 — Human Capital',              code:'HCMTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/human-capital.html'},
-          {label:'Team 6 — Risk & Compliance',          code:'RSKTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/prompt-a-thon/teams/risk-compliance.html'}
-        ]
-      },
-      {
-        label: '13 May — Agent-a-thon',
-        color: '#7C3AED',
-        teamCodes: [
-          {label:'Team 1 — Business & Client Coverage (HHFC Lender Connect)',   code:'ABCTEAM',  url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/business-client.html'},
-          {label:'Team 2 — Islamic Finance (HHFC Shariah Guide)',                code:'AISLTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/islamic-business.html'},
-          {label:'Team 3 — Treasury & Capital Markets (HHFC Market Desk)',       code:'ATRSTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/treasury-dcm.html'},
-          {label:'Team 4 — Finance & Reporting (HHFC Finance Desk)',             code:'AFINTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/finance-reporting.html'},
-          {label:'Team 5 — Human Capital (HHFC People Connect)',                 code:'AHCMTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/human-capital.html'},
-          {label:'Team 6 — Risk & Compliance (HHFC Compliance Radar)',           code:'ARSKTEAM', url:'https://steffiyappy.github.io/Cagamas1213May/agent-a-thon/teams/risk-compliance.html'}
-        ]
-      }
-    ],
     facilitatorUrl: 'https://steffiyappy.github.io/Cagamas1213May/?facilitator',
     facilitatorLabel: 'Facilitator view (bypass all password gates)',
     tag: 'Hackathon',
-    keywords: 'cagamas mortgage finance prompt-a-thon agent-a-thon hackathon may 2026 challenge HHFC team codes facilitator'
+    keywords: 'cagamas mortgage finance prompt-a-thon agent-a-thon hackathon may 2026 challenge HHFC facilitator'
   }
 ];
 
