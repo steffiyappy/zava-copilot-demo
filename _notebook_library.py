@@ -916,30 +916,48 @@ def get_nb_library_for_entry(entry_id, entry_name=None, persona_name=None):
     If entry_name (industry / department display name) and persona_name are
     supplied, every {persona} and {industry} placeholder in the card's title,
     desc, instructions, prompts, etc. gets substituted so the card feels
-    personal to the audience. NB_OUTPUTS is also attached to every card so
-    the new 2026 Notebook output features (Audio / Video / Mind Map / Reports
-    / Study Guide) are visible per card."""
+    personal to the audience. In addition, every card's title is suffixed
+    with " — <entry_name>" and its instructions are prepended with a
+    "Context: this notebook is being built for <entry_name>." sentence so
+    that even archetype-shared cards feel distinct per entry.
+
+    NB_OUTPUTS is also attached to every card so the new 2026 Notebook
+    output features (Audio / Video / Mind Map / Reports / Study Guide) are
+    visible per card."""
     ids = ENTRY_NB_USE_CASES.get(entry_id, UNIVERSAL_USE_CASES)
+
+    def _finalise(card_id, card_src):
+        item = _personalise_deep(card_src, persona_name, entry_name)
+        item['id'] = card_id
+        # Make each entry's copy distinct by tagging the title with the
+        # entry's display name (e.g. "Board Pre-Read Synthesis — Life
+        # Insurance") and prefixing the instructions with industry context.
+        if entry_name:
+            t = item.get('title') or ''
+            if t and entry_name not in t:
+                item['title'] = f"{t} — {entry_name}"
+            instr = item.get('instructions') or ''
+            if instr and entry_name not in instr.split('.', 1)[0]:
+                item['instructions'] = (
+                    f"Context: this notebook is being built for the {entry_name} "
+                    f"business. "
+                ) + instr
+        # Attach the 2026 Notebook output features unless the card overrides.
+        if 'outputs' not in item or not item['outputs']:
+            item['outputs'] = [dict(o) for o in NB_OUTPUTS]
+        return item
+
     out = []
     for cid in ids:
         c = USE_CASES.get(cid)
         if not c:
             continue
-        item = _personalise_deep(c, persona_name, entry_name)
-        item['id'] = cid
-        # Attach the 2026 Notebook output features unless the card overrides.
-        if 'outputs' not in item or not item['outputs']:
-            item['outputs'] = [dict(o) for o in NB_OUTPUTS]
-        out.append(item)
+        out.append(_finalise(cid, c))
     if not out:
         for cid in UNIVERSAL_USE_CASES:
             c = USE_CASES.get(cid)
             if c:
-                item = _personalise_deep(c, persona_name, entry_name)
-                item['id'] = cid
-                if 'outputs' not in item or not item['outputs']:
-                    item['outputs'] = [dict(o) for o in NB_OUTPUTS]
-                out.append(item)
+                out.append(_finalise(cid, c))
     return out
 
 
