@@ -371,7 +371,9 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .cw-apps-row{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
 .app-pill{display:inline-block;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.28);border-radius:12px;padding:2px 9px;font-size:10.5px;color:#1E40AF;font-weight:700}
 .cw-files-pills{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
-.file-pill{display:inline-flex;align-items:center;gap:5px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:2px 9px;font-size:10.5px;color:var(--text);font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;max-width:100%;word-break:break-all;overflow-wrap:anywhere}
+.file-pill{display:inline-flex;align-items:center;gap:5px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:2px 9px;font-size:10.5px;color:var(--text);font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;max-width:100%;word-break:break-all;overflow-wrap:anywhere;text-decoration:none;cursor:pointer;transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease}
+a.file-pill:hover,a.file-pill:focus{border-color:var(--accent);box-shadow:0 1px 6px rgba(37,99,235,.18);transform:translateY(-1px);outline:none;text-decoration:none}
+a.file-pill:visited{color:var(--text)}
 .file-pill .ext{display:inline-block;font-size:9px;font-weight:800;padding:1px 5px;border-radius:6px;letter-spacing:.5px}
 .file-pill .ext.xlsx{background:#10B981;color:#FFF}
 .file-pill .ext.docx{background:#2563EB;color:#FFF}
@@ -3929,7 +3931,8 @@ function _coworkLibraryHtml(item){
       const name=Array.isArray(f)?(f[0]||''):(f && f.filename) || String(f||'');
       const ext=String((Array.isArray(f)?f[1]:(f && f.ext)) || (name.split('.').pop()||'')).toLowerCase();
       const safeExt=['xlsx','docx','pdf','png'].indexOf(ext)>=0?ext:'docx';
-      return '<span class="file-pill"><span class="ext '+safeExt+'">'+safeExt.toUpperCase()+'</span>'+escapeHTML(name)+'</span>';
+      const href='files/'+encodeURIComponent(name);
+      return '<a class="file-pill" href="'+href+'" target="_blank" rel="noopener" download="'+escapeAttr(name)+'" title="Open '+escapeAttr(name)+'"><span class="ext '+safeExt+'">'+safeExt.toUpperCase()+'</span>'+escapeHTML(name)+'</a>';
     }).join('');
     const skills=(c.skills||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
     const instr=(c.instructions||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
@@ -4043,7 +4046,8 @@ function _notebookLibraryHtml(item){
       const name=Array.isArray(f)?(f[0]||''):(f && f.filename) || String(f||'');
       const ext=String((Array.isArray(f)?f[1]:(f && f.ext)) || (name.split('.').pop()||'')).toLowerCase();
       const safeExt=['xlsx','docx','pdf','png','pptx'].indexOf(ext)>=0?ext:'docx';
-      return '<span class="file-pill"><span class="ext '+safeExt+'">'+safeExt.toUpperCase()+'</span>'+escapeHTML(name)+'</span>';
+      const href='files/'+encodeURIComponent(name);
+      return '<a class="file-pill" href="'+href+'" target="_blank" rel="noopener" download="'+escapeAttr(name)+'" title="Open '+escapeAttr(name)+'"><span class="ext '+safeExt+'">'+safeExt.toUpperCase()+'</span>'+escapeHTML(name)+'</a>';
     }).join('');
     const instrTxt=c.instructions?_xformVal(String(c.instructions),'EN'):'';
     const expected=(c.expected||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
