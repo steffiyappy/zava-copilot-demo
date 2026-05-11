@@ -1038,6 +1038,1137 @@ def _b_util_outage(path):
                    'Customers affected', 'Status', 'SAIDI minutes', 'Reportable to ST'], rows)])
 
 # ============================================================================
+# Notebook Library XLSX archetype builders (23)
+# ============================================================================
+
+@reg('Scoring_Rubric_and_Requirements.xlsx')
+def _b_scoring_rubric(path):
+    criteria = [
+        ('Mandatory', 'M-01', 'ISO 27001 certification (current, valid > 12 months)', 8),
+        ('Mandatory', 'M-02', 'Local data residency in Malaysia + Singapore DR', 8),
+        ('Mandatory', 'M-03', 'PDPA 2010 + Singapore PDPA Data Processor compliance', 8),
+        ('Mandatory', 'M-04', 'Financial - audited statements 3 most recent FY', 6),
+        ('Mandatory', 'M-05', 'Bumiputera CIDB G7 or equivalent partner', 6),
+        ('Technical', 'T-01', 'SAP S/4HANA 2024 certified delivery practice', 7),
+        ('Technical', 'T-02', 'Local consultants - minimum 40 SAP-certified onshore', 7),
+        ('Technical', 'T-03', 'Multi-country localisation (MY, ID, SG, VN)', 7),
+        ('Technical', 'T-04', 'Integration to Group EAI bus (MuleSoft)', 6),
+        ('Technical', 'T-05', 'Change management methodology', 5),
+        ('Commercial', 'C-01', 'Total programme cost - lump sum + T&E cap', 8),
+        ('Commercial', 'C-02', 'Payment milestones vs deliverables', 6),
+        ('Commercial', 'C-03', 'Performance bond - on-demand bank guarantee', 6),
+        ('Commercial', 'C-04', 'IP ownership and source-code escrow', 5),
+        ('Commercial', 'C-05', 'Warranty period - minimum 12 months post go-live', 5),
+        ('Service', 'S-01', 'Hyper-care - 90 days post go-live, on-site', 5),
+        ('Service', 'S-02', 'Knowledge transfer plan + acceptance criteria', 5),
+        ('Service', 'S-03', 'L3 support SLA 4h response, 24h resolution', 6),
+    ]
+    rows_c = [[cat, code, desc, w] for cat, code, desc, w in criteria]
+    weights = [['Mandatory', sum(w for c, _, _, w in criteria if c == 'Mandatory')],
+               ['Technical', sum(w for c, _, _, w in criteria if c == 'Technical')],
+               ['Commercial', sum(w for c, _, _, w in criteria if c == 'Commercial')],
+               ['Service', sum(w for c, _, _, w in criteria if c == 'Service')]]
+    scale = [
+        [5, 'Fully addressed with measurable commitment and evidence'],
+        [4, 'Fully addressed; some quantitative evidence missing'],
+        [3, 'Addressed; partial evidence'],
+        [2, 'Partially addressed; gaps'],
+        [1, 'Acknowledged but not addressed'],
+        [0, 'Silent or non-responsive'],
+    ]
+    _xlsx(path, [
+        ('Rubric', 'RFP Evaluation Rubric - Group ERP Programme',
+         ['Category', 'Code', 'Criterion', 'Weight'], rows_c),
+        ('Category Weights', 'Weights by Category',
+         ['Category', 'Total weight'], weights),
+        ('Scoring Scale', 'Scoring Scale 0-5',
+         ['Score', 'Definition'], scale),
+    ])
+
+
+@reg('Lab_Results_Panel.xlsx')
+def _b_lab_results(path):
+    panel = [
+        ('Haemoglobin', 'g/dL', '13.2', '13.0 - 17.0', 'Normal'),
+        ('White cell count', 'x10^9/L', '12.8', '4.0 - 11.0', 'High'),
+        ('Platelets', 'x10^9/L', '328', '150 - 400', 'Normal'),
+        ('Sodium', 'mmol/L', '138', '135 - 145', 'Normal'),
+        ('Potassium', 'mmol/L', '4.4', '3.5 - 5.0', 'Normal'),
+        ('Urea', 'mmol/L', '7.2', '2.5 - 7.0', 'High'),
+        ('Creatinine', 'umol/L', '124', '60 - 110', 'High'),
+        ('eGFR', 'mL/min/1.73', '58', '> 60', 'Low'),
+        ('ALT', 'U/L', '48', '< 41', 'High'),
+        ('AST', 'U/L', '54', '< 35', 'High'),
+        ('GGT', 'U/L', '102', '< 60', 'High'),
+        ('Alk phos', 'U/L', '142', '40 - 130', 'High'),
+        ('Total bilirubin', 'umol/L', '18', '< 21', 'Normal'),
+        ('Glucose (fasting)', 'mmol/L', '9.8', '3.9 - 5.5', 'High'),
+        ('HbA1c', '%', '8.2', '< 6.5', 'High'),
+        ('Total cholesterol', 'mmol/L', '6.2', '< 5.2', 'High'),
+        ('LDL-C', 'mmol/L', '4.1', '< 2.6', 'High'),
+        ('HDL-C', 'mmol/L', '0.9', '> 1.0', 'Low'),
+        ('Triglycerides', 'mmol/L', '3.6', '< 1.7', 'High'),
+        ('Troponin I', 'ng/mL', '0.02', '< 0.04', 'Normal'),
+        ('CRP', 'mg/L', '24', '< 5', 'High'),
+        ('TSH', 'mIU/L', '2.4', '0.4 - 4.0', 'Normal'),
+    ]
+    serial = [
+        ['Day 1', 4.82, 32, 8.4, 1.2],
+        ['Day 2', 18.40, 38, 7.8, 1.4],
+        ['Day 3', 22.10, 28, 7.2, 1.6],
+        ['Day 5', 14.20, 18, 6.4, 1.8],
+        ['Day 7', 6.40, 12, 5.8, 2.1],
+        ['Day 10', 1.80, 8, 5.4, 2.4],
+    ]
+    flags = [
+        ['Creatinine 124', 'Renal function reduced - consider contrast safety + ACE-I dose review', 'Amber'],
+        ['HbA1c 8.2%', 'Glycaemic control sub-optimal - intensify per pathway', 'Red'],
+        ['LDL-C 4.1', 'Lipid target not met - high-intensity statin', 'Red'],
+        ['ALT/AST elevated', 'Transaminitis - rule out statin intolerance vs hepatic congestion', 'Amber'],
+        ['CRP 24', 'Inflammation - corroborate with WCC; consider infection screen', 'Amber'],
+    ]
+    _xlsx(path, [
+        ('Panel', 'Lab Results - Patient P-44188 - 28 April 2026',
+         ['Analyte', 'Unit', 'Result', 'Reference', 'Flag'],
+         [list(r) for r in panel]),
+        ('Serial Troponin', 'Serial Cardiac Markers - 0h to Day-10',
+         ['Time point', 'Troponin I (ng/mL)', 'CRP (mg/L)',
+          'Creatinine trend (umol/L /10)', 'Glucose trend (mmol/L)'], serial),
+        ('Clinical Flags', 'Out-of-range values with clinical commentary',
+         ['Finding', 'Commentary', 'Severity'], flags),
+    ])
+
+
+@reg('Audit_Findings_Last_Cycle.xlsx')
+def _b_audit_findings(path):
+    findings = []
+    cats = ['ITGC', 'AML KYC', 'Credit Underwriting', 'Market Risk Model',
+            'Branch Operations', 'Treasury', 'Reg Reporting', 'Procurement', 'HR Payroll']
+    sev = ['High', 'Medium', 'Low']
+    statuses = ['Open', 'In Progress', 'Closed - Verified', 'Closed - Pending Verification']
+    owners = ['Lim Mei Ling', 'Vijay Subramaniam', 'Ahmad bin Hassan',
+              'Kumar Subramaniam', 'Daichi Maruyama', 'Hadar Caspit', 'Siti Aishah']
+    for i in range(36):
+        cat = random.choice(cats)
+        s = random.choice(sev)
+        st = random.choice(statuses)
+        findings.append([
+            f'GIA-2025-{1000 + i:04d}',
+            cat,
+            s,
+            f'{cat} - finding {i + 1}',
+            random.choice(owners),
+            _d(-365 + i * 8),
+            _d(-90 + random.randint(-30, 90)),
+            st,
+            f'{random.randint(0, 8)} of {random.randint(2, 6)} actions complete',
+        ])
+    summary = [
+        ['High', 8, 3, 5, 0],
+        ['Medium', 16, 6, 7, 3],
+        ['Low', 12, 4, 5, 3],
+    ]
+    overdue = []
+    for f in findings:
+        if f[7] == 'Open' and f[2] in ('High', 'Medium'):
+            overdue.append([f[0], f[1], f[2], f[3], f[4], f[5]])
+            if len(overdue) >= 12:
+                break
+    _xlsx(path, [
+        ('Findings Register', 'Group Internal Audit - Findings Register (FY2025)',
+         ['Audit ID', 'Area', 'Severity', 'Finding', 'Owner',
+          'Raised on', 'Target close', 'Status', 'Action progress'], findings),
+        ('Summary by Severity', 'Summary by Severity',
+         ['Severity', 'Total', 'Open', 'In Progress', 'Closed'], summary),
+        ('Overdue Watchlist', 'Overdue Watchlist (open, target date passed)',
+         ['Audit ID', 'Area', 'Severity', 'Finding', 'Owner', 'Raised on'], overdue),
+    ])
+
+
+@reg('Compliance_Register_Live.xlsx')
+def _b_compliance_register(path):
+    items = []
+    regs = [
+        ('BNM/RH/PD 029', 'Climate Risk Management', 'Risk', 'Daichi Maruyama'),
+        ('BNM/RH/PD 028', 'Operational Risk', 'Risk', 'Hadar Caspit'),
+        ('BNM/RH/PD 036', 'Cyber Resilience', 'IT Risk', 'Mod Admin'),
+        ('AMLA 2001', 'AML KYC Refresh', 'Compliance', 'Lim Mei Ling'),
+        ('MFRS 9', 'Expected Credit Loss', 'Finance', 'Catherine Wong'),
+        ('Bursa MMLR', 'Continuous Disclosure', 'CompSec', 'Sasha Ouellet'),
+        ('Companies Act 2016', 'Annual Return Filing', 'CompSec', 'Sasha Ouellet'),
+        ('PDPA 2010', 'Data Protection - Customer', 'Privacy', 'Vijay Subramaniam'),
+        ('FSA 2013 S.214', 'Banking License Conditions', 'Reg Affairs', 'Daichi Maruyama'),
+        ('IFSA 2013 S.91', 'Shariah Governance', 'Shariah', 'Dr Siti Aishah'),
+        ('Income Tax Act', 'CbCR Filing', 'Tax', 'Tan Wei Ming'),
+        ('GST/SST Act', 'Quarterly SST Return', 'Tax', 'Tan Wei Ming'),
+        ('Employment Act', 'Working Hours and Overtime', 'HR', 'Nurul Huda'),
+        ('OSHA 1994', 'HSE Notification', 'HSE', 'Kumar Subramaniam'),
+        ('CMSA 2007', 'Insider Dealing Register', 'CompSec', 'Sasha Ouellet'),
+    ]
+    statuses = ['Compliant', 'Compliant - watch', 'Action required', 'Breach - reported']
+    for i, (code, title, fn, owner) in enumerate(regs * 2):
+        items.append([
+            f'CR-{2026000 + i + 1}',
+            code,
+            f'{title} ({i % 2 + 1}/2)',
+            fn,
+            owner,
+            _d(-180 + i * 4),
+            _d(45 + i * 6),
+            random.choice(statuses),
+            'Quarterly' if i % 2 else 'Monthly',
+        ])
+    summary = [
+        ['Compliant', 22],
+        ['Compliant - watch', 5],
+        ['Action required', 2],
+        ['Breach - reported', 1],
+    ]
+    _xlsx(path, [
+        ('Live Register', 'Group Compliance Register - Live (May 2026)',
+         ['Register ID', 'Regulation', 'Obligation', 'Function', 'Owner',
+          'Last reviewed', 'Next review', 'Status', 'Cadence'], items),
+        ('Status Summary', 'Status Distribution',
+         ['Status', 'Count'], summary),
+    ])
+
+
+@reg('Target_Cap_Table.xlsx')
+def _b_target_captable(path):
+    shareholders = [
+        ['Founder - Datuk Hadar Caspit', 'Ordinary', 6800000, 0.34, 'Yes', '14-Mar-2015'],
+        ['Co-Founder - Catherine Wong', 'Ordinary', 4200000, 0.21, 'Yes', '14-Mar-2015'],
+        ['Series A - Apex Capital Ventures', 'Preference', 3200000, 0.16, 'No', '22-Aug-2018'],
+        ['Series B - Sapphire Growth Fund', 'Preference', 2800000, 0.14, 'No', '14-Sep-2021'],
+        ['Series C - Cendana Capital', 'Preference', 1800000, 0.09, 'No', '04-Apr-2024'],
+        ['ESOP Pool (vested)', 'Options', 900000, 0.045, 'No', '14-Mar-2015'],
+        ['Friends and Family', 'Ordinary', 200000, 0.01, 'No', '14-Mar-2015'],
+        ['Strategic - Apex Banking Group', 'Preference', 100000, 0.005, 'No', '02-May-2026'],
+    ]
+    waterfall = [
+        ['Liquidation preference 1x - Apex Capital Ventures (Series A)', 28000000],
+        ['Liquidation preference 1.2x - Sapphire (Series B)', 36000000],
+        ['Liquidation preference 1.5x - Cendana (Series C)', 42000000],
+        ['Strategic preferred - Apex Banking Group', 6000000],
+        ['Remaining waterfall to ordinary + ESOP pro-rata', 0],
+    ]
+    options_grants = []
+    for i in range(14):
+        options_grants.append([
+            f'OPT-2024-{40 + i:03d}',
+            random.choice(['Tan Wei Ming', 'Lim Mei Ling', 'Vijay Raja',
+                           'Farah Idris', 'Chong Kah Wai', 'Daichi Maruyama']),
+            random.choice([20000, 25000, 30000, 40000, 60000, 100000]),
+            0.42,
+            _d(-720 + i * 30),
+            _d(720 + i * 30),
+            '4-year cliff 1yr',
+            random.choice([0.0, 0.25, 0.5, 0.75, 1.0]),
+        ])
+    _xlsx(path, [
+        ('Cap Table', 'Target Company - Capitalisation Table (Fully Diluted)',
+         ['Shareholder', 'Class', 'Shares', '% FD', 'Board Seat', 'Date'],
+         shareholders),
+        ('Waterfall', 'Liquidation Waterfall (illustrative MYR 200M sale)',
+         ['Tranche', 'Cash Out (MYR)'], waterfall),
+        ('Options Grants', 'Outstanding Options Grants',
+         ['Grant ID', 'Grantee', 'Shares', 'Strike (MYR)', 'Grant date',
+          'Vest end', 'Schedule', '% vested'], options_grants),
+    ])
+
+
+@reg('Litigation_Register.xlsx')
+def _b_litigation(path):
+    cases = []
+    statuses = ['Active', 'Settled', 'Dismissed', 'Pending Filing', 'Under Appeal']
+    types = ['Contract dispute', 'Employment', 'IP infringement',
+             'Regulatory enforcement', 'Tax assessment', 'Tort', 'Shareholder action']
+    courts = ['KL High Court', 'Shah Alam Sessions', 'Penang High Court',
+              'Court of Appeal', 'Industrial Court', 'SC Adjudication']
+    for i in range(24):
+        t = random.choice(types)
+        st = random.choice(statuses)
+        cases.append([
+            f'LIT-2025-{200 + i:04d}',
+            t,
+            random.choice([
+                'Cendana Engineering Sdn Bhd', 'Mawar Trading',
+                'Former Employee - Mr A', 'BNM Enforcement',
+                'IRB Tax Assessment 2022', 'Apex Software Ltd (UK)',
+                'Minority shareholder group',
+            ]),
+            random.choice(courts),
+            st,
+            random.choice([1200000, 2800000, 4400000, 8800000, 12400000, 24000000]),
+            random.choice([0.2, 0.3, 0.4, 0.5, 0.6, 0.7]),
+            random.choice([0, 1200000, 800000, 2400000, 3600000]),
+            _d(-720 + i * 16),
+            random.choice(['Tan Wei Ming', 'Lim Mei Ling', 'Sasha Ouellet']),
+        ])
+    provisions = [
+        ['Total claim exposure', sum(c[5] for c in cases)],
+        ['Expected loss (weighted)', round(sum(c[5] * c[6] for c in cases))],
+        ['Provision booked at FY2025', sum(c[7] for c in cases)],
+        ['Provisioning gap', round(sum(c[5] * c[6] for c in cases) - sum(c[7] for c in cases))],
+    ]
+    _xlsx(path, [
+        ('Cases', 'Litigation Register - Target Company',
+         ['Case ID', 'Type', 'Counterparty', 'Court', 'Status',
+          'Claim (MYR)', 'P(loss)', 'Provision (MYR)', 'Filed', 'Internal owner'],
+         cases),
+        ('Provisioning', 'Provisioning Summary',
+         ['Item', 'Value (MYR)'], provisions),
+    ])
+
+
+@reg('CFO_Financial_Pack.xlsx')
+def _b_cfo_pack(path):
+    pl = [
+        ['Revenue', 11200, 10580, 5.9, 12100, 92.6],
+        ['Cost of sales', -7240, -6820, 6.2, -7820, 92.6],
+        ['Gross profit', 3960, 3760, 5.3, 4280, 92.5],
+        ['Operating expenses', -2120, -2060, 2.9, -2280, 93.0],
+        ['EBITDA', 1840, 1700, 8.2, 2000, 92.0],
+        ['Depreciation and Amortisation', -360, -340, 5.9, -380, 94.7],
+        ['EBIT', 1480, 1360, 8.8, 1620, 91.4],
+        ['Net finance costs', -180, -160, 12.5, -200, 90.0],
+        ['Profit before tax', 1300, 1200, 8.3, 1420, 91.5],
+        ['Tax', -312, -288, 8.3, -344, 90.7],
+        ['Profit after tax', 988, 912, 8.3, 1076, 91.8],
+    ]
+    divisions = [
+        ['Banking', 928, 298, 32.1, 'On plan'],
+        ['Insurance', 482, 88, 18.3, 'Below plan'],
+        ['Property', 412, 72, 17.5, 'Below plan'],
+        ['Plantation', 318, 38, 11.9, 'Below plan'],
+        ['Power', 418, 128, 30.6, 'Above plan'],
+        ['Retail', 512, 32, 6.3, 'Below plan'],
+        ['Manufacturing', 380, -8, -2.1, 'Below plan'],
+        ['Telco', 328, 78, 23.8, 'On plan'],
+        ['Logistics', 62, 16, 25.8, 'Above plan'],
+    ]
+    cash = [
+        ['Cash and equivalents (open)', 1620],
+        ['Operating cash flow', 1840],
+        ['Capex', -640],
+        ['Acquisitions / Disposals', -180],
+        ['Dividends paid', -420],
+        ['Net financing', 80],
+        ['FX translation', 28],
+        ['Cash and equivalents (close)', 2328],
+    ]
+    kpis = [
+        ['Net debt / EBITDA', '2.18x', '<= 2.50x', 'Green'],
+        ['Group CET-1 (Banking)', '13.84%', '>= 14.0%', 'Amber'],
+        ['Group LCR (Banking)', '142%', '>= 130%', 'Green'],
+        ['ROE - Group', '12.4%', '>= 12.0%', 'Green'],
+        ['Operating Cost Ratio', '53.6%', '<= 54.0%', 'Green'],
+        ['Provision Coverage Ratio', '108%', '>= 100%', 'Green'],
+        ['Days Sales Outstanding', '46 days', '<= 45 days', 'Amber'],
+    ]
+    _xlsx(path, [
+        ('Group P&L', 'Group P&L - Q1 FY2026 (MYR million)',
+         ['Line item', 'Q1 FY2026', 'Q1 FY2025', 'YoY %', 'Plan', '% of plan'], pl),
+        ('Divisional', 'Q1 Revenue and EBITDA by Division',
+         ['Division', 'Revenue (MYR M)', 'EBITDA (MYR M)', 'EBITDA Margin %', 'vs Plan'], divisions),
+        ('Cash Flow', 'Q1 Cash Flow Summary (MYR M)',
+         ['Item', 'Q1 FY2026'], cash),
+        ('KPI Dashboard', 'Group KPI Dashboard',
+         ['Metric', 'Q1 FY2026', 'Target / Threshold', 'RAG'], kpis),
+    ])
+
+
+@reg('Risk_Heatmap.xlsx')
+def _b_risk_heatmap(path):
+    risks = [
+        ['R-001', 'Credit risk - SME concentration', 'Banking', 4, 4, 16, 'Amber',
+         'Hadar Caspit', 'Quarterly portfolio review + sector cap'],
+        ['R-002', 'IT operational - core banking patching', 'Banking', 4, 5, 20, 'Red',
+         'Mod Admin', 'New change-management policy + 90-day patch SLA'],
+        ['R-003', 'Cyber - ransomware', 'Group', 3, 5, 15, 'Amber',
+         'Mod Admin', 'Air-gapped backup + tabletop drill quarterly'],
+        ['R-004', 'Conduct risk - mis-selling', 'Insurance', 2, 4, 8, 'Amber',
+         'Lim Mei Ling', 'Mystery shopping + customer call-back QA'],
+        ['R-005', 'Climate physical - flooding', 'Property', 3, 4, 12, 'Amber',
+         'Catherine Wong', 'Flood elevation in new projects + insurance review'],
+        ['R-006', 'CPO price volatility', 'Plantation', 4, 3, 12, 'Amber',
+         'Hadar Caspit', 'Hedging programme + cost discipline'],
+        ['R-007', 'Talent attrition - engineering', 'Group', 3, 3, 9, 'Amber',
+         'Nurul Huda', 'Engineering refresh + new comp band'],
+        ['R-008', 'Regulatory - climate stress test (BNM)', 'Banking', 3, 3, 9, 'Amber',
+         'Daichi Maruyama', 'Joint working group with BNM Q2/Q3'],
+        ['R-009', 'Supply chain - chip shortage', 'Manufacturing', 3, 4, 12, 'Amber',
+         'Ahmad bin Hassan', '6-month inventory buffer + dual-source'],
+        ['R-010', 'FX exposure - USD short', 'Group Treasury', 3, 3, 9, 'Amber',
+         'Tan Wei Ming', 'Hedge 80% rolling 12-month'],
+        ['R-011', 'AML / sanctions screening false-neg', 'Banking', 2, 5, 10, 'Amber',
+         'Vijay Subramaniam', 'Quarterly model validation + audit'],
+        ['R-012', 'Project execution - Bandar Zava Phase 2', 'Property', 3, 4, 12, 'Amber',
+         'Catherine Wong', 'Independent monitor + PRC governance'],
+        ['R-013', 'Cyber - 3rd party SaaS breach', 'Group', 3, 4, 12, 'Amber',
+         'Mod Admin', '3rd-party assurance programme + SOC2 mandatory'],
+        ['R-014', 'Reputation - regulator media', 'Group', 2, 4, 8, 'Amber',
+         'Sasha Ouellet', 'Crisis playbook + spokesperson roster'],
+        ['R-015', 'Climate transition - stranded assets', 'Energy', 3, 4, 12, 'Amber',
+         'Hadar Caspit', 'Forward stranded-asset review + IFRS S2 disclosure'],
+    ]
+    movements = [
+        ['R-002', '12', '20', 'Up', 'IT patch backlog discovered post audit'],
+        ['R-006', '16', '12', 'Down', 'CPO price stabilising + hedging in place'],
+        ['R-008', '12', '9', 'Down', 'Climate WG progress with regulator'],
+        ['R-013', '8', '12', 'Up', 'New SaaS breach in sister industry - exposure recheck'],
+    ]
+    appetite = [
+        ['Operational loss > MYR 5M events', 4, 8, 'Below threshold'],
+        ['Single-name concentration', '<= 8% Tier-1', '11.2% Tier-1', 'BREACH'],
+        ['VaR 99% daily', '<= MYR 28M', 'MYR 24M', 'Within'],
+        ['Group LCR', '>= 130%', '142%', 'Within'],
+        ['Group CET-1', '>= 14.0%', '13.84%', 'BREACH (-16 bps)'],
+    ]
+    _xlsx(path, [
+        ('Heatmap', 'Group Risk Heatmap - Q1 FY2026',
+         ['Risk ID', 'Risk', 'Owner Division', 'Likelihood (1-5)',
+          'Impact (1-5)', 'Score', 'RAG', 'Owner', 'Mitigation'], risks),
+        ('QoQ Movement', 'Movements vs Prior Quarter',
+         ['Risk ID', 'Prior score', 'Current score', 'Direction', 'Driver'], movements),
+        ('Appetite Status', 'Risk Appetite Indicators',
+         ['Indicator', 'Threshold', 'Current', 'Status'], appetite),
+    ])
+
+
+@reg('Usage_Telemetry_Last_12M.xlsx')
+def _b_usage_telem(path):
+    months = ['May-25', 'Jun-25', 'Jul-25', 'Aug-25', 'Sep-25', 'Oct-25',
+              'Nov-25', 'Dec-25', 'Jan-26', 'Feb-26', 'Mar-26', 'Apr-26']
+    rows = []
+    base_dau = 4200
+    base_wau = 14800
+    base_mau = 32400
+    for i, m in enumerate(months):
+        trend = 1 + i * 0.018 - (0.04 if i == 7 else 0) + random.uniform(-0.02, 0.02)
+        rows.append([
+            m,
+            int(base_dau * trend),
+            int(base_wau * trend),
+            int(base_mau * trend),
+            round(28.4 + i * 0.4 + random.uniform(-0.6, 0.6), 1),
+            round(0.62 + i * 0.006 + random.uniform(-0.012, 0.012), 3),
+            int(48400 * trend),
+        ])
+    features = [
+        ['Dashboard - Cashflow Forecast', 0.84, 12.4, 'Power user'],
+        ['Workflow - Approval Routing', 0.72, 8.2, 'Heavy'],
+        ['Mobile - Card Controls', 0.68, 6.8, 'Heavy'],
+        ['Reporting - Custom Builder', 0.42, 14.4, 'Medium'],
+        ['Notification - Smart Alerts', 0.36, 2.4, 'Medium'],
+        ['Open Banking - Aggregator', 0.28, 3.2, 'Low'],
+        ['Admin - SSO Setup', 0.22, 0.4, 'Setup'],
+        ['Beta - AI Insights', 0.18, 4.8, 'Beta'],
+    ]
+    cohorts = [
+        ['New (< 90 days)', 1284, 412, 0.32],
+        ['Active core (90-365 days)', 18400, 14820, 0.81],
+        ['Long-tenure (1+ yrs)', 22480, 19980, 0.89],
+        ['Dormant (> 60 days inactive)', 4480, 0, 0.00],
+    ]
+    _xlsx(path, [
+        ('Monthly', 'Usage Telemetry - Last 12 Months',
+         ['Month', 'DAU', 'WAU', 'MAU', 'Avg session (min)',
+          'WAU/MAU', 'Active in last 30d'], rows),
+        ('Feature Adoption', 'Feature Adoption Rates',
+         ['Feature', 'Adoption %', 'Median uses/wk per user', 'Tier'], features),
+        ('Cohorts', 'Activity by Cohort',
+         ['Cohort', 'Users', 'Active (30d)', 'Active rate'], cohorts),
+    ])
+
+
+@reg('Support_Tickets_Log.xlsx')
+def _b_support_log(path):
+    cats = ['Login / SSO', 'Card decline', 'Payment failed', 'App crash',
+            'Statement download', 'Notification missing', 'Feature request',
+            'Account closure', 'Fraud report', 'Limit increase']
+    sev = ['P1', 'P2', 'P3', 'P4']
+    states = ['Open', 'In progress', 'Awaiting customer', 'Resolved', 'Closed']
+    rows = []
+    for i in range(60):
+        cat = random.choice(cats)
+        s = random.choice(sev)
+        st = random.choice(states)
+        rows.append([
+            f'TKT-2026-{40000 + i}',
+            _d(-30 + i // 2),
+            cat,
+            s,
+            st,
+            random.choice(['App', 'Web', 'Call', 'Chat', 'Branch']),
+            random.choice(['Tier-1', 'Tier-2', 'Tier-3', 'Engineering']),
+            random.randint(2, 480),
+            random.choice([1, 2, 3, 4, 5, None]),
+        ])
+    by_cat = {}
+    for r in rows:
+        by_cat[r[2]] = by_cat.get(r[2], 0) + 1
+    cat_summary = [[k, v] for k, v in sorted(by_cat.items(), key=lambda x: -x[1])]
+    sla = [
+        ['P1', '15 min', '12 min', 0.98, 'Green'],
+        ['P2', '1 hour', '52 min', 0.96, 'Green'],
+        ['P3', '4 hours', '4.2 hours', 0.88, 'Amber'],
+        ['P4', '24 hours', '18 hours', 0.94, 'Green'],
+    ]
+    _xlsx(path, [
+        ('Tickets', 'Support Tickets - Last 30 Days',
+         ['Ticket ID', 'Opened', 'Category', 'Severity', 'State',
+          'Channel', 'Routed to', 'Resolution (min)', 'CSAT (1-5)'], rows),
+        ('By Category', 'Volume by Category',
+         ['Category', 'Tickets'], cat_summary),
+        ('SLA Performance', 'SLA Performance by Severity',
+         ['Severity', 'SLA Target', 'Avg Time to Resolve',
+          'Within SLA %', 'RAG'], sla),
+    ])
+
+
+@reg('Pager_Alerts_Log.xlsx')
+def _b_pager_alerts(path):
+    services = ['payments-orchestrator', 'auth-service', 'cards-issuer',
+                'core-banking-east', 'core-banking-west', 'sso-gateway',
+                'mobile-bff', 'web-portal', 'reporting-warehouse',
+                'fraud-engine', 'kyc-screening']
+    runbooks = ['RB-001', 'RB-014', 'RB-022', 'RB-038', 'RB-044', 'RB-052', 'RB-063']
+    rows = []
+    for i in range(80):
+        svc = random.choice(services)
+        sev = random.choice(['P1', 'P2', 'P3'])
+        ack_min = random.randint(1, 12) if sev == 'P1' else random.randint(2, 30)
+        rows.append([
+            f'PD-2026-{50000 + i}',
+            _d(-10 + i // 12),
+            f'{12 + i % 24:02d}:{random.randint(0, 59):02d}',
+            svc,
+            sev,
+            random.choice(['Error rate', 'Latency p99', 'CPU', 'Memory',
+                           'Queue depth', 'Disk', 'Hearbeat lost']),
+            random.choice(['Vijay Raja', 'Mod Admin', 'Kumar Subramaniam',
+                           'Chong Kah Wai', 'Tan Wei Ming']),
+            ack_min,
+            random.choice(['Self-healed', 'Mitigated', 'Escalated', 'Open']),
+            random.choice(runbooks),
+        ])
+    by_svc = {}
+    for r in rows:
+        by_svc[r[3]] = by_svc.get(r[3], 0) + 1
+    svc_top = [[k, v] for k, v in sorted(by_svc.items(), key=lambda x: -x[1])]
+    p1 = [r for r in rows if r[4] == 'P1'][:14]
+    _xlsx(path, [
+        ('Alerts', 'PagerDuty Alerts - Last 10 Days',
+         ['Alert ID', 'Date', 'Time', 'Service', 'Severity',
+          'Symptom', 'On-call', 'Ack (min)', 'Outcome', 'Runbook'], rows),
+        ('Top Services', 'Alert Volume by Service',
+         ['Service', 'Alerts'], svc_top),
+        ('P1 Alerts', 'P1 Alerts - Detail',
+         ['Alert ID', 'Date', 'Time', 'Service', 'Severity', 'Symptom',
+          'On-call', 'Ack (min)', 'Outcome', 'Runbook'], p1),
+    ])
+
+
+@reg('Past_Similar_Incidents.xlsx')
+def _b_past_incidents(path):
+    incidents = [
+        ['INC-2024-038', '14-Mar-2024', 'P1', 'payments-orchestrator',
+         'Silent failover - hbeat lost', '3h 14m',
+         'Heartbeat alarm missing - only queue-depth alarm', 'Added hbeat alarm', 'Closed'],
+        ['INC-2024-104', '22-Jul-2024', 'P1', 'auth-service',
+         'Cert rotation failure',
+         '1h 42m', 'Cert expiry not in maintenance window',
+         'Cert auto-renew runbook published', 'Closed'],
+        ['INC-2024-218', '14-Oct-2024', 'P2', 'core-banking-east',
+         'EOD batch slowdown', '6h 28m',
+         'Index missing on collateral table', 'Index added + nightly index health check',
+         'Closed'],
+        ['INC-2025-014', '08-Jan-2025', 'P1', 'fraud-engine',
+         'Model service throttled', '2h 04m',
+         'Vendor rate limit lower than load test',
+         'Negotiated higher rate limit + autoscale ahead', 'Closed'],
+        ['INC-2025-088', '14-Apr-2025', 'P2', 'payments-orchestrator',
+         'Backlog drift', '3h 38m',
+         'Drift detection missing on queue depth metric',
+         'Drift detection added in Datadog', 'Closed'],
+        ['INC-2025-128', '02-Jul-2025', 'P1', 'sso-gateway',
+         'Identity provider 5xx', '0h 48m',
+         'IdP regional outage',
+         'Multi-region IdP failover designed (in flight)', 'In progress'],
+        ['INC-2025-198', '14-Oct-2025', 'P2', 'mobile-bff',
+         'Increased error rate after deploy',
+         '1h 18m', 'Deploy validation gate too lenient',
+         'Stricter canary gates', 'Closed'],
+        ['INC-2025-244', '18-Dec-2025', 'P2', 'core-banking-west',
+         'Connection pool exhaustion',
+         '2h 22m', 'New microservice opened too many connections',
+         'Connection pool limits + chaos testing', 'Closed'],
+        ['INC-2026-104', '14-Feb-2026', 'P2', 'cards-issuer',
+         'Token decryption latency spike',
+         '1h 06m', 'HSM throttling under load',
+         'Burst capacity uplift + queue tier 2', 'Closed'],
+        ['INC-2026-188', '11-May-2026', 'P2', 'payments-orchestrator',
+         'IBG queue backlog 18.4k',
+         '4h 30m', 'Silent failure - heartbeat alarm STILL not configured',
+         'Heartbeat alarm + canary 25%', 'Action open'],
+    ]
+    similar = [
+        ['INC-2024-038', 'IDENTICAL pattern - same service - SAME root cause family',
+         'Action from 2024 NOT applied to all environments'],
+        ['INC-2025-088', 'Drift detection added in Datadog but heartbeat alarm not added',
+         'Two parallel controls - one added, one missed'],
+        ['INC-2025-244', 'Connection pool fix was scoped to west - east not addressed',
+         'Cross-environment scope is recurring weakness'],
+    ]
+    _xlsx(path, [
+        ('History', 'Past Similar Incidents - Payments Orchestrator family',
+         ['Incident ID', 'Date', 'Severity', 'Service', 'Symptom',
+          'Duration', 'Root Cause', 'Corrective Action', 'Status'], incidents),
+        ('Pattern Match', 'Incidents Matching the Current Pattern',
+         ['Reference', 'Match Reason', 'Note'], similar),
+    ])
+
+
+@reg('Sensitivity_Scenarios.xlsx')
+def _b_sensitivity(path):
+    scenarios = [
+        ['Base', 1.00, 1.00, 1.00, 1.00, 18.4, 218, 4.8],
+        ['Upside +20% revenue', 1.20, 1.00, 1.00, 1.00, 26.8, 312, 3.8],
+        ['Downside -10% revenue', 0.90, 1.00, 1.00, 1.00, 13.8, 144, 6.4],
+        ['Capex +15%', 1.00, 1.00, 1.15, 1.00, 15.6, 178, 5.4],
+        ['Opex +5%', 1.00, 1.05, 1.00, 1.00, 17.2, 198, 5.0],
+        ['Cost of debt +200bps', 1.00, 1.00, 1.00, 1.02, 16.8, 188, 5.2],
+        ['Stress - rev -20% + capex +10%', 0.80, 1.00, 1.10, 1.00, 9.8, 82, 8.4],
+        ['Optimised - rev +10% + opex -3%', 1.10, 0.97, 1.00, 1.00, 22.4, 268, 4.2],
+        ['Delay launch 6 months', 0.92, 1.00, 1.00, 1.00, 14.2, 158, 5.8],
+        ['Commodity hit - input +18%', 1.00, 1.09, 1.00, 1.00, 14.6, 168, 5.6],
+    ]
+    tornado = [
+        ['Revenue', -8.6, 8.4],
+        ['Capex', -2.8, 2.8],
+        ['Opex', -1.2, 1.6],
+        ['Cost of debt', -1.6, 1.4],
+        ['Forex (USD/MYR)', -2.4, 2.2],
+        ['Commodity input', -3.8, 1.8],
+    ]
+    breakeven = [
+        ['Min revenue for IRR > 12%', '-7.2% from base'],
+        ['Min revenue for NPV > 0', '-22.4% from base'],
+        ['Max capex for IRR > 12%', '+18.4% from base'],
+        ['Max input cost for margin > 14%', '+12.8% from base'],
+    ]
+    _xlsx(path, [
+        ('Scenarios', 'Sensitivity Scenarios - Project Bandar Zava Ph2',
+         ['Scenario', 'Rev x', 'Opex x', 'Capex x', 'Cost of debt x',
+          'IRR %', 'NPV (MYR M)', 'Payback (yrs)'], scenarios),
+        ('Tornado', 'Tornado - NPV Impact (MYR M)',
+         ['Driver', 'Downside', 'Upside'], tornado),
+        ('Breakeven', 'Breakeven Analysis',
+         ['Question', 'Answer'], breakeven),
+    ])
+
+
+@reg('Channel_Spend_Performance.xlsx')
+def _b_channel_spend(path):
+    rows = [
+        ['Search (Google + Bing)', 320000, 18400, 4200, 0.228, 17.40, 76.20, 4.20],
+        ['Meta (FB + IG)', 1536000, 84200, 12800, 0.152, 18.24, 120.00, 2.84],
+        ['TikTok', 768000, 48400, 6200, 0.128, 15.87, 123.87, 1.42],
+        ['YouTube', 1920000, 128400, 10200, 0.079, 14.95, 188.24, 0.84],
+        ['CTV / OTT', 512000, 32400, 2400, 0.074, 15.80, 213.33, 0.42],
+        ['Programmatic display', 640000, 24800, 1800, 0.073, 25.81, 355.56, 0.18],
+        ['LinkedIn (B2B)', 384000, 6200, 980, 0.158, 61.94, 391.84, 0.62],
+        ['Radio', 384000, 0, 0, 0.0, 0.0, 0.0, 0.0],
+        ['OOH', 320000, 0, 0, 0.0, 0.0, 0.0, 0.0],
+    ]
+    weekly = []
+    for i in range(13):
+        weekly.append([
+            f'W{i + 1}',
+            random.randint(420000, 580000),
+            random.randint(28000, 48000),
+            random.randint(2400, 6800),
+            round(random.uniform(2.4, 4.2), 2),
+        ])
+    quality = [
+        ['Search', 0.84, 0.62, 0.41, 'Highest converting'],
+        ['Meta', 0.62, 0.48, 0.22, 'Mid'],
+        ['TikTok', 0.42, 0.28, 0.14, 'Top-funnel'],
+        ['YouTube', 0.38, 0.22, 0.09, 'Awareness'],
+        ['LinkedIn', 0.74, 0.48, 0.28, 'B2B-strong'],
+    ]
+    _xlsx(path, [
+        ('Spend by Channel', 'Channel Spend and Performance - Q1 FY2026',
+         ['Channel', 'Spend (MYR)', 'Clicks/Plays', 'Funded accounts',
+          'Funded rate', 'CPA (MYR per click)', 'Cost / funded',
+          'Funded per MYR1K'], rows),
+        ('Weekly Trend', 'Total Spend and Outcomes by Week',
+         ['Week', 'Spend (MYR)', 'Clicks/Plays', 'Funded', 'ROAS'], weekly),
+        ('Lead Quality', 'Lead Quality by Channel (MQL/SQL/Funded conversion)',
+         ['Channel', 'MQL rate', 'SQL rate', 'Funded rate', 'Note'], quality),
+    ])
+
+
+@reg('Survey_and_Sentiment_Pulse.xlsx')
+def _b_survey_sentiment(path):
+    themes = [
+        ['Pricing relative to competitors', 'Negative', 0.38, 'High', 'Tactical'],
+        ['App speed and reliability', 'Negative', 0.32, 'High', 'Strategic'],
+        ['Customer service responsiveness', 'Mixed', 0.28, 'High', 'Operational'],
+        ['Branch closure communication', 'Negative', 0.24, 'Medium', 'Comms'],
+        ['Rewards programme attractiveness', 'Mixed', 0.22, 'Medium', 'Tactical'],
+        ['Mobile app new design', 'Positive', 0.18, 'Medium', 'Strategic'],
+        ['ATM availability in Sabah/Sarawak', 'Negative', 0.18, 'Medium', 'Operational'],
+        ['Onboarding ease', 'Positive', 0.14, 'Medium', 'Strategic'],
+        ['Card design and benefits', 'Positive', 0.12, 'Low', 'Tactical'],
+        ['Sustainability messaging', 'Mixed', 0.08, 'Low', 'Comms'],
+    ]
+    nps = []
+    months = ['May-25', 'Jun-25', 'Jul-25', 'Aug-25', 'Sep-25', 'Oct-25',
+              'Nov-25', 'Dec-25', 'Jan-26', 'Feb-26', 'Mar-26', 'Apr-26']
+    base = 32
+    for i, m in enumerate(months):
+        base += random.uniform(-2, 3)
+        nps.append([m, round(base, 1), random.randint(2400, 4200),
+                    round(random.uniform(0.18, 0.32), 3)])
+    quotes = [
+        ['Pricing', 'Negative',
+         '"Your spread on FX is wider than the digital banks. Why am I still here?"'],
+        ['App reliability', 'Negative',
+         '"App froze again during payday transfer - third time this quarter."'],
+        ['Service', 'Positive',
+         '"The chat agent solved my issue in 4 minutes - first time that ever happened."'],
+        ['Branch closure', 'Negative',
+         '"You closed my branch and the next one is 28km. No notice. Awful."'],
+        ['Mobile redesign', 'Positive',
+         '"The new dashboard is much cleaner - I can see my cashflow at a glance now."'],
+    ]
+    _xlsx(path, [
+        ('Themes', 'Customer Themes - Q1 FY2026',
+         ['Theme', 'Sentiment', 'Share of mentions', 'Priority', 'Type'], themes),
+        ('NPS Trend', 'NPS Trend - Last 12 Months',
+         ['Month', 'NPS', 'Respondents', 'Response rate'], nps),
+        ('Verbatims', 'Sample Verbatim Quotes',
+         ['Theme', 'Sentiment', 'Quote'], quotes),
+    ])
+
+
+@reg('Sales_Pipeline_Influence.xlsx')
+def _b_pipeline_influence(path):
+    opps = []
+    stages = ['MQL', 'SQL', 'Qualified', 'Proposal', 'Negotiation', 'Closed Won', 'Closed Lost']
+    sources = ['Search', 'Meta', 'TikTok', 'YouTube', 'LinkedIn', 'CTV', 'Direct', 'Referral']
+    for i in range(40):
+        st = random.choice(stages)
+        amt = random.choice([4800, 12400, 28000, 44000, 88000, 184000, 320000])
+        opps.append([
+            f'OPP-2026-{2000 + i}',
+            random.choice(['Bumi Konsortium Sdn Bhd', 'Sapphire Holdings Bhd',
+                           'Apex Banking Group', 'Tropika Sdn Bhd', 'Cendana Properties',
+                           'Hijau Industries', 'Mawar Group', 'Tanjung Resources',
+                           'Bayu Logistics', 'Sinar Capital']),
+            random.choice(['Lim Mei Ling', 'Hadar Caspit', 'Vijay Raja',
+                           'Sasha Ouellet', 'Daichi Maruyama']),
+            st,
+            amt,
+            random.choice(sources),
+            _d(-90 + i * 2),
+            _d(random.choice([14, 21, 28, 45, 60, 90])),
+        ])
+    by_source = {}
+    by_source_won = {}
+    for o in opps:
+        s = o[5]
+        by_source[s] = by_source.get(s, 0) + o[4]
+        if o[3] == 'Closed Won':
+            by_source_won[s] = by_source_won.get(s, 0) + o[4]
+    src_rows = []
+    for s in sources:
+        src_rows.append([s, by_source.get(s, 0), by_source_won.get(s, 0),
+                         round(100 * by_source_won.get(s, 0) / max(by_source.get(s, 1), 1), 1)])
+    funnel = [
+        ['MQL', 412, 1.00],
+        ['SQL', 184, 0.45],
+        ['Qualified', 92, 0.50],
+        ['Proposal', 48, 0.52],
+        ['Negotiation', 26, 0.54],
+        ['Closed Won', 14, 0.54],
+    ]
+    _xlsx(path, [
+        ('Opportunities', 'Sales Pipeline - Q1 FY2026',
+         ['Opp ID', 'Customer', 'AE', 'Stage', 'Amount (MYR)',
+          'Source', 'Created', 'Close target'], opps),
+        ('By Source', 'Pipeline and Won Revenue by Source',
+         ['Source', 'Pipeline (MYR)', 'Closed Won (MYR)', 'Win %'], src_rows),
+        ('Funnel', 'Funnel Conversion - Last 90 Days',
+         ['Stage', 'Volume', 'Stage conversion'], funnel),
+    ])
+
+
+@reg('Treasury_Cash_Positions.xlsx')
+def _b_treasury(path):
+    positions = []
+    banks = ['Apex Bank', 'CIMB', 'Maybank', 'HSBC', 'Standard Chartered', 'DBS', 'BNP Paribas']
+    ccys = [('MYR', 1.0), ('USD', 4.42), ('SGD', 3.28), ('EUR', 4.74),
+            ('JPY', 0.029), ('IDR', 0.000284), ('VND', 0.000182)]
+    accts = ['Operating', 'Tax', 'Dividend', 'Capex Reserve', 'Working Capital', 'CSR']
+    for i in range(28):
+        ccy, fx = random.choice(ccys)
+        amt = random.choice([1240000, 4800000, 12400000, 24800000, 48400000, 84200000])
+        positions.append([
+            f'ACC-{700000 + i}',
+            random.choice(banks),
+            ccy,
+            random.choice(accts),
+            amt,
+            round(amt * fx, 2),
+            random.choice(['Current', 'Money Market', 'Fixed Deposit']),
+            random.choice(['Z+1', 'Z+3', 'Z+7']),
+        ])
+    by_ccy = {}
+    for p in positions:
+        by_ccy[p[2]] = by_ccy.get(p[2], 0) + p[5]
+    ccy_rows = sorted([[k, round(v, 2)] for k, v in by_ccy.items()],
+                      key=lambda x: -x[1])
+    forecast = []
+    for i in range(14):
+        forecast.append([_d(i),
+                         round(184000000 + i * 1200000 + random.uniform(-2400000, 2400000), 2),
+                         round(176000000 + i * 1800000, 2),
+                         round((184000000 + i * 1200000) - (176000000 + i * 1800000), 2)])
+    _xlsx(path, [
+        ('Positions', 'Treasury Cash Positions - 12 May 2026',
+         ['Account', 'Bank', 'CCY', 'Purpose', 'Balance (local)',
+          'Balance (MYR equiv)', 'Type', 'Liquidity'], positions),
+        ('By Currency', 'Cash by Currency (MYR equivalent)',
+         ['CCY', 'Total (MYR equiv)'], ccy_rows),
+        ('14-Day Forecast', '14-Day Cash Forecast',
+         ['Date', 'Forecast inflow (MYR)', 'Forecast outflow (MYR)',
+          'Net (MYR)'], forecast),
+    ])
+
+
+@reg('FX_Hedging_Register.xlsx')
+def _b_fx_hedging(path):
+    rows = []
+    pairs = ['USD/MYR', 'SGD/MYR', 'EUR/MYR', 'JPY/MYR', 'IDR/MYR', 'VND/MYR']
+    instruments = ['Forward', 'NDF', 'Cross-Currency Swap', 'Option', 'Vanilla Collar']
+    for i in range(24):
+        pair = random.choice(pairs)
+        instr = random.choice(instruments)
+        rows.append([
+            f'HDG-2026-{3000 + i}',
+            pair,
+            instr,
+            random.choice(['Buy', 'Sell']),
+            random.choice([1, 2, 4, 8, 12, 18, 24]),
+            random.choice([4.20, 4.32, 4.42, 4.48]),
+            random.choice([4.42, 4.46, 4.52]),
+            random.choice([1200000, 4800000, 12400000, 24800000]),
+            random.choice(['Apex Bank', 'CIMB', 'HSBC', 'Standard Chartered', 'DBS']),
+            _d(-60 + i),
+            _d(60 + i * 18),
+        ])
+    coverage = [
+        ['USD - 12-month forecast exposure', 'USD 412M', 'USD 332M', 0.806],
+        ['SGD - 12-month forecast exposure', 'SGD 84M', 'SGD 76M', 0.905],
+        ['EUR - 12-month forecast exposure', 'EUR 42M', 'EUR 34M', 0.810],
+        ['JPY - 12-month forecast exposure', 'JPY 4.8B', 'JPY 3.6B', 0.750],
+        ['IDR - 12-month forecast exposure', 'IDR 248B', 'IDR 188B', 0.758],
+        ['VND - 12-month forecast exposure', 'VND 1.2T', 'VND 0.9T', 0.750],
+    ]
+    pnl = []
+    months = ['Nov-25', 'Dec-25', 'Jan-26', 'Feb-26', 'Mar-26', 'Apr-26']
+    for m in months:
+        pnl.append([m,
+                    round(random.uniform(-2400000, 2400000), 2),
+                    round(random.uniform(-1800000, 1800000), 2),
+                    round(random.uniform(-600000, 1200000), 2)])
+    _xlsx(path, [
+        ('Open Hedges', 'FX Hedging Register - Open Trades',
+         ['Hedge ID', 'Pair', 'Instrument', 'Direction', 'Tenor (months)',
+          'Strike', 'Spot at trade', 'Notional', 'Counterparty',
+          'Trade date', 'Maturity'], rows),
+        ('Coverage', 'Hedge Coverage Ratios by Currency',
+         ['Exposure', 'Total', 'Hedged', 'Coverage'], coverage),
+        ('Realised P&L', 'Realised Hedge P&L (Last 6 Months)',
+         ['Month', 'Hedge realised P&L (MYR)', 'FX mark-to-market (MYR)',
+          'Net (MYR)'], pnl),
+    ])
+
+
+@reg('Capex_and_Maintenance_Plan.xlsx')
+def _b_capex_maint(path):
+    capex = []
+    sites = ['Klang Plant', 'Cyberjaya', 'Iskandar Refinery', 'Penang',
+             'Kota Kinabalu', 'Kuching', 'Shah Alam', 'Bangi']
+    cats = ['Reliability', 'Capacity', 'Compliance', 'HSE', 'Digitalisation', 'Sustainability']
+    for i in range(28):
+        site = random.choice(sites)
+        cat = random.choice(cats)
+        capex.append([
+            f'CAPEX-2026-{500 + i}',
+            site,
+            cat,
+            f'{cat} - {site} - Project {i + 1}',
+            random.choice([180000, 480000, 1240000, 2800000, 4800000, 12400000]),
+            random.choice(['Q2 26', 'Q3 26', 'Q4 26', 'Q1 27']),
+            random.choice(['Approved', 'In Approval', 'Deferred', 'Cancelled']),
+            random.choice(['Ahmad bin Hassan', 'Kumar Subramaniam', 'Lim Mei Ling']),
+            random.choice([0.14, 0.18, 0.22, 0.26, 0.32]),
+        ])
+    maint = []
+    eqs = ['CT-103', 'P-218', 'FCC-101', 'CDU-101', 'K-201 Granulator',
+           'K-202 Press', 'Line BR-2 Filler', 'HVAC AHU-04']
+    for i in range(20):
+        maint.append([
+            f'WO-{42000 + i}',
+            random.choice(eqs),
+            random.choice(['Preventive', 'Predictive', 'Corrective', 'Inspection']),
+            _d(i * 4),
+            random.choice([4, 8, 16, 24, 48]),
+            random.choice(sites),
+            random.choice(['Planned', 'Open', 'Completed']),
+            random.choice(['Vijay Subramaniam', 'Kumar Subramaniam', 'Tan Wei Ming']),
+        ])
+    summary = [
+        ['Reliability', 28400000],
+        ['Capacity', 64200000],
+        ['Compliance', 14800000],
+        ['HSE', 8400000],
+        ['Digitalisation', 24800000],
+        ['Sustainability', 18200000],
+    ]
+    _xlsx(path, [
+        ('Capex', 'FY2026 Capex Plan',
+         ['ID', 'Site', 'Category', 'Project', 'Value (MYR)',
+          'Target', 'Status', 'Sponsor', 'IRR'], capex),
+        ('Maintenance', 'Planned Maintenance Schedule (next 90 days)',
+         ['WO', 'Equipment', 'Type', 'Date', 'Duration (hrs)',
+          'Site', 'Status', 'Owner'], maint),
+        ('Category Summary', 'Capex by Category (MYR)',
+         ['Category', 'Total (MYR)'], summary),
+    ])
+
+
+@reg('Supplier_Performance_Scorecard.xlsx')
+def _b_supplier(path):
+    suppliers = []
+    names = ['Bumi Konsortium Sdn Bhd', 'Mawar Trading', 'Cendana Logistics',
+             'Sapphire Industrial Supplies', 'Permata Components',
+             'Tropika Chemicals', 'Hijau Renewables', 'Anggerik Bearings',
+             'Pertiwi Engineering', 'Gemilang Castings', 'Sinar Plastics',
+             'Bayu Couriers', 'Tanjung Tubes']
+    cats = ['Critical', 'Strategic', 'Operational', 'Tactical']
+    for i, n in enumerate(names):
+        suppliers.append([
+            f'SUP-{8000 + i}',
+            n,
+            random.choice(cats),
+            round(random.uniform(78, 98), 1),
+            round(random.uniform(82, 99), 1),
+            round(random.uniform(0.5, 4.8), 1),
+            round(random.uniform(84, 99), 1),
+            round(random.uniform(60, 95), 1),
+            random.choice(['Green', 'Green', 'Amber', 'Amber', 'Red']),
+        ])
+    issues = [
+        ['SUP-8001', 'Bumi Konsortium', 'Q1 delay - 2 deliveries 6 days late',
+         'Buffer stock + alternate sourcing identified'],
+        ['SUP-8005', 'Permata Components', '3 quality rejects on incoming inspection',
+         'On supplier improvement plan - 90 day'],
+        ['SUP-8010', 'Gemilang Castings', 'Audit non-conformance (ISO 9001)',
+         'Re-audit scheduled August 2026'],
+        ['SUP-8012', 'Bayu Couriers', 'Cyber incident at courier - data exposed',
+         'Vendor risk re-rating + replacement RFP started'],
+    ]
+    spend = [
+        ['Q1 FY2026', 84200000],
+        ['Q4 FY2025', 92800000],
+        ['Q3 FY2025', 88400000],
+        ['Q2 FY2025', 80200000],
+    ]
+    _xlsx(path, [
+        ('Scorecard', 'Supplier Performance Scorecard - Q1 FY2026',
+         ['Supplier ID', 'Name', 'Category', 'OTD %', 'Quality %',
+          'Defect rate %', 'Compliance %', 'Cost competitiveness',
+          'RAG'], suppliers),
+        ('Issues', 'Open Issues',
+         ['Supplier ID', 'Name', 'Issue', 'Action'], issues),
+        ('Spend Trend', 'Total Spend Trend',
+         ['Quarter', 'Spend (MYR)'], spend),
+    ])
+
+
+@reg('Worker_Safety_Incidents.xlsx')
+def _b_worker_safety(path):
+    rows = []
+    cats = ['Near-miss', 'First-aid', 'Medical-treatment', 'Lost-time', 'Restricted-duty']
+    types = ['Slip/Trip', 'Manual handling', 'Caught-between', 'Struck-by',
+             'Chemical exposure', 'Heat stress', 'Working at height', 'Electrical']
+    sites = ['Klang Plant', 'Cyberjaya', 'Iskandar Refinery', 'Penang',
+             'Kota Kinabalu', 'Bangi']
+    for i in range(30):
+        sev = random.choice(cats)
+        rows.append([
+            f'INC-SAFE-2026-{i + 1:03d}',
+            _d(-90 + i * 3),
+            random.choice(sites),
+            random.choice(types),
+            sev,
+            random.choice(['Day shift', 'Night shift']),
+            random.choice([0, 0, 0, 1, 3, 7, 14]) if sev == 'Lost-time' else 0,
+            random.choice(['Ahmad bin Hassan', 'Kumar Subramaniam',
+                           'Siti Aishah', 'Hadar Caspit']),
+            random.choice(['Closed', 'Closed', 'Closed', 'In RCA', 'Open']),
+        ])
+    rates = []
+    months = ['Nov-25', 'Dec-25', 'Jan-26', 'Feb-26', 'Mar-26', 'Apr-26']
+    for m in months:
+        rates.append([m, round(random.uniform(0.3, 0.9), 2),
+                      round(random.uniform(1.4, 2.4), 2),
+                      random.randint(2, 6)])
+    by_type = {}
+    for r in rows:
+        by_type[r[3]] = by_type.get(r[3], 0) + 1
+    type_rows = sorted([[k, v] for k, v in by_type.items()], key=lambda x: -x[1])
+    _xlsx(path, [
+        ('Incidents', 'Worker Safety Incidents - Last 90 Days',
+         ['Incident ID', 'Date', 'Site', 'Type', 'Severity', 'Shift',
+          'Days lost', 'Investigation lead', 'Status'], rows),
+        ('Monthly Rates', 'LTIFR + TRIFR by Month',
+         ['Month', 'LTIFR', 'TRIFR', 'Near-misses logged'], rates),
+        ('By Type', 'Incident Count by Type',
+         ['Type', 'Count'], type_rows),
+    ])
+
+
+@reg('Disclosure_Framework_Mapping.xlsx')
+def _b_disclosure_map(path):
+    rows = []
+    frameworks = ['TCFD', 'IFRS S1', 'IFRS S2', 'GRI', 'CDP Climate',
+                  'CDP Water', 'Bursa Sust', 'SDGs', 'SASB Banking']
+    disclosures = [
+        ('Governance', 'Board oversight of climate'),
+        ('Governance', 'Management role'),
+        ('Strategy', 'Climate risks and opportunities'),
+        ('Strategy', 'Scenario analysis'),
+        ('Strategy', 'Resilience of strategy'),
+        ('Risk Management', 'Processes for ID + assessment'),
+        ('Risk Management', 'Integration into ERM'),
+        ('Metrics and Targets', 'Scope 1 emissions'),
+        ('Metrics and Targets', 'Scope 2 emissions'),
+        ('Metrics and Targets', 'Material Scope 3'),
+        ('Metrics and Targets', 'Climate-related targets'),
+        ('Metrics and Targets', 'Capex aligned to transition'),
+        ('Metrics and Targets', 'Water withdrawal'),
+        ('Metrics and Targets', 'Waste and recycling'),
+        ('Social', 'Workforce diversity'),
+        ('Social', 'Health and safety LTIFR'),
+        ('Social', 'Community investment'),
+        ('Governance', 'Anti-bribery training'),
+    ]
+    for i, (cat, d) in enumerate(disclosures):
+        rows.append([
+            f'DISC-{100 + i}',
+            cat, d,
+            random.choice(['Yes', 'Yes', 'Yes', 'No']),
+            random.choice(['Yes', 'Yes', 'No']),
+            random.choice(['Yes', 'Yes', 'No']),
+            random.choice(['Yes', 'No']),
+            random.choice(['Yes', 'Yes']),
+            random.choice(['Yes', 'Yes', 'No']),
+            random.choice(['Yes', 'Yes']),
+            random.choice(['Yes', 'No']),
+            random.choice(['Yes', 'Yes']),
+            random.choice(['Daichi Maruyama', 'Lim Mei Ling',
+                           'Sasha Ouellet', 'Kumar Subramaniam', 'Catherine Wong']),
+            random.choice(['Annual Report', 'Sustainability Report',
+                           'CDP filing', 'Bursa Sust filing', 'TCFD section']),
+        ])
+    gaps = [
+        ['Strategy - Resilience of strategy', 'IFRS S2 + TCFD',
+         'No quantified resilience disclosure under 1.5C scenario',
+         'Add resilience commentary in FY2026 report'],
+        ['Metrics - Material Scope 3', 'IFRS S2 + TCFD + CDP',
+         'Financed emissions Banking partially disclosed',
+         'Complete financed emissions methodology + disclose FY2026'],
+        ['Metrics - Climate targets', 'IFRS S2',
+         'No interim 2030 targets disclosed for Property and Manufacturing',
+         '2030 interim targets to be set by Sustainability Council Q3 FY2026'],
+    ]
+    timeline = [
+        ['Initial gap close - data availability', 'Q3 FY2026'],
+        ['Internal assurance walkthrough', 'Q4 FY2026'],
+        ['Final disclosure draft', 'Q1 FY2027'],
+        ['External assurance (limited)', 'Q2 FY2027'],
+        ['Bursa filing', 'Q3 FY2027'],
+    ]
+    _xlsx(path, [
+        ('Framework Mapping', 'Disclosure Framework Mapping - FY2026',
+         ['Disclosure ID', 'Category', 'Required disclosure', 'TCFD', 'IFRS S1',
+          'IFRS S2', 'GRI', 'CDP Climate', 'CDP Water', 'Bursa Sust',
+          'SDGs', 'SASB Banking', 'Owner', 'Location'], rows),
+        ('Gap Register', 'Disclosure Gaps Identified',
+         ['Disclosure', 'Frameworks affected', 'Gap', 'Closure plan'], gaps),
+        ('Closure Timeline', 'Gap Closure Timeline',
+         ['Milestone', 'Target'], timeline),
+    ])
+
+
+@reg('Compliance_Training_Catalog.xlsx')
+def _b_training_catalog(path):
+    catalog = [
+        ['CT-001', 'Anti-Bribery and Corruption', 'All staff', 'Annual', 45, 'Required'],
+        ['CT-002', 'AML / CFT - Foundations', 'All staff', 'Annual', 60, 'Required'],
+        ['CT-003', 'AML / CFT - Advanced', 'Banking + Insurance staff', 'Annual', 90, 'Required'],
+        ['CT-004', 'PDPA 2010 - Data Privacy', 'All staff', 'Annual', 40, 'Required'],
+        ['CT-005', 'Cyber Awareness', 'All staff', 'Bi-annual', 30, 'Required'],
+        ['CT-006', 'Cyber Awareness - Privileged Users', 'Privileged users', 'Bi-annual', 60, 'Required'],
+        ['CT-007', 'Sanctions Screening', 'Banking + Trade staff', 'Annual', 60, 'Required'],
+        ['CT-008', 'Insider Dealing', 'Listed-entity insiders', 'Annual', 40, 'Required'],
+        ['CT-009', 'Conduct Risk + Mis-selling', 'Frontline staff', 'Annual', 45, 'Required'],
+        ['CT-010', 'Health and Safety Foundations', 'Plant + Field', 'Annual', 30, 'Required'],
+        ['CT-011', 'Working at Height', 'Plant + Field', 'Annual', 45, 'Role-based'],
+        ['CT-012', 'Confined Space Entry', 'Refinery + Plant', 'Annual', 60, 'Role-based'],
+        ['CT-013', 'Whistleblowing Channels', 'All staff', 'Bi-annual', 20, 'Required'],
+        ['CT-014', 'Code of Conduct', 'All staff', 'Annual', 40, 'Required'],
+        ['CT-015', 'Shariah Governance', 'Islamic Banking staff', 'Annual', 60, 'Role-based'],
+        ['CT-016', 'Sustainability Foundations', 'All staff', 'One-off', 30, 'Recommended'],
+        ['CT-017', 'TCFD + Climate Risk', 'Risk + Finance staff', 'Bi-annual', 60, 'Role-based'],
+        ['CT-018', 'IFRS 9 ECL Methodology', 'Banking Finance + Risk', 'Annual', 90, 'Role-based'],
+    ]
+    onboarding = [
+        ['New Hire - Day 1', ['CT-014', 'CT-001', 'CT-013']],
+        ['New Hire - Day 30', ['CT-002', 'CT-004', 'CT-005']],
+        ['New Hire - Day 60', ['CT-016']],
+        ['Role-based - Banker', ['CT-003', 'CT-007', 'CT-009']],
+        ['Role-based - Field', ['CT-010', 'CT-011']],
+        ['Role-based - Refinery', ['CT-010', 'CT-011', 'CT-012']],
+        ['Role-based - Privileged IT', ['CT-006']],
+        ['Role-based - Risk + Finance', ['CT-017', 'CT-018']],
+    ]
+    onb_rows = [[label, ', '.join(courses)] for label, courses in onboarding]
+    compliance = [
+        ['All staff (Group)', 28400, 26840, 0.945],
+        ['Banking', 8240, 7980, 0.969],
+        ['Insurance', 2480, 2380, 0.960],
+        ['Plant + Field', 4820, 4520, 0.938],
+        ['Privileged IT', 218, 218, 1.000],
+    ]
+    _xlsx(path, [
+        ('Course Catalog', 'Compliance Training Catalog FY2026',
+         ['Course ID', 'Title', 'Audience', 'Cadence', 'Duration (min)', 'Status'],
+         catalog),
+        ('Onboarding Plan', 'Standard Onboarding Plan by Role',
+         ['Milestone / Role', 'Courses'], onb_rows),
+        ('Compliance Status', 'Compliance Status - Q1 FY2026',
+         ['Cohort', 'Required', 'Completed', 'Compliance %'], compliance),
+    ])
+
+
+# ============================================================================
 # DOCX archetype builders (26)
 # ============================================================================
 
