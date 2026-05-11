@@ -5607,9 +5607,38 @@ function toggleChangelog(){
   if(!m) return;
   if(m.classList.contains('open')){
     m.classList.remove('open');
-  } else {
-    _renderChangelog();
-    m.classList.add('open');
+    return;
+  }
+  // Owner-only changelog: gate behind a separate password.
+  // Once entered correctly during a session, no re-prompt.
+  if(sessionStorage.getItem('changelog_auth')!=='ok'){
+    _changelogAuthPrompt();
+    return;
+  }
+  _renderChangelog();
+  m.classList.add('open');
+}
+// SHA-256 of "ZavaAdmin2026" — owner-only changelog access password.
+const _CHANGELOG_HASH='4b7e8f28a245ca9272413f19c2f4bb47ae337473cbe8145c65b49f24b2be54eb';
+async function _sha256Hex(str){
+  const enc=new TextEncoder().encode(str);
+  const buf=await crypto.subtle.digest('SHA-256',enc);
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+async function _changelogAuthPrompt(){
+  const pw=window.prompt('🔒 Changelog access — enter owner password:');
+  if(pw===null) return; // user cancelled
+  try{
+    const h=await _sha256Hex(pw);
+    if(h===_CHANGELOG_HASH){
+      sessionStorage.setItem('changelog_auth','ok');
+      const m=document.getElementById('changelog-modal');
+      if(m){ _renderChangelog(); m.classList.add('open'); }
+    } else {
+      window.alert('⚠️ Incorrect password.');
+    }
+  }catch(e){
+    window.alert('Password check failed: '+(e&&e.message?e.message:'unknown error'));
   }
 }
 document.addEventListener('keydown',function(e){
