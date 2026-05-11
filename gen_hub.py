@@ -73,18 +73,21 @@ HTML = r"""<!DOCTYPE html>
     --navy:#F8FAFC;
   }
 }
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+html{overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
 /* TOP BAR */
 .topbar{
   background:linear-gradient(135deg,#0F1C3F,#1F2D55);
   padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;
   position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,0.3);
+  min-width:0;
 }
-.topbar-left{display:flex;align-items:center;gap:12px}
-.topbar-logo{width:28px;height:28px;background:linear-gradient(135deg,#0078D4,#00A8A8);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
-.topbar-title{color:#FFFFFF;font-size:15px;font-weight:700;letter-spacing:0.3px}
-.topbar-badge{background:rgba(0,168,168,0.2);border:1px solid rgba(0,168,168,0.4);border-radius:20px;padding:3px 10px;color:#00A8A8;font-size:11px;font-weight:600}
-.topbar-right{display:flex;align-items:center;gap:8px}
+.topbar-left{display:flex;align-items:center;gap:12px;min-width:0;flex-shrink:1}
+.topbar-logo{width:28px;height:28px;background:linear-gradient(135deg,#0078D4,#00A8A8);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.topbar-title{color:#FFFFFF;font-size:15px;font-weight:700;letter-spacing:0.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.topbar-badge{background:rgba(0,168,168,0.2);border:1px solid rgba(0,168,168,0.4);border-radius:20px;padding:3px 10px;color:#00A8A8;font-size:11px;font-weight:600;white-space:nowrap;flex-shrink:0}
+.topbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .btn-sm{padding:7px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit}
 .btn-sm:hover{background:rgba(255,255,255,0.15);color:#FFFFFF}
 /* CHANGELOG — discreet hidden-by-default tab next to Lock */
@@ -595,6 +598,26 @@ a.file-pill:visited{color:var(--text)}
 .btn-theme{padding:7px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.9);font-size:14px;font-weight:600;cursor:pointer;transition:all 0.18s;font-family:inherit;display:inline-flex;align-items:center;gap:5px;min-height:36px}
 .btn-theme:hover{background:rgba(255,255,255,0.18);color:#FFFFFF}
 .btn-theme .theme-label{font-size:11px;letter-spacing:0.3px}
+@media(max-width:1100px){
+  /* Tablet/laptop range: compact the topbar so it stops pushing the document wider than the viewport */
+  .topbar{padding:0 16px}
+  .btn-sm{padding:7px 10px}
+  .btn-sm .btn-label{display:none}
+  .btn-theme{padding:6px 9px}
+  .btn-theme .theme-label{display:none}
+  .lang-btn{font-size:11px;padding:5px 9px}
+  .topbar-title{font-size:14px;max-width:180px}
+  .topbar-badge{display:none}
+  /* Detail body: collapse the right rail earlier so persona/tips don't squeeze */
+  .detail-body{grid-template-columns:1fr 280px}
+}
+@media(max-width:900px){
+  /* Below 900px: collapse the detail-body to a single column */
+  .detail-body{grid-template-columns:1fr !important}
+  .detail-sidebar{order:-1}
+  /* Lang toggle compresses further */
+  .lang-btn{font-size:10.5px;padding:5px 7px;letter-spacing:0}
+}
 @media(max-width:768px){
   .sidebar{position:fixed;top:56px;left:0;height:calc(100vh - 56px);z-index:95;transform:translateX(-100%);transition:transform 0.22s cubic-bezier(.2,.8,.2,1);width:min(86vw,310px);box-shadow:8px 0 30px rgba(0,0,0,0.25)}
   .sidebar.show{transform:translateX(0)}
@@ -602,19 +625,25 @@ a.file-pill:visited{color:var(--text)}
   .detail-body{grid-template-columns:1fr}
   .detail-sidebar{order:-1}
   .ind-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
-  .topbar{padding:0 14px}
+  /* Topbar wraps: lang-toggle drops to its own row, theme/buttons stay on top row */
+  .topbar{flex-wrap:wrap;height:auto;min-height:56px;padding:8px 12px;row-gap:6px}
   .topbar-title{display:none}
   .btn-hamburger{display:inline-flex}
   .btn-theme .theme-label{display:none}
-  .lang-toggle{flex-wrap:wrap;gap:4px}
+  .lang-toggle{order:99;flex:1 1 100%;justify-content:center;margin-top:4px;gap:4px;flex-wrap:wrap}
   .btn-sm{padding:7px 10px;min-height:36px}
+  .btn-sm .btn-label{display:none}
   .sb-hero{grid-template-columns:1fr}
-  .topbar-right{gap:5px}
+  .topbar-right{gap:5px;flex-wrap:wrap;justify-content:flex-end}
   /* Touch targets */
   .sidebar-tab,.detail-tab,.grid-tab,.lang-btn{min-height:40px}
   .ind-card,.dept-pill,.tool-header{min-height:44px}
   /* Tab strips: allow horizontal scroll instead of overflow at narrow widths */
-  .detail-tabs,.grid-tabs{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;padding-bottom:2px}
+  .detail-tabs,.grid-tabs{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;padding-bottom:2px;max-width:100%;position:relative;
+    /* Right-edge fade to hint "more tabs to the right - swipe" */
+    -webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 24px),transparent 100%);
+    mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 24px),transparent 100%);
+  }
   .detail-tabs::-webkit-scrollbar,.grid-tabs::-webkit-scrollbar{display:none}
   .detail-tab,.grid-tab{flex-shrink:0}
   /* Tool header: allow license badge to drop below name on tight rows */
@@ -632,11 +661,17 @@ a.file-pill:visited{color:var(--text)}
   .op-card{min-height:0}
   /* Persona cards: avoid horizontal overflow in detail sidebar */
   .persona-card{flex-wrap:wrap}
-  .persona-info{flex:1 1 200px}
+  .persona-info{flex:1 1 200px;min-width:0}
+  /* Prevent any wide prose blocks from pushing the viewport */
+  .detail-main,.detail-sidebar,.tool-card,.prompt-item{min-width:0}
+  .prompt-text,.prompt-instr{word-break:break-word;overflow-wrap:anywhere}
 }
 @media(max-width:480px){
   .topbar-badge{display:none}
-  .lang-btn{font-size:10px;padding:5px 8px}
+  /* Locale buttons: ultra-compact — just flag + country, hide ".EN/.BM/.BI" suffix */
+  .lang-btn{font-size:10px;padding:5px 7px;letter-spacing:0}
+  /* Hide context word + bullet separator on tightest widths; keep flag + lang code (e.g. "🇮🇩 BI") */
+  .lang-btn .lc-ctx,.lang-btn .lc-sep{display:none}
   .sb-hero-left{padding:16px 14px}
   /* Industry grid: 2-up at 320-480px so cards aren't huge */
   .ind-grid{grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:10px}
@@ -677,12 +712,13 @@ a.file-pill:visited{color:var(--text)}
 }
 @media(max-width:380px){
   /* iPhone SE / 320px viewport */
-  .topbar{padding:0 10px;gap:4px}
+  .topbar{padding:6px 10px;gap:4px}
   .topbar-logo{width:24px;height:24px;font-size:12px}
   .btn-hamburger{width:32px;height:32px;font-size:16px}
   .btn-theme{padding:6px 8px;min-height:32px}
+  /* Hide changelog icon at tightest widths — still accessible via Ctrl+Shift+L */
+  .btn-changelog{display:none}
   .lang-toggle{order:99;flex:1 1 100%;justify-content:center;margin-top:4px}
-  .topbar{flex-wrap:wrap;height:auto;min-height:56px;padding:6px 10px}
   /* Industry grid: single column at 320px to avoid cramped cards */
   .ind-grid{grid-template-columns:1fr;gap:8px}
   .ind-card{padding:14px 12px}
@@ -1009,15 +1045,15 @@ a.file-pill:visited{color:var(--text)}
   </div>
   <div class="topbar-right">
     <div class="lang-toggle" id="lang-toggle">
-      <button class="lang-btn active" id="loc-G_EN" onclick="setLocale('G_EN')" title="Global / Generic context, English">&#x1F310; Global &middot; EN</button>
-      <button class="lang-btn" id="loc-MY_EN" onclick="setLocale('MY_EN')" title="Malaysia context, English">&#127474;&#127486; MY &middot; EN</button>
-      <button class="lang-btn" id="loc-MY_BM" onclick="setLocale('MY_BM')" title="Malaysia context, Bahasa Malaysia">&#127474;&#127486; MY &middot; BM</button>
-      <button class="lang-btn" id="loc-ID_EN" onclick="setLocale('ID_EN')" title="Indonesia context, English">&#127470;&#127465; ID &middot; EN</button>
-      <button class="lang-btn" id="loc-ID_BI" onclick="setLocale('ID_BI')" title="Indonesia context, Bahasa Indonesia">&#127470;&#127465; ID &middot; BI</button>
+      <button class="lang-btn active" id="loc-G_EN" onclick="setLocale('G_EN')" title="Global / Generic context, English">&#x1F310;<span class="lc-ctx"> Global</span><span class="lc-sep"> &middot; </span><span class="lc-lang">EN</span></button>
+      <button class="lang-btn" id="loc-MY_EN" onclick="setLocale('MY_EN')" title="Malaysia context, English">&#127474;&#127486;<span class="lc-ctx"> MY</span><span class="lc-sep"> &middot; </span><span class="lc-lang">EN</span></button>
+      <button class="lang-btn" id="loc-MY_BM" onclick="setLocale('MY_BM')" title="Malaysia context, Bahasa Malaysia">&#127474;&#127486;<span class="lc-ctx"> MY</span><span class="lc-sep"> &middot; </span><span class="lc-lang">BM</span></button>
+      <button class="lang-btn" id="loc-ID_EN" onclick="setLocale('ID_EN')" title="Indonesia context, English">&#127470;&#127465;<span class="lc-ctx"> ID</span><span class="lc-sep"> &middot; </span><span class="lc-lang">EN</span></button>
+      <button class="lang-btn" id="loc-ID_BI" onclick="setLocale('ID_BI')" title="Indonesia context, Bahasa Indonesia">&#127470;&#127465;<span class="lc-ctx"> ID</span><span class="lc-sep"> &middot; </span><span class="lc-lang">BI</span></button>
     </div>
     <button class="btn-theme" id="btn-theme" onclick="cycleTheme()" title="Cycle theme: Light / Dark / System"><span id="theme-icon">&#9788;</span><span class="theme-label" id="theme-label">Light</span></button>
-    <button class="btn-sm" onclick="goHome()">&#x1F3E0; Home</button>
-    <button class="btn-sm" onclick="logout()">&#x1F512; Lock</button>
+    <button class="btn-sm" onclick="goHome()" title="Home">&#x1F3E0;<span class="btn-label"> Home</span></button>
+    <button class="btn-sm" onclick="logout()" title="Lock">&#x1F512;<span class="btn-label"> Lock</span></button>
     <button class="btn-changelog" id="btn-changelog" onclick="toggleChangelog()" title="What's changed (Ctrl+Shift+L)" aria-label="Show changelog">&#128220;</button>
   </div>
 </nav>
