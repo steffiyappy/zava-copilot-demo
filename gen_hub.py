@@ -173,8 +173,9 @@ html{overflow-x:hidden}
 .op-card-link:hover{gap:8px;text-decoration:underline}
 .op-section-hdr{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:22px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .op-section-hdr:first-child{margin-top:0}
-.sidebar-tabs{display:flex;border-bottom:2px solid var(--border);flex-shrink:0}
-.sidebar-tab{flex:1;padding:12px 0;text-align:center;font-size:11px;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sidebar-tabs{display:flex;border-bottom:2px solid var(--border);flex-shrink:0;gap:2px}
+.sidebar-tab{flex:1;padding:11px 4px;text-align:center;font-size:11px;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:0.2px;border-radius:6px 6px 0 0}
+.sidebar-tab:hover{background:var(--surface-2);color:var(--text-strong)}
 .sidebar-tab.active{color:var(--blue);border-bottom-color:var(--blue);position:relative}
 .sidebar-tab.active::after{content:'';position:absolute;left:20%;right:20%;bottom:-2px;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);animation:slideUnderline 0.3s ease}
 @keyframes slideUnderline{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
@@ -1147,7 +1148,7 @@ a.file-pill:visited{color:var(--text)}
     </div>
     <div class="sidebar-tabs">
       <div class="sidebar-tab active" id="stab-ind" onclick="setSidebarTab('ind')">&#127981; Industries</div>
-      <div class="sidebar-tab" id="stab-dept" onclick="setSidebarTab('dept')">&#127970; Departments</div>
+      <div class="sidebar-tab" id="stab-dept" onclick="setSidebarTab('dept')">&#127970; Dept</div>
       <div class="sidebar-tab" id="stab-cwlib" onclick="setSidebarTab('cwlib')">&#129309; Cowork</div>
       <div class="sidebar-tab" id="stab-other" onclick="setSidebarTab('other')">&#128218; More</div>
     </div>
@@ -1752,7 +1753,8 @@ function _applyLocaleLabels(){
   const setHTML=(id,html)=>{const el=document.getElementById(id); if(el) el.innerHTML=html;};
   // Sidebar tabs
   setHTML('stab-ind', '🏭 '+_uL('Industries'));
-  setHTML('stab-dept','🏢 '+_uL('Departments'));
+  setHTML('stab-dept','🏢 '+_uL('Dept'));
+  setHTML('stab-cwlib','🤝 '+_uL('Cowork'));
   setHTML('stab-other','📚 '+_uL('More'));
   // "All X" sidebar items
   document.querySelectorAll('#spanel-ind .ind-name').forEach((el,i)=>{ if(i===0) el.textContent=_uL('All Industries'); });
