@@ -203,7 +203,7 @@ def js_val(v, indent=0):
         return str(v)
     if isinstance(v, str):
         return "'" + esc_val(v) + "'"
-    if isinstance(v, list):
+    if isinstance(v, (list, tuple)):
         if not v:
             return '[]'
         items = [pad + '  ' + js_val(item, indent+1) for item in v]

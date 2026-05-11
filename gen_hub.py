@@ -339,7 +339,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .cw-section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 12px}
 .cw-section-title{font-size:15px;font-weight:800;color:var(--text-strong);display:flex;align-items:center;gap:8px;margin:0}
 .cw-section-sub{font-size:11.5px;color:var(--muted);font-weight:500}
-.cw-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.cw-grid{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
 .cw-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow .2s,transform .2s}
 .cw-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
 .cw-card[open]{box-shadow:var(--shadow-sm)}
