@@ -1,0 +1,99 @@
+{
+  "_doc": "Ruleset for classifying Microsoft 365 Copilot blog posts and validating prompt feasibility. Update this file as Microsoft ships or retires features.",
+  "categories": {
+    "researcher": {
+      "label": "Researcher",
+      "keywords": ["Researcher", "Researcher agent", "Critique Mode", "Model Council"],
+      "license_required": "M365_LIC",
+      "current_features": ["Critique Mode", "Model Council", "federated connectors", "GPT-5.5 Thinking", "Claude Opus 4.7"]
+    },
+    "analyst": {
+      "label": "Analyst",
+      "keywords": ["Analyst", "Copilot Analyst", "Python interpreter", "code interpreter"],
+      "license_required": "M365_LIC",
+      "current_features": ["Python interpreter", "multi-tab cross-analysis"]
+    },
+    "excel": {
+      "label": "Copilot in Excel",
+      "keywords": ["Copilot in Excel", "Excel", "Plan mode", "Python in Excel"],
+      "license_required": "M365_LIC",
+      "current_features": ["Plan mode", "Python in Excel", "Edit with Copilot", "agent mode"]
+    },
+    "word": {
+      "label": "Copilot in Word",
+      "keywords": ["Copilot in Word", "Word", "Claude model picker"],
+      "license_required": "M365_LIC",
+      "current_features": ["Claude model picker", "Edit with Copilot inline agent"]
+    },
+    "ppt": {
+      "label": "Copilot in PowerPoint",
+      "keywords": ["Copilot in PowerPoint", "PowerPoint", "image model picker", "GPT-Image", "Flux"],
+      "license_required": "M365_LIC",
+      "current_features": ["public web grounding", "image model picker", "GPT-Image", "Flux"]
+    },
+    "outlook": {
+      "label": "Copilot in Outlook",
+      "keywords": ["Copilot in Outlook", "Outlook", "draft in canvas"],
+      "license_required": "M365_LIC",
+      "current_features": ["first draft in canvas", "iterative refinement"]
+    },
+    "teams": {
+      "label": "Copilot in Teams",
+      "keywords": ["Teams", "Copilot Call Delegation", "Consecutive Interpretation", "Interpreter"],
+      "license_required": "M365_LIC",
+      "current_features": ["Copilot Call Delegation", "Consecutive Interpretation"]
+    },
+    "notebook": {
+      "label": "Copilot Notebook",
+      "keywords": ["Notebook", "Copilot Notebook", "Mind Map", "Audio Overview", "Quick Create"],
+      "license_required": "M365_LIC",
+      "current_features": ["Mind Maps", "SharePoint/OneNote/external-web sources", "Quick Create Word/PPT", "5 sources", "Instructions field"]
+    },
+    "cowork": {
+      "label": "Cowork (Frontier)",
+      "keywords": ["Cowork", "Frontier Program"],
+      "license_required": "FRONTIER_LIC",
+      "current_features": ["parallel 5-task delegation", "pause-before-action"]
+    },
+    "agent_builder": {
+      "label": "Agent Builder",
+      "keywords": ["Agent Builder", "Build an agent", "Agent Store"],
+      "license_required": "ANY_LIC",
+      "current_features": ["Describe -> Configure -> Test -> Create", "submit-to-Agent-Store", "admin approval"]
+    },
+    "agents_doc": {
+      "label": "Word / PPT / Excel Agents",
+      "keywords": ["Word agent", "PowerPoint agent", "Excel agent"],
+      "license_required": "ANY_LIC",
+      "current_features": ["generate .docx/.pptx/.xlsx from chat", "no app open required"]
+    },
+    "pages": {
+      "label": "Copilot Pages",
+      "keywords": ["Copilot Pages", "Pages"],
+      "license_required": "M365_LIC",
+      "current_features": ["collaborative AI-grounded canvas", "Create a Page"]
+    }
+  },
+  "deprecated_features": [
+    {"phrase": "Gemini", "reason": "Not part of Microsoft 365 Copilot Model Council."},
+    {"phrase": "o3", "reason": "Replaced by GPT-5.x family in Microsoft 365 Copilot."},
+    {"phrase": "T_EDIT_COPILOT", "reason": "Folded into Excel/Word with 'Edit with Copilot' inline agent mode."}
+  ],
+  "license_rules": [
+    {
+      "rule": "FREE_LIC tools must not reference enterprise / files",
+      "applies_to": ["FREE_LIC"],
+      "regex_must_not_match": "/[A-Z][A-Za-z0-9_]*\\.(docx|xlsx|pptx|pdf)"
+    },
+    {
+      "rule": "Cowork must be FRONTIER_LIC",
+      "applies_to_tool": "T_COWORK",
+      "required_license": "FRONTIER_LIC"
+    },
+    {
+      "rule": "Researcher and Analyst must be M365_LIC",
+      "applies_to_tools": ["T_RESEARCHER", "T_ANALYST"],
+      "required_license": "M365_LIC"
+    }
+  ]
+}

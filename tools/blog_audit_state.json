@@ -1,0 +1,7 @@
+{
+  "_doc": "State file tracked by blog_audit.py. Records the last-seen blog post so we only process incremental new entries on subsequent runs.",
+  "last_seen_pub_date_utc": null,
+  "last_seen_guid": null,
+  "last_run_utc": null,
+  "seen_guids": []
+}
