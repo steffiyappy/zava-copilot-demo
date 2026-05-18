@@ -326,6 +326,32 @@ except ImportError:
 except Exception as _e:
     print(f"(Cowork expansion skipped due to error: {_e})")
 
+# ── Cowork: append HTML-artifact deliverable prompt to each entry ──────────
+# User feedback: "Cowork is also able to produce HTML dashboards, charts, or
+# even kanban boards. Can you add those across the industries and departments
+# as an additional task under a use case?" We append ONE archetype-routed
+# HTML-artifact prompt (Dashboard / Kanban / Heatmap / Pipeline-Timeline) to
+# every entry's Cowork tool block. The HTML render runs in parallel with the
+# usual 4 Cowork sub-tasks (Word memo + email + Teams meeting + tracker
+# update). Wired here so the subsequent approval-gate + recipient-
+# diversification passes also touch the new prompt.
+try:
+    from cowork_html_artifacts import append_html_artifact_prompts
+    _html_ind  = append_html_artifact_prompts(all_industries)
+    _html_dept = append_html_artifact_prompts(all_departments)
+    print(f"Cowork HTML artifact prompts appended to {_html_ind + _html_dept} entries")
+    try:
+        from id_to_bm_swaps import fill_missing_bm_from_id as _refill_html
+        _bm_more = _refill_html(all_industries) + _refill_html(all_departments)
+        if _bm_more:
+            print(f"BM auto-fill (post-HTML-artifact): {_bm_more} more tool blocks filled")
+    except Exception:
+        pass
+except ImportError:
+    print("(cowork_html_artifacts.py not found; HTML artifact prompts skipped)")
+except Exception as _e:
+    print(f"(Cowork HTML artifact append skipped due to error: {_e})")
+
 # ── Reverse mirror + canonical override: build relevantIndustries on every department ──
 # Each industry declares 3-5 dept ids in relevantDepts (kept narrow so industry
 # pages stay visually neat with 3-5 dept pills). Reverse-mirror that graph to
