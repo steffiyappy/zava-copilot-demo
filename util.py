@@ -77,13 +77,32 @@ def tool(name, lic, acct, prompts, desc='', promptsID=None, persona=None,
     that the renderer surfaces as a separate visual block above the numbered prompts.
     Shape: {'sources':['/file1.xlsx', ...], 'instructions':'...', 'instructionsID':'...', 'instructionsBM':'...'}.
     """
+    p_en = _norm_prompts(prompts)
+    p_id = _norm_prompts(promptsID)
+    p_bm = _norm_prompts(promptsBM)
+    per = list(persona or [])
+    per_id = list(personaID or [])
+    # Defensive: pad persona arrays to match the longer of EN/ID prompt counts. If
+    # the per-array is empty, default to 'Hadar Caspit' (Group CFO archetype, one
+    # of the 4 approved personas). If it has at least one entry, repeat the last.
+    target = max(len(p_en), len(p_id))
+    if target > 0:
+        default = 'Hadar Caspit'
+        if not per:
+            per = [default] * target
+        elif len(per) < target:
+            per = per + [per[-1]] * (target - len(per))
+        if not per_id:
+            per_id = [default] * target
+        elif len(per_id) < target:
+            per_id = per_id + [per_id[-1]] * (target - len(per_id))
     return {
         'tool': name, 'license': lic, 'account': acct, 'desc': desc,
-        'prompts':   _norm_prompts(prompts),
-        'promptsID': _norm_prompts(promptsID),
-        'promptsBM': _norm_prompts(promptsBM),
-        'persona': persona or [],
-        'personaID': personaID or [],
+        'prompts':   p_en,
+        'promptsID': p_id,
+        'promptsBM': p_bm,
+        'persona': per,
+        'personaID': per_id,
         'notebookMeta': notebookMeta or None,
     }
 
