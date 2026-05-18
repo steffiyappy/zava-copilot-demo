@@ -88,7 +88,7 @@ def build_entry(cfg):
                 output_sentence="Present the answer as a RAG matrix with columns for Audience, Message, Timing, Owner, and Risk if delayed.",
             ),
         ]),
-        tool(T_RESEARCHER, FREE_LIC, FREE_ACCT, [
+        tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
             _research_prompt(
                 role2, cfg['company'], generic_ref,
                 f"how Malaysia, Indonesia, and wider ASEAN peers have handled comparable situations involving {challenge}, with special attention to {peer_set}",
@@ -239,7 +239,7 @@ def build_entry(cfg):
                 "Ask for a RAG-ready briefing with sections for Likely Question, Best Evidence, Gaps to Close, and Pre-Read Needed, all with citations.",
             ),
         ], DESC_NOTEBOOK),
-        tool(T_COWORK, M365_LIC, M365_ACCT, [
+        tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
             _prompt(
                 role1, cfg['company'], generic_ref,
                 f"an autonomous work package on {challenge}",
