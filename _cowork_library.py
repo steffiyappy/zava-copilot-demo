@@ -214,6 +214,11 @@ try:
     USE_CASES.update(_P5)
 except Exception:
     pass
+try:
+    from _cowork_lib_part6 import CARDS as _P6
+    USE_CASES.update(_P6)
+except Exception:
+    pass
 
 
 UNIVERSAL_USE_CASES = ['uc-board-pack', 'uc-town-hall', 'uc-incident-pmortem']
@@ -226,7 +231,7 @@ ENTRY_USE_CASES = {
     'general':                  ['uc-board-pack', 'uc-town-hall', 'uc-incident-pmortem', 'uc-fin-monthend'],
     'commercial-banking':       ['uc-bank-credit-council', 'uc-bank-statement-extract', 'uc-bank-ubo-kyc', 'uc-bank-bnm-returns', 'uc-board-pack'],
     'islamic-banking':          ['uc-islamic-shariah-audit', 'uc-bank-credit-council', 'uc-bank-bnm-returns', 'uc-board-pack'],
-    'investment-banking':       ['uc-ib-pitchbook', 'uc-bank-credit-council', 'uc-board-pack', 'uc-incident-pmortem'],
+    'investment-banking':       ['uc-ib-brc-prep', 'uc-ib-pitchbook', 'uc-bank-credit-council', 'uc-board-pack', 'uc-incident-pmortem'],
     'mortgage-finance':         ['uc-mortgage-loss-mit', 'uc-bank-statement-extract', 'uc-bank-bnm-returns', 'uc-board-pack'],
     'general-insurance':        ['uc-genins-cat-claim', 'uc-board-pack', 'uc-incident-pmortem', 'uc-fin-monthend'],
     'life-insurance':           ['uc-lifeins-persistency', 'uc-board-pack', 'uc-fin-monthend', 'uc-town-hall'],
@@ -236,7 +241,7 @@ ENTRY_USE_CASES = {
     'hospital-network':         ['uc-hospital-caseconf', 'uc-board-pack', 'uc-it-incident', 'uc-town-hall'],
     'pharmaceutical':           ['uc-pharma-regsubmission', 'uc-board-pack', 'uc-incident-pmortem', 'uc-fin-monthend'],
     'og-upstream':              ['uc-og-upstream-lifting', 'uc-og-hse-pmortem', 'uc-board-pack', 'uc-incident-pmortem'],
-    'og-downstream':            ['uc-og-downstream-margin', 'uc-og-hse-pmortem', 'uc-board-pack', 'uc-fin-monthend'],
+    'og-downstream':            ['uc-aster-esg-workflow', 'uc-og-downstream-margin', 'uc-og-hse-pmortem', 'uc-board-pack', 'uc-fin-monthend'],
     'renewable-energy':         ['uc-renewable-ppa', 'uc-board-pack', 'uc-incident-pmortem', 'uc-esg-disclosure'],
     'industrial-manufacturing': ['uc-mfg-oee', 'uc-mfg-recall', 'uc-board-pack', 'uc-incident-pmortem'],
     'rubber-gloves':            ['uc-rubber-fda510k', 'uc-mfg-oee', 'uc-board-pack', 'uc-incident-pmortem'],
@@ -245,10 +250,10 @@ ENTRY_USE_CASES = {
     'auto-tyres':               ['uc-auto-tyres-compound', 'uc-mfg-oee', 'uc-board-pack', 'uc-incident-pmortem'],
     'construction':             ['uc-construction-vo', 'uc-board-pack', 'uc-incident-pmortem', 'uc-fin-monthend'],
     'food-fmcg':                ['uc-food-promo', 'uc-board-pack', 'uc-town-hall', 'uc-marketing-campaign'],
-    'plantation':               ['uc-plantation-rspo', 'uc-esg-disclosure', 'uc-board-pack', 'uc-incident-pmortem'],
+    'plantation':               ['uc-klk-q1-ops-review', 'uc-plantation-rspo', 'uc-esg-disclosure', 'uc-board-pack', 'uc-incident-pmortem'],
     'bpo-services':             ['uc-bpo-sla-brief', 'uc-board-pack', 'uc-town-hall', 'uc-it-incident'],
     'telco':                    ['uc-telco-outage', 'uc-it-incident', 'uc-board-pack', 'uc-incident-pmortem'],
-    'diversified-conglomerate': ['uc-cong-capalloc', 'uc-board-pack', 'uc-strat-marketscan', 'uc-fin-monthend'],
+    'diversified-conglomerate': ['uc-klk-q1-ops-review', 'uc-cong-capalloc', 'uc-board-pack', 'uc-strat-marketscan', 'uc-fin-monthend'],
     'government-agency':        ['uc-govt-parlq', 'uc-board-pack', 'uc-town-hall', 'uc-it-incident'],
     'financial-regulator':      ['uc-reg-supervisory', 'uc-board-pack', 'uc-incident-pmortem', 'uc-town-hall'],
     'glc-investment':           ['uc-glc-dividend', 'uc-board-pack', 'uc-strat-marketscan', 'uc-fin-monthend'],
@@ -271,10 +276,10 @@ ENTRY_USE_CASES = {
     'dept-finance':             ['uc-fin-monthend', 'uc-board-pack', 'uc-cong-capalloc', 'uc-incident-pmortem'],
     'dept-hr':                  ['uc-hr-perfreview', 'uc-hr-onboarding', 'uc-town-hall', 'uc-board-pack'],
     'dept-legal':               ['uc-legal-contract', 'uc-board-pack', 'uc-incident-pmortem', 'uc-it-incident'],
-    'dept-risk':                ['uc-risk-appetite', 'uc-board-pack', 'uc-incident-pmortem', 'uc-fintech-fraud'],
-    'dept-strategy':            ['uc-strat-marketscan', 'uc-cong-capalloc', 'uc-board-pack', 'uc-town-hall'],
+    'dept-risk':                ['uc-ib-brc-prep', 'uc-risk-appetite', 'uc-board-pack', 'uc-incident-pmortem', 'uc-fintech-fraud'],
+    'dept-strategy':            ['uc-klk-q1-ops-review', 'uc-strat-marketscan', 'uc-cong-capalloc', 'uc-board-pack', 'uc-town-hall'],
     'dept-marketing':           ['uc-marketing-campaign', 'uc-media-campaign', 'uc-board-pack', 'uc-town-hall'],
-    'dept-esg':                 ['uc-esg-disclosure', 'uc-plantation-rspo', 'uc-board-pack', 'uc-renewable-ppa'],
+    'dept-esg':                 ['uc-aster-esg-workflow', 'uc-esg-disclosure', 'uc-plantation-rspo', 'uc-board-pack', 'uc-renewable-ppa'],
     'dept-operations':          ['uc-ops-sop', 'uc-board-pack', 'uc-incident-pmortem', 'uc-it-incident'],
     'dept-corpsec':             ['uc-corpsec-agm', 'uc-board-pack', 'uc-town-hall', 'uc-glc-dividend'],
     'dept-investor-relations':  ['uc-ir-invday', 'uc-board-pack', 'uc-glc-dividend', 'uc-fin-monthend'],
