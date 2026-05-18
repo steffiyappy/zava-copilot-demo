@@ -27,10 +27,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -80,7 +80,7 @@ jobs:
 
       - name: Create Pull Request
         if: steps.apply.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: blog-audit/auto
           base: main
@@ -114,7 +114,7 @@ jobs:
 
       - name: Upload proposals as artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: blog-audit-proposals
           path: tools/proposals/
