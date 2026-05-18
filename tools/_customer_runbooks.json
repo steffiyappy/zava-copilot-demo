@@ -1,0 +1,348 @@
+{
+  "klk_runbook": [
+    {
+      "id": "rb-1",
+      "title": "Site Spreading + Parity Check",
+      "category": "Industrial Operations · Group Finance",
+      "subtitle": "Three site monthly logs land in the Group Site Performance Template — then Cowork re-checks its own arithmetic and flags every variance.",
+      "pattern": "Pattern · Spreading + Parity Check",
+      "apps": "Apps · Excel · Word · SharePoint",
+      "complexity": "Complexity · Advanced",
+      "files": [
+        "Site_Alpha_Mar2026.xlsx",
+        "Site_Beta_Mar2026.xlsx",
+        "Site_Gamma_Mar2026.xlsx",
+        "Group_Site_Performance_Template_v3.xlsx"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Spread to template",
+          "text": "I've attached three site monthly performance logs (Site Alpha, Site Beta, Site Gamma) and the Group Site Performance Template v3.\n\nSpread each site's data into the template's `Site Performance` sheet — one column per site. Map: throughput tonnage, yield %, active/developing acres, operator productivity (throughput tons/shift), consumables issued (kg/acre), diesel consumption (litres), water usage (m³), unit cost per throughput ton (USD).\n\nCapture multi-line manager commentary intact in the `Notes` column.\n\nStandardise dates to yyyy-mm-dd. Standardise units (tonnes, acres, mm, litres, USD).\n\nDon't perform any translation."
+        },
+        {
+          "num": "P2",
+          "title": "Parity check",
+          "text": "Now run a parity check on what you just spread:\n1. For each site, sum throughput produced per week and confirm it ties to the monthly total in the source — flag any divergence > 2%.\n2. Confirm yield calculated from (primary output produced / throughput processed) ties to the yield reported in the log — flag divergence > 0.3 percentage points.\n3. Confirm consumables kg/acre × active acres ties to total consumables issued.\n4. Cross-foot the template totals row.\n\nProduce `Parity_Check_Mar2026.xlsx` with one tab per site showing source value, template value, variance, and a Pass/Flag column."
+        },
+        {
+          "num": "P3",
+          "title": "Brief the Operations MD",
+          "text": "Write a one-page Word brief titled \"Site Performance Spreading — March 2026 — Group Roll-up\" for the Operations MD. Highlight: any flagged parity issues, the worst three KPI shifts vs February, and the three sites worth a site visit.\n\nSave the spreading workbook, parity check, and brief to /Operations/Monthly/Mar2026/."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    },
+    {
+      "id": "rb-2",
+      "title": "Capex Model → Interactive Scenario App",
+      "category": "Manufacturing · Strategy",
+      "subtitle": "A 5-year Frankfurt specialty-chem capex model becomes a working app the IC can interact with — sliders, scenarios, parity report against Excel.",
+      "pattern": "Pattern · Model → Interactive App",
+      "apps": "Apps · Excel · Code Interpreter · PowerPoint",
+      "complexity": "Complexity · Advanced",
+      "files": [
+        "Detroit_Capex_Model_FY27.xlsx"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Understand + build the app",
+          "text": "I've attached our 5-year Frankfurt specialty-chem capex model. First walk me through the structure — drivers, inputs, formulas, and any assumptions an investment committee will push back on.\n\nThen convert it into a Python program with an interactive HTML front-end:\n- Sliders for: WACC (8–14%), EUR/USD (1.05–1.15), raw input A feedstock USD/T (800–1,400), capex contingency (5–15%), opex escalation (0–6%).\n- Show: total 5-year capex, NPV, IRR, payback period, year-by-year cash-out chart, sensitivity heatmap (raw input A × WACC).\n\nDeliver runnable Python plus a self-contained HTML I can preview locally."
+        },
+        {
+          "num": "P2",
+          "title": "Validate + run scenarios",
+          "text": "Run the new app at the model's original assumptions and produce a parity report against the spreadsheet (capex by year, NPV, IRR, total outflow) — flag any divergence > USD 100k.\n\nThen run three scenarios:\n- Base (current): WACC 11%, USD 4.45, raw input A USD 1,050, contingency 8%.\n- Upside: WACC 9%, USD 4.30, raw input A USD 950, contingency 6%.\n- Downside: WACC 13%, USD 4.65, raw input A USD 1,250, contingency 12%.\n\nSummarise NPV swing and the top three line items driving variance."
+        },
+        {
+          "num": "P3",
+          "title": "Pack for the IC",
+          "text": "Build a 6-slide Investment Committee pack titled \"Detroit Capacity Expansion FY27 — Sensitivity Pack\":\n1. Cover\n2. Scenario table\n3. NPV waterfall\n4. Sensitivity heatmap\n5. Key risks\n6. Recommendation.\n\nSave to /Manufacturing/Detroit/FY27_Capex/. Apply the \"Confidential — Board Pack\" sensitivity label."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    },
+    {
+      "id": "rb-3",
+      "title": "Investment Council of Agents — Riverside Phase 3",
+      "category": "Property · Contoso Land",
+      "subtitle": "One IM + DD pack, five expert lenses in parallel — Land Bank, Macro, Construction Risk, Stress Test, Compliance — plus a synthesis pass and a dissent register.",
+      "pattern": "Pattern · Council of Agents",
+      "apps": "Apps · Word · PowerPoint · PDF · Deep Research",
+      "complexity": "Complexity · Advanced",
+      "files": [
+        "Riverside_Phase3_IM.pdf",
+        "Riverside_Phase3_TechDD.pdf",
+        "Riverside_Site_Plan.pdf"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Convene the council",
+          "text": "You are acting as a council of AI agents helping Contoso Land assess the investment merits of the Riverside Mixed-Use Phase 3 development. For each role below, assume the role completely and produce a long, audit-ready interim report.\n\nRoles:\n1. Land Bank Analyst — deep analysis of land cost, plot ratio, GDV/GFA, demographic catchment, comparable transactions within 5 km, current absorption rates. Cite township masterplans where relevant.\n2. Macro Strategist — assess macro regime (rate path, USD outlook, household debt, Fed stance), implications for mortgage absorption and pre-sale velocity, correlation surprises.\n3. Construction Risk Officer — independent view across material risk (steel, cement, EUR/USD), labour availability, contractor concentration, weather-window scheduling, defects-liability exposure. Propose mitigations.\n4. Stress Tester — structured scenarios (base / bear / bespoke shocks), kill-switch thresholds, sensitivity narrative, what would force a launch delay.\n5. Compliance & Policy Agent — investment permissibility, planning-approval gate status, affordable-housing quota, set-aside release schedule, planning conditions, environmental disclosures.\n\nFinally, analyse all interim reports for recommendations, evidence, assumptions and dissenting views. Capture every claim with traceability back to a section of the IM or DD pack."
+        },
+        {
+          "num": "P2",
+          "title": "Synthesise the pack",
+          "text": "Assemble the council outputs into a Word memo titled \"Riverside Mixed-Use Phase 3 — Investment Council Recommendation\" with:\n- Cover page (one-line recommendation)\n- One section per agent (~1 page each)\n- Dissent register — anywhere two agents disagreed and why\n- Appendix capturing every traceability link\n\nSave to /ContosoLand/Pipeline/Riverside_Phase3/Council/. Apply the \"Confidential — Board Pack\" sensitivity label."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    },
+    {
+      "id": "rb-4",
+      "title": "Mixed-Format Bank Statement Extraction",
+      "category": "Group Finance",
+      "subtitle": "Bank A text PDF, Bank B scanned PDF, HSBC mobile screenshot — all become one Excel split by month, sorted ascending, ready to reconcile to the GL.",
+      "pattern": "Pattern · Mixed-Format Extraction",
+      "apps": "Apps · Excel · PDF · Image",
+      "complexity": "Complexity · Intermediate",
+      "files": [
+        "BankA_E-Stmt_Mar2026.pdf",
+        "BankB_E-Stmt_Mar2026.pdf",
+        "HSBC_Stmt_Mar2026.png"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Extract → standardise → split by month",
+          "text": "Extract the contents of the three bank statements into one Excel file with the following columns:\nPage No, Bank, Transaction Date, Description, Debit, Credit, Running Balance, Currency, Source File.\n\nStandardise on yyyy-mmm-dd as the date format.\n\nCapture multi-line transaction details intact.\n\nIgnore all text that is not part of a transaction (logos, marketing banners, addresses, footers).\n\nDon't perform any translation.\n\nSplit the transactions by month into different worksheets and within each worksheet, sort the transactions chronologically ascending."
+        },
+        {
+          "num": "P2",
+          "title": "Reconcile to the GL",
+          "text": "Now reconcile the workbook to the GL:\n- Pull the corresponding GL bank-account balances from /Finance/GL/Mar2026/.\n- Compare opening balance, closing balance, total debits, total credits per bank.\n- Output `Recon_Mar2026.xlsx` with one tab per bank: source vs GL, variance, status (Match / Investigate / Missing).\n\nFlag anything > USD 1,000."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    },
+    {
+      "id": "rb-5",
+      "title": "Recursive UBO + Sanctions Pack",
+      "category": "Group Procurement · Compliance",
+      "subtitle": "An Asia-Pacific tier-3 supplier consolidator's vendor application becomes a fully drilled UBO tree, sanctions sweep, and a single PDF for Procurement Committee.",
+      "pattern": "Pattern · Recursive Entity Research",
+      "apps": "Apps · Deep Research · Word · PDF · Excel",
+      "complexity": "Complexity · Advanced",
+      "files": [
+        "Vendor_Onboarding_PT_Acme_Industrial.pdf"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Build the UBO tree",
+          "text": "Create an Ultimate Beneficial Ownership diagram for PT Acme Industrial Lestari (the vendor on the attached application).\n\nRecursively identify the UBO of each identified shareholder until you reach individual natural persons or until you reach a 5-level depth — whichever comes first.\n\nFor each entity:\n- Pull entity data from the application package; for missing data, conduct deep research using publicly available sources (SEC EDGAR, Companies House, OpenCorporates, equivalent national registries, OFAC and EU consolidated lists, news archives).\n- For every node, capture: legal entity name, registration number, jurisdiction, % ownership, source URL, last-verified date.\n- Where ownership is unclear or sourced from only one publication, flag the node \"Verification needed\" — do not guess.\n\nRender as a hierarchical diagram (Mermaid syntax) and a tabular ownership ledger."
+        },
+        {
+          "num": "P2",
+          "title": "Sanctions + adverse-media sweep",
+          "text": "For every node in the UBO tree, run:\n- Sanctions screening against OFAC SDN, EU Consolidated List, UK HMT, MAS, FinCEN.\n- Adverse-media screening (last 36 months) for: environmental violations, land disputes, labour violations, corruption, regulatory fines.\n- Politically Exposed Person (PEP) check at the natural-person leaves.\n\nOutput `Sanctions_Sweep.xlsx` with one row per check: entity, check type, source, hit/no-hit, snippet, link."
+        },
+        {
+          "num": "P3",
+          "title": "Convert to KYC pack",
+          "text": "Convert the UBO diagram, ownership ledger, and sanctions sweep into a single PDF titled \"PT Acme Industrial Lestari — KYC Pack\" for the Procurement Committee. Include: cover page, executive summary (recommendation + flag count), UBO diagram, ownership ledger, sanctions sweep, sources & methodology.\n\nSave to /Procurement/Vendors/PT_Acme_Industrial/KYC/. Apply the \"Confidential — Procurement\" sensitivity label."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    },
+    {
+      "id": "rb-6",
+      "title": "Counterparty Underwriting Memo (Cite, Don't Fabricate)",
+      "category": "Group Risk · Treasury",
+      "subtitle": "Three years of audited statements become a structured underwriting pack with cited note numbers — and a section called out for what the source pack didn't disclose.",
+      "pattern": "Pattern · Structured Pack with Citations",
+      "apps": "Apps · PDF · Word · Excel · Enterprise Search",
+      "complexity": "Complexity · Advanced",
+      "files": [
+        "Counterparty_Audited_FS_FY24.pdf",
+        "Counterparty_Audited_FS_FY23.pdf",
+        "Counterparty_Audited_FS_FY22.pdf"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Build the underwriting pack",
+          "text": "You are acting as Contoso Group Credit Risk. Produce an underwriting memo for the counterparty using only the three attached audited financial statements (FY22, FY23, FY24).\n\nOUTPUT FORMAT (UNDERWRITING PACK):\nA. Executive Summary (Credit View — max 1 page)\nB. Financial Performance Analysis\nC. Balance Sheet & Liquidity Assessment\nD. Cash Flow Adequacy Review\nE. Leverage & Coverage Metrics Table (multi-year)\nF. Accounting & Disclosure Risk Commentary\nG. Debt Servicing Capacity Assessment\nH. Key Credit Risks & Red Flags (incl. potential early warning indicators, structural weaknesses in the financial profile)\nI. Required Follow-Up Items for Credit Approval (missing information; questions to management before credit approval)\n\nCite statement sections or note numbers when highlighting findings (e.g., \"see Note 18 — Borrowings\").\n\nDo not fabricate financial metrics if not derivable from the provided documents.\n\nMaintain professional tone suitable for an internal underwriting memo."
+        },
+        {
+          "num": "P2",
+          "title": "Limit recommendation",
+          "text": "Based on the underwriting pack, recommend:\n- Credit limit (USD m)\n- Tenor cap (months)\n- Security requirement\n- The three covenants Contoso should require.\n\nJustify each recommendation in two sentences citing specific findings from sections E and G.\n\nApply the \"Confidential — Treasury\" sensitivity label."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    },
+    {
+      "id": "rb-7",
+      "title": "Top-50 Talent Review Council",
+      "category": "Group HR",
+      "subtitle": "Performance, potential, retention, DEI and successor mapping — five HR lenses on the same Top-50 cohort, in parallel, with a 9-box and a successor map for the ExCo room.",
+      "pattern": "Pattern · Council of Agents",
+      "apps": "Apps · Excel · PowerPoint · Word",
+      "complexity": "Complexity · Advanced",
+      "files": [
+        "TopTalent_Profiles_FY26.xlsx",
+        "Performance_2yr_2024_2025.xlsx",
+        "EngagementSurvey_2025.pdf"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Convene the talent council",
+          "text": "You are acting as a council of AI agents helping Contoso Group HR run the FY26 Top-50 talent review. For each role below, assume the role completely and produce an audit-ready interim report.\n\nRoles:\n1. Performance Reviewer — analyse the 2-year performance file. Cluster the 52 names into Exceeds / Meets / Below; surface anyone whose rating moved by ≥1 band year over year.\n2. Potential Assessor — read the engagement survey and competency notes. Map each name onto the 9-box (performance × potential).\n3. Retention Risk Analyst — flag retention risk per name (engagement score, tenure, time-since-last-promotion, market hotness of role). High / Med / Low with rationale.\n4. DEI Reviewer — assess representation across the cohort by gender, division, business unit and nationality; flag pipeline concentrations.\n5. Successor Mapper — for each of the top 10 critical roles in the org, propose 2 ready-now and 2 ready-in-2yrs successors from the cohort.\n\nFinally, analyse all interim reports for recommendations, evidence, assumptions and dissenting views."
+        },
+        {
+          "num": "P2",
+          "title": "Pack for the ExCo",
+          "text": "Assemble the council outputs into a 12-slide PowerPoint titled \"Top-50 Talent Review FY26\" plus a Word appendix:\n- Cover, council recommendation, 9-box, retention heatmap, DEI cut, top-10 successor map, watch-list, asks of ExCo.\n\nNames in the pack only — no compensation figures, no engagement-survey verbatims.\n\nSave to /Group/HR/TalentReview/FY26/. Apply the \"Confidential — HR Restricted\" sensitivity label."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    },
+    {
+      "id": "rb-8",
+      "title": "Quarterly Results Spreading + Parity Check",
+      "category": "Group IR · Finance",
+      "subtitle": "Trial balance + segment reporting → exchange quarterly filing template, then four parity checks before any number leaves IR working drafts.",
+      "pattern": "Pattern · Spreading + Parity Check",
+      "apps": "Apps · Excel · Word · SharePoint",
+      "complexity": "Complexity · Advanced",
+      "files": [
+        "Q1_FY26_Trial_Balance.xlsx",
+        "Q1_FY26_Segment_Reporting.xlsx",
+        "NYSE_Quarterly_Filing_Template_v6.xlsx"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Spread to NYSE template",
+          "text": "Spread the Q1 FY26 trial balance and segment reporting workbooks into the Exchange Quarterly Filing Template v6.\n\nMap every GL account to the correct NYSE line item per the chart-of-accounts in the template's `Mapping` sheet.\n\nCapture segment splits (Industrial Operations, Manufacturing, Property, Other) into the segment table.\n\nDon't perform any translation. Don't change formulas in the NYSE template — populate inputs only.\n\nDate format yyyy-mm-dd. Currency USD thousands."
+        },
+        {
+          "num": "P2",
+          "title": "Four-way parity check",
+          "text": "After spreading, run a four-way parity check:\n1. NYSE template Group total revenue = sum of segment revenue.\n2. NYSE template Group net profit = sum of segment net profit ± inter-segment eliminations.\n3. NYSE template balance sheet = previous-quarter closing + current-quarter movements.\n4. NYSE template segment cap-ex = segment cap-ex from the source file.\n\nOutput `Q1_Parity_Check.xlsx` with each check, expected vs actual, variance, status. Flag anything ≠ 0."
+        },
+        {
+          "num": "P3",
+          "title": "exchange announcement narrative",
+          "text": "Now write the NYSE Quarterly Announcement narrative (max 4 pages) covering: overview, segment performance, balance sheet, outlook, prospects.\n\nTone: factual, forward-looking statements caveated, every figure traceable to the spreading workbook.\n\nDo not commit to any number that is not in the trial balance.\n\nSave everything to /Group/IR/Q1_FY26/Working_Drafts/. Apply the \"Confidential — IR Working Drafts\" sensitivity label. Treat every figure as price-sensitive until released."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    },
+    {
+      "id": "rb-9",
+      "title": "Multi-Site GHG Standardisation (CDP-Ready)",
+      "category": "Group Sustainability",
+      "subtitle": "Twelve sites' fuel + electricity + consumables logs in mixed PDF / XLSX / scanned formats become one GHG Protocol tracker with Scope 1+2+3 and an outlier sweep.",
+      "pattern": "Pattern · Mixed-Format Extraction",
+      "apps": "Apps · Excel · PDF · Image · Word",
+      "complexity": "Complexity · Advanced",
+      "files": [
+        "Site_Fuel_Logs_x4.xlsx",
+        "Site_Diesel_Receipts_x5.pdf",
+        "Site_Meter_Reads_x3_scans.png",
+        "GHG_Protocol_Scope123_Tracker_v2.xlsx"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Extract → standardise → map to scopes",
+          "text": "Extract diesel litres, electricity kWh, consumables tonnes (with N/P/K split where stated), and methane (kg) from the 12 attached site monthly logs into the GHG Protocol Tracker:\n- Map each fuel/input and its emission factor (Defra 2024 / IPCC AR6) to Scope 1, 2 or 3, using the named-range factors in the tracker's `Factors` sheet.\n- Capture multi-line descriptions intact.\n- Ignore footers, signatures, and watermarks.\n- Standardise on litres (fuel), kWh (electricity), tonnes (consumables), kg (methane).\n- One worksheet per site, then a Group rollup sheet.\n\nConvert into tCO2e using the named-range emission factors. Where a unit on the source is ambiguous, flag the row — do not guess."
+        },
+        {
+          "num": "P2",
+          "title": "Outlier sweep",
+          "text": "Run an outlier sweep:\n- Site-month combinations where diesel litres / active acre is > 2 standard deviations above the cohort.\n- Months where electricity is missing or zero (vs prior 12-month baseline).\n- Consumables application > 1.2 × historical 12-month average.\n\nOutput `Outlier_Sweep_Mar2026.xlsx`. Pre-fill the \"Likely Cause\" column with options: Data gap / Operational / Verification needed."
+        },
+        {
+          "num": "P3",
+          "title": "CDP brief",
+          "text": "Write a 3-page Word brief titled \"Group Scope 1+2+3 — March 2026 — CDP Cut\" for the Sustainability Director: total tCO2e, intensity (tCO2e per primary output tonne), top three contributors, vs FY25 baseline, anomalies and decisions required.\n\nSave to /Group/Sustainability/Monthly/Mar2026/."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    },
+    {
+      "id": "rb-10",
+      "title": "Group P&L → Interactive Strategy App",
+      "category": "Group Strategy · CEO Office",
+      "subtitle": "The FY27 group plan model — Industrial Operations + Manufacturing + Property + eliminations — becomes an interactive scenario app for the September strategy off-site.",
+      "pattern": "Pattern · Model → Interactive App",
+      "apps": "Apps · Excel · Code Interpreter · PowerPoint",
+      "complexity": "Complexity · Advanced",
+      "files": [
+        "Group_FY27_Plan_Model.xlsx"
+      ],
+      "prompts": [
+        {
+          "num": "P1",
+          "title": "Understand + build the app",
+          "text": "I've attached Contoso's FY27 group plan model. First walk me through the structure — divisions, drivers, intercompany eliminations, and any assumptions Strategy will have to defend at the September board.\n\nThen convert into a Python program with an interactive HTML front-end:\n- Sliders: primary output USD/T (750–1,250), EUR/USD (1.05–1.15), specialty-chem EBITDA margin (8–18%), property pre-sale velocity (60–110% of plan), opex inflation (0–6%).\n- Show: Group revenue, Group EBITDA, Group PAT, division contribution waterfall, EBITDA bridge vs FY26, board-level scorecard.\n\nDeliver runnable Python plus a self-contained HTML I can preview locally."
+        },
+        {
+          "num": "P2",
+          "title": "Validate + run scenarios",
+          "text": "Run the new app at the original plan assumptions. Produce a parity report against the spreadsheet (revenue, EBITDA, PAT by division, group total) — flag any divergence > USD 1m.\n\nThen run three scenarios:\n- Base (current plan).\n- Bull: primary output USD 1,200, USD 4.30, specialty-chem margin 16%, property pre-sale 105%.\n- Bear: primary output USD 850, USD 4.65, specialty-chem margin 9%, property pre-sale 75%.\n\nSummarise EBITDA swing, the top three division/driver combinations driving variance, and identify the one assumption the bear scenario hinges on."
+        },
+        {
+          "num": "P3",
+          "title": "Strategy off-site pack",
+          "text": "Build a 10-slide deck titled \"FY27 Plan — Sensitivity Pack for Strategy Off-site\":\n1. Cover\n2. Scenario table\n3. EBITDA bridge\n4. Division contribution waterfall\n5. Sensitivity heatmap (primary output × FX)\n6. Bear-case kill switch\n7. Property pre-sale sensitivity\n8. Specialty Chemicals margin sensitivity\n9. Decisions required\n10. Appendix.\n\nSave to /Group/Strategy/FY27_Offsite/. Apply the \"Confidential — Board Pack\" sensitivity label."
+        }
+      ],
+      "watch": "What to watch",
+      "honest": "Honest framing"
+    }
+  ],
+  "kibb_brc_runbook": [
+    {
+      "exercise": 2,
+      "task": 1,
+      "id": "p2-1",
+      "text": "I am the Group Chief Financial Officer of Contoso Investment Bank Berhad preparing the FY2025 year-end Board Risk Committee pack, which the Group MD needs ahead of Thursday 27 March 2026. Using the Monthly_PnL sheet in this workbook, I need two outputs placed together in a new sheet called Board Summary. First, produce a Board Risk Committee variance summary table covering every business segment, showing actual revenue and operating cost year-to-date, budget year-to-date, the RM variance, and the variance as a percentage, with a RAG status column where Red means over 10% adverse, Amber means 5 to 10% adverse, and Green means within 5% of budget. Flag any segment where the variance has breached the 10% threshold that triggers a mandatory corrective action plan and a written explanation to the Group Board under our internal policy, and for those segments add a one-sentence explanation of the likely commercial driver based on the data visible in the sheet. Second, immediately below the table in the same Board Summary sheet, draft the Group CFO narrative commentary for the Board Risk Committee pack. This should open by stating the Group's overall full-year PBT position in both RM and percentage terms relative to budget, discuss the two segments with the most significant adverse variances by name and explain what is driving each shortfall, briefly acknowledge the best-performing segment to give a balanced view, explicitly state which segments have triggered the corrective action threshold, and close with a clear statement of the management actions proposed and the timeline for resolution before the next Board cycle. Write the commentary in formal continuous prose, no bullet points, 200 to 220 words, suitable for a Board Risk Committee pack and consistent with Bursa-listed disclosure standards."
+    },
+    {
+      "exercise": 2,
+      "task": 2,
+      "id": "p2-2",
+      "text": "I am preparing a Board Risk Committee pack for Contoso Investment Bank Berhad and I need a visual executive dashboard built directly in this workbook so it can be printed and included as a single-page insert for the committee. Using the data in the Monthly_PnL sheet, create a new sheet called Dashboard and build the following elements on it. At the top of the page create a KPI summary row with three clearly labelled headline boxes showing total Group revenue year-to-date in RM, total Group budget year-to-date in RM, and the overall Group PBT variance expressed as both an RM figure and a percentage with a RAG indicator so the committee sees the Group position in seconds. Below the KPI row create a horizontal bar chart ranking every business segment by their year-to-date adverse variance from worst to best, with RAG colour coding applied directly to the bars: Red for over 10% adverse, Amber for 5 to 10%, Green for within budget, so the committee can immediately see which segments need attention without reading a table. Add a second chart showing the monthly trend of total Group revenue versus total budget for all 12 months as a dual-line chart, so the committee can see whether the gap is widening or narrowing over time and assess whether the variance is structural or seasonal. Finally add a compact summary table below the charts listing only the Red-flagged segments with columns for segment name, YTD variance in RM, variance percentage, and a status cell reading Corrective Action Required. Format the entire dashboard to fit and print cleanly on a single A4 landscape page so it can be inserted directly into the Board Risk Committee pack without resizing."
+    },
+    {
+      "exercise": 2,
+      "task": 3,
+      "id": "p2-3",
+      "text": "I am the Group Chief Financial Officer of Contoso Investment Bank Berhad and I am uploading the FY2025 segment P&L workbook to prepare for Thursday's Board Risk Committee. I need the Analyst Agent to run a full quantitative analysis on the Monthly_PnL sheet and produce six specific outputs. First, build a complete pivot table showing actual operating cost versus budget for every business segment across all 12 months of FY2025 with a variance column, a variance percentage column, and RAG conditional formatting applied automatically so Red cells indicate over 10% adverse variance, Amber indicates 5 to 10%, and Green indicates within budget. Second, generate a horizontal bar chart ranking every segment by total full-year adverse cost variance from worst to best, with RAG colour coding on the bars, so the committee can see the full picture at a glance. Third, produce a dual-line chart showing total Group operating cost actual versus budget for each month across the full year, so the committee can see whether the variance gap is widening, narrowing, or seasonal. Fourth, produce a stacked bar chart breaking down monthly cost contribution by segment for the year so the Board can see which segments are driving Group cost growth or decline over time. Fifth, analyse the monthly trend data for every segment and identify those that have exceeded budget for three or more consecutive months, because a persistent multi-month pattern indicates a structural cost problem rather than a one-off timing issue, and present these in a separate flagged table with the segment name, number of consecutive months of overspend, and total cumulative overspend amount. Sixth, also pull in the Segment_Revenue sheet to calculate full-year Group PBT (revenue minus operating cost) by segment and the Group total, and present a segment-by-segment PBT table with a grand total at the bottom for the Group MD briefing."
+    },
+    {
+      "exercise": 3,
+      "task": 1,
+      "id": "p3-1",
+      "text": "I am the Group Chief Financial Officer of Contoso Investment Bank Berhad and I am preparing for the Board Risk Committee on Thursday 27 March 2026. This document is the managed-services agreement signed with QuantumStream Technologies Sdn Bhd, our outsourced trading platform and post-trade processing provider, at a contract value of RM 240,000 per month over 36 months and a total contract value of approximately RM 8.64 million. The board has asked me to confirm that the contract is fully compliant with our Group Outsourcing and Finance policy and with BNM Outsourcing Policy BNM/RH/PD 028-99 before the next renewal cycle. Read this contract carefully end to end and identify every clause that creates a HIGH or MEDIUM risk for Contoso or that breaches our internal Group policy. For each issue identified, present the finding in a structured table with the following columns: contract clause reference and section number, risk rating of HIGH or MEDIUM, a plain English explanation of the issue and why it matters from a regulatory and commercial perspective, the corresponding Contoso Group Outsourcing and Finance policy reference that has been breached, the estimated annual or contract-life RM exposure, and a specific recommended remediation action that should be tabled at the Board Risk Committee. Pay particular attention to clauses dealing with pricing escalation and variation rights, contract term and renewal mechanics, data ownership and intellectual property in derived data sets, cross-border data hosting and offshoring of customer information including the requirement for prior BNM written consent, audit rights for Contoso Internal Audit and BNM examination access, service availability and recovery time objectives, and limitation of liability and exclusions. Do not omit any HIGH or MEDIUM risk you find, and present the findings in descending order of severity so the most material breaches appear first."
+    },
+    {
+      "exercise": 3,
+      "task": 2,
+      "id": "p3-2",
+      "text": "Build a Board Risk Committee deck for Contoso Investment Bank Berhad referencing 02_KIBB_VendorContract.docx and 01_KIBB_SegmentPnL.xlsx. Format as a professional financial-services board pack, Contoso-branded, navy and white, six slides total. Slide 1 is the cover slide titled \"FY2025 Year-End Board Risk Committee — Group Risk & Outsourcing Review\", subtitle \"Prepared by Group CFO, Priya\", dated Thursday 27 March 2026. Slide 2 is the Executive Summary listing three headline messages: Group PBT performance versus budget with overall RAG status; identified BNM Outsourcing Policy breaches in the QuantumStream Technologies managed-services agreement; and recommended Board decisions. Slide 3 is the Segment Variance Snapshot showing the four segments with the largest adverse variance to budget with RM and percentage figures and RAG status. Slide 4 is the Vendor Contract Risk Register summarising every HIGH and MEDIUM finding from the QuantumStream contract review with one-line descriptions and RM exposure. Slide 5 is the Recommended Actions slide with five concrete decisions for the Board: corrective action plans for breached segments, immediate written notice to QuantumStream on the seven non-compliant clauses, regularisation plan to BNM under the Outsourcing Policy notification framework, refresh of the Group Outsourcing and Finance policy where gaps are identified, and approval of the FY2026 outsourcing oversight budget. Slide 6 is Next Steps with owners, timelines, and the date of the next checkpoint. Keep all bullets to a maximum of two lines, use clean board-pack typography, and avoid stock imagery."
+    },
+    {
+      "exercise": 3,
+      "task": 3,
+      "id": "p3-3",
+      "text": "I am the Group Chief Financial Officer of Contoso Investment Bank Berhad preparing for the Board Risk Committee on Thursday 27 March 2026. I need you to handle five tasks in parallel. Task 1: create a Word document titled \"FY2025 Year-End Board Risk Committee — Pre-read Summary\" containing a 250-word executive briefing covering segment variance highlights and the QuantumStream Technologies vendor contract findings, suitable for the Group MD and the Chairman to read in five minutes ahead of the meeting, and save it to my OneDrive. Task 2: create a second Word document titled \"BNM Outsourcing Policy — Response Memo\" containing a draft response to BNM regarding the QuantumStream Technologies managed-services agreement, written in formal regulatory correspondence style, acknowledging the identified non-compliances against BNM/RH/PD 028-99, outlining the remediation plan and timeline, and stating Contoso's commitment to ongoing compliance, and save it to my OneDrive. Task 3: draft an Outlook email to the Board Risk Committee members (use placeholders [BRC Chair], [Group MD], [Chief Risk Officer]) confirming the meeting on Thursday 27 March 2026 from 10:00 to 12:00 in the Boardroom, attaching the pre-read summary, and listing the agenda: FY2025 segment performance review, vendor outsourcing risk update, BNM Outsourcing Policy compliance, and recommended Group Board actions. Task 4: create an Outlook calendar invite for the Board Risk Committee meeting on Thursday 27 March 2026 from 10:00 to 12:00 with all committee members, the Boardroom location, and the agenda in the body. Task 5: draft a short Teams message to my Finance and Risk leadership channel notifying them that the FY2025 year-end board pack and BNM response memo are with the Group MD for sign-off and that the Board Risk Committee is confirmed for Thursday morning. Run all five tasks in parallel and report back when each is complete."
+    }
+  ]
+}

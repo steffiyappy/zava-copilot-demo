@@ -352,6 +352,27 @@ except ImportError:
 except Exception as _e:
     print(f"(Cowork HTML artifact append skipped due to error: {_e})")
 
+# ── Customer Cowork Runbooks: KLK (10 UCs) + KIBB (BRC, 6 steps) ─────────
+# User flagged: "the cowork from KIBB and KLK customer pages — runbook prompts
+# need to be in the main hub industries/depts". Routes each customer UC to one
+# matching Zava entry's Cowork tool block, appending the multi-step prompts.
+try:
+    from cowork_customer_runbooks import inject_customer_runbooks
+    _all_for_rb = list(all_industries) + list(all_departments)
+    _rb_ent, _rb_pmt = inject_customer_runbooks(_all_for_rb)
+    print(f"Cowork customer-runbook prompts: {_rb_pmt} prompts appended across {_rb_ent} entries (KLK 10 UCs + KIBB BRC)")
+    try:
+        from id_to_bm_swaps import fill_missing_bm_from_id as _refill_rb
+        _bm_more_rb = _refill_rb(all_industries) + _refill_rb(all_departments)
+        if _bm_more_rb:
+            print(f"BM auto-fill (post-customer-runbook): {_bm_more_rb} more tool blocks filled")
+    except Exception:
+        pass
+except ImportError:
+    print("(cowork_customer_runbooks.py not found; KLK/KIBB runbook merge skipped)")
+except Exception as _e:
+    print(f"(Cowork customer-runbook merge skipped due to error: {_e})")
+
 # ── Reverse mirror + canonical override: build relevantIndustries on every department ──
 # Each industry declares 3-5 dept ids in relevantDepts (kept narrow so industry
 # pages stay visually neat with 3-5 dept pills). Reverse-mirror that graph to
