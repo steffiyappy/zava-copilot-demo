@@ -267,6 +267,60 @@ INDUSTRIES_11.append(ind(
             'Which open recalls remain unclosed? Build a closure plan.',
             "Draft the response letter to the regulator's latest notice."
           ],
+        },
+        {
+            'icon': '🏍️',
+            'label': 'Indonesia 2W Dealer Principal Coach',
+            'name': 'Zava Motors — Indonesia 2-Wheeler Network Coach',
+            'desc': 'Supports the East Java + East Nusa Tenggara Honda 2-wheeler distribution arm (266 dealers, MPM-Honda style) on CSI, NPS, EV readiness, and dealer-principal communications.',
+            'instructions': "You are the Zava Motors Indonesia 2-Wheeler Network Coach. You support the Director of Dealer Network for the Honda 2W distribution arm covering East Java and East Nusa Tenggara (operating model akin to Mitra Pinasthika Mustika's Honda dealership network). Ground every answer on the dealer performance file (AUTOM_06_Dealer_Performance.xlsx), the customer-experience file (AUTOM_11_Customer_NPS_Service.xlsx), and the most recent Dealer Principal communication template (AUTOM_12_Dealer_Principal_Update.docx). Surface CSI/NPS gaps by dealer, EV-readiness shortfalls, and same-store unit-sales risk. Draft Bahasa-Indonesia friendly dealer-principal comms using the established tone of AUTOM_12. Always include dealer code, city, and region in any recommendation.",
+            'knowledge': [
+              {'file':'AUTOM_06_Dealer_Performance.xlsx', 'note':'Q1 FY26 units sold, service revenue, spare parts revenue, CSI by dealer (East Java + NTT).'},
+              {'file':'AUTOM_11_Customer_NPS_Service.xlsx', 'note':'NPS by region and touchpoint, plus sampled customer verbatim comments.'},
+              {'file':'AUTOM_12_Dealer_Principal_Update.docx', 'note':'Last quarterly dealer-principal letter — tone, structure, key-dates table.'}
+            ],
+            'knowledgeNote': 'Test: "Which 5 dealers in East Java have CSI below 78 AND service-NPS below 30 — and what should the next dealer-principal letter say to them?"',
+            'queries': [
+              'Top 5 underperforming dealers by combined CSI + service-NPS — recommended dealer-principal action.',
+              'Where do EV-readiness gaps overlap with weak service-NPS? Build a 90-day catch-up plan by region.',
+              "Draft this quarter's dealer-principal letter in the same tone as AUTOM_12, embedding the 3 priorities and key dates."
+            ],
+        },
+        {
+            'icon': '🌱',
+            'label': 'Group Sustainability & ESG Briefing',
+            'name': 'Zava Motors — Group Sustainability & ESG Briefing Agent',
+            'desc': 'Prepares Sustainability Committee and Board ESG papers grounded on Scope 1/2/3 inventory, EV-transition KPIs, and the Chairman’s FY26 strategic priorities.',
+            'instructions': "You are the Zava Motors Group Sustainability & ESG Briefing Agent. You support the Group Sustainability & Risk Director. Ground every reply on the Sustainability workbook (AUTOM_08_Sustainability_ESG.xlsx) and the Chairman's FY26 Strategic Priorities memo (AUTOM_09_Board_Strategic_Priorities_FY26.docx). Cross-reference financed emissions (JACCS-style consumer 2W book) against the EV transition KPI sheet. Flag where FY26 / FY30 targets are at risk. Tone: board-level, audit-ready, Indonesian holding-company context.",
+            'knowledge': [
+              {'file':'AUTOM_08_Sustainability_ESG.xlsx', 'note':'Scope 1/2/3 inventory by segment + EV Transition KPIs + CR report draft narrative blocks.'},
+              {'file':'AUTOM_09_Board_Strategic_Priorities_FY26.docx', 'note':'Chairman & Group CEO FY26 strategic priorities memo — climate, EV, JACCS green financing.'},
+              {'file':'AUTOM_07_Financial_Performance.xlsx', 'note':'Segment P&L for tying ESG progress to financial materiality.'}
+            ],
+            'knowledgeNote': 'Test: "Which 3 ESG targets in AUTOM_08 are at-risk vs FY30 and what is the Chairman already on record about in AUTOM_09?"',
+            'queries': [
+              'Draft a 1-page Sustainability Committee briefing: where are we vs FY26 + FY30 targets?',
+              'Map every ESG initiative to the Chairman FY26 priorities; flag misalignment.',
+              'Build the response paper to a regulator querying our financed emissions and green-financing pipeline.'
+            ],
+        },
+        {
+            'icon': '🚐',
+            'label': 'Rental & Insurance Ops Coach',
+            'name': 'Zava Motors — Rental Fleet & Insurance Claims Operations Coach',
+            'desc': 'Helps the MPM Rent-style corporate fleet team and MPM Insurance-style claims team improve utilisation, claims cycle time, and customer NPS.',
+            'instructions': "You are the Zava Motors Rental & Insurance Operations Coach. You support the COO of the rental & insurance vertical. Ground on the operations file (AUTOM_10_Rental_Fleet_Insurance_Ops.xlsx) — 3 sheets covering MPM Rent corporate fleet utilisation, MPM Insurance claims cycle time, and AUKSI auction sell-through. Cross-check with customer experience signals in AUTOM_11_Customer_NPS_Service.xlsx. Recommend operational interventions that move utilisation, claims cycle time, sell-through, or NPS by at least 200 bps. Frame everything in IDR.",
+            'knowledge': [
+              {'file':'AUTOM_10_Rental_Fleet_Insurance_Ops.xlsx', 'note':'MPM Rent corporate fleet, MPM Insurance claims by month, AUKSI auction GMV.'},
+              {'file':'AUTOM_11_Customer_NPS_Service.xlsx', 'note':'NPS by touchpoint — including rental (corporate) and insurance claims.'},
+              {'file':'AUTOM_07_Financial_Performance.xlsx', 'note':'Segment P&L to tie ops moves to EBITDA.'}
+            ],
+            'knowledgeNote': 'Test: "Which corporate rental client should we double-down on in FY26 and which insurance touchpoint is destroying our NPS?"',
+            'queries': [
+              'Rank corporate rental clients by EV-readiness + utilisation + contract end date — surface upsell candidates.',
+              'Where is insurance claims cycle time worst, and how does it correlate with NPS? Recommend the top 3 fixes.',
+              'Draft a 1-page monthly Rental + Insurance + AUKSI operations review for the COO.'
+            ],
         }
       ],
         agentsID=[
@@ -320,16 +374,70 @@ INDUSTRIES_11.append(ind(
             'Yang mana open recalls remain unclosed? Bangun a closure plan.',
             "Susun the response letter to the regulator's latest notice."
           ],
+        },
+        {
+          'icon': '🏍️',
+          'label': 'Pelatih Jaringan Dealer Honda 2W (Indonesia)',
+          'name': 'Zava Motors — Pelatih Jaringan 2-Wheeler Indonesia',
+          'desc': 'Mendukung distribusi Honda 2W di Jawa Timur + Nusa Tenggara Timur (266 dealer, gaya MPM-Honda) pada CSI, NPS, kesiapan EV, dan komunikasi prinsipal dealer.',
+          'instructions': 'Anda adalah Zava Motors Pelatih Jaringan 2-Wheeler Indonesia. Anda mendukung Direktur Jaringan Dealer Honda 2W di Jawa Timur dan Nusa Tenggara Timur (model operasi mirip jaringan dealer Honda Mitra Pinasthika Mustika). Grounding setiap jawaban pada file kinerja dealer (AUTOM_06_Dealer_Performance.xlsx), file pengalaman pelanggan (AUTOM_11_Customer_NPS_Service.xlsx), dan template komunikasi prinsipal dealer terakhir (AUTOM_12_Dealer_Principal_Update.docx). Ungkap kesenjangan CSI/NPS per dealer, kekurangan kesiapan EV, dan risiko same-store unit sales. Susun komunikasi prinsipal dealer dengan nada yang sudah dibakukan AUTOM_12. Selalu cantumkan kode dealer, kota, dan wilayah pada setiap rekomendasi.',
+          'knowledge': [
+            {'file':'AUTOM_06_Dealer_Performance.xlsx', 'note':'Unit terjual Q1 FY26, pendapatan service, pendapatan spare parts, CSI per dealer (Jawa Timur + NTT).'},
+            {'file':'AUTOM_11_Customer_NPS_Service.xlsx', 'note':'NPS per wilayah dan touchpoint, plus verbatim pelanggan terpilih.'},
+            {'file':'AUTOM_12_Dealer_Principal_Update.docx', 'note':'Surat prinsipal dealer kuartalan terakhir — nada, struktur, tabel tanggal kunci.'}
+          ],
+          'knowledgeNote': 'Tes: "Yang mana 5 dealer di Jawa Timur dengan CSI <78 DAN service-NPS <30 — dan pesan apa yang harus disampaikan surat prinsipal dealer berikutnya?"',
+          'queries': [
+            '5 dealer terbawah berdasarkan kombinasi CSI + service-NPS — rekomendasikan aksi prinsipal dealer.',
+            'Di mana kesenjangan kesiapan EV bertepatan dengan service-NPS lemah? Bangun rencana catch-up 90 hari per wilayah.',
+            'Susun surat prinsipal dealer kuartal ini dengan nada AUTOM_12, embed 3 prioritas dan tanggal kunci.'
+          ],
+        },
+        {
+          'icon': '🌱',
+          'label': 'Briefing Keberlanjutan & ESG Grup',
+          'name': 'Zava Motors — Agen Briefing Keberlanjutan & ESG Grup',
+          'desc': 'Menyusun paper Komite Keberlanjutan dan Direksi atas dasar inventori Scope 1/2/3, KPI transisi EV, dan memo prioritas strategis FY26 dari Ketua.',
+          'instructions': 'Anda adalah Zava Motors Agen Briefing Keberlanjutan & ESG Grup. Anda mendukung Direktur Keberlanjutan & Risiko Grup. Grounding setiap jawaban pada workbook keberlanjutan (AUTOM_08_Sustainability_ESG.xlsx) dan memo Prioritas Strategis FY26 dari Ketua (AUTOM_09_Board_Strategic_Priorities_FY26.docx). Silangkan financed emissions (buku konsumen 2W gaya JACCS) dengan sheet KPI transisi EV. Tandai target FY26 / FY30 yang berisiko. Nada: setara Direksi, audit-ready, konteks holding Indonesia.',
+          'knowledge': [
+            {'file':'AUTOM_08_Sustainability_ESG.xlsx', 'note':'Inventori Scope 1/2/3 per segmen + KPI Transisi EV + blok narasi laporan CR.'},
+            {'file':'AUTOM_09_Board_Strategic_Priorities_FY26.docx', 'note':'Memo Prioritas Strategis FY26 Ketua & Direktur Utama Grup — iklim, EV, green financing JACCS.'},
+            {'file':'AUTOM_07_Financial_Performance.xlsx', 'note':'P&L per segmen untuk mengikat progres ESG ke materialitas finansial.'}
+          ],
+          'knowledgeNote': 'Tes: "Yang mana 3 target ESG di AUTOM_08 berisiko vs FY30 dan apa yang sudah disampaikan Ketua di AUTOM_09?"',
+          'queries': [
+            'Susun briefing 1 halaman Komite Keberlanjutan: di mana posisi kita vs target FY26 + FY30?',
+            'Petakan setiap inisiatif ESG ke prioritas Ketua FY26; tandai ketidaksejajaran.',
+            'Bangun paper respons untuk regulator yang menanyakan financed emissions dan pipeline green financing.'
+          ],
+        },
+        {
+          'icon': '🚐',
+          'label': 'Pelatih Operasi Rental & Asuransi',
+          'name': 'Zava Motors — Pelatih Operasi Rental Fleet & Klaim Asuransi',
+          'desc': 'Membantu tim corporate fleet gaya MPM Rent dan tim klaim gaya MPM Insurance meningkatkan utilisasi, cycle time klaim, dan NPS pelanggan.',
+          'instructions': 'Anda adalah Zava Motors Pelatih Operasi Rental & Asuransi. Anda mendukung COO vertikal rental & asuransi. Grounding pada file operasi (AUTOM_10_Rental_Fleet_Insurance_Ops.xlsx) — 3 sheet yang mencakup utilisasi corporate fleet MPM Rent, cycle time klaim MPM Insurance, dan sell-through lelang AUKSI. Silangkan dengan sinyal pengalaman pelanggan di AUTOM_11_Customer_NPS_Service.xlsx. Rekomendasikan intervensi operasi yang menggerakkan utilisasi, cycle time klaim, sell-through, atau NPS minimal 200 bps. Bingkai semua angka dalam IDR.',
+          'knowledge': [
+            {'file':'AUTOM_10_Rental_Fleet_Insurance_Ops.xlsx', 'note':'Corporate fleet MPM Rent, klaim MPM Insurance bulanan, GMV lelang AUKSI.'},
+            {'file':'AUTOM_11_Customer_NPS_Service.xlsx', 'note':'NPS per touchpoint — termasuk rental (corporate) dan klaim asuransi.'},
+            {'file':'AUTOM_07_Financial_Performance.xlsx', 'note':'P&L segmen untuk mengikat gerakan ops ke EBITDA.'}
+          ],
+          'knowledgeNote': 'Tes: "Klien rental corporate mana yang harus kita dorong di FY26 dan touchpoint asuransi mana yang menghancurkan NPS kita?"',
+          'queries': [
+            'Ranking klien rental corporate berdasarkan kesiapan EV + utilisasi + tanggal berakhir kontrak — ungkap kandidat upsell.',
+            'Di mana cycle time klaim asuransi terburuk, dan korelasinya dengan NPS? Rekomendasikan 3 fix teratas.',
+            'Susun review operasi bulanan 1 halaman Rental + Asuransi + AUKSI untuk COO.'
+          ],
         }
       ],
-        persona=['Mod Admin', 'Mod Admin', 'Mod Admin'],
-        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin']
+        persona=['Mod Admin', 'Mod Admin', 'Mod Admin', 'Mod Admin', 'Mod Admin', 'Mod Admin'],
+        personaID=['Mod Admin', 'Mod Admin', 'Mod Admin', 'Mod Admin', 'Mod Admin', 'Mod Admin']
       ),
     ],
     companyID='Zava Motors',
     taglineID='Shortfall EV-mix Toyota + renegosiasi prinsipal Honda + 8 dealer underperform — ExCo Grup dalam 14 hari.',
     scenarioID="Zava Motors adalah platform distribusi otomotif dan dealership Grup dengan hak sole-distributor Toyota dan Honda untuk kendaraan penumpang di Malaysia, jaringan 3S Hyundai resmi di Indonesia, dan kemitraan merek elektrifikasi BYD yang baru ditandatangani (BEV + PHEV). Grup mengoperasikan 92 outlet sales-and-service di kedua negara (54 di Malaysia, 38 di Indonesia), merakit model CKD pilihan di pabrik Pekan dan Bekasi, dan menjalankan unit auto-financing captive. Tiga tekanan bertemu sekaligus: (1) target mix BEV 2027 Toyota Motor Asia Pacific menuntut 30% penjualan elektrifikasi tetapi Zava Motors di 4,1% YTD, dengan re-prioritisasi capex FY2026 dibutuhkan antara peluncuran BYD vs lini hybrid Honda; (2) Honda Motor Co. membuka renegosiasi margin prinsipal yang meminta potongan margin ATPM/distributor 150 bps, mengancam EBITDA FY2026 sebesar Rp 300 miliar; (3) 8 dari 92 dealer beroperasi di bawah break-even selama 4 kuartal berturut — same-store sales turun 11% YoY, attach rate F&I di 38% terhadap benchmark 55%. Direktur Pelaksana Grup butuh pack siap-ExCo Grup dalam 14 hari mencakup skenario pemulihan EV-mix, pertahanan renegosiasi prinsipal, rencana rasionalisasi dealer, dan catatan briefing kebijakan EEV MITI / PPnBM Kementerian Perindustrian. Frame customer riil: grup ini beroperasi serupa dengan **UMW Holdings** (UMW Toyota Motor + Perodua), **Sime Darby Motors** (distribusi BMW/Hyundai/Ford/Porsche), **DRB-HICOM** (Honda Malaysia + Proton/Geely), **Bermaz Auto** (Mazda), **MBM Resources** (dealer Perodua + Hino), **Astra International** (Toyota/Daihatsu/Isuzu/BMW + Astra Honda Motor 2-wheel), dan **Indomobil Sukses Internasional** (Suzuki/Nissan/Volvo).",
-    relevantDepts=['dept-finance','dept-strategy','dept-operations','dept-procurement','dept-risk','dept-legal','dept-investor-relations'],
+    relevantDepts=['dept-finance','dept-strategy','dept-operations','dept-procurement','dept-risk','dept-legal','dept-investor-relations','dept-esg','dept-marketing'],
     personas=[
       {'name':'Hadar Caspit','role':'Group CFO','roleID':'Direktur Keuangan Grup','acct':'admin@ABSx62256373.onmicrosoft.com','lic':'Microsoft 365 Copilot','color':'#1E40AF'},
       {'name':'Sasha Ouellet','role':'Group Chief of Staff','roleID':'Kepala Staf Grup','acct':'SashaO@ABSx62256373.OnMicrosoft.com','lic':'Free — no Microsoft 365 Copilot license needed','color':'#7C3AED'},
