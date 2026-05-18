@@ -5986,6 +5986,18 @@ const OTHER_PAGES = [
     facilitatorLabel: 'Facilitator view (bypass all password gates)',
     tag: 'Hackathon',
     keywords: 'cagamas mortgage finance prompt-a-thon agent-a-thon hackathon may 2026 challenge HHFC facilitator'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '⚡',
+    color: '#EA580C',
+    accent: '#9A3412',
+    name: 'Malakoff — Power & Utilities Copilot Immersion',
+    desc: 'Independent Power Producer (IPP) immersion modelled for Malakoff Corporation. Power generation portfolio, plant operations, ESG decarbonisation, regulatory engagement, and project finance scenarios with Researcher, Analyst, Frontier Cowork, and Agent Builder. (Workshop dates: 20 May & 10 June 2026 — content still being finalised.)',
+    url: 'https://steffiyappy.github.io/contoso-power-copilot-immersion/',
+    password: 'Malakoff20May10June',
+    tag: 'Power Workshop · Frontier',
+    keywords: 'malakoff power utilities IPP independent power producer generation plant operations ESG decarbonisation regulatory project finance immersion researcher analyst cowork frontier agent builder may june 2026'
   }
 ];
 
