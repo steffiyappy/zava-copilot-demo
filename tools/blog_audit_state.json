@@ -1,7 +1,16 @@
 {
   "_doc": "State file tracked by blog_audit.py. Records the last-seen blog post so we only process incremental new entries on subsequent runs.",
-  "last_seen_pub_date_utc": null,
-  "last_seen_guid": null,
-  "last_run_utc": null,
-  "seen_guids": []
+  "last_seen_pub_date_utc": "Mon, 11 May 2026 17:25:12 +0000",
+  "last_seen_guid": "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281344",
+  "last_run_utc": "2026-05-18T10:41:23+00:00",
+  "seen_guids": [
+    "https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/13/bring-your-everyday-business-apps-into-the-flow-of-work-with-agents-in-microsoft-365-copilot/",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281012",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281055",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281221",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281245",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281273",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281344"
+  ]
 }
