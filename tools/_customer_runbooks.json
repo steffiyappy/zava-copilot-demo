@@ -344,5 +344,419 @@
       "id": "p3-3",
       "text": "I am the Group Chief Financial Officer of Contoso Investment Bank Berhad preparing for the Board Risk Committee on Thursday 27 March 2026. I need you to handle five tasks in parallel. Task 1: create a Word document titled \"FY2025 Year-End Board Risk Committee — Pre-read Summary\" containing a 250-word executive briefing covering segment variance highlights and the QuantumStream Technologies vendor contract findings, suitable for the Group MD and the Chairman to read in five minutes ahead of the meeting, and save it to my OneDrive. Task 2: create a second Word document titled \"BNM Outsourcing Policy — Response Memo\" containing a draft response to BNM regarding the QuantumStream Technologies managed-services agreement, written in formal regulatory correspondence style, acknowledging the identified non-compliances against BNM/RH/PD 028-99, outlining the remediation plan and timeline, and stating Contoso's commitment to ongoing compliance, and save it to my OneDrive. Task 3: draft an Outlook email to the Board Risk Committee members (use placeholders [BRC Chair], [Group MD], [Chief Risk Officer]) confirming the meeting on Thursday 27 March 2026 from 10:00 to 12:00 in the Boardroom, attaching the pre-read summary, and listing the agenda: FY2025 segment performance review, vendor outsourcing risk update, BNM Outsourcing Policy compliance, and recommended Group Board actions. Task 4: create an Outlook calendar invite for the Board Risk Committee meeting on Thursday 27 March 2026 from 10:00 to 12:00 with all committee members, the Boardroom location, and the agenda in the body. Task 5: draft a short Teams message to my Finance and Risk leadership channel notifying them that the FY2025 year-end board pack and BNM response memo are with the Group MD for sign-off and that the Board Risk Committee is confirmed for Thursday morning. Run all five tasks in parallel and report back when each is complete."
     }
+  ],
+  "kibb_cowork_cards": [
+    {
+      "slug": "credit-underwriting-pack",
+      "num": "UC 01",
+      "title": "Credit Underwriting Pack",
+      "description": "Borrower's annual report and audited financials become a 9-section credit underwriting memo aligned to BNM/MAS underwriting standards, with cited section references throughout.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "risk-credit",
+      "complexity": "advanced",
+      "apps": [
+        "Excel",
+        "Word",
+        "SharePoint"
+      ],
+      "files": [
+        "Annual_Report.pdf",
+        "Audited_Financials.xlsx",
+        "Management_Accounts.xlsx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-credit-underwriting-pack-1",
+          "label": "Build the underwriting memo",
+          "text": "You are acting as a senior credit risk officer preparing an underwriting recommendation. I have uploaded [BORROWER]'s annual report, audited financials and latest management accounts. Produce a structured credit underwriting memo of no more than 12 pages with the following sections:\n\nA. Executive Summary (Credit View - max 1 page)\nB. Financial Performance Analysis - revenue growth, EBITDA margin trend, one-off items, last 3 years\nC. Balance Sheet & Liquidity Assessment - current ratio, quick ratio, working capital trend\nD. Cash Flow Adequacy Review - operating cash flow, free cash flow, debt service coverage\nE. Leverage & Coverage Metrics Table (multi-year): Debt/EBITDA, EBITDA/Interest, Net Debt/Equity\nF. Accounting & Disclosure Risk Commentary on auditor's notes, going concern, related-party transactions\nG. Debt Servicing Capacity Assessment under base, stress and downside scenarios\nH. Key Credit Risks & Red Flags - potential early warning indicators, structural weaknesses\nI. Required Follow-Up Items for Credit Approval - missing information needed for underwriting and questions to put to management\n\nCite statement sections and note numbers when highlighting findings. Do not fabricate any financial metric not derivable from the provided documents. Maintain professional tone suitable for an internal credit committee. Save as 'Underwriting_Memo_[BORROWER]_[DATE].docx' to /Credit/Underwriting/[BORROWER]/."
+        }
+      ],
+      "watch": "Section/note citations anchor every finding. The 'do not fabricate' guard prevents hallucinated ratios. Auto-filing keeps the credit folder tidy.",
+      "honest": "Cowork does the read-and-summarise heavy lift. The credit committee still owns the call. Use the memo as a starting draft, not a substitute for analyst judgement."
+    },
+    {
+      "slug": "investment-council",
+      "num": "UC 02",
+      "title": "Investment Council of Agents",
+      "description": "A multi-role analyst panel (Fundamental, Macro, Risk, Stress, Compliance) debates the investment merits of a target. Produces an audit-ready interim report with explicit dissent captured.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "risk-credit",
+      "complexity": "advanced",
+      "apps": [
+        "Word",
+        "Excel"
+      ],
+      "files": [
+        "Target_Pitch.pdf",
+        "Financials.xlsx",
+        "Comparables.xlsx",
+        "Term_Sheet.docx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-investment-council-1",
+          "label": "Convene the council and produce the IC interim report",
+          "text": "You are acting as a council of agents to help an investment committee assess investment merits for [TARGET]. Convene a panel covering five roles and produce an audit-ready interim report. For each of the following roles, perform deep analysis, produce dissent where appropriate, and capture evidence with traceability.\n\nRoles:\n1. Fundamental Analyst. Perform deep fundamental analysis (financials, business model, unit economics, moat, management quality, comparables). Internal outputs: cite ranges, sensitivity table, quality of earnings.\n2. Macro Strategist. Test macro regime (growth/inflation, policy path, rates/FX, liquidity conditions, cross-asset correlation). Internal outputs: macro sensitivity table, regime risks, hedging implications, correlation surprises.\n3. Risk Officer. Provide independent risk view across market risk (VaR/ES), credit risk, liquidity risk, concentration, tail risk. Internal outputs: risk register, key limits breached, proposed risk mitigations, risk-adjusted return commentary.\n4. Stress Tester. Run structured scenarios (base/bull/bear + bespoke shocks) and identify non-linear losses and second-order effects. Internal outputs: stress narrative, kill-switch thresholds, scenario tree, early warning indicators.\n5. Compliance & Policy Agent. Check the investment for permissibility (mandate constraints, restricted lists, suitability, prudential governance, conduct and disclosure obligations). Internal outputs: 'Permitted / Not permitted / Permitted with conditions', required disclosures, required approvals.\n\nFinally analyse all five views together for recommendations, evidence, assumptions, and dissenting views, with traceability. Capture all interim deliberations. Save the merged interim report as 'IC_Interim_[TARGET]_[DATE].docx' to /Investments/Pipeline/[TARGET]/. Length cap 25 pages."
+        }
+      ],
+      "watch": "Each role produces dissent explicitly; the merged report keeps disagreements visible (do not average them away). The traceability requirement forces evidence-by-evidence sourcing.",
+      "honest": "This is a structured prompt for one model role-playing five voices, not five independent agents. If you want true multi-model perspectives, use Researcher Council mode in parallel for the same target."
+    },
+    {
+      "slug": "ubo-kyc",
+      "num": "UC 03",
+      "title": "UBO Diagram & KYC PDF",
+      "description": "Recursively unwind a corporate shareholder tree to identify the ultimate beneficial owners and produce a one-page KYC diagram, exported to PDF for the customer file.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "legal-compliance",
+      "complexity": "intermediate",
+      "apps": [
+        "PowerPoint",
+        "Word"
+      ],
+      "files": [
+        "Shareholder_Register.pdf",
+        "Group_Structure.pdf"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-ubo-kyc-1",
+          "label": "Build the UBO diagram",
+          "text": "Create an Ultimate Beneficial Ownership (UBO) diagram for [ENTITY_NAME]. Recursively identify the UBO of each identified shareholder until you reach individual shareholders. Where a corporate shareholder owns >= 10% of the entity, treat as material and include in the diagram. If you cannot resolve a branch to an individual within the documents provided, mark it 'UBO not established - investigate'. Use a hierarchical tree layout. Annotate each box with: legal entity name, country of incorporation, % ownership, and source (document name + page number). Produce as a PowerPoint slide and export to PDF for the KYC file. Save to /Compliance/KYC/[ENTITY_NAME]/UBO_[DATE].pdf."
+        }
+      ],
+      "watch": "The 'UBO not established - investigate' marker surfaces gaps rather than hiding them. The page-number citations let your KYC officer audit each branch.",
+      "honest": "Cowork reads the documents you provide. It will not query Companies Commission registries or external corporate databases - bring those documents into the conversation first."
+    },
+    {
+      "slug": "bank-statement-extraction",
+      "num": "UC 04",
+      "title": "Bank Statement Extraction",
+      "description": "Mixed-format bank statements (PDF, image, scanned) become a clean Excel workbook split by month, sorted chronologically, with multi-line transactions captured intact.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "operations",
+      "complexity": "intermediate",
+      "apps": [
+        "Excel"
+      ],
+      "files": [
+        "Aurora_Bank_Sample_E-Stmt.png",
+        "Crescent_Bank_Sample_E-Stmt.pdf",
+        "Unity_Bank_Sample_E-Stmt.pdf"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-bank-statement-extraction-1",
+          "label": "Extract -> standardise -> split by month",
+          "text": "Extract the contents from the bank statements I have uploaded into a single Excel workbook with the following columns: Page No, Bank, Transaction Date, Description, Debit, Credit, Running Balance, Currency.\n\nStandardise the date format on yyyy-MMM-dd.\nCapture multi-line transaction details - concatenate continuation lines into a single Description cell.\nIgnore any text that is not part of a transaction (logos, marketing, addresses, footer disclosures).\nDon't perform any translation.\nSplit the transactions by month into separate worksheets named 'YYYY-MM'. For each worksheet, sort transactions chronologically ascending.\nFlag any row where amount or date confidence is low by appending '** LOW CONFIDENCE' to the Description so a human can review.\n\nSave as 'Statements_Consolidated_[CUSTOMER]_[DATE].xlsx' to /Operations/Reconciliation/[CUSTOMER]/."
+        }
+      ],
+      "watch": "Three different formats land in the same standardised schema. Multi-line descriptions stay intact; bank-side header noise (logos, marketing, addresses) is filtered out. Date normalisation to yyyy-MMM-dd makes downstream reconciliation trivial. One worksheet per month, sorted ascending - reconciliation-ready, not just an extract.",
+      "honest": "OCR quality on scanned or low-resolution images can produce edge-case errors on amounts and dates. The LOW CONFIDENCE flag asks for human review rather than silently committing them. Bank-specific layouts evolve; new statement templates may need a sample run before production use."
+    },
+    {
+      "slug": "financial-spreading",
+      "num": "UC 05",
+      "title": "Financial Spreading",
+      "description": "Take an audited financial report and populate a standardised spreading template with full balance check and an explicit 'Unmapped' worksheet for line items that do not fit the template.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "risk-credit",
+      "complexity": "intermediate",
+      "apps": [
+        "Excel"
+      ],
+      "files": [
+        "Audited_Financials.pdf",
+        "Spreading_Template_v2.xlsx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-financial-spreading-1",
+          "label": "Spread the financials into the template",
+          "text": "Perform financial spreading of the financial report I have uploaded into the [SPREADING_TEMPLATE].xlsx. Map each line item from the borrower's audited statements to the corresponding row in the template. Preserve sign conventions and units (RM '000). Cover the latest 3 financial years.\n\nAfter the spreading is done, recheck to ensure all the numbers balance out and match those of the financial report - specifically that Total Assets = Total Liabilities + Equity, and that Net Income on the Income Statement matches the change in Retained Earnings.\n\nFlag any unmapped line items at the bottom of the workbook in a sheet called 'Unmapped'. Save the populated template as 'Spreading_[BORROWER]_[YEAR].xlsx' to /Credit/Spreading/[BORROWER]/."
+        }
+      ],
+      "watch": "The balance-sheet validation step catches mapping errors that would otherwise propagate into ratio analysis. Unmapped lines are surfaced rather than dropped.",
+      "honest": "Spreading templates evolve. If the borrower's chart of accounts is unusual, expect 5-10 unmapped lines per year that need manual judgement before commit."
+    },
+    {
+      "slug": "cashflow-model-app",
+      "num": "UC 06",
+      "title": "Cashflow Model -> Interactive App",
+      "description": "A 5-year capex model becomes a working app you can interact with - sliders, scenarios, and a parity report against the original spreadsheet.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "strategy",
+      "complexity": "advanced",
+      "apps": [
+        "Excel",
+        "Edge"
+      ],
+      "files": [
+        "Project_Cashflow_Model.xlsx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-cashflow-model-app-1",
+          "label": "Understand + Build the app",
+          "text": "I've attached our 5-year IT infrastructure cashflow model. First walk me through the structure - drivers, inputs, formulas, and any assumptions an investment committee would push on. Then convert it into a Python program with an interactive HTML front-end: sliders for WACC (6%-12%), USD/SGD (0.70-0.78), contingency (5%-15%), opex escalation (0%-5%). Show total 5-year spend, NPV, IRR, and a year-by-year cash-out chart. Deliver code + runnable HTML I can preview locally."
+        },
+        {
+          "id": "cw-uc-cashflow-model-app-2",
+          "label": "Validate + Run scenarios",
+          "text": "Run the new app at original assumptions and give me a parity report vs the spreadsheet (capex/opex by year, NPV, IRR, total outflow) - flag any divergence > SGD 100. Then run three scenarios: base (current), upside (WACC 7%, USD 0.76, contingency 6%), downside (WACC 10%, USD 0.72, contingency 12%). Summarise NPV swing and the top three line items driving variance."
+        }
+      ],
+      "watch": "Cowork reads every sheet, formula and named range - not just numbers on screen. Generated code is version-controllable. The parity report flags any divergence before scenario analysis runs.",
+      "honest": "Cowork delivers Python plus a self-contained HTML you run locally. Production deployment happens inside the customer's environment - the demo proves the rebuild is faithful, not the hosting."
+    },
+    {
+      "slug": "underwriting-decision-engine",
+      "num": "UC 07",
+      "title": "Underwriting Model -> Decision Engine",
+      "description": "Convert a static scoring spreadsheet into a decision engine, then stress-test it against 30 historical deals to validate before deployment.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "risk-credit",
+      "complexity": "advanced",
+      "apps": [
+        "Excel",
+        "Word"
+      ],
+      "files": [
+        "Underwriting_Scorecard.xlsx",
+        "Historical_Deals.xlsx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-underwriting-decision-engine-1",
+          "label": "Build engine and back-test it",
+          "text": "I've uploaded our underwriting scoring spreadsheet and a set of 30 historical deals with their actual outcomes (approved/declined/post-deal default). Convert the spreadsheet into a Python decision engine that takes a borrower's inputs and outputs the score, recommendation, and triggered policy gates. Then back-test the engine against the 30 historical deals - produce: (a) a confusion matrix (engine recommendation vs actual decision); (b) a list of the 5 deals where the engine disagreed most strongly with the actual decision, with rationale; (c) a list of the policy gates that triggered most often. Save the engine as 'Underwriting_Engine_v1.py' and the back-test report as 'Underwriting_Backtest_[DATE].docx' to /Credit/Engine/."
+        }
+      ],
+      "watch": "The 5 disagreements list surfaces both bad approvals and missed approvals. The policy-gate frequency tells you which gates do real work and which are noise.",
+      "honest": "30 deals is illustrative. Production deployment needs hundreds of deals across cycles to validate. Treat this as a v1 to challenge, not approve."
+    },
+    {
+      "slug": "it-governance",
+      "num": "UC 08",
+      "title": "IT Governance Compliance Check",
+      "description": "Cross-reference a change register against policy clauses. Produce a severity-ranked exception report with email + Teams drafts to chase the change owners.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "it",
+      "complexity": "advanced",
+      "apps": [
+        "Excel",
+        "Word",
+        "Outlook",
+        "Teams"
+      ],
+      "files": [
+        "Change_Register_Q1.xlsx",
+        "IT_Governance_Policy.docx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-it-governance-1",
+          "label": "Audit changes and draft chasers",
+          "text": "Cross-reference every change in [CHANGE_REGISTER].xlsx against the policy clauses in [IT_GOV_POLICY].docx. For each change record, identify which policy clauses apply (CAB approval, segregation of duties, change window, rollback plan, evidence retention, post-implementation review) and flag whether the change record evidences each clause being met.\n\nProduce a severity-ranked exception report (Critical, High, Medium):\n- Critical = change went live without CAB approval or rollback plan\n- High = missing PIR or evidence retention\n- Medium = documentation incomplete\n\nFor each Critical and High exception, draft an email to the change owner listing what's missing with a deadline of 5 working days. Draft a Teams message to the IT Governance channel summarising the week's exceptions. Save as 'IT_Governance_Exceptions_[QUARTER].xlsx' to /IT/Governance/."
+        }
+      ],
+      "watch": "Severity is set by clause, not by reviewer mood. Emails and Teams drafts go out faster than a post-audit cleanup.",
+      "honest": "Cowork drafts the emails - you still send them. Treat as audit prep, not auto-enforcement."
+    },
+    {
+      "slug": "rfp-scoring",
+      "num": "UC 09",
+      "title": "RFP Scoring & IC Paper",
+      "description": "Four vendor proposals become a single procurement scorecard with normalised TCO, mandatory gates, and a defensible IC recommendation memo.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "procurement",
+      "complexity": "advanced",
+      "apps": [
+        "Excel",
+        "Word",
+        "PowerPoint"
+      ],
+      "files": [
+        "Vendor_A_Proposal.pdf",
+        "Vendor_B_Proposal.pdf",
+        "Vendor_C_Proposal.pdf",
+        "Vendor_D_Proposal.pdf",
+        "RFP_Criteria.xlsx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-rfp-scoring-1",
+          "label": "Score, normalise, and write the IC memo",
+          "text": "I've uploaded four vendor proposals (A, B, C, D) and our RFP scoring criteria. For each vendor: (1) extract their response against every criterion in the scorecard; (2) flag any criterion where the response is missing, vague, or non-committal; (3) extract every commercial figure and normalise to a 5-year TCO in [CURRENCY] including licensing, services, support, and any conditional fees.\n\nThen produce:\n(a) Comparison scorecard with weighted scores per criterion and overall ranking\n(b) Normalised TCO table with the assumptions you used to normalise\n(c) Mandatory Gates table flagging any vendor that fails a hard requirement (security certifications, data residency, exit clause)\n(d) 1-page IC recommendation memo with the recommended vendor, the runner-up, and the specific points of difference that drove the decision.\n\nSave the scorecard as 'RFP_Scorecard_[PROJECT].xlsx' and the memo as 'RFP_IC_Memo_[PROJECT].docx' to /Procurement/RFP/[PROJECT]/."
+        }
+      ],
+      "watch": "Mandatory Gates surface dealbreakers regardless of overall score. Normalisation assumptions are explicit so the IC can challenge them on the call.",
+      "honest": "Vendors will dispute your normalisation. Keep the assumption table editable so you can adjust on the call without recomputing the whole memo."
+    },
+    {
+      "slug": "contract-renewal",
+      "num": "UC 10",
+      "title": "Contract Renewal Intelligence",
+      "description": "A folder of vendor contracts becomes a renegotiation playbook with vendor-ready emails and a 10-slide CIO deck on portfolio risk.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "legal-compliance",
+      "complexity": "advanced",
+      "apps": [
+        "Word",
+        "Excel",
+        "Outlook",
+        "PowerPoint"
+      ],
+      "files": [
+        "MSA_AlphaCloud_v3.docx",
+        "SoW_BlueRiver_2025.docx",
+        "License_ConsultaSoft_2024.docx",
+        "Renewal_Proposal_DigitalPeak.docx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-contract-renewal-1",
+          "label": "Read the folder and produce the playbook",
+          "text": "Read every .docx in /Procurement/Contracts/Renewals_2026/. For each contract, extract: vendor, contract value, renewal/expiry date, notice period, auto-renew Y/N, governing law, liability cap, key non-standard clauses.\n\nScore each contract on a renegotiation priority (1-10) based on: (a) days to renewal (sooner = higher); (b) annual price escalation > 3%; (c) auto-renewal Y; (d) liability cap < 12 months fees; (e) non-standard exit clauses.\n\nProduce: (1) Excel renewal pipeline ranked by priority; (2) one Word renegotiation brief per top-10 contract with the specific clauses to retable and the leverage points; (3) draft Outlook emails to each vendor (placeholder [SIGNATURE]) opening renegotiation conversations; (4) a 10-slide CIO deck summarising the portfolio risk, the top-10 priority list, and the proposed timeline. Save everything to /Procurement/Renewals2026/."
+        }
+      ],
+      "watch": "The 1-10 scoring forces prioritisation. Vendor-by-vendor briefs prevent generic 'we want a discount' demands.",
+      "honest": "Cowork drafts the emails. You read every word before they go out - the leverage points need a human pressure-test before they hit a vendor inbox."
+    },
+    {
+      "slug": "onboarding-bundle",
+      "num": "UC 11",
+      "title": "New Joiner Onboarding Bundle",
+      "description": "A new joiner becomes a complete first-90-days package: welcome email, calendar invites, reading list, Teams introductions, and a manager checklist.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "hr",
+      "complexity": "intermediate",
+      "apps": [
+        "Outlook",
+        "Teams",
+        "Word",
+        "SharePoint"
+      ],
+      "files": [
+        "New_Joiner_Schedule.xlsx",
+        "Role_Profile.docx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-onboarding-bundle-1",
+          "label": "Build the full onboarding bundle",
+          "text": "[NAME] is joining us as [ROLE] on [START_DATE], reporting to [MANAGER]. Pull the role profile and onboarding plan template, plus any team-specific materials in /HR/Onboarding/[TEAM]/.\n\nProduce: (1) a welcome email from the manager covering first-day logistics, attached as draft to Outlook; (2) calendar invites for: HR induction (day 1), team intro (day 2), 1-on-1s with the 5 closest collaborators in week 1, manager check-in at week 2/4/8/12; (3) a Teams welcome message in the team channel introducing [NAME]; (4) a curated reading list from /HR/ReadingLists/[ROLE]/; (5) a Word document for the manager covering the 30/60/90 day check-in conversation prompts. Save the bundle to /HR/Onboarding/Live/[NAME]/."
+        }
+      ],
+      "watch": "The 30/60/90 conversation prompts force the manager to invest time, not just tick boxes. The week-2 check-in catches drift early.",
+      "honest": "Calendar invites and emails are drafts pending the manager's review and send. The reading list is curated from what we already have - it's not researched fresh from the open web."
+    },
+    {
+      "slug": "perf-review-prep",
+      "num": "UC 12",
+      "title": "Performance Review Prep",
+      "description": "For each direct report, gather the year's evidence (deliverables, kudos, peer messages) and draft a balanced first-cut performance review.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "hr",
+      "complexity": "basic",
+      "apps": [
+        "Outlook",
+        "Teams",
+        "Word"
+      ],
+      "files": [
+        "Last_Year_Review.docx",
+        "Goals_2025.xlsx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-perf-review-prep-1",
+          "label": "Assemble year evidence and draft the review",
+          "text": "[EMPLOYEE] is up for annual review. Pull: their last review at /HR/Reviews/[EMPLOYEE]/; their FY[X] goals; the last 12 months of Outlook and Teams - look for kudos, project completions, customer feedback, and peer-to-peer messages where they were named; any 360 feedback already collected.\n\nProduce a draft Word performance review covering: (a) goal achievement against the FY plan with cited evidence; (b) strengths demonstrated this year with concrete examples; (c) growth areas with concrete examples; (d) recommended FY+1 stretch goal. Keep tone balanced - if someone was kind to them, also note where the data is lighter on evidence. Save as 'Review_Draft_[EMPLOYEE]_FY[X].docx' to /HR/Reviews/[EMPLOYEE]/Drafts/."
+        }
+      ],
+      "watch": "Citing concrete evidence (Teams thread, project doc) keeps the review fact-based. Flagging 'data is lighter on evidence' surfaces where you genuinely need a peer conversation.",
+      "honest": "This is a draft for the manager to refine. It is not a substitute for the conversations - peers and the employee themselves will know things the data doesn't capture."
+    },
+    {
+      "slug": "account-brief",
+      "num": "UC 13",
+      "title": "Account-Based Selling Brief",
+      "description": "Before a key client meeting, pull every signal we have on the account - past deals, support tickets, recent emails, news mentions - and produce a 1-page meeting brief with three call-to-actions.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "sales-marketing",
+      "complexity": "intermediate",
+      "apps": [
+        "Word",
+        "Excel",
+        "SharePoint"
+      ],
+      "files": [
+        "Account_Plan.docx",
+        "Pipeline.xlsx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-account-brief-1",
+          "label": "Build the meeting brief",
+          "text": "I have a meeting with [CLIENT] on [DATE]. Pull: the account plan; our pipeline with this account (last 12 months); recent emails to/from the account team (last 60 days); support tickets from the customer; any news mentions on the company in the last 90 days from our internal news clipping folder.\n\nProduce a 1-page meeting brief with:\n(a) Headline state of the relationship (status, last 3 wins/losses, key contacts)\n(b) What's likely on their mind (recent news, board priorities if known)\n(c) Three specific call-to-actions for this meeting (one short-term close, one cross-sell, one strategic)\n(d) Three landmines to avoid (unresolved tickets, pending escalations)\n\nSave as 'AccountBrief_[CLIENT]_[DATE].docx' to /Sales/Briefs/."
+        }
+      ],
+      "watch": "Three CTAs (close + cross-sell + strategic) prevent the meeting becoming a single-track conversation. Landmines surface unresolved issues before the customer raises them.",
+      "honest": "External news is what's in our clipping folder. For a fresh research pass, run Researcher Critique mode on the company first and bring those findings."
+    },
+    {
+      "slug": "incident-postmortem",
+      "num": "UC 14",
+      "title": "Major Incident Postmortem",
+      "description": "After a P1 incident, assemble the timeline, RCA, customer comms, and a CAB action register from Teams chat, on-call paging logs, and the incident bridge notes.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "it",
+      "complexity": "intermediate",
+      "apps": [
+        "Word",
+        "Teams",
+        "Outlook"
+      ],
+      "files": [
+        "Incident_Bridge_Notes.docx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-incident-postmortem-1",
+          "label": "Assemble the postmortem",
+          "text": "Incident [INCIDENT_ID] on [DATE] is closed. Assemble the postmortem. Pull: Teams chat from #incident-[INCIDENT_ID] (or the bridge channel); on-call paging logs; the incident bridge notes; customer comms drafts.\n\nProduce a Word postmortem with:\n(a) Timeline by minute from detection to resolution\n(b) Root cause analysis (5 Whys)\n(c) What worked, what didn't (no blame, just facts)\n(d) Action items with owner and date\n(e) Customer-facing comms summary\n(f) Lessons applicable to other systems\n\nSave as 'Postmortem_[INCIDENT_ID].docx' to /IT/Incidents/[INCIDENT_ID]/. Draft a CAB email summarising the actions for the next change advisory board."
+        }
+      ],
+      "watch": "'No blame, just facts' framing keeps the team honest. The lessons-applicable-to-other-systems item compounds the value across the organisation.",
+      "honest": "Cowork can extract from chat and notes. Anything that wasn't written down (verbal calls, war room conversations) is invisible. Encourage write-as-you-go during the next bridge."
+    },
+    {
+      "slug": "campaign-launch",
+      "num": "UC 15",
+      "title": "Campaign Launch Bundle",
+      "description": "A campaign brief becomes a launch bundle: assets list, landing page brief, sales enablement one-pager, internal comms email, and a Teams launch message.",
+      "industry_tag": "investment-bank",
+      "dept_tag": "sales-marketing",
+      "complexity": "intermediate",
+      "apps": [
+        "Word",
+        "PowerPoint",
+        "Outlook",
+        "SharePoint"
+      ],
+      "files": [
+        "Campaign_Brief.docx"
+      ],
+      "prompts": [
+        {
+          "id": "cw-uc-campaign-launch-1",
+          "label": "Assemble the launch bundle",
+          "text": "Campaign [CAMPAIGN_NAME] launches on [DATE]. Read the campaign brief at /Marketing/Campaigns/[CAMPAIGN_NAME]/Brief.docx and the brand guidelines at /Marketing/Brand/.\n\nProduce:\n(a) Asset checklist (banner sizes, social posts, landing page sections, email variants) with status\n(b) Landing page brief: hero copy, value prop, 3 proof points, CTA\n(c) Sales enablement one-pager: who is this for, why now, top 5 objections + responses\n(d) Internal comms email to the wider business explaining the launch and how to amplify\n(e) Teams message draft for the #marketing channel announcing go-live\n\nSave to /Marketing/Campaigns/[CAMPAIGN_NAME]/Launch_Bundle/."
+        }
+      ],
+      "watch": "Sales enablement (objections + responses) is what turns the campaign from a marketing event into a revenue event.",
+      "honest": "Cowork follows the brief. Creative direction (the actual idea) still comes from your marketing team - this is the assembly line, not the studio."
+    }
   ]
 }
