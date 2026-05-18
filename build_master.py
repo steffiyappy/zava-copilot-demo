@@ -153,6 +153,33 @@ WHATS_NEW = [
         "tip": "After Test, click Submit for review (next to Create + share). Once your IT admin approves, the agent appears in the org\u2019s Agent Store automatically.",
         "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935"
+    },
+    {
+        "id": "wn-auto-2c621591",
+        "title": "📰 Cowork (Frontier) — Copilot Cowork: From conversation to action across skills, integrations, and devices",
+        "badge": "Tue, 05 May 2026",
+        "summary": "Today, we’re announcing additional capabilities in Cowork to expand on what it can make possible for you. The post Copilot Cowork: From conversation to action across skills, integrations, and devices appeared first on Microsoft 365 Blog .",
+        "tip": "Read the announcement: https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/05/copilot-cowork-from-conversation-to-action-across-skills-integrations-and-devices/",
+        "license": "FRONTIER_LIC",
+        "link": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/05/copilot-cowork-from-conversation-to-action-across-skills-integrations-and-devices/"
+    },
+    {
+        "id": "wn-auto-f460dd37",
+        "title": "📰 Copilot in Excel — Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available",
+        "badge": "Thu, 23 Apr 2026",
+        "summary": "From first draft to final polish, Copilot acts as a true collaborator, taking action while you stay in control. The post Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available appeared first on Microsoft 365 Blog .",
+        "tip": "Read the announcement: https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/",
+        "license": "M365_LIC",
+        "link": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/"
+    },
+    {
+        "id": "wn-auto-1682a0db",
+        "title": "📰 Cowork (Frontier) — Copilot Cowork: Now available in Frontier",
+        "badge": "Mon, 30 Mar 2026",
+        "summary": "Today, Copilot Cowork—designed for long-running, multi-step work in Microsoft 365—is available via the Frontier program. The post Copilot Cowork: Now available in Frontier appeared first on Microsoft 365 Blog .",
+        "tip": "Read the announcement: https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/",
+        "license": "FRONTIER_LIC",
+        "link": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/"
     }
 ]
 

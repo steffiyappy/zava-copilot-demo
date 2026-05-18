@@ -1,0 +1,30 @@
+# Feasibility Check Report
+
+## ✅ No violations detected
+
+## Current-feature coverage (informational)
+
+- agent_builder: admin approval: referenced in 1 source file(s)
+- agent_builder: submit-to-Agent-Store: referenced in 1 source file(s)
+- analyst: multi-tab cross-analysis: referenced in 1 source file(s)
+- cowork: pause-before-action: referenced in 1 source file(s)
+- excel: Edit with Copilot: referenced in 1 source file(s)
+- excel: Plan mode: referenced in 1 source file(s)
+- excel: Python in Excel: referenced in 1 source file(s)
+- excel: agent mode: referenced in 1 source file(s)
+- notebook: 5 sources: referenced in 1 source file(s)
+- notebook: Instructions field: referenced in 1 source file(s)
+- notebook: Mind Maps: referenced in 1 source file(s)
+- outlook: first draft in canvas: referenced in 1 source file(s)
+- ppt: Flux: referenced in 1 source file(s)
+- ppt: GPT-Image: referenced in 1 source file(s)
+- ppt: image model picker: referenced in 1 source file(s)
+- ppt: public web grounding: referenced in 1 source file(s)
+- researcher: Claude Opus 4.7: referenced in 1 source file(s)
+- researcher: Critique Mode: referenced in 1 source file(s)
+- researcher: GPT-5.5 Thinking: referenced in 1 source file(s)
+- researcher: Model Council: referenced in 1 source file(s)
+- researcher: federated connectors: referenced in 1 source file(s)
+- teams: Consecutive Interpretation: referenced in 1 source file(s)
+- teams: Copilot Call Delegation: referenced in 1 source file(s)
+- word: Edit with Copilot inline agent: referenced in 1 source file(s)
