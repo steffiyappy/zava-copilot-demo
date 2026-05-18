@@ -345,6 +345,15 @@ def _build(c):
         f"Dari Copilot Chat dengan /file {files[3]} dan /file {files[4]}, minta Analyst memodelkan dampak finansial tiga lever pemulihan pada {c['recovery_focus_id']} dan urutkan berdasarkan NPV.",
     ]
     ana_personas = ['Hadar Caspit', 'Hadar Caspit', 'Hadar Caspit']
+    # Industrial-manufacturing-only: extend Analyst with KLK Ex5-style 5-yr Nilai+Batu Kawan capex model walk + interactive HTML
+    if c['id'] == 'industrial-manufacturing':
+        ana_en.append(
+            "I've attached the Zava Manufacturing 5-year Nilai + Batu Kawan plant automation capex model (MFG_01_Production_Metrics.xlsx supplies baseline OEE, MFG_04_Supply_Chain_Performance.xlsx supplies feedstock cost). First walk me through the structure — drivers, inputs, formulas, intercompany allocations and any assumptions the Group Investment Committee will push back on. Then convert it into a Python program with an interactive HTML front-end: Sliders for WACC (7–13%), MYR/USD (4.30–4.80), copper feedstock USD/T (8,200–11,500), capex contingency (5–15%), opex escalation (0–6%), automation ramp delay (0–9 months). Show total 5-year capex, NPV, IRR, payback period, year-by-year cash-out chart and a sensitivity heatmap (copper × WACC). Deliver runnable Python plus a self-contained HTML I can preview locally before tabling at the Board operations reset on Wednesday. Cite the cell range underpinning every driver and flag any data-quality gap that would invalidate the result."
+        )
+        ana_id.append(
+            "Saya melampirkan model capex otomasi pabrik Karawang + Cikarang 5 tahun Zava Manufacturing (MFG_01_Production_Metrics.xlsx menyediakan baseline OEE, MFG_04_Supply_Chain_Performance.xlsx menyediakan biaya feedstock). Pertama, telusuri struktur — pendorong, input, formula, alokasi intercompany dan setiap asumsi yang akan dipertanyakan Komite Investasi Grup. Kemudian konversikan menjadi program Python dengan front-end HTML interaktif: Slider untuk WACC (7–13%), IDR/USD (15.400–16.800), feedstock tembaga USD/T (8.200–11.500), kontingensi capex (5–15%), eskalasi opex (0–6%), keterlambatan ramp otomasi (0–9 bulan). Tampilkan total capex 5 tahun, NPV, IRR, payback period, grafik cash-out tahun-per-tahun dan heatmap sensitivitas (tembaga × WACC). Sampaikan Python yang dapat dijalankan plus HTML mandiri yang dapat saya tinjau lokal sebelum diajukan pada reset operasi Direksi hari Rabu. Kutip range sel yang mendasari setiap pendorong dan tandai gap kualitas data yang akan membatalkan hasilnya."
+        )
+        ana_personas = ana_personas + ['Hadar Caspit']
     t3 = tool(T_ANALYST, M365_LIC, M365_ACCT, ana_en, DESC_ANALYST,
               promptsID=ana_id, persona=ana_personas, personaID=ana_personas)
 
