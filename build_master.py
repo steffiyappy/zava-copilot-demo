@@ -359,8 +359,8 @@ except Exception as _e:
 try:
     from cowork_customer_runbooks import inject_customer_runbooks
     _all_for_rb = list(all_industries) + list(all_departments)
-    _rb_ent, _rb_pmt = inject_customer_runbooks(_all_for_rb)
-    print(f"Cowork customer-runbook prompts: {_rb_pmt} prompts appended across {_rb_ent} entries (KLK 10 UCs + KIBB BRC)")
+    _rb_result = inject_customer_runbooks(_all_for_rb)
+    print(f"Cowork customer-runbook prompts: {_rb_result['prompts']} prompts + {_rb_result['files']} sample files appended across {_rb_result['entries']} entries (KLK 10 UCs + KIBB BRC + KIBB Cowork 15 UCs, each with HTML artifact step)")
     try:
         from id_to_bm_swaps import fill_missing_bm_from_id as _refill_rb
         _bm_more_rb = _refill_rb(all_industries) + _refill_rb(all_departments)
@@ -372,6 +372,28 @@ except ImportError:
     print("(cowork_customer_runbooks.py not found; KLK/KIBB runbook merge skipped)")
 except Exception as _e:
     print(f"(Cowork customer-runbook merge skipped due to error: {_e})")
+
+# ── Regulator + cross-dept Cowork Runbooks (9 UCs) ───────────────────────
+# Adds IPO Prospectus Compliance, Anti-Scam Complaint Triage, Workforce
+# Scenario, IE Campaign Audit, Contract Review, Tax Application, Policy
+# Paper, Procurement Benchmarking, Internal Audit Pack — each with an HTML
+# artifact step — onto financial-regulator + relevant dept entries.
+try:
+    from cowork_regulator_runbook import inject_regulator_runbook
+    _all_for_reg = list(all_industries) + list(all_departments)
+    _reg_result = inject_regulator_runbook(_all_for_reg)
+    print(f"Cowork regulator+dept runbook: {_reg_result['prompts']} prompts + {_reg_result['files']} sample files appended across {_reg_result['entries']} entries (9 UCs incl HTML artifact step each)")
+    try:
+        from id_to_bm_swaps import fill_missing_bm_from_id as _refill_reg
+        _bm_more_reg = _refill_reg(all_industries) + _refill_reg(all_departments)
+        if _bm_more_reg:
+            print(f"BM auto-fill (post-regulator-runbook): {_bm_more_reg} more tool blocks filled")
+    except Exception:
+        pass
+except ImportError:
+    print("(cowork_regulator_runbook.py not found; regulator runbook skipped)")
+except Exception as _e:
+    print(f"(Cowork regulator runbook skipped due to error: {_e})")
 
 # ── Reverse mirror + canonical override: build relevantIndustries on every department ──
 # Each industry declares 3-5 dept ids in relevantDepts (kept narrow so industry
