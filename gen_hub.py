@@ -577,6 +577,21 @@ a.file-pill:visited{color:var(--text)}
 .file-pill .ext.docx{background:#2563EB;color:#FFF}
 .file-pill .ext.pdf{background:#DC2626;color:#FFF}
 .file-pill .ext.png{background:#9333EA;color:#FFF}
+.dl-all-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1F2D55,#2D3F75);color:#FFF;border:0;border-radius:8px;padding:9px 14px;font-size:12px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,filter .15s ease;margin:0 0 10px;letter-spacing:.2px;box-shadow:0 1px 3px rgba(31,45,85,.18)}
+.dl-all-btn:hover,.dl-all-btn:focus{transform:translateY(-1px);box-shadow:0 4px 12px rgba(31,45,85,.35);filter:brightness(1.08);outline:none;text-decoration:none;color:#FFF}
+.dl-all-btn:active{transform:translateY(0)}
+.dl-all-btn:visited{color:#FFF}
+.dl-all-icon{font-size:14px;line-height:1}
+.dl-all-text{font-weight:700}
+.dl-all-meta{margin-left:4px;padding:1px 8px;background:rgba(255,255,255,.18);border-radius:10px;font-size:10.5px;font-weight:600;letter-spacing:.3px}
+.dl-all-btn-cw{background:linear-gradient(135deg,#D97706,#B45309);box-shadow:0 1px 3px rgba(217,119,6,.22)}
+.dl-all-btn-cw:hover,.dl-all-btn-cw:focus{box-shadow:0 4px 12px rgba(217,119,6,.4)}
+[data-theme="dark"] .dl-all-btn{background:linear-gradient(135deg,#3D4F7A,#5266A0);box-shadow:0 1px 3px rgba(0,0,0,.5)}
+[data-theme="dark"] .dl-all-btn-cw{background:linear-gradient(135deg,#F59E0B,#D97706)}
+@media (prefers-color-scheme:dark){
+  [data-theme="system"] .dl-all-btn{background:linear-gradient(135deg,#3D4F7A,#5266A0);box-shadow:0 1px 3px rgba(0,0,0,.5)}
+  [data-theme="system"] .dl-all-btn-cw{background:linear-gradient(135deg,#F59E0B,#D97706)}
+}
 .cw-prompt{background:linear-gradient(135deg,#F0FDF4,#DCFCE7);border:1px solid #BBF7D0;border-radius:8px;padding:11px 13px;margin:0 0 10px;position:relative}
 .cw-prompt-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
 .cw-prompt-label{font-size:10px;font-weight:800;color:#166534;text-transform:uppercase;letter-spacing:1.2px}
@@ -1746,6 +1761,7 @@ const _UI = {
   '📁 Reference Files':    ['📁 File Referensi',                      '📁 Fail Rujukan'],
   '— click to download':   ['— klik untuk mengunduh',                 '— klik untuk muat turun'],
   '⬇ Download':            ['⬇ Unduh',                                '⬇ Muat turun'],
+  'Download all files':    ['Unduh semua file',                       'Muat turun semua fail'],
   '🎭 Personas in this demo': ['🎭 Persona dalam demo ini',           '🎭 Persona dalam demo ini'],
   '⚡ Demo Tips':          ['⚡ Tips Demo',                            '⚡ Petua Demo'],
   'prompts':               ['prompt',                                 'prompt'],
@@ -4256,6 +4272,13 @@ function _coworkLibraryHtml(item){
       const href='files/'+encodeURIComponent(name);
       return '<a class="file-pill" href="'+href+'" target="_blank" rel="noopener" download="'+escapeAttr(name)+'" title="Open '+escapeAttr(name)+'"><span class="ext '+safeExt+'">'+safeExt.toUpperCase()+'</span>'+escapeHTML(name)+'</a>';
     }).join('');
+    const ucZipBtn = (c && c.id && (c.sample_files||[]).length>0)
+      ? '<a class="dl-all-btn dl-all-btn-cw" href="files/zips/'+encodeURIComponent(c.id)+'.zip" download="Zava_'+encodeURIComponent(c.id)+'_files.zip" target="_blank" rel="noopener" title="Download all sample files for this use case as a ZIP">'+
+          '<span class="dl-all-icon">📦</span>'+
+          '<span class="dl-all-text">'+_uL('Download all files')+'</span>'+
+          '<span class="dl-all-meta">'+(c.sample_files||[]).length+' files · ZIP</span>'+
+        '</a>'
+      : '';
     const skills=(c.skills||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
     const instr=(c.instructions||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
     const expected=(c.expected||[]).map(s=>'<li>'+escapeHTML(_xformVal(s,'EN'))+'</li>').join('');
@@ -4299,7 +4322,7 @@ function _coworkLibraryHtml(item){
       block('📱', L_APPS, '<div class="cw-apps-row">'+apps+'</div>', !!apps) +
       block('🎯', L_SKILLS, '<ul class="cw-list">'+skills+'</ul>', !!skills) +
       block('🧭', L_INSTR, '<ol class="cw-instructions">'+instr+'</ol>', !!instr) +
-      block('📎', L_FILES, '<div class="cw-files-pills">'+files+'</div>', !!files) +
+      block('📎', L_FILES, ucZipBtn+'<div class="cw-files-pills">'+files+'</div>', !!files) +
       block('💬', L_PROMPTS, prompts, !!prompts) +
       block('✅', L_EXP, '<ul class="cw-list">'+expected+'</ul>', !!expected) +
       block('👀', L_WATCH, watchHtml, true) +
@@ -5765,7 +5788,16 @@ function showItem(item,tab,preserveScroll){
   if(visibleTools.length){ toggleTool(id+'-'+item.prompts.indexOf(visibleTools[0])); }
   // Files
   const fEl=document.getElementById('detail-files');
+  const _hasEntryZip = !!(item && item.id);
+  const _zipBtn = _hasEntryZip
+    ? '<a class="dl-all-btn" href="files/zips/entry-'+encodeURIComponent(item.id)+'.zip" download="Zava_'+encodeURIComponent(item.id)+'_files.zip" target="_blank" rel="noopener" title="Download all reference files for this entry as a single ZIP">'+
+        '<span class="dl-all-icon">📦</span>'+
+        '<span class="dl-all-text">'+_uL('Download all files')+'</span>'+
+        '<span class="dl-all-meta">'+(item.files||[]).length+' files · ZIP</span>'+
+      '</a>'
+    : '';
   fEl.innerHTML='<div class="files-title">'+_uL('📁 Reference Files')+' <span style="font-size:11px;font-weight:400;color:var(--muted)">'+_uL('— click to download')+'</span></div>'+
+    _zipBtn+
     item.files.map(f=>{
       const ext=f.split('.').pop().toLowerCase();
       return '<a class="file-item" href="files/'+encodeURIComponent(f)+'" download="'+f+'" target="_blank">'+
