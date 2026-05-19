@@ -219,6 +219,11 @@ try:
     USE_CASES.update(_P6)
 except Exception:
     pass
+try:
+    from _cowork_lib_part7 import CARDS as _P7
+    USE_CASES.update(_P7)
+except Exception:
+    pass
 
 
 UNIVERSAL_USE_CASES = ['uc-board-pack', 'uc-town-hall', 'uc-incident-pmortem']
@@ -286,6 +291,42 @@ ENTRY_USE_CASES = {
     'dept-procurement':         ['uc-proc-rfp', 'uc-board-pack', 'uc-incident-pmortem', 'uc-cong-capalloc'],
     'dept-it-digital':          ['uc-it-incident', 'uc-incident-pmortem', 'uc-board-pack', 'uc-ops-sop'],
 }
+
+
+# ── Customer-runbook Cowork cards (KLK / KIBB / Regulator) ────────────────
+# Prepended to each routed entry so the runbook UCs surface on the
+# standalone 🤝 Cowork sidebar tab too (in addition to each entry's own
+# M365 Copilot Tools → Cowork sub-tab which already carries the prompts).
+_RUNBOOK_ENTRY_CARDS = {
+    # KLK (per cowork_customer_runbooks.KLK_ROUTING)
+    'industrial-manufacturing': ['uc-klk-site-spreading'],
+    'property-development':     ['uc-klk-investment-council'],
+    'diversified-conglomerate': ['uc-klk-group-pnl-app', 'uc-reg-workforce-scenario'],
+
+    # KIBB Cowork cards (per KIBB_COWORK_ROUTING) + KLK + Regulator that route to depts
+    'investment-banking':       ['uc-kibb-credit-underwriting-pack', 'uc-kibb-investment-council', 'uc-reg-ipo-prospectus-compliance'],
+    'financial-regulator':      ['uc-reg-ipo-prospectus-compliance', 'uc-reg-complaint-triage', 'uc-reg-tax-application', 'uc-reg-policy-paper'],
+
+    # Departments
+    'dept-finance':             ['uc-klk-bank-statement', 'uc-reg-tax-application', 'uc-reg-procurement-benchmarking'],
+    'dept-hr':                  ['uc-klk-talent-council', 'uc-kibb-onboarding-bundle', 'uc-kibb-perf-review-prep', 'uc-reg-workforce-scenario'],
+    'dept-legal':               ['uc-kibb-ubo-kyc', 'uc-kibb-contract-renewal', 'uc-reg-complaint-triage', 'uc-reg-contract-review'],
+    'dept-risk':                ['uc-klk-counterparty-memo', 'uc-kibb-financial-spreading', 'uc-kibb-underwriting-decision-engine', 'uc-reg-internal-audit-pack'],
+    'dept-strategy':            ['uc-klk-capex-scenario', 'uc-kibb-cashflow-model-app', 'uc-reg-policy-paper'],
+    'dept-marketing':           ['uc-kibb-account-brief', 'uc-kibb-campaign-launch', 'uc-reg-investor-education-audit'],
+    'dept-esg':                 ['uc-klk-ghg-cdp'],
+    'dept-operations':          ['uc-kibb-bank-statement-extraction'],
+    'dept-corpsec':             ['uc-reg-internal-audit-pack'],
+    'dept-investor-relations':  ['uc-klk-quarterly-spread', 'uc-reg-investor-education-audit'],
+    'dept-procurement':         ['uc-klk-ubo-sanctions', 'uc-kibb-rfp-scoring', 'uc-reg-contract-review', 'uc-reg-procurement-benchmarking'],
+    'dept-it-digital':          ['uc-kibb-it-governance', 'uc-kibb-incident-postmortem'],
+}
+
+# Merge runbook cards into ENTRY_USE_CASES (prepend; preserve existing entries)
+for _eid, _new_cids in _RUNBOOK_ENTRY_CARDS.items():
+    _existing = ENTRY_USE_CASES.get(_eid, list(UNIVERSAL_USE_CASES))
+    _merged = list(_new_cids) + [c for c in _existing if c not in _new_cids]
+    ENTRY_USE_CASES[_eid] = _merged
 
 
 def get_library_for_entry(entry_id):
