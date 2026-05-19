@@ -225,6 +225,16 @@ try:
 except Exception:
     pass
 
+# Append a comprehensive interactive-HTML-artifact prompt to every card
+# (dashboard / kanban / heatmap / pipeline / matrix archetype, chosen by
+# title + dept_tag). Idempotent. Skips cards whose prompts already mention
+# an HTML deliverable.
+try:
+    from _cowork_lib_html_inject import inject_html_prompts as _inject_html_prompts
+    _added_html, _skipped_html = _inject_html_prompts(USE_CASES)
+except Exception as _e:
+    _added_html, _skipped_html = 0, 0
+
 
 UNIVERSAL_USE_CASES = ['uc-board-pack', 'uc-town-hall', 'uc-incident-pmortem']
 
