@@ -5929,6 +5929,18 @@ const OTHER_PAGES = [
     keywords: 'contoso cowork frontier delegation parallel CFO board pack lender investor risk committee teams immersion'
   },
   {
+    section: 'Customer Workshops',
+    icon: '⚙️',
+    color: '#0891B2',
+    accent: '#155E75',
+    name: 'Contoso Active — Operations Copilot Immersion',
+    desc: 'Operations-focused Copilot immersion (May 2026). Day-in-the-life of operations leaders using Microsoft 365 Copilot, Researcher, Analyst, Cowork, and Agent Builder to accelerate operational decision-making, incident response, supplier coordination, and shop-floor reporting.',
+    url: 'https://steffiyappy.github.io/contoso-active-copilot-immersion/',
+    password: 'ContosoActiveMay2026',
+    tag: 'Operations Workshop',
+    keywords: 'contoso active operations operational ops immersion researcher analyst cowork agent builder incident supplier shop floor may 2026'
+  },
+  {
     section: 'Hackathons',
     icon: '🏦',
     color: '#B91C1C',
