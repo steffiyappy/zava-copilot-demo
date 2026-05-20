@@ -1419,11 +1419,11 @@ window.HUB_DATA = {
               instructions: 'You are a cross-industry disclosure analyst for the General (Any Role) group. Source ONLY from the Bursa / IDX / SGX announcement portals in knowledge. Cite filing date + ticker + filing type. Output: weekly cross-industry disclosure log with implications for General (Any Role).',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
+                  url: 'https://www.bursamalaysia.com/market_information/announcements',
                   note: 'Bursa Malaysia listed-co announcements'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/news/announcement/',
+                  url: 'https://www.idx.co.id/en/news',
                   note: 'IDX listed-co disclosures'
                 },
                 {
@@ -1450,7 +1450,7 @@ window.HUB_DATA = {
                   note: 'MSWG Malaysia minority-shareholder watch'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Corporate Governance roadmap'
                 },
                 {
@@ -1473,11 +1473,11 @@ window.HUB_DATA = {
               instructions: 'You are a macro-research analyst for the General (Any Role) group. Source ONLY from the IMF / ADB / World Bank URLs in knowledge. Cite report + date + chart. Output: monthly macro brief tagged by impact area for General (Any Role) divisions.',
               knowledge: [
                 {
-                  url: 'https://www.imf.org/en/Countries/MYS',
+                  url: 'https://www.imf.org/en/Countries',
                   note: 'IMF Malaysia & SEA economic outlook'
                 },
                 {
-                  url: 'https://www.adb.org/news/regions/asean',
+                  url: 'https://www.adb.org/news/regions',
                   note: 'ADB ASEAN news & outlook'
                 },
                 {
@@ -1502,11 +1502,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
+                  url: 'https://www.bursamalaysia.com/market_information/announcements',
                   note: 'Bursa Malaysia listed-co announcements'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/news/announcement/',
+                  url: 'https://www.idx.co.id/en/news',
                   note: 'IDX listed-co disclosures'
                 },
                 {
@@ -1533,7 +1533,7 @@ window.HUB_DATA = {
                   note: 'MSWG Malaysia minority-shareholder watch'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Corporate Governance roadmap'
                 },
                 {
@@ -1556,11 +1556,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.imf.org/en/Countries/MYS',
+                  url: 'https://www.imf.org/en/Countries',
                   note: 'IMF Malaysia & SEA economic outlook'
                 },
                 {
-                  url: 'https://www.adb.org/news/regions/asean',
+                  url: 'https://www.adb.org/news/regions',
                   note: 'ADB ASEAN news & outlook'
                 },
                 {
@@ -1585,11 +1585,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
+                  url: 'https://www.bursamalaysia.com/market_information/announcements',
                   note: 'Bursa Malaysia listed-co announcements'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/news/announcement/',
+                  url: 'https://www.idx.co.id/en/news',
                   note: 'IDX listed-co disclosures'
                 },
                 {
@@ -1616,7 +1616,7 @@ window.HUB_DATA = {
                   note: 'MSWG Malaysia minority-shareholder watch'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Corporate Governance roadmap'
                 },
                 {
@@ -1639,11 +1639,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.imf.org/en/Countries/MYS',
+                  url: 'https://www.imf.org/en/Countries',
                   note: 'IMF Malaysia & SEA economic outlook'
                 },
                 {
-                  url: 'https://www.adb.org/news/regions/asean',
+                  url: 'https://www.adb.org/news/regions',
                   note: 'ADB ASEAN news & outlook'
                 },
                 {
@@ -3514,7 +3514,7 @@ window.HUB_DATA = {
                   note: 'BNM banking supervision policy documents'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Perbankan Konvensional regulations'
                 },
                 {
@@ -3537,15 +3537,15 @@ window.HUB_DATA = {
               instructions: 'You are an IR analyst tracking listed-bank peer disclosures relevant to Commercial Banking. Use ONLY the public disclosure portals listed in knowledge. Cite filing date + ticker + filing type for every claim. Output: peer move log with implications for Commercial Banking.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/listed_companies/list_of_companies/main_market',
+                  url: 'https://www.bursamalaysia.com/market_information/listed_companies',
                   note: 'Bursa Main Market — Banking sector'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/listed-companies/listed-stock-summary/',
+                  url: 'https://www.idx.co.id/en/listed-companies',
                   note: 'IDX listed banks summary'
                 },
                 {
-                  url: 'https://www.sgx.com/research-education/sectors-stocks/financial-services',
+                  url: 'https://www.sgx.com/research-education/sectors-stocks',
                   note: 'SGX banking & finance sector'
                 }
               ],
@@ -3568,7 +3568,7 @@ window.HUB_DATA = {
                   note: 'BNM Monthly Statistical Bulletin (banking indicators)'
                 },
                 {
-                  url: 'https://www.bi.go.id/id/publikasi/laporan/Default.aspx?id=SEKI',
+                  url: 'https://www.bi.go.id/id/publikasi',
                   note: 'Bank Indonesia banking statistics (SEKI)'
                 },
                 {
@@ -3597,7 +3597,7 @@ window.HUB_DATA = {
                   note: 'BNM banking supervision policy documents'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Perbankan Konvensional regulations'
                 },
                 {
@@ -3620,15 +3620,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Commercial Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/listed_companies/list_of_companies/main_market',
+                  url: 'https://www.bursamalaysia.com/market_information/listed_companies',
                   note: 'Bursa Main Market — Banking sector'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/listed-companies/listed-stock-summary/',
+                  url: 'https://www.idx.co.id/en/listed-companies',
                   note: 'IDX listed banks summary'
                 },
                 {
-                  url: 'https://www.sgx.com/research-education/sectors-stocks/financial-services',
+                  url: 'https://www.sgx.com/research-education/sectors-stocks',
                   note: 'SGX banking & finance sector'
                 }
               ],
@@ -3651,7 +3651,7 @@ window.HUB_DATA = {
                   note: 'BNM Monthly Statistical Bulletin (banking indicators)'
                 },
                 {
-                  url: 'https://www.bi.go.id/id/publikasi/laporan/Default.aspx?id=SEKI',
+                  url: 'https://www.bi.go.id/id/publikasi',
                   note: 'Bank Indonesia banking statistics (SEKI)'
                 },
                 {
@@ -3680,7 +3680,7 @@ window.HUB_DATA = {
                   note: 'BNM banking supervision policy documents'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Perbankan Konvensional regulations'
                 },
                 {
@@ -3703,15 +3703,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Commercial Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/listed_companies/list_of_companies/main_market',
+                  url: 'https://www.bursamalaysia.com/market_information/listed_companies',
                   note: 'Bursa Main Market — Banking sector'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/listed-companies/listed-stock-summary/',
+                  url: 'https://www.idx.co.id/en/listed-companies',
                   note: 'IDX listed banks summary'
                 },
                 {
-                  url: 'https://www.sgx.com/research-education/sectors-stocks/financial-services',
+                  url: 'https://www.sgx.com/research-education/sectors-stocks',
                   note: 'SGX banking & finance sector'
                 }
               ],
@@ -3734,7 +3734,7 @@ window.HUB_DATA = {
                   note: 'BNM Monthly Statistical Bulletin (banking indicators)'
                 },
                 {
-                  url: 'https://www.bi.go.id/id/publikasi/laporan/Default.aspx?id=SEKI',
+                  url: 'https://www.bi.go.id/id/publikasi',
                   note: 'Bank Indonesia banking statistics (SEKI)'
                 },
                 {
@@ -5614,7 +5614,7 @@ window.HUB_DATA = {
                   note: 'BNM Islamic banking & takaful policy'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/syariah/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Perbankan Syariah'
                 },
                 {
@@ -5641,7 +5641,7 @@ window.HUB_DATA = {
                   note: 'Bursa Malaysia Shariah-compliant securities'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/products/index/?_idx=jii',
+                  url: 'https://www.idx.co.id/en/products',
                   note: 'IDX Jakarta Islamic Index (JII)'
                 },
                 {
@@ -5697,7 +5697,7 @@ window.HUB_DATA = {
                   note: 'BNM Islamic banking & takaful policy'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/syariah/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Perbankan Syariah'
                 },
                 {
@@ -5724,7 +5724,7 @@ window.HUB_DATA = {
                   note: 'Bursa Malaysia Shariah-compliant securities'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/products/index/?_idx=jii',
+                  url: 'https://www.idx.co.id/en/products',
                   note: 'IDX Jakarta Islamic Index (JII)'
                 },
                 {
@@ -5780,7 +5780,7 @@ window.HUB_DATA = {
                   note: 'BNM Islamic banking & takaful policy'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/syariah/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Perbankan Syariah'
                 },
                 {
@@ -5807,7 +5807,7 @@ window.HUB_DATA = {
                   note: 'Bursa Malaysia Shariah-compliant securities'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/products/index/?_idx=jii',
+                  url: 'https://www.idx.co.id/en/products',
                   note: 'IDX Jakarta Islamic Index (JII)'
                 },
                 {
@@ -7832,7 +7832,7 @@ window.HUB_DATA = {
                   note: 'Securities Commission Malaysia capital-markets guidelines'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/kanal/pasar-modal/regulasi/Default.aspx',
+                  url: 'https://www.ojk.go.id/en/kanal',
                   note: 'OJK Pasar Modal regulations'
                 },
                 {
@@ -7859,11 +7859,11 @@ window.HUB_DATA = {
                   note: 'Bursa Malaysia capital-markets data'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/listed-companies/ipo-pipeline/',
+                  url: 'https://www.idx.co.id/en/listed-companies',
                   note: 'IDX IPO pipeline'
                 },
                 {
-                  url: 'https://www.sgx.com/securities/securities-products/listings',
+                  url: 'https://www.sgx.com/securities/securities-products',
                   note: 'SGX recent listings & IPOs'
                 }
               ],
@@ -7915,7 +7915,7 @@ window.HUB_DATA = {
                   note: 'Securities Commission Malaysia capital-markets guidelines'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/kanal/pasar-modal/regulasi/Default.aspx',
+                  url: 'https://www.ojk.go.id/en/kanal',
                   note: 'OJK Pasar Modal regulations'
                 },
                 {
@@ -7942,11 +7942,11 @@ window.HUB_DATA = {
                   note: 'Bursa Malaysia capital-markets data'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/listed-companies/ipo-pipeline/',
+                  url: 'https://www.idx.co.id/en/listed-companies',
                   note: 'IDX IPO pipeline'
                 },
                 {
-                  url: 'https://www.sgx.com/securities/securities-products/listings',
+                  url: 'https://www.sgx.com/securities/securities-products',
                   note: 'SGX recent listings & IPOs'
                 }
               ],
@@ -7998,7 +7998,7 @@ window.HUB_DATA = {
                   note: 'Securities Commission Malaysia capital-markets guidelines'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/kanal/pasar-modal/regulasi/Default.aspx',
+                  url: 'https://www.ojk.go.id/en/kanal',
                   note: 'OJK Pasar Modal regulations'
                 },
                 {
@@ -8025,11 +8025,11 @@ window.HUB_DATA = {
                   note: 'Bursa Malaysia capital-markets data'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/listed-companies/ipo-pipeline/',
+                  url: 'https://www.idx.co.id/en/listed-companies',
                   note: 'IDX IPO pipeline'
                 },
                 {
-                  url: 'https://www.sgx.com/securities/securities-products/listings',
+                  url: 'https://www.sgx.com/securities/securities-products',
                   note: 'SGX recent listings & IPOs'
                 }
               ],
@@ -10058,7 +10058,7 @@ window.HUB_DATA = {
                   note: 'BNM Insurance & Takaful policy documents'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/kanal/iknb/Pages/Insurance.aspx',
+                  url: 'https://www.ojk.go.id/en/kanal',
                   note: 'OJK IKNB Insurance regulations'
                 },
                 {
@@ -10108,11 +10108,11 @@ window.HUB_DATA = {
               instructions: 'You are an actuarial trends analyst for General Insurance. Source ONLY from the public health URLs in knowledge. Cite bulletin name + date. Output: monthly trend brief flagging pricing or reserve implications.',
               knowledge: [
                 {
-                  url: 'https://www.swissre.com/institute/research/sigma-research.html',
+                  url: 'https://www.swissre.com/institute/research',
                   note: 'Swiss Re Sigma series'
                 },
                 {
-                  url: 'https://www.munichre.com/en/insights/natural-disaster-and-climate-change.html',
+                  url: 'https://www.munichre.com/en/insights',
                   note: 'Munich Re NatCat reports'
                 },
                 {
@@ -10141,7 +10141,7 @@ window.HUB_DATA = {
                   note: 'BNM Insurance & Takaful policy documents'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/kanal/iknb/Pages/Insurance.aspx',
+                  url: 'https://www.ojk.go.id/en/kanal',
                   note: 'OJK IKNB Insurance regulations'
                 },
                 {
@@ -10191,11 +10191,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.swissre.com/institute/research/sigma-research.html',
+                  url: 'https://www.swissre.com/institute/research',
                   note: 'Swiss Re Sigma series'
                 },
                 {
-                  url: 'https://www.munichre.com/en/insights/natural-disaster-and-climate-change.html',
+                  url: 'https://www.munichre.com/en/insights',
                   note: 'Munich Re NatCat reports'
                 },
                 {
@@ -10224,7 +10224,7 @@ window.HUB_DATA = {
                   note: 'BNM Insurance & Takaful policy documents'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/kanal/iknb/Pages/Insurance.aspx',
+                  url: 'https://www.ojk.go.id/en/kanal',
                   note: 'OJK IKNB Insurance regulations'
                 },
                 {
@@ -10274,11 +10274,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.swissre.com/institute/research/sigma-research.html',
+                  url: 'https://www.swissre.com/institute/research',
                   note: 'Swiss Re Sigma series'
                 },
                 {
-                  url: 'https://www.munichre.com/en/insights/natural-disaster-and-climate-change.html',
+                  url: 'https://www.munichre.com/en/insights',
                   note: 'Munich Re NatCat reports'
                 },
                 {
@@ -11997,11 +11997,11 @@ window.HUB_DATA = {
                   note: 'BNM RBC framework for insurers'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/iknb/data-dan-statistik/asuransi/Default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK IKNB life-insurance statistics'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/insurance/notices',
+                  url: 'https://www.mas.gov.sg/regulation/insurance',
                   note: 'MAS life insurance notices'
                 }
               ],
@@ -12047,11 +12047,11 @@ window.HUB_DATA = {
               instructions: 'You are an actuarial trends analyst for Life Insurance. Source ONLY from the public health URLs in knowledge. Cite bulletin name + date. Output: monthly trend brief flagging pricing or reserve implications.',
               knowledge: [
                 {
-                  url: 'https://www.swissre.com/institute/research/topics-and-risk-dialogues/health-and-longevity.html',
+                  url: 'https://www.swissre.com/institute/research',
                   note: 'Swiss Re mortality & longevity research'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/topic/financialinclusion/brief/global-pension-database',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank pension & insurance database'
                 },
                 {
@@ -12080,11 +12080,11 @@ window.HUB_DATA = {
                   note: 'BNM RBC framework for insurers'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/iknb/data-dan-statistik/asuransi/Default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK IKNB life-insurance statistics'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/insurance/notices',
+                  url: 'https://www.mas.gov.sg/regulation/insurance',
                   note: 'MAS life insurance notices'
                 }
               ],
@@ -12130,11 +12130,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.swissre.com/institute/research/topics-and-risk-dialogues/health-and-longevity.html',
+                  url: 'https://www.swissre.com/institute/research',
                   note: 'Swiss Re mortality & longevity research'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/topic/financialinclusion/brief/global-pension-database',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank pension & insurance database'
                 },
                 {
@@ -12163,11 +12163,11 @@ window.HUB_DATA = {
                   note: 'BNM RBC framework for insurers'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/iknb/data-dan-statistik/asuransi/Default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK IKNB life-insurance statistics'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/insurance/notices',
+                  url: 'https://www.mas.gov.sg/regulation/insurance',
                   note: 'MAS life insurance notices'
                 }
               ],
@@ -12213,11 +12213,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.swissre.com/institute/research/topics-and-risk-dialogues/health-and-longevity.html',
+                  url: 'https://www.swissre.com/institute/research',
                   note: 'Swiss Re mortality & longevity research'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/topic/financialinclusion/brief/global-pension-database',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank pension & insurance database'
                 },
                 {
@@ -13936,7 +13936,7 @@ window.HUB_DATA = {
                   note: 'BNM Operational Framework for Takaful'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/syariah/data-dan-statistik/asuransi-syariah/Default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Asuransi Syariah statistics'
                 },
                 {
@@ -13986,11 +13986,11 @@ window.HUB_DATA = {
               instructions: 'You are an actuarial trends analyst for Takaful. Source ONLY from the public health URLs in knowledge. Cite bulletin name + date. Output: monthly trend brief flagging pricing or reserve implications.',
               knowledge: [
                 {
-                  url: 'https://www.milliman.com/en/products/global-takaful-report',
+                  url: 'https://www.milliman.com/en/products',
                   note: 'Milliman Global Takaful Report'
                 },
                 {
-                  url: 'https://www.swissre.com/institute/research/topics-and-risk-dialogues/financial-and-monetary-policy.html',
+                  url: 'https://www.swissre.com/institute/research',
                   note: 'Swiss Re Takaful & emerging markets'
                 },
                 {
@@ -14019,7 +14019,7 @@ window.HUB_DATA = {
                   note: 'BNM Operational Framework for Takaful'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/syariah/data-dan-statistik/asuransi-syariah/Default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Asuransi Syariah statistics'
                 },
                 {
@@ -14069,11 +14069,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.milliman.com/en/products/global-takaful-report',
+                  url: 'https://www.milliman.com/en/products',
                   note: 'Milliman Global Takaful Report'
                 },
                 {
-                  url: 'https://www.swissre.com/institute/research/topics-and-risk-dialogues/financial-and-monetary-policy.html',
+                  url: 'https://www.swissre.com/institute/research',
                   note: 'Swiss Re Takaful & emerging markets'
                 },
                 {
@@ -14102,7 +14102,7 @@ window.HUB_DATA = {
                   note: 'BNM Operational Framework for Takaful'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/syariah/data-dan-statistik/asuransi-syariah/Default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Asuransi Syariah statistics'
                 },
                 {
@@ -14152,11 +14152,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.milliman.com/en/products/global-takaful-report',
+                  url: 'https://www.milliman.com/en/products',
                   note: 'Milliman Global Takaful Report'
                 },
                 {
-                  url: 'https://www.swissre.com/institute/research/topics-and-risk-dialogues/financial-and-monetary-policy.html',
+                  url: 'https://www.swissre.com/institute/research',
                   note: 'Swiss Re Takaful & emerging markets'
                 },
                 {
@@ -15906,7 +15906,7 @@ window.HUB_DATA = {
               instructions: 'You are a health-regulatory analyst for Hospital Network. Use ONLY the regulator URLs in knowledge. Cite circular + date for every claim. Output: weekly digest of approvals, recalls, and policy moves.',
               knowledge: [
                 {
-                  url: 'https://www.moh.gov.my/index.php/database_stores/store_view/17',
+                  url: 'https://www.moh.gov.my/index.php/database_stores',
                   note: 'MOH Malaysia private healthcare establishments'
                 },
                 {
@@ -15968,7 +15968,7 @@ window.HUB_DATA = {
                   note: 'OECD health statistics'
                 },
                 {
-                  url: 'https://www.frost.com/research/industry/healthcare/',
+                  url: 'https://www.frost.com/research/industry',
                   note: 'Frost & Sullivan healthcare reports'
                 }
               ],
@@ -15989,7 +15989,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Hospital Network. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.moh.gov.my/index.php/database_stores/store_view/17',
+                  url: 'https://www.moh.gov.my/index.php/database_stores',
                   note: 'MOH Malaysia private healthcare establishments'
                 },
                 {
@@ -16051,7 +16051,7 @@ window.HUB_DATA = {
                   note: 'OECD health statistics'
                 },
                 {
-                  url: 'https://www.frost.com/research/industry/healthcare/',
+                  url: 'https://www.frost.com/research/industry',
                   note: 'Frost & Sullivan healthcare reports'
                 }
               ],
@@ -16072,7 +16072,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Hospital Network. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.moh.gov.my/index.php/database_stores/store_view/17',
+                  url: 'https://www.moh.gov.my/index.php/database_stores',
                   note: 'MOH Malaysia private healthcare establishments'
                 },
                 {
@@ -16134,7 +16134,7 @@ window.HUB_DATA = {
                   note: 'OECD health statistics'
                 },
                 {
-                  url: 'https://www.frost.com/research/industry/healthcare/',
+                  url: 'https://www.frost.com/research/industry',
                   note: 'Frost & Sullivan healthcare reports'
                 }
               ],
@@ -17853,11 +17853,11 @@ window.HUB_DATA = {
               instructions: 'You are a health-regulatory analyst for Pharmaceutical. Use ONLY the regulator URLs in knowledge. Cite circular + date for every claim. Output: weekly digest of approvals, recalls, and policy moves.',
               knowledge: [
                 {
-                  url: 'https://www.npra.gov.my/index.php/en/announcement.html',
+                  url: 'https://www.npra.gov.my/index.php/en',
                   note: 'NPRA Malaysia drug-registration announcements'
                 },
                 {
-                  url: 'https://www.pom.go.id/new/index.php/view/berita',
+                  url: 'https://www.pom.go.id/new/index.php',
                   note: 'BPOM Indonesia drug-control announcements'
                 },
                 {
@@ -17911,11 +17911,11 @@ window.HUB_DATA = {
                   note: 'IQVIA Asia-Pacific reports'
                 },
                 {
-                  url: 'https://www.frost.com/research/industry/pharmaceutical/',
+                  url: 'https://www.frost.com/research/industry',
                   note: 'Frost & Sullivan pharma reports'
                 },
                 {
-                  url: 'https://www.who.int/teams/regulation-prequalification/regulation-and-safety/medicines-and-vaccines',
+                  url: 'https://www.who.int/teams/regulation-prequalification',
                   note: 'WHO Prequalification of Medicines'
                 }
               ],
@@ -17936,11 +17936,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Pharmaceutical. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.npra.gov.my/index.php/en/announcement.html',
+                  url: 'https://www.npra.gov.my/index.php/en',
                   note: 'NPRA Malaysia drug-registration announcements'
                 },
                 {
-                  url: 'https://www.pom.go.id/new/index.php/view/berita',
+                  url: 'https://www.pom.go.id/new/index.php',
                   note: 'BPOM Indonesia drug-control announcements'
                 },
                 {
@@ -17994,11 +17994,11 @@ window.HUB_DATA = {
                   note: 'IQVIA Asia-Pacific reports'
                 },
                 {
-                  url: 'https://www.frost.com/research/industry/pharmaceutical/',
+                  url: 'https://www.frost.com/research/industry',
                   note: 'Frost & Sullivan pharma reports'
                 },
                 {
-                  url: 'https://www.who.int/teams/regulation-prequalification/regulation-and-safety/medicines-and-vaccines',
+                  url: 'https://www.who.int/teams/regulation-prequalification',
                   note: 'WHO Prequalification of Medicines'
                 }
               ],
@@ -18019,11 +18019,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Pharmaceutical. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.npra.gov.my/index.php/en/announcement.html',
+                  url: 'https://www.npra.gov.my/index.php/en',
                   note: 'NPRA Malaysia drug-registration announcements'
                 },
                 {
-                  url: 'https://www.pom.go.id/new/index.php/view/berita',
+                  url: 'https://www.pom.go.id/new/index.php',
                   note: 'BPOM Indonesia drug-control announcements'
                 },
                 {
@@ -18077,11 +18077,11 @@ window.HUB_DATA = {
                   note: 'IQVIA Asia-Pacific reports'
                 },
                 {
-                  url: 'https://www.frost.com/research/industry/pharmaceutical/',
+                  url: 'https://www.frost.com/research/industry',
                   note: 'Frost & Sullivan pharma reports'
                 },
                 {
-                  url: 'https://www.who.int/teams/regulation-prequalification/regulation-and-safety/medicines-and-vaccines',
+                  url: 'https://www.who.int/teams/regulation-prequalification',
                   note: 'WHO Prequalification of Medicines'
                 }
               ],
@@ -19792,7 +19792,7 @@ window.HUB_DATA = {
                   note: 'SKK Migas Indonesia upstream news & data'
                 },
                 {
-                  url: 'https://www.dosh.gov.my/index.php/legislation/petroleum-act',
+                  url: 'https://www.dosh.gov.my/index.php/legislation',
                   note: 'DOSH Malaysia petroleum-safety legislation'
                 }
               ],
@@ -19815,7 +19815,7 @@ window.HUB_DATA = {
                   note: 'Petronas activity outlook & releases'
                 },
                 {
-                  url: 'https://www.skkmigas.go.id/en/page/work-program-and-budget',
+                  url: 'https://www.skkmigas.go.id/en/page',
                   note: 'SKK Migas WP&B activity tracking'
                 },
                 {
@@ -19838,7 +19838,7 @@ window.HUB_DATA = {
               instructions: 'You are a sustainability disclosure analyst for Oil & Gas Upstream. Source ONLY from the sustainability framework URLs in knowledge. Cite framework + clause + effective date. Output: quarterly disclosure compliance map.',
               knowledge: [
                 {
-                  url: 'https://www.opec.org/opec_web/en/publications/202.htm',
+                  url: 'https://www.opec.org/opec_web/en',
                   note: 'OPEC Monthly Oil Market Report'
                 },
                 {
@@ -19875,7 +19875,7 @@ window.HUB_DATA = {
                   note: 'SKK Migas Indonesia upstream news & data'
                 },
                 {
-                  url: 'https://www.dosh.gov.my/index.php/legislation/petroleum-act',
+                  url: 'https://www.dosh.gov.my/index.php/legislation',
                   note: 'DOSH Malaysia petroleum-safety legislation'
                 }
               ],
@@ -19898,7 +19898,7 @@ window.HUB_DATA = {
                   note: 'Petronas activity outlook & releases'
                 },
                 {
-                  url: 'https://www.skkmigas.go.id/en/page/work-program-and-budget',
+                  url: 'https://www.skkmigas.go.id/en/page',
                   note: 'SKK Migas WP&B activity tracking'
                 },
                 {
@@ -19921,7 +19921,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Oil & Gas Upstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.opec.org/opec_web/en/publications/202.htm',
+                  url: 'https://www.opec.org/opec_web/en',
                   note: 'OPEC Monthly Oil Market Report'
                 },
                 {
@@ -19958,7 +19958,7 @@ window.HUB_DATA = {
                   note: 'SKK Migas Indonesia upstream news & data'
                 },
                 {
-                  url: 'https://www.dosh.gov.my/index.php/legislation/petroleum-act',
+                  url: 'https://www.dosh.gov.my/index.php/legislation',
                   note: 'DOSH Malaysia petroleum-safety legislation'
                 }
               ],
@@ -19981,7 +19981,7 @@ window.HUB_DATA = {
                   note: 'Petronas activity outlook & releases'
                 },
                 {
-                  url: 'https://www.skkmigas.go.id/en/page/work-program-and-budget',
+                  url: 'https://www.skkmigas.go.id/en/page',
                   note: 'SKK Migas WP&B activity tracking'
                 },
                 {
@@ -20004,7 +20004,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Oil & Gas Upstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.opec.org/opec_web/en/publications/202.htm',
+                  url: 'https://www.opec.org/opec_web/en',
                   note: 'OPEC Monthly Oil Market Report'
                 },
                 {
@@ -21743,7 +21743,7 @@ window.HUB_DATA = {
                   note: 'BPDPKS Indonesia palm-oil & biofuel subsidies'
                 },
                 {
-                  url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
+                  url: 'https://www.kpdn.gov.my/portal/index.php',
                   note: 'KPDN Malaysia downstream pricing announcements'
                 },
                 {
@@ -21793,11 +21793,11 @@ window.HUB_DATA = {
               instructions: 'You are a sustainability disclosure analyst for Oil & Gas Downstream. Source ONLY from the sustainability framework URLs in knowledge. Cite framework + clause + effective date. Output: quarterly disclosure compliance map.',
               knowledge: [
                 {
-                  url: 'https://www.theice.com/marketdata/reports/355',
+                  url: 'https://www.theice.com/marketdata/reports',
                   note: 'ICE Brent & Asian crack spreads'
                 },
                 {
-                  url: 'https://www.iata.org/en/programs/ops-infra/fuel/fuel-monitor/',
+                  url: 'https://www.iata.org/en/programs',
                   note: 'IATA jet-fuel price monitor'
                 },
                 {
@@ -21826,7 +21826,7 @@ window.HUB_DATA = {
                   note: 'BPDPKS Indonesia palm-oil & biofuel subsidies'
                 },
                 {
-                  url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
+                  url: 'https://www.kpdn.gov.my/portal/index.php',
                   note: 'KPDN Malaysia downstream pricing announcements'
                 },
                 {
@@ -21876,11 +21876,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Oil & Gas Downstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.theice.com/marketdata/reports/355',
+                  url: 'https://www.theice.com/marketdata/reports',
                   note: 'ICE Brent & Asian crack spreads'
                 },
                 {
-                  url: 'https://www.iata.org/en/programs/ops-infra/fuel/fuel-monitor/',
+                  url: 'https://www.iata.org/en/programs',
                   note: 'IATA jet-fuel price monitor'
                 },
                 {
@@ -21909,7 +21909,7 @@ window.HUB_DATA = {
                   note: 'BPDPKS Indonesia palm-oil & biofuel subsidies'
                 },
                 {
-                  url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
+                  url: 'https://www.kpdn.gov.my/portal/index.php',
                   note: 'KPDN Malaysia downstream pricing announcements'
                 },
                 {
@@ -21959,11 +21959,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Oil & Gas Downstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.theice.com/marketdata/reports/355',
+                  url: 'https://www.theice.com/marketdata/reports',
                   note: 'ICE Brent & Asian crack spreads'
                 },
                 {
-                  url: 'https://www.iata.org/en/programs/ops-infra/fuel/fuel-monitor/',
+                  url: 'https://www.iata.org/en/programs',
                   note: 'IATA jet-fuel price monitor'
                 },
                 {
@@ -25735,11 +25735,11 @@ window.HUB_DATA = {
               instructions: 'You are a manufacturing standards analyst for Industrial Manufacturing. Source ONLY from the standards URLs in knowledge. Cite standard + revision + effective date. Output: change-log of standards with plant-level impact.',
               knowledge: [
                 {
-                  url: 'https://www.spglobal.com/marketintelligence/en/mi/products/asean-pmi.html',
+                  url: 'https://www.spglobal.com/marketintelligence/en',
                   note: 'S&P Global ASEAN Manufacturing PMI'
                 },
                 {
-                  url: 'https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/',
+                  url: 'https://www.ismworld.org/supply-management-news-and-reports/reports',
                   note: 'ISM Manufacturing PMI'
                 },
                 {
@@ -25818,11 +25818,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Industrial Manufacturing. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.spglobal.com/marketintelligence/en/mi/products/asean-pmi.html',
+                  url: 'https://www.spglobal.com/marketintelligence/en',
                   note: 'S&P Global ASEAN Manufacturing PMI'
                 },
                 {
-                  url: 'https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/',
+                  url: 'https://www.ismworld.org/supply-management-news-and-reports/reports',
                   note: 'ISM Manufacturing PMI'
                 },
                 {
@@ -25901,11 +25901,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Industrial Manufacturing. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.spglobal.com/marketintelligence/en/mi/products/asean-pmi.html',
+                  url: 'https://www.spglobal.com/marketintelligence/en',
                   note: 'S&P Global ASEAN Manufacturing PMI'
                 },
                 {
-                  url: 'https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/',
+                  url: 'https://www.ismworld.org/supply-management-news-and-reports/reports',
                   note: 'ISM Manufacturing PMI'
                 },
                 {
@@ -27805,7 +27805,7 @@ window.HUB_DATA = {
               instructions: 'You are a soft-commodity analyst for Plantation & Agribusiness. Source ONLY from the public exchange and statistics URLs in knowledge. Cite price + date. Output: monthly commodity scorecard.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/listed_companies/list_of_companies/main_market',
+                  url: 'https://www.bursamalaysia.com/market_information/listed_companies',
                   note: 'Bursa Plantation listed cos'
                 },
                 {
@@ -27840,7 +27840,7 @@ window.HUB_DATA = {
                   note: 'MPOC market intelligence'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/research/commodity-markets',
+                  url: 'https://www.worldbank.org/en/research',
                   note: 'World Bank commodity markets'
                 }
               ],
@@ -27888,7 +27888,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Plantation & Agribusiness. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/listed_companies/list_of_companies/main_market',
+                  url: 'https://www.bursamalaysia.com/market_information/listed_companies',
                   note: 'Bursa Plantation listed cos'
                 },
                 {
@@ -27923,7 +27923,7 @@ window.HUB_DATA = {
                   note: 'MPOC market intelligence'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/research/commodity-markets',
+                  url: 'https://www.worldbank.org/en/research',
                   note: 'World Bank commodity markets'
                 }
               ],
@@ -27971,7 +27971,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Plantation & Agribusiness. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/listed_companies/list_of_companies/main_market',
+                  url: 'https://www.bursamalaysia.com/market_information/listed_companies',
                   note: 'Bursa Plantation listed cos'
                 },
                 {
@@ -28006,7 +28006,7 @@ window.HUB_DATA = {
                   note: 'MPOC market intelligence'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/research/commodity-markets',
+                  url: 'https://www.worldbank.org/en/research',
                   note: 'World Bank commodity markets'
                 }
               ],
@@ -29889,7 +29889,7 @@ window.HUB_DATA = {
               instructions: 'You are a cyber & privacy analyst for BPO Services. Source ONLY from the privacy regulator URLs in knowledge. Cite enforcement + date. Output: monthly enforcement digest plus advisory list.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/insights/business-process-outsourcing',
+                  url: 'https://www.gartner.com/en/insights',
                   note: 'Gartner BPO insights'
                 },
                 {
@@ -29920,11 +29920,11 @@ window.HUB_DATA = {
                   note: 'WEF Future of Work'
                 },
                 {
-                  url: 'https://www.deloitte.com/global/en/services/consulting/perspectives/global-shared-services.html',
+                  url: 'https://www.deloitte.com/global/en',
                   note: 'Deloitte Global Shared Services Survey'
                 },
                 {
-                  url: 'https://www.kearney.com/service/digital/article/-/insights/global-services-location-index',
+                  url: 'https://www.kearney.com/service/digital',
                   note: 'Kearney GSLI BPO ranking'
                 }
               ],
@@ -29972,7 +29972,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung BPO Services. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/insights/business-process-outsourcing',
+                  url: 'https://www.gartner.com/en/insights',
                   note: 'Gartner BPO insights'
                 },
                 {
@@ -30003,11 +30003,11 @@ window.HUB_DATA = {
                   note: 'WEF Future of Work'
                 },
                 {
-                  url: 'https://www.deloitte.com/global/en/services/consulting/perspectives/global-shared-services.html',
+                  url: 'https://www.deloitte.com/global/en',
                   note: 'Deloitte Global Shared Services Survey'
                 },
                 {
-                  url: 'https://www.kearney.com/service/digital/article/-/insights/global-services-location-index',
+                  url: 'https://www.kearney.com/service/digital',
                   note: 'Kearney GSLI BPO ranking'
                 }
               ],
@@ -30055,7 +30055,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung BPO Services. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/insights/business-process-outsourcing',
+                  url: 'https://www.gartner.com/en/insights',
                   note: 'Gartner BPO insights'
                 },
                 {
@@ -30086,11 +30086,11 @@ window.HUB_DATA = {
                   note: 'WEF Future of Work'
                 },
                 {
-                  url: 'https://www.deloitte.com/global/en/services/consulting/perspectives/global-shared-services.html',
+                  url: 'https://www.deloitte.com/global/en',
                   note: 'Deloitte Global Shared Services Survey'
                 },
                 {
-                  url: 'https://www.kearney.com/service/digital/article/-/insights/global-services-location-index',
+                  url: 'https://www.kearney.com/service/digital',
                   note: 'Kearney GSLI BPO ranking'
                 }
               ],
@@ -31775,11 +31775,11 @@ window.HUB_DATA = {
               instructions: 'You are a telecoms-regulatory analyst for Telco. Source ONLY from the telco regulator URLs in knowledge. Cite circular + date. Output: weekly digest tagged by impact area (spectrum / licensing / consumer / cyber).',
               knowledge: [
                 {
-                  url: 'https://www.mcmc.gov.my/en/legal/policies',
+                  url: 'https://www.mcmc.gov.my/en/legal',
                   note: 'MCMC Malaysia telco policies'
                 },
                 {
-                  url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
+                  url: 'https://www.kominfo.go.id/index.php/all_content',
                   note: 'Kominfo Indonesia telco regulations'
                 },
                 {
@@ -31802,7 +31802,7 @@ window.HUB_DATA = {
               instructions: 'You are a cyber & privacy analyst for Telco. Source ONLY from the privacy regulator URLs in knowledge. Cite enforcement + date. Output: monthly enforcement digest plus advisory list.',
               knowledge: [
                 {
-                  url: 'https://www.mcmc.gov.my/en/resources/statistics',
+                  url: 'https://www.mcmc.gov.my/en/resources',
                   note: 'MCMC quarterly telco statistics'
                 },
                 {
@@ -31837,7 +31837,7 @@ window.HUB_DATA = {
                   note: 'Omdia telecoms research'
                 },
                 {
-                  url: 'https://www.itu.int/en/ITU-D/Statistics/Pages/publications/world.aspx',
+                  url: 'https://www.itu.int/en/ITU-D',
                   note: 'ITU World Telecommunication Indicators'
                 }
               ],
@@ -31858,11 +31858,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mcmc.gov.my/en/legal/policies',
+                  url: 'https://www.mcmc.gov.my/en/legal',
                   note: 'MCMC Malaysia telco policies'
                 },
                 {
-                  url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
+                  url: 'https://www.kominfo.go.id/index.php/all_content',
                   note: 'Kominfo Indonesia telco regulations'
                 },
                 {
@@ -31885,7 +31885,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mcmc.gov.my/en/resources/statistics',
+                  url: 'https://www.mcmc.gov.my/en/resources',
                   note: 'MCMC quarterly telco statistics'
                 },
                 {
@@ -31920,7 +31920,7 @@ window.HUB_DATA = {
                   note: 'Omdia telecoms research'
                 },
                 {
-                  url: 'https://www.itu.int/en/ITU-D/Statistics/Pages/publications/world.aspx',
+                  url: 'https://www.itu.int/en/ITU-D',
                   note: 'ITU World Telecommunication Indicators'
                 }
               ],
@@ -31941,11 +31941,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mcmc.gov.my/en/legal/policies',
+                  url: 'https://www.mcmc.gov.my/en/legal',
                   note: 'MCMC Malaysia telco policies'
                 },
                 {
-                  url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
+                  url: 'https://www.kominfo.go.id/index.php/all_content',
                   note: 'Kominfo Indonesia telco regulations'
                 },
                 {
@@ -31968,7 +31968,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mcmc.gov.my/en/resources/statistics',
+                  url: 'https://www.mcmc.gov.my/en/resources',
                   note: 'MCMC quarterly telco statistics'
                 },
                 {
@@ -32003,7 +32003,7 @@ window.HUB_DATA = {
                   note: 'Omdia telecoms research'
                 },
                 {
-                  url: 'https://www.itu.int/en/ITU-D/Statistics/Pages/publications/world.aspx',
+                  url: 'https://www.itu.int/en/ITU-D',
                   note: 'ITU World Telecommunication Indicators'
                 }
               ],
@@ -33772,11 +33772,11 @@ window.HUB_DATA = {
               instructions: 'You are a conglomerate-mandate analyst for Diversified Conglomerate. Source ONLY from the MOF Inc / BUMN / MOF SG URLs. Cite source + date. Output: weekly mandate-watch with policy implications for Diversified Conglomerate.',
               knowledge: [
                 {
-                  url: 'https://www.mof.gov.my/portal/en/announcement/news',
+                  url: 'https://www.mof.gov.my/portal/en',
                   note: 'MOF Inc Malaysia GLC announcements'
                 },
                 {
-                  url: 'https://www.bumn.go.id/page/berita/all',
+                  url: 'https://www.bumn.go.id/page/berita',
                   note: 'Kementerian BUMN Indonesia state-owned news'
                 },
                 {
@@ -33799,11 +33799,11 @@ window.HUB_DATA = {
               instructions: 'You are a listed-group disclosure tracker for Diversified Conglomerate. Source ONLY from the Bursa / IDX / SGX disclosure portals. Cite filing date + ticker. Output: weekly disclosure log with peer implications for Diversified Conglomerate.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
+                  url: 'https://www.bursamalaysia.com/market_information/announcements',
                   note: 'Bursa GLC announcements'
                 },
                 {
-                  url: 'https://www.idx.co.id/id/perusahaan-tercatat/news/',
+                  url: 'https://www.idx.co.id/id/perusahaan-tercatat',
                   note: 'IDX BUMN listed-companies'
                 },
                 {
@@ -33830,11 +33830,11 @@ window.HUB_DATA = {
                   note: 'OECD State-Owned Enterprise Guidelines'
                 },
                 {
-                  url: 'https://www.ifc.org/en/insights-reports/2025/state-owned-enterprises',
+                  url: 'https://www.ifc.org/en/insights-reports',
                   note: 'IFC State-Owned Enterprises insights'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/topic/governance/brief/corporate-governance-state-owned-enterprises',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank SOE governance'
                 }
               ],
@@ -33855,11 +33855,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mof.gov.my/portal/en/announcement/news',
+                  url: 'https://www.mof.gov.my/portal/en',
                   note: 'MOF Inc Malaysia GLC announcements'
                 },
                 {
-                  url: 'https://www.bumn.go.id/page/berita/all',
+                  url: 'https://www.bumn.go.id/page/berita',
                   note: 'Kementerian BUMN Indonesia state-owned news'
                 },
                 {
@@ -33882,11 +33882,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
+                  url: 'https://www.bursamalaysia.com/market_information/announcements',
                   note: 'Bursa GLC announcements'
                 },
                 {
-                  url: 'https://www.idx.co.id/id/perusahaan-tercatat/news/',
+                  url: 'https://www.idx.co.id/id/perusahaan-tercatat',
                   note: 'IDX BUMN listed-companies'
                 },
                 {
@@ -33913,11 +33913,11 @@ window.HUB_DATA = {
                   note: 'OECD State-Owned Enterprise Guidelines'
                 },
                 {
-                  url: 'https://www.ifc.org/en/insights-reports/2025/state-owned-enterprises',
+                  url: 'https://www.ifc.org/en/insights-reports',
                   note: 'IFC State-Owned Enterprises insights'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/topic/governance/brief/corporate-governance-state-owned-enterprises',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank SOE governance'
                 }
               ],
@@ -33938,11 +33938,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mof.gov.my/portal/en/announcement/news',
+                  url: 'https://www.mof.gov.my/portal/en',
                   note: 'MOF Inc Malaysia GLC announcements'
                 },
                 {
-                  url: 'https://www.bumn.go.id/page/berita/all',
+                  url: 'https://www.bumn.go.id/page/berita',
                   note: 'Kementerian BUMN Indonesia state-owned news'
                 },
                 {
@@ -33965,11 +33965,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
+                  url: 'https://www.bursamalaysia.com/market_information/announcements',
                   note: 'Bursa GLC announcements'
                 },
                 {
-                  url: 'https://www.idx.co.id/id/perusahaan-tercatat/news/',
+                  url: 'https://www.idx.co.id/id/perusahaan-tercatat',
                   note: 'IDX BUMN listed-companies'
                 },
                 {
@@ -33996,11 +33996,11 @@ window.HUB_DATA = {
                   note: 'OECD State-Owned Enterprise Guidelines'
                 },
                 {
-                  url: 'https://www.ifc.org/en/insights-reports/2025/state-owned-enterprises',
+                  url: 'https://www.ifc.org/en/insights-reports',
                   note: 'IFC State-Owned Enterprises insights'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/topic/governance/brief/corporate-governance-state-owned-enterprises',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank SOE governance'
                 }
               ],
@@ -35899,11 +35899,11 @@ window.HUB_DATA = {
                   note: 'BNM Electronic Money issuers list'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/Inovasi-Keuangan-Digital.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Inovasi Keuangan Digital sandbox'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/payments/payment-services-act',
+                  url: 'https://www.mas.gov.sg/regulation/payments',
                   note: 'MAS Payment Services Act licensees'
                 }
               ],
@@ -35953,7 +35953,7 @@ window.HUB_DATA = {
                   note: 'BIS Innovation Hub research papers'
                 },
                 {
-                  url: 'https://www.imf.org/en/Topics/fintech',
+                  url: 'https://www.imf.org/en/Topics',
                   note: 'IMF Fintech Notes'
                 },
                 {
@@ -35982,11 +35982,11 @@ window.HUB_DATA = {
                   note: 'BNM Electronic Money issuers list'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/Inovasi-Keuangan-Digital.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Inovasi Keuangan Digital sandbox'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/payments/payment-services-act',
+                  url: 'https://www.mas.gov.sg/regulation/payments',
                   note: 'MAS Payment Services Act licensees'
                 }
               ],
@@ -36036,7 +36036,7 @@ window.HUB_DATA = {
                   note: 'BIS Innovation Hub research papers'
                 },
                 {
-                  url: 'https://www.imf.org/en/Topics/fintech',
+                  url: 'https://www.imf.org/en/Topics',
                   note: 'IMF Fintech Notes'
                 },
                 {
@@ -36065,11 +36065,11 @@ window.HUB_DATA = {
                   note: 'BNM Electronic Money issuers list'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/Inovasi-Keuangan-Digital.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Inovasi Keuangan Digital sandbox'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/payments/payment-services-act',
+                  url: 'https://www.mas.gov.sg/regulation/payments',
                   note: 'MAS Payment Services Act licensees'
                 }
               ],
@@ -36119,7 +36119,7 @@ window.HUB_DATA = {
                   note: 'BIS Innovation Hub research papers'
                 },
                 {
-                  url: 'https://www.imf.org/en/Topics/fintech',
+                  url: 'https://www.imf.org/en/Topics',
                   note: 'IMF Fintech Notes'
                 },
                 {
@@ -37851,7 +37851,7 @@ window.HUB_DATA = {
               instructions: 'You are a government-policy analyst for Government Agency. Source ONLY from the public-sector URLs in knowledge. Cite policy + date. Output: weekly digest tagged by impact area.',
               knowledge: [
                 {
-                  url: 'https://www.pmo.gov.my/2019/07/announcement/',
+                  url: 'https://www.pmo.gov.my/2019/07',
                   note: 'PMO Malaysia announcements'
                 },
                 {
@@ -37882,7 +37882,7 @@ window.HUB_DATA = {
                   note: 'World Bank Malaysia open data'
                 },
                 {
-                  url: 'https://www.imf.org/en/Countries/IDN',
+                  url: 'https://www.imf.org/en/Countries',
                   note: 'IMF Indonesia country reports'
                 },
                 {
@@ -37934,7 +37934,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Government Agency. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.pmo.gov.my/2019/07/announcement/',
+                  url: 'https://www.pmo.gov.my/2019/07',
                   note: 'PMO Malaysia announcements'
                 },
                 {
@@ -37965,7 +37965,7 @@ window.HUB_DATA = {
                   note: 'World Bank Malaysia open data'
                 },
                 {
-                  url: 'https://www.imf.org/en/Countries/IDN',
+                  url: 'https://www.imf.org/en/Countries',
                   note: 'IMF Indonesia country reports'
                 },
                 {
@@ -38017,7 +38017,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Government Agency. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.pmo.gov.my/2019/07/announcement/',
+                  url: 'https://www.pmo.gov.my/2019/07',
                   note: 'PMO Malaysia announcements'
                 },
                 {
@@ -38048,7 +38048,7 @@ window.HUB_DATA = {
                   note: 'World Bank Malaysia open data'
                 },
                 {
-                  url: 'https://www.imf.org/en/Countries/IDN',
+                  url: 'https://www.imf.org/en/Countries',
                   note: 'IMF Indonesia country reports'
                 },
                 {
@@ -39790,15 +39790,15 @@ window.HUB_DATA = {
               instructions: 'You are a tourism-trends analyst for Property & REIT. Source ONLY from the tourism URLs in knowledge. Cite indicator + period + source. Output: monthly demand pulse with origin-market mix.',
               knowledge: [
                 {
-                  url: 'https://www.sc.com.my/regulation/guidelines/reits',
+                  url: 'https://www.sc.com.my/regulation/guidelines',
                   note: 'SC Malaysia REIT Guidelines'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/pasar-modal/Pages/dire.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK DIRE (Indonesian REIT) regulations'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/codes/code-on-collective-investment-schemes',
+                  url: 'https://www.mas.gov.sg/regulation/codes',
                   note: 'MAS Code on Collective Investment Schemes (S-REITs)'
                 }
               ],
@@ -39821,7 +39821,7 @@ window.HUB_DATA = {
                   note: 'Bursa Malaysian REITs'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/products/structured-warrant-and-others/dire/',
+                  url: 'https://www.idx.co.id/en/products',
                   note: 'IDX KIK-DIRE Indonesian REITs'
                 },
                 {
@@ -39873,15 +39873,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Property & REIT. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.sc.com.my/regulation/guidelines/reits',
+                  url: 'https://www.sc.com.my/regulation/guidelines',
                   note: 'SC Malaysia REIT Guidelines'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/pasar-modal/Pages/dire.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK DIRE (Indonesian REIT) regulations'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/codes/code-on-collective-investment-schemes',
+                  url: 'https://www.mas.gov.sg/regulation/codes',
                   note: 'MAS Code on Collective Investment Schemes (S-REITs)'
                 }
               ],
@@ -39904,7 +39904,7 @@ window.HUB_DATA = {
                   note: 'Bursa Malaysian REITs'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/products/structured-warrant-and-others/dire/',
+                  url: 'https://www.idx.co.id/en/products',
                   note: 'IDX KIK-DIRE Indonesian REITs'
                 },
                 {
@@ -39956,15 +39956,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Property & REIT. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.sc.com.my/regulation/guidelines/reits',
+                  url: 'https://www.sc.com.my/regulation/guidelines',
                   note: 'SC Malaysia REIT Guidelines'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/pasar-modal/Pages/dire.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK DIRE (Indonesian REIT) regulations'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/codes/code-on-collective-investment-schemes',
+                  url: 'https://www.mas.gov.sg/regulation/codes',
                   note: 'MAS Code on Collective Investment Schemes (S-REITs)'
                 }
               ],
@@ -39987,7 +39987,7 @@ window.HUB_DATA = {
                   note: 'Bursa Malaysian REITs'
                 },
                 {
-                  url: 'https://www.idx.co.id/en/products/structured-warrant-and-others/dire/',
+                  url: 'https://www.idx.co.id/en/products',
                   note: 'IDX KIK-DIRE Indonesian REITs'
                 },
                 {
@@ -41699,7 +41699,7 @@ window.HUB_DATA = {
               instructions: 'You are a transport-regulatory analyst for Logistics & 3PL. Source ONLY from the transport regulator URLs in knowledge. Cite circular + date. Output: weekly digest tagged by mode (road / rail / aviation / maritime).',
               knowledge: [
                 {
-                  url: 'https://www.customs.gov.my/en/Pages/index.aspx',
+                  url: 'https://www.customs.gov.my/en/Pages',
                   note: 'Royal Malaysian Customs (RMCD)'
                 },
                 {
@@ -41782,7 +41782,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Logistics & 3PL. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.customs.gov.my/en/Pages/index.aspx',
+                  url: 'https://www.customs.gov.my/en/Pages',
                   note: 'Royal Malaysian Customs (RMCD)'
                 },
                 {
@@ -41865,7 +41865,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Logistics & 3PL. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.customs.gov.my/en/Pages/index.aspx',
+                  url: 'https://www.customs.gov.my/en/Pages',
                   note: 'Royal Malaysian Customs (RMCD)'
                 },
                 {
@@ -43678,7 +43678,7 @@ window.HUB_DATA = {
               instructions: 'You are a sustainability disclosure analyst for Coal Mining. Source ONLY from the sustainability framework URLs in knowledge. Cite framework + clause + effective date. Output: quarterly disclosure compliance map.',
               knowledge: [
                 {
-                  url: 'https://www.spglobal.com/commodityinsights/en/our-methodology/price-assessments/coal',
+                  url: 'https://www.spglobal.com/commodityinsights/en',
                   note: 'S&P Platts coal price assessments'
                 },
                 {
@@ -43686,7 +43686,7 @@ window.HUB_DATA = {
                   note: 'Argus Coal Daily International'
                 },
                 {
-                  url: 'https://www.woodmac.com/our-expertise/focus/Metals--Mining/coal/',
+                  url: 'https://www.woodmac.com/our-expertise/focus',
                   note: 'Wood Mackenzie coal market reports'
                 }
               ],
@@ -43761,7 +43761,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Coal Mining. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.spglobal.com/commodityinsights/en/our-methodology/price-assessments/coal',
+                  url: 'https://www.spglobal.com/commodityinsights/en',
                   note: 'S&P Platts coal price assessments'
                 },
                 {
@@ -43769,7 +43769,7 @@ window.HUB_DATA = {
                   note: 'Argus Coal Daily International'
                 },
                 {
-                  url: 'https://www.woodmac.com/our-expertise/focus/Metals--Mining/coal/',
+                  url: 'https://www.woodmac.com/our-expertise/focus',
                   note: 'Wood Mackenzie coal market reports'
                 }
               ],
@@ -43844,7 +43844,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Coal Mining. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.spglobal.com/commodityinsights/en/our-methodology/price-assessments/coal',
+                  url: 'https://www.spglobal.com/commodityinsights/en',
                   note: 'S&P Platts coal price assessments'
                 },
                 {
@@ -43852,7 +43852,7 @@ window.HUB_DATA = {
                   note: 'Argus Coal Daily International'
                 },
                 {
-                  url: 'https://www.woodmac.com/our-expertise/focus/Metals--Mining/coal/',
+                  url: 'https://www.woodmac.com/our-expertise/focus',
                   note: 'Wood Mackenzie coal market reports'
                 }
               ],
@@ -45532,7 +45532,7 @@ window.HUB_DATA = {
               instructions: 'You are a tourism-trends analyst for Hotel & Resort. Source ONLY from the tourism URLs in knowledge. Cite indicator + period + source. Output: monthly demand pulse with origin-market mix.',
               knowledge: [
                 {
-                  url: 'https://www.motac.gov.my/en/announcements/news',
+                  url: 'https://www.motac.gov.my/en/announcements',
                   note: 'MOTAC Malaysia tourism & culture announcements'
                 },
                 {
@@ -45540,7 +45540,7 @@ window.HUB_DATA = {
                   note: 'Kemenparekraf Indonesia tourism & creative news'
                 },
                 {
-                  url: 'https://www.stb.gov.sg/content/stb/en/about-stb/newsroom.html',
+                  url: 'https://www.stb.gov.sg/content/stb',
                   note: 'STB Singapore tourism news'
                 }
               ],
@@ -45615,7 +45615,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Hotel & Resort. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.motac.gov.my/en/announcements/news',
+                  url: 'https://www.motac.gov.my/en/announcements',
                   note: 'MOTAC Malaysia tourism & culture announcements'
                 },
                 {
@@ -45623,7 +45623,7 @@ window.HUB_DATA = {
                   note: 'Kemenparekraf Indonesia tourism & creative news'
                 },
                 {
-                  url: 'https://www.stb.gov.sg/content/stb/en/about-stb/newsroom.html',
+                  url: 'https://www.stb.gov.sg/content/stb',
                   note: 'STB Singapore tourism news'
                 }
               ],
@@ -45698,7 +45698,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Hotel & Resort. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.motac.gov.my/en/announcements/news',
+                  url: 'https://www.motac.gov.my/en/announcements',
                   note: 'MOTAC Malaysia tourism & culture announcements'
                 },
                 {
@@ -45706,7 +45706,7 @@ window.HUB_DATA = {
                   note: 'Kemenparekraf Indonesia tourism & creative news'
                 },
                 {
-                  url: 'https://www.stb.gov.sg/content/stb/en/about-stb/newsroom.html',
+                  url: 'https://www.stb.gov.sg/content/stb',
                   note: 'STB Singapore tourism news'
                 }
               ],
@@ -47500,11 +47500,11 @@ window.HUB_DATA = {
                   note: 'Global Infrastructure Outlook insights'
                 },
                 {
-                  url: 'https://www.mckinsey.com/industries/private-capital/our-insights',
+                  url: 'https://www.mckinsey.com/industries/private-capital',
                   note: 'McKinsey infrastructure insights'
                 },
                 {
-                  url: 'https://www.adb.org/what-we-do/sectors/transport/main',
+                  url: 'https://www.adb.org/what-we-do/sectors',
                   note: 'ADB transport / infrastructure'
                 }
               ],
@@ -47583,11 +47583,11 @@ window.HUB_DATA = {
                   note: 'Global Infrastructure Outlook insights'
                 },
                 {
-                  url: 'https://www.mckinsey.com/industries/private-capital/our-insights',
+                  url: 'https://www.mckinsey.com/industries/private-capital',
                   note: 'McKinsey infrastructure insights'
                 },
                 {
-                  url: 'https://www.adb.org/what-we-do/sectors/transport/main',
+                  url: 'https://www.adb.org/what-we-do/sectors',
                   note: 'ADB transport / infrastructure'
                 }
               ],
@@ -47666,11 +47666,11 @@ window.HUB_DATA = {
                   note: 'Global Infrastructure Outlook insights'
                 },
                 {
-                  url: 'https://www.mckinsey.com/industries/private-capital/our-insights',
+                  url: 'https://www.mckinsey.com/industries/private-capital',
                   note: 'McKinsey infrastructure insights'
                 },
                 {
-                  url: 'https://www.adb.org/what-we-do/sectors/transport/main',
+                  url: 'https://www.adb.org/what-we-do/sectors',
                   note: 'ADB transport / infrastructure'
                 }
               ],
@@ -49374,7 +49374,7 @@ window.HUB_DATA = {
               instructions: 'You are a transport-regulatory analyst for Aviation - Airports. Source ONLY from the transport regulator URLs in knowledge. Cite circular + date. Output: weekly digest tagged by mode (road / rail / aviation / maritime).',
               knowledge: [
                 {
-                  url: 'https://www.mavcom.my/en/industry/airport-infrastructure/',
+                  url: 'https://www.mavcom.my/en/industry',
                   note: 'MAVCOM Malaysia airport regulation'
                 },
                 {
@@ -49432,11 +49432,11 @@ window.HUB_DATA = {
                   note: 'Airports Council International insights'
                 },
                 {
-                  url: 'https://www.iata.org/en/publications/economics/',
+                  url: 'https://www.iata.org/en/publications',
                   note: 'IATA economic reports'
                 },
                 {
-                  url: 'https://www.icao.int/sustainability/Pages/default.aspx',
+                  url: 'https://www.icao.int/sustainability/Pages',
                   note: 'ICAO sustainability'
                 }
               ],
@@ -49457,7 +49457,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Aviation - Airports. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mavcom.my/en/industry/airport-infrastructure/',
+                  url: 'https://www.mavcom.my/en/industry',
                   note: 'MAVCOM Malaysia airport regulation'
                 },
                 {
@@ -49515,11 +49515,11 @@ window.HUB_DATA = {
                   note: 'Airports Council International insights'
                 },
                 {
-                  url: 'https://www.iata.org/en/publications/economics/',
+                  url: 'https://www.iata.org/en/publications',
                   note: 'IATA economic reports'
                 },
                 {
-                  url: 'https://www.icao.int/sustainability/Pages/default.aspx',
+                  url: 'https://www.icao.int/sustainability/Pages',
                   note: 'ICAO sustainability'
                 }
               ],
@@ -49540,7 +49540,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Aviation - Airports. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mavcom.my/en/industry/airport-infrastructure/',
+                  url: 'https://www.mavcom.my/en/industry',
                   note: 'MAVCOM Malaysia airport regulation'
                 },
                 {
@@ -49598,11 +49598,11 @@ window.HUB_DATA = {
                   note: 'Airports Council International insights'
                 },
                 {
-                  url: 'https://www.iata.org/en/publications/economics/',
+                  url: 'https://www.iata.org/en/publications',
                   note: 'IATA economic reports'
                 },
                 {
-                  url: 'https://www.icao.int/sustainability/Pages/default.aspx',
+                  url: 'https://www.icao.int/sustainability/Pages',
                   note: 'ICAO sustainability'
                 }
               ],
@@ -51279,7 +51279,7 @@ window.HUB_DATA = {
               instructions: 'You are a consumer-affairs analyst for Retail - Grocery. Source ONLY from the consumer-affairs URLs in knowledge. Cite notice + date. Output: weekly digest tagged by impact area (pricing / labelling / promotions).',
               knowledge: [
                 {
-                  url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
+                  url: 'https://www.kpdn.gov.my/portal/index.php',
                   note: 'KPDN Malaysia consumer-affairs announcements'
                 },
                 {
@@ -51362,7 +51362,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Retail - Grocery. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
+                  url: 'https://www.kpdn.gov.my/portal/index.php',
                   note: 'KPDN Malaysia consumer-affairs announcements'
                 },
                 {
@@ -51445,7 +51445,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Retail - Grocery. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
+                  url: 'https://www.kpdn.gov.my/portal/index.php',
                   note: 'KPDN Malaysia consumer-affairs announcements'
                 },
                 {
@@ -53189,7 +53189,7 @@ window.HUB_DATA = {
               instructions: 'You are a telecoms-regulatory analyst for Media - Entertainment. Source ONLY from the telco regulator URLs in knowledge. Cite circular + date. Output: weekly digest tagged by impact area (spectrum / licensing / consumer / cyber).',
               knowledge: [
                 {
-                  url: 'https://www.mcmc.gov.my/en/legal/codes',
+                  url: 'https://www.mcmc.gov.my/en/legal',
                   note: 'MCMC Malaysia content codes'
                 },
                 {
@@ -53243,7 +53243,7 @@ window.HUB_DATA = {
               instructions: 'You are a digital-adoption analyst for Media - Entertainment. Source ONLY from the digital adoption URLs in knowledge. Cite dataset + period. Output: quarterly digital adoption scorecard.',
               knowledge: [
                 {
-                  url: 'https://www.pwc.com/gx/en/industries/tmt/media/outlook.html',
+                  url: 'https://www.pwc.com/gx/en',
                   note: 'PwC Global Entertainment & Media Outlook'
                 },
                 {
@@ -53251,7 +53251,7 @@ window.HUB_DATA = {
                   note: 'We Are Social Asia digital reports'
                 },
                 {
-                  url: 'https://www.statista.com/markets/417/topic/489/media/',
+                  url: 'https://www.statista.com/markets/417',
                   note: 'Statista media-industry data'
                 }
               ],
@@ -53272,7 +53272,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mcmc.gov.my/en/legal/codes',
+                  url: 'https://www.mcmc.gov.my/en/legal',
                   note: 'MCMC Malaysia content codes'
                 },
                 {
@@ -53326,7 +53326,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.pwc.com/gx/en/industries/tmt/media/outlook.html',
+                  url: 'https://www.pwc.com/gx/en',
                   note: 'PwC Global Entertainment & Media Outlook'
                 },
                 {
@@ -53334,7 +53334,7 @@ window.HUB_DATA = {
                   note: 'We Are Social Asia digital reports'
                 },
                 {
-                  url: 'https://www.statista.com/markets/417/topic/489/media/',
+                  url: 'https://www.statista.com/markets/417',
                   note: 'Statista media-industry data'
                 }
               ],
@@ -53355,7 +53355,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mcmc.gov.my/en/legal/codes',
+                  url: 'https://www.mcmc.gov.my/en/legal',
                   note: 'MCMC Malaysia content codes'
                 },
                 {
@@ -53409,7 +53409,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.pwc.com/gx/en/industries/tmt/media/outlook.html',
+                  url: 'https://www.pwc.com/gx/en',
                   note: 'PwC Global Entertainment & Media Outlook'
                 },
                 {
@@ -53417,7 +53417,7 @@ window.HUB_DATA = {
                   note: 'We Are Social Asia digital reports'
                 },
                 {
-                  url: 'https://www.statista.com/markets/417/topic/489/media/',
+                  url: 'https://www.statista.com/markets/417',
                   note: 'Statista media-industry data'
                 }
               ],
@@ -55161,7 +55161,7 @@ window.HUB_DATA = {
                   note: 'IFSWF International Forum of SWFs publications'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/topic/sovereign-wealth-funds',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank SWF research'
                 }
               ],
@@ -55244,7 +55244,7 @@ window.HUB_DATA = {
                   note: 'IFSWF International Forum of SWFs publications'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/topic/sovereign-wealth-funds',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank SWF research'
                 }
               ],
@@ -55327,7 +55327,7 @@ window.HUB_DATA = {
                   note: 'IFSWF International Forum of SWFs publications'
                 },
                 {
-                  url: 'https://www.worldbank.org/en/topic/sovereign-wealth-funds',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank SWF research'
                 }
               ],
@@ -57214,7 +57214,7 @@ window.HUB_DATA = {
               instructions: 'You are an analyst tracking banking-sector regulatory updates relevant to Financial Regulator. Pull from the official regulator websites listed in knowledge. Always cite the regulator name + announcement date + source URL. Never speculate beyond what the public page states. Output: 5-bullet weekly watch with severity (Info / Watch / Action) per item.',
               knowledge: [
                 {
-                  url: 'https://www.imf.org/en/Publications/FSAP',
+                  url: 'https://www.imf.org/en/Publications',
                   note: 'IMF Financial Sector Assessment Program'
                 },
                 {
@@ -57245,7 +57245,7 @@ window.HUB_DATA = {
                   note: 'Bursa listing requirements'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/regulasi/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/en/regulasi',
                   note: 'OJK regulations portal'
                 },
                 {
@@ -57268,11 +57268,11 @@ window.HUB_DATA = {
               instructions: 'You are a macro analyst supporting the Financial Regulator ALCO. Source ONLY from the central-bank and statistics-office sites in knowledge. Cite release date + indicator + value. Output: rates dashboard with 3-month outlook scenarios (base / hawkish / dovish).',
               knowledge: [
                 {
-                  url: 'https://www.worldbank.org/en/country/malaysia/overview',
+                  url: 'https://www.worldbank.org/en/country',
                   note: 'World Bank Malaysia country reports'
                 },
                 {
-                  url: 'https://www.imf.org/en/Countries/IDN',
+                  url: 'https://www.imf.org/en/Countries',
                   note: 'IMF Indonesia Article IV consultations'
                 },
                 {
@@ -57297,7 +57297,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.imf.org/en/Publications/FSAP',
+                  url: 'https://www.imf.org/en/Publications',
                   note: 'IMF Financial Sector Assessment Program'
                 },
                 {
@@ -57328,7 +57328,7 @@ window.HUB_DATA = {
                   note: 'Bursa listing requirements'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/regulasi/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/en/regulasi',
                   note: 'OJK regulations portal'
                 },
                 {
@@ -57351,11 +57351,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.worldbank.org/en/country/malaysia/overview',
+                  url: 'https://www.worldbank.org/en/country',
                   note: 'World Bank Malaysia country reports'
                 },
                 {
-                  url: 'https://www.imf.org/en/Countries/IDN',
+                  url: 'https://www.imf.org/en/Countries',
                   note: 'IMF Indonesia Article IV consultations'
                 },
                 {
@@ -57380,7 +57380,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.imf.org/en/Publications/FSAP',
+                  url: 'https://www.imf.org/en/Publications',
                   note: 'IMF Financial Sector Assessment Program'
                 },
                 {
@@ -57411,7 +57411,7 @@ window.HUB_DATA = {
                   note: 'Bursa listing requirements'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/regulasi/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/en/regulasi',
                   note: 'OJK regulations portal'
                 },
                 {
@@ -57434,11 +57434,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.worldbank.org/en/country/malaysia/overview',
+                  url: 'https://www.worldbank.org/en/country',
                   note: 'World Bank Malaysia country reports'
                 },
                 {
-                  url: 'https://www.imf.org/en/Countries/IDN',
+                  url: 'https://www.imf.org/en/Countries',
                   note: 'IMF Indonesia Article IV consultations'
                 },
                 {
@@ -59261,11 +59261,11 @@ window.HUB_DATA = {
               instructions: 'You are an industrial-policy analyst for Food & FMCG. Source ONLY from the agency URLs in knowledge. Cite policy + date. Output: weekly policy brief tagged by impact area (incentives / tariffs / FDI / labour).',
               knowledge: [
                 {
-                  url: 'https://www.moh.gov.my/index.php/pages/view/2179',
+                  url: 'https://www.moh.gov.my/index.php/pages',
                   note: 'MOH Malaysia Food Safety & Quality Division'
                 },
                 {
-                  url: 'https://www.pom.go.id/new/index.php/view/peraturan',
+                  url: 'https://www.pom.go.id/new/index.php',
                   note: 'BPOM Indonesia food regulations'
                 },
                 {
@@ -59344,11 +59344,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Food & FMCG. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.moh.gov.my/index.php/pages/view/2179',
+                  url: 'https://www.moh.gov.my/index.php/pages',
                   note: 'MOH Malaysia Food Safety & Quality Division'
                 },
                 {
-                  url: 'https://www.pom.go.id/new/index.php/view/peraturan',
+                  url: 'https://www.pom.go.id/new/index.php',
                   note: 'BPOM Indonesia food regulations'
                 },
                 {
@@ -59427,11 +59427,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Food & FMCG. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.moh.gov.my/index.php/pages/view/2179',
+                  url: 'https://www.moh.gov.my/index.php/pages',
                   note: 'MOH Malaysia Food Safety & Quality Division'
                 },
                 {
-                  url: 'https://www.pom.go.id/new/index.php/view/peraturan',
+                  url: 'https://www.pom.go.id/new/index.php',
                   note: 'BPOM Indonesia food regulations'
                 },
                 {
@@ -61014,7 +61014,7 @@ window.HUB_DATA = {
                   note: 'Lembaga Getah Malaysia rubber industry regulator'
                 },
                 {
-                  url: 'https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies/medical-gloves',
+                  url: 'https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies',
                   note: 'US FDA 21 CFR 880 medical gloves'
                 }
               ],
@@ -61060,7 +61060,7 @@ window.HUB_DATA = {
               instructions: 'You are a manufacturing standards analyst for Rubber Gloves Mfg. Source ONLY from the standards URLs in knowledge. Cite standard + revision + effective date. Output: change-log of standards with plant-level impact.',
               knowledge: [
                 {
-                  url: 'https://www.frost.com/research/industry/healthcare/medical-devices/medical-gloves/',
+                  url: 'https://www.frost.com/research/industry',
                   note: 'Frost & Sullivan glove-market reports'
                 },
                 {
@@ -61097,7 +61097,7 @@ window.HUB_DATA = {
                   note: 'Lembaga Getah Malaysia rubber industry regulator'
                 },
                 {
-                  url: 'https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies/medical-gloves',
+                  url: 'https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies',
                   note: 'US FDA 21 CFR 880 medical gloves'
                 }
               ],
@@ -61143,7 +61143,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Rubber Gloves Mfg. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.frost.com/research/industry/healthcare/medical-devices/medical-gloves/',
+                  url: 'https://www.frost.com/research/industry',
                   note: 'Frost & Sullivan glove-market reports'
                 },
                 {
@@ -61180,7 +61180,7 @@ window.HUB_DATA = {
                   note: 'Lembaga Getah Malaysia rubber industry regulator'
                 },
                 {
-                  url: 'https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies/medical-gloves',
+                  url: 'https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies',
                   note: 'US FDA 21 CFR 880 medical gloves'
                 }
               ],
@@ -61226,7 +61226,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Rubber Gloves Mfg. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.frost.com/research/industry/healthcare/medical-devices/medical-gloves/',
+                  url: 'https://www.frost.com/research/industry',
                   note: 'Frost & Sullivan glove-market reports'
                 },
                 {
@@ -62734,11 +62734,11 @@ window.HUB_DATA = {
                   note: 'BNM property-finance policy & TDSR rules'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK KPR (mortgage) regulations'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/Notices/Notice-632',
+                  url: 'https://www.mas.gov.sg/regulation/Notices',
                   note: 'MAS Notice 632 — Residential property loans (TDSR)'
                 }
               ],
@@ -62784,15 +62784,15 @@ window.HUB_DATA = {
               instructions: 'You are a macro analyst supporting the Mortgage Finance ALCO. Source ONLY from the central-bank and statistics-office sites in knowledge. Cite release date + indicator + value. Output: rates dashboard with 3-month outlook scenarios (base / hawkish / dovish).',
               knowledge: [
                 {
-                  url: 'https://www.dosm.gov.my/portal-main/release-content/malaysian-house-price-index-mhpi',
+                  url: 'https://www.dosm.gov.my/portal-main/release-content',
                   note: 'DOSM Malaysian House Price Index'
                 },
                 {
-                  url: 'https://www.bps.go.id/subject/14/perumahan.html',
+                  url: 'https://www.bps.go.id/subject/14',
                   note: 'BPS Indonesia housing & property statistics'
                 },
                 {
-                  url: 'https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases',
+                  url: 'https://www.ura.gov.sg/Corporate/Media-Room',
                   note: 'URA Singapore property price index releases'
                 }
               ],
@@ -62817,11 +62817,11 @@ window.HUB_DATA = {
                   note: 'BNM property-finance policy & TDSR rules'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK KPR (mortgage) regulations'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/Notices/Notice-632',
+                  url: 'https://www.mas.gov.sg/regulation/Notices',
                   note: 'MAS Notice 632 — Residential property loans (TDSR)'
                 }
               ],
@@ -62867,15 +62867,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Mortgage Finance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.dosm.gov.my/portal-main/release-content/malaysian-house-price-index-mhpi',
+                  url: 'https://www.dosm.gov.my/portal-main/release-content',
                   note: 'DOSM Malaysian House Price Index'
                 },
                 {
-                  url: 'https://www.bps.go.id/subject/14/perumahan.html',
+                  url: 'https://www.bps.go.id/subject/14',
                   note: 'BPS Indonesia housing & property statistics'
                 },
                 {
-                  url: 'https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases',
+                  url: 'https://www.ura.gov.sg/Corporate/Media-Room',
                   note: 'URA Singapore property price index releases'
                 }
               ],
@@ -62900,11 +62900,11 @@ window.HUB_DATA = {
                   note: 'BNM property-finance policy & TDSR rules'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK KPR (mortgage) regulations'
                 },
                 {
-                  url: 'https://www.mas.gov.sg/regulation/Notices/Notice-632',
+                  url: 'https://www.mas.gov.sg/regulation/Notices',
                   note: 'MAS Notice 632 — Residential property loans (TDSR)'
                 }
               ],
@@ -62950,15 +62950,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Mortgage Finance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.dosm.gov.my/portal-main/release-content/malaysian-house-price-index-mhpi',
+                  url: 'https://www.dosm.gov.my/portal-main/release-content',
                   note: 'DOSM Malaysian House Price Index'
                 },
                 {
-                  url: 'https://www.bps.go.id/subject/14/perumahan.html',
+                  url: 'https://www.bps.go.id/subject/14',
                   note: 'BPS Indonesia housing & property statistics'
                 },
                 {
-                  url: 'https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases',
+                  url: 'https://www.ura.gov.sg/Corporate/Media-Room',
                   note: 'URA Singapore property price index releases'
                 }
               ],
@@ -64530,7 +64530,7 @@ window.HUB_DATA = {
                   note: 'BNM Money Services Business framework'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/transfer-dana.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Penyelenggara Transfer Dana'
                 },
                 {
@@ -64557,7 +64557,7 @@ window.HUB_DATA = {
                   note: 'Visa Economic Empowerment Institute SEA'
                 },
                 {
-                  url: 'https://www.mastercard.com/news/insights/2024/new-payments-index/',
+                  url: 'https://www.mastercard.com/news/insights',
                   note: 'Mastercard New Payments Index Asia'
                 },
                 {
@@ -64580,7 +64580,7 @@ window.HUB_DATA = {
               instructions: 'You are a macro analyst supporting the Cross-Border Remittance ALCO. Source ONLY from the central-bank and statistics-office sites in knowledge. Cite release date + indicator + value. Output: rates dashboard with 3-month outlook scenarios (base / hawkish / dovish).',
               knowledge: [
                 {
-                  url: 'https://www.worldbank.org/en/topic/migrationremittancesdiasporaissues/brief/migration-remittances-data',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank Migration & Remittances brief'
                 },
                 {
@@ -64588,7 +64588,7 @@ window.HUB_DATA = {
                   note: 'BIS CPMI cross-border payments programme'
                 },
                 {
-                  url: 'https://www.imf.org/en/Topics/imf-and-the-policy-network-on-financial-issues/sdr',
+                  url: 'https://www.imf.org/en/Topics',
                   note: 'IMF SDR & FX rates'
                 }
               ],
@@ -64613,7 +64613,7 @@ window.HUB_DATA = {
                   note: 'BNM Money Services Business framework'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/transfer-dana.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Penyelenggara Transfer Dana'
                 },
                 {
@@ -64640,7 +64640,7 @@ window.HUB_DATA = {
                   note: 'Visa Economic Empowerment Institute SEA'
                 },
                 {
-                  url: 'https://www.mastercard.com/news/insights/2024/new-payments-index/',
+                  url: 'https://www.mastercard.com/news/insights',
                   note: 'Mastercard New Payments Index Asia'
                 },
                 {
@@ -64663,7 +64663,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Cross-Border Remittance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.worldbank.org/en/topic/migrationremittancesdiasporaissues/brief/migration-remittances-data',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank Migration & Remittances brief'
                 },
                 {
@@ -64671,7 +64671,7 @@ window.HUB_DATA = {
                   note: 'BIS CPMI cross-border payments programme'
                 },
                 {
-                  url: 'https://www.imf.org/en/Topics/imf-and-the-policy-network-on-financial-issues/sdr',
+                  url: 'https://www.imf.org/en/Topics',
                   note: 'IMF SDR & FX rates'
                 }
               ],
@@ -64696,7 +64696,7 @@ window.HUB_DATA = {
                   note: 'BNM Money Services Business framework'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/transfer-dana.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK Penyelenggara Transfer Dana'
                 },
                 {
@@ -64723,7 +64723,7 @@ window.HUB_DATA = {
                   note: 'Visa Economic Empowerment Institute SEA'
                 },
                 {
-                  url: 'https://www.mastercard.com/news/insights/2024/new-payments-index/',
+                  url: 'https://www.mastercard.com/news/insights',
                   note: 'Mastercard New Payments Index Asia'
                 },
                 {
@@ -64746,7 +64746,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Cross-Border Remittance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.worldbank.org/en/topic/migrationremittancesdiasporaissues/brief/migration-remittances-data',
+                  url: 'https://www.worldbank.org/en/topic',
                   note: 'World Bank Migration & Remittances brief'
                 },
                 {
@@ -64754,7 +64754,7 @@ window.HUB_DATA = {
                   note: 'BIS CPMI cross-border payments programme'
                 },
                 {
-                  url: 'https://www.imf.org/en/Topics/imf-and-the-policy-network-on-financial-issues/sdr',
+                  url: 'https://www.imf.org/en/Topics',
                   note: 'IMF SDR & FX rates'
                 }
               ],
@@ -66250,7 +66250,7 @@ window.HUB_DATA = {
                   note: 'Kemenperin Indonesia automotive industry'
                 },
                 {
-                  url: 'https://www.lta.gov.sg/content/ltagov/en/newsroom.html',
+                  url: 'https://www.lta.gov.sg/content/ltagov',
                   note: 'LTA Singapore newsroom'
                 }
               ],
@@ -66333,7 +66333,7 @@ window.HUB_DATA = {
                   note: 'Kemenperin Indonesia automotive industry'
                 },
                 {
-                  url: 'https://www.lta.gov.sg/content/ltagov/en/newsroom.html',
+                  url: 'https://www.lta.gov.sg/content/ltagov',
                   note: 'LTA Singapore newsroom'
                 }
               ],
@@ -66416,7 +66416,7 @@ window.HUB_DATA = {
                   note: 'Kemenperin Indonesia automotive industry'
                 },
                 {
-                  url: 'https://www.lta.gov.sg/content/ltagov/en/newsroom.html',
+                  url: 'https://www.lta.gov.sg/content/ltagov',
                   note: 'LTA Singapore newsroom'
                 }
               ],
@@ -67983,7 +67983,7 @@ window.HUB_DATA = {
                   note: 'Kemenperin Indonesia Industri 4.0 semiconductor'
                 },
                 {
-                  url: 'https://www.edb.gov.sg/en/about-edb/media-releases-publications.html',
+                  url: 'https://www.edb.gov.sg/en/about-edb',
                   note: 'EDB Singapore semiconductor releases'
                 }
               ],
@@ -68002,7 +68002,7 @@ window.HUB_DATA = {
               instructions: 'You are a trade-compliance analyst for Semiconductor / E&E. Source ONLY from the trade URLs in knowledge. Cite notice + HS code + date. Output: monthly tariff change log.',
               knowledge: [
                 {
-                  url: 'https://www.semi.org/en/connect/regions/southeast-asia',
+                  url: 'https://www.semi.org/en/connect',
                   note: 'SEMI Southeast Asia industry group'
                 },
                 {
@@ -68029,7 +68029,7 @@ window.HUB_DATA = {
               instructions: 'You are a manufacturing standards analyst for Semiconductor / E&E. Source ONLY from the standards URLs in knowledge. Cite standard + revision + effective date. Output: change-log of standards with plant-level impact.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/industries/high-tech/semiconductors',
+                  url: 'https://www.gartner.com/en/industries',
                   note: 'Gartner Semiconductor research'
                 },
                 {
@@ -68066,7 +68066,7 @@ window.HUB_DATA = {
                   note: 'Kemenperin Indonesia Industri 4.0 semiconductor'
                 },
                 {
-                  url: 'https://www.edb.gov.sg/en/about-edb/media-releases-publications.html',
+                  url: 'https://www.edb.gov.sg/en/about-edb',
                   note: 'EDB Singapore semiconductor releases'
                 }
               ],
@@ -68085,7 +68085,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.semi.org/en/connect/regions/southeast-asia',
+                  url: 'https://www.semi.org/en/connect',
                   note: 'SEMI Southeast Asia industry group'
                 },
                 {
@@ -68112,7 +68112,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/industries/high-tech/semiconductors',
+                  url: 'https://www.gartner.com/en/industries',
                   note: 'Gartner Semiconductor research'
                 },
                 {
@@ -68149,7 +68149,7 @@ window.HUB_DATA = {
                   note: 'Kemenperin Indonesia Industri 4.0 semiconductor'
                 },
                 {
-                  url: 'https://www.edb.gov.sg/en/about-edb/media-releases-publications.html',
+                  url: 'https://www.edb.gov.sg/en/about-edb',
                   note: 'EDB Singapore semiconductor releases'
                 }
               ],
@@ -68168,7 +68168,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.semi.org/en/connect/regions/southeast-asia',
+                  url: 'https://www.semi.org/en/connect',
                   note: 'SEMI Southeast Asia industry group'
                 },
                 {
@@ -68195,7 +68195,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/industries/high-tech/semiconductors',
+                  url: 'https://www.gartner.com/en/industries',
                   note: 'Gartner Semiconductor research'
                 },
                 {
@@ -69719,7 +69719,7 @@ window.HUB_DATA = {
                   note: 'KemESDM Indonesia rare-earth directorate'
                 },
                 {
-                  url: 'https://www.usgs.gov/centers/national-minerals-information-center/rare-earths-statistics-and-information',
+                  url: 'https://www.usgs.gov/centers/national-minerals-information-center',
                   note: 'USGS rare-earth statistics'
                 }
               ],
@@ -69765,11 +69765,11 @@ window.HUB_DATA = {
               instructions: 'You are a sustainability disclosure analyst for Rare-Earth & Metals. Source ONLY from the sustainability framework URLs in knowledge. Cite framework + clause + effective date. Output: quarterly disclosure compliance map.',
               knowledge: [
                 {
-                  url: 'https://www.argusmedia.com/en/metals/rare-earths',
+                  url: 'https://www.argusmedia.com/en/metals',
                   note: 'Argus Rare Earths assessments'
                 },
                 {
-                  url: 'https://www.woodmac.com/our-expertise/focus/Metals--Mining/rare-earth-elements/',
+                  url: 'https://www.woodmac.com/our-expertise/focus',
                   note: 'Wood Mackenzie REE reports'
                 },
                 {
@@ -69802,7 +69802,7 @@ window.HUB_DATA = {
                   note: 'KemESDM Indonesia rare-earth directorate'
                 },
                 {
-                  url: 'https://www.usgs.gov/centers/national-minerals-information-center/rare-earths-statistics-and-information',
+                  url: 'https://www.usgs.gov/centers/national-minerals-information-center',
                   note: 'USGS rare-earth statistics'
                 }
               ],
@@ -69848,11 +69848,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Rare-Earth & Metals. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.argusmedia.com/en/metals/rare-earths',
+                  url: 'https://www.argusmedia.com/en/metals',
                   note: 'Argus Rare Earths assessments'
                 },
                 {
-                  url: 'https://www.woodmac.com/our-expertise/focus/Metals--Mining/rare-earth-elements/',
+                  url: 'https://www.woodmac.com/our-expertise/focus',
                   note: 'Wood Mackenzie REE reports'
                 },
                 {
@@ -69885,7 +69885,7 @@ window.HUB_DATA = {
                   note: 'KemESDM Indonesia rare-earth directorate'
                 },
                 {
-                  url: 'https://www.usgs.gov/centers/national-minerals-information-center/rare-earths-statistics-and-information',
+                  url: 'https://www.usgs.gov/centers/national-minerals-information-center',
                   note: 'USGS rare-earth statistics'
                 }
               ],
@@ -69931,11 +69931,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Rare-Earth & Metals. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.argusmedia.com/en/metals/rare-earths',
+                  url: 'https://www.argusmedia.com/en/metals',
                   note: 'Argus Rare Earths assessments'
                 },
                 {
-                  url: 'https://www.woodmac.com/our-expertise/focus/Metals--Mining/rare-earth-elements/',
+                  url: 'https://www.woodmac.com/our-expertise/focus',
                   note: 'Wood Mackenzie REE reports'
                 },
                 {
@@ -71730,7 +71730,7 @@ window.HUB_DATA = {
                   note: 'Astra Otoparts Indonesia news'
                 },
                 {
-                  url: 'https://www.mida.gov.my/industries/manufacturing/automotive-industry/',
+                  url: 'https://www.mida.gov.my/industries/manufacturing',
                   note: 'MIDA automotive industry overview'
                 }
               ],
@@ -71753,7 +71753,7 @@ window.HUB_DATA = {
                   note: 'OICA global automotive production statistics'
                 },
                 {
-                  url: 'https://www.mckinsey.com/industries/automotive-and-assembly/our-insights',
+                  url: 'https://www.mckinsey.com/industries/automotive-and-assembly',
                   note: 'McKinsey automotive insights'
                 },
                 {
@@ -71813,7 +71813,7 @@ window.HUB_DATA = {
                   note: 'Astra Otoparts Indonesia news'
                 },
                 {
-                  url: 'https://www.mida.gov.my/industries/manufacturing/automotive-industry/',
+                  url: 'https://www.mida.gov.my/industries/manufacturing',
                   note: 'MIDA automotive industry overview'
                 }
               ],
@@ -71836,7 +71836,7 @@ window.HUB_DATA = {
                   note: 'OICA global automotive production statistics'
                 },
                 {
-                  url: 'https://www.mckinsey.com/industries/automotive-and-assembly/our-insights',
+                  url: 'https://www.mckinsey.com/industries/automotive-and-assembly',
                   note: 'McKinsey automotive insights'
                 },
                 {
@@ -71896,7 +71896,7 @@ window.HUB_DATA = {
                   note: 'Astra Otoparts Indonesia news'
                 },
                 {
-                  url: 'https://www.mida.gov.my/industries/manufacturing/automotive-industry/',
+                  url: 'https://www.mida.gov.my/industries/manufacturing',
                   note: 'MIDA automotive industry overview'
                 }
               ],
@@ -71919,7 +71919,7 @@ window.HUB_DATA = {
                   note: 'OICA global automotive production statistics'
                 },
                 {
-                  url: 'https://www.mckinsey.com/industries/automotive-and-assembly/our-insights',
+                  url: 'https://www.mckinsey.com/industries/automotive-and-assembly',
                   note: 'McKinsey automotive insights'
                 },
                 {
@@ -73415,7 +73415,7 @@ window.HUB_DATA = {
                   note: 'MAVCOM Malaysian Aviation Commission announcements'
                 },
                 {
-                  url: 'https://hubud.dephub.go.id/hubud/website/Berita',
+                  url: 'https://hubud.dephub.go.id/hubud/website',
                   note: 'Kemenhub Indonesia DGCA aviation news'
                 },
                 {
@@ -73465,11 +73465,11 @@ window.HUB_DATA = {
               instructions: 'You are a fuel + carbon analyst for Aviation — Airlines. Source ONLY from the URLs in knowledge. Cite price / scheme + date. Output: monthly fuel + carbon brief.',
               knowledge: [
                 {
-                  url: 'https://www.iata.org/en/publications/store/airlines-financial-monitor/',
+                  url: 'https://www.iata.org/en/publications',
                   note: 'IATA Airlines Financial Monitor'
                 },
                 {
-                  url: 'https://www.icao.int/Newsroom/Pages/default.aspx',
+                  url: 'https://www.icao.int/Newsroom/Pages',
                   note: 'ICAO newsroom & guidance'
                 },
                 {
@@ -73498,7 +73498,7 @@ window.HUB_DATA = {
                   note: 'MAVCOM Malaysian Aviation Commission announcements'
                 },
                 {
-                  url: 'https://hubud.dephub.go.id/hubud/website/Berita',
+                  url: 'https://hubud.dephub.go.id/hubud/website',
                   note: 'Kemenhub Indonesia DGCA aviation news'
                 },
                 {
@@ -73548,11 +73548,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Aviation — Airlines. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.iata.org/en/publications/store/airlines-financial-monitor/',
+                  url: 'https://www.iata.org/en/publications',
                   note: 'IATA Airlines Financial Monitor'
                 },
                 {
-                  url: 'https://www.icao.int/Newsroom/Pages/default.aspx',
+                  url: 'https://www.icao.int/Newsroom/Pages',
                   note: 'ICAO newsroom & guidance'
                 },
                 {
@@ -73581,7 +73581,7 @@ window.HUB_DATA = {
                   note: 'MAVCOM Malaysian Aviation Commission announcements'
                 },
                 {
-                  url: 'https://hubud.dephub.go.id/hubud/website/Berita',
+                  url: 'https://hubud.dephub.go.id/hubud/website',
                   note: 'Kemenhub Indonesia DGCA aviation news'
                 },
                 {
@@ -73631,11 +73631,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Aviation — Airlines. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.iata.org/en/publications/store/airlines-financial-monitor/',
+                  url: 'https://www.iata.org/en/publications',
                   note: 'IATA Airlines Financial Monitor'
                 },
                 {
-                  url: 'https://www.icao.int/Newsroom/Pages/default.aspx',
+                  url: 'https://www.icao.int/Newsroom/Pages',
                   note: 'ICAO newsroom & guidance'
                 },
                 {
@@ -75133,7 +75133,7 @@ window.HUB_DATA = {
               instructions: 'You are an accreditation analyst for Education. Source ONLY from the MQA / BAN-PT / SkillsFuture URLs. Cite standard + revision + date. Output: monthly accreditation digest with renewal milestones for Education.',
               knowledge: [
                 {
-                  url: 'https://www.timeshighereducation.com/world-university-rankings/by-region/asia',
+                  url: 'https://www.timeshighereducation.com/world-university-rankings/by-region',
                   note: 'Times Higher Education Asia rankings'
                 },
                 {
@@ -75216,7 +75216,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Education. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.timeshighereducation.com/world-university-rankings/by-region/asia',
+                  url: 'https://www.timeshighereducation.com/world-university-rankings/by-region',
                   note: 'Times Higher Education Asia rankings'
                 },
                 {
@@ -75299,7 +75299,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Education. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.timeshighereducation.com/world-university-rankings/by-region/asia',
+                  url: 'https://www.timeshighereducation.com/world-university-rankings/by-region',
                   note: 'Times Higher Education Asia rankings'
                 },
                 {
@@ -76803,7 +76803,7 @@ window.HUB_DATA = {
               instructions: 'You are an energy-policy analyst for Utilities — Power Generation. Source ONLY from the regulator URLs in knowledge. Cite document + date. Output: weekly policy brief tagged by impact area (tariff / generation / retail / sustainability).',
               knowledge: [
                 {
-                  url: 'https://www.st.gov.my/en/web/general/announcement',
+                  url: 'https://www.st.gov.my/en/web',
                   note: 'Suruhanjaya Tenaga Malaysia announcements'
                 },
                 {
@@ -76861,11 +76861,11 @@ window.HUB_DATA = {
                   note: 'IEA Electricity Market Report'
                 },
                 {
-                  url: 'https://www.adb.org/sectors/energy/main',
+                  url: 'https://www.adb.org/sectors/energy',
                   note: 'ADB Asia energy reports'
                 },
                 {
-                  url: 'https://www.spglobal.com/commodityinsights/en/our-methodology/price-assessments/electric-power',
+                  url: 'https://www.spglobal.com/commodityinsights/en',
                   note: 'S&P Platts electric-power price assessments'
                 }
               ],
@@ -76886,7 +76886,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Utilities — Power Generation. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.st.gov.my/en/web/general/announcement',
+                  url: 'https://www.st.gov.my/en/web',
                   note: 'Suruhanjaya Tenaga Malaysia announcements'
                 },
                 {
@@ -76944,11 +76944,11 @@ window.HUB_DATA = {
                   note: 'IEA Electricity Market Report'
                 },
                 {
-                  url: 'https://www.adb.org/sectors/energy/main',
+                  url: 'https://www.adb.org/sectors/energy',
                   note: 'ADB Asia energy reports'
                 },
                 {
-                  url: 'https://www.spglobal.com/commodityinsights/en/our-methodology/price-assessments/electric-power',
+                  url: 'https://www.spglobal.com/commodityinsights/en',
                   note: 'S&P Platts electric-power price assessments'
                 }
               ],
@@ -76969,7 +76969,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung Utilities — Power Generation. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.st.gov.my/en/web/general/announcement',
+                  url: 'https://www.st.gov.my/en/web',
                   note: 'Suruhanjaya Tenaga Malaysia announcements'
                 },
                 {
@@ -77027,11 +77027,11 @@ window.HUB_DATA = {
                   note: 'IEA Electricity Market Report'
                 },
                 {
-                  url: 'https://www.adb.org/sectors/energy/main',
+                  url: 'https://www.adb.org/sectors/energy',
                   note: 'ADB Asia energy reports'
                 },
                 {
-                  url: 'https://www.spglobal.com/commodityinsights/en/our-methodology/price-assessments/electric-power',
+                  url: 'https://www.spglobal.com/commodityinsights/en',
                   note: 'S&P Platts electric-power price assessments'
                 }
               ],
@@ -78600,7 +78600,7 @@ window.HUB_DATA = {
                   note: 'Kementerian PUPR Indonesia building regulations'
                 },
                 {
-                  url: 'https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases',
+                  url: 'https://www.ura.gov.sg/Corporate/Media-Room',
                   note: 'URA Singapore property releases'
                 }
               ],
@@ -78683,7 +78683,7 @@ window.HUB_DATA = {
                   note: 'Kementerian PUPR Indonesia building regulations'
                 },
                 {
-                  url: 'https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases',
+                  url: 'https://www.ura.gov.sg/Corporate/Media-Room',
                   note: 'URA Singapore property releases'
                 }
               ],
@@ -78766,7 +78766,7 @@ window.HUB_DATA = {
                   note: 'Kementerian PUPR Indonesia building regulations'
                 },
                 {
-                  url: 'https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases',
+                  url: 'https://www.ura.gov.sg/Corporate/Media-Room',
                   note: 'URA Singapore property releases'
                 }
               ],
@@ -80348,7 +80348,7 @@ window.HUB_DATA = {
               instructions: 'You are a telecoms-regulatory analyst for E-commerce / Super-app. Source ONLY from the telco regulator URLs in knowledge. Cite circular + date. Output: weekly digest tagged by impact area (spectrum / licensing / consumer / cyber).',
               knowledge: [
                 {
-                  url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements',
+                  url: 'https://www.kpdn.gov.my/portal/index.php',
                   note: 'KPDN Malaysia e-commerce consumer protection'
                 },
                 {
@@ -80402,11 +80402,11 @@ window.HUB_DATA = {
               instructions: 'You are a digital-adoption analyst for E-commerce / Super-app. Source ONLY from the digital adoption URLs in knowledge. Cite dataset + period. Output: quarterly digital adoption scorecard.',
               knowledge: [
                 {
-                  url: 'https://www.bain.com/insights/topics/southeast-asias-internet-economy/',
+                  url: 'https://www.bain.com/insights/topics',
                   note: 'Bain SEA Internet Economy report'
                 },
                 {
-                  url: 'https://services.google.com/fh/files/misc/e_conomy_sea_2023_report.pdf',
+                  url: 'https://services.google.com/fh/files',
                   note: 'Google e-Conomy SEA report'
                 },
                 {
@@ -80431,7 +80431,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements',
+                  url: 'https://www.kpdn.gov.my/portal/index.php',
                   note: 'KPDN Malaysia e-commerce consumer protection'
                 },
                 {
@@ -80485,11 +80485,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bain.com/insights/topics/southeast-asias-internet-economy/',
+                  url: 'https://www.bain.com/insights/topics',
                   note: 'Bain SEA Internet Economy report'
                 },
                 {
-                  url: 'https://services.google.com/fh/files/misc/e_conomy_sea_2023_report.pdf',
+                  url: 'https://services.google.com/fh/files',
                   note: 'Google e-Conomy SEA report'
                 },
                 {
@@ -80514,7 +80514,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements',
+                  url: 'https://www.kpdn.gov.my/portal/index.php',
                   note: 'KPDN Malaysia e-commerce consumer protection'
                 },
                 {
@@ -80568,11 +80568,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.bain.com/insights/topics/southeast-asias-internet-economy/',
+                  url: 'https://www.bain.com/insights/topics',
                   note: 'Bain SEA Internet Economy report'
                 },
                 {
-                  url: 'https://services.google.com/fh/files/misc/e_conomy_sea_2023_report.pdf',
+                  url: 'https://services.google.com/fh/files',
                   note: 'Google e-Conomy SEA report'
                 },
                 {
@@ -82047,7 +82047,7 @@ window.HUB_DATA = {
                   note: 'Kemenhub Indonesia maritime news'
                 },
                 {
-                  url: 'https://www.mpa.gov.sg/web/portal/home/about-mpa/news-publications',
+                  url: 'https://www.mpa.gov.sg/web/portal',
                   note: 'MPA Singapore news & publications'
                 }
               ],
@@ -82130,7 +82130,7 @@ window.HUB_DATA = {
                   note: 'Kemenhub Indonesia maritime news'
                 },
                 {
-                  url: 'https://www.mpa.gov.sg/web/portal/home/about-mpa/news-publications',
+                  url: 'https://www.mpa.gov.sg/web/portal',
                   note: 'MPA Singapore news & publications'
                 }
               ],
@@ -82213,7 +82213,7 @@ window.HUB_DATA = {
                   note: 'Kemenhub Indonesia maritime news'
                 },
                 {
-                  url: 'https://www.mpa.gov.sg/web/portal/home/about-mpa/news-publications',
+                  url: 'https://www.mpa.gov.sg/web/portal',
                   note: 'MPA Singapore news & publications'
                 }
               ],
@@ -84218,11 +84218,11 @@ window.HUB_DATA = {
               instructions: 'You are a peer-function benchmarker for 👥 Human Resources. Source ONLY from the survey + association URLs in knowledge. Cite survey + period. Output: quarterly benchmark with delta-vs-peers.',
               knowledge: [
                 {
-                  url: 'https://www.mercer.com/our-thinking/career/total-remuneration-survey.html',
+                  url: 'https://www.mercer.com/our-thinking/career',
                   note: 'Mercer Asia salary surveys'
                 },
                 {
-                  url: 'https://www.aon.com/asia/insights/insights.jsp',
+                  url: 'https://www.aon.com/asia/insights',
                   note: 'Aon Asia talent insights'
                 },
                 {
@@ -84301,11 +84301,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung 👥 Human Resources. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mercer.com/our-thinking/career/total-remuneration-survey.html',
+                  url: 'https://www.mercer.com/our-thinking/career',
                   note: 'Mercer Asia salary surveys'
                 },
                 {
-                  url: 'https://www.aon.com/asia/insights/insights.jsp',
+                  url: 'https://www.aon.com/asia/insights',
                   note: 'Aon Asia talent insights'
                 },
                 {
@@ -84384,11 +84384,11 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung 👥 Human Resources. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.mercer.com/our-thinking/career/total-remuneration-survey.html',
+                  url: 'https://www.mercer.com/our-thinking/career',
                   note: 'Mercer Asia salary surveys'
                 },
                 {
-                  url: 'https://www.aon.com/asia/insights/insights.jsp',
+                  url: 'https://www.aon.com/asia/insights',
                   note: 'Aon Asia talent insights'
                 },
                 {
@@ -86573,7 +86573,7 @@ window.HUB_DATA = {
                   note: 'IFAC global accounting knowledge'
                 },
                 {
-                  url: 'https://www2.deloitte.com/global/en/pages/finance/articles/cfo-insights.html',
+                  url: 'https://www2.deloitte.com/global/en',
                   note: 'Deloitte CFO Insights'
                 }
               ],
@@ -86656,7 +86656,7 @@ window.HUB_DATA = {
                   note: 'IFAC global accounting knowledge'
                 },
                 {
-                  url: 'https://www2.deloitte.com/global/en/pages/finance/articles/cfo-insights.html',
+                  url: 'https://www2.deloitte.com/global/en',
                   note: 'Deloitte CFO Insights'
                 }
               ],
@@ -86739,7 +86739,7 @@ window.HUB_DATA = {
                   note: 'IFAC global accounting knowledge'
                 },
                 {
-                  url: 'https://www2.deloitte.com/global/en/pages/finance/articles/cfo-insights.html',
+                  url: 'https://www2.deloitte.com/global/en',
                   note: 'Deloitte CFO Insights'
                 }
               ],
@@ -91139,7 +91139,7 @@ window.HUB_DATA = {
                   note: 'BNM risk-management framework'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/perbankan/regulasi/manajemen-risiko/Default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK manajemen risiko regulations'
                 },
                 {
@@ -91197,7 +91197,7 @@ window.HUB_DATA = {
                   note: 'ISO 31000 Risk Management standard'
                 },
                 {
-                  url: 'https://www.marsh.com/us/insights/research.html',
+                  url: 'https://www.marsh.com/us/insights',
                   note: 'Marsh Asia Pacific risk surveys'
                 }
               ],
@@ -91222,7 +91222,7 @@ window.HUB_DATA = {
                   note: 'BNM risk-management framework'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/perbankan/regulasi/manajemen-risiko/Default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK manajemen risiko regulations'
                 },
                 {
@@ -91280,7 +91280,7 @@ window.HUB_DATA = {
                   note: 'ISO 31000 Risk Management standard'
                 },
                 {
-                  url: 'https://www.marsh.com/us/insights/research.html',
+                  url: 'https://www.marsh.com/us/insights',
                   note: 'Marsh Asia Pacific risk surveys'
                 }
               ],
@@ -91305,7 +91305,7 @@ window.HUB_DATA = {
                   note: 'BNM risk-management framework'
                 },
                 {
-                  url: 'https://www.ojk.go.id/id/kanal/perbankan/regulasi/manajemen-risiko/Default.aspx',
+                  url: 'https://www.ojk.go.id/id/kanal',
                   note: 'OJK manajemen risiko regulations'
                 },
                 {
@@ -91363,7 +91363,7 @@ window.HUB_DATA = {
                   note: 'ISO 31000 Risk Management standard'
                 },
                 {
-                  url: 'https://www.marsh.com/us/insights/research.html',
+                  url: 'https://www.marsh.com/us/insights',
                   note: 'Marsh Asia Pacific risk surveys'
                 }
               ],
@@ -93538,7 +93538,7 @@ window.HUB_DATA = {
                   note: 'SC Malaysia Capital Market Masterplan'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/Pages/Master-Plan-Sektor-Jasa-Keuangan-Indonesia.aspx',
+                  url: 'https://www.ojk.go.id/en/Pages',
                   note: 'OJK Master Plan Indonesia financial services'
                 },
                 {
@@ -93565,11 +93565,11 @@ window.HUB_DATA = {
                   note: 'McKinsey SEA insights'
                 },
                 {
-                  url: 'https://www.bcg.com/about/locations/asia-pacific',
+                  url: 'https://www.bcg.com/about/locations',
                   note: 'BCG Asia Pacific insights'
                 },
                 {
-                  url: 'https://www.bain.com/about/our-locations/southeast-asia/',
+                  url: 'https://www.bain.com/about/our-locations',
                   note: 'Bain SEA insights'
                 }
               ],
@@ -93621,7 +93621,7 @@ window.HUB_DATA = {
                   note: 'SC Malaysia Capital Market Masterplan'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/Pages/Master-Plan-Sektor-Jasa-Keuangan-Indonesia.aspx',
+                  url: 'https://www.ojk.go.id/en/Pages',
                   note: 'OJK Master Plan Indonesia financial services'
                 },
                 {
@@ -93648,11 +93648,11 @@ window.HUB_DATA = {
                   note: 'McKinsey SEA insights'
                 },
                 {
-                  url: 'https://www.bcg.com/about/locations/asia-pacific',
+                  url: 'https://www.bcg.com/about/locations',
                   note: 'BCG Asia Pacific insights'
                 },
                 {
-                  url: 'https://www.bain.com/about/our-locations/southeast-asia/',
+                  url: 'https://www.bain.com/about/our-locations',
                   note: 'Bain SEA insights'
                 }
               ],
@@ -93704,7 +93704,7 @@ window.HUB_DATA = {
                   note: 'SC Malaysia Capital Market Masterplan'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/Pages/Master-Plan-Sektor-Jasa-Keuangan-Indonesia.aspx',
+                  url: 'https://www.ojk.go.id/en/Pages',
                   note: 'OJK Master Plan Indonesia financial services'
                 },
                 {
@@ -93731,11 +93731,11 @@ window.HUB_DATA = {
                   note: 'McKinsey SEA insights'
                 },
                 {
-                  url: 'https://www.bcg.com/about/locations/asia-pacific',
+                  url: 'https://www.bcg.com/about/locations',
                   note: 'BCG Asia Pacific insights'
                 },
                 {
-                  url: 'https://www.bain.com/about/our-locations/southeast-asia/',
+                  url: 'https://www.bain.com/about/our-locations',
                   note: 'Bain SEA insights'
                 }
               ],
@@ -95864,7 +95864,7 @@ window.HUB_DATA = {
                   note: 'WARC Asia marketing intelligence'
                 },
                 {
-                  url: 'https://www.kantar.com/inspiration/region/asia',
+                  url: 'https://www.kantar.com/inspiration/region',
                   note: 'Kantar Asia consumer insights'
                 },
                 {
@@ -95947,7 +95947,7 @@ window.HUB_DATA = {
                   note: 'WARC Asia marketing intelligence'
                 },
                 {
-                  url: 'https://www.kantar.com/inspiration/region/asia',
+                  url: 'https://www.kantar.com/inspiration/region',
                   note: 'Kantar Asia consumer insights'
                 },
                 {
@@ -96030,7 +96030,7 @@ window.HUB_DATA = {
                   note: 'WARC Asia marketing intelligence'
                 },
                 {
-                  url: 'https://www.kantar.com/inspiration/region/asia',
+                  url: 'https://www.kantar.com/inspiration/region',
                   note: 'Kantar Asia consumer insights'
                 },
                 {
@@ -100153,15 +100153,15 @@ window.HUB_DATA = {
               instructions: 'You are a peer-function benchmarker for ⚙️ Operations & COO Office. Source ONLY from the survey + association URLs in knowledge. Cite survey + period. Output: quarterly benchmark with delta-vs-peers.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/supply-chain/insights',
+                  url: 'https://www.gartner.com/en/supply-chain',
                   note: 'Gartner Supply Chain insights'
                 },
                 {
-                  url: 'https://www.mckinsey.com/capabilities/operations/our-insights',
+                  url: 'https://www.mckinsey.com/capabilities/operations',
                   note: 'McKinsey Operations Practice'
                 },
                 {
-                  url: 'https://www2.deloitte.com/global/en/pages/operations/articles/operations-services.html',
+                  url: 'https://www2.deloitte.com/global/en',
                   note: 'Deloitte Industry 4.0 reports'
                 }
               ],
@@ -100236,15 +100236,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung ⚙️ Operations & COO Office. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/supply-chain/insights',
+                  url: 'https://www.gartner.com/en/supply-chain',
                   note: 'Gartner Supply Chain insights'
                 },
                 {
-                  url: 'https://www.mckinsey.com/capabilities/operations/our-insights',
+                  url: 'https://www.mckinsey.com/capabilities/operations',
                   note: 'McKinsey Operations Practice'
                 },
                 {
-                  url: 'https://www2.deloitte.com/global/en/pages/operations/articles/operations-services.html',
+                  url: 'https://www2.deloitte.com/global/en',
                   note: 'Deloitte Industry 4.0 reports'
                 }
               ],
@@ -100319,15 +100319,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung ⚙️ Operations & COO Office. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/supply-chain/insights',
+                  url: 'https://www.gartner.com/en/supply-chain',
                   note: 'Gartner Supply Chain insights'
                 },
                 {
-                  url: 'https://www.mckinsey.com/capabilities/operations/our-insights',
+                  url: 'https://www.mckinsey.com/capabilities/operations',
                   note: 'McKinsey Operations Practice'
                 },
                 {
-                  url: 'https://www2.deloitte.com/global/en/pages/operations/articles/operations-services.html',
+                  url: 'https://www2.deloitte.com/global/en',
                   note: 'Deloitte Industry 4.0 reports'
                 }
               ],
@@ -102164,7 +102164,7 @@ window.HUB_DATA = {
                   note: 'Bursa listing requirements'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/regulasi/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/en/regulasi',
                   note: 'OJK POJK regulations'
                 },
                 {
@@ -102247,7 +102247,7 @@ window.HUB_DATA = {
                   note: 'Bursa listing requirements'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/regulasi/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/en/regulasi',
                   note: 'OJK POJK regulations'
                 },
                 {
@@ -102330,7 +102330,7 @@ window.HUB_DATA = {
                   note: 'Bursa listing requirements'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/regulasi/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/en/regulasi',
                   note: 'OJK POJK regulations'
                 },
                 {
@@ -104284,7 +104284,7 @@ window.HUB_DATA = {
                   note: 'Bursa IR best practices'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/en/kanal',
                   note: 'OJK CG roadmap for IR'
                 },
                 {
@@ -104338,7 +104338,7 @@ window.HUB_DATA = {
                   note: 'NIRI National IR Institute news'
                 },
                 {
-                  url: 'https://www.edelman.com/trust/2024/trust-barometer',
+                  url: 'https://www.edelman.com/trust/2024',
                   note: 'Edelman Trust Barometer (IR)'
                 },
                 {
@@ -104367,7 +104367,7 @@ window.HUB_DATA = {
                   note: 'Bursa IR best practices'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/en/kanal',
                   note: 'OJK CG roadmap for IR'
                 },
                 {
@@ -104421,7 +104421,7 @@ window.HUB_DATA = {
                   note: 'NIRI National IR Institute news'
                 },
                 {
-                  url: 'https://www.edelman.com/trust/2024/trust-barometer',
+                  url: 'https://www.edelman.com/trust/2024',
                   note: 'Edelman Trust Barometer (IR)'
                 },
                 {
@@ -104450,7 +104450,7 @@ window.HUB_DATA = {
                   note: 'Bursa IR best practices'
                 },
                 {
-                  url: 'https://www.ojk.go.id/en/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
+                  url: 'https://www.ojk.go.id/en/kanal',
                   note: 'OJK CG roadmap for IR'
                 },
                 {
@@ -104504,7 +104504,7 @@ window.HUB_DATA = {
                   note: 'NIRI National IR Institute news'
                 },
                 {
-                  url: 'https://www.edelman.com/trust/2024/trust-barometer',
+                  url: 'https://www.edelman.com/trust/2024',
                   note: 'Edelman Trust Barometer (IR)'
                 },
                 {
@@ -106563,7 +106563,7 @@ window.HUB_DATA = {
               instructions: 'You are a best-practice analyst for the 🛒 Procurement & Supply Chain function. Source ONLY from the practitioner URLs in knowledge. Cite publisher + title + date. Output: monthly best-practice digest with adoption recommendation.',
               knowledge: [
                 {
-                  url: 'https://www.treasury.gov.my/index.php/en/government-procurement.html',
+                  url: 'https://www.treasury.gov.my/index.php/en',
                   note: 'MOF Malaysia government procurement'
                 },
                 {
@@ -106617,15 +106617,15 @@ window.HUB_DATA = {
               instructions: 'You are a peer-function benchmarker for 🛒 Procurement & Supply Chain. Source ONLY from the survey + association URLs in knowledge. Cite survey + period. Output: quarterly benchmark with delta-vs-peers.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/supply-chain/insights/strategic-sourcing-and-procurement',
+                  url: 'https://www.gartner.com/en/supply-chain',
                   note: 'Gartner Procurement research'
                 },
                 {
-                  url: 'https://www2.deloitte.com/global/en/pages/operations/articles/global-cpo-survey.html',
+                  url: 'https://www2.deloitte.com/global/en',
                   note: 'Deloitte Global CPO Survey'
                 },
                 {
-                  url: 'https://www.mckinsey.com/capabilities/operations/how-we-help-clients/procurement',
+                  url: 'https://www.mckinsey.com/capabilities/operations',
                   note: 'McKinsey Procurement insights'
                 }
               ],
@@ -106646,7 +106646,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.treasury.gov.my/index.php/en/government-procurement.html',
+                  url: 'https://www.treasury.gov.my/index.php/en',
                   note: 'MOF Malaysia government procurement'
                 },
                 {
@@ -106700,15 +106700,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/supply-chain/insights/strategic-sourcing-and-procurement',
+                  url: 'https://www.gartner.com/en/supply-chain',
                   note: 'Gartner Procurement research'
                 },
                 {
-                  url: 'https://www2.deloitte.com/global/en/pages/operations/articles/global-cpo-survey.html',
+                  url: 'https://www2.deloitte.com/global/en',
                   note: 'Deloitte Global CPO Survey'
                 },
                 {
-                  url: 'https://www.mckinsey.com/capabilities/operations/how-we-help-clients/procurement',
+                  url: 'https://www.mckinsey.com/capabilities/operations',
                   note: 'McKinsey Procurement insights'
                 }
               ],
@@ -106729,7 +106729,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.treasury.gov.my/index.php/en/government-procurement.html',
+                  url: 'https://www.treasury.gov.my/index.php/en',
                   note: 'MOF Malaysia government procurement'
                 },
                 {
@@ -106783,15 +106783,15 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/supply-chain/insights/strategic-sourcing-and-procurement',
+                  url: 'https://www.gartner.com/en/supply-chain',
                   note: 'Gartner Procurement research'
                 },
                 {
-                  url: 'https://www2.deloitte.com/global/en/pages/operations/articles/global-cpo-survey.html',
+                  url: 'https://www2.deloitte.com/global/en',
                   note: 'Deloitte Global CPO Survey'
                 },
                 {
-                  url: 'https://www.mckinsey.com/capabilities/operations/how-we-help-clients/procurement',
+                  url: 'https://www.mckinsey.com/capabilities/operations',
                   note: 'McKinsey Procurement insights'
                 }
               ],
@@ -108860,7 +108860,7 @@ window.HUB_DATA = {
                   note: 'MyDigital MDEC announcements'
                 },
                 {
-                  url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
+                  url: 'https://www.kominfo.go.id/index.php/all_content',
                   note: 'Kominfo Indonesia ICT regulations'
                 },
                 {
@@ -108910,7 +108910,7 @@ window.HUB_DATA = {
               instructions: 'You are a peer-function benchmarker for 💻 IT & Digital. Source ONLY from the survey + association URLs in knowledge. Cite survey + period. Output: quarterly benchmark with delta-vs-peers.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/industries/asia-pacific',
+                  url: 'https://www.gartner.com/en/industries',
                   note: 'Gartner SEA tech research'
                 },
                 {
@@ -108918,7 +108918,7 @@ window.HUB_DATA = {
                   note: 'IDC Asia Pacific research'
                 },
                 {
-                  url: 'https://www.forrester.com/blogs/category/asia-pacific/',
+                  url: 'https://www.forrester.com/blogs/category',
                   note: 'Forrester Asia tech insights'
                 }
               ],
@@ -108943,7 +108943,7 @@ window.HUB_DATA = {
                   note: 'MyDigital MDEC announcements'
                 },
                 {
-                  url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
+                  url: 'https://www.kominfo.go.id/index.php/all_content',
                   note: 'Kominfo Indonesia ICT regulations'
                 },
                 {
@@ -108993,7 +108993,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung 💻 IT & Digital. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/industries/asia-pacific',
+                  url: 'https://www.gartner.com/en/industries',
                   note: 'Gartner SEA tech research'
                 },
                 {
@@ -109001,7 +109001,7 @@ window.HUB_DATA = {
                   note: 'IDC Asia Pacific research'
                 },
                 {
-                  url: 'https://www.forrester.com/blogs/category/asia-pacific/',
+                  url: 'https://www.forrester.com/blogs/category',
                   note: 'Forrester Asia tech insights'
                 }
               ],
@@ -109026,7 +109026,7 @@ window.HUB_DATA = {
                   note: 'MyDigital MDEC announcements'
                 },
                 {
-                  url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
+                  url: 'https://www.kominfo.go.id/index.php/all_content',
                   note: 'Kominfo Indonesia ICT regulations'
                 },
                 {
@@ -109076,7 +109076,7 @@ window.HUB_DATA = {
               instructions: 'Anda adalah analis yang mendukung 💻 IT & Digital. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
-                  url: 'https://www.gartner.com/en/industries/asia-pacific',
+                  url: 'https://www.gartner.com/en/industries',
                   note: 'Gartner SEA tech research'
                 },
                 {
@@ -109084,7 +109084,7 @@ window.HUB_DATA = {
                   note: 'IDC Asia Pacific research'
                 },
                 {
-                  url: 'https://www.forrester.com/blogs/category/asia-pacific/',
+                  url: 'https://www.forrester.com/blogs/category',
                   note: 'Forrester Asia tech insights'
                 }
               ],
