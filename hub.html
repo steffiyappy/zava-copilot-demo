@@ -113,6 +113,58 @@ html{overflow-x:hidden}
   [data-theme="system"] .changelog-modal{background:rgba(2,8,20,0.62)}
   [data-theme="system"] .changelog-hash{color:#60A5FA}
 }
+/* ANALYTICS — discreet hidden-by-default tab next to Changelog (owner-only, same password) */
+.btn-analytics{background:transparent;border:none;color:rgba(255,255,255,0.55);font-size:14px;padding:0 8px;min-height:32px;cursor:pointer;opacity:0.42;transition:opacity 0.18s,color 0.18s;font-family:inherit;line-height:1;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
+.btn-analytics:hover,.btn-analytics:focus{opacity:1;color:#FFFFFF;outline:none}
+.analytics-modal{position:fixed;inset:0;background:rgba(15,23,42,0.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:9999;display:none;align-items:center;justify-content:center;animation:fadeIn 0.18s ease-out}
+.analytics-modal.open{display:flex}
+.analytics-panel{background:var(--surface);border:1px solid var(--border-strong);border-radius:14px;width:min(720px,92vw);max-height:82vh;display:flex;flex-direction:column;box-shadow:var(--shadow-lg);overflow:hidden}
+.analytics-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(8,145,178,0.08),rgba(34,197,94,0.08))}
+.analytics-title{font-size:14px;font-weight:800;color:var(--text-strong);letter-spacing:0.2px;display:flex;align-items:center;gap:8px}
+.analytics-close{background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:0 6px;line-height:1;border-radius:6px;transition:background 0.15s,color 0.15s}
+.analytics-close:hover{background:var(--surface-2);color:var(--text-strong)}
+.analytics-body{padding:18px;overflow-y:auto;flex:1}
+.ana-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.ana-stat{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px 12px;text-align:center;display:flex;flex-direction:column;gap:4px;transition:transform 0.18s,box-shadow 0.18s}
+.ana-stat:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.ana-stat.ana-live{background:linear-gradient(135deg,rgba(34,197,94,0.10),rgba(16,185,129,0.06));border-color:#86EFAC}
+.ana-num{font-size:28px;font-weight:800;color:var(--text-strong);line-height:1.1;font-variant-numeric:tabular-nums}
+.ana-stat.ana-live .ana-num{color:#15803D}
+.ana-lbl{font-size:10.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;display:flex;align-items:center;justify-content:center;gap:5px}
+.ana-section-hdr{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:14px 0 8px;display:flex;align-items:center;gap:6px}
+.ana-chart{display:flex;gap:6px;align-items:flex-end;height:120px;padding:8px 6px 4px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;margin-bottom:6px}
+.ana-bar{flex:1;background:linear-gradient(180deg,#0891B2,#0E7490);border-radius:5px 5px 0 0;min-height:6px;position:relative;display:flex;align-items:flex-start;justify-content:center;padding-top:3px;transition:opacity 0.15s,filter 0.15s;cursor:default}
+.ana-bar:hover{filter:brightness(1.1)}
+.ana-bar.ana-bar-today{background:linear-gradient(180deg,#15803D,#166534)}
+.ana-bar-val{font-size:9.5px;font-weight:700;color:#FFFFFF;text-shadow:0 1px 2px rgba(0,0,0,0.25);font-variant-numeric:tabular-nums}
+.ana-bar-zero{background:repeating-linear-gradient(45deg,#E2E8F0,#E2E8F0 4px,#F1F5F9 4px,#F1F5F9 8px)}
+.ana-bar-zero .ana-bar-val{color:#94A3B8;text-shadow:none}
+.ana-chart-labels{display:flex;gap:6px;padding:0 6px;font-size:9.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ana-chart-labels span{flex:1;text-align:center;font-weight:600}
+.ana-chart-labels span.ana-today{color:#15803D;font-weight:800}
+.ana-note{font-size:10.5px;color:var(--muted);font-style:italic;text-align:center;margin-top:14px;padding-top:10px;border-top:1px dashed var(--border);line-height:1.55}
+.ana-loading{text-align:center;padding:32px 12px;color:var(--muted);font-size:13px}
+.ana-error{text-align:center;padding:24px 12px;color:#9F1239;background:#FEF2F2;border:1px solid #FECACA;border-radius:10px;font-size:12px;line-height:1.5}
+.ana-pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#10B981;margin-right:6px;animation:anaPulse 1.6s ease-in-out infinite}
+@keyframes anaPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.45;transform:scale(0.78)}}
+[data-theme="dark"] .analytics-modal{background:rgba(2,8,20,0.62)}
+[data-theme="dark"] .ana-bar-zero{background:repeating-linear-gradient(45deg,#1E293B,#1E293B 4px,#0F172A 4px,#0F172A 8px)}
+[data-theme="dark"] .ana-error{background:#1F0A0E;border-color:#7F1D1D;color:#FCA5A5}
+[data-theme="dark"] .ana-stat.ana-live{background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(16,185,129,0.10));border-color:#15803D}
+[data-theme="dark"] .ana-stat.ana-live .ana-num{color:#86EFAC}
+[data-theme="dark"] .ana-chart-labels span.ana-today{color:#86EFAC}
+@media (prefers-color-scheme: dark){
+  [data-theme="system"] .analytics-modal{background:rgba(2,8,20,0.62)}
+  [data-theme="system"] .ana-bar-zero{background:repeating-linear-gradient(45deg,#1E293B,#1E293B 4px,#0F172A 4px,#0F172A 8px)}
+  [data-theme="system"] .ana-error{background:#1F0A0E;border-color:#7F1D1D;color:#FCA5A5}
+  [data-theme="system"] .ana-stat.ana-live{background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(16,185,129,0.10));border-color:#15803D}
+  [data-theme="system"] .ana-stat.ana-live .ana-num{color:#86EFAC}
+  [data-theme="system"] .ana-chart-labels span.ana-today{color:#86EFAC}
+}
+@media (max-width: 560px){
+  .ana-grid{grid-template-columns:1fr}
+  .ana-num{font-size:24px}
+}
 /* LAYOUT */
 .layout{display:flex;min-height:calc(100vh - 56px)}
 /* SIDEBAR */
@@ -1262,6 +1314,7 @@ a.file-pill:visited{color:var(--text)}
     <button class="btn-theme" id="btn-theme" onclick="cycleTheme()" title="Cycle theme: Light / Dark / System"><span id="theme-icon">&#9788;</span><span class="theme-label" id="theme-label">Light</span></button>
     <button class="btn-sm" onclick="goHome()" title="Home">&#x1F3E0;<span class="btn-label"> Home</span></button>
     <button class="btn-sm" onclick="logout()" title="Lock">&#x1F512;<span class="btn-label"> Lock</span></button>
+    <button class="btn-analytics" id="btn-analytics" onclick="toggleAnalytics()" title="Site analytics (Ctrl+Shift+A)" aria-label="Show site analytics">&#128202;</button>
     <button class="btn-changelog" id="btn-changelog" onclick="toggleChangelog()" title="What's changed (Ctrl+Shift+L)" aria-label="Show changelog">&#128220;</button>
   </div>
 </nav>
@@ -1275,6 +1328,19 @@ a.file-pill:visited{color:var(--text)}
       <button class="changelog-close" onclick="toggleChangelog()" aria-label="Close changelog">&times;</button>
     </div>
     <div class="changelog-body" id="changelog-body"></div>
+  </div>
+</div>
+
+<!-- Analytics modal — owner-only viewer counts, opens via icon next to Changelog or Ctrl+Shift+A -->
+<div class="analytics-modal" id="analytics-modal" onclick="if(event.target===this)toggleAnalytics()" role="dialog" aria-modal="true" aria-labelledby="analytics-title-text">
+  <div class="analytics-panel">
+    <div class="analytics-header">
+      <span class="analytics-title" id="analytics-title-text">&#128202; Site Analytics</span>
+      <button class="analytics-close" onclick="toggleAnalytics()" aria-label="Close analytics">&times;</button>
+    </div>
+    <div class="analytics-body" id="analytics-body">
+      <div class="ana-loading">Loading analytics&hellip;</div>
+    </div>
   </div>
 </div>
 
@@ -6270,7 +6336,7 @@ function logout(){
 }
 
 // ── Changelog (discreet hidden tab) ──
-const CHANGELOG_DATA = [{"hash":"04e6bf5","date":"2026-05-19","desc":"Other Pages: add Contoso Active Operations Copilot Immersion"},{"hash":"8a480b8","date":"2026-05-19","desc":"Files + Cowork HTML: 301 missing placeholders + HTML artifact on all 100 UCs"},{"hash":"f7d2fce","date":"2026-05-19","desc":"Cowork Library: surface 34 customer-runbook UCs on standalone tab"},{"hash":"cac6b66","date":"2026-05-19","desc":"Cowork: regulator + cross-dept runbook (9 UCs) + 37 sample files"},{"hash":"1476189","date":"2026-05-18","desc":"Cowork Runbook merge — KIBB Cowork page added (15 cards, 16 prompts)"},{"hash":"700b8f7","date":"2026-05-18","desc":"Cowork Runbook merge: KLK 10 UCs + KIBB BRC injected as per-entry T_COWORK prompts"},{"hash":"acb8741","date":"2026-05-18","desc":"Cowork: HTML artifact prompts (dashboard/kanban/heatmap/pipeline) across all 55 entries"},{"hash":"33be8a6","date":"2026-05-18","desc":"Add 3 Indonesia 2W/MPM-style agents to automotive industry (Contoso Mobility Group flow)"},{"hash":"4f3b16b","date":"2026-05-18","desc":"blog-audit workflow: upgrade Node-20 action pins to latest majors"},{"hash":"5a6c464","date":"2026-05-18","desc":"Other Pages: add Malakoff Power & Utilities Copilot Immersion card"},{"hash":"fb5dc5e","date":"2026-05-18","desc":"Cowork Library: add KIBB BRC pre-read + KLK Q1 Ops Review + Aster ESG Workflow cards"},{"hash":"79fa5f8","date":"2026-05-18","desc":"util.tool(): auto-pad persona arrays to match prompt count"},{"hash":"934fed0","date":"2026-05-18","desc":"Feasibility cleanup: clear 4 pre-existing license violations"},{"hash":"8ac858b","date":"2026-05-18","desc":"KLK industrial-manufacturing: 5-yr Nilai+Batu Kawan capex Analyst prompt"},{"hash":"ed54612","date":"2026-05-18","desc":"KLK merge: 8 prompts injected across plantation/property/depts"},{"hash":"49cb38a","date":"2026-05-18","desc":"Aster merge: 3 prompts injected into og-downstream"},{"hash":"4df3880","date":"2026-05-17","desc":"KIBB merge: 6 prompts injected into investment-banking from KIBB C-Suite demo"},{"hash":"270a918","date":"2026-05-17","desc":"Modern-feature refresh: 174 new showcase prompts across PPT/Outlook/Excel/Word/Analyst"},{"hash":"14febfa","date":"2026-05-17","desc":"Refresh hub.html changelog with recent commits"},{"hash":"e04666a","date":"2026-05-17","desc":"Add M365 Copilot blog holistic-audit scheduler"},{"hash":"2ba1cdd","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Rivanta merge"},{"hash":"ef550cf","date":"2026-05-17","desc":"Merge Berjaya Sompo Rivanta content into Zava Digital (BTRC pre-read + tech governance)"},{"hash":"a94d4f1","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Aster merge"},{"hash":"7f8c3ec","date":"2026-05-17","desc":"Merge PT Chandra Asri Aster content into Zava Oil Downstream (live ops brief)"},{"hash":"2e7c274","date":"2026-05-17","desc":"Rebuild data.js + hub.html for PT IIF merge"},{"hash":"a2ad198","date":"2026-05-17","desc":"Merge PT IIF demo content into Zava Bank Malaysia (Infrastructure Loan Sub-Portfolio review)"},{"hash":"ed4b00a","date":"2026-05-17","desc":"Rebuild data.js + hub.html for KIBB merge"},{"hash":"9c39b9f","date":"2026-05-17","desc":"Merge KIBB C-Suite demo content into Zava Capital Malaysia (BRC pre-read pack)"},{"hash":"ed4cfe9","date":"2026-05-17","desc":"Rebuild data.js + hub.html for KLK Plantation merge"},{"hash":"4359997","date":"2026-05-17","desc":"Merge KLK Plantation demo content into Zava Plantation (Q1 operations + yield data)"},{"hash":"5f5b0f2","date":"2026-05-17","desc":"Rebuild data.js + hub.html for MMC HR merge"},{"hash":"5b9a6ff","date":"2026-05-17","desc":"Merge MMC Tradewinds DRB HR content into Zava HR (recruitment lifecycle)"},{"hash":"3016e55","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Sunway SunMed merge"},{"hash":"62a7d10","date":"2026-05-17","desc":"Merge Sunway SunMed Finance content into Zava Hospital Network (finance + procurement governance)"},{"hash":"60ccd82","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Persol RFP Demo merge"},{"hash":"66633d1","date":"2026-05-17","desc":"Merge Persol RFP Demo content into Zava Procurement (HRMS RFP eval flow)"},{"hash":"85e4124","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Merchantrade HR merge"},{"hash":"97b064c","date":"2026-05-17","desc":"Merge Merchantrade HR Demo content into Zava HR (dept-hr)"},{"hash":"2afd86b","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Merchantrade Demo merge"},{"hash":"e22cc5d","date":"2026-05-17","desc":"Merge Merchantrade Demo content into Zava Remit Asia (cross-border-remittance)"},{"hash":"5eb030c","date":"2026-05-17","desc":"Rebuild data.js + hub.html for PT MPM merge"},{"hash":"59c4fdc","date":"2026-05-17","desc":"Merge PT MPM content into Zava Motors"},{"hash":"0e8e37b","date":"2026-05-17","desc":"Rebuild data.js + hub.html for IOI PG merge"},{"hash":"53a659e","date":"2026-05-17","desc":"Merge IOI Properties Group content into Zava Property Development"},{"hash":"c25471f","date":"2026-05-11","desc":"Alignment audit: unify topbar button heights, center UC head, square nav arrows, equal file-ext widths, uniform card heights"},{"hash":"56be675","date":"2026-05-11","desc":"Mobile overflow fix + pill contrast on UC head + remove product pills from cards"},{"hash":"8e68c2c","date":"2026-05-11","desc":"Cowork detail: agent-builder picker + static-frame UI in both views"},{"hash":"a0521b6","date":"2026-05-11","desc":"Sidebar tabs: shorten Departments to Dept, even out spacing"},{"hash":"58f9c33","date":"2026-05-11","desc":"Cowork Library: new 4th sidebar tab mirroring all coworkLibrary content"},{"hash":"6fb2163","date":"2026-05-11","desc":"Lock changelog behind owner-only password (ZavaAdmin2026)"},{"hash":"894964a","date":"2026-05-11","desc":"Responsive layout: eliminate horizontal overflow across 320-1280 widths"},{"hash":"a2e76f9","date":"2026-05-11","desc":"Cagamas hackathon card: remove team codes (keep facilitator view)"},{"hash":"2fff630","date":"2026-05-11","desc":"Storyboard fix — render tool label + description body on toolId-only tasks"},{"hash":"de4047c","date":"2026-05-11","desc":"Notebook + Cowork Library: close all file-pill 404s with rich data"},{"hash":"88fd44f","date":"2026-05-11","desc":"Cowork+Notebook fix: clickable file pills and 75 redesigned sample files"},{"hash":"77224e9","date":"2026-05-11","desc":"UI alignment + 75 missing demo data files"},{"hash":"8036c63","date":"2026-05-11","desc":"UI + data: fix empty-sibling-card grid stretch + clean Cowork sample_files render"},{"hash":"3740fe1","date":"2026-05-11","desc":"Notebook Library polish: per-entry title suffix + overflow safety + 1050px grid breakpoint"},{"hash":"59258f2","date":"2026-05-11","desc":"Notebook Library: gate to Notebook tab + add 2026 output features + per-entry personalisation"},{"hash":"aa87d5a","date":"2026-05-11","desc":"Cowork & Notebook Library: ungate cowork render + add Notebook Library (13 archetype cards, 55 entries)"},{"hash":"490de0c","date":"2026-05-11","desc":"Notebook: strip setup-leak from bespoke prompt bodies (ind_batch5.py)"},{"hash":"82a501a","date":"2026-05-11","desc":"Cowork Library: 63-card per-entry catalog (Contoso C-Suite + cowork-prompts style)"},{"hash":"d7f8049","date":"2026-05-11","desc":"Free-tier Agent Builder — fix entry-id mismatches + per-entry agent meta"},{"hash":"4134d2e","date":"2026-05-11","desc":"Free-tier Agent Builder — per-entry industry-specific knowledge URLs"},{"hash":"3d63106","date":"2026-05-10","desc":"Cowork — diversify named recipients per industry archetype"},{"hash":"3f4bbfd","date":"2026-05-10","desc":"Cowork runbook — extend to Aaron Yue 9-row format"},{"hash":"8ad7476","date":"2026-05-10","desc":"Notebook — unique scenarios per entry + presenter-only Demo Guide callout"},{"hash":"7a4a74b","date":"2026-05-10","desc":"Move PAID Agent Builder to Microsoft 365 Copilot Tools tab (was in Chat by mistake)"},{"hash":"f126c4a","date":"2026-05-10","desc":"Remove temp _script.js extracted during hotfix debug"},{"hash":"c17ddb5","date":"2026-05-10","desc":"HOTFIX — Cowork tips library broke JS parse (page rendered ~29 industries)"},{"hash":"334da73","date":"2026-05-10","desc":"Final audit fixups — license labels + i18n completeness"},{"hash":"150ca21","date":"2026-05-10","desc":"Notebook prompts — named-file targeting (personal-document focus pattern)"},{"hash":"682ad45","date":"2026-05-10","desc":"Cowork runbook enrich — Skills, Description, Outcome, Tips above every prompt"},{"hash":"13e21dc","date":"2026-05-10","desc":"Split Agent Builder into paid (file knowledge) + free (URL knowledge) tiers"},{"hash":"e7d1fd8","date":"2026-05-10","desc":"Industries-most-affected drill-down on every department"},{"hash":"b85c111","date":"2026-05-10","desc":"Files-match unique use cases — fix dangling ref + audit clean"},{"hash":"1a46b53","date":"2026-05-10","desc":"W/P/X Agent consistency + stay-in-chat normaliser"},{"hash":"bb42117","date":"2026-05-10","desc":"Cowork recheck — Aaron Yue / OneDrive Intelligence approval-gate normaliser"},{"hash":"507bce9","date":"2026-05-10","desc":"Notebook recheck — dedicated tab + canonical demo guide"},{"hash":"ff6981a","date":"2026-05-10","desc":"Unique use cases: 13 template-clone prompts rewritten across 6 entries"},{"hash":"e27093d","date":"2026-05-10","desc":"Cross-check consistency: 20 tool labels normalised in ind_batch6"},{"hash":"e0b8aa6","date":"2026-05-10","desc":"Data realism audit: vague phrasings replaced with named teams"},{"hash":"a36757e","date":"2026-05-10","desc":"Tech feasibility recheck: 6 license mislabels fixed in ind_batch6"},{"hash":"ea30565","date":"2026-05-10","desc":"Notebook: every entry now lists its source files in setup banner + prompt 1"},{"hash":"e2f7f18","date":"2026-05-10","desc":"Cowork: full IHH-style fan-out — named recipients + 5 actions on every prompt"},{"hash":"b911d72","date":"2026-05-10","desc":"Agent Builder: render TWO versions side-by-side (Premium + Free)"},{"hash":"c12e05d","date":"2026-05-10","desc":"Generalize Pacifica/Pacifican to ASEAN/APAC across all entries"},{"hash":"221dbda","date":"2026-05-10","desc":"Departments: rich Industries-most-affected pills (40-43 per dept)"},{"hash":"08d4693","date":"2026-05-10","desc":"Word/PPT/Excel Agent license: flip M365_LIC to ANY_LIC across all 55 entries"},{"hash":"1956ad6","date":"2026-05-10","desc":"Word/PPT/Excel Agent instructions: rewrite per Microsoft support article"},{"hash":"4fe5b37","date":"2026-05-10","desc":"Departments most affected pills: fix 22 industries with dangling dept IDs"},{"hash":"9665cf9","date":"2026-05-10","desc":"Index page: rebrand to Zava Conglomerate, update count to 43+13, password ZavaGlobal2026"},{"hash":"fbaebbe","date":"2026-05-10","desc":"Dark mode third sweep: --navy text invisible against dark navy surface"},{"hash":"b02e85d","date":"2026-05-10","desc":"Notebook follow demo guide: 10-step flow render-time intercept"},{"hash":"424cea7","date":"2026-05-10","desc":"Teams prompts: remove redundant 'Save the file as X.docx in OneDrive' tails"},{"hash":"d66244d","date":"2026-05-10","desc":"Hidden changelog tab — discreet icon next to Lock + Ctrl+Shift+L shortcut"},{"hash":"1f93a64","date":"2026-05-10","desc":"Alliance team codes: align to Cagamas style (short uppercase) + suppress redundant single-group header"},{"hash":"b607af2","date":"2026-05-10","desc":"Other Pages: collapse Customer Demos section into Customer Workshops"},{"hash":"d8bbce7","date":"2026-05-10","desc":"Storyboard description consistency: convert Shape B (og/re/mfg) to Shape A by adding verb fields"},{"hash":"fa5fad9","date":"2026-05-10","desc":"files/: generate 378 placeholder Office files (134 docx + 115 xlsx + 129 pptx) so every prompt reference resolves"}];
+const CHANGELOG_DATA = [{"hash":"e4b9a5f","date":"2026-05-19","desc":"Files re-audit + Download All buttons"},{"hash":"04e6bf5","date":"2026-05-19","desc":"Other Pages: add Contoso Active Operations Copilot Immersion"},{"hash":"8a480b8","date":"2026-05-19","desc":"Files + Cowork HTML: 301 missing placeholders + HTML artifact on all 100 UCs"},{"hash":"f7d2fce","date":"2026-05-19","desc":"Cowork Library: surface 34 customer-runbook UCs on standalone tab"},{"hash":"cac6b66","date":"2026-05-19","desc":"Cowork: regulator + cross-dept runbook (9 UCs) + 37 sample files"},{"hash":"1476189","date":"2026-05-18","desc":"Cowork Runbook merge — KIBB Cowork page added (15 cards, 16 prompts)"},{"hash":"700b8f7","date":"2026-05-18","desc":"Cowork Runbook merge: KLK 10 UCs + KIBB BRC injected as per-entry T_COWORK prompts"},{"hash":"acb8741","date":"2026-05-18","desc":"Cowork: HTML artifact prompts (dashboard/kanban/heatmap/pipeline) across all 55 entries"},{"hash":"33be8a6","date":"2026-05-18","desc":"Add 3 Indonesia 2W/MPM-style agents to automotive industry (Contoso Mobility Group flow)"},{"hash":"4f3b16b","date":"2026-05-18","desc":"blog-audit workflow: upgrade Node-20 action pins to latest majors"},{"hash":"5a6c464","date":"2026-05-18","desc":"Other Pages: add Malakoff Power & Utilities Copilot Immersion card"},{"hash":"fb5dc5e","date":"2026-05-18","desc":"Cowork Library: add KIBB BRC pre-read + KLK Q1 Ops Review + Aster ESG Workflow cards"},{"hash":"79fa5f8","date":"2026-05-18","desc":"util.tool(): auto-pad persona arrays to match prompt count"},{"hash":"934fed0","date":"2026-05-18","desc":"Feasibility cleanup: clear 4 pre-existing license violations"},{"hash":"8ac858b","date":"2026-05-18","desc":"KLK industrial-manufacturing: 5-yr Nilai+Batu Kawan capex Analyst prompt"},{"hash":"ed54612","date":"2026-05-18","desc":"KLK merge: 8 prompts injected across plantation/property/depts"},{"hash":"49cb38a","date":"2026-05-18","desc":"Aster merge: 3 prompts injected into og-downstream"},{"hash":"4df3880","date":"2026-05-17","desc":"KIBB merge: 6 prompts injected into investment-banking from KIBB C-Suite demo"},{"hash":"270a918","date":"2026-05-17","desc":"Modern-feature refresh: 174 new showcase prompts across PPT/Outlook/Excel/Word/Analyst"},{"hash":"14febfa","date":"2026-05-17","desc":"Refresh hub.html changelog with recent commits"},{"hash":"e04666a","date":"2026-05-17","desc":"Add M365 Copilot blog holistic-audit scheduler"},{"hash":"2ba1cdd","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Rivanta merge"},{"hash":"ef550cf","date":"2026-05-17","desc":"Merge Berjaya Sompo Rivanta content into Zava Digital (BTRC pre-read + tech governance)"},{"hash":"a94d4f1","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Aster merge"},{"hash":"7f8c3ec","date":"2026-05-17","desc":"Merge PT Chandra Asri Aster content into Zava Oil Downstream (live ops brief)"},{"hash":"2e7c274","date":"2026-05-17","desc":"Rebuild data.js + hub.html for PT IIF merge"},{"hash":"a2ad198","date":"2026-05-17","desc":"Merge PT IIF demo content into Zava Bank Malaysia (Infrastructure Loan Sub-Portfolio review)"},{"hash":"ed4b00a","date":"2026-05-17","desc":"Rebuild data.js + hub.html for KIBB merge"},{"hash":"9c39b9f","date":"2026-05-17","desc":"Merge KIBB C-Suite demo content into Zava Capital Malaysia (BRC pre-read pack)"},{"hash":"ed4cfe9","date":"2026-05-17","desc":"Rebuild data.js + hub.html for KLK Plantation merge"},{"hash":"4359997","date":"2026-05-17","desc":"Merge KLK Plantation demo content into Zava Plantation (Q1 operations + yield data)"},{"hash":"5f5b0f2","date":"2026-05-17","desc":"Rebuild data.js + hub.html for MMC HR merge"},{"hash":"5b9a6ff","date":"2026-05-17","desc":"Merge MMC Tradewinds DRB HR content into Zava HR (recruitment lifecycle)"},{"hash":"3016e55","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Sunway SunMed merge"},{"hash":"62a7d10","date":"2026-05-17","desc":"Merge Sunway SunMed Finance content into Zava Hospital Network (finance + procurement governance)"},{"hash":"60ccd82","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Persol RFP Demo merge"},{"hash":"66633d1","date":"2026-05-17","desc":"Merge Persol RFP Demo content into Zava Procurement (HRMS RFP eval flow)"},{"hash":"85e4124","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Merchantrade HR merge"},{"hash":"97b064c","date":"2026-05-17","desc":"Merge Merchantrade HR Demo content into Zava HR (dept-hr)"},{"hash":"2afd86b","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Merchantrade Demo merge"},{"hash":"e22cc5d","date":"2026-05-17","desc":"Merge Merchantrade Demo content into Zava Remit Asia (cross-border-remittance)"},{"hash":"5eb030c","date":"2026-05-17","desc":"Rebuild data.js + hub.html for PT MPM merge"},{"hash":"59c4fdc","date":"2026-05-17","desc":"Merge PT MPM content into Zava Motors"},{"hash":"0e8e37b","date":"2026-05-17","desc":"Rebuild data.js + hub.html for IOI PG merge"},{"hash":"53a659e","date":"2026-05-17","desc":"Merge IOI Properties Group content into Zava Property Development"},{"hash":"c25471f","date":"2026-05-11","desc":"Alignment audit: unify topbar button heights, center UC head, square nav arrows, equal file-ext widths, uniform card heights"},{"hash":"56be675","date":"2026-05-11","desc":"Mobile overflow fix + pill contrast on UC head + remove product pills from cards"},{"hash":"8e68c2c","date":"2026-05-11","desc":"Cowork detail: agent-builder picker + static-frame UI in both views"},{"hash":"a0521b6","date":"2026-05-11","desc":"Sidebar tabs: shorten Departments to Dept, even out spacing"},{"hash":"58f9c33","date":"2026-05-11","desc":"Cowork Library: new 4th sidebar tab mirroring all coworkLibrary content"},{"hash":"6fb2163","date":"2026-05-11","desc":"Lock changelog behind owner-only password (ZavaAdmin2026)"},{"hash":"894964a","date":"2026-05-11","desc":"Responsive layout: eliminate horizontal overflow across 320-1280 widths"},{"hash":"a2e76f9","date":"2026-05-11","desc":"Cagamas hackathon card: remove team codes (keep facilitator view)"},{"hash":"2fff630","date":"2026-05-11","desc":"Storyboard fix — render tool label + description body on toolId-only tasks"},{"hash":"de4047c","date":"2026-05-11","desc":"Notebook + Cowork Library: close all file-pill 404s with rich data"},{"hash":"88fd44f","date":"2026-05-11","desc":"Cowork+Notebook fix: clickable file pills and 75 redesigned sample files"},{"hash":"77224e9","date":"2026-05-11","desc":"UI alignment + 75 missing demo data files"},{"hash":"8036c63","date":"2026-05-11","desc":"UI + data: fix empty-sibling-card grid stretch + clean Cowork sample_files render"},{"hash":"3740fe1","date":"2026-05-11","desc":"Notebook Library polish: per-entry title suffix + overflow safety + 1050px grid breakpoint"},{"hash":"59258f2","date":"2026-05-11","desc":"Notebook Library: gate to Notebook tab + add 2026 output features + per-entry personalisation"},{"hash":"aa87d5a","date":"2026-05-11","desc":"Cowork & Notebook Library: ungate cowork render + add Notebook Library (13 archetype cards, 55 entries)"},{"hash":"490de0c","date":"2026-05-11","desc":"Notebook: strip setup-leak from bespoke prompt bodies (ind_batch5.py)"},{"hash":"82a501a","date":"2026-05-11","desc":"Cowork Library: 63-card per-entry catalog (Contoso C-Suite + cowork-prompts style)"},{"hash":"d7f8049","date":"2026-05-11","desc":"Free-tier Agent Builder — fix entry-id mismatches + per-entry agent meta"},{"hash":"4134d2e","date":"2026-05-11","desc":"Free-tier Agent Builder — per-entry industry-specific knowledge URLs"},{"hash":"3d63106","date":"2026-05-10","desc":"Cowork — diversify named recipients per industry archetype"},{"hash":"3f4bbfd","date":"2026-05-10","desc":"Cowork runbook — extend to Aaron Yue 9-row format"},{"hash":"8ad7476","date":"2026-05-10","desc":"Notebook — unique scenarios per entry + presenter-only Demo Guide callout"},{"hash":"7a4a74b","date":"2026-05-10","desc":"Move PAID Agent Builder to Microsoft 365 Copilot Tools tab (was in Chat by mistake)"},{"hash":"f126c4a","date":"2026-05-10","desc":"Remove temp _script.js extracted during hotfix debug"},{"hash":"c17ddb5","date":"2026-05-10","desc":"HOTFIX — Cowork tips library broke JS parse (page rendered ~29 industries)"},{"hash":"334da73","date":"2026-05-10","desc":"Final audit fixups — license labels + i18n completeness"},{"hash":"150ca21","date":"2026-05-10","desc":"Notebook prompts — named-file targeting (personal-document focus pattern)"},{"hash":"682ad45","date":"2026-05-10","desc":"Cowork runbook enrich — Skills, Description, Outcome, Tips above every prompt"},{"hash":"13e21dc","date":"2026-05-10","desc":"Split Agent Builder into paid (file knowledge) + free (URL knowledge) tiers"},{"hash":"e7d1fd8","date":"2026-05-10","desc":"Industries-most-affected drill-down on every department"},{"hash":"b85c111","date":"2026-05-10","desc":"Files-match unique use cases — fix dangling ref + audit clean"},{"hash":"1a46b53","date":"2026-05-10","desc":"W/P/X Agent consistency + stay-in-chat normaliser"},{"hash":"bb42117","date":"2026-05-10","desc":"Cowork recheck — Aaron Yue / OneDrive Intelligence approval-gate normaliser"},{"hash":"507bce9","date":"2026-05-10","desc":"Notebook recheck — dedicated tab + canonical demo guide"},{"hash":"ff6981a","date":"2026-05-10","desc":"Unique use cases: 13 template-clone prompts rewritten across 6 entries"},{"hash":"e27093d","date":"2026-05-10","desc":"Cross-check consistency: 20 tool labels normalised in ind_batch6"},{"hash":"e0b8aa6","date":"2026-05-10","desc":"Data realism audit: vague phrasings replaced with named teams"},{"hash":"a36757e","date":"2026-05-10","desc":"Tech feasibility recheck: 6 license mislabels fixed in ind_batch6"},{"hash":"ea30565","date":"2026-05-10","desc":"Notebook: every entry now lists its source files in setup banner + prompt 1"},{"hash":"e2f7f18","date":"2026-05-10","desc":"Cowork: full IHH-style fan-out — named recipients + 5 actions on every prompt"},{"hash":"b911d72","date":"2026-05-10","desc":"Agent Builder: render TWO versions side-by-side (Premium + Free)"},{"hash":"c12e05d","date":"2026-05-10","desc":"Generalize Pacifica/Pacifican to ASEAN/APAC across all entries"},{"hash":"221dbda","date":"2026-05-10","desc":"Departments: rich Industries-most-affected pills (40-43 per dept)"},{"hash":"08d4693","date":"2026-05-10","desc":"Word/PPT/Excel Agent license: flip M365_LIC to ANY_LIC across all 55 entries"},{"hash":"1956ad6","date":"2026-05-10","desc":"Word/PPT/Excel Agent instructions: rewrite per Microsoft support article"},{"hash":"4fe5b37","date":"2026-05-10","desc":"Departments most affected pills: fix 22 industries with dangling dept IDs"},{"hash":"9665cf9","date":"2026-05-10","desc":"Index page: rebrand to Zava Conglomerate, update count to 43+13, password ZavaGlobal2026"},{"hash":"fbaebbe","date":"2026-05-10","desc":"Dark mode third sweep: --navy text invisible against dark navy surface"},{"hash":"b02e85d","date":"2026-05-10","desc":"Notebook follow demo guide: 10-step flow render-time intercept"},{"hash":"424cea7","date":"2026-05-10","desc":"Teams prompts: remove redundant 'Save the file as X.docx in OneDrive' tails"},{"hash":"d66244d","date":"2026-05-10","desc":"Hidden changelog tab — discreet icon next to Lock + Ctrl+Shift+L shortcut"},{"hash":"1f93a64","date":"2026-05-10","desc":"Alliance team codes: align to Cagamas style (short uppercase) + suppress redundant single-group header"},{"hash":"b607af2","date":"2026-05-10","desc":"Other Pages: collapse Customer Demos section into Customer Workshops"},{"hash":"d8bbce7","date":"2026-05-10","desc":"Storyboard description consistency: convert Shape B (og/re/mfg) to Shape A by adding verb fields"}];
 function _renderChangelog(){
   const body=document.getElementById('changelog-body');
   if(!body) return;
@@ -6332,12 +6398,189 @@ document.addEventListener('keydown',function(e){
     e.preventDefault();
     toggleChangelog();
   }
-  // ESC closes it
+  // Ctrl+Shift+A toggles the analytics modal
+  if((e.ctrlKey||e.metaKey) && e.shiftKey && (e.key==='A'||e.key==='a')){
+    e.preventDefault();
+    toggleAnalytics();
+  }
+  // ESC closes either modal
   if(e.key==='Escape'){
     const m=document.getElementById('changelog-modal');
     if(m && m.classList.contains('open')) m.classList.remove('open');
+    const am=document.getElementById('analytics-modal');
+    if(am && am.classList.contains('open')) am.classList.remove('open');
   }
 });
+
+// ── Analytics (owner-only viewer counts via abacus.jasoncameron.dev) ──
+// Public-facing free counter API: hit endpoint increments + returns, get endpoint reads only.
+// Per-page-load: increments site total + today's day counter (anonymous, no PII).
+// Heartbeat every 30s: increments live-{minuteEpoch} so we can estimate concurrent viewers.
+// Modal is owner-only behind the same SHA-256 password as the Changelog (ZavaAdmin2026).
+const _ANALYTICS_NS='zava-copilot-demo';
+const _ANALYTICS_API='https://abacus.jasoncameron.dev';
+const _ANALYTICS_HEARTBEAT_MS=30000; // 30s ping → ~2 pings per minute per viewer
+function _anaDayKey(d){
+  // YYYYMMDD (UTC) — keeps day buckets consistent across timezones
+  return d.getUTCFullYear().toString().padStart(4,'0')+
+         (d.getUTCMonth()+1).toString().padStart(2,'0')+
+         d.getUTCDate().toString().padStart(2,'0');
+}
+function _anaLiveKey(){
+  // Minute bucket (UTC epoch minutes). Reset 0 if no pings within last 3 mins.
+  return 'live-'+Math.floor(Date.now()/60000);
+}
+async function _anaHit(key){
+  try{
+    const r=await fetch(_ANALYTICS_API+'/hit/'+_ANALYTICS_NS+'/'+encodeURIComponent(key),{cache:'no-store'});
+    if(!r.ok) return null;
+    const j=await r.json();
+    return (j && typeof j.value==='number') ? j.value : null;
+  }catch(e){ return null; }
+}
+async function _anaGet(key){
+  try{
+    const r=await fetch(_ANALYTICS_API+'/get/'+_ANALYTICS_NS+'/'+encodeURIComponent(key),{cache:'no-store'});
+    if(!r.ok) return 0;
+    const j=await r.json();
+    return (j && typeof j.value==='number') ? j.value : 0;
+  }catch(e){ return 0; }
+}
+async function _anaTrackVisit(){
+  // Only count one visit per browser-tab session (sessionStorage cleared on tab close).
+  if(sessionStorage.getItem('ana_session')==='1') return;
+  sessionStorage.setItem('ana_session','1');
+  const now=new Date();
+  // Fire-and-forget; never block page load.
+  _anaHit('total').catch(()=>{});
+  _anaHit('day-'+_anaDayKey(now)).catch(()=>{});
+}
+function _anaStartHeartbeat(){
+  // Immediate first ping so the user shows up in "currently viewing" right away.
+  _anaHit(_anaLiveKey()).catch(()=>{});
+  // Subsequent pings every 30s while the tab is in the foreground.
+  // Pause when tab is hidden to avoid inflating live counts.
+  if(_anaStartHeartbeat._timer) return;
+  _anaStartHeartbeat._timer=setInterval(()=>{
+    if(document.visibilityState==='visible'){ _anaHit(_anaLiveKey()).catch(()=>{}); }
+  },_ANALYTICS_HEARTBEAT_MS);
+}
+function _anaFmt(n){
+  if(n==null) return '\u2014';
+  if(n>=1e6) return (n/1e6).toFixed(1).replace(/\.0$/,'')+'M';
+  if(n>=1e3) return (n/1e3).toFixed(1).replace(/\.0$/,'')+'k';
+  return String(n);
+}
+function _anaDayLabel(d){
+  // Short label like "Mon 19"
+  const dow=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()];
+  return dow+' '+d.getDate();
+}
+async function _renderAnalytics(){
+  const body=document.getElementById('analytics-body');
+  if(!body) return;
+  body.innerHTML='<div class="ana-loading">Loading analytics&hellip;</div>';
+  const now=new Date();
+  // Last 7 days incl. today (right-most bar = today)
+  const dayDates=[];
+  for(let i=6;i>=0;i--){
+    const d=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()-i));
+    dayDates.push(d);
+  }
+  // Last 3 minute-buckets for the live estimate (≈ 6 pings per visitor over 90s window)
+  const nowMin=Math.floor(Date.now()/60000);
+  const liveKeys=[nowMin,nowMin-1,nowMin-2];
+  try{
+    const results=await Promise.all([
+      _anaGet('total'),
+      ...dayDates.map(d=>_anaGet('day-'+_anaDayKey(d))),
+      ...liveKeys.map(k=>_anaGet('live-'+k))
+    ]);
+    const total=results[0];
+    const dayVals=results.slice(1,8);
+    const liveVals=results.slice(8,11);
+    // Live ≈ ceil(sum of last 3 minutes pings / 6) since each visitor pings ~6 times over 90s.
+    // Cap at sum (anything more would imply >6 pings per visitor which is impossible).
+    const liveSum=liveVals.reduce((a,b)=>a+b,0);
+    const liveEst=Math.max(0,Math.min(liveSum,Math.ceil(liveSum/6)));
+    const todayCount=dayVals[6];
+    const maxDay=Math.max(1,...dayVals);
+    const bars=dayVals.map((v,i)=>{
+      const h=v>0 ? Math.max(8,(v/maxDay)*100) : 6;
+      const isToday=(i===6);
+      const cls='ana-bar'+(v===0?' ana-bar-zero':'')+(isToday?' ana-bar-today':'');
+      return '<div class="'+cls+'" style="height:'+h+'%" title="'+_anaDayLabel(dayDates[i])+': '+v+' view'+(v===1?'':'s')+'"><span class="ana-bar-val">'+v+'</span></div>';
+    }).join('');
+    const labels=dayDates.map((d,i)=>{
+      return '<span'+(i===6?' class="ana-today"':'')+'>'+_anaDayLabel(d)+'</span>';
+    }).join('');
+    body.innerHTML=
+      '<div class="ana-grid">'+
+        '<div class="ana-stat ana-live">'+
+          '<div class="ana-num"><span class="ana-pulse"></span>'+_anaFmt(liveEst)+'</div>'+
+          '<div class="ana-lbl">\uD83D\uDC40 Currently viewing</div>'+
+        '</div>'+
+        '<div class="ana-stat">'+
+          '<div class="ana-num">'+_anaFmt(todayCount)+'</div>'+
+          '<div class="ana-lbl">\uD83D\uDCC5 Today</div>'+
+        '</div>'+
+        '<div class="ana-stat">'+
+          '<div class="ana-num">'+_anaFmt(total)+'</div>'+
+          '<div class="ana-lbl">\uD83C\uDF0D All time</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="ana-section-hdr">\uD83D\uDCC8 Last 7 days</div>'+
+      '<div class="ana-chart">'+bars+'</div>'+
+      '<div class="ana-chart-labels">'+labels+'</div>'+
+      '<div class="ana-note">'+
+        'Anonymous page-view counters powered by '+
+        '<a href="https://abacus.jasoncameron.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">abacus.jasoncameron.dev</a>. '+
+        'One count per browser tab session. Live = unique visitors active in the last ~90s.'+
+      '</div>';
+  }catch(e){
+    body.innerHTML='<div class="ana-error">Couldn\u2019t load analytics &mdash; the counter API is unreachable. '+
+      'Check your internet connection and try again.<br><br><small style="opacity:0.7">'+
+      escapeHTML(e&&e.message?e.message:String(e))+'</small></div>';
+  }
+}
+function toggleAnalytics(){
+  const m=document.getElementById('analytics-modal');
+  if(!m) return;
+  if(m.classList.contains('open')){
+    m.classList.remove('open');
+    return;
+  }
+  // Owner-only: gate behind the SAME password as the Changelog (ZavaAdmin2026).
+  // If the user already authenticated for Changelog this session, no re-prompt.
+  if(sessionStorage.getItem('changelog_auth')!=='ok'){
+    _analyticsAuthPrompt();
+    return;
+  }
+  _renderAnalytics();
+  m.classList.add('open');
+}
+async function _analyticsAuthPrompt(){
+  const pw=window.prompt('\uD83D\uDD12 Analytics access \u2014 enter owner password:');
+  if(pw===null) return; // cancelled
+  try{
+    const h=await _sha256Hex(pw);
+    if(h===_CHANGELOG_HASH){
+      sessionStorage.setItem('changelog_auth','ok');
+      const m=document.getElementById('analytics-modal');
+      if(m){ _renderAnalytics(); m.classList.add('open'); }
+    } else {
+      window.alert('\u26A0\uFE0F Incorrect password.');
+    }
+  }catch(e){
+    window.alert('Password check failed: '+(e&&e.message?e.message:'unknown error'));
+  }
+}
+// Kick off anonymous tracking once we're on the hub (auth already enforced at L~1534 redirect).
+(function _anaInit(){
+  if(sessionStorage.getItem('hub_auth')!=='ok') return; // not authed, redirect will fire
+  _anaTrackVisit();
+  _anaStartHeartbeat();
+})();
 
 // ── Init ──
 (function(){

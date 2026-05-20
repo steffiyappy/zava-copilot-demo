@@ -115,6 +115,58 @@ html{overflow-x:hidden}
   [data-theme="system"] .changelog-modal{background:rgba(2,8,20,0.62)}
   [data-theme="system"] .changelog-hash{color:#60A5FA}
 }
+/* ANALYTICS — discreet hidden-by-default tab next to Changelog (owner-only, same password) */
+.btn-analytics{background:transparent;border:none;color:rgba(255,255,255,0.55);font-size:14px;padding:0 8px;min-height:32px;cursor:pointer;opacity:0.42;transition:opacity 0.18s,color 0.18s;font-family:inherit;line-height:1;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
+.btn-analytics:hover,.btn-analytics:focus{opacity:1;color:#FFFFFF;outline:none}
+.analytics-modal{position:fixed;inset:0;background:rgba(15,23,42,0.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:9999;display:none;align-items:center;justify-content:center;animation:fadeIn 0.18s ease-out}
+.analytics-modal.open{display:flex}
+.analytics-panel{background:var(--surface);border:1px solid var(--border-strong);border-radius:14px;width:min(720px,92vw);max-height:82vh;display:flex;flex-direction:column;box-shadow:var(--shadow-lg);overflow:hidden}
+.analytics-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(8,145,178,0.08),rgba(34,197,94,0.08))}
+.analytics-title{font-size:14px;font-weight:800;color:var(--text-strong);letter-spacing:0.2px;display:flex;align-items:center;gap:8px}
+.analytics-close{background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:0 6px;line-height:1;border-radius:6px;transition:background 0.15s,color 0.15s}
+.analytics-close:hover{background:var(--surface-2);color:var(--text-strong)}
+.analytics-body{padding:18px;overflow-y:auto;flex:1}
+.ana-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.ana-stat{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px 12px;text-align:center;display:flex;flex-direction:column;gap:4px;transition:transform 0.18s,box-shadow 0.18s}
+.ana-stat:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.ana-stat.ana-live{background:linear-gradient(135deg,rgba(34,197,94,0.10),rgba(16,185,129,0.06));border-color:#86EFAC}
+.ana-num{font-size:28px;font-weight:800;color:var(--text-strong);line-height:1.1;font-variant-numeric:tabular-nums}
+.ana-stat.ana-live .ana-num{color:#15803D}
+.ana-lbl{font-size:10.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;display:flex;align-items:center;justify-content:center;gap:5px}
+.ana-section-hdr{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:14px 0 8px;display:flex;align-items:center;gap:6px}
+.ana-chart{display:flex;gap:6px;align-items:flex-end;height:120px;padding:8px 6px 4px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;margin-bottom:6px}
+.ana-bar{flex:1;background:linear-gradient(180deg,#0891B2,#0E7490);border-radius:5px 5px 0 0;min-height:6px;position:relative;display:flex;align-items:flex-start;justify-content:center;padding-top:3px;transition:opacity 0.15s,filter 0.15s;cursor:default}
+.ana-bar:hover{filter:brightness(1.1)}
+.ana-bar.ana-bar-today{background:linear-gradient(180deg,#15803D,#166534)}
+.ana-bar-val{font-size:9.5px;font-weight:700;color:#FFFFFF;text-shadow:0 1px 2px rgba(0,0,0,0.25);font-variant-numeric:tabular-nums}
+.ana-bar-zero{background:repeating-linear-gradient(45deg,#E2E8F0,#E2E8F0 4px,#F1F5F9 4px,#F1F5F9 8px)}
+.ana-bar-zero .ana-bar-val{color:#94A3B8;text-shadow:none}
+.ana-chart-labels{display:flex;gap:6px;padding:0 6px;font-size:9.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ana-chart-labels span{flex:1;text-align:center;font-weight:600}
+.ana-chart-labels span.ana-today{color:#15803D;font-weight:800}
+.ana-note{font-size:10.5px;color:var(--muted);font-style:italic;text-align:center;margin-top:14px;padding-top:10px;border-top:1px dashed var(--border);line-height:1.55}
+.ana-loading{text-align:center;padding:32px 12px;color:var(--muted);font-size:13px}
+.ana-error{text-align:center;padding:24px 12px;color:#9F1239;background:#FEF2F2;border:1px solid #FECACA;border-radius:10px;font-size:12px;line-height:1.5}
+.ana-pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#10B981;margin-right:6px;animation:anaPulse 1.6s ease-in-out infinite}
+@keyframes anaPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.45;transform:scale(0.78)}}
+[data-theme="dark"] .analytics-modal{background:rgba(2,8,20,0.62)}
+[data-theme="dark"] .ana-bar-zero{background:repeating-linear-gradient(45deg,#1E293B,#1E293B 4px,#0F172A 4px,#0F172A 8px)}
+[data-theme="dark"] .ana-error{background:#1F0A0E;border-color:#7F1D1D;color:#FCA5A5}
+[data-theme="dark"] .ana-stat.ana-live{background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(16,185,129,0.10));border-color:#15803D}
+[data-theme="dark"] .ana-stat.ana-live .ana-num{color:#86EFAC}
+[data-theme="dark"] .ana-chart-labels span.ana-today{color:#86EFAC}
+@media (prefers-color-scheme: dark){
+  [data-theme="system"] .analytics-modal{background:rgba(2,8,20,0.62)}
+  [data-theme="system"] .ana-bar-zero{background:repeating-linear-gradient(45deg,#1E293B,#1E293B 4px,#0F172A 4px,#0F172A 8px)}
+  [data-theme="system"] .ana-error{background:#1F0A0E;border-color:#7F1D1D;color:#FCA5A5}
+  [data-theme="system"] .ana-stat.ana-live{background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(16,185,129,0.10));border-color:#15803D}
+  [data-theme="system"] .ana-stat.ana-live .ana-num{color:#86EFAC}
+  [data-theme="system"] .ana-chart-labels span.ana-today{color:#86EFAC}
+}
+@media (max-width: 560px){
+  .ana-grid{grid-template-columns:1fr}
+  .ana-num{font-size:24px}
+}
 /* LAYOUT */
 .layout{display:flex;min-height:calc(100vh - 56px)}
 /* SIDEBAR */
@@ -1264,6 +1316,7 @@ a.file-pill:visited{color:var(--text)}
     <button class="btn-theme" id="btn-theme" onclick="cycleTheme()" title="Cycle theme: Light / Dark / System"><span id="theme-icon">&#9788;</span><span class="theme-label" id="theme-label">Light</span></button>
     <button class="btn-sm" onclick="goHome()" title="Home">&#x1F3E0;<span class="btn-label"> Home</span></button>
     <button class="btn-sm" onclick="logout()" title="Lock">&#x1F512;<span class="btn-label"> Lock</span></button>
+    <button class="btn-analytics" id="btn-analytics" onclick="toggleAnalytics()" title="Site analytics (Ctrl+Shift+A)" aria-label="Show site analytics">&#128202;</button>
     <button class="btn-changelog" id="btn-changelog" onclick="toggleChangelog()" title="What's changed (Ctrl+Shift+L)" aria-label="Show changelog">&#128220;</button>
   </div>
 </nav>
@@ -1277,6 +1330,19 @@ a.file-pill:visited{color:var(--text)}
       <button class="changelog-close" onclick="toggleChangelog()" aria-label="Close changelog">&times;</button>
     </div>
     <div class="changelog-body" id="changelog-body"></div>
+  </div>
+</div>
+
+<!-- Analytics modal — owner-only viewer counts, opens via icon next to Changelog or Ctrl+Shift+A -->
+<div class="analytics-modal" id="analytics-modal" onclick="if(event.target===this)toggleAnalytics()" role="dialog" aria-modal="true" aria-labelledby="analytics-title-text">
+  <div class="analytics-panel">
+    <div class="analytics-header">
+      <span class="analytics-title" id="analytics-title-text">&#128202; Site Analytics</span>
+      <button class="analytics-close" onclick="toggleAnalytics()" aria-label="Close analytics">&times;</button>
+    </div>
+    <div class="analytics-body" id="analytics-body">
+      <div class="ana-loading">Loading analytics&hellip;</div>
+    </div>
   </div>
 </div>
 
@@ -6334,12 +6400,189 @@ document.addEventListener('keydown',function(e){
     e.preventDefault();
     toggleChangelog();
   }
-  // ESC closes it
+  // Ctrl+Shift+A toggles the analytics modal
+  if((e.ctrlKey||e.metaKey) && e.shiftKey && (e.key==='A'||e.key==='a')){
+    e.preventDefault();
+    toggleAnalytics();
+  }
+  // ESC closes either modal
   if(e.key==='Escape'){
     const m=document.getElementById('changelog-modal');
     if(m && m.classList.contains('open')) m.classList.remove('open');
+    const am=document.getElementById('analytics-modal');
+    if(am && am.classList.contains('open')) am.classList.remove('open');
   }
 });
+
+// ── Analytics (owner-only viewer counts via abacus.jasoncameron.dev) ──
+// Public-facing free counter API: hit endpoint increments + returns, get endpoint reads only.
+// Per-page-load: increments site total + today's day counter (anonymous, no PII).
+// Heartbeat every 30s: increments live-{minuteEpoch} so we can estimate concurrent viewers.
+// Modal is owner-only behind the same SHA-256 password as the Changelog (ZavaAdmin2026).
+const _ANALYTICS_NS='zava-copilot-demo';
+const _ANALYTICS_API='https://abacus.jasoncameron.dev';
+const _ANALYTICS_HEARTBEAT_MS=30000; // 30s ping → ~2 pings per minute per viewer
+function _anaDayKey(d){
+  // YYYYMMDD (UTC) — keeps day buckets consistent across timezones
+  return d.getUTCFullYear().toString().padStart(4,'0')+
+         (d.getUTCMonth()+1).toString().padStart(2,'0')+
+         d.getUTCDate().toString().padStart(2,'0');
+}
+function _anaLiveKey(){
+  // Minute bucket (UTC epoch minutes). Reset 0 if no pings within last 3 mins.
+  return 'live-'+Math.floor(Date.now()/60000);
+}
+async function _anaHit(key){
+  try{
+    const r=await fetch(_ANALYTICS_API+'/hit/'+_ANALYTICS_NS+'/'+encodeURIComponent(key),{cache:'no-store'});
+    if(!r.ok) return null;
+    const j=await r.json();
+    return (j && typeof j.value==='number') ? j.value : null;
+  }catch(e){ return null; }
+}
+async function _anaGet(key){
+  try{
+    const r=await fetch(_ANALYTICS_API+'/get/'+_ANALYTICS_NS+'/'+encodeURIComponent(key),{cache:'no-store'});
+    if(!r.ok) return 0;
+    const j=await r.json();
+    return (j && typeof j.value==='number') ? j.value : 0;
+  }catch(e){ return 0; }
+}
+async function _anaTrackVisit(){
+  // Only count one visit per browser-tab session (sessionStorage cleared on tab close).
+  if(sessionStorage.getItem('ana_session')==='1') return;
+  sessionStorage.setItem('ana_session','1');
+  const now=new Date();
+  // Fire-and-forget; never block page load.
+  _anaHit('total').catch(()=>{});
+  _anaHit('day-'+_anaDayKey(now)).catch(()=>{});
+}
+function _anaStartHeartbeat(){
+  // Immediate first ping so the user shows up in "currently viewing" right away.
+  _anaHit(_anaLiveKey()).catch(()=>{});
+  // Subsequent pings every 30s while the tab is in the foreground.
+  // Pause when tab is hidden to avoid inflating live counts.
+  if(_anaStartHeartbeat._timer) return;
+  _anaStartHeartbeat._timer=setInterval(()=>{
+    if(document.visibilityState==='visible'){ _anaHit(_anaLiveKey()).catch(()=>{}); }
+  },_ANALYTICS_HEARTBEAT_MS);
+}
+function _anaFmt(n){
+  if(n==null) return '\u2014';
+  if(n>=1e6) return (n/1e6).toFixed(1).replace(/\.0$/,'')+'M';
+  if(n>=1e3) return (n/1e3).toFixed(1).replace(/\.0$/,'')+'k';
+  return String(n);
+}
+function _anaDayLabel(d){
+  // Short label like "Mon 19"
+  const dow=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()];
+  return dow+' '+d.getDate();
+}
+async function _renderAnalytics(){
+  const body=document.getElementById('analytics-body');
+  if(!body) return;
+  body.innerHTML='<div class="ana-loading">Loading analytics&hellip;</div>';
+  const now=new Date();
+  // Last 7 days incl. today (right-most bar = today)
+  const dayDates=[];
+  for(let i=6;i>=0;i--){
+    const d=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()-i));
+    dayDates.push(d);
+  }
+  // Last 3 minute-buckets for the live estimate (≈ 6 pings per visitor over 90s window)
+  const nowMin=Math.floor(Date.now()/60000);
+  const liveKeys=[nowMin,nowMin-1,nowMin-2];
+  try{
+    const results=await Promise.all([
+      _anaGet('total'),
+      ...dayDates.map(d=>_anaGet('day-'+_anaDayKey(d))),
+      ...liveKeys.map(k=>_anaGet('live-'+k))
+    ]);
+    const total=results[0];
+    const dayVals=results.slice(1,8);
+    const liveVals=results.slice(8,11);
+    // Live ≈ ceil(sum of last 3 minutes pings / 6) since each visitor pings ~6 times over 90s.
+    // Cap at sum (anything more would imply >6 pings per visitor which is impossible).
+    const liveSum=liveVals.reduce((a,b)=>a+b,0);
+    const liveEst=Math.max(0,Math.min(liveSum,Math.ceil(liveSum/6)));
+    const todayCount=dayVals[6];
+    const maxDay=Math.max(1,...dayVals);
+    const bars=dayVals.map((v,i)=>{
+      const h=v>0 ? Math.max(8,(v/maxDay)*100) : 6;
+      const isToday=(i===6);
+      const cls='ana-bar'+(v===0?' ana-bar-zero':'')+(isToday?' ana-bar-today':'');
+      return '<div class="'+cls+'" style="height:'+h+'%" title="'+_anaDayLabel(dayDates[i])+': '+v+' view'+(v===1?'':'s')+'"><span class="ana-bar-val">'+v+'</span></div>';
+    }).join('');
+    const labels=dayDates.map((d,i)=>{
+      return '<span'+(i===6?' class="ana-today"':'')+'>'+_anaDayLabel(d)+'</span>';
+    }).join('');
+    body.innerHTML=
+      '<div class="ana-grid">'+
+        '<div class="ana-stat ana-live">'+
+          '<div class="ana-num"><span class="ana-pulse"></span>'+_anaFmt(liveEst)+'</div>'+
+          '<div class="ana-lbl">\uD83D\uDC40 Currently viewing</div>'+
+        '</div>'+
+        '<div class="ana-stat">'+
+          '<div class="ana-num">'+_anaFmt(todayCount)+'</div>'+
+          '<div class="ana-lbl">\uD83D\uDCC5 Today</div>'+
+        '</div>'+
+        '<div class="ana-stat">'+
+          '<div class="ana-num">'+_anaFmt(total)+'</div>'+
+          '<div class="ana-lbl">\uD83C\uDF0D All time</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="ana-section-hdr">\uD83D\uDCC8 Last 7 days</div>'+
+      '<div class="ana-chart">'+bars+'</div>'+
+      '<div class="ana-chart-labels">'+labels+'</div>'+
+      '<div class="ana-note">'+
+        'Anonymous page-view counters powered by '+
+        '<a href="https://abacus.jasoncameron.dev" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">abacus.jasoncameron.dev</a>. '+
+        'One count per browser tab session. Live = unique visitors active in the last ~90s.'+
+      '</div>';
+  }catch(e){
+    body.innerHTML='<div class="ana-error">Couldn\u2019t load analytics &mdash; the counter API is unreachable. '+
+      'Check your internet connection and try again.<br><br><small style="opacity:0.7">'+
+      escapeHTML(e&&e.message?e.message:String(e))+'</small></div>';
+  }
+}
+function toggleAnalytics(){
+  const m=document.getElementById('analytics-modal');
+  if(!m) return;
+  if(m.classList.contains('open')){
+    m.classList.remove('open');
+    return;
+  }
+  // Owner-only: gate behind the SAME password as the Changelog (ZavaAdmin2026).
+  // If the user already authenticated for Changelog this session, no re-prompt.
+  if(sessionStorage.getItem('changelog_auth')!=='ok'){
+    _analyticsAuthPrompt();
+    return;
+  }
+  _renderAnalytics();
+  m.classList.add('open');
+}
+async function _analyticsAuthPrompt(){
+  const pw=window.prompt('\uD83D\uDD12 Analytics access \u2014 enter owner password:');
+  if(pw===null) return; // cancelled
+  try{
+    const h=await _sha256Hex(pw);
+    if(h===_CHANGELOG_HASH){
+      sessionStorage.setItem('changelog_auth','ok');
+      const m=document.getElementById('analytics-modal');
+      if(m){ _renderAnalytics(); m.classList.add('open'); }
+    } else {
+      window.alert('\u26A0\uFE0F Incorrect password.');
+    }
+  }catch(e){
+    window.alert('Password check failed: '+(e&&e.message?e.message:'unknown error'));
+  }
+}
+// Kick off anonymous tracking once we're on the hub (auth already enforced at L~1534 redirect).
+(function _anaInit(){
+  if(sessionStorage.getItem('hub_auth')!=='ok') return; // not authed, redirect will fire
+  _anaTrackVisit();
+  _anaStartHeartbeat();
+})();
 
 // ── Init ──
 (function(){
