@@ -1,0 +1,191 @@
+import sys
+sys.path.insert(0, '.')
+from util import *
+
+INDUSTRIES_13 = []
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Sonepar Malaysia — Industrial & Electrical Distribution
+# 30-minute MD board-review scenario, M365 Copilot only (Word, Excel, Analyst,
+# Researcher, PowerPoint, Copilot Chat, Copilot Cowork)
+# ─────────────────────────────────────────────────────────────────────────────
+
+PRE = ("I am working under a tight deadline and the work product needs to be airtight, "
+       "so please be thorough rather than terse. ")
+POST = (" Be specific, attach a citation or sheet/tab/cell reference to every "
+        "quantitative claim, and if anything is missing or contradictory call it out "
+        "explicitly with the question I should ask next so nothing slips before the deadline.")
+
+SCENARIO = (
+    "Sonepar Malaysia is the local OpCo of Sonepar Group (the world's largest B2B distributor of "
+    "electrical products, €33.6B 2025 group revenue, 170 OpCos, 45,000 associates). The MY business "
+    "runs RM 800M annual revenue, 6 distribution centres (Shah Alam HQ, Penang, Johor Bahru, Kuching, "
+    "Kota Kinabalu, Ipoh), 7,000+ B2B customers across industrial, commercial, datacenter, EV, and "
+    "Petronas-supply-chain segments, and represents ABB, Schneider Electric, Siemens, Legrand, "
+    "Eaton, Phoenix Contact and Mersen. It is 21 May 2026. Aishah Mahmud, Head of Operations, has "
+    "30 minutes before tomorrow's MD board review. May closed at RM 44.86M actual vs RM 43.30M "
+    "budget — a 3.6% miss driven by FX + ABB 4.2% price increase eating RM 1.18M of margin, three "
+    "ABB ACS580 VFD backorders for Petronas Melaka, Top Glove and UMW Toyota worth RM 2.4M, "
+    "last-mile logistics 20% over budget, and Tan Brothers bad debt of RM 190k. Offsetting: "
+    "Commercial sales +10.4% (datacenter and semicon strong — TM, YTL, Bridge DC, Princeton Digital, "
+    "Penang semicon fabs). Aishah must walk in tomorrow with a variance memo, a risk-ranked order "
+    "list, a market brief on ABB pricing and MY datacenter demand, a 6-slide board deck, all three "
+    "backorder customer comms aligned with what her buyers actually promised, and a Monday morning "
+    "follow-up plan with the war-room invite already scheduled. She has Microsoft 365 Copilot plus "
+    "Frontier (Cowork) — she does NOT have time to open Word, Excel, PowerPoint, Outlook, Teams, "
+    "SharePoint and a web browser in parallel. The next 30 minutes are about doing all of it from "
+    "Copilot Chat alone — and finishing with the AI-coworker (Cowork) running the last mile while "
+    "she goes home."
+)
+
+INDUSTRIES_13.append(ind(
+    'electrical-distribution',
+    'sec-distribution',
+    'Industrial & Electrical Distribution',
+    '⚡',
+    '#005EB8',
+    '#0F1C3F',
+    'Sonepar Malaysia',
+    'World #1 B2B electrical distributor — RM 800M MY revenue, 6 DCs, 7,000+ customers, ABB / Schneider / Siemens / Legrand / Eaton lines, datacenter + semicon + Petronas + EV demand all hitting at once.',
+    SCENARIO,
+    [
+        'sonepar-ops-workbook.xlsx',
+        'variance-memo.docx',
+        'exec-brief-template.pptx',
+        'customer-rfq.docx',
+        'inventory-sample.csv',
+        'orders-sample.csv',
+        'purchase-orders.csv',
+        'customer-tickets.csv',
+        'product-catalog.md',
+        'month-end-variance.md',
+        'roi-summary.md',
+    ],
+    [
+        # ── 1. WORD — May variance memo ─────────────────────────────────────
+        tool(T_WORD, M365_LIC, M365_ACCT, [
+            {'instr':'Open a blank Word document > **Copilot** (right rail) > **Draft with Copilot**. Paste the prompt below. After it drafts, click **Keep it** then **Save to SharePoint > Sonepar MY > Board**.',
+             'prompt': PRE + "I am Aishah Mahmud, Head of Operations at Sonepar Malaysia. The MD wants a one-page month-end variance memo on his desk for tomorrow's board review. Here is exactly what I need from you. Draft a one-page month-end variance memo titled 'May 2026 Variance Memo — Sonepar Malaysia' for the Managing Director. Ground every part of your answer in the closed numbers that follow, and walk through them methodically rather than skimming: Revenue actual RM 44.86M vs budget RM 43.30M, gap −RM 1.56M (−3.6%); Industrial sales −RM 680k from three projects (Petronas Melaka MV switchgear, MMHE topside cabling, Lotte Chemical PLC panels) slipped to June; Commercial sales +RM 645k from datacenter and Penang semicon strength (TM Iskandar Puteri, YTL Kulai DC2, Bridge DC Cyberjaya, Princeton Digital JB1, Inari Penang, Vitrox Batu Kawan); Inventory purchases over budget by RM 1.18M from EUR/MYR weakening 3.8% plus ABB low-voltage 4.2% price increase effective 1 May; last-mile logistics +RM 190k (20% over) from diesel surcharge and DC-to-site driver shortage on the Klang Valley fleet; bad debt RM 190k from Tan Brothers Engineering default (75-day overdue on PO 44182). When you reply, organise the output exactly as: Executive Summary (3 sentences for the MD), Key Variances (bulleted RM impact + driver, one bullet per variance line), Recommended Actions (5 specific, owned, dated bullets — EUR FX-cover ratio, last-mile carrier renegotiation, credit-limit tightening for distributors > 60 days, June pipeline pull-forward of the 3 slipped projects, ABB surcharge pass-through to industrial customers), Appendix on the three ABB ACS580 VFD backorders (Petronas Melaka SO-44218 RM 920k, Top Glove SO-44219 RM 680k, UMW Toyota SO-44226 RM 800k) with cross-ship-from-Singapore-IBC mitigation. Tone: factual, board-ready, max 350 words, no marketing language." + POST},
+            {'instr':'Stay in the same Word doc. Highlight the **Recommended Actions** block. **Copilot** (right rail) > paste the rewrite prompt below.',
+             'prompt': PRE + "I have a draft May variance memo open and the MD just messaged me to say the recommendations 'sound too soft — make them sound like decisions the board has already taken'. Here is exactly what I need from you. Rewrite the Recommended Actions section so each bullet starts with an active verb in the imperative, names the accountable owner (Aishah for Ops, Suresh Kumar for Procurement, Lee Wai Mun for Credit, Razif Hassan for Sales), gives a specific date in May or June 2026, and quantifies the expected RM benefit on a 90-day horizon. Ground every recommendation in the variance lines already in the memo. When you reply, return only the rewritten bullets in the same Markdown numbered-list format, ready to paste back into Word, no preamble." + POST},
+            {'instr':'In the open Word doc, place cursor at the end. **Copilot** (right rail) > paste the appendix prompt.',
+             'prompt': PRE + "I need a clean technical appendix at the back of the May variance memo specifically on the three ABB ACS580 VFD backorders so the MD's Procurement Steering Committee tomorrow can take the cross-ship decision in 5 minutes flat. Here is exactly what I need from you. Build a 1-page appendix table — columns: Customer (Petronas Melaka Refinery, Top Glove Klang, UMW Toyota Bukit Raja), SO# (44218, 44219, 44226), Line item (ABB ACS580-01-145A-4, 110kW VFD ×2 / 75kW VFD ×3 / 90kW VFD ×4), RM exposure (920k / 680k / 800k = RM 2.4M total), Customer promise date, ABB Helsinki ETA on direct fulfilment, Singapore IBC cross-ship ETA, incremental freight cost of cross-ship, NPS / SLA risk if we miss customer date. Add a 3-line decision recommendation below the table — cross-ship all three from Singapore IBC, absorb the RM 38k incremental freight against May P&L, lock the customer commitments in writing within 24 hours." + POST},
+        ], DESC_WORD, persona=['Aishah Mahmud','Aishah Mahmud','Aishah Mahmud']),
+
+        # ── 2. EXCEL — workbook analysis ────────────────────────────────────
+        tool(T_EXCEL, M365_LIC, M365_ACCT, [
+            {'instr':'Open `sonepar-ops-workbook.xlsx` in Excel for the web (Sheets: Inventory · Orders · Variance_May2026 · ROI_Summary). **Copilot** (right rail) > paste the prompt below.',
+             'prompt': PRE + "I have an Excel workbook open titled sonepar-ops-workbook.xlsx with four sheets — Inventory, Orders, Variance_May2026 and ROI_Summary. I am the Sonepar Malaysia Head of Ops and I need this turned into a working ops dashboard in the next 5 minutes. Here is exactly what I need from you. Please do all of the following inside this workbook, applying formulas and charts to the sheets, and also explain in chat what you found. Ground every claim in a specific sheet/tab/cell reference. (1) On the Inventory sheet, add a column DaysOfCover = OnHand / 4 (assume 4 units average daily demand per SKU); apply conditional formatting so OnHand = 0 is red fill and OnHand < Reorder is amber fill. (2) List every SKU where OnHand < Reorder AND LeadTime_Days > 30 — flag these as 'Critical Exposure' in a new column. (3) On Orders, summarise total RM at risk by Status (BACKORDER, RISK, ON-TIME) and by Sector (Industrial, Commercial, Datacenter, Semicon, EV, Petronas), insert a clustered bar chart 'Risk value by Sector'. (4) Cross-check every BACKORDER or RISK order against Inventory — for each, return Order#, Warehouse, SKU, Qty, OnHand, Shortfall, ETA-from-DC. (5) On Variance_May2026, identify the 3 line items contributing most to the −RM 1.56M total variance, give % contribution of each. When you reply, give the chat answers AND apply the formulas/formatting/chart to the workbook." + POST},
+            {'instr':'Stay in the workbook on the Orders sheet. **Copilot** > paste the second prompt.',
+             'prompt': PRE + "I have the Sonepar Orders sheet open with about 200 rows of POs and SOs, columns include Customer, SO#, Sector, Brand, SKU, Qty, Value_RM, Status, PromiseDate, ActualDate, Warehouse, Buyer. The Procurement Steering Committee meets in 90 minutes. Here is exactly what I need from you. (1) Insert a PivotTable summarising Value_RM at risk by Buyer × Status — I need to know which of my three buyers (Suresh Kumar, Mei Ling Tan, Hairul Anuar) is sitting on the most BACKORDER and RISK exposure. (2) Compute lateness in days for every order where ActualDate > PromiseDate and add a sparkline column showing 30-day lateness trend per buyer. (3) Identify the top 5 customers by total RM at risk and flag any customer with > RM 500k cumulative exposure across multiple orders. (4) Add a 'Recovery Action' column that, for every BACKORDER row, suggests either 'Cross-ship from Singapore IBC', 'Substitute Schneider equivalent', 'Negotiate later promise date' or 'Escalate to ABB Helsinki' based on Brand and LeadTime. Apply everything to the sheet, then summarise the top 3 escalations in chat." + POST},
+            {'instr':'In the same workbook, switch to the ROI_Summary sheet. **Copilot** > paste the forecast prompt.',
+             'prompt': PRE + "I need a forward-looking view, not a backward-looking one. I have the ROI_Summary sheet which captures 12 months of revenue, gross margin %, and ops KPI scores. Here is exactly what I need from you. (1) Forecast Sonepar MY monthly revenue for June, July and August 2026 with a 90% confidence interval, accounting for seasonality and the known June pull-forward of the 3 slipped industrial projects (Petronas Melaka, MMHE, Lotte Chemical), worth roughly RM 1.8M of pulled revenue. (2) Compute the implied gross margin trajectory assuming ABB 4.2% price increase fully passes through to industrial customers from July (call this Scenario A) versus only 60% pass-through (Scenario B); chart both. (3) Quantify the productivity uplift on Procurement + Ops + Sales + CS + HR if we adopt Copilot across 220 knowledge-worker FTEs at a conservative 2 hours saved per FTE per week, RM 25/hr fully loaded — give annualised RM and headcount-equivalent. Apply formulas, build both charts, write a 4-bullet summary." + POST},
+        ], DESC_EXCEL, persona=['Aishah Mahmud','Aishah Mahmud','Aishah Mahmud']),
+
+        # ── 3. ANALYST — python deep risk ───────────────────────────────────
+        tool(T_ANALYST, M365_LIC, M365_ACCT, [
+            {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** > **Analyst**. Attach `sonepar-ops-workbook.xlsx`. Paste the prompt below.',
+             'prompt': PRE + "I am attaching sonepar-ops-workbook.xlsx (Sheets: Inventory, Orders, Variance_May2026, ROI_Summary). Please run a full Python risk analysis end-to-end, not a quick spreadsheet pass — I want code, charts and a defensible RM exposure number to put in front of the MD tomorrow morning. Here is exactly what I need from you. (a) Compute SKU-level inventory cover assuming demand = average daily order quantity for that SKU over the last 15 orders in the Orders sheet; for SKUs with 0 historical orders use Reorder/30 as a proxy and flag them. (b) Build a 'Risk Score 0–100' for every row in Orders = 40 × (1 if Status=BACKORDER else 0.5 if RISK else 0) + 30 × clip(1 − OnHand/Qty, 0, 1) + 30 × clip(LeadTime_Days/60, 0, 1); output the top 10 highest-risk orders ranked, with Customer, Brand, SKU, RM, score, and the dominant driver of the score. (c) Cluster customers into 3 groups using KMeans on Value_RM cumulative and average lateness in days; label clusters Strategic / Standard / At-Risk and tell me which named customers fall in each. (d) Produce two charts — (i) horizontal bar of Risk Score for the top 10 orders, (ii) scatter of OnHand vs Reorder coloured by Brand (ABB, Schneider, Siemens, Legrand, Eaton). (e) Write a 5-bullet executive summary — what to escalate to ABB Helsinki today, which At-Risk customers to call this afternoon, the single consolidated RM exposure number, the two biggest data-quality issues to fix in NetSuite, and the recommended next analysis. Show the Python code, the charts, and the summary." + POST},
+            {'instr':'Stay in Analyst. Paste the simulation prompt.',
+             'prompt': PRE + "Now I need to stress-test what happens if the ABB Helsinki backorder situation worsens. Run a Monte Carlo simulation in Python (10,000 trials) where ABB direct-fulfilment ETA on the three ACS580 VFD orders (SO-44218, SO-44219, SO-44226) is drawn from a triangular distribution (min 35 days, mode 60 days, max 110 days), customer-cancellation probability rises linearly from 0% at 30 days lateness to 80% at 90 days lateness, and Singapore IBC cross-ship is available with 92% probability at 18 days lead time and RM 38k incremental freight cost. Here is exactly what I need from you. Output the expected RM loss with and without the cross-ship decision, P5 / P50 / P95 of total exposure, the breakeven incremental freight cost at which the cross-ship is no longer NPV-positive, and a histogram of net P&L impact. Then give me a 3-bullet 'so what' summary I can paste into the variance-memo appendix." + POST},
+            {'instr':'Stay in Analyst. Paste the optimisation prompt.',
+             'prompt': PRE + "I have 6 distribution centres (Shah Alam HQ, Penang, Johor Bahru, Kuching, Kota Kinabalu, Ipoh) and 7,000+ B2B customers. Last-mile cost is 20% over budget. Here is exactly what I need from you. Using the Orders sheet, model a simple network re-balance — assume each order's current delivery cost is a function of straight-line distance from its current Warehouse to the customer site (look up MY town centroids), versus the same calculation if the order were fulfilled from its nearest DC instead. Quantify the RM saving on May 2026 alone if every order had been routed from its nearest DC, identify the top 10 customer-route pairs with the worst routing mismatch, and recommend three specific operational changes (which DC to re-stock with which SKU set, which customers to formally re-home, which last-mile carrier contract to renegotiate first). Output a saving estimate with stated assumptions, a map-style scatter (Lon/Lat) of mis-routed orders, and a one-paragraph implementation plan." + POST},
+        ], DESC_ANALYST, persona=['Aishah Mahmud','Aishah Mahmud','Aishah Mahmud']),
+
+        # ── 4. RESEARCHER — market brief ────────────────────────────────────
+        tool(T_RESEARCHER, M365_LIC, M365_ACCT, [
+            {'instr':'Open `m365.cloud.microsoft/chat` > **Agents** > **Researcher** > **Critique Mode**. Paste the prompt below.',
+             'prompt': PRE + "I am the Head of Operations at Sonepar Malaysia, briefing the MD tomorrow for the board review. I need a credible market brief that the board will not be able to poke holes in. Here is exactly what I need from you. Produce a 600-word market brief dated 21 May 2026, fully cited. Ground every part of your answer in public sources from the last 90 days, critique each source you use for credibility and freshness, and walk through them methodically rather than skimming. Cover: (1) ABB AG 2026 H1 price actions on low-voltage products globally and any announced surcharges or allocations affecting APAC distributors — name the products and the percentages. (2) Malaysia electrical equipment demand outlook for H2 2026 — datacenter pipeline (TM Iskandar Puteri, YTL Kulai DC2, Bridge DC Cyberjaya, Princeton Digital JB1, NTT Cyberjaya 6), semicon expansions in Penang (Inari, Vitrox, Greatech, Pentamaster) and Batu Kawan (Intel, Lam Research, AT&S), EV charging roll-out (TNB Electron, Gentari, ChargeSini), expected effect on MV / LV switchgear and VFD demand. (3) FX outlook USD/MYR and EUR/MYR consensus for next 90 days, with three named broker views (Maybank IB, CIMB IB, RHB) and the implication for ABB / Schneider / Legrand cost of goods. (4) Competitor moves — Rexel APAC, WESCO Distribution, Sonepar Group itself (any 2026 Malaysia DC, partnership, acquisition) and a 2-line note on Yee Lee Electrical, Caleffi / Frasers MY, Chip Lee. (5) One contrarian insight — what is the market NOT pricing in for an MY electrical distributor in H2 2026 (e.g. transformer lead-time blow-out, copper supply, MIDA investment-incentive change, ESG procurement gating). When you reply, organise as: Executive Summary (3 bullets), 5 numbered sections, 'What this means for Sonepar MY' call-out box at the end." + POST},
+            {'instr':'Stay in Researcher > switch the mode pill to **Model Council**. Paste the prompt below.',
+             'prompt': PRE + "I want a defensible answer to one strategic question for the MD: should Sonepar Malaysia absorb the ABB 4.2% price increase to defend industrial customer share, fully pass it through to industrial customers at the risk of losing share to Rexel and WESCO, or pass through selectively by sector. Here is exactly what I need from you. Convene Researcher Model Council — get GPT and Claude to produce parallel independent assessments. Ground every position in public ABB pricing communications, Rexel / WESCO investor commentary, and Malaysia distributor channel commentary from the last 90 days. Surface dissent between the two models, mark majority and minority positions. Output a comparison table — Option, Council Verdict, Dissenting View, ASEAN Precedent (cite specific peer transaction year), 12-month margin impact estimate (RM), customer-share risk, recommended hedges. Then write a 60-word recommendation I can paste into the board deck speaker notes." + POST},
+            {'instr':'Stay in Researcher > **Critique Mode**. Paste the regulatory scan prompt.',
+             'prompt': PRE + "Tomorrow's board pack must not be surprised by a regulatory or policy shift. Here is exactly what I need from you. Scan public sources from the last 60 days and produce a 1-page regulatory radar for an MY electrical distributor — cover MIDA / MITI investment-incentive changes affecting datacenter and EV-charging customers, Bank Negara FX intervention signals and EUR/MYR / USD/MYR positioning, KPDN price-control gazettes touching electrical products, ESG-procurement gating in GLC tenders (TNB, Petronas, MMHE, Khazanah-linked datacenter operators), JKR / SIRIM standards updates on MV / LV switchgear, and any cross-border supply-chain controls that affect ABB / Schneider import flow through Singapore IBC. Critique each source. Output a RAG-coded table — Red same-week impact, Amber 30-90 days, Green monitor — with Owner, Counter-action, Earliest Trigger Date." + POST},
+        ], DESC_RESEARCHER, persona=['Aishah Mahmud','Aishah Mahmud','Aishah Mahmud']),
+
+        # ── 5. POWERPOINT — board deck ──────────────────────────────────────
+        tool(T_PPT, M365_LIC, M365_ACCT, [
+            {'instr':'Open `exec-brief-template.pptx` in PowerPoint for the web. **Copilot** (right rail) > **Create presentation from file** > attach `variance-memo.docx`. Paste the prompt below.',
+             'prompt': PRE + "I have a Sonepar brand template open (exec-brief-template.pptx) and I have attached variance-memo.docx. The Researcher market brief and the Analyst risk output are also in this chat session. The MD board review is at 9am tomorrow and the deck must look board-ready, not Copilot-default. Here is exactly what I need from you. Build a 6-slide executive presentation titled 'May 2026 Board Update — Variance, Risk, and the Path to RM 45M' for the Sonepar Malaysia MD. Source content from variance-memo.docx and from the Researcher / Analyst outputs already in this thread — do NOT invent numbers. Slide structure: (1) Title — 'Sonepar Malaysia · May 2026 Board Update', date 21 May 2026, Sonepar blue #005EB8 background, white 60pt headline, MD name and presenter name. (2) May closed — RM 44.86M actual vs RM 43.30M budget displayed as a waterfall, the 3 main negative drivers (FX + ABB price, last-mile, bad debt), the one upside (Commercial +10.4%); chart on left, 5-bullet narrative on right. (3) Three ABB VFD backorders — customer names (Petronas Melaka, Top Glove, UMW Toyota), RM at risk per line (920k / 680k / 800k = 2.4M), proposed mitigation (cross-ship from Singapore IBC, incremental freight RM 38k). (4) Market context — three concise bullets from Researcher (ABB H1 price action, MY datacenter demand outlook, FX outlook), with footnoted citations. (5) Recommended actions — 5 bullets in active voice with owner and date (Aishah / Suresh / Lee / Razif). (6) The RM 45M opportunity — six-up tile showing Copilot adoption across Finance, Supply Chain, Operations, Sales, Customer Service, HR/IT with the annualised RM productivity number from ROI_Summary. Apply the Sonepar brand exactly: navy #0F1C3F + Sonepar blue #005EB8 + accent red #C8102E + Inter / Calibri sans-serif. Include speaker notes — 2 to 3 sentences per slide, MD-pitched, not generic." + POST},
+            {'instr':'Stay in the deck. Highlight slide 6. **Copilot** > paste the speaker-notes prompt.',
+             'prompt': PRE + "I have the 6-slide board deck open. Slide 6 is the RM 45M Copilot opportunity. The MD will ask hard questions on it — he is a former PwC partner. Here is exactly what I need from you. Rewrite the speaker notes for slide 6 only so that a 90-second spoken delivery (a) anchors the productivity claim in the 220 knowledge-worker FTE figure, 2 hours saved per FTE per week, and the RM 25/hr loaded cost, (b) names two specific named Sonepar MY workflows per department where Copilot is already saving time (Finance — month-end variance + AR follow-up; Supply Chain — PO triage + backorder comms; Ops — DC re-stock planning + last-mile routing; Sales — quote generation + customer call prep; CS — ticket triage + RFQ response; HR/IT — JD drafting + helpdesk macro), (c) closes with the explicit 12-month payback claim and the one risk to flag (data-classification readiness in NetSuite and SharePoint). Tone: confident, evidence-backed, no jargon. Return only the speaker notes paragraph, nothing else." + POST},
+            {'instr':'Stay in the deck. **Copilot** > paste the design-pass prompt.',
+             'prompt': PRE + "Aesthetic matters — the MD has seen the Sonepar Group HQ Paris board template and will compare. Here is exactly what I need from you. Do a design pass on all 6 slides — verify every slide uses navy #0F1C3F as primary text, Sonepar blue #005EB8 as accent fills (charts, dividers, headline keylines), accent red #C8102E only for negative variance and risk callouts, white space ratio target 40% per slide, body copy 18-20pt, headlines 32-40pt, charts have unit suffix (RM, %, days), every chart has a one-sentence takeaway in the upper-right, every slide has a footer line 'Sonepar Malaysia · Confidential · 21-May-2026 · MD Board Pack'. If any slide breaks these rules, fix it. Return a checklist of what you changed and why." + POST},
+        ], DESC_PPT, persona=['Aishah Mahmud','Aishah Mahmud','Aishah Mahmud']),
+
+        # ── 6. COPILOT CHAT — grounded answers + Copilot Page ───────────────
+        tool(T_CHAT, FREE_LIC, FREE_ACCT, [
+            {'instr':'Open `m365.cloud.microsoft/chat` > toggle **Work** ON (not Web) > leave model = GPT default. Paste the prompt below.',
+             'prompt': PRE + "I am the Head of Ops at Sonepar Malaysia. I need a single grounded answer pulled across Outlook, Teams, SharePoint, the workbook and the live web — and at the end I want it turned into a Copilot Page my Procurement and Sales leads can co-edit. Here is exactly what I need from you. Search across my Outlook, Teams chats and SharePoint for everything in the last 14 days about: ABB 2026 price increases, the three ABB ACS580 VFD backorders, Petronas Melaka Refinery SO-44218, Top Glove SO-44219, and UMW Toyota SO-44226. Cross-reference with sonepar-ops-workbook.xlsx (Orders + Inventory sheets) and variance-memo.docx. Ground every part of your answer in the inputs that follow. When you reply, organise as: (1) Summary of what the buyer and the customer have already said about each of the three backorders, with email dates and Teams message timestamps. (2) Commitments my team has already made — promised dates, prices, discounts — quoted verbatim with citation. (3) Mismatches between the team's commitment and the system status in the Orders sheet — flag every case where buyer email says one date and NetSuite says another. (4) Ground the ABB price discussion in three public sources from the last 30 days (web). (5) Three follow-up questions I should ask Suresh Kumar (Procurement Lead) this afternoon. Show inline citations for every claim (📎 Outlook, 📎 Teams, 📎 SharePoint, 📊 workbook, 🌐 web). When done, click 'Create Page' at the top of the response, title it 'Backorder situation 21-May', and share it to the #sonepar-ops-leads channel so Razif Hassan and Mei Ling Tan can edit alongside me." + POST},
+            {'instr':'Stay in Copilot Chat. Paste the second grounded prompt.',
+             'prompt': PRE + "Tomorrow morning before the MD review I want to walk in already knowing what every account manager has been saying to their largest customer this week, so the MD's first question — 'are our top accounts at risk?' — has a confident answer. Here is exactly what I need from you. Search Outlook + Teams + SharePoint over the last 7 days for every conversation between Sonepar MY account managers (Razif Hassan, Joel Tan, Daphne Wong, Hairul Anuar, Sasha Lim) and our top 10 customers by YTD revenue (Petronas, MMHE, Lotte Chemical, TM, YTL, Bridge DC, Princeton Digital, Inari, Vitrox, UMW Toyota). Ground every claim in a specific message citation. Output a table — Customer, Account Manager, Last Touchpoint Date, Topic, Sentiment (Green/Amber/Red), Open Commitment, Next Step. Add a 3-bullet 'so what' section: which customer is the biggest churn risk this week, which is the biggest upsell opportunity, and which account manager needs MD-level air-cover for an escalation in the next 48 hours." + POST},
+            {'instr':'Stay in Copilot Chat. Paste the meeting-prep prompt.',
+             'prompt': PRE + "I have 12 minutes between meetings and I need to walk into the 4pm backorder war-room fully briefed. Here is exactly what I need from you. Search Outlook + Teams for the war-room invite I am about to send (or that has been sent) and any prior thread tagged 'backorder' over the last 21 days. Ground in the invite, the Orders sheet, and the variance-memo. When you reply, give me: (1) The 5 specific decisions the war-room needs to make in 30 minutes. (2) The pre-read each attendee should have already opened (deck slide, sheet tab, email thread — name them). (3) Three contentious points where Procurement and Sales are likely to disagree and the data I should bring to settle each. (4) A 60-second opening I should say at the top of the meeting to set the frame. Return as 4 numbered sections, ready to glance at on my phone." + POST},
+        ], DESC_CHAT, persona=['Aishah Mahmud','Aishah Mahmud','Aishah Mahmud']),
+
+        # ── 7. COWORK — autonomous AI coworker ──────────────────────────────
+        tool(T_COWORK, FRONTIER_LIC, M365_ACCT, [
+            {'instr':'Open `m365.cloud.microsoft` > left nav > **Agents** > **Cowork** (Frontier program — Claude). Attach `variance-memo.docx`, `sonepar-ops-workbook.xlsx`, `exec-brief-template.pptx`. Paste the goal below. Watch the task dashboard stream each step; approve sensitive sends when prompted.',
+             'prompt': PRE + "Goal — get me ready for the MD's Monday review by 9am tomorrow. Context: I am Aishah Mahmud, Head of Operations at Sonepar Malaysia. The MD Monday review is at 9am 22-May-2026. You have access to my variance-memo.docx, sonepar-ops-workbook.xlsx, exec-brief-template.pptx, Outlook, Teams, SharePoint and OneDrive. Plan and execute the following as an autonomous workflow — show me each step in the task dashboard and PAUSE for my approval before any external send. (1) Read variance-memo.docx and the Orders + Variance_May2026 sheets in sonepar-ops-workbook.xlsx. Produce a 5-bullet 'What the MD needs to know' in the dashboard. (2) Identify the three ABB ACS580 VFD backorders (SO-44218 Petronas Melaka, SO-44219 Top Glove, SO-44226 UMW Toyota), look up the responsible buyer (Suresh Kumar) in Outlook, and prepare a draft email to ABB Helsinki Account Manager requesting a Singapore IBC cross-ship — hold for my approval before sending. (3) Build the MD board deck from exec-brief-template.pptx using the variance numbers and the Researcher market brief in this chat. Save to SharePoint > Sonepar MY > Board > 'MD Board Update 22-May-2026.pptx'. (4) Schedule a 30-minute 'Backorder war-room' in Teams for today at 4pm Kuala Lumpur time with @Procurement (Suresh Kumar), @Sales (Razif Hassan), and @Aishah — hold the invite for my approval before it sends. (5) Open a Loop checklist titled 'May variance follow-ups' with 5 items (EUR FX-cover review with Treasury — owner Aishah, due 23 May; last-mile carrier renegotiation — owner Razif, due 30 May; credit-limit tightening for >60-day distributors — owner Lee Wai Mun, due 28 May; June pull-forward kickoff for 3 slipped industrial projects — owner Aishah, due 24 May; ABB surcharge pass-through framework — owner Suresh, due 27 May), each assigned with a due date. (6) Draft a Teams message to the MD that links to the SharePoint deck, the Loop checklist, and includes the single consolidated RM exposure number from the Analyst run — hold for my approval before sending. Use the Frontier Claude model. Stop and ask me if any step needs a judgement call. When done, summarise in the dashboard what you executed, what is queued, and what is waiting on my approval." + POST},
+            {'instr':'Same Cowork session, after step 6 completes. Paste the second goal — overnight monitoring + Monday morning prep.',
+             'prompt': PRE + "Second goal — between now (9pm 21-May) and 7:30am tomorrow (22-May), watch my inbox + Teams for any ABB Helsinki reply, any Petronas / Top Glove / UMW Toyota escalation, and any MD message. Here is exactly what I need from you. (a) If ABB Helsinki replies on the cross-ship request, summarise the reply in plain English and post it to the #sonepar-ops-leads Teams channel, tagging Suresh Kumar — but DO NOT auto-reply to ABB without my approval. (b) If any of the three backorder customers (Petronas Procurement, Top Glove Engineering, UMW Toyota Production) sends a follow-up, prioritise it as Red, draft a holding reply that does not over-promise, and hold for my approval at 7:30am. (c) If the MD messages, send me a phone-friendly summary on my Teams mobile and do not respond on my behalf. (d) At 7:30am sharp, post a 'Monday Morning Briefing' Copilot Page to the #sonepar-ops-leads channel with: overnight events, the war-room outcome from yesterday, the consolidated risk position, the deck link, and my top 3 priorities for the day. Stream every step in the task dashboard." + POST},
+            {'instr':'Same Cowork session. Paste the third goal — RM 45M Copilot rollout coordination.',
+             'prompt': PRE + "Third goal — the MD will absolutely ask 'how do we get the RM 45M Copilot productivity story moving in the next 60 days'. Here is exactly what I need from you. Plan and propose (do NOT execute external sends without approval): (1) Draft a 60-day Copilot adoption plan across Finance, Supply Chain, Operations, Sales, Customer Service, HR / IT — 220 knowledge-worker FTEs, target 2 hours saved per FTE per week, anchor on the ROI_Summary numbers. (2) Identify a named workstream owner per function from the Sonepar MY org (Lee Wai Mun — Finance, Suresh Kumar — Supply Chain, Aishah Mahmud — Operations, Razif Hassan — Sales, Sasha Lim — CS, Hairul Anuar — HR/IT). (3) Schedule six 30-minute kickoff meetings (one per function) across this week and next, holding each invite for my approval. (4) Create a Loop workspace 'Sonepar MY Copilot — RM 45M' with one page per function, each with the 3 starter use cases, the named owner, the success metric, and the 30/60/90-day milestones. (5) Draft a one-page MD memo summarising the plan, ready to go into Friday's exec pack, save to SharePoint > Sonepar MY > Strategy. Stream every step in the dashboard, pause for approval on the meeting invites and the MD memo send." + POST},
+        ], DESC_COWORK, persona=['Aishah Mahmud','Aishah Mahmud','Aishah Mahmud']),
+    ],
+
+    # ── Storyboard — 30-minute live demo arc ────────────────────────────────
+    storyboard=[
+        {
+            'ex': 1,
+            'title': '0–10 min · Set the Scene — Variance Memo + Market Brief',
+            'minutes': 10,
+            'mode': 'Show & Tell',
+            'summary': 'Aishah opens a blank Word doc, drafts the May variance memo with Copilot in 90 seconds. Then she flips to Copilot Researcher in Critique + Model Council mode to pull a fully cited market brief on ABB H1 pricing, MY datacenter demand and FX outlook. Two deliverables, two minutes of Copilot time.',
+            'tasks': [
+                {'verb':'Draft the May variance memo from closed numbers + ABB backorder appendix','toolId':T_WORD,'mode':'Show & Tell'},
+                {'verb':'Run Researcher Critique + Model Council for the MD market brief','toolId':T_RESEARCHER,'mode':'Show & Tell'},
+            ],
+        },
+        {
+            'ex': 2,
+            'title': '10–20 min · Analyse & Decide — Workbook + Python Risk',
+            'minutes': 10,
+            'mode': 'Hands-on',
+            'summary': 'Switch to sonepar-ops-workbook.xlsx — Excel Copilot adds DaysOfCover, applies conditional formatting, builds the risk-by-sector chart, and cross-checks every BACKORDER against on-hand. Then hand off to Analyst — a full Python Monte Carlo on the three ABB VFD backorders gives the MD a defensible single RM exposure number with P5 / P50 / P95.',
+            'tasks': [
+                {'verb':'Apply DaysOfCover, conditional formatting, risk-by-sector chart, backorder cross-check','toolId':T_EXCEL,'mode':'Hands-on'},
+                {'verb':'Run the Python risk-score model + Monte Carlo on the three ABB VFD backorders','toolId':T_ANALYST,'mode':'Hands-on'},
+            ],
+        },
+        {
+            'ex': 3,
+            'title': '20–25 min · Communicate & Coordinate — Deck + Grounded Copilot Page',
+            'minutes': 5,
+            'mode': 'Hands-on',
+            'summary': 'PowerPoint Copilot builds the 6-slide MD board deck from the variance memo, the market brief, and the brand template in under 60 seconds. Aishah switches to Copilot Chat, runs ONE grounded query across Outlook, Teams, SharePoint, the workbook and the live web on the three backorders, then turns the answer into a Copilot Page co-edited live by Procurement and Sales.',
+            'tasks': [
+                {'verb':'Generate the 6-slide board deck from template + variance memo + Researcher brief','toolId':T_PPT,'mode':'Hands-on'},
+                {'verb':'Run grounded multi-source query and promote it to a shared Copilot Page','toolId':T_CHAT,'mode':'Hands-on'},
+            ],
+        },
+        {
+            'ex': 4,
+            'title': '25–30 min · Cowork — The Autonomous AI Coworker',
+            'minutes': 5,
+            'mode': 'Show & Tell',
+            'summary': 'One goal statement — "Get me ready for the MD review by 9am tomorrow" — and Cowork (Frontier program, Claude) plans the workflow itself, streams every step on the task dashboard, and pauses for approval on the ABB Helsinki email, the war-room Teams invite, and the MD message. End the demo with the dashboard live — six tasks in flight, three queued for approval, and Aishah closing her laptop.',
+            'tasks': [
+                {'verb':'Issue one autonomous goal to Cowork (Frontier, Claude) — watch dashboard + approval pauses','toolId':T_COWORK,'mode':'Show & Tell'},
+            ],
+        },
+    ],
+
+    personas=[{
+        'name': 'Aishah Mahmud',
+        'title': 'Head of Operations · Sonepar Malaysia',
+        'narrative': 'Aishah has 12 years on the Sonepar MY ops bench — from buyer to DC manager to Head of Ops. She is the MD\'s right hand and the one named on the war-room invite when an ABB Helsinki backorder threatens a Petronas SO. Today she has 30 minutes before the MD board review and she runs the entire prep loop from Copilot Chat.',
+    }],
+    geo='MY'
+))
+
+print(f"Industries batch 13 written: {len(INDUSTRIES_13)} entries")
