@@ -83169,6 +83169,50 @@ window.HUB_DATA = {
           notebookMeta: null
         },
         {
+          tool: '📓 Copilot Notebook',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading. Frontier preview (May 2026): 🔗 reference SharePoint sites and OneNote notebooks; 🌐 add external web links as references; 📄 generate Word documents from notebook content; 📊 generate PowerPoint presentations from notebook content; 🧠 explore relationships with interactive Mind Maps; 👥 share notebooks with a Microsoft 365 Group.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > **Notebook** tab > **+ New Notebook**. Title it "Sonepar MY · MD Board Pack May 2026". Add up to 5 sources: `variance-memo.docx`, `sonepar-ops-workbook.xlsx`, `exec-brief-template.pptx`, `customer-rfq.docx`, and `month-end-variance.md`. Set the persistent Instructions field with the system prompt below, then run the first user prompt.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. All sources are loaded into this notebook (variance-memo.docx, sonepar-ops-workbook.xlsx, exec-brief-template.pptx, customer-rfq.docx, month-end-variance.md). I need a single synthesised pre-read the MD can absorb in 5 minutes before tomorrow\'s board review. Here is exactly what I need from you. Produce a 12-bullet \'Board Pre-Read\' synthesis cross-referencing every source. Cover: (1) May revenue close vs budget with the three top variance drivers and RM impact; (2) Three ABB ACS580 VFD backorders — customer name, SO#, RM exposure, customer promise date, ABB Helsinki ETA, Singapore IBC cross-ship ETA; (3) Datacenter + semicon upside signal — named customers, RM contribution; (4) Last-mile cost over-run with proposed carrier renegotiation timeline; (5) Tan Brothers bad-debt status and the credit-tightening trigger; (6) FX + ABB price-increase pass-through framework for July onwards; (7) The five Recommended Actions from the variance memo restated with owner, due date, RM benefit; (8) The single consolidated RM exposure number for tomorrow; (9) Two questions the MD will absolutely ask and the data-grounded answer for each; (10) One contrarian risk the board is not currently focusing on; (11) The decision the board must take in 48 hours; (12) The follow-up war-room owner and time. Ground every bullet in a specific source and cite the file at the end of every bullet. Tone: principal-grade, no jargon, no marketing language. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Stay in the same notebook. Click **Quick Create** > **Audio Overview**. Use the prompt below to shape the briefing podcast.',
+              prompt: 'Quick Create: Audio Overview, 7 minutes, formal narration tone, focused on the 12-bullet Board Pre-Read synthesis above. Listeners are the Sonepar Malaysia ExCo (MD, Head of Ops Aishah, Head of Sales Razif, Procurement Lead Suresh, Finance Director Lee Wai Mun) listening on their commute to tomorrow\'s 9am board review. Open with the headline RM exposure number, walk through the three ABB VFD backorders, the May variance close, the datacenter+semicon upside, the recommended actions with owners and due dates, and close with the one contrarian risk and the 48-hour board decision.'
+            },
+            {
+              instr: 'Stay in the notebook. Click **Quick Create** > **Page** (or **Presentation**) to spin off a shareable artefact for the war-room.',
+              prompt: 'Quick Create: Page titled \'Sonepar MY · Board Pre-Read 22-May-2026\'. Lift the 12-bullet synthesis above, format as a clean shareable page with sections — Headlines, Variance, Backorders, Upside, Recommendations, Decisions Requested. Add an inline RAG-coded table for the three ABB VFD backorders. Add a footer line citing every source file used. Set the page sharing to the #sonepar-ops-leads Teams channel so Razif Hassan, Suresh Kumar, Mei Ling Tan and Lee Wai Mun can co-edit alongside Aishah before the 9am board review.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Aishah Mahmud',
+            'Aishah Mahmud',
+            'Aishah Mahmud'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: {
+            sources: [
+              '/variance-memo.docx',
+              '/sonepar-ops-workbook.xlsx',
+              '/exec-brief-template.pptx',
+              '/customer-rfq.docx',
+              '/month-end-variance.md'
+            ],
+            instructions: 'Trigger: "World #1 B2B electrical distributor — RM 800M MY revenue, 6 DCs, 7,000+ customers, ABB / Schneider / Siemens / Legrand / Eaton lines, datacenter + semicon + Petronas + EV demand all hitting at once.". This notebook is the Sonepar Malaysia grounded source for the emergency Board variance review — the Group CFO and Chief of Staff convene the workstream. Synthesise across ALL 5 sources. Use Bursa / IDX dual-listing disclosure and SCM / OJK enquiries as the governance reference. Every answer must cite the source file by name and the tab / section. Frame the output for the Board paper + variance bridge + recovery programme. Classify every divisional recommendation as Red / Amber / Green and tie to the EBITDA bridge component. Tone: precise, evidence-only, never speculative.',
+            guide: '/00_Copilot_Notebook_Demo_Guide.docx',
+            instructionsID: 'Pemicu: "World #1 B2B electrical distributor — RM 800M MY revenue, 6 DCs, 7,000+ customers, ABB / Schneider / Siemens / Legrand / Eaton lines, datacenter + semicon + Petronas + EV demand all hitting at once.". Notebook ini adalah sumber tertanam Sonepar Malaysia untuk review variance Board darurat — Group CFO and Chief of Staff memimpin workstream. Sintesakan SEMUA 5 sumber. Gunakan Bursa / IDX dual-listing disclosure and SCM / OJK enquiries sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk Board paper + bridge variance + program recovery. Klasifikasikan setiap rekomendasi divisional sebagai Merah / Kuning / Hijau dan kaitkan ke komponen EBITDA bridge. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.'
+          }
+        },
+        {
           tool: '🤝 Cowork (Frontier)',
           license: 'Microsoft 365 Copilot + Frontier Program',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
