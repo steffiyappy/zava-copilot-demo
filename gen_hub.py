@@ -5950,7 +5950,7 @@ const OTHER_PAGES = [
     name: 'IHH Healthcare — Copilot Immersion',
     desc: 'Healthcare conglomerate immersion (29 Apr 2026 workshop). 4-exercise day-in-the-life storyboard with Researcher, Analyst, Cowork, and Agent Builder.',
     url: 'https://steffiyappy.github.io/ihh-copilot-immersion/',
-    password: 'IHHCopilot29Apr',
+    password: '',
     tag: 'Workshop',
     keywords: 'IHH healthcare hospital pantai gleneagles immersion researcher analyst cowork builder'
   },
@@ -5962,7 +5962,7 @@ const OTHER_PAGES = [
     name: 'Contoso Malaysia — HR Copilot Immersion',
     desc: 'HR-focused Copilot immersion for a Malaysian conglomerate (5 May 2026). Talent, recruitment, performance, payroll workflows with Microsoft 365 Copilot.',
     url: 'https://steffiyappy.github.io/contoso-hr-copilot-immersion/',
-    password: 'HRImmersion5May',
+    password: '',
     tag: 'HR Workshop',
     keywords: 'contoso malaysia HR human resources talent recruitment payroll performance immersion'
   },
@@ -5974,7 +5974,7 @@ const OTHER_PAGES = [
     name: 'Contoso Trade — HR Copilot Immersion',
     desc: 'Trade & cross-border HR scenarios using paid Microsoft 365 Copilot features (Researcher, Analyst, Frontier Cowork, Agent Builder).',
     url: 'https://steffiyappy.github.io/contoso-trade-hr-copilot-immersion/',
-    password: 'THRCI',
+    password: '',
     tag: 'HR Workshop · Frontier',
     keywords: 'contoso trade HR cross-border M365 paid features cowork researcher frontier'
   },
@@ -5986,7 +5986,7 @@ const OTHER_PAGES = [
     name: 'Contoso Medical — Finance & Procurement',
     desc: 'Finance, procurement, and capital-allocation Copilot scenarios for a medical-devices customer (6 May 2026). Variance analysis, supplier negotiation, board pack.',
     url: 'https://steffiyappy.github.io/contoso-medical-finance-immersion/',
-    password: 'FinanceImmersion6May',
+    password: '',
     tag: 'Finance Workshop',
     keywords: 'contoso medical finance procurement variance supplier capital board pack immersion'
   },
@@ -5998,7 +5998,7 @@ const OTHER_PAGES = [
     name: 'Kenanga — C-Suite Immersion (Contoso)',
     desc: 'C-Suite Copilot immersion modelled for Kenanga Investment Bank. Group CEO/CFO/COO/CRO scenarios — board narrative, risk lens, investor briefing, executive correspondence with Researcher, Analyst, and Frontier Cowork.',
     url: 'https://steffiyappy.github.io/contoso-csuite-immersion/',
-    password: 'KenangaCSuite2026',
+    password: '',
     tag: 'C-Suite Workshop',
     keywords: 'kenanga contoso C-suite CEO CFO COO CRO board executive immersion researcher analyst cowork investment bank'
   },
@@ -6010,7 +6010,7 @@ const OTHER_PAGES = [
     name: 'Rivanta — CTO Immersion',
     desc: 'CTO-focused Copilot immersion for Rivanta. Engineering leadership scenarios — architecture review, vendor evaluation, incident retrospective, talent planning. Researcher Critique Mode, Notebook on technical docs, Agent Builder for engineering Q&A.',
     url: 'https://steffiyappy.github.io/rivanta-cto-immersion/',
-    password: 'RivantaTech2026',
+    password: '',
     tag: 'CTO Workshop',
     keywords: 'rivanta CTO chief technology officer engineering architecture vendor incident retrospective immersion researcher notebook agent builder'
   },
@@ -6022,7 +6022,7 @@ const OTHER_PAGES = [
     name: 'Contoso — Cowork Immersion',
     desc: 'Frontier-tier Copilot Cowork immersion (14 May 2026). Day-in-the-life of a Group CFO using Cowork to delegate 5 parallel sub-tasks — board pack draft, lender holding lines, IR alignment email, risk committee scheduling, ExCo Teams update.',
     url: 'https://steffiyappy.github.io/contoso-cowork-immersion/',
-    password: 'ContosoCowork14May',
+    password: '',
     tag: 'Cowork Workshop · Frontier',
     keywords: 'contoso cowork frontier delegation parallel CFO board pack lender investor risk committee teams immersion'
   },
@@ -6034,7 +6034,7 @@ const OTHER_PAGES = [
     name: 'Contoso Active — Operations Copilot Immersion',
     desc: 'Operations-focused Copilot immersion (May 2026). Day-in-the-life of operations leaders using Microsoft 365 Copilot, Researcher, Analyst, Cowork, and Agent Builder to accelerate operational decision-making, incident response, supplier coordination, and shop-floor reporting.',
     url: 'https://steffiyappy.github.io/contoso-active-copilot-immersion/',
-    password: 'ContosoActiveMay2026',
+    password: '',
     tag: 'Operations Workshop',
     keywords: 'contoso active operations operational ops immersion researcher analyst cowork agent builder incident supplier shop floor may 2026'
   },
@@ -6046,7 +6046,7 @@ const OTHER_PAGES = [
     name: 'Alliance Bank Malaysia — Prompt-a-thon',
     desc: 'Alliance Bank Malaysia × Microsoft 365 Copilot Prompt-a-thon (7 May 2026). 8 team packs across Consumer Banking, SME, Digital Workplace, Finance, Risk, Digital Tech, Comms, and Strategy.',
     url: 'https://steffiyappy.github.io/ABMB7May/',
-    password: 'ABMB7May',
+    password: '',
     teamGroups: [
       {
         label: '7 May — Prompt-a-thon',
@@ -6076,7 +6076,7 @@ const OTHER_PAGES = [
     name: 'IOI Properties — Copilot Chat',
     desc: 'Customer-specific Copilot Chat demo for IOI Properties Group (Malaysian property developer). Tailored prompts and use cases.',
     url: 'https://steffiyappy.github.io/ioipg-copilotchat/',
-    password: 'IOIPGCopilotChat',
+    password: '',
     tag: 'Customer Demo',
     keywords: 'IOI properties property developer real estate malaysia copilot chat'
   },
@@ -6089,8 +6089,8 @@ const OTHER_PAGES = [
     desc: 'Cagamas x Microsoft Copilot Challenge Week — Prompt-a-thon (12 May 2026) and Agent-a-thon (13 May 2026) materials. 6 team packs each, clue-based tasks, agent builds in Copilot Studio.',
     url: 'https://steffiyappy.github.io/Cagamas1213May/',
     passwords: [
-      {label: 'Prompt-a-thon (12 May)', value: 'Cagamas12May'},
-      {label: 'Agent-a-thon (13 May)',  value: 'Cagamas13May'}
+      {label: 'Prompt-a-thon (12 May)', value: ''},
+      {label: 'Agent-a-thon (13 May)',  value: ''}
     ],
     facilitatorUrl: 'https://steffiyappy.github.io/Cagamas1213May/?facilitator',
     facilitatorLabel: 'Facilitator view (bypass all password gates)',
@@ -6105,7 +6105,7 @@ const OTHER_PAGES = [
     name: 'Malakoff — Power & Utilities Copilot Immersion',
     desc: 'Independent Power Producer (IPP) immersion modelled for Malakoff Corporation. Power generation portfolio, plant operations, ESG decarbonisation, regulatory engagement, and project finance scenarios with Researcher, Analyst, Frontier Cowork, and Agent Builder. (Workshop dates: 20 May & 10 June 2026 — content still being finalised.)',
     url: 'https://steffiyappy.github.io/contoso-power-copilot-immersion/',
-    password: 'Malakoff20May10June',
+    password: '',
     tag: 'Power Workshop · Frontier',
     keywords: 'malakoff power utilities IPP independent power producer generation plant operations ESG decarbonisation regulatory project finance immersion researcher analyst cowork frontier agent builder may june 2026'
   }
