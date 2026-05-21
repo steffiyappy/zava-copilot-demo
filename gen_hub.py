@@ -6019,12 +6019,12 @@ const OTHER_PAGES = [
     icon: '🤝',
     color: '#9333EA',
     accent: '#6B21A8',
-    name: 'Contoso — Cowork Immersion',
-    desc: 'Frontier-tier Copilot Cowork immersion (14 May 2026). Day-in-the-life of a Group CFO using Cowork to delegate 5 parallel sub-tasks — board pack draft, lender holding lines, IR alignment email, risk committee scheduling, ExCo Teams update.',
+    name: 'Contoso — Cowork &amp; Researcher Immersion',
+    desc: 'Frontier-tier Copilot Cowork + Researcher (Critique &amp; Model Council) immersion (May 2026). Day-in-the-life of a Group CFO using Cowork to delegate 5 parallel sub-tasks — board pack draft, lender holding lines, IR alignment email, risk committee scheduling, ExCo Teams update — plus Researcher deep-dives on CBAM impact, counterparty risk and earnings hostile-Q prep. 27 downloadable sample files across 10 use cases.',
     url: 'https://steffiyappy.github.io/contoso-cowork-immersion/',
-    password: '',
-    tag: 'Cowork Workshop · Frontier',
-    keywords: 'contoso cowork frontier delegation parallel CFO board pack lender investor risk committee teams immersion'
+    password: 'ContosoFrontier21May',
+    tag: 'Cowork + Researcher Workshop · Frontier',
+    keywords: 'contoso cowork researcher critique model council frontier delegation parallel CFO board pack lender investor risk committee teams immersion CBAM'
   },
   {
     section: 'Customer Workshops',
