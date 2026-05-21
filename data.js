@@ -83253,17 +83253,21 @@ window.HUB_DATA = {
         {
           ex: 1,
           title: '0–10 min · Set the Scene — Variance Memo + Market Brief',
+          titleID: '0–10 menit · Set the Scene — Memo Varian + Market Brief',
           minutes: 10,
           mode: 'Show & Tell',
           summary: 'Aishah opens a blank Word doc, drafts the May variance memo with Copilot in 90 seconds. Then she flips to Copilot Researcher in Critique + Model Council mode to pull a fully cited market brief on ABB H1 pricing, MY datacenter demand and FX outlook. Two deliverables, two minutes of Copilot time.',
+          summaryID: 'Aishah membuka dokumen Word kosong, draft memo varian Mei dengan Copilot dalam 90 detik. Kemudian beralih ke Copilot Researcher mode Critique + Model Council untuk market brief bersitasi penuh tentang harga ABB H1, demand datacenter MY dan outlook FX.',
           tasks: [
             {
               verb: 'Draft the May variance memo from closed numbers + ABB backorder appendix',
+              verbID: 'Draft memo varian Mei dari angka tertutup + lampiran backorder ABB',
               toolId: '📝 Copilot in Word',
               mode: 'Show & Tell'
             },
             {
               verb: 'Run Researcher Critique + Model Council for the MD market brief',
+              verbID: 'Jalankan Researcher Critique + Model Council untuk market brief MD',
               toolId: '🔍 Researcher',
               mode: 'Show & Tell'
             }
@@ -83272,17 +83276,21 @@ window.HUB_DATA = {
         {
           ex: 2,
           title: '10–20 min · Analyse & Decide — Workbook + Python Risk',
+          titleID: '10–20 menit · Analisis & Keputusan — Workbook + Python Risk',
           minutes: 10,
           mode: 'Hands-on',
           summary: 'Switch to sonepar-ops-workbook.xlsx — Excel Copilot adds DaysOfCover, applies conditional formatting, builds the risk-by-sector chart, and cross-checks every BACKORDER against on-hand. Then hand off to Analyst — a full Python Monte Carlo on the three ABB VFD backorders gives the MD a defensible single RM exposure number with P5 / P50 / P95.',
+          summaryID: 'Beralih ke sonepar-ops-workbook.xlsx — Excel Copilot menambahkan DaysOfCover, conditional formatting, chart risk-by-sector, dan cross-check setiap BACKORDER. Lalu serahkan ke Analyst — Monte Carlo Python pada 3 backorder ABB VFD memberi MD angka exposure tunggal P5/P50/P95.',
           tasks: [
             {
               verb: 'Apply DaysOfCover, conditional formatting, risk-by-sector chart, backorder cross-check',
+              verbID: 'Terapkan DaysOfCover, conditional formatting, chart risk-by-sector, cross-check backorder',
               toolId: '📊 Copilot in Excel',
               mode: 'Hands-on'
             },
             {
               verb: 'Run the Python risk-score model + Monte Carlo on the three ABB VFD backorders',
+              verbID: 'Jalankan Python risk-score + Monte Carlo pada 3 backorder ABB VFD',
               toolId: '📊 Analyst',
               mode: 'Hands-on'
             }
@@ -83291,17 +83299,21 @@ window.HUB_DATA = {
         {
           ex: 3,
           title: '20–25 min · Communicate & Coordinate — Deck + Grounded Copilot Page',
+          titleID: '20–25 menit · Komunikasi & Koordinasi — Deck + Grounded Copilot Page',
           minutes: 5,
           mode: 'Hands-on',
           summary: 'PowerPoint Copilot builds the 6-slide MD board deck from the variance memo, the market brief, and the brand template in under 60 seconds. Aishah switches to Copilot Chat, runs ONE grounded query across Outlook, Teams, SharePoint, the workbook and the live web on the three backorders, then turns the answer into a Copilot Page co-edited live by Procurement and Sales.',
+          summaryID: 'PowerPoint Copilot membangun deck 6-slide untuk MD dari memo varian, market brief, dan brand template dalam <60 detik. Aishah beralih ke Copilot Chat, satu query grounded di Outlook/Teams/SharePoint/workbook/web — diubah jadi Copilot Page yang di-co-edit Procurement & Sales.',
           tasks: [
             {
               verb: 'Generate the 6-slide board deck from template + variance memo + Researcher brief',
+              verbID: 'Generate deck 6-slide dari template + memo varian + Researcher brief',
               toolId: '🎯 Copilot in PowerPoint',
               mode: 'Hands-on'
             },
             {
               verb: 'Run grounded multi-source query and promote it to a shared Copilot Page',
+              verbID: 'Jalankan query grounded multi-source dan promote ke Copilot Page bersama',
               toolId: '💬 Microsoft 365 Copilot Chat',
               mode: 'Hands-on'
             }
@@ -83310,12 +83322,15 @@ window.HUB_DATA = {
         {
           ex: 4,
           title: '25–30 min · Cowork — The Autonomous AI Coworker',
+          titleID: '25–30 menit · Cowork — Rekan Kerja AI Otonom',
           minutes: 5,
           mode: 'Show & Tell',
           summary: 'One goal statement — "Get me ready for the MD review by 9am tomorrow" — and Cowork (Frontier program, Claude) plans the workflow itself, streams every step on the task dashboard, and pauses for approval on the ABB Helsinki email, the war-room Teams invite, and the MD message. End the demo with the dashboard live — six tasks in flight, three queued for approval, and Aishah closing her laptop.',
+          summaryID: 'Satu pernyataan tujuan — "Siapkan saya untuk review MD jam 9 pagi besok" — dan Cowork (Frontier, Claude) merencanakan workflow sendiri, streaming setiap langkah di dashboard, dan menjeda untuk persetujuan email ABB Helsinki, invite Teams war-room, dan pesan MD.',
           tasks: [
             {
               verb: 'Issue one autonomous goal to Cowork (Frontier, Claude) — watch dashboard + approval pauses',
+              verbID: 'Berikan satu tujuan otonom ke Cowork (Frontier, Claude) — pantau dashboard + jeda persetujuan',
               toolId: '🤝 Cowork (Frontier)',
               mode: 'Show & Tell'
             }
@@ -83325,8 +83340,35 @@ window.HUB_DATA = {
       personas: [
         {
           name: 'Aishah Mahmud',
-          title: 'Head of Operations · Sonepar Malaysia',
-          narrative: 'Aishah has 12 years on the Sonepar MY ops bench — from buyer to DC manager to Head of Ops. She is the MD\'s right hand and the one named on the war-room invite when an ABB Helsinki backorder threatens a Petronas SO. Today she has 30 minutes before the MD board review and she runs the entire prep loop from Copilot Chat.'
+          role: 'Head of Operations · Sonepar Malaysia',
+          roleID: 'Kepala Operasi · Sonepar Malaysia',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'Microsoft 365 Copilot',
+          color: '#005EB8'
+        },
+        {
+          name: 'Suresh Kumar',
+          role: 'Procurement Lead · Sonepar Malaysia',
+          roleID: 'Kepala Pengadaan · Sonepar Malaysia',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'Microsoft 365 Copilot',
+          color: '#0F1C3F'
+        },
+        {
+          name: 'Razif Hassan',
+          role: 'Head of Sales · Sonepar Malaysia',
+          roleID: 'Kepala Penjualan · Sonepar Malaysia',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'Microsoft 365 Copilot',
+          color: '#C8102E'
+        },
+        {
+          name: 'Lee Wai Mun',
+          role: 'Finance Director · Sonepar Malaysia',
+          roleID: 'Direktur Keuangan · Sonepar Malaysia',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'Microsoft 365 Copilot',
+          color: '#059669'
         }
       ],
       geo: 'MY',
