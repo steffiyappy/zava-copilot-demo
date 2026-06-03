@@ -2096,8 +2096,10 @@ function setLocale(L){
     const el=document.getElementById('loc-'+x);
     if(el) el.classList.toggle('active',x===L);
   });
-  buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar(); buildCwLibSidebar();
+  buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar(); buildCwLibSidebar(); buildScoutLibSidebar(); buildSpLibSidebar();
   if(currentGridTab==='cwlib'){ renderCwLibGrid(); if(_cwLibCurrentEntryId) showCwLibFor(_cwLibCurrentEntryId); }
+  if(currentGridTab==='scoutlib'){ renderScoutLibGrid(); }
+  if(currentGridTab==='splib'){ renderSpLibGrid(); }
   _applyLocaleLabels();
   if(_currentItem && document.getElementById('detail-view').style.display!=='none'){
     // Capture open tool key + scroll position BEFORE re-render so we can
@@ -5536,7 +5538,7 @@ function showScoutLibFor(entryId){
     // Create the detail view container on first use
     scd=document.createElement('div'); scd.id='scoutlib-detail-view'; scd.className='cwlib-detail-view';
     scd.innerHTML='<button class="detail-hero-back" onclick="backToScoutLib()">&larr; Back to Scout Library</button>'+
-      '<div class="cwlib-detail-hero scout-hero"><div class="cwlib-detail-title" id="scoutlib-detail-title"></div><div class="cwlib-detail-sub" id="scoutlib-detail-sub"></div></div>'+
+      '<div class="cwlib-detail-hero scout-hero"><div class="detail-hero-title" id="scoutlib-detail-title"></div><div class="detail-hero-tagline" id="scoutlib-detail-sub"></div></div>'+
       '<div id="scoutlib-detail-cards"></div>';
     document.querySelector('main.main').appendChild(scd);
   }
@@ -5641,7 +5643,7 @@ function showSpLibFor(entryId){
   if(!spd){
     spd=document.createElement('div'); spd.id='splib-detail-view'; spd.className='cwlib-detail-view';
     spd.innerHTML='<button class="detail-hero-back" onclick="backToSpLib()">&larr; Back to SharePoint AI Library</button>'+
-      '<div class="cwlib-detail-hero sp-hero"><div class="cwlib-detail-title" id="splib-detail-title"></div><div class="cwlib-detail-sub" id="splib-detail-sub"></div></div>'+
+      '<div class="cwlib-detail-hero sp-hero"><div class="detail-hero-title" id="splib-detail-title"></div><div class="detail-hero-tagline" id="splib-detail-sub"></div></div>'+
       '<div id="splib-detail-cards"></div>';
     document.querySelector('main.main').appendChild(spd);
   }
@@ -7179,6 +7181,8 @@ async function _analyticsAuthPrompt(){
 buildSidebar();
 buildDeptSidebar();
 buildCwLibSidebar();
+buildScoutLibSidebar();
+buildSpLibSidebar();
 buildOtherSidebar();
 buildGrid();
 buildDeptGrid();
