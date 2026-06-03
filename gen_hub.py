@@ -4799,6 +4799,8 @@ function showGridTab(tab){
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
   const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  const scd=document.getElementById('scoutlib-detail-view'); if(scd) scd.style.display='none';
+  const spd=document.getElementById('splib-detail-view'); if(spd) spd.style.display='none';
   _currentItem=null;
   document.getElementById('gtab-ind').classList.toggle('active',tab==='ind');
   document.getElementById('gtab-dept').classList.toggle('active',tab==='dept');
@@ -4828,6 +4830,8 @@ function showCwLibTab(){
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
   const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  const scd=document.getElementById('scoutlib-detail-view'); if(scd) scd.style.display='none';
+  const spd=document.getElementById('splib-detail-view'); if(spd) spd.style.display='none';
   _currentItem=null;
   document.getElementById('gtab-ind').classList.remove('active');
   document.getElementById('gtab-dept').classList.remove('active');
@@ -4913,6 +4917,8 @@ function showOtherTab(){
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
   const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  const scd=document.getElementById('scoutlib-detail-view'); if(scd) scd.style.display='none';
+  const spd=document.getElementById('splib-detail-view'); if(spd) spd.style.display='none';
   _currentItem=null;
   document.getElementById('gtab-ind').classList.remove('active');
   document.getElementById('gtab-dept').classList.remove('active');
@@ -5395,6 +5401,8 @@ function showCwLibFor(entryId){
 
 function backToCwLib(){
   const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  const scd=document.getElementById('scoutlib-detail-view'); if(scd) scd.style.display='none';
+  const spd=document.getElementById('splib-detail-view'); if(spd) spd.style.display='none';
   showCwLibTab();
 }
 
@@ -5541,8 +5549,7 @@ function showScoutLibFor(entryId){
   if(!scd){
     // Create the detail view container on first use
     scd=document.createElement('div'); scd.id='scoutlib-detail-view'; scd.className='cwlib-detail-view';
-    scd.innerHTML='<button class="detail-hero-back" onclick="backToScoutLib()">&larr; Back to Scout Library</button>'+
-      '<div class="cwlib-detail-hero scout-hero"><div class="detail-hero-title" id="scoutlib-detail-title"></div><div class="detail-hero-tagline" id="scoutlib-detail-sub"></div></div>'+
+    scd.innerHTML='<div class="detail-hero cwlib-detail-hero scout-hero"><button class="detail-hero-back" onclick="backToScoutLib()">&larr; Back to Scout Library</button><div class="detail-hero-title" id="scoutlib-detail-title"></div><div class="detail-hero-tagline" id="scoutlib-detail-sub"></div></div>'+
       '<div id="scoutlib-detail-cards"></div>';
     document.querySelector('main.main').appendChild(scd);
   }
@@ -5650,8 +5657,7 @@ function showSpLibFor(entryId){
   let spd=document.getElementById('splib-detail-view');
   if(!spd){
     spd=document.createElement('div'); spd.id='splib-detail-view'; spd.className='cwlib-detail-view';
-    spd.innerHTML='<button class="detail-hero-back" onclick="backToSpLib()">&larr; Back to SharePoint AI Library</button>'+
-      '<div class="cwlib-detail-hero sp-hero"><div class="detail-hero-title" id="splib-detail-title"></div><div class="detail-hero-tagline" id="splib-detail-sub"></div></div>'+
+    spd.innerHTML='<div class="detail-hero cwlib-detail-hero sp-hero"><button class="detail-hero-back" onclick="backToSpLib()">&larr; Back to SharePoint AI Library</button><div class="detail-hero-title" id="splib-detail-title"></div><div class="detail-hero-tagline" id="splib-detail-sub"></div></div>'+
       '<div id="splib-detail-cards"></div>';
     document.querySelector('main.main').appendChild(spd);
   }
@@ -6432,7 +6438,16 @@ function showItem(item,tab,preserveScroll){
       }
     }
   }
-  if(visibleTools.length){ toggleTool(id+'-'+item.prompts.indexOf(visibleTools[0])); }
+  // Auto-expand: on Cowork / Scout / SharePoint sub-tabs, open ALL tool blocks
+  // so the prompts read like cards (no tap-to-expand). On other sub-tabs, open
+  // just the first tool block (legacy behaviour).
+  if(visibleTools.length){
+    if(_detailTab==='cowork' || _detailTab==='scout' || _detailTab==='sharepoint'){
+      visibleTools.forEach(t=>toggleTool(id+'-'+item.prompts.indexOf(t)));
+    } else {
+      toggleTool(id+'-'+item.prompts.indexOf(visibleTools[0]));
+    }
+  }
   // Files
   const fEl=document.getElementById('detail-files');
   const _hasEntryZip = !!(item && item.id);
@@ -6881,6 +6896,8 @@ function goHome(){
   const dv=document.getElementById('detail-view');
   dv.classList.remove('active'); dv.style.display='none';
   const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  const scdH=document.getElementById('scoutlib-detail-view'); if(scdH) scdH.style.display='none';
+  const spdH=document.getElementById('splib-detail-view'); if(spdH) spdH.style.display='none';
   // Restore grid tab state
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   if(currentGridTab==='dept'){
