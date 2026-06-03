@@ -1410,6 +1410,50 @@ try:
 except Exception as _e:
     print(f"(sample_files merge skipped due to error: {_e})")
 
+# ── Expand folder references (e.g. `Vendor_Master_Contracts/`) into the
+#    actual files inside that folder so the Reference Files panel renders
+#    aligned individual rows (folders have no extension and broke alignment). ─
+try:
+    import os as _os_fx
+    def _expand_folder_refs(entries):
+        n = 0
+        files_root = _os_fx.path.join(_os_fx.path.dirname(__file__) or '.', 'files')
+        cache = {}
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            files = list(e.get('files') or [])
+            out = []
+            seen = set()
+            changed = False
+            for f in files:
+                if isinstance(f, str) and f.endswith('/'):
+                    folder = f.rstrip('/')
+                    if folder not in cache:
+                        try:
+                            cache[folder] = sorted([
+                                folder + '/' + x
+                                for x in _os_fx.listdir(_os_fx.path.join(files_root, folder))
+                                if not x.startswith('.') and _os_fx.path.isfile(_os_fx.path.join(files_root, folder, x))
+                            ])
+                        except Exception:
+                            cache[folder] = []
+                    for sub in cache[folder]:
+                        if sub not in seen:
+                            out.append(sub); seen.add(sub)
+                    changed = True
+                else:
+                    if f not in seen:
+                        out.append(f); seen.add(f)
+            if changed:
+                e['files'] = out
+                n += 1
+        return n
+    _fx_n = _expand_folder_refs(all_industries) + _expand_folder_refs(all_departments)
+    print(f"Folder references expanded on {_fx_n} entries")
+except Exception as _e:
+    print(f"(folder expansion skipped due to error: {_e})")
+
 # ── Copilot Create prompt-block injection ────────────────────────────────
 # User asked for a few Copilot Create prompts under each industry/department's
 # Chat tab — covering image, poster, infographic, video. Tailored to the

@@ -6482,7 +6482,11 @@ function showItem(item,tab,preserveScroll){
     item.files.map(f=>{
       const fclean=String(f).replace(/^\/+/,'');
       const ext=fclean.split('.').pop().toLowerCase();
-      return '<a class="file-item" href="files/'+encodeURIComponent(fclean)+'" download="'+fclean+'" target="_blank">'+
+      // Encode each path segment separately so subfolder paths (e.g.
+      // 'Vendor_Master_Contracts/01_xx.docx') don't get the '/' encoded as %2F.
+      const href='files/'+fclean.split('/').map(encodeURIComponent).join('/');
+      const baseName=fclean.split('/').pop();
+      return '<a class="file-item" href="'+href+'" download="'+baseName+'" target="_blank">'+
         '<span class="file-ext '+ext+'">'+ext.toUpperCase()+'</span>'+
         '<span class="file-name">'+escapeHTML(fclean)+'</span>'+
         '<span style="margin-left:auto;font-size:11px;color:var(--blue);font-weight:600">'+_uL('⬇ Download')+'</span>'+
