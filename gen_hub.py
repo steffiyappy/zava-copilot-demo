@@ -3845,6 +3845,8 @@ _syncLegacyLang();
 function _isResearcher(name){return /Researcher/i.test(name||'')}
 function _isCowork(name){return /Cowork/i.test(name||'')}
 function _isNotebook(name){return /Notebook/i.test(name||'')}
+function _isScout(name){return /Microsoft Scout/i.test(name||'')}
+function _isSharePoint(name){return /AI in SharePoint/i.test(name||'')}
 // "Copilot Chat" matches both literal Chat tools (e.g. `💬 Copilot Chat`) and
 // the paid Agent Builder label `🏗 Agent Builder (Microsoft 365 Copilot Chat)`.
 // We want the paid Agent Builder to live in the Tools tab, NOT the Chat tab —
@@ -3867,6 +3869,10 @@ function _isCoworkTab(name){return _isCowork(name);}
 // cowork and Copilot Chat Prompts". The dedicated tab surfaces the Notebook setup
 // banner (sources + Instructions field) prominently, separate from the in-app Copilots.
 function _isNotebookTab(name){return _isNotebook(name);}
+// Microsoft Scout (Frontier preview) — own detail tab, beside Notebook.
+function _isScoutTab(name){return _isScout(name);}
+// AI in SharePoint — own detail tab, beside Scout.
+function _isSharePointTab(name){return _isSharePoint(name);}
 function _isFrontier(lic){return /Frontier/i.test(lic||'')}
 function _personaColor(name){
   if(!name) return '#6B7280';
@@ -6115,11 +6121,15 @@ function showItem(item,tab,preserveScroll){
   const hasChat=item.prompts.some(t=>_isChatTab(t.tool));
   const hasCowork=item.prompts.some(t=>_isCoworkTab(t.tool));
   const hasNotebookTab=item.prompts.some(t=>_isNotebookTab(t.tool));
-  const hasOther=item.prompts.some(t=>!_isChatTab(t.tool)&&!_isCoworkTab(t.tool)&&!_isNotebookTab(t.tool));
+  const hasScoutTab=item.prompts.some(t=>_isScoutTab(t.tool));
+  const hasSharePointTab=item.prompts.some(t=>_isSharePointTab(t.tool));
+  const hasOther=item.prompts.some(t=>!_isChatTab(t.tool)&&!_isCoworkTab(t.tool)&&!_isNotebookTab(t.tool)&&!_isScoutTab(t.tool)&&!_isSharePointTab(t.tool));
   const visibleTabs=[];
   if(hasOther) visibleTabs.push('tools');
   if(hasCowork) visibleTabs.push('cowork');
   if(hasNotebookTab) visibleTabs.push('notebook');
+  if(hasScoutTab) visibleTabs.push('scout');
+  if(hasSharePointTab) visibleTabs.push('sharepoint');
   if(hasChat) visibleTabs.push('chat');
   const tabsWrap=document.getElementById('detail-tabs');
   if(visibleTabs.length>=2){
@@ -6129,6 +6139,8 @@ function showItem(item,tab,preserveScroll){
     if(hasOther) html+='<button class="detail-tab '+( _detailTab==='tools'?'active':'')+'" id="dtab-tools" onclick="setDetailTab(\'tools\')">'+_uL('🛠️ Microsoft 365 Copilot Tools')+'</button>';
     if(hasCowork) html+='<button class="detail-tab '+( _detailTab==='cowork'?'active':'')+'" id="dtab-cowork" onclick="setDetailTab(\'cowork\')">'+_uL('⚡ Cowork')+'</button>';
     if(hasNotebookTab) html+='<button class="detail-tab '+( _detailTab==='notebook'?'active':'')+'" id="dtab-notebook" onclick="setDetailTab(\'notebook\')">'+_uL('📓 Copilot Notebook')+'</button>';
+    if(hasScoutTab) html+='<button class="detail-tab '+( _detailTab==='scout'?'active':'')+'" id="dtab-scout" onclick="setDetailTab(\'scout\')">'+_uL('🧭 Microsoft Scout')+'</button>';
+    if(hasSharePointTab) html+='<button class="detail-tab '+( _detailTab==='sharepoint'?'active':'')+'" id="dtab-sharepoint" onclick="setDetailTab(\'sharepoint\')">'+_uL('🌐 AI in SharePoint')+'</button>';
     if(hasChat) html+='<button class="detail-tab '+( _detailTab==='chat'?'active':'')+'" id="dtab-chat" onclick="setDetailTab(\'chat\')">'+_uL('💬 Copilot Chat Prompts')+'</button>';
     tabsWrap.innerHTML=html;
   } else {
@@ -6139,10 +6151,12 @@ function showItem(item,tab,preserveScroll){
   // Filter prompts by tab — only when more than one tab is visible
   const visibleTools=item.prompts.filter(t=>{
     if(visibleTabs.length<2) return true;
-    if(_detailTab==='chat')     return _isChatTab(t.tool);
-    if(_detailTab==='cowork')   return _isCoworkTab(t.tool);
-    if(_detailTab==='notebook') return _isNotebookTab(t.tool);
-    return !_isChatTab(t.tool) && !_isCoworkTab(t.tool) && !_isNotebookTab(t.tool);
+    if(_detailTab==='chat')       return _isChatTab(t.tool);
+    if(_detailTab==='cowork')     return _isCoworkTab(t.tool);
+    if(_detailTab==='notebook')   return _isNotebookTab(t.tool);
+    if(_detailTab==='scout')      return _isScoutTab(t.tool);
+    if(_detailTab==='sharepoint') return _isSharePointTab(t.tool);
+    return !_isChatTab(t.tool) && !_isCoworkTab(t.tool) && !_isNotebookTab(t.tool) && !_isScoutTab(t.tool) && !_isSharePointTab(t.tool);
   });
   // Prompts
   const pEl=document.getElementById('detail-prompts');
@@ -6359,10 +6373,34 @@ function showItem(item,tab,preserveScroll){
       if(typeof _wireNotebookLibraryCopy==='function') _wireNotebookLibraryCopy();
     }
   }
-  // Scout Library + SharePoint AI Library — render under the default Tools sub-tab
-  // so every entry surfaces these new tool sections inline. Reuses _coworkLibraryHtml
-  // via the __libField shim.
-  if(_detailTab==='tools'){
+  // Scout Library — render only when the user is on the Scout sub-tab.
+  if(_detailTab==='scout'){
+    if(Array.isArray(item.scoutLibrary) && item.scoutLibrary.length){
+      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '🧭 Microsoft Scout — desktop AI use cases', __libSub: 'Scout-only capabilities (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Pick a use case above — every section below updates in place.' };
+      const html=_coworkLibraryHtml(shimSc);
+      if(html){
+        const w=document.createElement('div');
+        w.innerHTML=html;
+        pEl.appendChild(w);
+        _wireCoworkLibraryCopy();
+      }
+    }
+  }
+  // SharePoint AI Library — render only when the user is on the SharePoint sub-tab.
+  if(_detailTab==='sharepoint'){
+    if(Array.isArray(item.sharepointLibrary) && item.sharepointLibrary.length){
+      const shimSp={ id: item.id, sharepointLibrary: item.sharepointLibrary, __cwlibEmbedded: false, __libField: 'sharepointLibrary', __libTitle: '🌐 AI in SharePoint — Floating Button use cases', __libSub: 'SharePoint-native Copilot actions (Ask, Summarize, Compare, Audio Overview, FAQ, Autofill columns, Improve site, Create Page) tailored to this entry. Pick a use case above — every section below updates in place.' };
+      const html=_coworkLibraryHtml(shimSp);
+      if(html){
+        const w=document.createElement('div');
+        w.innerHTML=html;
+        pEl.appendChild(w);
+        _wireCoworkLibraryCopy();
+      }
+    }
+  }
+  // (legacy block removed — Scout + SP now live in their own dedicated detail tabs)
+  if(false && _detailTab==='tools'){
     if(Array.isArray(item.scoutLibrary) && item.scoutLibrary.length){
       const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '🧭 Microsoft Scout — desktop AI use cases', __libSub: 'Scout-only capabilities (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Pick a use case above — every section below updates in place.' };
       const html=_coworkLibraryHtml(shimSc);
