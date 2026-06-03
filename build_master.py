@@ -1378,6 +1378,133 @@ try:
 except Exception as _e:
     import traceback as _tb
     print(f"(Scout / SharePoint AI prompt injection skipped due to error: {_e})")
+
+# ── Wire Scout/SP sample_files into entry.files (so they appear in the
+#    📁 Reference Files panel and get bundled into entry-<id>.zip) ─────────
+try:
+    def _merge_sample_files(entries):
+        n = 0
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            files = list(e.get('files') or [])
+            existing = set(files)
+            added = 0
+            for libkey in ('scoutLibrary', 'sharepointLibrary'):
+                for c in (e.get(libkey) or []):
+                    if not isinstance(c, dict):
+                        continue
+                    for sf in (c.get('sample_files') or []):
+                        fname = sf if isinstance(sf, str) else (sf[0] if isinstance(sf, (list, tuple)) and sf else '')
+                        if fname and fname not in existing:
+                            files.append(fname)
+                            existing.add(fname)
+                            added += 1
+            if added:
+                e['files'] = files
+                n += 1
+        return n
+    _sf_added = _merge_sample_files(all_industries) + _merge_sample_files(all_departments)
+    print(f"Scout/SP sample_files merged into entry.files on {_sf_added} entries")
+except Exception as _e:
+    print(f"(sample_files merge skipped due to error: {_e})")
+
+# ── Copilot Create prompt-block injection ────────────────────────────────
+# User asked for a few Copilot Create prompts under each industry/department's
+# Chat tab — covering image, poster, infographic, video. Tailored to the
+# entry name and sector. Lives in m365.cloud.microsoft > Create. M365 Copilot
+# license. Folded into the Chat tab via the _isChatTab classifier in gen_hub.
+try:
+    from util import T_CREATE, DESC_CREATE, T_CHAT, M365_LIC, M365_ACCT, tool
+
+    def _create_prompts_for_entry(e):
+        """Return 4 instr/prompt entries (image, poster, infographic, video)."""
+        ename = (e.get('name') or e.get('label') or 'Zava Conglomerate').strip()
+        sector = (e.get('sector') or e.get('subSector') or '').strip()
+        scope = ename + (f" ({sector})" if sector else '')
+        out = []
+        # 1. Image — hero/banner
+        out.append({
+            'instr': "**Open the Microsoft 365 Copilot app** \u2192 left nav > **Create** > **Image**. "
+                     "Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). "
+                     f"Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (\u201cSame style, change the foreground to \u2026\u201d).",
+            'prompt': f"Create a clean, modern hero banner image for **{scope}** at Zava Conglomerate. "
+                      f"Show a confident professional team in a {sector or 'corporate'} setting (Southeast Asia context \u2014 Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. "
+                      "Lighting: warm morning sun. Mood: trustworthy, forward-looking. "
+                      "Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. "
+                      "Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen."
+        })
+        # 2. Poster — event / awareness
+        out.append({
+            'instr': "**Open Copilot \u2192 Create \u2192 Poster**. Choose layout **Focal** (one big visual + headline). "
+                     f"Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. "
+                     "Iterate the headline with Copilot before exporting.",
+            'prompt': f"Design an internal awareness poster for **{scope}** at Zava Conglomerate. "
+                      "Headline: \u201cReady. Resilient. Responsible.\u201d Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. "
+                      "Include a clear call-to-action (\u201cJoin the briefing on Friday 3pm \u2014 Teams link in your inbox\u201d). "
+                      "Visual: abstract gradient (navy \u2192 teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only."
+        })
+        # 3. Infographic — data viz
+        out.append({
+            'instr': "**Open Copilot \u2192 Create \u2192 Infographic**. Pick layout **Vertical \u2014 5 sections**. "
+                     "Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.",
+            'prompt': f"Create a one-page infographic summarising the **FY2026 outlook for {scope}**. "
+                      "Five vertical sections: (1) Headline KPI \u2014 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); "
+                      "(3) Risk heat-map \u2014 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals \u2014 simple bar comparison; "
+                      "(5) Next milestones \u2014 timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: \u201cZava Conglomerate \u2022 Confidential \u2022 Internal use only\u201d."
+        })
+        # 4. Video — short comms clip
+        out.append({
+            'instr': "**Open Copilot \u2192 Create \u2192 Video**. Length **30 seconds**. Voiceover: **English (US)** "
+                     "(or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). "
+                     "Background music: **Corporate \u2014 Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. "
+                     "Iterate the script with Copilot before generating; review every clip in preview before export.",
+            'prompt': f"Generate a 30-second internal comms video introducing **{scope}** at Zava Conglomerate. "
+                      "Structure: (0\u20135s) cold open with the headline question; (5\u201320s) three quick scenes \u2014 office in KL, plantation in Sabah, energy plant in Pengerang \u2014 each 4\u20135 seconds with a one-line caption; "
+                      "(20\u201325s) the leader (no real person \u2014 generic professional avatar) delivers the call-to-action; (25\u201330s) closing card with Zava logo placeholder + URL placeholder. "
+                      "Voiceover tone: warm, confident, conversational. End with \u201cTogether, that\u2019s how Zava grows.\u201d Captions on screen for accessibility."
+        })
+        return out
+
+    def _inject_create_prompts(entries):
+        n = 0
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            prompts_arr = e.get('prompts') or []
+            if any(isinstance(t, dict) and t.get('tool') == T_CREATE for t in prompts_arr):
+                continue
+            entries_list = _create_prompts_for_entry(e)
+            if not entries_list:
+                continue
+            persona_name = (lambda: ((e.get('personas') or [{}])[0].get('name') if (e.get('personas') and isinstance(e.get('personas')[0], dict)) else 'Sasha Ouellet'))() or 'Sasha Ouellet'
+            block = tool(
+                T_CREATE, M365_LIC, M365_ACCT,
+                entries_list,
+                desc=DESC_CREATE,
+                promptsID=entries_list,
+                promptsBM=entries_list,
+                persona=[persona_name] * len(entries_list),
+                personaID=[persona_name] * len(entries_list),
+            )
+            # Insert immediately AFTER the T_CHAT block (so it sits on the Chat
+            # detail tab just below the chat prompts). If no T_CHAT, append.
+            insert_at = len(prompts_arr)
+            for i, t in enumerate(prompts_arr):
+                if isinstance(t, dict) and t.get('tool') == T_CHAT:
+                    insert_at = i + 1
+                    break
+            new_arr = list(prompts_arr)
+            new_arr.insert(insert_at, block)
+            e['prompts'] = new_arr
+            n += 1
+        return n
+
+    _cr_added = _inject_create_prompts(all_industries) + _inject_create_prompts(all_departments)
+    print(f"Copilot Create prompt block injected on {_cr_added} entries")
+except Exception as _e:
+    import traceback as _tb
+    print(f"(Copilot Create prompt injection skipped due to error: {_e})")
     _tb.print_exc()
 
 lines = ['window.HUB_DATA = {']

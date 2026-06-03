@@ -3860,9 +3860,11 @@ function _isXlAgt(name){return /Excel\s*Agent/i.test(name||'')}
 function _isBuilder(name){return /Agent\s*Builder/i.test(name||'')}
 function _isBuilderFree(name){return /Free\s*Copilot\s*Chat/i.test(name||'') && _isBuilder(name);}
 function _isBuilderPaid(name){return _isBuilder(name) && !_isBuilderFree(name);}
+function _isCreate(name){return /Copilot Create/i.test(name||'')}
 // Tools that live in the Copilot Chat tab (chat-based continuous-motion flow per IHH HR ref)
 // Free-tier Agent Builder lives in the Chat tab; paid Agent Builder lives in the M365 Tools tab.
-function _isChatTab(name){return _isChat(name)||_isWordAgt(name)||_isPptAgt(name)||_isXlAgt(name)||_isBuilderFree(name);}
+// Copilot Create lives in the Chat tab (right under chat prompts) per user UX request.
+function _isChatTab(name){return _isChat(name)||_isWordAgt(name)||_isPptAgt(name)||_isXlAgt(name)||_isBuilderFree(name)||_isCreate(name);}
 // Cowork now sits in its own tab (between Tools and Chat) — broken out of the Tools cluster
 // because it's a distinct delegation-style flow, not an in-app Copilot.
 function _isCoworkTab(name){return _isCowork(name);}

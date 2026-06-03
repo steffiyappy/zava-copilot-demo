@@ -381,7 +381,25 @@ window.HUB_DATA = {
         '03_Zava_Group_Strategy_Framework.docx',
         '04_Zava_Divisional_Variance_FY2025.xlsx',
         '05_Zava_Lender_Covenant_Tracker.xlsx',
-        '06_Zava_Investor_QA_FY2025.docx'
+        '06_Zava_Investor_QA_FY2025.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -440,6 +458,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **General (Any Role)** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **General (Any Role)** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for General (Any Role)**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **General (Any Role)** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **General (Any Role)** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **General (Any Role)** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for General (Any Role)**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **General (Any Role)** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **General (Any Role)** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **General (Any Role)** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for General (Any Role)**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **General (Any Role)** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -3038,6 +3129,79 @@ window.HUB_DATA = {
           notebookMeta: null
         },
         {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Commercial Banking** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Commercial Banking** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Commercial Banking**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Commercial Banking** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Commercial Banking** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Commercial Banking** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Commercial Banking**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Commercial Banking** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Commercial Banking** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Commercial Banking** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Commercial Banking**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Commercial Banking** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
           tool: '🔍 Researcher',
           license: 'Microsoft 365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -5171,6 +5335,79 @@ window.HUB_DATA = {
           notebookMeta: null
         },
         {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Islamic Banking** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Islamic Banking** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Islamic Banking**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Islamic Banking** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Islamic Banking** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Islamic Banking** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Islamic Banking**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Islamic Banking** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Islamic Banking** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Islamic Banking** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Islamic Banking**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Islamic Banking** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
           tool: '🔍 Researcher',
           license: 'Microsoft 365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -7074,7 +7311,26 @@ window.HUB_DATA = {
         'REG_IPO_Prospectus_Sample.pdf',
         'REG_Issuer_Intake_Template.xlsx',
         'REG_Issuer_Compliance_Checklist.xlsx',
-        'REG_Equities_Submission_Guidelines.docx'
+        'REG_Equities_Submission_Guidelines.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx'
       ],
       prompts: [
         {
@@ -7133,6 +7389,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Daichi Maruyama'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Investment Banking** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Investment Banking** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Investment Banking**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Investment Banking** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Investment Banking** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Investment Banking** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Investment Banking**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Investment Banking** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Investment Banking** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Investment Banking** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Investment Banking**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Investment Banking** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -10082,6 +10411,79 @@ window.HUB_DATA = {
           notebookMeta: null
         },
         {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **General Insurance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **General Insurance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for General Insurance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **General Insurance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **General Insurance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **General Insurance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for General Insurance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **General Insurance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **General Insurance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **General Insurance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for General Insurance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **General Insurance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
           tool: '🔍 Researcher',
           license: 'Microsoft 365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -12022,6 +12424,79 @@ window.HUB_DATA = {
           notebookMeta: null
         },
         {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Life Insurance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Life Insurance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Life Insurance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Life Insurance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Life Insurance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Life Insurance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Life Insurance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Life Insurance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Life Insurance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Life Insurance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Life Insurance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Life Insurance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
           tool: '🔍 Researcher',
           license: 'Microsoft 365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -13897,7 +14372,26 @@ window.HUB_DATA = {
         'TAK_03_Shariah_Compliance_Policy.docx',
         'TAK_04_Wakalah_Fee_Benchmark.xlsx',
         'TAK_05_Re_Takaful_Treaty_Pack.docx',
-        'TAK_06_Participant_Fund_Forecast.xlsx'
+        'TAK_06_Participant_Fund_Forecast.xlsx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx'
       ],
       prompts: [
         {
@@ -13956,6 +14450,79 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Daichi Maruyama'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Takaful** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Takaful** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Takaful**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Takaful** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Takaful** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Takaful** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Takaful**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Takaful** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Takaful** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Takaful** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Takaful**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Takaful** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -16304,7 +16871,26 @@ window.HUB_DATA = {
         'HC_07_Hospital_Budget_Variance.xlsx',
         'HC_08_Hospital_Vendor_Contract.docx',
         'HC_09_Hospital_Committee_Transcript.docx',
-        'HC_10_Hospital_FinProc_Policies.docx'
+        'HC_10_Hospital_FinProc_Policies.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -16361,6 +16947,79 @@ window.HUB_DATA = {
           ],
           personaID: [
             'Sasha Ouellet',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Hospital Network** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Hospital Network** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Hospital Network**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Hospital Network** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Hospital Network** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Hospital Network** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Hospital Network**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Hospital Network** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Hospital Network** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Hospital Network** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Hospital Network**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Hospital Network** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
           ],
@@ -18745,7 +19404,26 @@ window.HUB_DATA = {
         'PH_03_Clinical_Trials_Protocol.docx',
         'PH_04_BPOM_Submission_Tracker.xlsx',
         'PH_05_Halal_MUI_Certification.docx',
-        'PH_06_Cold_Chain_Distribution.xlsx'
+        'PH_06_Cold_Chain_Distribution.xlsx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -18802,6 +19480,79 @@ window.HUB_DATA = {
           ],
           personaID: [
             'Sasha Ouellet',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Pharmaceutical** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Pharmaceutical** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Pharmaceutical**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Pharmaceutical** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Pharmaceutical** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Pharmaceutical** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Pharmaceutical**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Pharmaceutical** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Pharmaceutical** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Pharmaceutical** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Pharmaceutical**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Pharmaceutical** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
           ],
@@ -21225,6 +21976,79 @@ window.HUB_DATA = {
           notebookMeta: null
         },
         {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Oil & Gas Upstream** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Oil & Gas Upstream** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Oil & Gas Upstream**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Oil & Gas Upstream** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Oil & Gas Upstream** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Oil & Gas Upstream** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Oil & Gas Upstream**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Oil & Gas Upstream** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Oil & Gas Upstream** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Oil & Gas Upstream** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Oil & Gas Upstream**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Oil & Gas Upstream** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
           tool: '🔍 Researcher',
           license: 'Microsoft 365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -23161,6 +23985,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Oil & Gas Downstream** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Oil & Gas Downstream** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Oil & Gas Downstream**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Oil & Gas Downstream** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Oil & Gas Downstream** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Oil & Gas Downstream** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Oil & Gas Downstream**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Oil & Gas Downstream** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Oil & Gas Downstream** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Oil & Gas Downstream** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Oil & Gas Downstream**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Oil & Gas Downstream** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -25156,7 +26053,26 @@ window.HUB_DATA = {
         'RE_03_Asset_Management_Plan.docx',
         'RE_04_PPA_Contract_Tracker.xlsx',
         'RE_05_Project_Pipeline_Finance.xlsx',
-        'RE_06_PLN_Dispatch_Compliance.docx'
+        'RE_06_PLN_Dispatch_Compliance.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -25215,6 +26131,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Renewable Energy** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Renewable Energy** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Renewable Energy**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Renewable Energy** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Renewable Energy** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Renewable Energy** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Renewable Energy**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Renewable Energy** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Renewable Energy** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Renewable Energy** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Renewable Energy**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Renewable Energy** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -27544,7 +28533,27 @@ window.HUB_DATA = {
         'Site_Alpha_Mar2026.xlsx',
         'Site_Beta_Mar2026.xlsx',
         'Site_Gamma_Mar2026.xlsx',
-        'Group_Site_Performance_Template_v3.xlsx'
+        'Group_Site_Performance_Template_v3.xlsx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -27603,6 +28612,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Industrial Manufacturing** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Industrial Manufacturing** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Industrial Manufacturing**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Industrial Manufacturing** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Industrial Manufacturing** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Industrial Manufacturing** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Industrial Manufacturing**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Industrial Manufacturing** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Industrial Manufacturing** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Industrial Manufacturing** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Industrial Manufacturing**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Industrial Manufacturing** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -30059,7 +31141,25 @@ window.HUB_DATA = {
         'PLT_05_Buyer_Contracts_Register.xlsx',
         'PLT_06_Board_Briefing_Notes.docx',
         'PLT_07_Estate_Yield_OER_Q1.xlsx',
-        'PLT_08_Group_Ops_Report_Q1.docx'
+        'PLT_08_Group_Ops_Report_Q1.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -30115,6 +31215,79 @@ window.HUB_DATA = {
             'Hadar Caspit'
           ],
           personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Plantation & Agribusiness** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Plantation & Agribusiness** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Plantation & Agribusiness**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Plantation & Agribusiness** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Plantation & Agribusiness** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Plantation & Agribusiness** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Plantation & Agribusiness**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Plantation & Agribusiness** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Plantation & Agribusiness** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Plantation & Agribusiness** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Plantation & Agribusiness**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Plantation & Agribusiness** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
@@ -32675,7 +33848,27 @@ window.HUB_DATA = {
         'BPO_03_Quality_Management_Framework.docx',
         'BPO_04_Workforce_Plan.xlsx',
         'BPO_05_Cyber_Compliance_Pack.docx',
-        'BPO_06_Renewal_Pipeline.xlsx'
+        'BPO_06_Renewal_Pipeline.xlsx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -32731,6 +33924,79 @@ window.HUB_DATA = {
             'Hadar Caspit'
           ],
           personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **BPO Services** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **BPO Services** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for BPO Services**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **BPO Services** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **BPO Services** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **BPO Services** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for BPO Services**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **BPO Services** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **BPO Services** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **BPO Services** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for BPO Services**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **BPO Services** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
@@ -35058,7 +36324,27 @@ window.HUB_DATA = {
         'TC_03_Network_Rollout_Strategy.docx',
         'TC_04_Subscriber_ARPU_Bridge.xlsx',
         'TC_05_Kominfo_BRTI_Submissions.docx',
-        'TC_06_Capex_Approvals_Tracker.xlsx'
+        'TC_06_Capex_Approvals_Tracker.xlsx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -35114,6 +36400,79 @@ window.HUB_DATA = {
             'Hadar Caspit'
           ],
           personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Telco** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Telco** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Telco**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Telco** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Telco** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Telco** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Telco**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Telco** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Telco** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Telco** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Telco**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Telco** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
@@ -37448,7 +38807,26 @@ window.HUB_DATA = {
         'HR_Workforce_FY2026.xlsx',
         'HR_Strategic_Priorities_2030.docx',
         'HR_Outsourcing_and_Contract_Staff.xlsx',
-        'HR_Skill_Gap_Survey_2025.xlsx'
+        'HR_Skill_Gap_Survey_2025.xlsx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -37507,6 +38885,79 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Sasha Ouellet',
             'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Diversified Conglomerate** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Diversified Conglomerate** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Diversified Conglomerate**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Diversified Conglomerate** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Diversified Conglomerate** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Diversified Conglomerate** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Diversified Conglomerate**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Diversified Conglomerate** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Diversified Conglomerate** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Diversified Conglomerate** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Diversified Conglomerate**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Diversified Conglomerate** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -40105,7 +41556,26 @@ window.HUB_DATA = {
         'FT_03_Fraud_Risk_Policy.docx',
         'FT_04_Product_Roadmap_2026.docx',
         'FT_05_BSSN_Cyber_Audit_Report.docx',
-        'FT_06_AML_KYC_Procedure.docx'
+        'FT_06_AML_KYC_Procedure.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx'
       ],
       prompts: [
         {
@@ -40164,6 +41634,79 @@ window.HUB_DATA = {
             'Mod Admin',
             'Hadar Caspit',
             'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Fintech Payments** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Fintech Payments** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Fintech Payments**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Fintech Payments** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Fintech Payments** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Fintech Payments** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Fintech Payments**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Fintech Payments** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Fintech Payments** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Fintech Payments** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Fintech Payments**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Fintech Payments** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -42527,7 +44070,26 @@ window.HUB_DATA = {
         'GOV_03_Public_Service_Reform_Policy.docx',
         'GOV_04_BPK_Audit_Findings.docx',
         'GOV_05_DPR_Hearing_Brief.docx',
-        'GOV_06_KPK_Compliance_Tracker.xlsx'
+        'GOV_06_KPK_Compliance_Tracker.xlsx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx'
       ],
       prompts: [
         {
@@ -42586,6 +44148,79 @@ window.HUB_DATA = {
             'Mod Admin',
             'Hadar Caspit',
             'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Government Agency** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Government Agency** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Government Agency**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Government Agency** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Government Agency** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Government Agency** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Government Agency**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Government Agency** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Government Agency** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Government Agency** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Government Agency**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Government Agency** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -44947,7 +46582,26 @@ window.HUB_DATA = {
         'PROP_03_Land_Bank_Strategy.docx',
         'PROP_04_Mall_Tenancy_Tracker.xlsx',
         'PROP_05_Bursa_Disclosure_Pack.docx',
-        'PROP_06_Lender_Covenant_Schedule.xlsx'
+        'PROP_06_Lender_Covenant_Schedule.xlsx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx'
       ],
       prompts: [
         {
@@ -45006,6 +46660,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Property & REIT** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Property & REIT** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Property & REIT**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Property & REIT** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Property & REIT** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Property & REIT** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Property & REIT**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Property & REIT** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Property & REIT** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Property & REIT** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Property & REIT**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Property & REIT** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -47327,7 +49054,27 @@ window.HUB_DATA = {
         'LOG_03_Customer_SLA_Manual.docx',
         'LOG_04_Contract_Pipeline.xlsx',
         'LOG_05_Driver_Compliance_Pack.docx',
-        'LOG_06_Diesel_Cost_Schedule.xlsx'
+        'LOG_06_Diesel_Cost_Schedule.xlsx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -47386,6 +49133,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Daichi Maruyama'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Logistics & 3PL** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Logistics & 3PL** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Logistics & 3PL**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Logistics & 3PL** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Logistics & 3PL** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Logistics & 3PL** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Logistics & 3PL**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Logistics & 3PL** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Logistics & 3PL** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Logistics & 3PL** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Logistics & 3PL**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Logistics & 3PL** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -49772,6 +51592,79 @@ window.HUB_DATA = {
           notebookMeta: null
         },
         {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Coal Mining** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Coal Mining** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Coal Mining**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Coal Mining** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Coal Mining** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Coal Mining** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Coal Mining**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Coal Mining** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Coal Mining** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Coal Mining** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Coal Mining**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Coal Mining** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
           tool: '🔍 Researcher',
           license: 'Microsoft 365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -51695,6 +53588,79 @@ window.HUB_DATA = {
           notebookMeta: null
         },
         {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Hotel & Resort** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Hotel & Resort** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Hotel & Resort**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Hotel & Resort** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Hotel & Resort** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Hotel & Resort** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Hotel & Resort**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Hotel & Resort** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Hotel & Resort** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Hotel & Resort** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Hotel & Resort**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Hotel & Resort** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
           tool: '🔍 Researcher',
           license: 'Microsoft 365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -53543,7 +55509,26 @@ window.HUB_DATA = {
         'CON_03_HSE_Policy.docx',
         'CON_04_Variation_Order_Tracker.xlsx',
         'CON_05_Subcontractor_Compliance.docx',
-        'CON_06_Cash_Flow_Forecast.xlsx'
+        'CON_06_Cash_Flow_Forecast.xlsx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -53602,6 +55587,79 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Construction** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Construction** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Construction**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Construction** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Construction** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Construction** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Construction**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Construction** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Construction** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Construction** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Construction**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Construction** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -55927,7 +57985,25 @@ window.HUB_DATA = {
         'AVN_03_Emergency_Response_Plan.docx',
         'AVN_04_Aeronautical_Tariff_Model.xlsx',
         'AVN_05_Slot_Allocation_Tracker.xlsx',
-        'AVN_06_Capex_Plan.docx'
+        'AVN_06_Capex_Plan.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -55986,6 +58062,79 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Aviation - Airports** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Aviation - Airports** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Aviation - Airports**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Aviation - Airports** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Aviation - Airports** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Aviation - Airports** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Aviation - Airports**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Aviation - Airports** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Aviation - Airports** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Aviation - Airports** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Aviation - Airports**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Aviation - Airports** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -58316,7 +60465,26 @@ window.HUB_DATA = {
         'RT_03_Supplier_Management_Policy.docx',
         'RT_04_Promotion_ROI_Model.xlsx',
         'RT_05_Halal_Compliance_Register.docx',
-        'RT_06_Shrinkage_Audit.xlsx'
+        'RT_06_Shrinkage_Audit.xlsx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -58375,6 +60543,79 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Retail - Grocery** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Retail - Grocery** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Retail - Grocery**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Retail - Grocery** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Retail - Grocery** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Retail - Grocery** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Retail - Grocery**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Retail - Grocery** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Retail - Grocery** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Retail - Grocery** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Retail - Grocery**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Retail - Grocery** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -60700,7 +62941,15 @@ window.HUB_DATA = {
         'ME_03_Digital_Strategy_Framework.docx',
         'ME_04_Streaming_Subscriber_Cohort.xlsx',
         'ME_05_Advertiser_Yield_Model.xlsx',
-        'ME_06_Content_Rights_Register.docx'
+        'ME_06_Content_Rights_Register.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -60759,6 +63008,79 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Media - Entertainment** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Media - Entertainment** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Media - Entertainment**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Media - Entertainment** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Media - Entertainment** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Media - Entertainment** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Media - Entertainment**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Media - Entertainment** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Media - Entertainment** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Media - Entertainment** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Media - Entertainment**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Media - Entertainment** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -62836,7 +65158,26 @@ window.HUB_DATA = {
         'GLC_03_Governance_Charter.docx',
         'GLC_04_Strategic_Holdings_Review.docx',
         'GLC_05_Ministerial_Briefing_Pack.docx',
-        'GLC_06_Peer_Benchmark_Sovereign_Investors.xlsx'
+        'GLC_06_Peer_Benchmark_Sovereign_Investors.xlsx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -62895,6 +65236,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **GLC Investment Arm** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **GLC Investment Arm** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for GLC Investment Arm**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **GLC Investment Arm** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **GLC Investment Arm** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **GLC Investment Arm** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for GLC Investment Arm**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **GLC Investment Arm** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **GLC Investment Arm** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **GLC Investment Arm** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for GLC Investment Arm**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **GLC Investment Arm** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -65229,7 +67643,26 @@ window.HUB_DATA = {
         'REG_Policy_Existing_Library.xlsx',
         'REG_Policy_Peer_Regulator_Scan.xlsx',
         'REG_Policy_Industry_Consultation_Notes.docx',
-        'REG_Policy_Standard_Template.docx'
+        'REG_Policy_Standard_Template.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -65288,6 +67721,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Mod Admin',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Financial Regulator** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Financial Regulator** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Financial Regulator**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Financial Regulator** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Financial Regulator** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Financial Regulator** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Financial Regulator**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Financial Regulator** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Financial Regulator** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Financial Regulator** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Financial Regulator**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Financial Regulator** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
           ],
           notebookMeta: null
         },
@@ -68091,7 +70597,27 @@ window.HUB_DATA = {
         'FMCG_02_SKU_Margin_Tracker.xlsx',
         'FMCG_03_Recall_Remediation_Programme.docx',
         'FMCG_04_Edible_Oil_Hedge_Book.xlsx',
-        'FMCG_05_FY2026_Promo_Guardrails.docx'
+        'FMCG_05_FY2026_Promo_Guardrails.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -68149,6 +70675,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Food & FMCG** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Food & FMCG** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Food & FMCG**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Food & FMCG** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Food & FMCG** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Food & FMCG** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Food & FMCG**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Food & FMCG** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Food & FMCG** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Food & FMCG** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Food & FMCG**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Food & FMCG** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit'
           ],
           notebookMeta: null
@@ -70317,7 +72916,25 @@ window.HUB_DATA = {
         'GLOVE_02_Migrant_Worker_Remediation_Plan.docx',
         'GLOVE_03_ESG_Recovery_Roadmap.docx',
         'GLOVE_04_Lender_Covenant_Tracker.xlsx',
-        'GLOVE_05_Bursa_Disclosure_Pack.docx'
+        'GLOVE_05_Bursa_Disclosure_Pack.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -70375,6 +72992,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Rubber Gloves Mfg** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Rubber Gloves Mfg** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Rubber Gloves Mfg**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Rubber Gloves Mfg** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Rubber Gloves Mfg** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Rubber Gloves Mfg** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Rubber Gloves Mfg**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Rubber Gloves Mfg** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Rubber Gloves Mfg** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Rubber Gloves Mfg** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Rubber Gloves Mfg**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Rubber Gloves Mfg** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit'
           ],
           notebookMeta: null
@@ -72519,7 +75209,26 @@ window.HUB_DATA = {
         'MORT_02_Mortgage_Pool_Stratification.xlsx',
         'MORT_03_BNM_Compliance_Pack.docx',
         'MORT_04_Investor_Day_Briefing.docx',
-        'MORT_05_Rating_Agency_Submission.docx'
+        'MORT_05_Rating_Agency_Submission.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -72577,6 +75286,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Mortgage Finance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Mortgage Finance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Mortgage Finance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Mortgage Finance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Mortgage Finance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Mortgage Finance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Mortgage Finance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Mortgage Finance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Mortgage Finance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Mortgage Finance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Mortgage Finance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Mortgage Finance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit'
           ],
           notebookMeta: null
@@ -74717,7 +77499,25 @@ window.HUB_DATA = {
         'REMIT_08_Compliance_Risk.xlsx',
         'REMIT_09_Financial_Performance.xlsx',
         'REMIT_10_Compliance_Policy.docx',
-        'REMIT_11_Tech_Playbook.docx'
+        'REMIT_11_Tech_Playbook.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -74775,6 +77575,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Cross-Border Remittance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Cross-Border Remittance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Cross-Border Remittance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Cross-Border Remittance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Cross-Border Remittance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Cross-Border Remittance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Cross-Border Remittance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Cross-Border Remittance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Cross-Border Remittance** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Cross-Border Remittance** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Cross-Border Remittance**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Cross-Border Remittance** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit'
           ],
           notebookMeta: null
@@ -76961,7 +79834,27 @@ window.HUB_DATA = {
         'AUTO_02_OEM_Contract_Matrix.xlsx',
         'AUTO_03_OEM_Customer_Letter_Pack.docx',
         'AUTO_04_Margin_Recovery_Plan.docx',
-        'AUTO_05_Steerco_Briefing.docx'
+        'AUTO_05_Steerco_Briefing.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -77019,6 +79912,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Auto Components & Tyres** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Auto Components & Tyres** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Auto Components & Tyres**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Auto Components & Tyres** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Auto Components & Tyres** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Auto Components & Tyres** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Auto Components & Tyres**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Auto Components & Tyres** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Auto Components & Tyres** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Auto Components & Tyres** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Auto Components & Tyres**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Auto Components & Tyres** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit'
           ],
           notebookMeta: null
@@ -79170,7 +82136,26 @@ window.HUB_DATA = {
         'SEMI_02_Customer_Concentration_Heatmap.xlsx',
         'SEMI_03_MITI_Brief_Pack.docx',
         'SEMI_04_Capex_Reprioritisation.xlsx',
-        'SEMI_05_Customer_Holding_Lines.docx'
+        'SEMI_05_Customer_Holding_Lines.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -79228,6 +82213,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Semiconductor / E&E** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Semiconductor / E&E** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Semiconductor / E&E**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Semiconductor / E&E** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Semiconductor / E&E** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Semiconductor / E&E** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Semiconductor / E&E**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Semiconductor / E&E** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Semiconductor / E&E** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Semiconductor / E&E** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Semiconductor / E&E**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Semiconductor / E&E** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit'
           ],
           notebookMeta: null
@@ -81378,7 +84436,26 @@ window.HUB_DATA = {
         'RE_02_TENORM_Residue_Inventory.xlsx',
         'RE_03_Civil_Society_Engagement.docx',
         'RE_04_Customer_Pricing_Model.xlsx',
-        'RE_05_Bursa_Operational_Update.docx'
+        'RE_05_Bursa_Operational_Update.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -81436,6 +84513,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Rare-Earth & Metals** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Rare-Earth & Metals** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Rare-Earth & Metals**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Rare-Earth & Metals** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Rare-Earth & Metals** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Rare-Earth & Metals** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Rare-Earth & Metals**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Rare-Earth & Metals** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Rare-Earth & Metals** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Rare-Earth & Metals** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Rare-Earth & Metals**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Rare-Earth & Metals** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit'
           ],
           notebookMeta: null
@@ -83582,7 +86732,27 @@ window.HUB_DATA = {
         'AUTOM_09_Board_Strategic_Priorities_FY26.docx',
         'AUTOM_10_Rental_Fleet_Insurance_Ops.xlsx',
         'AUTOM_11_Customer_NPS_Service.xlsx',
-        'AUTOM_12_Dealer_Principal_Update.docx'
+        'AUTOM_12_Dealer_Principal_Update.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -83640,6 +86810,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Automotive Distribution & Dealerships** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Automotive Distribution & Dealerships** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Automotive Distribution & Dealerships**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Automotive Distribution & Dealerships** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Automotive Distribution & Dealerships** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Automotive Distribution & Dealerships** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Automotive Distribution & Dealerships**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Automotive Distribution & Dealerships** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Automotive Distribution & Dealerships** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Automotive Distribution & Dealerships** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Automotive Distribution & Dealerships**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Automotive Distribution & Dealerships** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit'
           ],
           notebookMeta: null
@@ -86048,7 +89291,24 @@ window.HUB_DATA = {
         'AIR_02_Route_Profitability_Tracker.xlsx',
         'AIR_03_Cabin_Crew_Negotiation_Brief.docx',
         'AIR_04_CAAM_DGCA_Compliance_Pack.docx',
-        'AIR_05_Network_Restructuring_Playbook.docx'
+        'AIR_05_Network_Restructuring_Playbook.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -86093,6 +89353,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Aviation — Airlines** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Aviation — Airlines** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Aviation — Airlines**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Aviation — Airlines** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Aviation — Airlines** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Aviation — Airlines** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Aviation — Airlines**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Aviation — Airlines** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Aviation — Airlines** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Aviation — Airlines** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Aviation — Airlines**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Aviation — Airlines** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -88225,7 +91558,27 @@ window.HUB_DATA = {
         'EDU_02_Intl_Student_Pipeline.xlsx',
         'EDU_03_MQA_Accreditation_Brief.docx',
         'EDU_04_Competitor_Programme_Map.docx',
-        'EDU_05_FY2026_Intake_Recovery_Playbook.docx'
+        'EDU_05_FY2026_Intake_Recovery_Playbook.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -88270,6 +91623,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Education** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Education** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Education**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Education** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Education** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Education** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Education**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Education** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Education** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Education** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Education**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Education** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -90382,7 +93808,26 @@ window.HUB_DATA = {
         'POW_02_Plant_Availability_Tracker.xlsx',
         'POW_03_Coal_to_Renewables_Capex.xlsx',
         'POW_04_ST_MEMR_Compliance_Pack.docx',
-        'POW_05_Off_Taker_Negotiation_Brief.docx'
+        'POW_05_Off_Taker_Negotiation_Brief.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -90427,6 +93872,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Utilities — Power Generation** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Utilities — Power Generation** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Utilities — Power Generation**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Utilities — Power Generation** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Utilities — Power Generation** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Utilities — Power Generation** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Utilities — Power Generation**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Utilities — Power Generation** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Utilities — Power Generation** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Utilities — Power Generation** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Utilities — Power Generation**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Utilities — Power Generation** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -92558,7 +96076,26 @@ window.HUB_DATA = {
         'PROPDEV_06_Sales_Data_Q1_2025.xlsx',
         'Riverside_Phase3_IM.pdf',
         'Riverside_Phase3_TechDD.pdf',
-        'Riverside_Site_Plan.pdf'
+        'Riverside_Site_Plan.pdf',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -92617,6 +96154,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Hadar Caspit',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Property Development** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Property Development** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Property Development**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Property Development** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Property Development** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Property Development** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Property Development**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Property Development** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Property Development** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Property Development** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Property Development**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Property Development** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -94881,7 +98491,27 @@ window.HUB_DATA = {
         'ECM_02_Rider_Supply_Heatmap.xlsx',
         'ECM_03_BNM_OJK_Compliance_Brief.docx',
         'ECM_04_Take_Rate_Defence_Pack.docx',
-        'ECM_05_Festive_Peak_Operations_Playbook.docx'
+        'ECM_05_Festive_Peak_Operations_Playbook.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -94926,6 +98556,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **E-commerce / Super-app** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **E-commerce / Super-app** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for E-commerce / Super-app**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **E-commerce / Super-app** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **E-commerce / Super-app** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **E-commerce / Super-app** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for E-commerce / Super-app**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **E-commerce / Super-app** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **E-commerce / Super-app** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **E-commerce / Super-app** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for E-commerce / Super-app**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **E-commerce / Super-app** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -97042,7 +100745,25 @@ window.HUB_DATA = {
         'MAR_02_Container_Charter_Rates_Tracker.xlsx',
         'MAR_03_Westports_Concession_Renewal_Brief.docx',
         'MAR_04_Hubla_MarineDept_Compliance_Pack.docx',
-        'MAR_05_Fleet_Renewal_Financing_Playbook.docx'
+        'MAR_05_Fleet_Renewal_Financing_Playbook.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -97087,6 +100808,79 @@ window.HUB_DATA = {
           personaID: [
             'Sasha Ouellet',
             'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Maritime & Shipping** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Maritime & Shipping** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Maritime & Shipping**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Maritime & Shipping** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Maritime & Shipping** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Maritime & Shipping** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Maritime & Shipping**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Maritime & Shipping** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Maritime & Shipping** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Maritime & Shipping** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Maritime & Shipping**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Maritime & Shipping** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
           ],
           notebookMeta: null
         },
@@ -99237,6 +103031,79 @@ window.HUB_DATA = {
           notebookMeta: null
         },
         {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Industrial & Electrical Distribution** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Industrial & Electrical Distribution** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Industrial & Electrical Distribution**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Industrial & Electrical Distribution** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Industrial & Electrical Distribution** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Industrial & Electrical Distribution** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Industrial & Electrical Distribution**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Industrial & Electrical Distribution** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Industrial & Electrical Distribution** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Industrial & Electrical Distribution** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Industrial & Electrical Distribution**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Industrial & Electrical Distribution** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
           tool: '🔍 Researcher',
           license: 'Microsoft 365 Copilot',
           account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
@@ -100301,7 +104168,25 @@ window.HUB_DATA = {
         'HR_Workforce_FY2026.xlsx',
         'HR_Strategic_Priorities_2030.docx',
         'HR_Outsourcing_and_Contract_Staff.xlsx',
-        'HR_Skill_Gap_Survey_2025.xlsx'
+        'HR_Skill_Gap_Survey_2025.xlsx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx'
       ],
       prompts: [
         {
@@ -100360,6 +104245,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **👥 Human Resources** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **👥 Human Resources** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 👥 Human Resources**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **👥 Human Resources** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **👥 Human Resources** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **👥 Human Resources** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 👥 Human Resources**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **👥 Human Resources** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **👥 Human Resources** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **👥 Human Resources** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 👥 Human Resources**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **👥 Human Resources** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -103190,7 +107148,27 @@ window.HUB_DATA = {
         'PRC_Vendor_Responses.xlsx',
         'PRC_RFP_Requirements.docx',
         'PRC_Past_Contracts.xlsx',
-        'PRC_Industry_Benchmark.xlsx'
+        'PRC_Industry_Benchmark.xlsx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx'
       ],
       prompts: [
         {
@@ -103246,6 +107224,79 @@ window.HUB_DATA = {
             'Hadar Caspit'
           ],
           personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **💰 Finance & Treasury** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **💰 Finance & Treasury** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 💰 Finance & Treasury**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **💰 Finance & Treasury** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **💰 Finance & Treasury** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **💰 Finance & Treasury** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 💰 Finance & Treasury**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **💰 Finance & Treasury** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **💰 Finance & Treasury** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **💰 Finance & Treasury** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 💰 Finance & Treasury**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **💰 Finance & Treasury** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
@@ -105963,7 +110014,26 @@ window.HUB_DATA = {
         'LEG_Vendor_Contract_Draft.docx',
         'LEG_Clause_Library_Favourable.xlsx',
         'LEG_Court_Case_Precedents.xlsx',
-        'LEG_Standard_Terms_Schedule.docx'
+        'LEG_Standard_Terms_Schedule.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx'
       ],
       prompts: [
         {
@@ -106019,6 +110089,79 @@ window.HUB_DATA = {
             'Hadar Caspit'
           ],
           personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **⚖️ Legal** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **⚖️ Legal** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for ⚖️ Legal**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **⚖️ Legal** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **⚖️ Legal** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **⚖️ Legal** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for ⚖️ Legal**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **⚖️ Legal** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **⚖️ Legal** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **⚖️ Legal** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for ⚖️ Legal**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **⚖️ Legal** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
@@ -108784,7 +112927,26 @@ window.HUB_DATA = {
         'AUD_Working_Papers.xlsx',
         'AUD_Risk_Universe.xlsx',
         'AUD_Auditee_Walkthrough.docx',
-        'AUD_Findings_Tracker.xlsx'
+        'AUD_Findings_Tracker.xlsx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -108840,6 +113002,79 @@ window.HUB_DATA = {
             'Hadar Caspit'
           ],
           personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🛡 Risk & Internal Audit** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🛡 Risk & Internal Audit** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🛡 Risk & Internal Audit**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🛡 Risk & Internal Audit** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🛡 Risk & Internal Audit** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🛡 Risk & Internal Audit** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🛡 Risk & Internal Audit**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🛡 Risk & Internal Audit** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🛡 Risk & Internal Audit** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🛡 Risk & Internal Audit** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🛡 Risk & Internal Audit**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🛡 Risk & Internal Audit** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
@@ -111637,7 +115872,24 @@ window.HUB_DATA = {
         'REG_Policy_Existing_Library.xlsx',
         'REG_Policy_Peer_Regulator_Scan.xlsx',
         'REG_Policy_Industry_Consultation_Notes.docx',
-        'REG_Policy_Standard_Template.docx'
+        'REG_Policy_Standard_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -111696,6 +115948,79 @@ window.HUB_DATA = {
             'Mod Admin',
             'Mod Admin',
             'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🎯 Strategy & Corporate Planning** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🎯 Strategy & Corporate Planning** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🎯 Strategy & Corporate Planning**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🎯 Strategy & Corporate Planning** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🎯 Strategy & Corporate Planning** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🎯 Strategy & Corporate Planning** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🎯 Strategy & Corporate Planning**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🎯 Strategy & Corporate Planning** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🎯 Strategy & Corporate Planning** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🎯 Strategy & Corporate Planning** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🎯 Strategy & Corporate Planning**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🎯 Strategy & Corporate Planning** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -114418,7 +118743,26 @@ window.HUB_DATA = {
         'IE_Campaign_Metrics_Q1.xlsx',
         'IE_Budget_vs_Actual.xlsx',
         'IE_Event_Attendance_Register.xlsx',
-        'IE_Bilingual_Content_Library.docx'
+        'IE_Bilingual_Content_Library.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -114477,6 +118821,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **📢 Marketing & Communications** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **📢 Marketing & Communications** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 📢 Marketing & Communications**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **📢 Marketing & Communications** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **📢 Marketing & Communications** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **📢 Marketing & Communications** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 📢 Marketing & Communications**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **📢 Marketing & Communications** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **📢 Marketing & Communications** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **📢 Marketing & Communications** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 📢 Marketing & Communications**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **📢 Marketing & Communications** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -117110,7 +121527,24 @@ window.HUB_DATA = {
         'Site_Fuel_Logs_x4.xlsx',
         'Site_Diesel_Receipts_x5.pdf',
         'Site_Meter_Reads_x3_scans.png',
-        'GHG_Protocol_Scope123_Tracker_v2.xlsx'
+        'GHG_Protocol_Scope123_Tracker_v2.xlsx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -117169,6 +121603,79 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Daichi Maruyama',
             'Daichi Maruyama'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🌱 ESG & Sustainability** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🌱 ESG & Sustainability** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🌱 ESG & Sustainability**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🌱 ESG & Sustainability** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🌱 ESG & Sustainability** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🌱 ESG & Sustainability** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🌱 ESG & Sustainability**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🌱 ESG & Sustainability** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🌱 ESG & Sustainability** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🌱 ESG & Sustainability** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🌱 ESG & Sustainability**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🌱 ESG & Sustainability** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -119716,7 +124223,27 @@ window.HUB_DATA = {
         'OPS_06_Capex_Approval_Standards.docx',
         'Aurora_Bank_Sample_E-Stmt.png',
         'Crescent_Bank_Sample_E-Stmt.pdf',
-        'Unity_Bank_Sample_E-Stmt.pdf'
+        'Unity_Bank_Sample_E-Stmt.pdf',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -119775,6 +124302,79 @@ window.HUB_DATA = {
             'Mod Admin',
             'Mod Admin',
             'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **⚙️ Operations & COO Office** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **⚙️ Operations & COO Office** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for ⚙️ Operations & COO Office**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **⚙️ Operations & COO Office** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **⚙️ Operations & COO Office** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **⚙️ Operations & COO Office** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for ⚙️ Operations & COO Office**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **⚙️ Operations & COO Office** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **⚙️ Operations & COO Office** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **⚙️ Operations & COO Office** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for ⚙️ Operations & COO Office**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **⚙️ Operations & COO Office** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -122217,7 +126817,26 @@ window.HUB_DATA = {
         'AUD_Working_Papers.xlsx',
         'AUD_Risk_Universe.xlsx',
         'AUD_Auditee_Walkthrough.docx',
-        'AUD_Findings_Tracker.xlsx'
+        'AUD_Findings_Tracker.xlsx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx'
       ],
       prompts: [
         {
@@ -122276,6 +126895,79 @@ window.HUB_DATA = {
             'Sasha Ouellet',
             'Sasha Ouellet',
             'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **📜 Corporate Secretarial** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **📜 Corporate Secretarial** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 📜 Corporate Secretarial**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **📜 Corporate Secretarial** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **📜 Corporate Secretarial** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **📜 Corporate Secretarial** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 📜 Corporate Secretarial**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **📜 Corporate Secretarial** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **📜 Corporate Secretarial** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **📜 Corporate Secretarial** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 📜 Corporate Secretarial**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **📜 Corporate Secretarial** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -124759,7 +129451,25 @@ window.HUB_DATA = {
         'IE_Campaign_Metrics_Q1.xlsx',
         'IE_Budget_vs_Actual.xlsx',
         'IE_Event_Attendance_Register.xlsx',
-        'IE_Bilingual_Content_Library.docx'
+        'IE_Bilingual_Content_Library.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -124815,6 +129525,79 @@ window.HUB_DATA = {
             'Hadar Caspit'
           ],
           personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **📈 Investor Relations** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **📈 Investor Relations** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 📈 Investor Relations**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **📈 Investor Relations** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **📈 Investor Relations** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **📈 Investor Relations** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 📈 Investor Relations**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **📈 Investor Relations** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **📈 Investor Relations** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **📈 Investor Relations** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 📈 Investor Relations**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **📈 Investor Relations** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit'
@@ -127423,7 +132206,28 @@ window.HUB_DATA = {
         'PRC_Vendor_Responses.xlsx',
         'PRC_RFP_Requirements.docx',
         'PRC_Past_Contracts.xlsx',
-        'PRC_Industry_Benchmark.xlsx'
+        'PRC_Industry_Benchmark.xlsx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -127482,6 +132286,79 @@ window.HUB_DATA = {
             'Daichi Maruyama',
             'Daichi Maruyama',
             'Daichi Maruyama'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🛒 Procurement & Supply Chain** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🛒 Procurement & Supply Chain** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🛒 Procurement & Supply Chain**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🛒 Procurement & Supply Chain** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🛒 Procurement & Supply Chain** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🛒 Procurement & Supply Chain** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🛒 Procurement & Supply Chain**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🛒 Procurement & Supply Chain** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **🛒 Procurement & Supply Chain** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **🛒 Procurement & Supply Chain** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 🛒 Procurement & Supply Chain**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **🛒 Procurement & Supply Chain** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
@@ -130315,7 +135192,26 @@ window.HUB_DATA = {
         'IT_10_Tech_Governance_Policies.docx',
         'Change_Register_Q1.xlsx',
         'IT_Governance_Policy.docx',
-        'Incident_Bridge_Notes.docx'
+        'Incident_Bridge_Notes.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
       ],
       prompts: [
         {
@@ -130374,6 +135270,79 @@ window.HUB_DATA = {
             'Mod Admin',
             'Mod Admin',
             'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **💻 IT & Digital** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **💻 IT & Digital** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 💻 IT & Digital**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **💻 IT & Digital** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **💻 IT & Digital** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **💻 IT & Digital** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 💻 IT & Digital**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **💻 IT & Digital** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **💻 IT & Digital** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **💻 IT & Digital** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for 💻 IT & Digital**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **💻 IT & Digital** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
           ],
           notebookMeta: null
         },
