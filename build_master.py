@@ -1227,6 +1227,159 @@ try:
 except Exception as _e:
     print(f"(SharePoint AI Library injection skipped due to error: {_e})")
 
+# ── Scout + SharePoint AI prompt-block injection ─────────────────────────
+# Surface the per-entry scoutLibrary / sharepointLibrary cards inside the main
+# detail-view prompts list, between the existing Notebook and Chat blocks. Each
+# library card already has industry/department-tailored instructions, prompts,
+# sample_files and personas, so we reformat one tool() block per entry from
+# those cards (no new content authoring). Idempotent: skips if T_SCOUT or
+# T_SHAREPOINT block already exists for that entry.
+try:
+    from util import T_SCOUT, T_SHAREPOINT, T_NOTEBOOK, T_CHAT, M365_LIC, M365_ACCT, DESC_SCOUT, DESC_SHAREPOINT, tool
+
+    def _card_to_prompt_entries(cards, kind):
+        """Convert library cards to {instr, prompt} entries. kind='scout'|'sp'."""
+        out = []
+        for c in (cards or []):
+            if not isinstance(c, dict):
+                continue
+            title = c.get('title') or ''
+            instructions = c.get('instructions') or []
+            sample_files = c.get('sample_files') or []
+            prompts = c.get('prompts') or []
+            if not prompts:
+                continue
+            instr_lines = []
+            if title:
+                instr_lines.append(f"**Use case:** {title}")
+            if kind == 'scout':
+                instr_lines.append("**(1) Open Microsoft Scout** desktop app (Frontier preview).")
+            else:
+                instr_lines.append("**(1) Open SharePoint** → navigate to the relevant site or library.")
+            for j, step in enumerate(instructions, start=2):
+                instr_lines.append(f"**({j})** {step}")
+            if sample_files:
+                fnames = ", ".join(f if isinstance(f, str) else (f[0] if isinstance(f, (list, tuple)) and f else '') for f in sample_files)
+                if fnames:
+                    instr_lines.append(f"**Reference files:** {fnames}")
+            instr_text = " ".join(instr_lines)
+            for p in prompts:
+                if not isinstance(p, dict):
+                    continue
+                ptext = p.get('text') or ''
+                if not ptext:
+                    continue
+                lbl = p.get('label')
+                this_instr = instr_text if not out else (f"**Same Scout session.** {lbl}" if (kind == 'scout' and lbl) else (f"**Same SharePoint flow.** {lbl}" if lbl else ("**Stay in Scout.**" if kind == 'scout' else "**Stay in SharePoint.**")))
+                out.append({'instr': this_instr, 'prompt': ptext})
+        return out
+
+    def _entry_persona(e):
+        personas = e.get('personas') or []
+        if personas and isinstance(personas[0], dict):
+            return personas[0].get('name') or 'Hadar Caspit'
+        return 'Hadar Caspit'
+
+    def _inject_scout_prompts(entries):
+        n = 0
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            cards = e.get('scoutLibrary') or []
+            if not cards:
+                continue
+            prompts_arr = e.get('prompts') or []
+            if any(isinstance(t, dict) and t.get('tool') == T_SCOUT for t in prompts_arr):
+                continue
+            entries_list = _card_to_prompt_entries(cards, 'scout')
+            if not entries_list:
+                continue
+            persona_name = _entry_persona(e)
+            block = tool(
+                T_SCOUT, M365_LIC, M365_ACCT,
+                entries_list,
+                desc=DESC_SCOUT,
+                promptsID=entries_list,
+                promptsBM=entries_list,
+                persona=[persona_name] * len(entries_list),
+                personaID=[persona_name] * len(entries_list),
+            )
+            # Insert after T_NOTEBOOK if present, else before T_CHAT, else at end.
+            insert_at = len(prompts_arr)
+            for i, t in enumerate(prompts_arr):
+                if isinstance(t, dict) and t.get('tool') == T_NOTEBOOK:
+                    insert_at = i + 1
+                    break
+            else:
+                for i, t in enumerate(prompts_arr):
+                    if isinstance(t, dict) and t.get('tool') == T_CHAT:
+                        insert_at = i
+                        break
+            new_arr = list(prompts_arr)
+            new_arr.insert(insert_at, block)
+            e['prompts'] = new_arr
+            n += 1
+        return n
+
+    def _inject_sharepoint_prompts(entries):
+        n = 0
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            cards = e.get('sharepointLibrary') or []
+            if not cards:
+                continue
+            prompts_arr = e.get('prompts') or []
+            if any(isinstance(t, dict) and t.get('tool') == T_SHAREPOINT for t in prompts_arr):
+                continue
+            entries_list = _card_to_prompt_entries(cards, 'sp')
+            if not entries_list:
+                continue
+            persona_name = _entry_persona(e)
+            block = tool(
+                T_SHAREPOINT, M365_LIC, M365_ACCT,
+                entries_list,
+                desc=DESC_SHAREPOINT,
+                promptsID=entries_list,
+                promptsBM=entries_list,
+                persona=[persona_name] * len(entries_list),
+                personaID=[persona_name] * len(entries_list),
+            )
+            # Insert after T_SCOUT if present (so order is Notebook → Scout → SP),
+            # else after T_NOTEBOOK, else before T_CHAT, else at end.
+            insert_at = len(prompts_arr)
+            anchor_found = False
+            for i, t in enumerate(prompts_arr):
+                if isinstance(t, dict) and t.get('tool') == T_SCOUT:
+                    insert_at = i + 1
+                    anchor_found = True
+                    break
+            if not anchor_found:
+                for i, t in enumerate(prompts_arr):
+                    if isinstance(t, dict) and t.get('tool') == T_NOTEBOOK:
+                        insert_at = i + 1
+                        anchor_found = True
+                        break
+            if not anchor_found:
+                for i, t in enumerate(prompts_arr):
+                    if isinstance(t, dict) and t.get('tool') == T_CHAT:
+                        insert_at = i
+                        break
+            new_arr = list(prompts_arr)
+            new_arr.insert(insert_at, block)
+            e['prompts'] = new_arr
+            n += 1
+        return n
+
+    _scp_added = _inject_scout_prompts(all_industries) + _inject_scout_prompts(all_departments)
+    _spp_added = _inject_sharepoint_prompts(all_industries) + _inject_sharepoint_prompts(all_departments)
+    print(f"Scout prompt block injected on {_scp_added} entries")
+    print(f"SharePoint AI prompt block injected on {_spp_added} entries")
+except Exception as _e:
+    import traceback as _tb
+    print(f"(Scout / SharePoint AI prompt injection skipped due to error: {_e})")
+    _tb.print_exc()
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')

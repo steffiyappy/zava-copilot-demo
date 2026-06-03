@@ -343,6 +343,40 @@ html{overflow-x:hidden}
 .cwlib-entry-card:hover .cwlib-entry-open{gap:8px}
 .cwlib-empty{padding:48px 24px;text-align:center;color:var(--muted);font-size:14px;border:1.5px dashed var(--border);border-radius:14px;background:var(--surface)}
 .cwlib-detail-hero{background:linear-gradient(135deg,#7C2D12 0%,#9A3412 60%,#B45309 100%)}
+/* ── Microsoft Scout colour theme (charcoal + cyan, "Frontier preview") ── */
+.cwlib-hero.scout-hero{background:linear-gradient(135deg,#0B1220 0%,#1E293B 100%);border-color:rgba(34,211,238,0.35);box-shadow:0 6px 24px rgba(14,116,144,0.20)}
+.cwlib-hero.scout-hero .cwlib-hero-eyebrow{color:#22D3EE;background:rgba(34,211,238,0.12);border-color:rgba(34,211,238,0.35)}
+.cwlib-hero.scout-hero .cwlib-hero-title{color:#F8FAFC}
+.cwlib-hero.scout-hero .cwlib-hero-sub{color:#CBD5E1;opacity:1}
+.cwlib-hero.scout-hero .cwlib-mode-btn{background:rgba(34,211,238,0.08);border-color:rgba(34,211,238,0.30);color:#E2E8F0}
+.cwlib-hero.scout-hero .cwlib-mode-btn:hover{background:rgba(34,211,238,0.18);border-color:rgba(34,211,238,0.55)}
+.cwlib-hero.scout-hero .cwlib-mode-btn.active{background:#0E7490;border-color:#0E7490;color:#FFF;box-shadow:0 4px 12px rgba(14,116,144,0.40)}
+.cwlib-detail-hero.scout-hero{background:linear-gradient(135deg,#0B1220 0%,#0E7490 100%)}
+/* ── AI in SharePoint colour theme (real SharePoint teal) ── */
+.cwlib-hero.sp-hero{background:linear-gradient(135deg,#E6F7F7 0%,#CCEEEE 100%);border-color:rgba(3,131,135,0.35);box-shadow:0 6px 24px rgba(3,131,135,0.10)}
+.cwlib-hero.sp-hero .cwlib-hero-eyebrow{color:#036C6C;background:rgba(255,255,255,0.75);border-color:rgba(3,131,135,0.30)}
+.cwlib-hero.sp-hero .cwlib-hero-title{color:#03595A}
+.cwlib-hero.sp-hero .cwlib-hero-sub{color:#036C6C;opacity:0.92}
+.cwlib-hero.sp-hero .cwlib-mode-btn{background:rgba(255,255,255,0.65);border-color:rgba(3,131,135,0.28);color:#036C6C}
+.cwlib-hero.sp-hero .cwlib-mode-btn:hover{background:#FFF;border-color:rgba(3,131,135,0.50)}
+.cwlib-hero.sp-hero .cwlib-mode-btn.active{background:#038387;border-color:#038387;color:#FFF;box-shadow:0 4px 12px rgba(3,131,135,0.30)}
+.cwlib-detail-hero.sp-hero{background:linear-gradient(135deg,#036C6C 0%,#038387 60%,#0CA5A8 100%)}
+[data-theme="dark"] .cwlib-hero.scout-hero{background:linear-gradient(135deg,#020617 0%,#0F172A 100%);border-color:rgba(34,211,238,0.40)}
+[data-theme="dark"] .cwlib-hero.scout-hero .cwlib-hero-title{color:#F8FAFC}
+[data-theme="dark"] .cwlib-hero.scout-hero .cwlib-hero-sub{color:#CBD5E1}
+[data-theme="dark"] .cwlib-hero.scout-hero .cwlib-hero-eyebrow{color:#22D3EE;background:rgba(34,211,238,0.10);border-color:rgba(34,211,238,0.40)}
+[data-theme="dark"] .cwlib-hero.sp-hero{background:linear-gradient(135deg,#0E2E2F 0%,#03595A 100%);border-color:rgba(3,131,135,0.45)}
+[data-theme="dark"] .cwlib-hero.sp-hero .cwlib-hero-title,
+[data-theme="dark"] .cwlib-hero.sp-hero .cwlib-hero-sub{color:#A7E5E5}
+[data-theme="dark"] .cwlib-hero.sp-hero .cwlib-hero-eyebrow{color:#A7E5E5;background:rgba(0,0,0,0.30);border-color:rgba(3,131,135,0.45)}
+[data-theme="dark"] .cwlib-hero.sp-hero .cwlib-mode-btn{background:rgba(0,0,0,0.25);border-color:rgba(3,131,135,0.40);color:#CFEFEF}
+@media (prefers-color-scheme:dark){
+  [data-theme="system"] .cwlib-hero.sp-hero{background:linear-gradient(135deg,#0E2E2F 0%,#03595A 100%);border-color:rgba(3,131,135,0.45)}
+  [data-theme="system"] .cwlib-hero.sp-hero .cwlib-hero-title,
+  [data-theme="system"] .cwlib-hero.sp-hero .cwlib-hero-sub{color:#A7E5E5}
+  [data-theme="system"] .cwlib-hero.sp-hero .cwlib-hero-eyebrow{color:#A7E5E5;background:rgba(0,0,0,0.30);border-color:rgba(3,131,135,0.45)}
+  [data-theme="system"] .cwlib-hero.sp-hero .cwlib-mode-btn{background:rgba(0,0,0,0.25);border-color:rgba(3,131,135,0.40);color:#CFEFEF}
+}
 .cwlib-sidebar-group{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--muted-2);text-transform:uppercase;padding:14px 16px 6px}
 /* ── Cowork Library DETAIL view — Agent-Builder-style picker + static structure ── */
 /* Sticky picker row at top — clickable UC tiles, content area below stays in a fixed scaffold */
@@ -1510,7 +1544,7 @@ a.file-pill:visited{color:var(--text)}
       </div>
       <!-- Scout Library grid -->
       <div id="scoutlib-grid-wrap" style="display:none">
-        <div class="cwlib-hero" style="background:linear-gradient(135deg,#0F2A4F 0%,#1F4E78 100%)">
+        <div class="cwlib-hero scout-hero">
           <div class="cwlib-hero-eyebrow">&#129517; FRONTIER PREVIEW &middot; <span id="scoutlib-total-uc">--</span> USE CASES</div>
           <div class="cwlib-hero-title">Microsoft Scout Library</div>
           <div class="cwlib-hero-sub">Desktop AI app (Frontier preview) with file system access, shell commands, browser automation via Playwright, M365 + WorkIQ access, sub-agents, heartbeat mode, and scheduled automations &mdash; goes beyond Copilot Chat. All Scout use cases organised by industry and department.</div>
@@ -1523,7 +1557,7 @@ a.file-pill:visited{color:var(--text)}
       </div>
       <!-- SharePoint AI Library grid -->
       <div id="splib-grid-wrap" style="display:none">
-        <div class="cwlib-hero" style="background:linear-gradient(135deg,#0078D4 0%,#106EBE 100%)">
+        <div class="cwlib-hero sp-hero">
           <div class="cwlib-hero-eyebrow">&#127760; PUBLIC PREVIEW &middot; <span id="splib-total-uc">--</span> USE CASES</div>
           <div class="cwlib-hero-title">AI in SharePoint Library</div>
           <div class="cwlib-hero-sub">Microsoft 365 Copilot inside SharePoint pages, libraries, and sites. Floating Button surfaces context-sensitive actions: Ask, Summarize, Compare files, Audio Overview, FAQ from File, Autofill columns, Automate workflows, Improve site, Create Page with AI. All AI in SharePoint use cases organised by industry and department.</div>
@@ -5496,7 +5530,7 @@ function showScoutLibFor(entryId){
     // Create the detail view container on first use
     scd=document.createElement('div'); scd.id='scoutlib-detail-view'; scd.className='cwlib-detail-view';
     scd.innerHTML='<button class="detail-hero-back" onclick="backToScoutLib()">&larr; Back to Scout Library</button>'+
-      '<div class="cwlib-detail-hero" style="background:linear-gradient(135deg,#0F2A4F 0%,#1F4E78 100%)"><div class="cwlib-detail-title" id="scoutlib-detail-title"></div><div class="cwlib-detail-sub" id="scoutlib-detail-sub"></div></div>'+
+      '<div class="cwlib-detail-hero scout-hero"><div class="cwlib-detail-title" id="scoutlib-detail-title"></div><div class="cwlib-detail-sub" id="scoutlib-detail-sub"></div></div>'+
       '<div id="scoutlib-detail-cards"></div>';
     document.querySelector('main.main').appendChild(scd);
   }
@@ -5601,7 +5635,7 @@ function showSpLibFor(entryId){
   if(!spd){
     spd=document.createElement('div'); spd.id='splib-detail-view'; spd.className='cwlib-detail-view';
     spd.innerHTML='<button class="detail-hero-back" onclick="backToSpLib()">&larr; Back to SharePoint AI Library</button>'+
-      '<div class="cwlib-detail-hero" style="background:linear-gradient(135deg,#0078D4 0%,#106EBE 100%)"><div class="cwlib-detail-title" id="splib-detail-title"></div><div class="cwlib-detail-sub" id="splib-detail-sub"></div></div>'+
+      '<div class="cwlib-detail-hero sp-hero"><div class="cwlib-detail-title" id="splib-detail-title"></div><div class="cwlib-detail-sub" id="splib-detail-sub"></div></div>'+
       '<div id="splib-detail-cards"></div>';
     document.querySelector('main.main').appendChild(spd);
   }
