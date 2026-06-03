@@ -6582,6 +6582,18 @@ const OTHER_PAGES = [
   },
   {
     section: 'Customer Workshops',
+    icon: '🏦',
+    color: '#0891B2',
+    accent: '#0E7490',
+    name: 'Contoso FSA — Copilot Immersion',
+    desc: 'Financial Services Authority Copilot immersion. Regulatory supervision, examination workflow, market conduct, prudential analysis — Researcher, Analyst, Cowork and Agent Builder for a financial regulator persona.',
+    url: 'https://steffiyappy.github.io/contoso-fsa-copilot-immersion/',
+    password: 'ContosoFSA2026',
+    tag: 'Regulator Workshop',
+    keywords: 'contoso FSA financial services authority regulator supervision examination market conduct prudential immersion researcher analyst cowork builder'
+  },
+  {
+    section: 'Customer Workshops',
     icon: '👥',
     color: '#7C3AED',
     accent: '#5B21B6',
