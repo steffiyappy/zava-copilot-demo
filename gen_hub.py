@@ -578,6 +578,19 @@ html{overflow-x:hidden}
 .tool-header.open .tool-chevron{transform:rotate(180deg)}
 .tool-prompts{display:none;border:1px solid var(--blue);border-top:none;border-bottom-left-radius:10px;border-bottom-right-radius:10px;overflow:hidden;background:var(--surface)}
 .tool-prompts.open{display:block}
+/* Card-style tool section — used on Cowork / Notebook / Scout / SharePoint AI sub-tabs.
+   Removes the click-to-expand UI: header is always rendered as a card title bar (no
+   chevron, no hover/cursor pointer) and prompts are always visible. Provides a single
+   bordered/elevated card per tool block, consistent across industries and departments. */
+.tool-section.card-style{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 1px 3px rgba(15,23,42,0.04),0 4px 12px rgba(15,23,42,0.04);overflow:hidden;margin-bottom:18px}
+.tool-section.card-style .tool-header{cursor:default;background:linear-gradient(135deg,#F8FAFF,#F1F5FF);border:none;border-bottom:1px solid var(--border);border-radius:0;padding:12px 16px}
+.tool-section.card-style .tool-header:hover{background:linear-gradient(135deg,#F8FAFF,#F1F5FF);border-color:transparent;border-bottom:1px solid var(--border)}
+.tool-section.card-style .tool-header:active{transform:none}
+.tool-section.card-style .tool-chevron{display:none}
+.tool-section.card-style .tool-prompts{display:block;border:none;border-radius:0;background:var(--surface)}
+[data-theme="dark"] .tool-section.card-style{background:#0B1A2E;border-color:#1F3354}
+[data-theme="dark"] .tool-section.card-style .tool-header{background:linear-gradient(135deg,#0F2540,#102A47);border-bottom-color:#1F3354}
+[data-theme="dark"] .tool-section.card-style .tool-header:hover{background:linear-gradient(135deg,#0F2540,#102A47)}
 /* Tool capability blurb — shown above the prompt list when expanded */
 .tool-info{display:flex;flex-direction:column;gap:4px;padding:10px 14px;background:linear-gradient(135deg,#F0F9FF,#EFF6FF);border-bottom:1px solid #BAE6FD;font-size:11.5px;line-height:1.55}
 .tool-info-label{font-size:9.5px;font-weight:800;color:#0369A1;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:5px}
@@ -6201,6 +6214,10 @@ function showItem(item,tab,preserveScroll){
       }
     }
     const sec=document.createElement('div'); sec.className='tool-section';
+    // Render as a card (no press-to-expand UI) when on Cowork / Notebook / Scout /
+    // SharePoint AI sub-tabs — content is always visible, header is a static title bar.
+    const _isCardTab = (_detailTab==='cowork' || _detailTab==='notebook' || _detailTab==='scout' || _detailTab==='sharepoint');
+    if(_isCardTab){ sec.className+=' card-style'; }
     // IHH-style 3-card Agent Builder picker (when tool has isBuilder3 + agents arrays)
     if(tool.isBuilder3 && (tool.agents||[]).length){
       const agents=_getAgents(tool);
@@ -6214,12 +6231,12 @@ function showItem(item,tab,preserveScroll){
       // and the tab routing places paid in M365 Tools tab, free in Copilot Chat tab.
       const tier = (tool.builderTier === 'free') ? 'free' : 'premium';
       sec.innerHTML=
-        '<div class="tool-header" id="tool-hdr-'+slot+'" onclick="toggleTool(\''+slot+'\')">'+
+        '<div class="tool-header" id="tool-hdr-'+slot+'"'+(_isCardTab?'':' onclick="toggleTool(\''+slot+'\')"')+'>'+
           '<span class="tool-name">'+escapeHTML(_xformVal(tool.tool,'EN'))+'</span>'+
           '<span class="tool-license '+licClass2+'">'+licLabel2+'</span>'+
-          '<span class="tool-chevron">▼</span>'+
+          (_isCardTab?'':'<span class="tool-chevron">▼</span>')+
         '</div>'+
-        '<div class="tool-prompts" id="tool-prm-'+slot+'">'+
+        '<div class="tool-prompts'+(_isCardTab?' open':'')+'" id="tool-prm-'+slot+'">'+
           (tool.account?'<div class="tool-account-bar">'+_uL('👤 Demo account:')+' <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
           (function(){var d=_defaultDesc(tool);return d?'<div class="tool-info"><span class="tool-info-label">'+_uL('💡 What this tool can do')+'</span><span class="tool-info-body">'+escapeHTML(_xformVal(d,'EN'))+'</span></div>':'';})()+
           _renderBuilderBlock(slot+'-'+tier.substring(0,4), agents, intro, tier)+
@@ -6358,12 +6375,12 @@ function showItem(item,tab,preserveScroll){
         '</div>';
     }
     sec.innerHTML=
-      '<div class="tool-header" id="tool-hdr-'+id+'-'+ti+'" onclick="toggleTool(\''+id+'-'+ti+'\')">'+
+      '<div class="tool-header" id="tool-hdr-'+id+'-'+ti+'"'+(_isCardTab?'':' onclick="toggleTool(\''+id+'-'+ti+'\')"')+'>'+
         '<span class="tool-name">'+escapeHTML(_xformVal(tool.tool,'EN'))+'</span>'+
         '<span class="tool-license '+licClass+'">'+licLabel+'</span>'+
-        '<span class="tool-chevron">▼</span>'+
+        (_isCardTab?'':'<span class="tool-chevron">▼</span>')+
       '</div>'+
-      '<div class="tool-prompts" id="tool-prm-'+id+'-'+ti+'">'+
+      '<div class="tool-prompts'+(_isCardTab?' open':'')+'" id="tool-prm-'+id+'-'+ti+'">'+
         (tool.account?'<div class="tool-account-bar">'+_uL('👤 Demo account:')+' <strong>'+escapeHTML(tool.account)+'</strong></div>':'')+
         (function(){var d=_defaultDesc(tool);return d?'<div class="tool-info"><span class="tool-info-label">'+_uL('💡 What this tool can do')+'</span><span class="tool-info-body">'+escapeHTML(_xformVal(d,'EN'))+'</span></div>':'';})()+
         researcherCallout+
@@ -6440,12 +6457,12 @@ function showItem(item,tab,preserveScroll){
       }
     }
   }
-  // Auto-expand: on Cowork / Scout / SharePoint sub-tabs, open ALL tool blocks
-  // so the prompts read like cards (no tap-to-expand). On other sub-tabs, open
-  // just the first tool block (legacy behaviour).
+  // Auto-expand: on Cowork / Notebook / Scout / SharePoint sub-tabs, blocks render
+  // as cards (always visible, see .tool-section.card-style above). On other sub-tabs,
+  // open just the first tool block (legacy behaviour).
   if(visibleTools.length){
-    if(_detailTab==='cowork' || _detailTab==='scout' || _detailTab==='sharepoint'){
-      visibleTools.forEach(t=>toggleTool(id+'-'+item.prompts.indexOf(t)));
+    if(_detailTab==='cowork' || _detailTab==='notebook' || _detailTab==='scout' || _detailTab==='sharepoint'){
+      // Cards are pre-opened via the 'open' class — no toggleTool needed.
     } else {
       toggleTool(id+'-'+item.prompts.indexOf(visibleTools[0]));
     }

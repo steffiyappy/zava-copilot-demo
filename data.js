@@ -142948,7 +142948,148 @@ window.HUB_DATA = {
         }
       ],
       relevantDepts: [],
-      storyboard: [],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Frame the FY27 Strategic Question',
+          titleID: 'Bingkai Pertanyaan Strategis FY27',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the MYR 2.8B FY27 free-capital choice and the 5-division portfolio question that the ExCo must answer before Investor Day; pull deep ASEAN-conglomerate benchmarks (Sime Darby, Astra International, Ayala, Genting) and governance precedents to anchor management credibility.',
+          summaryID: 'Bingkai pilihan modal-bebas FY27 senilai Rp 9,8 triliun dan pertanyaan portofolio 5 divisi yang harus dijawab ExCo sebelum Investor Day; tarik benchmark konglomerat ASEAN (Sime Darby, Astra, Ayala, Genting) dan preseden tata kelola untuk menopang kredibilitas manajemen.',
+          tasks: [
+            {
+              n: '01',
+              tool: 'chat',
+              verb: '1-page ExCo briefing on the FY27 capital choice',
+              verbID: 'Briefing ExCo 1 halaman atas pilihan modal FY27',
+              mode: 'show',
+              label: 'Copilot Chat'
+            },
+            {
+              n: '02',
+              tool: 'researcher',
+              verb: 'Critique ASEAN-conglomerate capital-allocation precedents',
+              verbID: 'Kritik preseden alokasi modal konglomerat ASEAN',
+              mode: 'show',
+              label: 'Critique'
+            },
+            {
+              n: '03',
+              tool: 'researcher',
+              verb: 'Multi-model debate on the 5-division portfolio question',
+              verbID: 'Debat multi-model atas pertanyaan portofolio 5 divisi',
+              mode: 'show',
+              label: 'Model Council'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Quantify the Five-Division Outlook',
+          titleID: 'Kuantifikasi Outlook 5 Divisi',
+          minutes: 22,
+          mode: 'Hands-on',
+          summary: 'Refresh the 5-division scorecard, build the FY27 capital-allocation Monte Carlo (5 candidate uses × IRR Low/Mid/High), and synthesise the ExCo pack, KPI dashboard and risk heatmap into one decision narrative inside Notebook.',
+          summaryID: 'Refresh scorecard 5 divisi, bangun Monte Carlo alokasi modal FY27 (5 opsi × IRR Low/Mid/High), dan sintesakan ExCo pack, dashboard KPI dan risk heatmap menjadi satu narasi keputusan di Notebook.',
+          tasks: [
+            {
+              n: '04',
+              tool: 'analyst',
+              verb: 'Variance + Monte Carlo capital-allocation analysis',
+              verbID: 'Analisis selisih + Monte Carlo alokasi modal',
+              mode: 'hands',
+              label: 'Analyst'
+            },
+            {
+              n: '05',
+              tool: 'excel',
+              verb: '5-division scorecard refresh + capital-allocation ranking sheet',
+              verbID: 'Refresh scorecard 5 divisi + sheet ranking alokasi modal',
+              mode: 'hands',
+              label: 'Copilot in Excel'
+            },
+            {
+              n: '06',
+              tool: 'notebook',
+              verb: 'Cross-file ExCo synthesis (10 EXEC sources)',
+              verbID: 'Sintesa ExCo lintas-file (10 sumber EXEC)',
+              mode: 'hands',
+              label: 'Copilot Notebook'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate the Equity Story',
+          titleID: 'Komunikasikan Equity Story',
+          minutes: 22,
+          mode: 'Hands-on',
+          summary: 'Condense the 14-page Strategy Refresh memo to a 3-page board read, build the 12-slide ExCo + Investor Day deck in PowerPoint, and align the Q4 stakeholder email pack across board, regulator, employees and analysts in Outlook.',
+          summaryID: 'Padatkan memo Strategy Refresh 14 halaman menjadi 3 halaman untuk dewan, bangun deck ExCo + Investor Day 12 slide di PowerPoint, dan rapikan paket email Q4 untuk dewan, regulator, karyawan dan analis di Outlook.',
+          tasks: [
+            {
+              n: '07',
+              tool: 'word',
+              verb: 'Strategy Refresh memo — 14p → 3p board read',
+              verbID: 'Memo Strategy Refresh — 14h → 3h untuk dewan',
+              mode: 'hands',
+              label: 'Copilot in Word'
+            },
+            {
+              n: '08',
+              tool: 'ppt',
+              verb: '12-slide ExCo + Investor Day deck',
+              verbID: 'Deck ExCo + Investor Day 12 slide',
+              mode: 'hands',
+              label: 'Copilot in PowerPoint'
+            },
+            {
+              n: '09',
+              tool: 'outlook',
+              verb: 'Q4 stakeholder email pack (board / regulator / staff / analysts)',
+              verbID: 'Paket email Q4 (dewan / regulator / staf / analis)',
+              mode: 'hands',
+              label: 'Copilot in Outlook'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Coordinate & Scale Decisions',
+          titleID: 'Koordinasikan & Skalakan Keputusan',
+          minutes: 18,
+          mode: 'Show & Tell',
+          summary: 'Convert the Q4 ExCo Teams Recap into formal minutes, delegate the parallel Investor Day prep package to Cowork (research, deck, FAQ, briefing notes), and stand up the Zava ExCo Heartbeat Agent in Microsoft 365 Copilot Chat to monitor 5-division KPIs and Group risks daily.',
+          summaryID: 'Konversi Teams Recap ExCo Q4 menjadi notulen formal, delegasikan paket prep Investor Day paralel ke Cowork (riset, deck, FAQ, briefing notes), dan bangun Zava ExCo Heartbeat Agent di Microsoft 365 Copilot Chat untuk memantau KPI 5 divisi dan risiko Group setiap hari.',
+          tasks: [
+            {
+              n: '10',
+              tool: 'teams',
+              verb: 'ExCo Recap → Word minutes + decisions log',
+              verbID: 'Recap ExCo → Notulen Word + log keputusan',
+              mode: 'show',
+              label: 'Copilot in Teams'
+            },
+            {
+              n: '11',
+              tool: 'cowork',
+              verb: 'Autonomous Investor Day prep package',
+              verbID: 'Paket prep Investor Day otonom',
+              mode: 'show',
+              label: 'Cowork (Frontier)'
+            },
+            {
+              n: '12',
+              tool: 'builder',
+              verb: 'Zava ExCo Heartbeat Agent in Copilot Chat',
+              verbID: 'Zava ExCo Heartbeat Agent di Copilot Chat',
+              mode: 'show',
+              label: 'Agent Builder'
+            }
+          ]
+        }
+      ],
       personas: [
         {
           name: 'Mod Admin',
