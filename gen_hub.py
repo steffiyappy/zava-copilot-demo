@@ -7203,6 +7203,8 @@ async function _analyticsAuthPrompt(){
   const gtI=document.getElementById('gtab-ind'); if(gtI) gtI.innerHTML='&#127981; Industries ('+data.industries.length+')';
   const gtD=document.getElementById('gtab-dept'); if(gtD) gtD.innerHTML='&#127970; Departments ('+data.departments.length+')';
   const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.innerHTML='&#129309; Cowork Library ('+_cwLibTotalUC()+')';
+  const gtSc=document.getElementById('gtab-scoutlib'); if(gtSc) gtSc.innerHTML='&#129517; Scout Library ('+_libTotalUC('scoutLibrary')+')';
+  const gtSp=document.getElementById('gtab-splib'); if(gtSp) gtSp.innerHTML='&#127760; SharePoint AI ('+_libTotalUC('sharepointLibrary')+')';
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.innerHTML='&#128218; Other Pages ('+OTHER_PAGES.length+')';
 })();
 buildSidebar();

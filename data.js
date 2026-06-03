@@ -3066,7 +3066,26 @@ window.HUB_DATA = {
         'CB_08_Project_Portfolio.xlsx',
         'CB_09_IC_Meeting_Notes.docx',
         'CB_10_Q1_Performance_Notes.docx',
-        'CB_11_Risk_Register.xlsx'
+        'CB_11_Risk_Register.xlsx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx'
       ],
       prompts: [
         {
@@ -3730,6 +3749,124 @@ window.HUB_DATA = {
             instructionsID: 'Pemicu: "Rasio kredit bermasalah 6,8% dan coverage 71% menjelang review OJK serta sorotan investor IDX.". Notebook ini adalah sumber tertanam Zava Bank Indonesia untuk cure refinancing & covenant lender — Group CFO and Group Treasurer memimpin workstream. Sintesakan SEMUA 10 sumber. Gunakan BNM (MY) / OJK (ID) / MAS (SG) prudential and SCM disclosure sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk lender pack: rencana cure covenant + opsi refinancing. Tag setiap covenant berdasarkan Headroom / Breach-Risk / Cure-Path dan bawa benang IM. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
             guide: '/00_Copilot_Notebook_Demo_Guide.docx'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Heartbeat — Daily Group Briefing & Risk Sweep **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on **(3)** Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time **(4)** Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied **(5)** Create or select workspace folder Scout_Group_Briefing and paste the prompt below **Reference files:** Scout_Group_Risk_Register.xlsx, Group_ExCo_Watchlist.docx, Heartbeat_Log_Template.md',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Schedule monthly finance automation',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Heartbeat — Daily Group Briefing & Risk Sweep **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on **(3)** Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time **(4)** Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied **(5)** Create or select workspace folder Scout_Group_Briefing and paste the prompt below **Reference files:** Scout_Group_Risk_Register.xlsx, Group_ExCo_Watchlist.docx, Heartbeat_Log_Template.md',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Schedule monthly finance automation',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Heartbeat — Daily Group Briefing & Risk Sweep **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on **(3)** Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time **(4)** Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied **(5)** Create or select workspace folder Scout_Group_Briefing and paste the prompt below **Reference files:** Scout_Group_Risk_Register.xlsx, Group_ExCo_Watchlist.docx, Heartbeat_Log_Template.md',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Schedule monthly finance automation',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -5249,6 +5386,355 @@ window.HUB_DATA = {
             }
           ]
         }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Heartbeat — Daily Group Briefing & Risk Sweep',
+          dept_tag: 'Risk',
+          complexity: 'advanced',
+          apps: [
+            'WorkIQ',
+            'Teams',
+            'OneDrive',
+            'Shell'
+          ],
+          desc: 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+          skills: [
+            'Heartbeat mode with work-days and work-hours configuration',
+            'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
+            'Workspace file write-back plus Teams posting under restrictive permissions'
+          ],
+          instructions: [
+            'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+            'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
+            'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
+            'Create or select workspace folder Scout_Group_Briefing and paste the prompt below'
+          ],
+          sample_files: [
+            [
+              'Scout_Group_Risk_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Group_ExCo_Watchlist.docx',
+              'docx'
+            ],
+            [
+              'Heartbeat_Log_Template.md',
+              'md'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Configure the recurring heartbeat',
+              text: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          expected: [
+            'Daily_Risk_Sweep.md updated every heartbeat cycle with auditable source links',
+            'Red-risk Teams post draft or post in the approved channel only',
+            'Heartbeat activity log showing skipped actions where permissions were too broad'
+          ],
+          watch: [
+            'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+            'WorkIQ connects email + Teams + documents instead of relying on one uploaded file'
+          ],
+          honest: 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
+          tips: [
+            'Use a 15-minute interval for crisis war rooms and 2-hour interval for BAU risk sweeps',
+            'Add a deny-list for M&A, HR investigation, and named sensitive folders'
+          ],
+          id: 'uc-scout-heartbeat'
+        },
+        {
+          title: 'Browser Automation — Regulator Portal Sweep',
+          dept_tag: 'Corporate Secretarial',
+          complexity: 'intermediate',
+          apps: [
+            'Browser',
+            'Word',
+            'WorkIQ',
+            'OneDrive'
+          ],
+          desc: 'Use Scout Playwright browser control to download regulator circulars and assemble a board-ready brief.',
+          skills: [
+            'Playwright browser navigate, click, fill, download, and screenshot actions',
+            'Prompt-mode browser permissions with deny-list for internal portals',
+            'Word brief generation with source URLs, screenshots, and regulator citations'
+          ],
+          instructions: [
+            'Open Scout → Settings → Permissions → Browser Control: Prompt; deny-list internal finance, HR, and production admin portals',
+            'Create workspace folder Regulator_Portal_Sweep_2026',
+            'Use a public regulator source such as BNM, OJK, Bursa Malaysia, MAS, or SC Malaysia',
+            'Paste the prompt and approve only public-site navigation and downloads'
+          ],
+          sample_files: [
+            [
+              'BNM_Circulars_2026.pdf',
+              'pdf'
+            ],
+            [
+              'OJK_Regulatory_Watchlist.xlsx',
+              'xlsx'
+            ],
+            [
+              'Regulator_Brief_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Sweep public regulator portals',
+              text: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            }
+          ],
+          expected: [
+            'Downloaded latest circular PDFs and screenshots in the workspace',
+            'Word brief with 10 summaries, action owners, and source URLs',
+            'Exception log for inaccessible pages or duplicate circulars'
+          ],
+          watch: [
+            'Scout controls a real browser: navigate, click, download, screenshot',
+            'Prompt-mode approvals make the demo safe and visible to compliance audiences'
+          ],
+          honest: 'Use public portals or approved sandboxes. Scout must not bypass controls; Legal and Compliance still interpret obligations.',
+          tips: [
+            'For Bursa announcements, add issuer filters and export market-sensitive items separately',
+            'For OJK, ask for bilingual Bahasa Indonesia and English output'
+          ],
+          id: 'uc-scout-browser-portal'
+        },
+        {
+          title: 'Automation — Monthly Close Pack',
+          dept_tag: 'Finance',
+          complexity: 'advanced',
+          apps: [
+            'Excel',
+            'PowerPoint',
+            'Outlook',
+            'Automation'
+          ],
+          desc: 'Schedule Scout for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
+          skills: [
+            'Schedule-triggered recurring automation independent of an active chat',
+            'Excel skill for GL extracts, budget variance, and workbook formatting',
+            'PowerPoint and Outlook output with permission-aware send/draft behaviour'
+          ],
+          instructions: [
+            'Open Scout → Automations → New automation',
+            'Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00',
+            'Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only',
+            'Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code'
+          ],
+          sample_files: [
+            [
+              'GL_Extract_MY_ID_SG_2026M06.xlsx',
+              'xlsx'
+            ],
+            [
+              'Budget_Forecast_Bridge.xlsx',
+              'xlsx'
+            ],
+            [
+              'Monthly_Close_Deck_Template.pptx',
+              'pptx'
+            ],
+            [
+              'CFO_Email_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Schedule monthly finance automation',
+              text: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          expected: [
+            'Recurring Scout automation visible in Automations history',
+            'Three-tab variance workbook with formulas, thresholds, and exception comments',
+            'Six-slide monthly review deck plus CFO email draft or approved send'
+          ],
+          watch: [
+            'Automations are saved tasks with schedule or condition triggers, not ad-hoc prompts',
+            'Scout can run the same close workflow every month and write back to folders'
+          ],
+          honest: 'Finance automation needs clean GL extracts; the CFO still reviews, and material variances must tie to ledgers.',
+          tips: [
+            'Change the trigger to condition-based: run when all entity GL extracts arrive',
+            'Add a shell validation that compares workbook checksums and row counts to last month'
+          ],
+          id: 'uc-scout-automation-monthly'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Compare Files — Diff Two Versions of the Risk Policy',
+          dept_tag: 'Risk & Compliance',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Word'
+          ],
+          desc: 'Select two documents in a SharePoint library and use Compare files to produce a markup-style summary of policy additions, deletions, and semantic differences.',
+          skills: [
+            'Selecting multiple files in a SharePoint document library',
+            'Running Compare files from the Floating Button or AI actions button',
+            'Reviewing semantic differences beyond simple redline text changes'
+          ],
+          instructions: [
+            'Open the Risk & Compliance site → Documents library',
+            'Select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx',
+            'Click the Floating Button and choose Compare files',
+            'Review the markup summary and export or copy it into the approval memo'
+          ],
+          sample_files: [
+            [
+              'Risk_Policy_v2.5.docx',
+              'docx'
+            ],
+            [
+              'Risk_Policy_v2.4.docx',
+              'docx'
+            ],
+            [
+              'Policy_Change_Approval_Memo.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Compare policy versions',
+              text: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            }
+          ],
+          expected: [
+            'Comparison summary separating wording edits from business-rule changes',
+            'Marked list of approval-sensitive policy changes'
+          ],
+          watch: [
+            'Compare files highlights meaning changes even when wording is rearranged',
+            'The summary helps reviewers focus on risk appetite and authority changes first'
+          ],
+          honest: 'The comparison is a review accelerator, not legal redline authority. Legal and Risk owners must still confirm enforceability, version control, and effective dates before publication.',
+          tips: [
+            'Use it for board resolutions, contract templates, supplier policies, and regulator circulars',
+            'Compare current and proposed Bahasa Indonesia or English versions in separate passes if translation quality matters'
+          ],
+          id: 'uc-sp-compare-files'
+        },
+        {
+          title: 'FAQ From File — Auto-Generated Onboarding Q&A',
+          dept_tag: 'HR & Compliance',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word'
+          ],
+          desc: 'Generate 20-30 Q&A pairs from an HR policy, compliance handbook, or IT guide and reuse them as an FAQ web part on a SharePoint site.',
+          skills: [
+            'Generating FAQ from File from a selected SharePoint document',
+            'Converting policy language into employee-ready questions and answers',
+            'Publishing FAQ content into a team site without retyping source material'
+          ],
+          instructions: [
+            'Open the People Portal, Compliance Hub, or IT Service Desk site',
+            'Select Employee_Onboarding_Handbook.docx or Compliance_Handbook_2026.pdf',
+            'Use the Floating Button to choose Generate FAQ from File',
+            'Review the generated Q&A and insert approved items into an FAQ Webpart'
+          ],
+          sample_files: [
+            [
+              'Employee_Onboarding_Handbook.docx',
+              'docx'
+            ],
+            [
+              'Compliance_Handbook_2026.pdf',
+              'pdf'
+            ],
+            [
+              'IT_Service_Desk_User_Guide.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Create onboarding FAQ',
+              text: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          expected: [
+            'Draft set of 20-30 employee-friendly FAQ items',
+            'Reusable content for a SharePoint FAQ Webpart'
+          ],
+          watch: [
+            'Formal policy text becomes conversational but remains grounded in the file',
+            'The generated FAQ can be reviewed before publishing to the page'
+          ],
+          honest: 'FAQ generation is only as current as the source file. HR, Legal, or Compliance must review employee-facing answers before publishing, especially where benefits or statutory rights differ by country.',
+          tips: [
+            'Run separately for MY and ID policy variants to avoid mixing jurisdiction rules',
+            'Use the same pattern for patient guides, customer onboarding packs, or supplier code-of-conduct documents'
+          ],
+          id: 'uc-sp-faq-from-file'
+        }
       ]
     },
     {
@@ -5272,7 +5758,26 @@ window.HUB_DATA = {
         'ISL_03_Islamic_Finance_Policy.docx',
         'ISL_04_GIA_Performance_Tracker.xlsx',
         'ISL_05_Sukuk_Wakalah_Plan.docx',
-        'ISL_06_Investor_QA_Islamic.docx'
+        'ISL_06_Investor_QA_Islamic.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx'
       ],
       prompts: [
         {
@@ -5917,6 +6422,124 @@ window.HUB_DATA = {
             instructionsID: 'Pemicu: "Pembiayaan Stage 2 di 11,6% dan arus keluar DPK investasi menekan rencana sukuk menjelang review OJK, BI, dan pasar IDX.". Notebook ini adalah sumber tertanam Zava Islamic Bank Indonesia untuk cure refinancing & covenant lender — Group CFO and Group Treasurer memimpin workstream. Sintesakan SEMUA 5 sumber. Gunakan BNM (MY) / OJK (ID) / MAS (SG) prudential and SCM disclosure sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk lender pack: rencana cure covenant + opsi refinancing. Tag setiap covenant berdasarkan Headroom / Breach-Risk / Cure-Path dan bawa benang IM. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
             guide: '/00_Copilot_Notebook_Demo_Guide.docx'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Heartbeat — Daily Group Briefing & Risk Sweep **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on **(3)** Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time **(4)** Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied **(5)** Create or select workspace folder Scout_Group_Briefing and paste the prompt below **Reference files:** Scout_Group_Risk_Register.xlsx, Group_ExCo_Watchlist.docx, Heartbeat_Log_Template.md',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Schedule monthly finance automation',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Heartbeat — Daily Group Briefing & Risk Sweep **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on **(3)** Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time **(4)** Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied **(5)** Create or select workspace folder Scout_Group_Briefing and paste the prompt below **Reference files:** Scout_Group_Risk_Register.xlsx, Group_ExCo_Watchlist.docx, Heartbeat_Log_Template.md',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Schedule monthly finance automation',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Heartbeat — Daily Group Briefing & Risk Sweep **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on **(3)** Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time **(4)** Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied **(5)** Create or select workspace folder Scout_Group_Briefing and paste the prompt below **Reference files:** Scout_Group_Risk_Register.xlsx, Group_ExCo_Watchlist.docx, Heartbeat_Log_Template.md',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Schedule monthly finance automation',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -7272,6 +7895,355 @@ window.HUB_DATA = {
               how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
             }
           ]
+        }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Heartbeat — Daily Group Briefing & Risk Sweep',
+          dept_tag: 'Risk',
+          complexity: 'advanced',
+          apps: [
+            'WorkIQ',
+            'Teams',
+            'OneDrive',
+            'Shell'
+          ],
+          desc: 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+          skills: [
+            'Heartbeat mode with work-days and work-hours configuration',
+            'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
+            'Workspace file write-back plus Teams posting under restrictive permissions'
+          ],
+          instructions: [
+            'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+            'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
+            'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
+            'Create or select workspace folder Scout_Group_Briefing and paste the prompt below'
+          ],
+          sample_files: [
+            [
+              'Scout_Group_Risk_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Group_ExCo_Watchlist.docx',
+              'docx'
+            ],
+            [
+              'Heartbeat_Log_Template.md',
+              'md'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Configure the recurring heartbeat',
+              text: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          expected: [
+            'Daily_Risk_Sweep.md updated every heartbeat cycle with auditable source links',
+            'Red-risk Teams post draft or post in the approved channel only',
+            'Heartbeat activity log showing skipped actions where permissions were too broad'
+          ],
+          watch: [
+            'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+            'WorkIQ connects email + Teams + documents instead of relying on one uploaded file'
+          ],
+          honest: 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
+          tips: [
+            'Use a 15-minute interval for crisis war rooms and 2-hour interval for BAU risk sweeps',
+            'Add a deny-list for M&A, HR investigation, and named sensitive folders'
+          ],
+          id: 'uc-scout-heartbeat'
+        },
+        {
+          title: 'Browser Automation — Regulator Portal Sweep',
+          dept_tag: 'Corporate Secretarial',
+          complexity: 'intermediate',
+          apps: [
+            'Browser',
+            'Word',
+            'WorkIQ',
+            'OneDrive'
+          ],
+          desc: 'Use Scout Playwright browser control to download regulator circulars and assemble a board-ready brief.',
+          skills: [
+            'Playwright browser navigate, click, fill, download, and screenshot actions',
+            'Prompt-mode browser permissions with deny-list for internal portals',
+            'Word brief generation with source URLs, screenshots, and regulator citations'
+          ],
+          instructions: [
+            'Open Scout → Settings → Permissions → Browser Control: Prompt; deny-list internal finance, HR, and production admin portals',
+            'Create workspace folder Regulator_Portal_Sweep_2026',
+            'Use a public regulator source such as BNM, OJK, Bursa Malaysia, MAS, or SC Malaysia',
+            'Paste the prompt and approve only public-site navigation and downloads'
+          ],
+          sample_files: [
+            [
+              'BNM_Circulars_2026.pdf',
+              'pdf'
+            ],
+            [
+              'OJK_Regulatory_Watchlist.xlsx',
+              'xlsx'
+            ],
+            [
+              'Regulator_Brief_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Sweep public regulator portals',
+              text: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            }
+          ],
+          expected: [
+            'Downloaded latest circular PDFs and screenshots in the workspace',
+            'Word brief with 10 summaries, action owners, and source URLs',
+            'Exception log for inaccessible pages or duplicate circulars'
+          ],
+          watch: [
+            'Scout controls a real browser: navigate, click, download, screenshot',
+            'Prompt-mode approvals make the demo safe and visible to compliance audiences'
+          ],
+          honest: 'Use public portals or approved sandboxes. Scout must not bypass controls; Legal and Compliance still interpret obligations.',
+          tips: [
+            'For Bursa announcements, add issuer filters and export market-sensitive items separately',
+            'For OJK, ask for bilingual Bahasa Indonesia and English output'
+          ],
+          id: 'uc-scout-browser-portal'
+        },
+        {
+          title: 'Automation — Monthly Close Pack',
+          dept_tag: 'Finance',
+          complexity: 'advanced',
+          apps: [
+            'Excel',
+            'PowerPoint',
+            'Outlook',
+            'Automation'
+          ],
+          desc: 'Schedule Scout for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
+          skills: [
+            'Schedule-triggered recurring automation independent of an active chat',
+            'Excel skill for GL extracts, budget variance, and workbook formatting',
+            'PowerPoint and Outlook output with permission-aware send/draft behaviour'
+          ],
+          instructions: [
+            'Open Scout → Automations → New automation',
+            'Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00',
+            'Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only',
+            'Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code'
+          ],
+          sample_files: [
+            [
+              'GL_Extract_MY_ID_SG_2026M06.xlsx',
+              'xlsx'
+            ],
+            [
+              'Budget_Forecast_Bridge.xlsx',
+              'xlsx'
+            ],
+            [
+              'Monthly_Close_Deck_Template.pptx',
+              'pptx'
+            ],
+            [
+              'CFO_Email_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Schedule monthly finance automation',
+              text: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          expected: [
+            'Recurring Scout automation visible in Automations history',
+            'Three-tab variance workbook with formulas, thresholds, and exception comments',
+            'Six-slide monthly review deck plus CFO email draft or approved send'
+          ],
+          watch: [
+            'Automations are saved tasks with schedule or condition triggers, not ad-hoc prompts',
+            'Scout can run the same close workflow every month and write back to folders'
+          ],
+          honest: 'Finance automation needs clean GL extracts; the CFO still reviews, and material variances must tie to ledgers.',
+          tips: [
+            'Change the trigger to condition-based: run when all entity GL extracts arrive',
+            'Add a shell validation that compares workbook checksums and row counts to last month'
+          ],
+          id: 'uc-scout-automation-monthly'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Compare Files — Diff Two Versions of the Risk Policy',
+          dept_tag: 'Risk & Compliance',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Word'
+          ],
+          desc: 'Select two documents in a SharePoint library and use Compare files to produce a markup-style summary of policy additions, deletions, and semantic differences.',
+          skills: [
+            'Selecting multiple files in a SharePoint document library',
+            'Running Compare files from the Floating Button or AI actions button',
+            'Reviewing semantic differences beyond simple redline text changes'
+          ],
+          instructions: [
+            'Open the Risk & Compliance site → Documents library',
+            'Select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx',
+            'Click the Floating Button and choose Compare files',
+            'Review the markup summary and export or copy it into the approval memo'
+          ],
+          sample_files: [
+            [
+              'Risk_Policy_v2.5.docx',
+              'docx'
+            ],
+            [
+              'Risk_Policy_v2.4.docx',
+              'docx'
+            ],
+            [
+              'Policy_Change_Approval_Memo.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Compare policy versions',
+              text: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            }
+          ],
+          expected: [
+            'Comparison summary separating wording edits from business-rule changes',
+            'Marked list of approval-sensitive policy changes'
+          ],
+          watch: [
+            'Compare files highlights meaning changes even when wording is rearranged',
+            'The summary helps reviewers focus on risk appetite and authority changes first'
+          ],
+          honest: 'The comparison is a review accelerator, not legal redline authority. Legal and Risk owners must still confirm enforceability, version control, and effective dates before publication.',
+          tips: [
+            'Use it for board resolutions, contract templates, supplier policies, and regulator circulars',
+            'Compare current and proposed Bahasa Indonesia or English versions in separate passes if translation quality matters'
+          ],
+          id: 'uc-sp-compare-files'
+        },
+        {
+          title: 'FAQ From File — Auto-Generated Onboarding Q&A',
+          dept_tag: 'HR & Compliance',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word'
+          ],
+          desc: 'Generate 20-30 Q&A pairs from an HR policy, compliance handbook, or IT guide and reuse them as an FAQ web part on a SharePoint site.',
+          skills: [
+            'Generating FAQ from File from a selected SharePoint document',
+            'Converting policy language into employee-ready questions and answers',
+            'Publishing FAQ content into a team site without retyping source material'
+          ],
+          instructions: [
+            'Open the People Portal, Compliance Hub, or IT Service Desk site',
+            'Select Employee_Onboarding_Handbook.docx or Compliance_Handbook_2026.pdf',
+            'Use the Floating Button to choose Generate FAQ from File',
+            'Review the generated Q&A and insert approved items into an FAQ Webpart'
+          ],
+          sample_files: [
+            [
+              'Employee_Onboarding_Handbook.docx',
+              'docx'
+            ],
+            [
+              'Compliance_Handbook_2026.pdf',
+              'pdf'
+            ],
+            [
+              'IT_Service_Desk_User_Guide.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Create onboarding FAQ',
+              text: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          expected: [
+            'Draft set of 20-30 employee-friendly FAQ items',
+            'Reusable content for a SharePoint FAQ Webpart'
+          ],
+          watch: [
+            'Formal policy text becomes conversational but remains grounded in the file',
+            'The generated FAQ can be reviewed before publishing to the page'
+          ],
+          honest: 'FAQ generation is only as current as the source file. HR, Legal, or Compliance must review employee-facing answers before publishing, especially where benefits or statutory rights differ by country.',
+          tips: [
+            'Run separately for MY and ID policy variants to avoid mixing jurisdiction rules',
+            'Use the same pattern for patient guides, customer onboarding packs, or supplier code-of-conduct documents'
+          ],
+          id: 'uc-sp-faq-from-file'
         }
       ]
     },
@@ -10348,7 +11320,26 @@ window.HUB_DATA = {
         'GI_03_Risk_Management_Framework.docx',
         'GI_04_Reinsurance_Treaty_Pack.docx',
         'GI_05_Pricing_Adequacy_Model.xlsx',
-        'GI_06_Workshop_Vendor_Analysis.xlsx'
+        'GI_06_Workshop_Vendor_Analysis.xlsx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx'
       ],
       prompts: [
         {
@@ -10993,6 +11984,124 @@ window.HUB_DATA = {
             instructionsID: 'Pemicu: "Severitas klaim kendaraan dan kebocoran mendorong combined ratio di atas RKAP, sementara kecukupan cadangan disorot OJK.". Notebook ini adalah sumber tertanam Zava General Insurance Indonesia untuk siklus submisi regulator — Chief Actuary and Group CFO memimpin workstream. Sintesakan SEMUA 5 sumber. Gunakan BNM RBC / OJK SLOJK / MAS RBC2 solvency framework sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk submisi tanggapan regulator dengan jejak audit lengkap. Beri nomor pada setiap pertanyaan regulator dan kutip file sumber + paragraf yang menjawabnya. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
             guide: '/00_Copilot_Notebook_Demo_Guide.docx'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -12338,6 +13447,355 @@ window.HUB_DATA = {
             }
           ]
         }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Bulk File-System Processing — 200 Contracts in One Run',
+          dept_tag: 'Legal',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'File System'
+          ],
+          desc: 'Point Scout at a OneDrive workspace containing 200 contracts, extract obligations into a master workbook, create one-page Word summaries, and build a counterparty tiering deck.',
+          skills: [
+            'File-system read/write/search across a workspace folder tree',
+            'Word, Excel, and PowerPoint skills in one desktop run',
+            'Shell command inventory for filenames, page counts, duplicate detection, and CSV validation'
+          ],
+          instructions: [
+            'Sync the contract room to a local OneDrive workspace folder and open that folder in Scout',
+            'Set file system access to allow the workspace only; shell prompt-mode for commands that write files',
+            'Attach the counterparty register and folder index, then paste the prompt',
+            'Review exception rows before sending summaries to Legal or Procurement'
+          ],
+          sample_files: [
+            [
+              'Contracts_Folder_Index.csv',
+              'csv'
+            ],
+            [
+              'Group_Counterparty_Master.xlsx',
+              'xlsx'
+            ],
+            [
+              'Contract_Tiering_Template.pptx',
+              'pptx'
+            ],
+            [
+              'Sample_Supply_Agreement_MY_2026.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Process the contract room',
+              text: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            }
+          ],
+          expected: [
+            'Master xlsx with 200 rows, exceptions tab, formulas, filters, and risk tiers',
+            'One-page Word summary per contract in the workspace output folder',
+            'PowerPoint tiering deck for ExCo or Procurement Council'
+          ],
+          watch: [
+            'Scout reads and writes hundreds of local workspace files, not just attached documents',
+            'Shell commands accelerate inventory and QA while permission tiers control writes'
+          ],
+          honest: 'Contract extraction is a first-pass workbench; Legal must verify key clauses and scanned-PDF OCR quality.',
+          tips: [
+            'Swap contracts for leases, supplier MSAs, bancassurance agreements, or hospital panel contracts',
+            'Add a shell validation step to compare workbook row count against the source folder count'
+          ],
+          id: 'uc-scout-bulk-files'
+        },
+        {
+          title: 'Browser Automation — Regulator Portal Sweep',
+          dept_tag: 'Corporate Secretarial',
+          complexity: 'intermediate',
+          apps: [
+            'Browser',
+            'Word',
+            'WorkIQ',
+            'OneDrive'
+          ],
+          desc: 'Use Scout Playwright browser control to download regulator circulars and assemble a board-ready brief.',
+          skills: [
+            'Playwright browser navigate, click, fill, download, and screenshot actions',
+            'Prompt-mode browser permissions with deny-list for internal portals',
+            'Word brief generation with source URLs, screenshots, and regulator citations'
+          ],
+          instructions: [
+            'Open Scout → Settings → Permissions → Browser Control: Prompt; deny-list internal finance, HR, and production admin portals',
+            'Create workspace folder Regulator_Portal_Sweep_2026',
+            'Use a public regulator source such as BNM, OJK, Bursa Malaysia, MAS, or SC Malaysia',
+            'Paste the prompt and approve only public-site navigation and downloads'
+          ],
+          sample_files: [
+            [
+              'BNM_Circulars_2026.pdf',
+              'pdf'
+            ],
+            [
+              'OJK_Regulatory_Watchlist.xlsx',
+              'xlsx'
+            ],
+            [
+              'Regulator_Brief_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Sweep public regulator portals',
+              text: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            }
+          ],
+          expected: [
+            'Downloaded latest circular PDFs and screenshots in the workspace',
+            'Word brief with 10 summaries, action owners, and source URLs',
+            'Exception log for inaccessible pages or duplicate circulars'
+          ],
+          watch: [
+            'Scout controls a real browser: navigate, click, download, screenshot',
+            'Prompt-mode approvals make the demo safe and visible to compliance audiences'
+          ],
+          honest: 'Use public portals or approved sandboxes. Scout must not bypass controls; Legal and Compliance still interpret obligations.',
+          tips: [
+            'For Bursa announcements, add issuer filters and export market-sensitive items separately',
+            'For OJK, ask for bilingual Bahasa Indonesia and English output'
+          ],
+          id: 'uc-scout-browser-portal'
+        },
+        {
+          title: 'Heartbeat — Daily Group Briefing & Risk Sweep',
+          dept_tag: 'Risk',
+          complexity: 'advanced',
+          apps: [
+            'WorkIQ',
+            'Teams',
+            'OneDrive',
+            'Shell'
+          ],
+          desc: 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+          skills: [
+            'Heartbeat mode with work-days and work-hours configuration',
+            'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
+            'Workspace file write-back plus Teams posting under restrictive permissions'
+          ],
+          instructions: [
+            'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+            'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
+            'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
+            'Create or select workspace folder Scout_Group_Briefing and paste the prompt below'
+          ],
+          sample_files: [
+            [
+              'Scout_Group_Risk_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Group_ExCo_Watchlist.docx',
+              'docx'
+            ],
+            [
+              'Heartbeat_Log_Template.md',
+              'md'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Configure the recurring heartbeat',
+              text: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          expected: [
+            'Daily_Risk_Sweep.md updated every heartbeat cycle with auditable source links',
+            'Red-risk Teams post draft or post in the approved channel only',
+            'Heartbeat activity log showing skipped actions where permissions were too broad'
+          ],
+          watch: [
+            'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+            'WorkIQ connects email + Teams + documents instead of relying on one uploaded file'
+          ],
+          honest: 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
+          tips: [
+            'Use a 15-minute interval for crisis war rooms and 2-hour interval for BAU risk sweeps',
+            'Add a deny-list for M&A, HR investigation, and named sensitive folders'
+          ],
+          id: 'uc-scout-heartbeat'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Compare Files — Diff Two Versions of the Risk Policy',
+          dept_tag: 'Risk & Compliance',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Word'
+          ],
+          desc: 'Select two documents in a SharePoint library and use Compare files to produce a markup-style summary of policy additions, deletions, and semantic differences.',
+          skills: [
+            'Selecting multiple files in a SharePoint document library',
+            'Running Compare files from the Floating Button or AI actions button',
+            'Reviewing semantic differences beyond simple redline text changes'
+          ],
+          instructions: [
+            'Open the Risk & Compliance site → Documents library',
+            'Select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx',
+            'Click the Floating Button and choose Compare files',
+            'Review the markup summary and export or copy it into the approval memo'
+          ],
+          sample_files: [
+            [
+              'Risk_Policy_v2.5.docx',
+              'docx'
+            ],
+            [
+              'Risk_Policy_v2.4.docx',
+              'docx'
+            ],
+            [
+              'Policy_Change_Approval_Memo.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Compare policy versions',
+              text: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            }
+          ],
+          expected: [
+            'Comparison summary separating wording edits from business-rule changes',
+            'Marked list of approval-sensitive policy changes'
+          ],
+          watch: [
+            'Compare files highlights meaning changes even when wording is rearranged',
+            'The summary helps reviewers focus on risk appetite and authority changes first'
+          ],
+          honest: 'The comparison is a review accelerator, not legal redline authority. Legal and Risk owners must still confirm enforceability, version control, and effective dates before publication.',
+          tips: [
+            'Use it for board resolutions, contract templates, supplier policies, and regulator circulars',
+            'Compare current and proposed Bahasa Indonesia or English versions in separate passes if translation quality matters'
+          ],
+          id: 'uc-sp-compare-files'
+        },
+        {
+          title: 'FAQ From File — Auto-Generated Onboarding Q&A',
+          dept_tag: 'HR & Compliance',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word'
+          ],
+          desc: 'Generate 20-30 Q&A pairs from an HR policy, compliance handbook, or IT guide and reuse them as an FAQ web part on a SharePoint site.',
+          skills: [
+            'Generating FAQ from File from a selected SharePoint document',
+            'Converting policy language into employee-ready questions and answers',
+            'Publishing FAQ content into a team site without retyping source material'
+          ],
+          instructions: [
+            'Open the People Portal, Compliance Hub, or IT Service Desk site',
+            'Select Employee_Onboarding_Handbook.docx or Compliance_Handbook_2026.pdf',
+            'Use the Floating Button to choose Generate FAQ from File',
+            'Review the generated Q&A and insert approved items into an FAQ Webpart'
+          ],
+          sample_files: [
+            [
+              'Employee_Onboarding_Handbook.docx',
+              'docx'
+            ],
+            [
+              'Compliance_Handbook_2026.pdf',
+              'pdf'
+            ],
+            [
+              'IT_Service_Desk_User_Guide.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Create onboarding FAQ',
+              text: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          expected: [
+            'Draft set of 20-30 employee-friendly FAQ items',
+            'Reusable content for a SharePoint FAQ Webpart'
+          ],
+          watch: [
+            'Formal policy text becomes conversational but remains grounded in the file',
+            'The generated FAQ can be reviewed before publishing to the page'
+          ],
+          honest: 'FAQ generation is only as current as the source file. HR, Legal, or Compliance must review employee-facing answers before publishing, especially where benefits or statutory rights differ by country.',
+          tips: [
+            'Run separately for MY and ID policy variants to avoid mixing jurisdiction rules',
+            'Use the same pattern for patient guides, customer onboarding packs, or supplier code-of-conduct documents'
+          ],
+          id: 'uc-sp-faq-from-file'
+        }
       ]
     },
     {
@@ -12361,7 +13819,26 @@ window.HUB_DATA = {
         'LI_03_Actuarial_Policy.docx',
         'LI_04_Bancassurance_Channel_Pack.docx',
         'LI_05_Lapse_Cohort_Model.xlsx',
-        'LI_06_New_Business_Value_Forecast.xlsx'
+        'LI_06_New_Business_Value_Forecast.xlsx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Risk_Policy_v2.5.docx',
+        'Risk_Policy_v2.4.docx',
+        'Policy_Change_Approval_Memo.docx',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx'
       ],
       prompts: [
         {
@@ -13005,6 +14482,124 @@ window.HUB_DATA = {
             instructionsID: 'Pemicu: "Lapse dini meningkat dan penjualan bancassurance melambat, mengikis nilai bisnis baru menjelang stress test OJK.". Notebook ini adalah sumber tertanam Zava Life Insurance Indonesia untuk siklus submisi regulator — Chief Actuary and Group CFO memimpin workstream. Sintesakan SEMUA 4 sumber. Gunakan BNM RBC / OJK SLOJK / MAS RBC2 solvency framework sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk submisi tanggapan regulator dengan jejak audit lengkap. Beri nomor pada setiap pertanyaan regulator dan kutip file sumber + paragraf yang menjawabnya. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
             guide: '/00_Copilot_Notebook_Demo_Guide.docx'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Compare policy versions',
+              prompt: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -14348,6 +15943,355 @@ window.HUB_DATA = {
               how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
             }
           ]
+        }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Bulk File-System Processing — 200 Contracts in One Run',
+          dept_tag: 'Legal',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'File System'
+          ],
+          desc: 'Point Scout at a OneDrive workspace containing 200 contracts, extract obligations into a master workbook, create one-page Word summaries, and build a counterparty tiering deck.',
+          skills: [
+            'File-system read/write/search across a workspace folder tree',
+            'Word, Excel, and PowerPoint skills in one desktop run',
+            'Shell command inventory for filenames, page counts, duplicate detection, and CSV validation'
+          ],
+          instructions: [
+            'Sync the contract room to a local OneDrive workspace folder and open that folder in Scout',
+            'Set file system access to allow the workspace only; shell prompt-mode for commands that write files',
+            'Attach the counterparty register and folder index, then paste the prompt',
+            'Review exception rows before sending summaries to Legal or Procurement'
+          ],
+          sample_files: [
+            [
+              'Contracts_Folder_Index.csv',
+              'csv'
+            ],
+            [
+              'Group_Counterparty_Master.xlsx',
+              'xlsx'
+            ],
+            [
+              'Contract_Tiering_Template.pptx',
+              'pptx'
+            ],
+            [
+              'Sample_Supply_Agreement_MY_2026.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Process the contract room',
+              text: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            }
+          ],
+          expected: [
+            'Master xlsx with 200 rows, exceptions tab, formulas, filters, and risk tiers',
+            'One-page Word summary per contract in the workspace output folder',
+            'PowerPoint tiering deck for ExCo or Procurement Council'
+          ],
+          watch: [
+            'Scout reads and writes hundreds of local workspace files, not just attached documents',
+            'Shell commands accelerate inventory and QA while permission tiers control writes'
+          ],
+          honest: 'Contract extraction is a first-pass workbench; Legal must verify key clauses and scanned-PDF OCR quality.',
+          tips: [
+            'Swap contracts for leases, supplier MSAs, bancassurance agreements, or hospital panel contracts',
+            'Add a shell validation step to compare workbook row count against the source folder count'
+          ],
+          id: 'uc-scout-bulk-files'
+        },
+        {
+          title: 'Browser Automation — Regulator Portal Sweep',
+          dept_tag: 'Corporate Secretarial',
+          complexity: 'intermediate',
+          apps: [
+            'Browser',
+            'Word',
+            'WorkIQ',
+            'OneDrive'
+          ],
+          desc: 'Use Scout Playwright browser control to download regulator circulars and assemble a board-ready brief.',
+          skills: [
+            'Playwright browser navigate, click, fill, download, and screenshot actions',
+            'Prompt-mode browser permissions with deny-list for internal portals',
+            'Word brief generation with source URLs, screenshots, and regulator citations'
+          ],
+          instructions: [
+            'Open Scout → Settings → Permissions → Browser Control: Prompt; deny-list internal finance, HR, and production admin portals',
+            'Create workspace folder Regulator_Portal_Sweep_2026',
+            'Use a public regulator source such as BNM, OJK, Bursa Malaysia, MAS, or SC Malaysia',
+            'Paste the prompt and approve only public-site navigation and downloads'
+          ],
+          sample_files: [
+            [
+              'BNM_Circulars_2026.pdf',
+              'pdf'
+            ],
+            [
+              'OJK_Regulatory_Watchlist.xlsx',
+              'xlsx'
+            ],
+            [
+              'Regulator_Brief_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Sweep public regulator portals',
+              text: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            }
+          ],
+          expected: [
+            'Downloaded latest circular PDFs and screenshots in the workspace',
+            'Word brief with 10 summaries, action owners, and source URLs',
+            'Exception log for inaccessible pages or duplicate circulars'
+          ],
+          watch: [
+            'Scout controls a real browser: navigate, click, download, screenshot',
+            'Prompt-mode approvals make the demo safe and visible to compliance audiences'
+          ],
+          honest: 'Use public portals or approved sandboxes. Scout must not bypass controls; Legal and Compliance still interpret obligations.',
+          tips: [
+            'For Bursa announcements, add issuer filters and export market-sensitive items separately',
+            'For OJK, ask for bilingual Bahasa Indonesia and English output'
+          ],
+          id: 'uc-scout-browser-portal'
+        },
+        {
+          title: 'Heartbeat — Daily Group Briefing & Risk Sweep',
+          dept_tag: 'Risk',
+          complexity: 'advanced',
+          apps: [
+            'WorkIQ',
+            'Teams',
+            'OneDrive',
+            'Shell'
+          ],
+          desc: 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+          skills: [
+            'Heartbeat mode with work-days and work-hours configuration',
+            'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
+            'Workspace file write-back plus Teams posting under restrictive permissions'
+          ],
+          instructions: [
+            'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+            'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
+            'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
+            'Create or select workspace folder Scout_Group_Briefing and paste the prompt below'
+          ],
+          sample_files: [
+            [
+              'Scout_Group_Risk_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Group_ExCo_Watchlist.docx',
+              'docx'
+            ],
+            [
+              'Heartbeat_Log_Template.md',
+              'md'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Configure the recurring heartbeat',
+              text: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          expected: [
+            'Daily_Risk_Sweep.md updated every heartbeat cycle with auditable source links',
+            'Red-risk Teams post draft or post in the approved channel only',
+            'Heartbeat activity log showing skipped actions where permissions were too broad'
+          ],
+          watch: [
+            'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+            'WorkIQ connects email + Teams + documents instead of relying on one uploaded file'
+          ],
+          honest: 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
+          tips: [
+            'Use a 15-minute interval for crisis war rooms and 2-hour interval for BAU risk sweeps',
+            'Add a deny-list for M&A, HR investigation, and named sensitive folders'
+          ],
+          id: 'uc-scout-heartbeat'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Compare Files — Diff Two Versions of the Risk Policy',
+          dept_tag: 'Risk & Compliance',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Word'
+          ],
+          desc: 'Select two documents in a SharePoint library and use Compare files to produce a markup-style summary of policy additions, deletions, and semantic differences.',
+          skills: [
+            'Selecting multiple files in a SharePoint document library',
+            'Running Compare files from the Floating Button or AI actions button',
+            'Reviewing semantic differences beyond simple redline text changes'
+          ],
+          instructions: [
+            'Open the Risk & Compliance site → Documents library',
+            'Select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx',
+            'Click the Floating Button and choose Compare files',
+            'Review the markup summary and export or copy it into the approval memo'
+          ],
+          sample_files: [
+            [
+              'Risk_Policy_v2.5.docx',
+              'docx'
+            ],
+            [
+              'Risk_Policy_v2.4.docx',
+              'docx'
+            ],
+            [
+              'Policy_Change_Approval_Memo.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Compare policy versions',
+              text: 'Open the Risk & Compliance site → Documents library → select Risk_Policy_v2.5.docx and Risk_Policy_v2.4.docx → click the Floating Button (bottom-right) → choose \'Compare files\'. Confirm the comparison scope. Review additions, deletions, and semantic changes affecting credit limits, delegated authority, sanctions screening, and BNM reporting. Export the markup summary to Word for Sasha Ouellet\'s Risk Committee pack.'
+            }
+          ],
+          expected: [
+            'Comparison summary separating wording edits from business-rule changes',
+            'Marked list of approval-sensitive policy changes'
+          ],
+          watch: [
+            'Compare files highlights meaning changes even when wording is rearranged',
+            'The summary helps reviewers focus on risk appetite and authority changes first'
+          ],
+          honest: 'The comparison is a review accelerator, not legal redline authority. Legal and Risk owners must still confirm enforceability, version control, and effective dates before publication.',
+          tips: [
+            'Use it for board resolutions, contract templates, supplier policies, and regulator circulars',
+            'Compare current and proposed Bahasa Indonesia or English versions in separate passes if translation quality matters'
+          ],
+          id: 'uc-sp-compare-files'
+        },
+        {
+          title: 'FAQ From File — Auto-Generated Onboarding Q&A',
+          dept_tag: 'HR & Compliance',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word'
+          ],
+          desc: 'Generate 20-30 Q&A pairs from an HR policy, compliance handbook, or IT guide and reuse them as an FAQ web part on a SharePoint site.',
+          skills: [
+            'Generating FAQ from File from a selected SharePoint document',
+            'Converting policy language into employee-ready questions and answers',
+            'Publishing FAQ content into a team site without retyping source material'
+          ],
+          instructions: [
+            'Open the People Portal, Compliance Hub, or IT Service Desk site',
+            'Select Employee_Onboarding_Handbook.docx or Compliance_Handbook_2026.pdf',
+            'Use the Floating Button to choose Generate FAQ from File',
+            'Review the generated Q&A and insert approved items into an FAQ Webpart'
+          ],
+          sample_files: [
+            [
+              'Employee_Onboarding_Handbook.docx',
+              'docx'
+            ],
+            [
+              'Compliance_Handbook_2026.pdf',
+              'pdf'
+            ],
+            [
+              'IT_Service_Desk_User_Guide.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Create onboarding FAQ',
+              text: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          expected: [
+            'Draft set of 20-30 employee-friendly FAQ items',
+            'Reusable content for a SharePoint FAQ Webpart'
+          ],
+          watch: [
+            'Formal policy text becomes conversational but remains grounded in the file',
+            'The generated FAQ can be reviewed before publishing to the page'
+          ],
+          honest: 'FAQ generation is only as current as the source file. HR, Legal, or Compliance must review employee-facing answers before publishing, especially where benefits or statutory rights differ by country.',
+          tips: [
+            'Run separately for MY and ID policy variants to avoid mixing jurisdiction rules',
+            'Use the same pattern for patient guides, customer onboarding packs, or supplier code-of-conduct documents'
+          ],
+          id: 'uc-sp-faq-from-file'
         }
       ]
     },
@@ -21913,7 +23857,26 @@ window.HUB_DATA = {
         'OGU_03_Field_Development_Plan.docx',
         'OGU_04_PSC_Compliance_Tracker.xlsx',
         'OGU_05_SKK_Migas_Reporting.docx',
-        'OGU_06_Reservoir_Engineering_Report.xlsx'
+        'OGU_06_Reservoir_Engineering_Report.xlsx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -22558,6 +24521,124 @@ window.HUB_DATA = {
             instructionsID: 'Pemicu: "SKK Migas menyorot biaya angkat USD19.8/bbl saat insiden HSSE meningkat.". Notebook ini adalah sumber tertanam Zava Oil Upstream Indonesia untuk post-mortem insiden / outage — HSSE Director and Operations VP memimpin workstream. Sintesakan SEMUA 5 sumber. Gunakan DOSH (MY) / KemenESDM (ID) / MOM (SG) HSE reporting and Bursa / IDX disclosure sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk memo root-cause insiden + catatan dampak-pelanggan. Tag setiap temuan sebagai Process / People / Tech / Comms dengan pemilik bernama dan time-to-cure. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
             guide: '/00_Copilot_Notebook_Demo_Guide.docx'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Generate executive audio brief',
+              prompt: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Generate executive audio brief',
+              prompt: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Generate executive audio brief',
+              prompt: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -23899,6 +25980,360 @@ window.HUB_DATA = {
             }
           ]
         }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Bulk File-System Processing — 200 Contracts in One Run',
+          dept_tag: 'Legal',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'File System'
+          ],
+          desc: 'Point Scout at a OneDrive workspace containing 200 contracts, extract obligations into a master workbook, create one-page Word summaries, and build a counterparty tiering deck.',
+          skills: [
+            'File-system read/write/search across a workspace folder tree',
+            'Word, Excel, and PowerPoint skills in one desktop run',
+            'Shell command inventory for filenames, page counts, duplicate detection, and CSV validation'
+          ],
+          instructions: [
+            'Sync the contract room to a local OneDrive workspace folder and open that folder in Scout',
+            'Set file system access to allow the workspace only; shell prompt-mode for commands that write files',
+            'Attach the counterparty register and folder index, then paste the prompt',
+            'Review exception rows before sending summaries to Legal or Procurement'
+          ],
+          sample_files: [
+            [
+              'Contracts_Folder_Index.csv',
+              'csv'
+            ],
+            [
+              'Group_Counterparty_Master.xlsx',
+              'xlsx'
+            ],
+            [
+              'Contract_Tiering_Template.pptx',
+              'pptx'
+            ],
+            [
+              'Sample_Supply_Agreement_MY_2026.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Process the contract room',
+              text: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            }
+          ],
+          expected: [
+            'Master xlsx with 200 rows, exceptions tab, formulas, filters, and risk tiers',
+            'One-page Word summary per contract in the workspace output folder',
+            'PowerPoint tiering deck for ExCo or Procurement Council'
+          ],
+          watch: [
+            'Scout reads and writes hundreds of local workspace files, not just attached documents',
+            'Shell commands accelerate inventory and QA while permission tiers control writes'
+          ],
+          honest: 'Contract extraction is a first-pass workbench; Legal must verify key clauses and scanned-PDF OCR quality.',
+          tips: [
+            'Swap contracts for leases, supplier MSAs, bancassurance agreements, or hospital panel contracts',
+            'Add a shell validation step to compare workbook row count against the source folder count'
+          ],
+          id: 'uc-scout-bulk-files'
+        },
+        {
+          title: 'Sub-Agent Fan-Out — Strategic Diligence in Parallel',
+          dept_tag: 'Strategy',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'Research Agents'
+          ],
+          desc: 'One Scout prompt launches sub-agents for M&A diligence, then synthesises a brief, xlsx, and speaker-note deck.',
+          skills: [
+            'Sub-agent fan-out using Research, Code review, Explore, and General-purpose agents',
+            'Parallel diligence across market, financial, technology, ESG, and regulatory workstreams',
+            'Synthesis of background-agent outputs into executive-ready files'
+          ],
+          instructions: [
+            'Open Scout in the M&A workspace with target profile, NDA-safe public sources, and internal thesis notes',
+            'Enable web research and workspace file access; keep shell in prompt mode',
+            'Paste the prompt and watch the sub-agent activity panel as agents run independently',
+            'Ask Scout to reconcile conflicts between agents before finalising the pack'
+          ],
+          sample_files: [
+            [
+              'TargetCo_Public_Profile.docx',
+              'docx'
+            ],
+            [
+              'SEA_Market_Size_Assumptions.xlsx',
+              'xlsx'
+            ],
+            [
+              'Diligence_Question_Bank.xlsx',
+              'xlsx'
+            ],
+            [
+              'IC_Memo_Template.pptx',
+              'pptx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Fan out strategic diligence',
+              text: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          expected: [
+            'Five parallel sub-agent workstreams with separate logs and citations',
+            'Word investment brief with risks, synergies, and open diligence questions',
+            'Excel finding register and PowerPoint IC deck with speaker notes'
+          ],
+          watch: [
+            'The main Scout session delegates to isolated sub-agents instead of doing one serial search',
+            'Contradictions and confidence levels are preserved for Investment Committee challenge'
+          ],
+          honest: 'Sub-agents accelerate triage; formal due diligence, valuation, and legal reliance remain human-owned.',
+          tips: [
+            'Replace TargetCo with a hospital chain, payments fintech, plantation miller, or logistics 3PL',
+            'Use one General-purpose agent to build a synergy model while Research agents gather citations'
+          ],
+          id: 'uc-scout-subagents'
+        },
+        {
+          title: 'Heartbeat — Daily Group Briefing & Risk Sweep',
+          dept_tag: 'Risk',
+          complexity: 'advanced',
+          apps: [
+            'WorkIQ',
+            'Teams',
+            'OneDrive',
+            'Shell'
+          ],
+          desc: 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+          skills: [
+            'Heartbeat mode with work-days and work-hours configuration',
+            'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
+            'Workspace file write-back plus Teams posting under restrictive permissions'
+          ],
+          instructions: [
+            'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+            'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
+            'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
+            'Create or select workspace folder Scout_Group_Briefing and paste the prompt below'
+          ],
+          sample_files: [
+            [
+              'Scout_Group_Risk_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Group_ExCo_Watchlist.docx',
+              'docx'
+            ],
+            [
+              'Heartbeat_Log_Template.md',
+              'md'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Configure the recurring heartbeat',
+              text: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          expected: [
+            'Daily_Risk_Sweep.md updated every heartbeat cycle with auditable source links',
+            'Red-risk Teams post draft or post in the approved channel only',
+            'Heartbeat activity log showing skipped actions where permissions were too broad'
+          ],
+          watch: [
+            'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+            'WorkIQ connects email + Teams + documents instead of relying on one uploaded file'
+          ],
+          honest: 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
+          tips: [
+            'Use a 15-minute interval for crisis war rooms and 2-hour interval for BAU risk sweeps',
+            'Add a deny-list for M&A, HR investigation, and named sensitive folders'
+          ],
+          id: 'uc-scout-heartbeat'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Audio Overview — Podcast Brief from Sustainability Report',
+          dept_tag: 'Investor Relations',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'OneDrive'
+          ],
+          desc: 'Generate an 8-12 minute podcast-style audio overview from a long annual, GHG, or sustainability report stored in SharePoint.',
+          skills: [
+            'Generating an Audio Overview directly from a selected SharePoint file',
+            'Turning long PDF reports into commute-friendly executive briefings',
+            'Checking that the spoken narrative accurately reflects source disclosures'
+          ],
+          instructions: [
+            'Open the Investor Relations or ESG Disclosure Hub site',
+            'Select ESG_Disclosure_2026.pdf or Annual_Report_2026.pdf',
+            'Click the Floating Button and choose Generate Audio Overview',
+            'Listen to the generated briefing and capture follow-up questions for IR, ESG, or Strategy'
+          ],
+          sample_files: [
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ],
+            [
+              'GHG_Inventory_Assurance_Report.pdf',
+              'pdf'
+            ],
+            [
+              'Annual_Report_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Generate executive audio brief',
+              text: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            }
+          ],
+          expected: [
+            'Audio briefing suitable for a commute or pre-meeting listen',
+            'Narrative summary of long-form report themes and metrics'
+          ],
+          watch: [
+            'Long technical reports become accessible without opening a separate app',
+            'Executives can consume dense SharePoint content in audio form'
+          ],
+          honest: 'Audio Overview is for orientation and recall, not disclosure approval. Published ESG and financial statements still require assurance, legal review, and investor relations sign-off.',
+          tips: [
+            'Use it for aviation safety reports, plantation RSPO audits, or hospital quality reviews',
+            'Ask executives to note questions while listening, then run Ask a question about content on the same file'
+          ],
+          id: 'uc-sp-audio-overview'
+        },
+        {
+          title: 'Automate Workflow — Approval Rule for High-Value Invoices',
+          dept_tag: 'Finance & Operations',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Teams',
+            'Outlook'
+          ],
+          desc: 'Set up an AI-assisted SharePoint library rule so high-value invoices are routed to the right approver, posted to Teams, and tagged without Power Automate authoring.',
+          skills: [
+            'Using Automate workflows / set up rules from a SharePoint library',
+            'Combining AI-extracted metadata with approval thresholds',
+            'Routing operational exceptions to Teams and Outlook from the library'
+          ],
+          instructions: [
+            'Open the Finance Shared Services site → Invoices library',
+            'Ensure Autofill or existing columns include Supplier, Total Amount, Currency, Cost Centre, and Approver',
+            'Use the Floating Button or Automate menu to set up a high-value invoice rule',
+            'Test with a MYR 125,000 invoice and confirm the approval, Teams post, and file tag'
+          ],
+          sample_files: [
+            [
+              'Invoice_MY_KL_125000.pdf',
+              'pdf'
+            ],
+            [
+              'Invoice_Register_Q2.xlsx',
+              'xlsx'
+            ],
+            [
+              'Approval_Matrix_FY26.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Set up high-value invoice rule',
+              text: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          expected: [
+            'No-code approval rule for high-value invoice exceptions',
+            'Teams notification with supplier, amount, and cost centre'
+          ],
+          watch: [
+            'Workflow setup starts from business rules in the library, not from blank automation design',
+            'Metadata extracted from content can trigger routing and tagging'
+          ],
+          honest: 'AI-assisted workflow setup simplifies rule creation, but Finance and Internal Controls must approve thresholds, approver mapping, and audit evidence before production rollout.',
+          tips: [
+            'Adapt the threshold to IDR 500 million for Indonesia entities or USD limits for treasury files',
+            'Create a second rule for duplicate invoice numbers or missing purchase orders'
+          ],
+          id: 'uc-sp-automate-workflow'
+        }
       ]
     },
     {
@@ -23926,7 +26361,26 @@ window.HUB_DATA = {
         'OGD_07_HSE_Incident_Report.docx',
         'OGD_08_Customer_Account_Perf.xlsx',
         'OGD_09_Product_Specs_EG_Methanol.docx',
-        'OGD_10_Tender_Bid_Response.docx'
+        'OGD_10_Tender_Bid_Response.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -24574,6 +27028,124 @@ window.HUB_DATA = {
             instructionsID: 'Pemicu: "Margin refining FY2025 turun ke USD 5,1/bbl dengan turnaround besar dalam 16 minggu — reset Direksi hari Selasa.". Notebook ini adalah sumber tertanam Zava Oil Downstream Indonesia untuk siklus submisi regulator — HSSE Director and Operations VP memimpin workstream. Sintesakan SEMUA 8 sumber. Gunakan DOSH (MY) / KemenESDM (ID) / MOM (SG) HSE reporting and Bursa / IDX disclosure sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk submisi tanggapan regulator dengan jejak audit lengkap. Beri nomor pada setiap pertanyaan regulator dan kutip file sumber + paragraf yang menjawabnya. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
             guide: '/00_Copilot_Notebook_Demo_Guide.docx'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Process the contract room',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Process the contract room',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Process the contract room',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Generate executive audio brief',
+              prompt: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Generate executive audio brief',
+              prompt: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Generate executive audio brief',
+              prompt: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -26029,6 +28601,360 @@ window.HUB_DATA = {
               how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
             }
           ]
+        }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Automation — Monthly Close Pack',
+          dept_tag: 'Finance',
+          complexity: 'advanced',
+          apps: [
+            'Excel',
+            'PowerPoint',
+            'Outlook',
+            'Automation'
+          ],
+          desc: 'Schedule Scout for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
+          skills: [
+            'Schedule-triggered recurring automation independent of an active chat',
+            'Excel skill for GL extracts, budget variance, and workbook formatting',
+            'PowerPoint and Outlook output with permission-aware send/draft behaviour'
+          ],
+          instructions: [
+            'Open Scout → Automations → New automation',
+            'Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00',
+            'Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only',
+            'Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code'
+          ],
+          sample_files: [
+            [
+              'GL_Extract_MY_ID_SG_2026M06.xlsx',
+              'xlsx'
+            ],
+            [
+              'Budget_Forecast_Bridge.xlsx',
+              'xlsx'
+            ],
+            [
+              'Monthly_Close_Deck_Template.pptx',
+              'pptx'
+            ],
+            [
+              'CFO_Email_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Schedule monthly finance automation',
+              text: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          expected: [
+            'Recurring Scout automation visible in Automations history',
+            'Three-tab variance workbook with formulas, thresholds, and exception comments',
+            'Six-slide monthly review deck plus CFO email draft or approved send'
+          ],
+          watch: [
+            'Automations are saved tasks with schedule or condition triggers, not ad-hoc prompts',
+            'Scout can run the same close workflow every month and write back to folders'
+          ],
+          honest: 'Finance automation needs clean GL extracts; the CFO still reviews, and material variances must tie to ledgers.',
+          tips: [
+            'Change the trigger to condition-based: run when all entity GL extracts arrive',
+            'Add a shell validation that compares workbook checksums and row counts to last month'
+          ],
+          id: 'uc-scout-automation-monthly'
+        },
+        {
+          title: 'Bulk File-System Processing — 200 Contracts in One Run',
+          dept_tag: 'Legal',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'File System'
+          ],
+          desc: 'Point Scout at a OneDrive workspace containing 200 contracts, extract obligations into a master workbook, create one-page Word summaries, and build a counterparty tiering deck.',
+          skills: [
+            'File-system read/write/search across a workspace folder tree',
+            'Word, Excel, and PowerPoint skills in one desktop run',
+            'Shell command inventory for filenames, page counts, duplicate detection, and CSV validation'
+          ],
+          instructions: [
+            'Sync the contract room to a local OneDrive workspace folder and open that folder in Scout',
+            'Set file system access to allow the workspace only; shell prompt-mode for commands that write files',
+            'Attach the counterparty register and folder index, then paste the prompt',
+            'Review exception rows before sending summaries to Legal or Procurement'
+          ],
+          sample_files: [
+            [
+              'Contracts_Folder_Index.csv',
+              'csv'
+            ],
+            [
+              'Group_Counterparty_Master.xlsx',
+              'xlsx'
+            ],
+            [
+              'Contract_Tiering_Template.pptx',
+              'pptx'
+            ],
+            [
+              'Sample_Supply_Agreement_MY_2026.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Process the contract room',
+              text: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            }
+          ],
+          expected: [
+            'Master xlsx with 200 rows, exceptions tab, formulas, filters, and risk tiers',
+            'One-page Word summary per contract in the workspace output folder',
+            'PowerPoint tiering deck for ExCo or Procurement Council'
+          ],
+          watch: [
+            'Scout reads and writes hundreds of local workspace files, not just attached documents',
+            'Shell commands accelerate inventory and QA while permission tiers control writes'
+          ],
+          honest: 'Contract extraction is a first-pass workbench; Legal must verify key clauses and scanned-PDF OCR quality.',
+          tips: [
+            'Swap contracts for leases, supplier MSAs, bancassurance agreements, or hospital panel contracts',
+            'Add a shell validation step to compare workbook row count against the source folder count'
+          ],
+          id: 'uc-scout-bulk-files'
+        },
+        {
+          title: 'Heartbeat — Daily Group Briefing & Risk Sweep',
+          dept_tag: 'Risk',
+          complexity: 'advanced',
+          apps: [
+            'WorkIQ',
+            'Teams',
+            'OneDrive',
+            'Shell'
+          ],
+          desc: 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+          skills: [
+            'Heartbeat mode with work-days and work-hours configuration',
+            'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
+            'Workspace file write-back plus Teams posting under restrictive permissions'
+          ],
+          instructions: [
+            'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+            'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
+            'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
+            'Create or select workspace folder Scout_Group_Briefing and paste the prompt below'
+          ],
+          sample_files: [
+            [
+              'Scout_Group_Risk_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Group_ExCo_Watchlist.docx',
+              'docx'
+            ],
+            [
+              'Heartbeat_Log_Template.md',
+              'md'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Configure the recurring heartbeat',
+              text: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          expected: [
+            'Daily_Risk_Sweep.md updated every heartbeat cycle with auditable source links',
+            'Red-risk Teams post draft or post in the approved channel only',
+            'Heartbeat activity log showing skipped actions where permissions were too broad'
+          ],
+          watch: [
+            'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+            'WorkIQ connects email + Teams + documents instead of relying on one uploaded file'
+          ],
+          honest: 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
+          tips: [
+            'Use a 15-minute interval for crisis war rooms and 2-hour interval for BAU risk sweeps',
+            'Add a deny-list for M&A, HR investigation, and named sensitive folders'
+          ],
+          id: 'uc-scout-heartbeat'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Audio Overview — Podcast Brief from Sustainability Report',
+          dept_tag: 'Investor Relations',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'OneDrive'
+          ],
+          desc: 'Generate an 8-12 minute podcast-style audio overview from a long annual, GHG, or sustainability report stored in SharePoint.',
+          skills: [
+            'Generating an Audio Overview directly from a selected SharePoint file',
+            'Turning long PDF reports into commute-friendly executive briefings',
+            'Checking that the spoken narrative accurately reflects source disclosures'
+          ],
+          instructions: [
+            'Open the Investor Relations or ESG Disclosure Hub site',
+            'Select ESG_Disclosure_2026.pdf or Annual_Report_2026.pdf',
+            'Click the Floating Button and choose Generate Audio Overview',
+            'Listen to the generated briefing and capture follow-up questions for IR, ESG, or Strategy'
+          ],
+          sample_files: [
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ],
+            [
+              'GHG_Inventory_Assurance_Report.pdf',
+              'pdf'
+            ],
+            [
+              'Annual_Report_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Generate executive audio brief',
+              text: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            }
+          ],
+          expected: [
+            'Audio briefing suitable for a commute or pre-meeting listen',
+            'Narrative summary of long-form report themes and metrics'
+          ],
+          watch: [
+            'Long technical reports become accessible without opening a separate app',
+            'Executives can consume dense SharePoint content in audio form'
+          ],
+          honest: 'Audio Overview is for orientation and recall, not disclosure approval. Published ESG and financial statements still require assurance, legal review, and investor relations sign-off.',
+          tips: [
+            'Use it for aviation safety reports, plantation RSPO audits, or hospital quality reviews',
+            'Ask executives to note questions while listening, then run Ask a question about content on the same file'
+          ],
+          id: 'uc-sp-audio-overview'
+        },
+        {
+          title: 'Automate Workflow — Approval Rule for High-Value Invoices',
+          dept_tag: 'Finance & Operations',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Teams',
+            'Outlook'
+          ],
+          desc: 'Set up an AI-assisted SharePoint library rule so high-value invoices are routed to the right approver, posted to Teams, and tagged without Power Automate authoring.',
+          skills: [
+            'Using Automate workflows / set up rules from a SharePoint library',
+            'Combining AI-extracted metadata with approval thresholds',
+            'Routing operational exceptions to Teams and Outlook from the library'
+          ],
+          instructions: [
+            'Open the Finance Shared Services site → Invoices library',
+            'Ensure Autofill or existing columns include Supplier, Total Amount, Currency, Cost Centre, and Approver',
+            'Use the Floating Button or Automate menu to set up a high-value invoice rule',
+            'Test with a MYR 125,000 invoice and confirm the approval, Teams post, and file tag'
+          ],
+          sample_files: [
+            [
+              'Invoice_MY_KL_125000.pdf',
+              'pdf'
+            ],
+            [
+              'Invoice_Register_Q2.xlsx',
+              'xlsx'
+            ],
+            [
+              'Approval_Matrix_FY26.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Set up high-value invoice rule',
+              text: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          expected: [
+            'No-code approval rule for high-value invoice exceptions',
+            'Teams notification with supplier, amount, and cost centre'
+          ],
+          watch: [
+            'Workflow setup starts from business rules in the library, not from blank automation design',
+            'Metadata extracted from content can trigger routing and tagging'
+          ],
+          honest: 'AI-assisted workflow setup simplifies rule creation, but Finance and Internal Controls must approve thresholds, approver mapping, and audit evidence before production rollout.',
+          tips: [
+            'Adapt the threshold to IDR 500 million for Indonesia entities or USD limits for treasury files',
+            'Create a second rule for duplicate invoice numbers or missing purchase orders'
+          ],
+          id: 'uc-sp-automate-workflow'
         }
       ]
     },
@@ -51529,7 +54455,25 @@ window.HUB_DATA = {
         'COAL_03_Environmental_Management_Plan.docx',
         'COAL_04_Royalty_PNBP_Schedule.xlsx',
         'COAL_05_Marketing_Pricing_Pack.xlsx',
-        'COAL_06_Stakeholder_Holding_Lines.docx'
+        'COAL_06_Stakeholder_Holding_Lines.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -52174,6 +55118,124 @@ window.HUB_DATA = {
             instructionsID: 'Pemicu: "Indeks Newcastle melemah, audit royalti ESDM datang, dan keluhan komunitas mengancam rencana pengapalan September.". Notebook ini adalah sumber tertanam Zava Mining Indonesia untuk siklus submisi regulator — HSSE Director and Operations VP memimpin workstream. Sintesakan SEMUA 5 sumber. Gunakan DOSH (MY) / KemenESDM (ID) / MOM (SG) HSE reporting and Bursa / IDX disclosure sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk submisi tanggapan regulator dengan jejak audit lengkap. Beri nomor pada setiap pertanyaan regulator dan kutip file sumber + paragraf yang menjawabnya. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
             guide: '/00_Copilot_Notebook_Demo_Guide.docx'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Generate executive audio brief',
+              prompt: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Generate executive audio brief',
+              prompt: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Generate executive audio brief',
+              prompt: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -53502,6 +56564,356 @@ window.HUB_DATA = {
             }
           ]
         }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Bulk File-System Processing — 200 Contracts in One Run',
+          dept_tag: 'Legal',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'File System'
+          ],
+          desc: 'Point Scout at a OneDrive workspace containing 200 contracts, extract obligations into a master workbook, create one-page Word summaries, and build a counterparty tiering deck.',
+          skills: [
+            'File-system read/write/search across a workspace folder tree',
+            'Word, Excel, and PowerPoint skills in one desktop run',
+            'Shell command inventory for filenames, page counts, duplicate detection, and CSV validation'
+          ],
+          instructions: [
+            'Sync the contract room to a local OneDrive workspace folder and open that folder in Scout',
+            'Set file system access to allow the workspace only; shell prompt-mode for commands that write files',
+            'Attach the counterparty register and folder index, then paste the prompt',
+            'Review exception rows before sending summaries to Legal or Procurement'
+          ],
+          sample_files: [
+            [
+              'Contracts_Folder_Index.csv',
+              'csv'
+            ],
+            [
+              'Group_Counterparty_Master.xlsx',
+              'xlsx'
+            ],
+            [
+              'Contract_Tiering_Template.pptx',
+              'pptx'
+            ],
+            [
+              'Sample_Supply_Agreement_MY_2026.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Process the contract room',
+              text: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            }
+          ],
+          expected: [
+            'Master xlsx with 200 rows, exceptions tab, formulas, filters, and risk tiers',
+            'One-page Word summary per contract in the workspace output folder',
+            'PowerPoint tiering deck for ExCo or Procurement Council'
+          ],
+          watch: [
+            'Scout reads and writes hundreds of local workspace files, not just attached documents',
+            'Shell commands accelerate inventory and QA while permission tiers control writes'
+          ],
+          honest: 'Contract extraction is a first-pass workbench; Legal must verify key clauses and scanned-PDF OCR quality.',
+          tips: [
+            'Swap contracts for leases, supplier MSAs, bancassurance agreements, or hospital panel contracts',
+            'Add a shell validation step to compare workbook row count against the source folder count'
+          ],
+          id: 'uc-scout-bulk-files'
+        },
+        {
+          title: 'Heartbeat — Daily Group Briefing & Risk Sweep',
+          dept_tag: 'Risk',
+          complexity: 'advanced',
+          apps: [
+            'WorkIQ',
+            'Teams',
+            'OneDrive',
+            'Shell'
+          ],
+          desc: 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+          skills: [
+            'Heartbeat mode with work-days and work-hours configuration',
+            'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
+            'Workspace file write-back plus Teams posting under restrictive permissions'
+          ],
+          instructions: [
+            'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+            'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
+            'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
+            'Create or select workspace folder Scout_Group_Briefing and paste the prompt below'
+          ],
+          sample_files: [
+            [
+              'Scout_Group_Risk_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Group_ExCo_Watchlist.docx',
+              'docx'
+            ],
+            [
+              'Heartbeat_Log_Template.md',
+              'md'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Configure the recurring heartbeat',
+              text: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          expected: [
+            'Daily_Risk_Sweep.md updated every heartbeat cycle with auditable source links',
+            'Red-risk Teams post draft or post in the approved channel only',
+            'Heartbeat activity log showing skipped actions where permissions were too broad'
+          ],
+          watch: [
+            'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+            'WorkIQ connects email + Teams + documents instead of relying on one uploaded file'
+          ],
+          honest: 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
+          tips: [
+            'Use a 15-minute interval for crisis war rooms and 2-hour interval for BAU risk sweeps',
+            'Add a deny-list for M&A, HR investigation, and named sensitive folders'
+          ],
+          id: 'uc-scout-heartbeat'
+        },
+        {
+          title: 'Browser Automation — Regulator Portal Sweep',
+          dept_tag: 'Corporate Secretarial',
+          complexity: 'intermediate',
+          apps: [
+            'Browser',
+            'Word',
+            'WorkIQ',
+            'OneDrive'
+          ],
+          desc: 'Use Scout Playwright browser control to download regulator circulars and assemble a board-ready brief.',
+          skills: [
+            'Playwright browser navigate, click, fill, download, and screenshot actions',
+            'Prompt-mode browser permissions with deny-list for internal portals',
+            'Word brief generation with source URLs, screenshots, and regulator citations'
+          ],
+          instructions: [
+            'Open Scout → Settings → Permissions → Browser Control: Prompt; deny-list internal finance, HR, and production admin portals',
+            'Create workspace folder Regulator_Portal_Sweep_2026',
+            'Use a public regulator source such as BNM, OJK, Bursa Malaysia, MAS, or SC Malaysia',
+            'Paste the prompt and approve only public-site navigation and downloads'
+          ],
+          sample_files: [
+            [
+              'BNM_Circulars_2026.pdf',
+              'pdf'
+            ],
+            [
+              'OJK_Regulatory_Watchlist.xlsx',
+              'xlsx'
+            ],
+            [
+              'Regulator_Brief_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Sweep public regulator portals',
+              text: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            }
+          ],
+          expected: [
+            'Downloaded latest circular PDFs and screenshots in the workspace',
+            'Word brief with 10 summaries, action owners, and source URLs',
+            'Exception log for inaccessible pages or duplicate circulars'
+          ],
+          watch: [
+            'Scout controls a real browser: navigate, click, download, screenshot',
+            'Prompt-mode approvals make the demo safe and visible to compliance audiences'
+          ],
+          honest: 'Use public portals or approved sandboxes. Scout must not bypass controls; Legal and Compliance still interpret obligations.',
+          tips: [
+            'For Bursa announcements, add issuer filters and export market-sensitive items separately',
+            'For OJK, ask for bilingual Bahasa Indonesia and English output'
+          ],
+          id: 'uc-scout-browser-portal'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Audio Overview — Podcast Brief from Sustainability Report',
+          dept_tag: 'Investor Relations',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'OneDrive'
+          ],
+          desc: 'Generate an 8-12 minute podcast-style audio overview from a long annual, GHG, or sustainability report stored in SharePoint.',
+          skills: [
+            'Generating an Audio Overview directly from a selected SharePoint file',
+            'Turning long PDF reports into commute-friendly executive briefings',
+            'Checking that the spoken narrative accurately reflects source disclosures'
+          ],
+          instructions: [
+            'Open the Investor Relations or ESG Disclosure Hub site',
+            'Select ESG_Disclosure_2026.pdf or Annual_Report_2026.pdf',
+            'Click the Floating Button and choose Generate Audio Overview',
+            'Listen to the generated briefing and capture follow-up questions for IR, ESG, or Strategy'
+          ],
+          sample_files: [
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ],
+            [
+              'GHG_Inventory_Assurance_Report.pdf',
+              'pdf'
+            ],
+            [
+              'Annual_Report_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Generate executive audio brief',
+              text: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            }
+          ],
+          expected: [
+            'Audio briefing suitable for a commute or pre-meeting listen',
+            'Narrative summary of long-form report themes and metrics'
+          ],
+          watch: [
+            'Long technical reports become accessible without opening a separate app',
+            'Executives can consume dense SharePoint content in audio form'
+          ],
+          honest: 'Audio Overview is for orientation and recall, not disclosure approval. Published ESG and financial statements still require assurance, legal review, and investor relations sign-off.',
+          tips: [
+            'Use it for aviation safety reports, plantation RSPO audits, or hospital quality reviews',
+            'Ask executives to note questions while listening, then run Ask a question about content on the same file'
+          ],
+          id: 'uc-sp-audio-overview'
+        },
+        {
+          title: 'Automate Workflow — Approval Rule for High-Value Invoices',
+          dept_tag: 'Finance & Operations',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Teams',
+            'Outlook'
+          ],
+          desc: 'Set up an AI-assisted SharePoint library rule so high-value invoices are routed to the right approver, posted to Teams, and tagged without Power Automate authoring.',
+          skills: [
+            'Using Automate workflows / set up rules from a SharePoint library',
+            'Combining AI-extracted metadata with approval thresholds',
+            'Routing operational exceptions to Teams and Outlook from the library'
+          ],
+          instructions: [
+            'Open the Finance Shared Services site → Invoices library',
+            'Ensure Autofill or existing columns include Supplier, Total Amount, Currency, Cost Centre, and Approver',
+            'Use the Floating Button or Automate menu to set up a high-value invoice rule',
+            'Test with a MYR 125,000 invoice and confirm the approval, Teams post, and file tag'
+          ],
+          sample_files: [
+            [
+              'Invoice_MY_KL_125000.pdf',
+              'pdf'
+            ],
+            [
+              'Invoice_Register_Q2.xlsx',
+              'xlsx'
+            ],
+            [
+              'Approval_Matrix_FY26.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Set up high-value invoice rule',
+              text: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          expected: [
+            'No-code approval rule for high-value invoice exceptions',
+            'Teams notification with supplier, amount, and cost centre'
+          ],
+          watch: [
+            'Workflow setup starts from business rules in the library, not from blank automation design',
+            'Metadata extracted from content can trigger routing and tagging'
+          ],
+          honest: 'AI-assisted workflow setup simplifies rule creation, but Finance and Internal Controls must approve thresholds, approver mapping, and audit evidence before production rollout.',
+          tips: [
+            'Adapt the threshold to IDR 500 million for Indonesia entities or USD limits for treasury files',
+            'Create a second rule for duplicate invoice numbers or missing purchase orders'
+          ],
+          id: 'uc-sp-automate-workflow'
+        }
       ]
     },
     {
@@ -53525,7 +56937,26 @@ window.HUB_DATA = {
         'HTL_03_Revenue_Management_Policy.docx',
         'HTL_04_Capex_Maintenance_Pipeline.xlsx',
         'HTL_05_OTA_Contract_Tracker.xlsx',
-        'HTL_06_Owner_Asset_Management_Brief.docx'
+        'HTL_06_Owner_Asset_Management_Brief.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BNM_Circulars_2026.pdf',
+        'OJK_Regulatory_Watchlist.xlsx',
+        'Regulator_Brief_Template.docx',
+        'FY27_Strategy_Themes.docx',
+        'Strategy_KPI_Baseline.xlsx',
+        'Loop_Strategy_Page_Screenshot.png',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Employee_Onboarding_Handbook.docx',
+        'Compliance_Handbook_2026.pdf',
+        'IT_Service_Desk_User_Guide.docx',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx'
       ],
       prompts: [
         {
@@ -54171,6 +57602,124 @@ window.HUB_DATA = {
             instructionsID: 'Pemicu: "RevPAR melemah di dua resort unggulan, komisi OTA menekan marjin, dan backlog Capex bertemu sengketa asset management pemilik.". Notebook ini adalah sumber tertanam Zava Hotels Indonesia untuk tanggapan enquiry Bursa / SCM / OJK — General Manager and Director of Operations memimpin workstream. Sintesakan SEMUA 6 sumber. Gunakan Brand Standard audit + Guest Privacy policy sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk binder tanggapan audit + management letter. Tag setiap temuan sebagai Material / Notable / Watch dan kutip file + bagian yang mendukung posisi. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
             guide: '/00_Copilot_Notebook_Demo_Guide.docx'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Co-author and refresh the Loop page',
+              prompt: 'Use Scout browser control to open the approved Loop page [LOOP-URL]. In the section named Scout Draft - Strategy Signals, write the current draft of the FY27 strategy paper for Mod Admin and Hadar: 5 strategic choices, ASEAN market shifts, digital productivity bets, talent implications, ESG/regulatory watch, and unresolved decisions. Use WorkIQ to refresh only this Scout-owned section from new email threads, Teams discussions, meeting notes, and OneDrive strategy files from the last 4 hours. Add timestamped bullets and source links. Do not edit sections owned by Sasha, Daichi, HR, Legal, or Investor Relations. Also export a Word snapshot to ./Strategy_Loop_Snapshots/FY27_Strategy_Scout_Snapshot.docx.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Co-author and refresh the Loop page',
+              prompt: 'Use Scout browser control to open the approved Loop page [LOOP-URL]. In the section named Scout Draft - Strategy Signals, write the current draft of the FY27 strategy paper for Mod Admin and Hadar: 5 strategic choices, ASEAN market shifts, digital productivity bets, talent implications, ESG/regulatory watch, and unresolved decisions. Use WorkIQ to refresh only this Scout-owned section from new email threads, Teams discussions, meeting notes, and OneDrive strategy files from the last 4 hours. Add timestamped bullets and source links. Do not edit sections owned by Sasha, Daichi, HR, Legal, or Investor Relations. Also export a Word snapshot to ./Strategy_Loop_Snapshots/FY27_Strategy_Scout_Snapshot.docx.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Sweep public regulator portals',
+              prompt: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            },
+            {
+              instr: '**Same Scout session.** Co-author and refresh the Loop page',
+              prompt: 'Use Scout browser control to open the approved Loop page [LOOP-URL]. In the section named Scout Draft - Strategy Signals, write the current draft of the FY27 strategy paper for Mod Admin and Hadar: 5 strategic choices, ASEAN market shifts, digital productivity bets, talent implications, ESG/regulatory watch, and unresolved decisions. Use WorkIQ to refresh only this Scout-owned section from new email threads, Teams discussions, meeting notes, and OneDrive strategy files from the last 4 hours. Add timestamped bullets and source links. Do not edit sections owned by Sasha, Daichi, HR, Legal, or Investor Relations. Also export a Word snapshot to ./Strategy_Loop_Snapshots/FY27_Strategy_Scout_Snapshot.docx.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create onboarding FAQ',
+              prompt: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -55485,6 +59034,356 @@ window.HUB_DATA = {
               how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
             }
           ]
+        }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Automation — Monthly Close Pack',
+          dept_tag: 'Finance',
+          complexity: 'advanced',
+          apps: [
+            'Excel',
+            'PowerPoint',
+            'Outlook',
+            'Automation'
+          ],
+          desc: 'Schedule Scout for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
+          skills: [
+            'Schedule-triggered recurring automation independent of an active chat',
+            'Excel skill for GL extracts, budget variance, and workbook formatting',
+            'PowerPoint and Outlook output with permission-aware send/draft behaviour'
+          ],
+          instructions: [
+            'Open Scout → Automations → New automation',
+            'Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00',
+            'Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only',
+            'Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code'
+          ],
+          sample_files: [
+            [
+              'GL_Extract_MY_ID_SG_2026M06.xlsx',
+              'xlsx'
+            ],
+            [
+              'Budget_Forecast_Bridge.xlsx',
+              'xlsx'
+            ],
+            [
+              'Monthly_Close_Deck_Template.pptx',
+              'pptx'
+            ],
+            [
+              'CFO_Email_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Schedule monthly finance automation',
+              text: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          expected: [
+            'Recurring Scout automation visible in Automations history',
+            'Three-tab variance workbook with formulas, thresholds, and exception comments',
+            'Six-slide monthly review deck plus CFO email draft or approved send'
+          ],
+          watch: [
+            'Automations are saved tasks with schedule or condition triggers, not ad-hoc prompts',
+            'Scout can run the same close workflow every month and write back to folders'
+          ],
+          honest: 'Finance automation needs clean GL extracts; the CFO still reviews, and material variances must tie to ledgers.',
+          tips: [
+            'Change the trigger to condition-based: run when all entity GL extracts arrive',
+            'Add a shell validation that compares workbook checksums and row counts to last month'
+          ],
+          id: 'uc-scout-automation-monthly'
+        },
+        {
+          title: 'Browser Automation — Regulator Portal Sweep',
+          dept_tag: 'Corporate Secretarial',
+          complexity: 'intermediate',
+          apps: [
+            'Browser',
+            'Word',
+            'WorkIQ',
+            'OneDrive'
+          ],
+          desc: 'Use Scout Playwright browser control to download regulator circulars and assemble a board-ready brief.',
+          skills: [
+            'Playwright browser navigate, click, fill, download, and screenshot actions',
+            'Prompt-mode browser permissions with deny-list for internal portals',
+            'Word brief generation with source URLs, screenshots, and regulator citations'
+          ],
+          instructions: [
+            'Open Scout → Settings → Permissions → Browser Control: Prompt; deny-list internal finance, HR, and production admin portals',
+            'Create workspace folder Regulator_Portal_Sweep_2026',
+            'Use a public regulator source such as BNM, OJK, Bursa Malaysia, MAS, or SC Malaysia',
+            'Paste the prompt and approve only public-site navigation and downloads'
+          ],
+          sample_files: [
+            [
+              'BNM_Circulars_2026.pdf',
+              'pdf'
+            ],
+            [
+              'OJK_Regulatory_Watchlist.xlsx',
+              'xlsx'
+            ],
+            [
+              'Regulator_Brief_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Sweep public regulator portals',
+              text: 'Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source. Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals.'
+            }
+          ],
+          expected: [
+            'Downloaded latest circular PDFs and screenshots in the workspace',
+            'Word brief with 10 summaries, action owners, and source URLs',
+            'Exception log for inaccessible pages or duplicate circulars'
+          ],
+          watch: [
+            'Scout controls a real browser: navigate, click, download, screenshot',
+            'Prompt-mode approvals make the demo safe and visible to compliance audiences'
+          ],
+          honest: 'Use public portals or approved sandboxes. Scout must not bypass controls; Legal and Compliance still interpret obligations.',
+          tips: [
+            'For Bursa announcements, add issuer filters and export market-sensitive items separately',
+            'For OJK, ask for bilingual Bahasa Indonesia and English output'
+          ],
+          id: 'uc-scout-browser-portal'
+        },
+        {
+          title: 'Loop Page Co-Authoring — Live Strategy Doc',
+          dept_tag: 'Strategy',
+          complexity: 'intermediate',
+          apps: [
+            'Browser',
+            'Loop',
+            'WorkIQ',
+            'Word'
+          ],
+          desc: 'Scout browser-opens Loop, drafts FY27 strategy content, and refreshes its own section every 4 hours.',
+          skills: [
+            'Loop integration through Scout browser/Playwright skill',
+            'WorkIQ refresh from email, Teams threads, meetings, and documents',
+            'Recurring update pattern with clear ownership boundaries on a co-authored page'
+          ],
+          instructions: [
+            'Open Scout and sign into Microsoft 365 in the controlled browser session',
+            'Set Browser Control to prompt mode and allow the specific Loop page URL',
+            'Create a Loop section labelled Scout Draft - Strategy Signals',
+            'Run the prompt once, then convert the refresh instruction to a heartbeat or automation every 4 hours'
+          ],
+          sample_files: [
+            [
+              'FY27_Strategy_Themes.docx',
+              'docx'
+            ],
+            [
+              'Strategy_KPI_Baseline.xlsx',
+              'xlsx'
+            ],
+            [
+              'Loop_Strategy_Page_Screenshot.png',
+              'png'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Co-author and refresh the Loop page',
+              text: 'Use Scout browser control to open the approved Loop page [LOOP-URL]. In the section named Scout Draft - Strategy Signals, write the current draft of the FY27 strategy paper for Mod Admin and Hadar: 5 strategic choices, ASEAN market shifts, digital productivity bets, talent implications, ESG/regulatory watch, and unresolved decisions. Use WorkIQ to refresh only this Scout-owned section from new email threads, Teams discussions, meeting notes, and OneDrive strategy files from the last 4 hours. Add timestamped bullets and source links. Do not edit sections owned by Sasha, Daichi, HR, Legal, or Investor Relations. Also export a Word snapshot to ./Strategy_Loop_Snapshots/FY27_Strategy_Scout_Snapshot.docx.'
+            }
+          ],
+          expected: [
+            'Loop page section updated through controlled browser automation',
+            'Timestamped strategy-signal bullets sourced from recent M365 activity',
+            'Word snapshot saved to the workspace for review and archival'
+          ],
+          watch: [
+            'Scout uses browser actions to work in Loop, which standard chat cannot directly co-author',
+            'The prompt scopes Scout to its own section to avoid overwriting colleagues'
+          ],
+          honest: 'Live co-authoring is visible. Keep ownership rules explicit and browser approvals on.',
+          tips: [
+            'Use heartbeat for 4-hour refresh during strategy offsites',
+            'Add a nightly automation to export Loop snapshots for records management'
+          ],
+          id: 'uc-scout-loop-collab'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'FAQ From File — Auto-Generated Onboarding Q&A',
+          dept_tag: 'HR & Compliance',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word'
+          ],
+          desc: 'Generate 20-30 Q&A pairs from an HR policy, compliance handbook, or IT guide and reuse them as an FAQ web part on a SharePoint site.',
+          skills: [
+            'Generating FAQ from File from a selected SharePoint document',
+            'Converting policy language into employee-ready questions and answers',
+            'Publishing FAQ content into a team site without retyping source material'
+          ],
+          instructions: [
+            'Open the People Portal, Compliance Hub, or IT Service Desk site',
+            'Select Employee_Onboarding_Handbook.docx or Compliance_Handbook_2026.pdf',
+            'Use the Floating Button to choose Generate FAQ from File',
+            'Review the generated Q&A and insert approved items into an FAQ Webpart'
+          ],
+          sample_files: [
+            [
+              'Employee_Onboarding_Handbook.docx',
+              'docx'
+            ],
+            [
+              'Compliance_Handbook_2026.pdf',
+              'pdf'
+            ],
+            [
+              'IT_Service_Desk_User_Guide.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Create onboarding FAQ',
+              text: 'Open the People Portal → Policies library → select Employee_Onboarding_Handbook.docx → click the Floating Button → choose \'Generate FAQ from File\'. Generate 25 Q&A pairs for new joiners in Malaysia and Indonesia, including probation, claims, hybrid work, data privacy, mandatory training, and escalation contacts. Review with Daichi Maruyama, then add the approved items to the New Joiner FAQ Webpart on the HR site.'
+            }
+          ],
+          expected: [
+            'Draft set of 20-30 employee-friendly FAQ items',
+            'Reusable content for a SharePoint FAQ Webpart'
+          ],
+          watch: [
+            'Formal policy text becomes conversational but remains grounded in the file',
+            'The generated FAQ can be reviewed before publishing to the page'
+          ],
+          honest: 'FAQ generation is only as current as the source file. HR, Legal, or Compliance must review employee-facing answers before publishing, especially where benefits or statutory rights differ by country.',
+          tips: [
+            'Run separately for MY and ID policy variants to avoid mixing jurisdiction rules',
+            'Use the same pattern for patient guides, customer onboarding packs, or supplier code-of-conduct documents'
+          ],
+          id: 'uc-sp-faq-from-file'
+        },
+        {
+          title: 'Automate Workflow — Approval Rule for High-Value Invoices',
+          dept_tag: 'Finance & Operations',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Teams',
+            'Outlook'
+          ],
+          desc: 'Set up an AI-assisted SharePoint library rule so high-value invoices are routed to the right approver, posted to Teams, and tagged without Power Automate authoring.',
+          skills: [
+            'Using Automate workflows / set up rules from a SharePoint library',
+            'Combining AI-extracted metadata with approval thresholds',
+            'Routing operational exceptions to Teams and Outlook from the library'
+          ],
+          instructions: [
+            'Open the Finance Shared Services site → Invoices library',
+            'Ensure Autofill or existing columns include Supplier, Total Amount, Currency, Cost Centre, and Approver',
+            'Use the Floating Button or Automate menu to set up a high-value invoice rule',
+            'Test with a MYR 125,000 invoice and confirm the approval, Teams post, and file tag'
+          ],
+          sample_files: [
+            [
+              'Invoice_MY_KL_125000.pdf',
+              'pdf'
+            ],
+            [
+              'Invoice_Register_Q2.xlsx',
+              'xlsx'
+            ],
+            [
+              'Approval_Matrix_FY26.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Set up high-value invoice rule',
+              text: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          expected: [
+            'No-code approval rule for high-value invoice exceptions',
+            'Teams notification with supplier, amount, and cost centre'
+          ],
+          watch: [
+            'Workflow setup starts from business rules in the library, not from blank automation design',
+            'Metadata extracted from content can trigger routing and tagging'
+          ],
+          honest: 'AI-assisted workflow setup simplifies rule creation, but Finance and Internal Controls must approve thresholds, approver mapping, and audit evidence before production rollout.',
+          tips: [
+            'Adapt the threshold to IDR 500 million for Indonesia entities or USD limits for treasury files',
+            'Create a second rule for duplicate invoice numbers or missing purchase orders'
+          ],
+          id: 'uc-sp-automate-workflow'
         }
       ]
     },
@@ -62942,6 +66841,17 @@ window.HUB_DATA = {
         'ME_04_Streaming_Subscriber_Cohort.xlsx',
         'ME_05_Advertiser_Yield_Model.xlsx',
         'ME_06_Content_Rights_Register.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
         'BRD_Q4_Financial_Pack.xlsx',
         'Risk_Appetite_Statement.docx',
         'ESG_Disclosure_2026.pdf',
@@ -63593,6 +67503,65 @@ window.HUB_DATA = {
             instructionsID: 'Pemicu: "Pelanggan streaming naik namun ARPU turun; pertanyaan Kominfo dan KPI; keluhan hak cipta meningkat.". Notebook ini adalah sumber tertanam Zava Media Indonesia untuk kampanye recovery major-account — General Manager and Director of Operations memimpin workstream. Sintesakan SEMUA 4 sumber. Gunakan Brand Standard audit + Guest Privacy policy sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk memo recovery pelanggan + rencana remediasi. Untuk setiap akun bernama tag sebagai Save / Right-Size / Exit dan kutip klausul kontrak yang mendukung posisi. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
             guide: '/00_Copilot_Notebook_Demo_Guide.docx'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            },
+            {
+              instr: '**Same Scout session.** Configure the recurring heartbeat',
+              prompt: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🌐 AI in SharePoint',
@@ -64965,6 +68934,190 @@ window.HUB_DATA = {
               how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
             }
           ]
+        }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Automation — Monthly Close Pack',
+          dept_tag: 'Finance',
+          complexity: 'advanced',
+          apps: [
+            'Excel',
+            'PowerPoint',
+            'Outlook',
+            'Automation'
+          ],
+          desc: 'Schedule Scout for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
+          skills: [
+            'Schedule-triggered recurring automation independent of an active chat',
+            'Excel skill for GL extracts, budget variance, and workbook formatting',
+            'PowerPoint and Outlook output with permission-aware send/draft behaviour'
+          ],
+          instructions: [
+            'Open Scout → Automations → New automation',
+            'Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00',
+            'Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only',
+            'Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code'
+          ],
+          sample_files: [
+            [
+              'GL_Extract_MY_ID_SG_2026M06.xlsx',
+              'xlsx'
+            ],
+            [
+              'Budget_Forecast_Bridge.xlsx',
+              'xlsx'
+            ],
+            [
+              'Monthly_Close_Deck_Template.pptx',
+              'pptx'
+            ],
+            [
+              'CFO_Email_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Schedule monthly finance automation',
+              text: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          expected: [
+            'Recurring Scout automation visible in Automations history',
+            'Three-tab variance workbook with formulas, thresholds, and exception comments',
+            'Six-slide monthly review deck plus CFO email draft or approved send'
+          ],
+          watch: [
+            'Automations are saved tasks with schedule or condition triggers, not ad-hoc prompts',
+            'Scout can run the same close workflow every month and write back to folders'
+          ],
+          honest: 'Finance automation needs clean GL extracts; the CFO still reviews, and material variances must tie to ledgers.',
+          tips: [
+            'Change the trigger to condition-based: run when all entity GL extracts arrive',
+            'Add a shell validation that compares workbook checksums and row counts to last month'
+          ],
+          id: 'uc-scout-automation-monthly'
+        },
+        {
+          title: 'Sub-Agent Fan-Out — Strategic Diligence in Parallel',
+          dept_tag: 'Strategy',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'Research Agents'
+          ],
+          desc: 'One Scout prompt launches sub-agents for M&A diligence, then synthesises a brief, xlsx, and speaker-note deck.',
+          skills: [
+            'Sub-agent fan-out using Research, Code review, Explore, and General-purpose agents',
+            'Parallel diligence across market, financial, technology, ESG, and regulatory workstreams',
+            'Synthesis of background-agent outputs into executive-ready files'
+          ],
+          instructions: [
+            'Open Scout in the M&A workspace with target profile, NDA-safe public sources, and internal thesis notes',
+            'Enable web research and workspace file access; keep shell in prompt mode',
+            'Paste the prompt and watch the sub-agent activity panel as agents run independently',
+            'Ask Scout to reconcile conflicts between agents before finalising the pack'
+          ],
+          sample_files: [
+            [
+              'TargetCo_Public_Profile.docx',
+              'docx'
+            ],
+            [
+              'SEA_Market_Size_Assumptions.xlsx',
+              'xlsx'
+            ],
+            [
+              'Diligence_Question_Bank.xlsx',
+              'xlsx'
+            ],
+            [
+              'IC_Memo_Template.pptx',
+              'pptx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Fan out strategic diligence',
+              text: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          expected: [
+            'Five parallel sub-agent workstreams with separate logs and citations',
+            'Word investment brief with risks, synergies, and open diligence questions',
+            'Excel finding register and PowerPoint IC deck with speaker notes'
+          ],
+          watch: [
+            'The main Scout session delegates to isolated sub-agents instead of doing one serial search',
+            'Contradictions and confidence levels are preserved for Investment Committee challenge'
+          ],
+          honest: 'Sub-agents accelerate triage; formal due diligence, valuation, and legal reliance remain human-owned.',
+          tips: [
+            'Replace TargetCo with a hospital chain, payments fintech, plantation miller, or logistics 3PL',
+            'Use one General-purpose agent to build a synergy model while Research agents gather citations'
+          ],
+          id: 'uc-scout-subagents'
+        },
+        {
+          title: 'Heartbeat — Daily Group Briefing & Risk Sweep',
+          dept_tag: 'Risk',
+          complexity: 'advanced',
+          apps: [
+            'WorkIQ',
+            'Teams',
+            'OneDrive',
+            'Shell'
+          ],
+          desc: 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+          skills: [
+            'Heartbeat mode with work-days and work-hours configuration',
+            'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
+            'Workspace file write-back plus Teams posting under restrictive permissions'
+          ],
+          instructions: [
+            'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+            'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
+            'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
+            'Create or select workspace folder Scout_Group_Briefing and paste the prompt below'
+          ],
+          sample_files: [
+            [
+              'Scout_Group_Risk_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Group_ExCo_Watchlist.docx',
+              'docx'
+            ],
+            [
+              'Heartbeat_Log_Template.md',
+              'md'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Configure the recurring heartbeat',
+              text: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          expected: [
+            'Daily_Risk_Sweep.md updated every heartbeat cycle with auditable source links',
+            'Red-risk Teams post draft or post in the approved channel only',
+            'Heartbeat activity log showing skipped actions where permissions were too broad'
+          ],
+          watch: [
+            'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+            'WorkIQ connects email + Teams + documents instead of relying on one uploaded file'
+          ],
+          honest: 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
+          tips: [
+            'Use a 15-minute interval for crisis war rooms and 2-hour interval for BAU risk sweeps',
+            'Add a deny-list for M&A, HR investigation, and named sensitive folders'
+          ],
+          id: 'uc-scout-heartbeat'
         }
       ],
       sharepointLibrary: [
@@ -102994,7 +107147,27 @@ window.HUB_DATA = {
         'customer-feedback.xlsx',
         'purchase-orders.xlsx',
         'month-end-variance.docx',
-        'roi-summary.xlsx'
+        'roi-summary.xlsx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Vendor_Master_Contracts/',
+        'Contract_Metadata_Template.xlsx',
+        'High_Value_Expiring_Contracts_View.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
       ],
       prompts: [
         {
@@ -103377,6 +107550,124 @@ window.HUB_DATA = {
             guide: '/00_Copilot_Notebook_Demo_Guide.docx',
             instructionsID: 'Pemicu: "World #1 B2B electrical distributor — RM 800M MY revenue, 6 DCs, 7,000+ customers, ABB / Schneider / Siemens / Legrand / Eaton lines, datacenter + semicon + Petronas + EV demand all hitting at once.". Notebook ini adalah sumber tertanam Zava Electrical untuk review variance Board darurat — Group CFO and Chief of Staff memimpin workstream. Sintesakan SEMUA 5 sumber. Gunakan Bursa / IDX dual-listing disclosure and SCM / OJK enquiries sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk Board paper + bridge variance + program recovery. Klasifikasikan setiap rekomendasi divisional sebagai Merah / Kuning / Hijau dan kaitkan ke komponen EBITDA bridge. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.'
           }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Schedule monthly finance automation',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Schedule monthly finance automation',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Bulk File-System Processing — 200 Contracts in One Run **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Sync the contract room to a local OneDrive workspace folder and open that folder in Scout **(3)** Set file system access to allow the workspace only; shell prompt-mode for commands that write files **(4)** Attach the counterparty register and folder index, then paste the prompt **(5)** Review exception rows before sending summaries to Legal or Procurement **Reference files:** Contracts_Folder_Index.csv, Group_Counterparty_Master.xlsx, Contract_Tiering_Template.pptx, Sample_Supply_Agreement_MY_2026.docx',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Schedule monthly finance automation',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Autofill contract metadata',
+              prompt: 'Open the Legal Operations site → Vendor_Master_Contracts library → click Add column → Autofill with AI. Create columns for Counterparty, Contract Value (MYR), Expiry Date, Jurisdiction, Renewal Notice Days, and Personal Data Clause. Run Autofill on 500 contracts. Create a view filtered to Contract Value > MYR 1,000,000 and Expiry Date within 180 days, then export the metadata to Excel for Sasha Ouellet\'s contract risk review.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create ESG hub page',
+              prompt: 'Open the ESG Disclosure Hub → New → Page → Create Page with AI. Describe: \'Create a 2026 ESG Disclosure landing page for investors, employees, and regulators. Include a hero section, climate metrics, RSPO progress, MYR green capex, assurance status, key downloads, and an FAQ Webpart generated from Employee_Sustainability_FAQ.docx.\' Use Design Ideas to refine layout, then use Write/Rewrite with AI to make the executive summary concise for Daichi Maruyama before publishing.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Autofill contract metadata',
+              prompt: 'Open the Legal Operations site → Vendor_Master_Contracts library → click Add column → Autofill with AI. Create columns for Counterparty, Contract Value (MYR), Expiry Date, Jurisdiction, Renewal Notice Days, and Personal Data Clause. Run Autofill on 500 contracts. Create a view filtered to Contract Value > MYR 1,000,000 and Expiry Date within 180 days, then export the metadata to Excel for Sasha Ouellet\'s contract risk review.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create ESG hub page',
+              prompt: 'Open the ESG Disclosure Hub → New → Page → Create Page with AI. Describe: \'Create a 2026 ESG Disclosure landing page for investors, employees, and regulators. Include a hero section, climate metrics, RSPO progress, MYR green capex, assurance status, key downloads, and an FAQ Webpart generated from Employee_Sustainability_FAQ.docx.\' Use Design Ideas to refine layout, then use Write/Rewrite with AI to make the executive summary concise for Daichi Maruyama before publishing.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Autofill contract metadata',
+              prompt: 'Open the Legal Operations site → Vendor_Master_Contracts library → click Add column → Autofill with AI. Create columns for Counterparty, Contract Value (MYR), Expiry Date, Jurisdiction, Renewal Notice Days, and Personal Data Clause. Run Autofill on 500 contracts. Create a view filtered to Contract Value > MYR 1,000,000 and Expiry Date within 180 days, then export the metadata to Excel for Sasha Ouellet\'s contract risk review.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create ESG hub page',
+              prompt: 'Open the ESG Disclosure Hub → New → Page → Create Page with AI. Describe: \'Create a 2026 ESG Disclosure landing page for investors, employees, and regulators. Include a hero section, climate metrics, RSPO progress, MYR green capex, assurance status, key downloads, and an FAQ Webpart generated from Employee_Sustainability_FAQ.docx.\' Use Design Ideas to refine layout, then use Write/Rewrite with AI to make the executive summary concise for Daichi Maruyama before publishing.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
         },
         {
           tool: '🤝 Cowork (Frontier)',
@@ -104114,6 +108405,364 @@ window.HUB_DATA = {
               how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
             }
           ]
+        }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Bulk File-System Processing — 200 Contracts in One Run',
+          dept_tag: 'Legal',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'File System'
+          ],
+          desc: 'Point Scout at a OneDrive workspace containing 200 contracts, extract obligations into a master workbook, create one-page Word summaries, and build a counterparty tiering deck.',
+          skills: [
+            'File-system read/write/search across a workspace folder tree',
+            'Word, Excel, and PowerPoint skills in one desktop run',
+            'Shell command inventory for filenames, page counts, duplicate detection, and CSV validation'
+          ],
+          instructions: [
+            'Sync the contract room to a local OneDrive workspace folder and open that folder in Scout',
+            'Set file system access to allow the workspace only; shell prompt-mode for commands that write files',
+            'Attach the counterparty register and folder index, then paste the prompt',
+            'Review exception rows before sending summaries to Legal or Procurement'
+          ],
+          sample_files: [
+            [
+              'Contracts_Folder_Index.csv',
+              'csv'
+            ],
+            [
+              'Group_Counterparty_Master.xlsx',
+              'xlsx'
+            ],
+            [
+              'Contract_Tiering_Template.pptx',
+              'pptx'
+            ],
+            [
+              'Sample_Supply_Agreement_MY_2026.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Process the contract room',
+              text: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            }
+          ],
+          expected: [
+            'Master xlsx with 200 rows, exceptions tab, formulas, filters, and risk tiers',
+            'One-page Word summary per contract in the workspace output folder',
+            'PowerPoint tiering deck for ExCo or Procurement Council'
+          ],
+          watch: [
+            'Scout reads and writes hundreds of local workspace files, not just attached documents',
+            'Shell commands accelerate inventory and QA while permission tiers control writes'
+          ],
+          honest: 'Contract extraction is a first-pass workbench; Legal must verify key clauses and scanned-PDF OCR quality.',
+          tips: [
+            'Swap contracts for leases, supplier MSAs, bancassurance agreements, or hospital panel contracts',
+            'Add a shell validation step to compare workbook row count against the source folder count'
+          ],
+          id: 'uc-scout-bulk-files'
+        },
+        {
+          title: 'Automation — Monthly Close Pack',
+          dept_tag: 'Finance',
+          complexity: 'advanced',
+          apps: [
+            'Excel',
+            'PowerPoint',
+            'Outlook',
+            'Automation'
+          ],
+          desc: 'Schedule Scout for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
+          skills: [
+            'Schedule-triggered recurring automation independent of an active chat',
+            'Excel skill for GL extracts, budget variance, and workbook formatting',
+            'PowerPoint and Outlook output with permission-aware send/draft behaviour'
+          ],
+          instructions: [
+            'Open Scout → Automations → New automation',
+            'Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00',
+            'Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only',
+            'Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code'
+          ],
+          sample_files: [
+            [
+              'GL_Extract_MY_ID_SG_2026M06.xlsx',
+              'xlsx'
+            ],
+            [
+              'Budget_Forecast_Bridge.xlsx',
+              'xlsx'
+            ],
+            [
+              'Monthly_Close_Deck_Template.pptx',
+              'pptx'
+            ],
+            [
+              'CFO_Email_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Schedule monthly finance automation',
+              text: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          expected: [
+            'Recurring Scout automation visible in Automations history',
+            'Three-tab variance workbook with formulas, thresholds, and exception comments',
+            'Six-slide monthly review deck plus CFO email draft or approved send'
+          ],
+          watch: [
+            'Automations are saved tasks with schedule or condition triggers, not ad-hoc prompts',
+            'Scout can run the same close workflow every month and write back to folders'
+          ],
+          honest: 'Finance automation needs clean GL extracts; the CFO still reviews, and material variances must tie to ledgers.',
+          tips: [
+            'Change the trigger to condition-based: run when all entity GL extracts arrive',
+            'Add a shell validation that compares workbook checksums and row counts to last month'
+          ],
+          id: 'uc-scout-automation-monthly'
+        },
+        {
+          title: 'Sub-Agent Fan-Out — Strategic Diligence in Parallel',
+          dept_tag: 'Strategy',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'Research Agents'
+          ],
+          desc: 'One Scout prompt launches sub-agents for M&A diligence, then synthesises a brief, xlsx, and speaker-note deck.',
+          skills: [
+            'Sub-agent fan-out using Research, Code review, Explore, and General-purpose agents',
+            'Parallel diligence across market, financial, technology, ESG, and regulatory workstreams',
+            'Synthesis of background-agent outputs into executive-ready files'
+          ],
+          instructions: [
+            'Open Scout in the M&A workspace with target profile, NDA-safe public sources, and internal thesis notes',
+            'Enable web research and workspace file access; keep shell in prompt mode',
+            'Paste the prompt and watch the sub-agent activity panel as agents run independently',
+            'Ask Scout to reconcile conflicts between agents before finalising the pack'
+          ],
+          sample_files: [
+            [
+              'TargetCo_Public_Profile.docx',
+              'docx'
+            ],
+            [
+              'SEA_Market_Size_Assumptions.xlsx',
+              'xlsx'
+            ],
+            [
+              'Diligence_Question_Bank.xlsx',
+              'xlsx'
+            ],
+            [
+              'IC_Memo_Template.pptx',
+              'pptx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Fan out strategic diligence',
+              text: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          expected: [
+            'Five parallel sub-agent workstreams with separate logs and citations',
+            'Word investment brief with risks, synergies, and open diligence questions',
+            'Excel finding register and PowerPoint IC deck with speaker notes'
+          ],
+          watch: [
+            'The main Scout session delegates to isolated sub-agents instead of doing one serial search',
+            'Contradictions and confidence levels are preserved for Investment Committee challenge'
+          ],
+          honest: 'Sub-agents accelerate triage; formal due diligence, valuation, and legal reliance remain human-owned.',
+          tips: [
+            'Replace TargetCo with a hospital chain, payments fintech, plantation miller, or logistics 3PL',
+            'Use one General-purpose agent to build a synergy model while Research agents gather citations'
+          ],
+          id: 'uc-scout-subagents'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Autofill Columns — Tag 500 Contracts in One Click',
+          dept_tag: 'Legal & Procurement',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Excel'
+          ],
+          desc: 'Use AI Autofill columns in a SharePoint document library to extract counterparty, value, expiry, jurisdiction, and renewal metadata from hundreds of contracts.',
+          skills: [
+            'Creating AI Autofill columns from file content',
+            'Structuring untagged document libraries for filtering, grouping, and Copilot readiness',
+            'Saving metadata-driven views and exporting the library to Excel for review'
+          ],
+          instructions: [
+            'Open the Legal Operations site → Vendor_Master_Contracts library',
+            'Create Autofill columns for Counterparty, Contract Value, Expiry Date, Jurisdiction, and Auto-Renewal',
+            'Run Autofill across the selected contract folder',
+            'Save a High-Value Expiring Contracts view and export the metadata table to Excel'
+          ],
+          sample_files: [
+            [
+              'Vendor_Master_Contracts/',
+              'folder'
+            ],
+            [
+              'Contract_Metadata_Template.xlsx',
+              'xlsx'
+            ],
+            [
+              'High_Value_Expiring_Contracts_View.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Autofill contract metadata',
+              text: 'Open the Legal Operations site → Vendor_Master_Contracts library → click Add column → Autofill with AI. Create columns for Counterparty, Contract Value (MYR), Expiry Date, Jurisdiction, Renewal Notice Days, and Personal Data Clause. Run Autofill on 500 contracts. Create a view filtered to Contract Value > MYR 1,000,000 and Expiry Date within 180 days, then export the metadata to Excel for Sasha Ouellet\'s contract risk review.'
+            }
+          ],
+          expected: [
+            'Contract library enriched with searchable AI-filled metadata',
+            'Saved view for high-value contracts nearing expiry'
+          ],
+          watch: [
+            'Autofill turns document content into structured SharePoint columns',
+            'Filtering and grouping become useful immediately after metadata enrichment'
+          ],
+          honest: 'Autofill columns reduce manual tagging, but Legal must sample-check extraction quality before relying on the metadata for notices, disputes, or renewal decisions.',
+          tips: [
+            'Use confidence sampling: review 25 high-value contracts and 25 random contracts after Autofill',
+            'Add business-owner and confidentiality columns so follow-up workflows can route correctly'
+          ],
+          id: 'uc-sp-autofill-columns'
+        },
+        {
+          title: 'Create Page With AI — New ESG Disclosure Hub',
+          dept_tag: 'Marketing & ESG',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Word',
+            'PowerPoint'
+          ],
+          desc: 'Describe a new SharePoint page in natural language and let AI scaffold the hero, sections, FAQ web part, and design ideas for a polished site page.',
+          skills: [
+            'Creating SharePoint pages and sections with AI',
+            'Using Design Ideas to refine page layout, imagery, and readability',
+            'Writing and rewriting page copy in context before publishing'
+          ],
+          instructions: [
+            'Open the ESG Disclosure Hub, Investor Relations, or People Portal site as a Content Creator',
+            'Choose Create Page with AI from the Floating Button or page authoring flow',
+            'Describe the page objective, target audience, sections, and source files',
+            'Use Design Ideas plus Write/Rewrite with AI to refine each section before publishing'
+          ],
+          sample_files: [
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ],
+            [
+              'Investor_Day_Key_Messages.pptx',
+              'pptx'
+            ],
+            [
+              'Employee_Sustainability_FAQ.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Create ESG hub page',
+              text: 'Open the ESG Disclosure Hub → New → Page → Create Page with AI. Describe: \'Create a 2026 ESG Disclosure landing page for investors, employees, and regulators. Include a hero section, climate metrics, RSPO progress, MYR green capex, assurance status, key downloads, and an FAQ Webpart generated from Employee_Sustainability_FAQ.docx.\' Use Design Ideas to refine layout, then use Write/Rewrite with AI to make the executive summary concise for Daichi Maruyama before publishing.'
+            }
+          ],
+          expected: [
+            'AI-scaffolded SharePoint page with hero, sections, links, and FAQ Webpart',
+            'Cleaner page copy rewritten for the intended audience'
+          ],
+          watch: [
+            'Content creation happens inside the SharePoint page authoring experience',
+            'Design Ideas improves layout while Write/Rewrite improves the message'
+          ],
+          honest: 'Create Page with AI is excellent for first drafts, but brand, legal, accessibility, and disclosure owners must review before publishing externally or to all employees.',
+          tips: [
+            'Reuse the pattern for Investor Day hubs, HR onboarding pages, campaign microsites, and crisis-response pages',
+            'Provide audience and approval constraints in the page description for better first drafts'
+          ],
+          id: 'uc-sp-create-page'
         }
       ]
     }
@@ -137802,6 +142451,1214 @@ window.HUB_DATA = {
             'Use the same pattern for patient guides, customer onboarding packs, or supplier code-of-conduct documents'
           ],
           id: 'uc-sp-faq-from-file'
+        },
+        {
+          title: 'Improve Site — Audit & Refresh the Group Policy Hub',
+          dept_tag: 'IT & Digital',
+          complexity: 'advanced',
+          apps: [
+            'SharePoint'
+          ],
+          desc: 'Use Improve your SharePoint site with AI to scan a policy or intranet hub for broken links, outdated pages, low-engagement content, and missing information.',
+          skills: [
+            'Running Improve Site as a SharePoint Site Manager',
+            'Identifying broken links, stale pages, content gaps, and low-engagement pages',
+            'Turning AI recommendations into a remediation plan with owners and dates'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Corporate Intranet site as a Site Manager',
+            'Click the Floating Button and choose Improve your SharePoint site with AI',
+            'Review recommendations for broken links, pages older than 12 months, and missing policy areas',
+            'Apply safe fixes and export the remediation plan for site owners'
+          ],
+          sample_files: [
+            [
+              'Group_Policy_Hub_Site_Map.xlsx',
+              'xlsx'
+            ],
+            [
+              'Content_Owner_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Policy_Refresh_Backlog.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Audit the policy hub',
+              text: 'Open the Group Policy Hub as Site Manager → click the Floating Button → choose \'Improve your SharePoint site with AI\'. Scan for broken links, pages not updated in 12 months, duplicate policies, missing Malaysia/Indonesia compliance pages, and low-engagement pages. Generate a remediation plan with Owner, Risk, Recommended Fix, and Due Date. Apply safe link fixes, then send the backlog to Hadar Caspit for the next Governance Council.'
+            }
+          ],
+          expected: [
+            'Site health recommendations for stale, broken, or incomplete content',
+            'Remediation backlog that can be assigned to content owners'
+          ],
+          watch: [
+            'AI in SharePoint treats the whole site as the working context',
+            'Recommendations vary for Site Managers versus Content Consumers'
+          ],
+          honest: 'Improve Site can surface hygiene issues quickly, but site owners decide what to archive, rewrite, or retain for legal reasons. Do not bulk-apply changes to regulated content without owner review.',
+          tips: [
+            'Start with one controlled hub before scanning all country sites',
+            'Pair outdated-page findings with page analytics to prioritize high-traffic fixes'
+          ],
+          id: 'uc-sp-improve-site'
+        }
+      ]
+    },
+    {
+      id: 'dept-executives',
+      sectorId: 'department',
+      subsector: '',
+      name: '👔 Executives & Business Leaders',
+      icon: '👔',
+      color: '#1A237E',
+      accent: '#283593',
+      company: 'Zava Group ExCo',
+      tagline: 'The Group CEO walks into Monday with 5 divisions, 7 regulators, 12,000 employees, an investor day in 6 weeks, and 38 minutes between meetings to make every decision count.',
+      scenario: 'The Group CEO at Zava Conglomerate runs five operating divisions (Bank, Plantations, Energy, Pharma, Consumer) across Malaysia and Indonesia, with combined FY2026 revenue of MYR 28.4B, EBITDA margin of 19.7%, and 12,400 employees. The Group ExCo meets every Monday 8am to align on the week\'s top three decisions; the agenda routinely runs over because each division leader arrives with their own data, their own format, and their own narrative. Six weeks out from Investor Day, the CEO needs to sharpen the equity story (capital allocation, ESG progress, AI-driven productivity), pre-empt the 12 toughest analyst questions, and deliver a town hall to all 12,400 employees that lands across MY and ID without sounding corporate. Between meetings the CEO has 30-40 minute windows to read papers, approve decisions, draft messages, and prepare for the next room. The ask is straightforward: show how Microsoft 365 Copilot — across Chat, Researcher, Analyst, Word, Excel, PowerPoint, Outlook, Teams, Notebook, Cowork, Scout, AI in SharePoint, and Create — can give back 5-7 hours every week and let the CEO show up sharper in every conversation.',
+      companyID: '',
+      taglineID: '',
+      scenarioID: '',
+      files: [
+        '/00_Copilot_Notebook_Demo_Guide.docx',
+        'EXEC_01_Group_ExCo_Pack_Q4FY26.pptx',
+        'EXEC_02_Group_KPI_Dashboard_FY26.xlsx',
+        'EXEC_03_Five_Division_Scorecard.xlsx',
+        'EXEC_04_CEO_Daily_Briefing_Template.docx',
+        'EXEC_05_Capital_Allocation_FY27.xlsx',
+        'EXEC_06_Strategy_Refresh_Memo.docx',
+        'EXEC_07_Town_Hall_Script_Q4.docx',
+        'EXEC_08_Risk_Heatmap_Group.xlsx',
+        'EXEC_09_M_and_A_Pipeline.xlsx',
+        'EXEC_10_Investor_Day_Narrative.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'Scout_Group_Risk_Register.xlsx',
+        'Group_ExCo_Watchlist.docx',
+        'Heartbeat_Log_Template.md',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'GHG_Inventory_Assurance_Report.pdf',
+        'Annual_Report_2026.pdf',
+        'Group_Policy_Hub_Site_Map.xlsx',
+        'Content_Owner_Register.xlsx',
+        'Policy_Refresh_Backlog.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with Microsoft 365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat`. /reference EXEC_01_Group_ExCo_Pack_Q4FY26.pptx + EXEC_02_Group_KPI_Dashboard_FY26.xlsx. Ground in the most recent ExCo pack and the live KPI dashboard.',
+              prompt: 'I\'m walking into the Monday Group ExCo at 8am. Give me a 1-page CEO brief grounded in the attached ExCo pack and KPI dashboard: (1) the THREE decisions that must come out of this meeting; (2) for each decision, the data point, the trade-off, and the recommendation; (3) the FIVE questions I should ask each division leader before they finish presenting; (4) the ONE sentence I should open the meeting with. Plain English, no jargon. Output as a Markdown table I can paste into OneNote.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat`. /reference the last 30 days of email + Teams chats with the 5 division CEOs.',
+              prompt: 'Across my email and Teams chats with the 5 division CEOs over the last 30 days, what are they NOT telling me? Surface (a) topics raised more than once and never resolved; (b) topics where I gave a directive and there\'s no follow-up; (c) tonal shifts (frustration, hesitation, over-confidence) that suggest something below the surface. Cite the message, the date, and the person. Rank by how likely each is to surface at Investor Day.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** is fine OR plain Chat. Ground in the attached Investor Day narrative draft.',
+              prompt: 'Read the attached Investor Day narrative draft (EXEC_10_Investor_Day_Narrative.docx). Pretend you are (1) a sceptical sell-side analyst at CIMB, (2) a long-only ESG-focused fund manager from Singapore, (3) a Bursa Malaysia retail investor, and (4) a competitor\'s strategy head. From each perspective, list the 3 most pointed questions you would ask the Group CEO and the answer that would actually satisfy you. End with the FIVE narrative gaps the CEO should close before going on stage.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat`. /reference the last 14 days of board papers + ExCo minutes + the Strategy Refresh Memo.',
+              prompt: 'Build me a personal CEO dashboard for this week. Sections: (1) Top 3 risks across the 5 divisions — likelihood × impact × time-to-act; (2) Top 3 opportunities I should personally accelerate; (3) Top 3 people decisions waiting on me; (4) Top 3 commitments I made in the last 14 days that I have NOT yet closed out. Each item: 1-line description, due date, owner. End with the ONE thing I should drop from my calendar to make space.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) 🔍 Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5.5 Thinking and Claude Opus 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations — and now optionally federated connectors (Moody’s, LSEG, HubSpot, Notion, ServiceNow) for real-time external data. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Critique Mode**. Researcher will self-critique each source and verify claims against the originals.',
+              prompt: 'Research how 5 Asia-Pacific diversified conglomerates (e.g. CK Hutchison, Reliance, Genting, Astra International, Berjaya Corporation) have communicated AI-driven productivity gains to investors between 2024 and 2026. For each: (a) the metric they disclosed, (b) the methodology, (c) how the share price reacted in the 30 days post-disclosure, (d) which claims were challenged by analysts. Self-critique every source — flag any claim you cannot independently verify. Cite publication date for everything. Conclude with the 3 disclosure patterns that survived analyst scrutiny and the 3 that didn\'t.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > **Model Council**. GPT-5.5 Thinking and Claude Opus 4.7 will debate the brief.',
+              prompt: 'Council brief: Should Zava Conglomerate split off its Pharma division via an IPO in FY2027, or retain it inside the group? Frame as a structured debate. Have one model argue the IPO case (capital release, focused management, valuation re-rating) and the other argue retention (synergies with Bank lending and Consumer distribution, ESG halo, dividend stability). Surface where the models DISAGREE most strongly, summarise the majority view, and flag the dissenting view clearly. End with the 4 conditions that would tip the decision either way.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Upload EXEC_03_Five_Division_Scorecard.xlsx to Analyst. Across all 5 divisions and across Revenue, EBITDA margin, ROIC, ESG score, and Customer NPS, build a single 5x5 RAG heatmap that shows where each division stands vs FY2026 target. Then run a 12-month rolling-trend regression for each division and tell me which division is most likely to MISS its FY2026 EBITDA guidance and by how much. Output: heatmap chart + ranked list with confidence bands.'
+            },
+            {
+              instr: '',
+              prompt: 'Upload EXEC_05_Capital_Allocation_FY27.xlsx to Analyst. The CEO has MYR 2.8B of free capital to allocate across (a) Bank Tier-2 capital top-up, (b) Plantations replanting in Sabah, (c) Energy LSS5 solar bid in Malaysia + IPP bid in Java, (d) Pharma capacity expansion for biosimilars, (e) Consumer e-commerce platform. Run a Monte Carlo on each option using the IRR ranges in the workbook. Show which 3 options Pareto-dominate the others and where the CEO faces a real trade-off. Output: scenario fan chart + recommendation with sensitivity table.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Excel for the Web. Open a workbook > Copilot pane on the right. Three demo angles: (1) inline "Edit with Copilot" agent mode that performs multi-step actions across the workbook — add columns, build pivot tables, dashboards, conditional formatting; (2) 📈 Plan mode (May 2026) — Copilot outlines a step-by-step approach BEFORE making any changes so users can review and adjust before edits land; (3) 🐍 Python in Excel — invoke Python directly in the prompt for advanced analysis (forecasting, regressions, custom visualisations) without leaving the workbook. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open EXEC_02_Group_KPI_Dashboard_FY26.xlsx in Excel for the Web. Open the Copilot pane > use **Edit with Copilot** (agent mode).',
+              prompt: 'Across the Revenue, Margin, ROIC, Cash, and Headcount tabs, build a new sheet called \'CEO 1-Pager\'. Show 5 KPI tiles at the top (Group revenue YTD vs target, Group EBITDA margin vs target, Group ROIC vs cost of capital, Group net cash, Group headcount vs plan). Below the tiles, build a 5-row × 4-column small-multiples chart matrix — one row per division, columns for Revenue trend / Margin trend / ROIC trend / NPS trend. Apply RAG conditional formatting (red < -10% to target, amber -10% to -2%, green > -2%). Bold the cells where the variance is worsening for 2 or more consecutive quarters. The CEO presents this to Bursa-watching analysts in 90 minutes.'
+            },
+            {
+              instr: 'Open EXEC_05_Capital_Allocation_FY27.xlsx. Open the Copilot pane > click the menu above the prompt box > pick **Plan** mode.',
+              prompt: 'Plan mode: outline the steps you will take to build a capital allocation waterfall from FY2026 closing cash to FY2027 free capital, then to the 5 candidate uses, then to FY2027 closing cash. List each step as a numbered plan I can review/approve before edits land. After approval, execute, and on a second sheet \'Advanced\' **use Python** to run a 5-year IRR sensitivity and plot a tornado chart of the top 5 IRR drivers.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Three demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files; (3) 🧠 model picker — switch between GPT and Claude for the same editing workflow when teams prefer specific model behaviours. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open EXEC_06_Strategy_Refresh_Memo.docx in Word for the Web. Open the Copilot pane > **Edit with Copilot** (agent mode).',
+              prompt: 'This is a 14-page strategy refresh memo. Restructure it into a 3-page CEO version: (1) the strategic question; (2) the 3 strategic moves we are committing to (with the trade-off explicit for each); (3) the 5 metrics we will track and the leading indicators that tell us we\'re on or off track. Cut the \'history of the company\' opener. Keep one chart and one quote. Tone: confident but humble, no consultant-ese. Add inline comments wherever I should personally double-check the numbers.'
+            },
+            {
+              instr: 'Open EXEC_07_Town_Hall_Script_Q4.docx in Word. Open the Copilot pane.',
+              prompt: 'Rewrite this town hall script for an audience of 12,400 employees across Malaysia and Indonesia, half of whom are on the shop floor (plantation workers, plant operators, branch staff). Make it readable in 8 minutes. Cut all corporate-speak. Use 3 specific stories from the last quarter — one each from Plantations Sabah, Energy Pengerang, and Consumer Bandung. End with a clear ask of every employee. Generate two language variants — English and Bahasa Malaysia — using the model picker (try GPT first, then Claude, and tell me which version lands better).'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Three demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files; (3) 🌐 public web grounding (April 2026) — add a webpage URL as a reference and Copilot pulls in current external context; 🎨 image model picker — choose GPT-Image, Flux, or Auto when generating or editing visuals. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open EXEC_01_Group_ExCo_Pack_Q4FY26.pptx in PowerPoint for the Web. Open the Copilot pane > **Edit with Copilot** (agent mode).',
+              prompt: 'Strip this 64-slide ExCo pack down to a 12-slide CEO read-out. Slide order: (1) one-page summary, (2) 5-division scorecard, (3-7) one slide per division — one chart, one decision, one ask, (8) capital allocation snapshot, (9) ESG progress, (10) people / talent, (11) risks, (12) the THREE asks of ExCo. Generate speaker notes for each slide in plain English. Use the **public web grounding** feature to pull a single relevant industry data point per division slide from the latest analyst notes (cite the source on each slide footer).'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Three demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit; (3) ✍️ "first draft in canvas" (March 2026) — Copilot writes the email directly in place and asks clarifying questions on goal/audience/tone, then iterates with the user without copy-paste. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Pick a multi-thread conversation (e.g. the Investor Day prep thread).',
+              prompt: 'Summarise this thread in 5 bullets: (1) the question the thread is trying to answer, (2) the consensus view, (3) the dissenting view and who holds it, (4) the 3 unresolved items, (5) the next step I should take TODAY. Then draft a reply I can send to the thread that closes 2 of the 3 unresolved items and asks for input on the third. Use the **first draft in canvas** feature so Copilot drafts the email IN PLACE and asks me clarifying questions on tone before sending.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'For this demo we use Copilot grounded in the Teams Recap on the demo tenant for one of four meetings: "New Software Implementation", "Potential Merger", "Negotiating Marketing Contract", or "Marketing Campaign Performance Review". Workflow: Open the meeting in your Teams calendar > the Recap page opens with AI Notes, chapters, transcript and action items > click the Copilot icon in the top right of the Recap page > Copilot opens grounded in the meeting transcript > type your minutes prompt > copy the structured output into a new Word document (or open Microsoft 365 Copilot Chat with a /transcript reference and ask Copilot to produce a .docx). Note: Teams Recap has no Export to Word button — the workflow is Copilot pane > copy/paste OR Microsoft 365 Copilot Chat. New for this demo cycle (April-May 2026): 📞 Copilot Call Delegation — Copilot can answer incoming Teams calls on the user’s behalf, gather context from callers, and book follow-up appointments via Microsoft Bookings; 🗣️ Consecutive Interpretation — turn-based translation between two languages with Interpreter on the meeting stage, ideal for ASEAN cross-border meetings. Requires Microsoft 365 Copilot license + Teams Premium for full Recap features.',
+          prompts: [
+            {
+              instr: 'Open the Teams meeting recap for the most recent Group ExCo (or the IR prep meeting). Click the Copilot icon top-right of the recap page.',
+              prompt: 'From this ExCo meeting recap, generate a CEO-ready 1-page minutes document I can paste into Word: (1) decisions made, (2) decisions DEFERRED and why, (3) actions with owner + due date, (4) dissenting views captured (name + view), (5) the 3 most quotable lines from the discussion that I might want to repeat in the town hall. Then draft a follow-up Teams chat to the 5 division CEOs with the 3 commitments I made in the meeting and the deadlines.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading. NEW (May 2026 Frontier preview): 🔗 reference SharePoint sites and OneNote notebooks as live sources; 🌐 add external web links as references; 📄 generate full Word documents from notebook content via Quick Create; 📊 generate PowerPoint presentations from notebook content via Quick Create; 🎧 generate Audio Overviews (podcast-style executive summaries) via Quick Create; 🧠 explore relationships across all sources with interactive Mind Maps (click a node to drill in); 👥 share notebooks with a Microsoft 365 Group for team co-grounding. Requires Microsoft 365 Copilot license; some Quick Create + Mind Map features need Frontier program enrollment.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > **Notebook** tab > **+ New Notebook**. Name it \'CEO Investor Day Briefing\'. Add 5 sources: EXEC_10_Investor_Day_Narrative.docx, EXEC_02_Group_KPI_Dashboard_FY26.xlsx, EXEC_05_Capital_Allocation_FY27.xlsx, EXEC_06_Strategy_Refresh_Memo.docx, EXEC_08_Risk_Heatmap_Group.xlsx. Set the Instructions field once: \'You are my Investor Day prep partner. Ground every answer in the 5 sources. Be specific, cite the source, flag where the sources disagree.\' Also use **Quick Create** to generate the **Audio Overview** (a 12-minute podcast-style executive summary) and the **Mind Map** of the equity story.',
+              prompt: 'Across all 5 sources, prep me for Investor Day. (1) The 12 toughest analyst questions I should expect, with my best answer + the back-up data point on each. (2) Where the sources disagree on the FY2027 outlook — flag every contradiction. (3) The 5 numbers I MUST land verbally without notes. (4) The 3 places where the narrative is weak and could be challenged. After answering, generate the Audio Overview AND the Mind Map and tell me which sections of the narrative are most under-supported by the source data.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: {
+            sources: [
+              'EXEC_10_Investor_Day_Narrative.docx',
+              'EXEC_02_Group_KPI_Dashboard_FY26.xlsx',
+              'EXEC_05_Capital_Allocation_FY27.xlsx',
+              'EXEC_06_Strategy_Refresh_Memo.docx',
+              'EXEC_08_Risk_Heatmap_Group.xlsx'
+            ],
+            instructions: 'Trigger: "The Group CEO walks into Monday with 5 divisions, 7 regulators, 12,000 employees, an investor day in 6 weeks, and 38 minutes between meetings to make every decision count.". This notebook is the Zava Group ExCo grounded source for the emergency Board variance review — the Group CFO and Chief of Staff convene the workstream. Synthesise across ALL 5 sources. Use Bursa / IDX dual-listing disclosure and SCM / OJK enquiries as the governance reference. Every answer must cite the source file by name and the tab / section. Frame the output for the Board paper + variance bridge + recovery programme. Classify every divisional recommendation as Red / Amber / Green and tie to the EBITDA bridge component. Tone: precise, evidence-only, never speculative.',
+            name: 'CEO Investor Day Briefing',
+            guide: '/00_Copilot_Notebook_Demo_Guide.docx',
+            instructionsID: 'Pemicu: "The Group CEO walks into Monday with 5 divisions, 7 regulators, 12,000 employees, an investor day in 6 weeks, and 38 minutes between meetings to make every decision count.". Notebook ini adalah sumber tertanam Zava Group ExCo untuk review variance Board darurat — Group CFO and Chief of Staff memimpin workstream. Sintesakan SEMUA 5 sumber. Gunakan Bursa / IDX dual-listing disclosure and SCM / OJK enquiries sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk Board paper + bridge variance + program recovery. Klasifikasikan setiap rekomendasi divisional sebagai Merah / Kuning / Hijau dan kaitkan ke komponen EBITDA bridge. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.'
+          }
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'Microsoft 365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in Microsoft 365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork (Frontier). Describe what you need in natural language (up to 16,000 chars, voice input supported); Cowork carries out the work end-to-end and shows each step (Thinking → Skill → Step-by-step → Streaming response → Interactive cards). Capabilities (April 2026 rollout): ✉️ send/reply/forward emails with attachments via Outlook; ??️ schedule meetings + manage calendar in natural language; ?? create/edit Word, Excel, PowerPoint, and PDF files; ?? post in Teams channels and chats; ?? search the org for files/people/info; ?? browse and manage OneDrive + SharePoint; ?? conduct deep research across multiple sources; ?? prepare daily briefings + meeting intelligence; ⏰ NEW — run prompts on a schedule (recurring tasks). Side panel shows Progress, Input/Output folders, Skills used, Schedule, and Permissions. Approve / Approve & Remember / Reject for medium and high risk actions; Pause/Resume/Cancel any time. Built on Anthropic models as a subprocessor. Requires Microsoft 365 Copilot license + Frontier Program enrollment (rolling out in select markets, en-us first).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > Agents > **Cowork (Frontier)**. Describe the task in plain language. Cowork will run end-to-end and surface every step (Thinking → Skill → Step-by-step → Streaming → Cards). Approve / Approve & Remember / Reject for medium-risk steps.',
+              prompt: 'My Investor Day is in 6 weeks. (1) Search OneDrive + SharePoint for every document tagged \'Investor Day FY26\' OR \'Strategy Refresh\' from the last 90 days. (2) Read them all and produce ONE consolidated 5-page brief in Word, saved to my OneDrive \'Investor Day\' folder. (3) Schedule a 60-min prep meeting with Hadar Caspit (CFO), Daichi Maruyama (Head of IR), Sasha Ouellet (CoS) within the next 5 working days. (4) Send a Teams message to the 5 division CEOs asking for their division 1-pager by COB Friday — use a polite but firm tone. (5) Set up a recurring **schedule**: every Monday 7am produce a 1-page CEO daily briefing (top 3 risks, top 3 opportunities, top 3 people decisions) and email it to me before my 8am ExCo. Show me each step before you act on the email/calendar/Teams items. Wait for my approval before sending anything externally or posting to channels.'
+            },
+            {
+              instr: 'Stay in the same Cowork session — Cowork remembers prior delegations within the same chat. Paste this prompt to launch the **Quarterly Investor Day Sprint**. Cowork will delegate the 5 numbered actions in parallel and report back as each one completes.',
+              prompt: 'Run the FY2025 Q4 investor day delegation in parallel. Please do all 5 of the following at once and report back when each is ready. 1. Draft a 4-page Word doc titled "Investor Day FY2025 — Speaking Notes" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as context. Section 1 financial highlights, Section 2 divisional performance, Section 3 capital allocation, Section 4 outlook for FY2026. 2. Draft a 1-page Word doc titled "Top 25 Analyst Q&A" pulling anticipated questions from /06_Zava_Investor_QA_FY2025.docx — order by likelihood and pre-answer each in two sentences. 3. Draft a personalised email to the top-25 covering analysts inviting them to the 9am virtual Q&A session immediately after the main investor day webcast. 4. Schedule a 30-minute Teams dry-run tomorrow at 6pm with the Group CFO, Group Chief of Staff, Head of IR, and the IR team — pre-read the speaking notes and the analyst Q&A. 5. Post a Teams message in the IR channel with the embargoed deck link, the Q&A doc, and the dry-run calendar invite. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Daichi (Head of Investor Relations), Mod Admin (Group Strategy Director), Will (Group Chief Risk Officer) and Omar (Group Chief Procurement Officer) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            },
+            {
+              instr: 'Same Cowork session — paste this prompt to launch the **Monthly Lender Outreach Cycle**. Cowork delegates 5 lender-engagement tasks in parallel and reports back as each finishes.',
+              prompt: 'Run the month-end lender engagement cycle in parallel. Complete all 5 below and report back as each lands. 1. Draft a 3-page Word doc titled "Lender Pack — Month-End Update" pulling current covenant headroom from /05_Zava_Lender_Covenant_Tracker.xlsx and division-level updates from /04_Zava_Divisional_Variance_FY2025.xlsx. Include a covenant-watchlist summary at the top. 2. Draft individual cover emails (one per bank, personalised tone) to each of the top-10 relationship banks with the lender pack attached. 3. Schedule three back-to-back 30-minute Teams calls tomorrow 2pm-3:30pm — one each with the lead facility agent, the syndicate-of-record chair, and the largest lender by facility size. 4. Update the lender outreach tracker workbook with this month\'s communications, the upcoming covenant test dates, and any waiver/amendment items in flight. 5. Post a status note in the Treasury team Teams channel summarising the lender position, covenant-watchlist items, and follow-up actions assigned. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Daichi (Head of Investor Relations), Mod Admin (Group Strategy Director), Will (Group Chief Risk Officer) and Omar (Group Chief Procurement Officer) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            },
+            {
+              instr: 'Same Cowork session — paste this prompt to launch the **Quarterly Regulator Submission Sprint**. Cowork delegates 5 submission-prep tasks in parallel and reports back as each completes.',
+              prompt: 'Run the quarterly regulator submission sprint in parallel. Complete all 5 below and report back as each finishes. 1. Draft a Word doc titled "Regulator Submission Q4 FY2025" formatted as a formal disclosure pack covering the items required this cycle. Pull the divisional numbers from /01_Zava_Group_Financial_Performance.xlsx and the governance language from /02_Zava_Group_Policy_Handbook.docx. 2. Draft the cover letter email to the lead supervisor with the submission pack attached and a one-paragraph executive summary in the body. 3. Schedule a 20-minute pre-submission alignment Teams meeting tomorrow at 8am with Compliance, Legal, and the Head of IR — agenda: walk through the pack, confirm sign-offs, agree the cover letter language. 4. Post a private Teams message to the General Counsel asking for sign-off on Section 4 (related-party disclosures) by 5pm today, with the relevant page links highlighted. 5. Update the regulatory submission tracker workbook with this cycle\'s submission package, the submission date, the supervisor contact, and the expected response window. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Daichi (Head of Investor Relations), Mod Admin (Group Strategy Director), Will (Group Chief Risk Officer) and Omar (Group Chief Procurement Officer) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            },
+            {
+              instr: 'Same Cowork session — paste this prompt to ask Cowork to **build a single self-contained HTML executive dashboard** as a deliverable in chat. Cowork will read the attached data, generate the HTML/CSS/JS inline (no external CDN), and render it for download. While the HTML renders, Cowork runs the 4 parallel follow-up tasks below.',
+              prompt: 'Cowork: produce a SELF-CONTAINED interactive HTML dashboard titled "Group Performance Dashboard" using /01_Zava_Group_Financial_Performance.xlsx as the source of truth. The HTML must be a single .html file (inline CSS + inline JS, no external CDN) styled for executive review — top strip of 5 KPI cards (revenue · EBITDA · cash · headcount · NPS), a trend chart (last 12 periods) per KPI built with the Canvas API, an alerts panel listing any KPI breaching its target threshold in red, and a notes panel summarising the \'so what\'. While the HTML is generating, ALSO complete these 4 tasks in parallel and report back as each finishes: 1. Word — a 2-page narrative memo walking the dashboard top-down for this entity leadership. 2. Email — covering note from the Group CFO with the HTML + memo attached. 3. Teams meeting — 30-min review block tomorrow morning to walk the dashboard. 4. Tracker — update the this entity KPI tracker workbook with this period\'s actuals and the breach list.  Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Daichi (Head of Investor Relations), Mod Admin (Group Strategy Director), Will (Group Chief Risk Officer) and Omar (Group Chief Procurement Officer) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Tetap di sesi Cowork yang sama — Cowork mengingat delegasi sebelumnya dalam chat yang sama. Tempelkan prompt ini untuk meluncurkan **Sprint Investor Day Triwulan**. Cowork akan mendelegasikan 5 tindakan bernomor secara paralel dan melaporkan saat masing-masing selesai.',
+              prompt: 'Jalankan delegasi Investor Day FY2025 Q4 secara paralel. Mohon kerjakan kelima hal berikut sekaligus dan laporkan begitu masing-masing siap. 1. Susun dokumen Word 4 halaman berjudul "Investor Day FY2025 — Naskah Pidato" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Bagian 1 highlight keuangan, Bagian 2 kinerja per unit usaha, Bagian 3 alokasi modal, Bagian 4 outlook FY2026. 2. Susun dokumen Word 1 halaman berjudul "Top 25 Q&A Analis" menarik pertanyaan yang diantisipasi dari /06_Zava_Investor_QA_FY2025.docx — urutkan berdasarkan kemungkinan dan jawab masing-masing dalam dua kalimat. 3. Susun email personal kepada top-25 analis covering yang mengundang mereka ke sesi Q&A virtual jam 9 pagi setelah webcast investor day utama. 4. Jadwalkan dry-run Teams 30 menit besok jam 6 sore bersama Direktur Keuangan Grup, Kepala Staf Grup, Kepala IR, dan tim IR — pre-read naskah pidato dan Q&A analis. 5. Posting pesan di channel Teams IR dengan link deck embargoed, dokumen Q&A, dan undangan kalender dry-run. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Direktur Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tempelkan prompt ini untuk meluncurkan **Siklus Outreach Kreditor Bulanan**. Cowork akan mendelegasikan 5 tugas keterlibatan kreditor secara paralel dan melaporkan saat masing-masing selesai.',
+              prompt: 'Jalankan siklus keterlibatan kreditor akhir bulan secara paralel. Selesaikan kelimanya di bawah ini dan laporkan saat masing-masing tuntas. 1. Susun dokumen Word 3 halaman berjudul "Lender Pack — Update Akhir Bulan" menarik headroom covenant terkini dari /05_Zava_Lender_Covenant_Tracker.xlsx dan update level unit usaha dari /04_Zava_Divisional_Variance_FY2025.xlsx. Cantumkan ringkasan watchlist covenant di atas. 2. Susun cover email individual (satu per bank, nada personal) ke top-10 bank relasi dengan lender pack terlampir. 3. Jadwalkan tiga panggilan Teams 30 menit berturut-turut besok jam 14.00-15.30 — masing-masing dengan lead facility agent, ketua syndicate-of-record, dan kreditor terbesar berdasarkan ukuran fasilitas. 4. Perbarui workbook tracker outreach kreditor dengan komunikasi bulan ini, tanggal uji covenant mendatang, dan item waiver/amendment yang sedang berjalan. 5. Posting catatan status di channel Teams tim Treasury yang merangkum posisi kreditor, item watchlist covenant, dan tindak lanjut yang diberikan. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Direktur Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tempelkan prompt ini untuk meluncurkan **Sprint Submisi Regulator Triwulan**. Cowork akan mendelegasikan 5 tugas persiapan submisi secara paralel dan melaporkan saat masing-masing selesai.',
+              prompt: 'Jalankan sprint submisi regulator triwulan secara paralel. Selesaikan kelimanya di bawah ini dan laporkan saat masing-masing tuntas. 1. Susun dokumen Word berjudul "Submisi Regulator Q4 FY2025" diformat sebagai paket pengungkapan formal yang mencakup item yang diperlukan siklus ini. Tarik angka per unit usaha dari /01_Zava_Group_Financial_Performance.xlsx dan bahasa tata kelola dari /02_Zava_Group_Policy_Handbook.docx. 2. Susun cover letter email kepada supervisor utama dengan paket submisi terlampir dan ringkasan eksekutif satu paragraf di body. 3. Jadwalkan rapat alignment pra-submisi Teams 20 menit besok jam 8 pagi bersama Compliance, Legal, dan Kepala IR — agenda: walk-through paket, konfirmasi sign-off, sepakati bahasa cover letter. 4. Posting pesan Teams pribadi kepada General Counsel meminta sign-off Bagian 4 (pengungkapan pihak terkait) jam 5 sore hari ini, dengan link halaman terkait disorot. 5. Perbarui workbook tracker submisi regulator dengan paket submisi siklus ini, tanggal submisi, kontak supervisor, dan jendela respons yang diharapkan. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Direktur Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tempelkan prompt ini untuk meminta Cowork **membuat satu dashboard HTML eksekutif mandiri** sebagai deliverable di chat. Cowork akan membaca data terlampir, men-generate HTML/CSS/JS inline (tanpa CDN eksternal), dan menampilkannya untuk diunduh. Sambil HTML di-generate, Cowork menjalankan 4 tugas paralel di bawah.',
+              prompt: 'Cowork: buat dashboard HTML interaktif mandiri berjudul "Group Performance Dashboard" menggunakan /01_Zava_Group_Financial_Performance.xlsx sebagai sumber kebenaran. HTML harus berupa satu file .html (CSS + JS inline, tanpa CDN eksternal), ditata untuk review eksekutif — strip atas berisi 5 kartu KPI (revenue · EBITDA · cash · headcount · NPS), chart tren (12 periode terakhir) per KPI dibangun dengan Canvas API, panel alert mencantumkan KPI yang melanggar ambang target dalam warna merah, dan panel catatan merangkum \'so what\'. Sementara HTML di-generate, JUGA selesaikan 4 tugas berikut secara paralel dan laporkan saat masing-masing tuntas: 1. Word — memo naratif 2 halaman menjelaskan dashboard top-down untuk pimpinan this entity. 2. Email — cover note dari Direktur Keuangan Grup dengan HTML + memo terlampir. 3. Rapat Teams — blok review 30 menit besok pagi untuk walk-through dashboard. 4. Tracker — perbarui workbook tracker KPI this entity dengan aktual periode ini dan daftar breach.  Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Direktur Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Tetap di sesi Cowork yang sama — Cowork mengingat delegasi sebelumnya dalam chat yang sama. Tampalkan prompt ini untuk meluncurkan **Sprint Investor Day Triwulan**. Cowork akan mendelegasikan 5 tindakan bernomor secara paralel dan melaporkan saat masing-masing siap.',
+              prompt: 'Jalankan delegasi Investor Day FY2025 Q4 secara paralel. Mohon lakukan kelima hal berikut sekaligus dan laporkan begitu masing-masing siap. 1. Susun dokumen Word 4 halaman berjudul "Investor Day FY2025 — Naskah Pidato" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Bahagian 1 highlight keuangan, Bahagian 2 kinerja per unit usaha, Bahagian 3 alokasi modal, Bahagian 4 outlook FY2026. 2. Susun dokumen Word 1 halaman berjudul "Top 25 Q&A Analis" menarik pertanyaan yang diantisipasi dari /06_Zava_Investor_QA_FY2025.docx — urutkan berdasarkan kemungkinan dan jawab masing-masing dalam dua kalimat. 3. Susun email personal kepada top-25 analis covering yang menjemput mereka ke sesi Q&A virtual jam 9 pagi setelah webcast investor day utama. 4. Jadwalkan dry-run Teams 30 menit besok jam 6 sore bersama Direktur Keuangan Grup, Kepala Staf Grup, Kepala IR, dan tim IR — pre-read naskah pidato dan Q&A analis. 5. Posting pesan di channel Teams IR dengan link deck embargoed, dokumen Q&A, dan jemputan kalender dry-run. Tunggu konfirmasi saya sebelum menghantar konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas mesyuarat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Sonia (Kepala Strategi), Will (Kepala Risiko) dan Omar (Kepala Pengadaan) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tampalkan prompt ini untuk meluncurkan **Siklus Outreach Kreditor Bulanan**. Cowork akan mendelegasikan 5 tugas keterlibatan kreditor secara paralel dan melaporkan saat masing-masing siap.',
+              prompt: 'Jalankan siklus keterlibatan kreditor akhir bulan secara paralel. Selesaikan kelimanya di bawah ini dan laporkan saat masing-masing tuntas. 1. Susun dokumen Word 3 halaman berjudul "Lender Pack — Update Akhir Bulan" menarik headroom covenant terkini dari /05_Zava_Lender_Covenant_Tracker.xlsx dan update level unit usaha dari /04_Zava_Divisional_Variance_FY2025.xlsx. Cantumkan ringkasan watchlist covenant di atas. 2. Susun cover email individual (satu per bank, nada personal) ke top-10 bank relasi dengan lender pack terlampir. 3. Jadwalkan tiga panggilan Teams 30 menit berturut-turut besok jam 14.00-15.30 — masing-masing dengan lead facility agent, ketua syndicate-of-record, dan kreditor terbesar berdasarkan saiz fasilitas. 4. Perbarui workbook tracker outreach kreditor dengan komunikasi bulan ini, tanggal uji covenant mendatang, dan item waiver/amendment yang sedang berjalan. 5. Posting catatan status di channel Teams tim Treasury yang merangkum kedudukan kreditor, item watchlist covenant, dan tindak lanjut yang diberikan. Tunggu konfirmasi saya sebelum menghantar konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas mesyuarat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Sonia (Kepala Strategi), Will (Kepala Risiko) dan Omar (Kepala Pengadaan) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tampalkan prompt ini untuk meluncurkan **Sprint Submisi Regulator Triwulan**. Cowork akan mendelegasikan 5 tugas persiapan submisi secara paralel dan melaporkan saat masing-masing siap.',
+              prompt: 'Jalankan sprint submisi regulator triwulan secara paralel. Selesaikan kelimanya di bawah ini dan laporkan saat masing-masing tuntas. 1. Susun dokumen Word berjudul "Submisi Regulator Q4 FY2025" diformat sebagai paket pengungkapan formal yang merangkumi item yang diperlukan siklus ini. Tarik angka per unit usaha dari /01_Zava_Group_Financial_Performance.xlsx dan bahasa tata kelola dari /02_Zava_Group_Policy_Handbook.docx. 2. Susun cover letter email kepada supervisor utama dengan paket submisi terlampir dan ringkasan eksekutif satu paragraf di body. 3. Jadwalkan mesyuarat alignment pra-submisi Teams 20 menit besok jam 8 pagi bersama Compliance, Legal, dan Kepala IR — agenda: walk-through paket, konfirmasi sign-off, sepakati bahasa cover letter. 4. Posting pesan Teams pribadi kepada General Counsel meminta sign-off Bahagian 4 (pengungkapan pihak terkait) jam 5 sore hari ini, dengan link halaman terkait disorot. 5. Perbarui workbook tracker submisi regulator dengan paket submisi siklus ini, tanggal submisi, kontak supervisor, dan jendela respons yang diharapkan. Tunggu konfirmasi saya sebelum menghantar konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas mesyuarat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Sonia (Kepala Strategi), Will (Kepala Risiko) dan Omar (Kepala Pengadaan) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            }
+          ],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: 'Open Microsoft Scout (Frontier preview, desktop app). Connect to your local \'Zava CEO\' workspace folder. Enable **Heartbeat mode** with restrictive permissions for after-hours runs.',
+              prompt: '(1) Skill: file system + WorkIQ. Across my local \'Zava CEO\' folder AND my M365 mail/calendar/Teams, build a single \'CEO Weekly Pulse\' markdown file that lists: top 5 emails I haven\'t replied to that are >48h old; top 5 Teams threads where I\'m @-mentioned and unread; top 5 calendar conflicts in the next 14 days; top 3 OneDrive files shared with me that I haven\'t opened. (2) Skill: browser via Playwright. Visit Bursa Malaysia announcements + IDX disclosures + Bank Negara press for the last 7 days, screenshot any item mentioning Zava or the 5 divisions. (3) Skill: shell + sub-agents. Spawn an Explore sub-agent to scan my \'Investor Day\' folder for inconsistent numbers across drafts and produce a reconciliation table. (4) Heartbeat: re-run the CEO Weekly Pulse every Monday 6am, save the file with the date, email me a 3-bullet diff vs last week.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: 'Navigate to the SharePoint site **\'Zava Group ExCo\'**. Use the Floating Button bottom-right. Role: Site Manager.',
+              prompt: '(1) Ask a Question about Content: \'Across all documents tagged Q4FY26, summarise the 3 risks our division CEOs raised most often and where they conflict with the Risk Heatmap.\' (2) Generate Audio Overview on EXEC_10_Investor_Day_Narrative.docx — 8-minute version for my driver-time. (3) Compare files: EXEC_06_Strategy_Refresh_Memo.docx vs the previous version 6 months ago — surface what changed in tone and what changed in commitment. (4) Improve the SharePoint site: scan for broken links, retire pages older than 18 months that haven\'t been opened in the last 90 days, fill content gaps where division pages have no FY26 strategy section. (5) Create a new FAQ webpart on the homepage answering the 12 questions employees ask the CEO most often (use AI to draft from past town hall Q&A transcripts). (6) Create autofill columns on the \'Board Papers\' library to auto-classify each paper by Decision / Information / Approval.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: 'Open the M365 Copilot app > **Create** tab > **Image**.',
+              prompt: 'Create a 16:9 hero image for the Zava Group Investor Day stage backdrop. Show an abstract aerial-view composition — a Malaysian palm plantation transitioning into a Jakarta city skyline transitioning into a solar farm — sunrise lighting, warm tones, navy + amber palette, no text, no logos, no real public figures. Use **Flux** model. Square crop also for the Investor Day hold-card.'
+            },
+            {
+              instr: 'Open Create > **Poster**.',
+              prompt: 'A3 portrait poster for the Group CEO town hall. Headline: \'One Zava. Five Engines. One Promise.\' Body: \'A new chapter starts together — Q4 FY2026 town hall, Friday 4pm MYT / 3pm WIB.\' CTA: \'Join in person at HQ KL or live-stream from your office.\' Brand kit: Zava navy + amber. Visual: subtle gradient, abstract icons of the 5 divisions arranged in a circle. No real people.'
+            },
+            {
+              instr: 'Open Create > **Infographic**.',
+              prompt: 'One-page vertical infographic for Investor Day handout. 5 sections: (1) Headline KPI — MYR 28.4B FY26 revenue; (2) 3 strategic priorities for FY27 (Productivity, Decarbonisation, Digital); (3) 5-division portfolio mix (donut + 1-line caption per slice); (4) ESG progress bars vs targets; (5) Capital allocation pie for FY27. Footer: \'Zava Conglomerate · Investor Day FY27 · Confidential.\''
+            },
+            {
+              instr: 'Open Create > **Video**.',
+              prompt: 'A 30-second internal comms video to open the Q4 FY26 all-hands. Aspect 16:9. Voiceover: English (US). Music: \'Corporate — Optimistic\'. Structure: (0–6s) cold open with the line \'In one quarter, here\'s what we built together\'; (6–22s) 4 quick scenes — KL HQ, Sabah plantation, Pengerang energy plant, Bandung consumer hub — each 4 seconds with 1 caption; (22–28s) the CEO asks \'What will we build next?\'; (28–30s) Zava logo card. Captions on for accessibility. Generate a Bahasa Malaysia voiceover variant for the MY all-hands and a Bahasa Indonesia variant for the ID all-hands.'
+            }
+          ],
+          promptsID: [],
+          promptsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [],
+      storyboard: [],
+      personas: [
+        {
+          name: 'Mod Admin',
+          title: 'Group CEO / ExCo Chair'
+        },
+        {
+          name: 'Hadar Caspit',
+          title: 'Group CFO'
+        },
+        {
+          name: 'Sasha Ouellet',
+          title: 'Group Chief of Staff'
+        }
+      ],
+      geo: 'MY',
+      coworkLibrary: [
+        {
+          title: 'Board Pack Sprint',
+          dept_tag: 'Corporate Secretarial',
+          complexity: 'intermediate',
+          apps: [
+            'Word',
+            'PowerPoint',
+            'Outlook',
+            'Teams'
+          ],
+          desc: 'Turn a folder of board papers into a chairman briefing, a slide deck, an email pack to directors, and a Teams discussion thread — in one Cowork run.',
+          skills: [
+            'Multi-source synthesis across financial pack, risk update, strategy memo, and audit minutes',
+            'Parallel deliverable generation (Word brief + PPT deck + Outlook email + Teams thread)',
+            'Tone calibration for board audience (concise, decision-oriented)'
+          ],
+          instructions: [
+            'Open Microsoft 365 Copilot → left nav → Agents → Cowork (Frontier Program required)',
+            'Click 📎 Knowledge → attach the 4 sample files listed below',
+            'Paste Prompt 1 — Cowork runs the parallel fan-out',
+            'Review the 4 deliverables before forwarding to the Chair'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'BRD_Risk_Quarterly_Update.docx',
+              'docx'
+            ],
+            [
+              'BRD_Strategy_Memo.docx',
+              'docx'
+            ],
+            [
+              'BRD_Audit_Cmte_Minutes.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Fan out the board pack',
+              text: 'Using the 4 board papers attached, prepare the next Board meeting pack for [BOARD-DATE]. In parallel, do all 5: 1) Draft a 3-page Chairman briefing in Word — top 5 decisions needed, key risks, ESG hot spots. 2) Build a 10-slide deck in PowerPoint — Slide 1 cover, Slides 2-4 financials, Slide 5 risk dashboard, Slides 6-8 strategy progress, Slide 9 ESG/regulatory, Slide 10 decision summary. 3) Draft an email in Outlook to the 8 named directors — Hadar (Chair Audit), Sasha (Chair Risk), Daichi (Chair Nomination), and the 5 INEDs — with the pack attached and pre-read instructions. 4) Draft a Teams message to the Board WhatsApp-equivalent channel — 2 lines summary + the 2 critical decisions. 5) Block 90 minutes on the calendar — title: Board Meeting [BOARD-DATE], attendees the 8 directors + Group CFO + Group CoS. Cite the specific paper and section for every number.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Board Pack Sprint" using BRD_Q4_Financial_Pack.xlsx, BRD_Risk_Quarterly_Update.docx, BRD_Strategy_Memo.docx and BRD_Audit_Cmte_Minutes.docx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Board Pack Sprint — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Chairman briefing (3 pages, Word)',
+            '10-slide board deck (PowerPoint)',
+            'Outlook email draft with pack attached',
+            'Teams summary message',
+            '90-min calendar invite'
+          ],
+          watch: [
+            'Every figure cites its source paper and section — auditable trail',
+            'Each deliverable adapts tone for its audience (Chair memo vs WhatsApp blast)',
+            'Decisions surfaced separately from updates — board focus stays sharp'
+          ],
+          honest: 'Cowork drafts. The Chair and CoS still hand-review every line — board papers are legal record. The Teams message must be cleared by Comms before going live.',
+          tips: [
+            'Swap the 4 source files for your real quarter\'s board pack to scale to other meetings',
+            'Add a 6th task — generate a 30-second audio summary for the Chair\'s morning commute',
+            'Re-run with persona switched to "Group Chief of Staff" voice for a CoS-led variant'
+          ],
+          id: 'uc-board-pack'
+        },
+        {
+          title: 'Town Hall Comms Drill',
+          dept_tag: 'HR & Comms',
+          complexity: 'basic',
+          apps: [
+            'Word',
+            'PowerPoint',
+            'Outlook',
+            'Teams',
+            'Forms'
+          ],
+          desc: 'Turn the CEO\'s rough script + a quarter of HR results into a polished town hall — speech, slides, employee email, Teams promo, and a feedback Form.',
+          skills: [
+            'Tone-shifting from boardroom (financials) to all-employee (inclusive, plain English)',
+            'Multi-channel campaign assembly (slides + email + chat + survey)',
+            'Q&A anticipation from prior pulse-survey data'
+          ],
+          instructions: [
+            'Open Cowork from the Agents menu',
+            'Attach the 4 source files (script outline, HR scorecard, prior Q&A, pulse-survey results)',
+            'Paste the prompt — Cowork generates the full campaign in parallel',
+            'Hand the deliverables to Internal Comms for sign-off before publishing'
+          ],
+          sample_files: [
+            [
+              'TH_CEO_Script_Outline.docx',
+              'docx'
+            ],
+            [
+              'TH_HR_Quarterly_Scorecard.xlsx',
+              'xlsx'
+            ],
+            [
+              'TH_Prior_Town_Hall_QA.docx',
+              'docx'
+            ],
+            [
+              'TH_Pulse_Survey_Results.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Build the town hall campaign',
+              text: 'Using the 4 attached files, prepare the Q[N] FY[YEAR] all-employee town hall. In parallel, do all 5: 1) Polish the CEO speech in Word — 12 minutes spoken, 5 sections (Wins / Challenges / Customer Voice / People / Ask). 2) Build a 15-slide deck in PowerPoint — image-first, big numbers, no jargon, one decision per slide. 3) Draft the all-staff email in Outlook from the CEO — RSVP link + 2-line teaser + dial-in details. 4) Draft a Teams post for the Company-wide channel — 2 lines + GIF prompt + RSVP. 5) Build a Microsoft Forms survey — 6 questions (3 multiple-choice on key initiatives, 2 free-text on biggest worry/biggest hope, 1 NPS). Anticipate 8 likely Q&A items from the pulse-survey themes and append as speaker notes in the deck.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Town Hall Comms Drill" using TH_CEO_Script_Outline.docx, TH_HR_Quarterly_Scorecard.xlsx, TH_Prior_Town_Hall_QA.docx and TH_Pulse_Survey_Results.xlsx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Town Hall Comms Drill — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Polished CEO speech (12-min, Word)',
+            '15-slide town hall deck',
+            'Outlook all-staff email',
+            'Teams company-wide post',
+            'Microsoft Forms feedback survey'
+          ],
+          watch: [
+            'Tone shifts from numbers-dense (board) to story-led (employees) — same data, different voice',
+            'Q&A speaker notes prep the CEO for the toughest questions in advance',
+            'Forms survey wired to capture sentiment for the next quarter\'s baseline'
+          ],
+          honest: 'Cowork sets the structure; the CEO\'s personality still has to come through in the final edit. Sensitive items (layoffs, pay) must be drafted by HR not Cowork — the model has no context on confidential decisions.',
+          tips: [
+            'Re-run with the CHRO as the speaker — voice and Q&A library auto-adjust',
+            'For ID entities, generate the BI variant simultaneously by adding "Output in Bahasa Indonesia"',
+            'Add a 6th task — extract the top 3 themes from the prior Q&A and pre-empt them in the speech'
+          ],
+          id: 'uc-town-hall'
+        },
+        {
+          title: 'Major Incident Postmortem',
+          dept_tag: 'IT & Operations',
+          complexity: 'intermediate',
+          apps: [
+            'Word',
+            'Excel',
+            'Outlook',
+            'Teams'
+          ],
+          desc: 'War-room logs, monitoring graphs, customer complaint emails, and the on-call rota become a postmortem doc, root-cause table, customer apology, and regulator-grade timeline.',
+          skills: [
+            'Timeline reconstruction from mixed log + email + chat sources',
+            'Five-whys root cause analysis in tabular form',
+            'Parallel comms drafting (customer apology + internal lessons + regulator notification)'
+          ],
+          instructions: [
+            'Open Cowork',
+            'Attach the 4 incident artefacts',
+            'Paste the prompt — Cowork builds the postmortem and the comms in one pass',
+            'Hand to the Incident Manager for the SEV-1 review meeting'
+          ],
+          sample_files: [
+            [
+              'INC_Wartime_Channel_Log.docx',
+              'docx'
+            ],
+            [
+              'INC_Monitoring_Metrics.xlsx',
+              'xlsx'
+            ],
+            [
+              'INC_Customer_Complaint_Emails.docx',
+              'docx'
+            ],
+            [
+              'INC_OnCall_Rota.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Build the postmortem pack',
+              text: 'Using the 4 attached files for incident [INC-ID] on [INC-DATE], in parallel, do all 5: 1) Draft a 5-page postmortem in Word — Timeline (minute-by-minute), Impact (customers affected, revenue at risk, SLA breach), Root cause (5-whys table), Fixes deployed, Prevention plan. 2) Build a root-cause table in Excel — Symptom / Direct cause / Contributing factor / Systemic cause / Owner / Due date / Status. 3) Draft a customer apology email in Outlook from the COO — empathetic tone, what we did wrong, what we are fixing, goodwill gesture. 4) Draft a Teams message to the All-Engineering channel — 2 lines + link to the postmortem + 3 lessons for next time. 5) Draft a regulator notification letter in Word — formal tone, factual chronology, no speculation, ready for legal review. Mark every claim with the source artefact + line number from the log.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Major Incident Postmortem" using INC_Wartime_Channel_Log.docx, INC_Monitoring_Metrics.xlsx, INC_Customer_Complaint_Emails.docx and INC_OnCall_Rota.xlsx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Major Incident Postmortem — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            '5-page postmortem document',
+            'Root-cause analysis table (Excel)',
+            'Customer apology email draft',
+            'All-engineering Teams lessons post',
+            'Regulator notification letter'
+          ],
+          watch: [
+            'Timeline reconstructed from war-room chat + monitoring + emails — no single source missed',
+            'Root cause drilled to systemic level — not stopping at the surface symptom',
+            'Each comms adapted: customer = empathy, engineers = lessons, regulator = facts'
+          ],
+          honest: 'Cowork drafts. Legal MUST review the regulator letter before sending. The customer apology may need executive sign-off depending on goodwill amount. The five-whys is starter logic — engineers still own the systemic conclusion.',
+          tips: [
+            'Re-run with persona "CISO" for security incidents instead of availability',
+            'Add a 6th task — generate the SEV-1 review meeting agenda + 30-min calendar invite',
+            'For sector-regulated entities (banking, healthcare, telco) feed in the relevant regulatory clauses for tone'
+          ],
+          id: 'uc-incident-pmortem'
+        }
+      ],
+      notebookLibrary: [
+        {
+          title: 'Board Pre-Read Synthesis — 👔 Executives & Business Leaders',
+          archetype: 'board_prereread',
+          complexity: 'intermediate',
+          sources: [
+            [
+              'CEO_Report.docx',
+              'docx'
+            ],
+            [
+              'CFO_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Heatmap.xlsx',
+              'xlsx'
+            ],
+            [
+              'Strategy_Update_Deck.pdf',
+              'pdf'
+            ],
+            [
+              'Previous_Board_Minutes.docx',
+              'docx'
+            ]
+          ],
+          instructions: 'Context: this notebook is being built for the 👔 Executives & Business Leaders business. You are compressing 5 Board documents into a tight pre-read. Cite every claim. Flag where the CEO narrative diverges from the CFO numbers or the risk heatmap. Carry forward unresolved actions from the previous minutes.',
+          desc: 'Turn a 200-page Board pack into a 1-page pre-read that surfaces the 5 things each director MUST read before the meeting.',
+          prompts: [
+            {
+              label: 'Prompt 1 — The 5 things',
+              text: 'From all 5 sources, distil the 5 items each Director must read before the meeting. For each: a 2-sentence summary, the source citation, and the Board decision required (Note / Approve / Decide).'
+            },
+            {
+              label: 'Prompt 2 — Narrative vs numbers',
+              text: 'Compare /CEO_Report.docx narrative against /CFO_Financial_Pack.xlsx and /Risk_Heatmap.xlsx. List every place the story and the numbers diverge — quote both. End with the single sharpest question to put to the CEO in the meeting.'
+            },
+            {
+              label: 'Prompt 3 — Action carry-forward',
+              text: 'From /Previous_Board_Minutes.docx, list every action that remains open. For each: owner, due date, current status from the latest sources, and the line to push in this meeting.'
+            }
+          ],
+          expected: [
+            'A 5-item Board pre-read with decision tags.',
+            'A narrative-vs-numbers reconciliation with a sharp question.',
+            'A clean action carry-forward list with status updates.'
+          ],
+          watch: [
+            'The 5 items each cite a different source where possible.',
+            'Divergences quote both the CEO line AND the contradicting number.',
+            'Open actions reuse the exact action IDs from the minutes.'
+          ],
+          honest: 'This compresses what is in the pack. If a director needs context not in the 5 sources (e.g. analyst notes, industry context), add them as additional sources or pair Notebook with Researcher.',
+          tips: [
+            'Add a 6th source = analyst report for external context.',
+            'Use Quick Create > Pages to publish the pre-read to a Loop component.',
+            'Re-run prompt 3 right after the meeting to refresh status.'
+          ],
+          id: 'nb-board-prereread',
+          outputs: [
+            {
+              icon: '🎙️',
+              name: 'Audio Overview',
+              desc: 'Generates a ~10-15 minute podcast-style discussion between two AI hosts walking through every source.',
+              how: 'Click ⋯ on the Notebook header → Audio Overview → Generate. Download MP3 when ready.'
+            },
+            {
+              icon: '🎥',
+              name: 'Video Overview',
+              desc: 'A visual walkthrough of the sources with on-screen text, citations, and an AI narrator. Great for handoff briefings.',
+              how: '⋯ → Video Overview → Generate. Pick the audience tone (executive, technical, training).'
+            },
+            {
+              icon: '🧠',
+              name: 'Mind Map',
+              desc: 'Auto-generated visual concept map showing how the sources connect (themes, decisions, dependencies).',
+              how: '⋯ → Mind Map. Click any node to jump to the cited source span.'
+            },
+            {
+              icon: '📊',
+              name: 'Reports',
+              desc: 'One-click structured documents: Executive Briefing, Study Guide, FAQ, Timeline, or Custom Report you describe in one line.',
+              how: 'Reports tab → choose a template OR type "Write a report on..." in the prompt box.'
+            },
+            {
+              icon: '📋',
+              name: 'Study Guide / FAQ',
+              desc: 'Generates Q&A pairs and a study-guide outline from every source — useful for onboarding decks and "leave-behind" materials.',
+              how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
+            }
+          ]
+        },
+        {
+          title: 'Incident Post-Mortem — 👔 Executives & Business Leaders',
+          archetype: 'incident_pmortem',
+          complexity: 'intermediate',
+          sources: [
+            [
+              'Incident_Timeline.docx',
+              'docx'
+            ],
+            [
+              'Pager_Alerts_Log.xlsx',
+              'xlsx'
+            ],
+            [
+              'Customer_Comms_Sent.docx',
+              'docx'
+            ],
+            [
+              'System_Architecture_Diagram.pdf',
+              'pdf'
+            ],
+            [
+              'Past_Similar_Incidents.xlsx',
+              'xlsx'
+            ]
+          ],
+          instructions: 'Context: this notebook is being built for the 👔 Executives & Business Leaders business. You are producing a blameless post-mortem. Cite every event to a timestamp + source. Focus on systems and processes, not individuals. Flag where this incident matches a past one in the register. Stay evidence-bound.',
+          desc: 'Turn an incident response into a blameless post-mortem and action register that closes the loop instead of repeating the same failure.',
+          prompts: [
+            {
+              label: 'Prompt 1 — Sequenced timeline',
+              text: 'Reconstruct the incident as a strictly time-stamped event log combining /Incident_Timeline.docx and /Pager_Alerts_Log.xlsx. For each event: the timestamp, the trigger, the responder action, and the system state. Highlight the 3 longest gaps between detection and response.'
+            },
+            {
+              label: 'Prompt 2 — Contributing causes',
+              text: 'Identify the 5 contributing causes (technical, process, communication) using /System_Architecture_Diagram.pdf for the technical layer and /Customer_Comms_Sent.docx for the comms layer. For each: cause, evidence citation, and the safeguard absent.'
+            },
+            {
+              label: 'Prompt 3 — Repeat-risk + actions',
+              text: 'Compare against /Past_Similar_Incidents.xlsx — list any prior incident this repeats. Then produce 5 prevention actions, each with: owner role, due date, and the leading-indicator metric to watch.'
+            }
+          ],
+          expected: [
+            'A defensible timeline with response-gap analysis.',
+            'A contributing-causes list anchored to systems and comms.',
+            'A repeat-risk audit + actionable prevention register.'
+          ],
+          watch: [
+            'Every event has a real timestamp from the log.',
+            'Causes cite architecture or comms evidence, not opinion.',
+            'Actions reuse owner roles, not named individuals.'
+          ],
+          honest: 'A post-mortem is only useful if the actions ship. Notebook produces the register — the engineering org still needs to track closure.',
+          tips: [
+            'Add monitoring-config snapshots as a 6th source for tooling gaps.',
+            'Use Quick Create > Audio Overview for the all-hands walkthrough.',
+            'Re-run prompt 3 monthly to track action burndown.'
+          ],
+          id: 'nb-incident-pmortem',
+          outputs: [
+            {
+              icon: '🎙️',
+              name: 'Audio Overview',
+              desc: 'Generates a ~10-15 minute podcast-style discussion between two AI hosts walking through every source.',
+              how: 'Click ⋯ on the Notebook header → Audio Overview → Generate. Download MP3 when ready.'
+            },
+            {
+              icon: '🎥',
+              name: 'Video Overview',
+              desc: 'A visual walkthrough of the sources with on-screen text, citations, and an AI narrator. Great for handoff briefings.',
+              how: '⋯ → Video Overview → Generate. Pick the audience tone (executive, technical, training).'
+            },
+            {
+              icon: '🧠',
+              name: 'Mind Map',
+              desc: 'Auto-generated visual concept map showing how the sources connect (themes, decisions, dependencies).',
+              how: '⋯ → Mind Map. Click any node to jump to the cited source span.'
+            },
+            {
+              icon: '📊',
+              name: 'Reports',
+              desc: 'One-click structured documents: Executive Briefing, Study Guide, FAQ, Timeline, or Custom Report you describe in one line.',
+              how: 'Reports tab → choose a template OR type "Write a report on..." in the prompt box.'
+            },
+            {
+              icon: '📋',
+              name: 'Study Guide / FAQ',
+              desc: 'Generates Q&A pairs and a study-guide outline from every source — useful for onboarding decks and "leave-behind" materials.',
+              how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
+            }
+          ]
+        }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Sub-Agent Fan-Out — Strategic Diligence in Parallel',
+          dept_tag: 'Strategy',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'Research Agents'
+          ],
+          desc: 'One Scout prompt launches sub-agents for M&A diligence, then synthesises a brief, xlsx, and speaker-note deck.',
+          skills: [
+            'Sub-agent fan-out using Research, Code review, Explore, and General-purpose agents',
+            'Parallel diligence across market, financial, technology, ESG, and regulatory workstreams',
+            'Synthesis of background-agent outputs into executive-ready files'
+          ],
+          instructions: [
+            'Open Scout in the M&A workspace with target profile, NDA-safe public sources, and internal thesis notes',
+            'Enable web research and workspace file access; keep shell in prompt mode',
+            'Paste the prompt and watch the sub-agent activity panel as agents run independently',
+            'Ask Scout to reconcile conflicts between agents before finalising the pack'
+          ],
+          sample_files: [
+            [
+              'TargetCo_Public_Profile.docx',
+              'docx'
+            ],
+            [
+              'SEA_Market_Size_Assumptions.xlsx',
+              'xlsx'
+            ],
+            [
+              'Diligence_Question_Bank.xlsx',
+              'xlsx'
+            ],
+            [
+              'IC_Memo_Template.pptx',
+              'pptx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Fan out strategic diligence',
+              text: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          expected: [
+            'Five parallel sub-agent workstreams with separate logs and citations',
+            'Word investment brief with risks, synergies, and open diligence questions',
+            'Excel finding register and PowerPoint IC deck with speaker notes'
+          ],
+          watch: [
+            'The main Scout session delegates to isolated sub-agents instead of doing one serial search',
+            'Contradictions and confidence levels are preserved for Investment Committee challenge'
+          ],
+          honest: 'Sub-agents accelerate triage; formal due diligence, valuation, and legal reliance remain human-owned.',
+          tips: [
+            'Replace TargetCo with a hospital chain, payments fintech, plantation miller, or logistics 3PL',
+            'Use one General-purpose agent to build a synergy model while Research agents gather citations'
+          ],
+          id: 'uc-scout-subagents'
+        },
+        {
+          title: 'Heartbeat — Daily Group Briefing & Risk Sweep',
+          dept_tag: 'Risk',
+          complexity: 'advanced',
+          apps: [
+            'WorkIQ',
+            'Teams',
+            'OneDrive',
+            'Shell'
+          ],
+          desc: 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+          skills: [
+            'Heartbeat mode with work-days and work-hours configuration',
+            'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
+            'Workspace file write-back plus Teams posting under restrictive permissions'
+          ],
+          instructions: [
+            'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+            'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
+            'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
+            'Create or select workspace folder Scout_Group_Briefing and paste the prompt below'
+          ],
+          sample_files: [
+            [
+              'Scout_Group_Risk_Register.xlsx',
+              'xlsx'
+            ],
+            [
+              'Group_ExCo_Watchlist.docx',
+              'docx'
+            ],
+            [
+              'Heartbeat_Log_Template.md',
+              'md'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Configure the recurring heartbeat',
+              text: 'Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn. Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval.'
+            }
+          ],
+          expected: [
+            'Daily_Risk_Sweep.md updated every heartbeat cycle with auditable source links',
+            'Red-risk Teams post draft or post in the approved channel only',
+            'Heartbeat activity log showing skipped actions where permissions were too broad'
+          ],
+          watch: [
+            'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+            'WorkIQ connects email + Teams + documents instead of relying on one uploaded file'
+          ],
+          honest: 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
+          tips: [
+            'Use a 15-minute interval for crisis war rooms and 2-hour interval for BAU risk sweeps',
+            'Add a deny-list for M&A, HR investigation, and named sensitive folders'
+          ],
+          id: 'uc-scout-heartbeat'
+        },
+        {
+          title: 'Automation — Monthly Close Pack',
+          dept_tag: 'Finance',
+          complexity: 'advanced',
+          apps: [
+            'Excel',
+            'PowerPoint',
+            'Outlook',
+            'Automation'
+          ],
+          desc: 'Schedule Scout for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
+          skills: [
+            'Schedule-triggered recurring automation independent of an active chat',
+            'Excel skill for GL extracts, budget variance, and workbook formatting',
+            'PowerPoint and Outlook output with permission-aware send/draft behaviour'
+          ],
+          instructions: [
+            'Open Scout → Automations → New automation',
+            'Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00',
+            'Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only',
+            'Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code'
+          ],
+          sample_files: [
+            [
+              'GL_Extract_MY_ID_SG_2026M06.xlsx',
+              'xlsx'
+            ],
+            [
+              'Budget_Forecast_Bridge.xlsx',
+              'xlsx'
+            ],
+            [
+              'Monthly_Close_Deck_Template.pptx',
+              'pptx'
+            ],
+            [
+              'CFO_Email_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Schedule monthly finance automation',
+              text: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          expected: [
+            'Recurring Scout automation visible in Automations history',
+            'Three-tab variance workbook with formulas, thresholds, and exception comments',
+            'Six-slide monthly review deck plus CFO email draft or approved send'
+          ],
+          watch: [
+            'Automations are saved tasks with schedule or condition triggers, not ad-hoc prompts',
+            'Scout can run the same close workflow every month and write back to folders'
+          ],
+          honest: 'Finance automation needs clean GL extracts; the CFO still reviews, and material variances must tie to ledgers.',
+          tips: [
+            'Change the trigger to condition-based: run when all entity GL extracts arrive',
+            'Add a shell validation that compares workbook checksums and row counts to last month'
+          ],
+          id: 'uc-scout-automation-monthly'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Audio Overview — Podcast Brief from Sustainability Report',
+          dept_tag: 'Investor Relations',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'OneDrive'
+          ],
+          desc: 'Generate an 8-12 minute podcast-style audio overview from a long annual, GHG, or sustainability report stored in SharePoint.',
+          skills: [
+            'Generating an Audio Overview directly from a selected SharePoint file',
+            'Turning long PDF reports into commute-friendly executive briefings',
+            'Checking that the spoken narrative accurately reflects source disclosures'
+          ],
+          instructions: [
+            'Open the Investor Relations or ESG Disclosure Hub site',
+            'Select ESG_Disclosure_2026.pdf or Annual_Report_2026.pdf',
+            'Click the Floating Button and choose Generate Audio Overview',
+            'Listen to the generated briefing and capture follow-up questions for IR, ESG, or Strategy'
+          ],
+          sample_files: [
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ],
+            [
+              'GHG_Inventory_Assurance_Report.pdf',
+              'pdf'
+            ],
+            [
+              'Annual_Report_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Generate executive audio brief',
+              text: 'Open the ESG Disclosure Hub → Reports library → select ESG_Disclosure_2026.pdf → click the Floating Button → choose \'Generate Audio Overview\'. Set the audience as Mod Admin preparing for ExCo, then generate an 8-12 minute podcast-style summary covering Scope 1/2/3 emissions, RSPO exposure, MYR capex commitments, regulatory deadlines, and investor questions. Listen once and note any claims that need ESG owner validation.'
+            }
+          ],
+          expected: [
+            'Audio briefing suitable for a commute or pre-meeting listen',
+            'Narrative summary of long-form report themes and metrics'
+          ],
+          watch: [
+            'Long technical reports become accessible without opening a separate app',
+            'Executives can consume dense SharePoint content in audio form'
+          ],
+          honest: 'Audio Overview is for orientation and recall, not disclosure approval. Published ESG and financial statements still require assurance, legal review, and investor relations sign-off.',
+          tips: [
+            'Use it for aviation safety reports, plantation RSPO audits, or hospital quality reviews',
+            'Ask executives to note questions while listening, then run Ask a question about content on the same file'
+          ],
+          id: 'uc-sp-audio-overview'
         },
         {
           title: 'Improve Site — Audit & Refresh the Group Policy Hub',

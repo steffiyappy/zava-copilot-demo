@@ -359,12 +359,29 @@ ENTRY_USE_CASES = {
     'dept-it-digital': ['uc-scout-heartbeat', 'uc-scout-subagents', 'uc-scout-browser-portal'],
     'dept-hr': ['uc-scout-loop-collab', 'uc-scout-bulk-files', 'uc-scout-heartbeat'],
     'dept-marketing': ['uc-scout-subagents', 'uc-scout-loop-collab', 'uc-scout-automation-monthly'],
+    'dept-executives': ['uc-scout-subagents', 'uc-scout-heartbeat', 'uc-scout-automation-monthly'],
 }
 
 
 def get_scout_library_for_entry(entry_id, entry_name='', persona_name=''):
     """Return list of 2-3 Scout use-case cards for the entry."""
-    card_ids = ENTRY_USE_CASES.get(entry_id, [])
+    # Aliases: actual entry IDs in ind_data*.py don't always match the keys in
+    # ENTRY_USE_CASES above (which were authored before the entries were renamed).
+    # Map them so every entry resolves to a use-case set.
+    _ALIASES = {
+        'commercial-banking': 'banking',
+        'islamic-banking': 'banking',
+        'general-insurance': 'insurance',
+        'life-insurance': 'insurance',
+        'og-upstream': 'oil-gas-upstream',
+        'og-downstream': 'oil-gas-downstream',
+        'coal-mining': 'mining-coal',
+        'hotel-resort': 'hospitality-hotel',
+        'media-entertainment': 'ecommerce-superapp',
+        'electrical-distribution': 'industrial-manufacturing',
+    }
+    eid = _ALIASES.get(entry_id, entry_id)
+    card_ids = ENTRY_USE_CASES.get(eid, [])
     cards = []
     for cid in card_ids:
         if cid in USE_CASES:
