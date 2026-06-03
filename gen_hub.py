@@ -225,8 +225,9 @@ html{overflow-x:hidden}
 .op-card-link:hover{gap:8px;text-decoration:underline}
 .op-section-hdr{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:22px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .op-section-hdr:first-child{margin-top:0}
-.sidebar-tabs{display:flex;border-bottom:2px solid var(--border);flex-shrink:0;gap:2px}
-.sidebar-tab{flex:1;padding:11px 4px;text-align:center;font-size:11px;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:0.2px;border-radius:6px 6px 0 0}
+.sidebar-tabs{display:flex;border-bottom:2px solid var(--border);flex-shrink:0;gap:2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.sidebar-tabs::-webkit-scrollbar{display:none}
+.sidebar-tab{flex:1 0 auto;min-width:54px;padding:11px 6px;text-align:center;font-size:11px;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:0.2px;border-radius:6px 6px 0 0}
 .sidebar-tab:hover{background:var(--surface-2);color:var(--text-strong)}
 .sidebar-tab.active{color:var(--blue);border-bottom-color:var(--blue);position:relative}
 .sidebar-tab.active::after{content:'';position:absolute;left:20%;right:20%;bottom:-2px;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);animation:slideUnderline 0.3s ease}
@@ -1360,6 +1361,8 @@ a.file-pill:visited{color:var(--text)}
       <div class="sidebar-tab active" id="stab-ind" onclick="setSidebarTab('ind')">&#127981; Industries</div>
       <div class="sidebar-tab" id="stab-dept" onclick="setSidebarTab('dept')">&#127970; Dept</div>
       <div class="sidebar-tab" id="stab-cwlib" onclick="setSidebarTab('cwlib')">&#129309; Cowork</div>
+      <div class="sidebar-tab" id="stab-scoutlib" onclick="setSidebarTab('scoutlib')">&#129517; Scout</div>
+      <div class="sidebar-tab" id="stab-splib" onclick="setSidebarTab('splib')">&#127760; SP AI</div>
       <div class="sidebar-tab" id="stab-other" onclick="setSidebarTab('other')">&#128218; More</div>
     </div>
     <!-- Industries panel -->
@@ -1400,6 +1403,32 @@ a.file-pill:visited{color:var(--text)}
       <div class="sidebar-divider"></div>
       <div id="sidebar-cwlib"></div>
       <div class="search-empty" id="search-empty-cwlib">No cowork entries match your search.</div>
+    </div>
+    <!-- Scout Library panel -->
+    <div class="sidebar-panel" id="spanel-scoutlib">
+      <div class="sidebar-section">
+        <a class="sidebar-item active" id="nav-all-scoutlib" onclick="showScoutLibTab()">
+          <span class="ind-icon">&#129517;</span>
+          <span class="ind-name">All Scout Use Cases</span>
+          <span class="ind-count" id="total-scoutlib-count">--</span>
+        </a>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div id="sidebar-scoutlib"></div>
+      <div class="search-empty" id="search-empty-scoutlib">No Scout entries match your search.</div>
+    </div>
+    <!-- SharePoint AI Library panel -->
+    <div class="sidebar-panel" id="spanel-splib">
+      <div class="sidebar-section">
+        <a class="sidebar-item active" id="nav-all-splib" onclick="showSpLibTab()">
+          <span class="ind-icon">&#127760;</span>
+          <span class="ind-name">All SharePoint AI Use Cases</span>
+          <span class="ind-count" id="total-splib-count">--</span>
+        </a>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div id="sidebar-splib"></div>
+      <div class="search-empty" id="search-empty-splib">No SharePoint AI entries match your search.</div>
     </div>
     <!-- Other Pages panel -->
     <div class="sidebar-panel" id="spanel-other">
@@ -1454,6 +1483,8 @@ a.file-pill:visited{color:var(--text)}
         <button class="grid-tab active" id="gtab-ind" onclick="showGridTab('ind')">&#127981; Industries (29)</button>
         <button class="grid-tab" id="gtab-dept" onclick="showGridTab('dept')">&#127970; Departments (10)</button>
         <button class="grid-tab" id="gtab-cwlib" onclick="showCwLibTab()">&#129309; Cowork Library</button>
+        <button class="grid-tab" id="gtab-scoutlib" onclick="showScoutLibTab()">&#129517; Scout Library</button>
+        <button class="grid-tab" id="gtab-splib" onclick="showSpLibTab()">&#127760; SharePoint AI</button>
         <button class="grid-tab" id="gtab-other" onclick="showOtherTab()">&#128218; Other Pages (6)</button>
       </div>
       <!-- Industry grid (sector grouped) -->
@@ -1476,6 +1507,32 @@ a.file-pill:visited{color:var(--text)}
           </div>
         </div>
         <div id="cwlib-grid"></div>
+      </div>
+      <!-- Scout Library grid -->
+      <div id="scoutlib-grid-wrap" style="display:none">
+        <div class="cwlib-hero" style="background:linear-gradient(135deg,#0F2A4F 0%,#1F4E78 100%)">
+          <div class="cwlib-hero-eyebrow">&#129517; FRONTIER PREVIEW &middot; <span id="scoutlib-total-uc">--</span> USE CASES</div>
+          <div class="cwlib-hero-title">Microsoft Scout Library</div>
+          <div class="cwlib-hero-sub">Desktop AI app (Frontier preview) with file system access, shell commands, browser automation via Playwright, M365 + WorkIQ access, sub-agents, heartbeat mode, and scheduled automations &mdash; goes beyond Copilot Chat. All Scout use cases organised by industry and department.</div>
+          <div class="cwlib-mode-toggle">
+            <button class="cwlib-mode-btn active" id="scoutlib-mode-ind" onclick="setScoutLibMode('ind')">&#127981; By Industry (<span id="scoutlib-mode-ind-n">--</span>)</button>
+            <button class="cwlib-mode-btn" id="scoutlib-mode-dept" onclick="setScoutLibMode('dept')">&#127970; By Department (<span id="scoutlib-mode-dept-n">--</span>)</button>
+          </div>
+        </div>
+        <div id="scoutlib-grid"></div>
+      </div>
+      <!-- SharePoint AI Library grid -->
+      <div id="splib-grid-wrap" style="display:none">
+        <div class="cwlib-hero" style="background:linear-gradient(135deg,#0078D4 0%,#106EBE 100%)">
+          <div class="cwlib-hero-eyebrow">&#127760; PUBLIC PREVIEW &middot; <span id="splib-total-uc">--</span> USE CASES</div>
+          <div class="cwlib-hero-title">AI in SharePoint Library</div>
+          <div class="cwlib-hero-sub">Microsoft 365 Copilot inside SharePoint pages, libraries, and sites. Floating Button surfaces context-sensitive actions: Ask, Summarize, Compare files, Audio Overview, FAQ from File, Autofill columns, Automate workflows, Improve site, Create Page with AI. All AI in SharePoint use cases organised by industry and department.</div>
+          <div class="cwlib-mode-toggle">
+            <button class="cwlib-mode-btn active" id="splib-mode-ind" onclick="setSpLibMode('ind')">&#127981; By Industry (<span id="splib-mode-ind-n">--</span>)</button>
+            <button class="cwlib-mode-btn" id="splib-mode-dept" onclick="setSpLibMode('dept')">&#127970; By Department (<span id="splib-mode-dept-n">--</span>)</button>
+          </div>
+        </div>
+        <div id="splib-grid"></div>
       </div>
       <!-- Other Pages grid -->
       <div id="other-grid-wrap" style="display:none">
@@ -4274,14 +4331,15 @@ function _coworkRunbookHtml(item,tool,promptText,lines){
 // Used by BOTH callers: the dedicated Cowork Library detail view (showCwLibFor)
 // AND the original industry/dept page Cowork sub-tab.
 function _coworkLibraryHtml(item){
-  const cards=(item && item.coworkLibrary) || [];
+  const libField = (item && item.__libField) || 'coworkLibrary';
+  const cards=(item && item[libField]) || [];
   if(!cards.length) return '';
   // Embedded mode = called from the Cowork Library detail view (which already
   // shows the entry name in its own hero). In that case we skip our own header
   // so the page doesn't render "Cowork Library — more use cases" twice.
   const embedded = !!(item && item.__cwlibEmbedded);
-  const L_TITLE=_uL('📚 Cowork Library — more use cases');
-  const L_SUB=_uL('Pick a use case above — every section below updates in place. Each card is a copy-paste-ready runbook.');
+  const L_TITLE=(item && item.__libTitle) ? _uL(item.__libTitle) : _uL('📚 Cowork Library — more use cases');
+  const L_SUB=(item && item.__libSub) ? _uL(item.__libSub) : _uL('Pick a use case above — every section below updates in place. Each card is a copy-paste-ready runbook.');
   const L_INTRO=_uL('Use the cards above to switch between use cases. The section headers below stay constant — only the contents change, so you can compare runbooks at a glance. Adjust placeholders to your business reality before you send.');
   const L_SKILLS=_uL('Skills required');
   const L_INSTR=_uL('Instructions');
@@ -4483,35 +4541,63 @@ function _wireCoworkLibraryCopy(){
 }
 
 // ── Notebook Library renderer ─────────────────────────────────────────────
-// Renders the per-entry item.notebookLibrary[] catalog as a stack of cards.
-// Each card models a full Copilot Notebook setup (5 sources + Instructions
-// field + 3 chained prompts) for a SPECIFIC business archetype — e.g. RFP
-// synthesis, clinical case prep, regulator cross-reference, M&A diligence.
-// Reuses the .cw-* CSS family (theme-aware) with two extra Notebook-only
-// classes: .nb-sources-list and .nb-instructions-block.
+// Renders the per-entry item.notebookLibrary[] catalog using the SAME picker
+// pattern as Cowork Library (was tap-to-expand <details> — replaced May 2026
+// for visual consistency with Cowork). Each card models a full Copilot
+// Notebook setup (5 sources + Instructions field + 3 chained prompts) for a
+// SPECIFIC business archetype — e.g. RFP synthesis, clinical case prep,
+// regulator cross-reference, M&A diligence.
 function _notebookLibraryHtml(item){
   const cards=(item && item.notebookLibrary) || [];
   if(!cards.length) return '';
+  const embedded = !!(item && item.__nblibEmbedded);
   const L_TITLE=_uL('📓 Notebook Library — more use cases');
-  const L_SUB=_uL('Each card is a 5-source notebook with a system Instructions field and a chained prompt flow. Tap to expand.');
+  const L_SUB=_uL('Pick a notebook above — every section below updates in place. Each card is a copy-paste-ready 5-source notebook with an Instructions field and a chained prompt flow.');
+  const L_INTRO=_uL('Use the cards above to switch between notebook configurations. The section headers below stay constant — only the contents change, so you can compare setups at a glance.');
   const L_SOURCES=_uL('5 SOURCES');
   const L_INSTR_FIELD=_uL('INSTRUCTIONS FIELD');
-  const L_OUTPUTS=_uL('✨ NOTEBOOK OUTPUTS (NEW)');
-  const L_OUTPUTS_SUB=_uL('Beyond chat — generate these outputs from the same sources:');
+  const L_OUTPUTS=_uL('✨ NOTEBOOK OUTPUTS');
+  const L_DESC=_uL('Description');
+  const L_PROMPTS=_uL('Prompts');
+  const L_EXP=_uL('Expected outcome');
+  const L_WATCH=_uL('What to watch');
+  const L_HONEST=_uL('Honest framing');
+  const L_TIPS=_uL('Tips & variations');
   const L_PROMPT=_uL('PROMPT');
-  const L_EXP=_uL('EXPECTED OUTCOME');
-  const L_WATCH=_uL('WHAT TO WATCH');
-  const L_HONEST=_uL('HONEST FRAMING');
-  const L_TIPS=_uL('TIPS & VARIATIONS');
   const L_COPY=_uL('📋 Copy prompt');
+  const L_NONE=_uL('Nothing to show for this notebook.');
+  const L_OF=_uL(' of ');
+  const L_PREV=_uL('← Previous notebook');
+  const L_NEXT=_uL('Next notebook →');
   function lbl(c){
     if(c==='basic') return _uL('Basic');
     if(c==='advanced') return _uL('Advanced');
     return _uL('Intermediate');
   }
-  const body=cards.map((c,idx)=>{
+  window._nblibSlotCtr = (window._nblibSlotCtr || 0) + 1;
+  const slot = 'nb_'+String(item && item.id || 'x').replace(/[^A-Za-z0-9_-]/g,'_')+'_'+window._nblibSlotCtr;
+  const total=cards.length;
+  // ── Picker tiles (top, sticky) ────────────────────────────────────────
+  const pickerTiles=cards.map((c,idx)=>{
     const num='NB '+String(idx+1).padStart(2,'0');
     const cmplx=String(c.complexity||'intermediate').toLowerCase();
+    const title=_xformVal(c.title||'','EN');
+    const archetype=c.archetype?String(c.archetype).replace(/_/g,' '):'';
+    return '<button type="button" class="cwlib-pick'+(idx===0?' selected':'')+'" data-nblib-slot="'+slot+'" data-nblib-idx="'+idx+'" onclick="_nbLibSelectInSlot(\''+slot+'\','+idx+')">'+
+      '<div class="cwlib-pick-top"><span class="cwlib-pick-num">'+escapeHTML(num)+'</span></div>'+
+      '<div class="cwlib-pick-title">'+escapeHTML(title)+'</div>'+
+      '<div class="cwlib-pick-meta">'+
+        '<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span>'+
+        (archetype?('<span class="pick-app">'+escapeHTML(archetype)+'</span>'):'')+
+      '</div>'+
+    '</button>';
+  }).join('');
+  // ── Per-NB content sections (all rendered, only one visible) ──────────
+  const nbSections=cards.map((c,idx)=>{
+    const num='NB '+String(idx+1).padStart(2,'0');
+    const cmplx=String(c.complexity||'intermediate').toLowerCase();
+    const title=_xformVal(c.title||'','EN');
+    const archetype=c.archetype?('<span class="cw-tag">'+escapeHTML(String(c.archetype).replace(/_/g,' '))+'</span>'):'';
     const sources=(c.sources||[]).map(f=>{
       const name=Array.isArray(f)?(f[0]||''):(f && f.filename) || String(f||'');
       const ext=String((Array.isArray(f)?f[1]:(f && f.ext)) || (name.split('.').pop()||'')).toLowerCase();
@@ -4526,7 +4612,7 @@ function _notebookLibraryHtml(item){
     const prompts=(c.prompts||[]).map((p,pi)=>{
       const txt=_xformVal((typeof p==='string'?p:(p&&p.text||p&&p.prompt)||''),'EN');
       const label=(typeof p==='object'&&p&&p.label)?_xformVal(p.label,'EN'):(L_PROMPT+' '+(pi+1));
-      const nbKey='nblib_'+(item.id||'x')+'_'+idx+'_'+pi;
+      const nbKey='nblib_'+(item.id||'x')+'_'+slot+'_'+idx+'_'+pi;
       return '<div class="cw-prompt">'+
         '<div class="cw-prompt-head">'+
           '<span class="cw-prompt-label">'+escapeHTML(label)+'</span>'+
@@ -4535,9 +4621,8 @@ function _notebookLibraryHtml(item){
         '<div class="cw-prompt-text" id="'+nbKey+'">'+escapeHTML(txt)+'</div>'+
       '</div>';
     }).join('');
-    const dept=c.archetype?('<span class="cw-tag">'+escapeHTML(String(c.archetype).replace(/_/g,' '))+'</span>'):'';
-    const honest=c.honest?('<div class="cw-callout cw-honest"><span class="cw-callout-label">'+L_HONEST+'</span><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):'';
-    const watchHtml=watch?('<div class="cw-callout cw-watch"><span class="cw-callout-label">'+L_WATCH+'</span><ul>'+watch+'</ul></div>'):'';
+    const honest=c.honest?('<div class="cw-callout cw-honest"><p>'+escapeHTML(_xformVal(c.honest,'EN'))+'</p></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+    const watchHtml=watch?('<div class="cw-callout cw-watch"><ul>'+watch+'</ul></div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
     const outputs=(c.outputs||[]).map(function(o){
       const oIcon=escapeHTML(o.icon||'•');
       const oName=escapeHTML(_xformVal(o.name||'','EN'));
@@ -4552,39 +4637,92 @@ function _notebookLibraryHtml(item){
         '</div>'+
       '</div>';
     }).join('');
-    const outputsHtml=outputs?('<div class="nb-outputs-section">'+
-      '<div class="nb-outputs-title">'+L_OUTPUTS+'</div>'+
-      '<div class="nb-outputs-grid">'+outputs+'</div>'+
-    '</div>'):'';
-    return '<details class="cw-card is-nb">'+
-      '<summary>'+
-        '<span class="cw-num">'+escapeHTML(num)+'</span>'+
-        '<span class="cw-head-main">'+
-          '<div class="cw-title">'+escapeHTML(_xformVal(c.title||'','EN'))+'</div>'+
-          '<div class="cw-badges">'+dept+'<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span></div>'+
-        '</span>'+
-        '<span class="cw-chev">▼</span>'+
-      '</summary>'+
-      '<div class="cw-body">'+
-        (c.desc?'<p class="cw-desc">'+escapeHTML(_xformVal(c.desc,'EN'))+'</p>':'')+
-        (sources?('<div class="cw-section-label">'+L_SOURCES+'</div><div class="cw-files-pills">'+sources+'</div>'):'')+
-        (instrTxt?('<div class="cw-section-label">'+L_INSTR_FIELD+'</div><div class="nb-instructions-block">'+escapeHTML(instrTxt)+'</div>'):'')+
-        prompts+
-        (expected?('<div class="cw-section-label">'+L_EXP+'</div><ul class="cw-list">'+expected+'</ul>'):'')+
-        watchHtml+
-        honest+
-        outputsHtml+
-        (tips?('<div class="cw-section-label">'+L_TIPS+'</div><ul class="cw-list">'+tips+'</ul>'):'')+
+    const outputsHtml=outputs?('<div class="nb-outputs-grid">'+outputs+'</div>'):('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+    function block(icon, label, bodyHtml, hasContent){
+      const inner = hasContent ? bodyHtml : ('<div class="cwlib-block-empty">'+escapeHTML(L_NONE)+'</div>');
+      return '<div class="cwlib-block">'+
+        '<div class="cwlib-block-head"><span class="bh-icon">'+icon+'</span><span class="bh-label">'+escapeHTML(label)+'</span></div>'+
+        '<div class="cwlib-block-body">'+inner+'</div>'+
+      '</div>';
+    }
+    const isFirst = (idx===0);
+    const isLast = (idx===total-1);
+    return '<section class="cwlib-uc nblib-uc" data-nblib-slot="'+slot+'" data-nblib-idx="'+idx+'"'+(isFirst?'':' style="display:none"')+'>'+
+      '<div class="cwlib-uc-head">'+
+        '<div class="cwlib-uc-head-num">'+escapeHTML(num)+'</div>'+
+        '<div class="cwlib-uc-head-main">'+
+          '<div class="cwlib-uc-head-title">'+escapeHTML(title)+'</div>'+
+          '<div class="cwlib-uc-head-badges">'+archetype+'<span class="cw-complexity '+cmplx+'">'+escapeHTML(lbl(cmplx))+'</span></div>'+
+        '</div>'+
+        '<span class="cwlib-pos-chip">'+(idx+1)+escapeHTML(L_OF)+total+'</span>'+
       '</div>'+
-    '</details>';
+      block('📋', L_DESC, '<p>'+escapeHTML(_xformVal(c.desc||'','EN'))+'</p>', !!c.desc) +
+      block('📎', L_SOURCES, '<div class="cw-files-pills">'+sources+'</div>', !!sources) +
+      block('🧭', L_INSTR_FIELD, '<div class="nb-instructions-block">'+escapeHTML(instrTxt)+'</div>', !!instrTxt) +
+      block('💬', L_PROMPTS, prompts, !!prompts) +
+      block('✅', L_EXP, '<ul class="cw-list">'+expected+'</ul>', !!expected) +
+      block('👀', L_WATCH, watchHtml, true) +
+      block('⚖️', L_HONEST, honest, true) +
+      block('✨', L_OUTPUTS, outputsHtml, !!outputs) +
+      block('💡', L_TIPS, '<ul class="cw-list">'+tips+'</ul>', !!tips) +
+      '<div class="cwlib-block-prev-next">'+
+        '<button class="cwlib-pn-btn" type="button" onclick="_nbLibNavInSlot(\''+slot+'\',-1)"'+(isFirst?' disabled':'')+'>'+escapeHTML(L_PREV)+'</button>'+
+        '<span class="cwlib-pn-spacer">'+(idx+1)+escapeHTML(L_OF)+total+'</span>'+
+        '<button class="cwlib-pn-btn" type="button" onclick="_nbLibNavInSlot(\''+slot+'\',1)"'+(isLast?' disabled':'')+'>'+escapeHTML(L_NEXT)+'</button>'+
+      '</div>'+
+    '</section>';
   }).join('');
-  return '<div class="cw-section">'+
-    '<div class="cw-section-head">'+
+  const head = embedded ? '' :
+    ('<div class="cw-section-head">'+
       '<h3 class="cw-section-title">'+L_TITLE+'</h3>'+
       '<span class="cw-section-sub">'+escapeHTML(L_SUB)+'</span>'+
+    '</div>');
+  const intro = '<div class="cwlib-runbook-intro"><span class="ri-icon">📖</span><div>'+escapeHTML(L_INTRO)+'</div></div>';
+  return '<div class="cw-section'+(embedded?' cw-section-embedded':'')+'" data-nblib-runbook="'+slot+'">'+
+    head+
+    intro+
+    '<div class="cwlib-picker-wrap" data-nblib-slot="'+slot+'">'+
+      '<div class="cwlib-picker-row">'+
+        '<div class="cwlib-picker-scroll">'+pickerTiles+'</div>'+
+        '<div class="cwlib-nav-btns">'+
+          '<button class="cwlib-nav-btn" type="button" data-nblib-nav-prev="'+slot+'" onclick="_nbLibNavInSlot(\''+slot+'\',-1)" disabled>‹</button>'+
+          '<button class="cwlib-nav-btn" type="button" data-nblib-nav-next="'+slot+'" onclick="_nbLibNavInSlot(\''+slot+'\',1)"'+(total<=1?' disabled':'')+'>›</button>'+
+        '</div>'+
+      '</div>'+
     '</div>'+
-    '<div class="cw-grid">'+body+'</div>'+
+    '<div class="cwlib-runbook" data-nblib-stage="'+slot+'">'+nbSections+'</div>'+
   '</div>';
+}
+
+// Picker handler — swap which NB section is visible inside a given slot.
+function _nbLibSelectInSlot(slot, idx){
+  const picks = document.querySelectorAll('[data-nblib-slot="'+slot+'"].cwlib-pick');
+  if(!picks.length) return;
+  const total = picks.length;
+  if(idx<0 || idx>=total) return;
+  picks.forEach(function(b){
+    const i = parseInt(b.getAttribute('data-nblib-idx'),10);
+    b.classList.toggle('selected', i===idx);
+    if(i===idx){
+      try { b.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'}); } catch(e){}
+    }
+  });
+  document.querySelectorAll('section.nblib-uc[data-nblib-slot="'+slot+'"]').forEach(function(s){
+    const i = parseInt(s.getAttribute('data-nblib-idx'),10);
+    s.style.display = (i===idx) ? '' : 'none';
+  });
+  const navPrev = document.querySelector('[data-nblib-nav-prev="'+slot+'"]');
+  const navNext = document.querySelector('[data-nblib-nav-next="'+slot+'"]');
+  if(navPrev) navPrev.disabled = (idx<=0);
+  if(navNext) navNext.disabled = (idx>=total-1);
+}
+
+// Prev/Next nav for Notebook Library.
+function _nbLibNavInSlot(slot, delta){
+  const picks = document.querySelectorAll('[data-nblib-slot="'+slot+'"].cwlib-pick');
+  let cur = 0;
+  picks.forEach(function(b, i){ if(b.classList.contains('selected')) cur = i; });
+  _nbLibSelectInSlot(slot, cur + (delta||0));
 }
 
 // Notebook Library uses the same delegated copy listener as Cowork — the
@@ -4597,7 +4735,7 @@ function _wireNotebookLibraryCopy(){
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
   currentSidebarTab=tab;
-  ['ind','dept','cwlib','other'].forEach(t=>{
+  ['ind','dept','cwlib','scoutlib','splib','other'].forEach(t=>{
     const stEl=document.getElementById('stab-'+t);
     const spEl=document.getElementById('spanel-'+t);
     if(stEl) stEl.classList.toggle('active',t===tab);
@@ -4623,10 +4761,14 @@ function showGridTab(tab){
   document.getElementById('gtab-ind').classList.toggle('active',tab==='ind');
   document.getElementById('gtab-dept').classList.toggle('active',tab==='dept');
   const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.classList.remove('active');
+  const gtSc=document.getElementById('gtab-scoutlib'); if(gtSc) gtSc.classList.remove('active');
+  const gtSp=document.getElementById('gtab-splib'); if(gtSp) gtSp.classList.remove('active');
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.remove('active');
   document.getElementById('ind-grid-wrap').style.display=tab==='ind'?'block':'none';
   document.getElementById('dept-grid-wrap').style.display=tab==='dept'?'block':'none';
   const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='none';
+  const scgw=document.getElementById('scoutlib-grid-wrap'); if(scgw) scgw.style.display='none';
+  const spgw=document.getElementById('splib-grid-wrap'); if(spgw) spgw.style.display='none';
   const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='none';
   // Reset sidebar nav highlights to "All"
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
@@ -4652,11 +4794,71 @@ function showCwLibTab(){
   document.getElementById('ind-grid-wrap').style.display='none';
   document.getElementById('dept-grid-wrap').style.display='none';
   const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='block';
+  const scgw0=document.getElementById('scoutlib-grid-wrap'); if(scgw0) scgw0.style.display='none';
+  const spgw0=document.getElementById('splib-grid-wrap'); if(spgw0) spgw0.style.display='none';
   const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='none';
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   const navAll=document.getElementById('nav-all-cwlib'); if(navAll) navAll.classList.add('active');
   // Render the grid (idempotent — rebuilds each time so locale changes flow through)
   renderCwLibGrid();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Show Scout Library tab ──
+function showScoutLibTab(){
+  _autoCloseSidebar();
+  currentGridTab='scoutlib';
+  setSidebarTab('scoutlib');
+  document.getElementById('home-view').style.display='block';
+  const dv=document.getElementById('detail-view'); dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  const scd=document.getElementById('scoutlib-detail-view'); if(scd) scd.style.display='none';
+  const spd=document.getElementById('splib-detail-view'); if(spd) spd.style.display='none';
+  _currentItem=null;
+  document.getElementById('gtab-ind').classList.remove('active');
+  document.getElementById('gtab-dept').classList.remove('active');
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.classList.remove('active');
+  const gtSc=document.getElementById('gtab-scoutlib'); if(gtSc) gtSc.classList.add('active');
+  const gtSp=document.getElementById('gtab-splib'); if(gtSp) gtSp.classList.remove('active');
+  const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.remove('active');
+  document.getElementById('ind-grid-wrap').style.display='none';
+  document.getElementById('dept-grid-wrap').style.display='none';
+  const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='none';
+  const scgw=document.getElementById('scoutlib-grid-wrap'); if(scgw) scgw.style.display='block';
+  const spgw=document.getElementById('splib-grid-wrap'); if(spgw) spgw.style.display='none';
+  const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='none';
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navAll=document.getElementById('nav-all-scoutlib'); if(navAll) navAll.classList.add('active');
+  renderScoutLibGrid();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Show SharePoint AI Library tab ──
+function showSpLibTab(){
+  _autoCloseSidebar();
+  currentGridTab='splib';
+  setSidebarTab('splib');
+  document.getElementById('home-view').style.display='block';
+  const dv=document.getElementById('detail-view'); dv.classList.remove('active'); dv.style.display='none';
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  const scd=document.getElementById('scoutlib-detail-view'); if(scd) scd.style.display='none';
+  const spd=document.getElementById('splib-detail-view'); if(spd) spd.style.display='none';
+  _currentItem=null;
+  document.getElementById('gtab-ind').classList.remove('active');
+  document.getElementById('gtab-dept').classList.remove('active');
+  const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.classList.remove('active');
+  const gtSc=document.getElementById('gtab-scoutlib'); if(gtSc) gtSc.classList.remove('active');
+  const gtSp=document.getElementById('gtab-splib'); if(gtSp) gtSp.classList.add('active');
+  const gtO=document.getElementById('gtab-other'); if(gtO) gtO.classList.remove('active');
+  document.getElementById('ind-grid-wrap').style.display='none';
+  document.getElementById('dept-grid-wrap').style.display='none';
+  const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='none';
+  const scgw=document.getElementById('scoutlib-grid-wrap'); if(scgw) scgw.style.display='none';
+  const spgw=document.getElementById('splib-grid-wrap'); if(spgw) spgw.style.display='block';
+  const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='none';
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navAll=document.getElementById('nav-all-splib'); if(navAll) navAll.classList.add('active');
+  renderSpLibGrid();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -4677,6 +4879,8 @@ function showOtherTab(){
   document.getElementById('ind-grid-wrap').style.display='none';
   document.getElementById('dept-grid-wrap').style.display='none';
   const cgw=document.getElementById('cwlib-grid-wrap'); if(cgw) cgw.style.display='none';
+  const scgw=document.getElementById('scoutlib-grid-wrap'); if(scgw) scgw.style.display='none';
+  const spgw=document.getElementById('splib-grid-wrap'); if(spgw) spgw.style.display='none';
   const ogw=document.getElementById('other-grid-wrap'); if(ogw) ogw.style.display='block';
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   const navAll=document.getElementById('nav-all-other'); if(navAll) navAll.classList.add('active');
@@ -5150,6 +5354,276 @@ function showCwLibFor(entryId){
 function backToCwLib(){
   const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
   showCwLibTab();
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Scout Library + SharePoint AI Library — generic factory
+// Mirrors the Cowork Library system (entries/grid/sidebar/detail) but
+// reads from item.scoutLibrary / item.sharepointLibrary instead.
+// ───────────────────────────────────────────────────────────────────────
+let _scoutLibMode='ind';
+let _scoutLibSidebarBuilt=false;
+let _spLibMode='ind';
+let _spLibSidebarBuilt=false;
+
+function _libEntries(libField, kind){
+  const src = kind==='ind' ? (data.industries||[]) : (data.departments||[]);
+  return src.filter(e => Array.isArray(e[libField]) && e[libField].length>0);
+}
+function _libTotalUC(libField){
+  const ind = _libEntries(libField,'ind').reduce((a,e)=>a + (e[libField]||[]).length, 0);
+  const dept = _libEntries(libField,'dept').reduce((a,e)=>a + (e[libField]||[]).length, 0);
+  return ind + dept;
+}
+function _libSectorOf(ind){
+  if(!ind) return '';
+  const sec = (data.sectors||[]).find(s => (s.industries||[]).includes(ind.id));
+  return sec ? sec.label : '';
+}
+function _libFmtName(e){
+  return escapeHTML(_xformVal(_stripLeadingEmoji(e.name||''),'EN'));
+}
+function _libPreview(entry, libField){
+  const items=(entry[libField]||[]).slice(0,3);
+  return items.map((c,i)=>{
+    const t = (typeof _xformVal==='function') ? _xformVal(c.title||'','EN') : (c.title||'');
+    return '<div class="cwlib-entry-preview-item">'+
+      '<span class="cwlib-entry-preview-num">UC '+String(i+1).padStart(2,'0')+'</span>'+
+      '<span class="cwlib-entry-preview-text">'+escapeHTML(t)+'</span>'+
+    '</div>';
+  }).join('');
+}
+function _libEntryCard(entry, kind, libField, defaultIcon, onclickName){
+  const div=document.createElement('div');
+  div.className='cwlib-entry-card';
+  div.setAttribute('data-cwlib-id',entry.id);
+  div.onclick=()=>window[onclickName](entry.id);
+  const n=(entry[libField]||[]).length;
+  const sector = kind==='ind' ? _libSectorOf(entry) : 'Department';
+  div.innerHTML=
+    '<div class="cwlib-entry-card-head">'+
+      '<div class="cwlib-entry-icon">'+(entry.icon||defaultIcon)+'</div>'+
+      '<div style="flex:1;min-width:0">'+
+        '<div class="cwlib-entry-name">'+_libFmtName(entry)+'</div>'+
+        '<div class="cwlib-entry-sector">'+escapeHTML(sector||'—')+'</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="cwlib-entry-preview">'+_libPreview(entry,libField)+'</div>'+
+    '<div class="cwlib-entry-foot">'+
+      '<span class="cwlib-entry-count">'+n+' use case'+(n===1?'':'s')+'</span>'+
+      '<span class="cwlib-entry-open">Open runbook &rarr;</span>'+
+    '</div>';
+  return div;
+}
+
+// ── Scout Library ──
+function buildScoutLibSidebar(){
+  const el=document.getElementById('sidebar-scoutlib');
+  if(!el) return;
+  el.innerHTML='';
+  const indEntries=_libEntries('scoutLibrary','ind');
+  if(indEntries.length){
+    const hdr=document.createElement('div'); hdr.className='cwlib-sidebar-group';
+    hdr.textContent='Industries ('+indEntries.length+')'; el.appendChild(hdr);
+    indEntries.forEach(e=>{
+      const a=document.createElement('a'); a.className='sidebar-item'; a.id='nav-scoutlib-'+e.id;
+      a.onclick=()=>showScoutLibFor(e.id);
+      const n=(e.scoutLibrary||[]).length;
+      a.innerHTML='<span class="ind-icon">'+e.icon+'</span><span class="ind-name">'+_libFmtName(e)+'</span><span class="ind-count">'+n+'</span>';
+      el.appendChild(a);
+    });
+  }
+  const deptEntries=_libEntries('scoutLibrary','dept');
+  if(deptEntries.length){
+    const hdr=document.createElement('div'); hdr.className='cwlib-sidebar-group';
+    hdr.textContent='Departments ('+deptEntries.length+')'; el.appendChild(hdr);
+    deptEntries.forEach(e=>{
+      const a=document.createElement('a'); a.className='sidebar-item'; a.id='nav-scoutlib-'+e.id;
+      a.onclick=()=>showScoutLibFor(e.id);
+      const n=(e.scoutLibrary||[]).length;
+      a.innerHTML='<span class="ind-icon">'+e.icon+'</span><span class="ind-name">'+_libFmtName(e)+'</span><span class="ind-count">'+n+'</span>';
+      el.appendChild(a);
+    });
+  }
+  const total=document.getElementById('total-scoutlib-count');
+  if(total) total.textContent=indEntries.length+deptEntries.length;
+  _scoutLibSidebarBuilt=true;
+}
+function renderScoutLibGrid(){
+  if(!_scoutLibSidebarBuilt) buildScoutLibSidebar();
+  const root=document.getElementById('scoutlib-grid');
+  if(!root) return;
+  root.innerHTML='';
+  const indEntries=_libEntries('scoutLibrary','ind');
+  const deptEntries=_libEntries('scoutLibrary','dept');
+  const nIndEl=document.getElementById('scoutlib-mode-ind-n'); if(nIndEl) nIndEl.textContent=indEntries.length;
+  const nDeptEl=document.getElementById('scoutlib-mode-dept-n'); if(nDeptEl) nDeptEl.textContent=deptEntries.length;
+  const totalEl=document.getElementById('scoutlib-total-uc'); if(totalEl) totalEl.textContent=_libTotalUC('scoutLibrary');
+  ['ind','dept'].forEach(m=>{ const b=document.getElementById('scoutlib-mode-'+m); if(b) b.classList.toggle('active', m===_scoutLibMode); });
+  if(_scoutLibMode==='ind'){
+    (data.sectors||[]).forEach(sec=>{
+      const inSec=indEntries.filter(e => (sec.industries||[]).includes(e.id));
+      if(!inSec.length) return;
+      const section=document.createElement('div'); section.className='cwlib-section';
+      section.innerHTML='<div class="cwlib-section-title"><span class="sec-emoji">🏷️</span><span>'+escapeHTML(sec.label)+'</span><span class="sec-count">'+inSec.length+' entr'+(inSec.length===1?'y':'ies')+'</span></div>';
+      const grid=document.createElement('div'); grid.className='cwlib-grid-inner';
+      inSec.forEach(e=>grid.appendChild(_libEntryCard(e,'ind','scoutLibrary','🧭','showScoutLibFor')));
+      section.appendChild(grid); root.appendChild(section);
+    });
+    if(!indEntries.length) root.innerHTML='<div class="cwlib-empty">No industries with Scout content yet.</div>';
+  } else {
+    const section=document.createElement('div'); section.className='cwlib-section';
+    section.innerHTML='<div class="cwlib-section-title"><span class="sec-emoji">🏢</span><span>Departments</span><span class="sec-count">'+deptEntries.length+' entr'+(deptEntries.length===1?'y':'ies')+'</span></div>';
+    const grid=document.createElement('div'); grid.className='cwlib-grid-inner';
+    deptEntries.forEach(e=>grid.appendChild(_libEntryCard(e,'dept','scoutLibrary','🧭','showScoutLibFor')));
+    section.appendChild(grid); root.appendChild(section);
+    if(!deptEntries.length) root.innerHTML='<div class="cwlib-empty">No departments with Scout content yet.</div>';
+  }
+}
+function setScoutLibMode(mode){ _scoutLibMode = (mode==='dept') ? 'dept' : 'ind'; renderScoutLibGrid(); }
+function showScoutLibFor(entryId){
+  _autoCloseSidebar();
+  const all = (data.industries||[]).concat(data.departments||[]);
+  const entry = all.find(e => e.id===entryId);
+  if(!entry) return;
+  setSidebarTab('scoutlib');
+  currentGridTab='scoutlib';
+  document.getElementById('home-view').style.display='none';
+  const dv=document.getElementById('detail-view'); if(dv){ dv.classList.remove('active'); dv.style.display='none'; }
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  let scd=document.getElementById('scoutlib-detail-view');
+  if(!scd){
+    // Create the detail view container on first use
+    scd=document.createElement('div'); scd.id='scoutlib-detail-view'; scd.className='cwlib-detail-view';
+    scd.innerHTML='<button class="detail-hero-back" onclick="backToScoutLib()">&larr; Back to Scout Library</button>'+
+      '<div class="cwlib-detail-hero" style="background:linear-gradient(135deg,#0F2A4F 0%,#1F4E78 100%)"><div class="cwlib-detail-title" id="scoutlib-detail-title"></div><div class="cwlib-detail-sub" id="scoutlib-detail-sub"></div></div>'+
+      '<div id="scoutlib-detail-cards"></div>';
+    document.querySelector('main.main').appendChild(scd);
+  }
+  scd.style.display='block';
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navEl=document.getElementById('nav-scoutlib-'+entryId); if(navEl) navEl.classList.add('active');
+  const t=document.getElementById('scoutlib-detail-title'); if(t) t.innerHTML=(entry.icon||'🧭')+' '+_libFmtName(entry);
+  const sub=document.getElementById('scoutlib-detail-sub');
+  const n=(entry.scoutLibrary||[]).length;
+  const sector = (data.industries||[]).find(i=>i.id===entryId) ? _libSectorOf(entry) : 'Department';
+  if(sub) sub.innerHTML='<strong>'+escapeHTML(sector||'—')+'</strong> &middot; '+n+' Scout use case'+(n===1?'':'s')+' &middot; Frontier preview';
+  const host=document.getElementById('scoutlib-detail-cards');
+  if(host){
+    const shim={ id: entry.id, scoutLibrary: entry.scoutLibrary, __cwlibEmbedded: true, __libField: 'scoutLibrary', __libTitle: '🧭 Scout Library — desktop AI runbooks', __libSub: 'Pick a Scout use case above — every section below updates in place. Each card showcases a Scout-only capability (file system, shell, browser, sub-agents, heartbeat, automations).' };
+    host.innerHTML = (typeof _coworkLibraryHtml==='function') ? _coworkLibraryHtml(shim) : '';
+    if(typeof _wireCoworkLibraryCopy==='function') _wireCoworkLibraryCopy(host);
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function backToScoutLib(){
+  const scd=document.getElementById('scoutlib-detail-view'); if(scd) scd.style.display='none';
+  showScoutLibTab();
+}
+
+// ── SharePoint AI Library ──
+function buildSpLibSidebar(){
+  const el=document.getElementById('sidebar-splib');
+  if(!el) return;
+  el.innerHTML='';
+  const indEntries=_libEntries('sharepointLibrary','ind');
+  if(indEntries.length){
+    const hdr=document.createElement('div'); hdr.className='cwlib-sidebar-group';
+    hdr.textContent='Industries ('+indEntries.length+')'; el.appendChild(hdr);
+    indEntries.forEach(e=>{
+      const a=document.createElement('a'); a.className='sidebar-item'; a.id='nav-splib-'+e.id;
+      a.onclick=()=>showSpLibFor(e.id);
+      const n=(e.sharepointLibrary||[]).length;
+      a.innerHTML='<span class="ind-icon">'+e.icon+'</span><span class="ind-name">'+_libFmtName(e)+'</span><span class="ind-count">'+n+'</span>';
+      el.appendChild(a);
+    });
+  }
+  const deptEntries=_libEntries('sharepointLibrary','dept');
+  if(deptEntries.length){
+    const hdr=document.createElement('div'); hdr.className='cwlib-sidebar-group';
+    hdr.textContent='Departments ('+deptEntries.length+')'; el.appendChild(hdr);
+    deptEntries.forEach(e=>{
+      const a=document.createElement('a'); a.className='sidebar-item'; a.id='nav-splib-'+e.id;
+      a.onclick=()=>showSpLibFor(e.id);
+      const n=(e.sharepointLibrary||[]).length;
+      a.innerHTML='<span class="ind-icon">'+e.icon+'</span><span class="ind-name">'+_libFmtName(e)+'</span><span class="ind-count">'+n+'</span>';
+      el.appendChild(a);
+    });
+  }
+  const total=document.getElementById('total-splib-count');
+  if(total) total.textContent=indEntries.length+deptEntries.length;
+  _spLibSidebarBuilt=true;
+}
+function renderSpLibGrid(){
+  if(!_spLibSidebarBuilt) buildSpLibSidebar();
+  const root=document.getElementById('splib-grid');
+  if(!root) return;
+  root.innerHTML='';
+  const indEntries=_libEntries('sharepointLibrary','ind');
+  const deptEntries=_libEntries('sharepointLibrary','dept');
+  const nIndEl=document.getElementById('splib-mode-ind-n'); if(nIndEl) nIndEl.textContent=indEntries.length;
+  const nDeptEl=document.getElementById('splib-mode-dept-n'); if(nDeptEl) nDeptEl.textContent=deptEntries.length;
+  const totalEl=document.getElementById('splib-total-uc'); if(totalEl) totalEl.textContent=_libTotalUC('sharepointLibrary');
+  ['ind','dept'].forEach(m=>{ const b=document.getElementById('splib-mode-'+m); if(b) b.classList.toggle('active', m===_spLibMode); });
+  if(_spLibMode==='ind'){
+    (data.sectors||[]).forEach(sec=>{
+      const inSec=indEntries.filter(e => (sec.industries||[]).includes(e.id));
+      if(!inSec.length) return;
+      const section=document.createElement('div'); section.className='cwlib-section';
+      section.innerHTML='<div class="cwlib-section-title"><span class="sec-emoji">🏷️</span><span>'+escapeHTML(sec.label)+'</span><span class="sec-count">'+inSec.length+' entr'+(inSec.length===1?'y':'ies')+'</span></div>';
+      const grid=document.createElement('div'); grid.className='cwlib-grid-inner';
+      inSec.forEach(e=>grid.appendChild(_libEntryCard(e,'ind','sharepointLibrary','🌐','showSpLibFor')));
+      section.appendChild(grid); root.appendChild(section);
+    });
+    if(!indEntries.length) root.innerHTML='<div class="cwlib-empty">No industries with SharePoint AI content yet.</div>';
+  } else {
+    const section=document.createElement('div'); section.className='cwlib-section';
+    section.innerHTML='<div class="cwlib-section-title"><span class="sec-emoji">🏢</span><span>Departments</span><span class="sec-count">'+deptEntries.length+' entr'+(deptEntries.length===1?'y':'ies')+'</span></div>';
+    const grid=document.createElement('div'); grid.className='cwlib-grid-inner';
+    deptEntries.forEach(e=>grid.appendChild(_libEntryCard(e,'dept','sharepointLibrary','🌐','showSpLibFor')));
+    section.appendChild(grid); root.appendChild(section);
+    if(!deptEntries.length) root.innerHTML='<div class="cwlib-empty">No departments with SharePoint AI content yet.</div>';
+  }
+}
+function setSpLibMode(mode){ _spLibMode = (mode==='dept') ? 'dept' : 'ind'; renderSpLibGrid(); }
+function showSpLibFor(entryId){
+  _autoCloseSidebar();
+  const all = (data.industries||[]).concat(data.departments||[]);
+  const entry = all.find(e => e.id===entryId);
+  if(!entry) return;
+  setSidebarTab('splib');
+  currentGridTab='splib';
+  document.getElementById('home-view').style.display='none';
+  const dv=document.getElementById('detail-view'); if(dv){ dv.classList.remove('active'); dv.style.display='none'; }
+  const cwd=document.getElementById('cwlib-detail-view'); if(cwd) cwd.style.display='none';
+  const scd=document.getElementById('scoutlib-detail-view'); if(scd) scd.style.display='none';
+  let spd=document.getElementById('splib-detail-view');
+  if(!spd){
+    spd=document.createElement('div'); spd.id='splib-detail-view'; spd.className='cwlib-detail-view';
+    spd.innerHTML='<button class="detail-hero-back" onclick="backToSpLib()">&larr; Back to SharePoint AI Library</button>'+
+      '<div class="cwlib-detail-hero" style="background:linear-gradient(135deg,#0078D4 0%,#106EBE 100%)"><div class="cwlib-detail-title" id="splib-detail-title"></div><div class="cwlib-detail-sub" id="splib-detail-sub"></div></div>'+
+      '<div id="splib-detail-cards"></div>';
+    document.querySelector('main.main').appendChild(spd);
+  }
+  spd.style.display='block';
+  document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
+  const navEl=document.getElementById('nav-splib-'+entryId); if(navEl) navEl.classList.add('active');
+  const t=document.getElementById('splib-detail-title'); if(t) t.innerHTML=(entry.icon||'🌐')+' '+_libFmtName(entry);
+  const sub=document.getElementById('splib-detail-sub');
+  const n=(entry.sharepointLibrary||[]).length;
+  const sector = (data.industries||[]).find(i=>i.id===entryId) ? _libSectorOf(entry) : 'Department';
+  if(sub) sub.innerHTML='<strong>'+escapeHTML(sector||'—')+'</strong> &middot; '+n+' SharePoint AI use case'+(n===1?'':'s')+' &middot; Public Preview';
+  const host=document.getElementById('splib-detail-cards');
+  if(host){
+    const shim={ id: entry.id, sharepointLibrary: entry.sharepointLibrary, __cwlibEmbedded: true, __libField: 'sharepointLibrary', __libTitle: '🌐 SharePoint AI Library — Floating Button runbooks', __libSub: 'Pick a SharePoint AI use case above — every section below updates in place. Each card walks through a Floating Button action (Ask, Summarize, Compare, Audio Overview, FAQ, Autofill, Improve site, Create Page).' };
+    host.innerHTML = (typeof _coworkLibraryHtml==='function') ? _coworkLibraryHtml(shim) : '';
+    if(typeof _wireCoworkLibraryCopy==='function') _wireCoworkLibraryCopy(host);
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function backToSpLib(){
+  const spd=document.getElementById('splib-detail-view'); if(spd) spd.style.display='none';
+  showSpLibTab();
 }
 
 function makeCard(item,tab){
@@ -5849,6 +6323,31 @@ function showItem(item,tab,preserveScroll){
       nbWrap.innerHTML=nbHtml;
       pEl.appendChild(nbWrap);
       if(typeof _wireNotebookLibraryCopy==='function') _wireNotebookLibraryCopy();
+    }
+  }
+  // Scout Library + SharePoint AI Library — render under the default Tools sub-tab
+  // so every entry surfaces these new tool sections inline. Reuses _coworkLibraryHtml
+  // via the __libField shim.
+  if(_detailTab==='tools'){
+    if(Array.isArray(item.scoutLibrary) && item.scoutLibrary.length){
+      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '🧭 Microsoft Scout — desktop AI use cases', __libSub: 'Scout-only capabilities (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Pick a use case above — every section below updates in place.' };
+      const html=_coworkLibraryHtml(shimSc);
+      if(html){
+        const w=document.createElement('div');
+        w.innerHTML=html;
+        pEl.appendChild(w);
+        _wireCoworkLibraryCopy();
+      }
+    }
+    if(Array.isArray(item.sharepointLibrary) && item.sharepointLibrary.length){
+      const shimSp={ id: item.id, sharepointLibrary: item.sharepointLibrary, __cwlibEmbedded: false, __libField: 'sharepointLibrary', __libTitle: '🌐 AI in SharePoint — Floating Button use cases', __libSub: 'SharePoint-native Copilot actions (Ask, Summarize, Compare, Audio Overview, FAQ, Autofill columns, Improve site, Create Page) tailored to this entry. Pick a use case above — every section below updates in place.' };
+      const html=_coworkLibraryHtml(shimSp);
+      if(html){
+        const w=document.createElement('div');
+        w.innerHTML=html;
+        pEl.appendChild(w);
+        _wireCoworkLibraryCopy();
+      }
     }
   }
   if(visibleTools.length){ toggleTool(id+'-'+item.prompts.indexOf(visibleTools[0])); }

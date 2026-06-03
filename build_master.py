@@ -41,12 +41,30 @@ WHATS_NEW = [
     },
     {
         "id": "wn-cowork",
-        "title": "🤝 Cowork (Frontier)",
+        "title": "🤝 Cowork Frontier — refreshed (May 2026)",
         "badge": "Frontier Program",
-        "summary": "ONE prompt that delegates 5 parallel tasks: draft a Word doc, draft a second Word doc, send an email, schedule a calendar meeting, post a Teams message \u2014 Cowork executes them all in parallel and reports back with a single status panel.",
-        "tip": "m365.cloud.microsoft > left nav > Agents > Cowork. Requires Frontier program enrollment.",
+        "summary": "Cowork is now an autonomous agent that you describe in plain language (16,000 chars + voice input). It runs end-to-end and shows every step. NEW: ⏰ run prompts on a schedule for recurring tasks; 🔍 search across the org for files/people/info; 🔬 deep research across multiple sources; 📊 daily briefings + meeting intelligence summaries; 📁 browse & manage OneDrive + SharePoint inline; ⏯️ Pause/Resume/Cancel any time; ✅ Approve / Approve & Remember / Reject for medium and high risk actions. Side panel shows Progress / Input folder / Output folder / Skills / Schedule / Permissions.",
+        "tip": "m365.cloud.microsoft > left nav > Agents > Cowork (Frontier). Try: hold the mic icon, dictate \u201cprep me for tomorrow\u2019s board meeting\u201d, then schedule it to repeat every Monday at 6am.",
         "license": "Microsoft 365 Copilot + Frontier Program",
-        "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/cowork-in-progress/4511672"
+        "link": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-cowork-frontier"
+    },
+    {
+        "id": "wn-scout",
+        "title": "🧭 Microsoft Scout — desktop AI app (NEW)",
+        "badge": "Frontier preview (June 2026)",
+        "summary": "A separate desktop AI application that goes beyond Copilot Chat. Scout has direct access to your local file system, can run shell commands with permission tiers, controls a real browser via Playwright, and reaches into your M365 data. Capabilities: 📁 file system + Word/Excel/PowerPoint skills; \ud83d\udda5\ufe0f shell commands (build/test/git) with sensitive-path guards; \ud83c\udf10 browser automation for portal tasks; \ud83d\udce7 M365 access via WorkIQ; \ud83e\udd16 sub-agents (Explore/Task/Code review/Research/General-purpose); \u2764\ufe0f Heartbeat mode (recurring background prompt every 15min/30min/1h/2h, work hours only); \ud83d\udd04 Automations (schedule- or condition-triggered); \ud83d\udd10 granular Permissions UI.",
+        "tip": "Install the Scout desktop app, enrol in Frontier, then try Heartbeat: every 30 min during work hours, sweep email + Teams + OneDrive for new high-risk items and post to a private channel.",
+        "license": "Microsoft 365 Copilot + Frontier Program",
+        "link": "https://learn.microsoft.com/en-us/microsoft-scout/use-microsoft-scout"
+    },
+    {
+        "id": "wn-sharepoint-ai",
+        "title": "🌐 AI in SharePoint — Floating Button (NEW)",
+        "badge": "Public Preview (April 2026)",
+        "summary": "Microsoft 365 Copilot capabilities now live inside SharePoint pages, libraries, and sites. The Floating Button (bottom-right) surfaces context-sensitive actions based on your role + page + selection. Capabilities: \ud83d\udcc4 Work with files \u2014 Ask, Summarize, Compare files, Audio Overview, Generate FAQ; \ud83d\uddc2\ufe0f Organize libraries \u2014 Autofill columns, Automate workflows / set up rules, Create views; \ud83c\udfa8 Pages and sites \u2014 Improve your SharePoint site (broken links / outdated pages / content gaps), Create Page / Section / FAQ Webpart, Refine pages with Design Ideas, Write/Rewrite. Roles: Site Manager / Content Manager / Content Creator / Content Consumer.",
+        "tip": "Open any SharePoint document library, select 2 files, click the Floating Button > Compare files. Or open a long PDF and try Generate Audio Overview.",
+        "license": "Microsoft 365 Copilot",
+        "link": "https://support.microsoft.com/en-us/topic/ai-in-sharepoint-an-overview-c0b1efc3-81d0-4981-8be9-7ba3a75fae15"
     },
     {
         "id": "wn-doc-agents",
@@ -68,10 +86,10 @@ WHATS_NEW = [
     },
     {
         "id": "wn-notebook",
-        "title": "📓 Copilot Notebook \u2014 5 sources + Quick Create",
-        "badge": "Generally Available",
-        "summary": "Add up to 5 source files (Word/Excel/PDF/PPT) at notebook creation, set a persistent Instructions field, then run multiple prompts against the same notebook without re-uploading. Quick Create now produces Pages, Audio Overviews, and presentations from any notebook.",
-        "tip": "m365.cloud.microsoft/chat > Notebook tab > + New Notebook. After grounding, click Quick Create > Audio Overview for a podcast-style executive summary.",
+        "title": "📓 Copilot Notebook — 5 sources + Quick Create + Mind Maps (refreshed)",
+        "badge": "Generally Available + Frontier preview",
+        "summary": "Add up to 5 source files (Word/Excel/PDF/PPT) AND now reference SharePoint sites, OneNote notebooks, and external web links as live sources. Set a persistent Instructions field once, run multiple prompts. Quick Create now produces: 📄 full Word documents, 📊 PowerPoint presentations, 🎧 Audio Overviews (podcast-style), and a custom Page. \ud83e\udde0 Interactive Mind Maps (Frontier preview) let you click any node to drill into the underlying source. \ud83d\udc65 Share notebooks with a Microsoft 365 Group for team co-grounding.",
+        "tip": "m365.cloud.microsoft/chat > Notebook > + New Notebook. After grounding 5 files, try Quick Create > Audio Overview for a 12-minute commute briefing, then click Mind Map and drill into the riskiest concept node.",
         "license": "Microsoft 365 Copilot",
         "link": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/whats-new-in-microsoft-365-copilot--april-2026/4510935"
     },
@@ -1160,6 +1178,54 @@ try:
     print(f"Notebook Library attached to {_nblib_added} entries")
 except Exception as _e:
     print(f"(Notebook Library injection skipped due to error: {_e})")
+
+# ── Scout Library injection ──────────────────────────────────────────────
+try:
+    from _scout_library import get_scout_library_for_entry as _get_scoutlib
+    def _inject_scoutlib(entries):
+        n = 0
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            eid = e.get('id') or ''
+            ename = e.get('name') or e.get('label') or ''
+            personas = e.get('personas') or []
+            pname = ''
+            if personas and isinstance(personas[0], dict):
+                pname = personas[0].get('name') or ''
+            cards = _get_scoutlib(eid, entry_name=ename, persona_name=pname)
+            if cards:
+                e['scoutLibrary'] = cards
+                n += 1
+        return n
+    _sclib_added = _inject_scoutlib(all_industries) + _inject_scoutlib(all_departments)
+    print(f"Scout Library attached to {_sclib_added} entries")
+except Exception as _e:
+    print(f"(Scout Library injection skipped due to error: {_e})")
+
+# ── SharePoint AI Library injection ──────────────────────────────────────
+try:
+    from _sharepoint_library import get_sp_library_for_entry as _get_splib
+    def _inject_splib(entries):
+        n = 0
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            eid = e.get('id') or ''
+            ename = e.get('name') or e.get('label') or ''
+            personas = e.get('personas') or []
+            pname = ''
+            if personas and isinstance(personas[0], dict):
+                pname = personas[0].get('name') or ''
+            cards = _get_splib(eid, entry_name=ename, persona_name=pname)
+            if cards:
+                e['sharepointLibrary'] = cards
+                n += 1
+        return n
+    _splib_added = _inject_splib(all_industries) + _inject_splib(all_departments)
+    print(f"SharePoint AI Library attached to {_splib_added} entries")
+except Exception as _e:
+    print(f"(SharePoint AI Library injection skipped due to error: {_e})")
 
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
