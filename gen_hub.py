@@ -6299,7 +6299,7 @@ function showItem(item,tab,preserveScroll){
         const metaSrcs=(nm.sources||[]).filter(s => s !== '/00_Copilot_Notebook_Demo_Guide.docx');
         const fallbackSrcs=(item.files||[]).filter(s => s !== '/00_Copilot_Notebook_Demo_Guide.docx');
         const finalSrcs= metaSrcs.length ? metaSrcs : fallbackSrcs;
-        const srcs=finalSrcs.map(s=>'<span class="notebook-source-pill">'+escapeHTML(s)+'</span>').join('');
+        const srcs=finalSrcs.map(s=>'<span class="notebook-source-pill">'+escapeHTML(String(s).replace(/^\/+/,''))+'</span>').join('');
         // Presenter-only Demo Guide callout
         const guideRef = nm.guide || '/00_Copilot_Notebook_Demo_Guide.docx';
         const guideName = String(guideRef).replace(/^\//,'');
@@ -6480,10 +6480,11 @@ function showItem(item,tab,preserveScroll){
   fEl.innerHTML='<div class="files-title">'+_uL('📁 Reference Files')+' <span style="font-size:11px;font-weight:400;color:var(--muted)">'+_uL('— click to download')+'</span></div>'+
     _zipBtn+
     item.files.map(f=>{
-      const ext=f.split('.').pop().toLowerCase();
-      return '<a class="file-item" href="files/'+encodeURIComponent(f)+'" download="'+f+'" target="_blank">'+
+      const fclean=String(f).replace(/^\/+/,'');
+      const ext=fclean.split('.').pop().toLowerCase();
+      return '<a class="file-item" href="files/'+encodeURIComponent(fclean)+'" download="'+fclean+'" target="_blank">'+
         '<span class="file-ext '+ext+'">'+ext.toUpperCase()+'</span>'+
-        '<span class="file-name">'+escapeHTML(f)+'</span>'+
+        '<span class="file-name">'+escapeHTML(fclean)+'</span>'+
         '<span style="margin-left:auto;font-size:11px;color:var(--blue);font-weight:600">'+_uL('⬇ Download')+'</span>'+
         '</a>';
     }).join('');
