@@ -6193,7 +6193,13 @@ function showItem(item,tab,preserveScroll){
   const pEl=document.getElementById('detail-prompts');
   pEl.innerHTML='';
   let _lastGroup=null;
-  visibleTools.forEach((tool)=>{
+  // Cowork / Notebook / Scout / SharePoint AI sub-tabs render the rich library
+  // card format only (picker tiles + per-UC sections with apps/files/prompts/
+  // expected/watch/tips). Skip the simpler tool-block render on these tabs so
+  // the page only shows the consistent library-card layout.
+  const _libOnlyTab = (_detailTab==='cowork' || _detailTab==='notebook' || _detailTab==='scout' || _detailTab==='sharepoint');
+  const _toolsToRender = _libOnlyTab ? [] : visibleTools;
+  _toolsToRender.forEach((tool)=>{
     const ti=item.prompts.indexOf(tool);
     const isBasic=tool.license&&(tool.license.toLowerCase().includes('basic')||tool.license.toLowerCase().includes('free'));
     const isFront=_isFrontier(tool.license);
