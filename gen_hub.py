@@ -5489,6 +5489,10 @@ function buildScoutLibSidebar(){
   }
   const total=document.getElementById('total-scoutlib-count');
   if(total) total.textContent=indEntries.length+deptEntries.length;
+  // Pre-populate home-grid hero counts so they're correct even before renderScoutLibGrid runs
+  const totalUC=document.getElementById('scoutlib-total-uc'); if(totalUC) totalUC.textContent=_libTotalUC('scoutLibrary');
+  const nIndPre=document.getElementById('scoutlib-mode-ind-n'); if(nIndPre) nIndPre.textContent=indEntries.length;
+  const nDeptPre=document.getElementById('scoutlib-mode-dept-n'); if(nDeptPre) nDeptPre.textContent=deptEntries.length;
   _scoutLibSidebarBuilt=true;
 }
 function renderScoutLibGrid(){
@@ -5594,6 +5598,10 @@ function buildSpLibSidebar(){
   }
   const total=document.getElementById('total-splib-count');
   if(total) total.textContent=indEntries.length+deptEntries.length;
+  // Pre-populate home-grid hero counts so they're correct even before renderSpLibGrid runs
+  const totalUC=document.getElementById('splib-total-uc'); if(totalUC) totalUC.textContent=_libTotalUC('sharepointLibrary');
+  const nIndPre=document.getElementById('splib-mode-ind-n'); if(nIndPre) nIndPre.textContent=indEntries.length;
+  const nDeptPre=document.getElementById('splib-mode-dept-n'); if(nDeptPre) nDeptPre.textContent=deptEntries.length;
   _spLibSidebarBuilt=true;
 }
 function renderSpLibGrid(){
