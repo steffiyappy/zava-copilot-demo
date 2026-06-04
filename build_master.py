@@ -1552,6 +1552,26 @@ except Exception as _e:
     print(f"(Copilot Create prompt injection skipped due to error: {_e})")
     _tb.print_exc()
 
+# ── Final pass: BM/BI dialect cleanup ─────────────────────────────────────────
+# Many *BM fields contain Bahasa Indonesia text (some are exact copies of *ID;
+# others have BI words mixed into BM authoring). Smaller mirror problem on *ID.
+# Apply word-level substitutions referenced against Kamus DBP (BM) and KBBI (BI).
+try:
+    from _lang_fix import walk_and_fix as _lang_walk_and_fix
+    _lf_total = 0
+    _lf_entries = 0
+    for _coll in (all_industries, all_departments):
+        for _entry in _coll:
+            _n = _lang_walk_and_fix(_entry)
+            if _n:
+                _lf_entries += 1
+                _lf_total += _n
+    print(f"BM/BI dialect cleanup: {_lf_total} field-fixes across {_lf_entries} entries")
+except Exception as _e:
+    import traceback as _tb
+    print(f"(BM/BI dialect cleanup skipped due to error: {_e})")
+    _tb.print_exc()
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')
