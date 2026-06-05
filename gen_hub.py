@@ -255,17 +255,17 @@ html{overflow-x:hidden}
   background:linear-gradient(135deg,#0F1C3F,#1F2D55 60%,#0078D4);
   border-radius:16px;padding:20px 24px;margin-bottom:24px;
   display:flex;align-items:center;gap:16px;overflow:hidden;position:relative;
-  height:140px;min-height:140px;max-height:140px;
+  height:auto;min-height:150px;
 }
 .whats-new::before{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:rgba(0,168,168,0.15);pointer-events:none;z-index:0}
 .wn-icon{font-size:28px;flex-shrink:0;position:relative;z-index:2}
-.wn-content{flex:1;min-width:0;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;overflow:hidden}
-.wn-tag{display:inline-block;background:rgba(0,168,168,0.2);border:1px solid rgba(0,168,168,0.4);border-radius:20px;padding:2px 10px;color:#00A8A8;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;align-self:flex-start;flex-shrink:0}
-.wn-title{color:#FFFFFF;font-size:15px;font-weight:700;margin-bottom:3px;flex-shrink:0;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
-.wn-desc{color:rgba(255,255,255,0.7);font-size:12px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1;min-height:0}
-.wn-meta{display:flex;align-items:center;gap:10px;margin-top:6px;flex-shrink:0}
-.wn-link{color:#7DD3FC;font-size:11px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
-.wn-link:hover{color:#FFFFFF;text-decoration:underline}
+.wn-content{flex:1;min-width:0;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:4px;overflow:visible}
+.wn-tag{display:inline-block;background:rgba(0,168,168,0.2);border:1px solid rgba(0,168,168,0.4);border-radius:20px;padding:2px 10px;color:#00A8A8;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:2px;align-self:flex-start;flex-shrink:0}
+.wn-title{color:#FFFFFF;font-size:15px;font-weight:700;margin-bottom:2px;flex-shrink:0;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.wn-desc{color:rgba(255,255,255,0.7);font-size:12px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex-shrink:0}
+.wn-meta{display:flex;align-items:center;gap:12px;margin-top:6px;flex-shrink:0;position:relative;z-index:6}
+.wn-link{color:#FFFFFF;background:rgba(125,211,252,0.18);border:1px solid rgba(125,211,252,0.45);font-size:11px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:14px;cursor:pointer;transition:all 0.18s;position:relative;z-index:6}
+.wn-link:hover{color:#FFFFFF;background:rgba(125,211,252,0.35);border-color:#7DD3FC;text-decoration:none}
 .wn-nav{display:flex;gap:6px;flex-shrink:0;position:relative;z-index:5}
 .wn-btn{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:6px 12px;color:rgba(255,255,255,0.85);cursor:pointer;font-size:16px;line-height:1;transition:all 0.2s;font-family:inherit;position:relative;z-index:5}
 .wn-btn:hover{background:rgba(255,255,255,0.25);color:#FFFFFF;transform:scale(1.05)}
@@ -5728,7 +5728,22 @@ function setWn(i){
   document.getElementById('wn-title').textContent=_xformVal(item.title||'','EN');
   document.getElementById('wn-desc').textContent=_xformVal(item.summary||item.desc||item.tip||'','EN');
   const linkEl=document.getElementById('wn-link');
-  if(item.link){linkEl.href=item.link;linkEl.style.display='inline-flex';}else{linkEl.style.display='none';}
+  if(item.link){
+    linkEl.href=item.link;
+    linkEl.style.display='inline-flex';
+    linkEl.setAttribute('aria-label','Read the blog post about '+(item.title||''));
+    linkEl.onclick=function(ev){
+      // Defensive fallback: explicit window.open in case target=_blank is blocked
+      // or a parent handler swallows the click. Allows middle-click + ctrl-click too.
+      if(ev && (ev.ctrlKey||ev.metaKey||ev.button===1)) return true;
+      ev.preventDefault();
+      window.open(item.link,'_blank','noopener');
+      return false;
+    };
+  } else {
+    linkEl.style.display='none';
+    linkEl.onclick=null;
+  }
   document.querySelectorAll('.wn-dot').forEach((d,j)=>{d.classList.toggle('active',j===i)});
 }
 function wnNav(dir){setWn((wnIdx+dir+data.whatsNew.length)%data.whatsNew.length)}
