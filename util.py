@@ -128,7 +128,14 @@ def _norm_agents(arr):
       knowledge     list of {'file': '/PATH.xlsx', 'note': 'short hint'}
       knowledgeNote optional callout under the knowledge list (e.g. test tip)
       queries       list of 3 short test-query strings for the Test step
+
+    Performs a deep copy so callers passing the same source list to both
+    agentsID and agentsBM (build_master.py uses `agentsBM=agents_id` to seed
+    BM with BI text for dialect-cleanup) end up with INDEPENDENT objects —
+    otherwise fix_bm and fix_bi mutate shared knowledge[i].note dicts and
+    one fixer overwrites the other (e.g. 'Bea Cukai' -> 'Bea Pajak' bleed).
     """
+    import copy
     if not arr:
         return []
     out = []
@@ -141,9 +148,9 @@ def _norm_agents(arr):
             'name':         a.get('name', ''),
             'desc':         a.get('desc', ''),
             'instructions': a.get('instructions', ''),
-            'knowledge':    a.get('knowledge', []) or [],
+            'knowledge':    copy.deepcopy(a.get('knowledge', []) or []),
             'knowledgeNote': a.get('knowledgeNote', ''),
-            'queries':      a.get('queries', []) or [],
+            'queries':      copy.deepcopy(a.get('queries', []) or []),
         })
     return out
 

@@ -127,6 +127,7 @@ _EXTRA_BI_TO_BM = [
     ('pengeluaran', 'perbelanjaan'), ('Pengeluaran', 'Perbelanjaan'),
     ('merilis', 'mengeluarkan'), ('Merilis', 'Mengeluarkan'),
     ('dirilis', 'dikeluarkan'), ('Dirilis', 'Dikeluarkan'),
+    ('rilis', 'siaran'), ('Rilis', 'Siaran'),
     # Schedule/plan
     ('jadwal', 'jadual'), ('Jadwal', 'Jadual'),
     ('jadwalnya', 'jadualnya'), ('Jadwalnya', 'Jadualnya'),

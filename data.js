@@ -1937,7 +1937,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/news/announcement/',
-                  note: 'BEI listed-co disclosures'
+                  note: 'IDX listed-co disclosures'
                 },
                 {
                   url: 'https://www.sgx.com/securities/company-announcements',
@@ -1946,7 +1946,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the 10 most material listed-co announcements on Bursa, BEI, and SGX in the last 7 days for sectors General (Any Role) operates in.',
+                'Buat daftar the 10 most material listed-co announcements on Bursa, IDX, and SGX in the last 7 days for sectors General (Any Role) operates in.',
                 'Filter by category (earnings / M&A / restructuring / dividend) — flag the 5 most relevant to General (Any Role) portfolio.',
                 'Susun draf a weekly cross-industry disclosure log with General (Any Role) CFO implications for each entry.'
               ]
@@ -2016,11 +2016,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
-                  note: 'BEI listed-co announcements'
+                  note: 'Bursa Malaysia listed-co announcements'
                 },
                 {
                   url: 'https://www.idx.co.id/en/news/announcement/',
-                  note: 'BEI listed-co disclosures'
+                  note: 'BURSA MALAYSIA listed-co disclosures'
                 },
                 {
                   url: 'https://www.sgx.com/securities/company-announcements',
@@ -2029,7 +2029,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the 10 most material listed-co announcements on Bursa, BEI, and SGX in the last 7 days for sectors General (Any Role) operates in.',
+                'Buat daftar the 10 most material listed-co announcements on Bursa, BURSA MALAYSIA, and SGX in the last 7 days for sectors General (Any Role) operates in.',
                 'Filter by category (earnings / M&A / restructuring / dividend) — flag the 5 most relevant to General (Any Role) portfolio.',
                 'Susun draf a weekly cross-industry disclosure log with General (Any Role) CFO implications for each entry.'
               ]
@@ -2043,11 +2043,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mswg.org.my/',
-                  note: 'MSWG Indonesia minority-shareholder watch'
+                  note: 'MSWG Malaysia minority-shareholder watch'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
-                  note: 'OJK Corporate Governance roadmap'
+                  note: 'SC Corporate Governance roadmap'
                 },
                 {
                   url: 'https://sias.org.sg/news/',
@@ -2056,7 +2056,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 30 days of MSWG, OJK CG, and SIAS publications relevant to listed conglomerates.',
+                'Ringkas the last 30 days of MSWG, SC CG, and SIAS publications relevant to listed conglomerates.',
                 'Buat daftar the governance red flags raised at AGMs of General (Any Role) peer groups.',
                 'Susun draf a monthly governance digest with proposed actions for the General (Any Role) CorpSec lead.'
               ]
@@ -2070,7 +2070,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.imf.org/en/Countries/MYS',
-                  note: 'IMF Indonesia & SEA economic outlook'
+                  note: 'IMF Malaysia & SEA economic outlook'
                 },
                 {
                   url: 'https://www.adb.org/news/regions/asean',
@@ -2083,7 +2083,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest IMF Article IV, ADB AMRO, and World Bank ASEAN updates for Indonesia, Indonesia, and Singapore.',
+                'Tarik the latest IMF Article IV, ADB AMRO, and World Bank ASEAN updates for Malaysia, Malaysia, and Singapore.',
                 'Identifikasi the macro themes most material to General (Any Role) divisional mix (banking / energy / consumer / property).',
                 'Susun draf a monthly macro brief with base / bear / bull scenarios for the General (Any Role) group strategy.'
               ]
@@ -4614,7 +4614,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/listed-companies/listed-stock-summary/',
-                  note: 'BEI listed banks summary'
+                  note: 'IDX listed banks summary'
                 },
                 {
                   url: 'https://www.sgx.com/research-education/sectors-stocks/financial-services',
@@ -4623,7 +4623,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Commercial Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -4666,11 +4666,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/banking-sector',
-                  note: 'BI banking supervision policy documents'
+                  note: 'BNM banking supervision policy documents'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
-                  note: 'OJK Perbankan Konvensional regulations'
+                  note: 'SC Perbankan Konvensional regulations'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/banking',
@@ -4679,8 +4679,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BI announcements that would impact Commercial Banking, with severity and required action.',
-                'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Commercial Banking would need to update controls.',
+                'Ringkas the 5 most recent BNM announcements that would impact Commercial Banking, with severity and required action.',
+                'Bandingkan SC and MAS guidance issued this month on AML/CFT — flag where Commercial Banking would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Commercial Banking Group Risk Committee using only the cited sources.'
               ]
             },
@@ -4697,7 +4697,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/listed-companies/listed-stock-summary/',
-                  note: 'BEI listed banks summary'
+                  note: 'BURSA MALAYSIA listed banks summary'
                 },
                 {
                   url: 'https://www.sgx.com/research-education/sectors-stocks/financial-services',
@@ -4706,7 +4706,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BURSA MALAYSIA with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Commercial Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -4720,11 +4720,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/monthly-highlights-statistics-msb',
-                  note: 'BI Monthly Statistical Bulletin (banking indicators)'
+                  note: 'BNM Monthly Statistical Bulletin (banking indicators)'
                 },
                 {
                   url: 'https://www.bi.go.id/id/publikasi/laporan/Default.aspx?id=SEKI',
-                  note: 'Bank Indonesia banking statistics (SEKI)'
+                  note: 'Bank Negara Malaysia banking statistics (SEKI)'
                 },
                 {
                   url: 'https://www.ram.com.my/insights/sector-research',
@@ -4733,7 +4733,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BNM and BNM monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Commercial Banking variable-rate book?',
                 'Susun draf an ALCO macro update for Commercial Banking with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -7273,7 +7273,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/products/index/?_idx=jii',
-                  note: 'BEI Jakarta Islamic Index (JII)'
+                  note: 'IDX Jakarta Islamic Index (JII)'
                 },
                 {
                   url: 'https://www.ifsb.org/published.php',
@@ -7282,7 +7282,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Islamic Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -7325,11 +7325,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/islamic-banking-takaful',
-                  note: 'BI Islamic banking & takaful policy'
+                  note: 'BNM Islamic banking & takaful policy'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/syariah/Pages/default.aspx',
-                  note: 'OJK Perbankan Syariah'
+                  note: 'SC Perbankan Syariah'
                 },
                 {
                   url: 'https://aaoifi.com/standard/?lang=en',
@@ -7338,8 +7338,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BI announcements that would impact Islamic Banking, with severity and required action.',
-                'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Islamic Banking would need to update controls.',
+                'Ringkas the 5 most recent BNM announcements that would impact Islamic Banking, with severity and required action.',
+                'Bandingkan SC and MAS guidance issued this month on AML/CFT — flag where Islamic Banking would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Islamic Banking Group Risk Committee using only the cited sources.'
               ]
             },
@@ -7352,11 +7352,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]',
-                  note: 'BEI Shariah-compliant securities'
+                  note: 'Bursa Malaysia Shariah-compliant securities'
                 },
                 {
                   url: 'https://www.idx.co.id/en/products/index/?_idx=jii',
-                  note: 'BEI Jakarta Islamic Index (JII)'
+                  note: 'BURSA MALAYSIA Jakarta Islamic Index (JII)'
                 },
                 {
                   url: 'https://www.ifsb.org/published.php',
@@ -7365,7 +7365,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BURSA MALAYSIA with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Islamic Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -7387,12 +7387,12 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.bnm.gov.my/-/monthly-highlights-statistics-isb',
-                  note: 'BI Islamic banking monthly statistics'
+                  note: 'BNM Islamic banking monthly statistics'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BNM and BNM monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Islamic Banking variable-rate book?',
                 'Susun draf an ALCO macro update for Islamic Banking with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -10054,7 +10054,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/listed-companies/ipo-pipeline/',
-                  note: 'BEI IPO pipeline'
+                  note: 'IDX IPO pipeline'
                 },
                 {
                   url: 'https://www.sgx.com/securities/securities-products/listings',
@@ -10063,7 +10063,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Investment Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -10106,11 +10106,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.sc.com.my/regulation/guidelines',
-                  note: 'Securities Commission Indonesia capital-markets guidelines'
+                  note: 'Securities Commission Malaysia capital-markets guidelines'
                 },
                 {
                   url: 'https://www.ojk.go.id/en/kanal/pasar-modal/regulasi/Default.aspx',
-                  note: 'OJK Pasar Modal regulations'
+                  note: 'SC Pasar Modal regulations'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/capital-markets',
@@ -10119,8 +10119,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BI announcements that would impact Investment Banking, with severity and required action.',
-                'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Investment Banking would need to update controls.',
+                'Ringkas the 5 most recent BNM announcements that would impact Investment Banking, with severity and required action.',
+                'Bandingkan SC and MAS guidance issued this month on AML/CFT — flag where Investment Banking would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Investment Banking Group Risk Committee using only the cited sources.'
               ]
             },
@@ -10133,11 +10133,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/equities_prices',
-                  note: 'BEI capital-markets data'
+                  note: 'Bursa Malaysia capital-markets data'
                 },
                 {
                   url: 'https://www.idx.co.id/en/listed-companies/ipo-pipeline/',
-                  note: 'BEI IPO pipeline'
+                  note: 'BURSA MALAYSIA IPO pipeline'
                 },
                 {
                   url: 'https://www.sgx.com/securities/securities-products/listings',
@@ -10146,7 +10146,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BURSA MALAYSIA with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Investment Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -10173,7 +10173,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BNM and BNM monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Investment Banking variable-rate book?',
                 'Susun draf an ALCO macro update for Investment Banking with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -12891,11 +12891,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/insurance-takaful',
-                  note: 'BI Insurance & Takaful policy documents'
+                  note: 'BNM Insurance & Takaful policy documents'
                 },
                 {
                   url: 'https://www.ojk.go.id/en/kanal/iknb/Pages/Insurance.aspx',
-                  note: 'OJK IKNB Insurance regulations'
+                  note: 'SC IKNB Insurance regulations'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/insurance',
@@ -12904,8 +12904,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar BI and OJK insurance circulars issued in the last 90 days with implications for General Insurance.',
-                'Bandingkan RBC and risk-based capital guidance from BI vs OJK — flag the deltas for General Insurance.',
+                'Buat daftar BNM and SC insurance circulars issued in the last 90 days with implications for General Insurance.',
+                'Bandingkan RBC and risk-based capital guidance from BNM vs SC — flag the deltas for General Insurance.',
                 'Susun draf a weekly compliance digest for General Insurance legal & risk team using only cited sources.'
               ]
             },
@@ -12922,7 +12922,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://aaui.or.id/publikasi/',
-                  note: 'AAUI Indonesia general-insurance association'
+                  note: 'AAUI Malaysia general-insurance association'
                 },
                 {
                   url: 'https://www.gia.org.sg/news-publications',
@@ -12931,7 +12931,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 14 days of weather and seismic alerts from Met Indonesia + BMKG + AHA Centre.',
+                'Ringkas the last 14 days of weather and seismic alerts from Met Malaysia + BMKG + AHA Centre.',
                 'Mana events overlap General Insurance concentration zones? Buat daftar the top 5 by potential gross-loss exposure.',
                 'Susun draf a rolling 14-day catastrophe exposure note for the General Insurance reinsurance team.'
               ]
@@ -15389,11 +15389,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/risk-based-capital-framework-for-insurers',
-                  note: 'BI RBC framework for insurers'
+                  note: 'BNM RBC framework for insurers'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/data-dan-statistik/asuransi/Default.aspx',
-                  note: 'OJK IKNB life-insurance statistics'
+                  note: 'SC IKNB life-insurance statistics'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/insurance/notices',
@@ -15402,8 +15402,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar BI and OJK insurance circulars issued in the last 90 days with implications for Life Insurance.',
-                'Bandingkan RBC and risk-based capital guidance from BI vs OJK — flag the deltas for Life Insurance.',
+                'Buat daftar BNM and SC insurance circulars issued in the last 90 days with implications for Life Insurance.',
+                'Bandingkan RBC and risk-based capital guidance from BNM vs SC — flag the deltas for Life Insurance.',
                 'Susun draf a weekly compliance digest for Life Insurance legal & risk team using only cited sources.'
               ]
             },
@@ -15416,11 +15416,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.liam.org.my/publications/',
-                  note: 'LIAM Life Insurance Association of Indonesia'
+                  note: 'LIAM Life Insurance Association of Malaysia'
                 },
                 {
                   url: 'https://aaji.or.id/publikasi/',
-                  note: 'AAJI Indonesia life-insurance association'
+                  note: 'AAJI Malaysia life-insurance association'
                 },
                 {
                   url: 'https://www.lia.org.sg/industry/industry-news/',
@@ -15429,7 +15429,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 14 days of weather and seismic alerts from Met Indonesia + BMKG + AHA Centre.',
+                'Ringkas the last 14 days of weather and seismic alerts from Met Malaysia + BMKG + AHA Centre.',
                 'Mana events overlap Life Insurance concentration zones? Buat daftar the top 5 by potential gross-loss exposure.',
                 'Susun draf a rolling 14-day catastrophe exposure note for the Life Insurance reinsurance team.'
               ]
@@ -17887,11 +17887,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/operational-framework-for-takaful',
-                  note: 'BI Operational Framework for Takaful'
+                  note: 'BNM Operational Framework for Takaful'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/syariah/data-dan-statistik/asuransi-syariah/Default.aspx',
-                  note: 'OJK Asuransi Syariah statistics'
+                  note: 'SC Asuransi Syariah statistics'
                 },
                 {
                   url: 'https://malaysiantakaful.com.my/publications/',
@@ -17900,8 +17900,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar BI and OJK insurance circulars issued in the last 90 days with implications for Takaful.',
-                'Bandingkan RBC and risk-based capital guidance from BI vs OJK — flag the deltas for Takaful.',
+                'Buat daftar BNM and SC insurance circulars issued in the last 90 days with implications for Takaful.',
+                'Bandingkan RBC and risk-based capital guidance from BNM vs SC — flag the deltas for Takaful.',
                 'Susun draf a weekly compliance digest for Takaful legal & risk team using only cited sources.'
               ]
             },
@@ -17927,7 +17927,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 14 days of weather and seismic alerts from Met Indonesia + BMKG + AHA Centre.',
+                'Ringkas the last 14 days of weather and seismic alerts from Met Malaysia + BMKG + AHA Centre.',
                 'Mana events overlap Takaful concentration zones? Buat daftar the top 5 by potential gross-loss exposure.',
                 'Susun draf a rolling 14-day catastrophe exposure note for the Takaful reinsurance team.'
               ]
@@ -17949,7 +17949,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.bnm.gov.my/-/monthly-highlights-statistics-isb',
-                  note: 'BI Islamic finance monthly statistics'
+                  note: 'BNM Islamic finance monthly statistics'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -20420,11 +20420,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.moh.gov.my/index.php/database_stores/store_view/17',
-                  note: 'MOH Indonesia private healthcare establishments'
+                  note: 'MOH Malaysia private healthcare establishments'
                 },
                 {
                   url: 'https://yankes.kemkes.go.id/regulasi',
-                  note: 'Kemenkes Indonesia health-services regulations'
+                  note: 'Kemenkes Malaysia health-services regulations'
                 },
                 {
                   url: 'https://www.moh.gov.sg/policies-and-legislation/healthcare-services-act',
@@ -20447,7 +20447,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.aphm.org.my/news-events/',
-                  note: 'APHM Association of Private Hospitals Indonesia news'
+                  note: 'APHM Association of Private Hospitals Malaysia news'
                 },
                 {
                   url: 'https://persi.or.id/berita/',
@@ -22925,11 +22925,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.npra.gov.my/index.php/en/announcement.html',
-                  note: 'NPRA Indonesia drug-registration announcements'
+                  note: 'NPRA Malaysia drug-registration announcements'
                 },
                 {
                   url: 'https://www.pom.go.id/new/index.php/view/berita',
-                  note: 'BPOM Indonesia drug-control announcements'
+                  note: 'BPOM Malaysia drug-control announcements'
                 },
                 {
                   url: 'https://www.hsa.gov.sg/announcements',
@@ -22952,11 +22952,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://phama.org.my/',
-                  note: 'PhAMA Pharmaceutical Association of Indonesia'
+                  note: 'PhAMA Pharmaceutical Association of Malaysia'
                 },
                 {
                   url: 'https://www.gpfarmasi.org/',
-                  note: 'GP Farmasi Indonesia association'
+                  note: 'GP Farmasi Malaysia association'
                 },
                 {
                   url: 'https://www.sapi.org.sg/',
@@ -25404,7 +25404,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Oil & Gas Upstream.',
+                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Oil & Gas Upstream.',
                 'Map ISSB IFRS S1/S2 clauses to Oil & Gas Upstream current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Oil & Gas Upstream sustainability committee.'
               ]
@@ -25420,15 +25420,15 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.petronas.com/our-business/upstream',
-                  note: 'Petronas upstream Indonesia portal'
+                  note: 'Petronas upstream Malaysia portal'
                 },
                 {
                   url: 'https://www.skkmigas.go.id/en/news',
-                  note: 'SKK Migas Indonesia upstream news & data'
+                  note: 'SKK Migas Malaysia upstream news & data'
                 },
                 {
                   url: 'https://www.dosh.gov.my/index.php/legislation/petroleum-act',
-                  note: 'DOSH Indonesia petroleum-safety legislation'
+                  note: 'DOSH Malaysia petroleum-safety legislation'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -25487,7 +25487,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Oil & Gas Upstream.',
+                'Ringkas the latest Bursa + BURSA MALAYSIA ESG disclosure requirements relevant to Oil & Gas Upstream.',
                 'Map ISSB IFRS S1/S2 clauses to Oil & Gas Upstream current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Oil & Gas Upstream sustainability committee.'
               ]
@@ -27923,7 +27923,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Oil & Gas Downstream.',
+                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Oil & Gas Downstream.',
                 'Map ISSB IFRS S1/S2 clauses to Oil & Gas Downstream current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Oil & Gas Downstream sustainability committee.'
               ]
@@ -27939,11 +27939,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bpdp.or.id/en/regulations',
-                  note: 'BPDPKS Indonesia palm-oil & biofuel subsidies'
+                  note: 'BPDPKS Malaysia palm-oil & biofuel subsidies'
                 },
                 {
                   url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
-                  note: 'KPDN Indonesia downstream pricing announcements'
+                  note: 'KPDN Malaysia downstream pricing announcements'
                 },
                 {
                   url: 'https://www.ema.gov.sg/regulations-licences-publications.aspx',
@@ -28006,7 +28006,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Oil & Gas Downstream.',
+                'Ringkas the latest Bursa + BURSA MALAYSIA ESG disclosure requirements relevant to Oil & Gas Downstream.',
                 'Map ISSB IFRS S1/S2 clauses to Oil & Gas Downstream current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Oil & Gas Downstream sustainability committee.'
               ]
@@ -30467,7 +30467,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Renewable Energy.',
+                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Renewable Energy.',
                 'Map ISSB IFRS S1/S2 clauses to Renewable Energy current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Renewable Energy sustainability committee.'
               ]
@@ -30483,11 +30483,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.seda.gov.my/regulatory/',
-                  note: 'SEDA Indonesia renewable-energy regulations'
+                  note: 'SEDA Malaysia renewable-energy regulations'
                 },
                 {
                   url: 'https://www.esdm.go.id/en/regulations',
-                  note: 'KemESDM Indonesia EBTKE renewable regulations'
+                  note: 'KemESDM Malaysia EBTKE renewable regulations'
                 },
                 {
                   url: 'https://www.ema.gov.sg/SolarUploadingPlatform.aspx',
@@ -30510,11 +30510,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.tnb.com.my/sustainability',
-                  note: 'TNB Indonesia renewables portfolio'
+                  note: 'TNB Malaysia renewables portfolio'
                 },
                 {
                   url: 'https://web.pln.co.id/cms/sustainability/',
-                  note: 'PLN Indonesia ESG & renewables'
+                  note: 'PLN Malaysia ESG & renewables'
                 },
                 {
                   url: 'https://www.sembcorp.com/en/sustainability',
@@ -30550,7 +30550,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Renewable Energy.',
+                'Ringkas the latest Bursa + BURSA MALAYSIA ESG disclosure requirements relevant to Renewable Energy.',
                 'Map ISSB IFRS S1/S2 clauses to Renewable Energy current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Renewable Energy sustainability committee.'
               ]
@@ -33014,11 +33014,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.dosh.gov.my/index.php/legislation',
-                  note: 'DOSH Indonesia OSH Act regulations'
+                  note: 'DOSH Malaysia OSH Act regulations'
                 },
                 {
                   url: 'https://kemenperin.go.id/regulasi',
-                  note: 'Kemenperin Indonesia manufacturing regulations'
+                  note: 'Kemenperin Malaysia manufacturing regulations'
                 },
                 {
                   url: 'https://www.mom.gov.sg/workplace-safety-and-health',
@@ -33041,11 +33041,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.fmm.org.my/news-events.aspx',
-                  note: 'FMM Federation of Manufacturers Indonesia news'
+                  note: 'FMM Federation of Manufacturers Malaysia news'
                 },
                 {
                   url: 'https://www.kadin.id/news/',
-                  note: 'Kadin Indonesia chamber news'
+                  note: 'Kadin Malaysia chamber news'
                 },
                 {
                   url: 'https://www.smfederation.org.sg/news/',
@@ -35678,11 +35678,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mpob.gov.my/regulatory/policies-and-rulings',
-                  note: 'MPOB Indonesia palm-oil policies'
+                  note: 'MPOB Malaysia palm-oil policies'
                 },
                 {
                   url: 'https://www.bpdp.or.id/en/regulations',
-                  note: 'BPDPKS Indonesia palm-oil board regulations'
+                  note: 'BPDPKS Malaysia palm-oil board regulations'
                 },
                 {
                   url: 'https://rspo.org/resources/standards/',
@@ -35746,7 +35746,7 @@ window.HUB_DATA = {
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
                 'Ringkas the latest ENSO and IOD outlooks from IRI and BMKG.',
-                'Buat daftar Met Indonesia and BMKG seasonal outlooks affecting Plantation & Agribusiness estates.',
+                'Buat daftar Met Malaysia and BMKG seasonal outlooks affecting Plantation & Agribusiness estates.',
                 'Susun draf a monthly weather-risk brief tagged by estate region for the Plantation & Agribusiness ops team.'
               ]
             }
@@ -38327,7 +38327,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://outsourcingmalaysia.com.my/',
-                  note: 'Outsourcing Indonesia industry association'
+                  note: 'Outsourcing Malaysia industry association'
                 },
                 {
                   url: 'https://www.iaoa.id/',
@@ -38394,7 +38394,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to BPO Services.',
+                'Tarik the latest DataReportal Malaysia and Malaysia digital snapshots relevant to BPO Services.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the BPO Services digital strategy lead.'
               ]
@@ -40803,11 +40803,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mcmc.gov.my/en/legal/policies',
-                  note: 'MCMC Indonesia telco policies'
+                  note: 'MCMC Malaysia telco policies'
                 },
                 {
                   url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
-                  note: 'Kominfo Indonesia telco regulations'
+                  note: 'Kominfo Malaysia telco regulations'
                 },
                 {
                   url: 'https://www.imda.gov.sg/regulations-and-licensing-listing/telecommunications',
@@ -40870,7 +40870,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to Telco.',
+                'Tarik the latest DataReportal Malaysia and Malaysia digital snapshots relevant to Telco.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the Telco digital strategy lead.'
               ]
@@ -43310,7 +43310,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/id/perusahaan-tercatat/news/',
-                  note: 'BEI BUMN listed-companies'
+                  note: 'IDX BUMN listed-companies'
                 },
                 {
                   url: 'https://www.sgx.com/securities/company-announcements',
@@ -43319,7 +43319,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the 10 most material conglomerate disclosures on Bursa, BEI, and SGX in the last 7 days.',
+                'Buat daftar the 10 most material conglomerate disclosures on Bursa, IDX, and SGX in the last 7 days.',
                 'Identifikasi the peer disclosures most relevant to Diversified Conglomerate divisions.',
                 'Susun draf a weekly disclosure log with peer implications for Diversified Conglomerate.'
               ]
@@ -43362,11 +43362,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mof.gov.my/portal/en/announcement/news',
-                  note: 'MOF Inc Indonesia GLC announcements'
+                  note: 'MOF Inc Malaysia GLC announcements'
                 },
                 {
                   url: 'https://www.bumn.go.id/page/berita/all',
-                  note: 'Kementerian BUMN Indonesia state-owned news'
+                  note: 'Kementerian BUMN Malaysia state-owned news'
                 },
                 {
                   url: 'https://www.mof.gov.sg/news-publications',
@@ -43393,7 +43393,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/id/perusahaan-tercatat/news/',
-                  note: 'BEI BUMN listed-companies'
+                  note: 'BURSA MALAYSIA BUMN listed-companies'
                 },
                 {
                   url: 'https://www.sgx.com/securities/company-announcements',
@@ -43402,7 +43402,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the 10 most material conglomerate disclosures on Bursa, BEI, and SGX in the last 7 days.',
+                'Buat daftar the 10 most material conglomerate disclosures on Bursa, BURSA MALAYSIA, and SGX in the last 7 days.',
                 'Identifikasi the peer disclosures most relevant to Diversified Conglomerate divisions.',
                 'Susun draf a weekly disclosure log with peer implications for Diversified Conglomerate.'
               ]
@@ -44868,7 +44868,7 @@ window.HUB_DATA = {
           promptsBM: [
             {
               instr: '',
-              prompt: '🔍 MODE KRITIK — Saya Kepala Kepatuhan penerbit e-money di Asia Tenggara yang diatur SC dan Bank Negara Malaysia. Teliti bagaimana fintech SEA (Malaysia, Malaysia, Filipina, Vietnam, Thailand) menangani lonjakan kerugian fraud lebih dari 40% dalam satu kuartal antara 2022-2025, dengan fokus pada kasus di mana regulator menunda perpanjangan lesen atau menerapkan pengawasan diperketat. Untuk setiap kasus, sebutkan: peristiwa pemicu, tindakan regulator, rencana remediasi, masa pemulihan, dan apa yang salah dalam respons awal syarikat. Kemudian kritisi playbook standar "membekukan merchant baru + menaikkan tingkat KYC" — di mana playbook ini gagal? Sebutkan sumber primer (rilis SC, BI, BSP, BNM, SBV, BOT, laporan bank sentral, konferensi pers regulator).'
+              prompt: '🔍 MODE KRITIK — Saya Kepala Kepatuhan penerbit e-money di Asia Tenggara yang diatur SC dan Bank Negara Malaysia. Teliti bagaimana fintech SEA (Malaysia, Malaysia, Filipina, Vietnam, Thailand) menangani lonjakan kerugian fraud lebih dari 40% dalam satu kuartal antara 2022-2025, dengan fokus pada kasus di mana regulator menunda perpanjangan lesen atau menerapkan pengawasan diperketat. Untuk setiap kasus, sebutkan: peristiwa pemicu, tindakan regulator, rencana remediasi, masa pemulihan, dan apa yang salah dalam respons awal syarikat. Kemudian kritisi playbook standar "membekukan merchant baru + menaikkan tingkat KYC" — di mana playbook ini gagal? Sebutkan sumber primer (siaran SC, BI, BSP, BNM, SBV, BOT, laporan bank sentral, konferensi pers regulator).'
             },
             {
               instr: '',
@@ -46004,7 +46004,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Fintech Payments CFO benchmarking against the 3 closest comparables.'
               ]
@@ -46047,11 +46047,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/digital-banks-electronic-money',
-                  note: 'BI Electronic Money issuers list'
+                  note: 'BNM Electronic Money issuers list'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/Inovasi-Keuangan-Digital.aspx',
-                  note: 'OJK Inovasi Keuangan Digital sandbox'
+                  note: 'SC Inovasi Kewangan Digital sandbox'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/payments/payment-services-act',
@@ -46060,8 +46060,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BI announcements that would impact Fintech Payments, with severity and required action.',
-                'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Fintech Payments would need to update controls.',
+                'Ringkas the 5 most recent BNM announcements that would impact Fintech Payments, with severity and required action.',
+                'Bandingkan SC and MAS guidance issued this month on AML/CFT — flag where Fintech Payments would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Fintech Payments Group Risk Committee using only the cited sources.'
               ]
             },
@@ -46074,7 +46074,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.fintechnews.my/',
-                  note: 'Fintech News Indonesia'
+                  note: 'Fintech News Malaysia'
                 },
                 {
                   url: 'https://aftech.or.id/',
@@ -46087,7 +46087,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BURSA MALAYSIA with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Fintech Payments CFO benchmarking against the 3 closest comparables.'
               ]
@@ -46114,7 +46114,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BNM and BNM monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Fintech Payments variable-rate book?',
                 'Susun draf an ALCO macro update for Fintech Payments with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -48562,11 +48562,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.pmo.gov.my/2019/07/announcement/',
-                  note: 'PMO Indonesia announcements'
+                  note: 'PMO Malaysia announcements'
                 },
                 {
                   url: 'https://setkab.go.id/category/berita/',
-                  note: 'Sekretariat Kabinet Indonesia news'
+                  note: 'Sekretariat Kabinet Malaysia news'
                 },
                 {
                   url: 'https://www.pmo.gov.sg/Newsroom',
@@ -48589,11 +48589,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://data.worldbank.org/country/MY',
-                  note: 'World Bank Indonesia open data'
+                  note: 'World Bank Malaysia open data'
                 },
                 {
                   url: 'https://www.imf.org/en/Countries/IDN',
-                  note: 'IMF Indonesia country reports'
+                  note: 'IMF Malaysia country reports'
                 },
                 {
                   url: 'https://www.adb.org/publications/asia-bond-monitor',
@@ -48616,11 +48616,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.dosm.gov.my/portal-main/release-content/',
-                  note: 'DOSM Indonesia statistical releases'
+                  note: 'DOSM Malaysia statistical releases'
                 },
                 {
                   url: 'https://www.bps.go.id/pressrelease.html',
-                  note: 'BPS Indonesia press releases'
+                  note: 'BPS Malaysia press releases'
                 },
                 {
                   url: 'https://www.singstat.gov.sg/whats-new/news',
@@ -51012,7 +51012,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/products/structured-warrant-and-others/dire/',
-                  note: 'BEI KIK-DIRE Indonesian REITs'
+                  note: 'IDX KIK-DIRE Indonesian REITs'
                 },
                 {
                   url: 'https://www.sgx.com/securities/reits',
@@ -51064,11 +51064,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.sc.com.my/regulation/guidelines/reits',
-                  note: 'OJK Indonesia REIT Guidelines'
+                  note: 'SC Malaysia REIT Guidelines'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/pasar-modal/Pages/dire.aspx',
-                  note: 'OJK DIRE (Indonesian REIT) regulations'
+                  note: 'SC DIRE (Indonesian REIT) regulations'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/codes/code-on-collective-investment-schemes',
@@ -51077,7 +51077,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 6 months of arrival statistics from Tourism Indonesia + Kemenparekraf + STB.',
+                'Ringkas the last 6 months of arrival statistics from Tourism Malaysia + Kemenparekraf + STB.',
                 'Identifikasi the top 5 origin markets growing fastest for Property & REIT catchment.',
                 'Susun draf a monthly demand pulse with origin-market mix for the Property & REIT commercial team.'
               ]
@@ -51095,7 +51095,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/products/structured-warrant-and-others/dire/',
-                  note: 'BEI KIK-DIRE Indonesian REITs'
+                  note: 'BURSA MALAYSIA KIK-DIRE Indonesian REITs'
                 },
                 {
                   url: 'https://www.sgx.com/securities/reits',
@@ -53545,7 +53545,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.beacukai.go.id/',
-                  note: 'Bea Pajak Indonesia customs'
+                  note: 'Bea Cukai Malaysia customs'
                 },
                 {
                   url: 'https://www.customs.gov.sg/news-and-media',
@@ -53568,7 +53568,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://fmff.com.my/news-and-events/',
-                  note: 'FMFF Indonesia Federation of Freight Forwarders'
+                  note: 'FMFF Malaysia Federation of Freight Forwarders'
                 },
                 {
                   url: 'https://alfi.or.id/news',
@@ -56027,7 +56027,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Coal Mining.',
+                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Coal Mining.',
                 'Map ISSB IFRS S1/S2 clauses to Coal Mining current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Coal Mining sustainability committee.'
               ]
@@ -56043,11 +56043,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.minerals.gov.my/',
-                  note: 'JMG Indonesia mineral/coal regulator'
+                  note: 'JMG Malaysia mineral/coal regulator'
                 },
                 {
                   url: 'https://www.minerba.esdm.go.id/',
-                  note: 'KemESDM Indonesia mineral & coal directorate'
+                  note: 'KemESDM Malaysia mineral & coal directorate'
                 },
                 {
                   url: 'https://www.icmm.com/en-gb/about-us',
@@ -56070,7 +56070,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://apbi-icma.org/news/',
-                  note: 'APBI Indonesia coal-producers association'
+                  note: 'APBI Malaysia coal-producers association'
                 },
                 {
                   url: 'https://www.malaysiaminerals.com/',
@@ -56110,7 +56110,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Coal Mining.',
+                'Ringkas the latest Bursa + BURSA MALAYSIA ESG disclosure requirements relevant to Coal Mining.',
                 'Map ISSB IFRS S1/S2 clauses to Coal Mining current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Coal Mining sustainability committee.'
               ]
@@ -58511,11 +58511,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.motac.gov.my/en/announcements/news',
-                  note: 'MOTAC Indonesia tourism & culture announcements'
+                  note: 'MOTAC Malaysia tourism & culture announcements'
                 },
                 {
                   url: 'https://www.kemenparekraf.go.id/berita',
-                  note: 'Kemenparekraf Indonesia tourism & creative news'
+                  note: 'Kemenparekraf Malaysia tourism & creative news'
                 },
                 {
                   url: 'https://www.stb.gov.sg/content/stb/en/about-stb/newsroom.html',
@@ -58524,7 +58524,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 6 months of arrival statistics from Tourism Indonesia + Kemenparekraf + STB.',
+                'Ringkas the last 6 months of arrival statistics from Tourism Malaysia + Kemenparekraf + STB.',
                 'Identifikasi the top 5 origin markets growing fastest for Hotel & Resort catchment.',
                 'Susun draf a monthly demand pulse with origin-market mix for the Hotel & Resort commercial team.'
               ]
@@ -58542,7 +58542,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://phri.or.id/news',
-                  note: 'PHRI Indonesia hotel & restaurant association'
+                  note: 'PHRI Malaysia hotel & restaurant association'
                 },
                 {
                   url: 'https://www.sha.org.sg/news',
@@ -60985,7 +60985,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.cidb.gov.my/en/announcement/',
-                  note: 'CIDB Indonesia announcements'
+                  note: 'CIDB Malaysia announcements'
                 },
                 {
                   url: 'https://www.pu.go.id/halaman/peraturan-jasa-konstruksi',
@@ -61012,11 +61012,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://mbam.org.my/news/',
-                  note: 'Master Builders Association Indonesia news'
+                  note: 'Master Builders Association Malaysia news'
                 },
                 {
                   url: 'https://aki.or.id/berita-aki/',
-                  note: 'AKI Indonesia construction association news'
+                  note: 'AKI Malaysia construction association news'
                 },
                 {
                   url: 'https://www.scal.com.sg/news/',
@@ -63476,11 +63476,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mavcom.my/en/industry/airport-infrastructure/',
-                  note: 'MAVCOM Indonesia airport regulation'
+                  note: 'MAVCOM Malaysia airport regulation'
                 },
                 {
                   url: 'https://hubud.dephub.go.id/',
-                  note: 'Ditjen Perhubungan Udara Indonesia'
+                  note: 'Ditjen Perhubungan Udara Malaysia'
                 },
                 {
                   url: 'https://www.caas.gov.sg/who-we-are/newsroom/',
@@ -63503,7 +63503,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.malaysiaairports.com.my/media-centre',
-                  note: 'Indonesia Airports press releases'
+                  note: 'Malaysia Airports press releases'
                 },
                 {
                   url: 'https://ap2.co.id/news/',
@@ -65955,11 +65955,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
-                  note: 'KPDN Indonesia consumer-affairs announcements'
+                  note: 'KPDN Malaysia consumer-affairs announcements'
                 },
                 {
                   url: 'https://www.kemendag.go.id/',
-                  note: 'Kemendag Indonesia trade ministry'
+                  note: 'Kemendag Malaysia trade ministry'
                 },
                 {
                   url: 'https://www.enterprisesg.gov.sg/news',
@@ -65982,7 +65982,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mra.com.my/',
-                  note: 'MRA Indonesia Retailers Association'
+                  note: 'MRA Malaysia Retailers Association'
                 },
                 {
                   url: 'https://aprindo.id/news/',
@@ -68430,11 +68430,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mcmc.gov.my/en/legal/codes',
-                  note: 'MCMC Indonesia content codes'
+                  note: 'MCMC Malaysia content codes'
                 },
                 {
                   url: 'https://www.kominfo.go.id/',
-                  note: 'Kominfo Indonesia broadcast regulations'
+                  note: 'Kominfo Malaysia broadcast regulations'
                 },
                 {
                   url: 'https://www.imda.gov.sg/regulations-and-licensing-listing/content-standards-and-classification',
@@ -68457,11 +68457,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.atvm.org.my/',
-                  note: 'ATVM Indonesia free-to-air broadcasters'
+                  note: 'ATVM Malaysia free-to-air broadcasters'
                 },
                 {
                   url: 'https://atvsi.or.id/',
-                  note: 'ATVSI Indonesia private broadcasters'
+                  note: 'ATVSI Malaysia private broadcasters'
                 },
                 {
                   url: 'https://asec.sg/',
@@ -68497,7 +68497,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to Media - Entertainment.',
+                'Tarik the latest DataReportal Malaysia and Malaysia digital snapshots relevant to Media - Entertainment.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the Media - Entertainment digital strategy lead.'
               ]
@@ -70903,11 +70903,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.pnb.com.my/announcement.html',
-                  note: 'PNB Indonesia announcements'
+                  note: 'PNB Malaysia announcements'
                 },
                 {
                   url: 'https://www.ina.go.id/news',
-                  note: 'INA Indonesia Investment Authority news'
+                  note: 'INA Malaysia Investment Authority news'
                 },
                 {
                   url: 'https://www.khazanah.com.my/news-press-releases/',
@@ -73537,7 +73537,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Financial Regulator CFO benchmarking against the 3 closest comparables.'
               ]
@@ -73593,8 +73593,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BI announcements that would impact Financial Regulator, with severity and required action.',
-                'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Financial Regulator would need to update controls.',
+                'Ringkas the 5 most recent BNM announcements that would impact Financial Regulator, with severity and required action.',
+                'Bandingkan SC and MAS guidance issued this month on AML/CFT — flag where Financial Regulator would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Financial Regulator Group Risk Committee using only the cited sources.'
               ]
             },
@@ -73611,7 +73611,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.ojk.go.id/en/regulasi/Pages/default.aspx',
-                  note: 'OJK regulations portal'
+                  note: 'SC regulations portal'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/notices',
@@ -73620,7 +73620,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BURSA MALAYSIA with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Financial Regulator CFO benchmarking against the 3 closest comparables.'
               ]
@@ -73634,20 +73634,20 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.worldbank.org/en/country/malaysia/overview',
-                  note: 'World Bank Indonesia country reports'
+                  note: 'World Bank Malaysia country reports'
                 },
                 {
                   url: 'https://www.imf.org/en/Countries/IDN',
-                  note: 'IMF Indonesia Article IV consultations'
+                  note: 'IMF Malaysia Article IV consultations'
                 },
                 {
                   url: 'https://www.oecd.org/economy/surveys/',
-                  note: 'OECD Indonesia economic surveys'
+                  note: 'OECD Malaysia economic surveys'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BNM and BNM monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Financial Regulator variable-rate book?',
                 'Susun draf an ALCO macro update for Financial Regulator with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -76200,11 +76200,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.moh.gov.my/index.php/pages/view/2179',
-                  note: 'MOH Indonesia Food Safety & Quality Division'
+                  note: 'MOH Malaysia Food Safety & Quality Division'
                 },
                 {
                   url: 'https://www.pom.go.id/new/index.php/view/peraturan',
-                  note: 'BPOM Indonesia food regulations'
+                  note: 'BPOM Malaysia food regulations'
                 },
                 {
                   url: 'https://www.sfa.gov.sg/food-information/regulations',
@@ -76231,7 +76231,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://gapmmi.id/page/news',
-                  note: 'GAPMMI Indonesia food & beverage association'
+                  note: 'GAPMMI Malaysia food & beverage association'
                 },
                 {
                   url: 'https://smfederation.org.sg/group/sma/',
@@ -78521,7 +78521,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.lgm.gov.my/',
-                  note: 'Lembaga Getah Indonesia rubber industry regulator'
+                  note: 'Lembaga Getah Malaysia rubber industry regulator'
                 },
                 {
                   url: 'https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies/medical-gloves',
@@ -80758,7 +80758,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Mortgage Finance CFO benchmarking against the 3 closest comparables.'
               ]
@@ -80801,11 +80801,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/property-market',
-                  note: 'BI property-finance policy & TDSR rules'
+                  note: 'BNM property-finance policy & TDSR rules'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
-                  note: 'OJK KPR (mortgage) regulations'
+                  note: 'SC KPR (mortgage) regulations'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/Notices/Notice-632',
@@ -80814,8 +80814,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BI announcements that would impact Mortgage Finance, with severity and required action.',
-                'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Mortgage Finance would need to update controls.',
+                'Ringkas the 5 most recent BNM announcements that would impact Mortgage Finance, with severity and required action.',
+                'Bandingkan SC and MAS guidance issued this month on AML/CFT — flag where Mortgage Finance would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Mortgage Finance Group Risk Committee using only the cited sources.'
               ]
             },
@@ -80841,7 +80841,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BURSA MALAYSIA with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Mortgage Finance CFO benchmarking against the 3 closest comparables.'
               ]
@@ -80859,7 +80859,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.bps.go.id/subject/14/perumahan.html',
-                  note: 'BPS Indonesia housing & property statistics'
+                  note: 'BPS Malaysia housing & property statistics'
                 },
                 {
                   url: 'https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases',
@@ -80868,7 +80868,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BNM and BNM monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Mortgage Finance variable-rate book?',
                 'Susun draf an ALCO macro update for Mortgage Finance with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -83081,7 +83081,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/transfer-dana.aspx',
-                  note: 'OJK Penganjur Transfer Dana'
+                  note: 'OJK Penyelenggara Transfer Dana'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/payments',
@@ -83117,7 +83117,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Cross-Border Remittance CFO benchmarking against the 3 closest comparables.'
               ]
@@ -83160,11 +83160,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/money-services-business',
-                  note: 'BI Money Services Business framework'
+                  note: 'BNM Money Services Business framework'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/transfer-dana.aspx',
-                  note: 'OJK Penganjur Transfer Dana'
+                  note: 'SC Penganjur Transfer Dana'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/payments',
@@ -83173,8 +83173,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BI announcements that would impact Cross-Border Remittance, with severity and required action.',
-                'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Cross-Border Remittance would need to update controls.',
+                'Ringkas the 5 most recent BNM announcements that would impact Cross-Border Remittance, with severity and required action.',
+                'Bandingkan SC and MAS guidance issued this month on AML/CFT — flag where Cross-Border Remittance would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Cross-Border Remittance Group Risk Committee using only the cited sources.'
               ]
             },
@@ -83200,7 +83200,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BURSA MALAYSIA with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Cross-Border Remittance CFO benchmarking against the 3 closest comparables.'
               ]
@@ -83227,7 +83227,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BNM and BNM monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Cross-Border Remittance variable-rate book?',
                 'Susun draf an ALCO macro update for Cross-Border Remittance with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -85441,11 +85441,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.jpj.gov.my/en/announcement',
-                  note: 'JPJ Indonesia Road Transport Department'
+                  note: 'JPJ Malaysia Road Transport Department'
                 },
                 {
                   url: 'https://kemenperin.go.id/',
-                  note: 'Kemenperin Indonesia automotive industry'
+                  note: 'Kemenperin Malaysia automotive industry'
                 },
                 {
                   url: 'https://www.lta.gov.sg/content/ltagov/en/newsroom.html',
@@ -87746,11 +87746,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mosti.gov.my/web/en/',
-                  note: 'MOSTI Indonesia National Semiconductor Strategy'
+                  note: 'MOSTI Malaysia National Semiconductor Strategy'
                 },
                 {
                   url: 'https://kemenperin.go.id/',
-                  note: 'Kemenperin Indonesia Industri 4.0 semiconductor'
+                  note: 'Kemenperin Malaysia Industri 4.0 semiconductor'
                 },
                 {
                   url: 'https://www.edb.gov.sg/en/about-edb/media-releases-publications.html',
@@ -87781,7 +87781,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.asti.or.id/',
-                  note: 'ASTI Indonesia electronics association'
+                  note: 'ASTI Malaysia electronics association'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -90030,7 +90030,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Rare-Earth & Metals.',
+                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Rare-Earth & Metals.',
                 'Map ISSB IFRS S1/S2 clauses to Rare-Earth & Metals current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Rare-Earth & Metals sustainability committee.'
               ]
@@ -90046,11 +90046,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.aelb.gov.my/aelbv2/?p=8485',
-                  note: 'AELB Indonesia atomic-energy/rare-earth licensing'
+                  note: 'AELB Malaysia atomic-energy/rare-earth licensing'
                 },
                 {
                   url: 'https://www.minerba.esdm.go.id/',
-                  note: 'KemESDM Indonesia rare-earth directorate'
+                  note: 'KemESDM Malaysia rare-earth directorate'
                 },
                 {
                   url: 'https://www.usgs.gov/centers/national-minerals-information-center/rare-earths-statistics-and-information',
@@ -90077,7 +90077,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.minerba.esdm.go.id/',
-                  note: 'Indonesia mineral & coal monthly statistics'
+                  note: 'Malaysia mineral & coal monthly statistics'
                 },
                 {
                   url: 'https://en.cnia.com.cn/',
@@ -90113,7 +90113,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Rare-Earth & Metals.',
+                'Ringkas the latest Bursa + BURSA MALAYSIA ESG disclosure requirements relevant to Rare-Earth & Metals.',
                 'Map ISSB IFRS S1/S2 clauses to Rare-Earth & Metals current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Rare-Earth & Metals sustainability committee.'
               ]
@@ -92599,15 +92599,15 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mai.org.my/',
-                  note: 'Indonesia Automotive Association industry news'
+                  note: 'Malaysia Automotive Association industry news'
                 },
                 {
                   url: 'https://www.gaikindo.or.id/category/news/',
-                  note: 'GAIKINDO Indonesia automotive association'
+                  note: 'GAIKINDO Malaysia automotive association'
                 },
                 {
                   url: 'https://www.maa.org.my/maa/news.html',
-                  note: 'Indonesia Automotive Association statistics'
+                  note: 'Malaysia Automotive Association statistics'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -92630,7 +92630,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.astra-otoparts.com/news',
-                  note: 'Astra Otoparts Indonesia news'
+                  note: 'Astra Otoparts Malaysia news'
                 },
                 {
                   url: 'https://www.mida.gov.my/industries/manufacturing/automotive-industry/',
@@ -94885,7 +94885,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://hubud.dephub.go.id/hubud/website/Berita',
-                  note: 'Kemenhub Indonesia DGCA aviation news'
+                  note: 'Kemenhub Malaysia DGCA aviation news'
                 },
                 {
                   url: 'https://www.caas.gov.sg/who-we-are/newsroom',
@@ -97137,7 +97137,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.kemdikbud.go.id/',
-                  note: 'Kemendikbud Indonesia ministry of education'
+                  note: 'Kemendikbud Malaysia ministry of education'
                 },
                 {
                   url: 'https://www.moe.gov.sg/news/press-releases',
@@ -99390,7 +99390,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Utilities — Power Generation.',
+                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Utilities — Power Generation.',
                 'Map ISSB IFRS S1/S2 clauses to Utilities — Power Generation current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Utilities — Power Generation sustainability committee.'
               ]
@@ -99406,11 +99406,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.st.gov.my/en/web/general/announcement',
-                  note: 'Suruhanjaya Tenaga Indonesia announcements'
+                  note: 'Suruhanjaya Tenaga Malaysia announcements'
                 },
                 {
                   url: 'https://www.esdm.go.id/en/regulations',
-                  note: 'KemESDM Indonesia electricity regulations'
+                  note: 'KemESDM Malaysia electricity regulations'
                 },
                 {
                   url: 'https://www.ema.gov.sg/regulations-licences-publications.aspx',
@@ -99433,11 +99433,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.tnb.com.my/announcements/',
-                  note: 'TNB Indonesia announcements'
+                  note: 'TNB Malaysia announcements'
                 },
                 {
                   url: 'https://web.pln.co.id/media/siaran-pers',
-                  note: 'PLN Indonesia press releases'
+                  note: 'PLN Malaysia press releases'
                 },
                 {
                   url: 'https://www.sptel.com.sg/about-sp-group/news-and-resources',
@@ -99473,7 +99473,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Utilities — Power Generation.',
+                'Ringkas the latest Bursa + BURSA MALAYSIA ESG disclosure requirements relevant to Utilities — Power Generation.',
                 'Map ISSB IFRS S1/S2 clauses to Utilities — Power Generation current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Utilities — Power Generation sustainability committee.'
               ]
@@ -101763,11 +101763,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://napic2.jpph.gov.my/en',
-                  note: 'NAPIC Indonesia property market reports'
+                  note: 'NAPIC Malaysia property market reports'
                 },
                 {
                   url: 'https://pu.go.id/regulasi-bangunan-gedung',
-                  note: 'Kementerian PUPR Indonesia building regulations'
+                  note: 'Kementerian PUPR Malaysia building regulations'
                 },
                 {
                   url: 'https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases',
@@ -101776,7 +101776,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 6 months of arrival statistics from Tourism Indonesia + Kemenparekraf + STB.',
+                'Ringkas the last 6 months of arrival statistics from Tourism Malaysia + Kemenparekraf + STB.',
                 'Identifikasi the top 5 origin markets growing fastest for Property Development catchment.',
                 'Susun draf a monthly demand pulse with origin-market mix for the Property Development commercial team.'
               ]
@@ -104084,11 +104084,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements',
-                  note: 'KPDN Indonesia e-commerce consumer protection'
+                  note: 'KPDN Malaysia e-commerce consumer protection'
                 },
                 {
                   url: 'https://www.kemendag.go.id/',
-                  note: 'Kemendag Indonesia e-commerce regulations'
+                  note: 'Kemendag Malaysia e-commerce regulations'
                 },
                 {
                   url: 'https://www.imda.gov.sg/regulations-and-licensing-listing',
@@ -104111,7 +104111,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://mdec.my/news/',
-                  note: 'MDEC Indonesia digital economy news'
+                  note: 'MDEC Malaysia digital economy news'
                 },
                 {
                   url: 'https://idea.or.id/',
@@ -104151,7 +104151,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to E-commerce / Super-app.',
+                'Tarik the latest DataReportal Malaysia and Malaysia digital snapshots relevant to E-commerce / Super-app.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the E-commerce / Super-app digital strategy lead.'
               ]
@@ -106336,11 +106336,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.marine.gov.my/',
-                  note: 'Marine Department Indonesia'
+                  note: 'Marine Department Malaysia'
                 },
                 {
                   url: 'https://hubla.dephub.go.id/home/news',
-                  note: 'Kemenhub Indonesia maritime news'
+                  note: 'Kemenhub Malaysia maritime news'
                 },
                 {
                   url: 'https://www.mpa.gov.sg/web/portal/home/about-mpa/news-publications',
@@ -106363,7 +106363,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.masa.org.my/news/',
-                  note: 'MASA Indonesia Shipowners Association'
+                  note: 'MASA Malaysia Shipowners Association'
                 },
                 {
                   url: 'https://www.dpp-insa.com/',
@@ -110668,11 +110668,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://jtksm.mohr.gov.my/index.php/en/',
-                  note: 'JTKSM Department of Labour Indonesia'
+                  note: 'JTKSM Department of Labour Malaysia'
                 },
                 {
                   url: 'https://kemnaker.go.id/news/all',
-                  note: 'Kemnaker Indonesia ministry of manpower'
+                  note: 'Kemnaker Malaysia ministry of manpower'
                 },
                 {
                   url: 'https://www.mom.gov.sg/newsroom',
@@ -110699,7 +110699,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.pmsm-indonesia.org/',
-                  note: 'PMSM Indonesia HR association'
+                  note: 'PMSM Malaysia HR association'
                 },
                 {
                   url: 'https://www.shri.org.sg/news/',
@@ -110708,7 +110708,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 👥 Human Resources.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 👥 Human Resources.',
                 'Buat daftar standard revisions affecting 👥 Human Resources processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 👥 Human Resources lead.'
               ]
@@ -113584,7 +113584,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://web.iaiglobal.or.id/standar-akuntansi-keuangan/',
-                  note: 'IAI Indonesia accounting standards'
+                  note: 'IAI Malaysia accounting standards'
                 },
                 {
                   url: 'https://www.acra.gov.sg/legislation/legislative-reform',
@@ -113611,7 +113611,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://web.iaiglobal.or.id/news',
-                  note: 'IAI Indonesia accountants association news'
+                  note: 'IAI Malaysia accountants association news'
                 },
                 {
                   url: 'https://isca.org.sg/news/',
@@ -113620,7 +113620,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 💰 Finance & Treasury.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 💰 Finance & Treasury.',
                 'Buat daftar standard revisions affecting 💰 Finance & Treasury processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 💰 Finance & Treasury lead.'
               ]
@@ -116520,11 +116520,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.malaysianbar.org.my/article/news',
-                  note: 'Bar Council Indonesia news'
+                  note: 'Bar Council Malaysia news'
                 },
                 {
                   url: 'https://www.peradi.or.id/index.php/news',
-                  note: 'PERADI Indonesia advocates association'
+                  note: 'PERADI Malaysia advocates association'
                 },
                 {
                   url: 'https://www.lawsociety.org.sg/news-publications/news/',
@@ -116560,7 +116560,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to ⚖️ Legal.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to ⚖️ Legal.',
                 'Buat daftar standard revisions affecting ⚖️ Legal processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the ⚖️ Legal lead.'
               ]
@@ -119330,7 +119330,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/regulasi/manajemen-risiko/Default.aspx',
-                  note: 'OJK pengurusan risiko regulations'
+                  note: 'OJK manajemen risiko regulations'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/Risk-Management',
@@ -119409,11 +119409,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/risk-management',
-                  note: 'BI risk-management framework'
+                  note: 'BNM risk-management framework'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/regulasi/manajemen-risiko/Default.aspx',
-                  note: 'OJK pengurusan risiko regulations'
+                  note: 'SC pengurusan risiko regulations'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/Risk-Management',
@@ -119449,7 +119449,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🛡 Risk & Internal Audit.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🛡 Risk & Internal Audit.',
                 'Buat daftar standard revisions affecting 🛡 Risk & Internal Audit processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🛡 Risk & Internal Audit lead.'
               ]
@@ -122365,11 +122365,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.sc.com.my/regulation/capital-market-masterplan',
-                  note: 'OJK Indonesia Capital Market Masterplan'
+                  note: 'SC Malaysia Capital Market Masterplan'
                 },
                 {
                   url: 'https://www.ojk.go.id/en/Pages/Master-Plan-Sektor-Jasa-Keuangan-Indonesia.aspx',
-                  note: 'OJK Master Plan Indonesia financial services'
+                  note: 'SC Master Plan Malaysia financial services'
                 },
                 {
                   url: 'https://www.mas.gov.sg/news/speeches-and-monetary-policy-statements',
@@ -122405,7 +122405,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🎯 Strategy & Corporate Planning.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🎯 Strategy & Corporate Planning.',
                 'Buat daftar standard revisions affecting 🎯 Strategy & Corporate Planning processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🎯 Strategy & Corporate Planning lead.'
               ]
@@ -125198,11 +125198,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.iabm.com.my/',
-                  note: 'IAB Indonesia advertising standards'
+                  note: 'IAB Malaysia advertising standards'
                 },
                 {
                   url: 'https://www.amm.or.id/',
-                  note: 'AMM Indonesia marketing association'
+                  note: 'AMM Malaysia marketing association'
                 },
                 {
                   url: 'https://www.ias.org.sg/standards',
@@ -125238,7 +125238,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 📢 Marketing & Communications.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 📢 Marketing & Communications.',
                 'Buat daftar standard revisions affecting 📢 Marketing & Communications processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 📢 Marketing & Communications lead.'
               ]
@@ -127950,7 +127950,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.ojk.go.id/sustainable-finance',
-                  note: 'OJK Sustainable Finance roadmap'
+                  note: 'SC Sustainable Finance roadmap'
                 },
                 {
                   url: 'https://www.sgx.com/sustainable-listing',
@@ -127986,7 +127986,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🌱 ESG & Sustainability.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🌱 ESG & Sustainability.',
                 'Buat daftar standard revisions affecting 🌱 ESG & Sustainability processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🌱 ESG & Sustainability lead.'
               ]
@@ -130615,11 +130615,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.dosh.gov.my/index.php/legislation',
-                  note: 'DOSH Indonesia OSH regulations'
+                  note: 'DOSH Malaysia OSH regulations'
                 },
                 {
                   url: 'https://kemnaker.go.id/news/k3',
-                  note: 'Kemnaker Indonesia K3 occupational safety'
+                  note: 'Kemnaker Malaysia K3 occupational safety'
                 },
                 {
                   url: 'https://www.mom.gov.sg/workplace-safety-and-health',
@@ -130655,7 +130655,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to ⚙️ Operations & COO Office.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to ⚙️ Operations & COO Office.',
                 'Buat daftar standard revisions affecting ⚙️ Operations & COO Office processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the ⚙️ Operations & COO Office lead.'
               ]
@@ -133244,7 +133244,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.ojk.go.id/en/regulasi/Pages/default.aspx',
-                  note: 'OJK POJK regulations'
+                  note: 'SC POJK regulations'
                 },
                 {
                   url: 'https://rulebook.sgx.com/',
@@ -133267,7 +133267,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://maicsa.org.my/news/',
-                  note: 'MAICSA Indonesia chartered secretaries'
+                  note: 'MAICSA Malaysia chartered secretaries'
                 },
                 {
                   url: 'https://icsa.com.sg/news',
@@ -133280,7 +133280,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 📜 Corporate Secretarial.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 📜 Corporate Secretarial.',
                 'Buat daftar standard revisions affecting 📜 Corporate Secretarial processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 📜 Corporate Secretarial lead.'
               ]
@@ -135923,7 +135923,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.ojk.go.id/en/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
-                  note: 'OJK CG roadmap for IR'
+                  note: 'SC CG roadmap for IR'
                 },
                 {
                   url: 'https://www.sgx.com/sustainable-listing/sustainability-reporting',
@@ -135959,7 +135959,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 📈 Investor Relations.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 📈 Investor Relations.',
                 'Buat daftar standard revisions affecting 📈 Investor Relations processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 📈 Investor Relations lead.'
               ]
@@ -138773,11 +138773,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.treasury.gov.my/index.php/en/government-procurement.html',
-                  note: 'MOF Indonesia government procurement'
+                  note: 'MOF Malaysia government procurement'
                 },
                 {
                   url: 'https://www.lkpp.go.id/v3/news',
-                  note: 'LKPP Indonesia procurement agency news'
+                  note: 'LKPP Malaysia procurement agency news'
                 },
                 {
                   url: 'https://www.mof.gov.sg/policies/government-procurement',
@@ -138804,7 +138804,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.iapi.or.id/',
-                  note: 'IAPI Indonesia association of procurement'
+                  note: 'IAPI Malaysia association of procurement'
                 },
                 {
                   url: 'https://www.cips.org/who-we-are/news/',
@@ -138813,7 +138813,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🛒 Procurement & Supply Chain.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🛒 Procurement & Supply Chain.',
                 'Buat daftar standard revisions affecting 🛒 Procurement & Supply Chain processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🛒 Procurement & Supply Chain lead.'
               ]
@@ -141639,7 +141639,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
-                  note: 'Kominfo Indonesia ICT regulations'
+                  note: 'Kominfo Malaysia ICT regulations'
                 },
                 {
                   url: 'https://www.imda.gov.sg/about-imda/news-and-publications',
@@ -141662,7 +141662,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://mtsfb.org.my/news/',
-                  note: 'MTSFB Indonesia Technical Standards Forum'
+                  note: 'MTSFB Malaysia Technical Standards Forum'
                 },
                 {
                   url: 'https://www.mikti.or.id/news',
@@ -141675,7 +141675,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 💻 IT & Digital.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 💻 IT & Digital.',
                 'Buat daftar standard revisions affecting 💻 IT & Digital processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 💻 IT & Digital lead.'
               ]

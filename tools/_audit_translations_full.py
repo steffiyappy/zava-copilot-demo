@@ -92,8 +92,16 @@ def scan(text):
     by_field_bm = defaultdict(int)
     by_field_bi = defaultdict(int)
 
+    def _is_url(s):
+        # URLs and URL-fragments must not be flagged: they are literal addresses
+        # and translating tokens inside them would break the link.
+        return ('http://' in s or 'https://' in s or '.aspx' in s.lower()
+                or s.startswith('www.') or '/Pages/' in s)
+
     for key, val, kind in find_all_localized_fields(text):
         if not val.strip():
+            continue
+        if _is_url(val):
             continue
         if is_bm_key(key):
             bm_total += 1
