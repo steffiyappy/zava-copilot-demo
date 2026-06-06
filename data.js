@@ -265,7 +265,7 @@ window.HUB_DATA = {
       badgeID: 'April 2026',
       summary: 'Add a public webpage URL as a deck reference and Copilot pulls in current external context to build the outline. Choose the image model (GPT-Image, Flux, or Auto) when generating or editing visuals — align with quality, style, and governance expectations.',
       summaryBM: 'Tambah URL halaman web awam sebagai rujukan dek dan Copilot akan menarik konteks luaran semasa untuk membina garis besar. Pilih model imej (GPT-Image, Flux, atau Auto) semasa menjana atau menyunting visual — selaraskan dengan jangkaan kualiti, gaya, dan tadbir urus.',
-      summaryID: 'Tambahkan URL halaman web publik sebagai referensi deck dan Copilot menarik konteks eksternal terkini untuk membangun outline. Pilih model gambar (GPT-Image, Flux, atau Auto) saat menghasilkan atau mengedit visual — selaraskan dengan harapan kualitas, gaya, dan tata kelola.',
+      summaryID: 'Tambahkan URL halaman web publik sebagai referensi deck dan Copilot menarik konteks eksternal terbaru untuk membangun outline. Pilih model gambar (GPT-Image, Flux, atau Auto) saat menghasilkan atau mengedit visual — selaraskan dengan harapan kualitas, gaya, dan tata kelola.',
       tip: 'In PPT for the Web > Copilot pane > add a web reference URL (e.g. a Bursa Malaysia listing or BNM circular page). When generating an image, click the gear and pick the model.',
       tipBM: 'Dalam PPT untuk Web > anak tetingkap Copilot > tambah URL rujukan web (cth. halaman penyenaraian Bursa Malaysia atau pekeliling BNM). Semasa menjana imej, klik gear dan pilih model.',
       tipID: 'Di PPT for the Web > panel Copilot > tambahkan URL referensi web (mis. halaman pencatatan Bursa Malaysia atau surat edaran BNM). Saat menghasilkan gambar, klik roda gigi dan pilih modelnya.',
@@ -1750,7 +1750,7 @@ window.HUB_DATA = {
               queries: [
                 'Rangkum selisih EBITDA FY2025 18% untuk Direksi dalam 60 detik — sebutkan 3 unit usaha bermasalah, driver selisih terbesar untuk masing-masing, dan satu tindakan Merah yang harus disetujui Direksi pada rapat ini. Kutip file sumber untuk tiap angka.',
                 'Susun holding line 4 baris untuk bank relasi utama (CIMB, Maybank, Mandiri, BCA) terkait posisi covenant FY2025. Hanya gunakan angka di /05_Zava_Lender_Covenant_Tracker.xlsx dan tandai fasilitas yang berada dalam 10% jarak breach.',
-                'Kewajiban tata kelola apa yang berlaku setelah selisih earnings material untuk grup dual-listed Bursa Malaysia / IDX? Kutip klausul tepat di /02_Zava_Group_Policy_Handbook.docx dan beritahu saya persetujuan tingkat direktur mana yang diperlukan sebelum pengungkapan.'
+                'Kewajiban tata kelola apa yang berlaku setelah selisih earnings material untuk grup dual-listed BEI / IDX? Kutip klausul tepat di /02_Zava_Group_Policy_Handbook.docx dan beritahu saya persetujuan tingkat direktur mana yang diperlukan sebelum pengungkapan.'
               ]
             },
             {
@@ -1812,7 +1812,7 @@ window.HUB_DATA = {
               queries: [
                 'Analis sell-side dari CGS-CIMB mengirim email meminta panduan EBITDA FY2026 pasca selisih 18%. Susun jawaban 200 kata yang patuh kebijakan: tolak memberi angka, rujuk pada pengungkapan terjadwal berikutnya, dan referensikan arah jangka menengah strategy framework. Kutip klausul kebijakan yang mengatur respons Anda.',
                 'Bangun pack Q&A analis 10 pertanyaan untuk earnings call besok mencakup: selisih 18%, 3 unit usaha bermasalah, alokasi modal FY2026, dividen, ESG, dan engagement regulator. Untuk masing-masing, beri jawaban 4 baris yang disarankan dan kutipan file sumber.',
-                'Susun holding line IR 3 baris untuk wartawan yang bertanya tentang permintaan klarifikasi Bursa Malaysia. Hanya gunakan bahasa yang sudah disetujui di /06_Zava_Investor_QA_FY2025.docx bagian Regulatory.'
+                'Susun holding line IR 3 baris untuk wartawan yang bertanya tentang permintaan klarifikasi BEI. Hanya gunakan bahasa yang sudah disetujui di /06_Zava_Investor_QA_FY2025.docx bagian Regulatory.'
               ]
             }
           ],
@@ -1928,16 +1928,16 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'ASEAN Disclosure Watch (General (Any Role))',
               name: 'ASEAN Disclosure Watch (General (Any Role))',
-              desc: 'Tracks Bursa Malaysia + IDX Indonesia + SGX Singapore listed-co announcements yang relevan dengan the General (Any Role) group.',
+              desc: 'Tracks BEI + IDX Indonesia + SGX Singapore listed-co announcements yang relevan dengan the General (Any Role) group.',
               instructions: 'Anda adalah analis yang mendukung General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
-                  note: 'Bursa Malaysia listed-co announcements'
+                  note: 'BEI listed-co announcements'
                 },
                 {
                   url: 'https://www.idx.co.id/en/news/announcement/',
-                  note: 'IDX listed-co disclosures'
+                  note: 'BEI listed-co disclosures'
                 },
                 {
                   url: 'https://www.sgx.com/securities/company-announcements',
@@ -1946,7 +1946,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the 10 most material listed-co announcements on Bursa, IDX, and SGX in the last 7 days for sectors General (Any Role) operates in.',
+                'Buat daftar the 10 most material listed-co announcements on Bursa, BEI, and SGX in the last 7 days for sectors General (Any Role) operates in.',
                 'Filter by category (earnings / M&A / restructuring / dividend) — flag the 5 most relevant to General (Any Role) portfolio.',
                 'Susun draf a weekly cross-industry disclosure log with General (Any Role) CFO implications for each entry.'
               ]
@@ -1960,7 +1960,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mswg.org.my/',
-                  note: 'MSWG Malaysia minority-shareholder watch'
+                  note: 'MSWG Indonesia minority-shareholder watch'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
@@ -1987,7 +1987,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.imf.org/en/Countries/MYS',
-                  note: 'IMF Malaysia & SEA economic outlook'
+                  note: 'IMF Indonesia & SEA economic outlook'
                 },
                 {
                   url: 'https://www.adb.org/news/regions/asean',
@@ -2000,7 +2000,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest IMF Article IV, ADB AMRO, and World Bank ASEAN updates for Malaysia, Indonesia, and Singapore.',
+                'Tarik the latest IMF Article IV, ADB AMRO, and World Bank ASEAN updates for Indonesia, Indonesia, and Singapore.',
                 'Identifikasi the macro themes most material to General (Any Role) divisional mix (banking / energy / consumer / property).',
                 'Susun draf a monthly macro brief with base / bear / bull scenarios for the General (Any Role) group strategy.'
               ]
@@ -2011,16 +2011,16 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'ASEAN Disclosure Watch (General (Any Role))',
               name: 'ASEAN Disclosure Watch (General (Any Role))',
-              desc: 'Tracks Bursa Malaysia + IDX Indonesia + SGX Singapore listed-co announcements yang relevan dengan the General (Any Role) group.',
-              instructions: 'Anda adalah analis yang mendukung General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks Bursa Malaysia + BURSA MALAYSIA Malaysia + SGX Singapore listed-co announcements yang relevan dengan the General (Any Role) group.',
+              instructions: 'Anda adalah analis yang menyokong General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
-                  note: 'Bursa Malaysia listed-co announcements'
+                  note: 'BEI listed-co announcements'
                 },
                 {
                   url: 'https://www.idx.co.id/en/news/announcement/',
-                  note: 'IDX listed-co disclosures'
+                  note: 'BEI listed-co disclosures'
                 },
                 {
                   url: 'https://www.sgx.com/securities/company-announcements',
@@ -2029,7 +2029,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the 10 most material listed-co announcements on Bursa, IDX, and SGX in the last 7 days for sectors General (Any Role) operates in.',
+                'Buat daftar the 10 most material listed-co announcements on Bursa, BEI, and SGX in the last 7 days for sectors General (Any Role) operates in.',
                 'Filter by category (earnings / M&A / restructuring / dividend) — flag the 5 most relevant to General (Any Role) portfolio.',
                 'Susun draf a weekly cross-industry disclosure log with General (Any Role) CFO implications for each entry.'
               ]
@@ -2038,12 +2038,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Governance & Stewardship Watch (General (Any Role))',
               name: 'Governance & Stewardship Watch (General (Any Role))',
-              desc: 'Tracks MSWG + OJK Corporate Governance + SIAS investor stewardship updates for the General (Any Role) group.',
-              instructions: 'Anda adalah analis yang mendukung General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks MSWG + SC Corporate Governance + SIAS investor stewardship updates for the General (Any Role) group.',
+              instructions: 'Anda adalah analis yang menyokong General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mswg.org.my/',
-                  note: 'MSWG Malaysia minority-shareholder watch'
+                  note: 'MSWG Indonesia minority-shareholder watch'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/pasar-modal/tata-kelola-perusahaan/Pages/default.aspx',
@@ -2066,11 +2066,11 @@ window.HUB_DATA = {
               label: 'Macro Brief Builder (General (Any Role))',
               name: 'Macro Brief Builder (General (Any Role))',
               desc: 'Builds macro briefs from IMF + ADB + World Bank ASEAN research for the General (Any Role) CFO.',
-              instructions: 'Anda adalah analis yang mendukung General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong General (Any Role). Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.imf.org/en/Countries/MYS',
-                  note: 'IMF Malaysia & SEA economic outlook'
+                  note: 'IMF Indonesia & SEA economic outlook'
                 },
                 {
                   url: 'https://www.adb.org/news/regions/asean',
@@ -2083,7 +2083,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest IMF Article IV, ADB AMRO, and World Bank ASEAN updates for Malaysia, Indonesia, and Singapore.',
+                'Tarik the latest IMF Article IV, ADB AMRO, and World Bank ASEAN updates for Indonesia, Indonesia, and Singapore.',
                 'Identifikasi the macro themes most material to General (Any Role) divisional mix (banking / energy / consumer / property).',
                 'Susun draf a monthly macro brief with base / bear / bull scenarios for the General (Any Role) group strategy.'
               ]
@@ -4389,7 +4389,7 @@ window.HUB_DATA = {
               label: 'Credit Risk Watch',
               name: 'Zava Commercial Banking — Credit Risk Watch',
               desc: 'Watches the Commercial Banking corporate loan book for early-warning credit deterioration and surfaces watch-list candidates before they migrate to NPL.',
-              instructions: 'Anda adalah Zava Commercial Banking Credit Risk Pemantau agen. Anda mendukung the Chief Credit Officer and the Grup Credit Committee.  Your job: scan the corporate loan book for early-warning credit deterioration BEFORE accounts migrate to NPL. Ground every watch-list candidate in the loan portfolio data (BNK_01_Group_Loan_Portfolio.xlsx), the migration history (BNK_02_Regulatory_Reporting_Pack.docx), and the credit policy clauses (BNK_04_NPL_Recovery_Tracker.xlsx).  Always cite the file + tab. Always quantify exposure in MYR/IDR with the % of total commercial book. Always classify as Stage 1 / Stage 2 / Stage 3 per MFRS 9 and rekomendasikan ONE next tindakan (re-rate, restructure, exit).  Tolak any question about retail or wealth lending — refer to the Retail Credit team.',
+              instructions: 'Anda adalah Zava Commercial Banking Credit Risk Pemantau agen. Anda mendukung the Chief Credit Officer and the Grup Credit Committee.  Your job: scan the corporate loan book for early-warning credit deterioration BEFORE accounts migrate to NPL. Ground every watch-list candidate in the loan portfolio data (BNK_01_Group_Loan_Portfolio.xlsx), the migration history (BNK_02_Regulatory_Reporting_Pack.docx), and the credit policy clauses (BNK_04_NPL_Recovery_Tracker.xlsx).  Always cite the file + tab. Always quantify exposure in MYR/IDR with the % of total commercial book. Always classify as Stage 1 / Stage 2 / Stage 3 per PSAK 9 and rekomendasikan ONE next tindakan (re-rate, restructure, exit).  Tolak any question about retail or wealth lending — refer to the Retail Credit team.',
               knowledge: [
                 {
                   file: 'BNK_01_Group_Loan_Portfolio.xlsx',
@@ -4443,7 +4443,7 @@ window.HUB_DATA = {
               label: 'BNM/OJK Penghubung',
               name: 'Zava Commercial Banking — Regulator Penghubung',
               desc: 'Supports the Commercial Banking Regulatory Affairs team in preparing BNM/OJK submissions, RWA returns, and capital adequacy disclosures.',
-              instructions: 'Anda adalah Zava Commercial Banking Regulator Penghubung agen. Anda mendukung Regulatory Affairs in preparing submissions to BNM (MY) or OJK (ID).  Your job: prepare susun submissions, validate RWA returns, and produce capital-adequacy disclosures grounded on the regulatory return file (BNK_05_Capital_Adequacy_Report.xlsx) and the policy handbook (BNK_04_NPL_Recovery_Tracker.xlsx).  Quote every figure with file + tab. Quote every clause with section number. Tone is precise, regulator-facing, defensible. Never make a forward-looking statement on capital or earnings.  If asked for a commercial credit decision, refuse and refer to Credit Risk Watch.',
+              instructions: 'Anda adalah Zava Commercial Banking Regulator Penghubung agen. Anda mendukung Regulatory Affairs in preparing submissions to BI (MY) or OJK (ID).  Your job: prepare susun submissions, validate RWA returns, and produce capital-adequacy disclosures grounded on the regulatory return file (BNK_05_Capital_Adequacy_Report.xlsx) and the policy handbook (BNK_04_NPL_Recovery_Tracker.xlsx).  Quote every figure with file + tab. Quote every clause with section number. Tone is precise, regulator-facing, defensible. Never make a forward-looking statement on capital or earnings.  If asked for a commercial credit decision, refuse and refer to Credit Risk Watch.',
               knowledge: [
                 {
                   file: 'BNK_04_NPL_Recovery_Tracker.xlsx',
@@ -4458,10 +4458,10 @@ window.HUB_DATA = {
                   note: 'Disclosure drafts — Pillar 3, financial accounts, regulatory letters.'
                 }
               ],
-              knowledgeNote: 'Test: "Susun the cover note to BNM on kuartal ini\'s capital-adequacy submission for Commercial Banking." — agen should quote the section, cite the file.',
+              knowledgeNote: 'Test: "Susun the cover note to BI on kuartal ini\'s capital-adequacy submission for Commercial Banking." — agen should quote the section, cite the file.',
               queries: [
                 'Prepare a cover note for kuartal ini\'s BNM/OJK capital-adequacy submission — quote the LCR, NSFR, and CET1 figures with the file + tab citation.',
-                'Compare our large-exposure positions to the BNM single-counterparty limit. Flag any breach or near-breach with the policy clause.',
+                'Compare our large-exposure positions to the BI single-counterparty limit. Flag any breach or near-breach with the policy clause.',
                 'Susun a 1-page response to the regulator\'s last enforcement letter on credit-risk reporting — facts, remediation steps, target dates, governance.'
               ]
             }
@@ -4578,12 +4578,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Commercial Banking Regulator Watch (Public Sources)',
               name: 'Commercial Banking Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Commercial Banking.',
+              desc: 'Monitors Bank Indonesia + OJK + MAS announcements yang relevan dengan Commercial Banking.',
               instructions: 'Anda adalah analis yang mendukung Commercial Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/banking-sector',
-                  note: 'BNM banking supervision policy documents'
+                  note: 'BI banking supervision policy documents'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
@@ -4596,7 +4596,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Commercial Banking, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Commercial Banking, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Commercial Banking would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Commercial Banking Group Risk Committee using only the cited sources.'
               ]
@@ -4614,7 +4614,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/listed-companies/listed-stock-summary/',
-                  note: 'IDX listed banks summary'
+                  note: 'BEI listed banks summary'
                 },
                 {
                   url: 'https://www.sgx.com/research-education/sectors-stocks/financial-services',
@@ -4623,7 +4623,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Commercial Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -4637,7 +4637,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/monthly-highlights-statistics-msb',
-                  note: 'BNM Monthly Statistical Bulletin (banking indicators)'
+                  note: 'BI Monthly Statistical Bulletin (banking indicators)'
                 },
                 {
                   url: 'https://www.bi.go.id/id/publikasi/laporan/Default.aspx?id=SEKI',
@@ -4650,7 +4650,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Commercial Banking variable-rate book?',
                 'Susun draf an ALCO macro update for Commercial Banking with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -4661,12 +4661,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Commercial Banking Regulator Watch (Public Sources)',
               name: 'Commercial Banking Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Commercial Banking.',
-              instructions: 'Anda adalah analis yang mendukung Commercial Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Monitors Bank Negara Malaysia + SC + MAS announcements yang relevan dengan Commercial Banking.',
+              instructions: 'Anda adalah analis yang menyokong Commercial Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/banking-sector',
-                  note: 'BNM banking supervision policy documents'
+                  note: 'BI banking supervision policy documents'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
@@ -4679,7 +4679,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Commercial Banking, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Commercial Banking, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Commercial Banking would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Commercial Banking Group Risk Committee using only the cited sources.'
               ]
@@ -4688,8 +4688,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Commercial Banking Peer Pulse (Public IR)',
               name: 'Commercial Banking Peer Pulse (Public IR)',
-              desc: 'Tracks ASEAN banking peers via Bursa + IDX disclosure portals.',
-              instructions: 'Anda adalah analis yang mendukung Commercial Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks ASEAN banking peers via Bursa + BURSA MALAYSIA disclosure portals.',
+              instructions: 'Anda adalah analis yang menyokong Commercial Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/listed_companies/list_of_companies/main_market',
@@ -4697,7 +4697,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/listed-companies/listed-stock-summary/',
-                  note: 'IDX listed banks summary'
+                  note: 'BEI listed banks summary'
                 },
                 {
                   url: 'https://www.sgx.com/research-education/sectors-stocks/financial-services',
@@ -4706,7 +4706,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Commercial Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -4716,11 +4716,11 @@ window.HUB_DATA = {
               label: 'Commercial Banking Macro & Rates Scanner',
               name: 'Commercial Banking Macro & Rates Scanner',
               desc: 'Pulls BNM/BI/MAS rate decisions + DOSM/BPS macro releases for Commercial Banking ALCO.',
-              instructions: 'Anda adalah analis yang mendukung Commercial Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Commercial Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/monthly-highlights-statistics-msb',
-                  note: 'BNM Monthly Statistical Bulletin (banking indicators)'
+                  note: 'BI Monthly Statistical Bulletin (banking indicators)'
                 },
                 {
                   url: 'https://www.bi.go.id/id/publikasi/laporan/Default.aspx?id=SEKI',
@@ -4733,7 +4733,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Commercial Banking variable-rate book?',
                 'Susun draf an ALCO macro update for Commercial Banking with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -7099,10 +7099,10 @@ window.HUB_DATA = {
             },
             {
               icon: '🏛️',
-              label: 'BNM Islamic Penghubung',
+              label: 'BI Islamic Penghubung',
               name: 'Zava Islamic Banking — Regulator Penghubung',
-              desc: 'Prepares BNM Shariah-Governance Framework submissions and Islamic banking regulatory returns for Islamic Banking.',
-              instructions: 'Anda adalah Zava Islamic Banking Islamic Banking Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under the BNM Shariah Governance Framework and IFSA.  Your job: prepare susun submissions, validate Islamic-banking regulatory returns, and quote IFSA / Shariah Governance Framework clauses grounded on the regulatory file (ISL_05_Sukuk_Wakalah_Plan.docx) and the policy handbook (ISL_06_Investor_QA_Islamic.docx).  Quote every figure with file + tab. Quote every clause with section number. Tone is regulator-facing.  Tolak any commercial credit decision.',
+              desc: 'Prepares BI Shariah-Governance Framework submissions and Islamic banking regulatory returns for Islamic Banking.',
+              instructions: 'Anda adalah Zava Islamic Banking Islamic Banking Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under the BI Shariah Governance Framework and IFSA.  Your job: prepare susun submissions, validate Islamic-banking regulatory returns, and quote IFSA / Shariah Governance Framework clauses grounded on the regulatory file (ISL_05_Sukuk_Wakalah_Plan.docx) and the policy handbook (ISL_06_Investor_QA_Islamic.docx).  Quote every figure with file + tab. Quote every clause with section number. Tone is regulator-facing.  Tolak any commercial credit decision.',
               knowledge: [
                 {
                   file: 'ISL_04_GIA_Performance_Tracker.xlsx',
@@ -7117,10 +7117,10 @@ window.HUB_DATA = {
                   note: 'Islamic banking policy handbook — IFSA, Shariah Governance Framework.'
                 }
               ],
-              knowledgeNote: 'Test: "Susun the cover letter to BNM on kuartal ini\'s Shariah Governance Annual Report for Islamic Banking."',
+              knowledgeNote: 'Test: "Susun the cover letter to BI on kuartal ini\'s Shariah Governance Annual Report for Islamic Banking."',
               queries: [
-                'Prepare a cover note for kuartal ini\'s BNM Islamic Banking statistical return — quote the figures and the policy clause.',
-                'Yang mana observations from the last BNM thematic Shariah review remain open? Bangun a 1-page status update.',
+                'Prepare a cover note for kuartal ini\'s BI Islamic Banking statistical return — quote the figures and the policy clause.',
+                'Yang mana observations from the last BI thematic Shariah review remain open? Bangun a 1-page status update.',
                 'Susun the Shariah Governance Framework tahunan report opening section — facts, governance structure, key resolutions of the year.'
               ]
             }
@@ -7237,12 +7237,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Islamic Banking Regulator Watch (Public Sources)',
               name: 'Islamic Banking Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Islamic Banking.',
+              desc: 'Monitors Bank Indonesia + OJK + MAS announcements yang relevan dengan Islamic Banking.',
               instructions: 'Anda adalah analis yang mendukung Islamic Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/islamic-banking-takaful',
-                  note: 'BNM Islamic banking & takaful policy'
+                  note: 'BI Islamic banking & takaful policy'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/syariah/Pages/default.aspx',
@@ -7255,7 +7255,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Islamic Banking, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Islamic Banking, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Islamic Banking would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Islamic Banking Group Risk Committee using only the cited sources.'
               ]
@@ -7269,11 +7269,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]',
-                  note: 'Bursa Malaysia Shariah-compliant securities'
+                  note: 'BEI Shariah-compliant securities'
                 },
                 {
                   url: 'https://www.idx.co.id/en/products/index/?_idx=jii',
-                  note: 'IDX Jakarta Islamic Index (JII)'
+                  note: 'BEI Jakarta Islamic Index (JII)'
                 },
                 {
                   url: 'https://www.ifsb.org/published.php',
@@ -7282,7 +7282,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Islamic Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -7304,12 +7304,12 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.bnm.gov.my/-/monthly-highlights-statistics-isb',
-                  note: 'BNM Islamic banking monthly statistics'
+                  note: 'BI Islamic banking monthly statistics'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Islamic Banking variable-rate book?',
                 'Susun draf an ALCO macro update for Islamic Banking with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -7320,12 +7320,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Islamic Banking Regulator Watch (Public Sources)',
               name: 'Islamic Banking Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Islamic Banking.',
-              instructions: 'Anda adalah analis yang mendukung Islamic Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Monitors Bank Negara Malaysia + SC + MAS announcements yang relevan dengan Islamic Banking.',
+              instructions: 'Anda adalah analis yang menyokong Islamic Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/islamic-banking-takaful',
-                  note: 'BNM Islamic banking & takaful policy'
+                  note: 'BI Islamic banking & takaful policy'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/syariah/Pages/default.aspx',
@@ -7338,7 +7338,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Islamic Banking, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Islamic Banking, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Islamic Banking would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Islamic Banking Group Risk Committee using only the cited sources.'
               ]
@@ -7347,16 +7347,16 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Islamic Banking Peer Pulse (Public IR)',
               name: 'Islamic Banking Peer Pulse (Public IR)',
-              desc: 'Tracks ASEAN banking peers via Bursa + IDX disclosure portals.',
-              instructions: 'Anda adalah analis yang mendukung Islamic Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks ASEAN banking peers via Bursa + BURSA MALAYSIA disclosure portals.',
+              instructions: 'Anda adalah analis yang menyokong Islamic Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/equities_prices?legend[]=[S]',
-                  note: 'Bursa Malaysia Shariah-compliant securities'
+                  note: 'BEI Shariah-compliant securities'
                 },
                 {
                   url: 'https://www.idx.co.id/en/products/index/?_idx=jii',
-                  note: 'IDX Jakarta Islamic Index (JII)'
+                  note: 'BEI Jakarta Islamic Index (JII)'
                 },
                 {
                   url: 'https://www.ifsb.org/published.php',
@@ -7365,7 +7365,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Islamic Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -7375,7 +7375,7 @@ window.HUB_DATA = {
               label: 'Islamic Banking Macro & Rates Scanner',
               name: 'Islamic Banking Macro & Rates Scanner',
               desc: 'Pulls BNM/BI/MAS rate decisions + DOSM/BPS macro releases for Islamic Banking ALCO.',
-              instructions: 'Anda adalah analis yang mendukung Islamic Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Islamic Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.isra.my/publication.html',
@@ -7387,12 +7387,12 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.bnm.gov.my/-/monthly-highlights-statistics-isb',
-                  note: 'BNM Islamic banking monthly statistics'
+                  note: 'BI Islamic banking monthly statistics'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Islamic Banking variable-rate book?',
                 'Susun draf an ALCO macro update for Islamic Banking with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -10018,12 +10018,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Investment Banking Regulator Watch (Public Sources)',
               name: 'Investment Banking Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Investment Banking.',
+              desc: 'Monitors Bank Indonesia + OJK + MAS announcements yang relevan dengan Investment Banking.',
               instructions: 'Anda adalah analis yang mendukung Investment Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.sc.com.my/regulation/guidelines',
-                  note: 'Securities Commission Malaysia capital-markets guidelines'
+                  note: 'Securities Commission Indonesia capital-markets guidelines'
                 },
                 {
                   url: 'https://www.ojk.go.id/en/kanal/pasar-modal/regulasi/Default.aspx',
@@ -10036,7 +10036,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Investment Banking, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Investment Banking, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Investment Banking would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Investment Banking Group Risk Committee using only the cited sources.'
               ]
@@ -10050,11 +10050,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/equities_prices',
-                  note: 'Bursa Malaysia capital-markets data'
+                  note: 'BEI capital-markets data'
                 },
                 {
                   url: 'https://www.idx.co.id/en/listed-companies/ipo-pipeline/',
-                  note: 'IDX IPO pipeline'
+                  note: 'BEI IPO pipeline'
                 },
                 {
                   url: 'https://www.sgx.com/securities/securities-products/listings',
@@ -10063,7 +10063,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Investment Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -10090,7 +10090,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Investment Banking variable-rate book?',
                 'Susun draf an ALCO macro update for Investment Banking with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -10101,12 +10101,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Investment Banking Regulator Watch (Public Sources)',
               name: 'Investment Banking Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Investment Banking.',
-              instructions: 'Anda adalah analis yang mendukung Investment Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Monitors Bank Negara Malaysia + SC + MAS announcements yang relevan dengan Investment Banking.',
+              instructions: 'Anda adalah analis yang menyokong Investment Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.sc.com.my/regulation/guidelines',
-                  note: 'Securities Commission Malaysia capital-markets guidelines'
+                  note: 'Securities Commission Indonesia capital-markets guidelines'
                 },
                 {
                   url: 'https://www.ojk.go.id/en/kanal/pasar-modal/regulasi/Default.aspx',
@@ -10119,7 +10119,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Investment Banking, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Investment Banking, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Investment Banking would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Investment Banking Group Risk Committee using only the cited sources.'
               ]
@@ -10128,16 +10128,16 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Investment Banking Peer Pulse (Public IR)',
               name: 'Investment Banking Peer Pulse (Public IR)',
-              desc: 'Tracks ASEAN banking peers via Bursa + IDX disclosure portals.',
-              instructions: 'Anda adalah analis yang mendukung Investment Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks ASEAN banking peers via Bursa + BURSA MALAYSIA disclosure portals.',
+              instructions: 'Anda adalah analis yang menyokong Investment Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/equities_prices',
-                  note: 'Bursa Malaysia capital-markets data'
+                  note: 'BEI capital-markets data'
                 },
                 {
                   url: 'https://www.idx.co.id/en/listed-companies/ipo-pipeline/',
-                  note: 'IDX IPO pipeline'
+                  note: 'BEI IPO pipeline'
                 },
                 {
                   url: 'https://www.sgx.com/securities/securities-products/listings',
@@ -10146,7 +10146,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Investment Banking CFO benchmarking against the 3 closest comparables.'
               ]
@@ -10156,7 +10156,7 @@ window.HUB_DATA = {
               label: 'Investment Banking Macro & Rates Scanner',
               name: 'Investment Banking Macro & Rates Scanner',
               desc: 'Pulls BNM/BI/MAS rate decisions + DOSM/BPS macro releases for Investment Banking ALCO.',
-              instructions: 'Anda adalah analis yang mendukung Investment Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Investment Banking. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.asifma.org/research/',
@@ -10173,7 +10173,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Investment Banking variable-rate book?',
                 'Susun draf an ALCO macro update for Investment Banking with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -12668,7 +12668,7 @@ window.HUB_DATA = {
               label: 'BNM/OJK Insurance Penghubung',
               name: 'Zava General Insurance — Regulator Penghubung',
               desc: 'Prepares BNM/OJK insurance regulatory returns, RBC submissions, and policyholder-protection disclosures for General Insurance.',
-              instructions: 'Anda adalah Zava General Insurance Insurance Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under BNM (FSA) or OJK (PMK).  Your job: prepare susun submissions, validate RBC capital returns, and produce policyholder-protection disclosures grounded on the regulatory return file (GI_05_Pricing_Adequacy_Model.xlsx) and the policy handbook (GI_06_Workshop_Vendor_Analysis.xlsx).  Quote every figure with file + tab. Quote every clause with section number.  Tolak any pricing or claims-handling question.',
+              instructions: 'Anda adalah Zava General Insurance Insurance Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under BI (FSA) or OJK (PMK).  Your job: prepare susun submissions, validate RBC capital returns, and produce policyholder-protection disclosures grounded on the regulatory return file (GI_05_Pricing_Adequacy_Model.xlsx) and the policy handbook (GI_06_Workshop_Vendor_Analysis.xlsx).  Quote every figure with file + tab. Quote every clause with section number.  Tolak any pricing or claims-handling question.',
               knowledge: [
                 {
                   file: 'GI_03_Risk_Management_Framework.docx',
@@ -12683,7 +12683,7 @@ window.HUB_DATA = {
                   note: 'Insurance policy handbook — FSA / PMK clauses, governance.'
                 }
               ],
-              knowledgeNote: 'Test: "Susun the cover note to BNM on kuartal ini\'s RBC return for General Insurance."',
+              knowledgeNote: 'Test: "Susun the cover note to BI on kuartal ini\'s RBC return for General Insurance."',
               queries: [
                 'Prepare a cover note for kuartal ini\'s RBC capital return — quote the CAR, target capital, available capital, and the policy clause.',
                 'Yang mana observations from the last BNM/OJK thematic conduct review remain open? Bangun a 1-page status update.',
@@ -12803,12 +12803,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'General Insurance Insurance Regulator Watch',
               name: 'General Insurance Insurance Regulator Watch',
-              desc: 'Tracks BNM Insurance/Takaful + OJK IKNB + MAS Insurance circulars yang relevan dengan General Insurance.',
+              desc: 'Tracks BI Insurance/Takaful + OJK IKNB + MAS Insurance circulars yang relevan dengan General Insurance.',
               instructions: 'Anda adalah analis yang mendukung General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/insurance-takaful',
-                  note: 'BNM Insurance & Takaful policy documents'
+                  note: 'BI Insurance & Takaful policy documents'
                 },
                 {
                   url: 'https://www.ojk.go.id/en/kanal/iknb/Pages/Insurance.aspx',
@@ -12821,8 +12821,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar BNM and OJK insurance circulars issued in the last 90 days with implications for General Insurance.',
-                'Bandingkan RBC and risk-based capital guidance from BNM vs OJK — flag the deltas for General Insurance.',
+                'Buat daftar BI and OJK insurance circulars issued in the last 90 days with implications for General Insurance.',
+                'Bandingkan RBC and risk-based capital guidance from BI vs OJK — flag the deltas for General Insurance.',
                 'Susun draf a weekly compliance digest for General Insurance legal & risk team using only cited sources.'
               ]
             },
@@ -12830,7 +12830,7 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'General Insurance Claims & Catastrophe Scanner',
               name: 'General Insurance Claims & Catastrophe Scanner',
-              desc: 'Monitors PIAM, AAJI, Met Malaysia + BMKG + ASEAN disaster portals for emerging claims exposure.',
+              desc: 'Monitors PIAM, AAJI, Met Indonesia + BMKG + ASEAN disaster portals for emerging claims exposure.',
               instructions: 'Anda adalah analis yang mendukung General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
@@ -12848,7 +12848,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 14 days of weather and seismic alerts from Met Malaysia + BMKG + AHA Centre.',
+                'Ringkas the last 14 days of weather and seismic alerts from Met Indonesia + BMKG + AHA Centre.',
                 'Mana events overlap General Insurance concentration zones? Buat daftar the top 5 by potential gross-loss exposure.',
                 'Susun draf a rolling 14-day catastrophe exposure note for the General Insurance reinsurance team.'
               ]
@@ -12857,7 +12857,7 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'General Insurance Health & Mortality Trends Scanner',
               name: 'General Insurance Health & Mortality Trends Scanner',
-              desc: 'Tracks MOH Malaysia + Kemenkes + WHO SEARO disease bulletins for life and health pricing.',
+              desc: 'Tracks MOH Indonesia + Kemenkes + WHO SEARO disease bulletins for life and health pricing.',
               instructions: 'Anda adalah analis yang mendukung General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
@@ -12886,12 +12886,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'General Insurance Insurance Regulator Watch',
               name: 'General Insurance Insurance Regulator Watch',
-              desc: 'Tracks BNM Insurance/Takaful + OJK IKNB + MAS Insurance circulars yang relevan dengan General Insurance.',
-              instructions: 'Anda adalah analis yang mendukung General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks BNM Insurance/Takaful + SC IKNB + MAS Insurance circulars yang relevan dengan General Insurance.',
+              instructions: 'Anda adalah analis yang menyokong General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/insurance-takaful',
-                  note: 'BNM Insurance & Takaful policy documents'
+                  note: 'BI Insurance & Takaful policy documents'
                 },
                 {
                   url: 'https://www.ojk.go.id/en/kanal/iknb/Pages/Insurance.aspx',
@@ -12904,8 +12904,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar BNM and OJK insurance circulars issued in the last 90 days with implications for General Insurance.',
-                'Bandingkan RBC and risk-based capital guidance from BNM vs OJK — flag the deltas for General Insurance.',
+                'Buat daftar BI and OJK insurance circulars issued in the last 90 days with implications for General Insurance.',
+                'Bandingkan RBC and risk-based capital guidance from BI vs OJK — flag the deltas for General Insurance.',
                 'Susun draf a weekly compliance digest for General Insurance legal & risk team using only cited sources.'
               ]
             },
@@ -12914,7 +12914,7 @@ window.HUB_DATA = {
               label: 'General Insurance Claims & Catastrophe Scanner',
               name: 'General Insurance Claims & Catastrophe Scanner',
               desc: 'Monitors PIAM, AAJI, Met Malaysia + BMKG + ASEAN disaster portals for emerging claims exposure.',
-              instructions: 'Anda adalah analis yang mendukung General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.piam.org.my/news-publications/',
@@ -12931,7 +12931,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 14 days of weather and seismic alerts from Met Malaysia + BMKG + AHA Centre.',
+                'Ringkas the last 14 days of weather and seismic alerts from Met Indonesia + BMKG + AHA Centre.',
                 'Mana events overlap General Insurance concentration zones? Buat daftar the top 5 by potential gross-loss exposure.',
                 'Susun draf a rolling 14-day catastrophe exposure note for the General Insurance reinsurance team.'
               ]
@@ -12941,7 +12941,7 @@ window.HUB_DATA = {
               label: 'General Insurance Health & Mortality Trends Scanner',
               name: 'General Insurance Health & Mortality Trends Scanner',
               desc: 'Tracks MOH Malaysia + Kemenkes + WHO SEARO disease bulletins for life and health pricing.',
-              instructions: 'Anda adalah analis yang mendukung General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong General Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.swissre.com/institute/research/sigma-research.html',
@@ -15166,7 +15166,7 @@ window.HUB_DATA = {
               label: 'BNM/OJK Penghubung',
               name: 'Zava Life Insurance — Regulator Penghubung',
               desc: 'Prepares life-insurance regulatory returns and conduct-risk disclosures for Life Insurance.',
-              instructions: 'Anda adalah Zava Life Insurance Life Insurance Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under BNM (FSA) or OJK (PMK).  Your job: prepare susun submissions, validate RBC returns, and produce conduct-risk disclosures grounded on the regulatory return file (LI_05_Lapse_Cohort_Model.xlsx) and the policy handbook (LI_06_New_Business_Value_Forecast.xlsx).  Quote every figure with file + tab. Quote every clause with section number.  Tolak any pricing or claims question.',
+              instructions: 'Anda adalah Zava Life Insurance Life Insurance Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under BI (FSA) or OJK (PMK).  Your job: prepare susun submissions, validate RBC returns, and produce conduct-risk disclosures grounded on the regulatory return file (LI_05_Lapse_Cohort_Model.xlsx) and the policy handbook (LI_06_New_Business_Value_Forecast.xlsx).  Quote every figure with file + tab. Quote every clause with section number.  Tolak any pricing or claims question.',
               knowledge: [
                 {
                   file: 'LI_04_Bancassurance_Channel_Pack.docx',
@@ -15181,7 +15181,7 @@ window.HUB_DATA = {
                   note: 'Life insurance policy handbook — FSA/PMK clauses, governance.'
                 }
               ],
-              knowledgeNote: 'Test: "Susun the cover note to BNM on kuartal ini\'s RBC return for Life Insurance."',
+              knowledgeNote: 'Test: "Susun the cover note to BI on kuartal ini\'s RBC return for Life Insurance."',
               queries: [
                 'Prepare a cover note for kuartal ini\'s RBC return — quote the CAR, target capital, available capital, and the policy clause.',
                 'Yang mana observations from the last conduct review remain open? Bangun a 1-page status update.',
@@ -15301,12 +15301,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Life Insurance Insurance Regulator Watch',
               name: 'Life Insurance Insurance Regulator Watch',
-              desc: 'Tracks BNM Insurance/Takaful + OJK IKNB + MAS Insurance circulars yang relevan dengan Life Insurance.',
+              desc: 'Tracks BI Insurance/Takaful + OJK IKNB + MAS Insurance circulars yang relevan dengan Life Insurance.',
               instructions: 'Anda adalah analis yang mendukung Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/risk-based-capital-framework-for-insurers',
-                  note: 'BNM RBC framework for insurers'
+                  note: 'BI RBC framework for insurers'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/data-dan-statistik/asuransi/Default.aspx',
@@ -15319,8 +15319,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar BNM and OJK insurance circulars issued in the last 90 days with implications for Life Insurance.',
-                'Bandingkan RBC and risk-based capital guidance from BNM vs OJK — flag the deltas for Life Insurance.',
+                'Buat daftar BI and OJK insurance circulars issued in the last 90 days with implications for Life Insurance.',
+                'Bandingkan RBC and risk-based capital guidance from BI vs OJK — flag the deltas for Life Insurance.',
                 'Susun draf a weekly compliance digest for Life Insurance legal & risk team using only cited sources.'
               ]
             },
@@ -15328,12 +15328,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Life Insurance Claims & Catastrophe Scanner',
               name: 'Life Insurance Claims & Catastrophe Scanner',
-              desc: 'Monitors PIAM, AAJI, Met Malaysia + BMKG + ASEAN disaster portals for emerging claims exposure.',
+              desc: 'Monitors PIAM, AAJI, Met Indonesia + BMKG + ASEAN disaster portals for emerging claims exposure.',
               instructions: 'Anda adalah analis yang mendukung Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.liam.org.my/publications/',
-                  note: 'LIAM Life Insurance Association of Malaysia'
+                  note: 'LIAM Life Insurance Association of Indonesia'
                 },
                 {
                   url: 'https://aaji.or.id/publikasi/',
@@ -15346,7 +15346,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 14 days of weather and seismic alerts from Met Malaysia + BMKG + AHA Centre.',
+                'Ringkas the last 14 days of weather and seismic alerts from Met Indonesia + BMKG + AHA Centre.',
                 'Mana events overlap Life Insurance concentration zones? Buat daftar the top 5 by potential gross-loss exposure.',
                 'Susun draf a rolling 14-day catastrophe exposure note for the Life Insurance reinsurance team.'
               ]
@@ -15355,7 +15355,7 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Life Insurance Health & Mortality Trends Scanner',
               name: 'Life Insurance Health & Mortality Trends Scanner',
-              desc: 'Tracks MOH Malaysia + Kemenkes + WHO SEARO disease bulletins for life and health pricing.',
+              desc: 'Tracks MOH Indonesia + Kemenkes + WHO SEARO disease bulletins for life and health pricing.',
               instructions: 'Anda adalah analis yang mendukung Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
@@ -15384,12 +15384,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Life Insurance Insurance Regulator Watch',
               name: 'Life Insurance Insurance Regulator Watch',
-              desc: 'Tracks BNM Insurance/Takaful + OJK IKNB + MAS Insurance circulars yang relevan dengan Life Insurance.',
-              instructions: 'Anda adalah analis yang mendukung Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks BNM Insurance/Takaful + SC IKNB + MAS Insurance circulars yang relevan dengan Life Insurance.',
+              instructions: 'Anda adalah analis yang menyokong Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/risk-based-capital-framework-for-insurers',
-                  note: 'BNM RBC framework for insurers'
+                  note: 'BI RBC framework for insurers'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/data-dan-statistik/asuransi/Default.aspx',
@@ -15402,8 +15402,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar BNM and OJK insurance circulars issued in the last 90 days with implications for Life Insurance.',
-                'Bandingkan RBC and risk-based capital guidance from BNM vs OJK — flag the deltas for Life Insurance.',
+                'Buat daftar BI and OJK insurance circulars issued in the last 90 days with implications for Life Insurance.',
+                'Bandingkan RBC and risk-based capital guidance from BI vs OJK — flag the deltas for Life Insurance.',
                 'Susun draf a weekly compliance digest for Life Insurance legal & risk team using only cited sources.'
               ]
             },
@@ -15412,11 +15412,11 @@ window.HUB_DATA = {
               label: 'Life Insurance Claims & Catastrophe Scanner',
               name: 'Life Insurance Claims & Catastrophe Scanner',
               desc: 'Monitors PIAM, AAJI, Met Malaysia + BMKG + ASEAN disaster portals for emerging claims exposure.',
-              instructions: 'Anda adalah analis yang mendukung Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.liam.org.my/publications/',
-                  note: 'LIAM Life Insurance Association of Malaysia'
+                  note: 'LIAM Life Insurance Association of Indonesia'
                 },
                 {
                   url: 'https://aaji.or.id/publikasi/',
@@ -15429,7 +15429,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 14 days of weather and seismic alerts from Met Malaysia + BMKG + AHA Centre.',
+                'Ringkas the last 14 days of weather and seismic alerts from Met Indonesia + BMKG + AHA Centre.',
                 'Mana events overlap Life Insurance concentration zones? Buat daftar the top 5 by potential gross-loss exposure.',
                 'Susun draf a rolling 14-day catastrophe exposure note for the Life Insurance reinsurance team.'
               ]
@@ -15439,7 +15439,7 @@ window.HUB_DATA = {
               label: 'Life Insurance Health & Mortality Trends Scanner',
               name: 'Life Insurance Health & Mortality Trends Scanner',
               desc: 'Tracks MOH Malaysia + Kemenkes + WHO SEARO disease bulletins for life and health pricing.',
-              instructions: 'Anda adalah analis yang mendukung Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Life Insurance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.swissre.com/institute/research/topics-and-risk-dialogues/health-and-longevity.html',
@@ -17661,10 +17661,10 @@ window.HUB_DATA = {
             },
             {
               icon: '🏛️',
-              label: 'BNM Takaful Penghubung',
+              label: 'BI Takaful Penghubung',
               name: 'Zava Takaful — Regulator Penghubung',
-              desc: 'Prepares BNM IFSA Takaful submissions and Shariah Governance Framework reporting for Takaful.',
-              instructions: 'Anda adalah Zava Takaful Takaful Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under BNM IFSA and the Shariah Governance Framework.  Your job: prepare susun submissions, validate Takaful returns, and produce Shariah Governance Framework disclosures grounded on the regulatory file (TAK_05_Re_Takaful_Treaty_Pack.docx) and the resolutions library (TAK_06_Participant_Fund_Forecast.xlsx).  Quote every figure with file + tab. Quote every clause with section number.',
+              desc: 'Prepares BI IFSA Takaful submissions and Shariah Governance Framework reporting for Takaful.',
+              instructions: 'Anda adalah Zava Takaful Takaful Regulator Penghubung. Anda mendukung Regulatory Affairs on submissions under BI IFSA and the Shariah Governance Framework.  Your job: prepare susun submissions, validate Takaful returns, and produce Shariah Governance Framework disclosures grounded on the regulatory file (TAK_05_Re_Takaful_Treaty_Pack.docx) and the resolutions library (TAK_06_Participant_Fund_Forecast.xlsx).  Quote every figure with file + tab. Quote every clause with section number.',
               knowledge: [
                 {
                   file: 'TAK_03_Shariah_Compliance_Policy.docx',
@@ -17679,9 +17679,9 @@ window.HUB_DATA = {
                   note: 'Shariah resolutions and Governance Framework documentation.'
                 }
               ],
-              knowledgeNote: 'Test: "Susun the cover note to BNM on kuartal ini\'s Takaful return for Takaful."',
+              knowledgeNote: 'Test: "Susun the cover note to BI on kuartal ini\'s Takaful return for Takaful."',
               queries: [
-                'Prepare a cover note for kuartal ini\'s BNM Takaful return — quote the figures and the IFSA clause.',
+                'Prepare a cover note for kuartal ini\'s BI Takaful return — quote the figures and the IFSA clause.',
                 'Yang mana observations from the last Shariah thematic review remain open? Bangun a 1-page status update.',
                 'Susun the Shariah Governance Framework tahunan report opening section.'
               ]
@@ -17799,12 +17799,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Takaful Insurance Regulator Watch',
               name: 'Takaful Insurance Regulator Watch',
-              desc: 'Tracks BNM Insurance/Takaful + OJK IKNB + MAS Insurance circulars yang relevan dengan Takaful.',
+              desc: 'Tracks BI Insurance/Takaful + OJK IKNB + MAS Insurance circulars yang relevan dengan Takaful.',
               instructions: 'Anda adalah analis yang mendukung Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/operational-framework-for-takaful',
-                  note: 'BNM Operational Framework for Takaful'
+                  note: 'BI Operational Framework for Takaful'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/syariah/data-dan-statistik/asuransi-syariah/Default.aspx',
@@ -17817,8 +17817,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar BNM and OJK insurance circulars issued in the last 90 days with implications for Takaful.',
-                'Bandingkan RBC and risk-based capital guidance from BNM vs OJK — flag the deltas for Takaful.',
+                'Buat daftar BI and OJK insurance circulars issued in the last 90 days with implications for Takaful.',
+                'Bandingkan RBC and risk-based capital guidance from BI vs OJK — flag the deltas for Takaful.',
                 'Susun draf a weekly compliance digest for Takaful legal & risk team using only cited sources.'
               ]
             },
@@ -17826,7 +17826,7 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Takaful Claims & Catastrophe Scanner',
               name: 'Takaful Claims & Catastrophe Scanner',
-              desc: 'Monitors PIAM, AAJI, Met Malaysia + BMKG + ASEAN disaster portals for emerging claims exposure.',
+              desc: 'Monitors PIAM, AAJI, Met Indonesia + BMKG + ASEAN disaster portals for emerging claims exposure.',
               instructions: 'Anda adalah analis yang mendukung Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
@@ -17844,7 +17844,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 14 days of weather and seismic alerts from Met Malaysia + BMKG + AHA Centre.',
+                'Ringkas the last 14 days of weather and seismic alerts from Met Indonesia + BMKG + AHA Centre.',
                 'Mana events overlap Takaful concentration zones? Buat daftar the top 5 by potential gross-loss exposure.',
                 'Susun draf a rolling 14-day catastrophe exposure note for the Takaful reinsurance team.'
               ]
@@ -17853,7 +17853,7 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Takaful Health & Mortality Trends Scanner',
               name: 'Takaful Health & Mortality Trends Scanner',
-              desc: 'Tracks MOH Malaysia + Kemenkes + WHO SEARO disease bulletins for life and health pricing.',
+              desc: 'Tracks MOH Indonesia + Kemenkes + WHO SEARO disease bulletins for life and health pricing.',
               instructions: 'Anda adalah analis yang mendukung Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
@@ -17866,7 +17866,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.bnm.gov.my/-/monthly-highlights-statistics-isb',
-                  note: 'BNM Islamic finance monthly statistics'
+                  note: 'BI Islamic finance monthly statistics'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -17882,12 +17882,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Takaful Insurance Regulator Watch',
               name: 'Takaful Insurance Regulator Watch',
-              desc: 'Tracks BNM Insurance/Takaful + OJK IKNB + MAS Insurance circulars yang relevan dengan Takaful.',
-              instructions: 'Anda adalah analis yang mendukung Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks BNM Insurance/Takaful + SC IKNB + MAS Insurance circulars yang relevan dengan Takaful.',
+              instructions: 'Anda adalah analis yang menyokong Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/operational-framework-for-takaful',
-                  note: 'BNM Operational Framework for Takaful'
+                  note: 'BI Operational Framework for Takaful'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/syariah/data-dan-statistik/asuransi-syariah/Default.aspx',
@@ -17900,8 +17900,8 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar BNM and OJK insurance circulars issued in the last 90 days with implications for Takaful.',
-                'Bandingkan RBC and risk-based capital guidance from BNM vs OJK — flag the deltas for Takaful.',
+                'Buat daftar BI and OJK insurance circulars issued in the last 90 days with implications for Takaful.',
+                'Bandingkan RBC and risk-based capital guidance from BI vs OJK — flag the deltas for Takaful.',
                 'Susun draf a weekly compliance digest for Takaful legal & risk team using only cited sources.'
               ]
             },
@@ -17910,7 +17910,7 @@ window.HUB_DATA = {
               label: 'Takaful Claims & Catastrophe Scanner',
               name: 'Takaful Claims & Catastrophe Scanner',
               desc: 'Monitors PIAM, AAJI, Met Malaysia + BMKG + ASEAN disaster portals for emerging claims exposure.',
-              instructions: 'Anda adalah analis yang mendukung Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.isra.my/publication.html',
@@ -17927,7 +17927,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 14 days of weather and seismic alerts from Met Malaysia + BMKG + AHA Centre.',
+                'Ringkas the last 14 days of weather and seismic alerts from Met Indonesia + BMKG + AHA Centre.',
                 'Mana events overlap Takaful concentration zones? Buat daftar the top 5 by potential gross-loss exposure.',
                 'Susun draf a rolling 14-day catastrophe exposure note for the Takaful reinsurance team.'
               ]
@@ -17937,7 +17937,7 @@ window.HUB_DATA = {
               label: 'Takaful Health & Mortality Trends Scanner',
               name: 'Takaful Health & Mortality Trends Scanner',
               desc: 'Tracks MOH Malaysia + Kemenkes + WHO SEARO disease bulletins for life and health pricing.',
-              instructions: 'Anda adalah analis yang mendukung Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Takaful. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.milliman.com/en/products/global-takaful-report',
@@ -17949,7 +17949,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.bnm.gov.my/-/monthly-highlights-statistics-isb',
-                  note: 'BNM Islamic finance monthly statistics'
+                  note: 'BI Islamic finance monthly statistics'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -20337,7 +20337,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.moh.gov.my/index.php/database_stores/store_view/17',
-                  note: 'MOH Malaysia private healthcare establishments'
+                  note: 'MOH Indonesia private healthcare establishments'
                 },
                 {
                   url: 'https://yankes.kemkes.go.id/regulasi',
@@ -20364,7 +20364,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.aphm.org.my/news-events/',
-                  note: 'APHM Association of Private Hospitals Malaysia news'
+                  note: 'APHM Association of Private Hospitals Indonesia news'
                 },
                 {
                   url: 'https://persi.or.id/berita/',
@@ -20416,11 +20416,11 @@ window.HUB_DATA = {
               label: 'Hospital Network Health Regulator Watch',
               name: 'Hospital Network Health Regulator Watch',
               desc: 'Tracks KKM/MOH + Kemenkes + BPOM + NPRA announcements yang relevan dengan Hospital Network.',
-              instructions: 'Anda adalah analis yang mendukung Hospital Network. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Hospital Network. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.moh.gov.my/index.php/database_stores/store_view/17',
-                  note: 'MOH Malaysia private healthcare establishments'
+                  note: 'MOH Indonesia private healthcare establishments'
                 },
                 {
                   url: 'https://yankes.kemkes.go.id/regulasi',
@@ -20443,11 +20443,11 @@ window.HUB_DATA = {
               label: 'Hospital Network Clinical Guidelines Tracker',
               name: 'Hospital Network Clinical Guidelines Tracker',
               desc: 'Tracks MOH CPGs + AMM + Perdoki + WHO SEARO clinical guidance for Hospital Network.',
-              instructions: 'Anda adalah analis yang mendukung Hospital Network. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Hospital Network. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.aphm.org.my/news-events/',
-                  note: 'APHM Association of Private Hospitals Malaysia news'
+                  note: 'APHM Association of Private Hospitals Indonesia news'
                 },
                 {
                   url: 'https://persi.or.id/berita/',
@@ -20470,7 +20470,7 @@ window.HUB_DATA = {
               label: 'Hospital Network Public Health Surveillance Scanner',
               name: 'Hospital Network Public Health Surveillance Scanner',
               desc: 'Daily scan of KKM CPRC, Kemenkes surveillance, and WHO SEARO outbreak news.',
-              instructions: 'Anda adalah analis yang mendukung Hospital Network. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Hospital Network. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.who.int/westernpacific/publications',
@@ -22652,7 +22652,7 @@ window.HUB_DATA = {
               label: 'Pipeline & Trials Watch',
               name: 'Zava Pharmaceutical — Pipeline & Clinical Trials Watch',
               desc: 'Memantau Pharmaceutical clinical trials and R&D pipeline for milestone slippage, recruitment risk, and safety signals.',
-              instructions: 'Anda adalah Zava Pharmaceutical Pipeline & Clinical Trials Pemantau agen. Anda mendukung the Chief Medical Officer and the R&D Komite Pengarah.  Your job: scan the trial register (PH_01_Drug_Portfolio.xlsx) and the milestone tracker (PH_02_Regulatory_Affairs_Manual.docx) for milestone slippage, recruitment risk, and safety signals.  Classify each trial as Green / Amber / Red with the cited driver. Rekomendasikan escalation actions per Red.  Tolak any commercial pricing or distribution question.',
+              instructions: 'Anda adalah Zava Pharmaceutical Pipeline & Clinical Trials Pemantau agen. Anda mendukung the Chief Medical Officer and the R&D Komite Direktur.  Your job: scan the trial register (PH_01_Drug_Portfolio.xlsx) and the milestone tracker (PH_02_Regulatory_Affairs_Manual.docx) for milestone slippage, recruitment risk, and safety signals.  Classify each trial as Green / Amber / Red with the cited driver. Rekomendasikan escalation actions per Red.  Tolak any commercial pricing or distribution question.',
               knowledge: [
                 {
                   file: 'PH_01_Drug_Portfolio.xlsx',
@@ -22671,7 +22671,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas trials by RAG status — phase, indication, slippage days, recruitment %, safety signals, recommended tindakan.',
                 'Yang mana trials are showing recruitment under 70% of plan? Bangun a recovery plan per trial.',
-                'Susun the R&D Komite Pengarah paper on the proposed deprioritisation of terbesar at-risk trial.'
+                'Susun the R&D Komite Direktur paper on the proposed deprioritisation of terbesar at-risk trial.'
               ]
             },
             {
@@ -22842,7 +22842,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.npra.gov.my/index.php/en/announcement.html',
-                  note: 'NPRA Malaysia drug-registration announcements'
+                  note: 'NPRA Indonesia drug-registration announcements'
                 },
                 {
                   url: 'https://www.pom.go.id/new/index.php/view/berita',
@@ -22869,7 +22869,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://phama.org.my/',
-                  note: 'PhAMA Pharmaceutical Association of Malaysia'
+                  note: 'PhAMA Pharmaceutical Association of Indonesia'
                 },
                 {
                   url: 'https://www.gpfarmasi.org/',
@@ -22921,11 +22921,11 @@ window.HUB_DATA = {
               label: 'Pharmaceutical Health Regulator Watch',
               name: 'Pharmaceutical Health Regulator Watch',
               desc: 'Tracks KKM/MOH + Kemenkes + BPOM + NPRA announcements yang relevan dengan Pharmaceutical.',
-              instructions: 'Anda adalah analis yang mendukung Pharmaceutical. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Pharmaceutical. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.npra.gov.my/index.php/en/announcement.html',
-                  note: 'NPRA Malaysia drug-registration announcements'
+                  note: 'NPRA Indonesia drug-registration announcements'
                 },
                 {
                   url: 'https://www.pom.go.id/new/index.php/view/berita',
@@ -22948,11 +22948,11 @@ window.HUB_DATA = {
               label: 'Pharmaceutical Clinical Guidelines Tracker',
               name: 'Pharmaceutical Clinical Guidelines Tracker',
               desc: 'Tracks MOH CPGs + AMM + Perdoki + WHO SEARO clinical guidance for Pharmaceutical.',
-              instructions: 'Anda adalah analis yang mendukung Pharmaceutical. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Pharmaceutical. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://phama.org.my/',
-                  note: 'PhAMA Pharmaceutical Association of Malaysia'
+                  note: 'PhAMA Pharmaceutical Association of Indonesia'
                 },
                 {
                   url: 'https://www.gpfarmasi.org/',
@@ -22975,7 +22975,7 @@ window.HUB_DATA = {
               label: 'Pharmaceutical Public Health Surveillance Scanner',
               name: 'Pharmaceutical Public Health Surveillance Scanner',
               desc: 'Daily scan of KKM CPRC, Kemenkes surveillance, and WHO SEARO outbreak news.',
-              instructions: 'Anda adalah analis yang mendukung Pharmaceutical. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Pharmaceutical. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.iqvia.com/insights/the-iqvia-institute',
@@ -25193,7 +25193,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas wells by production decline — well, rate decline %, water-cut trend, intervention candidate?, expected uplift.',
                 'Yang mana wells have crossed the economic limit? Tabulasikan and rekomendasikan abandonment or workover.',
-                'Susun the bulanan Production Komite Pengarah paper on proposed intervention programme.'
+                'Susun the bulanan Production Komite Direktur paper on proposed intervention programme.'
               ]
             },
             {
@@ -25337,7 +25337,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.petronas.com/our-business/upstream',
-                  note: 'Petronas upstream Malaysia portal'
+                  note: 'Petronas upstream Indonesia portal'
                 },
                 {
                   url: 'https://www.skkmigas.go.id/en/news',
@@ -25345,7 +25345,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.dosh.gov.my/index.php/legislation/petroleum-act',
-                  note: 'DOSH Malaysia petroleum-safety legislation'
+                  note: 'DOSH Indonesia petroleum-safety legislation'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -25404,7 +25404,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Oil & Gas Upstream.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Oil & Gas Upstream.',
                 'Map ISSB IFRS S1/S2 clauses to Oil & Gas Upstream current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Oil & Gas Upstream sustainability committee.'
               ]
@@ -25416,11 +25416,11 @@ window.HUB_DATA = {
               label: 'Oil & Gas Upstream Energy Regulator Watch',
               name: 'Oil & Gas Upstream Energy Regulator Watch',
               desc: 'Tracks Suruhanjaya Tenaga + ESDM + EMA Singapore policy moves yang relevan dengan Oil & Gas Upstream.',
-              instructions: 'Anda adalah analis yang mendukung Oil & Gas Upstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Oil & Gas Upstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.petronas.com/our-business/upstream',
-                  note: 'Petronas upstream Malaysia portal'
+                  note: 'Petronas upstream Indonesia portal'
                 },
                 {
                   url: 'https://www.skkmigas.go.id/en/news',
@@ -25428,7 +25428,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.dosh.gov.my/index.php/legislation/petroleum-act',
-                  note: 'DOSH Malaysia petroleum-safety legislation'
+                  note: 'DOSH Indonesia petroleum-safety legislation'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -25443,7 +25443,7 @@ window.HUB_DATA = {
               label: 'Oil & Gas Upstream Commodity & Tariff Scanner',
               name: 'Oil & Gas Upstream Commodity & Tariff Scanner',
               desc: 'Tracks Brent + JKM LNG + EU TTF + ASEAN coal references plus regulated tariff schedules.',
-              instructions: 'Anda adalah analis yang mendukung Oil & Gas Upstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Oil & Gas Upstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.petronas.com/media/media-releases',
@@ -25469,8 +25469,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Oil & Gas Upstream Sustainability & Climate Disclosure Scanner',
               name: 'Oil & Gas Upstream Sustainability & Climate Disclosure Scanner',
-              desc: 'Tracks Bursa Sustainability + IDX ESG + ISSB + TCFD updates affecting Oil & Gas Upstream.',
-              instructions: 'Anda adalah analis yang mendukung Oil & Gas Upstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks Bursa Sustainability + BURSA MALAYSIA ESG + ISSB + TCFD updates affecting Oil & Gas Upstream.',
+              instructions: 'Anda adalah analis yang menyokong Oil & Gas Upstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.opec.org/opec_web/en/publications/202.htm',
@@ -25487,7 +25487,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Oil & Gas Upstream.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Oil & Gas Upstream.',
                 'Map ISSB IFRS S1/S2 clauses to Oil & Gas Upstream current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Oil & Gas Upstream sustainability committee.'
               ]
@@ -27693,7 +27693,7 @@ window.HUB_DATA = {
               queries: [
                 '5 teratas refineries by margin drag — recommended slate or run-rate tindakan.',
                 'Yang mana crack-spread environments warrant hedging? Bangun hedge proposal.',
-                'Susun the mingguan Refining paper Komite Pengarah.'
+                'Susun the mingguan Refining paper Komite Direktur.'
               ]
             },
             {
@@ -27716,7 +27716,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas stations by throughput gap — recommended tindakan.',
                 'Yang mana dealer compliance gaps require escalation?',
-                'Susun the bulanan Retail paper Komite Pengarah.'
+                'Susun the bulanan Retail paper Komite Direktur.'
               ]
             },
             {
@@ -27860,7 +27860,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
-                  note: 'KPDN Malaysia downstream pricing announcements'
+                  note: 'KPDN Indonesia downstream pricing announcements'
                 },
                 {
                   url: 'https://www.ema.gov.sg/regulations-licences-publications.aspx',
@@ -27923,7 +27923,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Oil & Gas Downstream.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Oil & Gas Downstream.',
                 'Map ISSB IFRS S1/S2 clauses to Oil & Gas Downstream current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Oil & Gas Downstream sustainability committee.'
               ]
@@ -27935,7 +27935,7 @@ window.HUB_DATA = {
               label: 'Oil & Gas Downstream Energy Regulator Watch',
               name: 'Oil & Gas Downstream Energy Regulator Watch',
               desc: 'Tracks Suruhanjaya Tenaga + ESDM + EMA Singapore policy moves yang relevan dengan Oil & Gas Downstream.',
-              instructions: 'Anda adalah analis yang mendukung Oil & Gas Downstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Oil & Gas Downstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bpdp.or.id/en/regulations',
@@ -27943,7 +27943,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
-                  note: 'KPDN Malaysia downstream pricing announcements'
+                  note: 'KPDN Indonesia downstream pricing announcements'
                 },
                 {
                   url: 'https://www.ema.gov.sg/regulations-licences-publications.aspx',
@@ -27962,7 +27962,7 @@ window.HUB_DATA = {
               label: 'Oil & Gas Downstream Commodity & Tariff Scanner',
               name: 'Oil & Gas Downstream Commodity & Tariff Scanner',
               desc: 'Tracks Brent + JKM LNG + EU TTF + ASEAN coal references plus regulated tariff schedules.',
-              instructions: 'Anda adalah analis yang mendukung Oil & Gas Downstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Oil & Gas Downstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.petronas.com/our-business/downstream',
@@ -27988,8 +27988,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Oil & Gas Downstream Sustainability & Climate Disclosure Scanner',
               name: 'Oil & Gas Downstream Sustainability & Climate Disclosure Scanner',
-              desc: 'Tracks Bursa Sustainability + IDX ESG + ISSB + TCFD updates affecting Oil & Gas Downstream.',
-              instructions: 'Anda adalah analis yang mendukung Oil & Gas Downstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks Bursa Sustainability + BURSA MALAYSIA ESG + ISSB + TCFD updates affecting Oil & Gas Downstream.',
+              instructions: 'Anda adalah analis yang menyokong Oil & Gas Downstream. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.theice.com/marketdata/reports/355',
@@ -28006,7 +28006,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Oil & Gas Downstream.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Oil & Gas Downstream.',
                 'Map ISSB IFRS S1/S2 clauses to Oil & Gas Downstream current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Oil & Gas Downstream sustainability committee.'
               ]
@@ -30400,7 +30400,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.seda.gov.my/regulatory/',
-                  note: 'SEDA Malaysia renewable-energy regulations'
+                  note: 'SEDA Indonesia renewable-energy regulations'
                 },
                 {
                   url: 'https://www.esdm.go.id/en/regulations',
@@ -30427,7 +30427,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.tnb.com.my/sustainability',
-                  note: 'TNB Malaysia renewables portfolio'
+                  note: 'TNB Indonesia renewables portfolio'
                 },
                 {
                   url: 'https://web.pln.co.id/cms/sustainability/',
@@ -30467,7 +30467,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Renewable Energy.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Renewable Energy.',
                 'Map ISSB IFRS S1/S2 clauses to Renewable Energy current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Renewable Energy sustainability committee.'
               ]
@@ -30479,11 +30479,11 @@ window.HUB_DATA = {
               label: 'Renewable Energy Energy Regulator Watch',
               name: 'Renewable Energy Energy Regulator Watch',
               desc: 'Tracks Suruhanjaya Tenaga + ESDM + EMA Singapore policy moves yang relevan dengan Renewable Energy.',
-              instructions: 'Anda adalah analis yang mendukung Renewable Energy. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Renewable Energy. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.seda.gov.my/regulatory/',
-                  note: 'SEDA Malaysia renewable-energy regulations'
+                  note: 'SEDA Indonesia renewable-energy regulations'
                 },
                 {
                   url: 'https://www.esdm.go.id/en/regulations',
@@ -30506,11 +30506,11 @@ window.HUB_DATA = {
               label: 'Renewable Energy Commodity & Tariff Scanner',
               name: 'Renewable Energy Commodity & Tariff Scanner',
               desc: 'Tracks Brent + JKM LNG + EU TTF + ASEAN coal references plus regulated tariff schedules.',
-              instructions: 'Anda adalah analis yang mendukung Renewable Energy. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Renewable Energy. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.tnb.com.my/sustainability',
-                  note: 'TNB Malaysia renewables portfolio'
+                  note: 'TNB Indonesia renewables portfolio'
                 },
                 {
                   url: 'https://web.pln.co.id/cms/sustainability/',
@@ -30532,8 +30532,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Renewable Energy Sustainability & Climate Disclosure Scanner',
               name: 'Renewable Energy Sustainability & Climate Disclosure Scanner',
-              desc: 'Tracks Bursa Sustainability + IDX ESG + ISSB + TCFD updates affecting Renewable Energy.',
-              instructions: 'Anda adalah analis yang mendukung Renewable Energy. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks Bursa Sustainability + BURSA MALAYSIA ESG + ISSB + TCFD updates affecting Renewable Energy.',
+              instructions: 'Anda adalah analis yang menyokong Renewable Energy. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.irena.org/publications',
@@ -30550,7 +30550,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Renewable Energy.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Renewable Energy.',
                 'Map ISSB IFRS S1/S2 clauses to Renewable Energy current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Renewable Energy sustainability committee.'
               ]
@@ -32768,7 +32768,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas plants by OEE gap — recommended tindakan.',
                 'Yang mana lines have conversion-cost outliers? Rekomendasikan root-cause programme.',
-                'Susun the bulanan Plant paper Komite Pengarah.'
+                'Susun the bulanan Plant paper Komite Direktur.'
               ]
             },
             {
@@ -32931,7 +32931,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.dosh.gov.my/index.php/legislation',
-                  note: 'DOSH Malaysia OSH Act regulations'
+                  note: 'DOSH Indonesia OSH Act regulations'
                 },
                 {
                   url: 'https://kemenperin.go.id/regulasi',
@@ -32958,7 +32958,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.fmm.org.my/news-events.aspx',
-                  note: 'FMM Federation of Manufacturers Malaysia news'
+                  note: 'FMM Federation of Manufacturers Indonesia news'
                 },
                 {
                   url: 'https://www.kadin.id/news/',
@@ -33010,11 +33010,11 @@ window.HUB_DATA = {
               label: 'Industrial Manufacturing Industrial Policy Watch',
               name: 'Industrial Manufacturing Industrial Policy Watch',
               desc: 'Tracks MITI + MIDA + Kemenperin + EDB Singapore policy moves for Industrial Manufacturing.',
-              instructions: 'Anda adalah analis yang mendukung Industrial Manufacturing. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Industrial Manufacturing. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.dosh.gov.my/index.php/legislation',
-                  note: 'DOSH Malaysia OSH Act regulations'
+                  note: 'DOSH Indonesia OSH Act regulations'
                 },
                 {
                   url: 'https://kemenperin.go.id/regulasi',
@@ -33037,11 +33037,11 @@ window.HUB_DATA = {
               label: 'Industrial Manufacturing Trade & Tariff Scanner',
               name: 'Industrial Manufacturing Trade & Tariff Scanner',
               desc: 'Tracks ASEAN FTA + WTO + Customs notices yang relevan dengan Industrial Manufacturing cross-border flows.',
-              instructions: 'Anda adalah analis yang mendukung Industrial Manufacturing. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Industrial Manufacturing. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.fmm.org.my/news-events.aspx',
-                  note: 'FMM Federation of Manufacturers Malaysia news'
+                  note: 'FMM Federation of Manufacturers Indonesia news'
                 },
                 {
                   url: 'https://www.kadin.id/news/',
@@ -33064,7 +33064,7 @@ window.HUB_DATA = {
               label: 'Industrial Manufacturing Safety & Quality Standards Tracker',
               name: 'Industrial Manufacturing Safety & Quality Standards Tracker',
               desc: 'Tracks DOSH + JAS + SIRIM + SNI standard revisions yang relevan dengan Industrial Manufacturing plants.',
-              instructions: 'Anda adalah analis yang mendukung Industrial Manufacturing. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Industrial Manufacturing. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.spglobal.com/marketintelligence/en/mi/products/asean-pmi.html',
@@ -35424,7 +35424,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas estates by yield drag — recommended replanting / fertiliser tindakan.',
                 'Yang mana mills have OER deterioration? Rekomendasikan mechanical or operational tindakan.',
-                'Susun the kuartalan Plantation Komite Pengarah paper.'
+                'Susun the kuartalan Plantation Komite Direktur paper.'
               ]
             },
             {
@@ -35595,7 +35595,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mpob.gov.my/regulatory/policies-and-rulings',
-                  note: 'MPOB Malaysia palm-oil policies'
+                  note: 'MPOB Indonesia palm-oil policies'
                 },
                 {
                   url: 'https://www.bpdp.or.id/en/regulations',
@@ -35644,7 +35644,7 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Plantation & Agribusiness Climate & Weather Risk Scanner',
               name: 'Plantation & Agribusiness Climate & Weather Risk Scanner',
-              desc: 'Tracks Met Malaysia + BMKG + ENSO bulletins for plantation operating conditions.',
+              desc: 'Tracks Met Indonesia + BMKG + ENSO bulletins for plantation operating conditions.',
               instructions: 'Anda adalah analis yang mendukung Plantation & Agribusiness. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
@@ -35663,7 +35663,7 @@ window.HUB_DATA = {
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
                 'Ringkas the latest ENSO and IOD outlooks from IRI and BMKG.',
-                'Buat daftar Met Malaysia and BMKG seasonal outlooks affecting Plantation & Agribusiness estates.',
+                'Buat daftar Met Indonesia and BMKG seasonal outlooks affecting Plantation & Agribusiness estates.',
                 'Susun draf a monthly weather-risk brief tagged by estate region for the Plantation & Agribusiness ops team.'
               ]
             }
@@ -35674,11 +35674,11 @@ window.HUB_DATA = {
               label: 'Plantation & Agribusiness Plantation Regulator Watch',
               name: 'Plantation & Agribusiness Plantation Regulator Watch',
               desc: 'Tracks MPOB + Kementerian Pertanian + ISPO + RSPO updates for Plantation & Agribusiness.',
-              instructions: 'Anda adalah analis yang mendukung Plantation & Agribusiness. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Plantation & Agribusiness. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mpob.gov.my/regulatory/policies-and-rulings',
-                  note: 'MPOB Malaysia palm-oil policies'
+                  note: 'MPOB Indonesia palm-oil policies'
                 },
                 {
                   url: 'https://www.bpdp.or.id/en/regulations',
@@ -35701,7 +35701,7 @@ window.HUB_DATA = {
               label: 'Plantation & Agribusiness Soft Commodity Price Scanner',
               name: 'Plantation & Agribusiness Soft Commodity Price Scanner',
               desc: 'Tracks Bursa CPO + ICE Cocoa + Coffee + Sugar references for Plantation & Agribusiness.',
-              instructions: 'Anda adalah analis yang mendukung Plantation & Agribusiness. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Plantation & Agribusiness. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/listed_companies/list_of_companies/main_market',
@@ -35728,7 +35728,7 @@ window.HUB_DATA = {
               label: 'Plantation & Agribusiness Climate & Weather Risk Scanner',
               name: 'Plantation & Agribusiness Climate & Weather Risk Scanner',
               desc: 'Tracks Met Malaysia + BMKG + ENSO bulletins for plantation operating conditions.',
-              instructions: 'Anda adalah analis yang mendukung Plantation & Agribusiness. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Plantation & Agribusiness. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.fas.usda.gov/regions/southeast-asia',
@@ -35746,7 +35746,7 @@ window.HUB_DATA = {
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
                 'Ringkas the latest ENSO and IOD outlooks from IRI and BMKG.',
-                'Buat daftar Met Malaysia and BMKG seasonal outlooks affecting Plantation & Agribusiness estates.',
+                'Buat daftar Met Indonesia and BMKG seasonal outlooks affecting Plantation & Agribusiness estates.',
                 'Susun draf a monthly weather-risk brief tagged by estate region for the Plantation & Agribusiness ops team.'
               ]
             }
@@ -38244,7 +38244,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://outsourcingmalaysia.com.my/',
-                  note: 'Outsourcing Malaysia industry association'
+                  note: 'Outsourcing Indonesia industry association'
                 },
                 {
                   url: 'https://www.iaoa.id/',
@@ -38311,7 +38311,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Malaysia and Indonesia digital snapshots relevant to BPO Services.',
+                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to BPO Services.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the BPO Services digital strategy lead.'
               ]
@@ -38323,11 +38323,11 @@ window.HUB_DATA = {
               label: 'BPO Services Telecoms Regulator Watch',
               name: 'BPO Services Telecoms Regulator Watch',
               desc: 'Tracks MCMC + Kominfo + IMDA spectrum and licensing announcements for BPO Services.',
-              instructions: 'Anda adalah analis yang mendukung BPO Services. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong BPO Services. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://outsourcingmalaysia.com.my/',
-                  note: 'Outsourcing Malaysia industry association'
+                  note: 'Outsourcing Indonesia industry association'
                 },
                 {
                   url: 'https://www.iaoa.id/',
@@ -38350,7 +38350,7 @@ window.HUB_DATA = {
               label: 'BPO Services Cyber & Data Protection Scanner',
               name: 'BPO Services Cyber & Data Protection Scanner',
               desc: 'Tracks PDP Commissioner + Pusat KKD + PDPC Singapore + ENISA enforcement and guidance.',
-              instructions: 'Anda adalah analis yang mendukung BPO Services. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong BPO Services. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.gartner.com/en/insights/business-process-outsourcing',
@@ -38377,7 +38377,7 @@ window.HUB_DATA = {
               label: 'BPO Services Digital Adoption Scanner',
               name: 'BPO Services Digital Adoption Scanner',
               desc: 'Tracks DataReportal + DOSM ICT + BPS ICT + Statista regional adoption snapshots.',
-              instructions: 'Anda adalah analis yang mendukung BPO Services. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong BPO Services. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.weforum.org/agenda/future-of-work/',
@@ -38394,7 +38394,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Malaysia and Indonesia digital snapshots relevant to BPO Services.',
+                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to BPO Services.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the BPO Services digital strategy lead.'
               ]
@@ -40557,7 +40557,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas plans by churn — recommended retention package.',
                 'Yang mana segments have ARPU deterioration? Tabulate.',
-                'Susun the kuartalan Subscriber Komite Pengarah paper.'
+                'Susun the kuartalan Subscriber Komite Direktur paper.'
               ]
             },
             {
@@ -40580,7 +40580,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas network-quality drag clusters — recommended tindakan.',
                 'Yang mana capex projects are at risk of slippage? Rekomendasikan re-baseline.',
-                'Susun the bulanan Network paper Komite Pengarah.'
+                'Susun the bulanan Network paper Komite Direktur.'
               ]
             },
             {
@@ -40720,7 +40720,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mcmc.gov.my/en/legal/policies',
-                  note: 'MCMC Malaysia telco policies'
+                  note: 'MCMC Indonesia telco policies'
                 },
                 {
                   url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
@@ -40787,7 +40787,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Malaysia and Indonesia digital snapshots relevant to Telco.',
+                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to Telco.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the Telco digital strategy lead.'
               ]
@@ -40799,11 +40799,11 @@ window.HUB_DATA = {
               label: 'Telco Telecoms Regulator Watch',
               name: 'Telco Telecoms Regulator Watch',
               desc: 'Tracks MCMC + Kominfo + IMDA spectrum and licensing announcements for Telco.',
-              instructions: 'Anda adalah analis yang mendukung Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mcmc.gov.my/en/legal/policies',
-                  note: 'MCMC Malaysia telco policies'
+                  note: 'MCMC Indonesia telco policies'
                 },
                 {
                   url: 'https://www.kominfo.go.id/index.php/all_content/regulation',
@@ -40826,7 +40826,7 @@ window.HUB_DATA = {
               label: 'Telco Cyber & Data Protection Scanner',
               name: 'Telco Cyber & Data Protection Scanner',
               desc: 'Tracks PDP Commissioner + Pusat KKD + PDPC Singapore + ENISA enforcement and guidance.',
-              instructions: 'Anda adalah analis yang mendukung Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mcmc.gov.my/en/resources/statistics',
@@ -40853,7 +40853,7 @@ window.HUB_DATA = {
               label: 'Telco Digital Adoption Scanner',
               name: 'Telco Digital Adoption Scanner',
               desc: 'Tracks DataReportal + DOSM ICT + BPS ICT + Statista regional adoption snapshots.',
-              instructions: 'Anda adalah analis yang mendukung Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Telco. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.gsma.com/mobileeconomy/asia-pacific/',
@@ -40870,7 +40870,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Malaysia and Indonesia digital snapshots relevant to Telco.',
+                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to Telco.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the Telco digital strategy lead.'
               ]
@@ -43279,7 +43279,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mof.gov.my/portal/en/announcement/news',
-                  note: 'MOF Inc Malaysia GLC announcements'
+                  note: 'MOF Inc Indonesia GLC announcements'
                 },
                 {
                   url: 'https://www.bumn.go.id/page/berita/all',
@@ -43310,7 +43310,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/id/perusahaan-tercatat/news/',
-                  note: 'IDX BUMN listed-companies'
+                  note: 'BEI BUMN listed-companies'
                 },
                 {
                   url: 'https://www.sgx.com/securities/company-announcements',
@@ -43319,7 +43319,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the 10 most material conglomerate disclosures on Bursa, IDX, and SGX in the last 7 days.',
+                'Buat daftar the 10 most material conglomerate disclosures on Bursa, BEI, and SGX in the last 7 days.',
                 'Identifikasi the peer disclosures most relevant to Diversified Conglomerate divisions.',
                 'Susun draf a weekly disclosure log with peer implications for Diversified Conglomerate.'
               ]
@@ -43358,11 +43358,11 @@ window.HUB_DATA = {
               label: 'Conglomerate Mandate Watch (Diversified Conglomerate)',
               name: 'Conglomerate Mandate Watch (Diversified Conglomerate)',
               desc: 'Tracks MOF Inc + Kementerian BUMN + MOF Singapore announcements yang relevan dengan Diversified Conglomerate.',
-              instructions: 'Anda adalah analis yang mendukung Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mof.gov.my/portal/en/announcement/news',
-                  note: 'MOF Inc Malaysia GLC announcements'
+                  note: 'MOF Inc Indonesia GLC announcements'
                 },
                 {
                   url: 'https://www.bumn.go.id/page/berita/all',
@@ -43384,8 +43384,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Listed-Group Disclosure Tracker (Diversified Conglomerate)',
               name: 'Listed-Group Disclosure Tracker (Diversified Conglomerate)',
-              desc: 'Tracks Bursa GLC + IDX BUMN + SGX Temasek-portfolio listed-co disclosures yang relevan dengan Diversified Conglomerate.',
-              instructions: 'Anda adalah analis yang mendukung Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks Bursa GLC + BURSA MALAYSIA BUMN + SGX Temasek-portfolio listed-co disclosures yang relevan dengan Diversified Conglomerate.',
+              instructions: 'Anda adalah analis yang menyokong Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/announcements/company_announcement',
@@ -43393,7 +43393,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/id/perusahaan-tercatat/news/',
-                  note: 'IDX BUMN listed-companies'
+                  note: 'BEI BUMN listed-companies'
                 },
                 {
                   url: 'https://www.sgx.com/securities/company-announcements',
@@ -43402,7 +43402,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the 10 most material conglomerate disclosures on Bursa, IDX, and SGX in the last 7 days.',
+                'Buat daftar the 10 most material conglomerate disclosures on Bursa, BEI, and SGX in the last 7 days.',
                 'Identifikasi the peer disclosures most relevant to Diversified Conglomerate divisions.',
                 'Susun draf a weekly disclosure log with peer implications for Diversified Conglomerate.'
               ]
@@ -43412,7 +43412,7 @@ window.HUB_DATA = {
               label: 'OECD Group Governance Hub (Diversified Conglomerate)',
               name: 'OECD Group Governance Hub (Diversified Conglomerate)',
               desc: 'Tracks OECD SOE + IFC + World Bank governance research yang relevan dengan Diversified Conglomerate.',
-              instructions: 'Anda adalah analis yang mendukung Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Diversified Conglomerate. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.oecd.org/corporate/soes/',
@@ -45829,10 +45829,10 @@ window.HUB_DATA = {
             },
             {
               icon: '🏛️',
-              label: 'BNM / BI Penghubung',
+              label: 'BI / BI Penghubung',
               name: 'Zava Fintech Payments — Payments Regulator Penghubung',
-              desc: 'Prepares BNM PSA (MY) / BI PJP (ID) e-money licence, AML, and outsourcing filings for Fintech Payments.',
-              instructions: 'Anda adalah Zava Fintech Payments Payments Regulator Penghubung. Prepare BNM / BI submissions grounded on the regulatory file (FT_06_AML_KYC_Procedure.docx).',
+              desc: 'Prepares BI PSA (MY) / BI PJP (ID) e-money licence, AML, and outsourcing filings for Fintech Payments.',
+              instructions: 'Anda adalah Zava Fintech Payments Payments Regulator Penghubung. Prepare BI / BI submissions grounded on the regulatory file (FT_06_AML_KYC_Procedure.docx).',
               knowledge: [
                 {
                   file: 'FT_06_AML_KYC_Procedure.docx',
@@ -45841,7 +45841,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Test: "Susun the response to BNM\'s latest e-money circular for Fintech Payments."',
               queries: [
-                'Prepare a cover letter for berikutnya BNM / BI return.',
+                'Prepare a cover letter for berikutnya BI / BI return.',
                 'Yang mana AML breaches require regulator notification? Bangun holding line.',
                 'Susun the response letter to the regulator\'s latest notice.'
               ]
@@ -45959,12 +45959,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Fintech Payments Regulator Watch (Public Sources)',
               name: 'Fintech Payments Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Fintech Payments.',
+              desc: 'Monitors Bank Indonesia + OJK + MAS announcements yang relevan dengan Fintech Payments.',
               instructions: 'Anda adalah analis yang mendukung Fintech Payments. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/digital-banks-electronic-money',
-                  note: 'BNM Electronic Money issuers list'
+                  note: 'BI Electronic Money issuers list'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/Inovasi-Keuangan-Digital.aspx',
@@ -45977,7 +45977,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Fintech Payments, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Fintech Payments, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Fintech Payments would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Fintech Payments Group Risk Committee using only the cited sources.'
               ]
@@ -45991,7 +45991,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.fintechnews.my/',
-                  note: 'Fintech News Malaysia'
+                  note: 'Fintech News Indonesia'
                 },
                 {
                   url: 'https://aftech.or.id/',
@@ -46004,7 +46004,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Fintech Payments CFO benchmarking against the 3 closest comparables.'
               ]
@@ -46031,7 +46031,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Fintech Payments variable-rate book?',
                 'Susun draf an ALCO macro update for Fintech Payments with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -46042,12 +46042,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Fintech Payments Regulator Watch (Public Sources)',
               name: 'Fintech Payments Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Fintech Payments.',
-              instructions: 'Anda adalah analis yang mendukung Fintech Payments. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Monitors Bank Negara Malaysia + SC + MAS announcements yang relevan dengan Fintech Payments.',
+              instructions: 'Anda adalah analis yang menyokong Fintech Payments. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/digital-banks-electronic-money',
-                  note: 'BNM Electronic Money issuers list'
+                  note: 'BI Electronic Money issuers list'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/Inovasi-Keuangan-Digital.aspx',
@@ -46060,7 +46060,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Fintech Payments, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Fintech Payments, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Fintech Payments would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Fintech Payments Group Risk Committee using only the cited sources.'
               ]
@@ -46069,12 +46069,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Fintech Payments Peer Pulse (Public IR)',
               name: 'Fintech Payments Peer Pulse (Public IR)',
-              desc: 'Tracks ASEAN banking peers via Bursa + IDX disclosure portals.',
-              instructions: 'Anda adalah analis yang mendukung Fintech Payments. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks ASEAN banking peers via Bursa + BURSA MALAYSIA disclosure portals.',
+              instructions: 'Anda adalah analis yang menyokong Fintech Payments. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.fintechnews.my/',
-                  note: 'Fintech News Malaysia'
+                  note: 'Fintech News Indonesia'
                 },
                 {
                   url: 'https://aftech.or.id/',
@@ -46087,7 +46087,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Fintech Payments CFO benchmarking against the 3 closest comparables.'
               ]
@@ -46097,7 +46097,7 @@ window.HUB_DATA = {
               label: 'Fintech Payments Macro & Rates Scanner',
               name: 'Fintech Payments Macro & Rates Scanner',
               desc: 'Pulls BNM/BI/MAS rate decisions + DOSM/BPS macro releases for Fintech Payments ALCO.',
-              instructions: 'Anda adalah analis yang mendukung Fintech Payments. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Fintech Payments. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bis.org/about/bisih/',
@@ -46114,7 +46114,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Fintech Payments variable-rate book?',
                 'Susun draf an ALCO macro update for Fintech Payments with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -48339,7 +48339,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas programmes by KPI gap — recommended tindakan.',
                 'Yang mana budget lines have variance > 10%? Rekomendasikan re-baseline.',
-                'Susun the kuartalan Programme paper Komite Pengarah.'
+                'Susun the kuartalan Programme paper Komite Direktur.'
               ]
             },
             {
@@ -48474,12 +48474,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Government Agency Government Policy Watch',
               name: 'Government Agency Government Policy Watch',
-              desc: 'Tracks PMO + Kementerian Kewangan + Kemenkeu announcements yang relevan dengan Government Agency.',
+              desc: 'Tracks PMO + Kementerian Keuangan + Kemenkeu announcements yang relevan dengan Government Agency.',
               instructions: 'Anda adalah analis yang mendukung Government Agency. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.pmo.gov.my/2019/07/announcement/',
-                  note: 'PMO Malaysia announcements'
+                  note: 'PMO Indonesia announcements'
                 },
                 {
                   url: 'https://setkab.go.id/category/berita/',
@@ -48506,7 +48506,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://data.worldbank.org/country/MY',
-                  note: 'World Bank Malaysia open data'
+                  note: 'World Bank Indonesia open data'
                 },
                 {
                   url: 'https://www.imf.org/en/Countries/IDN',
@@ -48533,7 +48533,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.dosm.gov.my/portal-main/release-content/',
-                  note: 'DOSM Malaysia statistical releases'
+                  note: 'DOSM Indonesia statistical releases'
                 },
                 {
                   url: 'https://www.bps.go.id/pressrelease.html',
@@ -48558,11 +48558,11 @@ window.HUB_DATA = {
               label: 'Government Agency Government Policy Watch',
               name: 'Government Agency Government Policy Watch',
               desc: 'Tracks PMO + Kementerian Kewangan + Kemenkeu announcements yang relevan dengan Government Agency.',
-              instructions: 'Anda adalah analis yang mendukung Government Agency. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Government Agency. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.pmo.gov.my/2019/07/announcement/',
-                  note: 'PMO Malaysia announcements'
+                  note: 'PMO Indonesia announcements'
                 },
                 {
                   url: 'https://setkab.go.id/category/berita/',
@@ -48584,12 +48584,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Government Agency Procurement & Tender Scanner',
               name: 'Government Agency Procurement & Tender Scanner',
-              desc: 'Tracks ePerolehan + LPSE Indonesia + GeBIZ Singapore tender portals.',
-              instructions: 'Anda adalah analis yang mendukung Government Agency. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks ePerolehan + LPSE Malaysia + GeBIZ Singapore tender portals.',
+              instructions: 'Anda adalah analis yang menyokong Government Agency. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://data.worldbank.org/country/MY',
-                  note: 'World Bank Malaysia open data'
+                  note: 'World Bank Indonesia open data'
                 },
                 {
                   url: 'https://www.imf.org/en/Countries/IDN',
@@ -48612,11 +48612,11 @@ window.HUB_DATA = {
               label: 'Government Agency Statistical Brief Builder',
               name: 'Government Agency Statistical Brief Builder',
               desc: 'Builds briefs from DOSM + BPS + DOS Singapore official statistics.',
-              instructions: 'Anda adalah analis yang mendukung Government Agency. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Government Agency. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.dosm.gov.my/portal-main/release-content/',
-                  note: 'DOSM Malaysia statistical releases'
+                  note: 'DOSM Indonesia statistical releases'
                 },
                 {
                   url: 'https://www.bps.go.id/pressrelease.html',
@@ -50818,7 +50818,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas assets by occupancy gap — recommended leasing or capex tindakan.',
                 'Yang mana leases expire within 12 months and have low renewal probability?',
-                'Susun the kuartalan Asset paper Komite Pengarah.'
+                'Susun the kuartalan Asset paper Komite Direktur.'
               ]
             },
             {
@@ -50846,9 +50846,9 @@ window.HUB_DATA = {
             },
             {
               icon: '🏛️',
-              label: 'SC / OJK REIT Penghubung',
+              label: 'OJK / OJK REIT Penghubung',
               name: 'Zava Property & REIT — REIT Regulator Penghubung',
-              desc: 'Prepares SC (MY) / OJK (ID) REIT disclosures, related-party submissions, and unitholder filings for Property & REIT.',
+              desc: 'Prepares OJK (MY) / OJK (ID) REIT disclosures, related-party submissions, and unitholder filings for Property & REIT.',
               instructions: 'Anda adalah Zava Property & REIT REIT Regulator Penghubung. Prepare REIT disclosures, related-party submissions, and unitholder filings grounded on the regulatory file (PROP_06_Lender_Covenant_Schedule.xlsx).',
               knowledge: [
                 {
@@ -50976,12 +50976,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Property & REIT Travel & Tourism Pulse',
               name: 'Property & REIT Travel & Tourism Pulse',
-              desc: 'Tracks Tourism Malaysia + Kemenparekraf + STB Singapore arrival statistics.',
+              desc: 'Tracks Tourism Indonesia + Kemenparekraf + STB Singapore arrival statistics.',
               instructions: 'Anda adalah analis yang mendukung Property & REIT. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.sc.com.my/regulation/guidelines/reits',
-                  note: 'SC Malaysia REIT Guidelines'
+                  note: 'OJK Indonesia REIT Guidelines'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/pasar-modal/Pages/dire.aspx',
@@ -50994,7 +50994,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 6 months of arrival statistics from Tourism Malaysia + Kemenparekraf + STB.',
+                'Ringkas the last 6 months of arrival statistics from Tourism Indonesia + Kemenparekraf + STB.',
                 'Identifikasi the top 5 origin markets growing fastest for Property & REIT catchment.',
                 'Susun draf a monthly demand pulse with origin-market mix for the Property & REIT commercial team.'
               ]
@@ -51012,7 +51012,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/products/structured-warrant-and-others/dire/',
-                  note: 'IDX KIK-DIRE Indonesian REITs'
+                  note: 'BEI KIK-DIRE Indonesian REITs'
                 },
                 {
                   url: 'https://www.sgx.com/securities/reits',
@@ -51060,11 +51060,11 @@ window.HUB_DATA = {
               label: 'Property & REIT Travel & Tourism Pulse',
               name: 'Property & REIT Travel & Tourism Pulse',
               desc: 'Tracks Tourism Malaysia + Kemenparekraf + STB Singapore arrival statistics.',
-              instructions: 'Anda adalah analis yang mendukung Property & REIT. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Property & REIT. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.sc.com.my/regulation/guidelines/reits',
-                  note: 'SC Malaysia REIT Guidelines'
+                  note: 'OJK Indonesia REIT Guidelines'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/pasar-modal/Pages/dire.aspx',
@@ -51077,7 +51077,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 6 months of arrival statistics from Tourism Malaysia + Kemenparekraf + STB.',
+                'Ringkas the last 6 months of arrival statistics from Tourism Indonesia + Kemenparekraf + STB.',
                 'Identifikasi the top 5 origin markets growing fastest for Property & REIT catchment.',
                 'Susun draf a monthly demand pulse with origin-market mix for the Property & REIT commercial team.'
               ]
@@ -51087,7 +51087,7 @@ window.HUB_DATA = {
               label: 'Property & REIT Property Market Tracker',
               name: 'Property & REIT Property Market Tracker',
               desc: 'Tracks NAPIC + JPP + REI + URA property market reports for Property & REIT.',
-              instructions: 'Anda adalah analis yang mendukung Property & REIT. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Property & REIT. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/market_information/equities_prices?board=REIT',
@@ -51095,7 +51095,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.idx.co.id/en/products/structured-warrant-and-others/dire/',
-                  note: 'IDX KIK-DIRE Indonesian REITs'
+                  note: 'BEI KIK-DIRE Indonesian REITs'
                 },
                 {
                   url: 'https://www.sgx.com/securities/reits',
@@ -51114,7 +51114,7 @@ window.HUB_DATA = {
               label: 'Property & REIT Hospitality Operations Benchmark',
               name: 'Property & REIT Hospitality Operations Benchmark',
               desc: 'Tracks STR + MAH + PHRI public hospitality benchmark releases.',
-              instructions: 'Anda adalah analis yang mendukung Property & REIT. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Property & REIT. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.aprea.asia/research/',
@@ -53295,7 +53295,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas routes by OTD gap — recommended tindakan.',
                 'Yang mana fleet segments have utilisation < 60%? Rekomendasikan redeployment.',
-                'Susun the bulanan Fleet paper Komite Pengarah.'
+                'Susun the bulanan Fleet paper Komite Direktur.'
               ]
             },
             {
@@ -53318,7 +53318,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas warehouses by productivity gap — recommended tindakan.',
                 'Yang mana inventory-accuracy clusters need cycle-count programme?',
-                'Susun the bulanan Warehouse paper Komite Pengarah.'
+                'Susun the bulanan Warehouse paper Komite Direktur.'
               ]
             },
             {
@@ -53462,7 +53462,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.beacukai.go.id/',
-                  note: 'Bea Cukai Indonesia customs'
+                  note: 'Bea Pajak Indonesia customs'
                 },
                 {
                   url: 'https://www.customs.gov.sg/news-and-media',
@@ -53485,7 +53485,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://fmff.com.my/news-and-events/',
-                  note: 'FMFF Malaysia Federation of Freight Forwarders'
+                  note: 'FMFF Indonesia Federation of Freight Forwarders'
                 },
                 {
                   url: 'https://alfi.or.id/news',
@@ -53537,7 +53537,7 @@ window.HUB_DATA = {
               label: 'Logistics & 3PL Transport Regulator Watch',
               name: 'Logistics & 3PL Transport Regulator Watch',
               desc: 'Tracks APAD + MAVCOM + Kemenhub + LTA Singapore announcements yang relevan dengan Logistics & 3PL.',
-              instructions: 'Anda adalah analis yang mendukung Logistics & 3PL. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Logistics & 3PL. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.customs.gov.my/en/Pages/index.aspx',
@@ -53545,7 +53545,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.beacukai.go.id/',
-                  note: 'Bea Cukai Indonesia customs'
+                  note: 'Bea Pajak Indonesia customs'
                 },
                 {
                   url: 'https://www.customs.gov.sg/news-and-media',
@@ -53564,11 +53564,11 @@ window.HUB_DATA = {
               label: 'Logistics & 3PL Trade Lane & Freight Pulse',
               name: 'Logistics & 3PL Trade Lane & Freight Pulse',
               desc: 'Tracks port authorities + IATA + IMO + Drewry public reports for Logistics & 3PL.',
-              instructions: 'Anda adalah analis yang mendukung Logistics & 3PL. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Logistics & 3PL. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://fmff.com.my/news-and-events/',
-                  note: 'FMFF Malaysia Federation of Freight Forwarders'
+                  note: 'FMFF Indonesia Federation of Freight Forwarders'
                 },
                 {
                   url: 'https://alfi.or.id/news',
@@ -53591,7 +53591,7 @@ window.HUB_DATA = {
               label: 'Logistics & 3PL Fuel & Carbon Tracker',
               name: 'Logistics & 3PL Fuel & Carbon Tracker',
               desc: 'Tracks PetrolPrice + ICAO CORSIA + IMO sulphur cap updates for transport ops.',
-              instructions: 'Anda adalah analis yang mendukung Logistics & 3PL. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Logistics & 3PL. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://lpi.worldbank.org/',
@@ -55960,7 +55960,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.minerals.gov.my/',
-                  note: 'JMG Malaysia mineral/coal regulator'
+                  note: 'JMG Indonesia mineral/coal regulator'
                 },
                 {
                   url: 'https://www.minerba.esdm.go.id/',
@@ -56027,7 +56027,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Coal Mining.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Coal Mining.',
                 'Map ISSB IFRS S1/S2 clauses to Coal Mining current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Coal Mining sustainability committee.'
               ]
@@ -56039,11 +56039,11 @@ window.HUB_DATA = {
               label: 'Coal Mining Energy Regulator Watch',
               name: 'Coal Mining Energy Regulator Watch',
               desc: 'Tracks Suruhanjaya Tenaga + ESDM + EMA Singapore policy moves yang relevan dengan Coal Mining.',
-              instructions: 'Anda adalah analis yang mendukung Coal Mining. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Coal Mining. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.minerals.gov.my/',
-                  note: 'JMG Malaysia mineral/coal regulator'
+                  note: 'JMG Indonesia mineral/coal regulator'
                 },
                 {
                   url: 'https://www.minerba.esdm.go.id/',
@@ -56066,7 +56066,7 @@ window.HUB_DATA = {
               label: 'Coal Mining Commodity & Tariff Scanner',
               name: 'Coal Mining Commodity & Tariff Scanner',
               desc: 'Tracks Brent + JKM LNG + EU TTF + ASEAN coal references plus regulated tariff schedules.',
-              instructions: 'Anda adalah analis yang mendukung Coal Mining. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Coal Mining. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://apbi-icma.org/news/',
@@ -56092,8 +56092,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Coal Mining Sustainability & Climate Disclosure Scanner',
               name: 'Coal Mining Sustainability & Climate Disclosure Scanner',
-              desc: 'Tracks Bursa Sustainability + IDX ESG + ISSB + TCFD updates affecting Coal Mining.',
-              instructions: 'Anda adalah analis yang mendukung Coal Mining. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks Bursa Sustainability + BURSA MALAYSIA ESG + ISSB + TCFD updates affecting Coal Mining.',
+              instructions: 'Anda adalah analis yang menyokong Coal Mining. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.spglobal.com/commodityinsights/en/our-methodology/price-assessments/coal',
@@ -56110,7 +56110,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Coal Mining.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Coal Mining.',
                 'Map ISSB IFRS S1/S2 clauses to Coal Mining current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Coal Mining sustainability committee.'
               ]
@@ -58288,7 +58288,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas complaint clusters — recommended CAPA per properti.',
                 'Yang mana properties are losing repeat-guest share? Rekomendasikan retention.',
-                'Susun the bulanan Guest-Experience paper Komite Pengarah.'
+                'Susun the bulanan Guest-Experience paper Komite Direktur.'
               ]
             },
             {
@@ -58423,12 +58423,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Hotel & Resort Travel & Tourism Pulse',
               name: 'Hotel & Resort Travel & Tourism Pulse',
-              desc: 'Tracks Tourism Malaysia + Kemenparekraf + STB Singapore arrival statistics.',
+              desc: 'Tracks Tourism Indonesia + Kemenparekraf + STB Singapore arrival statistics.',
               instructions: 'Anda adalah analis yang mendukung Hotel & Resort. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.motac.gov.my/en/announcements/news',
-                  note: 'MOTAC Malaysia tourism & culture announcements'
+                  note: 'MOTAC Indonesia tourism & culture announcements'
                 },
                 {
                   url: 'https://www.kemenparekraf.go.id/berita',
@@ -58441,7 +58441,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 6 months of arrival statistics from Tourism Malaysia + Kemenparekraf + STB.',
+                'Ringkas the last 6 months of arrival statistics from Tourism Indonesia + Kemenparekraf + STB.',
                 'Identifikasi the top 5 origin markets growing fastest for Hotel & Resort catchment.',
                 'Susun draf a monthly demand pulse with origin-market mix for the Hotel & Resort commercial team.'
               ]
@@ -58507,11 +58507,11 @@ window.HUB_DATA = {
               label: 'Hotel & Resort Travel & Tourism Pulse',
               name: 'Hotel & Resort Travel & Tourism Pulse',
               desc: 'Tracks Tourism Malaysia + Kemenparekraf + STB Singapore arrival statistics.',
-              instructions: 'Anda adalah analis yang mendukung Hotel & Resort. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Hotel & Resort. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.motac.gov.my/en/announcements/news',
-                  note: 'MOTAC Malaysia tourism & culture announcements'
+                  note: 'MOTAC Indonesia tourism & culture announcements'
                 },
                 {
                   url: 'https://www.kemenparekraf.go.id/berita',
@@ -58524,7 +58524,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 6 months of arrival statistics from Tourism Malaysia + Kemenparekraf + STB.',
+                'Ringkas the last 6 months of arrival statistics from Tourism Indonesia + Kemenparekraf + STB.',
                 'Identifikasi the top 5 origin markets growing fastest for Hotel & Resort catchment.',
                 'Susun draf a monthly demand pulse with origin-market mix for the Hotel & Resort commercial team.'
               ]
@@ -58534,7 +58534,7 @@ window.HUB_DATA = {
               label: 'Hotel & Resort Property Market Tracker',
               name: 'Hotel & Resort Property Market Tracker',
               desc: 'Tracks NAPIC + JPP + REI + URA property market reports for Hotel & Resort.',
-              instructions: 'Anda adalah analis yang mendukung Hotel & Resort. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Hotel & Resort. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mahotels.org/news.html',
@@ -58561,7 +58561,7 @@ window.HUB_DATA = {
               label: 'Hotel & Resort Hospitality Operations Benchmark',
               name: 'Hotel & Resort Hospitality Operations Benchmark',
               desc: 'Tracks STR + MAH + PHRI public hospitality benchmark releases.',
-              instructions: 'Anda adalah analis yang mendukung Hotel & Resort. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Hotel & Resort. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://str.com/data-insights-blog',
@@ -60739,7 +60739,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas projects by CPI gap — recommended recovery tindakan.',
                 'Yang mana milestones have slipped > 30 days? Rekomendasikan re-baseline.',
-                'Susun the bulanan Project paper Komite Pengarah.'
+                'Susun the bulanan Project paper Komite Direktur.'
               ]
             },
             {
@@ -60762,7 +60762,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas incident clusters — recommended CAPA.',
                 'Yang mana CAPAs are overdue > 30 days? Bangun closure plan.',
-                'Susun the kuartalan HSE paper Komite Pengarah.'
+                'Susun the kuartalan HSE paper Komite Direktur.'
               ]
             },
             {
@@ -60902,7 +60902,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.cidb.gov.my/en/announcement/',
-                  note: 'CIDB Malaysia announcements'
+                  note: 'CIDB Indonesia announcements'
                 },
                 {
                   url: 'https://www.pu.go.id/halaman/peraturan-jasa-konstruksi',
@@ -60929,7 +60929,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://mbam.org.my/news/',
-                  note: 'Master Builders Association Malaysia news'
+                  note: 'Master Builders Association Indonesia news'
                 },
                 {
                   url: 'https://aki.or.id/berita-aki/',
@@ -60981,11 +60981,11 @@ window.HUB_DATA = {
               label: 'Construction Industrial Policy Watch',
               name: 'Construction Industrial Policy Watch',
               desc: 'Tracks MITI + MIDA + Kemenperin + EDB Singapore policy moves for Construction.',
-              instructions: 'Anda adalah analis yang mendukung Construction. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Construction. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.cidb.gov.my/en/announcement/',
-                  note: 'CIDB Malaysia announcements'
+                  note: 'CIDB Indonesia announcements'
                 },
                 {
                   url: 'https://www.pu.go.id/halaman/peraturan-jasa-konstruksi',
@@ -61008,11 +61008,11 @@ window.HUB_DATA = {
               label: 'Construction Trade & Tariff Scanner',
               name: 'Construction Trade & Tariff Scanner',
               desc: 'Tracks ASEAN FTA + WTO + Customs notices yang relevan dengan Construction cross-border flows.',
-              instructions: 'Anda adalah analis yang mendukung Construction. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Construction. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://mbam.org.my/news/',
-                  note: 'Master Builders Association Malaysia news'
+                  note: 'Master Builders Association Indonesia news'
                 },
                 {
                   url: 'https://aki.or.id/berita-aki/',
@@ -61035,7 +61035,7 @@ window.HUB_DATA = {
               label: 'Construction Safety & Quality Standards Tracker',
               name: 'Construction Safety & Quality Standards Tracker',
               desc: 'Tracks DOSH + JAS + SIRIM + SNI standard revisions yang relevan dengan Construction plants.',
-              instructions: 'Anda adalah analis yang mendukung Construction. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Construction. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.gibo.com/en/insights',
@@ -63393,7 +63393,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mavcom.my/en/industry/airport-infrastructure/',
-                  note: 'MAVCOM Malaysia airport regulation'
+                  note: 'MAVCOM Indonesia airport regulation'
                 },
                 {
                   url: 'https://hubud.dephub.go.id/',
@@ -63420,7 +63420,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.malaysiaairports.com.my/media-centre',
-                  note: 'Malaysia Airports press releases'
+                  note: 'Indonesia Airports press releases'
                 },
                 {
                   url: 'https://ap2.co.id/news/',
@@ -63472,11 +63472,11 @@ window.HUB_DATA = {
               label: 'Aviation - Airports Transport Regulator Watch',
               name: 'Aviation - Airports Transport Regulator Watch',
               desc: 'Tracks APAD + MAVCOM + Kemenhub + LTA Singapore announcements yang relevan dengan Aviation - Airports.',
-              instructions: 'Anda adalah analis yang mendukung Aviation - Airports. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Aviation - Airports. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mavcom.my/en/industry/airport-infrastructure/',
-                  note: 'MAVCOM Malaysia airport regulation'
+                  note: 'MAVCOM Indonesia airport regulation'
                 },
                 {
                   url: 'https://hubud.dephub.go.id/',
@@ -63499,11 +63499,11 @@ window.HUB_DATA = {
               label: 'Aviation - Airports Trade Lane & Freight Pulse',
               name: 'Aviation - Airports Trade Lane & Freight Pulse',
               desc: 'Tracks port authorities + IATA + IMO + Drewry public reports for Aviation - Airports.',
-              instructions: 'Anda adalah analis yang mendukung Aviation - Airports. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Aviation - Airports. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.malaysiaairports.com.my/media-centre',
-                  note: 'Malaysia Airports press releases'
+                  note: 'Indonesia Airports press releases'
                 },
                 {
                   url: 'https://ap2.co.id/news/',
@@ -63526,7 +63526,7 @@ window.HUB_DATA = {
               label: 'Aviation - Airports Fuel & Carbon Tracker',
               name: 'Aviation - Airports Fuel & Carbon Tracker',
               desc: 'Tracks PetrolPrice + ICAO CORSIA + IMO sulphur cap updates for transport ops.',
-              instructions: 'Anda adalah analis yang mendukung Aviation - Airports. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Aviation - Airports. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.aci.aero/insights/',
@@ -65709,7 +65709,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas SKUs by margin leakage — recommended tindakan (range-edit, promo, pricing).',
                 'Yang mana promotions are ROI-negative? Rekomendasikan cancel-or-restructure.',
-                'Susun the bulanan Category paper Komite Pengarah.'
+                'Susun the bulanan Category paper Komite Direktur.'
               ]
             },
             {
@@ -65872,7 +65872,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
-                  note: 'KPDN Malaysia consumer-affairs announcements'
+                  note: 'KPDN Indonesia consumer-affairs announcements'
                 },
                 {
                   url: 'https://www.kemendag.go.id/',
@@ -65899,7 +65899,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mra.com.my/',
-                  note: 'MRA Malaysia Retailers Association'
+                  note: 'MRA Indonesia Retailers Association'
                 },
                 {
                   url: 'https://aprindo.id/news/',
@@ -65951,11 +65951,11 @@ window.HUB_DATA = {
               label: 'Retail - Grocery Consumer Affairs Watch',
               name: 'Retail - Grocery Consumer Affairs Watch',
               desc: 'Tracks KPDN + Kemendag + KPKT consumer affairs notices yang relevan dengan Retail - Grocery.',
-              instructions: 'Anda adalah analis yang mendukung Retail - Grocery. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Retail - Grocery. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements/news',
-                  note: 'KPDN Malaysia consumer-affairs announcements'
+                  note: 'KPDN Indonesia consumer-affairs announcements'
                 },
                 {
                   url: 'https://www.kemendag.go.id/',
@@ -65978,11 +65978,11 @@ window.HUB_DATA = {
               label: 'Retail - Grocery Inflation & Basket Tracker',
               name: 'Retail - Grocery Inflation & Basket Tracker',
               desc: 'Pulls DOSM CPI + BPS CPI + MOM wage data for Retail - Grocery pricing decisions.',
-              instructions: 'Anda adalah analis yang mendukung Retail - Grocery. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Retail - Grocery. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mra.com.my/',
-                  note: 'MRA Malaysia Retailers Association'
+                  note: 'MRA Indonesia Retailers Association'
                 },
                 {
                   url: 'https://aprindo.id/news/',
@@ -66005,7 +66005,7 @@ window.HUB_DATA = {
               label: 'Retail - Grocery E-commerce & Marketplace Pulse',
               name: 'Retail - Grocery E-commerce & Marketplace Pulse',
               desc: 'Tracks Shopee/Lazada/Tokopedia public dashboards + Iprice + DataReportal for Retail - Grocery.',
-              instructions: 'Anda adalah analis yang mendukung Retail - Grocery. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Retail - Grocery. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.nielsen.com/insights/?_topic=fmcg-and-retail',
@@ -68184,7 +68184,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas content shows by engagement gap — recommended tindakan.',
                 'Yang mana slate items are ROI-negative? Rekomendasikan renew / drop.',
-                'Susun the kuartalan Programming paper Komite Pengarah.'
+                'Susun the kuartalan Programming paper Komite Direktur.'
               ]
             },
             {
@@ -68207,7 +68207,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas ad-sales segments by yield gap — recommended tindakan.',
                 'Yang mana subscription tiers have the lowest renewal? Rekomendasikan redesign.',
-                'Susun the kuartalan Commercial paper Komite Pengarah.'
+                'Susun the kuartalan Commercial paper Komite Direktur.'
               ]
             },
             {
@@ -68347,7 +68347,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mcmc.gov.my/en/legal/codes',
-                  note: 'MCMC Malaysia content codes'
+                  note: 'MCMC Indonesia content codes'
                 },
                 {
                   url: 'https://www.kominfo.go.id/',
@@ -68374,7 +68374,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.atvm.org.my/',
-                  note: 'ATVM Malaysia free-to-air broadcasters'
+                  note: 'ATVM Indonesia free-to-air broadcasters'
                 },
                 {
                   url: 'https://atvsi.or.id/',
@@ -68414,7 +68414,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Malaysia and Indonesia digital snapshots relevant to Media - Entertainment.',
+                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to Media - Entertainment.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the Media - Entertainment digital strategy lead.'
               ]
@@ -68426,11 +68426,11 @@ window.HUB_DATA = {
               label: 'Media - Entertainment Telecoms Regulator Watch',
               name: 'Media - Entertainment Telecoms Regulator Watch',
               desc: 'Tracks MCMC + Kominfo + IMDA spectrum and licensing announcements for Media - Entertainment.',
-              instructions: 'Anda adalah analis yang mendukung Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mcmc.gov.my/en/legal/codes',
-                  note: 'MCMC Malaysia content codes'
+                  note: 'MCMC Indonesia content codes'
                 },
                 {
                   url: 'https://www.kominfo.go.id/',
@@ -68453,11 +68453,11 @@ window.HUB_DATA = {
               label: 'Media - Entertainment Cyber & Data Protection Scanner',
               name: 'Media - Entertainment Cyber & Data Protection Scanner',
               desc: 'Tracks PDP Commissioner + Pusat KKD + PDPC Singapore + ENISA enforcement and guidance.',
-              instructions: 'Anda adalah analis yang mendukung Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.atvm.org.my/',
-                  note: 'ATVM Malaysia free-to-air broadcasters'
+                  note: 'ATVM Indonesia free-to-air broadcasters'
                 },
                 {
                   url: 'https://atvsi.or.id/',
@@ -68480,7 +68480,7 @@ window.HUB_DATA = {
               label: 'Media - Entertainment Digital Adoption Scanner',
               name: 'Media - Entertainment Digital Adoption Scanner',
               desc: 'Tracks DataReportal + DOSM ICT + BPS ICT + Statista regional adoption snapshots.',
-              instructions: 'Anda adalah analis yang mendukung Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Media - Entertainment. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.pwc.com/gx/en/industries/tmt/media/outlook.html',
@@ -68497,7 +68497,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Malaysia and Indonesia digital snapshots relevant to Media - Entertainment.',
+                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to Media - Entertainment.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the Media - Entertainment digital strategy lead.'
               ]
@@ -70680,7 +70680,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas investees by governance gap — recommended intervention.',
                 'Yang mana risk events require regulator notification?',
-                'Susun the kuartalan Governance paper Komite Pengarah.'
+                'Susun the kuartalan Governance paper Komite Direktur.'
               ]
             },
             {
@@ -70820,7 +70820,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.pnb.com.my/announcement.html',
-                  note: 'PNB Malaysia announcements'
+                  note: 'PNB Indonesia announcements'
                 },
                 {
                   url: 'https://www.ina.go.id/news',
@@ -70899,11 +70899,11 @@ window.HUB_DATA = {
               label: 'Sovereign Wealth Mandate Watch (GLC Investment Arm)',
               name: 'Sovereign Wealth Mandate Watch (GLC Investment Arm)',
               desc: 'Tracks PNB + INA + Khazanah official disclosures on mandate, returns, and investments.',
-              instructions: 'Anda adalah analis yang mendukung GLC Investment Arm. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong GLC Investment Arm. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.pnb.com.my/announcement.html',
-                  note: 'PNB Malaysia announcements'
+                  note: 'PNB Indonesia announcements'
                 },
                 {
                   url: 'https://www.ina.go.id/news',
@@ -70926,7 +70926,7 @@ window.HUB_DATA = {
               label: 'Peer SWF News Tracker (GLC Investment Arm)',
               name: 'Peer SWF News Tracker (GLC Investment Arm)',
               desc: 'Pulls Temasek + GIC + ADIA newsroom articles yang relevan dengan GLC Investment Arm peer benchmarking.',
-              instructions: 'Anda adalah analis yang mendukung GLC Investment Arm. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong GLC Investment Arm. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.temasek.com.sg/en/news-and-resources',
@@ -70953,7 +70953,7 @@ window.HUB_DATA = {
               label: 'SWF Research Hub (GLC Investment Arm)',
               name: 'SWF Research Hub (GLC Investment Arm)',
               desc: 'Tracks SWF Institute + IFSWF + World Bank SWF research yang relevan dengan GLC Investment Arm.',
-              instructions: 'Anda adalah analis yang mendukung GLC Investment Arm. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong GLC Investment Arm. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.swfinstitute.org/research/sovereign-wealth-fund',
@@ -73492,7 +73492,7 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Financial Regulator Regulator Watch (Public Sources)',
               name: 'Financial Regulator Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Financial Regulator.',
+              desc: 'Monitors Bank Indonesia + OJK + MAS announcements yang relevan dengan Financial Regulator.',
               instructions: 'Anda adalah analis yang mendukung Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
@@ -73510,7 +73510,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Financial Regulator, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Financial Regulator, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Financial Regulator would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Financial Regulator Group Risk Committee using only the cited sources.'
               ]
@@ -73537,7 +73537,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Financial Regulator CFO benchmarking against the 3 closest comparables.'
               ]
@@ -73551,7 +73551,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.worldbank.org/en/country/malaysia/overview',
-                  note: 'World Bank Malaysia country reports'
+                  note: 'World Bank Indonesia country reports'
                 },
                 {
                   url: 'https://www.imf.org/en/Countries/IDN',
@@ -73564,7 +73564,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Financial Regulator variable-rate book?',
                 'Susun draf an ALCO macro update for Financial Regulator with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -73575,8 +73575,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Financial Regulator Regulator Watch (Public Sources)',
               name: 'Financial Regulator Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Financial Regulator.',
-              instructions: 'Anda adalah analis yang mendukung Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Monitors Bank Negara Malaysia + SC + MAS announcements yang relevan dengan Financial Regulator.',
+              instructions: 'Anda adalah analis yang menyokong Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.imf.org/en/Publications/FSAP',
@@ -73593,7 +73593,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Financial Regulator, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Financial Regulator, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Financial Regulator would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Financial Regulator Group Risk Committee using only the cited sources.'
               ]
@@ -73602,8 +73602,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Financial Regulator Peer Pulse (Public IR)',
               name: 'Financial Regulator Peer Pulse (Public IR)',
-              desc: 'Tracks ASEAN banking peers via Bursa + IDX disclosure portals.',
-              instructions: 'Anda adalah analis yang mendukung Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks ASEAN banking peers via Bursa + BURSA MALAYSIA disclosure portals.',
+              instructions: 'Anda adalah analis yang menyokong Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/regulation/listing_requirements',
@@ -73620,7 +73620,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Financial Regulator CFO benchmarking against the 3 closest comparables.'
               ]
@@ -73630,11 +73630,11 @@ window.HUB_DATA = {
               label: 'Financial Regulator Macro & Rates Scanner',
               name: 'Financial Regulator Macro & Rates Scanner',
               desc: 'Pulls BNM/BI/MAS rate decisions + DOSM/BPS macro releases for Financial Regulator ALCO.',
-              instructions: 'Anda adalah analis yang mendukung Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Financial Regulator. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.worldbank.org/en/country/malaysia/overview',
-                  note: 'World Bank Malaysia country reports'
+                  note: 'World Bank Indonesia country reports'
                 },
                 {
                   url: 'https://www.imf.org/en/Countries/IDN',
@@ -73647,7 +73647,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Financial Regulator variable-rate book?',
                 'Susun draf an ALCO macro update for Financial Regulator with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -75959,7 +75959,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas SKUs by velocity drop — recommended tindakan per SKU.',
                 'Yang mana trade-spend programmes are ROI-negative? Rekomendasikan cancel.',
-                'Susun the kuartalan Brand Komite Pengarah paper.'
+                'Susun the kuartalan Brand Komite Direktur paper.'
               ]
             },
             {
@@ -76117,7 +76117,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.moh.gov.my/index.php/pages/view/2179',
-                  note: 'MOH Malaysia Food Safety & Quality Division'
+                  note: 'MOH Indonesia Food Safety & Quality Division'
                 },
                 {
                   url: 'https://www.pom.go.id/new/index.php/view/peraturan',
@@ -76196,11 +76196,11 @@ window.HUB_DATA = {
               label: 'Food & FMCG Industrial Policy Watch',
               name: 'Food & FMCG Industrial Policy Watch',
               desc: 'Tracks MITI + MIDA + Kemenperin + EDB Singapore policy moves for Food & FMCG.',
-              instructions: 'Anda adalah analis yang mendukung Food & FMCG. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Food & FMCG. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.moh.gov.my/index.php/pages/view/2179',
-                  note: 'MOH Malaysia Food Safety & Quality Division'
+                  note: 'MOH Indonesia Food Safety & Quality Division'
                 },
                 {
                   url: 'https://www.pom.go.id/new/index.php/view/peraturan',
@@ -76223,7 +76223,7 @@ window.HUB_DATA = {
               label: 'Food & FMCG Trade & Tariff Scanner',
               name: 'Food & FMCG Trade & Tariff Scanner',
               desc: 'Tracks ASEAN FTA + WTO + Customs notices yang relevan dengan Food & FMCG cross-border flows.',
-              instructions: 'Anda adalah analis yang mendukung Food & FMCG. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Food & FMCG. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://halal.gov.my/v4/',
@@ -76250,7 +76250,7 @@ window.HUB_DATA = {
               label: 'Food & FMCG Safety & Quality Standards Tracker',
               name: 'Food & FMCG Safety & Quality Standards Tracker',
               desc: 'Tracks DOSH + JAS + SIRIM + SNI standard revisions yang relevan dengan Food & FMCG plants.',
-              instructions: 'Anda adalah analis yang mendukung Food & FMCG. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Food & FMCG. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.nielsen.com/insights/?_pubdate=last-12&_topic=fmcg-and-retail',
@@ -78294,7 +78294,7 @@ window.HUB_DATA = {
               queries: [
                 'Teratas OSH-incident drivers — root cause, recommended CAPA.',
                 'Yang mana migrant-labour-audit findings remain open? Bangun closure plan.',
-                'Susun the kuartalan ESG & OSH Komite Pengarah paper.'
+                'Susun the kuartalan ESG & OSH Komite Direktur paper.'
               ]
             },
             {
@@ -78438,7 +78438,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.lgm.gov.my/',
-                  note: 'Lembaga Getah Malaysia rubber industry regulator'
+                  note: 'Lembaga Getah Indonesia rubber industry regulator'
                 },
                 {
                   url: 'https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies/medical-gloves',
@@ -78513,7 +78513,7 @@ window.HUB_DATA = {
               label: 'Rubber Gloves Mfg Industrial Policy Watch',
               name: 'Rubber Gloves Mfg Industrial Policy Watch',
               desc: 'Tracks MITI + MIDA + Kemenperin + EDB Singapore policy moves for Rubber Gloves Mfg.',
-              instructions: 'Anda adalah analis yang mendukung Rubber Gloves Mfg. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Rubber Gloves Mfg. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.margma.com.my/',
@@ -78521,7 +78521,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.lgm.gov.my/',
-                  note: 'Lembaga Getah Malaysia rubber industry regulator'
+                  note: 'Lembaga Getah Indonesia rubber industry regulator'
                 },
                 {
                   url: 'https://www.fda.gov/medical-devices/general-hospital-devices-and-supplies/medical-gloves',
@@ -78540,7 +78540,7 @@ window.HUB_DATA = {
               label: 'Rubber Gloves Mfg Trade & Tariff Scanner',
               name: 'Rubber Gloves Mfg Trade & Tariff Scanner',
               desc: 'Tracks ASEAN FTA + WTO + Customs notices yang relevan dengan Rubber Gloves Mfg cross-border flows.',
-              instructions: 'Anda adalah analis yang mendukung Rubber Gloves Mfg. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Rubber Gloves Mfg. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.margma.com.my/category/news/',
@@ -78567,7 +78567,7 @@ window.HUB_DATA = {
               label: 'Rubber Gloves Mfg Safety & Quality Standards Tracker',
               name: 'Rubber Gloves Mfg Safety & Quality Standards Tracker',
               desc: 'Tracks DOSH + JAS + SIRIM + SNI standard revisions yang relevan dengan Rubber Gloves Mfg plants.',
-              instructions: 'Anda adalah analis yang mendukung Rubber Gloves Mfg. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Rubber Gloves Mfg. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.frost.com/research/industry/healthcare/medical-devices/medical-gloves/',
@@ -80583,19 +80583,19 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas arrears clusters by roll-forward — recommended collections tindakan.',
                 'Yang mana forbearance cohorts have re-default risk? Rekomendasikan triage.',
-                'Susun the bulanan Servicing paper Komite Pengarah.'
+                'Susun the bulanan Servicing paper Komite Direktur.'
               ]
             },
             {
               icon: '🏛️',
-              label: 'BNM / OJK Mortgage',
+              label: 'BI / OJK Mortgage',
               name: 'Zava Mortgage Finance — Mortgage Regulator Penghubung',
-              desc: 'Prepares BNM (MY) / OJK (ID) mortgage-quality, capital-adequacy, and securitisation filings for Mortgage Finance.',
-              instructions: 'Anda adalah Zava Mortgage Finance Mortgage Regulator Penghubung. Prepare BNM / OJK filings grounded on the regulatory file (MORT_05_Rating_Agency_Submission.docx).',
+              desc: 'Prepares BI (MY) / OJK (ID) mortgage-quality, capital-adequacy, and securitisation filings for Mortgage Finance.',
+              instructions: 'Anda adalah Zava Mortgage Finance Mortgage Regulator Penghubung. Prepare BI / OJK filings grounded on the regulatory file (MORT_05_Rating_Agency_Submission.docx).',
               knowledge: [],
               knowledgeNote: 'Test: "Susun the response to BNM\'s latest mortgage-stress-test circular for Mortgage Finance."',
               queries: [
-                'Prepare a cover letter for berikutnya BNM / OJK return.',
+                'Prepare a cover letter for berikutnya BI / OJK return.',
                 'Yang mana securitisation tranches require regulator notification?',
                 'Susun the response letter to the regulator\'s latest notice.'
               ]
@@ -80713,12 +80713,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Mortgage Finance Regulator Watch (Public Sources)',
               name: 'Mortgage Finance Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Mortgage Finance.',
+              desc: 'Monitors Bank Indonesia + OJK + MAS announcements yang relevan dengan Mortgage Finance.',
               instructions: 'Anda adalah analis yang mendukung Mortgage Finance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/property-market',
-                  note: 'BNM property-finance policy & TDSR rules'
+                  note: 'BI property-finance policy & TDSR rules'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
@@ -80731,7 +80731,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Mortgage Finance, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Mortgage Finance, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Mortgage Finance would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Mortgage Finance Group Risk Committee using only the cited sources.'
               ]
@@ -80758,7 +80758,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Mortgage Finance CFO benchmarking against the 3 closest comparables.'
               ]
@@ -80785,7 +80785,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Mortgage Finance variable-rate book?',
                 'Susun draf an ALCO macro update for Mortgage Finance with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -80796,12 +80796,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Mortgage Finance Regulator Watch (Public Sources)',
               name: 'Mortgage Finance Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Mortgage Finance.',
-              instructions: 'Anda adalah analis yang mendukung Mortgage Finance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Monitors Bank Negara Malaysia + SC + MAS announcements yang relevan dengan Mortgage Finance.',
+              instructions: 'Anda adalah analis yang menyokong Mortgage Finance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/property-market',
-                  note: 'BNM property-finance policy & TDSR rules'
+                  note: 'BI property-finance policy & TDSR rules'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/Pages/default.aspx',
@@ -80814,7 +80814,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Mortgage Finance, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Mortgage Finance, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Mortgage Finance would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Mortgage Finance Group Risk Committee using only the cited sources.'
               ]
@@ -80823,8 +80823,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Mortgage Finance Peer Pulse (Public IR)',
               name: 'Mortgage Finance Peer Pulse (Public IR)',
-              desc: 'Tracks ASEAN banking peers via Bursa + IDX disclosure portals.',
-              instructions: 'Anda adalah analis yang mendukung Mortgage Finance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks ASEAN banking peers via Bursa + BURSA MALAYSIA disclosure portals.',
+              instructions: 'Anda adalah analis yang menyokong Mortgage Finance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.cagamas.com.my/',
@@ -80841,7 +80841,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Mortgage Finance CFO benchmarking against the 3 closest comparables.'
               ]
@@ -80851,7 +80851,7 @@ window.HUB_DATA = {
               label: 'Mortgage Finance Macro & Rates Scanner',
               name: 'Mortgage Finance Macro & Rates Scanner',
               desc: 'Pulls BNM/BI/MAS rate decisions + DOSM/BPS macro releases for Mortgage Finance ALCO.',
-              instructions: 'Anda adalah analis yang mendukung Mortgage Finance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Mortgage Finance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.dosm.gov.my/portal-main/release-content/malaysian-house-price-index-mhpi',
@@ -80868,7 +80868,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Mortgage Finance variable-rate book?',
                 'Susun draf an ALCO macro update for Mortgage Finance with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -82947,10 +82947,10 @@ window.HUB_DATA = {
             },
             {
               icon: '🏛️',
-              label: 'BNM / BI / FinCEN',
+              label: 'BI / BI / FinCEN',
               name: 'Zava Cross-Border Remittance — Remittance Regulator Penghubung',
-              desc: 'Prepares BNM (MY), BI (ID), and global remittance regulator filings for Cross-Border Remittance.',
-              instructions: 'Anda adalah Zava Cross-Border Remittance Remittance Regulator Penghubung. Prepare BNM / BI / FATF / FinCEN filings grounded on the regulatory file (REMIT_05_Regulator_QA_Pack.docx).',
+              desc: 'Prepares BI (MY), BI (ID), and global remittance regulator filings for Cross-Border Remittance.',
+              instructions: 'Anda adalah Zava Cross-Border Remittance Remittance Regulator Penghubung. Prepare BI / BI / FATF / FinCEN filings grounded on the regulatory file (REMIT_05_Regulator_QA_Pack.docx).',
               knowledge: [],
               knowledgeNote: 'Test: "Susun the response to BNM\'s latest cross-border-remittance circular for Cross-Border Remittance."',
               queries: [
@@ -83072,16 +83072,16 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Cross-Border Remittance Regulator Watch (Public Sources)',
               name: 'Cross-Border Remittance Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Cross-Border Remittance.',
+              desc: 'Monitors Bank Indonesia + OJK + MAS announcements yang relevan dengan Cross-Border Remittance.',
               instructions: 'Anda adalah analis yang mendukung Cross-Border Remittance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/money-services-business',
-                  note: 'BNM Money Services Business framework'
+                  note: 'BI Money Services Business framework'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/transfer-dana.aspx',
-                  note: 'OJK Penyelenggara Transfer Dana'
+                  note: 'OJK Penganjur Transfer Dana'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/payments',
@@ -83090,7 +83090,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Cross-Border Remittance, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Cross-Border Remittance, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Cross-Border Remittance would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Cross-Border Remittance Group Risk Committee using only the cited sources.'
               ]
@@ -83117,7 +83117,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Cross-Border Remittance CFO benchmarking against the 3 closest comparables.'
               ]
@@ -83144,7 +83144,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Cross-Border Remittance variable-rate book?',
                 'Susun draf an ALCO macro update for Cross-Border Remittance with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -83155,16 +83155,16 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Cross-Border Remittance Regulator Watch (Public Sources)',
               name: 'Cross-Border Remittance Regulator Watch (Public Sources)',
-              desc: 'Monitors Bank Negara Malaysia + OJK + MAS announcements yang relevan dengan Cross-Border Remittance.',
-              instructions: 'Anda adalah analis yang mendukung Cross-Border Remittance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Monitors Bank Negara Malaysia + SC + MAS announcements yang relevan dengan Cross-Border Remittance.',
+              instructions: 'Anda adalah analis yang menyokong Cross-Border Remittance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/money-services-business',
-                  note: 'BNM Money Services Business framework'
+                  note: 'BI Money Services Business framework'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/iknb/Pages/transfer-dana.aspx',
-                  note: 'OJK Penyelenggara Transfer Dana'
+                  note: 'OJK Penganjur Transfer Dana'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/payments',
@@ -83173,7 +83173,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the 5 most recent BNM announcements that would impact Cross-Border Remittance, with severity and required action.',
+                'Ringkas the 5 most recent BI announcements that would impact Cross-Border Remittance, with severity and required action.',
                 'Bandingkan OJK and MAS guidance issued this month on AML/CFT — flag where Cross-Border Remittance would need to update controls.',
                 'Susun draf a regulator-watch one-pager for the Cross-Border Remittance Group Risk Committee using only the cited sources.'
               ]
@@ -83182,8 +83182,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Cross-Border Remittance Peer Pulse (Public IR)',
               name: 'Cross-Border Remittance Peer Pulse (Public IR)',
-              desc: 'Tracks ASEAN banking peers via Bursa + IDX disclosure portals.',
-              instructions: 'Anda adalah analis yang mendukung Cross-Border Remittance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks ASEAN banking peers via Bursa + BURSA MALAYSIA disclosure portals.',
+              instructions: 'Anda adalah analis yang menyokong Cross-Border Remittance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.visa.com.my/about-visa/visa-economic-empowerment-institute.html',
@@ -83200,7 +83200,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + IDX with NIM, CIR, and gross-NPL figures.',
+                'Buat daftar the last 10 quarterly earnings filings by listed banks on Bursa + BEI with NIM, CIR, and gross-NPL figures.',
                 'Mana peer banks raised provisions or revised guidance in the last 30 days? Show source filings.',
                 'Susun draf a 1-page peer-positioning note for the Cross-Border Remittance CFO benchmarking against the 3 closest comparables.'
               ]
@@ -83210,7 +83210,7 @@ window.HUB_DATA = {
               label: 'Cross-Border Remittance Macro & Rates Scanner',
               name: 'Cross-Border Remittance Macro & Rates Scanner',
               desc: 'Pulls BNM/BI/MAS rate decisions + DOSM/BPS macro releases for Cross-Border Remittance ALCO.',
-              instructions: 'Anda adalah analis yang mendukung Cross-Border Remittance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Cross-Border Remittance. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.worldbank.org/en/topic/migrationremittancesdiasporaissues/brief/migration-remittances-data',
@@ -83227,7 +83227,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 4 BNM and BI monetary-policy statements with rate moves and forward guidance.',
+                'Ringkas the last 4 BI and BI monetary-policy statements with rate moves and forward guidance.',
                 'Tarik the latest CPI prints from DOSM and BPS — what is the implication for Cross-Border Remittance variable-rate book?',
                 'Susun draf an ALCO macro update for Cross-Border Remittance with base/hawkish/dovish scenarios over the next 3 months.'
               ]
@@ -85358,7 +85358,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.jpj.gov.my/en/announcement',
-                  note: 'JPJ Malaysia Road Transport Department'
+                  note: 'JPJ Indonesia Road Transport Department'
                 },
                 {
                   url: 'https://kemenperin.go.id/',
@@ -85437,11 +85437,11 @@ window.HUB_DATA = {
               label: 'Auto Components & Tyres Industrial Policy Watch',
               name: 'Auto Components & Tyres Industrial Policy Watch',
               desc: 'Tracks MITI + MIDA + Kemenperin + EDB Singapore policy moves for Auto Components & Tyres.',
-              instructions: 'Anda adalah analis yang mendukung Auto Components & Tyres. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Auto Components & Tyres. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.jpj.gov.my/en/announcement',
-                  note: 'JPJ Malaysia Road Transport Department'
+                  note: 'JPJ Indonesia Road Transport Department'
                 },
                 {
                   url: 'https://kemenperin.go.id/',
@@ -85464,7 +85464,7 @@ window.HUB_DATA = {
               label: 'Auto Components & Tyres Trade & Tariff Scanner',
               name: 'Auto Components & Tyres Trade & Tariff Scanner',
               desc: 'Tracks ASEAN FTA + WTO + Customs notices yang relevan dengan Auto Components & Tyres cross-border flows.',
-              instructions: 'Anda adalah analis yang mendukung Auto Components & Tyres. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Auto Components & Tyres. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.maa.org.my/news.html',
@@ -85491,7 +85491,7 @@ window.HUB_DATA = {
               label: 'Auto Components & Tyres Safety & Quality Standards Tracker',
               name: 'Auto Components & Tyres Safety & Quality Standards Tracker',
               desc: 'Tracks DOSH + JAS + SIRIM + SNI standard revisions yang relevan dengan Auto Components & Tyres plants.',
-              instructions: 'Anda adalah analis yang mendukung Auto Components & Tyres. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Auto Components & Tyres. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.oica.net/category/production-statistics/',
@@ -87508,7 +87508,7 @@ window.HUB_DATA = {
               label: 'Foundry Capex Watch',
               name: 'Zava Semiconductor — Foundry Capex & Capacity Watch',
               desc: 'Memantau Semiconductor / E&E capacity expansion projects, equipment-lead-time risk, and customer commit alignment.',
-              instructions: 'Anda adalah Zava Semiconductor / E&E Foundry Capex & Capacity Pemantau agen. Anda mendukung the Capex Komite Pengarah. Pantau capex programme data (SEMI_03_MITI_Brief_Pack.docx) and customer commit data (SEMI_05_Customer_Holding_Lines.docx) for slippage, equipment lead-time risk, and capacity-vs-commit gaps. Rekomendasikan escalation or commercial actions per Red.',
+              instructions: 'Anda adalah Zava Semiconductor / E&E Foundry Capex & Capacity Pemantau agen. Anda mendukung the Capex Komite Direktur. Pantau capex programme data (SEMI_03_MITI_Brief_Pack.docx) and customer commit data (SEMI_05_Customer_Holding_Lines.docx) for slippage, equipment lead-time risk, and capacity-vs-commit gaps. Rekomendasikan escalation or commercial actions per Red.',
               knowledge: [
                 {
                   file: 'SEMI_03_MITI_Brief_Pack.docx',
@@ -87663,7 +87663,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mosti.gov.my/web/en/',
-                  note: 'MOSTI Malaysia National Semiconductor Strategy'
+                  note: 'MOSTI Indonesia National Semiconductor Strategy'
                 },
                 {
                   url: 'https://kemenperin.go.id/',
@@ -87742,11 +87742,11 @@ window.HUB_DATA = {
               label: 'Semiconductor / E&E Industrial Policy Watch',
               name: 'Semiconductor / E&E Industrial Policy Watch',
               desc: 'Tracks MITI + MIDA + Kemenperin + EDB Singapore policy moves for Semiconductor / E&E.',
-              instructions: 'Anda adalah analis yang mendukung Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mosti.gov.my/web/en/',
-                  note: 'MOSTI Malaysia National Semiconductor Strategy'
+                  note: 'MOSTI Indonesia National Semiconductor Strategy'
                 },
                 {
                   url: 'https://kemenperin.go.id/',
@@ -87769,7 +87769,7 @@ window.HUB_DATA = {
               label: 'Semiconductor / E&E Trade & Tariff Scanner',
               name: 'Semiconductor / E&E Trade & Tariff Scanner',
               desc: 'Tracks ASEAN FTA + WTO + Customs notices yang relevan dengan Semiconductor / E&E cross-border flows.',
-              instructions: 'Anda adalah analis yang mendukung Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.semi.org/en/connect/regions/southeast-asia',
@@ -87796,7 +87796,7 @@ window.HUB_DATA = {
               label: 'Semiconductor / E&E Safety & Quality Standards Tracker',
               name: 'Semiconductor / E&E Safety & Quality Standards Tracker',
               desc: 'Tracks DOSH + JAS + SIRIM + SNI standard revisions yang relevan dengan Semiconductor / E&E plants.',
-              instructions: 'Anda adalah analis yang mendukung Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Semiconductor / E&E. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.gartner.com/en/industries/high-tech/semiconductors',
@@ -89800,7 +89800,7 @@ window.HUB_DATA = {
               queries: [
                 '5 teratas blocks by grade variance — recommended drill program.',
                 'Yang mana blocks have priority for next-pit sequencing? Rekomendasikan mining plan update.',
-                'Susun the kuartalan Geology Komite Pengarah paper.'
+                'Susun the kuartalan Geology Komite Direktur paper.'
               ]
             },
             {
@@ -89963,7 +89963,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.aelb.gov.my/aelbv2/?p=8485',
-                  note: 'AELB Malaysia atomic-energy/rare-earth licensing'
+                  note: 'AELB Indonesia atomic-energy/rare-earth licensing'
                 },
                 {
                   url: 'https://www.minerba.esdm.go.id/',
@@ -90030,7 +90030,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Rare-Earth & Metals.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Rare-Earth & Metals.',
                 'Map ISSB IFRS S1/S2 clauses to Rare-Earth & Metals current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Rare-Earth & Metals sustainability committee.'
               ]
@@ -90042,11 +90042,11 @@ window.HUB_DATA = {
               label: 'Rare-Earth & Metals Energy Regulator Watch',
               name: 'Rare-Earth & Metals Energy Regulator Watch',
               desc: 'Tracks Suruhanjaya Tenaga + ESDM + EMA Singapore policy moves yang relevan dengan Rare-Earth & Metals.',
-              instructions: 'Anda adalah analis yang mendukung Rare-Earth & Metals. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Rare-Earth & Metals. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.aelb.gov.my/aelbv2/?p=8485',
-                  note: 'AELB Malaysia atomic-energy/rare-earth licensing'
+                  note: 'AELB Indonesia atomic-energy/rare-earth licensing'
                 },
                 {
                   url: 'https://www.minerba.esdm.go.id/',
@@ -90069,7 +90069,7 @@ window.HUB_DATA = {
               label: 'Rare-Earth & Metals Commodity & Tariff Scanner',
               name: 'Rare-Earth & Metals Commodity & Tariff Scanner',
               desc: 'Tracks Brent + JKM LNG + EU TTF + ASEAN coal references plus regulated tariff schedules.',
-              instructions: 'Anda adalah analis yang mendukung Rare-Earth & Metals. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Rare-Earth & Metals. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.lynasrareearths.com/investors/announcements/',
@@ -90095,8 +90095,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Rare-Earth & Metals Sustainability & Climate Disclosure Scanner',
               name: 'Rare-Earth & Metals Sustainability & Climate Disclosure Scanner',
-              desc: 'Tracks Bursa Sustainability + IDX ESG + ISSB + TCFD updates affecting Rare-Earth & Metals.',
-              instructions: 'Anda adalah analis yang mendukung Rare-Earth & Metals. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks Bursa Sustainability + BURSA MALAYSIA ESG + ISSB + TCFD updates affecting Rare-Earth & Metals.',
+              instructions: 'Anda adalah analis yang menyokong Rare-Earth & Metals. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.argusmedia.com/en/metals/rare-earths',
@@ -90113,7 +90113,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Rare-Earth & Metals.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Rare-Earth & Metals.',
                 'Map ISSB IFRS S1/S2 clauses to Rare-Earth & Metals current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Rare-Earth & Metals sustainability committee.'
               ]
@@ -92516,7 +92516,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.mai.org.my/',
-                  note: 'Malaysia Automotive Association industry news'
+                  note: 'Indonesia Automotive Association industry news'
                 },
                 {
                   url: 'https://www.gaikindo.or.id/category/news/',
@@ -92524,7 +92524,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.maa.org.my/maa/news.html',
-                  note: 'Malaysia Automotive Association statistics'
+                  note: 'Indonesia Automotive Association statistics'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -92595,11 +92595,11 @@ window.HUB_DATA = {
               label: 'Automotive Distribution & Dealerships Industrial Policy Watch',
               name: 'Automotive Distribution & Dealerships Industrial Policy Watch',
               desc: 'Tracks MITI + MIDA + Kemenperin + EDB Singapore policy moves for Automotive Distribution & Dealerships.',
-              instructions: 'Anda adalah analis yang mendukung Automotive Distribution & Dealerships. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Automotive Distribution & Dealerships. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mai.org.my/',
-                  note: 'Malaysia Automotive Association industry news'
+                  note: 'Indonesia Automotive Association industry news'
                 },
                 {
                   url: 'https://www.gaikindo.or.id/category/news/',
@@ -92607,7 +92607,7 @@ window.HUB_DATA = {
                 },
                 {
                   url: 'https://www.maa.org.my/maa/news.html',
-                  note: 'Malaysia Automotive Association statistics'
+                  note: 'Indonesia Automotive Association statistics'
                 }
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
@@ -92622,7 +92622,7 @@ window.HUB_DATA = {
               label: 'Automotive Distribution & Dealerships Trade & Tariff Scanner',
               name: 'Automotive Distribution & Dealerships Trade & Tariff Scanner',
               desc: 'Tracks ASEAN FTA + WTO + Customs notices yang relevan dengan Automotive Distribution & Dealerships cross-border flows.',
-              instructions: 'Anda adalah analis yang mendukung Automotive Distribution & Dealerships. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Automotive Distribution & Dealerships. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.proton.com/news',
@@ -92649,7 +92649,7 @@ window.HUB_DATA = {
               label: 'Automotive Distribution & Dealerships Safety & Quality Standards Tracker',
               name: 'Automotive Distribution & Dealerships Safety & Quality Standards Tracker',
               desc: 'Tracks DOSH + JAS + SIRIM + SNI standard revisions yang relevan dengan Automotive Distribution & Dealerships plants.',
-              instructions: 'Anda adalah analis yang mendukung Automotive Distribution & Dealerships. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Automotive Distribution & Dealerships. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.oica.net/category/production-statistics/',
@@ -94877,7 +94877,7 @@ window.HUB_DATA = {
               label: 'Aviation — Airlines Transport Regulator Watch',
               name: 'Aviation — Airlines Transport Regulator Watch',
               desc: 'Tracks APAD + MAVCOM + Kemenhub + LTA Singapore announcements yang relevan dengan Aviation — Airlines.',
-              instructions: 'Anda adalah analis yang mendukung Aviation — Airlines. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Aviation — Airlines. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mavcom.my/en/',
@@ -94904,7 +94904,7 @@ window.HUB_DATA = {
               label: 'Aviation — Airlines Trade Lane & Freight Pulse',
               name: 'Aviation — Airlines Trade Lane & Freight Pulse',
               desc: 'Tracks port authorities + IATA + IMO + Drewry public reports for Aviation — Airlines.',
-              instructions: 'Anda adalah analis yang mendukung Aviation — Airlines. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Aviation — Airlines. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.aapairlines.org/news.aspx',
@@ -94931,7 +94931,7 @@ window.HUB_DATA = {
               label: 'Aviation — Airlines Fuel & Carbon Tracker',
               name: 'Aviation — Airlines Fuel & Carbon Tracker',
               desc: 'Tracks PetrolPrice + ICAO CORSIA + IMO sulphur cap updates for transport ops.',
-              instructions: 'Anda adalah analis yang mendukung Aviation — Airlines. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Aviation — Airlines. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.iata.org/en/publications/store/airlines-financial-monitor/',
@@ -96892,7 +96892,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas programmes by yield gap — recommended tindakan.',
                 'Yang mana retention clusters need intervention? Rekomendasikan support package.',
-                'Susun the kuartalan Admissions paper Komite Pengarah.'
+                'Susun the kuartalan Admissions paper Komite Direktur.'
               ]
             },
             {
@@ -96915,7 +96915,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas programmes by accreditation gap — recommended tindakan.',
                 'Yang mana student-feedback clusters need attention? Rekomendasikan curriculum review.',
-                'Susun the kuartalan Academic paper Komite Pengarah.'
+                'Susun the kuartalan Academic paper Komite Direktur.'
               ]
             },
             {
@@ -97045,7 +97045,7 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Education Policy Watch (Education)',
               name: 'Education Policy Watch (Education)',
-              desc: 'Tracks MOE Malaysia + Kemendikbud + MOE Singapore policy announcements for Education.',
+              desc: 'Tracks MOE Indonesia + Kemendikbud + MOE Singapore policy announcements for Education.',
               instructions: 'Anda adalah analis yang mendukung Education. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
@@ -97129,7 +97129,7 @@ window.HUB_DATA = {
               label: 'Education Policy Watch (Education)',
               name: 'Education Policy Watch (Education)',
               desc: 'Tracks MOE Malaysia + Kemendikbud + MOE Singapore policy announcements for Education.',
-              instructions: 'Anda adalah analis yang mendukung Education. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Education. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www2.mqa.gov.my/',
@@ -97155,8 +97155,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Quality & Accreditation Watch (Education)',
               name: 'Quality & Accreditation Watch (Education)',
-              desc: 'Tracks MQA + BAN-PT + SkillsFuture accreditation updates yang relevan dengan Education.',
-              instructions: 'Anda adalah analis yang mendukung Education. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks MQA + BAN-Sdn. Bhd. + SkillsFuture accreditation updates yang relevan dengan Education.',
+              instructions: 'Anda adalah analis yang menyokong Education. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.timeshighereducation.com/world-university-rankings/by-region/asia',
@@ -97183,7 +97183,7 @@ window.HUB_DATA = {
               label: 'Higher-Ed Research Hub (Education)',
               name: 'Higher-Ed Research Hub (Education)',
               desc: 'Pulls UNESCO + OECD Education + World Bank EdTech research yang relevan dengan Education.',
-              instructions: 'Anda adalah analis yang mendukung Education. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Education. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://uis.unesco.org/',
@@ -99323,7 +99323,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.st.gov.my/en/web/general/announcement',
-                  note: 'Suruhanjaya Tenaga Malaysia announcements'
+                  note: 'Suruhanjaya Tenaga Indonesia announcements'
                 },
                 {
                   url: 'https://www.esdm.go.id/en/regulations',
@@ -99350,7 +99350,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.tnb.com.my/announcements/',
-                  note: 'TNB Malaysia announcements'
+                  note: 'TNB Indonesia announcements'
                 },
                 {
                   url: 'https://web.pln.co.id/media/siaran-pers',
@@ -99390,7 +99390,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Utilities — Power Generation.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Utilities — Power Generation.',
                 'Map ISSB IFRS S1/S2 clauses to Utilities — Power Generation current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Utilities — Power Generation sustainability committee.'
               ]
@@ -99402,11 +99402,11 @@ window.HUB_DATA = {
               label: 'Utilities — Power Generation Energy Regulator Watch',
               name: 'Utilities — Power Generation Energy Regulator Watch',
               desc: 'Tracks Suruhanjaya Tenaga + ESDM + EMA Singapore policy moves yang relevan dengan Utilities — Power Generation.',
-              instructions: 'Anda adalah analis yang mendukung Utilities — Power Generation. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Utilities — Power Generation. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.st.gov.my/en/web/general/announcement',
-                  note: 'Suruhanjaya Tenaga Malaysia announcements'
+                  note: 'Suruhanjaya Tenaga Indonesia announcements'
                 },
                 {
                   url: 'https://www.esdm.go.id/en/regulations',
@@ -99429,11 +99429,11 @@ window.HUB_DATA = {
               label: 'Utilities — Power Generation Commodity & Tariff Scanner',
               name: 'Utilities — Power Generation Commodity & Tariff Scanner',
               desc: 'Tracks Brent + JKM LNG + EU TTF + ASEAN coal references plus regulated tariff schedules.',
-              instructions: 'Anda adalah analis yang mendukung Utilities — Power Generation. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Utilities — Power Generation. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.tnb.com.my/announcements/',
-                  note: 'TNB Malaysia announcements'
+                  note: 'TNB Indonesia announcements'
                 },
                 {
                   url: 'https://web.pln.co.id/media/siaran-pers',
@@ -99455,8 +99455,8 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Utilities — Power Generation Sustainability & Climate Disclosure Scanner',
               name: 'Utilities — Power Generation Sustainability & Climate Disclosure Scanner',
-              desc: 'Tracks Bursa Sustainability + IDX ESG + ISSB + TCFD updates affecting Utilities — Power Generation.',
-              instructions: 'Anda adalah analis yang mendukung Utilities — Power Generation. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              desc: 'Tracks Bursa Sustainability + BURSA MALAYSIA ESG + ISSB + TCFD updates affecting Utilities — Power Generation.',
+              instructions: 'Anda adalah analis yang menyokong Utilities — Power Generation. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.iea.org/reports/electricity-market-report-2024',
@@ -99473,7 +99473,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the latest Bursa + IDX ESG disclosure requirements relevant to Utilities — Power Generation.',
+                'Ringkas the latest Bursa + BEI ESG disclosure requirements relevant to Utilities — Power Generation.',
                 'Map ISSB IFRS S1/S2 clauses to Utilities — Power Generation current ESG report — flag the gaps.',
                 'Susun draf a quarterly disclosure compliance map for the Utilities — Power Generation sustainability committee.'
               ]
@@ -101522,7 +101522,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas projects by velocity gap — recommended campaign or pricing tindakan.',
                 'Yang mana projects have unsold-stock-age outliers? Rekomendasikan incentive package.',
-                'Susun the bulanan Sales paper Komite Pengarah.'
+                'Susun the bulanan Sales paper Komite Direktur.'
               ]
             },
             {
@@ -101675,12 +101675,12 @@ window.HUB_DATA = {
               icon: '🆓',
               label: 'Property Development Travel & Tourism Pulse',
               name: 'Property Development Travel & Tourism Pulse',
-              desc: 'Tracks Tourism Malaysia + Kemenparekraf + STB Singapore arrival statistics.',
+              desc: 'Tracks Tourism Indonesia + Kemenparekraf + STB Singapore arrival statistics.',
               instructions: 'Anda adalah analis yang mendukung Property Development. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://napic2.jpph.gov.my/en',
-                  note: 'NAPIC Malaysia property market reports'
+                  note: 'NAPIC Indonesia property market reports'
                 },
                 {
                   url: 'https://pu.go.id/regulasi-bangunan-gedung',
@@ -101693,7 +101693,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 6 months of arrival statistics from Tourism Malaysia + Kemenparekraf + STB.',
+                'Ringkas the last 6 months of arrival statistics from Tourism Indonesia + Kemenparekraf + STB.',
                 'Identifikasi the top 5 origin markets growing fastest for Property Development catchment.',
                 'Susun draf a monthly demand pulse with origin-market mix for the Property Development commercial team.'
               ]
@@ -101759,11 +101759,11 @@ window.HUB_DATA = {
               label: 'Property Development Travel & Tourism Pulse',
               name: 'Property Development Travel & Tourism Pulse',
               desc: 'Tracks Tourism Malaysia + Kemenparekraf + STB Singapore arrival statistics.',
-              instructions: 'Anda adalah analis yang mendukung Property Development. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Property Development. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://napic2.jpph.gov.my/en',
-                  note: 'NAPIC Malaysia property market reports'
+                  note: 'NAPIC Indonesia property market reports'
                 },
                 {
                   url: 'https://pu.go.id/regulasi-bangunan-gedung',
@@ -101776,7 +101776,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 6 months of arrival statistics from Tourism Malaysia + Kemenparekraf + STB.',
+                'Ringkas the last 6 months of arrival statistics from Tourism Indonesia + Kemenparekraf + STB.',
                 'Identifikasi the top 5 origin markets growing fastest for Property Development catchment.',
                 'Susun draf a monthly demand pulse with origin-market mix for the Property Development commercial team.'
               ]
@@ -101786,7 +101786,7 @@ window.HUB_DATA = {
               label: 'Property Development Property Market Tracker',
               name: 'Property Development Property Market Tracker',
               desc: 'Tracks NAPIC + JPP + REI + URA property market reports for Property Development.',
-              instructions: 'Anda adalah analis yang mendukung Property Development. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Property Development. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://rehda.com/news/',
@@ -101813,7 +101813,7 @@ window.HUB_DATA = {
               label: 'Property Development Hospitality Operations Benchmark',
               name: 'Property Development Hospitality Operations Benchmark',
               desc: 'Tracks STR + MAH + PHRI public hospitality benchmark releases.',
-              instructions: 'Anda adalah analis yang mendukung Property Development. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Property Development. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.jll.com.my/en/research',
@@ -103843,7 +103843,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas categories by take-rate gap — recommended tindakan.',
                 'Yang mana seller tiers have GMV deterioration? Rekomendasikan support package.',
-                'Susun the bulanan Commercial paper Komite Pengarah.'
+                'Susun the bulanan Commercial paper Komite Direktur.'
               ]
             },
             {
@@ -103866,7 +103866,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas fraud-pattern clusters — recommended rule-engine update.',
                 'Yang mana dispute clusters require seller-suspension? Tabulate.',
-                'Susun the bulanan T&S Komite Pengarah paper.'
+                'Susun the bulanan T&S Komite Direktur paper.'
               ]
             },
             {
@@ -104001,7 +104001,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements',
-                  note: 'KPDN Malaysia e-commerce consumer protection'
+                  note: 'KPDN Indonesia e-commerce consumer protection'
                 },
                 {
                   url: 'https://www.kemendag.go.id/',
@@ -104028,7 +104028,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://mdec.my/news/',
-                  note: 'MDEC Malaysia digital economy news'
+                  note: 'MDEC Indonesia digital economy news'
                 },
                 {
                   url: 'https://idea.or.id/',
@@ -104068,7 +104068,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Malaysia and Indonesia digital snapshots relevant to E-commerce / Super-app.',
+                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to E-commerce / Super-app.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the E-commerce / Super-app digital strategy lead.'
               ]
@@ -104080,11 +104080,11 @@ window.HUB_DATA = {
               label: 'E-commerce / Super-app Telecoms Regulator Watch',
               name: 'E-commerce / Super-app Telecoms Regulator Watch',
               desc: 'Tracks MCMC + Kominfo + IMDA spectrum and licensing announcements for E-commerce / Super-app.',
-              instructions: 'Anda adalah analis yang mendukung E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.kpdn.gov.my/portal/index.php/en/announcements',
-                  note: 'KPDN Malaysia e-commerce consumer protection'
+                  note: 'KPDN Indonesia e-commerce consumer protection'
                 },
                 {
                   url: 'https://www.kemendag.go.id/',
@@ -104107,11 +104107,11 @@ window.HUB_DATA = {
               label: 'E-commerce / Super-app Cyber & Data Protection Scanner',
               name: 'E-commerce / Super-app Cyber & Data Protection Scanner',
               desc: 'Tracks PDP Commissioner + Pusat KKD + PDPC Singapore + ENISA enforcement and guidance.',
-              instructions: 'Anda adalah analis yang mendukung E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://mdec.my/news/',
-                  note: 'MDEC Malaysia digital economy news'
+                  note: 'MDEC Indonesia digital economy news'
                 },
                 {
                   url: 'https://idea.or.id/',
@@ -104134,7 +104134,7 @@ window.HUB_DATA = {
               label: 'E-commerce / Super-app Digital Adoption Scanner',
               name: 'E-commerce / Super-app Digital Adoption Scanner',
               desc: 'Tracks DataReportal + DOSM ICT + BPS ICT + Statista regional adoption snapshots.',
-              instructions: 'Anda adalah analis yang mendukung E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong E-commerce / Super-app. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bain.com/insights/topics/southeast-asias-internet-economy/',
@@ -104151,7 +104151,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Tarik the latest DataReportal Malaysia and Indonesia digital snapshots relevant to E-commerce / Super-app.',
+                'Tarik the latest DataReportal Indonesia and Indonesia digital snapshots relevant to E-commerce / Super-app.',
                 'Buat daftar DOSM ICT indicators that have moved meaningfully in the last 12 months.',
                 'Susun draf a quarterly digital adoption scorecard for the E-commerce / Super-app digital strategy lead.'
               ]
@@ -106253,7 +106253,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.marine.gov.my/',
-                  note: 'Marine Department Malaysia'
+                  note: 'Marine Department Indonesia'
                 },
                 {
                   url: 'https://hubla.dephub.go.id/home/news',
@@ -106280,7 +106280,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.masa.org.my/news/',
-                  note: 'MASA Malaysia Shipowners Association'
+                  note: 'MASA Indonesia Shipowners Association'
                 },
                 {
                   url: 'https://www.dpp-insa.com/',
@@ -106332,11 +106332,11 @@ window.HUB_DATA = {
               label: 'Maritime & Shipping Transport Regulator Watch',
               name: 'Maritime & Shipping Transport Regulator Watch',
               desc: 'Tracks APAD + MAVCOM + Kemenhub + LTA Singapore announcements yang relevan dengan Maritime & Shipping.',
-              instructions: 'Anda adalah analis yang mendukung Maritime & Shipping. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Maritime & Shipping. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.marine.gov.my/',
-                  note: 'Marine Department Malaysia'
+                  note: 'Marine Department Indonesia'
                 },
                 {
                   url: 'https://hubla.dephub.go.id/home/news',
@@ -106359,11 +106359,11 @@ window.HUB_DATA = {
               label: 'Maritime & Shipping Trade Lane & Freight Pulse',
               name: 'Maritime & Shipping Trade Lane & Freight Pulse',
               desc: 'Tracks port authorities + IATA + IMO + Drewry public reports for Maritime & Shipping.',
-              instructions: 'Anda adalah analis yang mendukung Maritime & Shipping. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Maritime & Shipping. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.masa.org.my/news/',
-                  note: 'MASA Malaysia Shipowners Association'
+                  note: 'MASA Indonesia Shipowners Association'
                 },
                 {
                   url: 'https://www.dpp-insa.com/',
@@ -106386,7 +106386,7 @@ window.HUB_DATA = {
               label: 'Maritime & Shipping Fuel & Carbon Tracker',
               name: 'Maritime & Shipping Fuel & Carbon Tracker',
               desc: 'Tracks PetrolPrice + ICAO CORSIA + IMO sulphur cap updates for transport ops.',
-              instructions: 'Anda adalah analis yang mendukung Maritime & Shipping. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong Maritime & Shipping. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bimco.org/news',
@@ -110430,7 +110430,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas attrition clusters — recommended retention package.',
                 'Yang mana critical roles have no successor? Rekomendasikan pipeline tindakan.',
-                'Susun the kuartalan Talent paper Komite Pengarah.'
+                'Susun the kuartalan Talent paper Komite Direktur.'
               ]
             },
             {
@@ -110453,7 +110453,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas capability gaps — recommended learning pathway.',
                 'Yang mana certifications expire within 90 days? Rekomendasikan renewal programme.',
-                'Susun the kuartalan L&D paper Komite Pengarah.'
+                'Susun the kuartalan L&D paper Komite Direktur.'
               ]
             },
             {
@@ -110585,7 +110585,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://jtksm.mohr.gov.my/index.php/en/',
-                  note: 'JTKSM Department of Labour Malaysia'
+                  note: 'JTKSM Department of Labour Indonesia'
                 },
                 {
                   url: 'https://kemnaker.go.id/news/all',
@@ -110625,7 +110625,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 👥 Human Resources.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 👥 Human Resources.',
                 'Buat daftar standard revisions affecting 👥 Human Resources processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 👥 Human Resources lead.'
               ]
@@ -110664,11 +110664,11 @@ window.HUB_DATA = {
               label: '👥 Human Resources Best-Practice Scanner',
               name: '👥 Human Resources Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 👥 Human Resources.',
-              instructions: 'Anda adalah analis yang mendukung 👥 Human Resources. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 👥 Human Resources. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://jtksm.mohr.gov.my/index.php/en/',
-                  note: 'JTKSM Department of Labour Malaysia'
+                  note: 'JTKSM Department of Labour Indonesia'
                 },
                 {
                   url: 'https://kemnaker.go.id/news/all',
@@ -110691,7 +110691,7 @@ window.HUB_DATA = {
               label: '👥 Human Resources Regulator & Standards Watch',
               name: '👥 Human Resources Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 👥 Human Resources mandate.',
-              instructions: 'Anda adalah analis yang mendukung 👥 Human Resources. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 👥 Human Resources. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mihrm.com/',
@@ -110708,7 +110708,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 👥 Human Resources.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 👥 Human Resources.',
                 'Buat daftar standard revisions affecting 👥 Human Resources processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 👥 Human Resources lead.'
               ]
@@ -110718,7 +110718,7 @@ window.HUB_DATA = {
               label: '👥 Human Resources Peer Function Benchmark',
               name: '👥 Human Resources Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 👥 Human Resources.',
-              instructions: 'Anda adalah analis yang mendukung 👥 Human Resources. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 👥 Human Resources. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mercer.com/our-thinking/career/total-remuneration-survey.html',
@@ -113537,7 +113537,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 💰 Finance & Treasury.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 💰 Finance & Treasury.',
                 'Buat daftar standard revisions affecting 💰 Finance & Treasury processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 💰 Finance & Treasury lead.'
               ]
@@ -113576,7 +113576,7 @@ window.HUB_DATA = {
               label: '💰 Finance & Treasury Best-Practice Scanner',
               name: '💰 Finance & Treasury Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 💰 Finance & Treasury.',
-              instructions: 'Anda adalah analis yang mendukung 💰 Finance & Treasury. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 💰 Finance & Treasury. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.masb.org.my/',
@@ -113603,7 +113603,7 @@ window.HUB_DATA = {
               label: '💰 Finance & Treasury Regulator & Standards Watch',
               name: '💰 Finance & Treasury Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 💰 Finance & Treasury mandate.',
-              instructions: 'Anda adalah analis yang mendukung 💰 Finance & Treasury. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 💰 Finance & Treasury. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mia.org.my/v2/news.aspx',
@@ -113620,7 +113620,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 💰 Finance & Treasury.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 💰 Finance & Treasury.',
                 'Buat daftar standard revisions affecting 💰 Finance & Treasury processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 💰 Finance & Treasury lead.'
               ]
@@ -113630,7 +113630,7 @@ window.HUB_DATA = {
               label: '💰 Finance & Treasury Peer Function Benchmark',
               name: '💰 Finance & Treasury Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 💰 Finance & Treasury.',
-              instructions: 'Anda adalah analis yang mendukung 💰 Finance & Treasury. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 💰 Finance & Treasury. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.ifrs.org/news-and-events/',
@@ -116437,7 +116437,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.malaysianbar.org.my/article/news',
-                  note: 'Bar Council Malaysia news'
+                  note: 'Bar Council Indonesia news'
                 },
                 {
                   url: 'https://www.peradi.or.id/index.php/news',
@@ -116477,7 +116477,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to ⚖️ Legal.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to ⚖️ Legal.',
                 'Buat daftar standard revisions affecting ⚖️ Legal processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the ⚖️ Legal lead.'
               ]
@@ -116516,11 +116516,11 @@ window.HUB_DATA = {
               label: '⚖️ Legal Best-Practice Scanner',
               name: '⚖️ Legal Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan ⚖️ Legal.',
-              instructions: 'Anda adalah analis yang mendukung ⚖️ Legal. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong ⚖️ Legal. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.malaysianbar.org.my/article/news',
-                  note: 'Bar Council Malaysia news'
+                  note: 'Bar Council Indonesia news'
                 },
                 {
                   url: 'https://www.peradi.or.id/index.php/news',
@@ -116543,7 +116543,7 @@ window.HUB_DATA = {
               label: '⚖️ Legal Regulator & Standards Watch',
               name: '⚖️ Legal Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan ⚖️ Legal mandate.',
-              instructions: 'Anda adalah analis yang mendukung ⚖️ Legal. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong ⚖️ Legal. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mylawnet.com.my/',
@@ -116560,7 +116560,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to ⚖️ Legal.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to ⚖️ Legal.',
                 'Buat daftar standard revisions affecting ⚖️ Legal processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the ⚖️ Legal lead.'
               ]
@@ -116570,7 +116570,7 @@ window.HUB_DATA = {
               label: '⚖️ Legal Peer Function Benchmark',
               name: '⚖️ Legal Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for ⚖️ Legal.',
-              instructions: 'Anda adalah analis yang mendukung ⚖️ Legal. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong ⚖️ Legal. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.ibanet.org/Publications',
@@ -119326,11 +119326,11 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/risk-management',
-                  note: 'BNM risk-management framework'
+                  note: 'BI risk-management framework'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/regulasi/manajemen-risiko/Default.aspx',
-                  note: 'OJK manajemen risiko regulations'
+                  note: 'OJK pengurusan risiko regulations'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/Risk-Management',
@@ -119366,7 +119366,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🛡 Risk & Internal Audit.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🛡 Risk & Internal Audit.',
                 'Buat daftar standard revisions affecting 🛡 Risk & Internal Audit processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🛡 Risk & Internal Audit lead.'
               ]
@@ -119405,15 +119405,15 @@ window.HUB_DATA = {
               label: '🛡 Risk & Internal Audit Best-Practice Scanner',
               name: '🛡 Risk & Internal Audit Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 🛡 Risk & Internal Audit.',
-              instructions: 'Anda adalah analis yang mendukung 🛡 Risk & Internal Audit. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🛡 Risk & Internal Audit. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bnm.gov.my/-/risk-management',
-                  note: 'BNM risk-management framework'
+                  note: 'BI risk-management framework'
                 },
                 {
                   url: 'https://www.ojk.go.id/id/kanal/perbankan/regulasi/manajemen-risiko/Default.aspx',
-                  note: 'OJK manajemen risiko regulations'
+                  note: 'OJK pengurusan risiko regulations'
                 },
                 {
                   url: 'https://www.mas.gov.sg/regulation/Risk-Management',
@@ -119432,7 +119432,7 @@ window.HUB_DATA = {
               label: '🛡 Risk & Internal Audit Regulator & Standards Watch',
               name: '🛡 Risk & Internal Audit Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 🛡 Risk & Internal Audit mandate.',
-              instructions: 'Anda adalah analis yang mendukung 🛡 Risk & Internal Audit. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🛡 Risk & Internal Audit. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.theirm.org/about/news-and-events/',
@@ -119449,7 +119449,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🛡 Risk & Internal Audit.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🛡 Risk & Internal Audit.',
                 'Buat daftar standard revisions affecting 🛡 Risk & Internal Audit processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🛡 Risk & Internal Audit lead.'
               ]
@@ -119459,7 +119459,7 @@ window.HUB_DATA = {
               label: '🛡 Risk & Internal Audit Peer Function Benchmark',
               name: '🛡 Risk & Internal Audit Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 🛡 Risk & Internal Audit.',
-              instructions: 'Anda adalah analis yang mendukung 🛡 Risk & Internal Audit. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🛡 Risk & Internal Audit. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.coso.org/Pages/erm.aspx',
@@ -122282,7 +122282,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.sc.com.my/regulation/capital-market-masterplan',
-                  note: 'SC Malaysia Capital Market Masterplan'
+                  note: 'OJK Indonesia Capital Market Masterplan'
                 },
                 {
                   url: 'https://www.ojk.go.id/en/Pages/Master-Plan-Sektor-Jasa-Keuangan-Indonesia.aspx',
@@ -122322,7 +122322,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🎯 Strategy & Corporate Planning.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🎯 Strategy & Corporate Planning.',
                 'Buat daftar standard revisions affecting 🎯 Strategy & Corporate Planning processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🎯 Strategy & Corporate Planning lead.'
               ]
@@ -122361,11 +122361,11 @@ window.HUB_DATA = {
               label: '🎯 Strategy & Corporate Planning Best-Practice Scanner',
               name: '🎯 Strategy & Corporate Planning Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 🎯 Strategy & Corporate Planning.',
-              instructions: 'Anda adalah analis yang mendukung 🎯 Strategy & Corporate Planning. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🎯 Strategy & Corporate Planning. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.sc.com.my/regulation/capital-market-masterplan',
-                  note: 'SC Malaysia Capital Market Masterplan'
+                  note: 'OJK Indonesia Capital Market Masterplan'
                 },
                 {
                   url: 'https://www.ojk.go.id/en/Pages/Master-Plan-Sektor-Jasa-Keuangan-Indonesia.aspx',
@@ -122388,7 +122388,7 @@ window.HUB_DATA = {
               label: '🎯 Strategy & Corporate Planning Regulator & Standards Watch',
               name: '🎯 Strategy & Corporate Planning Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 🎯 Strategy & Corporate Planning mandate.',
-              instructions: 'Anda adalah analis yang mendukung 🎯 Strategy & Corporate Planning. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🎯 Strategy & Corporate Planning. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mckinsey.com/featured-insights/asia-pacific',
@@ -122405,7 +122405,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🎯 Strategy & Corporate Planning.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🎯 Strategy & Corporate Planning.',
                 'Buat daftar standard revisions affecting 🎯 Strategy & Corporate Planning processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🎯 Strategy & Corporate Planning lead.'
               ]
@@ -122415,7 +122415,7 @@ window.HUB_DATA = {
               label: '🎯 Strategy & Corporate Planning Peer Function Benchmark',
               name: '🎯 Strategy & Corporate Planning Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 🎯 Strategy & Corporate Planning.',
-              instructions: 'Anda adalah analis yang mendukung 🎯 Strategy & Corporate Planning. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🎯 Strategy & Corporate Planning. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.weforum.org/agenda/asia/',
@@ -124952,7 +124952,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas brands by equity drag — recommended tindakan.',
                 'Yang mana campaigns have ROI deterioration? Rekomendasikan cancel.',
-                'Susun the kuartalan Brand paper Komite Pengarah.'
+                'Susun the kuartalan Brand paper Komite Direktur.'
               ]
             },
             {
@@ -125115,7 +125115,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.iabm.com.my/',
-                  note: 'IAB Malaysia advertising standards'
+                  note: 'IAB Indonesia advertising standards'
                 },
                 {
                   url: 'https://www.amm.or.id/',
@@ -125155,7 +125155,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 📢 Marketing & Communications.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 📢 Marketing & Communications.',
                 'Buat daftar standard revisions affecting 📢 Marketing & Communications processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 📢 Marketing & Communications lead.'
               ]
@@ -125194,11 +125194,11 @@ window.HUB_DATA = {
               label: '📢 Marketing & Communications Best-Practice Scanner',
               name: '📢 Marketing & Communications Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 📢 Marketing & Communications.',
-              instructions: 'Anda adalah analis yang mendukung 📢 Marketing & Communications. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 📢 Marketing & Communications. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.iabm.com.my/',
-                  note: 'IAB Malaysia advertising standards'
+                  note: 'IAB Indonesia advertising standards'
                 },
                 {
                   url: 'https://www.amm.or.id/',
@@ -125221,7 +125221,7 @@ window.HUB_DATA = {
               label: '📢 Marketing & Communications Regulator & Standards Watch',
               name: '📢 Marketing & Communications Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 📢 Marketing & Communications mandate.',
-              instructions: 'Anda adalah analis yang mendukung 📢 Marketing & Communications. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 📢 Marketing & Communications. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.marketing-interactive.com/region/southeast-asia',
@@ -125238,7 +125238,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 📢 Marketing & Communications.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 📢 Marketing & Communications.',
                 'Buat daftar standard revisions affecting 📢 Marketing & Communications processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 📢 Marketing & Communications lead.'
               ]
@@ -125248,7 +125248,7 @@ window.HUB_DATA = {
               label: '📢 Marketing & Communications Peer Function Benchmark',
               name: '📢 Marketing & Communications Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 📢 Marketing & Communications.',
-              instructions: 'Anda adalah analis yang mendukung 📢 Marketing & Communications. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 📢 Marketing & Communications. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.warc.com/asia-pacific',
@@ -127700,7 +127700,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas emission hotspots — recommended reduction lever.',
                 'Yang mana TCFD / ISSB disclosures require closure?',
-                'Susun the kuartalan Climate paper Komite Pengarah.'
+                'Susun the kuartalan Climate paper Komite Direktur.'
               ]
             },
             {
@@ -127903,7 +127903,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🌱 ESG & Sustainability.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🌱 ESG & Sustainability.',
                 'Buat daftar standard revisions affecting 🌱 ESG & Sustainability processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🌱 ESG & Sustainability lead.'
               ]
@@ -127942,7 +127942,7 @@ window.HUB_DATA = {
               label: '🌱 ESG & Sustainability Best-Practice Scanner',
               name: '🌱 ESG & Sustainability Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 🌱 ESG & Sustainability.',
-              instructions: 'Anda adalah analis yang mendukung 🌱 ESG & Sustainability. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🌱 ESG & Sustainability. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/regulation/sustainability',
@@ -127969,7 +127969,7 @@ window.HUB_DATA = {
               label: '🌱 ESG & Sustainability Regulator & Standards Watch',
               name: '🌱 ESG & Sustainability Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 🌱 ESG & Sustainability mandate.',
-              instructions: 'Anda adalah analis yang mendukung 🌱 ESG & Sustainability. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🌱 ESG & Sustainability. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.wbcsd.org/Sector-Projects/asia-pacific',
@@ -127986,7 +127986,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🌱 ESG & Sustainability.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🌱 ESG & Sustainability.',
                 'Buat daftar standard revisions affecting 🌱 ESG & Sustainability processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🌱 ESG & Sustainability lead.'
               ]
@@ -127996,7 +127996,7 @@ window.HUB_DATA = {
               label: '🌱 ESG & Sustainability Peer Function Benchmark',
               name: '🌱 ESG & Sustainability Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 🌱 ESG & Sustainability.',
-              instructions: 'Anda adalah analis yang mendukung 🌱 ESG & Sustainability. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🌱 ESG & Sustainability. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.fsb-tcfd.org/recommendations/',
@@ -130411,7 +130411,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas incident clusters — recommended CAPA.',
                 'Yang mana CAPAs are overdue > 30 days? Bangun closure plan.',
-                'Susun the kuartalan QHSE paper Komite Pengarah.'
+                'Susun the kuartalan QHSE paper Komite Direktur.'
               ]
             }
           ],
@@ -130532,7 +130532,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.dosh.gov.my/index.php/legislation',
-                  note: 'DOSH Malaysia OSH regulations'
+                  note: 'DOSH Indonesia OSH regulations'
                 },
                 {
                   url: 'https://kemnaker.go.id/news/k3',
@@ -130572,7 +130572,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to ⚙️ Operations & COO Office.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to ⚙️ Operations & COO Office.',
                 'Buat daftar standard revisions affecting ⚙️ Operations & COO Office processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the ⚙️ Operations & COO Office lead.'
               ]
@@ -130611,11 +130611,11 @@ window.HUB_DATA = {
               label: '⚙️ Operations & COO Office Best-Practice Scanner',
               name: '⚙️ Operations & COO Office Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan ⚙️ Operations & COO Office.',
-              instructions: 'Anda adalah analis yang mendukung ⚙️ Operations & COO Office. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong ⚙️ Operations & COO Office. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.dosh.gov.my/index.php/legislation',
-                  note: 'DOSH Malaysia OSH regulations'
+                  note: 'DOSH Indonesia OSH regulations'
                 },
                 {
                   url: 'https://kemnaker.go.id/news/k3',
@@ -130638,7 +130638,7 @@ window.HUB_DATA = {
               label: '⚙️ Operations & COO Office Regulator & Standards Watch',
               name: '⚙️ Operations & COO Office Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan ⚙️ Operations & COO Office mandate.',
-              instructions: 'Anda adalah analis yang mendukung ⚙️ Operations & COO Office. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong ⚙️ Operations & COO Office. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.iienet.org/',
@@ -130655,7 +130655,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to ⚙️ Operations & COO Office.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to ⚙️ Operations & COO Office.',
                 'Buat daftar standard revisions affecting ⚙️ Operations & COO Office processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the ⚙️ Operations & COO Office lead.'
               ]
@@ -130665,7 +130665,7 @@ window.HUB_DATA = {
               label: '⚙️ Operations & COO Office Peer Function Benchmark',
               name: '⚙️ Operations & COO Office Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for ⚙️ Operations & COO Office.',
-              instructions: 'Anda adalah analis yang mendukung ⚙️ Operations & COO Office. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong ⚙️ Operations & COO Office. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.gartner.com/en/supply-chain/insights',
@@ -133184,7 +133184,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://maicsa.org.my/news/',
-                  note: 'MAICSA Malaysia chartered secretaries'
+                  note: 'MAICSA Indonesia chartered secretaries'
                 },
                 {
                   url: 'https://icsa.com.sg/news',
@@ -133197,7 +133197,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 📜 Corporate Secretarial.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 📜 Corporate Secretarial.',
                 'Buat daftar standard revisions affecting 📜 Corporate Secretarial processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 📜 Corporate Secretarial lead.'
               ]
@@ -133236,7 +133236,7 @@ window.HUB_DATA = {
               label: '📜 Corporate Secretarial Best-Practice Scanner',
               name: '📜 Corporate Secretarial Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 📜 Corporate Secretarial.',
-              instructions: 'Anda adalah analis yang mendukung 📜 Corporate Secretarial. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 📜 Corporate Secretarial. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/regulation/listing_requirements',
@@ -133263,11 +133263,11 @@ window.HUB_DATA = {
               label: '📜 Corporate Secretarial Regulator & Standards Watch',
               name: '📜 Corporate Secretarial Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 📜 Corporate Secretarial mandate.',
-              instructions: 'Anda adalah analis yang mendukung 📜 Corporate Secretarial. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 📜 Corporate Secretarial. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://maicsa.org.my/news/',
-                  note: 'MAICSA Malaysia chartered secretaries'
+                  note: 'MAICSA Indonesia chartered secretaries'
                 },
                 {
                   url: 'https://icsa.com.sg/news',
@@ -133280,7 +133280,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 📜 Corporate Secretarial.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 📜 Corporate Secretarial.',
                 'Buat daftar standard revisions affecting 📜 Corporate Secretarial processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 📜 Corporate Secretarial lead.'
               ]
@@ -133290,7 +133290,7 @@ window.HUB_DATA = {
               label: '📜 Corporate Secretarial Peer Function Benchmark',
               name: '📜 Corporate Secretarial Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 📜 Corporate Secretarial.',
-              instructions: 'Anda adalah analis yang mendukung 📜 Corporate Secretarial. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 📜 Corporate Secretarial. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.theicgn.org/policy/global-governance-principles',
@@ -135876,7 +135876,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 📈 Investor Relations.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 📈 Investor Relations.',
                 'Buat daftar standard revisions affecting 📈 Investor Relations processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 📈 Investor Relations lead.'
               ]
@@ -135915,7 +135915,7 @@ window.HUB_DATA = {
               label: '📈 Investor Relations Best-Practice Scanner',
               name: '📈 Investor Relations Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 📈 Investor Relations.',
-              instructions: 'Anda adalah analis yang mendukung 📈 Investor Relations. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 📈 Investor Relations. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.bursamalaysia.com/regulation/corporate_governance',
@@ -135942,7 +135942,7 @@ window.HUB_DATA = {
               label: '📈 Investor Relations Regulator & Standards Watch',
               name: '📈 Investor Relations Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 📈 Investor Relations mandate.',
-              instructions: 'Anda adalah analis yang mendukung 📈 Investor Relations. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 📈 Investor Relations. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://mira.com.my/',
@@ -135959,7 +135959,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 📈 Investor Relations.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 📈 Investor Relations.',
                 'Buat daftar standard revisions affecting 📈 Investor Relations processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 📈 Investor Relations lead.'
               ]
@@ -135969,7 +135969,7 @@ window.HUB_DATA = {
               label: '📈 Investor Relations Peer Function Benchmark',
               name: '📈 Investor Relations Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 📈 Investor Relations.',
-              instructions: 'Anda adalah analis yang mendukung 📈 Investor Relations. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 📈 Investor Relations. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.niri.org/about-niri/news',
@@ -138527,7 +138527,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas categories by savings opportunity — recommended event.',
                 'Yang mana suppliers have spend concentration > 20%? Rekomendasikan dual-sourcing.',
-                'Susun the kuartalan Spend paper Komite Pengarah.'
+                'Susun the kuartalan Spend paper Komite Direktur.'
               ]
             },
             {
@@ -138690,7 +138690,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://www.treasury.gov.my/index.php/en/government-procurement.html',
-                  note: 'MOF Malaysia government procurement'
+                  note: 'MOF Indonesia government procurement'
                 },
                 {
                   url: 'https://www.lkpp.go.id/v3/news',
@@ -138730,7 +138730,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🛒 Procurement & Supply Chain.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🛒 Procurement & Supply Chain.',
                 'Buat daftar standard revisions affecting 🛒 Procurement & Supply Chain processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🛒 Procurement & Supply Chain lead.'
               ]
@@ -138769,11 +138769,11 @@ window.HUB_DATA = {
               label: '🛒 Procurement & Supply Chain Best-Practice Scanner',
               name: '🛒 Procurement & Supply Chain Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 🛒 Procurement & Supply Chain.',
-              instructions: 'Anda adalah analis yang mendukung 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.treasury.gov.my/index.php/en/government-procurement.html',
-                  note: 'MOF Malaysia government procurement'
+                  note: 'MOF Indonesia government procurement'
                 },
                 {
                   url: 'https://www.lkpp.go.id/v3/news',
@@ -138796,7 +138796,7 @@ window.HUB_DATA = {
               label: '🛒 Procurement & Supply Chain Regulator & Standards Watch',
               name: '🛒 Procurement & Supply Chain Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 🛒 Procurement & Supply Chain mandate.',
-              instructions: 'Anda adalah analis yang mendukung 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.mipmm.com.my/',
@@ -138813,7 +138813,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 🛒 Procurement & Supply Chain.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 🛒 Procurement & Supply Chain.',
                 'Buat daftar standard revisions affecting 🛒 Procurement & Supply Chain processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 🛒 Procurement & Supply Chain lead.'
               ]
@@ -138823,7 +138823,7 @@ window.HUB_DATA = {
               label: '🛒 Procurement & Supply Chain Peer Function Benchmark',
               name: '🛒 Procurement & Supply Chain Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 🛒 Procurement & Supply Chain.',
-              instructions: 'Anda adalah analis yang mendukung 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 🛒 Procurement & Supply Chain. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.gartner.com/en/supply-chain/insights/strategic-sourcing-and-procurement',
@@ -141412,7 +141412,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas open vulnerabilities by severity — recommended remediation.',
                 'Yang mana threat-intel signals require active hunt?',
-                'Susun the kuartalan Cyber paper Komite Pengarah.'
+                'Susun the kuartalan Cyber paper Komite Direktur.'
               ]
             },
             {
@@ -141431,7 +141431,7 @@ window.HUB_DATA = {
               queries: [
                 '10 teratas programmes by benefit-realisation gap — recommended tindakan.',
                 'Yang mana programmes have capex slippage > 20%? Rekomendasikan re-baseline.',
-                'Susun the kuartalan Digital paper Komite Pengarah.'
+                'Susun the kuartalan Digital paper Komite Direktur.'
               ]
             }
           ],
@@ -141579,7 +141579,7 @@ window.HUB_DATA = {
               knowledge: [
                 {
                   url: 'https://mtsfb.org.my/news/',
-                  note: 'MTSFB Malaysia Technical Standards Forum'
+                  note: 'MTSFB Indonesia Technical Standards Forum'
                 },
                 {
                   url: 'https://www.mikti.or.id/news',
@@ -141592,7 +141592,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 💻 IT & Digital.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 💻 IT & Digital.',
                 'Buat daftar standard revisions affecting 💻 IT & Digital processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 💻 IT & Digital lead.'
               ]
@@ -141631,7 +141631,7 @@ window.HUB_DATA = {
               label: '💻 IT & Digital Best-Practice Scanner',
               name: '💻 IT & Digital Best-Practice Scanner',
               desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan 💻 IT & Digital.',
-              instructions: 'Anda adalah analis yang mendukung 💻 IT & Digital. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 💻 IT & Digital. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://mydigital.gov.my/news-publications/',
@@ -141658,11 +141658,11 @@ window.HUB_DATA = {
               label: '💻 IT & Digital Regulator & Standards Watch',
               name: '💻 IT & Digital Regulator & Standards Watch',
               desc: 'Tracks regional standard-setters + regulators yang relevan dengan 💻 IT & Digital mandate.',
-              instructions: 'Anda adalah analis yang mendukung 💻 IT & Digital. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 💻 IT & Digital. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://mtsfb.org.my/news/',
-                  note: 'MTSFB Malaysia Technical Standards Forum'
+                  note: 'MTSFB Indonesia Technical Standards Forum'
                 },
                 {
                   url: 'https://www.mikti.or.id/news',
@@ -141675,7 +141675,7 @@ window.HUB_DATA = {
               ],
               knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
               queries: [
-                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to 💻 IT & Digital.',
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to 💻 IT & Digital.',
                 'Buat daftar standard revisions affecting 💻 IT & Digital processes — flag the ones with hard deadlines.',
                 'Susun draf a monthly compliance digest with proposed actions for the 💻 IT & Digital lead.'
               ]
@@ -141685,7 +141685,7 @@ window.HUB_DATA = {
               label: '💻 IT & Digital Peer Function Benchmark',
               name: '💻 IT & Digital Peer Function Benchmark',
               desc: 'Tracks public peer-function disclosures + association surveys for 💻 IT & Digital.',
-              instructions: 'Anda adalah analis yang mendukung 💻 IT & Digital. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              instructions: 'Anda adalah analis yang menyokong 💻 IT & Digital. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
               knowledge: [
                 {
                   url: 'https://www.gartner.com/en/industries/asia-pacific',

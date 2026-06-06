@@ -404,6 +404,35 @@ def walk_and_fix(entry):
         patch(t, 'promptsID', fix_bi)
         patch(t, 'personaBM', fix_bm)
         patch(t, 'personaID', fix_bi)
+        # agentsBM/agentsID on the tool itself (tool_builder_free puts them here).
+        # build_master line 988: agentsBM=agents_id (copy of ID text), so BM agents
+        # arrive as raw BI and need dialect cleanup.
+        for agents_key, fixer in (('agentsBM', fix_bm), ('agentsID', fix_bi)):
+            for ag in t.get(agents_key, []) or []:
+                if not isinstance(ag, dict):
+                    continue
+                for sub in ('label', 'name', 'desc', 'instructions', 'knowledgeNote'):
+                    if sub in ag and isinstance(ag[sub], str):
+                        new = fixer(ag[sub])
+                        if new != ag[sub]:
+                            ag[sub] = new
+                            fixes += 1
+                qs = ag.get('queries') or []
+                if isinstance(qs, list):
+                    for i, q in enumerate(qs):
+                        if isinstance(q, str):
+                            new = fixer(q)
+                            if new != q:
+                                qs[i] = new
+                                fixes += 1
+                ks = ag.get('knowledge') or []
+                if isinstance(ks, list):
+                    for k in ks:
+                        if isinstance(k, dict) and isinstance(k.get('note'), str):
+                            new = fixer(k['note'])
+                            if new != k['note']:
+                                k['note'] = new
+                                fixes += 1
 
     # Storyboard
     for ch in entry.get('storyboard', []) or []:
@@ -419,6 +448,14 @@ def walk_and_fix(entry):
     for p in entry.get('personas', []) or []:
         patch(p, 'roleBM', fix_bm)
         patch(p, 'roleID', fix_bi)
+
+    # Sharing / immersion library extras (descBM/ID, leadsBM/ID, objectiveBM/ID,
+    # exerciseBM/ID, taskBM/ID, licenseBM/ID, instructionsBM/ID).
+    for suf, fixer in (('BM', fix_bm), ('ID', fix_bi)):
+        for fn in ('desc', 'license', 'instructions', 'objective'):
+            patch(entry, fn + suf, fixer)
+        for list_field in ('leads', 'exercise', 'task'):
+            patch(entry, list_field + suf, fixer)
 
     return fixes
 
