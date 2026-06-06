@@ -109,6 +109,106 @@ BI_TO_BM = [
     ('Indonesia', 'Malaysia'),     # Last — only when BM-tagged
 ]
 
+# ── EXTRA pairs added 2026-06-06 after data.js translation audit ──────────
+# Catches the remaining BI-only words that slipped past the original list.
+# Format identical to BI_TO_BM above; appended to that list at module load.
+_EXTRA_BI_TO_BM = [
+    # Researcher instruction "Tempel prompt di bawah" — appeared 515× in BM
+    ('Tempel', 'Tampal'), ('tempel', 'tampal'),
+    ('Tempelnya', 'Tampalnya'), ('tempelnya', 'tampalnya'),
+    # Management terminology
+    ('manajer', 'pengurus'), ('Manajer', 'Pengurus'),
+    ('manajemen', 'pengurusan'), ('Manajemen', 'Pengurusan'),
+    ('mengelola', 'menguruskan'), ('Mengelola', 'Menguruskan'),
+    ('dikelola', 'diuruskan'), ('Dikelola', 'Diuruskan'),
+    ('pengelolaan', 'pengurusan'), ('Pengelolaan', 'Pengurusan'),
+    ('pengelola', 'pengurus'), ('Pengelola', 'Pengurus'),
+    # Expenditure / release
+    ('pengeluaran', 'perbelanjaan'), ('Pengeluaran', 'Perbelanjaan'),
+    ('merilis', 'mengeluarkan'), ('Merilis', 'Mengeluarkan'),
+    ('dirilis', 'dikeluarkan'), ('Dirilis', 'Dikeluarkan'),
+    # Schedule/plan
+    ('jadwal', 'jadual'), ('Jadwal', 'Jadual'),
+    ('jadwalnya', 'jadualnya'), ('Jadwalnya', 'Jadualnya'),
+    ('jadwalkan', 'jadualkan'), ('Jadwalkan', 'Jadualkan'),
+    ('menjadwalkan', 'menjadualkan'), ('Menjadwalkan', 'Menjadualkan'),
+    ('penjadwalan', 'penjadualan'), ('Penjadwalan', 'Penjadualan'),
+    ('terjadwal', 'berjadual'), ('Terjadwal', 'Berjadual'),
+    # Account / accounting
+    ('akun', 'akaun'), ('Akun', 'Akaun'),
+    ('akunnya', 'akaunnya'), ('Akunnya', 'Akaunnya'),
+    ('akuntabel', 'akauntabel'), ('Akuntabel', 'Akauntabel'),
+    ('akuntabilitas', 'akauntabiliti'), ('Akuntabilitas', 'Akauntabiliti'),
+    # Type / paste verbs (Researcher/Copilot UI)
+    ('ketik', 'taip'), ('Ketik', 'Taip'),
+    ('mengetik', 'menaip'), ('Mengetik', 'Menaip'),
+    ('diketik', 'ditaip'), ('Diketik', 'Ditaip'),
+    # Table → jadual (BM uses jadual for both schedule + table)
+    ('tabel', 'jadual'), ('Tabel', 'Jadual'),
+    ('tabelnya', 'jadualnya'), ('Tabelnya', 'Jadualnya'),
+    # Phase / stage
+    ('bertahap', 'berperingkat'), ('Bertahap', 'Berperingkat'),
+    ('tahapan', 'peringkat'), ('Tahapan', 'Peringkat'),
+    # Display
+    ('menampilkan', 'memaparkan'), ('Menampilkan', 'Memaparkan'),
+    ('tampilan', 'paparan'), ('Tampilan', 'Paparan'),
+    ('tampilkan', 'paparkan'), ('Tampilkan', 'Paparkan'),
+    ('ditampilkan', 'dipaparkan'), ('Ditampilkan', 'Dipaparkan'),
+    # Upload / download
+    ('unggah', 'muat naik'), ('Unggah', 'Muat naik'),
+    ('mengunggah', 'memuat naik'), ('Mengunggah', 'Memuat naik'),
+    ('diunggah', 'dimuat naik'), ('Diunggah', 'Dimuat naik'),
+    ('unduh', 'muat turun'), ('Unduh', 'Muat turun'),
+    ('mengunduh', 'memuat turun'), ('Mengunduh', 'Memuat turun'),
+    ('diunduh', 'dimuat turun'), ('Diunduh', 'Dimuat turun'),
+    # License / department
+    ('lisensi', 'lesen'), ('Lisensi', 'Lesen'),
+    ('berlisensi', 'berlesen'), ('Berlisensi', 'Berlesen'),
+    ('departemen', 'jabatan'), ('Departemen', 'Jabatan'),
+    ('departemennya', 'jabatannya'), ('Departemennya', 'Jabatannya'),
+    # Differences
+    ('perbedaan', 'perbezaan'), ('Perbedaan', 'Perbezaan'),
+    ('berbeda', 'berbeza'), ('Berbeda', 'Berbeza'),
+    ('membedakan', 'membezakan'), ('Membedakan', 'Membezakan'),
+    # Subsidiary / parent company
+    ('anak perusahaan', 'anak syarikat'), ('Anak perusahaan', 'Anak syarikat'),
+    ('anak-anak perusahaan', 'anak-anak syarikat'),
+    ('perusahaan induk', 'syarikat induk'), ('Perusahaan induk', 'Syarikat induk'),
+    # Organize / hold (event)
+    ('menyelenggarakan', 'menganjurkan'), ('Menyelenggarakan', 'Menganjurkan'),
+    ('penyelenggaraan', 'penganjuran'), ('Penyelenggaraan', 'Penganjuran'),
+    ('penyelenggara', 'penganjur'), ('Penyelenggara', 'Penganjur'),
+    ('diselenggarakan', 'dianjurkan'), ('Diselenggarakan', 'Dianjurkan'),
+    # Support
+    ('mendukung', 'menyokong'), ('Mendukung', 'Menyokong'),
+    ('didukung', 'disokong'), ('Didukung', 'Disokong'),
+    ('pendukung', 'penyokong'), ('Pendukung', 'Penyokong'),
+    ('dukungan', 'sokongan'), ('Dukungan', 'Sokongan'),
+    # Suffixed forms of policy (kebijakan already in main list)
+    ('kebijakannya', 'polisinya'), ('Kebijakannya', 'Polisinya'),
+    # Suffixed kantor / berkas
+    ('kantornya', 'pejabatnya'), ('Kantornya', 'Pejabatnya'),
+    ('berkasnya', 'failnya'), ('Berkasnya', 'Failnya'),
+    # Respond / react verbs
+    ('menanggapi', 'membalas'), ('Menanggapi', 'Membalas'),
+    ('tanggapan', 'jawapan'), ('Tanggapan', 'Jawapan'),
+    ('ditanggapi', 'dibalas'), ('Ditanggapi', 'Dibalas'),
+    ('menyikapi', 'menangani'), ('Menyikapi', 'Menangani'),
+    # Try / attempt
+    ('mencoba', 'mencuba'), ('Mencoba', 'Mencuba'),
+    ('dicoba', 'dicuba'), ('Dicoba', 'Dicuba'),
+    # Suffixed needs
+    ('kebutuhan', 'keperluan'), ('Kebutuhan', 'Keperluan'),
+    # Common file refs
+    ('berkas-berkas', 'fail-fail'),
+    # Indonesian-specific verbs
+    ('memperbarui', 'mengemaskini'), ('Memperbarui', 'Mengemaskini'),
+    ('pembaruan', 'kemaskini'), ('Pembaruan', 'Kemaskini'),
+    # Currency abbrev (only useful if not preceded by "Rp" — risky; skip)
+]
+
+BI_TO_BM = BI_TO_BM + _EXTRA_BI_TO_BM
+
 # Bahasa Malaysia → Bahasa Indonesia (used to clean *ID/BI fields)
 BM_TO_BI = [
     ('kewangan', 'keuangan'),
@@ -171,6 +271,43 @@ BM_TO_BI = [
     ('Akta ', 'UU '),
     ('Malaysia', 'Indonesia'),     # Last
 ]
+
+# ── EXTRA BM→BI pairs added 2026-06-06 (audit-driven) ─────────────────────
+# Conservative — only words that are unambiguously BM-only AND have a clear
+# BI equivalent. Excludes shared words like jabatan (BI: position/post),
+# paparan (BI: exposure), perlu, boleh — the audit confirmed those appear
+# legitimately in BI text and must NOT be swapped.
+_EXTRA_BM_TO_BI = [
+    ('Tampal', 'Tempel'), ('tampal', 'tempel'),
+    ('jadual', 'jadwal'), ('Jadual', 'Jadwal'),
+    ('jadualkan', 'jadwalkan'), ('Jadualkan', 'Jadwalkan'),
+    ('menjadualkan', 'menjadwalkan'), ('Menjadualkan', 'Menjadwalkan'),
+    ('akaun', 'akun'), ('Akaun', 'Akun'),
+    ('akauntabel', 'akuntabel'), ('Akauntabel', 'Akuntabel'),
+    ('akauntabiliti', 'akuntabilitas'), ('Akauntabiliti', 'Akuntabilitas'),
+    ('taip', 'ketik'), ('Taip', 'Ketik'),
+    ('menaip', 'mengetik'), ('Menaip', 'Mengetik'),
+    ('muat naik', 'unggah'), ('Muat naik', 'Unggah'),
+    ('memuat naik', 'mengunggah'), ('Memuat naik', 'Mengunggah'),
+    ('muat turun', 'unduh'), ('Muat turun', 'Unduh'),
+    ('memuat turun', 'mengunduh'), ('Memuat turun', 'Mengunduh'),
+    ('lesen', 'lisensi'), ('Lesen', 'Lisensi'),
+    ('berlesen', 'berlisensi'), ('Berlesen', 'Berlisensi'),
+    ('perbezaan', 'perbedaan'), ('Perbezaan', 'Perbedaan'),
+    ('berbeza', 'berbeda'), ('Berbeza', 'Berbeda'),
+    ('anak syarikat', 'anak perusahaan'), ('Anak syarikat', 'Anak perusahaan'),
+    ('syarikat induk', 'perusahaan induk'), ('Syarikat induk', 'Perusahaan induk'),
+    ('menyokong', 'mendukung'), ('Menyokong', 'Mendukung'),
+    ('disokong', 'didukung'), ('Disokong', 'Didukung'),
+    ('penyokong', 'pendukung'), ('Penyokong', 'Pendukung'),
+    ('sokongan', 'dukungan'), ('Sokongan', 'Dukungan'),
+    ('mencuba', 'mencoba'), ('Mencuba', 'Mencoba'),
+    ('keperluan', 'kebutuhan'), ('Keperluan', 'Kebutuhan'),
+    ('mengemaskini', 'memperbarui'), ('Mengemaskini', 'Memperbarui'),
+    ('dikemaskini', 'diperbarui'), ('Dikemaskini', 'Diperbarui'),
+]
+
+BM_TO_BI = BM_TO_BI + _EXTRA_BM_TO_BI
 
 
 def _apply_subs(text, subs):
