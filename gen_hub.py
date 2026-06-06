@@ -2119,6 +2119,7 @@ function setLocale(L){
     if(el) el.classList.toggle('active',x===L);
   });
   buildGrid(); buildDeptGrid(); buildSidebar(); buildDeptSidebar(); buildCwLibSidebar(); buildScoutLibSidebar(); buildSpLibSidebar();
+  if(typeof wnIdx!=='undefined' && data && data.whatsNew && data.whatsNew.length){ setWn(wnIdx); }
   if(currentGridTab==='cwlib'){ renderCwLibGrid(); if(_cwLibCurrentEntryId) showCwLibFor(_cwLibCurrentEntryId); }
   if(currentGridTab==='scoutlib'){ renderScoutLibGrid(); }
   if(currentGridTab==='splib'){ renderSpLibGrid(); }
