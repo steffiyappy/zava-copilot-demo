@@ -225,12 +225,12 @@ html{overflow-x:hidden}
 .op-card-link:hover{gap:8px;text-decoration:underline}
 .op-section-hdr{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:22px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .op-section-hdr:first-child{margin-top:0}
-.sidebar-tabs{display:flex;border-bottom:2px solid var(--border);flex-shrink:0;gap:2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.sidebar-tabs::-webkit-scrollbar{display:none}
-.sidebar-tab{flex:1 0 auto;min-width:54px;padding:11px 6px;text-align:center;font-size:11px;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:0.2px;border-radius:6px 6px 0 0}
-.sidebar-tab:hover{background:var(--surface-2);color:var(--text-strong)}
-.sidebar-tab.active{color:var(--blue);border-bottom-color:var(--blue);position:relative}
-.sidebar-tab.active::after{content:'';position:absolute;left:20%;right:20%;bottom:-2px;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);animation:slideUnderline 0.3s ease}
+.sidebar-tabs{display:block;border-bottom:2px solid var(--border);flex-shrink:0;padding:8px 10px;background:var(--surface);position:relative}
+.sidebar-tabs-select{width:100%;appearance:none;-webkit-appearance:none;-moz-appearance:none;padding:9px 30px 9px 12px;font-size:12px;font-weight:700;color:var(--blue);background:var(--surface-2);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-family:inherit;outline:none;transition:all 0.18s;letter-spacing:0.2px;line-height:1.3}
+.sidebar-tabs-select:hover{background:#EEF4FF;border-color:var(--blue)}
+.sidebar-tabs-select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,120,212,0.15)}
+.sidebar-tabs-caret{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--blue);pointer-events:none;font-weight:700}
+.sidebar-tab{display:none}
 @keyframes slideUnderline{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
 .sidebar-panel{display:none;flex:1;overflow-y:auto}
 .sidebar-panel.active{display:block}
@@ -1405,12 +1405,21 @@ a.file-pill:visited{color:var(--text)}
       <button class="sidebar-search-clear" id="sidebar-search-clear" type="button" onclick="document.getElementById('sidebar-search-input').value='';applySearch('');" title="Clear search">&times;</button>
     </div>
     <div class="sidebar-tabs">
-      <div class="sidebar-tab active" id="stab-ind" onclick="setSidebarTab('ind')">&#127981; Industries</div>
-      <div class="sidebar-tab" id="stab-dept" onclick="setSidebarTab('dept')">&#127970; Dept</div>
-      <div class="sidebar-tab" id="stab-cwlib" onclick="setSidebarTab('cwlib')">&#129309; Cowork</div>
-      <div class="sidebar-tab" id="stab-scoutlib" onclick="setSidebarTab('scoutlib')">&#129517; Scout</div>
-      <div class="sidebar-tab" id="stab-splib" onclick="setSidebarTab('splib')">&#127760; SP AI</div>
-      <div class="sidebar-tab" id="stab-other" onclick="setSidebarTab('other')">&#128218; More</div>
+      <select class="sidebar-tabs-select" id="sidebar-tabs-select" onchange="setSidebarTab(this.value)" aria-label="Sidebar section">
+        <option value="ind" selected>&#127981; Industries</option>
+        <option value="dept">&#127970; Departments</option>
+        <option value="cwlib">&#129309; Cowork Library</option>
+        <option value="scoutlib">&#129517; Scout Library</option>
+        <option value="splib">&#127760; SharePoint AI Library</option>
+        <option value="other">&#128218; More Pages</option>
+      </select>
+      <span class="sidebar-tabs-caret">&#9662;</span>
+      <div class="sidebar-tab active" id="stab-ind"></div>
+      <div class="sidebar-tab" id="stab-dept"></div>
+      <div class="sidebar-tab" id="stab-cwlib"></div>
+      <div class="sidebar-tab" id="stab-scoutlib"></div>
+      <div class="sidebar-tab" id="stab-splib"></div>
+      <div class="sidebar-tab" id="stab-other"></div>
     </div>
     <!-- Industries panel -->
     <div class="sidebar-panel active" id="spanel-ind">
@@ -4792,6 +4801,8 @@ function _wireNotebookLibraryCopy(){
 // ── Sidebar tab toggle ──
 function setSidebarTab(tab){
   currentSidebarTab=tab;
+  const sel=document.getElementById('sidebar-tabs-select');
+  if(sel && sel.value!==tab) sel.value=tab;
   ['ind','dept','cwlib','scoutlib','splib','other'].forEach(t=>{
     const stEl=document.getElementById('stab-'+t);
     const spEl=document.getElementById('spanel-'+t);
