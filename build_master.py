@@ -321,6 +321,19 @@ except ImportError:
 except Exception as _e:
     print(f"(BM auto-fill skipped due to error: {_e})")
 
+# ── Hand-authored BM overrides for UC7 customer-demo prompts ───────────────
+# The shallow id_to_bm token swap is not enough for the 9 long, technical
+# customer-demo prompts; override their BM slots with hand-authored Bahasa
+# Malaysia translations (syarikat / jadual / mesyuarat / anak syarikat / ...).
+try:
+    from bm_overrides import apply_bm_overrides
+    _bm_over = apply_bm_overrides(all_industries) + apply_bm_overrides(all_departments)
+    print(f"BM hand-authored overrides applied to {_bm_over} prompt slots")
+except ImportError:
+    print("(bm_overrides.py not found; BM overrides skipped)")
+except Exception as _e:
+    print(f"(BM overrides skipped due to error: {_e})")
+
 # ── Cowork: expand each entry's Cowork block with 3 more delegation scenarios ──
 # User feedback: "I need more use cases for all... like the everythingischr0me
 # github site". We append 3 cross-cutting Cowork scenarios (Investor Day Sprint,
