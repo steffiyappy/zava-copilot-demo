@@ -5735,9 +5735,9 @@ function buildWhatsNew(){
 }
 function setWn(i){
   wnIdx=i; const item=data.whatsNew[i];
-  document.getElementById('wn-tag').textContent=_xformVal(item.badge||item.tag||'','EN');
-  document.getElementById('wn-title').textContent=_xformVal(item.title||'','EN');
-  document.getElementById('wn-desc').textContent=_xformVal(item.summary||item.desc||item.tip||'','EN');
+  document.getElementById('wn-tag').textContent=_xform(item,'badge')||_xform(item,'tag')||'';
+  document.getElementById('wn-title').textContent=_xform(item,'title')||'';
+  document.getElementById('wn-desc').textContent=_xform(item,'summary')||_xform(item,'desc')||_xform(item,'tip')||'';
   const linkEl=document.getElementById('wn-link');
   if(item.link){
     linkEl.href=item.link;
