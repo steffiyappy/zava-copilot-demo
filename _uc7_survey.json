@@ -1,0 +1,1054 @@
+{
+  "site1_retail": {
+    "file": "01_lifestyle_retail.html",
+    "heading_count": 59,
+    "code_count": 19,
+    "headings": [
+      [
+        "h2",
+        "Contoso Retail ┬╖ Copilot Immersion"
+      ],
+      [
+        "h1",
+        "M365 Copilot GM Immersion"
+      ],
+      [
+        "h3",
+        "Overview"
+      ],
+      [
+        "h3",
+        "Exercises"
+      ],
+      [
+        "h3",
+        "Resources"
+      ],
+      [
+        "h2",
+        "Sample files ΓÇö start here Download these first, then run the exercises"
+      ],
+      [
+        "h2",
+        "Contoso Lifestyle Retail ┬╖ M365 Copilot Executive Workshop"
+      ],
+      [
+        "h3",
+        "About this workshop"
+      ],
+      [
+        "h4",
+        "What you will leave with"
+      ],
+      [
+        "h4",
+        "What this workshop is not"
+      ],
+      [
+        "h2",
+        "The Story One GM workday ┬╖ six Copilot moments ┬╖ ends with a live dashboard"
+      ],
+      [
+        "h3",
+        "AI Assistant to AI Doer"
+      ],
+      [
+        "h3",
+        "Five Copilot moments across one workday"
+      ],
+      [
+        "h2",
+        "Exercise 1 ┬╖ Market Intelligence Researcher"
+      ],
+      [
+        "h4",
+        "Scan the Lifestyle & Sports Retail landscape in Indonesia"
+      ],
+      [
+        "h4",
+        "Turn the research into a 1-page GM brief"
+      ],
+      [
+        "h2",
+        "Exercise 2 ┬╖ A Branded Executive Infographic with Copilot Create Copilot Create (Designer)"
+      ],
+      [
+        "h4",
+        "Design a branded executive infographic"
+      ],
+      [
+        "h4",
+        "Refine without starting over"
+      ],
+      [
+        "h2",
+        "Exercise 3 ┬╖ PowerPoint ΓÇö Draft & Digest PowerPoint Copilot"
+      ],
+      [
+        "h3",
+        "3.1 ┬╖ Draft a BCG/McKinsey-style strategy deck"
+      ],
+      [
+        "h4",
+        "Draft an 8-slide GM strategy deck"
+      ],
+      [
+        "h4",
+        "Tighten the deck ΓÇö McKinsey-style critique pass"
+      ],
+      [
+        "h3",
+        "3.2 ┬╖ Digest a deck someone just sent the GM"
+      ],
+      [
+        "h4",
+        "Summarise & interrogate an incoming deck"
+      ],
+      [
+        "h2",
+        "Exercise 4 ┬╖ Excel Power Hour Copilot in Excel"
+      ],
+      [
+        "h3",
+        "4.1 ┬╖ Get the insights ΓÇö one prompt"
+      ],
+      [
+        "h4",
+        "Ask Copilot to find what matters in 12 months of KPIs"
+      ],
+      [
+        "h3",
+        "4.2 ┬╖ \"Edit\" ΓÇö surgical, formula-safe changes"
+      ],
+      [
+        "h4",
+        "Make a precise change without rewriting the workbook"
+      ],
+      [
+        "h3",
+        "4.3 ┬╖ \"Plan\" ΓÇö multi-step transformations with preview"
+      ],
+      [
+        "h4",
+        "Build an executive view in three steps Copilot proposes first"
+      ],
+      [
+        "h3",
+        "4.4 ┬╖ Analyst Agent ΓÇö what-if & scenario modelling"
+      ],
+      [
+        "h4",
+        "Treat the workbook like a junior analyst"
+      ],
+      [
+        "h2",
+        "Exercise 5 ┬╖ The Outlook Hour & Executive 5-Minute Moments Outlook ┬╖ Teams ┬╖ Word"
+      ],
+      [
+        "h3",
+        "5.1 ┬╖ Outlook ΓÇö catch up on a long thread (use your real inbox)"
+      ],
+      [
+        "h4",
+        "\"I just got back from a flight ΓÇö what did I miss on this thread?\""
+      ],
+      [
+        "h3",
+        "5.2 ┬╖ Outlook ΓÇö draft a reply with the right tone"
+      ],
+      [
+        "h4",
+        "Draft an executive reply ΓÇö short, on-brand, signed off"
+      ],
+      [
+        "h3",
+        "5.3 ┬╖ Teams ΓÇö recap the meeting you missed"
+      ],
+      [
+        "h4",
+        "\"What did the Operating Committee actually decide yesterday?\""
+      ],
+      [
+        "h3",
+        "5.4 ┬╖ Word ΓÇö interrogate a long document"
+      ],
+      [
+        "h4",
+        "\"Find me the risk in this 80-page board pack\""
+      ],
+      [
+        "h3",
+        "5.5 ┬╖ PowerPoint ΓÇö pre-read in 60 seconds"
+      ],
+      [
+        "h4",
+        "\"What is this 60-slide deck actually asking of me?\""
+      ],
+      [
+        "h2",
+        "Exercise 6 ┬╖ Cowork Finale Personalised cascade ┬╖ CV screen ┬╖ live HTML dashboard"
+      ],
+      [
+        "h3",
+        "6.1 ┬╖ Cowork-driven personalised GM cascade"
+      ],
+      [
+        "h4",
+        "One prompt ΓåÆ 14 individually-tuned letters ΓåÆ 14 Outlook drafts"
+      ],
+      [
+        "h3",
+        "6.2 ┬╖ CV screening at scale"
+      ],
+      [
+        "h4",
+        "Prep ΓÇö drop the CVs in SharePoint"
+      ],
+      [
+        "h4",
+        "Cowork: shortlist + interview pack + offer-letter draft for #1"
+      ],
+      [
+        "h3",
+        "6.3 ┬╖ Wrap the day with a live HTML dashboard"
+      ],
+      [
+        "h4",
+        "Five outputs. One HTML dashboard."
+      ],
+      [
+        "h2",
+        "Exercise 7 (Bonus) ┬╖ New-Store Go / No-Go Decision Pack Copilot Chat + Researcher ┬╖ Industry power move"
+      ],
+      [
+        "h3",
+        "Why this is the most relevant Copilot moment for Contoso Retail"
+      ],
+      [
+        "h4",
+        "One prompt, one decision pack, fully grounded"
+      ],
+      [
+        "h2",
+        "Tips Prompt ΓÇö untuk semua surface Copilot"
+      ],
+      [
+        "h4",
+        "Kerangka prompt GCSE"
+      ],
+      [
+        "h4",
+        "Prompt siap pakai untuk Contoso Retail"
+      ]
+    ],
+    "first_codes": [
+      "/create",
+      "05 Contoso_Strategic_Memo.docx",
+      "02 Contoso_KPI_Dashboard.xlsx",
+      "/",
+      "05 Contoso_Strategic_Memo.docx"
+    ],
+    "uc7_candidates": [
+      [
+        53,
+        "Exercise 7 (Bonus) ┬╖ New-Store Go / No-Go Decision Pack Copilot Chat + Researcher ┬╖ Industry power move"
+      ],
+      [
+        55,
+        "One prompt, one decision pack, fully grounded"
+      ]
+    ]
+  },
+  "site2_geothermal": {
+    "file": "02_geothermal.html",
+    "heading_count": 59,
+    "code_count": 19,
+    "headings": [
+      [
+        "h2",
+        "Contoso Geo ┬╖ Copilot Immersion"
+      ],
+      [
+        "h1",
+        "M365 Copilot GM Immersion"
+      ],
+      [
+        "h3",
+        "Overview"
+      ],
+      [
+        "h3",
+        "Exercises"
+      ],
+      [
+        "h3",
+        "Resources"
+      ],
+      [
+        "h2",
+        "Sample files ΓÇö start here Download these first, then run the exercises"
+      ],
+      [
+        "h2",
+        "Contoso Geothermal ┬╖ M365 Copilot Executive Workshop"
+      ],
+      [
+        "h3",
+        "About this workshop"
+      ],
+      [
+        "h4",
+        "What you will leave with"
+      ],
+      [
+        "h4",
+        "What this workshop is not"
+      ],
+      [
+        "h2",
+        "The Story One GM workday ┬╖ six Copilot moments ┬╖ ends with a live dashboard"
+      ],
+      [
+        "h3",
+        "AI Assistant to AI Doer"
+      ],
+      [
+        "h3",
+        "Five Copilot moments across one workday"
+      ],
+      [
+        "h2",
+        "Exercise 1 ┬╖ Market Intelligence Researcher"
+      ],
+      [
+        "h4",
+        "Scan the Geothermal Power Generation landscape in Indonesia"
+      ],
+      [
+        "h4",
+        "Turn the research into a 1-page GM brief"
+      ],
+      [
+        "h2",
+        "Exercise 2 ┬╖ An Esg / Board One-Pager with Copilot Create Copilot Create (Designer)"
+      ],
+      [
+        "h4",
+        "Design an ESG / Board one-pager"
+      ],
+      [
+        "h4",
+        "Refine without starting over"
+      ],
+      [
+        "h2",
+        "Exercise 3 ┬╖ PowerPoint ΓÇö Draft & Digest PowerPoint Copilot"
+      ],
+      [
+        "h3",
+        "3.1 ┬╖ Draft a BCG/McKinsey-style strategy deck"
+      ],
+      [
+        "h4",
+        "Draft an 8-slide GM strategy deck"
+      ],
+      [
+        "h4",
+        "Tighten the deck ΓÇö McKinsey-style critique pass"
+      ],
+      [
+        "h3",
+        "3.2 ┬╖ Digest a deck someone just sent the GM"
+      ],
+      [
+        "h4",
+        "Summarise & interrogate an incoming deck"
+      ],
+      [
+        "h2",
+        "Exercise 4 ┬╖ Excel Power Hour Copilot in Excel"
+      ],
+      [
+        "h3",
+        "4.1 ┬╖ Get the insights ΓÇö one prompt"
+      ],
+      [
+        "h4",
+        "Ask Copilot to find what matters in 12 months of KPIs"
+      ],
+      [
+        "h3",
+        "4.2 ┬╖ \"Edit\" ΓÇö surgical, formula-safe changes"
+      ],
+      [
+        "h4",
+        "Make a precise change without rewriting the workbook"
+      ],
+      [
+        "h3",
+        "4.3 ┬╖ \"Plan\" ΓÇö multi-step transformations with preview"
+      ],
+      [
+        "h4",
+        "Build an executive view in three steps Copilot proposes first"
+      ],
+      [
+        "h3",
+        "4.4 ┬╖ Analyst Agent ΓÇö what-if & scenario modelling"
+      ],
+      [
+        "h4",
+        "Treat the workbook like a junior analyst"
+      ],
+      [
+        "h2",
+        "Exercise 5 ┬╖ The Outlook Hour & Executive 5-Minute Moments Outlook ┬╖ Teams ┬╖ Word"
+      ],
+      [
+        "h3",
+        "5.1 ┬╖ Outlook ΓÇö catch up on a long thread (use your real inbox)"
+      ],
+      [
+        "h4",
+        "\"I just got back from a flight ΓÇö what did I miss on this thread?\""
+      ],
+      [
+        "h3",
+        "5.2 ┬╖ Outlook ΓÇö draft a reply with the right tone"
+      ],
+      [
+        "h4",
+        "Draft an executive reply ΓÇö short, on-brand, signed off"
+      ],
+      [
+        "h3",
+        "5.3 ┬╖ Teams ΓÇö recap the meeting you missed"
+      ],
+      [
+        "h4",
+        "\"What did the Operating Committee actually decide yesterday?\""
+      ],
+      [
+        "h3",
+        "5.4 ┬╖ Word ΓÇö interrogate a long document"
+      ],
+      [
+        "h4",
+        "\"Find me the risk in this 80-page board pack\""
+      ],
+      [
+        "h3",
+        "5.5 ┬╖ PowerPoint ΓÇö pre-read in 60 seconds"
+      ],
+      [
+        "h4",
+        "\"What is this 60-slide deck actually asking of me?\""
+      ],
+      [
+        "h2",
+        "Exercise 6 ┬╖ Cowork Finale Personalised cascade ┬╖ CV screen ┬╖ live HTML dashboard"
+      ],
+      [
+        "h3",
+        "6.1 ┬╖ Cowork-driven personalised GM cascade"
+      ],
+      [
+        "h4",
+        "One prompt ΓåÆ 14 individually-tuned letters ΓåÆ 14 Outlook drafts"
+      ],
+      [
+        "h3",
+        "6.2 ┬╖ CV screening at scale"
+      ],
+      [
+        "h4",
+        "Prep ΓÇö drop the CVs in SharePoint"
+      ],
+      [
+        "h4",
+        "Cowork: shortlist + interview pack + offer-letter draft for #1"
+      ],
+      [
+        "h3",
+        "6.3 ┬╖ Wrap the day with a live HTML dashboard"
+      ],
+      [
+        "h4",
+        "Five outputs. One HTML dashboard."
+      ],
+      [
+        "h2",
+        "Exercise 7 (Bonus) ┬╖ PPA Quarterly Compliance & Steam-Decline Mitigation Briefing Copilot Chat + Word Copilot ┬╖ Industry power move"
+      ],
+      [
+        "h3",
+        "Why this is the most relevant Copilot moment for Contoso Geo"
+      ],
+      [
+        "h4",
+        "One prompt, one decision pack, fully grounded"
+      ],
+      [
+        "h2",
+        "Tips Prompt ΓÇö untuk semua surface Copilot"
+      ],
+      [
+        "h4",
+        "Kerangka prompt GCSE"
+      ],
+      [
+        "h4",
+        "Prompt siap pakai untuk Contoso Geo"
+      ]
+    ],
+    "first_codes": [
+      "/create",
+      "05 Contoso_Strategic_Memo.docx",
+      "02 Contoso_KPI_Dashboard.xlsx",
+      "/",
+      "05 Contoso_Strategic_Memo.docx"
+    ],
+    "uc7_candidates": [
+      [
+        53,
+        "Exercise 7 (Bonus) ┬╖ PPA Quarterly Compliance & Steam-Decline Mitigation Briefing Copilot Chat + Word Copilot ┬╖ Industry power move"
+      ],
+      [
+        55,
+        "One prompt, one decision pack, fully grounded"
+      ]
+    ]
+  },
+  "site3_pizza": {
+    "file": "03_pizza.html",
+    "heading_count": 59,
+    "code_count": 19,
+    "headings": [
+      [
+        "h2",
+        "Contoso Pizza ┬╖ Copilot Immersion"
+      ],
+      [
+        "h1",
+        "M365 Copilot GM Immersion"
+      ],
+      [
+        "h3",
+        "Overview"
+      ],
+      [
+        "h3",
+        "Exercises"
+      ],
+      [
+        "h3",
+        "Resources"
+      ],
+      [
+        "h2",
+        "Sample files ΓÇö start here Download these first, then run the exercises"
+      ],
+      [
+        "h2",
+        "Contoso Pizza Co ┬╖ M365 Copilot Executive Workshop"
+      ],
+      [
+        "h3",
+        "About this workshop"
+      ],
+      [
+        "h4",
+        "What you will leave with"
+      ],
+      [
+        "h4",
+        "What this workshop is not"
+      ],
+      [
+        "h2",
+        "The Story One GM workday ┬╖ six Copilot moments ┬╖ ends with a live dashboard"
+      ],
+      [
+        "h3",
+        "AI Assistant to AI Doer"
+      ],
+      [
+        "h3",
+        "Five Copilot moments across one workday"
+      ],
+      [
+        "h2",
+        "Exercise 1 ┬╖ Market Intelligence Researcher"
+      ],
+      [
+        "h4",
+        "Scan the Quick-Service Restaurant landscape in Indonesia"
+      ],
+      [
+        "h4",
+        "Turn the research into a 1-page GM brief"
+      ],
+      [
+        "h2",
+        "Exercise 2 ┬╖ A Branded Campaign Infographic with Copilot Create Copilot Create (Designer)"
+      ],
+      [
+        "h4",
+        "Design a branded campaign infographic"
+      ],
+      [
+        "h4",
+        "Refine without starting over"
+      ],
+      [
+        "h2",
+        "Exercise 3 ┬╖ PowerPoint ΓÇö Draft & Digest PowerPoint Copilot"
+      ],
+      [
+        "h3",
+        "3.1 ┬╖ Draft a BCG/McKinsey-style strategy deck"
+      ],
+      [
+        "h4",
+        "Draft an 8-slide GM strategy deck"
+      ],
+      [
+        "h4",
+        "Tighten the deck ΓÇö McKinsey-style critique pass"
+      ],
+      [
+        "h3",
+        "3.2 ┬╖ Digest a deck someone just sent the GM"
+      ],
+      [
+        "h4",
+        "Summarise & interrogate an incoming deck"
+      ],
+      [
+        "h2",
+        "Exercise 4 ┬╖ Excel Power Hour Copilot in Excel"
+      ],
+      [
+        "h3",
+        "4.1 ┬╖ Get the insights ΓÇö one prompt"
+      ],
+      [
+        "h4",
+        "Ask Copilot to find what matters in 12 months of KPIs"
+      ],
+      [
+        "h3",
+        "4.2 ┬╖ \"Edit\" ΓÇö surgical, formula-safe changes"
+      ],
+      [
+        "h4",
+        "Make a precise change without rewriting the workbook"
+      ],
+      [
+        "h3",
+        "4.3 ┬╖ \"Plan\" ΓÇö multi-step transformations with preview"
+      ],
+      [
+        "h4",
+        "Build an executive view in three steps Copilot proposes first"
+      ],
+      [
+        "h3",
+        "4.4 ┬╖ Analyst Agent ΓÇö what-if & scenario modelling"
+      ],
+      [
+        "h4",
+        "Treat the workbook like a junior analyst"
+      ],
+      [
+        "h2",
+        "Exercise 5 ┬╖ The Outlook Hour & Executive 5-Minute Moments Outlook ┬╖ Teams ┬╖ Word"
+      ],
+      [
+        "h3",
+        "5.1 ┬╖ Outlook ΓÇö catch up on a long thread (use your real inbox)"
+      ],
+      [
+        "h4",
+        "\"I just got back from a flight ΓÇö what did I miss on this thread?\""
+      ],
+      [
+        "h3",
+        "5.2 ┬╖ Outlook ΓÇö draft a reply with the right tone"
+      ],
+      [
+        "h4",
+        "Draft an executive reply ΓÇö short, on-brand, signed off"
+      ],
+      [
+        "h3",
+        "5.3 ┬╖ Teams ΓÇö recap the meeting you missed"
+      ],
+      [
+        "h4",
+        "\"What did the Operating Committee actually decide yesterday?\""
+      ],
+      [
+        "h3",
+        "5.4 ┬╖ Word ΓÇö interrogate a long document"
+      ],
+      [
+        "h4",
+        "\"Find me the risk in this 80-page board pack\""
+      ],
+      [
+        "h3",
+        "5.5 ┬╖ PowerPoint ΓÇö pre-read in 60 seconds"
+      ],
+      [
+        "h4",
+        "\"What is this 60-slide deck actually asking of me?\""
+      ],
+      [
+        "h2",
+        "Exercise 6 ┬╖ Cowork Finale Personalised cascade ┬╖ CV screen ┬╖ live HTML dashboard"
+      ],
+      [
+        "h3",
+        "6.1 ┬╖ Cowork-driven personalised GM cascade"
+      ],
+      [
+        "h4",
+        "One prompt ΓåÆ 14 individually-tuned letters ΓåÆ 14 Outlook drafts"
+      ],
+      [
+        "h3",
+        "6.2 ┬╖ CV screening at scale"
+      ],
+      [
+        "h4",
+        "Prep ΓÇö drop the CVs in SharePoint"
+      ],
+      [
+        "h4",
+        "Cowork: shortlist + interview pack + offer-letter draft for #1"
+      ],
+      [
+        "h3",
+        "6.3 ┬╖ Wrap the day with a live HTML dashboard"
+      ],
+      [
+        "h4",
+        "Five outputs. One HTML dashboard."
+      ],
+      [
+        "h2",
+        "Exercise 7 (Bonus) ┬╖ Lebaran 2026 Promo Launch in 30 Minutes Copilot Chat + PowerPoint Copilot ┬╖ Industry power move"
+      ],
+      [
+        "h3",
+        "Why this is the most relevant Copilot moment for Contoso Pizza"
+      ],
+      [
+        "h4",
+        "One prompt, one decision pack, fully grounded"
+      ],
+      [
+        "h2",
+        "Tips Prompt ΓÇö untuk semua surface Copilot"
+      ],
+      [
+        "h4",
+        "Kerangka prompt GCSE"
+      ],
+      [
+        "h4",
+        "Prompt siap pakai untuk Contoso Pizza"
+      ]
+    ],
+    "first_codes": [
+      "/create",
+      "05 Contoso_Strategic_Memo.docx",
+      "02 Contoso_KPI_Dashboard.xlsx",
+      "/",
+      "05 Contoso_Strategic_Memo.docx"
+    ],
+    "uc7_candidates": [
+      [
+        53,
+        "Exercise 7 (Bonus) ┬╖ Lebaran 2026 Promo Launch in 30 Minutes Copilot Chat + PowerPoint Copilot ┬╖ Industry power move"
+      ],
+      [
+        55,
+        "One prompt, one decision pack, fully grounded"
+      ]
+    ]
+  },
+  "site4_mining": {
+    "file": "04_mining_services.html",
+    "heading_count": 59,
+    "code_count": 19,
+    "headings": [
+      [
+        "h2",
+        "Contoso Mining ┬╖ Copilot Immersion"
+      ],
+      [
+        "h1",
+        "M365 Copilot GM Immersion"
+      ],
+      [
+        "h3",
+        "Overview"
+      ],
+      [
+        "h3",
+        "Exercises"
+      ],
+      [
+        "h3",
+        "Resources"
+      ],
+      [
+        "h2",
+        "Sample files ΓÇö start here Download these first, then run the exercises"
+      ],
+      [
+        "h2",
+        "Contoso Mining Services ┬╖ M365 Copilot Executive Workshop"
+      ],
+      [
+        "h3",
+        "About this workshop"
+      ],
+      [
+        "h4",
+        "What you will leave with"
+      ],
+      [
+        "h4",
+        "What this workshop is not"
+      ],
+      [
+        "h2",
+        "The Story One GM workday ┬╖ six Copilot moments ┬╖ ends with a live dashboard"
+      ],
+      [
+        "h3",
+        "AI Assistant to AI Doer"
+      ],
+      [
+        "h3",
+        "Five Copilot moments across one workday"
+      ],
+      [
+        "h2",
+        "Exercise 1 ┬╖ Market Intelligence Researcher"
+      ],
+      [
+        "h4",
+        "Scan the Mining Services & EPC landscape in Indonesia"
+      ],
+      [
+        "h4",
+        "Turn the research into a 1-page GM brief"
+      ],
+      [
+        "h2",
+        "Exercise 2 ┬╖ A Tender Capability One-Pager with Copilot Create Copilot Create (Designer)"
+      ],
+      [
+        "h4",
+        "Design a tender capability one-pager"
+      ],
+      [
+        "h4",
+        "Refine without starting over"
+      ],
+      [
+        "h2",
+        "Exercise 3 ┬╖ PowerPoint ΓÇö Draft & Digest PowerPoint Copilot"
+      ],
+      [
+        "h3",
+        "3.1 ┬╖ Draft a BCG/McKinsey-style strategy deck"
+      ],
+      [
+        "h4",
+        "Draft an 8-slide GM strategy deck"
+      ],
+      [
+        "h4",
+        "Tighten the deck ΓÇö McKinsey-style critique pass"
+      ],
+      [
+        "h3",
+        "3.2 ┬╖ Digest a deck someone just sent the GM"
+      ],
+      [
+        "h4",
+        "Summarise & interrogate an incoming deck"
+      ],
+      [
+        "h2",
+        "Exercise 4 ┬╖ Excel Power Hour Copilot in Excel"
+      ],
+      [
+        "h3",
+        "4.1 ┬╖ Get the insights ΓÇö one prompt"
+      ],
+      [
+        "h4",
+        "Ask Copilot to find what matters in 12 months of KPIs"
+      ],
+      [
+        "h3",
+        "4.2 ┬╖ \"Edit\" ΓÇö surgical, formula-safe changes"
+      ],
+      [
+        "h4",
+        "Make a precise change without rewriting the workbook"
+      ],
+      [
+        "h3",
+        "4.3 ┬╖ \"Plan\" ΓÇö multi-step transformations with preview"
+      ],
+      [
+        "h4",
+        "Build an executive view in three steps Copilot proposes first"
+      ],
+      [
+        "h3",
+        "4.4 ┬╖ Analyst Agent ΓÇö what-if & scenario modelling"
+      ],
+      [
+        "h4",
+        "Treat the workbook like a junior analyst"
+      ],
+      [
+        "h2",
+        "Exercise 5 ┬╖ The Outlook Hour & Executive 5-Minute Moments Outlook ┬╖ Teams ┬╖ Word"
+      ],
+      [
+        "h3",
+        "5.1 ┬╖ Outlook ΓÇö catch up on a long thread (use your real inbox)"
+      ],
+      [
+        "h4",
+        "\"I just got back from a flight ΓÇö what did I miss on this thread?\""
+      ],
+      [
+        "h3",
+        "5.2 ┬╖ Outlook ΓÇö draft a reply with the right tone"
+      ],
+      [
+        "h4",
+        "Draft an executive reply ΓÇö short, on-brand, signed off"
+      ],
+      [
+        "h3",
+        "5.3 ┬╖ Teams ΓÇö recap the meeting you missed"
+      ],
+      [
+        "h4",
+        "\"What did the Operating Committee actually decide yesterday?\""
+      ],
+      [
+        "h3",
+        "5.4 ┬╖ Word ΓÇö interrogate a long document"
+      ],
+      [
+        "h4",
+        "\"Find me the risk in this 80-page board pack\""
+      ],
+      [
+        "h3",
+        "5.5 ┬╖ PowerPoint ΓÇö pre-read in 60 seconds"
+      ],
+      [
+        "h4",
+        "\"What is this 60-slide deck actually asking of me?\""
+      ],
+      [
+        "h2",
+        "Exercise 6 ┬╖ Cowork Finale Personalised cascade ┬╖ CV screen ┬╖ live HTML dashboard"
+      ],
+      [
+        "h3",
+        "6.1 ┬╖ Cowork-driven personalised GM cascade"
+      ],
+      [
+        "h4",
+        "One prompt ΓåÆ 14 individually-tuned letters ΓåÆ 14 Outlook drafts"
+      ],
+      [
+        "h3",
+        "6.2 ┬╖ CV screening at scale"
+      ],
+      [
+        "h4",
+        "Prep ΓÇö drop the CVs in SharePoint"
+      ],
+      [
+        "h4",
+        "Cowork: shortlist + interview pack + offer-letter draft for #1"
+      ],
+      [
+        "h3",
+        "6.3 ┬╖ Wrap the day with a live HTML dashboard"
+      ],
+      [
+        "h4",
+        "Five outputs. One HTML dashboard."
+      ],
+      [
+        "h2",
+        "Exercise 7 (Bonus) ┬╖ EPC Bid Response ΓÇö Win-Themes & Compliance Matrix Copilot Chat + Word + Researcher ┬╖ Industry power move"
+      ],
+      [
+        "h3",
+        "Why this is the most relevant Copilot moment for Contoso Mining"
+      ],
+      [
+        "h4",
+        "One prompt, one decision pack, fully grounded"
+      ],
+      [
+        "h2",
+        "Tips Prompt ΓÇö untuk semua surface Copilot"
+      ],
+      [
+        "h4",
+        "Kerangka prompt GCSE"
+      ],
+      [
+        "h4",
+        "Prompt siap pakai untuk Contoso Mining"
+      ]
+    ],
+    "first_codes": [
+      "/create",
+      "05 Contoso_Strategic_Memo.docx",
+      "02 Contoso_KPI_Dashboard.xlsx",
+      "/",
+      "05 Contoso_Strategic_Memo.docx"
+    ],
+    "uc7_candidates": [
+      [
+        14,
+        "Scan the Mining Services & EPC landscape in Indonesia"
+      ],
+      [
+        16,
+        "Exercise 2 ┬╖ A Tender Capability One-Pager with Copilot Create Copilot Create (Designer)"
+      ],
+      [
+        17,
+        "Design a tender capability one-pager"
+      ],
+      [
+        53,
+        "Exercise 7 (Bonus) ┬╖ EPC Bid Response ΓÇö Win-Themes & Compliance Matrix Copilot Chat + Word + Researcher ┬╖ Industry power move"
+      ],
+      [
+        55,
+        "One prompt, one decision pack, fully grounded"
+      ]
+    ]
+  }
+}

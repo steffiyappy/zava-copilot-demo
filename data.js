@@ -54818,6 +54818,10 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Open COAL_02_Mine_Safety_Manual.docx in Word for Web. Using the Copilot side pane, draft a 2-page Board annex on whether the strip-ratio slippage and reclamation lag should trigger a re-pricing of the 90-day operations and ESG investment plan. Use Edit with Copilot to add a structured Recommendation section with Option A (defer reclamation acceleration), Option B (accelerate reclamation with internal capex), and Option C (joint community-led reclamation programme). For each option add a short RAG line summarising regulator, NGO and offtaker impact.'
+            },
+            {
+              instr: '',
+              prompt: 'Act as a Bid Manager supporting the General Manager · Operations of Zava Mining (mining services line).  We are responding to a 240-page EPC RFP from a gold-mining client for an open-pit overburden + ore-haul package, 36-month duration, ~120-unit fleet, East Kalimantan. Submission in 14 days.  Use /COAL_05_Marketing_Pricing_Pack.xlsx (peer benchmark vs Pamapersada, BUMA, Thiess) and /COAL_06_Stakeholder_Holding_Lines.docx (our capability narrative).  Produce four artefacts:  1. WIN-THEMES (1 page)  - Client-stated priorities (safety, cost, schedule, ESG) — ranked  - Our top 3 most impactful win-themes with specific evidence (project / KPI)  - 2 competitor weaknesses we can highlight (factually)  2. BID EXECUTIVE SUMMARY (Word doc, 2 pages)  - Strong opening referencing the client\'s own language  - Why us (3 reasons, anchored to evidence)  - Schedule & mobilisation approach  - Safety & ESG commitments  - Pricing positioning (no numbers — that is separate)  - Closing call-to-action  3. COMPLIANCE MATRIX STARTER (table)  - Pull every numbered requirement from the RFP spec  - Map to: Compliant / Compliant-with-comment / Non-compliant  - Pre-fill our standard response where one exists  - Flag the 5 most contentious items for legal review  4. RISK REGISTER (top 10)  - Operational, commercial, HSE, regulatory, weather/seasonal  - For each: probability, impact, mitigation, owner  Tag every assumption [ASSUMPTION:...]. Use precise mining-services terminology (Mbcm, strip ratio, OEE, TKDN, TRIR). Do not fabricate project history. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsID: [
@@ -54832,6 +54836,10 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Buka COAL_02_Mine_Safety_Manual.docx di Word for Web. Menggunakan side pane Copilot, susun annex Direksi 2 halaman tentang apakah keterlambatan strip-ratio dan lag reklamasi harus memicu repricing rencana investasi operasi dan ESG 90 hari. Gunakan Edit with Copilot untuk menambahkan bagian Rekomendasi terstruktur dengan Opsi A (tunda akselerasi reklamasi), Opsi B (percepat reklamasi dengan capex internal), dan Opsi C (program reklamasi yang dipimpin komunitas secara bersama). Untuk tiap opsi tambahkan baris RAG singkat yang merangkum dampak regulator, NGO, dan offtaker.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai Bid Manager yang mendukung General Manager · Operations dari Zava Mining (lini mining services).  Kita menanggapi RFP EPC 240 halaman dari klien gold mining untuk paket open-pit overburden + ore-haul, durasi 36 bulan, armada ~120 unit, lokasi Kalimantan Timur. Submission dalam 14 hari.  Gunakan /COAL_05_Marketing_Pricing_Pack.xlsx (peer benchmark vs Pamapersada, BUMA, Thiess) dan /COAL_06_Stakeholder_Holding_Lines.docx (narasi kapabilitas kita).  Hasilkan empat artefak:  1. WIN-THEMES (1 halaman)  - Prioritas yang disebut klien (safety, cost, schedule, ESG) — diranking  - 3 win-theme kita yang paling berdampak dengan bukti spesifik (project / KPI)  - 2 kelemahan kompetitor yang bisa kita highlight (secara faktual)  2. BID EXECUTIVE SUMMARY (Word doc, 2 halaman)  - Opening kuat yang merujuk pada bahasa klien sendiri  - Mengapa kita (3 alasan, anchored ke bukti)  - Pendekatan schedule & mobilisasi  - Komitmen Safety & ESG  - Pricing positioning (tanpa angka — itu terpisah)  - Closing call-to-action  3. COMPLIANCE MATRIX STARTER (tabel)  - Tarik setiap requirement bernomor dari spec RFP  - Map ke: Compliant / Compliant-with-comment / Non-compliant  - Pre-fill respon standar kita di mana sudah ada  - Tandai 5 item paling kontensius untuk legal review  4. RISK REGISTER (top 10)  - Operasional, komersial, HSE, regulatori, cuaca/musim  - Untuk masing-masing: probabilitas, dampak, mitigasi, owner  Tandai setiap asumsi [ASSUMPTION:...]. Gunakan terminologi mining-services yang presisi (Mbcm, strip ratio, OEE, TKDN, TRIR). Jangan mengada-ada riwayat project. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsBM: [
@@ -54846,17 +54854,23 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Buka COAL_02_Mine_Safety_Manual.docx di Word for Web. Menggunakan side pane Copilot, susun annex Lembaga Pengarah 2 halaman tentang apakah keterlambatan strip-ratio dan lag reklamasi perlu memicu repricing rencana investasi operasi dan ESG 90 hari. Gunakan Edit with Copilot untuk menambahkan bahagian Cadangan terstruktur dengan Opsi A (tunda akselerasi reklamasi), Opsi B (percepat reklamasi dengan capex internal), dan Opsi C (program reklamasi yang dipimpin komunitas secara bersama). Untuk tiap opsi tambahkan baris RAG singkat yang merangkum dampak regulator, NGO, dan offtaker.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai Bid Manager yang menyokong General Manager · Operations dari Zava Mining (lini mining services).  Kita menanggapi RFP EPC 240 halaman dari klien gold mining untuk paket open-pit overburden + ore-haul, durasi 36 bulan, armada ~120 unit, lokasi Kalimantan Timur. Submission dalam 14 hari.  Gunakan /COAL_05_Marketing_Pricing_Pack.xlsx (peer benchmark vs Pamapersada, BUMA, Thiess) dan /COAL_06_Stakeholder_Holding_Lines.docx (narasi kapabilitas kita).  Hasilkan empat artefak:  1. WIN-THEMES (1 halaman)  - Prioritas yang disebut klien (safety, cost, schedule, ESG) — diranking  - 3 win-theme kita yang paling berdampak dengan bukti spesifik (project / KPI)  - 2 kelemahan kompetitor yang boleh kita highlight (secara faktual)  2. BID EXECUTIVE SUMMARY (Word doc, 2 halaman)  - Opening kuat yang merujuk pada bahasa klien sendiri  - Mengapa kita (3 alasan, anchored ke bukti)  - Pendekatan schedule & mobilisasi  - Komitmen Safety & ESG  - Pricing positioning (tanpa angka — itu terpisah)  - Closing call-to-action  3. COMPLIANCE MATRIX STARTER (jadual)  - Tarik setiap requirement bernomor dari spec RFP  - Map ke: Compliant / Compliant-with-comment / Non-compliant  - Pre-fill respon standar kita di mana sudah ada  - Tandai 5 item paling kontensius untuk legal review  4. RISK REGISTER (top 10)  - Operasional, komersial, HSE, regulatori, cuaca/musim  - Untuk masing-masing: probabilitas, dampak, mitigasi, owner  Tandai setiap asumsi [ASSUMPTION:...]. Gunakan terminologi mining-services yang presisi (Mbcm, strip ratio, OEE, TKDN, TRIR). Jangan mengada-ada riwayat project. [UC7-IMPORT-2026-06-06]'
             }
           ],
           persona: [
             'Sasha Ouellet',
             'Daichi Maruyama',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Pak Surya Wibawa'
           ],
           personaID: [
             'Sasha Ouellet',
             'Daichi Maruyama',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Pak Surya Wibawa'
           ],
           notebookMeta: null
         },
@@ -64423,6 +64437,10 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Prepare a stakeholder communication map covering BPOM, Halal MUI, Kementerian Perdagangan, the 5 largest private-label suppliers, the Ramadan promo agency, lead bankers, and the workforce after the price-display review and the SSS miss. For each audience state the message, owner, timing, and main risk if mishandled. Present as a RAG table with Red for same-day items, Amber for 24-hour items, and Green for monitor-only audiences.'
+            },
+            {
+              instr: '',
+              prompt: 'Act as a retail strategy analyst for the General Manager · Retail Operations of Zava Lifestyle Retail.  Scenario: a mall developer has offered us an anchor unit (450 sqm, Ground Floor) in a new lifestyle mall opening Q4 2026 in West Surabaya — catchment ~1.2M middle-class within 5km, mall footfall forecast 800k/month at maturity. Lease: IDR 18bn over 5 years. Fit-out CapEx estimate: IDR 12bn.  Use peer benchmarks from /RT_04_Promotion_ROI_Model.xlsx and our same-store performance from /RT_01_Store_Performance.xlsx.  Build a 1-page GM decision pack with: 1. Catchment & competition fit (vs overlap with Tunjungan + Pakuwon Surabaya) 2. Recommended brand mix for this format (4-5 brands from our portfolio) 3. SSS forecast Year 1 / Year 2 / Year 3 with explicit assumptions 4. Total CapEx + IRR + simple payback 5. Top 3 risks & one mitigation each 6. Decisive GM recommendation: GO / NO-GO / CONDITIONAL — with specific conditions  Tag every assumption [ASSUMPTION:...]. No fabricated numbers. Format: 1-page Word doc. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsID: [
@@ -64437,6 +64455,10 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Susun peta komunikasi pemangku kepentingan mencakup BPOM, Halal MUI, Kementerian Perdagangan, 5 supplier private-label terbesar, agensi promo Ramadan, bank utama, dan karyawan pasca tinjauan price-display dan kekurangan SSS. Untuk tiap audiens sebutkan pesan, pemilik, timing, dan risiko utama bila keliru. Sajikan sebagai tabel RAG dengan Merah untuk item hari ini juga, Kuning untuk 24 jam, dan Hijau untuk audiens monitor saja.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai retail strategy analyst untuk General Manager · Retail Operations dari Zava Lifestyle Retail.  Skenario: developer mall menawarkan kita anchor unit (450 sqm, Ground Floor) di mall lifestyle baru yang akan dibuka Q4 2026 di Surabaya Barat — catchment ~1,2 juta middle-class dalam radius 5km, proyeksi footfall mall 800k/bulan saat matang. Lease: IDR 18 miliar selama 5 tahun. Estimasi CapEx fit-out: IDR 12 miliar.  Gunakan peer benchmark dari /RT_04_Promotion_ROI_Model.xlsx dan performa same-store kita dari /RT_01_Store_Performance.xlsx.  Buat decision pack 1 halaman untuk GM dengan: 1. Catchment & competition fit (vs overlap Tunjungan + Pakuwon Surabaya) 2. Brand mix yang direkomendasikan untuk format ini (4-5 brand dari portfolio kita) 3. Forecast SSS Tahun 1 / Tahun 2 / Tahun 3 dengan asumsi yang jelas 4. Total CapEx + IRR + simple payback 5. Top 3 risiko & satu mitigasi masing-masing 6. Rekomendasi GM yang tegas: GO / NO-GO / CONDITIONAL — dengan syarat spesifik  Tandai setiap asumsi [ASSUMPTION:...]. Tidak boleh ada angka karangan. Format: Word doc 1 halaman. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsBM: [
@@ -64451,17 +64473,23 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Susun peta komunikasi pemangku kepentingan merangkumi BPOM, Halal MUI, Kementerian Perdagangan, 5 supplier private-label terbesar, agensi promo Ramadan, bank utama, dan kakitangan pasca tinjauan price-display dan kekurangan SSS. Untuk tiap audiens sebutkan pesan, pemilik, timing, dan risiko utama bila keliru. Sajikan sebagai jadual RAG dengan Merah untuk item hari ini juga, Kuning untuk 24 jam, dan Hijau untuk audiens monitor sahaja.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai retail strategy analyst untuk General Manager · Retail Operations dari Zava Lifestyle Retail.  Skenario: developer mall menawarkan kita anchor unit (450 sqm, Ground Floor) di mall lifestyle baru yang akan dibuka Q4 2026 di Surabaya Barat — catchment ~1,2 juta middle-class dalam radius 5km, proyeksi footfall mall 800k/bulan saat matang. Lease: IDR 18 miliar selama 5 tahun. Estimasi CapEx fit-out: IDR 12 miliar.  Gunakan peer benchmark dari /RT_04_Promotion_ROI_Model.xlsx dan performa same-store kita dari /RT_01_Store_Performance.xlsx.  Buat decision pack 1 halaman untuk GM dengan: 1. Catchment & competition fit (vs overlap Tunjungan + Pakuwon Surabaya) 2. Brand mix yang disyorkan untuk format ini (4-5 brand dari portfolio kita) 3. Forecast SSS Tahun 1 / Tahun 2 / Tahun 3 dengan asumsi yang jelas 4. Total CapEx + IRR + simple payback 5. Top 3 risiko & satu mitigasi masing-masing 6. Cadangan GM yang tegas: GO / NO-GO / CONDITIONAL — dengan syarat spesifik  Tandai setiap asumsi [ASSUMPTION:...]. Tidak boleh ada angka karangan. Format: Word doc 1 halaman. [UC7-IMPORT-2026-06-06]'
             }
           ],
           persona: [
             'Hadar Caspit',
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Pak Andi Wijaya'
           ],
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Pak Andi Wijaya'
           ],
           notebookMeta: null
         },
@@ -75118,6 +75146,10 @@ window.HUB_DATA = {
             {
               instr: 'Stay in the same deck (or open a fresh PowerPoint for the Web file). Open the **Copilot pane** > click the **🌐 web reference** chip and paste ONE relevant public web URL (e.g. a regulator microsite, a Bursa Malaysia announcement page, a peer\'s investor-relations page, or a recent industry research page) as a deck-wide reference. Then click the **image-model gear** above the image prompt and select **GPT-Image** for photoreal hero artwork (or **Flux** for stylised). Paste the prompt below.',
               prompt: 'Refresh the cover slide and one mid-deck slide using the public-web reference I just attached — pull in the 2 most relevant facts/headlines from that page and surface them as concise, dated bullets with a citation footer (\'Source: <publisher>, <date>\'). On the cover slide, generate ONE photoreal hero image with **GPT-Image** that captures the strategic theme of this deck in an executive style — no text-on-image, 16:9, neutral palette. Add a footer disclaimer that the web-grounding facts are point-in-time and must be re-verified before final external use.'
+            },
+            {
+              instr: '',
+              prompt: 'Act as a Marketing & Ops planner for the General Manager · Operations & Marketing of Zava Food (QSR Pizza line).  Lebaran 2026 is 4 weeks away. Use /FMCG_02_SKU_Margin_Tracker.xlsx (AOV per outlet, food cost %, delivery mix %, CSAT) and /FMCG_05_FY2026_Promo_Guardrails.docx for context.  Produce a launch-ready promo pack:  1. PROMO DESIGN  - 3 promo bundles (family / duo / solo) with menu, target AOV, food-cost %, gross margin  - Price ladder vs current menu — call out cannibalisation risk  - Duration & wave roll-out (Jakarta first, then secondary cities)  2. CHANNEL COPY  - GoFood listing title + description (max 90 char title, 220 char desc)  - GrabFood listing title + description  - Instagram caption × 3 variants (warm / playful / respectful Hari Raya tone)  - Push notification copy for app  3. OUTLET BRIEFING PACK  - 1-page operational checklist (prep · staffing · POS · ingredient stock-up)  - Talking points for outlet team briefing  - Quality-control sampling plan  4. CANNIBALISATION FORECAST TABLE  - Outlet by outlet: expected lift vs cannibalisation of regular menu, net AOV impact  5. LAUNCH SCORECARD  - 5 KPIs to monitor for the first 7 days, with red/amber/green thresholds  Tag every assumption [ASSUMPTION:...]. Tone: confident, food-first, never racist or tone-deaf to the Indonesian Muslim audience. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsID: [
@@ -75128,6 +75160,10 @@ window.HUB_DATA = {
             {
               instr: 'Tetap di deck yang sama (atau buka file PowerPoint for the Web baru). Buka **Copilot pane** > klik chip **🌐 referensi web** dan tempelkan SATU URL publik yang relevan (misalnya microsite regulator, halaman pengumuman BEI, halaman investor-relations peer, atau halaman riset industri terbaru) sebagai referensi seluruh deck. Kemudian klik **roda gigi model gambar** di atas prompt gambar dan pilih **GPT-Image** untuk hero photoreal (atau **Flux** untuk stilisasi). Tempelkan prompt di bawah ini.',
               prompt: 'Segarkan slide cover dan satu slide tengah deck menggunakan referensi web publik yang baru saja dilampirkan — tarik 2 fakta/headline paling relevan dari halaman tersebut dan munculkan sebagai bullet ringkas bertanggal dengan footer kutipan (\'Sumber: <penerbit>, <tanggal>\'). Pada slide cover, hasilkan SATU hero image photoreal dengan **GPT-Image** yang menangkap tema strategis deck dalam gaya eksekutif — tanpa teks di gambar, 16:9, palet netral. Tambahkan disclaimer footer bahwa fakta web-grounding bersifat point-in-time dan harus diverifikasi ulang sebelum penggunaan eksternal final.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai Marketing & Ops planner untuk General Manager · Operations & Marketing dari Zava Food (lini QSR Pizza).  Lebaran 2026 tinggal 4 minggu lagi. Gunakan /FMCG_02_SKU_Margin_Tracker.xlsx (AOV per outlet, food cost %, delivery mix %, CSAT) dan /FMCG_05_FY2026_Promo_Guardrails.docx untuk konteks.  Hasilkan promo pack siap launch:  1. DESAIN PROMO  - 3 bundle promo (keluarga / berdua / solo) dengan menu, target AOV, food-cost %, marjin kotor  - Price ladder vs menu saat ini — sebutkan risiko cannibalisation  - Durasi & wave roll-out (Jakarta dulu, lalu kota sekunder)  2. CHANNEL COPY  - GoFood listing title + description (maks 90 karakter title, 220 karakter desc)  - GrabFood listing title + description  - Caption Instagram × 3 varian (hangat/jenaka/Hari-Raya yang santun)  - Copy push notification untuk app  3. PAKET BRIEFING OUTLET  - Checklist operasional 1 halaman (prep · staffing · POS · stock-up bahan)  - Talking points untuk briefing tim outlet  - Rencana sampling quality-control  4. TABEL FORECAST CANNIBALISATION  - Outlet per outlet: ekspektasi lift vs cannibalisation menu reguler, dampak AOV bersih  5. SCORECARD LAUNCH  - 5 KPI untuk dipantau 7 hari pertama, dengan threshold merah/amber/hijau  Tandai setiap asumsi [ASSUMPTION:...]. Tone: percaya diri, food-first, tidak boleh rasis atau tone-deaf terhadap audiens Muslim Indonesia. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsBM: [
@@ -75138,15 +75174,21 @@ window.HUB_DATA = {
             {
               instr: 'Tetap di deck yang sama (atau buka fail PowerPoint for the Web baru). Buka **Copilot pane** > klik chip **🌐 referensi web** dan tampalkan SATU URL publik yang relevan (misalnya microsite regulator, halaman pengumuman BURSA MALAYSIA, halaman investor-relations peer, atau halaman riset industri terkini) sebagai referensi seluruh deck. Kemudian klik **roda gigi model gambar** di atas prompt gambar dan pilih **GPT-Image** untuk hero photoreal (atau **Flux** untuk stilisasi). Tampalkan prompt di bawah ini.',
               prompt: 'Segarkan slide cover dan satu slide tengah deck menggunakan referensi web publik yang baru sahaja dilampirkan — tarik 2 fakta/headline paling relevan dari halaman tersebut dan munculkan sebagai bullet ringkas bertanggal dengan footer kutipan (\'Sumber: <penerbit>, <tanggal>\'). Pada slide cover, hasilkan SATU hero image photoreal dengan **GPT-Image** yang menangkap tema strategis deck dalam gaya eksekutif — tanpa teks di gambar, 16:9, palet netral. Tambahkan disclaimer footer bahwa fakta web-grounding bersifat point-in-time dan perlu diverifikasi ulang sebelum penggunaan eksternal final.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai Marketing & Ops planner untuk General Manager · Operations & Marketing dari Zava Food (lini QSR Pizza).  Lebaran 2026 tinggal 4 minggu lagi. Gunakan /FMCG_02_SKU_Margin_Tracker.xlsx (AOV per outlet, food cost %, delivery mix %, CSAT) dan /FMCG_05_FY2026_Promo_Guardrails.docx untuk konteks.  Hasilkan promo pack siap launch:  1. DESAIN PROMO  - 3 bundle promo (keluarga / berdua / solo) dengan menu, target AOV, food-cost %, marjin kotor  - Price ladder vs menu saat ini — sebutkan risiko cannibalisation  - Durasi & wave roll-out (Jakarta dulu, lalu kota sekunder)  2. CHANNEL COPY  - GoFood listing title + description (maks 90 karakter title, 220 karakter desc)  - GrabFood listing title + description  - Caption Instagram × 3 varian (hangat/jenaka/Hari-Raya yang santun)  - Copy push notification untuk app  3. PAKET BRIEFING OUTLET  - Checklist operasional 1 halaman (prep · staffing · POS · stock-up bahan)  - Talking points untuk briefing tim outlet  - Rencana sampling quality-control  4. TABEL FORECAST CANNIBALISATION  - Outlet per outlet: ekspektasi lift vs cannibalisation menu reguler, dampak AOV bersih  5. SCORECARD LAUNCH  - 5 KPI untuk dipantau 7 hari pertama, dengan threshold merah/amber/hijau  Tandai setiap asumsi [ASSUMPTION:...]. Tone: percaya diri, food-first, tidak boleh rasis atau tone-deaf terhadap audiens Muslim Malaysia. [UC7-IMPORT-2026-06-06]'
             }
           ],
           persona: [
             'Sasha Ouellet',
-            'Sasha Ouellet'
+            'Bu Lisa Hartono',
+            'Bu Lisa Hartono'
           ],
           personaID: [
             'Sasha Ouellet',
-            'Sasha Ouellet'
+            'Bu Lisa Hartono',
+            'Bu Lisa Hartono'
           ],
           notebookMeta: null
         },
@@ -98271,6 +98313,10 @@ window.HUB_DATA = {
             {
               instr: 'Open the Word doc > **Copilot pane**. Click the **🧠 model picker** at the top of the pane and switch to **Claude Opus 4.7** for nuanced legal/policy/board-grade rewriting. Paste the prompt below. After Copilot drafts, click **Edit with Copilot** (agent mode) for inline restructuring across the whole document in one instruction.',
               prompt: 'Using Claude Opus 4.7, rewrite the most consequential section of this document for an external audience (regulator, lender, Board-level reader) — preserve every fact, but tighten the language for clarity and remove any internal jargon. Then switch the model picker back to **GPT** and ask Copilot to produce a same-length GPT version of the SAME section so I can compare nuance side-by-side. Finally, click **Edit with Copilot** (agent mode) and ask Copilot to restructure the whole document so the executive summary lands on page 1 and the appendix moves to the end — one instruction, applied across all sections.'
+            },
+            {
+              instr: '',
+              prompt: 'Act as Plant Reliability lead supporting the General Manager · Plant Operations of Zava Power.  The quarterly PPA review with PLN is in 5 days. Use /POW_02_Plant_Availability_Tracker.xlsx (Plant Availability %, Net Generation GWh, Forced Outage Rate %, Specific Steam Use, TRIR) and /POW_05_Off_Taker_Negotiation_Brief.docx for steam-decline context.  Produce three artefacts:  1. PLN QUARTERLY PPA COMPLIANCE LETTER (Word doc, ~1.5 pages):  - Plant-by-plant availability vs PPA contracted MW  - Net generation vs nominated profile  - Force-majeure events and their impact (call out Wayang Windu / Salak / Darajat specifically)  - Remediation plan for underperformance  - Tone: factual, regulatory, no marketing language  2. REGULATOR Q&A PACK (Word doc):  - 10 likely PLN questions with our answers  - Grouped: availability, safety, ESG / Scope 1/2, contract, forward commitments  3. BOARD ONE-PAGER — STEAM-DECLINE MITIGATION CASE (Word doc, 1 page):  - Problem in 3 lines  - Three options (do nothing / mid-life workover / new make-up well) with cost & MW recovery  - Recommended option with payback and IRR  - Decision requested from the Board  Tag every assumption [ASSUMPTION:...]. Do not fabricate KPI numbers — use what is in the workbook. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsID: [
@@ -98281,6 +98327,10 @@ window.HUB_DATA = {
             {
               instr: 'Buka dokumen Word > **Copilot pane**. Klik **🧠 model picker** di atas panel dan beralih ke **Claude Opus 4.7** untuk penulisan ulang yang bernuansa (legal/kebijakan/grade-Direksi). Tempelkan prompt di bawah ini. Setelah Copilot membuat draft, klik **Edit with Copilot** (mode agent) untuk restrukturisasi inline pada seluruh dokumen dalam satu instruksi.',
               prompt: 'Menggunakan Claude Opus 4.7, tulis ulang bagian paling penting dari dokumen ini untuk audiens eksternal (regulator, kreditor, pembaca tingkat Direksi) — pertahankan setiap fakta, tetapi rapikan bahasanya agar jelas dan hilangkan jargon internal. Lalu kembalikan model picker ke **GPT** dan minta Copilot membuat versi GPT dengan panjang yang sama dari bagian YANG SAMA sehingga saya bisa membandingkan nuansa berdampingan. Terakhir, klik **Edit with Copilot** (mode agent) dan minta Copilot merestrukturisasi seluruh dokumen sehingga ringkasan eksekutif berada di halaman 1 dan lampiran berpindah ke akhir — satu instruksi, diterapkan pada semua bagian.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai Plant Reliability lead yang mendukung General Manager · Plant Operations dari Zava Power.  Kita ada quarterly PPA review dengan PLN dalam 5 hari. Gunakan /POW_02_Plant_Availability_Tracker.xlsx (Plant Availability %, Net Generation GWh, Forced Outage Rate %, Specific Steam Use, TRIR) dan /POW_05_Off_Taker_Negotiation_Brief.docx (konteks steam-decline).  Hasilkan tiga artefak:  1. SURAT KEPATUHAN PPA KUARTAL PLN (Word doc, ~1,5 halaman):  - Availability plant per plant vs MW kontrak PPA  - Net generation vs nominated profile  - Kejadian force-majeure dan dampaknya (sebutkan spesifik Wayang Windu / Salak / Darajat)  - Rencana remediasi untuk underperformance  - Tone: faktual, regulatory, tanpa bahasa marketing  2. PAKET Q&A REGULATOR (Word doc):  - 10 pertanyaan yang kemungkinan ditanyakan PLN, dengan jawaban kita  - Kelompokkan: availability, safety, ESG / Scope 1/2, kontrak, komitmen ke depan  3. ONE-PAGER BOARD — KASUS MITIGASI STEAM-DECLINE (Word doc, 1 halaman):  - Masalah dalam 3 baris  - Tiga opsi (do nothing / mid-life workover / make-up well baru) dengan biaya & MW recovery  - Opsi rekomendasi dengan payback dan IRR  - Keputusan yang diminta dari Board  Tandai setiap asumsi [ASSUMPTION:...]. Jangan mengada-ada angka KPI — pakai apa yang ada di workbook. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsBM: [
@@ -98291,15 +98341,21 @@ window.HUB_DATA = {
             {
               instr: 'Buka dokumen Word > **Copilot pane**. Klik **🧠 model picker** di atas panel dan beralih ke **Claude Opus 4.7** untuk penulisan ulang yang bernuansa (legal/polisi/grade-Lembaga Pengarah). Tampalkan prompt di bawah ini. Setelah Copilot membuat draft, klik **Edit with Copilot** (mode agent) untuk restrukturisasi inline pada seluruh dokumen dalam satu instruksi.',
               prompt: 'Menggunakan Claude Opus 4.7, tulis ulang bahagian paling penting dari dokumen ini untuk audiens eksternal (regulator, kreditor, pembaca tingkat Lembaga Pengarah) — pertahankan setiap fakta, tetapi kemaskan bahasanya agar jelas dan hilangkan jargon internal. Lalu kembalikan model picker ke **GPT** dan minta Copilot membuat versi GPT dengan panjang yang sama dari bahagian YANG SAMA sehingga saya boleh membandingkan nuansa berdampingan. Terakhir, klik **Edit with Copilot** (mode agent) dan minta Copilot merestrukturisasi seluruh dokumen sehingga ringkasan eksekutif berada di halaman 1 dan lampiran berpindah ke akhir — satu instruksi, diterapkan pada semua bahagian.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai Plant Reliability lead yang menyokong General Manager · Plant Operations dari Zava Power.  Kita ada quarterly PPA review dengan PLN dalam 5 hari. Gunakan /POW_02_Plant_Availability_Tracker.xlsx (Plant Availability %, Net Generation GWh, Forced Outage Rate %, Specific Steam Use, TRIR) dan /POW_05_Off_Taker_Negotiation_Brief.docx (konteks steam-decline).  Hasilkan tiga artefak:  1. SURAT KEPATUHAN PPA KUARTAL PLN (Word doc, ~1,5 halaman):  - Availability plant per plant vs MW kontrak PPA  - Net generation vs nominated profile  - Kejadian force-majeure dan dampaknya (sebutkan spesifik Wayang Windu / Salak / Darajat)  - Rencana remediasi untuk underperformance  - Tone: faktual, regulatory, tanpa bahasa marketing  2. PAKET Q&A REGULATOR (Word doc):  - 10 pertanyaan yang kemungkinan ditanyakan PLN, dengan jawaban kita  - Kelompokkan: availability, safety, ESG / Scope 1/2, kontrak, komitmen ke depan  3. ONE-PAGER BOARD — KASUS MITIGASI STEAM-DECLINE (Word doc, 1 halaman):  - Masalah dalam 3 baris  - Tiga opsi (do nothing / mid-life workover / make-up well baru) dengan kos & MW recovery  - Opsi cadangan dengan payback dan IRR  - Keputusan yang diminta dari Board  Tandai setiap asumsi [ASSUMPTION:...]. Jangan mengada-ada angka KPI — pakai apa yang ada di workbook. [UC7-IMPORT-2026-06-06]'
             }
           ],
           persona: [
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Pak Hendra Setiawan',
+            'Pak Hendra Setiawan'
           ],
           personaID: [
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Pak Hendra Setiawan',
+            'Pak Hendra Setiawan'
           ],
           notebookMeta: null
         },
@@ -114698,6 +114754,13 @@ window.HUB_DATA = {
         'LEG_04_Contract_Backlog_Tracker.xlsx',
         'LEG_05_Regulatory_Inquiry_Log.xlsx',
         'LEG_06_Board_Resolution_Calendar.docx',
+        'LEG_07_Mining_Regulation_Brief.docx',
+        'LEG_08_Legal_Knowledge_Base.docx',
+        'LEG_09_Legal_Memo_Template.docx',
+        'LEG_10_NDA_Draft.docx',
+        'LEG_11_MA_Playbook.docx',
+        'LEG_12_Litigation_Cases.xlsx',
+        'LEG_13_Legal_Sync_Transcript.docx',
         'Shareholder_Register.pdf',
         'Group_Structure.pdf',
         'MSA_AlphaCloud_v3.docx',
@@ -114994,6 +115057,10 @@ window.HUB_DATA = {
             {
               instr: 'Stay in the same workbook (or open a fresh Excel-for-the-Web file with one of the data files attached). Open the **Copilot pane** > click the **menu above the prompt box** and pick **Plan** (May 2026). Copilot will outline a step-by-step approach BEFORE making any edits — review and approve before changes land. For the second half, add **use Python** to the prompt and Copilot will run advanced analysis directly inside the workbook.',
               prompt: 'Plan mode: outline the step-by-step approach you will take to surface the 3 most material risks in the attached workbook for this scenario — list each step as a numbered plan I can review/approve before any edit. After I approve, execute the plan and create one new sheet called \'Risk Triage\' with the result. Then on a second sheet \'Advanced\', **use Python** to run a 12-month rolling-trend forecast on the most material risk metric and plot it as a chart with confidence bands. Cite which input columns drive the forecast and flag any data-quality gaps that would invalidate the result.'
+            },
+            {
+              instr: '',
+              prompt: 'Profile /LEG_12_Litigation_Cases.xlsx (50 cases, 6 holding subsidiaries). Plan mode: outline the analysis steps and confirm before executing. Then run: (1) Summary sheet with total cases, ongoing vs closed, breakdown by subsidiary, breakdown by Case_Type, total claim exposure (IDR Bn), total settlement, overall win rate with conditional formatting (green ≥ 60%, amber 40-60%, red < 40%); (2) average duration by Case_Type & Forum_Level; (3) top 5 ongoing high-value cases by Claim_Amount; (4) win/loss rate by subsidiary; (5) flag "Aging" for cases with Duration_Days > 730; (6) bar chart of total exposure by Province. Then use Analyst Agent for root-cause analysis: top 3 root causes driving highest exposure, with total claim, average duration, win/loss ratio; recommend 2 preventive actions per root cause with UU/PP/Permen citations. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsID: [
@@ -115012,6 +115079,10 @@ window.HUB_DATA = {
             {
               instr: 'Tetap di workbook yang sama (atau buka file Excel-for-the-Web baru dengan salah satu file data terlampir). Buka **Copilot pane** > klik **menu di atas kotak prompt** dan pilih **Plan** (Mei 2026). Copilot akan menguraikan pendekatan langkah-demi-langkah SEBELUM melakukan edit — tinjau dan setujui sebelum perubahan diterapkan. Pada bagian kedua, tambahkan **use Python** ke prompt dan Copilot akan menjalankan analisis lanjutan langsung di dalam workbook.',
               prompt: 'Mode Plan: uraikan pendekatan langkah-demi-langkah yang akan Anda ambil untuk memunculkan 3 risiko paling material pada workbook terlampir untuk skenario ini — daftarkan setiap langkah sebagai plan bernomor yang dapat saya tinjau/setujui sebelum edit apa pun. Setelah saya setujui, eksekusi plan dan buat satu sheet baru bernama \'Risk Triage\' dengan hasilnya. Kemudian pada sheet kedua \'Advanced\', **gunakan Python** untuk menjalankan rolling-trend forecast 12 bulan terhadap metrik risiko paling material dan plot sebagai chart dengan confidence bands. Sebutkan kolom input mana yang mendorong forecast dan tandai kesenjangan kualitas data yang akan membatalkan hasilnya.'
+            },
+            {
+              instr: '',
+              prompt: 'Profilkan /LEG_12_Litigation_Cases.xlsx (50 kasus, 6 anak holding). Mode Plan: susun langkah analisis dan konfirmasi sebelum eksekusi. Lalu jalankan: (1) sheet Summary dengan total kasus, ongoing vs closed, breakdown per Anak_Holding, breakdown per Case_Type, total exposure klaim (IDR Bn), total settlement, win rate keseluruhan dengan conditional formatting (hijau ≥ 60%, kuning 40-60%, merah < 40%); (2) rata-rata durasi per Case_Type & Forum_Level; (3) top 5 kasus ongoing high-value berdasarkan Claim_Amount; (4) win/loss rate per Anak_Holding; (5) flag "Aging" untuk kasus dengan Duration_Days > 730; (6) bar chart total exposure per Province. Kemudian gunakan Analyst Agent untuk root cause analysis: 3 akar penyebab teratas yang memicu eksposur tertinggi, dengan total claim, rata-rata durasi, rasio menang/kalah; rekomendasikan 2 tindakan preventif per akar penyebab dengan sitasi UU/PP/Permen. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsBM: [
@@ -115030,19 +115101,25 @@ window.HUB_DATA = {
             {
               instr: 'Tetap di workbook yang sama (atau buka fail Excel-for-the-Web baru dengan salah satu fail data terlampir). Buka **Copilot pane** > klik **menu di atas kotak prompt** dan pilih **Plan** (Mei 2026). Copilot akan menguraikan pendekatan langkah-demi-langkah SEBELUM melakukan edit — tinjau dan setujui sebelum perubahan diterapkan. Pada bahagian kedua, tambahkan **use Python** ke prompt dan Copilot akan menjalankan analisis lanjutan langsung di dalam workbook.',
               prompt: 'Mode Plan: uraikan pendekatan langkah-demi-langkah yang akan Anda ambil untuk memunculkan 3 risiko paling material pada workbook terlampir untuk skenario ini — daftarkan setiap langkah sebagai plan bernomor yang dapat saya tinjau/setujui sebelum edit apa pun. Setelah saya setujui, eksekusi plan dan buat satu sheet baru bernama \'Risk Triage\' dengan hasilnya. Kemudian pada sheet kedua \'Advanced\', **gunakan Python** untuk menjalankan rolling-trend forecast 12 bulan terhadap metrik risiko paling material dan plot sebagai chart dengan confidence bands. Sebutkan lajur input mana yang mendorong forecast dan tandai kesenjangan kualitas data yang akan membatalkan hasilnya.'
+            },
+            {
+              instr: '',
+              prompt: 'Profilkan /LEG_12_Litigation_Cases.xlsx (50 kasus, 6 anak holding). Mode Plan: susun langkah analisis dan konfirmasi sebelum eksekusi. Lalu jalankan: (1) sheet Summary dengan total kasus, ongoing vs closed, breakdown per Anak_Holding, breakdown per Case_Type, total exposure klaim (IDR Bn), total settlement, win rate keseluruhan dengan conditional formatting (hijau ≥ 60%, kuning 40-60%, merah < 40%); (2) rata-rata durasi per Case_Type & Forum_Level; (3) top 5 kasus ongoing high-value berdasarkan Claim_Amount; (4) win/loss rate per Anak_Holding; (5) flag "Aging" untuk kasus dengan Duration_Days > 730; (6) bar chart total exposure per Province. Kemudian gunakan Analyst Agent untuk root cause analysis: 3 akar penyebab teratas yang memicu eksposur tertinggi, dengan total claim, rata-rata durasi, rasio menang/kalah; rekomendasikan 2 tindakan preventif per akar penyebab dengan sitasi UU/PP/Permen. [UC7-IMPORT-2026-06-06]'
             }
           ],
           persona: [
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Ratna Sari',
+            'Ratna Sari'
           ],
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Ratna Sari',
+            'Ratna Sari'
           ],
           notebookMeta: null
         },
@@ -115063,6 +115140,10 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Open /LEG_02_Compliance_Manual.docx in Word for Web. Using Copilot in Word with /LEG_06_Board_Resolution_Calendar.docx as additional context, draft a governance compliance annex for the Board Governance Committee covering the 7 overdue resolutions, statutory penalty exposure, director liability implications, and remediation timeline. For each resolution, state the statutory obligation, current status, days overdue, and the main risk if filing is further delayed. Present as a structured table followed by a 200-word recommendation on immediate remediation steps. Use Edit with Copilot to align tone with the Group\'s formal Bursa Malaysia disclosure language.'
+            },
+            {
+              instr: '',
+              prompt: '/LEG_07_Mining_Regulation_Brief.docx /LEG_08_Legal_Knowledge_Base.docx /LEG_09_Legal_Memo_Template.docx — Based on these three documents, draft a full IRAC-structured Legal Memo addressed to the Group Managing Director. Identify the 3 most critical legal issues under Permen ESDM No. 7 of 2026, and for each state: (a) the specific clause impacted, (b) the relevant internal SOP/policy reference, and (c) relevant Supreme Court jurisprudence. Fill all 6 template sections: I. Background, II. Legal Questions, III. Legal Analysis (IRAC), IV. Conclusion, V. Recommendation & Risk Mitigation (include risk register table: Risk ID | Description | Severity | Owner | Mitigation | Deadline with at least 6 risks), VI. Limitations & Disclaimer. Formal Indonesian legal register. Maximum 1.5 pages. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsID: [
@@ -115077,6 +115158,10 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Buka /LEG_02_Compliance_Manual.docx di Word for Web. Menggunakan Copilot in Word dengan /LEG_06_Board_Resolution_Calendar.docx sebagai konteks tambahan, susun lampiran kepatuhan tata kelola untuk Komite Tata Kelola Direksi mencakup 7 resolusi terlambat, eksposur penalti statutori, implikasi tanggung jawab Direksi, dan timeline remediasi. Untuk tiap resolusi, sebutkan kewajiban statutori, status terbaru, hari terlambat, dan risiko utama bila filing lebih terlambat lagi. Sajikan sebagai tabel terstruktur diikuti rekomendasi 200 kata mengenai langkah remediasi segera. Gunakan Edit with Copilot untuk menyelaraskan nada dengan bahasa pengungkapan formal Grup di BEI.'
+            },
+            {
+              instr: '',
+              prompt: '/LEG_07_Mining_Regulation_Brief.docx /LEG_08_Legal_Knowledge_Base.docx /LEG_09_Legal_Memo_Template.docx — Berdasarkan ketiga dokumen ini, susun Legal Memo lengkap (struktur IRAC) yang ditujukan kepada Direktur Utama Grup. Identifikasi 3 isu hukum paling kritis terkait Permen ESDM No. 7 Tahun 2026, lalu untuk masing-masing sebutkan: (a) pasal spesifik yang terdampak, (b) referensi SOP/kebijakan internal, dan (c) yurisprudensi Mahkamah Agung relevan. Isi seluruh 6 bagian template: I. Latar Belakang, II. Pertanyaan Hukum, III. Analisis Hukum (IRAC), IV. Kesimpulan, V. Rekomendasi & Mitigasi Risiko (sertakan tabel risk register: Risk ID | Deskripsi | Severity | Owner | Mitigasi | Tenggat dengan minimal 6 risiko), VI. Limitasi & Disclaimer. Bahasa hukum Indonesia formal. Maksimum 1,5 halaman. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsBM: [
@@ -115091,17 +115176,23 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Buka /LEG_02_Compliance_Manual.docx di Word for Web. Menggunakan Copilot in Word dengan /LEG_06_Board_Resolution_Calendar.docx sebagai konteks tambahan, susun lampiran kepatuhan tata kelola untuk Komite Tata Kelola Lembaga Pengarah merangkumi 7 resolusi terlambat, eksposur penalti statutori, implikasi tanggung jawab Lembaga Pengarah, dan timeline remediasi. Untuk tiap resolusi, sebutkan kewajiban statutori, status terkini, hari terlambat, dan risiko utama bila filing lebih terlambat lagi. Sajikan sebagai jadual terstruktur diikuti cadangan 200 kata mengenai langkah remediasi segera. Gunakan Edit with Copilot untuk menyelaraskan nada dengan bahasa pengungkapan formal Grup di BURSA MALAYSIA.'
+            },
+            {
+              instr: '',
+              prompt: '/LEG_07_Mining_Regulation_Brief.docx /LEG_08_Legal_Knowledge_Base.docx /LEG_09_Legal_Memo_Template.docx — Berdasarkan ketiga dokumen ini, susun Legal Memo lengkap (struktur IRAC) yang ditujukan kepada Pengarah Urusan Grup. Identifikasi 3 isu hukum paling kritis terkait Permen ESDM No. 7 Tahun 2026, lalu untuk masing-masing sebutkan: (a) pasal spesifik yang terdampak, (b) referensi SOP/polisi internal, dan (c) yurisprudensi Mahkamah Agung relevan. Isi seluruh 6 bahagian template: I. Latar Belakang, II. Pertanyaan Hukum, III. Analisis Hukum (IRAC), IV. Kesimpulan, V. Cadangan & Mitigasi Risiko (sertakan jadual risk register: Risk ID | Penerangan | Severity | Owner | Mitigasi | Tenggat dengan minimum 6 risiko), VI. Limitasi & Disclaimer. Bahasa hukum Malaysia formal. Maksimum 1,5 halaman. [UC7-IMPORT-2026-06-06]'
             }
           ],
           persona: [
             'Hadar Caspit',
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Ratna Sari'
           ],
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Ratna Sari'
           ],
           notebookMeta: null
         },
@@ -115199,6 +115290,10 @@ window.HUB_DATA = {
             {
               instr: 'Open Outlook on the Web > **New email**. In the new **first-draft-in-canvas** experience (March 2026), Copilot drafts directly in the email body (not the small Copilot pane) and asks clarifying questions on goal, audience, and tone. Paste the prompt below and answer Copilot\'s follow-ups in canvas — no copy-paste.',
               prompt: 'Draft a clear stakeholder email about the most pressing issue in this scenario. Copilot, in canvas, ask me 3 clarifying questions before finalising: (1) which decision the recipient must make and by when, (2) which tone fits (firm vs. collaborative vs. supervisory), and (3) audience seniority. After I answer, refine in place — no copy-paste. End with a recommended subject line and a 1-sentence preview tuned for inbox triage.'
+            },
+            {
+              instr: '',
+              prompt: '/LEG_10_NDA_Draft.docx /LEG_11_MA_Playbook.docx — Compare the counterparty NDA against our M&A Playbook v4.0. Produce: (1) red-flag table with columns Clause # | Issue | Why it violates Playbook | Proposed mark-up; (2) rewrite clauses 3 (Term), 5 (Indemnity), 6 (Governing Law & Dispute), 7 (Exclusivity), 9 (Assignment) in mark-up style — additions bold, deletions struck-through; (3) bilingual cover email (Bahasa Indonesia above, English below) to the counterparty summarising 5 key amendments with brief justification grounded in KUHPerdata Articles 1247-1248, POJK 17/2020, and UU PT 40/2007. Propose a 30-minute call within 5 business days. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsID: [
@@ -115217,6 +115312,10 @@ window.HUB_DATA = {
             {
               instr: 'Buka Outlook on the Web > **Email Baru**. Pada pengalaman **first-draft-in-canvas** baru (Maret 2026), Copilot mengetik draft langsung di badan email (bukan di panel Copilot kecil) dan mengajukan pertanyaan klarifikasi terkait tujuan, audiens, dan nada. Tempelkan prompt di bawah dan jawab pertanyaan Copilot di kanvas — tanpa copy-paste.',
               prompt: 'Susun email pemangku kepentingan yang jelas mengenai isu paling mendesak dalam skenario ini. Copilot, di kanvas, ajukan 3 pertanyaan klarifikasi sebelum finalisasi: (1) keputusan apa yang harus diambil penerima dan kapan, (2) nada mana yang sesuai (tegas vs. kolaboratif vs. supervisori), (3) seniority audiens. Setelah saya menjawab, sempurnakan langsung di kanvas — tanpa copy-paste. Akhiri dengan rekomendasi subject line dan preview 1 kalimat yang disetel untuk triage inbox.'
+            },
+            {
+              instr: '',
+              prompt: '/LEG_10_NDA_Draft.docx /LEG_11_MA_Playbook.docx — Bandingkan NDA counterparty dengan M&A Playbook v4.0 kita. Hasilkan: (1) tabel red-flag dengan kolom Klausul # | Isu | Alasan melanggar Playbook | Usulan mark-up; (2) rewrite klausul 3 (Jangka Waktu), 5 (Indemnity), 6 (Hukum & Penyelesaian Sengketa), 7 (Eksklusivitas), 9 (Pengalihan) dalam gaya mark-up — penambahan tebal, penghapusan dicoret; (3) email pengantar bilingual (BI di atas, English di bawah) ke counterparty merangkum 5 amandemen utama dengan justifikasi singkat berdasarkan KUHPerdata Pasal 1247–1248, POJK 17/2020, dan UU PT 40/2007. Usulkan call 30 menit dalam 5 hari kerja. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsBM: [
@@ -115235,19 +115334,25 @@ window.HUB_DATA = {
             {
               instr: 'Buka Outlook on the Web > **Email Baru**. Pada pengalaman **first-draft-in-canvas** baru (Maret 2026), Copilot menaip draft langsung di badan email (bukan di panel Copilot kecil) dan mengajukan pertanyaan klarifikasi terkait tujuan, audiens, dan nada. Tampalkan prompt di bawah dan jawab pertanyaan Copilot di kanvas — tanpa copy-paste.',
               prompt: 'Susun email pemangku kepentingan yang jelas mengenai isu paling mendesak dalam skenario ini. Copilot, di kanvas, ajukan 3 pertanyaan klarifikasi sebelum finalisasi: (1) keputusan apa yang perlu diambil penerima dan bila, (2) nada mana yang sesuai (tegas vs. kolaboratif vs. supervisori), (3) seniority audiens. Setelah saya menjawab, sempurnakan langsung di kanvas — tanpa copy-paste. Akhiri dengan cadangan subject line dan preview 1 kalimat yang disetel untuk triage inbox.'
+            },
+            {
+              instr: '',
+              prompt: '/LEG_10_NDA_Draft.docx /LEG_11_MA_Playbook.docx — Bandingkan NDA counterparty dengan M&A Playbook v4.0 kita. Hasilkan: (1) jadual red-flag dengan lajur Klausul # | Isu | Alasan melanggar Playbook | Usulan mark-up; (2) rewrite klausul 3 (Jangka Masa), 5 (Indemnity), 6 (Hukum & Penyelesaian Sengketa), 7 (Eksklusivitas), 9 (Pengalihan) dalam gaya mark-up — penambahan tebal, penghapusan dicoret; (3) email pengantar bilingual (BNM di atas, English di bawah) ke counterparty merangkum 5 amandemen utama dengan justifikasi singkat berdasarkan KUHPerdata Pasal 1247–1248, POJK 17/2020, dan Akta Sdn. Bhd. 40/2007. Usulkan call 30 menit dalam 5 hari kerja. [UC7-IMPORT-2026-06-06]'
             }
           ],
           persona: [
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Ratna Sari',
+            'Ratna Sari'
           ],
           personaID: [
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Ratna Sari',
+            'Ratna Sari'
           ],
           notebookMeta: null
         },
@@ -115514,6 +115619,10 @@ window.HUB_DATA = {
               prompt: 'After the Board Governance Committee has approved the fast-track programme, please complete in parallel: (1) draft the divisional CEO notification email to all 11 divisions with the approved fast-track rules and new temporary delegation thresholds; (2) draft a regulatory status update letter for Bursa Malaysia confirming document production timeline; (3) create a 21-day legal clearance task list covering contract review batches, delegation threshold exceptions, regulatory document production, and board resolution remediation, then send it to the relevant legal team leads; (4) schedule a 20-minute checkpoint Teams meeting for this afternoon with the legal leadership team; (5) update the contract backlog tracker workbook with today\'s clearance batch status. Wait for my confirmation before sending external communications. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Aziz (Group General Counsel), Anjali (Head of Litigation), Wei Ming (Head of Commercial Legal) and Ridwan (Regulatory Affairs Lead) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
             },
             {
+              instr: '',
+              prompt: 'Build me an "Executive Legal Dashboard" for the Group Managing Director. Plan the steps, confirm each one, then execute: (1) Researcher pulls latest status of Permen ESDM No. 7 of 2026 + every relevant circular/director-general decision; (2) Analyst agent on /LEG_12_Litigation_Cases.xlsx to compute total exposure (IDR Bn), overall win rate, top 5 ongoing high-value, Case_Type breakdown, 12-month new-case trend; (3) from /LEG_13_Legal_Sync_Transcript.docx extract 7 open action items with owner & deadline; (4) generate one self-contained HTML page "Executive Legal Dashboard — May 2026" with 4 KPI tiles (Total Exposure, Win Rate, Ongoing Cases, Open Actions), Top-5 ongoing table, exposure-by-Case_Type bar chart, Regulatory Watchlist panel, Open Action Items list. Dark navy + white theme, Inter/Segoe UI font. Inline CSS + SVG. No external dependencies. (5) Save as LEG_Dashboard.html in OneDrive. [UC7-IMPORT-2026-06-06] Wait for my approval before sending anything externally or posting to channels.'
+            },
+            {
               instr: 'Stay in the same Cowork session — Cowork remembers prior delegations within the same chat. Paste this prompt to launch the **Quarterly Investor Day Sprint**. Cowork will delegate the 5 numbered actions in parallel and report back as each one completes.',
               prompt: 'Run the FY2025 Q4 investor day delegation in parallel. Please do all 5 of the following at once and report back when each is ready. 1. Draft a 4-page Word doc titled "Investor Day FY2025 — Speaking Notes" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as context. Section 1 financial highlights, Section 2 divisional performance, Section 3 capital allocation, Section 4 outlook for FY2026. 2. Draft a 1-page Word doc titled "Top 25 Analyst Q&A" pulling anticipated questions from /06_Zava_Investor_QA_FY2025.docx — order by likelihood and pre-answer each in two sentences. 3. Draft a personalised email to the top-25 covering analysts inviting them to the 9am virtual Q&A session immediately after the main investor day webcast. 4. Schedule a 30-minute Teams dry-run tomorrow at 6pm with the Group CFO, Group Chief of Staff, Head of IR, and the IR team — pre-read the speaking notes and the analyst Q&A. 5. Post a Teams message in the IR channel with the embargoed deck link, the Q&A doc, and the dry-run calendar invite. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Aziz (Group General Counsel), Anjali (Head of Litigation), Wei Ming (Head of Commercial Legal) and Ridwan (Regulatory Affairs Lead) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
             },
@@ -115604,6 +115713,10 @@ window.HUB_DATA = {
               prompt: 'Setelah Komite Tata Kelola Direksi menyetujui program fast-track, mohon kerjakan secara paralel: (1) susun email notifikasi Direktur Unit Usaha ke seluruh 9 unit usaha dengan aturan fast-track yang disetujui dan ambang delegasi sementara baru; (2) susun surat update status regulasi untuk OJK yang mengkonfirmasi timeline produksi dokumen; (3) buat task list clearance legal 21 hari mencakup batch review kontrak, pengecualian ambang delegasi, produksi dokumen regulasi, dan remediasi resolusi Direksi, kemudian kirimkan ke lead tim legal terkait; (4) jadwalkan rapat checkpoint Teams 20 menit sore ini bersama leadership tim legal; (5) perbarui workbook tracker backlog kontrak dengan status batch clearance hari ini. Tunggu konfirmasi saya sebelum mengirim komunikasi eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Aziz (General Counsel Grup), Anjali (Kepala Litigasi), Wei Ming (Kepala Legal Komersial) dan Ridwan (Lead Urusan Regulasi) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
             },
             {
+              instr: '',
+              prompt: 'Buatkan saya "Executive Legal Dashboard" untuk Direktur Utama Grup. Susun rencana, konfirmasi tiap langkah, lalu eksekusi: (1) Researcher menarik status terbaru Permen ESDM No. 7 Tahun 2026 + setiap surat edaran/keputusan dirjen terkait; (2) Analyst agent pada /LEG_12_Litigation_Cases.xlsx untuk hitung total exposure (IDR Bn), win rate keseluruhan, top 5 ongoing high-value, breakdown per Case_Type, tren 12 bulan kasus baru; (3) dari /LEG_13_Legal_Sync_Transcript.docx ekstrak 7 action items terbuka dengan owner & deadline; (4) hasilkan 1 halaman HTML self-contained "Executive Legal Dashboard — Mei 2026" dengan 4 KPI tile (Total Exposure, Win Rate, Ongoing Cases, Open Actions), tabel Top-5 ongoing, bar chart exposure per Case_Type, panel Regulatory Watchlist, daftar Open Action Items. Tema navy gelap + putih, font Inter/Segoe UI. Inline CSS + SVG. Tanpa dependensi eksternal. (5) simpan sebagai LEG_Dashboard.html di OneDrive. [UC7-IMPORT-2026-06-06]'
+            },
+            {
               instr: 'Tetap di sesi Cowork yang sama — Cowork mengingat delegasi sebelumnya dalam chat yang sama. Tempelkan prompt ini untuk meluncurkan **Sprint Investor Day Triwulan**. Cowork akan mendelegasikan 5 tindakan bernomor secara paralel dan melaporkan saat masing-masing selesai.',
               prompt: 'Jalankan delegasi Investor Day FY2025 Q4 secara paralel. Mohon kerjakan kelima hal berikut sekaligus dan laporkan begitu masing-masing siap. 1. Susun dokumen Word 4 halaman berjudul "Investor Day FY2025 — Naskah Pidato" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Bagian 1 highlight keuangan, Bagian 2 kinerja per unit usaha, Bagian 3 alokasi modal, Bagian 4 outlook FY2026. 2. Susun dokumen Word 1 halaman berjudul "Top 25 Q&A Analis" menarik pertanyaan yang diantisipasi dari /06_Zava_Investor_QA_FY2025.docx — urutkan berdasarkan kemungkinan dan jawab masing-masing dalam dua kalimat. 3. Susun email personal kepada top-25 analis covering yang mengundang mereka ke sesi Q&A virtual jam 9 pagi setelah webcast investor day utama. 4. Jadwalkan dry-run Teams 30 menit besok jam 6 sore bersama Direktur Keuangan Grup, Kepala Staf Grup, Kepala IR, dan tim IR — pre-read naskah pidato dan Q&A analis. 5. Posting pesan di channel Teams IR dengan link deck embargoed, dokumen Q&A, dan undangan kalender dry-run. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Aziz (General Counsel Grup), Anjali (Kepala Litigasi), Wei Ming (Kepala Legal Komersial) dan Ridwan (Lead Urusan Regulasi) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
             },
@@ -115692,15 +115805,21 @@ window.HUB_DATA = {
             {
               instr: '',
               prompt: 'Setelah Komite Tata Kelola Lembaga Pengarah meluluskan program fast-track, mohon lakukan secara paralel: (1) susun email notifikasi Pengarah Unit Usaha ke seluruh 9 unit usaha dengan aturan fast-track yang diluluskan dan ambang delegasi sementara baru; (2) susun surat update status regulasi untuk SC yang mengkonfirmasi timeline produksi dokumen; (3) buat task list clearance legal 21 hari merangkumi batch review kontrak, pengecualian ambang delegasi, produksi dokumen regulasi, dan remediasi resolusi Lembaga Pengarah, kemudian kirimkan ke lead tim legal terkait; (4) jadwalkan mesyuarat checkpoint Teams 20 menit sore ini bersama leadership tim legal; (5) perbarui workbook tracker backlog kontrak dengan status batch clearance hari ini. Tunggu konfirmasi saya sebelum menghantar komunikasi eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas mesyuarat Teams — Hadar (Pengarah Kewangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Sonia (Kepala Strategi), Will (Kepala Risiko) dan Omar (Kepala Pengadaan) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: '',
+              prompt: 'Buatkan saya "Executive Legal Dashboard" untuk Pengarah Urusan Grup. Susun rencana, konfirmasi tiap langkah, lalu eksekusi: (1) Researcher menarik status terkini Permen ESDM No. 7 Tahun 2026 + setiap surat edaran/keputusan dirjen terkait; (2) Analyst agent pada /LEG_12_Litigation_Cases.xlsx untuk kira total exposure (IDR Bn), win rate keseluruhan, top 5 ongoing high-value, breakdown per Case_Type, tren 12 bulan kasus baru; (3) dari /LEG_13_Legal_Sync_Transcript.docx ekstrak 7 action items terbuka dengan owner & deadline; (4) hasilkan 1 halaman HTML self-contained "Executive Legal Dashboard — Mei 2026" dengan 4 KPI tile (Total Exposure, Win Rate, Ongoing Cases, Open Actions), jadual Top-5 ongoing, bar chart exposure per Case_Type, panel Regulatory Watchlist, daftar Open Action Items. Tema navy gelap + putih, font Inter/Segoe UI. Inline CSS + SVG. Tanpa dependensi eksternal. (5) simpan sebagai LEG_Dashboard.html di OneDrive. [UC7-IMPORT-2026-06-06] Tunggu kelulusan saya sebelum menghantar apa-apa secara luaran atau menyiarkan di saluran.'
             }
           ],
           persona: [
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Ratna Sari'
           ],
           personaID: [
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Ratna Sari'
           ],
           notebookMeta: null
         },
@@ -115717,6 +115836,10 @@ window.HUB_DATA = {
             {
               instr: 'Stay in `m365.cloud.microsoft/chat`. Type the next prompt.',
               prompt: 'Generate a 2-page delegation threshold review as a .docx using /LEG_03_Delegation_of_Authority.docx and /LEG_04_Contract_Backlog_Tracker.xlsx as context. Required sections: (1) Current delegation thresholds causing bottlenecks, (2) Proposed temporary expansions with risk assessment, (3) Safeguards and sunset clauses, with one-line commercial rationale per proposed change drawn from the tracker. Apply a clean executive layout and return the document as Delegation_Threshold_Review.docx.'
+            },
+            {
+              instr: 'Stay in `m365.cloud.microsoft/chat`. Type the next prompt.',
+              prompt: 'Create a new agent named "Group Legal Counsel". Description: Internal legal assistant for the Group Corporate Legal Division, grounded on Indonesian regulation and our internal Legal Knowledge Base. Instructions: (1) always answer in Bahasa Indonesia unless asked in English; (2) cite the specific UU, PP, Permen ESDM, POJK, KUHPerdata, or Putusan MA for every legal answer; (3) use IRAC structure (Issue–Rule–Application–Conclusion) for any legal opinion; (4) if the question requires updated regulation outside the knowledge base, say so and recommend escalation to the VP Corporate Legal; (5) never give definitive litigation-strategy advice without flagging that internal counsel review is required. Tone: Professional, precise, formal Indonesian legal register. Knowledge: attach /LEG_08_Legal_Knowledge_Base.docx, /LEG_09_Legal_Memo_Template.docx, /LEG_11_MA_Playbook.docx, /LEG_12_Litigation_Cases.xlsx. Turn "Always cite sources" ON. [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsID: [
@@ -115727,6 +115850,10 @@ window.HUB_DATA = {
             {
               instr: 'Tetap di `m365.cloud.microsoft/chat`. Ketik prompt berikut.',
               prompt: 'Dari Microsoft 365 Copilot Chat, menghasilkan tinjauan ambang delegasi 2 halaman sebagai .docx menggunakan /LEG_03_Delegation_of_Authority.docx dan /LEG_04_Contract_Backlog_Tracker.xlsx. Bagian wajib: (1) ambang delegasi saat ini yang menyebabkan hambatan, (2) perluasan sementara yang diusulkan dengan penilaian risiko, (3) pengamanan dan klausul sunset, dengan rasional komersial satu baris per perubahan yang diusulkan dari tracker. Terapkan tata letak eksekutif dan kembalikan dokumen sebagai Tinjauan_Ambang_Delegasi.docx.'
+            },
+            {
+              instr: 'Tetap di `m365.cloud.microsoft/chat`. Ketik prompt berikut.',
+              prompt: 'Buat agent baru bernama "Group Legal Counsel". Description: Asisten legal internal untuk Divisi Corporate Legal Grup, ter-grounding pada regulasi Indonesia dan Legal Knowledge Base internal. Instructions: (1) selalu jawab dalam Bahasa Indonesia kecuali pertanyaan dalam English; (2) sitasi spesifik UU, PP, Permen ESDM, POJK, KUHPerdata, atau Putusan MA pada setiap jawaban hukum; (3) gunakan struktur IRAC (Issue–Rule–Application–Conclusion) untuk setiap legal opinion; (4) bila pertanyaan butuh regulasi terbaru di luar knowledge base, sebutkan demikian dan rekomendasikan eskalasi ke VP Corporate Legal; (5) jangan pernah berikan saran definitif strategi litigasi tanpa flag bahwa internal counsel review diperlukan. Tone: Profesional, presisi, register hukum Indonesia formal. Knowledge: lampirkan /LEG_08_Legal_Knowledge_Base.docx, /LEG_09_Legal_Memo_Template.docx, /LEG_11_MA_Playbook.docx, /LEG_12_Litigation_Cases.xlsx. Aktifkan "Always cite sources". [UC7-IMPORT-2026-06-06]'
             }
           ],
           promptsBM: [
@@ -115737,15 +115864,21 @@ window.HUB_DATA = {
             {
               instr: 'Kekal di `m365.cloud.microsoft/chat`. Taip prompt seterusnya.',
               prompt: 'Dari Microsoft 365 Copilot Chat, menghasilkan tinjauan ambang delegasi 2 halaman sebagai .docx menggunakan /LEG_03_Delegation_of_Authority.docx dan /LEG_04_Contract_Backlog_Tracker.xlsx. Bahagian wajib: (1) ambang delegasi saat ini yang menyebabkan hambatan, (2) perluasan sementara yang diusulkan dengan penilaian risiko, (3) pengamanan dan klausul sunset, dengan rasional komersial satu baris per perubahan yang diusulkan dari tracker. Terapkan tata letak eksekutif dan kembalikan dokumen sebagai Tinjauan_Ambang_Delegasi.docx.'
+            },
+            {
+              instr: 'Kekal di `m365.cloud.microsoft/chat`. Taip prompt seterusnya.',
+              prompt: 'Buat agent baru bernama "Group Legal Counsel". Description: Asisten legal internal untuk Divisi Corporate Legal Grup, ter-grounding pada regulasi Malaysia dan Legal Knowledge Base internal. Instructions: (1) sentiasa jawab dalam Bahasa Malaysia kecuali pertanyaan dalam English; (2) sitasi spesifik UU, PP, Permen ESDM, POJK, KUHPerdata, atau Putusan MA pada setiap jawaban hukum; (3) gunakan struktur IRAC (Issue–Rule–Application–Conclusion) untuk setiap legal opinion; (4) bila pertanyaan perlu regulasi terkini di luar knowledge base, sebutkan demikian dan rekomendasikan eskalasi ke VP Corporate Legal; (5) jangan pernah berikan saran definitif strategi litigasi tanpa flag bahwa internal counsel review diperlukan. Tone: Profesional, presisi, register hukum Malaysia formal. Knowledge: lampirkan /LEG_08_Legal_Knowledge_Base.docx, /LEG_09_Legal_Memo_Template.docx, /LEG_11_MA_Playbook.docx, /LEG_12_Litigation_Cases.xlsx. Aktifkan "Always cite sources". [UC7-IMPORT-2026-06-06]'
             }
           ],
           persona: [
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Ratna Sari'
           ],
           personaID: [
             'Hadar Caspit',
-            'Hadar Caspit'
+            'Hadar Caspit',
+            'Ratna Sari'
           ],
           notebookMeta: null
         },
