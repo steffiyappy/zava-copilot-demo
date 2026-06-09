@@ -6609,6 +6609,18 @@ const OTHER_PAGES = [
   },
   {
     section: 'Customer Workshops',
+    icon: '🍃',
+    color: '#B91C1C',
+    accent: '#7F1D1D',
+    name: 'Contoso Tobacco & Wellness — Copilot Immersion',
+    desc: 'Multi-brand tobacco manufacturer and health-functional-foods (ginseng) operator in Indonesia. GM-level immersion: 10 exercises across one workday — Daily Briefing, Cowork quarter-close + HTML dashboard, Researcher Critique + Model Council, PPT BCG-style deck, Create infographic, Teams recap → Word minutes, Excel Power Hour, Analyst multi-perspective, personalised mail merge, CV screening from SharePoint.',
+    url: 'https://steffiyappy.github.io/contoso-tobacco-wellness-demo/',
+    password: 'ContosoTW2026',
+    tag: 'CPG Demo',
+    keywords: 'contoso tobacco wellness ginseng KTNG sampoerna gudang garam djarum bentoel wismilak nojorono CHT cukai pita-cukai bea cukai BPOM PP 109 ginseng halal LPPOM-MUI Karawang plant premium brand share outlet coverage mail merge CV screening cowork researcher analyst create infographic'
+  },
+  {
+    section: 'Customer Workshops',
     icon: '🏦',
     color: '#0891B2',
     accent: '#0E7490',

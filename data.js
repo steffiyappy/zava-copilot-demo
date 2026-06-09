@@ -419,6 +419,13 @@ window.HUB_DATA = {
       ]
     },
     {
+      id: 'sec-tobacco-wellness',
+      label: 'Tobacco & Wellness',
+      industries: [
+        'tobacco-wellness'
+      ]
+    },
+    {
       id: 'sec-agri',
       label: 'Agriculture',
       industries: [
@@ -109061,6 +109068,960 @@ window.HUB_DATA = {
           id: 'uc-sp-create-page'
         }
       ]
+    },
+    {
+      id: 'tobacco-wellness',
+      sectorId: 'sec-tobacco-wellness',
+      subsector: '',
+      name: 'Tobacco & Wellness',
+      icon: '🍃',
+      color: '#B91C1C',
+      accent: '#7F1D1D',
+      company: 'Contoso Tobacco & Wellness',
+      tagline: 'Quarterly Country Review in 48 hours — stick volumes by brand, MT/GT coverage, CHT compliance, ginseng-line launch readiness.',
+      scenario: 'Contoso Tobacco & Wellness (CTW) is a multi-brand Indonesian tobacco manufacturer and health-functional-foods operator (Korean Red Ginseng line in launch). The local OpCo runs 1 manufacturing plant at Karawang, six active cigarette brands across Premium/Mid-tier/Mass, and a new ginseng SKU portfolio in BPOM filing for Q4 FY26 launch. Volume YTD ~1.85 billion sticks; Premium Brand Share 6.4% (+0.6pt YoY); Active Outlet Coverage 78% vs 82% target; CHT (excise) compliance 99.4%; Karawang plant yield slipping in 2 lines. The Regional Office Country Review is in 48 hours and the GM needs a defensible briefing pack, FY27 CHT (excise) tariff-step response, brand-by-brand price ladder, distributor communications, and a ginseng-launch readiness review. Real-world reference frame: peers include KTNG Indonesia, HM Sampoerna (PMI), Gudang Garam, Djarum, Bentoel (BAT Indonesia), Wismilak, Nojorono. Regulators in scope: Bea Cukai (Customs/Excise — CHT, pita-cukai), BPOM (food/health products), MoH (PP 109/2012 packaging & advertising), LPPOM-MUI (halal certification for the wellness line).',
+      companyID: 'Contoso Tobacco & Wellness',
+      taglineID: 'Country Review Kantor Regional dalam 48 jam — volume batang per merek, cakupan MT/GT, kepatuhan CHT, kesiapan peluncuran lini ginseng.',
+      scenarioID: 'Contoso Tobacco & Wellness (CTW) adalah produsen rokok multi-merek Indonesia dan operator pangan fungsional kesehatan (lini Korean Red Ginseng dalam peluncuran). OpCo lokal menjalankan 1 pabrik di Karawang, enam merek rokok aktif di Premium/Mid-tier/Mass, dan portofolio SKU ginseng baru dalam filing BPOM untuk peluncuran Q4 FY26. Volume YTD ~1,85 miliar batang; Pangsa Merek Premium 6,4% (+0,6pt YoY); Cakupan Outlet Aktif 78% vs target 82%; kepatuhan CHT 99,4%; yield pabrik Karawang menurun di 2 lini. Country Review Kantor Regional dalam 48 jam dan Direktur Utama membutuhkan paket briefing defensible, respons step tarif CHT FY27, price ladder per merek, komunikasi distributor, dan review kesiapan peluncuran ginseng. Frame referensi dunia nyata: peer termasuk KTNG Indonesia, HM Sampoerna (PMI), Gudang Garam, Djarum, Bentoel (BAT Indonesia), Wismilak, Nojorono. Regulator dalam scope: Bea Pajak (CHT, pita-pajak), BPOM (produk pangan/kesehatan), Kemenkes (kemasan & periklanan PP 109/2012), LPPOM-MUI (sertifikasi halal untuk lini wellness).',
+      files: [
+        '/00_Copilot_Notebook_Demo_Guide.docx',
+        '01 Contoso_Market_Brief.xlsx',
+        '02 Contoso_KPI_Dashboard.xlsx',
+        '03 Contoso_Mail_Merge_Recipients.xlsx',
+        '04 Contoso_Brand_Guidelines.docx',
+        '05 Contoso_Strategic_Memo.docx',
+        '06 Contoso_Merger_Discussion_Transcript.docx',
+        'samples/CVs/ (12 candidate CVs — Trade Marketing & Distribution Manager)'
+      ],
+      prompts: [
+        {
+          tool: '🔍 Researcher',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) 🔍 Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5.5 Thinking and Claude Opus 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations — and now optionally federated connectors (Moody’s, LSEG, HubSpot, Notion, ServiceNow) for real-time external data. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > **Researcher** (Auto = Critique). Paste the prompt below — Researcher draws on inbox, calendar, Teams chats, and recent files to produce a one-screen GM briefing.',
+              prompt: 'Create a daily briefing for the GM Indonesia at Contoso Tobacco & Wellness, from emails, messages, documents and meetings. Use your understanding of brand performance, MT/GT coverage, CHT compliance, and the FY26 ginseng-line launch to decide what is relevant. Sections: (1) short intro paragraph — what a chief of staff would say to greet me; (2) Key updates since yesterday (info that impacts my day); (3) Suggested tasks for today (cross-check none already done); (4) Unread email threads from the past week that likely need my reply — prioritise where I am on To/CC, @mentioned, or where requests/deadlines/leadership/customers are at stake; exclude automated mail; draft replies for the urgent ones; if none, say so; (5) Meeting prep for today as a table — Meeting (time, title, organiser), Topic Overview, Suggested Preparations. Header: \'Daily briefing — <Day, Date>\'. Sub-header: timestamp of generation. Use only explicitly stated facts; no speculation. If a section has no data, state that.'
+            },
+            {
+              instr: 'Stay in the same Researcher Critique session. Paste the prompt below to scan the Indonesia tobacco manufacturing & health-functional-foods landscape.',
+              prompt: 'Research the Tobacco Manufacturing & Health Functional Foods sector in Indonesia. Benchmark these companies: KTNG Indonesia, HM Sampoerna (Philip Morris), Gudang Garam, Djarum, Bentoel (BAT Indonesia), Wismilak, Nojorono. For each one, compare market share, FY25 revenue growth, EBITDA margin, strategic focus, digital maturity, and recent material moves (M&A, capex, new contracts, regulation). Include 2024–2028 market sizing with the three main growth drivers. Cite every source. Flag any section where the evidence is thin.'
+            },
+            {
+              instr: 'Switch the Researcher model picker to **Model Council** (GPT and Claude reason in parallel). Paste the prompt below to stress-test the strategic question.',
+              prompt: 'Model Council — for GM Indonesia at Contoso Tobacco & Wellness: what are the three highest-impact strategic moves we should make in the next 12 months in the Indonesian tobacco manufacturing & health-functional-foods sector, given the peer benchmark above? For each move: rationale, evidence (cited), main risk, and a 90-day starter action. Show me where the models agree, where they disagree, and which one I should trust on each move.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > **Researcher** (Auto = Critique). Tempelkan prompt di bawah — Researcher menarik dari inbox, kalender, chat Teams, dan berkas terbaru untuk menyajikan briefing satu-layar Direktur Utama.',
+              prompt: 'Susun briefing harian untuk Direktur Utama Indonesia di Contoso Tobacco & Wellness, dari email, pesan, dokumen dan rapat. Gunakan pemahaman tentang kinerja merek, cakupan MT/GT, kepatuhan CHT, dan peluncuran lini ginseng FY26 untuk menentukan yang relevan. Bagian: (1) paragraf pembuka singkat — seperti yang akan disampaikan kepala staf di pagi hari; (2) Update penting sejak kemarin (info yang memengaruhi hari saya); (3) Tugas yang disarankan untuk hari ini (cek silang belum ada yang selesai); (4) Thread email belum dibaca minggu lalu yang kemungkinan perlu balasan — prioritaskan saat saya berada di To/CC, @mention, atau ketika ada permintaan/tenggat/pimpinan/pelanggan; kecualikan email otomatis; siapkan draf balasan untuk yang mendesak; jika tidak ada, sebutkan; (5) Persiapan rapat hari ini dalam tabel — Rapat (jam, judul, penyelenggara), Ringkasan Topik, Persiapan yang Disarankan. Header: \'Briefing harian — <Hari, Tanggal>\'. Sub-header: timestamp pembuatan. Gunakan hanya fakta yang dinyatakan eksplisit; tanpa spekulasi. Jika ada bagian tanpa data, sebutkan.'
+            },
+            {
+              instr: 'Tetap di sesi Researcher Critique yang sama. Tempelkan prompt di bawah untuk memindai lanskap manufaktur tembakau & pangan fungsional kesehatan Indonesia.',
+              prompt: 'Teliti sektor Manufaktur Tembakau & Pangan Fungsional Kesehatan di Indonesia. Benchmark perusahaan-perusahaan ini: KTNG Indonesia, HM Sampoerna (Philip Morris), Gudang Garam, Djarum, Bentoel (BAT Indonesia), Wismilak, Nojorono. Untuk masing-masing, bandingkan pangsa pasar, pertumbuhan pendapatan FY25, margin EBITDA, fokus strategis, kematangan digital, dan langkah material terbaru (M&A, capex, kontrak baru, regulasi). Sertakan ukuran pasar 2024–2028 dengan tiga pendorong pertumbuhan utama. Sertakan kutipan setiap sumber. Tandai bagian yang buktinya tipis.'
+            },
+            {
+              instr: 'Ubah pemilih model Researcher menjadi **Model Council** (GPT dan Claude bernalar paralel). Tempelkan prompt di bawah untuk stress-test pertanyaan strategis.',
+              prompt: 'Model Council — untuk Direktur Utama Indonesia di Contoso Tobacco & Wellness: apa tiga langkah strategis berdampak terbesar yang harus kami ambil dalam 12 bulan ke depan di sektor manufaktur tembakau & pangan fungsional kesehatan Indonesia, mengingat benchmark peer di atas? Untuk setiap langkah: alasan, bukti (terkutip), risiko utama, dan tindakan awal 90 hari. Tunjukkan di mana model sepakat, di mana berbeda, dan mana yang harus saya percaya untuk setiap langkah.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > **Researcher** (Auto = Critique). Tampalkan prompt di bawah — Researcher menarik dari inbox, kalender, chat Teams, dan fail terkini untuk menyajikan briefing satu-layar Pengarah Urusan.',
+              prompt: 'Susun briefing harian untuk Pengarah Urusan Malaysia di Contoso Tobacco & Wellness, dari email, pesan, dokumen dan mesyuarat. Gunakan pemahaman tentang kinerja jenama, cakupan MT/GT, kepatuhan CHT, dan peluncuran lini ginseng FY26 untuk menentukan yang relevan. Bahagian: (1) paragraf pembuka singkat — seperti yang akan disampaikan kepala staf di pagi hari; (2) Update penting sejak semalam (info yang memengaruhi hari saya); (3) Tugas yang disarankan untuk hari ini (cek silang belum ada yang siap); (4) Thread email belum dibaca minggu lalu yang kemungkinan perlu balasan — prioritaskan saat saya berada di To/CC, @mention, atau ketika ada permintaan/tenggat/pimpinan/pelanggan; kecualikan email automatik; sediakan draf balasan untuk yang mendesak; jika tidak ada, sebutkan; (5) Persiapan mesyuarat hari ini dalam jadual — Mesyuarat (jam, judul, penganjur), Ringkasan Topik, Persiapan yang Disarankan. Header: \'Briefing harian — <Hari, Tanggal>\'. Sub-header: timestamp pembuatan. Gunakan hanya fakta yang dinyatakan eksplisit; tanpa spekulasi. Jika ada bahagian tanpa data, sebutkan.'
+            },
+            {
+              instr: 'Tetap di sesi Researcher Critique yang sama. Tampalkan prompt di bawah untuk memindai lanskap manufaktur tembakau & pangan fungsional kesehatan Malaysia.',
+              prompt: 'Teliti sektor Manufaktur Tembakau & Pangan Fungsional Kesehatan di Malaysia. Benchmark syarikat-syarikat ini: KTNG Malaysia, HM Sampoerna (Philip Morris), Gudang Garam, Djarum, Bentoel (BAT Malaysia), Wismilak, Nojorono. Untuk masing-masing, bandingkan pangsa pasar, pertumbuhan pendapatan FY25, margin EBITDA, fokus strategis, kematangan digital, dan langkah material terkini (M&A, capex, kontrak baru, regulasi). Sertakan saiz pasar 2024–2028 dengan tiga pendorong pertumbuhan utama. Sertakan kutipan setiap sumber. Tandai bahagian yang buktinya tipis.'
+            },
+            {
+              instr: 'Ubah pemilih model Researcher menjadi **Model Council** (GPT dan Claude bernalar paralel). Tampalkan prompt di bawah untuk stress-test pertanyaan strategis.',
+              prompt: 'Model Council — untuk Pengarah Urusan Malaysia di Contoso Tobacco & Wellness: apa tiga langkah strategis berdampak terbesar yang perlu kami ambil dalam 12 bulan ke depan di sektor manufaktur tembakau & pangan fungsional kesehatan Malaysia, mengingat benchmark peer di atas? Untuk setiap langkah: alasan, bukti (terkutip), risiko utama, dan tindakan awal 90 hari. Tunjukkan di mana model sepakat, di mana berbeza, dan mana yang perlu saya percaya untuk setiap langkah.'
+            }
+          ],
+          persona: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          personaID: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > **Agents** > **Analyst**. Upload `/02 Contoso_KPI_Dashboard.xlsx`. Paste the GM-lens prompt.',
+              prompt: 'You are a data analyst for the GM Indonesia at Contoso Tobacco & Wellness. Based on the Monthly_KPIs sheet, model this scenario: what would full-year performance look like if the bottom-quartile locations on each KPI rose to the median in Q4? Show the end-of-year position vs FY26 target for each KPI (Stick Volume — All Brands M sticks, Premium Brand Share %, Active Outlet Coverage %, Plant Yield % at Karawang), before and after the uplift. Then identify the 3 highest-impact actions — where the smallest move lifts the group most.'
+            },
+            {
+              instr: 'Same workbook. Paste the CFO financial-risk prompt.',
+              prompt: 'Same workbook. Now act as a CFO analyst. Run a correlation analysis across all KPIs over the 12 months. Which KPIs move together? Which KPIs lead vs lag? Identify the single early-warning KPI we should be tracking weekly. Then build a simple 3-month forecast for the top 2 financial KPIs, with a confidence band, and highlight the months where we are likely to breach the FY26 budget envelope.'
+            },
+            {
+              instr: 'Same workbook. Paste the COO operations prompt.',
+              prompt: 'Same workbook. Now act as a COO analyst. For each location, compute a simple operational health score combining the KPIs into one number (0–100). Cluster locations into three groups: thriving, stable, at-risk. For each at-risk location, identify the two KPIs dragging the score down most. Recommend the single operational intervention with the highest expected score uplift, and the cost band (low/medium/high) to implement it.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > **Agents** > **Analyst**. Unggah `/02 Contoso_KPI_Dashboard.xlsx`. Tempelkan prompt sudut pandang Direktur Utama.',
+              prompt: 'Anda adalah data analyst untuk Direktur Utama Indonesia di Contoso Tobacco & Wellness. Berdasarkan sheet Monthly_KPIs, modelkan skenario ini: bagaimana kinerja setahun penuh jika lokasi kuartil terbawah pada tiap KPI naik ke median di Q4? Tunjukkan posisi akhir tahun vs target FY26 untuk tiap KPI (Volume Batang — Semua Merek M batang, Pangsa Merek Premium %, Cakupan Outlet Aktif %, Yield Pabrik % Karawang), sebelum dan sesudah uplift. Lalu identifikasi 3 tindakan paling berdampak — di mana langkah terkecil mengangkat grup paling banyak.'
+            },
+            {
+              instr: 'Workbook yang sama. Tempelkan prompt sudut pandang Direktur Keuangan.',
+              prompt: 'Workbook yang sama. Sekarang bertindak sebagai analis Direktur Keuangan. Jalankan analisis korelasi lintas semua KPI selama 12 bulan. KPI mana yang bergerak bersama? KPI mana yang menjadi indikator awal vs tertinggal? Identifikasi satu KPI peringatan dini yang harus dipantau mingguan. Lalu bangun perkiraan 3 bulan sederhana untuk 2 KPI keuangan teratas, dengan rentang keyakinan, dan tandai bulan-bulan yang kemungkinan menembus amplop anggaran FY26.'
+            },
+            {
+              instr: 'Workbook yang sama. Tempelkan prompt sudut pandang Direktur Operasional.',
+              prompt: 'Workbook yang sama. Sekarang bertindak sebagai analis Direktur Operasional. Untuk tiap lokasi, hitung skor kesehatan operasional sederhana yang menggabungkan KPI menjadi satu angka (0–100). Kelompokkan lokasi menjadi tiga grup: thriving, stable, at-risk. Untuk setiap lokasi at-risk, identifikasi dua KPI yang paling menarik skor turun. Rekomendasikan satu intervensi operasional dengan uplift skor terbesar yang diharapkan, dan rentang biaya (rendah/sedang/tinggi) untuk implementasi.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > **Agents** > **Analyst**. Muat naik `/02 Contoso_KPI_Dashboard.xlsx`. Tampalkan prompt sudut pandang Pengarah Urusan.',
+              prompt: 'Anda adalah data analyst untuk Pengarah Urusan Malaysia di Contoso Tobacco & Wellness. Berdasarkan sheet Monthly_KPIs, modelkan skenario ini: bagaimana kinerja setahun penuh jika lokasi kuartil terbawah pada tiap KPI naik ke median di Q4? Tunjukkan kedudukan akhir tahun vs target FY26 untuk tiap KPI (Volume Batang — Semua Jenama M batang, Pangsa Jenama Premium %, Cakupan Outlet Aktif %, Yield Pabrik % Karawang), sebelum dan sesudah uplift. Lalu identifikasi 3 tindakan paling berdampak — di mana langkah terkecil mengangkat grup paling banyak.'
+            },
+            {
+              instr: 'Workbook yang sama. Tampalkan prompt sudut pandang Pengarah Kewangan.',
+              prompt: 'Workbook yang sama. Sekarang bertindak sebagai analis Pengarah Kewangan. Jalankan analisis korelasi lintas semua KPI selama 12 bulan. KPI mana yang bergerak bersama? KPI mana yang menjadi indikator awal vs tertinggal? Identifikasi satu KPI peringatan dini yang perlu dipantau mingguan. Lalu bangun perkiraan 3 bulan sederhana untuk 2 KPI kewangan teratas, dengan rentang keyakinan, dan tandai bulan-bulan yang kemungkinan menembus amplop belanjawan FY26.'
+            },
+            {
+              instr: 'Workbook yang sama. Tampalkan prompt sudut pandang Pengarah Operasional.',
+              prompt: 'Workbook yang sama. Sekarang bertindak sebagai analis Pengarah Operasional. Untuk tiap lokasi, kira skor kesehatan operasional sederhana yang menggabungkan KPI menjadi satu angka (0–100). Kelompokkan lokasi menjadi tiga grup: thriving, stable, at-risk. Untuk setiap lokasi at-risk, identifikasi dua KPI yang paling menarik skor turun. Rekomendasikan satu intervensi operasional dengan uplift skor terbesar yang diharapkan, dan rentang kos (rendah/sedang/tinggi) untuk implementasi.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Excel for the Web. Open a workbook > Copilot pane on the right. Three demo angles: (1) inline "Edit with Copilot" agent mode that performs multi-step actions across the workbook — add columns, build pivot tables, dashboards, conditional formatting; (2) 📈 Plan mode (May 2026) — Copilot outlines a step-by-step approach BEFORE making any changes so users can review and adjust before edits land; (3) 🐍 Python in Excel — invoke Python directly in the prompt for advanced analysis (forecasting, regressions, custom visualisations) without leaving the workbook. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `/02 Contoso_KPI_Dashboard.xlsx` in Excel for the Web. Open the **Copilot pane**. On the `Monthly_KPIs` tab, paste the Chat-mode prompt.',
+              prompt: 'Analyse the Monthly_KPIs tab. For each KPI (Stick Volume — All Brands M sticks, Premium Brand Share %, Active Outlet Coverage %, Plant Yield % Karawang): identify the best and worst locations; detect any sustained declining trend (2+ months); flag the one-month outliers worth a phone call. Then compare against Targets_vs_Actual. Which KPI has the biggest gap to FY26 target, and which location is dragging it down the most? Show the result as a 2-line executive summary, then a RAG status table by location.'
+            },
+            {
+              instr: 'Switch the Copilot pane to **Edit** mode. Highlight the Status column on the `Targets_vs_Actual` tab. Paste the prompt below.',
+              prompt: 'In this column, replace the emoji status with a one-word plain-text status (Green / Amber / Red) and apply conditional formatting with the matching colour. Do not change any other cells. Show me the diff first, before applying.'
+            },
+            {
+              instr: 'Switch the Copilot pane to **Plan** mode. Paste the prompt below — Copilot proposes a multi-step plan that you approve before any cell changes.',
+              prompt: 'Plan: in a new sheet called \'Exec_View\', build a pivot summary — one row per location, one column per KPI — showing the FY26 H2 average. Add a \'Trend\' column showing up/flat/down vs FY26 H1 average. Highlight the worst quartile per KPI in red. Add a 2-sentence executive read-out at the very top. Show me the plan first. I will approve. Then execute.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/02 Contoso_KPI_Dashboard.xlsx` di Excel for the Web. Buka **panel Copilot**. Pada tab `Monthly_KPIs`, tempelkan prompt mode Chat.',
+              prompt: 'Analisis tab Monthly_KPIs. Untuk tiap KPI (Volume Batang — Semua Merek M batang, Pangsa Merek Premium %, Cakupan Outlet Aktif %, Yield Pabrik % Karawang): identifikasi lokasi terbaik dan terburuk; deteksi tren penurunan berkelanjutan (2+ bulan); tandai outlier satu-bulan yang layak ditelepon. Lalu bandingkan dengan Targets_vs_Actual. KPI mana yang gap-nya terbesar ke target FY26, dan lokasi mana yang paling menariknya turun? Sajikan hasil sebagai ringkasan eksekutif 2 baris, lalu tabel status RAG per lokasi.'
+            },
+            {
+              instr: 'Ubah panel Copilot ke mode **Edit**. Sorot kolom Status pada tab `Targets_vs_Actual`. Tempelkan prompt di bawah.',
+              prompt: 'Di kolom ini, ganti status emoji dengan status teks satu kata (Hijau / Kuning / Merah) dan terapkan conditional formatting dengan warna yang cocok. Jangan ubah sel lain. Tunjukkan diff dulu, sebelum diterapkan.'
+            },
+            {
+              instr: 'Ubah panel Copilot ke mode **Plan**. Tempelkan prompt di bawah — Copilot mengusulkan rencana multi-langkah yang Anda setujui sebelum perubahan sel apa pun.',
+              prompt: 'Plan: di sheet baru bernama \'Exec_View\', bangun ringkasan pivot — satu baris per lokasi, satu kolom per KPI — menunjukkan rata-rata H2 FY26. Tambahkan kolom \'Tren\' menunjukkan naik/datar/turun vs rata-rata H1 FY26. Sorot kuartil terburuk per KPI dengan merah. Tambahkan baca-singkat eksekutif 2 kalimat di paling atas. Tunjukkan rencananya dulu. Saya akan menyetujui. Lalu eksekusi.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `/02 Contoso_KPI_Dashboard.xlsx` di Excel for the Web. Buka **panel Copilot**. Pada tab `Monthly_KPIs`, tampalkan prompt mode Chat.',
+              prompt: 'Analisis tab Monthly_KPIs. Untuk tiap KPI (Volume Batang — Semua Jenama M batang, Pangsa Jenama Premium %, Cakupan Outlet Aktif %, Yield Pabrik % Karawang): identifikasi lokasi terbaik dan terburuk; deteksi tren penurunan berkelanjutan (2+ bulan); tandai outlier satu-bulan yang layak ditelepon. Lalu bandingkan dengan Targets_vs_Actual. KPI mana yang gap-nya terbesar ke target FY26, dan lokasi mana yang paling menariknya turun? Sajikan hasil sebagai ringkasan eksekutif 2 baris, lalu jadual status RAG per lokasi.'
+            },
+            {
+              instr: 'Ubah panel Copilot ke mode **Edit**. Sorot lajur Status pada tab `Targets_vs_Actual`. Tampalkan prompt di bawah.',
+              prompt: 'Di lajur ini, ganti status emoji dengan status teks satu kata (Hijau / Kuning / Merah) dan terapkan conditional formatting dengan warna yang cocok. Jangan ubah sel lain. Tunjukkan diff dulu, sebelum diterapkan.'
+            },
+            {
+              instr: 'Ubah panel Copilot ke mode **Plan**. Tampalkan prompt di bawah — Copilot mengusulkan rencana multi-langkah yang Anda setujui sebelum perubahan sel apa pun.',
+              prompt: 'Plan: di sheet baru bernama \'Exec_View\', bangun ringkasan pivot — satu baris per lokasi, satu lajur per KPI — menunjukkan rata-rata H2 FY26. Tambahkan lajur \'Tren\' menunjukkan naik/datar/turun vs rata-rata H1 FY26. Sorot kuartil terburuk per KPI dengan merah. Tambahkan baca-singkat eksekutif 2 kalimat di paling atas. Tunjukkan rencananya dulu. Saya akan meluluskan. Lalu eksekusi.'
+            }
+          ],
+          persona: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          personaID: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Three demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files; (3) 🧠 model picker — switch between GPT and Claude for the same editing workflow when teams prefer specific model behaviours. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'In the Researcher market-intel report, click **Export** > **Convert to Word**. Open from OneDrive. In the Word Copilot pane, paste the prompt below.',
+              prompt: 'Based on the content of this document, draft a 1-page brief for the GM Indonesia at Contoso Tobacco & Wellness. Structure: (1) Market headline — 2 sentences, 1 number; (2) 3 competitor moves we must track; (3) 3 implications for Contoso Tobacco & Wellness in the next 90 days; (4) 1 question to put to the Executive Committee. Tone: direct, board-ready, no jargon. Max 350 words. Use [PLACEHOLDER] for anything not confirmed in the research. End with assumptions made and one open question.'
+            },
+            {
+              instr: 'Open a blank Word doc. Click the Copilot icon > **Draft with Copilot**. Paste the prompt below to create the corporate minutes template.',
+              prompt: 'Create a professional, reusable meeting-minutes template for Contoso Tobacco & Wellness. The template should be clean, executive-ready, and easy to fill in after any internal meeting. Include: (1) Header block — Meeting title, Date & time, Location / Teams link, Meeting owner, Minute-taker; (2) Attendees (table: Name, Role, Present / Apologies); (3) Agenda items discussed (numbered list); (4) Key decisions taken (table: Decision, Decision owner, Effective date); (5) Action items (table: Action, Owner, Due date, Status); (6) Open questions / parked items (bullet list); (7) Risks & escalations raised (bullet list); (8) Next meeting (date, focus topics); (9) Distribution list. Use Contoso Tobacco & Wellness brand tone — direct, professional, no jargon. Add a 1-line footer: \'Confidential — internal use only.\' Format it so it looks like a proper corporate template, not a chat reply.'
+            },
+            {
+              instr: 'Stay in the same Word doc. Reference the merger transcript with /, then paste the auto-fill prompt below.',
+              prompt: 'Using the meeting-minutes template above, fill it in completely using the content of /06 Contoso_Merger_Discussion_Transcript.docx (or the Teams recap just generated for the Potential Merger meeting). Rules: use only facts explicitly stated in the source — no speculation, no invented attendees, no invented decisions; for every action item, name the owner and the due date exactly as agreed; if not stated, write [VERIFY] in that field; keep the executive tone — short, factual, neutral; at the very top, add a 3-line executive summary above the template; flag any sensitive merger-related items as \'CONFIDENTIAL — restricted distribution\' in red at the section header.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Pada laporan riset pasar Researcher, klik **Export** > **Convert to Word**. Buka dari OneDrive. Di panel Copilot Word, tempelkan prompt di bawah.',
+              prompt: 'Berdasarkan isi dokumen ini, susun ringkasan 1 halaman untuk Direktur Utama Indonesia di Contoso Tobacco & Wellness. Struktur: (1) Headline pasar — 2 kalimat, 1 angka; (2) 3 langkah kompetitor yang harus dilacak; (3) 3 implikasi untuk Contoso Tobacco & Wellness dalam 90 hari ke depan; (4) 1 pertanyaan yang akan diajukan ke Komite Eksekutif. Nada: lugas, siap-direksi, tanpa jargon. Maksimum 350 kata. Gunakan [PLACEHOLDER] untuk apa pun yang belum dikonfirmasi dalam riset. Akhiri dengan asumsi yang dibuat dan satu pertanyaan terbuka.'
+            },
+            {
+              instr: 'Buka dokumen Word kosong. Klik ikon Copilot > **Draft with Copilot**. Tempelkan prompt di bawah untuk membuat template notulensi korporat.',
+              prompt: 'Buat template notulensi rapat profesional yang dapat dipakai ulang untuk Contoso Tobacco & Wellness. Template harus bersih, siap-eksekutif, dan mudah diisi setelah rapat internal mana pun. Sertakan: (1) Blok header — Judul Rapat, Tanggal & jam, Lokasi / tautan Teams, Pemilik rapat, Pencatat notulen; (2) Peserta (tabel: Nama, Peran, Hadir / Berhalangan); (3) Agenda yang dibahas (daftar bernomor); (4) Keputusan utama yang diambil (tabel: Keputusan, Pemilik keputusan, Tanggal berlaku); (5) Action items (tabel: Aksi, Pemilik, Tenggat, Status); (6) Pertanyaan terbuka / item ditahan (daftar bullet); (7) Risiko & eskalasi yang muncul (daftar bullet); (8) Rapat berikutnya (tanggal, topik fokus); (9) Daftar distribusi. Gunakan nada merek Contoso Tobacco & Wellness — lugas, profesional, tanpa jargon. Tambahkan footer 1 baris: \'Rahasia — penggunaan internal saja.\' Format agar terlihat sebagai template korporat yang layak, bukan balasan chat.'
+            },
+            {
+              instr: 'Tetap di dokumen Word yang sama. Referensikan transcript merger dengan /, lalu tempelkan prompt auto-fill di bawah.',
+              prompt: 'Menggunakan template notulensi di atas, isi sepenuhnya menggunakan isi /06 Contoso_Merger_Discussion_Transcript.docx (atau recap Teams yang baru dibuat untuk rapat Potential Merger). Aturan: hanya gunakan fakta yang dinyatakan eksplisit di sumber — tanpa spekulasi, tanpa peserta atau keputusan rekaan; untuk setiap action item, sebutkan pemilik dan tenggat persis seperti disepakati; jika tidak dinyatakan, tulis [VERIFIKASI] di field tersebut; pertahankan nada eksekutif — pendek, faktual, netral; di paling atas, tambahkan ringkasan eksekutif 3 baris di atas template; tandai item sensitif terkait merger sebagai \'RAHASIA — distribusi terbatas\' merah pada header bagian.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Pada laporan riset pasar Researcher, klik **Export** > **Convert to Word**. Buka dari OneDrive. Di panel Copilot Word, tampalkan prompt di bawah.',
+              prompt: 'Berdasarkan isi dokumen ini, susun ringkasan 1 halaman untuk Pengarah Urusan Malaysia di Contoso Tobacco & Wellness. Struktur: (1) Headline pasar — 2 kalimat, 1 angka; (2) 3 langkah kompetitor yang perlu dilacak; (3) 3 implikasi untuk Contoso Tobacco & Wellness dalam 90 hari ke depan; (4) 1 pertanyaan yang akan diajukan ke Komite Eksekutif. Nada: lugas, siap-lembaga pengarah, tanpa jargon. Maksimum 350 kata. Gunakan [PLACEHOLDER] untuk apa pun yang belum dikonfirmasi dalam riset. Akhiri dengan asumsi yang dibuat dan satu pertanyaan terbuka.'
+            },
+            {
+              instr: 'Buka dokumen Word kosong. Klik ikon Copilot > **Draft with Copilot**. Tampalkan prompt di bawah untuk membuat template notulensi korporat.',
+              prompt: 'Buat template notulensi mesyuarat profesional yang dapat dipakai ulang untuk Contoso Tobacco & Wellness. Template perlu bersih, siap-eksekutif, dan mudah diisi setelah mesyuarat internal mana pun. Sertakan: (1) Blok header — Judul Mesyuarat, Tanggal & jam, Lokasi / tautan Teams, Pemilik mesyuarat, Pencatat notulen; (2) Peserta (jadual: Nama, Peran, Hadir / Berhalangan); (3) Agenda yang dibahas (daftar bernomor); (4) Keputusan utama yang diambil (jadual: Keputusan, Pemilik keputusan, Tanggal berlaku); (5) Action items (jadual: Aksi, Pemilik, Tenggat, Status); (6) Pertanyaan terbuka / item ditahan (daftar bullet); (7) Risiko & eskalasi yang muncul (daftar bullet); (8) Mesyuarat berikutnya (tanggal, topik fokus); (9) Daftar distribusi. Gunakan nada jenama Contoso Tobacco & Wellness — lugas, profesional, tanpa jargon. Tambahkan footer 1 baris: \'Rahasia — penggunaan internal sahaja.\' Format agar terlihat sebagai template korporat yang layak, bukan balasan chat.'
+            },
+            {
+              instr: 'Tetap di dokumen Word yang sama. Referensikan transcript merger dengan /, lalu tampalkan prompt auto-fill di bawah.',
+              prompt: 'Menggunakan template notulensi di atas, isi sepenuhnya menggunakan isi /06 Contoso_Merger_Discussion_Transcript.docx (atau recap Teams yang baru dibuat untuk mesyuarat Potential Merger). Aturan: hanya gunakan fakta yang dinyatakan eksplisit di sumber — tanpa spekulasi, tanpa peserta atau keputusan rekaan; untuk setiap action item, sebutkan pemilik dan tenggat persis seperti disepakati; jika tidak dinyatakan, tulis [VERIFIKASI] di field tersebut; pertahankan nada eksekutif — pendek, faktual, netral; di paling atas, tambahkan ringkasan eksekutif 3 baris di atas template; tandai item sensitif terkait merger sebagai \'RAHASIA — distribusi terbatas\' merah pada header bahagian.'
+            }
+          ],
+          persona: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          personaID: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Three demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files; (3) 🌐 public web grounding (April 2026) — add a webpage URL as a reference and Copilot pulls in current external context; 🎨 image model picker — choose GPT-Image, Flux, or Auto when generating or editing visuals. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a blank PowerPoint (start from your corporate template .potx if you have one). Open the Copilot pane. Type / to reference both source files. Paste the 8-slide brief.',
+              prompt: 'Create an 8-slide FY26 Indonesia Country Strategy — Brand, Channel, Excise & Ginseng Launch deck for Contoso Tobacco & Wellness. Audience: GM Indonesia and the Operating Committee. Ground every slide on /05 Contoso_Strategic_Memo.docx and the KPI tables in /02 Contoso_KPI_Dashboard.xlsx. Use the corporate template that is currently applied — do not change fonts, colours, or master layouts. Apply the strict \'one message per slide\' consulting style: (a) every slide title is an ACTION TITLE — a full sentence that IS the conclusion; (b) the body proves the title with exactly 3 supporting bullets OR one small evidence table — nothing else; (c) every slide has a source caption in 8pt grey at the bottom referencing the file and tab/page used; (d) max 30 words of body per slide, no decorative imagery. Slide structure: 1 Title — Contoso T&W · FY26 Indonesia Country Strategy · date; 2 Executive snapshot — single headline + 3-number callout + RAG; 3 Where we stand today — KPI scoreboard; 4 What is changing — top 3 market forces; 5 Our three FY26 H2 priorities — one priority per bullet, named owner; 6 Where we invest first — 90-day moves with cost & expected benefit; 7 Risks & mitigations — table risk, owner, status; 8 The ask — 1-page decision summary for the Operating Committee. Use [PLACEHOLDER] for any number not in the source files.'
+            },
+            {
+              instr: 'Run a self-critique pass on the deck. Paste the prompt below.',
+              prompt: 'Act as a McKinsey engagement manager reviewing this deck against consulting best practice. For each slide: (1) score the action title 1–5 — if less than 5, rewrite it so it IS the conclusion (full sentence); (2) check that the body proves the title — flag any slide where title and body don\'t match; (3) check the \'so-what\' — if the slide doesn\'t change a decision, mark it for deletion. Return a 1-page review note: slide-by-slide table, plus the single slide to cut, plus the single missing slide we should add. Then apply all the edits.'
+            },
+            {
+              instr: 'Open any deck recently sent to the GM. In the Copilot pane, paste the prompt below.',
+              prompt: 'Summarise this presentation in 5 bullets. What is the single decision being asked of the audience? What are the 3 numbers I must remember? List the action items with owners and dates. Then list the top 3 questions the GM Indonesia should ask in the room.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka PowerPoint kosong (mulai dari template korporat .potx jika ada). Buka panel Copilot. Ketik / untuk mereferensikan kedua berkas sumber. Tempelkan brief 8-slide.',
+              prompt: 'Buat deck 8-slide Strategi Negara Indonesia FY26 — Merek, Channel, Pajak & Peluncuran Ginseng untuk Contoso Tobacco & Wellness. Audiens: Direktur Utama Indonesia dan Komite Operasi. Grounding setiap slide pada /05 Contoso_Strategic_Memo.docx dan tabel KPI di /02 Contoso_KPI_Dashboard.xlsx. Gunakan template korporat yang aktif — jangan mengubah font, warna, atau master layout. Terapkan gaya konsultasi \'satu pesan per slide\' yang ketat: (a) setiap judul slide adalah ACTION TITLE — satu kalimat penuh yang ADALAH kesimpulan; (b) body membuktikan judul dengan tepat 3 bullet pendukung ATAU satu tabel bukti kecil — tidak ada yang lain; (c) setiap slide memiliki caption sumber 8pt abu-abu di bawah merujuk berkas dan tab/halaman yang digunakan; (d) maks 30 kata body per slide, tanpa imageri dekoratif. Struktur slide: 1 Judul — Contoso T&W · Strategi Negara Indonesia FY26 · tanggal; 2 Snapshot eksekutif — satu headline + callout 3 angka + RAG; 3 Posisi saat ini — scoreboard KPI; 4 Apa yang berubah — 3 kekuatan pasar utama; 5 Tiga prioritas H2 FY26 — satu prioritas per bullet, pemilik bernama; 6 Di mana investasi pertama — langkah 90 hari dengan biaya & manfaat yang diharapkan; 7 Risiko & mitigasi — tabel risiko, pemilik, status; 8 The ask — ringkasan keputusan 1 halaman untuk Komite Operasi. Gunakan [PLACEHOLDER] untuk angka apa pun yang tidak ada di berkas sumber.'
+            },
+            {
+              instr: 'Jalankan pass kritik-diri pada deck. Tempelkan prompt di bawah.',
+              prompt: 'Bertindak sebagai engagement manager McKinsey yang meninjau deck ini terhadap praktik terbaik konsultansi. Untuk setiap slide: (1) skor action title 1–5 — jika kurang dari 5, tulis ulang agar IA-NYA kesimpulan (kalimat penuh); (2) cek bahwa body membuktikan judul — tandai slide mana pun di mana judul dan body tidak cocok; (3) cek \'so-what\' — jika slide tidak mengubah keputusan, tandai untuk dihapus. Kembalikan catatan tinjauan 1 halaman: tabel per-slide, ditambah satu slide untuk dipotong, ditambah satu slide hilang yang harus ditambahkan. Lalu terapkan semua edit.'
+            },
+            {
+              instr: 'Buka deck mana pun yang baru dikirim ke Direktur Utama. Di panel Copilot, tempelkan prompt di bawah.',
+              prompt: 'Ringkas presentasi ini dalam 5 bullet. Apa satu keputusan yang diminta dari audiens? Apa 3 angka yang harus saya ingat? Daftarkan action items dengan pemilik dan tanggal. Lalu daftarkan 3 pertanyaan teratas yang harus diajukan Direktur Utama Indonesia di ruangan.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka PowerPoint kosong (mulai dari template korporat .potx jika ada). Buka panel Copilot. Taip / untuk mereferensikan kedua fail sumber. Tampalkan brief 8-slide.',
+              prompt: 'Buat deck 8-slide Strategi Negara Malaysia FY26 — Jenama, Channel, Cukai & Peluncuran Ginseng untuk Contoso Tobacco & Wellness. Audiens: Pengarah Urusan Malaysia dan Komite Operasi. Grounding setiap slide pada /05 Contoso_Strategic_Memo.docx dan jadual KPI di /02 Contoso_KPI_Dashboard.xlsx. Gunakan template korporat yang aktif — jangan mengubah font, warna, atau master layout. Terapkan gaya konsultasi \'satu pesan per slide\' yang ketat: (a) setiap judul slide adalah ACTION TITLE — satu kalimat penuh yang ADALAH kesimpulan; (b) body membuktikan judul dengan tepat 3 bullet penyokong ATAU satu jadual bukti kecil — tidak ada yang lain; (c) setiap slide memiliki caption sumber 8pt abu-abu di bawah merujuk fail dan tab/halaman yang digunakan; (d) maks 30 kata body per slide, tanpa imageri dekoratif. Struktur slide: 1 Judul — Contoso T&W · Strategi Negara Malaysia FY26 · tanggal; 2 Snapshot eksekutif — satu headline + callout 3 angka + RAG; 3 Kedudukan saat ini — scoreboard KPI; 4 Apa yang berubah — 3 kekuatan pasar utama; 5 Tiga prioritas H2 FY26 — satu prioritas per bullet, pemilik bernama; 6 Di mana investasi pertama — langkah 90 hari dengan kos & faedah yang diharapkan; 7 Risiko & mitigasi — jadual risiko, pemilik, status; 8 The ask — ringkasan keputusan 1 halaman untuk Komite Operasi. Gunakan [PLACEHOLDER] untuk angka apa pun yang tidak ada di fail sumber.'
+            },
+            {
+              instr: 'Jalankan pass kritik-diri pada deck. Tampalkan prompt di bawah.',
+              prompt: 'Bertindak sebagai engagement manager McKinsey yang meninjau deck ini terhadap praktik terbaik konsultansi. Untuk setiap slide: (1) skor action title 1–5 — jika kurang dari 5, tulis ulang agar IA-NYA kesimpulan (kalimat penuh); (2) cek bahwa body membuktikan judul — tandai slide mana pun di mana judul dan body tidak cocok; (3) cek \'so-what\' — jika slide tidak mengubah keputusan, tandai untuk dihapus. Kembalikan catatan tinjauan 1 halaman: jadual per-slide, ditambah satu slide untuk dipotong, ditambah satu slide hilang yang perlu ditambahkan. Lalu terapkan semua edit.'
+            },
+            {
+              instr: 'Buka deck mana pun yang baru dihantar ke Pengarah Urusan. Di panel Copilot, tampalkan prompt di bawah.',
+              prompt: 'Ringkas presentasi ini dalam 5 bullet. Apa satu keputusan yang diminta dari audiens? Apa 3 angka yang perlu saya ingat? Daftarkan action items dengan pemilik dan tanggal. Lalu daftarkan 3 pertanyaan teratas yang perlu diajukan Pengarah Urusan Malaysia di ruangan.'
+            }
+          ],
+          persona: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          personaID: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'For this demo we use Copilot grounded in the Teams Recap on the demo tenant for one of four meetings: "New Software Implementation", "Potential Merger", "Negotiating Marketing Contract", or "Marketing Campaign Performance Review". Workflow: Open the meeting in your Teams calendar > the Recap page opens with AI Notes, chapters, transcript and action items > click the Copilot icon in the top right of the Recap page > Copilot opens grounded in the meeting transcript > type your minutes prompt > copy the structured output into a new Word document (or open Microsoft 365 Copilot Chat with a /transcript reference and ask Copilot to produce a .docx). Note: Teams Recap has no Export to Word button — the workflow is Copilot pane > copy/paste OR Microsoft 365 Copilot Chat. New for this demo cycle (April-May 2026): 📞 Copilot Call Delegation — Copilot can answer incoming Teams calls on the user’s behalf, gather context from callers, and book follow-up appointments via Microsoft Bookings; 🗣️ Consecutive Interpretation — turn-based translation between two languages with Interpreter on the meeting stage, ideal for ASEAN cross-border meetings. Requires Microsoft 365 Copilot license + Teams Premium for full Recap features.',
+          prompts: [
+            {
+              instr: 'Open Teams > Calendar > pick the past Potential Merger meeting (or use /06 Contoso_Merger_Discussion_Transcript.docx). Click the Recap tab. In the Copilot box at the top of the recap, paste the prompt below.',
+              prompt: 'Recap this Potential Merger meeting for the GM Indonesia who could not stay for the whole session. Produce: (1) a 5-bullet executive summary of what was discussed; (2) the 3 decisions taken and who took them; (3) the 5 open action items with owner and due date; (4) the 3 topics that took the most time and why; (5) anyone who pushed back strongly and on what; (6) anything that was committed directly to me; (7) the 3 key unanswered questions we still need to resolve before the next meeting. Tone: factual, neutral, no speculation.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Teams > Kalender > pilih rapat Potential Merger yang lalu (atau gunakan /06 Contoso_Merger_Discussion_Transcript.docx). Klik tab Recap. Di kotak Copilot di atas recap, tempelkan prompt di bawah.',
+              prompt: 'Recap rapat Potential Merger ini untuk Direktur Utama Indonesia yang tidak dapat hadir penuh. Hasilkan: (1) ringkasan eksekutif 5 bullet tentang yang dibahas; (2) 3 keputusan yang diambil dan siapa yang mengambilnya; (3) 5 action items terbuka dengan pemilik dan tenggat; (4) 3 topik yang paling memakan waktu dan mengapa; (5) siapa yang menyangkal dengan kuat dan tentang apa; (6) apa pun yang dijanjikan langsung kepada saya; (7) 3 pertanyaan kunci yang belum terjawab yang masih perlu diselesaikan sebelum rapat berikutnya. Nada: faktual, netral, tanpa spekulasi.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka Teams > Kalender > pilih mesyuarat Potential Merger yang lalu (atau gunakan /06 Contoso_Merger_Discussion_Transcript.docx). Klik tab Recap. Di kotak Copilot di atas recap, tampalkan prompt di bawah.',
+              prompt: 'Recap mesyuarat Potential Merger ini untuk Pengarah Urusan Malaysia yang tidak dapat hadir penuh. Hasilkan: (1) ringkasan eksekutif 5 bullet tentang yang dibahas; (2) 3 keputusan yang diambil dan siapa yang mengambilnya; (3) 5 action items terbuka dengan pemilik dan tenggat; (4) 3 topik yang paling memakan masa dan mengapa; (5) siapa yang menyangkal dengan kuat dan tentang apa; (6) apa pun yang dijanjikan langsung kepada saya; (7) 3 pertanyaan kunci yang belum terjawab yang masih perlu disiapkan sebelum mesyuarat berikutnya. Nada: faktual, netral, tanpa spekulasi.'
+            }
+          ],
+          persona: [
+            'Pak Hendra Susanto'
+          ],
+          personaID: [
+            'Pak Hendra Susanto'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > **Create** in the left sidebar (or type /create). Paste the prompt below.',
+              prompt: 'Make a clean, premium one-page infographic poster called \'Indonesia Country Snapshot — Brand, Channel & Compliance, Q3 FY26\'. Use our brand colours deep red and warm amber/gold on white, with small dark-grey for headings — a serious, regulator-friendly look (no playful illustrations of cigarettes; we are deliberately understated). Vertical, fits one A4 page, fill the entire page top to bottom. At the top, a big bold title \'INDONESIA COUNTRY SNAPSHOT — Q3 FY26\', sub-line \'Brand · Channel · Compliance · Ginseng readiness · For the Regional Office Country Review\'. Row of 4 big-number boxes: \'1.85 billion sticks\' Volume YTD all brands; \'6.4%\' Premium Brand Share (+0.6 pt YoY); \'78%\' Active Outlet Coverage (target 82%); \'99.4%\' CHT (Excise) Compliance Score. Section \'THE THREE COUNTRY PRIORITIES\' with 3 cards side by side — Defend the premium tier; Close the coverage gap; Launch the ginseng line — each with 3-4 bullets. Small table \'Tier Compare\' with rows Volume YoY, Share %, Average Price/pack, Distribution %, Recommended Action and columns Premium, Mid-tier, Mass-market, using coloured indicators (green/amber/red). Row of 3 icons with labels for \'Top regulatory & market risks\': FY27 CHT step-up, PP 109/2012 packaging rules, plain-packaging discussion at MoH. Deep-red ribbon footer \'RECOMMENDATION: hold premium share, close the coverage gap, ship the ginseng line by Q4 — Country GM reviews weekly\' with today\'s date on the right. Clean modern sans-serif, thin outline icons only, no clip-art, no images of products or people. Important: every section sized to fill the full A4 page, no large empty area at the bottom.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > **Create** di sidebar kiri (atau ketik /create). Tempelkan prompt di bawah.',
+              prompt: 'Buat poster infografis satu-halaman premium yang bersih berjudul \'Snapshot Negara Indonesia — Merek, Channel & Kepatuhan, Q3 FY26\'. Gunakan warna merek merah tua dan amber/emas hangat di atas putih, dengan abu-abu tua kecil untuk heading — tampilan serius, ramah regulator (tanpa ilustrasi rokok yang playful; kami sengaja understated). Vertikal, muat satu halaman A4, isi seluruh halaman dari atas ke bawah. Di atas, judul tebal besar \'SNAPSHOT NEGARA INDONESIA — Q3 FY26\', sub-baris \'Merek · Channel · Kepatuhan · Kesiapan Ginseng · Untuk Country Review Kantor Regional\'. Baris 4 kotak angka besar: \'1,85 miliar batang\' Volume YTD semua merek; \'6,4%\' Pangsa Merek Premium (+0,6 pt YoY); \'78%\' Cakupan Outlet Aktif (target 82%); \'99,4%\' Skor Kepatuhan CHT. Bagian \'TIGA PRIORITAS NEGARA\' dengan 3 kartu bersebelahan — Pertahankan tier premium; Tutup gap cakupan; Luncurkan lini ginseng — masing-masing dengan 3-4 bullet. Tabel kecil \'Bandingkan Tier\' dengan baris Volume YoY, Pangsa %, Harga Rata-rata/pak, Distribusi %, Tindakan Direkomendasikan dan kolom Premium, Mid-tier, Mass-market, menggunakan indikator berwarna (hijau/kuning/merah). Baris 3 ikon dengan label \'Risiko regulasi & pasar teratas\': step-up CHT FY27, aturan kemasan PP 109/2012, diskusi plain-packaging di Kemenkes. Footer pita merah-tua \'REKOMENDASI: tahan pangsa premium, tutup gap cakupan, kirim lini ginseng pada Q4 — Country GM review mingguan\' dengan tanggal hari ini di kanan. Sans-serif modern bersih, ikon outline tipis saja, tanpa clip-art, tanpa gambar produk atau orang. Penting: setiap bagian disesuaikan untuk mengisi seluruh halaman A4, tanpa area kosong besar di bawah.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > **Create** di sidebar kiri (atau taip /create). Tampalkan prompt di bawah.',
+              prompt: 'Buat poster infografis satu-halaman premium yang bersih berjudul \'Snapshot Negara Malaysia — Jenama, Channel & Kepatuhan, Q3 FY26\'. Gunakan warna jenama merah tua dan amber/emas hangat di atas putih, dengan abu-abu tua kecil untuk heading — paparan serius, ramah regulator (tanpa ilustrasi rokok yang playful; kami sengaja understated). Vertikal, muat satu halaman A4, isi seluruh halaman dari atas ke bawah. Di atas, judul tebal besar \'SNAPSHOT NEGARA MALAYSIA — Q3 FY26\', sub-baris \'Jenama · Channel · Kepatuhan · Kesiapan Ginseng · Untuk Country Review Pejabat Regional\'. Baris 4 kotak angka besar: \'1,85 miliar batang\' Volume YTD semua jenama; \'6,4%\' Pangsa Jenama Premium (+0,6 Sdn. Bhd. YoY); \'78%\' Cakupan Outlet Aktif (target 82%); \'99,4%\' Skor Kepatuhan CHT. Bahagian \'TIGA PRIORITAS NEGARA\' dengan 3 kartu bersebelahan — Pertahankan tier premium; Tutup gap cakupan; Luncurkan lini ginseng — masing-masing dengan 3-4 bullet. Jadual kecil \'Bandingkan Tier\' dengan baris Volume YoY, Pangsa %, Harga Rata-rata/pak, Distribusi %, Tindakan Disyorkan dan lajur Premium, Mid-tier, Mass-market, menggunakan indikator berwarna (hijau/kuning/merah). Baris 3 ikon dengan label \'Risiko regulasi & pasar teratas\': step-up CHT FY27, aturan kemasan PP 109/2012, diskusi plain-packaging di Kemenkes. Footer pita merah-tua \'REKOMENDASI: tahan pangsa premium, tutup gap cakupan, hantar lini ginseng pada Q4 — Country GM review mingguan\' dengan tanggal hari ini di kanan. Sans-serif modern bersih, ikon outline tipis sahaja, tanpa clip-art, tanpa gambar produk atau orang. Penting: setiap bahagian disesuaikan untuk mengisi seluruh halaman A4, tanpa area kosong besar di bawah.'
+            }
+          ],
+          persona: [
+            'Pak Hendra Susanto'
+          ],
+          personaID: [
+            'Pak Hendra Susanto'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'Microsoft 365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in Microsoft 365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork (Frontier). Describe what you need in natural language (up to 16,000 chars, voice input supported); Cowork carries out the work end-to-end and shows each step (Thinking → Skill → Step-by-step → Streaming response → Interactive cards). Capabilities (April 2026 rollout): ✉️ send/reply/forward emails with attachments via Outlook; ??️ schedule meetings + manage calendar in natural language; ?? create/edit Word, Excel, PowerPoint, and PDF files; ?? post in Teams channels and chats; ?? search the org for files/people/info; ?? browse and manage OneDrive + SharePoint; ?? conduct deep research across multiple sources; ?? prepare daily briefings + meeting intelligence; ⏰ NEW — run prompts on a schedule (recurring tasks). Side panel shows Progress, Input/Output folders, Skills used, Schedule, and Permissions. Approve / Approve & Remember / Reject for medium and high risk actions; Pause/Resume/Cancel any time. Built on Anthropic models as a subprocessor. Requires Microsoft 365 Copilot license + Frontier Program enrollment (rolling out in select markets, en-us first).',
+          prompts: [
+            {
+              instr: 'Open Microsoft 365 Copilot Chat > switch to **Cowork**. Reference /02 Contoso_KPI_Dashboard.xlsx with /. Paste the quarter-close prompt.',
+              prompt: 'Cowork — close the quarter for the GM Indonesia at Contoso Tobacco & Wellness. Use /02 Contoso_KPI_Dashboard.xlsx as the source of truth. Do all of the following, in order: (1) analyse Monthly_KPIs and Targets_vs_Actual — for each KPI identify best/worst locations and variance vs FY26 target; flag any Red locations; (2) draft a 1-page Word doc \'Contoso T&W Q-End GM Summary\' — top 3 wins, top 3 issues, 90-day action plan with owners; save to OneDrive; (3) draft an executive email from the GM to the Operating Committee with headline + link to the Word doc; (4) schedule a 30-min Operating Committee review Wed next week 10:00 AM; (5) generate a self-contained HTML KPI dashboard \'Brand · Distribution · Excise Compliance Dashboard\' — brand-coloured header band, 5 KPI scorecards with RAG icons, inline mini-table per location showing last 3 months\' trend, \'Top issue\' and \'Top action\' callouts at the bottom, all CSS inline, no JS, mobile-friendly; save as Dashboard.html to OneDrive. Stop and confirm before sending the email or scheduling the meeting.'
+            },
+            {
+              instr: 'Stay in Cowork. Reference /03 Contoso_Mail_Merge_Recipients.xlsx and /04 Contoso_Brand_Guidelines.docx with /. Paste the cascade prompt.',
+              prompt: 'Cowork — run a quarterly country-team cascade to 14 regional sales managers, plant and compliance leads for GM Indonesia at Contoso Tobacco & Wellness. Sources: /03 Contoso_Mail_Merge_Recipients.xlsx (14 rows: First Name, Full Name, Location, Role, Email, Performance Band, Key Highlight), /04 Contoso_Brand_Guidelines.docx (use the \'Approved GM Communications Template\' exactly). For each row: (1) write a personal 180-word letter using the approved template — premium share, outlet coverage, CHT compliance, and one specific 30-day ask per region; tailor body to the Performance Band — Top Quartile: appreciative, ask them to mentor a neighbouring site; On Track: acknowledge progress + one specific stretch goal; Watch: direct, supportive, one specific 30-day improvement; (2) quote the recipient\'s Key Highlight verbatim in para 2; (3) sign off as Pak Hendra Susanto, GM Indonesia, Contoso Tobacco & Wellness; (4) create an Outlook DRAFT (do not send) to the address in Email column; subject \'[First Name], a quick note on this quarter at [Location]\'. When all 14 drafts are ready, give me a summary table: Recipient · Location · Band · Subject preview · Draft link. Stop and confirm before sending anything.'
+            },
+            {
+              instr: 'Stay in Cowork. Upload samples/CVs/ to a SharePoint library first (HR / Recruitment / Trade Marketing & Distribution Manager). Wait 2 min for Microsoft Graph indexing. Paste the CV-screening prompt.',
+              prompt: 'Cowork — handle CV screening for the Trade Marketing & Distribution Manager role at Contoso Tobacco & Wellness. Source: SharePoint folder /HR/Recruitment/Contoso T&W Trade Marketing & Distribution Manager (12 CVs). Do all of the following: (1) review every CV; score each candidate 1–5 against FMCG distribution, outlet coverage growth, trade marketing; (2) build a ranked shortlist (top 5) with name · current company · 3 quoted evidence bullets · risks/gaps to test in interview; (3) build a \'second look\' list (next 3) and a rejected list (one line of reasoning each); (4) for each top-5 candidate, draft a personalised interview-prep brief for the hiring manager — 3 questions to ask and what kind of answer opens a \'yes\'; (5) draft (DO NOT send) an introductory email to candidate #1 inviting them to a screening call; save as Outlook draft. Flag anything unclear with [VERIFY]. Do not fabricate qualifications. Stop and confirm before sending any email.'
+            },
+            {
+              instr: 'Stay in the same Cowork session — Cowork remembers prior delegations within the same chat. Paste this prompt to launch the **Quarterly Investor Day Sprint**. Cowork will delegate the 5 numbered actions in parallel and report back as each one completes.',
+              prompt: 'Run the FY2025 Q4 investor day delegation in parallel. Please do all 5 of the following at once and report back when each is ready. 1. Draft a 4-page Word doc titled "Investor Day FY2025 — Speaking Notes" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as context. Section 1 financial highlights, Section 2 divisional performance, Section 3 capital allocation, Section 4 outlook for FY2026. 2. Draft a 1-page Word doc titled "Top 25 Analyst Q&A" pulling anticipated questions from /06_Zava_Investor_QA_FY2025.docx — order by likelihood and pre-answer each in two sentences. 3. Draft a personalised email to the top-25 covering analysts inviting them to the 9am virtual Q&A session immediately after the main investor day webcast. 4. Schedule a 30-minute Teams dry-run tomorrow at 6pm with the Group CFO, Group Chief of Staff, Head of IR, and the IR team — pre-read the speaking notes and the analyst Q&A. 5. Post a Teams message in the IR channel with the embargoed deck link, the Q&A doc, and the dry-run calendar invite. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Mod Admin (Group Strategy Director), Robert (Flagship Plant Manager), Hanif (Group QA Director), Jenny (Customer Recovery Lead) and Iqbal (S&OP Coordinator) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            },
+            {
+              instr: 'Same Cowork session — paste this prompt to launch the **Monthly Lender Outreach Cycle**. Cowork delegates 5 lender-engagement tasks in parallel and reports back as each finishes.',
+              prompt: 'Run the month-end lender engagement cycle in parallel. Complete all 5 below and report back as each lands. 1. Draft a 3-page Word doc titled "Lender Pack — Month-End Update" pulling current covenant headroom from /05_Zava_Lender_Covenant_Tracker.xlsx and division-level updates from /04_Zava_Divisional_Variance_FY2025.xlsx. Include a covenant-watchlist summary at the top. 2. Draft individual cover emails (one per bank, personalised tone) to each of the top-10 relationship banks with the lender pack attached. 3. Schedule three back-to-back 30-minute Teams calls tomorrow 2pm-3:30pm — one each with the lead facility agent, the syndicate-of-record chair, and the largest lender by facility size. 4. Update the lender outreach tracker workbook with this month\'s communications, the upcoming covenant test dates, and any waiver/amendment items in flight. 5. Post a status note in the Treasury team Teams channel summarising the lender position, covenant-watchlist items, and follow-up actions assigned. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Mod Admin (Group Strategy Director), Robert (Flagship Plant Manager), Hanif (Group QA Director), Jenny (Customer Recovery Lead) and Iqbal (S&OP Coordinator) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            },
+            {
+              instr: 'Same Cowork session — paste this prompt to launch the **Quarterly Regulator Submission Sprint**. Cowork delegates 5 submission-prep tasks in parallel and reports back as each completes.',
+              prompt: 'Run the quarterly regulator submission sprint in parallel. Complete all 5 below and report back as each finishes. 1. Draft a Word doc titled "Regulator Submission Q4 FY2025" formatted as a formal disclosure pack covering the items required this cycle. Pull the divisional numbers from /01_Zava_Group_Financial_Performance.xlsx and the governance language from /02_Zava_Group_Policy_Handbook.docx. 2. Draft the cover letter email to the lead supervisor with the submission pack attached and a one-paragraph executive summary in the body. 3. Schedule a 20-minute pre-submission alignment Teams meeting tomorrow at 8am with Compliance, Legal, and the Head of IR — agenda: walk through the pack, confirm sign-offs, agree the cover letter language. 4. Post a private Teams message to the General Counsel asking for sign-off on Section 4 (related-party disclosures) by 5pm today, with the relevant page links highlighted. 5. Update the regulatory submission tracker workbook with this cycle\'s submission package, the submission date, the supervisor contact, and the expected response window. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Mod Admin (Group Strategy Director), Robert (Flagship Plant Manager), Hanif (Group QA Director), Jenny (Customer Recovery Lead) and Iqbal (S&OP Coordinator) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            },
+            {
+              instr: 'Same Cowork session — paste this prompt to ask Cowork to **build a single self-contained HTML executive dashboard** as a deliverable in chat. Cowork will read the attached data, generate the HTML/CSS/JS inline (no external CDN), and render it for download. While the HTML renders, Cowork runs the 4 parallel follow-up tasks below.',
+              prompt: 'Cowork: produce a SELF-CONTAINED interactive HTML dashboard titled "Group Performance Dashboard" using /01_Zava_Group_Financial_Performance.xlsx as the source of truth. The HTML must be a single .html file (inline CSS + inline JS, no external CDN) styled for executive review — top strip of 5 KPI cards (revenue · EBITDA · cash · headcount · NPS), a trend chart (last 12 periods) per KPI built with the Canvas API, an alerts panel listing any KPI breaching its target threshold in red, and a notes panel summarising the \'so what\'. While the HTML is generating, ALSO complete these 4 tasks in parallel and report back as each finishes: 1. Word — a 2-page narrative memo walking the dashboard top-down for this entity leadership. 2. Email — covering note from the Group CFO with the HTML + memo attached. 3. Teams meeting — 30-min review block tomorrow morning to walk the dashboard. 4. Tracker — update the this entity KPI tracker workbook with this period\'s actuals and the breach list.  Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Mod Admin (Group Strategy Director), Robert (Flagship Plant Manager), Hanif (Group QA Director), Jenny (Customer Recovery Lead) and Iqbal (S&OP Coordinator) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Microsoft 365 Copilot Chat > beralih ke **Cowork**. Referensikan /02 Contoso_KPI_Dashboard.xlsx dengan /. Tempelkan prompt quarter-close.',
+              prompt: 'Cowork — tutup kuartal untuk Direktur Utama Indonesia di Contoso Tobacco & Wellness. Gunakan /02 Contoso_KPI_Dashboard.xlsx sebagai sumber kebenaran. Lakukan semua hal berikut, berurutan: (1) analisis Monthly_KPIs dan Targets_vs_Actual — untuk tiap KPI identifikasi lokasi terbaik/terburuk dan selisih vs target FY26; tandai lokasi Merah; (2) buat doc Word 1 halaman \'Ringkasan Tutup Kuartal GM Contoso T&W\' — 3 kemenangan teratas, 3 isu teratas, rencana aksi 90-hari dengan pemilik; simpan ke OneDrive; (3) susun email eksekutif dari Direktur Utama ke Komite Operasi dengan headline + tautan ke doc Word; (4) jadwalkan review Komite Operasi 30 menit Rabu minggu depan jam 10:00; (5) buat dashboard HTML KPI mandiri \'Dashboard Merek · Distribusi · Kepatuhan Pajak\' — pita header berwarna merek, 5 KPI scorecard dengan ikon RAG, mini-tabel inline per lokasi menunjukkan tren 3 bulan terakhir, callout \'Isu Teratas\' dan \'Aksi Teratas\' di bawah, semua CSS inline, tanpa JS, ramah seluler; simpan sebagai Dashboard.html ke OneDrive. Berhenti dan konfirmasi sebelum mengirim email atau menjadwalkan rapat.'
+            },
+            {
+              instr: 'Tetap di Cowork. Referensikan /03 Contoso_Mail_Merge_Recipients.xlsx dan /04 Contoso_Brand_Guidelines.docx dengan /. Tempelkan prompt cascade.',
+              prompt: 'Cowork — jalankan cascade tim negara kuartalan ke 14 sales manager regional, lead pabrik dan kepatuhan untuk Direktur Utama Indonesia di Contoso Tobacco & Wellness. Sumber: /03 Contoso_Mail_Merge_Recipients.xlsx (14 baris: Nama Depan, Nama Lengkap, Lokasi, Peran, Email, Performance Band, Highlight Utama), /04 Contoso_Brand_Guidelines.docx (gunakan \'Template Komunikasi GM Disetujui\' persis). Untuk tiap baris: (1) tulis surat personal 180 kata dengan template disetujui — pangsa premium, cakupan outlet, kepatuhan CHT, dan satu permintaan spesifik 30-hari per region; sesuaikan body dengan Performance Band — Top Quartile: apresiatif, minta mereka mentor situs tetangga; On Track: akui progres + satu stretch goal spesifik; Watch: lugas, suportif, satu peningkatan spesifik 30-hari; (2) kutip Highlight Utama penerima verbatim di paragraf 2; (3) tanda tangani sebagai Pak Hendra Susanto, Direktur Utama Indonesia, Contoso Tobacco & Wellness; (4) buat DRAF Outlook (jangan kirim) ke alamat di kolom Email; subjek \'[Nama Depan], catatan singkat tentang kuartal ini di [Lokasi]\'. Saat 14 draf siap, beri saya tabel ringkasan: Penerima · Lokasi · Band · Pratinjau Subjek · Tautan Draf. Berhenti dan konfirmasi sebelum mengirim apa pun.'
+            },
+            {
+              instr: 'Tetap di Cowork. Unggah samples/CVs/ ke library SharePoint dulu (HR / Recruitment / Trade Marketing & Distribution Manager). Tunggu 2 menit untuk indexing Microsoft Graph. Tempelkan prompt screening CV.',
+              prompt: 'Cowork — tangani screening CV untuk peran Trade Marketing & Distribution Manager di Contoso Tobacco & Wellness. Sumber: folder SharePoint /HR/Recruitment/Contoso T&W Trade Marketing & Distribution Manager (12 CV). Lakukan semua berikut: (1) tinjau setiap CV; skor tiap kandidat 1–5 terhadap distribusi FMCG, pertumbuhan cakupan outlet, trade marketing; (2) bangun shortlist berperingkat (top 5) dengan nama · perusahaan saat ini · 3 bullet bukti terkutip · risiko/gap untuk diuji di wawancara; (3) bangun daftar \'second look\' (3 berikutnya) dan daftar ditolak (satu baris alasan masing-masing); (4) untuk tiap kandidat top-5, susun brief persiapan wawancara personal untuk hiring manager — 3 pertanyaan untuk diajukan dan jenis jawaban yang membuka \'ya\'; (5) susun (JANGAN kirim) email pengantar ke kandidat #1 mengundang ke panggilan screening; simpan sebagai draf Outlook. Tandai apa pun yang tidak jelas dengan [VERIFIKASI]. Jangan fabrikasi kualifikasi. Berhenti dan konfirmasi sebelum mengirim email apa pun.'
+            },
+            {
+              instr: 'Tetap di sesi Cowork yang sama — Cowork mengingat delegasi sebelumnya dalam chat yang sama. Tempelkan prompt ini untuk meluncurkan **Sprint Investor Day Triwulan**. Cowork akan mendelegasikan 5 tindakan bernomor secara paralel dan melaporkan saat masing-masing selesai.',
+              prompt: 'Jalankan delegasi Investor Day FY2025 Q4 secara paralel. Mohon kerjakan kelima hal berikut sekaligus dan laporkan begitu masing-masing siap. 1. Susun dokumen Word 4 halaman berjudul "Investor Day FY2025 — Naskah Pidato" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Bagian 1 highlight keuangan, Bagian 2 kinerja per unit usaha, Bagian 3 alokasi modal, Bagian 4 outlook FY2026. 2. Susun dokumen Word 1 halaman berjudul "Top 25 Q&A Analis" menarik pertanyaan yang diantisipasi dari /06_Zava_Investor_QA_FY2025.docx — urutkan berdasarkan kemungkinan dan jawab masing-masing dalam dua kalimat. 3. Susun email personal kepada top-25 analis covering yang mengundang mereka ke sesi Q&A virtual jam 9 pagi setelah webcast investor day utama. 4. Jadwalkan dry-run Teams 30 menit besok jam 6 sore bersama Direktur Keuangan Grup, Kepala Staf Grup, Kepala IR, dan tim IR — pre-read naskah pidato dan Q&A analis. 5. Posting pesan di channel Teams IR dengan link deck embargoed, dokumen Q&A, dan undangan kalender dry-run. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Mod Admin (Direktur Strategi Grup), Robert (Manajer Pabrik Andalan), Hanif (Direktur QA Grup), Jenny (Lead Pemulihan Pelanggan) dan Iqbal (Koordinator S&OP) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tempelkan prompt ini untuk meluncurkan **Siklus Outreach Kreditor Bulanan**. Cowork akan mendelegasikan 5 tugas keterlibatan kreditor secara paralel dan melaporkan saat masing-masing selesai.',
+              prompt: 'Jalankan siklus keterlibatan kreditor akhir bulan secara paralel. Selesaikan kelimanya di bawah ini dan laporkan saat masing-masing tuntas. 1. Susun dokumen Word 3 halaman berjudul "Lender Pack — Update Akhir Bulan" menarik headroom covenant terbaru dari /05_Zava_Lender_Covenant_Tracker.xlsx dan update level unit usaha dari /04_Zava_Divisional_Variance_FY2025.xlsx. Cantumkan ringkasan watchlist covenant di atas. 2. Susun cover email individual (satu per bank, nada personal) ke top-10 bank relasi dengan lender pack terlampir. 3. Jadwalkan tiga panggilan Teams 30 menit berturut-turut besok jam 14.00-15.30 — masing-masing dengan lead facility agent, ketua syndicate-of-record, dan kreditor terbesar berdasarkan ukuran fasilitas. 4. Perbarui workbook tracker outreach kreditor dengan komunikasi bulan ini, tanggal uji covenant mendatang, dan item waiver/amendment yang sedang berjalan. 5. Posting catatan status di channel Teams tim Treasury yang merangkum posisi kreditor, item watchlist covenant, dan tindak lanjut yang diberikan. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Mod Admin (Direktur Strategi Grup), Robert (Manajer Pabrik Andalan), Hanif (Direktur QA Grup), Jenny (Lead Pemulihan Pelanggan) dan Iqbal (Koordinator S&OP) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tempelkan prompt ini untuk meluncurkan **Sprint Submisi Regulator Triwulan**. Cowork akan mendelegasikan 5 tugas persiapan submisi secara paralel dan melaporkan saat masing-masing selesai.',
+              prompt: 'Jalankan sprint submisi regulator triwulan secara paralel. Selesaikan kelimanya di bawah ini dan laporkan saat masing-masing tuntas. 1. Susun dokumen Word berjudul "Submisi Regulator Q4 FY2025" diformat sebagai paket pengungkapan formal yang mencakup item yang diperlukan siklus ini. Tarik angka per unit usaha dari /01_Zava_Group_Financial_Performance.xlsx dan bahasa tata kelola dari /02_Zava_Group_Policy_Handbook.docx. 2. Susun cover letter email kepada supervisor utama dengan paket submisi terlampir dan ringkasan eksekutif satu paragraf di body. 3. Jadwalkan rapat alignment pra-submisi Teams 20 menit besok jam 8 pagi bersama Compliance, Legal, dan Kepala IR — agenda: walk-through paket, konfirmasi sign-off, sepakati bahasa cover letter. 4. Posting pesan Teams pribadi kepada General Counsel meminta sign-off Bagian 4 (pengungkapan pihak terkait) jam 5 sore hari ini, dengan link halaman terkait disorot. 5. Perbarui workbook tracker submisi regulator dengan paket submisi siklus ini, tanggal submisi, kontak supervisor, dan jendela respons yang diharapkan. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Mod Admin (Direktur Strategi Grup), Robert (Manajer Pabrik Andalan), Hanif (Direktur QA Grup), Jenny (Lead Pemulihan Pelanggan) dan Iqbal (Koordinator S&OP) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tempelkan prompt ini untuk meminta Cowork **membuat satu dashboard HTML eksekutif mandiri** sebagai deliverable di chat. Cowork akan membaca data terlampir, men-generate HTML/CSS/JS inline (tanpa CDN eksternal), dan menampilkannya untuk diunduh. Sambil HTML di-generate, Cowork menjalankan 4 tugas paralel di bawah.',
+              prompt: 'Cowork: buat dashboard HTML interaktif mandiri berjudul "Group Performance Dashboard" menggunakan /01_Zava_Group_Financial_Performance.xlsx sebagai sumber kebenaran. HTML harus berupa satu file .html (CSS + JS inline, tanpa CDN eksternal), ditata untuk review eksekutif — strip atas berisi 5 kartu KPI (revenue · EBITDA · cash · headcount · NPS), chart tren (12 periode terakhir) per KPI dibangun dengan Canvas API, panel alert mencantumkan KPI yang melanggar ambang target dalam warna merah, dan panel catatan merangkum \'so what\'. Sementara HTML di-generate, JUGA selesaikan 4 tugas berikut secara paralel dan laporkan saat masing-masing tuntas: 1. Word — memo naratif 2 halaman menjelaskan dashboard top-down untuk pimpinan this entity. 2. Email — cover note dari Direktur Keuangan Grup dengan HTML + memo terlampir. 3. Rapat Teams — blok review 30 menit besok pagi untuk walk-through dashboard. 4. Tracker — perbarui workbook tracker KPI this entity dengan aktual periode ini dan daftar breach.  Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Mod Admin (Direktur Strategi Grup), Robert (Manajer Pabrik Andalan), Hanif (Direktur QA Grup), Jenny (Lead Pemulihan Pelanggan) dan Iqbal (Koordinator S&OP) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka Microsoft 365 Copilot Chat > beralih ke **Cowork**. Referensikan /02 Contoso_KPI_Dashboard.xlsx dengan /. Tampalkan prompt quarter-close.',
+              prompt: 'Cowork — tutup kuartal untuk Pengarah Urusan Malaysia di Contoso Tobacco & Wellness. Gunakan /02 Contoso_KPI_Dashboard.xlsx sebagai sumber kebenaran. Lakukan semua hal berikut, berurutan: (1) analisis Monthly_KPIs dan Targets_vs_Actual — untuk tiap KPI identifikasi lokasi terbaik/terburuk dan perbezaan vs target FY26; tandai lokasi Merah; (2) buat doc Word 1 halaman \'Ringkasan Tutup Kuartal GM Contoso T&W\' — 3 kemenangan teratas, 3 isu teratas, rencana aksi 90-hari dengan pemilik; simpan ke OneDrive; (3) susun email eksekutif dari Pengarah Urusan ke Komite Operasi dengan headline + tautan ke doc Word; (4) jadualkan review Komite Operasi 30 menit Rabu minggu depan jam 10:00; (5) buat dashboard HTML KPI mandiri \'Dashboard Jenama · Distribusi · Kepatuhan Cukai\' — pita header berwarna jenama, 5 KPI scorecard dengan ikon RAG, mini-jadual inline per lokasi menunjukkan tren 3 bulan terakhir, callout \'Isu Teratas\' dan \'Aksi Teratas\' di bawah, semua CSS inline, tanpa JS, ramah seluler; simpan sebagai Dashboard.html ke OneDrive. Berhenti dan konfirmasi sebelum menghantar email atau menjadualkan mesyuarat.'
+            },
+            {
+              instr: 'Tetap di Cowork. Referensikan /03 Contoso_Mail_Merge_Recipients.xlsx dan /04 Contoso_Brand_Guidelines.docx dengan /. Tampalkan prompt cascade.',
+              prompt: 'Cowork — jalankan cascade tim negara kuartalan ke 14 sales manager regional, lead pabrik dan kepatuhan untuk Pengarah Urusan Malaysia di Contoso Tobacco & Wellness. Sumber: /03 Contoso_Mail_Merge_Recipients.xlsx (14 baris: Nama Depan, Nama Lengkap, Lokasi, Peran, Email, Performance Band, Highlight Utama), /04 Contoso_Brand_Guidelines.docx (gunakan \'Template Komunikasi GM Diluluskan\' persis). Untuk tiap baris: (1) tulis surat personal 180 kata dengan template diluluskan — pangsa premium, cakupan outlet, kepatuhan CHT, dan satu permintaan spesifik 30-hari per region; sesuaikan body dengan Performance Band — Top Quartile: apresiatif, minta mereka mentor situs tetangga; On Track: akui progres + satu stretch goal spesifik; Watch: lugas, suportif, satu peningkatan spesifik 30-hari; (2) kutip Highlight Utama penerima verbatim di paragraf 2; (3) tanda tangani sebagai Pak Hendra Susanto, Pengarah Urusan Malaysia, Contoso Tobacco & Wellness; (4) buat DRAF Outlook (jangan hantar) ke alamat di lajur Email; subjek \'[Nama Depan], catatan singkat tentang kuartal ini di [Lokasi]\'. Saat 14 draf siap, beri saya jadual ringkasan: Penerima · Lokasi · Band · Pratinjau Subjek · Tautan Draf. Berhenti dan konfirmasi sebelum menghantar apa pun.'
+            },
+            {
+              instr: 'Tetap di Cowork. Muat naik samples/CVs/ ke library SharePoint dulu (HR / Recruitment / Trade Marketing & Distribution Manager). Tunggu 2 menit untuk indexing Microsoft Graph. Tampalkan prompt screening CV.',
+              prompt: 'Cowork — tangani screening CV untuk peran Trade Marketing & Distribution Manager di Contoso Tobacco & Wellness. Sumber: folder SharePoint /HR/Recruitment/Contoso T&W Trade Marketing & Distribution Manager (12 CV). Lakukan semua berikut: (1) tinjau setiap CV; skor tiap kandidat 1–5 terhadap distribusi FMCG, pertumbuhan cakupan outlet, trade marketing; (2) bangun shortlist berperingkat (top 5) dengan nama · syarikat saat ini · 3 bullet bukti terkutip · risiko/gap untuk diuji di wawancara; (3) bangun daftar \'second look\' (3 berikutnya) dan daftar ditolak (satu baris alasan masing-masing); (4) untuk tiap kandidat top-5, susun brief persiapan wawancara personal untuk hiring manager — 3 pertanyaan untuk diajukan dan jenis jawaban yang membuka \'ya\'; (5) susun (JANGAN hantar) email pengantar ke kandidat #1 menjemput ke panggilan screening; simpan sebagai draf Outlook. Tandai apa pun yang tidak jelas dengan [VERIFIKASI]. Jangan fabrikasi kualifikasi. Berhenti dan konfirmasi sebelum menghantar email apa pun.'
+            }
+          ],
+          persona: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          personaID: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Three demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit; (3) ✍️ "first draft in canvas" (March 2026) — Copilot writes the email directly in place and asks clarifying questions on goal/audience/tone, then iterates with the user without copy-paste. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook (web or desktop). Find the longest email thread in your inbox from this week. Click **Summary by Copilot** at the top of the thread. In the Copilot pane, paste the catch-up prompt.',
+              prompt: 'Summarise this email thread in 5 bullets. Who is asking what of whom? What decision is being narrowed in this thread? List the open action items with owner and due date. Flag the parts where I am specifically mentioned and what is being asked of me.'
+            },
+            {
+              instr: 'In the same thread, click Reply > Copilot icon > **Draft with Copilot**. Paste the executive-reply prompt.',
+              prompt: 'Draft a reply to this thread on behalf of the GM Indonesia at Contoso Tobacco & Wellness. Confirm we are on track on the main request, politely push back on the unrealistic deadline, and propose a 30-minute call this week. Tone: warm, direct, respectful. Maximum 4 short paragraphs, no jargon. Sign off as Pak Hendra Susanto.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook (web atau desktop). Temukan thread email terpanjang di inbox minggu ini. Klik **Summary by Copilot** di atas thread. Di panel Copilot, tempelkan prompt catch-up.',
+              prompt: 'Ringkas thread email ini dalam 5 bullet. Siapa meminta apa kepada siapa? Keputusan apa yang dipersempit di thread ini? Daftarkan action items terbuka dengan pemilik dan tenggat. Tandai bagian di mana saya secara spesifik disebut dan apa yang diminta dari saya.'
+            },
+            {
+              instr: 'Pada thread yang sama, klik Reply > ikon Copilot > **Draft with Copilot**. Tempelkan prompt balasan eksekutif.',
+              prompt: 'Susun balasan thread ini atas nama Direktur Utama Indonesia di Contoso Tobacco & Wellness. Konfirmasi kami on-track untuk permintaan utama, sopan menolak tenggat yang tidak realistis, dan tawarkan panggilan 30 menit minggu ini. Nada: hangat, lugas, hormat. Maksimum 4 paragraf pendek, tanpa jargon. Tanda tangani sebagai Pak Hendra Susanto.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka Outlook (web atau desktop). Cari thread email terpanjang di inbox minggu ini. Klik **Summary by Copilot** di atas thread. Di panel Copilot, tampalkan prompt catch-up.',
+              prompt: 'Ringkas thread email ini dalam 5 bullet. Siapa meminta apa kepada siapa? Keputusan apa yang dipersempit di thread ini? Daftarkan action items terbuka dengan pemilik dan tenggat. Tandai bahagian di mana saya secara spesifik disebut dan apa yang diminta dari saya.'
+            },
+            {
+              instr: 'Pada thread yang sama, klik Reply > ikon Copilot > **Draft with Copilot**. Tampalkan prompt balasan eksekutif.',
+              prompt: 'Susun balasan thread ini atas nama Pengarah Urusan Malaysia di Contoso Tobacco & Wellness. Konfirmasi kami on-track untuk permintaan utama, sopan menolak tenggat yang tidak realistis, dan tawarkan panggilan 30 menit minggu ini. Nada: hangat, lugas, hormat. Maksimum 4 paragraf pendek, tanpa jargon. Tanda tangani sebagai Pak Hendra Susanto.'
+            }
+          ],
+          persona: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          personaID: [
+            'Pak Hendra Susanto',
+            'Pak Hendra Susanto'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with Microsoft 365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: 'Open Microsoft 365 Copilot Chat. Reference the relevant sample files with /. Paste the FY27 CHT response prompt.',
+              prompt: 'Act as Country Strategy lead supporting the GM Indonesia at Contoso Tobacco & Wellness. The FY27 CHT (excise) tariff bands have just been signalled — assume Premium SKM-class +12%, Mid-tier SKM +9%, Mass SKT +6%. Use /02 Contoso_KPI_Dashboard.xlsx (volumes, share, current price ladder by brand and region) and /05 Contoso_Strategic_Memo.docx (premium-defence stance). Produce four artefacts: (1) PRICING SCENARIOS Excel-style table — three scenarios (Hold price / Partial pass-through / Full pass-through) with modelled volume sensitivity, share impact, and gross-profit impact for each brand; (2) BRAND-BY-BRAND PRICE LADDER Word 1 page — recommended new price points effective FY27 cut-over date, rationale per tier; (3) DISTRIBUTOR LETTER Word 0.5 page — clear, respectful, signed by GM Indonesia, explaining new price ladder, pita-cukai cut-over logistics, credit-note treatment for in-trade stock; (4) BOARD PRE-READ Word 1 page — what we are doing, why, expected P&L impact, the 3 risks we are watching, 2 open questions for the Regional Office. Use precise tobacco / FMCG / Indonesian regulatory language (CHT, pita-cukai, Bea Cukai, PP 109/2012). Flag every assumption with [ASSUMPTION:...]. Do not invent KPI numbers — pull from source files or mark [VERIFY].'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Microsoft 365 Copilot Chat. Referensikan berkas sampel yang relevan dengan /. Tempelkan prompt respons CHT FY27.',
+              prompt: 'Bertindak sebagai lead Strategi Negara yang mendukung Direktur Utama Indonesia di Contoso Tobacco & Wellness. Pita tarif CHT FY27 baru saja disinyalkan — asumsikan kelas SKM Premium +12%, SKM Mid-tier +9%, SKT Mass +6%. Gunakan /02 Contoso_KPI_Dashboard.xlsx (volume, pangsa, ladder harga saat ini per merek dan region) dan /05 Contoso_Strategic_Memo.docx (sikap pertahanan premium). Hasilkan empat artefak: (1) SKENARIO HARGA tabel gaya Excel — tiga skenario (Tahan harga / Pass-through parsial / Pass-through penuh) dengan sensitivitas volume termodel, dampak pangsa, dan dampak laba kotor untuk tiap merek; (2) PRICE LADDER PER MEREK Word 1 halaman — titik harga baru yang direkomendasikan efektif tanggal cut-over FY27, alasan per tier; (3) SURAT DISTRIBUTOR Word 0,5 halaman — jelas, hormat, ditandatangani Direktur Utama Indonesia, menjelaskan price ladder baru, logistik cut-over pita-pajak, perlakuan credit-note untuk stok in-trade; (4) PRE-READ DIREKSI Word 1 halaman — apa yang kami lakukan, mengapa, dampak P&L yang diharapkan, 3 risiko yang dipantau, 2 pertanyaan terbuka untuk Kantor Regional. Gunakan bahasa tembakau / FMCG / regulasi Indonesia yang presisi (CHT, pita-pajak, Bea Pajak, PP 109/2012). Tandai setiap asumsi dengan [ASUMSI:...]. Jangan fabrikasi angka KPI — tarik dari berkas sumber atau tandai [VERIFIKASI].'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka Microsoft 365 Copilot Chat. Referensikan fail sampel yang relevan dengan /. Tampalkan prompt respons CHT FY27.',
+              prompt: 'Bertindak sebagai lead Strategi Negara yang menyokong Pengarah Urusan Malaysia di Contoso Tobacco & Wellness. Pita tarif CHT FY27 baru sahaja disinyalkan — asumsikan kelas SKM Premium +12%, SKM Mid-tier +9%, SKT Mass +6%. Gunakan /02 Contoso_KPI_Dashboard.xlsx (volume, pangsa, ladder harga saat ini per jenama dan region) dan /05 Contoso_Strategic_Memo.docx (sikap pertahanan premium). Hasilkan empat artefak: (1) SKENARIO HARGA jadual gaya Excel — tiga skenario (Tahan harga / Pass-through parsial / Pass-through penuh) dengan sensitivitas volume termodel, dampak pangsa, dan dampak laba kotor untuk tiap jenama; (2) PRICE LADDER PER MEREK Word 1 halaman — titik harga baru yang disyorkan efektif tanggal cut-over FY27, alasan per tier; (3) SURAT DISTRIBUTOR Word 0,5 halaman — jelas, hormat, ditandatangani Pengarah Urusan Malaysia, menjelaskan price ladder baru, logistik cut-over pita-cukai, perlakuan credit-note untuk stok in-trade; (4) PRE-READ LEMBAGA PENGARAH Word 1 halaman — apa yang kami lakukan, mengapa, dampak P&L yang diharapkan, 3 risiko yang dipantau, 2 pertanyaan terbuka untuk Pejabat Regional. Gunakan bahasa tembakau / FMCG / regulasi Malaysia yang presisi (CHT, pita-cukai, Bea Cukai, PP 109/2012). Tandai setiap asumsi dengan [ASUMSI:...]. Jangan fabrikasi angka KPI — tarik dari fail sumber atau tandai [VERIFIKASI].'
+            }
+          ],
+          persona: [
+            'Pak Hendra Susanto'
+          ],
+          personaID: [
+            'Pak Hendra Susanto'
+          ],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [],
+      storyboard: [],
+      personas: [],
+      geo: 'ID',
+      coworkLibrary: [
+        {
+          title: 'Board Pack Sprint',
+          dept_tag: 'Corporate Secretarial',
+          complexity: 'intermediate',
+          apps: [
+            'Word',
+            'PowerPoint',
+            'Outlook',
+            'Teams'
+          ],
+          desc: 'Turn a folder of board papers into a chairman briefing, a slide deck, an email pack to directors, and a Teams discussion thread — in one Cowork run.',
+          skills: [
+            'Multi-source synthesis across financial pack, risk update, strategy memo, and audit minutes',
+            'Parallel deliverable generation (Word brief + PPT deck + Outlook email + Teams thread)',
+            'Tone calibration for board audience (concise, decision-oriented)'
+          ],
+          instructions: [
+            'Open Microsoft 365 Copilot → left nav → Agents → Cowork (Frontier Program required)',
+            'Click 📎 Knowledge → attach the 4 sample files listed below',
+            'Paste Prompt 1 — Cowork runs the parallel fan-out',
+            'Review the 4 deliverables before forwarding to the Chair'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'BRD_Risk_Quarterly_Update.docx',
+              'docx'
+            ],
+            [
+              'BRD_Strategy_Memo.docx',
+              'docx'
+            ],
+            [
+              'BRD_Audit_Cmte_Minutes.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Fan out the board pack',
+              text: 'Using the 4 board papers attached, prepare the next Board meeting pack for [BOARD-DATE]. In parallel, do all 5: 1) Draft a 3-page Chairman briefing in Word — top 5 decisions needed, key risks, ESG hot spots. 2) Build a 10-slide deck in PowerPoint — Slide 1 cover, Slides 2-4 financials, Slide 5 risk dashboard, Slides 6-8 strategy progress, Slide 9 ESG/regulatory, Slide 10 decision summary. 3) Draft an email in Outlook to the 8 named directors — Hadar (Chair Audit), Sasha (Chair Risk), Daichi (Chair Nomination), and the 5 INEDs — with the pack attached and pre-read instructions. 4) Draft a Teams message to the Board WhatsApp-equivalent channel — 2 lines summary + the 2 critical decisions. 5) Block 90 minutes on the calendar — title: Board Meeting [BOARD-DATE], attendees the 8 directors + Group CFO + Group CoS. Cite the specific paper and section for every number.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Board Pack Sprint" using BRD_Q4_Financial_Pack.xlsx, BRD_Risk_Quarterly_Update.docx, BRD_Strategy_Memo.docx and BRD_Audit_Cmte_Minutes.docx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Board Pack Sprint — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Chairman briefing (3 pages, Word)',
+            '10-slide board deck (PowerPoint)',
+            'Outlook email draft with pack attached',
+            'Teams summary message',
+            '90-min calendar invite'
+          ],
+          watch: [
+            'Every figure cites its source paper and section — auditable trail',
+            'Each deliverable adapts tone for its audience (Chair memo vs WhatsApp blast)',
+            'Decisions surfaced separately from updates — board focus stays sharp'
+          ],
+          honest: 'Cowork drafts. The Chair and CoS still hand-review every line — board papers are legal record. The Teams message must be cleared by Comms before going live.',
+          tips: [
+            'Swap the 4 source files for your real quarter\'s board pack to scale to other meetings',
+            'Add a 6th task — generate a 30-second audio summary for the Chair\'s morning commute',
+            'Re-run with persona switched to "Group Chief of Staff" voice for a CoS-led variant'
+          ],
+          id: 'uc-board-pack'
+        },
+        {
+          title: 'Town Hall Comms Drill',
+          dept_tag: 'HR & Comms',
+          complexity: 'basic',
+          apps: [
+            'Word',
+            'PowerPoint',
+            'Outlook',
+            'Teams',
+            'Forms'
+          ],
+          desc: 'Turn the CEO\'s rough script + a quarter of HR results into a polished town hall — speech, slides, employee email, Teams promo, and a feedback Form.',
+          skills: [
+            'Tone-shifting from boardroom (financials) to all-employee (inclusive, plain English)',
+            'Multi-channel campaign assembly (slides + email + chat + survey)',
+            'Q&A anticipation from prior pulse-survey data'
+          ],
+          instructions: [
+            'Open Cowork from the Agents menu',
+            'Attach the 4 source files (script outline, HR scorecard, prior Q&A, pulse-survey results)',
+            'Paste the prompt — Cowork generates the full campaign in parallel',
+            'Hand the deliverables to Internal Comms for sign-off before publishing'
+          ],
+          sample_files: [
+            [
+              'TH_CEO_Script_Outline.docx',
+              'docx'
+            ],
+            [
+              'TH_HR_Quarterly_Scorecard.xlsx',
+              'xlsx'
+            ],
+            [
+              'TH_Prior_Town_Hall_QA.docx',
+              'docx'
+            ],
+            [
+              'TH_Pulse_Survey_Results.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Build the town hall campaign',
+              text: 'Using the 4 attached files, prepare the Q[N] FY[YEAR] all-employee town hall. In parallel, do all 5: 1) Polish the CEO speech in Word — 12 minutes spoken, 5 sections (Wins / Challenges / Customer Voice / People / Ask). 2) Build a 15-slide deck in PowerPoint — image-first, big numbers, no jargon, one decision per slide. 3) Draft the all-staff email in Outlook from the CEO — RSVP link + 2-line teaser + dial-in details. 4) Draft a Teams post for the Company-wide channel — 2 lines + GIF prompt + RSVP. 5) Build a Microsoft Forms survey — 6 questions (3 multiple-choice on key initiatives, 2 free-text on biggest worry/biggest hope, 1 NPS). Anticipate 8 likely Q&A items from the pulse-survey themes and append as speaker notes in the deck.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Town Hall Comms Drill" using TH_CEO_Script_Outline.docx, TH_HR_Quarterly_Scorecard.xlsx, TH_Prior_Town_Hall_QA.docx and TH_Pulse_Survey_Results.xlsx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Town Hall Comms Drill — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Polished CEO speech (12-min, Word)',
+            '15-slide town hall deck',
+            'Outlook all-staff email',
+            'Teams company-wide post',
+            'Microsoft Forms feedback survey'
+          ],
+          watch: [
+            'Tone shifts from numbers-dense (board) to story-led (employees) — same data, different voice',
+            'Q&A speaker notes prep the CEO for the toughest questions in advance',
+            'Forms survey wired to capture sentiment for the next quarter\'s baseline'
+          ],
+          honest: 'Cowork sets the structure; the CEO\'s personality still has to come through in the final edit. Sensitive items (layoffs, pay) must be drafted by HR not Cowork — the model has no context on confidential decisions.',
+          tips: [
+            'Re-run with the CHRO as the speaker — voice and Q&A library auto-adjust',
+            'For ID entities, generate the BI variant simultaneously by adding "Output in Bahasa Indonesia"',
+            'Add a 6th task — extract the top 3 themes from the prior Q&A and pre-empt them in the speech'
+          ],
+          id: 'uc-town-hall'
+        },
+        {
+          title: 'Major Incident Postmortem',
+          dept_tag: 'IT & Operations',
+          complexity: 'intermediate',
+          apps: [
+            'Word',
+            'Excel',
+            'Outlook',
+            'Teams'
+          ],
+          desc: 'War-room logs, monitoring graphs, customer complaint emails, and the on-call rota become a postmortem doc, root-cause table, customer apology, and regulator-grade timeline.',
+          skills: [
+            'Timeline reconstruction from mixed log + email + chat sources',
+            'Five-whys root cause analysis in tabular form',
+            'Parallel comms drafting (customer apology + internal lessons + regulator notification)'
+          ],
+          instructions: [
+            'Open Cowork',
+            'Attach the 4 incident artefacts',
+            'Paste the prompt — Cowork builds the postmortem and the comms in one pass',
+            'Hand to the Incident Manager for the SEV-1 review meeting'
+          ],
+          sample_files: [
+            [
+              'INC_Wartime_Channel_Log.docx',
+              'docx'
+            ],
+            [
+              'INC_Monitoring_Metrics.xlsx',
+              'xlsx'
+            ],
+            [
+              'INC_Customer_Complaint_Emails.docx',
+              'docx'
+            ],
+            [
+              'INC_OnCall_Rota.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Build the postmortem pack',
+              text: 'Using the 4 attached files for incident [INC-ID] on [INC-DATE], in parallel, do all 5: 1) Draft a 5-page postmortem in Word — Timeline (minute-by-minute), Impact (customers affected, revenue at risk, SLA breach), Root cause (5-whys table), Fixes deployed, Prevention plan. 2) Build a root-cause table in Excel — Symptom / Direct cause / Contributing factor / Systemic cause / Owner / Due date / Status. 3) Draft a customer apology email in Outlook from the COO — empathetic tone, what we did wrong, what we are fixing, goodwill gesture. 4) Draft a Teams message to the All-Engineering channel — 2 lines + link to the postmortem + 3 lessons for next time. 5) Draft a regulator notification letter in Word — formal tone, factual chronology, no speculation, ready for legal review. Mark every claim with the source artefact + line number from the log.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Major Incident Postmortem" using INC_Wartime_Channel_Log.docx, INC_Monitoring_Metrics.xlsx, INC_Customer_Complaint_Emails.docx and INC_OnCall_Rota.xlsx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Major Incident Postmortem — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            '5-page postmortem document',
+            'Root-cause analysis table (Excel)',
+            'Customer apology email draft',
+            'All-engineering Teams lessons post',
+            'Regulator notification letter'
+          ],
+          watch: [
+            'Timeline reconstructed from war-room chat + monitoring + emails — no single source missed',
+            'Root cause drilled to systemic level — not stopping at the surface symptom',
+            'Each comms adapted: customer = empathy, engineers = lessons, regulator = facts'
+          ],
+          honest: 'Cowork drafts. Legal MUST review the regulator letter before sending. The customer apology may need executive sign-off depending on goodwill amount. The five-whys is starter logic — engineers still own the systemic conclusion.',
+          tips: [
+            'Re-run with persona "CISO" for security incidents instead of availability',
+            'Add a 6th task — generate the SEV-1 review meeting agenda + 30-min calendar invite',
+            'For sector-regulated entities (banking, healthcare, telco) feed in the relevant regulatory clauses for tone'
+          ],
+          id: 'uc-incident-pmortem'
+        }
+      ],
+      notebookLibrary: [
+        {
+          title: 'Board Pre-Read Synthesis — Tobacco & Wellness',
+          archetype: 'board_prereread',
+          complexity: 'intermediate',
+          sources: [
+            [
+              'CEO_Report.docx',
+              'docx'
+            ],
+            [
+              'CFO_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Heatmap.xlsx',
+              'xlsx'
+            ],
+            [
+              'Strategy_Update_Deck.pdf',
+              'pdf'
+            ],
+            [
+              'Previous_Board_Minutes.docx',
+              'docx'
+            ]
+          ],
+          instructions: 'Context: this notebook is being built for the Tobacco & Wellness business. You are compressing 5 Board documents into a tight pre-read. Cite every claim. Flag where the CEO narrative diverges from the CFO numbers or the risk heatmap. Carry forward unresolved actions from the previous minutes.',
+          desc: 'Turn a 200-page Board pack into a 1-page pre-read that surfaces the 5 things each director MUST read before the meeting.',
+          prompts: [
+            {
+              label: 'Prompt 1 — The 5 things',
+              text: 'From all 5 sources, distil the 5 items each Director must read before the meeting. For each: a 2-sentence summary, the source citation, and the Board decision required (Note / Approve / Decide).'
+            },
+            {
+              label: 'Prompt 2 — Narrative vs numbers',
+              text: 'Compare /CEO_Report.docx narrative against /CFO_Financial_Pack.xlsx and /Risk_Heatmap.xlsx. List every place the story and the numbers diverge — quote both. End with the single sharpest question to put to the CEO in the meeting.'
+            },
+            {
+              label: 'Prompt 3 — Action carry-forward',
+              text: 'From /Previous_Board_Minutes.docx, list every action that remains open. For each: owner, due date, current status from the latest sources, and the line to push in this meeting.'
+            }
+          ],
+          expected: [
+            'A 5-item Board pre-read with decision tags.',
+            'A narrative-vs-numbers reconciliation with a sharp question.',
+            'A clean action carry-forward list with status updates.'
+          ],
+          watch: [
+            'The 5 items each cite a different source where possible.',
+            'Divergences quote both the CEO line AND the contradicting number.',
+            'Open actions reuse the exact action IDs from the minutes.'
+          ],
+          honest: 'This compresses what is in the pack. If a director needs context not in the 5 sources (e.g. analyst notes, industry context), add them as additional sources or pair Notebook with Researcher.',
+          tips: [
+            'Add a 6th source = analyst report for external context.',
+            'Use Quick Create > Pages to publish the pre-read to a Loop component.',
+            'Re-run prompt 3 right after the meeting to refresh status.'
+          ],
+          id: 'nb-board-prereread',
+          outputs: [
+            {
+              icon: '🎙️',
+              name: 'Audio Overview',
+              desc: 'Generates a ~10-15 minute podcast-style discussion between two AI hosts walking through every source.',
+              how: 'Click ⋯ on the Notebook header → Audio Overview → Generate. Download MP3 when ready.'
+            },
+            {
+              icon: '🎥',
+              name: 'Video Overview',
+              desc: 'A visual walkthrough of the sources with on-screen text, citations, and an AI narrator. Great for handoff briefings.',
+              how: '⋯ → Video Overview → Generate. Pick the audience tone (executive, technical, training).'
+            },
+            {
+              icon: '🧠',
+              name: 'Mind Map',
+              desc: 'Auto-generated visual concept map showing how the sources connect (themes, decisions, dependencies).',
+              how: '⋯ → Mind Map. Click any node to jump to the cited source span.'
+            },
+            {
+              icon: '📊',
+              name: 'Reports',
+              desc: 'One-click structured documents: Executive Briefing, Study Guide, FAQ, Timeline, or Custom Report you describe in one line.',
+              how: 'Reports tab → choose a template OR type "Write a report on..." in the prompt box.'
+            },
+            {
+              icon: '📋',
+              name: 'Study Guide / FAQ',
+              desc: 'Generates Q&A pairs and a study-guide outline from every source — useful for onboarding decks and "leave-behind" materials.',
+              how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
+            }
+          ]
+        },
+        {
+          title: 'Incident Post-Mortem — Tobacco & Wellness',
+          archetype: 'incident_pmortem',
+          complexity: 'intermediate',
+          sources: [
+            [
+              'Incident_Timeline.docx',
+              'docx'
+            ],
+            [
+              'Pager_Alerts_Log.xlsx',
+              'xlsx'
+            ],
+            [
+              'Customer_Comms_Sent.docx',
+              'docx'
+            ],
+            [
+              'System_Architecture_Diagram.pdf',
+              'pdf'
+            ],
+            [
+              'Past_Similar_Incidents.xlsx',
+              'xlsx'
+            ]
+          ],
+          instructions: 'Context: this notebook is being built for the Tobacco & Wellness business. You are producing a blameless post-mortem. Cite every event to a timestamp + source. Focus on systems and processes, not individuals. Flag where this incident matches a past one in the register. Stay evidence-bound.',
+          desc: 'Turn an incident response into a blameless post-mortem and action register that closes the loop instead of repeating the same failure.',
+          prompts: [
+            {
+              label: 'Prompt 1 — Sequenced timeline',
+              text: 'Reconstruct the incident as a strictly time-stamped event log combining /Incident_Timeline.docx and /Pager_Alerts_Log.xlsx. For each event: the timestamp, the trigger, the responder action, and the system state. Highlight the 3 longest gaps between detection and response.'
+            },
+            {
+              label: 'Prompt 2 — Contributing causes',
+              text: 'Identify the 5 contributing causes (technical, process, communication) using /System_Architecture_Diagram.pdf for the technical layer and /Customer_Comms_Sent.docx for the comms layer. For each: cause, evidence citation, and the safeguard absent.'
+            },
+            {
+              label: 'Prompt 3 — Repeat-risk + actions',
+              text: 'Compare against /Past_Similar_Incidents.xlsx — list any prior incident this repeats. Then produce 5 prevention actions, each with: owner role, due date, and the leading-indicator metric to watch.'
+            }
+          ],
+          expected: [
+            'A defensible timeline with response-gap analysis.',
+            'A contributing-causes list anchored to systems and comms.',
+            'A repeat-risk audit + actionable prevention register.'
+          ],
+          watch: [
+            'Every event has a real timestamp from the log.',
+            'Causes cite architecture or comms evidence, not opinion.',
+            'Actions reuse owner roles, not named individuals.'
+          ],
+          honest: 'A post-mortem is only useful if the actions ship. Notebook produces the register — the engineering org still needs to track closure.',
+          tips: [
+            'Add monitoring-config snapshots as a 6th source for tooling gaps.',
+            'Use Quick Create > Audio Overview for the all-hands walkthrough.',
+            'Re-run prompt 3 monthly to track action burndown.'
+          ],
+          id: 'nb-incident-pmortem',
+          outputs: [
+            {
+              icon: '🎙️',
+              name: 'Audio Overview',
+              desc: 'Generates a ~10-15 minute podcast-style discussion between two AI hosts walking through every source.',
+              how: 'Click ⋯ on the Notebook header → Audio Overview → Generate. Download MP3 when ready.'
+            },
+            {
+              icon: '🎥',
+              name: 'Video Overview',
+              desc: 'A visual walkthrough of the sources with on-screen text, citations, and an AI narrator. Great for handoff briefings.',
+              how: '⋯ → Video Overview → Generate. Pick the audience tone (executive, technical, training).'
+            },
+            {
+              icon: '🧠',
+              name: 'Mind Map',
+              desc: 'Auto-generated visual concept map showing how the sources connect (themes, decisions, dependencies).',
+              how: '⋯ → Mind Map. Click any node to jump to the cited source span.'
+            },
+            {
+              icon: '📊',
+              name: 'Reports',
+              desc: 'One-click structured documents: Executive Briefing, Study Guide, FAQ, Timeline, or Custom Report you describe in one line.',
+              how: 'Reports tab → choose a template OR type "Write a report on..." in the prompt box.'
+            },
+            {
+              icon: '📋',
+              name: 'Study Guide / FAQ',
+              desc: 'Generates Q&A pairs and a study-guide outline from every source — useful for onboarding decks and "leave-behind" materials.',
+              how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
+            }
+          ]
+        }
+      ]
     }
   ],
   departments: [
@@ -110991,7 +111952,8 @@ window.HUB_DATA = {
         'property-development',
         'ecommerce-superapp',
         'maritime-shipping',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -113903,7 +114865,8 @@ window.HUB_DATA = {
         'ecommerce-superapp',
         'maritime-shipping',
         'financial-regulator',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -116843,7 +117806,8 @@ window.HUB_DATA = {
         'hotel-resort',
         'aviation-airports',
         'retail-grocery',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -119732,7 +120696,8 @@ window.HUB_DATA = {
         'education',
         'ecommerce-superapp',
         'maritime-shipping',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -122688,7 +123653,8 @@ window.HUB_DATA = {
         'coal-mining',
         'construction',
         'retail-grocery',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -125526,7 +126492,8 @@ window.HUB_DATA = {
         'aviation-airlines',
         'power-utilities',
         'maritime-shipping',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -128276,7 +129243,8 @@ window.HUB_DATA = {
         'property-development',
         'ecommerce-superapp',
         'maritime-shipping',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -130945,7 +131913,8 @@ window.HUB_DATA = {
         'fintech-payments',
         'media-entertainment',
         'glc-investment',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -133570,7 +134539,8 @@ window.HUB_DATA = {
         'property-development',
         'ecommerce-superapp',
         'maritime-shipping',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -136246,7 +137216,8 @@ window.HUB_DATA = {
         'property-development',
         'ecommerce-superapp',
         'maritime-shipping',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -139102,7 +140073,8 @@ window.HUB_DATA = {
         'education',
         'property-development',
         'ecommerce-superapp',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
@@ -141965,7 +142937,8 @@ window.HUB_DATA = {
         'education',
         'power-utilities',
         'property-development',
-        'electrical-distribution'
+        'electrical-distribution',
+        'tobacco-wellness'
       ],
       coworkLibrary: [
         {
