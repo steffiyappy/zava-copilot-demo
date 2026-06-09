@@ -11,10 +11,10 @@ Workflow
    (researcher, analyst, excel, word, ppt, outlook, teams, notebook, cowork,
    agent_builder, agents_doc, pages).
 4. Generate proposed actions:
-   - A new WHATS_NEW banner entry in build_master.py for the most relevant posts
+   - A new WHATS_NEW banner entry in whatsnew_data.py for the most relevant posts
    - A "feasibility impact report" naming every existing prompt/file that
      references the affected feature and may need a refresh
-5. If --apply is passed, edit build_master.py in place to add the new banner
+5. If --apply is passed, edit whatsnew_data.py in place to add the new banner
    entries and update tools/blog_audit_state.json. Otherwise, dry-run only:
    write proposals to tools/proposals/<run-id>/ for human review.
 
@@ -50,6 +50,7 @@ TOOLS = ROOT / "tools"
 STATE_PATH = TOOLS / "blog_audit_state.json"
 RULESET_PATH = TOOLS / "feature_ruleset.json"
 BUILD_MASTER = ROOT / "build_master.py"
+WHATSNEW_DATA = ROOT / "whatsnew_data.py"
 DEFAULT_FEED = "https://www.microsoft.com/en-us/microsoft-365/blog/feed/"
 
 
@@ -187,16 +188,20 @@ def _scan_feasibility(categories_seen: set[str], ruleset: dict) -> list[dict]:
 
 
 def _apply_whats_new(banner: dict) -> bool:
-    """Insert banner dict into the WHATS_NEW list in build_master.py.
+    """Insert banner dict into the WHATS_NEW list in whatsnew_data.py.
 
     Returns True if applied, False if banner['id'] already present.
+    Auto-generated entries are English-only; a human reviewer adds
+    titleBM/titleID/summaryBM/summaryID/tipBM/tipID/badgeBM/badgeID
+    during PR review (the workflow opens the PR as a draft).
     """
-    text = BUILD_MASTER.read_text(encoding="utf-8")
-    if f'"id": "{banner["id"]}"' in text:
+    text = WHATSNEW_DATA.read_text(encoding="utf-8")
+    if f'"id": "{banner["id"]}"' in text or f"'id': '{banner['id']}'" in text:
         return False
-    closing = re.search(r"\n(\s*)\}\s*\n\]\s*\n\s*\n\s*SECTORS", text)
+    # whatsnew_data.py ends with: ...}\n]\n  (closing of WHATS_NEW list)
+    closing = re.search(r"\n(\s*)\}\s*\n\]\s*\Z", text)
     if not closing:
-        raise RuntimeError("Could not locate WHATS_NEW closing in build_master.py")
+        raise RuntimeError("Could not locate WHATS_NEW closing in whatsnew_data.py")
     indent = closing.group(1) or "    "
     new_entry = "    {\n"
     for k in ("id", "title", "badge", "summary", "tip", "license", "link"):
@@ -206,7 +211,7 @@ def _apply_whats_new(banner: dict) -> bool:
     insertion = ",\n" + new_entry
     insert_at = closing.start() + 1
     new_text = text[:insert_at] + indent + "}" + insertion + text[insert_at + len(indent) + 1:]
-    BUILD_MASTER.write_text(new_text, encoding="utf-8")
+    WHATSNEW_DATA.write_text(new_text, encoding="utf-8")
     return True
 
 
@@ -252,7 +257,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Microsoft 365 Copilot blog holistic auditor")
     ap.add_argument("--feed", default=DEFAULT_FEED, help="RSS/Atom feed URL")
     ap.add_argument("--apply", action="store_true",
-                    help="Apply proposed banner additions to build_master.py + update state")
+                    help="Apply proposed banner additions to whatsnew_data.py + update state")
     ap.add_argument("--max-posts", type=int, default=8,
                     help="Maximum new posts to surface per run (default 8)")
     ap.add_argument("--limit-banners", type=int, default=3,

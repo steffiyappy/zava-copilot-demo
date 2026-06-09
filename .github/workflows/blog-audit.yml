@@ -58,7 +58,7 @@ jobs:
         id: apply
         run: |
           python tools/blog_audit.py --apply
-          if git diff --quiet -- build_master.py tools/blog_audit_state.json; then
+          if git diff --quiet -- whatsnew_data.py tools/blog_audit_state.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -100,13 +100,13 @@ jobs:
             Automated holistic audit of the Microsoft 365 Copilot blog.
 
             This PR contains:
-            - New WHATS_NEW banner entry(ies) in `build_master.py`.
+            - New WHATS_NEW banner entry(ies) in `whatsnew_data.py`.
             - Updated `tools/blog_audit_state.json`.
             - Rebuilt `data.js` and `hub.html`.
             - Proposal report under `tools/proposals/<run-id>/report.md`.
 
             Please review:
-            1. Banner copy in `build_master.py` (rephrase if you want a different tone).
+            1. Banner copy in `whatsnew_data.py` (rephrase if you want a different tone, and add titleBM/titleID/summaryBM/summaryID/tipBM/tipID/badgeBM/badgeID).
             2. Feasibility report — does any tool description, prompt, or sample file need to mention the new capability, or remove a deprecated one?
             3. License rules — does the new feature change the FREE / M365 / FRONTIER tiering?
 
