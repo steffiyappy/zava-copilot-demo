@@ -6625,7 +6625,7 @@ const OTHER_PAGES = [
     color: '#0891B2',
     accent: '#0E7490',
     name: 'Contoso FSA — Copilot Immersion',
-    desc: 'Financial Services Authority Copilot immersion. Regulatory supervision, examination workflow, market conduct, prudential analysis — Researcher, Analyst, Cowork and Agent Builder for a financial regulator persona.',
+    desc: 'Contoso Financial Services Authority — 5-exercise regulator immersion. Persona: Andi Pratama, Director Sectoral Supervision. Q3 supervisory review of 80 licensed fintechs across one workday: Researcher (Critique + Model Council) on P2P complaints landscape · Word from transcript → formal minutes · Excel Plan + Analyst on sector survey · Cowork → executive summary + stakeholder email + HTML dashboard branded Authority Blue/Trust Gold · Agent Builder for a reusable supervisory team agent. GCSE prompt-framework colour-coding toggle. EN + BI throughout.',
     url: 'https://steffiyappy.github.io/contoso-fsa-copilot-immersion/',
     password: 'ContosoFSA2026',
     tag: 'Regulator Workshop',
@@ -6637,11 +6637,11 @@ const OTHER_PAGES = [
     color: '#EC4899',
     accent: '#BE185D',
     name: 'Contoso Lifestyle Retail — Copilot Demo',
-    desc: 'Lifestyle retail Copilot demo. Store ops, merchandising, customer 360, loyalty programme, seasonal campaign workflows — Chat, Researcher, Analyst, Cowork.',
+    desc: 'Contoso Lifestyle Retail — 10-exercise GM immersion. Persona: Pak Andi Wijaya, GM Retail Operations (multi-brand lifestyle & active-retail across 30+ Indonesian cities). One GM workday: Daily Briefing · Quarter-Closing Cowork → live HTML KPI dashboard · Researcher Critique + Model Council · BCG/McKinsey 8-slide deck · Copilot Create infographic · Teams Recap → Word minutes · Excel Power Hour (Chat/Edit/Plan) · Analyst Agent multi-perspective (GM/CFO/COO) · personalised mail-merge to 14 Store Managers · CV screening from SharePoint. Extras: Outlook catch-up, Word interrogate, GM power move. EN + BI.',
     url: 'https://steffiyappy.github.io/contoso-lifestyle-retail-demo/',
     password: 'ContosoRetail2026',
     tag: 'Retail Demo',
-    keywords: 'contoso lifestyle retail store ops merchandising loyalty customer 360 seasonal campaign immersion researcher analyst cowork'
+    keywords: 'contoso lifestyle retail store ops merchandising loyalty customer 360 seasonal campaign GM immersion Pak Andi Wijaya researcher critique model council cowork HTML dashboard PowerPoint BCG McKinsey create infographic teams recap word minutes excel power hour analyst agent mail merge CV screening Plaza Indonesia Pondok Indah Pakuwon Surabaya'
   },
   {
     section: 'Customer Workshops',
@@ -6649,11 +6649,11 @@ const OTHER_PAGES = [
     color: '#DC2626',
     accent: '#991B1B',
     name: 'Contoso Geothermal — Copilot Demo',
-    desc: 'Geothermal energy Copilot demo. Wellfield operations, plant performance, regulatory reporting, ESG, capex planning — Chat, Researcher, Analyst, Cowork.',
+    desc: 'Contoso Geothermal — 10-exercise GM immersion. Renewable baseload power across three Indonesian fields (Wayang Windu, Salak). One GM workday: Daily Briefing · Quarter-Closing Cowork → live HTML KPI dashboard · Researcher Critique + Model Council on geothermal power generation · BCG/McKinsey 8-slide deck · Copilot Create infographic · Teams Recap → Word minutes · Excel Power Hour (Chat/Edit/Plan) · Analyst Agent multi-perspective (GM/CFO/COO) · personalised mail-merge to 14 Plant Managers/Shift Supervisors · CV screening for Geothermal Reliability Engineer role. Extras: Outlook, Word interrogate, GM power move. EN + BI.',
     url: 'https://steffiyappy.github.io/contoso-geothermal-demo/',
     password: 'ContosoGeo2026',
     tag: 'Energy Demo',
-    keywords: 'contoso geothermal energy wellfield plant performance regulatory ESG capex renewable steam reservoir researcher analyst cowork'
+    keywords: 'contoso geothermal energy wellfield plant performance regulatory ESG capex renewable steam reservoir GM immersion researcher critique model council cowork HTML dashboard PowerPoint BCG create infographic teams recap word minutes excel power hour analyst mail merge CV screening Wayang Windu Salak reliability engineer'
   },
   {
     section: 'Customer Workshops',
@@ -6661,11 +6661,11 @@ const OTHER_PAGES = [
     color: '#F59E0B',
     accent: '#B45309',
     name: 'Contoso Pizza Co. — Copilot Demo',
-    desc: 'Pizza QSR Copilot demo. Store performance, menu engineering, loyalty, supply chain, franchisee ops, marketing campaign workflows — Chat, Researcher, Analyst, Cowork.',
+    desc: 'Contoso Pizza Co. — 10-exercise GM immersion. Indonesian QSR multi-store pizza chain. One GM workday: Daily Briefing · Quarter-Closing Cowork → live HTML KPI dashboard · Researcher Critique + Model Council on QSR landscape · BCG/McKinsey 8-slide deck · Copilot Create infographic · Teams Recap → Word minutes · Excel Power Hour (Chat/Edit/Plan) · Analyst Agent multi-perspective (GM/CFO/COO) · personalised mail-merge to 14 Store Managers · CV screening from SharePoint. Extras: Outlook, Word interrogate, GM power move (Lebaran promo planning). EN + BI.',
     url: 'https://steffiyappy.github.io/contoso-pizza-co-demo/',
     password: 'ContosoPizza2026',
     tag: 'QSR Demo',
-    keywords: 'contoso pizza QSR quick service restaurant store performance menu loyalty supply chain franchisee marketing researcher analyst cowork'
+    keywords: 'contoso pizza QSR quick service restaurant store performance menu loyalty supply chain franchisee marketing GM immersion researcher critique model council cowork HTML dashboard PowerPoint BCG create infographic teams recap word minutes excel power hour analyst mail merge CV screening Lebaran promo'
   },
   {
     section: 'Customer Workshops',
@@ -6673,11 +6673,11 @@ const OTHER_PAGES = [
     color: '#78350F',
     accent: '#451A03',
     name: 'Contoso Mining Services — Copilot Demo',
-    desc: 'Mining services Copilot demo. Contract operations, drill & blast, fleet utilisation, HSE, supplier and tender workflows — Chat, Researcher, Analyst, Cowork.',
+    desc: 'Contoso Mining Services — 10-exercise GM immersion. Indonesian mining-services contractor (drill & blast, fleet, HSE). One GM workday: Daily Briefing · Quarter-Closing Cowork → live HTML KPI dashboard · Researcher Critique + Model Council on mining services landscape · BCG/McKinsey 8-slide deck · Copilot Create infographic · Teams Recap → Word minutes · Excel Power Hour (Chat/Edit/Plan) · Analyst Agent multi-perspective (GM/CFO/COO) · personalised mail-merge to 14 Site Managers/Superintendents · CV screening from SharePoint. Extras: Outlook, Word interrogate, GM power move (EPC bid response). EN + BI.',
     url: 'https://steffiyappy.github.io/contoso-mining-services-demo/',
     password: 'ContosoMining2026',
     tag: 'Mining Demo',
-    keywords: 'contoso mining services contract drill blast fleet utilisation HSE safety supplier tender open pit researcher analyst cowork'
+    keywords: 'contoso mining services contract drill blast fleet utilisation HSE safety supplier tender open pit GM immersion researcher critique model council cowork HTML dashboard PowerPoint BCG create infographic teams recap word minutes excel power hour analyst mail merge CV screening EPC bid response'
   },
   {
     section: 'Customer Workshops',
@@ -6685,11 +6685,11 @@ const OTHER_PAGES = [
     color: '#475569',
     accent: '#1E293B',
     name: 'Contoso Minerals — Legal Copilot',
-    desc: 'Mining/minerals legal department Copilot demo. Contract review, litigation, regulatory compliance, M&A due diligence, tenement & permit workflows — Chat, Researcher, Word Legal Agent, Cowork.',
+    desc: 'Contoso Minerals — Legal-department Copilot immersion (mining/minerals General Counsel persona). Contract review · litigation prep · regulatory compliance horizon scan · M&A due diligence · tenement & permit workflows · Cowork-driven legal-memo cascade · Word Legal Agent for redlines and clause comparison · Researcher on enforcement precedents. Six core legal use cases with EN + BI prompts.',
     url: 'https://steffiyappy.github.io/contoso-minerals-legal-copilot/',
     password: 'ContosoMinerals2026',
     tag: 'Legal Demo',
-    keywords: 'contoso minerals mining legal contract litigation regulatory compliance M&A due diligence tenement permit Word legal agent researcher cowork'
+    keywords: 'contoso minerals mining legal general counsel contract review litigation regulatory compliance M&A due diligence tenement permit Word legal agent researcher cowork enforcement precedent'
   },
   {
     section: 'Customer Workshops',
