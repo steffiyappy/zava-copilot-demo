@@ -1,0 +1,536 @@
+======================================================================
+## Session 1 - Prompt Engineering
+======================================================================
+Session 1 ΓÇö Prompt Engineering
+Contoso Consolidated Berhad   |   Microsoft 365 Copilot Premium
+Session 1 ΓÇö Prompt Engineering with M365 Copilot
+Audience: Contoso Consolidated managers across Finance, Ops, Sales, Marketing, After Sales
+Duration: 90 min (Demo time: ~25 min, the rest = framework explanation + Q&A + audience prompt practice)
+License: M365 Copilot Premium
+Demo Flow (Keep it tight ΓÇö 25 minutes total)
+Opener (5 min) ΓÇö The "Bad vs Good" Prompt
+Open Microsoft 365 Copilot Chat (Work mode). Show side-by-side what a one-line prompt produces vs a structured one.
+Bad prompt (live):
+Write me an email to the plantation managers
+(Generic, no audience, no purpose, no tone.)
+Good prompt (live) ΓÇö using the G-C-S-E framework:
+GOAL: Draft an email to the 7 Plantation Estate Managers reminding them
+that Q2 CapEx submissions are due by 25 June.
+
+CONTEXT: I am the Group Treasury Manager at Contoso Consolidated Berhad.
+The estates have missed the last two deadlines. Tone should be firm but
+collegial ΓÇö I still need their cooperation for Q3.
+
+SOURCE: Use the attached CapEx submission template and the email thread
+from last quarter where I followed up on missed deadlines (paste below).
+
+EXPECTATION: Subject line + 4 short bullet points + sign-off
+"Regards, Treasury". Under 150 words. No jargon.
+≡ƒÆí  Teaching point: G-C-S-E = Goal ┬╖ Context ┬╖ Source ┬╖ Expectation.
+≡ƒÆí  - Goal ΓÇö what do I want Copilot to do?
+≡ƒÆí  - Context ΓÇö who am I, who is the audience, what's the situation?
+≡ƒÆí  - Source ΓÇö what data, file, or reference should it use?
+≡ƒÆí  - Expectation ΓÇö format, length, tone, structure of the output.
+>
+≡ƒÆí  You don't need all four every time, but the more of these you give, the better the output.
+Demo 1 (8 min) ΓÇö Prompt a messy inbox into action
+File to use: Demo Files\01_Messy_Email_Thread.txt (paste into Copilot Chat)
+Prompt:
+Below is a 3-day email thread between Contoso Consolidated Treasury and the
+Automotive division about a delayed FX hedging request.
+
+1. Summarise the thread in <100 words.
+2. List every decision that was made (with who decided it).
+3. List every open question still unresolved, tagged with whose ball it is.
+4. Draft a 4-line reply from me (Treasury) that closes the open items.
+
+Tone: professional, no jargon.
+What to highlight while it runs:
+Numbered output ΓåÆ forces structure
+Asking for "who owns it" ΓåÆ drives accountability
+"Draft a reply" combines analysis + action in one prompt
+Demo 2 (6 min) ΓÇö Same data, different lens (Context matters)
+Same Source, same Expectation ΓÇö but change the Context and watch the answer move. Use Demo Files\02_Q1_Division_Snapshot.txt.
+Prompt A ΓÇö Finance lens:
+GOAL: Tell me the 3 numbers I should worry about most.
+CONTEXT: I am a Finance Business Partner at Contoso Consolidated.
+SOURCE: The Q1 divisional snapshot below.
+EXPECTATION: 3 bullets, each with a one-line "why this matters".
+Prompt B ΓÇö Operations lens (run immediately after, same chat):
+Now keep the same SOURCE but change CONTEXT: I am an Operations Manager
+preparing for next week's MANCOM. GOAL: surface the 3 biggest operational
+risks I should flag. EXPECTATION: 3 bullets, each tagged with the
+division it relates to.
+≡ƒÆí  Teaching point: Same data, different Context = different insights. Copilot follows the lens you give it.
+Demo 3 (6 min) ΓÇö The "improve my prompt" cheat code
+Show the Researcher agent with a deliberately weak prompt, then use the Refine prompt suggestion that Copilot offers.
+Weak prompt (type this):
+Research palm oil prices
+When Copilot shows the auto-refine suggestion, click it. Show the rewritten prompt ΓÇö point out that Copilot itself just modelled G-C-S-E (it added Goal clarity, Context, a Source hint, and Expectation).
+≡ƒÆí  Teaching point: When stuck, ask Copilot to improve your prompt before you run it.
+≡ƒÆí  Try: "Improve this prompt so it gives me a board-ready answer: [your prompt]"
+Sample Prompt Library ΓÇö by Function
+Hand this out / paste into chat as a starting kit.
+≡ƒÆí  Each prompt below maps cleanly to G-C-S-E. Read them and spot the four parts.
+Finance & Treasury (42% of audience)
+GOAL: Identify the top 3 budget variances >5% and draft questions I can
+      raise with the divisional FC.
+CONTEXT: I am a Finance Manager at Contoso Consolidated reviewing a Q1
+         variance report ahead of my 1:1 tomorrow.
+SOURCE: The variance report I am pasting below.
+EXPECTATION: Output as a table with columns: Line Item | Variance % |
+             Likely Cause | Question to Ask. Max 3 rows.
+GOAL: Compress this audit memo into a 1-page executive briefing.
+CONTEXT: I will forward to the Group MD; he wants risk + action only.
+SOURCE: The 20-page audit memo attached.
+EXPECTATION: Three sections ΓÇö (1) Key risks (2) Management response
+             (3) My recommended next action. Keep all numbers exactly
+             as in source. Under 1 page.
+Operations
+GOAL: Extract everything I need to action from today's shift handover.
+CONTEXT: I am a Plant Operations Manager doing my morning walkaround.
+SOURCE: Shift handover note pasted below.
+EXPECTATION: Three bullet sections ΓÇö Safety incidents | Downtime
+             (with duration) | Escalations needed today.
+Sales
+GOAL: Draft a follow-up email to a quiet fleet customer.
+CONTEXT: I am a Sales Manager at Contoso Consolidated Automotive. The
+         customer requested a quote 5 days ago and went silent.
+SOURCE: Original quote and email thread below.
+EXPECTATION: Warm, low-pressure tone. Give them an easy 'yes'.
+             End with ONE clear CTA. Under 120 words.
+Marketing
+GOAL: Brainstorm 5 campaign angles for our new sustainable
+      building-materials line.
+CONTEXT: Targeted at Malaysian property developers; competing with
+         imported greener cement at slight premium.
+SOURCE: Product fact sheet and competitor scan below.
+EXPECTATION: For each angle ΓÇö hook | headline | supporting proof point |
+             primary channel. Output as a table.
+After Sales
+GOAL: Convert a customer complaint into a formal case ticket.
+CONTEXT: Complaint came via WhatsApp; I run the After-Sales service desk;
+         our SLA for first response is 4 hours.
+SOURCE: WhatsApp transcript pasted below.
+EXPECTATION: Ticket with ΓÇö customer summary | root cause hypothesis |
+             recommended response | escalate-to-GM Y/N with reason.
+Audience Practice (15 min)
+Ask attendees to:
+Pick one task they did today.
+Write the prompt using G-C-S-E (Goal ┬╖ Context ┬╖ Source ┬╖ Expectation).
+Run it. Share what worked / didn't.
+Watch-outs
+Don't paste anything from a confidential customer or HR system into a free Copilot Chat. Always use Work mode (green shield = grounded in tenant data, not used for training).
+Output is a draft, not a decision. Always verify numbers before forwarding.
+If response is too generic ΓåÆ strengthen Context. If too long or off-format ΓåÆ tighten Expectation. If facts feel made up ΓåÆ give it a Source.
+======================================================================
+## Session 2 - Excel Productivity
+======================================================================
+Session 2 ΓÇö Excel Productivity
+Contoso Consolidated Berhad   |   Microsoft 365 Copilot Premium
+Session 2 ΓÇö Excel Productivity with M365 Copilot
+Audience: Contoso Consolidated Finance & Operations managers
+Duration: 90 min (Demo time: ~30 min)
+License: M365 Copilot Premium (Edit Mode + Analyst agent)
+≡ƒÆí  This session is the #1 ask in the survey (42%). The demos below are anchored to two specific use cases Chia raised in the 28-May meeting:
+≡ƒÆí  1. "Maintain a fixed dashboard template while updating source data monthly" ΓåÆ Demo 2
+≡ƒÆí  2. "Consolidate data from multiple Excel tabs into a summary template, even when tab structures differ" ΓåÆ Demo 3
+>
+≡ƒÆí  Each demo file has been built to feel like Chia's actual world ΓÇö different units (RM / RM '000 / RM Mil), different column names, embedded comments, sub-totals mid-table, missing fields. That's deliberate.
+Pre-flight checklist
+Open all demo files from OneDrive (not local disk) so Copilot in Excel has full edit mode
+Have two Excel windows side-by-side: raw data on left, blank dashboard on right
+Confirm the "Copilot" button is visible in the Excel ribbon (Home tab)
+Demo 1 (8 min) ΓÇö From raw data to insights, no formulas
+File: Demo Files\01_Divisional_Sales_Q1FY26.xlsx
+Scenario: Finance Manager opens the divisional sales export and needs answers in 60 seconds.
+Steps
+Open the file. Click Copilot in ribbon.
+Prompt 1:
+```
+Analyse this sales data. What are the top 3 trends I should know,
+and which division is the biggest concern? Use plain English.
+```
+While answer renders, point out it's reading the whole sheet ΓÇö no formulas.
+Prompt 2 (drill in):
+```
+For the worst-performing division, show me the month-over-month
+movement as a table and highlight the inflection point.
+```
+Prompt 3 (action):
+```
+Draft 3 questions I should ask the divisional FC in our next 1:1.
+```
+≡ƒÆí  Teaching point: Three prompts ΓåÆ trends ΓåÆ drill-down ΓåÆ action. That's the loop.
+Demo 2 (10 min) ΓÇö Chia's "Fixed template, refresh data" use case
+Files: 04_Group_Consolidation_Template.xlsx (the branded MANCOM dashboard) + 01_Divisional_Sales_Q1FY26.xlsx (current month source)
+≡ƒÆí  Chia's exact ask (28-May meeting): "Maintain a fixed dashboard template in Excel while updating source data monthly, showing the dashboard update process."
+Steps
+Open 04_Group_Consolidation_Template.xlsx. Walk through the structure: KPI tiles, divisional table, commentary box, top 3 risks/opportunities. Show the Instructions tab.
+Open 01_Divisional_Sales_Q1FY26.xlsx alongside.
+In the dashboard file, open Copilot pane and use this prompt:
+```
+Refresh this MANCOM dashboard using the Q1 FY26 sales data in
+01_Divisional_Sales_Q1FY26.xlsx as the source.
+Keep every section, header, colour and layout EXACTLY as-is.
+Only update: KPI values, the divisional table rows, RAG status,
+the executive commentary, top 3 risks, top 3 opportunities.
+Commentary tone: confident, factual, no jargon. Numbers in RM Mil.
+```
+Show the result ΓÇö values, narrative, risks/opportunities all populated; layout untouched.
+The refresh moment ΓÇö replace the source with 02_Divisional_Sales_Q2FY26.xlsx:
+```
+Now refresh again using 02_Divisional_Sales_Q2FY26.xlsx instead.
+Same rules ΓÇö only update values and narrative.
+```
+Side-by-side, the dashboard now shows Q2 numbers but identical structure.
+≡ƒÆí  Teaching point: Chia's monthly close pain ΓÇö solved. Same template, fresh narrative, every month.
+Demo 3 (10 min) ΓÇö Chia's "Consolidate 7 messy tabs into one summary" use case
+File: 03_Divisional_Submissions_Multitab.xlsx (the messy reality) + 04_Group_Consolidation_Template.xlsx (the target)
+≡ƒÆí  Chia's exact ask (28-May meeting, action assigned to Chia): "Sanitize and send sample Excel data with multiple tabs and templates to test Copilot's ability to consolidate and populate a summary template as requested."
+>
+≡ƒÆí  This file simulates exactly that ΓÇö 7 division tabs, each with different column names, different period formats, different units (RM / RM '000 / RM Mil), embedded comments, sub-totals mid-table, blank cells, and notes in red. Real-world messy.
+Walk through the source first (1 min)
+Open 03_Divisional_Submissions_Multitab.xlsx and click through 2ΓÇô3 tabs to show the variation:
+Plantations ΓÇö has sub-totals, hover comments, RM Mil
+Building_Materials ΓÇö values in absolute RM (not thousands!), missing volume fields
+Trading ΓÇö abbreviated headers (Mth, WF, Active Cust)
+Then run the consolidation
+With the multi-tab file open, prompt:
+```
+This workbook has 7 division tabs (Plantations, Property, Automotive,
+Credit Financing, Building Materials, Fertilizers, Trading). Each tab has:
+- Different column names for the same concept (Revenue / Sales / Top Line / Gross Rev)
+- Different units (some in RM Mil, some in RM 000, Building Materials is in
+absolute RM ΓÇö read the header notes!)
+- Different period formats (Jan-26, 01/2026, Q1 FY26, Mth, etc.)
+- Some have sub-totals mid-table ΓÇö exclude those from the consolidation
+Map every division to a standard schema and produce a new tab called
+"Group Consolidated" with columns:
+Division | Revenue (RM Mil) | COGS (RM Mil) | OpEx (RM Mil) | EBIT (RM Mil) |
+EBIT Margin % | Headcount | % Group Revenue
+Add a TOTAL row at the bottom. Aggregate all 3 months (Jan-Mar) per division.
+Convert all values to RM Mil consistently.
+Then write a 100-word commentary on the consolidated numbers in the style
+of a Group CFO email to the Board. Save in cell A30.
+```
+Show the consolidated tab. Highlight that Building Materials values were correctly converted from absolute RM, and the Plantations sub-total rows were excluded.
+Bonus prompt (audience favourite):
+```
+Now overlay this onto my MANCOM dashboard template
+(04_Group_Consolidation_Template.xlsx) using the same refresh rules
+as before ΓÇö values + narrative only, layout stays fixed.
+```
+≡ƒÆí  Teaching point: No VLOOKUP, no Power Query, no IT ticket. Copilot reasons about the meaning of columns, not just their names.
+Sample Prompt Library ΓÇö Excel
+Quick analysis starters
+What's the story this data is telling me? Give me 3 trends and 1 anomaly.
+Identify all rows where [column X] is more than 10% off [column Y]. Explain why each might be happening.
+Forecast the next 3 months for [metric] using simple trend analysis. Note assumptions.
+Dashboard requests
+Build a one-page dashboard suitable for our monthly MANCOM pack with KPIs,
+charts and a 3-bullet executive summary. Use Contoso Consolidated brand colours.
+Data quality / cleanup
+Find duplicates, missing values, and outliers in this sheet. Suggest fixes
+but do not change the data yet.
+Commentary / variance
+For each line where variance vs budget is >5%, draft a one-sentence
+explanation in the style of a finance commentary. Output as a new column.
+Watch-outs
+Open from OneDrive, not local ΓÇö Edit Mode needs cloud-backed files
+For files >50MB or >1M cells, Copilot may sample data ΓÇö verify totals
+Charts use Office defaults; brand colours need to be in the prompt
+Always save a copy before asking Copilot to restructure tabs
+Audience Q&A topics to expect
+"Can it connect to our SAP / Oracle?" ΓåÆ Not natively; export to Excel first, or build a Power Automate flow / Copilot Studio agent (separate session)
+"Can it push to Power BI?" ΓåÆ Not directly today. Excel dashboards are the fastest path for now.
+"What about confidentiality?" ΓåÆ Work Mode data stays in tenant. Never used for model training.
+======================================================================
+## Session 3 - Copilot Agents
+======================================================================
+Session 3 ΓÇö Copilot Agents
+Contoso Consolidated Berhad   |   Microsoft 365 Copilot Premium
+Session 3 ΓÇö Copilot Agents
+Audience: Contoso Consolidated managers ΓÇö same mix as previous sessions
+Duration: 90 min (Demo time: ~40 min)
+License: M365 Copilot Premium (Frontier preview enabled, model picker on)
+≡ƒÆí  Goal: Tour the agent ecosystem ΓÇö what ships out of the box, what users can build, and where Copilot is heading. Keep each demo short ΓÇö let the agents do the talking.
+What is an "Agent" in Copilot?
+Three groups to cover today:
+Built-in skill agents ΓÇö Researcher, Analyst, Cowork
+App-specific agents invoked from Copilot Chat ΓÇö Word, PowerPoint, Excel
+Build-your-own ΓÇö Agent Builder, plus a peek at the Learning agent
+Demo 1 (10 min) ΓÇö Researcher: Chia's "auto + council + cherry-pick" workflow
+Open Copilot Chat ΓåÆ Agents ΓåÆ Researcher.
+≡ƒÆí  Chia's exact ask (28-May meeting): "Generate both auto and council reports, then manually merge preferred sections." He called this his cheat code ΓÇö get the breadth of two model outputs, then keep the best paragraphs from each.
+Step 1 ΓÇö Run in **Auto-refine** mode
+Set the model to Auto (GPT drafts ΓåÆ Claude refines, or vice versa). Prompt:
+Research the outlook for Malaysian palm oil prices over the next 12 months.
+Include: current spot, supply/demand drivers, weather (El Ni├▒o/La Ni├▒a),
+biodiesel mandate impact, and 3 named industry analysts' price forecasts.
+
+Output: 1-page executive briefing for the Contoso Consolidated Board.
+End with 3 strategic implications for our Plantations division.
+Step 2 ΓÇö Same prompt in **Model Council**
+Two columns appear: GPT response | Claude response.
+GPT: more structured, more numeric
+Claude: more cautious, better at nuance
+Step 3 ΓÇö The cherry-pick
+Highlight strong paragraphs from each ΓåÆ copy
+Convert ΓåÆ Word
+Harmonise voice:
+```
+Below is a merged briefing combining paragraphs from two AI models.
+Re-write it as a single coherent voice (Group CFO tone). Keep all facts,
+citations and figures intact. Don't add new claims.
+```
+≡ƒÆí  Teaching point: Auto = fast path. Council + cherry-pick = Chia's premium path when the answer matters (Board, regulator, MD review).
+Demo 2 (5 min) ΓÇö Analyst: numbers + narrative
+Open Copilot Chat ΓåÆ Agents ΓåÆ Analyst. Attach Demo Files\01_Sales_Pipeline_Analysis.xlsx.
+Prompt:
+Analyse the Contoso Consolidated Automotive sales pipeline. I want:
+1. Conversion rate by stage and region.
+2. Which sales reps are above/below the pack and why.
+3. A forecast for next quarter assuming current win rates hold.
+4. The top 3 deals at risk and what action to take this week.
+
+Show your working ΓÇö I want to see the Python code you ran.
+Highlight while it runs
+Analyst writes & runs Python under the hood ΓÇö auditable
+Shows code in a side panel; charts inline
+Naturally chain: "redo the regional chart as a bar chart"
+Demo 3 (5 min) ΓÇö Cowork: morning prep on autopilot
+Open Copilot Chat ΓåÆ Cowork (Frontier preview).
+Prompt:
+It's Monday. Prep me for the week:
+1. Summarise key emails from last 3 days where I'm in the To line.
+2. List my meetings this week ΓÇö for each, who's attending and what's the goal.
+3. Surface any document the team edited over the weekend that I should read.
+4. Draft 3 priorities for my Monday team huddle based on what's brewing.
+Highlight
+Chains multiple skills in one prompt: email + calendar + docs + drafting
+Output is a runbook, not an answer ΓÇö copy to OneNote and you're set
+Stays inside Work Mode ΓÇö your tenant only
+Demo 4 (6 min) ΓÇö App-specific agents from Copilot Chat
+≡ƒÆí  Same Word / Excel / PowerPoint capabilities seen in Sessions 2 & 4 ΓÇö but here we invoke them as agents from Copilot Chat, no need to open the app first. Useful for quick one-shot tasks.
+Stay in Copilot Chat. Type @ and pick the agent.
+4a ΓÇö `@Word` agent (1.5 min)
+@Word Draft a one-page memo from the Group Treasurer to all Divisional CFOs
+on the Q2 FX hedging policy refresh. Include 3 bullets on what's changing,
+1 bullet on what's not, and a placeholder for sign-off.
+ΓåÆ Drops a .docx into OneDrive. Show the file open.
+4b ΓÇö `@PowerPoint` agent (1.5 min)
+@PowerPoint Create a 5-slide deck titled "Contoso Consolidated ΓÇö Q1 FY26
+MANCOM Update". Slides: title, group highlights, divisional snapshot,
+risks & mitigations, what we need from MANCOM. Brand: navy + gold.
+ΓåÆ Drops a .pptx into OneDrive.
+4c ΓÇö `@Excel` agent (1.5 min)
+@Excel Build a workbook to track monthly FX exposure by division. Tabs:
+Plantations, Property, Automotive, Credit Financing, Building Materials,
+Fertilizers, Trading. Each tab: month, currency, gross exposure, hedged
+amount, net exposure, hedge ratio %. Add a Group Summary tab on top
+that pulls totals across divisions.
+ΓåÆ Drops a fully-tabbed .xlsx into OneDrive.
+4d ΓÇö Chain them (30 sec)
+Show that you can chain in one chat:
+Now use the FX exposure workbook above as a source for a 1-page memo
+in Word, then create a 3-slide deck summarising it.
+≡ƒÆí  Teaching point: When you don't even want to leave the chat ΓÇö agents bring the app to you.
+Demo 5 (8 min) ΓÇö Build your own agent (NO code)
+Open Copilot Chat ΓåÆ Create an agent (Agent Builder).
+Agent we'll build live: "Contoso HR Policy Buddy"
+Describe the agent in natural language:
+You are Contoso Consolidated's HR Policy Buddy. Employees ask you questions
+about leave, benefits, claims, dress code, working hours, and disciplinary
+processes. Always answer based on the attached HR Handbook. If a question
+isn't covered, say so and recommend they contact HR Business Partner.
+Keep answers under 5 sentences. Cite the section number.
+Knowledge: Upload Demo Files\02_Contoso_HR_Handbook.docx
+Starter prompts (configure in agent):
+"How many days of annual leave do I get?"
+"What's the policy on working from home?"
+"I want to claim mileage for a client visit. How?"
+"What's the process if I want to extend maternity leave?"
+Test it live
+Type one of the starter prompts. Show citation back to handbook section.
+≡ƒÆí  Teaching point: No code. No IT ticket. Built in 4 minutes. Share to a Teams channel ΓÇö done.
+Demo 6 (4 min, if time) ΓÇö Learning agent
+Open Copilot Chat ΓåÆ Agents ΓåÆ Learning (Microsoft's skilling/learning agent).
+≡ƒÆí  Why this matters: The survey shows Daily users score 4.08/5 satisfaction; Rarely users score 2.5/5. Closing the gap is a skilling problem. The Learning agent is built to close it for each individual.
+Prompt 1 ΓÇö personal skill plan:
+I'm a Senior Manager in Contoso Consolidated Treasury. I use Copilot a few
+times a week mostly for Excel analysis. Build me a 4-week learning plan
+to become a daily power user, with one 15-min activity per weekday.
+Include the specific Copilot feature, a sample prompt, and a self-check.
+Prompt 2 ΓÇö micro-learning on demand:
+Teach me how to use the Analyst agent in 5 minutes. Give me one realistic
+finance scenario I can try right now using my own data.
+Highlight
+Learning agent personalises to your role + current usage pattern
+Pulls in Microsoft Learn content, Copilot Lab prompts, and tenant-published guides
+Track-able by L&D ΓÇö links into the broader skilling story Arvilla and team are running
+≡ƒÆí  Teaching point: This is how you turn the 26% occasional users in your survey into daily users. One agent. Continuous nudges.
+Sample Prompt Library ΓÇö Agents
+Researcher
+Research [topic]. Format: executive briefing, max 1 page. End with 3 strategic
+implications for Contoso Consolidated [division]. Include named analyst forecasts.
+Analyst
+[Attach data]. Find the patterns I would miss. Show your code. Forecast next period.
+Highlight the 3 most important findings as bullets at the top.
+Cowork
+Prep me for [meeting / week / project review]. Pull from my email, calendar, and
+recent SharePoint activity. Output as a runbook with timing and decisions needed.
+Word / PowerPoint / Excel agents (from chat)
+@Word Draft [type of document] for [audience] covering [topics]. [Format constraints].
+@PowerPoint Create a [N]-slide deck on [topic]. Brand: [colours]. Speaker notes included.
+@Excel Build a workbook with tabs for [list]. Each tab tracks [columns]. Add summary tab on top.
+Custom agents ΓÇö ideas to spark the audience
+Vendor Onboarding Helper ΓÇö answers procurement Q's from SOP doc
+Treasury FAQ ΓÇö explains the FX hedging policy to non-finance staff
+Plant Safety Coach ΓÇö converts incident logs into toolbox talk briefings
+Sales Battlecard Bot ΓÇö instant competitor/objection responses for reps
+Estate Reporting Assistant ΓÇö converts daily plantation reports into MANCOM-ready summaries
+Learning agent
+I'm a [role] in [division]. I use Copilot [frequency] mostly for [tasks].
+Build me a [duration] learning plan to [goal], with [cadence] activities.
+For each: feature, sample prompt, self-check.
+Watch-outs
+Custom agents can only access knowledge you upload + sources you allow. They are NOT general internet bots.
+Frontier features (Cowork, model council, Learning agent) require Frontier preview enabled in your tenant
+Agents inherit your permissions ΓÇö they cannot see what you cannot see
+@Word/@PowerPoint/@Excel agents save to OneDrive ΓÇö confirm storage policy with IT before wide rollout
+Test with sanitised data before sharing org-wide
+Q&A topics to expect
+"Can the agent call our SAP API?" ΓåÆ Not in no-code Agent Builder. That's Copilot Studio (separate session).
+"Who can use my agent?" ΓåÆ You control sharing ΓÇö keep private, share to a Teams channel, or publish org-wide.
+"Will it hallucinate?" ΓåÆ Risk reduces sharply when you ground it with knowledge files. Always test.
+"How is Learning agent different from Microsoft Learn?" ΓåÆ Learning agent uses Microsoft Learn as a source, but personalises and paces the content based on your role and behaviour.
+======================================================================
+## Session 4 - Teams Word PowerPoint
+======================================================================
+Session 4 ΓÇö Teams ┬╖ Word ┬╖ PowerPoint
+Contoso Consolidated Berhad   |   Microsoft 365 Copilot Premium
+Session 4 ΓÇö Teams, Word & PowerPoint with Copilot
+Audience: Contoso Consolidated managers ΓÇö all functions
+Duration: 90 min (Demo time: ~30 min) ΓÇö biggest "this is for me" session
+License: M365 Copilot Premium
+≡ƒÆí  Goal: show the end-to-end flow: messy meeting ΓåÆ polished minutes ΓåÆ executive Word brief ΓåÆ MANCOM-ready PowerPoint deck.
+Pre-flight checklist
+Have the Brand Guide open: Demo Files\02_Contoso_Brand_Guide.txt ΓÇö paste the brand snippet into your prompts so Word/PPT outputs come out on-brand
+Open Word + PowerPoint from OneDrive (not local) so Copilot side-pane works
+Have a recorded Teams meeting handy, OR fall back to Demo Files\01_Meeting_Transcript_ERP_Steerco.txt
+The story arc (tell this up front)
+Sarah is a Contoso Consolidated GM. She just finished a 1-hour cross-divisional steering committee on a new ERP rollout. Today's demo: she walks out of the meeting and 45 minutes later has minutes circulated, a one-page exec brief drafted, and the deck for her boss ready. All from one meeting recording.
+Demo 1 (12 min) ΓÇö Teams Recap: the 4 summary modes Chia asked about
+Open: Microsoft Teams ΓåÆ Calendar ΓåÆ click the past meeting that has a recording.
+File you can use as fallback: Demo Files\01_Meeting_Transcript_ERP_Steerco.txt
+≡ƒÆí  Chia's exact ask (28-May meeting; open follow-up assigned to Pei): "Prepare and share an explanation or demonstration outlining the differences between Notes, AI Summary, and Notes using the Facilitator in Copilot meetings."
+>
+≡ƒÆí  This demo delivers exactly that ΓÇö a side-by-side comparison of 4 Recap output modes so the audience knows which to use when.
+Mode A ΓÇö Default AI Summary (the "out of the box" option)
+Click the meeting ΓåÆ Recap tab.
+Show the AI summary Teams gives by default.
+Call it out: this is general-purpose, single paragraph, no template. Good for "what was this meeting about?" ΓÇö not good enough to circulate.
+Mode B ΓÇö Custom Speaker-Based Summary
+Click Copilot ΓåÆ Custom summary. Prompt:
+```
+Generate a speaker-based summary of this meeting. For each attendee,
+list (a) the points they raised (b) any decisions they took
+(c) action items they own. Order chronologically per speaker.
+```
+Show the result. Use case: "who said what" ΓÇö useful for Board/audit trails, contentious calls.
+Mode C ΓÇö Formal Meeting Minutes (template-driven)
+Same Recap ΓåÆ Copilot ΓåÆ Custom summary, prompt:
+```
+Generate professional minutes for this meeting using this template:
+- Meeting title, date, attendees
+- Agenda (3 items max)
+- Key decisions (with decision owner)
+- Action items table (Owner | Action | Due date)
+- Open issues parked for next meeting
+Style: formal, third person, past tense. Keep under 1 page.
+```
+Use case: circulate-to-stakeholders minutes ΓÇö the standard MANCOM/Board output.
+Mode D ΓÇö Facilitator Notes (action-oriented)
+Switch to Facilitator mode (or prompt):
+```
+Switch to facilitator notes ΓÇö give me actionable next steps with a
+draft Microsoft Planner task list. Each task: title, owner, due date,
+and one-line context. Group by workstream.
+```
+Use case: "what do we do next" ΓÇö Project Managers and ProgrammeOffice. Tasks can flow straight into Planner.
+Side-by-side recap (1 min ΓÇö show all four open in tabs)
+Bonus (if time) ΓÇö Mode E: Podcast Recap
+Click Audio Overview ΓåÆ generate a 5-minute audio recap of the meeting. Useful for executives who skipped the meeting and want to listen on the commute.
+≡ƒÆí  Teaching point: Same recording, four (or five) different outputs. Pick the right tool for the audience.
+Demo 2 (10 min) ΓÇö Word: from minutes to executive brief
+Open Word ΓåÆ blank doc.
+Prompt (Copilot in Word):
+Draft a 1-page executive brief for the Contoso Consolidated Group MD based on
+the meeting minutes below. Structure:
+- Headline (1 sentence: what was decided)
+- Background (3 bullets)
+- Decisions taken (table)
+- Risks & mitigations (table)
+- Recommended next steps for the MD (3 bullets)
+
+Tone: confident, factual, no jargon. Insert a placeholder for the MD's
+sign-off at the bottom.
+
+[Paste minutes from Demo 1]
+Then show
+Rewrite function: highlight a paragraph ΓåÆ "Make this more concise"
+Visualize as table: select a list ΓåÆ "Convert to a table"
+Reference your files: /insert latest budget figure for IT division
+(shows Microsoft Graph grounding ΓÇö pulls from SharePoint)
+≡ƒÆí  Teaching point: Word + Copilot = your first draft is never blank.
+Demo 3 (10 min) ΓÇö PowerPoint: from Word to MANCOM-ready deck
+Stay in the Word document. Have Copilot Chat open in Word's side pane.
+Prompt:
+Generate a 6-slide PowerPoint presentation based on this Word brief. Slides:
+1. Title ΓÇö "ERP Steerco Update ΓÇö June 2026"
+2. Why we're here (1 line context + 3 bullets)
+3. Key decisions (table)
+4. Risks & mitigations (table)
+5. Timeline & dependencies (Gantt-style)
+6. What we need from you (decisions/approvals)
+
+Style: Contoso Consolidated brand ΓÇö navy blue (#003366) and gold (#D4A017).
+Clean, executive, minimal animations. Use icons where helpful.
+Then in PowerPoint
+Open the generated deck.
+Copilot in PowerPoint:
+```
+Tighten slide 3 ΓÇö keep only the 3 most material decisions.
+Add a speaker note for each slide explaining the talking points.
+```
+Show Designer ΓåÆ reformat to a different visual treatment.
+Show Add slide ΓåÆ "Appendix: Open issues parked" with one prompt.
+≡ƒÆí  Teaching point: Word brief ΓåÆ PowerPoint deck ΓåÆ speaker notes ΓÇö in 3 prompts. The 2-day deck is now a 30-minute deck.
+Demo 4 (5 min) ΓÇö Closing the loop: Outlook + Cowork
+Optional / time permitting. Show one final prompt:
+Draft a follow-up email to the steerco attendees: thank them for joining,
+attach the minutes (link), highlight their action item with their own due date,
+and ask for confirmation by Friday EOD.
+Show that it generates personalised emails ΓÇö each recipient sees their own action.
+Sample Prompt Library ΓÇö Teams / Word / PowerPoint
+Teams Recap
+Custom summary in [template]. Group decisions by owner. Bold all dates.
+Translate the minutes into Bahasa Malaysia for distribution to East Malaysia teams.
+Word
+Rewrite this paragraph for a Board audience ΓÇö short sentences, active voice, no jargon.
+Find every instance of "should" or "will try" in this document and flag as soft commitments.
+Compare this version with [other doc] and produce a redline summary.
+PowerPoint
+Create a 5-slide pitch deck from this Word document. Use Contoso brand colours.
+For each slide, write speaker notes that I can read off in 30 seconds.
+Suggest 3 ways to visualise slide 4's data (currently a table).
+Watch-outs
+Teams Recap requires the meeting to be recorded + transcribed. Set defaults at tenant level.
+For confidential meetings, custom summaries stay in your tenant ΓÇö but verify org policy on retention.
+Word/PowerPoint output uses default templates unless you point Copilot to a brand template.
+Always proofread before sending ΓÇö names, dates, decisions still need a human eye.
+Q&A topics to expect
+"Can it work in our existing PowerPoint template?" ΓåÆ Yes ΓÇö open your template first, then prompt Copilot inside.
+"Bahasa Malaysia / Mandarin support?" ΓåÆ Yes for translation; keep prompts in English for best fidelity.
+"How do I share my custom prompts with my team?" ΓåÆ Save in Prompt Library (rolling out) or share via Teams/SharePoint.

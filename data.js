@@ -113343,6 +113343,10 @@ window.HUB_DATA = {
             {
               instr: 'Open `m365.cloud.microsoft/chat`. Upload the three bank e-statements (Bank A, Bank B, and a 3rd correspondent bank) for March 2026. Open the Copilot pane in Excel for the Web targeting a NEW blank workbook.',
               prompt: 'Extract the contents of the three bank statements into one Excel workbook with the following columns: Page No, Bank, Transaction Date, Description, Debit, Credit, Balance, GL Account (best-guess from /Group/Finance/GL/COA/), Currency, FX Rate to MYR (if FX), MYR Equivalent. Use one row per transaction. Group by Bank in sheet tabs. On a 4th sheet "Reconciliation", produce: (a) for each bank, opening balance vs closing balance vs sum of debits/credits — parity check; (b) flag any transaction >MYR 100,000 as material; (c) flag any transaction outside normal operating hours (before 7am / after 7pm local) as needing review; (d) flag any duplicate (same amount + same date + same counterparty) as potential double-posting; (e) cross-reference closing balances against /Finance/GL/Mar2026/ trial-balance and flag any account where the bank closing balance differs from GL closing balance by >MYR 1,000. Cite source page + transaction line for every row.'
+            },
+            {
+              instr: 'Open the multi-tab divisional submissions workbook in Excel for the Web (file with 7 division tabs: Plantations, Property, Automotive, Credit Financing, Building Materials, Fertilizers, Trading — each tab uses different column names, different period formats, and different units e.g. RM vs RM ‘000 vs RM Mil). Click the Copilot ribbon button.',
+              prompt: 'This workbook has 7 division tabs (Plantations, Property, Automotive, Credit Financing, Building Materials, Fertilizers, Trading). Each tab uses different column names for the same concept (Revenue / Sales / Top Line / Gross Rev), different units (some in RM Mil, some in RM ‘000, some in absolute RM — read the header notes!), different period formats (Jan-26, 01/2026, Q1 FY26, Mth, etc.), and some have sub-totals mid-table — exclude those from the consolidation. Map every division to a standard schema and produce a new tab called "Group Consolidated" with columns: Division | Revenue (RM Mil) | COGS (RM Mil) | OpEx (RM Mil) | EBIT (RM Mil) | EBIT Margin %% | Headcount | %% Group Revenue. Add a TOTAL row at the bottom. Aggregate all 3 months (Jan-Mar) per division. Convert all values to RM Mil consistently. Then write a 100-word commentary on the consolidated numbers in the style of a Group CFO email to the Board. Save the commentary in cell A30 of the Group Consolidated tab.'
             }
           ],
           promptsID: [
@@ -113365,6 +113369,10 @@ window.HUB_DATA = {
             {
               instr: 'Buka `m365.cloud.microsoft/chat`. Unggah ketiga e-statement bank (Bank A, Bank B, dan bank koresponden ke-3) untuk Maret 2026. Buka panel Copilot di Excel for the Web menargetkan workbook KOSONG baru.',
               prompt: 'Ekstrak isi ketiga laporan bank ke dalam satu workbook Excel dengan kolom berikut: No Halaman, Bank, Tanggal Transaksi, Deskripsi, Debit, Kredit, Saldo, Akun GL (best-guess dari /Group/Finance/GL/COA/), Mata Uang, Kurs ke IDR (bila valas), Padanan IDR. Gunakan satu baris per transaksi. Kelompokkan per Bank dalam tab sheet. Pada sheet ke-4 "Reconciliation", hasilkan: (a) untuk setiap bank, saldo pembukaan vs saldo penutupan vs jumlah debit/kredit — parity check; (b) tandai transaksi >Rp 350 juta sebagai material; (c) tandai transaksi di luar jam operasi normal (sebelum 7 pagi / setelah 7 malam WIB) sebagai perlu di-review; (d) tandai duplikasi (jumlah sama + tanggal sama + counterparty sama) sebagai potensi double-posting; (e) cross-reference saldo penutupan terhadap /Finance/GL/Mar2026/ trial-balance dan tandai akun di mana saldo penutupan bank berbeda dengan saldo penutupan GL >Rp 4 juta. Sertakan referensi halaman sumber + baris transaksi untuk setiap baris.'
+            },
+            {
+              instr: 'Buka workbook submission divisi multi-tab di Excel for the Web (file dengan 7 tab divisi: Perkebunan, Properti, Otomotif, Pembiayaan, Material Bangunan, Pupuk, Trading — tiap tab memakai nama kolom berbeda, format periode berbeda, dan unit berbeda misalnya Rp vs Rp \'000 vs Rp miliar). Klik tombol Copilot di ribbon.',
+              prompt: 'Workbook ini berisi 7 tab divisi (Perkebunan, Properti, Otomotif, Pembiayaan, Material Bangunan, Pupuk, Trading). Tiap tab memakai nama kolom berbeda untuk konsep yang sama (Pendapatan / Penjualan / Top Line / Gross Rev), unit berbeda (sebagian Rp miliar, sebagian Rp \'000, sebagian Rp absolut — baca catatan header!), format periode berbeda (Jan-26, 01/2026, Q1 FY26, Mth, dst), dan beberapa memiliki sub-total di tengah tabel — kecualikan dari konsolidasi. Petakan setiap divisi ke skema standar dan hasilkan tab baru bernama "Group Consolidated" dengan kolom: Divisi | Pendapatan (Rp Mil) | HPP (Rp Mil) | OpEx (Rp Mil) | EBIT (Rp Mil) | Margin EBIT %% | Headcount | %% Pendapatan Grup. Tambahkan baris TOTAL di bawah. Agregasi seluruh 3 bulan (Jan-Mar) per divisi. Konversi seluruh nilai ke Rp miliar secara konsisten. Kemudian tulis komentar 100 kata atas angka konsolidasi dalam gaya email Direktur Keuangan Grup kepada Direksi. Simpan komentar di sel A30 tab Group Consolidated.'
             }
           ],
           promptsBM: [
@@ -113387,6 +113395,10 @@ window.HUB_DATA = {
             {
               instr: 'Buka `m365.cloud.microsoft/chat`. Muat naik ketiga e-statement bank (Bank A, Bank B, dan bank koresponden ke-3) untuk Maret 2026. Buka panel Copilot di Excel for the Web menargetkan workbook KOSONG baru.',
               prompt: 'Ekstrak isi ketiga laporan bank ke dalam satu workbook Excel dengan lajur berikut: No Halaman, Bank, Tanggal Transaksi, Penerangan, Debit, Kredit, Saldo, Akaun GL (best-guess dari /Group/Finance/GL/COA/), Mata Wang, Kurs ke IDR (bila valas), Padanan IDR. Gunakan satu baris per transaksi. Kelompokkan per Bank dalam tab sheet. Pada sheet ke-4 "Reconciliation", hasilkan: (a) untuk setiap bank, saldo pembukaan vs saldo penutupan vs jumlah debit/kredit — parity check; (b) tandai transaksi >Rp 350 juta sebagai material; (c) tandai transaksi di luar jam operasi normal (sebelum 7 pagi / setelah 7 malam WIB) sebagai perlu di-review; (d) tandai duplikasi (jumlah sama + tanggal sama + counterparty sama) sebagai potensi double-posting; (e) cross-reference saldo penutupan terhadap /Finance/GL/Mar2026/ trial-balance dan tandai akaun di mana saldo penutupan bank berbeza dengan saldo penutupan GL >Rp 4 juta. Sertakan referensi halaman sumber + baris transaksi untuk setiap baris.'
+            },
+            {
+              instr: 'Buka workbook submission divisi multi-tab di Excel for the Web (fail dengan 7 tab divisi: Perkebunan, Properti, Otomotif, Pembiayaan, Material Bangunan, Pupuk, Trading — tiap tab memakai nama lajur berbeza, format periode berbeza, dan unit berbeza misalnya Rp vs Rp \'000 vs Rp miliar). Klik tombol Copilot di ribbon.',
+              prompt: 'Workbook ini berisi 7 tab divisi (Perkebunan, Properti, Otomotif, Pembiayaan, Material Bangunan, Pupuk, Trading). Tiap tab memakai nama lajur berbeza untuk konsep yang sama (Pendapatan / Jualan / Top Line / Gross Rev), unit berbeza (sebahagian Rp miliar, sebahagian Rp \'000, sebahagian Rp absolut — baca catatan header!), format periode berbeza (Jan-26, 01/2026, Q1 FY26, Mth, dst), dan beberapa memiliki sub-total di tengah jadual — kecualikan dari konsolidasi. Petakan setiap divisi ke skema standar dan hasilkan tab baru bernama "Group Consolidated" dengan lajur: Divisi | Pendapatan (Rp Mil) | HPP (Rp Mil) | OpEx (Rp Mil) | EBIT (Rp Mil) | Margin EBIT %% | Headcount | %% Pendapatan Grup. Tambahkan baris TOTAL di bawah. Agregasi seluruh 3 bulan (Jan-Mar) per divisi. Konversi seluruh nilai ke Rp miliar secara konsisten. Kemudian tulis komentar 100 kata atas angka konsolidasi dalam gaya email Pengarah Kewangan Grup kepada Lembaga Pengarah. Simpan komentar di sel A30 tab Group Consolidated.'
             }
           ],
           persona: [
@@ -113394,9 +113406,11 @@ window.HUB_DATA = {
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
+            'Hadar Caspit',
             'Hadar Caspit'
           ],
           personaID: [
+            'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
             'Hadar Caspit',
