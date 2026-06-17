@@ -193,6 +193,173 @@ USE_CASES['uc-incident-pmortem'] = {
 }
 
 
+# ── GA June 2026 capability cards ──────────────────────────────────────
+# Three cards showcasing capabilities that shipped with the Cowork GA
+# release: Imagen 2 image generation + brand templates + model picker,
+# local browser use in Microsoft Edge, and the unified Customize page
+# for skills and plugins.
+
+USE_CASES['uc-ga-visual-launch'] = {
+    'title': 'Visual Launch Pack — Imagen 2 + Brand Templates',
+    'dept_tag': 'Marketing & Communications',
+    'complexity': 'beginner',
+    'apps': ['Word', 'PowerPoint', 'Outlook', 'Teams', 'Cowork'],
+    'desc': 'A product brief, a press release, and a brand kit become a hero image (Imagen 2), a fully branded 6-slide deck, an internal launch email, and 3 social posts — in one Cowork run with the model picker on Sonnet+Opus Advisor.',
+    'skills': [
+        'In-chat image generation with Imagen 2 saved straight to OneDrive',
+        'Brand template auto-applied to every PowerPoint slide (fonts, colours, logo, layout)',
+        'Model picker — Sonnet+Opus Advisor pairing for tone + structure quality on launch copy',
+        'Parallel deliverable fan-out (image + deck + email + social) from a single prompt',
+    ],
+    'instructions': [
+        'Open Microsoft 365 Copilot → left nav → Agents → Cowork',
+        'Top-right model picker → choose Sonnet+Opus Advisor (or Auto for production)',
+        'Click 📎 Knowledge → attach the 3 sample files listed below',
+        'Paste Prompt 1 — Cowork generates the hero image, applies the brand template, drafts the comms',
+        'Hero image lands in OneDrive → /Cowork Outputs/Images/ and is embedded in the deck',
+    ],
+    'sample_files': [
+        ('LAUNCH_Product_Brief.docx', 'docx'),
+        ('LAUNCH_Press_Release_Draft.docx', 'docx'),
+        ('LAUNCH_Brand_Kit.pdf', 'pdf'),
+    ],
+    'prompts': [{
+        'label': 'Generate the visual launch pack',
+        'text': (
+            "Using the 3 attached files for product launch [PRODUCT-NAME] on [LAUNCH-DATE], in parallel, do all 5:\n"
+            "1) Generate a hero image with Imagen 2 — modern, hopeful, no people, brand colours from the Brand Kit, 16:9, suitable for slide 1 cover and LinkedIn header. Save to OneDrive and embed in the deck.\n"
+            "2) Build a 6-slide deck in PowerPoint using our brand template — Slide 1 cover with hero image, Slide 2 the problem we solve, Slide 3 the product (3 key features), Slide 4 customer proof, Slide 5 pricing & availability, Slide 6 call-to-action. Apply the brand template — fonts, colours, logo, master layouts.\n"
+            "3) Draft an internal launch email in Outlook from the GM Marketing — what is launching, why now, the 3 things every employee should say if asked.\n"
+            "4) Draft 3 LinkedIn posts (different tones — bold, customer-quote, behind-the-scenes), each under 220 characters with 3 hashtags.\n"
+            "5) Draft a Teams message to the #all-company channel — 2 lines plus a link to the deck plus the hero image inline.\n"
+            "Cite the Brief or Press Release for every product claim. Flag any line that needs Legal review."
+        )
+    }],
+    'expected': [
+        'Hero image (PNG, 16:9, brand-coloured, in OneDrive)',
+        '6-slide branded launch deck (PowerPoint with template applied)',
+        'Internal launch email draft (Outlook)',
+        '3 LinkedIn post drafts',
+        'Teams #all-company announcement',
+    ],
+    'watch': [
+        'The PPT picks up your brand template automatically — colours, fonts and logo match',
+        'The hero image saves to OneDrive AND embeds in the deck — no copy-paste',
+        'Sonnet+Opus Advisor improves launch-copy quality versus a single-model run',
+    ],
+    'honest': 'Cowork drafts and generates the image. Brand-Comms still owns final approval — Imagen 2 sometimes drifts off your exact palette, and Legal must sign off any pricing or competitive claim. The image generation is governed by your tenant\'s admin settings for AI image content.',
+    'tips': [
+        'Switch the model picker to Auto when the workflow is in production — it picks the right model per sub-task automatically',
+        'Re-run with "vertical product photo, mobile portrait" for a separate Instagram-ready asset',
+        'Add a 6th task — generate a 30-second voiceover script for a TikTok / Reels teaser',
+        'If your tenant has the brand template gallery configured, name it explicitly: "Use the Corporate-2026 template"',
+    ],
+}
+
+USE_CASES['uc-ga-browser-research'] = {
+    'title': 'Local Browser Research — Live Web + Internal Sources',
+    'dept_tag': 'Strategy & Research',
+    'complexity': 'intermediate',
+    'apps': ['Edge', 'Word', 'Excel', 'Cowork'],
+    'desc': 'Cowork drives Microsoft Edge on your device using your existing sign-ins — pulling fresh competitor pricing, regulator filings, and an internal SharePoint dashboard into a one-page Word memo + Excel comparison table, with every cell citing its URL or document path.',
+    'skills': [
+        'Local browser use — Cowork operates Microsoft Edge with your authenticated sessions (SharePoint, OneDrive, paywalled news, regulator portals)',
+        'Live multi-source synthesis — public web + internal authoritative sources in one run',
+        'Cell-level URL citation in Excel — every datapoint traceable for audit',
+        'Tone-aware Word memo (one page, decision-oriented)',
+    ],
+    'instructions': [
+        'Open Cowork → top-right model picker → Auto',
+        'Confirm browser permission when prompted — Cowork uses YOUR Edge session and YOUR sign-ins (tenant-policy permitting)',
+        'Paste Prompt 1 — list the 3 to 5 competitors and the internal SharePoint dashboard URL',
+        'Watch the browser window — Cowork narrates each page it visits',
+        'Review the Word memo and Excel table when the run completes',
+    ],
+    'sample_files': [],
+    'prompts': [{
+        'label': 'Run the competitive scan',
+        'text': (
+            "Using local browser, do live research for the [PRODUCT-CATEGORY] competitive scan I need before Friday's strategy session. In parallel, do all 4:\n"
+            "1) Visit these competitor public pricing pages — [COMP-1 URL], [COMP-2 URL], [COMP-3 URL] — and extract: list price, billing model, free tier, enterprise option, last updated date.\n"
+            "2) Visit the regulator portal at [REGULATOR-URL] and pull the latest 2 filings or product approvals for this category in the last 90 days.\n"
+            "3) Open the internal SharePoint dashboard at [INTERNAL-DASHBOARD-URL] (use my SSO sign-in) and pull our own current pricing, win-rate, and gross-margin for the category.\n"
+            "4) Build an Excel comparison table — one row per company (us + 3 competitors), columns for each data point, every cell with a hyperlinked source.\n"
+            "5) Draft a 1-page Word memo for the strategy lead — top 3 takeaways, 2 risks, 1 recommended price action. End with a citation list (URL + retrieval timestamp for each public source, document path + page for each internal source).\n"
+            "If a page is paywalled or login-gated and you cannot read it with my session, list it under 'Could not access' with the reason."
+        )
+    }],
+    'expected': [
+        '1-page Word strategy memo with citations',
+        'Excel comparison table with hyperlinked source per cell',
+        '"Could not access" list for any gated pages (transparent audit trail)',
+    ],
+    'watch': [
+        'Cowork browses with your sign-in — pulls SharePoint dashboards that public-web scrapers cannot',
+        'Every datapoint hyperlinks back to the source page — no opaque "AI said so"',
+        'Browser-use respects your tenant\'s data-loss policies; gated content surfaces a friction note instead of fabricating',
+    ],
+    'honest': 'Cowork operates YOUR browser session, so any site you cannot reach manually, Cowork cannot reach either. Competitor pricing can change between Cowork\'s retrieval and your meeting — re-run on the morning of the decision. Local browser use is governed by your admin\'s Cowork browser-use policies in the Microsoft 365 admin center; some tenants restrict which domains Cowork may visit.',
+    'tips': [
+        'Pin this prompt — re-run weekly to keep a living competitive baseline',
+        'Add a 6th task — generate a 5-slide deck of the table for the strategy session',
+        'For regulator-only research, swap step 3 for a second regulator portal in another jurisdiction',
+        'If your admin has disabled local browser use, swap to the Researcher tool which uses public web only',
+    ],
+}
+
+USE_CASES['uc-ga-custom-skill'] = {
+    'title': 'Custom Skill — Guided Skill Builder on the Customize Page',
+    'dept_tag': 'Productivity & Automation',
+    'complexity': 'beginner',
+    'apps': ['Cowork', 'OneDrive', 'Word'],
+    'desc': 'A repeat task — say, the Monday weekly status digest — becomes a reusable Cowork skill, authored through the guided skill builder on the unified Customize page, so the team triggers the workflow with two clicks instead of re-pasting the prompt.',
+    'skills': [
+        'Customize page — unified home for plugins and skills (GA, June 2026)',
+        'Guided skill builder — Cowork interviews you and writes the skill prompt for you',
+        'Skill sharing — publish to your team so the same prompt runs the same way',
+        'Markdown-native skill files in OneDrive — version-controlled and editable',
+    ],
+    'instructions': [
+        'Open Cowork → top nav → Customize → Skills tab',
+        'Click ➕ Add → Create new (guided)',
+        'Answer Cowork\'s questions in chat — what triggers the skill, what inputs it needs, what outputs you expect',
+        'Save the generated skill — Cowork stores it as a Markdown file in your OneDrive Cowork Skills folder',
+        'Trigger the skill by name in any future Cowork run — or share it with your team via the Customize page',
+    ],
+    'sample_files': [],
+    'prompts': [{
+        'label': 'Build a Weekly Status Digest skill (guided)',
+        'text': (
+            "I want a reusable skill called 'Weekly Status Digest' that I run every Monday morning.\n\n"
+            "When triggered, the skill should:\n"
+            "1) Read my Sent emails from Friday last week to Sunday this week, and read my Teams chat messages from the same window.\n"
+            "2) Pull the calendar events from last week and extract any commitments I made (look for phrases like 'I will', 'by Friday', 'next week we').\n"
+            "3) Generate a 1-page Word digest with 3 sections — What got shipped, What slipped, Commitments for the coming week.\n"
+            "4) Save the Word doc to my OneDrive at /Weekly Digests/ with filename YYYY-MM-DD-Status.docx.\n"
+            "5) Draft an Outlook email to my manager with the digest attached and a 4-line summary in the body.\n\n"
+            "Walk me through naming, scoping, and saving this skill — then save it to my Cowork Skills folder and make it shareable with my direct team."
+        )
+    }],
+    'expected': [
+        'A named, reusable Cowork skill saved in OneDrive (Markdown)',
+        'A test run that produces the first weekly digest end-to-end',
+        'A team-shareable skill listed on the Customize → Skills tab',
+    ],
+    'watch': [
+        'Cowork drafts the skill prompt from your conversational description — you don\'t hand-write the syntax',
+        'The skill file is plain Markdown in OneDrive — auditable, editable, version-controllable',
+        'Future runs trigger with a short skill name — no copy-paste of the long prompt every Monday',
+    ],
+    'honest': 'Cowork can author up to 50 custom skills per tenant (April 2026 limit, may rise). The skill triggers on demand, not on a schedule — pair it with a Power Automate weekly cron if you want hands-off Monday morning delivery. Skills shared with the team carry your prompt verbatim — review any sensitive language before sharing.',
+    'tips': [
+        'Use this same pattern for a Monthly Board Pack skill, a Quarterly OKR Review skill, or a Friday Wrap skill',
+        'Combine with the plugin catalog — install the Jira or ServiceNow plugin first so the skill can pull tickets too',
+        'When the GA model picker is on Auto, the skill chooses the right model per sub-task automatically — no maintenance',
+        'Edit the Markdown file directly in OneDrive when the workflow changes — no rebuild needed',
+    ],
+}
+
+
 # ── MERGE PARTS 2-5 ────────────────────────────────────────────────────
 try:
     from _cowork_lib_part2 import CARDS as _P2
@@ -236,7 +403,7 @@ except Exception as _e:
     _added_html, _skipped_html = 0, 0
 
 
-UNIVERSAL_USE_CASES = ['uc-board-pack', 'uc-town-hall', 'uc-incident-pmortem']
+UNIVERSAL_USE_CASES = ['uc-board-pack', 'uc-town-hall', 'uc-incident-pmortem', 'uc-ga-visual-launch', 'uc-ga-browser-research', 'uc-ga-custom-skill']
 
 
 # Per-entry mapping: each entry gets 4-5 cards.
@@ -337,6 +504,16 @@ for _eid, _new_cids in _RUNBOOK_ENTRY_CARDS.items():
     _existing = ENTRY_USE_CASES.get(_eid, list(UNIVERSAL_USE_CASES))
     _merged = list(_new_cids) + [c for c in _existing if c not in _new_cids]
     ENTRY_USE_CASES[_eid] = _merged
+
+
+# ── GA June 2026 — surface the 3 new-capability cards on every entry ──
+# Append (not prepend) so each entry's own domain-specific cards stay on
+# top of the sidebar; the GA cards anchor the bottom as a cross-cutting
+# capability showcase available regardless of industry/department.
+_GA_JUN2026_APPEND = ['uc-ga-visual-launch', 'uc-ga-browser-research', 'uc-ga-custom-skill']
+for _eid in list(ENTRY_USE_CASES.keys()):
+    _existing = ENTRY_USE_CASES[_eid]
+    ENTRY_USE_CASES[_eid] = list(_existing) + [c for c in _GA_JUN2026_APPEND if c not in _existing]
 
 
 def get_library_for_entry(entry_id):
