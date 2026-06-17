@@ -7,7 +7,27 @@ Updated for June 2, 2026 Microsoft 365 Copilot release notes.
 
 WHATS_NEW = [
     # ─────────────────────────────────────────────────────────────────────
-    # June 2, 2026 release-notes additions (newest first so they show first)
+    # June 2026 — Copilot Cowork General Availability
+    # ─────────────────────────────────────────────────────────────────────
+    {
+        "id": "wn-cowork-ga-jun2026",
+        "title": "🚀 Copilot Cowork — Generally Available (NEW)",
+        "titleBM": "🚀 Copilot Cowork — Kini Tersedia Umum (BAHARU)",
+        "titleID": "🚀 Copilot Cowork — Sekarang Tersedia Umum (BARU)",
+        "badge": "GA worldwide — June 2026",
+        "badgeBM": "Tersedia umum seluruh dunia — Jun 2026",
+        "badgeID": "GA seluruh dunia — Juni 2026",
+        "summary": "Copilot Cowork is now generally available to every Microsoft 365 Copilot tenant. The GA release ships a model picker (Auto plus Claude Opus 4.8, Claude Sonnet, Sonnet+Opus Advisor pairing, and GPT 5.5), image generation with Imagen 2 saved straight to OneDrive, local browser use that drives Microsoft Edge with your existing sign-ins, a unified Customize page for plugins and skills with a guided skill builder, brand templates applied to every generated PowerPoint deck, and usage-based billing visible in the Microsoft 365 admin center. The plugin catalog now lists Microsoft (Dynamics 365 Sales/Service/ERP, Fabric IQ) and partner (Jira, Salesforce, ServiceNow, SAP ERP, Workday HCM, Zendesk) connectors.",
+        "summaryBM": "Copilot Cowork kini tersedia umum kepada setiap penyewa Microsoft 365 Copilot. Pelancaran GA membawa pemilih model (Auto serta Claude Opus 4.8, Claude Sonnet, gandingan Sonnet+Opus Advisor, dan GPT 5.5), penjanaan imej menggunakan Imagen 2 yang disimpan terus ke OneDrive, penggunaan pelayar tempatan yang memandu Microsoft Edge dengan log masuk sedia ada anda, halaman Suaikan bersepadu untuk pemalam dan kemahiran dengan pembina kemahiran berpandu, templat jenama yang digunakan pada setiap dek PowerPoint yang dijana, serta pengebilan berdasarkan penggunaan yang boleh dilihat dalam pusat pentadbir Microsoft 365. Katalog pemalam kini menyenaraikan penyambung Microsoft (Dynamics 365 Sales/Service/ERP, Fabric IQ) dan rakan kongsi (Jira, Salesforce, ServiceNow, SAP ERP, Workday HCM, Zendesk).",
+        "summaryID": "Copilot Cowork kini tersedia umum untuk setiap penyewa Microsoft 365 Copilot. Rilis GA membawa pemilih model (Auto serta Claude Opus 4.8, Claude Sonnet, pasangan Sonnet+Opus Advisor, dan GPT 5.5), pembuatan gambar dengan Imagen 2 yang langsung disimpan ke OneDrive, penggunaan browser lokal yang mengoperasikan Microsoft Edge memakai login Anda yang sudah ada, halaman Customize terpadu untuk plugin dan skill dengan pembangun skill berpandu, template merek yang diterapkan ke setiap dek PowerPoint yang dihasilkan, serta penagihan berbasis penggunaan yang terlihat di pusat admin Microsoft 365. Katalog plugin kini mencantumkan konektor Microsoft (Dynamics 365 Sales/Service/ERP, Fabric IQ) dan mitra (Jira, Salesforce, ServiceNow, SAP ERP, Workday HCM, Zendesk).",
+        "tip": "Open Cowork at m365.cloud.microsoft/cowork, pick a model (try Sonnet+Opus Advisor for hard reasoning), ask it to 'generate an infographic of our Q2 highlights' to test Imagen 2, then send a follow-up that uses local browser to pull live data from an internal site. Admins should visit the Microsoft 365 admin center > Cowork > Usage to set per-user or per-group consumption limits before opening it to the wider organisation.",
+        "tipBM": "Buka Cowork di m365.cloud.microsoft/cowork, pilih model (cuba Sonnet+Opus Advisor untuk penaakulan rumit), minta ia 'jana infografik sorotan Q2 kita' untuk menguji Imagen 2, kemudian hantar susulan yang menggunakan pelayar tempatan untuk menarik data langsung dari laman dalaman. Pentadbir harus melawat pusat pentadbir Microsoft 365 > Cowork > Penggunaan untuk menetapkan had penggunaan setiap pengguna atau kumpulan sebelum membukanya kepada organisasi yang lebih luas.",
+        "tipID": "Buka Cowork di m365.cloud.microsoft/cowork, pilih model (coba Sonnet+Opus Advisor untuk penalaran berat), minta ia 'buatkan infografik sorotan Q2 kami' untuk menguji Imagen 2, lalu kirim tindak lanjut yang memakai browser lokal untuk menarik data langsung dari situs internal. Admin sebaiknya membuka pusat admin Microsoft 365 > Cowork > Usage untuk menetapkan batas konsumsi per-pengguna atau per-grup sebelum membukanya ke organisasi yang lebih luas.",
+        "license": "Microsoft 365 Copilot",
+        "link": "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new"
+    },
+    # ─────────────────────────────────────────────────────────────────────
+    # June 2, 2026 release-notes additions
     # ─────────────────────────────────────────────────────────────────────
     {
         "id": "wn-copilot-redesign",
