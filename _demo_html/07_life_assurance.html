@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contoso Life Assurance · M365 Copilot Sharing & Immersion</title>
+<style>
+:root{--radius:12px;--shadow:0 2px 8px rgba(0,0,0,.12);--cla:#003366;--teal:#00A19A;
+  --g-goal:#DC2626;--g-ctx:#2563EB;--g-src:#9333EA;--g-exp:#16A34A}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1020;--panel:#0e1633;--panel2:#0a1228;--ink:#e2e8f0;--muted:#94a3b8;--border:#1e2d4a;--sidebar-a:#0e1530;--sidebar-b:#0a0f24;--accent:#3b82f6;--accent2:#60a5fa;--badge-bg:#0a0f24;--code:#0d1535;--good:#22c55e;--warn:#f59e0b;--danger:#ef4444;--callout-info:#0e1c2c;--callout-warn:#2b220e;--callout-bad:#2b1414;--callout-good:#0e2418;--gcse-bar:#0e1633}}
+@media(prefers-color-scheme:light){:root{--bg:#f0f4f8;--panel:#ffffff;--panel2:#f0f6ff;--ink:#1a202c;--muted:#64748b;--border:#d1d9e6;--sidebar-a:#003366;--sidebar-b:#001F3D;--accent:#2563eb;--accent2:#1d4ed8;--badge-bg:#e8f0fe;--code:#1e2b55;--good:#16a34a;--warn:#d97706;--danger:#dc2626;--callout-info:#eff6ff;--callout-warn:#fffbeb;--callout-bad:#fef2f2;--callout-good:#f0fdf4;--gcse-bar:#ffffff}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Inter","Segoe UI",system-ui,sans-serif}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+code,pre{font-family:"JetBrains Mono","Consolas",monospace;font-size:13px}
+.layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+aside{background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));border-right:1px solid var(--border);padding:24px 18px;position:sticky;top:0;height:100vh;overflow-y:auto;color:#e2e8f0}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.brand .logo{width:42px;height:42px;border-radius:9px;background:var(--cla);display:grid;place-items:center;font-weight:900;color:#fff;font-size:11px;border:2px solid var(--teal)}
+.brand h1{font-size:15px;margin:0;color:#fff}
+.tag{font-size:11px;color:#94a3b8;margin-bottom:18px}
+nav h3{font-size:10px;letter-spacing:1.2px;color:#94a3b8;text-transform:uppercase;margin:18px 0 8px}
+nav a{display:block;color:#e2e8f0;padding:8px 10px;border-radius:9px;font-size:14px;margin-bottom:2px;border:1px solid transparent}
+nav a:hover{background:rgba(255,255,255,.12);text-decoration:none;border-color:rgba(255,255,255,.2);color:#fff}
+nav a.active{background:rgba(59,130,246,.25);border-color:#3b82f6;color:#93c5fd}
+main{padding:0 48px 80px;max-width:none}
+.gcse-bar{position:sticky;top:0;z-index:50;background:var(--gcse-bar);border-bottom:1px solid var(--border);margin:0 -40px 24px;padding:12px 40px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.gcse-bar .lbl{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.gcse-toggle{display:inline-flex;background:var(--panel2);border:1px solid var(--border);border-radius:999px;padding:3px;gap:0}
+.gcse-toggle button{background:transparent;border:none;color:var(--muted);font:600 12px/1 "Inter","Segoe UI",sans-serif;padding:7px 14px;border-radius:999px;cursor:pointer;letter-spacing:.3px}
+.gcse-toggle button.on{background:var(--accent);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.gcse-bar .legend{display:flex;gap:8px;font-size:11px;flex-wrap:wrap}
+.gcse-bar .legend span{padding:3px 9px;border-radius:5px;font-weight:700;letter-spacing:.3px}
+.gcse-bar .legend .l-g{background:rgba(220,38,38,.15);color:var(--g-goal);border:1px solid var(--g-goal)}
+.gcse-bar .legend .l-c{background:rgba(37,99,235,.15);color:var(--g-ctx);border:1px solid var(--g-ctx)}
+.gcse-bar .legend .l-s{background:rgba(147,51,234,.15);color:var(--g-src);border:1px solid var(--g-src)}
+.gcse-bar .legend .l-e{background:rgba(22,163,74,.15);color:var(--g-exp);border:1px solid var(--g-exp)}
+body:not(.gcse) .gcse-bar .legend{display:none}
+.hero{background:radial-gradient(800px 320px at 0% 0%,rgba(0,51,102,.45),transparent 60%),radial-gradient(700px 280px at 100% 0%,rgba(0,161,154,.18),transparent 60%),var(--panel);border:1px solid var(--border);border-radius:18px;padding:30px;margin-bottom:24px}
+.hero .pill{display:inline-block;background:var(--badge-bg);border:1px solid var(--border);color:var(--accent2);font-size:11px;letter-spacing:1.2px;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.hero h2{font-size:30px;margin:0 0 8px;line-height:1.2}
+.hero p{color:var(--muted);margin:0;max-width:1100px}
+.meta-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;color:var(--muted);font-size:13px}
+.meta-row span b{color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:18px}
+.card .lead{color:var(--muted);margin:0 0 14px}
+.card h4{margin:18px 0 6px;font-size:15px;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+ul{padding-left:20px;margin:8px 0}li{margin:4px 0}
+.modulehead{display:flex;align-items:center;gap:14px;margin:32px 0 12px}
+.modulehead .num{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--cla),var(--accent));display:grid;place-items:center;font-weight:800;font-size:20px;color:#fff}
+.modulehead h2{margin:0;font-size:22px}
+.modulehead small{display:block;color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.activity{border:1px solid var(--border);border-radius:12px;padding:18px;margin:14px 0;background:var(--panel)}
+.activity .head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.activity .num{background:var(--accent);color:#fff;font-weight:800;font-size:12px;padding:3px 9px;border-radius:6px}
+.activity .time{color:var(--muted);font-size:12px}
+.activity .file{font-size:12px;color:var(--accent2);background:var(--badge-bg);border:1px solid var(--border);padding:3px 9px;border-radius:6px}
+.activity h4{margin:0;font-size:16px;color:var(--ink);font-weight:600}
+.activity p{margin:6px 0;color:var(--muted);font-size:14px}
+.task-step{background:var(--panel2);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:12px 14px;margin:10px 0}
+.task-step .step-label{font-size:11px;letter-spacing:1px;color:var(--accent2);text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.task-step .tool-badge{display:inline-block;background:rgba(0,100,200,.2);border:1px solid var(--accent);color:var(--accent2);font-size:11px;padding:2px 8px;border-radius:5px;margin-left:8px;vertical-align:middle}
+.prompt{position:relative;background:var(--code);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;padding:14px 60px 14px 16px;margin:10px 0;font-family:"JetBrains Mono","Consolas",monospace;font-size:13px;color:#c9d6ff;white-space:pre-wrap;line-height:1.7}
+.prompt .copy{position:absolute;top:8px;right:8px;background:#1a2552;color:#e2e8f0;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s}
+.prompt .copy:hover{background:var(--accent);color:#fff}
+.prompt .copy.copied{background:var(--good);color:#0a0f24}
+/* GCSE colour coding */
+.prompt .g, .prompt .c, .prompt .s, .prompt .e{padding:2px 6px;border-radius:4px;display:inline}
+.prompt .lbl{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:1.5px;padding:1px 6px;border-radius:3px;margin-right:6px;vertical-align:1px}
+.prompt .g{background:rgba(220,38,38,.18);color:#fca5a5;box-shadow:inset 2px 0 0 var(--g-goal)}
+.prompt .g .lbl{background:var(--g-goal);color:#fff}
+.prompt .c{background:rgba(37,99,235,.18);color:#93c5fd;box-shadow:inset 2px 0 0 var(--g-ctx)}
+.prompt .c .lbl{background:var(--g-ctx);color:#fff}
+.prompt .s{background:rgba(147,51,234,.18);color:#d8b4fe;box-shadow:inset 2px 0 0 var(--g-src)}
+.prompt .s .lbl{background:var(--g-src);color:#fff}
+.prompt .e{background:rgba(22,163,74,.18);color:#86efac;box-shadow:inset 2px 0 0 var(--g-exp)}
+.prompt .e .lbl{background:var(--g-exp);color:#fff}
+.prompt-lang{display:flex;align-items:center;gap:10px;margin:14px 0 4px;font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}
+.prompt-lang::after{content:"";flex:1;height:1px;background:var(--border)}
+.prompt-lang.bi{color:#1565C0}
+.prompt-lang.en{color:#6B7280}
+.prompt-lang .flag{display:inline-block;font-size:13px}
+body:not(.gcse) .prompt-gcse{display:none}
+body.gcse .prompt-plain{display:none}
+/* Try-It-Yourself prompts always show the GCSE colour-coded version */
+section#try1 .prompt-plain{display:none!important}
+section#try1 .prompt-gcse{display:block!important}
+.callout{border-left:4px solid var(--accent2);background:var(--callout-info);padding:12px 16px;margin:12px 0;border-radius:8px;color:var(--ink);font-size:14px}
+.callout.warn{border-color:var(--warn);background:var(--callout-warn)}
+.callout.danger{border-color:var(--danger);background:var(--callout-bad)}
+.callout.good{border-color:var(--good);background:var(--callout-good)}
+.callout b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{color:var(--accent2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+td a{color:var(--ink);font-weight:600}
+td a:hover{color:var(--accent2)}
+.agenda{display:grid;grid-template-columns:90px 1fr 100px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.agenda>div{padding:10px 14px;border-bottom:1px solid var(--border)}
+.agenda>div:nth-child(3n+1){color:var(--accent2);font-weight:700;background:var(--panel)}
+.agenda>div:nth-child(3n+3){color:var(--muted);text-align:right}
+.agenda>div:nth-last-child(-n+3){border-bottom:0}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
+.tool-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
+.tool-card .icon{font-size:22px;margin-bottom:6px}
+.tool-card h5{margin:0 0 4px;font-size:14px;color:var(--ink)}
+.tool-card p{margin:0;font-size:12px;color:var(--muted);line-height:1.5}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;letter-spacing:.5px}
+.badge.blue{background:rgba(0,100,200,.2);color:var(--accent2);border:1px solid var(--accent)}
+.badge.green{background:rgba(34,197,94,.15);color:var(--good);border:1px solid var(--good)}
+.badge.teal{background:rgba(0,161,154,.15);color:var(--teal);border:1px solid var(--teal)}
+/* Story panel (IHH-style) */
+.story-wrap{display:grid;grid-template-columns:230px 1fr;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px}
+.story-left{background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));padding:24px 18px;display:flex;flex-direction:column;gap:14px;color:#e2e8f0}
+.story-left .label{margin:0 0 4px;font-size:8.5px;letter-spacing:2px;font-weight:700;color:var(--teal);text-transform:uppercase}
+.story-left h3{margin:0;font-size:19px;font-weight:800;color:#fff;line-height:1.2}
+.story-left .name{margin:0;font-size:13px;font-weight:700;color:#fff}
+.story-left .role{margin:2px 0 0;font-size:11px;color:#94a3b8;line-height:1.5}
+.story-left .mission{margin:0;font-size:11.5px;color:#cbd5e1;line-height:1.6}
+.story-left .punch{padding:10px;background:rgba(255,255,255,.06);border-radius:8px;border:1px solid rgba(255,255,255,.1)}
+.story-left .punch p{margin:0;font-size:12px;font-weight:700;font-style:italic;color:#fff;line-height:1.4}
+.story-right{background:var(--panel);padding:22px 20px 16px}
+.story-right>h3{margin:0 0 16px;font-size:16px;font-weight:700}
+.exblock{margin-bottom:14px}
+.exblock .extag{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.exblock .pill-ex{background:#0f2545;color:#fff;font-size:9px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:.5px}
+.exblock .pill-name{font-size:12.5px;font-weight:700;color:var(--ink)}
+.tcards{display:grid;gap:8px}
+.tcards.c1{grid-template-columns:1fr}
+.tcards.c2{grid-template-columns:repeat(2,1fr)}
+.tcards.c3{grid-template-columns:repeat(3,1fr)}
+.tcard{border:1px solid var(--border);border-radius:7px;overflow:hidden}
+.tcard .head{padding:5px 9px;display:flex;align-items:center;gap:6px;color:#fff}
+.tcard .head .n{font-size:10px;font-weight:800;color:rgba(255,255,255,.6)}
+.tcard .head .t{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+.tcard .body{padding:9px;background:var(--panel2)}
+.tcard .body .ttl{margin:0 0 2px;font-size:11.5px;font-weight:700;color:var(--ink)}
+.tcard .body .sub{margin:0 0 5px;font-size:9.5px;font-style:italic;color:var(--cla)}
+.tcard .body .desc{margin:0;font-size:10px;color:var(--muted);line-height:1.55}
+.tcard .filechip{background:rgba(37,99,235,.15);color:var(--accent2);border:1px solid var(--accent);border-radius:3px;padding:0 5px;font-style:normal;font-size:9px}
+.value-bar{background:rgba(0,161,154,.15);border:1px solid var(--teal);border-left:4px solid var(--teal);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--ink)}
+@media(max-width:900px){.tcards.c2,.tcards.c3{grid-template-columns:1fr}.story-wrap{grid-template-columns:1fr}}
+/* Password Screen */
+#lock{position:fixed;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(0,51,102,.5),transparent 60%),#0b1020;z-index:9999;display:flex;align-items:center;justify-content:center}
+.lock-box{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:40px 44px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lock-box .cla-logo{width:64px;height:64px;border-radius:14px;background:var(--cla);display:grid;place-items:center;font-weight:900;font-size:14px;color:#fff;margin:0 auto 18px;border:2px solid var(--teal)}
+.lock-box h2{margin:0 0 6px;font-size:22px}
+.lock-box p{color:var(--muted);font-size:14px;margin:0 0 22px}
+.lock-box input[type=password],.lock-box input[type=text]{width:100%;background:var(--badge-bg);border:1px solid var(--border);border-radius:10px;color:var(--ink);font-size:15px;padding:12px 44px 12px 16px;outline:none;font-family:inherit}
+.lock-box input:focus{border-color:var(--accent)}
+.lock-box button{width:100%;background:var(--cla);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;padding:13px;cursor:pointer}
+.lock-box button:hover{background:var(--accent)}
+.lock-box .err{color:var(--danger);font-size:13px;margin-top:8px;min-height:18px}
+.lock-box .conf{font-size:11px;color:var(--muted);margin-top:14px}
+.pw-wrap{position:relative;margin-bottom:12px}
+.toggle-pw{position:absolute!important;right:12px;top:50%;transform:translateY(-50%);background:none!important;border:none!important;width:auto!important;padding:0!important;cursor:pointer;opacity:.7;color:var(--muted)}
+.toggle-pw:hover{background:none!important;opacity:1}
+.toggle-pw svg{width:18px;height:18px;fill:currentColor;display:block}
+@media(max-width:760px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}main{padding:0 18px 60px}.hero h2{font-size:22px}.gcse-bar{margin:0 -18px 18px;padding:10px 18px}}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="lock">
+  <div class="lock-box">
+    <div class="cla-logo">CLA</div>
+    <h2>Contoso Life Assurance · Copilot Session</h2>
+    <p>M365 Copilot Sharing &amp; Immersion<br>Enter the session password to continue.</p>
+    <div class="pw-wrap">
+      <input type="password" id="pw" placeholder="Session password" autocomplete="off"/>
+      <button type="button" id="toggle-pw" class="toggle-pw" title="Show password" onclick="togglePw()"><svg id="eye-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"/></svg></button>
+    </div>
+    <button onclick="unlock()">Enter Session →</button>
+    <div class="err" id="err"></div>
+    <div class="conf">Confidential · Contoso Life Assurance · Internal use only</div>
+  </div>
+</div>
+
+<div class="layout" id="main" style="display:none">
+<!-- SIDEBAR -->
+<aside>
+  <div class="brand">
+    <div class="logo">CLA</div>
+    <h1>M365 Copilot<br>Sharing &amp; Immersion</h1>
+  </div>
+  <div class="tag">Contoso Life Assurance</div>
+  <nav>
+    <h3>Overview</h3>
+    <a href="#overview">About this session</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#files">📁 Sample files</a>
+    <a href="#story">The Story</a>
+    <a href="#tools">Tools used today</a>
+    <h3>Prompt framework</h3>
+    <a href="#gcse">GCSE — write better prompts</a>
+    <h3>Get Started</h3>
+    <a href="#getstarted">🔑 Log in to Copilot</a>
+    <h3>Try It Yourself</h3>
+    <a href="#try1">Prompt 1 · Research</a>
+    <a href="#try2">Prompt 2 · Corporate email</a>
+    <a href="#try3">Prompt 3 · Pitch brief</a>
+    <a href="#try4">Prompt 4 · Complaint → ticket</a>
+    <a href="#try5">Prompt 5 · Plain-language clause</a>
+    <a href="#try6">Prompt 6 · Root-cause brainstorm</a>
+    <h3>Hands-on Exercises</h3>
+    <a href="#ex1">Exercise 1 · Researcher</a>
+    <a href="#ex2">Exercise 2 · Meeting Minutes</a>
+    <a href="#ex3">Exercise 3 · Survey Analysis</a>
+    <a href="#ex4">Exercise 4 · Cowork Dashboard</a>
+    <a href="#ex5">Exercise 5 · Agent Builder</a>
+    <a href="#bonus">Bonus · In-app agents</a>
+    <h3>Resources</h3>
+    <a href="#tips">Tips &amp; prompts</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main>
+
+<!-- GCSE TOGGLE BAR -->
+<div class="gcse-bar">
+  <span class="lbl">Prompt mode</span>
+  <div class="gcse-toggle" role="tablist">
+    <button id="btn-plain" class="on" onclick="setMode(false)">Plain</button>
+    <button id="btn-gcse" onclick="setMode(true)">GCSE colour-coded</button>
+  </div>
+  <div class="legend">
+    <span class="l-g">Goal</span>
+    <span class="l-c">Context</span>
+    <span class="l-s">Source</span>
+    <span class="l-e">Expectation</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="overview">
+<div class="hero">
+  <span class="pill">M365 COPILOT · SHARING + IMMERSION</span>
+  <h2>Contoso Life Assurance · M365 Copilot Sharing &amp; Immersion</h2>
+  <p>A practical session designed for the Operations team and senior leadership at Contoso Life Assurance — covering monthly operations reviews, claims analytics, partner coordination with corporate clients, brokers and reinsurers, and clear customer communications.</p>
+  <div class="meta-row">
+    <span><b>Format</b> Live demo + Hands-on</span>
+    <span><b>Duration</b> 75 minutes</span>
+    <span><b>Audience</b> Operations team + COO</span>
+    <span><b>Tools</b> Copilot Chat (everyone) · M365 Copilot (premium users)</span>
+    <span><b>Outcome</b> An interactive HTML operations dashboard</span>
+  </div>
+</div>
+
+<div class="card">
+  <h3>About this session</h3>
+  <p class="lead">A practical session designed for the day-to-day work of a life insurance Operations team. We move from <b>strategic context → live demos → hands-on practice</b>, ending with each participant building an interactive operations dashboard.</p>
+  <h4>What you will leave with</h4>
+  <ul>
+    <li>Fluency in Copilot Chat — usable today by every employee, with or without a paid licence</li>
+    <li>Confidence with the premium features of M365 Copilot: Researcher, Analyst, Plan in Excel, Cowork</li>
+    <li>A working set of operations artefacts: formal Ops Review minutes, claims operations analysis, a partner coordination note, and an interactive HTML dashboard</li>
+    <li>A clear mental model of what Copilot can do across an insurer's operating model — and what it cannot</li>
+  </ul>
+  <h4>Licence mix today</h4>
+  <ul>
+    <li><span class="badge blue">EVERYONE</span> Copilot Chat (work mode for licensed users; web-grounded chat for non-licensed) — used in the "Try it yourself" hands-on</li>
+    <li><span class="badge gold">PREMIUM</span> M365 Copilot in Outlook, Teams, Word, Excel, PowerPoint plus Researcher, Analyst, Plan in Excel and Cowork — used in the demos and the five hands-on exercises</li>
+  </ul>
+  <div class="callout warn">
+    <b>Data privacy reminder:</b> Do not paste real policy data, claims records, identifiable customer information, or commercially sensitive partner data into Copilot during this session. Use only the sample files provided. With M365 Copilot your prompts and grounding data stay within your Microsoft 365 tenant and are not used to train AI models.
+  </div>
+</div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+<div class="modulehead"><div class="num">📋</div><h2>Agenda<small>75 minutes total</small></h2></div>
+<div class="card">
+<div class="agenda">
+  <div>00:00</div><div><b>Welcome from the COO</b> · Why Copilot for our Operations team</div><div>3 min</div>
+  <div>00:03</div><div><b>Deep dive: Copilot Chat</b> · what it is, who can use it</div><div>5 min</div>
+  <div>00:08</div><div><b>Live demo: Copilot Chat</b> · research a partner, draft a customer note</div><div>5 min</div>
+  <div>00:13</div><div><b>The art of prompting · GCSE framework</b> · with team practice</div><div>7 min</div>
+  <div>00:20</div><div><b>Try it yourself · 6 prompts</b> · everyone hands-on in Copilot Chat</div><div>15 min</div>
+  <div>00:35</div><div><b>Live demo: M365 Copilot premium</b> · Outlook · Teams · Word · Excel · PowerPoint</div><div>8 min</div>
+  <div>00:43</div><div><b>Q&amp;A · short break</b></div><div>5 min</div>
+  <div>00:48</div><div><b>Hands-on Exercise 1</b> · Researcher (Critique + Model Council)</div><div>4 min</div>
+  <div>00:52</div><div><b>Hands-on Exercise 2</b> · Teams Recap → Word Ops Review minutes</div><div>4 min</div>
+  <div>00:56</div><div><b>Hands-on Exercise 3</b> · Claims operations analysis (Excel + Plan + Analyst)</div><div>6 min</div>
+  <div>01:02</div><div><b>Hands-on Exercise 4</b> · Cowork → interactive HTML Ops dashboard</div><div>9 min</div>
+  <div>01:11</div><div><b>Hands-on Exercise 5</b> · Agent Builder → reusable Ops Review agent</div><div>3 min</div>
+  <div>01:14</div><div><b>Wrap-up &amp; closing remarks</b></div><div>1 min</div>
+</div>
+<div class="callout" style="margin-top:14px"><b>Tip:</b> Toggle <b>"GCSE colour-coded"</b> at the top of the page to see every prompt broken into <span style="color:var(--g-goal);font-weight:700">Goal</span> · <span style="color:var(--g-ctx);font-weight:700">Context</span> · <span style="color:var(--g-src);font-weight:700">Source</span> · <span style="color:var(--g-exp);font-weight:700">Expectation</span>.</div>
+</div>
+</section>
+
+<!-- FILES -->
+<section id="files">
+<div class="modulehead"><div class="num">📁</div><h2>Sample files<small>Download for the exercises</small></h2></div>
+<div class="card">
+<table>
+<thead><tr><th>File</th><th>Used in</th><th>What it contains</th></tr></thead>
+<tbody>
+<tr><td><a href="01 ContosoLife_Claims_Operations_Survey.xlsx" download>01 ContosoLife_Claims_Operations_Survey.xlsx</a></td><td>Exercise 3, Exercise 4</td><td>Q3 claims operations data: ~80 claims with TAT, status and root cause, persistency by channel, contact-centre KPIs</td></tr>
+<tr><td><a href="02 ContosoLife_Operations_Review_Transcript.docx" download>02 ContosoLife_Operations_Review_Transcript.docx</a></td><td>Exercise 2</td><td>Sample transcript of the monthly Ops Review meeting chaired by the COO</td></tr>
+<tr><td><a href="03 ContosoLife_Stakeholder_Briefing.docx" download>03 ContosoLife_Stakeholder_Briefing.docx</a></td><td>Exercise 4</td><td>Q4 coordination briefing for corporate clients, brokers, reinsurers and the regulator</td></tr>
+<tr><td><a href="04 ContosoLife_Brand_Guidelines.docx" download>04 ContosoLife_Brand_Guidelines.docx</a></td><td>Exercise 4</td><td>Brand voice, visual identity and publication structure for Contoso Life Assurance</td></tr>
+</tbody>
+</table>
+<div class="callout warn"><b>All sample files are synthetic.</b> Entity names and numbers are fabricated for training purposes only.</div>
+</div>
+</section>
+
+<!-- STORY (IHH-style left/right panel) -->
+<section id="story">
+<div class="modulehead" style="margin-top:8px">
+  <div class="num" style="background:linear-gradient(135deg,var(--cla),var(--accent));font-size:14px">▶</div>
+  <h2>The Story<small>One workday in the life of our Operations team — research to dashboard before lunch.</small></h2>
+</div>
+<div class="story-wrap">
+  <div class="story-left">
+    <div>
+      <p class="label">Copilot in M365</p>
+      <h3>AI assistant<br>to AI doer</h3>
+    </div>
+    <div>
+      <p class="label">Persona</p>
+      <p class="name">Sari Wijaya</p>
+      <p class="role">Chief Operating Officer<br>Contoso Life Assurance</p>
+    </div>
+    <div>
+      <p class="label">The mission</p>
+      <p class="mission">One monthly Ops Review to chair, claims TAT slipping in two regions, corporate clients asking for the Q4 renewal brief, and a board pack due Friday.</p>
+    </div>
+    <div class="punch">
+      <p class="label" style="color:var(--teal)">The punchline</p>
+      <p>One workday. Five tools.<br>From transcript to dashboard.</p>
+    </div>
+  </div>
+  <div class="story-right">
+    <h3>Five moments across one workday</h3>
+
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">TRY IT YOURSELF · 15 min · COPILOT CHAT</span><span class="pill-name">Warm-up — for everyone</span></div>
+      <div class="tcards c3">
+        <div class="tcard"><div class="head" style="background:#0e7490"><span class="n">A</span><span class="t">Copilot Chat</span></div><div class="body"><p class="ttl">Research</p><p class="sub">Try 1</p><p class="desc">Scan global benchmarks for life insurance claims TAT and digital straight-through processing.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#0369a1"><span class="n">B</span><span class="t">Copilot Chat</span></div><div class="body"><p class="ttl">Corporate email</p><p class="sub">Try 2</p><p class="desc">Three rough bullets become a polished email to a corporate HR lead about the annual benefits renewal kick-off.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#003366"><span class="n">C</span><span class="t">Copilot Chat</span></div><div class="body"><p class="ttl">Pitch prep brief</p><p class="sub">Try 3</p><p class="desc">A one-page pitch brief for an upcoming corporate health benefits pitch, grounded in industry trends, in under two minutes.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#0e7490"><span class="n">D</span><span class="t">Copilot Chat</span></div><div class="body"><p class="ttl">Complaint → ticket</p><p class="sub">Try 4</p><p class="desc">Raw customer complaint text becomes a structured triage ticket with priority, category and next action.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#0369a1"><span class="n">E</span><span class="t">Copilot Chat</span></div><div class="body"><p class="ttl">Plain-language clause</p><p class="sub">Try 5</p><p class="desc">A dense policy exclusion clause becomes plain Bahasa Indonesia that a customer can understand.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#003366"><span class="n">F</span><span class="t">Copilot Chat</span></div><div class="body"><p class="ttl">Root-cause brainstorm</p><p class="sub">Try 6</p><p class="desc">Ishikawa-style brainstorm on why claims TAT spiked in one region last month.</p></div></div>
+      </div>
+    </div>
+
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">EXERCISE 1 · 4 min</span><span class="pill-name">Strategic Intelligence</span></div>
+      <div class="tcards c2">
+        <div class="tcard"><div class="head" style="background:#0e7490"><span class="n">01</span><span class="t">Researcher (Critique)</span></div><div class="body"><p class="ttl">Scan the landscape</p><p class="sub">Task 1.1</p><p class="desc">Two-AI Critique: one model researches life-insurance claims operations benchmarks; a second auto-verifies sources before delivery.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#8B2635"><span class="n">02</span><span class="t">Model Council</span></div><div class="body"><p class="ttl">Challenge the view</p><p class="sub">Task 1.2 · optional</p><p class="desc">Multiple models run independently; a judge writes a cover letter on agreements, divergences and unique insights.</p></div></div>
+      </div>
+    </div>
+
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">EXERCISE 2 · 4 min</span><span class="pill-name">Ops Review → Minutes</span></div>
+      <div class="tcards c1">
+        <div class="tcard"><div class="head" style="background:#003366"><span class="n">03</span><span class="t">Word Copilot</span></div><div class="body"><p class="ttl">Transcript → formal minutes</p><p class="sub">Task 2.1 &nbsp;·&nbsp; <span class="filechip">📎 02 ContosoLife_Operations_Review_Transcript.docx</span></p><p class="desc">In real life: Teams Recap auto-transcribes the meeting. Today: a sample Ops Review transcript becomes structured minutes with attendees, decisions, topic-organised summary, and an action-items table.</p></div></div>
+      </div>
+    </div>
+
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">EXERCISE 3 · 6 min</span><span class="pill-name">Claims Operations Analysis</span></div>
+      <div class="tcards c2">
+        <div class="tcard"><div class="head" style="background:#14532d"><span class="n">04</span><span class="t">Excel · Plan in Excel</span></div><div class="body"><p class="ttl">Build the dashboard</p><p class="sub">Task 3.1 · 3.2 &nbsp;·&nbsp; <span class="filechip">📎 01 ContosoLife_Claims_Operations_Survey.xlsx</span></p><p class="desc">Plan in Excel turns a goal into a multi-step worksheet build that you approve before it runs. KPI tiles, TAT by region, top-10 oldest open claims, conditional colours.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#0f4c75"><span class="n">05</span><span class="t">Analyst Agent</span></div><div class="body"><p class="ttl">Interrogate the data</p><p class="sub">Task 3.3</p><p class="desc">Drop the workbook into Analyst. Ask for TAT outliers, persistency erosion by channel, and contact-centre service-level patterns. No setup needed.</p></div></div>
+      </div>
+    </div>
+
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">EXERCISE 4 · 9 min · FINISHER</span><span class="pill-name">Cowork → HTML Dashboard</span></div>
+      <div class="tcards c1">
+        <div class="tcard"><div class="head" style="background:#4c1d95"><span class="n">06</span><span class="t">Cowork</span></div><div class="body" style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div><p class="ttl">Delegate the workflow</p><p class="sub">Task 4.1 · facilitator-paced</p><p class="desc">One prompt, six artefacts: a Word executive summary, a 5-slide PowerPoint COO briefing, an Excel KPI snapshot with pivot heatmap, an Outlook email draft from the COO, an Outlook Q4 Partner Forum meeting invite, and a single-file interactive HTML Ops dashboard with filter chips, view toggles and a sortable top-10 table, branded in Corporate Navy and Trust Teal.</p></div><div style="display:flex;flex-direction:column;gap:5px;justify-content:center"><div style="font-size:9.5px;color:var(--muted)">📎 Knowledge sources:</div><div class="filechip" style="font-size:9.5px;padding:2px 6px">01 ContosoLife_Claims_Operations_Survey.xlsx</div><div class="filechip" style="font-size:9.5px;padding:2px 6px">03 ContosoLife_Stakeholder_Briefing.docx</div><div class="filechip" style="font-size:9.5px;padding:2px 6px">04 ContosoLife_Brand_Guidelines.docx</div></div></div></div>
+      </div>
+    </div>
+
+    <div class="value-bar">
+      <b>The value:</b> One insurer. One workday. Research, meet, analyse, coordinate, publish — all without leaving Microsoft 365.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+<div class="modulehead"><div class="num">🛠</div><h2>Tools used today<small>Copilot surfaces</small></h2></div>
+<div class="card">
+<div class="tools-grid">
+  <div class="tool-card"><div class="icon">💬</div><h5>Copilot Chat <span class="badge blue">EVERYONE</span></h5><p>Work-mode chat for licensed users (Microsoft Graph access); web-grounded chat for non-licensed users. Your starter Copilot — usable from day one.</p></div>
+  <div class="tool-card"><div class="icon">🔍</div><h5>Researcher (Critique) <span class="badge gold">PREMIUM</span></h5><p>One model researches and drafts; a second reviews source reliability and evidence grounding before producing one polished report. Outperforms single-model on the DRACO benchmark.</p></div>
+  <div class="tool-card"><div class="icon">⚖️</div><h5>Model Council <span class="badge gold">PREMIUM</span></h5><p>In Researcher, multiple AI models each run your prompt independently. A judge model writes a cover letter highlighting agreements, divergences and unique insights.</p></div>
+  <div class="tool-card"><div class="icon">📊</div><h5>Excel Copilot + Plan <span class="badge gold">PREMIUM</span></h5><p>Natural-language analysis, dashboards, RAG status. <b>Plan in Excel</b> turns a goal into a multi-step worksheet build that you approve before it runs.</p></div>
+  <div class="tool-card"><div class="icon">📈</div><h5>Analyst Agent <span class="badge gold">PREMIUM</span></h5><p>Out-of-the-box AI analyst built into M365 Copilot. Drop in a dataset and ask complex questions: peer benchmarking, trend analysis, risk segmentation.</p></div>
+  <div class="tool-card"><div class="icon">📝</div><h5>Word Copilot <span class="badge gold">PREMIUM</span></h5><p>Document drafting: formal minutes, customer letters, stakeholder briefings — grounded on your uploaded data files.</p></div>
+  <div class="tool-card"><div class="icon">🎨</div><h5>PowerPoint Copilot <span class="badge gold">PREMIUM</span></h5><p>Generate presentation drafts, refresh narrative flow, and convert Word documents into board-ready decks.</p></div>
+  <div class="tool-card"><div class="icon">📥</div><h5>Outlook Copilot <span class="badge gold">PREMIUM</span></h5><p>Summarise long threads, draft replies in your tone, schedule follow-ups, and surface what changed since you last looked.</p></div>
+  <div class="tool-card"><div class="icon">🤝</div><h5>Teams Recap <span class="badge gold">PREMIUM</span></h5><p>Auto-transcribed meetings with searchable notes, decisions and action items. Hand the recap to Word to produce formal minutes.</p></div>
+  <div class="tool-card"><div class="icon">👥</div><h5>Cowork <span class="badge gold">PREMIUM</span></h5><p>Delegate multi-step tasks to Copilot. Describe the outcome and Copilot creates a plan, checks in for approvals, and produces the artefact — including an HTML dashboard.</p></div>
+</div>
+</div>
+</section>
+
+<!-- GCSE -->
+<section id="gcse">
+<div class="modulehead"><div class="num">🧭</div><h2>GCSE — write better prompts<small>The 4-part prompt framework</small></h2></div>
+<div class="card">
+<p class="lead">Great prompts share four ingredients. Use the <b>GCSE</b> mnemonic to make sure every prompt has all four. Toggle <b>"GCSE colour-coded"</b> at the top of this page to see every prompt below broken into these four colours.</p>
+<table>
+<thead><tr><th style="width:90px">Letter</th><th>Stands for</th><th>What it does</th><th>Example fragment</th></tr></thead>
+<tbody>
+<tr><td><span class="badge" style="background:rgba(220,38,38,.15);color:var(--g-goal);border:1px solid var(--g-goal)">G</span> Goal</td><td>What you want Copilot to do</td><td>The verb. The outcome. The deliverable.</td><td><i>"Produce a 2-page research brief on global life insurance claims TAT benchmarks…"</i></td></tr>
+<tr><td><span class="badge" style="background:rgba(37,99,235,.15);color:var(--g-ctx);border:1px solid var(--g-ctx)">C</span> Context</td><td>Who you are; what situation</td><td>Role, audience, purpose, constraints.</td><td><i>"I am an Operations Manager at Contoso Life Assurance overseeing 80,000 in-force policies…"</i></td></tr>
+<tr><td><span class="badge" style="background:rgba(147,51,234,.15);color:var(--g-src);border:1px solid var(--g-src)">S</span> Source</td><td>Where to ground the answer</td><td>Files, sheets, URLs, jurisdictions, or "use your training" if none.</td><td><i>"Use the Claims Operations sheet in this workbook"</i> · <i>"Use authoritative sources: Swiss Re, McKinsey, LIMRA, Deloitte, regulators"</i></td></tr>
+<tr><td><span class="badge" style="background:rgba(22,163,74,.15);color:var(--g-exp);border:1px solid var(--g-exp)">E</span> Expectation</td><td>What the output should look like</td><td>Length, format, tone, language, structure, must-haves.</td><td><i>"Reply with 6 bullets in the Contoso Life Assurance voice; end with a 'What this means' section"</i></td></tr>
+</tbody>
+</table>
+<div class="callout good"><b>Tip for facilitators:</b> Run a 5-minute round where everyone rewrites a weak prompt using GCSE. The contrast is the lesson.</div>
+</div>
+</section>
+
+<!-- GET STARTED -->
+<section id="getstarted">
+<div class="modulehead"><div class="num">🔑</div><h2>Get started<small>Open Copilot now</small></h2></div>
+<div class="card">
+<ol>
+  <li>Open Microsoft Edge.</li>
+  <li>Go to <a href="https://m365.cloud.microsoft" target="_blank">m365.cloud.microsoft</a> (or <a href="https://copilot.cloud.microsoft" target="_blank">copilot.cloud.microsoft</a> if available).</li>
+  <li>Sign in with your <b>Contoso Life Assurance</b> work account.</li>
+  <li>Click the <b>Copilot Chat</b> icon in the left rail.</li>
+  <li>If you have an M365 Copilot licence, look for the <b>Researcher</b> and <b>Analyst</b> agents in the same panel.</li>
+</ol>
+<div class="callout"><b>Tip:</b> Pin the Copilot Chat tab. We will return to it for every exercise today.</div>
+</div>
+</section>
+
+<!-- TRY IT YOURSELF -->
+<section id="try1">
+<div class="modulehead"><div class="num">🧪</div><h2>Try it yourself<small>The art of prompting — Copilot Chat, for everyone</small></h2></div>
+<div class="card">
+<p class="lead">Open <b>Copilot Chat</b> and work through these six prompts. They use only public information or sample text — no real customer or policy data. Toggle <b>"GCSE colour-coded"</b> at the top to see how each prompt is built from <b>Goal · Context · Source · Expectation</b>.</p>
+
+<div class="activity">
+  <div class="head"><span class="num">TRY 1</span><span class="time">~2 min</span><span class="badge blue">COPILOT CHAT</span></div>
+  <h4>Research life-insurance claims operations benchmarks</h4>
+  <p>Use Copilot Chat as your daily research analyst.</p>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya bekerja di tim Operasi sebuah perusahaan asuransi jiwa. Berikan saya ringkasan singkat tentang tolok ukur global untuk Turn-Around Time (TAT) klaim asuransi jiwa dan tingkat adopsi straight-through processing dalam 12 bulan terakhir. Sebutkan 3-5 sumber otoritatif (Swiss Re, McKinsey, LIMRA, Deloitte, regulator) dan akhiri dengan 3 pertanyaan terbuka yang harus saya tanyakan kepada tim Klaim minggu depan. Maksimum 8 poin.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya bekerja di tim Operasi sebuah perusahaan asuransi jiwa.</span> <span class="g"><span class="lbl">G</span>Berikan saya ringkasan tolok ukur global untuk TAT klaim asuransi jiwa dan tingkat adopsi straight-through processing dalam 12 bulan terakhir.</span> <span class="s"><span class="lbl">S</span>Gunakan 3-5 sumber otoritatif: Swiss Re, McKinsey, LIMRA, Deloitte, regulator.</span> <span class="e"><span class="lbl">E</span>Maksimum 8 poin, akhiri dengan 3 pertanyaan terbuka untuk tim Klaim minggu depan.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I work in the Operations team at a life insurance company. Give me a brief summary of global benchmarks for life insurance claims Turn-Around Time (TAT) and adoption rates for straight-through processing over the last 12 months. Cite 3-5 authoritative sources (Swiss Re, McKinsey, LIMRA, Deloitte, regulators) and end with 3 open questions I should ask our Claims team next week. Max 8 bullets.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I work in the Operations team at a life insurance company.</span> <span class="g"><span class="lbl">G</span>Give me a summary of global benchmarks for life insurance claims TAT and straight-through processing adoption over the last 12 months.</span> <span class="s"><span class="lbl">S</span>Use 3-5 authoritative sources: Swiss Re, McKinsey, LIMRA, Deloitte, regulators.</span> <span class="e"><span class="lbl">E</span>Max 8 bullets, ending with 3 open questions I should ask our Claims team next week.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity" id="try2">
+  <div class="head"><span class="num">TRY 2</span><span class="time">~2 min</span><span class="badge blue">COPILOT CHAT</span></div>
+  <h4>Draft an email to a corporate client</h4>
+  <p>Turn three rough bullets into a polished, partnership-grade email to a corporate HR or benefits lead in seconds.</p>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya adalah Manajer Senior di tim Operasi Contoso Life Assurance dan akan mengirim email kepada Head of Human Resources di PT Fabrikam Indonesia, salah satu klien korporat utama kami dengan lebih dari 25.000 karyawan. Tolong tuliskan email profesional yang mengundang mereka ke kick-off renewal manfaat kesehatan korporat untuk periode polis 2027 pada 12 November. Pertemuan akan membahas: (1) hasil utilisasi 2026 dan rekomendasi penyesuaian benefit; (2) opsi program wellness karyawan baru; (3) komitmen layanan onboarding 24 jam untuk karyawan baru. Bahasa Indonesia, nada profesional dan kolaboratif. Akhiri dengan permintaan konfirmasi kehadiran sebelum 5 November.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya adalah Manajer Senior di tim Operasi Contoso Life Assurance dan akan mengirim email kepada Head of HR di PT Fabrikam Indonesia, klien korporat utama dengan lebih dari 25.000 karyawan.</span> <span class="g"><span class="lbl">G</span>Tuliskan email profesional yang mengundang mereka ke kick-off renewal manfaat kesehatan korporat untuk periode polis 2027 pada 12 November.</span> <span class="s"><span class="lbl">S</span>Pertemuan akan membahas: (1) hasil utilisasi 2026 dan rekomendasi penyesuaian benefit; (2) opsi program wellness karyawan baru; (3) komitmen layanan onboarding 24 jam untuk karyawan baru.</span> <span class="e"><span class="lbl">E</span>Bahasa Indonesia, nada profesional dan kolaboratif. Akhiri dengan permintaan konfirmasi kehadiran sebelum 5 November.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am a Senior Manager in the Operations team at Contoso Life Assurance and I'm about to email the Head of Human Resources at PT Fabrikam Indonesia, one of our major corporate clients with more than 25,000 employees. Please write a professional email inviting them to the 2027 corporate health benefits renewal kick-off on 12 November. The meeting will cover: (1) 2026 utilisation results and recommended benefit adjustments; (2) new employee wellness programme options; (3) our 24-hour onboarding service commitment for new joiners. English, professional and collaborative tone. End with a request to confirm attendance by 5 November.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am a Senior Manager in the Operations team at Contoso Life Assurance and I'm about to email the Head of HR at PT Fabrikam Indonesia, a major corporate client with more than 25,000 employees.</span> <span class="g"><span class="lbl">G</span>Write a professional email inviting them to the 2027 corporate health benefits renewal kick-off on 12 November.</span> <span class="s"><span class="lbl">S</span>The meeting will cover: (1) 2026 utilisation results and benefit adjustment recommendations; (2) new employee wellness programme options; (3) 24-hour onboarding service commitment for new joiners.</span> <span class="e"><span class="lbl">E</span>English, professional and collaborative tone. End with a request to confirm attendance by 5 November.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity" id="try3">
+  <div class="head"><span class="num">TRY 3</span><span class="time">~2 min</span><span class="badge blue">COPILOT CHAT</span></div>
+  <h4>Prepare a pitch brief for a corporate prospect</h4>
+  <p>You are pitching for a corporate health benefits account next week. Copilot Chat scans public industry sources and produces a one-page pitch brief grounded in current employer benefit trends.</p>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya Manajer Senior di tim Operasi Contoso Life Assurance dan minggu depan akan pitch kepada Chief Human Resources Officer PT Fabrikam Indonesia, sebuah perusahaan manufaktur dengan 25.000 karyawan, untuk program manfaat kesehatan korporat 2027. Tolong susun briefing pitch satu halaman menggunakan informasi publik tentang tren benefit kesehatan korporat di Indonesia 12 bulan terakhir. Gunakan sumber otoritatif: AAJI, Mercer Marsh Benefits, WTW, AON, Bisnis Indonesia, Kontan. Berikan: (a) tiga tren utama yang sedang dicari oleh employer besar di Indonesia (mental health, telemedicine, wellness, dll); (b) tiga elemen RFP yang umum diminta perusahaan manufaktur skala besar; (c) tiga pembeda kompetitif yang biasa ditawarkan pesaing kami; (d) tiga pertanyaan terbuka untuk membuka percakapan dengan CHRO; (e) tiga topik sensitif (cost containment, klaim denial, network exclusivity) yang harus saya tangani dengan hati-hati. Sertakan tanggal dan tautan untuk setiap fakta.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya Manajer Senior di tim Operasi Contoso Life Assurance dan minggu depan pitch kepada CHRO PT Fabrikam Indonesia (manufaktur, 25.000 karyawan) untuk manfaat kesehatan korporat 2027.</span> <span class="g"><span class="lbl">G</span>Susun briefing pitch satu halaman menggunakan informasi publik tentang tren benefit kesehatan korporat di Indonesia 12 bulan terakhir.</span> <span class="s"><span class="lbl">S</span>Sumber otoritatif: AAJI, Mercer Marsh Benefits, WTW, AON, Bisnis Indonesia, Kontan.</span> <span class="e"><span class="lbl">E</span>Berikan (a) tiga tren yang dicari employer besar (mental health, telemedicine, wellness); (b) tiga elemen RFP umum untuk manufaktur skala besar; (c) tiga pembeda kompetitif pesaing kami; (d) tiga pertanyaan pembuka untuk CHRO; (e) tiga topik sensitif (cost containment, klaim denial, network exclusivity). Sertakan tanggal dan tautan.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am a Senior Manager in the Operations team at Contoso Life Assurance, pitching next week to the Chief Human Resources Officer at PT Fabrikam Indonesia, a manufacturing company with 25,000 employees, for their 2027 corporate health benefits programme. Please prepare a one-page pitch brief using public information about corporate health benefit trends in Indonesia over the last 12 months. Use authoritative sources: AAJI, Mercer Marsh Benefits, WTW, AON, Bisnis Indonesia, Kontan. Provide: (a) three trends large Indonesian employers are looking for (mental health, telemedicine, wellness, etc.); (b) three RFP elements typically required by large manufacturers; (c) three competitive differentiators our competitors usually pitch; (d) three open questions to open the conversation with the CHRO; (e) three sensitive topics (cost containment, claim denials, network exclusivity) to handle carefully. Include the date and a link for every fact.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am a Senior Manager in the Operations team at Contoso Life Assurance, pitching next week to the CHRO at PT Fabrikam Indonesia (manufacturing, 25,000 employees) for their 2027 corporate health benefits programme.</span> <span class="g"><span class="lbl">G</span>Prepare a one-page pitch brief using public information about corporate health benefit trends in Indonesia over the last 12 months.</span> <span class="s"><span class="lbl">S</span>Authoritative sources: AAJI, Mercer Marsh Benefits, WTW, AON, Bisnis Indonesia, Kontan.</span> <span class="e"><span class="lbl">E</span>Provide (a) three trends large Indonesian employers want (mental health, telemedicine, wellness); (b) three RFP elements typical for large manufacturers; (c) three competitive differentiators our rivals pitch; (d) three open questions to open the CHRO conversation; (e) three sensitive topics (cost containment, claim denials, network exclusivity) to handle carefully. Include the date and a link.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity" id="try4">
+  <div class="head"><span class="num">TRY 4</span><span class="time">~2 min</span><span class="badge blue">COPILOT CHAT</span></div>
+  <h4>Draft an empathetic reply to a delayed death claim</h4>
+  <p>The hardest message to write is the one to a grieving customer whose claim is taking longer than promised. Copilot gets you to a strong first draft in seconds — you still own the final wording.</p>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya seorang Customer Care Manager di Contoso Life Assurance. Saya perlu menulis balasan kepada Ibu Siti Rahayu, seorang janda yang mengajukan klaim meninggal suaminya tiga minggu lalu. Dokumen sudah lengkap, namun kasus tertahan di verifikasi medis karena ada catatan rawat inap yang perlu kami konfirmasi ke rumah sakit. Kami memperkirakan keputusan dalam 7 hari kerja ke depan. Ibu Siti mengirim email yang penuh kekhawatiran karena membutuhkan dana untuk biaya pendidikan anak. Tolong susun draf balasan email dalam Bahasa Indonesia yang: (a) mengakui kehilangan beliau dan berempati dengan situasinya tanpa terdengar formulaik; (b) menjelaskan dengan jujur dan jelas mengapa klaim membutuhkan waktu tambahan; (c) memberi komitmen tindak lanjut yang spesifik — siapa, kapan, bagaimana; (d) menawarkan jalur eskalasi langsung ke saya jika ada kebutuhan mendesak; (e) ditutup dengan hangat namun profesional. Panjang maksimal 200 kata. Hindari jargon hukum atau asuransi.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya Customer Care Manager di Contoso Life Assurance. Ibu Siti Rahayu, seorang janda, mengajukan klaim meninggal suaminya tiga minggu lalu; dokumen lengkap tapi tertahan di verifikasi medis karena catatan rawat inap perlu dikonfirmasi ke rumah sakit. Estimasi keputusan 7 hari kerja ke depan. Ibu Siti khawatir karena perlu dana untuk biaya pendidikan anak.</span> <span class="g"><span class="lbl">G</span>Susun draf balasan email yang empatik dan jelas untuk Ibu Siti.</span> <span class="s"><span class="lbl">S</span>Gunakan konteks kasus di atas. Tanpa jargon hukum atau asuransi.</span> <span class="e"><span class="lbl">E</span>Bahasa Indonesia, maksimal 200 kata. Harus: (a) mengakui kehilangan dan berempati tanpa formulaik; (b) menjelaskan dengan jujur alasan perpanjangan; (c) komitmen tindak lanjut spesifik (siapa, kapan, bagaimana); (d) menawarkan jalur eskalasi langsung ke saya; (e) penutup hangat namun profesional.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am a Customer Care Manager at Contoso Life Assurance. I need to write a reply to Mrs Siti Rahayu, a widow who submitted a death claim for her husband three weeks ago. Her documents are complete, but the case is held at medical verification because we need to confirm one hospitalisation record with the hospital. We expect a decision within the next 7 business days. Mrs Siti has sent an anxious email because she needs the funds for her children's school fees. Please draft an email reply in English that: (a) acknowledges her loss and empathises with her situation without sounding formulaic; (b) honestly and clearly explains why the claim needs more time; (c) makes a specific follow-up commitment — who, when, how; (d) offers a direct escalation path to me if anything is urgent; (e) closes warmly but professionally. Maximum 200 words. Avoid legal or insurance jargon.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am a Customer Care Manager at Contoso Life Assurance. Mrs Siti Rahayu, a widow, submitted a death claim for her husband three weeks ago; documents are complete but held at medical verification pending hospital confirmation of one hospitalisation record. Decision expected in the next 7 business days. She is anxious because she needs the funds for her children's school fees.</span> <span class="g"><span class="lbl">G</span>Draft an empathetic, clear email reply to Mrs Siti.</span> <span class="s"><span class="lbl">S</span>Use the case context above. No legal or insurance jargon.</span> <span class="e"><span class="lbl">E</span>English, maximum 200 words. Must: (a) acknowledge her loss and empathise without sounding formulaic; (b) honestly explain the reason for the extra time; (c) specific follow-up commitment (who, when, how); (d) offer a direct escalation path to me; (e) close warmly but professionally.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity" id="try5">
+  <div class="head"><span class="num">TRY 5</span><span class="time">~2 min</span><span class="badge blue">COPILOT CHAT</span></div>
+  <h4>Translate a policy clause into plain Bahasa Indonesia</h4>
+  <p>Customers do not read legalese. Rewrite a dense clause for a 9th-grade reading level — keeping every important meaning intact.</p>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya seorang Customer Communications Specialist di Contoso Life Assurance. Tulis ulang klausul pengecualian polis berikut menjadi penjelasan dalam Bahasa Indonesia yang sederhana untuk seorang pelanggan dewasa dengan tingkat bacaan kelas 9 SMP. Pertahankan setiap pengecualian yang ada — jangan menghilangkan atau menambah ketentuan. Klausul: "Penanggung tidak akan membayar Manfaat Meninggal Dunia apabila Tertanggung meninggal sebagai akibat langsung atau tidak langsung dari (i) perang atau kegiatan yang menyerupai perang, baik yang dideklarasikan maupun tidak, (ii) pengoperasian pesawat udara selain sebagai penumpang berbayar pada penerbangan komersial berjadwal, atau (iii) keikutsertaan profesional atau kompetitif dalam olahraga berbahaya termasuk balap motor, balap mobil, dan pendakian gunung di atas 5.000 meter." Berikan: (a) versi sederhana maksimal 4 kalimat, (b) daftar pengecualian dalam bentuk poin, (c) satu kalimat penutup yang menyarankan pelanggan menghubungi kami jika ada pertanyaan.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya seorang Customer Communications Specialist di Contoso Life Assurance, menulis untuk pelanggan dewasa dengan tingkat bacaan kelas 9 SMP.</span> <span class="g"><span class="lbl">G</span>Tulis ulang klausul pengecualian polis menjadi penjelasan Bahasa Indonesia yang sederhana, tanpa menghilangkan atau menambah ketentuan.</span> <span class="s"><span class="lbl">S</span>Klausul: "Penanggung tidak akan membayar Manfaat Meninggal Dunia apabila Tertanggung meninggal sebagai akibat langsung atau tidak langsung dari (i) perang atau kegiatan yang menyerupai perang, baik yang dideklarasikan maupun tidak, (ii) pengoperasian pesawat udara selain sebagai penumpang berbayar pada penerbangan komersial berjadwal, atau (iii) keikutsertaan profesional atau kompetitif dalam olahraga berbahaya termasuk balap motor, balap mobil, dan pendakian gunung di atas 5.000 meter."</span> <span class="e"><span class="lbl">E</span>Berikan (a) versi sederhana maksimal 4 kalimat, (b) daftar pengecualian dalam bentuk poin, (c) satu kalimat penutup yang menyarankan pelanggan menghubungi kami jika ada pertanyaan.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am a Customer Communications Specialist at Contoso Life Assurance. Rewrite the following policy exclusion clause into plain English for an adult customer at a 9th-grade reading level. Preserve every exclusion — do not drop or add any condition. Clause: "The Insurer shall not pay the Death Benefit if the Insured dies as a direct or indirect result of (i) war or warlike operations, whether declared or undeclared, (ii) operating any aircraft other than as a fare-paying passenger on a scheduled commercial flight, or (iii) professional or competitive participation in hazardous sports including motor racing, car racing, and mountaineering above 5,000 metres." Provide: (a) a simplified version in max 4 sentences, (b) a bullet list of the exclusions, (c) one closing sentence inviting the customer to contact us with questions.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am a Customer Communications Specialist at Contoso Life Assurance, writing for an adult customer at a 9th-grade reading level.</span> <span class="g"><span class="lbl">G</span>Rewrite the following policy exclusion clause in plain English, preserving every exclusion.</span> <span class="s"><span class="lbl">S</span>Clause: "The Insurer shall not pay the Death Benefit if the Insured dies as a direct or indirect result of (i) war or warlike operations, whether declared or undeclared, (ii) operating any aircraft other than as a fare-paying passenger on a scheduled commercial flight, or (iii) professional or competitive participation in hazardous sports including motor racing, car racing, and mountaineering above 5,000 metres."</span> <span class="e"><span class="lbl">E</span>Provide (a) a simplified version in max 4 sentences, (b) a bullet list of the exclusions, (c) one closing sentence inviting the customer to contact us with questions.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity" id="try6">
+  <div class="head"><span class="num">TRY 6</span><span class="time">~2 min</span><span class="badge blue">COPILOT CHAT</span></div>
+  <h4>Root-cause brainstorm for an operations bottleneck</h4>
+  <p>Use Copilot Chat as a thinking partner. Ask it to run an Ishikawa-style brainstorm — then push back and challenge its first answer.</p>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya seorang Operations Manager di Contoso Life Assurance. TAT klaim kesehatan di wilayah Surabaya melonjak dari rata-rata 9 hari menjadi 17 hari di bulan lalu, sementara wilayah lain tetap stabil. Lakukan brainstorm akar masalah ala Ishikawa (fishbone) dengan enam kategori: People, Process, Technology, Data, Partner (rumah sakit / TPA), External. Untuk setiap kategori, daftar 2-3 hipotesis spesifik yang masuk akal untuk konteks asuransi jiwa Indonesia. Akhiri dengan tiga pertanyaan diagnostik yang harus saya tanyakan kepada Branch Manager Surabaya dalam pertemuan besok. Format dalam tabel.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya seorang Operations Manager di Contoso Life Assurance. TAT klaim kesehatan di Surabaya melonjak dari 9 hari menjadi 17 hari bulan lalu, wilayah lain stabil.</span> <span class="g"><span class="lbl">G</span>Lakukan brainstorm akar masalah ala Ishikawa untuk mengidentifikasi penyebab lonjakan TAT.</span> <span class="s"><span class="lbl">S</span>Gunakan enam kategori: People, Process, Technology, Data, Partner (rumah sakit / TPA), External. Konteks: asuransi jiwa Indonesia.</span> <span class="e"><span class="lbl">E</span>Tabel dengan 2-3 hipotesis spesifik per kategori. Akhiri dengan tiga pertanyaan diagnostik untuk Branch Manager Surabaya dalam pertemuan besok.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am an Operations Manager at Contoso Life Assurance. Health claims TAT in the Surabaya region jumped from an average of 9 days to 17 days last month, while other regions stayed flat. Run an Ishikawa (fishbone) root-cause brainstorm with six categories: People, Process, Technology, Data, Partner (hospitals / TPAs), External. For each category, list 2-3 specific hypotheses plausible for the Indonesian life insurance context. End with three diagnostic questions I should ask the Surabaya Branch Manager in tomorrow's meeting. Format as a table.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am an Operations Manager at Contoso Life Assurance. Health claims TAT in Surabaya jumped from 9 to 17 days last month while other regions stayed flat.</span> <span class="g"><span class="lbl">G</span>Run an Ishikawa root-cause brainstorm to identify the drivers of the TAT spike.</span> <span class="s"><span class="lbl">S</span>Use six categories: People, Process, Technology, Data, Partner (hospitals / TPAs), External. Context: Indonesian life insurance.</span> <span class="e"><span class="lbl">E</span>A table with 2-3 specific hypotheses per category. End with three diagnostic questions for the Surabaya Branch Manager in tomorrow's meeting.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="callout good"><b>What you just experienced</b> is available to <b>every</b> employee at Contoso Life Assurance today, regardless of licence type. The next exercises require an M365 Copilot premium licence.</div>
+</div>
+</section>
+<!-- HANDS-ON EXERCISES -->
+<section id="ex1">
+<div class="modulehead"><div class="num">1</div><h2>Exercise 1 · Researcher<small>Multi-model deep research</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">4 min</span><span class="time">Premium</span><span class="badge gold">RESEARCHER</span></div>
+  <h4>Goal: Produce a board-ready research brief on the global life insurance claims operations landscape</h4>
+  <p>Researcher uses two AI models (one writes, one critiques) before producing a single polished output. Try Model Council if you have time.</p>
+  <div class="task-step">
+    <div class="step-label">Step 1 · Open Researcher<span class="tool-badge">M365 COPILOT CHAT</span></div>
+    In Copilot Chat, switch to the <b>Researcher</b> agent. Keep the model selector on <b>Auto</b> (Critique mode). Optionally switch to <b>Model Council</b> for a comparative cover letter.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 2 · Run the prompt</div>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya adalah Chief Operating Officer di Contoso Life Assurance, sebuah perusahaan asuransi jiwa semi-pemerintah di Indonesia. Susun research brief sepanjang 2 halaman tentang tren global operasi klaim asuransi jiwa dalam 18 bulan terakhir. Cakup: (a) tolok ukur TAT klaim kematian, kesehatan, dan kritis; (b) tingkat adopsi straight-through processing dan triase AI di minimal 4 pasar (Singapore, Malaysia, India, Australia); (c) praktik terbaik dalam pengalaman pelanggan saat klaim — terutama untuk klaim kematian yang sensitif; (d) tiga implikasi bagi operator asuransi jiwa semi-pemerintah Indonesia. Gunakan sumber otoritatif (Swiss Re, McKinsey, LIMRA, Deloitte, regulator). Akhiri dengan bagian 3 poin "Apa artinya bagi Contoso Life Assurance".<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya adalah Chief Operating Officer di Contoso Life Assurance, perusahaan asuransi jiwa semi-pemerintah di Indonesia.</span> <span class="g"><span class="lbl">G</span>Susun research brief 2 halaman tentang tren global operasi klaim asuransi jiwa dalam 18 bulan terakhir.</span> <span class="s"><span class="lbl">S</span>Gunakan sumber otoritatif — Swiss Re, McKinsey, LIMRA, Deloitte, regulator. Rujuk minimal 4 pasar: Singapore, Malaysia, India, Australia.</span> <span class="e"><span class="lbl">E</span>Brief 2 halaman yang mencakup (a) tolok ukur TAT klaim kematian/kesehatan/kritis, (b) tingkat adopsi straight-through processing dan triase AI di 4 pasar tersebut, (c) praktik terbaik pengalaman pelanggan saat klaim, (d) tiga implikasi bagi operator asuransi jiwa semi-pemerintah Indonesia. Akhiri dengan bagian 3 poin "Apa artinya bagi Contoso Life Assurance".</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am the Chief Operating Officer at Contoso Life Assurance, a semi-government life insurer in Indonesia. Produce a 2-page research brief on global trends in life insurance claims operations over the last 18 months. Cover: (a) Turn-Around Time benchmarks for death, health and critical illness claims; (b) adoption rates for straight-through processing and AI-assisted triage across at least 4 markets (Singapore, Malaysia, India, Australia); (c) best practices in the claims customer experience, particularly for sensitive death claims; (d) three implications for a semi-government Indonesian life insurer. Use authoritative sources (Swiss Re, McKinsey, LIMRA, Deloitte, regulators). End with a 3-bullet "What this means for Contoso Life Assurance" section.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am the Chief Operating Officer at Contoso Life Assurance, a semi-government Indonesian life insurer.</span> <span class="g"><span class="lbl">G</span>Produce a 2-page research brief on global trends in life insurance claims operations over the last 18 months.</span> <span class="s"><span class="lbl">S</span>Use authoritative sources — Swiss Re, McKinsey, LIMRA, Deloitte, regulators. Reference at least 4 markets: Singapore, Malaysia, India, Australia.</span> <span class="e"><span class="lbl">E</span>A 2-page brief covering (a) TAT benchmarks for death/health/critical illness claims, (b) adoption of straight-through processing and AI triage across the 4 markets, (c) best practices in the claims customer experience, (d) three implications for a semi-government Indonesian life insurer. End with a 3-bullet "What this means for Contoso Life Assurance" section.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 3 · Save to Word</div>
+    Click <b>Export to Word</b>. This becomes the briefing pack input for Exercise 4.
+  </div>
+</div>
+</section>
+
+<section id="ex2">
+<div class="modulehead"><div class="num">2</div><h2>Exercise 2 · Ops Review Minutes<small>Teams Recap → Word</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">4 min</span><span class="time">Premium</span><span class="badge gold">WORD COPILOT</span><span class="file"><a href="02 ContosoLife_Operations_Review_Transcript.docx" download>02 ContosoLife_Operations_Review_Transcript.docx</a></span></div>
+  <h4>Goal: Turn the monthly Ops Review transcript into a formal minutes document</h4>
+  <p>In real life this comes from <b>Teams Recap</b> auto-transcription. Today we use a sample transcript so everyone — including those who did not attend a real meeting — can run the exercise.</p>
+  <div class="task-step">
+    <div class="step-label">Step 1 · Open the file<span class="tool-badge">WORD ON THE WEB</span></div>
+    Download <a href="02 ContosoLife_Operations_Review_Transcript.docx" download>02 ContosoLife_Operations_Review_Transcript.docx</a> and open it in Word. Click the <b>Copilot</b> icon in the ribbon.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 2 · Generate formal minutes</div>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya sedang menyiapkan notulen resmi rapat Operations Review bulanan di Contoso Life Assurance, untuk arsip COO dan tim pimpinan. Ubah transkrip yang sedang terbuka di dokumen Word ini menjadi notulen resmi dengan struktur berikut: (1) Header — judul rapat, tanggal/waktu, lokasi, klasifikasi; (2) Daftar peserta yang rapi; (3) Keputusan utama dalam bentuk poin; (4) Ringkasan diskusi, dikelompokkan per topik (Klaim, Policy Servicing, Contact Center, Corporate Accounts, Digital & Teknologi) dengan 2-4 poin per topik; (5) Action items dalam tabel dengan kolom: Aksi / PIC / Tenggat; (6) Placeholder tanggal rapat berikutnya. Nada: profesional namun ramah, sesuai budaya tim Operasi. Header dalam Bahasa Indonesia, bahasa konten mengikuti sumber.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya sedang menyiapkan notulen resmi rapat Operations Review bulanan di Contoso Life Assurance, untuk arsip COO dan tim pimpinan.</span> <span class="g"><span class="lbl">G</span>Ubah transkrip ini menjadi notulen rapat resmi Contoso Life Assurance.</span> <span class="s"><span class="lbl">S</span>Gunakan transkrip rapat yang sedang terbuka di dokumen Word ini sebagai satu-satunya sumber.</span> <span class="e"><span class="lbl">E</span>Struktur: (1) Header (judul, tanggal/waktu, lokasi, klasifikasi); (2) Daftar peserta; (3) Keputusan utama dalam poin; (4) Ringkasan diskusi per topik (Klaim, Policy Servicing, Contact Center, Corporate Accounts, Digital & Teknologi), 2-4 poin per topik; (5) Tabel action items — Aksi / PIC / Tenggat; (6) Placeholder rapat berikutnya. Nada profesional namun ramah. Header dalam Bahasa Indonesia.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am preparing the formal minutes of the monthly Operations Review meeting at Contoso Life Assurance, archived for the COO and leadership team. Transform the transcript currently open in this Word document into a formal Contoso Life Assurance minutes document. Use the following structure: (1) Header — meeting title, date/time, location, classification; (2) Attendees in a clean list; (3) Key decisions in bullet form; (4) Discussion summary, organised by topic (Claims, Policy Servicing, Contact Center, Corporate Accounts, Digital & Technology) with 2-4 bullets each; (5) Action items in a table with columns: Action / Owner / Due date; (6) Next meeting date placeholder. Tone: professional yet warm, matching our Ops team culture. English throughout.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am preparing the formal minutes of the monthly Operations Review at Contoso Life Assurance, archived for the COO and leadership team.</span> <span class="g"><span class="lbl">G</span>Transform this transcript into a formal Contoso Life Assurance minutes document.</span> <span class="s"><span class="lbl">S</span>Use the meeting transcript currently open in this Word document as the only source.</span> <span class="e"><span class="lbl">E</span>Structure as: (1) Header (title, date/time, location, classification); (2) Attendees list; (3) Key decisions in bullets; (4) Discussion summary by topic (Claims, Policy Servicing, Contact Center, Corporate Accounts, Digital & Technology) with 2-4 bullets each; (5) Action items table — Action / Owner / Due date; (6) Next meeting placeholder. Tone: professional yet warm. English throughout.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 3 · Polish</div>
+    Ask Copilot: "Now make sure all action items have a clear owner and a date. Highlight any item that is missing one in <b>red</b> in a follow-up note."
+  </div>
+</div>
+</section>
+<section id="ex3">
+<div class="modulehead"><div class="num">3</div><h2>Exercise 3 · Claims Operations Analysis<small>Excel + Plan in Excel + Analyst</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">6 min</span><span class="time">Premium</span><span class="badge gold">EXCEL COPILOT</span><span class="badge gold">ANALYST</span><span class="file"><a href="01 ContosoLife_Claims_Operations_Survey.xlsx" download>01 ContosoLife_Claims_Operations_Survey.xlsx</a></span></div>
+  <h4>Goal: Surface the slowest claims and visualise the Q3 operations picture</h4>
+  <p>You have ~80 recent claims across regions and channels, persistency by channel, and contact-centre KPIs. Find the outliers, build a dashboard, and produce a one-paragraph executive summary — without writing a single formula.</p>
+  <div class="task-step">
+    <div class="step-label">Task 3a · Convert to a Table<span class="tool-badge">EXCEL</span></div>
+    Open <a href="01 ContosoLife_Claims_Operations_Survey.xlsx" download>01 ContosoLife_Claims_Operations_Survey.xlsx</a> in Excel. On the <b>Claims Operations</b> sheet press <b>Ctrl + T</b> to convert the data to a Table.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Task 3b · Plan in Excel</div>
+    Open the Copilot pane and try Plan in Excel — describe an outcome, approve the plan, then run.
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya seorang Operations Manager yang sedang menyiapkan dashboard klaim Q3 untuk Ops Review. Bangun dashboard operasi klaim Q3 pada sheet baru bernama "Q3 Dashboard", menggunakan tabel Claims Operations yang baru saya buat. Saya ingin: (1) KPI strip dengan empat tile — total klaim, rata-rata TAT (hari), persentase klaim dengan TAT melebihi SLA, dan total nilai klaim dalam IDR Bn; (2) grafik kolom jumlah klaim per wilayah; (3) grafik batang rata-rata TAT per jenis klaim (Death, Health, Critical Illness, Endowment); (4) tabel 10 klaim terbuka tertua (urutkan menurut Days Open descending) dengan kolom: Claim ID, Policy Holder, Claim Type, Region, Channel, Days Open, Status, Pending Reason; (5) pewarnaan bersyarat untuk TAT: > 21 hari = merah, 14-21 hari = amber, 7-14 hari = kuning, ≤ 7 hari = hijau. Tampilkan rencanamu lebih dulu; saya akan menyetujui sebelum kamu menjalankannya.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya seorang Operations Manager yang sedang menyiapkan dashboard klaim Q3 untuk Ops Review.</span> <span class="g"><span class="lbl">G</span>Bangun dashboard operasi klaim Q3 pada sheet baru bernama "Q3 Dashboard".</span> <span class="s"><span class="lbl">S</span>Gunakan tabel Claims Operations yang baru saya buat di workbook ini.</span> <span class="e"><span class="lbl">E</span>Sertakan (1) KPI strip dengan empat tile — total klaim, rata-rata TAT (hari), persen klaim melebihi SLA, total nilai klaim (IDR Bn); (2) grafik kolom jumlah klaim per wilayah; (3) grafik batang rata-rata TAT per jenis klaim (Death, Health, Critical Illness, Endowment); (4) tabel 10 klaim terbuka tertua, urutkan Days Open descending, kolom: Claim ID, Policy Holder, Claim Type, Region, Channel, Days Open, Status, Pending Reason; (5) warna bersyarat TAT: >21=merah, 14-21=amber, 7-14=kuning, ≤7=hijau. Tampilkan rencananya lebih dulu dan tunggu persetujuan saya.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am an Operations Manager preparing the Q3 claims dashboard for the Ops Review. Build me a Q3 claims operations dashboard on a new sheet called "Q3 Dashboard", using the Claims Operations table I just created. I want: (1) a KPI strip with four tiles — total claims, average TAT (days), percentage of claims breaching SLA, and total claim value in IDR Bn; (2) a column chart of claim count by region; (3) a bar chart of average TAT by claim type (Death, Health, Critical Illness, Endowment); (4) a table of the 10 oldest open claims (sorted by Days Open descending) with columns: Claim ID, Policy Holder, Claim Type, Region, Channel, Days Open, Status, Pending Reason; (5) conditional colour coding for TAT: > 21 days = red, 14-21 days = amber, 7-14 days = yellow, ≤ 7 days = green. Show me the plan first; I will approve before you run it.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am an Operations Manager preparing the Q3 claims dashboard for the Ops Review.</span> <span class="g"><span class="lbl">G</span>Build me a Q3 claims operations dashboard on a new sheet called "Q3 Dashboard".</span> <span class="s"><span class="lbl">S</span>Use the Claims Operations table I just created in this workbook.</span> <span class="e"><span class="lbl">E</span>Include (1) a KPI strip with four tiles — total claims, average TAT (days), % SLA breach, total value (IDR Bn); (2) a column chart of claim count by region; (3) a bar chart of average TAT by claim type (Death, Health, Critical Illness, Endowment); (4) a 10 oldest open claims table sorted by Days Open descending, columns: Claim ID, Policy Holder, Claim Type, Region, Channel, Days Open, Status, Pending Reason; (5) TAT colour coding: >21=red, 14-21=amber, 7-14=yellow, ≤7=green. Show me the plan first and pause for my approval.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Task 3c · Ask Analyst</div>
+    Open the Copilot pane → Analyst. Drop in the workbook.
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya seorang Senior Operations Analyst di Contoso Life Assurance, menyiapkan pre-read visual untuk Ops Review minggu depan. Gunakan Analyst (Python in Excel) untuk membaca ketiga sheet (Claims Operations, Persistency by Channel, Contact Center KPIs) dan hasilkan mini-dashboard visual langsung di workbook: (1) Heatmap SLA breach % per Region x Claim Type, dengan sel terburuk disorot merah; (2) Grafik garis erosi persistensi per channel (Corporate Accounts, Broker, Agency, Direct) sepanjang Policy Year 1-3, tandai channel paling cepat erosi; (3) Scatter plot Contact Center call volume vs rata-rata Days Open klaim per bulan, dengan trendline; (4) Bar chart top-5 wilayah dengan klaim tertua. Setelah setiap chart, tulis 1-2 kalimat insight yang harus saya sampaikan ke COO. Tutup dengan 3 rekomendasi tindakan prioritas. Gaya: profesional, ringkas, siap di-screenshot ke deck pre-read.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya seorang Senior Operations Analyst di Contoso Life Assurance, menyiapkan pre-read visual untuk Ops Review minggu depan.</span> <span class="g"><span class="lbl">G</span>Hasilkan mini-dashboard visual di Excel via Analyst (Python in Excel), bukan hanya narasi.</span> <span class="s"><span class="lbl">S</span>Gunakan ketiga sheet: Claims Operations, Persistency by Channel, Contact Center KPIs.</span> <span class="e"><span class="lbl">E</span>Produksi: (1) Heatmap SLA breach % per Region x Claim Type, sel terburuk merah; (2) Line chart erosi persistensi per channel (Corporate Accounts, Broker, Agency, Direct) sepanjang Policy Year 1-3; (3) Scatter Contact Center call volume vs rata-rata Days Open per bulan dengan trendline; (4) Bar chart top-5 wilayah klaim tertua. Setiap chart diikuti insight 1-2 kalimat untuk COO. Tutup dengan 3 rekomendasi prioritas. Profesional, ringkas, siap screenshot.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I'm a Senior Operations Analyst at Contoso Life Assurance, preparing a visual pre-read for next week's Ops Review. Use Analyst (Python in Excel) to read all three sheets (Claims Operations, Persistency by Channel, Contact Center KPIs) and produce a visual mini-dashboard directly in the workbook: (1) A heatmap of SLA breach % by Region x Claim Type, worst cells highlighted in red; (2) A line chart of persistency erosion by channel (Corporate Accounts, Broker, Agency, Direct) across Policy Year 1-3, flag the fastest-eroding channel; (3) A scatter plot of Contact Center call volume vs average claim Days Open per month, with a trendline; (4) A bar chart of the top-5 regions by oldest open claims. After each chart, add a 1-2 sentence insight I should tell the COO. Close with 3 priority recommended actions. Style: professional, concise, screenshot-ready for the pre-read deck.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I'm a Senior Operations Analyst at Contoso Life Assurance, preparing a visual pre-read for next week's Ops Review.</span> <span class="g"><span class="lbl">G</span>Produce a visual mini-dashboard inside Excel via Analyst (Python in Excel), not just narrative.</span> <span class="s"><span class="lbl">S</span>Use all three sheets: Claims Operations, Persistency by Channel, Contact Center KPIs.</span> <span class="e"><span class="lbl">E</span>Produce: (1) Heatmap of SLA breach % by Region x Claim Type, worst cells in red; (2) Line chart of persistency erosion by channel (Corporate Accounts, Broker, Agency, Direct) across Policy Year 1-3; (3) Scatter of Contact Center call volume vs avg Days Open per month with trendline; (4) Bar chart of top-5 regions by oldest claims. After each chart, a 1-2 sentence insight for the COO. Close with 3 priority recommended actions. Professional, concise, screenshot-ready.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+</div>
+</section>
+<section id="ex4">
+<div class="modulehead"><div class="num">4</div><h2>Exercise 4 · Cowork → HTML Dashboard<small>Delegate the whole workflow</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">9 min</span><span class="time">Premium</span><span class="badge gold">COWORK</span><span class="file"><a href="01 ContosoLife_Claims_Operations_Survey.xlsx" download>01 ContosoLife_Claims_Operations_Survey.xlsx</a></span><span class="file"><a href="03 ContosoLife_Stakeholder_Briefing.docx" download>03 ContosoLife_Stakeholder_Briefing.docx</a></span><span class="file"><a href="04 ContosoLife_Brand_Guidelines.docx" download>04 ContosoLife_Brand_Guidelines.docx</a></span></div>
+  <h4>Goal: Delegate a full publication workflow ending in an interactive HTML operations dashboard</h4>
+  <p>Cowork is your delegated colleague: describe the outcome, approve the plan, and let Copilot produce the artefacts. We end the session with a downloadable HTML dashboard you can open in a browser and share with your team and partners.</p>
+  <div class="task-step">
+    <div class="step-label">Step 1 · Open Cowork<span class="tool-badge">M365 COPILOT</span></div>
+    In Copilot Chat, switch to the <b>Cowork</b> agent. Upload the three files listed above as grounding.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 2 · Delegate the workflow</div>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Bertindaklah sebagai chief of staff saya. Saya akan mempresentasikan gambaran operasi Q3 kepada COO dan klien korporat utama kami. Dengan menggunakan tiga file yang saya unggah (Q3 Claims Operations Survey, Stakeholder Coordination Briefing, dan Contoso Life Assurance Brand Guidelines), produksi enam artefak siap-pakai berikut secara berurutan:
+
+(1) Dokumen Word "ContosoLife_Q3_Executive_Summary.docx" dengan ringkasan eksekutif 1 halaman dalam gaya bahasa Contoso Life Assurance (profesional, hangat, berpusat pada pelanggan): header dengan logo wordmark, 5 highlight KPI, 3 isu utama, 3 rekomendasi, footer klasifikasi.
+
+(2) Deck PowerPoint "ContosoLife_Q3_COO_Briefing.pptx" 5 slide untuk COO: (s1) judul + tanggal + klasifikasi; (s2) Q3 KPI snapshot dengan 4 tile besar; (s3) 3 isu prioritas dengan data pendukung; (s4) 3 rekomendasi tindakan; (s5) langkah berikutnya. Warna merek Corporate Navy #003366 dan Trust Teal #00A19A.
+
+(3) Workbook Excel "ContosoLife_Q3_KPI_Snapshot.xlsx" dengan: sheet "Summary" berisi KPI tile dan tabel ranking; sheet "Pivot - TAT by Region x Claim Type" dengan conditional formatting heatmap merah/hijau; sheet "Top 10 Oldest Claims" dengan tabel terformat.
+
+(4) Draf email Outlook dari COO yang dibuka langsung di Outlook saya (gunakan integrasi Outlook), siap saya tinjau dan kirim. Kepada: para CHRO klien korporat utama, pimpinan broker korporat, dan reinsurer panel. Subject yang menarik. Isi: pembuka hangat, ringkasan 3 highlight Q3, undangan untuk Q4 Partner Coordination Forum dengan tanggal dan tempat, penutup dari COO. Lampirkan referensi ke Q3 Executive Summary. Gaya bahasa Contoso Life Assurance (profesional, hangat, berpusat pada pelanggan).
+
+(5) Undangan rapat Outlook untuk Q4 Partner Coordination Forum yang dibuka langsung di kalender Outlook saya (atau berikan file .ics): Subject, Tanggal/Waktu, Lokasi (hybrid: Teams + Head Office Jakarta), daftar undangan (CHRO klien korporat utama, pimpinan broker korporat, reinsurer panel), badan undangan dengan tujuan, agenda 4 poin, dan dokumen pra-baca. Ambil tanggal dan topik dari Stakeholder Briefing.
+
+(6) Dashboard operasi HTML interaktif satu file "ContosoLife_Q3_Dashboard.html" yang dapat saya buka di browser. Warna Corporate Navy #003366 dan Trust Teal #00A19A. Sertakan: header "Contoso Life Assurance — Q3 2026 Operations Snapshot"; empat KPI tile yang ter-update sesuai filter aktif; toggle/filter interaktif untuk Region, Channel, dan Claim Type (multi-select chips); toggle view antara TAT, Count, dan Value IDR Bn; grafik batang TAT per jenis klaim dan grafik batang jumlah klaim per wilayah via Chart.js CDN (re-render saat filter berubah); tabel Top 10 klaim tertua dengan kolom dapat diurutkan dan baris dapat di-klik untuk modal detail; mode terang/gelap toggle; tombol "Export current view to CSV"; tooltip hover pada setiap chart; footer "Confidential — Internal Use Only". Semua styling inline; tanpa dependensi eksternal selain Chart.js CDN; semua data chart dan tabel di-inline sebagai array JS dari workbook klaim.
+
+Tampilkan rencananya lebih dulu. Tunggu persetujuan saya sebelum menjalankan setiap langkah. Setelah saya menyetujui, produksi keenam artefak: file Word/PPT/Excel/HTML sebagai file yang dapat saya unduh; email dan invite dibuka langsung di Outlook saya.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Bertindaklah sebagai chief of staff saya. Saya akan mempresentasikan gambaran operasi Q3 kepada COO dan klien korporat utama kami.</span> <span class="g"><span class="lbl">G</span>Produksi enam artefak siap-pakai: (1) Word executive summary, (2) PowerPoint COO briefing 5 slide, (3) Excel KPI snapshot dengan pivot, (4) draf email Outlook dari COO ke partners, (5) Outlook meeting invite Q4 Partner Forum, (6) HTML dashboard interaktif dengan filter dan toggle.</span> <span class="s"><span class="lbl">S</span>Gunakan tiga file yang saya unggah: Q3 Claims Operations Survey, Stakeholder Coordination Briefing, dan Contoso Life Assurance Brand Guidelines.</span> <span class="e"><span class="lbl">E</span>(1) "ContosoLife_Q3_Executive_Summary.docx": ringkasan 1 halaman, gaya CLA (profesional, hangat, customer-centric), 5 KPI, 3 isu, 3 rekomendasi. (2) "ContosoLife_Q3_COO_Briefing.pptx": 5 slide (judul, KPI snapshot, 3 isu, 3 rekomendasi, next steps), warna #003366 + #00A19A. (3) "ContosoLife_Q3_KPI_Snapshot.xlsx": sheet Summary, sheet Pivot TAT by Region x Claim Type dengan heatmap conditional formatting, sheet Top 10 Oldest Claims. (4) Draf email Outlook yang dibuka langsung di Outlook saya, dari COO kepada CHRO klien korporat, broker leads, reinsurer panel: subject menarik, pembuka hangat, 3 highlight Q3, undangan ke Q4 forum, penutup COO, gaya CLA. (5) Outlook invite Q4 Partner Coordination Forum yang dibuka di kalender Outlook saya (atau .ics): Subject, Tanggal/Waktu, Lokasi (hybrid Teams + HO Jakarta), invitees (CHRO klien korporat, broker, reinsurer panel), body dengan tujuan + agenda 4 poin + pra-baca; ambil tanggal/topik dari Stakeholder Briefing. (6) "ContosoLife_Q3_Dashboard.html" interaktif: header CLA Q3 2026 Snapshot; 4 KPI tile ter-update filter; toggle/filter chips Region/Channel/Claim Type; toggle view TAT/Count/Value; 2 bar chart via Chart.js CDN re-render saat filter berubah; tabel Top 10 sortable + klik baris buka modal detail; toggle light/dark mode; tombol Export CSV; tooltip hover; footer Confidential. Styling inline, tanpa dependensi selain Chart.js CDN, data di-inline. Tampilkan rencananya dulu, tunggu approval per langkah.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">Act as my chief of staff. I'm presenting the Q3 operations picture to the COO and our key corporate clients. Using the three files I uploaded (the Q3 Claims Operations Survey, the Stakeholder Coordination Briefing, and the Contoso Life Assurance Brand Guidelines), produce six ready-to-share artefacts in this order:
+
+(1) A Word document "ContosoLife_Q3_Executive_Summary.docx" with a one-page executive summary in the Contoso Life Assurance voice (professional, warm, customer-centric): wordmark header, 5 KPI highlights, 3 key issues, 3 recommendations, classification footer.
+
+(2) A PowerPoint deck "ContosoLife_Q3_COO_Briefing.pptx" of 5 slides for the COO: (s1) title + date + classification; (s2) Q3 KPI snapshot with four large tiles; (s3) three priority issues with supporting data; (s4) three recommended actions; (s5) next steps. Brand colours Corporate Navy #003366 and Trust Teal #00A19A.
+
+(3) An Excel workbook "ContosoLife_Q3_KPI_Snapshot.xlsx" with: a "Summary" sheet containing KPI tiles and a ranking table; a "Pivot - TAT by Region x Claim Type" sheet with red/green heatmap conditional formatting; a "Top 10 Oldest Claims" sheet with a formatted table.
+
+(4) An Outlook email draft from the COO, opened directly in my Outlook (use the Outlook integration), ready for me to review and send. To: the CHROs at our key corporate clients, leadership at our key corporate brokers, and our reinsurer panel. Compelling subject. Body: a warm opener, a 3-point Q3 highlight summary, an invitation to the Q4 Partner Coordination Forum with date and venue, and a COO sign-off. Reference the Q3 Executive Summary as an attachment. Contoso Life Assurance voice (professional, warm, customer-centric).
+
+(5) An Outlook meeting invite for the Q4 Partner Coordination Forum, opened directly in my Outlook calendar (or provide as an .ics file): Subject, Date/Time, Location (hybrid: Teams + Head Office Jakarta), invitee list (CHROs of key corporate clients, leadership at key corporate brokers, reinsurer panel), invite body with purpose, 4-bullet agenda, and pre-read attachments. Pull dates and topics from the Stakeholder Briefing.
+
+(6) A single-file interactive HTML operations dashboard "ContosoLife_Q3_Dashboard.html" that I can open in a browser. Brand colours Corporate Navy #003366 and Trust Teal #00A19A. Include: header "Contoso Life Assurance — Q3 2026 Operations Snapshot"; four KPI tiles that update based on the active filter; interactive toggle/filter chips for Region, Channel and Claim Type (multi-select); a view toggle between TAT, Count and Value IDR Bn; a bar chart of TAT by claim type and a bar chart of claim count by region using Chart.js from a CDN (charts re-render when filters change); a Top 10 oldest claims table with sortable columns and clickable rows that open a detail modal; a light/dark mode toggle; an "Export current view to CSV" button; hover tooltips on every chart; footer "Confidential — Internal Use Only". All styling inline; no external dependencies other than Chart.js CDN; all chart and table data inlined as JS arrays from the claims workbook.
+
+Show me the plan first. Pause for my approval before running each step. After I approve, produce all six artefacts: the Word/PPT/Excel/HTML as downloadable files; the email and meeting invite opened directly in my Outlook.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Act as my chief of staff. I'm presenting the Q3 operations picture to the COO and our key corporate clients.</span> <span class="g"><span class="lbl">G</span>Produce six ready-to-share artefacts: (1) Word executive summary, (2) PowerPoint COO briefing (5 slides), (3) Excel KPI snapshot with pivot heatmap, (4) Outlook email draft from the COO to partners, (5) Outlook meeting invite for the Q4 Partner Forum, (6) interactive HTML dashboard with filters and toggles.</span> <span class="s"><span class="lbl">S</span>Use the three uploaded files: Q3 Claims Operations Survey, Stakeholder Coordination Briefing, and Contoso Life Assurance Brand Guidelines.</span> <span class="e"><span class="lbl">E</span>(1) "ContosoLife_Q3_Executive_Summary.docx": one-page, CLA voice, 5 KPIs, 3 issues, 3 recommendations. (2) "ContosoLife_Q3_COO_Briefing.pptx": 5 slides (title, KPI snapshot, 3 issues, 3 recommendations, next steps), #003366 + #00A19A. (3) "ContosoLife_Q3_KPI_Snapshot.xlsx": Summary sheet, Pivot TAT by Region x Claim Type with heatmap conditional formatting, Top 10 Oldest Claims sheet. (4) Outlook email draft opened in my Outlook, from COO to CHROs of corporate clients, broker leads and reinsurer panel: compelling subject, warm opener, 3 Q3 highlights, invitation to Q4 forum, COO sign-off, CLA voice. (5) Outlook invite for Q4 Partner Coordination Forum opened in my Outlook calendar (or .ics): Subject, Date/Time, Location (hybrid Teams + HO Jakarta), invitees (CHROs of corporate clients, broker leads, reinsurer panel), body with purpose + 4-bullet agenda + pre-reads; pull dates/topics from Stakeholder Briefing. (6) "ContosoLife_Q3_Dashboard.html" interactive: CLA Q3 2026 Snapshot header; 4 KPI tiles that update with filter; toggle/filter chips for Region/Channel/Claim Type; view toggle TAT/Count/Value; two bar charts via Chart.js CDN, re-rendering on filter change; Top 10 sortable table + click row for detail modal; light/dark mode toggle; Export CSV button; hover tooltips; Confidential footer. Inline styling, no external deps other than Chart.js CDN, data inlined. Show plan first, pause for approval per step.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 3 · Open and admire</div>
+    Download the Word, PowerPoint, Excel and HTML files. Double-click the HTML to open in your browser, try the filter chips, view toggles and dark mode. Check the Outlook email draft and meeting invite already opened in your Outlook, ready to review and send. These are your take-home artefacts, share them with your team.
+  </div>
+  <div class="callout good"><b>What just happened:</b> You moved from raw operations data and a partner briefing to an interactive shareable artefact in under 10 minutes — using only natural language. This is the new pattern of work for an Operations team: <b>describe the outcome, approve the plan, ship the artefact.</b></div>
+</div>
+</section>
+<section id="ex5">
+<div class="modulehead"><div class="num">5</div><h2>Exercise 5 · Scale with Agent Builder<small>Turn the whole workflow into a reusable agent</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">3 min</span><span class="time">Premium</span><span class="badge gold">AGENT BUILDER</span><span class="file"><a href="01 ContosoLife_Claims_Operations_Survey.xlsx" download>01 Survey</a></span><span class="file"><a href="03 ContosoLife_Stakeholder_Briefing.docx" download>03 Briefing</a></span><span class="file"><a href="04 ContosoLife_Brand_Guidelines.docx" download>04 Brand</a></span></div>
+  <h4>Goal: Package the monthly Ops Review workflow as a no-code agent the whole team can reuse</h4>
+  <p>Agent Builder lets you describe an agent in natural language — no developer required. The result is a custom Copilot grounded on your files that every Operations team member can invoke in one click, every month.</p>
+  <div class="task-step">
+    <div class="step-label">Step 1 · Open Agent Builder<span class="tool-badge">M365 COPILOT</span></div>
+    In Copilot Chat, click <b>Create an agent</b> (or open the Agent Builder pane). Upload the three sample files as knowledge sources.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 2 · Describe your agent</div>
+    Paste the prompt below into the agent description. Adjust the persona, focus areas, or starter prompts to match your team.
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Bangun agen Copilot bernama "CLA Ops Review Assistant".
+
+Tujuan: membantu setiap anggota tim Operasi di Contoso Life Assurance menjalankan Ops Review bulanan secara lengkap — dari analisis data hingga dashboard yang siap dibagikan ke mitra — dalam satu percakapan.
+
+Instruksi agen:
+• Selalu sapa pengguna sebagai anggota tim Operasi CLA dan tanyakan area fokus bulan ini (Klaim, Policy Servicing, Contact Center, atau Corporate Accounts).
+• Dasarkan setiap jawaban pada tiga file pengetahuan yang diunggah: Claims Operations Survey, Stakeholder Briefing, dan Brand Guidelines.
+• Gunakan gaya bahasa Contoso Life Assurance sesuai Brand Guidelines: profesional, hangat, berpusat pada pelanggan.
+• Saat pengguna meminta analisis, ikuti urutan: (1) ringkasan data, (2) tiga isu prioritas dengan rujukan ke baris spesifik, (3) saran tindak lanjut untuk Ops Review.
+• Saat pengguna meminta artefak komunikasi, tawarkan tiga output Cowork (ringkasan eksekutif, email mitra, dashboard HTML) dan tanyakan mana yang ingin diproduksi lebih dulu.
+• Jangan pernah membuat keputusan operasi atas nama tim; selalu sajikan opsi dan rekomendasi untuk disetujui pengguna.
+
+Prompt awal yang disarankan:
+1. "Berikan gambaran operasi klaim bulan ini."
+2. "Susun draf email mitra untuk forum koordinasi Q4."
+3. "Bangun dashboard HTML Q3."
+
+Pengetahuan: gunakan ketiga file yang diunggah sebagai sumber pengetahuan agen.
+
+Nada: profesional, hangat, ringkas. Default Bahasa Indonesia; beralih ke Bahasa Inggris jika pengguna menulis dalam Bahasa Inggris.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Setiap anggota tim Operasi CLA menjalankan Ops Review bulanan yang sama setiap bulan.</span> <span class="g"><span class="lbl">G</span>Bangun agen Copilot bernama "CLA Ops Review Assistant" yang memandu seluruh alur kerja dari analisis hingga dashboard.</span> <span class="s"><span class="lbl">S</span>Gunakan tiga file yang diunggah: Claims Operations Survey, Stakeholder Briefing, dan Brand Guidelines.</span> <span class="e"><span class="lbl">E</span>Agen harus: (1) menyapa sebagai anggota tim Operasi CLA dan menanyakan area fokus (Klaim, Policy Servicing, Contact Center, atau Corporate Accounts); (2) untuk analisis — ringkasan data, top-3 isu dengan rujukan baris, saran tindak lanjut; (3) untuk komunikasi — menawarkan ringkasan eksekutif, email mitra, atau dashboard HTML; (4) tidak pernah memutuskan, hanya merekomendasikan untuk disetujui. Sertakan 3 starter prompts. Nada profesional, hangat, ringkas; default Bahasa Indonesia.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">Build me a Copilot agent called "CLA Ops Review Assistant".
+
+Purpose: help any member of the Operations team at Contoso Life Assurance run a complete monthly Ops Review — from data analysis to a stakeholder-ready dashboard — in a single conversation.
+
+Instructions for the agent:
+• Always greet the user as a CLA Operations team member and confirm which focus area they want to look at this month (Claims, Policy Servicing, Contact Center, or Corporate Accounts).
+• Ground every answer on the three uploaded knowledge files: Claims Operations Survey, Stakeholder Briefing, and Brand Guidelines.
+• Use the Contoso Life Assurance voice from the Brand Guidelines: professional, warm, customer-centric.
+• When the user asks for analysis, follow this sequence: (1) summarise the data, (2) highlight top-3 priority issues with citations to specific rows, (3) suggest an Ops Review follow-up action.
+• When the user asks for a communications artefact, offer the three Cowork outputs (executive summary, partner email, HTML dashboard) and ask which one to produce first.
+• Never make an operations decision on the team's behalf; always present options and recommendations for the user to approve.
+
+Starter prompts to suggest:
+1. "Give me this month's claims operations picture."
+2. "Draft the partner email for the Q4 coordination forum."
+3. "Build the Q3 HTML dashboard."
+
+Knowledge: attach the three uploaded files as the agent's knowledge sources.
+
+Tone: professional, warm, concise. Bahasa Indonesia by default; switch to English if the user writes in English.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Every member of the CLA Operations team runs the same monthly Ops Review each month.</span> <span class="g"><span class="lbl">G</span>Build a Copilot agent called "CLA Ops Review Assistant" that walks them through the entire workflow from analysis to dashboard.</span> <span class="s"><span class="lbl">S</span>Use the three uploaded files: Claims Operations Survey, Stakeholder Briefing, and Brand Guidelines.</span> <span class="e"><span class="lbl">E</span>The agent must: (1) greet as a CLA Operations team member and ask which focus area (Claims, Policy Servicing, Contact Center, or Corporate Accounts); (2) for analysis — summarise data, top-3 issues with row-level citations, suggest an Ops Review follow-up; (3) for communication — offer executive summary, partner email, or HTML dashboard; (4) never decide, only recommend for user approval. Include 3 starter prompts. Professional, warm, concise tone; Bahasa Indonesia default.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 3 · Test and share</div>
+    Click <b>Create</b>. Test with one of the starter prompts. When satisfied, click <b>Share</b> and add your team — they get the same one-click workflow without touching the prompt.
+  </div>
+  <div class="callout good"><b>The big idea:</b> You just turned a one-person, one-day workflow into a <b>team-wide capability</b>. Every month, every member of the Operations team can run the same Ops Review in minutes — consistent, grounded on CLA files, in the CLA voice.</div>
+</div>
+</section>
+
+<!-- BONUS SECTION -->
+<section id="bonus">
+<div class="modulehead"><div class="num">★</div><h2>Bonus · In-app Copilot agents<small>Word, PowerPoint and Excel, without leaving the document</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">Optional</span><span class="time">Take-home</span><span class="badge gold">BONUS</span></div>
+  <h4>Goal: Try the in-app agents inside Word, PowerPoint and Excel, then convert a Word document into a deck</h4>
+  <p>You have seen Copilot Chat, Researcher, Cowork and Agent Builder. The same pattern lives natively inside each Office app. Try one prompt in each, then turn one Word document into a fully branded PowerPoint deck with one click.</p>
+
+  <div class="task-step">
+    <div class="step-label">Prompt 1 · Word agent<span class="tool-badge">WORD</span></div>
+    <p>Open <b>03 ContosoLife_Stakeholder_Briefing.docx</b> in Word. Click the Copilot icon in the ribbon. Paste this prompt into the Copilot pane.</p>
+    <div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+    <div class="prompt prompt-plain">Tinjau dokumen Stakeholder Coordination Briefing ini dan tulis ulang sebagai ringkasan 1 halaman untuk COO. Pertahankan gaya bahasa Contoso Life Assurance (profesional, hangat, berpusat pada pelanggan). Struktur: (1) tujuan dalam 2 kalimat; (2) 3 highlight kuartal ini per audiens (klien korporat, broker, reinsurer, regulator); (3) 3 keputusan yang dibutuhkan dari COO; (4) tanggal kunci. Gunakan poin pendek, hindari jargon, Bahasa Indonesia.<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+    <div class="prompt prompt-plain">Review this Stakeholder Coordination Briefing and rewrite it as a one-page summary for the COO. Keep the Contoso Life Assurance voice (professional, warm, customer-centric). Structure: (1) purpose in 2 sentences; (2) 3 highlights this quarter per audience (corporate clients, brokers, reinsurers, regulator); (3) 3 decisions needed from the COO; (4) key dates. Use short bullets, avoid jargon, English throughout.<button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+
+  <div class="task-step">
+    <div class="step-label">Prompt 2 · Excel agent (Analyst)<span class="tool-badge">EXCEL</span></div>
+    <p>Open <b>01 ContosoLife_Claims_Operations_Survey.xlsx</b> in Excel. Click the Copilot icon. Switch to <b>Analyst</b> (Python in Excel) and paste this prompt.</p>
+    <div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+    <div class="prompt prompt-plain">Sebagai Analyst, baca sheet Claims Operations. Buatkan: (1) tabel ringkasan jumlah klaim, rata-rata Days Open, dan persen SLA breach per Region; (2) bar chart horizontal yang membandingkan rata-rata Days Open per Claim Type, urutkan dari yang terlama; (3) 3 insight singkat dalam bullet untuk COO. Tampilkan output langsung di workbook.<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+    <div class="prompt prompt-plain">As Analyst, read the Claims Operations sheet. Produce: (1) a summary table of claim count, average Days Open and % SLA breach by Region; (2) a horizontal bar chart comparing average Days Open by Claim Type, sorted longest first; (3) 3 short bullet insights for the COO. Render the output directly in the workbook.<button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+
+  <div class="task-step">
+    <div class="step-label">Prompt 3 · PowerPoint agent<span class="tool-badge">POWERPOINT</span></div>
+    <p>Open any existing CLA deck (or a blank presentation) in PowerPoint. Click the Copilot icon and paste this prompt to redesign and extend the deck.</p>
+    <div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+    <div class="prompt prompt-plain">Tinjau deck ini dan rancang ulang menggunakan tema Contoso Life Assurance (Corporate Navy #003366 dan Trust Teal #00A19A). Pertahankan judul tiap slide tapi tulis ulang isi agar lebih ringkas (maksimal 4 poin per slide). Tambahkan satu slide baru di akhir berjudul "What this means for our customers" dengan 3 poin singkat. Tambahkan ikon yang relevan dan visual sederhana.<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+    <div class="prompt prompt-plain">Review this deck and redesign it using the Contoso Life Assurance theme (Corporate Navy #003366 and Trust Teal #00A19A). Keep each slide title but rewrite the content to be tighter (maximum 4 bullets per slide). Add one new slide at the end titled "What this means for our customers" with 3 short bullets. Add relevant icons and simple visuals.<button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+
+  <div class="task-step">
+    <div class="step-label">Prompt 4 · Word → PowerPoint conversion<span class="tool-badge">POWERPOINT</span></div>
+    <p>Open PowerPoint. In the Copilot pane, choose <b>Create presentation from file</b> and select the <b>ContosoLife_Q3_Executive_Summary.docx</b> you produced with Cowork (or the Ops Review minutes from Exercise 2). PowerPoint generates a branded draft deck in under a minute.</p>
+    <div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+    <div class="prompt prompt-plain">Buatkan presentasi dari dokumen Word ContosoLife_Q3_Executive_Summary.docx untuk Ops Review COO. Gunakan template PowerPoint Zava, maksimal 6 slide: judul, ringkasan Q3, 3 isu prioritas, 3 rekomendasi, langkah berikutnya, terima kasih. Setiap slide ringkas dengan poin pendek, tambahkan ikon dan visual sederhana. Bahasa Indonesia, nada profesional dan hangat.<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+    <div class="prompt prompt-plain">Create a presentation from the Word document ContosoLife_Q3_Executive_Summary.docx for the COO Ops Review. Use the Zava PowerPoint template, maximum 6 slides: title, Q3 summary, 3 priority issues, 3 recommendations, next steps, thank you. Keep each slide tight with short bullets, add simple icons and visuals. English throughout, professional and warm tone.<button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+
+  <div class="callout good"><b>What just happened:</b> Word, Excel and PowerPoint each have their own Copilot agent. Whichever app you start in, Copilot is already there. And one Word document can become a fully branded deck without you opening a single text box.</div>
+</div>
+</section>
+<!-- TIPS -->
+<section id="tips">
+<div class="modulehead"><div class="num">💡</div><h2>Tips &amp; prompts<small>Take these home</small></h2></div>
+<div class="card">
+  <h4>Five prompt habits that make Copilot 10× better</h4>
+  <ul>
+    <li><b>Use GCSE.</b> Goal · Context · Source · Expectation. Every prompt. Every time.</li>
+    <li><b>Set the role.</b> "Act as a senior risk analyst..." beats no role 9 times out of 10.</li>
+    <li><b>Set the audience.</b> "...for the COO Ops Review pre-read" or "...for a corporate HR Director" changes the output.</li>
+    <li><b>Constrain the length.</b> "In 6 bullets" or "in 200 words" prevents wall-of-text.</li>
+    <li><b>Iterate.</b> First draft is rarely the final. Ask Copilot to "make it more concise" or "make the tone more authoritative".</li>
+  </ul>
+  <h4>Three things Copilot will not do for you</h4>
+  <ul>
+    <li>Make operational, underwriting or claims decisions — Copilot drafts, you decide.</li>
+    <li>Replace primary-source verification — always cross-check facts before publication.</li>
+    <li>Access systems it has not been connected to — your tenant, your files, your rules.</li>
+  </ul>
+  <h4>Where to go next</h4>
+  <ul>
+    <li>Copilot Adoption Hub: <a href="https://adoption.microsoft.com/copilot" target="_blank">adoption.microsoft.com/copilot</a></li>
+    <li>Copilot Lab (prompt library): <a href="https://copilot.cloud.microsoft/prompts" target="_blank">copilot.cloud.microsoft/prompts</a></li>
+    <li>M365 Copilot Roadmap: <a href="https://www.microsoft.com/microsoft-365/roadmap" target="_blank">microsoft.com/microsoft-365/roadmap</a></li>
+  </ul>
+</div>
+</section>
+
+</main>
+</div><!-- /layout -->
+
+<script>
+// ── Password ──
+const HASH='d88aefefa86a169c3f1437dd8155965ca4d9ee099ab22a5c5ea549594b7c2788';
+async function sha256(s){const b=new TextEncoder().encode(s);const d=await crypto.subtle.digest('SHA-256',b);return Array.from(new Uint8Array(d)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function unlock(){
+  const v=document.getElementById('pw').value;
+  const h=await sha256(v);
+  if(h===HASH){
+    document.getElementById('lock').style.display='none';
+    document.getElementById('main').style.display='grid';
+    sessionStorage.setItem('cla_unlocked','1');
+    localStorage.setItem('cla_unlocked','1');
+  } else {
+    const e=document.getElementById('err');
+    e.textContent='Incorrect password. Please try again.';
+    setTimeout(()=>e.textContent='',3000);
+    document.getElementById('pw').value='';
+  }
+}
+function togglePw(){
+  const pw=document.getElementById('pw');
+  const svg=document.getElementById('eye-svg');
+  const btn=document.getElementById('toggle-pw');
+  if(pw.type==='password'){pw.type='text';btn.title='Hide password';svg.setAttribute('viewBox','0 0 576 512');svg.querySelector('path').setAttribute('d','M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.2 13.2 3.2 20.3z');}
+  else {pw.type='password';btn.title='Show password';svg.setAttribute('viewBox','0 0 640 512');svg.querySelector('path').setAttribute('d','M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z');}
+}
+if(sessionStorage.getItem('cla_unlocked')==='1'||localStorage.getItem('cla_unlocked')==='1'){
+  document.getElementById('lock').style.display='none';
+  document.getElementById('main').style.display='grid';
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock();});
+
+// ── GCSE toggle ──
+function setMode(g){
+  document.body.classList.toggle('gcse',g);
+  document.getElementById('btn-plain').classList.toggle('on',!g);
+  document.getElementById('btn-gcse').classList.toggle('on',g);
+  localStorage.setItem('cla_gcse', g?'1':'0');
+}
+if(localStorage.getItem('cla_gcse')==='1') setMode(true);
+
+// ── Copy prompts (works for both plain and gcse) ──
+function cp(btn){
+  // Strip the labels (G/C/S/E) when copying GCSE — keep only the body text
+  const parent=btn.parentElement.cloneNode(true);
+  parent.querySelectorAll('.lbl').forEach(n=>n.remove());
+  parent.querySelectorAll('button').forEach(n=>n.remove());
+  const txt=parent.textContent.replace(/\s+/g,' ').trim();
+  navigator.clipboard.writeText(txt).then(()=>{
+    btn.textContent='Copied!';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);
+  });
+}
+
+// ── Active nav highlight ──
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      document.querySelectorAll('aside nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+    }
+  });
+},{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
+

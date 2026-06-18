@@ -281,6 +281,523 @@ CARDS['uc-life-corporate-renewal'] = {
 }
 
 
+# ── Contoso Property Group demo — additional distinctive use cases ─────
+
+CARDS['uc-property-strategic-landscape'] = {
+    'title': 'Property Sector Landscape Scan — Researcher Critique + Model Council',
+    'dept_tag': 'Strategy & Land',
+    'industry_tag': 'Property Development',
+    'complexity': 'intermediate',
+    'apps': ['Cowork', 'Word'],
+    'desc': 'GM-level sector intelligence on the Integrated Township & Property Development landscape in Malaysia — first Researcher Critique (Auto) for the default scan, then Model Council (multiple models in parallel) when the decision is too important for one model, then a 1-page GM strategy brief.',
+    'skills': [
+        'Researcher Critique mode — Auto picks the right model and shows its reasoning critique',
+        'Model Council mode — 3-4 frontier models answer the same question in parallel; Cowork reconciles disagreements',
+        'Sector intelligence specific to Malaysian property (OPR, KPKT, EIA, bumiputera quota, GreenRE, MM2H, EPF withdrawal scheme)',
+        'Distilling council debate into a 1-page GM brief with explicit areas of consensus and disagreement',
+    ],
+    'instructions': [
+        'Open Cowork → Researcher tool → Mode: Critique (Auto)',
+        'Paste Prompt 1 for the default landscape scan',
+        'When Critique flags an answer-confidence below 80%, switch to Mode: Model Council and paste Prompt 2',
+        'Paste Prompt 3 to convert the council output into a 1-page Word brief for the GM',
+    ],
+    'sample_files': [],
+    'prompts': [
+        {
+            'label': '1. Critique (Auto) — default landscape scan',
+            'text': (
+                "Researcher Critique mode. Scan the Integrated Township & Property Development landscape in Malaysia for the last 12 months. Cover:\n"
+                "1) Headwinds (OPR trajectory, household-debt-to-GDP, contractor labour supply, KPKT/EIA permit timelines, GreenRE/GBI cost premium).\n"
+                "2) Tailwinds (MM2H scheme, EPF withdrawal flexibility, Johor-Singapore Special Economic Zone, ETR / data-centre catchment).\n"
+                "3) The top 5 listed Malaysian township developers' Q reported take-up, GDV launched, and unsold inventory.\n"
+                "4) Two regulator moves to watch (Ministry of Housing / Bank Negara) in the next 12 months.\n"
+                "Output: maximum 12 bullets, each bullet citing one authoritative source with retrieval timestamp. End with 3 open questions for the Strategy team's Friday session."
+            )
+        },
+        {
+            'label': '2. Model Council — stress-test the strategic question',
+            'text': (
+                "Switch to Model Council. The question: 'Given the current OPR trajectory and unsold-inventory levels, should Contoso Property Group accelerate Phase 4 launches at Iskandar, hold for 6 months, or pivot Phase 4 to mixed-use industrial?'\n"
+                "Run the question across all available council models in parallel. Report:\n"
+                "- Each model's recommended action and its top 2 reasons\n"
+                "- Where the council agrees (consensus)\n"
+                "- Where the council disagrees (disagreement axis — what would change the answer)\n"
+                "- The deciding question the GM should answer before choosing\n"
+                "Format as a 2-column reconciliation table plus a 3-bullet executive note."
+            )
+        },
+        {
+            'label': '3. 1-page GM strategy brief in Word',
+            'text': (
+                "Convert the council output into a 1-page Word brief for the GM. Sections: (1) The strategic question; (2) Council consensus in 3 bullets; (3) Council disagreement axis in 2 bullets; (4) Recommended decision with the supporting model rationale; (5) The deciding question the GM still owns. Brand tone: deep teal, professional, no marketing fluff. End with a source footer (each citation hyperlinked)."
+            )
+        },
+    ],
+    'expected': [
+        'Researcher Critique landscape scan (12 bullets, sources)',
+        'Model Council reconciliation table',
+        '1-page GM strategy brief (Word)',
+    ],
+    'watch': [
+        'Critique mode shows the model\'s own confidence — surfaces when to escalate to Council',
+        'Council reveals model disagreement honestly — no false consensus',
+        'The GM brief preserves disagreement instead of hiding it under a single recommendation',
+    ],
+    'honest': 'Researcher pulls public data; private competitor data (e.g. unannounced launch pricing) is out of scope. The Council disagreement is signal, not noise — if 3 models out of 4 disagree, the right answer is probably to gather more data before deciding.',
+    'tips': [
+        'Re-run the Council monthly — the disagreement axis shifts as conditions move',
+        'For REITs, swap the question to "Acquire / hold / divest the [ASSET] in this cap-rate environment?"',
+        'Add a 4th prompt that drafts the Friday session agenda using the 3 open questions',
+    ],
+}
+
+CARDS['uc-property-gm-strategy-deck'] = {
+    'title': 'GM Strategy Deck — BCG/McKinsey Tightening for Township Ops Committee',
+    'dept_tag': 'Township Operations',
+    'industry_tag': 'Property Development',
+    'complexity': 'intermediate',
+    'apps': ['PowerPoint', 'Cowork'],
+    'desc': 'Two-pass deck workflow — first Cowork drafts an 8-slide GM strategy deck for the Township Ops Committee from the strategic landscape brief; then a McKinsey-style tightening pass rewrites every slide to one-pyramid-per-slide with quantified asks.',
+    'skills': [
+        'Pyramid Principle deck structure (situation, complication, resolution per slide)',
+        'McKinsey tightening prompt — every slide must have a quantified ask or be cut',
+        'Brand template auto-application (deep teal + warm gold)',
+        'GM persona calibration (concise, decision-oriented, not training-deck dense)',
+    ],
+    'instructions': [
+        'Open Cowork → attach the GM strategy brief (output from the landscape-scan card)',
+        'Paste Prompt 1 — Cowork drafts the 8-slide deck applying your brand template',
+        'Paste Prompt 2 — McKinsey tightening pass; the deck shrinks and sharpens',
+        'Open the deck in PowerPoint, accept the tightened slides',
+    ],
+    'sample_files': [
+        ('PD_GM_Strategy_Brief.docx', 'docx'),
+    ],
+    'prompts': [
+        {
+            'label': '1. Draft an 8-slide GM strategy deck',
+            'text': (
+                "Using the attached GM strategy brief, draft an 8-slide deck in PowerPoint for the next Township Operations Committee. Apply our brand template (deep teal #0E7C66, warm gold #D4A017). Structure:\n"
+                "Slide 1 — Cover: 'Township Strategy Refresh · Q[QUARTER] FY[YY]'\n"
+                "Slide 2 — Where we are: 3 numbers on group performance (GDV launched, take-up %, NPS)\n"
+                "Slide 3 — Sector headwinds (OPR, contractor labour, KPKT timelines) — top 3 with quantified exposure\n"
+                "Slide 4 — Sector tailwinds (MM2H, JS-SEZ, data-centre catchment) — top 3 with quantified upside\n"
+                "Slide 5 — Three township priorities (Iskandar inventory, Hilltop VP, Klang Valley land bank)\n"
+                "Slide 6 — Land bank monetisation pathway: in-house / JV / divest by parcel\n"
+                "Slide 7 — GreenRE pipeline — pricing premium and the certification roadmap\n"
+                "Slide 8 — Decisions needed at Township Ops Committee with owners and dates\n"
+                "Every slide carries a top-of-slide title that IS the slide's argument (not just the topic)."
+            )
+        },
+        {
+            'label': '2. McKinsey-style tightening review',
+            'text': (
+                "Tighten the deck McKinsey-style. For every slide:\n"
+                "- Rewrite the title so it states the slide's argument in one sentence (not the topic)\n"
+                "- Remove any bullet that does not carry a number or a date\n"
+                "- Surface the quantified ask of the slide (decision, approval, resource) at the bottom right\n"
+                "- If a slide has no ask, propose deleting it and tell me why\n"
+                "Output: the revised deck plus a 1-paragraph rationale for any deleted or merged slides."
+            )
+        },
+    ],
+    'expected': [
+        '8-slide branded GM strategy deck (PowerPoint)',
+        'McKinsey-tightened version with action-titled slides',
+        'Rationale paragraph for any cuts or merges',
+    ],
+    'watch': [
+        'Slide titles state the argument, not the topic — pyramid principle in action',
+        'Every slide has a quantified ask — no decoration slides survive',
+        'Brand template applied automatically — no manual reformatting',
+    ],
+    'honest': 'Cowork drafts and tightens. The GM still walks every slide before the Committee — pyramid titles can be over-confident if the underlying data is shaky. Sensitive numbers (e.g. unannounced pricing) need Pricing Committee clearance before any slide leaves the GM.',
+    'tips': [
+        'Re-run the tightening prompt twice — second pass usually cuts another 2 slides',
+        'Add a 3rd prompt: "Generate the speaker notes the GM would actually say"',
+        'For asset-management committees (REIT), swap "township priorities" for "asset priorities"',
+    ],
+}
+
+CARDS['uc-property-create-infographic'] = {
+    'title': 'Township Snapshot Infographic — Copilot Create on Brand',
+    'dept_tag': 'Sales & Marketing',
+    'industry_tag': 'Property Development',
+    'complexity': 'beginner',
+    'apps': ['Copilot Create', 'PowerPoint', 'Outlook'],
+    'desc': 'A one-page A4 infographic poster for the Township Ops Committee — four variants from one Copilot Create session: Township Snapshot · Land-Bank Map · Customer VP Journey · GreenRE Pipeline. Deep teal + warm gold brand, fills the full A4 page (no empty bottom), Refine-without-restarting follow-ups for trim.',
+    'skills': [
+        'Copilot Create with brand colour discipline (specific hex codes)',
+        'Composing a full-A4 vertical infographic in one prompt (no empty bottom)',
+        'Refine-without-restarting — Edit follow-ups instead of new Create runs',
+        'Brand-aligned thin-outline-icon style (no clip-art, no stock photos)',
+    ],
+    'instructions': [
+        'Open Microsoft 365 Copilot Chat → Create in left sidebar (or type /create)',
+        'Paste Prompt 1 — get 4 design variants',
+        'Pick your favourite → click Edit',
+        'Paste any of the Refine follow-ups to trim or extend',
+        'Download as PNG or PDF and drop into Outlook, Teams or PowerPoint',
+    ],
+    'sample_files': [],
+    'prompts': [
+        {
+            'label': '1. Township Snapshot · Q[QUARTER] FY[YY]',
+            'text': (
+                "Make a clean, premium one-page infographic poster called 'Township Snapshot — Sales, Build, Customer · Q[QUARTER] FY[YY]'. Use our brand colours deep teal (#0E7C66) and warm gold (#D4A017) on white, with a small dark-grey for headings — a confident, property-developer feel. Vertical A4, fill the entire page top to bottom — NO empty space at the bottom.\n\n"
+                "At the top, a big bold title: 'TOWNSHIP SNAPSHOT · Q[QUARTER] FY[YY]'. Underneath: 'Sales velocity · Construction · Land bank · Customer · For the Township Operations Committee'.\n\n"
+                "Then a row of 4 big-number boxes: 'RM 480M' GDV Launched YTD (target RM 520M); '68%' Group Sales Take-up in 90 days (target 75%); '92%' Construction Progress vs Schedule; '48' Customer NPS (target 55).\n\n"
+                "Then a section called 'THE THREE TOWNSHIP PRIORITIES' with 3 numbered cards side by side: (1) Move the unsold inventory (price-realignment at Iskandar Phase 3; bumiputera-quota release; sales-gallery activation; rebate package). (2) Deliver VP on schedule (main-contractor catch-up at Hilltop Block C; CONQUAS audit; KPKT VP certification; defects-liability handover). (3) Monetise the land bank (Greater Klang Valley JV vs in-house; GreenRE/GBI roll-out; mixed-use industrial pivot; refreshed masterplan).\n\n"
+                "Then a 'Township Compare' table (5 rows × 3 columns: Take-up %, GDV Launched, Unsold Inventory %, Construction Progress, NPS for the 3 priority townships, green/amber/red indicators).\n\n"
+                "Then a 'Risks we're managing' row of 3 icons: OPR sensitivity, KPKT/EIA permits, contractor labour supply.\n\n"
+                "Bottom: a teal-gold ribbon footer with the recommendation and today's date.\n\n"
+                "Style: clean modern sans-serif, thin outline icons (house, crane, map-pin, leaf), NO clip-art, NO stock photos. Fill the entire A4 page."
+            )
+        },
+        {
+            'label': '2. Refine — fill empty space',
+            'text': "There is empty space at the bottom of the page. Please fill it by extending the sections, or add a footer ribbon in our brand colour with a one-sentence recommendation for the GM and the company name 'Contoso Property Group' on the left."
+        },
+        {
+            'label': '3. Refine — icon style',
+            'text': "Replace all the icons with simple, thin outline icons in our brand colour. No emojis, no stock photos."
+        },
+        {
+            'label': '4. Alternate angles (pick one)',
+            'text': "Generate three alternate one-page A4 infographic variants in the same teal-gold style: (a) 'Where We Hold Land — Klang Valley & Iskandar Bank · FY[YY]' with a stylised Peninsular Malaysia map, 6 parcel pins, and a Parcel Strategy table. (b) 'From Sale to Keys — Your Township Journey' with a 5-step VP timeline and a Service Standards table. (c) 'GreenRE & GBI Pipeline · FY[YY]' with three pillars (energy, water, materials) and a Pipeline Status table."
+        },
+    ],
+    'expected': [
+        '1 polished A4 infographic poster (PNG or PDF), brand-aligned',
+        '3 alternate angle variants on demand',
+        'Refined version (full-bleed, brand icons) on follow-up',
+    ],
+    'watch': [
+        'Create respects exact brand hex codes when you specify them',
+        'Refine works in plain English — no design-tool skills needed',
+        'Enterprise Data Protection keeps the design inside your tenant',
+    ],
+    'honest': 'Copilot Create is great for the first 80%. Final pixel polish (legal disclaimers, exact logo position, accessibility colour contrast) may still need the design team. For external customer-facing pieces, get Brand and Comms sign-off before posting.',
+    'tips': [
+        'Save the prompt as a reusable skill on the Customize page so any team member can re-run',
+        'For Mandarin / BM / BI variants, just add "Translate the title and labels into [LANGUAGE]"',
+        'For mobile/social, ask "Make a vertical 9:16 version for Instagram Stories" as a refine follow-up',
+    ],
+}
+
+CARDS['uc-property-opr-shock'] = {
+    'title': 'OPR-Shock Pricing & Take-Up Response Pack — the Industry Power Move',
+    'dept_tag': 'Strategy & Sales',
+    'industry_tag': 'Property Development',
+    'complexity': 'advanced',
+    'apps': ['Excel', 'PowerPoint', 'Word', 'Outlook', 'Cowork'],
+    'desc': 'When Bank Negara moves the OPR, Cowork rebuilds the entire pricing and take-up response pack in one prompt: home-loan affordability impact per unit type, township-by-township take-up sensitivity, pricing-ladder recalibration options, lender talking points, and a sales-gallery script for the next 30 days.',
+    'skills': [
+        'OPR-to-monthly-instalment translation per unit type and loan tenure',
+        'Take-up sensitivity modelling per township × unit type × price band',
+        'Pricing-ladder recalibration (price-hold + rebate / price-cut / tenure-extension / lender-rate-buydown)',
+        'Cross-channel comms cascade (Lender Relations · Sales Galleries · External Comms)',
+    ],
+    'instructions': [
+        'Open Cowork → model picker → Sonnet+Opus Advisor (financial reasoning benefits from the pairing)',
+        'Attach the 4 source files',
+        'Paste the prompt — Cowork builds the full response pack in parallel',
+        'Hand to the GM and the Head of Sales within the same hour as the OPR move',
+    ],
+    'sample_files': [
+        ('PD_Township_Pricing_Ladder.xlsx', 'xlsx'),
+        ('PD_Take_Up_Sensitivity_Model.xlsx', 'xlsx'),
+        ('PD_Lender_Panel_Rate_Sheet.xlsx', 'xlsx'),
+        ('PD_Sales_Gallery_Activity_Tracker.xlsx', 'xlsx'),
+    ],
+    'prompts': [{
+        'label': 'OPR-Shock response pack',
+        'text': (
+            "Bank Negara has just moved the OPR by [BPS] basis points to [NEW-RATE]%. Using the 4 attached files, in parallel, do all 6:\n"
+            "1) Excel — affordability impact: for each of our 12 unit-type × price-band combinations, recompute the monthly instalment at the new OPR for 30-yr and 35-yr tenures, and show the % change vs the prior OPR. Flag rows where the instalment crosses the typical bank DSR ceiling for that band.\n"
+            "2) Excel — take-up sensitivity: per township × unit type, model the expected 90-day take-up % at the new affordability level using the historical elasticity in the sensitivity model. Show base case, optimistic (+10%), pessimistic (-10%).\n"
+            "3) Word — pricing-ladder recalibration memo (3 pages): 4 options — (a) price-hold with rebate package, (b) selective 1-3% price cut at sub-DSR-ceiling units, (c) tenure-extension push with lender partners, (d) lender-rate-buydown subsidy. Quantify expected take-up lift, GDV impact, and gross-margin impact per option. Recommend one.\n"
+            "4) Excel — lender talking points: per panel lender, the rate sheet impact and the conversation we want our Lender Relations team to have. Output as a 1-row-per-lender brief.\n"
+            "5) Word — sales-gallery script for the next 30 days: 5 customer-conversation playbooks (first-time buyer, upgrader, investor, MM2H buyer, EPF withdrawal buyer) addressing the OPR move and our response.\n"
+            "6) Outlook — draft an email cascade: (a) to the Group CEO with the 1-pager recommendation, (b) to each Township GM with that township's specific take-up exposure, (c) to the Head of Lender Relations with the bank-by-bank action list.\n"
+            "Cite the source file + sheet + row for every figure. Every recommendation carries the GDV and gross-margin impact attached."
+        )
+    }],
+    'expected': [
+        'Affordability impact table (Excel)',
+        'Take-up sensitivity table per township (Excel)',
+        '3-page pricing-ladder recalibration memo (Word)',
+        'Lender-by-lender talking points (Excel)',
+        'Sales-gallery 30-day script (Word, 5 playbooks)',
+        '3-direction Outlook email cascade',
+    ],
+    'watch': [
+        'Affordability impact translates rate moves into the instalment number buyers actually see',
+        'Sensitivity ranges are explicit (base / optimistic / pessimistic) — no false precision',
+        'Email cascade is differentiated by audience — CEO sees the recommendation, Township GMs see their own exposure',
+    ],
+    'honest': 'Elasticities are historical — actual buyer behaviour in a shock may differ. The recommendation is one informed view; the Pricing Committee owns the decision. Any lender-rate-buydown subsidy needs Treasury + Lender Relations sign-off before sales-gallery teams quote it.',
+    'tips': [
+        'Pin this prompt as a custom skill so the Strategy team can re-run within minutes of any OPR move',
+        'Run a "what-if BNM cuts 25bps" version in parallel — quantifies the upside lever',
+        'For Singapore / Indonesia operations, swap BNM for MAS / Bank Indonesia and the model still works',
+    ],
+}
+
+
+# ── Contoso Life Assurance demo — additional distinctive use cases ─────
+
+CARDS['uc-life-pitch-brief'] = {
+    'title': 'Corporate Health Benefits Pitch Brief — Prospect-Facing',
+    'dept_tag': 'Corporate Sales',
+    'industry_tag': 'Life Insurance',
+    'complexity': 'intermediate',
+    'apps': ['Cowork', 'Word', 'PowerPoint'],
+    'desc': 'For a corporate prospect (not yet a client), Copilot Chat scans public industry sources and produces a one-page pitch brief grounded in current employer benefit trends — wellness, mental health, family coverage, claims TAT — plus a 1-slide pitch hook and 3 conversation openers.',
+    'skills': [
+        'Public-source-only research (suitable for prospect-facing material)',
+        'Employer-benefit-trend distillation (wellness, mental health, family coverage)',
+        'Pitch-brief structure (hook, evidence, our differentiation, call-to-action)',
+        'Conversation-opener generation calibrated to the prospect\'s industry',
+    ],
+    'instructions': [
+        'Open Cowork → Researcher tool on',
+        'Paste Prompt 1 — public-source pitch brief',
+        'Paste Prompt 2 — 1-slide pitch hook as a PowerPoint single-slide ready to share',
+        'Bring the brief and the slide to the prospect meeting',
+    ],
+    'sample_files': [],
+    'prompts': [
+        {
+            'label': '1. One-page corporate pitch brief',
+            'text': (
+                "I am a Senior Manager at Contoso Life Assurance pitching corporate health benefits to a corporate prospect: [PROSPECT-NAME], a [INDUSTRY] company with [N-EMPLOYEES] employees in [COUNTRY]. Using public industry sources only (Swiss Re, McKinsey, LIMRA, Deloitte, Mercer, AAJI/LIAM benchmarks, regulator), produce a one-page pitch brief in Word:\n"
+                "(1) Hook — what's changing in corporate health benefits in [INDUSTRY] this year (3 bullets);\n"
+                "(2) Evidence — 3-5 datapoints from cited sources on wellness, mental health, family coverage, claims TAT;\n"
+                "(3) Our differentiation — 3 things Contoso Life Assurance does that the prospect should hear about (placeholder our team will tailor);\n"
+                "(4) Call-to-action — propose a 45-min benefits-design workshop in 3 weeks;\n"
+                "(5) Source footer with hyperlinks and retrieval timestamps.\n"
+                "Public sources only. No real customer or policy data. Professional collaborative tone, EN and BI."
+            )
+        },
+        {
+            'label': '2. 1-slide pitch hook',
+            'text': (
+                "Convert the pitch-brief Hook section into a single PowerPoint slide ready to share: title states the change in one sentence; 3 evidence bullets with source labels; bottom-right call-to-action 'Let's run a 45-min benefits-design workshop in 3 weeks'. Apply our brand template if available."
+            )
+        },
+        {
+            'label': '3. Three conversation openers',
+            'text': (
+                "Generate 3 conversation openers for the prospect's HR lead based on the brief. Each opener: 1 sentence asking about their current pain point, 1 sentence offering our perspective, 1 invitation to go deeper. Keep them human, not salesy."
+            )
+        },
+    ],
+    'expected': [
+        '1-page corporate pitch brief (Word, EN + BI)',
+        '1-slide pitch hook (PowerPoint, branded)',
+        '3 conversation openers',
+    ],
+    'watch': [
+        'Public sources only — pitch brief is safe to share externally',
+        'Hook frames the change, not the product — earns the prospect\'s attention',
+        'Conversation openers ask before they sell — relationship-first',
+    ],
+    'honest': 'Public-source pitch material is appropriate for first contact; once the prospect engages, switch to confidential materials with proper data clearance. Any claim about our differentiation is a placeholder — Corporate Sales and Marketing tailor with verified, signed-off product positioning.',
+    'tips': [
+        'Pin as a custom skill for every Account Manager — same flow, different prospect',
+        'Add a 4th prompt — draft the outreach LinkedIn DM in the prospect HR lead\'s voice',
+        'For ID variant, weight sources toward AAJI, OJK, and Mercer Indonesia benchmarks',
+    ],
+}
+
+CARDS['uc-life-empathetic-claim-reply'] = {
+    'title': 'Empathetic Reply to a Delayed Death Claim',
+    'dept_tag': 'Claims & Customer Service',
+    'industry_tag': 'Life Insurance',
+    'complexity': 'beginner',
+    'apps': ['Cowork', 'Outlook', 'Word'],
+    'desc': 'For a bereaved beneficiary whose death claim has been delayed, Cowork drafts a deeply empathetic reply — acknowledges the loss, owns the delay, explains the next 3 steps with named owner and timeline, offers a named contact, and ends with a sincere apology. Tone calibrated for grief, not procedure.',
+    'skills': [
+        'Empathy-first drafting (grief-appropriate tone, no corporate hedging)',
+        'Owning a service failure without making excuses',
+        'Clear next-steps commitment with named owner + timeline',
+        'Plain Bahasa Indonesia / Bahasa Malaysia variant for bereaved family\'s preferred language',
+    ],
+    'instructions': [
+        'Open Cowork',
+        'Paste the prompt with the case-specific context filled in (no PII)',
+        'Review the draft sentence-by-sentence — empathy cannot be skipped',
+        'Send via the Claims case file, not the generic Ops inbox',
+    ],
+    'sample_files': [],
+    'prompts': [{
+        'label': 'Empathetic claim-delay reply',
+        'text': (
+            "Draft a deeply empathetic email reply to Mr/Mrs [BENEFICIARY-FAMILY-NAME] (relationship to insured: [RELATIONSHIP]) whose death claim for the late [INSURED-NAME] (policy [POLICY-NUMBER-PLACEHOLDER], date of claim submission [SUBMISSION-DATE], number of days outstanding [DAYS]) has been delayed due to [REASON: e.g. medical-records verification pending from the hospital].\n\n"
+            "The email must:\n"
+            "(1) Open by acknowledging the family's loss — by name, in one sentence, no corporate filler;\n"
+            "(2) Own the delay — name it, do not minimise it;\n"
+            "(3) Explain the next 3 steps with a named owner (Claims Officer's name as placeholder) and a specific timeline for each;\n"
+            "(4) Offer a direct named contact (Claims Officer name + direct phone) for any question, available [HOURS];\n"
+            "(5) Close with a sincere apology in the writer's own voice — not a template phrase.\n\n"
+            "Produce two versions side-by-side: English and Bahasa Indonesia. Tone must be calibrated for grief, not procedure — no jargon, no defensive language, no 'we apologise for any inconvenience caused'.\n"
+            "Also draft a 2-line internal Teams handover note to the Claims Officer with the case status and the commitment we just made on email."
+        )
+    }],
+    'expected': [
+        'Empathetic email reply in EN',
+        'Bahasa Indonesia version side-by-side',
+        '2-line Teams handover note to Claims Officer',
+    ],
+    'watch': [
+        'Email opens by name and acknowledges loss before anything else',
+        'Delay is owned, not euphemised — no "challenges in processing"',
+        'Each next step has an owner and a date — accountability is visible',
+    ],
+    'honest': 'Empathy cannot be outsourced. Cowork drafts a starting point; the Claims Officer reads every line aloud before sending and edits anything that sounds template-like. Any commitment of timeline must be one the team will actually meet — never promise dates you cannot keep to a grieving family.',
+    'tips': [
+        'For Takaful claims, add Tabarru-fund context if relevant to the family',
+        'Save as a custom skill so every Claims Officer can produce a humane first draft within minutes',
+        'Pair with a follow-up reminder skill — Outlook prompts the officer 3 days later to confirm closure',
+        'Always have a supervisor review before the email goes out — empathy reviewed, not assumed',
+    ],
+}
+
+CARDS['uc-life-plain-language-clause'] = {
+    'title': 'Translate Policy Clause into Plain Bahasa Indonesia / Bahasa Malaysia',
+    'dept_tag': 'Legal & Customer Education',
+    'industry_tag': 'Life Insurance',
+    'complexity': 'beginner',
+    'apps': ['Cowork', 'Word'],
+    'desc': 'A dense English policy clause (exclusions, waiting periods, free-look, suicide clauses, reinstatement) becomes a plain-language Bahasa Indonesia / Bahasa Malaysia version a non-expert can understand — with a 3-bullet "what this means for you", a 1-sentence "what is NOT covered", and a footer pointing to the binding original text.',
+    'skills': [
+        'Translation of insurance-technical English into plain BI / BM (not literal — concept-faithful)',
+        'Consumer-friendly framing ("what this means for you" reframing)',
+        'Explicit disclosure of exclusions in customer\'s language',
+        'Footer pattern that preserves the binding original — regulator-safe',
+    ],
+    'instructions': [
+        'Open Cowork',
+        'Paste the source English clause (no PII; use template clauses for first pass)',
+        'Paste Prompt 1 — Cowork produces the plain BI / BM version',
+        'Run Prompt 2 to validate the translation by back-translating into English',
+        'Run Prompt 3 to produce a 1-page customer letter format',
+    ],
+    'sample_files': [],
+    'prompts': [
+        {
+            'label': '1. Translate clause into plain BI / BM',
+            'text': (
+                "Translate the following insurance policy clause into plain Bahasa Indonesia and plain Bahasa Malaysia (side-by-side). Target reader: a working adult with SPM / SMA-level education who is buying their first life insurance policy.\n\n"
+                "[ENGLISH CLAUSE — paste full clause here, e.g. an Exclusions clause or a Free-Look Period clause]\n\n"
+                "Output structure:\n"
+                "(1) Plain BI version (max 120 words, sentences max 18 words, no insurance jargon)\n"
+                "(2) Plain BM version (same constraints)\n"
+                "(3) 'Apa artinya untuk Anda' / 'Apa maksudnya untuk anda' — 3 bullets translating into customer impact\n"
+                "(4) 'Yang TIDAK ditanggung' / 'Yang TIDAK dilindungi' — 1 sentence flagging the most-misunderstood exclusion\n"
+                "(5) Footer: 'Versi resmi yang mengikat secara hukum adalah teks Bahasa Inggris di [POLICY DOCUMENT SECTION]. Jika ada perbedaan interpretasi, teks asli yang berlaku.' / 'Versi rasmi yang mengikat dari segi undang-undang adalah teks Bahasa Inggeris di [SEKSYEN DOKUMEN POLISI]. Jika terdapat perbezaan tafsiran, teks asal yang terpakai.'\n"
+                "Do NOT modify the legal meaning of the clause — translate, don't reinterpret. If a concept has no clean BI / BM equivalent, keep the English term in brackets after the BI / BM phrase."
+            )
+        },
+        {
+            'label': '2. Back-translate to validate',
+            'text': "Now back-translate the plain BI version into English. Compare it to the original English clause and flag any change in meaning, omission, or addition. If any change is material, rewrite the BI version."
+        },
+        {
+            'label': '3. Customer letter format',
+            'text': "Format the plain BI / BM version as a 1-page customer letter on Contoso Life Assurance letterhead, opening with the customer's name, followed by the plain-language clause, the 'Apa artinya untuk Anda' section, the 'Yang TIDAK ditanggung' line, and a sign-off from the Customer Relationship Manager. Ready to send."
+        },
+    ],
+    'expected': [
+        'Plain BI version (≤ 120 words, ≤ 18-word sentences)',
+        'Plain BM version side-by-side',
+        '"What this means for you" 3 bullets',
+        '"What is NOT covered" 1 sentence',
+        'Back-translation validation report',
+        '1-page customer letter format',
+    ],
+    'watch': [
+        'Plain version preserves legal meaning — back-translation flags any drift',
+        'Footer preserves binding original — regulator-safe translation',
+        'Most-misunderstood exclusion called out explicitly — proactive consumer protection',
+    ],
+    'honest': 'The plain version is a customer-education aid, not the contract. The binding text remains the original. Legal must review any plain-language version sent to customers, and the binding-original footer is non-negotiable. For Takaful contracts, the Shariah Committee may also need to review the plain-language framing.',
+    'tips': [
+        'Pin as a custom skill — every product-launch clause gets a same-day plain version',
+        'Run a "Mandarin / Tamil" variant for Malaysian segments',
+        'Pair with the empathetic-reply skill for a complete customer-education + customer-care workflow',
+    ],
+}
+
+CARDS['uc-life-ops-agent'] = {
+    'title': 'No-Code Cowork Agent — Monthly Ops Review Workflow Packaged',
+    'dept_tag': 'Operations',
+    'industry_tag': 'Life Insurance',
+    'complexity': 'intermediate',
+    'apps': ['Cowork', 'Customize Page', 'OneDrive', 'Excel', 'Word', 'PowerPoint'],
+    'desc': 'The monthly Ops Review workflow — pull TAT and STP figures, regenerate the operations dashboard, draft the Ops memo, prepare the slide pack, draft the Outlook agenda — gets packaged as a single named Cowork skill on the Customize page that the whole Ops team can trigger every month.',
+    'skills': [
+        'Guided skill builder on the Customize page (conversational authoring)',
+        'Multi-source data pull (Excel claims log + Outlook commitments + SharePoint dashboard)',
+        'Reusable team-shareable skill stored as Markdown in OneDrive',
+        'Plugin-aware skill — uses installed plugins (e.g. ServiceNow for incidents) when present',
+    ],
+    'instructions': [
+        'Open Cowork → top nav → Customize → Skills tab',
+        'Click ➕ Add → Create new (guided)',
+        'Paste Prompt 1 — Cowork interviews you about the workflow',
+        'Save the skill — Cowork stores Markdown in /Cowork Skills/Ops/',
+        'Share with the Ops team via the Customize page',
+        'Every team member triggers by name: "Run Monthly Ops Review for [MONTH]"',
+    ],
+    'sample_files': [],
+    'prompts': [
+        {
+            'label': '1. Author the skill (guided)',
+            'text': (
+                "I want to create a reusable Cowork skill called 'Monthly Ops Review' that the whole Operations team triggers every month.\n\n"
+                "When triggered for a given month, the skill should:\n"
+                "(1) Pull the claims TAT and STP figures from the Ops Claims Log Excel in our OneDrive 'Ops Monthly' folder;\n"
+                "(2) Compare against the trailing-3-month average and against the latest industry benchmark (use the Researcher tool with our standard public sources: Swiss Re, McKinsey, LIMRA, AAJI / LIAM, regulator);\n"
+                "(3) Regenerate the operations HTML dashboard with the new figures — green/amber/red on every KPI vs target;\n"
+                "(4) Draft a 1-page Ops Memo (Word) for the COO with 3 bullets on what improved, 3 bullets on what slipped, 1 commitment for next month;\n"
+                "(5) Draft a 6-slide pack (PowerPoint) for the monthly Ops Review meeting;\n"
+                "(6) Draft an Outlook agenda email to the Ops Review attendees with the dashboard link and the pack attached.\n\n"
+                "Walk me through naming, scoping, and saving this skill. Save it to /Cowork Skills/Ops/Monthly-Ops-Review.md and make it shareable with the Operations team only. The skill should accept one input parameter: [MONTH-AND-YEAR]."
+            )
+        },
+        {
+            'label': '2. Test run',
+            'text': "Run the Monthly Ops Review skill for [PAST-MONTH] as a test, using last month's actual data, so I can verify each output before publishing the skill to the team."
+        },
+        {
+            'label': '3. Iterate on the skill',
+            'text': "Update the Monthly Ops Review skill: add a 7th deliverable — a 60-second voice brief for the COO's morning commute summarising the 3 'what slipped' bullets. Save the updated skill."
+        },
+    ],
+    'expected': [
+        'Named, reusable Cowork skill in OneDrive (Markdown)',
+        'Team-shareable skill on the Customize > Skills tab',
+        'Test-run that produces the first dashboard + memo + pack + email',
+        'Iteration that adds the voice-brief 7th deliverable',
+    ],
+    'watch': [
+        'Skill is conversation-authored — no syntax to learn',
+        'Markdown file is editable directly in OneDrive when the workflow shifts',
+        'Trigger by short name every month — no copy-paste of the long prompt',
+        'Plugins (Jira, ServiceNow, Salesforce) integrate automatically if installed on the tenant',
+    ],
+    'honest': 'Skills run on demand. For fully hands-off Monday-morning delivery, pair with Power Automate to trigger the skill on a schedule. Shared skills carry the author\'s prompt verbatim — review for sensitive language before sharing with the broader team. The Researcher pull uses public sources; private competitor data remains out of scope.',
+    'tips': [
+        'Same pattern works for Weekly Claims Stand-up, Quarterly Persistency Review, Annual AAJI / LIAM Submission Pack',
+        'Combine with the corporate-renewal skill — chain them for an end-of-quarter B2B refresh',
+        'Use the model picker inside the skill: set it to Auto for production, Sonnet+Opus Advisor for the first time it runs after a process change',
+    ],
+}
+
+
 # ---------------- DEPARTMENT-SPECIFIC CARDS ----------------
 
 CARDS['uc-fin-monthend'] = {
