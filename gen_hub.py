@@ -6693,6 +6693,30 @@ const OTHER_PAGES = [
   },
   {
     section: 'Customer Workshops',
+    icon: '🏘️',
+    color: '#0E7C66',
+    accent: '#0B5C4D',
+    name: 'Contoso Property Group — Copilot Demo',
+    desc: 'Contoso Property Group — GM Township Operations immersion for a Malaysian property developer. One GM workday across sales velocity, construction progress, land bank monetisation, customer NPS, and GreenRE/GBI certification pipeline: Daily Briefing · Quarter-Closing Cowork → live HTML Township KPI dashboard · Researcher Critique + Model Council on property-developer landscape · BCG/McKinsey 8-slide deck for Township Ops Committee · Copilot Create one-page infographic (Township Snapshot, Land-Bank Map, Customer VP Journey, GreenRE Pipeline) in deep teal & warm gold · Teams Recap → Word minutes · Excel Power Hour (Chat/Edit/Plan) on take-up & inventory · Analyst Agent (GM/CFO/COO) · personalised mail-merge to 14 Township Managers · CV screening from SharePoint. Extras: Outlook, Word interrogate, GM power move (Iskandar Phase 3 unsold inventory). EN + BI.',
+    url: 'https://steffiyappy.github.io/contoso-property-group-demo/',
+    password: 'ContosoProperty2026',
+    tag: 'Property Demo',
+    keywords: 'contoso property group township developer Malaysia GDV sales take-up construction VP vacant possession KPKT bumiputera land bank Klang Valley Iskandar Penang GreenRE GBI CONQUAS NPS customer experience masterplan JV joint venture GM immersion Pak township operations researcher critique model council cowork HTML dashboard PowerPoint BCG create infographic teams recap word minutes excel power hour analyst mail merge CV screening Hilltop'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '🛡️',
+    color: '#1D4ED8',
+    accent: '#1E3A8A',
+    name: 'Contoso Life Assurance — Copilot Immersion',
+    desc: 'Contoso Life Assurance — Indonesia life-insurance Operations team immersion. Six-prompt Copilot Chat day-in-the-life using the GCSE framework (Goal · Context · Source · Expectation) with colour-coded toggle: (1) Researcher on global claims TAT & straight-through processing benchmarks (Swiss Re, McKinsey, LIMRA, Deloitte), (2) Polished partnership-grade email to corporate HR client (PT Fabrikam, 25k employees) for 2027 benefits renewal kick-off, (3) One-page corporate pitch brief grounded in public industry trends, (4) Claims TAT root-cause memo, (5) Wellness programme briefing, (6) Internal Ops weekly update. EN + BI side-by-side. No real customer or policy data — public sources only.',
+    url: 'https://steffiyappy.github.io/contoso-life-copilot-immersion/',
+    password: 'ContosoLife2026',
+    tag: 'Life Insurance Demo',
+    keywords: 'contoso life assurance insurance Indonesia operations claims TAT turn-around time straight-through processing STP Swiss Re McKinsey LIMRA Deloitte corporate benefits renewal Fabrikam HR wellness programme pitch brief GCSE goal context source expectation framework researcher email policy immersion'
+  },
+  {
+    section: 'Customer Workshops',
     icon: '👥',
     color: '#7C3AED',
     accent: '#5B21B6',

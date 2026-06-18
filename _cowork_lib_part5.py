@@ -56,6 +56,231 @@ CARDS['uc-propdev-launch'] = {
     ],
 }
 
+
+# ── Contoso Property Group demo — distinctive Township GM use cases ────
+
+CARDS['uc-property-township-ops-review'] = {
+    'title': 'Township Operations Quarterly Review — Sales + Build + Customer + Land Bank',
+    'dept_tag': 'Township Operations',
+    'industry_tag': 'Property Development',
+    'complexity': 'advanced',
+    'apps': ['Excel', 'PowerPoint', 'Word', 'Outlook', 'Teams', 'Cowork'],
+    'desc': 'GM Township Operations runs the quarter-close across four dimensions in one Cowork pass — sales velocity, construction progress, customer NPS, land bank monetisation — producing a live HTML KPI dashboard, an 8-slide Township Ops Committee deck, a 1-page GM memo, and personalised mail-merged letters to 14 Township Managers.',
+    'skills': [
+        'Multi-dimensional KPI synthesis across sales / build / customer / land bank in a single quarterly view',
+        'Live HTML dashboard generation with green/amber/red indicators per township',
+        'Personalised mail merge — same operating themes, different township figures and asks per Township Manager',
+        'BCG/McKinsey-style narrative pyramid for the Ops Committee deck',
+    ],
+    'instructions': [
+        'Open Microsoft 365 Copilot Cowork → model picker → Sonnet+Opus Advisor',
+        'Attach the 4 township source files listed below',
+        'Paste Prompt 1 — Cowork fans out the 5 deliverables in parallel',
+        'Open the generated dashboard.html in your browser; review the deck and letters',
+    ],
+    'sample_files': [
+        ('PD_Township_Sales_Velocity.xlsx', 'xlsx'),
+        ('PD_Construction_Progress_Tracker.xlsx', 'xlsx'),
+        ('PD_Customer_NPS_VP_Defects.xlsx', 'xlsx'),
+        ('PD_Land_Bank_Register.xlsx', 'xlsx'),
+    ],
+    'prompts': [{
+        'label': 'Quarterly Township Ops review fan-out',
+        'text': (
+            "Using the 4 attached township files for [QUARTER] FY[YY], in parallel, do all 5:\n"
+            "1) Build a live HTML KPI dashboard — one row per township, columns for GDV Launched vs Target, Sales Take-up % in 90 days, Construction Progress vs Schedule, NPS, Unsold Inventory %, Land Bank Acres, GreenRE Status. Use green/amber/red indicators. Brand: deep teal #0E7C66 + warm gold #D4A017 on white. Save to OneDrive as /Township Ops/Q[QUARTER]_Dashboard.html.\n"
+            "2) Build an 8-slide deck in PowerPoint for the Township Ops Committee using our brand template — Slide 1 cover, Slide 2 group dashboard, Slides 3-5 three priority townships (one per slide), Slide 6 land bank update, Slide 7 risks (OPR sensitivity, KPKT/EIA permits, contractor labour), Slide 8 decisions needed.\n"
+            "3) Draft a 1-page GM memo in Word for the COO — Three Township Priorities: move the unsold inventory at Iskandar Phase 3; deliver VP on schedule at Hilltop Block C; monetise the Greater Klang Valley parcel. Quantify each.\n"
+            "4) Personalised mail merge — one Outlook letter per Township Manager (14 total), each with that township's specific sales gap, construction milestones at risk, customer-NPS hot spots, and the 2 specific asks for the next 30 days.\n"
+            "5) Draft a Teams post to #township-ops — 3 lines summary plus the dashboard link plus the 3 priorities.\n"
+            "Cite the source file + sheet + row for every figure. Flag any township with NPS below 40 or take-up below 50% at 90 days as RED."
+        )
+    }],
+    'expected': [
+        'Live HTML Township KPI dashboard (branded)',
+        '8-slide Township Ops Committee deck',
+        '1-page GM memo with 3 priorities quantified',
+        '14 personalised Township Manager letters (mail merge)',
+        'Teams #township-ops summary post',
+    ],
+    'watch': [
+        'One Cowork run covers all 4 dimensions — no copy-paste between sales, build, customer, land bank',
+        'Letters differ by township figures despite sharing themes — true personalisation, not bulk send',
+        'Red flags surface to the GM memo automatically — no manual highlight needed',
+    ],
+    'honest': 'Cowork synthesises and renders. The GM still walks each township figure before the Ops Committee — and bumiputera-quota or KPKT/EIA approval timing requires the local Township Manager to confirm. Pricing or rebate decisions go through the Pricing Committee, not the dashboard.',
+    'tips': [
+        'Re-run weekly with the same prompt — change [QUARTER] tag to keep a rolling dashboard',
+        'Add a 6th task — generate a 60-second voice brief for the GM\'s morning commute (Imagen 2 not needed, audio only)',
+        'For listed REITs, swap "Township Ops Committee" for "Asset Management Committee" and the deck pivots automatically',
+    ],
+}
+
+CARDS['uc-property-land-bank'] = {
+    'title': 'Land Bank Monetisation Decision Pack — JV / In-House / Divest per Parcel',
+    'dept_tag': 'Strategy & Land',
+    'industry_tag': 'Property Development',
+    'complexity': 'advanced',
+    'apps': ['Excel', 'PowerPoint', 'Word', 'Cowork'],
+    'desc': 'For each of 6 strategic parcels, Cowork builds the JV vs in-house vs divest decision pack — IRR, GDV potential, masterplan options, GreenRE pipeline pathway, and a board-paper recommendation per parcel.',
+    'skills': [
+        'Per-parcel IRR and GDV modelling across 3 monetisation pathways (in-house build / JV / outright divest)',
+        'Masterplan option evaluation (mixed-use industrial pivot vs residential vs commercial)',
+        'GreenRE / GBI certification pathway selection per parcel',
+        'Board-paper drafting with quantified recommendation per parcel',
+    ],
+    'instructions': [
+        'Open Cowork',
+        'Attach the land bank register + comparable land sales + feasibility models',
+        'Paste the prompt — Cowork builds one decision pack per parcel in parallel',
+    ],
+    'sample_files': [
+        ('PD_Land_Bank_Register.xlsx', 'xlsx'),
+        ('PD_Comparable_Land_Sales.xlsx', 'xlsx'),
+        ('PD_Feasibility_Models.xlsx', 'xlsx'),
+        ('PD_GreenRE_GBI_Pipeline.xlsx', 'xlsx'),
+    ],
+    'prompts': [{
+        'label': 'Land bank monetisation decision pack',
+        'text': (
+            "Using the 4 attached files, build the Land Bank Monetisation Decision Pack for the next Land & Strategy Committee. For each of our 6 strategic parcels (Klang Valley x3, Iskandar x2, Penang x1), in parallel:\n"
+            "1) Excel — three-scenario IRR & GDV table per parcel: (a) in-house masterplan & build, (b) JV with a strategic partner (60:40), (c) outright land sale. Include sensitivities on launch year, take-up, and OPR.\n"
+            "2) PowerPoint — 1 slide per parcel (6 slides plus a 1-slide cover + 1-slide group recommendation = 8 slides total). Each parcel slide: acreage, indicative GDV, 3-scenario IRR side by side, GreenRE pathway, recommended strategy.\n"
+            "3) Word — Board paper (4 pages): executive summary; per-parcel rationale; group portfolio implications (RM 24B remaining GDV, 18-year pipeline at current launch run-rate); risks (cycle timing, partner-selection risk, holding cost); recommendation per parcel with approval ask.\n"
+            "4) Excel — a simple ranked table (one row per parcel) with columns: recommended strategy, expected IRR, GDV unlocked, decision urgency (this quarter / this half / next year).\n"
+            "Cite the comparable-sale or feasibility row driving each number. Flag any parcel whose in-house IRR is below our 15% hurdle as JV-or-divest preferred."
+        )
+    }],
+    'expected': [
+        'Three-scenario IRR & GDV Excel per parcel',
+        '8-slide Land & Strategy Committee deck',
+        '4-page Board paper with per-parcel recommendation',
+        'Ranked decision table',
+    ],
+    'watch': [
+        'Each parcel gets all 3 scenarios — no premature JV recommendation without the divest comparator',
+        'GreenRE pathway baked into the masterplan, not retrofitted',
+        'Sub-hurdle IRR parcels flagged for JV/divest automatically',
+    ],
+    'honest': 'IRR depends on launch-year assumptions Cowork cannot independently verify — Strategy & Land owns the assumption set. JV partner selection is a separate workstream involving Legal, Investments, and the GLC sponsor. The Board ultimately decides; Cowork prepares the pack.',
+    'tips': [
+        'Re-run when OPR moves more than 50 bps — sensitivity table updates auto',
+        'Add a 5th deliverable — a draft non-binding term sheet for the JV pathway per parcel',
+        'For divestment pathway, add a 6th deliverable — a teaser pack for potential buyers',
+    ],
+}
+
+
+# ── Contoso Life Assurance demo — distinctive Operations use cases ─────
+
+CARDS['uc-life-claims-tat-benchmark'] = {
+    'title': 'Claims TAT Benchmark Pull + Ops Weekly Briefing',
+    'dept_tag': 'Operations',
+    'industry_tag': 'Life Insurance',
+    'complexity': 'beginner',
+    'apps': ['Cowork', 'Word', 'Outlook'],
+    'desc': 'Operations team pulls global claims Turn-Around-Time and straight-through-processing benchmarks from Swiss Re, McKinsey, LIMRA, Deloitte, and the regulator in one Cowork run — turning them into a 1-page Ops briefing, a list of 3 open questions for the Claims team, and a draft email to the Head of Claims.',
+    'skills': [
+        'GCSE-framework prompting — Goal, Context, Source, Expectation explicit in every prompt',
+        'Authoritative-source-only research (Swiss Re, McKinsey, LIMRA, Deloitte, OJK)',
+        'Synthesis into Ops-team daily briefing format',
+        'Open-question generation to drive the next Claims team conversation',
+    ],
+    'instructions': [
+        'Open Cowork → model picker → Auto (or Sonnet+Opus Advisor for higher synthesis quality)',
+        'Toggle Researcher tool on — public web research is essential here',
+        'Paste Prompt 1 (or use the GCSE colour-coded variant)',
+        'Forward the resulting briefing to the Claims team via the Outlook draft',
+    ],
+    'sample_files': [],
+    'prompts': [{
+        'label': 'Pull claims TAT benchmarks + Ops briefing',
+        'text': (
+            "I work in the Operations team at a life insurance company. In parallel, do all 4:\n"
+            "1) Researcher — give me a brief summary of global benchmarks for life insurance claims Turn-Around-Time (TAT) and adoption rates for straight-through processing (STP) over the last 12 months. Cite 3-5 authoritative sources (Swiss Re, McKinsey, LIMRA, Deloitte, OJK or the local regulator). Maximum 8 bullets.\n"
+            "2) Word — turn the findings into a 1-page Operations briefing with three sections: Where the industry is (benchmarks), Where we sit (placeholder for our actual figures), 3 open questions for the Claims team next week.\n"
+            "3) Outlook — draft an email to the Head of Claims forwarding the briefing, with the 3 open questions in the body and a calendar invite for a 30-minute review meeting.\n"
+            "4) End the briefing with a sources & retrieval-timestamp footer.\n"
+            "Public sources only. No real customer or policy data. If a benchmark is older than 12 months, label it as such."
+        )
+    }],
+    'expected': [
+        '1-page Operations briefing (Word)',
+        '3 open questions for the Claims team',
+        'Outlook draft to Head of Claims with 30-min meeting invite',
+        'Sources & retrieval-timestamp footer (auditable)',
+    ],
+    'watch': [
+        'Cowork explicitly cites Swiss Re / McKinsey / LIMRA / Deloitte / regulator — not generic blog posts',
+        'Briefing distinguishes industry benchmark from our actual figures — analyst discipline preserved',
+        'Open questions are answerable in a 30-min meeting — not vague',
+    ],
+    'honest': 'Researcher pulls public-source benchmarks; it cannot read your tenant\'s internal Claims dashboard unless you attach the file or enable local browser use. Re-run quarterly — benchmarks drift. Any claim about our own TAT must be verified by Claims Ops before the briefing goes upstream.',
+    'tips': [
+        'Re-run with "Takaful claims" instead for the Tabarru-fund variant',
+        'Add a 5th task — generate a 1-slide visual of the benchmark gap using Copilot Create',
+        'For ID variant, add Asosiasi Asuransi Jiwa Indonesia (AAJI) and Bank Indonesia data as sources',
+        'Use the GCSE colour toggle when teaching this prompt to new joiners',
+    ],
+}
+
+CARDS['uc-life-corporate-renewal'] = {
+    'title': 'Corporate Health Benefits Renewal Kick-off Pack',
+    'dept_tag': 'Corporate Accounts',
+    'industry_tag': 'Life Insurance',
+    'complexity': 'intermediate',
+    'apps': ['Excel', 'PowerPoint', 'Word', 'Outlook', 'Cowork'],
+    'desc': 'For a 25,000-employee corporate account renewing the 2027 policy year, Cowork builds the renewal kick-off pack — utilisation analysis, benefit-adjustment recommendations, wellness programme options, 24h-onboarding commitment letter, and a partnership-grade invitation email to the corporate HR lead.',
+    'skills': [
+        'Corporate account renewal economics (utilisation, loss ratio, benefit calibration)',
+        'B2B partnership-grade email drafting (collaborative tone, not transactional)',
+        'Wellness programme option scoping with measurable adoption KPIs',
+        'Multi-deliverable kick-off pack from one Cowork run',
+    ],
+    'instructions': [
+        'Open Cowork → model picker → Sonnet+Opus Advisor (B2B copy benefits from advisor pairing)',
+        'Attach the 3 source files listed below',
+        'Paste the prompt — Cowork prepares the full kick-off pack',
+        'Send the Outlook invitation; bring the deck to the kick-off',
+    ],
+    'sample_files': [
+        ('LIFE_Corporate_Utilisation_2026.xlsx', 'xlsx'),
+        ('LIFE_Wellness_Programme_Catalogue.docx', 'docx'),
+        ('LIFE_Service_Commitments_SLA.docx', 'docx'),
+    ],
+    'prompts': [{
+        'label': 'Build the corporate renewal kick-off pack',
+        'text': (
+            "I am a Senior Manager in the Operations team at Contoso Life Assurance, preparing the 2027 corporate health benefits renewal kick-off for [CORPORATE-CLIENT] (25,000 employees). The kick-off meeting is on [KICK-OFF-DATE]. In parallel, do all 5:\n"
+            "1) Excel — analyse 2026 utilisation: claims frequency, average claim cost, top 5 claim categories, loss ratio, high-cost-claimant cohort (top 5%). Output a 1-tab summary with current vs prior year and a recommended-action column per category.\n"
+            "2) Word — recommendation memo (2 pages): 3 benefit-adjustment options for 2027 (no change with re-pricing / structural redesign / wellness-weighted hybrid). Quantify expected loss-ratio impact per option.\n"
+            "3) PowerPoint — 8-slide kick-off deck: Slide 1 cover, Slide 2 partnership recap, Slides 3-4 2026 utilisation story, Slide 5 the 3 benefit options, Slide 6 wellness programme menu, Slide 7 our 24-hour onboarding commitment for new joiners, Slide 8 next steps & timeline.\n"
+            "4) Outlook — partnership-grade invitation email to the Head of HR. Professional collaborative tone. Cover: (a) 2026 utilisation results and benefit-adjustment recommendations, (b) new wellness programme options, (c) 24h onboarding commitment. End with a request to confirm attendance 7 days before the kick-off.\n"
+            "5) Word — 1-page service-commitment letter signed by the GM Corporate Accounts, restating the 24-hour onboarding SLA, the dedicated relationship-manager line, and the quarterly business-review cadence.\n"
+            "All five deliverables in EN and BI. No real customer or policy data — use placeholder figures grounded in the attached utilisation pattern."
+        )
+    }],
+    'expected': [
+        '1-tab utilisation summary (Excel)',
+        '2-page 3-option recommendation memo (Word)',
+        '8-slide kick-off deck (PowerPoint)',
+        'Partnership-grade invitation email (Outlook)',
+        '1-page service-commitment letter (Word)',
+    ],
+    'watch': [
+        'Tone is partnership-grade, not transactional — collaborative language throughout',
+        'Each benefit-adjustment option carries a quantified loss-ratio impact, not just descriptive copy',
+        'EN + BI side-by-side so the corporate HR lead can pick their preferred language',
+    ],
+    'honest': 'Final pricing for the 2027 renewal goes through the Product Pricing Committee and the Appointed Actuary — Cowork drafts; Pricing decides. The service-commitment letter is contractual once signed — Legal must review before the GM signs. Wellness programme options should be calibrated against the broker/consultant\'s benchmark before the kick-off.',
+    'tips': [
+        'Re-run with the corporate client\'s industry context as additional Source (e.g. high-shift-work for manufacturing changes the wellness mix)',
+        'Add a 6th deliverable — a 2-minute video script for the GM\'s pre-meeting message to the HR lead',
+        'Pin this as a custom skill on the Customize page so every Account Manager can trigger the same flow',
+    ],
+}
+
+
 # ---------------- DEPARTMENT-SPECIFIC CARDS ----------------
 
 CARDS['uc-fin-monthend'] = {
