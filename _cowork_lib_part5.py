@@ -798,6 +798,223 @@ CARDS['uc-life-ops-agent'] = {
 }
 
 
+# ── Contoso Beverages & Dairy demo — distinctive Beverage GM use cases ─
+
+CARDS['uc-bev-strategic-landscape'] = {
+    'title': 'Beverage & Dairy Sector Landscape — Researcher Critique + Model Council',
+    'dept_tag': 'Strategy & Trade',
+    'industry_tag': 'Food & FMCG',
+    'complexity': 'intermediate',
+    'apps': ['Cowork', 'Word'],
+    'desc': 'Head of Department · Operations & Trade gets the Beverage & Dairy Manufacturing landscape in Malaysia in one Cowork run — Researcher Critique (Auto) for the default scan, Model Council when the call is too important for one model, then a 1-page HOD brief reconciling consensus and disagreement.',
+    'skills': [
+        'Researcher Critique mode — Auto picks the right model and shows its reasoning critique',
+        'Model Council mode — frontier models answer in parallel; Cowork reconciles disagreements',
+        'Sector intelligence specific to Malaysian beverage/dairy (SSB sugar tax, MyNutri front-of-pack labelling, SST, JAKIM halal, MOH, MOF, glass/PET supply, sugar tariff)',
+        'Distilling council debate into a 1-page HOD brief with consensus + disagreement axis',
+    ],
+    'instructions': [
+        'Open Cowork → Researcher tool → Mode: Critique (Auto)',
+        'Paste Prompt 1 for the default landscape scan',
+        'When Critique flags answer-confidence below 80%, switch to Mode: Model Council and paste Prompt 2',
+        'Paste Prompt 3 to convert the council output into a 1-page Word brief for the HOD',
+    ],
+    'sample_files': [],
+    'prompts': [
+        {
+            'label': '1. Critique (Auto) — default sector scan',
+            'text': (
+                "Researcher Critique mode. Scan the Beverage & Dairy Manufacturing landscape in Malaysia for the last 12 months. Cover:\n"
+                "1) Regulatory shifts (SSB sugar-tax tier signals from MOF, MyNutri front-of-pack labelling enforcement by MOH, MS1500 / JAKIM halal certification cycle, SST treatment).\n"
+                "2) Input-cost moves (raw sugar tariff, milk powder, glass and PET packaging, freight to ASEAN/GCC).\n"
+                "3) Demand and channel (modern trade vs general trade share shift, foodservice recovery, e-commerce direct-to-consumer beverages, low/zero-sugar adoption).\n"
+                "4) Top 5 listed Malaysian beverage/dairy manufacturers' Q reported volume, share, and gross-margin moves.\n"
+                "5) Export tailwinds (ASEAN halal corridor, GCC halal demand, free-trade-agreement coverage).\n"
+                "Output: maximum 14 bullets, each citing one authoritative source with retrieval timestamp. Use precise Malaysian FMCG/regulatory language (SSB, SST, MyNutri, JAKIM, MOH, MOF, Customs). End with 3 open questions for the HOD's Friday Trade & Strategy session."
+            )
+        },
+        {
+            'label': '2. Model Council — stress-test the strategic question',
+            'text': (
+                "Switch to Model Council. The question: 'Given the FY27 SSB tariff step signal and the rising sugar-tariff floor, should Contoso Beverages & Dairy accelerate the low/zero-sugar reformulation across the affected portfolio in the next 12 months, hold and pass-through pricing, or pivot the affected SKUs into the GCC halal-export channel?'\n"
+                "Run the question across all available council models in parallel. Report:\n"
+                "- Each model's recommended action and its top 2 reasons\n"
+                "- Where the council agrees (consensus)\n"
+                "- Where the council disagrees (disagreement axis — what would change the answer)\n"
+                "- The deciding question the HOD should answer before choosing\n"
+                "Format as a 2-column reconciliation table plus a 3-bullet executive note."
+            )
+        },
+        {
+            'label': '3. 1-page HOD brief in Word',
+            'text': (
+                "Convert the council output into a 1-page Word brief for the Head of Department · Operations & Trade. Sections: (1) The strategic question; (2) Council consensus in 3 bullets; (3) Council disagreement axis in 2 bullets; (4) Recommended decision with supporting rationale and the [ASSUMPTION:...] tag on every assumption; (5) The deciding question the HOD still owns. Tone: precise FMCG language, no marketing fluff. End with a source footer (hyperlinked) and 'Do not invent anything — use [PLACEHOLDER] for anything not in source'."
+            )
+        },
+    ],
+    'expected': [
+        'Researcher Critique sector scan (14 bullets, sources)',
+        'Model Council reconciliation table',
+        '1-page HOD strategy brief (Word)',
+    ],
+    'watch': [
+        'Critique mode shows model self-confidence — flags when to escalate to Council',
+        'Council reveals model disagreement honestly — no false consensus',
+        'Brief preserves disagreement instead of hiding it under a single recommendation',
+        'Every assumption tagged [ASSUMPTION:...] so the HOD knows what is grounded vs inferred',
+    ],
+    'honest': 'Researcher pulls public data; competitor confidential pricing or unannounced launches stay out of scope. Council disagreement is signal — when 3 models out of 4 disagree, the right answer is usually to gather more data before deciding. The HOD owns the call; Cowork prepares the brief.',
+    'tips': [
+        'Re-run quarterly — the SSB and halal landscape shifts on every Budget announcement',
+        'Add a 4th prompt that drafts the Friday Trade & Strategy session agenda from the 3 open questions',
+        'For dairy specifically, weight sources toward DVS, MoA, and the Dairy Industry Association',
+    ],
+}
+
+CARDS['uc-bev-create-infographic'] = {
+    'title': 'Beverage Infographic Kit — Brand Portfolio, SSB Snapshot, Halal-Export',
+    'dept_tag': 'Brand & Trade Marketing',
+    'industry_tag': 'Food & FMCG',
+    'complexity': 'beginner',
+    'apps': ['Copilot Create', 'PowerPoint', 'Outlook'],
+    'desc': 'Three on-brand A4 infographic posters from one Copilot Create session: (1) Brand Portfolio One-Pager for the trade review, (2) Sugar-Tax (SSB) & Compliance Snapshot for the HOD pre-read, (3) ASEAN & GCC Halal-Export Launch Plan for the Export Committee. Beverage corporate palette, thin outline icons, full-bleed A4.',
+    'skills': [
+        'Copilot Create with FMCG brand colour discipline (specific hex codes)',
+        'Composing a full-A4 vertical infographic in one prompt (no empty bottom)',
+        'Producing 3 thematically different posters from related prompts in one session',
+        'Brand-aligned thin-outline-icon style (no clip-art, no stock photos of bottles or people)',
+    ],
+    'instructions': [
+        'Open Microsoft 365 Copilot Chat → Create in left sidebar (or /create)',
+        'Paste Prompt 1 for the Brand Portfolio one-pager — 4 variants generated',
+        'Paste Prompt 2 for the SSB Compliance Snapshot',
+        'Paste Prompt 3 for the Halal-Export Launch Plan',
+        'Use Refine follow-ups to tighten any variant; download as PNG or PDF',
+    ],
+    'sample_files': [],
+    'prompts': [
+        {
+            'label': '1. Brand Portfolio One-Pager',
+            'text': (
+                "Make a clean, premium one-page A4 infographic poster called 'Brand Portfolio · FY[YY]' for Contoso Beverages & Dairy. Use brand colours deep aqua (#0891B2) and warm cream (#FDE68A) on white, with a small dark slate for headings. Vertical A4, fill the entire page — no empty space at the bottom.\n\n"
+                "Top: big bold title 'BRAND PORTFOLIO · FY[YY]'. Underneath: 'Beverages · Dairy · Functional · For the Trade & Brand Committee'.\n\n"
+                "Then 4 big-number boxes: [PLACEHOLDER]M litres total volume YTD; [PLACEHOLDER]% modern-trade share; [PLACEHOLDER]% low/zero-sugar contribution; [PLACEHOLDER] active SKUs.\n\n"
+                "Then a section called 'THE PORTFOLIO IN THREE TIERS' with 3 cards: (1) HERO BRANDS — flagship Cola / Dairy / Functional, role: scale + cash flow; (2) GROWTH BETS — low/zero-sugar, premium dairy, plant-based; (3) WATCH LIST — small / declining SKUs under rationalisation review.\n\n"
+                "Then a 'Brand Compare' table (4 rows × 3 columns) — Hero / Growth / Watch with columns Volume share, Revenue share, Gross-margin band.\n\n"
+                "'Risks we're managing' row of 3 icons: SSB sugar-tax exposure, raw-sugar tariff, glass/PET supply.\n\n"
+                "Bottom: cream-aqua ribbon footer with a one-line recommendation and today's date.\n\n"
+                "Style: clean modern sans-serif, thin outline icons (bottle, leaf, factory, scale), NO clip-art, NO stock photos. Fill the entire A4 page."
+            )
+        },
+        {
+            'label': '2. SSB Sugar-Tax & Compliance Snapshot',
+            'text': (
+                "Make a serious one-page A4 infographic poster called 'SSB & COMPLIANCE SNAPSHOT · FY[YY]' for Contoso Beverages & Dairy. Same brand palette. Vertical A4, fill the entire page.\n\n"
+                "Top: 'SSB & COMPLIANCE SNAPSHOT'. Underneath: 'Sugar-Sweetened Beverage tier · MyNutri labelling · JAKIM halal · For the HOD pre-read'.\n\n"
+                "4 big-number boxes: [PLACEHOLDER] SKUs in the SSB-affected band; RM [PLACEHOLDER]M annual SSB tariff at current threshold; [PLACEHOLDER]% portfolio already compliant with the proposed FY27 threshold; [PLACEHOLDER] days to MyNutri labelling cut-over.\n\n"
+                "Section 'WHAT'S MOVING' with 3 cards: (1) MOF — FY27 SSB step signal (threshold tightening from 5g/100ml to 4g/100ml, tariff lift from RM 0.50/L to RM 0.65/L); (2) MOH — MyNutri front-of-pack labelling enforcement timeline; (3) JAKIM — halal certification cycle for the affected reformulated SKUs.\n\n"
+                "'Compliance Compare' table (5 SKUs × 3 columns: current sugar g/100ml, proposed reformulated level, certification status).\n\n"
+                "'Risks' icons row: reformulation timeline slip, consumer-acceptance on taste, trade cut-over logistics, credit-note treatment for in-trade stock.\n\n"
+                "Bottom: ribbon footer 'OWNER: HOD Operations & Trade · REVIEW: monthly'.\n\n"
+                "Style: clean modern sans-serif, thin outline icons (label, scale, factory, calendar). Fill the entire A4 page."
+            )
+        },
+        {
+            'label': '3. ASEAN & GCC Halal-Export Launch Plan',
+            'text': (
+                "Make a clean one-page A4 infographic poster called 'ASEAN & GCC HALAL-EXPORT LAUNCH PLAN · FY[YY]' for Contoso Beverages & Dairy. Same brand palette plus a small halal green accent. Vertical A4, fill the entire page.\n\n"
+                "Top: 'HALAL-EXPORT LAUNCH · FY[YY]'. Underneath: 'ASEAN corridor · GCC priority markets · For the Export Committee'.\n\n"
+                "4 big-number boxes: [PLACEHOLDER] export-ready SKUs; [PLACEHOLDER] target markets; RM [PLACEHOLDER]M Year-1 revenue target; [PLACEHOLDER]% gross-margin uplift vs domestic baseline.\n\n"
+                "Section 'THREE-COUNTRY ROLLOUT' with 3 cards: (1) Indonesia + Vietnam (ASEAN-MAFTA / RCEP corridor, registration via BPOM and Vietnam MOH, distributor playbook); (2) UAE + Saudi Arabia (ESMA labelling, SFDA registration, FOB Jebel Ali logistics); (3) Future wave — Bangladesh, Pakistan, Egypt.\n\n"
+                "'Launch Compare' table (3 markets × 4 columns: regulator, registration lead time, distributor partner status, Year-1 revenue target).\n\n"
+                "'Risks' icons row: registration timeline, freight cost volatility, distributor capability, halal recertification.\n\n"
+                "Bottom: ribbon footer 'COMMITMENT: 3 markets live by end of FY27 · REVIEW: monthly'.\n\n"
+                "Style: clean modern sans-serif, thin outline icons (globe, ship, certificate, handshake). Fill the entire A4 page."
+            )
+        },
+        {
+            'label': '4. Refine — fill empty space + brand icons',
+            'text': "If any of the three has empty space at the bottom, extend the sections or add a footer ribbon with the company name 'Contoso Beverages & Dairy' on the left and today's date on the right. Replace any non-brand icons with thin outline icons in our brand colour. Remove any emoji or stock photo of bottles, glasses, or people."
+        },
+    ],
+    'expected': [
+        '3 polished A4 infographic posters (PNG or PDF), brand-aligned',
+        'Refined full-bleed brand-icon versions on follow-up',
+        'Ready to drop into Outlook, Teams or PowerPoint',
+    ],
+    'watch': [
+        'Create respects exact brand hex codes when you specify them',
+        '3 thematically different posters from one Create session — Brand / Compliance / Export',
+        'Refine follow-ups work in plain English — no design tools needed',
+        'Enterprise Data Protection keeps the design inside your tenant',
+    ],
+    'honest': 'Copilot Create is great for the first 80%. Final pixel polish (legal disclaimers, exact logo position, accessibility colour contrast, halal logo placement) usually needs the design team. For external customer or regulator-facing pieces, Brand, Comms, Legal and Halal Compliance must sign off before posting.',
+    'tips': [
+        'Save each prompt as a reusable skill on the Customize page — every campaign refresh re-runs in seconds',
+        'For Mandarin / BM / BI / Arabic variants, add "Translate the title and labels into [LANGUAGE]" as a refine follow-up',
+        'For social, ask "Make a vertical 9:16 version for Instagram Stories" as a refine',
+    ],
+}
+
+CARDS['uc-bev-ssb-tax-shock'] = {
+    'title': 'FY27 SSB Sugar-Tax Step Response Pack — the Industry Power Move',
+    'dept_tag': 'Strategy & Trade',
+    'industry_tag': 'Food & FMCG',
+    'complexity': 'advanced',
+    'apps': ['Excel', 'Word', 'Outlook', 'Cowork'],
+    'desc': 'When the Ministry of Finance signals the FY27 SSB tariff step, Cowork rebuilds the country response pack in one prompt: pricing scenarios with SKU sensitivity, SKU-by-SKU reformulation roadmap, distributor cut-over letter, and a 1-page CEO pre-read — fully grounded in the source KPI dashboard and strategic memo.',
+    'skills': [
+        'SSB threshold and tariff translation into per-SKU gross-profit impact',
+        'Three-scenario pricing modelling (Hold price / Partial pass-through / Reformulate-and-relaunch)',
+        'SKU-by-SKU reformulation roadmap with MyNutri labelling and consumer-acceptance test plan',
+        'Distributor cut-over communication grounded on the new price ladder and credit-note treatment',
+        'Source-grounded discipline — every assumption tagged [ASSUMPTION:...], every unknown tagged [VERIFY]',
+    ],
+    'instructions': [
+        'Open Microsoft 365 Copilot Chat (or Researcher for deeper sources) → Cowork',
+        'Reference the relevant source files with / (KPI dashboard + strategic memo)',
+        'Paste the prompt — Cowork builds the 4 artefacts in parallel',
+        'Pre-read each artefact before forwarding; CEO pre-read goes through HOD first',
+    ],
+    'sample_files': [
+        ('BEV_KPI_Dashboard.xlsx', 'xlsx'),
+        ('BEV_Strategic_Memo.docx', 'docx'),
+    ],
+    'prompts': [{
+        'label': 'FY27 SSB tariff step response pack',
+        'text': (
+            "Act as Country Strategy lead supporting Head of Department · Operations & Trade at Contoso Beverages & Dairy. The FY27 SSB (Sugar-Sweetened Beverage) tariff step has just been signalled — assume the threshold tightens from 5g/100ml to 4g/100ml and the tariff lifts from RM 0.50/litre to RM 0.65/litre, effective the next fiscal year. Use /BEV_KPI_Dashboard.xlsx (volumes, share, current price ladder by SKU and region) and /BEV_Strategic_Memo.docx (low/zero-sugar reformulation stance).\n\n"
+            "Produce four artefacts in parallel:\n\n"
+            "1. PRICING SCENARIOS (Excel-style table) — three scenarios (Hold price / Partial pass-through / Reformulate-and-relaunch) with modelled volume sensitivity, share impact, and gross-profit impact for each affected SKU. Show the recommended scenario per SKU.\n\n"
+            "2. SKU-BY-SKU REFORMULATION ROADMAP (Word, 1 page) — recommended new sugar level per SKU, MyNutri label impact, consumer-acceptance test plan (sample size, duration, decision gate), and trade cut-over date.\n\n"
+            "3. DISTRIBUTOR LETTER (Word, 0.5 page) — clear, respectful, signed by Head of Department · Operations & Trade, explaining the new price ladder, cut-over logistics, MyNutri label change, and credit-note treatment for in-trade stock. Same letter in Bahasa Malaysia side-by-side.\n\n"
+            "4. CEO PRE-READ (Word, 1 page) — what we are doing, why, expected P&L impact, the 3 risks we are watching (consumer-acceptance, distributor cut-over, halal recertification timeline), and 2 open questions for the Group Board.\n\n"
+            "Use precise Malaysian FMCG / regulatory language (SSB, SST, JAKIM halal, MyNutri front-of-pack labelling, MOH, MOF, Customs). Flag every assumption with [ASSUMPTION:...]. Do not invent KPI numbers — pull them from the source file or mark [VERIFY]. End with the assumptions list and one open question."
+        )
+    }],
+    'expected': [
+        '3-scenario pricing impact table (Excel)',
+        'SKU-by-SKU reformulation roadmap (Word, 1 page)',
+        'Distributor cut-over letter EN + BM (Word, 0.5 page)',
+        'CEO pre-read (Word, 1 page)',
+        'Assumptions + open-question footer',
+    ],
+    'watch': [
+        'Three scenarios shown side-by-side — no premature recommendation without the alternatives',
+        'Every figure traceable to the source file + sheet + row — no invented KPIs',
+        'Assumptions explicitly tagged — HOD knows what is grounded vs inferred',
+        'Distributor letter in EN + BM — partner reads it in their preferred language',
+    ],
+    'honest': 'Volume elasticities are historical — actual consumer reaction to a sugar-tax step may differ. The recommendation is one informed view; the Pricing & Trade Committee owns the decision. Reformulation timelines depend on R&D, halal recertification, and consumer-acceptance test results — flag any cut-over date as provisional until those gates pass. CEO pre-read goes through HOD review before reaching the CEO.',
+    'tips': [
+        'Pin this prompt as a custom skill — Trade Strategy can re-run within minutes of any Budget speech',
+        'Run a parallel "what if MoF goes 3g/100ml" version as a sensitivity stress test',
+        'For Indonesia operations, swap MOF/MOH for Kemenkeu/BPOM and the model still works',
+        'Pair with the halal-export infographic — pivot the affected SKUs into GCC if the domestic margin compresses too far',
+    ],
+}
+
+
 # ---------------- DEPARTMENT-SPECIFIC CARDS ----------------
 
 CARDS['uc-fin-monthend'] = {

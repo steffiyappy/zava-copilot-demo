@@ -6693,6 +6693,18 @@ const OTHER_PAGES = [
   },
   {
     section: 'Customer Workshops',
+    icon: '🥤',
+    color: '#0891B2',
+    accent: '#155E75',
+    name: 'Contoso Beverages & Dairy — Copilot Demo',
+    desc: 'Contoso Beverages & Dairy — 10-exercise GM immersion for a Malaysian beverage and dairy manufacturer. Persona: Head of Department · Operations & Trade. One GM workday: Daily Briefing · Quarter-Closing Cowork → live HTML KPI dashboard · Researcher Critique + Model Council on Beverage & Dairy Manufacturing landscape · BCG/McKinsey 8-slide deck · Copilot Create infographic (Brand Portfolio, SSB Compliance, ASEAN/GCC Halal-Export) · Teams Recap → Word minutes · Excel Power Hour (Chat/Edit/Plan) · Analyst Agent multi-perspective (GM/CFO/COO) · personalised mail-merge to 14 Distributors · CV screening from SharePoint. Extras: Outlook, Word interrogate, GM power move (FY27 SSB Sugar-Tax Step Response Pack). EN + BI.',
+    url: 'https://steffiyappy.github.io/contoso-beverages-demo/',
+    password: 'ContosoBev2026',
+    tag: 'Beverages Demo',
+    keywords: 'contoso beverages dairy SSB sugar-sweetened beverage tax MyNutri MOF MoH JAKIM halal SST PET glass packaging reformulation low-zero sugar trade marketing distributor cut-over ASEAN GCC export GM head of department operations trade immersion researcher critique model council cowork HTML dashboard PowerPoint BCG create infographic teams recap word minutes excel power hour analyst mail merge CV screening'
+  },
+  {
+    section: 'Customer Workshops',
     icon: '🏘️',
     color: '#0E7C66',
     accent: '#0B5C4D',
