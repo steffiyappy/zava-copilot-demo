@@ -1015,6 +1015,249 @@ CARDS['uc-bev-ssb-tax-shock'] = {
 }
 
 
+# ── Contoso Coal & Resources demo — mining M&A meeting-minutes flow ─
+
+CARDS['uc-coal-merger-recap'] = {
+    'title': 'Mining M&A — Teams Merger Recap to Word Minutes',
+    'dept_tag': 'Strategy & M&A',
+    'industry_tag': 'Mining',
+    'complexity': 'intermediate',
+    'apps': ['Teams', 'Word', 'Cowork'],
+    'desc': 'The GM missed the Potential Merger session. Teams Copilot summarises the meeting with owners and decisions; a reusable Word minutes template is generated once; then the transcript auto-fills the template — a defensible board-ready set of merger-committee minutes in minutes, not hours.',
+    'skills': [
+        'Teams recap from an audio meeting (Potential Merger scenario)',
+        'Creating a reusable corporate meeting-minutes template (Word)',
+        'Auto-filling the template from the merger transcript with owners, decisions, next steps',
+        'Mining M&A discipline — decisions traceable, assumptions tagged, no invented commitments',
+    ],
+    'instructions': [
+        'Teams → open the recorded Potential Merger meeting → Copilot pane → paste Prompt 1',
+        'Word → New blank doc → Copilot compose → paste Prompt 2 to build the template once',
+        'Word → open the template → Copilot pane → paste Prompt 3 with the transcript reference',
+    ],
+    'sample_files': [
+        ('Coal_Merger_Transcript.docx', 'docx'),
+    ],
+    'prompts': [
+        {
+            'label': '1. Teams — recap the Potential Merger meeting',
+            'text': (
+                "Summarise the Potential Merger meeting for the GM who missed it. Structure:\n"
+                "(1) Meeting context — who convened, who joined, what was the agenda\n"
+                "(2) The proposed transaction in 3 bullets — target, rationale, indicative deal shape\n"
+                "(3) Key decisions taken and by whom\n"
+                "(4) Open questions and who owns each one\n"
+                "(5) Next steps with owner and date\n"
+                "Include quotations only where they are decisions or commitments. Do not invent numbers. Flag any commercial figure as [VERIFY] if not explicitly said. Use precise mining M&A language (target, EV, EBITDA, reserves, resources, JORC, permits, royalty, PROPER, IUP, ESDM). End with a 3-bullet 'what the GM needs to decide this week'."
+            )
+        },
+        {
+            'label': '2. Word — create the reusable minutes template',
+            'text': (
+                "Create a corporate meeting-minutes template for Contoso Coal & Resources' Merger & Acquisition Committee. Use a clean corporate style with dark slate headings on white. Include:\n"
+                "- Header block: meeting title, date, time, location, chair, secretary, attendees, apologies\n"
+                "- Section 1: Confirmation of the last minutes\n"
+                "- Section 2: Matters arising\n"
+                "- Section 3: Agenda items (repeatable block with: Item, Discussion summary, Decision, Owner, Due date)\n"
+                "- Section 4: Risks & mitigants (table: Risk, Likelihood, Impact, Owner, Mitigation)\n"
+                "- Section 5: Actions register (table: Action, Owner, Due, Status)\n"
+                "- Section 6: Next meeting\n"
+                "- Footer: 'Confidential — MAC members only'\n"
+                "Leave [PLACEHOLDER] tokens on every field so the template is reusable. Save as MAC_Minutes_Template.docx."
+            )
+        },
+        {
+            'label': '3. Word — auto-fill the template from the transcript',
+            'text': (
+                "Using the transcript in /Coal_Merger_Transcript.docx, fill the MAC_Minutes_Template.docx. Rules: (1) Fill every field the transcript supports; leave [VERIFY] where the transcript is ambiguous. (2) In the Decision column, quote the decision-maker verbatim. (3) Do not invent owners — if unclear, write [VERIFY: owner]. (4) Preserve the exact monetary and reserve figures the transcript used; if none were quoted, write [VERIFY]. (5) End the doc with an 'Assumptions & open items' section listing every [VERIFY] token and one open question for the GM."
+            )
+        },
+    ],
+    'expected': [
+        'Teams recap with decisions, owners, next steps',
+        'Reusable MAC minutes template (Word)',
+        'Filled MAC minutes with [VERIFY] tokens for anything not evidenced',
+    ],
+    'watch': [
+        'Recap distinguishes decisions from discussion — no false consensus',
+        'Template is reusable — the next MAC meeting reuses the same shape',
+        '[VERIFY] tokens are honest — the GM sees what still needs confirming',
+    ],
+    'honest': 'Teams Copilot works on what the transcript actually says. If someone spoke off-mic or the discussion happened in a side channel, it will not appear. The MAC chair should always spot-check decisions and owners before circulating. Do not treat the auto-filled minutes as the official minutes until the chair signs off.',
+    'tips': [
+        'Save the template in a shared M&A SharePoint library so every MAC meeting reuses it',
+        'Pair with the Analyst Agent to run the CFO / GM / Legal lens on any decision that has a financial impact',
+        'For sensitive deals, run the recap on a dedicated MAC Teams channel with membership tightly scoped',
+    ],
+}
+
+
+# ── Contoso General Assurance Indonesia demo — Insurance PMO + BPR ─
+
+CARDS['uc-cga-raid-heatmap'] = {
+    'title': 'Insurance PMO — RAID Heatmap + PivotTable in One Prompt',
+    'dept_tag': 'PMO / Transformation',
+    'industry_tag': 'General Insurance',
+    'complexity': 'intermediate',
+    'apps': ['Excel', 'Cowork'],
+    'desc': 'The PMO Lead consolidates a live RAID log into an executive dashboard for the weekly CTO review in one Copilot in Excel prompt: summary counts, Owner × Severity PivotTable, conditional-formatting heatmap, top-5 critical items, and an overdue-item formula — each formula annotated in plain English.',
+    'skills': [
+        'Excel Copilot pane — one prompt, multiple artefacts on a new sheet',
+        'Preserving the raw sheet untouched (audit-safe transformation)',
+        'PivotTable + conditional formatting heatmap generated declaratively',
+        'Plain-English formula annotation so PMs without Excel skills can maintain it',
+    ],
+    'instructions': [
+        'Open the RAID log workbook',
+        'Copilot pane → paste the prompt',
+        'Review each formula and the plain-English annotation before circulating',
+    ],
+    'sample_files': [
+        ('CGA_RAID_Log.xlsx', 'xlsx'),
+    ],
+    'prompts': [{
+        'label': 'RAID_Dashboard in one prompt',
+        'text': (
+            "Consolidate this RAID log into an executive dashboard on a new sheet called RAID_Dashboard. I am the PMO Lead at Contoso General Assurance Indonesia; this will be reviewed weekly by the CTO. Use only the active workbook /CGA_RAID_Log.xlsx. Preserve the raw sheet untouched. On RAID_Dashboard produce:\n"
+            "(1) a summary table counting items by category (Risk, Assumption, Issue, Dependency) and by severity (High, Medium, Low)\n"
+            "(2) a PivotTable with Owner as rows and Severity as columns\n"
+            "(3) heatmap conditional formatting on the PivotTable — red for High, amber for Medium, green for Low\n"
+            "(4) a top-5 critical items list ranked by severity then status\n"
+            "(5) a formula that flags any item overdue by more than 14 days\n"
+            "Explain each formula in one line of plain English next to it. English. Do not invent values — use only what is in the sheet."
+        )
+    }],
+    'expected': [
+        'RAID_Dashboard sheet with 5 artefacts',
+        'Raw sheet untouched',
+        'Every formula annotated in plain English',
+    ],
+    'watch': [
+        'One prompt produces multiple artefacts (summary, PivotTable, heatmap, top 5, overdue flag)',
+        'Copilot preserves the audit trail — raw data untouched, new sheet is transparent',
+        'Formula annotations let a non-technical PM maintain the dashboard',
+    ],
+    'honest': 'Copilot depends on clean column names and consistent status values in the raw sheet. If your RAID log has free-text severity ("Very high", "Med", "med-high") the counts will be off — normalise the raw sheet first. The dashboard is a snapshot: schedule the refresh weekly and treat any manual edits on the dashboard as temporary.',
+    'tips': [
+        'Add a 6th ask: "generate a 200-word Teams post summarising the top 3 risks" to reuse the dashboard for weekly comms',
+        'Pin the prompt as a reusable skill on the Customize page — every project reuses the same shape',
+        'For programme-level rollup, run once per project and stitch the outputs together in a portfolio workbook',
+    ],
+}
+
+CARDS['uc-cga-multi-lob-claims-tat'] = {
+    'title': 'Multi-LOB Claims TAT — the Insurance BPR Power Move',
+    'dept_tag': 'Operations / BPR',
+    'industry_tag': 'General Insurance',
+    'complexity': 'advanced',
+    'apps': ['Analyst Agent', 'Excel', 'Cowork'],
+    'desc': "The Head of Operations diagnoses claims TAT loss across three lines of business (Motor, Property, Marine Cargo) and proposes a per-LOB automation portfolio for the board — in one Analyst-agent prompt grounded on the adjuster survey. Python-quality profiling, per-LOB bottleneck ranking, satisfaction correlation, chart, 6-initiative portfolio, and a CEO paragraph.",
+    'skills': [
+        'Analyst agent — Python-grade data analysis without writing code',
+        'Multi-LOB analysis (Motor, Property, Marine Cargo) with correlation and ranking',
+        'To-be automation portfolio with expected TAT reduction, complexity, and dependency',
+        'Ground-only discipline — no fabricated values; missing data flagged',
+    ],
+    'instructions': [
+        'Copilot Chat → Switch agent → Analyst',
+        'Attach /CGA_ClaimsOperationsSurvey.xlsx',
+        'Paste the prompt',
+        'Review the CEO paragraph with the transformation lead before forwarding',
+    ],
+    'sample_files': [
+        ('CGA_ClaimsOperationsSurvey.xlsx', 'xlsx'),
+    ],
+    'prompts': [{
+        'label': 'Multi-LOB claims TAT diagnosis + automation portfolio',
+        'text': (
+            "Analyse the attached multi-LOB adjuster survey and produce a data-driven bottleneck diagnosis with a per-LOB automation portfolio.\n\n"
+            "I am the Head of Operations at Contoso General Assurance Indonesia. The Board wants a business case for a claims transformation this quarter. Use only the 40 rows in /CGA_ClaimsOperationsSurvey.xlsx which cover three lines of business (Motor, Property, Marine Cargo) across Jakarta, Surabaya, Medan, Bandung and Semarang. Do not fabricate values; if data is missing, say so.\n\n"
+            "Deliverables in order:\n"
+            "(1) Python-quality data profile of the sheet (row count, column types, missing-value pattern)\n"
+            "(2) top 5 bottlenecks ranked by TAT loss in days per claim and total FTE hours, quantified per LOB (Motor vs Property vs Marine Cargo)\n"
+            "(3) correlation between adjuster satisfaction and bottleneck category, per LOB\n"
+            "(4) a chart showing average TAT per bottleneck category, grouped by LOB\n"
+            "(5) proposed to-be automation portfolio of 6 initiatives (2 per LOB) with expected TAT reduction per LOB, complexity 1 to 5, and dependency on existing systems\n"
+            "(6) one paragraph summary for the CEO covering all three LOBs\n\n"
+            "English, tables and one chart, no opinions without a data citation."
+        )
+    }],
+    'expected': [
+        'Per-LOB bottleneck ranking with quantified TAT loss',
+        'Adjuster-satisfaction correlation per LOB',
+        'Chart: TAT per bottleneck category grouped by LOB',
+        '6-initiative automation portfolio with dependency map',
+        'CEO paragraph',
+    ],
+    'watch': [
+        'Analyst runs Python-grade analysis but you do not write Python',
+        'Every insight is data-cited; opinions without citation are not allowed',
+        'Missing data is flagged, not fabricated',
+        'Automation portfolio explicitly maps to complexity + dependency — implementation-ready',
+    ],
+    'honest': 'A 40-row survey is a starting point, not the whole truth. The bottleneck ranking will be directionally right but the automation portfolio must be validated with a wider sample and with the adjuster union / staff council before board sign-off. The CEO paragraph should always be reviewed by the Head of Operations personally — do not forward Analyst output unedited.',
+    'tips': [
+        'Re-run per quarter with a fresh survey to trend the TAT loss over time',
+        'Pair with the autonomous weekly RAID digest — the portfolio becomes the transformation programme',
+        'For OJK submissions, extract the LOB-level TAT numbers into the RBC / statutory return template',
+    ],
+}
+
+CARDS['uc-cga-autonomous-raid-digest'] = {
+    'title': 'Cowork Frontier — Autonomous Weekly RAID Digest',
+    'dept_tag': 'PMO / Transformation',
+    'industry_tag': 'General Insurance',
+    'complexity': 'advanced',
+    'apps': ['Cowork', 'Outlook', 'Teams'],
+    'desc': 'The PMO Lead sets up a Cowork Frontier scheduled task: every Friday at 16:00 Jakarta, Cowork reads the shared PMO folder, refreshes the RAID dashboard, flags new High-severity items and overdue items, drafts a 200-word sponsor Teams post, and drafts a CTO email with the top-3 decisions — held for the PMO Lead to approve before send.',
+    'skills': [
+        'Cowork Frontier scheduled task (weekly, timezone-aware)',
+        'Multi-artefact autonomous run (refresh + flag + draft Teams + draft email)',
+        'Approve-before-send gate — no autonomous outbound',
+        'Portfolio-level view spanning 5 concurrent transformation projects',
+    ],
+    'instructions': [
+        'Copilot Cowork (Frontier) → Set as scheduled task → Weekly',
+        'Time: Friday 16:00 Jakarta',
+        'Paste the prompt',
+        'Confirm the folder read-scope + the approval gate before saving the task',
+    ],
+    'sample_files': [],
+    'prompts': [{
+        'label': 'Autonomous weekly RAID digest',
+        'text': (
+            "Run a weekly autonomous RAID digest for the CGA Indonesia transformation portfolio (Motor & Property Claims Platform Modernisation, Marine Cargo Digital Onboarding, Bancassurance Distribution Integration, Sharia Product Launch, Auto Manufacturer Partnership API) every Friday at 16:00 Jakarta time.\n\n"
+            "I am the PMO Lead at Contoso General Assurance Indonesia. The CTO and sponsors want a consistent Friday inbox drop that summarises the week without me having to build it.\n\n"
+            "Read the shared PMO folder in OneDrive weekly. Include: the latest RAID log, the latest steering brief, and any status reports uploaded in the last 7 days.\n\n"
+            "Every Friday:\n"
+            "(1) refresh the RAID_Dashboard sheet\n"
+            "(2) flag any new High-severity item, any item overdue by more than 14 days, and any owner with more than 3 open items\n"
+            "(3) draft a 200-word Teams post for the sponsor channel\n"
+            "(4) draft an email to the CTO with the top-3 decisions needed next week and a link to the dashboard\n\n"
+            "Send only after I approve. English, calm and factual."
+        )
+    }],
+    'expected': [
+        'Weekly refreshed RAID_Dashboard',
+        'Draft Teams post (200 words) — held for approval',
+        'Draft CTO email with top-3 decisions — held for approval',
+        'Zero autonomous outbound without PMO Lead sign-off',
+    ],
+    'watch': [
+        'Cowork Frontier runs on schedule without a human trigger',
+        'Approval gate is explicit — nothing leaves without the PMO Lead pressing Send',
+        'Read-scope is fenced to the PMO folder — no over-reach into unrelated content',
+        'Portfolio-level rollup (5 projects) in a single weekly artefact',
+    ],
+    'honest': 'Frontier scheduled tasks are powerful — the discipline is in the fence. Keep the read-scope tight (this specific folder only), keep the send-scope gated (approve before send), and audit the task log weekly. If the CTO ever complains about a noisy inbox, tighten the "top-3 decisions" ask to "top-1 decision + 2 FYIs".',
+    'tips': [
+        'Version-control the prompt — treat the scheduled task like production code',
+        'Add a monthly variant that rolls up the four weekly digests into a Steering Committee pre-read',
+        'Pair with the multi-LOB claims TAT card — the transformation programme becomes the source of truth for the digest',
+    ],
+}
+
+
 # ---------------- DEPARTMENT-SPECIFIC CARDS ----------------
 
 CARDS['uc-fin-monthend'] = {

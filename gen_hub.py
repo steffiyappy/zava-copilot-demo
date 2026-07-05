@@ -6615,7 +6615,7 @@ const OTHER_PAGES = [
     name: 'Contoso Tobacco & Wellness — Copilot Immersion',
     desc: 'Multi-brand tobacco manufacturer and health-functional-foods (ginseng) operator in Indonesia. GM-level immersion: 10 exercises across one workday — Daily Briefing, Cowork quarter-close + HTML dashboard, Researcher Critique + Model Council, PPT BCG-style deck, Create infographic, Teams recap → Word minutes, Excel Power Hour, Analyst multi-perspective, personalised mail merge, CV screening from SharePoint.',
     url: 'https://steffiyappy.github.io/contoso-tobacco-wellness-demo/',
-    password: 'ContosoTW2026',
+    password: 'ContosoTobacco2026',
     tag: 'CPG Demo',
     keywords: 'contoso tobacco wellness ginseng KTNG sampoerna gudang garam djarum bentoel wismilak nojorono CHT cukai pita-cukai bea cukai BPOM PP 109 ginseng halal LPPOM-MUI Karawang plant premium brand share outlet coverage mail merge CV screening cowork researcher analyst create infographic'
   },
@@ -6702,6 +6702,30 @@ const OTHER_PAGES = [
     password: 'ContosoBev2026',
     tag: 'Beverages Demo',
     keywords: 'contoso beverages dairy SSB sugar-sweetened beverage tax MyNutri MOF MoH JAKIM halal SST PET glass packaging reformulation low-zero sugar trade marketing distributor cut-over ASEAN GCC export GM head of department operations trade immersion researcher critique model council cowork HTML dashboard PowerPoint BCG create infographic teams recap word minutes excel power hour analyst mail merge CV screening'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '⛏️',
+    color: '#374151',
+    accent: '#111827',
+    name: 'Contoso Coal & Resources — Copilot Demo',
+    desc: 'Contoso Coal & Resources — 10-exercise GM immersion for an Indonesian coal & new-energy-minerals company. Persona: GM Coal & Resources. One GM workday: Daily Briefing · Quarter-Closing Cowork → live HTML KPI dashboard · Researcher Critique + Model Council on Coal Mining & New-Energy Minerals landscape (Indonesia) · BCG/McKinsey 8-slide deck · Copilot Create infographic · Teams Recap → Word merger-meeting minutes (Potential Merger scenario) · Excel Power Hour (Chat/Edit/Plan) · Analyst Agent multi-perspective (GM/CFO/COO) · personalised mail-merge · CV screening from SharePoint. Extras: Outlook, Word interrogate, GM power move. EN + BI.',
+    url: 'https://steffiyappy.github.io/contoso-coal-resources-demo/',
+    password: 'ContosoCoal2026',
+    tag: 'Mining Demo',
+    keywords: 'contoso coal resources mining Indonesia thermal coking new-energy minerals nickel rare-earth ESDM Kementerian Kalimantan Sumatera Sulawesi royalty DHE MODI SIMBARA IUP PKP2B PROPER RKAB stripping ratio ash sulphur calorific FOB Newcastle GAR NAR merger acquisition potential M&A Teams recap Word minutes GM immersion researcher critique model council cowork HTML dashboard PowerPoint BCG create infographic excel power hour analyst mail merge CV screening'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '🛡️',
+    color: '#B91C1C',
+    accent: '#7F1D1D',
+    name: 'Contoso General Assurance Indonesia — Copilot Immersion',
+    desc: 'Contoso General Assurance Indonesia — Head of Transformation immersion covering Project Management and Business Process Re-engineering with a Copilot Cowork Frontier preview. Persona: Budi Santoso. Part A · PM: project status intake auto-summary · Steering committee deck from raw notes · RAID log heatmap + PivotTable in Excel · Stakeholder updates in email + Teams · benchmark PM practices for general insurance · delayed-workstream stakeholder brief · 30-day action plan · deep benchmark of ASEAN insurers · Loop live plan. Part B · BPR: claims workshop as-is capture · to-be design + bottleneck · SOP rewrite grounded in policy manual · change comms · multi-LOB claims TAT (Motor, Property, Marine Cargo) with Analyst Agent · policy issuance re-engineering plan · underwriting FAQ · warmer change memo. Cowork Frontier: autonomous weekly RAID digest for CTO/sponsors · autonomous process discovery across a SharePoint folder. EN + BI.',
+    url: 'https://steffiyappy.github.io/sompo-copilot-immersion/',
+    password: 'ContosoGeneral2026',
+    tag: 'Insurance Workshop',
+    keywords: 'contoso general assurance sompo Indonesia insurance transformation PMO PM RAID log heatmap steering committee deck stakeholder brief BPR business process re-engineering claims TAT multi-LOB Motor Property Marine Cargo underwriting SOP policy issuance bancassurance sharia earthquake risk survey OJK cowork frontier autonomous weekly digest CTO sponsor SharePoint discovery Budi Santoso head of operations analyst agent'
   },
   {
     section: 'Customer Workshops',
