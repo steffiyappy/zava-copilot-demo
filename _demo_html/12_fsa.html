@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contoso FSA · M365 Copilot Sharing & Immersion</title>
+<style>
+:root{--radius:12px;--shadow:0 2px 8px rgba(0,0,0,.12);--cfsa:#1E3A5F;--gold:#C9A227;
+  --g-goal:#DC2626;--g-ctx:#2563EB;--g-src:#9333EA;--g-exp:#16A34A}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1020;--panel:#0e1633;--panel2:#0a1228;--ink:#e2e8f0;--muted:#94a3b8;--border:#1e2d4a;--sidebar-a:#0e1530;--sidebar-b:#0a0f24;--accent:#3b82f6;--accent2:#60a5fa;--badge-bg:#0a0f24;--code:#0d1535;--good:#22c55e;--warn:#f59e0b;--danger:#ef4444;--callout-info:#0e1c2c;--callout-warn:#2b220e;--callout-bad:#2b1414;--callout-good:#0e2418;--gcse-bar:#0e1633}}
+@media(prefers-color-scheme:light){:root{--bg:#f0f4f8;--panel:#ffffff;--panel2:#f0f6ff;--ink:#1a202c;--muted:#64748b;--border:#d1d9e6;--sidebar-a:#1E3A5F;--sidebar-b:#0F2545;--accent:#2563eb;--accent2:#1d4ed8;--badge-bg:#e8f0fe;--code:#1e2b55;--good:#16a34a;--warn:#d97706;--danger:#dc2626;--callout-info:#eff6ff;--callout-warn:#fffbeb;--callout-bad:#fef2f2;--callout-good:#f0fdf4;--gcse-bar:#ffffff}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Inter","Segoe UI",system-ui,sans-serif}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+code,pre{font-family:"JetBrains Mono","Consolas",monospace;font-size:13px}
+.layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+aside{background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));border-right:1px solid var(--border);padding:24px 18px;position:sticky;top:0;height:100vh;overflow-y:auto;color:#e2e8f0}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.brand .logo{width:42px;height:42px;border-radius:9px;background:var(--cfsa);display:grid;place-items:center;font-weight:900;color:#fff;font-size:11px;border:2px solid var(--gold)}
+.brand h1{font-size:15px;margin:0;color:#fff}
+.tag{font-size:11px;color:#94a3b8;margin-bottom:18px}
+nav h3{font-size:10px;letter-spacing:1.2px;color:#94a3b8;text-transform:uppercase;margin:18px 0 8px}
+nav a{display:block;color:#e2e8f0;padding:8px 10px;border-radius:9px;font-size:14px;margin-bottom:2px;border:1px solid transparent}
+nav a:hover{background:rgba(255,255,255,.12);text-decoration:none;border-color:rgba(255,255,255,.2);color:#fff}
+nav a.active{background:rgba(59,130,246,.25);border-color:#3b82f6;color:#93c5fd}
+main{padding:0 40px 80px;max-width:1080px}
+.gcse-bar{position:sticky;top:0;z-index:50;background:var(--gcse-bar);border-bottom:1px solid var(--border);margin:0 -40px 24px;padding:12px 40px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.gcse-bar .lbl{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.gcse-toggle{display:inline-flex;background:var(--panel2);border:1px solid var(--border);border-radius:999px;padding:3px;gap:0}
+.gcse-toggle button{background:transparent;border:none;color:var(--muted);font:600 12px/1 "Inter","Segoe UI",sans-serif;padding:7px 14px;border-radius:999px;cursor:pointer;letter-spacing:.3px}
+.gcse-toggle button.on{background:var(--accent);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.gcse-bar .legend{display:flex;gap:8px;font-size:11px;flex-wrap:wrap}
+.gcse-bar .legend span{padding:3px 9px;border-radius:5px;font-weight:700;letter-spacing:.3px}
+.gcse-bar .legend .l-g{background:rgba(220,38,38,.15);color:var(--g-goal);border:1px solid var(--g-goal)}
+.gcse-bar .legend .l-c{background:rgba(37,99,235,.15);color:var(--g-ctx);border:1px solid var(--g-ctx)}
+.gcse-bar .legend .l-s{background:rgba(147,51,234,.15);color:var(--g-src);border:1px solid var(--g-src)}
+.gcse-bar .legend .l-e{background:rgba(22,163,74,.15);color:var(--g-exp);border:1px solid var(--g-exp)}
+body:not(.gcse) .gcse-bar .legend{display:none}
+.hero{background:radial-gradient(800px 320px at 0% 0%,rgba(30,58,95,.45),transparent 60%),radial-gradient(700px 280px at 100% 0%,rgba(201,162,39,.18),transparent 60%),var(--panel);border:1px solid var(--border);border-radius:18px;padding:30px;margin-bottom:24px}
+.hero .pill{display:inline-block;background:var(--badge-bg);border:1px solid var(--border);color:var(--accent2);font-size:11px;letter-spacing:1.2px;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.hero h2{font-size:30px;margin:0 0 8px;line-height:1.2}
+.hero p{color:var(--muted);margin:0;max-width:780px}
+.meta-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;color:var(--muted);font-size:13px}
+.meta-row span b{color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:18px}
+.card .lead{color:var(--muted);margin:0 0 14px}
+.card h4{margin:18px 0 6px;font-size:15px;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+ul{padding-left:20px;margin:8px 0}li{margin:4px 0}
+.modulehead{display:flex;align-items:center;gap:14px;margin:32px 0 12px}
+.modulehead .num{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--cfsa),var(--accent));display:grid;place-items:center;font-weight:800;font-size:20px;color:#fff}
+.modulehead h2{margin:0;font-size:22px}
+.modulehead small{display:block;color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.activity{border:1px solid var(--border);border-radius:12px;padding:18px;margin:14px 0;background:var(--panel)}
+.activity .head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.activity .num{background:var(--accent);color:#fff;font-weight:800;font-size:12px;padding:3px 9px;border-radius:6px}
+.activity .time{color:var(--muted);font-size:12px}
+.activity .file{font-size:12px;color:var(--accent2);background:var(--badge-bg);border:1px solid var(--border);padding:3px 9px;border-radius:6px}
+.activity h4{margin:0;font-size:16px;color:var(--ink);font-weight:600}
+.activity p{margin:6px 0;color:var(--muted);font-size:14px}
+.task-step{background:var(--panel2);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:12px 14px;margin:10px 0}
+.task-step .step-label{font-size:11px;letter-spacing:1px;color:var(--accent2);text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.task-step .tool-badge{display:inline-block;background:rgba(0,100,200,.2);border:1px solid var(--accent);color:var(--accent2);font-size:11px;padding:2px 8px;border-radius:5px;margin-left:8px;vertical-align:middle}
+.prompt{position:relative;background:var(--code);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;padding:14px 60px 14px 16px;margin:10px 0;font-family:"JetBrains Mono","Consolas",monospace;font-size:13px;color:#c9d6ff;white-space:pre-wrap;line-height:1.7}
+.prompt .copy{position:absolute;top:8px;right:8px;background:#1a2552;color:#e2e8f0;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s}
+.prompt .copy:hover{background:var(--accent);color:#fff}
+.prompt .copy.copied{background:var(--good);color:#0a0f24}
+/* GCSE colour coding */
+.prompt .g, .prompt .c, .prompt .s, .prompt .e{padding:2px 6px;border-radius:4px;display:inline}
+.prompt .lbl{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:1.5px;padding:1px 6px;border-radius:3px;margin-right:6px;vertical-align:1px}
+.prompt .g{background:rgba(220,38,38,.18);color:#fca5a5;box-shadow:inset 2px 0 0 var(--g-goal)}
+.prompt .g .lbl{background:var(--g-goal);color:#fff}
+.prompt .c{background:rgba(37,99,235,.18);color:#93c5fd;box-shadow:inset 2px 0 0 var(--g-ctx)}
+.prompt .c .lbl{background:var(--g-ctx);color:#fff}
+.prompt .s{background:rgba(147,51,234,.18);color:#d8b4fe;box-shadow:inset 2px 0 0 var(--g-src)}
+.prompt .s .lbl{background:var(--g-src);color:#fff}
+.prompt .e{background:rgba(22,163,74,.18);color:#86efac;box-shadow:inset 2px 0 0 var(--g-exp)}
+.prompt .e .lbl{background:var(--g-exp);color:#fff}
+.prompt-lang{display:flex;align-items:center;gap:10px;margin:14px 0 4px;font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}
+.prompt-lang::after{content:"";flex:1;height:1px;background:var(--border)}
+.prompt-lang.bi{color:#1565C0}
+.prompt-lang.en{color:#6B7280}
+.prompt-lang .flag{display:inline-block;font-size:13px}
+body:not(.gcse) .prompt-gcse{display:none}
+body.gcse .prompt-plain{display:none}
+/* Try-It-Yourself prompts always show the GCSE colour-coded version */
+section#try1 .prompt-plain{display:none!important}
+section#try1 .prompt-gcse{display:block!important}
+.callout{border-left:4px solid var(--accent2);background:var(--callout-info);padding:12px 16px;margin:12px 0;border-radius:8px;color:var(--ink);font-size:14px}
+.callout.warn{border-color:var(--warn);background:var(--callout-warn)}
+.callout.danger{border-color:var(--danger);background:var(--callout-bad)}
+.callout.good{border-color:var(--good);background:var(--callout-good)}
+.callout b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{color:var(--accent2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+td a{color:var(--ink);font-weight:600}
+td a:hover{color:var(--accent2)}
+.agenda{display:grid;grid-template-columns:90px 1fr 100px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.agenda>div{padding:10px 14px;border-bottom:1px solid var(--border)}
+.agenda>div:nth-child(3n+1){color:var(--accent2);font-weight:700;background:var(--panel)}
+.agenda>div:nth-child(3n+3){color:var(--muted);text-align:right}
+.agenda>div:nth-last-child(-n+3){border-bottom:0}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
+.tool-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
+.tool-card .icon{font-size:22px;margin-bottom:6px}
+.tool-card h5{margin:0 0 4px;font-size:14px;color:var(--ink)}
+.tool-card p{margin:0;font-size:12px;color:var(--muted);line-height:1.5}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;letter-spacing:.5px}
+.badge.blue{background:rgba(0,100,200,.2);color:var(--accent2);border:1px solid var(--accent)}
+.badge.green{background:rgba(34,197,94,.15);color:var(--good);border:1px solid var(--good)}
+.badge.gold{background:rgba(201,162,39,.15);color:var(--gold);border:1px solid var(--gold)}
+/* Story panel (IHH-style) */
+.story-wrap{display:grid;grid-template-columns:230px 1fr;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px}
+.story-left{background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));padding:24px 18px;display:flex;flex-direction:column;gap:14px;color:#e2e8f0}
+.story-left .label{margin:0 0 4px;font-size:8.5px;letter-spacing:2px;font-weight:700;color:var(--gold);text-transform:uppercase}
+.story-left h3{margin:0;font-size:19px;font-weight:800;color:#fff;line-height:1.2}
+.story-left .name{margin:0;font-size:13px;font-weight:700;color:#fff}
+.story-left .role{margin:2px 0 0;font-size:11px;color:#94a3b8;line-height:1.5}
+.story-left .mission{margin:0;font-size:11.5px;color:#cbd5e1;line-height:1.6}
+.story-left .punch{padding:10px;background:rgba(255,255,255,.06);border-radius:8px;border:1px solid rgba(255,255,255,.1)}
+.story-left .punch p{margin:0;font-size:12px;font-weight:700;font-style:italic;color:#fff;line-height:1.4}
+.story-right{background:var(--panel);padding:22px 20px 16px}
+.story-right>h3{margin:0 0 16px;font-size:16px;font-weight:700}
+.exblock{margin-bottom:14px}
+.exblock .extag{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.exblock .pill-ex{background:#0f2545;color:#fff;font-size:9px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:.5px}
+.exblock .pill-name{font-size:12.5px;font-weight:700;color:var(--ink)}
+.tcards{display:grid;gap:8px}
+.tcards.c1{grid-template-columns:1fr}
+.tcards.c2{grid-template-columns:repeat(2,1fr)}
+.tcards.c3{grid-template-columns:repeat(3,1fr)}
+.tcard{border:1px solid var(--border);border-radius:7px;overflow:hidden}
+.tcard .head{padding:5px 9px;display:flex;align-items:center;gap:6px;color:#fff}
+.tcard .head .n{font-size:10px;font-weight:800;color:rgba(255,255,255,.6)}
+.tcard .head .t{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+.tcard .body{padding:9px;background:var(--panel2)}
+.tcard .body .ttl{margin:0 0 2px;font-size:11.5px;font-weight:700;color:var(--ink)}
+.tcard .body .sub{margin:0 0 5px;font-size:9.5px;font-style:italic;color:var(--cfsa)}
+.tcard .body .desc{margin:0;font-size:10px;color:var(--muted);line-height:1.55}
+.tcard .filechip{background:rgba(37,99,235,.15);color:var(--accent2);border:1px solid var(--accent);border-radius:3px;padding:0 5px;font-style:normal;font-size:9px}
+.value-bar{background:rgba(201,162,39,.15);border:1px solid var(--gold);border-left:4px solid var(--gold);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--ink)}
+@media(max-width:900px){.tcards.c2,.tcards.c3{grid-template-columns:1fr}.story-wrap{grid-template-columns:1fr}}
+/* Password Screen */
+#lock{position:fixed;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(30,58,95,.5),transparent 60%),#0b1020;z-index:9999;display:flex;align-items:center;justify-content:center}
+.lock-box{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:40px 44px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lock-box .cfsa-logo{width:64px;height:64px;border-radius:14px;background:var(--cfsa);display:grid;place-items:center;font-weight:900;font-size:14px;color:#fff;margin:0 auto 18px;border:2px solid var(--gold)}
+.lock-box h2{margin:0 0 6px;font-size:22px}
+.lock-box p{color:var(--muted);font-size:14px;margin:0 0 22px}
+.lock-box input[type=password],.lock-box input[type=text]{width:100%;background:var(--badge-bg);border:1px solid var(--border);border-radius:10px;color:var(--ink);font-size:15px;padding:12px 44px 12px 16px;outline:none;font-family:inherit}
+.lock-box input:focus{border-color:var(--accent)}
+.lock-box button{width:100%;background:var(--cfsa);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;padding:13px;cursor:pointer}
+.lock-box button:hover{background:var(--accent)}
+.lock-box .err{color:var(--danger);font-size:13px;margin-top:8px;min-height:18px}
+.lock-box .conf{font-size:11px;color:var(--muted);margin-top:14px}
+.pw-wrap{position:relative;margin-bottom:12px}
+.toggle-pw{position:absolute!important;right:12px;top:50%;transform:translateY(-50%);background:none!important;border:none!important;width:auto!important;padding:0!important;cursor:pointer;opacity:.7;color:var(--muted)}
+.toggle-pw:hover{background:none!important;opacity:1}
+.toggle-pw svg{width:18px;height:18px;fill:currentColor;display:block}
+@media(max-width:760px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}main{padding:0 18px 60px}.hero h2{font-size:22px}.gcse-bar{margin:0 -18px 18px;padding:10px 18px}}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="lock">
+  <div class="lock-box">
+    <div class="cfsa-logo">CFSA</div>
+    <h2>Contoso FSA · Copilot Session</h2>
+    <p>M365 Copilot Sharing &amp; Immersion<br>Enter the session password to continue.</p>
+    <div class="pw-wrap">
+      <input type="password" id="pw" placeholder="Session password" autocomplete="off"/>
+      <button type="button" id="toggle-pw" class="toggle-pw" title="Show password" onclick="togglePw()"><svg id="eye-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"/></svg></button>
+    </div>
+    <button onclick="unlock()">Enter Session →</button>
+    <div class="err" id="err"></div>
+    <div class="conf">Confidential · Contoso Financial Services Authority · Internal use only</div>
+  </div>
+</div>
+
+<div class="layout" id="main" style="display:none">
+<!-- SIDEBAR -->
+<aside>
+  <div class="brand">
+    <div class="logo">CFSA</div>
+    <h1>M365 Copilot<br>Sharing &amp; Immersion</h1>
+  </div>
+  <div class="tag">Contoso Financial Services Authority</div>
+  <nav>
+    <h3>Overview</h3>
+    <a href="#overview">About this session</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#files">📁 Sample files</a>
+    <a href="#story">The Story</a>
+    <a href="#tools">Tools used today</a>
+    <h3>Prompt framework</h3>
+    <a href="#gcse">GCSE — write better prompts</a>
+    <h3>Get Started</h3>
+    <a href="#getstarted">🔑 Log in to Copilot</a>
+    <h3>Try It Yourself</h3>
+    <a href="#try1">Prompt 1 · Research</a>
+    <a href="#try2">Prompt 2 · Email</a>
+    <a href="#try3">Prompt 3 · Summarise</a>
+    <h3>Hands-on Exercises</h3>
+    <a href="#ex1">Exercise 1 · Researcher</a>
+    <a href="#ex2">Exercise 2 · Meeting Minutes</a>
+    <a href="#ex3">Exercise 3 · Survey Analysis</a>
+    <a href="#ex4">Exercise 4 · Cowork Dashboard</a>
+    <a href="#ex5">Exercise 5 · Agent Builder</a>
+    <h3>Resources</h3>
+    <a href="#tips">Tips &amp; prompts</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main>
+
+<!-- GCSE TOGGLE BAR -->
+<div class="gcse-bar">
+  <span class="lbl">Prompt mode</span>
+  <div class="gcse-toggle" role="tablist">
+    <button id="btn-plain" class="on" onclick="setMode(false)">Plain</button>
+    <button id="btn-gcse" onclick="setMode(true)">GCSE colour-coded</button>
+  </div>
+  <div class="legend">
+    <span class="l-g">Goal</span>
+    <span class="l-c">Context</span>
+    <span class="l-s">Source</span>
+    <span class="l-e">Expectation</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="overview">
+<div class="hero">
+  <span class="pill">M365 COPILOT · SHARING + IMMERSION</span>
+  <h2>Contoso FSA · M365 Copilot Sharing &amp; Immersion</h2>
+  <p>A focused 60-minute session for supervisors, analysts and policy officers across Contoso Financial Services Authority — covering meetings, research, surveying, reporting, publications, and stakeholder coordination with banks, the exchange, and fintech.</p>
+  <div class="meta-row">
+    <span><b>Format</b> Live demo + Hands-on</span>
+    <span><b>Duration</b> 60 minutes</span>
+    <span><b>Tools</b> Copilot Chat (everyone) · M365 Copilot (premium users)</span>
+    <span><b>Outcome</b> An interactive HTML supervisory dashboard</span>
+  </div>
+</div>
+
+<div class="card">
+  <h3>About this session</h3>
+  <p class="lead">A practical session designed for a regulator's day-to-day work. We move from <b>strategic context → live demos → hands-on practice</b>, ending with each participant building an interactive supervisory dashboard.</p>
+  <h4>What you will leave with</h4>
+  <ul>
+    <li>Fluency in Copilot Chat — usable today by every employee, with or without a paid licence</li>
+    <li>Confidence with the premium features of M365 Copilot: Researcher, Analyst, Plan in Excel, Cowork</li>
+    <li>A working set of supervisory artefacts: formal meeting minutes, sector survey analysis, a stakeholder note, and an interactive HTML dashboard</li>
+    <li>A clear mental model of what Copilot can do across a regulator's workflow — and what it cannot</li>
+  </ul>
+  <h4>Licence mix today</h4>
+  <ul>
+    <li><span class="badge blue">EVERYONE</span> Copilot Chat (work mode for licensed users; web-grounded chat for non-licensed) — used in Sessions 2 and the "Try it yourself" hands-on</li>
+    <li><span class="badge gold">PREMIUM</span> M365 Copilot in Outlook, Teams, Word, Excel, PowerPoint plus Researcher, Analyst, Plan in Excel and Cowork — used in the demos and hands-on exercises</li>
+  </ul>
+  <div class="callout warn">
+    <b>Data privacy reminder:</b> Do not paste real supervisory data, identifiable consumer information, or commercially sensitive entity data into Copilot during this session. Use only the sample files provided. With M365 Copilot your prompts and grounding data stay within your Microsoft 365 tenant and are not used to train AI models.
+  </div>
+</div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+<div class="modulehead"><div class="num">📋</div><h2>Agenda<small>60 minutes total</small></h2></div>
+<div class="card">
+<div class="agenda">
+  <div>00:00</div><div><b>Intro</b> · Why Copilot, why now</div><div>3 min</div>
+  <div>00:03</div><div><b>Deep dive: Copilot Chat</b> · what it is, who can use it</div><div>4 min</div>
+  <div>00:07</div><div><b>Live demo: Copilot Chat</b> · research a stakeholder, draft a note</div><div>5 min</div>
+  <div>00:12</div><div><b>GCSE</b> · the prompt framework + "try it yourself" with users</div><div>5 min</div>
+  <div>00:17</div><div><b>Live demo: M365 Copilot premium</b> · Outlook · Teams · Word · Excel · PowerPoint</div><div>8 min</div>
+  <div>00:25</div><div><b>Q&amp;A · break · re-platform</b></div><div>10 min</div>
+  <div>00:35</div><div><b>Hands-on Exercise 1</b> · Researcher (Critique + Model Council)</div><div>5 min</div>
+  <div>00:40</div><div><b>Hands-on Exercise 2</b> · Teams Recap → Word formal minutes</div><div>5 min</div>
+  <div>00:45</div><div><b>Hands-on Exercise 3</b> · Sector survey analysis (Excel + Plan + Analyst)</div><div>10 min</div>
+  <div>00:55</div><div><b>Hands-on Exercise 4</b> · Cowork → interactive HTML dashboard</div><div>15 min</div>
+  <div>01:10</div><div><b>Hands-on Exercise 5</b> · Agent Builder → reusable team agent</div><div>5 min</div>
+  <div>01:15</div><div><b>Wrap-up &amp; final Q&amp;A</b></div><div>5 min</div>
+</div>
+<div class="callout" style="margin-top:14px"><b>Tip:</b> Toggle <b>"GCSE colour-coded"</b> at the top of the page to see every prompt broken into <span style="color:var(--g-goal);font-weight:700">Goal</span> · <span style="color:var(--g-ctx);font-weight:700">Context</span> · <span style="color:var(--g-src);font-weight:700">Source</span> · <span style="color:var(--g-exp);font-weight:700">Expectation</span>.</div>
+</div>
+</section>
+
+<!-- FILES -->
+<section id="files">
+<div class="modulehead"><div class="num">📁</div><h2>Sample files<small>Download for the exercises</small></h2></div>
+<div class="card">
+<table>
+<thead><tr><th>File</th><th>Used in</th><th>What it contains</th></tr></thead>
+<tbody>
+<tr><td><a href="01 ContosoFSA_Fintech_Sector_Survey.xlsx" download>01 ContosoFSA_Fintech_Sector_Survey.xlsx</a></td><td>Exercise 3, Exercise 4</td><td>Q3 sector survey of 80 licensed fintechs, Capital Markets indicators, Bank Sector KPIs</td></tr>
+<tr><td><a href="02 ContosoFSA_Supervisory_Meeting_Transcript.docx" download>02 ContosoFSA_Supervisory_Meeting_Transcript.docx</a></td><td>Exercise 2</td><td>Sample transcript of the Q3 supervisory review meeting</td></tr>
+<tr><td><a href="03 ContosoFSA_Stakeholder_Briefing.docx" download>03 ContosoFSA_Stakeholder_Briefing.docx</a></td><td>Exercise 4</td><td>Q4 coordination briefing for banking, exchange, and fintech stakeholders</td></tr>
+<tr><td><a href="04 ContosoFSA_Brand_Guidelines.docx" download>04 ContosoFSA_Brand_Guidelines.docx</a></td><td>Exercise 4</td><td>Brand voice, visual identity, publication structure for the regulator</td></tr>
+</tbody>
+</table>
+<div class="callout warn"><b>All sample files are synthetic.</b> Entity names and numbers are fabricated for training purposes only.</div>
+</div>
+</section>
+
+<!-- STORY (IHH-style left/right panel) -->
+<section id="story">
+<div class="modulehead" style="margin-top:8px">
+  <div class="num" style="background:linear-gradient(135deg,var(--cfsa),var(--accent));font-size:14px">▶</div>
+  <h2>The Story<small>One workday. Five tools. Board-ready by close of business.</small></h2>
+</div>
+<div class="story-wrap">
+  <!-- LEFT PANEL -->
+  <div class="story-left">
+    <div>
+      <p class="label">Copilot in M365</p>
+      <h3>AI assistant<br>to AI doer</h3>
+    </div>
+    <div>
+      <p class="label">Persona</p>
+      <p class="name">Andi Pratama</p>
+      <p class="role">Director, Sectoral Supervision<br>Contoso Financial Services Authority</p>
+    </div>
+    <div>
+      <p class="label">The mission</p>
+      <p class="mission">One Q3 review meeting to chair, 80 licensed fintechs to interrogate, three stakeholder bodies to align, and the quarterly publication due by 25 October.</p>
+    </div>
+    <div class="punch">
+      <p class="label" style="color:var(--gold)">The punchline</p>
+      <p>One workday. Five tools.<br>From transcript to dashboard.</p>
+    </div>
+  </div>
+  <!-- RIGHT PANEL -->
+  <div class="story-right">
+    <h3>Five moments across one workday</h3>
+
+    <!-- TRY IT YOURSELF block -->
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">TRY IT YOURSELF · 5 min · COPILOT CHAT</span><span class="pill-name">Warm-up — for everyone</span></div>
+      <div class="tcards c3">
+        <div class="tcard"><div class="head" style="background:#0e7490"><span class="n">A</span><span class="t">Copilot Chat</span></div><div class="body"><p class="ttl">Research</p><p class="sub">Try 1</p><p class="desc">Scan global P2P lending regulation trends — collection conduct, fee transparency, consumer protection.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#0369a1"><span class="n">B</span><span class="t">Copilot Chat</span></div><div class="body"><p class="ttl">Draft an email</p><p class="sub">Try 2</p><p class="desc">Three rough bullets become a polished, professional invitation to the banking association.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#1e3a5f"><span class="n">C</span><span class="t">Copilot Chat</span></div><div class="body"><p class="ttl">Summarise a paper</p><p class="sub">Try 3</p><p class="desc">A long public consultation becomes a 6-bullet executive summary in 30 seconds.</p></div></div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 1 block -->
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">EXERCISE 1 · 5 min</span><span class="pill-name">Strategic Intelligence</span></div>
+      <div class="tcards c2">
+        <div class="tcard"><div class="head" style="background:#0e7490"><span class="n">01</span><span class="t">Researcher (Critique)</span></div><div class="body"><p class="ttl">Scan the landscape</p><p class="sub">Task 1.1</p><p class="desc">Two-AI Critique: one model researches and drafts, a second auto-verifies sources before delivery. +13.88% on the DRACO benchmark vs single-model.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#8B2635"><span class="n">02</span><span class="t">Model Council</span></div><div class="body"><p class="ttl">Challenge the view</p><p class="sub">Task 1.2 · optional</p><p class="desc">Multiple models run independently; a judge writes a cover letter on agreements, divergences, and unique insights.</p></div></div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 2 block -->
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">EXERCISE 2 · 5 min</span><span class="pill-name">Meeting → Minutes</span></div>
+      <div class="tcards c1">
+        <div class="tcard"><div class="head" style="background:#1e3a5f"><span class="n">03</span><span class="t">Word Copilot</span></div><div class="body"><p class="ttl">Transcript → formal minutes</p><p class="sub">Task 2.1 &nbsp;·&nbsp; <span class="filechip">📎 02 ContosoFSA_Supervisory_Meeting_Transcript.docx</span></p><p class="desc">In real life: Teams Recap auto-transcribes the meeting. Today: a sample transcript becomes a structured minutes document with attendees, decisions, topic-organised summary, and an action-items table.</p></div></div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 3 block -->
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">EXERCISE 3 · 10 min</span><span class="pill-name">Sector Survey Analysis</span></div>
+      <div class="tcards c2">
+        <div class="tcard"><div class="head" style="background:#14532d"><span class="n">04</span><span class="t">Excel · Plan in Excel</span></div><div class="body"><p class="ttl">Build the dashboard</p><p class="sub">Task 3.1 · 3.2 &nbsp;·&nbsp; <span class="filechip">📎 01 ContosoFSA_Fintech_Sector_Survey.xlsx</span></p><p class="desc">Plan in Excel turns a goal into a multi-step worksheet build that you approve before it runs. KPI tiles, sub-sector charts, top-10 risk table, conditional colours.</p></div></div>
+        <div class="tcard"><div class="head" style="background:#0f4c75"><span class="n">05</span><span class="t">Analyst Agent</span></div><div class="body"><p class="ttl">Interrogate the data</p><p class="sub">Task 3.3</p><p class="desc">Drop the workbook into Analyst. Ask for cross-sector patterns, risk segmentation, peer benchmarking. No setup needed.</p></div></div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 4 block -->
+    <div class="exblock">
+      <div class="extag"><span class="pill-ex">EXERCISE 4 · 15 min · FINISHER</span><span class="pill-name">Cowork → HTML Dashboard</span></div>
+      <div class="tcards c1">
+        <div class="tcard"><div class="head" style="background:#4c1d95"><span class="n">06</span><span class="t">Cowork</span></div><div class="body" style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div><p class="ttl">Delegate the workflow</p><p class="sub">Task 4.1 · facilitator-paced</p><p class="desc">One prompt, three artefacts: an executive summary in Contoso FSA voice, a stakeholder coordination email, and a single-file interactive HTML dashboard with KPI tiles, Chart.js charts and the top-10 risk table — branded in Authority Blue and Trust Gold.</p></div><div style="display:flex;flex-direction:column;gap:5px;justify-content:center"><div style="font-size:9.5px;color:var(--muted)">📎 Knowledge sources:</div><div class="filechip" style="font-size:9.5px;padding:2px 6px">01 ContosoFSA_Fintech_Sector_Survey.xlsx</div><div class="filechip" style="font-size:9.5px;padding:2px 6px">03 ContosoFSA_Stakeholder_Briefing.docx</div><div class="filechip" style="font-size:9.5px;padding:2px 6px">04 ContosoFSA_Brand_Guidelines.docx</div></div></div></div>
+      </div>
+    </div>
+
+    <div class="value-bar">
+      <b>The value:</b> One regulator. One workday. Research, meet, analyse, coordinate, publish — all without leaving Microsoft 365.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+<div class="modulehead"><div class="num">🛠</div><h2>Tools used today<small>Copilot surfaces</small></h2></div>
+<div class="card">
+<div class="tools-grid">
+  <div class="tool-card"><div class="icon">💬</div><h5>Copilot Chat <span class="badge blue">EVERYONE</span></h5><p>Work-mode chat for licensed users (Microsoft Graph access); web-grounded chat for non-licensed users. Your starter Copilot — usable from day one.</p></div>
+  <div class="tool-card"><div class="icon">🔍</div><h5>Researcher (Critique) <span class="badge gold">PREMIUM</span></h5><p>One model researches and drafts; a second reviews source reliability and evidence grounding before producing one polished report. Outperforms single-model on the DRACO benchmark.</p></div>
+  <div class="tool-card"><div class="icon">⚖️</div><h5>Model Council <span class="badge gold">PREMIUM</span></h5><p>In Researcher, multiple AI models each run your prompt independently. A judge model writes a cover letter highlighting agreements, divergences and unique insights.</p></div>
+  <div class="tool-card"><div class="icon">📊</div><h5>Excel Copilot + Plan <span class="badge gold">PREMIUM</span></h5><p>Natural-language analysis, dashboards, RAG status. <b>Plan in Excel</b> turns a goal into a multi-step worksheet build that you approve before it runs.</p></div>
+  <div class="tool-card"><div class="icon">📈</div><h5>Analyst Agent <span class="badge gold">PREMIUM</span></h5><p>Out-of-the-box AI analyst built into M365 Copilot. Drop in a dataset and ask complex questions: peer benchmarking, trend analysis, risk segmentation.</p></div>
+  <div class="tool-card"><div class="icon">📝</div><h5>Word Copilot <span class="badge gold">PREMIUM</span></h5><p>Document drafting: formal minutes, supervisory letters, stakeholder briefings — grounded on your uploaded data files.</p></div>
+  <div class="tool-card"><div class="icon">🎨</div><h5>PowerPoint Copilot <span class="badge gold">PREMIUM</span></h5><p>Generate presentation drafts, refresh narrative flow, and convert Word documents into board-ready decks.</p></div>
+  <div class="tool-card"><div class="icon">📥</div><h5>Outlook Copilot <span class="badge gold">PREMIUM</span></h5><p>Summarise long threads, draft replies in your tone, schedule follow-ups, and surface what changed since you last looked.</p></div>
+  <div class="tool-card"><div class="icon">🤝</div><h5>Teams Recap <span class="badge gold">PREMIUM</span></h5><p>Auto-transcribed meetings with searchable notes, decisions and action items. Hand the recap to Word to produce formal minutes.</p></div>
+  <div class="tool-card"><div class="icon">👥</div><h5>Cowork <span class="badge gold">PREMIUM</span></h5><p>Delegate multi-step tasks to Copilot. Describe the outcome and Copilot creates a plan, checks in for approvals, and produces the artefact — including an HTML dashboard.</p></div>
+</div>
+</div>
+</section>
+
+<!-- GCSE -->
+<section id="gcse">
+<div class="modulehead"><div class="num">🧭</div><h2>GCSE — write better prompts<small>The 4-part prompt framework</small></h2></div>
+<div class="card">
+<p class="lead">Great prompts share four ingredients. Use the <b>GCSE</b> mnemonic to make sure every prompt has all four. Toggle <b>"GCSE colour-coded"</b> at the top of this page to see every prompt below broken into these four colours.</p>
+<table>
+<thead><tr><th style="width:90px">Letter</th><th>Stands for</th><th>What it does</th><th>Example fragment</th></tr></thead>
+<tbody>
+<tr><td><span class="badge" style="background:rgba(220,38,38,.15);color:var(--g-goal);border:1px solid var(--g-goal)">G</span> Goal</td><td>What you want Copilot to do</td><td>The verb. The outcome. The deliverable.</td><td><i>"Produce a 2-page research brief on global P2P lending complaints…"</i></td></tr>
+<tr><td><span class="badge" style="background:rgba(37,99,235,.15);color:var(--g-ctx);border:1px solid var(--g-ctx)">C</span> Context</td><td>Who you are; what situation</td><td>Role, audience, purpose, constraints.</td><td><i>"I am a Director of Sectoral Supervision overseeing 80 licensed P2P entities…"</i></td></tr>
+<tr><td><span class="badge" style="background:rgba(147,51,234,.15);color:var(--g-src);border:1px solid var(--g-src)">S</span> Source</td><td>Where to ground the answer</td><td>Files, sheets, URLs, jurisdictions, or "use your training" if none.</td><td><i>"Use the Fintech Sector Survey sheet in this workbook"</i> · <i>"Use authoritative sources: regulators, IMF, BIS, FSB"</i></td></tr>
+<tr><td><span class="badge" style="background:rgba(22,163,74,.15);color:var(--g-exp);border:1px solid var(--g-exp)">E</span> Expectation</td><td>What the output should look like</td><td>Length, format, tone, language, structure, must-haves.</td><td><i>"Reply with 6 bullets in the Contoso FSA voice; end with a 'What this means' section"</i></td></tr>
+</tbody>
+</table>
+<div class="callout good"><b>Tip for facilitators:</b> Run a 5-minute round where everyone rewrites a weak prompt using GCSE. The contrast is the lesson.</div>
+</div>
+</section>
+
+<!-- GET STARTED -->
+<section id="getstarted">
+<div class="modulehead"><div class="num">🔑</div><h2>Get started<small>Open Copilot now</small></h2></div>
+<div class="card">
+<ol>
+  <li>Open Microsoft Edge.</li>
+  <li>Go to <a href="https://m365.cloud.microsoft" target="_blank">m365.cloud.microsoft</a> (or <a href="https://copilot.cloud.microsoft" target="_blank">copilot.cloud.microsoft</a> if available).</li>
+  <li>Sign in with your <b>Contoso FSA</b> work account.</li>
+  <li>Click the <b>Copilot Chat</b> icon in the left rail.</li>
+  <li>If you have an M365 Copilot licence, look for the <b>Researcher</b> and <b>Analyst</b> agents in the same panel.</li>
+</ol>
+<div class="callout"><b>Tip:</b> Pin the Copilot Chat tab. We will return to it for every exercise today.</div>
+</div>
+</section>
+
+<!-- TRY IT YOURSELF -->
+<section id="try1">
+<div class="modulehead"><div class="num">🧪</div><h2>Try it yourself<small>Copilot Chat — usable by everyone</small></h2></div>
+<div class="card">
+<p class="lead">Open <b>Copilot Chat</b> and try these three prompts. They use only public information — no internal data needed. Toggle <b>"GCSE colour-coded"</b> at the top to see how each prompt is structured.</p>
+
+<div class="activity">
+  <div class="head"><span class="num">TRY 1</span><span class="time">~2 min</span><span class="badge blue">COPILOT CHAT</span></div>
+  <h4>Research a fintech sub-sector</h4>
+  <p>Use Copilot Chat as your daily research analyst.</p>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya seorang supervisor di sebuah otoritas jasa keuangan. Berikan saya ringkasan singkat tentang tren regulasi global untuk pinjaman peer-to-peer (P2P lending) dalam 12 bulan terakhir, dengan fokus pada praktik penagihan, transparansi biaya, dan perlindungan konsumen. Sebutkan 3-5 sumber otoritatif (regulator, IMF, BIS, FSB) dan akhiri dengan 3 pertanyaan terbuka yang harus saya tanyakan kepada asosiasi industri minggu depan. Maksimum 8 poin.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya seorang supervisor di sebuah otoritas jasa keuangan.</span> <span class="g"><span class="lbl">G</span>Berikan saya ringkasan tren regulasi global untuk pinjaman peer-to-peer (P2P lending) dalam 12 bulan terakhir, dengan fokus pada praktik penagihan, transparansi biaya, dan perlindungan konsumen.</span> <span class="s"><span class="lbl">S</span>Gunakan 3-5 sumber otoritatif: regulator nasional, IMF, BIS, FSB.</span> <span class="e"><span class="lbl">E</span>Maksimum 8 poin, akhiri dengan 3 pertanyaan terbuka yang harus saya tanyakan kepada asosiasi industri minggu depan.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am a supervisor at a financial services authority. Give me a brief summary of global regulatory trends in peer-to-peer (P2P) lending over the last 12 months, focusing on collection practices, fee transparency, and consumer protection. Cite 3-5 authoritative sources (regulators, IMF, BIS, FSB) and end with 3 open questions I should ask the industry association next week. Max 8 bullets.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am a supervisor at a financial services authority.</span> <span class="g"><span class="lbl">G</span>Give me a summary of global regulatory trends in peer-to-peer (P2P) lending over the last 12 months, focusing on collection practices, fee transparency, and consumer protection.</span> <span class="s"><span class="lbl">S</span>Use 3-5 authoritative sources: national regulators, IMF, BIS, FSB.</span> <span class="e"><span class="lbl">E</span>Max 8 bullets, ending with 3 open questions I should ask the industry association next week.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity" id="try2">
+  <div class="head"><span class="num">TRY 2</span><span class="time">~2 min</span><span class="badge blue">COPILOT CHAT</span></div>
+  <h4>Draft a stakeholder email</h4>
+  <p>Turn three rough bullets into a polished, professional email in seconds.</p>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya adalah Direktur Pengawasan Sektor di Contoso FSA dan akan mengirim email kepada Ketua Asosiasi Perbankan. Tolong tuliskan email resmi yang mengundang mereka ke pertemuan koordinasi triwulanan pada 14 November. Pertemuan akan membahas: (1) tindak lanjut kerangka ketahanan operasional, (2) kalender BCM tabletop, (3) dialog tertutup dengan dua bank Tier-1 mengenai buffer CAR. Bahasa Indonesia, nada profesional. Akhiri dengan permintaan konfirmasi kehadiran sebelum 31 Oktober.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya adalah Direktur Pengawasan Sektor di Contoso FSA dan akan mengirim email kepada Ketua Asosiasi Perbankan.</span> <span class="g"><span class="lbl">G</span>Tuliskan email resmi yang mengundang mereka ke pertemuan koordinasi triwulanan pada 14 November.</span> <span class="s"><span class="lbl">S</span>Pertemuan akan membahas: (1) tindak lanjut kerangka ketahanan operasional, (2) kalender BCM tabletop, (3) dialog tertutup dengan dua bank Tier-1 mengenai buffer CAR.</span> <span class="e"><span class="lbl">E</span>Bahasa Indonesia, nada profesional. Akhiri dengan permintaan konfirmasi kehadiran sebelum 31 Oktober.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am the Director of Sectoral Supervision at Contoso FSA and I'm about to email the Chairman of the Banking Association. Please write a formal email inviting them to the quarterly coordination meeting on 14 November. The meeting will cover: (1) follow-up on the operational resilience framework, (2) the BCM tabletop calendar, (3) a closed-door dialogue with two Tier-1 banks on CAR buffers. English, professional tone. End with a request to confirm attendance by 31 October.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am the Director of Sectoral Supervision at Contoso FSA and I'm about to email the Chairman of the Banking Association.</span> <span class="g"><span class="lbl">G</span>Write a formal email inviting them to the quarterly coordination meeting on 14 November.</span> <span class="s"><span class="lbl">S</span>The meeting will cover: (1) follow-up on the operational resilience framework, (2) the BCM tabletop calendar, (3) a closed-door dialogue with two Tier-1 banks on CAR buffers.</span> <span class="e"><span class="lbl">E</span>English, professional tone. End with a request to confirm attendance by 31 October.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity" id="try3">
+  <div class="head"><span class="num">TRY 3</span><span class="time">~1 min</span><span class="badge blue">COPILOT CHAT</span></div>
+  <h4>Summarise a long policy document</h4>
+  <p>Try this with any public consultation paper you can find online (paste the URL).</p>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya seorang supervisor di otoritas jasa keuangan yang sedang mempersiapkan posisi awal terhadap konsultasi publik internasional. Tolong baca dokumen yang ditautkan dan ringkas isinya. URL: https://www.fsb.org/uploads/P290426.pdf. Berikan: (a) ringkasan eksekutif maksimal 6 poin, (b) dampak utama bagi otoritas pengawas dalam 3 poin, (c) tiga risiko implementasi yang harus dipertimbangkan, dan (d) rekomendasi posisi awal yang netral.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya seorang supervisor di otoritas jasa keuangan yang sedang mempersiapkan posisi awal terhadap konsultasi publik internasional.</span> <span class="g"><span class="lbl">G</span>Baca dokumen yang ditautkan dan ringkas isinya untuk konsumsi internal.</span> <span class="s"><span class="lbl">S</span>URL: https://www.fsb.org/uploads/P290426.pdf.</span> <span class="e"><span class="lbl">E</span>Berikan: (a) ringkasan eksekutif maksimal 6 poin, (b) dampak utama bagi otoritas pengawas dalam 3 poin, (c) tiga risiko implementasi yang harus dipertimbangkan, (d) rekomendasi posisi awal yang netral.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am a supervisor at a financial services authority preparing an initial position on an international public consultation. Please read the linked document and summarise it. URL: https://www.fsb.org/uploads/P290426.pdf. Provide: (a) an executive summary in max 6 bullets, (b) the main impact on supervisory authorities in 3 bullets, (c) three implementation risks to consider, and (d) a neutral initial position recommendation.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am a supervisor at a financial services authority preparing an initial position on an international public consultation.</span> <span class="g"><span class="lbl">G</span>Read the linked document and summarise it for internal consumption.</span> <span class="s"><span class="lbl">S</span>URL: https://www.fsb.org/uploads/P290426.pdf.</span> <span class="e"><span class="lbl">E</span>Provide: (a) an executive summary in max 6 bullets, (b) the main impact on supervisory authorities in 3 bullets, (c) three implementation risks to consider, (d) a neutral initial position recommendation.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="callout good"><b>What you just experienced</b> is available to <b>every</b> employee at Contoso FSA today, regardless of licence type. The next exercises require an M365 Copilot premium licence.</div>
+</div>
+</section>
+
+<!-- HANDS-ON EXERCISES -->
+<section id="ex1">
+<div class="modulehead"><div class="num">1</div><h2>Exercise 1 · Researcher<small>Multi-model deep research</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">5 min</span><span class="time">Premium</span><span class="badge gold">RESEARCHER</span></div>
+  <h4>Goal: Produce a board-ready research brief on the global fintech complaints landscape</h4>
+  <p>Researcher uses two AI models (one writes, one critiques) before producing a single polished output. Try Model Council if you have time.</p>
+  <div class="task-step">
+    <div class="step-label">Step 1 · Open Researcher<span class="tool-badge">M365 COPILOT CHAT</span></div>
+    In Copilot Chat, switch to the <b>Researcher</b> agent. Keep the model selector on <b>Auto</b> (Critique mode). Optionally switch to <b>Model Council</b> for a comparative cover letter.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 2 · Run the prompt</div>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya adalah Direktur Pengawasan Sektor di Contoso Financial Services Authority yang mengawasi 80 entitas P2P berlisensi. Susun research brief sepanjang 2 halaman tentang tren global keluhan konsumen pinjaman peer-to-peer dalam 18 bulan terakhir. Cakup: (a) tema keluhan yang paling sering muncul; (b) respons regulasi di minimal 4 yurisdiksi (UK FCA, Australia ASIC, Singapore MAS, India RBI); (c) praktik pengawasan terbaru terkait perilaku penagihan dan transparansi biaya; (d) tiga implikasi bagi regulator gaya Indonesia. Gunakan sumber otoritatif (regulator, IMF, BIS, FSB). Akhiri dengan bagian 3 poin "Apa artinya bagi Contoso FSA".<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya adalah Direktur Pengawasan Sektor di Contoso Financial Services Authority yang mengawasi 80 entitas P2P berlisensi.</span> <span class="g"><span class="lbl">G</span>Susun research brief tentang tren global keluhan konsumen pinjaman peer-to-peer dalam 18 bulan terakhir.</span> <span class="s"><span class="lbl">S</span>Gunakan sumber otoritatif — regulator, IMF, BIS, FSB. Rujuk minimal 4 yurisdiksi: UK FCA, Australia ASIC, Singapore MAS, India RBI.</span> <span class="e"><span class="lbl">E</span>Brief 2 halaman yang mencakup (a) tema keluhan yang paling sering muncul, (b) respons regulasi di 4 yurisdiksi tersebut, (c) praktik pengawasan terbaru terkait perilaku penagihan dan transparansi biaya, (d) tiga implikasi bagi regulator gaya Indonesia. Akhiri dengan bagian 3 poin "Apa artinya bagi Contoso FSA".</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am the Director of Sectoral Supervision at Contoso Financial Services Authority overseeing 80 licensed P2P entities. Produce a 2-page research brief on global trends in peer-to-peer lending consumer complaints over the last 18 months. Cover: (a) the most common complaint themes; (b) regulatory responses across at least 4 jurisdictions (UK FCA, Australia ASIC, Singapore MAS, India RBI); (c) emerging supervisory practices on collection conduct and fee transparency; (d) three implications for an Indonesian-style regulator. Use authoritative sources (regulators, IMF, BIS, FSB). End with a 3-bullet "What this means for Contoso FSA" section.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am the Director of Sectoral Supervision at Contoso Financial Services Authority overseeing 80 licensed P2P entities.</span> <span class="g"><span class="lbl">G</span>Produce a research brief on global trends in peer-to-peer lending consumer complaints over the last 18 months.</span> <span class="s"><span class="lbl">S</span>Use authoritative sources — regulators, IMF, BIS, FSB. Reference at least 4 jurisdictions: UK FCA, Australia ASIC, Singapore MAS, India RBI.</span> <span class="e"><span class="lbl">E</span>A 2-page brief covering (a) most common complaint themes, (b) regulatory responses across the 4 jurisdictions, (c) emerging supervisory practices on collection conduct and fee transparency, (d) three implications for an Indonesian-style regulator. End with a 3-bullet "What this means for Contoso FSA" section.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 3 · Save to Word</div>
+    Click <b>Export to Word</b>. This becomes the briefing pack input for Exercise 4.
+  </div>
+</div>
+</section>
+
+<section id="ex2">
+<div class="modulehead"><div class="num">2</div><h2>Exercise 2 · Meeting Minutes<small>Teams Recap → Word</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">5 min</span><span class="time">Premium</span><span class="badge gold">WORD COPILOT</span><span class="file"><a href="02 ContosoFSA_Supervisory_Meeting_Transcript.docx" download>02 ContosoFSA_Supervisory_Meeting_Transcript.docx</a></span></div>
+  <h4>Goal: Turn a supervisory review transcript into a formal meeting minutes document</h4>
+  <p>In real life this comes from <b>Teams Recap</b> auto-transcription. Today we use a sample transcript so everyone — including those who did not attend a real meeting — can run the exercise.</p>
+  <div class="task-step">
+    <div class="step-label">Step 1 · Open the file<span class="tool-badge">WORD ON THE WEB</span></div>
+    Download <a href="02 ContosoFSA_Supervisory_Meeting_Transcript.docx" download>02 ContosoFSA_Supervisory_Meeting_Transcript.docx</a> and open it in Word. Click the <b>Copilot</b> icon in the ribbon.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 2 · Generate formal minutes</div>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya sedang menyiapkan notulen resmi rapat tinjauan pengawasan Q3 di Contoso FSA, untuk arsip pimpinan senior. Ubah transkrip yang sedang terbuka di dokumen Word ini menjadi notulen rapat resmi Contoso FSA dengan struktur berikut: (1) Header — judul rapat, tanggal/waktu, lokasi, klasifikasi; (2) Daftar peserta yang rapi; (3) Keputusan utama dalam bentuk poin; (4) Ringkasan diskusi, dikelompokkan per topik (Perbankan, Pasar Modal, Fintech, Perlindungan Konsumen, Surveilans) dengan 2-4 poin per topik; (5) Action items dalam tabel dengan kolom: Aksi / PIC / Tenggat; (6) Placeholder tanggal rapat berikutnya. Nada: netral, otoritatif sebagai regulator. Header dalam Bahasa Indonesia, bahasa konten mengikuti sumber.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya sedang menyiapkan notulen resmi rapat tinjauan pengawasan Q3 di Contoso FSA, untuk arsip pimpinan senior.</span> <span class="g"><span class="lbl">G</span>Ubah transkrip ini menjadi notulen rapat resmi Contoso FSA.</span> <span class="s"><span class="lbl">S</span>Gunakan transkrip rapat yang sedang terbuka di dokumen Word ini sebagai satu-satunya sumber.</span> <span class="e"><span class="lbl">E</span>Struktur: (1) Header (judul, tanggal/waktu, lokasi, klasifikasi); (2) Daftar peserta; (3) Keputusan utama dalam poin; (4) Ringkasan diskusi per topik (Perbankan, Pasar Modal, Fintech, Perlindungan Konsumen, Surveilans), 2-4 poin per topik; (5) Tabel action items — Aksi / PIC / Tenggat; (6) Placeholder rapat berikutnya. Nada: netral, otoritatif sebagai regulator. Header dalam Bahasa Indonesia, bahasa konten mengikuti sumber.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am preparing the formal minutes of a Q3 supervisory review meeting at Contoso FSA, archived for senior leadership. Transform the transcript currently open in this Word document into a formal Contoso FSA meeting minutes document. Use the following structure: (1) Header — meeting title, date/time, location, classification; (2) Attendees in a clean list; (3) Key decisions in bullet form; (4) Discussion summary, organised by topic (Banking, Capital Markets, Fintech, Consumer Protection, Surveillance) with 2-4 bullets each; (5) Action items in a table with columns: Action / Owner / Due date; (6) Next meeting date placeholder. Tone: neutral, authoritative regulator. English throughout.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am preparing the formal minutes of a Q3 supervisory review meeting at Contoso FSA, archived for senior leadership.</span> <span class="g"><span class="lbl">G</span>Transform this transcript into a formal Contoso FSA meeting minutes document.</span> <span class="s"><span class="lbl">S</span>Use the meeting transcript currently open in this Word document as the only source.</span> <span class="e"><span class="lbl">E</span>Structure as: (1) Header (title, date/time, location, classification); (2) Attendees list; (3) Key decisions in bullets; (4) Discussion summary by topic (Banking, Capital Markets, Fintech, Consumer Protection, Surveillance) with 2-4 bullets each; (5) Action items table — Action / Owner / Due date; (6) Next meeting placeholder. Tone: neutral, authoritative regulator. English throughout.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 3 · Polish</div>
+    Ask Copilot: "Now make sure all action items have a clear owner and a date. Highlight any item that is missing one in <b>red</b> in a follow-up note."
+  </div>
+</div>
+</section>
+
+<section id="ex3">
+<div class="modulehead"><div class="num">3</div><h2>Exercise 3 · Sector Survey Analysis<small>Excel + Plan in Excel + Analyst</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">10 min</span><span class="time">Premium</span><span class="badge gold">EXCEL COPILOT</span><span class="badge gold">ANALYST</span><span class="file"><a href="01 ContosoFSA_Fintech_Sector_Survey.xlsx" download>01 ContosoFSA_Fintech_Sector_Survey.xlsx</a></span></div>
+  <h4>Goal: Surface the riskiest fintech entities and visualise the Q3 sector picture</h4>
+  <p>You have 80 licensed fintechs across 8 sub-sectors. Find the outliers, build a dashboard, and produce a one-paragraph executive summary — without writing a single formula.</p>
+  <div class="task-step">
+    <div class="step-label">Task 3a · Convert to a Table<span class="tool-badge">EXCEL</span></div>
+    Open <a href="01 ContosoFSA_Fintech_Sector_Survey.xlsx" download>01 ContosoFSA_Fintech_Sector_Survey.xlsx</a> in Excel. On the <b>Fintech Sector Survey</b> sheet press <b>Ctrl + T</b> to convert the data to a Table.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Task 3b · Plan in Excel</div>
+    Open the Copilot pane and try Plan in Excel — describe an outcome, approve the plan, then run.
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya seorang pengawas sektor yang sedang menyiapkan dashboard Q3 untuk tinjauan internal. Bangun dashboard pengawasan Q3 pada sheet baru bernama "Q3 Dashboard", menggunakan tabel Fintech Sector Survey yang baru saya buat. Saya ingin: (1) KPI strip dengan empat tile — total entitas, total AUM dalam IDR Bn, rata-rata skor kepatuhan AML, dan jumlah entitas berperingkat High risk; (2) grafik kolom jumlah entitas per sub-sektor; (3) grafik batang total keluhan per sub-sektor; (4) tabel 10 entitas berisiko tertinggi (urutkan menurut Risk Rating lalu Complaints Filed Q3 secara descending) dengan kolom: Entity Name, Sub-sector, Region, Complaints, AML Score, Cyber Incidents, Risk Rating; (5) pewarnaan bersyarat: High = merah, Elevated = amber, Moderate = kuning, Low = hijau. Tampilkan rencanamu lebih dulu; saya akan menyetujui sebelum kamu menjalankannya.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya seorang pengawas sektor yang sedang menyiapkan dashboard Q3 untuk tinjauan internal.</span> <span class="g"><span class="lbl">G</span>Bangun dashboard pengawasan Q3 pada sheet baru bernama "Q3 Dashboard".</span> <span class="s"><span class="lbl">S</span>Gunakan tabel Fintech Sector Survey yang baru saya buat di workbook ini.</span> <span class="e"><span class="lbl">E</span>Sertakan (1) KPI strip dengan empat tile — total entitas, total AUM (IDR Bn), rata-rata skor kepatuhan AML, jumlah entitas High-risk; (2) grafik kolom jumlah per sub-sektor; (3) grafik batang keluhan per sub-sektor; (4) tabel top-10 entitas berisiko tertinggi, urutkan menurut Risk Rating lalu Complaints descending, kolom: Entity Name, Sub-sector, Region, Complaints, AML Score, Cyber Incidents, Risk Rating; (5) warna bersyarat: High=merah, Elevated=amber, Moderate=kuning, Low=hijau. Tampilkan rencananya lebih dulu dan tunggu persetujuan saya sebelum dijalankan.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I am a sectoral supervisor preparing the Q3 dashboard for an internal review. Build me a Q3 supervisory dashboard on a new sheet called "Q3 Dashboard", using the Fintech Sector Survey table I just created. I want: (1) a KPI strip with four tiles — total entities, total AUM in IDR Bn, average AML compliance score, and number of entities rated High risk; (2) a column chart of count of entities by sub-sector; (3) a bar chart of total complaints by sub-sector; (4) a table of the top 10 highest-risk entities (sorted by Risk Rating then Complaints Filed Q3 descending) with columns: Entity Name, Sub-sector, Region, Complaints, AML Score, Cyber Incidents, Risk Rating; (5) conditional colour coding so that High = red, Elevated = amber, Moderate = yellow, Low = green. Show me the plan first; I will approve before you run it.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I am a sectoral supervisor preparing the Q3 dashboard for an internal review.</span> <span class="g"><span class="lbl">G</span>Build me a Q3 supervisory dashboard on a new sheet called "Q3 Dashboard".</span> <span class="s"><span class="lbl">S</span>Use the Fintech Sector Survey table I just created in this workbook.</span> <span class="e"><span class="lbl">E</span>Include (1) a KPI strip with four tiles — total entities, total AUM (IDR Bn), average AML compliance score, count of High-risk entities; (2) a column chart of count by sub-sector; (3) a bar chart of complaints by sub-sector; (4) a top-10 highest-risk entities table sorted by Risk Rating then Complaints descending, with columns: Entity Name, Sub-sector, Region, Complaints, AML Score, Cyber Incidents, Risk Rating; (5) conditional colours: High=red, Elevated=amber, Moderate=yellow, Low=green. Show me the plan first and pause for my approval before running.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Task 3c · Ask Analyst</div>
+    Open the Copilot pane → Analyst. Drop in the workbook.
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Saya seorang analis risiko senior di Contoso FSA yang sedang menyiapkan pre-read dewan untuk minggu depan. Telaah seluruh sheet Fintech Sector Survey, Capital Markets Indicators, dan Bank Sector KPIs di workbook ini. Beri tahu saya: (a) sub-sektor mana yang menjadi sumber kekhawatiran pengawasan terbesar pada kuartal ini dan mengapa, dengan menyebut data spesifik; (b) 5 bank mana yang paling mungkin memerlukan perhatian pengawasan kuartal depan berdasarkan CAR, NPL, dan BOPO; (c) pola lintas sektor antara keluhan fintech dan volatilitas pasar modal. Jawab dengan ringkasan eksekutif 6 poin yang cocok untuk pre-read dewan.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Saya seorang analis risiko senior di Contoso FSA yang sedang menyiapkan pre-read dewan untuk minggu depan.</span> <span class="g"><span class="lbl">G</span>Identifikasi prioritas kekhawatiran pengawasan di seluruh tiga dataset secara bersamaan.</span> <span class="s"><span class="lbl">S</span>Gunakan sheet Fintech Sector Survey, Capital Markets Indicators, dan Bank Sector KPIs di workbook ini.</span> <span class="e"><span class="lbl">E</span>Beri tahu saya (a) sub-sektor mana yang menjadi sumber kekhawatiran pengawasan terbesar kuartal ini dan mengapa, dengan menyebut data spesifik; (b) 5 bank mana yang paling mungkin memerlukan perhatian pengawasan kuartal depan berdasarkan CAR, NPL, dan BOPO; (c) pola lintas sektor antara keluhan fintech dan volatilitas pasar modal. Jawab dengan ringkasan eksekutif 6 poin yang cocok untuk pre-read dewan.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">I'm a senior risk analyst at Contoso FSA preparing a board pre-read for next week. Look across the Fintech Sector Survey, Capital Markets Indicators, and Bank Sector KPIs sheets in this workbook. Tell me: (a) which sub-sector is the biggest source of supervisory concern this quarter and why, citing specific data points; (b) which 5 banks are most likely to need supervisory attention next quarter based on CAR, NPL, and BOPO; (c) any cross-sector pattern between fintech complaints and capital-markets volatility. Reply with a 6-bullet executive summary suitable for a board pre-read.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>I'm a senior risk analyst at Contoso FSA preparing a board pre-read for next week.</span> <span class="g"><span class="lbl">G</span>Identify the top supervisory concerns across all three datasets together.</span> <span class="s"><span class="lbl">S</span>Use the Fintech Sector Survey, Capital Markets Indicators, and Bank Sector KPIs sheets in this workbook.</span> <span class="e"><span class="lbl">E</span>Tell me (a) which sub-sector is the biggest source of supervisory concern this quarter and why, citing specific data points; (b) which 5 banks are most likely to need supervisory attention next quarter based on CAR, NPL, and BOPO; (c) any cross-sector pattern between fintech complaints and capital-markets volatility. Reply with a 6-bullet executive summary suitable for a board pre-read.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+</div>
+</section>
+
+<section id="ex4">
+<div class="modulehead"><div class="num">4</div><h2>Exercise 4 · Cowork → HTML Dashboard<small>Delegate the whole workflow</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">15 min</span><span class="time">Premium</span><span class="badge gold">COWORK</span><span class="file"><a href="01 ContosoFSA_Fintech_Sector_Survey.xlsx" download>01 ContosoFSA_Fintech_Sector_Survey.xlsx</a></span><span class="file"><a href="03 ContosoFSA_Stakeholder_Briefing.docx" download>03 ContosoFSA_Stakeholder_Briefing.docx</a></span><span class="file"><a href="04 ContosoFSA_Brand_Guidelines.docx" download>04 ContosoFSA_Brand_Guidelines.docx</a></span></div>
+  <h4>Goal: Delegate a full publication workflow ending in an interactive HTML supervisory dashboard</h4>
+  <p>Cowork is your delegated colleague: describe the outcome, approve the plan, and let Copilot produce the artefacts. We end the session with a downloadable HTML dashboard you can open in a browser and share with your peers.</p>
+  <div class="task-step">
+    <div class="step-label">Step 1 · Open Cowork<span class="tool-badge">M365 COPILOT</span></div>
+    In Copilot Chat, switch to the <b>Cowork</b> agent. Upload the three files listed above as grounding.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 2 · Delegate the workflow</div>
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Bertindaklah sebagai chief of staff saya. Saya akan mempublikasikan gambaran Q3 kepada pimpinan dan tiga badan pemangku kepentingan. Dengan menggunakan tiga file yang saya unggah (Q3 Fintech Sector Survey, Stakeholder Coordination Briefing, dan Contoso FSA Brand &amp; Publication Guidelines), produksi tiga artefak berikut secara berurutan:
+
+(1) Ringkasan eksekutif 5 poin dengan gaya bahasa Contoso FSA (otoritatif namun mudah dipahami, bahasa sederhana).
+
+(2) Draf email dari Direktur Pengawasan Sektor kepada Asosiasi Perbankan, pimpinan Bursa Efek, dan Asosiasi Industri Fintech, yang mengundang mereka ke kalender pemangku kepentingan Q4 — ambil tanggal dan topik dari Stakeholder Briefing.
+
+(3) Dashboard pengawasan HTML satu file bernama "ContosoFSA_Q3_Dashboard.html" yang dapat saya buka di browser. Gunakan warna merek Authority Blue #1E3A5F dan Trust Gold #C9A227. Sertakan: header "Contoso FSA — Q3 2026 Supervisory Snapshot"; empat KPI tile (total entitas fintech berlisensi, total AUM IDR Bn, rata-rata skor kepatuhan AML, jumlah entitas High-risk); grafik batang keluhan per sub-sektor dan grafik batang jumlah entitas per sub-sektor menggunakan Chart.js dari CDN; tabel Top 10 entitas fintech berisiko tertinggi; footer "Confidential — Internal Use Only". Semua styling inline; tanpa dependensi eksternal selain Chart.js CDN; semua data chart di-inline sebagai array JS dari workbook survei.
+
+Tampilkan rencananya lebih dulu. Tunggu persetujuan saya sebelum menjalankan setiap langkah. Setelah saya menyetujui, produksi ketiga artefak dan berikan HTML sebagai file yang dapat saya unduh.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Bertindaklah sebagai chief of staff saya. Saya akan mempublikasikan gambaran Q3 kepada pimpinan dan tiga badan pemangku kepentingan.</span> <span class="g"><span class="lbl">G</span>Produksi tiga artefak berikut secara berurutan: (1) ringkasan eksekutif 5 poin, (2) email koordinasi pemangku kepentingan, (3) dashboard pengawasan HTML interaktif.</span> <span class="s"><span class="lbl">S</span>Gunakan tiga file yang saya unggah: Q3 Fintech Sector Survey, Stakeholder Coordination Briefing, dan Contoso FSA Brand &amp; Publication Guidelines.</span> <span class="e"><span class="lbl">E</span>(1) Ringkasan eksekutif dengan gaya bahasa Contoso FSA (otoritatif namun mudah dipahami, bahasa sederhana). (2) Email dari Direktur Pengawasan Sektor kepada BAI, pimpinan IDX, dan FAN, mengundang mereka ke kalender pemangku kepentingan Q4 — ambil tanggal dan topik dari Stakeholder Briefing. (3) HTML satu file bernama "ContosoFSA_Q3_Dashboard.html" dengan warna merek #1E3A5F + #C9A227, berisi: header "Contoso FSA — Q3 2026 Supervisory Snapshot"; empat KPI tile (entitas / AUM / rata-rata AML / jumlah High-risk); dua grafik batang (keluhan per sub-sektor, jumlah per sub-sektor) via Chart.js CDN; tabel top-10 berisiko tertinggi; footer "Confidential — Internal Use Only"; styling inline; tanpa dependensi eksternal selain Chart.js CDN; data chart di-inline sebagai array JS. Tampilkan rencananya lebih dulu dan tunggu persetujuan sebelum setiap langkah.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">Act as my chief of staff. I'm publishing the Q3 picture to the leadership team and three stakeholder bodies. Using the three files I uploaded (the Q3 Fintech Sector Survey, the Stakeholder Coordination Briefing, and the Contoso FSA Brand &amp; Publication Guidelines), produce three artefacts in this order:
+
+(1) A 5-bullet executive summary in the Contoso FSA voice (authoritative but accessible, plain language).
+
+(2) A draft email from the Director of Sectoral Supervision to the Banking Association, the Stock Exchange leadership and the Fintech Industry Association, inviting them to the Q4 stakeholder calendar — pull dates and topics from the Stakeholder Briefing.
+
+(3) A single-file HTML supervisory dashboard called "ContosoFSA_Q3_Dashboard.html" that I can open in a browser. Use brand colours Authority Blue #1E3A5F and Trust Gold #C9A227. Include: a header "Contoso FSA — Q3 2026 Supervisory Snapshot"; four KPI tiles (total licensed fintech entities, total AUM IDR Bn, average AML compliance score, count of High-risk entities); a bar chart of complaints by sub-sector and a bar chart of count of entities by sub-sector using Chart.js from a CDN; a table of the Top 10 highest-risk fintech entities; a footer "Confidential — Internal Use Only". All styling inline; no external dependencies other than Chart.js CDN; all chart data inlined as JS arrays from the survey workbook.
+
+Show me the plan first. Pause for my approval before running each step. After I approve, produce all three artefacts and give me the HTML as a downloadable file.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Act as my chief of staff. I'm publishing the Q3 picture to the leadership team and three stakeholder bodies.</span> <span class="g"><span class="lbl">G</span>Produce three artefacts in this order: (1) a 5-bullet executive summary, (2) a stakeholder coordination email, (3) an interactive HTML supervisory dashboard.</span> <span class="s"><span class="lbl">S</span>Use the three files I uploaded: the Q3 Fintech Sector Survey, the Stakeholder Coordination Briefing, and the Contoso FSA Brand &amp; Publication Guidelines.</span> <span class="e"><span class="lbl">E</span>(1) Executive summary in Contoso FSA voice (authoritative but accessible, plain language). (2) Email from the Director of Sectoral Supervision to BAI, IDX leadership and FAN, inviting them to the Q4 stakeholder calendar — pull dates and topics from the Stakeholder Briefing. (3) Single-file HTML named "ContosoFSA_Q3_Dashboard.html" using brand colours #1E3A5F + #C9A227, with: header "Contoso FSA — Q3 2026 Supervisory Snapshot"; four KPI tiles (entities / AUM / avg AML / High-risk count); two bar charts (complaints by sub-sector, count by sub-sector) via Chart.js CDN; top-10 highest-risk table; footer "Confidential — Internal Use Only"; inline styling; no external deps other than Chart.js CDN; chart data inlined as JS arrays. Show me the plan first and pause for approval before each step.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 3 · Open and admire</div>
+    Download the HTML file. Double-click to open in your browser. This is your take-home artefact — share it with your team.
+  </div>
+  <div class="callout good"><b>What just happened:</b> You moved from raw data and a briefing document to an interactive shareable artefact in under 15 minutes — using only natural language. This is the new pattern of work for a regulator: <b>describe the outcome, approve the plan, ship the artefact.</b></div>
+</div>
+</section>
+
+
+<section id="ex5">
+<div class="modulehead"><div class="num">5</div><h2>Exercise 5 · Scale with Agent Builder<small>Turn the whole workflow into a reusable agent</small></h2></div>
+<div class="activity">
+  <div class="head"><span class="num">5 min</span><span class="time">Premium</span><span class="badge gold">AGENT BUILDER</span><span class="file"><a href="01 ContosoFSA_Fintech_Sector_Survey.xlsx" download>01 Survey</a></span><span class="file"><a href="03 ContosoFSA_Stakeholder_Briefing.docx" download>03 Briefing</a></span><span class="file"><a href="04 ContosoFSA_Brand_Guidelines.docx" download>04 Brand</a></span></div>
+  <h4>Goal: Package the Q3 review workflow as a no-code agent your whole team can reuse</h4>
+  <p>Agent Builder lets you describe an agent in natural language — no developer required. The result is a custom Copilot grounded on your files that every supervisor can invoke in one click, every quarter.</p>
+  <div class="task-step">
+    <div class="step-label">Step 1 · Open Agent Builder<span class="tool-badge">M365 COPILOT</span></div>
+    In Copilot Chat, click <b>Create an agent</b> (or open the Agent Builder pane). Upload the three sample files as knowledge sources.
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 2 · Describe your agent</div>
+    Paste the prompt below into the agent description. Adjust the persona, sub-sectors, or starter prompts to match your team.
+<div class="prompt-lang bi"><span class="flag">🇮🇩</span>Bahasa Indonesia</div>
+<div class="prompt prompt-plain">Bangun agen Copilot bernama "CFSA Q3 Supervisory Review Assistant".
+
+Tujuan: membantu setiap supervisor di Contoso Financial Services Authority menjalankan tinjauan sektor triwulanan Q3 secara lengkap — dari riset hingga dashboard yang siap dibagikan ke pemangku kepentingan — dalam satu percakapan.
+
+Instruksi agen:
+• Selalu sapa pengguna sebagai supervisor CFSA dan tanyakan sub-sektor fokus (Perbankan, Pasar Modal, atau Fintech).
+• Dasarkan setiap jawaban pada tiga file pengetahuan yang diunggah: Fintech Sector Survey, Stakeholder Briefing, dan Brand &amp; Publication Guidelines.
+• Gunakan gaya bahasa Contoso FSA sesuai Brand Guidelines: otoritatif namun mudah dipahami.
+• Saat pengguna meminta analisis, ikuti urutan: (1) ringkasan data, (2) tiga risiko tertinggi dengan rujukan ke baris spesifik, (3) saran tindak lanjut untuk pemangku kepentingan.
+• Saat pengguna meminta artefak publikasi, tawarkan tiga output Cowork (ringkasan eksekutif, email pemangku kepentingan, dashboard HTML) dan tanyakan mana yang ingin diproduksi lebih dulu.
+• Jangan pernah membuat keputusan pengawasan; selalu sajikan opsi dan rekomendasi untuk disetujui pengguna.
+
+Prompt awal yang disarankan:
+1. "Berikan gambaran sektor fintech Q3."
+2. "Susun draf email pemangku kepentingan untuk rapat koordinasi Q4."
+3. "Bangun dashboard HTML Q3."
+
+Pengetahuan: gunakan ketiga file yang diunggah sebagai sumber pengetahuan agen.
+
+Nada: profesional, ringkas. Default Bahasa Indonesia; beralih ke Bahasa Inggris jika pengguna menulis dalam Bahasa Inggris.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Setiap supervisor di CFSA menjalankan tinjauan sektor Q3 yang sama setiap kuartal.</span> <span class="g"><span class="lbl">G</span>Bangun agen Copilot bernama "CFSA Q3 Supervisory Review Assistant" yang memandu seluruh alur kerja dari riset hingga dashboard.</span> <span class="s"><span class="lbl">S</span>Gunakan tiga file yang diunggah: Fintech Sector Survey, Stakeholder Briefing, dan Brand &amp; Publication Guidelines.</span> <span class="e"><span class="lbl">E</span>Agen harus: (1) menyapa sebagai supervisor CFSA dan menanyakan sub-sektor fokus; (2) untuk analisis — ringkasan data, top-3 risiko dengan rujukan baris, saran tindak lanjut; (3) untuk publikasi — menawarkan ringkasan eksekutif, email, atau dashboard HTML; (4) tidak pernah memutuskan, hanya merekomendasikan untuk disetujui pengguna. Sertakan 3 starter prompts. Nada profesional dan ringkas; default Bahasa Indonesia, beralih ke Bahasa Inggris bila perlu.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt-lang en"><span class="flag">🇬🇧</span>English</div>
+<div class="prompt prompt-plain">Build me a Copilot agent called "CFSA Q3 Supervisory Review Assistant".
+
+Purpose: help any supervisor at Contoso Financial Services Authority run a complete Q3 quarterly sectoral review — from research to a stakeholder-ready dashboard — in a single conversation.
+
+Instructions for the agent:
+• Always greet the user as a CFSA supervisor and confirm which sub-sector they want to focus on (Banking, Capital Markets, or Fintech).
+• Ground every answer on the three uploaded knowledge files: Fintech Sector Survey, Stakeholder Briefing, and Brand &amp; Publication Guidelines.
+• Use the Contoso FSA voice from the Brand Guidelines: authoritative but accessible.
+• When the user asks for analysis, follow this sequence: (1) summarise the data, (2) highlight top-3 risks with citations to specific rows, (3) suggest a stakeholder follow-up action.
+• When the user asks for a publication artefact, offer the three Cowork outputs (executive summary, stakeholder email, HTML dashboard) and ask which one to produce first.
+• Never make a supervisory decision; always present options and recommendations for the user to approve.
+
+Starter prompts to suggest:
+1. "Give me the Q3 sector picture for fintech."
+2. "Draft the stakeholder email for the Q4 coordination meeting."
+3. "Build the Q3 HTML dashboard."
+
+Knowledge: attach the three uploaded files as the agent's knowledge sources.
+
+Tone: professional, concise. Bahasa Indonesia by default; switch to English if the user writes in English.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="prompt prompt-gcse"><span class="c"><span class="lbl">C</span>Every supervisor at CFSA runs the same Q3 sectoral review each quarter.</span> <span class="g"><span class="lbl">G</span>Build a Copilot agent called "CFSA Q3 Supervisory Review Assistant" that walks them through the entire workflow from research to dashboard.</span> <span class="s"><span class="lbl">S</span>Use the three uploaded files: Fintech Sector Survey, Stakeholder Briefing, and Brand &amp; Publication Guidelines.</span> <span class="e"><span class="lbl">E</span>The agent must: (1) greet as a CFSA supervisor and ask which sub-sector to focus on; (2) for analysis — summarise data, top-3 risks with row-level citations, suggest a follow-up action; (3) for publication — offer the executive summary, stakeholder email, or HTML dashboard; (4) never decide, only recommend for user approval. Include 3 starter prompts. Professional concise tone; Bahasa Indonesia default, switch to English when needed.</span><button class="copy" onclick="cp(this)">Copy</button></div>
+  </div>
+  <div class="task-step">
+    <div class="step-label">Step 3 · Test and share</div>
+    Click <b>Create</b>. Test with one of the starter prompts. When satisfied, click <b>Share</b> and add your team — they get the same one-click workflow without touching the prompt.
+  </div>
+  <div class="callout good"><b>The big idea:</b> You just turned a one-person, one-day workflow into a <b>team-wide capability</b>. Every quarter, every supervisor can run the same Q3 review in minutes — consistent, grounded on CFSA files, in CFSA voice.</div>
+</div>
+</section>
+
+<!-- TIPS -->
+<section id="tips">
+<div class="modulehead"><div class="num">💡</div><h2>Tips &amp; prompts<small>Take these home</small></h2></div>
+<div class="card">
+  <h4>Five prompt habits that make Copilot 10× better</h4>
+  <ul>
+    <li><b>Use GCSE.</b> Goal · Context · Source · Expectation. Every prompt. Every time.</li>
+    <li><b>Set the role.</b> "Act as a senior risk analyst..." beats no role 9 times out of 10.</li>
+    <li><b>Set the audience.</b> "...for a board pre-read" or "...for the Director" changes the output.</li>
+    <li><b>Constrain the length.</b> "In 6 bullets" or "in 200 words" prevents wall-of-text.</li>
+    <li><b>Iterate.</b> First draft is rarely the final. Ask Copilot to "make it more concise" or "make the tone more authoritative".</li>
+  </ul>
+  <h4>Three things Copilot will not do for you</h4>
+  <ul>
+    <li>Make supervisory or enforcement decisions — Copilot drafts, you decide.</li>
+    <li>Replace primary-source verification — always cross-check facts before publication.</li>
+    <li>Access systems it has not been connected to — your tenant, your files, your rules.</li>
+  </ul>
+  <h4>Where to go next</h4>
+  <ul>
+    <li>Copilot Adoption Hub: <a href="https://adoption.microsoft.com/copilot" target="_blank">adoption.microsoft.com/copilot</a></li>
+    <li>Copilot Lab (prompt library): <a href="https://copilot.cloud.microsoft/prompts" target="_blank">copilot.cloud.microsoft/prompts</a></li>
+    <li>M365 Copilot Roadmap: <a href="https://www.microsoft.com/microsoft-365/roadmap" target="_blank">microsoft.com/microsoft-365/roadmap</a></li>
+  </ul>
+</div>
+</section>
+
+</main>
+</div><!-- /layout -->
+
+<script>
+// ── Password ──
+const HASH='794b0f3448296d8bcc7cf057ad57ab29d10e71d1861b3c4fe84e797d623252c7';
+async function sha256(s){const b=new TextEncoder().encode(s);const d=await crypto.subtle.digest('SHA-256',b);return Array.from(new Uint8Array(d)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function unlock(){
+  const v=document.getElementById('pw').value;
+  const h=await sha256(v);
+  if(h===HASH){
+    document.getElementById('lock').style.display='none';
+    document.getElementById('main').style.display='grid';
+    sessionStorage.setItem('cfsa_unlocked','1');
+    localStorage.setItem('cfsa_unlocked','1');
+  } else {
+    const e=document.getElementById('err');
+    e.textContent='Incorrect password. Please try again.';
+    setTimeout(()=>e.textContent='',3000);
+    document.getElementById('pw').value='';
+  }
+}
+function togglePw(){
+  const pw=document.getElementById('pw');
+  const svg=document.getElementById('eye-svg');
+  const btn=document.getElementById('toggle-pw');
+  if(pw.type==='password'){pw.type='text';btn.title='Hide password';svg.setAttribute('viewBox','0 0 576 512');svg.querySelector('path').setAttribute('d','M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.2 13.2 3.2 20.3z');}
+  else {pw.type='password';btn.title='Show password';svg.setAttribute('viewBox','0 0 640 512');svg.querySelector('path').setAttribute('d','M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z');}
+}
+if(sessionStorage.getItem('cfsa_unlocked')==='1'||localStorage.getItem('cfsa_unlocked')==='1'){
+  document.getElementById('lock').style.display='none';
+  document.getElementById('main').style.display='grid';
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock();});
+
+// ── GCSE toggle ──
+function setMode(g){
+  document.body.classList.toggle('gcse',g);
+  document.getElementById('btn-plain').classList.toggle('on',!g);
+  document.getElementById('btn-gcse').classList.toggle('on',g);
+  localStorage.setItem('cfsa_gcse', g?'1':'0');
+}
+if(localStorage.getItem('cfsa_gcse')==='1') setMode(true);
+
+// ── Copy prompts (works for both plain and gcse) ──
+function cp(btn){
+  // Strip the labels (G/C/S/E) when copying GCSE — keep only the body text
+  const parent=btn.parentElement.cloneNode(true);
+  parent.querySelectorAll('.lbl').forEach(n=>n.remove());
+  parent.querySelectorAll('button').forEach(n=>n.remove());
+  const txt=parent.textContent.replace(/\s+/g,' ').trim();
+  navigator.clipboard.writeText(txt).then(()=>{
+    btn.textContent='Copied!';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);
+  });
+}
+
+// ── Active nav highlight ──
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      document.querySelectorAll('aside nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+    }
+  });
+},{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>

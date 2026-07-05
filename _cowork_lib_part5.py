@@ -1258,6 +1258,381 @@ CARDS['uc-cga-autonomous-raid-digest'] = {
 }
 
 
+# ── Contoso Tobacco & Wellness demo — CHT excise-tariff shock ─
+
+CARDS['uc-tobacco-cht-tax-shock'] = {
+    'title': 'FY27 CHT Excise-Tariff Step Response Pack — Tobacco Industry Power Move',
+    'dept_tag': 'Strategy & Trade',
+    'industry_tag': 'Tobacco / CPG',
+    'complexity': 'advanced',
+    'apps': ['Excel', 'Word', 'Outlook', 'Cowork'],
+    'desc': 'When the Ministry of Finance signals the FY27 CHT (Cukai Hasil Tembakau) tariff step, Cowork rebuilds the country response pack in one prompt: pricing scenarios by SKU tier (SKM / SKT / SPM), pita-cukai (excise-band) rollover plan, distributor cut-over letter, and a 1-page CEO pre-read — grounded on the KPI dashboard and strategic memo.',
+    'skills': [
+        'CHT tier structure and per-SKU excise-band (pita-cukai) impact modelling',
+        'Three-scenario pricing (Hold price / Partial pass-through / Downtrade to SKT)',
+        'Distributor cut-over communication grounded on new price ladder + BC (Bea Cukai) rules',
+        'Source-grounded discipline — every assumption tagged [ASSUMPTION:...], every unknown [VERIFY]',
+    ],
+    'instructions': [
+        'Copilot Chat → Cowork',
+        'Reference /TW_KPI_Dashboard.xlsx + /TW_Strategic_Memo.docx',
+        'Paste the prompt — Cowork builds the 4 artefacts in parallel',
+        'HOD reviews before CEO pre-read is forwarded',
+    ],
+    'sample_files': [
+        ('TW_KPI_Dashboard.xlsx', 'xlsx'),
+        ('TW_Strategic_Memo.docx', 'docx'),
+    ],
+    'prompts': [{
+        'label': 'FY27 CHT tariff step response pack',
+        'text': (
+            "Act as Country Strategy lead supporting the GM · Tobacco Operations at Contoso Tobacco & Wellness Indonesia. The FY27 CHT (Cukai Hasil Tembakau) tariff step has been signalled — assume the average weighted excise rate rises 10% with a wider gap between SKM (Sigaret Kretek Mesin), SKT (Sigaret Kretek Tangan) and SPM (Sigaret Putih Mesin) tiers, effective 1 January next fiscal year. Use /TW_KPI_Dashboard.xlsx (volumes, share, current price ladder by SKU and region) and /TW_Strategic_Memo.docx.\n\n"
+            "Produce four artefacts in parallel:\n\n"
+            "1. PRICING SCENARIOS (Excel-style table) — three scenarios (Hold price / Partial pass-through / Downtrade lean into SKT) with modelled volume sensitivity, share impact, and gross-profit impact per affected SKU tier. Recommended scenario per SKU.\n\n"
+            "2. PITA-CUKAI ROLLOVER PLAN (Word, 1 page) — timing for new excise-band procurement from Bea Cukai, in-trade stock treatment, plant cut-over date per Karawang / Malang / Kediri, and the 30-day communication window to Ministry of Finance and DJBC (Direktorat Jenderal Bea Cukai).\n\n"
+            "3. DISTRIBUTOR LETTER (Word, 0.5 page, EN + BI side by side) — signed by GM · Tobacco Operations, explaining the new price ladder, cut-over logistics, credit-note treatment for in-trade stock, and BC-2.5 documentation.\n\n"
+            "4. CEO PRE-READ (Word, 1 page) — what we are doing, why, expected P&L impact, the 3 risks we are watching (downtrade to illicit market, distributor cash-flow, competitor pricing response), and 2 open questions for the Group Board.\n\n"
+            "Use precise Indonesian FMCG / regulatory language (CHT, pita-cukai, DJBC, Bea Cukai, DJP, PP 109/2012, PMK, BPOM, SKM/SKT/SPM). Flag every assumption with [ASSUMPTION:...]. Do not invent KPI numbers — pull from the source file or mark [VERIFY]."
+        )
+    }],
+    'expected': [
+        '3-scenario pricing impact table (Excel)',
+        'Pita-cukai rollover plan (Word, 1 page)',
+        'Distributor cut-over letter EN + BI (Word, 0.5 page)',
+        'CEO pre-read (Word, 1 page)',
+    ],
+    'watch': [
+        'Three scenarios shown side-by-side — no premature recommendation',
+        'Every figure traceable to source file + sheet + row — no invented KPIs',
+        'Assumptions explicitly tagged — HOD knows grounded vs inferred',
+        'Distributor letter in EN + BI — partner reads in preferred language',
+    ],
+    'honest': 'Downtrade elasticity from SKM to SKT is historical; actual behaviour on a CHT step may differ, especially with illicit-market leakage. Reformulation and pita-cukai procurement have hard lead times set by DJBC — flag any cut-over date as provisional. Pricing & Trade Committee owns the decision; CEO pre-read is reviewed by the HOD first.',
+    'tips': [
+        'Pin as a custom skill — Trade Strategy re-runs within minutes of any RAPBN speech',
+        'Run a parallel "what if the SKM-SKT gap widens further" sensitivity',
+        'Pair with a downtrade-monitor Analyst-agent view to catch early leakage into illicit',
+    ],
+}
+
+
+# ── Contoso Lifestyle Retail demo — new-store go/no-go pack ─
+
+CARDS['uc-retail-newstore-gonogo'] = {
+    'title': 'New-Store Go / No-Go Decision Pack — Retail Industry Power Move',
+    'dept_tag': 'Strategy & Store Development',
+    'industry_tag': 'Retail',
+    'complexity': 'advanced',
+    'apps': ['Excel', 'Word', 'PowerPoint', 'Cowork'],
+    'desc': 'A mall developer just offered Contoso Retail a 450 sqm anchor unit. The GM has 48 hours to decide. Cowork builds the whole decision pack in one prompt: 4-year DCF with 3 sensitivities, catchment cannibalisation table, human-and-fitout capex, and a 1-page Committee pre-read with a Recommend / Decline / Counter-offer verdict.',
+    'skills': [
+        'Store-level DCF with sensitivities (rent, traffic, ATV, cannibalisation) in Excel',
+        'Cannibalisation analysis against nearby existing stores',
+        'Fitout + operating-model cost build with headcount roles and salary bands',
+        'Committee pre-read that lands a clear Go / No-Go / Counter-offer',
+    ],
+    'instructions': [
+        'Copilot Chat → Cowork',
+        'Reference /Retail_KPI_Dashboard.xlsx + /Mall_Offer_Term_Sheet.pdf',
+        'Paste the prompt — Cowork builds the 4 artefacts',
+        'Committee reviews before the 48-hour deadline',
+    ],
+    'sample_files': [
+        ('Retail_KPI_Dashboard.xlsx', 'xlsx'),
+        ('Mall_Offer_Term_Sheet.pdf', 'pdf'),
+    ],
+    'prompts': [{
+        'label': 'New-store go/no-go decision pack',
+        'text': (
+            "Act as the Store Development lead supporting the GM · Retail Operations at Contoso Lifestyle Retail. A mall developer has offered us a 450 sqm anchor unit in [MALL NAME], with a 5-year lease starting Q3, base rent RM [X]/sqm + 8% turnover rent, 6-month fitout, RM [Y] key money. We have 48 hours to decide.\n\n"
+            "Use /Retail_KPI_Dashboard.xlsx (chain-wide same-store sales, ATV, conversion, category mix) and /Mall_Offer_Term_Sheet.pdf.\n\n"
+            "Produce four artefacts in parallel:\n\n"
+            "1. STORE-LEVEL DCF (Excel-style table) — 4-year projection with revenue build (traffic × conversion × ATV), COGS, opex, fitout capex amortisation, base + turnover rent, EBITDA, IRR, NPV @ 10% WACC. Three sensitivities: rent ±10%, traffic ±15%, ATV ±10%. Show breakeven month.\n\n"
+            "2. CANNIBALISATION TABLE — list every existing store within 5 km catchment, expected % transfer of revenue from each, net new revenue vs cannibalised revenue.\n\n"
+            "3. HUMAN & FITOUT CAPEX BUILD (Word, 1 page) — headcount roles + salary bands + fitout line items (design, MEP, joinery, POS, IT, permits) with a per-line source of estimate.\n\n"
+            "4. COMMITTEE PRE-READ (Word, 1 page) — the 48-hour decision, a Recommend / Decline / Counter-offer verdict with rationale, the 3 assumptions the recommendation hinges on, and the 2 counter-offer levers if we push back (rent-free months, cap on turnover rent).\n\n"
+            "Precise retail language (ATV, conversion, footfall, category mix, GTO, key money, fitout, MEP, turnover rent, catchment, cannibalisation). Flag every assumption [ASSUMPTION:...]. Do not fabricate — mark [VERIFY] if not in source."
+        )
+    }],
+    'expected': [
+        '4-year DCF with 3 sensitivities + breakeven',
+        'Cannibalisation table with net new revenue',
+        'Human + fitout capex build with source of estimate',
+        '1-page Committee pre-read with clear verdict',
+    ],
+    'watch': [
+        'DCF sensitivities are visible — Committee sees the range, not one number',
+        'Cannibalisation modelled explicitly — not hidden behind "chain revenue up"',
+        'Verdict is a clear Recommend / Decline / Counter-offer — no waffle',
+        'Counter-offer levers ready — GM can negotiate immediately if verdict is Counter-offer',
+    ],
+    'honest': 'Catchment cannibalisation is directional; real transfer only shows up 3-6 months post-open. If the mall is a first-mover for the brand in that catchment, transfer will be lower than modelled. Committee owns the final call; the pack is decision support, not a decision.',
+    'tips': [
+        'Pin as a custom skill — every new-store offer runs through the same shape',
+        'Save the DCF template with locked assumption cells so the Finance team can re-run in 10 minutes',
+        'Add a "3-month post-open review" scheduled task in Cowork to check actuals against the DCF',
+    ],
+}
+
+
+# ── Contoso Geothermal demo — PPA compliance + steam-decline power move ─
+
+CARDS['uc-geo-ppa-compliance'] = {
+    'title': 'PPA Quarterly Compliance + Steam-Decline Mitigation — Geothermal Power Move',
+    'dept_tag': 'Plant Operations & Regulatory',
+    'industry_tag': 'Renewable Energy',
+    'complexity': 'advanced',
+    'apps': ['Excel', 'Word', 'PowerPoint', 'Cowork'],
+    'desc': 'The quarterly PPA review with PLN is 2 weeks away. Cowork produces the whole briefing pack in one prompt: PPA compliance scorecard (availability, capacity factor, take-or-pay), steam-decline diagnosis by well, remediation portfolio (workover + make-up wells), and the PLN review pre-read.',
+    'skills': [
+        'PPA (Power Purchase Agreement) obligation tracking — availability, capacity factor, take-or-pay',
+        'Steam-decline analysis per production well with remediation options',
+        'Make-up well capex vs workover programme trade-off framing',
+        'PLN-facing briefing tone (formal, respectful, defensible)',
+    ],
+    'instructions': [
+        'Copilot Chat → Cowork',
+        'Reference /Geo_Plant_KPI.xlsx (well production + plant availability) + /Geo_PPA_Terms.pdf',
+        'Paste the prompt — Cowork builds the 4 artefacts',
+        'Plant Manager reviews before the pack goes to Regulatory Affairs',
+    ],
+    'sample_files': [
+        ('Geo_Plant_KPI.xlsx', 'xlsx'),
+        ('Geo_PPA_Terms.pdf', 'pdf'),
+    ],
+    'prompts': [{
+        'label': 'PPA quarterly compliance + steam-decline pack',
+        'text': (
+            "Act as Regulatory Affairs lead supporting the GM · Plant Operations at Contoso Geothermal Indonesia. The quarterly PPA review with PLN is in 2 weeks. Use /Geo_Plant_KPI.xlsx (well-level steam flow, wellhead pressure, enthalpy, plant availability, capacity factor for last 4 quarters) and /Geo_PPA_Terms.pdf (contracted availability, capacity payment structure, take-or-pay threshold, force-majeure clauses).\n\n"
+            "Produce four artefacts in parallel:\n\n"
+            "1. PPA COMPLIANCE SCORECARD (Excel table) — quarter-by-quarter: contracted vs actual availability, capacity factor vs guarantee, take-or-pay energy delivered, curtailment events, penalty exposure. Flag any quarter that breached a threshold with the clause number.\n\n"
+            "2. STEAM-DECLINE DIAGNOSIS (Word, 1 page + chart) — per-well decline rate over 12 months, enthalpy drop, wellhead-pressure trend. Segment wells into Healthy / Marginal / Declining. For Declining wells, identify the likely mechanism (reservoir pressure, scaling, non-condensable gas breakthrough) using the KPI data.\n\n"
+            "3. REMEDIATION PORTFOLIO (Word, 1 page) — 5 options ranked by expected MWh recovery vs capex: (a) workover of 3 declining wells, (b) 1 new make-up production well, (c) reinjection optimisation, (d) NCG management upgrade, (e) partial plant retrofit. Show expected steam recovery, capex band, lead time, and PPA-impact score.\n\n"
+            "4. PLN REVIEW PRE-READ (Word, 1 page, EN + BI side by side) — the quarter's story: why we are where we are, what we are doing about it, the 1 ask of PLN (e.g. curtailment flexibility, tariff review). Tone: formal, respectful, defensible. End with an ESDM + PLN escalation matrix.\n\n"
+            "Precise geothermal + power-sector language (WKP, PPA, take-or-pay, capacity factor, availability, curtailment, enthalpy, NCG, reinjection, workover, make-up well, PLN, ESDM, DGRE). Flag every assumption [ASSUMPTION:...]. Do not fabricate — [VERIFY] if not in source."
+        )
+    }],
+    'expected': [
+        'PPA compliance scorecard with clause-level breach flags',
+        'Steam-decline diagnosis per well + segmentation',
+        'Remediation portfolio ranked by MWh recovery / capex',
+        'PLN review pre-read (EN + BI)',
+    ],
+    'watch': [
+        'Compliance scorecard cites the PPA clause — defensible in front of PLN',
+        'Steam decline diagnosed by data, not opinion — Copilot names the likely mechanism',
+        'Remediation portfolio shows trade-off not preferred option — Committee picks',
+        'PLN pre-read is EN + BI — bilingual review with PLN counterparts',
+    ],
+    'honest': 'Steam-decline mechanism identification from KPI data alone is directional — final diagnosis needs the reservoir engineering team with tracer test / pressure-transient data. Any capex recommendation must go through the Reservoir Committee + DGRE approval. Copilot drafts the pack; engineers decide.',
+    'tips': [
+        'Pin as a quarterly scheduled Cowork task — run 2 weeks before every PPA review',
+        'Add a 5th artefact: a 5-slide deck version for the PLN meeting',
+        'Pair with the ESG disclosure card if the quarter needs a GHG + carbon-credit line',
+    ],
+}
+
+
+# ── Contoso Pizza Co demo — Lebaran promo pack (QSR power move) ─
+
+CARDS['uc-qsr-lebaran-promo'] = {
+    'title': 'Lebaran Promo Launch Pack in 30 Minutes — QSR Industry Power Move',
+    'dept_tag': 'Brand & Marketing',
+    'industry_tag': 'QSR / Food',
+    'complexity': 'intermediate',
+    'apps': ['Excel', 'PowerPoint', 'Word', 'Outlook', 'Copilot Create', 'Cowork'],
+    'desc': 'Lebaran is 6 weeks out. Cowork builds the whole promo launch pack in one prompt: outlet clustering by sales potential, promo mechanic + menu bundle, campaign brief, launch-comms cascade to 120 outlet managers, and 3 on-brand infographic posters (Ops team, Store window, Social).',
+    'skills': [
+        'Outlet segmentation by sales velocity + delivery mix + food cost',
+        'Promo mechanic construction (bundle price ladder, uplift target, cannibalisation guardrails)',
+        '120-outlet personalised comms cascade in one Cowork prompt',
+        'On-brand infographic set (Copilot Create) for the same campaign in 3 formats',
+    ],
+    'instructions': [
+        'Copilot Chat → Cowork',
+        'Reference /Pizza_Outlet_Sales.xlsx + /Pizza_Menu_Cost.xlsx + /Pizza_Brand_Guide.pdf',
+        'Paste the prompt — Cowork builds the 5 artefacts',
+        'Then jump to Copilot Create for the 3 posters',
+    ],
+    'sample_files': [
+        ('Pizza_Outlet_Sales.xlsx', 'xlsx'),
+        ('Pizza_Menu_Cost.xlsx', 'xlsx'),
+        ('Pizza_Brand_Guide.pdf', 'pdf'),
+    ],
+    'prompts': [{
+        'label': 'Lebaran 2026 promo launch pack',
+        'text': (
+            "Act as Head of Marketing supporting the GM · Retail Operations at Contoso Pizza Co Indonesia. Lebaran is 6 weeks out. Build the whole promo launch pack in one Cowork run.\n\n"
+            "Use /Pizza_Outlet_Sales.xlsx (12-month outlet-level sales, delivery mix, dine-in mix), /Pizza_Menu_Cost.xlsx (per-SKU food cost, contribution margin), /Pizza_Brand_Guide.pdf (colours, tone, illustration style).\n\n"
+            "Produce five artefacts in parallel:\n\n"
+            "1. OUTLET CLUSTERING (Excel table) — cluster the 120 outlets into 4 tiers (Hero / Growth / Steady / Watch) using sales velocity, delivery mix (Ojol vs owned), and food-cost trend. Show target promo uplift per tier and the guardrail (min contribution margin per bundle).\n\n"
+            "2. PROMO MECHANIC (Word, 1 page) — Lebaran-appropriate bundle (family sharing size, halal-certified topping mix, dessert add-on). Price ladder: 3 bundle tiers. Uplift target per tier. Delivery-partner co-funding ask. Cannibalisation guardrails against standard menu.\n\n"
+            "3. CAMPAIGN BRIEF (Word, 1 page) — target segments (Buka Puasa, Hari Raya family, Silaturahmi office), messaging pillars, 6-week phasing (teaser / launch / peak / after-Lebaran), delivery-partner activation.\n\n"
+            "4. LAUNCH COMMS CASCADE (Cowork mail-merge) — 120 personalised emails to outlet managers with: their tier, their target uplift, their top-3 SKUs to push, the co-funding they get from HQ, and the 2 KPIs they will be measured on. Draft in Outlook, hold for Head of Marketing approval before send.\n\n"
+            "5. 3 INFOGRAPHIC POSTERS (Copilot Create prompt drafts) — (a) Ops team A4 landscape 'How the promo works' one-pager; (b) Store window A3 portrait 'Family Bundle · Lebaran 2026'; (c) Social 1080x1080 square. Use the brand palette from /Pizza_Brand_Guide.pdf; halal-appropriate visual language (no pork; no alcohol; family / warmth / kebersamaan).\n\n"
+            "Precise QSR + Indonesian retail language (Ojol, dine-in, delivery mix, ATV, food cost %, contribution margin, halal, Buka Puasa, Silaturahmi, THR). Flag every assumption [ASSUMPTION:...]. Do not fabricate — [VERIFY] if not in source."
+        )
+    }],
+    'expected': [
+        'Outlet cluster + tier-specific target',
+        'Promo mechanic + price ladder',
+        'Campaign brief with 6-week phasing',
+        '120 personalised outlet-manager emails (drafts)',
+        '3 infographic poster briefs',
+    ],
+    'watch': [
+        'Outlet clustering uses real velocity + mix — not one national target',
+        'Promo guardrails on contribution margin are visible — no chasing revenue at negative margin',
+        'Comms cascade is 120 unique letters in one prompt — not 1 template',
+        '3 poster variants sized for the actual channel (ops / window / social)',
+    ],
+    'honest': 'Uplift targets are directional — Lebaran demand elasticity depends on brand-love, distribution, and the delivery partner promotion calendar. Comms cascade emails are drafts — Head of Marketing must review before send, especially the per-outlet KPI commitments. Posters need brand + halal-compliance sign-off before printing or posting.',
+    'tips': [
+        'Save as a reusable custom skill — the same shape works for Natal, Chinese New Year, Deepavali',
+        'Add a "day 30 review" Cowork scheduled task to check actual uplift vs target per tier',
+        'Pair with the Analyst-agent multi-perspective card to run GM / CFO / COO views on the mechanic before launch',
+    ],
+}
+
+
+# ── Contoso Mining Services demo — Vendor vs KAK comparison ─
+
+CARDS['uc-mining-vendor-vs-kak'] = {
+    'title': 'Vendor Bid vs KAK Comparison — EPC / Mining Services Power Move',
+    'dept_tag': 'Procurement & Contracts',
+    'industry_tag': 'Mining Services / EPC',
+    'complexity': 'intermediate',
+    'apps': ['PowerPoint', 'Word', 'Excel', 'Cowork', 'Copilot Create'],
+    'desc': 'Three vendors have bid on the site services scope. Cowork produces the whole procurement pack in one prompt: side-by-side vendor vs KAK (Kerangka Acuan Kerja) comparison slide, capability gap table, commercial normalisation, risk-adjusted score, and a Tender Capability One-Pager infographic for the internal committee.',
+    'skills': [
+        'KAK (Kerangka Acuan Kerja / Terms of Reference) requirement extraction',
+        'Vendor-by-vendor gap analysis against KAK line items',
+        'Commercial normalisation (unit rate, mob/demob, contingency)',
+        'Risk-adjusted vendor scoring with weighted criteria',
+    ],
+    'instructions': [
+        'Copilot Chat → Cowork',
+        'Reference /Mining_KAK.pdf + /Vendor_A_Bid.pdf + /Vendor_B_Bid.pdf + /Vendor_C_Bid.pdf',
+        'Paste the prompt — Cowork builds the 4 artefacts + PowerPoint slide',
+        'Then run Copilot Create for the Tender Capability One-Pager',
+    ],
+    'sample_files': [
+        ('Mining_KAK.pdf', 'pdf'),
+        ('Vendor_A_Bid.pdf', 'pdf'),
+        ('Vendor_B_Bid.pdf', 'pdf'),
+        ('Vendor_C_Bid.pdf', 'pdf'),
+    ],
+    'prompts': [{
+        'label': 'Vendor vs KAK comparison pack',
+        'text': (
+            "Act as Procurement lead supporting the GM · Site Services at Contoso Mining Services Indonesia. Three vendors have bid on the site services scope. Use /Mining_KAK.pdf (the client's Kerangka Acuan Kerja) and the three bid documents /Vendor_A_Bid.pdf, /Vendor_B_Bid.pdf, /Vendor_C_Bid.pdf.\n\n"
+            "Produce four artefacts in parallel:\n\n"
+            "1. VENDOR vs KAK COMPARISON SLIDE (PowerPoint) — a single slide with a 3-column table (Vendor A / B / C) against the KAK scope lines. Green tick / amber partial / red gap per line. Bottom of slide: a 1-line commercial summary per vendor (headline price, delivery time, mob date).\n\n"
+            "2. CAPABILITY GAP TABLE (Word, 1 page) — per vendor, list every KAK requirement they partially meet or do not meet, with the specific bid section reference and the mitigation the vendor proposes (or NONE if silent).\n\n"
+            "3. COMMERCIAL NORMALISATION (Excel table) — flatten each bid to the same unit-rate structure (manhour, plant-hour, consumable). Show mob/demob separately. Show contingency %. Show the normalised total on an apples-to-apples basis.\n\n"
+            "4. RISK-ADJUSTED SCORE (Word, 0.5 page) — a weighted scoring matrix: Technical (40%), Commercial (30%), Delivery (20%), Local content (10%). Score each vendor 1-5 per criterion, with a one-line justification citing the bid section. Show the recommended vendor + the 2 conditions we would attach.\n\n"
+            "Precise EPC / mining procurement language (KAK, RKS, HPS, mob/demob, TKDN local content, kontrak lump-sum vs remeasured, retention, LD, defects liability). Flag every assumption [ASSUMPTION:...]. Do not fabricate — [VERIFY] if not in source."
+        )
+    }],
+    'expected': [
+        'Vendor vs KAK slide (PowerPoint)',
+        'Capability gap table per vendor',
+        'Commercial normalisation (Excel)',
+        'Risk-adjusted score with recommended vendor + conditions',
+    ],
+    'watch': [
+        'Comparison slide is honest — amber and red are shown, not hidden',
+        'Every gap cites the specific bid section',
+        'Commercial normalisation makes vendors apples-to-apples — no hidden mob/demob',
+        'Recommendation includes 2 conditions — not a blank endorsement',
+    ],
+    'honest': 'Vendor bid documents vary in how they present the same information — extraction is directional. Any gap Copilot identifies must be verified against the bid PDF by the Procurement Officer before it goes to the Tender Committee. Local-content (TKDN) claims should be independently checked with the KLIK certificate. Final vendor selection is the Tender Committee\'s call.',
+    'tips': [
+        'Pin as a custom skill — every tender runs through the same comparison shape',
+        'Pair with the Copilot Create "Tender Capability One-Pager" for the internal debrief pack',
+        'For >3 vendors, run in batches of 3 and combine the shortlists',
+    ],
+}
+
+
+# ── Contoso Minerals Legal demo — Permen ESDM legal memo ─
+
+CARDS['uc-legal-permen-esdm'] = {
+    'title': 'New Permen ESDM Research + IRAC Legal Memo — Mining Legal Power Move',
+    'dept_tag': 'Legal & Compliance',
+    'industry_tag': 'Mining Legal',
+    'complexity': 'advanced',
+    'apps': ['Researcher', 'Word', 'Cowork'],
+    'desc': 'A new Permen ESDM (Ministry of Energy and Mineral Resources regulation) has just been issued. Legal Counsel produces a formal IRAC memo (Issue / Rule / Analysis / Conclusion) grounded on Peraturan.go.id + Hukumonline + JDIH + the internal Legal Knowledge Base, with director-level talking points and a risk register — in one Cowork run.',
+    'skills': [
+        'Researcher Critique mode over Indonesian regulatory sources (Peraturan.go.id, JDIH, Hukumonline)',
+        'IRAC (Issue / Rule / Analysis / Conclusion) legal memo structure',
+        'Grounding on internal Legal Knowledge Base with citation discipline',
+        'Director-level (Direktur Utama / Anak Holding CEO) talking points',
+    ],
+    'instructions': [
+        'Copilot Chat → Researcher → Critique mode → paste Prompt 1 for the sector scan',
+        'Copilot Chat → reference /Legal_KB/ → paste Prompt 2 for the IRAC memo',
+        'Word → paste Prompt 3 for the risk register + director talking points',
+    ],
+    'sample_files': [
+        ('Permen_ESDM_[NUMBER].pdf', 'pdf'),
+    ],
+    'prompts': [
+        {
+            'label': '1. Researcher Critique — regulatory scan',
+            'text': (
+                "Researcher Critique mode. New regulation: Permen ESDM No. [NUMBER] of [YEAR] on [SUBJECT]. Scan the following sources with citation: (a) the regulation text on Peraturan.go.id or JDIH ESDM; (b) commentary on Hukumonline.com; (c) analysis by the top-3 Indonesian law firms with an energy/mining practice.\n\n"
+                "Produce a source-grounded briefing with:\n"
+                "(1) the 5 material substantive changes vs the previous Permen ESDM this replaces or amends\n"
+                "(2) the 5 immediate compliance obligations that trigger within 90 days\n"
+                "(3) the 3 open interpretive questions where practitioner commentary disagrees\n"
+                "(4) the transition rules and grandfathering provisions\n"
+                "(5) the enforcement mechanism and sanction ladder\n\n"
+                "Cite every point with the source and retrieval timestamp. Use precise Indonesian regulatory language (Permen, Perpres, Perda, PP, UU, Kepmen, Peraturan Menteri, JDIH, LKPP, ESDM, MODI, SIMBARA, IUP, IUPK, KK, PKP2B, RKAB)."
+            )
+        },
+        {
+            'label': '2. IRAC Legal Memo — grounded on the Legal KB',
+            'text': (
+                "Draft a formal IRAC legal memo for Contoso Minerals Holding on the impact of Permen ESDM No. [NUMBER] of [YEAR] on our current IUP / IUPK portfolio. Ground on /Legal_KB/ (internal precedent memos, standard contract templates, prior compliance opinions).\n\n"
+                "Structure:\n"
+                "ISSUE — the specific legal question(s) the Direktur Utama needs answered\n"
+                "RULE — the applicable provisions of the new Permen ESDM, cross-referenced to the parent UU Minerba and any conflicting regulations. Cite article and paragraph.\n"
+                "ANALYSIS — apply the rule to each of our 6 anak holding mining companies, identifying the specific IUP / IUPK affected. Note where our current contracts (PKP2B, KK, JOA) contain terms that require amendment. Flag any Sunset date.\n"
+                "CONCLUSION — the recommended legal position, the 3 immediate actions the Legal team will take, and the 2 items requiring Direktur Utama sign-off.\n\n"
+                "Every legal proposition must cite the source (regulation article, internal memo file). Do not invent. If the internal KB is silent on a point, mark [KB SILENT — external counsel required]. Use precise Indonesian legal drafting style (Menimbang, Mengingat, Menetapkan)."
+            )
+        },
+        {
+            'label': '3. Risk Register + Director Talking Points',
+            'text': (
+                "From the IRAC memo above, produce two artefacts in Word:\n\n"
+                "(1) RISK REGISTER (table): Row per identified risk. Columns: Risk description, Affected anak holding, Likelihood (H/M/L), Impact (H/M/L), Existing mitigation, Additional mitigation required, Owner, Target date.\n\n"
+                "(2) DIRECTOR-LEVEL TALKING POINTS (1 page): 5 bullets the Direktur Utama can use in the next Board meeting — what the regulation is, what it means for us, what we are doing about it, what we need from the Board, the 1 open question that requires their steer. Tone: formal, defensible, plain Bahasa Indonesia with English legal terms in italics where the English term is the industry standard. No jargon without definition on first use."
+            )
+        },
+    ],
+    'expected': [
+        'Researcher Critique sector scan with citations',
+        'IRAC legal memo grounded on internal KB',
+        'Risk register + Director talking points',
+    ],
+    'watch': [
+        'Every legal proposition cites the specific article or memo file',
+        '[KB SILENT] tag is honest — Copilot flags where external counsel is needed',
+        'Talking points are for a Director, not a lawyer — plain BI, English terms in italics',
+        'Risk register has an owner + target date on every row',
+    ],
+    'honest': 'Copilot drafts; Legal Counsel decides. Any legal position that goes external (to the regulator, counterparty, or court) must be reviewed by an admitted lawyer with a valid PERADI license. Researcher can miss nuances in newly-issued regulations where JDIH has not yet published commentary — for high-stakes matters, engage external counsel for a second opinion. The IRAC memo is a first draft, not the final legal opinion.',
+    'tips': [
+        'Pin as a custom skill — every new Permen / Perpres / PP runs through the same shape',
+        'Pair with the Excel-Analyst litigation view for regulatory-enforcement-history analysis',
+        'For counterparty-facing memos, add a fourth prompt that generates a BI + EN executive summary',
+    ],
+}
+
+
 # ---------------- DEPARTMENT-SPECIFIC CARDS ----------------
 
 CARDS['uc-fin-monthend'] = {

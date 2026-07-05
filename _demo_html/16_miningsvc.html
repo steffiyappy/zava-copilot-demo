@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<title>Contoso Mining Services · M365 Copilot GM Immersion</title>
+<style>
+:root{--radius:12px;--shadow:0 2px 8px rgba(0,0,0,.12);--brand:#b45309;--brand2:#f59e0b}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1020;--panel:#0e1633;--panel2:#0a1228;--ink:#e2e8f0;--muted:#94a3b8;--border:#1e2d4a;--sidebar-a:#0e1530;--sidebar-b:#0a0f24;--accent:#3b82f6;--accent2:#60a5fa;--nav-hover:#172244;--badge-bg:#0a0f24;--cp-info:#0e1c2c;--cp-warn:#2b220e;--cp-bad:#2b1414;--cp-good:#0e2418;--code:#0d1535;--good:#22c55e;--warn:#f59e0b;--danger:#ef4444;--callout-info:#0e1c2c;--callout-warn:#2b220e;--callout-bad:#2b1414;--callout-good:#0e2418}}
+@media(prefers-color-scheme:light){:root{--bg:#f0f4f8;--panel:#ffffff;--panel2:#f0f6ff;--ink:#1a202c;--muted:#64748b;--border:#d1d9e6;--sidebar-a:#1e3a5f;--sidebar-b:#0f2545;--accent:#2563eb;--accent2:#1d4ed8;--nav-hover:#dbeafe;--badge-bg:#e8f0fe;--cp-info:#eff6ff;--cp-warn:#fffbeb;--cp-bad:#fef2f2;--cp-good:#f0fdf4;--code:#1e2b55;--good:#16a34a;--warn:#d97706;--danger:#dc2626;--callout-info:#eff6ff;--callout-warn:#fffbeb;--callout-bad:#fef2f2;--callout-good:#f0fdf4}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Inter","Segoe UI",system-ui,sans-serif;overflow-x:hidden;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+code,pre{font-family:"JetBrains Mono","Consolas",monospace;font-size:13px}
+.layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+aside{background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));border-right:1px solid var(--border);padding:24px 18px;position:sticky;top:0;height:100vh;overflow-y:auto;color:#e2e8f0}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.brand .logo{width:36px;height:36px;border-radius:9px;background:var(--brand);display:grid;place-items:center;font-weight:900;color:#fff;font-size:12px;letter-spacing:-.5px}
+.brand h1{font-size:15px;margin:0;letter-spacing:.2px;color:#fff}
+.tag{font-size:11px;color:#94a3b8;margin-bottom:18px}
+nav h3{font-size:10px;letter-spacing:1.2px;color:#94a3b8;text-transform:uppercase;margin:18px 0 8px}
+nav a{display:block;color:#e2e8f0;padding:8px 10px;border-radius:9px;font-size:14px;margin-bottom:2px;border:1px solid transparent}
+nav a:hover{background:rgba(255,255,255,.12);text-decoration:none;border-color:rgba(255,255,255,.2);color:#fff}
+main{padding:28px 48px 80px;max-width:1400px}
+.hero{background:radial-gradient(800px 320px at 0% 0%,rgba(0,48,135,.35),transparent 60%),radial-gradient(700px 280px at 100% 0%,rgba(0,100,200,.2),transparent 60%),var(--panel);border:1px solid var(--border);border-radius:18px;padding:30px;margin-bottom:24px}
+.hero .pill{display:inline-block;background:var(--badge-bg);border:1px solid var(--border);color:var(--accent2);font-size:11px;letter-spacing:1.2px;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.hero h2{font-size:30px;margin:0 0 8px;line-height:1.2}
+.hero p{color:var(--muted);margin:0;max-width:780px}
+.meta-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;color:var(--muted);font-size:13px}
+.meta-row span b{color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:18px}.card .lead{color:var(--muted);margin:0 0 14px}
+.card h4{margin:18px 0 6px;font-size:15px;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+ul{padding-left:20px;margin:8px 0}li{margin:4px 0}
+.modulehead{display:flex;align-items:center;gap:14px;margin:32px 0 12px}
+.modulehead .num{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;font-weight:800;font-size:20px;color:#fff}
+.modulehead h2{margin:0;font-size:22px}.modulehead small{display:block;color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.activity{border:1px solid var(--border);border-radius:12px;padding:18px;margin:14px 0;background:var(--panel)}
+.activity .head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.activity .num{background:var(--accent);color:#fff;font-weight:800;font-size:12px;padding:3px 9px;border-radius:6px}
+.activity .time{color:var(--muted);font-size:12px}
+.activity .file{font-size:12px;color:var(--accent2);background:var(--badge-bg);border:1px solid var(--border);padding:3px 9px;border-radius:6px}
+.activity h4{margin:0;font-size:16px;color:var(--ink);font-weight:600}
+.activity p{margin:6px 0;color:var(--muted);font-size:14px}
+.activity.bonus{border-left:4px solid var(--brand)}
+.task-step{background:var(--panel2);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:12px 14px;margin:10px 0}
+.task-step .step-label{font-size:11px;letter-spacing:1px;color:var(--accent2);text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.prompt{position:relative;background:var(--code);border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:10px;padding:14px 44px 14px 16px;margin:10px 0;font-family:"JetBrains Mono","Consolas",monospace;font-size:13px;color:#c9d6ff;white-space:pre-wrap;line-height:1.6}
+.prompt .copy{position:absolute;top:8px;right:8px;background:#1a2552;color:#e2e8f0;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s}
+.prompt .copy:hover{background:var(--brand);color:#fff}.prompt .copy.copied{background:var(--good);color:#0a0f24}
+.callout{border-left:4px solid var(--accent2);background:var(--callout-info);padding:12px 16px;margin:12px 0;border-radius:8px;color:var(--ink);font-size:14px}
+.callout.warn{border-color:var(--warn);background:var(--callout-warn)}
+.callout.good{border-color:var(--good);background:var(--callout-good)}.callout b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{color:var(--accent2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
+.agenda{display:grid;grid-template-columns:90px 1fr 100px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.agenda>div{padding:10px 14px;border-bottom:1px solid var(--border)}
+.agenda>div:nth-child(3n+1){color:var(--accent2);font-weight:700;background:var(--panel)}
+.agenda>div:nth-child(3n+3){color:var(--muted);text-align:right}
+.agenda>div:nth-last-child(-n+3){border-bottom:0}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
+.tool-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
+.tool-card .icon{font-size:22px;margin-bottom:6px}
+.tool-card h5{margin:0 0 4px;font-size:14px;color:var(--ink)}
+.tool-card p{margin:0;font-size:12px;color:var(--muted);line-height:1.5}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;letter-spacing:.5px}
+.badge.blue{background:rgba(0,100,200,.2);color:var(--accent2);border:1px solid var(--accent)}
+.badge.green{background:rgba(34,197,94,.15);color:var(--good);border:1px solid var(--good)}
+.badge.yellow{background:rgba(245,158,11,.15);color:var(--warn);border:1px solid var(--warn)}
+#lock{position:fixed;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(0,48,135,.5),transparent 60%),#0b1020;z-index:9999;display:flex;align-items:center;justify-content:center}
+.lock-box{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:40px 44px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lock-box .blogo{width:56px;height:56px;border-radius:14px;background:var(--brand);display:grid;place-items:center;font-weight:900;font-size:18px;color:#fff;margin:0 auto 18px}
+.lock-box h2{margin:0 0 6px;font-size:22px}.lock-box p{color:var(--muted);font-size:14px;margin:0 0 22px}
+.pw-wrap{position:relative;margin-bottom:12px}
+.lock-box input{width:100%;background:var(--badge-bg);border:1px solid var(--border);border-radius:10px;color:var(--ink);font-size:15px;padding:12px 44px 12px 16px;outline:none;font-family:inherit;transition:border-color .2s}
+.lock-box input:focus{border-color:var(--brand)}
+.pw-toggle{position:absolute!important;right:12px;top:50%;transform:translateY(-50%);background:none!important;border:none!important;width:auto!important;padding:0!important;cursor:pointer;opacity:.7;color:var(--muted)}
+.pw-toggle:hover{background:none!important;opacity:1}
+.pw-toggle svg{width:18px;height:18px;fill:currentColor;display:block}
+.lock-box button{width:100%;background:var(--brand);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;padding:13px;cursor:pointer}
+.lock-box .err{color:var(--danger);font-size:13px;margin-top:8px;min-height:18px}
+.lock-box .conf{font-size:11px;color:var(--muted);margin-top:14px}
+@media(max-width:900px){
+ .layout{grid-template-columns:1fr}
+ aside{display:none}
+ main{padding:16px 14px 60px;max-width:100%;min-width:0}
+ .hero{padding:20px 16px;border-radius:14px;background:var(--panel)}
+ .hero h2{font-size:20px;line-height:1.25}
+ .hero p{font-size:13.5px}
+ .hero .pill{font-size:10px}
+ .meta-row{gap:10px;font-size:12px}
+ .modulehead{gap:10px;margin:24px 0 10px}
+ .modulehead .num{width:38px;height:38px;font-size:15px;flex:0 0 auto}
+ .modulehead h2{font-size:17px}
+ .activity{padding:14px}
+ .activity .head{gap:8px}
+ .card{padding:16px;border-radius:12px}
+ .card h3{font-size:16px}
+ .card h4{font-size:13px}
+ .agenda{grid-template-columns:1fr}.agenda>div:nth-child(3n+3){text-align:left}
+ .tools-grid{grid-template-columns:1fr}
+ .prompt{font-size:12px;padding:42px 12px 12px;border-left-width:3px;overflow-wrap:anywhere;word-break:break-word}
+ .prompt .copy{top:6px;right:6px}
+ pre,code{overflow-wrap:anywhere;word-break:break-word;white-space:pre-wrap}
+ table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .lock-box{padding:28px 22px;border-radius:16px;max-width:92%}
+ .lock-box h2{font-size:19px}
+ img,svg{max-width:100%;height:auto}
+ h1,h2,h3,h4{overflow-wrap:anywhere}
+}
+@media(max-width:480px){
+ main{padding:12px 10px 50px}
+ .hero{padding:16px 14px}
+ .hero h2{font-size:18px}
+ body{font-size:13.5px}
+ .modulehead h2{font-size:16px}
+}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.bcard{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:var(--ink);position:relative;overflow:hidden}
+.bcard:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 6px 18px rgba(180,83,9,.18)}
+.bcard .ico{font-size:24px;margin-bottom:8px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+.bcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.bcard .cta{position:absolute;bottom:10px;right:14px;font-size:11px;color:var(--brand);font-weight:700;letter-spacing:.5px}
+.bcard .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--badge-bg);color:var(--accent2);margin-bottom:8px;letter-spacing:.6px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:16px;max-width:780px;width:100%;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
+.modal h3{margin:0 0 4px;font-size:20px;color:var(--ink)}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;width:32px;height:32px;border-radius:8px}
+.modal .close:hover{background:var(--badge-bg);color:var(--ink)}
+.modal .prompt{margin-top:10px}
+@media(max-width:600px){.modal{padding:22px 18px}.bonus-grid{grid-template-columns:1fr}}
+</style><style id="ihh-override">
+/* ========== IHH-STYLE OVERRIDES ========== */
+.layout { grid-template-columns: 1fr !important; }
+aside { display:none !important; }
+main { max-width:100% !important; margin:0 !important; padding:0 !important; }
+
+/* Kill original hero + files inline (they now live inside tabs) */
+main > .modulehead,
+main > #files,
+main > #overview,
+main > #story { /* handled via wrapping */ }
+
+body.ihh-active { background:#f7fafa; }
+body.ihh-active .hero-ihh {
+  background:linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  color:#fff; padding:36px 32px 60px; position:relative; overflow:hidden;
+  margin:0 0 0; border-radius:0;
+}
+body.ihh-active .hero-ihh::before {
+  content:''; position:absolute; right:-100px; top:-50px;
+  width:400px; height:400px; background:rgba(255,255,255,0.06); border-radius:50%;
+}
+body.ihh-active .hero-ihh::after {
+  content:''; position:absolute; right:80px; bottom:-80px;
+  width:200px; height:200px; background:rgba(255,255,255,0.04); border-radius:50%;
+}
+body.ihh-active .hero-ihh-inner {
+  max-width:1600px; margin:0 auto; position:relative; z-index:2;
+  padding:0 40px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+}
+body.ihh-active .hero-brand-ihh { display:flex; align-items:center; gap:18px; }
+body.ihh-active .hero-logo-ihh {
+  width:72px; height:72px; background:#fff; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 24px rgba(0,0,0,0.18); flex-shrink:0;
+  color:#0f172a; font-weight:900; font-size:26px; letter-spacing:-1px;
+}
+body.ihh-active .hero-brand-ihh h1 {
+  margin:0; font-size:13px; font-weight:600; letter-spacing:2px;
+  text-transform:uppercase; opacity:0.85; color:#fff;
+}
+body.ihh-active .hero-brand-ihh h2 {
+  margin:0; font-size:26px; font-weight:700; color:#fff;
+}
+body.ihh-active .brand-rule-ihh {
+  width:1px; height:46px; background:rgba(255,255,255,0.25); margin:0 2px;
+}
+body.ihh-active .hero-meta-ihh { font-size:13px; opacity:0.9; text-align:right; }
+body.ihh-active .hero-meta-ihh .pill {
+  display:inline-block; padding:4px 12px; background:rgba(255,255,255,0.15);
+  border-radius:12px; margin-left:8px; font-weight:600;
+}
+body.ihh-active .hero-title-ihh {
+  max-width:1600px; margin:32px auto 0; position:relative; z-index:2;
+  padding:0 40px;
+}
+body.ihh-active .hero-title-ihh h3 { margin:0 0 10px; font-size:38px; font-weight:700; line-height:1.2; color:#fff; }
+body.ihh-active .hero-title-ihh p { margin:0; font-size:17px; opacity:0.92; max-width:800px; color:#fff; }
+
+/* Sticky tab bar */
+body.ihh-active nav.tabs-ihh {
+  background:#fff; border-bottom:1px solid #e2e8f0;
+  padding:0; position:sticky; top:0; z-index:50;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+  overflow-x:auto;
+}
+body.ihh-active nav.tabs-ihh .tabs-inner {
+  max-width:1600px; margin:0 auto; padding:0 40px;
+  display:flex; gap:4px; border-bottom:2px solid #e2e8f0;
+}
+body.ihh-active nav.tabs-ihh .tab {
+  padding:16px 18px; background:transparent; border:none;
+  color:#5e7480; cursor:pointer; font-size:13px; font-weight:600;
+  border-bottom:3px solid transparent; margin-bottom:-2px;
+  display:flex; align-items:center; gap:8px; white-space:nowrap;
+  transition:all 0.2s; font-family:inherit;
+}
+body.ihh-active nav.tabs-ihh .tab:hover { color:#0f172a; background:#f1f5f9; }
+body.ihh-active nav.tabs-ihh .tab.active {
+  color:#0f172a; border-bottom-color:#d97706; background:#fff;
+}
+body.ihh-active nav.tabs-ihh .tab .tab-num {
+  min-width:24px; height:24px; padding:0 6px;
+  background:#e2e8f0; color:#0f172a;
+  border-radius:12px;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700;
+}
+body.ihh-active nav.tabs-ihh .tab.active .tab-num { background:#d97706; color:#fff; }
+
+/* Main container after tabs */
+body.ihh-active .ihh-main { max-width:1600px; margin:0 auto; padding:32px 40px; }
+
+/* Widen modal popouts (was 780px in original) */
+body.ihh-active .modal { max-width:1200px !important; }
+body.ihh-active .modal-overlay { padding:40px 30px !important; }
+body.ihh-active .hero p { max-width:none !important; }
+
+/* Whitespace + typography polish */
+body.ihh-active .card { padding:22px 24px !important; margin:14px 0 !important; }
+body.ihh-active .card p, body.ihh-active .card li { font-size:15.5px !important; line-height:1.55 !important; }
+body.ihh-active .card h3 { font-size:20px !important; margin:2px 0 12px !important; }
+body.ihh-active .card h4 { font-size:16px !important; margin:8px 0 6px !important; }
+body.ihh-active .prompt { font-size:14.5px !important; line-height:1.5 !important; padding:14px 16px !important; }
+body.ihh-active .callout { padding:14px 18px !important; margin:8px 0 16px !important; font-size:15px !important; }
+body.ihh-active .activity { padding:14px 16px !important; margin:10px 0 !important; }
+body.ihh-active .activity .head { margin-bottom:6px !important; font-size:13px !important; }
+body.ihh-active .modulehead { padding:14px 18px !important; margin:0 0 12px !important; }
+body.ihh-active .modulehead h2 { font-size:22px !important; }
+body.ihh-active .modulehead h2 small { font-size:13px !important; }
+body.ihh-active .modulehead .num { width:44px !important; height:44px !important; font-size:20px !important; }
+
+/* Views */
+body.ihh-active .view-ihh { display:none; animation:fadeInIhh 0.4s ease; }
+body.ihh-active .view-ihh.active { display:block; }
+@keyframes fadeInIhh {
+  from { opacity:0; transform:translateY(8px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Prev/Next nav */
+body.ihh-active .lab-nav-ihh {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:32px; gap:16px;
+}
+body.ihh-active .lab-nav-ihh button {
+  background:#334155; color:#fff; border:none; padding:12px 20px;
+  border-radius:8px; cursor:pointer; font-size:14px; font-weight:600;
+  font-family:inherit; transition:background 0.2s;
+}
+body.ihh-active .lab-nav-ihh button:hover { background:#0f172a; }
+body.ihh-active .lab-nav-ihh button.secondary {
+  background:transparent; color:#5e7480; border:1px solid #e2e8f0;
+}
+body.ihh-active .lab-nav-ihh button.secondary:hover { background:#f1f5f9; color:#0f172a; }
+body.ihh-active .lab-nav-ihh button:disabled { opacity:0.4; cursor:not-allowed; }
+
+/* Force original exercise sections to look right inside tab views */
+body.ihh-active .view-ihh > section { display:block !important; margin:0 !important; }
+body.ihh-active .view-ihh > section .modulehead { margin-top:8px !important; }
+
+/* Force main to show even before auth (auth JS toggles display) — keep original behaviour */
+</style></head>
+<body class="ihh-active">
+<div id="lock">
+<div class="lock-box">
+<div class="blogo">CM</div>
+<h2>Contoso Mining · Copilot Immersion</h2>
+<p>M365 Copilot Executive Workshop<br/>Enter the session password to continue.</p>
+<div class="pw-wrap">
+<input autocomplete="off" id="pw" placeholder="Session password" type="password"/>
+<button aria-label="Show password" class="pw-toggle" id="pwToggle" onclick="togglePw()" title="Show password" type="button"><svg id="eye-svg" viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"></path></svg></button>
+</div>
+<button onclick="unlock()">Enter Workshop →</button>
+<div class="err" id="err"></div>
+<div class="conf">Confidential · For executive workshop use only</div>
+</div>
+</div>
+<div class="layout" id="main" style="display:none">
+<aside>
+<div class="brand"><div class="logo">CM</div><h1>M365 Copilot<br/>GM Immersion</h1></div>
+<div class="tag">Executive Immersion · Contoso Mining Services</div>
+<nav>
+<h3>Overview</h3>
+<a href="#files">📁 Sample files (start here)</a>
+<a href="#overview">About this session</a>
+<a href="#story">The Story</a>
+<h3>Exercises</h3>
+<a href="#ex1">1 · Daily Briefing</a>
+<a href="#ex2">2 · Researcher · Critique + Model Council</a>
+<a href="#ex3">3 · Cowork · Production Day-End</a>
+<a href="#ex4">4 · Copilot Create · Visual Infographic</a>
+<h3>Bonus</h3>
+<a href="#bonus">＋ Bonus use-cases (click to open)</a>
+</nav>
+</aside>
+<main>
+<!--IHH-INJECT-START-->
+<header class="hero-ihh">
+<div class="hero-ihh-inner">
+<div class="hero-brand-ihh">
+<div class="hero-logo-ihh">CM</div>
+<div class="brand-rule-ihh"></div>
+<div>
+<h1>Contoso Mining</h1>
+<h2>Microsoft 365 Copilot · GM Immersion</h2>
+</div>
+</div>
+<div class="hero-meta-ihh">
+<div>Workshop Edition · 2026</div>
+<div style="margin-top:6px">
+<span class="pill">4 Exercises</span>
+</div>
+</div>
+</div>
+<div class="hero-title-ihh">
+<h3>One workday, one GM, ten Copilot moments</h3>
+<p>A hands-on immersion for Contoso Mining Services executives. Work through each tab at your own pace. Every prompt is copy-and-paste ready.</p>
+</div>
+</header>
+<nav class="tabs-ihh"><div class="tabs-inner"><button class="tab active" data-view="intro"><span class="tab-num">0</span> Get Started</button>
+<button class="tab" data-view="files"><span class="tab-num">📁</span> Sample Files</button>
+<button class="tab" data-view="ex1"><span class="tab-num">1</span> Daily Briefing</button>
+<button class="tab" data-view="ex2"><span class="tab-num">2</span> Researcher · Critique +…</button>
+<button class="tab" data-view="ex3"><span class="tab-num">3</span> Cowork · Production Day-End Pack</button>
+<button class="tab" data-view="ex4"><span class="tab-num">4</span> Copilot Create · Leadership…</button>
+<button class="tab" data-view="extras"><span class="tab-num">＋</span> Bonus</button>
+</div></nav><div class="ihh-main"><div class="view-ihh active" id="view-intro"><section id="overview">
+<div class="hero">
+<h2>Contoso Mining Services · M365 Copilot GM Immersion</h2>
+<p>Mining services, EPC and infrastructure contractor across Indonesia. A tight, GM-level immersion in under two hours: four flagship Copilot moments plus a curated bonus library you can dip into based on the room.</p>
+<div class="meta-row">
+<span><b>Audience</b> GM &amp; direct reports</span>
+<span><b>Format</b> Demo + guided hands-on</span>
+<span><b>Tool</b> Microsoft 365 Copilot</span>
+<span><b>Duration</b> Under 2 hours</span>
+</div>
+</div>
+<div class="card">
+<h3>About this workshop</h3>
+<p class="lead">A practical, GM-level immersion designed specifically for Contoso Mining Services. Four headline Copilot moments, every one ending with a deliverable a GM can hand to the team that afternoon. A bonus library of additional use-cases sits below for follow-up sessions.</p>
+<h4>What you will leave with</h4>
+<ul>
+<li>A GM daily briefing in two flavours — a live HTML dashboard (Copilot Chat) and a richer narrative version (Researcher)</li>
+<li>A market intelligence brief stress-tested two ways — Researcher Critique and Model Council — side-by-side</li>
+<li>A complete day-end production pack from one Cowork prompt — interactive HTML dashboard with slicers, a BCG/McKinsey exec deck, a Petrosea-templated infographic one-pager with clickable hyperlinks, a Word memo with charts, a draft email, and a meeting invite</li>
+<li>A branded visual infographic of Contoso Mining Services itself — generated by Copilot Create in one prompt</li>
+<li>A bonus library: Vendor KAK summarisation, mail merge, CV screening at scale, finance cascade, meeting minutes, campaign posters</li>
+</ul>
+<h4>What this workshop is not</h4>
+<ul>
+<li>It is <b>not</b> a feature walkthrough — every tool is demonstrated against Contoso Mining Services's context</li>
+<li>It is <b>not</b> connected to live Contoso Mining Services systems — every data point is fictional / Contoso</li>
+</ul>
+</div>
+</section><section id="story">
+<div class="modulehead" style="margin-top:8px">
+<div class="num" style="background:linear-gradient(135deg,var(--brand),var(--accent));font-size:14px">▶</div>
+<h2>The Story<small>Four Copilot moments · under two hours · ends with a full day-end pack</small></h2>
+</div>
+<div class="callout" style="border-left:4px solid var(--brand);background:linear-gradient(135deg,#fff7ed,#fef3c7);margin-bottom:18px;display:none">
+<!-- run-of-show removed per user request -->
+</div>
+<div style="border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px;background:var(--panel)">
+<div style="background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));padding:22px 26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:center">
+<div>
+<p style="margin:0;font-size:10px;letter-spacing:2px;font-weight:700;color:var(--brand);text-transform:uppercase">Microsoft 365 Copilot</p>
+<h3 style="margin:4px 0 0;font-size:22px;font-weight:800;color:#fff;line-height:1.15">AI Assistant<br/>to AI Doer</h3>
+</div>
+<div>
+<p style="margin:0 0 4px;font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:var(--brand);text-transform:uppercase">Persona</p>
+<p style="margin:0;font-size:15px;font-weight:700;color:#fff">Pak Surya Wibawa</p>
+<p style="margin:3px 0 10px;font-size:12px;color:#94a3b8">General Manager · Operations · Contoso Mining Services</p>
+<p style="margin:0 0 4px;font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:var(--brand);text-transform:uppercase">The Mission</p>
+<p style="margin:0;font-size:12px;color:#cbd5e1;line-height:1.55">Stay on top of the day, sharpen a market view, and ship a complete day-end production pack to the Director of Operations before the team leaves site.</p>
+</div>
+<div style="padding:14px;background:rgba(255,255,255,.06);border-radius:10px;border:1px solid rgba(255,255,255,.1)">
+<p style="margin:0 0 5px;font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:var(--brand);text-transform:uppercase">The Punchline</p>
+<p style="margin:0;font-size:14px;font-weight:700;font-style:italic;color:#fff;line-height:1.4">Under two hours.<br/>Four Copilot moments.<br/>From morning brief to a full day-end pack.</p>
+</div>
+</div>
+<div style="padding:22px 22px 18px">
+<h3 style="margin:0 0 16px;font-size:18px;font-weight:700;color:var(--ink)">Four Copilot moments</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+<div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#0e7490;padding:10px 14px;display:flex;align-items:center;gap:10px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">01</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Daily Briefing</span>
+</div>
+<div style="padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1 1 auto;overflow:hidden">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">HTML dashboard + narrative</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Copilot Chat · Researcher</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.5">Two flavours of the same brief: a one-screen HTML dashboard rendered in Copilot Chat, plus a richer narrative version in Researcher.</p>
+</div>
+</div><div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#0f766e;padding:10px 14px;display:flex;align-items:center;gap:10px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">02</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Critique + Council</span>
+</div>
+<div style="padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1 1 auto;overflow:hidden">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">Stress-test the market view</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Researcher</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.5">Same market question, two stress-tests — Researcher Critique (one model self-reviews) and Model Council (multiple models compared) — pick the stronger answer.</p>
+</div>
+</div><div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#155e75;padding:10px 14px;display:flex;align-items:center;gap:10px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">03</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Production Day-End</span>
+</div>
+<div style="padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1 1 auto;overflow:hidden">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">One Cowork, six deliverables</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Cowork</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.5">Cowork reads the daily production file and produces a dashboard, two decks (BCG/McKinsey + infographic with hyperlinks), a Word memo, an email and a meeting invite — in one pass.</p>
+</div>
+</div><div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#1e3a5f;padding:10px 14px;display:flex;align-items:center;gap:10px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">04</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Visual Infographic</span>
+</div>
+<div style="padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1 1 auto;overflow:hidden">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">Branded one-page poster</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Copilot Create (Designer)</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.5">Copilot Create generates a brand-aligned infographic about Contoso Mining Services from a single prompt — no design tool needed.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" disabled="">← Previous</button><button data-go="files">Next: Sample Files →</button></div></div><div class="view-ihh" id="view-files"><section id="files">
+<div class="modulehead"><div class="num">📁</div><h2>Sample files — start here<small>Download these first, then run the exercises</small></h2></div>
+<div class="card">
+<p class="lead">All data is fictional and labelled <b>Contoso Mining Services</b>. Do not use for any operational decision. <b>Step 1:</b> download every file. <b>Step 2:</b> upload them to your OneDrive (and the <b>CVs/</b> folder to a SharePoint document library). <b>Step 3:</b> wait ~2 minutes for Microsoft Graph to index. Then begin Exercise 1.</p>
+<div style="margin:14px 0 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<a download="" href="samples.zip" id="dl-all-btn" style="display:inline-flex;align-items:center;gap:10px;padding:12px 22px;background:var(--brand);color:#fff;font-weight:700;font-size:15px;border-radius:10px;text-decoration:none;box-shadow:var(--shadow);transition:transform .12s ease">
+  ⬇️ Download all sample files (ZIP)
+ </a>
+<span style="font-size:12.5px;color:var(--muted)">One click, all files in a single ZIP. Unzip, then upload the contents to OneDrive / SharePoint.</span>
+</div>
+<table>
+<tr><th>#</th><th>File</th><th>Type</th><th>Used in</th><th>What it contains</th></tr>
+<tr><td>01</td><td><a href="samples/daily_production_20260622.xlsx">daily_production_20260622.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Ex 3</td><td>Daily production data — fleet, pit, shift, BCM moved, fuel burn, downtime — the source for the Cowork day-end pack</td></tr>
+<tr><td>02</td><td><a href="samples/01 Contoso_Market_Brief.xlsx">Contoso_Market_Brief.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Ex 2, Bonus</td><td>Peer benchmark, market sizing 2024-28, SWOT — grounding for the market intelligence brief</td></tr>
+<tr><td>03</td><td><a href="samples/02 Contoso_KPI_Dashboard.xlsx">Contoso_KPI_Dashboard.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Ex 3, Bonus</td><td>12 months of KPIs across Tabang Coal, Gunung Bayan, Martabe Gold EPC — targets vs actual, open issues</td></tr>
+<tr><td>04</td><td><a href="samples/03 Contoso_Mail_Merge_Recipients.xlsx">Contoso_Mail_Merge_Recipients.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Bonus · Mail merge</td><td>14 Project Managers &amp; Site Superintendents with name, location, role, email, performance band, key highlight</td></tr>
+<tr><td>05</td><td><a href="samples/04 Contoso_Brand_Guidelines.docx">Contoso_Brand_Guidelines.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 3, Ex 4, Bonus</td><td>Brand tone, GM communications template, press release structure</td></tr>
+<tr><td>06</td><td><a href="samples/05 Contoso_Strategic_Memo.docx">Contoso_Strategic_Memo.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 3</td><td>Strategic memo — narrative spine for the executive deck</td></tr>
+<tr><td>07</td><td><a href="samples/CVs/">samples/CVs/ (12 files)</a></td><td><span class="badge yellow">Word ×12</span></td><td>Bonus · CV screening</td><td>12 candidate CVs for the Mining Project Superintendent role — upload as a SharePoint folder</td></tr>
+<tr><td>08</td><td><a href="samples/08 Contoso_Overhead_By_Department.xlsx">Contoso_Overhead_By_Department.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Bonus · Finance cascade</td><td>Monthly overhead by department — 8 cost-centres, budget · actual · variance % · top driver · YTD · dept-head email</td></tr>
+<tr><td>09</td><td><a href="samples/KAK_EPC_Mahakam_CoalHandling.docx">KAK_EPC_Mahakam_CoalHandling.docx</a></td><td><span class="badge yellow">Word</span></td><td>Bonus · Vendor vs KAK</td><td>Tender Kerangka Acuan Kerja — scope, budget cap, schedule, HSE thresholds, evaluation weighting</td></tr>
+<tr><td>10</td><td><a href="samples/Vendor_Borneo_EPC_Specialists.docx">Vendor_Borneo_EPC_Specialists.docx</a></td><td><span class="badge yellow">Word</span></td><td>Bonus · Vendor vs KAK</td><td>Vendor capability statement — references, bench, HSE, timeline and cost position</td></tr>
+<tr><td>11</td><td><a href="samples/Vendor_TransAsia_Engineers.docx">Vendor_TransAsia_Engineers.docx</a></td><td><span class="badge yellow">Word</span></td><td>Bonus · Vendor vs KAK</td><td>Vendor capability statement — references, bench, HSE, timeline and cost position</td></tr>
+<tr><td>12</td><td><a href="samples/Vendor_NusaWorks_Industrial.docx">Vendor_NusaWorks_Industrial.docx</a></td><td><span class="badge yellow">Word</span></td><td>Bonus · Vendor vs KAK</td><td>Vendor capability statement — references, bench, HSE, timeline and cost position</td></tr>
+<tr><td>13</td><td><a href="samples/Vendor_PrimeBuild_Indonesia.docx">Vendor_PrimeBuild_Indonesia.docx</a></td><td><span class="badge yellow">Word</span></td><td>Bonus · Vendor vs KAK</td><td>Vendor capability statement — references, bench, HSE, timeline and cost position</td></tr>
+<tr><td>14</td><td><a href="samples/GM_Memo_Q1_Production_Review.docx">GM_Memo_Q1_Production_Review.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 5.1</td><td>GM Q1 production memo — situation, complication, analysis, recommendation, risks, asks. The raw input the PowerPoint Agent turns into a 6-slide deck.</td></tr>
+<tr><td>—</td><td>PTP-CC-TPL-G-0006 Wide (16-9) - Presentation Template.pptx</td><td><span class="badge yellow">PPT</span></td><td>Ex 3</td><td>Use your own corporate PowerPoint template (already in your tenant). Referenced by name in the Ex 3 prompts.</td></tr>
+</table>
+<div class="callout warn" style="margin-top:14px"><b>Why OneDrive / SharePoint?</b> Microsoft 365 Copilot only sees files stored in OneDrive or SharePoint. Files on your local Desktop are invisible to Copilot.</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="intro">← Get Started</button><button data-go="ex1">Next: Daily Briefing →</button></div></div><div class="view-ihh" id="view-ex1"><section id="ex1">
+<div class="modulehead"><div class="num">1</div><h2>Exercise 1 · Daily Briefing<small>HTML dashboard · then the narrative version</small></h2></div>
+<div class="callout good"><b>How a GM starts the day in two minutes.</b> Run the dashboard first in Copilot Chat for the at-a-glance view, then drop into Researcher for the longer narrative read. Both ground on the same tenant signals: emails, Teams chats, calendar and recent files.</div>
+<div class="card">
+<div class="activity">
+<div class="head"><span class="num">Task 1.1</span><span class="file">🚀 Copilot Chat · HTML dashboard</span></div>
+<h4>Generate today's GM daily briefing as an HTML dashboard</h4>
+<p>Open <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot Chat</a>. Paste the prompt below — Copilot Chat will render the dashboard inline and save the file to OneDrive.</p>
+<div class="prompt">Generate my GM daily briefing for today as a single-page interactive HTML dashboard, grounded on my emails, Teams chats, calendar and recent files.
+
+Layout (all on one screen, no scrolling on a laptop):
+• Header band: "Daily Briefing — [Day, Date]" with a timestamp on the right.
+• Row 1 — 4 KPI cards: (1) Unread emails needing reply, (2) Meetings today, (3) Open decisions awaiting me, (4) Overdue tasks. Each card: big number, one-line context, RAG colour band (green/amber/red).
+• Row 2 — two columns:
+  – Left: "Top 5 priorities today" as a vertical list of coloured cards (priority badge: 🔴 high / 🟡 medium / 🟢 low), each with a one-line "what to do".
+  – Right: "Meetings today" timeline — each meeting as a card with time, title, organiser, and a 1-line prep note.
+• Row 3 — "Unread threads that need a reply": a compact 3-column table (From · Subject · Suggested 1-line reply). Max 5 rows.
+• Footer: "Generated by Microsoft 365 Copilot · [timestamp]" in small text.
+
+Use only explicitly stated facts from my tenant. No speculation. If a section has no data, show the card with "Nothing for today" instead of hiding it.
+
+Language: my tenant content is a mix of Bahasa Indonesia and English. Render the entire dashboard in English. For anything originally in Bahasa Indonesia (email subjects, Teams messages, calendar titles, file names, suggested replies), translate it into natural English first, then show the English version in the dashboard. Keep proper nouns (people, sites, project names, vendor names) untranslated.
+
+Do not ask me any clarifying questions. Proceed directly and produce the dashboard in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>What success looks like:</b> within ~90 seconds you have a one-screen visual brief — KPI tiles, today's priorities, the meetings timeline, and the unread threads that need a reply — all grounded on real signals from your tenant.</div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">Task 1.2</span><span class="file">🔍 Researcher · Narrative briefing</span></div>
+<h4>Re-run the briefing as a wordier read in Researcher</h4>
+<p>Open <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot</a> → click <b>Researcher</b>. Keep the model picker on <b>Auto</b> (Critique). Paste:</p>
+<div class="prompt">Help me prepare for today. Look at my emails, Teams messages, calendar and recent files, and put together a short daily briefing for me as General Manager.
+
+Open with a quick personal greeting — just a couple of sentences telling me what kind of day I'm walking into.
+
+Then walk me through:
+• What changed since I left the office yesterday — only the things that genuinely affect my work or my team.
+• What I need to get done today — tasks or questions that are on my plate. Skip anything that's already been closed out.
+• Unread email threads from the past week that probably need a reply from me — focus on ones where I'm directly involved (To, CC, @mentioned) or where there's a request, deadline, leadership or customer angle. Skip the automated noise. Show me only the urgent or important ones in a tidy little table, and draft a short reply for each. If there's nothing to reply to, just say so.
+• What's on my calendar today — only upcoming meetings, in a table: meeting (time, title, organiser), what it's about, and how I should prepare. Tell me if you're inferring the prep or if I don't really need to prep.
+
+Stick to what you can actually see in my emails, files and calendar — no guessing. If a section is empty, just say it's empty.
+
+Language: my tenant content is a mix of Bahasa Indonesia and English. Render the entire briefing in English. For anything that was originally in Bahasa Indonesia (email subjects, Teams messages, calendar titles, file names, body extracts), translate it into natural English first, then show the English version in the briefing. Keep proper nouns (people, sites, project names, vendor names) untranslated.
+
+Title it "Daily briefing – &lt;day&gt;, &lt;date&gt;" with a small line underneath showing the time you generated it, and put a relevant emoji at the start of each section.
+
+At the very top of the briefing, before everything else, please also include an illustration that captures what today actually looks like for me. You decide the style — it could be a sketched scene, a small collage, an iso-style vignette, a pictogram set, an abstract composition, whatever feels right. The only things I care about: it should reflect the real substance of today's briefing (not a generic office or sunrise picture), it should be a wide banner shape, it should use our Contoso Mining Services brand feel — warm orange and dark slate as the lead colours with neutral supporting tones — and please keep any words inside the image to a minimum. Add a small grey caption underneath: "Today at a glance · Contoso Mining Services".
+
+Please don't ask me any clarifying questions — just go ahead and produce the whole briefing in one go. Keep it tight.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout warn"><b>Reality check on the illustration:</b> Researcher is primarily a text + tables + citations surface. Inline image generation is best-effort — on some tenants it renders, on others it falls back to an emoji banner. If the image doesn't appear, follow up with: <i>"Generate the illustration described above as a separate image I can download."</i></div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="files">← Sample Files</button><button data-go="ex2">Next: Researcher · Critique +… →</button></div></div><div class="view-ihh" id="view-ex2"><section id="ex2">
+<div class="modulehead"><div class="num">2</div><h2>Exercise 2 · Researcher · Critique + Model Council<small>Same market question · two stress-tests</small></h2></div>
+<div class="callout good"><b>When to do this:</b> right after the briefing, when the GM wants a sharper market view before the production pack. Open Microsoft 365 Copilot → <b>Researcher</b>.</div>
+<div class="card">
+<h3>2.1 · Researcher (Critique mode)</h3>
+<p class="lead">Researcher on <b>Auto</b> runs <b>Critique</b> — one model drafts, a second self-reviews the sources before the report is shown. Default for sector intelligence.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 2.1</span><span class="file">🔍 Researcher · Critique</span></div>
+<h4>Scan the Mining Services &amp; EPC landscape in Indonesia</h4>
+<div class="prompt">Research the Mining Services &amp; EPC sector in Indonesia for the next 12 months. Benchmark Contoso Mining Services against these peers: United Tractors / Pamapersada, Bukit Makmur (BUMA), Saptaindra Sejati, Thiess Indonesia, Macmahon. For each one, compare market share, FY25 revenue growth, EBITDA margin, strategic focus, digital maturity, and recent material moves (M&amp;A, capex, new contracts, regulation). Include 2024–2028 market sizing with the three main growth drivers and the three biggest risks. End with one paragraph: "What this means for Contoso Mining Services."
+
+Cite every source. Flag any section where the evidence is thin. Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout">Look for the <b>citations</b> and the <b>"reviewed by"</b> stamp — Critique enforces source grounding before you see the report.</div>
+</div>
+</div>
+<div class="card">
+<h3>2.2 · Model Council — same prompt, multiple models</h3>
+<p class="lead">Model Council runs the <i>same</i> prompt across multiple frontier models in parallel and shows the answers side-by-side. Use it when the stakes are high and you want to see where models agree and where they diverge.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 2.2</span><span class="file">🔍 Researcher · Model Council</span></div>
+<h4>Run a generic strategic scan across the council</h4>
+<p>Switch the Researcher model picker to <b>Model Council</b>. Use a broad, globally well-documented prompt where every frontier model has strong training data — that way the comparison is about reasoning and structure, not about who happens to know an Indonesian peer's filings.</p>
+<div class="prompt">What are the top 5 ways AI is reshaping the global mining industry over the next 24 months? For each trend, give: a 1-line definition, 3 real-world examples (company name + what they did + measurable outcome), the biggest barrier to adoption, and one implication for a GM running open-pit operations in Indonesia. End with a 1-paragraph summary: "What a GM should do in the next 90 days."
+
+Cite every source. Flag any section where the evidence is thin. Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout good"><b>What to point out on screen:</b> compare the columns side-by-side. Where do the models agree on the top trends? Where do they diverge on examples or on the "so what"? The disagreement is the signal — pick the answer with the strongest citations and the sharpest implication.</div>
+<div class="callout warn"><b>Reality check:</b> Model Council uses more compute and is slower than Critique (typically 2–3× the runtime). Use it for board-bound or director-bound briefs, not for the daily briefing.</div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex1">← Daily Briefing</button><button data-go="ex3">Next: Cowork · Production Day-End Pack →</button></div></div><div class="view-ihh" id="view-ex3"><section id="ex3">
+<div class="modulehead"><div class="num">3</div><h2>Exercise 3 · Cowork · Production Day-End Pack<small>One prompt · six deliverables · grounded on the daily production file</small></h2></div>
+<div class="callout good"><b>The flagship Cowork moment.</b> One prompt drives analysis → interactive HTML dashboard → BCG/McKinsey deck → infographic one-pager with clickable hyperlinks → Word memo with charts → executive email → meeting invite. The GM signs off before anything leaves the tenant.</div>
+<div class="card">
+<p class="lead">Open <b>Microsoft 365 Copilot Chat</b> and switch to <b>Cowork</b>. Reference <code>/daily_production_20260622.xlsx</code>. Cowork shows its plan first, you edit any step, and it pauses before sending email or scheduling the meeting.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 3</span><span class="file">👥 Cowork · multi-step</span></div>
+<h4>Six outputs from one prompt</h4>
+<div class="prompt">Cowork — close out the day for General Manager · Operations at Contoso Mining Services. Ground everything on /daily_production_20260622.xlsx. Use our Contoso Mining Services brand feel throughout (warm orange + dark slate, professional, mining-industry tone).
+
+Do all of the following, in order. Show your plan first, then execute. Pause before sending the email or scheduling the meeting.
+
+1. ANALYSE the production file. For each pit and each fleet, compare actual BCM moved vs plan, fuel burn per BCM, downtime hours and the top downtime reason. Identify the best and worst performers of the day and the single biggest variance.
+
+2. INTERACTIVE HTML DASHBOARD — "Production Day-End · [date]"
+   - Header band in brand colours, with date and shift on the right
+   - Top row: 4 KPI scorecards (Total BCM vs Plan, OEE, Fuel L/BCM, Total Downtime hrs) each with RAG band
+   - Slicer / filter controls at the top so a user can filter by Pit and by Shift (use simple inline HTML+CSS dropdowns or button toggles; lightweight inline JavaScript is OK for the filter only)
+   - One bar chart: BCM Actual vs Plan by Pit
+   - One line chart: BCM by hour for the day
+   - One stacked bar: downtime hours by reason, by fleet
+   - Bottom: a "Top 3 issues today" callout and a "Top 3 actions for tomorrow" callout
+   - Self-contained file, save as ProductionDayEnd.html to OneDrive
+
+3. BCG / McKINSEY EXECUTIVE DECK — 6 slides on the Petrosea corporate template "PTP-CC-TPL-G-0006 Wide (16-9) - Presentation Template.pptx".
+   - Every slide must use an action title (the title states the conclusion, not the topic)
+   - Slide 1: Executive summary — 3 bullets with the "so what"
+   - Slide 2: Production scorecard — actual vs plan, by pit, with a clear waterfall chart explaining the variance
+   - Slide 3: Equipment performance — OEE and downtime, with a 3D column chart by fleet
+   - Slide 4: Fuel efficiency — L/BCM trend, with the best and worst fleet called out
+   - Slide 5: Top 3 risks for tomorrow
+   - Slide 6: Recommended actions with owners and timing
+   - Save as ProductionDayEnd_ExecDeck.pptx to OneDrive
+
+4. INFOGRAPHIC ONE-PAGER — a second PowerPoint, also on the Petrosea template, but built as a single-slide visual one-pager (infographic style: icons, big numbers, short labels, brand-coloured blocks). Include clickable hyperlinks on the page: link the headline KPI numbers back to the source /daily_production_20260622.xlsx and link the "Full detail" badge to the HTML dashboard ProductionDayEnd.html in OneDrive. Save as ProductionDayEnd_OnePager.pptx to OneDrive.
+
+5. WORD MEMO with charts — 1 page, GM to Director of Operations. Headline, 3-bullet "what happened", 3-bullet "what we're doing about it", 3-bullet "what I need from you". Embed the variance waterfall chart and the OEE chart from the deck. Save as ProductionDayEnd_Memo.docx to OneDrive.
+
+6. EXECUTIVE EMAIL DRAFT from the GM to the Director of Operations and the Operating Committee — short subject line, headline in the first sentence, link to the Word memo, link to the HTML dashboard, link to the exec deck.
+
+7. MEETING INVITE — schedule a 30-minute Production Review for tomorrow at 08:00 local time, agenda pulled from the "Top 3 actions for tomorrow" in the dashboard.
+
+Stop and confirm before sending the email (step 6) or scheduling the meeting (step 7). Do not ask any other clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>Closing line for the audience:</b> "Cowork showed its plan first. You edited it. It paused before any external action. It returned six artefacts you own — a dashboard you can put on a screen tomorrow, two decks ready for the Director, a memo, an email and a calendar invite."</div>
+<div class="callout warn"><b>Reality check on the charts inside PowerPoint:</b> Copilot in PowerPoint reliably produces bar, column, line and waterfall charts. 3D column rendering varies by tenant — if the 3D chart comes back flat, follow up with: <i>"Convert the OEE column chart on slide 3 to a 3D clustered column with a slight perspective tilt."</i></div>
+<div class="callout warn"><b>Reality check on the infographic hyperlinks:</b> hyperlinks survive the .pptx and the PDF export. They do <b>not</b> survive if you export the slide as an image (PNG/JPG) — the links bake into pixels. Keep it as .pptx or PDF for clickable behaviour.</div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex2">← Researcher · Critique +…</button><button data-go="ex4">Next: Copilot Create · Leadership… →</button></div></div><div class="view-ihh" id="view-ex4"><section id="ex4">
+<div class="modulehead"><div class="num">4</div><h2>Exercise 4 · Copilot Create · Leadership Infographic Poster<small>Two versions — generic persona, then your own real profile</small></h2></div>
+<div class="callout good"><b>Why this matters:</b> a GM is often asked for a personal leadership story — board intros, conference bios, internal town halls, LinkedIn features. Copilot Create turns it into a single rich infographic poster (hero portrait, journey timeline, expertise panels, achievements) in one prompt.</div>
+<div class="card">
+<h3>4.1 · Option A — Generic persona (Pak Surya Wibawa)</h3>
+<p class="lead">Open <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot</a> → <b>Create</b>. Paste this short brief and let Copilot fill in the layout.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 4.1</span><span class="file">🖼️ Copilot Create (Designer)</span></div>
+<h4>Generate a one-page leadership infographic poster</h4>
+<div class="prompt">Create a rich, detailed one-page leadership infographic poster (landscape A3, dense magazine-style layout) for Pak Surya Wibawa, General Manager · Operations at Contoso Mining Services, Indonesia.
+
+Hero band across the top:
+• Big title on the left: "Leadership is a Journey of Growth, Impact &amp; Purpose."
+• Subtitle underneath: "From mining engineer to GM — driving safe, productive open-pit operations across Indonesia."
+• On the right, a generated portrait of an Indonesian executive, early 50s, short greying hair, friendly confident expression, wearing a navy collared shirt. Behind the portrait, an illustrated panoramic backdrop blending an Indonesian open-pit mine, haul trucks, and a Jakarta skyline silhouette. Drop 4 small location pins across the backdrop labelled Jakarta, Balikpapan, Sorowako, Timika.
+
+Body grid — 8 panels arranged 4 left, 4 right, each panel a rounded card with a small icon, a heading, and 3-5 short bullets. Be dense and specific, like a magazine infographic, not a sparse CV.
+
+LEFT COLUMN (top to bottom):
+1. "Leadership Evolution" — a two-column mini comparison: "Traditional GM" (command, KPI-driven, site-bound) vs "Future GM" (coach, data-driven, AI-augmented, ESG-anchored).
+2. "Industry Expertise" — 4 icon chips with a one-liner each: Open-pit Mining, EPC &amp; Infrastructure, Oil &amp; Gas Services, Heavy Equipment Operations.
+3. "Functional Expertise" — 4 icon chips: Production Planning, HSE Leadership, Fleet Productivity, Contract &amp; Stakeholder Management.
+4. "Real-World Challenges" — 3 short scenario blurbs: commodity price swings, fatigue management on remote sites, regulatory shifts (RKAB, K3).
+
+RIGHT COLUMN (top to bottom):
+5. "Key Achievements" — 4 bold stat callouts: "85M BCM delivered · 102% of plan", "Zero LTI for 24 consecutive months", "14 active sites · 1,200+ people", "12% drop in unit fuel cost via fleet optimisation".
+6. "The Future I Lead" — 3 bullets: AI as co-pilot for daily ops, ESG as purpose (decarbonising haul), People-first safety culture.
+7. "Lessons Learned" — 3 short maxims in italic: "Listen at the pit before deciding from the office.", "A safe site is a productive site.", "Numbers tell the story — people write it."
+8. "Key Takeaways" — 3 punchy lines: lead with safety, decide with data, grow the next bench.
+
+Bottom strip — "My Leadership Journey": a horizontal 5-step timeline with year ranges and a small icon per step: Graduate Engineer (2002) → Site Engineer (2006) → Project Manager (2012) → Operations Manager (2017) → GM Operations (2022). Add a one-line lesson under each step.
+
+Footer band in dark slate:
+• Left: name "Pak Surya Wibawa", role "General Manager · Operations", company "Contoso Mining Services".
+• Centre: italic quote "Safety first, production always."
+• Right: small contact icons (email, mobile, LinkedIn) with placeholders.
+
+Style: warm orange (lead accent) + dark slate + neutral cream background, modern editorial infographic, clean sans-serif (think McKinsey / BCG meets National Geographic), soft shadows, rounded 12px corners, dense but readable, generous use of small icons.
+
+Generate the portrait, the skyline backdrop, every small section icon, and the timeline icons — do not leave any blank space or placeholder boxes. Fill every panel with the content above; do not collapse panels or omit sections. Produce as one downloadable image at A3 landscape resolution.
+
+Do not ask me any clarifying questions — produce it in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout warn"><b>Reality check:</b> the portrait is synthetic — swap for a real photo before any external use.</div>
+</div>
+</div>
+<div class="card" style="border:2px solid var(--accent);background:#fff7ed">
+<h3>4.2 · Option B — Your own real profile</h3>
+<p class="lead">Same poster, but grounded on your real public profile. Open <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot Chat</a>, turn <b>Web</b> on, replace the bracketed bits, paste.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 4.2</span><span class="file">💬 Copilot Chat · web + image</span></div>
+<h4>One-shot leadership infographic from your real profile</h4>
+<div class="prompt">Build me a rich, detailed one-page leadership infographic poster (landscape A3, dense magazine-style layout) for [YOUR FULL NAME], [YOUR CURRENT ROLE] at [YOUR COMPANY].
+
+First, search the public web (LinkedIn, company site, news, conference bios, interviews, regulatory filings). Pull together: a 2-line tagline, 4-5 real career highlights with hard numbers, 4 industry expertise areas, 4 functional expertise areas, 3 real-world challenges I have spoken about, 3 lessons I have shared in public, a 5-step career journey with year ranges, 1 real public quote. Cite every fact with a source URL. Mark anything unverified as [INFERRED]. If a section has no public source, write "No public source found" — do not invent.
+
+Then render it as one A3 landscape infographic poster, structured as follows:
+
+Hero band: big title pulled from my public positioning (or "Leadership is a Journey of Growth, Impact &amp; Purpose" if none found), subtitle = my 2-line tagline, generated portrait on the right (synthetic stand-in matching my age band, region, business attire), with a panoramic backdrop blending an industry-relevant scene and a skyline of the city I am based in. Drop location pins for the cities where I have worked.
+
+Body — 8 panels arranged 4 left, 4 right, each a rounded card with a small icon, heading, and 3-5 bullets:
+LEFT: Leadership Evolution (Traditional vs Future, 2 columns), Industry Expertise (4 chips), Functional Expertise (4 chips), Real-World Challenges (3 blurbs).
+RIGHT: Key Achievements (4 bold stat callouts from my real record), The Future I Lead (3 bullets), Lessons Learned (3 italic maxims), Key Takeaways (3 punchy lines).
+
+Bottom strip: "My Leadership Journey" — horizontal 5-step timeline with year ranges, one-line lesson per step, small icon per step.
+
+Footer band: name + role + company on the left, my real public quote in italic in the centre, public contact handles on the right.
+
+Style: modern editorial infographic, dense but readable, soft shadows, rounded 12px corners, McKinsey-meets-National-Geographic. Use my company brand colour if I have one; otherwise deep navy + warm accent.
+
+Generate the portrait, skyline backdrop, every section icon and timeline icon — no blank boxes. Fill every panel. Produce as one downloadable image. No clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout warn"><b>Reality check:</b> web search inside Copilot Chat is lighter than Researcher — fewer sources, less cross-checking. Fine for a demo or internal poster; for board-facing, run Researcher first then hand the brief to Create.</div>
+</div>
+<div class="activity" style="margin-top:14px">
+<div class="head"><span class="num">Task 4.2 v2</span><span class="file">💬 Copilot Chat · attached CV + photo</span></div>
+<h4>Fallback — build it from your own CV and your own photo</h4>
+<p>If web search in Option B returns thin results (common for people who keep a low public profile), drop the web step and feed Copilot your own files instead. In <a href="https://m365.cloud.microsoft" target="_blank">Microsoft 365 Copilot Chat</a>, attach two things using the paperclip / "Add content": (1) your latest CV (Word, PDF or LinkedIn export) and (2) a head-and-shoulders photo of yourself. Then paste:</p>
+<div class="prompt">Build me a rich, detailed one-page leadership infographic poster (landscape A3, dense magazine-style layout) for [YOUR FULL NAME], [YOUR CURRENT ROLE] at [YOUR COMPANY].
+
+Use the two files I have attached as the only source of truth:
+• My CV — pull the tagline, career highlights with real numbers, industry &amp; functional expertise, challenges, lessons, journey timeline, and any quote I have on the document. Do not invent anything that is not on my CV; where a section is blank, write "Not on file" rather than guessing.
+• My photo — use it as-is for the hero portrait. Crop into a clean circular mask. Do not regenerate or "improve" my face.
+
+Then render the poster, structured as follows:
+
+Hero band: big title pulled from my CV positioning (or "Leadership is a Journey of Growth, Impact &amp; Purpose" if my CV has no tagline), subtitle = my 2-line tagline, my attached photo on the right (circular mask), with a panoramic backdrop blending an industry-relevant scene and a skyline of the city I am based in. Drop location pins for the cities listed in my CV.
+
+Body — 8 panels arranged 4 left, 4 right, each a rounded card with a small icon, heading, and 3-5 bullets:
+LEFT: Leadership Evolution (Traditional vs Future, 2 columns), Industry Expertise (4 chips), Functional Expertise (4 chips), Real-World Challenges (3 blurbs).
+RIGHT: Key Achievements (4 bold stat callouts from my CV), The Future I Lead (3 bullets), Lessons Learned (3 italic maxims), Key Takeaways (3 punchy lines).
+
+Bottom strip: "My Leadership Journey" — horizontal 5-step timeline drawn from my CV's career history, with year ranges and a one-line lesson per step.
+
+Footer band: name + role + company on the left, my quote (or "Safety first, production always" if not on file) in italic in the centre, contact handles from my CV on the right.
+
+Style: modern editorial infographic, dense but readable, soft shadows, rounded 12px corners, McKinsey-meets-National-Geographic. Use my company brand colour if I have one; otherwise deep navy + warm accent.
+
+Generate the skyline backdrop, every section icon and timeline icon — no blank boxes. Use my real photo for the portrait. Fill every panel. Produce as one downloadable image. No clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>Why this version:</b> your real CV + your real face = a poster you can actually hand to a client or post on LinkedIn without a privacy or "is that really me" conversation. No web search means no [INFERRED] tags and no sources you didn't approve.</div>
+<div class="callout warn"><b>File limits:</b> a single CV up to a few MB and one head-and-shoulders photo is the sweet spot. If your photo is a full-body shot, crop it first — Copilot will use whatever you give it.</div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex3">← Cowork · Production Day-End Pack</button><button data-go="extras">Next: Bonus →</button></div></div><div class="view-ihh" id="view-extras"><section id="bonus">
+<div class="modulehead"><div class="num">＋</div><h2>Bonus use-cases<small>Tap any card to open the full prompt</small></h2></div>
+<div class="callout">Use these to extend the session if you have time, or as a follow-up library. Each card opens the prompt and the recommended surface (Copilot Chat, Cowork, Researcher, Create).</div>
+<div class="bonus-grid">
+<button class="bcard" onclick="openModal('ppt-build-edit')">
+<span class="ico">📊</span>
+<span class="tag">PowerPoint Agent + in-app Edit</span>
+<h4>BCG-style deck from a memo</h4>
+<p>Drop a Word memo into the PowerPoint Agent — get a 6-slide board-ready deck on your real template with action titles. Then open it in PowerPoint and let Copilot sharpen the analysis slide with a waterfall and a 3D fleet chart.</p>
+<span class="cta">OPEN →</span>
+</button>
+<button class="bcard" onclick="openModal('vendor-kak')">
+<span class="ico">📑</span>
+<span class="tag">Tender · EPC</span>
+<h4>Vendor vs KAK comparison</h4>
+<p>One PowerPoint slide, four bidders, KAK match score — with each vendor name as a clickable hyperlink to their bid pack on SharePoint. Visual, emailable, clickable.</p>
+<span class="cta">OPEN →</span>
+</button>
+<button class="bcard" onclick="openModal('mail-merge')">
+<span class="ico">✉️</span>
+<span class="tag">Cascade · Outlook drafts</span>
+<h4>Personalised Mail Merge</h4>
+<p>Forget Word's Mailings ribbon. Cowork writes a different body for each recipient — production, equipment, HSE, one 30-day ask — tuned to their performance band, and queues them as Outlook drafts.</p>
+<span class="cta">OPEN →</span>
+</button>
+<button class="bcard" onclick="openModal('cv-screening')">
+<span class="ico">👥</span>
+<span class="tag">HR · SharePoint grounding</span>
+<h4>CV Screening from SharePoint</h4>
+<p>Point Cowork at a SharePoint folder of CVs — same prompt scales from 12 to 1,200. Ranked shortlist, second-look list, interview-prep briefs, and a draft email to candidate #1.</p>
+<span class="cta">OPEN →</span>
+</button>
+<button class="bcard" onclick="openModal('finance-cascade')">
+<span class="ico">💰</span>
+<span class="tag">Corporate finance · monthly close</span>
+<h4>Monthly Overhead Cascade</h4>
+<p>At month-end, Finance writes the same email eight times — different department, different numbers, same shape. Cowork does it once, then opens an interactive cockpit so the GM sees all eight at a glance.</p>
+<span class="cta">OPEN →</span>
+</button>
+<button class="bcard" onclick="openModal('minutes')">
+<span class="ico">📝</span>
+<span class="tag">Meeting minutes · Word</span>
+<h4>Meeting minutes template + auto-fill</h4>
+<p>Create a reusable Word meeting-minutes template once, then auto-fill it from a Teams recap or a transcript — grounded on facts, not the minute-taker's memory.</p>
+<span class="cta">OPEN →</span>
+</button>
+<button class="bcard" onclick="openModal('poster')">
+<span class="ico">🎨</span>
+<span class="tag">Internal campaign poster · Copilot Create</span>
+<h4>Campaign poster ideas</h4>
+<p>Three alternate internal campaign posters in the Petrosea house style — Safety Always, Across Indonesia With You, Decarbonising Together. Friendly characters, 2x2 tip cards, video tile at the bottom. Pick whichever fits the moment.</p>
+<span class="cta">OPEN →</span>
+</button>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex4">← Copilot Create · Leadership…</button><button data-go="intro">Back to start ↺</button></div></div></div><div class="modal-overlay" id="modal-ppt-build-edit" onclick="if(event.target===this)closeModal('ppt-build-edit')">
+<div class="modal">
+<button aria-label="Close" class="close" onclick="closeModal('ppt-build-edit')">×</button>
+<h3>📊 BCG-style deck from a memo</h3>
+<p class="sub">PowerPoint Agent → Copilot in PowerPoint</p>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 1 · PowerPoint Agent · Memo → 6-slide deck</h4><div class="prompt">Using the attached memo /GM_Memo_Q1_Production_Review.docx as the source of truth and the attached PowerPoint template as the look and feel, build me a 6-slide board-ready deck in a BCG / McKinsey style for the General Manager · Operations at Contoso Mining Services.
+
+Rules for the deck:
+• Use the attached template throughout — do not invent a new design. Pick layouts that already exist in the master (title, section, content with chart, two-content, executive summary).
+• Every slide must use an action title — the title states the conclusion, not the topic. Example: not "Q1 Production" but "Q1 production exceeded plan by 4%, led by Tabang Coal".
+• Slide 1: Executive summary — 3 bullets with the "so what".
+• Slide 2: Situation — what is happening, with one supporting visual (bar, line or column chart).
+• Slide 3: Complication — the issue or variance that demands attention, with a clear chart.
+• Slide 4: Analysis — the root cause, with a waterfall or driver chart that explains the variance.
+• Slide 5: Recommendation — 3 specific actions with owners.
+• Slide 6: Risks and what we need — top 3 risks and the asks for the room.
+• Brand: warm orange and dark slate; mining-industry, professional tone; concise body text (no more than 6 bullets per slide); short axis labels.
+
+Save the file as MemoToDeck.pptx to OneDrive. Do not ask me any clarifying questions — produce it in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 2 · Edit with Copilot in PowerPoint · Add waterfall + 3D chart</h4><div class="prompt">Convert the chart on this slide to a waterfall chart that explains the variance between FY25 plan and FY25 actual production (BCM). Start the bars at "FY25 Plan", then show each driver as a positive or negative step (Tabang Coal +, Gunung Bayan −, Martabe Gold +, Equipment downtime −, Fuel cost −), and end at "FY25 Actual". Use warm orange for positive steps, dark slate for negative steps, and a neutral grey for the start and end totals. Add data labels in absolute numbers (M BCM) and keep the axis labels short. Then write a one-line takeaway underneath the chart starting with "So what:".
+
+After the waterfall is in place, add a second small chart to the right side of the slide — a 3D clustered column chart showing OEE % by fleet (Hitachi EX5600, Komatsu PC4000, Caterpillar 793F) for the last 3 months. Tilt the perspective slightly so the depth is visible. Use the same warm-orange + dark-slate palette. Title the chart "OEE by fleet · last 3 months".
+
+Keep the existing action title at the top of the slide intact. Do not change the slide layout or the master. Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div><div class="modal-overlay" id="modal-vendor-kak" onclick="if(event.target===this)closeModal('vendor-kak')">
+<div class="modal">
+<button aria-label="Close" class="close" onclick="closeModal('vendor-kak')">×</button>
+<h3>📑 Vendor vs KAK comparison</h3>
+<p class="sub">Cowork → PowerPoint Copilot</p>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Primary · PowerPoint comparison slide</h4><div class="prompt">Add ONE new slide titled "EPC Tender — Vendor vs KAK Match" for Contoso Mining Services.
+
+Ground every number in the table on these files (already in the tenant):
+ • /KAK_EPC_Mahakam_CoalHandling.docx  (the KAK — schedule, budget cap, HSE thresholds, evaluation weighting)
+ • /Vendor_Borneo_EPC_Specialists.docx
+ • /Vendor_TransAsia_Engineers.docx
+ • /Vendor_NusaWorks_Industrial.docx
+ • /Vendor_PrimeBuild_Indonesia.docx
+
+Body of the slide = a single table with 4 vendor rows and these columns:
+ • Vendor
+ • Reference projects (last 5 yrs · count + flagship from the vendor doc)
+ • Engineering bench (head-count + key disciplines)
+ • Timeline vs KAK (months ± vs the 18-month KAK)
+ • Cost band vs KAK budget (within / above / below the USD 78m cap)
+ • HSE record (LTI rate, last 3 yrs · compare to KAK ceiling of 0.30)
+ • KAK match score — your weighted score against the KAK evaluation weighting · cell-shaded green ≥ 85%, amber 70–84%, red &lt; 70%
+
+Below the table, add three short callout boxes: recommended bidder · biggest watch-out · decision-by date (use the KAK timeline).
+
+Use the slide's existing colour theme — our Contoso Mining Services brand feel, warm orange and dark slate, with a deep navy header row. Make the table fill the slide body — no empty space.
+
+Do not invent numbers — pull every figure from the referenced files and cite the source file in a small footnote on the slide. Do not ask me any clarifying questions — proceed.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Optional · Tender Capability One-Pager infographic (Copilot Create)</h4><div class="prompt">Make a premium, portrait A3 magazine-style infographic poster for Contoso Mining Services. The page must be filled top-to-bottom; no whitespace anywhere.
+
+Ground every fact, number, vendor name, project reference and recommendation on the files in my tenant — in particular /KAK_EPC_Mahakam_CoalHandling.docx and the four /Vendor_*.docx capability statements. Do not invent numbers; use only what the files state. Where a file is silent, say so on the page in small italics.
+
+Look and feel: deep navy as the dominant colour, warm gold and bronze accents, clean cream / off-white background. Bold serif title at the top, modern sans-serif body. Confident, evidence-led, premium tender brochure feel. Rounded corners, soft shadows, decorative laurel sprigs flanking the title, faint Jakarta / mine skyline silhouette behind the hero band.
+
+LAYOUT — fill the page in this order, each block sized so the page reads top to bottom with no gaps:
+
+1. HERO BAND (~15%): big gold serif title that Copilot derives from the angle of the brief (for a tender it might be "Top 3 Reasons to Award the EPC Scope", for an internal pitch "Top 3 EPC Capabilities", for a refresh "Tender Capability At-a-Glance"). Small gold laurel sprigs flanking the title. Faint mining + Jakarta skyline silhouette behind. Below the title, a navy pill ribbon with three short pills pulled from the company's real strengths in the files (e.g. safety record, track record, local content). Then a "Best For:" strip with 5-6 small icons + one-line use cases drawn from the vendor's actual scope.
+
+2. THREE NUMBERED CAPABILITY CARDS (~45%) — side by side, equal width, each card with the same structure:
+   • Numbered medallion (1 gold, 2 silver, 3 bronze) + short ribbon header (Copilot chooses a 2-3 word label per card, e.g. "Best Overall", "Specialist", "Fastest").
+   • Card title = a real capability area drawn from the files.
+   • Location pin + short contact line.
+   • A small flat editorial illustration that matches the card's capability (excavator, conveyor + jetty, maintenance crew, etc.) — generate the illustration, do not leave a blank.
+   • 4 ticked bullets with gold checkmarks, each a real capability point from the files.
+   • Gold-bordered indicative scope / value box — use real numbers from the files; if not present, write "Indicative — confirm at scoping".
+   • One-line "Recommended for:" sentence in navy.
+
+3. COMPARISON BLOCK (~25%) — two panels side by side:
+   • Left: "Capability Comparison" — small table with criteria icons on the left, 5-6 rows x 3 columns (the three capabilities from the cards above). Use 5-star ratings (filled gold / empty grey). Highlight the strongest cell per row with a thin gold border. Row criteria should be drawn from the KAK evaluation weighting (track record, safety, engineering bench, local content, cost discipline, mobilisation speed).
+   • Right: "How to Submit a Winning Tender" — 5 line items with small gold icons, drawn from the KAK submission requirements (reference projects, compliance matrix, HSE statistics, project schedule, commercial summary).
+
+4. BOTTOM STRIP (~10%) — two panels side by side:
+   • Left: "Tender Flow" — 5-step horizontal flow with arrows and small gold-bordered circles (consultation → scope confirmation → detailed engineering → construction &amp; QA → commissioning &amp; handover).
+   • Right: "Notes" — short callout in italics: indicative scope and pricing may change with site conditions, technical complexity, materials and contract volume; final commercial offer issued after KAK alignment.
+
+5. FOOTER (~5%):
+   • Full-width gold ribbon with star icons on each side, carrying a short company tagline drawn from the files.
+   • Slim navy line below with contact info on the left, today's date on the right.
+
+STYLE RULES:
+• Bold serif title in the hero; modern sans-serif elsewhere.
+• Generate every illustration, icon, laurel sprig and skyline silhouette — do not leave any placeholder.
+• Fill every panel with substantive content drawn from the files; do not collapse, omit or condense any section.
+• The page must read top to bottom with no empty regions. If a section runs short, expand the cards above so the page still fills.
+
+Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div><div class="modal-overlay" id="modal-mail-merge" onclick="if(event.target===this)closeModal('mail-merge')">
+<div class="modal">
+<button aria-label="Close" class="close" onclick="closeModal('mail-merge')">×</button>
+<h3>✉️ Personalised Mail Merge</h3>
+<p class="sub">Cowork · Outlook drafts</p>
+<div class="prompt">Cowork — run a monthly project cascade to 14 site superintendents, project managers and HSE leads for General Manager · Operations at Contoso Mining Services.
+
+Sources:
+- Recipient list: /03 Contoso_Mail_Merge_Recipients.xlsx (14 rows: First Name, Full Name, Location, Role, Email, Performance Band, Key Highlight)
+- Brand &amp; tone: /04 Contoso_Brand_Guidelines.docx (use the "Approved GM Communications Template" exactly)
+
+For each row in the recipient list:
+1. Write a personal 180-word letter using the approved template — a monthly cascade letter — production tonnes, equipment availability, HSE focus, and one specific 30-day ask per site. Tailor the body to the recipient's Performance Band:
+ - "Top Quartile" → appreciative, ask them to mentor a neighbouring site.
+ - "On Track" → acknowledge progress + push one specific stretch goal relevant to General Manager · Operations.
+ - "Watch" → direct, supportive, name one specific 30-day improvement.
+2. Quote the recipient's Key Highlight verbatim in the second paragraph.
+3. Sign off as Pak Surya Wibawa, General Manager · Operations, Contoso Mining Services.
+4. Create an Outlook DRAFT (do not send) to the address in the recipient's Email column. Subject: "[First Name], a quick note on this quarter at [Location]".
+
+When all 14 drafts are ready, give me a summary table: Recipient · Location · Band · Subject preview · Draft link. Stop and confirm before sending anything.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div><div class="modal-overlay" id="modal-cv-screening" onclick="if(event.target===this)closeModal('cv-screening')">
+<div class="modal">
+<button aria-label="Close" class="close" onclick="closeModal('cv-screening')">×</button>
+<h3>👥 CV Screening from SharePoint</h3>
+<p class="sub">Cowork · SharePoint folder</p>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Primary · Cowork · ranked shortlist + interview pack</h4><div class="prompt">Cowork — handle CV screening for the Mining Project Superintendent role at Contoso Mining Services.
+
+Source: SharePoint folder /HR/Recruitment/Contoso Mining Services Mining Project Superintendent (12 CVs).
+
+Do all of the following:
+1. Review every CV in the folder. Score each candidate 1–5 against: open-pit operations, heavy-equipment fleet (Komatsu/CAT), blast design.
+2. Build a ranked shortlist (top 5) with: name · current company · 3 quoted evidence bullets · risks/gaps to test in interview.
+3. Build a "second look" list (next 3) and a rejected list (one line of reasoning each).
+4. For each top-5 candidate, draft a personalised interview-prep brief for the hiring manager — 3 questions to ask, and what kind of answer opens a "yes".
+5. Draft (DO NOT send) an introductory email to candidate #1 inviting them to a screening call. Save as an Outlook draft.
+
+Flag anything unclear with [VERIFY]. Do not fabricate qualifications. Stop and confirm before sending any email.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Optional · Colourful candidate poster (Copilot Create)</h4><div class="prompt">Make a one-page colourful infographic poster titled "Mining Project Superintendent — Candidate Shortlist" for the General Manager · Operations of Contoso Mining Services.
+
+Render 12 candidate cards in a 4×3 grid:
+ • Card title: candidate name + role-fit score (0–100)
+ • Coloured score band: green ≥ 80, amber 60–79, red &lt; 60
+ • One-line strength
+ • One-line gap
+ • Years of relevant experience as a small badge
+
+The TOP 3 candidates by score must have a thicker gold border and a "TOP 3" ribbon.
+
+Below the grid: a 3-line summary — "Recommend interview", "Hold for second round", "Decline". Place each candidate name under the right line.
+
+Paste the scored table here:
+[PASTE THE SCORED TABLE FROM YOUR COWORK STEP — Create cannot re-read the SharePoint folder.]
+
+Use our Contoso Mining Services brand feel — warm orange and dark slate as the lead colours with neutral supporting tones — on a white background, vertical A4, and fill the whole page (no empty bottom band).<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div><div class="modal-overlay" id="modal-finance-cascade" onclick="if(event.target===this)closeModal('finance-cascade')">
+<div class="modal">
+<button aria-label="Close" class="close" onclick="closeModal('finance-cascade')">×</button>
+<h3>💰 Monthly Overhead Cascade</h3>
+<p class="sub">Cowork · Outlook drafts + HTML cockpit</p>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 1 · Eight personalised drafts, one prompt</h4><div class="prompt">From /08 Contoso_Overhead_By_Department.xlsx, generate 8 personalised monthly-closing emails — one per department row.
+
+For each row, draft an email TO the department-head email in column "Owner Email", subject "Monthly Closing — &lt;Department&gt; · Overhead Recap", body:
+ • One-line greeting using their first name
+ • Their actual vs budget overhead this month (from the row)
+ • Variance % — flag green (≤ -3%), amber (-3% to +3%) or red (≥ +3%)
+ • Their top cost driver this month (from the row)
+ • Year-to-date variance (from the row)
+ • One specific 30-day ask tied to that variance band
+ • Sign-off as "Pak Surya Wibawa, General Manager · Operations"
+
+Tone: warm, direct, in the GM's voice. Each email ≤ 150 words. Land all 8 as Outlook drafts in my Drafts folder — do NOT send.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 2 · Interactive HTML cockpit (same Cowork session)</h4><div class="prompt">From the same workbook, also produce ONE self-contained interactive HTML page called Monthly_Overhead_Cockpit.html that the GM opens at month-end.
+
+Requirements (all CSS and JS inline, no external libs):
+ • Header: title, period (current month), and a warm-orange brand stripe along the top.
+ • A &lt;select&gt; dropdown with the 8 departments. Picking one updates the cards below.
+ • Four big KPI cards: Budget · Actual · Variance % (traffic-light coloured) · YTD Variance.
+ • A horizontal bar chart (inline SVG) showing all 8 departments' variance % side-by-side, with the picked department highlighted.
+ • A small "top 3 cost drivers" panel for the picked department.
+ • A &lt;button&gt; "Open the email draft for this department" that shows the corresponding draft body in a modal (use the drafts you just generated).
+ • Clean cards, generous whitespace, fits 1280px wide, no scrolling needed at 100% zoom.
+
+Save in OneDrive root.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div><div class="modal-overlay" id="modal-minutes" onclick="if(event.target===this)closeModal('minutes')">
+<div class="modal">
+<button aria-label="Close" class="close" onclick="closeModal('minutes')">×</button>
+<h3>📝 Meeting minutes template + auto-fill</h3>
+<p class="sub">Word Copilot</p>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 1 · Create the reusable template</h4><div class="prompt">Create a professional, reusable meeting-minutes template for Contoso Mining Services. The template should be clean, executive-ready, and easy to fill in after any internal meeting.
+
+Include the following sections, each with placeholder text in square brackets so users know what to fill in:
+
+1. Header block: Meeting title, Date &amp; time, Location / Teams link, Meeting owner, Minute-taker
+2. Attendees (table: Name, Role, Present / Apologies)
+3. Agenda items discussed (numbered list)
+4. Key decisions taken (table: Decision, Decision owner, Effective date)
+5. Action items (table: Action, Owner, Due date, Status)
+6. Open questions / parked items (bullet list)
+7. Risks &amp; escalations raised (bullet list)
+8. Next meeting (date, focus topics)
+9. Distribution list
+
+Use the Contoso Mining Services brand tone: direct, professional, no jargon. Add a 1-line footer: "Confidential — internal use only." Format it so it looks like a proper corporate template, not a chat reply.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Step 2 · Auto-fill from the merger transcript</h4><div class="prompt">Using the meeting-minutes template above, fill it in completely using the content of /06 Contoso_Merger_Discussion_Transcript.docx (or the Teams recap I just generated for the Potential Merger meeting).
+
+Rules:
+- Use only facts explicitly stated in the source — no speculation, no invented attendees, no invented decisions.
+- For every action item, name the owner and the due date exactly as agreed in the meeting; if not stated, write [VERIFY] in that field.
+- Keep the executive tone — short, factual, neutral.
+- At the very top, add a 3-line executive summary above the template (so a busy reader can skim).
+- Flag any sensitive merger-related items as "CONFIDENTIAL — restricted distribution" in red at the section header.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div><div class="modal-overlay" id="modal-poster" onclick="if(event.target===this)closeModal('poster')">
+<div class="modal">
+<button aria-label="Close" class="close" onclick="closeModal('poster')">×</button>
+<h3>🎨 Campaign poster ideas</h3>
+<p class="sub">Copilot Create (Designer)</p>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Alternate 1 · Safety Always campaign poster</h4><div class="prompt">Make a one-page internal campaign poster called "Safety Always — Pulang dengan Selamat, Setiap Hari" for Contoso Mining Services. Portrait A4, fill the whole page. Look and feel like a polished Indonesian corporate campaign poster (think Petrosea / Pertamina internal comms): friendly illustrated characters (not photos), soft thematic background, brand-coloured callout box, 2x2 grid of numbered tip cards with character illustrations.
+
+Top of page:
+• In the top-right corner, a small Contoso Mining Services logo placeholder ("// CONTOSO" in a navy pill).
+• Soft thematic background: cream / off-white base with faint navy hardhat-and-cog motifs in the top corners.
+• Big bold sans-serif title in navy: "SAFETY ALWAYS" (line 1) / "Pulang dengan Selamat, Setiap Hari" (line 2, slightly smaller, warm orange).
+• A short date line underneath: "Kampanye HSE · FY26".
+
+Intro block: a 3-line factual paragraph framing the campaign — fatigue, complacency and shortcuts are the three biggest causes of incidents on our sites this year; one moment of attention can change a life.
+
+Then a warm-orange callout box (rounded, with a small ⚠️ icon on the left): "Ingat: setiap pekerjaan bisa ditunda, tapi keselamatan tidak. Gunakan Stop Work Authority kapan pun ada keraguan."
+
+Then a short bridge line in navy: "AGAR TETAP AMAN DI SETIAP SHIFT, MARI TERAPKAN 4 KEBIASAAN INI:"
+
+Then a 2x2 grid of 4 numbered tip cards (warm orange number circles 1-4), each card with a friendly illustrated character or spot illustration:
+1. "JANGAN ABAIKAN KELELAHAN" — illustration of a worker yawning at a haul-truck cab; body: prioritise 6+ jam of rest before shift, gunakan fatigue check di gate.
+2. "PATUHI LIFE-SAVING RULES" — illustration of a worker doing isolation lockout; body: 9 aturan emas — ikuti tanpa kompromi; setiap aturan menyelamatkan satu nyawa.
+3. "GUNAKAN STOP WORK AUTHORITY" — illustration of a worker raising a hand at the pit edge; body: berhenti, laporkan, lanjutkan hanya setelah aman — berlaku untuk semua tingkat.
+4. "RAWAT REKAN KERJA" — illustration of two workers checking each other's PPE; body: peer-check sebelum masuk area, perhatikan tanda kelelahan rekan, dukung kondisi mental.
+
+Bottom of page:
+• A slim warm-orange ribbon: "0 LTI dalam 24 bulan · mari lanjutkan bersama."
+• Below it, a small video-preview style tile (rounded, with a play button) labelled "Klik di sini untuk menonton video Safety Always" — with an illustration of a friendly safety officer giving a thumbs up.
+
+Style: friendly illustrated characters in flat editorial style (no photos), generous white space, soft shadows, rounded 12px corners, clean sans-serif throughout. Generate every illustration and icon — do not leave placeholders. Fill the entire A4 page. Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Alternate 2 · Across Indonesia With You campaign poster</h4><div class="prompt">Make a one-page internal campaign poster called "Across Indonesia With You — Bersama Indonesia, Membangun Masa Depan" for Contoso Mining Services. Portrait A4, fill the whole page. Look and feel like a polished Indonesian corporate campaign poster: friendly illustrated characters, soft thematic background, brand-coloured callout box, 2x2 grid of numbered tip cards with spot illustrations.
+
+Top of page:
+• Top-right: small "// CONTOSO" navy logo placeholder.
+• Background: cream base with a faint stylised outline map of Indonesia in light navy stretching softly across the upper half.
+• Big bold title in navy: "ACROSS INDONESIA WITH YOU" (line 1) / "Bersama Indonesia, Membangun Masa Depan" (line 2, warm orange).
+• Date line: "Cerita Operasi Kami · FY26".
+
+Intro block: 3-line factual paragraph — 27 tahun beroperasi di 14 lokasi, dari Kalimantan hingga Papua; setiap proyek kami adalah cerita tentang manusia, komunitas dan masa depan yang lebih baik.
+
+Then a navy callout box (rounded, with a small 📍 icon): "1,200+ kolega, 78% kandungan lokal, 8 program reklamasi aktif — ini bukan sekadar angka, ini komitmen kami pada Indonesia."
+
+Bridge line: "4 LOKASI · 4 CERITA · 1 KOMITMEN:"
+
+Then a 2x2 grid of 4 numbered story cards (warm orange number circles 1-4), each with a friendly illustrated character / spot illustration matching the location:
+1. "KALIMANTAN TIMUR — BALIKPAPAN" — illustration of haul trucks and a friendly engineer with a hardhat; body: 14 tahun kontrak hauling, 1,100+ pekerja lokal, program reklamasi progresif di 3 pit.
+2. "SULAWESI — SOROWAKO" — illustration of a nickel processing plant with a worker waving; body: dukungan EPC untuk hilirisasi nikel, pelatihan operator bersertifikat, 92% TKDN pada proyek FY25.
+3. "PAPUA — TIMIKA" — illustration of a maintenance crew and a fleet of trucks under a misty mountain; body: kontrak O&amp;M jangka panjang, pelatihan teknisi muda Papua, fokus pada keselamatan tambang dalam.
+4. "JAWA — PROYEK EPC" — illustration of a jetty and conveyor under construction with a friendly site engineer; body: pembangunan pabrik dan jetty modular, fabrikasi modular dari Samarinda, percepatan handover 17.5 bulan rata-rata.
+
+Bottom:
+• Slim warm-orange ribbon: "27 tahun · 14 lokasi · 1,200+ kolega — dan terus tumbuh bersama Indonesia."
+• Below it, a video-preview style tile labelled "Klik di sini untuk menonton cerita kolega kami di lapangan" with an illustration of a smiling local team member.
+
+Style: friendly flat editorial illustrations (no photos), soft shadows, rounded 12px corners, generous white space, warm orange + navy + cream. Generate every illustration and icon — no placeholders. Fill the entire A4 page. Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4 style="margin:14px 0 4px;font-size:13px;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px">Alternate 3 · Decarbonising Together campaign poster</h4><div class="prompt">Make a one-page internal campaign poster called "Decarbonising Together — Tambang Bersih, Masa Depan Cerah" for Contoso Mining Services. Portrait A4, fill the whole page. Look and feel like a polished Indonesian corporate sustainability campaign poster: friendly illustrated characters and nature elements, soft green-cream thematic background, brand-coloured callout, 2x2 grid of numbered tip cards with spot illustrations.
+
+Top of page:
+• Top-right: small "// CONTOSO" navy logo placeholder.
+• Background: cream base with faint green leaf and cloud motifs across the corners; a thin green ribbon under the title.
+• Big bold title in deep green: "DECARBONISING TOGETHER" (line 1) / "Tambang Bersih, Masa Depan Cerah" (line 2, warm orange).
+• Date line: "Roadmap menuju 2040 · FY26".
+
+Intro block: 3-line factual paragraph — sektor tambang menyumbang ~7% emisi global; di Contoso, kami percaya tambang yang aman dan tambang yang bersih adalah hal yang sama; ini adalah peta jalan praktis kami menuju 2040.
+
+Then a green callout box (rounded, with a small 🌱 icon): "Komitmen kami: -20% emisi Scope 1+2 pada 2030, -50% pada 2035, -80% pada 2040. Dapat dipertanggungjawabkan, dapat diaudit, dapat dilakukan."
+
+Bridge line: "4 LANGKAH PRAKTIS YANG SUDAH KAMI MULAI:"
+
+Then a 2x2 grid of 4 numbered action cards (warm orange number circles 1-4), each with a friendly illustration:
+1. "BAHAN BAKAR LEBIH BERSIH" — illustration of a haul truck with a green fuel drop icon; body: uji coba HVO biofuel di 3 pit, target 100% pada armada prioritas 2030, hemat ∼32% intensitas bahan bakar sejak 2020.
+2. "LISTRIK UNTUK PERALATAN" — illustration of an electric ancillary vehicle being charged; body: drill rig listrik mulai 2028, ancillary listrik di 5 lokasi, hybrid solar-diesel untuk kamp.
+3. "DESAIN EPC RENDAH KARBON" — illustration of a friendly engineer with a low-carbon concrete block; body: beton rendah karbon, modul pra-fabrikasi untuk kurangi limbah, supplier wajib lapor jejak karbon.
+4. "REHABILITASI DAN AIR" — illustration of a worker planting a tree on a reclaimed pit; body: reklamasi progresif sebagai standar, daur ulang air tambang, perlindungan keanekaragaman hayati di setiap lokasi.
+
+Bottom:
+• Slim green ribbon: "Tambang yang aman, tambang yang bersih — itu satu hal yang sama."
+• Below it, a video-preview style tile labelled "Klik di sini untuk menonton roadmap dekarbonisasi kami" with an illustration of a smiling sustainability officer in front of a green pit.
+
+Style: friendly flat editorial illustrations (no photos), warm orange + deep green + cream, soft shadows, rounded 12px corners, generous white space, clean sans-serif. Generate every illustration and icon — no placeholders. Fill the entire A4 page. Do not ask me any clarifying questions — proceed in one pass.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div><!--IHH-INJECT-END-->
+</main>
+</div>
+<script>
+function unlock(){
+ var v=document.getElementById('pw').value;
+ if(v==='ContosoMining2026'){
+  document.getElementById('lock').style.display='none';
+  document.getElementById('main').style.display='grid';
+  sessionStorage.setItem('cm_unlocked','1');
+ } else {
+  document.getElementById('err').textContent='Incorrect password';
+ }
+}
+function togglePw(){
+ var i=document.getElementById('pw');
+ i.type = i.type==='password' ? 'text' : 'password';
+}
+document.addEventListener('keydown',function(e){
+ if(e.key==='Enter' && document.getElementById('lock').style.display!=='none') unlock();
+});
+if(sessionStorage.getItem('cm_unlocked')==='1'){
+ document.getElementById('lock').style.display='none';
+ document.getElementById('main').style.display='grid';
+}
+function cp(btn){
+ var pre=btn.parentNode;
+ var t=pre.innerText.replace(/Copy\s*$/,'').trim();
+ navigator.clipboard.writeText(t).then(function(){
+  btn.textContent='Copied';btn.classList.add('copied');
+  setTimeout(function(){btn.textContent='Copy';btn.classList.remove('copied');},1500);
+ });
+}
+function openModal(id){
+ var m=document.getElementById('modal-'+id);
+ if(m){m.classList.add('open');document.body.style.overflow='hidden';}
+}
+function closeModal(id){
+ var m=document.getElementById('modal-'+id);
+ if(m){m.classList.remove('open');document.body.style.overflow='';}
+}
+document.addEventListener('keydown',function(e){
+ if(e.key==='Escape'){
+  document.querySelectorAll('.modal-overlay.open').forEach(function(el){el.classList.remove('open');});
+  document.body.style.overflow='';
+ }
+});
+</script>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('nav.tabs-ihh .tab');
+  var views = document.querySelectorAll('.view-ihh');
+  function switchView(target){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.view === target); });
+    views.forEach(function(v){ v.classList.toggle('active', v.id === 'view-' + target); });
+    window.scrollTo({top:0, behavior:'smooth'});
+    try { history.replaceState(null,'','#tab-'+target); } catch(e){}
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ switchView(t.dataset.view); }); });
+  document.querySelectorAll('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchView(b.dataset.go); }); });
+  // Restore from hash
+  var h = (location.hash||'').replace('#tab-','');
+  if (h && document.getElementById('view-'+h)) switchView(h);
+})();
+</script>
+</body>
+</html>
