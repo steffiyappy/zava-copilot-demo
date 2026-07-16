@@ -1633,6 +1633,206 @@ CARDS['uc-legal-permen-esdm'] = {
 }
 
 
+# ---------------- COSMETICS & PERSONAL CARE POWER MOVES ----------------
+
+CARDS['uc-cos-live-shopping-pack'] = {
+    'title': 'TikTok Shop + Shopee Live ROI Rationalisation — Cosmetics Power Move',
+    'dept_tag': 'Brand & Digital Commerce',
+    'industry_tag': 'Cosmetics',
+    'complexity': 'advanced',
+    'apps': ['Researcher', 'Analyst', 'Excel', 'PowerPoint', 'Cowork'],
+    'desc': 'Live-shopping trade spend on TikTok Shop + Shopee Live has overrun by Rp 60B across the 6 brand houses (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!). Group Brand Council needs an ROI-per-creator, ROI-per-brand-house, ROI-per-SKU cut plus the ~20% creator affiliate rationalisation list in one Cowork run.',
+    'skills': [
+        'Researcher scan of live-shopping benchmarks (Sociolla, Watsons, Guardian, competitor brand houses)',
+        'Analyst pivot on creator × brand-house × SKU × GMV × commission × return-rate',
+        'PowerPoint Brand Council pack with rationalisation shortlist',
+    ],
+    'instructions': [
+        'Copilot Chat → Researcher → paste Prompt 1 for the live-shopping ROI benchmark scan',
+        'Copilot Chat → Analyst → upload /COSMETICS_02_SKU_Margin_Tracker.xlsx → paste Prompt 2',
+        'PowerPoint → paste Prompt 3 for the Brand Council pack',
+    ],
+    'sample_files': [
+        ('COSMETICS_02_SKU_Margin_Tracker.xlsx', 'xlsx'),
+        ('COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx', 'docx'),
+    ],
+    'prompts': [
+        {
+            'label': '1. Researcher — live-shopping ROI benchmarks',
+            'text': (
+                "Researcher Critique mode. Benchmark TikTok Shop + Shopee Live cosmetics ROI in Indonesia for the last 12 months. Cover: (a) typical GMV-per-live-hour by beauty vertical (colour cosmetics, skincare, halal, muslimah); (b) creator affiliate commission ranges (nano / micro / mid / macro); (c) return-rate benchmarks by category; (d) BPOM Notifikasi enforcement actions against live-shopping claims in the last 24 months; (e) how Mandom Indonesia, Mustika Ratu, L\\'Oreal Indonesia, and Unilever Personal Care are structuring their live-shopping trade spend.\n\n"
+                "Cite every claim with source + retrieval timestamp. Flag any benchmark older than 6 months as stale."
+            )
+        },
+        {
+            'label': '2. Analyst — ROI-per-creator × brand-house cut',
+            'text': (
+                "Upload /COSMETICS_02_SKU_Margin_Tracker.xlsx. Build a pivot: creator × brand-house × SKU × GMV × commission % × return-rate × net margin. Add a scoring column: Keep / Rationalise / Cut based on (a) net margin > 12% (Keep), (b) net margin 4-12% (Rationalise — renegotiate commission), (c) net margin < 4% or return-rate > 25% (Cut).\n\n"
+                "Produce the shortlist of ~20% of creators to Cut and ~30% to Rationalise. For each Rationalise row, propose a specific commission-band target."
+            )
+        },
+        {
+            'label': '3. PowerPoint — Group Brand Council pack',
+            'text': (
+                "Generate a 10-slide Group Brand Council pack in PowerPoint. Slide 1: cover with hook (Rp 60B overrun, 6 brand houses). Slide 2: Researcher benchmark summary. Slide 3-8: one slide per brand house (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!) showing top 3 winning creators + top 3 to rationalise + top 3 to cut. Slide 9: FY2026 live-shopping guardrails (grounded on /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx). Slide 10: 5 decisions the Brand Council needs to approve today.\n\n"
+                "Use precise cosmetics language (SKU, GMV, affiliate, macro/mid/micro creator, BPOM Notifikasi, halal-certified LPPOM MUI)."
+            )
+        },
+    ],
+    'expected': [
+        'Live-shopping ROI benchmark with citations',
+        'Creator × brand-house × SKU rationalisation shortlist',
+        '10-slide Brand Council pack',
+    ],
+    'watch': [
+        'Every benchmark cites a source with retrieval timestamp',
+        'Rationalisation list has a specific commission-band target per row',
+        'Slide 9 is grounded on the actual guardrails file, not invented',
+    ],
+    'honest': 'Copilot drafts; Brand Council decides. Commission renegotiations trigger creator-contract amendments — Legal must sign off before any communication to creators. Live-shopping performance is highly seasonal (Lebaran, Harbolnas 11.11 / 12.12) — do not extrapolate a low-season month linearly. Return-rate benchmarks vary by category; skincare and colour cosmetics behave very differently.',
+    'tips': [
+        'Pair with the halal / LPPOM MUI expiry cut so re-signed creators do not front expiring certificates',
+        'Re-run monthly for the 6 brand houses; pin as a custom skill',
+    ],
+}
+
+CARDS['uc-cos-bpom-notifikasi-refresh'] = {
+    'title': 'BPOM Notifikasi Kosmetik Refresh — Regulatory Power Move',
+    'dept_tag': 'Regulatory & Quality',
+    'industry_tag': 'Cosmetics',
+    'complexity': 'advanced',
+    'apps': ['Researcher', 'Excel', 'Word', 'Cowork'],
+    'desc': 'Every SKU sold in Indonesia needs a valid BPOM Notifikasi Kosmetik (3-year cycle). Across 6 brand houses + 1,400+ active SKUs, Regulatory Affairs needs the 90-day expiry funnel, the priority renewal list, and the dossier readiness score per SKU in one Cowork run.',
+    'skills': [
+        'Researcher scan of BPOM Notifikasi rule changes + enforcement actions',
+        'Analyst pivot on SKU × Notifikasi expiry × sales velocity × dossier readiness',
+        'Word regulatory brief with renewal priority list',
+    ],
+    'instructions': [
+        'Copilot Chat → Researcher → paste Prompt 1 for the BPOM rule change scan',
+        'Copilot Chat → Analyst → upload /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx → paste Prompt 2',
+        'Word → paste Prompt 3 for the regulatory brief',
+    ],
+    'sample_files': [
+        ('COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx', 'xlsx'),
+    ],
+    'prompts': [
+        {
+            'label': '1. Researcher — BPOM rule change + enforcement scan',
+            'text': (
+                "Researcher Critique mode. Scan BPOM (Badan POM) sources: pom.go.id, notifkos.pom.go.id, and the last 12 months of BPOM press releases. Cover: (a) any new / amended Peraturan BPOM affecting cosmetics Notifikasi in the last 18 months (ingredient bans, labelling rules, halal-labelling under UU JPH); (b) top 20 recall / enforcement actions against cosmetics brands (any brand, any category); (c) the current Notifikasi renewal dossier requirements and typical processing time.\n\n"
+                "Cite every claim with source URL + retrieval timestamp. Flag anything older than 6 months as stale for enforcement trends."
+            )
+        },
+        {
+            'label': '2. Analyst — 90-day Notifikasi expiry funnel',
+            'text': (
+                "Upload /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx. Build:\n"
+                "(1) 90-day expiry funnel: SKU × brand house × Notifikasi number × expiry date × days remaining × 12-month sales velocity × dossier readiness score (Ready / Gap / Missing).\n"
+                "(2) Priority renewal list: rank by (sales velocity × margin) so we protect the top-revenue SKUs first.\n"
+                "(3) Dossier gap list: for every SKU with dossier readiness Gap or Missing, list the specific missing artefact (INCI, safety assessment, stability study, LPPOM MUI cert, claim substantiation).\n"
+                "(4) Risk of stock-out: SKUs where Notifikasi expires within 60 days AND dossier readiness is not Ready."
+            )
+        },
+        {
+            'label': '3. Word — regulatory brief for Group Head of Regulatory & Halal',
+            'text': (
+                "Draft a 4-page regulatory brief for the Group Head of Regulatory & Halal Compliance. Structure:\n"
+                "(1) Executive summary: how many SKUs, how much revenue at risk, in the next 90 days.\n"
+                "(2) Researcher scan headline: any BPOM rule change we need to action.\n"
+                "(3) The Top-20 priority renewal list (table).\n"
+                "(4) The stock-out risk list with a specific recovery plan per SKU (accelerate dossier / discontinue / substitute).\n"
+                "(5) The 3 decisions we need from the Group Head this week.\n\n"
+                "Tone: formal, defensible, plain Bahasa Indonesia with regulatory acronyms defined on first use (BPOM Badan POM, INCI, LPPOM MUI, UU JPH). No claim without a data source (link to the tracker cell or the Researcher citation)."
+            )
+        },
+    ],
+    'expected': [
+        'BPOM rule change scan with citations',
+        '90-day Notifikasi expiry funnel with dossier readiness',
+        '4-page regulatory brief with 3 decision asks',
+    ],
+    'watch': [
+        'Every SKU on the stock-out list has a specific recovery plan, not just a flag',
+        'Halal (LPPOM MUI) status is tracked alongside Notifikasi — they are different cycles',
+        'Priority ranking weights sales velocity × margin, not just alphabetical',
+    ],
+    'honest': 'Copilot drafts; Regulatory Affairs decides. Any Notifikasi renewal submission requires the Penanggung Jawab Teknis (PJT) signature and BPOM AKD account — Copilot cannot submit for you. Enforcement priorities shift; a 6-month-old scan may miss a fresh BPOM circular. For high-risk categories (skin-lightening, sunscreen SPF claims, halal-labelled), get an internal regulatory second opinion before decisions.',
+    'tips': [
+        'Re-run monthly on the 1st; pin as a custom skill',
+        'Cross-check with the halal (LPPOM MUI + JAKIM) expiry tracker — different cycle, same SKU',
+    ],
+}
+
+CARDS['uc-cos-ingredient-recall'] = {
+    'title': 'Hydroquinone / Mercury / TiO2 Contamination Recall Response — Cosmetics Power Move',
+    'dept_tag': 'Regulatory & Crisis',
+    'industry_tag': 'Cosmetics',
+    'complexity': 'advanced',
+    'apps': ['Researcher', 'Word', 'Outlook', 'PowerPoint', 'Cowork'],
+    'desc': 'BPOM has flagged 2 SKUs for contamination (hydroquinone above the 0.02% limit / mercury / prohibited ingredient). The 72-hour crisis response requires: BPOM formal reply, retailer withdrawal notice (Sociolla / Watsons / Guardian), consumer FAQ, live-shopping creator brief, and Group Board update — in one Cowork run.',
+    'skills': [
+        'Researcher scan of BPOM enforcement precedent + ingredient toxicology',
+        'Regulatory reply drafting in the BPOM formal register',
+        'Retailer + creator + consumer communication cascade',
+    ],
+    'instructions': [
+        'Copilot Chat → Researcher → paste Prompt 1 for the BPOM enforcement precedent scan',
+        'Word → paste Prompt 2 for the BPOM formal reply + retailer withdrawal notice',
+        'Cowork → paste Prompt 3 to fan out the full 5-artefact response pack',
+    ],
+    'sample_files': [
+        ('COSMETICS_03_Ingredient_Recall_Programme.docx', 'docx'),
+    ],
+    'prompts': [
+        {
+            'label': '1. Researcher — BPOM enforcement precedent',
+            'text': (
+                "Researcher Critique mode. Scan BPOM enforcement history for [INGREDIENT] contamination in cosmetics in the last 24 months. Cover: (a) BPOM public list of banned / recalled products with the specific violation; (b) how peer brand houses (Mandom, Mustika Ratu, L\\'Oreal Indonesia, Unilever Personal Care) handled comparable recalls; (c) media coverage sentiment and the recovery arc; (d) the specific BPOM sanction ladder (peringatan tertulis, penarikan produk, pencabutan Notifikasi, sanksi pidana).\n\n"
+                "Cite every claim. This will feed a 72-hour crisis response — accuracy matters more than exhaustiveness."
+            )
+        },
+        {
+            'label': '2. Word — BPOM formal reply + retailer withdrawal notice',
+            'text': (
+                "Draft two Word documents grounded on /COSMETICS_03_Ingredient_Recall_Programme.docx and the Researcher scan:\n\n"
+                "(1) BPOM formal reply — Bahasa Indonesia, formal regulatory register. Structure: acknowledgement of the BPOM notice, our root-cause investigation status, immediate voluntary withdrawal action, timeline for full investigation report, contact person (Penanggung Jawab Teknis).\n\n"
+                "(2) Retailer withdrawal notice to Sociolla, Watsons, Guardian, Alfamart, Indomaret, Guardian MY, Watsons SG, Guardian Health. Structure: the 2 affected SKUs (batch codes), immediate pull-from-shelf request, return logistics, replacement / credit note plan, POC.\n\n"
+                "Do not admit liability beyond the specific batch. Do not speculate on cause. Follow the recall SOP in the source doc verbatim."
+            )
+        },
+        {
+            'label': '3. Cowork — full 5-artefact crisis response pack',
+            'text': (
+                "Cowork: fan out the following 5 artefacts in parallel:\n\n"
+                "(1) Consumer FAQ (Word, BI + EN) — 15 questions, plain language, no legal jargon. Covers: is my product safe, how do I return, refund process, timeline.\n"
+                "(2) Live-shopping creator brief (Word) — talking points + off-topic list for the ~40 macro / mid creators fronting the affected SKUs across TikTok Shop + Shopee Live.\n"
+                "(3) Outlook email to Group Board — 1 page, 3 sections (what happened, what we are doing, what we need from the Board today).\n"
+                "(4) PowerPoint update for the Group Head of Regulatory & Halal — 6 slides for the 4pm crisis war-room.\n"
+                "(5) Internal Teams post to the 6 brand houses — factual, 5 lines, direct staff to the FAQ.\n\n"
+                "Use the named recipients consistently: Group CEO, Group Head of Regulatory & Halal Compliance, 6 Brand-House GMs (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!), Head of Retail Partnerships, Head of Digital & Live Commerce, Group Head of Corporate Affairs."
+            )
+        },
+    ],
+    'expected': [
+        'BPOM enforcement precedent scan',
+        'BPOM formal reply + retailer withdrawal notice',
+        '5-artefact crisis response pack fanned out via Cowork',
+    ],
+    'watch': [
+        'Formal reply uses BPOM regulatory register, not marketing language',
+        'Retailer notice does not admit liability beyond the specific batch codes',
+        'Creator brief has an explicit off-topic list (do not speculate on cause)',
+        'Consumer FAQ is plain BI, no legal jargon',
+    ],
+    'honest': 'Copilot drafts; the Group Head of Regulatory & Halal signs. Any communication to BPOM, retailers, or the public in a contamination incident must be reviewed by both the PJT and external regulatory counsel before release — the sanction ladder can reach criminal (sanksi pidana) for repeat offences. Copilot cannot verify lab results or root cause; it drafts on the assumption the recall SOP has been triggered correctly.',
+    'tips': [
+        'Pre-authorise the recall SOP file (/COSMETICS_03_Ingredient_Recall_Programme.docx) so the war-room can invoke this in 15 minutes, not 3 hours',
+        'Pair with the BPOM Notifikasi expiry cut so a recall does not accidentally expose an already-expiring Notifikasi',
+    ],
+}
+
+
 # ---------------- DEPARTMENT-SPECIFIC CARDS ----------------
 
 CARDS['uc-fin-monthend'] = {

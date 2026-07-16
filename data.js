@@ -436,6 +436,13 @@ window.HUB_DATA = {
       ]
     },
     {
+      id: 'sec-cosmetics',
+      label: 'Cosmetics & Personal Care',
+      industries: [
+        'cosmetics'
+      ]
+    },
+    {
       id: 'sec-tobacco-wellness',
       label: 'Tobacco & Wellness',
       industries: [
@@ -120102,6 +120109,2683 @@ window.HUB_DATA = {
           ]
         }
       ]
+    },
+    {
+      id: 'cosmetics',
+      sectorId: 'sec-cosmetics',
+      subsector: '',
+      name: 'Cosmetics & Personal Care',
+      icon: '💄',
+      color: '#EC4899',
+      accent: '#BE185D',
+      company: 'Paragon Innovation',
+      tagline: 'Q4 FY2025 live-shopping live-shopping trade-spend overrun Rp 60B; hydroquinone-contamination recall on 2 SKUs across 3 markets — Board pack in 5 days.',
+      scenario: 'Paragon Innovation is an Indonesia-based cosmetics and personal-care group with 4 manufacturing plants across Jababeka and Cikande, producing colour cosmetics, skincare, haircare, personal wash and fragrance for over 300 SKUs across the Wardah, Make Over, Emina, Kahf, Instaperfect, Wardah Perfect Bright and OMG! brand houses. Live-shopping trade-spend in Q4 FY2025 overran budget by Rp 60B (+22%) driven by aggressive TikTok Shop and Shopee Live incentives and weaker Sociolla / Watsons / Guardian modern-beauty sell-through. A hydroquinone-above-limit finding on two Wardah Perfect Bright brightening SKUs triggered a precautionary recall in Malaysia and Singapore — BPOM Indonesia (Notifikasi Kosmetik), NPRA / KKM Malaysia and HSA Singapore have all opened files, and US MoCRA compliance for the export line is under fresh scrutiny. Titanium dioxide (TiO2) and palm-derived surfactant costs jumped 18% on global specialty-chemicals volatility, squeezing margins on the 4 highest-volume colour-cosmetics and personal-wash SKUs. The Group CFO needs a Board pack in 5 days covering live-shopping trade-spend control, the ingredient-recall remediation programme, gross-margin recovery on colour-cosmetics + personal-wash, and FY2026 live-shopping + creator-affiliate guardrails. Real customer reference frame: the group operates similarly to Paragon Innovation (Wardah / Make Over / Emina / Kahf), Mandom Indonesia (Gatsby, Pixy), Mustika Ratu, Martina Berto (Sariayu), Kao Indonesia (Biore), L’Oréal Indonesia, Unilever Indonesia (Personal Care) and Cosmax Indonesia.',
+      companyID: 'Paragon Innovation',
+      taglineID: 'Trade-spend live-shopping Q4 FY2025 lebih Rp 60 M; recall SKU kontaminasi hidrokuinon di 3 pasar — paket Direksi 5 hari.',
+      scenarioID: 'Paragon Innovation adalah grup kosmetik dan personal care Indonesia dengan 4 pabrik di Jababeka dan Cikande, memproduksi colour cosmetics, skincare, haircare, personal wash dan fragrance untuk lebih dari 300 SKU di lini Wardah, Make Over, Emina, Kahf, Instaperfect, Wardah Perfect Bright dan OMG!. Trade-spend live-shopping Q4 FY2025 melebihi anggaran Rp 60 miliar (+22%) terutama karena agresivitas insentif TikTok Shop dan Shopee Live serta sell-through beauty modern trade (Sociolla, Watsons, Guardian) yang melemah. Temuan hidrokuinon di atas ambang pada dua SKU Wardah Perfect Bright memicu recall pencegahan di Indonesia dan Singapura — BPOM Indonesia (Notifikasi Kosmetik), NPRA / KKM Indonesia dan HSA Singapura semuanya membuka kasus, dan kepatuhan US MoCRA untuk lini ekspor sedang diteliti ulang. Biaya titanium dioxide (TiO2) dan surfaktan turunan sawit melonjak 18% dari volatilitas specialty chemicals global, menekan margin pada 4 SKU colour cosmetics dan personal wash terlaris. Direktur Keuangan Grup butuh paket Direksi dalam 5 hari yang mencakup pengendalian trade-spend live-shopping, program remediasi recall bahan aktif, pemulihan gross margin colour cosmetics + personal wash, dan guardrail live-shopping + creator-affiliate FY2026. Frame customer riil: grup ini beroperasi serupa dengan Paragon Innovation (Wardah, Make Over, Emina, Kahf), Mandom Indonesia (Gatsby, Pixy), Mustika Ratu, Martina Berto (Sariayu), Kao Indonesia (Biore), L’Oréal Indonesia, Unilever Indonesia (Personal Care) dan Cosmax Indonesia.',
+      files: [
+        '/00_Copilot_Notebook_Demo_Guide.docx',
+        'COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx',
+        'COSMETICS_02_SKU_Margin_Tracker.xlsx',
+        'COSMETICS_03_Ingredient_Recall_Programme.docx',
+        'COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx',
+        'COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx',
+        'GL_Extract_MY_ID_SG_2026M06.xlsx',
+        'Budget_Forecast_Bridge.xlsx',
+        'Monthly_Close_Deck_Template.pptx',
+        'CFO_Email_Template.docx',
+        'Contracts_Folder_Index.csv',
+        'Group_Counterparty_Master.xlsx',
+        'Contract_Tiering_Template.pptx',
+        'Sample_Supply_Agreement_MY_2026.docx',
+        'TargetCo_Public_Profile.docx',
+        'SEA_Market_Size_Assumptions.xlsx',
+        'Diligence_Question_Bank.xlsx',
+        'IC_Memo_Template.pptx',
+        'BRD_Q4_Financial_Pack.xlsx',
+        'Risk_Appetite_Statement.docx',
+        'ESG_Disclosure_2026.pdf',
+        'Invoice_MY_KL_125000.pdf',
+        'Invoice_Register_Q2.xlsx',
+        'Approval_Matrix_FY26.xlsx',
+        'Investor_Day_Key_Messages.pptx',
+        'Employee_Sustainability_FAQ.docx'
+      ],
+      prompts: [
+        {
+          tool: '💬 Microsoft 365 Copilot Chat',
+          license: 'Free — no Microsoft 365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Microsoft 365 Copilot Chat at m365.cloud.microsoft/chat — secure, work-grounded chat. Type a prompt and reference files with /file. Available to anyone with an M365 account at no extra cost (Free tier) and supercharged with Microsoft 365 Copilot license (work-grounded answers, agents, summaries across mailbox/files/meetings).',
+          prompts: [
+            {
+              instr: '',
+              prompt: 'Trade-spend in Q4 FY2025 overran budget by Rp 60 miliar (~MYR 17 million) (+22%) driven mainly by TikTok Shop and Shopee Live incentive aggression on the colour-cosmetics and personal-wash SKUs. Draft a 1-page note for the Group CFO that frames the overrun in plain language, lists the 5 questions the Board will ask first, and identifies the 3 decisions the CFO must take before the Audit Committee opens. Present as a structured table with columns for Issue, Why It Matters, Board Question, and Recommended Answer.'
+            },
+            {
+              instr: '',
+              prompt: 'Write a 90-second verbal opening for the Board meeting in 5 days that acknowledges the Rp 60B live-shopping trade-spend overrun and the precautionary hydroquinone-contamination recall in Malaysia and Singapore directly, explains the role of TiO2 + palm-surfactant volatility and modern-trade promo intensity without sounding defensive, and signals a credible 2-quarter margin restoration path. End with 3 talking points the CFO can use if the Board challenges promo discipline or QA controls.'
+            },
+            {
+              instr: '',
+              prompt: 'Build a stakeholder communication map for the Q4 FY2025 live-shopping trade-spend overrun and the active hydroquinone-contamination recall ahead of the Board meeting. Identify the priority audiences (BPOM Indonesia, MOH Malaysia, SFA Singapore, top-3 modern-trade chains, the recall-affected consumers via the 24h hotline, the 3 outsourced OEM fillers (Cosmax Indonesia, Kolmar Indonesia, Sinar Wisesa), and the FY2026 live-shopping working-capital banks), the message each audience requires, the timing, and the main communication risk if the message is mishandled. Present as a RAG table with Red for same-day, Amber for 24-hour, and Green for monitor-only audiences.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '',
+              prompt: 'Trade-spend kuartal 4 FY2025 melebihi anggaran sebesar Rp 60 miliar (+22%) terutama karena agresivitas insentif TikTok Shop dan Shopee Live pada SKU colour cosmetics dan personal wash. Susun nota tajam 1 halaman untuk Direktur Keuangan Grup yang membingkai pembengkakan dalam bahasa sederhana, mendaftar 5 pertanyaan yang akan ditanyakan Direksi pertama-tama, dan mengidentifikasi 3 keputusan yang harus diambil Direktur Keuangan sebelum Komite Audit dibuka. Sajikan sebagai tabel terstruktur dengan kolom Isu, Mengapa Penting, Pertanyaan Direksi, dan Jawaban yang Direkomendasikan.'
+            },
+            {
+              instr: '',
+              prompt: 'Tulis pembukaan lisan 90 detik untuk Rapat Direksi dalam 5 hari yang mengakui pembengkakan trade-spend Rp 60 miliar dan recall pencegahan kontaminasi hidrokuinon di Indonesia dan Singapura secara langsung, menjelaskan peran volatilitas TiO2 + surfaktan sawit dan intensitas promo modern-trade tanpa terdengar defensif, dan memberikan sinyal jalur pemulihan margin 2-kuartal yang kredibel. Akhiri dengan 3 talking points untuk dipakai Direktur Keuangan bila Direksi menantang disiplin promo atau pengendalian QA.'
+            },
+            {
+              instr: '',
+              prompt: 'Bangun peta komunikasi pemangku kepentingan untuk pembengkakan trade-spend kuartal 4 FY2025 dan recall kontaminasi hidrokuinon aktif menjelang Rapat Direksi. Identifikasi audiens prioritas (BPOM Indonesia, KKM Indonesia, SFA Singapura, 3 chain beauty teratas (Sociolla, Watsons, Guardian), konsumen terdampak recall via hotline 24 jam, 3 OEM filler eksternal (Cosmax Indonesia, Kolmar Indonesia, Sinar Wisesa), dan bank modal kerja live-shopping FY2026), pesan inti tiap audiens, timing, dan risiko komunikasi utama bila pesan keliru. Sajikan sebagai tabel RAG dengan Merah untuk hari ini juga, Kuning untuk 24 jam, dan Hijau untuk audiens monitor saja.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '',
+              prompt: 'Trade-spend kuartal 4 FY2025 melebihi belanjawan sebesar Rp 60 miliar (+22%) terutama kerana agresivitas insentif TikTok Shop dan Shopee Live pada SKU colour cosmetics dan personal wash. Susun nota tajam 1 halaman untuk Pengarah Kewangan Grup yang membingkai pembengkakan dalam bahasa sederhana, mendaftar 5 pertanyaan yang akan ditanyakan Lembaga Pengarah pertama-tama, dan mengidentifikasi 3 keputusan yang perlu diambil Pengarah Kewangan sebelum Komite Audit dibuka. Sajikan sebagai jadual terstruktur dengan lajur Isu, Mengapa Penting, Pertanyaan Lembaga Pengarah, dan Jawaban yang Disyorkan.'
+            },
+            {
+              instr: '',
+              prompt: 'Tulis pembukaan lisan 90 detik untuk Mesyuarat Lembaga Pengarah dalam 5 hari yang mengakui pembengkakan trade-spend Rp 60 miliar dan recall pencegahan kontaminasi hidrokuinon di Malaysia dan Singapura secara langsung, menjelaskan peran volatilitas TiO2 + surfaktan sawit dan intensitas promo modern-trade tanpa terdengar defensif, dan memberikan sinyal jalur pemulihan margin 2-kuartal yang kredibel. Akhiri dengan 3 talking points untuk dipakai Pengarah Kewangan bila Lembaga Pengarah menantang disiplin promo atau pengendalian QA.'
+            },
+            {
+              instr: '',
+              prompt: 'Bangun peta komunikasi pemangku kepentingan untuk pembengkakan trade-spend kuartal 4 FY2025 dan recall kontaminasi hidrokuinon aktif menjelang Mesyuarat Lembaga Pengarah. Identifikasi audiens prioritas (BPOM Malaysia, KKM Malaysia, SFA Singapura, 3 chain beauty teratas (Sociolla, Watsons, Guardian), konsumen terdampak recall via hotline 24 jam, 3 OEM filler eksternal (Cosmax Malaysia, Kolmar Malaysia, Sinar Wisesa), dan bank modal kerja live-shopping FY2026), pesan inti tiap audiens, timing, dan risiko komunikasi utama bila pesan keliru. Sajikan sebagai jadual RAG dengan Merah untuk hari ini juga, Kuning untuk 24 jam, dan Hijau untuk audiens monitor sahaja.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Mod Admin',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎨 Copilot Create (image · poster · infographic · video)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot Create — a dedicated tab in the Microsoft 365 Copilot app (m365.cloud.microsoft) where users generate visual assets from natural-language prompts. Capabilities: ??️ Image — generate or edit images; bring text + style direction; choose model (Flux, GPT-Image, DALL·E, Sora-image-style); request square/landscape/portrait; iterate by referring to the previous image. ?? Poster — produce one-page posters for events, awareness campaigns, regulator deadlines, all-hands; pick layouts (grid, focal, split); supply headline + body + CTA. ?? Infographic — multi-section data visualisation; supply data points + theme; Copilot picks layout and icons. ?? Video — short-form video (15s–60s) for internal comms or social; choose voiceover language (en-US, ms-MY, id-ID), background music, transitions. Also: stickers, social posts (LinkedIn/X), branded templates, brand-kit colour and font controls. Output downloads as PNG/JPG/MP4 or saves to OneDrive. Requires Microsoft 365 Copilot license. Image generation respects the Microsoft Responsible AI policy (no real public figures, no copyrighted styles).',
+          prompts: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Cosmetics & Personal Care** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Cosmetics & Personal Care** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Cosmetics & Personal Care**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Cosmetics & Personal Care** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Cosmetics & Personal Care** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Cosmetics & Personal Care** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Cosmetics & Personal Care**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Indonesia / Bahasa Indonesia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Cosmetics & Personal Care** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Open the Microsoft 365 Copilot app** → left nav > **Create** > **Image**. Pick **landscape 16:9**. Choose model **Flux** or **GPT-Image** (try both). Give Copilot a reference image of the Zava brand mark (optional) for style consistency. Iterate by referring to the previous image (“Same style, change the foreground to …”).',
+              prompt: 'Create a clean, modern hero banner image for **Cosmetics & Personal Care** at Zava Conglomerate. Show a confident professional team in a corporate setting (Southeast Asia context — Kuala Lumpur or Jakarta skyline blurred behind), wearing smart business attire. Lighting: warm morning sun. Mood: trustworthy, forward-looking. Brand palette: deep navy + amber accents. No text on the image, no logos, no real public figures. Composition: rule of thirds, plenty of negative space on the right for headline overlay. 16:9 widescreen.'
+            },
+            {
+              instr: '**Open Copilot → Create → Poster**. Choose layout **Focal** (one big visual + headline). Set the brand kit to Zava Conglomerate (navy #0F172A + amber #F59E0B). Output: PNG A3 portrait. Iterate the headline with Copilot before exporting.',
+              prompt: 'Design an internal awareness poster for **Cosmetics & Personal Care** at Zava Conglomerate. Headline: “Ready. Resilient. Responsible.” Body: a 2-line teaser explaining the initiative in plain language for all employees across our Bank, Plantations, Energy, Pharma, and Consumer divisions. Include a clear call-to-action (“Join the briefing on Friday 3pm — Teams link in your inbox”). Visual: abstract gradient (navy → teal) with a subtle grid texture and one bold icon related to the topic. A3 portrait. Brand-kit colours only.'
+            },
+            {
+              instr: '**Open Copilot → Create → Infographic**. Pick layout **Vertical — 5 sections**. Paste the data points below into the brief. Refine each section heading with Copilot before export. PNG long-portrait.',
+              prompt: 'Create a one-page infographic summarising the **FY2026 outlook for Cosmetics & Personal Care**. Five vertical sections: (1) Headline KPI — 1 big number with caption; (2) 3 strategic priorities for the year (icons + 1-line caption each); (3) Risk heat-map — 5 risks rated low/med/high with colour dots; (4) Targets vs FY2025 actuals — simple bar comparison; (5) Next milestones — timeline with 4 dated checkpoints. Brand: Zava navy + amber. Footer: “Zava Conglomerate • Confidential • Internal use only”.'
+            },
+            {
+              instr: '**Open Copilot → Create → Video**. Length **30 seconds**. Voiceover: **English (US)** (or set to **Bahasa Malaysia / Bahasa Malaysia** if your audience is local). Background music: **Corporate — Optimistic**. Aspect ratio: **16:9** for Teams Town Hall, or **9:16** for Viva Engage / mobile. Iterate the script with Copilot before generating; review every clip in preview before export.',
+              prompt: 'Generate a 30-second internal comms video introducing **Cosmetics & Personal Care** at Zava Conglomerate. Structure: (0–5s) cold open with the headline question; (5–20s) three quick scenes — office in KL, plantation in Sabah, energy plant in Pengerang — each 4–5 seconds with a one-line caption; (20–25s) the leader (no real person — generic professional avatar) delivers the call-to-action; (25–30s) closing card with Zava logo placeholder + URL placeholder. Voiceover tone: warm, confident, conversational. End with “Together, that’s how Zava grows.” Captions on screen for accessibility.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🔍 Researcher',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Researcher. Two demo modes to highlight: (1) 🔍 Critique Mode — Researcher self-critiques every source, verifying claims against the originals before including them in the report. (2) ⚖️ Model Council — Researcher orchestrates multiple frontier reasoning models (GPT-5.5 Thinking and Claude Opus 4.7) to debate the brief, surface dissent, and synthesise a balanced answer. Grounded in live web + your tenant data with citations — and now optionally federated connectors (Moody’s, LSEG, HubSpot, Notion, ServiceNow) for real-time external data. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Critique Mode**. Paste the prompt below — Researcher will draft a deep market study and a second model peer-reviews every claim and citation before it lands.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. Paragon Innovation is preparing a Board pack in 5 days. We need credible peer cases including but not limited to Paragon Innovation, Mandom Indonesia, Mustika Ratu, Martina Berto, Kao Indonesia, L’Oréal Indonesia, Unilever Indonesia Personal Care and Cosmax Indonesia. Here is exactly what I need from you. I need a defensible benchmark of how listed ASEAN cosmetics and personal-care groups have managed Q4 live-shopping trade-spend overruns of more than 15 percent and concurrent product-recall events between 2020 and 2025. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. For each peer, identify the trigger event, the trade-spend control programme adopted within 90 days, the recall-handling decisions, and the gross-margin trajectory 12 to 24 months later. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Cite every source with publication date. Critically, instruct Researcher to peer-review each claim against the original publication, flag any claim it cannot independently verify, and present as a structured comparison table with columns for Peer, Trigger, 90-Day Programme, Recall Handling, Margin Outcome, Citation. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Researcher** > select **Model Council**. Paste the prompt below — Researcher runs the question through GPT and Claude in parallel, then a synthesis cover letter highlights agreements, disagreements and unique findings.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. Paragon Innovation operates across 4 export markets (Malaysia, Singapore, Philippines, UAE) with regulators (BPOM (Notifikasi Kosmetik), NPRA / KKM, HSA, US FDA (MoCRA)) all on alert. Here is exactly what I need from you. Identify the 3 most defensible playbooks for an cosmetics group dealing with simultaneous live-shopping trade-spend overrun and product-recall pressure. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. Use Researcher with Model Council enabled — convene parallel reports from GPT and Claude on live-shopping + creator-affiliate rationalisation, SKU portfolio pruning (long-tail shade + finish), ingredient-recall + halal recertification communication, and TiO2 + palm-surfactant hedge restructuring. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Surface dissent across the panel, summarise the majority position, mark the minority view, and present as a comparison table with columns for Playbook, Council Verdict, Dissenting View, ASEAN Precedent, and Implementation Risk for a CFO-led 90-day plan. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Critique Mode**. Tempel prompt — Researcher menyusun draf riset mendalam lalu model kedua mengkritisi tiap klaim dan kutipan sebelum hasilnya diterima.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Paragon Innovation menyiapkan paket Direksi dalam 5 hari. Kami butuh studi kasus peer yang kredibel termasuk Indofood, Mayora, Wings Group, Japfa, Nippon Indosari, F&N Holdings, Mamee Double Decker dan Nestlé Indonesia. Berikut yang saya butuhkan dari Anda secara persis. Saya butuh benchmark yang dapat dipertahankan tentang bagaimana grup kosmetik dan personal care ASEAN yang tercatat di bursa menangani pembengkakan trade-spend Q4 di atas 15 persen dan kejadian recall produk antara 2020 hingga 2025. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Untuk tiap peer identifikasi peristiwa pemicu, program kendali trade-spend dalam 90 hari, keputusan penanganan recall, dan lintasan gross margin 12 sampai 24 bulan kemudian. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Sertakan kutipan lengkap dengan tanggal publikasi. Yang kritikal, minta Researcher peer-review tiap klaim terhadap publikasi aslinya, tandai klaim yang tidak dapat diverifikasi independen, dan sajikan sebagai tabel perbandingan terstruktur dengan kolom Peer, Pemicu, Program 90-Hari, Penanganan Recall, Hasil Margin, Kutipan. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tempel prompt — Researcher menggelar laporan parallel GPT dan Claude, lalu cover letter sintesa menyorot kesepakatan dan perbedaan.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Paragon Innovation beroperasi di 4 pasar ekspor (Indonesia, Singapura, Filipina, UEA) dengan regulator (BPOM (Notifikasi Kosmetik), NPRA / KKM, HSA, US FDA (MoCRA)) semuanya waspada. Berikut yang saya butuhkan dari Anda secara persis. Identifikasi 3 strategi paling defensible untuk grup kosmetik yang menghadapi pembengkakan trade-spend dan tekanan recall produk secara bersamaan. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Gunakan Researcher dengan Model Council aktif — gelar laporan paralel dari GPT dan Claude atas rasionalisasi trade-spend live-shopping + creator affiliate, pemangkasan portfolio SKU (long-tail shade + finish), komunikasi recall bahan aktif + rekertifikasi halal, dan restrukturisasi hedge TiO2 + surfaktan sawit. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Sorot perbedaan pendapat, rangkum posisi mayoritas, tandai pandangan minoritas, dan sajikan tabel perbandingan dengan kolom Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi untuk rencana 90 hari yang dipimpin Direktur Keuangan. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Critique Mode**. Tampal prompt — Researcher menyusun draf riset mendalam lalu model kedua mengkritisi tiap klaim dan kutipan sebelum hasilnya diterima.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Paragon Innovation menyediakan paket Lembaga Pengarah dalam 5 hari. Kami perlu studi kasus peer yang kredibel termasuk Indofood, Mayora, Wings Group, Japfa, Nippon Indosari, F&N Holdings, Mamee Double Decker dan Nestlé Malaysia. Berikut yang saya butuhkan dari Anda secara persis. Saya perlu benchmark yang dapat dipertahankan tentang bagaimana grup kosmetik dan personal care ASEAN yang tercatat di bursa menangani pembengkakan trade-spend Q4 di atas 15 persen dan kejadian recall produk antara 2020 hingga 2025. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Untuk tiap peer identifikasi peristiwa pemicu, program kendali trade-spend dalam 90 hari, keputusan penanganan recall, dan lintasan gross margin 12 sampai 24 bulan kemudian. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Sertakan kutipan lengkap dengan tanggal publikasi. Yang kritikal, minta Researcher peer-review tiap klaim terhadap publikasi aslinya, tandai klaim yang tidak dapat diverifikasi independen, dan sajikan sebagai jadual perbandingan terstruktur dengan lajur Peer, Pemicu, Program 90-Hari, Penanganan Recall, Hasil Margin, Kutipan. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Researcher** > pilih **Model Council**. Tampal prompt — Researcher menggelar laporan parallel GPT dan Claude, lalu cover letter sintesa menyorot kesepakatan dan perbezaan.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Paragon Innovation beroperasi di 4 pasar eksport (Malaysia, Singapura, Filipina, UEA) dengan regulator (BPOM (Notifikasi Kosmetik), NPRA / KKM, HSA, US FDA (MoCRA)) semuanya waspada. Berikut yang saya butuhkan dari Anda secara persis. Identifikasi 3 strategi paling defensible untuk grup kosmetik yang menghadapi pembengkakan trade-spend dan tekanan recall produk secara bersamaan. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Gunakan Researcher dengan Model Council aktif — gelar laporan paralel dari GPT dan Claude atas rasionalisasi trade-spend live-shopping + creator affiliate, pemangkasan portfolio SKU (long-tail shade + finish), komunikasi recall bahan aktif + rekertifikasi halal, dan restrukturisasi hedge TiO2 + surfaktan sawit. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Sorot perbezaan pendapat, rangkum kedudukan mayoritas, tandai pandangan minoritas, dan sajikan jadual perbandingan dengan lajur Strategi, Putusan Council, Pandangan Minoritas, Preseden ASEAN, dan Risiko Implementasi untuk rencana 90 hari yang dipimpin Pengarah Kewangan. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Analyst',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Reasoning agent in Microsoft 365 Copilot Chat — access via m365.cloud.microsoft/chat > Agents > Analyst. Upload an Excel/CSV or /reference a tenant file. Analyst writes Python under the hood, builds charts and dashboards, runs forecasts/regressions, and explains the result — no formula writing required. Show off chart + dashboard generation in the demo.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload `/COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx`. Paste the prompt below.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. We are Rp 60 miliar (~MYR 17 million) over budget on trade-spend; the Group CFO presents to the Board in 5 days. Here is exactly what I need from you. Quantify and visualise the Q4 FY2025 live-shopping trade-spend overrun. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. Use the uploaded /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx — cross-reference the Channel Spend, SKU Promo Activity AND Sell-Through tabs. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Calculate absolute and percentage variance vs budget by channel (modern-beauty retail, general trade, marketplace, live shopping) and by category (colour cosmetics, skincare, haircare, personal wash, fragrance). Build (1) a horizontal bar chart of live-shopping trade-spend variance ranked worst to best, and (2) a 100% stacked column showing each category contribution to the gap. Flag overrun worse than 25% as Red, 10–25% as Amber, under 10% as Green. Output a RAG dashboard with both charts embedded and one recommended corrective lever per Red row. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` > Agents > **Analyst**. Upload `/COSMETICS_02_SKU_Margin_Tracker.xlsx` AND `/COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx`. Paste the prompt below.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. Edible-oil costs jumped 18% in Q4. Here is exactly what I need from you. Identify which SKUs have lost the most gross-margin in Q4 FY2025 and how much of that is CPO-driven. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. From /COSMETICS_02_SKU_Margin_Tracker.xlsx pull Q3 vs Q4 GM by SKU; from /COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx pull hedge coverage and realised vs spot CPO prices. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Build a margin-bridge waterfall (Q3 GM → Volume → Mix → Trade-spend → CPO Cost → FX → Q4 GM) with the 10 worst-impacted SKUs labelled. Output a RAG dashboard with the waterfall, a hedge-coverage donut chart, and a one-paragraph CFO note on whether to extend the hedge book through FY2026 H1. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah `/COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx`. Tempel prompt.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Kami over budget Rp 60 miliar pada trade-spend; Direktur Keuangan Grup mempresentasikan ke Direksi dalam 5 hari. Berikut yang saya butuhkan dari Anda secara persis. Kuantifikasi dan visualisasikan pembengkakan trade-spend Q4 FY2025. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Gunakan /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx — analisis silang antar tab Channel Spend, SKU Promo Activity DAN Sell-Through. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Hitung selisih absolut dan persentase vs anggaran per channel (modern-beauty retail, general trade, marketplace, live shopping) dan per kategori (colour cosmetics, skincare, haircare, personal wash, fragrance). Bangun (1) bar chart horizontal selisih trade-spend diurutkan dari terburuk ke terbaik, dan (2) stacked column 100% kontribusi tiap kategori. Tandai pembengkakan >25% Merah, 10–25% Kuning, <10% Hijau. Hasilkan dashboard RAG dengan kedua chart tertanam dan satu rekomendasi perbaikan per baris Merah. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Unggah `/COSMETICS_02_SKU_Margin_Tracker.xlsx` DAN `/COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx`. Tempel prompt.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Biaya edible-oil melonjak 18% di Q4. Berikut yang saya butuhkan dari Anda secara persis. Identifikasi SKU mana yang kehilangan margin kotor terbanyak di Q4 FY2025 dan berapa banyak yang didorong CPO. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Dari /COSMETICS_02_SKU_Margin_Tracker.xlsx tarik GM per SKU Q3 vs Q4; dari /COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx tarik cover hedge dan harga CPO realisasi vs spot. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Bangun margin-bridge waterfall (GM Q3 → Volume → Mix → Trade-spend → Biaya CPO → Valas → GM Q4) dengan 10 SKU paling terdampak diberi label. Sajikan dashboard RAG dengan waterfall, donut chart cover hedge, dan paragraf catatan Direktur Keuangan apakah memperpanjang hedge book hingga H1 FY2026. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Muat naik `/COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx`. Tampal prompt.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Kami over budget Rp 60 miliar pada trade-spend; Pengarah Kewangan Grup mempresentasikan ke Lembaga Pengarah dalam 5 hari. Berikut yang saya butuhkan dari Anda secara persis. Kuantifikasi dan visualisasikan pembengkakan trade-spend Q4 FY2025. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Gunakan /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx — analisis silang antar tab Channel Spend, SKU Promo Activity DAN Sell-Through. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Kira perbezaan absolut dan persentase vs belanjawan per channel (modern-beauty retail, general trade, marketplace, live shopping) dan per kategori (colour cosmetics, skincare, haircare, personal wash, fragrance). Bangun (1) bar chart horizontal perbezaan trade-spend diurutkan dari terburuk ke terbaik, dan (2) stacked column 100% kontribusi tiap kategori. Tandai pembengkakan >25% Merah, 10–25% Kuning, <10% Hijau. Hasilkan dashboard RAG dengan kedua chart tertanam dan satu cadangan perbaikan per baris Merah. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` > Agents > **Analyst**. Muat naik `/COSMETICS_02_SKU_Margin_Tracker.xlsx` DAN `/COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx`. Tampal prompt.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Kos edible-oil melonjak 18% di Q4. Berikut yang saya butuhkan dari Anda secara persis. Identifikasi SKU mana yang kehilangan margin kotor terbanyak di Q4 FY2025 dan berapa banyak yang didorong CPO. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Dari /COSMETICS_02_SKU_Margin_Tracker.xlsx tarik GM per SKU Q3 vs Q4; dari /COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx tarik cover hedge dan harga CPO realisasi vs spot. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Bangun margin-bridge waterfall (GM Q3 → Volume → Mix → Trade-spend → Kos CPO → Valas → GM Q4) dengan 10 SKU paling terdampak diberi label. Sajikan dashboard RAG dengan waterfall, donut chart cover hedge, dan paragraf catatan Pengarah Kewangan apakah memperpanjang hedge book hingga H1 FY2026. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Copilot in Excel',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: '',
+          prompts: [
+            {
+              instr: 'Open `/COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx` in Excel for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. The CFO presents in 5 days. Here is exactly what I need from you. Build a Board-ready trade-spend dashboard. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. Pull from the Channel Spend, SKU Promo Activity AND Sell-Through tabs. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. On a new sheet "Board Trade-Spend Dashboard": (1) KPI tiles for Total Variance MYR M, Variance %, Worst Channel, Worst Category; (2) horizontal bar of variance by channel; (3) clustered column of monthly run-rate; (4) sparklines per channel; (5) RAG conditional formatting >25% red, 10–25% amber, <10% green. Insert all charts on the new sheet, do not modify the source tabs. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Stay in the same workbook (or open a fresh Excel-for-the-Web file with one of the data files attached). Open the **Copilot pane** > click the **menu above the prompt box** and pick **Plan** (May 2026). Copilot will outline a step-by-step approach BEFORE making any edits — review and approve before changes land. For the second half, add **use Python** to the prompt and Copilot will run advanced analysis directly inside the workbook.',
+              prompt: 'Plan mode: outline the step-by-step approach you will take to surface the 3 most material risks in the attached workbook for this scenario — list each step as a numbered plan I can review/approve before any edit. After I approve, execute the plan and create one new sheet called \'Risk Triage\' with the result. Then on a second sheet \'Advanced\', **use Python** to run a 12-month rolling-trend forecast on the most material risk metric and plot it as a chart with confidence bands. Cite which input columns drive the forecast and flag any data-quality gaps that would invalidate the result.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `/COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Direktur Keuangan presentasi dalam 5 hari. Berikut yang saya butuhkan dari Anda secara persis. Bangun dashboard trade-spend siap-Direksi. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Tarik dari tab Channel Spend, SKU Promo Activity DAN Sell-Through. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Pada sheet baru "Dashboard Trade-Spend Direksi": (1) KPI tile Total Selisih Rp Miliar, Selisih %, Channel Terburuk, Kategori Terburuk; (2) bar horizontal selisih per channel; (3) clustered column run-rate bulanan; (4) sparkline per channel; (5) format kondisional RAG >25% merah, 10–25% kuning, <10% hijau. Sisipkan semua chart pada sheet baru, jangan modifikasi tab sumber. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Tetap di workbook yang sama (atau buka file Excel-for-the-Web baru dengan salah satu file data terlampir). Buka **Copilot pane** > klik **menu di atas kotak prompt** dan pilih **Plan** (Mei 2026). Copilot akan menguraikan pendekatan langkah-demi-langkah SEBELUM melakukan edit — tinjau dan setujui sebelum perubahan diterapkan. Pada bagian kedua, tambahkan **use Python** ke prompt dan Copilot akan menjalankan analisis lanjutan langsung di dalam workbook.',
+              prompt: 'Mode Plan: uraikan pendekatan langkah-demi-langkah yang akan Anda ambil untuk memunculkan 3 risiko paling material pada workbook terlampir untuk skenario ini — daftarkan setiap langkah sebagai plan bernomor yang dapat saya tinjau/setujui sebelum edit apa pun. Setelah saya setujui, eksekusi plan dan buat satu sheet baru bernama \'Risk Triage\' dengan hasilnya. Kemudian pada sheet kedua \'Advanced\', **gunakan Python** untuk menjalankan rolling-trend forecast 12 bulan terhadap metrik risiko paling material dan plot sebagai chart dengan confidence bands. Sebutkan kolom input mana yang mendorong forecast dan tandai kesenjangan kualitas data yang akan membatalkan hasilnya.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `/COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx` di Excel for the Web. Buka **Copilot pane**. Tampal prompt.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Pengarah Kewangan presentasi dalam 5 hari. Berikut yang saya butuhkan dari Anda secara persis. Bangun dashboard trade-spend siap-Lembaga Pengarah. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Tarik dari tab Channel Spend, SKU Promo Activity DAN Sell-Through. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Pada sheet baru "Dashboard Trade-Spend Lembaga Pengarah": (1) KPI tile Total Perbezaan Rp Miliar, Perbezaan %, Channel Terburuk, Kategori Terburuk; (2) bar horizontal perbezaan per channel; (3) clustered column run-rate bulanan; (4) sparkline per channel; (5) format kondisional RAG >25% merah, 10–25% kuning, <10% hijau. Sisipkan semua chart pada sheet baru, jangan modifikasi tab sumber. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Tetap di workbook yang sama (atau buka fail Excel-for-the-Web baru dengan salah satu fail data terlampir). Buka **Copilot pane** > klik **menu di atas kotak prompt** dan pilih **Plan** (Mei 2026). Copilot akan menguraikan pendekatan langkah-demi-langkah SEBELUM melakukan edit — tinjau dan setujui sebelum perubahan diterapkan. Pada bahagian kedua, tambahkan **use Python** ke prompt dan Copilot akan menjalankan analisis lanjutan langsung di dalam workbook.',
+              prompt: 'Mode Plan: uraikan pendekatan langkah-demi-langkah yang akan Anda ambil untuk memunculkan 3 risiko paling material pada workbook terlampir untuk skenario ini — daftarkan setiap langkah sebagai plan bernomor yang dapat saya tinjau/setujui sebelum edit apa pun. Setelah saya setujui, eksekusi plan dan buat satu sheet baru bernama \'Risk Triage\' dengan hasilnya. Kemudian pada sheet kedua \'Advanced\', **gunakan Python** untuk menjalankan rolling-trend forecast 12 bulan terhadap metrik risiko paling material dan plot sebagai chart dengan confidence bands. Sebutkan lajur input mana yang mendorong forecast dan tandai kesenjangan kualitas data yang akan membatalkan hasilnya.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Copilot in Word',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Word for the Web. Open a .docx > Copilot pane. Three demo angles: (1) inline "Edit with Copilot" agent mode that rewrites, restructures or expands sections of the document in one instruction — great for board minutes/briefs; (2) draft new sections grounded in /reference files; (3) 🧠 model picker — switch between GPT and Claude for the same editing workflow when teams prefer specific model behaviours. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new blank Word doc in Word for the Web. Open the **Copilot pane**. Reference `/COSMETICS_03_Ingredient_Recall_Programme.docx` and `/COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx` using `/`. Paste the prompt below.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. Board meets in 5 days. Here is exactly what I need from you. Draft the 4-page Board paper "Q4 FY2025 Trade-Spend & Recall Update — Board Discussion Pack". Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. /COSMETICS_03_Ingredient_Recall_Programme.docx and /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx, plus the live-shopping trade-spend variance numbers I will paste. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Sections — (1) Executive summary in 5 bullets, (2) Trade-spend overrun bridge in plain language, (3) Salmonella recall status across MY/SG/ID, (4) Gross-margin recovery levers and their MYR impact, (5) FY2026 promo guardrail policy proposal, (6) Decisions requested from the Board. Tone: precise, Board-ready, no speculative language. Cite the source files at the end of every section. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Open the Word doc > **Copilot pane**. Click the **🧠 model picker** at the top of the pane and switch to **Claude Opus 4.7** for nuanced legal/policy/board-grade rewriting. Paste the prompt below. After Copilot drafts, click **Edit with Copilot** (agent mode) for inline restructuring across the whole document in one instruction.',
+              prompt: 'Using Claude Opus 4.7, rewrite the most consequential section of this document for an external audience (regulator, lender, Board-level reader) — preserve every fact, but tighten the language for clarity and remove any internal jargon. Then switch the model picker back to **GPT** and ask Copilot to produce a same-length GPT version of the SAME section so I can compare nuance side-by-side. Finally, click **Edit with Copilot** (agent mode) and ask Copilot to restructure the whole document so the executive summary lands on page 1 and the appendix moves to the end — one instruction, applied across all sections.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan `/COSMETICS_03_Ingredient_Recall_Programme.docx` dan `/COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx` menggunakan `/`. Tempel prompt.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Direksi rapat dalam 5 hari. Berikut yang saya butuhkan dari Anda secara persis. Susun paper Direksi 4 halaman "Update Trade-Spend & Recall Q4 FY2025 — Pack Diskusi Direksi". Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. /COSMETICS_03_Ingredient_Recall_Programme.docx dan /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx, plus angka selisih trade-spend yang akan saya tempelkan. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Bagian — (1) Ringkasan eksekutif 5 bullet, (2) Bridge pembengkakan trade-spend bahasa sederhana, (3) Status recall Salmonella di MY/SG/ID, (4) Lever pemulihan gross margin dan dampak Rp Miliar, (5) Proposal policy guardrail promo FY2026, (6) Keputusan yang diminta dari Direksi. Nada: presisi, siap-Direksi, tidak spekulatif. Kutip file sumber di akhir tiap bagian. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Buka dokumen Word > **Copilot pane**. Klik **🧠 model picker** di atas panel dan beralih ke **Claude Opus 4.7** untuk penulisan ulang yang bernuansa (legal/kebijakan/grade-Direksi). Tempelkan prompt di bawah ini. Setelah Copilot membuat draft, klik **Edit with Copilot** (mode agent) untuk restrukturisasi inline pada seluruh dokumen dalam satu instruksi.',
+              prompt: 'Menggunakan Claude Opus 4.7, tulis ulang bagian paling penting dari dokumen ini untuk audiens eksternal (regulator, kreditor, pembaca tingkat Direksi) — pertahankan setiap fakta, tetapi rapikan bahasanya agar jelas dan hilangkan jargon internal. Lalu kembalikan model picker ke **GPT** dan minta Copilot membuat versi GPT dengan panjang yang sama dari bagian YANG SAMA sehingga saya bisa membandingkan nuansa berdampingan. Terakhir, klik **Edit with Copilot** (mode agent) dan minta Copilot merestrukturisasi seluruh dokumen sehingga ringkasan eksekutif berada di halaman 1 dan lampiran berpindah ke akhir — satu instruksi, diterapkan pada semua bagian.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka dokumen Word baru kosong di Word for the Web. Buka **Copilot pane**. Referensikan `/COSMETICS_03_Ingredient_Recall_Programme.docx` dan `/COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx` menggunakan `/`. Tampal prompt.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Lembaga Pengarah mesyuarat dalam 5 hari. Berikut yang saya butuhkan dari Anda secara persis. Susun paper Lembaga Pengarah 4 halaman "Update Trade-Spend & Recall Q4 FY2025 — Pack Diskusi Lembaga Pengarah". Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. /COSMETICS_03_Ingredient_Recall_Programme.docx dan /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx, plus angka perbezaan trade-spend yang akan saya tampalkan. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Bahagian — (1) Ringkasan eksekutif 5 bullet, (2) Bridge pembengkakan trade-spend bahasa sederhana, (3) Status recall Salmonella di MY/SG/ID, (4) Lever pemulihan gross margin dan dampak Rp Miliar, (5) Proposal policy guardrail promo FY2026, (6) Keputusan yang diminta dari Lembaga Pengarah. Nada: presisi, siap-Lembaga Pengarah, tidak spekulatif. Kutip fail sumber di akhir tiap bahagian. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Buka dokumen Word > **Copilot pane**. Klik **🧠 model picker** di atas panel dan beralih ke **Claude Opus 4.7** untuk penulisan ulang yang bernuansa (legal/polisi/grade-Lembaga Pengarah). Tampalkan prompt di bawah ini. Setelah Copilot membuat draft, klik **Edit with Copilot** (mode agent) untuk restrukturisasi inline pada seluruh dokumen dalam satu instruksi.',
+              prompt: 'Menggunakan Claude Opus 4.7, tulis ulang bahagian paling penting dari dokumen ini untuk audiens eksternal (regulator, kreditor, pembaca tingkat Lembaga Pengarah) — pertahankan setiap fakta, tetapi kemaskan bahasanya agar jelas dan hilangkan jargon internal. Lalu kembalikan model picker ke **GPT** dan minta Copilot membuat versi GPT dengan panjang yang sama dari bahagian YANG SAMA sehingga saya boleh membandingkan nuansa berdampingan. Terakhir, klik **Edit with Copilot** (mode agent) dan minta Copilot merestrukturisasi seluruh dokumen sehingga ringkasan eksekutif berada di halaman 1 dan lampiran berpindah ke akhir — satu instruksi, diterapkan pada semua bahagian.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 Copilot in PowerPoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside PowerPoint for the Web. Open a .pptx > Copilot pane. Three demo angles: (1) inline "Edit with Copilot" agent mode that restyles/restructures the deck, generates speaker notes, swaps imagery; (2) generate new slides grounded in /reference files; (3) 🌐 public web grounding (April 2026) — add a webpage URL as a reference and Copilot pulls in current external context; 🎨 image model picker — choose GPT-Image, Flux, or Auto when generating or editing visuals. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open a new PowerPoint deck in PowerPoint for the Web. Open the **Copilot pane**. Paste the prompt below.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. The Board sees this on Friday. Here is exactly what I need from you. Build a 10-slide investor-grade deck on the Q4 FY2025 live-shopping trade-spend overrun and recall response. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. Reference my Word draft `/Q4_Board_Paper.docx` and the trade-spend dashboard numbers I will paste. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Cover slide; situation in 1 slide; trade-spend bridge waterfall (2 slides); recall status by market (1 slide); margin levers (2 slides); FY2026 promo guardrails (1 slide); decisions requested (1 slide); appendix (1 slide). Use Zava brand colours #F59E0B and #0F1C3F, 18pt minimum body text, 1 chart per slide, no walls of text. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Stay in the same deck (or open a fresh PowerPoint for the Web file). Open the **Copilot pane** > click the **🌐 web reference** chip and paste ONE relevant public web URL (e.g. a regulator microsite, a Bursa Malaysia announcement page, a peer\'s investor-relations page, or a recent industry research page) as a deck-wide reference. Then click the **image-model gear** above the image prompt and select **GPT-Image** for photoreal hero artwork (or **Flux** for stylised). Paste the prompt below.',
+              prompt: 'Refresh the cover slide and one mid-deck slide using the public-web reference I just attached — pull in the 2 most relevant facts/headlines from that page and surface them as concise, dated bullets with a citation footer (\'Source: <publisher>, <date>\'). On the cover slide, generate ONE photoreal hero image with **GPT-Image** that captures the strategic theme of this deck in an executive style — no text-on-image, 16:9, neutral palette. Add a footer disclaimer that the web-grounding facts are point-in-time and must be re-verified before final external use.'
+            },
+            {
+              instr: '',
+              prompt: 'Act as a Marketing & Ops planner for the General Manager · Operations & Marketing of Zava Food (QSR Pizza line).  Lebaran 2026 is 4 weeks away. Use /COSMETICS_02_SKU_Margin_Tracker.xlsx (AOV per outlet, food cost %, delivery mix %, CSAT) and /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx for context.  Produce a launch-ready promo pack:  1. PROMO DESIGN  - 3 promo bundles (family / duo / solo) with menu, target AOV, food-cost %, gross margin  - Price ladder vs current menu — call out cannibalisation risk  - Duration & wave roll-out (Jakarta first, then secondary cities)  2. CHANNEL COPY  - GoFood listing title + description (max 90 char title, 220 char desc)  - GrabFood listing title + description  - Instagram caption × 3 variants (warm / playful / respectful Hari Raya tone)  - Push notification copy for app  3. OUTLET BRIEFING PACK  - 1-page operational checklist (prep · staffing · POS · ingredient stock-up)  - Talking points for outlet team briefing  - Quality-control sampling plan  4. CANNIBALISATION FORECAST TABLE  - Outlet by outlet: expected lift vs cannibalisation of regular menu, net AOV impact  5. LAUNCH SCORECARD  - 5 KPIs to monitor for the first 7 days, with red/amber/green thresholds  Tag every assumption [ASSUMPTION:...]. Tone: confident, food-first, never racist or tone-deaf to the Indonesian Muslim audience.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tempel prompt.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Direksi melihat ini Jumat. Berikut yang saya butuhkan dari Anda secara persis. Bangun deck 10 slide kelas investor tentang pembengkakan trade-spend dan respons recall Q4 FY2025. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Referensikan draf Word saya `/Paper_Direksi_Q4.docx` dan angka dashboard trade-spend yang akan saya tempel. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Slide cover; situasi 1 slide; waterfall bridge trade-spend (2 slide); status recall per pasar (1 slide); lever margin (2 slide); guardrail promo FY2026 (1 slide); keputusan yang diminta (1 slide); appendix (1 slide). Gunakan warna brand Zava #F59E0B dan #0F1C3F, font tubuh minimum 18pt, 1 chart per slide, hindari dinding teks. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Tetap di deck yang sama (atau buka file PowerPoint for the Web baru). Buka **Copilot pane** > klik chip **🌐 referensi web** dan tempelkan SATU URL publik yang relevan (misalnya microsite regulator, halaman pengumuman BEI, halaman investor-relations peer, atau halaman riset industri terbaru) sebagai referensi seluruh deck. Kemudian klik **roda gigi model gambar** di atas prompt gambar dan pilih **GPT-Image** untuk hero photoreal (atau **Flux** untuk stilisasi). Tempelkan prompt di bawah ini.',
+              prompt: 'Segarkan slide cover dan satu slide tengah deck menggunakan referensi web publik yang baru saja dilampirkan — tarik 2 fakta/headline paling relevan dari halaman tersebut dan munculkan sebagai bullet ringkas bertanggal dengan footer kutipan (\'Sumber: <penerbit>, <tanggal>\'). Pada slide cover, hasilkan SATU hero image photoreal dengan **GPT-Image** yang menangkap tema strategis deck dalam gaya eksekutif — tanpa teks di gambar, 16:9, palet netral. Tambahkan disclaimer footer bahwa fakta web-grounding bersifat point-in-time dan harus diverifikasi ulang sebelum penggunaan eksternal final.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai Marketing & Ops planner untuk General Manager · Operations & Marketing dari Zava Food (lini QSR Pizza).  Lebaran 2026 tinggal 4 minggu lagi. Gunakan /COSMETICS_02_SKU_Margin_Tracker.xlsx (AOV per outlet, food cost %, delivery mix %, CSAT) dan /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx untuk konteks.  Hasilkan promo pack siap launch:  1. DESAIN PROMO  - 3 bundle promo (keluarga / berdua / solo) dengan menu, target AOV, food-cost %, marjin kotor  - Price ladder vs menu saat ini — sebutkan risiko cannibalisation  - Durasi & wave roll-out (Jakarta dulu, lalu kota sekunder)  2. CHANNEL COPY  - GoFood listing title + description (maks 90 karakter title, 220 karakter desc)  - GrabFood listing title + description  - Caption Instagram × 3 varian (hangat/jenaka/Hari-Raya yang santun)  - Copy push notification untuk app  3. PAKET BRIEFING OUTLET  - Checklist operasional 1 halaman (prep · staffing · POS · stock-up bahan)  - Talking points untuk briefing tim outlet  - Rencana sampling quality-control  4. TABEL FORECAST CANNIBALISATION  - Outlet per outlet: ekspektasi lift vs cannibalisation menu reguler, dampak AOV bersih  5. SCORECARD LAUNCH  - 5 KPI untuk dipantau 7 hari pertama, dengan threshold merah/amber/hijau  Tandai setiap asumsi [ASSUMPTION:...]. Tone: percaya diri, food-first, tidak boleh rasis atau tone-deaf terhadap audiens Muslim Indonesia.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka deck PowerPoint baru di PowerPoint for the Web. Buka **Copilot pane**. Tampal prompt.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Lembaga Pengarah melihat ini Jumaat. Berikut yang saya butuhkan dari Anda secara persis. Bangun deck 10 slide kelas investor tentang pembengkakan trade-spend dan respons recall Q4 FY2025. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Referensikan draf Word saya `/Paper_Direksi_Q4.docx` dan angka dashboard trade-spend yang akan saya Tampal. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Slide cover; situasi 1 slide; waterfall bridge trade-spend (2 slide); status recall per pasar (1 slide); lever margin (2 slide); guardrail promo FY2026 (1 slide); keputusan yang diminta (1 slide); appendix (1 slide). Gunakan warna brand Zava #F59E0B dan #0F1C3F, font tubuh minimum 18pt, 1 chart per slide, hindari dinding teks. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Tetap di deck yang sama (atau buka fail PowerPoint for the Web baru). Buka **Copilot pane** > klik chip **🌐 referensi web** dan tampalkan SATU URL publik yang relevan (misalnya microsite regulator, halaman pengumuman BURSA MALAYSIA, halaman investor-relations peer, atau halaman riset industri terkini) sebagai referensi seluruh deck. Kemudian klik **roda gigi model gambar** di atas prompt gambar dan pilih **GPT-Image** untuk hero photoreal (atau **Flux** untuk stilisasi). Tampalkan prompt di bawah ini.',
+              prompt: 'Segarkan slide cover dan satu slide tengah deck menggunakan referensi web publik yang baru sahaja dilampirkan — tarik 2 fakta/headline paling relevan dari halaman tersebut dan munculkan sebagai bullet ringkas bertanggal dengan footer kutipan (\'Sumber: <penerbit>, <tanggal>\'). Pada slide cover, hasilkan SATU hero image photoreal dengan **GPT-Image** yang menangkap tema strategis deck dalam gaya eksekutif — tanpa teks di gambar, 16:9, palet netral. Tambahkan disclaimer footer bahwa fakta web-grounding bersifat point-in-time dan perlu diverifikasi ulang sebelum penggunaan eksternal final.'
+            },
+            {
+              instr: '',
+              prompt: 'Berperan sebagai Marketing & Ops planner untuk General Manager · Operations & Marketing dari Zava Food (lini QSR Pizza).  Lebaran 2026 tinggal 4 minggu lagi. Gunakan /COSMETICS_02_SKU_Margin_Tracker.xlsx (AOV per outlet, food cost %, delivery mix %, CSAT) dan /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx untuk konteks.  Hasilkan promo pack siap launch:  1. DESAIN PROMO  - 3 bundle promo (keluarga / berdua / solo) dengan menu, target AOV, food-cost %, marjin kotor  - Price ladder vs menu saat ini — sebutkan risiko cannibalisation  - Durasi & wave roll-out (Jakarta dulu, lalu kota sekunder)  2. CHANNEL COPY  - GoFood listing title + description (maks 90 karakter title, 220 karakter desc)  - GrabFood listing title + description  - Caption Instagram × 3 varian (hangat/jenaka/Hari-Raya yang santun)  - Copy push notification untuk app  3. PAKET BRIEFING OUTLET  - Checklist operasional 1 halaman (prep · staffing · POS · stock-up bahan)  - Talking points untuk briefing tim outlet  - Rencana sampling quality-control  4. JADUAL FORECAST CANNIBALISATION  - Outlet per outlet: ekspektasi lift vs cannibalisation menu reguler, dampak AOV bersih  5. SCORECARD LAUNCH  - 5 KPI untuk dipantau 7 hari pertama, dengan threshold merah/amber/hijau  Tandai setiap asumsi [ASSUMPTION:...]. Tone: percaya diri, food-first, tidak boleh rasis atau tone-deaf terhadap audiens Muslim Malaysia.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Bu Lisa Hartono',
+            'Bu Lisa Hartono'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Bu Lisa Hartono',
+            'Bu Lisa Hartono'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📧 Copilot in Outlook',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Copilot inside Outlook on the Web. Three demo angles: (1) summarise long threads + draft replies grounded in tenant context; (2) coach my writing for tone, clarity and stakeholder fit; (3) ✍️ "first draft in canvas" (March 2026) — Copilot writes the email directly in place and asks clarifying questions on goal/audience/tone, then iterates with the user without copy-paste. Requires Microsoft 365 Copilot license.',
+          prompts: [
+            {
+              instr: 'Open Outlook on the Web. Open the email thread titled "Q4 FY2025 Trade-Spend Variance — Group CFO follow-up". Click the **Copilot icon** in the message ribbon. Paste the prompt below.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. Q4 trade-spend overran budget by Rp 60 miliar (~MYR 17 million); Board on Friday. Here is exactly what I need from you. Draft a single, calm, board-ready email to the 6 Brand-House GMs and the Group Trade-Marketing Director. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. Summarise the latest figures from the email thread above and the attached dashboard. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Subject line, 4 short paragraphs covering (1) the headline number, (2) the 3 corrective levers I expect each Division to commit to in 48 hours, (3) the FY2026 promo guardrails coming, (4) the meeting time on Wednesday for alignment. End with a one-line note that the Board will see this on Friday. Tone: firm but collegial, not blaming. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Open Outlook on the Web > **New email**. In the new **first-draft-in-canvas** experience (March 2026), Copilot drafts directly in the email body (not the small Copilot pane) and asks clarifying questions on goal, audience, and tone. Paste the prompt below and answer Copilot\'s follow-ups in canvas — no copy-paste.',
+              prompt: 'Draft a clear stakeholder email about the most pressing issue in this scenario. Copilot, in canvas, ask me 3 clarifying questions before finalising: (1) which decision the recipient must make and by when, (2) which tone fits (firm vs. collaborative vs. supervisory), and (3) audience seniority. After I answer, refine in place — no copy-paste. End with a recommended subject line and a 1-sentence preview tuned for inbox triage.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "Selisih Trade-Spend Q4 FY2025 — tindak lanjut Direktur Keuangan". Klik **ikon Copilot** di ribbon pesan. Tempel prompt.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Trade-spend Q4 over budget Rp 60 miliar; Direksi Jumat. Berikut yang saya butuhkan dari Anda secara persis. Susun satu email tenang dan siap-Direksi kepada 6 GM Brand House dan Direktur Trade-Marketing Grup. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Ringkas angka terbaru dari thread di atas dan dashboard terlampir. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Baris subjek, 4 paragraf pendek mencakup (1) angka headline, (2) 3 lever perbaikan yang saya harapkan tiap Divisi komit dalam 48 jam, (3) guardrail promo FY2026 yang akan datang, (4) waktu rapat Rabu untuk penyelarasan. Akhiri dengan satu baris bahwa Direksi melihat ini Jumat. Nada: tegas tapi kolegial, tidak menyalahkan. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Buka Outlook on the Web > **Email Baru**. Pada pengalaman **first-draft-in-canvas** baru (Maret 2026), Copilot mengetik draft langsung di badan email (bukan di panel Copilot kecil) dan mengajukan pertanyaan klarifikasi terkait tujuan, audiens, dan nada. Tempelkan prompt di bawah dan jawab pertanyaan Copilot di kanvas — tanpa copy-paste.',
+              prompt: 'Susun email pemangku kepentingan yang jelas mengenai isu paling mendesak dalam skenario ini. Copilot, di kanvas, ajukan 3 pertanyaan klarifikasi sebelum finalisasi: (1) keputusan apa yang harus diambil penerima dan kapan, (2) nada mana yang sesuai (tegas vs. kolaboratif vs. supervisori), (3) seniority audiens. Setelah saya menjawab, sempurnakan langsung di kanvas — tanpa copy-paste. Akhiri dengan rekomendasi subject line dan preview 1 kalimat yang disetel untuk triage inbox.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka Outlook on the Web. Buka thread email "Perbezaan Trade-Spend Q4 FY2025 — tindak lanjut Pengarah Kewangan". Klik **ikon Copilot** di ribbon pesan. Tampal prompt.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Trade-spend Q4 over budget Rp 60 miliar; Lembaga Pengarah Jumaat. Berikut yang saya butuhkan dari Anda secara persis. Susun satu email tenang dan siap-Lembaga Pengarah kepada 6 GM Brand House dan Pengarah Trade-Marketing Grup. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Ringkas angka terkini dari thread di atas dan dashboard terlampir. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Baris subjek, 4 paragraf pendek merangkumi (1) angka headline, (2) 3 lever perbaikan yang saya harapkan tiap Divisi komit dalam 48 jam, (3) guardrail promo FY2026 yang akan datang, (4) masa mesyuarat Rabu untuk penyelarasan. Akhiri dengan satu baris bahwa Lembaga Pengarah melihat ini Jumaat. Nada: tegas tapi kolegial, tidak menyalahkan. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Buka Outlook on the Web > **Email Baru**. Pada pengalaman **first-draft-in-canvas** baru (Maret 2026), Copilot menaip draft langsung di badan email (bukan di panel Copilot kecil) dan mengajukan pertanyaan klarifikasi terkait tujuan, audiens, dan nada. Tampalkan prompt di bawah dan jawab pertanyaan Copilot di kanvas — tanpa copy-paste.',
+              prompt: 'Susun email pemangku kepentingan yang jelas mengenai isu paling mendesak dalam skenario ini. Copilot, di kanvas, ajukan 3 pertanyaan klarifikasi sebelum finalisasi: (1) keputusan apa yang perlu diambil penerima dan bila, (2) nada mana yang sesuai (tegas vs. kolaboratif vs. supervisori), (3) seniority audiens. Setelah saya menjawab, sempurnakan langsung di kanvas — tanpa copy-paste. Akhiri dengan cadangan subject line dan preview 1 kalimat yang disetel untuk triage inbox.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎙 Copilot in Teams (Recap → Word minutes)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'For this demo we use Copilot grounded in the Teams Recap on the demo tenant for one of four meetings: "New Software Implementation", "Potential Merger", "Negotiating Marketing Contract", or "Marketing Campaign Performance Review". Workflow: Open the meeting in your Teams calendar > the Recap page opens with AI Notes, chapters, transcript and action items > click the Copilot icon in the top right of the Recap page > Copilot opens grounded in the meeting transcript > type your minutes prompt > copy the structured output into a new Word document (or open Microsoft 365 Copilot Chat with a /transcript reference and ask Copilot to produce a .docx). Note: Teams Recap has no Export to Word button — the workflow is Copilot pane > copy/paste OR Microsoft 365 Copilot Chat. New for this demo cycle (April-May 2026): 📞 Copilot Call Delegation — Copilot can answer incoming Teams calls on the user’s behalf, gather context from callers, and book follow-up appointments via Microsoft Bookings; 🗣️ Consecutive Interpretation — turn-based translation between two languages with Interpreter on the meeting stage, ideal for ASEAN cross-border meetings. Requires Microsoft 365 Copilot license + Teams Premium for full Recap features.',
+          prompts: [
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"New Software Implementation"**. On the Recap page, walk the audience through the **AI Notes** (auto-summary), the **Custom summary** (Copilot\'s per-attendee view), and the **Audio recap** (chapter markers with speaker timings). **(2) In Word for the Web**, open a **new blank document**. Type a minutes template at the top — five empty headings: Date and Attendees · Agenda Items · Decisions Taken · Action Items · Risks and Open Questions. **(3) Click the Copilot icon** in the Word ribbon and paste the prompt below — Copilot in Word will reference the meeting recap by name with `/` and fill the template.',
+              prompt: 'Create meeting minutes for the Teams meeting /New Software Implementation. Use the empty template already on this page and fill each heading from the meeting recap. Sections: (1) Date and Attendees; (2) Agenda Items; (3) Decisions Taken; (4) Action Items with Owner and Due Date; (5) Risks and Open Questions. Quote attendee statements verbatim where the wording matters. Tag any decision that is on the critical path as Critical Path.'
+            },
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"Marketing Campaign Performance Review"**. On the Recap page, walk through the **AI Notes**, the **Custom summary**, and the **Audio recap** chapters. **(2) In Word for the Web**, open a **new blank document**. Type a campaign-review minutes template at the top — six empty headings: Date and Attendees · Campaign KPIs Reviewed · Decisions Taken · Action Items · Budget Reallocations · Next Review Date. **(3) Click the Copilot icon** in the Word ribbon and paste the prompt below.',
+              prompt: 'Create meeting minutes for the Teams meeting /Marketing Campaign Performance Review. Use the empty campaign-review template already on this page. Sections: (1) Date and Attendees; (2) Campaign KPIs Reviewed; (3) Decisions Taken; (4) Action Items with Owner and Due Date; (5) Budget Reallocations Approved; (6) Next Review Date. Quote attendee statements verbatim where the wording matters. Highlight any KPI that missed target by more than 10% in amber.'
+            },
+            {
+              instr: '**(1) In Teams**, open **Calendar** → click the past meeting **"Negotiating Marketing Contract"**. On the Recap page, walk through the **AI Notes**, the **Custom summary**, and the **Audio recap**. **(2) In Word for the Web**, open a **new blank document**. Type a vendor-negotiation minutes template at the top — seven empty headings: Vendor and Owner · Commercial Terms Discussed · Concessions Offered · Concessions Accepted · Open Items · Approval Thresholds · Next Steps. **(3) Click the Copilot icon** in the Word ribbon and paste the prompt below — then forward the result to Procurement, Legal, and the Group CFO.',
+              prompt: 'Create meeting minutes for the Teams meeting /Negotiating Marketing Contract. Use the empty vendor-negotiation template already on this page. Sections: (1) Vendor and Owner; (2) Commercial Terms Discussed; (3) Concessions Offered; (4) Concessions Accepted; (5) Open Items; (6) Approval Thresholds (CFO / Board); (7) Next Steps with Owner and Due Date. Highlight any term requiring CFO sign-off in amber and any term requiring Board sign-off in red.. Email the link to Procurement, Legal, and the Group CFO.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat **"New Software Implementation"**. Di halaman Recap, jelaskan ke peserta tentang **AI Notes** (ringkasan otomatis), **Custom summary** (tampilan per-peserta dari Copilot), dan **Audio recap** (penanda bab dengan timing pembicara). **(2) Di Word for the Web**, buka **dokumen kosong baru**. Ketik kerangka notulen di bagian atas — lima heading kosong: Tanggal dan Peserta · Agenda · Keputusan · Action Items · Risiko dan Pertanyaan Terbuka. **(3) Klik ikon Copilot** di ribbon Word lalu tempelkan prompt di bawah — Copilot in Word akan merujuk recap rapat dengan `/` dan mengisi template.',
+              prompt: 'Susun notulen rapat untuk rapat Teams /New Software Implementation. Gunakan template kosong yang sudah ada di halaman ini dan isi tiap heading dari recap rapat. Bagian: (1) Tanggal dan Peserta; (2) Agenda; (3) Keputusan; (4) Action Items dengan Owner dan Due Date; (5) Risiko dan Pertanyaan Terbuka. Kutip pernyataan peserta apa adanya bila kata-katanya penting. Tandai keputusan di jalur kritis sebagai Critical Path.'
+            },
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat **"Marketing Campaign Performance Review"**. Di halaman Recap, jelaskan **AI Notes**, **Custom summary**, dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen kosong baru. Ketik kerangka notulen tinjauan kampanye — enam heading kosong: Tanggal dan Peserta · KPI Kampanye yang Dikaji · Keputusan · Action Items · Realokasi Anggaran · Jadwal Tinjauan Berikutnya. **(3) Klik ikon Copilot** di ribbon Word lalu tempelkan prompt di bawah.',
+              prompt: 'Susun notulen rapat untuk rapat Teams /Marketing Campaign Performance Review. Gunakan template kosong tinjauan kampanye yang sudah ada. Bagian: (1) Tanggal dan Peserta; (2) KPI Kampanye yang Dikaji; (3) Keputusan; (4) Action Items dengan Owner dan Due Date; (5) Realokasi Anggaran yang Disetujui; (6) Jadwal Tinjauan Berikutnya. Kutip pernyataan peserta apa adanya. Tandai KPI yang meleset >10% dengan amber.'
+            },
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik rapat **"Negotiating Marketing Contract"**. Di halaman Recap, jelaskan **AI Notes**, **Custom summary**, dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen kosong baru. Ketik kerangka notulen negosiasi vendor — tujuh heading kosong: Vendor dan Owner · Term Komersial · Konsesi yang Ditawarkan · Konsesi yang Diterima · Item Terbuka · Threshold Persetujuan · Langkah Berikutnya. **(3) Klik ikon Copilot** di ribbon Word lalu tempelkan prompt di bawah — kemudian teruskan hasilnya ke Procurement, Legal, dan Direktur Keuangan Grup.',
+              prompt: 'Susun notulen rapat untuk rapat Teams /Negotiating Marketing Contract. Gunakan template kosong negosiasi vendor yang sudah ada. Bagian: (1) Vendor dan Owner; (2) Term Komersial; (3) Konsesi yang Ditawarkan; (4) Konsesi yang Diterima; (5) Item Terbuka; (6) Threshold Persetujuan (CFO / Direksi); (7) Langkah Berikutnya dengan Owner dan Due Date. Tandai term yang memerlukan persetujuan CFO dengan amber dan persetujuan Direksi dengan merah.. Lalu email link-nya ke Procurement, Legal, dan Direktur Keuangan Grup.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik mesyuarat **"New Software Implementation"**. Pada halaman Recap, terangkan kepada hadirin tentang **AI Notes** (ringkasan automatik), **Custom summary** (paparan per-hadirin dari Copilot), dan **Audio recap** (penanda bab dengan masa pembicara). **(2) Di Word for the Web**, buka **dokumen kosong baharu**. Taip rangka minit di bahagian atas — lima tajuk kosong: Tarikh dan Hadirin · Agenda · Keputusan · Tindakan · Risiko dan Soalan Terbuka. **(3) Klik ikon Copilot** di ribbon Word dan tampal prompt di bawah — Copilot in Word akan merujuk recap mesyuarat dengan `/` dan mengisi templat.',
+              prompt: 'Hasilkan minit mesyuarat untuk mesyuarat Teams /New Software Implementation. Gunakan templat kosong yang sudah ada di halaman ini dan isi setiap tajuk daripada recap mesyuarat. Bahagian: (1) Tarikh dan Hadirin; (2) Agenda; (3) Keputusan; (4) Tindakan dengan Pemilik dan Tarikh; (5) Risiko dan Soalan Terbuka. Petik kenyataan hadirin sebagaimana asal di mana perkataannya penting. Tandakan sebarang keputusan di laluan kritikal sebagai Critical Path.'
+            },
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik mesyuarat **"Marketing Campaign Performance Review"**. Pada halaman Recap, terangkan **AI Notes**, **Custom summary**, dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen kosong baharu. Taip rangka minit ulasan kempen — enam tajuk kosong: Tarikh dan Hadirin · KPI Kempen yang Diulas · Keputusan · Tindakan · Pelarasan Bajet · Tarikh Ulasan Berikutnya. **(3) Klik ikon Copilot** di ribbon Word dan tampal prompt di bawah.',
+              prompt: 'Hasilkan minit mesyuarat untuk mesyuarat Teams /Marketing Campaign Performance Review. Gunakan templat kosong ulasan kempen yang sudah ada. Bahagian: (1) Tarikh dan Hadirin; (2) KPI Kempen yang Diulas; (3) Keputusan; (4) Tindakan dengan Pemilik dan Tarikh; (5) Pelarasan Bajet yang Diluluskan; (6) Tarikh Ulasan Berikutnya. Petik kenyataan hadirin sebagaimana asal. Tandakan KPI yang tersasar >10% dengan amber.'
+            },
+            {
+              instr: '**(1) Di Teams**, buka **Calendar** → klik mesyuarat **"Negotiating Marketing Contract"**. Pada halaman Recap, terangkan **AI Notes**, **Custom summary**, dan **Audio recap**. **(2) Di Word for the Web**, buka dokumen kosong baharu. Taip rangka minit perundingan vendor — tujuh tajuk kosong: Vendor dan Pemilik · Terma Komersial · Konsesi Ditawarkan · Konsesi Diterima · Item Terbuka · Ambang Kelulusan · Langkah Seterusnya. **(3) Klik ikon Copilot** di ribbon Word dan tampal prompt di bawah — kemudian majukan hasilnya kepada Procurement, Legal dan Pengarah Kewangan Kumpulan.',
+              prompt: 'Hasilkan minit mesyuarat untuk mesyuarat Teams /Negotiating Marketing Contract. Gunakan templat kosong perundingan vendor yang sudah ada. Bahagian: (1) Vendor dan Pemilik; (2) Terma Komersial; (3) Konsesi Ditawarkan; (4) Konsesi Diterima; (5) Item Terbuka; (6) Ambang Kelulusan (CFO / Lembaga); (7) Langkah Seterusnya dengan Pemilik dan Tarikh. Tandakan terma yang memerlukan kelulusan CFO dengan amber dan Lembaga dengan merah.. Kemudian e-mel pautan kepada Procurement, Legal dan Pengarah Kewangan Kumpulan.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet',
+            'Sasha Ouellet',
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📓 Copilot Notebook',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft 365 Copilot Notebook — access via m365.cloud.microsoft/chat > Notebook tab > + New Notebook. Add up to 5 source files (Word/Excel/PDF/PPT) at creation, then set the Instructions field once. Best for synthesising insights across multiple documents at once — ask several prompts against the same notebook without re-uploading. NEW (May 2026 Frontier preview): 🔗 reference SharePoint sites and OneNote notebooks as live sources; 🌐 add external web links as references; 📄 generate full Word documents from notebook content via Quick Create; 📊 generate PowerPoint presentations from notebook content via Quick Create; 🎧 generate Audio Overviews (podcast-style executive summaries) via Quick Create; 🧠 explore relationships across all sources with interactive Mind Maps (click a node to drill in); 👥 share notebooks with a Microsoft 365 Group for team co-grounding. Requires Microsoft 365 Copilot license; some Quick Create + Mind Map features need Frontier program enrollment.',
+          prompts: [
+            {
+              instr: 'All sources are loaded in the notebook (see Notebook setup above). The Instructions field is set. Type the prompt below in the notebook chat.',
+              prompt: 'Synthesise across all 5 sources to produce a 10-bullet Board narrative for Friday. Cover: the Rp 60B live-shopping trade-spend overrun in plain language, the worst 5 SKUs by margin loss, the recall status by market, the 3 levers we will pull in 90 days, and the FY2026 promo guardrails we will table for approval. Cite the source file (and tab/section where applicable) at the end of every bullet.'
+            },
+            {
+              instr: 'In the same notebook, click **Quick Create** > **Audio Overview** to generate a 6-minute podcast-style summary; OR click **Quick Create** > **Page** to generate a collaborative Page the leadership team can comment on.',
+              prompt: 'Quick Create: Audio Overview, 6 minutes, formal narration tone, focused on the Board narrative above. Listeners are the 6 Brand-House GMs who will be on a flight on Thursday and need to walk into the Friday Board meeting prepared.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Semua sumber sudah dimuat di notebook (lihat setup Notebook di atas). Field Instructions sudah diset. Ketik prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari kelima sumber untuk menghasilkan narasi Direksi 10-bullet untuk Jumat. Mencakup: pembengkakan trade-spend Rp 60 miliar dengan bahasa sederhana, 5 SKU terburuk dari sisi kehilangan margin, status recall per pasar, 3 lever yang akan kami tarik dalam 90 hari, dan guardrail promo FY2026 yang akan diajukan untuk disetujui. Kutip file sumber (dan tab/bagian bila relevan) di akhir tiap bullet.'
+            },
+            {
+              instr: 'Pada notebook yang sama, klik **Quick Create** > **Audio Overview** untuk menghasilkan ringkasan podcast 6 menit; ATAU klik **Quick Create** > **Page** untuk menghasilkan Page kolaboratif yang bisa dikomentari tim leadership.',
+              prompt: 'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi Direksi di atas. Pendengar adalah 6 GM Brand House yang akan terbang Kamis dan butuh siap hadir Rapat Direksi Jumat.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Semua sumber sudah dimuat di notebook (lihat setup Notebook di atas). Field Instructions sudah diset. Taip prompt di bawah pada chat notebook.',
+              prompt: 'Sintesakan dari kelima sumber untuk menghasilkan narasi Lembaga Pengarah 10-bullet untuk Jumaat. Merangkumi: pembengkakan trade-spend Rp 60 miliar dengan bahasa sederhana, 5 SKU terburuk dari sisi kehilangan margin, status recall per pasar, 3 lever yang akan kami tarik dalam 90 hari, dan guardrail promo FY2026 yang akan diajukan untuk diluluskan. Kutip fail sumber (dan tab/bahagian bila relevan) di akhir tiap bullet.'
+            },
+            {
+              instr: 'Pada notebook yang sama, klik **Quick Create** > **Audio Overview** untuk menghasilkan ringkasan podcast 6 menit; ATAU klik **Quick Create** > **Page** untuk menghasilkan Page kolaboratif yang boleh dikomentari tim leadership.',
+              prompt: 'Quick Create: Audio Overview, 6 menit, gaya narasi formal, fokus pada narasi Lembaga Pengarah di atas. Pendengar adalah 6 GM Brand House yang akan terbang Khamis dan perlu siap hadir Mesyuarat Lembaga Pengarah Jumaat.'
+            }
+          ],
+          persona: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          notebookMeta: {
+            sources: [
+              '/COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx',
+              '/COSMETICS_02_SKU_Margin_Tracker.xlsx',
+              '/COSMETICS_03_Ingredient_Recall_Programme.docx',
+              '/COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx',
+              '/COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx'
+            ],
+            instructions: 'Trigger: "Q4 FY2025 live-shopping live-shopping trade-spend overrun Rp 60B; hydroquinone-contamination recall on 2 SKUs across 3 markets — Board pack in 5 days.". This notebook is the Paragon Innovation grounded source for the emergency Board variance review — the Group CFO and Chief of Staff convene the workstream. Synthesise across ALL 5 sources. Use Bursa / IDX dual-listing disclosure and SCM / OJK enquiries as the governance reference. Every answer must cite the source file by name and the tab / section. Frame the output for the Board paper + variance bridge + recovery programme. Classify every divisional recommendation as Red / Amber / Green and tie to the EBITDA bridge component. Tone: precise, evidence-only, never speculative.',
+            instructionsID: 'Pemicu: "Trade-spend live-shopping Q4 FY2025 lebih Rp 60 M; recall SKU kontaminasi hidrokuinon di 3 pasar — paket Direksi 5 hari.". Notebook ini adalah sumber tertanam Paragon Innovation untuk review variance Board darurat — Group CFO and Chief of Staff memimpin workstream. Sintesakan SEMUA 5 sumber. Gunakan Bursa / IDX dual-listing disclosure and SCM / OJK enquiries sebagai referensi tata kelola. Setiap jawaban harus mengutip file sumber berdasarkan nama dan tab / bagian. Bingkai output untuk Board paper + bridge variance + program recovery. Klasifikasikan setiap rekomendasi divisional sebagai Merah / Kuning / Hijau dan kaitkan ke komponen EBITDA bridge. Nada: presisi, hanya berdasarkan bukti, tidak pernah spekulatif.',
+            guide: '/00_Copilot_Notebook_Demo_Guide.docx'
+          }
+        },
+        {
+          tool: '🧭 Microsoft Scout (Frontier preview)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Microsoft Scout — a desktop AI application (Frontier preview, June 2026) that goes beyond Copilot Chat. Scout acts on your local files, runs shell commands with permission tiers (auto-approve / prompt / deny), controls a browser via Playwright, and works with your Microsoft 365 data through direct API tools and WorkIQ. Key capabilities: ?? file system (create/edit/search files in your workspace with the Word/Excel/PowerPoint/Web Artifacts skills); ??️ shell commands for builds/tests/git/gh/curl with sensitive-path guards; ?? browser automation for portal tasks (Azure portal cost checks, Loop edits, web research, screenshots); ?? M365 access — read/send email, schedule meetings, post Teams, browse OneDrive, run WorkIQ across email+calendar+Teams+docs; ?? sub-agents (Explore / Task / Code review / Research / General-purpose) for parallel investigation; ❤️ Heartbeat mode — background recurring prompts on a schedule (every 15 min/30 min/1 hr/2 hr, work hours/days, separate restrictive permissions when you’re not present); ?? Automations — schedule- or condition-triggered tasks with one-shot or recurring runs, importable from GitHub; ?? Permissions UI — granular allow/deny lists, sensitive paths, auto-approve toggles. Requires Frontier program enrollment + Microsoft 365 Copilot license. Currently a preview feature — may change as Microsoft iterates.',
+          prompts: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Process the contract room',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Indonesia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Process the contract room',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Automation — Monthly Close Pack **(1) Open Microsoft Scout** desktop app (Frontier preview). **(2)** Open Scout → Automations → New automation **(3)** Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00 **(4)** Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only **(5)** Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code **Reference files:** GL_Extract_MY_ID_SG_2026M06.xlsx, Budget_Forecast_Bridge.xlsx, Monthly_Close_Deck_Template.pptx, CFO_Email_Template.docx',
+              prompt: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Malaysia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            },
+            {
+              instr: '**Same Scout session.** Process the contract room',
+              prompt: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            },
+            {
+              instr: '**Same Scout session.** Fan out strategic diligence',
+              prompt: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🌐 AI in SharePoint',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'AI in SharePoint — Microsoft 365 Copilot capabilities built directly into SharePoint to make your files, pages, and sites Copilot-ready. Available in Public Preview (April 2026) for tenants/sites opted in by IT admin. Access: the Floating Button in the bottom-right corner of any supported SharePoint page or library surfaces context-sensitive actions based on your role (Site Manager / Content Manager / Content Creator / Content Consumer), location (page or library), and selection (file or folder). Also reachable via the Agents coin in the suite navigation and the AI actions button on selected files. Capabilities by category: ?? Work with files — Ask a Question about Content, Summarize this file, Compare files, Generate Audio Overview, Generate FAQ from File; ??️ Organize libraries — Create autofill columns (AI fills based on file content), Automate workflows / set up rules, Create views; ?? Pages and sites — Improve your SharePoint site with AI (fix broken links, retire outdated pages, fill content gaps), Create Page / Section / FAQ Webpart with AI, Refine pages with Design Ideas, Write and Rewrite with AI. Note: not available on SharePoint Home, Viva Connections, or SharePoint sites within Teams. Requires Microsoft 365 Copilot license; usage is included with the M365 Copilot license once IT admin opts in at tenant or site level.',
+          prompts: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create ESG hub page',
+              prompt: 'Open the ESG Disclosure Hub → New → Page → Create Page with AI. Describe: \'Create a 2026 ESG Disclosure landing page for investors, employees, and regulators. Include a hero section, climate metrics, RSPO progress, MYR green capex, assurance status, key downloads, and an FAQ Webpart generated from Employee_Sustainability_FAQ.docx.\' Use Design Ideas to refine layout, then use Write/Rewrite with AI to make the executive summary concise for Daichi Maruyama before publishing.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create ESG hub page',
+              prompt: 'Open the ESG Disclosure Hub → New → Page → Create Page with AI. Describe: \'Create a 2026 ESG Disclosure landing page for investors, employees, and regulators. Include a hero section, climate metrics, RSPO progress, MYR green capex, assurance status, key downloads, and an FAQ Webpart generated from Employee_Sustainability_FAQ.docx.\' Use Design Ideas to refine layout, then use Write/Rewrite with AI to make the executive summary concise for Daichi Maruyama before publishing.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: '**Use case:** Ask & Summarize — Single-File Q&A from the Floating Button **(1) Open SharePoint** → navigate to the relevant site or library. **(2)** Open the Group Policy Hub or Board Portal site in SharePoint **(3)** Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf **(4)** Click the Floating Button in the bottom-right corner and choose Ask a question about content **(5)** Run the prompt, then choose Summarize this file and compare the answer against the original document **Reference files:** BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, ESG_Disclosure_2026.pdf',
+              prompt: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Set up high-value invoice rule',
+              prompt: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            },
+            {
+              instr: '**Same SharePoint flow.** Create ESG hub page',
+              prompt: 'Open the ESG Disclosure Hub → New → Page → Create Page with AI. Describe: \'Create a 2026 ESG Disclosure landing page for investors, employees, and regulators. Include a hero section, climate metrics, RSPO progress, MYR green capex, assurance status, key downloads, and an FAQ Webpart generated from Employee_Sustainability_FAQ.docx.\' Use Design Ideas to refine layout, then use Write/Rewrite with AI to make the executive summary concise for Daichi Maruyama before publishing.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit',
+            'Hadar Caspit',
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🤝 Cowork (Frontier)',
+          license: 'Microsoft 365 Copilot + Frontier Program',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Cowork is the autonomous agent in Microsoft 365 Copilot — access via m365.cloud.microsoft > left nav > Agents > Cowork (Frontier). Describe what you need in natural language (up to 16,000 chars, voice input supported); Cowork carries out the work end-to-end and shows each step (Thinking → Skill → Step-by-step → Streaming response → Interactive cards). Capabilities (April 2026 rollout): ✉️ send/reply/forward emails with attachments via Outlook; ??️ schedule meetings + manage calendar in natural language; ?? create/edit Word, Excel, PowerPoint, and PDF files; ?? post in Teams channels and chats; ?? search the org for files/people/info; ?? browse and manage OneDrive + SharePoint; ?? conduct deep research across multiple sources; ?? prepare daily briefings + meeting intelligence; ⏰ NEW — run prompts on a schedule (recurring tasks). Side panel shows Progress, Input/Output folders, Skills used, Schedule, and Permissions. Approve / Approve & Remember / Reject for medium and high risk actions; Pause/Resume/Cancel any time. Built on Anthropic models as a subprocessor. Requires Microsoft 365 Copilot license + Frontier Program enrollment (rolling out in select markets, en-us first).',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft` > left nav > **Agents** > **Cowork**. Paste the single prompt below — Cowork delegates 5 parallel sub-tasks and reports back with one consolidated status panel. Frontier program required.',
+              prompt: 'Cowork — Trade-Spend Sprint. Run these 5 tasks in parallel and report back: (1) 📝 Draft a Word doc — Q4 Trade-Spend Variance Brief, 4 pages, audience Group ExCo, sources /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx and /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx. (2) 📝 Draft a Word doc — Recall Holding Lines for BPOM/MOH/SFA, 1 page each, source /COSMETICS_03_Ingredient_Recall_Programme.docx. (3) ✉️ Send an email to the 6 Brand-House GMs and the Group Trade-Marketing Director summarising the variance and asking for 3 corrective levers each, due in 48 hours. (4) 📅 Schedule a 60-minute Group ExCo meeting tomorrow 9am MYT titled "Trade-Spend Crisis Alignment — Pre-Board". (5) 💬 Post a Teams message to the #group-exco channel with a one-line headline of the variance and a link to the dashboard. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Daichi (Head of Investor Relations), Mod Admin (Group Strategy Director), Will (Group Chief Risk Officer) and Omar (Group Chief Procurement Officer) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience. Wait for my approval before sending anything externally or posting to channels.'
+            },
+            {
+              instr: 'Stay in the same Cowork session — Cowork remembers prior delegations within the same chat. Paste this prompt to launch the **Quarterly Investor Day Sprint**. Cowork will delegate the 5 numbered actions in parallel and report back as each one completes.',
+              prompt: 'Run the FY2025 Q4 investor day delegation in parallel. Please do all 5 of the following at once and report back when each is ready. 1. Draft a 4-page Word doc titled "Investor Day FY2025 — Speaking Notes" using /01_Zava_Group_Financial_Performance.xlsx and /03_Zava_Group_Strategy_Framework.docx as context. Section 1 financial highlights, Section 2 divisional performance, Section 3 capital allocation, Section 4 outlook for FY2026. 2. Draft a 1-page Word doc titled "Top 25 Analyst Q&A" pulling anticipated questions from /06_Zava_Investor_QA_FY2025.docx — order by likelihood and pre-answer each in two sentences. 3. Draft a personalised email to the top-25 covering analysts inviting them to the 9am virtual Q&A session immediately after the main investor day webcast. 4. Schedule a 30-minute Teams dry-run tomorrow at 6pm with the Group CFO, Group Chief of Staff, Head of IR, and the IR team — pre-read the speaking notes and the analyst Q&A. 5. Post a Teams message in the IR channel with the embargoed deck link, the Q&A doc, and the dry-run calendar invite. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Daichi (Head of Investor Relations), Mod Admin (Group Strategy Director), Will (Group Chief Risk Officer) and Omar (Group Chief Procurement Officer) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            },
+            {
+              instr: 'Same Cowork session — paste this prompt to launch the **Monthly Lender Outreach Cycle**. Cowork delegates 5 lender-engagement tasks in parallel and reports back as each finishes.',
+              prompt: 'Run the month-end lender engagement cycle in parallel. Complete all 5 below and report back as each lands. 1. Draft a 3-page Word doc titled "Lender Pack — Month-End Update" pulling current covenant headroom from /05_Zava_Lender_Covenant_Tracker.xlsx and division-level updates from /04_Zava_Divisional_Variance_FY2025.xlsx. Include a covenant-watchlist summary at the top. 2. Draft individual cover emails (one per bank, personalised tone) to each of the top-10 relationship banks with the lender pack attached. 3. Schedule three back-to-back 30-minute Teams calls tomorrow 2pm-3:30pm — one each with the lead facility agent, the syndicate-of-record chair, and the largest lender by facility size. 4. Update the lender outreach tracker workbook with this month\'s communications, the upcoming covenant test dates, and any waiver/amendment items in flight. 5. Post a status note in the Treasury team Teams channel summarising the lender position, covenant-watchlist items, and follow-up actions assigned. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Daichi (Head of Investor Relations), Mod Admin (Group Strategy Director), Will (Group Chief Risk Officer) and Omar (Group Chief Procurement Officer) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            },
+            {
+              instr: 'Same Cowork session — paste this prompt to launch the **Quarterly Regulator Submission Sprint**. Cowork delegates 5 submission-prep tasks in parallel and reports back as each completes.',
+              prompt: 'Run the quarterly regulator submission sprint in parallel. Complete all 5 below and report back as each finishes. 1. Draft a Word doc titled "Regulator Submission Q4 FY2025" formatted as a formal disclosure pack covering the items required this cycle. Pull the divisional numbers from /01_Zava_Group_Financial_Performance.xlsx and the governance language from /02_Zava_Group_Policy_Handbook.docx. 2. Draft the cover letter email to the lead supervisor with the submission pack attached and a one-paragraph executive summary in the body. 3. Schedule a 20-minute pre-submission alignment Teams meeting tomorrow at 8am with Compliance, Legal, and the Head of IR — agenda: walk through the pack, confirm sign-offs, agree the cover letter language. 4. Post a private Teams message to the General Counsel asking for sign-off on Section 4 (related-party disclosures) by 5pm today, with the relevant page links highlighted. 5. Update the regulatory submission tracker workbook with this cycle\'s submission package, the submission date, the supervisor contact, and the expected response window. Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Daichi (Head of Investor Relations), Mod Admin (Group Strategy Director), Will (Group Chief Risk Officer) and Omar (Group Chief Procurement Officer) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            },
+            {
+              instr: 'Same Cowork session — paste this prompt to ask Cowork to **build a single self-contained HTML executive dashboard** as a deliverable in chat. Cowork will read the attached data, generate the HTML/CSS/JS inline (no external CDN), and render it for download. While the HTML renders, Cowork runs the 4 parallel follow-up tasks below.',
+              prompt: 'Cowork: produce a SELF-CONTAINED interactive HTML dashboard titled "Cosmetics Brand-House KPI Dashboard" using /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx as the source of truth. The HTML must be a single .html file (inline CSS + inline JS, no external CDN) styled for executive review — top strip of 5 KPI cards (brand share by house · live-shopping GMV · BPOM Notifikasi expiries · SKU margin · recall status), a trend chart (last 12 periods) per KPI built with the Canvas API, an alerts panel listing any KPI breaching its target threshold in red, and a notes panel summarising the \'so what\'. While the HTML is generating, ALSO complete these 4 tasks in parallel and report back as each finishes: 1. Word — a 2-page narrative memo walking the dashboard top-down for Cosmetics & Personal Care leadership. 2. Email — covering note from the Group CFO with the HTML + memo attached. 3. Teams meeting — 30-min review block tomorrow morning to walk the dashboard. 4. Tracker — update the Cosmetics & Personal Care KPI tracker workbook with this period\'s actuals and the breach list.  Wait for my confirmation before sending external content. Use these named recipients consistently across the email task and the Teams meeting task — Hadar (Group CFO), Sasha (Group Chief of Staff), Daichi (Head of Investor Relations), Mod Admin (Group Strategy Director), Will (Group Chief Risk Officer) and Omar (Group Chief Procurement Officer) — and adapt the precise distribution per sub-task to keep each communication focused on the right audience.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > nav kiri > **Agents** > **Cowork**. Tempel prompt tunggal di bawah — Cowork mendelegasikan 5 sub-tugas paralel dan melaporkan kembali dengan satu panel status terkonsolidasi. Membutuhkan program Frontier.',
+              prompt: 'Cowork — Sprint Trade-Spend. Jalankan 5 tugas berikut paralel dan laporkan kembali: (1) 📝 Susun dokumen Word — Brief Selisih Trade-Spend Q4, 4 halaman, audiens Group ExCo, sumber /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx dan /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx. (2) 📝 Susun dokumen Word — Holding Line Recall untuk BPOM/KKM/SFA, 1 halaman per regulator, sumber /COSMETICS_03_Ingredient_Recall_Programme.docx. (3) ✉️ Kirim email ke 6 GM Brand House dan Direktur Trade-Marketing Grup yang merangkum selisih dan meminta 3 lever perbaikan dari masing-masing dalam 48 jam. (4) 📅 Jadwalkan rapat Group ExCo 60 menit besok pukul 09:00 WIB berjudul "Penyelarasan Krisis Trade-Spend — Pre-Direksi". (5) 💬 Posting pesan Teams di channel #group-exco dengan headline satu baris selisih dan tautan ke dashboard. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Direktur Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat. Tunggu persetujuan saya sebelum mengirim apa pun secara eksternal atau memposting ke channel.'
+            },
+            {
+              instr: 'Tetap di sesi Cowork yang sama — Cowork mengingat delegasi sebelumnya dalam chat yang sama. Tempelkan prompt ini untuk meluncurkan **Sprint Investor Day Triwulan**. Cowork akan mendelegasikan 5 tindakan bernomor secara paralel dan melaporkan saat masing-masing selesai.',
+              prompt: 'Jalankan delegasi Investor Day FY2025 Q4 secara paralel. Mohon kerjakan kelima hal berikut sekaligus dan laporkan begitu masing-masing siap. 1. Susun dokumen Word 4 halaman berjudul "Investor Day FY2025 — Naskah Pidato" menggunakan /01_Zava_Group_Financial_Performance.xlsx dan /03_Zava_Group_Strategy_Framework.docx sebagai konteks. Bagian 1 highlight keuangan, Bagian 2 kinerja per unit usaha, Bagian 3 alokasi modal, Bagian 4 outlook FY2026. 2. Susun dokumen Word 1 halaman berjudul "Top 25 Q&A Analis" menarik pertanyaan yang diantisipasi dari /06_Zava_Investor_QA_FY2025.docx — urutkan berdasarkan kemungkinan dan jawab masing-masing dalam dua kalimat. 3. Susun email personal kepada top-25 analis covering yang mengundang mereka ke sesi Q&A virtual jam 9 pagi setelah webcast investor day utama. 4. Jadwalkan dry-run Teams 30 menit besok jam 6 sore bersama Direktur Keuangan Grup, Kepala Staf Grup, Kepala IR, dan tim IR — pre-read naskah pidato dan Q&A analis. 5. Posting pesan di channel Teams IR dengan link deck embargoed, dokumen Q&A, dan undangan kalender dry-run. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Direktur Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tempelkan prompt ini untuk meluncurkan **Siklus Outreach Kreditor Bulanan**. Cowork akan mendelegasikan 5 tugas keterlibatan kreditor secara paralel dan melaporkan saat masing-masing selesai.',
+              prompt: 'Jalankan siklus keterlibatan kreditor akhir bulan secara paralel. Selesaikan kelimanya di bawah ini dan laporkan saat masing-masing tuntas. 1. Susun dokumen Word 3 halaman berjudul "Lender Pack — Update Akhir Bulan" menarik headroom covenant terbaru dari /05_Zava_Lender_Covenant_Tracker.xlsx dan update level unit usaha dari /04_Zava_Divisional_Variance_FY2025.xlsx. Cantumkan ringkasan watchlist covenant di atas. 2. Susun cover email individual (satu per bank, nada personal) ke top-10 bank relasi dengan lender pack terlampir. 3. Jadwalkan tiga panggilan Teams 30 menit berturut-turut besok jam 14.00-15.30 — masing-masing dengan lead facility agent, ketua syndicate-of-record, dan kreditor terbesar berdasarkan ukuran fasilitas. 4. Perbarui workbook tracker outreach kreditor dengan komunikasi bulan ini, tanggal uji covenant mendatang, dan item waiver/amendment yang sedang berjalan. 5. Posting catatan status di channel Teams tim Treasury yang merangkum posisi kreditor, item watchlist covenant, dan tindak lanjut yang diberikan. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Direktur Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tempelkan prompt ini untuk meluncurkan **Sprint Submisi Regulator Triwulan**. Cowork akan mendelegasikan 5 tugas persiapan submisi secara paralel dan melaporkan saat masing-masing selesai.',
+              prompt: 'Jalankan sprint submisi regulator triwulan secara paralel. Selesaikan kelimanya di bawah ini dan laporkan saat masing-masing tuntas. 1. Susun dokumen Word berjudul "Submisi Regulator Q4 FY2025" diformat sebagai paket pengungkapan formal yang mencakup item yang diperlukan siklus ini. Tarik angka per unit usaha dari /01_Zava_Group_Financial_Performance.xlsx dan bahasa tata kelola dari /02_Zava_Group_Policy_Handbook.docx. 2. Susun cover letter email kepada supervisor utama dengan paket submisi terlampir dan ringkasan eksekutif satu paragraf di body. 3. Jadwalkan rapat alignment pra-submisi Teams 20 menit besok jam 8 pagi bersama Compliance, Legal, dan Kepala IR — agenda: walk-through paket, konfirmasi sign-off, sepakati bahasa cover letter. 4. Posting pesan Teams pribadi kepada General Counsel meminta sign-off Bagian 4 (pengungkapan pihak terkait) jam 5 sore hari ini, dengan link halaman terkait disorot. 5. Perbarui workbook tracker submisi regulator dengan paket submisi siklus ini, tanggal submisi, kontak supervisor, dan jendela respons yang diharapkan. Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Direktur Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            },
+            {
+              instr: 'Sesi Cowork yang sama — tempelkan prompt ini untuk meminta Cowork **membuat satu dashboard HTML eksekutif mandiri** sebagai deliverable di chat. Cowork akan membaca data terlampir, men-generate HTML/CSS/JS inline (tanpa CDN eksternal), dan menampilkannya untuk diunduh. Sambil HTML di-generate, Cowork menjalankan 4 tugas paralel di bawah.',
+              prompt: 'Cowork: buat dashboard HTML interaktif mandiri berjudul "Cosmetics Brand-House KPI Dashboard" menggunakan /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx sebagai sumber kebenaran. HTML harus berupa satu file .html (CSS + JS inline, tanpa CDN eksternal), ditata untuk review eksekutif — strip atas berisi 5 kartu KPI (brand share by house · live-shopping GMV · BPOM Notifikasi expiries · SKU margin · recall status), chart tren (12 periode terakhir) per KPI dibangun dengan Canvas API, panel alert mencantumkan KPI yang melanggar ambang target dalam warna merah, dan panel catatan merangkum \'so what\'. Sementara HTML di-generate, JUGA selesaikan 4 tugas berikut secara paralel dan laporkan saat masing-masing tuntas: 1. Word — memo naratif 2 halaman menjelaskan dashboard top-down untuk pimpinan Cosmetics & Personal Care. 2. Email — cover note dari Direktur Keuangan Grup dengan HTML + memo terlampir. 3. Rapat Teams — blok review 30 menit besok pagi untuk walk-through dashboard. 4. Tracker — perbarui workbook tracker KPI Cosmetics & Personal Care dengan aktual periode ini dan daftar breach.  Tunggu konfirmasi saya sebelum mengirim konten eksternal. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas rapat Teams — Hadar (Direktur Keuangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Direktur Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `m365.cloud.microsoft` > nav kiri > **Agents** > **Cowork**. Tampal prompt tunggal di bawah — Cowork mendelegasikan 5 sub-tugas paralel dan melaporkan kembali dengan satu panel status terkonsolidasi. Memerlukan program Frontier.',
+              prompt: 'Cowork — Sprint Trade-Spend. Jalankan 5 tugas berikut paralel dan laporkan kembali: (1) 📝 Susun dokumen Word — Brief Perbezaan Trade-Spend Q4, 4 halaman, audiens Group ExCo, sumber /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx dan /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx. (2) 📝 Susun dokumen Word — Holding Line Recall untuk BPOM/KKM/SFA, 1 halaman per regulator, sumber /COSMETICS_03_Ingredient_Recall_Programme.docx. (3) ✉️ Hantar email ke 6 GM Brand House dan Pengarah Trade-Marketing Grup yang merangkum perbezaan dan meminta 3 lever perbaikan dari masing-masing dalam 48 jam. (4) 📅 Jadualkan mesyuarat Group ExCo 60 menit esok pukul 09:00 WIB berjudul "Penyelarasan Krisis Trade-Spend — Pre-Lembaga Pengarah". (5) 💬 Posting pesan Teams di channel #group-exco dengan headline satu baris perbezaan dan tautan ke dashboard. Gunakan penerima bernama berikut secara konsisten lintas tugas email dan tugas mesyuarat Teams — Hadar (Pengarah Kewangan Grup), Sasha (Kepala Staf Grup), Daichi (Kepala Hubungan Investor), Mod Admin (Pengarah Strategi Grup), Will (CRO Grup) dan Omar (CPO Grup) — dan sesuaikan distribusi tepat per sub-tugas agar tiap komunikasi tetap fokus pada audiens yang tepat. Tunggu kelulusan saya sebelum menghantar apa-apa secara luaran atau menyiarkan di saluran.'
+            }
+          ],
+          persona: [
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📝 Word Agent (Generate document)',
+          license: 'Either Free Copilot Chat (no extra license) OR Microsoft 365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Word Agent in Microsoft 365 Copilot Chat. Access from m365.cloud.microsoft/chat (or the Copilot app in Teams) — in the prompt box click the Tools menu (or Agents menu) and choose Word. Describe the document you want — Copilot generates a complete .docx preview in chat, asks clarifying questions on tone/length/audience, then saves the file to OneDrive. Available to all Microsoft 365 users WITH OR WITHOUT a Microsoft 365 Copilot license (including Microsoft 365 Personal/Family/Premium plans). With a Copilot license, Copilot can ground in tenant content (files, emails, chats, meetings) respecting access policies; without a license, Copilot uses the public web plus any file you reference in the prompt. Great for: board minutes, briefing memos, policy drafts, status reports, employee onboarding guides.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` and sign in. In the prompt box click the **Tools** menu (or **Agents** menu) and choose **Word**. Paste the prompt below — Copilot generates a complete `.docx` preview in chat, asks any clarifying questions on tone/length/audience, then saves the finished file to OneDrive. Open it in Word to review and polish. Works **with or without** a Microsoft 365 Copilot license — with a Copilot license, Copilot can ground in tenant files/emails/chats/meetings; without a license, Copilot uses the public web plus any file you reference inline.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. Q4 FY2025 trade-spend overran by Rp 60B, Salmonella recall active in MY/SG/ID, Board on Friday. Here is exactly what I need from you. Generate a 4-page Group CFO Trade-Spend & Recall Brief in Word. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. Reference /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx (Channel Spend tab) and /COSMETICS_03_Ingredient_Recall_Programme.docx. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Sections — Executive Summary 5 bullets, Trade-Spend Bridge plain English, Recall Status by Market, Margin Recovery Levers with MYR impact, FY2026 Promo Guardrails proposal, Decisions Requested. Tone: precise, Board-ready, no speculation. Save as CFO_TradeSpend_Recall_Brief.docx. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Stay in `m365.cloud.microsoft/chat`. Type the next prompt.',
+              prompt: 'Generate a follow-up 1-page executive summary `.docx` named ExecSummary_cosmetics.docx that condenses the deliverable above into a five-bullet headline, a RAG status box, and a decisions-required block. Cite the same source files as the previous prompt. Tone: tight, audience CEO and Chair.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` dan login. Pada kotak prompt klik menu **Tools** (atau menu **Agents**) lalu pilih **Word**. Tempel prompt di bawah — Copilot menghasilkan preview `.docx` lengkap di chat, bertanya jika ada hal perlu diklarifikasi (nada/panjang/audiens), kemudian menyimpan file ke OneDrive. Buka di Word untuk review dan polishing akhir. Berfungsi **dengan maupun tanpa** lisensi Microsoft 365 Copilot — dengan lisensi Copilot grounding ke file/email/chat/meeting tenant; tanpa lisensi Copilot pakai web publik + file apapun yang Anda referensikan dalam prompt.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Trade-spend Q4 FY2025 over Rp 60 miliar, recall kontaminasi hidrokuinon aktif di MY/SG/ID, Direksi Jumat. Berikut yang saya butuhkan dari Anda secara persis. Hasilkan Brief Trade-Spend & Recall Direktur Keuangan Grup 4 halaman dalam Word. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Referensikan /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx (tab Channel Spend) dan /COSMETICS_03_Ingredient_Recall_Programme.docx. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Bagian — Ringkasan Eksekutif 5 bullet, Bridge Trade-Spend bahasa sederhana, Status Recall per Pasar, Lever Pemulihan Margin dengan dampak Rp Miliar, Proposal Guardrail Promo FY2026, Keputusan yang Diminta. Nada: presisi, siap-Direksi, tanpa spekulasi. Simpan sebagai Brief_TradeSpend_Recall_Direktur_Keuangan.docx. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Tetap di `m365.cloud.microsoft/chat`. Ketik prompt berikut.',
+              prompt: 'Hasilkan ringkasan eksekutif satu halaman lanjutan dalam bentuk `.docx` bernama Ringkasan_Eksekutif_cosmetics.docx yang merangkum deliverable di atas menjadi headline lima bullet, kotak status RAG, dan blok keputusan yang diperlukan. Kutip file sumber yang sama dengan prompt sebelumnya. Nada padat, audiens Direktur Utama dan Komisaris Utama.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` dan login. Pada kotak prompt klik menu **Tools** (atau menu **Agents**) lalu pilih **Word**. Tampal prompt di bawah — Copilot menghasilkan preview `.docx` lengkap di chat, bertanya jika ada hal perlu diklarifikasi (nada/panjang/audiens), kemudian menyimpan fail ke OneDrive. Buka di Word untuk review dan polishing akhir. Berfungsi **dengan maupun tanpa** lesen Microsoft 365 Copilot — dengan lesen Copilot grounding ke fail/email/chat/meeting tenant; tanpa lesen Copilot pakai web publik + fail apapun yang Anda referensikan dalam prompt.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Trade-spend Q4 FY2025 over Rp 60 miliar, recall kontaminasi hidrokuinon aktif di MY/SG/ID, Lembaga Pengarah Jumaat. Berikut yang saya butuhkan dari Anda secara persis. Hasilkan Brief Trade-Spend & Recall Pengarah Kewangan Grup 4 halaman dalam Word. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Referensikan /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx (tab Channel Spend) dan /COSMETICS_03_Ingredient_Recall_Programme.docx. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Bahagian — Ringkasan Eksekutif 5 bullet, Bridge Trade-Spend bahasa sederhana, Status Recall per Pasar, Lever Pemulihan Margin dengan dampak Rp Miliar, Proposal Guardrail Promo FY2026, Keputusan yang Diminta. Nada: presisi, siap-Lembaga Pengarah, tanpa spekulasi. Simpan sebagai Brief_TradeSpend_Recall_Direktur_Keuangan.docx. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Kekal di `m365.cloud.microsoft/chat`. Taip prompt seterusnya.',
+              prompt: 'Hasilkan ringkasan eksekutif satu muka surat susulan dalam bentuk `.docx` bernama Ringkasan_Eksekutif_cosmetics.docx yang merumuskan deliverable di atas menjadi tajuk utama lima poin, kotak status RAG, dan blok keputusan diperlukan. Petik fail sumber yang sama seperti prompt sebelumnya. Nada padat, audiens CEO dan Pengerusi.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🎯 PowerPoint Agent (Generate deck)',
+          license: 'Either Free Copilot Chat (no extra license) OR Microsoft 365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'PowerPoint Agent in Microsoft 365 Copilot Chat. Access from m365.cloud.microsoft/chat (or the Copilot app in Teams) — in the prompt box click the Tools menu (or Agents menu) and choose PowerPoint. Describe the deck you want (slide count, audience, theme, content outline) — Copilot generates a complete .pptx preview in chat, asks clarifying questions, then saves the file to OneDrive. Available to all Microsoft 365 users WITH OR WITHOUT a Microsoft 365 Copilot license (including Microsoft 365 Personal/Family/Premium plans). With a Copilot license, Copilot grounds slides in tenant content; without a license, it uses the public web plus any file you reference. Great for: Board decks, IR decks, town hall decks, marketing strategy presentations.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` and sign in. In the prompt box click the **Tools** menu (or **Agents** menu) and choose **PowerPoint**. Paste the prompt below — Copilot generates a complete `.pptx` preview in chat, asks any clarifying questions on theme/audience/slide count, then saves the finished file to OneDrive. Open it in PowerPoint to review and polish. Works **with or without** a Microsoft 365 Copilot license — with a Copilot license, Copilot can ground in tenant content; without a license, Copilot uses the public web plus any file you reference inline.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. Friday Board. Here is exactly what I need from you. Build a 10-slide Board deck on Q4 FY2025 live-shopping trade-spend overrun and recall. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. Reference my Word brief /CFO_TradeSpend_Recall_Brief.docx and trade-spend dashboard /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx. When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Cover, Situation, Bridge waterfall (2 slides), Recall by market, Levers (2 slides), FY2026 Guardrails, Decisions, Appendix. Brand colours #F59E0B + #0F1C3F, 18pt minimum body text, 1 chart per slide. Save as Q4_TradeSpend_Recall_BoardDeck.pptx. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Stay in `m365.cloud.microsoft/chat`. Type the next prompt.',
+              prompt: 'Generate a follow-up 5-slide town-hall pre-read `.pptx` named TownHall_PreRead_cosmetics.pptx covering the same theme but pitched to mid-management. Slides: (1) Title and Disclaimer; (2) Why we are doing this; (3) What changes for you; (4) What we ask of you; (5) Q&A. Cite the same source files as the previous prompt. Use the same brand colours.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` dan login. Pada kotak prompt klik menu **Tools** (atau menu **Agents**) lalu pilih **PowerPoint**. Tempel prompt di bawah — Copilot menghasilkan preview `.pptx` lengkap di chat, bertanya jika ada hal perlu diklarifikasi (tema/audiens/jumlah slide), kemudian menyimpan file ke OneDrive. Buka di PowerPoint untuk review dan polishing akhir. Berfungsi **dengan maupun tanpa** lisensi Microsoft 365 Copilot — dengan lisensi grounding ke konten tenant; tanpa lisensi pakai web publik + file referensi inline.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Direksi Jumat. Berikut yang saya butuhkan dari Anda secara persis. Bangun deck Direksi 10 slide tentang pembengkakan trade-spend dan recall Q4 FY2025. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Referensikan brief Word saya /Brief_TradeSpend_Recall_Direktur_Keuangan.docx dan dashboard trade-spend /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Cover, Situasi, Waterfall Bridge (2 slide), Recall per Pasar, Lever (2 slide), Guardrail FY2026, Keputusan, Appendix. Warna brand #F59E0B + #0F1C3F, font tubuh minimum 18pt, 1 chart per slide. Simpan sebagai Deck_Direksi_TradeSpend_Recall_Q4.pptx. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Tetap di `m365.cloud.microsoft/chat`. Ketik prompt berikut.',
+              prompt: 'Hasilkan deck pra-baca town-hall 5 slide lanjutan `.pptx` bernama PreRead_TownHall_cosmetics.pptx mencakup tema yang sama tetapi ditujukan untuk middle-management. Slide: (1) Judul dan Disclaimer; (2) Mengapa kami melakukan ini; (3) Apa yang berubah untuk Anda; (4) Apa yang kami minta dari Anda; (5) Q&A. Kutip file sumber yang sama dengan prompt sebelumnya. Gunakan warna brand yang sama.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` dan login. Pada kotak prompt klik menu **Tools** (atau menu **Agents**) lalu pilih **PowerPoint**. Tampal prompt di bawah — Copilot menghasilkan preview `.pptx` lengkap di chat, bertanya jika ada hal perlu diklarifikasi (tema/audiens/jumlah slide), kemudian menyimpan fail ke OneDrive. Buka di PowerPoint untuk review dan polishing akhir. Berfungsi **dengan maupun tanpa** lesen Microsoft 365 Copilot — dengan lesen grounding ke konten tenant; tanpa lesen pakai web publik + fail referensi inline.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Lembaga Pengarah Jumaat. Berikut yang saya butuhkan dari Anda secara persis. Bangun deck Lembaga Pengarah 10 slide tentang pembengkakan trade-spend dan recall Q4 FY2025. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. Referensikan brief Word saya /Brief_TradeSpend_Recall_Direktur_Keuangan.docx dan dashboard trade-spend /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx. Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Cover, Situasi, Waterfall Bridge (2 slide), Recall per Pasar, Lever (2 slide), Guardrail FY2026, Keputusan, Appendix. Warna brand #F59E0B + #0F1C3F, font tubuh minimum 18pt, 1 chart per slide. Simpan sebagai Deck_Direksi_TradeSpend_Recall_Q4.pptx. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Kekal di `m365.cloud.microsoft/chat`. Taip prompt seterusnya.',
+              prompt: 'Hasilkan deck pra-baca town-hall 5 slaid susulan `.pptx` bernama PreRead_TownHall_cosmetics.pptx merangkumi tema yang sama tetapi disasarkan kepada pengurusan pertengahan. Slaid: (1) Tajuk dan Disclaimer; (2) Mengapa kami melakukan ini; (3) Apa yang berubah untuk anda; (4) Apa yang kami minta dari anda; (5) Q&A. Petik fail sumber yang sama seperti prompt sebelumnya. Guna warna jenama yang sama.'
+            }
+          ],
+          persona: [
+            'Sasha Ouellet'
+          ],
+          personaID: [
+            'Sasha Ouellet'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '📊 Excel Agent (Generate workbook)',
+          license: 'Either Free Copilot Chat (no extra license) OR Microsoft 365 Copilot license',
+          account: 'Free: Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com  •  M365: MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Excel Agent in Microsoft 365 Copilot Chat. Access from m365.cloud.microsoft/chat (or the Copilot app in Teams) — in the prompt box click the Tools menu (or Agents menu) and choose Excel. Describe the workbook you want (sheets, columns, charts, formulas, conditional formatting) — Copilot generates a complete .xlsx preview in chat, asks clarifying questions, then saves the file to OneDrive. Available to all Microsoft 365 users WITH OR WITHOUT a Microsoft 365 Copilot license (including Microsoft 365 Personal/Family/Premium plans). With a Copilot license, Copilot can ground in tenant data; without a license, it uses the public web plus any file you reference. Great for: KPI dashboards, division comparisons, budget trackers, scenario models, summary reports from existing data.',
+          prompts: [
+            {
+              instr: 'Open `m365.cloud.microsoft/chat` and sign in. In the prompt box click the **Tools** menu (or **Agents** menu) and choose **Excel**. Paste the prompt below — Copilot generates a complete `.xlsx` preview in chat, asks any clarifying questions on sheets/columns/charts/formatting, then saves the finished file to OneDrive. Open it in Excel to review and polish. Works **with or without** a Microsoft 365 Copilot license — with a Copilot license, Copilot can ground in tenant data; without a license, Copilot uses the public web plus any file you reference inline.',
+              prompt: 'I am working under a tight deadline and the work product needs to be airtight, so please be thorough rather than terse. 30-day rolling control workbook for the Group CFO. Here is exactly what I need from you. Build a BPOM Notifikasi + Margin Tracker workbook from scratch. Ground every part of your answer in the inputs that follow, and walk through them methodically rather than skimming. schema only — channels (modern-beauty retail, general trade, marketplace, live shopping), categories (colour cosmetics, skincare, haircare, personal wash, fragrance), 4 export markets (Malaysia, Singapore, Philippines, UAE). When you reply, organise the output as described below so I can lift it straight into my deliverable without reformatting. Sheet 1 Channel Spend (budget vs actual by month), Sheet 2 SKU Margin (top 50 SKUs Q3 vs Q4 GM), Sheet 3 Recall Cost Tracker (legal, logistics, replacement, halal recert, comms), Sheet 4 Dashboard with KPI tiles + RAG conditional formatting. Save as Cosmetics_BPOM_Notif_Margin_Tracker.xlsx. Be specific, attach a citation or sheet/tab/cell reference to every quantitative claim, and if anything is missing or contradictory call it out explicitly with the question I should ask next so nothing slips before the deadline.'
+            },
+            {
+              instr: 'Stay in `m365.cloud.microsoft/chat`. Type the next prompt.',
+              prompt: 'Generate a follow-up 1-page scorecard `.xlsx` named Scorecard_cosmetics.xlsx with one sheet \'Exec View\' carrying KPI tiles for the top 6 metrics from the workbook above (Target / Actual / Variance / RAG status). Apply conditional formatting on the Variance column (Red < -10%, Amber -5% to -10%, Green > -5%). Cite the same source files as the previous prompt.'
+            }
+          ],
+          promptsID: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` dan login. Pada kotak prompt klik menu **Tools** (atau menu **Agents**) lalu pilih **Excel**. Tempel prompt di bawah — Copilot menghasilkan preview `.xlsx` lengkap di chat, bertanya jika ada hal perlu diklarifikasi (sheet/kolom/chart/formatting), kemudian menyimpan file ke OneDrive. Buka di Excel untuk review dan polishing akhir. Berfungsi **dengan maupun tanpa** lisensi Microsoft 365 Copilot — dengan lisensi grounding ke data tenant; tanpa lisensi pakai web publik + file referensi inline.',
+              prompt: 'Saya sedang mengerjakan ini dengan tenggat yang ketat dan hasil akhirnya harus rapi, jadi mohon jawab dengan tuntas, jangan ringkas. Workbook kontrol rolling 30-hari untuk Direktur Keuangan Grup. Berikut yang saya butuhkan dari Anda secara persis. Bangun workbook Tracker BPOM Notifikasi + Margin dari nol. Grounding setiap bagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. hanya skema — channel (modern-beauty retail, general trade, marketplace, live shopping), kategori (colour cosmetics, skincare, haircare, personal wash, fragrance), 4 pasar ekspor (Indonesia, Singapura, Filipina, UEA). Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Sheet 1 Channel Spend (anggaran vs aktual per bulan), Sheet 2 SKU Margin (50 SKU teratas GM Q3 vs Q4), Sheet 3 Recall Cost Tracker (legal, logistik, replacement, recert halal, komunikasi), Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_BPOM_Notif_Margin_Kosmetik.xlsx. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang harus saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Tetap di `m365.cloud.microsoft/chat`. Ketik prompt berikut.',
+              prompt: 'Hasilkan scorecard satu halaman lanjutan `.xlsx` bernama Scorecard_cosmetics.xlsx dengan satu sheet \'Exec View\' berisi tile KPI untuk 6 metrik teratas dari workbook di atas (Target / Aktual / Selisih / Status RAG). Terapkan format kondisional pada kolom Selisih (Merah < -10%, Kuning -5% sampai -10%, Hijau > -5%). Kutip file sumber yang sama dengan prompt sebelumnya.'
+            }
+          ],
+          promptsBM: [
+            {
+              instr: 'Buka `m365.cloud.microsoft/chat` dan login. Pada kotak prompt klik menu **Tools** (atau menu **Agents**) lalu pilih **Excel**. Tampal prompt di bawah — Copilot menghasilkan preview `.xlsx` lengkap di chat, bertanya jika ada hal perlu diklarifikasi (sheet/lajur/chart/formatting), kemudian menyimpan fail ke OneDrive. Buka di Excel untuk review dan polishing akhir. Berfungsi **dengan maupun tanpa** lesen Microsoft 365 Copilot — dengan lesen grounding ke data tenant; tanpa lesen pakai web publik + fail referensi inline.',
+              prompt: 'Saya sedang melakukan ini dengan tenggat yang ketat dan hasil akhirnya perlu kemas, jadi mohon jawab dengan tuntas, jangan ringkas. Workbook kawalan rolling 30-hari untuk Pengarah Kewangan Grup. Berikut yang saya butuhkan dari Anda secara persis. Bangun workbook Tracker BPOM Notifikasi + Margin dari nol. Grounding setiap bahagian jawaban Anda pada masukan berikut, telaah satu per satu, jangan dilewati. hanya skema — channel (modern-beauty retail, general trade, marketplace, live shopping), kategori (colour cosmetics, skincare, haircare, personal wash, fragrance), 4 pasar eksport (Malaysia, Singapura, Filipina, UEA). Saat menjawab, susun keluaran sesuai format di bawah ini agar dapat langsung saya gunakan di deliverable tanpa perlu format ulang. Sheet 1 Channel Spend (belanjawan vs aktual per bulan), Sheet 2 SKU Margin (50 SKU teratas GM Q3 vs Q4), Sheet 3 Recall Cost Tracker (legal, logistik, replacement, recert halal, komunikasi), Sheet 4 Dashboard dengan KPI tile + format kondisional RAG. Simpan sebagai Tracker_BPOM_Notif_Margin_Kosmetik.xlsx. Tegas, cantumkan kutipan atau referensi sheet/tab/cell untuk setiap angka, dan bila ada yang kurang atau bertentangan, sebutkan secara eksplisit beserta pertanyaan tindak lanjut yang perlu saya ajukan agar tidak ada yang terlewat sebelum tenggat.'
+            },
+            {
+              instr: 'Kekal di `m365.cloud.microsoft/chat`. Taip prompt seterusnya.',
+              prompt: 'Hasilkan scorecard satu muka surat susulan `.xlsx` bernama Scorecard_cosmetics.xlsx dengan satu helaian \'Exec View\' membawa tile KPI untuk 6 metrik teratas dari workbook di atas (Sasaran / Sebenar / Varians / Status RAG). Gunakan format bersyarat pada lajur Varians (Merah < -10%, Kuning -5% hingga -10%, Hijau > -5%). Petik fail sumber yang sama seperti prompt sebelumnya.'
+            }
+          ],
+          persona: [
+            'Hadar Caspit'
+          ],
+          personaID: [
+            'Hadar Caspit'
+          ],
+          notebookMeta: null
+        },
+        {
+          tool: '🏗 Agent Builder (Microsoft 365 Copilot Chat)',
+          license: 'Microsoft 365 Copilot',
+          account: 'MOD Administrator — admin@ABSx62256373.onmicrosoft.com',
+          desc: 'Agent Builder is INSIDE Microsoft 365 Copilot Chat — NOT Copilot Studio. Access via m365.cloud.microsoft/chat > Agents > + Create an agent (or sidebar Build). Walkthrough: (1) Describe — type what your agent should do in plain language; (2) Configure — add instructions, knowledge (SharePoint URLs / uploaded files), starter prompts; (3) Test in the right pane; (4) Create + share to colleagues, OR submit for admin approval to publish into the Agent Store “Built by your org” catalog (May 2026 rollout) so the whole organisation can discover it. No coding, no environment setup. Works in BOTH the free Copilot Chat tier (Sasha account) AND with an Microsoft 365 Copilot license (MOD Admin account).',
+          isBuilder3: true,
+          builderTier: 'premium',
+          prompts: [],
+          promptsID: [],
+          promptsBM: [],
+          agents: [
+            {
+              icon: '🥫',
+              label: 'Brand & Beauty Velocity Coach',
+              name: 'Paragon Cosmetics — Brand & Beauty SKU Velocity Coach',
+              desc: 'Tracks Food & FMCG brand share (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!), SKU velocity, and live-shopping ROI by channel.',
+              instructions: 'You are the Paragon Cosmetics Brand & Beauty SKU Velocity Coach. You support Brand Marketing. Monitor velocity (COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx), trade-spend (COSMETICS_03_Ingredient_Recall_Programme.docx), and channel mix (COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx). Recommend trade-spend reallocation, range-edit, or campaign actions.',
+              knowledge: [
+                {
+                  file: 'COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx',
+                  note: 'SKU velocity by channel.'
+                },
+                {
+                  file: 'COSMETICS_03_Ingredient_Recall_Programme.docx',
+                  note: 'Trade-spend ROI tracker.'
+                },
+                {
+                  file: 'COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx',
+                  note: 'Channel-mix data.'
+                }
+              ],
+              knowledgeNote: 'Test: "Which 3 brand houses at Paragon are losing beauty-shelf share this quarter?"',
+              queries: [
+                'Top 10 SKUs by velocity drop — recommended action per SKU.',
+                'Which trade-spend programmes are ROI-negative? Recommend cancel.',
+                'Draft the quarterly Brand Steering Committee paper.'
+              ]
+            },
+            {
+              icon: '🏭',
+              label: 'Plant & R&D Coach',
+              name: 'Paragon Cosmetics — Plant & R&D Coach',
+              desc: 'Optimises Food & FMCG plant OEE, active-ingredient yield, PIF (Product Information File) currency, and supply-chain reliability.',
+              instructions: 'You are the Paragon Cosmetics Plant & R&D Coach. You support Manufacturing and Supply Chain. Monitor plant OEE (COSMETICS_02_SKU_Margin_Tracker.xlsx), raw-material yield, and OTIF (COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx). Recommend maintenance, recipe, or supply-base actions.',
+              knowledge: [
+                {
+                  file: 'COSMETICS_02_SKU_Margin_Tracker.xlsx',
+                  note: 'Plant OEE & yield.'
+                },
+                {
+                  file: 'COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx',
+                  note: 'OTIF tracker.'
+                }
+              ],
+              knowledgeNote: 'Test: "Which 2 plants at Paragon have the worst OEE drag on the colour-cosmetics filling lines?"',
+              queries: [
+                'Top 10 plant lines by OEE drag — recommended action.',
+                'Which suppliers have OTIF deterioration? Tabulate and recommend escalation.',
+                'Draft the monthly Manufacturing & Supply review paper.'
+              ]
+            },
+            {
+              icon: '🏛️',
+              label: 'BPOM Notifikasi + LPPOM MUI Halal Liaison',
+              name: 'Paragon Cosmetics — Cosmetic Regulator Liaison',
+              desc: 'Prepares MOH / JAKIM (MY) / BPOM (ID) halal, ingredient-safety, and labelling filings for Paragon Cosmetics.',
+              instructions: 'You are the Paragon Cosmetics Cosmetic Regulator Liaison. Prepare halal, ingredient-safety, labelling, and recall filings grounded on the regulatory file (COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx).',
+              knowledge: [],
+              knowledgeNote: 'Test: "Draft the response to BPOM\'s latest ingredient-safety circular for Paragon Cosmetics."',
+              queries: [
+                'Prepare a cover letter for this quarter\'s LPPOM MUI + BPOM Notifikasi return.',
+                'Which open recalls remain unclosed? Build closure plan.',
+                'Draft the response letter to the regulator\'s latest notice.'
+              ]
+            }
+          ],
+          agentsID: [
+            {
+              icon: '🥫',
+              label: 'Brand & Beauty Velocity Pelatih',
+              name: 'Paragon Cosmetics — Brand & Beauty SKU Velocity Pelatih',
+              desc: 'Memantau Food & FMCG brand share (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!), SKU velocity, and live-shopping ROI by channel.',
+              instructions: 'Anda adalah Paragon Cosmetics Brand & Beauty SKU Velocity Pelatih. Anda mendukung Brand Marketing. Pantau velocity (COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx), trade-spend (COSMETICS_03_Ingredient_Recall_Programme.docx), and channel mix (COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx). Rekomendasikan trade-spend reallocation, range-edit, or campaign actions.',
+              knowledge: [
+                {
+                  file: 'COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx',
+                  note: 'SKU velocity by channel.'
+                },
+                {
+                  file: 'COSMETICS_03_Ingredient_Recall_Programme.docx',
+                  note: 'Trade-spend ROI tracker.'
+                },
+                {
+                  file: 'COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx',
+                  note: 'Channel-mix data.'
+                }
+              ],
+              knowledgeNote: 'Test: "Yang mana 3 brand house di Paragon losing beauty-shelf share kuartal ini?"',
+              queries: [
+                '10 teratas SKUs by velocity drop — recommended tindakan per SKU.',
+                'Yang mana trade-spend programmes are ROI-negative? Rekomendasikan cancel.',
+                'Susun the kuartalan Brand Komite Direktur paper.'
+              ]
+            },
+            {
+              icon: '🏭',
+              label: 'Plant & R&D Pelatih',
+              name: 'Paragon Cosmetics — Plant & R&D Pelatih',
+              desc: 'Optimises Food & FMCG plant OEE, active-ingredient yield, PIF (Product Information File) currency, and supply-chain reliability.',
+              instructions: 'Anda adalah Paragon Cosmetics Plant & R&D Pelatih. Anda mendukung Manufacturing and Supply Chain. Pantau plant OEE (COSMETICS_02_SKU_Margin_Tracker.xlsx), raw-material yield, and OTIF (COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx). Rekomendasikan maintenance, recipe, or supply-base actions.',
+              knowledge: [
+                {
+                  file: 'COSMETICS_02_SKU_Margin_Tracker.xlsx',
+                  note: 'Plant OEE & yield.'
+                },
+                {
+                  file: 'COSMETICS_04_TiO2_Surfactant_Hedge_Book.xlsx',
+                  note: 'OTIF tracker.'
+                }
+              ],
+              knowledgeNote: 'Test: "Yang mana 2 plants Paragon have OEE drag terburuk di lini pengisian colour cosmetics?"',
+              queries: [
+                '10 teratas plant lines by OEE drag — recommended tindakan.',
+                'Yang mana suppliers have OTIF deterioration? Tabulasikan and rekomendasikan escalation.',
+                'Susun the bulanan Manufacturing & Supply review paper.'
+              ]
+            },
+            {
+              icon: '🏛️',
+              label: 'BPOM Notifikasi + LPPOM MUI Halal Penghubung',
+              name: 'Paragon Cosmetics — Cosmetic Regulator Penghubung',
+              desc: 'Prepares MOH / JAKIM (MY) / BPOM (ID) halal, ingredient-safety, and labelling filings for Paragon Cosmetics.',
+              instructions: 'Anda adalah Paragon Cosmetics Cosmetic Regulator Penghubung. Prepare halal, ingredient-safety, labelling, and recall filings grounded on the regulatory file (COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx).',
+              knowledge: [],
+              knowledgeNote: 'Test: "Susun the response to BPOM\'s latest ingredient-safety circular for Paragon Cosmetics."',
+              queries: [
+                'Prepare cover letter untuk LPPOM MUI + BPOM Notifikasi return kuartal ini.',
+                'Yang mana open recalls remain unclosed? Bangun closure plan.',
+                'Susun the response letter to the regulator\'s latest notice.'
+              ]
+            }
+          ],
+          agentsBM: [],
+          persona: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaID: [
+            'Mod Admin',
+            'Mod Admin',
+            'Mod Admin'
+          ],
+          personaBM: [],
+          notebookMeta: null
+        },
+        {
+          tool: '🆓 Agent Builder (Free Copilot Chat — public URL knowledge)',
+          license: 'Free — no Microsoft 365 Copilot license needed',
+          account: 'Sasha Ouellet — SashaO@ABSx62256373.OnMicrosoft.com',
+          desc: 'Free-tier Agent Builder inside Microsoft 365 Copilot Chat — same 4-step flow (Describe → Configure → Test → Create) but on a Free Copilot Chat account (no paid license). Knowledge sources are limited to PUBLIC WEBSITES / URLs only (no SharePoint, OneDrive, or file uploads). Ideal for citizen-developer agents that summarise regulator microsites, peer investor-relations pages, public sustainability reports and industry research portals — zero cost, zero IT involvement. Submit to the Agent Store for org-wide discovery once admin approval is in place.',
+          isBuilder3: true,
+          builderTier: 'free',
+          prompts: [],
+          promptsID: [],
+          promptsBM: [],
+          agents: [
+            {
+              icon: '🆓',
+              label: 'Cosmetics & Personal Care Best-Practice Scanner',
+              name: 'Cosmetics & Personal Care Best-Practice Scanner',
+              desc: 'Pulls Big-4 + association best-practice publications relevant to Cosmetics & Personal Care.',
+              instructions: 'You are a best-practice analyst for the Cosmetics & Personal Care function. Source ONLY from the practitioner URLs in knowledge. Cite publisher + title + date. Output: monthly best-practice digest with adoption recommendation.',
+              knowledge: [
+                {
+                  url: 'https://www.mckinsey.com/featured-insights',
+                  note: 'McKinsey featured insights'
+                },
+                {
+                  url: 'https://www2.deloitte.com/global/en/insights.html',
+                  note: 'Deloitte Insights'
+                },
+                {
+                  url: 'https://hbr.org/topic/subject/leadership',
+                  note: 'HBR leadership topics'
+                }
+              ],
+              knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
+              queries: [
+                'Summarise the latest McKinsey, Deloitte, and HBR publications relevant to Cosmetics & Personal Care.',
+                'Identify the 3 practices most worth piloting at Cosmetics & Personal Care this quarter.',
+                'Draft a monthly best-practice digest with adoption recommendations for the Cosmetics & Personal Care lead.'
+              ]
+            },
+            {
+              icon: '🆓',
+              label: 'Cosmetics & Personal Care Regulator & Standards Watch',
+              name: 'Cosmetics & Personal Care Regulator & Standards Watch',
+              desc: 'Tracks regional standard-setters + regulators relevant to Cosmetics & Personal Care mandate.',
+              instructions: 'You are a Cosmetics & Personal Care regulatory analyst. Source ONLY from the standard-setter URLs in knowledge. Cite standard + revision + effective date. Output: monthly compliance digest.',
+              knowledge: [
+                {
+                  url: 'https://www.ifrs.org/news-and-events/news/',
+                  note: 'IFRS Foundation news'
+                },
+                {
+                  url: 'https://www.ifac.org/news-events',
+                  note: 'IFAC news + events'
+                },
+                {
+                  url: 'https://www.iia.org.my/',
+                  note: 'Institute of Internal Auditors Malaysia'
+                }
+              ],
+              knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
+              queries: [
+                'Summarise the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to Cosmetics & Personal Care.',
+                'List standard revisions affecting Cosmetics & Personal Care processes — flag the ones with hard deadlines.',
+                'Draft a monthly compliance digest with proposed actions for the Cosmetics & Personal Care lead.'
+              ]
+            },
+            {
+              icon: '🆓',
+              label: 'Cosmetics & Personal Care Peer Function Benchmark',
+              name: 'Cosmetics & Personal Care Peer Function Benchmark',
+              desc: 'Tracks public peer-function disclosures + association surveys for Cosmetics & Personal Care.',
+              instructions: 'You are a peer-function benchmarker for Cosmetics & Personal Care. Source ONLY from the survey + association URLs in knowledge. Cite survey + period. Output: quarterly benchmark with delta-vs-peers.',
+              knowledge: [
+                {
+                  url: 'https://www.gartner.com/en/insights',
+                  note: 'Gartner insights'
+                },
+                {
+                  url: 'https://www.pwc.com/gx/en/services/consulting.html',
+                  note: 'PwC consulting insights'
+                },
+                {
+                  url: 'https://www.weforum.org/agenda/',
+                  note: 'World Economic Forum agenda'
+                }
+              ],
+              knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
+              queries: [
+                'Pull the latest Gartner, PwC, and WEF publications benchmarking Cosmetics & Personal Care maturity.',
+                'Identify Cosmetics & Personal Care top-3 gaps vs peer functions disclosed publicly.',
+                'Draft a quarterly peer-function benchmark with delta-vs-peers for the Cosmetics & Personal Care lead.'
+              ]
+            }
+          ],
+          agentsID: [
+            {
+              icon: '🆓',
+              label: 'Cosmetics & Personal Care Best-Practice Scanner',
+              name: 'Cosmetics & Personal Care Best-Practice Scanner',
+              desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan Cosmetics & Personal Care.',
+              instructions: 'Anda adalah analis yang mendukung Cosmetics & Personal Care. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              knowledge: [
+                {
+                  url: 'https://www.mckinsey.com/featured-insights',
+                  note: 'McKinsey featured insights'
+                },
+                {
+                  url: 'https://www2.deloitte.com/global/en/insights.html',
+                  note: 'Deloitte Insights'
+                },
+                {
+                  url: 'https://hbr.org/topic/subject/leadership',
+                  note: 'HBR leadership topics'
+                }
+              ],
+              knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
+              queries: [
+                'Ringkas the latest McKinsey, Deloitte, and HBR publications relevant to Cosmetics & Personal Care.',
+                'Identifikasi the 3 practices most worth piloting at Cosmetics & Personal Care this quarter.',
+                'Susun draf a monthly best-practice digest with adoption recommendations for the Cosmetics & Personal Care lead.'
+              ]
+            },
+            {
+              icon: '🆓',
+              label: 'Cosmetics & Personal Care Regulator & Standards Watch',
+              name: 'Cosmetics & Personal Care Regulator & Standards Watch',
+              desc: 'Tracks regional standard-setters + regulators yang relevan dengan Cosmetics & Personal Care mandate.',
+              instructions: 'Anda adalah analis yang mendukung Cosmetics & Personal Care. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              knowledge: [
+                {
+                  url: 'https://www.ifrs.org/news-and-events/news/',
+                  note: 'IFRS Foundation news'
+                },
+                {
+                  url: 'https://www.ifac.org/news-events',
+                  note: 'IFAC news + events'
+                },
+                {
+                  url: 'https://www.iia.org.my/',
+                  note: 'Institute of Internal Auditors Indonesia'
+                }
+              ],
+              knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
+              queries: [
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Indonesia announcements relevant to Cosmetics & Personal Care.',
+                'Buat daftar standard revisions affecting Cosmetics & Personal Care processes — flag the ones with hard deadlines.',
+                'Susun draf a monthly compliance digest with proposed actions for the Cosmetics & Personal Care lead.'
+              ]
+            },
+            {
+              icon: '🆓',
+              label: 'Cosmetics & Personal Care Peer Function Benchmark',
+              name: 'Cosmetics & Personal Care Peer Function Benchmark',
+              desc: 'Tracks public peer-function disclosures + association surveys for Cosmetics & Personal Care.',
+              instructions: 'Anda adalah analis yang mendukung Cosmetics & Personal Care. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              knowledge: [
+                {
+                  url: 'https://www.gartner.com/en/insights',
+                  note: 'Gartner insights'
+                },
+                {
+                  url: 'https://www.pwc.com/gx/en/services/consulting.html',
+                  note: 'PwC consulting insights'
+                },
+                {
+                  url: 'https://www.weforum.org/agenda/',
+                  note: 'World Economic Forum agenda'
+                }
+              ],
+              knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
+              queries: [
+                'Tarik the latest Gartner, PwC, and WEF publications benchmarking Cosmetics & Personal Care maturity.',
+                'Identifikasi Cosmetics & Personal Care top-3 gaps vs peer functions disclosed publicly.',
+                'Susun draf a quarterly peer-function benchmark with delta-vs-peers for the Cosmetics & Personal Care lead.'
+              ]
+            }
+          ],
+          agentsBM: [
+            {
+              icon: '🆓',
+              label: 'Cosmetics & Personal Care Best-Practice Scanner',
+              name: 'Cosmetics & Personal Care Best-Practice Scanner',
+              desc: 'Pulls Big-4 + association best-practice publications yang relevan dengan Cosmetics & Personal Care.',
+              instructions: 'Anda adalah analis yang menyokong Cosmetics & Personal Care. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              knowledge: [
+                {
+                  url: 'https://www.mckinsey.com/featured-insights',
+                  note: 'McKinsey featured insights'
+                },
+                {
+                  url: 'https://www2.deloitte.com/global/en/insights.html',
+                  note: 'Deloitte Insights'
+                },
+                {
+                  url: 'https://hbr.org/topic/subject/leadership',
+                  note: 'HBR leadership topics'
+                }
+              ],
+              knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
+              queries: [
+                'Ringkas the latest McKinsey, Deloitte, and HBR publications relevant to Cosmetics & Personal Care.',
+                'Identifikasi the 3 practices most worth piloting at Cosmetics & Personal Care this quarter.',
+                'Susun draf a monthly best-practice digest with adoption recommendations for the Cosmetics & Personal Care lead.'
+              ]
+            },
+            {
+              icon: '🆓',
+              label: 'Cosmetics & Personal Care Regulator & Standards Watch',
+              name: 'Cosmetics & Personal Care Regulator & Standards Watch',
+              desc: 'Tracks regional standard-setters + regulators yang relevan dengan Cosmetics & Personal Care mandate.',
+              instructions: 'Anda adalah analis yang menyokong Cosmetics & Personal Care. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              knowledge: [
+                {
+                  url: 'https://www.ifrs.org/news-and-events/news/',
+                  note: 'IFRS Foundation news'
+                },
+                {
+                  url: 'https://www.ifac.org/news-events',
+                  note: 'IFAC news + events'
+                },
+                {
+                  url: 'https://www.iia.org.my/',
+                  note: 'Institute of Internal Auditors Malaysia'
+                }
+              ],
+              knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
+              queries: [
+                'Ringkas the last 90 days of IFRS, IFAC, and IIA Malaysia announcements relevant to Cosmetics & Personal Care.',
+                'Buat daftar standard revisions affecting Cosmetics & Personal Care processes — flag the ones with hard deadlines.',
+                'Susun draf a monthly compliance digest with proposed actions for the Cosmetics & Personal Care lead.'
+              ]
+            },
+            {
+              icon: '🆓',
+              label: 'Cosmetics & Personal Care Peer Function Benchmark',
+              name: 'Cosmetics & Personal Care Peer Function Benchmark',
+              desc: 'Tracks public peer-function disclosures + association surveys for Cosmetics & Personal Care.',
+              instructions: 'Anda adalah analis yang menyokong Cosmetics & Personal Care. Gunakan HANYA URL publik yang tercantum sebagai pengetahuan. Selalu kutip sumber + tanggal + URL. Jangan berspekulasi melampaui yang tertulis.',
+              knowledge: [
+                {
+                  url: 'https://www.gartner.com/en/insights',
+                  note: 'Gartner insights'
+                },
+                {
+                  url: 'https://www.pwc.com/gx/en/services/consulting.html',
+                  note: 'PwC consulting insights'
+                },
+                {
+                  url: 'https://www.weforum.org/agenda/',
+                  note: 'World Economic Forum agenda'
+                }
+              ],
+              knowledgeNote: 'Free Copilot Chat supports PUBLIC URLs only — no SharePoint, OneDrive, or file uploads.',
+              queries: [
+                'Tarik the latest Gartner, PwC, and WEF publications benchmarking Cosmetics & Personal Care maturity.',
+                'Identifikasi Cosmetics & Personal Care top-3 gaps vs peer functions disclosed publicly.',
+                'Susun draf a quarterly peer-function benchmark with delta-vs-peers for the Cosmetics & Personal Care lead.'
+              ]
+            }
+          ],
+          persona: [],
+          personaID: [],
+          personaBM: [],
+          notebookMeta: null
+        }
+      ],
+      relevantDepts: [
+        'dept-finance',
+        'dept-strategy',
+        'dept-legal',
+        'dept-risk',
+        'dept-operations',
+        'dept-marketing',
+        'dept-it-digital'
+      ],
+      storyboard: [
+        {
+          ex: 1,
+          title: 'Research & Brief',
+          titleID: 'Riset & Pengarahan',
+          minutes: 18,
+          mode: 'Show & Tell + Hands-on',
+          summary: 'Frame the Rp 60B live-shopping trade-spend overrun and the active recall; pull deep ASEAN peer benchmarks before the Group CFO walks into the Board on Friday.',
+          summaryID: 'Bingkai pembengkakan trade-spend Rp 60 M dan recall aktif; tarik benchmark peer ASEAN mendalam sebelum Direktur Keuangan Grup masuk Rapat Direksi Jumat.',
+          tasks: [
+            {
+              verb: 'Frame the morning question and lock the day priorities',
+              verbID: 'Susun pertanyaan pagi dan kunci prioritas hari ini',
+              toolId: '💬 Microsoft 365 Copilot Chat',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Run an outside-in peer scan and pull proven plays',
+              verbID: 'Lakukan pemindaian peer dari luar dan tarik praktik terbaik',
+              toolId: '🔍 Researcher',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Generate a board-ready brief straight from chat',
+              verbID: 'Hasilkan brief siap-Direksi langsung dari chat',
+              toolId: '📝 Word Agent (Generate document)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 2,
+          title: 'Analyse & Decide',
+          titleID: 'Analisis & Putuskan',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Quantify the live-shopping trade-spend variance and SKU-level margin drag; build a Board-ready dashboard.',
+          summaryID: 'Kuantifikasi selisih trade-spend live-shopping dan drag margin per SKU; bangun dashboard siap-Direksi.',
+          tasks: [
+            {
+              verb: 'Crunch the numbers and surface the biggest gaps',
+              verbID: 'Olah angka dan ungkap celah terbesar',
+              toolId: '📊 Analyst',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Build a single-pane operating dashboard',
+              verbID: 'Bangun dashboard operasi satu-halaman',
+              toolId: '📊 Copilot in Excel',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Spin up a recurring tracker workbook from chat',
+              verbID: 'Buat workbook tracker berulang dari chat',
+              toolId: '📊 Excel Agent (Generate workbook)',
+              mode: 'Hands-on'
+            }
+          ]
+        },
+        {
+          ex: 3,
+          title: 'Communicate & Coordinate',
+          titleID: 'Komunikasi & Koordinasi',
+          minutes: 18,
+          mode: 'Hands-on',
+          summary: 'Brief the 6 Brand-House GMs, capture the Live-Shopping & Recall Crisis Review meeting, and assemble the Board deck.',
+          summaryID: 'Brief 6 GM Brand House, capture rapat Live-Shopping & Recall Crisis Review, dan rakit deck Direksi.',
+          tasks: [
+            {
+              verb: 'Draft the stakeholder alignment email',
+              verbID: 'Draf email penyelarasan stakeholder',
+              toolId: '📧 Copilot in Outlook',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Recap the meeting and turn it into minutes',
+              verbID: 'Recap rapat dan ubah ke notulen',
+              toolId: '🎙 Copilot in Teams (Recap → Word minutes)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Generate a board-ready deck from chat',
+              verbID: 'Hasilkan deck siap-Direksi dari chat',
+              toolId: '🎯 PowerPoint Agent (Generate deck)',
+              mode: 'Hands-on'
+            },
+            {
+              verb: 'Delegate a 5-task parallel sprint',
+              verbID: 'Delegasikan 5-tugas paralel ke Cowork',
+              toolId: '🤝 Cowork (Frontier)',
+              mode: 'Show & Tell'
+            }
+          ]
+        },
+        {
+          ex: 4,
+          title: 'Build & Scale',
+          titleID: 'Bangun & Skala',
+          minutes: 15,
+          mode: 'Show & Tell',
+          summary: 'Wrap the live-shopping + regulatory playbook into a reusable agent so the 6 Brand-House GMs can self-serve.',
+          summaryID: 'Bungkus playbook live-shopping + regulatory ke dalam agent reusable agar 6 GM Brand House dapat self-service.',
+          tasks: [
+            {
+              verb: 'Pull every source into one synthesis notebook',
+              verbID: 'Tarik semua sumber ke satu notebook sintesis',
+              toolId: '📓 Copilot Notebook',
+              mode: 'Show & Tell'
+            },
+            {
+              verb: 'Wrap the daily workflow into a reusable agent',
+              verbID: 'Bungkus alur kerja harian jadi agen yang dapat dipakai ulang',
+              toolId: '🏗 Agent Builder (Microsoft 365 Copilot Chat)',
+              mode: 'Show & Tell'
+            }
+          ]
+        }
+      ],
+      personas: [
+        {
+          name: 'Hadar Caspit',
+          role: 'Group CFO',
+          roleID: 'Direktur Keuangan Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'Microsoft 365 Copilot',
+          color: '#1E40AF'
+        },
+        {
+          name: 'Sasha Ouellet',
+          role: 'Group Chief of Staff',
+          roleID: 'Kepala Staf Grup',
+          acct: 'SashaO@ABSx62256373.OnMicrosoft.com',
+          lic: 'Free — no Microsoft 365 Copilot license needed',
+          color: '#7C3AED'
+        },
+        {
+          name: 'Mod Admin',
+          role: 'Group Strategy Director',
+          roleID: 'Direktur Strategi Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'Microsoft 365 Copilot',
+          color: '#059669'
+        },
+        {
+          name: 'Daichi Maruyama',
+          role: 'Group Head of Regulatory & Halal Compliance',
+          roleID: 'Direktur Regulatory & Halal Compliance Grup',
+          acct: 'admin@ABSx62256373.onmicrosoft.com',
+          lic: 'Microsoft 365 Copilot',
+          color: '#DC2626'
+        }
+      ],
+      geo: 'ID',
+      subsidiaries: [
+        'Paragon Technology and Innovation (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!)',
+        'Mandom Indonesia (Gatsby, Pixy)',
+        'Mustika Ratu',
+        'Martina Berto (Sariayu)',
+        'Kao Indonesia (Biore)',
+        'L\'Oréal Indonesia',
+        'Unilever Indonesia — Personal Care',
+        'Cosmax Indonesia',
+        'Kolmar Indonesia',
+        'Vitalis Indonesia',
+        'Rohto Laboratories Indonesia',
+        'Sinar Wisesa',
+        'PT Cedefindo (OEM)',
+        'PT Gloria Origita Cosmetics (Purbasari)',
+        'Beiersdorf Indonesia (Nivea)'
+      ],
+      coworkLibrary: [
+        {
+          title: 'TikTok Shop + Shopee Live ROI Rationalisation — Cosmetics Power Move',
+          dept_tag: 'Brand & Digital Commerce',
+          industry_tag: 'Cosmetics',
+          complexity: 'advanced',
+          apps: [
+            'Researcher',
+            'Analyst',
+            'Excel',
+            'PowerPoint',
+            'Cowork'
+          ],
+          desc: 'Live-shopping trade spend on TikTok Shop + Shopee Live has overrun by Rp 60B across the 6 brand houses (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!). Group Brand Council needs an ROI-per-creator, ROI-per-brand-house, ROI-per-SKU cut plus the ~20% creator affiliate rationalisation list in one Cowork run.',
+          skills: [
+            'Researcher scan of live-shopping benchmarks (Sociolla, Watsons, Guardian, competitor brand houses)',
+            'Analyst pivot on creator × brand-house × SKU × GMV × commission × return-rate',
+            'PowerPoint Brand Council pack with rationalisation shortlist'
+          ],
+          instructions: [
+            'Copilot Chat → Researcher → paste Prompt 1 for the live-shopping ROI benchmark scan',
+            'Copilot Chat → Analyst → upload /COSMETICS_02_SKU_Margin_Tracker.xlsx → paste Prompt 2',
+            'PowerPoint → paste Prompt 3 for the Brand Council pack'
+          ],
+          sample_files: [
+            [
+              'COSMETICS_02_SKU_Margin_Tracker.xlsx',
+              'xlsx'
+            ],
+            [
+              'COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Researcher — live-shopping ROI benchmarks',
+              text: 'Researcher Critique mode. Benchmark TikTok Shop + Shopee Live cosmetics ROI in Indonesia for the last 12 months. Cover: (a) typical GMV-per-live-hour by beauty vertical (colour cosmetics, skincare, halal, muslimah); (b) creator affiliate commission ranges (nano / micro / mid / macro); (c) return-rate benchmarks by category; (d) BPOM Notifikasi enforcement actions against live-shopping claims in the last 24 months; (e) how Mandom Indonesia, Mustika Ratu, L\\\'Oreal Indonesia, and Unilever Personal Care are structuring their live-shopping trade spend.  Cite every claim with source + retrieval timestamp. Flag any benchmark older than 6 months as stale.'
+            },
+            {
+              label: '2. Analyst — ROI-per-creator × brand-house cut',
+              text: 'Upload /COSMETICS_02_SKU_Margin_Tracker.xlsx. Build a pivot: creator × brand-house × SKU × GMV × commission % × return-rate × net margin. Add a scoring column: Keep / Rationalise / Cut based on (a) net margin > 12% (Keep), (b) net margin 4-12% (Rationalise — renegotiate commission), (c) net margin < 4% or return-rate > 25% (Cut).  Produce the shortlist of ~20% of creators to Cut and ~30% to Rationalise. For each Rationalise row, propose a specific commission-band target.'
+            },
+            {
+              label: '3. PowerPoint — Group Brand Council pack',
+              text: 'Generate a 10-slide Group Brand Council pack in PowerPoint. Slide 1: cover with hook (Rp 60B overrun, 6 brand houses). Slide 2: Researcher benchmark summary. Slide 3-8: one slide per brand house (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!) showing top 3 winning creators + top 3 to rationalise + top 3 to cut. Slide 9: FY2026 live-shopping guardrails (grounded on /COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx). Slide 10: 5 decisions the Brand Council needs to approve today.  Use precise cosmetics language (SKU, GMV, affiliate, macro/mid/micro creator, BPOM Notifikasi, halal-certified LPPOM MUI).'
+            },
+            {
+              label: 'Build interactive HTML dashboard (filters + drill-down)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML executive dashboard titled "TikTok Shop + Shopee Live ROI Rationalisation — Cosmetics Power Move" using COSMETICS_02_SKU_Margin_Tracker.xlsx and COSMETICS_05_FY2026_Live_Shopping_Guardrails.docx as the source of truth. Output ONE .html file (inline CSS + inline JS, ABSOLUTELY NO external CDN) so it opens cleanly offline. The dashboard must be COMPREHENSIVE and let the user slice-and-dice every dimension. Required structure: • TOP FILTER BAR (sticky) — multi-select chips for the 3 most important dimensions (e.g. business unit, region, status, owner); free-text search box; date-range picker (last 30d / quarter / FY / custom); reset button. All filters apply instantly to every panel below — no refresh. • KPI STRIP — 6 KPI cards with current value, period delta vs prior, colour coded vs target threshold, and an inline 12-period sparkline drawn on Canvas. • MAIN GRID — 2×2 panels: trend line chart, top-N bar chart, distribution pie/donut, and a heat-strip showing concentration; each panel reacts to filter bar selections. • DRILL-DOWN TABLE — sortable + searchable table of every underlying row with column-show/hide toggles; click a row to open a side-panel with full record detail + linked source files. Includes an "Export CSV of current view" button that respects active filters. • ALERTS PANEL — auto-flag anomalies / threshold breaches with one-line narratives. • Theme: Zava navy (#1F2D55) header, light/dark toggle in the top-right, sans-serif typography, mobile-responsive. Save the file as "TikTok Shop + Shopee Live ROI Rationalisation — Cosmetics Power Move — Dashboard.html" to my OneDrive > Zava Dashboards folder once Cowork has my approval.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Live-shopping ROI benchmark with citations',
+            'Creator × brand-house × SKU rationalisation shortlist',
+            '10-slide Brand Council pack'
+          ],
+          watch: [
+            'Every benchmark cites a source with retrieval timestamp',
+            'Rationalisation list has a specific commission-band target per row',
+            'Slide 9 is grounded on the actual guardrails file, not invented'
+          ],
+          honest: 'Copilot drafts; Brand Council decides. Commission renegotiations trigger creator-contract amendments — Legal must sign off before any communication to creators. Live-shopping performance is highly seasonal (Lebaran, Harbolnas 11.11 / 12.12) — do not extrapolate a low-season month linearly. Return-rate benchmarks vary by category; skincare and colour cosmetics behave very differently.',
+          tips: [
+            'Pair with the halal / LPPOM MUI expiry cut so re-signed creators do not front expiring certificates',
+            'Re-run monthly for the 6 brand houses; pin as a custom skill'
+          ],
+          id: 'uc-cos-live-shopping-pack'
+        },
+        {
+          title: 'BPOM Notifikasi Kosmetik Refresh — Regulatory Power Move',
+          dept_tag: 'Regulatory & Quality',
+          industry_tag: 'Cosmetics',
+          complexity: 'advanced',
+          apps: [
+            'Researcher',
+            'Excel',
+            'Word',
+            'Cowork'
+          ],
+          desc: 'Every SKU sold in Indonesia needs a valid BPOM Notifikasi Kosmetik (3-year cycle). Across 6 brand houses + 1,400+ active SKUs, Regulatory Affairs needs the 90-day expiry funnel, the priority renewal list, and the dossier readiness score per SKU in one Cowork run.',
+          skills: [
+            'Researcher scan of BPOM Notifikasi rule changes + enforcement actions',
+            'Analyst pivot on SKU × Notifikasi expiry × sales velocity × dossier readiness',
+            'Word regulatory brief with renewal priority list'
+          ],
+          instructions: [
+            'Copilot Chat → Researcher → paste Prompt 1 for the BPOM rule change scan',
+            'Copilot Chat → Analyst → upload /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx → paste Prompt 2',
+            'Word → paste Prompt 3 for the regulatory brief'
+          ],
+          sample_files: [
+            [
+              'COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Researcher — BPOM rule change + enforcement scan',
+              text: 'Researcher Critique mode. Scan BPOM (Badan POM) sources: pom.go.id, notifkos.pom.go.id, and the last 12 months of BPOM press releases. Cover: (a) any new / amended Peraturan BPOM affecting cosmetics Notifikasi in the last 18 months (ingredient bans, labelling rules, halal-labelling under UU JPH); (b) top 20 recall / enforcement actions against cosmetics brands (any brand, any category); (c) the current Notifikasi renewal dossier requirements and typical processing time.  Cite every claim with source URL + retrieval timestamp. Flag anything older than 6 months as stale for enforcement trends.'
+            },
+            {
+              label: '2. Analyst — 90-day Notifikasi expiry funnel',
+              text: 'Upload /COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx. Build: (1) 90-day expiry funnel: SKU × brand house × Notifikasi number × expiry date × days remaining × 12-month sales velocity × dossier readiness score (Ready / Gap / Missing). (2) Priority renewal list: rank by (sales velocity × margin) so we protect the top-revenue SKUs first. (3) Dossier gap list: for every SKU with dossier readiness Gap or Missing, list the specific missing artefact (INCI, safety assessment, stability study, LPPOM MUI cert, claim substantiation). (4) Risk of stock-out: SKUs where Notifikasi expires within 60 days AND dossier readiness is not Ready.'
+            },
+            {
+              label: '3. Word — regulatory brief for Group Head of Regulatory & Halal',
+              text: 'Draft a 4-page regulatory brief for the Group Head of Regulatory & Halal Compliance. Structure: (1) Executive summary: how many SKUs, how much revenue at risk, in the next 90 days. (2) Researcher scan headline: any BPOM rule change we need to action. (3) The Top-20 priority renewal list (table). (4) The stock-out risk list with a specific recovery plan per SKU (accelerate dossier / discontinue / substitute). (5) The 3 decisions we need from the Group Head this week.  Tone: formal, defensible, plain Bahasa Indonesia with regulatory acronyms defined on first use (BPOM Badan POM, INCI, LPPOM MUI, UU JPH). No claim without a data source (link to the tracker cell or the Researcher citation).'
+            },
+            {
+              label: 'Build interactive HTML pipeline timeline (filters + drill-down)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML pipeline / timeline view titled "BPOM Notifikasi Kosmetik Refresh — Regulatory Power Move" using COSMETICS_01_BPOM_Notifikasi_Tracker.xlsx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Required structure: • TOP FILTER BAR — multi-select chips for stage, owner, priority, team / sector; date-range slider on expected close / submission date; free-text search; reset button. Filters apply live across all views. • STAGE FUNNEL — horizontal funnel showing count + total value at each stage; click a stage to filter the timeline + table below. • GANTT-STYLE TIMELINE — horizontal bars per item across a 12-month X-axis with milestones plotted as diamonds; colour by owner or stage; today line drawn in red; hover a bar to see KPI tooltip; click to open side-panel with full item detail + linked source files. • KPI STRIP — 5 cards: count by stage, weighted value, average cycle time, slipping count, won/lost ratio. • DRILL-DOWN TABLE at bottom — sortable, searchable, column toggles, CSV export of filtered view. • Theme: Zava navy header, light/dark toggle. Save as "BPOM Notifikasi Kosmetik Refresh — Regulatory Power Move — Pipeline.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'BPOM rule change scan with citations',
+            '90-day Notifikasi expiry funnel with dossier readiness',
+            '4-page regulatory brief with 3 decision asks'
+          ],
+          watch: [
+            'Every SKU on the stock-out list has a specific recovery plan, not just a flag',
+            'Halal (LPPOM MUI) status is tracked alongside Notifikasi — they are different cycles',
+            'Priority ranking weights sales velocity × margin, not just alphabetical'
+          ],
+          honest: 'Copilot drafts; Regulatory Affairs decides. Any Notifikasi renewal submission requires the Penanggung Jawab Teknis (PJT) signature and BPOM AKD account — Copilot cannot submit for you. Enforcement priorities shift; a 6-month-old scan may miss a fresh BPOM circular. For high-risk categories (skin-lightening, sunscreen SPF claims, halal-labelled), get an internal regulatory second opinion before decisions.',
+          tips: [
+            'Re-run monthly on the 1st; pin as a custom skill',
+            'Cross-check with the halal (LPPOM MUI + JAKIM) expiry tracker — different cycle, same SKU'
+          ],
+          id: 'uc-cos-bpom-notifikasi-refresh'
+        },
+        {
+          title: 'Hydroquinone / Mercury / TiO2 Contamination Recall Response — Cosmetics Power Move',
+          dept_tag: 'Regulatory & Crisis',
+          industry_tag: 'Cosmetics',
+          complexity: 'advanced',
+          apps: [
+            'Researcher',
+            'Word',
+            'Outlook',
+            'PowerPoint',
+            'Cowork'
+          ],
+          desc: 'BPOM has flagged 2 SKUs for contamination (hydroquinone above the 0.02% limit / mercury / prohibited ingredient). The 72-hour crisis response requires: BPOM formal reply, retailer withdrawal notice (Sociolla / Watsons / Guardian), consumer FAQ, live-shopping creator brief, and Group Board update — in one Cowork run.',
+          skills: [
+            'Researcher scan of BPOM enforcement precedent + ingredient toxicology',
+            'Regulatory reply drafting in the BPOM formal register',
+            'Retailer + creator + consumer communication cascade'
+          ],
+          instructions: [
+            'Copilot Chat → Researcher → paste Prompt 1 for the BPOM enforcement precedent scan',
+            'Word → paste Prompt 2 for the BPOM formal reply + retailer withdrawal notice',
+            'Cowork → paste Prompt 3 to fan out the full 5-artefact response pack'
+          ],
+          sample_files: [
+            [
+              'COSMETICS_03_Ingredient_Recall_Programme.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Researcher — BPOM enforcement precedent',
+              text: 'Researcher Critique mode. Scan BPOM enforcement history for [INGREDIENT] contamination in cosmetics in the last 24 months. Cover: (a) BPOM public list of banned / recalled products with the specific violation; (b) how peer brand houses (Mandom, Mustika Ratu, L\\\'Oreal Indonesia, Unilever Personal Care) handled comparable recalls; (c) media coverage sentiment and the recovery arc; (d) the specific BPOM sanction ladder (peringatan tertulis, penarikan produk, pencabutan Notifikasi, sanksi pidana).  Cite every claim. This will feed a 72-hour crisis response — accuracy matters more than exhaustiveness.'
+            },
+            {
+              label: '2. Word — BPOM formal reply + retailer withdrawal notice',
+              text: 'Draft two Word documents grounded on /COSMETICS_03_Ingredient_Recall_Programme.docx and the Researcher scan:  (1) BPOM formal reply — Bahasa Indonesia, formal regulatory register. Structure: acknowledgement of the BPOM notice, our root-cause investigation status, immediate voluntary withdrawal action, timeline for full investigation report, contact person (Penanggung Jawab Teknis).  (2) Retailer withdrawal notice to Sociolla, Watsons, Guardian, Alfamart, Indomaret, Guardian MY, Watsons SG, Guardian Health. Structure: the 2 affected SKUs (batch codes), immediate pull-from-shelf request, return logistics, replacement / credit note plan, POC.  Do not admit liability beyond the specific batch. Do not speculate on cause. Follow the recall SOP in the source doc verbatim.'
+            },
+            {
+              label: '3. Cowork — full 5-artefact crisis response pack',
+              text: 'Cowork: fan out the following 5 artefacts in parallel:  (1) Consumer FAQ (Word, BI + EN) — 15 questions, plain language, no legal jargon. Covers: is my product safe, how do I return, refund process, timeline. (2) Live-shopping creator brief (Word) — talking points + off-topic list for the ~40 macro / mid creators fronting the affected SKUs across TikTok Shop + Shopee Live. (3) Outlook email to Group Board — 1 page, 3 sections (what happened, what we are doing, what we need from the Board today). (4) PowerPoint update for the Group Head of Regulatory & Halal — 6 slides for the 4pm crisis war-room. (5) Internal Teams post to the 6 brand houses — factual, 5 lines, direct staff to the FAQ.  Use the named recipients consistently: Group CEO, Group Head of Regulatory & Halal Compliance, 6 Brand-House GMs (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!), Head of Retail Partnerships, Head of Digital & Live Commerce, Group Head of Corporate Affairs.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Hydroquinone / Mercury / TiO2 Contamination Recall Response — Cosmetics Power Move" using COSMETICS_03_Ingredient_Recall_Programme.docx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Hydroquinone / Mercury / TiO2 Contamination Recall Response — Cosmetics Power Move — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'BPOM enforcement precedent scan',
+            'BPOM formal reply + retailer withdrawal notice',
+            '5-artefact crisis response pack fanned out via Cowork'
+          ],
+          watch: [
+            'Formal reply uses BPOM regulatory register, not marketing language',
+            'Retailer notice does not admit liability beyond the specific batch codes',
+            'Creator brief has an explicit off-topic list (do not speculate on cause)',
+            'Consumer FAQ is plain BI, no legal jargon'
+          ],
+          honest: 'Copilot drafts; the Group Head of Regulatory & Halal signs. Any communication to BPOM, retailers, or the public in a contamination incident must be reviewed by both the PJT and external regulatory counsel before release — the sanction ladder can reach criminal (sanksi pidana) for repeat offences. Copilot cannot verify lab results or root cause; it drafts on the assumption the recall SOP has been triggered correctly.',
+          tips: [
+            'Pre-authorise the recall SOP file (/COSMETICS_03_Ingredient_Recall_Programme.docx) so the war-room can invoke this in 15 minutes, not 3 hours',
+            'Pair with the BPOM Notifikasi expiry cut so a recall does not accidentally expose an already-expiring Notifikasi'
+          ],
+          id: 'uc-cos-ingredient-recall'
+        },
+        {
+          title: 'Beverage Infographic Kit — Brand Portfolio, SSB Snapshot, Halal-Export',
+          dept_tag: 'Brand & Trade Marketing',
+          industry_tag: 'Food & FMCG',
+          complexity: 'beginner',
+          apps: [
+            'Copilot Create',
+            'PowerPoint',
+            'Outlook'
+          ],
+          desc: 'Three on-brand A4 infographic posters from one Copilot Create session: (1) Brand Portfolio One-Pager for the trade review, (2) Sugar-Tax (SSB) & Compliance Snapshot for the HOD pre-read, (3) ASEAN & GCC Halal-Export Launch Plan for the Export Committee. Beverage corporate palette, thin outline icons, full-bleed A4.',
+          skills: [
+            'Copilot Create with FMCG brand colour discipline (specific hex codes)',
+            'Composing a full-A4 vertical infographic in one prompt (no empty bottom)',
+            'Producing 3 thematically different posters from related prompts in one session',
+            'Brand-aligned thin-outline-icon style (no clip-art, no stock photos of bottles or people)'
+          ],
+          instructions: [
+            'Open Microsoft 365 Copilot Chat → Create in left sidebar (or /create)',
+            'Paste Prompt 1 for the Brand Portfolio one-pager — 4 variants generated',
+            'Paste Prompt 2 for the SSB Compliance Snapshot',
+            'Paste Prompt 3 for the Halal-Export Launch Plan',
+            'Use Refine follow-ups to tighten any variant; download as PNG or PDF'
+          ],
+          sample_files: [],
+          prompts: [
+            {
+              label: '1. Brand Portfolio One-Pager',
+              text: 'Make a clean, premium one-page A4 infographic poster called \'Brand Portfolio · FY[YY]\' for Contoso Beverages & Dairy. Use brand colours deep aqua (#0891B2) and warm cream (#FDE68A) on white, with a small dark slate for headings. Vertical A4, fill the entire page — no empty space at the bottom.  Top: big bold title \'BRAND PORTFOLIO · FY[YY]\'. Underneath: \'Beverages · Dairy · Functional · For the Trade & Brand Committee\'.  Then 4 big-number boxes: [PLACEHOLDER]M litres total volume YTD; [PLACEHOLDER]% modern-trade share; [PLACEHOLDER]% low/zero-sugar contribution; [PLACEHOLDER] active SKUs.  Then a section called \'THE PORTFOLIO IN THREE TIERS\' with 3 cards: (1) HERO BRANDS — flagship Cola / Dairy / Functional, role: scale + cash flow; (2) GROWTH BETS — low/zero-sugar, premium dairy, plant-based; (3) WATCH LIST — small / declining SKUs under rationalisation review.  Then a \'Brand Compare\' table (4 rows × 3 columns) — Hero / Growth / Watch with columns Volume share, Revenue share, Gross-margin band.  \'Risks we\'re managing\' row of 3 icons: SSB sugar-tax exposure, raw-sugar tariff, glass/PET supply.  Bottom: cream-aqua ribbon footer with a one-line recommendation and today\'s date.  Style: clean modern sans-serif, thin outline icons (bottle, leaf, factory, scale), NO clip-art, NO stock photos. Fill the entire A4 page.'
+            },
+            {
+              label: '2. SSB Sugar-Tax & Compliance Snapshot',
+              text: 'Make a serious one-page A4 infographic poster called \'SSB & COMPLIANCE SNAPSHOT · FY[YY]\' for Contoso Beverages & Dairy. Same brand palette. Vertical A4, fill the entire page.  Top: \'SSB & COMPLIANCE SNAPSHOT\'. Underneath: \'Sugar-Sweetened Beverage tier · MyNutri labelling · JAKIM halal · For the HOD pre-read\'.  4 big-number boxes: [PLACEHOLDER] SKUs in the SSB-affected band; RM [PLACEHOLDER]M annual SSB tariff at current threshold; [PLACEHOLDER]% portfolio already compliant with the proposed FY27 threshold; [PLACEHOLDER] days to MyNutri labelling cut-over.  Section \'WHAT\'S MOVING\' with 3 cards: (1) MOF — FY27 SSB step signal (threshold tightening from 5g/100ml to 4g/100ml, tariff lift from RM 0.50/L to RM 0.65/L); (2) MOH — MyNutri front-of-pack labelling enforcement timeline; (3) JAKIM — halal certification cycle for the affected reformulated SKUs.  \'Compliance Compare\' table (5 SKUs × 3 columns: current sugar g/100ml, proposed reformulated level, certification status).  \'Risks\' icons row: reformulation timeline slip, consumer-acceptance on taste, trade cut-over logistics, credit-note treatment for in-trade stock.  Bottom: ribbon footer \'OWNER: HOD Operations & Trade · REVIEW: monthly\'.  Style: clean modern sans-serif, thin outline icons (label, scale, factory, calendar). Fill the entire A4 page.'
+            },
+            {
+              label: '3. ASEAN & GCC Halal-Export Launch Plan',
+              text: 'Make a clean one-page A4 infographic poster called \'ASEAN & GCC HALAL-EXPORT LAUNCH PLAN · FY[YY]\' for Contoso Beverages & Dairy. Same brand palette plus a small halal green accent. Vertical A4, fill the entire page.  Top: \'HALAL-EXPORT LAUNCH · FY[YY]\'. Underneath: \'ASEAN corridor · GCC priority markets · For the Export Committee\'.  4 big-number boxes: [PLACEHOLDER] export-ready SKUs; [PLACEHOLDER] target markets; RM [PLACEHOLDER]M Year-1 revenue target; [PLACEHOLDER]% gross-margin uplift vs domestic baseline.  Section \'THREE-COUNTRY ROLLOUT\' with 3 cards: (1) Indonesia + Vietnam (ASEAN-MAFTA / RCEP corridor, registration via BPOM and Vietnam MOH, distributor playbook); (2) UAE + Saudi Arabia (ESMA labelling, SFDA registration, FOB Jebel Ali logistics); (3) Future wave — Bangladesh, Pakistan, Egypt.  \'Launch Compare\' table (3 markets × 4 columns: regulator, registration lead time, distributor partner status, Year-1 revenue target).  \'Risks\' icons row: registration timeline, freight cost volatility, distributor capability, halal recertification.  Bottom: ribbon footer \'COMMITMENT: 3 markets live by end of FY27 · REVIEW: monthly\'.  Style: clean modern sans-serif, thin outline icons (globe, ship, certificate, handshake). Fill the entire A4 page.'
+            },
+            {
+              label: '4. Refine — fill empty space + brand icons',
+              text: 'If any of the three has empty space at the bottom, extend the sections or add a footer ribbon with the company name \'Contoso Beverages & Dairy\' on the left and today\'s date on the right. Replace any non-brand icons with thin outline icons in our brand colour. Remove any emoji or stock photo of bottles, glasses, or people.'
+            },
+            {
+              label: 'Build interactive HTML dashboard (filters + drill-down)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML executive dashboard titled "Beverage Infographic Kit — Brand Portfolio, SSB Snapshot, Halal-Export" using the source files attached to this Cowork session as the source of truth. Output ONE .html file (inline CSS + inline JS, ABSOLUTELY NO external CDN) so it opens cleanly offline. The dashboard must be COMPREHENSIVE and let the user slice-and-dice every dimension. Required structure: • TOP FILTER BAR (sticky) — multi-select chips for the 3 most important dimensions (e.g. business unit, region, status, owner); free-text search box; date-range picker (last 30d / quarter / FY / custom); reset button. All filters apply instantly to every panel below — no refresh. • KPI STRIP — 6 KPI cards with current value, period delta vs prior, colour coded vs target threshold, and an inline 12-period sparkline drawn on Canvas. • MAIN GRID — 2×2 panels: trend line chart, top-N bar chart, distribution pie/donut, and a heat-strip showing concentration; each panel reacts to filter bar selections. • DRILL-DOWN TABLE — sortable + searchable table of every underlying row with column-show/hide toggles; click a row to open a side-panel with full record detail + linked source files. Includes an "Export CSV of current view" button that respects active filters. • ALERTS PANEL — auto-flag anomalies / threshold breaches with one-line narratives. • Theme: Zava navy (#1F2D55) header, light/dark toggle in the top-right, sans-serif typography, mobile-responsive. Save the file as "Beverage Infographic Kit — Brand Portfolio, SSB Snapshot, Halal-Export — Dashboard.html" to my OneDrive > Zava Dashboards folder once Cowork has my approval.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            '3 polished A4 infographic posters (PNG or PDF), brand-aligned',
+            'Refined full-bleed brand-icon versions on follow-up',
+            'Ready to drop into Outlook, Teams or PowerPoint'
+          ],
+          watch: [
+            'Create respects exact brand hex codes when you specify them',
+            '3 thematically different posters from one Create session — Brand / Compliance / Export',
+            'Refine follow-ups work in plain English — no design tools needed',
+            'Enterprise Data Protection keeps the design inside your tenant'
+          ],
+          honest: 'Copilot Create is great for the first 80%. Final pixel polish (legal disclaimers, exact logo position, accessibility colour contrast, halal logo placement) usually needs the design team. For external customer or regulator-facing pieces, Brand, Comms, Legal and Halal Compliance must sign off before posting.',
+          tips: [
+            'Save each prompt as a reusable skill on the Customize page — every campaign refresh re-runs in seconds',
+            'For Mandarin / BM / BI / Arabic variants, add "Translate the title and labels into [LANGUAGE]" as a refine follow-up',
+            'For social, ask "Make a vertical 9:16 version for Instagram Stories" as a refine'
+          ],
+          id: 'uc-bev-create-infographic'
+        },
+        {
+          title: 'Board Pack Sprint',
+          dept_tag: 'Corporate Secretarial',
+          complexity: 'intermediate',
+          apps: [
+            'Word',
+            'PowerPoint',
+            'Outlook',
+            'Teams'
+          ],
+          desc: 'Turn a folder of board papers into a chairman briefing, a slide deck, an email pack to directors, and a Teams discussion thread — in one Cowork run.',
+          skills: [
+            'Multi-source synthesis across financial pack, risk update, strategy memo, and audit minutes',
+            'Parallel deliverable generation (Word brief + PPT deck + Outlook email + Teams thread)',
+            'Tone calibration for board audience (concise, decision-oriented)'
+          ],
+          instructions: [
+            'Open Microsoft 365 Copilot → left nav → Agents → Cowork (Frontier Program required)',
+            'Click 📎 Knowledge → attach the 4 sample files listed below',
+            'Paste Prompt 1 — Cowork runs the parallel fan-out',
+            'Review the 4 deliverables before forwarding to the Chair'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'BRD_Risk_Quarterly_Update.docx',
+              'docx'
+            ],
+            [
+              'BRD_Strategy_Memo.docx',
+              'docx'
+            ],
+            [
+              'BRD_Audit_Cmte_Minutes.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Fan out the board pack',
+              text: 'Using the 4 board papers attached, prepare the next Board meeting pack for [BOARD-DATE]. In parallel, do all 5: 1) Draft a 3-page Chairman briefing in Word — top 5 decisions needed, key risks, ESG hot spots. 2) Build a 10-slide deck in PowerPoint — Slide 1 cover, Slides 2-4 financials, Slide 5 risk dashboard, Slides 6-8 strategy progress, Slide 9 ESG/regulatory, Slide 10 decision summary. 3) Draft an email in Outlook to the 8 named directors — Hadar (Chair Audit), Sasha (Chair Risk), Daichi (Chair Nomination), and the 5 INEDs — with the pack attached and pre-read instructions. 4) Draft a Teams message to the Board WhatsApp-equivalent channel — 2 lines summary + the 2 critical decisions. 5) Block 90 minutes on the calendar — title: Board Meeting [BOARD-DATE], attendees the 8 directors + Group CFO + Group CoS. Cite the specific paper and section for every number.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Board Pack Sprint" using BRD_Q4_Financial_Pack.xlsx, BRD_Risk_Quarterly_Update.docx, BRD_Strategy_Memo.docx and BRD_Audit_Cmte_Minutes.docx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Board Pack Sprint — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Chairman briefing (3 pages, Word)',
+            '10-slide board deck (PowerPoint)',
+            'Outlook email draft with pack attached',
+            'Teams summary message',
+            '90-min calendar invite'
+          ],
+          watch: [
+            'Every figure cites its source paper and section — auditable trail',
+            'Each deliverable adapts tone for its audience (Chair memo vs WhatsApp blast)',
+            'Decisions surfaced separately from updates — board focus stays sharp'
+          ],
+          honest: 'Cowork drafts. The Chair and CoS still hand-review every line — board papers are legal record. The Teams message must be cleared by Comms before going live.',
+          tips: [
+            'Swap the 4 source files for your real quarter\'s board pack to scale to other meetings',
+            'Add a 6th task — generate a 30-second audio summary for the Chair\'s morning commute',
+            'Re-run with persona switched to "Group Chief of Staff" voice for a CoS-led variant'
+          ],
+          id: 'uc-board-pack'
+        },
+        {
+          title: 'Town Hall Comms Drill',
+          dept_tag: 'HR & Comms',
+          complexity: 'basic',
+          apps: [
+            'Word',
+            'PowerPoint',
+            'Outlook',
+            'Teams',
+            'Forms'
+          ],
+          desc: 'Turn the CEO\'s rough script + a quarter of HR results into a polished town hall — speech, slides, employee email, Teams promo, and a feedback Form.',
+          skills: [
+            'Tone-shifting from boardroom (financials) to all-employee (inclusive, plain English)',
+            'Multi-channel campaign assembly (slides + email + chat + survey)',
+            'Q&A anticipation from prior pulse-survey data'
+          ],
+          instructions: [
+            'Open Cowork from the Agents menu',
+            'Attach the 4 source files (script outline, HR scorecard, prior Q&A, pulse-survey results)',
+            'Paste the prompt — Cowork generates the full campaign in parallel',
+            'Hand the deliverables to Internal Comms for sign-off before publishing'
+          ],
+          sample_files: [
+            [
+              'TH_CEO_Script_Outline.docx',
+              'docx'
+            ],
+            [
+              'TH_HR_Quarterly_Scorecard.xlsx',
+              'xlsx'
+            ],
+            [
+              'TH_Prior_Town_Hall_QA.docx',
+              'docx'
+            ],
+            [
+              'TH_Pulse_Survey_Results.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Build the town hall campaign',
+              text: 'Using the 4 attached files, prepare the Q[N] FY[YEAR] all-employee town hall. In parallel, do all 5: 1) Polish the CEO speech in Word — 12 minutes spoken, 5 sections (Wins / Challenges / Customer Voice / People / Ask). 2) Build a 15-slide deck in PowerPoint — image-first, big numbers, no jargon, one decision per slide. 3) Draft the all-staff email in Outlook from the CEO — RSVP link + 2-line teaser + dial-in details. 4) Draft a Teams post for the Company-wide channel — 2 lines + GIF prompt + RSVP. 5) Build a Microsoft Forms survey — 6 questions (3 multiple-choice on key initiatives, 2 free-text on biggest worry/biggest hope, 1 NPS). Anticipate 8 likely Q&A items from the pulse-survey themes and append as speaker notes in the deck.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Town Hall Comms Drill" using TH_CEO_Script_Outline.docx, TH_HR_Quarterly_Scorecard.xlsx, TH_Prior_Town_Hall_QA.docx and TH_Pulse_Survey_Results.xlsx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Town Hall Comms Drill — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Polished CEO speech (12-min, Word)',
+            '15-slide town hall deck',
+            'Outlook all-staff email',
+            'Teams company-wide post',
+            'Microsoft Forms feedback survey'
+          ],
+          watch: [
+            'Tone shifts from numbers-dense (board) to story-led (employees) — same data, different voice',
+            'Q&A speaker notes prep the CEO for the toughest questions in advance',
+            'Forms survey wired to capture sentiment for the next quarter\'s baseline'
+          ],
+          honest: 'Cowork sets the structure; the CEO\'s personality still has to come through in the final edit. Sensitive items (layoffs, pay) must be drafted by HR not Cowork — the model has no context on confidential decisions.',
+          tips: [
+            'Re-run with the CHRO as the speaker — voice and Q&A library auto-adjust',
+            'For ID entities, generate the BI variant simultaneously by adding "Output in Bahasa Indonesia"',
+            'Add a 6th task — extract the top 3 themes from the prior Q&A and pre-empt them in the speech'
+          ],
+          id: 'uc-town-hall'
+        },
+        {
+          title: 'Group Brand Campaign Pack',
+          dept_tag: 'Marketing',
+          industry_tag: null,
+          complexity: 'intermediate',
+          apps: [
+            'Word',
+            'PowerPoint',
+            'Excel',
+            'Outlook',
+            'Teams'
+          ],
+          desc: 'Group umbrella brand campaign — Cowork builds the narrative, channel plan, divisional adaptation pack and agency brief.',
+          skills: [
+            'Group brand-narrative articulation',
+            'Multi-channel media planning',
+            'Divisional adaptation of a single master campaign'
+          ],
+          instructions: [
+            'Open Cowork',
+            'Attach the 3 source files',
+            'Paste the prompt'
+          ],
+          sample_files: [
+            [
+              'MKT_Brand_Strategy.docx',
+              'docx'
+            ],
+            [
+              'MKT_Channel_Performance.xlsx',
+              'xlsx'
+            ],
+            [
+              'MKT_Divisional_Brands.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Brand campaign pack',
+              text: 'Using the 3 attached files, build the [YEAR] umbrella brand campaign pack. In parallel: 1) Word — master campaign narrative + 3 audience-tailored versions. 2) Excel — channel + spend plan across 8 channels with KPI per channel. 3) PowerPoint — 12-slide divisional adaptation pack (how each division tailors). 4) Word — agency brief for the creative production phase. 5) Outlook + Teams — Group Comms + Division CMO alignment emails and Teams briefing. Cite the Brand Strategy section for every brand-rule reference. Flag any divisional brand that conflicts with the umbrella narrative.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Group Brand Campaign Pack" using MKT_Brand_Strategy.docx, MKT_Channel_Performance.xlsx and MKT_Divisional_Brands.docx as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Group Brand Campaign Pack — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Campaign narrative + 3 versions',
+            'Channel + spend plan',
+            'Divisional adaptation pack',
+            'Agency brief',
+            'CMO alignment emails'
+          ],
+          watch: [
+            'Brand-architecture conflicts surfaced',
+            'Channel mix proportional to objective'
+          ],
+          honest: 'Brand language is craft work — Cowork drafts the structure; the CMO + creative lead refine the words.',
+          tips: [
+            'Variation: add a measurement framework (pre/post survey + brand-tracker)',
+            'Variation: prep a crisis-comms appendix'
+          ],
+          id: 'uc-marketing-campaign'
+        },
+        {
+          title: 'Visual Launch Pack — Imagen 2 + Brand Templates',
+          dept_tag: 'Marketing & Communications',
+          complexity: 'beginner',
+          apps: [
+            'Word',
+            'PowerPoint',
+            'Outlook',
+            'Teams',
+            'Cowork'
+          ],
+          desc: 'A product brief, a press release, and a brand kit become a hero image (Imagen 2), a fully branded 6-slide deck, an internal launch email, and 3 social posts — in one Cowork run with the model picker on Sonnet+Opus Advisor.',
+          skills: [
+            'In-chat image generation with Imagen 2 saved straight to OneDrive',
+            'Brand template auto-applied to every PowerPoint slide (fonts, colours, logo, layout)',
+            'Model picker — Sonnet+Opus Advisor pairing for tone + structure quality on launch copy',
+            'Parallel deliverable fan-out (image + deck + email + social) from a single prompt'
+          ],
+          instructions: [
+            'Open Microsoft 365 Copilot → left nav → Agents → Cowork',
+            'Top-right model picker → choose Sonnet+Opus Advisor (or Auto for production)',
+            'Click 📎 Knowledge → attach the 3 sample files listed below',
+            'Paste Prompt 1 — Cowork generates the hero image, applies the brand template, drafts the comms',
+            'Hero image lands in OneDrive → /Cowork Outputs/Images/ and is embedded in the deck'
+          ],
+          sample_files: [
+            [
+              'LAUNCH_Product_Brief.docx',
+              'docx'
+            ],
+            [
+              'LAUNCH_Press_Release_Draft.docx',
+              'docx'
+            ],
+            [
+              'LAUNCH_Brand_Kit.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Generate the visual launch pack',
+              text: 'Using the 3 attached files for product launch [PRODUCT-NAME] on [LAUNCH-DATE], in parallel, do all 5: 1) Generate a hero image with Imagen 2 — modern, hopeful, no people, brand colours from the Brand Kit, 16:9, suitable for slide 1 cover and LinkedIn header. Save to OneDrive and embed in the deck. 2) Build a 6-slide deck in PowerPoint using our brand template — Slide 1 cover with hero image, Slide 2 the problem we solve, Slide 3 the product (3 key features), Slide 4 customer proof, Slide 5 pricing & availability, Slide 6 call-to-action. Apply the brand template — fonts, colours, logo, master layouts. 3) Draft an internal launch email in Outlook from the GM Marketing — what is launching, why now, the 3 things every employee should say if asked. 4) Draft 3 LinkedIn posts (different tones — bold, customer-quote, behind-the-scenes), each under 220 characters with 3 hashtags. 5) Draft a Teams message to the #all-company channel — 2 lines plus a link to the deck plus the hero image inline. Cite the Brief or Press Release for every product claim. Flag any line that needs Legal review.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Visual Launch Pack — Imagen 2 + Brand Templates" using LAUNCH_Product_Brief.docx, LAUNCH_Press_Release_Draft.docx and LAUNCH_Brand_Kit.pdf as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Visual Launch Pack — Imagen 2 + Brand Templates — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Hero image (PNG, 16:9, brand-coloured, in OneDrive)',
+            '6-slide branded launch deck (PowerPoint with template applied)',
+            'Internal launch email draft (Outlook)',
+            '3 LinkedIn post drafts',
+            'Teams #all-company announcement'
+          ],
+          watch: [
+            'The PPT picks up your brand template automatically — colours, fonts and logo match',
+            'The hero image saves to OneDrive AND embeds in the deck — no copy-paste',
+            'Sonnet+Opus Advisor improves launch-copy quality versus a single-model run'
+          ],
+          honest: 'Cowork drafts and generates the image. Brand-Comms still owns final approval — Imagen 2 sometimes drifts off your exact palette, and Legal must sign off any pricing or competitive claim. The image generation is governed by your tenant\'s admin settings for AI image content.',
+          tips: [
+            'Switch the model picker to Auto when the workflow is in production — it picks the right model per sub-task automatically',
+            'Re-run with "vertical product photo, mobile portrait" for a separate Instagram-ready asset',
+            'Add a 6th task — generate a 30-second voiceover script for a TikTok / Reels teaser',
+            'If your tenant has the brand template gallery configured, name it explicitly: "Use the Corporate-2026 template"'
+          ],
+          id: 'uc-ga-visual-launch'
+        },
+        {
+          title: 'Local Browser Research — Live Web + Internal Sources',
+          dept_tag: 'Strategy & Research',
+          complexity: 'intermediate',
+          apps: [
+            'Edge',
+            'Word',
+            'Excel',
+            'Cowork'
+          ],
+          desc: 'Cowork drives Microsoft Edge on your device using your existing sign-ins — pulling fresh competitor pricing, regulator filings, and an internal SharePoint dashboard into a one-page Word memo + Excel comparison table, with every cell citing its URL or document path.',
+          skills: [
+            'Local browser use — Cowork operates Microsoft Edge with your authenticated sessions (SharePoint, OneDrive, paywalled news, regulator portals)',
+            'Live multi-source synthesis — public web + internal authoritative sources in one run',
+            'Cell-level URL citation in Excel — every datapoint traceable for audit',
+            'Tone-aware Word memo (one page, decision-oriented)'
+          ],
+          instructions: [
+            'Open Cowork → top-right model picker → Auto',
+            'Confirm browser permission when prompted — Cowork uses YOUR Edge session and YOUR sign-ins (tenant-policy permitting)',
+            'Paste Prompt 1 — list the 3 to 5 competitors and the internal SharePoint dashboard URL',
+            'Watch the browser window — Cowork narrates each page it visits',
+            'Review the Word memo and Excel table when the run completes'
+          ],
+          sample_files: [],
+          prompts: [
+            {
+              label: 'Run the competitive scan',
+              text: 'Using local browser, do live research for the [PRODUCT-CATEGORY] competitive scan I need before Friday\'s strategy session. In parallel, do all 4: 1) Visit these competitor public pricing pages — [COMP-1 URL], [COMP-2 URL], [COMP-3 URL] — and extract: list price, billing model, free tier, enterprise option, last updated date. 2) Visit the regulator portal at [REGULATOR-URL] and pull the latest 2 filings or product approvals for this category in the last 90 days. 3) Open the internal SharePoint dashboard at [INTERNAL-DASHBOARD-URL] (use my SSO sign-in) and pull our own current pricing, win-rate, and gross-margin for the category. 4) Build an Excel comparison table — one row per company (us + 3 competitors), columns for each data point, every cell with a hyperlinked source. 5) Draft a 1-page Word memo for the strategy lead — top 3 takeaways, 2 risks, 1 recommended price action. End with a citation list (URL + retrieval timestamp for each public source, document path + page for each internal source). If a page is paywalled or login-gated and you cannot read it with my session, list it under \'Could not access\' with the reason.'
+            },
+            {
+              label: 'Build interactive HTML dashboard (filters + drill-down)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML executive dashboard titled "Local Browser Research — Live Web + Internal Sources" using the source files attached to this Cowork session as the source of truth. Output ONE .html file (inline CSS + inline JS, ABSOLUTELY NO external CDN) so it opens cleanly offline. The dashboard must be COMPREHENSIVE and let the user slice-and-dice every dimension. Required structure: • TOP FILTER BAR (sticky) — multi-select chips for the 3 most important dimensions (e.g. business unit, region, status, owner); free-text search box; date-range picker (last 30d / quarter / FY / custom); reset button. All filters apply instantly to every panel below — no refresh. • KPI STRIP — 6 KPI cards with current value, period delta vs prior, colour coded vs target threshold, and an inline 12-period sparkline drawn on Canvas. • MAIN GRID — 2×2 panels: trend line chart, top-N bar chart, distribution pie/donut, and a heat-strip showing concentration; each panel reacts to filter bar selections. • DRILL-DOWN TABLE — sortable + searchable table of every underlying row with column-show/hide toggles; click a row to open a side-panel with full record detail + linked source files. Includes an "Export CSV of current view" button that respects active filters. • ALERTS PANEL — auto-flag anomalies / threshold breaches with one-line narratives. • Theme: Zava navy (#1F2D55) header, light/dark toggle in the top-right, sans-serif typography, mobile-responsive. Save the file as "Local Browser Research — Live Web + Internal Sources — Dashboard.html" to my OneDrive > Zava Dashboards folder once Cowork has my approval.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            '1-page Word strategy memo with citations',
+            'Excel comparison table with hyperlinked source per cell',
+            '"Could not access" list for any gated pages (transparent audit trail)'
+          ],
+          watch: [
+            'Cowork browses with your sign-in — pulls SharePoint dashboards that public-web scrapers cannot',
+            'Every datapoint hyperlinks back to the source page — no opaque "AI said so"',
+            'Browser-use respects your tenant\'s data-loss policies; gated content surfaces a friction note instead of fabricating'
+          ],
+          honest: 'Cowork operates YOUR browser session, so any site you cannot reach manually, Cowork cannot reach either. Competitor pricing can change between Cowork\'s retrieval and your meeting — re-run on the morning of the decision. Local browser use is governed by your admin\'s Cowork browser-use policies in the Microsoft 365 admin center; some tenants restrict which domains Cowork may visit.',
+          tips: [
+            'Pin this prompt — re-run weekly to keep a living competitive baseline',
+            'Add a 6th task — generate a 5-slide deck of the table for the strategy session',
+            'For regulator-only research, swap step 3 for a second regulator portal in another jurisdiction',
+            'If your admin has disabled local browser use, swap to the Researcher tool which uses public web only'
+          ],
+          id: 'uc-ga-browser-research'
+        },
+        {
+          title: 'Custom Skill — Guided Skill Builder on the Customize Page',
+          dept_tag: 'Productivity & Automation',
+          complexity: 'beginner',
+          apps: [
+            'Cowork',
+            'OneDrive',
+            'Word'
+          ],
+          desc: 'A repeat task — say, the Monday weekly status digest — becomes a reusable Cowork skill, authored through the guided skill builder on the unified Customize page, so the team triggers the workflow with two clicks instead of re-pasting the prompt.',
+          skills: [
+            'Customize page — unified home for plugins and skills (GA, June 2026)',
+            'Guided skill builder — Cowork interviews you and writes the skill prompt for you',
+            'Skill sharing — publish to your team so the same prompt runs the same way',
+            'Markdown-native skill files in OneDrive — version-controlled and editable'
+          ],
+          instructions: [
+            'Open Cowork → top nav → Customize → Skills tab',
+            'Click ➕ Add → Create new (guided)',
+            'Answer Cowork\'s questions in chat — what triggers the skill, what inputs it needs, what outputs you expect',
+            'Save the generated skill — Cowork stores it as a Markdown file in your OneDrive Cowork Skills folder',
+            'Trigger the skill by name in any future Cowork run — or share it with your team via the Customize page'
+          ],
+          sample_files: [],
+          prompts: [
+            {
+              label: 'Build a Weekly Status Digest skill (guided)',
+              text: 'I want a reusable skill called \'Weekly Status Digest\' that I run every Monday morning.  When triggered, the skill should: 1) Read my Sent emails from Friday last week to Sunday this week, and read my Teams chat messages from the same window. 2) Pull the calendar events from last week and extract any commitments I made (look for phrases like \'I will\', \'by Friday\', \'next week we\'). 3) Generate a 1-page Word digest with 3 sections — What got shipped, What slipped, Commitments for the coming week. 4) Save the Word doc to my OneDrive at /Weekly Digests/ with filename YYYY-MM-DD-Status.docx. 5) Draft an Outlook email to my manager with the digest attached and a 4-line summary in the body.  Walk me through naming, scoping, and saving this skill — then save it to my Cowork Skills folder and make it shareable with my direct team.'
+            },
+            {
+              label: 'Build interactive HTML dashboard (filters + drill-down)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML executive dashboard titled "Custom Skill — Guided Skill Builder on the Customize Page" using the source files attached to this Cowork session as the source of truth. Output ONE .html file (inline CSS + inline JS, ABSOLUTELY NO external CDN) so it opens cleanly offline. The dashboard must be COMPREHENSIVE and let the user slice-and-dice every dimension. Required structure: • TOP FILTER BAR (sticky) — multi-select chips for the 3 most important dimensions (e.g. business unit, region, status, owner); free-text search box; date-range picker (last 30d / quarter / FY / custom); reset button. All filters apply instantly to every panel below — no refresh. • KPI STRIP — 6 KPI cards with current value, period delta vs prior, colour coded vs target threshold, and an inline 12-period sparkline drawn on Canvas. • MAIN GRID — 2×2 panels: trend line chart, top-N bar chart, distribution pie/donut, and a heat-strip showing concentration; each panel reacts to filter bar selections. • DRILL-DOWN TABLE — sortable + searchable table of every underlying row with column-show/hide toggles; click a row to open a side-panel with full record detail + linked source files. Includes an "Export CSV of current view" button that respects active filters. • ALERTS PANEL — auto-flag anomalies / threshold breaches with one-line narratives. • Theme: Zava navy (#1F2D55) header, light/dark toggle in the top-right, sans-serif typography, mobile-responsive. Save the file as "Custom Skill — Guided Skill Builder on the Customize Page — Dashboard.html" to my OneDrive > Zava Dashboards folder once Cowork has my approval.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'A named, reusable Cowork skill saved in OneDrive (Markdown)',
+            'A test run that produces the first weekly digest end-to-end',
+            'A team-shareable skill listed on the Customize → Skills tab'
+          ],
+          watch: [
+            'Cowork drafts the skill prompt from your conversational description — you don\'t hand-write the syntax',
+            'The skill file is plain Markdown in OneDrive — auditable, editable, version-controllable',
+            'Future runs trigger with a short skill name — no copy-paste of the long prompt every Monday'
+          ],
+          honest: 'Cowork can author up to 50 custom skills per tenant (April 2026 limit, may rise). The skill triggers on demand, not on a schedule — pair it with a Power Automate weekly cron if you want hands-off Monday morning delivery. Skills shared with the team carry your prompt verbatim — review any sensitive language before sharing.',
+          tips: [
+            'Use this same pattern for a Monthly Board Pack skill, a Quarterly OKR Review skill, or a Friday Wrap skill',
+            'Combine with the plugin catalog — install the Jira or ServiceNow plugin first so the skill can pull tickets too',
+            'When the GA model picker is on Auto, the skill chooses the right model per sub-task automatically — no maintenance',
+            'Edit the Markdown file directly in OneDrive when the workflow changes — no rebuild needed'
+          ],
+          id: 'uc-ga-custom-skill'
+        }
+      ],
+      notebookLibrary: [
+        {
+          title: 'Board Pre-Read Synthesis — Cosmetics & Personal Care',
+          archetype: 'board_prereread',
+          complexity: 'intermediate',
+          sources: [
+            [
+              'CEO_Report.docx',
+              'docx'
+            ],
+            [
+              'CFO_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Heatmap.xlsx',
+              'xlsx'
+            ],
+            [
+              'Strategy_Update_Deck.pdf',
+              'pdf'
+            ],
+            [
+              'Previous_Board_Minutes.docx',
+              'docx'
+            ]
+          ],
+          instructions: 'Context: this notebook is being built for the Cosmetics & Personal Care business. You are compressing 5 Board documents into a tight pre-read. Cite every claim. Flag where the CEO narrative diverges from the CFO numbers or the risk heatmap. Carry forward unresolved actions from the previous minutes.',
+          desc: 'Turn a 200-page Board pack into a 1-page pre-read that surfaces the 5 things each director MUST read before the meeting.',
+          prompts: [
+            {
+              label: 'Prompt 1 — The 5 things',
+              text: 'From all 5 sources, distil the 5 items each Director must read before the meeting. For each: a 2-sentence summary, the source citation, and the Board decision required (Note / Approve / Decide).'
+            },
+            {
+              label: 'Prompt 2 — Narrative vs numbers',
+              text: 'Compare /CEO_Report.docx narrative against /CFO_Financial_Pack.xlsx and /Risk_Heatmap.xlsx. List every place the story and the numbers diverge — quote both. End with the single sharpest question to put to the CEO in the meeting.'
+            },
+            {
+              label: 'Prompt 3 — Action carry-forward',
+              text: 'From /Previous_Board_Minutes.docx, list every action that remains open. For each: owner, due date, current status from the latest sources, and the line to push in this meeting.'
+            }
+          ],
+          expected: [
+            'A 5-item Board pre-read with decision tags.',
+            'A narrative-vs-numbers reconciliation with a sharp question.',
+            'A clean action carry-forward list with status updates.'
+          ],
+          watch: [
+            'The 5 items each cite a different source where possible.',
+            'Divergences quote both the CEO line AND the contradicting number.',
+            'Open actions reuse the exact action IDs from the minutes.'
+          ],
+          honest: 'This compresses what is in the pack. If a director needs context not in the 5 sources (e.g. analyst notes, industry context), add them as additional sources or pair Notebook with Researcher.',
+          tips: [
+            'Add a 6th source = analyst report for external context.',
+            'Use Quick Create > Pages to publish the pre-read to a Loop component.',
+            'Re-run prompt 3 right after the meeting to refresh status.'
+          ],
+          id: 'nb-board-prereread',
+          outputs: [
+            {
+              icon: '🎙️',
+              name: 'Audio Overview',
+              desc: 'Generates a ~10-15 minute podcast-style discussion between two AI hosts walking through every source.',
+              how: 'Click ⋯ on the Notebook header → Audio Overview → Generate. Download MP3 when ready.'
+            },
+            {
+              icon: '🎥',
+              name: 'Video Overview',
+              desc: 'A visual walkthrough of the sources with on-screen text, citations, and an AI narrator. Great for handoff briefings.',
+              how: '⋯ → Video Overview → Generate. Pick the audience tone (executive, technical, training).'
+            },
+            {
+              icon: '🧠',
+              name: 'Mind Map',
+              desc: 'Auto-generated visual concept map showing how the sources connect (themes, decisions, dependencies).',
+              how: '⋯ → Mind Map. Click any node to jump to the cited source span.'
+            },
+            {
+              icon: '📊',
+              name: 'Reports',
+              desc: 'One-click structured documents: Executive Briefing, Study Guide, FAQ, Timeline, or Custom Report you describe in one line.',
+              how: 'Reports tab → choose a template OR type "Write a report on..." in the prompt box.'
+            },
+            {
+              icon: '📋',
+              name: 'Study Guide / FAQ',
+              desc: 'Generates Q&A pairs and a study-guide outline from every source — useful for onboarding decks and "leave-behind" materials.',
+              how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
+            }
+          ]
+        },
+        {
+          title: 'Incident Post-Mortem — Cosmetics & Personal Care',
+          archetype: 'incident_pmortem',
+          complexity: 'intermediate',
+          sources: [
+            [
+              'Incident_Timeline.docx',
+              'docx'
+            ],
+            [
+              'Pager_Alerts_Log.xlsx',
+              'xlsx'
+            ],
+            [
+              'Customer_Comms_Sent.docx',
+              'docx'
+            ],
+            [
+              'System_Architecture_Diagram.pdf',
+              'pdf'
+            ],
+            [
+              'Past_Similar_Incidents.xlsx',
+              'xlsx'
+            ]
+          ],
+          instructions: 'Context: this notebook is being built for the Cosmetics & Personal Care business. You are producing a blameless post-mortem. Cite every event to a timestamp + source. Focus on systems and processes, not individuals. Flag where this incident matches a past one in the register. Stay evidence-bound.',
+          desc: 'Turn an incident response into a blameless post-mortem and action register that closes the loop instead of repeating the same failure.',
+          prompts: [
+            {
+              label: 'Prompt 1 — Sequenced timeline',
+              text: 'Reconstruct the incident as a strictly time-stamped event log combining /Incident_Timeline.docx and /Pager_Alerts_Log.xlsx. For each event: the timestamp, the trigger, the responder action, and the system state. Highlight the 3 longest gaps between detection and response.'
+            },
+            {
+              label: 'Prompt 2 — Contributing causes',
+              text: 'Identify the 5 contributing causes (technical, process, communication) using /System_Architecture_Diagram.pdf for the technical layer and /Customer_Comms_Sent.docx for the comms layer. For each: cause, evidence citation, and the safeguard absent.'
+            },
+            {
+              label: 'Prompt 3 — Repeat-risk + actions',
+              text: 'Compare against /Past_Similar_Incidents.xlsx — list any prior incident this repeats. Then produce 5 prevention actions, each with: owner role, due date, and the leading-indicator metric to watch.'
+            }
+          ],
+          expected: [
+            'A defensible timeline with response-gap analysis.',
+            'A contributing-causes list anchored to systems and comms.',
+            'A repeat-risk audit + actionable prevention register.'
+          ],
+          watch: [
+            'Every event has a real timestamp from the log.',
+            'Causes cite architecture or comms evidence, not opinion.',
+            'Actions reuse owner roles, not named individuals.'
+          ],
+          honest: 'A post-mortem is only useful if the actions ship. Notebook produces the register — the engineering org still needs to track closure.',
+          tips: [
+            'Add monitoring-config snapshots as a 6th source for tooling gaps.',
+            'Use Quick Create > Audio Overview for the all-hands walkthrough.',
+            'Re-run prompt 3 monthly to track action burndown.'
+          ],
+          id: 'nb-incident-pmortem',
+          outputs: [
+            {
+              icon: '🎙️',
+              name: 'Audio Overview',
+              desc: 'Generates a ~10-15 minute podcast-style discussion between two AI hosts walking through every source.',
+              how: 'Click ⋯ on the Notebook header → Audio Overview → Generate. Download MP3 when ready.'
+            },
+            {
+              icon: '🎥',
+              name: 'Video Overview',
+              desc: 'A visual walkthrough of the sources with on-screen text, citations, and an AI narrator. Great for handoff briefings.',
+              how: '⋯ → Video Overview → Generate. Pick the audience tone (executive, technical, training).'
+            },
+            {
+              icon: '🧠',
+              name: 'Mind Map',
+              desc: 'Auto-generated visual concept map showing how the sources connect (themes, decisions, dependencies).',
+              how: '⋯ → Mind Map. Click any node to jump to the cited source span.'
+            },
+            {
+              icon: '📊',
+              name: 'Reports',
+              desc: 'One-click structured documents: Executive Briefing, Study Guide, FAQ, Timeline, or Custom Report you describe in one line.',
+              how: 'Reports tab → choose a template OR type "Write a report on..." in the prompt box.'
+            },
+            {
+              icon: '📋',
+              name: 'Study Guide / FAQ',
+              desc: 'Generates Q&A pairs and a study-guide outline from every source — useful for onboarding decks and "leave-behind" materials.',
+              how: 'Reports tab → Study Guide / FAQ. Or ask: "Produce a study guide with 10 Q&A from these sources."'
+            }
+          ]
+        }
+      ],
+      scoutLibrary: [
+        {
+          title: 'Automation — Monthly Close Pack',
+          dept_tag: 'Finance',
+          complexity: 'advanced',
+          apps: [
+            'Excel',
+            'PowerPoint',
+            'Outlook',
+            'Automation'
+          ],
+          desc: 'Schedule Scout for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
+          skills: [
+            'Schedule-triggered recurring automation independent of an active chat',
+            'Excel skill for GL extracts, budget variance, and workbook formatting',
+            'PowerPoint and Outlook output with permission-aware send/draft behaviour'
+          ],
+          instructions: [
+            'Open Scout → Automations → New automation',
+            'Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00',
+            'Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only',
+            'Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code'
+          ],
+          sample_files: [
+            [
+              'GL_Extract_MY_ID_SG_2026M06.xlsx',
+              'xlsx'
+            ],
+            [
+              'Budget_Forecast_Bridge.xlsx',
+              'xlsx'
+            ],
+            [
+              'Monthly_Close_Deck_Template.pptx',
+              'pptx'
+            ],
+            [
+              'CFO_Email_Template.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Schedule monthly finance automation',
+              text: 'Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn. Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history.'
+            }
+          ],
+          expected: [
+            'Recurring Scout automation visible in Automations history',
+            'Three-tab variance workbook with formulas, thresholds, and exception comments',
+            'Six-slide monthly review deck plus CFO email draft or approved send'
+          ],
+          watch: [
+            'Automations are saved tasks with schedule or condition triggers, not ad-hoc prompts',
+            'Scout can run the same close workflow every month and write back to folders'
+          ],
+          honest: 'Finance automation needs clean GL extracts; the CFO still reviews, and material variances must tie to ledgers.',
+          tips: [
+            'Change the trigger to condition-based: run when all entity GL extracts arrive',
+            'Add a shell validation that compares workbook checksums and row counts to last month'
+          ],
+          id: 'uc-scout-automation-monthly'
+        },
+        {
+          title: 'Bulk File-System Processing — 200 Contracts in One Run',
+          dept_tag: 'Legal',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'File System'
+          ],
+          desc: 'Point Scout at a OneDrive workspace containing 200 contracts, extract obligations into a master workbook, create one-page Word summaries, and build a counterparty tiering deck.',
+          skills: [
+            'File-system read/write/search across a workspace folder tree',
+            'Word, Excel, and PowerPoint skills in one desktop run',
+            'Shell command inventory for filenames, page counts, duplicate detection, and CSV validation'
+          ],
+          instructions: [
+            'Sync the contract room to a local OneDrive workspace folder and open that folder in Scout',
+            'Set file system access to allow the workspace only; shell prompt-mode for commands that write files',
+            'Attach the counterparty register and folder index, then paste the prompt',
+            'Review exception rows before sending summaries to Legal or Procurement'
+          ],
+          sample_files: [
+            [
+              'Contracts_Folder_Index.csv',
+              'csv'
+            ],
+            [
+              'Group_Counterparty_Master.xlsx',
+              'xlsx'
+            ],
+            [
+              'Contract_Tiering_Template.pptx',
+              'pptx'
+            ],
+            [
+              'Sample_Supply_Agreement_MY_2026.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Process the contract room',
+              text: 'In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations. Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha\'s recommended approval queue. Cite source file and page for each extracted fact.'
+            }
+          ],
+          expected: [
+            'Master xlsx with 200 rows, exceptions tab, formulas, filters, and risk tiers',
+            'One-page Word summary per contract in the workspace output folder',
+            'PowerPoint tiering deck for ExCo or Procurement Council'
+          ],
+          watch: [
+            'Scout reads and writes hundreds of local workspace files, not just attached documents',
+            'Shell commands accelerate inventory and QA while permission tiers control writes'
+          ],
+          honest: 'Contract extraction is a first-pass workbench; Legal must verify key clauses and scanned-PDF OCR quality.',
+          tips: [
+            'Swap contracts for leases, supplier MSAs, bancassurance agreements, or hospital panel contracts',
+            'Add a shell validation step to compare workbook row count against the source folder count'
+          ],
+          id: 'uc-scout-bulk-files'
+        },
+        {
+          title: 'Sub-Agent Fan-Out — Strategic Diligence in Parallel',
+          dept_tag: 'Strategy',
+          complexity: 'advanced',
+          apps: [
+            'Word',
+            'Excel',
+            'PowerPoint',
+            'Research Agents'
+          ],
+          desc: 'One Scout prompt launches sub-agents for M&A diligence, then synthesises a brief, xlsx, and speaker-note deck.',
+          skills: [
+            'Sub-agent fan-out using Research, Code review, Explore, and General-purpose agents',
+            'Parallel diligence across market, financial, technology, ESG, and regulatory workstreams',
+            'Synthesis of background-agent outputs into executive-ready files'
+          ],
+          instructions: [
+            'Open Scout in the M&A workspace with target profile, NDA-safe public sources, and internal thesis notes',
+            'Enable web research and workspace file access; keep shell in prompt mode',
+            'Paste the prompt and watch the sub-agent activity panel as agents run independently',
+            'Ask Scout to reconcile conflicts between agents before finalising the pack'
+          ],
+          sample_files: [
+            [
+              'TargetCo_Public_Profile.docx',
+              'docx'
+            ],
+            [
+              'SEA_Market_Size_Assumptions.xlsx',
+              'xlsx'
+            ],
+            [
+              'Diligence_Question_Bank.xlsx',
+              'xlsx'
+            ],
+            [
+              'IC_Memo_Template.pptx',
+              'pptx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Fan out strategic diligence',
+              text: 'For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target\'s public GitHub/mobile app or technology diligence notes where available. When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them.'
+            }
+          ],
+          expected: [
+            'Five parallel sub-agent workstreams with separate logs and citations',
+            'Word investment brief with risks, synergies, and open diligence questions',
+            'Excel finding register and PowerPoint IC deck with speaker notes'
+          ],
+          watch: [
+            'The main Scout session delegates to isolated sub-agents instead of doing one serial search',
+            'Contradictions and confidence levels are preserved for Investment Committee challenge'
+          ],
+          honest: 'Sub-agents accelerate triage; formal due diligence, valuation, and legal reliance remain human-owned.',
+          tips: [
+            'Replace TargetCo with a hospital chain, payments fintech, plantation miller, or logistics 3PL',
+            'Use one General-purpose agent to build a synergy model while Research agents gather citations'
+          ],
+          id: 'uc-scout-subagents'
+        }
+      ],
+      sharepointLibrary: [
+        {
+          title: 'Ask & Summarize — Single-File Q&A from the Floating Button',
+          dept_tag: 'All Functions',
+          complexity: 'beginner',
+          apps: [
+            'SharePoint',
+            'Word',
+            'Excel',
+            'PowerPoint'
+          ],
+          desc: 'Open a board paper, policy document, or financial report in SharePoint and use the Floating Button to ask questions and summarize key points without leaving the site.',
+          skills: [
+            'Using the SharePoint Floating Button for context-sensitive AI actions',
+            'Asking grounded questions about a selected file, page, or library item',
+            'Generating executive-ready summaries with source-aware follow-up checks'
+          ],
+          instructions: [
+            'Open the Group Policy Hub or Board Portal site in SharePoint',
+            'Open BRD_Q4_Financial_Pack.xlsx, Risk_Appetite_Statement.docx, or ESG_Disclosure_2026.pdf',
+            'Click the Floating Button in the bottom-right corner and choose Ask a question about content',
+            'Run the prompt, then choose Summarize this file and compare the answer against the original document'
+          ],
+          sample_files: [
+            [
+              'BRD_Q4_Financial_Pack.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Appetite_Statement.docx',
+              'docx'
+            ],
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Ask and summarize in place',
+              text: 'Open the Board Portal site → Documents library → open BRD_Q4_Financial_Pack.xlsx → click the Floating Button (bottom-right) → choose \'Ask a question about content\'. Ask: \'What are the three biggest movements in revenue, EBITDA, and cash flow versus last quarter, and which business units explain them?\' Then choose \'Summarize this file\' and copy the summary into the meeting notes for Hadar Caspit with source sections preserved.'
+            }
+          ],
+          expected: [
+            'Short, source-grounded answer to the business question',
+            'File summary that a content consumer can use as a pre-read'
+          ],
+          watch: [
+            'The Floating Button changes recommendations based on the open file and current SharePoint location',
+            'The user does not need to know Copilot Chat prompting patterns to get useful file insight'
+          ],
+          honest: 'AI in SharePoint accelerates first-pass understanding, but it is not a substitute for board or regulatory sign-off. Finance, Legal, or Risk owners still validate figures before decisions are made.',
+          tips: [
+            'Use the same flow for a tender pack, HR handbook, incident postmortem, or investment memo',
+            'Ask for MYR and IDR figures to be separated when the source contains multiple currencies'
+          ],
+          id: 'uc-sp-ask-summarize'
+        },
+        {
+          title: 'Automate Workflow — Approval Rule for High-Value Invoices',
+          dept_tag: 'Finance & Operations',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Teams',
+            'Outlook'
+          ],
+          desc: 'Set up an AI-assisted SharePoint library rule so high-value invoices are routed to the right approver, posted to Teams, and tagged without Power Automate authoring.',
+          skills: [
+            'Using Automate workflows / set up rules from a SharePoint library',
+            'Combining AI-extracted metadata with approval thresholds',
+            'Routing operational exceptions to Teams and Outlook from the library'
+          ],
+          instructions: [
+            'Open the Finance Shared Services site → Invoices library',
+            'Ensure Autofill or existing columns include Supplier, Total Amount, Currency, Cost Centre, and Approver',
+            'Use the Floating Button or Automate menu to set up a high-value invoice rule',
+            'Test with a MYR 125,000 invoice and confirm the approval, Teams post, and file tag'
+          ],
+          sample_files: [
+            [
+              'Invoice_MY_KL_125000.pdf',
+              'pdf'
+            ],
+            [
+              'Invoice_Register_Q2.xlsx',
+              'xlsx'
+            ],
+            [
+              'Approval_Matrix_FY26.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Set up high-value invoice rule',
+              text: 'Open the Finance Shared Services site → Invoices library → click the Floating Button or Automate → choose \'Automate workflows\' / \'set up rules\'. Create a rule: when a new invoice is added and Total Amount > MYR 100,000, route approval to the CFO, post a summary to the #finance-approvals Teams channel, tag the file \'High Value\', and notify Mod Admin by Outlook. Test using Invoice_MY_KL_125000.pdf and confirm each action fired.'
+            }
+          ],
+          expected: [
+            'No-code approval rule for high-value invoice exceptions',
+            'Teams notification with supplier, amount, and cost centre'
+          ],
+          watch: [
+            'Workflow setup starts from business rules in the library, not from blank automation design',
+            'Metadata extracted from content can trigger routing and tagging'
+          ],
+          honest: 'AI-assisted workflow setup simplifies rule creation, but Finance and Internal Controls must approve thresholds, approver mapping, and audit evidence before production rollout.',
+          tips: [
+            'Adapt the threshold to IDR 500 million for Indonesia entities or USD limits for treasury files',
+            'Create a second rule for duplicate invoice numbers or missing purchase orders'
+          ],
+          id: 'uc-sp-automate-workflow'
+        },
+        {
+          title: 'Create Page With AI — New ESG Disclosure Hub',
+          dept_tag: 'Marketing & ESG',
+          complexity: 'intermediate',
+          apps: [
+            'SharePoint',
+            'Word',
+            'PowerPoint'
+          ],
+          desc: 'Describe a new SharePoint page in natural language and let AI scaffold the hero, sections, FAQ web part, and design ideas for a polished site page.',
+          skills: [
+            'Creating SharePoint pages and sections with AI',
+            'Using Design Ideas to refine page layout, imagery, and readability',
+            'Writing and rewriting page copy in context before publishing'
+          ],
+          instructions: [
+            'Open the ESG Disclosure Hub, Investor Relations, or People Portal site as a Content Creator',
+            'Choose Create Page with AI from the Floating Button or page authoring flow',
+            'Describe the page objective, target audience, sections, and source files',
+            'Use Design Ideas plus Write/Rewrite with AI to refine each section before publishing'
+          ],
+          sample_files: [
+            [
+              'ESG_Disclosure_2026.pdf',
+              'pdf'
+            ],
+            [
+              'Investor_Day_Key_Messages.pptx',
+              'pptx'
+            ],
+            [
+              'Employee_Sustainability_FAQ.docx',
+              'docx'
+            ]
+          ],
+          prompts: [
+            {
+              label: 'Create ESG hub page',
+              text: 'Open the ESG Disclosure Hub → New → Page → Create Page with AI. Describe: \'Create a 2026 ESG Disclosure landing page for investors, employees, and regulators. Include a hero section, climate metrics, RSPO progress, MYR green capex, assurance status, key downloads, and an FAQ Webpart generated from Employee_Sustainability_FAQ.docx.\' Use Design Ideas to refine layout, then use Write/Rewrite with AI to make the executive summary concise for Daichi Maruyama before publishing.'
+            }
+          ],
+          expected: [
+            'AI-scaffolded SharePoint page with hero, sections, links, and FAQ Webpart',
+            'Cleaner page copy rewritten for the intended audience'
+          ],
+          watch: [
+            'Content creation happens inside the SharePoint page authoring experience',
+            'Design Ideas improves layout while Write/Rewrite improves the message'
+          ],
+          honest: 'Create Page with AI is excellent for first drafts, but brand, legal, accessibility, and disclosure owners must review before publishing externally or to all employees.',
+          tips: [
+            'Reuse the pattern for Investor Day hubs, HR onboarding pages, campaign microsites, and crisis-response pages',
+            'Provide audience and approval constraints in the page description for better first drafts'
+          ],
+          id: 'uc-sp-create-page'
+        }
+      ]
     }
   ],
   departments: [
@@ -122033,7 +124717,8 @@ window.HUB_DATA = {
         'ecommerce-superapp',
         'maritime-shipping',
         'electrical-distribution',
-        'tobacco-wellness'
+        'tobacco-wellness',
+        'cosmetics'
       ],
       coworkLibrary: [
         {
@@ -125135,6 +127820,7 @@ window.HUB_DATA = {
         'property-development',
         'ecommerce-superapp',
         'maritime-shipping',
+        'cosmetics',
         'financial-regulator',
         'electrical-distribution',
         'tobacco-wellness'
@@ -128236,6 +130922,7 @@ window.HUB_DATA = {
         'property-development',
         'ecommerce-superapp',
         'maritime-shipping',
+        'cosmetics',
         'general-insurance',
         'life-insurance',
         'hospital-network',
@@ -131438,6 +134125,7 @@ window.HUB_DATA = {
         'aviation-airlines',
         'power-utilities',
         'property-development',
+        'cosmetics',
         'renewable-energy',
         'plantation',
         'bpo-services',
@@ -134780,6 +137468,7 @@ window.HUB_DATA = {
         'property-development',
         'ecommerce-superapp',
         'maritime-shipping',
+        'cosmetics',
         'og-upstream',
         'og-downstream',
         'bpo-services',
@@ -138282,6 +140971,7 @@ window.HUB_DATA = {
         'education',
         'property-development',
         'ecommerce-superapp',
+        'cosmetics',
         'commercial-banking',
         'islamic-banking',
         'investment-banking',
@@ -141572,7 +144262,8 @@ window.HUB_DATA = {
         'ecommerce-superapp',
         'maritime-shipping',
         'electrical-distribution',
-        'tobacco-wellness'
+        'tobacco-wellness',
+        'cosmetics'
       ],
       coworkLibrary: [
         {
@@ -144472,6 +147163,7 @@ window.HUB_DATA = {
         'property-development',
         'ecommerce-superapp',
         'maritime-shipping',
+        'cosmetics',
         'commercial-banking',
         'islamic-banking',
         'investment-banking',
@@ -147709,7 +150401,8 @@ window.HUB_DATA = {
         'ecommerce-superapp',
         'maritime-shipping',
         'electrical-distribution',
-        'tobacco-wellness'
+        'tobacco-wellness',
+        'cosmetics'
       ],
       coworkLibrary: [
         {
@@ -150563,7 +153256,8 @@ window.HUB_DATA = {
         'ecommerce-superapp',
         'maritime-shipping',
         'electrical-distribution',
-        'tobacco-wellness'
+        'tobacco-wellness',
+        'cosmetics'
       ],
       coworkLibrary: [
         {
@@ -153597,7 +156291,8 @@ window.HUB_DATA = {
         'property-development',
         'ecommerce-superapp',
         'electrical-distribution',
-        'tobacco-wellness'
+        'tobacco-wellness',
+        'cosmetics'
       ],
       coworkLibrary: [
         {
@@ -156676,6 +159371,7 @@ window.HUB_DATA = {
         'food-fmcg',
         'ecommerce-superapp',
         'maritime-shipping',
+        'cosmetics',
         'commercial-banking',
         'islamic-banking',
         'investment-banking',

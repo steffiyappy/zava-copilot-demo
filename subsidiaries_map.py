@@ -135,6 +135,17 @@ SUBSIDIARIES_MAP = {
         "ABC President Indonesia", "Aneka Tuna Indonesia",
         "Sriboga Raturaya", "Japfa Comfeed Indonesia",
     ],
+    "cosmetics": [
+        "Paragon Technology and Innovation (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!)",
+        "Mandom Indonesia (Gatsby, Pixy)",
+        "Mustika Ratu", "Martina Berto (Sariayu)",
+        "Kao Indonesia (Biore)", "L'Oréal Indonesia",
+        "Unilever Indonesia — Personal Care", "Cosmax Indonesia",
+        "Kolmar Indonesia", "Vitalis Indonesia",
+        "Rohto Laboratories Indonesia", "Sinar Wisesa",
+        "PT Cedefindo (OEM)", "PT Gloria Origita Cosmetics (Purbasari)",
+        "Beiersdorf Indonesia (Nivea)",
+    ],
     "plantation": [
         "Kuala Lumpur Kepong (KLK)", "Boustead Plantations",
         "Hap Seng Plantations", "TDM",

@@ -16,6 +16,7 @@ from ind_batch11 import INDUSTRIES_11
 from ind_batch12 import INDUSTRIES_12
 from ind_batch13 import INDUSTRIES_13
 from ind_batch14 import INDUSTRIES_14
+from ind_batch15 import INDUSTRIES_15
 from dept_data  import DEPARTMENTS
 from dept_data2 import DEPARTMENTS_2
 from dept_data3 import DEPARTMENTS_3
@@ -27,7 +28,7 @@ from whatsnew_data import WHATS_NEW
 all_industries = (INDUSTRIES_1 + INDUSTRIES_2 + INDUSTRIES_3 + INDUSTRIES_4 +
                   INDUSTRIES_5 + INDUSTRIES_6 + INDUSTRIES_7 + INDUSTRIES_8 +
                   INDUSTRIES_9 + INDUSTRIES_10 + INDUSTRIES_11 + INDUSTRIES_12 +
-                  INDUSTRIES_13 + INDUSTRIES_14)
+                  INDUSTRIES_13 + INDUSTRIES_14 + INDUSTRIES_15)
 all_departments = DEPARTMENTS + DEPARTMENTS_2 + DEPARTMENTS_3 + DEPARTMENTS_4 + DEPARTMENTS_5 + DEPARTMENTS_6
 
 print(f"Industries: {len(all_industries)}, Departments: {len(all_departments)}")
@@ -43,6 +44,7 @@ SECTORS = [
     {"id": "sec-energy",     "label": "Energy",            "industries": ["renewable-energy"]},
     {"id": "sec-mfg",        "label": "Manufacturing",     "industries": ["industrial-manufacturing","rubber-gloves","semiconductor","automotive","auto-tyres","construction"]},
     {"id": "sec-food",       "label": "Food & FMCG",       "industries": ["food-fmcg"]},
+    {"id": "sec-cosmetics",  "label": "Cosmetics & Personal Care", "industries": ["cosmetics"]},
     {"id": "sec-tobacco-wellness", "label": "Tobacco & Wellness", "industries": ["tobacco-wellness"]},
     {"id": "sec-agri",       "label": "Agriculture",       "industries": ["plantation"]},
     {"id": "sec-bpo",        "label": "BPO & Tech",        "industries": ["bpo-services"]},

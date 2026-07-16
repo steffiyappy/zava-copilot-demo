@@ -432,6 +432,7 @@ ENTRY_USE_CASES = {
     'auto-tyres':               ['uc-auto-tyres-compound', 'uc-mfg-oee', 'uc-board-pack', 'uc-incident-pmortem'],
     'construction':             ['uc-mining-vendor-vs-kak', 'uc-construction-vo', 'uc-board-pack', 'uc-incident-pmortem', 'uc-fin-monthend'],
     'food-fmcg':                ['uc-bev-strategic-landscape', 'uc-bev-create-infographic', 'uc-bev-ssb-tax-shock', 'uc-tobacco-cht-tax-shock', 'uc-qsr-lebaran-promo', 'uc-food-promo', 'uc-board-pack', 'uc-town-hall', 'uc-marketing-campaign'],
+    'cosmetics':                ['uc-cos-live-shopping-pack', 'uc-cos-bpom-notifikasi-refresh', 'uc-cos-ingredient-recall', 'uc-bev-create-infographic', 'uc-board-pack', 'uc-town-hall', 'uc-marketing-campaign'],
     'plantation':               ['uc-klk-q1-ops-review', 'uc-plantation-rspo', 'uc-esg-disclosure', 'uc-board-pack', 'uc-incident-pmortem'],
     'bpo-services':             ['uc-bpo-sla-brief', 'uc-board-pack', 'uc-town-hall', 'uc-it-incident'],
     'telco':                    ['uc-telco-outage', 'uc-it-incident', 'uc-board-pack', 'uc-incident-pmortem'],

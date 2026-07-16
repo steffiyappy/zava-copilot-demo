@@ -319,6 +319,7 @@ ENTRY_USE_CASES = {
     'rare-earth': ['uc-scout-browser-portal', 'uc-scout-bulk-files', 'uc-scout-subagents'],
     'plantation': ['uc-scout-bulk-files', 'uc-scout-automation-monthly', 'uc-scout-loop-collab'],
     'food-fmcg': ['uc-scout-automation-monthly', 'uc-scout-bulk-files', 'uc-scout-subagents'],
+    'cosmetics': ['uc-scout-automation-monthly', 'uc-scout-bulk-files', 'uc-scout-subagents'],
     'rubber-gloves': ['uc-scout-browser-portal', 'uc-scout-bulk-files', 'uc-scout-heartbeat'],
     'retail-grocery': ['uc-scout-automation-monthly', 'uc-scout-bulk-files', 'uc-scout-loop-collab'],
     'hospitality-hotel': ['uc-scout-automation-monthly', 'uc-scout-browser-portal', 'uc-scout-loop-collab'],
