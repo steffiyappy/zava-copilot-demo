@@ -136,7 +136,7 @@ SUBSIDIARIES_MAP = {
         "Sriboga Raturaya", "Japfa Comfeed Indonesia",
     ],
     "cosmetics": [
-        "Paragon Technology and Innovation (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!)",
+        "Contoso Beauty Technology and Innovation (Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!)",
         "Mandom Indonesia (Gatsby, Pixy)",
         "Mustika Ratu", "Martina Berto (Sariayu)",
         "Kao Indonesia (Biore)", "L'Oréal Indonesia",
@@ -255,7 +255,7 @@ SUBSIDIARIES_MAP = {
         "INTI International (peer)",
         "Taylor's University (peer)",
         "Universiti Tunku Abdul Rahman (peer)",
-        "PT Paragon Technology and Innovation (training arm)",
+        "PT Contoso Beauty Technology and Innovation (training arm)",
     ],
     "power-utilities": [
         "Sarawak Energy", "Edra Power Holdings",
