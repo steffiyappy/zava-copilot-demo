@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<title>Contoso Gold Mining Co · M365 Copilot Executive Workshop</title>
+<style>
+:root{--radius:12px;--shadow:0 2px 8px rgba(0,0,0,.12);--brand:#C9A227;--brand2:#e5c76a}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1020;--panel:#0e1633;--panel2:#0a1228;--ink:#e2e8f0;--muted:#94a3b8;--border:#1e2d4a;--sidebar-a:#0e1530;--sidebar-b:#0a0f24;--accent:#3b82f6;--accent2:#60a5fa;--nav-hover:#172244;--badge-bg:#0a0f24;--cp-info:#0e1c2c;--cp-warn:#2b220e;--cp-bad:#2b1414;--cp-good:#0e2418;--code:#0d1535;--good:#22c55e;--warn:#f59e0b;--danger:#ef4444;--callout-info:#0e1c2c;--callout-warn:#2b220e;--callout-bad:#2b1414;--callout-good:#0e2418}}
+@media(prefers-color-scheme:light){:root{--bg:#f0f4f8;--panel:#ffffff;--panel2:#f0f6ff;--ink:#1a202c;--muted:#64748b;--border:#d1d9e6;--sidebar-a:#1e3a5f;--sidebar-b:#0f2545;--accent:#2563eb;--accent2:#1d4ed8;--nav-hover:#dbeafe;--badge-bg:#e8f0fe;--cp-info:#eff6ff;--cp-warn:#fffbeb;--cp-bad:#faf5e6;--cp-good:#f0fdf4;--code:#1e2b55;--good:#16a34a;--warn:#d97706;--danger:#C9A227;--callout-info:#eff6ff;--callout-warn:#fffbeb;--callout-bad:#faf5e6;--callout-good:#f0fdf4}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Inter","Segoe UI",system-ui,sans-serif;overflow-x:hidden;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+code,pre{font-family:"JetBrains Mono","Consolas",monospace;font-size:13px}
+.layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+aside{background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));border-right:1px solid var(--border);padding:24px 18px;position:sticky;top:0;height:100vh;overflow-y:auto;color:#e2e8f0}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.brand .logo{width:36px;height:36px;border-radius:9px;background:var(--brand);display:grid;place-items:center;font-weight:900;color:#fff;font-size:12px;letter-spacing:-.5px}
+.brand h1{font-size:15px;margin:0;letter-spacing:.2px;color:#fff}
+.tag{font-size:11px;color:#94a3b8;margin-bottom:18px}
+nav h3{font-size:10px;letter-spacing:1.2px;color:#94a3b8;text-transform:uppercase;margin:18px 0 8px}
+nav a{display:block;color:#e2e8f0;padding:8px 10px;border-radius:9px;font-size:14px;margin-bottom:2px;border:1px solid transparent}
+nav a:hover{background:rgba(255,255,255,.12);text-decoration:none;border-color:rgba(255,255,255,.2);color:#fff}
+main{padding:28px 48px 80px;max-width:1400px}
+.hero{background:radial-gradient(800px 320px at 0% 0%,rgba(0,48,135,.35),transparent 60%),radial-gradient(700px 280px at 100% 0%,rgba(0,100,200,.2),transparent 60%),var(--panel);border:1px solid var(--border);border-radius:18px;padding:30px;margin-bottom:24px}
+.hero .pill{display:inline-block;background:var(--badge-bg);border:1px solid var(--border);color:var(--accent2);font-size:11px;letter-spacing:1.2px;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.hero h2{font-size:30px;margin:0 0 8px;line-height:1.2}
+.hero p{color:var(--muted);margin:0;max-width:780px}
+.meta-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;color:var(--muted);font-size:13px}
+.meta-row span b{color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:18px}.card .lead{color:var(--muted);margin:0 0 14px}
+.card h4{margin:18px 0 6px;font-size:15px;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+ul{padding-left:20px;margin:8px 0}li{margin:4px 0}
+.modulehead{display:flex;align-items:center;gap:14px;margin:32px 0 12px}
+.modulehead .num{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;font-weight:800;font-size:20px;color:#fff}
+.modulehead h2{margin:0;font-size:22px}.modulehead small{display:block;color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.activity{border:1px solid var(--border);border-radius:12px;padding:18px;margin:14px 0;background:var(--panel)}
+.activity .head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.activity .num{background:var(--accent);color:#fff;font-weight:800;font-size:12px;padding:3px 9px;border-radius:6px}
+.activity .time{color:var(--muted);font-size:12px}
+.activity .file{font-size:12px;color:var(--accent2);background:var(--badge-bg);border:1px solid var(--border);padding:3px 9px;border-radius:6px}
+.activity h4{margin:0;font-size:16px;color:var(--ink);font-weight:600}
+.activity p{margin:6px 0;color:var(--muted);font-size:14px}
+.activity.bonus{border-left:4px solid var(--brand)}
+.task-step{background:var(--panel2);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:12px 14px;margin:10px 0}
+.task-step .step-label{font-size:11px;letter-spacing:1px;color:var(--accent2);text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.prompt{position:relative;background:var(--code);border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:10px;padding:14px 44px 14px 16px;margin:10px 0;font-family:"JetBrains Mono","Consolas",monospace;font-size:13px;color:#c9d6ff;white-space:pre-wrap;line-height:1.6}
+.prompt .copy{position:absolute;top:8px;right:8px;background:#1a2552;color:#e2e8f0;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s}
+.prompt .copy:hover{background:var(--brand);color:#fff}.prompt .copy.copied{background:var(--good);color:#0a0f24}
+.callout{border-left:4px solid var(--accent2);background:var(--callout-info);padding:12px 16px;margin:12px 0;border-radius:8px;color:var(--ink);font-size:14px}
+.callout.warn{border-color:var(--warn);background:var(--callout-warn)}
+.callout.good{border-color:var(--good);background:var(--callout-good)}.callout b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{color:var(--accent2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
+.agenda{display:grid;grid-template-columns:90px 1fr 100px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.agenda>div{padding:10px 14px;border-bottom:1px solid var(--border)}
+.agenda>div:nth-child(3n+1){color:var(--accent2);font-weight:700;background:var(--panel)}
+.agenda>div:nth-child(3n+3){color:var(--muted);text-align:right}
+.agenda>div:nth-last-child(-n+3){border-bottom:0}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
+.tool-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
+.tool-card .icon{font-size:22px;margin-bottom:6px}
+.tool-card h5{margin:0 0 4px;font-size:14px;color:var(--ink)}
+.tool-card p{margin:0;font-size:12px;color:var(--muted);line-height:1.5}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;letter-spacing:.5px}
+.badge.blue{background:rgba(0,100,200,.2);color:var(--accent2);border:1px solid var(--accent)}
+.badge.green{background:rgba(34,197,94,.15);color:var(--good);border:1px solid var(--good)}
+.badge.yellow{background:rgba(245,158,11,.15);color:var(--warn);border:1px solid var(--warn)}
+#lock{position:fixed;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(0,48,135,.5),transparent 60%),#0b1020;z-index:9999;display:flex;align-items:center;justify-content:center}
+.lock-box{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:40px 44px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lock-box .blogo{width:56px;height:56px;border-radius:14px;background:var(--brand);display:grid;place-items:center;font-weight:900;font-size:18px;color:#fff;margin:0 auto 18px}
+.lock-box h2{margin:0 0 6px;font-size:22px}.lock-box p{color:var(--muted);font-size:14px;margin:0 0 22px}
+.pw-wrap{position:relative;margin-bottom:12px}
+.lock-box input{width:100%;background:var(--badge-bg);border:1px solid var(--border);border-radius:10px;color:var(--ink);font-size:15px;padding:12px 44px 12px 16px;outline:none;font-family:inherit;transition:border-color .2s}
+.lock-box input:focus{border-color:var(--brand)}
+.pw-toggle{position:absolute!important;right:12px;top:50%;transform:translateY(-50%);background:none!important;border:none!important;width:auto!important;padding:0!important;cursor:pointer;opacity:.7;color:var(--muted)}
+.pw-toggle:hover{background:none!important;opacity:1}
+.pw-toggle svg{width:18px;height:18px;fill:currentColor;display:block}
+.lock-box button{width:100%;background:var(--brand);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;padding:13px;cursor:pointer}
+.lock-box .err{color:var(--danger);font-size:13px;margin-top:8px;min-height:18px}
+.lock-box .conf{font-size:11px;color:var(--muted);margin-top:14px}
+@media(max-width:900px){
+ .layout{grid-template-columns:1fr}
+ aside{display:none}
+ main{padding:16px 14px 60px;max-width:100%;min-width:0}
+ .hero{padding:20px 16px;border-radius:14px;background:var(--panel)}
+ .hero h2{font-size:20px;line-height:1.25}
+ .hero p{font-size:13.5px}
+ .hero .pill{font-size:10px}
+ .meta-row{gap:10px;font-size:12px}
+ .modulehead{gap:10px;margin:24px 0 10px}
+ .modulehead .num{width:38px;height:38px;font-size:15px;flex:0 0 auto}
+ .modulehead h2{font-size:17px}
+ .activity{padding:14px}
+ .activity .head{gap:8px}
+ .card{padding:16px;border-radius:12px}
+ .card h3{font-size:16px}
+ .card h4{font-size:13px}
+ .agenda{grid-template-columns:1fr}.agenda>div:nth-child(3n+3){text-align:left}
+ .tools-grid{grid-template-columns:1fr}
+ .prompt{font-size:12px;padding:42px 12px 12px;border-left-width:3px;overflow-wrap:anywhere;word-break:break-word}
+ .prompt .copy{top:6px;right:6px}
+ pre,code{overflow-wrap:anywhere;word-break:break-word;white-space:pre-wrap}
+ table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .lock-box{padding:28px 22px;border-radius:16px;max-width:92%}
+ .lock-box h2{font-size:19px}
+ img,svg{max-width:100%;height:auto}
+ h1,h2,h3,h4{overflow-wrap:anywhere}
+}
+@media(max-width:480px){
+ main{padding:12px 10px 50px}
+ .hero{padding:16px 14px}
+ .hero h2{font-size:18px}
+ body{font-size:13.5px}
+ .modulehead h2{font-size:16px}
+}
+</style><style id="bcard-css">
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:14px}
+.bcard{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px 18px;cursor:pointer;transition:all .18s;box-shadow:0 1px 3px rgba(0,0,0,.04);text-align:left;font-family:inherit;color:#111827;width:100%}
+.bcard:hover{transform:translateY(-2px);border-color:#2d2116;box-shadow:0 6px 18px rgba(45,33,22,.18)}
+.bcard .ico{font-size:22px;margin-bottom:6px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:#111827;line-height:1.3}
+.bcard p{margin:0;font-size:12.5px;color:#4b5563;line-height:1.4}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:14px;max-width:1100px;width:100%;padding:28px 32px;margin:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.modal-close{position:absolute;top:12px;right:16px;font-size:28px;background:transparent;border:none;cursor:pointer;color:#6b7280;line-height:1}
+.modal-close:hover{color:#111827}
+.modal h3{margin:0 0 12px;font-size:22px;color:#0f172a}
+</style><style id="ihh-override">
+/* ========== IHH-STYLE OVERRIDES ========== */
+.layout { grid-template-columns: 1fr !important; }
+aside { display:none !important; }
+main { max-width:100% !important; margin:0 !important; padding:0 !important; }
+
+/* Kill original hero + files inline (they now live inside tabs) */
+main > .modulehead,
+main > #files,
+main > #overview,
+main > #story { /* handled via wrapping */ }
+
+body.ihh-active { background:#f7fafa; }
+body.ihh-active .hero-ihh {
+  background:linear-gradient(135deg, #4A3728 0%, #C9A227 100%);
+  color:#fff; padding:36px 32px 60px; position:relative; overflow:hidden;
+  margin:0 0 0; border-radius:0;
+}
+body.ihh-active .hero-ihh::before {
+  content:''; position:absolute; right:-100px; top:-50px;
+  width:400px; height:400px; background:rgba(255,255,255,0.06); border-radius:50%;
+}
+body.ihh-active .hero-ihh::after {
+  content:''; position:absolute; right:80px; bottom:-80px;
+  width:200px; height:200px; background:rgba(255,255,255,0.04); border-radius:50%;
+}
+body.ihh-active .hero-ihh-inner {
+  max-width:1600px; margin:0 auto; position:relative; z-index:2;
+  padding:0 40px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+}
+body.ihh-active .hero-brand-ihh { display:flex; align-items:center; gap:18px; }
+body.ihh-active .hero-logo-ihh {
+  width:72px; height:72px; background:#fff; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 24px rgba(0,0,0,0.18); flex-shrink:0;
+  color:#4A3728; font-weight:900; font-size:26px; letter-spacing:-1px;
+}
+body.ihh-active .hero-brand-ihh h1 {
+  margin:0; font-size:13px; font-weight:600; letter-spacing:2px;
+  text-transform:uppercase; opacity:0.85; color:#fff;
+}
+body.ihh-active .hero-brand-ihh h2 {
+  margin:0; font-size:26px; font-weight:700; color:#fff;
+}
+body.ihh-active .brand-rule-ihh {
+  width:1px; height:46px; background:rgba(255,255,255,0.25); margin:0 2px;
+}
+body.ihh-active .hero-meta-ihh { font-size:13px; opacity:0.9; text-align:right; }
+body.ihh-active .hero-meta-ihh .pill {
+  display:inline-block; padding:4px 12px; background:rgba(255,255,255,0.15);
+  border-radius:12px; margin-left:8px; font-weight:600;
+}
+body.ihh-active .hero-title-ihh {
+  max-width:1600px; margin:32px auto 0; position:relative; z-index:2;
+  padding:0 40px;
+}
+body.ihh-active .hero-title-ihh h3 { margin:0 0 10px; font-size:38px; font-weight:700; line-height:1.2; color:#fff; }
+body.ihh-active .hero-title-ihh p { margin:0; font-size:17px; opacity:0.92; max-width:800px; color:#fff; }
+
+/* Sticky tab bar */
+body.ihh-active nav.tabs-ihh {
+  background:#fff; border-bottom:1px solid #e5d8a8;
+  padding:0; position:sticky; top:0; z-index:50;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+body.ihh-active nav.tabs-ihh::-webkit-scrollbar { display:none; }
+body.ihh-active nav.tabs-ihh .tabs-inner {
+  max-width:1600px; margin:0 auto; padding:0 40px;
+  display:flex; flex-wrap:wrap; gap:4px; border-bottom:2px solid #e5d8a8;
+}
+body.ihh-active nav.tabs-ihh .tab {
+  padding:14px 14px; background:transparent; border:none;
+  color:#5e7480; cursor:pointer; font-size:13px; font-weight:600;
+  border-bottom:3px solid transparent; margin-bottom:-2px;
+  display:flex; align-items:center; gap:8px; white-space:nowrap;
+  transition:all 0.2s; font-family:inherit;
+}
+body.ihh-active nav.tabs-ihh .tab:hover { color:#4A3728; background:#faf5e6; }
+body.ihh-active nav.tabs-ihh .tab.active {
+  color:#4A3728; border-bottom-color:#C9A227; background:#fff;
+}
+body.ihh-active nav.tabs-ihh .tab .tab-num {
+  min-width:24px; height:24px; padding:0 6px;
+  background:#e5d8a8; color:#4A3728;
+  border-radius:12px;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700;
+}
+body.ihh-active nav.tabs-ihh .tab.active .tab-num { background:#C9A227; color:#fff; }
+
+/* Main container after tabs */
+body.ihh-active .ihh-main { max-width:1600px; margin:0 auto; padding:32px 40px; }
+
+/* Widen modal popouts (was 780px in original) */
+body.ihh-active .modal { max-width:1200px !important; }
+body.ihh-active .modal-overlay { padding:40px 30px !important; }
+body.ihh-active .hero p { max-width:none !important; }
+
+/* Whitespace + typography polish */
+body.ihh-active .card { padding:22px 24px !important; margin:14px 0 !important; }
+body.ihh-active .card p, body.ihh-active .card li { font-size:15.5px !important; line-height:1.55 !important; }
+body.ihh-active .card h3 { font-size:20px !important; margin:2px 0 12px !important; }
+body.ihh-active .card h4 { font-size:16px !important; margin:8px 0 6px !important; }
+body.ihh-active .prompt { font-size:14.5px !important; line-height:1.5 !important; padding:16px 56px 16px 18px !important; }
+body.ihh-active .prompt .copy { top:8px !important; right:8px !important; z-index:2 !important; background:#4A3728 !important; color:#fff !important; border-color:transparent !important; padding:5px 12px !important; font-size:12px !important; font-weight:600 !important; }
+body.ihh-active .prompt .copy:hover { background:#2d2116 !important; }
+body.ihh-active .callout { padding:14px 18px !important; margin:8px 0 16px !important; font-size:15px !important; }
+body.ihh-active .activity { padding:14px 16px !important; margin:10px 0 !important; }
+body.ihh-active .activity .head { margin-bottom:6px !important; font-size:13px !important; }
+body.ihh-active .modulehead { padding:14px 18px !important; margin:0 0 12px !important; }
+body.ihh-active .modulehead h2 { font-size:22px !important; }
+body.ihh-active .modulehead h2 small { font-size:13px !important; }
+body.ihh-active .modulehead .num { width:44px !important; height:44px !important; font-size:20px !important; }
+
+/* Views */
+body.ihh-active .view-ihh { display:none; animation:fadeInIhh 0.4s ease; }
+body.ihh-active .view-ihh.active { display:block; }
+@keyframes fadeInIhh {
+  from { opacity:0; transform:translateY(8px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Prev/Next nav */
+body.ihh-active .lab-nav-ihh {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:32px; gap:16px;
+}
+body.ihh-active .lab-nav-ihh button {
+  background:#4A3728; color:#fff; border:none; padding:12px 20px;
+  border-radius:8px; cursor:pointer; font-size:14px; font-weight:600;
+  font-family:inherit; transition:background 0.2s;
+}
+body.ihh-active .lab-nav-ihh button:hover { background:#2d2116; }
+body.ihh-active .lab-nav-ihh button.secondary {
+  background:transparent; color:#5e7480; border:1px solid #e5d8a8;
+}
+body.ihh-active .lab-nav-ihh button.secondary:hover { background:#faf5e6; color:#2d2116; }
+body.ihh-active .lab-nav-ihh button:disabled { opacity:0.4; cursor:not-allowed; }
+
+/* Force original exercise sections to look right inside tab views */
+body.ihh-active .view-ihh > section { display:block !important; margin:0 !important; }
+body.ihh-active .view-ihh > section .modulehead { margin-top:8px !important; }
+
+/* Force main to show even before auth (auth JS toggles display) - keep original behaviour */
+</style></head>
+<body class="ihh-active">
+
+<div id="lock">
+<div class="lock-box">
+<div class="blogo">CG</div>
+<h2>Contoso Gold Mining · Copilot Immersion</h2>
+<p>M365 Copilot Executive Workshop<br/>Enter the session password to continue.</p>
+<div class="pw-wrap">
+<input autocomplete="off" id="pw" placeholder="Session password" type="password"/>
+<button aria-label="Show password" class="pw-toggle" id="pwToggle" onclick="togglePw()" title="Show password" type="button"><svg id="eye-svg" viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"></path></svg></button>
+</div>
+<button onclick="unlock()">Enter Workshop →</button>
+<div class="err" id="err"></div>
+<div class="conf">Confidential · For executive workshop use only</div>
+</div>
+</div>
+<div class="layout" id="main" style="display:none">
+<aside>
+<div class="brand"><div class="logo">CG</div><h1>M365 Copilot<br/>GM Immersion</h1></div>
+<div class="tag">Executive Immersion</div>
+<nav>
+<h3>Overview</h3>
+<a href="#files">📁 Sample files (start here)</a>
+<a href="#overview">About this session</a>
+<a href="#story">The Story</a>
+<h3>Exercises</h3>
+<a href="#ex1">1 · Daily Briefing</a>
+<a href="#ex3">2 · Meeting Minutes</a>
+<a href="#ex4">3 · Market &amp; Competitor Intel</a>
+<a href="#ex5">4 · Vendor Contract Book</a>
+<a href="#ex6">5 · Visual Infographic</a>
+<a href="#ex7">6 · HR CV Screener</a>
+<h3>Extras</h3>
+<a href="#extras">＋ Bonus</a>
+<h3>Resources</h3>
+<a href="#extras">Prompt tips</a>
+</nav>
+</aside>
+<main>
+<!--IHH-INJECT-START-->
+<header class="hero-ihh">
+<div class="hero-ihh-inner">
+<div class="hero-brand-ihh">
+<div class="hero-logo-ihh">CG</div>
+<div class="brand-rule-ihh"></div>
+<div>
+<h1>Contoso Gold Mining Co</h1>
+<h2>Microsoft 365 Copilot · GM Immersion</h2>
+</div>
+</div>
+<div class="hero-meta-ihh">
+<div>Workshop Edition · 2026</div>
+<div style="margin-top:6px"><span class="pill">6 Exercises</span></div>
+</div>
+</div>
+<div class="hero-title-ihh">
+<h3>One workday. Five Copilot moments. From morning briefing to signed-off minutes and a re-negotiated vendor book.</h3>
+<p>Signed-off meeting minutes and a re-negotiated vendor contract book, in one Copilot workday, without lifting an analyst.</p>
+</div>
+</header>
+<nav class="tabs-ihh"><div class="tabs-inner"><button class="tab active" data-view="intro"><span class="tab-num">0</span> Get Started</button>
+<button class="tab" data-view="files"><span class="tab-num">📁</span> Sample Files</button>
+<button class="tab" data-view="ex1"><span class="tab-num">1</span> Daily Briefing</button>
+<button class="tab" data-view="ex3"><span class="tab-num">2</span> Meeting Minutes</button>
+<button class="tab" data-view="ex4"><span class="tab-num">3</span> Market &amp; Competitor Intel</button>
+<button class="tab" data-view="ex5"><span class="tab-num">4</span> Vendor Contract Book</button>
+<button class="tab" data-view="ex6"><span class="tab-num">5</span> Visual Infographic</button>
+<button class="tab" data-view="ex7"><span class="tab-num">6</span> HR CV Screener</button>
+<button class="tab" data-view="extras"><span class="tab-num">＋</span> Bonus</button>
+</div></nav><div class="ihh-main"><div class="view-ihh active" id="view-intro"><section id="overview">
+<div class="hero">
+<h2>Contoso Gold Mining Co · M365 Copilot Executive Workshop</h2>
+<p>I run strategic commercial decisions and the technology stack across Contoso Gold Mining Co. This immersion shows how I move from overnight signals to board-ready outputs in one day with Microsoft 365 Copilot.</p>
+<div class="meta-row">
+<span><b>Audience</b> Pak Rizky and direct reports</span>
+<span><b>Format</b> Demo + guided hands-on</span>
+<span><b>Tool</b> Microsoft 365 Copilot</span>
+</div>
+</div>
+<div class="card">
+<h3>About this workshop</h3>
+<p class="lead">I use Copilot across commercial, operations, ESG, HR, and IT decisions. Every exercise lands a deliverable I can use the same day.</p>
+<h4>What I leave with</h4>
+<ul>
+<li>A daily briefing grounded on my inbox, calendar, Teams chats, and files</li>
+<li>A flagship meeting-minutes workflow: Teams Intelligent Recap plus Word template fill, grounded on the transcript</li>
+<li>A mining peer brief that tests the market view with Critique and Model Council</li>
+<li>A vendor contract book package: Excel working sheets and dashboard, a 5-slide board deck, and a 1-page memo, all aligned on the same numbers</li>
+<li>A one-page Safety First &amp; ESG Snapshot visual for townhalls, stakeholder visits, and the Bupati courtesy call</li>
+<li>A reusable HR CV Screener agent grounded on a SharePoint folder of 12 CVs</li>
+<li>Bonus moves for PowerPoint, Excel, Outlook, Word, Analyst, Mail Merge, and a board-pack Cowork power move</li>
+</ul>
+<h4>What this workshop is not</h4>
+<ul>
+<li>It is not a generic feature tour. Every exercise is set in Contoso Gold Mining Co context.</li>
+<li>It is not live operational advice. Every file is fictional Contoso sample data for safe practice.</li>
+</ul>
+</div>
+</section><section id="story">
+<div class="modulehead" style="margin-top:8px"><div class="num" style="background:linear-gradient(135deg,var(--brand),var(--accent));font-size:14px">▶</div><h2>The Story<small>One GM workday · five Copilot moments · signed-off minutes and a re-negotiated vendor book</small></h2></div>
+<div style="border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px;background:var(--panel)">
+<div style="background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));padding:22px 26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:center">
+<div>
+<p style="margin:0;font-size:10px;letter-spacing:2px;font-weight:700;color:var(--brand);text-transform:uppercase">Microsoft 365 Copilot</p>
+<h3 style="margin:4px 0 0;font-size:22px;font-weight:800;color:#fff;line-height:1.15">AI Assistant<br/>to AI Doer</h3>
+</div>
+<div>
+<p style="margin:0 0 4px;font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:var(--brand);text-transform:uppercase">Persona</p>
+<p style="margin:0;font-size:15px;font-weight:700;color:#fff">Pak Rizky Wijaksono</p>
+<p style="margin:3px 0 10px;font-size:12px;color:#94a3b8">GM Strategic Commercial &amp; IT · Contoso Gold Mining Co</p>
+<p style="margin:0 0 4px;font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:var(--brand);text-transform:uppercase">The Mission</p>
+<p style="margin:0;font-size:12px;color:#cbd5e1;line-height:1.55">Signed-off meeting minutes and a re-negotiated vendor contract book, in one Copilot workday, without lifting an analyst.</p>
+</div>
+<div style="padding:14px;background:rgba(255,255,255,.06);border-radius:10px;border:1px solid rgba(255,255,255,.1)">
+<p style="margin:0 0 5px;font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:var(--brand);text-transform:uppercase">The Punchline</p>
+<p style="margin:0;font-size:14px;font-weight:700;font-style:italic;color:#fff;line-height:1.4">One workday. Five Copilot moments. From morning briefing to signed-off minutes and a re-negotiated vendor book.</p>
+</div>
+</div>
+<div style="padding:22px 22px 18px">
+<h3 style="margin:0 0 16px;font-size:18px;font-weight:700;color:var(--ink)">Five Copilot moments across one workday <span style="font-size:12px;color:var(--muted);font-weight:500">+ 10+ bonus moves in the Bonus tab</span></h3><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px"><div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#4A3728;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto"><span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">01</span><span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Daily Briefing</span></div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto"><p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">I start with what moved overnight</p><p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Researcher</p><p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">I get a one-screen brief across rig availability, gold price moves, JV partner signals, board pack snippets, stakeholder meetings, and renewals that need my attention.</p></div>
+</div><div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#4A3728;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto"><span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">02</span><span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Meeting Minutes</span></div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto"><p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">I leave the room with decisions written down</p><p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Teams Recap + Word</p><p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">I turn a Weekly Operations &amp; Commercial Review transcript into an executive recap, a completed minutes template, and the follow-up actions I owe the team.</p></div>
+</div><div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#4A3728;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto"><span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">03</span><span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Market &amp; Competitor Intel</span></div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto"><p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">I stress-test the sector view before I brief the board</p><p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Researcher + Model Council</p><p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">I benchmark Indonesian gold peers, test the strategic implications, and convert the result into a one-page brief with one board question.</p></div>
+</div><div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#4A3728;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto"><span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">04</span><span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Vendor Contract Book</span></div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto"><p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">I move from 200+ contracts to a Top 10 renegotiation list</p><p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Excel + PowerPoint + Word + Cowork</p><p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">I quantify renewals, risk, and savings, then turn the same numbers into a board deck, a memo, and a CFO-ready follow-up package.</p></div>
+</div><div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#4A3728;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto"><span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">05</span><span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Visual Infographic</span></div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto"><p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">I package Safety First and ESG into one page</p><p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Copilot Create</p><p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">I generate a stakeholder-ready visual for townhalls, regulators, and community leaders with our gold, earth-brown, and slate brand palette.</p></div>
+</div><div style="min-height:230px;border:1px dashed var(--brand);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:rgba(201,162,39,.08)">
+<div style="background:#334155;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto"><span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">+</span><span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Bonus tab</span></div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto"><p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">10+ extra moves</p><p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">PowerPoint, Analyst, Excel, Outlook, Word, Mail Merge, board pack</p><p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">I keep moving with a vendor workbook power hour, three Analyst lenses, mail merge to Luwu stakeholders, Outlook drafting, Word interrogation, and a board-pack sprint.</p></div>
+</div></div></div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" disabled="">← Previous</button><button data-go="files">Next: Sample Files →</button></div></div><div class="view-ihh" id="view-files"><section id="files">
+<div class="modulehead"><div class="num">📁</div><h2>Sample files, start here<small>Download these first, then run the exercises</small></h2></div>
+<div class="card">
+<p class="lead">All files are fictional and labelled <b>Contoso</b>. Step 1: download everything. Step 2: upload <b>01-07</b> to OneDrive and <b>samples/CVs/</b> to a SharePoint document library. Step 3: wait about 2 minutes for Microsoft Graph to index the files. Then start Exercise 1.</p>
+<div style="margin:14px 0 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<a download="" href="samples.zip" id="dl-all-btn" style="display:inline-flex;align-items:center;gap:10px;padding:12px 22px;background:var(--brand);color:#fff;font-weight:700;font-size:15px;border-radius:10px;text-decoration:none;box-shadow:var(--shadow);transition:transform .12s ease">⬇️ Download all sample files (ZIP)</a>
+<span style="font-size:12.5px;color:var(--muted)">One click, all files in a single ZIP. Unzip, then upload the contents to OneDrive and SharePoint.</span>
+</div>
+<table>
+<tr><th>#</th><th>File</th><th>Type</th><th>Used in</th><th>Contains</th></tr>
+<tr><td>01</td><td><a href="samples/01 Contoso_Market_Brief.xlsx">01 Contoso_Market_Brief.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Ex 3</td><td>Gold sector peer benchmark, 2024-2028 market sizing, SWOT</td></tr>
+<tr><td>02</td><td><a href="samples/02 Contoso_Vendor_Contracts.xlsx">02 Contoso_Vendor_Contracts.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Ex 4, Bonus</td><td>210 vendor contracts across 17 categories, with pricing currency, expiry, SLA teeth, single-source and auto-renew flags</td></tr>
+<tr><td>03</td><td><a href="samples/03 Contoso_Mail_Merge_Recipients.xlsx">03 Contoso_Mail_Merge_Recipients.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Bonus (Mail Merge)</td><td>Stakeholder and community-leader mailing list</td></tr>
+<tr><td>04</td><td><a href="samples/04 Contoso_Brand_Guidelines.docx">04 Contoso_Brand_Guidelines.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 5, Bonus</td><td>Brand tone + GM comms template + press release structure</td></tr>
+<tr><td>05</td><td><a href="samples/05 Contoso_Board_Pack.docx">05 Contoso_Board_Pack.docx</a></td><td><span class="badge yellow">Word</span></td><td>Bonus (Word interrogate + Board pack in 30 min)</td><td>Mock quarterly Board pack, about 30 pages</td></tr>
+<tr><td>06</td><td><a href="samples/06 Contoso_Meeting_Transcript.docx">06 Contoso_Meeting_Transcript.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 2</td><td>Weekly Ops &amp; Commercial Review Teams meeting transcript</td></tr>
+<tr><td>07</td><td><a href="samples/07 Contoso_Meeting_Minutes_Template.docx">07 Contoso_Meeting_Minutes_Template.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 2</td><td>Blank meeting-minutes corporate template</td></tr>
+<tr><td>08</td><td><a href="samples/CVs/">samples/CVs/ (12 files)</a></td><td><span class="badge yellow">Word ×12</span></td><td>Ex 6</td><td>12 candidate CVs for Mine Supervisor, Senior Geologist, IT Infra Engineer, and Community Relations Lead roles</td></tr>
+</table>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="intro">← Get Started</button><button data-go="ex1">Next: Daily Briefing →</button></div></div><div class="view-ihh" id="view-ex1"><section id="ex1">
+<div class="modulehead"><div class="num">1</div><h2>Exercise 1 · Daily Briefing<small>Researcher · Critique</small></h2></div>
+<div class="callout good"><b>I start here every morning.</b> Open Microsoft 365 Copilot at <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a>, click <b>Researcher</b>, keep the model picker on <b>Auto</b>, and paste the prompt below.</div>
+<div class="card">
+<p class="lead">I want Researcher to read my inbox, calendar, Teams chats, and recent files, then hand me a structured briefing I can act on before the first meeting of the day.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 1.1</span><span class="file">🔍 Researcher · Auto (Critique)</span></div>
+<h4>Generate my GM daily briefing</h4>
+<div class="prompt">Create my daily briefing from emails, messages, documents, and meetings so I can prepare for the current workday. I am Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co. Prioritise commercial, operations, stakeholder, and IT signals that matter to me.
+
+Sections:
+
+1. Opening paragraph: greet me like an executive assistant would, with the most important theme for today.
+2. Key updates since yesterday: include overnight rig availability updates, any gold spot price move that matters, board pack items I should skim, JV partner emails from Nusantara-type counterparties, the upcoming Bupati courtesy call in Luwu Regency, and vendor renewal reminders.
+3. Suggested tasks for today: show only items assigned to me or clearly needing my decision. Cross-check that the task is still open.
+4. Unread email threads from the past week that likely need my reply: prioritise threads where I am on To/CC, @mentioned, or asked for a decision. Exclude automated messages. Show urgent or important items in a concise table and draft replies where useful.
+5. Meeting prep for today: upcoming meetings only, with Meeting (time, title, organiser), Topic Overview, and Suggested Preparations.
+
+Rules:
+- Start with a header: Daily briefing, Day, Date.
+- Follow with a sub-header stating the timestamp of generation.
+- Start each section with a meaningful emoji.
+- Use only explicitly stated facts, no speculation or prediction.
+- If a section has no data, say that clearly.
+- Cite the source for material claims where available.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>What success looks like:</b> in about 90 seconds I have one screen with overnight signals, today's tasks, urgent unread threads, and meeting prep, all grounded on real tenant signals.</div>
+</div>
+<div class="activity bonus">
+<div class="head"><span class="num">Bonus</span><span class="file">🔍 Researcher · follow-up</span></div>
+<h4>Drill into the single issue I must move today</h4>
+<p>After the briefing, I can ask Researcher for the deeper cut:</p>
+<div class="prompt">Take the highest-priority item from my daily briefing above. Pull together everything I have received on it in the last 14 days, including emails, chats, files, and meeting notes. Summarise the current state in 5 bullets, list the open decisions, and draft one short message I should send today to move it forward.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="files">← Sample Files</button><button data-go="ex3">Next: Meeting Minutes →</button></div></div><div class="view-ihh" id="view-ex3"><section id="ex3">
+<div class="modulehead"><div class="num">2</div><h2>Exercise 2 · Meeting Minutes<small>Teams Recap + Word template fill</small></h2></div>
+<div class="callout good"><b>This is the flagship.</b> I sit in 6 to 8 meetings a day. I want to leave a Weekly Operations &amp; Commercial Review with a clean recap, named decisions, actions, open risks, and a minutes pack that is ready before the next meeting starts.</div>
+<div class="card">
+<h3>2.1 · Teams Copilot, Intelligent Recap</h3>
+<p class="lead">Open <b>Teams → Calendar</b>, pick the recorded or transcribed <b>Weekly Operations &amp; Commercial Review</b>, open the <b>Recap</b> tab, and paste this into Copilot.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 2.1</span><span class="file">💬 Teams Copilot · Intelligent Recap</span></div>
+<h4>Produce the executive recap I need right now</h4>
+<div class="prompt">Recap this Weekly Operations &amp; Commercial Review meeting for me. I am Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co.
+
+Produce:
+1. A 5-bullet executive summary.
+2. Decisions taken, with owner.
+3. Action items, with owner and due date.
+4. The topics that took the most time.
+5. Direct commitments made to me.
+6. Unanswered questions that still need resolution.
+
+Tone: factual, concise, and executive-ready. Use only what is grounded in the meeting artifacts. If an owner or due date is missing, say [VERIFY].<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>Why I use this:</b> I get the decisions, owners, and unresolved questions in under a minute, without replaying the meeting.</div>
+</div>
+</div>
+<div class="card">
+<h3>2.2 · Word Copilot, fill the corporate minutes template</h3>
+<p class="lead">Open <code>07 Contoso_Meeting_Minutes_Template.docx</code> in Word, reference <code>/06 Contoso_Meeting_Transcript.docx</code> with <code>/</code>, and paste the prompt below.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 2.2</span><span class="file">📝 Word Copilot · template fill</span></div>
+<h4>Auto-fill the minutes pack from the transcript</h4>
+<div class="prompt">Open /07 Contoso_Meeting_Minutes_Template.docx and use /06 Contoso_Meeting_Transcript.docx as the source. Fill the template completely for the Weekly Operations &amp; Commercial Review meeting.
+
+Add a 3-line executive summary above the template, then complete these sections:
+- Attendees
+- Apologies
+- Agenda
+- Decisions, with owner and effective date
+- Actions, with owner, due date, and status
+- Risks raised
+- Open questions
+- Next meeting
+
+Rules:
+- Use only facts explicitly stated in the source, no invention.
+- If any field is missing, write [VERIFY].
+- Flag any confidential item clearly.
+- Keep the tone short, factual, and executive-ready.
+- Stop if you cannot anchor a claim to the transcript or the template.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout good"><b>The win:</b> the minutes are grounded on the transcript, not on my memory or a note-taker's reconstruction.</div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex1">← Daily Briefing</button><button data-go="ex4">Next: Market &amp; Competitor Intel →</button></div></div><div class="view-ihh" id="view-ex4"><section id="ex4">
+<div class="modulehead"><div class="num">3</div><h2>Exercise 3 · Market &amp; Competitor Intel<small>Researcher, Critique, Model Council, then Word</small></h2></div>
+<div class="callout good"><b>I use this after the morning brief.</b> I want the Indonesian gold-mining sector scan, the peer benchmark, the strategic moves that matter in the next 12 months, and a one-page note I can take into the board discussion.</div>
+<div class="card">
+<h3>3.1 · Critique on Auto</h3>
+<p class="lead">Open <b>Microsoft 365 Copilot → Researcher</b>. Keep the model picker on <b>Auto</b> so Critique can draft, self-review, and return a source-grounded answer.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 3.1</span><span class="file">🔍 Researcher · Auto (Critique)</span></div>
+<h4>Scan the Indonesian gold-mining landscape</h4>
+<div class="prompt">Research the Indonesian gold-mining sector for me. I am Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co.
+
+Benchmark these peers:
+- PT Aneka Tambang (Antam)
+- PT Amman Mineral Internasional
+- Merdeka Copper Gold
+- J Resources Asia Pasifik
+- Bumi Resources Minerals
+- PT Freeport Indonesia
+
+Focus areas:
+- Gold price outlook for 2026-2028
+- Ore grade benchmarks in g/t
+- All-in sustaining cost benchmarks
+- ESG posture
+- Community relations track record
+- Indonesian government royalty regime, including PKP2B and IUPK context where relevant
+- Local content rules
+- Downstream smelter policy
+
+For each peer, compare strategic focus, recent material moves, and the commercial or operating implications for Contoso Gold Mining Co. Cite every source. Flag any section where the evidence is thin.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout">Critique matters here because I want the citations checked before I act on the answer.</div>
+</div>
+</div>
+<div class="card">
+<h3>3.2 · Model Council · a fresh, independent prompt</h3>
+<p class="lead">Open a <b>new Researcher chat</b> (do not continue from Critique) and switch the model picker to <b>Model Council</b>. This gives me multiple frontier models answering the same strategic question from scratch, so their views are genuinely independent, not colour-coded critiques of one prior answer.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 3.2</span><span class="file">🧑‍⚖️ Researcher · Model Council · new chat</span></div>
+<h4>Ask, from a clean slate, for the three highest-impact strategic moves</h4>
+<div class="prompt">I am Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co, an Indonesian gold mining company operating an open-pit project in South Sulawesi with production ramp-up planned. My peer set includes PT Aneka Tambang (Antam), PT Amman Mineral Internasional, Merdeka Copper Gold, J Resources, PT Freeport Indonesia, and Bumi Resources Minerals.
+
+Given this peer landscape and the current gold price environment, what are the THREE highest-impact strategic moves Contoso Gold Mining Co should make in the next 12 months?
+
+For each move, give:
+- The rationale in one paragraph
+- The evidence, with citations to primary sources (company reports, ESDM releases, LSE / IDX filings, credible industry outlets)
+- The main downside risk
+- One 90-day starter action a GM Strategic Commercial &amp; IT can lead
+- The one internal function I must bring along (Finance, Operations, Legal, Community, or IT)
+
+Then, at the end, show me:
+- Where the models agree
+- Where the models disagree, and why
+- Which single recommendation is strongest on the evidence
+- One question that no model could confidently answer and that I should put to the board
+
+Do NOT reference any previous chat or critique. Answer from scratch on the facts.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout good"><b>Why I use it:</b> it surfaces genuine disagreement across frontier models on the same clean brief, which is exactly what I want before I commit capital or renegotiate partner expectations. Because this is a fresh chat, the models are not anchored on Critique's answer.</div>
+<div class="callout warn"><b>Why not chain it after Critique:</b> if I paste Critique's improved answer into Model Council, every model starts from the same anchor and I lose the diversity that makes Model Council useful. New question, new chat, clean slate.</div>
+</div>
+</div>
+<div class="card">
+<h3>3.3 · Export to Word and refine the board note</h3>
+<div class="activity">
+<div class="head"><span class="num">Task 3.3</span><span class="file">📝 Word Copilot · 1-page brief</span></div>
+<h4>Turn the research into a one-page brief</h4>
+<p>In the Researcher report, click <b>Export → Convert to Word</b>. Open the Word file and paste:</p>
+<div class="prompt">Based on this research, draft a 1-page brief for me, Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co.
+
+Structure:
+- Headline, 2 sentences with 1 key number
+- 3 competitor moves I should track
+- 3 implications for Contoso Gold Mining Co in the next 90 days
+- 1 question I should put to the board
+
+Tone: direct, board-ready, and concise. Maximum 350 words. Use [PLACEHOLDER] for anything not confirmed in the research. End with assumptions made and one open question.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex3">← Meeting Minutes</button><button data-go="ex5">Next: Vendor Contract Book →</button></div></div><div class="view-ihh" id="view-ex5"><section id="ex5">
+<div class="modulehead"><div class="num">4</div><h2>Exercise 4 · IT &amp; Vendor / Contract / Risk Analysis<small>Excel + PowerPoint + Word, or one Cowork alternative</small></h2></div>
+<div class="callout good"><b>This is my contract-book moment.</b> I own 200+ vendor contracts across software licences, drilling, camp services, transport, security, telecoms, plant leases, fuel, explosives, assay labs, environmental work, community programs, insurance, legal, and banking. I want renewals, risk, savings, and a Top 10 renegotiation list from one workbook.</div>
+<div class="card">
+<h3>4.1 · Copilot in Excel, Edit + Plan</h3>
+<p class="lead">Open <code>02 Contoso_Vendor_Contracts.xlsx</code> in Excel for the web. Keep the raw sheet untouched. Use <b>Edit</b> and <b>Plan</b> so Copilot shows the work order before it writes the new sheets.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 4.1</span><span class="file">📊 Copilot in Excel · Edit + Plan</span></div>
+<h4>Build the GM working sheets, glossary, and dashboard</h4>
+<div class="prompt">ASSUMPTION / RULE BLOCK, USE THESE EXACTLY:
+- Days to Expiry = Contract Expiry Date minus today.
+- Renewal Window flag = YES if Days to Expiry is less than or equal to 90, otherwise NO.
+- Risk Score is on a 0-12 scale and equals the sum of 4 sub-scores, each on a 0-3 scale: Single Source Risk, SLA Weakness Risk, Auto Renew Risk, FX Exposure Risk.
+- Priority Band = HIGH if Risk Score is 8-12, MEDIUM if Risk Score is 4-7, LOW if Risk Score is 0-3.
+- Savings Opportunity percent = 15% if Priority Band is HIGH and the contract is single-source, 10% if Priority Band is MEDIUM, 5% if Priority Band is LOW.
+
+I am Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co. Open 02 Contoso_Vendor_Contracts.xlsx and leave the raw sheet untouched.
+
+Create these new sheets:
+1. "GM Working - Vendor Book"
+2. "GM Working - Renegotiation Top 10"
+3. "GM Glossary - How to Read This"
+4. "GM Dashboard - Vendor Book"
+
+Detailed requirements:
+1. On "GM Working - Vendor Book", create one Excel Table with one row per contract and these calculated columns:
+- Contract ID
+- Vendor Name
+- Category
+- Annual Contract Value USD
+- Contract Expiry Date
+- Days to Expiry
+- Renewal Window flag
+- Single Source Risk sub-score, 0-3
+- SLA Weakness Risk sub-score, 0-3
+- Auto Renew Risk sub-score, 0-3
+- FX Exposure Risk sub-score, 0-3
+- Risk Score
+- Priority Band
+- Savings Opportunity percent
+- Estimated Annual Saving USD
+- Short Recommendation
+
+Source columns on the raw Contracts sheet (use these EXACT header names): Contract ID, Vendor Name, Category, Annual Contract Value USD, Pricing Currency, Contract Start Date, Contract Expiry Date, Auto-Renew (Y/N), SLA Present (Y/N), SLA Teeth, Single-Source (Y/N), Payment Terms, Country of Vendor, Contact Person, Notes.
+
+Sub-score logic (use EXACTLY these rules):
+- Single Source Risk = 3 if Single-Source (Y/N) = Y, else 0.
+- SLA Weakness Risk = 3 if SLA Teeth is Weak or Absent, else 0.
+- Auto Renew Risk = 3 if Auto-Renew (Y/N) = Y, else 0.
+- FX Exposure Risk = 3 if Pricing Currency is not IDR, else 0.
+
+Short Recommendation should read like plain English, for example: "Renewal due soon, high leverage, renegotiate now".
+
+2. On "GM Working - Renegotiation Top 10", create a table of the top 10 contracts by Estimated Annual Saving USD, highest first.
+
+3. On "GM Glossary - How to Read This", create two plain-English tables:
+- Table A: every column on "GM Working - Vendor Book", with Column Name, What it calculates, Why the GM cares.
+- Table B: every KPI or chart element on "GM Dashboard - Vendor Book", with Item, What it shows, Why it matters.
+
+4. On "GM Dashboard - Vendor Book", create:
+- Six KPI scorecards: Total Contracts, Contracts in Renewal Window, High Priority Count, Total Annual Value USD, Total Estimated Annual Saving USD, Single-Source Count.
+- One standard bar chart for the Top 10 renegotiation list.
+- One standard pie chart for contract category mix.
+- One sparkline column or sparkline block showing the renewal timeline by month.
+- Conditional formatting for Priority Band and Renewal Window.
+
+Use formulas such as SUMIFS and XLOOKUP where appropriate, keep the workbook filterable with Excel Tables, and do not use interactive dashboard features that depend on slicers recalculating the model. Show the plan first, then execute.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>What I want on screen:</b> one table I can filter, one Top 10 sheet I can walk into procurement with, one glossary for the rest of the team, and one board-style dashboard.</div>
+</div>
+</div>
+<div class="card">
+<h3>4.2 · Copilot in PowerPoint</h3>
+<p class="lead">PowerPoint can reference the Excel workbook directly. Use the workbook from 4.1 as the source so the numbers and charts stay aligned.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 4.2</span><span class="file">🎨 PowerPoint Copilot</span></div>
+<h4>Draft the 5-slide board deck</h4>
+<div class="prompt">Create a 5-slide board deck for me, Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co. Ground everything on the workbook from Task 4.1.
+
+Use BCG and McKinsey style principles:
+- One action title per slide.
+- Maximum 3 supporting bullets or one small evidence table.
+- Source caption at the foot of every slide.
+
+Slide structure:
+1. Cover: Vendor contract book, renewals, risk, and savings.
+2. Executive summary: the six KPI numbers that matter most.
+3. Top 10 renegotiation list: show the contracts with the biggest estimated annual saving.
+4. Risk exposure: single-source, weak SLA, auto-renew, and FX exposure themes.
+5. The ask: the decisions I want from the board and the next 90-day actions.
+
+Tone: direct, evidence-based, and board-ready. Use the workbook charts where helpful. Do not invent figures.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+<div class="card">
+<h3>4.3 · Copilot in Word</h3>
+<p class="lead">Word cannot reliably ground on the workbook. Save the deck from 4.2, then reference the deck in Word so the memo inherits the same numbers and chart story.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 4.3</span><span class="file">📝 Word Copilot · memo from deck</span></div>
+<h4>Draft the one-page memo from the deck, not from Excel</h4>
+<div class="prompt">Ground everything on the 5-slide vendor contract deck I just referenced. Draft a 1-page memo for me, Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co.
+
+Structure:
+- Headline: the single biggest contract-book story in one sentence
+- Summary table: Metric, Value, So what
+- Top 5 renegotiation opportunities
+- Top 4 risk themes
+- 90-day action plan with owner and by-when
+- One clear ask of the board
+
+Rules:
+- Use the deck as the authoritative source.
+- If a figure is missing, use [PLACEHOLDER].
+- Keep it to one page.
+- End with assumptions made and one open question.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+<div class="card">
+<h3>4.4 · Cowork alternative one-prompt path · Excel + Word + PowerPoint + HTML + email + meeting</h3>
+<p class="lead">If I want the whole package in one orchestrated run, I use Cowork. Same rule block as Task 4.1 so the numbers stay identical, and I get one extra output that Excel cannot give me: a self-contained HTML dashboard I can share offline.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 4.4</span><span class="file">👥 Cowork · alternative one-prompt path · Excel + Word + PowerPoint + HTML + email + meeting</span></div>
+<h4>Vendor Contract Book in a single Cowork run, all four artefacts, plus the email out and the meeting booked</h4>
+<div class="callout" style="background:#fef3c7;border-color:#f59e0b"><b>Use this when I do not have time to run 4.1, 4.2 and 4.3 end-to-end in three separate apps.</b> Tasks 4.1 to 4.3 walk me through Excel then PowerPoint then Word in-app so the audience sees Copilot behave differently in each surface. Task 4.4 produces the same four artefacts in one Cowork run, plus a self-contained HTML dashboard, plus the email to the CFO and Procurement Director, plus the vendor review meeting invite. Faster, less teaching value, more useful when I just need the outputs on the table before a real executive committee.</div>
+<div class="prompt">Cowork, run my full vendor contract book workflow for GM Strategic Commercial &amp; IT at Contoso Gold Mining Co in ONE go. Ground everything on /02 Contoso_Vendor_Contracts.xlsx. Show your plan first, let me edit any step, and pause before sending the email or scheduling the meeting.
+
+Story I am telling in all four artefacts: today my vendor book is 210 active contracts across 17 categories, worth millions of dollars a year, exposed to auto-renew traps, single-source risk, weak SLAs, and USD to IDR swings. I will (1) FLAG which contracts renew in the next 90 days, (2) SCORE risk on a consistent 0 to 12 scale, and (3) QUANTIFY the estimated annual saving from a Top 10 renegotiation list. Same numbers everywhere, so the CFO, Procurement Director, Legal Lead, and I are all reading the same story.
+
+Source columns on the raw Contracts sheet (use these EXACT header names): Contract ID, Vendor Name, Category, Annual Contract Value USD, Pricing Currency, Contract Start Date, Contract Expiry Date, Auto-Renew (Y/N), SLA Present (Y/N), SLA Teeth, Single-Source (Y/N), Payment Terms, Country of Vendor, Contact Person, Notes. Annual Contract Value USD is ALWAYS in USD regardless of Pricing Currency, so all rows are directly comparable.
+
+ASSUMPTION AND RULE BLOCK, USE EXACTLY THESE (this is the audit trail, do not invent your own thresholds)
+- Days to Expiry = Contract Expiry Date minus today.
+- Renewal Window flag = YES if Days to Expiry is less than or equal to 90, otherwise NO.
+- Risk Score is on a 0 to 12 scale and equals the sum of 4 sub-scores, each on a 0 to 3 scale: Single Source Risk, SLA Weakness Risk, Auto Renew Risk, FX Exposure Risk.
+- Sub-score rules: Single Source Risk = 3 if Single-Source (Y/N) = Y, else 0; SLA Weakness Risk = 3 if SLA Teeth is Weak or Absent, else 0; Auto Renew Risk = 3 if Auto-Renew (Y/N) = Y, else 0; FX Exposure Risk = 3 if Pricing Currency is not IDR, else 0.
+- Priority Band = HIGH if Risk Score is 8 to 12, MEDIUM if Risk Score is 4 to 7, LOW if Risk Score is 0 to 3.
+- Savings Opportunity percent = 15 percent if Priority Band is HIGH and the contract is single-source, 10 percent if Priority Band is MEDIUM, 5 percent if Priority Band is LOW.
+- Estimated Annual Saving USD = Annual Contract Value USD multiplied by Savings Opportunity percent.
+- Top 10 Renegotiation List = the 10 contracts with the highest Estimated Annual Saving USD, tie-break by Risk Score descending, then by Days to Expiry ascending.
+
+Do all of the following, in order:
+
+1. EXCEL, open /02 Contoso_Vendor_Contracts.xlsx (leave the raw contract sheet untouched) and add four new sheets. Use EXACTLY the same thresholds and formulas as Task 4.1 so this Cowork run and a Task 4.1 run produce identical numbers.
+   - "GM Working - Vendor Book" one Excel Table, one row per contract, with calculated columns: Contract ID, Vendor Name, Category, Annual Contract Value USD, Contract Expiry Date, Days to Expiry, Renewal Window flag, Single Source Risk, SLA Weakness Risk, Auto Renew Risk, FX Exposure Risk, Risk Score, Priority Band, Savings Opportunity percent, Estimated Annual Saving USD, Short Recommendation (one line), Category Sparkline (5-bar inline of contracts in same Category by band).
+   - "GM Working - Renegotiation Top 10" one row per contract in the Top 10: Rank, Vendor Name, Category, Annual Contract Value USD, Days to Expiry, Priority Band, Estimated Annual Saving USD, Short Recommendation. Sorted per the tie-break rule above.
+   - "GM Glossary - How to Read This" two tables (GM Working columns, Renegotiation Top 10 columns) with Section, Column Name, What it calculates (plain English), Why the GM cares. Every calculated column above must appear here.
+   - "GM Dashboard - Vendor Book" six KPI scorecards (Total Contracts, HIGH count, Renewals Next 90 Days count, Total Annual Contract Value USD, Estimated Annual Saving USD, FX Exposure percent with RAG), plus Top 10 Renegotiation bars (gold), Priority Band split donut (HIGH red, MEDIUM amber, LOW green), Renewals Next 90 Days list, Category concentration column chart, Top 10 Single-Source vendors bars. Add navigation links bottom-right to the Glossary sheet, working sheet, and Top 10 sheet.
+   Save as /Contoso_Vendor_Book_GM.xlsx.
+
+2. WORD, draft a 1-page GM memo "Contoso Gold Mining Co · Vendor Book Renegotiation, What we recommend the executive committee approves". Structure: headline (biggest saving driver in one line), Top 5 Renegotiation Targets (vendor + annual value USD + estimated saving USD + one-line why), Top 5 Risks to Retire (vendor + risk band + mitigation), total estimated annual saving USD, 90-day action plan with owners (GM Strategic Commercial &amp; IT, Procurement Director, Legal Lead), one clear ask of the executive committee. Ground every number on the Excel file you just created. Save as /Contoso_Vendor_Book_Memo.docx.
+
+3. POWERPOINT, draft a 5-slide BCG / McKinsey-style deck grounded on the memo AND the workbook. Action-title headlines, one message per slide, max 25 words body.
+   Slide 1 Cover
+   Slide 2 Executive summary (three headline numbers: HIGH-priority count, Estimated Annual Saving USD, Renewals Next 90 Days count)
+   Slide 3 The Top 10 Renegotiation List (horizontal bar chart of Estimated Annual Saving USD pasted from the workbook, plus one-line Short Recommendation next to each bar)
+   Slide 4 Risk concentration (Priority Band donut and Renewals Next 90 Days list from the workbook)
+   Slide 5 The ask (approve the Top 10 list, adopt the 90-day action plan, assign the FX exposure workstream)
+   Brand: gold #C9A227 + deep earth brown #4A3728 + slate #334155, restrained and executive. Save as /Contoso_Vendor_Book_Deck.pptx.
+
+4. HTML DASHBOARD, generate a self-contained /Contoso_Vendor_Book_Dashboard.html file that mirrors the Excel dashboard but adds a TOGGLE at the top: "View by Vendor" vs "View by Category". When the toggle is on Vendor, show the Top 10 Renegotiation bars, Priority Band donut, Renewals Next 90 Days list, and a filterable table of all contracts with search + column sort. When the toggle is on Category, show Category concentration bars, Top 10 Single-Source vendors, and the same filterable table grouped by Category. Six KPI scorecards stay visible on both views. Brand-coloured header band (gold + deep earth brown), all CSS inline, minimal vanilla JavaScript for the toggle / search / sort only (no external libraries, no CDN, no network calls, must open offline from OneDrive or a USB stick). Include a "How to read this dashboard" accordion at the bottom that mirrors the Excel Glossary sheet.
+
+5. EMAIL, draft an email in Outlook from me (Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT) to the CFO and Procurement Director, cc Legal Lead. Subject: "Vendor book renegotiation, decisions needed by Friday". Body: two-line headline (Total Annual Contract Value USD, Estimated Annual Saving USD), a "Top 5 renegotiation targets" bullet list, a "Top 5 risks to retire" bullet list, an "Ask" line ("approve the Top 10 list, adopt the 90-day action plan, sign off in the vendor review meeting"), and attach all four files. STOP, show me the draft to review before sending.
+
+6. MEETING, draft a 45-minute Outlook meeting invite: title "Vendor Book Renegotiation Review · Contoso Gold Mining Co". Time: Wednesday next week 10:00 to 10:45 Jakarta time. Attendees: CFO, Procurement Director, Legal Lead, me as organiser. Body: three-line agenda ("1. Approve the Top 10 renegotiation list", "2. Confirm the 90-day action plan and owners", "3. Assign the FX exposure workstream"), attach the memo and the deck. STOP, show me the invite to review before scheduling.
+
+Reminders: raw contract sheet untouched · every calculated column defined in the Glossary sheet · same numbers everywhere · HTML dashboard must be one file with no dependencies · pause before sending email or scheduling meeting so I can review both.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>Closing line for the audience:</b> "One Cowork prompt. Six things done: Excel dashboard, one-page memo, five-slide deck, offline HTML dashboard, executive email drafted, and the vendor review meeting booked. Cowork paused at both the send and the schedule step so I stayed in control. Same numbers across every artefact, flag the renewals, score the risk, quantify the saving. Raw contract sheet untouched."</div>
+<div class="callout warn"><b>Reality check on Cowork multi-artefact runs:</b> Cowork can plan, hand off between apps, produce Excel + Word + PowerPoint + HTML, draft the email and draft the meeting in one session. It WILL pause before sending or scheduling, that pause is a feature, not a bug. What varies is quality per surface: expect to review the Excel formulas (the reliability bar for SUMIFS and XLOOKUP on the vendor sheet is the same as Task 4.1, if it drifts, follow up with the same corrective prompt from 4.1). PowerPoint chart fidelity is best when Copilot pastes chart images from the workbook rather than rebuilding charts natively. HTML dashboard with vanilla JS toggle + client-side filter is well within reach, do NOT ask Cowork to add Chart.js or a CDN because the file must open offline.</div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex4">← Market &amp; Competitor Intel</button><button data-go="ex6">Next: Visual Infographic →</button></div></div><div class="view-ihh" id="view-ex6"><section id="ex6">
+<div class="modulehead"><div class="num">5</div><h2>Exercise 5 · Visual Infographic<small>Microsoft 365 Copilot Chat · Create</small></h2></div>
+<div class="callout good"><b>This is my external-story moment.</b> I use Copilot Create to turn Safety First and ESG into a one-page visual I can carry into a stakeholder townhall or a Bupati courtesy call.</div>
+<div class="card">
+<p class="lead">Open <b>Microsoft 365 Copilot Chat</b>, add the visual capability, choose <b>Create a visual</b>, set <b>Type: Infographic</b>, and paste the main prompt below.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 5</span><span class="file">🎨 Copilot Create · image output</span></div>
+<h4>Generate the Safety First &amp; ESG Snapshot</h4>
+<div class="prompt">Make a one-page infographic poster called "Safety First &amp; ESG Snapshot" for Contoso Gold Mining Co. Use brand colours gold #C9A227, deep earth brown #4A3728, and slate #334155. Vertical A4, fill the whole page.
+
+At the top:
+- Title: SAFETY FIRST &amp; ESG SNAPSHOT
+- Subtitle: Stakeholder townhall and Bupati courtesy call briefing
+
+Add 4 big-number boxes:
+- LTIFR
+- Community programs funded
+- Hectares under progressive rehab
+- Water recycled %
+
+Add 3 pillar cards:
+1. People
+2. Community
+3. Environment
+
+Add an execution schedule table with timeline, owner, and milestone.
+Add simple risks-to-watch icons.
+Add a footer ribbon.
+
+Style: clean, confident, corporate, no stock photos, and no empty band at the bottom.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>Tip:</b> if the layout leaves empty space, ask Create to extend the footer ribbon, widen the pillar cards, or make the execution schedule larger.</div>
+</div>
+<h3 style="margin:24px 0 6px;font-size:16px;font-weight:700">Three alternate visual angles</h3>
+<p class="lead">I can re-roll the same data story for community, production, or townhall moments.</p>
+<div class="activity">
+<div class="head"><span class="num">Alt 5.1</span><span class="file">🎨 Copilot Create · image output</span></div>
+<h4>Awak Mas Community Impact one-pager</h4>
+<div class="prompt">Make a one-page infographic called "Awak Mas Community Impact" for Contoso Gold Mining Co. Use gold, earth brown, and slate. Include education, health, roads, livelihoods, and local-procurement highlights. Add 4 big numbers, 3 community pillars, 1 short timeline, and a footer ribbon for stakeholder engagement.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">Alt 5.2</span><span class="file">🎨 Copilot Create · image output</span></div>
+<h4>Gold Production Ramp-up poster</h4>
+<div class="prompt">Make a one-page poster called "Gold Production Ramp-up" for Contoso Gold Mining Co. Show current state, ramp-up milestones, bottlenecks, owner actions, and 4 big-number boxes. Use standard icons, no stock photos, and keep the visual sharp enough for a weekly ops room wall.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">Alt 5.3</span><span class="file">🎨 Copilot Create · image output</span></div>
+<h4>Townhall thank-you poster</h4>
+<div class="prompt">Make a one-page townhall thank-you poster for Contoso Gold Mining Co. Use a warm corporate style in gold, earth brown, and slate. Include a thank-you headline, 3 key takeaways, a small next-steps strip, and a footer ribbon for the GM office.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex5">← Vendor Contract Book</button><button data-go="ex7">Next: HR CV Screener →</button></div></div><div class="view-ihh" id="view-ex7"><section id="ex7">
+<div class="modulehead"><div class="num">6</div><h2>Exercise 6 · HR CV Screener<small>Microsoft 365 Copilot · Agent Builder · grounded on the 12 CVs</small></h2></div>
+<div class="callout good"><b>One agent, four hiring lines.</b> I need a shared HR agent that can screen Mine Site Supervisors, Senior Geologists, IT Infrastructure Engineers, and Community Relations Leads from a SharePoint folder in minutes.</div>
+<div class="card">
+<h3>6.1 · One prompt to create the agent</h3>
+<p class="lead">Open <b>Microsoft 365 Copilot Chat</b>, click <b>Create agent</b>, and paste the prompt below. Replace the placeholder link with the actual SharePoint or OneDrive folder before you submit.</p>
+<div class="activity">
+<div class="head"><span class="num">Task 6.1</span><span class="file">Agent Builder · Describe + Knowledge</span></div>
+<h4>Describe the agent, the rules, the tone, and the knowledge source in one go</h4>
+<div class="prompt">Create a "Contoso Gold Mining Co - Talent Screening Agent" for the HR and business hiring teams.
+
+Purpose: help recruiters and hiring managers screen CVs in seconds for these roles: Mine Site Supervisor x3, Senior Geologist x3, IT Infrastructure Engineer x3, Community Relations Lead x3.
+
+Source folder: 12 CVs with these candidate names:
+Dewi Saputra, Mega Mahendra, Fajar Hidayat, Hesti Wibowo, Citra Wijaya, Fajar Hidayat (2nd), Budi Anggara, Andi Nugroho, Lia Mahendra, Zahra Pramesti, Joko Permata, Galih Setiawan.
+
+Tone: friendly, direct, structured, evidence-led.
+
+Rules:
+- Only answer from the CVs in the knowledge source.
+- Never invent qualifications, years of experience, or certifications.
+- Always cite the source file name for every claim.
+- If a detail is missing, say "not stated in CV".
+- If a role brief is uploaded during chat, score every candidate against it.
+- Never rank candidates by name, gender, age, or nationality.
+
+Scoring guidance by role:
+- Mine Site Supervisor: multi-pit or multi-shift operations, contractor coordination, safety leadership, production discipline.
+- Senior Geologist: grade control, ore reserve or resource modelling, drill program interpretation, reporting quality.
+- IT Infrastructure Engineer: network, server, end-user support, site resilience, and remote-site reliability.
+- Community Relations Lead: stakeholder mapping, grievance handling, local-government engagement, and community-program delivery.
+
+When you shortlist candidates, use a table with Name, Target Role, Key Strengths, Fit Score (1-5), Risks to test, and Source file.
+
+Knowledge source: SharePoint folder holding the 12 CVs.
+Folder link: [PASTE YOUR CVs FOLDER LINK HERE]
+
+Once created, share the agent with the HR Recruiters and Functional Hiring Managers security groups.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>Why I build the agent:</b> once it is grounded on the folder, the whole team can reuse the same screening logic without re-uploading files.</div>
+</div>
+</div>
+<div class="card">
+<h3>6.2 · Test with three prompts, then publish</h3>
+<p class="lead">Run each test one at a time. If the agent drifts, tighten the instructions, then test again before you publish.</p>
+<div class="activity">
+<div class="head"><span class="num">Test 1</span><span class="file">Shortlist by role family</span></div>
+<h4>Find the strongest Mine Site Supervisor candidates</h4>
+<div class="prompt">Which candidates in this folder have the strongest Mine Site Supervisor profile? Give me the top 3 with one quoted reason each and cite the source file.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">Test 2</span><span class="file">Role-specific scored shortlist</span></div>
+<h4>Score against a real geologist brief</h4>
+<div class="prompt">I need to hire a Senior Geologist for a growth-stage gold project. Score the top 3 candidates 1-5 on grade control, ore reserve or resource modelling, field supervision, cross-functional communication, and report quality. Return a table with sources.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">Test 3</span><span class="file">Head-to-head compare</span></div>
+<h4>Decide who I interview first</h4>
+<div class="prompt">Compare CV_02_Mega_Mahendra and CV_07_Budi_Anggara side by side for an IT Infrastructure Engineer role supporting a remote mine site. Which one should I interview first, and why?<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout warn"><b>Reality check:</b> the first query of the day may take longer while the agent reads the folder. If a citation does not resolve, check that the CVs are in the SharePoint library, not only in a local folder.</div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex6">← Visual Infographic</button><button data-go="extras">Next: Bonus →</button></div></div><div class="view-ihh" id="view-extras"><section id="extras">
+<div class="modulehead"><div class="num">B</div><h2>Bonus · Extra Exercises &amp; Prompt Tips<small>10+ moves across PowerPoint, Excel, Analyst, Outlook, Word, Mail Merge, and board-pack prep</small></h2></div>
+<div class="callout good"><b>I use these when I want more range in the room.</b> Click any card to open the full walkthrough.</div>
+<div class="bonus-grid"><button class="bcard" onclick="openModal('bx-4321b14a')"><span class="ico">💡</span><h4>PowerPoint, Corporate Template, BCG/McKinsey Style</h4><p>Build a gold-mining strategy deck from the Board pack in consulting style, with action titles and source captions.</p></button><button class="bcard" onclick="openModal('bx-687f3b38')"><span class="ico">📊</span><h4>Excel Power Hour</h4><p>Run Chat, Edit, and Plan on the vendor workbook without touching the raw sheet.</p></button><button class="bcard" onclick="openModal('bx-2a96c85f')"><span class="ico">📈</span><h4>Analyst Agent, GM / CFO / COO lenses</h4><p>Test the same vendor workbook through strategy, finance, and operating-risk perspectives.</p></button><button class="bcard" onclick="openModal('bx-7e97271b')"><span class="ico">📄</span><h4>Personalised Mail Merge</h4><p>Draft tailored letters for stakeholders and community leaders in Luwu Regency.</p></button><button class="bcard" onclick="openModal('bx-1257371f')"><span class="ico">🧪</span><h4>Outlook, catch up on a long thread</h4><p>Use Copilot to reduce a long email chain to the few decisions and asks that matter.</p></button><button class="bcard" onclick="openModal('bx-59d804f3')"><span class="ico">📅</span><h4>Outlook, draft an executive reply</h4><p>Reply as Pak Rizky with the right tone, a clear position, and a realistic next step.</p></button><button class="bcard" onclick="openModal('bx-22a873d3')"><span class="ico">🤝</span><h4>Word, interrogate a long Board pack</h4><p>Find the biggest risks, contradictions, and missing asks inside the sample Board pack.</p></button><button class="bcard" onclick="openModal('bx-9ea8fd40')"><span class="ico">🚀</span><h4>Board pack in 30 minutes</h4><p>Use Cowork to assemble a board-ready quarterly pack before the meeting cycle catches up with me.</p></button><button class="bcard" onclick="openModal('bx-6c105361')"><span class="ico">🗂️</span><h4>Prompt tips for every Copilot surface</h4><p>Use the GCSE framework and mining-flavoured prompt starters I can copy straight into Copilot.</p></button></div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex7">← HR CV Screener</button><button data-go="intro">Back to start ↺</button></div></div></div>
+<!--IHH-INJECT-END-->
+</main>
+</div>
+<div class="modal-overlay" id="modal-bx-4321b14a"><div class="modal"><button class="modal-close" onclick="closeModal('bx-4321b14a')">×</button><h3>Bonus · PowerPoint, Corporate Template, BCG/McKinsey Style</h3>
+<div class="callout good"><b>When I use this:</b> I need a board-ready strategy deck fast, but I still want consulting-grade action titles and a clean corporate template.</div>
+<div class="card">
+<h3>PowerPoint draft from the Board pack</h3>
+<p class="lead">Open a blank <b>PowerPoint</b>, load the corporate template if you have one, reference <code>/05 Contoso_Board_Pack.docx</code>, and paste the prompt below.</p>
+<div class="activity">
+<div class="head"><span class="num">Bonus 1</span><span class="file">🎨 PowerPoint Copilot</span></div>
+<h4>Draft the gold-mining strategy deck</h4>
+<div class="prompt">Create an 8-slide quarterly board strategy deck for Contoso Gold Mining Co. I am Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT. Ground every slide on /05 Contoso_Board_Pack.docx and keep the currently applied corporate template.
+
+Rules:
+- Every slide title must be an action title, a full sentence that is the conclusion.
+- Every slide has exactly 3 supporting bullets or one small evidence table.
+- Add a source caption at the foot of every slide.
+- No decorative imagery.
+
+Slide structure:
+1. Cover
+2. Executive snapshot
+3. Gold price and market context
+4. Operations and commercial performance
+5. Vendor and cost pressure themes
+6. ESG and stakeholder posture
+7. Risks and mitigations
+8. The ask
+
+Tone: direct, evidence-based, no jargon. Use [PLACEHOLDER] if the source does not confirm a number.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">Bonus 2</span><span class="file">🎨 Self-critique pass</span></div>
+<h4>Tighten the deck after the first draft</h4>
+<div class="prompt">Review this deck like a strategy engagement manager. Score every action title 1-5, rewrite any title that is not the conclusion, flag any slide where the body does not prove the title, and mark one slide to cut if it does not change a decision. Then apply the edits.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="modal-bx-687f3b38"><div class="modal"><button class="modal-close" onclick="closeModal('bx-687f3b38')">×</button><h3>Bonus · Excel Power Hour</h3>
+<div class="callout good"><b>My question:</b> what is actually happening in the contract data, without me writing formulas from scratch?</div>
+<div class="card">
+<h3>Chat, Edit, Plan on the vendor workbook</h3>
+<div class="activity">
+<div class="head"><span class="num">Chat</span><span class="file">📊 Excel Copilot</span></div>
+<h4>Ask Copilot for the first read</h4>
+<p>Open <code>02 Contoso_Vendor_Contracts.xlsx</code> and paste:</p>
+<div class="prompt">Analyse this vendor contract workbook for me. Show the categories with the largest total contract value, the contracts expiring in the next 90 days, and the vendors with the highest concentration risk. Return a 2-line executive summary, then a table of the contracts I should read first.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">Edit</span><span class="file">✏️ Excel Copilot</span></div>
+<h4>Make one controlled change</h4>
+<div class="prompt">On the GM Working - Vendor Book sheet, replace any verbose priority text with plain-text HIGH, MEDIUM, or LOW and apply matching conditional formatting. Do not change any other cells. Show me the diff first.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">Plan</span><span class="file">📋 Excel Copilot</span></div>
+<h4>Let Copilot propose the transformation first</h4>
+<div class="prompt">Plan a new sheet called "GM Exec View" that summarises Total Annual Value USD, Renewal Window count, High Priority count, and Estimated Annual Saving USD by category. Add a sparkline trend area for upcoming expiries by month. Show me the plan first, then execute.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="modal-bx-2a96c85f"><div class="modal"><button class="modal-close" onclick="closeModal('bx-2a96c85f')">×</button><h3>Bonus · Analyst Agent, Multiple Perspectives on the Same Vendor Workbook</h3>
+<div class="callout good"><b>I use this when the same data needs three executive lenses.</b> Open the built-in <b>Analyst</b> agent, upload <code>02 Contoso_Vendor_Contracts.xlsx</code>, then run the three prompts below.</div>
+<div class="card">
+<div class="activity">
+<div class="head"><span class="num">GM</span><span class="file">🤖 Analyst · GM lens</span></div>
+<h4>Which moves lift my negotiating position fastest?</h4>
+<div class="prompt">You are analysing the vendor workbook for Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co. Show the top 10 contracts where the combination of renewal timing, single-source risk, and estimated saving gives me the strongest renegotiation leverage in the next 90 days. End with the 3 moves I should make first.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">CFO</span><span class="file">🤖 Analyst · CFO lens</span></div>
+<h4>Where is the financial risk hiding?</h4>
+<div class="prompt">Same workbook. Now act as a CFO analyst. Identify the categories with the highest annual value at risk, the largest FX exposure pockets, and the contracts where auto-renew plus weak SLA creates avoidable value leakage. Show me the 3 biggest finance risks and the 3 quickest savings interventions.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+<div class="activity">
+<div class="head"><span class="num">COO</span><span class="file">🤖 Analyst · COO lens</span></div>
+<h4>Which contracts create operational fragility?</h4>
+<div class="prompt">Same workbook. Now act as a COO analyst. Cluster the contracts into operationally critical, commercially important, and low-dependency groups. Highlight where a contract failure would hit production, camp, logistics, security, or telecoms first. Recommend the 3 operational mitigations I should assign this month.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="modal-bx-7e97271b"><div class="modal"><button class="modal-close" onclick="closeModal('bx-7e97271b')">×</button><h3>Bonus · Personalised Mail Merge</h3>
+<div class="callout good"><b>The play:</b> let Cowork draft tailored stakeholder letters for Luwu Regency recipients, then stop at Outlook drafts so I stay in control.</div>
+<div class="card">
+<div class="activity">
+<div class="head"><span class="num">Merge</span><span class="file">👥 Cowork · Outlook drafts</span></div>
+<h4>Draft one personalised letter per stakeholder</h4>
+<div class="prompt">Cowork, run a personalised stakeholder mail merge for me, Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co.
+
+Sources:
+- /03 Contoso_Mail_Merge_Recipients.xlsx
+- /04 Contoso_Brand_Guidelines.docx
+
+For each recipient:
+1. Draft a 180-word note in my voice using the approved GM communications template.
+2. Tailor the note to the recipient's role, location, and key highlight.
+3. If the recipient is a community leader in Luwu Regency, acknowledge local partnership and practical next steps.
+4. Create an Outlook draft only, do not send.
+5. Sign off as Pak Rizky Wijaksono.
+
+When done, return a summary table with Recipient, Role, Subject, and Draft link. Stop before sending anything.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="modal-bx-1257371f"><div class="modal"><button class="modal-close" onclick="closeModal('bx-1257371f')">×</button><h3>Bonus · Outlook, catch up on a long thread</h3>
+<div class="activity">
+<div class="head"><span class="num">Outlook A</span><span class="file">📧 Outlook Copilot</span></div>
+<h4>Reduce a long thread to the few decisions that matter</h4>
+<div class="prompt">Summarise this email thread for me, Pak Rizky Wijaksono. Show: the key issue, what decision is being asked of me, what each party wants, the deadlines, the unresolved questions, and the single reply I should send next. Keep it factual and concise.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="modal-bx-59d804f3"><div class="modal"><button class="modal-close" onclick="closeModal('bx-59d804f3')">×</button><h3>Bonus · Outlook, draft an executive reply</h3>
+<div class="activity">
+<div class="head"><span class="num">Outlook B</span><span class="file">📧 Outlook Copilot</span></div>
+<h4>Draft the reply with the right tone</h4>
+<div class="prompt">Draft a reply to this thread on my behalf. I am Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT at Contoso Gold Mining Co. Confirm what we can support, push back politely on anything unrealistic, propose a practical next step, and sign off in a warm but direct executive tone. Maximum 4 short paragraphs.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="modal-bx-22a873d3"><div class="modal"><button class="modal-close" onclick="closeModal('bx-22a873d3')">×</button><h3>Bonus · Word, interrogate a long Board pack</h3>
+<div class="activity">
+<div class="head"><span class="num">Word</span><span class="file">📝 Word Copilot</span></div>
+<h4>Find the risk inside the Board pack</h4>
+<p>Open <code>05 Contoso_Board_Pack.docx</code> and paste:</p>
+<div class="prompt">Read this document end to end for me. Identify: the 3 critical risks, anything inconsistent between sections, anything a GM should ask the author to clarify, and the 3 questions I should take into the Board meeting. Quote the exact sentence that anchors each finding.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="modal-bx-9ea8fd40"><div class="modal"><button class="modal-close" onclick="closeModal('bx-9ea8fd40')">×</button><h3>Bonus · Board pack in 30 minutes</h3>
+<div class="callout"><b>Scenario:</b> the quarterly Board meeting is tomorrow morning. I need a board-ready pack tonight, grounded on the sample files, with a decision trail I can stand behind.</div>
+<div class="activity">
+<div class="head"><span class="num">Board Pack</span><span class="file">🚀 Cowork · multi-app</span></div>
+<h4>Build the quarterly board pack fast</h4>
+<div class="prompt">Cowork, prepare a quarterly Board pack for Contoso Gold Mining Co. I am Pak Rizky Wijaksono, GM Strategic Commercial &amp; IT.
+
+Use these sources:
+- /01 Contoso_Market_Brief.xlsx
+- /02 Contoso_Vendor_Contracts.xlsx
+- /05 Contoso_Board_Pack.docx
+
+Generate:
+1. A board-ready executive summary.
+2. A concise market and competitor page.
+3. A vendor risk and savings page.
+4. A 5-slide Board deck draft.
+5. A short email to the Board secretary with the draft pack attached, but do not send it.
+
+Rules:
+- Flag every assumption.
+- Use [PLACEHOLDER] for missing data.
+- Keep the tone board-ready and direct.
+- Stop before sending anything externally.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="modal-bx-6c105361"><div class="modal"><button class="modal-close" onclick="closeModal('bx-6c105361')">×</button><h3>Prompt tips for every Copilot surface</h3>
+<div class="card">
+<h4>The GCSE prompt framework</h4>
+<div class="prompt"><b>G</b>oal, what I want at the end
+<b>C</b>ontext, who I am, what decision I need, and the constraints
+<b>S</b>ource, the file or data I want Copilot to ground on
+<b>E</b>xpectations, format, length, and what to include or avoid
+
+Two sentences I add often:
+"Do not invent anything. Use [PLACEHOLDER] for anything not in the source."
+"End with assumptions made and one open question."<button class="copy" onclick="cp(this)">Copy</button></div>
+<h4>Ready-to-use mining prompt starters</h4>
+<div class="task-step"><div class="step-label">Researcher</div><div class="prompt">Research [topic] in the Indonesian gold-mining sector. Compare [3-4 peers]. Cite every source. Flag any section where the evidence is thin.<button class="copy" onclick="cp(this)">Copy</button></div></div>
+<div class="task-step"><div class="step-label">Excel</div><div class="prompt">Analyse [sheet name] in this workbook. Calculate [metric], highlight the highest-risk rows, and add a 2-sentence executive read-out at the top.<button class="copy" onclick="cp(this)">Copy</button></div></div>
+<div class="task-step"><div class="step-label">Word</div><div class="prompt">Draft a 1-page brief for me. Cover: headline, 3 findings, 3 actions, and one ask of the Board. Maximum 350 words. Do not invent data.<button class="copy" onclick="cp(this)">Copy</button></div></div>
+<div class="task-step"><div class="step-label">PowerPoint</div><div class="prompt">Draft an 8-slide strategy deck on [topic]. One message per slide. Make every title the conclusion. Add a source caption at the foot of every slide.<button class="copy" onclick="cp(this)">Copy</button></div></div>
+<div class="task-step"><div class="step-label">Cowork</div><div class="prompt">Cowork, analyse [source file], draft [Word output], draft [email], schedule [meeting], and stop before sending anything externally.<button class="copy" onclick="cp(this)">Copy</button></div></div>
+</div>
+</div>
+</div>
+<div style="margin-top:48px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:12px;text-align:center">
+ Contoso Gold Mining Co · M365 Copilot GM Immersion · Session ID 112e253a-7fd6-48b4-80b3-e89c7d7914fd
+</div>
+
+<script>
+try{localStorage.removeItem('unlk');}catch(e){}
+const HASH='6e8ce1f6059cc7bf683f822216c86cad137f0072636b51e9085139c26c2b17f5';
+async function sha256(s){const b=new TextEncoder().encode(s);const d=await crypto.subtle.digest('SHA-256',b);return Array.from(new Uint8Array(d)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function unlock(){
+ const v=document.getElementById('pw').value;
+ const h=await sha256(v);
+ if(h===HASH){
+ document.getElementById('lock').style.display='none';
+ document.getElementById('main').style.display='grid';
+ sessionStorage.setItem('unlk','1');
+ }else{
+ const e=document.getElementById('err');e.textContent='Incorrect password. Please try again.';
+ setTimeout(()=>e.textContent='',3000);document.getElementById('pw').value='';
+ }
+}
+if(sessionStorage.getItem('unlk')==='1'){
+ document.getElementById('lock').style.display='none';
+ document.getElementById('main').style.display='grid';
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock();});
+const EYE_OPEN='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256A144 144 0 1 1 144 256a144 144 0 1 1 288 0zM288 192c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>';
+const EYE_OFF='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"/></svg>';
+function togglePw(){
+ const i=document.getElementById('pw'),b=document.getElementById('pwToggle');
+ if(i.type==='password'){i.type='text';b.innerHTML=EYE_OPEN;b.setAttribute('aria-label','Hide password');b.setAttribute('title','Hide password');}
+ else{i.type='password';b.innerHTML=EYE_OFF;b.setAttribute('aria-label','Show password');b.setAttribute('title','Show password');}
+ i.focus();
+}
+function cp(btn){
+ try {
+  const parent = btn.parentElement;
+  const clone = parent.cloneNode(true);
+  const b = clone.querySelector('button.copy'); if (b) b.remove();
+  const txt = clone.textContent.trim();
+  const done = () => { btn.textContent='Copied!'; btn.classList.add('copied'); setTimeout(()=>{btn.textContent='Copy'; btn.classList.remove('copied');}, 2000); };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(txt).then(done, () => fallback(txt, done));
+  } else { fallback(txt, done); }
+ } catch(e) { btn.textContent='Copy failed'; setTimeout(()=>btn.textContent='Copy', 2000); }
+}
+function fallback(txt, done){
+ const ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select();
+ try { document.execCommand('copy'); done(); } catch(e){} finally { document.body.removeChild(ta); }
+}
+</script>
+<script id="bcard-js">
+function openModal(id){var el=document.getElementById('modal-'+id);if(el){el.classList.add('open');document.body.style.overflow='hidden';}}
+function closeModal(id){var el=document.getElementById('modal-'+id);if(el){el.classList.remove('open');document.body.style.overflow='';}}
+document.addEventListener('click',function(e){if(e.target.classList&&e.target.classList.contains('modal-overlay'))e.target.classList.remove('open');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(function(m){m.classList.remove('open');document.body.style.overflow='';});});
+</script>
+<script>
+(function(){
+  var tabs = document.querySelectorAll('nav.tabs-ihh .tab');
+  var views = document.querySelectorAll('.view-ihh');
+  function switchView(target){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.view === target); });
+    views.forEach(function(v){ v.classList.toggle('active', v.id === 'view-' + target); });
+    window.scrollTo({top:0, behavior:'smooth'});
+    try { history.replaceState(null,'','#tab-'+target); } catch(e){}
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ switchView(t.dataset.view); }); });
+  document.querySelectorAll('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchView(b.dataset.go); }); });
+  // Restore from hash
+  var h = (location.hash||'').replace('#tab-','');
+  if (h && document.getElementById('view-'+h)) switchView(h);
+})();
+</script>
+</body></html>

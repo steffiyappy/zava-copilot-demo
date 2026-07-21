@@ -13926,6 +13926,81 @@ window.HUB_DATA = {
       ],
       coworkLibrary: [
         {
+          title: 'Motor + Property + Marine Claims Platform Modernisation Steering — Insurance CTO Power Move',
+          dept_tag: 'Technology & Operations',
+          industry_tag: 'General Insurance',
+          complexity: 'advanced',
+          apps: [
+            'Cowork',
+            'Researcher',
+            'Analyst',
+            'Excel',
+            'PowerPoint',
+            'Loop'
+          ],
+          desc: 'The Insurance CTO chairs a monthly steering committee across Motor, Property Fire, and Marine Cargo claims-platform modernisation. Cowork fans out the RAID heatmap, benchmark scan, multi-LOB TAT analysis, steering deck, and Loop live-plan in one run — EN + BI.',
+          skills: [
+            'Cowork orchestration across Excel + PowerPoint + Word + Loop + email',
+            'Analyst Agent multi-LOB TAT diagnostic (Motor / Property Fire / Marine Cargo)',
+            'Researcher benchmark scan for ASEAN general insurers modernising claims platforms',
+            'RAID (Risks, Assumptions, Issues, Dependencies) heatmap + PivotTable in Excel'
+          ],
+          instructions: [
+            'Copilot Chat → Researcher → paste Prompt 1 for the ASEAN claims-modernisation benchmark',
+            'Copilot Chat → Analyst → upload claims TAT workbook → paste Prompt 2',
+            'Cowork → paste Prompt 3 to fan out the steering pack'
+          ],
+          sample_files: [
+            [
+              'Claims_TAT_Motor_Property_Marine.xlsx',
+              'xlsx'
+            ],
+            [
+              'RAID_Log.xlsx',
+              'xlsx'
+            ],
+            [
+              'Policy_Wording_Motor.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Researcher — ASEAN general-insurance claims modernisation benchmark',
+              text: 'Researcher Critique mode. Benchmark how ASEAN general insurers have modernised their claims platforms across Motor, Property Fire, and Marine Cargo in the last 5 years. Cover: (a) Sompo Indonesia, Tokio Marine, Allianz Utama, Zurich Indonesia, MSIG, Chubb — the 6 comparators; (b) target TAT by LOB (Motor D+3 / Property D+7 / Marine D+14) and how they got there; (c) the 3 platform archetypes (buy vs build vs partner) and the trade-offs; (d) OJK circulars affecting claims TAT and market conduct in the last 24 months; (e) IFRS 17 implications for claims data lineage.  Cite every claim with source + retrieval timestamp. Flag any benchmark older than 12 months as stale for OJK material.'
+            },
+            {
+              label: '2. Analyst — multi-LOB TAT diagnostic',
+              text: 'Upload /Claims_TAT_Motor_Property_Marine.xlsx. Produce a diagnostic across the 3 LOBs. For each LOB: (a) current TAT median + 90th percentile vs target; (b) the top 3 bottlenecks by claim value at risk; (c) the 5-step reengineered flow with SLA targets per step; (d) the 3 platform capabilities that would unblock ≥ 60% of the bottleneck; (e) the change-management risk (broker impact, adjuster retraining, reinsurer notifications).  Present as a single comparison table + a per-LOB narrative. Do not merge LOBs — Motor and Marine Cargo behave very differently and averaging them hides the story.'
+            },
+            {
+              label: '3. Cowork — steering committee pack',
+              text: 'Cowork: fan out the following 5 artefacts for the next steering committee (chair: CTO Budi Santoso): (1) Excel RAID heatmap (from /RAID_Log.xlsx) with a PivotTable by workstream × severity × owner. (2) PowerPoint 10-slide steering deck (BCG / McKinsey style) — cover, benchmark headline, RAID heatmap, per-LOB TAT diagnostic (3 slides), 3 platform options with cost / risk / TAT impact, recommendation, decisions requested, next steps. (3) Word steering minutes template pre-filled with decisions asked, owners, target dates. (4) Outlook email to sponsors — Group CFO, Group Head of Claims, Group Head of Underwriting, CIO, Chief Actuary — with the deck attached. (5) Loop live-plan page — RAID summary + top-3 decisions this week + owner-tagged action items.  Bilingual EN + BI throughout. Use precise general-insurance language (LOB, TAT, straight-through processing, subrogation, reinsurance treaty, loss adjuster, IFRS 17).'
+            },
+            {
+              label: 'Build interactive HTML dashboard (filters + drill-down)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML executive dashboard titled "Motor + Property + Marine Claims Platform Modernisation Steering — Insurance CTO Power Move" using Claims_TAT_Motor_Property_Marine.xlsx, RAID_Log.xlsx and Policy_Wording_Motor.pdf as the source of truth. Output ONE .html file (inline CSS + inline JS, ABSOLUTELY NO external CDN) so it opens cleanly offline. The dashboard must be COMPREHENSIVE and let the user slice-and-dice every dimension. Required structure: • TOP FILTER BAR (sticky) — multi-select chips for the 3 most important dimensions (e.g. business unit, region, status, owner); free-text search box; date-range picker (last 30d / quarter / FY / custom); reset button. All filters apply instantly to every panel below — no refresh. • KPI STRIP — 6 KPI cards with current value, period delta vs prior, colour coded vs target threshold, and an inline 12-period sparkline drawn on Canvas. • MAIN GRID — 2×2 panels: trend line chart, top-N bar chart, distribution pie/donut, and a heat-strip showing concentration; each panel reacts to filter bar selections. • DRILL-DOWN TABLE — sortable + searchable table of every underlying row with column-show/hide toggles; click a row to open a side-panel with full record detail + linked source files. Includes an "Export CSV of current view" button that respects active filters. • ALERTS PANEL — auto-flag anomalies / threshold breaches with one-line narratives. • Theme: Zava navy (#1F2D55) header, light/dark toggle in the top-right, sans-serif typography, mobile-responsive. Save the file as "Motor + Property + Marine Claims Platform Modernisation Steering — Insurance CTO Power Move — Dashboard.html" to my OneDrive > Zava Dashboards folder once Cowork has my approval.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'ASEAN claims-modernisation benchmark with citations',
+            'Multi-LOB TAT diagnostic (Motor / Property Fire / Marine Cargo)',
+            '5-artefact steering pack (RAID heatmap + deck + minutes + email + Loop)'
+          ],
+          watch: [
+            'LOBs are analysed separately — no averaged Motor + Marine numbers',
+            'Every RAID row has an owner + target date',
+            'Steering deck has 3 platform options, not just one recommendation',
+            'IFRS 17 data-lineage implication is called out where relevant'
+          ],
+          honest: 'Copilot drafts; the CTO + Group Head of Claims decide. Any platform-selection decision must go through a formal procurement + OJK-notification track — Copilot benchmarks and diagnoses, it does not select vendors. Reinsurance-treaty implications of a TAT change require the reinsurer to be notified in writing; Copilot cannot handle that correspondence. For high-value LOBs (Marine Cargo hull, Property large risks), engage the Chief Actuary before any claims-flow change lands.',
+          tips: [
+            'Run monthly on the 1st business day; pin as a custom skill',
+            'Pair with the Cowork Frontier autonomous weekly RAID digest for CTO + sponsors between formal steerings'
+          ],
+          id: 'uc-insurance-claims-modernisation'
+        },
+        {
           title: 'Multi-LOB Claims TAT — the Insurance BPR Power Move',
           dept_tag: 'Operations / BPR',
           industry_tag: 'General Insurance',
@@ -52929,6 +53004,82 @@ window.HUB_DATA = {
       ],
       coworkLibrary: [
         {
+          title: 'Anti-Corruption Task Force Response Pack — Integrity Bureau Power Move',
+          dept_tag: 'Legal & Compliance',
+          industry_tag: 'Government / Integrity',
+          complexity: 'advanced',
+          apps: [
+            'Copilot Chat',
+            'Word',
+            'Outlook',
+            'PowerPoint',
+            'Cowork'
+          ],
+          desc: 'A new gratifikasi complaint has landed with the Task Force Head. Case triage, executive reply to the Commissioner (Pimpinan), governance-report interrogation, and a signed-off case pack — one Cowork run, defensible chain-of-custody, EN + BI parity.',
+          skills: [
+            'Copilot Chat GCSE framing (Goal · Context · Source · Expectation) for casework prompts',
+            'Word interrogation of a long governance report / LHKPN filing / auditor memo',
+            'Outlook executive reply drafting in formal Pimpinan register',
+            'Copilot Create governance poster / evidence-handling reminder'
+          ],
+          instructions: [
+            'Copilot Chat → paste Prompt 1 for the case triage using GCSE',
+            'Word → open the long report → paste Prompt 2 to interrogate',
+            'Outlook → paste Prompt 3 to draft the Pimpinan reply',
+            'Cowork → paste Prompt 4 to fan out the 4-artefact case pack'
+          ],
+          sample_files: [
+            [
+              'Governance_Report.pdf',
+              'pdf'
+            ],
+            [
+              'LHKPN_Filing.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Chat — case triage with GCSE',
+              text: 'Goal: triage a new gratifikasi (gratification) complaint received today for the Task Force Head. Context: Contoso Integrity Bureau, Direktorat Gratifikasi, following UU Tipikor and the internal SOP for pelaporan gratifikasi within 30 working days. Source: /Governance_Report.pdf (auditor memo) and /LHKPN_Filing.pdf (asset declaration for the named person). Expectation: produce (a) a 5-line factual summary, (b) the specific pasal in UU Tipikor / UU KPK that applies, (c) the 3 immediate procedural steps under our SOP, (d) the 5 evidentiary gaps to close before we escalate, (e) BI + EN mirror. Do not draw conclusions on guilt — this is a triage, not an indictment.  Cite the document + page number for every factual claim. If the source is silent, write [SUMBER DIAM — perlu klarifikasi].'
+            },
+            {
+              label: '2. Word — interrogate the long governance report',
+              text: 'Interrogate this governance report grounded on its own content. Produce: (a) 10 key findings ranked by severity, with page citations; (b) the 5 named individuals + their role in each finding; (c) any references to LHKPN, gratifikasi, benturan kepentingan, or fraud red flags; (d) 8 clarification questions we should ask the auditor before the case pack goes to the Commissioner; (e) the 3 quotations we could safely lift into an executive summary without misrepresenting the report.  Every finding cites page + paragraph. No paraphrase without source. If a claim is opinion (rather than fact-in-report), tag [OPINI PENULIS].'
+            },
+            {
+              label: '3. Outlook — Pimpinan executive reply',
+              text: 'Draft a formal reply from the Task Force Head to the Pimpinan (Commissioner) on the case triage above. Bahasa Indonesia formal register (kata kerja aktif, tidak berbelit, tidak menjanjikan hasil). Structure: (1) apa yang terjadi (2 kalimat), (2) apa yang telah dilakukan (3 poin), (3) apa yang diminta dari Pimpinan (2 keputusan), (4) timeline berikutnya (1 kalimat), (5) lampiran (case pack).  Maximum 220 kata. Sertakan mirror English versi di bawah untuk arsip. Jangan mengungkap identitas pelapor. Jangan berspekulasi. Jangan memberi opini hukum di badan email — arahkan ke case pack lampiran.'
+            },
+            {
+              label: '4. Cowork — 4-artefact case pack',
+              text: 'Cowork: fan out the 4-artefact case pack in parallel: (1) Word case brief (6 pages, EN + BI mirror) — triage, evidentiary map, applicable pasal, recommendation. (2) PowerPoint 6-slide deck for the Pimpinan meeting — cover, timeline, evidence map, applicable law, 3 decision options, next steps. (3) Outlook email to the Commissioner (from Prompt 3). (4) Copilot Create governance poster — 1-page A3 reminder to staff on the difference between hadiah (gift), suap (bribe), gratifikasi (gratification), and pemerasan (extortion) under UU Tipikor. Use Contoso Integrity Bureau red / gold.  Named recipients: Pimpinan (Chair), Deputi Pencegahan, Deputi Penindakan, Direktur Gratifikasi, Kepala Biro Hukum, Kepala Biro Humas. No family-name-only references — full title + name.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Anti-Corruption Task Force Response Pack — Integrity Bureau Power Move" using Governance_Report.pdf and LHKPN_Filing.pdf as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Anti-Corruption Task Force Response Pack — Integrity Bureau Power Move — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Case triage with GCSE framing and evidentiary gap list',
+            'Word interrogation of the source report with page citations',
+            'Formal Pimpinan reply in BI + EN mirror',
+            '4-artefact case pack fanned out via Cowork'
+          ],
+          watch: [
+            'Every finding cites page + paragraph — no orphan claims',
+            'Triage does not draw guilt conclusions',
+            'Pelapor (whistleblower) identity is not exposed',
+            'Poster distinguishes hadiah / suap / gratifikasi / pemerasan precisely'
+          ],
+          honest: 'Copilot drafts; the Task Force Head + Kepala Biro Hukum sign. Anti-corruption casework has chain-of-custody and evidentiary-admissibility rules that Copilot cannot enforce — any output that will be filed as evidence, cited in a Berita Acara Pemeriksaan, or included in a dakwaan must be reviewed by an admitted advocate and the penyidik of record. Copilot cannot verify LHKPN authenticity or audit-report provenance; it drafts on the assumption the source documents have been lawfully obtained.',
+          tips: [
+            'Pin the GCSE poster + SOP references as a custom skill — new complaints follow the same shape',
+            'Run in parallel with the free-tier Copilot Chat pattern for staff who do not yet have a Premium licence'
+          ],
+          id: 'uc-integrity-taskforce-response'
+        },
+        {
           title: 'Parliamentary Question Briefing Sprint',
           dept_tag: 'Policy Coordination',
           industry_tag: 'Government Agency',
@@ -80443,6 +80594,82 @@ window.HUB_DATA = {
             'Add a Teams summary message at the end for the case team'
           ],
           id: 'uc-reg-policy-paper'
+        },
+        {
+          title: 'Anti-Corruption Task Force Response Pack — Integrity Bureau Power Move',
+          dept_tag: 'Legal & Compliance',
+          industry_tag: 'Government / Integrity',
+          complexity: 'advanced',
+          apps: [
+            'Copilot Chat',
+            'Word',
+            'Outlook',
+            'PowerPoint',
+            'Cowork'
+          ],
+          desc: 'A new gratifikasi complaint has landed with the Task Force Head. Case triage, executive reply to the Commissioner (Pimpinan), governance-report interrogation, and a signed-off case pack — one Cowork run, defensible chain-of-custody, EN + BI parity.',
+          skills: [
+            'Copilot Chat GCSE framing (Goal · Context · Source · Expectation) for casework prompts',
+            'Word interrogation of a long governance report / LHKPN filing / auditor memo',
+            'Outlook executive reply drafting in formal Pimpinan register',
+            'Copilot Create governance poster / evidence-handling reminder'
+          ],
+          instructions: [
+            'Copilot Chat → paste Prompt 1 for the case triage using GCSE',
+            'Word → open the long report → paste Prompt 2 to interrogate',
+            'Outlook → paste Prompt 3 to draft the Pimpinan reply',
+            'Cowork → paste Prompt 4 to fan out the 4-artefact case pack'
+          ],
+          sample_files: [
+            [
+              'Governance_Report.pdf',
+              'pdf'
+            ],
+            [
+              'LHKPN_Filing.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Chat — case triage with GCSE',
+              text: 'Goal: triage a new gratifikasi (gratification) complaint received today for the Task Force Head. Context: Contoso Integrity Bureau, Direktorat Gratifikasi, following UU Tipikor and the internal SOP for pelaporan gratifikasi within 30 working days. Source: /Governance_Report.pdf (auditor memo) and /LHKPN_Filing.pdf (asset declaration for the named person). Expectation: produce (a) a 5-line factual summary, (b) the specific pasal in UU Tipikor / UU KPK that applies, (c) the 3 immediate procedural steps under our SOP, (d) the 5 evidentiary gaps to close before we escalate, (e) BI + EN mirror. Do not draw conclusions on guilt — this is a triage, not an indictment.  Cite the document + page number for every factual claim. If the source is silent, write [SUMBER DIAM — perlu klarifikasi].'
+            },
+            {
+              label: '2. Word — interrogate the long governance report',
+              text: 'Interrogate this governance report grounded on its own content. Produce: (a) 10 key findings ranked by severity, with page citations; (b) the 5 named individuals + their role in each finding; (c) any references to LHKPN, gratifikasi, benturan kepentingan, or fraud red flags; (d) 8 clarification questions we should ask the auditor before the case pack goes to the Commissioner; (e) the 3 quotations we could safely lift into an executive summary without misrepresenting the report.  Every finding cites page + paragraph. No paraphrase without source. If a claim is opinion (rather than fact-in-report), tag [OPINI PENULIS].'
+            },
+            {
+              label: '3. Outlook — Pimpinan executive reply',
+              text: 'Draft a formal reply from the Task Force Head to the Pimpinan (Commissioner) on the case triage above. Bahasa Indonesia formal register (kata kerja aktif, tidak berbelit, tidak menjanjikan hasil). Structure: (1) apa yang terjadi (2 kalimat), (2) apa yang telah dilakukan (3 poin), (3) apa yang diminta dari Pimpinan (2 keputusan), (4) timeline berikutnya (1 kalimat), (5) lampiran (case pack).  Maximum 220 kata. Sertakan mirror English versi di bawah untuk arsip. Jangan mengungkap identitas pelapor. Jangan berspekulasi. Jangan memberi opini hukum di badan email — arahkan ke case pack lampiran.'
+            },
+            {
+              label: '4. Cowork — 4-artefact case pack',
+              text: 'Cowork: fan out the 4-artefact case pack in parallel: (1) Word case brief (6 pages, EN + BI mirror) — triage, evidentiary map, applicable pasal, recommendation. (2) PowerPoint 6-slide deck for the Pimpinan meeting — cover, timeline, evidence map, applicable law, 3 decision options, next steps. (3) Outlook email to the Commissioner (from Prompt 3). (4) Copilot Create governance poster — 1-page A3 reminder to staff on the difference between hadiah (gift), suap (bribe), gratifikasi (gratification), and pemerasan (extortion) under UU Tipikor. Use Contoso Integrity Bureau red / gold.  Named recipients: Pimpinan (Chair), Deputi Pencegahan, Deputi Penindakan, Direktur Gratifikasi, Kepala Biro Hukum, Kepala Biro Humas. No family-name-only references — full title + name.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Anti-Corruption Task Force Response Pack — Integrity Bureau Power Move" using Governance_Report.pdf and LHKPN_Filing.pdf as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Anti-Corruption Task Force Response Pack — Integrity Bureau Power Move — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Case triage with GCSE framing and evidentiary gap list',
+            'Word interrogation of the source report with page citations',
+            'Formal Pimpinan reply in BI + EN mirror',
+            '4-artefact case pack fanned out via Cowork'
+          ],
+          watch: [
+            'Every finding cites page + paragraph — no orphan claims',
+            'Triage does not draw guilt conclusions',
+            'Pelapor (whistleblower) identity is not exposed',
+            'Poster distinguishes hadiah / suap / gratifikasi / pemerasan precisely'
+          ],
+          honest: 'Copilot drafts; the Task Force Head + Kepala Biro Hukum sign. Anti-corruption casework has chain-of-custody and evidentiary-admissibility rules that Copilot cannot enforce — any output that will be filed as evidence, cited in a Berita Acara Pemeriksaan, or included in a dakwaan must be reviewed by an admitted advocate and the penyidik of record. Copilot cannot verify LHKPN authenticity or audit-report provenance; it drafts on the assumption the source documents have been lawfully obtained.',
+          tips: [
+            'Pin the GCSE poster + SOP references as a custom skill — new complaints follow the same shape',
+            'Run in parallel with the free-tier Copilot Chat pattern for staff who do not yet have a Premium licence'
+          ],
+          id: 'uc-integrity-taskforce-response'
         },
         {
           title: 'Onsite Supervisory Examination Prep',
@@ -131217,6 +131444,82 @@ window.HUB_DATA = {
             'Add a Teams summary message at the end for the case team'
           ],
           id: 'uc-reg-contract-review'
+        },
+        {
+          title: 'Anti-Corruption Task Force Response Pack — Integrity Bureau Power Move',
+          dept_tag: 'Legal & Compliance',
+          industry_tag: 'Government / Integrity',
+          complexity: 'advanced',
+          apps: [
+            'Copilot Chat',
+            'Word',
+            'Outlook',
+            'PowerPoint',
+            'Cowork'
+          ],
+          desc: 'A new gratifikasi complaint has landed with the Task Force Head. Case triage, executive reply to the Commissioner (Pimpinan), governance-report interrogation, and a signed-off case pack — one Cowork run, defensible chain-of-custody, EN + BI parity.',
+          skills: [
+            'Copilot Chat GCSE framing (Goal · Context · Source · Expectation) for casework prompts',
+            'Word interrogation of a long governance report / LHKPN filing / auditor memo',
+            'Outlook executive reply drafting in formal Pimpinan register',
+            'Copilot Create governance poster / evidence-handling reminder'
+          ],
+          instructions: [
+            'Copilot Chat → paste Prompt 1 for the case triage using GCSE',
+            'Word → open the long report → paste Prompt 2 to interrogate',
+            'Outlook → paste Prompt 3 to draft the Pimpinan reply',
+            'Cowork → paste Prompt 4 to fan out the 4-artefact case pack'
+          ],
+          sample_files: [
+            [
+              'Governance_Report.pdf',
+              'pdf'
+            ],
+            [
+              'LHKPN_Filing.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Chat — case triage with GCSE',
+              text: 'Goal: triage a new gratifikasi (gratification) complaint received today for the Task Force Head. Context: Contoso Integrity Bureau, Direktorat Gratifikasi, following UU Tipikor and the internal SOP for pelaporan gratifikasi within 30 working days. Source: /Governance_Report.pdf (auditor memo) and /LHKPN_Filing.pdf (asset declaration for the named person). Expectation: produce (a) a 5-line factual summary, (b) the specific pasal in UU Tipikor / UU KPK that applies, (c) the 3 immediate procedural steps under our SOP, (d) the 5 evidentiary gaps to close before we escalate, (e) BI + EN mirror. Do not draw conclusions on guilt — this is a triage, not an indictment.  Cite the document + page number for every factual claim. If the source is silent, write [SUMBER DIAM — perlu klarifikasi].'
+            },
+            {
+              label: '2. Word — interrogate the long governance report',
+              text: 'Interrogate this governance report grounded on its own content. Produce: (a) 10 key findings ranked by severity, with page citations; (b) the 5 named individuals + their role in each finding; (c) any references to LHKPN, gratifikasi, benturan kepentingan, or fraud red flags; (d) 8 clarification questions we should ask the auditor before the case pack goes to the Commissioner; (e) the 3 quotations we could safely lift into an executive summary without misrepresenting the report.  Every finding cites page + paragraph. No paraphrase without source. If a claim is opinion (rather than fact-in-report), tag [OPINI PENULIS].'
+            },
+            {
+              label: '3. Outlook — Pimpinan executive reply',
+              text: 'Draft a formal reply from the Task Force Head to the Pimpinan (Commissioner) on the case triage above. Bahasa Indonesia formal register (kata kerja aktif, tidak berbelit, tidak menjanjikan hasil). Structure: (1) apa yang terjadi (2 kalimat), (2) apa yang telah dilakukan (3 poin), (3) apa yang diminta dari Pimpinan (2 keputusan), (4) timeline berikutnya (1 kalimat), (5) lampiran (case pack).  Maximum 220 kata. Sertakan mirror English versi di bawah untuk arsip. Jangan mengungkap identitas pelapor. Jangan berspekulasi. Jangan memberi opini hukum di badan email — arahkan ke case pack lampiran.'
+            },
+            {
+              label: '4. Cowork — 4-artefact case pack',
+              text: 'Cowork: fan out the 4-artefact case pack in parallel: (1) Word case brief (6 pages, EN + BI mirror) — triage, evidentiary map, applicable pasal, recommendation. (2) PowerPoint 6-slide deck for the Pimpinan meeting — cover, timeline, evidence map, applicable law, 3 decision options, next steps. (3) Outlook email to the Commissioner (from Prompt 3). (4) Copilot Create governance poster — 1-page A3 reminder to staff on the difference between hadiah (gift), suap (bribe), gratifikasi (gratification), and pemerasan (extortion) under UU Tipikor. Use Contoso Integrity Bureau red / gold.  Named recipients: Pimpinan (Chair), Deputi Pencegahan, Deputi Penindakan, Direktur Gratifikasi, Kepala Biro Hukum, Kepala Biro Humas. No family-name-only references — full title + name.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "Anti-Corruption Task Force Response Pack — Integrity Bureau Power Move" using Governance_Report.pdf and LHKPN_Filing.pdf as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "Anti-Corruption Task Force Response Pack — Integrity Bureau Power Move — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Case triage with GCSE framing and evidentiary gap list',
+            'Word interrogation of the source report with page citations',
+            'Formal Pimpinan reply in BI + EN mirror',
+            '4-artefact case pack fanned out via Cowork'
+          ],
+          watch: [
+            'Every finding cites page + paragraph — no orphan claims',
+            'Triage does not draw guilt conclusions',
+            'Pelapor (whistleblower) identity is not exposed',
+            'Poster distinguishes hadiah / suap / gratifikasi / pemerasan precisely'
+          ],
+          honest: 'Copilot drafts; the Task Force Head + Kepala Biro Hukum sign. Anti-corruption casework has chain-of-custody and evidentiary-admissibility rules that Copilot cannot enforce — any output that will be filed as evidence, cited in a Berita Acara Pemeriksaan, or included in a dakwaan must be reviewed by an admitted advocate and the penyidik of record. Copilot cannot verify LHKPN authenticity or audit-report provenance; it drafts on the assumption the source documents have been lawfully obtained.',
+          tips: [
+            'Pin the GCSE poster + SOP references as a custom skill — new complaints follow the same shape',
+            'Run in parallel with the free-tier Copilot Chat pattern for staff who do not yet have a Premium licence'
+          ],
+          id: 'uc-integrity-taskforce-response'
         },
         {
           title: 'New Permen ESDM Research + IRAC Legal Memo — Mining Legal Power Move',

@@ -6722,7 +6722,7 @@ const OTHER_PAGES = [
     accent: '#7F1D1D',
     name: 'Contoso General Assurance Indonesia — Copilot Immersion',
     desc: 'Contoso General Assurance Indonesia — Head of Transformation immersion covering Project Management and Business Process Re-engineering with a Copilot Cowork Frontier preview. Persona: Budi Santoso. Part A · PM: project status intake auto-summary · Steering committee deck from raw notes · RAID log heatmap + PivotTable in Excel · Stakeholder updates in email + Teams · benchmark PM practices for general insurance · delayed-workstream stakeholder brief · 30-day action plan · deep benchmark of ASEAN insurers · Loop live plan. Part B · BPR: claims workshop as-is capture · to-be design + bottleneck · SOP rewrite grounded in policy manual · change comms · multi-LOB claims TAT (Motor, Property, Marine Cargo) with Analyst Agent · policy issuance re-engineering plan · underwriting FAQ · warmer change memo. Cowork Frontier: autonomous weekly RAID digest for CTO/sponsors · autonomous process discovery across a SharePoint folder. EN + BI.',
-    url: 'https://steffiyappy.github.io/sompo-copilot-immersion/',
+    url: 'https://steffiyappy.github.io/cga-copilot-immersion/',
     password: 'ContosoGeneral2026',
     tag: 'Insurance Workshop',
     keywords: 'contoso general assurance sompo Indonesia insurance transformation PMO PM RAID log heatmap steering committee deck stakeholder brief BPR business process re-engineering claims TAT multi-LOB Motor Property Marine Cargo underwriting SOP policy issuance bancassurance sharia earthquake risk survey OJK cowork frontier autonomous weekly digest CTO sponsor SharePoint discovery Budi Santoso head of operations analyst agent'
@@ -6905,6 +6905,42 @@ const OTHER_PAGES = [
     password: 'Malakoff20May10June',
     tag: 'Power Workshop · Frontier',
     keywords: 'malakoff power utilities IPP independent power producer generation plant operations ESG decarbonisation regulatory project finance immersion researcher analyst cowork frontier agent builder may june 2026'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '⚖️',
+    color: '#B91C1C',
+    accent: '#7F1D1D',
+    name: 'Contoso Integrity Bureau — Task Force Copilot Immersion',
+    desc: 'Contoso Integrity Bureau (KPK-shaped anti-corruption agency) — Task Force Head immersion. One workday, six Copilot moments across governance and casework: (B0) Governance Poster via Copilot Create (4 prompts) · (B1) Prompt-tips card using Goal-Context-Source-Expectation · (B2) Outlook catch-up on a long investigative thread · (B3) Outlook draft an executive reply to the Commissioner · (B4) Word interrogate a long governance report · (B5) Copilot Chat quick fact-check before you send. Bilingual EN + BI, includes /id.html Indonesia toggle. Free Copilot Chat + M365 Copilot licence framing.',
+    url: 'https://steffiyappy.github.io/contoso-integrity-bureau-demo/',
+    password: 'KPKCopilot20Jul',
+    tag: 'Anti-Corruption Workshop',
+    keywords: 'contoso integrity bureau KPK anti-corruption commission task force governance investigative Commissioner GCSE goal context source expectation Copilot Create poster outlook catch up executive reply Word interrogate governance report quick fact check integrity anti-graft OTT operasi tangkap tangan gratifikasi LHKPN penyidik penyelidik'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '💄',
+    color: '#EC4899',
+    accent: '#BE185D',
+    name: 'Contoso Beauty Innovation — Admin Teams Copilot Immersion',
+    desc: 'Contoso Beauty Innovation (Paragon-shaped cosmetics group behind Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!) — Board EA / admin-teams immersion. One workday, four Copilot Chat moments, plus admin extras: (1.3) Bahasa Indonesia prompt patterns for daily EA work · (B1) Prompt tips for free Copilot Chat · G-C-S-E framework · Two universal habits · (B2) Enterprise Data Protection green shield · (B3) Confidentiality do\\'s and don\\'ts · (B4) Bahasa Indonesia prompt patterns · (B5) Ten one-line admin prompts to copy-paste. Bilingual EN + BI with /id.html toggle. Free Copilot Chat first, M365 Copilot Premium prompts tagged.',
+    url: 'https://steffiyappy.github.io/contoso-beauty-innovation-demo/',
+    password: 'ParagonCopilot16Jul',
+    tag: 'Beauty · Admin EA Demo',
+    keywords: 'contoso beauty innovation paragon Wardah Make Over Emina Kahf Instaperfect OMG cosmetics personal care board EA admin executive assistant free Copilot Chat GCSE framework Bahasa Indonesia prompt patterns Enterprise Data Protection EDP confidentiality one-line admin prompts BPOM Notifikasi Kosmetik LPPOM MUI TikTok Shop Shopee Live'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '⛏️',
+    color: '#B45309',
+    accent: '#78350F',
+    name: 'Contoso Gold Mining Co — Executive Workshop',
+    desc: 'Contoso Gold Mining (Masmindo-shaped Indonesian gold-mining operator) — one workday, five Copilot moments from morning briefing to signed-off minutes and a re-negotiated vendor book. (2.1) Teams Copilot Intelligent Recap · (2.2) Word Copilot fill the corporate minutes template · (3.1) Researcher Critique on Auto · (3.2) Model Council fresh independent prompt · (3.3) Export to Word and refine the Board note · (4.1) Copilot in Excel Edit + Plan on the vendor workbook · (4.2) PowerPoint · (4.3) Word · (4.4) Cowork alternative one-prompt path across Excel + Word + PowerPoint + HTML + email + meeting · plus Agent Builder one prompt to create + three test prompts. Bonus: BCG/McKinsey corporate template · Analyst Agent multi-perspective on vendor workbook · personalised mail merge · Outlook catch-up · Word interrogate · Board pack in 30 minutes.',
+    url: 'https://steffiyappy.github.io/contoso-gold-mining-demo/',
+    password: 'MasmindoCopilot08Jul',
+    tag: 'Gold Mining Workshop',
+    keywords: 'contoso gold mining Masmindo Indonesia gold executive workshop board minutes Teams intelligent recap Word template Researcher critique auto model council board note vendor workbook Excel edit plan vendor rebook Cowork one prompt Excel Word PowerPoint HTML email meeting Analyst agent multi perspective mail merge Outlook catch up Word interrogate board pack 30 minutes BCG McKinsey Awak Mas Sulawesi Selatan Nusantara Resources open pit'
   }
 ];
 

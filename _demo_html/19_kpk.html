@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<title>Contoso Integrity Bureau · M365 Copilot Task Force Immersion</title>
+<style>
+:root{--radius:12px;--shadow:0 2px 8px rgba(0,0,0,.12);--brand:#111827;--brand2:#0B2A4A;--gcse-g:#0B2A4A;--gcse-c:#123458;--gcse-s:#C89B3C;--gcse-e:#6B7280}
+@media(prefers-color-scheme:dark){:root{--bg:#0B2A4A;--panel:#0F3358;--panel2:#0A2340;--ink:#e2e8f0;--muted:#94a3b8;--border:#1E4472;--sidebar-a:#0B2A4A;--sidebar-b:#082041;--accent:#3b82f6;--accent2:#60a5fa;--nav-hover:#123458;--badge-bg:#0a0f24;--cp-info:#0e1c2c;--cp-warn:#2b220e;--cp-bad:#2b1414;--cp-good:#0e2418;--code:#0d1535;--good:#22c55e;--warn:#f59e0b;--danger:#ef4444;--callout-info:#0e1c2c;--callout-warn:#2b220e;--callout-bad:#2b1414;--callout-good:#0e2418}}
+@media(prefers-color-scheme:light){:root{--bg:#f0f4f8;--panel:#ffffff;--panel2:#f0f6ff;--ink:#1a202c;--muted:#64748b;--border:#d1d9e6;--sidebar-a:#1e3a5f;--sidebar-b:#0f2545;--accent:#2563eb;--accent2:#1d4ed8;--nav-hover:#dbeafe;--badge-bg:#e8f0fe;--cp-info:#eff6ff;--cp-warn:#fffbeb;--cp-bad:#fef2f2;--cp-good:#f0fdf4;--code:#1e2b55;--good:#16a34a;--warn:#0B2A4A;--danger:#dc2626;--callout-info:#eff6ff;--callout-warn:#fffbeb;--callout-bad:#fef2f2;--callout-good:#f0fdf4}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Inter","Segoe UI",system-ui,sans-serif;overflow-x:hidden;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+code,pre{font-family:"JetBrains Mono","Consolas",monospace;font-size:13px}
+.layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+aside{background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));border-right:1px solid var(--border);padding:24px 18px;position:sticky;top:0;height:100vh;overflow-y:auto;color:#e2e8f0}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.brand .logo{width:36px;height:36px;border-radius:9px;background:var(--brand);display:grid;place-items:center;font-weight:900;color:#fff;font-size:12px;letter-spacing:-.5px}
+.brand h1{font-size:15px;margin:0;letter-spacing:.2px;color:#fff}
+.tag{font-size:11px;color:#94a3b8;margin-bottom:18px}
+nav h3{font-size:10px;letter-spacing:1.2px;color:#94a3b8;text-transform:uppercase;margin:18px 0 8px}
+nav a{display:block;color:#e2e8f0;padding:8px 10px;border-radius:9px;font-size:14px;margin-bottom:2px;border:1px solid transparent}
+nav a:hover{background:rgba(255,255,255,.12);text-decoration:none;border-color:rgba(255,255,255,.2);color:#fff}
+main{padding:28px 48px 80px;max-width:1400px}
+.hero{background:radial-gradient(800px 320px at 0% 0%,rgba(0,48,135,.35),transparent 60%),radial-gradient(700px 280px at 100% 0%,rgba(0,100,200,.2),transparent 60%),var(--panel);border:1px solid var(--border);border-radius:18px;padding:30px;margin-bottom:24px}
+.hero .pill{display:inline-block;background:var(--badge-bg);border:1px solid var(--border);color:var(--accent2);font-size:11px;letter-spacing:1.2px;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.hero h2{font-size:30px;margin:0 0 8px;line-height:1.2}
+.hero p{color:var(--muted);margin:0;max-width:780px}
+.meta-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;color:var(--muted);font-size:13px}
+.meta-row span b{color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:18px}.card .lead{color:var(--muted);margin:0 0 14px}
+.card h4{margin:18px 0 6px;font-size:15px;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+ul{padding-left:20px;margin:8px 0}li{margin:4px 0}
+.modulehead{display:flex;align-items:center;gap:14px;margin:32px 0 12px}
+.modulehead .num{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;font-weight:800;font-size:20px;color:#fff}
+.modulehead h2{margin:0;font-size:22px}.modulehead small{display:block;color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.activity{border:1px solid var(--border);border-radius:12px;padding:18px;margin:14px 0;background:var(--panel)}
+.activity .head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.activity .num{background:var(--accent);color:#fff;font-weight:800;font-size:12px;padding:3px 9px;border-radius:6px}
+.activity .time{color:var(--muted);font-size:12px}
+.activity .file{font-size:12px;color:var(--accent2);background:var(--badge-bg);border:1px solid var(--border);padding:3px 9px;border-radius:6px}
+.activity h4{margin:0;font-size:16px;color:var(--ink);font-weight:600}
+.activity p{margin:6px 0;color:var(--muted);font-size:14px}
+.activity.bonus{border-left:4px solid var(--brand)}
+.task-step{background:var(--panel2);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:12px 14px;margin:10px 0}
+.task-step .step-label{font-size:11px;letter-spacing:1px;color:var(--accent2);text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.prompt{position:relative;background:var(--code);border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:10px;padding:14px 44px 14px 16px;margin:10px 0;font-family:"JetBrains Mono","Consolas",monospace;font-size:13px;color:#c9d6ff;white-space:pre-wrap;line-height:1.6}
+.gk{display:inline-block;padding:1px 7px;border-radius:3px;font-size:10.5px;font-weight:700;letter-spacing:.6px;margin-right:6px;font-family:"Inter","Segoe UI",system-ui,sans-serif;vertical-align:1px;text-transform:uppercase;user-select:none;-webkit-user-select:none}
+.gk-g{background:var(--gcse-g);color:#fff}
+.gk-c{background:var(--gcse-c);color:#fff}
+.gk-s{background:var(--gcse-s);color:#0B2A4A}
+.gk-e{background:var(--gcse-e);color:#fff}
+.prompt .copy{position:absolute;top:8px;right:8px;background:#1a2552;color:#e2e8f0;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s}
+.prompt .copy:hover{background:var(--brand);color:#fff}.prompt .copy.copied{background:var(--good);color:#0a0f24}
+.callout{border-left:4px solid var(--accent2);background:var(--callout-info);padding:12px 16px;margin:12px 0;border-radius:8px;color:var(--ink);font-size:14px}
+.callout.warn{border-color:var(--warn);background:var(--callout-warn)}
+.callout.good{border-color:var(--good);background:var(--callout-good)}.callout b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{color:var(--accent2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+td a{color:var(--ink);font-weight:600}td a:hover{color:var(--accent2)}
+.agenda{display:grid;grid-template-columns:90px 1fr 100px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.agenda>div{padding:10px 14px;border-bottom:1px solid var(--border)}
+.agenda>div:nth-child(3n+1){color:var(--accent2);font-weight:700;background:var(--panel)}
+.agenda>div:nth-child(3n+3){color:var(--muted);text-align:right}
+.agenda>div:nth-last-child(-n+3){border-bottom:0}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
+.tool-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
+.tool-card .icon{font-size:22px;margin-bottom:6px}
+.tool-card h5{margin:0 0 4px;font-size:14px;color:var(--ink)}
+.tool-card p{margin:0;font-size:12px;color:var(--muted);line-height:1.5}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;letter-spacing:.5px}
+.badge.blue{background:rgba(0,100,200,.2);color:var(--accent2);border:1px solid var(--accent)}
+.badge.green{background:rgba(34,197,94,.15);color:var(--good);border:1px solid var(--good)}
+.badge.yellow{background:rgba(245,158,11,.15);color:var(--warn);border:1px solid var(--warn)}
+#lock{position:fixed;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(0,48,135,.5),transparent 60%),#0b1020;z-index:9999;display:flex;align-items:center;justify-content:center}
+.lock-box{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:40px 44px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lock-box .blogo{width:56px;height:56px;border-radius:14px;background:var(--brand);display:grid;place-items:center;font-weight:900;font-size:18px;color:#fff;margin:0 auto 18px}
+.lock-box h2{margin:0 0 6px;font-size:22px}.lock-box p{color:var(--muted);font-size:14px;margin:0 0 22px}
+.pw-wrap{position:relative;margin-bottom:12px}
+.lock-box input{width:100%;background:var(--badge-bg);border:1px solid var(--border);border-radius:10px;color:var(--ink);font-size:15px;padding:12px 44px 12px 16px;outline:none;font-family:inherit;transition:border-color .2s}
+.lock-box input:focus{border-color:var(--brand)}
+.pw-toggle{position:absolute!important;right:12px;top:50%;transform:translateY(-50%);background:none!important;border:none!important;width:auto!important;padding:0!important;cursor:pointer;opacity:.7;color:var(--muted)}
+.pw-toggle:hover{background:none!important;opacity:1}
+.pw-toggle svg{width:18px;height:18px;fill:currentColor;display:block}
+.lock-box button{width:100%;background:var(--brand);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;padding:13px;cursor:pointer}
+.lock-box .err{color:var(--danger);font-size:13px;margin-top:8px;min-height:18px}
+.lock-box .conf{font-size:11px;color:var(--muted);margin-top:14px}
+@media(max-width:900px){
+ .layout{grid-template-columns:1fr}
+ aside{display:none}
+ main{padding:16px 14px 60px;max-width:100%;min-width:0}
+ .hero{padding:20px 16px;border-radius:14px;background:var(--panel)}
+ .hero h2{font-size:20px;line-height:1.25}
+ .hero p{font-size:13.5px}
+ .hero .pill{font-size:10px}
+ .meta-row{gap:10px;font-size:12px}
+ .modulehead{gap:10px;margin:24px 0 10px}
+ .modulehead .num{width:38px;height:38px;font-size:15px;flex:0 0 auto}
+ .modulehead h2{font-size:17px}
+ .activity{padding:14px}
+ .activity .head{gap:8px}
+ .card{padding:16px;border-radius:12px}
+ .card h3{font-size:16px}
+ .card h4{font-size:13px}
+ .agenda{grid-template-columns:1fr}.agenda>div:nth-child(3n+3){text-align:left}
+ .tools-grid{grid-template-columns:1fr}
+ .prompt{font-size:12px;padding:42px 12px 12px;border-left-width:3px;overflow-wrap:anywhere;word-break:break-word}
+ .prompt .copy{top:6px;right:6px}
+ pre,code{overflow-wrap:anywhere;word-break:break-word;white-space:pre-wrap}
+ table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .lock-box{padding:28px 22px;border-radius:16px;max-width:92%}
+ .lock-box h2{font-size:19px}
+ img,svg{max-width:100%;height:auto}
+ h1,h2,h3,h4{overflow-wrap:anywhere}
+}
+@media(max-width:480px){
+ main{padding:12px 10px 50px}
+ .hero{padding:16px 14px}
+ .hero h2{font-size:18px}
+ body{font-size:13.5px}
+ .modulehead h2{font-size:16px}
+}
+</style><style id="bcard-css">
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:14px}
+.bcard{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px 18px;cursor:pointer;transition:all .18s;box-shadow:0 1px 3px rgba(0,0,0,.04);text-align:left;font-family:inherit;color:#111827;width:100%}
+.bcard:hover{transform:translateY(-2px);border-color:#0f766e;box-shadow:0 6px 18px rgba(15,118,110,.15)}
+.bcard .ico{font-size:22px;margin-bottom:6px;display:block}
+.bcard h4{margin:0 0 4px;font-size:15px;color:#111827;line-height:1.3}
+.bcard p{margin:0;font-size:12.5px;color:#4b5563;line-height:1.4}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,12,28,.78);z-index:8000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:14px;max-width:1100px;width:100%;padding:28px 32px;margin:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.modal-close{position:absolute;top:12px;right:16px;font-size:28px;background:transparent;border:none;cursor:pointer;color:#6b7280;line-height:1}
+.modal-close:hover{color:#111827}
+.modal h3{margin:0 0 12px;font-size:22px;color:#0f172a}
+</style><style id="ihh-override">
+/* ========== IHH-STYLE OVERRIDES ========== */
+.layout { grid-template-columns: 1fr !important; }
+aside { display:none !important; }
+main { max-width:100% !important; margin:0 !important; padding:0 !important; }
+
+/* Kill original hero + files inline (they now live inside tabs) */
+main > .modulehead,
+main > #files,
+main > #overview,
+main > #story { /* handled via wrapping */ }
+
+body.ihh-active { background:#f7fafa; }
+body.ihh-active .hero-ihh {
+  background:linear-gradient(135deg, #111827 0%, #374151 100%);
+  color:#fff; padding:36px 32px 60px; position:relative; overflow:hidden;
+  margin:0 0 0; border-radius:0;
+}
+body.ihh-active .hero-ihh::before {
+  content:''; position:absolute; right:-100px; top:-50px;
+  width:400px; height:400px; background:rgba(255,255,255,0.06); border-radius:50%;
+}
+body.ihh-active .hero-ihh::after {
+  content:''; position:absolute; right:80px; bottom:-80px;
+  width:200px; height:200px; background:rgba(255,255,255,0.04); border-radius:50%;
+}
+body.ihh-active .hero-ihh-inner {
+  max-width:1600px; margin:0 auto; position:relative; z-index:2;
+  padding:0 40px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+}
+body.ihh-active .hero-brand-ihh { display:flex; align-items:center; gap:18px; }
+body.ihh-active .hero-logo-ihh {
+  width:72px; height:72px; background:#fff; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 24px rgba(0,0,0,0.18); flex-shrink:0;
+  color:#111827; font-weight:900; font-size:26px; letter-spacing:-1px;
+}
+body.ihh-active .hero-brand-ihh h1 {
+  margin:0; font-size:13px; font-weight:600; letter-spacing:2px;
+  text-transform:uppercase; opacity:0.85; color:#fff;
+}
+body.ihh-active .hero-brand-ihh h2 {
+  margin:0; font-size:26px; font-weight:700; color:#fff;
+}
+body.ihh-active .brand-rule-ihh {
+  width:1px; height:46px; background:rgba(255,255,255,0.25); margin:0 2px;
+}
+body.ihh-active .hero-meta-ihh { font-size:13px; opacity:0.9; text-align:right; }
+body.ihh-active .hero-meta-ihh .pill {
+  display:inline-block; padding:4px 12px; background:rgba(255,255,255,0.15);
+  border-radius:12px; margin-left:8px; font-weight:600;
+}
+body.ihh-active .lang-toggle {
+  display:inline-flex; align-items:center; gap:2px; padding:3px;
+  background:rgba(255,255,255,0.12); border-radius:14px; margin-bottom:8px;
+}
+body.ihh-active .lang-toggle a {
+  display:inline-block; padding:3px 12px; border-radius:11px;
+  font-size:12px; font-weight:700; letter-spacing:.5px;
+  color:#fff; text-decoration:none; opacity:0.7;
+}
+body.ihh-active .lang-toggle a:hover { opacity:1; }
+body.ihh-active .lang-toggle a.active {
+  background:#0B2A4A; color:#C89B3C; opacity:1;
+}
+body.ihh-active .hero-title-ihh {
+  max-width:1600px; margin:32px auto 0; position:relative; z-index:2;
+  padding:0 40px;
+}
+body.ihh-active .hero-title-ihh h3 { margin:0 0 10px; font-size:38px; font-weight:700; line-height:1.2; color:#fff; }
+body.ihh-active .hero-title-ihh p { margin:0; font-size:17px; opacity:0.92; max-width:800px; color:#fff; }
+
+/* Sticky tab bar */
+body.ihh-active nav.tabs-ihh {
+  background:#fff; border-bottom:1px solid #e5e7eb;
+  padding:0; position:sticky; top:0; z-index:50;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+body.ihh-active nav.tabs-ihh::-webkit-scrollbar { display:none; }
+body.ihh-active nav.tabs-ihh .tabs-inner {
+  max-width:1600px; margin:0 auto; padding:0 40px;
+  display:flex; flex-wrap:wrap; gap:4px; border-bottom:2px solid #e5e7eb;
+}
+body.ihh-active nav.tabs-ihh .tab {
+  padding:14px 14px; background:transparent; border:none;
+  color:#5e7480; cursor:pointer; font-size:13px; font-weight:600;
+  border-bottom:3px solid transparent; margin-bottom:-2px;
+  display:flex; align-items:center; gap:8px; white-space:nowrap;
+  transition:all 0.2s; font-family:inherit;
+}
+body.ihh-active nav.tabs-ihh .tab:hover { color:#111827; background:#f9fafb; }
+body.ihh-active nav.tabs-ihh .tab.active {
+  color:#111827; border-bottom-color:#0B2A4A; background:#fff;
+}
+body.ihh-active nav.tabs-ihh .tab .tab-num {
+  min-width:24px; height:24px; padding:0 6px;
+  background:#e5e7eb; color:#111827;
+  border-radius:12px;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700;
+}
+body.ihh-active nav.tabs-ihh .tab.active .tab-num { background:#0B2A4A; color:#fff; }
+
+/* Main container after tabs */
+body.ihh-active .ihh-main { max-width:1600px; margin:0 auto; padding:32px 40px; }
+
+/* Widen modal popouts (was 780px in original) */
+body.ihh-active .modal { max-width:1200px !important; }
+body.ihh-active .modal-overlay { padding:40px 30px !important; }
+body.ihh-active .hero p { max-width:none !important; }
+
+/* Whitespace + typography polish */
+body.ihh-active .card { padding:22px 24px !important; margin:14px 0 !important; }
+body.ihh-active .card p, body.ihh-active .card li { font-size:15.5px !important; line-height:1.55 !important; }
+body.ihh-active .card h3 { font-size:20px !important; margin:2px 0 12px !important; }
+body.ihh-active .card h4 { font-size:16px !important; margin:8px 0 6px !important; }
+body.ihh-active .prompt { font-size:14.5px !important; line-height:1.5 !important; padding:16px 56px 16px 18px !important; }
+body.ihh-active .prompt .copy { top:8px !important; right:8px !important; z-index:2 !important; background:#374151 !important; color:#fff !important; border-color:transparent !important; padding:5px 12px !important; font-size:12px !important; font-weight:600 !important; }
+body.ihh-active .prompt .copy:hover { background:#111827 !important; }
+body.ihh-active .callout { padding:14px 18px !important; margin:8px 0 16px !important; font-size:15px !important; }
+body.ihh-active .activity { padding:14px 16px !important; margin:10px 0 !important; }
+body.ihh-active .activity .head { margin-bottom:6px !important; font-size:13px !important; }
+body.ihh-active .modulehead { padding:14px 18px !important; margin:0 0 12px !important; }
+body.ihh-active .modulehead h2 { font-size:22px !important; }
+body.ihh-active .modulehead h2 small { font-size:13px !important; }
+body.ihh-active .modulehead .num { width:44px !important; height:44px !important; font-size:20px !important; }
+
+/* Views */
+body.ihh-active .view-ihh { display:none; animation:fadeInIhh 0.4s ease; }
+body.ihh-active .view-ihh.active { display:block; }
+@keyframes fadeInIhh {
+  from { opacity:0; transform:translateY(8px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Prev/Next nav */
+body.ihh-active .lab-nav-ihh {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:32px; gap:16px;
+}
+body.ihh-active .lab-nav-ihh button {
+  background:#374151; color:#fff; border:none; padding:12px 20px;
+  border-radius:8px; cursor:pointer; font-size:14px; font-weight:600;
+  font-family:inherit; transition:background 0.2s;
+}
+body.ihh-active .lab-nav-ihh button:hover { background:#111827; }
+body.ihh-active .lab-nav-ihh button.secondary {
+  background:transparent; color:#5e7480; border:1px solid #e5e7eb;
+}
+body.ihh-active .lab-nav-ihh button.secondary:hover { background:#f9fafb; color:#111827; }
+body.ihh-active .lab-nav-ihh button:disabled { opacity:0.4; cursor:not-allowed; }
+
+/* Force original exercise sections to look right inside tab views */
+body.ihh-active .view-ihh > section { display:block !important; margin:0 !important; }
+body.ihh-active .view-ihh > section .modulehead { margin-top:8px !important; }
+
+/* Force main to show even before auth (auth JS toggles display) - keep original behaviour */
+</style></head>
+<body class="ihh-active">
+<div id="lock">
+<div class="lock-box">
+<div class="blogo">CC</div>
+<h2>Contoso Integrity Bureau · Copilot Immersion</h2>
+<p>M365 Copilot Executive Workshop<br/>Enter the session password to continue.</p>
+<div class="pw-wrap">
+<input autocomplete="off" id="pw" placeholder="Session password" type="password"/>
+<button aria-label="Show password" class="pw-toggle" id="pwToggle" onclick="togglePw()" title="Show password" type="button"><svg id="eye-svg" viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"></path></svg></button>
+</div>
+<button onclick="unlock()">Enter Workshop →</button>
+<div class="err" id="err"></div>
+<div class="conf">Confidential · For executive workshop use only</div>
+</div>
+</div>
+<div class="layout" id="main" style="display:none">
+<aside>
+<div class="brand"><div class="logo">CC</div><h1>M365 Copilot<br/>GM Immersion</h1></div>
+<div class="tag">Executive Immersion</div>
+<nav>
+<h3>Overview</h3>
+<a href="#files">&#128193; Sample files (start here)</a>
+<a href="#overview">About this session</a>
+<a href="#story">The Story</a>
+<h3>Exercises</h3>
+<a href="#ex1">1 &#183; Daily Briefing</a>
+<a href="#ex2">2 &#183; OSINT Scraping + Sweep</a>
+<a href="#ex3">3 &#183; Procurement Anomalies</a>
+<a href="#ex4">4 &#183; Meeting Minutes</a>
+<a href="#ex5">5 &#183; Analysis to Deliverable</a>
+<a href="#ex6">6 &#183; Build Your Own Agent</a>
+<h3>Extras</h3>
+<a href="#extras">&#65291; Bonus tab (6 more Copilot moves)</a>
+<h3>Resources</h3>
+<a href="#tips">Prompt tips</a>
+</nav>
+</aside>
+<main>
+<!--IHH-INJECT-START-->
+<header class="hero-ihh">
+<div class="hero-ihh-inner">
+<div class="hero-brand-ihh">
+<div class="hero-logo-ihh">CR</div>
+<div class="brand-rule-ihh"></div>
+<div>
+<h1>Contoso Integrity Bureau</h1>
+<h2>Microsoft 365 Copilot &#183; GM Immersion</h2>
+</div>
+</div>
+<div class="hero-meta-ihh">
+<div class="lang-toggle"><a href="index.html" class="active">EN</a><a href="id.html">ID</a></div>
+<div>Workshop Edition &#183; 2026</div>
+<div style="margin-top:6px">
+<span class="pill">6 Exercises + Bonus</span>
+</div>
+</div>
+</div>
+<div class="hero-title-ihh">
+<h3>One workday, one Task Force Head, six Copilot moments</h3>
+<p>A hands-on immersion for Contoso Integrity Bureau executives, tailored to the Coordination and Supervision Task Force. Every prompt is copy-and-paste ready. Every exercise is grounded on the sample files.</p>
+</div>
+</header>
+<nav class="tabs-ihh"><div class="tabs-inner"><button class="tab active" data-view="intro"><span class="tab-num">0</span> Get Started</button>
+<button class="tab" data-view="files"><span class="tab-num">&#128193;</span> Sample Files</button>
+<button class="tab" data-view="ex1"><span class="tab-num">1</span> Daily Briefing</button>
+<button class="tab" data-view="ex2"><span class="tab-num">2</span> OSINT Scraping + Sweep</button>
+<button class="tab" data-view="ex3"><span class="tab-num">3</span> Procurement Anomalies</button>
+<button class="tab" data-view="ex4"><span class="tab-num">4</span> Meeting Minutes</button>
+<button class="tab" data-view="ex5"><span class="tab-num">5</span> Analysis to Deliverable</button>
+<button class="tab" data-view="ex6"><span class="tab-num">6</span> Build Your Own Agent</button>
+<button class="tab" data-view="extras"><span class="tab-num">&#65291;</span> Bonus</button>
+</div></nav><div class="ihh-main"><div class="view-ihh active" id="view-intro"><section id="overview">
+<div class="hero">
+<h2>Contoso Integrity Bureau &#183; Task Force Copilot Immersion</h2>
+<p>A national anti-corruption agency, modelled on the Directorate of Coordination and Supervision. A hands-on, Task-Force-level immersion covering both mission functions: Enforcement (turning open-source news into structured SPDP cases) and Prevention (turning provincial procurement disclosures into anomaly red flags), ending with a declarative Copilot agent the team can use daily.</p>
+<div class="meta-row">
+<span><b>Audience</b> Task Force Head, Enforcement Lead, Prevention Lead, Data Analyst, Legal Advisor, OSINT Specialist</span>
+<span><b>Duration</b> 90 minutes</span>
+<span><b>Format</b> Six live exercises plus a Bonus tab with 6 more Copilot moves</span>
+</div>
+</div>
+</section>
+<section id="story">
+<div style="margin:8px 0 20px;background:rgba(200,155,60,.10);border-left:4px solid #C89B3C;padding:14px 18px;border-radius:8px">
+<div style="font-size:13px;font-weight:700;color:#C89B3C;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Your requirements, mapped</div>
+<table style="width:100%;font-size:13px;color:var(--ink);border-collapse:collapse">
+<tr><td style="padding:4px 12px 4px 0;vertical-align:top;white-space:nowrap;color:var(--ink)"><b>OSINT news, structured extraction</b></td><td style="padding:4px 0;color:var(--muted)">Exercise 2, Task 2.1 (flagship - Researcher scrapes one URL with G-C-S-E prompt)</td></tr>
+<tr><td style="padding:4px 12px 4px 0;vertical-align:top;white-space:nowrap;color:var(--ink)"><b>OSINT batch sweep + SPDP register update</b></td><td style="padding:4px 0;color:var(--muted)">Exercise 2, Task 2.2 (Cowork - the customer's own term from the Bahasa requirements doc. On-demand only; Pak Bambang re-runs each morning.)</td></tr>
+<tr><td style="padding:4px 12px 4px 0;vertical-align:top;white-space:nowrap;color:var(--ink)"><b>Procurement anomaly detection</b></td><td style="padding:4px 0;color:var(--muted)">Exercise 3 (flagship - Copilot in Excel Chat + Edit, six anomaly patterns seeded)</td></tr>
+<tr><td style="padding:4px 12px 4px 0;vertical-align:top;white-space:nowrap;color:var(--ink)"><b>Teams recap saved as Word minutes</b></td><td style="padding:4px 0;color:var(--muted)">Exercise 4 (generic prompts, works with any meeting)</td></tr>
+<tr><td style="padding:4px 12px 4px 0;vertical-align:top;white-space:nowrap;color:var(--ink)"><b>Word polish and PowerPoint auto-gen</b></td><td style="padding:4px 0;color:var(--muted)">Exercise 5, Tasks 5.1 and 5.2 (plus Cowork alternative in Task 5.4)</td></tr>
+<tr><td style="padding:4px 12px 4px 0;vertical-align:top;white-space:nowrap;color:var(--ink)"><b>Excel governance dashboard</b></td><td style="padding:4px 0;color:var(--muted)">Exercise 3 Task 3.2 (build) and Exercise 5 Task 5.3 (sharpen for deck)</td></tr>
+<tr><td style="padding:4px 12px 4px 0;vertical-align:top;white-space:nowrap;color:var(--ink)"><b>Governance infographic and posters</b></td><td style="padding:4px 0;color:var(--muted)">Bonus B0 (four Copilot Create prompts - outputs are flat images, not editable slides)</td></tr>
+<tr><td style="padding:4px 12px 4px 0;vertical-align:top;white-space:nowrap;color:var(--ink)"><b>Build a declarative Copilot agent</b></td><td style="padding:4px 0;color:var(--muted)">Exercise 6 (Copilot Chat agent builder - no Copilot Studio licence needed)</td></tr>
+</table>
+</div>
+<div class="modulehead" style="margin-top:8px">
+<div class="num" style="background:linear-gradient(135deg,var(--brand),var(--accent));font-size:14px">&#9658;</div>
+<h2>The Story<small>One Task Force workday, six Copilot moments, plus a Bonus tab</small></h2>
+</div>
+<div style="border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px;background:var(--panel)">
+<div style="background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));padding:22px 26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:center">
+<div>
+<p style="margin:0;font-size:10px;letter-spacing:2px;font-weight:700;color:var(--brand);text-transform:uppercase">Microsoft 365 Copilot</p>
+<h3 style="margin:4px 0 0;font-size:22px;font-weight:800;color:#fff;line-height:1.15">AI Assistant<br/>to AI Doer</h3>
+</div>
+<div>
+<p style="margin:0 0 4px;font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:var(--brand);text-transform:uppercase">Persona</p>
+<p style="margin:0;font-size:15px;font-weight:700;color:#fff">Pak Bambang Kusumo</p>
+<p style="margin:3px 0 10px;font-size:12px;color:#94a3b8">Head, Coordination and Supervision Task Force, Contoso Integrity Bureau</p>
+<p style="margin:0 0 4px;font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:var(--brand);text-transform:uppercase">The Mission</p>
+<p style="margin:0;font-size:12px;color:#cbd5e1;line-height:1.55">Two functions running in parallel: (1) Enforcement - coordinating and supervising corruption case handling by prosecutors and police, using SPDP data plus OSINT sweeps; (2) Prevention - evaluating provincial and regency governance for anomalies in budget, procurement, and licensing.</p>
+</div>
+<div style="padding:14px;background:rgba(255,255,255,.06);border-radius:10px;border:1px solid rgba(255,255,255,.1)">
+<p style="margin:0 0 5px;font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:var(--brand);text-transform:uppercase">The Punchline</p>
+<p style="margin:0;font-size:14px;font-weight:700;font-style:italic;color:#fff;line-height:1.4">One Task Force workday.<br/>Six Copilot moments.<br/>From OSINT sweep to declarative agent.</p>
+</div>
+</div>
+<div style="padding:22px 22px 18px">
+<h3 style="margin:0 0 16px;font-size:18px;font-weight:700;color:var(--ink)">Six Copilot moments for the Task Force <span style="font-size:12px;color:var(--muted);font-weight:500">+ 6 more moves in the Bonus tab</span></h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+<div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#0B2A4A;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">01</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Daily Briefing</span>
+</div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">Two briefing variants</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Copilot Chat (5 min) + Researcher (15 min)</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">Task 1.1 is a fast Copilot Chat scan with no citations. Task 1.2 is a structured, cited Researcher brief with SPDP updates, calendar prep, and pending decisions. Pick the version that fits the morning.</p>
+</div>
+</div>
+<div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#0B2A4A;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">02</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">OSINT Scraping + Sweep</span>
+</div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">One URL to full register update</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Researcher (Task 2.1) + Cowork (Task 2.2)</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">Task 2.1 uses Researcher to extract SPDP-style fields from a single article. Task 2.2 uses Cowork to sweep the full Google News RSS feed, deduplicate against the case register, and draft the morning Teams post.</p>
+</div>
+</div>
+<div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#0B2A4A;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">03</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Procurement Anomalies</span>
+</div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">Red flags across the province</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Copilot in Excel Chat + Edit</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">Task 3.1 uses Chat mode for four targeted questions. Task 3.2 uses Edit mode to build a Risk_Score column and a Governance Dashboard sheet. The dashboard from this exercise is the direct input to Exercise 5.</p>
+</div>
+</div>
+<div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#0B2A4A;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">04</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Meeting Minutes</span>
+</div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">Any meeting to formal minutes</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Teams + Word Copilot</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">Three generic prompts that turn any Teams meeting, budget review, licensing panel, or board update into house-style minutes with a decisions box, action register, and executive summary. Five minutes end-to-end, not 90.</p>
+</div>
+</div>
+<div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#0B2A4A;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">05</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Analysis to Deliverable</span>
+</div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">Ex 3 output to the Deputy briefing pack</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Word + PowerPoint + Excel + Cowork</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">Polish the Word report (5.1), generate a deck from the polished Word doc (5.2), sharpen the Excel dashboard (5.3), then see the same three artefacts produced in one Cowork prompt (5.4) so you can see the tradeoff.</p>
+</div>
+</div>
+<div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#0B2A4A;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">06</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Build Your Own Agent</span>
+</div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">A grounded Q and A agent for the Task Force</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Copilot Chat agent builder (declarative)</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">Build a declarative Copilot Chat agent grounded on the procurement and SPDP files. No Copilot Studio licence. Four starter prompts that the full Task Force can use immediately. Honest about what declarative agents can and cannot do.</p>
+</div>
+</div>
+<div style="min-height:230px;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--panel2)">
+<div style="background:#C89B3C;padding:10px 14px;display:flex;align-items:center;gap:8px;flex:0 0 auto">
+<span style="font-size:22px;font-weight:800;color:rgba(255,255,255,.95);line-height:1">+</span>
+<span style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;line-height:1.2">Bonus Tab</span>
+</div>
+<div style="padding:14px;display:flex;flex-direction:column;gap:6px;flex:1 1 auto">
+<p style="margin:0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3">6 more Copilot moves for the Task Force</p>
+<p style="margin:0;font-size:12px;font-style:italic;color:var(--brand);font-weight:600">Posters, prompt tips, Outlook, Word</p>
+<p style="margin:0;font-size:13px;color:var(--muted);line-height:1.45">Four Copilot Create governance poster prompts, the G-C-S-E prompt framework card, two Outlook Copilot moves, a Word interrogation prompt, and a pre-send fact-check prompt.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="lab-nav-ihh"><button class="secondary" disabled="">← Previous</button><button data-go="files">Next: Sample Files →</button></div></div><div class="view-ihh" id="view-files"><section id="files">
+<div class="modulehead"><div class="num">&#128193;</div><h2>Sample files - start here<small>Download these first, then run the exercises</small></h2></div>
+<div class="card">
+<p class="lead">All data is fictional and labelled <b>Contoso</b>. Do not use for any operational decision. <b>Step 1:</b> download every file. <b>Step 2:</b> upload the six files to your OneDrive and the <b>Applicants/</b> folder to any SharePoint document library. <b>Step 3:</b> wait about 2 minutes for Microsoft Graph to index. Then begin Exercise 1.</p>
+<div style="margin:14px 0 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<a download="" href="samples.zip" id="dl-all-btn" style="display:inline-flex;align-items:center;gap:10px;padding:12px 22px;background:#0B2A4A;color:#fff;font-weight:700;font-size:15px;border-radius:10px;text-decoration:none;box-shadow:var(--shadow);transition:transform .12s ease">
+  &#11015;&#65039; Download all sample files (ZIP)
+ </a>
+<span style="font-size:12.5px;color:var(--muted)">One click, all files in a single ZIP. Unzip, then upload the contents to OneDrive and SharePoint.</span>
+</div>
+<table>
+<tr><th>#</th><th>File</th><th>Type</th><th>Used in</th><th>What it contains</th></tr>
+<tr><td>01</td><td><a href="samples/01 Contoso_Task_Force_Overview.docx">01 Contoso_Task_Force_Overview.docx</a></td><td><span class="badge yellow">Word</span></td><td>All exercises (context)</td><td>One-page context brief on Contoso Integrity Bureau, the Coordination and Supervision Task Force, and the two mission functions. Includes the persona bio for Pak Bambang Kusumo.</td></tr>
+<tr><td>02</td><td><a href="samples/02 Contoso_Direct_Procurement_Q3.xlsx">02 Contoso_Direct_Procurement_Q3.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Ex 3, Ex 5, Ex 6</td><td>180 rows of provincial and regency direct-procurement disclosures. Six anomaly patterns seeded intentionally: split contracts under the 200M IDR threshold, vendor concentration, price outliers, new-vendor high-value awards, shared vendor addresses, weekend awards.</td></tr>
+<tr><td>03</td><td><a href="samples/03 Contoso_SPDP_Case_Register.xlsx">03 Contoso_SPDP_Case_Register.xlsx</a></td><td><span class="badge blue">Excel</span></td><td>Ex 2, Ex 6</td><td>Existing SPDP case tracker used by the Task Force, roughly 40 rows. This is the append target for the OSINT sweep in Exercise 2 Task 2.2 and the grounding source for the agent in Exercise 6.</td></tr>
+<tr><td>04</td><td><a href="samples/04 Contoso_Sample_News_URLs.md">04 Contoso_Sample_News_URLs.md</a></td><td><span class="badge yellow">Markdown</span></td><td>Ex 2</td><td>Five Indonesian corruption news URLs, including the Jember bansos article from Antara News. Used for the OSINT extraction exercise.</td></tr>
+<tr><td>05</td><td><a href="samples/05 Contoso_Governance_Report_Draft.docx">05 Contoso_Governance_Report_Draft.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 5</td><td>Four-page Q3 procurement supervision draft, deliberately wordy, with weak topic-only headings and no executive summary. Input for the polish exercise and the PowerPoint auto-generation.</td></tr>
+<tr><td>06</td><td><a href="samples/06 Contoso_Task_Force_Meeting_Transcript.docx">06 Contoso_Task_Force_Meeting_Transcript.docx</a></td><td><span class="badge yellow">Word</span></td><td>Ex 4</td><td>Realistic 40-turn transcript from a 30-minute weekly coordination meeting with Pak Bambang and five direct reports. Covers SPDP backlog, red-flag agencies, and one urgent OSINT case from Jember.</td></tr>
+<tr><td>07</td><td><a href="samples/Applicants/">samples/Applicants/ (12 files)</a></td><td><span class="badge yellow">Word &#215;12</span></td><td>Not used in current edition</td><td>Twelve candidate integrity profiles (Applicant_01 through Applicant_12). The applicant screening exercise was removed in this edition. Files are retained for reference.</td></tr>
+</table>
+<div class="callout warn" style="margin-top:14px"><b>Why OneDrive and SharePoint?</b> Microsoft 365 Copilot can only analyse files stored in OneDrive or SharePoint. Files on your local Desktop are invisible to Copilot.</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="intro">← Get Started</button><button data-go="ex1">Next: Daily Briefing →</button></div></div><div class="view-ihh" id="view-ex1"><section id="ex1">
+<div class="modulehead"><div class="num">1</div><h2>Exercise 1 &#183; Daily Briefing<small>Two variants &#183; Petrosea pattern &#183; Copilot Chat (5 min) + Researcher (15 min)</small></h2></div>
+<div class="callout good"><b>How Pak Bambang starts the day.</b> Two tools, same question, different depth. Task 1.1 is a fast five-minute Copilot Chat scan - no citations, no waiting. Task 1.2 is a structured fifteen-minute Researcher brief with sources, SPDP new filings, calendar prep, and pending decisions filed as a working paper. Pick the one that fits the morning.</div>
+<div class="card">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:6px">
+<div style="background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:14px">
+<div style="font-size:11px;font-weight:700;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Task 1.1 &#183; Copilot Chat</div>
+<div style="font-size:13px;color:var(--muted)">5 minutes &#183; Fast &#183; No citations</div>
+<div style="font-size:13px;color:var(--muted);margin-top:4px">Use when you have five minutes before your first meeting</div>
+</div>
+<div style="background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:14px">
+<div style="font-size:11px;font-weight:700;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Task 1.2 &#183; Researcher</div>
+<div style="font-size:13px;color:var(--muted)">15 minutes &#183; Structured &#183; Cited</div>
+<div style="font-size:13px;color:var(--muted);margin-top:4px">Use when you need a filing-grade working paper to start the day</div>
+</div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 1.1</span><span class="file">&#128172; Copilot Chat &#183; five-minute morning scan</span></div>
+<h4>Fast morning brief - five minutes, no citations</h4>
+<p class="lead">Open Microsoft 365 Copilot Chat at <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a>. Paste the prompt below. This is the fast variant: Copilot Chat will scan your inbox, calendar, and Teams messages and return a plain three-section brief in under two minutes.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>give me a five-minute morning brief covering everything I need to know before I start work today.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force at Contoso Integrity Bureau. My two functions are Enforcement (tracking corruption case progress via SPDP and OSINT news) and Prevention (evaluating procurement anomalies at provincial and regency agencies). I need a fast scan, not a deep analysis.
+
+<span class="gk gk-s">Source:</span>my Outlook inbox (unread emails since yesterday 5 pm), my calendar for today, my Teams messages from the last 24 hours.
+
+<span class="gk gk-e">Expectation:</span>three short sections, each under five bullet points:
+1. Overnight developments - any new SPDP filing notifications received by email, any corruption news that mentions cases my Task Force is tracking, or urgent messages from direct reports.
+2. Today's calendar - meetings today in chronological order, each with a one-line topic and what I need to bring or decide.
+3. Pending decisions - anything I said I would decide or respond to yesterday that is still open.
+
+Rules: no citations needed. This is a fast scan. Use plain language. If nothing was found in a section, say "nothing flagged" rather than leaving it blank.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>What success looks like:</b> a clean three-section brief on screen in under two minutes. No footnotes, no source links - just the three things Pak Bambang needs before his first meeting.</div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 1.2</span><span class="file">&#128269; Researcher &#183; fifteen-minute audit-grade brief</span></div>
+<h4>Structured daily briefing - cited, deeper, suitable for filing</h4>
+<p class="lead">Open Microsoft 365 Copilot at <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> and click <b>Researcher</b>. Keep the model picker on <b>Auto</b>. Paste the prompt below. Researcher will read your inbox, Teams channels, calendar, and recent files, then hand you a single structured briefing with citations you can save as a working paper.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>produce a structured daily briefing for the Coordination and Supervision Task Force Head, suitable for filing as an official working paper.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force at Contoso Integrity Bureau. The briefing covers two functions: Enforcement (SPDP case tracking and OSINT news) and Prevention (procurement anomaly oversight). This brief will be saved to my OneDrive as the reference document for today's work.
+
+<span class="gk gk-s">Source:</span>my Outlook inbox (last 24 hours), my Teams channels "Task Force - Daily OSINT" and "Task Force - Coordination", my calendar for today and tomorrow, and any open documents or chat threads I have not yet responded to.
+
+Expectation - four sections with citations:
+1. Enforcement update - new SPDP filing notifications received by email or Teams since yesterday, any corruption news that directly names a case in my Task Force portfolio, and the name and stage of each. Cite the email subject line or message thread for each item.
+2. Prevention update - any procurement anomaly reports, agency responses, or supervision letter deadlines in the last 24 hours. Cite source.
+3. Today's calendar - a table with columns: Time, Meeting Title, Organiser, Suggested Preparation (one sentence each). Mark any meeting where I am the decision-maker.
+4. Pending actions from yesterday - anything assigned to me in a Teams message or email that I have not yet completed. Cite source and original request date.
+
+Rules: cite source for every item (email subject line, Teams thread name, or document name). If a section has no new items, state that clearly. Neutral, third-person tone for items 1 and 2. Do not speculate about cases not mentioned in the sources.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>What success looks like:</b> a four-section brief with inline citations for every item. Each item in the Enforcement and Prevention sections is traceable back to a specific email or Teams thread. The calendar table shows preparation notes for today's meetings. Pending actions lists anything unanswered.</div>
+</div>
+
+<div class="callout warn"><b>Reality Check &#183; Exercise 1.</b>
+<br/>Copilot Chat (Task 1.1): reads your tenant data reliably but does not cite sources - it is a fast scan, not an audit trail.
+<br/>Researcher (Task 1.2): web freshness varies. Items grounded on your tenant data (inbox, calendar, Teams) are reliable. Any claim that references external web results should be treated as a starting point and verified. Researcher does not have real-time access to SPDP Online - new filings in this brief come from email notifications in your inbox, not from a live database connection.
+<br/>Neither variant is a replacement for the official SPDP Online system. Use as a morning orientation, then verify critical items from the primary source.</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="files">← Sample Files</button><button data-go="ex2">Next: OSINT Scraping + Sweep →</button></div></div><div class="view-ihh" id="view-ex2"><section id="ex2">
+<div class="modulehead"><div class="num">2</div><h2>Exercise 2 &#183; OSINT Scraping + Sweep<small>Task 2.1: Researcher &#183; Task 2.2: Cowork &#183; Flagship for Enforcement</small></h2></div>
+<div class="callout good"><b>Why this matters.</b> Many corruption cases are not reported through the official SPDP Online system in time for the morning review. The Task Force must sweep open-source news, extract the facts, and update the case register. Task 2.1 uses Researcher to extract audit-grade data from a single article. Task 2.2 uses Cowork to sweep the full Google News RSS feed, deduplicate against the existing register, and draft the morning communications.</div>
+
+<div class="card">
+<div class="activity">
+<div class="head"><span class="num">Task 2.1</span><span class="file">&#128269; Researcher &#183; single URL audit-grade extraction</span></div>
+<h4>Extract SPDP-style fields from one news article</h4>
+<p class="lead">Open Microsoft 365 Copilot at <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a>, click <b>Researcher</b>, and paste the G-C-S-E prompt below. The sample URL is the Antara News article about the Jember bansos case. Run the initial prompt first, then run the refinement prompt to add Stage, Confidence, and Source URL.</p>
+
+<div class="task-step"><div class="step-label">Step 1 of 2 &#183; Initial extraction (Bahasa Indonesia columns)</div></div>
+<div class="prompt"><span class="gk gk-g">Goal:</span>extract the corruption case facts from the news article at the URL below and return them as a structured table row I can paste into my SPDP case register.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force at Contoso Integrity Bureau. I sweep Indonesian news sources daily for corruption cases that may not yet appear in SPDP Online. I need clean, structured data to add to the register.
+
+<span class="gk gk-s">Source:</span>https://jatim.antaranews.com/berita/261998/saksi-bpkp-sebut-kerugian-negara-korupsi-hibah-bansos-jember-capai-rp104-miliar
+
+<span class="gk gk-e">Expectation:</span>return a Markdown table with one data row and these five columns in order:
+- Nama Perkara (short descriptive case name in Indonesian)
+- Periode Perkara (year or year range as stated in the article)
+- Tersangka / Terdakwa (suspect or defendant names, comma-separated, as reported)
+- Jumlah Kerugian Keuangan Negara (estimated state financial loss in IDR - numeric value plus a human-readable form such as "104 miliar IDR")
+- APH Menangani (law enforcement agency handling the case - KPK, Kejaksaan, Polri, or as reported)
+
+Rules: use only facts explicitly stated in the article. If a field is not stated, write "tidak disebutkan". Do not guess or infer.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Step 2 of 2 &#183; Refinement - add Stage, Confidence, Source URL, Notes</div></div>
+<div class="prompt">Refine the extraction table from the article at:
+https://jatim.antaranews.com/berita/261998/saksi-bpkp-sebut-kerugian-negara-korupsi-hibah-bansos-jember-capai-rp104-miliar
+
+Expand the table by adding four columns after APH Menangani:
+- Tahap Perkara (current case stage - penyidikan, penuntutan, persidangan, putusan, banding, or as reported in the article)
+- Tingkat Keyakinan (extraction confidence: Tinggi if the article clearly states the field, Sedang if it is implied, Rendah if uncertain)
+- URL Sumber (the source URL, repeated)
+- Catatan (one short note on any ambiguity - for example, if the state-loss figure is attributed to a witness rather than a final court ruling)
+
+Keep all five original columns. Maintain the rule: if a field is not explicitly stated, write "tidak disebutkan" and set Tingkat Keyakinan to Rendah for that field.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="callout"><b>What success looks like:</b> a nine-column table with every field grounded on the article text. Jumlah Kerugian and APH should be Tinggi. Tahap Perkara may be Sedang or Rendah if the article does not clearly name the stage. The Catatan column should flag the BPKP witness attribution on the state-loss figure.</div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 2.2</span><span class="file">&#128260; Cowork &#183; batch sweep &#183; Variant A: Outlook RSS folder</span></div>
+<h4>Batch sweep - read the RSS feed, update the register, draft communications</h4>
+<p class="lead"><b>Cowork is on-demand.</b> Pak Bambang re-runs this prompt each morning. The prompt reads the Outlook RSS folder "OSINT - Google News", extracts SPDP-style fields from each article, deduplicates against <code>03 Contoso_SPDP_Case_Register.xlsx</code>, appends new rows, and drafts a Teams post and a distribution email. It stops before sending anything.</p>
+<p class="lead" style="margin-top:8px">The Google News RSS URL pattern the Task Force already uses:<br/><code style="font-size:12px;word-break:break-all">https://news.google.com/rss/search?q=korupsi+OR+tipikor+OR+%22kerugian+negara%22+OR+%22OTT+KPK%22+OR+%22dugaan+korupsi%22+OR+%22tersangka+korupsi%22+OR+SPDP&amp;hl=id&amp;gl=ID&amp;ceid=ID:id</code></p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>sweep this morning's Google News corruption alerts, extract SPDP-style fields from each article, update the case register with new rows, and prepare communications for my review.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force at Contoso Integrity Bureau. I subscribe to Google News alerts via Outlook RSS for Indonesian corruption keywords (korupsi, OTT KPK, kerugian negara, dugaan korupsi, SPDP). New alert emails arrive overnight. I run this sweep each morning before my first meeting.
+
+<span class="gk gk-s">Source:</span>- Outlook: RSS folder "OSINT - Google News", emails received in the last 24 hours only.
+- Excel: 03 Contoso_SPDP_Case_Register.xlsx on my OneDrive, sheet "Cases", existing rows.
+- Teams: channel "Task Force - Daily OSINT" in the Task Force team.
+
+Expectation - complete these steps in order and stop at the end for my review:
+1. In Outlook, list every unread RSS item in "OSINT - Google News" from the last 24 hours. For each item, follow the article link and extract these fields: Nama Perkara, Periode Perkara, Tersangka/Terdakwa, Jumlah Kerugian Keuangan Negara, APH Menangani, Tahap Perkara, Tingkat Keyakinan, URL Sumber, Catatan.
+2. Open 03 Contoso_SPDP_Case_Register.xlsx. For each extracted case, check whether a matching row already exists in sheet "Cases" with the same suspect names AND overlapping case period. If a match exists: do not add a new row; instead, update the Notes column of the matching row with the new source URL and today's date. If no match: prepare a new row to append.
+3. Append all new-case rows to sheet "Cases". Preserve the existing column order. Set the Owner column to "Pak Bambang - to assign".
+4. Draft a summary Teams message for channel "Task Force - Daily OSINT" with: total articles read, total new cases added, total cases updated, a table of the new cases, and a note flagging the highest-state-loss new case for priority review.
+5. Draft an Outlook email to the Task Force distribution list. Subject: "Laporan OSINT Sweep - [today's date] - [N] kasus baru". Body: same summary as step 4.
+
+STOP before sending the Teams message or the email. Show me all drafts and the list of rows to be appended first. I will review and approve before anything is sent.
+
+Closing line: once I approve, this run replaces roughly 45 minutes of my morning routine.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout warn" style="margin-top:8px"><b>STOP callout.</b> Cowork will not send anything until Pak Bambang explicitly approves. The Teams message draft and email draft are shown for review first. The rows to be appended to the Excel file are listed before any write happens. This is the safety check that makes the pipeline trustworthy for a government context.</div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 2.2 alt</span><span class="file">&#128260; Cowork &#183; Variant B: pasted URL list (demo-friendly)</span></div>
+<h4>Batch sweep - paste five URLs directly (simpler for live demos)</h4>
+<p class="lead">For demos where the RSS folder is not set up, paste the five URLs from <code>04 Contoso_Sample_News_URLs.md</code> directly into the prompt. The same deduplication and communications logic applies.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>extract SPDP-style case data from the five article URLs below, deduplicate against my existing case register, and prepare a consolidated summary with communications drafts.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force at Contoso Integrity Bureau. I am running a manual OSINT sweep using a set of news URLs from my sample file.
+
+<span class="gk gk-s">Source:</span>1. https://jatim.antaranews.com/berita/261998/saksi-bpkp-sebut-kerugian-negara-korupsi-hibah-bansos-jember-capai-rp104-miliar
+2. [paste URL 2 from 04 Contoso_Sample_News_URLs.md]
+3. [paste URL 3]
+4. [paste URL 4]
+5. [paste URL 5]
+Also: 03 Contoso_SPDP_Case_Register.xlsx (my OneDrive), sheet "Cases", existing rows.
+
+<span class="gk gk-e">Expectation:</span>follow the same five steps as Variant A (extract, deduplicate, prepare rows, draft Teams message, draft email). Deduplication rule: same suspect names plus overlapping case period equals an existing case - do not append a new row; update the Notes column instead.
+
+STOP before sending any message or email. Show me all drafts and the proposed new rows first. I will review and click send myself once I have verified the new SPDP rows.
+
+Closing line: once I approve, this run replaces roughly 45 minutes of my morning routine.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="callout warn"><b>Reality Check &#183; Exercise 2.</b>
+<br/><b>Researcher (Task 2.1):</b> fails on paywalled pages or JavaScript-heavy news sites that block server-side rendering. If Researcher cannot load the page, fall back to manually copying the article text and pasting it into the Copilot Chat window with the same extraction prompt.
+<br/><b>Cowork (Task 2.2):</b> Cowork is on-demand only. There is no "run this every morning automatically" setting in Cowork. Pak Bambang re-runs the same prompt each morning. If the customer wants the sweep to run unattended on a schedule, that requires a different product tier (beyond pure M365 Copilot) - we are not selling that today.
+<br/><b>Deduplication:</b> the deduplicate-by-suspect-plus-period rule works well for clear cases. For cases with multiple suspects listed differently across articles, manual review is still needed before the row is added to the register. Tingkat Keyakinan Rendah rows should always be reviewed by a human before filing.
+<br/><b>Cowork is the customer's own term</b> from the Bahasa requirements document. That is exactly the capability we are demoing here.</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex1">← Daily Briefing</button><button data-go="ex3">Next: Procurement Anomalies →</button></div></div><div class="view-ihh" id="view-ex3"><section id="ex3">
+<div class="modulehead"><div class="num">3</div><h2>Exercise 3 &#183; Procurement Anomalies<small>Copilot in Excel &#183; Chat mode (Task 3.1) + Edit mode (Task 3.2) &#183; Flagship for Prevention</small></h2></div>
+<div class="callout good"><b>Why this matters.</b> Provincial and regency governments submit Excel procurement disclosures every quarter. Buried in 180 rows of the Q3 file are the exact patterns the Task Force cares about: contracts split to stay under the direct-procurement threshold, one vendor dominating an agency, price outliers, brand-new vendors winning large awards, shared vendor addresses, and awards signed on Sundays. <b>Important:</b> the data and dashboard you build here are the direct input to Exercise 5 - that is where you turn this analysis into the Deputy briefing pack.</div>
+
+<div class="card">
+<p class="lead">Open <code>02 Contoso_Direct_Procurement_Q3.xlsx</code> in Excel. The file must be in a named Excel Table (select any cell, Insert - Table). This is required for Copilot in Excel to work. Click the <b>Copilot</b> icon in the ribbon.</p>
+
+<div class="activity">
+<div class="head"><span class="num">Task 3.1</span><span class="file">&#128202; Copilot in Excel &#183; Chat mode &#183; explore the data</span></div>
+<h4>Four targeted Chat questions to surface the main patterns</h4>
+<p class="lead">In the Copilot pane, make sure the mode is set to <b>Chat</b> (not Edit). Ask these four questions one at a time. Each takes about 20 seconds. Copy the results to a notes document as you go.</p>
+
+<div class="task-step"><div class="step-label">Chat question 1 &#183; vendor concentration</div></div>
+<div class="prompt">Which 5 vendors have the highest total contract value across all agencies in this file? Show vendor name, total value in IDR, number of contracts, and which agencies they appear in.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Chat question 2 &#183; weekend awards</div></div>
+<div class="prompt">List every contract in this file where the Award Date falls on a Saturday or Sunday and the Contract Value is above 500,000,000 IDR. Show Contract ID, Agency, Vendor Name, Contract Value IDR, and Award Date.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Chat question 3 &#183; direct-award threshold clustering</div></div>
+<div class="prompt">Which agencies have the most contracts with a Contract Value below 200,000,000 IDR? List the top 5 agencies by count of such contracts. The 200-million-IDR figure is the Indonesian direct-procurement threshold - contracts clustered just below it are a classic split-contract indicator.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Chat question 4 &#183; shared vendor addresses</div></div>
+<div class="prompt">Find vendor records where the same Vendor Address appears under two or more different Vendor Names. List the shared address, all Vendor Names that share it, and the total number of contracts and total IDR value for each vendor at that address.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="callout"><b>What success looks like:</b> four plain-language answers, each returned in under 30 seconds. The shared-address question may return 2-3 vendor clusters. Note the addresses and vendor names - these will show up again as flags in Task 3.2.</div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 3.2</span><span class="file">&#128202; Copilot in Excel &#183; Edit mode &#183; build the risk layer and dashboard</span></div>
+<h4>Add Risk_Score column and build the Governance Dashboard</h4>
+<p class="lead">Switch the Copilot pane to <b>Edit</b> mode. Paste the prompt below. This is a single Edit prompt that adds the risk-scoring layer and creates the Governance Dashboard sheet. It may take up to two minutes to complete.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>add a risk-scoring layer and build a Governance Dashboard sheet for the Q3 procurement audit.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force. This file contains 180 direct-procurement contracts. The direct-award threshold under Indonesian rules is 200 million IDR. Contracts split just below that threshold by the same vendor at the same agency are a classic red flag.
+
+<span class="gk gk-s">Source:</span>the Contracts table in this workbook. Columns: Contract ID, Procurement Year, Agency, Procurement Package Name, Vendor Name, Vendor Address, Vendor NPWP, Contract Value IDR, Award Date, Procurement Method, Contract Start, Contract End, Notes.
+
+<span class="gk gk-e">Expectation:</span>1. Add a Risk_Score column equal to the sum of these six signal columns (each returns 1 or 0):
+   - Split_Contract_Flag: 1 if the same Vendor Name and Agency combination has 3 or more contracts each under 200,000,000 IDR within any rolling 30-day window by Award Date.
+   - Vendor_Concentration_Flag: 1 if the vendor's total IDR value at that agency for Q3 exceeds 60 percent of that agency's total Q3 spend.
+   - Price_Outlier_Flag: 1 if Contract Value IDR for a given Procurement Package Name is more than 2 times the median value for the same package name across all agencies.
+   - New_Vendor_High_Value_Flag: 1 if the NPWP registration date in the Notes column is less than 6 months before the Award Date AND Contract Value IDR exceeds 1,000,000,000 IDR. If NPWP date cannot be parsed from Notes, leave as 0.
+   - Shared_Address_Flag: 1 if the exact Vendor Address is shared by two or more different Vendor Names anywhere in the file.
+   - Weekend_Award_Flag: 1 if Award Date falls on a Saturday or Sunday.
+2. Add a Risk_Tier column: 0 = Clean, 1 to 2 = Watch, 3 to 4 = Elevated, 5 to 6 = Critical.
+3. Apply conditional formatting to Risk_Score: green for 0, yellow for 1 to 2, orange for 3 to 4, red for 5 to 6.
+4. Create a new sheet named "Governance Dashboard" with:
+   - Title cell: "Q3 Procurement Governance Scorecard - Contoso Integrity Bureau".
+   - An Agency slicer and a Risk_Tier slicer connected to the data.
+   - A bar chart showing count of Critical-tier contracts per agency, sorted descending, with bars in deep navy.
+   - A top-10 risk contracts callout table: Contract ID, Agency, Vendor Name, Contract Value IDR, Risk_Score, sorted by Risk_Score descending then Contract Value descending.
+   - A "Where to look first" summary text box naming the single agency with the most Critical-tier contracts.
+
+Rules: add columns to the right of the existing table. Do not delete any rows. Keep the Contracts sheet intact. If a flag formula cannot be computed, leave the flag as 0 and note this in a comment cell.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>What success looks like:</b> the Contracts sheet gains eight new columns (six flags, Risk_Score, Risk_Tier) with colour-coded conditional formatting. The Governance Dashboard sheet shows which agencies cluster in Elevated and Critical tiers, with the bar chart and top-10 callout table ready to be screenshot for a supervision letter.</div>
+</div>
+
+<div style="background:rgba(11,42,74,.08);border-left:4px solid #0B2A4A;border-radius:8px;padding:14px 18px;margin:12px 0">
+<div style="font-size:12px;font-weight:700;color:#0B2A4A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">&#128279; Bridge to Exercise 5</div>
+<p style="margin:0;font-size:14px;color:var(--ink);line-height:1.55">The risk-flagged workbook and Governance Dashboard sheet you just built in Exercise 3 are the direct input to Exercise 5. In Exercise 5, you will take this analysis and turn it into the Deputy for Enforcement briefing pack: a polished Word report (Task 5.1), an executive deck (Task 5.2), and a sharpened dashboard (Task 5.3). You can also see all three artefacts produced in one Cowork prompt (Task 5.4) so you understand the tradeoff between speed and iteration control.</p>
+</div>
+
+<div class="callout warn"><b>Reality Check &#183; Exercise 3.</b>
+<br/><b>Table format is mandatory.</b> Copilot in Excel works only on named Excel Tables. If the file is not in Table format before you open Copilot, go to Insert - Table first.
+<br/><b>Excel Plan mode:</b> this mode is still rolling out and may not be available on all tenants. If you do not see "Plan" as an option in the Copilot pane, it is not yet available on your tenant. Task 3.1 (Chat) and Task 3.2 (Edit) do not require Plan mode and will work on any M365 Copilot-enabled tenant.
+<br/><b>Verify the formulas:</b> before you rely on Risk_Score for a supervision decision, spot-check three Critical-tier rows against the raw disclosure to confirm the flag formulas match the Bureau's official Q3 scoring rubric. Copilot builds the exhibit fast; the auditor still signs it.
+<br/><b>Slicers:</b> interactive slicers sometimes need to be reapplied after a Copilot Edit run. If the slicer does not filter the chart, click the slicer connection icon on the chart and reconnect it manually.</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex2">← OSINT Scraping + Sweep</button><button data-go="ex4">Next: Meeting Minutes →</button></div></div><div class="view-ihh" id="view-ex4"><section id="ex4">
+<div class="modulehead"><div class="num">4</div><h2>Exercise 4 · Meeting Minutes<small>Teams Copilot recap · Word Copilot polish · not Cowork · works with ANY meeting</small></h2></div>
+<div class="callout good"><b>The scenario.</b> You just stepped out of a meeting, or you are watching a recorded one back. The prompts below are deliberately generic: paste them into any Teams meeting chat or any Word document with a transcript attached, and they will produce a structured recap, formal minutes, and a polished two-page version. Nothing is Task Force-specific; use them for procurement supervision, budget planning, licensing reviews, HR panels, board updates, or any recurring meeting.</div>
+
+<div class="card">
+<div class="activity">
+<div class="head"><span class="num">Task 4.1</span><span class="file">👥 Teams Copilot · post-meeting recap · generic</span></div>
+<h4>Ask Teams Copilot for a structured recap of any meeting</h4>
+<p class="lead">Open the Teams meeting chat (or Chat with Copilot from the meeting recap panel). Paste the prompt below. Works for any meeting where transcription was on.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>give me a structured recap of the meeting that just ended.
+
+<span class="gk gk-c">Context:</span>I need clear action items, decisions, risks, and per-attendee commitments so nothing slips through the week. Format the recap so it can be pasted into an email or a Word document without further editing.
+
+<span class="gk gk-e">Expectation:</span>1. One-paragraph overall summary in three sentences or fewer.
+2. Decisions table with columns: Decision, Who owns follow-through, Confirmed by (person or group).
+3. Action items table with columns: Action, Owner, Due date, Priority (High, Medium, Low), Status (default to Open).
+4. Risks and blockers: bullet list, each with a one-line mitigation suggestion.
+5. Per-attendee commitments: one bullet per named attendee summarising what they personally committed to. Skip attendees who did not commit to anything.
+6. Open questions and next steps: three to five bullets naming what still needs to be answered and by when.
+
+Rules: cite only things actually said in the meeting. If an owner or due date was not stated, mark it "to be confirmed". Do not invent risks that were not raised. Neutral tone. Past tense.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 4.2</span><span class="file">📝 Word Copilot · formal minutes from transcript · generic</span></div>
+<h4>Draft formal minutes from any meeting transcript</h4>
+<p class="lead">Open a blank Word document. Click the Copilot icon, then Draft with Copilot. Reference the transcript file with <code>/</code> (paste the transcript, or link the recording's transcript file from OneDrive). Paste the prompt below.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>draft formal meeting minutes from the attached transcript, in a clean corporate house style suitable for wide distribution.
+
+<span class="gk gk-c">Context:</span>the minutes will go to the meeting chair, all attendees, and any named recipient on the distribution list. Readers will not have attended the meeting, so the minutes must stand on their own.
+
+<span class="gk gk-s">Source:</span>use the attached transcript as the sole factual basis. Do not add outside information.
+
+<span class="gk gk-e">Expectation:</span>produce a Word document with these numbered sections in order:
+1. Header block: meeting title, date, time (start and end), location or platform, chair, minute taker, attendees (name and role if stated), apologies.
+2. Agenda summary: three to seven bullets, phrased as topics or noun phrases, not verbs.
+3. Discussion notes: one subsection per agenda item, three to six sentences each, past tense, neutral third-person voice. No verbatim quotes unless the speaker asked for their exact words to be recorded.
+4. Decisions box: a bordered call-out listing every decision on its own numbered line. Format: "Decision N: [what was decided]. Owner: [name]. Effective: [date or 'immediately']."
+5. Action register: a table with columns Action, Owner, Due Date, Priority (High, Medium, Low), Status (default Open).
+6. Risks and escalations: bullet list. Include only risks explicitly raised in the meeting.
+7. Distribution list: chair, minute taker, all attendees, and any recipient the chair named during the meeting.
+
+Rules: use only content from the transcript. Neutral tone. No opinions. Do not attribute a decision to a person who did not verbally agree to it. If a decision was deferred, record it under Discussion notes not Decisions box. Use consistent title case for headings.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 4.3</span><span class="file">📝 Word Copilot · polish · two-page ceiling · generic</span></div>
+<h4>Tighten any draft minutes to two pages with an executive summary</h4>
+<div class="prompt"><span class="gk gk-g">Goal:</span>polish this draft of the meeting minutes for clarity and length, then add an executive summary paragraph at the top.
+
+<span class="gk gk-c">Context:</span>busy readers scan only the first page of any minutes. If the essentials are not on page one, the follow-up is missed.
+
+<span class="gk gk-e">Expectation:</span>- Improve sentence clarity, reduce jargon, and shorten wordy phrases without changing meaning.
+- Enforce a two-page ceiling. If the draft is longer, trim the discussion notes first (never the decisions box or the action register).
+- Add a three-sentence Executive Summary at the top, immediately after the header block, that names the single most important decision, the single most urgent action, and the single biggest risk raised.
+- Preserve the numbered section structure, the decisions box, and the action register verbatim from the source draft.
+- Convert any passive-voice sentences into active voice where the actor is clear from the transcript.
+
+Rules: do not add facts not in the draft. Do not change any owner name or due date. Do not remove any row from the action register or the decisions box.<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout warn"><b>Reality check:</b> Teams Copilot recap requires a Copilot licence on the meeting organiser, and transcription must have been enabled during the recording. If the recap panel is empty, verify that Transcription was on before you left the meeting. For Word Copilot, the polish quality is only as good as the transcript quality; scrub any obvious speech-to-text errors in the transcript before running Task 4.2. Note: there is no first-party "Teams meeting ended" trigger in pure Microsoft 365 Copilot today, so the save-to-Word step is a two-click routine (save transcript, then prompt Word), not fully autonomous.</div>
+</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex3">← Procurement Anomalies</button><button data-go="ex5">Next: Analysis to Deliverable →</button></div></div><div class="view-ihh" id="view-ex5"><section id="ex5">
+<div class="modulehead"><div class="num">5</div><h2>Exercise 5 &#183; Analysis to Deliverable<small>Word + PowerPoint + Excel + Cowork &#183; Four tasks, one briefing pack</small></h2></div>
+<div class="callout good"><b>The frame.</b> Take what you produced in Exercise 3 - the risk-flagged workbook and Governance Dashboard - and turn it into the Deputy for Enforcement briefing pack: a polished Word report, an executive deck, and a sharpened dashboard. Tasks 5.1 to 5.3 show the manual path, one artefact at a time. Task 5.4 shows the same three artefacts produced in one Cowork prompt so you can see the tradeoff between speed and per-artefact iteration control. Neither approach is "right" - the choice depends on how much manual polish the pack needs.</div>
+
+<div class="card">
+<div class="activity">
+<div class="head"><span class="num">Task 5.1</span><span class="file">&#128221; Word Copilot &#183; polish the governance report</span></div>
+<h4>Turn the Q3 draft into a board-ready governance report</h4>
+<p class="lead">Open <code>05 Contoso_Governance_Report_Draft.docx</code> in Word. Click the Copilot icon, then Draft with Copilot or Rewrite. Paste the prompt below. <b>Note:</b> you must type the risk numbers from Exercise 3 into the prompt text - Word Copilot cannot read the Excel file directly.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>polish this Q3 governance report so it reads like a Task Force board paper, not a working draft.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force. This report goes to the Bureau leadership meeting on Friday. It covers procurement supervision findings across three provinces for Q3. From my Exercise 3 analysis: 12 contracts are at Critical tier, 31 contracts are at Elevated tier, across 7 agencies, with a combined value at risk of approximately IDR 18.4 billion.
+
+<span class="gk gk-s">Source:</span>use only the content already in this Word document, plus the risk numbers I have provided above.
+
+<span class="gk gk-e">Expectation:</span>1. Improve clarity and readability throughout - shorten wordy phrases, remove redundant sentences, replace jargon with plain language that a legal advisor with no procurement background can follow.
+2. Rewrite to a professional Bureau house style: neutral third-person voice, active verbs, no informal phrases.
+3. Add a two-page executive summary immediately after the report title, structured as three paragraphs: (a) the single most important finding; (b) the two next-most-important findings with the risk numbers I provided above; (c) the one decision the Bureau leadership meeting is being asked to make.
+4. Rewrite each section heading as an action title that states the conclusion (for example, instead of "Findings", write "Seven agencies show contract patterns requiring supervision escalation").
+
+Rules: do not add any figures, agency names, or vendor names not already in the document or in the risk numbers I supplied. If a claim in the document is not backed by data in the document, flag it inline with "(source not stated in draft)".<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout"><b>What success looks like:</b> action-title headings, a three-paragraph executive summary on page one referencing the risk numbers, improved sentence clarity throughout. The report should read like a filing-ready board paper.</div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 5.2</span><span class="file">&#127775; PowerPoint Copilot &#183; deck from the polished Word doc</span></div>
+<h4>Auto-generate the deck, then run a critique-and-rewrite pass</h4>
+<p class="lead">Open PowerPoint. In Copilot, choose <b>"Create presentation from file"</b> and point it at the polished <code>05 Contoso_Governance_Report_Draft.docx</code> from Task 5.1. After the deck is generated, run the prompt below as a critique-and-rewrite pass to style and tighten it.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>turn this auto-generated deck into the Deputy for Enforcement briefing pack - branded, eight slides maximum, one clear message per slide.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force. I am presenting to the Bureau leadership meeting on Friday. Twenty minutes, eight slides maximum. Audience includes two Deputies and the Bureau Secretariat.
+
+<span class="gk gk-s">Source:</span>the deck you just generated from 05 Contoso_Governance_Report_Draft.docx (the polished version).
+
+<span class="gk gk-e">Expectation:</span>1. Rewrite every slide title into action-title format: state the conclusion, not the topic. No topic headings like "Findings" - replace with "Seven agencies exceed the anomaly threshold in Q3".
+2. Each body slide must have one key message only. If a slide has more than one main point, split it.
+3. Apply a colour scheme using deep navy blue for headings and section dividers, institutional gold as the accent colour for callouts and key numbers, and muted grey body text on white. Do not use bright reds or greens.
+4. Add speaker notes to each body slide - three short bullets that a presenter can read in 30 seconds.
+5. Keep the slide count at or below eight, excluding the title slide and any appendix.
+
+Rules: do not invent numbers not in the Word document. Do not change any agency name. If a slide cannot be generated from the document content, leave a placeholder with a note stating "(content needed)".<button class="copy" onclick="cp(this)">Copy</button></div>
+<div class="callout warn"><b>Important sequence:</b> PowerPoint Copilot "Create presentation from file" respects the Word document heading structure. Always run Task 5.1 first (polish the Word doc and save it), then feed the polished file to PowerPoint. If you feed it the original unpolished draft, the deck inherits the weak topic-only headings. Also: PowerPoint Copilot cannot read Excel directly - the risk numbers must be in the Word document body already, not in a linked spreadsheet.</div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 5.3</span><span class="file">&#128202; Excel Copilot &#183; Edit &#183; sharpen the dashboard for the data slide</span></div>
+<h4>Make the Governance Dashboard screenshot-ready for the deck</h4>
+<p class="lead">Go back to <code>02 Contoso_Direct_Procurement_Q3.xlsx</code>. Navigate to the Governance Dashboard sheet built in Exercise 3. Open Copilot in Excel in Edit mode. Paste the prompt below.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>sharpen the Governance Dashboard sheet so it is screenshot-ready for inclusion in the leadership briefing pack.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force. The dashboard needs to look like a finished audit exhibit, not a working spreadsheet.
+
+<span class="gk gk-s">Source:</span>the Governance Dashboard sheet in 02 Contoso_Direct_Procurement_Q3.xlsx.
+
+<span class="gk gk-e">Expectation:</span>1. Add a KPI callout row at the top of the dashboard with four cells in a row: Total Contracts Reviewed, Total IDR Value (formatted in billions with one decimal place), Critical-Tier Count, Agencies with Critical Contracts. Format each cell with a bold large number on top and a short label below in smaller font.
+2. Format all IDR value cells in the dashboard as millions with thousand separators (for example, "18,400" represents 18.4 billion IDR). Add an "(IDR millions)" label to each column header that contains a monetary value.
+3. Add a text box at the bottom of the dashboard with this text: "Source: 02 Contoso_Direct_Procurement_Q3.xlsx - Contracts sheet. Risk scoring by Copilot in Excel. Review date: [today's date]. For Task Force internal use only."
+
+Rules: do not delete any existing data, chart, or slicer. Only add the KPI row, reformat the monetary columns, and add the source text box.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Task 5.4</span><span class="file">&#128260; Cowork &#183; one prompt for the whole briefing pack</span></div>
+<h4>The Cowork alternative: Tasks 5.1 + 5.2 + 5.3 in one prompt</h4>
+<p class="lead">This is the same three artefacts (polished Word report, PowerPoint deck, sharpened Excel dashboard) produced in one Cowork session. Run this after seeing the manual path in Tasks 5.1 to 5.3 so you can compare the tradeoff.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>produce the complete Q3 supervision briefing pack in one run - a polished Word report, a brand-styled PowerPoint deck, and a sharpened Excel dashboard.
+
+<span class="gk gk-c">Context:</span>I am Pak Bambang Kusumo, Head of the Coordination and Supervision Task Force. I am preparing for the Bureau leadership meeting on Friday. From my Exercise 3 analysis: 12 Critical-tier contracts, 31 Elevated-tier contracts, 7 flagged agencies, combined value at risk approximately IDR 18.4 billion.
+
+<span class="gk gk-s">Source:</span>- Word: 05 Contoso_Governance_Report_Draft.docx (working draft to be polished, on my OneDrive).
+- Excel: 02 Contoso_Direct_Procurement_Q3.xlsx, Governance Dashboard sheet (built in Exercise 3, on my OneDrive).
+
+<span class="gk gk-e">Expectation:</span>1. Polish the Word report: improve clarity and readability, rewrite to Bureau house style, add a two-page executive summary referencing the risk numbers above, rewrite headings as action titles. Save the polished version as "05 Contoso_Governance_Report_Polished.docx" in the same OneDrive folder.
+2. Create a PowerPoint deck from the polished Word file using Create presentation from file. Apply deep navy headings, institutional gold accents, maximum eight slides. Rewrite all slide titles as action titles. Add three-bullet speaker notes to each body slide. Save as "05 Contoso_Governance_Deck.pptx" in the same OneDrive folder.
+3. Sharpen the Governance Dashboard in the Excel file: add a KPI callout row at the top with four numbers, format IDR values in millions with thousand separators, add a source text box at the bottom.
+
+STOP after completing all three artefacts. Show me a one-paragraph summary of what was produced and the three file links before I review.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div style="background:rgba(200,155,60,.1);border-left:4px solid #C89B3C;border-radius:8px;padding:14px 18px;margin:10px 0">
+<div style="font-size:12px;font-weight:700;color:#C89B3C;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">The Tradeoff</div>
+<p style="margin:0;font-size:14px;color:var(--ink);line-height:1.55"><b>Cowork (Task 5.4):</b> faster - one prompt, three artefacts in sequence, no switching between apps. But you lose the per-artefact iteration control you get in Tasks 5.1 to 5.3. If the Word polish is not quite right, you cannot easily re-run just that step without restarting the whole Cowork session.</p>
+<p style="margin:8px 0 0;font-size:14px;color:var(--ink);line-height:1.55"><b>Manual path (Tasks 5.1 to 5.3):</b> more steps, but you can inspect and refine each artefact before moving to the next. If the Pack is going to the Deputy for Enforcement, the manual path gives you the review checkpoints you want. Neither approach is wrong - the choice depends on how much polish the pack needs and how much time you have.</p>
+</div>
+</div>
+
+<div class="callout warn"><b>Reality Check &#183; Exercise 5.</b>
+<br/><b>PowerPoint cannot read Excel directly.</b> To get the risk numbers into the deck, they must be in the Word document body first. Always run Task 5.1 (polish Word, including the risk numbers) before Task 5.2 (generate deck from Word). You cannot skip Word and go straight from Excel to PowerPoint.
+<br/><b>Word Copilot cannot read Excel.</b> The risk numbers (12 Critical-tier, 31 Elevated, 7 agencies, IDR 18.4 billion) were typed into the Task 5.1 prompt explicitly. If your real numbers from Exercise 3 are different, update the prompt text before running.
+<br/><b>Copilot Create outputs are flat images.</b> If you use Copilot Create (Bonus B0) to generate a governance poster for the leadership wall, that output is a printable image, not an editable PowerPoint slide. Do not expect to edit it in PowerPoint.
+<br/><b>Cowork is on-demand only.</b> Task 5.4 is a single on-demand Cowork run. There is no "generate the briefing pack automatically every week" setting in Cowork. Pak Bambang runs it each time he needs the pack.</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex4">← Meeting Minutes</button><button data-go="ex6">Next: Build Your Own Agent →</button></div></div><div class="view-ihh" id="view-ex6"><section id="ex6">
+<div class="modulehead"><div class="num">6</div><h2>Exercise 6 &#183; Build Your Own Agent<small>Copilot Chat agent builder &#183; Declarative &#183; No Copilot Studio licence needed</small></h2></div>
+<div class="callout good"><b>The finale.</b> Build a declarative Copilot Chat agent grounded on the two key Task Force data files. Any member of the Task Force can then ask natural-language questions against the procurement register and the SPDP case register without opening Excel. No code, no tool calls, no Copilot Studio licence.</div>
+
+<div class="card">
+<p class="lead">Before you start, upload <code>02 Contoso_Direct_Procurement_Q3.xlsx</code> and <code>03 Contoso_SPDP_Case_Register.xlsx</code> to a SharePoint site the Task Force team has access to. Note the SharePoint URLs for both files - you will need them as grounding sources. Optionally also upload <code>01 Contoso_Task_Force_Overview.docx</code> as a glossary context file.</p>
+
+<div class="activity">
+<div class="head"><span class="num">Step 1</span><span class="file">&#128172; Copilot Chat &#183; Open the agent builder</span></div>
+<h4>Start the agent builder in Copilot Chat</h4>
+<p class="lead">Open Microsoft 365 Copilot at <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a>. In the left panel, look for <b>Agents</b> or the pencil/create icon. Select <b>"Create an agent"</b> or <b>"Build your own agent"</b>. You will be taken to the agent builder interface. No Copilot Studio licence is required - this is the built-in agent builder in Copilot Chat.</p>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Step 2</span><span class="file">&#128172; Agent configuration</span></div>
+<h4>Name, instructions, and grounding sources</h4>
+<p class="lead">Fill in the agent configuration fields as shown below. Copy the instructions text and paste it into the "Instructions" field of the agent builder.</p>
+
+<div class="task-step"><div class="step-label">Agent name</div></div>
+<div class="prompt">Korsup Integrity Analyst<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Agent description</div></div>
+<div class="prompt">A data assistant for the Coordination and Supervision Task Force. Answers questions about Q3 procurement contracts and SPDP corruption cases grounded on the two Task Force register files.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Agent instructions (paste into the Instructions field)</div></div>
+<div class="prompt">You are the Korsup Integrity Analyst, a data assistant for the Coordination and Supervision Task Force at Contoso Integrity Bureau.
+
+Your role: answer questions about procurement contracts and SPDP corruption cases using only the grounded data sources provided. Do not use general knowledge about Indonesian corruption cases beyond what is in the files.
+
+Voice and style: neutral, precise, government-audit register. Respond in the same language as the question (Indonesian or English). Always cite the specific row ID or cell reference that supports your answer (for example: "Contracts row 47, Contract ID CON-2025-047"). Flag any data quality issues you notice, such as missing values, inconsistent formats, or apparent duplicate entries.
+
+If the answer requires information not in the grounded files, say: "Data ini tidak tersedia di register saya" (this data is not available in my register).
+
+Rules: cite specific rows and cells for every factual claim. Do not guess. Do not name individuals not already in the data files. If a question requires a judgment call, present the relevant data and let the Task Force Head decide.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Grounding sources - add these in the Knowledge section</div></div>
+<p class="lead">In the agent builder Knowledge section, click "Add" and paste the SharePoint URLs for each file:</p>
+<ul>
+<li><code>02 Contoso_Direct_Procurement_Q3.xlsx</code> - the Q3 procurement register with Risk_Score column from Exercise 3</li>
+<li><code>03 Contoso_SPDP_Case_Register.xlsx</code> - the SPDP case tracker</li>
+<li><code>01 Contoso_Task_Force_Overview.docx</code> - optional, provides glossary context for terminology</li>
+</ul>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Step 3</span><span class="file">&#128172; Starter prompts &#183; four pre-built questions</span></div>
+<h4>Add four starter prompts so the Task Force can use the agent immediately</h4>
+<p class="lead">In the agent builder, look for the "Starter prompts" or "Conversation starters" section. Add these four prompts one at a time. They will appear as clickable buttons when any team member opens the agent.</p>
+
+<div class="task-step"><div class="step-label">Starter prompt 1</div></div>
+<div class="prompt">Which agency has the most Critical-tier contracts this quarter? Show me the agency name, the count of Critical-tier contracts, and the total IDR value.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Starter prompt 2</div></div>
+<div class="prompt">Show every contract signed on a Saturday or Sunday with a Contract Value over 500 million IDR. List Contract ID, Agency, Vendor Name, Contract Value IDR, and Award Date.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Starter prompt 3</div></div>
+<div class="prompt">List vendors whose Vendor Address appears under two or more different Vendor Names in the procurement register. Show the shared address, all vendor names, and total contract count and total IDR value for each.<button class="copy" onclick="cp(this)">Copy</button></div>
+
+<div class="task-step"><div class="step-label">Starter prompt 4</div></div>
+<div class="prompt">Which SPDP cases in the case register have no update note in the last 30 days? Cross-reference these against the procurement register: do any of the suspects or agency names in those stalled SPDP cases also appear as vendors or agencies in the Critical-tier contracts?<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Step 4</span><span class="file">&#128172; Share &#183; make it available to the Task Force team</span></div>
+<h4>Share the agent with the Task Force</h4>
+<p class="lead">Once you have saved and tested the agent, use the Share button in the agent builder to share it with your Task Force Microsoft Teams team or specific individuals. Team members will be able to find the agent in their Copilot Chat agents list and start using the four starter prompts immediately.</p>
+</div>
+
+<div class="callout warn"><b>Reality Check &#183; Exercise 6.</b>
+<br/><b>Declarative agents are grounded Q and A only.</b> The Korsup Integrity Analyst will answer questions about data in the grounded files. It will not autonomously scan for new anomalies, send alerts, or run overnight. Every interaction requires a human to ask a question.
+<br/><b>No autonomous overnight runs.</b> If the customer wants the agent to "detect anomalies overnight and send a Teams alert", that is a different product category - Copilot Studio autonomous agents, which is on the Microsoft roadmap. We are not selling that today.
+<br/><b>No code, no tool calls.</b> The agent builder in Copilot Chat produces declarative agents only: instructions plus grounding sources plus starter prompts. There are no API calls, no code execution, no loops.
+<br/><b>Grounding freshness:</b> the agent reads the files as they exist in SharePoint at the time of each conversation. If you update the Excel files with new data, the agent picks up the new data automatically on the next conversation - no rebuild needed.
+<br/><b>Scope of answers:</b> the agent can only answer questions about data explicitly present in the grounded files. It cannot query SPDP Online directly, browse the web for news, or access files not in the grounding sources list.</div>
+</div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex5">← Analysis to Deliverable</button><button data-go="extras">Next: Bonus →</button></div></div><div class="view-ihh" id="view-extras"><section id="extras">
+<div class="modulehead"><div class="num">+</div><h2>Bonus Tab<small>Governance posters + five more Copilot moves for the Task Force</small></h2></div>
+<div class="callout good"><b>What lives here.</b> Four Copilot Create governance poster prompts (B0), the G-C-S-E prompt framework card (B1), two Outlook Copilot moves (B2, B3), a Word interrogation prompt (B4), and a pre-send fact-check prompt (B5).</div>
+
+<div class="bonus-grid"><button class="bcard" onclick="openModal('kx-b56798a9')"><span class="ico">&#127912;</span><h4>B0 &#183; Governance Poster (Copilot Create &#183; four prompts)</h4><p>Open Copilot Create. Paste any of the four prompts to generate a bureau-branded infographic: Q3 priorities, case journey strip, regional heatmap, or year-in-review poster. Outputs are flat images, not editable slides.</p></button><button class="bcard" onclick="openModal('kx-new-b1')"><span class="ico">&#128196;</span><h4>B1 &#183; Prompt tips card (G-C-S-E framework)</h4><p>The Goal, Context, Source, Expectation framework used across all major prompts in this immersion. Copy it into any prompt you write.</p></button><button class="bcard" onclick="openModal('kx-new-b2')"><span class="ico">&#128236;</span><h4>B2 &#183; Outlook Copilot &#183; catch up on a long thread</h4><p>In Outlook, open the longest unread email thread. Copilot summarises it and drafts a reply in Bureau tone.</p></button><button class="bcard" onclick="openModal('kx-new-b3')"><span class="ico">&#8617;&#65039;</span><h4>B3 &#183; Outlook Copilot &#183; draft an executive reply</h4><p>Draft a reply from the Task Force Head to the Deputy for Prevention. Formal, four sentences, specific date commitment.</p></button><button class="bcard" onclick="openModal('kx-new-b4')"><span class="ico">&#128214;</span><h4>B4 &#183; Word &#183; interrogate a long governance report</h4><p>Five questions to ask Copilot about any Word document before you present it. Finds weak claims, number conflicts, and missing sections.</p></button><button class="bcard" onclick="openModal('kx-new-b5')"><span class="ico">&#9989;</span><h4>B5 &#183; Copilot Chat &#183; quick fact check before you send</h4><p>Paste any paragraph or table into Copilot Chat before sending. Returns a "cleared" or "revise" verdict with source citations.</p></button></div>
+</section><div class="lab-nav-ihh"><button class="secondary" data-go="ex6">&#8592; Build Your Own Agent</button><button data-go="intro">Back to start &#8634;</button></div></div></div>
+
+<div style="margin-top:48px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:12px;text-align:center">
+ Contoso Integrity Bureau · M365 Copilot GM Immersion · Session ID 112e253a-7fd6-48b4-80b3-e89c7d7914fd
+</div>
+</main>
+</div>
+
+<div class="modal-overlay" id="modal-kx-b56798a9"><div class="modal"><button class="modal-close" onclick="closeModal('kx-b56798a9')">&times;</button><h3>B0 · Governance Poster (Copilot Create · four prompts)</h3>
+<p class="lead">Open Copilot Create (formerly Designer). Pick "Design an image" or the poster template. Paste any of the four prompts below. Copilot Create generates variations; iterate until you have a poster fit to hang on the Task Force wall or drop into a Bureau leadership deck.</p>
+
+<div class="activity">
+<div class="head"><span class="num">Poster 1</span><span class="file">🎨 Copilot Create · Q3 priorities</span></div>
+<h4>Q3 Anti-Corruption Priorities for the Task Force Head</h4>
+<div class="prompt">Design a one-page portrait infographic poster titled "Q3 Anti-Corruption Priorities" for the Head of the Coordination and Supervision Task Force at Contoso Integrity Bureau. Use a deep navy blue as the primary colour, institutional gold as the accent, and white as the background. Muted grey for supporting text. Serious, government-grade, institutional feel; not flashy.
+
+Layout, top to bottom:
+- A slim navy header bar with the Bureau name on the left and "Q3 Priorities" on the right in gold.
+- A "big numbers" strip with four numbers side by side, each with a gold underline: Open Cases, Cases Handed to Court, State Loss Recovered in IDR, Red-Flag Agencies. Leave the numbers as placeholders like "XX" for now.
+- Three priority cards in a row, each with a gold icon-style circle at the top and a short caption underneath: (1) OSINT Sweep, (2) Procurement Anomaly Review, (3) Provincial Supervision Letters.
+- A small agency comparison table with three rows and three columns: Agency, Risk Tier, Next Step. Leave the cell values as placeholders.
+- A footer strip in navy with the Bureau name and a small gold seal-style circle on the right.
+
+Typography: sans-serif, generous line height, all-caps for section labels. No photographs, no logos other than the Bureau seal placeholder. No decorative emojis.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Poster 2</span><span class="file">🎨 Copilot Create · case journey</span></div>
+<h4>From Report to Verdict - the six-stage journey of a corruption case</h4>
+<div class="prompt">Design a one-page landscape infographic poster titled "From Report to Verdict: the six-stage journey of a corruption case at Contoso Integrity Bureau". Deep navy blue primary, institutional gold accent, white background, muted grey supporting text. Institutional, quietly authoritative, not flashy.
+
+Layout:
+- Navy title bar at the top with the poster title in white and the Bureau name in gold on the right.
+- A horizontal six-stage journey strip across the middle: (1) Report received, (2) Preliminary assessment, (3) Investigation opened, (4) Suspect named, (5) Handed to court, (6) Verdict. Each stage is a rounded rectangle in navy with a gold number circle on top and a short caption below. Connect the six stages with a thin gold arrow line.
+- Below the strip, a small "Where cases stall" bar chart showing which of the six stages holds the most cases. Bars in gold, axis labels in muted grey.
+- To the right of the bar chart, a compact "Average time per stage" table with the six stage names and placeholder day counts.
+- Footer strip in navy with the Bureau name.
+
+Typography: sans-serif, tight spacing on the journey strip, generous around the chart. No photographs, no decorative emojis.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Poster 3</span><span class="file">🎨 Copilot Create · regional heatmap</span></div>
+<h4>Regional Governance Heatmap - 34 provinces at a glance</h4>
+<div class="prompt">Design a one-page portrait infographic poster titled "Regional Governance Heatmap: 34 provinces at a glance" for the Contoso Integrity Bureau Task Force. Deep navy blue as the primary colour, institutional gold as the accent, white background, muted grey supporting text. Institutional, government-grade look.
+
+Layout, top to bottom:
+- Navy title bar with the poster title in white and a small gold seal-style circle on the right.
+- Four zone cards in a row, each with a coloured square swatch and a short label: (1) Star performers, (2) Steady, (3) Watch, (4) Formal review. Use dark gold for Star, medium navy for Steady, muted amber for Watch, and deep red only for Formal review; keep everything else navy and gold.
+- A grid of 34 small province tiles arranged in six rows, each tile a small rounded square with the province abbreviation and a zone-colour dot in the corner. Leave the abbreviations as placeholders like "PRV-01" through "PRV-34".
+- A regional snapshot table at the bottom with columns Province, Zone, Anomaly Count, Recommended Action, and five placeholder rows.
+- Navy footer strip with the Bureau name.
+
+Typography: sans-serif, small type on the province grid, generous spacing on the snapshot table. No maps, no photographs. The four zones use restrained colours; do not turn the poster into a rainbow.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+<div class="activity">
+<div class="head"><span class="num">Poster 4</span><span class="file">🎨 Copilot Create · year in review</span></div>
+<h4>FY26 Year in Review - thank-you to the Task Force</h4>
+<div class="prompt">Design a one-page landscape celebratory poster titled "FY26 Year in Review: Contoso Integrity Bureau Task Force". Deep navy blue primary, institutional gold as the accent, white background, muted grey supporting text. Warm and celebratory but still institutional; no confetti graphics, no cartoons.
+
+Layout:
+- Navy header bar with the poster title in white and a small gold seal-style circle on the right.
+- A "big numbers" row with three headline numbers side by side, each with a gold underline and a short caption: Cases Closed, State Loss Recovered in IDR, Prevention Interventions Delivered. Leave the numbers as placeholders.
+- Below the numbers, a horizontal timeline strip with four "quarter highlight" cards (Q1, Q2, Q3, Q4), each with a one-line placeholder headline.
+- To the right of the timeline, a small quotes column with three short thank-you quotes from Task Force members. Style each quote with an oversized gold opening quotation mark.
+- A footer strip in navy with the words "Terima kasih, Task Force" in gold and the Bureau name.
+
+Typography: elegant sans-serif, generous white space, gold used sparingly to celebrate the big numbers and the quotes. No emojis. No fireworks or party imagery.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+</div></div><div class="modal-overlay" id="modal-kx-new-b1"><div class="modal"><button class="modal-close" onclick="closeModal('kx-b1ca24dd')">&times;</button><h3>B1 · Prompt tips card (Goal, Context, Source, Expectation)</h3>
+<p class="lead">The G-C-S-E framework used across all major prompts in this immersion. Copy this into any prompt you write.</p>
+<div class="prompt"><span class="gk gk-g">Goal:</span>[one sentence, what you want back]
+
+<span class="gk gk-c">Context:</span>[who you are, what decision this feeds, what audience will read the output]
+
+<span class="gk gk-s">Source:</span>[name the specific files, folders, URLs, or Teams channels Copilot should read; nothing else]
+
+<span class="gk gk-e">Expectation:</span>[the shape of the output: table columns, section order, length ceiling, tone, do-not-invent rules]
+
+Optional closing rules: no speculation, cite sources, mark "not stated" when a field is silent, STOP before sending anything.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div></div><div class="modal-overlay" id="modal-kx-new-b2"><div class="modal"><button class="modal-close" onclick="closeModal('kx-ccddd213')">&times;</button><h3>B2 · Outlook Copilot · catch up on a long thread</h3>
+<div class="prompt">In Outlook, open the longest unread email thread in your inbox. Click the Copilot icon at the top of the reading pane, choose "Summarise". Then type:
+
+<span class="gk gk-g">Goal:</span>give me the three things I need to know from this thread and one draft reply.
+
+<span class="gk gk-e">Expectation:</span>three bullet points, one draft reply of no more than four sentences in a neutral Bureau tone.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div></div><div class="modal-overlay" id="modal-kx-new-b3"><div class="modal"><button class="modal-close" onclick="closeModal('kx-f1cf91dd')">&times;</button><h3>B3 · Outlook Copilot · draft an executive reply</h3>
+<div class="prompt">In Outlook, open the email from the Deputy that needs a reply. Click the Copilot icon in the ribbon of the reply window, then "Draft with Copilot".
+
+Prompt:
+Draft a reply from the Head of the Coordination and Supervision Task Force to the Deputy for Prevention. Acknowledge the request in one sentence, commit to a specific action with a specific date, and note that a full memo will follow. Formal, four sentences maximum, no jargon.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div></div><div class="modal-overlay" id="modal-kx-new-b4"><div class="modal"><button class="modal-close" onclick="closeModal('kx-1ce7208f')">&times;</button><h3>B4 · Word · interrogate a long governance report</h3>
+<div class="prompt">Open a long governance report in Word (for example the polished 05 Contoso_Governance_Report_Draft.docx). Click Copilot, then Ask Copilot.
+
+Prompt:
+<span class="gk gk-g">Goal:</span>help me interrogate this report before I present it.
+
+<span class="gk gk-e">Expectation:</span>answer these five questions using only the document, citing section names:
+1. What is the single most important finding?
+2. Which claim in the report is the weakest on evidence?
+3. Are there any numbers that appear in two places with different values?
+4. Which section would a hostile reviewer challenge first, and why?
+5. What is missing from this report that a Task Force board would expect?<button class="copy" onclick="cp(this)">Copy</button></div>
+</div></div><div class="modal-overlay" id="modal-kx-new-b5"><div class="modal"><button class="modal-close" onclick="closeModal('kx-084db287')">&times;</button><h3>B5 · Copilot Chat · quick fact check before you send</h3>
+<div class="prompt">Before you send any memo, paste the paragraph or table you plan to send into Copilot Chat and ask:
+
+<span class="gk gk-g">Goal:</span>fact-check this paragraph against the source files listed below.
+
+<span class="gk gk-s">Source:</span>[paste the file names or URLs the paragraph is grounded on]
+
+<span class="gk gk-e">Expectation:</span>for each numeric claim, quote the sentence in the source that supports it. For any claim you cannot verify from the sources, mark it "unverifiable, remove or add a source". Return one final "cleared" or "revise" verdict.
+
+Rules: only use the listed sources. Do not use general knowledge.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div></div>
+
+<script>
+try{localStorage.removeItem('unlk');}catch(e){}
+const HASH='901b61eb6ba610f2c3bbe81592908d88296e18ec76fa9d6a59901b6b5dc39a02';
+async function sha256(s){const b=new TextEncoder().encode(s);const d=await crypto.subtle.digest('SHA-256',b);return Array.from(new Uint8Array(d)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function unlock(){
+ const v=document.getElementById('pw').value;
+ const h=await sha256(v);
+ if(h===HASH){
+ document.getElementById('lock').style.display='none';
+ document.getElementById('main').style.display='grid';
+ sessionStorage.setItem('unlk','1');
+ }else{
+ const e=document.getElementById('err');e.textContent='Incorrect password. Please try again.';
+ setTimeout(()=>e.textContent='',3000);document.getElementById('pw').value='';
+ }
+}
+if(sessionStorage.getItem('unlk')==='1'){
+ document.getElementById('lock').style.display='none';
+ document.getElementById('main').style.display='grid';
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock();});
+const EYE_OPEN='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256A144 144 0 1 1 144 256a144 144 0 1 1 288 0zM288 192c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>';
+const EYE_OFF='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"/></svg>';
+function togglePw(){
+ const i=document.getElementById('pw'),b=document.getElementById('pwToggle');
+ if(i.type==='password'){i.type='text';b.innerHTML=EYE_OPEN;b.setAttribute('aria-label','Hide password');b.setAttribute('title','Hide password');}
+ else{i.type='password';b.innerHTML=EYE_OFF;b.setAttribute('aria-label','Show password');b.setAttribute('title','Show password');}
+ i.focus();
+}
+function cp(btn){
+ const clone=btn.parentElement.cloneNode(true);
+ clone.querySelectorAll('.gk, button').forEach(el=>el.remove());
+ const txt=clone.textContent.split('\n').map(l=>l.replace(/^\s+/,'')).join('\n').replace(/\n{3,}/g,'\n\n').trim();
+ navigator.clipboard.writeText(txt).then(()=>{btn.textContent='Copied!';btn.classList.add('copied');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);});
+}
+</script>
+<script id="bcard-js">
+function openModal(id){var el=document.getElementById('modal-'+id);if(el){el.classList.add('open');document.body.style.overflow='hidden';}}
+function closeModal(id){var el=document.getElementById('modal-'+id);if(el){el.classList.remove('open');document.body.style.overflow='';}}
+document.addEventListener('click',function(e){if(e.target.classList&&e.target.classList.contains('modal-overlay'))e.target.classList.remove('open');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(function(m){m.classList.remove('open');document.body.style.overflow='';});});
+</script>
+<script>
+(function(){
+  var tabs = document.querySelectorAll('nav.tabs-ihh .tab');
+  var views = document.querySelectorAll('.view-ihh');
+  function switchView(target){
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.view === target); });
+    views.forEach(function(v){ v.classList.toggle('active', v.id === 'view-' + target); });
+    window.scrollTo({top:0, behavior:'smooth'});
+    try { history.replaceState(null,'','#tab-'+target); } catch(e){}
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ switchView(t.dataset.view); }); });
+  document.querySelectorAll('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ switchView(b.dataset.go); }); });
+  // Restore from hash
+  var h = (location.hash||'').replace('#tab-','');
+  if (h && document.getElementById('view-'+h)) switchView(h);
+})();
+</script>
+</body></html>
