@@ -1987,6 +1987,158 @@ CARDS['uc-insurance-claims-modernisation'] = {
 }
 
 
+# ---------------- BOARD EA / ADMIN TEAMS FREE-CHAT POWER MOVE ----------------
+
+CARDS['uc-ea-free-chat-ten'] = {
+    'title': 'Board EA / Admin Teams — Free Copilot Chat Ten-Prompt Starter Pack',
+    'dept_tag': 'Admin & Executive Support',
+    'industry_tag': 'Any Industry',
+    'complexity': 'starter',
+    'apps': ['Copilot Chat', 'Copilot Create', 'Outlook'],
+    'desc': 'The Board EA / admin team ten-prompt starter pack for free Copilot Chat (no M365 licence required). GCSE (Goal · Context · Source · Expectation) framing, Enterprise Data Protection green-shield check, confidentiality do\\'s and don\\'ts, Bahasa Indonesia prompt patterns, and 10 one-line admin prompts to copy-paste on Monday morning.',
+    'skills': [
+        'GCSE prompt framework (Goal · Context · Source · Expectation)',
+        'Enterprise Data Protection (EDP) green-shield verification',
+        'Confidentiality classification — what stays in free Chat vs what needs Premium',
+        'Bahasa Indonesia prompt patterns — when to prompt in BI vs EN',
+    ],
+    'instructions': [
+        'Open m365.cloud.microsoft/chat in the browser (free Copilot Chat)',
+        'Verify the green EDP shield is showing before pasting any prompt',
+        'Paste the GCSE framing prompt to warm up (Prompt 1)',
+        'Copy any of the 10 one-line admin prompts below (Prompt 2) and adapt',
+    ],
+    'sample_files': [],
+    'prompts': [
+        {
+            'label': '1. GCSE warm-up — reusable frame',
+            'text': (
+                "Free Copilot Chat, Enterprise Data Protection ON (green shield visible). Frame every admin prompt with GCSE:\n\n"
+                "GOAL — one sentence, action verb, deliverable.\n"
+                "CONTEXT — who I am (Board EA at Contoso Beauty Innovation), who the audience is (Board Chair / Group CEO / 6 Brand-House GMs), what tone (formal / warm / concise).\n"
+                "SOURCE — paste the email, meeting notes, itinerary, or article inline. Do NOT upload internal SharePoint files in free Chat — that is a Premium-licence action.\n"
+                "EXPECTATION — length in words, format (bullets / table / email), language (BI, EN, or BI + EN mirror), and one 'do not' rule (e.g. do not invent dates, do not name suppliers, do not commit budgets).\n\n"
+                "Warm-up: I am the Board EA for the Group CEO. Please summarise the pasted meeting note into (a) a 5-line factual recap, (b) 3 action items with owner + due date, (c) a 60-word BI + EN executive email to the Group CEO. Do not invent facts not in the note."
+            )
+        },
+        {
+            'label': '2. Ten one-line admin prompts to copy-paste',
+            'text': (
+                "Copy any of these ten one-liners into free Copilot Chat and swap the [BRACKETS] for your context:\n\n"
+                "(1) Draft a BI + EN diary invite for [BOARD MEETING] on [DATE], [3 AGENDA ITEMS], 60 minutes, VC link placeholder, dial-in for [NAMES].\n"
+                "(2) Rewrite this pasted email in a warmer tone, keep the facts, 80 words, BI + EN mirror.\n"
+                "(3) Turn these 12 bullet notes into a 200-word BOD pre-read, formal register, no jargon, no acronyms without definition on first use.\n"
+                "(4) Draft a polite BI decline for [MEETING] citing [CONFLICT] and propose 2 alternate slots next week.\n"
+                "(5) Extract a table of action items from this pasted transcript — owner, action, due date, status — and rank by urgency.\n"
+                "(6) Turn this pasted itinerary into a 1-page day-plan for [EXECUTIVE], 8am to 8pm, include buffer time, travel time, and meal breaks.\n"
+                "(7) Draft a WhatsApp-style courteous BI reminder to [PERSON] about tomorrow's meeting, 40 words, no emojis, no exclamation marks.\n"
+                "(8) Draft a formal BI thank-you note to [HOST] after [EVENT], 80 words, mention [SPECIFIC DETAIL], no flattery.\n"
+                "(9) Rewrite this 400-word memo in 120 words for the Chairman, keep every number, drop every hedging phrase.\n"
+                "(10) Draft a BI + EN out-of-office reply for [DATES] covering [BACKUP CONTACT], keep it 60 words each, no personal details.\n\n"
+                "For every prompt: verify Enterprise Data Protection green shield BEFORE pasting anything with a name, number, or internal context. If in doubt, replace real names with [NAME] first, generate the draft, then swap the names back manually before sending."
+            )
+        },
+        {
+            'label': '3. Copilot Create — team induction poster',
+            'text': (
+                "Copilot Create → design a 1-page A4 induction poster for the admin & EA team titled 'Free Copilot Chat — Ten Habits'. Use these ten habits: (1) Green shield first, (2) GCSE framing, (3) Paste, do not upload, (4) BI when the reader is BI, (5) EN for reinsurers & counterparties, (6) Rewrite, do not invent, (7) Names last, drafts first, (8) Numbers straight from the source, (9) Length in the prompt, (10) One 'do not' rule per prompt. Deep teal + warm gold. Two-column layout. Legible from 2 metres."
+            )
+        },
+    ],
+    'expected': [
+        'GCSE frame internalised — every prompt has all four parts',
+        'Ten one-liners copied to a personal Notes / OneNote page',
+        'Team induction poster printed and pinned in the admin bay',
+    ],
+    'watch': [
+        'Green EDP shield is checked BEFORE any paste — not after',
+        'No internal SharePoint files uploaded in free Chat (Premium-only action)',
+        'Names / suppliers / budgets are replaced with [BRACKETS] on the first draft',
+        'BI + EN mirror is used whenever the reader mix is mixed',
+    ],
+    'honest': 'Free Copilot Chat with EDP on covers the vast majority of admin work — diary, drafts, summaries, translations, tone rewrites. It does not ground on internal SharePoint / OneDrive / Outlook data — for that you need a Microsoft 365 Copilot licence. Anything touching real board-paper content, real financials, real HR data, or real M&A material should be done on a licensed seat, not free Chat.',
+    'tips': [
+        'Print the ten-prompt list and pin it above the EA desk — habit forms in a week',
+        'Pair with a 15-minute Monday morning huddle where the team shares one prompt they used last week',
+    ],
+}
+
+
+# ---------------- GOLD-MINING VENDOR REBOOK POWER MOVE ----------------
+
+CARDS['uc-goldmining-vendor-rebook'] = {
+    'title': 'Vendor Contract Rebook + Board Note — Gold Mining Executive Power Move',
+    'dept_tag': 'Procurement',
+    'industry_tag': 'Gold Mining',
+    'complexity': 'advanced',
+    'apps': ['Cowork', 'Excel', 'Word', 'PowerPoint', 'Analyst', 'Outlook'],
+    'desc': 'The gold-mining executive re-negotiates a vendor contract book in one Copilot workday. Cowork orchestrates Excel Edit + Plan on the vendor workbook, Analyst multi-perspective, corporate-template PowerPoint, BI + EN board note, HTML dashboard, personalised mail-merge to site managers, and a signed-off meeting minutes pack.',
+    'skills': [
+        'Cowork one-prompt orchestration across Excel + Word + PowerPoint + HTML + email + meeting',
+        'Analyst Agent multi-perspective on the same vendor workbook (CFO / COO / GM Mine)',
+        'Excel Chat + Edit + Plan on vendor unit-rate + SLA data',
+        'Personalised mail-merge to site managers with pit-specific talking points',
+    ],
+    'instructions': [
+        'Copilot Chat → Analyst → upload /Vendor_Workbook_Awak_Mas.xlsx → paste Prompt 1',
+        'Copilot Chat → Cowork → paste Prompt 2 for the one-prompt vendor rebook pack',
+        'Word → paste Prompt 3 for the mail merge to site managers',
+    ],
+    'sample_files': [
+        ('Vendor_Workbook_Awak_Mas.xlsx', 'xlsx'),
+        ('Board_Pack_Vendor_Review.pdf', 'pdf'),
+    ],
+    'prompts': [
+        {
+            'label': '1. Analyst — multi-perspective vendor workbook',
+            'text': (
+                "Upload /Vendor_Workbook_Awak_Mas.xlsx. Produce three perspectives on the same book:\n"
+                "(a) CFO — unit-rate variance vs FY2025, working-capital impact, retention & performance bond exposure, top 10 cash outflows.\n"
+                "(b) COO — SLA attainment by vendor, equipment availability, stripping-ratio impact, safety-incident linkage.\n"
+                "(c) GM Mine (Awak Mas open pit, Sulawesi Selatan) — pit-face impact if any of the top 5 vendors is re-negotiated aggressively, contingency vendor list, mobilisation lead time.\n\n"
+                "Present as three side-by-side columns with a shared traffic-light column (Keep / Rebook / Exit). Cite the workbook sheet + row for every claim."
+            )
+        },
+        {
+            'label': '2. Cowork — vendor rebook one-prompt pack',
+            'text': (
+                "Cowork: rebook the top 15 vendors on the Awak Mas gold-mining vendor book. Same numbers throughout — no drift between artefacts.\n\n"
+                "Deliver in one run:\n"
+                "(1) Excel — re-priced vendor workbook with proposed unit rates (5% floor, 12% ceiling reduction), SLA re-cut, and a scoring column (Keep / Rebook / Exit).\n"
+                "(2) Word — 4-page BI + EN mirror board note grounded on /Board_Pack_Vendor_Review.pdf: what we found, what we propose, what we need from the Board, financial + operational risk.\n"
+                "(3) PowerPoint — 8-slide BCG/McKinsey-style deck: cover, vendor concentration heatmap, unit-rate trend, Top-15 rebook shortlist, contingency vendor list, phasing, decisions, next steps.\n"
+                "(4) HTML — self-contained one-page dashboard I can share offline (open-pit friendly): top-15 vendor scorecard, savings waterfall, SLA traffic-light.\n"
+                "(5) Outlook — 12-line email to Group CEO + CFO + COO + GM Mine + Chief Procurement Officer with the deck attached.\n"
+                "(6) Meeting — a 30-minute Teams invite for the Vendor Steering Committee next Tuesday 10am WITA, with agenda derived from the deck.\n\n"
+                "Named recipients: Group CEO, Group CFO, Group COO, GM Awak Mas Mine, Chief Procurement Officer, Head of Legal, Head of Safety. Do not invent vendor names — use only vendors present in the workbook."
+            )
+        },
+        {
+            'label': '3. Word — personalised mail-merge to site managers',
+            'text': (
+                "Draft a personalised mail-merge to the 6 Site Managers across Awak Mas Pit A / Pit B / Pit C / Processing Plant / Camp / Logistics. Each mail is 140 words, BI + EN mirror, pit-specific: name the top 3 vendors affecting that pit, the specific rebook ask, the mobilisation timeline, and one thing the Site Manager needs to sign off in the next 5 working days. No boilerplate — every mail reads as if written for that pit only."
+            )
+        },
+    ],
+    'expected': [
+        'Analyst 3-perspective view of the vendor workbook',
+        '6-artefact vendor rebook pack from one Cowork run',
+        '6 pit-specific personalised mail-merge notes to Site Managers',
+    ],
+    'watch': [
+        'Numbers match across Excel / Word / PPT / HTML / email — no drift',
+        'No invented vendor names — only vendors in the source workbook',
+        'Every mail-merge note is pit-specific, no boilerplate',
+        'Contingency vendor list is real (workbook has an alternate-supplier sheet)',
+    ],
+    'honest': 'Copilot drafts; Chief Procurement Officer + Legal sign. Any unit-rate change triggers a formal contract-amendment process — Copilot cannot sign, notify vendors, or waive existing performance-bond clauses. For high-value contracts (haulage, explosives, camp catering) the rebook ask needs external counsel sign-off before it lands with the vendor. Copilot cannot verify that a proposed contingency vendor has active permits or safety certifications; that check remains a manual procurement task.',
+    'tips': [
+        'Re-run quarterly for the top-15 vendor book; pin as a custom skill',
+        'Pair with the Cowork Frontier autonomous weekly savings-tracking digest between steering meetings',
+    ],
+}
+
+
 # ---------------- DEPARTMENT-SPECIFIC CARDS ----------------
 
 CARDS['uc-fin-monthend'] = {

@@ -444,8 +444,8 @@ ENTRY_USE_CASES = {
     'logistics-3pl':            ['uc-log-capacity', 'uc-board-pack', 'uc-incident-pmortem', 'uc-it-incident'],
     'aviation-airports':        ['uc-avi-airport-slot', 'uc-board-pack', 'uc-incident-pmortem', 'uc-it-incident'],
     'aviation-airlines':        ['uc-avi-airline-irrops', 'uc-board-pack', 'uc-incident-pmortem', 'uc-town-hall'],
-    'coal-mining':              ['uc-mining-vendor-vs-kak', 'uc-coal-merger-recap', 'uc-coal-volume', 'uc-board-pack', 'uc-incident-pmortem', 'uc-esg-disclosure'],
-    'rare-earth':               ['uc-rare-earth-export', 'uc-board-pack', 'uc-incident-pmortem', 'uc-esg-disclosure'],
+    'coal-mining':              ['uc-goldmining-vendor-rebook', 'uc-mining-vendor-vs-kak', 'uc-coal-merger-recap', 'uc-coal-volume', 'uc-board-pack', 'uc-incident-pmortem', 'uc-esg-disclosure'],
+    'rare-earth':               ['uc-goldmining-vendor-rebook', 'uc-rare-earth-export', 'uc-board-pack', 'uc-incident-pmortem', 'uc-esg-disclosure'],
     'retail-grocery':           ['uc-retail-newstore-gonogo', 'uc-retail-store-pnl', 'uc-board-pack', 'uc-marketing-campaign', 'uc-town-hall'],
     'hotel-resort':             ['uc-hotel-surge', 'uc-board-pack', 'uc-marketing-campaign', 'uc-town-hall'],
     'media-entertainment':      ['uc-media-campaign', 'uc-marketing-campaign', 'uc-board-pack', 'uc-town-hall'],
@@ -457,7 +457,7 @@ ENTRY_USE_CASES = {
 
     # ── Departments ──
     'dept-finance':             ['uc-fin-monthend', 'uc-board-pack', 'uc-cong-capalloc', 'uc-incident-pmortem'],
-    'dept-hr':                  ['uc-hr-perfreview', 'uc-hr-onboarding', 'uc-town-hall', 'uc-board-pack'],
+    'dept-hr':                  ['uc-ea-free-chat-ten', 'uc-hr-perfreview', 'uc-hr-onboarding', 'uc-town-hall', 'uc-board-pack'],
     'dept-legal':               ['uc-integrity-taskforce-response', 'uc-legal-permen-esdm', 'uc-life-plain-language-clause', 'uc-legal-contract', 'uc-board-pack', 'uc-incident-pmortem', 'uc-it-incident'],
     'dept-risk':                ['uc-tobacco-cht-tax-shock', 'uc-bev-ssb-tax-shock', 'uc-property-opr-shock', 'uc-ib-brc-prep', 'uc-risk-appetite', 'uc-board-pack', 'uc-incident-pmortem', 'uc-fintech-fraud'],
     'dept-strategy':            ['uc-retail-newstore-gonogo', 'uc-tobacco-cht-tax-shock', 'uc-coal-merger-recap', 'uc-bev-strategic-landscape', 'uc-bev-ssb-tax-shock', 'uc-property-land-bank', 'uc-property-strategic-landscape', 'uc-property-gm-strategy-deck', 'uc-klk-q1-ops-review', 'uc-strat-marketscan', 'uc-cong-capalloc', 'uc-board-pack', 'uc-town-hall'],
@@ -466,7 +466,7 @@ ENTRY_USE_CASES = {
     'dept-operations':          ['uc-geo-ppa-compliance', 'uc-cga-multi-lob-claims-tat', 'uc-cga-raid-heatmap', 'uc-life-claims-tat-benchmark', 'uc-life-empathetic-claim-reply', 'uc-life-ops-agent', 'uc-property-township-ops-review', 'uc-ops-sop', 'uc-board-pack', 'uc-incident-pmortem', 'uc-it-incident'],
     'dept-corpsec':             ['uc-corpsec-agm', 'uc-board-pack', 'uc-town-hall', 'uc-glc-dividend'],
     'dept-investor-relations':  ['uc-ir-invday', 'uc-board-pack', 'uc-glc-dividend', 'uc-fin-monthend'],
-    'dept-procurement':         ['uc-mining-vendor-vs-kak', 'uc-proc-rfp', 'uc-board-pack', 'uc-incident-pmortem', 'uc-cong-capalloc'],
+    'dept-procurement':         ['uc-goldmining-vendor-rebook', 'uc-mining-vendor-vs-kak', 'uc-proc-rfp', 'uc-board-pack', 'uc-incident-pmortem', 'uc-cong-capalloc'],
     'dept-it-digital':          ['uc-cga-autonomous-raid-digest', 'uc-it-incident', 'uc-incident-pmortem', 'uc-board-pack', 'uc-ops-sop'],
 }
 
