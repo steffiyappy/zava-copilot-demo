@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Fabrikam Healthcare · M365 Copilot Immersion · Risk Management &amp; Internal Audit</title>
+<style>
+
+/* THEME */
+:root{--radius:12px;--shadow:0 2px 8px rgba(0,0,0,.12);--ihh:#0e7490}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1020;--panel:#0e1633;--panel2:#0a1228;--ink:#e2e8f0;--muted:#94a3b8;--border:#1e2d4a;--sidebar-a:#0e1530;--sidebar-b:#0a0f24;--accent:#3b82f6;--accent2:#60a5fa;--nav-hover:#172244;--badge-bg:#0a0f24;--cp-info:#0e1c2c;--cp-warn:#2b220e;--cp-bad:#2b1414;--cp-good:#0e2418;--code:#0d1535;--good:#22c55e;--warn:#f59e0b;--danger:#ef4444;--callout-info:#0e1c2c;--callout-warn:#2b220e;--callout-bad:#2b1414;--callout-good:#0e2418}}
+@media(prefers-color-scheme:light){:root{--bg:#f0f4f8;--panel:#ffffff;--panel2:#f0f6ff;--ink:#1a202c;--muted:#64748b;--border:#d1d9e6;--sidebar-a:#1e3a5f;--sidebar-b:#0f2545;--accent:#2563eb;--accent2:#1d4ed8;--nav-hover:#dbeafe;--badge-bg:#e8f0fe;--cp-info:#eff6ff;--cp-warn:#fffbeb;--cp-bad:#fef2f2;--cp-good:#f0fdf4;--code:#1e2b55;--good:#16a34a;--warn:#d97706;--danger:#dc2626;--callout-info:#eff6ff;--callout-warn:#fffbeb;--callout-bad:#fef2f2;--callout-good:#f0fdf4}}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Inter","Segoe UI",system-ui,sans-serif;}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+code,pre{font-family:"JetBrains Mono","Consolas",monospace;font-size:13px}
+.layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+aside{background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));border-right:1px solid var(--border);padding:24px 18px;position:sticky;top:0;height:100vh;overflow-y:auto;color:#e2e8f0}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.brand .logo{width:36px;height:36px;border-radius:9px;background:var(--ihh);display:grid;place-items:center;font-weight:900;color:#fff;font-size:12px;letter-spacing:-.5px}
+.brand h1{font-size:15px;margin:0;letter-spacing:.2px;color:#fff}
+.tag{font-size:11px;color:#94a3b8;margin-bottom:18px}
+nav h3{font-size:10px;letter-spacing:1.2px;color:#94a3b8;text-transform:uppercase;margin:18px 0 8px}
+nav a{display:block;color:#e2e8f0;padding:8px 10px;border-radius:9px;font-size:14px;margin-bottom:2px;border:1px solid transparent}
+nav a:hover{background:rgba(255,255,255,.12);text-decoration:none;border-color:rgba(255,255,255,.2);color:#fff}
+nav a.active{background:rgba(59,130,246,.25);border-color:#3b82f6;color:#93c5fd}
+main{padding:28px 40px 80px;max-width:1080px}
+.hero{background:radial-gradient(800px 320px at 0% 0%,rgba(0,48,135,.35),transparent 60%),radial-gradient(700px 280px at 100% 0%,rgba(0,100,200,.2),transparent 60%),var(--panel);border:1px solid var(--border);border-radius:18px;padding:30px;margin-bottom:24px}
+.hero .pill{display:inline-block;background:var(--badge-bg);border:1px solid var(--border);color:var(--accent2);font-size:11px;letter-spacing:1.2px;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.hero h2{font-size:30px;margin:0 0 8px;line-height:1.2}
+.hero p{color:var(--muted);margin:0;max-width:780px}
+.meta-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;color:var(--muted);font-size:13px}
+.meta-row span b{color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:18px}
+.card .lead{color:var(--muted);margin:0 0 14px}
+.card h4{margin:18px 0 6px;font-size:15px;color:var(--accent2);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+ul{padding-left:20px;margin:8px 0}li{margin:4px 0}
+.modulehead{display:flex;align-items:center;gap:14px;margin:32px 0 12px}
+.modulehead .num{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--ihh),var(--accent));display:grid;place-items:center;font-weight:800;font-size:20px;color:#fff}
+.modulehead h2{margin:0;font-size:22px}
+.modulehead small{display:block;color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.activity{border:1px solid var(--border);border-radius:12px;padding:18px;margin:14px 0;background:var(--panel)}
+.activity .head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.activity .num{background:var(--accent);color:#fff;font-weight:800;font-size:12px;padding:3px 9px;border-radius:6px}
+.activity .time{color:var(--muted);font-size:12px}
+.activity .file{font-size:12px;color:var(--accent2);background:var(--badge-bg);border:1px solid var(--border);padding:3px 9px;border-radius:6px}
+.activity h4{margin:0;font-size:16px;color:var(--ink);font-weight:600}
+.activity p{margin:6px 0;color:var(--muted);font-size:14px}
+.task-step{background:var(--panel2);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:12px 14px;margin:10px 0}
+.task-step .step-label{font-size:11px;letter-spacing:1px;color:var(--accent2);text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.task-step .tool-badge{display:inline-block;background:rgba(0,100,200,.2);border:1px solid var(--accent);color:var(--accent2);font-size:11px;padding:2px 8px;border-radius:5px;margin-left:8px;vertical-align:middle}
+.prompt{position:relative;background:var(--code);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;padding:14px 44px 14px 16px;margin:10px 0;font-family:"JetBrains Mono","Consolas",monospace;font-size:13px;color:#c9d6ff;white-space:pre-wrap;line-height:1.6}
+.prompt .copy{position:absolute;top:8px;right:8px;background:#1a2552;color:#e2e8f0;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s}
+.prompt .copy:hover{background:var(--accent);color:#fff}
+.prompt .copy.copied{background:var(--good);color:#0a0f24}
+.callout{border-left:4px solid var(--accent2);background:var(--callout-info);padding:12px 16px;margin:12px 0;border-radius:8px;color:var(--ink);font-size:14px}
+.callout.warn{border-color:var(--warn);background:var(--callout-warn)}
+.callout.danger{border-color:var(--danger);background:var(--callout-bad)}
+.callout.good{border-color:var(--good);background:var(--callout-good)}
+.callout b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{color:var(--accent2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+td a{color:var(--ink);font-weight:600}
+td a:hover{color:var(--accent2)}
+.agenda{display:grid;grid-template-columns:90px 1fr 100px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.agenda>div{padding:10px 14px;border-bottom:1px solid var(--border)}
+.agenda>div:nth-child(3n+1){color:var(--accent2);font-weight:700;background:var(--panel)}
+.agenda>div:nth-child(3n+3){color:var(--muted);text-align:right}
+.agenda>div:nth-last-child(-n+3){border-bottom:0}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
+.tool-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
+.tool-card .icon{font-size:22px;margin-bottom:6px}
+.tool-card h5{margin:0 0 4px;font-size:14px;color:var(--ink)}
+.tool-card p{margin:0;font-size:12px;color:var(--muted);line-height:1.5}
+.agent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}
+.agent-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;transition:border-color .2s}
+.agent-card:hover,.agent-card.selected{border-color:var(--accent);background:rgba(0,100,200,.1)}
+.agent-card h5{margin:0 0 6px;font-size:15px}
+.agent-card p{margin:0;font-size:12px;color:var(--muted)}
+.steps-list{counter-reset:steps;list-style:none;padding:0;margin:12px 0}
+.steps-list li{counter-increment:steps;display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+.steps-list li::before{content:counter(steps);min-width:26px;height:26px;border-radius:50%;background:var(--ihh);color:#fff;font-weight:700;font-size:12px;display:grid;place-items:center;flex-shrink:0;margin-top:2px}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;letter-spacing:.5px}
+.badge.blue{background:rgba(0,100,200,.2);color:var(--accent2);border:1px solid var(--accent)}
+.badge.green{background:rgba(34,197,94,.15);color:var(--good);border:1px solid var(--good)}
+.badge.yellow{background:rgba(245,158,11,.15);color:var(--warn);border:1px solid var(--warn)}
+/* Password Screen */
+#lock{position:fixed;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(0,48,135,.5),transparent 60%),#0b1020;z-index:9999;display:flex;align-items:center;justify-content:center}
+.lock-box{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:40px 44px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lock-box .ihh-logo{width:56px;height:56px;border-radius:14px;background:var(--ihh);display:grid;place-items:center;font-weight:900;font-size:18px;color:#fff;margin:0 auto 18px}
+.lock-box h2{margin:0 0 6px;font-size:22px}
+.lock-box p{color:var(--muted);font-size:14px;margin:0 0 22px}
+.lock-box input[type=password],.lock-box input[type=text]{width:100%;background:var(--badge-bg);border:1px solid var(--border);border-radius:10px;color:var(--ink);font-size:15px;padding:12px 44px 12px 16px;margin-bottom:0;outline:none;font-family:inherit;transition:border-color .2s}
+.lock-box input[type=password]:focus,.lock-box input[type=text]:focus{border-color:var(--accent)}
+.lock-box button{width:100%;background:var(--ihh);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;padding:13px;cursor:pointer;transition:background .2s}
+.lock-box button:hover{background:var(--accent)}
+.lock-box .err{color:var(--danger);font-size:13px;margin-top:8px;min-height:18px}
+.lock-box .conf{font-size:11px;color:var(--muted);margin-top:14px}
+.pw-wrap{position:relative;margin-bottom:12px}
+.toggle-pw{position:absolute!important;right:12px;top:50%;transform:translateY(-50%);background:none!important;border:none!important;width:auto!important;padding:0!important;cursor:pointer;opacity:.7;color:var(--muted)}
+.toggle-pw:hover{background:none!important;opacity:1}
+.toggle-pw svg{width:18px;height:18px;fill:currentColor;display:block}
+
+@media(max-width:760px){
+  .layout{grid-template-columns:1fr}
+  aside{position:static;height:auto}
+  main{padding:16px 18px 60px}
+  .hero h2{font-size:22px}
+  .agent-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="lock">
+  <div class="lock-box">
+    <div class="ihh-logo">FH</div>
+    <h2>Fabrikam Healthcare &middot; Copilot Immersion</h2>
+    <p>M365 Copilot Workshop &middot; Risk Management &amp; Internal Audit<br>Enter the session password to continue.</p>
+    <div class="pw-wrap">
+      <input type="password" id="pw" placeholder="Session password" autocomplete="off"/>
+      <button type="button" id="toggle-pw" class="toggle-pw" title="Show password" onclick="togglePw()"><svg id="eye-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"/></svg></button>
+    </div>
+    <button onclick="unlock()">Enter Workshop &rarr;</button>
+    <div class="err" id="err"></div>
+    <div class="conf">Confidential &middot; Fabrikam Healthcare &middot; Internal use only</div>
+  </div>
+</div>
+
+<div class="layout" id="main" style="display:none">
+
+<aside>
+  <div class="brand">
+    <div class="logo">FH</div>
+    <h1>M365 Copilot<br>Workshop</h1>
+  </div>
+  <div class="tag">Risk Management &amp; Internal Audit &middot; Executive Immersion</div>
+  <nav>
+    <h3>Overview</h3>
+    <a href="#overview">About this session</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#story">The Story</a>
+    <a href="#tools">Tools used today</a>
+    <h3>Get Started</h3>
+    <a href="#getstarted">&#128273; Log in</a>
+    <h3>Exercises</h3>
+    <a href="#ex1">Exercise 1 &middot; Word</a>
+    <a href="#ex2">Exercise 2 &middot; Excel</a>
+    <a href="#ex3">Exercise 3 &middot; PowerPoint</a>
+    <a href="#ex4">Exercise 4 &middot; Outlook &amp; Teams</a>
+    <a href="#ex5">Exercise 5 &middot; Agent Builder</a>
+    <a href="#ex6">Exercise 6 &middot; Copilot Cowork</a>
+    <a href="#ex7">Exercise 7 &middot; Daily Briefing &middot; Kanban</a>
+    <a href="#ex8">Exercise 8 &middot; Researcher</a>
+    <a href="#ex9">Exercise 9 &middot; Analyst</a>
+    <a href="#ex10">Exercise 10 &middot; Standardize &amp; Consolidate</a>
+    <h3>Resources</h3>
+    <a href="#files">Sample files</a>
+    <a href="#tips">Tips &amp; prompts</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main>
+
+<section id="overview">
+<div class="hero">
+  <div class="pill">M365 COPILOT IMMERSION</div>
+  <h2>Fabrikam Healthcare &middot; M365 Copilot Immersion &middot; Risk Management &amp; Internal Audit</h2>
+  <p>A hands-on immersion experience for the Compliance &amp; Governance team and risk management and internal audit practitioners at Fabrikam Healthcare &mdash; covering Copilot in Word, Excel, PowerPoint, Outlook, and Teams, plus custom Copilot Agents tailored for risk management and internal audit functions.</p>
+  <div class="meta-row">
+    <span><b>Audience</b> Compliance &amp; Governance / Risk / Internal Audit</span>
+    <span><b>Format</b> Demo + Guided hands-on</span>
+    <span><b>Duration</b> ~2 hours</span>
+    <span><b>Tool</b> Microsoft 365 Copilot</span>
+  </div>
+</div>
+
+<div class="card">
+  <h3>About this workshop</h3>
+  <p class="lead">A practical, senior-practitioner-level immersion designed specifically for Fabrikam Healthcare&rsquo;s risk and audit community. We move from strategic context &rarr; live demos &rarr; guided hands-on exercises covering every major M365 Copilot surface.</p>
+  <h4>What you will leave with</h4>
+  <ul>
+    <li>Experience drafting a complete internal audit report from source evidence in Word, grounded on your audit charter, regulatory framework, and prior-year findings &mdash; with Copilot citing every source.</li>
+    <li>A risk register analysis and 5&times;5 heatmap built with Copilot in Excel, surfacing above-appetite risks and cross-referencing control failures against the incident log.</li>
+    <li>An Audit Committee presentation generated directly from your Word audit report using PowerPoint Copilot, with CFO-order storyline and speaker notes.</li>
+    <li>Hands-on practice triaging a complex incident email thread in Outlook and extracting structured action items from a Risk Committee meeting in Teams.</li>
+    <li>Your own tailored Copilot Agent for risk management and internal audit &mdash; deployed and shared with your team before you leave the room.</li>
+  </ul>
+  <h4>What this workshop is not</h4>
+  <ul>
+    <li>It is <b>not</b> a feature walkthrough &mdash; every tool is demonstrated in a Fabrikam risk and audit context, using realistic scenarios and documents.</li>
+    <li>It is <b>not</b> a replacement for professional judgment or IIA standards &mdash; Copilot drafts, you review and decide. Internal audit opinion remains yours.</li>
+    <li>It is <b>not</b> connected to live Fabrikam systems today &mdash; all data used is sample / illustrative only. Do not use workshop outputs for operational decisions.</li>
+  </ul>
+</div>
+</section>
+
+<section id="agenda">
+<div class="modulehead"><div class="num">&#128203;</div><h2>Agenda<small>M365 Copilot Workshop &middot; ~2 hours</small></h2></div>
+<div class="card">
+<div class="agenda">
+  <div>1</div><div><b>Executive Welcome</b> &mdash; Why Copilot for Risk &amp; Audit now</div><div>5 min</div>
+  <div>2</div><div><b>Copilot for Risk &amp; Audit &mdash; the pitch</b> &mdash; What it does, what it doesn&rsquo;t, where it fits the audit lifecycle</div><div>15 min</div>
+  <div>3</div><div><b>Live demos + hands-on exercises</b> &mdash; Word &rarr; Excel &rarr; PowerPoint &rarr; Outlook &amp; Teams &rarr; Agent Builder</div><div>90 min</div>
+  <div>4</div><div><b>Q&amp;A and wrap-up</b></div><div>10 min</div>
+</div>
+<div class="callout" style="margin-top:14px">
+  <b>Hands-on starts during Session 3.</b> Open this page when the presenter says &ldquo;Exercise time&rdquo;. Follow the exercises in order &mdash; each builds on the output of the previous.
+</div>
+</div>
+</section>
+
+<section id="tools">
+<div class="modulehead"><div class="num">&#128295;</div><h2>Tools Used Today<small>M365 Copilot surfaces &mdash; Risk &amp; Audit framing</small></h2></div>
+<div class="card">
+<div class="tools-grid">
+  <div class="tool-card"><div class="icon">&#128196;</div><h5>Word Copilot</h5><p>Draft internal audit reports, audit planning memos, and management letters grounded on your charter, regulatory framework, and prior-year findings. Uses &ldquo;Reference this document&rdquo; to cite source evidence.</p></div>
+  <div class="tool-card"><div class="icon">&#128202;</div><h5>Excel Copilot</h5><p>Analyse risk registers, control testing results, and incident logs. Generate 5&times;5 risk heatmaps, RAG dashboards by control family, and cross-referenced &ldquo;hot lists&rdquo; for Audit Committee reporting.</p></div>
+  <div class="tool-card"><div class="icon">&#127912;</div><h5>PowerPoint Copilot</h5><p>Create Audit Committee and Board presentations directly from Word audit reports. Improve storyline, reorder for executive reading, and auto-generate speaker notes with anticipated questions.</p></div>
+  <div class="tool-card"><div class="icon">&#128140;</div><h5>Outlook Copilot</h5><p>Triage complex incident and audit correspondence threads. Draft formal audit responses, coaching for tone (formal / direct / concise). Summarise multi-party incident threads into a structured timeline.</p></div>
+  <div class="tool-card"><div class="icon">&#128101;</div><h5>Teams Copilot</h5><p>Recap Risk Committee meetings: extract action items with owners and due dates, key decisions, open risks, and deferred items. Auto-generate follow-up emails to non-attendees. Query specific decisions by risk ID.</p></div>
+  <div class="tool-card"><div class="icon">&#128200;</div><h5>Analyst Agent</h5><p>Out-of-the-box AI analyst built into M365 Copilot. Drop in a risk register or control testing dataset and ask complex questions: cross-tabulations, trend analysis, outlier detection. No setup required.</p></div>
+  <div class="tool-card"><div class="icon">&#129302;</div><h5>Agent Builder</h5><p>Build a custom AI agent grounded on your audit charter, risk register, and regulatory framework. Deploy the Risk Register Assistant, Internal Audit Policy Advisor, or Regulatory Compliance Navigator in 15 minutes.</p></div>
+  <div class="tool-card"><div class="icon">&#128101;</div><h5>Cowork</h5><p>Delegate multi-step audit workflows to Copilot: describe the outcome (analyse data, draft report section, schedule follow-up meeting) and it creates a plan and checks in before acting.</p></div>
+</div>
+<div class="callout warn" style="margin-top:16px">
+  <b>Data privacy &amp; privilege reminder:</b> Do not paste real audit findings under investigation, employee PII, whistleblower reports, matters under legal privilege, or third-party commercially sensitive data into Copilot during this session. Use the sample files provided. Fabrikam&rsquo;s M365 Copilot deployment is PDPA-compliant &mdash; your prompts and data stay within the Microsoft 365 tenant and are not used to train AI models.
+</div>
+</div>
+</section>
+
+<section id="story">
+<div class="modulehead" style="margin-top:8px">
+  <div class="num" style="background:linear-gradient(135deg,var(--ihh),var(--accent));font-size:14px">&#9654;</div>
+  <h2>The Story<small>One week&rsquo;s work. Five tools. From risk register to Audit Committee.</small></h2>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px">
+  <!-- LEFT PANEL -->
+  <div style="background:linear-gradient(180deg,var(--sidebar-a),var(--sidebar-b));padding:24px 18px;display:flex;flex-direction:column;gap:11px">
+    <p style="margin:0;font-size:8px;letter-spacing:2px;font-weight:700;color:var(--ihh);text-transform:uppercase">Copilot in M365</p>
+    <h3 style="margin:0;font-size:19px;font-weight:800;color:#fff;line-height:1.2">Risk Register<br>to Audit<br>Committee</h3>
+    <div style="margin-top:4px">
+      <p style="margin:0 0 3px;font-size:7.5px;letter-spacing:1.5px;font-weight:700;color:var(--ihh);text-transform:uppercase">Persona</p>
+      <p style="margin:0;font-size:12.5px;font-weight:700;color:#fff">Priya Nathan</p>
+      <p style="margin:2px 0 0;font-size:10.5px;color:#94a3b8">Head of Internal Audit<br>Fabrikam Healthcare</p>
+    </div>
+    <div style="margin-top:4px">
+      <p style="margin:0 0 3px;font-size:7.5px;letter-spacing:1.5px;font-weight:700;color:var(--ihh);text-transform:uppercase">The Mission</p>
+      <p style="margin:0;font-size:10.5px;color:#cbd5e1;line-height:1.6">Refresh the enterprise risk register, close out the Patient Data Privacy audit, brief the CFO on a control failure, and stand up an agent for her audit managers &mdash; all by end of week.</p>
+    </div>
+    <div style="margin-top:4px;padding:10px;background:rgba(255,255,255,.06);border-radius:8px;border:1px solid rgba(255,255,255,.1)">
+      <p style="margin:0 0 3px;font-size:7.5px;letter-spacing:1.5px;font-weight:700;color:var(--ihh);text-transform:uppercase">The Punchline</p>
+      <p style="margin:0;font-size:11.5px;font-weight:700;font-style:italic;color:#fff;line-height:1.4">One week&rsquo;s work. Five tools. From risk register to Audit Committee &mdash; and an agent that scales her team.</p>
+    </div>
+  </div>
+  <!-- RIGHT PANEL -->
+  <div style="background:var(--panel);padding:20px 18px 14px">
+    <h3 style="margin:0 0 14px;font-size:16px;font-weight:700;color:var(--ink)">Five tools across one audit week</h3>
+
+    <!-- EXERCISE 1 block -->
+    <div style="margin-bottom:12px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+        <span style="background:#0f2545;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px">EXERCISE 1 &nbsp;&#183;&nbsp; 20 min</span>
+        <span style="font-size:12px;font-weight:700;color:var(--ink)">Draft Internal Audit Report &mdash; Word</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+        <div style="border:1px solid var(--border);border-radius:7px;overflow:hidden">
+          <div style="background:#0e7490;padding:4px 8px;display:flex;align-items:center;gap:5px">
+            <span style="font-size:9.5px;font-weight:800;color:rgba(255,255,255,.55)">01</span>
+            <span style="font-size:7.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.3px">Word Copilot</span>
+          </div>
+          <div style="padding:8px;background:var(--panel2)">
+            <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:var(--ink)">Draft the audit report</p>
+            <p style="margin:0 0 5px;font-size:9px;font-style:italic;color:var(--ihh)">Task 1 &mdash; main activity</p>
+            <p style="margin:0;font-size:9.5px;color:var(--muted);line-height:1.5">Draft the FY2026 Patient Data Privacy Audit Report grounded on the audit charter, regulatory framework, and prior-year findings. Copilot cites every source.</p>
+          </div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:7px;overflow:hidden">
+          <div style="background:#1e3a5f;padding:4px 8px;display:flex;align-items:center;gap:5px">
+            <span style="font-size:9.5px;font-weight:800;color:rgba(255,255,255,.55)">02</span>
+            <span style="font-size:7.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.3px">Word Copilot</span>
+          </div>
+          <div style="padding:8px;background:var(--panel2)">
+            <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:var(--ink)">Rewrite for the Board</p>
+            <p style="margin:0 0 5px;font-size:9px;font-style:italic;color:var(--ihh)">Follow-up prompt &mdash; 2 min</p>
+            <p style="margin:0;font-size:9.5px;color:var(--muted);line-height:1.5">Condense the executive summary into a 150-word Board briefing in plain English, leading with the audit opinion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 2 block -->
+    <div style="margin-bottom:12px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+        <span style="background:#0f2545;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px">EXERCISE 2 &nbsp;&#183;&nbsp; 20 min</span>
+        <span style="font-size:12px;font-weight:700;color:var(--ink)">Risk Register Analysis &mdash; Excel</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+        <div style="border:1px solid var(--border);border-radius:7px;overflow:hidden">
+          <div style="background:#14532d;padding:4px 8px;display:flex;align-items:center;gap:5px">
+            <span style="font-size:9.5px;font-weight:800;color:rgba(255,255,255,.55)">03</span>
+            <span style="font-size:7.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.3px">Excel Copilot</span>
+          </div>
+          <div style="padding:8px;background:var(--panel2)">
+            <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:var(--ink)">Heatmap &amp; above-appetite risks</p>
+            <p style="margin:0 0 5px;font-size:9px;font-style:italic;color:var(--ihh)">Task 2.1 &nbsp;&#183;&nbsp; <span style="background:#e0f2fe;color:#0369a1;border-radius:3px;padding:0 4px">&#128206; 01 Fabrikam_Enterprise_Risk_Register.xlsx</span></p>
+            <p style="margin:0;font-size:9.5px;color:var(--muted);line-height:1.5">Top 10 residual risks, 5&times;5 heatmap, RAG table by category, flags for risks exceeding appetite.</p>
+          </div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:7px;overflow:hidden">
+          <div style="background:#0f4c75;padding:4px 8px;display:flex;align-items:center;gap:5px">
+            <span style="font-size:9.5px;font-weight:800;color:rgba(255,255,255,.55)">04</span>
+            <span style="font-size:7.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.3px">Excel Copilot</span>
+          </div>
+          <div style="padding:8px;background:var(--panel2)">
+            <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:var(--ink)">Control testing hot list</p>
+            <p style="margin:0 0 5px;font-size:9px;font-style:italic;color:var(--ihh)">Task 2.2 &nbsp;&#183;&nbsp; <span style="background:#e0f2fe;color:#0369a1;border-radius:3px;padding:0 4px">&#128206; 02 &amp; 03 Fabrikam</span></p>
+            <p style="margin:0;font-size:9.5px;color:var(--muted);line-height:1.5">Cross-reference failed controls with the incident log. Surface controls that failed AND had a related incident &mdash; priority escalation for Audit Committee.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 3 block -->
+    <div style="margin-bottom:12px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+        <span style="background:#0f2545;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px">EXERCISE 3 &nbsp;&#183;&nbsp; 15 min</span>
+        <span style="font-size:12px;font-weight:700;color:var(--ink)">Audit Committee Deck &mdash; PowerPoint</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr;gap:8px">
+        <div style="border:1px solid var(--border);border-radius:7px;overflow:hidden">
+          <div style="background:#4c1d95;padding:4px 8px;display:flex;align-items:center;gap:5px">
+            <span style="font-size:9.5px;font-weight:800;color:rgba(255,255,255,.55)">05</span>
+            <span style="font-size:7.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.3px">PowerPoint Copilot</span>
+          </div>
+          <div style="padding:8px;background:var(--panel2);display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div>
+              <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:var(--ink)">Create from audit report, improve for CFO</p>
+              <p style="margin:0 0 5px;font-size:9px;font-style:italic;color:var(--ihh)">Tasks 3.1 &amp; 3.2 &nbsp;&#183;&nbsp; <span style="background:#e0f2fe;color:#0369a1;border-radius:3px;padding:0 4px">&#128206; Fabrikam FY26 Audit Report.docx</span></p>
+              <p style="margin:0;font-size:9.5px;color:var(--muted);line-height:1.5">Generate an Audit Committee deck from the Word report. Reorder into CFO reading order, add speaker notes with anticipated questions.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;justify-content:center">
+              <div style="font-size:9px;color:var(--muted)">&#128221; Slides produced:</div>
+              <div style="font-size:9px;background:#e0f2fe;color:#0369a1;border-radius:3px;padding:2px 6px">Audit Opinion</div>
+              <div style="font-size:9px;background:#e0f2fe;color:#0369a1;border-radius:3px;padding:2px 6px">Critical &amp; High Findings</div>
+              <div style="font-size:9px;background:#e0f2fe;color:#0369a1;border-radius:3px;padding:2px 6px">Management Action Tracker</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 4 block -->
+    <div style="margin-bottom:12px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+        <span style="background:#0f2545;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px">EXERCISE 4 &nbsp;&#183;&nbsp; 15 min</span>
+        <span style="font-size:12px;font-weight:700;color:var(--ink)">Incident Triage &amp; Meeting Recap &mdash; Outlook &amp; Teams</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+        <div style="border:1px solid var(--border);border-radius:7px;overflow:hidden">
+          <div style="background:#8B2635;padding:4px 8px;display:flex;align-items:center;gap:5px">
+            <span style="font-size:9.5px;font-weight:800;color:rgba(255,255,255,.55)">06</span>
+            <span style="font-size:7.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.3px">Outlook Copilot</span>
+          </div>
+          <div style="padding:8px;background:var(--panel2)">
+            <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:var(--ink)">Triage 18-email incident thread</p>
+            <p style="margin:0 0 5px;font-size:9px;font-style:italic;color:var(--ihh)">Task 4.1 &nbsp;&#183;&nbsp; Outlook</p>
+            <p style="margin:0;font-size:9.5px;color:var(--muted);line-height:1.5">Summarise a control failure incident thread. Draft a formal audit response citing policy. Use Coaching to set tone.</p>
+          </div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:7px;overflow:hidden">
+          <div style="background:#0a5268;padding:4px 8px;display:flex;align-items:center;gap:5px">
+            <span style="font-size:9.5px;font-weight:800;color:rgba(255,255,255,.55)">07</span>
+            <span style="font-size:7.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.3px">Teams Copilot</span>
+          </div>
+          <div style="padding:8px;background:var(--panel2)">
+            <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:var(--ink)">Risk Committee meeting recap</p>
+            <p style="margin:0 0 5px;font-size:9px;font-style:italic;color:var(--ihh)">Task 4.2 &nbsp;&#183;&nbsp; Teams</p>
+            <p style="margin:0;font-size:9.5px;color:var(--muted);line-height:1.5">Extract action items, key decisions, and open risks from the weekly Risk Committee meeting. Query specific risk decisions by Risk ID.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXERCISE 5 block -->
+    <div style="margin-bottom:14px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+        <span style="background:#0f2545;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px">EXERCISE 5 &nbsp;&#183;&nbsp; 20 min</span>
+        <span style="font-size:12px;font-weight:700;color:var(--ink)">Build Your Agent &mdash; Agent Builder</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr;gap:8px">
+        <div style="border:1px solid var(--border);border-radius:7px;overflow:hidden">
+          <div style="background:#0f2545;padding:4px 8px;display:flex;align-items:center;gap:5px">
+            <span style="font-size:9.5px;font-weight:800;color:rgba(255,255,255,.55)">08</span>
+            <span style="font-size:7.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.3px">Agent Builder</span>
+          </div>
+          <div style="padding:8px;background:var(--panel2);display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div>
+              <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:var(--ink)">Deploy a tailored RM/IA agent</p>
+              <p style="margin:0 0 5px;font-size:9px;font-style:italic;color:var(--ihh)">Choose your agent &nbsp;&#183;&nbsp; facilitator-guided</p>
+              <p style="margin:0;font-size:9.5px;color:var(--muted);line-height:1.5">Build and share one of three agents: Risk Register Assistant, Internal Audit Policy Advisor, or Regulatory Compliance Navigator.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;justify-content:center">
+              <div style="font-size:9px;color:var(--muted)">&#128206; Knowledge sources:</div>
+              <div style="font-size:9px;background:#e0f2fe;color:#0369a1;border-radius:3px;padding:2px 6px">01 Fabrikam_Enterprise_Risk_Register.xlsx</div>
+              <div style="font-size:9px;background:#e0f2fe;color:#0369a1;border-radius:3px;padding:2px 6px">04 Fabrikam_Internal_Audit_Charter.docx</div>
+              <div style="font-size:9px;background:#e0f2fe;color:#0369a1;border-radius:3px;padding:2px 6px">05 Fabrikam_Regulatory_Framework.docx</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VALUE BAR -->
+    <div style="background:#fef9c3;border:1px solid #fbbf24;border-left:4px solid #f59e0b;border-radius:8px;padding:9px 14px;font-size:11.5px;color:#78350f">
+      <b>THE VALUE:</b> One Head of Internal Audit. One week. Audit report, risk heatmap, Audit Committee deck, incident triage, meeting recap, and a custom AI agent &mdash; all without leaving Microsoft 365.
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section id="getstarted">
+<div class="modulehead"><div class="num">&#128273;</div><h2>Get Started &middot; Log In<small>Open M365 Copilot &middot; Sign in with workshop account</small></h2></div>
+<div class="card">
+  <h4>Step 1 &mdash; Open Microsoft 365 Copilot</h4>
+  <p>In your browser, navigate to <a href="https://copilot.microsoft.com" target="_blank"><b>copilot.microsoft.com</b></a>. This is the M365 Copilot chat interface &mdash; your starting point for Researcher, Agent Builder, and Analyst Agent exercises.</p>
+
+  <h4>Step 2 &mdash; Sign in with the workshop tenant account</h4>
+  <p>Sign in using the <b>workshop tenant credentials</b> provided by your facilitator (on the table card / slide). Do <em>not</em> use your personal Fabrikam account for these exercises &mdash; the sample files and agents are pre-loaded on the workshop tenant.</p>
+  <ol>
+    <li>Click <b>Sign in</b> and enter the workshop email address (e.g. <code>audit.priya@fabrikamworkshop.com</code>).</li>
+    <li>Enter the workshop account password provided by the facilitator.</li>
+    <li>If prompted for MFA, use the authenticator method shown on the facilitator&rsquo;s slide.</li>
+    <li>Once signed in, confirm the top-right profile shows the workshop account, not your personal account.</li>
+  </ol>
+
+  <h4>Step 3 &mdash; Get the sample files</h4>
+  <p>The sample files are pre-loaded in the workshop tenant&rsquo;s OneDrive. See the <a href="#files"><b>Sample Files</b></a> section for the complete list. For exercises requiring a specific file, the exercise instructions will tell you which file to open.</p>
+  <div class="callout warn"><b>Why OneDrive?</b> M365 Copilot can only analyse files stored in OneDrive or SharePoint &mdash; files on your desktop are not accessible. The workshop files are already in the workshop OneDrive; you do not need to upload anything.</div>
+  <div class="callout" style="margin-top:10px"><b>Note on the sample files:</b> All files use illustrative Fabrikam Healthcare data. They are not connected to any real Fabrikam systems. See the <a href="#files"><b>Sample Files</b></a> section for the full list and descriptions.</div>
+</div>
+</section>
+
+<section id="ex1">
+<div class="modulehead"><div class="num">1</div><h2>Exercise 1 &middot; Copilot in Word<small>15 min &middot; Word &middot; Draft with Copilot</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Open <b>04_Fabrikam_Internal_Audit_Charter.docx</b>, <b>05_Fabrikam_Regulatory_Framework.docx</b>, and <b>06_Fabrikam_Prior_Year_Audit_Report.docx</b> from OneDrive before you start.</div>
+
+<div class="card">
+<p class="lead">Use Copilot in Word to draft the FY2026 Patient Data Privacy Internal Audit Report, grounded on three source documents.</p>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 1</span><span class="time">15 min</span><span class="file">&#128196; Word Copilot &middot; Draft with Copilot</span></div>
+  <h4>Draft the audit report</h4>
+  <p>Open a blank Word document. In the Copilot pane, type <code>/</code> to reference each of the three source files. Then paste the prompt:</p>
+  <div class="prompt">Draft the FY2026 Patient Data Privacy Internal Audit Report for Fabrikam Healthcare, using the three files I just referenced.
+
+Include: executive summary with the audit opinion, scope and methodology, control environment overview, detailed findings (each with rating, root cause, impact, and agreed action), and an appendix listing documents reviewed.
+
+Cite the source file for every finding &mdash; do not invent anything. If evidence is missing, flag it clearly so I can follow up.
+
+Tone: independent, evidence-based, audit committee-ready.<button class="copy" onclick="cp(this)">Copy</button></div>
+  <div class="callout warn"><b>Watch out:</b> If a finding has no citation, delete it or mark it [PLACEHOLDER] before you save. Save the file as <b>Fabrikam_FY26_Patient_Data_Privacy_Audit_Report.docx</b> in OneDrive &mdash; Exercise 3 and Exercise 6 will reference it by name.</div>
+</div>
+
+</div>
+</section>
+<section id="ex2">
+<div class="modulehead"><div class="num">2</div><h2>Exercise 2 &middot; Copilot in Excel<small>15 min &middot; Excel &middot; Analyse data + charts</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Open <b>01_Fabrikam_Enterprise_Risk_Register.xlsx</b> from OneDrive. Make sure the data is formatted as an Excel Table (Insert &rarr; Table) before opening Copilot.</div>
+
+<div class="card">
+<p class="lead">Use Copilot in Excel to analyse the enterprise risk register, flag above-appetite risks, and generate a heatmap.</p>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 2</span><span class="time">15 min</span><span class="file">&#128202; Excel Copilot &middot; 01_Fabrikam_Enterprise_Risk_Register.xlsx</span></div>
+  <h4>Analyse the risk register</h4>
+  <p>Open the file, open the Copilot pane (Home ribbon &rarr; Copilot), and paste:</p>
+  <div class="prompt">Analyse this enterprise risk register.
+
+Show me the top 10 risks by residual score, flag any risk that&rsquo;s above appetite in red, group risks by category with counts and averages, and generate a 5&times;5 heatmap with risks plotted by likelihood and impact.
+
+Add a summary at the top: total risks, how many are above appetite, and which category has the most red flags.<button class="copy" onclick="cp(this)">Copy</button></div>
+  <div class="callout"><b>Tip:</b> If Copilot doesn&rsquo;t detect the data, check that the table has clean headers and no blank rows.</div>
+</div>
+
+</div>
+</section>
+<section id="ex3">
+<div class="modulehead"><div class="num">3</div><h2>Exercise 3 &middot; Copilot in PowerPoint<small>15 min &middot; PowerPoint &middot; Create from file</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Your Word audit report from Exercise 1 must be saved to OneDrive as <b>Fabrikam_FY26_Patient_Data_Privacy_Audit_Report.docx</b> first.</div>
+
+<div class="card">
+<p class="lead">Use Copilot in PowerPoint to generate an Audit Committee deck directly from your Word audit report.</p>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 3</span><span class="time">15 min</span><span class="file">&#127381; PowerPoint Copilot &middot; Create presentation from file</span></div>
+  <h4>Generate the Audit Committee deck</h4>
+  <p>Open a blank PowerPoint. In the Copilot pane, click <b>Create presentation from file</b> or type <code>/</code> to reference your Word audit report from Exercise 1. Then paste:</p>
+  <div class="prompt">Create an Audit Committee presentation from the audit report I just referenced.
+
+Include: title slide, agenda, audit opinion (big and bold), scope and methodology, control environment overview with a risk heatmap, one slide per Critical or High finding (finding ID, condition, root cause, impact, action, owner, target date), a management action tracker table, and an appendix.
+
+Apply Fabrikam Healthcare branding: navy header band (#0f2545), teal accents (#0e7490), Segoe UI. Minimal text per slide &mdash; one visual per slide. Add speaker notes on every slide with the key message and the most likely question from an Audit Committee member.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+</div>
+</section>
+<section id="ex4">
+<div class="modulehead"><div class="num">4</div><h2>Exercise 4 &middot; Copilot in Outlook &amp; Teams<small>15 min &middot; Outlook + Teams &middot; Incident triage &amp; meeting recaps</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Uses the incident email thread and Risk Committee meeting recording pre-loaded in the workshop tenant. No files to download.</div>
+
+<div class="card">
+<p class="lead">Use Copilot to triage an incident thread in Outlook, then extract structured actions from a Risk Committee meeting in Teams.</p>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 4.1 &middot; Outlook</span><span class="time">7 min</span><span class="file">&#128140; Outlook Copilot</span></div>
+  <h4>Triage the control failure thread and draft a response</h4>
+  <p>Open the thread <b>&ldquo;URGENT: Control Failure &mdash; Patient Data Access &mdash; Incident REF-2026-042&rdquo;</b>. Click <b>Copilot &rarr; Summarise this thread</b>, then paste:</p>
+  <div class="prompt">Summarise this incident thread, then draft a formal reply from the Head of Internal Audit.
+
+Summary: what failed, when, who&rsquo;s involved, timeline of key events, outstanding evidence gaps, current status.
+
+Reply: acknowledge the escalation, confirm Internal Audit has opened a formal review under REF-2026-042, and set three next steps with owners and due dates (access log extract, remediation evidence, fact-finding call). Formal tone, under 200 words, no filler.<button class="copy" onclick="cp(this)">Copy</button></div>
+  <div class="callout warn"><b>Never use Copilot on:</b> whistleblower reports, legally privileged matters, active regulatory investigations, or HR disciplinary threads. If in doubt, check with Legal.</div>
+</div>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 4.2 &middot; Teams</span><span class="time">8 min</span><span class="file">&#128101; Teams Copilot &middot; Meeting recap</span></div>
+  <h4>Extract actions from the Risk Committee meeting</h4>
+  <p>In Teams, open the <b>Risk Committee</b> channel and find the most recent <b>Weekly Risk Committee Meeting</b> recording. Open Copilot in the meeting recap view and paste:</p>
+  <div class="prompt">Give me a structured recap of this Risk Committee meeting.
+
+Include: attendees (and who was absent), key decisions with the context around each, action items with owner-by-role and due date, any new or escalated risks, and any items deferred to the next meeting.
+
+Then draft a short email to the members who were absent &mdash; the top 3 decisions, any actions assigned to them, and the next meeting date. Under 250 words.<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+</div>
+</section>
+<section id="ex5">
+<div class="modulehead"><div class="num">5</div><h2>Exercise 5 &middot; Copilot Agent Builder<small>20 min &middot; Agent Builder &middot; Custom AI for RM/IA</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Go to <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> &rarr; <b>Create</b> &rarr; <b>New Agent</b>. Facilitator will demonstrate building an agent live before you build your own.</div>
+
+<div class="card">
+<p class="lead">A Copilot Agent is a customised AI personality with a defined role, system instructions that constrain its behaviour, knowledge sources grounded on your documents, and suggested queries. You build it once and share it with your team. No coding required.</p>
+
+<div style="background:#e0f2fe;border:1px solid #38bdf8;border-left:4px solid #0ea5e9;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#0c4a6e">
+  <b>&#127891; Facilitator-led demonstration:</b> Watch the facilitator build one of these agents live and follow the steps. If time permits, build your own using the step-by-step guide below.
+</div>
+
+<h4>Choose your agent</h4>
+<div class="agent-grid">
+  <div class="agent-card" onclick="selectAgent(this,'a')">
+    <h5>&#127919; Risk Register Assistant</h5>
+    <p><b>For:</b> Risk owners, audit managers, control owners<br><br>Query the enterprise risk register in natural language &mdash; understand scoring methodology, identify above-appetite risks, and cross-reference with the incident log. Available to the whole risk team 24/7.</p>
+  </div>
+  <div class="agent-card" onclick="selectAgent(this,'b')">
+    <h5>&#128203; Internal Audit Policy Advisor</h5>
+    <p><b>For:</b> Internal audit managers, senior auditors<br><br>Apply IIA IPPF standards and the Fabrikam audit charter in practice &mdash; sample sizing, working paper standards, finding ratings, and audit lifecycle guidance. Instant answers, cited to the correct standard.</p>
+  </div>
+  <div class="agent-card" onclick="selectAgent(this,'c')">
+    <h5>&#9878;&#65039; Regulatory Compliance Navigator</h5>
+    <p><b>For:</b> Compliance officers, control owners<br><br>Interpret Fabrikam&rsquo;s regulatory obligations (PDPA, clinical accreditation, financial reporting) and map them to controls. Flags compliance gaps where no control exists.</p>
+  </div>
+</div>
+
+<div id="agent-steps">
+<h4 id="agent-steps-title">Agent Builder: step-by-step &middot; <span id="agent-label">Select an agent above &uarr;</span></h4>
+
+<div class="activity">
+  <div class="head"><span class="num">Step 1</span><span class="time">3 min</span></div>
+  <h4>Open Agent Builder and configure name, description, and instructions</h4>
+  <p>Go to <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> &rarr; click <b>Create</b> &rarr; <b>New Agent</b>. Fill in the <b>Name</b>, <b>Description</b>, and <b>System Instructions</b> fields using the content generated below &mdash; each has its own Copy button:</p>
+  <div id="step1-content"><em style="color:var(--muted)">&#8592; Select an agent above to see the setup content</em></div>
+</div>
+
+<div class="activity">
+  <div class="head"><span class="num">Step 2</span><span class="time">5 min</span></div>
+  <h4>Connect knowledge sources from SharePoint / OneDrive</h4>
+  <p>Click <b>Add Knowledge</b> &rarr; SharePoint or OneDrive. Connect the documents listed below for your chosen agent. The agent will cite these documents when answering questions:</p>
+  <div id="step3-content"><em style="color:var(--muted)">&#8592; Select an agent above</em></div>
+</div>
+
+<div class="activity">
+  <div class="head"><span class="num">Step 3</span><span class="time">5 min</span></div>
+  <h4>Test with 3 realistic queries &mdash; verify citations</h4>
+  <p>Use these test queries to verify the agent cites its source document correctly. If the agent answers without citing a source, refine the system instructions:</p>
+  <div id="step4-content"><em style="color:var(--muted)">&#8592; Select an agent above</em></div>
+  <div class="callout warn" style="margin-top:12px"><b>If the agent guesses rather than citing:</b> Add this line to the system instructions: &ldquo;Do not answer questions not covered in your knowledge base. If the answer is not in your documents, say: I don&rsquo;t have that information in my current knowledge base. Please contact [relevant team].&rdquo;</div>
+</div>
+
+<div class="activity">
+  <div class="head"><span class="num">Step 4 &middot; Publish</span><span class="time">2 min</span></div>
+  <h4>Publish and share with your team</h4>
+  <p>Click <b>Publish</b> and share the agent link with your audit managers and risk owners. They can access it directly from M365 Copilot without any technical setup. When the audit charter or risk register is updated, republish the agent with the new document version to keep it current.</p>
+  <div class="callout good">&#127881; You&rsquo;ve built a working AI agent in under 20 minutes &mdash; grounded on your real audit documents, citing sources, running 24/7 for your entire team. Update the knowledge source whenever the charter or register changes &mdash; the agent stays current.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="ex6">
+<div class="modulehead"><div class="num">6</div><h2>Exercise 6 &middot; Copilot Cowork<small>20 min &middot; Cowork &middot; Delegate multi-step audit work end-to-end</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a> and switch to <b>Cowork</b> mode. Cowork shows its plan before it acts &mdash; approve each step as it runs.</div>
+
+<div class="card">
+<p class="lead">Cowork is a multi-step agentic mode where you describe an <b>outcome</b> &mdash; and Copilot writes a plan, then executes across Word, Excel, PowerPoint, Outlook, Teams, and the browser. Perfect for the &ldquo;last mile&rdquo; of an audit engagement.</p>
+
+<h4>What Cowork produces in this exercise</h4>
+<ul>
+  <li>&#128221; <b>Word</b> &mdash; 1-page Audit Committee cover memo</li>
+  <li>&#128202; <b>Excel</b> &mdash; management action tracker</li>
+  <li>&#127912; <b>PowerPoint</b> &mdash; 5-slide Audit Committee summary deck</li>
+  <li>&#127760; <b>HTML</b> &mdash; Copilot Page shared to the Risk &amp; Audit Team channel</li>
+  <li>&#128231; <b>Email</b> &mdash; sign-off request to CFO, CIO, and DPO</li>
+  <li>&#128197; <b>Meeting</b> &mdash; Audit Committee readout scheduled in Outlook with Teams link</li>
+</ul>
+
+<div class="callout"><b>Prerequisites:</b> Complete Exercises 1&ndash;4 first so the Word report, Excel results, and PowerPoint deck are already saved in OneDrive.</div>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 6</span><span class="time">20 min</span><span class="file">&#128101; Cowork &middot; Plan &amp; execute</span></div>
+  <h4>Delegate the full Audit Committee close-out</h4>
+  <p>Switch mode to <b>Cowork</b> and paste:</p>
+  <div class="prompt">Cowork &mdash; close out the FY26 Patient Data Privacy Internal Audit and prepare the full Audit Committee readout pack.
+
+Use these files from my OneDrive: Fabrikam_FY26_Patient_Data_Privacy_Audit_Report.docx, 02_Fabrikam_Control_Testing_Results.xlsx, 03_Fabrikam_Incident_Log.xlsx, 04_Fabrikam_Internal_Audit_Charter.docx.
+
+Produce and save these to /Audits/FY26 Patient Data Privacy/Audit Committee Pack/:
+1. Word &mdash; 1-page cover memo (opinion, findings by rating, recommended action)
+2. Excel &mdash; management action tracker (one row per finding, with owner by role, target date, status, RAG conditional formatting)
+3. PowerPoint &mdash; 5 slides (title, opinion, findings chart, top 3 findings, ask of the Committee) with speaker notes
+4. HTML &mdash; a Copilot Page &ldquo;FY26 Patient Data Privacy Audit &mdash; Committee Briefing&rdquo; shared to the Risk &amp; Audit Team channel
+5. Email &mdash; sign-off request to CFO, CIO, DPO (do NOT send &mdash; show the draft)
+6. Meeting &mdash; 45-min Audit Committee readout in the next 10 business days, propose 3 slot options first, Teams link, agenda in the body
+
+Rules: don&rsquo;t invent findings, dates, or owners. Show me each deliverable before moving on. Do not send the email or the meeting invite until I say go.<button class="copy" onclick="cp(this)">Copy</button></div>
+  <div class="callout warn"><b>Watch these checkpoints:</b> Cowork will pause before (a) sharing the HTML page to Teams, (b) sending the email, (c) sending the meeting invite. Never let it past these without a human review.</div>
+  <div class="callout good"><b>You are still the CAE:</b> Cowork produces the deliverables, but you own the audit opinion and the sign-off. Review every artefact before approving.</div>
+</div>
+
+</div>
+</section>
+<section id="ex7">
+<div class="modulehead"><div class="num">7</div><h2>Exercise 7 &middot; Copilot Chat &middot; Daily Briefing Kanban<small>10 min &middot; Copilot Chat &middot; Your morning in one page</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a>. Make sure the mode selector shows <b>Work</b>. No files to attach &mdash; Copilot reads your email, Teams, calendar, and files automatically.</div>
+
+<div class="card">
+<p class="lead">Twenty minutes of morning triage across Outlook, Teams, and your calendar &mdash; compressed into one prompt and one HTML page you can pin to a Teams tab. Run it every morning.</p>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 7</span><span class="time">10 min</span><span class="file">&#128172; Copilot Chat &middot; Daily kanban</span></div>
+  <h4>Build your daily briefing kanban</h4>
+  <p>Paste the prompt below. Copilot will read your inbox, Teams, calendar, and recent files automatically.</p>
+  <div class="prompt">Give me my daily briefing as a kanban board in HTML.
+
+Look at my email, Teams chats and channels, calendar, and recent files from the last 24 hours.
+
+Use these columns: Needs my decision today, In progress, Waiting on others, FYI, Closed yesterday.
+
+Skip newsletters and auto-replies. For each card show: what it is, who&rsquo;s asking, when it&rsquo;s due, and what I should do next. Cite the email subject or Teams post so I can find it.
+
+Give me one self-contained HTML file I can save and open in a browser.<button class="copy" onclick="cp(this)">Copy</button></div>
+  <div class="callout"><b>Save it:</b> Copy the HTML into <b>My_Daily_Briefing.html</b> on your desktop and open it. That&rsquo;s your board for the day.</div>
+  <div class="callout good"><b>Why this matters:</b> 20 minutes of triage becomes 90 seconds. Run it every Monday morning after a busy weekend and you&rsquo;ll never go back.</div>
+</div>
+
+</div>
+</section>
+<section id="ex8">
+<div class="modulehead"><div class="num">8</div><h2>Exercise 8 &middot; Copilot Researcher<small>15 min &middot; Researcher agent &middot; Deep, cited research on a regulatory topic</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a>. In the mode selector, choose <b>Researcher</b>. Researcher takes 5&ndash;10 minutes to run &mdash; kick it off and get a coffee while it works.</div>
+
+<div class="card">
+<p class="lead">Researcher is Copilot&rsquo;s deep-research agent. Give it a scoped question and it produces a structured, cited briefing pulled from public sources and (where enabled) your internal work &mdash; the kind of research memo that would take an analyst half a day.</p>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 8</span><span class="time">15 min</span><span class="file">&#128218; Researcher &middot; Regulatory horizon scan</span></div>
+  <h4>Produce a horizon-scan briefing for the FY27 audit universe</h4>
+  <p>Switch mode to <b>Researcher</b> and paste:</p>
+  <div class="prompt">Prepare a briefing on emerging regulatory and technology risks that Fabrikam Healthcare&rsquo;s Internal Audit function should include in the FY27 audit universe.
+
+Focus on: PDPA amendments and enforcement trends in Malaysia and Singapore, AI use in clinical settings (diagnostic tools, patient-facing chatbots), cross-border patient data flows, and cybersecurity expectations for healthcare providers.
+
+For each risk area give me: what&rsquo;s changing, why it matters to a mid-size private healthcare group, what regulators are signalling, and 2&ndash;3 audit questions I could ask the business owner today.
+
+Cite every claim with a source I can click. Structure it as a 2-page briefing memo I can share with the Audit Committee.<button class="copy" onclick="cp(this)">Copy</button></div>
+  <div class="callout"><b>Tip:</b> Researcher will show a plan first &mdash; the sources it&rsquo;s planning to consult and the sections it&rsquo;ll produce. Review the plan and edit if any angle is missing before it runs.</div>
+  <div class="callout warn"><b>Verify before you use it:</b> Researcher is grounded and cited, but click through 3&ndash;4 citations before you circulate the memo &mdash; especially any specific dates, penalty amounts, or regulatory clauses.</div>
+</div>
+
+</div>
+</section>
+
+<section id="ex9">
+<div class="modulehead"><div class="num">9</div><h2>Exercise 9 &middot; Copilot Analyst<small>15 min &middot; Analyst agent &middot; Data analysis with Python, no formulas needed</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a>. In the mode selector, choose <b>Analyst</b>. Attach <b>03_Fabrikam_Incident_Log.xlsx</b> from OneDrive.</div>
+
+<div class="card">
+<p class="lead">Analyst is Copilot&rsquo;s data-analysis agent &mdash; it writes and runs Python on your data in a sandbox. You describe the analysis in plain English; Analyst produces the answer, the chart, and the code (so you can defend the number if anyone asks how you got it).</p>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 9</span><span class="time">15 min</span><span class="file">&#128200; Analyst &middot; 03_Fabrikam_Incident_Log.xlsx</span></div>
+  <h4>Find patterns in the incident log</h4>
+  <p>Switch mode to <b>Analyst</b>, attach the incident log, and paste:</p>
+  <div class="prompt">Analyse this 12-month incident log for Fabrikam Healthcare.
+
+Tell me: which root-cause categories are most common, whether incident volume is trending up or down over the year, which business units are generating the most High and Critical incidents, and how long incidents take to close (by severity).
+
+Then predict which control families are most at risk of failure in the next quarter based on the incident pattern &mdash; and explain the reasoning.
+
+Give me 3 charts I can drop straight into the Audit Committee deck, and a short paragraph interpreting each one.<button class="copy" onclick="cp(this)">Copy</button></div>
+  <div class="callout"><b>Tip:</b> Analyst shows the Python code it ran. If a number looks off, ask &ldquo;show me the code&rdquo; and check the filter logic &mdash; it&rsquo;s much faster than rebuilding the analysis in Excel.</div>
+  <div class="callout good"><b>Why Analyst over Excel Copilot?</b> Excel Copilot is great for structured tables and quick charts. Analyst is better when you want cross-tab analysis, predictions, or when you want to see the code behind the number for audit defensibility.</div>
+</div>
+
+</div>
+</section>
+
+<section id="ex10">
+<div class="modulehead"><div class="num">10</div><h2>Exercise 10 &middot; Copilot Analyst &middot; Standardize &amp; Consolidate<small>20 min &middot; Analyst agent &middot; Different schemas &rarr; one Group risk register</small></h2></div>
+<div class="callout good"><b>When to do this:</b> Open <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a>. In the mode selector, choose <b>Analyst</b>. Attach all <b>5 files</b> from the <b>Subsidiary Risk Registers</b> folder before you start.</div>
+
+<div class="card">
+<p class="lead">Every year, Group Risk faces the same headache: four subsidiaries each send their risk register in a different format, with different rating scales, different category names, and different levels of completeness. In this exercise, Analyst does the reconciliation for you &mdash; standardize the schemas, map every risk to the Group enterprise taxonomy, and flag exceptions in one pass.</p>
+
+<h4>The 5 files you need (all in the Subsidiary Risk Registers folder)</h4>
+<ul>
+  <li>&#127973; <b>KL_Hospital_Risk_Register_FY26Q2.xlsx</b> &mdash; 25 risks, uses &ldquo;Risk Type&rdquo; taxonomy, numeric 1&ndash;5 likelihood &amp; consequence, inherent + residual scores</li>
+  <li>&#127974; <b>SG_Specialty_Clinics_Risk_Register_Q2_2026.xlsx</b> &mdash; 20 risks, uses &ldquo;Category&rdquo;, Low/Medium/High/Very High ratings, YYYY-MM-DD dates</li>
+  <li>&#127973; <b>JB_Regional_Risk_Register_July2026.xlsx</b> &mdash; 18 risks, compact schema, uses &ldquo;Domain&rdquo;, RAG only, some missing owners</li>
+  <li>&#128142; <b>Wellness_Clinics_Group_Risk_Log_July2026.xlsx</b> &mdash; 16 risks, uses &ldquo;Risk Theme&rdquo;, likelihood as percentages, financial impact as ranges</li>
+  <li>&#128218; <b>Group_Enterprise_Risk_Taxonomy_Reference.xlsx</b> &mdash; the <em>target</em> taxonomy (9 enterprise categories) and target reporting schema</li>
+</ul>
+
+<div class="activity">
+  <div class="head"><span class="num">Task 10</span><span class="time">20 min</span><span class="file">&#128200; Analyst &middot; Standardize + map + flag exceptions</span></div>
+  <h4>Consolidate the four subsidiaries into one Group risk register</h4>
+  <p>In <a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a>, switch mode to <b>Analyst</b>, attach all 5 files, and paste:</p>
+  <div class="prompt">I&rsquo;ve attached 4 subsidiary risk registers (KL Hospital, SG Specialty Clinics, JB Regional, Wellness Clinics Group) and the Group Enterprise Risk Taxonomy Reference.
+
+Each subsidiary uses different column names, different rating scales, and different category taxonomies. Standardize them into one consolidated Group risk register, following the target schema in the taxonomy reference file.
+
+For every risk:
+- Map its local category (Risk Type / Category / Domain / Risk Theme) to one of the 9 enterprise categories in the reference file. Show your confidence for each mapping.
+- Normalize likelihood and impact into a consistent 1&ndash;5 scale.
+- Compute residual score (likelihood &times; impact) and residual band (Red &ge;15, Amber 8&ndash;14, Green &le;7).
+- Keep the source file name so we have an audit trail.
+
+Then flag these exceptions:
+- Risks above appetite (residual &ge;15)
+- Risks missing an owner
+- Risks with a target closure date that&rsquo;s already passed
+- Categories you couldn&rsquo;t confidently map (confidence below 80%) &mdash; I&rsquo;ll review those manually
+- Duplicate risks that appear in more than one subsidiary under different names
+
+Give me: (1) the consolidated Group register as a downloadable Excel file with three sheets (Consolidated Register, Exception Summary, Category Mapping Table), (2) an exception summary with counts by exception type and by subsidiary, and (3) a category-mapping table showing how each subsidiary&rsquo;s taxonomy maps to the Group taxonomy with confidence scores.
+
+Apply light formatting on the Consolidated Register sheet: freeze the header row, colour the residual_band column (red / amber / green), and bold the header row.<button class="copy" onclick="cp(this)">Copy</button></div>
+  <div class="callout"><b>Getting the Excel file out:</b> Analyst shows results in the chat by default. To get a real .xlsx you can open in Excel, look for the &ldquo;Download&rdquo; link that appears below the code output &mdash; Analyst generates the file in its sandbox and gives you a link. If you don&rsquo;t see one, follow up with: <em>&ldquo;Save that as an .xlsx file I can download.&rdquo;</em> Analyst will regenerate with the export step included.</div>
+  <div class="callout"><b>Tip:</b> Analyst will show its Python code. If a category mapping looks wrong, ask &ldquo;show me the mapping rules you used for [category]&rdquo; and adjust with a follow-up prompt like &ldquo;treat &lsquo;Data &amp; Privacy&rsquo; as Cyber &amp; Information, not as a standalone category.&rdquo;</div>
+  <div class="callout good"><b>Why this matters:</b> This is the annual Group Risk consolidation exercise, done in 20 minutes instead of 2 weeks. Every mapping decision is documented in code, so the Audit Committee can see exactly how &ldquo;Human Capital&rdquo; (SG) became &ldquo;People &amp; Culture&rdquo; (Group). Defensible, repeatable, auditable.</div>
+</div>
+
+</div>
+</section>
+
+<section id="files">
+<div class="modulehead"><div class="num">&#128193;</div><h2>Sample Files<small>Illustrative Fabrikam Healthcare data &mdash; workshop use only</small></h2></div>
+<div class="card">
+<p class="lead">All files contain illustrative Fabrikam Healthcare data generated for workshop purposes. They are not connected to any real Fabrikam systems, do not contain real patient or employee data, and must not be used for operational decisions.</p>
+<table>
+  <tr><th>#</th><th>File</th><th>Type</th><th>Used In</th><th>Contents</th></tr>
+  <tr>
+    <td>01</td>
+    <td><b>01 Fabrikam_Enterprise_Risk_Register.xlsx</b></td>
+    <td><span class="badge blue">Excel</span></td>
+    <td>Exercise 2, Agent A</td>
+    <td>Enterprise risk register with 40 risks across 6 categories (Clinical / Operational / Financial / Regulatory / Cyber / ESG). Columns: Risk ID, Title, Category, Likelihood (1&ndash;5), Impact (1&ndash;5), Residual Score, Risk Appetite threshold, Risk Owner (role), Status, Last Reviewed date.</td>
+  </tr>
+  <tr>
+    <td>02</td>
+    <td><b>02 Fabrikam_Control_Testing_Results.xlsx</b></td>
+    <td><span class="badge blue">Excel</span></td>
+    <td>Exercise 2</td>
+    <td>Q3 control testing results for ~120 controls across 6 control families. Columns: Control ID, Control Name, Control Family, Test Objective, Population Size, Sample Selected, Pass/Fail, Failure Reason, Tester, Test Date, Management Comments.</td>
+  </tr>
+  <tr>
+    <td>03</td>
+    <td><b>03 Fabrikam_Incident_Log.xlsx</b></td>
+    <td><span class="badge blue">Excel</span></td>
+    <td>Exercise 2, Agent A</td>
+    <td>12-month operational and clinical incident log. Columns: Incident ID, Date, Category, Description, Severity (Critical / High / Medium / Low), Control ID Breached, Root Cause, Status, Resolution Date, Lessons Learned.</td>
+  </tr>
+  <tr>
+    <td>04</td>
+    <td><b>04 Fabrikam_Internal_Audit_Charter.docx</b></td>
+    <td><span class="badge yellow">Word</span></td>
+    <td>Exercise 1, Agent B</td>
+    <td>Fabrikam Internal Audit Charter &mdash; covering: purpose and authority of internal audit, independence and objectivity requirements, audit lifecycle (planning &rarr; fieldwork &rarr; reporting &rarr; follow-up), audit methodology, finding rating scale (Critical / High / Medium / Low with definitions), sample sizing methodology, working paper standards, and IIA IPPF alignment. Approximately 25 pages.</td>
+  </tr>
+  <tr>
+    <td>05</td>
+    <td><b>05 Fabrikam_Regulatory_Framework.docx</b></td>
+    <td><span class="badge yellow">Word</span></td>
+    <td>Exercise 1, Agent C</td>
+    <td>Fabrikam regulatory obligations framework &mdash; covering: PDPA (Personal Data Protection Act) obligations mapped to controls, clinical data handling and accreditation requirements, financial reporting and statutory audit obligations, breach notification requirements, data retention and disposal rules. Each obligation includes: Regulation &amp; Clause, Obligation Description, Mapped Control ID, Control Owner (role), and Gap Flag. Approximately 30 pages.</td>
+  </tr>
+  <tr>
+    <td>06</td>
+    <td><b>06 Fabrikam_Prior_Year_Audit_Report.docx</b></td>
+    <td><span class="badge yellow">Word</span></td>
+    <td>Exercise 1, Agent B</td>
+    <td>FY2025 Patient Data Privacy Internal Audit Report &mdash; the prior-year equivalent of the report you will draft in Exercise 1. Contains: FY2025 audit opinion, scope, control environment assessment, 8 detailed findings (3 High, 4 Medium, 1 Low), management responses and agreed actions, and a follow-up status table showing which FY2025 actions were closed and which are still open. Approximately 40 pages.</td>
+  </tr>
+  <tr>
+    <td>07</td>
+    <td><b>Fabrikam_URGENT_Control_Failure_REF-2026-042.eml</b></td>
+    <td><span class="badge blue">Outlook</span></td>
+    <td>Exercise 4</td>
+    <td>18-message .eml file simulating the URGENT control failure email thread (Patient Data Access &mdash; Incident REF-2026-042). Involves the Head of Internal Audit, IT Security Manager, IT Infrastructure Lead, DPO, EA, and Head of Clinical Operations KL. Covers the full incident arc from SIEM alert to CEO briefing consolidation. Double-click to open in Outlook.</td>
+  </tr>
+  <tr>
+    <td>08</td>
+    <td><b>Subsidiary Risk Registers\ (folder of 5 files)</b></td>
+    <td><span class="badge blue">Excel</span></td>
+    <td>Exercise 10</td>
+    <td>Four subsidiary risk registers with <em>deliberately different</em> schemas plus the target Group taxonomy: KL_Hospital_Risk_Register_FY26Q2.xlsx (25 risks, &ldquo;Risk Type&rdquo;, 1&ndash;5 numeric), SG_Specialty_Clinics_Risk_Register_Q2_2026.xlsx (20 risks, &ldquo;Category&rdquo;, Low/Med/High/Very High), JB_Regional_Risk_Register_July2026.xlsx (18 risks, &ldquo;Domain&rdquo;, RAG only), Wellness_Clinics_Group_Risk_Log_July2026.xlsx (16 risks, &ldquo;Risk Theme&rdquo;, percentages + ranges), and Group_Enterprise_Risk_Taxonomy_Reference.xlsx (target taxonomy + target schema). Same underlying risks appear under different names across files &mdash; perfect for testing Analyst&rsquo;s cross-file standardization and category mapping.</td>
+  </tr>
+</table>
+<div class="callout warn" style="margin-top:14px"><b>Note on sample data:</b> These files contain entirely fictitious risk, control, and incident data created for this workshop. They do not represent real Fabrikam Healthcare operations, real patients, or real regulatory matters. A follow-up task will generate the actual sample data files &mdash; reference them by name in exercises now.</div>
+</div>
+</section>
+
+<section id="tips">
+<div class="modulehead"><div class="num">&#128161;</div><h2>Tips &amp; Prompts<small>Practical guidance for RM/IA use of M365 Copilot</small></h2></div>
+<div class="card">
+
+<div class="task-step">
+  <div class="step-label">Tip 1 &mdash; Always ground on a specific document <span class="tool-badge">All surfaces</span></div>
+  <p style="margin:4px 0 0;font-size:14px">Use &ldquo;Reference this document&rdquo; or the <code>/</code> command to anchor Copilot to your audit charter, risk register, or regulatory framework. Ungrounded prompts produce general AI answers &mdash; not audit-defensible outputs. Every claim in an audit report must be traceable to a source.</p>
+</div>
+
+<div class="task-step">
+  <div class="step-label">Tip 2 &mdash; Require a citation for every claim <span class="tool-badge">Word &middot; Agent Builder</span></div>
+  <p style="margin:4px 0 0;font-size:14px">Add this line to every prompt: &ldquo;For every finding, recommendation, or regulatory clause, cite the source document name and section in parentheses.&rdquo; If Copilot cannot cite it, it should not be in the output. Delete uncited claims and replace with [PLACEHOLDER &mdash; requires evidence].</p>
+</div>
+
+<div class="task-step">
+  <div class="step-label">Tip 3 &mdash; Never paste privileged or sensitive content <span class="tool-badge">All surfaces</span></div>
+  <p style="margin:4px 0 0;font-size:14px">Do not paste into Copilot: PII (patient names, employee data), whistleblower reports, matters under legal privilege, active regulatory correspondence, or third-party commercially sensitive data. Use sample files only. When in doubt, ask Group Legal before using Copilot on a document.</p>
+</div>
+
+<div class="task-step">
+  <div class="step-label">Tip 4 &mdash; Validate outputs against source evidence <span class="tool-badge">Excel &middot; Word</span></div>
+  <p style="margin:4px 0 0;font-size:14px">Copilot can misread tables, especially merged cells, multi-row headers, or numeric columns formatted as text. After any Excel analysis, manually spot-check 3&ndash;5 figures against the raw data. After any Word draft, read every finding paragraph and confirm it matches the referenced source document section &mdash; Copilot occasionally paraphrases incorrectly.</p>
+</div>
+
+<div class="task-step">
+  <div class="step-label">Tip 5 &mdash; Use Coaching in Outlook for tone-sensitive correspondence <span class="tool-badge">Outlook</span></div>
+  <p style="margin:4px 0 0;font-size:14px">Audit correspondence (management letters, incident notifications, escalation emails) must strike a precise tone: formal, direct, and independent. Use <b>Coaching by Copilot</b> after drafting &mdash; select &ldquo;More formal&rdquo; and &ldquo;More direct&rdquo;. For responses to management, also select &ldquo;More concise&rdquo; to remove hedging language that undermines audit authority.</p>
+</div>
+
+<div class="task-step">
+  <div class="step-label">Tip 6 &mdash; Cross-check with a second prompt run <span class="tool-badge">Researcher &middot; Word</span></div>
+  <p style="margin:4px 0 0;font-size:14px">For high-stakes outputs (audit opinions, regulatory compliance assessments), run the same prompt twice with slightly different framing. Compare the two outputs for consistency. Divergences in findings count, rating, or regulatory interpretation are signals that the source material is ambiguous and needs human review before the report is issued.</p>
+</div>
+
+<div class="task-step">
+  <div class="step-label">Tip 7 &mdash; Treat agent knowledge as version-controlled <span class="tool-badge">Agent Builder</span></div>
+  <p style="margin:4px 0 0;font-size:14px">Whenever the audit charter, risk register, or regulatory framework is updated (e.g. annual charter refresh, risk register quarterly update), republish the agent with the new document version. An agent grounded on a stale charter will give outdated rating-scale guidance. Add a &ldquo;version last updated&rdquo; note to the agent description so users know how current it is.</p>
+</div>
+
+<div class="task-step">
+  <div class="step-label">Tip 8 &mdash; Use the GCSE framework for every prompt <span class="tool-badge">All surfaces</span></div>
+  <div class="prompt" style="margin-top:8px"><b>G</b>oal &mdash; What do I want? (An audit report draft. A risk heatmap. A 3-bullet escalation summary.)
+<b>C</b>ontext &mdash; Who is it for? What is the situation? What constraints apply? (Audit Committee. Q3 control testing. IIA IPPF standards apply.)
+<b>S</b>ource &mdash; What documents am I grounding this on? (Reference 04 Fabrikam_Internal_Audit_Charter.docx.)
+<b>E</b>xpectations &mdash; Format, length, what to include, what NOT to include.
+
+Add to every prompt:
+&ldquo;Do not invent data, findings, or regulatory clauses. Use [PLACEHOLDER] for missing information.&rdquo;
+&ldquo;Cite the source document and section for every claim.&rdquo;<button class="copy" onclick="cp(this)">Copy</button></div>
+</div>
+
+</div>
+</section>
+
+<div style="margin-top:48px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:12px;text-align:center">
+  &copy; Fabrikam Healthcare &middot; Internal training material &middot; Powered by Microsoft 365 Copilot
+</div>
+
+</main>
+</div><!-- /layout -->
+
+<script>
+// ── Password ──
+const HASH='dbb885f22744e48c6d603677e9b33baf98b1d49261b518a1288d3b7d5df2f020';
+async function sha256(s){const b=new TextEncoder().encode(s);const d=await crypto.subtle.digest('SHA-256',b);return Array.from(new Uint8Array(d)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function unlock(){
+  const v=document.getElementById('pw').value;
+  const h=await sha256(v);
+  if(h===HASH){
+    document.getElementById('lock').style.display='none';
+    document.getElementById('main').style.display='grid';
+    sessionStorage.setItem('fh_unlocked','1');
+    localStorage.setItem('fh_unlocked','1');
+  } else {
+    const e=document.getElementById('err');
+    e.textContent='Incorrect password. Please try again.';
+    setTimeout(()=>e.textContent='',3000);
+    document.getElementById('pw').value='';
+  }
+}
+function togglePw(){
+  const pw=document.getElementById('pw');
+  const svg=document.getElementById('eye-svg');
+  const btn=document.getElementById('toggle-pw');
+  if(pw.type==='password'){
+    pw.type='text';
+    btn.title='Hide password';
+    svg.setAttribute('viewBox','0 0 576 512');
+    svg.querySelector('path').setAttribute('d','M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.2 13.2 3.2 20.3z');
+  } else {
+    pw.type='password';
+    btn.title='Show password';
+    svg.setAttribute('viewBox','0 0 640 512');
+    svg.querySelector('path').setAttribute('d','M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z');
+  }
+}
+if(sessionStorage.getItem('fh_unlocked')==='1'||localStorage.getItem('fh_unlocked')==='1'){
+  document.getElementById('lock').style.display='none';
+  document.getElementById('main').style.display='grid';
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock();});
+
+// ── Copy prompts ──
+function cp(btn){
+  const txt=btn.parentElement.textContent.replace('Copy','').replace('Copied!','').trim();
+  navigator.clipboard.writeText(txt).then(()=>{
+    btn.textContent='Copied!';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);
+  });
+}
+
+// ── Agent data ──
+const agentData = {
+  a: {
+    label: "\u{1F3AF} Risk Register Assistant",
+    name:  "Fabrikam Risk Register Assistant",
+    desc:  "You are a risk management assistant for Fabrikam Healthcare. You help risk owners, internal auditors, and control owners query the enterprise risk register, understand risk scoring methodology, and identify residual risks that exceed the defined risk appetite.",
+    instructions: `You are the Risk Register Assistant for Fabrikam Healthcare.
+
+Your primary role is to help risk owners, internal auditors, and control owners query and understand the enterprise risk register (01 Fabrikam_Enterprise_Risk_Register.xlsx) and, where connected, the incident log (03 Fabrikam_Incident_Log.xlsx).
+
+RISK SCORING METHODOLOGY:
+Fabrikam uses a 5x5 likelihood x impact matrix. Residual risk score = Likelihood (1-5) x Impact (1-5). Risk appetite thresholds are defined in the register: any residual score above the defined appetite for that risk category is an above-appetite risk requiring escalation.
+
+WHEN ANSWERING QUESTIONS:
+- Always cite the Risk ID (e.g. R-2024-018) from the register. Do not describe a risk without referencing its Risk ID.
+- Explain the likelihood and impact scores in plain language when the user asks why a risk is rated as it is.
+- Flag any risk where the residual score exceeds the defined appetite and state the excess clearly (e.g. "Residual score 16 against an appetite of 9 - this risk is above appetite by 7 points").
+- When referencing incidents, cite the Incident ID and date from the incident log.
+- Do not invent risks, scores, owners, or incidents not found in the knowledge base. If a Risk ID does not exist in the register, say so clearly.
+
+ESCALATION - CRITICAL:
+- If a user's question involves a whistleblower report, a matter under investigation, an active regulatory enforcement action, or any matter described as legally privileged, redirect immediately: "This question relates to a protected matter. Please contact the Head of Internal Audit directly. I am not able to assist with this query."
+- Do not speculate about the existence or non-existence of whistleblower reports or investigations.
+
+IF INFORMATION IS UNAVAILABLE:
+"I don't have that information in the current risk register. Please contact the Risk Management team or the Head of Internal Audit."
+
+TONE: Precise, factual, audit-appropriate. Avoid speculation and qualifications like "it appears" or "it seems."`,
+    knowledge: `<ul>
+      <li>&#128196; <b>01 Fabrikam_Enterprise_Risk_Register.xlsx</b> &mdash; primary knowledge source (required)</li>
+      <li>&#128196; <b>03 Fabrikam_Incident_Log.xlsx</b> &mdash; optional but recommended for cross-referencing control failures</li>
+    </ul>
+    <p style="font-size:13px;color:var(--muted)">In Agent Builder: click <b>Add Knowledge</b> &rarr; SharePoint / OneDrive. Navigate to the workshop files folder and connect both files. The agent will cite the register row and incident ID in its responses.</p>
+    <div class="callout warn"><b>Tip:</b> After connecting knowledge, test the agent with a Risk ID query ("What is the current status of R-2024-018?") before sharing. Verify it cites the correct row from the register.</div>`,
+    queries: `<div class="prompt">What are the top 5 residual risks in the Cyber category, and do any of them exceed the defined risk appetite? Show the Risk ID, residual score, and appetite threshold for each.<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt" style="margin-top:8px">Show me all risks where the risk owner is the IT department and the residual score is above 12. Are any of these linked to incidents in the last 12 months?<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt" style="margin-top:8px">What is the current status of risk R-2024-018? What is its residual score, and what mitigation actions have been agreed?<button class="copy" onclick="cp(this)">Copy</button></div>`
+  },
+  b: {
+    label: "\u{1F4CB} Internal Audit Policy Advisor",
+    name:  "Fabrikam Internal Audit Policy Advisor",
+    desc:  "You are an internal audit methodology assistant for Fabrikam Healthcare. You help internal audit managers, senior auditors, and control owners understand and apply IIA IPPF standards, the Fabrikam audit charter, and the Fabrikam audit methodology — from planning through reporting and follow-up.",
+    instructions: `You are the Internal Audit Policy Advisor for Fabrikam Healthcare.
+
+Your role is to help internal audit managers, senior auditors, and control owners understand and apply the Institute of Internal Auditors (IIA) International Professional Practices Framework (IPPF), the Fabrikam Internal Audit Charter, and the Fabrikam audit methodology.
+
+WHEN ANSWERING QUESTIONS:
+- Always cite the relevant IIA IPPF Standard number (e.g. "Standard 2200 - Engagement Planning") and, where applicable, the specific section of the Fabrikam Internal Audit Charter.
+- Explain concepts in practical, operational terms - not just the text of the standard. Give the user what they need to act.
+- For audit lifecycle questions, guide users through the correct phase: Planning -> Fieldwork -> Reporting -> Follow-Up.
+- For sample sizing questions, apply the methodology defined in the Fabrikam charter (attribute sampling, discovery sampling, or judgement-based sampling as defined). State the sample size formula or table reference.
+- For working paper standards, explain the evidence requirements as defined in the Charter: what must be documented, by whom, and by when.
+- For finding rating questions, apply the Fabrikam rating scale as defined in the Charter: Critical / High / Medium / Low with the criteria for each tier.
+
+ESCALATION:
+- Independence and objectivity questions (e.g. auditor conflicts of interest, management scope restrictions, impairment of independence) must be escalated to the Chief Audit Executive (CAE). Say: "This is an independence or objectivity matter and must be escalated to the Chief Audit Executive per IIA Standard 1130 - Impairment to Independence or Objectivity."
+- Whistleblower matters, legal privilege questions, and active regulatory investigations: redirect to Group Legal and the CAE.
+
+BOUNDARIES:
+- Do not give legal advice. For legal or regulatory interpretations, direct users to Group Legal.
+- Do not speculate about audit findings or conclusions not supported by the knowledge base.
+- If a question is outside the knowledge base: "This is not covered in the current Fabrikam charter or IPPF materials I have access to. Please contact the Head of Internal Audit."
+
+TONE: Professional, methodical, IIA-aligned. Cite standards precisely.`,
+    knowledge: `<ul>
+      <li>&#128196; <b>04 Fabrikam_Internal_Audit_Charter.docx</b> &mdash; primary knowledge source (required)</li>
+      <li>&#128196; <b>06 Fabrikam_Prior_Year_Audit_Report.docx</b> &mdash; optional but useful for finding rating examples and precedent</li>
+    </ul>
+    <p style="font-size:13px;color:var(--muted)">In Agent Builder: click <b>Add Knowledge</b> &rarr; SharePoint / OneDrive. Connect both documents. The agent will cite the Charter section and IPPF Standard number in its responses.</p>
+    <div class="callout warn"><b>Tip:</b> Test specifically on finding rating criteria and sample sizing methodology &mdash; these are the most common queries from audit managers. Verify the agent cites the correct Charter section and standard number, not just the concept.</div>`,
+    queries: `<div class="prompt">What sample size should I use for testing 240 access-request approval transactions using attribute sampling at 95% confidence and a tolerable error rate of 5%? Cite the sampling methodology from the audit charter.<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt" style="margin-top:8px">Draft an audit planning memo for a purchase-to-pay process review. Include: audit objective, scope, key risks to be addressed, audit approach and methodology, and the IIA IPPF standards that apply to this engagement.<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt" style="margin-top:8px">What is the difference between a Critical and a High finding in the Fabrikam rating scale? Give me an example of a patient data privacy control failure that would qualify as each rating tier.<button class="copy" onclick="cp(this)">Copy</button></div>`
+  },
+  c: {
+    label: "\u2696\uFE0F Regulatory Compliance Navigator",
+    name:  "Fabrikam Regulatory Compliance Navigator",
+    desc:  "You are a regulatory compliance assistant for Fabrikam Healthcare. You help compliance officers and control owners interpret Fabrikam's regulatory obligations — including PDPA, clinical accreditation, and financial reporting — and map them to internal controls. You flag compliance gaps where no control is mapped.",
+    instructions: `You are the Regulatory Compliance Navigator for Fabrikam Healthcare.
+
+Your role is to help compliance officers, control owners, and internal auditors interpret Fabrikam's regulatory obligations and map them to existing internal controls. Your primary knowledge source is the Fabrikam Regulatory Framework document (05 Fabrikam_Regulatory_Framework.docx), supplemented by the Internal Audit Charter (04 Fabrikam_Internal_Audit_Charter.docx) for control rating context.
+
+REGULATORY DOMAINS YOU COVER:
+1. Personal Data Protection Act (PDPA): data subject rights, consent requirements, purpose limitation, data retention and disposal, breach notification obligations and timelines, cross-border data transfer restrictions.
+2. Clinical data handling and accreditation standards: patient record management obligations, clinical governance requirements, data accuracy and completeness standards.
+3. Financial reporting and disclosure obligations: statutory audit requirements, regulatory filing deadlines, accuracy and completeness standards for financial data.
+
+WHEN ANSWERING QUESTIONS:
+- Always cite the specific regulation and clause (e.g. "PDPA Section 12 - Retention Limitation Obligation"). Do not paraphrase obligations without citing their source.
+- Map each obligation to the internal control that addresses it, citing the Control ID from the Regulatory Framework document.
+- If an obligation has no mapped control in the knowledge base, flag it explicitly as a "Compliance Gap" and state: "This obligation currently has no mapped control. This is a compliance gap that should be raised with the Head of Compliance and documented in the risk register."
+- Explain obligations in plain, actionable language - not legal text. The user needs to act on this guidance.
+- Where multiple obligations intersect (e.g. a data breach triggers both PDPA notification and clinical accreditation reporting), flag all applicable obligations.
+
+CRITICAL BOUNDARIES:
+- Do NOT give legal advice. Always append to regulatory interpretation answers: "Please confirm this interpretation with Group Legal before relying on it for compliance decisions or regulatory submissions."
+- Escalate immediately to Group Legal for: active regulatory investigations, enforcement notices, court proceedings, or any matter described as legally sensitive or privileged.
+- Do not speculate about regulatory intent, future regulatory changes, or enforcement likelihood.
+- Do not answer questions about jurisdictions or regulations not covered in the Fabrikam Regulatory Framework document.
+
+IF INFORMATION IS UNAVAILABLE:
+"This regulatory area is not covered in my current knowledge base. Please contact Group Legal or the Compliance team for guidance."
+
+TONE: Precise, balanced, compliance-appropriate. State obligations as facts, not opinions.`,
+    knowledge: `<ul>
+      <li>&#128196; <b>05 Fabrikam_Regulatory_Framework.docx</b> &mdash; primary knowledge source (required)</li>
+      <li>&#128196; <b>04 Fabrikam_Internal_Audit_Charter.docx</b> &mdash; optional, for control rating and audit methodology context</li>
+    </ul>
+    <p style="font-size:13px;color:var(--muted)">In Agent Builder: click <b>Add Knowledge</b> &rarr; SharePoint / OneDrive. Connect both documents. The agent will cite the regulation, clause, and mapped Control ID in its responses. Gap flags appear when no control is mapped.</p>
+    <div class="callout warn"><b>Tip:</b> Test specifically on PDPA breach notification obligations and clinical data retention requirements &mdash; these are the highest-risk areas. Verify the agent cites the regulation and clause correctly and identifies any compliance gaps in the control mapping.</div>`,
+    queries: `<div class="prompt">What are Fabrikam's obligations under PDPA for notifying affected patients in the event of a patient data breach? Include the notification timeline, the regulatory authority that must be notified, and which internal control is mapped to this obligation. Is there a compliance gap?<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt" style="margin-top:8px">Map all clinical accreditation requirements in the Regulatory Framework to the controls we have in place. Highlight any accreditation obligation that has no mapped control — these are compliance gaps requiring immediate attention.<button class="copy" onclick="cp(this)">Copy</button></div>
+    <div class="prompt" style="margin-top:8px">Is there a compliance gap between our data retention policy and the PDPA data retention limitation obligation? If so, what is the gap and what action should the compliance team take?<button class="copy" onclick="cp(this)">Copy</button></div>`
+  }
+};
+
+function selectAgent(el,id){
+  document.querySelectorAll('.agent-card').forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+  const d = agentData[id];
+  if(!d) return;
+  document.getElementById('agent-label').textContent = d.label;
+  document.getElementById('step1-content').innerHTML =
+    '<p style="margin:4px 0 6px"><span style="color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em">Name</span></p>' +
+    '<div class="prompt">' + d.name + '<button class="copy" onclick="cp(this)">Copy</button></div>' +
+    '<p style="margin:12px 0 6px"><span style="color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em">Description</span></p>' +
+    '<div class="prompt">' + d.desc + '<button class="copy" onclick="cp(this)">Copy</button></div>' +
+    '<p style="margin:12px 0 6px"><span style="color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em">System Instructions</span></p>' +
+    '<div class="prompt"><pre style="white-space:pre-wrap;font-family:inherit;margin:0">' + d.instructions + '</pre><button class="copy" onclick="cp(this)">Copy</button></div>';
+  document.getElementById('step3-content').innerHTML = d.knowledge;
+  document.getElementById('step4-content').innerHTML = d.queries;
+}
+
+// ── Active nav ──
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('nav a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+  navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+},{passive:true});
+</script>
+
+</body>
+</html>

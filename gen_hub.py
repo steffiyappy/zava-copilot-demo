@@ -6941,6 +6941,18 @@ const OTHER_PAGES = [
     password: 'MasmindoCopilot08Jul',
     tag: 'Gold Mining Workshop',
     keywords: 'contoso gold mining Masmindo Indonesia gold executive workshop board minutes Teams intelligent recap Word template Researcher critique auto model council board note vendor workbook Excel edit plan vendor rebook Cowork one prompt Excel Word PowerPoint HTML email meeting Analyst agent multi perspective mail merge Outlook catch up Word interrogate board pack 30 minutes BCG McKinsey Awak Mas Sulawesi Selatan Nusantara Resources open pit'
+  },
+  {
+    section: 'Customer Workshops',
+    icon: '🩺',
+    color: '#0D9488',
+    accent: '#115E59',
+    name: 'Fabrikam Healthcare — Risk Management & Internal Audit Immersion',
+    desc: 'Fabrikam Healthcare — Risk Management & Internal Audit team immersion. Five tools across one audit week: (1) Word — draft the audit report grounded on findings + evidence · (2) Excel — analyse the risk register with normalised 5x5 heatmap · (3) PowerPoint — generate the Audit Committee deck · (4) Outlook — triage the control-failure email thread + draft a formal response · (5) Teams / Word — extract actions from the Risk Committee meeting recap. Plus Agent Builder for an internal-audit assistant, Cowork to delegate the full Audit Committee close-out, a CAE daily-briefing kanban, an FY27 audit-universe horizon scan, incident-log pattern finding, and consolidation of 4 subsidiary risk registers into one Group register.',
+    url: 'https://steffiyappy.github.io/fabrikam-healthcare-copilot-immersion/',
+    password: 'Fabrikam2026',
+    tag: 'Healthcare · Internal Audit Workshop',
+    keywords: 'fabrikam healthcare risk management internal audit CAE chief audit executive audit universe FY27 horizon scan risk register 5x5 heatmap likelihood impact residual score control failure audit committee subsidiary consolidation group risk register cowork close-out agent builder incident log KKM Kemenkes BPOM PDPA IFRS 17 healthcare conglomerate hospitals clinics diagnostics insurance'
   }
 ];
 

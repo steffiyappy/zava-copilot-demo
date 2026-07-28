@@ -22824,6 +22824,159 @@ window.HUB_DATA = {
       ],
       coworkLibrary: [
         {
+          title: 'Consolidate 4 Subsidiary Risk Registers into a Group Risk Register — Internal Audit Power Move',
+          dept_tag: 'Risk & Internal Audit',
+          industry_tag: 'Healthcare Conglomerate',
+          complexity: 'advanced',
+          apps: [
+            'Cowork',
+            'Excel',
+            'Analyst',
+            'Word',
+            'PowerPoint'
+          ],
+          desc: 'Fabrikam Healthcare-shaped conglomerate consolidation: 4 subsidiary risk registers (Hospitals, Clinics, Diagnostics, Insurance) → one Group risk register with normalised likelihood x impact scoring, top-25 shortlist, and a signed-off Audit Committee close-out pack in one Cowork run.',
+          skills: [
+            'Excel Chat + Edit + Plan across 4 heterogeneous risk-register workbooks',
+            'Normalised risk scoring (5x5 heatmap) across subsidiaries with different taxonomies',
+            'Analyst Agent multi-perspective on the consolidated register (Group CRO / Chair of Audit Committee / Group CFO)',
+            'Word audit report + PowerPoint Audit Committee deck in one Cowork run'
+          ],
+          instructions: [
+            'Copilot Chat → Excel → open /Subsidiary_Risk_Registers/*.xlsx → paste Prompt 1',
+            'Copilot Chat → Analyst → paste Prompt 2 for the tri-perspective view',
+            'Cowork → paste Prompt 3 to fan out the Audit Committee close-out pack'
+          ],
+          sample_files: [
+            [
+              'Risk_Register_Hospitals.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Register_Clinics.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Register_Diagnostics.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Register_Insurance.xlsx',
+              'xlsx'
+            ],
+            [
+              'Incident_Log_FY26.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Excel — normalise + consolidate 4 subsidiary registers',
+              text: 'Open the 4 subsidiary risk registers in /Subsidiary_Risk_Registers/ (Hospitals, Clinics, Diagnostics, Insurance). Each uses a slightly different taxonomy for likelihood, impact, category, and control state. Produce: (1) A normalised 5x5 likelihood x impact scoring key applied consistently across the 4 registers. Show the mapping used for each subsidiary (source label -> normalised score) so the auditor can trace it. (2) A consolidated Group risk register with columns: Group Risk ID, Subsidiary, Category, Description, Inherent Score, Existing Controls, Residual Score, Trend (H/M/L), Owner, Target Date, Board Escalation (Y/N). (3) A duplicate-detection column: flag risks that appear in more than one subsidiary (e.g. cybersecurity, workforce shortage) and consolidate them as a single Group-level risk with a merged residual score. (4) The Top-25 Group risks ranked by residual score, with an override column for Chair-level judgment.  Cite the workbook + sheet + row for every consolidated line. Do not invent risks that are not in a source register.'
+            },
+            {
+              label: '2. Analyst — tri-perspective view for the Audit Committee',
+              text: 'Analyst mode over the consolidated Group risk register. Produce three perspectives on the same Top-25: (a) Group CRO — residual-score movements vs the last cycle, top 5 velocity-of-change risks, and the 3 emerging risks not yet in any subsidiary register. (b) Chair of the Audit Committee — the 5 risks that need Board escalation this cycle with a specific decision ask, and the 3 risks where the Committee should challenge management on evidence quality. (c) Group CFO — the 5 risks with quantifiable financial exposure and the current provisioning / insurance / hedge coverage against each.  Present as three side-by-side columns with a shared \'Committee action requested\' column.'
+            },
+            {
+              label: '3. Cowork — Audit Committee close-out pack',
+              text: 'Cowork: fan out the Audit Committee close-out pack in one run. Numbers must match across every artefact: (1) Word — 6-page Group audit report grounded on the consolidated register + /Incident_Log_FY26.xlsx: executive summary, scope, methodology, Top-25 findings, provisioning coverage, recommendations, appendices. (2) PowerPoint — 10-slide Audit Committee deck (BCG/McKinsey style): cover, 5x5 heatmap, Top-25 shortlist, tri-perspective view, 5 escalations, 5 decisions requested, next-cycle plan. (3) Excel — the consolidated Group risk register + PivotTable by subsidiary x category x residual score. (4) HTML — self-contained one-page Audit Committee dashboard. (5) Outlook — 15-line email to Chair of Audit Committee, Group CRO, Group CFO, Group CEO, and the 4 Subsidiary CROs, with the deck attached. (6) Loop — live plan page for the 5 escalated risks with owner + target date + next-checkpoint.  Named recipients: Chair of Audit Committee (Prof. Dato Rashid), Group CRO (Ms Aini Halim), Group CFO (Mr Wai Kong Tan), Group CEO (Dr Vera Widjaja), Subsidiary CROs (Hospitals: Dr Faisal Amran, Clinics: Ms Ratna Dewi, Diagnostics: Mr Hari Prasetyo, Insurance: Ms Nadia Sudirman).'
+            },
+            {
+              label: 'Build interactive HTML risk/ESG heatmap (filters + drill-down)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML risk / compliance / ESG heatmap titled "Consolidate 4 Subsidiary Risk Registers into a Group Risk Register — Internal Audit Power Move" using Risk_Register_Hospitals.xlsx, Risk_Register_Clinics.xlsx, Risk_Register_Diagnostics.xlsx, Risk_Register_Insurance.xlsx and Incident_Log_FY26.xlsx as the source data. Output ONE .html file (inline CSS + JS, NO external CDN). Required structure: • TOP FILTER BAR — multi-select chips for business unit, risk category, owner, residual band; date-range on last-reviewed; free-text search; reset button. Filters update both the matrix and the lists below. • 5×5 PROBABILITY × IMPACT MATRIX — colour-coded cells (green 1-2 / amber 3-4 / red 5), each cell shows the count of items landing in it. Click a cell to open a side panel listing every issue in that cell with owner, mitigation status, due date, and a link to the source file. • DUAL STRIPS BELOW THE MATRIX — "Top 10 Inherent" and "Top 10 Residual"; each row is sortable and clickable, opens the same side panel. • HEAT-TIMELINE — bottom strip of last 12 monthly snapshots showing the count of red-cell items per month so the audience sees the trend. • DRILL-DOWN TABLE — sortable + searchable table of every item with column-show/hide toggles. Export CSV button respects filters. • Theme: Zava navy header, light/dark toggle, mobile-responsive. Save as "Consolidate 4 Subsidiary Risk Registers into a Group Risk Register — Internal Audit Power Move — Heatmap.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Normalised consolidated Group risk register with traceable scoring',
+            'Tri-perspective (CRO / Chair / CFO) view of the Top-25',
+            '6-artefact Audit Committee close-out pack'
+          ],
+          watch: [
+            'Scoring mapping shown per subsidiary — no black-box normalisation',
+            'Duplicate risks are consolidated at Group level, not double-counted',
+            'Every consolidated line cites source workbook + sheet + row',
+            'Financial exposure column is only populated where the source register carries a number — no fabricated Rp / MYR values'
+          ],
+          honest: 'Copilot drafts; the Group CRO signs the report and the Chair of the Audit Committee signs the deck. Any risk classified as Board-escalation must be validated with the subsidiary CRO before it hits the deck — a normalised score is a helpful lens, not the final judgment. Copilot cannot verify control effectiveness or run walk-throughs; it consolidates what the 4 registers already say. For regulator-facing risks (e.g. patient safety, data-privacy, financial-crime), Legal and the relevant regulatory-affairs lead must review before the pack is finalised.',
+          tips: [
+            'Re-run quarterly on the 3-week Audit Committee cycle; pin as a custom skill',
+            'Pair with the Cowork Frontier autonomous weekly incident-log digest between formal cycles'
+          ],
+          id: 'uc-audit-group-risk-consolidation'
+        },
+        {
+          title: 'FY27 Audit Universe Horizon Scan + Kanban — Internal Audit Planning Power Move',
+          dept_tag: 'Risk & Internal Audit',
+          industry_tag: 'Any Regulated Industry',
+          complexity: 'advanced',
+          apps: [
+            'Researcher',
+            'Cowork',
+            'Excel',
+            'PowerPoint',
+            'Loop'
+          ],
+          desc: 'Chief Audit Executive prepares the FY27 audit universe. Researcher scans regulators, peer disclosures, and emerging risks. Cowork builds the ranked audit plan, a daily-briefing kanban, and a Loop live-plan page to track the plan through the year.',
+          skills: [
+            'Researcher Critique + Model Council on emerging risks + regulator horizon',
+            'Audit-universe scoring (materiality x risk x last-audit-recency)',
+            'Kanban artefact for the CAE daily briefing',
+            'Loop live-plan for the audit universe through FY27'
+          ],
+          instructions: [
+            'Copilot Chat → Researcher → paste Prompt 1 for the FY27 horizon scan',
+            'Copilot Chat → Cowork → paste Prompt 2 for the audit-universe pack',
+            'Loop → paste Prompt 3 to seed the live audit-plan page'
+          ],
+          sample_files: [
+            [
+              'Audit_Universe_FY26.xlsx',
+              'xlsx'
+            ],
+            [
+              'Regulator_Circulars_FY26.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Researcher — FY27 audit-horizon scan',
+              text: 'Researcher Critique + Model Council. Produce a defensible horizon scan for the FY27 audit universe of a healthcare + insurance + diagnostics conglomerate. Cover: (a) regulator circulars in the last 12 months from KKM Malaysia, Kemenkes Indonesia, BPOM, KKM Singapore MOH, OJK, and IFRS 17 revisions; (b) peer internal-audit-report disclosures from listed hospital groups and life insurers in ASEAN; (c) emerging risks: AI/GenAI governance in clinical settings, cyber ransomware in hospital ITSM, drug-supply-chain-integrity post COVID-endemic, patient-data-privacy PDPA 2024, workforce shortages, ESG assurance.  For each of the 10 highest-signal signals: source with citation + retrieval timestamp, plausible impact on the audit universe, and a specific audit topic that could be added to FY27. Flag any signal older than 6 months as stale.'
+            },
+            {
+              label: '2. Cowork — FY27 audit-universe pack',
+              text: 'Cowork: build the FY27 audit universe pack in one run. Numbers must match across every artefact: (1) Excel — ranked audit universe. Columns: Audit Topic, Business Line, Materiality (Rp M), Inherent Risk Score, Last-Audit-Recency (months), FY27 Score (weighted formula), Proposed FY27 Coverage (Y/N), Owner. Grounded on /Audit_Universe_FY26.xlsx + the Researcher scan. (2) PowerPoint — 8-slide Audit Committee planning deck: cover, horizon-scan headline, universe heatmap, ranked Top-20 with FY27 coverage flag, resource + budget ask, phasing, decisions requested, next steps. (3) HTML — CAE daily-briefing kanban with columns \'Watch\', \'In Scope\', \'In Fieldwork\', \'In Reporting\', \'Closed\'. Seed with the Top-20 already placed on the correct column based on their status in /Audit_Universe_FY26.xlsx. (4) Word — 4-page audit-plan narrative for the Chair of the Audit Committee. (5) Outlook — email to the Chair with the deck attached.  Every audit topic cites the source (workbook row, regulator circular, or Researcher scan). No fabricated topics.'
+            },
+            {
+              label: '3. Loop — live audit-plan page for FY27',
+              text: 'Seed a Loop page titled \'FY27 Internal Audit Plan — Live\'. Sections: (1) 5x5 audit-universe heatmap embedded as a component; (2) Top-20 ranked list as a Loop table (Topic, Owner, Start, End, Status, Findings); (3) Emerging-risk watchlist (5 signals from the Researcher scan); (4) Regulator-circulars section with the 5 most material FY26 circulars; (5) Escalations section for anything that becomes Board-level during the year; (6) Owner-tagged action items for the 3 immediate next steps (kick-off meeting, resource confirmation, engagement letter template).  Owners: CAE, 4 Audit Directors (Hospitals, Clinics, Diagnostics, Insurance), Head of Data Analytics for Audit.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "FY27 Audit Universe Horizon Scan + Kanban — Internal Audit Planning Power Move" using Audit_Universe_FY26.xlsx and Regulator_Circulars_FY26.pdf as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "FY27 Audit Universe Horizon Scan + Kanban — Internal Audit Planning Power Move — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Researcher-grade horizon scan with 10 sourced signals',
+            'Ranked FY27 audit universe with FY27-score formula visible',
+            'CAE daily-briefing kanban seeded correctly',
+            'Loop live-plan page for the year'
+          ],
+          watch: [
+            'Every topic cites source — workbook row, regulator circular, or Researcher scan',
+            'FY27 score formula is explicit (weighted materiality x risk x recency), not black-box',
+            'Emerging-risk signals older than 6 months are flagged as stale',
+            'Kanban placements match the source workbook status column'
+          ],
+          honest: 'Copilot builds a defensible starting position; the CAE decides. Any audit topic added because of a regulator signal should be validated with the relevant regulatory-affairs lead before it lands with the Audit Committee. Copilot cannot commit resources or negotiate scope with subsidiary CEOs — those remain CAE conversations. For high-signal emerging risks (AI in clinical settings, PDPA 2024), engage external assurance advisors for a second opinion before the plan is finalised.',
+          tips: [
+            'Run annually 8 weeks before the FY-planning Audit Committee; pin as a custom skill',
+            'Pair with the Cowork Frontier autonomous monthly regulator-circular digest so signals do not go stale'
+          ],
+          id: 'uc-audit-horizon-scan-fy27'
+        },
+        {
           title: 'Case Conference Prep — Multi-Disciplinary Team',
           dept_tag: 'Clinical Operations',
           industry_tag: 'Healthcare',
@@ -25505,6 +25658,159 @@ window.HUB_DATA = {
         'Duopharma Biotech'
       ],
       coworkLibrary: [
+        {
+          title: 'Consolidate 4 Subsidiary Risk Registers into a Group Risk Register — Internal Audit Power Move',
+          dept_tag: 'Risk & Internal Audit',
+          industry_tag: 'Healthcare Conglomerate',
+          complexity: 'advanced',
+          apps: [
+            'Cowork',
+            'Excel',
+            'Analyst',
+            'Word',
+            'PowerPoint'
+          ],
+          desc: 'Fabrikam Healthcare-shaped conglomerate consolidation: 4 subsidiary risk registers (Hospitals, Clinics, Diagnostics, Insurance) → one Group risk register with normalised likelihood x impact scoring, top-25 shortlist, and a signed-off Audit Committee close-out pack in one Cowork run.',
+          skills: [
+            'Excel Chat + Edit + Plan across 4 heterogeneous risk-register workbooks',
+            'Normalised risk scoring (5x5 heatmap) across subsidiaries with different taxonomies',
+            'Analyst Agent multi-perspective on the consolidated register (Group CRO / Chair of Audit Committee / Group CFO)',
+            'Word audit report + PowerPoint Audit Committee deck in one Cowork run'
+          ],
+          instructions: [
+            'Copilot Chat → Excel → open /Subsidiary_Risk_Registers/*.xlsx → paste Prompt 1',
+            'Copilot Chat → Analyst → paste Prompt 2 for the tri-perspective view',
+            'Cowork → paste Prompt 3 to fan out the Audit Committee close-out pack'
+          ],
+          sample_files: [
+            [
+              'Risk_Register_Hospitals.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Register_Clinics.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Register_Diagnostics.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Register_Insurance.xlsx',
+              'xlsx'
+            ],
+            [
+              'Incident_Log_FY26.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Excel — normalise + consolidate 4 subsidiary registers',
+              text: 'Open the 4 subsidiary risk registers in /Subsidiary_Risk_Registers/ (Hospitals, Clinics, Diagnostics, Insurance). Each uses a slightly different taxonomy for likelihood, impact, category, and control state. Produce: (1) A normalised 5x5 likelihood x impact scoring key applied consistently across the 4 registers. Show the mapping used for each subsidiary (source label -> normalised score) so the auditor can trace it. (2) A consolidated Group risk register with columns: Group Risk ID, Subsidiary, Category, Description, Inherent Score, Existing Controls, Residual Score, Trend (H/M/L), Owner, Target Date, Board Escalation (Y/N). (3) A duplicate-detection column: flag risks that appear in more than one subsidiary (e.g. cybersecurity, workforce shortage) and consolidate them as a single Group-level risk with a merged residual score. (4) The Top-25 Group risks ranked by residual score, with an override column for Chair-level judgment.  Cite the workbook + sheet + row for every consolidated line. Do not invent risks that are not in a source register.'
+            },
+            {
+              label: '2. Analyst — tri-perspective view for the Audit Committee',
+              text: 'Analyst mode over the consolidated Group risk register. Produce three perspectives on the same Top-25: (a) Group CRO — residual-score movements vs the last cycle, top 5 velocity-of-change risks, and the 3 emerging risks not yet in any subsidiary register. (b) Chair of the Audit Committee — the 5 risks that need Board escalation this cycle with a specific decision ask, and the 3 risks where the Committee should challenge management on evidence quality. (c) Group CFO — the 5 risks with quantifiable financial exposure and the current provisioning / insurance / hedge coverage against each.  Present as three side-by-side columns with a shared \'Committee action requested\' column.'
+            },
+            {
+              label: '3. Cowork — Audit Committee close-out pack',
+              text: 'Cowork: fan out the Audit Committee close-out pack in one run. Numbers must match across every artefact: (1) Word — 6-page Group audit report grounded on the consolidated register + /Incident_Log_FY26.xlsx: executive summary, scope, methodology, Top-25 findings, provisioning coverage, recommendations, appendices. (2) PowerPoint — 10-slide Audit Committee deck (BCG/McKinsey style): cover, 5x5 heatmap, Top-25 shortlist, tri-perspective view, 5 escalations, 5 decisions requested, next-cycle plan. (3) Excel — the consolidated Group risk register + PivotTable by subsidiary x category x residual score. (4) HTML — self-contained one-page Audit Committee dashboard. (5) Outlook — 15-line email to Chair of Audit Committee, Group CRO, Group CFO, Group CEO, and the 4 Subsidiary CROs, with the deck attached. (6) Loop — live plan page for the 5 escalated risks with owner + target date + next-checkpoint.  Named recipients: Chair of Audit Committee (Prof. Dato Rashid), Group CRO (Ms Aini Halim), Group CFO (Mr Wai Kong Tan), Group CEO (Dr Vera Widjaja), Subsidiary CROs (Hospitals: Dr Faisal Amran, Clinics: Ms Ratna Dewi, Diagnostics: Mr Hari Prasetyo, Insurance: Ms Nadia Sudirman).'
+            },
+            {
+              label: 'Build interactive HTML risk/ESG heatmap (filters + drill-down)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML risk / compliance / ESG heatmap titled "Consolidate 4 Subsidiary Risk Registers into a Group Risk Register — Internal Audit Power Move" using Risk_Register_Hospitals.xlsx, Risk_Register_Clinics.xlsx, Risk_Register_Diagnostics.xlsx, Risk_Register_Insurance.xlsx and Incident_Log_FY26.xlsx as the source data. Output ONE .html file (inline CSS + JS, NO external CDN). Required structure: • TOP FILTER BAR — multi-select chips for business unit, risk category, owner, residual band; date-range on last-reviewed; free-text search; reset button. Filters update both the matrix and the lists below. • 5×5 PROBABILITY × IMPACT MATRIX — colour-coded cells (green 1-2 / amber 3-4 / red 5), each cell shows the count of items landing in it. Click a cell to open a side panel listing every issue in that cell with owner, mitigation status, due date, and a link to the source file. • DUAL STRIPS BELOW THE MATRIX — "Top 10 Inherent" and "Top 10 Residual"; each row is sortable and clickable, opens the same side panel. • HEAT-TIMELINE — bottom strip of last 12 monthly snapshots showing the count of red-cell items per month so the audience sees the trend. • DRILL-DOWN TABLE — sortable + searchable table of every item with column-show/hide toggles. Export CSV button respects filters. • Theme: Zava navy header, light/dark toggle, mobile-responsive. Save as "Consolidate 4 Subsidiary Risk Registers into a Group Risk Register — Internal Audit Power Move — Heatmap.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Normalised consolidated Group risk register with traceable scoring',
+            'Tri-perspective (CRO / Chair / CFO) view of the Top-25',
+            '6-artefact Audit Committee close-out pack'
+          ],
+          watch: [
+            'Scoring mapping shown per subsidiary — no black-box normalisation',
+            'Duplicate risks are consolidated at Group level, not double-counted',
+            'Every consolidated line cites source workbook + sheet + row',
+            'Financial exposure column is only populated where the source register carries a number — no fabricated Rp / MYR values'
+          ],
+          honest: 'Copilot drafts; the Group CRO signs the report and the Chair of the Audit Committee signs the deck. Any risk classified as Board-escalation must be validated with the subsidiary CRO before it hits the deck — a normalised score is a helpful lens, not the final judgment. Copilot cannot verify control effectiveness or run walk-throughs; it consolidates what the 4 registers already say. For regulator-facing risks (e.g. patient safety, data-privacy, financial-crime), Legal and the relevant regulatory-affairs lead must review before the pack is finalised.',
+          tips: [
+            'Re-run quarterly on the 3-week Audit Committee cycle; pin as a custom skill',
+            'Pair with the Cowork Frontier autonomous weekly incident-log digest between formal cycles'
+          ],
+          id: 'uc-audit-group-risk-consolidation'
+        },
+        {
+          title: 'FY27 Audit Universe Horizon Scan + Kanban — Internal Audit Planning Power Move',
+          dept_tag: 'Risk & Internal Audit',
+          industry_tag: 'Any Regulated Industry',
+          complexity: 'advanced',
+          apps: [
+            'Researcher',
+            'Cowork',
+            'Excel',
+            'PowerPoint',
+            'Loop'
+          ],
+          desc: 'Chief Audit Executive prepares the FY27 audit universe. Researcher scans regulators, peer disclosures, and emerging risks. Cowork builds the ranked audit plan, a daily-briefing kanban, and a Loop live-plan page to track the plan through the year.',
+          skills: [
+            'Researcher Critique + Model Council on emerging risks + regulator horizon',
+            'Audit-universe scoring (materiality x risk x last-audit-recency)',
+            'Kanban artefact for the CAE daily briefing',
+            'Loop live-plan for the audit universe through FY27'
+          ],
+          instructions: [
+            'Copilot Chat → Researcher → paste Prompt 1 for the FY27 horizon scan',
+            'Copilot Chat → Cowork → paste Prompt 2 for the audit-universe pack',
+            'Loop → paste Prompt 3 to seed the live audit-plan page'
+          ],
+          sample_files: [
+            [
+              'Audit_Universe_FY26.xlsx',
+              'xlsx'
+            ],
+            [
+              'Regulator_Circulars_FY26.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Researcher — FY27 audit-horizon scan',
+              text: 'Researcher Critique + Model Council. Produce a defensible horizon scan for the FY27 audit universe of a healthcare + insurance + diagnostics conglomerate. Cover: (a) regulator circulars in the last 12 months from KKM Malaysia, Kemenkes Indonesia, BPOM, KKM Singapore MOH, OJK, and IFRS 17 revisions; (b) peer internal-audit-report disclosures from listed hospital groups and life insurers in ASEAN; (c) emerging risks: AI/GenAI governance in clinical settings, cyber ransomware in hospital ITSM, drug-supply-chain-integrity post COVID-endemic, patient-data-privacy PDPA 2024, workforce shortages, ESG assurance.  For each of the 10 highest-signal signals: source with citation + retrieval timestamp, plausible impact on the audit universe, and a specific audit topic that could be added to FY27. Flag any signal older than 6 months as stale.'
+            },
+            {
+              label: '2. Cowork — FY27 audit-universe pack',
+              text: 'Cowork: build the FY27 audit universe pack in one run. Numbers must match across every artefact: (1) Excel — ranked audit universe. Columns: Audit Topic, Business Line, Materiality (Rp M), Inherent Risk Score, Last-Audit-Recency (months), FY27 Score (weighted formula), Proposed FY27 Coverage (Y/N), Owner. Grounded on /Audit_Universe_FY26.xlsx + the Researcher scan. (2) PowerPoint — 8-slide Audit Committee planning deck: cover, horizon-scan headline, universe heatmap, ranked Top-20 with FY27 coverage flag, resource + budget ask, phasing, decisions requested, next steps. (3) HTML — CAE daily-briefing kanban with columns \'Watch\', \'In Scope\', \'In Fieldwork\', \'In Reporting\', \'Closed\'. Seed with the Top-20 already placed on the correct column based on their status in /Audit_Universe_FY26.xlsx. (4) Word — 4-page audit-plan narrative for the Chair of the Audit Committee. (5) Outlook — email to the Chair with the deck attached.  Every audit topic cites the source (workbook row, regulator circular, or Researcher scan). No fabricated topics.'
+            },
+            {
+              label: '3. Loop — live audit-plan page for FY27',
+              text: 'Seed a Loop page titled \'FY27 Internal Audit Plan — Live\'. Sections: (1) 5x5 audit-universe heatmap embedded as a component; (2) Top-20 ranked list as a Loop table (Topic, Owner, Start, End, Status, Findings); (3) Emerging-risk watchlist (5 signals from the Researcher scan); (4) Regulator-circulars section with the 5 most material FY26 circulars; (5) Escalations section for anything that becomes Board-level during the year; (6) Owner-tagged action items for the 3 immediate next steps (kick-off meeting, resource confirmation, engagement letter template).  Owners: CAE, 4 Audit Directors (Hospitals, Clinics, Diagnostics, Insurance), Head of Data Analytics for Audit.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "FY27 Audit Universe Horizon Scan + Kanban — Internal Audit Planning Power Move" using Audit_Universe_FY26.xlsx and Regulator_Circulars_FY26.pdf as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "FY27 Audit Universe Horizon Scan + Kanban — Internal Audit Planning Power Move — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Researcher-grade horizon scan with 10 sourced signals',
+            'Ranked FY27 audit universe with FY27-score formula visible',
+            'CAE daily-briefing kanban seeded correctly',
+            'Loop live-plan page for the year'
+          ],
+          watch: [
+            'Every topic cites source — workbook row, regulator circular, or Researcher scan',
+            'FY27 score formula is explicit (weighted materiality x risk x recency), not black-box',
+            'Emerging-risk signals older than 6 months are flagged as stale',
+            'Kanban placements match the source workbook status column'
+          ],
+          honest: 'Copilot builds a defensible starting position; the CAE decides. Any audit topic added because of a regulator signal should be validated with the relevant regulatory-affairs lead before it lands with the Audit Committee. Copilot cannot commit resources or negotiate scope with subsidiary CEOs — those remain CAE conversations. For high-signal emerging risks (AI in clinical settings, PDPA 2024), engage external assurance advisors for a second opinion before the plan is finalised.',
+          tips: [
+            'Run annually 8 weeks before the FY-planning Audit Committee; pin as a custom skill',
+            'Pair with the Cowork Frontier autonomous monthly regulator-circular digest so signals do not go stale'
+          ],
+          id: 'uc-audit-horizon-scan-fy27'
+        },
         {
           title: 'Variation Submission Pack — DCA / BPOM',
           dept_tag: 'Regulatory Affairs',
@@ -134902,6 +135208,159 @@ window.HUB_DATA = {
             'Add a Teams summary message at the end for the case team'
           ],
           id: 'uc-reg-internal-audit-pack'
+        },
+        {
+          title: 'Consolidate 4 Subsidiary Risk Registers into a Group Risk Register — Internal Audit Power Move',
+          dept_tag: 'Risk & Internal Audit',
+          industry_tag: 'Healthcare Conglomerate',
+          complexity: 'advanced',
+          apps: [
+            'Cowork',
+            'Excel',
+            'Analyst',
+            'Word',
+            'PowerPoint'
+          ],
+          desc: 'Fabrikam Healthcare-shaped conglomerate consolidation: 4 subsidiary risk registers (Hospitals, Clinics, Diagnostics, Insurance) → one Group risk register with normalised likelihood x impact scoring, top-25 shortlist, and a signed-off Audit Committee close-out pack in one Cowork run.',
+          skills: [
+            'Excel Chat + Edit + Plan across 4 heterogeneous risk-register workbooks',
+            'Normalised risk scoring (5x5 heatmap) across subsidiaries with different taxonomies',
+            'Analyst Agent multi-perspective on the consolidated register (Group CRO / Chair of Audit Committee / Group CFO)',
+            'Word audit report + PowerPoint Audit Committee deck in one Cowork run'
+          ],
+          instructions: [
+            'Copilot Chat → Excel → open /Subsidiary_Risk_Registers/*.xlsx → paste Prompt 1',
+            'Copilot Chat → Analyst → paste Prompt 2 for the tri-perspective view',
+            'Cowork → paste Prompt 3 to fan out the Audit Committee close-out pack'
+          ],
+          sample_files: [
+            [
+              'Risk_Register_Hospitals.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Register_Clinics.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Register_Diagnostics.xlsx',
+              'xlsx'
+            ],
+            [
+              'Risk_Register_Insurance.xlsx',
+              'xlsx'
+            ],
+            [
+              'Incident_Log_FY26.xlsx',
+              'xlsx'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Excel — normalise + consolidate 4 subsidiary registers',
+              text: 'Open the 4 subsidiary risk registers in /Subsidiary_Risk_Registers/ (Hospitals, Clinics, Diagnostics, Insurance). Each uses a slightly different taxonomy for likelihood, impact, category, and control state. Produce: (1) A normalised 5x5 likelihood x impact scoring key applied consistently across the 4 registers. Show the mapping used for each subsidiary (source label -> normalised score) so the auditor can trace it. (2) A consolidated Group risk register with columns: Group Risk ID, Subsidiary, Category, Description, Inherent Score, Existing Controls, Residual Score, Trend (H/M/L), Owner, Target Date, Board Escalation (Y/N). (3) A duplicate-detection column: flag risks that appear in more than one subsidiary (e.g. cybersecurity, workforce shortage) and consolidate them as a single Group-level risk with a merged residual score. (4) The Top-25 Group risks ranked by residual score, with an override column for Chair-level judgment.  Cite the workbook + sheet + row for every consolidated line. Do not invent risks that are not in a source register.'
+            },
+            {
+              label: '2. Analyst — tri-perspective view for the Audit Committee',
+              text: 'Analyst mode over the consolidated Group risk register. Produce three perspectives on the same Top-25: (a) Group CRO — residual-score movements vs the last cycle, top 5 velocity-of-change risks, and the 3 emerging risks not yet in any subsidiary register. (b) Chair of the Audit Committee — the 5 risks that need Board escalation this cycle with a specific decision ask, and the 3 risks where the Committee should challenge management on evidence quality. (c) Group CFO — the 5 risks with quantifiable financial exposure and the current provisioning / insurance / hedge coverage against each.  Present as three side-by-side columns with a shared \'Committee action requested\' column.'
+            },
+            {
+              label: '3. Cowork — Audit Committee close-out pack',
+              text: 'Cowork: fan out the Audit Committee close-out pack in one run. Numbers must match across every artefact: (1) Word — 6-page Group audit report grounded on the consolidated register + /Incident_Log_FY26.xlsx: executive summary, scope, methodology, Top-25 findings, provisioning coverage, recommendations, appendices. (2) PowerPoint — 10-slide Audit Committee deck (BCG/McKinsey style): cover, 5x5 heatmap, Top-25 shortlist, tri-perspective view, 5 escalations, 5 decisions requested, next-cycle plan. (3) Excel — the consolidated Group risk register + PivotTable by subsidiary x category x residual score. (4) HTML — self-contained one-page Audit Committee dashboard. (5) Outlook — 15-line email to Chair of Audit Committee, Group CRO, Group CFO, Group CEO, and the 4 Subsidiary CROs, with the deck attached. (6) Loop — live plan page for the 5 escalated risks with owner + target date + next-checkpoint.  Named recipients: Chair of Audit Committee (Prof. Dato Rashid), Group CRO (Ms Aini Halim), Group CFO (Mr Wai Kong Tan), Group CEO (Dr Vera Widjaja), Subsidiary CROs (Hospitals: Dr Faisal Amran, Clinics: Ms Ratna Dewi, Diagnostics: Mr Hari Prasetyo, Insurance: Ms Nadia Sudirman).'
+            },
+            {
+              label: 'Build interactive HTML risk/ESG heatmap (filters + drill-down)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML risk / compliance / ESG heatmap titled "Consolidate 4 Subsidiary Risk Registers into a Group Risk Register — Internal Audit Power Move" using Risk_Register_Hospitals.xlsx, Risk_Register_Clinics.xlsx, Risk_Register_Diagnostics.xlsx, Risk_Register_Insurance.xlsx and Incident_Log_FY26.xlsx as the source data. Output ONE .html file (inline CSS + JS, NO external CDN). Required structure: • TOP FILTER BAR — multi-select chips for business unit, risk category, owner, residual band; date-range on last-reviewed; free-text search; reset button. Filters update both the matrix and the lists below. • 5×5 PROBABILITY × IMPACT MATRIX — colour-coded cells (green 1-2 / amber 3-4 / red 5), each cell shows the count of items landing in it. Click a cell to open a side panel listing every issue in that cell with owner, mitigation status, due date, and a link to the source file. • DUAL STRIPS BELOW THE MATRIX — "Top 10 Inherent" and "Top 10 Residual"; each row is sortable and clickable, opens the same side panel. • HEAT-TIMELINE — bottom strip of last 12 monthly snapshots showing the count of red-cell items per month so the audience sees the trend. • DRILL-DOWN TABLE — sortable + searchable table of every item with column-show/hide toggles. Export CSV button respects filters. • Theme: Zava navy header, light/dark toggle, mobile-responsive. Save as "Consolidate 4 Subsidiary Risk Registers into a Group Risk Register — Internal Audit Power Move — Heatmap.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Normalised consolidated Group risk register with traceable scoring',
+            'Tri-perspective (CRO / Chair / CFO) view of the Top-25',
+            '6-artefact Audit Committee close-out pack'
+          ],
+          watch: [
+            'Scoring mapping shown per subsidiary — no black-box normalisation',
+            'Duplicate risks are consolidated at Group level, not double-counted',
+            'Every consolidated line cites source workbook + sheet + row',
+            'Financial exposure column is only populated where the source register carries a number — no fabricated Rp / MYR values'
+          ],
+          honest: 'Copilot drafts; the Group CRO signs the report and the Chair of the Audit Committee signs the deck. Any risk classified as Board-escalation must be validated with the subsidiary CRO before it hits the deck — a normalised score is a helpful lens, not the final judgment. Copilot cannot verify control effectiveness or run walk-throughs; it consolidates what the 4 registers already say. For regulator-facing risks (e.g. patient safety, data-privacy, financial-crime), Legal and the relevant regulatory-affairs lead must review before the pack is finalised.',
+          tips: [
+            'Re-run quarterly on the 3-week Audit Committee cycle; pin as a custom skill',
+            'Pair with the Cowork Frontier autonomous weekly incident-log digest between formal cycles'
+          ],
+          id: 'uc-audit-group-risk-consolidation'
+        },
+        {
+          title: 'FY27 Audit Universe Horizon Scan + Kanban — Internal Audit Planning Power Move',
+          dept_tag: 'Risk & Internal Audit',
+          industry_tag: 'Any Regulated Industry',
+          complexity: 'advanced',
+          apps: [
+            'Researcher',
+            'Cowork',
+            'Excel',
+            'PowerPoint',
+            'Loop'
+          ],
+          desc: 'Chief Audit Executive prepares the FY27 audit universe. Researcher scans regulators, peer disclosures, and emerging risks. Cowork builds the ranked audit plan, a daily-briefing kanban, and a Loop live-plan page to track the plan through the year.',
+          skills: [
+            'Researcher Critique + Model Council on emerging risks + regulator horizon',
+            'Audit-universe scoring (materiality x risk x last-audit-recency)',
+            'Kanban artefact for the CAE daily briefing',
+            'Loop live-plan for the audit universe through FY27'
+          ],
+          instructions: [
+            'Copilot Chat → Researcher → paste Prompt 1 for the FY27 horizon scan',
+            'Copilot Chat → Cowork → paste Prompt 2 for the audit-universe pack',
+            'Loop → paste Prompt 3 to seed the live audit-plan page'
+          ],
+          sample_files: [
+            [
+              'Audit_Universe_FY26.xlsx',
+              'xlsx'
+            ],
+            [
+              'Regulator_Circulars_FY26.pdf',
+              'pdf'
+            ]
+          ],
+          prompts: [
+            {
+              label: '1. Researcher — FY27 audit-horizon scan',
+              text: 'Researcher Critique + Model Council. Produce a defensible horizon scan for the FY27 audit universe of a healthcare + insurance + diagnostics conglomerate. Cover: (a) regulator circulars in the last 12 months from KKM Malaysia, Kemenkes Indonesia, BPOM, KKM Singapore MOH, OJK, and IFRS 17 revisions; (b) peer internal-audit-report disclosures from listed hospital groups and life insurers in ASEAN; (c) emerging risks: AI/GenAI governance in clinical settings, cyber ransomware in hospital ITSM, drug-supply-chain-integrity post COVID-endemic, patient-data-privacy PDPA 2024, workforce shortages, ESG assurance.  For each of the 10 highest-signal signals: source with citation + retrieval timestamp, plausible impact on the audit universe, and a specific audit topic that could be added to FY27. Flag any signal older than 6 months as stale.'
+            },
+            {
+              label: '2. Cowork — FY27 audit-universe pack',
+              text: 'Cowork: build the FY27 audit universe pack in one run. Numbers must match across every artefact: (1) Excel — ranked audit universe. Columns: Audit Topic, Business Line, Materiality (Rp M), Inherent Risk Score, Last-Audit-Recency (months), FY27 Score (weighted formula), Proposed FY27 Coverage (Y/N), Owner. Grounded on /Audit_Universe_FY26.xlsx + the Researcher scan. (2) PowerPoint — 8-slide Audit Committee planning deck: cover, horizon-scan headline, universe heatmap, ranked Top-20 with FY27 coverage flag, resource + budget ask, phasing, decisions requested, next steps. (3) HTML — CAE daily-briefing kanban with columns \'Watch\', \'In Scope\', \'In Fieldwork\', \'In Reporting\', \'Closed\'. Seed with the Top-20 already placed on the correct column based on their status in /Audit_Universe_FY26.xlsx. (4) Word — 4-page audit-plan narrative for the Chair of the Audit Committee. (5) Outlook — email to the Chair with the deck attached.  Every audit topic cites the source (workbook row, regulator circular, or Researcher scan). No fabricated topics.'
+            },
+            {
+              label: '3. Loop — live audit-plan page for FY27',
+              text: 'Seed a Loop page titled \'FY27 Internal Audit Plan — Live\'. Sections: (1) 5x5 audit-universe heatmap embedded as a component; (2) Top-20 ranked list as a Loop table (Topic, Owner, Start, End, Status, Findings); (3) Emerging-risk watchlist (5 signals from the Researcher scan); (4) Regulator-circulars section with the 5 most material FY26 circulars; (5) Escalations section for anything that becomes Board-level during the year; (6) Owner-tagged action items for the 3 immediate next steps (kick-off meeting, resource confirmation, engagement letter template).  Owners: CAE, 4 Audit Directors (Hospitals, Clinics, Diagnostics, Insurance), Head of Data Analytics for Audit.'
+            },
+            {
+              label: 'Build interactive HTML kanban board (filters + drag)',
+              text: 'Cowork: produce a SELF-CONTAINED interactive HTML kanban board titled "FY27 Audit Universe Horizon Scan + Kanban — Internal Audit Planning Power Move" using Audit_Universe_FY26.xlsx and Regulator_Circulars_FY26.pdf as the source of items. Output ONE .html file (inline CSS + JS, NO external CDN). Make it COMPREHENSIVE and fully slice-able. Required structure: • TOP FILTER BAR — multi-select chips for owner, team, priority, status and tag; free-text search across card title + description; date-range picker on due-date; reset button. Filters apply live to all columns. • 5 COLUMNS: Backlog · To Do · In Progress · Blocked · Done. Each column header shows the live count plus the count of overdue items. • CARDS — title, owner avatar, due date (red if overdue), priority chip, tags. Click a card to open a right-hand details panel with full description, linked source files, recent activity log, and an inline comment box. • DRAG TO RE-COLUMN (HTML5 drag-and-drop) — moving a card updates an in-memory state and triggers a "save changes" button at the top. • SWIMLANES TOGGLE — group by team / priority / tag on demand. • SUMMARY STRIP — totals per column, % done, blocked count, overdue count, and a "what changed since yesterday" mini-feed. • EXPORT CSV of current filtered view. • Theme: Zava navy header, light/dark toggle. Save the file as "FY27 Audit Universe Horizon Scan + Kanban — Internal Audit Planning Power Move — Kanban.html" to my OneDrive once approved.  <!-- ZAVA_HTML_ART_LIB_v1 -->'
+            }
+          ],
+          expected: [
+            'Researcher-grade horizon scan with 10 sourced signals',
+            'Ranked FY27 audit universe with FY27-score formula visible',
+            'CAE daily-briefing kanban seeded correctly',
+            'Loop live-plan page for the year'
+          ],
+          watch: [
+            'Every topic cites source — workbook row, regulator circular, or Researcher scan',
+            'FY27 score formula is explicit (weighted materiality x risk x recency), not black-box',
+            'Emerging-risk signals older than 6 months are flagged as stale',
+            'Kanban placements match the source workbook status column'
+          ],
+          honest: 'Copilot builds a defensible starting position; the CAE decides. Any audit topic added because of a regulator signal should be validated with the relevant regulatory-affairs lead before it lands with the Audit Committee. Copilot cannot commit resources or negotiate scope with subsidiary CEOs — those remain CAE conversations. For high-signal emerging risks (AI in clinical settings, PDPA 2024), engage external assurance advisors for a second opinion before the plan is finalised.',
+          tips: [
+            'Run annually 8 weeks before the FY-planning Audit Committee; pin as a custom skill',
+            'Pair with the Cowork Frontier autonomous monthly regulator-circular digest so signals do not go stale'
+          ],
+          id: 'uc-audit-horizon-scan-fy27'
         },
         {
           title: 'FY27 CHT Excise-Tariff Step Response Pack — Tobacco Industry Power Move',
