@@ -1995,7 +1995,7 @@ CARDS['uc-ea-free-chat-ten'] = {
     'industry_tag': 'Any Industry',
     'complexity': 'starter',
     'apps': ['Copilot Chat', 'Copilot Create', 'Outlook'],
-    'desc': 'The Board EA / admin team ten-prompt starter pack for free Copilot Chat (no M365 licence required). GCSE (Goal · Context · Source · Expectation) framing, Enterprise Data Protection green-shield check, confidentiality do\\'s and don\\'ts, Bahasa Indonesia prompt patterns, and 10 one-line admin prompts to copy-paste on Monday morning.',
+    'desc': 'The Board EA / admin team ten-prompt starter pack for free Copilot Chat (no M365 licence required). GCSE (Goal · Context · Source · Expectation) framing, Enterprise Data Protection green-shield check, confidentiality dos and donts, Bahasa Indonesia prompt patterns, and 10 one-line admin prompts to copy-paste on Monday morning.',
     'skills': [
         'GCSE prompt framework (Goal · Context · Source · Expectation)',
         'Enterprise Data Protection (EDP) green-shield verification',
