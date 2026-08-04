@@ -6924,7 +6924,7 @@ const OTHER_PAGES = [
     color: '#EC4899',
     accent: '#BE185D',
     name: 'Contoso Beauty Innovation — Admin Teams Copilot Immersion',
-    desc: 'Contoso Beauty Innovation (Paragon-shaped cosmetics group behind Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!) — Board EA / admin-teams immersion. One workday, four Copilot Chat moments, plus admin extras: (1.3) Bahasa Indonesia prompt patterns for daily EA work · (B1) Prompt tips for free Copilot Chat · G-C-S-E framework · Two universal habits · (B2) Enterprise Data Protection green shield · (B3) Confidentiality do\\'s and don\\'ts · (B4) Bahasa Indonesia prompt patterns · (B5) Ten one-line admin prompts to copy-paste. Bilingual EN + BI with /id.html toggle. Free Copilot Chat first, M365 Copilot Premium prompts tagged.',
+    desc: 'Contoso Beauty Innovation (Paragon-shaped cosmetics group behind Wardah, Make Over, Emina, Kahf, Instaperfect, OMG!) — Board EA / admin-teams immersion. One workday, four Copilot Chat moments, plus admin extras: (1.3) Bahasa Indonesia prompt patterns for daily EA work · (B1) Prompt tips for free Copilot Chat · G-C-S-E framework · Two universal habits · (B2) Enterprise Data Protection green shield · (B3) Confidentiality dos and donts · (B4) Bahasa Indonesia prompt patterns · (B5) Ten one-line admin prompts to copy-paste. Bilingual EN + BI with /id.html toggle. Free Copilot Chat first, M365 Copilot Premium prompts tagged.',
     url: 'https://steffiyappy.github.io/contoso-beauty-innovation-demo/',
     password: 'ParagonCopilot16Jul',
     tag: 'Beauty · Admin EA Demo',
