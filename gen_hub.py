@@ -7484,6 +7484,8 @@ def _build_changelog_json():
     for line in out.splitlines():
         parts = line.split('\x1f')
         if len(parts) == 3:
+            if 'sonepar' in parts[2].lower():
+                continue
             rows.append({'hash': parts[0], 'date': parts[1], 'desc': parts[2]})
     return json.dumps(rows, ensure_ascii=False, separators=(',', ':'))
 

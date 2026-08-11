@@ -1,6 +1,6 @@
-# Sonepar Malaysia — AI Transformation ROI Summary
+# Contoso Electrical Distribution Malaysia — AI Transformation ROI Summary
 
-Based on Sonepar Group benchmarks (€33.6B revenue, 170 OpCos) applied to the Malaysia entity (RM 630M revenue, 7,000+ customers, 50,000+ SKUs, 6 warehouses, 600–800 employees).
+Based on Contoso Electrical Distribution Group benchmarks (€33.6B revenue, 170 OpCos) applied to the Malaysia entity (RM 630M revenue, 7,000+ customers, 50,000+ SKUs, 6 warehouses, 600–800 employees).
 
 ## Demo-focused departments (5 of 8)
 

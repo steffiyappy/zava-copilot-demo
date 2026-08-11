@@ -1,4 +1,4 @@
-# Sonepar Malaysia — FY2026 May Month-End Variance
+# Contoso Electrical Distribution Malaysia — FY2026 May Month-End Variance
 
 > **Source:** Excel + Outlook Finance — Trial Balance, generated 21 May 2026
 > **Currency:** Malaysian Ringgit (RM)

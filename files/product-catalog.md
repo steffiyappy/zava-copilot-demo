@@ -1,8 +1,8 @@
-# Sonepar Malaysia — Featured Product Catalog Extract
+# Contoso Electrical Distribution Malaysia — Featured Product Catalog Extract
 
-This is a curated extract (10 SKUs) of the Sonepar Malaysia electrical & industrial catalog, used as the grounding knowledge source for the Copilot Chat "Sonepar Customer Service Agent" and the Copilot Chat "Inventory Insight Agent".
+This is a curated extract (10 SKUs) of the Contoso Electrical Distribution Malaysia electrical & industrial catalog, used as the grounding knowledge source for the Copilot Chat "Contoso Electrical Distribution Customer Service Agent" and the Copilot Chat "Inventory Insight Agent".
 
-> Production deployment grounds against SharePoint site `Sonepar-Inventory` with 50,000+ SKU spec sheets.
+> Production deployment grounds against SharePoint site `Contoso-Electrical-Inventory` with 50,000+ SKU spec sheets.
 
 ---
 
