@@ -1,7 +1,16 @@
 {
   "_doc": "State file tracked by blog_audit.py. Records the last-seen blog post so we only process incremental new entries on subsequent runs.",
-  "last_seen_pub_date_utc": null,
-  "last_seen_guid": null,
-  "last_run_utc": null,
-  "seen_guids": []
+  "last_seen_pub_date_utc": "Thu, 03 Sep 2026 15:00:00 +0000",
+  "last_seen_guid": "https://www.microsoft.com/en-us/microsoft-365/blog/?p=282005",
+  "last_run_utc": "2026-09-06T10:55:29+00:00",
+  "seen_guids": [
+    "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281376",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281377",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281500",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281502",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281823",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=281908",
+    "https://www.microsoft.com/en-us/microsoft-365/blog/?p=282005"
+  ]
 }
