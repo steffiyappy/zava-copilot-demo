@@ -356,6 +356,24 @@ window.HUB_DATA = {
       tipID: 'Setelah Uji, klik Submit for review (di sebelah Create + share). Setelah admin IT Anda menyetujui, agen muncul di Toko Agen organisasi secara otomatis.',
       license: 'Microsoft 365 Copilot',
       link: 'https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935'
+    },
+    {
+      id: 'wn-auto-f3b44fd8',
+      title: '📰 Copilot in Excel — Copilot in Excel: Built for the era of Frontier Finance',
+      badge: 'Thu, 25 Jun 2026',
+      summary: 'Plenty of AI tools claim to be built for finance; Microsoft 365 Copilot in Excel is proving it in practice. The post Copilot in Excel: Built for the era of Frontier Finance appeared first on Microsoft 365 Blog .',
+      tip: 'Read the announcement: https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/25/copilot-in-excel-built-for-the-era-of-frontier-finance/',
+      license: 'M365_LIC',
+      link: 'https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/25/copilot-in-excel-built-for-the-era-of-frontier-finance/'
+    },
+    {
+      id: 'wn-auto-071c44dc',
+      title: '📰 Cowork (Frontier) — Copilot Cowork is now generally available',
+      badge: 'Tue, 16 Jun 2026',
+      summary: 'Cowork is the fastest growing feature in the history of our Frontier program, and Cowork has among the highest user satisfaction of any Copilot or agent experience we have shipped. The post Copilot Cowork is now generally available appeared first on Microsoft 365 Blog .',
+      tip: 'Read the announcement: https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/',
+      license: 'FRONTIER_LIC',
+      link: 'https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/'
     }
   ],
   sectors: [
