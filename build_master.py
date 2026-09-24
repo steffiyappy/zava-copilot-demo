@@ -1444,6 +1444,18 @@ except Exception as _e:
     print(f"(BM/BI dialect cleanup skipped due to error: {_e})")
     _tb.print_exc()
 
+# ── Final pass: Copilot naming + licence refresh (Sep 2026) ──────────────────
+# Cowork is GA (only App skill / GPT 5.5 stay Frontier), Word/PowerPoint/Excel
+# agents need a paid licence, and Microsoft 365 Copilot Chat is now Microsoft
+# Copilot Chat. Rewrites generated data only; see copilot_refresh.py.
+from copilot_refresh import refresh_entry as _cr_refresh
+from collections import Counter as _CrCounter
+_cr_stats = _CrCounter()
+for _coll in (all_industries, all_departments):
+    for _entry in _coll:
+        _cr_refresh(_entry, _cr_stats)
+print("Copilot refresh (Sep 2026): " + ", ".join(f"{k}={v}" for k, v in sorted(_cr_stats.items())))
+
 lines = ['window.HUB_DATA = {']
 lines.append('  whatsNew: ' + js_val(WHATS_NEW, 1) + ',')
 lines.append('  sectors: ' + js_val(SECTORS, 1) + ',')

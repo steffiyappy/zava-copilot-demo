@@ -11,3 +11,6 @@ dept_data1.py
 _strip_personas.py
 _build_*.py
 *.bak
+
+# Azure Static Web Apps build output (tools/build_azure_dist.py)
+dist/

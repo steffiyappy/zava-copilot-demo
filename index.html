@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zava Conglomerate Copilot Demo Hub — Password Protected</title>
+<title>Copilot Multi-Industry Demo Hub — Password Protected</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -103,7 +103,7 @@
 <div class="card">
   <div class="logo-wrap">
     <div class="logo-badge"><div class="logo-dot"></div><span class="logo-text">Microsoft 365 Copilot</span></div>
-    <h1>Zava Conglomerate<br><span>Copilot Demo Hub</span></h1>
+    <h1>Copilot Multi-Industry<br><span>Demo Hub</span></h1>
     <p class="subtitle">43 industries · 13 departments · 5 locales — Global English, Malaysia EN/BM, Indonesia EN/BI</p>
   </div>
   <div class="form-group">
@@ -137,8 +137,8 @@ async function sha256(msg){
 async function unlock(){
   const pw=document.getElementById('pw').value;
   const hash=await sha256(pw);
-  // SHA-256 of "ZavaGlobal2026"
-  if(hash==='ada2e12138372c4e7145244d46b7f37882098917965ee743d07da7e0aea8fe3a'){
+  // SHA-256 of the hub access password (set 23 Sep 2026)
+  if(hash==='ee365160ef6e9d0dd294bb372e30e81bfc1a4e27aa3fa1e791681df66e7d71b7'){
     sessionStorage.setItem('hub_auth','ok');
     window.location.href='hub.html';
   } else {
