@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
-"""Assemble the Azure Static Web Apps payloads for the Copilot Multi-Industry Demo Hub.
+"""Assemble the Azure App Service payload for the Copilot Multi-Industry Demo Hub.
 
-dist/main  -> hub (index.html, hub.html, data.js, files/), every card site under
-              sites/<repo>/, and Diamond/Caldova tenant pages under tenants/<tenant>/.
-dist/media -> card sites too large for the main app's 250 MB Free-plan limit.
+dist/site/public -> hub (index.html, hub.html, data.js, files/), every card site under
+                    sites/<repo>/, and Diamond/Caldova tenant pages under tenants/<tenant>/.
+dist/site        -> plus server.js and package.json from tools/appservice.
+dist/site.zip    -> zip-deploy package for App Service.
+dist/redirect    -> page for the old Static Web Apps addresses that forwards every
+                    path to the App Service address.
 
 Card sites come from the public GitHub repos (shallow clones cached outside the
 repo), overlaid with newer local copies where configured. Links to the old
-steffiyappy.github.io addresses are rewritten to the Azure hosts.
+steffiyappy.github.io addresses are rewritten to the App Service host.
 
 Usage: python tools/build_azure_dist.py
 """
@@ -22,25 +25,22 @@ import zipfile
 from datetime import datetime
 from pathlib import Path
 
-MAIN_HOST = 'https://mango-flower-017ffa400.1.azurestaticapps.net'
-MEDIA_HOST = 'https://gray-meadow-0e78e0b00.6.azurestaticapps.net'
 GH_USER = 'steffiyappy'
 HUB_REPO = 'zava-copilot-demo'
 
 REPO = Path(__file__).resolve().parent.parent
 DIST = REPO / 'dist'
-OUT = {'main': DIST / 'main', 'media': DIST / 'media'}
+SITE = DIST / 'site'
+PUBLIC = SITE / 'public'
+REDIRECT = DIST / 'redirect'
 HOME = Path.home()
 CACHE = HOME / 'source' / 'hub-sites-cache'
 # Customer folder names, tenant details and exclusions live outside the public
 # repo in this local file.
 LOCAL_CONFIG = HOME / '.scout' / 'copilot-demo-hub' / 'local-config.json'
 _cfg = json.loads(LOCAL_CONFIG.read_text(encoding='utf-8-sig')) if LOCAL_CONFIG.exists() else {}
-MAIN_HOST = _cfg.get('azure', {}).get('main_host', MAIN_HOST)
-MEDIA_HOST = _cfg.get('azure', {}).get('media_host', MEDIA_HOST)
+HOST = _cfg.get('appservice', {}).get('host', 'https://copilotmultiind.azurewebsites.net')
 MATERIALS = HOME / _cfg.get('materials', 'missing-materials-folder')
-
-MEDIA_SITES = {'contoso-mining-services-demo'}
 # Newer local copies that replace or extend the GitHub version.
 OVERLAYS = {repo: HOME / rel for repo, rel in _cfg.get('overlays', {}).items()}
 # Sites that exist only locally: slug -> (folder, files to publish)
@@ -59,8 +59,10 @@ PACKS = {
 }
 SKIP_DIRS = {'.git', '.github', 'node_modules', '__pycache__'}
 SKIP_FILES = {'.nojekyll', '.gitattributes', '.gitignore', 'README.md'}
+SKIP_SUFFIXES = ('.py', '.pyc', '.orig', '.bak')
 TEXT_EXT = {'.html', '.htm', '.js', '.css', '.json', '.txt', '.md', '.xml', '.svg', '.csv'}
-LIMITS = {'main': (245 * 1024 * 1024, 14500), 'media': (245 * 1024 * 1024, 14500)}
+STORED_EXT = {'.zip', '.docx', '.xlsx', '.pptx', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.pdf', '.mp3', '.mp4', '.woff', '.woff2'}
+MAX_BYTES = 9 * 1024 ** 3  # App Service Basic plan storage is 10 GB
 report = {'sites': {}, 'rewrites': 0, 'unresolved_links': set(), 'office_files_with_github_links': [], 'overlays': {}}
 
 
@@ -93,7 +95,7 @@ def copy_tree(src, dst):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         rel = Path(root).relative_to(src)
         for f in files:
-            if f in SKIP_FILES or f.endswith(('.py', '.pyc')):
+            if f in SKIP_FILES or f.endswith(SKIP_SUFFIXES):
                 continue
             (dst / rel).mkdir(parents=True, exist_ok=True)
             shutil.copy2(Path(root) / f, dst / rel / f)
@@ -128,19 +130,15 @@ def overlay(repo, dst, local, commit_ts):
     report['overlays'][repo] = changed
 
 
-def host_for(repo):
-    return MEDIA_HOST if repo in MEDIA_SITES else MAIN_HOST
-
-
 def rewrite_links(root, hosted):
     pat = re.compile(r'https?://' + GH_USER + r'\.github\.io/([A-Za-z0-9_.-]+)/?')
 
     def sub(m):
         repo = m.group(1)
         if repo == HUB_REPO:
-            return MAIN_HOST + '/'
+            return HOST + '/'
         if repo in hosted:
-            return f'{host_for(repo)}/sites/{repo}/'
+            return f'{HOST}/sites/{repo}/'
         report['unresolved_links'].add(repo)
         return m.group(0)
 
@@ -241,18 +239,66 @@ td.n{{text-align:right;font-variant-numeric:tabular-nums}} a{{color:#0078D4;font
     report['sites'][f'tenants/{slug}'] = {'emails': n_emails, 'sets': len(rows_email), 'packs': len(rows_pack)}
 
 
-def write_common(out, kind):
+def write_common(out):
     (out / 'robots.txt').write_text('User-agent: *\nDisallow: /\n', encoding='utf-8')
-    cfg = {
-        'mimeTypes': {'.eml': 'message/rfc822', '.json': 'application/json', '.md': 'text/markdown; charset=utf-8'},
-        'globalHeaders': {'X-Robots-Tag': 'noindex, nofollow'},
-        'routes': [{'route': '/data.js', 'headers': {'Cache-Control': 'no-cache'}},
-                   {'route': '/hub.html', 'headers': {'Cache-Control': 'no-cache'}},
-                   {'route': '/index.html', 'headers': {'Cache-Control': 'no-cache'}}] if kind == 'main' else [],
-    }
-    (out / 'staticwebapp.config.json').write_text(json.dumps(cfg, indent=2), encoding='utf-8')
-    if kind == 'media':
-        (out / 'index.html').write_text(f'<!DOCTYPE html><meta charset="UTF-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url={MAIN_HOST}/"><title>Copilot Multi-Industry Demo Hub</title><a href="{MAIN_HOST}/">Open the Copilot Multi-Industry Demo Hub</a>', encoding='utf-8')
+
+
+def build_redirect(old_hosts):
+    """Page for the retired Static Web Apps addresses: forwards any path to HOST."""
+    if REDIRECT.exists():
+        shutil.rmtree(REDIRECT)
+    REDIRECT.mkdir(parents=True)
+    page = ('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="robots" content="noindex,nofollow">'
+            '<title>Copilot Multi-Industry Demo Hub has moved</title>'
+            f'<script>location.replace({json.dumps(HOST)}+location.pathname+location.search+location.hash);</script></head>'
+            '<body style="font-family:system-ui;margin:40px"><p>The Copilot Multi-Industry Demo Hub has moved to '
+            f'<a href="{HOST}/">{HOST.replace("https://", "")}</a>.</p></body></html>')
+    (REDIRECT / 'index.html').write_text(page, encoding='utf-8')
+    (REDIRECT / 'redirect.html').write_text(page, encoding='utf-8')
+    cfg = {'globalHeaders': {'X-Robots-Tag': 'noindex, nofollow', 'Cache-Control': 'no-cache'},
+           'responseOverrides': {'404': {'rewrite': '/redirect.html'}}}
+    (REDIRECT / 'staticwebapp.config.json').write_text(json.dumps(cfg, indent=2), encoding='utf-8')
+    print(f'redirect page for {len(old_hosts)} old address(es) -> {HOST}')
+
+
+def make_zip(src, dst):
+    with zipfile.ZipFile(dst, 'w') as z:
+        for f in sorted(src.rglob('*')):
+            if f.is_file():
+                method = zipfile.ZIP_STORED if f.suffix.lower() in STORED_EXT else zipfile.ZIP_DEFLATED
+                z.write(f, f.relative_to(src).as_posix(), compress_type=method)
+    return dst.stat().st_size
+
+
+def make_chunks(src, dst_dir, max_bytes=40 * 1024 * 1024):
+    """Split the site into several zips so no single upload is too large for a
+    long-running HTTP request. server.js and package.json go in the last part so
+    the app only restarts once every file is in place."""
+    if dst_dir.exists():
+        shutil.rmtree(dst_dir)
+    dst_dir.mkdir(parents=True)
+    last = {'server.js', 'package.json'}
+    files = sorted((f for f in src.rglob('*') if f.is_file() and f.relative_to(src).as_posix() not in last),
+                   key=lambda f: f.relative_to(src).as_posix())
+    parts, current, size = [], [], 0
+    for f in files:
+        n = f.stat().st_size
+        if current and size + n > max_bytes:
+            parts.append(current)
+            current, size = [], 0
+        current.append(f)
+        size += n
+    current += [src / name for name in sorted(last)]
+    parts.append(current)
+    paths = []
+    for i, group in enumerate(parts, 1):
+        p = dst_dir / f'part-{i:02d}.zip'
+        with zipfile.ZipFile(p, 'w') as z:
+            for f in group:
+                method = zipfile.ZIP_STORED if f.suffix.lower() in STORED_EXT else zipfile.ZIP_DEFLATED
+                z.write(f, f.relative_to(src).as_posix(), compress_type=method)
+        paths.append(p)
+    return paths
 
 
 def measure(out):
@@ -263,55 +309,45 @@ def measure(out):
 def main():
     if not LOCAL_CONFIG.exists():
         sys.exit(f'Local config not found: {LOCAL_CONFIG}')
-    for o in OUT.values():
+    for o in (SITE, DIST / 'main', DIST / 'media'):
         if o.exists():
             shutil.rmtree(o)
-        o.mkdir(parents=True)
-    main_out = OUT['main']
+    PUBLIC.mkdir(parents=True)
     for f in ('index.html', 'hub.html', 'data.js'):
-        shutil.copy2(REPO / f, main_out / f)
-    copy_tree(REPO / 'files', main_out / 'files')
+        shutil.copy2(REPO / f, PUBLIC / f)
+    copy_tree(REPO / 'files', PUBLIC / 'files')
 
     sites = card_sites()
     hosted = set(sites) - set(LOCAL_SITES)
     for repo in sorted(hosted):
         src = fetch(repo)
-        kind = 'media' if repo in MEDIA_SITES else 'main'
-        dst = OUT[kind] / 'sites' / repo
+        dst = PUBLIC / 'sites' / repo
         copy_tree(src, dst)
         if repo in OVERLAYS and OVERLAYS[repo].exists():
             commit_ts = int(run(['git', '-C', str(src), 'log', '-1', '--format=%ct']).strip())
             overlay(repo, dst, OVERLAYS[repo], commit_ts)
-        report['sites'][repo] = {'app': kind, 'files': sum(1 for p in dst.rglob('*') if p.is_file())}
-        if kind == 'media':
-            stub = main_out / 'sites' / repo
-            stub.mkdir(parents=True, exist_ok=True)
-            (stub / 'index.html').write_text(f'<!DOCTYPE html><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url={MEDIA_HOST}/sites/{repo}/"><a href="{MEDIA_HOST}/sites/{repo}/">Open</a>', encoding='utf-8')
+        report['sites'][repo] = {'files': sum(1 for p in dst.rglob('*') if p.is_file())}
     for slug, (folder, names) in LOCAL_SITES.items():
-        dst = main_out / 'sites' / slug
+        dst = PUBLIC / 'sites' / slug
         dst.mkdir(parents=True, exist_ok=True)
         for n in names:
             shutil.copy2(folder / n, dst / n)
-        report['sites'][slug] = {'app': 'main', 'files': len(names), 'source': 'local'}
-
-    hub = (main_out / 'hub.html').read_text(encoding='utf-8')
-    for repo in MEDIA_SITES:
-        hub = hub.replace(f"url: 'sites/{repo}/'", f"url: '{MEDIA_HOST}/sites/{repo}/'")
-    (main_out / 'hub.html').write_text(hub, encoding='utf-8')
+        report['sites'][slug] = {'files': len(names), 'source': 'local'}
 
     for slug, (label, domain) in TENANTS.items():
-        build_tenant(slug, label, domain, main_out)
-    for kind, o in OUT.items():
-        rewrite_links(o, hosted | set(LOCAL_SITES))
-        write_common(o, kind)
+        build_tenant(slug, label, domain, PUBLIC)
+    rewrite_links(PUBLIC, hosted | set(LOCAL_SITES))
+    write_common(PUBLIC)
+    for f in ('server.js', 'package.json'):
+        shutil.copy2(REPO / 'tools' / 'appservice' / f, SITE / f)
 
-    ok = True
-    for kind, o in OUT.items():
-        size, count = measure(o)
-        lim_size, lim_count = LIMITS[kind]
-        flag = 'OK' if size <= lim_size and count <= lim_count else 'OVER LIMIT'
-        ok = ok and flag == 'OK'
-        print(f'{kind}: {size / 1024 / 1024:.1f} MB, {count} files [{flag}]')
+    size, count = measure(PUBLIC)
+    print(f'site: {size / 1024 / 1024:.1f} MB, {count} files [{"OK" if size <= MAX_BYTES else "OVER LIMIT"}]')
+    zip_size = make_zip(SITE, DIST / 'site.zip')
+    print(f'site.zip: {zip_size / 1024 / 1024:.1f} MB')
+    chunks = make_chunks(SITE, DIST / 'chunks')
+    print(f'deploy parts: {len(chunks)} (largest {max(c.stat().st_size for c in chunks) / 1024 / 1024:.1f} MB)')
+    build_redirect(_cfg.get('appservice', {}).get('old_hosts', []))
     print(f"sites packaged: {len([k for k in report['sites'] if not k.startswith('tenants/')])} | tenant pages: {[k for k in report['sites'] if k.startswith('tenants/')]}")
     for k, v in report['sites'].items():
         if k.startswith('tenants/'):
@@ -323,8 +359,8 @@ def main():
         print('  ', f)
     for repo, ch in report['overlays'].items():
         print(f'overlay {repo}: {len(ch)} file(s) from local copy: {ch[:6]}')
-    if not ok:
-        sys.exit('Size or file-count limit exceeded')
+    if size > MAX_BYTES:
+        sys.exit('Size limit exceeded')
 
 
 if __name__ == '__main__':
