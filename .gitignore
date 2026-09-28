@@ -14,3 +14,6 @@ _build_*.py
 
 # Azure Static Web Apps build output (tools/build_azure_dist.py)
 dist/
+
+# App Service start file is part of the deploy package
+!tools/appservice/package.json
