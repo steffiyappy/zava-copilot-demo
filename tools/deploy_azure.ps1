@@ -7,7 +7,8 @@
 # Usage:  pwsh tools/deploy_azure.ps1              # rebuild data.js + hub.html, package, deploy
 #         pwsh tools/deploy_azure.ps1 -SkipBuild   # package and deploy the current build
 #         pwsh tools/deploy_azure.ps1 -Redirects   # also refresh the forwarding page on the old addresses
-param([switch]$SkipBuild, [switch]$Redirects)
+#         pwsh tools/deploy_azure.ps1 -NoClean     # overlay the files so the live site stays up while uploading (files removed from the build are left behind)
+param([switch]$SkipBuild, [switch]$Redirects, [switch]$NoClean)
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path -Parent $PSScriptRoot
 $cfgPath = Join-Path $HOME '.scout\copilot-demo-hub\local-config.json'
@@ -25,7 +26,7 @@ python tools\build_azure_dist.py; if ($LASTEXITCODE) { throw 'build_azure_dist.p
 $scm = "https://$($cfg.app).scm.azurewebsites.net/api/publish"
 $parts = @(Get-ChildItem dist\chunks\part-*.zip | Sort-Object Name)
 for ($i = 0; $i -lt $parts.Count; $i++) {
-    $clean = if ($i -eq 0) { 'true' } else { 'false' }
+    $clean = if ($i -eq 0 -and -not $NoClean) { 'true' } else { 'false' }
     $restart = if ($i -eq $parts.Count - 1) { 'true' } else { 'false' }
     $ok = $false
     for ($try = 1; $try -le 3 -and -not $ok; $try++) {

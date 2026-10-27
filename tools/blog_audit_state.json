@@ -1,8 +1,8 @@
 {
   "_doc": "State file tracked by blog_audit.py. Records the last-seen blog post so we only process incremental new entries on subsequent runs.",
-  "last_seen_pub_date_utc": "Tue, 15 Sep 2026 15:00:00 +0000",
-  "last_seen_guid": "https://www.microsoft.com/en-us/copilot/blog/?p=282100",
-  "last_run_utc": "2026-09-19T10:57:39+00:00",
+  "last_seen_pub_date_utc": "Fri, 25 Sep 2026 12:07:25 +0000",
+  "last_seen_guid": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+  "last_run_utc": "2026-10-27T03:30:00+00:00",
   "seen_guids": [
     "https://www.microsoft.com/en-us/copilot/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
     "https://www.microsoft.com/en-us/copilot/blog/?p=281500",
@@ -11,6 +11,8 @@
     "https://www.microsoft.com/en-us/copilot/blog/?p=282005",
     "https://www.microsoft.com/en-us/copilot/blog/?p=282053",
     "https://www.microsoft.com/en-us/copilot/blog/?p=282083",
-    "https://www.microsoft.com/en-us/copilot/blog/?p=282100"
+    "https://www.microsoft.com/en-us/copilot/blog/?p=282100",
+    "https://www.microsoft.com/en-us/copilot/blog/?p=282115",
+    "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
   ]
 }
