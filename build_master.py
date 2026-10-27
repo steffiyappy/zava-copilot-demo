@@ -1126,7 +1126,7 @@ try:
             if title:
                 instr_lines.append(f"**Use case:** {title}")
             if kind == 'scout':
-                instr_lines.append("**(1) Open Microsoft Scout** desktop app (Frontier preview).")
+                instr_lines.append("**(1) Open Autopilot** (formerly Scout; private preview).")
             else:
                 instr_lines.append("**(1) Open SharePoint** → navigate to the relevant site or library.")
             for j, step in enumerate(instructions, start=2):
@@ -1143,7 +1143,7 @@ try:
                 if not ptext:
                     continue
                 lbl = p.get('label')
-                this_instr = instr_text if not out else (f"**Same Scout session.** {lbl}" if (kind == 'scout' and lbl) else (f"**Same SharePoint flow.** {lbl}" if lbl else ("**Stay in Scout.**" if kind == 'scout' else "**Stay in SharePoint.**")))
+                this_instr = instr_text if not out else (f"**Same Autopilot session.** {lbl}" if (kind == 'scout' and lbl) else (f"**Same SharePoint flow.** {lbl}" if lbl else ("**Stay in Autopilot.**" if kind == 'scout' else "**Stay in SharePoint.**")))
                 out.append({'instr': this_instr, 'prompt': ptext})
         return out
 
@@ -1456,6 +1456,20 @@ try:
 except Exception as _e:
     import traceback as _tb
     print(f"(Skills prompts skipped due to error: {_e})")
+    _tb.print_exc()
+
+# ── Copilot Code tool block (Oct 2026) ────────────────────────────────────────
+# Adds a Copilot Code (Frontier) block with four prompts (dashboard, tracker app,
+# static site, local script) to every entry in EN, BM and BI. See code_prompts.py.
+try:
+    from code_prompts import append_code_blocks as _cc_append
+    _cc_total = 0
+    for _coll in (all_industries, all_departments):
+        _cc_total += _cc_append(_coll)
+    print(f"Copilot Code block added on {_cc_total} entries")
+except Exception as _e:
+    import traceback as _tb
+    print(f"(Copilot Code block skipped due to error: {_e})")
     _tb.print_exc()
 
 # ── Final pass: Copilot naming + licence refresh (Sep 2026) ──────────────────

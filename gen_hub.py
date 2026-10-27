@@ -343,7 +343,7 @@ html{overflow-x:hidden}
 .cwlib-entry-card:hover .cwlib-entry-open{gap:8px}
 .cwlib-empty{padding:48px 24px;text-align:center;color:var(--muted);font-size:14px;border:1.5px dashed var(--border);border-radius:14px;background:var(--surface)}
 .cwlib-detail-hero{background:linear-gradient(135deg,#7C2D12 0%,#9A3412 60%,#B45309 100%)}
-/* ── Microsoft Scout colour theme (charcoal + cyan, "Frontier preview") ── */
+/* ── Autopilot colour theme (charcoal + cyan, "private preview") ── */
 .cwlib-hero.scout-hero{background:linear-gradient(135deg,#0B1220 0%,#1E293B 100%);border-color:rgba(34,211,238,0.35);box-shadow:0 6px 24px rgba(14,116,144,0.20)}
 .cwlib-hero.scout-hero .cwlib-hero-eyebrow{color:#22D3EE;background:rgba(34,211,238,0.12);border-color:rgba(34,211,238,0.35)}
 .cwlib-hero.scout-hero .cwlib-hero-title{color:#F8FAFC}
@@ -1409,7 +1409,7 @@ a.file-pill:visited{color:var(--text)}
         <option value="ind" selected>&#127981; Industries</option>
         <option value="dept">&#127970; Departments</option>
         <option value="cwlib">&#129309; Cowork Library</option>
-        <option value="scoutlib">&#129517; Scout Library</option>
+        <option value="scoutlib">&#9992;&#65039; Autopilot Library</option>
         <option value="splib">&#127760; SharePoint AI Library</option>
         <option value="other">&#128218; More Pages</option>
       </select>
@@ -1464,14 +1464,14 @@ a.file-pill:visited{color:var(--text)}
     <div class="sidebar-panel" id="spanel-scoutlib">
       <div class="sidebar-section">
         <a class="sidebar-item active" id="nav-all-scoutlib" onclick="showScoutLibTab()">
-          <span class="ind-icon">&#129517;</span>
-          <span class="ind-name">All Scout Use Cases</span>
+          <span class="ind-icon">&#9992;&#65039;</span>
+          <span class="ind-name">All Autopilot Use Cases</span>
           <span class="ind-count" id="total-scoutlib-count">--</span>
         </a>
       </div>
       <div class="sidebar-divider"></div>
       <div id="sidebar-scoutlib"></div>
-      <div class="search-empty" id="search-empty-scoutlib">No Scout entries match your search.</div>
+      <div class="search-empty" id="search-empty-scoutlib">No Autopilot entries match your search.</div>
     </div>
     <!-- SharePoint AI Library panel -->
     <div class="sidebar-panel" id="spanel-splib">
@@ -1531,7 +1531,7 @@ a.file-pill:visited{color:var(--text)}
           <div class="stat-chip"><span class="val">29</span><span class="lbl">Industries</span></div>
           <div class="stat-chip"><span class="val">10</span><span class="lbl">Departments</span></div>
           <div class="stat-chip"><span class="val" id="prompt-count">--</span><span class="lbl">Total Prompts</span></div>
-          <div class="stat-chip"><span class="val">14</span><span class="lbl">Copilot Tools</span></div>
+          <div class="stat-chip"><span class="val">15</span><span class="lbl">Copilot Tools</span></div>
         </div>
       </div>
       <!-- Grid tab toggle -->
@@ -1539,7 +1539,7 @@ a.file-pill:visited{color:var(--text)}
         <button class="grid-tab active" id="gtab-ind" onclick="showGridTab('ind')">&#127981; Industries (29)</button>
         <button class="grid-tab" id="gtab-dept" onclick="showGridTab('dept')">&#127970; Departments (10)</button>
         <button class="grid-tab" id="gtab-cwlib" onclick="showCwLibTab()">&#129309; Cowork Library</button>
-        <button class="grid-tab" id="gtab-scoutlib" onclick="showScoutLibTab()">&#129517; Scout Library</button>
+        <button class="grid-tab" id="gtab-scoutlib" onclick="showScoutLibTab()">&#9992;&#65039; Autopilot Library</button>
         <button class="grid-tab" id="gtab-splib" onclick="showSpLibTab()">&#127760; SharePoint AI</button>
         <button class="grid-tab" id="gtab-other" onclick="showOtherTab()">&#128218; Other Pages (6)</button>
       </div>
@@ -1567,10 +1567,10 @@ a.file-pill:visited{color:var(--text)}
       <!-- Scout Library grid -->
       <div id="scoutlib-grid-wrap" style="display:none">
         <div class="cwlib-hero scout-hero">
-          <div class="cwlib-hero-eyebrow">&#129517; FRONTIER PREVIEW &middot; <span id="scoutlib-total-uc">--</span> USE CASES</div>
-          <div class="cwlib-hero-title">Microsoft Scout Library</div>
-          <div class="cwlib-hero-sub">Desktop AI app (Frontier preview) with file system access, shell commands, browser automation via Playwright, M365 + WorkIQ access, sub-agents, heartbeat mode, and scheduled automations &mdash; goes beyond Copilot Chat. All Scout use cases organised by industry and department.</div>
-          <div class="cwlib-hero-sub" style="margin-top:8px"><strong>Update 25 Sep 2026:</strong> Microsoft announced that Scout is now called Autopilot in the new Copilot. Autopilot is a cloud-hosted agent that is expanding to private preview. These runbooks describe the Scout desktop app as documented on Microsoft Learn in Aug 2026, so check availability for your tenant before you demo.</div>
+          <div class="cwlib-hero-eyebrow">&#9992;&#65039; PRIVATE PREVIEW &middot; <span id="scoutlib-total-uc">--</span> USE CASES</div>
+          <div class="cwlib-hero-title">Autopilot Library</div>
+          <div class="cwlib-hero-sub">Autopilot, previously called Scout, is a persistent, proactive agent in the new Copilot. It lives in your tenant with its own identity, memory, computer and workspace, watches channels, follows up on threads and runs recurring work without waiting for a prompt. All Autopilot use cases organised by industry and department.</div>
+          <div class="cwlib-hero-sub" style="margin-top:8px"><strong>Before you demo:</strong> these use cases were written for the earlier Scout desktop preview (file system access, shell commands, browser automation, WorkIQ, sub-agents, Heartbeat and Automations). Autopilot is in private preview, so confirm each step and capability in your own tenant.</div>
           <div class="cwlib-mode-toggle">
             <button class="cwlib-mode-btn active" id="scoutlib-mode-ind" onclick="setScoutLibMode('ind')">&#127981; By Industry (<span id="scoutlib-mode-ind-n">--</span>)</button>
             <button class="cwlib-mode-btn" id="scoutlib-mode-dept" onclick="setScoutLibMode('dept')">&#127970; By Department (<span id="scoutlib-mode-dept-n">--</span>)</button>
@@ -3872,7 +3872,7 @@ _syncLegacyLang();
 function _isResearcher(name){return /Researcher/i.test(name||'')}
 function _isCowork(name){return /Cowork/i.test(name||'')}
 function _isNotebook(name){return /Notebook/i.test(name||'')}
-function _isScout(name){return /Microsoft Scout/i.test(name||'')}
+function _isScout(name){return /Autopilot/i.test(name||'')}
 function _isSharePoint(name){return /AI in SharePoint/i.test(name||'')}
 // "Copilot Chat" matches both literal Chat tools (e.g. `💬 Copilot Chat`) and
 // the paid Agent Builder label `🏗 Agent Builder (Microsoft 365 Copilot Chat)`.
@@ -5550,17 +5550,17 @@ function renderScoutLibGrid(){
       const section=document.createElement('div'); section.className='cwlib-section';
       section.innerHTML='<div class="cwlib-section-title"><span class="sec-emoji">🏷️</span><span>'+escapeHTML(sec.label)+'</span><span class="sec-count">'+inSec.length+' entr'+(inSec.length===1?'y':'ies')+'</span></div>';
       const grid=document.createElement('div'); grid.className='cwlib-grid-inner';
-      inSec.forEach(e=>grid.appendChild(_libEntryCard(e,'ind','scoutLibrary','🧭','showScoutLibFor')));
+      inSec.forEach(e=>grid.appendChild(_libEntryCard(e,'ind','scoutLibrary','✈️','showScoutLibFor')));
       section.appendChild(grid); root.appendChild(section);
     });
-    if(!indEntries.length) root.innerHTML='<div class="cwlib-empty">No industries with Scout content yet.</div>';
+    if(!indEntries.length) root.innerHTML='<div class="cwlib-empty">No industries with Autopilot content yet.</div>';
   } else {
     const section=document.createElement('div'); section.className='cwlib-section';
     section.innerHTML='<div class="cwlib-section-title"><span class="sec-emoji">🏢</span><span>Departments</span><span class="sec-count">'+deptEntries.length+' entr'+(deptEntries.length===1?'y':'ies')+'</span></div>';
     const grid=document.createElement('div'); grid.className='cwlib-grid-inner';
-    deptEntries.forEach(e=>grid.appendChild(_libEntryCard(e,'dept','scoutLibrary','🧭','showScoutLibFor')));
+    deptEntries.forEach(e=>grid.appendChild(_libEntryCard(e,'dept','scoutLibrary','✈️','showScoutLibFor')));
     section.appendChild(grid); root.appendChild(section);
-    if(!deptEntries.length) root.innerHTML='<div class="cwlib-empty">No departments with Scout content yet.</div>';
+    if(!deptEntries.length) root.innerHTML='<div class="cwlib-empty">No departments with Autopilot content yet.</div>';
   }
 }
 function setScoutLibMode(mode){ _scoutLibMode = (mode==='dept') ? 'dept' : 'ind'; renderScoutLibGrid(); }
@@ -5578,21 +5578,21 @@ function showScoutLibFor(entryId){
   if(!scd){
     // Create the detail view container on first use
     scd=document.createElement('div'); scd.id='scoutlib-detail-view'; scd.className='cwlib-detail-view';
-    scd.innerHTML='<div class="detail-hero cwlib-detail-hero scout-hero"><button class="detail-hero-back" onclick="backToScoutLib()">&larr; Back to Scout Library</button><div class="detail-hero-title" id="scoutlib-detail-title"></div><div class="detail-hero-tagline" id="scoutlib-detail-sub"></div></div>'+
+    scd.innerHTML='<div class="detail-hero cwlib-detail-hero scout-hero"><button class="detail-hero-back" onclick="backToScoutLib()">&larr; Back to Autopilot Library</button><div class="detail-hero-title" id="scoutlib-detail-title"></div><div class="detail-hero-tagline" id="scoutlib-detail-sub"></div></div>'+
       '<div id="scoutlib-detail-cards"></div>';
     document.querySelector('main.main').appendChild(scd);
   }
   scd.style.display='block';
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   const navEl=document.getElementById('nav-scoutlib-'+entryId); if(navEl) navEl.classList.add('active');
-  const t=document.getElementById('scoutlib-detail-title'); if(t) t.innerHTML=(entry.icon||'🧭')+' '+_libFmtName(entry);
+  const t=document.getElementById('scoutlib-detail-title'); if(t) t.innerHTML=(entry.icon||'✈️')+' '+_libFmtName(entry);
   const sub=document.getElementById('scoutlib-detail-sub');
   const n=(entry.scoutLibrary||[]).length;
   const sector = (data.industries||[]).find(i=>i.id===entryId) ? _libSectorOf(entry) : 'Department';
-  if(sub) sub.innerHTML='<strong>'+escapeHTML(sector||'—')+'</strong> &middot; '+n+' Scout use case'+(n===1?'':'s')+' &middot; Frontier preview';
+  if(sub) sub.innerHTML='<strong>'+escapeHTML(sector||'—')+'</strong> &middot; '+n+' Autopilot use case'+(n===1?'':'s')+' &middot; Private preview';
   const host=document.getElementById('scoutlib-detail-cards');
   if(host){
-    const shim={ id: entry.id, scoutLibrary: entry.scoutLibrary, __cwlibEmbedded: true, __libField: 'scoutLibrary', __libTitle: '🧭 Scout Library — desktop AI runbooks', __libSub: 'Pick a Scout use case above — every section below updates in place. Each card showcases a Scout-only capability (file system, shell, browser, sub-agents, heartbeat, automations).' };
+    const shim={ id: entry.id, scoutLibrary: entry.scoutLibrary, __cwlibEmbedded: true, __libField: 'scoutLibrary', __libTitle: '✈️ Autopilot Library — runbooks (formerly Scout)', __libSub: 'Pick an Autopilot use case above — every section below updates in place. Each card follows a capability from the earlier Scout preview (file system, shell, browser, sub-agents, heartbeat, automations), so confirm the steps in your own tenant.' };
     host.innerHTML = (typeof _coworkLibraryHtml==='function') ? _coworkLibraryHtml(shim) : '';
     if(typeof _wireCoworkLibraryCopy==='function') _wireCoworkLibraryCopy(host);
   }
@@ -6199,7 +6199,7 @@ function showItem(item,tab,preserveScroll){
     if(hasOther) html+='<button class="detail-tab '+( _detailTab==='tools'?'active':'')+'" id="dtab-tools" onclick="setDetailTab(\'tools\')">'+_uL('🛠️ Microsoft 365 Copilot Tools')+'</button>';
     if(hasCowork) html+='<button class="detail-tab '+( _detailTab==='cowork'?'active':'')+'" id="dtab-cowork" onclick="setDetailTab(\'cowork\')">'+_uL('⚡ Cowork')+'</button>';
     if(hasNotebookTab) html+='<button class="detail-tab '+( _detailTab==='notebook'?'active':'')+'" id="dtab-notebook" onclick="setDetailTab(\'notebook\')">'+_uL('📓 Copilot Notebooks')+'</button>';
-    if(hasScoutTab) html+='<button class="detail-tab '+( _detailTab==='scout'?'active':'')+'" id="dtab-scout" onclick="setDetailTab(\'scout\')">'+_uL('🧭 Microsoft Scout')+'</button>';
+    if(hasScoutTab) html+='<button class="detail-tab '+( _detailTab==='scout'?'active':'')+'" id="dtab-scout" onclick="setDetailTab(\'scout\')">'+_uL('✈️ Autopilot')+'</button>';
     if(hasSharePointTab) html+='<button class="detail-tab '+( _detailTab==='sharepoint'?'active':'')+'" id="dtab-sharepoint" onclick="setDetailTab(\'sharepoint\')">'+_uL('🌐 AI in SharePoint')+'</button>';
     if(hasChat) html+='<button class="detail-tab '+( _detailTab==='chat'?'active':'')+'" id="dtab-chat" onclick="setDetailTab(\'chat\')">'+_uL('💬 Copilot Chat Prompts')+'</button>';
     tabsWrap.innerHTML=html;
@@ -6446,7 +6446,7 @@ function showItem(item,tab,preserveScroll){
   // Scout Library — render only when the user is on the Scout sub-tab.
   if(_detailTab==='scout'){
     if(Array.isArray(item.scoutLibrary) && item.scoutLibrary.length){
-      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '🧭 Microsoft Scout — desktop AI use cases', __libSub: 'Scout-only capabilities (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Pick a use case above — every section below updates in place.' };
+      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '✈️ Autopilot — use cases (formerly Scout)', __libSub: 'Capabilities from the earlier Scout preview (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Confirm the steps in your own tenant. Pick a use case above — every section below updates in place.' };
       const html=_coworkLibraryHtml(shimSc);
       if(html){
         const w=document.createElement('div');
@@ -6472,7 +6472,7 @@ function showItem(item,tab,preserveScroll){
   // (legacy block removed — Scout + SP now live in their own dedicated detail tabs)
   if(false && _detailTab==='tools'){
     if(Array.isArray(item.scoutLibrary) && item.scoutLibrary.length){
-      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '🧭 Microsoft Scout — desktop AI use cases', __libSub: 'Scout-only capabilities (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Pick a use case above — every section below updates in place.' };
+      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '✈️ Autopilot — use cases (formerly Scout)', __libSub: 'Capabilities from the earlier Scout preview (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Confirm the steps in your own tenant. Pick a use case above — every section below updates in place.' };
       const html=_coworkLibraryHtml(shimSc);
       if(html){
         const w=document.createElement('div');
@@ -7579,7 +7579,7 @@ async function _analyticsAuthPrompt(){
   const gtI=document.getElementById('gtab-ind'); if(gtI) gtI.innerHTML='&#127981; Industries ('+data.industries.length+')';
   const gtD=document.getElementById('gtab-dept'); if(gtD) gtD.innerHTML='&#127970; Departments ('+data.departments.length+')';
   const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.innerHTML='&#129309; Cowork Library ('+_cwLibTotalUC()+')';
-  const gtSc=document.getElementById('gtab-scoutlib'); if(gtSc) gtSc.innerHTML='&#129517; Scout Library ('+_libTotalUC('scoutLibrary')+')';
+  const gtSc=document.getElementById('gtab-scoutlib'); if(gtSc) gtSc.innerHTML='&#9992;&#65039; Autopilot Library ('+_libTotalUC('scoutLibrary')+')';
   const gtSp=document.getElementById('gtab-splib'); if(gtSp) gtSp.innerHTML='&#127760; SharePoint AI ('+_libTotalUC('sharepointLibrary')+')';
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.innerHTML='&#128218; Other Pages ('+OTHER_PAGES.length+')';
 })();

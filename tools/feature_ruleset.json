@@ -77,7 +77,7 @@
       "label": "Home, Code and Autopilot (new Copilot)",
       "keywords": ["Autopilot", "Copilot Code", "Office in Copilot", "Managed Runtime", "Copilot Home"],
       "license_required": "FRONTIER_LIC",
-      "current_features": ["Autopilot", "Copilot Managed Runtime", "Office in Copilot"]
+      "current_features": ["Autopilot", "Copilot Managed Runtime", "Office in Copilot", "Copilot Code"]
     },
     "pricing": {
       "label": "Pricing and FinOps",

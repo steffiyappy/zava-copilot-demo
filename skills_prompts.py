@@ -17,7 +17,7 @@ final dialect and is not rewritten again.
 """
 import re
 
-_SKIP_XLSX = re.compile(r'^(Scout_|Heartbeat_|00_Copilot)', re.I)
+_SKIP_XLSX = re.compile(r'^(Scout_|Autopilot_|Heartbeat_|00_Copilot)', re.I)
 
 # One entry per prompt: instr (how to start) and prompt (what to paste).
 T = {

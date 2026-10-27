@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Scout Library catalog — Contoso C-Suite Immersion format MERGED with
-Microsoft Scout Frontier-preview desktop AI use-case cards.
+Autopilot Library catalog — Contoso C-Suite Immersion format MERGED with
+Autopilot (formerly Scout) use-case cards, written for the earlier Scout desktop preview.
 
 Each card carries:
 - title, dept_tag, industry_tag (optional), complexity
@@ -30,20 +30,20 @@ USE_CASES['uc-scout-heartbeat'] = {
     'dept_tag': 'Risk',
     'complexity': 'advanced',
     'apps': ['WorkIQ', 'Teams', 'OneDrive', 'Shell'],
-    'desc': 'Run Scout heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
+    'desc': 'Run Autopilot heartbeat every 30 minutes to scan M365 risk signals, update a workspace brief, and post a safe Teams update.',
     'skills': [
         'Heartbeat mode with work-days and work-hours configuration',
         'WorkIQ cross-service sweep across email, Teams, calendar, and OneDrive',
         'Workspace file write-back plus Teams posting under restrictive permissions',
     ],
     'instructions': [
-        'Open Microsoft Scout desktop app → Heartbeat panel → toggle Heartbeat on',
+        'Open Autopilot (formerly Scout) → Heartbeat panel → toggle Heartbeat on',
         'Set interval to 30 min, work days Monday-Friday, work hours 08:30-18:30 Malaysia time',
         'Set permissions: M365 read-only, Teams post allowed only to the nominated channel, outbound email denied',
-        'Create or select workspace folder Scout_Group_Briefing and paste the prompt below',
+        'Create or select workspace folder Autopilot_Group_Briefing and paste the prompt below',
     ],
     'sample_files': [
-        ('Scout_Group_Risk_Register.xlsx', 'xlsx'),
+        ('Autopilot_Group_Risk_Register.xlsx', 'xlsx'),
         ('Group_ExCo_Watchlist.docx', 'docx'),
         ('Heartbeat_Log_Template.md', 'md'),
     ],
@@ -51,7 +51,7 @@ USE_CASES['uc-scout-heartbeat'] = {
         'label': 'Configure the recurring heartbeat',
         'text': (
             "Heartbeat task for Hadar. Every 30 minutes, use WorkIQ and m365_* read tools to scan email, Teams, calendar, and OneDrive for high-risk ExCo, regulator, customer, liquidity, cyber, legal, or MYR/IDR exposure items above MYR 5m or IDR 20bn.\n"
-            "Write an append-only update to ./Scout_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval."
+            "Write an append-only update to ./Autopilot_Group_Briefing/Daily_Risk_Sweep.md with timestamp, source links, risk rating, owner, and suggested next step. If any item is RED, draft a generic Teams channel post for #group-risk-watch that says only the category, owner, and link to the workspace file. Do not send email. Do not expose private customer data in Teams. Skip any action that requires prompt approval."
         )
     }],
     'expected': [
@@ -60,7 +60,7 @@ USE_CASES['uc-scout-heartbeat'] = {
         'Heartbeat activity log showing skipped actions where permissions were too broad',
     ],
     'watch': [
-        'Scout runs in the background without a chat prompt — regular Copilot Chat cannot do this',
+        'Autopilot runs in the background without a chat prompt — regular Copilot Chat cannot do this',
         'WorkIQ connects email + Teams + documents instead of relying on one uploaded file',
     ],
     'honest': 'Heartbeat is a monitoring assistant, not an incident commander. It can miss nuance, so Hadar or Sasha still owns escalation. Keep outbound email denied until Legal and Comms approve the operating model.',
@@ -75,14 +75,14 @@ USE_CASES['uc-scout-bulk-files'] = {
     'dept_tag': 'Legal',
     'complexity': 'advanced',
     'apps': ['Word', 'Excel', 'PowerPoint', 'File System'],
-    'desc': 'Point Scout at a OneDrive workspace containing 200 contracts, extract obligations into a master workbook, create one-page Word summaries, and build a counterparty tiering deck.',
+    'desc': 'Point Autopilot at a OneDrive workspace containing 200 contracts, extract obligations into a master workbook, create one-page Word summaries, and build a counterparty tiering deck.',
     'skills': [
         'File-system read/write/search across a workspace folder tree',
         'Word, Excel, and PowerPoint skills in one desktop run',
         'Shell command inventory for filenames, page counts, duplicate detection, and CSV validation',
     ],
     'instructions': [
-        'Sync the contract room to a local OneDrive workspace folder and open that folder in Scout',
+        'Sync the contract room to a local OneDrive workspace folder and open that folder in Autopilot',
         'Set file system access to allow the workspace only; shell prompt-mode for commands that write files',
         'Attach the counterparty register and folder index, then paste the prompt',
         'Review exception rows before sending summaries to Legal or Procurement',
@@ -96,7 +96,7 @@ USE_CASES['uc-scout-bulk-files'] = {
     'prompts': [{
         'label': 'Process the contract room',
         'text': (
-            "In this Scout workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations.\n"
+            "In this Autopilot workspace, browser access is not needed. Use file-system search and safe shell commands to inventory ./Contracts_200_Run. For each DOCX or PDF contract, extract counterparty, entity, country, MYR or IDR value, expiry date, auto-renewal clause, termination notice, data/privacy clause, anti-bribery clause, and unusual obligations.\n"
             "Create ./outputs/Group_Contract_Master.xlsx with one row per contract and an Exceptions tab. Create a one-page Word summary per contract under ./outputs/summaries using the naming pattern Summary_[counterparty]_[expiry].docx. Then build ./outputs/Contract_Tiering_ExCo.pptx with Tier 1/Tier 2/Tier 3 segmentation, top 20 expiry risks, and Sasha's recommended approval queue. Cite source file and page for each extracted fact."
         )
     }],
@@ -106,7 +106,7 @@ USE_CASES['uc-scout-bulk-files'] = {
         'PowerPoint tiering deck for ExCo or Procurement Council',
     ],
     'watch': [
-        'Scout reads and writes hundreds of local workspace files, not just attached documents',
+        'Autopilot reads and writes hundreds of local workspace files, not just attached documents',
         'Shell commands accelerate inventory and QA while permission tiers control writes',
     ],
     'honest': 'Contract extraction is a first-pass workbench; Legal must verify key clauses and scanned-PDF OCR quality.',
@@ -121,14 +121,14 @@ USE_CASES['uc-scout-browser-portal'] = {
     'dept_tag': 'Corporate Secretarial',
     'complexity': 'intermediate',
     'apps': ['Browser', 'Word', 'WorkIQ', 'OneDrive'],
-    'desc': 'Use Scout Playwright browser control to download regulator circulars and assemble a board-ready brief.',
+    'desc': 'Use Autopilot Playwright browser control to download regulator circulars and assemble a board-ready brief.',
     'skills': [
         'Playwright browser navigate, click, fill, download, and screenshot actions',
         'Prompt-mode browser permissions with deny-list for internal portals',
         'Word brief generation with source URLs, screenshots, and regulator citations',
     ],
     'instructions': [
-        'Open Scout → Settings → Permissions → Browser Control: Prompt; deny-list internal finance, HR, and production admin portals',
+        'Open Autopilot → Settings → Permissions → Browser Control: Prompt; deny-list internal finance, HR, and production admin portals',
         'Create workspace folder Regulator_Portal_Sweep_2026',
         'Use a public regulator source such as BNM, OJK, Bursa Malaysia, MAS, or SC Malaysia',
         'Paste the prompt and approve only public-site navigation and downloads',
@@ -141,7 +141,7 @@ USE_CASES['uc-scout-browser-portal'] = {
     'prompts': [{
         'label': 'Sweep public regulator portals',
         'text': (
-            "Use Scout browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source.\n"
+            "Use Autopilot browser automation in prompt mode. Navigate only to public regulator portals: BNM, OJK, Bursa Malaysia, SC Malaysia, and MAS. Find the latest 10 circulars or consultation papers relevant to banking, payments, insurance, AML, cyber resilience, market conduct, or disclosures. Download PDFs to ./Regulator_Portal_Sweep_2026/downloads and take a screenshot of the listing page for each source.\n"
             "Summarise each document in 200 words: what changed, affected entities, effective date, MYR/IDR penalty or capital impact if stated, and actions for Mod Admin, Sasha, and the Company Secretary. Assemble ./Regulator_Portal_Sweep_2026/ASEAN_Regulatory_Brief.docx with a table, source URLs, and an appendix of screenshots. Do not log into internal portals."
         )
     }],
@@ -151,10 +151,10 @@ USE_CASES['uc-scout-browser-portal'] = {
         'Exception log for inaccessible pages or duplicate circulars',
     ],
     'watch': [
-        'Scout controls a real browser: navigate, click, download, screenshot',
+        'Autopilot controls a real browser: navigate, click, download, screenshot',
         'Prompt-mode approvals make the demo safe and visible to compliance audiences',
     ],
-    'honest': 'Use public portals or approved sandboxes. Scout must not bypass controls; Legal and Compliance still interpret obligations.',
+    'honest': 'Use public portals or approved sandboxes. Autopilot must not bypass controls; Legal and Compliance still interpret obligations.',
     'tips': [
         'For Bursa announcements, add issuer filters and export market-sensitive items separately',
         'For OJK, ask for bilingual Bahasa Indonesia and English output',
@@ -166,17 +166,17 @@ USE_CASES['uc-scout-subagents'] = {
     'dept_tag': 'Strategy',
     'complexity': 'advanced',
     'apps': ['Word', 'Excel', 'PowerPoint', 'Research Agents'],
-    'desc': 'One Scout prompt launches sub-agents for M&A diligence, then synthesises a brief, xlsx, and speaker-note deck.',
+    'desc': 'One Autopilot prompt launches sub-agents for M&A diligence, then synthesises a brief, xlsx, and speaker-note deck.',
     'skills': [
         'Sub-agent fan-out using Research, Code review, Explore, and General-purpose agents',
         'Parallel diligence across market, financial, technology, ESG, and regulatory workstreams',
         'Synthesis of background-agent outputs into executive-ready files',
     ],
     'instructions': [
-        'Open Scout in the M&A workspace with target profile, NDA-safe public sources, and internal thesis notes',
+        'Open Autopilot in the M&A workspace with target profile, NDA-safe public sources, and internal thesis notes',
         'Enable web research and workspace file access; keep shell in prompt mode',
         'Paste the prompt and watch the sub-agent activity panel as agents run independently',
-        'Ask Scout to reconcile conflicts between agents before finalising the pack',
+        'Ask Autopilot to reconcile conflicts between agents before finalising the pack',
     ],
     'sample_files': [
         ('TargetCo_Public_Profile.docx', 'docx'),
@@ -187,7 +187,7 @@ USE_CASES['uc-scout-subagents'] = {
     'prompts': [{
         'label': 'Fan out strategic diligence',
         'text': (
-            "For Hadar and the Group Strategy team, run a Scout sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target's public GitHub/mobile app or technology diligence notes where available.\n"
+            "For Hadar and the Group Strategy team, run an Autopilot sub-agent fan-out on TargetCo. Launch five background agents: Research for market/news/regulatory signals with citations; Explore for internal synergy files and prior board references; Explore for competitor and customer concentration analysis; Explore for ESG/labour/supply-chain red flags; Code review for the target's public GitHub/mobile app or technology diligence notes where available.\n"
             "When all agents return, synthesise a 6-page Word investment brief, a Diligence_Findings.xlsx with source, confidence, MYR synergy range, and owner, and a 12-slide IC deck with speaker notes for Sasha and Daichi. Highlight contradictions between agents instead of hiding them."
         )
     }],
@@ -197,7 +197,7 @@ USE_CASES['uc-scout-subagents'] = {
         'Excel finding register and PowerPoint IC deck with speaker notes',
     ],
     'watch': [
-        'The main Scout session delegates to isolated sub-agents instead of doing one serial search',
+        'The main Autopilot session delegates to isolated sub-agents instead of doing one serial search',
         'Contradictions and confidence levels are preserved for Investment Committee challenge',
     ],
     'honest': 'Sub-agents accelerate triage; formal due diligence, valuation, and legal reliance remain human-owned.',
@@ -212,14 +212,14 @@ USE_CASES['uc-scout-automation-monthly'] = {
     'dept_tag': 'Finance',
     'complexity': 'advanced',
     'apps': ['Excel', 'PowerPoint', 'Outlook', 'Automation'],
-    'desc': 'Schedule Scout for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
+    'desc': 'Schedule Autopilot for the 1st monthly at 7am to prepare variance workbooks, decks, and a CFO email draft.',
     'skills': [
         'Schedule-triggered recurring automation independent of an active chat',
         'Excel skill for GL extracts, budget variance, and workbook formatting',
         'PowerPoint and Outlook output with permission-aware send/draft behaviour',
     ],
     'instructions': [
-        'Open Scout → Automations → New automation',
+        'Open Autopilot → Automations → New automation',
         'Name it Group Monthly Close Pack; trigger type Schedule; schedule 1st day monthly at 07:00',
         'Set file access to the Finance_Close workspace; Outlook send requires approval or draft-only',
         'Paste the automation prompt and importable GitHub definition if your environment uses automation-as-code',
@@ -233,18 +233,18 @@ USE_CASES['uc-scout-automation-monthly'] = {
     'prompts': [{
         'label': 'Schedule monthly finance automation',
         'text': (
-            "Create a recurring Scout automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn.\n"
+            "Create a recurring Autopilot automation for the 1st of every month at 07:00. In ./Finance_Close/[YYYY-MM], locate the latest GL extracts for Malaysia, Indonesia, and Singapore, then use the Excel skill to produce Group_Monthly_Variance_Pack.xlsx with tabs P&L, Cash, and Working Capital. Compare actuals vs budget and prior month, flag MYR variances over 3% or MYR 2m, and IDR variances over IDR 10bn.\n"
             "Generate a 6-slide PowerPoint monthly review deck for the Group CFO: Executive summary, revenue bridge, cost bridge, cash/working capital, entity exceptions, decisions needed. Draft an Outlook email to Group CFO and Finance LT with links to the files. If send approval is not available, save as draft only and log the run history."
         )
     }],
     'expected': [
-        'Recurring Scout automation visible in Automations history',
+        'Recurring Autopilot automation visible in Automations history',
         'Three-tab variance workbook with formulas, thresholds, and exception comments',
         'Six-slide monthly review deck plus CFO email draft or approved send',
     ],
     'watch': [
         'Automations are saved tasks with schedule or condition triggers, not ad-hoc prompts',
-        'Scout can run the same close workflow every month and write back to folders',
+        'Autopilot can run the same close workflow every month and write back to folders',
     ],
     'honest': 'Finance automation needs clean GL extracts; the CFO still reviews, and material variances must tie to ledgers.',
     'tips': [
@@ -258,16 +258,16 @@ USE_CASES['uc-scout-loop-collab'] = {
     'dept_tag': 'Strategy',
     'complexity': 'intermediate',
     'apps': ['Browser', 'Loop', 'WorkIQ', 'Word'],
-    'desc': 'Scout browser-opens Loop, drafts FY27 strategy content, and refreshes its own section every 4 hours.',
+    'desc': 'Autopilot browser-opens Loop, drafts FY27 strategy content, and refreshes its own section every 4 hours.',
     'skills': [
-        'Loop integration through Scout browser/Playwright skill',
+        'Loop integration through Autopilot browser/Playwright skill',
         'WorkIQ refresh from email, Teams threads, meetings, and documents',
         'Recurring update pattern with clear ownership boundaries on a co-authored page',
     ],
     'instructions': [
-        'Open Scout and sign into Microsoft 365 in the controlled browser session',
+        'Open Autopilot and sign into Microsoft 365 in the controlled browser session',
         'Set Browser Control to prompt mode and allow the specific Loop page URL',
-        'Create a Loop section labelled Scout Draft - Strategy Signals',
+        'Create a Loop section labelled Autopilot Draft - Strategy Signals',
         'Run the prompt once, then convert the refresh instruction to a heartbeat or automation every 4 hours',
     ],
     'sample_files': [
@@ -278,8 +278,8 @@ USE_CASES['uc-scout-loop-collab'] = {
     'prompts': [{
         'label': 'Co-author and refresh the Loop page',
         'text': (
-            "Use Scout browser control to open the approved Loop page [LOOP-URL]. In the section named Scout Draft - Strategy Signals, write the current draft of the FY27 strategy paper for Mod Admin and Hadar: 5 strategic choices, ASEAN market shifts, digital productivity bets, talent implications, ESG/regulatory watch, and unresolved decisions.\n"
-            "Use WorkIQ to refresh only this Scout-owned section from new email threads, Teams discussions, meeting notes, and OneDrive strategy files from the last 4 hours. Add timestamped bullets and source links. Do not edit sections owned by Sasha, Daichi, HR, Legal, or Investor Relations. Also export a Word snapshot to ./Strategy_Loop_Snapshots/FY27_Strategy_Scout_Snapshot.docx."
+            "Use Autopilot browser control to open the approved Loop page [LOOP-URL]. In the section named Autopilot Draft - Strategy Signals, write the current draft of the FY27 strategy paper for Mod Admin and Hadar: 5 strategic choices, ASEAN market shifts, digital productivity bets, talent implications, ESG/regulatory watch, and unresolved decisions.\n"
+            "Use WorkIQ to refresh only this Autopilot-owned section from new email threads, Teams discussions, meeting notes, and OneDrive strategy files from the last 4 hours. Add timestamped bullets and source links. Do not edit sections owned by Sasha, Daichi, HR, Legal, or Investor Relations. Also export a Word snapshot to ./Strategy_Loop_Snapshots/FY27_Strategy_Autopilot_Snapshot.docx."
         )
     }],
     'expected': [
@@ -288,8 +288,8 @@ USE_CASES['uc-scout-loop-collab'] = {
         'Word snapshot saved to the workspace for review and archival',
     ],
     'watch': [
-        'Scout uses browser actions to work in Loop, which standard chat cannot directly co-author',
-        'The prompt scopes Scout to its own section to avoid overwriting colleagues',
+        'Autopilot uses browser actions to work in Loop, which standard chat cannot directly co-author',
+        'The prompt scopes Autopilot to its own section to avoid overwriting colleagues',
     ],
     'honest': 'Live co-authoring is visible. Keep ownership rules explicit and browser approvals on.',
     'tips': [
@@ -365,7 +365,7 @@ ENTRY_USE_CASES = {
 
 
 def get_scout_library_for_entry(entry_id, entry_name='', persona_name=''):
-    """Return list of 2-3 Scout use-case cards for the entry."""
+    """Return list of 2-3 Autopilot use-case cards for the entry."""
     # Aliases: actual entry IDs in ind_data*.py don't always match the keys in
     # ENTRY_USE_CASES above (which were authored before the entries were renamed).
     # Map them so every entry resolves to a use-case set.

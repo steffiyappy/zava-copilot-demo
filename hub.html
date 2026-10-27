@@ -341,7 +341,7 @@ html{overflow-x:hidden}
 .cwlib-entry-card:hover .cwlib-entry-open{gap:8px}
 .cwlib-empty{padding:48px 24px;text-align:center;color:var(--muted);font-size:14px;border:1.5px dashed var(--border);border-radius:14px;background:var(--surface)}
 .cwlib-detail-hero{background:linear-gradient(135deg,#7C2D12 0%,#9A3412 60%,#B45309 100%)}
-/* ── Microsoft Scout colour theme (charcoal + cyan, "Frontier preview") ── */
+/* ── Autopilot colour theme (charcoal + cyan, "private preview") ── */
 .cwlib-hero.scout-hero{background:linear-gradient(135deg,#0B1220 0%,#1E293B 100%);border-color:rgba(34,211,238,0.35);box-shadow:0 6px 24px rgba(14,116,144,0.20)}
 .cwlib-hero.scout-hero .cwlib-hero-eyebrow{color:#22D3EE;background:rgba(34,211,238,0.12);border-color:rgba(34,211,238,0.35)}
 .cwlib-hero.scout-hero .cwlib-hero-title{color:#F8FAFC}
@@ -1407,7 +1407,7 @@ a.file-pill:visited{color:var(--text)}
         <option value="ind" selected>&#127981; Industries</option>
         <option value="dept">&#127970; Departments</option>
         <option value="cwlib">&#129309; Cowork Library</option>
-        <option value="scoutlib">&#129517; Scout Library</option>
+        <option value="scoutlib">&#9992;&#65039; Autopilot Library</option>
         <option value="splib">&#127760; SharePoint AI Library</option>
         <option value="other">&#128218; More Pages</option>
       </select>
@@ -1462,14 +1462,14 @@ a.file-pill:visited{color:var(--text)}
     <div class="sidebar-panel" id="spanel-scoutlib">
       <div class="sidebar-section">
         <a class="sidebar-item active" id="nav-all-scoutlib" onclick="showScoutLibTab()">
-          <span class="ind-icon">&#129517;</span>
-          <span class="ind-name">All Scout Use Cases</span>
+          <span class="ind-icon">&#9992;&#65039;</span>
+          <span class="ind-name">All Autopilot Use Cases</span>
           <span class="ind-count" id="total-scoutlib-count">--</span>
         </a>
       </div>
       <div class="sidebar-divider"></div>
       <div id="sidebar-scoutlib"></div>
-      <div class="search-empty" id="search-empty-scoutlib">No Scout entries match your search.</div>
+      <div class="search-empty" id="search-empty-scoutlib">No Autopilot entries match your search.</div>
     </div>
     <!-- SharePoint AI Library panel -->
     <div class="sidebar-panel" id="spanel-splib">
@@ -1529,7 +1529,7 @@ a.file-pill:visited{color:var(--text)}
           <div class="stat-chip"><span class="val">29</span><span class="lbl">Industries</span></div>
           <div class="stat-chip"><span class="val">10</span><span class="lbl">Departments</span></div>
           <div class="stat-chip"><span class="val" id="prompt-count">--</span><span class="lbl">Total Prompts</span></div>
-          <div class="stat-chip"><span class="val">14</span><span class="lbl">Copilot Tools</span></div>
+          <div class="stat-chip"><span class="val">15</span><span class="lbl">Copilot Tools</span></div>
         </div>
       </div>
       <!-- Grid tab toggle -->
@@ -1537,7 +1537,7 @@ a.file-pill:visited{color:var(--text)}
         <button class="grid-tab active" id="gtab-ind" onclick="showGridTab('ind')">&#127981; Industries (29)</button>
         <button class="grid-tab" id="gtab-dept" onclick="showGridTab('dept')">&#127970; Departments (10)</button>
         <button class="grid-tab" id="gtab-cwlib" onclick="showCwLibTab()">&#129309; Cowork Library</button>
-        <button class="grid-tab" id="gtab-scoutlib" onclick="showScoutLibTab()">&#129517; Scout Library</button>
+        <button class="grid-tab" id="gtab-scoutlib" onclick="showScoutLibTab()">&#9992;&#65039; Autopilot Library</button>
         <button class="grid-tab" id="gtab-splib" onclick="showSpLibTab()">&#127760; SharePoint AI</button>
         <button class="grid-tab" id="gtab-other" onclick="showOtherTab()">&#128218; Other Pages (6)</button>
       </div>
@@ -1565,10 +1565,10 @@ a.file-pill:visited{color:var(--text)}
       <!-- Scout Library grid -->
       <div id="scoutlib-grid-wrap" style="display:none">
         <div class="cwlib-hero scout-hero">
-          <div class="cwlib-hero-eyebrow">&#129517; FRONTIER PREVIEW &middot; <span id="scoutlib-total-uc">--</span> USE CASES</div>
-          <div class="cwlib-hero-title">Microsoft Scout Library</div>
-          <div class="cwlib-hero-sub">Desktop AI app (Frontier preview) with file system access, shell commands, browser automation via Playwright, M365 + WorkIQ access, sub-agents, heartbeat mode, and scheduled automations &mdash; goes beyond Copilot Chat. All Scout use cases organised by industry and department.</div>
-          <div class="cwlib-hero-sub" style="margin-top:8px"><strong>Update 25 Sep 2026:</strong> Microsoft announced that Scout is now called Autopilot in the new Copilot. Autopilot is a cloud-hosted agent that is expanding to private preview. These runbooks describe the Scout desktop app as documented on Microsoft Learn in Aug 2026, so check availability for your tenant before you demo.</div>
+          <div class="cwlib-hero-eyebrow">&#9992;&#65039; PRIVATE PREVIEW &middot; <span id="scoutlib-total-uc">--</span> USE CASES</div>
+          <div class="cwlib-hero-title">Autopilot Library</div>
+          <div class="cwlib-hero-sub">Autopilot, previously called Scout, is a persistent, proactive agent in the new Copilot. It lives in your tenant with its own identity, memory, computer and workspace, watches channels, follows up on threads and runs recurring work without waiting for a prompt. All Autopilot use cases organised by industry and department.</div>
+          <div class="cwlib-hero-sub" style="margin-top:8px"><strong>Before you demo:</strong> these use cases were written for the earlier Scout desktop preview (file system access, shell commands, browser automation, WorkIQ, sub-agents, Heartbeat and Automations). Autopilot is in private preview, so confirm each step and capability in your own tenant.</div>
           <div class="cwlib-mode-toggle">
             <button class="cwlib-mode-btn active" id="scoutlib-mode-ind" onclick="setScoutLibMode('ind')">&#127981; By Industry (<span id="scoutlib-mode-ind-n">--</span>)</button>
             <button class="cwlib-mode-btn" id="scoutlib-mode-dept" onclick="setScoutLibMode('dept')">&#127970; By Department (<span id="scoutlib-mode-dept-n">--</span>)</button>
@@ -3870,7 +3870,7 @@ _syncLegacyLang();
 function _isResearcher(name){return /Researcher/i.test(name||'')}
 function _isCowork(name){return /Cowork/i.test(name||'')}
 function _isNotebook(name){return /Notebook/i.test(name||'')}
-function _isScout(name){return /Microsoft Scout/i.test(name||'')}
+function _isScout(name){return /Autopilot/i.test(name||'')}
 function _isSharePoint(name){return /AI in SharePoint/i.test(name||'')}
 // "Copilot Chat" matches both literal Chat tools (e.g. `💬 Copilot Chat`) and
 // the paid Agent Builder label `🏗 Agent Builder (Microsoft 365 Copilot Chat)`.
@@ -5548,17 +5548,17 @@ function renderScoutLibGrid(){
       const section=document.createElement('div'); section.className='cwlib-section';
       section.innerHTML='<div class="cwlib-section-title"><span class="sec-emoji">🏷️</span><span>'+escapeHTML(sec.label)+'</span><span class="sec-count">'+inSec.length+' entr'+(inSec.length===1?'y':'ies')+'</span></div>';
       const grid=document.createElement('div'); grid.className='cwlib-grid-inner';
-      inSec.forEach(e=>grid.appendChild(_libEntryCard(e,'ind','scoutLibrary','🧭','showScoutLibFor')));
+      inSec.forEach(e=>grid.appendChild(_libEntryCard(e,'ind','scoutLibrary','✈️','showScoutLibFor')));
       section.appendChild(grid); root.appendChild(section);
     });
-    if(!indEntries.length) root.innerHTML='<div class="cwlib-empty">No industries with Scout content yet.</div>';
+    if(!indEntries.length) root.innerHTML='<div class="cwlib-empty">No industries with Autopilot content yet.</div>';
   } else {
     const section=document.createElement('div'); section.className='cwlib-section';
     section.innerHTML='<div class="cwlib-section-title"><span class="sec-emoji">🏢</span><span>Departments</span><span class="sec-count">'+deptEntries.length+' entr'+(deptEntries.length===1?'y':'ies')+'</span></div>';
     const grid=document.createElement('div'); grid.className='cwlib-grid-inner';
-    deptEntries.forEach(e=>grid.appendChild(_libEntryCard(e,'dept','scoutLibrary','🧭','showScoutLibFor')));
+    deptEntries.forEach(e=>grid.appendChild(_libEntryCard(e,'dept','scoutLibrary','✈️','showScoutLibFor')));
     section.appendChild(grid); root.appendChild(section);
-    if(!deptEntries.length) root.innerHTML='<div class="cwlib-empty">No departments with Scout content yet.</div>';
+    if(!deptEntries.length) root.innerHTML='<div class="cwlib-empty">No departments with Autopilot content yet.</div>';
   }
 }
 function setScoutLibMode(mode){ _scoutLibMode = (mode==='dept') ? 'dept' : 'ind'; renderScoutLibGrid(); }
@@ -5576,21 +5576,21 @@ function showScoutLibFor(entryId){
   if(!scd){
     // Create the detail view container on first use
     scd=document.createElement('div'); scd.id='scoutlib-detail-view'; scd.className='cwlib-detail-view';
-    scd.innerHTML='<div class="detail-hero cwlib-detail-hero scout-hero"><button class="detail-hero-back" onclick="backToScoutLib()">&larr; Back to Scout Library</button><div class="detail-hero-title" id="scoutlib-detail-title"></div><div class="detail-hero-tagline" id="scoutlib-detail-sub"></div></div>'+
+    scd.innerHTML='<div class="detail-hero cwlib-detail-hero scout-hero"><button class="detail-hero-back" onclick="backToScoutLib()">&larr; Back to Autopilot Library</button><div class="detail-hero-title" id="scoutlib-detail-title"></div><div class="detail-hero-tagline" id="scoutlib-detail-sub"></div></div>'+
       '<div id="scoutlib-detail-cards"></div>';
     document.querySelector('main.main').appendChild(scd);
   }
   scd.style.display='block';
   document.querySelectorAll('.sidebar-item').forEach(el=>el.classList.remove('active'));
   const navEl=document.getElementById('nav-scoutlib-'+entryId); if(navEl) navEl.classList.add('active');
-  const t=document.getElementById('scoutlib-detail-title'); if(t) t.innerHTML=(entry.icon||'🧭')+' '+_libFmtName(entry);
+  const t=document.getElementById('scoutlib-detail-title'); if(t) t.innerHTML=(entry.icon||'✈️')+' '+_libFmtName(entry);
   const sub=document.getElementById('scoutlib-detail-sub');
   const n=(entry.scoutLibrary||[]).length;
   const sector = (data.industries||[]).find(i=>i.id===entryId) ? _libSectorOf(entry) : 'Department';
-  if(sub) sub.innerHTML='<strong>'+escapeHTML(sector||'—')+'</strong> &middot; '+n+' Scout use case'+(n===1?'':'s')+' &middot; Frontier preview';
+  if(sub) sub.innerHTML='<strong>'+escapeHTML(sector||'—')+'</strong> &middot; '+n+' Autopilot use case'+(n===1?'':'s')+' &middot; Private preview';
   const host=document.getElementById('scoutlib-detail-cards');
   if(host){
-    const shim={ id: entry.id, scoutLibrary: entry.scoutLibrary, __cwlibEmbedded: true, __libField: 'scoutLibrary', __libTitle: '🧭 Scout Library — desktop AI runbooks', __libSub: 'Pick a Scout use case above — every section below updates in place. Each card showcases a Scout-only capability (file system, shell, browser, sub-agents, heartbeat, automations).' };
+    const shim={ id: entry.id, scoutLibrary: entry.scoutLibrary, __cwlibEmbedded: true, __libField: 'scoutLibrary', __libTitle: '✈️ Autopilot Library — runbooks (formerly Scout)', __libSub: 'Pick an Autopilot use case above — every section below updates in place. Each card follows a capability from the earlier Scout preview (file system, shell, browser, sub-agents, heartbeat, automations), so confirm the steps in your own tenant.' };
     host.innerHTML = (typeof _coworkLibraryHtml==='function') ? _coworkLibraryHtml(shim) : '';
     if(typeof _wireCoworkLibraryCopy==='function') _wireCoworkLibraryCopy(host);
   }
@@ -6197,7 +6197,7 @@ function showItem(item,tab,preserveScroll){
     if(hasOther) html+='<button class="detail-tab '+( _detailTab==='tools'?'active':'')+'" id="dtab-tools" onclick="setDetailTab(\'tools\')">'+_uL('🛠️ Microsoft 365 Copilot Tools')+'</button>';
     if(hasCowork) html+='<button class="detail-tab '+( _detailTab==='cowork'?'active':'')+'" id="dtab-cowork" onclick="setDetailTab(\'cowork\')">'+_uL('⚡ Cowork')+'</button>';
     if(hasNotebookTab) html+='<button class="detail-tab '+( _detailTab==='notebook'?'active':'')+'" id="dtab-notebook" onclick="setDetailTab(\'notebook\')">'+_uL('📓 Copilot Notebooks')+'</button>';
-    if(hasScoutTab) html+='<button class="detail-tab '+( _detailTab==='scout'?'active':'')+'" id="dtab-scout" onclick="setDetailTab(\'scout\')">'+_uL('🧭 Microsoft Scout')+'</button>';
+    if(hasScoutTab) html+='<button class="detail-tab '+( _detailTab==='scout'?'active':'')+'" id="dtab-scout" onclick="setDetailTab(\'scout\')">'+_uL('✈️ Autopilot')+'</button>';
     if(hasSharePointTab) html+='<button class="detail-tab '+( _detailTab==='sharepoint'?'active':'')+'" id="dtab-sharepoint" onclick="setDetailTab(\'sharepoint\')">'+_uL('🌐 AI in SharePoint')+'</button>';
     if(hasChat) html+='<button class="detail-tab '+( _detailTab==='chat'?'active':'')+'" id="dtab-chat" onclick="setDetailTab(\'chat\')">'+_uL('💬 Copilot Chat Prompts')+'</button>';
     tabsWrap.innerHTML=html;
@@ -6444,7 +6444,7 @@ function showItem(item,tab,preserveScroll){
   // Scout Library — render only when the user is on the Scout sub-tab.
   if(_detailTab==='scout'){
     if(Array.isArray(item.scoutLibrary) && item.scoutLibrary.length){
-      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '🧭 Microsoft Scout — desktop AI use cases', __libSub: 'Scout-only capabilities (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Pick a use case above — every section below updates in place.' };
+      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '✈️ Autopilot — use cases (formerly Scout)', __libSub: 'Capabilities from the earlier Scout preview (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Confirm the steps in your own tenant. Pick a use case above — every section below updates in place.' };
       const html=_coworkLibraryHtml(shimSc);
       if(html){
         const w=document.createElement('div');
@@ -6470,7 +6470,7 @@ function showItem(item,tab,preserveScroll){
   // (legacy block removed — Scout + SP now live in their own dedicated detail tabs)
   if(false && _detailTab==='tools'){
     if(Array.isArray(item.scoutLibrary) && item.scoutLibrary.length){
-      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '🧭 Microsoft Scout — desktop AI use cases', __libSub: 'Scout-only capabilities (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Pick a use case above — every section below updates in place.' };
+      const shimSc={ id: item.id, scoutLibrary: item.scoutLibrary, __cwlibEmbedded: false, __libField: 'scoutLibrary', __libTitle: '✈️ Autopilot — use cases (formerly Scout)', __libSub: 'Capabilities from the earlier Scout preview (file system, shell, browser, sub-agents, heartbeat, automations) tailored to this entry. Confirm the steps in your own tenant. Pick a use case above — every section below updates in place.' };
       const html=_coworkLibraryHtml(shimSc);
       if(html){
         const w=document.createElement('div');
@@ -7312,7 +7312,7 @@ function logout(){
 }
 
 // ── Changelog (discreet hidden tab) ──
-const CHANGELOG_DATA = [{"hash":"03a8075","date":"2026-10-27","desc":"Update Copilot content to 27 Oct 2026"},{"hash":"2499ec5","date":"2026-09-28","desc":"Track the App Service package.json used by the deploy package"},{"hash":"c8dd573","date":"2026-09-28","desc":"Move hub to Azure App Service at copilotmultiind.azurewebsites.net"},{"hash":"77cf4f3","date":"2026-09-24","desc":"Publish as Copilot Multi-Industry Demo Hub on Azure; Copilot updates to Sep 2026"},{"hash":"7adda3d","date":"2026-08-04","desc":"Fix: invalid backslash-apostrophe in Contoso Beauty OTHER_PAGES desc broke hub.html JS parse"},{"hash":"6d6611c","date":"2026-07-28","desc":"Add Fabrikam Healthcare (Risk & Internal Audit) — Other Pages card + 2 audit power moves"},{"hash":"a6750fb","date":"2026-07-28","desc":"Fix _cowork_lib_part5.py syntax — bad backslash-apostrophe escape dropped 4 new cards from build"},{"hash":"f80f9af","date":"2026-07-26","desc":"Add 2 more distinctive cowork cards from July batch (EA free-Chat + gold mining vendor rebook)"},{"hash":"d0de0e3","date":"2026-07-22","desc":"Add 3 new Other Pages cards + 2 power-move cowork cards from July demo batch"},{"hash":"e48cc97","date":"2026-07-05","desc":"Add 6 industry power-move cowork cards from remaining Other Pages demos"},{"hash":"be17d11","date":"2026-06-21","desc":"Add Beverages & Dairy demo: Other Pages card + 3 cowork UCs (SSB tax shock, infographic kit, sector landscape)"},{"hash":"37e10f9","date":"2026-06-18","desc":"feat(cowork): add 8 more distinctive use cases from Property + Life demos"},{"hash":"d64c9b4","date":"2026-06-18","desc":"feat: add Property Group + Life Assurance demos + new cowork use cases"},{"hash":"9095cc3","date":"2026-06-17","desc":"feat(cowork): add 3 GA-capability prompt cards to every entry"},{"hash":"3fb8d5a","date":"2026-06-17","desc":"feat(whatsnew): add Copilot Cowork June 2026 GA banner card"},{"hash":"8eba89d","date":"2026-06-09","desc":"docs(others-tab): refresh 6 demo-site card descriptions"},{"hash":"08490ff","date":"2026-06-09","desc":"feat(industry): add Contoso Tobacco & Wellness immersion"},{"hash":"b136261","date":"2026-06-09","desc":"fix(blog-audit): retarget WHATS_NEW insertion to whatsnew_data.py"},{"hash":"0a9fc50","date":"2026-06-06","desc":"BM/BI audit now 0 issues both sides: fix shared-ref clobber + URL false-positives + rilis"},{"hash":"abcfccf","date":"2026-06-06","desc":"Full BM/BI audit: agents library 100% translated (was 165 leaks); 21,679 strings scanned, 9 unfixable"},{"hash":"2752b2d","date":"2026-06-06","desc":"whatsNew banner: re-render on locale switch"},{"hash":"a9030c2","date":"2026-06-06","desc":"whatsNew: full BM+BI translation + 4 new June 2 2026 entries"},{"hash":"35c1ec2","date":"2026-06-06","desc":"Sidebar nav: convert horizontal-scroll tabs to dropdown menu"},{"hash":"55e3942","date":"2026-06-06","desc":"BM/BI dialect cleanup: 80+ pairs added (audit-driven, 92% reduction)"},{"hash":"db7f72b","date":"2026-06-06","desc":"UC7 translations: strip leaked markers + hand-author BM"},{"hash":"41b3da1","date":"2026-06-06","desc":"Integrate 5-site customer demo prompts into Zava entries"},{"hash":"0bfff76","date":"2026-06-06","desc":"Save extraction artifacts: 5-site HTML snapshots + partial UC extraction"},{"hash":"d3dc33b","date":"2026-06-05","desc":"Add 5 customer demo cards to Other Pages tab"},{"hash":"1a01d0a","date":"2026-06-05","desc":"Fix: 'Read the blog post' banner link clipped by overflow:hidden"},{"hash":"e169da8","date":"2026-06-04","desc":"BM/BI dialect cleanup: 2040 field-fixes for proper Malay vs Indonesian word usage"},{"hash":"c0ef9f6","date":"2026-06-03","desc":"Rebuild hub.html with Contoso FSA card"},{"hash":"aa79b1f","date":"2026-06-03","desc":"Add Contoso FSA card to Other Pages tab"},{"hash":"7c44937","date":"2026-06-03","desc":"fix: Cowork/Notebook/Scout/SP tabs render ONLY library card format"},{"hash":"5f54313","date":"2026-06-03","desc":"fix: expand Vendor_Master_Contracts/ folder refs + regenerate all entry zips"},{"hash":"577cec9","date":"2026-06-03","desc":"fix: strip leading slash on file rows + notebook source pills"},{"hash":"da511bb","date":"2026-06-03","desc":"feat: card-style tool blocks on Cowork/Notebook/Scout/SP tabs + Executives storyboard"},{"hash":"aee5483","date":"2026-06-03","desc":"assets: 10 EXEC_*.* files for Executives & Business Leaders dept entry"},{"hash":"03ea8be","date":"2026-06-03","desc":"feat: Executives & Business Leaders dept + Scout/SP coverage gaps + grid-tab counts"},{"hash":"e4fe2bc","date":"2026-06-03","desc":"feat: Copilot Create prompts + wire Scout/SP sample_files into entry.files"},{"hash":"56845b7","date":"2026-06-03","desc":"fix: hide Scout/SP detail views on tab nav; nest back button in hero for contrast"},{"hash":"be287c0","date":"2026-06-03","desc":"Populate Scout/SP-AI count badges on init (sidebar total + grid hero)"},{"hash":"75b52f1","date":"2026-06-03","desc":"Fix Scout/SP AI sidebar build on init + invisible detail-hero text"},{"hash":"9a8a0e2","date":"2026-06-03","desc":"Add Microsoft Scout + AI in SharePoint as dedicated detail tabs (beside Chat) inside every entry"},{"hash":"4e3206b","date":"2026-06-03","desc":"Recolour Scout (charcoal+cyan) and SP AI (SharePoint teal); inject Scout + SP AI prompt blocks into every entry's tools list"},{"hash":"0979616","date":"2026-06-03","desc":"Add Microsoft Scout + AI in SharePoint library tabs; refresh Notebook + Cowork descriptions and what's-new banners"},{"hash":"5841dd2","date":"2026-05-21","desc":"Add Industrial Distribution download files (9 raw-data xlsx/docx/pptx)"},{"hash":"4237479","date":"2026-05-21","desc":"Industrial Distribution: storyboard minutes 18/18/18/15 (canonical); strip duration prefix from titles"},{"hash":"530d992","date":"2026-05-21","desc":"Industrial Distribution: rename to Zava Electrical + canonical personas + fix Cowork (no Loop)"},{"hash":"5c4ffb6","date":"2026-05-21","desc":"Restore hub passwords (lost in earlier merge)"},{"hash":"29ebcda","date":"2026-05-21","desc":"Merge branch 'main' of https://github.com/steffiyappy/zava-copilot-demo"},{"hash":"698fce4","date":"2026-05-21","desc":"Refresh Contoso Cowork tile: rotate password (21 May 2026), add Researcher (Critique + Model Council)"},{"hash":"59033bf","date":"2026-05-21","desc":"Remove plaintext immersion-site passwords from hub"},{"hash":"ee792d3","date":"2026-05-20","desc":"Free Agent Builder URLs: truncate to <=2 path levels (414 fixes)"},{"hash":"ed4d9a5","date":"2026-05-20","desc":"Analytics button next to Changelog (owner-only, abacus.jasoncameron.dev)"},{"hash":"e4b9a5f","date":"2026-05-19","desc":"Files re-audit + Download All buttons"},{"hash":"04e6bf5","date":"2026-05-19","desc":"Other Pages: add Contoso Active Operations Copilot Immersion"},{"hash":"8a480b8","date":"2026-05-19","desc":"Files + Cowork HTML: 301 missing placeholders + HTML artifact on all 100 UCs"},{"hash":"f7d2fce","date":"2026-05-19","desc":"Cowork Library: surface 34 customer-runbook UCs on standalone tab"},{"hash":"cac6b66","date":"2026-05-19","desc":"Cowork: regulator + cross-dept runbook (9 UCs) + 37 sample files"},{"hash":"acb8741","date":"2026-05-18","desc":"Cowork: HTML artifact prompts (dashboard/kanban/heatmap/pipeline) across all 55 entries"},{"hash":"33be8a6","date":"2026-05-18","desc":"Add 3 Indonesia 2W/MPM-style agents to automotive industry (Contoso Mobility Group flow)"},{"hash":"4f3b16b","date":"2026-05-18","desc":"blog-audit workflow: upgrade Node-20 action pins to latest majors"},{"hash":"79fa5f8","date":"2026-05-18","desc":"util.tool(): auto-pad persona arrays to match prompt count"},{"hash":"934fed0","date":"2026-05-18","desc":"Feasibility cleanup: clear 4 pre-existing license violations"},{"hash":"49cb38a","date":"2026-05-18","desc":"Aster merge: 3 prompts injected into og-downstream"},{"hash":"270a918","date":"2026-05-17","desc":"Modern-feature refresh: 174 new showcase prompts across PPT/Outlook/Excel/Word/Analyst"},{"hash":"14febfa","date":"2026-05-17","desc":"Refresh hub.html changelog with recent commits"},{"hash":"e04666a","date":"2026-05-17","desc":"Add M365 Copilot blog holistic-audit scheduler"},{"hash":"2ba1cdd","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Rivanta merge"},{"hash":"a94d4f1","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Aster merge"}];
+const CHANGELOG_DATA = [{"hash":"fd4ea7d","date":"2026-10-27","desc":"Add skills prompts and a Skills What's New item"},{"hash":"03a8075","date":"2026-10-27","desc":"Update Copilot content to 27 Oct 2026"},{"hash":"2499ec5","date":"2026-09-28","desc":"Track the App Service package.json used by the deploy package"},{"hash":"c8dd573","date":"2026-09-28","desc":"Move hub to Azure App Service at copilotmultiind.azurewebsites.net"},{"hash":"77cf4f3","date":"2026-09-24","desc":"Publish as Copilot Multi-Industry Demo Hub on Azure; Copilot updates to Sep 2026"},{"hash":"7adda3d","date":"2026-08-04","desc":"Fix: invalid backslash-apostrophe in Contoso Beauty OTHER_PAGES desc broke hub.html JS parse"},{"hash":"6d6611c","date":"2026-07-28","desc":"Add Fabrikam Healthcare (Risk & Internal Audit) — Other Pages card + 2 audit power moves"},{"hash":"a6750fb","date":"2026-07-28","desc":"Fix _cowork_lib_part5.py syntax — bad backslash-apostrophe escape dropped 4 new cards from build"},{"hash":"f80f9af","date":"2026-07-26","desc":"Add 2 more distinctive cowork cards from July batch (EA free-Chat + gold mining vendor rebook)"},{"hash":"d0de0e3","date":"2026-07-22","desc":"Add 3 new Other Pages cards + 2 power-move cowork cards from July demo batch"},{"hash":"e48cc97","date":"2026-07-05","desc":"Add 6 industry power-move cowork cards from remaining Other Pages demos"},{"hash":"be17d11","date":"2026-06-21","desc":"Add Beverages & Dairy demo: Other Pages card + 3 cowork UCs (SSB tax shock, infographic kit, sector landscape)"},{"hash":"37e10f9","date":"2026-06-18","desc":"feat(cowork): add 8 more distinctive use cases from Property + Life demos"},{"hash":"d64c9b4","date":"2026-06-18","desc":"feat: add Property Group + Life Assurance demos + new cowork use cases"},{"hash":"9095cc3","date":"2026-06-17","desc":"feat(cowork): add 3 GA-capability prompt cards to every entry"},{"hash":"3fb8d5a","date":"2026-06-17","desc":"feat(whatsnew): add Copilot Cowork June 2026 GA banner card"},{"hash":"8eba89d","date":"2026-06-09","desc":"docs(others-tab): refresh 6 demo-site card descriptions"},{"hash":"08490ff","date":"2026-06-09","desc":"feat(industry): add Contoso Tobacco & Wellness immersion"},{"hash":"b136261","date":"2026-06-09","desc":"fix(blog-audit): retarget WHATS_NEW insertion to whatsnew_data.py"},{"hash":"0a9fc50","date":"2026-06-06","desc":"BM/BI audit now 0 issues both sides: fix shared-ref clobber + URL false-positives + rilis"},{"hash":"abcfccf","date":"2026-06-06","desc":"Full BM/BI audit: agents library 100% translated (was 165 leaks); 21,679 strings scanned, 9 unfixable"},{"hash":"2752b2d","date":"2026-06-06","desc":"whatsNew banner: re-render on locale switch"},{"hash":"a9030c2","date":"2026-06-06","desc":"whatsNew: full BM+BI translation + 4 new June 2 2026 entries"},{"hash":"35c1ec2","date":"2026-06-06","desc":"Sidebar nav: convert horizontal-scroll tabs to dropdown menu"},{"hash":"55e3942","date":"2026-06-06","desc":"BM/BI dialect cleanup: 80+ pairs added (audit-driven, 92% reduction)"},{"hash":"db7f72b","date":"2026-06-06","desc":"UC7 translations: strip leaked markers + hand-author BM"},{"hash":"41b3da1","date":"2026-06-06","desc":"Integrate 5-site customer demo prompts into Zava entries"},{"hash":"0bfff76","date":"2026-06-06","desc":"Save extraction artifacts: 5-site HTML snapshots + partial UC extraction"},{"hash":"d3dc33b","date":"2026-06-05","desc":"Add 5 customer demo cards to Other Pages tab"},{"hash":"1a01d0a","date":"2026-06-05","desc":"Fix: 'Read the blog post' banner link clipped by overflow:hidden"},{"hash":"e169da8","date":"2026-06-04","desc":"BM/BI dialect cleanup: 2040 field-fixes for proper Malay vs Indonesian word usage"},{"hash":"c0ef9f6","date":"2026-06-03","desc":"Rebuild hub.html with Contoso FSA card"},{"hash":"aa79b1f","date":"2026-06-03","desc":"Add Contoso FSA card to Other Pages tab"},{"hash":"7c44937","date":"2026-06-03","desc":"fix: Cowork/Notebook/Scout/SP tabs render ONLY library card format"},{"hash":"5f54313","date":"2026-06-03","desc":"fix: expand Vendor_Master_Contracts/ folder refs + regenerate all entry zips"},{"hash":"577cec9","date":"2026-06-03","desc":"fix: strip leading slash on file rows + notebook source pills"},{"hash":"da511bb","date":"2026-06-03","desc":"feat: card-style tool blocks on Cowork/Notebook/Scout/SP tabs + Executives storyboard"},{"hash":"aee5483","date":"2026-06-03","desc":"assets: 10 EXEC_*.* files for Executives & Business Leaders dept entry"},{"hash":"03ea8be","date":"2026-06-03","desc":"feat: Executives & Business Leaders dept + Scout/SP coverage gaps + grid-tab counts"},{"hash":"e4fe2bc","date":"2026-06-03","desc":"feat: Copilot Create prompts + wire Scout/SP sample_files into entry.files"},{"hash":"56845b7","date":"2026-06-03","desc":"fix: hide Scout/SP detail views on tab nav; nest back button in hero for contrast"},{"hash":"be287c0","date":"2026-06-03","desc":"Populate Scout/SP-AI count badges on init (sidebar total + grid hero)"},{"hash":"75b52f1","date":"2026-06-03","desc":"Fix Scout/SP AI sidebar build on init + invisible detail-hero text"},{"hash":"9a8a0e2","date":"2026-06-03","desc":"Add Microsoft Scout + AI in SharePoint as dedicated detail tabs (beside Chat) inside every entry"},{"hash":"4e3206b","date":"2026-06-03","desc":"Recolour Scout (charcoal+cyan) and SP AI (SharePoint teal); inject Scout + SP AI prompt blocks into every entry's tools list"},{"hash":"0979616","date":"2026-06-03","desc":"Add Microsoft Scout + AI in SharePoint library tabs; refresh Notebook + Cowork descriptions and what's-new banners"},{"hash":"5841dd2","date":"2026-05-21","desc":"Add Industrial Distribution download files (9 raw-data xlsx/docx/pptx)"},{"hash":"4237479","date":"2026-05-21","desc":"Industrial Distribution: storyboard minutes 18/18/18/15 (canonical); strip duration prefix from titles"},{"hash":"530d992","date":"2026-05-21","desc":"Industrial Distribution: rename to Zava Electrical + canonical personas + fix Cowork (no Loop)"},{"hash":"5c4ffb6","date":"2026-05-21","desc":"Restore hub passwords (lost in earlier merge)"},{"hash":"29ebcda","date":"2026-05-21","desc":"Merge branch 'main' of https://github.com/steffiyappy/zava-copilot-demo"},{"hash":"698fce4","date":"2026-05-21","desc":"Refresh Contoso Cowork tile: rotate password (21 May 2026), add Researcher (Critique + Model Council)"},{"hash":"59033bf","date":"2026-05-21","desc":"Remove plaintext immersion-site passwords from hub"},{"hash":"ee792d3","date":"2026-05-20","desc":"Free Agent Builder URLs: truncate to <=2 path levels (414 fixes)"},{"hash":"ed4d9a5","date":"2026-05-20","desc":"Analytics button next to Changelog (owner-only, abacus.jasoncameron.dev)"},{"hash":"e4b9a5f","date":"2026-05-19","desc":"Files re-audit + Download All buttons"},{"hash":"04e6bf5","date":"2026-05-19","desc":"Other Pages: add Contoso Active Operations Copilot Immersion"},{"hash":"8a480b8","date":"2026-05-19","desc":"Files + Cowork HTML: 301 missing placeholders + HTML artifact on all 100 UCs"},{"hash":"f7d2fce","date":"2026-05-19","desc":"Cowork Library: surface 34 customer-runbook UCs on standalone tab"},{"hash":"cac6b66","date":"2026-05-19","desc":"Cowork: regulator + cross-dept runbook (9 UCs) + 37 sample files"},{"hash":"acb8741","date":"2026-05-18","desc":"Cowork: HTML artifact prompts (dashboard/kanban/heatmap/pipeline) across all 55 entries"},{"hash":"33be8a6","date":"2026-05-18","desc":"Add 3 Indonesia 2W/MPM-style agents to automotive industry (Contoso Mobility Group flow)"},{"hash":"4f3b16b","date":"2026-05-18","desc":"blog-audit workflow: upgrade Node-20 action pins to latest majors"},{"hash":"79fa5f8","date":"2026-05-18","desc":"util.tool(): auto-pad persona arrays to match prompt count"},{"hash":"934fed0","date":"2026-05-18","desc":"Feasibility cleanup: clear 4 pre-existing license violations"},{"hash":"49cb38a","date":"2026-05-18","desc":"Aster merge: 3 prompts injected into og-downstream"},{"hash":"270a918","date":"2026-05-17","desc":"Modern-feature refresh: 174 new showcase prompts across PPT/Outlook/Excel/Word/Analyst"},{"hash":"14febfa","date":"2026-05-17","desc":"Refresh hub.html changelog with recent commits"},{"hash":"e04666a","date":"2026-05-17","desc":"Add M365 Copilot blog holistic-audit scheduler"},{"hash":"2ba1cdd","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Rivanta merge"},{"hash":"a94d4f1","date":"2026-05-17","desc":"Rebuild data.js + hub.html for Aster merge"}];
 function _renderChangelog(){
   const body=document.getElementById('changelog-body');
   if(!body) return;
@@ -7577,7 +7577,7 @@ async function _analyticsAuthPrompt(){
   const gtI=document.getElementById('gtab-ind'); if(gtI) gtI.innerHTML='&#127981; Industries ('+data.industries.length+')';
   const gtD=document.getElementById('gtab-dept'); if(gtD) gtD.innerHTML='&#127970; Departments ('+data.departments.length+')';
   const gtC=document.getElementById('gtab-cwlib'); if(gtC) gtC.innerHTML='&#129309; Cowork Library ('+_cwLibTotalUC()+')';
-  const gtSc=document.getElementById('gtab-scoutlib'); if(gtSc) gtSc.innerHTML='&#129517; Scout Library ('+_libTotalUC('scoutLibrary')+')';
+  const gtSc=document.getElementById('gtab-scoutlib'); if(gtSc) gtSc.innerHTML='&#9992;&#65039; Autopilot Library ('+_libTotalUC('scoutLibrary')+')';
   const gtSp=document.getElementById('gtab-splib'); if(gtSp) gtSp.innerHTML='&#127760; SharePoint AI ('+_libTotalUC('sharepointLibrary')+')';
   const gtO=document.getElementById('gtab-other'); if(gtO) gtO.innerHTML='&#128218; Other Pages ('+OTHER_PAGES.length+')';
 })();
