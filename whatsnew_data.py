@@ -16,6 +16,23 @@ WHATS_NEW = [
     # what's new, Copilot blog to 8 Oct; verified 27 Oct 2026)
     # ─────────────────────────────────────────────────────────────────────
     {
+        "id": "wn-2026-oct-skills",
+        "title": "🧩 Skills: use, build and save your own (NEW)",
+        "titleBM": "🧩 Skills: guna, bina dan simpan skill anda sendiri (BAHARU)",
+        "titleID": "🧩 Skills: pakai, buat, dan simpan skill Anda sendiri (BARU)",
+        "badge": "Rolling out: Oct 2026",
+        "badgeBM": "Sedang dilancarkan: Okt 2026",
+        "badgeID": "Sedang diluncurkan: Oktober 2026",
+        "summary": "A skill is a set of instructions that Copilot follows for a task you repeat. Copilot in Excel has built-in skills such as @clean-data, @chart-design, @brandkit and @theme-design. With @skill-builder you can turn your instructions, earlier prompts or a workflow you just finished into a custom skill, preview it and save it to OneDrive. In Cowork, the Customize page has a Skills tab where you create a skill in a guided chat, upload a SKILL.md file and share it with specific people. PowerPoint also lets you create your own skills. Some skills are still rolling out to tenants.",
+        "summaryBM": "Skill ialah satu set arahan yang diikuti oleh Copilot untuk tugas yang anda ulang. Copilot dalam Excel mempunyai skill terbina dalam seperti @clean-data, @chart-design, @brandkit dan @theme-design. Dengan @skill-builder anda boleh menukar arahan, prompt terdahulu atau aliran kerja yang baru anda siapkan menjadi skill tersuai, melihat pratontonnya dan menyimpannya ke OneDrive. Dalam Cowork, halaman Customize mempunyai tab Skills tempat anda mencipta skill dalam sembang berpandu, memuat naik fail SKILL.md dan berkongsinya dengan orang tertentu. PowerPoint juga membolehkan anda mencipta skill sendiri. Sesetengah skill masih dilancarkan secara berperingkat kepada tenant.",
+        "summaryID": "Skill adalah sekumpulan instruksi yang diikuti Copilot untuk tugas yang Anda ulang. Copilot di Excel memiliki skill bawaan seperti @clean-data, @chart-design, @brandkit, dan @theme-design. Dengan @skill-builder Anda dapat mengubah instruksi, prompt sebelumnya, atau alur kerja yang baru Anda selesaikan menjadi skill kustom, melihat pratinjaunya, dan menyimpannya ke OneDrive. Di Cowork, halaman Customize memiliki tab Skills tempat Anda membuat skill dalam chat terpandu, mengunggah file SKILL.md, dan membagikannya kepada orang tertentu. PowerPoint juga memungkinkan Anda membuat skill sendiri. Sebagian skill masih diluncurkan bertahap ke tenant.",
+        "tip": "In Excel, open Copilot and type @skill-builder, then ask: Create a skill that formats monthly sales reports as tables, highlights negative variances and adds a summary chart. After a multi-step task, say: Save what we just did to a new skill. In Cowork, open Customize > Skills > Add > Create new.",
+        "tipBM": "Dalam Excel, buka Copilot dan taip @skill-builder, kemudian minta: Cipta skill yang memformat laporan jualan bulanan sebagai jadual, menyerlahkan varians negatif dan menambah carta ringkasan. Selepas satu tugas berbilang langkah, katakan: Save what we just did to a new skill. Dalam Cowork, buka Customize > Skills > Add > Create new.",
+        "tipID": "Di Excel, buka Copilot dan ketik @skill-builder, lalu minta: Buat skill yang memformat laporan penjualan bulanan sebagai tabel, menyorot varians negatif, dan menambahkan grafik ringkasan. Setelah tugas multi-langkah, katakan: Save what we just did to a new skill. Di Cowork, buka Customize > Skills > Add > Create new.",
+        "license": "Microsoft 365 Copilot",
+        "link": "https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills"
+    },
+    {
         "id": "wn-2026-oct-cowork-projects",
         "title": "🗂️ Cowork Projects and Office file edits (NEW)",
         "titleBM": "🗂️ Projek Cowork dan suntingan fail Office (BAHARU)",

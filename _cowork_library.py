@@ -317,14 +317,16 @@ USE_CASES['uc-ga-custom-skill'] = {
         'Customize page — unified home for plugins and skills (GA, June 2026)',
         'Guided skill builder — Cowork interviews you and writes the skill prompt for you',
         'Skill sharing — publish to your team so the same prompt runs the same way',
+        'Upload skill — import a SKILL.md, .zip or .skill file from your device instead of rebuilding it',
         'Markdown-native skill files in OneDrive — version-controlled and editable',
     ],
     'instructions': [
-        'Open Cowork → top nav → Customize → Skills tab',
+        'Open Cowork → left navigation → Customize → Skills tab',
         'Click ➕ Add → Create new (guided)',
         'Answer Cowork\'s questions in chat — what triggers the skill, what inputs it needs, what outputs you expect',
         'Save the generated skill — Cowork stores it as a Markdown file in your OneDrive Cowork Skills folder',
-        'Trigger the skill by name in any future Cowork run — or share it with your team via the Customize page',
+        'Already have a skill file? Select the arrow next to Add → Upload skill and choose a .md file that holds a SKILL.md, or a .zip / .skill archive',
+        'Trigger the skill by name in any future Cowork run — or open the skill, select Share and choose Only you or Specific users in your organization; select Re-share after you edit it',
     ],
     'sample_files': [],
     'prompts': [{
@@ -350,7 +352,7 @@ USE_CASES['uc-ga-custom-skill'] = {
         'The skill file is plain Markdown in OneDrive — auditable, editable, version-controllable',
         'Future runs trigger with a short skill name — no copy-paste of the long prompt every Monday',
     ],
-    'honest': 'Cowork can author up to 50 custom skills per tenant (April 2026 limit, may rise). The skill triggers on demand, not on a schedule — pair it with a Power Automate weekly cron if you want hands-off Monday morning delivery. Skills shared with the team carry your prompt verbatim — review any sensitive language before sharing.',
+    'honest': 'Cowork can author up to 50 custom skills per tenant (April 2026 limit, may rise). The skill triggers on demand, not on a schedule — pair it with a Power Automate weekly cron if you want hands-off Monday morning delivery. Skills shared with the team carry your prompt verbatim — review any sensitive language before sharing. A skill runs as instructions to the AI, so only upload skills from sources you trust.',
     'tips': [
         'Use this same pattern for a Monthly Board Pack skill, a Quarterly OKR Review skill, or a Friday Wrap skill',
         'Combine with the plugin catalog — install the Jira or ServiceNow plugin first so the skill can pull tickets too',

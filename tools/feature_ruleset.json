@@ -17,7 +17,7 @@
       "label": "Copilot in Excel",
       "keywords": ["Copilot in Excel", "Excel", "Plan mode", "Python in Excel"],
       "license_required": "M365_LIC",
-      "current_features": ["Plan mode", "Python in Excel", "Edit with Copilot", "agent mode", "Show Changes"]
+      "current_features": ["Plan mode", "Python in Excel", "Edit with Copilot", "agent mode", "Show Changes", "skill-builder"]
     },
     "word": {
       "label": "Copilot in Word",

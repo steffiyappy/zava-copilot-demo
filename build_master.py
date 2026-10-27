@@ -1444,6 +1444,20 @@ except Exception as _e:
     print(f"(BM/BI dialect cleanup skipped due to error: {_e})")
     _tb.print_exc()
 
+# ── Skills prompts (Oct 2026) ─────────────────────────────────────────────────
+# Appends skills prompts (use, build and save a skill) to the Excel, PowerPoint
+# and Cowork blocks of every entry in EN, BM and BI. See skills_prompts.py.
+try:
+    from skills_prompts import append_skills_prompts as _sk_append
+    _sk_total = 0
+    for _coll in (all_industries, all_departments):
+        _sk_total += _sk_append(_coll)
+    print(f"Skills prompts appended: {_sk_total} prompts (EN, with BM and BI mirrors)")
+except Exception as _e:
+    import traceback as _tb
+    print(f"(Skills prompts skipped due to error: {_e})")
+    _tb.print_exc()
+
 # ── Final pass: Copilot naming + licence refresh (Sep 2026) ──────────────────
 # Cowork is GA (only App skill / GPT 5.5 stay Frontier), Word/PowerPoint/Excel
 # agents need a paid licence, and Microsoft 365 Copilot Chat is now Microsoft
